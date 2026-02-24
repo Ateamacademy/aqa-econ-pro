@@ -14,13 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: {
+          created_at: string
+          free_papers_used: number
+          free_questions_used: number
+          id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          free_papers_used?: number
+          free_questions_used?: number
+          id?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          free_papers_used?: number
+          free_questions_used?: number
+          id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_own_profile: { Args: { profile_user_id: string }; Returns: boolean }
     }
     Enums: {
       [_ in never]: never
