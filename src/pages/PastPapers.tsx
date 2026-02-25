@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink, FileText } from "lucide-react";
+import { Download, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -10,17 +10,23 @@ export default function PastPapers() {
   const [search, setSearch] = useState("");
   const [yearFilter, setYearFilter] = useState<string>("all");
 
-  const years = [...new Set(pastPapers.map((p) => p.year))].sort((a, b) => b - a);
+  const years = [...new Set(pastPapers.map((p) => p.year))]
+    .filter((y): y is number => typeof y === "number")
+    .sort((a, b) => b - a);
 
   const filtered = (paper: number) =>
     pastPapers.filter((p) => {
       if (p.paper !== paper) return false;
-      if (yearFilter !== "all" && p.year !== Number(yearFilter)) return false;
+      if (yearFilter !== "all") {
+        if (yearFilter === "specimen") {
+          if (p.year !== "Specimen") return false;
+        } else if (p.year !== Number(yearFilter)) return false;
+      }
       if (search) {
         const q = search.toLowerCase();
         return (
           p.type.toLowerCase().includes(q) ||
-          String(p.year).includes(q) ||
+          String(p.year).toLowerCase().includes(q) ||
           paperTitles[p.paper].toLowerCase().includes(q)
         );
       }
@@ -52,6 +58,7 @@ export default function PastPapers() {
           {years.map((y) => (
             <option key={y} value={y}>{y}</option>
           ))}
+          <option value="specimen">Specimen</option>
         </select>
       </div>
 
@@ -74,13 +81,13 @@ export default function PastPapers() {
                     <div className="flex items-center gap-3">
                       <FileText className="h-5 w-5 text-muted-foreground shrink-0" />
                       <div>
-                        <p className="font-medium text-sm">{p.year} — {p.type}</p>
+                        <p className="font-medium text-sm">{p.year === "Specimen" ? "Specimen" : p.year} — {p.type}</p>
                         <p className="text-xs text-muted-foreground">Paper {p.paper}</p>
                       </div>
                     </div>
                     <Button variant="ghost" size="icon" asChild>
                       <a href={p.url} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4" />
+                        <Download className="h-4 w-4" />
                       </a>
                     </Button>
                   </CardContent>
