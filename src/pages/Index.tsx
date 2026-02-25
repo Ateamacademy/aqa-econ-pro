@@ -1,16 +1,23 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { BookOpen, Brain, FileText, MessageCircle, PenTool, ArrowRight } from "lucide-react";
+import { BookOpen, Brain, Calculator, FileText, MessageCircle, PenTool, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 const features = [
   {
     icon: FileText,
-    title: "Past Paper Browser",
-    description: "Browse AQA Economics papers organised by year and paper number with direct links to questions and mark schemes.",
+    title: "Economics Past Papers",
+    description: "Browse AQA A-Level Economics papers organised by year and paper number with direct links to questions and mark schemes.",
     to: "/papers",
     color: "text-primary",
+  },
+  {
+    icon: Calculator,
+    title: "Maths Past Papers",
+    description: "Browse Edexcel GCSE Maths papers — Foundation & Higher — with question papers, mark schemes and model answers.",
+    to: "/maths-papers",
+    color: "text-accent",
   },
   {
     icon: MessageCircle,
