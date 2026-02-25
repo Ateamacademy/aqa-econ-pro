@@ -34,13 +34,11 @@ export function QuestionCard({
   const toggle = (section: string) =>
     setOpenSection((prev) => (prev === section ? null : section));
 
-  const sections = feedback
-    ? [
-        { key: "markScheme", label: "Mark Scheme", icon: Clock, content: feedback.markScheme },
-        { key: "modelAnswer", label: "Model Answer", icon: FileText, content: feedback.modelAnswer },
-        { key: "examinerTip", label: "Examiner Tip", icon: Lightbulb, content: feedback.examinerTip },
-      ]
-    : [];
+  const feedbackSections = [
+    { key: "markScheme", label: "Mark Scheme", icon: Clock, content: feedback?.markScheme || "" },
+    { key: "modelAnswer", label: "Model Answer", icon: FileText, content: feedback?.modelAnswer || "" },
+    { key: "examinerTip", label: "Examiner Tip", icon: Lightbulb, content: feedback?.examinerTip || "" },
+  ];
 
   return (
     <div className="rounded-xl border border-border bg-card overflow-hidden">
@@ -70,9 +68,9 @@ export function QuestionCard({
         />
       </div>
 
-      {/* Actions */}
-      <div className="p-4 flex flex-wrap items-center gap-2">
-        {!feedback ? (
+      {/* Mark button */}
+      {!feedback && (
+        <div className="px-4 pt-4">
           <Button
             size="sm"
             onClick={onMark}
@@ -82,11 +80,21 @@ export function QuestionCard({
             <Send className="h-3.5 w-3.5" />
             {isMarking ? "Marking..." : "Mark My Answer"}
           </Button>
-        ) : (
-          sections.map((s) => (
+        </div>
+      )}
+
+      {/* Feedback sections — always visible, populated after marking */}
+      <div className="p-4 flex flex-col gap-2">
+        <div className="flex flex-wrap items-center gap-2">
+          {feedbackSections.map((s) => (
             <Collapsible key={s.key} open={openSection === s.key} onOpenChange={() => toggle(s.key)}>
               <CollapsibleTrigger asChild>
-                <Button variant="outline" size="sm" className="gap-1.5 text-xs">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="gap-1.5 text-xs"
+                  disabled={!feedback}
+                >
                   <s.icon className="h-3.5 w-3.5" />
                   {s.label}
                   <ChevronDown
@@ -97,14 +105,16 @@ export function QuestionCard({
                   />
                 </Button>
               </CollapsibleTrigger>
-              <CollapsibleContent className="mt-3 px-1">
-                <div className="prose prose-sm max-w-none dark:prose-invert bg-muted/40 rounded-lg p-4">
-                  <ReactMarkdown>{s.content}</ReactMarkdown>
-                </div>
-              </CollapsibleContent>
+              {feedback && (
+                <CollapsibleContent className="mt-3 px-1">
+                  <div className="prose prose-sm max-w-none dark:prose-invert bg-muted/40 rounded-lg p-4">
+                    <ReactMarkdown>{s.content}</ReactMarkdown>
+                  </div>
+                </CollapsibleContent>
+              )}
             </Collapsible>
-          ))
-        )}
+          ))}
+        </div>
       </div>
     </div>
   );
