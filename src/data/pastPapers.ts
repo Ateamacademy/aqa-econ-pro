@@ -1,37 +1,55 @@
 export interface PastPaper {
   id: string;
   paper: 1 | 2 | 3;
-  year: number;
-  type: "Question Paper" | "Mark Scheme";
+  year: number | "Specimen";
+  type: "Question Paper" | "Mark Scheme" | "Insert";
   url: string;
 }
 
-const BASE = {
-  1: "https://www.physicsandmathstutor.com/past-papers/a-level-economics/aqa-paper-1/",
-  2: "https://www.physicsandmathstutor.com/past-papers/a-level-economics/aqa-paper-2/",
-  3: "https://www.physicsandmathstutor.com/past-papers/a-level-economics/aqa-paper-3/",
-};
+const PMT = "https://pmt.physicsandmathstutor.com/download/Economics/A-level/Past-Papers/AQA";
 
-const years = [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017];
+function pdfUrl(paper: number, folder: string, label: string) {
+  return `${PMT}/Paper-${paper}/${folder}/${encodeURIComponent(label)}.pdf`;
+}
+
+const years: (number | "Specimen")[] = [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, "Specimen"];
+
+function yearLabel(y: number | "Specimen") {
+  return y === "Specimen" ? "Specimen" : `June ${y}`;
+}
 
 export const pastPapers: PastPaper[] = [];
 
 for (const paper of [1, 2, 3] as const) {
   for (const year of years) {
+    const label = yearLabel(year);
+
     pastPapers.push({
       id: `p${paper}-${year}-qp`,
       paper,
       year,
       type: "Question Paper",
-      url: BASE[paper],
+      url: pdfUrl(paper, "QP", `${label} QP`),
     });
+
     pastPapers.push({
       id: `p${paper}-${year}-ms`,
       paper,
       year,
       type: "Mark Scheme",
-      url: BASE[paper],
+      url: pdfUrl(paper, "MS", `${label} MS`),
     });
+
+    // Paper 3 also has Insert documents
+    if (paper === 3) {
+      pastPapers.push({
+        id: `p${paper}-${year}-in`,
+        paper,
+        year,
+        type: "Insert",
+        url: pdfUrl(paper, "IN", `${label} IN`),
+      });
+    }
   }
 }
 
