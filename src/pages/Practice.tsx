@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "@/contexts/AuthContext";
+import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
 import { streamChat } from "@/lib/streamChat";
 import { supabase } from "@/integrations/supabase/client";
@@ -10,22 +11,16 @@ import { Brain, Lock, Send } from "lucide-react";
 import { toast } from "sonner";
 import ReactMarkdown from "react-markdown";
 import { FREE_LIMITS } from "@/lib/plans";
-
-const topics = [
-  "Price Elasticity of Demand", "Income Elasticity of Demand", "Cross Elasticity of Demand",
-  "Supply and Demand", "Market Failure", "Externalities", "Public Goods", "Merit & Demerit Goods",
-  "Government Intervention", "Competition Policy", "Labour Markets", "Wage Determination",
-  "Aggregate Demand", "Aggregate Supply", "Fiscal Policy", "Monetary Policy",
-  "Supply-Side Policies", "Economic Growth", "Unemployment", "Inflation",
-  "Balance of Payments", "Exchange Rates", "Globalisation", "Trade Blocs & Protectionism",
-  "Development Economics", "Inequality & Poverty",
-];
-
-const styles = ["Multiple Choice", "Short Answer (Data Response)", "Essay Question"];
+import { topicsBySubject, stylesBySubject } from "@/lib/subjectConfig";
 
 export default function Practice() {
   const { user, subscribed, profile, refreshProfile } = useAuth();
+  const { subject, subjectLabel, examBoard, level } = useSubject();
   const navigate = useNavigate();
+
+  const topics = topicsBySubject[subject];
+  const styles = stylesBySubject[subject];
+
   const [topic, setTopic] = useState(topics[0]);
   const [style, setStyle] = useState(styles[0]);
   const [generatedQ, setGeneratedQ] = useState("");
@@ -34,6 +29,13 @@ export default function Practice() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [isMarking, setIsMarking] = useState(false);
   const [step, setStep] = useState<"generate" | "answer" | "feedback">("generate");
+
+  // Reset when subject changes
+  useEffect(() => {
+    setTopic(topicsBySubject[subject][0]);
+    setStyle(stylesBySubject[subject][0]);
+    reset();
+  }, [subject]);
 
   if (!user) {
     return (
@@ -54,8 +56,9 @@ export default function Practice() {
     let result = "";
 
     await streamChat({
-      messages: [{ role: "user", content: `Generate a ${style} question on the topic: ${topic}. This should be in the style of AQA A-Level Economics. Just give me the question, nothing else.` }],
+      messages: [{ role: "user", content: `Generate a ${style} question on the topic: ${topic}. This should be in the style of ${examBoard} ${level} ${subjectLabel}. Just give me the question, nothing else.` }],
       mode: "practice",
+      subject,
       onDelta: (chunk) => { result += chunk; setGeneratedQ(result); },
       onDone: () => { setIsGenerating(false); setStep("answer"); },
       onError: (err) => { toast.error(err); setIsGenerating(false); },
@@ -70,9 +73,10 @@ export default function Practice() {
     await streamChat({
       messages: [
         { role: "user", content: `Question: ${generatedQ}\n\nMy answer: ${answer}` },
-        { role: "user", content: "Please mark this answer using AQA criteria. Speak directly to me." },
+        { role: "user", content: `Please mark this answer using ${examBoard} ${level} ${subjectLabel} criteria. Speak directly to me.` },
       ],
       mode: "grade",
+      subject,
       onDelta: (chunk) => { result += chunk; setFeedback(result); },
       onDone: async () => {
         setIsMarking(false);
@@ -93,7 +97,7 @@ export default function Practice() {
       <div className="mb-6">
         <h1 className="text-3xl font-serif mb-1">Practice Questions</h1>
         <p className="text-sm text-muted-foreground">
-          {subscribed ? "Unlimited practice" : `${FREE_LIMITS.questions - (profile?.free_questions_used ?? 0)} free question(s) remaining`}
+          {examBoard} {level} {subjectLabel} · {subscribed ? "Unlimited practice" : `${FREE_LIMITS.questions - (profile?.free_questions_used ?? 0)} free question(s) remaining`}
         </p>
       </div>
 

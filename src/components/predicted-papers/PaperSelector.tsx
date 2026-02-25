@@ -1,42 +1,32 @@
-import { BarChart3, Globe, Landmark, Check } from "lucide-react";
+import { BarChart3, Globe, Landmark, Calculator, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { paperOptionsBySubject } from "@/lib/subjectConfig";
+import type { Subject } from "@/contexts/SubjectContext";
 
-const papers = [
-  {
-    value: "1",
-    label: "Paper 1",
-    title: "Markets & Market Failure",
-    desc: "Microeconomics — supply & demand, elasticity, market failure, government intervention",
-    icon: BarChart3,
-    color: "border-blue-600",
-    bg: "text-blue-600",
-  },
-  {
-    value: "2",
-    label: "Paper 2",
-    title: "National & International Economy",
-    desc: "Macroeconomics — GDP, inflation, unemployment, fiscal & monetary policy, trade",
-    icon: Globe,
-    color: "border-green-600",
-    bg: "text-green-600",
-  },
-  {
-    value: "3",
-    label: "Paper 3",
-    title: "Economic Principles & Issues",
-    desc: "Mixed micro & macro — market structures, labour markets, inequality, policy conflicts",
-    icon: Landmark,
-    color: "border-purple-600",
-    bg: "text-purple-600",
-  },
+const iconMap: Record<string, any> = {
+  economics: [BarChart3, Globe, Landmark],
+  maths: [Calculator, Calculator, Calculator],
+};
+
+const colorSets = [
+  { color: "border-blue-600", bg: "text-blue-600" },
+  { color: "border-green-600", bg: "text-green-600" },
+  { color: "border-purple-600", bg: "text-purple-600" },
 ];
 
 interface PaperSelectorProps {
   selected: string;
   onSelect: (value: string) => void;
+  subject: Subject;
 }
 
-export function PaperSelector({ selected, onSelect }: PaperSelectorProps) {
+export function PaperSelector({ selected, onSelect, subject }: PaperSelectorProps) {
+  const papers = paperOptionsBySubject[subject].map((p, i) => ({
+    ...p,
+    icon: iconMap[subject]?.[i] ?? Calculator,
+    ...colorSets[i],
+  }));
+
   return (
     <div className="grid md:grid-cols-3 gap-4">
       {papers.map((p) => {
@@ -53,7 +43,6 @@ export function PaperSelector({ selected, onSelect }: PaperSelectorProps) {
                 : "border-border bg-card hover:border-muted-foreground/30"
             )}
           >
-            {/* Top accent bar */}
             <div
               className={cn(
                 "absolute top-0 left-0 right-0 h-1 rounded-t-xl",
@@ -61,16 +50,7 @@ export function PaperSelector({ selected, onSelect }: PaperSelectorProps) {
               )}
             />
             <Icon className={cn("h-8 w-8 mb-3", p.bg)} />
-            <span
-              className={cn(
-                "inline-block text-xs font-semibold px-2 py-0.5 rounded mb-2",
-                p.bg,
-                `bg-${p.bg.replace("text-", "")}/10`
-              )}
-              style={{
-                backgroundColor: isSelected ? undefined : undefined,
-              }}
-            >
+            <span className={cn("inline-block text-xs font-semibold px-2 py-0.5 rounded mb-2", p.bg)}>
               {p.label}
             </span>
             <h3 className="font-bold text-foreground text-base mb-1">{p.title}</h3>
@@ -87,4 +67,4 @@ export function PaperSelector({ selected, onSelect }: PaperSelectorProps) {
   );
 }
 
-export { papers as paperOptions };
+export { paperOptionsBySubject as paperOptions };

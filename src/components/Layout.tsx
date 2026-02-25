@@ -4,23 +4,37 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
+import { useSubject, type Subject } from "@/contexts/SubjectContext";
 
-const navItems = [
+const baseNavItems = [
   { to: "/", label: "Home", icon: GraduationCap },
-  { to: "/papers", label: "Econ Papers", icon: FileText },
-  { to: "/maths-papers", label: "Maths Papers", icon: Calculator },
   { to: "/predicted", label: "Predicted Papers", icon: Sparkles },
   { to: "/tutor", label: "AI Tutor", icon: MessageCircle },
-  { to: "/grader", label: "Essay Grader", icon: PenTool },
+  { to: "/grader", label: "Grader", icon: PenTool },
   { to: "/practice", label: "Practice", icon: Brain },
   { to: "/notes", label: "Study Notes", icon: BookOpen },
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
 ];
 
+function getNavItems(subject: Subject) {
+  const papersItem = subject === "economics"
+    ? { to: "/papers", label: "Econ Papers", icon: FileText }
+    : { to: "/maths-papers", label: "Maths Papers", icon: Calculator };
+
+  return [
+    baseNavItems[0],
+    papersItem,
+    ...baseNavItems.slice(1),
+  ];
+}
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const { user, subscribed, signOut } = useAuth();
+  const { subject, setSubject, subjectLabel } = useSubject();
+
+  const navItems = getNavItems(subject);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -32,6 +46,28 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               Econ<span className="text-accent">Ace</span>
             </span>
           </Link>
+
+          {/* Subject switcher */}
+          <div className="hidden md:flex items-center bg-muted rounded-full p-0.5 gap-0.5">
+            <button
+              onClick={() => setSubject("economics")}
+              className={cn(
+                "px-3 py-1 rounded-full text-xs font-medium transition-colors",
+                subject === "economics" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              Economics
+            </button>
+            <button
+              onClick={() => setSubject("maths")}
+              className={cn(
+                "px-3 py-1 rounded-full text-xs font-medium transition-colors",
+                subject === "maths" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              Maths
+            </button>
+          </div>
 
           <nav className="hidden lg:flex items-center gap-1">
             {navItems.slice(1).map((item) => {
@@ -83,6 +119,28 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         {mobileOpen && (
           <nav className="lg:hidden border-t bg-card p-2 flex flex-col gap-1">
+            {/* Mobile subject switcher */}
+            <div className="flex items-center bg-muted rounded-full p-0.5 gap-0.5 mb-2 mx-3">
+              <button
+                onClick={() => setSubject("economics")}
+                className={cn(
+                  "flex-1 px-3 py-1.5 rounded-full text-xs font-medium transition-colors text-center",
+                  subject === "economics" ? "bg-primary text-primary-foreground" : "text-muted-foreground"
+                )}
+              >
+                Economics
+              </button>
+              <button
+                onClick={() => setSubject("maths")}
+                className={cn(
+                  "flex-1 px-3 py-1.5 rounded-full text-xs font-medium transition-colors text-center",
+                  subject === "maths" ? "bg-primary text-primary-foreground" : "text-muted-foreground"
+                )}
+              >
+                Maths
+              </button>
+            </div>
+
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = location.pathname === item.to;
@@ -117,7 +175,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <footer className="border-t bg-card py-6">
         <div className="container text-center text-sm text-muted-foreground">
-          <p>EconAce — AQA A-Level Economics Revision Platform</p>
+          <p>EconAce — AQA A-Level Economics & Edexcel GCSE Maths Revision Platform</p>
         </div>
       </footer>
     </div>

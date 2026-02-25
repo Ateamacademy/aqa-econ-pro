@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useAuth } from "@/contexts/AuthContext";
+import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
 import { streamChat } from "@/lib/streamChat";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,8 @@ import ReactMarkdown from "react-markdown";
 type Msg = { role: "user" | "assistant"; content: string };
 
 export default function AITutor() {
-  const { user, subscribed, profile } = useAuth();
+  const { user } = useAuth();
+  const { subject, subjectLabel, examBoard, level } = useSubject();
   const navigate = useNavigate();
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
@@ -20,6 +22,9 @@ export default function AITutor() {
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages]);
+
+  // Reset chat when subject changes
+  useEffect(() => { setMessages([]); }, [subject]);
 
   if (!user) {
     return (
@@ -30,6 +35,10 @@ export default function AITutor() {
       </div>
     );
   }
+
+  const placeholders = subject === "maths"
+    ? { title: "AI Maths Tutor", subtitle: `Ask any ${examBoard} ${level} Maths question`, hero: "Ask me anything about Maths", hint: 'Try: "Solve 3x + 5 = 20" or "Explain circle theorems"' }
+    : { title: "AI Economics Tutor", subtitle: `Ask any ${examBoard} ${level} Economics question`, hero: "Ask me anything about Economics", hint: 'Try: "Explain the multiplier effect" or "What causes market failure?"' };
 
   const send = async () => {
     if (!input.trim() || isLoading) return;
@@ -54,6 +63,7 @@ export default function AITutor() {
       await streamChat({
         messages: [...messages, userMsg],
         mode: "tutor",
+        subject,
         onDelta: upsert,
         onDone: () => setIsLoading(false),
         onError: (err) => { toast.error(err); setIsLoading(false); },
@@ -64,16 +74,16 @@ export default function AITutor() {
   return (
     <div className="container py-6 max-w-3xl flex flex-col" style={{ height: "calc(100vh - 8rem)" }}>
       <div className="mb-4">
-        <h1 className="text-3xl font-serif">AI Economics Tutor</h1>
-        <p className="text-sm text-muted-foreground">Ask any AQA Economics question</p>
+        <h1 className="text-3xl font-serif">{placeholders.title}</h1>
+        <p className="text-sm text-muted-foreground">{placeholders.subtitle}</p>
       </div>
 
       <Card className="flex-1 overflow-y-auto p-4 space-y-4 mb-4">
         {messages.length === 0 && (
           <div className="text-center py-12 text-muted-foreground">
             <MessageCircle className="h-10 w-10 mx-auto mb-3 text-accent" />
-            <p className="font-serif text-xl mb-1">Ask me anything about Economics</p>
-            <p className="text-sm">Try: "Explain the multiplier effect" or "What causes market failure?"</p>
+            <p className="font-serif text-xl mb-1">{placeholders.hero}</p>
+            <p className="text-sm">{placeholders.hint}</p>
           </div>
         )}
         {messages.map((m, i) => (
