@@ -8,7 +8,7 @@ interface AuthContextType {
   loading: boolean;
   subscribed: boolean;
   subscriptionEnd: string | null;
-  profile: { free_papers_used: number; free_questions_used: number } | null;
+  profile: { free_papers_used: number; free_questions_used: number; free_predicted_papers_used: number } | null;
   signOut: () => Promise<void>;
   refreshSubscription: () => Promise<void>;
   refreshProfile: () => Promise<void>;
@@ -28,12 +28,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
   const [subscribed, setSubscribed] = useState(false);
   const [subscriptionEnd, setSubscriptionEnd] = useState<string | null>(null);
-  const [profile, setProfile] = useState<{ free_papers_used: number; free_questions_used: number } | null>(null);
+  const [profile, setProfile] = useState<{ free_papers_used: number; free_questions_used: number; free_predicted_papers_used: number } | null>(null);
 
   const refreshProfile = async () => {
     const { data: { user: u } } = await supabase.auth.getUser();
     if (!u) return;
-    const { data } = await supabase.from("profiles").select("free_papers_used, free_questions_used").eq("user_id", u.id).single();
+    const { data } = await supabase.from("profiles").select("free_papers_used, free_questions_used, free_predicted_papers_used").eq("user_id", u.id).single();
     if (data) setProfile(data);
   };
 

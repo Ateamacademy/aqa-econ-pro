@@ -15,6 +15,7 @@ import Dashboard from "./pages/Dashboard";
 import Auth from "./pages/Auth";
 import ResetPassword from "./pages/ResetPassword";
 import Pricing from "./pages/Pricing";
+import PredictedPapers from "./pages/PredictedPapers";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/papers" element={<PastPapers />} />
+              <Route path="/predicted" element={<PredictedPapers />} />
               <Route path="/tutor" element={<AITutor />} />
               <Route path="/grader" element={<EssayGrader />} />
               <Route path="/practice" element={<Practice />} />

@@ -1,0 +1,1 @@
+ALTER TABLE public.profiles ADD COLUMN free_predicted_papers_used integer NOT NULL DEFAULT 0;
