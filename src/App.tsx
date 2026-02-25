@@ -7,6 +7,7 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import Layout from "@/components/Layout";
 import Index from "./pages/Index";
 import PastPapers from "./pages/PastPapers";
+import MathsPastPapers from "./pages/MathsPastPapers";
 import AITutor from "./pages/AITutor";
 import EssayGrader from "./pages/EssayGrader";
 import Practice from "./pages/Practice";
@@ -31,6 +32,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/papers" element={<PastPapers />} />
+              <Route path="/maths-papers" element={<MathsPastPapers />} />
               <Route path="/predicted" element={<PredictedPapers />} />
               <Route path="/tutor" element={<AITutor />} />
               <Route path="/grader" element={<EssayGrader />} />

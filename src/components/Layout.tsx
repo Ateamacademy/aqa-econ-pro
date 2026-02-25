@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { BookOpen, Brain, FileText, GraduationCap, LayoutDashboard, MessageCircle, PenTool, LogIn, LogOut, Crown, Sparkles } from "lucide-react";
+import { BookOpen, Brain, FileText, GraduationCap, LayoutDashboard, MessageCircle, PenTool, LogIn, LogOut, Crown, Sparkles, Calculator } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -7,7 +7,8 @@ import { useAuth } from "@/contexts/AuthContext";
 
 const navItems = [
   { to: "/", label: "Home", icon: GraduationCap },
-  { to: "/papers", label: "Past Papers", icon: FileText },
+  { to: "/papers", label: "Econ Papers", icon: FileText },
+  { to: "/maths-papers", label: "Maths Papers", icon: Calculator },
   { to: "/predicted", label: "Predicted Papers", icon: Sparkles },
   { to: "/tutor", label: "AI Tutor", icon: MessageCircle },
   { to: "/grader", label: "Essay Grader", icon: PenTool },
