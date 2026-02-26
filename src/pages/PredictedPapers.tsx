@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useMemo } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
@@ -6,7 +6,8 @@ import { streamChat } from "@/lib/streamChat";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { FileText, Lock, Sparkles, RotateCcw, ArrowRight } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { FileText, Lock, Sparkles, RotateCcw, ArrowRight, Library, Wand2 } from "lucide-react";
 import { toast } from "sonner";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import { FREE_LIMITS } from "@/lib/plans";
@@ -15,6 +16,7 @@ import { TierSelector } from "@/components/predicted-papers/TierSelector";
 import { QuestionCard } from "@/components/predicted-papers/QuestionCard";
 import { parseQuestions, type ParsedQuestion } from "@/components/predicted-papers/parseQuestions";
 import { paperOptionsBySubject } from "@/lib/subjectConfig";
+import { predictedPapersLibrary, type PredictedPaper } from "@/data/predictedPapersLibrary";
 
 type QuestionFeedback = {
   markScheme: string;
@@ -82,12 +84,15 @@ export default function PredictedPapers() {
   const { user, subscribed, profile, refreshProfile } = useAuth();
   const { subject, subjectLabel, examBoard, level } = useSubject();
   const navigate = useNavigate();
+
+  const [mode, setMode] = useState<"library" | "generate">("library");
   const [paper, setPaper] = useState("1");
   const [tier, setTier] = useState<"Foundation" | "Higher">("Higher");
   const [generatedPaper, setGeneratedPaper] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [step, setStep] = useState<"select" | "paper">("select");
 
+  const [selectedLibraryPaper, setSelectedLibraryPaper] = useState<PredictedPaper | null>(null);
   const [parsedQuestions, setParsedQuestions] = useState<ParsedQuestion[]>([]);
   const [paperContext, setPaperContext] = useState("");
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -101,7 +106,23 @@ export default function PredictedPapers() {
   const paperOptions = paperOptionsBySubject[subject];
   const isMaths = subject === "maths";
 
+  const libraryPapers = useMemo(
+    () => predictedPapersLibrary.filter((p) => p.subject === subject),
+    [subject]
+  );
+
   useEffect(() => { reset(); }, [subject]);
+
+  const openLibraryPaper = (lp: PredictedPaper) => {
+    setSelectedLibraryPaper(lp);
+    const { context, questions } = parseQuestions(lp.content);
+    setPaperContext(context);
+    setParsedQuestions(questions);
+    setAnswers({});
+    setFeedbacks({});
+    setMarkingId(null);
+    setStep("paper");
+  };
 
   const generatePaper = async () => {
     if (!canUse) {
@@ -111,6 +132,7 @@ export default function PredictedPapers() {
     }
     setIsGenerating(true);
     setGeneratedPaper("");
+    setSelectedLibraryPaper(null);
     let result = "";
 
     const selectedPaper = paperOptions.find((p) => p.value === paper);
@@ -232,6 +254,7 @@ Give 2-3 specific, actionable tips for how I can improve. Address me directly. B
   const reset = () => {
     setStep("select");
     setGeneratedPaper("");
+    setSelectedLibraryPaper(null);
     setParsedQuestions([]);
     setPaperContext("");
     setAnswers({});
@@ -254,59 +277,99 @@ Give 2-3 specific, actionable tips for how I can improve. Address me directly. B
     <div className="container py-10 max-w-4xl">
       <div className="text-center mb-8">
         <span className="inline-flex items-center gap-1.5 text-xs font-medium bg-muted text-muted-foreground rounded-full px-3 py-1 mb-4">
-          <FileText className="h-3.5 w-3.5" /> Full Paper Mode
+          <FileText className="h-3.5 w-3.5" /> {examBoard} {level} {subjectLabel}
         </span>
-        <h1 className="text-3xl md:text-4xl font-serif font-bold mb-3">Generate a Predicted Paper</h1>
+        <h1 className="text-3xl md:text-4xl font-serif font-bold mb-3">Predicted Papers</h1>
         <p className="text-muted-foreground max-w-lg mx-auto">
-          Select which {examBoard} {level} {subjectLabel} paper you want to practice. The AI will generate a realistic full paper with mark schemes, model answers, and examiner tips.
+          Choose from our library of 10 ready-made predicted papers or generate a fresh one with AI.
         </p>
       </div>
 
       {step === "select" && (
-        <div className="space-y-6">
-          <PaperSelector selected={paper} onSelect={setPaper} subject={subject} />
+        <Tabs value={mode} onValueChange={(v) => setMode(v as "library" | "generate")} className="space-y-6">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2">
+            <TabsTrigger value="library" className="gap-1.5"><Library className="h-4 w-4" /> Paper Library</TabsTrigger>
+            <TabsTrigger value="generate" className="gap-1.5"><Wand2 className="h-4 w-4" /> Generate New</TabsTrigger>
+          </TabsList>
 
-          {isMaths && (
-            <div>
-              <h3 className="text-sm font-semibold text-foreground mb-3">Select Tier</h3>
-              <TierSelector selected={tier} onSelect={setTier} />
-            </div>
-          )}
+          <TabsContent value="library" className="space-y-4">
+            {libraryPapers.length === 0 ? (
+              <p className="text-center text-muted-foreground py-8">No pre-generated papers for this subject yet.</p>
+            ) : (
+              <div className="grid sm:grid-cols-2 gap-4">
+                {libraryPapers.map((lp) => (
+                  <Card
+                    key={lp.id}
+                    className="group cursor-pointer hover:shadow-md hover:-translate-y-0.5 transition-all"
+                    onClick={() => openLibraryPaper(lp)}
+                  >
+                    <CardContent className="p-5">
+                      <div className="flex items-center gap-2 mb-2">
+                        <FileText className="h-5 w-5 text-accent shrink-0" />
+                        <h3 className="font-bold text-sm text-foreground group-hover:text-accent transition-colors">{lp.title}</h3>
+                      </div>
+                      <p className="text-xs text-muted-foreground leading-relaxed mb-3">{lp.description}</p>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[11px] bg-muted text-muted-foreground px-2 py-0.5 rounded-full font-medium">
+                          {lp.totalMarks} marks
+                        </span>
+                        {lp.tier && (
+                          <span className="text-[11px] bg-muted text-muted-foreground px-2 py-0.5 rounded-full font-medium">
+                            {lp.tier}
+                          </span>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )}
+          </TabsContent>
 
-          <div className="text-center space-y-2">
-            {!subscribed && (
-              <p className="text-sm text-muted-foreground">
-                🎁 Free tier:{" "}
-                <span className="font-bold text-foreground">{Math.max(0, remaining)}</span> of{" "}
-                {FREE_LIMITS.predictedPapers} free paper remaining
-                {remaining <= 0 && (
-                  <>
-                    {" — "}
-                    <button onClick={() => navigate("/pricing")} className="font-semibold text-primary underline underline-offset-2">
-                      Subscribe to Pro
-                    </button>{" "}
-                    for unlimited papers
-                  </>
-                )}
-              </p>
+          <TabsContent value="generate" className="space-y-6">
+            <PaperSelector selected={paper} onSelect={setPaper} subject={subject} />
+
+            {isMaths && (
+              <div>
+                <h3 className="text-sm font-semibold text-foreground mb-3">Select Tier</h3>
+                <TierSelector selected={tier} onSelect={setTier} />
+              </div>
             )}
 
-            <Button
-              onClick={canUse ? generatePaper : () => navigate("/pricing")}
-              disabled={isGenerating}
-              size="lg"
-              className="gap-2 px-8"
-            >
-              {isGenerating ? (
-                <><Sparkles className="h-4 w-4 animate-spin" /> Generating {isMaths ? `${tier} ` : ""}Paper...</>
-              ) : canUse ? (
-                <><Sparkles className="h-4 w-4" /> Generate Predicted Paper</>
-              ) : (
-                <>Subscribe to Generate <ArrowRight className="h-4 w-4" /></>
+            <div className="text-center space-y-2">
+              {!subscribed && (
+                <p className="text-sm text-muted-foreground">
+                  🎁 Free tier:{" "}
+                  <span className="font-bold text-foreground">{Math.max(0, remaining)}</span> of{" "}
+                  {FREE_LIMITS.predictedPapers} free paper remaining
+                  {remaining <= 0 && (
+                    <>
+                      {" — "}
+                      <button onClick={() => navigate("/pricing")} className="font-semibold text-primary underline underline-offset-2">
+                        Subscribe to Pro
+                      </button>
+                    </>
+                  )}
+                </p>
               )}
-            </Button>
-          </div>
-        </div>
+
+              <Button
+                onClick={canUse ? generatePaper : () => navigate("/pricing")}
+                disabled={isGenerating}
+                size="lg"
+                className="gap-2 px-8"
+              >
+                {isGenerating ? (
+                  <><Sparkles className="h-4 w-4 animate-spin" /> Generating Paper...</>
+                ) : canUse ? (
+                  <><Sparkles className="h-4 w-4" /> Generate Predicted Paper</>
+                ) : (
+                  <>Subscribe to Generate <ArrowRight className="h-4 w-4" /></>
+                )}
+              </Button>
+            </div>
+          </TabsContent>
+        </Tabs>
       )}
 
       {isGenerating && generatedPaper && (
@@ -321,6 +384,13 @@ Give 2-3 specific, actionable tips for how I can improve. Address me directly. B
 
       {step === "paper" && !isGenerating && (
         <div className="space-y-5">
+          {selectedLibraryPaper && (
+            <div className="text-center mb-2">
+              <h2 className="font-serif text-xl font-bold">{selectedLibraryPaper.title}</h2>
+              <p className="text-sm text-muted-foreground">{selectedLibraryPaper.description}</p>
+            </div>
+          )}
+
           {paperContext && (
             <Card>
               <CardContent className="p-6">
@@ -346,7 +416,7 @@ Give 2-3 specific, actionable tips for how I can improve. Address me directly. B
 
           <div className="flex justify-center pt-4">
             <Button variant="outline" onClick={reset} className="gap-2">
-              <RotateCcw className="h-4 w-4" /> Generate Another Paper
+              <RotateCcw className="h-4 w-4" /> Back to Paper Selection
             </Button>
           </div>
         </div>
