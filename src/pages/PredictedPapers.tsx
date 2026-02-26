@@ -8,9 +8,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { FileText, Lock, Sparkles, RotateCcw, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
-import ReactMarkdown from "react-markdown";
+import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import { FREE_LIMITS } from "@/lib/plans";
 import { PaperSelector } from "@/components/predicted-papers/PaperSelector";
+import { TierSelector } from "@/components/predicted-papers/TierSelector";
 import { QuestionCard } from "@/components/predicted-papers/QuestionCard";
 import { parseQuestions, type ParsedQuestion } from "@/components/predicted-papers/parseQuestions";
 import { paperOptionsBySubject } from "@/lib/subjectConfig";
@@ -21,11 +22,68 @@ type QuestionFeedback = {
   examinerTip: string;
 };
 
+const MATHS_PAPER_PROMPT = (paperLabel: string, isCalc: boolean, tier: "Foundation" | "Higher") => {
+  const tierDesc = tier === "Foundation"
+    ? "Foundation tier (targeting grades 1–5). Questions should be accessible and build gradually. Include standard procedural questions, real-life context problems, and some reasoning questions. Avoid higher-only topics like surds, circle theorems, sine/cosine rule, and algebraic proof."
+    : "Higher tier (targeting grades 4–9). Include a good mix of difficulty. Start with accessible crossover questions (grades 4–5), build through grades 6–7 questions, and finish with challenging grade 8–9 questions including proof, circle theorems, iteration, algebraic fractions, and advanced trigonometry.";
+
+  return `Generate a full, realistic Edexcel GCSE Maths (1MA1) predicted exam paper for ${paperLabel}.
+
+TIER: ${tierDesc}
+
+CALCULATOR: ${isCalc ? "YES — this is a CALCULATOR paper. Questions can involve complex arithmetic, trigonometry with decimals, statistical calculations, and iterative methods." : "NO — this is a NON-CALCULATOR paper. All arithmetic must be manageable by hand. Focus on fractions, mental methods, estimation, exact values, and algebraic manipulation."}
+
+STRUCTURE (match real Edexcel papers exactly):
+- 20–25 questions, numbered sequentially
+- Total: 80 marks
+- Questions progress from easy (1–2 marks) to hard (5–6 marks)
+- Multi-part questions should use (a), (b), (c) labelling
+- Include a variety of command words: "Work out", "Calculate", "Show that", "Prove", "Explain why", "Give a reason"
+
+QUESTION TYPES TO INCLUDE:
+1. **Number & calculation**: fractions, percentages, ratio, proportion, standard form, indices
+2. **Algebra**: solving equations, inequalities, sequences, rearranging formulae, simultaneous equations${tier === "Higher" ? ", algebraic fractions, iteration" : ""}
+3. **Graphs**: interpret or sketch ${isCalc ? "scatter graphs, cumulative frequency, histograms" : "linear graphs, quadratic sketches, real-life graphs"}${tier === "Higher" ? ", describe transformations of graphs" : ""}
+4. **Geometry**: angles, area/perimeter, volume, Pythagoras, trigonometry${tier === "Higher" ? ", circle theorems, vectors, congruence/similarity proofs" : ""}
+5. **Statistics & Probability**: averages, probability trees/Venn diagrams, relative frequency${tier === "Higher" ? ", conditional probability, histograms with frequency density" : ""}
+6. **Problem-solving**: at least 3–4 questions requiring multi-step reasoning with "Show that" or contextual scenarios
+
+FOR GRAPH/DIAGRAM QUESTIONS: Describe the graph or diagram clearly in text. For example:
+- "The graph shows a straight line passing through (0, 3) and (4, 11)"
+- "A right-angled triangle has sides of 5 cm, 12 cm, and hypotenuse h cm"
+- "The table below shows the frequency distribution: ..."
+Students should be able to answer based on your text description.
+
+IMPORTANT FORMATTING: Each question MUST follow this exact pattern on its own line:
+Question 1 [2 marks]
+Question 2 [3 marks]
+Question 3a [1 marks]
+Question 3b [2 marks]
+
+Do NOT wrap question headers in bold/asterisks. Write them exactly as shown above.
+Make questions topical, realistic, and exam-authentic.`;
+};
+
+const ECON_PAPER_PROMPT = (paperLabel: string) =>
+  `Generate a full AQA A-Level Economics predicted exam paper for ${paperLabel}.
+
+This must be a realistic, full-length predicted paper in the exact AQA format:
+- For Paper 1 & 2: Include Section A (data response with context/extract and short-answer questions) AND Section B (essay questions worth 25 marks each, with "Discuss", "Evaluate", or "To what extent" stems). Total marks should be 80.
+- For Paper 3: Include Section A (multiple choice, 30 questions worth 1 mark each) AND Section B (case study with data response questions and an essay question). Total marks should be 80.
+
+IMPORTANT FORMATTING: Each question MUST follow this exact format on its own line:
+Question 1.1 [2 marks]
+Question 1.2 [4 marks]
+etc.
+
+Include any data/extracts needed before the questions. Make questions topical based on likely 2025 exam themes. Format clearly with headings for each section.`;
+
 export default function PredictedPapers() {
   const { user, subscribed, profile, refreshProfile } = useAuth();
   const { subject, subjectLabel, examBoard, level } = useSubject();
   const navigate = useNavigate();
   const [paper, setPaper] = useState("1");
+  const [tier, setTier] = useState<"Foundation" | "Higher">("Higher");
   const [generatedPaper, setGeneratedPaper] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [step, setStep] = useState<"select" | "paper">("select");
@@ -41,8 +99,8 @@ export default function PredictedPapers() {
   const remaining = FREE_LIMITS.predictedPapers - used;
 
   const paperOptions = paperOptionsBySubject[subject];
+  const isMaths = subject === "maths";
 
-  // Reset when subject changes
   useEffect(() => { reset(); }, [subject]);
 
   const generatePaper = async () => {
@@ -57,36 +115,11 @@ export default function PredictedPapers() {
 
     const selectedPaper = paperOptions.find((p) => p.value === paper);
     const paperLabel = selectedPaper ? `${selectedPaper.label}: ${selectedPaper.title}` : `Paper ${paper}`;
+    const isCalc = paper !== "1";
 
-    const prompt = subject === "maths"
-      ? `Generate a full Edexcel GCSE Maths predicted exam paper for ${paperLabel}.
-
-This must be a realistic, full-length predicted paper in the exact Edexcel (1MA1) format:
-- ${paper === "1" ? "This is a NON-CALCULATOR paper." : "This is a CALCULATOR paper."}
-- Include approximately 20-25 questions of increasing difficulty
-- Cover a mix of topics: Number, Algebra, Ratio & Proportion, Geometry, Statistics, Probability
-- Include both Foundation and Higher crossover questions, with harder questions at the end
-- Total marks should be 80
-- Questions should progress from 1-2 mark questions to 5-6 mark extended problems
-
-IMPORTANT FORMATTING: Each question MUST follow this exact format on its own line:
-Question 1 [2 marks]
-Question 2 [3 marks]
-etc.
-
-Make questions topical and realistic. Format clearly with any diagrams described in text.`
-      : `Generate a full AQA A-Level Economics predicted exam paper for ${paperLabel}.
-
-This must be a realistic, full-length predicted paper in the exact AQA format:
-- For Paper 1 & 2: Include Section A (data response with context/extract and short-answer questions) AND Section B (essay questions worth 25 marks each, with "Discuss", "Evaluate", or "To what extent" stems). Total marks should be 80.
-- For Paper 3: Include Section A (multiple choice, 30 questions worth 1 mark each) AND Section B (case study with data response questions and an essay question). Total marks should be 80.
-
-IMPORTANT FORMATTING: Each question MUST follow this exact format on its own line:
-Question 1.1 [2 marks]
-Question 1.2 [4 marks]
-etc.
-
-Include any data/extracts needed before the questions. Make questions topical based on likely 2025 exam themes. Format clearly with headings for each section.`;
+    const prompt = isMaths
+      ? MATHS_PAPER_PROMPT(paperLabel, isCalc, tier)
+      : ECON_PAPER_PROMPT(paperLabel);
 
     await streamChat({
       messages: [{ role: "user", content: prompt }],
@@ -110,27 +143,60 @@ Include any data/extracts needed before the questions. Make questions topical ba
       if (!answer?.trim()) { toast.error("Please write your answer first."); return; }
       setMarkingId(question.id);
 
-      let result = "";
-      await streamChat({
-        messages: [
-          {
-            role: "user",
-            content: `You are marking a ${examBoard} ${level} ${subjectLabel} answer. Here is the context from the paper:\n\n${paperContext}\n\nHere is the question:\n${question.label} [${question.marks} marks]\n${question.text}\n\nHere is my answer:\n${answer}`,
-          },
-          {
-            role: "user",
-            content: `Mark my answer using ${examBoard} mark scheme criteria. You MUST respond in this exact structure with these three sections clearly labelled:
+      const markingPrompt = isMaths
+        ? `You are marking an Edexcel GCSE Maths (${tier} tier) answer.
+
+Here is the context from the paper:
+${paperContext}
+
+Here is the question:
+${question.label} [${question.marks} marks]
+${question.text}
+
+Here is the student's answer:
+${answer}
+
+Mark this answer using Edexcel mark scheme criteria. Award marks using:
+- **M marks** (method) — for correct approach/strategy
+- **A marks** (accuracy) — for correct answers following correct method
+- **B marks** (independent) — for correct results independent of method
+
+You MUST respond in this EXACT structure:
 
 ## Mark Scheme
-Give me a mark out of ${question.marks}. Explain the marking criteria and how my answer maps to each level/band. Speak DIRECTLY to me using "you" and "your" — never say "the student" or "the candidate".
+Give a mark out of ${question.marks}. List each M/A/B mark and whether it was awarded. If a mark was lost, explain exactly why. Use "you" and "your" — speak directly to the student.
 
 ## Model Answer
-Write a full top-band model answer that would score full marks for this question.${subject === "maths" ? " Show all working clearly step by step." : ""}
+Write a full model answer that would score ${question.marks}/${question.marks}. Show ALL working step by step. Use proper mathematical notation.
 
 ## Examiner Tip
-Give 2-3 specific, actionable tips for how I can improve. Address me directly. Be encouraging but honest about where I lost marks.`,
-          },
-        ],
+Give 2–3 specific, actionable tips. Mention common mistakes to avoid. Address the student directly.`
+        : `You are marking an AQA A-Level Economics answer.
+
+Here is the context from the paper:
+${paperContext}
+
+Here is the question:
+${question.label} [${question.marks} marks]
+${question.text}
+
+Here is my answer:
+${answer}
+
+Mark my answer using AQA mark scheme criteria. You MUST respond in this exact structure:
+
+## Mark Scheme
+Give me a mark out of ${question.marks}. Explain the marking criteria and how my answer maps to each level/band. Speak DIRECTLY to me using "you" and "your".
+
+## Model Answer
+Write a full top-band model answer that would score full marks for this question.
+
+## Examiner Tip
+Give 2-3 specific, actionable tips for how I can improve. Address me directly. Be encouraging but honest about where I lost marks.`;
+
+      let result = "";
+      await streamChat({
+        messages: [{ role: "user", content: markingPrompt }],
         mode: "grade",
         subject,
         onDelta: (chunk) => { result += chunk; },
@@ -160,7 +226,7 @@ Give 2-3 specific, actionable tips for how I can improve. Address me directly. B
         onError: (err) => { toast.error(err); setMarkingId(null); },
       });
     },
-    [answers, paperContext, feedbacks, subscribed, used, user?.id, refreshProfile, subject, examBoard, level, subjectLabel]
+    [answers, paperContext, feedbacks, subscribed, used, user?.id, refreshProfile, subject, tier, isMaths]
   );
 
   const reset = () => {
@@ -200,6 +266,13 @@ Give 2-3 specific, actionable tips for how I can improve. Address me directly. B
         <div className="space-y-6">
           <PaperSelector selected={paper} onSelect={setPaper} subject={subject} />
 
+          {isMaths && (
+            <div>
+              <h3 className="text-sm font-semibold text-foreground mb-3">Select Tier</h3>
+              <TierSelector selected={tier} onSelect={setTier} />
+            </div>
+          )}
+
           <div className="text-center space-y-2">
             {!subscribed && (
               <p className="text-sm text-muted-foreground">
@@ -225,7 +298,7 @@ Give 2-3 specific, actionable tips for how I can improve. Address me directly. B
               className="gap-2 px-8"
             >
               {isGenerating ? (
-                <><Sparkles className="h-4 w-4 animate-spin" /> Generating Paper...</>
+                <><Sparkles className="h-4 w-4 animate-spin" /> Generating {isMaths ? `${tier} ` : ""}Paper...</>
               ) : canUse ? (
                 <><Sparkles className="h-4 w-4" /> Generate Predicted Paper</>
               ) : (
@@ -240,7 +313,7 @@ Give 2-3 specific, actionable tips for how I can improve. Address me directly. B
         <Card className="mt-6">
           <CardContent className="p-6">
             <div className="prose prose-sm max-w-none dark:prose-invert">
-              <ReactMarkdown>{generatedPaper}</ReactMarkdown>
+              <MathsMarkdown>{generatedPaper}</MathsMarkdown>
             </div>
           </CardContent>
         </Card>
@@ -252,7 +325,7 @@ Give 2-3 specific, actionable tips for how I can improve. Address me directly. B
             <Card>
               <CardContent className="p-6">
                 <div className="prose prose-sm max-w-none dark:prose-invert">
-                  <ReactMarkdown>{paperContext}</ReactMarkdown>
+                  <MathsMarkdown>{paperContext}</MathsMarkdown>
                 </div>
               </CardContent>
             </Card>
@@ -267,6 +340,7 @@ Give 2-3 specific, actionable tips for how I can improve. Address me directly. B
               onMark={() => markQuestion(q)}
               isMarking={markingId === q.id}
               feedback={feedbacks[q.id] || null}
+              showMathTools={isMaths}
             />
           ))}
 
