@@ -1,7 +1,7 @@
 import type { Subject } from "@/contexts/SubjectContext";
 
 /* ── Predicted Papers: paper options per subject ── */
-export const paperOptionsBySubject = {
+export const paperOptionsBySubject: Record<Subject, { value: string; label: string; title: string; desc: string }[]> = {
   economics: [
     { value: "1", label: "Paper 1", title: "Markets & Market Failure", desc: "Microeconomics — supply & demand, elasticity, market failure, government intervention" },
     { value: "2", label: "Paper 2", title: "National & International Economy", desc: "Macroeconomics — GDP, inflation, unemployment, fiscal & monetary policy, trade" },
@@ -12,7 +12,11 @@ export const paperOptionsBySubject = {
     { value: "2", label: "Paper 2", title: "Calculator (1)", desc: "Calculator paper — number, algebra, ratio, proportion, geometry, probability & statistics" },
     { value: "3", label: "Paper 3", title: "Calculator (2)", desc: "Calculator paper — number, algebra, ratio, proportion, geometry, probability & statistics" },
   ],
-} as const;
+  chemistry: [
+    { value: "1", label: "Paper 1", title: "Topics 1–5", desc: "Atomic structure, bonding, quantitative chemistry, chemical changes, energy changes" },
+    { value: "2", label: "Paper 2", title: "Topics 6–10", desc: "Rate & extent, organic chemistry, chemical analysis, chemistry of the atmosphere, using resources" },
+  ],
+};
 
 /* ── Practice: topics per subject ── */
 export const topicsBySubject: Record<Subject, string[]> = {
@@ -36,12 +40,23 @@ export const topicsBySubject: Record<Subject, string[]> = {
     "Probability — Single & Combined Events", "Probability — Tree Diagrams & Venn Diagrams",
     "Statistics — Averages & Spread", "Statistics — Charts & Graphs", "Statistics — Cumulative Frequency & Box Plots",
   ],
+  chemistry: [
+    "Atomic Structure & The Periodic Table", "Electronic Structure",
+    "Bonding, Structure & Properties of Matter", "Ionic Bonding", "Covalent Bonding", "Metallic Bonding",
+    "Quantitative Chemistry — Moles & Calculations", "Chemical Changes — Acids & Bases",
+    "Chemical Changes — Electrolysis", "Reactivity Series & Extraction of Metals",
+    "Energy Changes — Exothermic & Endothermic", "Rates of Reaction",
+    "Equilibrium & Le Chatelier's Principle", "Organic Chemistry — Crude Oil & Hydrocarbons",
+    "Chemical Analysis — Chromatography & Tests", "Chemistry of the Atmosphere",
+    "Using Resources — Potable Water & Life Cycle Assessments",
+  ],
 };
 
 /* ── Practice: question styles per subject ── */
 export const stylesBySubject: Record<Subject, string[]> = {
   economics: ["Multiple Choice", "Short Answer (Data Response)", "Essay Question"],
   maths: ["Multiple Choice", "Short Answer (1–3 marks)", "Multi-step Problem (4–5 marks)"],
+  chemistry: ["Multiple Choice", "Short Answer (1–3 marks)", "Extended Response (6 marks)", "Required Practical"],
 };
 
 /* ── Essay Grader: question types per subject ── */
@@ -53,5 +68,10 @@ export const questionTypesBySubject: Record<Subject, string[]> = {
   maths: [
     "1–2 mark short answer", "3–4 mark method question",
     "5–6 mark multi-step problem", "Problem-solving / reasoning",
+  ],
+  chemistry: [
+    "1–2 mark recall", "3–4 mark application",
+    "6-mark extended response", "Required practical question",
+    "Calculation question", "Balanced equation question",
   ],
 };

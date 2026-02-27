@@ -10,7 +10,7 @@ export async function streamChat({
 }: {
   messages: Msg[];
   mode?: "tutor" | "grade" | "practice";
-  subject?: "economics" | "maths";
+  subject?: "economics" | "maths" | "chemistry";
   onDelta: (text: string) => void;
   onDone: () => void;
   onError?: (error: string) => void;

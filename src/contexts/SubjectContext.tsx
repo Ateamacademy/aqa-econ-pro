@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 
-export type Subject = "economics" | "maths";
+export type Subject = "economics" | "maths" | "chemistry";
 
 interface SubjectContextType {
   subject: Subject;
@@ -20,15 +20,19 @@ const SubjectContext = createContext<SubjectContextType>({
 
 export const useSubject = () => useContext(SubjectContext);
 
+const SUBJECT_META: Record<Subject, { label: string; board: string; level: string }> = {
+  economics: { label: "Economics", board: "AQA", level: "A-Level" },
+  maths: { label: "Maths", board: "Edexcel", level: "GCSE" },
+  chemistry: { label: "Chemistry", board: "AQA", level: "GCSE" },
+};
+
 export function SubjectProvider({ children }: { children: ReactNode }) {
   const [subject, setSubject] = useState<Subject>("economics");
 
-  const subjectLabel = subject === "economics" ? "Economics" : "Maths";
-  const examBoard = subject === "economics" ? "AQA" : "Edexcel";
-  const level = subject === "economics" ? "A-Level" : "GCSE";
+  const meta = SUBJECT_META[subject];
 
   return (
-    <SubjectContext.Provider value={{ subject, setSubject, subjectLabel, examBoard, level }}>
+    <SubjectContext.Provider value={{ subject, setSubject, subjectLabel: meta.label, examBoard: meta.board, level: meta.level }}>
       {children}
     </SubjectContext.Provider>
   );

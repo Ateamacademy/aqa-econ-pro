@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { BookOpen, Brain, FileText, GraduationCap, LayoutDashboard, MessageCircle, PenTool, LogIn, LogOut, Crown, Sparkles, Calculator } from "lucide-react";
+import { BookOpen, Brain, FileText, GraduationCap, LayoutDashboard, MessageCircle, PenTool, LogIn, LogOut, Crown, Sparkles, Calculator, FlaskConical } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -19,7 +19,9 @@ const baseNavItems = [
 function getNavItems(subject: Subject) {
   const papersItem = subject === "economics"
     ? { to: "/papers", label: "Econ Papers", icon: FileText }
-    : { to: "/maths-papers", label: "Maths Papers", icon: Calculator };
+    : subject === "maths"
+    ? { to: "/maths-papers", label: "Maths Papers", icon: Calculator }
+    : { to: "/chemistry-papers", label: "Chem Papers", icon: FlaskConical };
 
   return [
     baseNavItems[0],
@@ -28,11 +30,17 @@ function getNavItems(subject: Subject) {
   ];
 }
 
+const SUBJECTS: { value: Subject; label: string }[] = [
+  { value: "economics", label: "Economics" },
+  { value: "maths", label: "Maths" },
+  { value: "chemistry", label: "Chemistry" },
+];
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const { user, subscribed, signOut } = useAuth();
-  const { subject, setSubject, subjectLabel } = useSubject();
+  const { subject, setSubject } = useSubject();
 
   const navItems = getNavItems(subject);
 
@@ -43,30 +51,24 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Link to="/" className="flex items-center gap-2">
             <GraduationCap className="h-7 w-7 text-accent" />
             <span className="font-serif text-xl font-normal tracking-tight">
-              Econ<span className="text-accent">Ace</span>
+              Exam<span className="text-accent">Ace</span>
             </span>
           </Link>
 
           {/* Subject switcher */}
           <div className="hidden md:flex items-center bg-muted rounded-full p-0.5 gap-0.5">
-            <button
-              onClick={() => setSubject("economics")}
-              className={cn(
-                "px-3 py-1 rounded-full text-xs font-medium transition-colors",
-                subject === "economics" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
-              )}
-            >
-              Economics
-            </button>
-            <button
-              onClick={() => setSubject("maths")}
-              className={cn(
-                "px-3 py-1 rounded-full text-xs font-medium transition-colors",
-                subject === "maths" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
-              )}
-            >
-              Maths
-            </button>
+            {SUBJECTS.map((s) => (
+              <button
+                key={s.value}
+                onClick={() => setSubject(s.value)}
+                className={cn(
+                  "px-3 py-1 rounded-full text-xs font-medium transition-colors",
+                  subject === s.value ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                )}
+              >
+                {s.label}
+              </button>
+            ))}
           </div>
 
           <nav className="hidden lg:flex items-center gap-1">
@@ -121,24 +123,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <nav className="lg:hidden border-t bg-card p-2 flex flex-col gap-1">
             {/* Mobile subject switcher */}
             <div className="flex items-center bg-muted rounded-full p-0.5 gap-0.5 mb-2 mx-3">
-              <button
-                onClick={() => setSubject("economics")}
-                className={cn(
-                  "flex-1 px-3 py-1.5 rounded-full text-xs font-medium transition-colors text-center",
-                  subject === "economics" ? "bg-primary text-primary-foreground" : "text-muted-foreground"
-                )}
-              >
-                Economics
-              </button>
-              <button
-                onClick={() => setSubject("maths")}
-                className={cn(
-                  "flex-1 px-3 py-1.5 rounded-full text-xs font-medium transition-colors text-center",
-                  subject === "maths" ? "bg-primary text-primary-foreground" : "text-muted-foreground"
-                )}
-              >
-                Maths
-              </button>
+              {SUBJECTS.map((s) => (
+                <button
+                  key={s.value}
+                  onClick={() => setSubject(s.value)}
+                  className={cn(
+                    "flex-1 px-2 py-1.5 rounded-full text-xs font-medium transition-colors text-center",
+                    subject === s.value ? "bg-primary text-primary-foreground" : "text-muted-foreground"
+                  )}
+                >
+                  {s.label}
+                </button>
+              ))}
             </div>
 
             {navItems.map((item) => {
@@ -175,7 +171,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <footer className="border-t bg-card py-6">
         <div className="container text-center text-sm text-muted-foreground">
-          <p>EconAce — AQA A-Level Economics & Edexcel GCSE Maths Revision Platform</p>
+          <p>ExamAce — AQA A-Level Economics · Edexcel GCSE Maths · AQA GCSE Chemistry</p>
         </div>
       </footer>
     </div>

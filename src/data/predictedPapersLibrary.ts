@@ -5,7 +5,7 @@
 
 export interface PredictedPaper {
   id: string;
-  subject: "maths" | "economics";
+  subject: "maths" | "economics" | "chemistry";
   paper: string; // "1" | "2" | "3"
   tier?: "Foundation" | "Higher";
   title: string;
@@ -771,5 +771,29 @@ Question 2 [25 marks]
 
 Question 3 [25 marks]
 Evaluate the view that economic growth inevitably leads to environmental degradation.`,
+  },
+
+  // ── CHEMISTRY PAPER 1: Higher ──
+  {
+    id: "chem-p1-higher-a",
+    subject: "chemistry",
+    paper: "1",
+    tier: "Higher",
+    title: "Chem Paper 1 Higher — Set A",
+    description: "Topics 1–5: Atomic structure, bonding, quantitative chemistry, chemical changes, energy.",
+    totalMarks: 100,
+    content: `# AQA GCSE Chemistry (8462) — Paper 1 Higher — Set A\n\n**Time: 1 hour 45 minutes | Total: 100 marks**\n\nQuestion 1 [1 marks]\nWhat is the atomic number of an element?\n\nQuestion 2 [2 marks]\nDraw the electronic structure of a sodium atom (atomic number 11).\n\nQuestion 3 [2 marks]\nExplain why elements in the same group have similar chemical properties.\n\nQuestion 4 [3 marks]\nDescribe the bonding in sodium chloride.\n\nQuestion 5 [2 marks]\nState two properties of ionic compounds.\n\nQuestion 6a [1 marks]\nDefine relative formula mass.\n\nQuestion 6b [2 marks]\nCalculate the relative formula mass of CaCO₃. (Ar: Ca=40, C=12, O=16)\n\nQuestion 7 [3 marks]\nBalance: Fe₂O₃ + C → Fe + CO₂\n\nQuestion 8 [4 marks]\nCalculate the number of moles in 5.6 g of iron. (Ar: Fe=56)\n\nQuestion 9 [3 marks]\nDescribe the test for hydrogen gas.\n\nQuestion 10 [4 marks]\nCalculate the mass of NaCl produced when 25.0 cm³ of 0.1 mol/dm³ HCl reacts with excess NaOH. (Mr NaCl=58.5)\n\nQuestion 11 [3 marks]\nOrder by reactivity (most first): copper, magnesium, zinc, iron.\n\nQuestion 12 [4 marks]\nDescribe how copper is purified by electrolysis.\n\nQuestion 13 [3 marks]\nExplain why HCl + NaOH is exothermic.\n\nQuestion 14 [6 marks]\nCompare ionic and covalent bonding. Describe how each forms, give examples, and explain how bonding affects properties.\n\nQuestion 15 [4 marks]\n25.0 cm³ of NaOH is neutralised by 20.0 cm³ of 0.5 mol/dm³ H₂SO₄. Calculate the concentration of NaOH. (2NaOH + H₂SO₄ → Na₂SO₄ + 2H₂O)\n\nQuestion 16 [3 marks]\nExplain why graphite conducts electricity but diamond does not.\n\nQuestion 17 [4 marks]\nCalculate atom economy for: 2Fe₂O₃ + 3C → 4Fe + 3CO₂\n\nQuestion 18 [3 marks]\nName the flame test colours for lithium, sodium, and potassium.\n\nQuestion 19 [4 marks]\nTheoretical yield is 15.0 g, actual yield is 12.3 g. Calculate percentage yield.\n\nQuestion 20 [3 marks]\nExplain oxidation and reduction in terms of electrons.`,
+  },
+
+  // ── CHEMISTRY PAPER 2: Higher ──
+  {
+    id: "chem-p2-higher-a",
+    subject: "chemistry",
+    paper: "2",
+    tier: "Higher",
+    title: "Chem Paper 2 Higher — Set A",
+    description: "Topics 6–10: Rates, organic chemistry, analysis, atmosphere, resources.",
+    totalMarks: 100,
+    content: `# AQA GCSE Chemistry (8462) — Paper 2 Higher — Set A\n\n**Time: 1 hour 45 minutes | Total: 100 marks**\n\nQuestion 1 [2 marks]\nState two ways to increase the rate of a chemical reaction.\n\nQuestion 2 [3 marks]\nUsing collision theory, explain why increasing temperature increases rate.\n\nQuestion 3 [3 marks]\nDescribe how to measure the volume of gas produced over time.\n\nQuestion 4 [4 marks]\nSketch a graph of volume of gas vs time. Add a second line for higher temperature.\n\nQuestion 5 [2 marks]\nWhat is a catalyst? Give one industrial example.\n\nQuestion 6 [3 marks]\nDescribe how fractional distillation separates crude oil.\n\nQuestion 7 [2 marks]\nWrite the general formula for alkanes. Draw the displayed formula of propane.\n\nQuestion 8 [3 marks]\nWrite a balanced equation for complete combustion of methane.\n\nQuestion 9 [4 marks]\nExplain what cracking is and why it is carried out.\n\nQuestion 10 [3 marks]\nDescribe the test for an alkene. State the reagent and colour change.\n\nQuestion 11 [4 marks]\nAn Rf value is 0.65. The solvent front is 12.0 cm. Calculate the distance the spot travelled.\n\nQuestion 12 [3 marks]\nDescribe flame emission spectroscopy and state one advantage over flame tests.\n\nQuestion 13 [4 marks]\nDescribe how Earth's atmosphere has changed since formation.\n\nQuestion 14 [3 marks]\nExplain how human activities increase CO₂ levels.\n\nQuestion 15 [6 marks]\nEvaluate hydrogen as a fuel compared to petrol.\n\nQuestion 16 [4 marks]\nDescribe how potable water is produced from fresh water in the UK.\n\nQuestion 17 [3 marks]\nWhat is a life cycle assessment? State three factors it considers.\n\nQuestion 18 [3 marks]\nExplain what a reversible reaction is.\n\nQuestion 19 [4 marks]\nN₂(g) + 3H₂(g) ⇌ 2NH₃(g) (exothermic). Explain the effect of increasing pressure on yield.\n\nQuestion 20 [3 marks]\nDescribe the test for sulfate ions.`,
   },
 ];
