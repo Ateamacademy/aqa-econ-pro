@@ -9,6 +9,7 @@ import Layout from "@/components/Layout";
 import Index from "./pages/Index";
 import PastPapers from "./pages/PastPapers";
 import MathsPastPapers from "./pages/MathsPastPapers";
+import ChemistryPastPapers from "./pages/ChemistryPastPapers";
 import AITutor from "./pages/AITutor";
 import EssayGrader from "./pages/EssayGrader";
 import Practice from "./pages/Practice";
@@ -35,6 +36,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/papers" element={<PastPapers />} />
               <Route path="/maths-papers" element={<MathsPastPapers />} />
+              <Route path="/chemistry-papers" element={<ChemistryPastPapers />} />
               <Route path="/predicted" element={<PredictedPapers />} />
               <Route path="/tutor" element={<AITutor />} />
               <Route path="/grader" element={<EssayGrader />} />

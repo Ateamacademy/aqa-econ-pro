@@ -80,6 +80,22 @@ etc.
 
 Include any data/extracts needed before the questions. Make questions topical based on likely 2025 exam themes. Format clearly with headings for each section.`;
 
+const CHEM_PAPER_PROMPT = (paperLabel: string, tier: "Foundation" | "Higher") => {
+  const tierDesc = tier === "Foundation"
+    ? "Foundation tier (grades 1–5). Avoid higher-only content like moles calculations and titration calculations."
+    : "Higher tier (grades 4–9). Include moles calculations, concentration, titration, rate tangent method.";
+  return `Generate a full AQA GCSE Chemistry (8462) predicted exam paper for ${paperLabel}.
+TIER: ${tierDesc}
+STRUCTURE: Total 100 marks. Mix of multiple choice (~15 marks) and structured questions (~85 marks). Include a 6-mark extended response. Multi-part questions use (a), (b), (c).
+Include balanced equations with state symbols. Use correct formulae.
+IMPORTANT FORMATTING: Each question MUST follow this exact pattern:
+Question 1 [1 marks]
+Question 2 [2 marks]
+Question 3a [1 marks]
+Question 3b [3 marks]
+Make questions exam-authentic.`;
+};
+
 export default function PredictedPapers() {
   const { user, subscribed, profile, refreshProfile } = useAuth();
   const { subject, subjectLabel, examBoard, level } = useSubject();
@@ -105,6 +121,8 @@ export default function PredictedPapers() {
 
   const paperOptions = paperOptionsBySubject[subject];
   const isMaths = subject === "maths";
+  const isChemistry = subject === "chemistry";
+  const isEconomics = subject === "economics";
 
   const libraryPapers = useMemo(
     () => predictedPapersLibrary.filter((p) => p.subject === subject),
@@ -141,6 +159,8 @@ export default function PredictedPapers() {
 
     const prompt = isMaths
       ? MATHS_PAPER_PROMPT(paperLabel, isCalc, tier)
+      : isChemistry
+      ? CHEM_PAPER_PROMPT(paperLabel, tier)
       : ECON_PAPER_PROMPT(paperLabel);
 
     await streamChat({
@@ -329,7 +349,7 @@ Give 2-3 specific, actionable tips for how I can improve. Address me directly. B
           <TabsContent value="generate" className="space-y-6">
             <PaperSelector selected={paper} onSelect={setPaper} subject={subject} />
 
-            {isMaths && (
+            {(isMaths || isChemistry) && (
               <div>
                 <h3 className="text-sm font-semibold text-foreground mb-3">Select Tier</h3>
                 <TierSelector selected={tier} onSelect={setTier} />
@@ -410,7 +430,12 @@ Give 2-3 specific, actionable tips for how I can improve. Address me directly. B
               onMark={() => markQuestion(q)}
               isMarking={markingId === q.id}
               feedback={feedbacks[q.id] || null}
-              showMathTools={isMaths}
+              showMathTools={isMaths || isChemistry}
+              showEconDiagram={isEconomics}
+              showDrawingCanvas={isMaths || isChemistry}
+              showGraphPaper={isMaths}
+              showGeometryTools={isMaths}
+              subject={subject}
             />
           ))}
 

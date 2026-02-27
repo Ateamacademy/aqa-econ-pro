@@ -200,11 +200,17 @@ export default function StudyNotes() {
             <BookOpen className="h-5 w-5 text-primary" /> Paper 1 — Markets & Market Failure
           </h2>
           {renderTopics(econPaper1Topics, "p1")}
-
           <h2 className="font-serif text-2xl mb-4 mt-8 flex items-center gap-2">
             <BookOpen className="h-5 w-5 text-accent" /> Paper 2 — National & International Economy
           </h2>
           {renderTopics(econPaper2Topics, "p2")}
+        </>
+      ) : subject === "chemistry" ? (
+        <>
+          <h2 className="font-serif text-2xl mb-4 flex items-center gap-2">
+            <BookOpen className="h-5 w-5 text-primary" /> Atomic Structure & Bonding
+          </h2>
+          <p className="text-sm text-muted-foreground mb-4">Chemistry study notes coming soon. Use the AI Tutor to ask questions on any topic.</p>
         </>
       ) : (
         <>
@@ -212,22 +218,18 @@ export default function StudyNotes() {
             <BookOpen className="h-5 w-5 text-primary" /> Number
           </h2>
           {renderTopics(mathsNumberTopics, "num")}
-
           <h2 className="font-serif text-2xl mb-4 mt-8 flex items-center gap-2">
             <BookOpen className="h-5 w-5 text-accent" /> Algebra
           </h2>
           {renderTopics(mathsAlgebraTopics, "alg")}
-
           <h2 className="font-serif text-2xl mb-4 mt-8 flex items-center gap-2">
             <BookOpen className="h-5 w-5 text-primary" /> Ratio, Proportion & Rates of Change
           </h2>
           {renderTopics(mathsRatioTopics, "rat")}
-
           <h2 className="font-serif text-2xl mb-4 mt-8 flex items-center gap-2">
             <BookOpen className="h-5 w-5 text-accent" /> Geometry & Measures
           </h2>
           {renderTopics(mathsGeometryTopics, "geo")}
-
           <h2 className="font-serif text-2xl mb-4 mt-8 flex items-center gap-2">
             <BookOpen className="h-5 w-5 text-primary" /> Probability & Statistics
           </h2>
