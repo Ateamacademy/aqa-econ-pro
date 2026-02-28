@@ -1881,7 +1881,18 @@ Without a calculator, find the exact value of $\\tan 60° + \\cos 30°$. Simplif
 
 Question 21 [4 marks]
 The quadratic sequence begins: 5, 11, 21, 35, ...
-Find the nth term.`,
+Find the nth term.
+
+Question 22 [5 marks]
+The diagram shows a solid cylinder on a horizontal floor.
+
+The cylinder has a height of 40 cm and a volume of 1200 cm³.
+
+The cylinder exerts a force of 90 newtons on the floor.
+
+$$\\text{pressure} = \\dfrac{\\text{force}}{\\text{area}}$$
+
+Work out the pressure on the floor due to the cylinder. Give your answer in newtons per cm². Show all your working.`,
   },
 
   // ── MATHS PAPER 3: Higher — Set B ──
@@ -2124,12 +2135,14 @@ Plot the graph of $y = 3x - 2$ for $x$ from $-1$ to $3$.
 
 What is the gradient of the line?
 
-Question 16 [4 marks]
-Bottles of water are sold in two sizes:
-- 500 ml for 85p
-- 2 litres for £3.00
+Question 16 [3 marks]
+Batteries are sold in packs of 4, in packs of 8, and in packs of 12.
 
-Which is better value? Show your working.
+A pack of 4 batteries costs £1.80
+A pack of 8 batteries costs £3.20
+A pack of 12 batteries costs £6.00
+
+Which pack gives the best value for money? You must show how you get your answer.
 
 Question 17 [3 marks]
 A circle has radius 8.5 cm. Calculate the circumference. Give your answer to 1 decimal place.
@@ -2598,6 +2611,20 @@ A student heats copper carbonate:
 CuCO₃(s) → CuO(s) + CO₂(g)
 
 Describe what you would observe. Explain why this is a thermal decomposition reaction.
+
+Question 15b [2 marks]
+The reaction profile below shows the reaction between ammonia and oxygen:
+
+**Reaction profile (Figure 8):**
+- x-axis: Progress of reaction
+- y-axis: Energy
+- Reactants labelled: 4NH₃ + 3O₂ (at a higher energy level on the left)
+- The curve rises to a peak (activation energy barrier), then drops
+- Products labelled: 2N₂ + 6H₂O (at a lower energy level on the right)
+
+Complete the diagram by labelling:
+- the activation energy
+- the overall energy change
 
 Question 16 [4 marks]
 The graph shows a neutralisation curve (pH vs volume of acid added):
