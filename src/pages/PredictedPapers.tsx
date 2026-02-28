@@ -46,14 +46,14 @@ STRUCTURE (match real Edexcel papers EXACTLY):
 QUESTION TYPES TO INCLUDE (ensure EVERY category appears):
 1. **Number & calculation**: fractions, percentages, ratio, proportion, standard form, indices
 2. **Algebra**: solving equations, inequalities, sequences, rearranging formulae, simultaneous equations${tier === "Higher" ? ", algebraic fractions, iteration" : ""}
-3. **Graphs & diagrams** (AT LEAST 5 questions — this is critical):
+3. **Graphs & diagrams** (AT LEAST 6 questions — this is critical):
    - ${isCalc ? "Scatter diagrams with data tables — ask to describe correlation, draw line of best fit, estimate values, explain reliability of extrapolation" : "Linear graphs — complete a table of values, plot and draw the graph, find gradient and y-intercept"}
    - ${tier === "Higher" ? "Quadratic/cubic graphs — describe key features (turning points, roots, y-intercept), solve equations graphically, sketch transformations y=f(x)+a, y=f(x+a), y=-f(x)" : "Real-life graphs — interpret conversion graphs, read off values"}
    - Velocity-time or distance-time graphs — calculate speed/acceleration/distance from areas and gradients
    - ${isCalc ? "Cumulative frequency diagrams — draw from grouped data table, find median and IQR from graph" : "Bar charts, pictograms, or frequency diagrams — read and interpret"}
    - ${isCalc ? "Histograms with unequal class widths — calculate frequency density, draw histogram, estimate frequencies" : "Pie charts — calculate angles, interpret sectors"}
    - ${tier === "Higher" ? "Box plots — compare two distributions using median, range, IQR" : ""}
-   For EVERY graph question: describe the graph in detail with specific data points, axis labels, and scale so students can answer from the text description alone.
+   For EVERY graph question: provide enough numerical information so it can be answered from text alone.
 4. **Geometry**: angles, area/perimeter, volume, Pythagoras, trigonometry${tier === "Higher" ? ", circle theorems, vectors, congruence/similarity proofs, frustums" : ""}
    - Include at least one diagram question with specific measurements (e.g., "The diagram shows a cylinder with radius r cm and height h cm...")
    - For compound shapes, describe each component precisely
@@ -62,6 +62,9 @@ QUESTION TYPES TO INCLUDE (ensure EVERY category appears):
    - "Show that" questions with algebraic proof
    - "Best value for money" comparison questions with specific pack sizes and prices
    - Contextual multi-step problems (e.g., pressure = force ÷ area with cylinder dimensions)
+7. **Past-paper authenticity**:
+   - Mirror Edexcel GCSE style from 2018–2024 papers and specimen material
+   - Include at least 3 questions formatted as exam resources with "Figure" or "Table" headings and clear data beneath
 
 IMPORTANT FORMATTING — FOLLOW EXACTLY:
 Question 1 [2 marks]
@@ -70,7 +73,7 @@ Question 3a [1 marks]
 Question 3b [2 marks]
 
 Do NOT wrap question headers in bold/asterisks. Write them exactly as shown above.
-Each question must be self-contained — never reference a physical diagram the student cannot see. Instead, describe all visual information in text.
+Use realistic Figure/Table blocks where appropriate, but always include all required data in text so the question is fully answerable.
 Make questions topical, varied, and exam-authentic. Avoid repeating similar question types.`;
 };
 
@@ -119,16 +122,21 @@ STRUCTURE (match real AQA papers EXACTLY):
 - Questions should cover the relevant topics for this paper
 - Paper 1: Topics 1–5 (Atomic structure, Bonding, Quantitative chemistry, Chemical changes, Energy changes)
 - Paper 2: Topics 6–10 (Rate & extent, Organic chemistry, Chemical analysis, Atmosphere, Using resources)
+- Style must mirror AQA Chemistry papers from 2018–2024 plus specimen material (clear exam language, realistic data, and authentic command words)
 
-GRAPH & DIAGRAM QUESTIONS (CRITICAL — at least 5 questions must involve graphs/diagrams):
-1. **Reaction profile diagrams**: Describe a reaction profile with energy on y-axis, progress of reaction on x-axis. Specify reactant and product energy levels numerically (e.g., "Reactants: 150 kJ, Peak: 250 kJ, Products: 80 kJ"). Ask students to label activation energy, overall energy change, and sketch the effect of a catalyst
-2. **Rate of reaction graphs**: Describe a curve of volume of gas (cm³) vs time (s) with specific data points (e.g., "At 10s: 25cm³, at 20s: 40cm³, at 40s: 55cm³, at 60s: 58cm³, at 80s: 58cm³"). For Higher: ask students to draw a tangent at a specific time and calculate the rate
-3. **Dot-and-cross diagrams**: Ask students to draw outer shell electrons for specific compounds (NaCl, H₂O, CO₂, MgCl₂). State clearly: "Show only outer shell electrons" or "Show the charges on the ions"
-4. **Chromatography / Rf values**: Describe a chromatogram with solvent front distance and spot distances. Ask students to calculate Rf values and identify unknown substances by comparison
-5. **Titration data tables**: Present titre results (rough + 3 concordant) with burette readings. Ask students to identify anomalous results, calculate mean titre, then calculate concentration
-6. **Temperature change graphs**: Describe neutralisation or dissolving experiments with temperature data. Ask students to calculate energy change using Q = mcΔT
-7. **Haber process yield curves** (Higher only): Describe yield (%) vs temperature curves at two different pressures with specific values. Ask students to explain the compromise conditions
-8. **Bar charts / data tables**: Include percentage composition data for empirical formula calculations
+GRAPH, IMAGE & FIGURE QUESTIONS (CRITICAL — at least 6 questions must involve graphs/diagrams/tables):
+1. **Reaction profile diagrams**: Describe a reaction profile with energy on y-axis, progress of reaction on x-axis. Specify reactant and product energy levels numerically (e.g., "Reactants: 150 kJ, Peak: 350 kJ, Products: 250 kJ"). Ask students to calculate activation energy and overall energy change
+2. **Bond-energy Figure/Table question (MANDATORY in Higher papers)**:
+   - Include a question in this exact style: a displayed formula equation for propane combustion, overall energy change given, and a bond-energy table with one unknown (X)
+   - Use this data format: C₃H₈ + 5O₂ → 3CO₂ + 4H₂O, overall energy change = −2219 kJ/mol, bond energies: C–C 347, C–H X, O=O 498, C=O 805, O–H 464 (kJ/mol)
+   - Ask: "Calculate the bond energy of the C–H bond (X). Show all working."
+3. **Rate of reaction graphs**: Describe a curve of volume of gas (cm³) vs time (s) with specific data points. For Higher: ask students to draw a tangent at a specific time and calculate the rate
+4. **Dot-and-cross diagrams**: Ask students to draw outer shell electrons for specific compounds (NaCl, H₂O, CO₂, MgCl₂). State clearly: "Show only outer shell electrons" or "Show the charges on the ions"
+5. **Chromatography / Rf values**: Describe a chromatogram with solvent front distance and spot distances. Ask students to calculate Rf values and identify unknown substances by comparison
+6. **Titration data tables**: Present titre results (rough + 3 concordant) with burette readings. Ask students to identify anomalous results, calculate mean titre, then calculate concentration
+7. **Temperature change graphs**: Describe neutralisation or dissolving experiments with temperature data. Ask students to calculate energy change using Q = mcΔT
+8. **Haber process yield curves** (Higher only): Describe yield (%) vs temperature curves at two different pressures with specific values. Ask students to explain compromise conditions
+9. **Bar charts / data tables**: Include percentage composition data for empirical formula calculations
 
 IMPORTANT FORMATTING — FOLLOW EXACTLY:
 Question 1 [1 marks]
@@ -136,7 +144,7 @@ Question 2 [2 marks]
 Question 3a [1 marks]
 Question 3b [3 marks]
 
-Do NOT wrap question headers in bold/asterisks. Include balanced equations with state symbols throughout. Use correct IUPAC naming. Every graph/diagram must be described with enough numerical detail for students to answer from text alone.`;
+Do NOT wrap question headers in bold/asterisks. Include balanced equations with state symbols throughout. Use correct IUPAC naming. Use Figure/Table headings where appropriate, but include enough numerical detail so questions are answerable from text alone.`;
 };
 
 export default function PredictedPapers() {
@@ -246,13 +254,20 @@ Mark this answer using Edexcel mark scheme criteria. Award marks using:
 - **A marks** (accuracy) — for correct answers following correct method
 - **B marks** (independent) — for correct results independent of method
 
+If this is a graph/diagram question, explicitly mark:
+- axis labels + units
+- sensible scales
+- correct plotted points/curve shape/gradient features
+- correct final reading or conclusion
+Use any student graph notes/diagram notes in their answer as marking evidence.
+
 You MUST respond in this EXACT structure:
 
 ## Mark Scheme
 Give a mark out of ${question.marks}. List each M/A/B mark and whether it was awarded. If a mark was lost, explain exactly why. Use "you" and "your" — speak directly to the student.
 
 ## Model Answer
-Write a full model answer that would score ${question.marks}/${question.marks}. Show ALL working step by step. Use proper mathematical notation.
+Write a full model answer that would score ${question.marks}/${question.marks}. Show ALL working step by step. For graph/diagram questions, include a concise Figure-style description of what should be drawn.
 
 ## Examiner Tip
 Give 2–3 specific, actionable tips. Mention common mistakes to avoid. Address the student directly.`
@@ -277,16 +292,23 @@ Mark this answer using AQA GCSE Chemistry mark scheme criteria. Award marks usin
 For 6-mark questions, use Level of Response marking (Level 1: 1-2, Level 2: 3-4, Level 3: 5-6).
 Check: balanced equations, state symbols, correct formulae, units, significant figures.
 
+If this is a graph/image/diagram question, explicitly mark:
+- axis labels + units
+- labelled curves/peaks/arrows and what they represent
+- correct values read from figure/table data
+- correct calculation chain from that data
+Use any student diagram notes or graph notes in their answer as valid evidence.
+
 You MUST respond in this EXACT structure:
 
 ## Mark Scheme
-Give a mark out of ${question.marks}. List each mark point and whether it was awarded. If a mark was lost, explain exactly why. Check for correct chemical notation, balanced equations, and state symbols. Use "you" and "your" — speak directly to the student.
+Give a mark out of ${question.marks}. List each mark point and whether it was awarded. If a mark was lost, explain exactly why. Check for correct chemical notation, balanced equations, state symbols, and figure/table interpretation. Use "you" and "your" — speak directly to the student.
 
 ## Model Answer
-Write a full model answer that would score ${question.marks}/${question.marks}. Include balanced equations with state symbols, correct units, and full working for any calculations.
+Write a full model answer that would score ${question.marks}/${question.marks}. Include balanced equations with state symbols, correct units, and full working for any calculations. For graph/diagram/image questions, include a clear Figure/Table-style description of the expected labels and values.
 
 ## Examiner Tip
-Give 2–3 specific, actionable tips. Mention common mistakes (e.g., forgetting state symbols, not balancing equations, missing units). Address the student directly.`
+Give 2–3 specific, actionable tips. Mention common mistakes (e.g., forgetting state symbols, not balancing equations, missing units, misreading graph axes). Address the student directly.`
         : `You are marking an AQA A-Level Economics answer.
 
 Here is the context from the paper:
