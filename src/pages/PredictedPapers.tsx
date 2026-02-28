@@ -29,98 +29,114 @@ const MATHS_PAPER_PROMPT = (paperLabel: string, isCalc: boolean, tier: "Foundati
     ? "Foundation tier (targeting grades 1–5). Questions should be accessible and build gradually. Include standard procedural questions, real-life context problems, and some reasoning questions. Avoid higher-only topics like surds, circle theorems, sine/cosine rule, and algebraic proof."
     : "Higher tier (targeting grades 4–9). Include a good mix of difficulty. Start with accessible crossover questions (grades 4–5), build through grades 6–7 questions, and finish with challenging grade 8–9 questions including proof, circle theorems, iteration, algebraic fractions, and advanced trigonometry.";
 
-  return `Generate a full, realistic Edexcel GCSE Maths (1MA1) predicted exam paper for ${paperLabel}.
+  return `You are an expert Edexcel GCSE Mathematics examiner. Generate a COMPLETE, REALISTIC predicted exam paper for ${paperLabel}.
 
 TIER: ${tierDesc}
 
 CALCULATOR: ${isCalc ? "YES — this is a CALCULATOR paper. Questions can involve complex arithmetic, trigonometry with decimals, statistical calculations, and iterative methods." : "NO — this is a NON-CALCULATOR paper. All arithmetic must be manageable by hand. Focus on fractions, mental methods, estimation, exact values, and algebraic manipulation."}
 
-STRUCTURE (match real Edexcel papers exactly):
+STRUCTURE (match real Edexcel papers EXACTLY):
 - 20–25 questions, numbered sequentially
 - Total: 80 marks
 - Questions progress from easy (1–2 marks) to hard (5–6 marks)
-- Multi-part questions should use (a), (b), (c) labelling
+- Multi-part questions use (a), (b), (c) labelling
 - Include a variety of command words: "Work out", "Calculate", "Show that", "Prove", "Explain why", "Give a reason"
+- Start with 3–4 short 1–2 mark "warm-up" questions, then build complexity
 
-QUESTION TYPES TO INCLUDE:
+QUESTION TYPES TO INCLUDE (ensure EVERY category appears):
 1. **Number & calculation**: fractions, percentages, ratio, proportion, standard form, indices
 2. **Algebra**: solving equations, inequalities, sequences, rearranging formulae, simultaneous equations${tier === "Higher" ? ", algebraic fractions, iteration" : ""}
-3. **Graphs**: interpret or sketch ${isCalc ? "scatter graphs, cumulative frequency, histograms" : "linear graphs, quadratic sketches, real-life graphs"}${tier === "Higher" ? ", describe transformations of graphs" : ""}
-4. **Geometry**: angles, area/perimeter, volume, Pythagoras, trigonometry${tier === "Higher" ? ", circle theorems, vectors, congruence/similarity proofs" : ""}
-5. **Statistics & Probability**: averages, probability trees/Venn diagrams, relative frequency${tier === "Higher" ? ", conditional probability, histograms with frequency density" : ""}
-6. **Problem-solving**: at least 3–4 questions requiring multi-step reasoning with "Show that" or contextual scenarios
+3. **Graphs & diagrams** (AT LEAST 5 questions — this is critical):
+   - ${isCalc ? "Scatter diagrams with data tables — ask to describe correlation, draw line of best fit, estimate values, explain reliability of extrapolation" : "Linear graphs — complete a table of values, plot and draw the graph, find gradient and y-intercept"}
+   - ${tier === "Higher" ? "Quadratic/cubic graphs — describe key features (turning points, roots, y-intercept), solve equations graphically, sketch transformations y=f(x)+a, y=f(x+a), y=-f(x)" : "Real-life graphs — interpret conversion graphs, read off values"}
+   - Velocity-time or distance-time graphs — calculate speed/acceleration/distance from areas and gradients
+   - ${isCalc ? "Cumulative frequency diagrams — draw from grouped data table, find median and IQR from graph" : "Bar charts, pictograms, or frequency diagrams — read and interpret"}
+   - ${isCalc ? "Histograms with unequal class widths — calculate frequency density, draw histogram, estimate frequencies" : "Pie charts — calculate angles, interpret sectors"}
+   - ${tier === "Higher" ? "Box plots — compare two distributions using median, range, IQR" : ""}
+   For EVERY graph question: describe the graph in detail with specific data points, axis labels, and scale so students can answer from the text description alone.
+4. **Geometry**: angles, area/perimeter, volume, Pythagoras, trigonometry${tier === "Higher" ? ", circle theorems, vectors, congruence/similarity proofs, frustums" : ""}
+   - Include at least one diagram question with specific measurements (e.g., "The diagram shows a cylinder with radius r cm and height h cm...")
+   - For compound shapes, describe each component precisely
+5. **Statistics & Probability**: averages from tables, probability trees/Venn diagrams, relative frequency${tier === "Higher" ? ", conditional probability, histograms with frequency density" : ""}
+6. **Problem-solving**: at least 3–4 questions requiring multi-step reasoning
+   - "Show that" questions with algebraic proof
+   - "Best value for money" comparison questions with specific pack sizes and prices
+   - Contextual multi-step problems (e.g., pressure = force ÷ area with cylinder dimensions)
 
-FOR GRAPH/DIAGRAM QUESTIONS (CRITICAL — include at least 4):
-1. **Coordinate graphs**: Describe graphs with specific coordinates, axes, and features. Ask students to read values, draw tangents, or sketch transformations
-2. **Statistical diagrams**: Include questions that describe scatter diagrams, cumulative frequency, box plots, histograms, or pie charts with specific data
-3. **Geometry diagrams**: Describe shapes with specific measurements (cylinders, trapezoids, triangles). Ask students to calculate areas, volumes, or pressures from the diagram data
-4. **Real-life graphs**: Include velocity-time, distance-time, depth-time, or conversion graphs. Ask students to calculate rates of change, areas under curves, or interpret features
-5. **Value for money / comparison**: Include at least one question where students compare unit prices from different pack sizes (similar to real Edexcel papers)
-6. **Function graphs**: Describe quadratic, cubic, or trigonometric graphs with key points. Ask students to solve equations graphically, identify features, or sketch transformations
-Students should be able to answer based on your text description of the diagram/graph.
-
-IMPORTANT FORMATTING: Each question MUST follow this exact pattern on its own line:
+IMPORTANT FORMATTING — FOLLOW EXACTLY:
 Question 1 [2 marks]
 Question 2 [3 marks]
 Question 3a [1 marks]
 Question 3b [2 marks]
 
 Do NOT wrap question headers in bold/asterisks. Write them exactly as shown above.
-Make questions topical, realistic, and exam-authentic.`;
+Each question must be self-contained — never reference a physical diagram the student cannot see. Instead, describe all visual information in text.
+Make questions topical, varied, and exam-authentic. Avoid repeating similar question types.`;
 };
 
 const ECON_PAPER_PROMPT = (paperLabel: string) =>
-  `Generate a full AQA A-Level Economics predicted exam paper for ${paperLabel}.
+  `You are an expert AQA A-Level Economics chief examiner. Generate a COMPLETE, REALISTIC predicted exam paper for ${paperLabel}.
 
-This must be a realistic, full-length predicted paper in the exact AQA format:
-- For Paper 1 & 2: Include Section A (data response with context/extract, data tables, and short-answer questions) AND Section B (essay questions worth 25 marks each, with "Discuss", "Evaluate", or "To what extent" stems). Total marks should be 80.
-- For Paper 3: Include Section A (multiple choice, 30 questions worth 1 mark each) AND Section B (case study with data response questions and an essay question). Total marks should be 80.
+This must be a full-length paper in the EXACT AQA format:
+- For Paper 1 (Microeconomics) & Paper 2 (Macroeconomics): Include Section A (data response with context/extract, real-looking data tables, and structured questions 2+4+9+25 marks) AND Section B (essay questions worth 25 marks each with "Discuss", "Evaluate", or "To what extent" stems). Total marks: 80.
+- For Paper 3 (Synoptic): Include Section A (30 MCQs worth 1 mark each) AND Section B (case study with data response questions and an essay question). Total marks: 80.
 
-DIAGRAM & GRAPH QUESTIONS (CRITICAL — include at least 3):
-1. **Supply/demand diagram questions**: "Using a supply and demand diagram, explain..." — ask students to draw/label shifts, shade surplus/deadweight loss areas
-2. **AD/AS diagram questions**: "Using an AD/AS diagram, illustrate the impact of..." — for Paper 2, include questions on demand-pull vs cost-push inflation, fiscal/monetary policy effects
-3. **Data interpretation**: Include tables with real-looking economic data. Ask students to calculate percentage changes, interpret trends, and link data to theory
-4. **Welfare analysis diagrams**: Consumer surplus, producer surplus, deadweight loss for market failure questions
-5. **Market structure diagrams**: For Paper 1, include at least one question requiring a monopoly/oligopoly diagram or cost curve diagram
+DIAGRAM & GRAPH QUESTIONS (CRITICAL — at least 4 questions must require diagrams):
+1. **Supply/demand diagrams**: "Using a supply and demand diagram, explain..." — explicitly ask students to draw axes (Price on y-axis, Quantity on x-axis), label original and new curves (e.g., S₁ shifting to S₂), shade areas of consumer/producer surplus, and identify deadweight loss triangles
+2. **AD/AS diagrams** (Paper 2): "Using an AD/AS diagram, illustrate the impact of..." — specify whether to use Classical LRAS (vertical) or Keynesian LRAS. Ask students to show shifts, label equilibria (e.g., P₁→P₂, Y₁→Y₂), and explain the transmission mechanism step by step
+3. **Welfare analysis diagrams**: For market failure questions, require students to draw the divergence between MSC and MPC (or MSB and MPB), shade the welfare loss triangle, and show the optimal vs free-market output
+4. **Data interpretation with calculations**: Include tables with real-looking UK economic data. Ask students to calculate percentage changes, index numbers, real vs nominal values, terms of trade
+5. **Market structure diagrams** (Paper 1): Include at least one question requiring a monopoly diagram (AR, MR, MC, AC curves), showing supernormal profit or deadweight loss
+6. **Cost/revenue curves**: Ask students to draw and label TC, MC, AC, AR, MR curves for specific market structures
 
-MACROECONOMIC ANALYSIS (for Paper 2 specifically):
-- Include questions on AD/AS shifts with diagram requirements
-- Include multiplier effect analysis
-- Include Phillips Curve or Keynesian/Classical debate questions
-- Include trade/exchange rate diagram questions
-- Reference real macroeconomic data (GDP, inflation, unemployment, interest rates)
+MACROECONOMIC ANALYSIS (Paper 2 — CRITICAL):
+- Include at least one question requiring AD/AS diagram analysis of fiscal OR monetary policy
+- Include one question on the multiplier effect with a numerical example (e.g., "If MPC = 0.8, calculate the multiplier and the final change in GDP from a £10bn spending increase")
+- Include the Phillips Curve OR Keynesian vs Classical debate as an essay option
+- Reference real UK macroeconomic data (GDP growth 0.6%, inflation 2.3%, unemployment 4.3%, base rate 4.5%)
+- Include exchange rate or trade analysis where relevant
 
-IMPORTANT FORMATTING: Each question MUST follow this exact format on its own line:
+IMPORTANT FORMATTING — FOLLOW EXACTLY:
 Question 1.1 [2 marks]
 Question 1.2 [4 marks]
 etc.
 
-Include any data/extracts needed before the questions. Make questions topical based on likely 2025 exam themes. Format clearly with headings for each section.`;
+Include realistic data extracts and context paragraphs before questions. Use 2024–2025 UK economic themes. Format clearly with ## headings for sections.`;
 
 const CHEM_PAPER_PROMPT = (paperLabel: string, tier: "Foundation" | "Higher") => {
   const tierDesc = tier === "Foundation"
-    ? "Foundation tier (grades 1–5). Avoid higher-only content like moles calculations and titration calculations."
-    : "Higher tier (grades 4–9). Include moles calculations, concentration, titration, rate tangent method.";
-  return `Generate a full AQA GCSE Chemistry (8462) predicted exam paper for ${paperLabel}.
+    ? "Foundation tier (grades 1–5). Avoid higher-only content like moles calculations, titration calculations, and rate tangent method. Focus on recall, description, and simple application."
+    : "Higher tier (grades 4–9). Include moles calculations, concentration, titration, rate tangent method, atom economy, and percentage yield calculations.";
+  return `You are an expert AQA GCSE Chemistry chief examiner. Generate a COMPLETE, REALISTIC predicted exam paper for ${paperLabel}.
+
 TIER: ${tierDesc}
-STRUCTURE: Total 100 marks. Mix of multiple choice (~15 marks) and structured questions (~85 marks). Include a 6-mark extended response. Multi-part questions use (a), (b), (c).
-Include balanced equations with state symbols. Use correct formulae.
 
-GRAPH & DIAGRAM QUESTIONS (CRITICAL — include at least 4):
-1. **Reaction profile diagrams**: Describe a reaction profile (energy vs progress of reaction). Ask students to label activation energy and overall energy change, or compare catalysed vs uncatalysed profiles
-2. **Rate of reaction graphs**: Volume of gas vs time, or mass vs time graphs. Ask students to sketch curves for different temperatures/concentrations/surface areas. For Higher: include tangent method to calculate rate at a specific time
-3. **Dot-and-cross diagrams**: Ask students to draw bonding diagrams for ionic and covalent compounds
-4. **Chromatography results**: Describe chromatograms and ask students to calculate Rf values and identify substances
-5. **Data tables**: Include titration results tables, temperature change data, and ask students to process the data
-6. **Energy level diagrams**: Show exothermic/endothermic energy profiles and ask students to annotate them
-7. **Haber process yield graphs** (Higher only): Temperature vs yield at different pressures
+STRUCTURE (match real AQA papers EXACTLY):
+- Total: 100 marks
+- Mix of multiple choice (~15 marks, 15 questions with A/B/C/D options) and structured questions (~85 marks)
+- Include at least one 6-mark extended response question with a clear command word (Describe, Explain, Compare, Evaluate)
+- Multi-part questions use (a), (b), (c) labelling
+- Questions should cover the relevant topics for this paper
+- Paper 1: Topics 1–5 (Atomic structure, Bonding, Quantitative chemistry, Chemical changes, Energy changes)
+- Paper 2: Topics 6–10 (Rate & extent, Organic chemistry, Chemical analysis, Atmosphere, Using resources)
 
-IMPORTANT FORMATTING: Each question MUST follow this exact pattern:
+GRAPH & DIAGRAM QUESTIONS (CRITICAL — at least 5 questions must involve graphs/diagrams):
+1. **Reaction profile diagrams**: Describe a reaction profile with energy on y-axis, progress of reaction on x-axis. Specify reactant and product energy levels numerically (e.g., "Reactants: 150 kJ, Peak: 250 kJ, Products: 80 kJ"). Ask students to label activation energy, overall energy change, and sketch the effect of a catalyst
+2. **Rate of reaction graphs**: Describe a curve of volume of gas (cm³) vs time (s) with specific data points (e.g., "At 10s: 25cm³, at 20s: 40cm³, at 40s: 55cm³, at 60s: 58cm³, at 80s: 58cm³"). For Higher: ask students to draw a tangent at a specific time and calculate the rate
+3. **Dot-and-cross diagrams**: Ask students to draw outer shell electrons for specific compounds (NaCl, H₂O, CO₂, MgCl₂). State clearly: "Show only outer shell electrons" or "Show the charges on the ions"
+4. **Chromatography / Rf values**: Describe a chromatogram with solvent front distance and spot distances. Ask students to calculate Rf values and identify unknown substances by comparison
+5. **Titration data tables**: Present titre results (rough + 3 concordant) with burette readings. Ask students to identify anomalous results, calculate mean titre, then calculate concentration
+6. **Temperature change graphs**: Describe neutralisation or dissolving experiments with temperature data. Ask students to calculate energy change using Q = mcΔT
+7. **Haber process yield curves** (Higher only): Describe yield (%) vs temperature curves at two different pressures with specific values. Ask students to explain the compromise conditions
+8. **Bar charts / data tables**: Include percentage composition data for empirical formula calculations
+
+IMPORTANT FORMATTING — FOLLOW EXACTLY:
 Question 1 [1 marks]
 Question 2 [2 marks]
 Question 3a [1 marks]
 Question 3b [3 marks]
-Make questions exam-authentic.`;
+
+Do NOT wrap question headers in bold/asterisks. Include balanced equations with state symbols throughout. Use correct IUPAC naming. Every graph/diagram must be described with enough numerical detail for students to answer from text alone.`;
 };
 
 export default function PredictedPapers() {
@@ -240,6 +256,37 @@ Write a full model answer that would score ${question.marks}/${question.marks}. 
 
 ## Examiner Tip
 Give 2–3 specific, actionable tips. Mention common mistakes to avoid. Address the student directly.`
+        : isChemistry
+        ? `You are marking an AQA GCSE Chemistry (${tier} tier) answer.
+
+Here is the context from the paper:
+${paperContext}
+
+Here is the question:
+${question.label} [${question.marks} marks]
+${question.text}
+
+Here is the student's answer:
+${answer}
+
+Mark this answer using AQA GCSE Chemistry mark scheme criteria. Award marks using:
+- **AO1** (Knowledge and understanding) — recall of facts, formulae, definitions
+- **AO2** (Application) — applying knowledge to familiar and unfamiliar contexts
+- **AO3** (Analysis and evaluation) — interpreting data, drawing conclusions
+
+For 6-mark questions, use Level of Response marking (Level 1: 1-2, Level 2: 3-4, Level 3: 5-6).
+Check: balanced equations, state symbols, correct formulae, units, significant figures.
+
+You MUST respond in this EXACT structure:
+
+## Mark Scheme
+Give a mark out of ${question.marks}. List each mark point and whether it was awarded. If a mark was lost, explain exactly why. Check for correct chemical notation, balanced equations, and state symbols. Use "you" and "your" — speak directly to the student.
+
+## Model Answer
+Write a full model answer that would score ${question.marks}/${question.marks}. Include balanced equations with state symbols, correct units, and full working for any calculations.
+
+## Examiner Tip
+Give 2–3 specific, actionable tips. Mention common mistakes (e.g., forgetting state symbols, not balancing equations, missing units). Address the student directly.`
         : `You are marking an AQA A-Level Economics answer.
 
 Here is the context from the paper:
@@ -255,10 +302,10 @@ ${answer}
 Mark my answer using AQA mark scheme criteria. You MUST respond in this exact structure:
 
 ## Mark Scheme
-Give me a mark out of ${question.marks}. Explain the marking criteria and how my answer maps to each level/band. Speak DIRECTLY to me using "you" and "your".
+Give me a mark out of ${question.marks}. Explain the marking criteria and how my answer maps to each level/band. For diagram questions, check correct labelling of axes, curves, shifts, and shaded areas. Speak DIRECTLY to me using "you" and "your".
 
 ## Model Answer
-Write a full top-band model answer that would score full marks for this question.
+Write a full top-band model answer that would score full marks for this question. For diagram questions, describe the diagram in full detail (axes, curves, labels, shifts, equilibria).
 
 ## Examiner Tip
 Give 2-3 specific, actionable tips for how I can improve. Address me directly. Be encouraging but honest about where I lost marks.`;
