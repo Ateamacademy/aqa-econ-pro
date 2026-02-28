@@ -50,11 +50,14 @@ QUESTION TYPES TO INCLUDE:
 5. **Statistics & Probability**: averages, probability trees/Venn diagrams, relative frequency${tier === "Higher" ? ", conditional probability, histograms with frequency density" : ""}
 6. **Problem-solving**: at least 3–4 questions requiring multi-step reasoning with "Show that" or contextual scenarios
 
-FOR GRAPH/DIAGRAM QUESTIONS: Describe the graph or diagram clearly in text. For example:
-- "The graph shows a straight line passing through (0, 3) and (4, 11)"
-- "A right-angled triangle has sides of 5 cm, 12 cm, and hypotenuse h cm"
-- "The table below shows the frequency distribution: ..."
-Students should be able to answer based on your text description.
+FOR GRAPH/DIAGRAM QUESTIONS (CRITICAL — include at least 4):
+1. **Coordinate graphs**: Describe graphs with specific coordinates, axes, and features. Ask students to read values, draw tangents, or sketch transformations
+2. **Statistical diagrams**: Include questions that describe scatter diagrams, cumulative frequency, box plots, histograms, or pie charts with specific data
+3. **Geometry diagrams**: Describe shapes with specific measurements (cylinders, trapezoids, triangles). Ask students to calculate areas, volumes, or pressures from the diagram data
+4. **Real-life graphs**: Include velocity-time, distance-time, depth-time, or conversion graphs. Ask students to calculate rates of change, areas under curves, or interpret features
+5. **Value for money / comparison**: Include at least one question where students compare unit prices from different pack sizes (similar to real Edexcel papers)
+6. **Function graphs**: Describe quadratic, cubic, or trigonometric graphs with key points. Ask students to solve equations graphically, identify features, or sketch transformations
+Students should be able to answer based on your text description of the diagram/graph.
 
 IMPORTANT FORMATTING: Each question MUST follow this exact pattern on its own line:
 Question 1 [2 marks]
@@ -70,8 +73,22 @@ const ECON_PAPER_PROMPT = (paperLabel: string) =>
   `Generate a full AQA A-Level Economics predicted exam paper for ${paperLabel}.
 
 This must be a realistic, full-length predicted paper in the exact AQA format:
-- For Paper 1 & 2: Include Section A (data response with context/extract and short-answer questions) AND Section B (essay questions worth 25 marks each, with "Discuss", "Evaluate", or "To what extent" stems). Total marks should be 80.
+- For Paper 1 & 2: Include Section A (data response with context/extract, data tables, and short-answer questions) AND Section B (essay questions worth 25 marks each, with "Discuss", "Evaluate", or "To what extent" stems). Total marks should be 80.
 - For Paper 3: Include Section A (multiple choice, 30 questions worth 1 mark each) AND Section B (case study with data response questions and an essay question). Total marks should be 80.
+
+DIAGRAM & GRAPH QUESTIONS (CRITICAL — include at least 3):
+1. **Supply/demand diagram questions**: "Using a supply and demand diagram, explain..." — ask students to draw/label shifts, shade surplus/deadweight loss areas
+2. **AD/AS diagram questions**: "Using an AD/AS diagram, illustrate the impact of..." — for Paper 2, include questions on demand-pull vs cost-push inflation, fiscal/monetary policy effects
+3. **Data interpretation**: Include tables with real-looking economic data. Ask students to calculate percentage changes, interpret trends, and link data to theory
+4. **Welfare analysis diagrams**: Consumer surplus, producer surplus, deadweight loss for market failure questions
+5. **Market structure diagrams**: For Paper 1, include at least one question requiring a monopoly/oligopoly diagram or cost curve diagram
+
+MACROECONOMIC ANALYSIS (for Paper 2 specifically):
+- Include questions on AD/AS shifts with diagram requirements
+- Include multiplier effect analysis
+- Include Phillips Curve or Keynesian/Classical debate questions
+- Include trade/exchange rate diagram questions
+- Reference real macroeconomic data (GDP, inflation, unemployment, interest rates)
 
 IMPORTANT FORMATTING: Each question MUST follow this exact format on its own line:
 Question 1.1 [2 marks]
@@ -88,6 +105,16 @@ const CHEM_PAPER_PROMPT = (paperLabel: string, tier: "Foundation" | "Higher") =>
 TIER: ${tierDesc}
 STRUCTURE: Total 100 marks. Mix of multiple choice (~15 marks) and structured questions (~85 marks). Include a 6-mark extended response. Multi-part questions use (a), (b), (c).
 Include balanced equations with state symbols. Use correct formulae.
+
+GRAPH & DIAGRAM QUESTIONS (CRITICAL — include at least 4):
+1. **Reaction profile diagrams**: Describe a reaction profile (energy vs progress of reaction). Ask students to label activation energy and overall energy change, or compare catalysed vs uncatalysed profiles
+2. **Rate of reaction graphs**: Volume of gas vs time, or mass vs time graphs. Ask students to sketch curves for different temperatures/concentrations/surface areas. For Higher: include tangent method to calculate rate at a specific time
+3. **Dot-and-cross diagrams**: Ask students to draw bonding diagrams for ionic and covalent compounds
+4. **Chromatography results**: Describe chromatograms and ask students to calculate Rf values and identify substances
+5. **Data tables**: Include titration results tables, temperature change data, and ask students to process the data
+6. **Energy level diagrams**: Show exothermic/endothermic energy profiles and ask students to annotate them
+7. **Haber process yield graphs** (Higher only): Temperature vs yield at different pressures
+
 IMPORTANT FORMATTING: Each question MUST follow this exact pattern:
 Question 1 [1 marks]
 Question 2 [2 marks]
