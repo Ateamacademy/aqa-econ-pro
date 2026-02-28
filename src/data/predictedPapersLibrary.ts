@@ -1620,4 +1620,1609 @@ In your answer, you should:
 - Consider dynamic efficiency, natural monopoly, and contestable markets
 - Evaluate with reference to real-world examples`,
   },
+
+  // ── MATHS PAPER 3: Foundation — Set A ──
+  {
+    id: "maths-p3-foundation-a",
+    subject: "maths",
+    paper: "3",
+    tier: "Foundation",
+    title: "Paper 3 Foundation — Set A",
+    description: "Calculator allowed. Real-life graphs, data handling, ratio, and basic geometry.",
+    totalMarks: 80,
+    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 3 Foundation (Calculator) — Predicted Paper Set A
+
+**Time: 1 hour 30 minutes | Total: 80 marks | Calculator ALLOWED**
+
+Answer ALL questions. Show all your working out.
+
+Question 1 [1 marks]
+Write down the value of $7^2$.
+
+Question 2 [2 marks]
+A bag contains 3 red, 4 blue, and 5 green marbles. A marble is picked at random. What is the probability it is not blue?
+
+Question 3 [2 marks]
+Work out $15\\%$ of £240.
+
+Question 4 [3 marks]
+The conversion graph below converts miles to kilometres:
+
+| Miles | 0 | 10 | 20 | 30 | 40 | 50 |
+|-------|---|----|----|----|----|-----|
+| Km    | 0 | 16 | 32 | 48 | 64 | 80 |
+
+(a) Convert 25 miles to kilometres.
+(b) Convert 56 km to miles.
+
+Question 5 [3 marks]
+A recipe for 8 flapjacks uses 200 g oats, 120 g butter, and 80 g sugar. How much of each ingredient is needed for 20 flapjacks?
+
+Question 6 [3 marks]
+The table shows the shoe sizes of 25 students:
+
+| Size | 4 | 5 | 6 | 7 | 8 | 9 |
+|------|---|---|---|---|---|---|
+| Freq | 2 | 5 | 8 | 6 | 3 | 1 |
+
+(a) Write down the mode.
+(b) Find the median shoe size.
+(c) Calculate the mean shoe size.
+
+Question 7 [3 marks]
+Solve $4x + 7 = 31$.
+
+Question 8 [4 marks]
+The line graph shows the number of visitors to a museum each month:
+
+| Month | Jan | Feb | Mar | Apr | May | Jun |
+|-------|-----|-----|-----|-----|-----|-----|
+| Visitors | 1200 | 900 | 1500 | 2100 | 2800 | 3200 |
+
+(a) Which month had the fewest visitors?
+(b) Calculate the increase from January to June.
+(c) Between which two consecutive months was the biggest increase?
+
+Question 9 [3 marks]
+A rectangle has length 12 cm and width 7.5 cm. Calculate the perimeter and area.
+
+Question 10 [4 marks]
+The scatter diagram shows hours of sunshine and temperature for 8 days:
+
+| Hours of sunshine | 2 | 3 | 5 | 6 | 7 | 8 | 9 | 10 |
+|-------------------|---|---|---|---|---|---|---|-----|
+| Temperature (°C)  | 14 | 15 | 18 | 19 | 21 | 22 | 24 | 25 |
+
+(a) Describe the type of correlation.
+(b) Estimate the temperature when there are 4 hours of sunshine.
+(c) Explain why you cannot reliably predict the temperature for 15 hours of sunshine.
+
+Question 11 [3 marks]
+Share £360 in the ratio $4:5$.
+
+Question 12 [4 marks]
+A car travels at 48 mph for 2 hours 15 minutes. How far does it travel?
+
+Question 13 [3 marks]
+The pie chart shows how 180 students travel to school:
+- Walk: 100°
+- Bus: 80°
+- Car: 120°
+- Cycle: 60°
+
+How many students walk? How many students go by car?
+
+Question 14 [4 marks]
+A cylinder has radius 5 cm and height 12 cm. Calculate the volume. Give your answer correct to 1 decimal place.
+
+Question 15 [3 marks]
+Expand and simplify $5(2x - 3) - 2(x + 4)$.
+
+Question 16 [4 marks]
+The dual bar chart shows test results for boys and girls:
+
+| Mark range | 0–20 | 21–40 | 41–60 | 61–80 | 81–100 |
+|------------|------|-------|-------|-------|--------|
+| Boys       | 2    | 5     | 8     | 10    | 5      |
+| Girls      | 1    | 3     | 10    | 12    | 4      |
+
+(a) How many boys scored 61–80?
+(b) How many students were surveyed in total?
+(c) What percentage of girls scored 41 or above?
+
+Question 17 [4 marks]
+A shop sells orange juice in two sizes:
+- Small: 500 ml for £1.20
+- Large: 1.5 litres for £3.30
+
+Which size is better value for money? Show your working.
+
+Question 18 [3 marks]
+A right-angled triangle has base 5 cm and height 12 cm. Calculate the length of the hypotenuse.
+
+Question 19 [4 marks]
+£3000 is invested at 2% compound interest per annum. Calculate the value after 3 years.
+
+Question 20 [3 marks]
+The probability of rain on Monday is 0.4. The probability of rain on Tuesday is 0.3. The two events are independent.
+(a) Find the probability it rains on both days.
+(b) Find the probability it rains on neither day.
+
+Question 21 [4 marks]
+The time series graph shows the quarterly sales (in £thousands) for a shop:
+
+| Quarter | Q1 2023 | Q2 2023 | Q3 2023 | Q4 2023 | Q1 2024 | Q2 2024 |
+|---------|---------|---------|---------|---------|---------|---------|
+| Sales   | 45      | 52      | 48      | 68      | 50      | 58      |
+
+(a) In which quarter were sales highest?
+(b) Describe the overall trend.
+(c) Suggest a reason for the pattern in Q4 sales.
+
+Question 22 [3 marks]
+Write $\\dfrac{3}{8}$ as (a) a decimal, (b) a percentage.
+
+Question 23 [4 marks]
+The diagram shows an L-shaped room. The main section is 8m × 5m. A smaller section of 3m × 2m extends from one corner. Calculate the total area of the room. Carpet costs £12.50 per m². Calculate the cost to carpet the room.`,
+  },
+
+  // ── MATHS PAPER 1: Higher — Set C ──
+  {
+    id: "maths-p1-higher-c",
+    subject: "maths",
+    paper: "1",
+    tier: "Higher",
+    title: "Paper 1 Higher — Set C",
+    description: "Non-Calculator. Graph transformations, quadratic sketching, probability trees, algebraic proof.",
+    totalMarks: 80,
+    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 1 Higher (Non-Calculator) — Predicted Paper Set C
+
+**Time: 1 hour 30 minutes | Total: 80 marks**
+
+Answer ALL questions. Show all your working out.
+
+Question 1 [2 marks]
+Simplify $\\dfrac{8}{12}$ fully.
+
+Question 2 [2 marks]
+Write $56000$ in standard form.
+
+Question 3 [3 marks]
+Expand and simplify $(2x - 1)(3x + 4)$.
+
+Question 4 [3 marks]
+The ratio of boys to girls in a class is $3:5$. There are 12 boys. How many students are there altogether?
+
+Question 5 [3 marks]
+Factorise $x^2 - 7x + 12$.
+
+Question 6 [4 marks]
+The graph of $y = x^2 - 2x - 3$ is a parabola.
+
+**Graph description:**
+- The parabola crosses the x-axis at $(-1, 0)$ and $(3, 0)$
+- The y-intercept is at $(0, -3)$
+- The turning point (minimum) is at $(1, -4)$
+- The curve is U-shaped, opening upward
+
+(a) Write down the coordinates of the turning point.
+(b) Write down the equation of the line of symmetry.
+(c) Use the graph to find the values of $x$ when $y = 5$.
+
+Question 7 [4 marks]
+Solve the simultaneous equations:
+$$3x + 2y = 11$$
+$$x - y = 2$$
+
+Question 8 [3 marks]
+Simplify $\\sqrt{72} - \\sqrt{18}$.
+
+Question 9 [4 marks]
+A probability tree shows two events. A bag contains 4 red and 6 blue counters. A counter is drawn AND NOT replaced. Then a second counter is drawn.
+
+(a) Complete the probability tree for drawing two counters without replacement.
+(b) Find the probability of getting two red counters.
+(c) Find the probability of getting exactly one blue counter.
+
+Question 10 [4 marks]
+The graph of $y = f(x)$ passes through the points $(-3, 0)$, $(0, 9)$, $(3, 0)$ with a maximum at $(0, 9)$.
+
+Sketch on separate axes:
+(a) $y = f(x) + 2$
+(b) $y = f(x - 3)$
+(c) $y = -f(x)$
+For each, write the new coordinates of the maximum point.
+
+Question 11 [3 marks]
+A price increases from £85 to £102. Calculate the percentage increase.
+
+Question 12 [4 marks]
+Show that $\\dfrac{x+2}{3} - \\dfrac{x-1}{4} = \\dfrac{x + 11}{12}$.
+
+Question 13 [5 marks]
+The velocity–time graph for a cyclist is described below:
+
+**Graph description:**
+- From $t = 0$ to $t = 10$: velocity increases linearly from 0 to 8 m/s
+- From $t = 10$ to $t = 25$: velocity is constant at 8 m/s
+- From $t = 25$ to $t = 30$: velocity decreases linearly from 8 to 0 m/s
+
+(a) Calculate the acceleration in the first 10 seconds.
+(b) Calculate the total distance travelled.
+(c) Calculate the average speed for the entire journey.
+
+Question 14 [4 marks]
+A sector of a circle has radius 10 cm and arc length $15$ cm. Find the angle of the sector in degrees.
+
+Question 15 [5 marks]
+Prove algebraically that $(2n+1)^2 - (2n-1)^2$ is always a multiple of 8 for all positive integers $n$.
+
+Question 16 [3 marks]
+Solve the inequality $5 - 2x \\ge 3x + 1$. Represent your solution on a number line.
+
+Question 17 [4 marks]
+A Venn diagram shows information about 40 students. Set A = French, Set B = Spanish.
+- Only French: 12
+- Only Spanish: 8
+- Both: 15
+- Neither: 5
+
+(a) Find the probability a randomly chosen student studies French.
+(b) Find the probability a student studies Spanish given they study French.
+
+Question 18 [5 marks]
+Rearrange $v = \\dfrac{u + at}{1 - bt}$ to make $t$ the subject.
+
+Question 19 [5 marks]
+A frustum is formed by removing a small cone of height 4 cm and radius 2 cm from a cone of height 12 cm and radius 6 cm. Show that the volume of the frustum is $\\dfrac{416\\pi}{3}$ cm³.
+
+Question 20 [4 marks]
+Without a calculator, find the exact value of $\\tan 60° + \\cos 30°$. Simplify your answer.
+
+Question 21 [4 marks]
+The quadratic sequence begins: 5, 11, 21, 35, ...
+Find the nth term.`,
+  },
+
+  // ── MATHS PAPER 3: Higher — Set B ──
+  {
+    id: "maths-p3-higher-b",
+    subject: "maths",
+    paper: "3",
+    tier: "Higher",
+    title: "Paper 3 Higher — Set B",
+    description: "Calculator. Histograms, box plots, trigonometry, iteration, and real-life problem-solving.",
+    totalMarks: 80,
+    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 3 Higher (Calculator) — Predicted Paper Set B
+
+**Time: 1 hour 30 minutes | Total: 80 marks | Calculator ALLOWED**
+
+Answer ALL questions. Show all your working out.
+
+Question 1 [2 marks]
+Work out $3.2 \\times 10^4 \\div 8 \\times 10^{-2}$. Give your answer in standard form.
+
+Question 2 [3 marks]
+Toothpaste is sold in three sizes:
+- 75 ml tube for £1.50
+- 125 ml tube for £2.20
+- 200 ml tube for £3.80
+Which tube is the best value for money? Show your working.
+
+Question 3 [3 marks]
+A water tank is in the shape of a cuboid with base 40 cm × 30 cm. Water is poured in at a rate of 600 cm³ per minute. How long does it take to fill the tank to a depth of 25 cm?
+
+Question 4 [4 marks]
+The histogram shows the times (in minutes) for 120 people to complete a task:
+
+**Histogram data:**
+| Time $t$ (min) | $0 < t \\le 10$ | $10 < t \\le 20$ | $20 < t \\le 30$ | $30 < t \\le 50$ | $50 < t \\le 80$ |
+|---|---|---|---|---|---|
+| Frequency | 15 | 30 | 35 | 28 | 12 |
+
+(a) Calculate the frequency density for each class.
+(b) Estimate the number of people who took between 15 and 40 minutes.
+
+Question 5 [4 marks]
+Two box plots compare the test scores of Class A and Class B:
+
+**Class A:** Min: 32, Q1: 45, Median: 58, Q3: 72, Max: 95
+**Class B:** Min: 40, Q1: 52, Median: 61, Q3: 68, Max: 88
+
+(a) Find the interquartile range for each class.
+(b) Compare the two distributions. Make two valid comparisons referring to the data.
+
+Question 6 [4 marks]
+A triangle $ABC$ has $AB = 9.2$ cm, $BC = 7.5$ cm, and angle $ABC = 48°$. Calculate the area of the triangle.
+
+Question 7 [4 marks]
+The cumulative frequency table shows journey times for 80 commuters:
+
+| Time $t$ (min) | $t \\le 10$ | $t \\le 20$ | $t \\le 30$ | $t \\le 40$ | $t \\le 50$ | $t \\le 60$ |
+|---|---|---|---|---|---|---|
+| Cum. freq | 4 | 14 | 32 | 56 | 72 | 80 |
+
+(a) Draw a cumulative frequency graph.
+(b) Find the median journey time.
+(c) Find the interquartile range.
+(d) Estimate how many commuters took more than 35 minutes.
+
+Question 8 [5 marks]
+Use the iteration formula $x_{n+1} = \\sqrt{\\dfrac{3x_n + 7}{2}}$ with $x_0 = 3$. Find $x_1$, $x_2$, $x_3$, and $x_4$ to 4 decimal places. State the solution to 2 decimal places.
+
+Question 9 [4 marks]
+A boat is 150 m from the base of a vertical cliff. The angle of elevation from the boat to the top of the cliff is $23°$. Calculate the height of the cliff.
+
+Question 10 [5 marks]
+The graph of $y = 2\\sin x$ for $0° \\le x \\le 360°$:
+
+**Graph description:**
+- Passes through $(0, 0)$, peaks at $(90°, 2)$, crosses at $(180°, 0)$, troughs at $(270°, -2)$, returns to $(360°, 0)$
+
+(a) Write down the amplitude.
+(b) Solve $2\\sin x = 1.4$ for $0° \\le x \\le 360°$. Give answers to 1 decimal place.
+(c) How many solutions does $2\\sin x = 3$ have? Explain your answer.
+
+Question 11 [4 marks]
+Two similar cylinders have radii 3 cm and 5 cm. The smaller cylinder has volume $108\\pi$ cm³. Find the volume of the larger cylinder.
+
+Question 12 [4 marks]
+The real-life graph shows the depth of water in a swimming pool as it is being filled:
+
+**Graph description:**
+- x-axis: Time (hours), 0 to 6
+- y-axis: Depth (m), 0 to 2.0
+- 0 to 2 hours: depth increases from 0 to 0.8 m (steep, linear)
+- 2 to 3 hours: depth stays at 0.8 m (horizontal — pump stopped)
+- 3 to 6 hours: depth increases from 0.8 to 2.0 m (linear, less steep than before)
+
+(a) Calculate the rate of filling in the first 2 hours.
+(b) What happened between 2 and 3 hours?
+(c) Calculate the rate of filling from 3 to 6 hours.
+
+Question 13 [4 marks]
+A cone has a curved surface area of $120\\pi$ cm² and slant height 15 cm. Calculate the radius of the cone.
+
+Question 14 [5 marks]
+Solve the simultaneous equations:
+$$y = x^2 - 3x + 1$$
+$$y = 2x - 5$$
+
+Question 15 [4 marks]
+The graph shows the exchange rate between pounds and dollars over 5 months:
+
+| Month | Jan | Feb | Mar | Apr | May |
+|-------|-----|-----|-----|-----|-----|
+| £1 = $ | 1.25 | 1.22 | 1.28 | 1.30 | 1.27 |
+
+(a) In which month was the pound strongest against the dollar?
+(b) Sarah changed £400 to dollars in February, then changed them back to pounds in April. Calculate her profit.
+
+Question 16 [5 marks]
+The frequency table shows the weights of 100 parcels:
+
+| Weight $w$ (kg) | $0 < w \\le 2$ | $2 < w \\le 4$ | $4 < w \\le 6$ | $6 < w \\le 10$ |
+|---|---|---|---|---|
+| Frequency | 20 | 35 | 30 | 15 |
+
+(a) Calculate an estimate for the mean weight.
+(b) Draw a histogram to represent this data.
+(c) Estimate the number of parcels weighing more than 5 kg.
+
+Question 17 [4 marks]
+In triangle $PQR$, $PQ = 12$ cm, $PR = 8$ cm, and $QR = 10$ cm. Use the cosine rule to find angle $QPR$.
+
+Question 18 [4 marks]
+A geometric sequence has first term 5 and common ratio $\\dfrac{2}{3}$. Find the sum of the first 4 terms. Give your answer as a fraction.`,
+  },
+
+  // ── MATHS PAPER 2: Foundation — Set B ──
+  {
+    id: "maths-p2-foundation-b",
+    subject: "maths",
+    paper: "2",
+    tier: "Foundation",
+    title: "Paper 2 Foundation — Set B",
+    description: "Calculator. Scatter graphs, pie charts, real-life problems, and basic statistics.",
+    totalMarks: 80,
+    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 2 Foundation (Calculator) — Set B
+
+**Time: 1 hour 30 minutes | Total: 80 marks | Calculator ALLOWED**
+
+Answer ALL questions. Show all your working out.
+
+Question 1 [1 marks]
+What is $\\dfrac{1}{5}$ as a decimal?
+
+Question 2 [2 marks]
+A train departs at 08:47 and arrives at 10:15. How long is the journey?
+
+Question 3 [2 marks]
+Round 3847 to the nearest hundred.
+
+Question 4 [3 marks]
+Sarah earns £9.20 per hour. She works 37.5 hours per week. How much does she earn per week?
+
+Question 5 [3 marks]
+The bar chart shows favourite pizza toppings for 40 students:
+- Pepperoni: 14
+- Margherita: 10
+- Hawaiian: 6
+- BBQ Chicken: 8
+- Vegetarian: 2
+
+(a) How many students chose Pepperoni?
+(b) What percentage of students chose Margherita?
+(c) A student is picked at random. What is the probability they chose Hawaiian?
+
+Question 6 [3 marks]
+Solve $3(2x - 5) = 21$.
+
+Question 7 [4 marks]
+The scatter diagram shows the relationship between age and reaction time:
+
+| Age (years) | 15 | 20 | 25 | 30 | 40 | 50 | 55 | 65 |
+|---|---|---|---|---|---|---|---|---|
+| Reaction time (ms) | 210 | 220 | 230 | 235 | 260 | 285 | 300 | 330 |
+
+(a) Describe the correlation.
+(b) Estimate the reaction time for a 35-year-old.
+(c) Why would it be unreliable to predict the reaction time for a 90-year-old?
+
+Question 8 [3 marks]
+Increase £450 by 12%.
+
+Question 9 [4 marks]
+The pie chart shows how 90 people travel to work:
+- Car: 140°
+- Bus: 80°
+- Walk: 60°
+- Train: 40°
+- Cycle: 40°
+
+(a) How many people travel by car?
+(b) How many more people walk than cycle?
+
+Question 10 [3 marks]
+A cuboid has dimensions 6 cm × 4 cm × 10 cm. Calculate the surface area.
+
+Question 11 [4 marks]
+A line graph shows the price of petrol per litre over 6 months:
+
+| Month | Jan | Feb | Mar | Apr | May | Jun |
+|-------|-----|-----|-----|-----|-----|-----|
+| Price (p) | 142 | 145 | 148 | 155 | 152 | 158 |
+
+(a) What was the cheapest month for petrol?
+(b) Calculate the percentage increase from January to June. Give your answer to 1 decimal place.
+(c) Between which two months was there a decrease in price?
+
+Question 12 [3 marks]
+Find the LCM of 12 and 18.
+
+Question 13 [4 marks]
+A right-angled triangle has sides 8 cm and 15 cm. Calculate the hypotenuse. Then calculate the area of the triangle.
+
+Question 14 [4 marks]
+The frequency table shows the number of goals scored per match by a football team in 20 matches:
+
+| Goals | 0 | 1 | 2 | 3 | 4 |
+|-------|---|---|---|---|---|
+| Frequency | 3 | 7 | 5 | 4 | 1 |
+
+(a) Calculate the mean number of goals.
+(b) Find the median.
+(c) A journalist says "the team usually scores 2 or more goals." Is this correct? Explain.
+
+Question 15 [3 marks]
+Plot the graph of $y = 3x - 2$ for $x$ from $-1$ to $3$.
+
+**Table:**
+| $x$ | -1 | 0 | 1 | 2 | 3 |
+|-----|-----|---|---|---|---|
+| $y$ | -5 | -2 | 1 | 4 | 7 |
+
+What is the gradient of the line?
+
+Question 16 [4 marks]
+Bottles of water are sold in two sizes:
+- 500 ml for 85p
+- 2 litres for £3.00
+
+Which is better value? Show your working.
+
+Question 17 [3 marks]
+A circle has radius 8.5 cm. Calculate the circumference. Give your answer to 1 decimal place.
+
+Question 18 [4 marks]
+A bag contains 5 red, 3 blue, and 2 yellow beads. Two beads are drawn at random with replacement.
+(a) What is the probability of drawing two red beads?
+(b) What is the probability of drawing one red and one blue (in any order)?
+
+Question 19 [4 marks]
+The two-way table shows information about 60 students' exam results:
+
+| | Pass | Fail | Total |
+|---|---|---|---|
+| Revised | 28 | 4 | |
+| Did not revise | 12 | 16 | |
+| Total | | | 60 |
+
+Complete the table. Is there evidence that revising improves results? Explain using the data.
+
+Question 20 [3 marks]
+Simplify $\\dfrac{4x^2y}{8xy^3}$.
+
+Question 21 [4 marks]
+A semicircle has diameter 14 cm. Calculate the perimeter of the semicircle (the curved part plus the diameter). Give your answer to 1 decimal place.
+
+Question 22 [4 marks]
+£5000 is invested in a savings account paying 1.8% compound interest per year. Calculate the total amount after 4 years. Give your answer to the nearest penny.`,
+  },
+
+  // ── CHEMISTRY PAPER 1: Foundation — Set A ──
+  {
+    id: "chem-p1-foundation-a",
+    subject: "chemistry",
+    paper: "1",
+    tier: "Foundation",
+    title: "Chem Paper 1 Foundation — Set A",
+    description: "Foundation tier. Atomic structure, bonding basics, simple calculations, chemical changes, energy.",
+    totalMarks: 100,
+    content: `# AQA GCSE Chemistry (8462/F) — Paper 1 Foundation — Set A
+
+**Time: 1 hour 45 minutes | Total: 100 marks**
+
+Question 1 [1 marks]
+Which subatomic particle has a negative charge?
+A. Proton
+B. Neutron
+C. Electron
+D. Nucleus
+
+Question 2 [1 marks]
+How many electrons does a sodium atom (Na, atomic number 11) have?
+A. 10
+B. 11
+C. 12
+D. 23
+
+Question 3 [1 marks]
+Which of these is a property of ionic compounds?
+A. Low melting point
+B. Conduct electricity when solid
+C. Conduct electricity when dissolved in water
+D. Soft crystals
+
+Question 4 [2 marks]
+Draw the electronic structure of a magnesium atom (atomic number 12). Show the electrons in each shell.
+
+Question 5 [2 marks]
+Name the type of bonding in water (H₂O). Describe how this bond forms.
+
+Question 6 [3 marks]
+The diagram below shows the structure of sodium chloride:
+
+**Diagram description:**
+- A 3D lattice arrangement of alternating positive ions (Na⁺, small) and negative ions (Cl⁻, large)
+- Regular repeating pattern in all directions
+
+Explain why sodium chloride has a high melting point.
+
+Question 7 [2 marks]
+Balance this equation: Mg + O₂ → MgO
+
+Question 8 [3 marks]
+The bar chart shows the reactivity of four metals:
+
+| Metal | Reactivity (relative scale 1–10) |
+|-------|----------------------------------|
+| Potassium | 9 |
+| Calcium | 7 |
+| Zinc | 4 |
+| Copper | 1 |
+
+Using the data, predict which metal would react most vigorously with water. Explain your reasoning.
+
+Question 9 [2 marks]
+Describe the test for hydrogen gas. State the result.
+
+Question 10 [3 marks]
+Calculate the relative formula mass (Mr) of calcium carbonate, CaCO₃. (Ar: Ca = 40, C = 12, O = 16)
+
+Question 11 [3 marks]
+The diagram shows the energy level diagram for a reaction:
+
+**Energy diagram:**
+- Reactants energy level: 200 kJ
+- Products energy level: 120 kJ
+- Peak (activation energy barrier): 280 kJ
+
+(a) Is this reaction exothermic or endothermic? Explain.
+(b) What is the overall energy change?
+
+Question 12 [4 marks]
+Describe how to carry out a flame test. Name the colours produced by:
+(a) Lithium
+(b) Sodium
+(c) Potassium
+
+Question 13 [3 marks]
+What is an acid? Give two examples of common acids and their formulae.
+
+Question 14 [4 marks]
+Complete the word equations:
+(a) hydrochloric acid + sodium hydroxide → ___ + ___
+(b) sulfuric acid + magnesium → ___ + ___
+
+Write the balanced symbol equation for reaction (b).
+
+Question 15 [6 marks]
+Compare ionic bonding and covalent bonding. In your answer:
+- Describe how each type of bond forms
+- Give an example of a substance with each type of bonding
+- Explain one property difference between ionic and covalent substances
+
+Question 16 [3 marks]
+The graph shows how the temperature changes during a neutralisation reaction:
+
+**Graph description:**
+- x-axis: Volume of acid added (cm³), 0 to 50
+- y-axis: Temperature (°C), 18 to 30
+- Temperature starts at 20°C, rises to 28°C at 25 cm³, then stays constant at 28°C
+
+(a) What is the temperature change?
+(b) At what volume of acid is the reaction complete?
+
+Question 17 [3 marks]
+Describe the difference between an element, a compound, and a mixture.
+
+Question 18 [4 marks]
+The table shows the results of adding metals to acid:
+
+| Metal | Observation with dilute HCl |
+|-------|----------------------------|
+| Magnesium | Vigorous fizzing, dissolves quickly |
+| Iron | Slow fizzing, dissolves slowly |
+| Copper | No reaction |
+| Zinc | Moderate fizzing, dissolves |
+
+Put the metals in order of reactivity (most reactive first).
+
+Question 19 [3 marks]
+Draw a dot-and-cross diagram to show the bonding in hydrogen chloride (HCl). Show only the outer shell electrons.
+
+Question 20 [4 marks]
+Explain what happens during electrolysis of molten lead bromide. State what is produced at each electrode.
+
+Question 21 [2 marks]
+What is meant by the term 'oxidation' in terms of oxygen?
+
+Question 22 [3 marks]
+The pie chart shows the percentage of elements in Earth's crust:
+- Oxygen: 46%
+- Silicon: 28%
+- Aluminium: 8%
+- Iron: 5%
+- Others: 13%
+
+Which element is most abundant? What is the total percentage of oxygen and silicon?
+
+Question 23 [4 marks]
+A student adds dilute acid to a metal carbonate. Describe what you would observe. Write a word equation for the reaction of calcium carbonate with hydrochloric acid.
+
+Question 24 [3 marks]
+Explain why graphite can conduct electricity but diamond cannot. Both are forms of carbon.`,
+  },
+
+  // ── CHEMISTRY PAPER 2: Foundation — Set A ──
+  {
+    id: "chem-p2-foundation-a",
+    subject: "chemistry",
+    paper: "2",
+    tier: "Foundation",
+    title: "Chem Paper 2 Foundation — Set A",
+    description: "Foundation tier. Rates, organic basics, analysis, atmosphere, and resources.",
+    totalMarks: 100,
+    content: `# AQA GCSE Chemistry (8462/F) — Paper 2 Foundation — Set A
+
+**Time: 1 hour 45 minutes | Total: 100 marks**
+
+Question 1 [1 marks]
+Which of the following will increase the rate of a chemical reaction?
+A. Decreasing the temperature
+B. Increasing the concentration of reactants
+C. Using larger pieces of solid reactant
+D. Removing a catalyst
+
+Question 2 [1 marks]
+What is the general formula for alkanes?
+A. CₙH₂ₙ
+B. CₙH₂ₙ₊₂
+C. CₙH₂ₙ₋₂
+D. CₙHₙ
+
+Question 3 [1 marks]
+Which gas makes up approximately 78% of Earth's atmosphere today?
+A. Oxygen
+B. Carbon dioxide
+C. Nitrogen
+D. Argon
+
+Question 4 [2 marks]
+State two ways to increase the rate of a chemical reaction.
+
+Question 5 [3 marks]
+Using collision theory, explain why increasing the temperature increases the rate of reaction.
+
+Question 6 [4 marks]
+The graph shows the volume of gas produced over time for a reaction:
+
+**Graph description:**
+- x-axis: Time (s), 0 to 120
+- y-axis: Volume of gas (cm³), 0 to 50
+- The curve starts steeply from 0, at 20s: 30 cm³, at 40s: 40 cm³, at 60s: 46 cm³, at 80s: 48 cm³, at 100s: 49 cm³, levels off at 50 cm³
+
+(a) At what time does the reaction stop?
+(b) At what time is the reaction fastest? How can you tell from the graph?
+(c) A second experiment uses the same mass of reactant but at a higher temperature. Sketch how the graph would change.
+
+Question 7 [3 marks]
+Name the first four alkanes and draw the displayed formula of methane.
+
+Question 8 [3 marks]
+Write a balanced symbol equation for the complete combustion of propane (C₃H₈). Include state symbols.
+
+Question 9 [4 marks]
+Describe what fractional distillation is. Explain how it separates the different hydrocarbons in crude oil.
+
+Question 10 [3 marks]
+What is cracking? Name the two methods of cracking. Why is cracking important to the oil industry?
+
+Question 11 [3 marks]
+Describe the test to distinguish between an alkane and an alkene. State the reagent and observation.
+
+Question 12 [4 marks]
+The chromatogram below shows the results of testing two food colourings:
+
+**Chromatogram description:**
+- Solvent front: 10.0 cm
+- Food A has one spot at 6.0 cm from the baseline
+- Food B has two spots: one at 6.0 cm and one at 4.0 cm
+
+(a) Calculate the Rf value for Food A.
+(b) Is Food B a pure substance or a mixture? Explain.
+(c) What can you say about the relationship between Food A and one of the components of Food B?
+
+Question 13 [3 marks]
+Describe how Earth's early atmosphere was different from today. Name one process that increased oxygen levels.
+
+Question 14 [4 marks]
+The bar chart shows greenhouse gas emissions by sector in the UK:
+
+| Sector | Emissions (MtCO₂e) |
+|--------|---------------------|
+| Transport | 120 |
+| Energy supply | 90 |
+| Business | 75 |
+| Residential | 65 |
+| Agriculture | 50 |
+
+(a) Which sector produces the most emissions?
+(b) Calculate the total emissions shown.
+(c) Suggest one way the transport sector could reduce its emissions.
+
+Question 15 [6 marks]
+Evaluate the use of hydrogen as a fuel for cars compared to petrol. In your answer, consider:
+- Environmental impact
+- Practical considerations
+- Safety
+
+Question 16 [3 marks]
+Describe the steps needed to produce potable water from fresh water in the UK.
+
+Question 17 [3 marks]
+What is a life cycle assessment (LCA)? Name three stages it considers.
+
+Question 18 [4 marks]
+The graph shows how the rate of reaction changes when a catalyst is added:
+
+**Graph description — mass of product vs time:**
+- Without catalyst: curve rises slowly, reaches 3.5 g at 200 seconds
+- With catalyst: curve rises steeply, reaches 3.5 g at 80 seconds
+- Both curves level off at the same final mass of 3.5 g
+
+(a) What effect does the catalyst have on the rate?
+(b) Why do both curves reach the same final mass?
+(c) What is a catalyst?
+
+Question 19 [3 marks]
+Describe the greenhouse effect. Explain how carbon dioxide contributes to it.
+
+Question 20 [4 marks]
+The data table shows the pH of different solutions:
+
+| Solution | pH |
+|----------|-----|
+| Lemon juice | 2 |
+| Water | 7 |
+| Baking soda | 9 |
+| Oven cleaner | 13 |
+
+(a) Which solution is the most acidic?
+(b) Which solution is neutral?
+(c) Classify baking soda as acidic, neutral, or alkaline.
+
+Question 21 [3 marks]
+Explain why it is important to recycle metals. Give two reasons.
+
+Question 22 [3 marks]
+What is the difference between a finite resource and a renewable resource? Give one example of each.
+
+Question 23 [4 marks]
+A student tests four solutions using silver nitrate solution (AgNO₃). The results are:
+
+| Solution | Observation |
+|----------|------------|
+| A | White precipitate |
+| B | Cream precipitate |
+| C | Yellow precipitate |
+| D | No precipitate |
+
+Identify the halide ion present in solutions A, B, and C.
+
+Question 24 [3 marks]
+Describe two ways to reduce the use of resources. Explain why reducing waste is important.`,
+  },
+
+  // ── CHEMISTRY PAPER 1: Higher — Set C ──
+  {
+    id: "chem-p1-higher-c",
+    subject: "chemistry",
+    paper: "1",
+    tier: "Higher",
+    title: "Chem Paper 1 Higher — Set C",
+    description: "Higher tier. Moles, titrations, reaction profiles with catalysts, empirical formulae, and energy calculations.",
+    totalMarks: 100,
+    content: `# AQA GCSE Chemistry (8462) — Paper 1 Higher — Set C (Calculations & Graph Focus)
+
+**Time: 1 hour 45 minutes | Total: 100 marks**
+
+Question 1 [1 marks]
+What is the relative atomic mass of an element?
+A. The number of protons in the nucleus
+B. The weighted mean mass of an atom relative to 1/12th of carbon-12
+C. The total number of protons and neutrons
+D. The mass of one mole of atoms in grams
+
+Question 2 [1 marks]
+Which of the following is a covalent compound?
+A. NaCl
+B. MgO
+C. H₂O
+D. KBr
+
+Question 3 [2 marks]
+Calculate the number of moles in 11.2 g of iron. (Ar: Fe = 56)
+
+Question 4 [3 marks]
+The reaction profile below shows an endothermic reaction:
+
+**Reaction profile:**
+- x-axis: Progress of reaction
+- y-axis: Energy (kJ)
+- Reactants at 80 kJ
+- Peak at 180 kJ
+- Products at 130 kJ
+
+(a) Calculate the activation energy.
+(b) Calculate the overall energy change.
+(c) Is this reaction exothermic or endothermic? Justify your answer.
+
+Question 5 [4 marks]
+Draw dot-and-cross diagrams for:
+(a) Sodium chloride (NaCl) — show the electron transfer and charges on ions
+(b) Carbon dioxide (CO₂) — show only the outer shell electrons and shared pairs
+
+Question 6 [4 marks]
+A compound contains 40.0% calcium, 12.0% carbon, and 48.0% oxygen by mass. Calculate the empirical formula. (Ar: Ca = 40, C = 12, O = 16)
+
+Question 7 [4 marks]
+The graph shows how the rate of reaction changes with concentration:
+
+**Graph description:**
+- x-axis: Concentration of acid (mol/dm³), 0 to 2.0
+- y-axis: Initial rate (cm³/s)
+- Data points: (0.2, 0.5), (0.5, 1.2), (0.8, 2.0), (1.0, 2.5), (1.5, 3.7), (2.0, 5.0)
+- The relationship appears directly proportional — a straight line through the origin
+
+(a) Describe the relationship between concentration and rate.
+(b) Predict the initial rate at a concentration of 1.2 mol/dm³.
+(c) Explain this relationship using collision theory.
+
+Question 8 [3 marks]
+Balance the equation: Al + Fe₂O₃ → Al₂O₃ + Fe
+This is a thermite reaction. Is aluminium oxidised or reduced? Explain.
+
+Question 9 [4 marks]
+A titration is carried out to find the concentration of hydrochloric acid. 25.0 cm³ of 0.20 mol/dm³ NaOH is neutralised by 22.5 cm³ of HCl.
+
+NaOH + HCl → NaCl + H₂O
+
+Calculate the concentration of HCl in mol/dm³.
+
+Question 10 [5 marks]
+The energy level diagram shows two reactions:
+
+**Reaction A (exothermic):**
+- Reactants: 350 kJ
+- Products: 200 kJ
+- Activation energy: 400 kJ (peak)
+
+**Reaction B (same reaction with catalyst):**
+- Reactants: 350 kJ
+- Products: 200 kJ
+- Activation energy: 320 kJ (lower peak)
+
+(a) Calculate the overall energy change for the reaction.
+(b) What is the activation energy without a catalyst?
+(c) What is the activation energy with a catalyst?
+(d) Explain how the catalyst increases the rate of reaction without being used up.
+
+Question 11 [3 marks]
+Explain why metals are good conductors of electricity. Include the terms "delocalised electrons" and "metallic bonding" in your answer.
+
+Question 12 [4 marks]
+The table shows titration results:
+
+| Titration | Rough | 1 | 2 | 3 |
+|-----------|-------|------|------|------|
+| Final reading (cm³) | 24.80 | 23.65 | 23.70 | 23.60 |
+| Initial reading (cm³) | 0.00 | 0.00 | 0.00 | 0.00 |
+
+(a) Calculate each titre.
+(b) Identify which result is anomalous.
+(c) Calculate the mean titre using concordant results only.
+
+Question 13 [6 marks]
+Compare the structures and properties of diamond, graphite, and silicon dioxide. Explain, in terms of bonding and structure, why:
+- Diamond is very hard
+- Graphite is a good conductor of electricity
+- Silicon dioxide has a very high melting point
+
+Question 14 [4 marks]
+Calculate the percentage by mass of nitrogen in ammonium nitrate, NH₄NO₃. (Ar: N = 14, H = 1, O = 16)
+
+Question 15 [3 marks]
+A student heats copper carbonate:
+CuCO₃(s) → CuO(s) + CO₂(g)
+
+Describe what you would observe. Explain why this is a thermal decomposition reaction.
+
+Question 16 [4 marks]
+The graph shows a neutralisation curve (pH vs volume of acid added):
+
+**Graph description:**
+- x-axis: Volume of HCl added (cm³), 0 to 40
+- y-axis: pH, 0 to 14
+- pH starts at 12, stays relatively flat until about 20 cm³
+- Sharp drop from pH 11 to pH 2 between 20 and 24 cm³
+- Levels off at pH 1 after 24 cm³
+
+(a) What is the starting pH? Is this an acid or alkali?
+(b) At what volume of acid does the endpoint occur?
+(c) What indicator would be suitable for this titration? Explain.
+
+Question 17 [4 marks]
+Calculate the atom economy for producing iron from iron oxide:
+2Fe₂O₃ + 3C → 4Fe + 3CO₂
+(Ar: Fe = 56, O = 16, C = 12)
+
+Question 18 [3 marks]
+Explain what is meant by a half equation. Write the half equation for the reduction of copper ions at the cathode during electrolysis of copper sulfate solution.
+
+Question 19 [4 marks]
+50 cm³ of 1.0 mol/dm³ HCl is mixed with 50 cm³ of 1.0 mol/dm³ NaOH. The temperature rises by 6.8°C. Calculate the energy released. (c = 4.18 J/g/°C, density = 1.0 g/cm³). Give your answer in kJ.
+
+Question 20 [3 marks]
+Explain the trend in reactivity of Group 1 metals as you go down the group. Reference atomic structure in your answer.`,
+  },
+
+  // ── CHEMISTRY PAPER 2: Higher — Set C ──
+  {
+    id: "chem-p2-higher-c",
+    subject: "chemistry",
+    paper: "2",
+    tier: "Higher",
+    title: "Chem Paper 2 Higher — Set C",
+    description: "Higher tier. Organic chemistry, equilibrium, atmospheric data, rate calculations, and resource management.",
+    totalMarks: 100,
+    content: `# AQA GCSE Chemistry (8462) — Paper 2 Higher — Set C (Organic & Environmental Focus)
+
+**Time: 1 hour 45 minutes | Total: 100 marks**
+
+Question 1 [1 marks]
+Which of the following is the correct formula for ethanol?
+A. CH₃OH
+B. C₂H₅OH
+C. C₃H₇OH
+D. C₂H₄
+
+Question 2 [1 marks]
+The Haber process produces which substance?
+A. Sulfuric acid
+B. Ammonia
+C. Nitric acid
+D. Ethanol
+
+Question 3 [1 marks]
+Which is a greenhouse gas?
+A. Nitrogen
+B. Oxygen
+C. Methane
+D. Argon
+
+Question 4 [3 marks]
+Draw the displayed formulae of:
+(a) Ethane (C₂H₆)
+(b) Ethene (C₂H₄)
+State one key difference in their bonding.
+
+Question 5 [4 marks]
+The graph shows how the yield of ammonia in the Haber process varies with temperature at two pressures:
+
+**Graph description:**
+- x-axis: Temperature (°C), from 200 to 600
+- y-axis: Yield of NH₃ (%)
+- At 100 atm: (200, 50%), (300, 35%), (400, 20%), (500, 10%), (600, 5%)
+- At 300 atm: (200, 70%), (300, 55%), (400, 38%), (500, 22%), (600, 12%)
+
+(a) Describe the effect of increasing temperature on the yield of ammonia.
+(b) Describe the effect of increasing pressure on the yield of ammonia.
+(c) The industrial conditions are 450°C and 200 atm with an iron catalyst. Explain why a lower temperature is not used, even though it gives a higher yield.
+
+Question 6 [3 marks]
+Write balanced symbol equations with state symbols for:
+(a) Complete combustion of ethanol
+(b) Addition of bromine to ethene
+
+Question 7 [4 marks]
+The rate of reaction between magnesium and hydrochloric acid is measured. The graph shows volume of hydrogen produced over time:
+
+**Graph description:**
+- x-axis: Time (s), 0 to 80
+- y-axis: Volume H₂ (cm³), 0 to 60
+- Data points: (0, 0), (10, 25), (20, 40), (30, 50), (40, 55), (50, 58), (60, 59), (70, 60), (80, 60)
+
+(a) Using the tangent method at t = 10 seconds, calculate the rate of reaction. The tangent at t = 10 passes through approximately (0, 10) and (20, 42).
+(b) Explain why the rate decreases as the reaction proceeds.
+
+Question 8 [3 marks]
+What is dynamic equilibrium? State three conditions required for dynamic equilibrium.
+
+Question 9 [4 marks]
+The concentration-time graph for a reversible reaction reaching equilibrium:
+
+**Graph description:**
+- x-axis: Time (minutes), 0 to 30
+- y-axis: Concentration (mol/dm³)
+- Reactant A: starts at 1.0, decreases to 0.4 by t = 15 min, then stays constant
+- Product B: starts at 0, increases to 0.6 by t = 15 min, then stays constant
+
+(a) At what time is equilibrium reached?
+(b) What is the concentration of A at equilibrium?
+(c) If the temperature is increased (forward reaction is exothermic), predict and explain what would happen to the concentrations.
+
+Question 10 [4 marks]
+The table shows atmospheric data over time:
+
+| Year | CO₂ concentration (ppm) | Global temp anomaly (°C) |
+|------|------------------------|--------------------------|
+| 1960 | 317 | -0.01 |
+| 1980 | 339 | +0.26 |
+| 2000 | 370 | +0.39 |
+| 2020 | 414 | +1.29 |
+
+(a) Calculate the percentage increase in CO₂ from 1960 to 2020.
+(b) Describe the correlation between CO₂ and temperature.
+(c) Explain why correlation does not prove causation. What other evidence supports the link?
+
+Question 11 [3 marks]
+Describe the test for the presence of:
+(a) Chloride ions
+(b) Sulfate ions
+State the reagent and observation for each.
+
+Question 12 [6 marks]
+A company needs to decide between two methods of producing ethanol:
+- Method 1: Fermentation of sugar using yeast (batch process, 37°C, produces impure ethanol)
+- Method 2: Hydration of ethene using a phosphoric acid catalyst (continuous process, 300°C and 60 atm, produces pure ethanol)
+
+Evaluate these two methods. Consider: rate of production, atom economy, energy costs, sustainability, and purity.
+
+Question 13 [4 marks]
+A chromatogram shows the separation of three amino acids from a protein:
+
+**Chromatogram description:**
+- Solvent front: 12.0 cm
+- Amino acid X: spot at 3.6 cm
+- Amino acid Y: spot at 7.2 cm
+- Amino acid Z: spot at 9.6 cm
+
+(a) Calculate the Rf value for each amino acid.
+(b) An unknown amino acid has an Rf of 0.80. Which amino acid is it most likely to be?
+
+Question 14 [3 marks]
+Explain how a catalytic converter in a car exhaust works. Write balanced equations for the reactions that occur.
+
+Question 15 [4 marks]
+The graph shows the mass of a reaction vessel over time as a gas is produced:
+
+**Graph description:**
+- x-axis: Time (s), 0 to 100
+- y-axis: Mass (g), starting at 150.0
+- Experiment A (large marble chips): (0, 150.0), (20, 149.5), (40, 149.1), (60, 148.8), (80, 148.6), (100, 148.5)
+- Experiment B (powdered marble): (0, 150.0), (20, 148.8), (40, 148.5), (60, 148.5), (80, 148.5), (100, 148.5)
+
+(a) Explain why the mass decreases.
+(b) Both experiments lose the same total mass. Explain why.
+(c) Explain why Experiment B reaches the final mass sooner, using collision theory.
+
+Question 16 [3 marks]
+What is a carbon footprint? State two ways a school could reduce its carbon footprint.
+
+Question 17 [4 marks]
+A student heats 6.25 g of hydrated copper sulfate (CuSO₄·xH₂O). The anhydrous mass is 4.00 g.
+Calculate the value of x. (Mr: CuSO₄ = 160, H₂O = 18)
+
+Question 18 [3 marks]
+Explain why crude oil is a finite resource. Describe one alternative fuel and state an advantage and disadvantage.
+
+Question 19 [4 marks]
+Water from different sources requires different treatment:
+
+| Source | Treatment needed |
+|--------|-----------------|
+| Fresh water (reservoir) | Filtration, sedimentation, chlorination |
+| Waste water | Screening, sedimentation, biological treatment, chemical treatment |
+| Sea water | Desalination (distillation or reverse osmosis) |
+
+Explain why waste water requires more stages of treatment than fresh water.
+
+Question 20 [3 marks]
+Describe how metals can be extracted using phytomining or bioleaching. State one advantage of these methods over traditional mining.`,
+  },
+
+  // ── ECONOMICS PAPER 3: Set B ──
+  {
+    id: "econ-p3-b",
+    subject: "economics",
+    paper: "3",
+    title: "Paper 3 — Set B",
+    description: "Synoptic. MCQ + Case study on UK labour market with diagram-based analysis.",
+    totalMarks: 80,
+    content: `# AQA A-Level Economics — Paper 3: Economic Principles and Issues — Predicted Paper Set B
+
+**Time: 2 hours | Total: 80 marks**
+
+---
+
+## Section A: Multiple Choice (30 marks)
+
+Question 1 [1 marks]
+A merit good is one where:
+A. Social benefits exceed private benefits
+B. Social costs exceed private costs
+C. It is provided free at the point of use
+D. There are no external benefits
+
+Question 2 [1 marks]
+If the price elasticity of demand for a product is -0.4, demand is:
+A. Price elastic
+B. Price inelastic
+C. Unitary elastic
+D. Perfectly elastic
+
+Question 3 [1 marks]
+A depreciation of the exchange rate will tend to:
+A. Reduce export competitiveness
+B. Increase the price of imports
+C. Reduce the rate of inflation
+D. Strengthen the current account deficit
+
+Question 4 [1 marks]
+The multiplier effect means that:
+A. Investment always increases GDP
+B. An initial change in spending leads to a larger change in national income
+C. Tax revenue multiplies government spending
+D. Interest rate changes have no effect on GDP
+
+Question 5 [1 marks]
+Which best describes allocative efficiency?
+A. Producing at the lowest average cost
+B. Producing where P = MC
+C. Maximising total revenue
+D. Producing on the PPF
+
+Question 6 [1 marks]
+Quantitative easing involves:
+A. Raising interest rates to reduce money supply
+B. Cutting government spending
+C. Central bank purchasing government bonds to increase money supply
+D. Increasing the reserve ratio for banks
+
+Question 7 [1 marks]
+A natural monopoly occurs when:
+A. There are no barriers to entry
+B. Long-run average costs fall continuously as output increases
+C. The firm is state-owned
+D. There are many small firms in the market
+
+Question 8 [1 marks]
+The Laffer Curve shows the relationship between:
+A. Tax rates and tax revenue
+B. Unemployment and inflation
+C. Interest rates and investment
+D. Government spending and GDP
+
+Question 9 [1 marks]
+If MPC = 0.75, the value of the multiplier is:
+A. 0.75
+B. 3
+C. 4
+D. 1.33
+
+Question 10 [1 marks]
+Supply-side policies aim to:
+A. Increase aggregate demand
+B. Shift the LRAS curve to the right
+C. Reduce the money supply
+D. Increase government borrowing
+
+---
+
+## Section B: Case Study
+
+**Case Study — The UK Labour Market**
+
+The UK labour market has experienced significant structural changes. Following Brexit, net migration from the EU fell from +250,000 per year to +50,000, creating labour shortages in hospitality, agriculture, and social care. The government responded by expanding the Skilled Worker visa scheme, with non-EU net migration rising to 600,000 in 2023.
+
+Meanwhile, the National Living Wage increased from £9.50 (2022) to £11.44 (2024), a 20% rise. Employers' groups warned this would reduce hiring, particularly in small businesses, while trade unions argued it was still below the "real living wage" of £12.00. Zero-hours contracts made up 3.1% of all employment (approximately 1 million workers).
+
+The labour force participation rate for those aged 50–64 fell from 73% to 68% between 2019 and 2023, partly due to long-term health conditions. Economists estimate this "economic inactivity" costs the economy £16 billion per year in lost output.
+
+**Data Table:**
+
+| Indicator | 2019 | 2021 | 2023 | 2024 |
+|-----------|------|------|------|------|
+| Unemployment rate (%) | 3.8 | 4.5 | 4.2 | 4.3 |
+| Average weekly earnings growth (%) | 3.5 | 4.8 | 7.2 | 5.8 |
+| CPI inflation (%) | 1.7 | 2.6 | 7.3 | 3.2 |
+| Real wage growth (%) | 1.8 | 2.2 | -0.1 | 2.6 |
+| National Living Wage (£/hr) | 8.21 | 8.91 | 10.42 | 11.44 |
+| Economic inactivity (% 16–64) | 20.2 | 21.5 | 21.3 | 21.8 |
+
+Question 11 [2 marks]
+Calculate real wage growth in 2023. Show your working.
+
+Question 12 [4 marks]
+Using a labour market supply and demand diagram, show the effect of a National Living Wage set above the market equilibrium wage. Label any resulting unemployment.
+
+Question 13 [4 marks]
+Using an AD/AS diagram, explain how an increase in economic inactivity among over-50s might affect the macroeconomy.
+
+Question 14 [9 marks]
+Using the case study and your economic knowledge, analyse the impact of immigration on the UK labour market. Consider effects on wages, employment, and productivity.
+
+Question 15 [25 marks]
+"A higher National Living Wage does more harm than good for the UK economy." Evaluate this statement.
+
+In your answer, you should:
+- Use labour market diagrams to show the theoretical effects
+- Analyse the impact on different stakeholders (workers, firms, consumers, government)
+- Consider monopsony power and its implications for the minimum wage
+- Evaluate using real-world evidence from the case study
+- Consider both microeconomic and macroeconomic effects`,
+  },
+
+  // ── ECONOMICS PAPER 1: Set D ──
+  {
+    id: "econ-p1-d",
+    subject: "economics",
+    paper: "1",
+    title: "Paper 1 — Set D",
+    description: "Market structures, welfare analysis, cost curves, and competition policy.",
+    totalMarks: 80,
+    content: `# AQA A-Level Economics — Paper 1: Markets and Market Failure — Predicted Paper Set D
+
+**Time: 2 hours | Total: 80 marks**
+
+---
+
+## Section A: Data Response
+
+**Context / Extract A:**
+
+The UK's Competition and Markets Authority (CMA) blocked Microsoft's proposed £55 billion acquisition of Activision Blizzard in June 2023, citing concerns about competition in the cloud gaming market. The CMA argued that the merger would give Microsoft an unfair advantage in cloud gaming, where the market is "still nascent and rapidly evolving." The decision was later overturned following restructured terms that diverted Activision's cloud gaming rights to Ubisoft for 15 years.
+
+The UK gaming market is worth £7.8 billion annually (2024), making it the sixth largest in the world. Three major firms — Sony, Microsoft, and Nintendo — dominate the console market with a combined market share of approximately 95%. Mobile gaming accounts for 52% of industry revenue, with thousands of smaller developers competing.
+
+**Extract B — UK Gaming Industry Data:**
+
+| Indicator | 2019 | 2021 | 2023 | 2024 |
+|-----------|------|------|------|------|
+| Industry revenue (£bn) | 5.7 | 7.2 | 7.5 | 7.8 |
+| Console market concentration (CR3, %) | 97 | 96 | 95 | 95 |
+| Mobile gaming share of revenue (%) | 42 | 48 | 50 | 52 |
+| Average game price (£) | 49.99 | 59.99 | 69.99 | 69.99 |
+| Number of indie game studios (UK) | 2,200 | 2,800 | 3,100 | 3,400 |
+
+Question 1.1 [2 marks]
+Using Extract B, calculate the three-firm concentration ratio for the console market in 2024 and explain what this suggests about the market structure.
+
+Question 1.2 [4 marks]
+Using a diagram, show the profit-maximising position for a monopolist (or oligopolist with market power). Label the areas of supernormal profit and deadweight loss. Include AR, MR, MC, and AC curves.
+
+Question 1.3 [4 marks]
+Using a diagram, explain how the entry of indie game studios into the mobile gaming market represents a more contestable market compared to the console market.
+
+Question 1.4 [9 marks]
+Using the extracts and your economic knowledge, analyse whether consumers benefit from high market concentration in the gaming console market. Consider static and dynamic efficiency.
+
+Question 1.5 [25 marks]
+"Competition policy, such as blocking mergers, is the most effective way to protect consumer welfare." Evaluate this view with reference to the gaming industry and other examples.
+
+---
+
+## Section B: Essay Questions (choose one)
+
+**Either**
+
+Question 2 [25 marks]
+Using appropriate diagrams, evaluate whether a natural monopoly should always be regulated or nationalised.
+
+In your answer:
+- Draw a natural monopoly diagram showing LRAC falling continuously
+- Compare unregulated monopoly, average cost pricing, and marginal cost pricing
+- Analyse the problem of allocative vs productive efficiency
+- Evaluate different regulatory approaches
+
+**Or**
+
+Question 3 [25 marks]
+"The concept of consumer surplus is the best measure of consumer welfare." Evaluate this statement using diagrams.
+
+In your answer:
+- Draw a supply and demand diagram showing consumer surplus
+- Analyse how consumer surplus changes with price discrimination, taxation, and subsidies
+- Evaluate limitations of consumer surplus as a welfare measure
+- Consider alternative measures of welfare`,
+  },
+
+  // ── ECONOMICS PAPER 2: Set D ──
+  {
+    id: "econ-p2-d",
+    subject: "economics",
+    paper: "2",
+    title: "Paper 2 — Set D",
+    description: "International trade, exchange rates, balance of payments, and globalisation with AD/AS analysis.",
+    totalMarks: 80,
+    content: `# AQA A-Level Economics — Paper 2: National and International Economy — Predicted Paper Set D
+
+**Time: 2 hours | Total: 80 marks**
+
+---
+
+## Section A: Data Response
+
+**Context / Extract A:**
+
+China's economic slowdown in 2024 sent shockwaves through the global economy. GDP growth slowed to 4.6% — below the government's 5% target for the first time in decades (excluding the pandemic year). A property market crisis, with major developers like Evergrande collapsing, wiped out an estimated $7 trillion in household wealth. Consumer confidence fell to its lowest level since 2020, and youth unemployment rose to 21%.
+
+The Chinese government responded with a ¥1 trillion fiscal stimulus package and cut the benchmark lending rate three times. However, economists warned of a "liquidity trap" — despite low interest rates, businesses and consumers were unwilling to borrow and spend.
+
+For the UK, China is the sixth largest export market (£25bn in 2024). A weaker Chinese yuan (depreciating 8% against the pound in 2024) made Chinese imports cheaper, contributing to deflationary pressures in UK manufacturing.
+
+**Extract B — Comparative Macroeconomic Data:**
+
+| Indicator | UK 2024 | China 2024 | Eurozone 2024 |
+|-----------|---------|------------|---------------|
+| GDP growth (%) | 0.6 | 4.6 | 0.4 |
+| Inflation (%) | 3.2 | 0.2 | 2.4 |
+| Unemployment (%) | 4.3 | 5.1 | 6.4 |
+| Budget deficit (% GDP) | 4.8 | 7.1 | 3.0 |
+| Current account (% GDP) | -2.8 | +1.5 | +2.3 |
+| Central bank rate (%) | 4.75 | 3.45 | 3.75 |
+
+**Extract C — Exchange Rate Data:**
+
+| Currency pair | Jan 2024 | Jun 2024 | Dec 2024 |
+|--------------|----------|----------|----------|
+| £/$ | 1.27 | 1.26 | 1.25 |
+| £/€ | 1.17 | 1.16 | 1.18 |
+| £/¥ (Chinese yuan) | 9.05 | 9.32 | 9.78 |
+
+Question 1.1 [2 marks]
+Using Extract C, calculate the percentage depreciation of the Chinese yuan against the pound between January and December 2024.
+
+Question 1.2 [4 marks]
+Using an exchange rate diagram (with price of £ in yuan on y-axis and quantity of pounds on x-axis), show how a depreciation of the yuan against the pound would occur. Label the shift clearly.
+
+Question 1.3 [4 marks]
+Using an AD/AS diagram, illustrate how cheaper Chinese imports might affect the UK economy. Consider both the price level and real GDP.
+
+Question 1.4 [9 marks]
+Using the extracts and your economic knowledge, analyse whether China's fiscal stimulus package would be effective in increasing economic growth. Consider the multiplier, confidence, and the liquidity trap.
+
+Question 1.5 [25 marks]
+"A current account surplus is always preferable to a current account deficit." Evaluate this statement with reference to the UK, China, and Eurozone data provided.
+
+---
+
+## Section B: Essay Questions (choose one)
+
+**Either**
+
+Question 2 [25 marks]
+Using AD/AS diagrams, evaluate the view that fiscal policy is more effective than monetary policy in managing the macroeconomy during a period of low growth and rising inflation (stagflation).
+
+In your answer:
+- Define stagflation and show it on an AD/AS diagram
+- Analyse the effectiveness of expansionary fiscal policy with a Keynesian LRAS curve
+- Analyse the limitations of monetary policy when interest rates are near zero
+- Evaluate conflicts between policy objectives
+- Use multiplier analysis where appropriate
+
+**Or**
+
+Question 3 [25 marks]
+"Globalisation has increased inequality both within and between countries." Evaluate this statement.
+
+In your answer:
+- Define globalisation and identify its key features (trade liberalisation, FDI, technology transfer)
+- Use appropriate diagrams (e.g., comparative advantage, AD/AS)
+- Analyse winners and losers from globalisation in developed and developing countries
+- Evaluate the role of institutions (WTO, IMF, World Bank) in managing globalisation
+- Consider both income inequality and wealth inequality`,
+  },
+
+  // ── ECONOMICS PAPER 3: Set C ──
+  {
+    id: "econ-p3-c",
+    subject: "economics",
+    paper: "3",
+    title: "Paper 3 — Set C",
+    description: "Synoptic. MCQ + Case study on inequality, housing, and progressive taxation.",
+    totalMarks: 80,
+    content: `# AQA A-Level Economics — Paper 3: Economic Principles and Issues — Predicted Paper Set C
+
+**Time: 2 hours | Total: 80 marks**
+
+---
+
+## Section A: Multiple Choice (30 marks)
+
+Question 1 [1 marks]
+A Lorenz Curve that is further from the line of equality indicates:
+A. Greater equality of income
+B. Greater inequality of income
+C. A higher GDP per capita
+D. A progressive tax system
+
+Question 2 [1 marks]
+A progressive tax is one where:
+A. Everyone pays the same percentage of income
+B. The tax rate increases as income increases
+C. The tax rate decreases as income increases
+D. A fixed amount is charged regardless of income
+
+Question 3 [1 marks]
+Which of the following is NOT a characteristic of a public good?
+A. Non-rival
+B. Non-excludable
+C. Free rider problem
+D. Positive externalities
+
+Question 4 [1 marks]
+If the government increases spending by £5 billion and the multiplier is 2.5, the total increase in national income is:
+A. £2 billion
+B. £5 billion
+C. £7.5 billion
+D. £12.5 billion
+
+Question 5 [1 marks]
+The J-curve effect suggests that following a currency depreciation:
+A. The current account improves immediately
+B. The current account worsens before improving
+C. Inflation falls then rises
+D. GDP growth accelerates immediately
+
+Question 6 [1 marks]
+Monopsony in the labour market is most likely to result in:
+A. Wages above the marginal revenue product
+B. Wages below the competitive equilibrium
+C. Higher employment levels
+D. Perfect competition in the product market
+
+Question 7 [1 marks]
+The natural rate of unemployment is the rate at which:
+A. There is no unemployment
+B. Inflation is zero
+C. The labour market is in equilibrium (no excess demand or supply)
+D. GDP is at its maximum level
+
+Question 8 [1 marks]
+Which diagram shows the impact of a per-unit tax on a good?
+A. A rightward shift of the demand curve
+B. A leftward (upward) shift of the supply curve
+C. A rightward shift of the supply curve
+D. A leftward shift of the demand curve
+
+Question 9 [1 marks]
+Contestable markets are characterised by:
+A. High barriers to entry
+B. Freedom of entry and exit with low sunk costs
+C. A single dominant firm
+D. Price discrimination
+
+Question 10 [1 marks]
+An increase in the marginal propensity to save would:
+A. Increase the multiplier
+B. Decrease the multiplier
+C. Have no effect on the multiplier
+D. Increase aggregate demand
+
+---
+
+## Section B: Case Study
+
+**Case Study — Income Inequality and the UK Tax System**
+
+The UK's Gini coefficient has risen from 0.25 in 1979 to 0.36 in 2024, indicating a significant increase in income inequality. The top 10% of earners take home 28% of all income after tax, while the bottom 10% receive just 3%. Wealth inequality is even starker: the wealthiest 10% of households hold 43% of all wealth.
+
+The UK tax system uses progressive income tax bands:
+| Band | Income range | Tax rate |
+|------|-------------|----------|
+| Personal allowance | £0 – £12,570 | 0% |
+| Basic rate | £12,571 – £50,270 | 20% |
+| Higher rate | £50,271 – £125,140 | 40% |
+| Additional rate | Over £125,140 | 45% |
+
+However, indirect taxes (VAT at 20%, fuel duty, alcohol/tobacco duty) are regressive — they take a larger proportion of income from poorer households. The poorest 20% of households spend 27% of their disposable income on indirect taxes, compared to 14% for the richest 20%.
+
+Universal Credit replaced six separate benefits in 2013 and currently supports 5.9 million households. Critics argue that the £85 taper rate (losing 55p of benefit for every £1 earned above threshold) creates a "poverty trap" that disincentivises work.
+
+**Data Table:**
+
+| Indicator | Bottom 20% | Middle 20% | Top 20% |
+|-----------|-----------|-----------|---------|
+| Average gross income (£) | 12,400 | 32,800 | 82,300 |
+| Direct tax as % of gross income | 10% | 18% | 25% |
+| Indirect tax as % of gross income | 27% | 18% | 14% |
+| Total tax burden (%) | 37% | 36% | 39% |
+| Benefits received (£) | 8,900 | 3,200 | 400 |
+| Post-tax, post-benefit income (£) | 16,700 | 28,800 | 50,300 |
+
+Question 11 [2 marks]
+Using the data table, calculate the total tax paid (in £) by a household in the middle 20% income group.
+
+Question 12 [4 marks]
+Using a Lorenz Curve diagram, explain how a rise in the Gini coefficient from 0.25 to 0.36 would be shown. Label the axes, the line of equality, and show two Lorenz Curves.
+
+Question 13 [4 marks]
+Using a supply and demand diagram for the labour market, explain how a "poverty trap" created by the benefits taper rate might reduce labour supply. Show the effect on the equilibrium wage and employment.
+
+Question 14 [9 marks]
+Using the case study and your economic knowledge, analyse whether the UK tax system is truly progressive when both direct and indirect taxes are considered.
+
+Question 15 [25 marks]
+"Reducing income inequality should be the primary objective of government economic policy." Evaluate this statement.
+
+In your answer, you should:
+- Analyse the causes and consequences of income inequality (efficiency vs equity debate)
+- Evaluate specific policies to reduce inequality (progressive taxes, minimum wage, benefits, education spending)
+- Use appropriate diagrams (Lorenz Curve, labour market, AD/AS)
+- Consider potential conflicts with other macroeconomic objectives (growth, inflation, government debt)
+- Evaluate using real-world evidence from the case study`,
+  },
 ];
