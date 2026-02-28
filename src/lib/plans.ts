@@ -16,7 +16,7 @@ export const PLANS = {
 } as const;
 
 export const FREE_LIMITS = {
-  papers: 1,
+  papers: 3,
   questions: 2,
-  predictedPapers: 1,
+  predictedPapers: 3,
 } as const;
