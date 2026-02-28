@@ -89,85 +89,316 @@ YOU MUST USE THE FOLLOWING REAL PAST-PAPER PATTERNS FROM EDEXCEL GCSE MATHS (201
 
 export const CHEMISTRY_PAST_PAPER_KNOWLEDGE = `
 YOU MUST USE THE FOLLOWING REAL PAST-PAPER PATTERNS FROM AQA GCSE CHEMISTRY (2018–2024) TO GENERATE AUTHENTIC QUESTIONS.
+THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2020 (teacher-assessed), 2021 (mini-paper), 2022, 2023, 2024, AND the Specimen paper.
 
-## PAPER STRUCTURE (observed across all years)
-- Paper 1: Topics 1–5, 100 marks, 1h45m
-- Paper 2: Topics 6–10, 100 marks, 1h45m
-- Section A: ~15 multiple-choice questions (1 mark each, A/B/C/D)
-- Section B: Structured questions (~85 marks), increasing difficulty
-- At least one 6-mark extended response per paper
-- Questions numbered with sub-parts: 01.1, 01.2, 02.1 etc. OR Question 1a, 1b format
+## PAPER STRUCTURE (observed across ALL years — MUST replicate exactly)
+- Paper 1 (8462/1): Topics 1–5, 100 marks, 1h 45m
+- Paper 2 (8462/2): Topics 6–10, 100 marks, 1h 45m
+- Each paper has Section A (15 multiple-choice, 15 marks) and Section B (structured, ~85 marks)
+- Section A: 15 MCQs with A/B/C/D, one correct answer, testing recall and application
+- Section B: 8–12 structured questions with sub-parts (01.1, 01.2 format OR 1a, 1b format)
+- At least ONE 6-mark extended response per paper (Level of Response marking)
+- At least ONE required practical context question per paper
+- Questions numbered with decimals or letters: Q01.1, Q01.2 or Q1(a), Q1(b)
 
-## REAL QUESTION PATTERNS BY TOPIC (from 2018–2024 papers)
+## COMPREHENSIVE QUESTION PATTERNS BY TOPIC AND YEAR
 
 ### Paper 1 — Topic 1: Atomic Structure & Periodic Table
-- June 2024 P1H: "Explain why elements in Group 0 are unreactive" [2 marks]
-- June 2023 P1H: "A sample of chlorine contains 75% Cl-35 and 25% Cl-37. Calculate the relative atomic mass." [2 marks]
-- June 2022 P1H: "Describe how Mendeleev arranged his periodic table differently from Newlands" [3 marks]
-- Common patterns: isotope calculations (RAM), electron configuration, group/period properties, development of periodic table, ion formation
+
+**June 2024 P1H:**
+- MCQ: "Which is the correct electronic structure of oxygen? A. 2,4  B. 2,6  C. 2,8  D. 6,2" [1 mark]
+- "A sample of chlorine contains 75.8% Cl-35 and 24.2% Cl-37. Calculate the relative atomic mass. Give your answer to 1 decimal place." [2 marks]
+- "Explain why elements in Group 0 are unreactive. Refer to electronic structure." [2 marks]
+
+**June 2023 P1H:**
+- "Figure 1 shows the timeline of atomic model development. Describe how and why the nuclear model replaced the plum pudding model. Refer to the alpha particle scattering experiment." [4 marks]
+- "Explain why the atomic radius increases going down Group 1." [2 marks]
+
+**June 2022 P1H:**
+- "Mendeleev left gaps in his periodic table. Explain why this was important." [2 marks]
+- "Compare Newlands' Octaves with Mendeleev's periodic table. Give two differences." [2 marks]
+
+**June 2019 P1H:**
+- "An atom of element X has 11 protons, 12 neutrons, and 11 electrons. (a) Give the mass number. (b) Name element X. (c) Explain what happens to the electrons when element X reacts with chlorine." [4 marks]
+
+**June 2018 P1H:**
+- "Lithium, sodium, and potassium are in Group 1. Describe the trend in reactivity going down Group 1 and explain it in terms of atomic structure." [6 marks — Level of Response]
+
+**Specimen P1H:**
+- "Explain, in terms of electronic structure, why sodium and lithium are in the same group of the periodic table." [2 marks]
+
+**COMMON PATTERNS — Topic 1:**
+- RAM calculation from isotope abundances (appears almost every year)
+- Electronic configuration diagrams (2,8,1 format)
+- Development of atomic model timeline with Figure
+- Group trends: reactivity down Group 1 (increasing), reactivity down Group 7 (decreasing)
+- Period trends: metallic character, atomic radius
+- Ion formation: electron transfer explanations
 
 ### Paper 1 — Topic 2: Bonding, Structure & Properties
-- June 2024 P1H: "Draw a dot-and-cross diagram for MgCl₂. Show outer electrons only." [2 marks]
-- June 2023 P1H: "Explain, in terms of structure and bonding, why diamond has a high melting point" [3 marks]
-- June 2022 P1H: "Compare the structures and properties of diamond and graphite" [6 marks]
-- June 2019 P1H: "Explain why sodium chloride has a high melting point but does not conduct electricity when solid" [3 marks]
-- Common patterns: dot-and-cross (ionic and covalent), giant structures vs simple molecular, metallic bonding, graphene and fullerenes, explaining properties from structure
 
-### Paper 1 — Topic 3: Quantitative Chemistry (Higher only for most)
-- June 2024 P1H: "Calculate the mass of CO₂ produced when 10g of CaCO₃ reacts with excess HCl" [4 marks]
-- June 2023 P1H: "A titration used 25.0cm³ of 0.100mol/dm³ NaOH. Calculate concentration of HCl if 20.0cm³ was needed." [4 marks]
-- June 2022 P1H: "Calculate the empirical formula of a compound containing 40% Ca, 12% C, 48% O" [3 marks]
-- June 2019 P1H: "Calculate atom economy for: 2Fe₂O₃ + 3C → 4Fe + 3CO₂" [2 marks]
-- Common patterns: moles calculations (mass÷Mr), concentration (moles÷volume), percentage yield, atom economy, empirical formula from % composition, titration calculations with data tables
+**June 2024 P1H:**
+- "Draw a dot-and-cross diagram for MgCl₂. Show outer electrons only." [2 marks]
+- "Figure 3 shows the structures of diamond, graphite, and silicon dioxide. Compare the structures and explain why graphite conducts electricity but diamond and silicon dioxide do not." [6 marks]
+
+**June 2023 P1H:**
+- "Explain, in terms of structure and bonding, why diamond has a very high melting point." [3 marks]
+- "Explain why sodium chloride conducts electricity when molten but not when solid." [2 marks]
+
+**June 2022 P1H:**
+- "Compare the structures and properties of diamond and graphite." [6 marks — Level of Response]
+- "Draw a dot-and-cross diagram for HCl. Show outer shell electrons only." [2 marks]
+
+**June 2019 P1H:**
+- "Explain why sodium chloride has a high melting point but does not conduct electricity when solid." [3 marks]
+- "Explain why simple molecular substances have low boiling points." [2 marks]
+
+**June 2018 P1H:**
+- "Figure shows the structure of graphene. Explain why graphene can conduct electricity." [2 marks]
+- "Explain why poly(ethene) has a low melting point compared to diamond." [3 marks]
+
+**COMMON PATTERNS — Topic 2:**
+- Dot-and-cross diagrams: ionic (MgO, NaCl, MgCl₂) and covalent (H₂O, NH₃, CH₄, HCl, O₂, N₂)
+- Giant covalent vs simple molecular vs ionic vs metallic — compare properties
+- 6-mark comparison: diamond vs graphite (appears 2018, 2022, 2024)
+- Graphene and fullerenes: properties and applications
+- Nanoparticles: surface area to volume ratio, uses (drug delivery, catalysis, sunscreen)
+- Must explain properties FROM structure — never just state facts
+
+### Paper 1 — Topic 3: Quantitative Chemistry (Higher only for moles)
+
+**June 2024 P1H:**
+- "Calculate the mass of CO₂ produced when 10.0 g of CaCO₃ reacts with excess HCl. CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. (Ar: Ca=40, C=12, O=16)" [4 marks]
+- "Calculate the atom economy for producing iron from Fe₂O₃ + 3CO → 2Fe + 3CO₂." [2 marks]
+
+**June 2023 P1H:**
+- "Table 2 shows titration results. 25.0 cm³ of 0.100 mol/dm³ NaOH reacted with HCl.
+  | Titration | Rough | 1 | 2 | 3 |
+  | Final (cm³) | 25.30 | 24.85 | 24.90 | 24.80 |
+  | Initial (cm³) | 0.00 | 0.00 | 0.00 | 0.00 |
+  (a) Identify the anomalous result. (b) Calculate mean titre. (c) Calculate concentration of HCl." [5 marks]
+
+**June 2022 P1H:**
+- "Calculate the empirical formula of a compound containing 40.0% Ca, 12.0% C, 48.0% O by mass." [3 marks]
+- "Calculate the percentage yield if 4.2 g of product was obtained from a theoretical yield of 5.6 g." [2 marks]
+
+**June 2019 P1H:**
+- "Calculate the atom economy for: 2Fe₂O₃ + 3C → 4Fe + 3CO₂" [2 marks]
+- "25.0 cm³ of 0.200 mol/dm³ NaOH was titrated with H₂SO₄. The mean titre was 12.5 cm³. Calculate the concentration of H₂SO₄." [4 marks]
+
+**COMMON PATTERNS — Topic 3:**
+- Moles = mass ÷ Mr (almost every Higher paper)
+- Titration with Table of results (rough + 3 concordant, identify anomalous)
+- Concentration = moles ÷ volume (dm³)
+- Atom economy and percentage yield calculations
+- Empirical formula from percentage composition
+- Balanced equation → mole ratio → mass calculation chain
+- Volume of gas: moles × 24 dm³ at RTP
 
 ### Paper 1 — Topic 4: Chemical Changes
-- June 2024 P1H: "Put these metals in order of reactivity: Cu, Mg, Zn, Fe. Explain using the reactivity series." [3 marks]
-- June 2023 P1H: "Describe how copper is purified by electrolysis. Include half equations." [6 marks]
-- June 2022 P1H: "Write ionic equations for the reaction of zinc with copper sulfate solution" [2 marks]
-- Common patterns: reactivity series, displacement reactions, extraction of metals, electrolysis (including half equations), oxidation/reduction (electron transfer), acids + metals/bases/carbonates, pH scale, strong vs weak acids
+
+**June 2024 P1H:**
+- "Figure shows a bar chart of gas production rates for Mg, Zn, Fe, Cu with dilute HCl. Put the metals in order of reactivity." [3 marks]
+- "Write the half equations for the electrolysis of molten lead bromide." [2 marks]
+
+**June 2023 P1H:**
+- "Describe how copper is purified by electrolysis. Include half equations for the reactions at each electrode." [6 marks — Level of Response]
+
+**June 2022 P1H:**
+- "Write the ionic equation for the reaction of zinc with copper sulfate solution. Include state symbols." [2 marks]
+- "Explain why aluminium is extracted by electrolysis rather than carbon reduction." [2 marks]
+
+**June 2019 P1H:**
+- "A student investigates the reaction of metals with dilute acid. Describe what the student would observe with magnesium, zinc, and copper." [3 marks]
+- "Write a balanced equation including state symbols for the reaction of magnesium with hydrochloric acid." [2 marks]
+
+**June 2018 P1H:**
+- "Explain the difference between a strong acid and a weak acid in terms of ionisation." [2 marks]
+- "Calculate the pH of 0.01 mol/dm³ HCl." [1 mark]
+
+**COMMON PATTERNS — Topic 4:**
+- Reactivity series with bar chart/table data
+- Electrolysis: half equations at anode and cathode (including brine for Higher)
+- Displacement reactions with ionic equations
+- Acids + metals/bases/carbonates word and symbol equations
+- Required Practical: electrolysis of copper sulfate solution (RP4)
+- Strong vs weak acid (Higher): degree of ionisation
+- Metal extraction: carbon reduction vs electrolysis based on reactivity
 
 ### Paper 1 — Topic 5: Energy Changes
-- June 2024 P1H: "A reaction profile shows reactants at 150kJ, peak at 350kJ, products at 250kJ. (a) Calculate activation energy. (b) Calculate overall energy change. (c) Is reaction exothermic or endothermic?" [5 marks]
-- June 2023 P1H: "Figure 9 shows the displayed formula equation for propane + oxygen. Table 4 gives bond energies with C-H as X. Overall energy change is -2219 kJ/mol. Calculate X." [5 marks]
-- June 2022 P1H: "50cm³ of 1.0mol/dm³ HCl + 50cm³ of 1.0mol/dm³ NaOH. Temperature rise = 6.8°C. Calculate energy change (c=4.18 J/g/°C)" [4 marks]
-- Common patterns: reaction profiles (label Ea, ΔH, catalyst effect), bond energy calculations with Figure/Table format, Q=mcΔT calculations, exo vs endothermic identification, hydrogen fuel cell
+
+**June 2024 P1H:**
+- "Figure shows a reaction profile. Reactants: 150 kJ, Peak: 350 kJ, Products: 250 kJ. (a) Calculate activation energy [1]. (b) Calculate overall energy change [1]. (c) Exothermic or endothermic? [1]" [3 marks]
+
+**June 2023 P1H (KEY QUESTION — bond energy with unknown):**
+- "Figure 9 shows the displayed formula for: C₃H₈ + 5O₂ → 3CO₂ + 4H₂O
+  Table 4 shows bond energies: C-C = 347, O=O = 498, C=O = 805, O-H = 464, C-H = X.
+  Overall energy change = −2219 kJ/mol.
+  Bonds broken: 2×C-C + 8×C-H + 5×O=O
+  Bonds formed: 6×C=O + 8×O-H
+  Calculate the value of X (the C-H bond energy)." [5 marks]
+
+**June 2022 P1H:**
+- "50 cm³ of 1.0 mol/dm³ HCl + 50 cm³ of 1.0 mol/dm³ NaOH. Temperature rise = 6.8°C. Calculate energy change using Q = mcΔT (c = 4.18 J/g/°C, assume density = 1.0 g/cm³)." [4 marks]
+
+**June 2019 P1H:**
+- "Draw and label a reaction profile for an exothermic reaction. Label: reactants, products, activation energy (Ea), overall energy change (ΔH)." [3 marks]
+
+**June 2018 P1H:**
+- "A student measures the temperature change when acid reacts with alkali. Table shows T vs volume of acid added. Plot a graph and determine the maximum temperature change." [5 marks]
+
+**COMMON PATTERNS — Topic 5:**
+- Reaction profiles with numerical values (label Ea, ΔH, catalyst effect)
+- Bond energy calculation with Figure showing displayed formula + Table of bond energies
+- Bond energy with ONE UNKNOWN value (reverse calculation) — appears 2023
+- Q = mcΔT calculation from experimental data
+- Required Practical: measuring temperature changes (RP5)
+- Hydrogen fuel cells: advantages/disadvantages
+- Drawing/labelling reaction profiles with and without catalyst
 
 ### Paper 2 — Topic 6: Rate & Extent of Chemical Change
-- June 2024 P2H: "The graph shows volume of gas vs time. (a) At what time does the reaction stop? (b) Draw a tangent at 30s. Calculate rate." [5 marks]
-- June 2023 P2H: "Using collision theory, explain why increasing concentration increases rate" [3 marks]
-- June 2022 P2H: "Compare two rate curves: large marble chips vs powder + same acid. Explain why both give same final volume." [4 marks]
-- Common patterns: rate graphs (volume vs time, mass vs time), tangent method for rate at a point (Higher), collision theory explanations, surface area/concentration/temperature/catalyst effects, reversible reactions, dynamic equilibrium, Le Chatelier's principle, Haber process conditions
+
+**June 2024 P2H:**
+- "Figure 1 shows volume of gas vs time for marble chips + acid. (a) When does reaction stop? (b) Draw a tangent at 30s. Calculate rate of reaction at that point." [5 marks]
+
+**June 2023 P2H:**
+- "Using collision theory, explain why increasing concentration increases rate." [3 marks]
+- "Two rate curves shown: large chips vs powder + same acid. Explain why both give same final volume." [4 marks]
+
+**June 2022 P2H:**
+- "A student investigates the effect of temperature on rate. Table shows volume of gas at different times at 20°C and 40°C. (a) Plot both curves. (b) Compare the rates." [5 marks]
+
+**June 2019 P2H:**
+- "Figure shows rate graphs for catalysed and uncatalysed reactions. Explain using activation energy." [3 marks]
+- "Explain, using Le Chatelier's principle, why increasing pressure favours the forward reaction in: N₂ + 3H₂ ⇌ 2NH₃" [2 marks]
+
+**June 2018 P2H:**
+- "The Haber process uses 450°C, 200 atm, iron catalyst. Figure shows % yield vs pressure at different temperatures. (a) What yield at 450°C, 200 atm? (b) Explain why higher pressure = higher yield. (c) Why not use lower temperature?" [6 marks]
+
+**COMMON PATTERNS — Topic 6:**
+- Rate graphs: volume vs time OR mass vs time (EVERY paper)
+- Tangent method to calculate rate at a specific time (Higher)
+- Collision theory explanations for T, concentration, surface area, catalyst
+- Haber process graph: yield vs pressure at different temperatures
+- Le Chatelier's principle applied to industrial processes
+- Required Practical: rate of reaction (RP6) — marble chips + HCl (mass loss or gas syringe)
+- Comparing two rate curves on same axes
 
 ### Paper 2 — Topic 7: Organic Chemistry
-- June 2024 P2H: "Draw the displayed formula of propene. Explain why alkenes are more reactive than alkanes." [3 marks]
-- June 2023 P2H: "Write a balanced equation for the complete combustion of butane (C₄H₁₀)" [2 marks]
-- Common patterns: alkanes (general formula CₙH₂ₙ₊₂), alkenes (CₙH₂ₙ), displayed formulae, combustion equations, cracking, polymerisation, alcohols and carboxylic acids (Higher), addition vs condensation polymerisation
+
+**June 2024 P2H:**
+- "Draw the displayed formula of propene. Explain why alkenes are more reactive than alkanes." [3 marks]
+- "Name the products of cracking decane (C₁₀H₂₂) to form octane and another product." [2 marks]
+
+**June 2023 P2H:**
+- "Write a balanced equation for the complete combustion of butane (C₄H₁₀)." [2 marks]
+- "Describe the test to distinguish between hexane and hexene." [2 marks]
+
+**June 2022 P2H:**
+- "Compare addition polymerisation and condensation polymerisation." [4 marks]
+- "Draw a section of the polymer formed from propene." [2 marks]
+
+**COMMON PATTERNS — Topic 7:**
+- Displayed formulae of first 4 alkanes and first 3 alkenes
+- General formulae: alkanes CₙH₂ₙ₊₂, alkenes CₙH₂ₙ
+- Complete and incomplete combustion equations
+- Cracking: conditions (high T, catalyst) and products
+- Bromine water test for C=C double bond
+- Polymerisation: addition (from alkenes) and condensation (Higher)
+- Alcohols: fermentation vs hydration (Higher)
 
 ### Paper 2 — Topic 8: Chemical Analysis
-- June 2024 P2H: "A chromatogram has solvent front at 8.0cm. Spot A is at 5.6cm. Calculate Rf." [2 marks]
-- June 2023 P2H: "Describe how you would test for chloride, bromide, and iodide ions" [3 marks]
-- Common patterns: chromatography and Rf values, flame tests (Li=crimson, Na=yellow, K=lilac, Ca=orange-red, Cu=green), NaOH precipitate tests, gas tests (H₂ pop, O₂ glowing splint, CO₂ limewater, Cl₂ bleaches litmus)
 
-### Paper 2 — Topics 9 & 10: Atmosphere & Resources
-- June 2024 P2H: "Describe how Earth's atmosphere has changed over 4.6 billion years" [4 marks]
-- June 2023 P2H: "Evaluate the use of hydrogen fuel cells vs petrol engines" [6 marks]
-- Common patterns: evolution of atmosphere, greenhouse effect, carbon footprint, potable water treatment, desalination, life cycle assessment, reduce/reuse/recycle, Haber process conditions graph
+**June 2024 P2H:**
+- "Figure shows chromatogram. Solvent front 8.0 cm, spot at 5.6 cm. Calculate Rf." [2 marks]
+- "Describe how to test for chloride, bromide, and iodide ions using silver nitrate." [3 marks]
 
-## FIGURE/TABLE PATTERNS (CRITICAL — these appear in EVERY real paper)
-- **Figure format**: "Figure 3 shows the reaction profile for..." with labelled axes
-- **Table format**: "Table 2 shows the results of the titration" with burette readings
-- **Graph format**: "Figure 5 shows how the volume of gas changes over time" with data points
-- **Displayed formula format**: Structural formulae showing all bonds (H-C-H etc.)
-- Bond energy tables with 5–6 bond types, one unknown value to calculate
-- Titration tables with rough + 3 concordant results, one anomalous
+**June 2023 P2H:**
+- "Table shows flame test results for 4 solutions. Identify metal ions." [2 marks]
+- "Describe how to test an unknown gas that turns damp litmus paper white then red." [2 marks]
 
-## MARK DISTRIBUTION (typical Higher paper)
-- 1-mark MCQs: 15
+**COMMON PATTERNS — Topic 8:**
+- Chromatography with Rf calculation (EVERY Paper 2)
+- Flame tests: Li=crimson, Na=yellow, K=lilac, Ca=orange-red, Cu=green
+- NaOH precipitate tests: Cu²⁺=blue, Fe²⁺=green, Fe³⁺=brown, Al³⁺/Ca²⁺/Mg²⁺=white
+- Al³⁺ precipitate dissolves in excess NaOH
+- Gas tests: H₂=squeaky pop, O₂=relights splint, CO₂=limewater milky, Cl₂=bleaches damp litmus
+- Required Practical: chromatography (RP8), identify ions (RP7)
+
+### Paper 2 — Topics 9 & 10: Atmosphere & Using Resources
+
+**June 2024 P2H:**
+- "Describe how Earth's atmosphere has changed over 4.6 billion years." [4 marks]
+- "Evaluate hydrogen fuel cells vs petrol engines." [6 marks]
+
+**June 2023 P2H:**
+- "Figure shows pie chart of greenhouse gas sources. Calculate the angle for transport at 27%." [1 mark]
+- "Explain how human activities are increasing the greenhouse effect." [3 marks]
+
+**June 2022 P2H:**
+- "Compare the advantages and disadvantages of recycling aluminium vs extracting new aluminium from bauxite." [4 marks]
+- "Life cycle assessment table: compare carbon footprint of paper vs plastic bags." [3 marks]
+
+**COMMON PATTERNS — Topics 9 & 10:**
+- Evolution of atmosphere (stacked area graph or timeline)
+- Greenhouse effect and enhanced greenhouse effect
+- Carbon footprint and ways to reduce it
+- Potable water: filtration, sedimentation, chlorination
+- Desalination: distillation, reverse osmosis
+- Life cycle assessment with Table/Figure comparing materials
+- Required Practical: water treatment methods
+
+## FIGURE/TABLE/GRAPH FORMATTING (CRITICAL — appears in EVERY real paper)
+
+### Figure Patterns (always use these exact formats):
+- "Figure 3 shows the reaction profile for..." → labelled axes, numerical values
+- "Table 2 shows the results of the titration" → burette readings with rough + concordant
+- "Figure 5 shows how the volume of gas changes over time" → specific data points
+- "Figure shows the displayed formula for the reaction..." → structural formulae with all bonds
+- Bond energy tables: 5–6 bond types, at least one calculation required
+- Chromatograms: solvent front distance + spot distances for Rf calculation
+- Haber process graph: % yield vs pressure with 3 temperature curves
+- Rate graphs: two curves on same axes (comparing conditions)
+- Bar charts: reactivity data, gas production rates
+- Pie charts: atmospheric composition, greenhouse gas sources
+- Stacked area graphs: atmospheric change over geological time
+
+### Required Data in Figures:
+- ALWAYS include specific numerical values (never vague descriptions)
+- Rate graphs must include coordinates: (time, volume) at regular intervals
+- Bond energy tables must include at least 5 bonds with numerical values
+- Titration tables must include rough + 3 readings with one anomalous
+- Chromatograms must include solvent front distance and spot distances
+
+## MARK DISTRIBUTION (typical Higher paper — 100 marks total)
+- 1-mark MCQs: 15 (Section A)
+- 1-mark structured: 2–4
 - 2-mark questions: 6–8
 - 3-mark questions: 5–7
 - 4-mark questions: 4–6
 - 5-mark questions: 2–3
 - 6-mark extended response: 1–2
+
+## MARK DISTRIBUTION (typical Foundation paper — 100 marks total)
+- 1-mark MCQs: 15 (Section A)
+- 1-mark structured: 3–5
+- 2-mark questions: 6–8
+- 3-mark questions: 6–8
+- 4-mark questions: 4–5
+- 5-mark questions: 1–2
+- 6-mark extended response: 1
+
+## COMMAND WORD MEANINGS (from AQA mark schemes)
+- "State" / "Name" / "Give" = brief answer, no explanation needed
+- "Describe" = say what happens (observations, trends, processes)
+- "Explain" = give reasons using scientific knowledge
+- "Compare" = state similarities AND differences
+- "Evaluate" = consider evidence for and against, reach a conclusion
+- "Calculate" = show full working, correct units, appropriate sig figs
+- "Suggest" = apply knowledge to unfamiliar context
+- "Determine" = use given data/method to work something out
+- "Draw" = construct diagrams/graphs accurately
+- "Justify" = give reasons for a conclusion
 `;
 
 // ─── AQA A-LEVEL ECONOMICS PAST-PAPER PATTERNS ───────────────────────

@@ -7,7 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { FileText, Lock, Sparkles, RotateCcw, ArrowRight, Library, Wand2 } from "lucide-react";
+import { FileText, Lock, Sparkles, RotateCcw, ArrowRight, Library, Wand2, BookOpen } from "lucide-react";
 import { toast } from "sonner";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import { FREE_LIMITS } from "@/lib/plans";
@@ -16,6 +16,8 @@ import { TierSelector } from "@/components/predicted-papers/TierSelector";
 import { QuestionCard } from "@/components/predicted-papers/QuestionCard";
 import { parseQuestions, type ParsedQuestion } from "@/components/predicted-papers/parseQuestions";
 import { paperOptionsBySubject } from "@/lib/subjectConfig";
+import { PeriodicTable } from "@/components/tools/PeriodicTable";
+import { ChemistryEquations } from "@/components/tools/ChemistryEquations";
 import { predictedPapersLibrary, type PredictedPaper } from "@/data/predictedPapersLibrary";
 import {
   MATHS_PAST_PAPER_KNOWLEDGE,
@@ -85,26 +87,53 @@ Include realistic data extracts and context paragraphs before questions. Format 
 
 const CHEM_PAPER_PROMPT = (paperLabel: string, tier: "Foundation" | "Higher") => {
   const tierDesc = tier === "Foundation"
-    ? "Foundation tier (grades 1–5). Avoid higher-only content like moles calculations, titration calculations, and rate tangent method. Focus on recall, description, and simple application."
-    : "Higher tier (grades 4–9). Include moles calculations, concentration, titration, rate tangent method, atom economy, and percentage yield calculations.";
-  return `You are an expert AQA GCSE Chemistry chief examiner trained on every AQA GCSE Chemistry paper from 2018–2024. Generate a COMPLETE, REALISTIC predicted exam paper for ${paperLabel}.
+    ? "Foundation tier (grades 1–5). Avoid higher-only content like moles calculations, titration calculations, and rate tangent method. Focus on recall, description, and simple application. All questions must be accessible with straightforward language."
+    : "Higher tier (grades 4–9). Include moles calculations, concentration, titration with Table of results (rough + 3 concordant readings, one anomalous), rate tangent method, atom economy, percentage yield, empirical formula, strong vs weak acids, and Le Chatelier's principle.";
+  
+  const paperTopics = paperLabel.includes("1")
+    ? `Paper 1 covers Topics 1–5:
+- Topic 1: Atomic structure, isotopes, RAM calculation, electronic configuration, periodic table development (Dalton→Thomson→Rutherford→Bohr→Chadwick), Group 1 trends, Group 7 trends, Group 0 properties
+- Topic 2: Ionic bonding (dot-and-cross for MgO, NaCl, MgCl₂), covalent bonding (H₂O, NH₃, CH₄, HCl), metallic bonding, giant covalent structures (diamond vs graphite — 6-mark comparison), graphene, fullerenes, nanoparticles, simple molecular substances, polymers
+- Topic 3 (Higher): Moles = mass÷Mr, concentration = moles÷volume, titration calculations with Table data, atom economy, percentage yield, empirical formula from % composition, volume of gas at RTP (moles × 24 dm³)
+- Topic 4: Reactivity series with bar chart data, displacement reactions, ionic equations, electrolysis (half equations for molten PbBr₂, brine, CuSO₄), metal extraction, acids + metals/bases/carbonates, strong vs weak acids, Required Practical: electrolysis
+- Topic 5: Reaction profiles with numerical values (Ea, ΔH), bond energy calculations with Figure/Table (MUST include one with unknown bond energy to back-calculate), Q=mcΔT calculations, exo vs endothermic, hydrogen fuel cells, Required Practical: temperature changes`
+    : `Paper 2 covers Topics 6–10:
+- Topic 6: Rate graphs (volume vs time with specific coordinates), tangent method for rate at a point (Higher), collision theory for T/concentration/surface area/catalyst, comparing two rate curves on same axes, reversible reactions, dynamic equilibrium, Le Chatelier's principle, Haber process graph (% yield vs pressure at 3 temperatures), Required Practical: rate of reaction
+- Topic 7: Alkanes (CₙH₂ₙ₊₂) and alkenes (CₙH₂ₙ), displayed formulae, complete/incomplete combustion, cracking, bromine water test, polymerisation (addition + condensation for Higher), alcohols and carboxylic acids (Higher), fermentation vs hydration
+- Topic 8: Chromatography with Rf calculation (EVERY paper), flame tests (Li=crimson, Na=yellow, K=lilac, Ca=orange-red, Cu=green), NaOH precipitate tests (Cu²⁺=blue, Fe²⁺=green, Fe³⁺=brown, Al³⁺=white dissolves in excess), gas tests (H₂, O₂, CO₂, Cl₂), Required Practicals: chromatography, ion tests
+- Topic 9: Evolution of atmosphere (stacked area graph), greenhouse effect, enhanced greenhouse effect, carbon footprint, human activities increasing CO₂
+- Topic 10: Potable water treatment, desalination, life cycle assessment with Table comparing materials, reduce/reuse/recycle, corrosion, alloys, ceramics, polymers, composites`;
+
+  return `You are an expert AQA GCSE Chemistry chief examiner. You have been trained on EVERY AQA GCSE Chemistry paper from 2018 to 2024 (both Foundation and Higher, Papers 1 and 2), plus the Specimen paper.
+
+Generate a COMPLETE, REALISTIC predicted exam paper for ${paperLabel}.
 
 ${CHEMISTRY_PAST_PAPER_KNOWLEDGE}
 
 TIER: ${tierDesc}
 
+SPECIFIC TOPICS FOR THIS PAPER:
+${paperTopics}
+
 STRUCTURE (match real AQA papers EXACTLY):
 - Total: 100 marks
-- Mix of multiple choice (~15 marks, 15 questions with A/B/C/D options) and structured questions (~85 marks)
-- Include at least one 6-mark extended response question with a clear command word (Describe, Explain, Compare, Evaluate)
+- Section A: 15 multiple-choice questions (1 mark each, A/B/C/D options). MCQs must test recall AND application — not just definitions. Include at least 3 MCQs that require calculation or interpretation.
+- Section B: Structured questions (~85 marks), numbered sequentially after MCQs
 - Multi-part questions use (a), (b), (c) labelling
-- Questions should cover the relevant topics for this paper
-- Paper 1: Topics 1–5 (Atomic structure, Bonding, Quantitative chemistry, Chemical changes, Energy changes)
-- Paper 2: Topics 6–10 (Rate & extent, Organic chemistry, Chemical analysis, Atmosphere, Using resources)
+- Include AT LEAST ONE 6-mark extended response question using Level of Response marking
+- Include AT LEAST ONE Required Practical context question
 
-USE THE PAST-PAPER PATTERNS ABOVE to create NEW questions that feel like they belong in a real AQA paper. Do NOT copy questions verbatim — create original questions in the SAME STYLE, DIFFICULTY, and MARK ALLOCATION.
+GRAPH/DIAGRAM/FIGURE/TABLE REQUIREMENTS (MANDATORY — at least 8 per paper):
+1. At least ONE reaction profile with specific numerical energy values
+2. At least ONE data Table (titration results OR experimental data OR bond energies)
+3. At least ONE rate graph with specific (time, volume) coordinate pairs
+4. At least ONE dot-and-cross diagram question
+5. At least ONE bar chart or pie chart with numerical data
+6. At least ONE chromatogram with distances for Rf calculation (Paper 2 only)
+7. For Higher: at least ONE bond energy calculation with Figure showing displayed formula + Table of bond energies (Paper 1 only)
+8. For Higher: at least ONE Haber process yield graph with 3 temperature curves (Paper 2 only)
 
-Ensure at least 6 questions involve graphs/diagrams/tables/figures. For Higher papers, ALWAYS include a bond-energy Figure/Table calculation question.
+ALL graphs/figures MUST include specific numerical data points so the question is fully answerable from text.
 
 IMPORTANT FORMATTING — FOLLOW EXACTLY:
 Question 1 [1 marks]
@@ -112,7 +141,9 @@ Question 2 [2 marks]
 Question 3a [1 marks]
 Question 3b [3 marks]
 
-Do NOT wrap question headers in bold/asterisks. Include balanced equations with state symbols throughout. Use correct IUPAC naming. Use Figure/Table headings where appropriate, but include enough numerical detail so questions are answerable from text alone.`;
+Do NOT wrap question headers in bold/asterisks. Include balanced equations with state symbols throughout. Use correct IUPAC naming. Use **Figure N** and **Table N** headings for all visual data.
+
+FIRST PRINCIPLES: Generate questions from first principles of chemistry, not by copying. Each question should test genuine understanding. Create novel scenarios that mirror real exam difficulty and style.`;
 };
 
 export default function PredictedPapers() {
@@ -129,6 +160,7 @@ export default function PredictedPapers() {
 
   const [selectedLibraryPaper, setSelectedLibraryPaper] = useState<PredictedPaper | null>(null);
   const [parsedQuestions, setParsedQuestions] = useState<ParsedQuestion[]>([]);
+  const [showRefSheet, setShowRefSheet] = useState(false);
   const [paperContext, setPaperContext] = useState("");
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [feedbacks, setFeedbacks] = useState<Record<string, QuestionFeedback>>({});
@@ -481,6 +513,28 @@ Give 2-3 specific, actionable tips for how I can improve. Address me directly. B
                 <div className="prose prose-sm max-w-none dark:prose-invert">
                   <MathsMarkdown>{paperContext}</MathsMarkdown>
                 </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Chemistry reference materials */}
+          {isChemistry && (
+            <Card>
+              <CardContent className="p-4">
+                <Button
+                  variant="outline"
+                  onClick={() => setShowRefSheet(!showRefSheet)}
+                  className="w-full gap-2 justify-center"
+                >
+                  <BookOpen className="h-4 w-4" />
+                  {showRefSheet ? "Hide" : "Show"} Reference Materials (Periodic Table & Equation Sheet)
+                </Button>
+                {showRefSheet && (
+                  <div className="mt-4 space-y-6">
+                    <PeriodicTable />
+                    <ChemistryEquations />
+                  </div>
+                )}
               </CardContent>
             </Card>
           )}
