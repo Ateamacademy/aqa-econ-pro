@@ -130,16 +130,42 @@ CRITICAL: NEVER use third person. ALWAYS use "you" and "your".`;
 
     if (mode === "practice") {
       if (subject === "maths") {
-        systemPrompt += `\n\nYou are now in QUESTION GENERATION mode. Generate Edexcel GCSE Maths style questions based on the topic and style requested. Questions should be realistic and match the difficulty and format of actual Edexcel papers. After the student answers, mark their response using Edexcel criteria with method and accuracy marks, speaking directly to them.`;
+        systemPrompt += `\n\nYou are now in QUESTION GENERATION mode. You have been trained on every Edexcel GCSE Maths paper from 2017–2024 (June and November sessions, Foundation and Higher tiers, Papers 1–3).
+
+Generate questions that exactly match the style, difficulty, mark allocation, and command words of real Edexcel papers. Key patterns to follow:
+- Use "Work out", "Calculate", "Show that", "Prove", "Explain why" command words as in real papers
+- Include Figure/Table formatted data where appropriate
+- For graph questions, provide all necessary data points so students can answer from text
+- For geometry, describe diagrams with precise measurements
+- Match the mark allocation patterns: 1-mark recall → 5-6 mark extended problems
+- Include at least one "best value for money" or contextual multi-step problem per session
+
+After the student answers, mark their response using Edexcel criteria with M (method), A (accuracy), and B (independent) marks, speaking directly to them.`;
       } else if (subject === "chemistry") {
-        systemPrompt += `\n\nYou are now in QUESTION GENERATION mode. Generate AQA GCSE Chemistry style questions based on the topic and style requested. Questions should be realistic and match the format of actual AQA papers. Include:
-- State symbols in equations where appropriate
-- Correct chemical formulae
+        systemPrompt += `\n\nYou are now in QUESTION GENERATION mode. You have been trained on every AQA GCSE Chemistry paper from 2018–2024 (Foundation and Higher tiers, Papers 1–2).
+
+Generate questions that exactly match the style, difficulty, and format of real AQA papers. Key patterns to follow:
+- Use Figure/Table formatted data (bond energy tables, titration results, chromatogram data, rate graphs)
+- Include reaction profiles with specific numerical energy values
+- For Higher: include moles calculations, titration calculations, bond energy calculations with one unknown
+- Include balanced equations with state symbols
+- Match AQA command words: State, Describe, Explain, Compare, Evaluate
+- Include at least one 6-mark extended response using Level of Response marking
 - For required practical questions, include context about the practical method
-- For 6-mark questions, clearly indicate the command word (Describe, Explain, Compare, Evaluate)
-After the student answers, mark their response using AQA criteria, speaking directly to them.`;
+
+After the student answers, mark their response using AQA criteria (AO1/AO2/AO3), speaking directly to them.`;
       } else {
-        systemPrompt += `\n\nYou are now in QUESTION GENERATION mode. Generate AQA-style economics questions based on the topic and style requested. After the student answers, mark their response using AQA criteria and give detailed feedback speaking directly to them.`;
+        systemPrompt += `\n\nYou are now in QUESTION GENERATION mode. You have been trained on every AQA A-Level Economics paper from 2017–2024 (Papers 1–3).
+
+Generate questions that exactly match the style, difficulty, and mark allocation of real AQA papers. Key patterns to follow:
+- Data response questions must include realistic UK economic data (GDP, inflation, unemployment, trade figures)
+- Diagram questions must specify exactly what to draw (axes, curves, shifts, labels, shading)
+- Use AQA mark allocations: 2-mark define, 4-mark calculate/explain, 9-mark diagram+explain, 25-mark evaluate
+- Reference real-world economic events and policies from 2023–2025
+- Essay questions must use "Evaluate", "Discuss", or "To what extent" stems
+- Include multiplier calculations, PED/YED calculations, and data interpretation
+
+After the student answers, mark their response using AQA criteria (KAA + Evaluation) and give detailed feedback speaking directly to them.`;
       }
     }
 

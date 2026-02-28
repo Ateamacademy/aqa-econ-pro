@@ -17,6 +17,11 @@ import { QuestionCard } from "@/components/predicted-papers/QuestionCard";
 import { parseQuestions, type ParsedQuestion } from "@/components/predicted-papers/parseQuestions";
 import { paperOptionsBySubject } from "@/lib/subjectConfig";
 import { predictedPapersLibrary, type PredictedPaper } from "@/data/predictedPapersLibrary";
+import {
+  MATHS_PAST_PAPER_KNOWLEDGE,
+  CHEMISTRY_PAST_PAPER_KNOWLEDGE,
+  ECONOMICS_PAST_PAPER_KNOWLEDGE,
+} from "@/data/pastPaperPatterns";
 
 type QuestionFeedback = {
   markScheme: string;
@@ -29,7 +34,9 @@ const MATHS_PAPER_PROMPT = (paperLabel: string, isCalc: boolean, tier: "Foundati
     ? "Foundation tier (targeting grades 1–5). Questions should be accessible and build gradually. Include standard procedural questions, real-life context problems, and some reasoning questions. Avoid higher-only topics like surds, circle theorems, sine/cosine rule, and algebraic proof."
     : "Higher tier (targeting grades 4–9). Include a good mix of difficulty. Start with accessible crossover questions (grades 4–5), build through grades 6–7 questions, and finish with challenging grade 8–9 questions including proof, circle theorems, iteration, algebraic fractions, and advanced trigonometry.";
 
-  return `You are an expert Edexcel GCSE Mathematics examiner. Generate a COMPLETE, REALISTIC predicted exam paper for ${paperLabel}.
+  return `You are an expert Edexcel GCSE Mathematics examiner trained on every Edexcel GCSE Maths paper from 2017–2024. Generate a COMPLETE, REALISTIC predicted exam paper for ${paperLabel}.
+
+${MATHS_PAST_PAPER_KNOWLEDGE}
 
 TIER: ${tierDesc}
 
@@ -43,28 +50,9 @@ STRUCTURE (match real Edexcel papers EXACTLY):
 - Include a variety of command words: "Work out", "Calculate", "Show that", "Prove", "Explain why", "Give a reason"
 - Start with 3–4 short 1–2 mark "warm-up" questions, then build complexity
 
-QUESTION TYPES TO INCLUDE (ensure EVERY category appears):
-1. **Number & calculation**: fractions, percentages, ratio, proportion, standard form, indices
-2. **Algebra**: solving equations, inequalities, sequences, rearranging formulae, simultaneous equations${tier === "Higher" ? ", algebraic fractions, iteration" : ""}
-3. **Graphs & diagrams** (AT LEAST 6 questions — this is critical):
-   - ${isCalc ? "Scatter diagrams with data tables — ask to describe correlation, draw line of best fit, estimate values, explain reliability of extrapolation" : "Linear graphs — complete a table of values, plot and draw the graph, find gradient and y-intercept"}
-   - ${tier === "Higher" ? "Quadratic/cubic graphs — describe key features (turning points, roots, y-intercept), solve equations graphically, sketch transformations y=f(x)+a, y=f(x+a), y=-f(x)" : "Real-life graphs — interpret conversion graphs, read off values"}
-   - Velocity-time or distance-time graphs — calculate speed/acceleration/distance from areas and gradients
-   - ${isCalc ? "Cumulative frequency diagrams — draw from grouped data table, find median and IQR from graph" : "Bar charts, pictograms, or frequency diagrams — read and interpret"}
-   - ${isCalc ? "Histograms with unequal class widths — calculate frequency density, draw histogram, estimate frequencies" : "Pie charts — calculate angles, interpret sectors"}
-   - ${tier === "Higher" ? "Box plots — compare two distributions using median, range, IQR" : ""}
-   For EVERY graph question: provide enough numerical information so it can be answered from text alone.
-4. **Geometry**: angles, area/perimeter, volume, Pythagoras, trigonometry${tier === "Higher" ? ", circle theorems, vectors, congruence/similarity proofs, frustums" : ""}
-   - Include at least one diagram question with specific measurements (e.g., "The diagram shows a cylinder with radius r cm and height h cm...")
-   - For compound shapes, describe each component precisely
-5. **Statistics & Probability**: averages from tables, probability trees/Venn diagrams, relative frequency${tier === "Higher" ? ", conditional probability, histograms with frequency density" : ""}
-6. **Problem-solving**: at least 3–4 questions requiring multi-step reasoning
-   - "Show that" questions with algebraic proof
-   - "Best value for money" comparison questions with specific pack sizes and prices
-   - Contextual multi-step problems (e.g., pressure = force ÷ area with cylinder dimensions)
-7. **Past-paper authenticity**:
-   - Mirror Edexcel GCSE style from 2018–2024 papers and specimen material
-   - Include at least 3 questions formatted as exam resources with "Figure" or "Table" headings and clear data beneath
+USE THE PAST-PAPER PATTERNS ABOVE to create NEW questions that feel like they belong in a real Edexcel paper. Do NOT copy questions verbatim — create original questions in the SAME STYLE and DIFFICULTY.
+
+Ensure EVERY topic area from the past-paper patterns is represented. Include at least 6 graph/diagram/figure/table questions.
 
 IMPORTANT FORMATTING — FOLLOW EXACTLY:
 Question 1 [2 marks]
@@ -78,39 +66,30 @@ Make questions topical, varied, and exam-authentic. Avoid repeating similar ques
 };
 
 const ECON_PAPER_PROMPT = (paperLabel: string) =>
-  `You are an expert AQA A-Level Economics chief examiner. Generate a COMPLETE, REALISTIC predicted exam paper for ${paperLabel}.
+  `You are an expert AQA A-Level Economics chief examiner trained on every AQA Economics paper from 2017–2024. Generate a COMPLETE, REALISTIC predicted exam paper for ${paperLabel}.
+
+${ECONOMICS_PAST_PAPER_KNOWLEDGE}
 
 This must be a full-length paper in the EXACT AQA format:
 - For Paper 1 (Microeconomics) & Paper 2 (Macroeconomics): Include Section A (data response with context/extract, real-looking data tables, and structured questions 2+4+9+25 marks) AND Section B (essay questions worth 25 marks each with "Discuss", "Evaluate", or "To what extent" stems). Total marks: 80.
 - For Paper 3 (Synoptic): Include Section A (30 MCQs worth 1 mark each) AND Section B (case study with data response questions and an essay question). Total marks: 80.
 
-DIAGRAM & GRAPH QUESTIONS (CRITICAL — at least 4 questions must require diagrams):
-1. **Supply/demand diagrams**: "Using a supply and demand diagram, explain..." — explicitly ask students to draw axes (Price on y-axis, Quantity on x-axis), label original and new curves (e.g., S₁ shifting to S₂), shade areas of consumer/producer surplus, and identify deadweight loss triangles
-2. **AD/AS diagrams** (Paper 2): "Using an AD/AS diagram, illustrate the impact of..." — specify whether to use Classical LRAS (vertical) or Keynesian LRAS. Ask students to show shifts, label equilibria (e.g., P₁→P₂, Y₁→Y₂), and explain the transmission mechanism step by step
-3. **Welfare analysis diagrams**: For market failure questions, require students to draw the divergence between MSC and MPC (or MSB and MPB), shade the welfare loss triangle, and show the optimal vs free-market output
-4. **Data interpretation with calculations**: Include tables with real-looking UK economic data. Ask students to calculate percentage changes, index numbers, real vs nominal values, terms of trade
-5. **Market structure diagrams** (Paper 1): Include at least one question requiring a monopoly diagram (AR, MR, MC, AC curves), showing supernormal profit or deadweight loss
-6. **Cost/revenue curves**: Ask students to draw and label TC, MC, AC, AR, MR curves for specific market structures
-
-MACROECONOMIC ANALYSIS (Paper 2 — CRITICAL):
-- Include at least one question requiring AD/AS diagram analysis of fiscal OR monetary policy
-- Include one question on the multiplier effect with a numerical example (e.g., "If MPC = 0.8, calculate the multiplier and the final change in GDP from a £10bn spending increase")
-- Include the Phillips Curve OR Keynesian vs Classical debate as an essay option
-- Reference real UK macroeconomic data (GDP growth 0.6%, inflation 2.3%, unemployment 4.3%, base rate 4.5%)
-- Include exchange rate or trade analysis where relevant
+USE THE PAST-PAPER PATTERNS ABOVE to create NEW questions that feel like they belong in a real AQA paper. Do NOT copy questions verbatim — create original questions in the SAME STYLE, DIFFICULTY, and MARK ALLOCATION. Use realistic 2024–2025 UK economic data and themes.
 
 IMPORTANT FORMATTING — FOLLOW EXACTLY:
 Question 1.1 [2 marks]
 Question 1.2 [4 marks]
 etc.
 
-Include realistic data extracts and context paragraphs before questions. Use 2024–2025 UK economic themes. Format clearly with ## headings for sections.`;
+Include realistic data extracts and context paragraphs before questions. Format clearly with ## headings for sections.`;
 
 const CHEM_PAPER_PROMPT = (paperLabel: string, tier: "Foundation" | "Higher") => {
   const tierDesc = tier === "Foundation"
     ? "Foundation tier (grades 1–5). Avoid higher-only content like moles calculations, titration calculations, and rate tangent method. Focus on recall, description, and simple application."
     : "Higher tier (grades 4–9). Include moles calculations, concentration, titration, rate tangent method, atom economy, and percentage yield calculations.";
-  return `You are an expert AQA GCSE Chemistry chief examiner. Generate a COMPLETE, REALISTIC predicted exam paper for ${paperLabel}.
+  return `You are an expert AQA GCSE Chemistry chief examiner trained on every AQA GCSE Chemistry paper from 2018–2024. Generate a COMPLETE, REALISTIC predicted exam paper for ${paperLabel}.
+
+${CHEMISTRY_PAST_PAPER_KNOWLEDGE}
 
 TIER: ${tierDesc}
 
@@ -122,21 +101,10 @@ STRUCTURE (match real AQA papers EXACTLY):
 - Questions should cover the relevant topics for this paper
 - Paper 1: Topics 1–5 (Atomic structure, Bonding, Quantitative chemistry, Chemical changes, Energy changes)
 - Paper 2: Topics 6–10 (Rate & extent, Organic chemistry, Chemical analysis, Atmosphere, Using resources)
-- Style must mirror AQA Chemistry papers from 2018–2024 plus specimen material (clear exam language, realistic data, and authentic command words)
 
-GRAPH, IMAGE & FIGURE QUESTIONS (CRITICAL — at least 6 questions must involve graphs/diagrams/tables):
-1. **Reaction profile diagrams**: Describe a reaction profile with energy on y-axis, progress of reaction on x-axis. Specify reactant and product energy levels numerically (e.g., "Reactants: 150 kJ, Peak: 350 kJ, Products: 250 kJ"). Ask students to calculate activation energy and overall energy change
-2. **Bond-energy Figure/Table question (MANDATORY in Higher papers)**:
-   - Include a question in this exact style: a displayed formula equation for propane combustion, overall energy change given, and a bond-energy table with one unknown (X)
-   - Use this data format: C₃H₈ + 5O₂ → 3CO₂ + 4H₂O, overall energy change = −2219 kJ/mol, bond energies: C–C 347, C–H X, O=O 498, C=O 805, O–H 464 (kJ/mol)
-   - Ask: "Calculate the bond energy of the C–H bond (X). Show all working."
-3. **Rate of reaction graphs**: Describe a curve of volume of gas (cm³) vs time (s) with specific data points. For Higher: ask students to draw a tangent at a specific time and calculate the rate
-4. **Dot-and-cross diagrams**: Ask students to draw outer shell electrons for specific compounds (NaCl, H₂O, CO₂, MgCl₂). State clearly: "Show only outer shell electrons" or "Show the charges on the ions"
-5. **Chromatography / Rf values**: Describe a chromatogram with solvent front distance and spot distances. Ask students to calculate Rf values and identify unknown substances by comparison
-6. **Titration data tables**: Present titre results (rough + 3 concordant) with burette readings. Ask students to identify anomalous results, calculate mean titre, then calculate concentration
-7. **Temperature change graphs**: Describe neutralisation or dissolving experiments with temperature data. Ask students to calculate energy change using Q = mcΔT
-8. **Haber process yield curves** (Higher only): Describe yield (%) vs temperature curves at two different pressures with specific values. Ask students to explain compromise conditions
-9. **Bar charts / data tables**: Include percentage composition data for empirical formula calculations
+USE THE PAST-PAPER PATTERNS ABOVE to create NEW questions that feel like they belong in a real AQA paper. Do NOT copy questions verbatim — create original questions in the SAME STYLE, DIFFICULTY, and MARK ALLOCATION.
+
+Ensure at least 6 questions involve graphs/diagrams/tables/figures. For Higher papers, ALWAYS include a bond-energy Figure/Table calculation question.
 
 IMPORTANT FORMATTING — FOLLOW EXACTLY:
 Question 1 [1 marks]
