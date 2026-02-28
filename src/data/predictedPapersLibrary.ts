@@ -3269,3 +3269,7 @@ In your answer, you should:
 - Evaluate using real-world evidence from the case study`,
   },
 ];
+
+// Merge chemistry predicted papers from dedicated file
+import { chemistryPredictedPapers } from "./chemistryPredictedPapers";
+predictedPapersLibrary.push(...chemistryPredictedPapers);
