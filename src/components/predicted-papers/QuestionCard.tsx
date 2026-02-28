@@ -73,6 +73,20 @@ export function QuestionCard({
     onAnswerChange(answer + `\n\n[DIAGRAM: ${data.description}]`);
   };
 
+  const insertVisualTemplate = (kind: "graph" | "diagram") => {
+    const template = kind === "graph"
+      ? `\n\n[GRAPH NOTES]\n- Axes labels and units:\n- Scale used:\n- Key points/coordinates plotted:\n- Shape/gradient/turning points:\n- Final reading/conclusion:\n[/GRAPH NOTES]`
+      : `\n\n[DIAGRAM NOTES]\n- Labels included:\n- What each arrow/line/curve represents:\n- Key values used:\n- Final conclusion from the diagram:\n[/DIAGRAM NOTES]`;
+
+    onAnswerChange(`${answer}${template}`);
+    setTimeout(() => {
+      const el = textareaRef.current;
+      if (!el) return;
+      el.focus();
+      el.selectionStart = el.selectionEnd = el.value.length;
+    }, 0);
+  };
+
   const feedbackSections = [
     { key: "markScheme", label: "Mark Scheme", icon: Clock, content: feedback?.markScheme || "" },
     { key: "modelAnswer", label: "Model Answer", icon: FileText, content: feedback?.modelAnswer || "" },
@@ -80,6 +94,8 @@ export function QuestionCard({
   ];
 
   const hasExtraTools = showEconDiagram || showDrawingCanvas || showGraphPaper || showGeometryTools;
+  const canInsertGraphNotes = showGraphPaper || subject === "maths";
+  const canInsertDiagramNotes = showDrawingCanvas || showEconDiagram || subject === "chemistry";
 
   return (
     <div className="rounded-xl border border-border bg-card overflow-hidden">
@@ -127,7 +143,11 @@ export function QuestionCard({
         )}
 
         {/* Drawing canvas */}
-        {showCanvas && !feedback && <div className="mb-3"><DrawingCanvas showGrid={showGeometryTools} /></div>}
+        {showCanvas && !feedback && (
+          <div className="mb-3">
+            <DrawingCanvas showGrid={showGeometryTools} onSave={() => insertVisualTemplate("diagram")} />
+          </div>
+        )}
         
         {/* Graph paper */}
         {showGraph && !feedback && <div className="mb-3"><GraphPaper /></div>}
@@ -143,6 +163,21 @@ export function QuestionCard({
         {showMathTools && !feedback && (
           <div className="mb-2">
             <EquationToolbar onInsert={insertSymbol} />
+          </div>
+        )}
+
+        {!feedback && (canInsertGraphNotes || canInsertDiagramNotes) && (
+          <div className="flex flex-wrap gap-1.5 mb-2">
+            {canInsertGraphNotes && (
+              <Button type="button" variant="outline" size="sm" className="h-7 text-xs" onClick={() => insertVisualTemplate("graph")}>
+                Add Graph Notes Template
+              </Button>
+            )}
+            {canInsertDiagramNotes && (
+              <Button type="button" variant="outline" size="sm" className="h-7 text-xs" onClick={() => insertVisualTemplate("diagram")}>
+                Add Diagram Notes Template
+              </Button>
+            )}
           </div>
         )}
 

@@ -2612,7 +2612,23 @@ CuCO₃(s) → CuO(s) + CO₂(g)
 
 Describe what you would observe. Explain why this is a thermal decomposition reaction.
 
-Question 15b [2 marks]
+Question 15b [5 marks]
+Figure 9 shows the displayed formula equation for the reaction between propane and oxygen.
+
+**Figure 9 (displayed formula equation):**
+- C₃H₈ + 5O=O → 3O=C=O + 4H−O−H
+
+The overall energy change of this exothermic reaction is −2219 kJ/mol.
+
+Table 4 shows the bond energies of the bonds in the reaction.
+
+| Bond | C−C | C−H | O=O | C=O | O−H |
+|------|-----|-----|-----|-----|-----|
+| Bond energy (kJ/mol) | 347 | X | 498 | 805 | 464 |
+
+Calculate the bond energy of the C−H bond (X). Show all your working.
+
+Question 15c [2 marks]
 The reaction profile below shows the reaction between ammonia and oxygen:
 
 **Reaction profile (Figure 8):**
