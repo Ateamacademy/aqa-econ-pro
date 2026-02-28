@@ -1054,4 +1054,531 @@ Describe how to test an unknown gas to show it is carbon dioxide. State the test
 Question 28 [3 marks]
 Explain why adding salt to icy roads makes them safer. Use the term "melting point" in your answer.`,
   },
+
+  // ── CHEMISTRY PAPER 1: Higher — Set C ──
+  {
+    id: "chem-p1-higher-c",
+    subject: "chemistry",
+    paper: "1",
+    tier: "Higher",
+    title: "Chem Paper 1 Higher — Set C",
+    description: "Higher tier. RAM isotope calc, dot-and-cross, titration data table, bond energy with unknown, electrolysis half equations, Group 1 trends (6-mark).",
+    totalMarks: 100,
+    content: `# AQA GCSE Chemistry (8462) — Paper 1 Higher — Predicted Paper Set C
+
+**Time: 1 hour 45 minutes | Total: 100 marks**
+
+## Section A: Multiple Choice
+
+Question 1 [1 marks]
+An atom has 17 protons and 18 neutrons. What is its mass number?
+A. 17
+B. 18
+C. 35
+D. 1
+
+Question 2 [1 marks]
+Which of the following pairs are isotopes?
+A. ¹²C and ¹⁴N
+B. ¹⁶O and ¹⁸O
+C. ²³Na and ²⁴Mg
+D. ³⁵Cl and ³⁷Ar
+
+Question 3 [1 marks]
+A metallic bond consists of:
+A. Shared pairs of electrons between atoms
+B. Transfer of electrons from metal to non-metal
+C. A lattice of positive ions surrounded by delocalised electrons
+D. Electrostatic attraction between oppositely charged ions only
+
+Question 4 [1 marks]
+Which substance has the lowest boiling point?
+A. Sodium chloride
+B. Silicon dioxide
+C. Iron
+D. Oxygen
+
+Question 5 [1 marks]
+In the reaction: Mg + 2HCl → MgCl₂ + H₂, magnesium is:
+A. Reduced
+B. Oxidised
+C. A catalyst
+D. Unchanged
+
+Question 6 [1 marks]
+What is the Mr of Al₂(SO₄)₃? (Ar: Al = 27, S = 32, O = 16)
+A. 150
+B. 278
+C. 342
+D. 315
+
+Question 7 [1 marks]
+A weak acid compared to a strong acid at the same concentration has:
+A. A lower pH
+B. A higher pH
+C. The same pH
+D. No measurable pH
+
+Question 8 [1 marks]
+Nanoparticles have a high surface area to volume ratio. This makes them useful for:
+A. Building skyscrapers
+B. Drug delivery in medicine
+C. Generating electricity
+D. Extracting metals from ores
+
+Question 9 [1 marks]
+Which of the following is the correct order of the reactivity series from most reactive to least reactive?
+A. Cu > Fe > Zn > Mg > K
+B. K > Mg > Zn > Fe > Cu
+C. K > Cu > Fe > Mg > Zn
+D. Mg > K > Zn > Cu > Fe
+
+Question 10 [1 marks]
+An exothermic reaction has:
+A. A positive energy change (ΔH is positive)
+B. A negative energy change (ΔH is negative)
+C. No energy change
+D. An activation energy of zero
+
+Question 11 [1 marks]
+Graphite can conduct electricity because:
+A. It has ionic bonds
+B. Each carbon has one delocalised electron that can move
+C. It is a simple molecular substance
+D. It has a low melting point
+
+Question 12 [1 marks]
+In electrolysis, oxidation occurs at the:
+A. Cathode
+B. Anode
+C. Both electrodes
+D. Neither electrode
+
+Question 13 [1 marks]
+The number of moles in 4.4 g of CO₂ (Mr = 44) is:
+A. 0.01
+B. 0.1
+C. 1.0
+D. 10
+
+Question 14 [1 marks]
+Which substance produces a green precipitate when sodium hydroxide solution is added?
+A. Copper(II) sulfate
+B. Iron(II) sulfate
+C. Iron(III) chloride
+D. Aluminium chloride
+
+Question 15 [1 marks]
+A catalyst:
+A. Is used up during the reaction
+B. Increases the amount of product formed
+C. Provides an alternative pathway with lower activation energy
+D. Changes the equilibrium position
+
+---
+
+## Section B: Structured Questions
+
+Question 16 [3 marks]
+Copper exists as two isotopes: Cu-63 (69.2%) and Cu-65 (30.8%).
+
+(a) Define the term isotope. [1 mark]
+(b) Calculate the relative atomic mass of copper. Give your answer to 1 decimal place. [2 marks]
+
+Question 17 [4 marks]
+Figure 1 shows the timeline of atomic model development.
+
+**Figure 1 (Timeline):**
+- 1803 — Dalton: Tiny solid spheres, all atoms of same element identical
+- 1897 — Thomson: Plum pudding model. Sphere of positive charge with electrons embedded
+- 1911 — Rutherford: Alpha particle scattering. Most passed through, some deflected, very few bounced back
+- 1913 — Bohr: Electrons orbit in specific energy levels (shells)
+- 1932 — Chadwick: Discovered neutrons in the nucleus
+
+(a) What did Rutherford's alpha particle scattering experiment show about the atom? [2 marks]
+(b) How did Bohr's model improve on Rutherford's model? [1 mark]
+(c) Why was the discovery of the neutron important? [1 mark]
+
+Question 18 [4 marks]
+Draw dot-and-cross diagrams for the following. Show outer shell electrons only.
+
+(a) Sodium chloride (NaCl) — show the charges on the ions. [2 marks]
+(b) A molecule of water (H₂O) — show the shared and lone pairs. [2 marks]
+
+Question 19 [6 marks]
+Compare the structure, bonding, and properties of sodium chloride and diamond.
+
+In your answer you should refer to:
+- the type of bonding in each substance
+- the structure of each substance
+- melting points
+- electrical conductivity
+
+Question 20 [5 marks]
+Table 1 shows the results of a titration. 25.0 cm³ of 0.120 mol/dm³ potassium hydroxide (KOH) was titrated against hydrochloric acid (HCl).
+
+**Table 1:**
+| Titration | Rough | 1 | 2 | 3 |
+|-----------|-------|------|------|------|
+| Final burette reading (cm³) | 23.80 | 23.50 | 23.55 | 23.45 |
+| Initial burette reading (cm³) | 0.00 | 0.00 | 0.00 | 0.00 |
+
+(a) Calculate each titre. [1 mark]
+(b) Identify the anomalous result. [1 mark]
+(c) Calculate the mean titre using concordant results only. [1 mark]
+(d) The equation is: KOH + HCl → KCl + H₂O. Calculate the concentration of HCl in mol/dm³. [2 marks]
+
+Question 21 [4 marks]
+Figure 2 shows a bar chart of the volume of hydrogen gas produced in 60 seconds when equal masses of different metals react with excess dilute sulfuric acid.
+
+**Figure 2 (Bar chart):**
+| Metal | Volume of H₂ (cm³) in 60s |
+|-------|---------------------------|
+| Magnesium | 52 |
+| Zinc | 24 |
+| Iron | 10 |
+| Copper | 0 |
+| Lead | 3 |
+
+(a) Put all five metals in order of reactivity. Most reactive first. [1 mark]
+(b) Write a balanced symbol equation with state symbols for the reaction of magnesium with dilute sulfuric acid. [2 marks]
+(c) Explain why copper does not react with dilute sulfuric acid. [1 mark]
+
+Question 22 [5 marks]
+Figure 3 shows the displayed formula equation for the complete combustion of ethane (C₂H₆).
+
+**Figure 3:**
+2C₂H₆ + 7O₂ → 4CO₂ + 6H₂O
+
+Bonds broken: 2 × (1 C−C + 6 C−H) + 7 × O=O = 2 C−C + 12 C−H + 7 O=O
+Bonds formed: 8 × C=O + 12 × O−H
+
+**Table 2 — Bond energies:**
+| Bond | C−C | C−H | O=O | C=O | O−H |
+|------|-----|-----|-----|-----|-----|
+| Energy (kJ/mol) | 347 | X | 498 | 805 | 464 |
+
+The overall energy change for the combustion of 2 moles of ethane is −2856 kJ.
+
+(a) Write an expression for the total energy needed to break all bonds in the reactants in terms of X. [1 mark]
+(b) Write an expression for the total energy released when all bonds form in the products. [1 mark]
+(c) Use the overall energy change to calculate the value of X (the C−H bond energy). [3 marks]
+
+Question 23 [4 marks]
+Figure 4 shows a reaction profile for a reversible reaction.
+
+**Figure 4 (Reaction Profile):**
+- x-axis: Progress of reaction
+- y-axis: Energy (kJ)
+- Reactants: 200 kJ
+- Peak (forward): 340 kJ
+- Products: 280 kJ
+
+(a) Calculate the activation energy for the forward reaction. [1 mark]
+(b) Calculate the activation energy for the reverse reaction. [1 mark]
+(c) Is the forward reaction exothermic or endothermic? Explain your answer. [1 mark]
+(d) On a copy of Figure 4, sketch the curve if a catalyst were used. [1 mark]
+
+Question 24 [4 marks]
+A student carries out Required Practical 5: measuring the temperature change when hydrochloric acid reacts with sodium hydroxide solution.
+
+The student adds 25 cm³ of 1.0 mol/dm³ HCl to 25 cm³ of 1.0 mol/dm³ NaOH.
+
+**Results:**
+- Initial temperature of acid: 21.0°C
+- Initial temperature of alkali: 21.5°C
+- Maximum temperature after mixing: 28.0°C
+
+(a) Calculate the mean initial temperature. [1 mark]
+(b) Calculate the temperature change (ΔT). [1 mark]
+(c) Calculate the energy released. Use Q = mcΔT. Total mass = 50 g, c = 4.18 J/g/°C. [1 mark]
+(d) State one improvement to increase the accuracy of this experiment. [1 mark]
+
+Question 25 [4 marks]
+Figure 5 shows the electrolysis of concentrated sodium chloride solution (brine).
+
+**Figure 5 (Electrolysis of brine diagram):**
+- Cathode (−): bubbles of gas
+- Anode (+): bubbles of gas
+- Solution becomes alkaline during electrolysis
+
+(a) Name the gas produced at the cathode. [1 mark]
+(b) Name the gas produced at the anode. [1 mark]
+(c) Write the half equation for the reaction at the cathode. [1 mark]
+(d) Name the useful product left in solution. [1 mark]
+
+Question 26 [4 marks]
+Calculate the mass of iron produced when 80.0 g of iron(III) oxide reacts with excess carbon monoxide.
+
+Fe₂O₃(s) + 3CO(g) → 2Fe(l) + 3CO₂(g)
+
+(Ar: Fe = 56, O = 16, C = 12)
+
+Show all your working.
+
+Question 27 [3 marks]
+A compound has the empirical formula CH₂O and a relative formula mass of 180.
+
+(a) Calculate the relative formula mass of the empirical formula. [1 mark]
+(b) Determine the molecular formula. [1 mark]
+(c) Name a substance with this molecular formula. [1 mark]`,
+  },
+
+  // ── CHEMISTRY PAPER 2: Higher — Set C ──
+  {
+    id: "chem-p2-higher-c",
+    subject: "chemistry",
+    paper: "2",
+    tier: "Higher",
+    title: "Chem Paper 2 Higher — Set C",
+    description: "Higher tier. Rate tangent method, Haber process yield graph, cracking, chromatography Rf, atmospheric evolution, life cycle assessment table.",
+    totalMarks: 100,
+    content: `# AQA GCSE Chemistry (8462) — Paper 2 Higher — Predicted Paper Set C
+
+**Time: 1 hour 45 minutes | Total: 100 marks**
+
+## Section A: Multiple Choice
+
+Question 1 [1 marks]
+Increasing the concentration of a reactant increases the rate because:
+A. The particles have more energy
+B. There are more particles in the same volume, so collisions are more frequent
+C. The activation energy is lowered
+D. The temperature increases
+
+Question 2 [1 marks]
+The general formula for alkanes is:
+A. CₙH₂ₙ
+B. CₙH₂ₙ₊₂
+C. CₙH₂ₙ₋₂
+D. CₙHₙ₊₂
+
+Question 3 [1 marks]
+At dynamic equilibrium:
+A. All reactions have stopped
+B. The concentrations of reactants and products are always equal
+C. The rate of the forward reaction equals the rate of the reverse reaction
+D. Only the forward reaction is occurring
+
+Question 4 [1 marks]
+Which gas was most abundant in Earth's early atmosphere?
+A. Oxygen
+B. Nitrogen
+C. Carbon dioxide
+D. Argon
+
+Question 5 [1 marks]
+Bromine water is decolourised by:
+A. Methane
+B. Ethane
+C. Ethene
+D. Propane
+
+Question 6 [1 marks]
+The Rf value of a substance in chromatography is always:
+A. Greater than 1
+B. Equal to 1
+C. Less than 1
+D. A negative number
+
+Question 7 [1 marks]
+Crude oil is separated into fractions by:
+A. Cracking
+B. Filtration
+C. Fractional distillation
+D. Chromatography
+
+Question 8 [1 marks]
+Which of the following is a greenhouse gas?
+A. Nitrogen
+B. Argon
+C. Water vapour
+D. Helium
+
+Question 9 [1 marks]
+Potable water is water that is:
+A. 100% pure H₂O
+B. Distilled
+C. Safe to drink
+D. Sea water
+
+Question 10 [1 marks]
+Adding sodium hydroxide to a solution containing Fe³⁺ ions produces:
+A. A white precipitate
+B. A blue precipitate
+C. A green precipitate
+D. A brown precipitate
+
+Question 11 [1 marks]
+The conditions for the Haber process include:
+A. 450°C, 200 atm, iron catalyst
+B. 250°C, 1 atm, nickel catalyst
+C. 600°C, 200 atm, manganese catalyst
+D. 450°C, 1 atm, iron catalyst
+
+Question 12 [1 marks]
+Which of these is a finite resource?
+A. Wind
+B. Timber
+C. Crude oil
+D. Solar energy
+
+Question 13 [1 marks]
+Condensation polymerisation differs from addition polymerisation because:
+A. It uses alkenes as monomers
+B. It produces a small molecule (e.g. water) as a by-product
+C. No bonds are broken
+D. The polymer has C=C double bonds
+
+Question 14 [1 marks]
+The test for oxygen gas is:
+A. A burning splint — burns with a squeaky pop
+B. A glowing splint — relights
+C. Limewater — turns milky
+D. Damp litmus — bleaches
+
+Question 15 [1 marks]
+A life cycle assessment considers:
+A. Only the raw materials stage
+B. Only the disposal stage
+C. All stages from raw materials to disposal
+D. Only the manufacturing process
+
+---
+
+## Section B: Structured Questions
+
+Question 16 [6 marks]
+Figure 1 shows how the volume of gas produced changes over time when 5 g of marble chips (CaCO₃) react with excess 1.0 mol/dm³ hydrochloric acid at 25°C.
+
+**Figure 1 (Volume of gas vs Time):**
+- x-axis: Time (s), 0 to 200
+- y-axis: Volume of CO₂ (cm³), 0 to 120
+- Data points: (0, 0), (10, 18), (20, 33), (30, 46), (40, 56), (50, 64), (60, 71), (80, 82), (100, 89), (120, 94), (140, 97), (160, 98), (180, 98), (200, 98)
+
+(a) What is the total volume of gas produced? [1 mark]
+(b) At what time does the reaction effectively stop? [1 mark]
+(c) Draw a tangent to the curve at t = 20 s. Use your tangent to calculate the rate of reaction at 20 seconds. Show your working and give units. [3 marks]
+(d) On Figure 1, sketch the curve you would expect if the same mass of powdered marble was used with the same acid at 25°C. [1 mark]
+
+Question 17 [4 marks]
+A student carries out Required Practical 6 to investigate the effect of concentration on rate. They react magnesium ribbon with hydrochloric acid at different concentrations and measure the time taken to collect 30 cm³ of hydrogen gas.
+
+**Table 1:**
+| Concentration of HCl (mol/dm³) | Time to collect 30 cm³ H₂ (s) | Rate (cm³/s) |
+|-------------------------------|-------------------------------|-------------|
+| 0.5 | 120 | 0.25 |
+| 1.0 | 58 | 0.52 |
+| 1.5 | 38 | 0.79 |
+| 2.0 | 28 | 1.07 |
+
+(a) Describe the pattern shown in Table 1. [1 mark]
+(b) Explain this pattern using collision theory. [2 marks]
+(c) State one variable the student must control to make this a fair test. [1 mark]
+
+Question 18 [4 marks]
+Figure 2 shows how the percentage yield of ammonia varies with pressure at three different temperatures.
+
+**Figure 2 (Haber process graph):**
+- x-axis: Pressure (atm), 0 to 400
+- y-axis: % yield of NH₃, 0 to 80
+- At 350°C: (50, 18), (100, 30), (150, 40), (200, 48), (250, 54), (300, 59), (350, 62), (400, 65)
+- At 450°C: (50, 10), (100, 18), (150, 25), (200, 30), (250, 34), (300, 37), (350, 39), (400, 41)
+- At 550°C: (50, 5), (100, 10), (150, 14), (200, 17), (250, 20), (300, 22), (350, 24), (400, 25)
+
+The Haber process: N₂(g) + 3H₂(g) ⇌ 2NH₃(g)    ΔH = −92 kJ/mol
+
+(a) Using Figure 2, estimate the yield of ammonia at 450°C and 200 atm. [1 mark]
+(b) Using Le Chatelier's principle, explain why increasing pressure increases the yield. [2 marks]
+(c) Explain why a compromise temperature of 450°C is used, even though lower temperatures give higher yields. [1 mark]
+
+Question 19 [3 marks]
+Name the first three members of the alkene homologous series. For each, give the molecular formula.
+
+Question 20 [4 marks]
+Decane (C₁₀H₂₂) is a long-chain hydrocarbon obtained from crude oil. It can be cracked.
+
+(a) What conditions are needed for cracking? [1 mark]
+(b) Write a balanced equation for the cracking of decane to produce octane (C₈H₁₈) and one other product. [1 mark]
+(c) Name the other product and describe a chemical test to confirm its identity. State the result. [2 marks]
+
+Question 21 [4 marks]
+Figure 3 shows a chromatogram of three unknown food dyes (P, Q, R) and two reference dyes (Red-2 and Yellow-5).
+
+**Figure 3 (Chromatogram):**
+- Solvent front: 9.0 cm from baseline
+- Dye P: one spot at 6.3 cm
+- Dye Q: two spots at 3.6 cm and 6.3 cm
+- Dye R: one spot at 3.6 cm
+- Reference Red-2: spot at 6.3 cm
+- Reference Yellow-5: spot at 3.6 cm
+
+(a) Calculate the Rf value for dye P. [1 mark]
+(b) Is dye Q a pure substance or a mixture? Give a reason. [1 mark]
+(c) Identify the dyes present in dye Q. [1 mark]
+(d) A student drew the baseline in ink. Explain why this would cause a problem. [1 mark]
+
+Question 22 [4 marks]
+Table 2 shows flame test colours for four solutions and the precipitate colour when sodium hydroxide solution is added.
+
+**Table 2:**
+| Solution | Flame test colour | Precipitate with NaOH |
+|----------|------------------|-----------------------|
+| A | Yellow | No precipitate |
+| B | No distinctive colour | Blue precipitate |
+| C | Lilac | No precipitate |
+| D | No distinctive colour | Brown precipitate |
+
+(a) Identify the metal ion in solution B. [1 mark]
+(b) Identify the metal ion in solution D. [1 mark]
+(c) Solution A contains a carbonate. Describe a test to confirm the presence of carbonate ions. Give the observation. [2 marks]
+
+Question 23 [6 marks]
+Figure 4 shows how the composition of Earth's atmosphere has changed over 4.6 billion years.
+
+**Figure 4 (Stacked area graph):**
+- x-axis: Time (billions of years ago), 4.5 to 0
+- y-axis: % of atmosphere, 0 to 100
+- Phase 1 (4.5–3.5 bya): CO₂ ~96%, N₂ ~3%, water vapour ~1%
+- Phase 2 (3.5–2.5 bya): CO₂ dropping to ~50%, O₂ appearing ~2%, N₂ rising to ~30%
+- Phase 3 (2.5–0.5 bya): CO₂ ~5%, O₂ ~15%, N₂ ~75%
+- Phase 4 (today): N₂ 78%, O₂ 21%, CO₂ 0.04%, Ar ~1%
+
+Using Figure 4 and your knowledge, answer the following:
+
+(a) What was the main gas in the early atmosphere? [1 mark]
+(b) Name the process that produced oxygen and reduced carbon dioxide from about 2.7 billion years ago. [1 mark]
+(c) Describe two other processes that reduced the amount of carbon dioxide in the atmosphere. [2 marks]
+(d) Explain how human activities are now increasing the proportion of carbon dioxide in the atmosphere and describe the potential consequences. [2 marks]
+
+Question 24 [4 marks]
+Figure 5 compares the environmental impact of using aluminium cans vs glass bottles using a life cycle assessment.
+
+**Figure 5 (Table — Life cycle assessment):**
+| Stage | Aluminium can (kg CO₂) | Glass bottle (kg CO₂) |
+|-------|----------------------|---------------------|
+| Raw material extraction | 8.2 | 1.5 |
+| Manufacturing | 3.1 | 2.8 |
+| Transport | 0.4 | 1.2 |
+| Use | 0.0 | 0.0 |
+| Disposal/recycling | −5.6 | 0.3 |
+| **Total** | **6.1** | **5.8** |
+
+(a) Which product has the higher total carbon footprint? [1 mark]
+(b) Explain why the disposal/recycling value for aluminium is negative. [1 mark]
+(c) State one limitation of using only carbon footprint in a life cycle assessment. [1 mark]
+(d) Suggest one reason why the transport carbon footprint for glass is higher than for aluminium. [1 mark]
+
+Question 25 [4 marks]
+Describe the process of making potable water from fresh water. Include the names of the key stages and explain why each stage is necessary.
+
+Question 26 [4 marks]
+Write balanced symbol equations, including state symbols, for:
+(a) The complete combustion of propane (C₃H₈) [2 marks]
+(b) The reaction of ethene with bromine [1 mark]
+(c) The fermentation of glucose (C₆H₁₂O₆) to produce ethanol and carbon dioxide [1 mark]
+
+Question 27 [3 marks]
+Evaluate the advantages and disadvantages of using hydrogen fuel cells as an alternative to petrol engines for cars. Consider: environmental impact, energy storage, and infrastructure.`,
+  },
 ];
