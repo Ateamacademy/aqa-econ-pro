@@ -74,31 +74,145 @@ const ECON_PAPER_PROMPT = (paperLabel: string) => {
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum);
   const isSynopticPaper = paperNum === "3";
 
-  const structureTemplate = isSynopticPaper
-    ? `PAPER 3 TEMPLATE (synoptic):
-- Section A: 30 MCQs, 1 mark each, labelled Question 01 to Question 30.
-- Section B: one synoptic case study with Extract A/B/C, then 4-5 questions worth 50 marks total.
-- At least one 9-mark diagram question and one 25-mark evaluation question in Section B.`
-    : `PAPER 1/2 TEMPLATE (MUST mirror June 2024 style):
-- Section A starts with: "Answer EITHER Context 1 OR Context 2."
-- Include BOTH Context 1 and Context 2 in the generated paper.
-- Context 1 contains Extract A, Extract B, Extract C + questions:
-  - Question 01 [2 marks]
-  - Question 02 [4 marks]
-  - Question 03 [9 marks] (must require a diagram)
-  - Question 04 [25 marks] (must be deep evaluation)
-- Context 2 contains Extract D, Extract E, Extract F + questions:
-  - Question 05 [2 marks]
-  - Question 06 [4 marks]
-  - Question 07 [9 marks] (must require a diagram)
-  - Question 08 [25 marks] (must be deep evaluation)
-- Section B starts with: "Answer one essay from this section. Each essay carries 40 marks."
-- Include EITHER/OR essay choice with Essay 1, Essay 2, Essay 3.
-- Each essay has two parts:
-  - Question X.1 [15 marks] (explain/analyse)
-  - Question X.2 [25 marks] (evaluate/to what extent)`;
+  const paper1Template = `PAPER 1 TEMPLATE — Markets and Market Failure (7136/1):
+EXACT STRUCTURE (copy this layout precisely):
 
-  return `You are an expert AQA A-Level Economics chief examiner. You have been trained on EVERY AQA A-Level Economics paper from 2017 to 2024 (Papers 1, 2, and 3), plus Specimen papers, AQA textbooks (Book 1 & 2), CGP Revision Guide A2, AQA Workbook answers, Exam Technique guides, and synoptic case studies.
+## Section A
+Answer EITHER Context 1 OR Context 2.
+
+### EITHER
+### Context 1
+Total for this context: 40 marks
+[Title: a topical micro/market failure theme e.g. "The market for university accommodation"]
+
+Study Extracts A, B and C and then answer all parts of Context 1 which follow.
+
+#### Extract A: [A data table with real-world statistics — 3-6 rows, 4-6 columns, with a Source line]
+#### Figure 1: [A chart/graph described with specific data points so questions can reference it]
+#### Extract B: [2-3 paragraphs of real-world context, 150-200 words, with Source line. Include specific quotes that questions will reference by line number.]
+#### Extract C: [2-3 paragraphs discussing policies/solutions, 150-200 words, with Source line. Include specific quotes that questions will reference by line number.]
+
+Question 01 [2 marks] — a calculation using data from Extract A
+Question 02 [4 marks] — "Explain how the data in Extract A show that..." (data interpretation)
+Question 03 [9 marks] — "With the help of a diagram, explain..." (quote a line from Extract B/C, require a labelled diagram + applied analysis)
+Question 04 [25 marks] — "Using the data in the extracts and your knowledge of economics, discuss/evaluate..." (quote a line from Extract C, deep evaluation with counter-arguments)
+
+### OR
+### Context 2
+Total for this context: 40 marks
+[Title: a different topical micro/market failure theme]
+
+[Same structure: Extract D (table), Figure 2 (chart), Extract E (context), Extract F (policies)]
+Question 05 [2 marks]
+Question 06 [4 marks]
+Question 07 [9 marks]
+Question 08 [25 marks]
+
+## Section B
+Answer one essay from this section. Each essay carries 40 marks.
+
+### EITHER
+### Essay 1
+[Context paragraph: 3-4 sentences of real-world background]
+Question 09 [15 marks] — "Explain..." (analyse/apply)
+Question 10 [25 marks] — "Evaluate the view that..." / "Assess whether..."
+
+### OR
+### Essay 2
+[Context paragraph]
+Question 11 [15 marks]
+Question 12 [25 marks]
+
+### OR
+### Essay 3
+[Context paragraph]
+Question 13 [15 marks]
+Question 14 [25 marks]`;
+
+  const paper2Template = `PAPER 2 TEMPLATE — National and International Economy (7136/2):
+EXACT STRUCTURE (identical to Paper 1 but with MACRO topics):
+
+## Section A
+Answer EITHER Context 1 OR Context 2.
+
+### EITHER
+### Context 1
+Total for this context: 40 marks
+[Title: a topical macro theme e.g. "Productivity and living standards"]
+
+Study Extracts A, B and C and then answer all parts of Context 1 which follow.
+
+#### Extract A: [A data table comparing countries/years — GDP, inflation, trade, etc.]
+#### Extract B: [2-3 paragraphs of macroeconomic context, with Source]
+#### Extract C: [2-3 paragraphs discussing macro policies, with Source]
+
+Question 01 [2 marks] — calculation from Extract A
+Question 02 [4 marks] — "Explain how the data in Extract A show that..."
+Question 03 [9 marks] — "With the help of a diagram, explain..." (AD/AS, Phillips curve, etc.)
+Question 04 [25 marks] — "Using the data... assess/discuss/evaluate..."
+
+### OR
+### Context 2
+Total for this context: 40 marks
+[Different macro theme]
+[Same structure with Extracts D, E, F + Questions 05-08]
+
+## Section B
+Answer one essay from this section. Each essay carries 40 marks.
+
+### Essay 1
+Question 09 [15 marks] — Explain (macro analysis)
+Question 10 [25 marks] — Evaluate/Assess/Discuss
+
+### Essay 2
+Question 11 [15 marks]
+Question 12 [25 marks]
+
+### Essay 3
+Question 13 [15 marks]
+Question 14 [25 marks]`;
+
+  const paper3Template = `PAPER 3 TEMPLATE — Economic Principles and Issues (7136/3):
+EXACT STRUCTURE:
+
+## Section A
+Answer all questions in this section.
+Only one answer per question is allowed.
+
+30 multiple-choice questions, each worth 1 mark.
+Label them Question 01 through Question 30.
+Each must have EXACTLY 4 options: A, B, C, D.
+
+MCQ REQUIREMENTS:
+- Mix micro AND macro topics (synoptic paper)
+- At least 8 MCQs must require calculation or data interpretation (tables, figures, index numbers)
+- At least 5 MCQs must include a table or figure with specific numerical data
+- Include MCQs on: market structures, elasticity, costs/revenue, labour markets, AD/AS, fiscal/monetary policy, trade, exchange rates, development
+- Difficulty must match June 2024 Paper 3 — NOT easy recall questions
+
+## Section B
+Total for this Investigation: 50 marks
+
+### INVESTIGATION
+### Scenario
+[You are an economist working for... 2-3 sentences setting up the investigation context]
+
+Referring to the Insert, study Extracts A, B and C, then use these and your knowledge of economics to help answer Questions 31 and 32. There is also a news report, Extract D, which is to be used with the other extracts to help answer Question 33.
+
+#### Extract A: [Data table with regional/national comparison data]
+#### Extract B: [Chart/figure with specific data points]
+#### Extract C: [2-3 paragraphs of context, with Source]
+#### Extract D: [News report, 2-3 paragraphs, with Source]
+
+Question 31 [10 marks] — "To what extent, if at all, do the data suggest that..." (data analysis + evaluation)
+Question 32 [15 marks] — "Explain why/how..." (applied analysis using extracts)
+Question 33 [25 marks] — "After considering Extract D, and the original evidence... would you recommend that... Justify your recommendation." (full evaluation + justified recommendation)`;
+
+  const structureTemplate = isSynopticPaper
+    ? paper3Template
+    : paperNum === "2" ? paper2Template : paper1Template;
+
+  return `You are an expert AQA A-Level Economics chief examiner. You have written and moderated EVERY AQA A-Level Economics paper from 2017 to 2024 (Papers 1, 2, and 3). You know the exact format, register, difficulty level, and marking expectations intimately.
 
 Generate a COMPLETE, FULL-LENGTH predicted exam paper for ${paperLabel}.
 
@@ -108,29 +222,29 @@ ${knowledgeGraphSection}
 
 ${structureTemplate}
 
-USE THE PAST-PAPER PATTERNS + KNOWLEDGE GRAPH ABOVE to create NEW questions in the SAME style, depth, and mark-scheme expectations as official AQA papers. Do NOT copy questions verbatim.
+CRITICAL RULES:
+1. Follow the template EXACTLY — same section structure, same question numbering, same mark allocations
+2. Extracts must be 150-250 words each, written in formal news/academic register with realistic 2023-2025 UK/global data
+3. Tables must contain specific numerical data (GDP figures, percentages, prices, indices) so calculation questions are answerable
+4. Every "line X" reference in a question must match an actual quote in the extract
 
-DIFFICULTY GUARDRAILS (CRITICAL):
-1. Match the difficulty of June 2022–2024 papers, not easier classroom worksheets
-2. Every 9-mark question must force applied analysis (diagram + contextual chain of reasoning)
-3. Every 25-mark question must require:
-   - at least two developed chains of reasoning
-   - counter-argument(s)
-   - conditional judgement ("depends on" factors)
-4. Use precise A-Level command words and exam register
-5. Use realistic 2023–2025 UK economic data in tables/figures/extracts
+DIFFICULTY GUARDRAILS (MATCH JUNE 2024 STANDARD):
+1. 2-mark questions: precise calculation or definition — NOT easy recall
+2. 4-mark questions: "Explain how the data show..." — requires data interpretation + economic reasoning
+3. 9-mark questions: MUST require a labelled diagram + contextual chain of reasoning + application to the extract
+4. 15-mark questions: sustained explanation with at least 2 developed chains of analysis
+5. 25-mark questions: MUST include counter-arguments, "it depends on" factors, conditional judgement, synoptic links
 
 HOTS REQUIREMENTS (NON-NEGOTIABLE):
-- At least 40% of available marks must target Analyse/Evaluate
-- At least one genuinely synoptic question linking micro and macro
-- No generic/easy recall-heavy paper; short recall only in 2-mark parts
+- At least 40% of marks target Analyse/Evaluate (Bloom's taxonomy levels 4-6)
+- Every 25-mark essay requires genuine evaluation, not description
+- Use precise command words: "Evaluate the view that", "Assess whether", "Discuss", "To what extent"
 
-OUTPUT FORMAT RULES (MANDATORY):
-- Use markdown headings for sections/extracts
-- Every question line MUST start with "Question" and end with "[x marks]"
-- Keep the exact mark pattern for the selected paper template
-- Include realistic tables/figures in text form so all calculations are answerable
-- Do not include solutions or mark schemes in the generated paper`;
+OUTPUT FORMAT:
+- Use markdown headings (## for sections, ### for contexts/essays, #### for extracts)
+- Question lines: "Question 01 [2 marks]" (no bold/asterisks on question headers)
+- MCQ options on separate lines starting with "- A", "- B", "- C", "- D"
+- Do NOT include solutions or mark schemes`;
 };
 
 const CHEM_PAPER_PROMPT = (paperLabel: string, tier: "Foundation" | "Higher") => {
@@ -569,33 +683,39 @@ Give 2-3 specific, actionable tips for how I can improve. Address me directly. B
       {step === "paper" && !isGenerating && (
         <div className="space-y-5">
           {/* Paper header + Download PDF */}
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              {selectedLibraryPaper && (
+              {selectedLibraryPaper ? (
                 <>
                   <h2 className="font-serif text-xl font-bold">{selectedLibraryPaper.title}</h2>
                   <p className="text-sm text-muted-foreground">{selectedLibraryPaper.description}</p>
                 </>
+              ) : (
+                <>
+                  <h2 className="font-serif text-xl font-bold">{examBoard} {level} {subjectLabel} — Paper {paper}</h2>
+                  <p className="text-sm text-muted-foreground">AI-Generated Predicted Paper</p>
+                </>
               )}
             </div>
-            <Button
-              variant="outline"
-              size="sm"
-              className="gap-1.5 shrink-0"
-              onClick={() => {
-                const paperTitle = selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`;
-                const fullContent = paperContext + "\n\n" + parsedQuestions.map(q => `${q.label} [${q.marks} marks]\n${q.text}`).join("\n\n");
-                generatePaperPdf(paperTitle, fullContent, {
-                  subject: subjectLabel,
-                  examBoard,
-                  level,
-                  tier: (isMaths || isChemistry) ? tier : undefined,
-                });
-                toast.success("PDF downloaded!");
-              }}
-            >
-              <Download className="h-4 w-4" /> Download PDF
-            </Button>
+            <div className="flex gap-2">
+              <Button
+                size="lg"
+                className="gap-2"
+                onClick={() => {
+                  const paperTitle = selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`;
+                  const fullContent = paperContext + "\n\n" + parsedQuestions.map(q => `${q.label} [${q.marks} marks]\n${q.text}`).join("\n\n");
+                  generatePaperPdf(paperTitle, fullContent, {
+                    subject: subjectLabel,
+                    examBoard,
+                    level,
+                    tier: (isMaths || isChemistry) ? tier : undefined,
+                  });
+                  toast.success("PDF downloaded!");
+                }}
+              >
+                <Download className="h-5 w-5" /> Download as PDF
+              </Button>
+            </div>
           </div>
 
           {paperContext && (

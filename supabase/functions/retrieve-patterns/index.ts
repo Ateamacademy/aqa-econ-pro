@@ -33,6 +33,8 @@ serve(async (req) => {
     if (Array.isArray(bloom_levels) && bloom_levels.length > 0) {
       questionsQuery = questionsQuery.in("bloom_level", bloom_levels);
     }
+
+    const { data: questions, error: qError } = await questionsQuery;
     if (qError) throw qError;
 
     // Fetch knowledge graph nodes
