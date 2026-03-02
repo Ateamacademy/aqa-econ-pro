@@ -228,11 +228,31 @@ export default function PredictedPapers() {
     const paperLabel = selectedPaper ? `${selectedPaper.label}: ${selectedPaper.title}` : `Paper ${paper}`;
     const isCalc = paper !== "1";
 
-    const prompt = isMaths
+    // For Economics, fetch past paper patterns from vector DB + knowledge graph
+    let dbContextPrompt = "";
+    if (isEconomics) {
+      try {
+        const { data: patternData } = await supabase.functions.invoke("retrieve-patterns", {
+          body: { paper, subject: "economics", limit: 50 },
+        });
+        if (patternData?.contextPrompt) {
+          dbContextPrompt = patternData.contextPrompt;
+        }
+      } catch (e) {
+        console.warn("Failed to fetch patterns from DB, using static patterns:", e);
+      }
+    }
+
+    const basePrompt = isMaths
       ? MATHS_PAPER_PROMPT(paperLabel, isCalc, tier)
       : isChemistry
       ? CHEM_PAPER_PROMPT(paperLabel, tier)
       : ECON_PAPER_PROMPT(paperLabel);
+
+    // Inject DB-retrieved patterns for Economics
+    const prompt = dbContextPrompt
+      ? `${basePrompt}\n\n${dbContextPrompt}\n\nUSE THE ABOVE PAST PAPER DATABASE to ensure your predicted paper covers the same topics at the same frequency and Bloom's taxonomy levels. Generate NEW questions in the SAME style — do NOT copy verbatim. Prioritise topics with highest frequency and ensure HOTS questions (analyse/evaluate) match the distribution above.`
+      : basePrompt;
 
     await streamChat({
       messages: [{ role: "user", content: prompt }],
