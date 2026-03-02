@@ -24,6 +24,7 @@ import {
   CHEMISTRY_PAST_PAPER_KNOWLEDGE,
   ECONOMICS_PAST_PAPER_KNOWLEDGE,
 } from "@/data/pastPaperPatterns";
+import { generateKnowledgeGraphPrompt } from "@/data/economicsKnowledgeGraph";
 
 type QuestionFeedback = {
   markScheme: string;
@@ -67,16 +68,34 @@ Use realistic Figure/Table blocks where appropriate, but always include all requ
 Make questions topical, varied, and exam-authentic. Avoid repeating similar question types.`;
 };
 
-const ECON_PAPER_PROMPT = (paperLabel: string) =>
-  `You are an expert AQA A-Level Economics chief examiner trained on every AQA Economics paper from 2017–2024. Generate a COMPLETE, REALISTIC predicted exam paper for ${paperLabel}.
+const ECON_PAPER_PROMPT = (paperLabel: string) => {
+  // Extract paper number for knowledge graph
+  const paperNum = paperLabel.includes("1") ? "1" : paperLabel.includes("2") ? "2" : "3";
+  const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum);
+
+  return `You are an expert AQA A-Level Economics chief examiner. You have been trained on EVERY AQA A-Level Economics paper from 2017 to 2024 (Papers 1, 2, and 3), plus Specimen papers, AQA textbooks (Book 1 & 2), CGP Revision Guide A2, AQA Workbook answers, Exam Technique guides, and synoptic case studies.
+
+Generate a COMPLETE, REALISTIC predicted exam paper for ${paperLabel}.
 
 ${ECONOMICS_PAST_PAPER_KNOWLEDGE}
+
+${knowledgeGraphSection}
 
 This must be a full-length paper in the EXACT AQA format:
 - For Paper 1 (Microeconomics) & Paper 2 (Macroeconomics): Include Section A (data response with context/extract, real-looking data tables, and structured questions 2+4+9+25 marks) AND Section B (essay questions worth 25 marks each with "Discuss", "Evaluate", or "To what extent" stems). Total marks: 80.
 - For Paper 3 (Synoptic): Include Section A (30 MCQs worth 1 mark each) AND Section B (case study with data response questions and an essay question). Total marks: 80.
 
-USE THE PAST-PAPER PATTERNS ABOVE to create NEW questions that feel like they belong in a real AQA paper. Do NOT copy questions verbatim — create original questions in the SAME STYLE, DIFFICULTY, and MARK ALLOCATION. Use realistic 2024–2025 UK economic data and themes.
+USE THE PAST-PAPER PATTERNS AND KNOWLEDGE GRAPH ABOVE to create NEW questions that feel like they belong in a real AQA paper. Do NOT copy questions verbatim — create original questions in the SAME STYLE, DIFFICULTY, and MARK ALLOCATION. Use realistic 2024–2025 UK economic data and themes.
+
+CRITICAL HOTS REQUIREMENTS:
+1. At least 40% of total marks MUST be at the "evaluate" level of Bloom's taxonomy
+2. At least ONE question must be genuinely synoptic (linking micro and macro)
+3. 25-mark essays MUST require: multiple chains of reasoning, counter-arguments, a supported judgement
+4. 9-mark questions MUST require a correctly drawn diagram AND application to a real-world context
+5. Data response questions MUST include realistic, current UK economic data from 2023-2025
+6. Use the SYNOPTIC CROSS-TOPIC LINKS from the knowledge graph to create novel, challenging connections
+
+FIRST PRINCIPLES: Generate questions from first principles of economic theory. Each question should test genuine understanding, not rote memorisation. Create novel scenarios that mirror real exam difficulty and style.
 
 IMPORTANT FORMATTING — FOLLOW EXACTLY:
 Question 1.1 [2 marks]
@@ -84,6 +103,7 @@ Question 1.2 [4 marks]
 etc.
 
 Include realistic data extracts and context paragraphs before questions. Format clearly with ## headings for sections.`;
+};
 
 const CHEM_PAPER_PROMPT = (paperLabel: string, tier: "Foundation" | "Higher") => {
   const tierDesc = tier === "Foundation"

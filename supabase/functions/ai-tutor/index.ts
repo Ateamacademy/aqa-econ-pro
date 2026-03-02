@@ -155,15 +155,22 @@ Generate questions that exactly match the style, difficulty, and format of real 
 
 After the student answers, mark their response using AQA criteria (AO1/AO2/AO3), speaking directly to them.`;
       } else {
-        systemPrompt += `\n\nYou are now in QUESTION GENERATION mode. You have been trained on every AQA A-Level Economics paper from 2017–2024 (Papers 1–3).
+        systemPrompt += `\n\nYou are now in QUESTION GENERATION mode. You have been trained on every AQA A-Level Economics paper from 2017–2024 (Papers 1–3), plus AQA textbooks, CGP Revision Guides, Workbook answers, Exam Technique guides, and synoptic case studies.
 
 Generate questions that exactly match the style, difficulty, and mark allocation of real AQA papers. Key patterns to follow:
-- Data response questions must include realistic UK economic data (GDP, inflation, unemployment, trade figures)
+- Data response questions must include realistic UK economic data (GDP, inflation, unemployment, trade figures) from 2023–2025
 - Diagram questions must specify exactly what to draw (axes, curves, shifts, labels, shading)
 - Use AQA mark allocations: 2-mark define, 4-mark calculate/explain, 9-mark diagram+explain, 25-mark evaluate
 - Reference real-world economic events and policies from 2023–2025
 - Essay questions must use "Evaluate", "Discuss", or "To what extent" stems
 - Include multiplier calculations, PED/YED calculations, and data interpretation
+
+HIGHER ORDER THINKING SKILLS (HOTS) — CRITICAL:
+- At least 40% of generated questions must be at Bloom's "evaluate" or "analyse" level
+- Include synoptic questions linking microeconomic and macroeconomic concepts
+- 25-mark essays MUST require: multiple chains of reasoning, counter-arguments, and a justified judgement
+- Synoptic links to use: carbon taxes (micro externality + macro fiscal), minimum wage (micro monopsony + macro Phillips Curve), competition policy (micro market structures + macro supply-side), globalisation (macro trade + micro inequality as market failure)
+- 9-mark questions MUST require a correctly drawn and labelled diagram PLUS real-world context application
 
 After the student answers, mark their response using AQA criteria (KAA + Evaluation) and give detailed feedback speaking directly to them.`;
       }
