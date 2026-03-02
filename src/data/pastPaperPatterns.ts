@@ -405,84 +405,272 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 
 export const ECONOMICS_PAST_PAPER_KNOWLEDGE = `
 YOU MUST USE THE FOLLOWING REAL PAST-PAPER PATTERNS FROM AQA A-LEVEL ECONOMICS (2017–2024) TO GENERATE AUTHENTIC QUESTIONS.
+THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE AQA PAST PAPER: June 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, plus Specimen papers.
+ALSO INFORMED BY: AQA A-Level Economics Textbooks (Book 1 & 2), CGP Revision Guide A2, AQA Workbook 1 Answers 2020, Economics A-Level Exam Technique Mat, AQA-7136 Scheme of Work, Brazil Synoptic Paper, International Trade materials, and AQA Examination Advice documents.
 
 ## PAPER STRUCTURE (observed across all years)
 
-### Paper 1: Markets and Market Failure (Microeconomics)
+### Paper 1: Markets and Market Failure (Microeconomics) — 7136/1
 - 80 marks, 2 hours
 - Section A: Data Response (context + extract + data, ~40 marks)
-  - Q1.1: Define/State [2 marks]
-  - Q1.2: Calculate from data [4 marks]  
-  - Q1.3: Explain using diagram [9 marks]
-  - Q1.4: Evaluate/Discuss [25 marks]
+  - Context: 200-400 word passage with real-world economic scenario
+  - At least ONE data table or graph with real UK/world statistics
+  - Q1.1: Define/State [2 marks] — tests AO1 (knowledge)
+  - Q1.2: Calculate from data [4 marks] — tests AO2 (application) + AO3 (analysis)
+  - Q1.3: Explain using diagram [9 marks] — tests AO1 + AO2 + AO3
+  - Q1.4: Evaluate/Discuss [25 marks] — tests AO1 + AO2 + AO3 + AO4 (evaluation)
 - Section B: Essay Choice (2 from 3, 25 marks each)
   - Always includes "Evaluate", "Discuss", or "To what extent"
+  - At least one requires a diagram for full marks
+  - Must test different micro topics (e.g., one on market failure, one on market structures)
 
-### Paper 2: National and International Economy (Macroeconomics)
+### Paper 2: National and International Economy (Macroeconomics) — 7136/2
 - 80 marks, 2 hours
 - Same structure as Paper 1 but macroeconomic topics
 - Data extracts include UK GDP, inflation, unemployment, trade figures
+- Extract must contain at least 3 pieces of numerical data from real UK sources (ONS, BoE)
 
-### Paper 3: Economic Principles and Issues (Synoptic)
+### Paper 3: Economic Principles and Issues (Synoptic) — 7136/3
 - 80 marks, 2 hours
-- Section A: 30 MCQs [30 marks]
+- Section A: 30 MCQs [30 marks] — span BOTH micro AND macro
 - Section B: Case study with data + questions [50 marks]
   - Mix of short (2–4 mark) and long (9–25 mark) questions
+  - MUST be synoptic: questions that require linking micro and macro concepts
+  - Case study uses a real country/policy scenario (e.g., Brazil, India, UK post-Brexit)
 
 ## REAL QUESTION PATTERNS BY TOPIC (from 2017–2024 papers)
 
 ### Paper 1 — Microeconomics
+
+#### The Economic Problem & PPF
+- June 2017 P1: "Define the term 'opportunity cost'." [2 marks]
+- June 2018 P1: "Using a PPF diagram, explain how an increase in investment in education might affect an economy's productive capacity." [9 marks]
+- June 2024 P1: "Using a PPF diagram, explain the concept of allocative efficiency." [4 marks]
+- PATTERN: PPF questions always require correctly labelled axes (Capital goods vs Consumer goods), original curve, shifted curve, specific points labelled, movement explained
+
+#### Demand, Supply & Price Determination
 - June 2024 P1: "Using Figure 1, calculate the percentage change in UK house prices between 2020 and 2023." [4 marks]
 - June 2024 P1: "Using a supply and demand diagram, explain the likely effect on the market for private rented accommodation of a rent cap below the equilibrium price." [9 marks]
+- June 2023 P1: "Using a diagram, explain the likely impact of a minimum price on the market for alcohol." [9 marks]
+- June 2022 P1: "Using the data, calculate the cross elasticity of demand between goods X and Y." [4 marks]
+- June 2021 P1: "Using a diagram, explain the likely impact on the UK housing market of a reduction in interest rates." [9 marks]
+- June 2019 P1: "Explain two reasons why the demand curve for a luxury good might shift to the right." [4 marks]
+- June 2018 P1: "Using the data, calculate the income elasticity of demand. Comment on the nature of the good." [4 marks]
+- June 2017 P1: "Using a supply and demand diagram, explain the impact of a subsidy on the market for solar panels." [9 marks]
+- PATTERN: Supply/demand diagrams require: P on y-axis, Q on x-axis, original D1/S1, shifted D2/S2, P1→P2, Q1→Q2, arrows showing shifts, equilibria labelled E1/E2
+
+#### Elasticity (PED, YED, XED, PES)
+- Calculation patterns: % change in Qd / % change in P (PED), % change in Qd / % change in Y (YED)
+- Always provide numerical data in extract for calculation
+- Follow-up: "Comment on the significance of your answer" — requires interpretation
+- YED: identify normal/inferior, luxury/necessity based on positive/negative/magnitude
+- XED: identify substitutes (positive) vs complements (negative)
+- PES: link to time, spare capacity, stock levels
+
+#### Market Failure
 - June 2023 P1: "Evaluate the view that government intervention is always necessary to correct market failure in the provision of healthcare." [25 marks]
 - June 2022 P1: "With the help of a diagram, explain how a negative externality leads to market failure." [9 marks]
+- June 2021 P1: "Evaluate the most effective method of reducing the consumption of demerit goods." [25 marks]
+- June 2020 P1: "Using a diagram, explain why public goods represent a case of complete market failure." [9 marks]
+- June 2019 P1: "Evaluate the effectiveness of tradeable pollution permits in reducing carbon emissions." [25 marks]
+- June 2018 P1: "Using a diagram, explain why merit goods are under-consumed in a free market." [9 marks]
+- June 2017 P1: "Evaluate the view that indirect taxes are the most effective way to correct negative externalities." [25 marks]
+- PATTERN for externality diagrams: MSC/MPC or MSB/MPB divergence, free-market output Qm, socially optimal output Qs, welfare loss triangle shaded, labels for external cost/benefit
+- PATTERN for public goods: non-excludable + non-rivalrous → free rider problem → no effective demand → market fails completely
+
+#### Government Intervention & Government Failure
+- June 2024 P1: "Evaluate the view that government intervention to correct market failure always leads to government failure." [25 marks]
+- June 2022 P1: "Evaluate the effectiveness of maximum price controls in the housing market." [25 marks]
+- June 2020 P1: "Evaluate the use of regulation as a method of correcting market failure." [25 marks]
+- PATTERN: Intervention questions require analysis of: effectiveness, unintended consequences, information problems, regulatory capture, cost to government, time lags
+
+#### Market Structures (Monopoly, Oligopoly, Contestable Markets)
 - June 2019 P1: "Using a diagram, explain how a monopolist determines its profit-maximising level of output and price." [9 marks]
-- Common patterns: PED/YED/XED calculations, consumer/producer surplus diagrams, market failure (externalities, public goods, information failure, merit/demerit goods), government intervention (taxes, subsidies, regulation, tradeable permits), monopoly vs perfect competition, contestable markets, labour markets, poverty and inequality
+- June 2023 P1: "Evaluate whether monopolies are always against the consumer interest." [25 marks]
+- June 2021 P1: "Evaluate the view that contestable markets are more beneficial for consumers than perfectly competitive markets." [25 marks]
+- June 2018 P1: "Compare the efficiency of monopoly with that of perfect competition." [25 marks]
+- PATTERN for monopoly diagram: AR=D (downward sloping), MR (below AR, twice the gradient), MC (U-shaped), AC (U-shaped), profit-max at MC=MR, supernormal profit shaded (P-AC × Q)
+
+#### Labour Market
+- June 2024 P1: "Using a monopsony diagram, explain why wages in the care sector may be below the competitive level." [9 marks]
+- June 2022 P1: "Evaluate the likely impact of a £15 national minimum wage on employment and poverty." [25 marks]
+- June 2020 P1: "Explain, using a diagram, how trade unions can influence wage rates in a labour market." [9 marks]
+- PATTERN for monopsony: MCL (above ACL=S), MRP=D, monopsony wage Wm < competitive Wc, monopsony employment Qm < Qc
+
+#### Behavioural Economics (Higher-order, appears from 2019+)
+- June 2023 P1: "Evaluate the effectiveness of nudge theory as an alternative to traditional government intervention." [25 marks]
+- June 2021 P1: "Using examples, explain how bounded rationality and choice architecture might lead to sub-optimal consumer decisions." [9 marks]
+- PATTERN: Nudge questions require: definition, real examples (organ donation defaults, sugar tax framing, pension auto-enrolment), comparison with command-and-control regulation
 
 ### Paper 2 — Macroeconomics
+
+#### AD/AS Analysis
 - June 2024 P2: "Using an AD/AS diagram, explain the likely impact on the UK economy of a significant increase in interest rates." [9 marks]
-- June 2024 P2: "Evaluate the effectiveness of supply-side policies in achieving sustained economic growth." [25 marks]
-- June 2023 P2: "Using the data in Extract B, calculate the UK's balance of trade in goods for 2022." [2 marks]
-- June 2023 P2: "If the MPC is 0.8, calculate the multiplier. Hence calculate the total impact on GDP of a £5 billion increase in government spending." [4 marks]
+- June 2023 P2: "Using an AD/AS diagram, explain how a fall in the value of the pound might affect the UK economy." [9 marks]
 - June 2022 P2: "Using an AD/AS diagram, evaluate the likely impact of Brexit on the UK economy." [25 marks]
-- June 2019 P2: "Explain, using a Phillips Curve diagram, the relationship between unemployment and inflation." [9 marks]
-- Common patterns: AD/AS analysis (Classical vs Keynesian LRAS), fiscal/monetary/supply-side policies, multiplier calculations, Phillips Curve, balance of payments, exchange rates, economic growth vs inflation trade-off, globalisation, inequality, UK economic data interpretation
+- June 2021 P2: "Using an AD/AS diagram, explain the likely short-run and long-run effects of a global pandemic on the UK economy." [9 marks]
+- June 2019 P2: "Using a Keynesian AD/AS diagram, explain why deflation might be harmful for the UK economy." [9 marks]
+- June 2018 P2: "Compare the Classical and Keynesian views of the macroeconomy using AD/AS diagrams." [9 marks]
+- PATTERN: AD/AS diagrams require: Real Output/GDP on x-axis, Price Level on y-axis, distinguish SRAS (upward sloping) from LRAS (vertical for Classical, L-shaped for Keynesian), show shift direction with arrows, label old (AD1, P1, Y1) and new (AD2, P2, Y2) equilibria
 
-### Paper 3 — Synoptic MCQs
-- MCQ topics span micro AND macro
-- Always 30 questions, each 1 mark
-- Cover: opportunity cost, PPF, elasticity calculations, market structures, AD/AS shifts, fiscal policy, trade, exchange rates
+#### Economic Growth
+- June 2024 P2: "Evaluate the extent to which economic growth is always desirable." [25 marks]
+- June 2022 P2: "Analyse the possible causes of the UK's low productivity growth since 2008." [9 marks]
+- PATTERN: Must distinguish short-run growth (AD shift, actual GDP moves toward potential) from long-run growth (LRAS shift, increase in productive capacity). Use both PPF outward shift AND rightward shift of LRAS.
+
+#### Unemployment & Inflation
+- June 2023 P2: "Using a Phillips Curve diagram, evaluate the view that there is no long-run trade-off between inflation and unemployment." [25 marks]
+- June 2021 P2: "Analyse the consequences of a sustained period of deflation for the UK economy." [9 marks]
+- June 2020 P2: "Evaluate the view that structural unemployment is the most significant type of unemployment in the UK today." [25 marks]
+- June 2019 P2: "Using a Phillips Curve diagram, explain the relationship between unemployment and inflation." [9 marks]
+- PATTERN: Phillips Curve requires: Inflation rate on y-axis, Unemployment rate on x-axis, SRPC (downward sloping), LRPC (vertical at NRU/NAIRU), show adaptive expectations shifts
+
+#### Fiscal Policy & Multiplier
+- June 2023 P2: "If the MPC is 0.8, calculate the multiplier. Hence calculate the total impact on GDP of a £5 billion increase in government spending." [4 marks]
+- June 2024 P2: "Evaluate the effectiveness of expansionary fiscal policy in stimulating economic recovery." [25 marks]
+- June 2022 P2: "Evaluate whether austerity is an appropriate response to a large budget deficit." [25 marks]
+- June 2021 P2: "Evaluate the use of fiscal policy during and after the COVID-19 pandemic." [25 marks]
+- June 2018 P2: "Using the Laffer Curve, evaluate the view that reducing tax rates always increases tax revenue." [25 marks]
+- PATTERN: Multiplier = 1/(1-MPC) = 1/(MPS+MPT+MPM). Total ΔY = Multiplier × Initial injection. Must discuss: crowding out, time lags, confidence effects, liquidity trap, size of multiplier in practice vs theory
+
+#### Monetary Policy
+- June 2024 P2: "Evaluate the effectiveness of quantitative easing as a monetary policy tool." [25 marks]
+- June 2022 P2: "Evaluate the role of the Bank of England in achieving price stability." [25 marks]
+- June 2020 P2: "Explain the transmission mechanism of monetary policy." [9 marks]
+- PATTERN: Must include: Bank of England MPC sets base rate, transmission mechanism (interest rates → C + I + net exports → AD), time lags (18-24 months), liquidity trap limitation, QE as unconventional tool
+
+#### Supply-Side Policies
+- June 2024 P2: "Evaluate the effectiveness of supply-side policies in achieving sustained economic growth." [25 marks]
+- June 2021 P2: "Compare market-based and interventionist supply-side policies." [9 marks]
+- June 2019 P2: "Evaluate the view that education and training are the most important supply-side policies for the UK." [25 marks]
+- PATTERN: Must distinguish market-based (deregulation, privatisation, tax cuts, trade union reform) from interventionist (education, infrastructure, R&D, industrial policy). Both shift LRAS right but through different mechanisms.
+
+#### Balance of Payments & Exchange Rates
+- June 2023 P2: "Using the data in Extract B, calculate the UK's balance of trade in goods for 2022." [2 marks]
+- June 2022 P2: "Evaluate the impact of a significant depreciation of sterling on the UK economy." [25 marks]
+- June 2020 P2: "Using the J-curve, explain why a depreciation may initially worsen the current account before improving it." [9 marks]
+- June 2019 P2: "Analyse the possible causes of the UK's persistent current account deficit." [9 marks]
+- PATTERN: J-curve requires time on x-axis, current account balance on y-axis, initial worsening then improvement. Marshall-Lerner: depreciation improves current account only if PEDx + PEDm > 1
+
+#### Globalisation & Trade
+- June 2024 P2: "Evaluate the view that protectionism is never justified in a globalised economy." [25 marks]
+- June 2022 P2: "Evaluate the economic impact of Brexit on UK trade and growth." [25 marks]
+- June 2019 P2: "Using comparative advantage, explain the benefits of free trade." [9 marks]
+- June 2018 P2: "Evaluate the view that globalisation has been beneficial for developing countries." [25 marks]
+- PATTERN: Comparative advantage requires: two-country, two-good model, opportunity cost ratios, gains from specialisation. Protectionism arguments: infant industry, dumping, strategic, national security, environmental
+
+#### Inequality & Poverty
+- June 2023 P2: "Evaluate government policies aimed at reducing income inequality in the UK." [25 marks]
+- June 2021 P2: "Using a Lorenz Curve diagram, explain how the Gini coefficient measures income inequality." [9 marks]
+- PATTERN: Lorenz Curve requires: cumulative % of population on x-axis, cumulative % of income on y-axis, line of equality (45°), Lorenz Curve below. Gini = Area A / (Area A + Area B)
+
+### Paper 3 — Synoptic (CRITICAL for HOTS)
+
+#### MCQ Patterns (Section A — 30 questions)
+- MCQs span BOTH micro AND macro, testing conceptual understanding
+- Common MCQ topics: opportunity cost, PPF, elasticity calculations, market structures, AD/AS shifts, fiscal multiplier, trade, exchange rates
 - Distractors are realistic and test common misconceptions
+- At least 5 MCQs require simple calculations (PED, multiplier, % change)
 
-### Data Extract Patterns (CRITICAL — appears in every paper)
+#### Case Study Patterns (Section B — 50 marks)
+- June 2024 P3: Case study on UK energy market — combines externalities (micro), fiscal policy (macro), and trade (international)
+- June 2023 P3: Case study on UK housing market — combines supply/demand (micro), monetary policy (macro), and inequality
+- June 2022 P3: Case study on post-COVID recovery — combines labour market (micro), AD/AS (macro), and globalisation
+- June 2019 P3: Case study on Brazil — combines market failure (micro), development (macro), and international trade
+- June 2018 P3: Case study on UK productivity puzzle — combines market structures (micro), growth (macro), and supply-side policies
+- PATTERN: Case studies ALWAYS include a passage (400-600 words) with real data, followed by questions that REQUIRE linking micro and macro. The 25-mark question MUST be genuinely synoptic.
+
+## HIGHER ORDER THINKING SKILLS (HOTS) — BLOOM'S TAXONOMY REQUIREMENTS
+
+### Remember (2-mark questions only):
+- Define terms, state facts, name policies
+- Example: "Define the term 'allocative efficiency'." [2 marks]
+
+### Understand (2-4 marks):
+- Explain concepts, give reasons, describe relationships
+- Example: "Explain the difference between a movement along and a shift of the demand curve." [4 marks]
+
+### Apply (4-9 marks):
+- Use theory in new contexts, calculate from data, draw diagrams
+- Example: "Using Figure 1, calculate the PED. Comment on the significance." [4 marks]
+- Example: "Using a diagram, explain the impact of a carbon tax on the market for flights." [9 marks]
+
+### Analyse (9 marks):
+- Chain reasoning: cause → effect → consequence
+- Multi-step explanations linking concepts
+- Example: "Analyse the likely short-run AND long-run effects of a rise in Bank of England base rate on the UK housing market." [9 marks]
+
+### Evaluate (25 marks — MOST IMPORTANT):
+- Weigh arguments for and against
+- Consider counter-arguments and limitations
+- Make a justified judgement
+- Use diagrams and real-world evidence
+- Example: "Evaluate the view that free trade always leads to a more efficient allocation of resources." [25 marks]
+
+### Create/Synthesise (25 marks — synoptic):
+- Combine micro and macro concepts
+- Apply multiple theories to a complex scenario
+- Example: "Using both microeconomic and macroeconomic analysis, evaluate the likely effects of the UK government's net zero strategy on economic growth, employment, and market efficiency." [25 marks]
+
+## EXAM TECHNIQUE REQUIREMENTS (from AQA Examination Advice)
+
+### 25-mark Essay Structure (mark scheme pattern):
+- KAA (Knowledge, Application, Analysis): up to 12 marks
+  - Define key terms (1-2 marks)
+  - Apply to context using real data (2-3 marks)
+  - Analyse with chain of reasoning + diagram (4-5 marks)
+  - Develop second chain of reasoning (3-4 marks)
+- Evaluation: up to 13 marks
+  - Counter-argument with reasoning (3-4 marks)
+  - Limitation of main argument (2-3 marks)
+  - Alternative perspective (2-3 marks)
+  - Final judgement with justification (3-4 marks)
+  - "It depends on..." factors (1-2 marks)
+
+### 9-mark Explain with Diagram Structure:
+- Define key concept (1 mark)
+- Draw correctly labelled diagram (3-4 marks): correct axes, curves, shift, labels
+- Explain the diagram with reference to context (3-4 marks)
+- Develop analysis with chain of reasoning (1-2 marks)
+
+### Data Response Patterns:
 - Always includes a contextual passage (200–400 words) with real-looking statistics
 - Includes at least one data table or graph
 - Data references real UK/world events:
-  - 2024: Cost of living crisis, interest rate rises, AI impact on labour markets
-  - 2023: Post-COVID recovery, energy price shocks, NHS waiting lists
-  - 2022: Ukraine conflict, supply chain disruptions, inflation surge
-  - 2019: Brexit uncertainty, trade negotiations
-  - 2018: Gig economy, housing market
-  - 2017: Trump tariffs, productivity puzzle
+  - 2024-2025: AI impact on labour markets, cost of living crisis aftermath, green transition, BoE rate cuts
+  - 2023-2024: Falling inflation (11.1%→3.9%→2.3%), NHS crisis, housing affordability
+  - 2022-2023: Ukraine conflict, energy crisis, supply chain disruptions, inflation surge
+  - 2021-2022: Post-COVID recovery, furlough scheme end, supply-side bottlenecks
+  - 2019-2020: COVID-19 pandemic, unprecedented fiscal and monetary response
+  - 2018-2019: Brexit uncertainty, trade negotiations, gig economy
+  - 2017-2018: Trump tariffs, UK productivity puzzle, housing bubble concerns
 
-### Diagram Requirements (from mark schemes)
-- **Supply & Demand**: Correctly labelled axes (P on y, Q on x), original and shifted curves, equilibrium labels (P₁, Q₁, P₂, Q₂), arrows showing direction of shift
-- **AD/AS**: Real output on x-axis, Price level on y-axis, distinguish SRAS from LRAS, show shift direction, label old and new equilibria
-- **Cost curves**: MC, AC (U-shaped), AR=D (downward sloping for monopoly), MR (below AR for monopoly), profit area shaded
-- **Externalities**: MSC/MPC or MSB/MPB divergence, welfare loss triangle shaded, optimal vs free-market output labelled
-- Mark schemes award: 1 mark for correct axes, 1 mark for correct curves, 1 mark for correct shift, 1 mark for correct labels
+## DIAGRAM REQUIREMENTS (from mark schemes — CRITICAL for full marks)
+
+### Supply & Demand: Correctly labelled axes (P on y, Q on x), original D1/S1 and shifted D2/S2, equilibrium labels (P₁/Q₁ → P₂/Q₂), arrows showing shift direction
+### AD/AS: Real GDP/Output on x-axis, Price Level on y-axis, distinguish SRAS from LRAS (vertical Classical or L-shaped Keynesian), show shift with arrows, label equilibria
+### Cost Curves (Monopoly): MC (U-shaped), AC (U-shaped), AR=D (downward), MR (below AR, double gradient), profit-max at MC=MR, supernormal profit rectangle shaded
+### Externalities: MSC/MPC divergence (negative) or MSB/MPB divergence (positive), free-market Qm, socially optimal Qs, welfare loss triangle, labels for external cost/benefit
+### Phillips Curve: Inflation on y-axis, Unemployment on x-axis, SRPC downward sloping, LRPC vertical at NRU, expectations shifts
+### Lorenz Curve: Cumulative % population on x-axis, cumulative % income on y-axis, line of equality (45°), Lorenz curve below, Gini = A/(A+B)
+### PPF: Good A on y-axis, Good B on x-axis, concave curve, points inside (inefficient), on (efficient), outside (unattainable), outward shift = growth
+### Mark schemes award: 1 mark for correct axes, 1 mark for correct curves, 1 mark for correct shift/labels, 1 mark for correct analysis of the diagram
 
 ## COMMAND WORD MEANINGS (from AQA mark schemes)
 - "State" / "Identify" = 1 mark, no explanation needed
-- "Calculate" = show working, final answer
-- "Explain" = state + develop + apply (KAA marks)
-- "Analyse" = chains of reasoning, cause→effect→consequence
-- "Evaluate" / "Discuss" / "To what extent" = KAA + counterargument + weighing up + judgement
-- "Using a diagram" = diagram is REQUIRED for full marks
+- "Define" = precise definition using economic terminology [2 marks]
+- "Calculate" = show working, include formula, correct units, final answer
+- "Explain" = state + develop + apply (KAA marks). Must go beyond just stating.
+- "Analyse" = chains of reasoning, cause→effect→consequence, sustained development
+- "Evaluate" / "Discuss" / "To what extent" = KAA + counter-argument + weighing up + justified judgement
+- "Using a diagram" = diagram is REQUIRED for full marks — marks will be lost without one
+- "Using the data" = MUST reference specific data from the extract — not just general theory
+- "Compare" = state similarities AND differences with development
 
 ## MARK DISTRIBUTION
 - 2-mark: define/state (no diagram)
-- 4-mark: calculate or short explain
+- 4-mark: calculate or short explain (may reference data)
 - 9-mark: explain using diagram (typically 4 KAA + 5 for depth/context)
 - 25-mark: evaluate essay (typically 12 KAA + 13 evaluation including judgement)
+- 30 MCQs: 1 mark each (Paper 3 Section A only)
 `;

@@ -14,6 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
+      econ_knowledge_nodes: {
+        Row: {
+          bloom_level: string
+          created_at: string
+          embedding: string | null
+          id: string
+          keywords: string[]
+          mark_allocation: number
+          paper: string
+          question_stem: string | null
+          related_topics: string[]
+          subject: string
+          subtopic: string
+          topic: string
+        }
+        Insert: {
+          bloom_level: string
+          created_at?: string
+          embedding?: string | null
+          id?: string
+          keywords?: string[]
+          mark_allocation?: number
+          paper: string
+          question_stem?: string | null
+          related_topics?: string[]
+          subject?: string
+          subtopic: string
+          topic: string
+        }
+        Update: {
+          bloom_level?: string
+          created_at?: string
+          embedding?: string | null
+          id?: string
+          keywords?: string[]
+          mark_allocation?: number
+          paper?: string
+          question_stem?: string | null
+          related_topics?: string[]
+          subject?: string
+          subtopic?: string
+          topic?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string
@@ -41,12 +86,70 @@ export type Database = {
         }
         Relationships: []
       }
+      question_embeddings: {
+        Row: {
+          bloom_level: string
+          created_at: string
+          embedding: string | null
+          id: string
+          marks: number
+          paper: string
+          question_text: string
+          subject: string
+          tags: string[]
+          topic: string
+          year: string | null
+        }
+        Insert: {
+          bloom_level?: string
+          created_at?: string
+          embedding?: string | null
+          id?: string
+          marks: number
+          paper: string
+          question_text: string
+          subject: string
+          tags?: string[]
+          topic: string
+          year?: string | null
+        }
+        Update: {
+          bloom_level?: string
+          created_at?: string
+          embedding?: string | null
+          id?: string
+          marks?: number
+          paper?: string
+          question_text?: string
+          subject?: string
+          tags?: string[]
+          topic?: string
+          year?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
       is_own_profile: { Args: { profile_user_id: string }; Returns: boolean }
+      search_similar_questions: {
+        Args: {
+          match_count?: number
+          match_subject?: string
+          query_embedding: string
+        }
+        Returns: {
+          bloom_level: string
+          id: string
+          marks: number
+          question_text: string
+          similarity: number
+          tags: string[]
+          topic: string
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
