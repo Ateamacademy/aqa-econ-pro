@@ -7,7 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { FileText, Lock, Sparkles, RotateCcw, ArrowRight, Library, Wand2, BookOpen } from "lucide-react";
+import { FileText, Lock, Sparkles, RotateCcw, ArrowRight, Library, Wand2, BookOpen, Download } from "lucide-react";
 import { toast } from "sonner";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import { FREE_LIMITS } from "@/lib/plans";
@@ -25,6 +25,7 @@ import {
   ECONOMICS_PAST_PAPER_KNOWLEDGE,
 } from "@/data/pastPaperPatterns";
 import { generateKnowledgeGraphPrompt } from "@/data/economicsKnowledgeGraph";
+import { generatePaperPdf } from "@/lib/generatePaperPdf";
 
 type QuestionFeedback = {
   markScheme: string;
@@ -567,12 +568,35 @@ Give 2-3 specific, actionable tips for how I can improve. Address me directly. B
 
       {step === "paper" && !isGenerating && (
         <div className="space-y-5">
-          {selectedLibraryPaper && (
-            <div className="text-center mb-2">
-              <h2 className="font-serif text-xl font-bold">{selectedLibraryPaper.title}</h2>
-              <p className="text-sm text-muted-foreground">{selectedLibraryPaper.description}</p>
+          {/* Paper header + Download PDF */}
+          <div className="flex items-center justify-between">
+            <div>
+              {selectedLibraryPaper && (
+                <>
+                  <h2 className="font-serif text-xl font-bold">{selectedLibraryPaper.title}</h2>
+                  <p className="text-sm text-muted-foreground">{selectedLibraryPaper.description}</p>
+                </>
+              )}
             </div>
-          )}
+            <Button
+              variant="outline"
+              size="sm"
+              className="gap-1.5 shrink-0"
+              onClick={() => {
+                const paperTitle = selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`;
+                const fullContent = paperContext + "\n\n" + parsedQuestions.map(q => `${q.label} [${q.marks} marks]\n${q.text}`).join("\n\n");
+                generatePaperPdf(paperTitle, fullContent, {
+                  subject: subjectLabel,
+                  examBoard,
+                  level,
+                  tier: (isMaths || isChemistry) ? tier : undefined,
+                });
+                toast.success("PDF downloaded!");
+              }}
+            >
+              <Download className="h-4 w-4" /> Download PDF
+            </Button>
+          </div>
 
           {paperContext && (
             <Card>
