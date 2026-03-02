@@ -24,13 +24,15 @@ serve(async (req) => {
       .select("question_text, marks, topic, bloom_level, tags, year, paper")
       .eq("subject", subject || "economics")
       .order("year", { ascending: false })
-      .limit(limit || 50);
+      .limit(limit || 250);
 
     if (paper) {
       questionsQuery = questionsQuery.eq("paper", paper);
     }
 
-    const { data: questions, error: qError } = await questionsQuery;
+    if (Array.isArray(bloom_levels) && bloom_levels.length > 0) {
+      questionsQuery = questionsQuery.in("bloom_level", bloom_levels);
+    }
     if (qError) throw qError;
 
     // Fetch knowledge graph nodes
@@ -46,15 +48,42 @@ serve(async (req) => {
     const { data: nodes, error: nError } = await nodesQuery;
     if (nError) throw nError;
 
-    // Build topic frequency map from past papers
+    // Build distribution maps from past papers
     const topicFrequency: Record<string, number> = {};
     const bloomDistribution: Record<string, number> = {};
     const markDistribution: Record<number, number> = {};
+    const yearFrequency: Record<string, number> = {};
+
+    // Representative stems by mark band for template/difficulty control
+    const markBandExamples: Record<string, string[]> = {
+      "2": [],
+      "4": [],
+      "9": [],
+      "15": [],
+      "25": [],
+    };
+
+    // Group questions by topic for prompt injection
+    const questionsByTopic: Record<string, Array<{ text: string; marks: number; bloom: string; year: string }>> = {};
 
     for (const q of questions || []) {
       topicFrequency[q.topic] = (topicFrequency[q.topic] || 0) + 1;
       bloomDistribution[q.bloom_level] = (bloomDistribution[q.bloom_level] || 0) + 1;
       markDistribution[q.marks] = (markDistribution[q.marks] || 0) + 1;
+      yearFrequency[q.year || "unknown"] = (yearFrequency[q.year || "unknown"] || 0) + 1;
+
+      if (!questionsByTopic[q.topic]) questionsByTopic[q.topic] = [];
+      questionsByTopic[q.topic].push({
+        text: q.question_text,
+        marks: q.marks,
+        bloom: q.bloom_level,
+        year: q.year || "unknown",
+      });
+
+      const markKey = [2, 4, 9, 15, 25].includes(q.marks) ? String(q.marks) : null;
+      if (markKey && markBandExamples[markKey].length < 8) {
+        markBandExamples[markKey].push(`[${q.year || "unknown"}] ${q.question_text}`);
+      }
     }
 
     // Build synoptic connections from knowledge graph
@@ -65,18 +94,6 @@ serve(async (req) => {
           synopticLinks.push(`${node.topic} ↔ ${related}: ${node.subtopic}`);
         }
       }
-    }
-
-    // Group questions by topic for the prompt
-    const questionsByTopic: Record<string, Array<{ text: string; marks: number; bloom: string; year: string }>> = {};
-    for (const q of questions || []) {
-      if (!questionsByTopic[q.topic]) questionsByTopic[q.topic] = [];
-      questionsByTopic[q.topic].push({
-        text: q.question_text,
-        marks: q.marks,
-        bloom: q.bloom_level,
-        year: q.year || "unknown",
-      });
     }
 
     // Build the context injection string
@@ -94,9 +111,30 @@ serve(async (req) => {
       contextPrompt += `- ${level}: ${count} questions (${Math.round((count / (questions?.length || 1)) * 100)}%)\n`;
     }
 
+    const highOrderCount = (bloomDistribution["analyse"] || 0) + (bloomDistribution["evaluate"] || 0) + (bloomDistribution["create"] || 0);
+    const highOrderShare = Math.round((highOrderCount / (questions?.length || 1)) * 100);
+    contextPrompt += `\n### HOTS Coverage:\n- Analyse/Evaluate/Create questions: ${highOrderCount} (${highOrderShare}% of question bank)\n`;
+
+    contextPrompt += "\n### Year Coverage:\n";
+    const sortedYears = Object.entries(yearFrequency).sort((a, b) => a[0].localeCompare(b[0]));
+    for (const [year, count] of sortedYears) {
+      contextPrompt += `- ${year}: ${count} questions\n`;
+    }
+
     contextPrompt += "\n### Mark Allocation Distribution:\n";
-    for (const [marks, count] of Object.entries(markDistribution)) {
+    const sortedMarkDist = Object.entries(markDistribution).sort((a, b) => Number(a[0]) - Number(b[0]));
+    for (const [marks, count] of sortedMarkDist) {
       contextPrompt += `- ${marks}-mark questions: ${count}\n`;
+    }
+
+    contextPrompt += "\n### Mark-Band Exemplars (match these styles):\n";
+    for (const key of ["2", "4", "9", "15", "25"]) {
+      const examples = markBandExamples[key];
+      if (!examples || examples.length === 0) continue;
+      contextPrompt += `\n${key}-mark style:\n`;
+      for (const example of examples.slice(0, 4)) {
+        contextPrompt += `- ${example}\n`;
+      }
     }
 
     contextPrompt += "\n### Real Past Paper Questions by Topic:\n";
@@ -105,6 +143,18 @@ serve(async (req) => {
       for (const q of qs.slice(0, 5)) {
         contextPrompt += `- [${q.year}] [${q.marks}m] [${q.bloom.toUpperCase()}] "${q.text}"\n`;
       }
+    }
+
+    contextPrompt += "\n### Template Lock (match official AQA layout):\n";
+    if ((paper || "") === "1" || (paper || "") === "2") {
+      contextPrompt += "- Section A must include BOTH Context 1 and Context 2 (EITHER/OR layout).\n";
+      contextPrompt += "- Context question pattern must be exactly: 2 marks, 4 marks, 9 marks, 25 marks.\n";
+      contextPrompt += "- Section B must include Essay 1, Essay 2, Essay 3 with two parts each (15 + 25 marks).\n";
+      contextPrompt += "- 9-mark questions must explicitly require a labelled diagram.\n";
+      contextPrompt += "- 25-mark questions must be high-evaluation (counter-argument + justified judgement).\n";
+    } else {
+      contextPrompt += "- Section A must include 30 MCQs (1 mark each).\n";
+      contextPrompt += "- Section B must be a synoptic case study with a 25-mark HOTS evaluation question.\n";
     }
 
     contextPrompt += "\n### Knowledge Graph — Synoptic Links:\n";
@@ -128,6 +178,9 @@ serve(async (req) => {
         totalNodes: nodes?.length || 0,
         topicFrequency,
         bloomDistribution,
+        yearFrequency,
+        markBandExamples,
+        highOrderShare,
         synopticLinks: uniqueLinks,
       }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }

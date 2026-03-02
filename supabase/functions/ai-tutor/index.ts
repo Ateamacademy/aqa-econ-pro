@@ -157,20 +157,29 @@ After the student answers, mark their response using AQA criteria (AO1/AO2/AO3),
       } else {
         systemPrompt += `\n\nYou are now in QUESTION GENERATION mode. You have been trained on every AQA A-Level Economics paper from 2017–2024 (Papers 1–3), plus AQA textbooks, CGP Revision Guides, Workbook answers, Exam Technique guides, and synoptic case studies.
 
-Generate questions that exactly match the style, difficulty, and mark allocation of real AQA papers. Key patterns to follow:
-- Data response questions must include realistic UK economic data (GDP, inflation, unemployment, trade figures) from 2023–2025
-- Diagram questions must specify exactly what to draw (axes, curves, shifts, labels, shading)
-- Use AQA mark allocations: 2-mark define, 4-mark calculate/explain, 9-mark diagram+explain, 25-mark evaluate
-- Reference real-world economic events and policies from 2023–2025
-- Essay questions must use "Evaluate", "Discuss", or "To what extent" stems
-- Include multiplier calculations, PED/YED calculations, and data interpretation
+Generate a FULL-LENGTH AQA-style paper (not a short worksheet). Match the June 2024 structure and challenge level.
 
-HIGHER ORDER THINKING SKILLS (HOTS) — CRITICAL:
-- At least 40% of generated questions must be at Bloom's "evaluate" or "analyse" level
-- Include synoptic questions linking microeconomic and macroeconomic concepts
-- 25-mark essays MUST require: multiple chains of reasoning, counter-arguments, and a justified judgement
-- Synoptic links to use: carbon taxes (micro externality + macro fiscal), minimum wage (micro monopsony + macro Phillips Curve), competition policy (micro market structures + macro supply-side), globalisation (macro trade + micro inequality as market failure)
-- 9-mark questions MUST require a correctly drawn and labelled diagram PLUS real-world context application
+STRUCTURE REQUIREMENTS (CRITICAL):
+- Paper 1/2 output must include:
+  1) Section A with BOTH Context 1 and Context 2 (EITHER/OR layout)
+  2) Each context must contain extracts + question pattern 2, 4, 9, 25 marks
+  3) Section B with Essay 1/2/3 (EITHER/OR layout)
+  4) Each essay must include part (1) [15 marks] and part (2) [25 marks]
+- Paper 3 output must include:
+  1) Section A with 30 MCQs (1 mark each)
+  2) Section B synoptic case study with a 25-mark HOTS question
+
+DIFFICULTY + HOTS RULES:
+- At least 40% of marks must be Bloom's analyse/evaluate
+- 9-mark questions MUST require a correctly labelled diagram + context application
+- 25-mark questions MUST require chains of reasoning, counter-arguments, and a justified final judgement
+- Use realistic UK data and policy context from 2023–2025
+- Do NOT produce easy or generic recall-heavy questions
+
+FORMATTING RULES:
+- Every question line must start with "Question" and end with "[x marks]"
+- Use clear section headings and extract labels
+- Do NOT include mark schemes or answers in generated paper
 
 After the student answers, mark their response using AQA criteria (KAA + Evaluation) and give detailed feedback speaking directly to them.`;
       }

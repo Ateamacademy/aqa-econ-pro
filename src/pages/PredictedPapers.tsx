@@ -69,40 +69,67 @@ Make questions topical, varied, and exam-authentic. Avoid repeating similar ques
 };
 
 const ECON_PAPER_PROMPT = (paperLabel: string) => {
-  // Extract paper number for knowledge graph
   const paperNum = paperLabel.includes("1") ? "1" : paperLabel.includes("2") ? "2" : "3";
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum);
+  const isSynopticPaper = paperNum === "3";
+
+  const structureTemplate = isSynopticPaper
+    ? `PAPER 3 TEMPLATE (synoptic):
+- Section A: 30 MCQs, 1 mark each, labelled Question 01 to Question 30.
+- Section B: one synoptic case study with Extract A/B/C, then 4-5 questions worth 50 marks total.
+- At least one 9-mark diagram question and one 25-mark evaluation question in Section B.`
+    : `PAPER 1/2 TEMPLATE (MUST mirror June 2024 style):
+- Section A starts with: "Answer EITHER Context 1 OR Context 2."
+- Include BOTH Context 1 and Context 2 in the generated paper.
+- Context 1 contains Extract A, Extract B, Extract C + questions:
+  - Question 01 [2 marks]
+  - Question 02 [4 marks]
+  - Question 03 [9 marks] (must require a diagram)
+  - Question 04 [25 marks] (must be deep evaluation)
+- Context 2 contains Extract D, Extract E, Extract F + questions:
+  - Question 05 [2 marks]
+  - Question 06 [4 marks]
+  - Question 07 [9 marks] (must require a diagram)
+  - Question 08 [25 marks] (must be deep evaluation)
+- Section B starts with: "Answer one essay from this section. Each essay carries 40 marks."
+- Include EITHER/OR essay choice with Essay 1, Essay 2, Essay 3.
+- Each essay has two parts:
+  - Question X.1 [15 marks] (explain/analyse)
+  - Question X.2 [25 marks] (evaluate/to what extent)`;
 
   return `You are an expert AQA A-Level Economics chief examiner. You have been trained on EVERY AQA A-Level Economics paper from 2017 to 2024 (Papers 1, 2, and 3), plus Specimen papers, AQA textbooks (Book 1 & 2), CGP Revision Guide A2, AQA Workbook answers, Exam Technique guides, and synoptic case studies.
 
-Generate a COMPLETE, REALISTIC predicted exam paper for ${paperLabel}.
+Generate a COMPLETE, FULL-LENGTH predicted exam paper for ${paperLabel}.
 
 ${ECONOMICS_PAST_PAPER_KNOWLEDGE}
 
 ${knowledgeGraphSection}
 
-This must be a full-length paper in the EXACT AQA format:
-- For Paper 1 (Microeconomics) & Paper 2 (Macroeconomics): Include Section A (data response with context/extract, real-looking data tables, and structured questions 2+4+9+25 marks) AND Section B (essay questions worth 25 marks each with "Discuss", "Evaluate", or "To what extent" stems). Total marks: 80.
-- For Paper 3 (Synoptic): Include Section A (30 MCQs worth 1 mark each) AND Section B (case study with data response questions and an essay question). Total marks: 80.
+${structureTemplate}
 
-USE THE PAST-PAPER PATTERNS AND KNOWLEDGE GRAPH ABOVE to create NEW questions that feel like they belong in a real AQA paper. Do NOT copy questions verbatim — create original questions in the SAME STYLE, DIFFICULTY, and MARK ALLOCATION. Use realistic 2024–2025 UK economic data and themes.
+USE THE PAST-PAPER PATTERNS + KNOWLEDGE GRAPH ABOVE to create NEW questions in the SAME style, depth, and mark-scheme expectations as official AQA papers. Do NOT copy questions verbatim.
 
-CRITICAL HOTS REQUIREMENTS:
-1. At least 40% of total marks MUST be at the "evaluate" level of Bloom's taxonomy
-2. At least ONE question must be genuinely synoptic (linking micro and macro)
-3. 25-mark essays MUST require: multiple chains of reasoning, counter-arguments, a supported judgement
-4. 9-mark questions MUST require a correctly drawn diagram AND application to a real-world context
-5. Data response questions MUST include realistic, current UK economic data from 2023-2025
-6. Use the SYNOPTIC CROSS-TOPIC LINKS from the knowledge graph to create novel, challenging connections
+DIFFICULTY GUARDRAILS (CRITICAL):
+1. Match the difficulty of June 2022–2024 papers, not easier classroom worksheets
+2. Every 9-mark question must force applied analysis (diagram + contextual chain of reasoning)
+3. Every 25-mark question must require:
+   - at least two developed chains of reasoning
+   - counter-argument(s)
+   - conditional judgement ("depends on" factors)
+4. Use precise A-Level command words and exam register
+5. Use realistic 2023–2025 UK economic data in tables/figures/extracts
 
-FIRST PRINCIPLES: Generate questions from first principles of economic theory. Each question should test genuine understanding, not rote memorisation. Create novel scenarios that mirror real exam difficulty and style.
+HOTS REQUIREMENTS (NON-NEGOTIABLE):
+- At least 40% of available marks must target Analyse/Evaluate
+- At least one genuinely synoptic question linking micro and macro
+- No generic/easy recall-heavy paper; short recall only in 2-mark parts
 
-IMPORTANT FORMATTING — FOLLOW EXACTLY:
-Question 1.1 [2 marks]
-Question 1.2 [4 marks]
-etc.
-
-Include realistic data extracts and context paragraphs before questions. Format clearly with ## headings for sections.`;
+OUTPUT FORMAT RULES (MANDATORY):
+- Use markdown headings for sections/extracts
+- Every question line MUST start with "Question" and end with "[x marks]"
+- Keep the exact mark pattern for the selected paper template
+- Include realistic tables/figures in text form so all calculations are answerable
+- Do not include solutions or mark schemes in the generated paper`;
 };
 
 const CHEM_PAPER_PROMPT = (paperLabel: string, tier: "Foundation" | "Higher") => {
@@ -233,7 +260,7 @@ export default function PredictedPapers() {
     if (isEconomics) {
       try {
         const { data: patternData } = await supabase.functions.invoke("retrieve-patterns", {
-          body: { paper, subject: "economics", limit: 50 },
+          body: { paper, subject: "economics", limit: 250 },
         });
         if (patternData?.contextPrompt) {
           dbContextPrompt = patternData.contextPrompt;
@@ -251,7 +278,7 @@ export default function PredictedPapers() {
 
     // Inject DB-retrieved patterns for Economics
     const prompt = dbContextPrompt
-      ? `${basePrompt}\n\n${dbContextPrompt}\n\nUSE THE ABOVE PAST PAPER DATABASE to ensure your predicted paper covers the same topics at the same frequency and Bloom's taxonomy levels. Generate NEW questions in the SAME style — do NOT copy verbatim. Prioritise topics with highest frequency and ensure HOTS questions (analyse/evaluate) match the distribution above.`
+      ? `${basePrompt}\n\n${dbContextPrompt}\n\nMANDATORY QUALITY CHECK BEFORE FINAL OUTPUT: ensure the paper is full-length, exam-authentic, and as challenging as recent AQA papers (especially 9/25-mark questions). If any question feels too easy or generic, rewrite it to match A-Level standard before finishing.`
       : basePrompt;
 
     await streamChat({
