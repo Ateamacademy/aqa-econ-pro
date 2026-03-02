@@ -411,32 +411,32 @@ ALSO INFORMED BY: AQA A-Level Economics Textbooks (Book 1 & 2), CGP Revision Gui
 ## PAPER STRUCTURE (observed across all years)
 
 ### Paper 1: Markets and Market Failure (Microeconomics) — 7136/1
-- 80 marks, 2 hours
-- Section A: Data Response (context + extract + data, ~40 marks)
-  - Context: 200-400 word passage with real-world economic scenario
-  - At least ONE data table or graph with real UK/world statistics
-  - Q1.1: Define/State [2 marks] — tests AO1 (knowledge)
-  - Q1.2: Calculate from data [4 marks] — tests AO2 (application) + AO3 (analysis)
-  - Q1.3: Explain using diagram [9 marks] — tests AO1 + AO2 + AO3
-  - Q1.4: Evaluate/Discuss [25 marks] — tests AO1 + AO2 + AO3 + AO4 (evaluation)
-- Section B: Essay Choice (2 from 3, 25 marks each)
-  - Always includes "Evaluate", "Discuss", or "To what extent"
-  - At least one requires a diagram for full marks
-  - Must test different micro topics (e.g., one on market failure, one on market structures)
+- 80 marks answered, 2 hours
+- Section A: "Answer EITHER Context 1 OR Context 2"
+  - The paper prints BOTH contexts (option choice format)
+  - Each context is 40 marks with Extracts + data + question sequence:
+    - Question 01 [2 marks] (define/calculate)
+    - Question 02 [4 marks] (data explanation/application)
+    - Question 03 [9 marks] (with diagram)
+    - Question 04 [25 marks] (evaluate/discuss)
+- Section B: "Answer one essay from this section"
+  - Essay 1 OR Essay 2 OR Essay 3
+  - Each essay carries 40 marks split into:
+    - Part 1 [15 marks] (explain/analyse)
+    - Part 2 [25 marks] (evaluate/to what extent)
 
 ### Paper 2: National and International Economy (Macroeconomics) — 7136/2
-- 80 marks, 2 hours
-- Same structure as Paper 1 but macroeconomic topics
-- Data extracts include UK GDP, inflation, unemployment, trade figures
-- Extract must contain at least 3 pieces of numerical data from real UK sources (ONS, BoE)
+- Same option-based structure as Paper 1 (contexts + essays)
+- Section A still follows the 2/4/9/25 context pattern
+- Data extracts include UK GDP, inflation, unemployment, productivity, trade and fiscal indicators
 
 ### Paper 3: Economic Principles and Issues (Synoptic) — 7136/3
 - 80 marks, 2 hours
 - Section A: 30 MCQs [30 marks] — span BOTH micro AND macro
-- Section B: Case study with data + questions [50 marks]
-  - Mix of short (2–4 mark) and long (9–25 mark) questions
-  - MUST be synoptic: questions that require linking micro and macro concepts
-  - Case study uses a real country/policy scenario (e.g., Brazil, India, UK post-Brexit)
+- Section B: synoptic case study [50 marks]
+  - Mix of short and extended-response questions
+  - Includes at least one 25-mark synoptic evaluation question
+  - Case study uses real country/policy scenarios and requires micro+macro integration
 
 ## REAL QUESTION PATTERNS BY TOPIC (from 2017–2024 papers)
 
