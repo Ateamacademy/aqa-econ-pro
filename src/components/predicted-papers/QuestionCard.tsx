@@ -97,7 +97,7 @@ export function QuestionCard({
 
   const hasExtraTools = showEconDiagram || showDrawingCanvas || showGraphPaper || showGeometryTools;
   const canInsertGraphNotes = showGraphPaper || subject === "maths";
-  const canInsertDiagramNotes = showDrawingCanvas || showEconDiagram || subject === "chemistry";
+  const canInsertDiagramNotes = showDrawingCanvas || showEconDiagram || subject === "chemistry" || subject === "economics";
 
   return (
     <div className="rounded-xl border border-border bg-card overflow-hidden">
@@ -191,6 +191,8 @@ export function QuestionCard({
           placeholder={
             subject === "chemistry"
               ? "Type your answer here... Include balanced equations with state symbols where needed."
+              : subject === "economics"
+              ? "Type your answer here... Use diagrams where relevant. The AI examiner will mark using AQA KAA criteria."
               : showMathTools
               ? "Type your answer here... Show all working. Use the toolbar above for maths symbols."
               : "Type your answer here... The AI examiner will mark it for you."
@@ -199,9 +201,14 @@ export function QuestionCard({
           disabled={!!feedback}
         />
 
-        {showMathTools && (
+        {showMathTools && subject !== "economics" && (
           <p className="text-[10px] text-muted-foreground mt-1.5">
             Tip: Show each step of working on a new line. Use symbols above or type e.g. x^2, sqrt(9), pi.
+          </p>
+        )}
+        {subject === "economics" && (
+          <p className="text-[10px] text-muted-foreground mt-1.5">
+            Tip: Use the Diagram builder for S&amp;D, AD/AS, externality diagrams. Add Diagram Notes to describe labels, shifts, and shaded areas for marking.
           </p>
         )}
       </div>

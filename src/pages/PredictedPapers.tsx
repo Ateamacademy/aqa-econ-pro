@@ -829,7 +829,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
               onMark={() => markQuestion(q)}
               isMarking={markingId === q.id}
               feedback={feedbacks[q.id] || null}
-              showMathTools={isMaths || isChemistry}
+              showMathTools={isMaths || isChemistry || isEconomics}
               showEconDiagram={isEconomics}
               showDrawingCanvas={isMaths || isChemistry || isEconomics}
               showGraphPaper={isMaths}
