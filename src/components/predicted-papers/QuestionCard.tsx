@@ -208,7 +208,7 @@ export function QuestionCard({
         )}
         {subject === "economics" && (
           <p className="text-[10px] text-muted-foreground mt-1.5">
-            Tip: Use the Diagram builder for S&amp;D, AD/AS, externality diagrams. Add Diagram Notes to describe labels, shifts, and shaded areas for marking.
+            Tip: Draw your diagram using the Drawing tool with multiple colours (e.g. blue for demand, red for supply). Then add Diagram Notes to describe labels, shifts, and shaded areas so the AI can mark accurately.
           </p>
         )}
       </div>
