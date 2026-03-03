@@ -448,7 +448,7 @@ export default function PredictedPapers() {
   };
 
   const markQuestion = useCallback(
-    async (question: ParsedQuestion) => {
+    async (question: ParsedQuestion, diagramImage?: string) => {
       const answer = answers[question.id];
       if (!answer?.trim()) { toast.error("Please write your answer first."); return; }
       setMarkingId(question.id);
@@ -609,8 +609,17 @@ Give 2-3 specific, actionable tips. For diagram questions:
 Address me directly. Be encouraging but honest about where I lost marks.`;
 
       let result = "";
+
+      // Build multimodal message if diagram image is provided
+      const messageContent: any = diagramImage
+        ? [
+            { type: "text", text: markingPrompt + "\n\n[The student has drawn a diagram — see the attached image. Analyze the diagram visually: identify the diagram type, axis labels, curves, shifts, equilibrium points, shaded areas, and any annotations. Use this visual evidence alongside any written Diagram Notes to award marks.]" },
+            { type: "image_url", image_url: { url: diagramImage } },
+          ]
+        : markingPrompt;
+
       await streamChat({
-        messages: [{ role: "user", content: markingPrompt }],
+        messages: [{ role: "user", content: messageContent }],
         mode: "grade",
         subject,
         onDelta: (chunk) => { result += chunk; },
@@ -850,7 +859,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
               question={q}
               answer={answers[q.id] || ""}
               onAnswerChange={(val) => setAnswers((prev) => ({ ...prev, [q.id]: val }))}
-              onMark={() => markQuestion(q)}
+              onMark={(diagramImage) => markQuestion(q, diagramImage)}
               isMarking={markingId === q.id}
               feedback={feedbacks[q.id] || null}
               showMathTools={isMaths || isChemistry || isEconomics}

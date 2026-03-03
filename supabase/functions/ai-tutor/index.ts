@@ -91,14 +91,50 @@ serve(async (req) => {
 
   try {
     const { messages, mode, subject } = await req.json();
+    
+    // Process messages - convert base64 data URLs to proper format for the model
+    const processedMessages = messages.map((msg: any) => {
+      if (Array.isArray(msg.content)) {
+        return {
+          ...msg,
+          content: msg.content.map((part: any) => {
+            if (part.type === "image_url" && part.image_url?.url?.startsWith("data:")) {
+              return part; // Gemini handles data URLs natively
+            }
+            return part;
+          }),
+        };
+      }
+      return msg;
+    });
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) throw new Error("LOVABLE_API_KEY is not configured");
 
     let systemPrompt = subject === "maths" ? MATHS_SYSTEM : subject === "chemistry" ? CHEMISTRY_SYSTEM : ECONOMICS_SYSTEM;
 
     if (mode === "grade") {
+      systemPrompt += `\n\nYou are now in MARKING mode.
+
+CRITICAL — DIAGRAM IMAGE ANALYSIS:
+When a student's submission includes an attached image of a hand-drawn diagram, you MUST:
+1. **Identify the diagram type** (e.g., "Supply and Demand with rightward shift in demand", "AD/AS model", "PPF", "Externality with welfare loss triangle")
+2. **Recognize key elements**: axes meaning, curve labels (if present), direction of shifts, equilibrium points, intersections, shaded areas
+3. **Correct economic/scientific interpretation**: expected changes in price/quantity, welfare effects, short-run vs long-run implications
+4. **Step-by-step explanation** aligned to exam marking style
+5. If the diagram is ambiguous or missing labels:
+   - Make best-effort interpretation based on shape, colour, and relative positions
+   - Ask targeted clarification questions (e.g., "Is the vertical axis price (P)?", "Is this a shift in supply or demand?")
+   - Do NOT give a generic answer
+
+Structure your diagram assessment as:
+- **What the diagram shows**: [identification]
+- **Key labels / assumptions**: [what you can see or infer]
+- **What shifts and why**: [economic reasoning]
+- **Final conclusion (exam-ready)**: [mark-worthy interpretation]
+`;
+
       if (subject === "maths") {
-        systemPrompt += `\n\nYou are now in MARKING mode. The student will provide their working/answer and the question. You must:
+        systemPrompt += `\nThe student will provide their working/answer and the question. You must:
 1. Give a clear mark breakdown using M (method), A (accuracy), and C (communication) marks
 2. Show where marks were gained and lost
 3. Highlight what was done well — speak DIRECTLY to the student
@@ -107,7 +143,7 @@ serve(async (req) => {
 6. End with 2-3 actionable tips for their next attempt
 CRITICAL: NEVER use third person. ALWAYS use "you" and "your".`;
       } else if (subject === "chemistry") {
-        systemPrompt += `\n\nYou are now in MARKING mode. The student will provide their answer and the question. You must:
+        systemPrompt += `\nThe student will provide their answer and the question. You must:
 1. Give a clear mark out of the total available using AQA mark scheme criteria
 2. For 6-mark questions, state which Level of Response band the answer falls in
 3. Show where marks were gained and lost
@@ -117,7 +153,7 @@ CRITICAL: NEVER use third person. ALWAYS use "you" and "your".`;
 7. End with 2-3 actionable tips for improvement
 CRITICAL: NEVER use third person. ALWAYS use "you" and "your".`;
       } else {
-        systemPrompt += `\n\nYou are now in ESSAY GRADING mode. The student will provide their essay response and the question details. You must:
+        systemPrompt += `\nThe student will provide their essay response and the question details. You must:
 1. Give a clear mark out of the total available (e.g., 15/25)
 2. Break down the mark by AQA criteria (KAA, Application, Analysis, Evaluation)
 3. Highlight what was done well — speak DIRECTLY to the student
@@ -192,10 +228,10 @@ After the student answers, mark their response using AQA criteria (KAA + Evaluat
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "google/gemini-3-flash-preview",
+        model: "google/gemini-2.5-flash",
         messages: [
           { role: "system", content: systemPrompt },
-          ...messages,
+          ...processedMessages,
         ],
         stream: true,
       }),

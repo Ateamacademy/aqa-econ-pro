@@ -7,6 +7,7 @@ interface DrawingCanvasProps {
   width?: number;
   height?: number;
   onSave?: (dataUrl: string) => void;
+  onDrawEnd?: (dataUrl: string) => void;
   label?: string;
   showGrid?: boolean;
 }
@@ -22,7 +23,7 @@ const COLORS = [
 
 const BRUSH_SIZES = [2, 4, 6, 8];
 
-export function DrawingCanvas({ width = 600, height = 400, onSave, label = "Drawing Area", showGrid = false }: DrawingCanvasProps) {
+export function DrawingCanvas({ width = 600, height = 400, onSave, onDrawEnd, label = "Drawing Area", showGrid = false }: DrawingCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [tool, setTool] = useState<"pen" | "eraser">("pen");
@@ -96,7 +97,13 @@ export function DrawingCanvas({ width = 600, height = 400, onSave, label = "Draw
   };
 
   const endDraw = () => {
-    if (isDrawing) { setIsDrawing(false); saveState(); }
+    if (isDrawing) {
+      setIsDrawing(false);
+      saveState();
+      if (onDrawEnd && canvasRef.current) {
+        onDrawEnd(canvasRef.current.toDataURL("image/png"));
+      }
+    }
   };
 
   const undo = () => {
