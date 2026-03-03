@@ -73,6 +73,78 @@ const DIAGRAM_TYPES = [
     ),
   },
   {
+    id: "both-curves-shift",
+    label: "Both Shift",
+    description: "Both S&D shift (AQA June 2024 Q6a pattern)",
+    defaultLabels: { xAxis: "Quantity", yAxis: "Price", curve1: "D₁", curve2: "D₂", curve3: "S₁", curve4: "S₂", eq1: "E₁", eq2: "E₂" },
+    svgContent: (labels: Record<string, string>, shaded: string[]) => (
+      <svg viewBox="0 0 300 260" className="w-full">
+        {/* Axes */}
+        <line x1="50" y1="20" x2="50" y2="220" stroke="currentColor" strokeWidth="2" />
+        <line x1="50" y1="220" x2="280" y2="220" stroke="currentColor" strokeWidth="2" />
+        <text x="20" y="120" fontSize="12" fill="currentColor" transform="rotate(-90 20 120)">{labels.yAxis || "Price"}</text>
+        <text x="165" y="252" fontSize="12" fill="currentColor" textAnchor="middle">{labels.xAxis || "Quantity"}</text>
+
+        {/* Shading options */}
+        {shaded.includes("price-change") && (
+          <rect x="50" y="108" width="110" height="22" fill="hsl(45 100% 50% / 0.15)" stroke="hsl(45 100% 50%)" strokeWidth="1" strokeDasharray="3" />
+        )}
+        {shaded.includes("quantity-change") && (
+          <rect x="130" y="130" width="40" height="90" fill="hsl(210 100% 60% / 0.12)" stroke="hsl(210 100% 60%)" strokeWidth="1" strokeDasharray="3" />
+        )}
+
+        {/* S₁ — original supply (steeper, starts higher-left) */}
+        <line x1="90" y1="30" x2="250" y2="200" stroke="hsl(210 100% 50%)" strokeWidth="2" strokeDasharray="5" />
+        <text x="252" y="195" fontSize="10" fill="hsl(210 100% 50%)">{labels.curve3 || "S₁"}</text>
+
+        {/* S₂ — shifted supply RIGHT (parallel, further right) */}
+        <line x1="120" y1="30" x2="275" y2="190" stroke="hsl(210 100% 50%)" strokeWidth="2.5" />
+        <text x="272" y="182" fontSize="11" fill="hsl(210 100% 50%)" fontWeight="bold">{labels.curve4 || "S₂"}</text>
+
+        {/* D₁ — original demand */}
+        <line x1="60" y1="40" x2="240" y2="200" stroke="hsl(0 80% 50%)" strokeWidth="2" strokeDasharray="5" transform="rotate(0)" />
+        <line x1="60" y1="200" x2="240" y2="40" stroke="hsl(0 80% 50%)" strokeWidth="2" strokeDasharray="5" />
+        <text x="242" y="45" fontSize="10" fill="hsl(0 80% 50%)">{labels.curve1 || "D₁"}</text>
+
+        {/* D₂ — shifted demand RIGHT */}
+        <line x1="90" y1="200" x2="270" y2="40" stroke="hsl(0 80% 50%)" strokeWidth="2.5" />
+        <text x="268" y="35" fontSize="11" fill="hsl(0 80% 50%)" fontWeight="bold">{labels.curve2 || "D₂"}</text>
+
+        {/* E₁ — original equilibrium (intersection of D₁ and S₁) */}
+        <circle cx="155" cy="118" r="4" fill="currentColor" />
+        <text x="160" y="112" fontSize="10" fill="currentColor" fontWeight="bold">{labels.eq1 || "E₁"}</text>
+
+        {/* E₂ — new equilibrium (intersection of D₂ and S₂) — lower price, higher quantity */}
+        <circle cx="195" cy="108" r="5" fill="hsl(130 60% 40%)" />
+        <text x="200" y="102" fontSize="10" fill="hsl(130 60% 40%)" fontWeight="bold">{labels.eq2 || "E₂"}</text>
+
+        {/* Dashed lines to axes from E₁ */}
+        <line x1="50" y1="118" x2="155" y2="118" stroke="currentColor" strokeWidth="1" strokeDasharray="4" />
+        <line x1="155" y1="118" x2="155" y2="220" stroke="currentColor" strokeWidth="1" strokeDasharray="4" />
+        <text x="40" y="122" fontSize="9" fill="currentColor" textAnchor="end">P₁</text>
+        <text x="155" y="235" fontSize="9" fill="currentColor" textAnchor="middle">Q₁</text>
+
+        {/* Dashed lines to axes from E₂ */}
+        <line x1="50" y1="108" x2="195" y2="108" stroke="hsl(130 60% 40%)" strokeWidth="1" strokeDasharray="4" />
+        <line x1="195" y1="108" x2="195" y2="220" stroke="hsl(130 60% 40%)" strokeWidth="1" strokeDasharray="4" />
+        <text x="40" y="112" fontSize="9" fill="hsl(130 60% 40%)" textAnchor="end">P₂</text>
+        <text x="195" y="235" fontSize="9" fill="hsl(130 60% 40%)" textAnchor="middle">Q₂</text>
+
+        {/* Shift arrows */}
+        <line x1="135" y1="175" x2="155" y2="175" stroke="hsl(0 80% 50%)" strokeWidth="1.5" markerEnd="url(#arrowRed)" />
+        <line x1="165" y1="80" x2="185" y2="80" stroke="hsl(210 100% 50%)" strokeWidth="1.5" markerEnd="url(#arrowBlue)" />
+        <defs>
+          <marker id="arrowRed" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6" fill="hsl(0 80% 50%)" />
+          </marker>
+          <marker id="arrowBlue" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6" fill="hsl(210 100% 50%)" />
+          </marker>
+        </defs>
+      </svg>
+    ),
+  },
+  {
     id: "adas",
     label: "AD/AS",
     description: "Aggregate Demand / Aggregate Supply",
@@ -288,6 +360,13 @@ const SHADE_OPTIONS: Record<string, { label: string; options: { id: string; labe
   "supply-demand-shift": {
     label: "Shade areas",
     options: [{ id: "welfare-change", label: "Welfare Change" }],
+  },
+  "both-curves-shift": {
+    label: "Shade areas",
+    options: [
+      { id: "price-change", label: "Price Change" },
+      { id: "quantity-change", label: "Quantity Change" },
+    ],
   },
   "adas": {
     label: "Shade areas",

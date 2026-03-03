@@ -574,6 +574,19 @@ export const DIAGRAM_MARKING_CRITERIA: DiagramMarkingCriteria[] = [
     ],
   },
   {
+    diagramType: "both-curves-shift",
+    requiredElements: ["Price on y-axis", "Quantity on x-axis", "D₁ curve (dashed, original)", "D₂ curve (solid, shifted)", "S₁ curve (dashed, original)", "S₂ curve (solid, shifted)", "Original equilibrium E₁ (P₁, Q₁)", "New equilibrium E₂ (P₂, Q₂)", "Dashed lines from E₁ and E₂ to both axes", "Shift arrows on both curves"],
+    kaaBreakdown: { knowledge: 1, application: 1, analysis: 3 },
+    markingPoints: [
+      "Knowledge/understanding: 1 mark for accurate supply and demand diagram with labels and original equilibrium (E₁). (1)",
+      "Application: 1 mark for identifying that demand and supply in the [market] have both increased/changed. (1)",
+      "Analysis: Up to 3 marks, 1 for each of the following:",
+      "  • Supply curve shifts rightwards S₁ to S₂. (1)",
+      "  • Demand curve shifts rightwards D₁ to D₂. (1)",
+      "  • There is a new equilibrium showing lower price and increased quantity E₂. (1)"
+    ],
+  },
+  {
     diagramType: "supply-demand-shift",
     requiredElements: ["Price on y-axis", "Quantity on x-axis", "D₁ and D₂ (or S₁ and S₂)", "S curve (or D curve)", "E₁ at old intersection", "E₂ at new intersection", "Dashed lines to axes for P₁/P₂ and Q₁/Q₂"],
     kaaBreakdown: { knowledge: 1, application: 1, analysis: 3 },
