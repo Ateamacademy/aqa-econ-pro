@@ -506,13 +506,31 @@ ${answer}
 Mark my answer using AQA mark scheme criteria. You MUST respond in this exact structure:
 
 ## Mark Scheme
-Give me a mark out of ${question.marks}. Explain the marking criteria and how my answer maps to each level/band. For diagram questions, check correct labelling of axes, curves, shifts, and shaded areas. Speak DIRECTLY to me using "you" and "your".
+Give me a mark out of ${question.marks}. Explain the marking criteria and how my answer maps to each level/band.
+
+For diagram questions (especially 9-mark and 25-mark), assess the student's diagram by checking:
+- **Axes**: Are both axes correctly labelled (e.g. Price/Quantity, Price Level/Real GDP)?
+- **Curves**: Are all relevant curves correctly drawn, labelled, and positioned?
+- **Shifts**: If a shift is required, is it correctly shown with arrows and new equilibrium?
+- **Shaded areas**: Are welfare areas (consumer surplus, deadweight loss, etc.) correctly identified?
+- **Equilibrium points**: Are original and new equilibrium points clearly marked?
+- **Annotations**: Are key values (P₁, P₂, Q₁, Q₂, Yf) correctly shown?
+
+Use any "[DIAGRAM:" notes or "[DIAGRAM NOTES]" blocks in the student's answer as evidence of their diagram work. A well-described diagram with correct labels, shifts, and shading should receive full diagram marks.
+
+Speak DIRECTLY to me using "you" and "your".
 
 ## Model Answer
-Write a full top-band model answer that would score full marks for this question. For diagram questions, describe the diagram in full detail (axes, curves, labels, shifts, equilibria).
+Write a full top-band model answer that would score full marks for this question. For diagram questions, describe the diagram in full detail:
+- Name the diagram type
+- Specify axes labels
+- List all curves with their labels
+- Describe the initial equilibrium
+- Explain the shift and new equilibrium
+- Identify the shaded area and what it represents
 
 ## Examiner Tip
-Give 2-3 specific, actionable tips for how I can improve. Address me directly. Be encouraging but honest about where I lost marks.`;
+Give 2-3 specific, actionable tips for how I can improve. For diagram questions, remind me to always label axes, show original AND new equilibrium, and shade relevant areas. Address me directly. Be encouraging but honest about where I lost marks.`;
 
       let result = "";
       await streamChat({
@@ -761,7 +779,7 @@ Give 2-3 specific, actionable tips for how I can improve. Address me directly. B
               feedback={feedbacks[q.id] || null}
               showMathTools={isMaths || isChemistry}
               showEconDiagram={isEconomics}
-              showDrawingCanvas={isMaths || isChemistry}
+              showDrawingCanvas={isMaths || isChemistry || isEconomics}
               showGraphPaper={isMaths}
               showGeometryTools={isMaths}
               subject={subject}
