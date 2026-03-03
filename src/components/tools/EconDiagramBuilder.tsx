@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
 
 interface EconDiagramBuilderProps {
   onSave?: (diagramData: DiagramData) => void;
@@ -45,6 +44,35 @@ const DIAGRAM_TYPES = [
     ),
   },
   {
+    id: "supply-demand-shift",
+    label: "S&D Shift",
+    description: "Supply or demand shift with new equilibrium",
+    defaultLabels: { xAxis: "Quantity", yAxis: "Price", curve1: "D₁", curve2: "S", curve3: "D₂" },
+    svgContent: (labels: Record<string, string>, shaded: string[]) => (
+      <svg viewBox="0 0 300 250" className="w-full">
+        <line x1="40" y1="20" x2="40" y2="220" stroke="currentColor" strokeWidth="2" />
+        <line x1="40" y1="220" x2="280" y2="220" stroke="currentColor" strokeWidth="2" />
+        <text x="15" y="120" fontSize="12" fill="currentColor" transform="rotate(-90 15 120)">{labels.yAxis || "Price"}</text>
+        <text x="160" y="245" fontSize="12" fill="currentColor" textAnchor="middle">{labels.xAxis || "Quantity"}</text>
+        {shaded.includes("welfare-change") && (
+          <polygon points="130,100 175,90 175,130 130,130" fill="hsl(45 100% 50% / 0.25)" stroke="hsl(45 100% 50%)" strokeWidth="1" />
+        )}
+        <line x1="50" y1="40" x2="270" y2="200" stroke="hsl(210 100% 50%)" strokeWidth="2.5" />
+        <text x="272" y="205" fontSize="11" fill="hsl(210 100% 50%)" fontWeight="bold">{labels.curve2 || "S"}</text>
+        <line x1="50" y1="200" x2="270" y2="40" stroke="hsl(0 80% 50%)" strokeWidth="2" strokeDasharray="5" />
+        <text x="272" y="45" fontSize="10" fill="hsl(0 80% 50%)">{labels.curve1 || "D₁"}</text>
+        <line x1="80" y1="200" x2="280" y2="30" stroke="hsl(0 80% 50%)" strokeWidth="2.5" />
+        <text x="278" y="25" fontSize="11" fill="hsl(0 80% 50%)" fontWeight="bold">{labels.curve3 || "D₂"}</text>
+        <circle cx="130" cy="130" r="3" fill="currentColor" />
+        <circle cx="175" cy="110" r="4" fill="hsl(130 60% 40%)" />
+        <line x1="40" y1="130" x2="130" y2="130" stroke="currentColor" strokeWidth="1" strokeDasharray="3" />
+        <line x1="40" y1="110" x2="175" y2="110" stroke="hsl(130 60% 40%)" strokeWidth="1" strokeDasharray="3" />
+        <text x="30" y="134" fontSize="9" fill="currentColor" textAnchor="end">P₁</text>
+        <text x="30" y="114" fontSize="9" fill="hsl(130 60% 40%)" textAnchor="end">P₂</text>
+      </svg>
+    ),
+  },
+  {
     id: "adas",
     label: "AD/AS",
     description: "Aggregate Demand / Aggregate Supply",
@@ -58,12 +86,62 @@ const DIAGRAM_TYPES = [
         {shaded.includes("inflationary-gap") && (
           <rect x="180" y="80" width="30" height="60" fill="hsl(0 100% 60% / 0.15)" stroke="hsl(0 100% 60%)" strokeWidth="1" strokeDasharray="3" />
         )}
+        {shaded.includes("deflationary-gap") && (
+          <rect x="150" y="80" width="30" height="60" fill="hsl(210 100% 60% / 0.15)" stroke="hsl(210 100% 60%)" strokeWidth="1" strokeDasharray="3" />
+        )}
         <line x1="200" y1="30" x2="200" y2="210" stroke="hsl(130 60% 40%)" strokeWidth="2.5" />
         <text x="202" y="25" fontSize="11" fill="hsl(130 60% 40%)" fontWeight="bold">{labels.curve3 || "LRAS"}</text>
         <line x1="60" y1="50" x2="260" y2="190" stroke="hsl(210 100% 50%)" strokeWidth="2.5" />
         <text x="262" y="195" fontSize="11" fill="hsl(210 100% 50%)" fontWeight="bold">{labels.curve2 || "SRAS"}</text>
         <line x1="60" y1="190" x2="260" y2="50" stroke="hsl(0 80% 50%)" strokeWidth="2.5" />
         <text x="262" y="55" fontSize="11" fill="hsl(0 80% 50%)" fontWeight="bold">{labels.curve1 || "AD"}</text>
+      </svg>
+    ),
+  },
+  {
+    id: "keynesian-as",
+    label: "Keynesian AS",
+    description: "Keynesian aggregate supply with three ranges",
+    defaultLabels: { xAxis: "Real GDP", yAxis: "Price Level", curve1: "AD", curve2: "Keynesian AS", yf: "Yf" },
+    svgContent: (labels: Record<string, string>, shaded: string[]) => (
+      <svg viewBox="0 0 300 250" className="w-full">
+        <line x1="40" y1="20" x2="40" y2="220" stroke="currentColor" strokeWidth="2" />
+        <line x1="40" y1="220" x2="280" y2="220" stroke="currentColor" strokeWidth="2" />
+        <text x="15" y="120" fontSize="11" fill="currentColor" transform="rotate(-90 15 120)">{labels.yAxis || "Price Level"}</text>
+        <text x="160" y="245" fontSize="11" fill="currentColor" textAnchor="middle">{labels.xAxis || "Real GDP"}</text>
+        {shaded.includes("spare-capacity") && (
+          <rect x="40" y="180" width="120" height="40" fill="hsl(210 100% 60% / 0.1)" stroke="none" />
+        )}
+        {/* Keynesian AS: horizontal → upward sloping → vertical */}
+        <path d="M 50 180 L 160 180 Q 200 170 220 120 Q 230 80 230 40" stroke="hsl(210 100% 50%)" strokeWidth="2.5" fill="none" />
+        <text x="235" y="45" fontSize="11" fill="hsl(210 100% 50%)" fontWeight="bold">{labels.curve2 || "AS"}</text>
+        <line x1="60" y1="190" x2="240" y2="60" stroke="hsl(0 80% 50%)" strokeWidth="2.5" />
+        <text x="242" y="65" fontSize="11" fill="hsl(0 80% 50%)" fontWeight="bold">{labels.curve1 || "AD"}</text>
+        <line x1="230" y1="220" x2="230" y2="215" stroke="currentColor" strokeWidth="1" />
+        <text x="230" y="235" fontSize="10" fill="currentColor" textAnchor="middle">{labels.yf || "Yf"}</text>
+      </svg>
+    ),
+  },
+  {
+    id: "ppf",
+    label: "PPF",
+    description: "Production Possibility Frontier",
+    defaultLabels: { xAxis: "Good B", yAxis: "Good A", curve1: "PPF" },
+    svgContent: (labels: Record<string, string>, shaded: string[]) => (
+      <svg viewBox="0 0 300 250" className="w-full">
+        <line x1="40" y1="20" x2="40" y2="220" stroke="currentColor" strokeWidth="2" />
+        <line x1="40" y1="220" x2="280" y2="220" stroke="currentColor" strokeWidth="2" />
+        <text x="15" y="120" fontSize="12" fill="currentColor" transform="rotate(-90 15 120)">{labels.yAxis || "Good A"}</text>
+        <text x="160" y="245" fontSize="12" fill="currentColor" textAnchor="middle">{labels.xAxis || "Good B"}</text>
+        {shaded.includes("attainable") && (
+          <path d="M 40 50 Q 140 55 250 220 L 40 220 Z" fill="hsl(130 60% 50% / 0.1)" stroke="none" />
+        )}
+        <path d="M 40 50 Q 140 55 250 220" stroke="hsl(210 100% 50%)" strokeWidth="2.5" fill="none" />
+        <text x="252" y="215" fontSize="11" fill="hsl(210 100% 50%)" fontWeight="bold">{labels.curve1 || "PPF"}</text>
+        <circle cx="120" cy="150" r="4" fill="hsl(130 60% 40%)" />
+        <text x="130" y="147" fontSize="10" fill="hsl(130 60% 40%)">X</text>
+        <circle cx="200" cy="100" r="4" fill="hsl(0 80% 50%)" />
+        <text x="210" y="97" fontSize="10" fill="hsl(0 80% 50%)">Y</text>
       </svg>
     ),
   },
@@ -80,6 +158,9 @@ const DIAGRAM_TYPES = [
         <text x="160" y="245" fontSize="11" fill="currentColor" textAnchor="middle">{labels.xAxis || "Quantity"}</text>
         {shaded.includes("deadweight-loss") && (
           <polygon points="170,100 210,80 210,130" fill="hsl(45 100% 50% / 0.3)" stroke="hsl(45 100% 50%)" strokeWidth="1" />
+        )}
+        {shaded.includes("welfare-loss") && (
+          <polygon points="170,100 210,80 210,130" fill="hsl(0 80% 50% / 0.2)" stroke="hsl(0 80% 50%)" strokeWidth="1" />
         )}
         <line x1="50" y1="200" x2="270" y2="40" stroke="hsl(0 80% 50%)" strokeWidth="2" />
         <text x="272" y="45" fontSize="10" fill="hsl(0 80% 50%)">{labels.curve1 || "MPB"}</text>
@@ -104,6 +185,9 @@ const DIAGRAM_TYPES = [
         {shaded.includes("supernormal-profit") && (
           <rect x="40" y="95" width="110" height="35" fill="hsl(130 60% 50% / 0.15)" stroke="hsl(130 60% 40%)" strokeWidth="1" />
         )}
+        {shaded.includes("deadweight-loss") && (
+          <polygon points="150,95 200,120 150,130" fill="hsl(0 80% 50% / 0.2)" stroke="hsl(0 80% 50%)" strokeWidth="1" />
+        )}
         <line x1="50" y1="60" x2="260" y2="200" stroke="hsl(130 60% 40%)" strokeWidth="2" />
         <text x="262" y="205" fontSize="10" fill="hsl(130 60% 40%)">{labels.curve3 || "MC"}</text>
         <path d="M 60 180 Q 120 50 260 160" stroke="hsl(45 80% 40%)" strokeWidth="2" fill="none" />
@@ -112,6 +196,82 @@ const DIAGRAM_TYPES = [
         <text x="262" y="195" fontSize="10" fill="hsl(0 80% 50%)">{labels.curve1 || "AR=D"}</text>
         <line x1="50" y1="50" x2="180" y2="210" stroke="hsl(210 100% 50%)" strokeWidth="2" strokeDasharray="5" />
         <text x="182" y="215" fontSize="10" fill="hsl(210 100% 50%)">{labels.curve2 || "MR"}</text>
+      </svg>
+    ),
+  },
+  {
+    id: "labour-market",
+    label: "Labour Market",
+    description: "Wage determination in a competitive labour market",
+    defaultLabels: { xAxis: "Quantity of Labour", yAxis: "Wage Rate (W)", curve1: "DL (MRP)", curve2: "SL" },
+    svgContent: (labels: Record<string, string>, shaded: string[]) => (
+      <svg viewBox="0 0 300 250" className="w-full">
+        <line x1="40" y1="20" x2="40" y2="220" stroke="currentColor" strokeWidth="2" />
+        <line x1="40" y1="220" x2="280" y2="220" stroke="currentColor" strokeWidth="2" />
+        <text x="15" y="120" fontSize="10" fill="currentColor" transform="rotate(-90 15 120)">{labels.yAxis || "Wage Rate (W)"}</text>
+        <text x="160" y="245" fontSize="11" fill="currentColor" textAnchor="middle">{labels.xAxis || "Quantity of Labour"}</text>
+        {shaded.includes("wage-floor") && (
+          <line x1="40" y1="100" x2="260" y2="100" stroke="hsl(45 100% 50%)" strokeWidth="2" strokeDasharray="6" />
+        )}
+        <line x1="50" y1="190" x2="260" y2="50" stroke="hsl(0 80% 50%)" strokeWidth="2.5" />
+        <text x="262" y="55" fontSize="10" fill="hsl(0 80% 50%)" fontWeight="bold">{labels.curve1 || "DL"}</text>
+        <line x1="50" y1="50" x2="260" y2="190" stroke="hsl(210 100% 50%)" strokeWidth="2.5" />
+        <text x="262" y="195" fontSize="10" fill="hsl(210 100% 50%)" fontWeight="bold">{labels.curve2 || "SL"}</text>
+        <circle cx="155" cy="120" r="4" fill="currentColor" />
+        <line x1="40" y1="120" x2="155" y2="120" stroke="currentColor" strokeWidth="1" strokeDasharray="4" />
+        <line x1="155" y1="120" x2="155" y2="220" stroke="currentColor" strokeWidth="1" strokeDasharray="4" />
+        <text x="30" y="124" fontSize="10" fill="currentColor" textAnchor="end">W₁</text>
+        <text x="155" y="235" fontSize="10" fill="currentColor" textAnchor="middle">L₁</text>
+      </svg>
+    ),
+  },
+  {
+    id: "tariff",
+    label: "Tariff",
+    description: "Effect of a tariff on imports",
+    defaultLabels: { xAxis: "Quantity", yAxis: "Price", curve1: "D", curve2: "S(domestic)", pw: "Pw", pwt: "Pw+t" },
+    svgContent: (labels: Record<string, string>, shaded: string[]) => (
+      <svg viewBox="0 0 300 250" className="w-full">
+        <line x1="40" y1="20" x2="40" y2="220" stroke="currentColor" strokeWidth="2" />
+        <line x1="40" y1="220" x2="280" y2="220" stroke="currentColor" strokeWidth="2" />
+        <text x="15" y="120" fontSize="11" fill="currentColor" transform="rotate(-90 15 120)">{labels.yAxis || "Price"}</text>
+        <text x="160" y="245" fontSize="11" fill="currentColor" textAnchor="middle">{labels.xAxis || "Quantity"}</text>
+        {shaded.includes("tariff-revenue") && (
+          <rect x="110" y="130" width="80" height="20" fill="hsl(130 60% 50% / 0.2)" stroke="hsl(130 60% 40%)" strokeWidth="1" />
+        )}
+        {shaded.includes("deadweight-loss") && (
+          <>
+            <polygon points="80,150 110,130 110,150" fill="hsl(0 80% 50% / 0.2)" stroke="hsl(0 80% 50%)" strokeWidth="1" />
+            <polygon points="190,150 220,130 220,150" fill="hsl(0 80% 50% / 0.2)" stroke="hsl(0 80% 50%)" strokeWidth="1" />
+          </>
+        )}
+        <line x1="50" y1="190" x2="270" y2="50" stroke="hsl(0 80% 50%)" strokeWidth="2.5" />
+        <text x="272" y="55" fontSize="10" fill="hsl(0 80% 50%)" fontWeight="bold">{labels.curve1 || "D"}</text>
+        <line x1="50" y1="50" x2="260" y2="190" stroke="hsl(210 100% 50%)" strokeWidth="2.5" />
+        <text x="262" y="195" fontSize="10" fill="hsl(210 100% 50%)" fontWeight="bold">{labels.curve2 || "S"}</text>
+        <line x1="40" y1="150" x2="270" y2="150" stroke="hsl(45 80% 40%)" strokeWidth="1.5" />
+        <text x="272" y="154" fontSize="10" fill="hsl(45 80% 40%)">{labels.pw || "Pw"}</text>
+        <line x1="40" y1="130" x2="270" y2="130" stroke="hsl(45 80% 40%)" strokeWidth="1.5" strokeDasharray="5" />
+        <text x="272" y="134" fontSize="10" fill="hsl(45 80% 40%)">{labels.pwt || "Pw+t"}</text>
+      </svg>
+    ),
+  },
+  {
+    id: "phillips-curve",
+    label: "Phillips Curve",
+    description: "Short-run and long-run Phillips Curve",
+    defaultLabels: { xAxis: "Unemployment (%)", yAxis: "Inflation (%)", curve1: "SRPC", curve2: "LRPC", nru: "NRU" },
+    svgContent: (labels: Record<string, string>) => (
+      <svg viewBox="0 0 300 250" className="w-full">
+        <line x1="40" y1="20" x2="40" y2="220" stroke="currentColor" strokeWidth="2" />
+        <line x1="40" y1="220" x2="280" y2="220" stroke="currentColor" strokeWidth="2" />
+        <text x="15" y="120" fontSize="10" fill="currentColor" transform="rotate(-90 15 120)">{labels.yAxis || "Inflation (%)"}</text>
+        <text x="160" y="245" fontSize="11" fill="currentColor" textAnchor="middle">{labels.xAxis || "Unemployment (%)"}</text>
+        <line x1="160" y1="30" x2="160" y2="210" stroke="hsl(130 60% 40%)" strokeWidth="2.5" />
+        <text x="162" y="25" fontSize="11" fill="hsl(130 60% 40%)" fontWeight="bold">{labels.curve2 || "LRPC"}</text>
+        <path d="M 60 50 Q 100 100 140 150 Q 160 180 260 200" stroke="hsl(0 80% 50%)" strokeWidth="2.5" fill="none" />
+        <text x="262" y="205" fontSize="10" fill="hsl(0 80% 50%)" fontWeight="bold">{labels.curve1 || "SRPC"}</text>
+        <text x="160" y="235" fontSize="10" fill="currentColor" textAnchor="middle">{labels.nru || "NRU"}</text>
       </svg>
     ),
   },
@@ -125,17 +285,49 @@ const SHADE_OPTIONS: Record<string, { label: string; options: { id: string; labe
       { id: "producer-surplus", label: "Producer Surplus" },
     ],
   },
+  "supply-demand-shift": {
+    label: "Shade areas",
+    options: [{ id: "welfare-change", label: "Welfare Change" }],
+  },
   "adas": {
     label: "Shade areas",
-    options: [{ id: "inflationary-gap", label: "Inflationary Gap" }],
+    options: [
+      { id: "inflationary-gap", label: "Inflationary Gap" },
+      { id: "deflationary-gap", label: "Deflationary Gap" },
+    ],
+  },
+  "keynesian-as": {
+    label: "Shade areas",
+    options: [{ id: "spare-capacity", label: "Spare Capacity" }],
+  },
+  "ppf": {
+    label: "Shade areas",
+    options: [{ id: "attainable", label: "Attainable Region" }],
   },
   "externality": {
     label: "Shade areas",
-    options: [{ id: "deadweight-loss", label: "Deadweight Loss" }],
+    options: [
+      { id: "deadweight-loss", label: "Deadweight Loss" },
+      { id: "welfare-loss", label: "Welfare Loss" },
+    ],
   },
   "monopoly": {
     label: "Shade areas",
-    options: [{ id: "supernormal-profit", label: "Supernormal Profit" }],
+    options: [
+      { id: "supernormal-profit", label: "Supernormal Profit" },
+      { id: "deadweight-loss", label: "Deadweight Loss" },
+    ],
+  },
+  "labour-market": {
+    label: "Shade areas",
+    options: [{ id: "wage-floor", label: "Minimum Wage" }],
+  },
+  "tariff": {
+    label: "Shade areas",
+    options: [
+      { id: "tariff-revenue", label: "Tariff Revenue" },
+      { id: "deadweight-loss", label: "Deadweight Loss" },
+    ],
   },
 };
 

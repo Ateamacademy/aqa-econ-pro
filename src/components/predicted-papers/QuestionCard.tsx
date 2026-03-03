@@ -76,6 +76,8 @@ export function QuestionCard({
   const insertVisualTemplate = (kind: "graph" | "diagram") => {
     const template = kind === "graph"
       ? `\n\n[GRAPH NOTES]\n- Axes labels and units:\n- Scale used:\n- Key points/coordinates plotted:\n- Shape/gradient/turning points:\n- Final reading/conclusion:\n[/GRAPH NOTES]`
+      : subject === "economics"
+      ? `\n\n[DIAGRAM NOTES]\n- Diagram type (e.g. S&D, AD/AS, PPF, Externality):\n- X-axis label:\n- Y-axis label:\n- Curves drawn and labelled:\n- Original equilibrium (P₁, Q₁):\n- Shift direction and new curve label:\n- New equilibrium (P₂, Q₂):\n- Shaded area and what it represents:\n- Key conclusion from diagram:\n[/DIAGRAM NOTES]`
       : `\n\n[DIAGRAM NOTES]\n- Labels included:\n- What each arrow/line/curve represents:\n- Key values used:\n- Final conclusion from the diagram:\n[/DIAGRAM NOTES]`;
 
     onAnswerChange(`${answer}${template}`);
