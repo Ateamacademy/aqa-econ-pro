@@ -553,6 +553,118 @@ export const SYNOPTIC_LINKS: SynopticLink[] = [
   },
 ];
 
+// ─── DIAGRAM MARKING CRITERIA (from AQA mark schemes 2017–2024) ─────
+
+export interface DiagramMarkingCriteria {
+  diagramType: string;
+  requiredElements: string[];
+  kaaBreakdown: { knowledge: number; application: number; analysis: number };
+  markingPoints: string[];
+}
+
+export const DIAGRAM_MARKING_CRITERIA: DiagramMarkingCriteria[] = [
+  {
+    diagramType: "supply-demand",
+    requiredElements: ["Price on y-axis", "Quantity on x-axis", "D₁ curve", "S₁ curve", "Original equilibrium E₁ (P₁, Q₁)", "Shifted curve with label", "New equilibrium E₂ (P₂, Q₂)", "Arrows showing shift direction"],
+    kaaBreakdown: { knowledge: 1, application: 1, analysis: 3 },
+    markingPoints: [
+      "Knowledge/understanding: 1 mark for accurate supply and demand diagram with labels and original equilibrium (E₁)",
+      "Application: 1 mark for identifying that demand/supply in the specific market has shifted and why",
+      "Analysis: Up to 3 marks, 1 for each of: correct curve shift direction with label (e.g. S₁ to S₂), new equilibrium showing price/quantity change, explanation of why the shift leads to new equilibrium"
+    ],
+  },
+  {
+    diagramType: "supply-demand-shift",
+    requiredElements: ["Price on y-axis", "Quantity on x-axis", "D₁ and D₂ (or S₁ and S₂)", "S curve (or D curve)", "E₁ at old intersection", "E₂ at new intersection", "Dashed lines to axes for P₁/P₂ and Q₁/Q₂"],
+    kaaBreakdown: { knowledge: 1, application: 1, analysis: 3 },
+    markingPoints: [
+      "Knowledge/understanding: 1 mark for accurate diagram with correctly labelled axes and curves",
+      "Application: 1 mark for identifying the correct shift (demand or supply) and linking to context",
+      "Analysis: Up to 3 marks for: shift direction correct (1), new equilibrium with P₂/Q₂ shown (1), explanation of mechanism (1)"
+    ],
+  },
+  {
+    diagramType: "externality",
+    requiredElements: ["Cost/Benefit on y-axis", "Quantity on x-axis", "MPB/MPC curves", "MSB/MSC curve showing divergence", "Free-market output Qm", "Socially optimal output Qs", "Welfare loss triangle shaded"],
+    kaaBreakdown: { knowledge: 2, application: 2, analysis: 5 },
+    markingPoints: [
+      "Knowledge: 1 mark for correct axes, 1 mark for identifying MSC>MPC (negative) or MSB>MPB (positive)",
+      "Application: 1 mark for linking to context, 1 mark for identifying the external cost/benefit",
+      "Analysis: Up to 5 marks for: correct divergence shown (1), Qm vs Qs identified (1), welfare loss triangle (1), explanation of over/under-provision (1), policy correction (1)"
+    ],
+  },
+  {
+    diagramType: "adas",
+    requiredElements: ["Price Level on y-axis", "Real GDP on x-axis", "AD curve", "SRAS curve", "LRAS curve (vertical or L-shaped)", "Equilibrium point(s)", "Shift direction with arrows"],
+    kaaBreakdown: { knowledge: 2, application: 2, analysis: 5 },
+    markingPoints: [
+      "Knowledge: 1 mark for correctly labelled axes, 1 mark for correct AD/SRAS/LRAS curves",
+      "Application: 1 mark for correct shift direction, 1 mark for linking to context (e.g. interest rate rise → C/I falls → AD left)",
+      "Analysis: Up to 5 marks for: shift mechanism explained (1), short-run effect on PL and Y (1), new equilibrium shown (1), multiplier/accelerator effects (1), long-run adjustment (1)"
+    ],
+  },
+  {
+    diagramType: "monopoly",
+    requiredElements: ["Revenue/Cost on y-axis", "Quantity on x-axis", "AR=D (downward sloping)", "MR (below AR, steeper)", "MC (U-shaped)", "AC (U-shaped)", "Profit-max at MC=MR", "Supernormal profit rectangle shaded"],
+    kaaBreakdown: { knowledge: 2, application: 2, analysis: 5 },
+    markingPoints: [
+      "Knowledge: 1 mark for correct revenue/cost curves, 1 mark for MC=MR identified",
+      "Application: 1 mark for reading price from AR at profit-max Q, 1 mark for showing AC at that Q",
+      "Analysis: Up to 5 marks for: profit-max rule explained (1), supernormal profit area shown (1), comparison with competitive outcome (1), deadweight loss (1), efficiency implications (1)"
+    ],
+  },
+  {
+    diagramType: "ppf",
+    requiredElements: ["Good A on y-axis", "Good B on x-axis", "Concave PPF curve", "Points: inside (inefficient), on curve (efficient), outside (unattainable)", "Outward shift for growth"],
+    kaaBreakdown: { knowledge: 1, application: 1, analysis: 3 },
+    markingPoints: [
+      "Knowledge: 1 mark for correctly drawn and labelled PPF with correct shape",
+      "Application: 1 mark for identifying the relevant shift/movement and linking to context",
+      "Analysis: Up to 3 marks for: opportunity cost explained (1), shift direction and cause (1), implications for productive capacity (1)"
+    ],
+  },
+  {
+    diagramType: "labour-market",
+    requiredElements: ["Wage Rate on y-axis", "Quantity of Labour on x-axis", "DL=MRP curve", "SL curve", "Equilibrium wage W₁ and employment L₁"],
+    kaaBreakdown: { knowledge: 1, application: 1, analysis: 3 },
+    markingPoints: [
+      "Knowledge: 1 mark for correct labour market diagram with labelled axes and curves",
+      "Application: 1 mark for identifying the wage/employment outcome and linking to context",
+      "Analysis: Up to 3 marks for: wage determination explained (1), impact of intervention shown (1), effect on employment/unemployment (1)"
+    ],
+  },
+  {
+    diagramType: "phillips-curve",
+    requiredElements: ["Inflation (%) on y-axis", "Unemployment (%) on x-axis", "SRPC (downward sloping)", "LRPC (vertical at NRU)", "Movement along SRPC", "Shift of SRPC if expectations change"],
+    kaaBreakdown: { knowledge: 2, application: 2, analysis: 5 },
+    markingPoints: [
+      "Knowledge: 1 mark for SRPC shape, 1 mark for LRPC at NRU",
+      "Application: 1 mark for identifying SR trade-off, 1 mark for linking to policy context",
+      "Analysis: Up to 5 marks for: SR trade-off explained (1), expectations-augmented shift (1), LR no trade-off (1), NAIRU concept (1), policy implications (1)"
+    ],
+  },
+  {
+    diagramType: "tariff",
+    requiredElements: ["Price on y-axis", "Quantity on x-axis", "D curve", "S(domestic) curve", "Pw (world price line)", "Pw+t (world price + tariff line)", "Areas: tariff revenue, deadweight loss triangles"],
+    kaaBreakdown: { knowledge: 1, application: 2, analysis: 3 },
+    markingPoints: [
+      "Knowledge: 1 mark for correct tariff diagram with Pw and Pw+t",
+      "Application: 1 mark for domestic production change, 1 mark for import reduction",
+      "Analysis: Up to 3 marks for: tariff revenue rectangle (1), deadweight loss triangles (1), effect on consumer/producer surplus (1)"
+    ],
+  },
+  {
+    diagramType: "keynesian-as",
+    requiredElements: ["Price Level on y-axis", "Real GDP on x-axis", "Keynesian AS (horizontal→upward→vertical)", "AD curve", "Full employment output Yf"],
+    kaaBreakdown: { knowledge: 2, application: 2, analysis: 5 },
+    markingPoints: [
+      "Knowledge: 1 mark for Keynesian AS shape (three ranges), 1 mark for labelling Yf",
+      "Application: 1 mark for AD position in correct range, 1 mark for linking to spare capacity/full employment",
+      "Analysis: Up to 5 marks for: horizontal range = spare capacity (1), upward range = bottlenecks (1), vertical range = full employment (1), AD shift effect depends on range (1), policy implications (1)"
+    ],
+  },
+];
+
 // ─── BLOOM'S TAXONOMY HOTS QUESTION GENERATORS ──────────────────────
 
 export const HOTS_QUESTION_TEMPLATES = {
@@ -640,6 +752,12 @@ export function generateKnowledgeGraphPrompt(paperNumber: string): string {
     ...CURRENT_ECONOMIC_CONTEXTS.global2024.slice(0, 2),
   ].map((c) => `  - ${c}`).join("\n");
 
+  // Build diagram marking criteria section
+  const diagramSection = DIAGRAM_MARKING_CRITERIA
+    .slice(0, 6)
+    .map((d) => `- **${d.diagramType}**: K${d.kaaBreakdown.knowledge} A${d.kaaBreakdown.application} An${d.kaaBreakdown.analysis} — Elements: ${d.requiredElements.slice(0, 4).join(", ")}`)
+    .join("\n");
+
   return `
 ## KNOWLEDGE GRAPH — HIGHER ORDER THINKING SKILLS (HOTS) REQUIREMENTS
 
@@ -660,6 +778,19 @@ ${synopticExamples}
 ### MANDATORY REAL-WORLD DATA CONTEXTS (use current 2024–2025 data):
 ${contexts}
 
+### DIAGRAM QUESTION PATTERNS (from AQA mark schemes — generate questions in these EXACT patterns):
+
+Each diagram question MUST follow the KAA (Knowledge, Application, Analysis) marking structure:
+
+${diagramSection}
+
+**Example pattern (from June 2024 Paper 1, Question 6a — 5 marks):**
+"Use a demand and supply diagram to explain the impact on price and quantity, of the changes in demand and supply of online sales in the retail grocery market. (Figure 1 and Extract B)."
+Mark scheme: Knowledge 1, Application 1, Analysis 3
+- K: accurate S&D diagram with labels and original equilibrium (E₁) (1)
+- A: identifying that demand and supply have both increased (1)
+- An: Supply shifts rightwards S₁ to S₂ (1), Demand shifts rightwards D₁ to D₂ (1), New equilibrium E₂ showing lower price and increased quantity (1)
+
 ### HOTS Question Requirements:
 1. 25-mark essays MUST require students to:
    - Present at least TWO chains of reasoning (cause → effect → consequence)
@@ -670,6 +801,7 @@ ${contexts}
    - A correctly drawn and labelled diagram
    - Application to a specific real-world context
    - Analysis beyond simple description
+   - Follow the KAA breakdown shown above
 3. All data response questions MUST use realistic, current UK economic data
 4. At least ONE question must be genuinely synoptic (linking micro and macro concepts)
 `;

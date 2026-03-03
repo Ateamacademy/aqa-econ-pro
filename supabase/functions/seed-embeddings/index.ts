@@ -42,6 +42,55 @@ const ECONOMICS_QUESTION_PATTERNS = [
   // Paper 3 — Synoptic
   { text: "With reference to both micro and macro concepts, evaluate the economic impact of a carbon border adjustment mechanism on UK trade and industry.", marks: 25, topic: "Synoptic", paper: "3", year: "2024-2025", bloom: "evaluate", tags: ["evaluation", "synoptic", "carbon-tax", "trade", "externalities", "HOTS"] },
   { text: "Using concepts from both Papers 1 and 2, assess the likely economic effects of a significant increase in the UK national minimum wage to £15 per hour.", marks: 25, topic: "Synoptic", paper: "3", year: "2024-2025", bloom: "evaluate", tags: ["evaluation", "synoptic", "minimum-wage", "labour", "inflation", "HOTS"] },
+
+  // ── DIAGRAM-SPECIFIC QUESTION PATTERNS (from AQA 2017–2024 mark schemes) ──
+
+  // Supply & Demand diagram questions
+  { text: "Use a demand and supply diagram to explain the impact on price and quantity, of the changes in demand and supply of online sales in the retail grocery market. (Figure 1 and Extract B).", marks: 5, topic: "Price Determination", paper: "1", year: "2024", bloom: "analyse", tags: ["supply-demand", "diagram", "shift", "both-curves", "new-equilibrium", "KAA-marking"] },
+  { text: "Using a supply and demand diagram, explain the likely effect of an increase in the national minimum wage on the market for fast food workers.", marks: 9, topic: "Labour Market", paper: "1", year: "2023", bloom: "analyse", tags: ["supply-demand", "diagram", "minimum-wage", "labour-market", "excess-supply"] },
+  { text: "Using a supply and demand diagram, explain how a subsidy on electric vehicles would affect the market equilibrium price and quantity.", marks: 9, topic: "Government Intervention", paper: "1", year: "2022", bloom: "analyse", tags: ["supply-demand", "diagram", "subsidy", "shift-supply-right", "new-equilibrium"] },
+  { text: "Using a supply and demand diagram, explain the likely impact of a ban on single-use plastics on the market for reusable containers.", marks: 5, topic: "Price Determination", paper: "1", year: "2021", bloom: "analyse", tags: ["supply-demand", "diagram", "substitute", "demand-shift-right", "complement"] },
+  { text: "Using a diagram, explain how an increase in both demand and supply could lead to a higher equilibrium quantity but an ambiguous effect on price.", marks: 9, topic: "Price Determination", paper: "1", year: "2020", bloom: "analyse", tags: ["supply-demand", "diagram", "both-shifts", "ambiguous-price", "higher-quantity"] },
+
+  // AD/AS diagram questions
+  { text: "Using an AD/AS diagram, explain the likely short-run impact of a fall in consumer confidence on the UK economy.", marks: 9, topic: "Aggregate Demand", paper: "2", year: "2024", bloom: "analyse", tags: ["AD/AS", "diagram", "AD-shift-left", "consumer-confidence", "output-gap"] },
+  { text: "Using a Keynesian AD/AS diagram, explain why an economy might be stuck in a liquidity trap with high unemployment.", marks: 9, topic: "Monetary Policy", paper: "2", year: "2023", bloom: "analyse", tags: ["AD/AS", "diagram", "keynesian", "horizontal-AS", "spare-capacity", "liquidity-trap"] },
+  { text: "Using an AD/AS diagram, explain how supply-side policies might lead to both lower inflation and higher real GDP in the long run.", marks: 9, topic: "Supply-Side Policies", paper: "2", year: "2022", bloom: "analyse", tags: ["AD/AS", "diagram", "LRAS-shift-right", "supply-side", "long-run-growth"] },
+  { text: "Using both Classical and Keynesian AS diagrams, compare the likely effects of an increase in government spending on the price level and real output.", marks: 9, topic: "Aggregate Supply", paper: "2", year: "2021", bloom: "analyse", tags: ["AD/AS", "diagram", "classical-vs-keynesian", "comparison", "fiscal-policy"] },
+
+  // Externality diagram questions
+  { text: "Using a diagram, explain how a negative externality of consumption (such as smoking) leads to market failure and a welfare loss.", marks: 9, topic: "Externalities", paper: "1", year: "2024", bloom: "analyse", tags: ["externality", "diagram", "MSB-MPB", "welfare-loss", "overconsumption", "deadweight-loss"] },
+  { text: "Using an externality diagram, explain how a positive externality of production leads to under-provision in a free market.", marks: 9, topic: "Externalities", paper: "1", year: "2023", bloom: "analyse", tags: ["externality", "diagram", "MSC-MPC", "positive-externality", "under-provision"] },
+  { text: "Using an appropriate diagram, explain how tradeable pollution permits can correct a negative externality and achieve the socially optimal level of output.", marks: 9, topic: "Government Intervention", paper: "1", year: "2022", bloom: "analyse", tags: ["externality", "diagram", "permits", "MSC", "optimal-output", "internalise"] },
+
+  // Monopoly diagram questions
+  { text: "Using a diagram, explain how a profit-maximising monopolist determines its output and price. Show the area of supernormal profit.", marks: 9, topic: "Market Structures", paper: "1", year: "2024", bloom: "analyse", tags: ["monopoly", "diagram", "MC=MR", "supernormal-profit", "AR", "AC", "deadweight-loss"] },
+  { text: "Using a diagram, compare the price and output of a monopolist with that of a firm in perfect competition.", marks: 9, topic: "Market Structures", paper: "1", year: "2023", bloom: "analyse", tags: ["monopoly", "diagram", "perfect-competition", "comparison", "allocative-efficiency", "deadweight-loss"] },
+
+  // PPF diagram questions
+  { text: "Using a PPF diagram, explain how an increase in immigration might affect an economy's productive capacity and output.", marks: 9, topic: "Economic Problem", paper: "1", year: "2024", bloom: "apply", tags: ["PPF", "diagram", "outward-shift", "immigration", "productive-capacity"] },
+  { text: "Using a PPF diagram, explain why a country that chooses to produce more capital goods now may experience faster economic growth in the future.", marks: 9, topic: "Economic Problem", paper: "1", year: "2023", bloom: "apply", tags: ["PPF", "diagram", "capital-vs-consumer", "growth", "opportunity-cost"] },
+
+  // Labour Market diagram questions
+  { text: "Using a diagram, explain how the introduction of a national minimum wage above the equilibrium wage rate would affect employment in a competitive labour market.", marks: 9, topic: "Labour Market", paper: "1", year: "2024", bloom: "analyse", tags: ["labour-market", "diagram", "minimum-wage", "excess-supply", "unemployment", "wage-floor"] },
+  { text: "Using a monopsony diagram, explain why a monopsony employer pays a wage below the marginal revenue product of labour.", marks: 9, topic: "Labour Market", paper: "1", year: "2023", bloom: "analyse", tags: ["labour-market", "diagram", "monopsony", "MCL", "ACL", "MRP", "exploitation"] },
+
+  // Phillips Curve diagram questions
+  { text: "Using a Phillips Curve diagram, explain the short-run trade-off between inflation and unemployment and why this trade-off may not exist in the long run.", marks: 9, topic: "Phillips Curve", paper: "2", year: "2024", bloom: "analyse", tags: ["Phillips-Curve", "diagram", "SRPC", "LRPC", "NRU", "expectations", "trade-off"] },
+  { text: "Using a Phillips Curve diagram, explain how expansionary monetary policy might reduce unemployment in the short run but lead to higher inflation expectations.", marks: 9, topic: "Phillips Curve", paper: "2", year: "2023", bloom: "analyse", tags: ["Phillips-Curve", "diagram", "monetary-policy", "expectations-augmented", "NAIRU"] },
+
+  // Tariff / Trade diagram questions
+  { text: "Using a tariff diagram, explain the effects of imposing a tariff on imported steel on domestic producers, consumers, and government revenue.", marks: 9, topic: "Globalisation", paper: "2", year: "2024", bloom: "analyse", tags: ["tariff", "diagram", "protectionism", "deadweight-loss", "tariff-revenue", "consumer-surplus"] },
+  { text: "Using a diagram, explain how a quota on imported goods differs from a tariff in its effects on price, quantity, and government revenue.", marks: 9, topic: "Globalisation", paper: "2", year: "2023", bloom: "analyse", tags: ["quota", "diagram", "protectionism", "comparison", "trade"] },
+
+  // Lorenz Curve / Gini
+  { text: "Using a Lorenz Curve diagram, explain how the Gini coefficient measures income inequality and how progressive taxation might reduce it.", marks: 9, topic: "Inequality", paper: "2", year: "2024", bloom: "analyse", tags: ["Lorenz-Curve", "diagram", "Gini", "inequality", "progressive-tax", "redistribution"] },
+
+  // J-Curve diagram
+  { text: "Using a J-curve diagram, explain why a depreciation of sterling may initially worsen the UK's current account deficit before improving it.", marks: 9, topic: "Exchange Rates", paper: "2", year: "2024", bloom: "analyse", tags: ["J-curve", "diagram", "depreciation", "current-account", "Marshall-Lerner", "time-lags"] },
+
+  // Keynesian AS diagram
+  { text: "Using a Keynesian aggregate supply diagram, explain why an increase in aggregate demand may not lead to inflation when there is significant spare capacity in the economy.", marks: 9, topic: "Aggregate Supply", paper: "2", year: "2024", bloom: "analyse", tags: ["keynesian-AS", "diagram", "spare-capacity", "horizontal-range", "no-inflation", "output-gap"] },
 ];
 
 async function generateEmbedding(text: string, apiKey: string): Promise<number[] | null> {
