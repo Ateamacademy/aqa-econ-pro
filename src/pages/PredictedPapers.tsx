@@ -231,13 +231,24 @@ CRITICAL RULES:
 DIAGRAM QUESTION REQUIREMENTS (NON-NEGOTIABLE):
 1. EVERY 9-mark question MUST begin with "Using a diagram" or "With the help of a diagram" — this is mandatory per AQA specification
 2. 9-mark diagram questions follow the KAA marking pattern: Knowledge 1-2, Application 1-2, Analysis 3-5
-3. For supply and demand diagram questions (5-mark pattern from June 2024):
-   - "Use a demand and supply diagram to explain the impact on price and quantity, of the changes in demand and supply of [market]. (Figure X and Extract Y)."
-   - Mark scheme: Knowledge/understanding 1 mark (accurate S&D diagram with labels and original equilibrium E₁), Application 1 mark (identifying the change from context), Analysis up to 3 marks (correct shift direction, new equilibrium, explanation of mechanism)
-4. Each Paper 1 MUST include at least: 1 supply/demand diagram question, 1 externality/welfare loss diagram question
-5. Each Paper 2 MUST include at least: 1 AD/AS diagram question, and reference Phillips Curve or Keynesian AS where relevant
-6. Paper 3 Section B MUST include at least one question requiring diagram analysis
-7. Diagram questions must specify which Figure/Extract to reference
+3. MANDATORY 5-MARK BOTH-CURVES-SHIFT QUESTION (AQA June 2024 Q6a pattern):
+   - You MUST include at least ONE question in this EXACT format:
+   "Use a demand and supply diagram to explain the impact on price and quantity, of the changes in demand and supply of [specific market from Extract/Figure]. (Figure X and Extract Y)."
+   - Mark scheme for this 5-mark pattern:
+     Knowledge/understanding: 1 mark — accurate supply and demand diagram with labels and original equilibrium (E₁). (1)
+     Application: 1 mark — for identifying that demand and supply in the [specific market] have both [increased/decreased/one each]. (1)
+     Analysis: Up to 3 marks, 1 for each of the following:
+     • Supply curve shifts rightwards S₁ to S₂. (1)
+     • Demand curve shifts rightwards D₁ to D₂. (1)
+     • There is a new equilibrium showing [lower/higher] price and [increased/decreased] quantity E₂. (1)
+   - The context MUST reference specific Figures and Extracts from the paper
+4. For other S&D diagram questions (single-curve shift, 9-mark):
+   - "Using a supply and demand diagram, explain the likely effect of [policy/change] on the market for [good/service]."
+   - KAA: Knowledge 1, Application 1, Analysis up to 3-5
+5. Each Paper 1 MUST include: 1 both-curves-shift 5-mark question (Q6a pattern), 1 externality/welfare loss 9-mark diagram question
+6. Each Paper 2 MUST include at least: 1 AD/AS diagram question, and reference Phillips Curve or Keynesian AS where relevant
+7. Paper 3 Section B MUST include at least one question requiring diagram analysis
+8. Diagram questions must specify which Figure/Extract to reference
 
 DIFFICULTY GUARDRAILS (MATCH JUNE 2024 STANDARD):
 1. 2-mark questions: precise calculation or definition — NOT easy recall
