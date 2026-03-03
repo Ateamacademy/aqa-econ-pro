@@ -17,7 +17,7 @@ interface QuestionCardProps {
   question: ParsedQuestion;
   answer: string;
   onAnswerChange: (val: string) => void;
-  onMark: () => void;
+  onMark: (diagramImage?: string) => void;
   isMarking: boolean;
   feedback: {
     markScheme: string;
@@ -51,6 +51,7 @@ export function QuestionCard({
   const [showGraph, setShowGraph] = useState(false);
   const [showDiagram, setShowDiagram] = useState(false);
   const [geoTool, setGeoTool] = useState<string | null>(null);
+  const [canvasDataUrl, setCanvasDataUrl] = useState<string | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   
   const isMCQ = !!question.mcqOptions && question.mcqOptions.length >= 2;
@@ -189,7 +190,14 @@ export function QuestionCard({
             {/* Drawing canvas */}
             {showCanvas && !feedback && (
               <div className="mb-3">
-                <DrawingCanvas showGrid={showGeometryTools} onSave={() => insertVisualTemplate("diagram")} />
+                <DrawingCanvas
+                  showGrid={showGeometryTools}
+                  onSave={(dataUrl) => {
+                    setCanvasDataUrl(dataUrl);
+                    insertVisualTemplate("diagram");
+                  }}
+                  onDrawEnd={(dataUrl) => setCanvasDataUrl(dataUrl)}
+                />
               </div>
             )}
             
@@ -250,7 +258,7 @@ export function QuestionCard({
             )}
             {subject === "economics" && (
               <p className="text-[10px] text-muted-foreground mt-1.5">
-                Tip: Draw your diagram using the Drawing tool with multiple colours (e.g. blue for demand, red for supply). Then add Diagram Notes to describe labels, shifts, and shaded areas so the AI can mark accurately.
+                Tip: Draw your diagram using the Drawing tool with multiple colours (e.g. blue for demand, red for supply, green for shifts). The AI will visually analyse your drawing when you mark. You can also add Diagram Notes for extra clarity.
               </p>
             )}
           </>
@@ -263,7 +271,7 @@ export function QuestionCard({
         <div className="px-4 pt-4">
           <Button
             size="sm"
-            onClick={onMark}
+            onClick={() => onMark(canvasDataUrl || undefined)}
             disabled={isMarking || !answer.trim()}
             className="gap-1.5"
           >

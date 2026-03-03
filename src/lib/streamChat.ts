@@ -1,4 +1,5 @@
-type Msg = { role: "user" | "assistant"; content: string };
+type MessageContent = string | Array<{ type: "text"; text: string } | { type: "image_url"; image_url: { url: string } }>;
+type Msg = { role: "user" | "assistant"; content: MessageContent };
 
 export async function streamChat({
   messages,
