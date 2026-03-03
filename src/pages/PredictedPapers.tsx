@@ -570,7 +570,7 @@ question.marks === 15 ? `**For this 15-mark question:**
 
 **DIAGRAM in 25-mark essays:** If a diagram is used, award up to 4 KAA marks for it: correct axes (1), correct curves (1), correct shift (1), correct analysis of diagram (1).`}
 
-Use any "[DIAGRAM:" notes or "[DIAGRAM NOTES]" blocks in the student's answer as evidence of their diagram work. A well-described diagram with correct labels, shifts, and shading should receive full diagram marks.
+Use any "[DIAGRAM:" notes or "[DIAGRAM NOTES]" blocks in the student's answer as evidence of their hand-drawn diagram work. Students draw diagrams freehand using a drawing canvas — assess the diagram based on their written description of labels, curves, shifts, equilibrium points, and shaded areas. A well-described diagram with correct labels, shifts, and shading should receive full diagram marks.
 
 List each mark point and whether it was awarded. If a mark was lost, explain exactly why.
 Speak DIRECTLY to me using "you" and "your".
@@ -841,7 +841,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
               isMarking={markingId === q.id}
               feedback={feedbacks[q.id] || null}
               showMathTools={isMaths || isChemistry || isEconomics}
-              showEconDiagram={isEconomics}
+              showEconDiagram={false}
               showDrawingCanvas={isMaths || isChemistry || isEconomics}
               showGraphPaper={isMaths}
               showGeometryTools={isMaths}
