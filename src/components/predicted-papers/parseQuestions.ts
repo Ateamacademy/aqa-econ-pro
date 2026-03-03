@@ -14,14 +14,14 @@ export interface ParsedQuestion {
 
 /**
  * Parses the AI-generated paper markdown into individual questions.
- * Looks for patterns like "Question 1.1 [2 marks]" or "**Question 1a** (4 marks)"
+ * Handles formats like:
+ *   Question 01 [2 marks]           (text on next lines)
+ *   Question 01 [2 marks] — text    (text on same line after marks)
+ *   **Question 1a** [4 marks]       (bold wrapped)
  */
 export function parseQuestions(markdown: string): { context: string; questions: ParsedQuestion[] } {
-  // Supports headers like:
-  // - Question 1.1 [2 marks]
-  // - Question 03 [9 marks]
-  // - Question 3a [4 marks]
-  // - 01 ... [2 marks] (if model omits the word "Question")
+  // Match question headers — captures the question number and mark count.
+  // The full match ends at the closing "]" of "[X marks]".
   const questionRegex = /(?:^|\n)\s*(?:\*{0,2})?(?:Question\s*)?((?:\d{1,2}(?:\.\d+)?[a-z]?|0\s?\d{1,2}(?:\.\d+)?[a-z]?))(?:\*{0,2})[^\n\[]*?\[\s*(\d+)\s*marks?\s*\]/gi;
 
   const matches = [...markdown.matchAll(questionRegex)];
@@ -47,8 +47,13 @@ export function parseQuestions(markdown: string): { context: string; questions: 
     const end = i < matches.length - 1 ? matches[i + 1].index! : markdown.length;
     const fullText = markdown.slice(start, end).trim();
 
-    const headerEnd = fullText.indexOf("\n");
-    const bodyText = headerEnd > -1 ? fullText.slice(headerEnd).trim() : "";
+    // Find where the "[X marks]" portion ends within fullText
+    const marksClose = fullText.indexOf("]");
+    // Everything after "]" is question body — includes same-line text AND subsequent lines
+    let bodyText = marksClose > -1 ? fullText.slice(marksClose + 1).trim() : "";
+    
+    // Strip leading dash/em-dash separators that the AI sometimes adds after marks
+    bodyText = bodyText.replace(/^[-—–]+\s*/, "");
 
     // Extract MCQ options (lines starting with - A, - B, - C, - D or A , B , C , D )
     const mcqRegex = /^[-•]?\s*\**([A-D])\**[.\s]+(.+)$/gm;
