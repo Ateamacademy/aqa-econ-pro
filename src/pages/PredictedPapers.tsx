@@ -228,6 +228,17 @@ CRITICAL RULES:
 3. Tables must contain specific numerical data (GDP figures, percentages, prices, indices) so calculation questions are answerable
 4. Every "line X" reference in a question must match an actual quote in the extract
 
+DIAGRAM QUESTION REQUIREMENTS (NON-NEGOTIABLE):
+1. EVERY 9-mark question MUST begin with "Using a diagram" or "With the help of a diagram" — this is mandatory per AQA specification
+2. 9-mark diagram questions follow the KAA marking pattern: Knowledge 1-2, Application 1-2, Analysis 3-5
+3. For supply and demand diagram questions (5-mark pattern from June 2024):
+   - "Use a demand and supply diagram to explain the impact on price and quantity, of the changes in demand and supply of [market]. (Figure X and Extract Y)."
+   - Mark scheme: Knowledge/understanding 1 mark (accurate S&D diagram with labels and original equilibrium E₁), Application 1 mark (identifying the change from context), Analysis up to 3 marks (correct shift direction, new equilibrium, explanation of mechanism)
+4. Each Paper 1 MUST include at least: 1 supply/demand diagram question, 1 externality/welfare loss diagram question
+5. Each Paper 2 MUST include at least: 1 AD/AS diagram question, and reference Phillips Curve or Keynesian AS where relevant
+6. Paper 3 Section B MUST include at least one question requiring diagram analysis
+7. Diagram questions must specify which Figure/Extract to reference
+
 DIFFICULTY GUARDRAILS (MATCH JUNE 2024 STANDARD):
 1. 2-mark questions: precise calculation or definition — NOT easy recall
 2. 4-mark questions: "Explain how the data show..." — requires data interpretation + economic reasoning
@@ -491,7 +502,7 @@ Write a full model answer that would score ${question.marks}/${question.marks}. 
 
 ## Examiner Tip
 Give 2–3 specific, actionable tips. Mention common mistakes (e.g., forgetting state symbols, not balancing equations, missing units, misreading graph axes). Address the student directly.`
-        : `You are marking an AQA A-Level Economics answer.
+        : `You are marking an AQA A-Level Economics answer using the EXACT AQA mark scheme methodology.
 
 Here is the context from the paper:
 ${paperContext}
@@ -503,34 +514,75 @@ ${question.text}
 Here is my answer:
 ${answer}
 
-Mark my answer using AQA mark scheme criteria. You MUST respond in this exact structure:
+Mark my answer using AQA KAA marking criteria. You MUST respond in this exact structure:
 
 ## Mark Scheme
-Give me a mark out of ${question.marks}. Explain the marking criteria and how my answer maps to each level/band.
+Give me a mark out of ${question.marks}. Use the AQA KAA (Knowledge, Application, Analysis) + Evaluation framework:
 
-For diagram questions (especially 9-mark and 25-mark), assess the student's diagram by checking:
-- **Axes**: Are both axes correctly labelled (e.g. Price/Quantity, Price Level/Real GDP)?
-- **Curves**: Are all relevant curves correctly drawn, labelled, and positioned?
-- **Shifts**: If a shift is required, is it correctly shown with arrows and new equilibrium?
-- **Shaded areas**: Are welfare areas (consumer surplus, deadweight loss, etc.) correctly identified?
-- **Equilibrium points**: Are original and new equilibrium points clearly marked?
-- **Annotations**: Are key values (P₁, P₂, Q₁, Q₂, Yf) correctly shown?
+${question.marks <= 5 ? `**For this ${question.marks}-mark question, use this breakdown:**
+- **Knowledge/understanding:** 1 mark for accurate economic knowledge (correct definitions, correctly drawn and labelled diagram with original equilibrium)
+- **Application:** 1 mark for applying to the specific context (identifying the relevant change from the extract/data)
+- **Analysis:** Up to ${question.marks - 2} marks, 1 for each of the following analytical points:
+  • Correct shift direction with labelled curves (e.g. S₁ to S₂, D₁ to D₂)
+  • New equilibrium showing the impact on price and quantity (P₂, Q₂)
+  • Chain of reasoning explaining WHY the shift occurs and its consequences
+  • Any additional analytical points (e.g. ambiguous outcomes, relative magnitude of shifts)` :
+question.marks === 9 ? `**For this 9-mark question, use this breakdown:**
+- **Knowledge/understanding:** Up to 2 marks for accurate definitions and correctly drawn diagram
+- **Application:** Up to 2 marks for applying theory to the specific context with reference to data/extracts
+- **Analysis:** Up to 5 marks for chains of reasoning, diagram explanation, cause→effect→consequence
+
+**DIAGRAM ASSESSMENT (if required by the question):**
+Award diagram marks as follows:
+- Correctly labelled axes (e.g. Price/Quantity, Price Level/Real GDP) — 1 mark
+- Original curves correctly drawn and labelled — 1 mark
+- Correct shift direction with new curve labelled — 1 mark
+- New equilibrium clearly marked with dashed lines to axes — 1 mark
+- Relevant shaded areas correctly identified (welfare loss, surplus, etc.) — 1 mark` :
+question.marks === 15 ? `**For this 15-mark question:**
+- **KAA (Knowledge, Application, Analysis):** Up to 8 marks
+  - Define key terms (1-2 marks)
+  - Apply to context with data references (2-3 marks)
+  - At least 2 developed chains of analysis (3-4 marks)
+- **Evaluation:** Up to 7 marks (if applicable)` :
+`**For this 25-mark question:**
+- **KAA (Knowledge, Application, Analysis):** Up to 12 marks
+  - Define key terms (1-2 marks)
+  - Apply to context using real data (2-3 marks)
+  - Analyse with chain of reasoning + diagram (4-5 marks)
+  - Develop second chain of reasoning (3-4 marks)
+- **Evaluation:** Up to 13 marks
+  - Counter-argument with reasoning (3-4 marks)
+  - Limitation of main argument (2-3 marks)
+  - "It depends on..." factors (2-3 marks)
+  - Final judgement with justification (3-4 marks)
+
+**DIAGRAM in 25-mark essays:** If a diagram is used, award up to 4 KAA marks for it: correct axes (1), correct curves (1), correct shift (1), correct analysis of diagram (1).`}
 
 Use any "[DIAGRAM:" notes or "[DIAGRAM NOTES]" blocks in the student's answer as evidence of their diagram work. A well-described diagram with correct labels, shifts, and shading should receive full diagram marks.
 
+List each mark point and whether it was awarded. If a mark was lost, explain exactly why.
 Speak DIRECTLY to me using "you" and "your".
 
 ## Model Answer
-Write a full top-band model answer that would score full marks for this question. For diagram questions, describe the diagram in full detail:
-- Name the diagram type
-- Specify axes labels
-- List all curves with their labels
-- Describe the initial equilibrium
-- Explain the shift and new equilibrium
-- Identify the shaded area and what it represents
+Write a full top-band model answer that would score full marks. For diagram questions, describe the diagram in full detail using this format:
+
+**Diagram: [Type]**
+- Axes: [y-axis label] / [x-axis label]
+- Original curves: [list with labels]
+- Initial equilibrium: E₁ at (P₁, Q₁)
+- Shift: [which curve shifts, direction, new label]
+- New equilibrium: E₂ at (P₂, Q₂)
+- Shaded area: [what it represents]
+- Key conclusion: [economic interpretation]
 
 ## Examiner Tip
-Give 2-3 specific, actionable tips for how I can improve. For diagram questions, remind me to always label axes, show original AND new equilibrium, and shade relevant areas. Address me directly. Be encouraging but honest about where I lost marks.`;
+Give 2-3 specific, actionable tips. For diagram questions:
+- Always label BOTH axes correctly
+- Show BOTH original and new equilibrium with dashed lines to axes
+- Shade relevant welfare areas (consumer surplus, deadweight loss, etc.)
+- Explain what the diagram shows — don't just draw it
+Address me directly. Be encouraging but honest about where I lost marks.`;
 
       let result = "";
       await streamChat({
