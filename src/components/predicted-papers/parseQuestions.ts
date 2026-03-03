@@ -1,8 +1,14 @@
+export interface MCQOption {
+  letter: string;
+  text: string;
+}
+
 export interface ParsedQuestion {
   id: string;
   label: string;
   marks: number;
   text: string;
+  mcqOptions?: MCQOption[];
 }
 
 
@@ -42,7 +48,23 @@ export function parseQuestions(markdown: string): { context: string; questions: 
     const fullText = markdown.slice(start, end).trim();
 
     const headerEnd = fullText.indexOf("\n");
-    const text = headerEnd > -1 ? fullText.slice(headerEnd).trim() : "";
+    const bodyText = headerEnd > -1 ? fullText.slice(headerEnd).trim() : "";
+
+    // Extract MCQ options (lines starting with - A, - B, - C, - D or A , B , C , D )
+    const mcqRegex = /^[-•]?\s*\**([A-D])\**[.\s]+(.+)$/gm;
+    const mcqMatches = [...bodyText.matchAll(mcqRegex)];
+    
+    let text = bodyText;
+    let mcqOptions: MCQOption[] | undefined;
+    
+    if (mcqMatches.length >= 2) {
+      mcqOptions = mcqMatches.map(m => ({
+        letter: m[1],
+        text: m[2].trim().replace(/\*+$/g, ''),
+      }));
+      // Remove MCQ option lines from the question text
+      text = bodyText.replace(mcqRegex, '').trim();
+    }
 
     const normalizedNumber = match[1].replace(/\s+/g, "");
 
@@ -51,6 +73,7 @@ export function parseQuestions(markdown: string): { context: string; questions: 
       label: `Question ${normalizedNumber}`,
       marks: parseInt(match[2], 10),
       text,
+      mcqOptions,
     };
   });
 
