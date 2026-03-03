@@ -11,7 +11,7 @@ import { GraphPaper } from "@/components/tools/GraphPaper";
 import { GeometryTools } from "@/components/tools/GeometryTools";
 import { cn } from "@/lib/utils";
 
-import type { ParsedQuestion } from "./parseQuestions";
+import type { ParsedQuestion, MCQOption } from "./parseQuestions";
 
 interface QuestionCardProps {
   question: ParsedQuestion;
@@ -52,6 +52,8 @@ export function QuestionCard({
   const [showDiagram, setShowDiagram] = useState(false);
   const [geoTool, setGeoTool] = useState<string | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  
+  const isMCQ = !!question.mcqOptions && question.mcqOptions.length >= 2;
 
   const toggle = (section: string) =>
     setOpenSection((prev) => (prev === section ? null : section));
@@ -117,100 +119,143 @@ export function QuestionCard({
       {/* Answer area */}
       <div className="p-5 border-b border-border bg-muted/30">
         <p className="text-xs font-medium text-muted-foreground mb-2 flex items-center gap-1.5">
-          <Send className="h-3.5 w-3.5" /> Your Answer
+          <Send className="h-3.5 w-3.5" /> {isMCQ ? "Select Your Answer" : "Your Answer"}
         </p>
 
-        {/* Tool toggles */}
-        {hasExtraTools && !feedback && (
-          <div className="flex flex-wrap gap-1.5 mb-2">
-            {showDrawingCanvas && (
-              <Button type="button" variant={showCanvas ? "default" : "outline"} size="sm" className="h-7 text-xs gap-1"
-                onClick={() => { setShowCanvas(!showCanvas); setShowGraph(false); setShowDiagram(false); }}>
-                <PenLine className="h-3 w-3" /> Drawing
-              </Button>
-            )}
-            {showGraphPaper && (
-              <Button type="button" variant={showGraph ? "default" : "outline"} size="sm" className="h-7 text-xs gap-1"
-                onClick={() => { setShowGraph(!showGraph); setShowCanvas(false); setShowDiagram(false); }}>
-                <BarChart3 className="h-3 w-3" /> Graph
-              </Button>
-            )}
-            {showEconDiagram && (
-              <Button type="button" variant={showDiagram ? "default" : "outline"} size="sm" className="h-7 text-xs gap-1"
-                onClick={() => { setShowDiagram(!showDiagram); setShowCanvas(false); setShowGraph(false); }}>
-                <BarChart3 className="h-3 w-3" /> Diagram
-              </Button>
-            )}
+        {/* MCQ Options */}
+        {isMCQ && (
+          <div className="space-y-2 mb-3">
+            {question.mcqOptions!.map((opt) => (
+              <label
+                key={opt.letter}
+                className={cn(
+                  "flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-colors",
+                  answer === opt.letter
+                    ? "border-primary bg-primary/10"
+                    : "border-border bg-background hover:bg-muted/50",
+                  feedback && "cursor-default opacity-80"
+                )}
+              >
+                <input
+                  type="radio"
+                  name={`mcq-${question.id}`}
+                  value={opt.letter}
+                  checked={answer === opt.letter}
+                  onChange={() => !feedback && onAnswerChange(opt.letter)}
+                  disabled={!!feedback}
+                  className="sr-only"
+                />
+                <span className={cn(
+                  "flex items-center justify-center w-7 h-7 rounded-full border-2 text-xs font-bold shrink-0",
+                  answer === opt.letter
+                    ? "border-primary bg-primary text-primary-foreground"
+                    : "border-muted-foreground/40 text-muted-foreground"
+                )}>
+                  {opt.letter}
+                </span>
+                <span className="text-sm text-foreground">{opt.text}</span>
+              </label>
+            ))}
           </div>
         )}
 
-        {/* Drawing canvas */}
-        {showCanvas && !feedback && (
-          <div className="mb-3">
-            <DrawingCanvas showGrid={showGeometryTools} onSave={() => insertVisualTemplate("diagram")} />
-          </div>
-        )}
-        
-        {/* Graph paper */}
-        {showGraph && !feedback && <div className="mb-3"><GraphPaper /></div>}
-        
-        {/* Economics diagram builder */}
-        {showDiagram && !feedback && <div className="mb-3"><EconDiagramBuilder onSave={handleDiagramSave} /></div>}
-
-        {/* Geometry tools */}
-        {showGeometryTools && !feedback && (
-          <div className="mb-3"><GeometryTools activeTool={geoTool} onToolChange={setGeoTool} /></div>
-        )}
-
-        {showMathTools && !feedback && (
-          <div className="mb-2">
-            <EquationToolbar onInsert={insertSymbol} />
-          </div>
-        )}
-
-        {!feedback && (canInsertGraphNotes || canInsertDiagramNotes) && (
-          <div className="flex flex-wrap gap-1.5 mb-2">
-            {canInsertGraphNotes && (
-              <Button type="button" variant="outline" size="sm" className="h-7 text-xs" onClick={() => insertVisualTemplate("graph")}>
-                Add Graph Notes Template
-              </Button>
+        {/* Non-MCQ tools and textarea */}
+        {!isMCQ && (
+          <>
+            {/* Tool toggles */}
+            {hasExtraTools && !feedback && (
+              <div className="flex flex-wrap gap-1.5 mb-2">
+                {showDrawingCanvas && (
+                  <Button type="button" variant={showCanvas ? "default" : "outline"} size="sm" className="h-7 text-xs gap-1"
+                    onClick={() => { setShowCanvas(!showCanvas); setShowGraph(false); setShowDiagram(false); }}>
+                    <PenLine className="h-3 w-3" /> Drawing
+                  </Button>
+                )}
+                {showGraphPaper && (
+                  <Button type="button" variant={showGraph ? "default" : "outline"} size="sm" className="h-7 text-xs gap-1"
+                    onClick={() => { setShowGraph(!showGraph); setShowCanvas(false); setShowDiagram(false); }}>
+                    <BarChart3 className="h-3 w-3" /> Graph
+                  </Button>
+                )}
+                {showEconDiagram && (
+                  <Button type="button" variant={showDiagram ? "default" : "outline"} size="sm" className="h-7 text-xs gap-1"
+                    onClick={() => { setShowDiagram(!showDiagram); setShowCanvas(false); setShowGraph(false); }}>
+                    <BarChart3 className="h-3 w-3" /> Diagram
+                  </Button>
+                )}
+              </div>
             )}
-            {canInsertDiagramNotes && (
-              <Button type="button" variant="outline" size="sm" className="h-7 text-xs" onClick={() => insertVisualTemplate("diagram")}>
-                Add Diagram Notes Template
-              </Button>
+
+            {/* Drawing canvas */}
+            {showCanvas && !feedback && (
+              <div className="mb-3">
+                <DrawingCanvas showGrid={showGeometryTools} onSave={() => insertVisualTemplate("diagram")} />
+              </div>
             )}
-          </div>
+            
+            {/* Graph paper */}
+            {showGraph && !feedback && <div className="mb-3"><GraphPaper /></div>}
+            
+            {/* Economics diagram builder */}
+            {showDiagram && !feedback && <div className="mb-3"><EconDiagramBuilder onSave={handleDiagramSave} /></div>}
+
+            {/* Geometry tools */}
+            {showGeometryTools && !feedback && (
+              <div className="mb-3"><GeometryTools activeTool={geoTool} onToolChange={setGeoTool} /></div>
+            )}
+
+            {showMathTools && !feedback && (
+              <div className="mb-2">
+                <EquationToolbar onInsert={insertSymbol} />
+              </div>
+            )}
+
+            {!feedback && (canInsertGraphNotes || canInsertDiagramNotes) && (
+              <div className="flex flex-wrap gap-1.5 mb-2">
+                {canInsertGraphNotes && (
+                  <Button type="button" variant="outline" size="sm" className="h-7 text-xs" onClick={() => insertVisualTemplate("graph")}>
+                    Add Graph Notes Template
+                  </Button>
+                )}
+                {canInsertDiagramNotes && (
+                  <Button type="button" variant="outline" size="sm" className="h-7 text-xs" onClick={() => insertVisualTemplate("diagram")}>
+                    Add Diagram Notes Template
+                  </Button>
+                )}
+              </div>
+            )}
+
+            <Textarea
+              ref={textareaRef}
+              value={answer}
+              onChange={(e) => onAnswerChange(e.target.value)}
+              rows={5}
+              placeholder={
+                subject === "chemistry"
+                  ? "Type your answer here... Include balanced equations with state symbols where needed."
+                  : subject === "economics"
+                  ? "Type your answer here... Use diagrams where relevant. The AI examiner will mark using AQA KAA criteria."
+                  : showMathTools
+                  ? "Type your answer here... Show all working. Use the toolbar above for maths symbols."
+                  : "Type your answer here... The AI examiner will mark it for you."
+              }
+              className="bg-background font-mono text-sm"
+              disabled={!!feedback}
+            />
+
+            {showMathTools && subject !== "economics" && (
+              <p className="text-[10px] text-muted-foreground mt-1.5">
+                Tip: Show each step of working on a new line. Use symbols above or type e.g. x^2, sqrt(9), pi.
+              </p>
+            )}
+            {subject === "economics" && (
+              <p className="text-[10px] text-muted-foreground mt-1.5">
+                Tip: Draw your diagram using the Drawing tool with multiple colours (e.g. blue for demand, red for supply). Then add Diagram Notes to describe labels, shifts, and shaded areas so the AI can mark accurately.
+              </p>
+            )}
+          </>
         )}
 
-        <Textarea
-          ref={textareaRef}
-          value={answer}
-          onChange={(e) => onAnswerChange(e.target.value)}
-          rows={5}
-          placeholder={
-            subject === "chemistry"
-              ? "Type your answer here... Include balanced equations with state symbols where needed."
-              : subject === "economics"
-              ? "Type your answer here... Use diagrams where relevant. The AI examiner will mark using AQA KAA criteria."
-              : showMathTools
-              ? "Type your answer here... Show all working. Use the toolbar above for maths symbols."
-              : "Type your answer here... The AI examiner will mark it for you."
-          }
-          className="bg-background font-mono text-sm"
-          disabled={!!feedback}
-        />
-
-        {showMathTools && subject !== "economics" && (
-          <p className="text-[10px] text-muted-foreground mt-1.5">
-            Tip: Show each step of working on a new line. Use symbols above or type e.g. x^2, sqrt(9), pi.
-          </p>
-        )}
-        {subject === "economics" && (
-          <p className="text-[10px] text-muted-foreground mt-1.5">
-            Tip: Draw your diagram using the Drawing tool with multiple colours (e.g. blue for demand, red for supply). Then add Diagram Notes to describe labels, shifts, and shaded areas so the AI can mark accurately.
-          </p>
-        )}
       </div>
 
       {/* Mark button */}

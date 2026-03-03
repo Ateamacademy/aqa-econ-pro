@@ -190,6 +190,19 @@ MCQ REQUIREMENTS:
 - Include MCQs on: market structures, elasticity, costs/revenue, labour markets, AD/AS, fiscal/monetary policy, trade, exchange rates, development
 - Difficulty must match June 2024 Paper 3 — NOT easy recall questions
 
+DIAGRAM-BASED MCQ REQUIREMENTS (CRITICAL — match AQA June 2024 Paper 3 Q10, Q11 style):
+- At least 6 MCQs MUST include a "Figure X" diagram described in detail
+- Diagram MCQ examples to follow:
+  1. Joint supply / competitive demand: "Figure X shows how the markets for Good X and Good Y are affected by [change]. It can be concluded that Good X and Good Y are in: A competitive demand, B composite demand, C derived demand, D joint supply." Include TWO side-by-side S&D diagrams showing shifts with labelled P₁, P₂, Q₁, Q₂ and equilibrium points.
+  2. Cost/revenue curves: "Figure X shows the short-run average costs (AC), marginal costs (MC), average revenue (AR) and marginal revenue (MR) curves for a typical firm in a [market structure]. In the long run, market forces are most likely to cause the firm's revenue curves to: A shift left and become flatter, B shift left and become steeper, C shift right and become flatter, D shift right and become steeper."
+  3. AD/AS diagrams: "Figure X shows the economy at equilibrium Y₁. A decrease in [variable] would shift: A AD left, B AD right, C SRAS left, D SRAS right."
+  4. PPF diagrams: "Figure X shows a production possibility frontier. A movement from point X to point Y represents: A economic growth, B opportunity cost, C productive efficiency, D allocative efficiency."
+  5. Lorenz curve / Gini coefficient: "Figure X shows Lorenz curves for Country A and Country B. Which is true? A Country A has greater equality, B Country B has a lower Gini coefficient, ..."
+  6. Labour market diagrams: "Figure X shows the labour market for [industry]. The introduction of a minimum wage at W₂ would result in: A excess demand for labour, B excess supply of labour, ..."
+- Each diagram MCQ must describe the diagram using markdown text (axis labels, curve names, key points, equilibrium positions) so the student can visualise it
+- Format diagram descriptions as: "**Figure X:** [Diagram description with axes, curves, points labelled]"
+- Place the Figure description BEFORE the question text
+
 ## Section B
 Total for this Investigation: 50 marks
 
