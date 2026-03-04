@@ -755,29 +755,46 @@ question.marks === 15 ? `**For this 15-mark question:**
 
 **DIAGRAM in 25-mark essays:** If a diagram is used, award up to 4 KAA marks for it: correct axes (1), correct curves (1), correct shift (1), correct analysis of diagram (1).`}
 
+=== DIAGRAM MARKING CHECKLIST (apply ALL 5 criteria if a diagram is present) ===
+1. **AXES** (1 mark): Both axes labelled correctly? (Price/Quantity, Price Level/Real GDP, etc.)
+2. **CURVE DIRECTION** (1 mark): Demand downward sloping? Supply upward sloping? AD downward, SRAS upward, LRAS vertical?
+3. **SHIFT DIRECTION** (1 mark): Does the shift match the scenario? (e.g., tax → supply left, income rise → demand right)
+4. **EQUILIBRIUM** (1 mark): Original equilibrium (P₁,Q₁) AND new equilibrium (P₂,Q₂) identified with dotted lines?
+5. **EXPLANATION-DIAGRAM CONSISTENCY** (1-2 marks): Does the written answer match what the diagram shows? If diagram shows supply left but student writes "price falls" → INCONSISTENT → deny marks.
+
 Use any "[DIAGRAM:" notes or "[DIAGRAM NOTES]" blocks in the student's answer as evidence of their hand-drawn diagram work. Students draw diagrams freehand using a drawing canvas — assess the diagram based on their written description of labels, curves, shifts, equilibrium points, and shaded areas. A well-described diagram with correct labels, shifts, and shading should receive full diagram marks.
 
 List each mark point and whether it was awarded. If a mark was lost, explain exactly why.
+
+For diagram questions, include a **Diagram Assessment** section:
+- **Axes**: ✓/✗ — [detail]
+- **Curve direction**: ✓/✗ — [detail]
+- **Shift direction**: ✓/✗ — [detail]
+- **Equilibrium**: ✓/✗ — [detail]
+- **Explanation consistency**: ✓/✗ — [detail]
+- **Diagram mark**: [X/Y]
+
 Speak DIRECTLY to me using "you" and "your".
 
 ## Model Answer
 Write a full top-band model answer that would score full marks. For diagram questions, describe the diagram in full detail using this format:
 
 **Diagram: [Type]**
-- Axes: [y-axis label] / [x-axis label]
-- Original curves: [list with labels]
-- Initial equilibrium: E₁ at (P₁, Q₁)
-- Shift: [which curve shifts, direction, new label]
-- New equilibrium: E₂ at (P₂, Q₂)
-- Shaded area: [what it represents]
-- Key conclusion: [economic interpretation]
+- **X-axis**: Quantity (Q)
+- **Y-axis**: Price (P)
+- **Initial curves**: D₁ (downward sloping from top-left to bottom-right), S₁ (upward sloping from bottom-left to top-right)
+- **Initial equilibrium**: E₁ at intersection of D₁ and S₁, giving P₁ and Q₁ (show dotted lines to both axes)
+- **Shift**: [Which curve] shifts [direction] from [old label] to [new label], because [economic reason]
+- **New equilibrium**: E₂ at intersection, giving P₂ and Q₂ (show dotted lines to both axes)
+- **Shaded area**: [what it represents, e.g., welfare loss, tax revenue, consumer surplus change]
+- **Key conclusion**: Price [rises/falls] from P₁ to P₂, Quantity [rises/falls] from Q₁ to Q₂
 
 ## Examiner Tip
 Give 2-3 specific, actionable tips. For diagram questions:
-- Always label BOTH axes correctly
-- Show BOTH original and new equilibrium with dashed lines to axes
-- Shade relevant welfare areas (consumer surplus, deadweight loss, etc.)
-- Explain what the diagram shows — don't just draw it
+- Always label BOTH axes correctly — examiners deny the axes mark if even one is missing
+- Show BOTH original and new equilibrium with dashed lines to axes — this shows the examiner you understand the price/quantity effects
+- Ensure your written explanation MATCHES your diagram — if you draw supply shifting left, your text must say "price rises and quantity falls"
+- A rough but correctly labelled diagram scores higher than a neat but incorrectly shifted one
 Address me directly. Be encouraging but honest about where I lost marks.`;
 
       let result = "";
@@ -785,7 +802,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
       // Build multimodal message if diagram image is provided
       const messageContent: any = diagramImage
         ? [
-            { type: "text", text: markingPrompt + "\n\n[The student has drawn a diagram — see the attached image. Analyze the diagram visually: identify the diagram type, axis labels, curves, shifts, equilibrium points, shaded areas, and any annotations. Use this visual evidence alongside any written Diagram Notes to award marks.]" },
+            { type: "text", text: markingPrompt + "\n\n[The student has drawn a diagram — see the attached image. Apply the DIAGRAM MARKING CHECKLIST: (1) Are axes labelled Price and Quantity? (2) Is demand downward sloping? (3) Is supply upward sloping? (4) Is the shift in the correct direction for the scenario? (5) Is the new equilibrium correctly identified? Check if the written explanation logically matches what the diagram shows. Award/deny marks accordingly.]" },
             { type: "image_url", image_url: { url: diagramImage } },
           ]
         : markingPrompt;
