@@ -23,6 +23,8 @@ import {
   MATHS_PAST_PAPER_KNOWLEDGE,
   CHEMISTRY_PAST_PAPER_KNOWLEDGE,
   ECONOMICS_PAST_PAPER_KNOWLEDGE,
+  EDEXCEL_A_PAST_PAPER_KNOWLEDGE,
+  EDEXCEL_B_PAST_PAPER_KNOWLEDGE,
 } from "@/data/pastPaperPatterns";
 import { generateKnowledgeGraphPrompt } from "@/data/economicsKnowledgeGraph";
 import { generatePaperPdf } from "@/lib/generatePaperPdf";
@@ -171,9 +173,13 @@ Topics: globalisation, trade, WTO, trading blocs, development, financial markets
 
   const template = isSpecA ? specATemplates[paperNum] : specBTemplates[paperNum];
 
+  const patternKnowledge = isSpecA ? EDEXCEL_A_PAST_PAPER_KNOWLEDGE : EDEXCEL_B_PAST_PAPER_KNOWLEDGE;
+
   return `You are an expert ${specName} chief examiner trained on every ${specName} paper from 2017–2024.
 
 Generate a COMPLETE predicted exam paper for ${paperLabel}.
+
+${patternKnowledge}
 
 ${template}
 

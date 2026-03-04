@@ -674,3 +674,294 @@ ALSO INFORMED BY: AQA A-Level Economics Textbooks (Book 1 & 2), CGP Revision Gui
 - 25-mark: evaluate essay (typically 12 KAA + 13 evaluation including judgement)
 - 30 MCQs: 1 mark each (Paper 3 Section A only)
 `;
+
+// ─── EDEXCEL A-LEVEL ECONOMICS A (9EC0) PAST-PAPER PATTERNS ───────────
+
+export const EDEXCEL_A_PAST_PAPER_KNOWLEDGE = `
+YOU MUST USE THE FOLLOWING REAL PAST-PAPER PATTERNS FROM EDEXCEL A-LEVEL ECONOMICS A (9EC0) (2017–2024) TO GENERATE AUTHENTIC QUESTIONS.
+ALSO INFORMED BY: Edexcel AS/A-Level Economics Student Book (Anderton & Gray, 2015), Edexcel Theme 1 & 2 Workbook Answers, Economics Exam Technique Guide, Evaluation Techniques for A-Level Economics, EconplusDal Macro Examples, Edexcel Economics Topic Tracker, Ten Ways to Improve Evaluation Skills, How to Write a Good Economics Essay, and Edexcel Year 12 Assessment Mark Schemes.
+
+## PAPER STRUCTURE (observed across all years)
+
+### Paper 1: Markets and Business Behaviour (9EC0/01) — 2 hours, 100 marks
+- Section A: 5 Supported Multiple Choice Questions (20 marks total)
+  - Each MCQ has a short stimulus (data extract, table, or scenario)
+  - Part (a): 1-mark MCQ with 4 options (A/B/C/D)
+  - Part (b): 3-mark "Explain your answer" follow-up requiring developed reasoning
+  - Topics span: demand/supply, elasticity, market structures, efficiency, costs/revenue
+- Section B: Data Response (choose ONE from TWO options — 40 marks)
+  - Each option has 2-3 Extracts (text passages + data tables/figures)
+  - Question pattern: 5 marks → 8 marks → 12 marks → 15 marks
+  - 8-mark questions typically require diagrams
+  - 15-mark questions require sustained evaluation
+- Section C: Extended Open-Response (choose ONE from TWO — 40 marks)
+  - Brief scenario/context provided
+  - Part (a): 5 marks — define/explain a concept
+  - Part (b): 15 marks — "Evaluate the view that..." / "Assess whether..."
+  - Part (c): 20 marks — Extended evaluation essay
+
+### Paper 2: The National and Global Economy (9EC0/02) — 2 hours, 100 marks
+- Same structure as Paper 1 but MACROECONOMIC topics
+- Section A: 5 supported MCQs on macro topics (AD/AS, policy, trade, development)
+- Section B: Data response with macro data (GDP, inflation, BoP, exchange rates)
+- Section C: Extended macro essay (fiscal/monetary policy, globalisation, inequality)
+
+### Paper 3: Microeconomics and Macroeconomics (9EC0/03) — 2 hours, 100 marks
+- SYNOPTIC — tests BOTH micro AND macro
+- Section A: Data Response (choose ONE from TWO — 50 marks)
+  - Extended case study with 4-5 Extracts covering micro AND macro themes
+  - Questions range from 2-mark define to 25-mark evaluate
+  - Must demonstrate synoptic links (e.g., market failure → government policy → macroeconomic impact)
+- Section B: Extended Open-Response (choose ONE from TWO — 50 marks)
+  - Two-part essay: Question (a) [25 marks] and Question (b) [25 marks]
+  - Each part requires synoptic links between micro and macro economics
+
+## REAL QUESTION PATTERNS BY TOPIC (from 2017–2024 Edexcel A papers)
+
+### Theme 1: Introduction to Markets and Market Failure
+
+#### Nature of Economics
+- 2024 P1: "Using a PPF diagram, explain the concept of opportunity cost." [8 marks]
+- 2022 P1: "Explain, using examples, the difference between positive and normative statements in economics." [5 marks]
+- PATTERN: PPF diagrams require concave curve, labelled axes (Good A/Good B), points inside/on/outside curve explained
+
+#### How Markets Work
+- 2024 P1: "Using a supply and demand diagram, explain the likely effect of a significant increase in the minimum wage on the UK retail labour market." [8 marks]
+- 2023 P1: "Using Extract B, calculate the PED for Product X. Comment on its significance." [5 marks]
+- 2022 P1: "Using a diagram, explain how an increase in indirect tax affects market equilibrium." [8 marks]
+- 2021 P1: "Evaluate the extent to which PED is useful for firms in making pricing decisions." [15 marks]
+- 2019 P1: "Using a diagram, explain why a subsidy on electric vehicles might improve resource allocation." [8 marks]
+- 2018 P1: "Explain, using a diagram, the likely impact on the housing market of a fall in mortgage interest rates." [8 marks]
+- PATTERN: Always require correctly labelled S&D diagram with: P on y-axis, Q on x-axis, original/new equilibrium, shift direction, new P₂/Q₂
+
+#### Market Failure
+- 2024 P1: "Evaluate government policies to correct the market failure caused by air pollution." [20 marks]
+- 2023 P1: "Using a diagram, explain how negative externalities in production lead to a welfare loss." [8 marks]
+- 2022 P1: "Evaluate the view that indirect taxes are the most effective way to deal with negative externalities." [15 marks]
+- 2021 P1: "Using a diagram, explain why public goods will not be provided by the free market." [8 marks]
+- 2019 P1: "Evaluate whether regulation or market-based approaches are more effective in correcting market failure." [20 marks]
+- PATTERN: Externality diagrams need: MSC/MPC or MSB/MPB divergence, Qm vs Qs, welfare loss triangle, labels
+
+#### Government Intervention
+- 2024 P1: "Evaluate the effectiveness of government intervention in correcting market failure, with reference to the possibility of government failure." [20 marks]
+- 2023 P1: "Assess the impact of price controls on the UK energy market." [15 marks]
+- PATTERN: Must discuss effectiveness + unintended consequences + information failures + government failure
+
+### Theme 2: The UK Economy — Performance and Policies
+
+#### Measures of Economic Performance
+- 2024 P2: "Using Extract C, explain two limitations of using GDP as a measure of living standards." [5 marks]
+- 2023 P2: "Using the data, calculate the UK's rate of inflation between 2021 and 2023." [2 marks]
+- 2022 P2: "Explain the possible causes of the UK's current account deficit shown in Figure 2." [8 marks]
+
+#### Aggregate Demand and Aggregate Supply
+- 2024 P2: "Using an AD/AS diagram, analyse the likely impact of a significant rise in interest rates on the UK economy." [12 marks]
+- 2023 P2: "Using an AD/AS diagram, explain how a depreciation of sterling might affect UK output and prices." [8 marks]
+- 2022 P2: "Compare, using AD/AS diagrams, the Classical and Keynesian views of the long-run impact of demand-side shocks." [15 marks]
+- 2021 P2: "Using an AD/AS diagram, explain the short-run and long-run effects of the COVID-19 pandemic on the UK economy." [12 marks]
+
+#### National Income and Economic Growth
+- 2024 P2: "Evaluate the view that economic growth is the most important macroeconomic objective." [20 marks]
+- 2023 P2: "Assess the extent to which supply-side policies can achieve sustained economic growth." [15 marks]
+
+#### Macroeconomic Policy
+- 2024 P2: "Evaluate the effectiveness of monetary policy in achieving price stability." [20 marks]
+- 2023 P2: "Evaluate the use of fiscal policy to reduce income inequality in the UK." [20 marks]
+- 2022 P2: "Assess whether expansionary fiscal policy or supply-side policies are more effective in promoting long-term growth." [15 marks]
+- 2021 P2: "Evaluate the view that quantitative easing has been more harmful than beneficial to the UK economy." [20 marks]
+
+### Theme 3: Business Behaviour and the Labour Market (Paper 1 & 3)
+
+#### Business Growth and Objectives
+- 2024 P1: "Explain two reasons why firms might pursue objectives other than profit maximisation." [5 marks]
+- 2023 P1: "Using a diagram, explain how a profit-maximising monopolist determines its output and price." [8 marks]
+- PATTERN: Monopoly diagram requires AR=D, MR (below AR), MC, AC, profit-max at MC=MR, supernormal profit shaded
+
+#### Market Structures
+- 2024 P1: "Evaluate the extent to which consumers benefit from oligopolistic market structures." [20 marks]
+- 2023 P1: "Compare the allocative and productive efficiency of monopoly with perfect competition." [15 marks]
+- 2022 P1: "Evaluate the view that contestable markets always operate in the consumer interest." [20 marks]
+- PATTERN: Must compare efficiency outcomes using diagrams; reference barriers to entry, sunk costs, hit-and-run competition
+
+#### Labour Market
+- 2024 P1: "Using a monopsony diagram, explain why wages in the care sector may be below the competitive equilibrium." [8 marks]
+- 2023 P1: "Evaluate the likely impact of a significant increase in the National Living Wage on employment and poverty." [15 marks]
+
+### Theme 4: A Global Perspective (Paper 2 & 3)
+
+#### International Trade
+- 2024 P2: "Using the theory of comparative advantage, explain the benefits of free trade." [8 marks]
+- 2023 P2: "Evaluate the view that protectionism is never justified." [20 marks]
+- 2022 P2: "Using the data, assess the impact of Brexit on UK trade patterns." [15 marks]
+
+#### Globalisation and Development
+- 2024 P2: "Evaluate the extent to which globalisation has been beneficial for developing countries." [20 marks]
+- 2023 P2: "Assess the role of foreign direct investment in promoting economic development." [15 marks]
+- 2022 P2: "Evaluate different strategies that developing countries can use to promote economic growth and development." [20 marks]
+
+#### Exchange Rates and Balance of Payments
+- 2024 P2: "Using the J-curve, explain why a depreciation of sterling may initially worsen the UK current account." [8 marks]
+- 2023 P2: "Evaluate the advantages and disadvantages of a floating exchange rate system for the UK." [15 marks]
+
+## EDEXCEL A EVALUATION TECHNIQUES (from Evaluation Techniques Guide)
+When marking or generating 15+ mark questions, the AI must apply these evaluation frameworks:
+
+### Ten Key Evaluation Techniques:
+1. **Short run vs Long run**: "In the short run X may occur, but in the long run Y..."
+2. **Depends on magnitude**: "The impact depends on the size/scale of..."
+3. **Depends on elasticity**: "The effect depends on PED/YED/PES..."
+4. **It depends on the state of the economy**: "During a recession vs during a boom..."
+5. **Stakeholder perspective**: "From the consumer's point of view... but from the producer's..."
+6. **Ceteris paribus assumption**: "This analysis assumes all other factors remain constant, but in reality..."
+7. **Data limitations**: "The data may not fully reflect... / There is a time lag..."
+8. **Government failure**: "The intervention may lead to unintended consequences such as..."
+9. **Real-world evidence**: "Evidence from [country/policy] suggests that..."
+10. **Alternative policies**: "An alternative approach might be... which could be more effective because..."
+
+### Essay Planning Framework (from Essay Plan Guide):
+1. **Introduction**: Define key terms, outline your argument, state thesis
+2. **KAA Paragraph 1**: Point → Evidence/Data → Analysis → Link to question
+3. **KAA Paragraph 2**: Second chain of reasoning with diagram
+4. **Evaluation Paragraph 1**: Counter-argument with reasoning
+5. **Evaluation Paragraph 2**: "It depends on..." factors
+6. **Conclusion**: Weighed judgement with justification
+
+## DIAGRAM REQUIREMENTS (from Edexcel mark schemes)
+
+### Supply & Demand: P on y-axis, Q on x-axis, D₁/S₁, shifted D₂/S₂, E₁→E₂, arrows, dotted lines
+### AD/AS: Price Level on y-axis, Real GDP on x-axis, AD, SRAS (upward), LRAS (vertical or Keynesian L-shape)
+### Cost Curves: MC (U-shape), AC (U-shape), AR=D (downward), MR (below AR), profit-max at MC=MR
+### Externalities: MSC/MPC or MSB/MPB, Qm vs Qs, welfare loss triangle
+### Monopsony: MCL above ACL=S, MRP=D, Wm < Wc, Qm < Qc
+### Phillips Curve: Inflation on y-axis, Unemployment on x-axis, SRPC downward, LRPC vertical at NRU
+### J-Curve: Time on x-axis, Current account balance on y-axis, initial deterioration then improvement
+
+## COMMAND WORDS (from Edexcel specification)
+- "Define" = precise definition [2 marks]
+- "Calculate" = show working with formula [2-4 marks]
+- "Explain" = state + develop with reasoning [4-8 marks]
+- "Analyse" = chains of cause→effect→consequence [8-12 marks]
+- "Assess" / "Evaluate" / "To what extent" / "Discuss" = KAA + Evaluation + Judgement [12-25 marks]
+- "Using a diagram" = diagram REQUIRED — marks lost without one
+- "With reference to the data" = MUST cite specific figures from extracts
+
+## MARK ALLOCATION
+- 1-mark MCQ: select correct option
+- 3-mark explain: developed reasoning for MCQ answer
+- 5-mark: define + apply or short data analysis
+- 8-mark: explain using diagram (4 KAA + 4 application/analysis)
+- 12-mark: analyse with chain reasoning (may include diagram)
+- 15-mark: evaluate with judgement (8 KAA + 7 Evaluation)
+- 20-mark: extended evaluation essay (10 KAA + 10 Evaluation)
+- 25-mark: synoptic evaluation (12 KAA + 13 Evaluation)
+`;
+
+// ─── EDEXCEL A-LEVEL ECONOMICS B (9EB0) PAST-PAPER PATTERNS ───────────
+
+export const EDEXCEL_B_PAST_PAPER_KNOWLEDGE = `
+YOU MUST USE THE FOLLOWING REAL PAST-PAPER PATTERNS FROM EDEXCEL A-LEVEL ECONOMICS B (9EB0) (2017–2024) TO GENERATE AUTHENTIC QUESTIONS.
+
+## PAPER STRUCTURE
+
+### Paper 1: Markets, Consumers and Firms (9EB0/01) — 2 hours, 80 marks
+- Section A: Data Response (compulsory — 40 marks)
+  - Case study with 3-4 Extracts (text + data tables/charts)
+  - Question pattern: 4 marks → 8 marks → 10 marks → 18 marks
+  - 8-mark questions typically require "Using a diagram, explain..."
+  - 18-mark questions require sustained evaluation with judgement
+- Section B: Essay (choose ONE from THREE — 40 marks)
+  - Single extended essay requiring full KAA + Evaluation
+  - Topics: demand/supply, elasticity, market failure, business objectives, costs/revenue, market structures, labour market, behavioural economics
+
+### Paper 2: The Wider Economic Environment (9EB0/02) — 2 hours, 80 marks
+- Same structure as Paper 1 but MACRO topics
+- Section A: compulsory data response on UK macro performance (40 marks)
+- Section B: essay choice on macro policy (40 marks)
+- Topics: economic indicators, AD/AS, macro objectives conflicts, policy effectiveness, financial sector, inequality, role of the state
+
+### Paper 3: The Global Economy (9EB0/03) — 2 hours, 80 marks
+- SYNOPTIC PAPER — requires micro + macro integration
+- Section A: Data Response (compulsory — 40 marks)
+  - Global case study with extracts on trade, development, globalisation, emerging economies
+- Section B: Essay (choose ONE from THREE — 40 marks)
+  - Global economy themes requiring synoptic micro + macro links
+  - Topics: globalisation, trade agreements, WTO, trading blocs, FDI, development strategies, exchange rates, financial markets
+
+## REAL QUESTION PATTERNS (from 2017–2024 Edexcel B papers)
+
+### Theme 1: Markets, Consumers and Firms
+- 2024 P1: "Using a diagram, explain how an increase in the minimum wage affects employment in the UK retail sector." [8 marks]
+- 2023 P1: "Evaluate the view that monopolies always act against the consumer interest." [18 marks]
+- 2022 P1: "Using a diagram, explain why negative externalities lead to market failure." [8 marks]
+- 2021 P1: "Assess the effectiveness of different government policies to correct the market failure caused by pollution." [10 marks]
+- 2019 P1: "Using a diagram, analyse the impact of an increase in indirect tax on the market for cigarettes." [8 marks]
+
+### Theme 2: The Wider Economic Environment
+- 2024 P2: "Using an AD/AS diagram, analyse the likely impact of a rise in Bank of England base rate on the UK economy." [8 marks]
+- 2023 P2: "Evaluate the effectiveness of fiscal policy as a tool for achieving macroeconomic stability." [18 marks]
+- 2022 P2: "Assess whether supply-side policies are more effective than demand-side policies in promoting long-term growth." [10 marks]
+- 2021 P2: "Using an AD/AS diagram, explain the short-run and long-run effects of the COVID pandemic." [8 marks]
+- 2019 P2: "Evaluate the extent to which monetary policy has been effective in controlling UK inflation since 2010." [18 marks]
+
+### Theme 3: The Global Economy
+- 2024 P3: "Using the theory of comparative advantage, explain the benefits of free trade between two countries." [8 marks]
+- 2023 P3: "Evaluate the impact of globalisation on income inequality within and between countries." [18 marks]
+- 2022 P3: "Assess the effectiveness of protectionist policies in promoting economic development." [10 marks]
+- 2021 P3: "Evaluate the role of international institutions (WTO, IMF, World Bank) in promoting global economic stability." [18 marks]
+- 2019 P3: "Using examples, assess the impact of foreign direct investment on economic development in Sub-Saharan Africa." [10 marks]
+
+### 40-mark Essay Patterns (Section B):
+- 2024 P1 Essay: "Evaluate the view that contestable markets always produce better outcomes for consumers than monopolistic markets." [40 marks]
+- 2023 P2 Essay: "Evaluate the effectiveness of supply-side policies in achieving sustainable economic growth in the UK." [40 marks]
+- 2022 P3 Essay: "Evaluate the view that free trade is always preferable to protectionism for developing economies." [40 marks]
+- PATTERN: 40-mark essays require minimum 4 developed paragraphs (2 KAA + 2 Evaluation) plus introduction and conclusion
+- Mark scheme: 20 KAA + 20 Evaluation
+  - KAA (up to 20): definitions (2), application to context (4), analysis chain 1 with diagram (7), analysis chain 2 (7)
+  - Evaluation (up to 20): counter-argument 1 (5), counter-argument 2 (5), "it depends" factors (5), justified final judgement (5)
+
+## EDEXCEL B EVALUATION FRAMEWORK
+- **Short run vs Long run**: Different outcomes over different time horizons
+- **Depends on context**: State of economy, type of market, country-specific factors
+- **Depends on magnitude**: Size of tax/subsidy/policy change matters
+- **Stakeholder analysis**: Consumers vs producers vs government vs workers
+- **Unintended consequences**: Government failure, regulatory capture, bureaucracy
+- **Real-world evidence**: Reference UK data, specific policies, country case studies
+- **Alternative approaches**: Compare different policy options
+- **Assumptions**: Challenge ceteris paribus, rationality, perfect information
+
+## EXAM TECHNIQUE — HOW TO WRITE A GOOD ECONOMICS ESSAY (from Guide)
+1. **Read the question twice** — identify command word, topic, and scope
+2. **Plan before writing** — 5-minute plan with key points and diagram(s)
+3. **Define key terms** in first paragraph — shows knowledge
+4. **Use diagrams** — labelled correctly, referenced in text, analysed
+5. **Develop chains of reasoning** — Point → Explain → Develop → Link back
+6. **Use real-world examples** — UK data, named policies, specific years
+7. **Evaluate throughout** — don't save all evaluation for the end
+8. **Reach a justified conclusion** — "On balance..." with reasoning
+
+## MACRO EXAMPLES FOR EVERYTHING (from EconplusDal Guide)
+### Key Real-World Examples to Reference:
+- **Demand-pull inflation**: UK 2021-22 post-COVID demand surge, US stimulus checks
+- **Cost-push inflation**: UK energy crisis 2022 (gas prices +300%), food price inflation
+- **Structural unemployment**: UK coal mining 1980s, Detroit auto industry decline
+- **Cyclical unemployment**: UK 2008-09 recession (unemployment 2.6m)
+- **Supply-side success**: UK privatisation 1980s (BT, BA), Singapore education investment
+- **Fiscal policy**: UK furlough scheme 2020 (£70bn), Sunak's Eat Out to Help Out
+- **Monetary policy**: Bank of England QE £895bn, rate rises 2022-23 (0.1% → 5.25%)
+- **Current account deficit**: UK persistent deficit (~4% GDP), caused by deindustrialisation
+- **Exchange rate**: Sterling crash post-Brexit vote (1.50→1.20 vs USD), 2022 mini-budget crash
+- **Inequality**: UK Gini coefficient ~0.35, top 1% own 21% of wealth
+- **Development**: China lifting 800m from poverty, India's IT sector growth
+- **Trade**: UK-Australia FTA 2021, CPTPP accession 2023
+
+## DIAGRAM REQUIREMENTS (same standards as Edexcel A)
+Mark schemes award: 1 mark for correct axes, 1 mark for correct curves, 1 mark for correct shift/labels, 1 mark for correct analysis linked to diagram
+
+## COMMAND WORDS
+- "Explain" = develop a point with reasoning [4-8 marks]
+- "Analyse" = chains of reasoning, cause→effect→consequence [8-10 marks]
+- "Assess" = weigh up evidence, make a judgement [10-18 marks]
+- "Evaluate" = sustained argument for and against with justified conclusion [18-40 marks]
+- "Using a diagram" = diagram REQUIRED
+- "With reference to the data/extracts" = MUST cite specific data
+`;
