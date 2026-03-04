@@ -3,6 +3,7 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import type { Components } from "react-markdown";
+import { extractDiagramBlocks, EconDiagramCanvas } from "./EconDiagramSVG";
 
 interface MathsMarkdownProps {
   children: string;
@@ -39,7 +40,6 @@ const markdownComponents: Components = {
   ),
   p: ({ children, ...props }) => {
     const text = typeof children === "string" ? children : "";
-    // Style "Source:" lines
     if (typeof children === "string" && /^Source:/i.test(text.trim())) {
       return (
         <p className="text-[11px] italic text-muted-foreground mt-1 mb-3" {...props}>
@@ -47,12 +47,10 @@ const markdownComponents: Components = {
         </p>
       );
     }
-    // Style "Figure N:" or "Extract X:" headings in bold paragraphs
     return <p {...props}>{children}</p>;
   },
   strong: ({ children, ...props }) => {
     const text = typeof children === "string" ? children : "";
-    // Style Figure/Extract/Table headings as styled cards
     if (/^(Figure|Extract|Table)\s+\w+:?$/i.test(text.trim())) {
       return (
         <strong className="inline-block mt-4 mb-1 px-3 py-1 rounded-md bg-primary/10 text-primary text-xs font-bold uppercase tracking-wide border border-primary/20" {...props}>
@@ -76,19 +74,33 @@ const markdownComponents: Components = {
 
 /**
  * Renders markdown with LaTeX math support via KaTeX.
- * Inline math: $...$  or \(...\)
- * Display math: $$...$$ or \[...\]
+ * Automatically detects and renders economics diagrams as SVG visuals.
  */
 export function MathsMarkdown({ children, className }: MathsMarkdownProps) {
+  const segments = extractDiagramBlocks(children);
+  const hasDiagrams = segments.some((s) => s.type === "diagram");
+
+  if (!hasDiagrams) {
+    return (
+      <div className={className}>
+        <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
+          {children}
+        </ReactMarkdown>
+      </div>
+    );
+  }
+
   return (
     <div className={className}>
-      <ReactMarkdown
-        remarkPlugins={[remarkMath]}
-        rehypePlugins={[rehypeKatex]}
-        components={markdownComponents}
-      >
-        {children}
-      </ReactMarkdown>
+      {segments.map((seg, i) =>
+        seg.type === "diagram" ? (
+          <EconDiagramCanvas key={i} diagram={seg.diagram} />
+        ) : (
+          <ReactMarkdown key={i} remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
+            {seg.content}
+          </ReactMarkdown>
+        )
+      )}
     </div>
   );
 }
