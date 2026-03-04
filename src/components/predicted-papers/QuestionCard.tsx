@@ -29,7 +29,7 @@ interface QuestionCardProps {
   showDrawingCanvas?: boolean;
   showGraphPaper?: boolean;
   showGeometryTools?: boolean;
-  subject?: "economics" | "maths" | "chemistry";
+  subject?: string;
 }
 
 export function QuestionCard({

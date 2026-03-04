@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 
-export type Subject = "economics" | "maths" | "chemistry";
+export type Subject = "economics" | "maths" | "chemistry" | "edexcel-a" | "edexcel-b";
 
 interface SubjectContextType {
   subject: Subject;
@@ -24,6 +24,8 @@ const SUBJECT_META: Record<Subject, { label: string; board: string; level: strin
   economics: { label: "Economics", board: "AQA", level: "A-Level" },
   maths: { label: "Maths", board: "Edexcel", level: "GCSE" },
   chemistry: { label: "Chemistry", board: "AQA", level: "GCSE" },
+  "edexcel-a": { label: "Economics A", board: "Edexcel", level: "A-Level" },
+  "edexcel-b": { label: "Economics B", board: "Edexcel", level: "A-Level" },
 };
 
 export function SubjectProvider({ children }: { children: ReactNode }) {

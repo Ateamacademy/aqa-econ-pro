@@ -92,6 +92,112 @@ FIGURE/CHART/GRAPH FORMAT (CRITICAL — DO NOT USE ASCII ART):
   Source: Hypothetical representation of the UK housing market, 2024`;
 };
 
+const EDEXCEL_ECON_PAPER_PROMPT = (paperLabel: string, spec: "edexcel-a" | "edexcel-b") => {
+  const isSpecA = spec === "edexcel-a";
+  const specName = isSpecA ? "Edexcel Economics A (9EC0)" : "Edexcel Economics B (9EB0)";
+  const paperNum = paperLabel.includes("1") ? "1" : paperLabel.includes("2") ? "2" : "3";
+
+  const specATemplates: Record<string, string> = {
+    "1": `PAPER 1: Markets and Business Behaviour (9EC0/01) — 2 hours, 100 marks
+STRUCTURE:
+## Section A: Supported Multiple Choice (5 questions × 4 marks = 20 marks)
+Each question has a stimulus (short extract/data), a 1-mark MCQ (A/B/C/D), then a 3-mark "Explain your answer" follow-up.
+Question 01a [1 marks] MCQ
+Question 01b [3 marks] Explain your answer
+Question 02a [1 marks] MCQ
+Question 02b [3 marks] Explain your answer
+(... through Question 05)
+
+## Section B: Data Response (one from two options, 40 marks)
+### EITHER Option 1 OR Option 2
+Each option has 2-3 Extracts (data + text) followed by:
+Question 06 [5 marks] — Short data interpretation
+Question 07 [8 marks] — "Explain, using a diagram..."
+Question 08 [12 marks] — "Evaluate..." / "Assess..."
+Question 09 [15 marks] — Extended evaluation (KAA + Evaluation)
+
+## Section C: Extended Open-Response (one from two, 40 marks)
+### EITHER Essay 1 OR Essay 2
+Each has a brief context then two parts:
+Question 10a [5 marks] — Define/explain a concept
+Question 10b [15 marks] — "Evaluate the view that..." / "Assess whether..."
+Question 10c [20 marks] — Extended evaluation essay`,
+
+    "2": `PAPER 2: The National and Global Economy (9EC0/02) — 2 hours, 100 marks
+Same structure as Paper 1 but MACROECONOMIC topics:
+Section A: 5 supported MCQs (20 marks)
+Section B: Data response with macro data (GDP, inflation, trade, etc.) (40 marks)
+Section C: Extended open-response macro essay (40 marks)
+Topics: AD/AS, economic growth, unemployment, inflation, fiscal/monetary policy, financial markets, exchange rates, globalisation, development.`,
+
+    "3": `PAPER 3: Microeconomics and Macroeconomics (9EC0/03) — 2 hours, 100 marks
+SYNOPTIC PAPER — tests BOTH micro AND macro.
+## Section A: Data Response (one from two, 50 marks)
+Extended case study with 4-5 Extracts covering both micro and macro themes.
+Questions range from 2-mark define to 25-mark evaluate.
+## Section B: Extended Open-Response (one from two, 50 marks)
+Two-part essay requiring synoptic links between micro and macro.
+Question a [25 marks] and Question b [25 marks].`,
+  };
+
+  const specBTemplates: Record<string, string> = {
+    "1": `PAPER 1: Markets, Consumers and Firms (9EB0/01) — 2 hours, 80 marks
+STRUCTURE:
+## Section A: Data Response (compulsory, 40 marks)
+Case study with 3-4 Extracts + Figures
+Question 01 [4 marks] — Knowledge/application
+Question 02 [8 marks] — "Explain, using a diagram..."
+Question 03 [10 marks] — "Assess..."
+Question 04 [18 marks] — "Evaluate..." (extended)
+
+## Section B: Essay (one from three, 40 marks)
+Question 05/06/07 [40 marks] — Full essay with KAA + Evaluation
+Topics: demand/supply, elasticity, market failure, business behaviour, costs/revenue, market structures, labour market.`,
+
+    "2": `PAPER 2: The Wider Economic Environment (9EB0/02) — 2 hours, 80 marks
+Same structure as Paper 1 but MACRO topics:
+Section A: compulsory data response (40 marks)
+Section B: essay choice (40 marks)
+Topics: economic indicators, AD/AS, macro policy, inequality, financial sector, role of state.`,
+
+    "3": `PAPER 3: The Global Economy (9EB0/03) — 2 hours, 80 marks
+SYNOPTIC PAPER:
+## Section A: Data Response (compulsory, 40 marks)
+Global case study with extracts on trade, development, globalisation.
+## Section B: Essay (one from three, 40 marks)
+Essay on global economy themes requiring synoptic micro+macro links.
+Topics: globalisation, trade, WTO, trading blocs, development, financial markets.`,
+  };
+
+  const template = isSpecA ? specATemplates[paperNum] : specBTemplates[paperNum];
+
+  return `You are an expert ${specName} chief examiner trained on every ${specName} paper from 2017–2024.
+
+Generate a COMPLETE predicted exam paper for ${paperLabel}.
+
+${template}
+
+CRITICAL RULES:
+1. Follow the template structure EXACTLY
+2. Extracts must contain realistic 2023-2025 UK/global data
+3. Tables must have specific numerical data so calculation questions are answerable
+4. Every diagram question must specify "Using a diagram" or "With the help of a diagram"
+5. At least 40% of marks must target Analyse/Evaluate (Bloom's levels 4-6)
+6. 15+ mark questions MUST require chains of reasoning, counter-arguments, and justified judgement
+7. Use precise command words: "Evaluate", "Assess", "To what extent", "Discuss"
+
+OUTPUT FORMAT (CRITICAL):
+- Every question MUST start: Question XX [Y marks]
+- Do NOT bold question headers
+- MCQ options on separate lines: - A, - B, - C, - D
+- Do NOT include mark schemes or answers
+
+FIGURE/CHART FORMAT:
+- NEVER use ASCII art
+- Data figures: use markdown tables with headers and Source line
+- Diagrams: describe with bullet points (axes, curves, equilibrium points)`;
+};
+
 const ECON_PAPER_PROMPT = (paperLabel: string) => {
   const paperNum = paperLabel.includes("1") ? "1" : paperLabel.includes("2") ? "2" : "3";
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum);
@@ -432,6 +538,9 @@ export default function PredictedPapers() {
   const isMaths = subject === "maths";
   const isChemistry = subject === "chemistry";
   const isEconomics = subject === "economics";
+  const isEdexcelA = subject === "edexcel-a";
+  const isEdexcelB = subject === "edexcel-b";
+  const isAnyEcon = isEconomics || isEdexcelA || isEdexcelB;
 
   const libraryPapers = useMemo(
     () => predictedPapersLibrary.filter((p) => p.subject === subject),
@@ -468,10 +577,10 @@ export default function PredictedPapers() {
 
     // For Economics, fetch past paper patterns from vector DB + knowledge graph
     let dbContextPrompt = "";
-    if (isEconomics) {
+    if (isAnyEcon) {
       try {
         const { data: patternData } = await supabase.functions.invoke("retrieve-patterns", {
-          body: { paper, subject: "economics", limit: 250 },
+          body: { paper, subject: isEdexcelA ? "edexcel-a" : isEdexcelB ? "edexcel-b" : "economics", limit: 250 },
         });
         if (patternData?.contextPrompt) {
           dbContextPrompt = patternData.contextPrompt;
@@ -485,6 +594,8 @@ export default function PredictedPapers() {
       ? MATHS_PAPER_PROMPT(paperLabel, isCalc, tier)
       : isChemistry
       ? CHEM_PAPER_PROMPT(paperLabel, tier)
+      : (isEdexcelA || isEdexcelB)
+      ? EDEXCEL_ECON_PAPER_PROMPT(paperLabel, subject as "edexcel-a" | "edexcel-b")
       : ECON_PAPER_PROMPT(paperLabel);
 
     // Inject DB-retrieved patterns for Economics
@@ -923,9 +1034,9 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
               onMark={(diagramImage) => markQuestion(q, diagramImage)}
               isMarking={markingId === q.id}
               feedback={feedbacks[q.id] || null}
-              showMathTools={isMaths || isChemistry || isEconomics}
+              showMathTools={isMaths || isChemistry || isAnyEcon}
               showEconDiagram={false}
-              showDrawingCanvas={isMaths || isChemistry || isEconomics}
+              showDrawingCanvas={isMaths || isChemistry || isAnyEcon}
               showGraphPaper={isMaths}
               showGeometryTools={isMaths}
               subject={subject}

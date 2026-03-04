@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { BookOpen, Brain, FileText, GraduationCap, LayoutDashboard, MessageCircle, PenTool, LogIn, LogOut, Crown, Sparkles, Calculator, FlaskConical } from "lucide-react";
+import { BookOpen, Brain, FileText, GraduationCap, LayoutDashboard, MessageCircle, PenTool, LogIn, LogOut, Crown, Sparkles, Calculator, FlaskConical, TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -21,7 +21,11 @@ function getNavItems(subject: Subject) {
     ? { to: "/papers", label: "Econ Papers", icon: FileText }
     : subject === "maths"
     ? { to: "/maths-papers", label: "Maths Papers", icon: Calculator }
-    : { to: "/chemistry-papers", label: "Chem Papers", icon: FlaskConical };
+    : subject === "chemistry"
+    ? { to: "/chemistry-papers", label: "Chem Papers", icon: FlaskConical }
+    : subject === "edexcel-a"
+    ? { to: "/edexcel-a-papers", label: "Edexcel A Papers", icon: TrendingUp }
+    : { to: "/edexcel-b-papers", label: "Edexcel B Papers", icon: TrendingUp };
 
   return [
     baseNavItems[0],
@@ -31,7 +35,9 @@ function getNavItems(subject: Subject) {
 }
 
 const SUBJECTS: { value: Subject; label: string }[] = [
-  { value: "economics", label: "Economics" },
+  { value: "economics", label: "AQA Econ" },
+  { value: "edexcel-a", label: "Edexcel A" },
+  { value: "edexcel-b", label: "Edexcel B" },
   { value: "maths", label: "Maths" },
   { value: "chemistry", label: "Chemistry" },
 ];
@@ -122,13 +128,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {mobileOpen && (
           <nav className="lg:hidden border-t bg-card p-2 flex flex-col gap-1">
             {/* Mobile subject switcher */}
-            <div className="flex items-center bg-muted rounded-full p-0.5 gap-0.5 mb-2 mx-3">
+            <div className="flex flex-wrap items-center bg-muted rounded-lg p-0.5 gap-0.5 mb-2 mx-3">
               {SUBJECTS.map((s) => (
                 <button
                   key={s.value}
                   onClick={() => setSubject(s.value)}
                   className={cn(
-                    "flex-1 px-2 py-1.5 rounded-full text-xs font-medium transition-colors text-center",
+                    "flex-1 px-2 py-1.5 rounded-lg text-xs font-medium transition-colors text-center min-w-[60px]",
                     subject === s.value ? "bg-primary text-primary-foreground" : "text-muted-foreground"
                   )}
                 >
@@ -171,7 +177,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <footer className="border-t bg-card py-6">
         <div className="container text-center text-sm text-muted-foreground">
-          <p>ExamAce — AQA A-Level Economics · Edexcel GCSE Maths · AQA GCSE Chemistry</p>
+          <p>ExamAce — AQA A-Level Economics · Edexcel A-Level Economics A & B · Edexcel GCSE Maths · AQA GCSE Chemistry</p>
         </div>
       </footer>
     </div>

@@ -16,6 +16,16 @@ export const paperOptionsBySubject: Record<Subject, { value: string; label: stri
     { value: "1", label: "Paper 1", title: "Topics 1–5", desc: "Atomic structure, bonding, quantitative chemistry, chemical changes, energy changes" },
     { value: "2", label: "Paper 2", title: "Topics 6–10", desc: "Rate & extent, organic chemistry, chemical analysis, chemistry of the atmosphere, using resources" },
   ],
+  "edexcel-a": [
+    { value: "1", label: "Paper 1", title: "Markets & Business Behaviour", desc: "Microeconomics — demand, supply, market structures, labour markets, government intervention (9EC0/01)" },
+    { value: "2", label: "Paper 2", title: "The National & Global Economy", desc: "Macroeconomics — AD/AS, economic performance, financial sector, trade, development (9EC0/02)" },
+    { value: "3", label: "Paper 3", title: "Micro & Macroeconomics", desc: "Synoptic — data response + extended open-response across all themes (9EC0/03)" },
+  ],
+  "edexcel-b": [
+    { value: "1", label: "Paper 1", title: "Markets, Consumers & Firms", desc: "How markets work, market failure, business behaviour, the labour market (9EB0/01)" },
+    { value: "2", label: "Paper 2", title: "The Wider Economic Environment", desc: "Economic indicators, macroeconomic policy, inequality, the financial sector (9EB0/02)" },
+    { value: "3", label: "Paper 3", title: "The Global Economy", desc: "Globalisation, trade, development, financial markets, role of the state (9EB0/03)" },
+  ],
 };
 
 /* ── Practice: topics per subject ── */
@@ -50,6 +60,24 @@ export const topicsBySubject: Record<Subject, string[]> = {
     "Chemical Analysis — Chromatography & Tests", "Chemistry of the Atmosphere",
     "Using Resources — Potable Water & Life Cycle Assessments",
   ],
+  "edexcel-a": [
+    "Nature of Economics", "How Markets Work", "Market Failure", "Government Intervention",
+    "Market Structures", "Labour Market", "Poverty & Inequality",
+    "Measures of Economic Performance", "Aggregate Demand", "Aggregate Supply",
+    "National Income", "Economic Growth", "Macroeconomic Objectives & Policy",
+    "Financial Markets & Monetary Policy", "Fiscal Policy & Supply-Side Policies",
+    "International Economics & Trade", "Globalisation", "Exchange Rates",
+    "Balance of Payments", "Development Economics",
+  ],
+  "edexcel-b": [
+    "Demand, Supply & Market Equilibrium", "Elasticity", "Market Failure & Government Intervention",
+    "Business Objectives & Behaviour", "Revenue, Costs & Profits", "Market Structures",
+    "Labour Market", "Government Intervention in Markets",
+    "Economic Indicators", "Aggregate Demand & Aggregate Supply", "Macroeconomic Policy",
+    "Inequality", "Financial Sector", "Global Trade & the WTO",
+    "Trading Blocs & Globalisation", "Emerging & Developing Economies", "Public Finance",
+    "The Role of the State in the Macroeconomy",
+  ],
 };
 
 /* ── Practice: question styles per subject ── */
@@ -57,6 +85,8 @@ export const stylesBySubject: Record<Subject, string[]> = {
   economics: ["Multiple Choice", "Short Answer (Data Response)", "Essay Question"],
   maths: ["Multiple Choice", "Short Answer (1–3 marks)", "Multi-step Problem (4–5 marks)"],
   chemistry: ["Multiple Choice", "Short Answer (1–3 marks)", "Extended Response (6 marks)", "Required Practical"],
+  "edexcel-a": ["Multiple Choice", "Short Answer (Data Response)", "Essay Question (25 marks)"],
+  "edexcel-b": ["Multiple Choice", "Short Answer (Data Response)", "Extended Open-Response"],
 };
 
 /* ── Essay Grader: question types per subject ── */
@@ -73,5 +103,13 @@ export const questionTypesBySubject: Record<Subject, string[]> = {
     "1–2 mark recall", "3–4 mark application",
     "6-mark extended response", "Required practical question",
     "Calculation question", "Balanced equation question",
+  ],
+  "edexcel-a": [
+    "5-mark data response", "8-mark explain/analyse", "12-mark evaluate",
+    "20-mark data response evaluate", "25-mark essay",
+  ],
+  "edexcel-b": [
+    "4-mark knowledge/application", "8-mark analyse", "12-mark evaluate",
+    "20-mark data response evaluate", "Extended open-response",
   ],
 };
