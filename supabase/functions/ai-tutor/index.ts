@@ -107,7 +107,7 @@ Your role:
 - Use proper economics vocabulary and be concise but thorough
 - Format responses with clear headings, bullet points, and bold key terms`;
 
-
+serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
   try {
