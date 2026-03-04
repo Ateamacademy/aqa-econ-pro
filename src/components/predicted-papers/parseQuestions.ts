@@ -14,17 +14,33 @@ export interface ParsedQuestion {
 
 /**
  * Parses the AI-generated paper markdown into individual questions.
- * Handles formats like:
- *   Question 01 [2 marks]           (text on next lines)
- *   Question 01 [2 marks] — text    (text on same line after marks)
- *   **Question 1a** [4 marks]       (bold wrapped)
+ * Handles many formats:
+ *   Question 01 [2 marks]
+ *   Question 01 (2 marks)
+ *   **Question 1a** [4 marks]
+ *   Question 1a [4 marks] — text on same line
+ *   01 [2 marks]
+ *   Question 01: [2 marks]
  */
 export function parseQuestions(markdown: string): { context: string; questions: ParsedQuestion[] } {
-  // Match question headers — captures the question number and mark count.
-  // The full match ends at the closing "]" of "[X marks]".
-  const questionRegex = /(?:^|\n)\s*(?:\*{0,2})?(?:Question\s*)?((?:\d{1,2}(?:\.\d+)?[a-z]?|0\s?\d{1,2}(?:\.\d+)?[a-z]?))(?:\*{0,2})[^\n\[]*?\[\s*(\d+)\s*marks?\s*\]/gi;
+  // Try multiple regex patterns to maximize matching
+  const patterns = [
+    // Pattern 1: "Question XX [Y marks]" or "Question XX (Y marks)" — most common
+    /(?:^|\n)\s*\**(?:Question\s+)((?:\d{1,2}(?:\.\d+)?[a-z]?(?:\s*\([a-z]\))?|0\s?\d{1,2}(?:\.\d+)?[a-z]?))\**[^\n\[\(]*?(?:\[|\()\s*(\d+)\s*marks?\s*(?:\]|\))/gi,
+    // Pattern 2: bare number + marks e.g. "01 [2 marks]"
+    /(?:^|\n)\s*\**(?:Q(?:uestion)?\s*)?((?:\d{1,2}(?:\.\d+)?[a-z]?))\**\s*[:\-—–]?\s*(?:\[|\()\s*(\d+)\s*marks?\s*(?:\]|\))/gi,
+    // Pattern 3: marks at end of line e.g. "Question 01: What is... [2 marks]"  
+    /(?:^|\n)\s*\**(?:Question\s+)((?:\d{1,2}(?:\.\d+)?[a-z]?))\**[^\n]*?(?:\[|\()\s*(\d+)\s*marks?\s*(?:\]|\))/gi,
+  ];
 
-  const matches = [...markdown.matchAll(questionRegex)];
+  let matches: RegExpMatchArray[] = [];
+  
+  for (const regex of patterns) {
+    const found = [...markdown.matchAll(regex)];
+    if (found.length > matches.length) {
+      matches = found;
+    }
+  }
 
   if (matches.length === 0) {
     return {
@@ -47,15 +63,29 @@ export function parseQuestions(markdown: string): { context: string; questions: 
     const end = i < matches.length - 1 ? matches[i + 1].index! : markdown.length;
     const fullText = markdown.slice(start, end).trim();
 
-    // Find where the "[X marks]" portion ends within fullText
-    const marksClose = fullText.indexOf("]");
-    // Everything after "]" is question body — includes same-line text AND subsequent lines
+    // Find where the marks portion ends (either "]" or ")")
+    const bracketClose = fullText.indexOf("]");
+    const parenClose = fullText.indexOf(")");
+    // Find the marks pattern end position
+    let marksClose = -1;
+    if (bracketClose > -1 && parenClose > -1) {
+      // Find which one closes the marks pattern (the one that has "marks" before it)
+      const beforeBracket = fullText.slice(0, bracketClose);
+      const beforeParen = fullText.slice(0, parenClose);
+      if (/\d+\s*marks?\s*$/.test(beforeBracket)) marksClose = bracketClose;
+      else if (/\d+\s*marks?\s*$/.test(beforeParen)) marksClose = parenClose;
+      else marksClose = Math.min(bracketClose, parenClose);
+    } else {
+      marksClose = bracketClose > -1 ? bracketClose : parenClose;
+    }
+    
+    // Everything after the marks close is question body
     let bodyText = marksClose > -1 ? fullText.slice(marksClose + 1).trim() : "";
     
-    // Strip leading dash/em-dash separators that the AI sometimes adds after marks
-    bodyText = bodyText.replace(/^[-—–]+\s*/, "");
+    // Strip leading dash/em-dash/colon separators
+    bodyText = bodyText.replace(/^[-—–:]+\s*/, "");
 
-    // Extract MCQ options (lines starting with - A, - B, - C, - D or A , B , C , D )
+    // Extract MCQ options (lines starting with - A, - B, - C, - D or A., B., C., D.)
     const mcqRegex = /^[-•]?\s*\**([A-D])\**[.\s]+(.+)$/gm;
     const mcqMatches = [...bodyText.matchAll(mcqRegex)];
     

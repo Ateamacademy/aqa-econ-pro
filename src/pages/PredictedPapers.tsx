@@ -275,11 +275,16 @@ HOTS REQUIREMENTS (NON-NEGOTIABLE):
 - Every 25-mark essay requires genuine evaluation, not description
 - Use precise command words: "Evaluate the view that", "Assess whether", "Discuss", "To what extent"
 
-OUTPUT FORMAT:
+OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
 - Use markdown headings (## for sections, ### for contexts/essays, #### for extracts)
-- Question lines: "Question 01 [2 marks]" (no bold/asterisks on question headers)
+- EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
+  Examples: Question 01 [2 marks], Question 02 [4 marks], Question 03 [9 marks], Question 09 [15 marks], Question 10 [25 marks]
+- Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks. Do NOT put marks at the end of the line.
+- The question text MUST appear AFTER the [Y marks] tag, either on the same line or the next line
 - MCQ options on separate lines starting with "- A", "- B", "- C", "- D"
-- Do NOT include solutions or mark schemes`;
+- Do NOT include solutions or mark schemes
+- WRONG: **Question 1** (2 marks), 01. Calculate... [2 marks], Q1 [2 marks]
+- CORRECT: Question 01 [2 marks] Calculate the percentage change...`;
 };
 
 const CHEM_PAPER_PROMPT = (paperLabel: string, tier: "Foundation" | "Higher") => {
