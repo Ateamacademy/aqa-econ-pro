@@ -66,7 +66,30 @@ Question 3b [2 marks]
 
 Do NOT wrap question headers in bold/asterisks. Write them exactly as shown above.
 Use realistic Figure/Table blocks where appropriate, but always include all required data in text so the question is fully answerable.
-Make questions topical, varied, and exam-authentic. Avoid repeating similar question types.`;
+Make questions topical, varied, and exam-authentic. Avoid repeating similar question types.
+
+FIGURE/CHART/GRAPH FORMAT (CRITICAL — DO NOT USE ASCII ART):
+- NEVER draw charts, graphs, or diagrams using ASCII characters (|, /, \\, -, +, ^, X, etc.)
+- For DATA figures (bar charts, line graphs, scatter plots): present the data in a **markdown table** with clear column headers, then add a brief description like "Figure 1: Average Purchase Price of New BEVs in the UK (constant 2023 prices, £000s)" above the table
+- For DIAGRAMS (supply & demand, cost curves, reaction profiles): describe them in structured text using a "**Figure N:**" heading followed by bullet points listing axes, curves, key points, equilibrium positions, and shifts
+- Example data figure format:
+  **Figure 1:** Average Purchase Price of New Battery Electric Vehicles (BEVs) in the UK (constant 2023 prices, £000s)
+  | Year | Price (£000s) |
+  |------|--------------|
+  | 2020 | 50 |
+  | 2021 | 45 |
+  | 2022 | 40 |
+  | 2023 | 35 |
+  | 2024 (Forecast) | 33 |
+  Source: Office for National Statistics, 2024
+- Example diagram figure format:
+  **Figure 2:** Demand and Supply Conditions in the UK Housing Market
+  - Vertical axis: Price (£000s), ranging from 0 to 300
+  - Horizontal axis: Quantity of Houses (units)
+  - Demand curve D₁ slopes downward from left to right
+  - Supply curve S₁ slopes upward from left to right
+  - Equilibrium at intersection: price P₁, quantity Q₁
+  Source: Hypothetical representation of the UK housing market, 2024`;
 };
 
 const ECON_PAPER_PROMPT = (paperLabel: string) => {
@@ -284,7 +307,26 @@ OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
 - MCQ options on separate lines starting with "- A", "- B", "- C", "- D"
 - Do NOT include solutions or mark schemes
 - WRONG: **Question 1** (2 marks), 01. Calculate... [2 marks], Q1 [2 marks]
-- CORRECT: Question 01 [2 marks] Calculate the percentage change...`;
+- CORRECT: Question 01 [2 marks] Calculate the percentage change...
+
+FIGURE/CHART/GRAPH FORMAT (CRITICAL — DO NOT USE ASCII ART):
+- NEVER draw charts, graphs, or diagrams using ASCII characters (|, /, \\, -, +, ^, X, etc.)
+- For DATA figures (Extract A tables, bar charts, line graphs, scatter plots): present data in a **markdown table** with clear column headers. Add a "**Figure N:**" or "**Extract A:**" title above.
+- For DIAGRAM figures (S&D, AD/AS, PPF, cost curves, Lorenz curves, labour markets): describe them in structured text using a "**Figure N:**" heading followed by bullet points listing axes, curves, key points, equilibrium positions, and shifts.
+- Example data figure:
+  **Figure 1:** Average Purchase Price of New BEVs (constant 2023 prices, £000s)
+  | Year | Price (£000s) |
+  |------|--------------|
+  | 2020 | 50 |
+  | 2021 | 45 |
+  Source: ONS, 2024
+- Example diagram figure:
+  **Figure 2:** Demand and Supply in the UK Housing Market
+  - Vertical axis: Price (£000s)
+  - Horizontal axis: Quantity of Houses (units)
+  - D₁ slopes downward; S₁ slopes upward
+  - Equilibrium at intersection: P₁, Q₁
+  Source: Hypothetical, 2024`;
 };
 
 const CHEM_PAPER_PROMPT = (paperLabel: string, tier: "Foundation" | "Higher") => {
@@ -344,6 +386,20 @@ Question 3a [1 marks]
 Question 3b [3 marks]
 
 Do NOT wrap question headers in bold/asterisks. Include balanced equations with state symbols throughout. Use correct IUPAC naming. Use **Figure N** and **Table N** headings for all visual data.
+
+FIGURE/CHART/GRAPH FORMAT (CRITICAL — DO NOT USE ASCII ART):
+- NEVER draw charts, graphs, or diagrams using ASCII characters (|, /, \\, -, +, ^, X, etc.)
+- For DATA (tables, bar charts, rate graphs, titration results): use **markdown tables** with clear column headers
+- For DIAGRAMS (reaction profiles, dot-and-cross, rate curves): describe in structured text with bullet points for axes, curves, energy values, and key points
+- Example: **Figure 1:** Rate of Reaction Graph
+  | Time (s) | Volume of gas (cm³) |
+  |----------|-------------------|
+  | 0 | 0 |
+  | 10 | 25 |
+  | 20 | 40 |
+  | 30 | 48 |
+  | 40 | 50 |
+  | 50 | 50 |
 
 FIRST PRINCIPLES: Generate questions from first principles of chemistry, not by copying. Each question should test genuine understanding. Create novel scenarios that mirror real exam difficulty and style.`;
 };
