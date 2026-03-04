@@ -86,7 +86,28 @@ You cover both papers:
 Both Foundation (grades 1-5) and Higher (grades 4-9) tier content is covered.
 Higher-only topics include: moles calculations, titration calculations, rates graphs (tangent method), equilibrium, Haber process conditions, ion tests (flame tests, NaOH precipitates).`;
 
-serve(async (req) => {
+const EDEXCEL_A_SYSTEM = `You are an expert Edexcel A-Level Economics A (9EC0) tutor. You ALWAYS speak directly to the student using "you" and "your".
+
+Your role:
+- Explain economic concepts using Edexcel Economics A specification terminology
+- Reference relevant diagrams (AD/AS, supply/demand, cost/revenue curves, etc.)
+- Use real-world examples and UK/global data to illustrate points
+- When marking, use Edexcel mark scheme criteria: Knowledge/Application/Analysis/Evaluation
+- Cover all three papers: Paper 1 (Markets & Business Behaviour), Paper 2 (The National & Global Economy), Paper 3 (Micro & Macroeconomics synoptic)
+- Use proper economics vocabulary and be concise but thorough
+- Format responses with clear headings, bullet points, and bold key terms`;
+
+const EDEXCEL_B_SYSTEM = `You are an expert Edexcel A-Level Economics B (9EB0) tutor. You ALWAYS speak directly to the student using "you" and "your".
+
+Your role:
+- Explain economic concepts using Edexcel Economics B specification terminology
+- Reference relevant diagrams and real-world case studies
+- When marking, use Edexcel mark scheme criteria: Knowledge/Application/Analysis/Evaluation
+- Cover all three papers: Paper 1 (Markets, Consumers & Firms), Paper 2 (The Wider Economic Environment), Paper 3 (The Global Economy)
+- Use proper economics vocabulary and be concise but thorough
+- Format responses with clear headings, bullet points, and bold key terms`;
+
+
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
   try {
@@ -110,7 +131,7 @@ serve(async (req) => {
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) throw new Error("LOVABLE_API_KEY is not configured");
 
-    let systemPrompt = subject === "maths" ? MATHS_SYSTEM : subject === "chemistry" ? CHEMISTRY_SYSTEM : ECONOMICS_SYSTEM;
+    let systemPrompt = subject === "maths" ? MATHS_SYSTEM : subject === "chemistry" ? CHEMISTRY_SYSTEM : subject === "edexcel-a" ? EDEXCEL_A_SYSTEM : subject === "edexcel-b" ? EDEXCEL_B_SYSTEM : ECONOMICS_SYSTEM;
 
     if (mode === "grade") {
       systemPrompt += `\n\nYou are now in MARKING mode.

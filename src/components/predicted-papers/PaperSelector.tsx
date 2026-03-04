@@ -6,6 +6,8 @@ import type { Subject } from "@/contexts/SubjectContext";
 const iconMap: Record<string, any> = {
   economics: [BarChart3, Globe, Landmark],
   maths: [Calculator, Calculator, Calculator],
+  "edexcel-a": [BarChart3, Globe, Landmark],
+  "edexcel-b": [BarChart3, Globe, Landmark],
 };
 
 const colorSets = [

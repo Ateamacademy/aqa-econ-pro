@@ -10,6 +10,8 @@ import Index from "./pages/Index";
 import PastPapers from "./pages/PastPapers";
 import MathsPastPapers from "./pages/MathsPastPapers";
 import ChemistryPastPapers from "./pages/ChemistryPastPapers";
+import EdexcelAPastPapers from "./pages/EdexcelAPastPapers";
+import EdexcelBPastPapers from "./pages/EdexcelBPastPapers";
 import AITutor from "./pages/AITutor";
 import EssayGrader from "./pages/EssayGrader";
 import Practice from "./pages/Practice";
@@ -37,6 +39,8 @@ const App = () => (
               <Route path="/papers" element={<PastPapers />} />
               <Route path="/maths-papers" element={<MathsPastPapers />} />
               <Route path="/chemistry-papers" element={<ChemistryPastPapers />} />
+              <Route path="/edexcel-a-papers" element={<EdexcelAPastPapers />} />
+              <Route path="/edexcel-b-papers" element={<EdexcelBPastPapers />} />
               <Route path="/predicted" element={<PredictedPapers />} />
               <Route path="/tutor" element={<AITutor />} />
               <Route path="/grader" element={<EssayGrader />} />
