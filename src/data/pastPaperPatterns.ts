@@ -858,6 +858,107 @@ When marking or generating 15+ mark questions, the AI must apply these evaluatio
 
 // ─── EDEXCEL A-LEVEL ECONOMICS B (9EB0) PAST-PAPER PATTERNS ───────────
 
+// ─── OCR A-LEVEL ECONOMICS (H460) PAST-PAPER PATTERNS ───────────
+
+export const OCR_PAST_PAPER_KNOWLEDGE = `
+YOU MUST USE THE FOLLOWING PATTERNS FROM OCR A-LEVEL ECONOMICS (H460) TO GENERATE AUTHENTIC QUESTIONS.
+Informed by: OCR H460 Specification (v2.6, Feb 2024), OCR A Level Economics Scheme of Work (Hodder Education, 4th Edition), Evaluation Techniques Guide, Exam Technique Guide, Ten Ways to Improve Evaluation Skills.
+
+## PAPER STRUCTURE (3 components, each 2 hours, 80 marks, 33.33% of total)
+
+### Component 01: Microeconomics (H460/01) — 2 hours, 80 marks
+- Section A: Data Response (compulsory, 30 marks)
+  - Case study with 2-3 Extracts (text + data tables/figures)
+  - Questions: 2 marks → 4 marks → 8 marks → 16 marks
+  - 8-mark questions: "Explain, with the aid of a diagram..."
+  - 16-mark: extended evaluation
+- Section B: Essay (choose TWO from THREE, 50 marks total)
+  - Each essay: 25 marks
+  - Must include diagrams and evaluation
+
+### Component 02: Macroeconomics (H460/02) — 2 hours, 80 marks
+- Same structure as Component 01 but MACRO topics
+- Section A: Data response on UK/global macro performance (30 marks)
+- Section B: Two essays from three choices (50 marks)
+- Topics: AD/AS, economic policy, growth, unemployment, inflation, trade, financial sector
+
+### Component 03: Themes in Economics (H460/03) — 2 hours, 80 marks
+- SYNOPTIC — draws together micro AND macro
+- Section A: Data Response (compulsory, 30 marks) — synoptic case study
+- Section B: Two essays from three (50 marks) — synoptic evaluation
+- Students must apply theories from BOTH Components 01 and 02
+
+## OCR SPECIFICATION CONTENT (H460)
+
+### Component 01 Topics:
+1. Introduction to Microeconomics: economic problem, scarcity, choice, PPC, opportunity cost, economic systems, incentives, efficiency
+2. The Role of Markets: demand, supply, equilibrium, consumer/producer surplus, elasticity (PED, YED, XED, PES), price mechanism
+3. Market Failure: externalities (MSC/MPC, MSB/MPB), public goods, merit/demerit goods, information failure, moral hazard, adverse selection
+4. Government Intervention: indirect taxes, subsidies, regulation, price controls, tradable permits, government failure
+5. Business Objectives: profit max, revenue max, sales max, satisficing, stakeholder vs shareholder models
+6. Market Structures: perfect competition, monopolistic competition, oligopoly (kinked demand, game theory, prisoner's dilemma), monopoly, contestable markets, natural monopoly
+7. The Labour Market: wage determination, MRP, derived demand, trade unions, monopsony, minimum/maximum wages, discrimination
+
+### Component 02 Topics:
+1. Aggregate Demand and Aggregate Supply: components of AD, multiplier, SRAS/LRAS (Classical vs Keynesian)
+2. Economic Policy Objectives: growth, inflation, unemployment, balance of payments, conflicts between objectives
+3. Implementing Policy: fiscal policy, monetary policy (Bank of England, QE), supply-side policies (market-based vs interventionist)
+4. The Global Context: globalisation, comparative advantage, free trade vs protectionism, WTO, exchange rates, balance of payments, J-curve
+5. The Financial Sector: role of banks, financial markets, regulation, systemic risk, moral hazard, 2008 crisis
+
+## OCR COMMAND WORDS (from specification section 3c)
+- "Explain" = demonstrate knowledge + apply to context [4-8 marks]
+- "Explain, with the aid of a diagram" = explain + construct/label diagram + describe what it illustrates [8 marks]
+- "Evaluate" = explain + weigh both sides + compare alternatives + supported judgement [16-25 marks]
+- "Calculate" = apply quantitative skills [2-4 marks]
+
+## OCR ASSESSMENT OBJECTIVES
+- AO1: Knowledge and understanding (25-30%)
+- AO2: Application (25-30%)
+- AO3: Analysis (20-25%)
+- AO4: Evaluation (20-25%)
+
+## EVALUATION TECHNIQUES (from Evaluation Techniques Guide)
+1. **Magnitude**: How large/small are the changes? Put in context as % changes
+2. **Significance**: How large an impact regardless of magnitude? Consider proportion of total cost, elasticity
+3. **Time-lags**: Effects may take months/years to materialise
+4. **Stakeholder impact**: Different groups affected differently (consumers, producers, government, workers)
+5. **Elasticity considerations**: Impact depends on PED/PES/YED
+6. **Short run vs Long run**: Different outcomes over different time horizons
+7. **Ceteris paribus**: Drop the assumption — what else might change simultaneously?
+8. **Real-world evidence**: Reference specific countries, policies, data
+
+## ESSAY PLANNING FRAMEWORK
+1. Introduction: Define key terms, outline approach
+2. KAA Paragraph 1: Point → Evidence → Analysis → Link (with diagram)
+3. KAA Paragraph 2: Second chain of reasoning
+4. Evaluation Paragraph 1: Counter-argument with evidence
+5. Evaluation Paragraph 2: "It depends on..." factors
+6. Conclusion: Weighed judgement with justification
+
+## DIAGRAM REQUIREMENTS (from OCR mark schemes)
+- Supply & Demand: P on y-axis, Q on x-axis, D₁/S₁, shifted D₂/S₂, E₁→E₂
+- AD/AS: Price Level on y-axis, Real GDP on x-axis, AD, SRAS, LRAS
+- Cost Curves: MC, AC, AR=D, MR, profit-max at MC=MR
+- Externalities: MSC/MPC or MSB/MPB, Qm vs Qs, welfare loss triangle
+- Labour Market: Wage on y-axis, Quantity of Labour on x-axis, MRP=D, S=ACL
+- PPF: Concave curve, points inside/on/outside
+
+## MARK ALLOCATION
+- 2-mark: define/calculate
+- 4-mark: explain with reasoning
+- 8-mark: explain with diagram (KAA)
+- 16-mark: evaluate (8 KAA + 8 Evaluation)
+- 25-mark: extended evaluation essay (12 KAA + 13 Evaluation)
+
+## REAL-WORLD EXAMPLES TO USE
+- UK energy crisis 2022-23, Bank of England rate rises (0.1%→5.25%), NHS staffing crisis
+- China's economic slowdown 2023-24, US-China trade tensions, CPTPP
+- Climate change policies (net zero 2050), carbon pricing, green subsidies
+- AI and automation impact on labour markets, gig economy regulation
+- Post-COVID recovery, cost of living crisis, inequality widening
+`;
+
 export const EDEXCEL_B_PAST_PAPER_KNOWLEDGE = `
 YOU MUST USE THE FOLLOWING REAL PAST-PAPER PATTERNS FROM EDEXCEL A-LEVEL ECONOMICS B (9EB0) (2017–2024) TO GENERATE AUTHENTIC QUESTIONS.
 

@@ -26,6 +26,11 @@ export const paperOptionsBySubject: Record<Subject, { value: string; label: stri
     { value: "2", label: "Paper 2", title: "The Wider Economic Environment", desc: "Economic indicators, macroeconomic policy, inequality, the financial sector (9EB0/02)" },
     { value: "3", label: "Paper 3", title: "The Global Economy", desc: "Globalisation, trade, development, financial markets, role of the state (9EB0/03)" },
   ],
+  "ocr": [
+    { value: "1", label: "Component 01", title: "Microeconomics", desc: "Markets, market failure, business objectives, market structures, labour market (H460/01)" },
+    { value: "2", label: "Component 02", title: "Macroeconomics", desc: "AD/AS, policy objectives, fiscal/monetary/supply-side, trade, financial sector (H460/02)" },
+    { value: "3", label: "Component 03", title: "Themes in Economics", desc: "Synoptic — draws together micro and macro across all content areas (H460/03)" },
+  ],
 };
 
 /* ── Practice: topics per subject ── */
@@ -78,6 +83,17 @@ export const topicsBySubject: Record<Subject, string[]> = {
     "Trading Blocs & Globalisation", "Emerging & Developing Economies", "Public Finance",
     "The Role of the State in the Macroeconomy",
   ],
+  "ocr": [
+    "The Economic Problem & Opportunity Cost", "Demand & Supply", "Market Equilibrium",
+    "Elasticity (PED, YED, XED, PES)", "Consumer & Producer Surplus",
+    "Market Failure & Externalities", "Public Goods & Merit Goods", "Government Intervention",
+    "Business Objectives", "Market Structures", "Contestable Markets",
+    "Costs & Revenue", "Labour Market & Wage Determination",
+    "Aggregate Demand & Aggregate Supply", "Economic Growth", "Inflation & Unemployment",
+    "Fiscal Policy", "Monetary Policy", "Supply-Side Policies",
+    "International Trade & Globalisation", "Exchange Rates & Balance of Payments",
+    "Financial Sector", "Inequality & Development",
+  ],
 };
 
 /* ── Practice: question styles per subject ── */
@@ -87,6 +103,7 @@ export const stylesBySubject: Record<Subject, string[]> = {
   chemistry: ["Multiple Choice", "Short Answer (1–3 marks)", "Extended Response (6 marks)", "Required Practical"],
   "edexcel-a": ["Multiple Choice", "Short Answer (Data Response)", "Essay Question (25 marks)"],
   "edexcel-b": ["Multiple Choice", "Short Answer (Data Response)", "Extended Open-Response"],
+  "ocr": ["Short Answer (Data Response)", "Explain with Diagram (8 marks)", "Essay Question (25 marks)"],
 };
 
 /* ── Essay Grader: question types per subject ── */
@@ -111,5 +128,9 @@ export const questionTypesBySubject: Record<Subject, string[]> = {
   "edexcel-b": [
     "4-mark knowledge/application", "8-mark analyse", "12-mark evaluate",
     "20-mark data response evaluate", "Extended open-response",
+  ],
+  "ocr": [
+    "2-mark define/calculate", "4-mark explain", "8-mark explain with diagram",
+    "16-mark evaluate", "25-mark essay",
   ],
 };

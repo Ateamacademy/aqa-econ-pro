@@ -25,6 +25,7 @@ import {
   ECONOMICS_PAST_PAPER_KNOWLEDGE,
   EDEXCEL_A_PAST_PAPER_KNOWLEDGE,
   EDEXCEL_B_PAST_PAPER_KNOWLEDGE,
+  OCR_PAST_PAPER_KNOWLEDGE,
 } from "@/data/pastPaperPatterns";
 import { generateKnowledgeGraphPrompt } from "@/data/economicsKnowledgeGraph";
 import { generatePaperPdf } from "@/lib/generatePaperPdf";
@@ -202,6 +203,67 @@ FIGURE/CHART FORMAT:
 - NEVER use ASCII art
 - Data figures: use markdown tables with headers and Source line
 - Diagrams: describe with bullet points (axes, curves, equilibrium points)`;
+};
+
+const OCR_ECON_PAPER_PROMPT = (paperLabel: string) => {
+  const paperNum = paperLabel.includes("01") || paperLabel.includes("1") ? "1" : paperLabel.includes("02") || paperLabel.includes("2") ? "2" : "3";
+  const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum);
+
+  const templates: Record<string, string> = {
+    "1": `COMPONENT 01: Microeconomics (H460/01) — 2 hours, 80 marks
+## Section A: Data Response (compulsory, 30 marks)
+Case study with 2-3 Extracts (text + data tables/figures)
+Question 01 [2 marks] — calculation/define
+Question 02 [4 marks] — explain with reasoning
+Question 03 [8 marks] — "Explain, with the aid of a diagram..."
+Question 04 [16 marks] — "Evaluate..."
+
+## Section B: Essay (choose TWO from THREE, 50 marks)
+Question 05 [25 marks] — Extended evaluation essay (micro)
+Question 06 [25 marks] — Extended evaluation essay (micro)
+Question 07 [25 marks] — Extended evaluation essay (micro)`,
+
+    "2": `COMPONENT 02: Macroeconomics (H460/02) — 2 hours, 80 marks
+Same structure as Component 01 but MACRO topics:
+Section A: Data response (30 marks) — 2m, 4m, 8m, 16m
+Section B: Two essays from three (50 marks) — each 25 marks
+Topics: AD/AS, growth, inflation, unemployment, fiscal/monetary/supply-side policy, trade, financial sector.`,
+
+    "3": `COMPONENT 03: Themes in Economics (H460/03) — 2 hours, 80 marks
+SYNOPTIC — tests BOTH micro AND macro.
+Section A: Data response (30 marks) — synoptic case study requiring micro+macro links
+Section B: Two essays from three (50 marks) — synoptic evaluation essays
+Each essay MUST require students to draw on knowledge from BOTH Components 01 and 02.`,
+  };
+
+  return `You are an expert OCR A-Level Economics (H460) chief examiner trained on every OCR Economics paper.
+
+Generate a COMPLETE predicted exam paper for ${paperLabel}.
+
+${OCR_PAST_PAPER_KNOWLEDGE}
+
+${knowledgeGraphSection}
+
+${templates[paperNum]}
+
+CRITICAL RULES:
+1. Follow the template structure EXACTLY
+2. Extracts must contain realistic 2023-2025 UK/global data
+3. 8-mark questions MUST include "Explain, with the aid of a diagram"
+4. 25-mark essays require KAA (12 marks) + Evaluation (13 marks)
+5. At least 40% of marks must target Analyse/Evaluate (AO3+AO4)
+6. Use OCR command words precisely: "Explain", "Evaluate", "Calculate"
+
+OUTPUT FORMAT:
+- Every question: Question XX [Y marks]
+- Do NOT bold question headers
+- MCQ options: - A, - B, - C, - D
+- Do NOT include mark schemes or answers
+
+FIGURE/CHART FORMAT:
+- NEVER use ASCII art
+- Data figures: markdown tables with Source line
+- Diagrams: structured text with axes, curves, equilibrium points`;
 };
 
 const ECON_PAPER_PROMPT = (paperLabel: string) => {
@@ -546,7 +608,8 @@ export default function PredictedPapers() {
   const isEconomics = subject === "economics";
   const isEdexcelA = subject === "edexcel-a";
   const isEdexcelB = subject === "edexcel-b";
-  const isAnyEcon = isEconomics || isEdexcelA || isEdexcelB;
+  const isOCR = subject === "ocr";
+  const isAnyEcon = isEconomics || isEdexcelA || isEdexcelB || isOCR;
 
   const libraryPapers = useMemo(
     () => predictedPapersLibrary.filter((p) => p.subject === subject),
@@ -586,7 +649,7 @@ export default function PredictedPapers() {
     if (isAnyEcon) {
       try {
         const { data: patternData } = await supabase.functions.invoke("retrieve-patterns", {
-          body: { paper, subject: isEdexcelA ? "edexcel-a" : isEdexcelB ? "edexcel-b" : "economics", limit: 250 },
+          body: { paper, subject: isEdexcelA ? "edexcel-a" : isEdexcelB ? "edexcel-b" : isOCR ? "ocr_economics" : "economics", limit: 250 },
         });
         if (patternData?.contextPrompt) {
           dbContextPrompt = patternData.contextPrompt;
@@ -602,6 +665,8 @@ export default function PredictedPapers() {
       ? CHEM_PAPER_PROMPT(paperLabel, tier)
       : (isEdexcelA || isEdexcelB)
       ? EDEXCEL_ECON_PAPER_PROMPT(paperLabel, subject as "edexcel-a" | "edexcel-b")
+      : isOCR
+      ? OCR_ECON_PAPER_PROMPT(paperLabel)
       : ECON_PAPER_PROMPT(paperLabel);
 
     // Inject DB-retrieved patterns for Economics
