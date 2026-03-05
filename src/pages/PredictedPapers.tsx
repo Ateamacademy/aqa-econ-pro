@@ -942,7 +942,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
         </span>
         <h1 className="text-3xl md:text-4xl font-serif font-bold mb-3">Predicted Papers</h1>
         <p className="text-muted-foreground max-w-lg mx-auto">
-          Choose from our library of 10 ready-made predicted papers or generate a fresh one with AI.
+          Choose from our library of {libraryPapers.length} ready-made predicted papers or generate a fresh one with AI.
         </p>
       </div>
 
