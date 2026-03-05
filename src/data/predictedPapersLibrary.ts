@@ -5,7 +5,7 @@
 
 export interface PredictedPaper {
   id: string;
-  subject: "maths" | "economics" | "chemistry" | "edexcel-a" | "edexcel-b";
+  subject: "maths" | "economics" | "chemistry" | "edexcel-a" | "edexcel-b" | "ocr";
   paper: string; // "1" | "2" | "3"
   tier?: "Foundation" | "Higher";
   title: string;
@@ -3270,6 +3270,9 @@ In your answer, you should:
   },
 ];
 
-// Merge chemistry predicted papers from dedicated file
+// Merge additional predicted papers from dedicated files
 import { chemistryPredictedPapers } from "./chemistryPredictedPapers";
-predictedPapersLibrary.push(...chemistryPredictedPapers);
+import { economicsPredictedPapersExtra } from "./economicsPredictedPapersExtra";
+import { mathsPredictedPapersExtra } from "./mathsPredictedPapersExtra";
+import { chemistryPredictedPapersExtra } from "./chemistryPredictedPapersExtra";
+predictedPapersLibrary.push(...chemistryPredictedPapers, ...economicsPredictedPapersExtra, ...mathsPredictedPapersExtra, ...chemistryPredictedPapersExtra);
