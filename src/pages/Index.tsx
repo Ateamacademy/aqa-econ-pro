@@ -53,8 +53,8 @@ const subjects = [
   { title: "AQA A-Level Economics", icon: FileText, papers: ["Paper 1: Markets & Market Failure", "Paper 2: National & International Economy", "Paper 3: Economic Principles & Issues"] },
   { title: "Edexcel A-Level Economics A", icon: FileText, papers: ["Paper 1: Markets & Business Behaviour", "Paper 2: The National & Global Economy", "Paper 3: Micro & Macroeconomics"] },
   { title: "Edexcel A-Level Economics B", icon: FileText, papers: ["Paper 1: Markets, Consumers & Firms", "Paper 2: The Wider Economic Environment", "Paper 3: The Global Economy"] },
-  { title: "Edexcel GCSE Maths", icon: Calculator, papers: ["Paper 1: Non-Calculator", "Paper 2: Calculator (1)", "Paper 3: Calculator (2)"] },
-  { title: "AQA GCSE Chemistry", icon: FlaskConical, papers: ["Paper 1: Topics 1–5 (Atomic Structure to Energy)", "Paper 2: Topics 6–10 (Rates to Resources)"] },
+  { title: "OCR A-Level Economics", icon: FileText, papers: ["Component 01: Microeconomics", "Component 02: Macroeconomics", "Component 03: Themes in Economics"] },
+  { title: "CAIE A-Level Economics", icon: FileText, papers: ["Paper 1: MCQ (AS)", "Paper 2: Data Response & Essay (AS)", "Paper 3: MCQ (A2)", "Paper 4: Data Response & Essay (A2)"] },
 ];
 
 const container = {
