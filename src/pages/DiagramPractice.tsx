@@ -388,7 +388,15 @@ Speak directly to the student using "you" and "your".` }],
           <Card>
             <CardHeader><CardTitle className="font-serif text-lg text-accent">Feedback</CardTitle></CardHeader>
             <CardContent>
-              <div className="prose prose-sm max-w-none dark:prose-invert"><ReactMarkdown>{feedback}</ReactMarkdown></div>
+              <div className="prose prose-sm max-w-none dark:prose-invert">
+                {extractDiagramBlocks(feedback).map((seg, i) =>
+                  seg.type === "diagram" ? (
+                    <EconDiagramCanvas key={i} diagram={seg.diagram} />
+                  ) : (
+                    <ReactMarkdown key={i}>{seg.content}</ReactMarkdown>
+                  )
+                )}
+              </div>
             </CardContent>
           </Card>
           <Button onClick={reset} className="gap-2"><PenTool className="h-4 w-4" /> Try Another Diagram</Button>
