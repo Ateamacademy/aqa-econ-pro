@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
@@ -7,10 +7,12 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PenTool, Lock, Send, RotateCcw, CheckCircle2, XCircle, Info } from "lucide-react";
+import { PenTool, Lock, Send, RotateCcw, Info, Pencil, FileText } from "lucide-react";
 import { toast } from "sonner";
 import ReactMarkdown from "react-markdown";
 import { FREE_LIMITS } from "@/lib/plans";
+import { DrawingCanvas } from "@/components/tools/DrawingCanvas";
+import { cn } from "@/lib/utils";
 
 const DIAGRAM_TOPICS: Record<string, string[]> = {
   economics: [
@@ -89,6 +91,8 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
 
 const DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced"] as const;
 
+type InputMode = "draw" | "text";
+
 export default function DiagramPractice() {
   const { user, subscribed, profile, refreshProfile } = useAuth();
   const { subject, subjectLabel, examBoard, level } = useSubject();
@@ -99,6 +103,8 @@ export default function DiagramPractice() {
   const [topic, setTopic] = useState(topics[0]);
   const [difficulty, setDifficulty] = useState<string>("Intermediate");
   const [generatedQ, setGeneratedQ] = useState("");
+  const [inputMode, setInputMode] = useState<InputMode>("draw");
+  const [diagramImage, setDiagramImage] = useState<string | null>(null);
   const [diagramDesc, setDiagramDesc] = useState("");
   const [explanation, setExplanation] = useState("");
   const [feedback, setFeedback] = useState("");
@@ -136,7 +142,7 @@ export default function DiagramPractice() {
 The question should:
 1. Present an economic scenario that requires a diagram to explain
 2. Specify what type of diagram is expected (e.g., "Draw and annotate a supply and demand diagram showing...")
-3. Ask the student to describe the diagram AND provide a written explanation connecting the diagram to the scenario
+3. Ask the student to draw the diagram AND provide a written explanation connecting the diagram to the scenario
 4. State the mark allocation (typically 4-8 marks for diagram + explanation)
 
 Format: Give the scenario context, then the question. Nothing else.` }],
@@ -153,15 +159,16 @@ Format: Give the scenario context, then the question. Nothing else.` }],
     setFeedback("");
     let result = "";
 
+    const diagramContent = inputMode === "draw" && diagramImage
+      ? [
+          { type: "text" as const, text: `Question: ${generatedQ}\n\nThe student has drawn a diagram (attached as an image). Please analyse the drawn diagram.\n\nStudent's Written Explanation:\n${explanation}` },
+          { type: "image_url" as const, image_url: { url: diagramImage } },
+        ]
+      : `Question: ${generatedQ}\n\nStudent's Diagram Description:\n${diagramDesc}\n\nStudent's Written Explanation:\n${explanation}`;
+
     await streamChat({
       messages: [
-        { role: "user", content: `Question: ${generatedQ}
-
-Student's Diagram Description:
-${diagramDesc}
-
-Student's Written Explanation:
-${explanation}` },
+        { role: "user", content: diagramContent },
         { role: "user", content: `Mark this diagram submission using ${examBoard} ${level} ${subjectLabel} criteria.
 
 You MUST evaluate using ALL 5 diagram marking criteria:
@@ -170,7 +177,7 @@ You MUST evaluate using ALL 5 diagram marking criteria:
 2. **CURVE DIRECTION** — Are curves sloping the correct way? (Demand downward, Supply upward, LRAS vertical, etc.)
 3. **SHIFT DIRECTION** — Does the described shift match the scenario? (Right = increase, Left = decrease)
 4. **EQUILIBRIUM** — Is original equilibrium (P1,Q1) marked? Is new equilibrium (P2,Q2) identified with dotted lines to axes?
-5. **EXPLANATION ↔ DIAGRAM CONSISTENCY** — Does the written explanation logically match the diagram described? Are the direction of changes consistent?
+5. **EXPLANATION ↔ DIAGRAM CONSISTENCY** — Does the written explanation logically match the diagram? Are the direction of changes consistent?
 
 Structure your response as:
 - **Diagram Assessment**: tick/cross each of the 5 criteria with detail
@@ -194,7 +201,6 @@ Speak directly to the student using "you" and "your".` }],
       onDone: async () => {
         setIsMarking(false);
         setStep("feedback");
-        // Track session
         if (user) {
           await supabase.from("practice_sessions").insert({
             user_id: user.id,
@@ -212,7 +218,16 @@ Speak directly to the student using "you" and "your".` }],
     });
   };
 
-  const reset = () => { setStep("generate"); setGeneratedQ(""); setDiagramDesc(""); setExplanation(""); setFeedback(""); };
+  const reset = () => {
+    setStep("generate");
+    setGeneratedQ("");
+    setDiagramDesc("");
+    setDiagramImage(null);
+    setExplanation("");
+    setFeedback("");
+  };
+
+  const hasSubmission = inputMode === "draw" ? !!diagramImage : !!diagramDesc.trim();
 
   return (
     <div className="container py-10 max-w-3xl">
@@ -223,14 +238,13 @@ Speak directly to the student using "you" and "your".` }],
         </p>
       </div>
 
-      {/* Tips card */}
       <Card className="mb-6 border-accent/30 bg-accent/5">
         <CardContent className="p-4">
           <div className="flex items-start gap-3">
             <Info className="h-5 w-5 text-accent mt-0.5 shrink-0" />
             <div className="text-sm space-y-1">
               <p className="font-medium">How diagram marking works</p>
-              <p className="text-muted-foreground">Describe your diagram using structured text (axes, curves, shifts, equilibrium). The AI evaluates your description against 5 examiner criteria: axes labels, curve direction, shift direction, equilibrium identification, and explanation-diagram consistency.</p>
+              <p className="text-muted-foreground">Draw your diagram using the canvas with multiple colours, or describe it using structured text. The AI evaluates your submission against 5 examiner criteria: axes labels, curve direction, shift direction, equilibrium identification, and explanation-diagram consistency.</p>
             </div>
           </div>
         </CardContent>
@@ -272,16 +286,56 @@ Speak directly to the student using "you" and "your".` }],
 
           <Card>
             <CardContent className="p-6 space-y-4">
-              <div>
-                <label className="text-sm font-medium block mb-2">Your Diagram Description</label>
-                <p className="text-xs text-muted-foreground mb-2">Describe your diagram using structured text. Include: axes labels, curve names & slopes, any shifts, equilibrium points, and dotted lines to axes.</p>
-                <Textarea
-                  value={diagramDesc}
-                  onChange={e => setDiagramDesc(e.target.value)}
-                  rows={6}
-                  placeholder={`Example:\nX-axis: Quantity (Q)\nY-axis: Price (P)\nDemand curve D1 slopes downward\nSupply curve S1 slopes upward\nInitial equilibrium at P1, Q1\nSupply shifts left from S1 to S2 (due to higher costs)\nNew equilibrium at P2 (higher), Q2 (lower)`}
-                />
+              {/* Mode toggle */}
+              <div className="flex items-center gap-1 bg-muted rounded-lg p-0.5 w-fit">
+                <button
+                  onClick={() => setInputMode("draw")}
+                  className={cn(
+                    "flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors",
+                    inputMode === "draw" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  <Pencil className="h-3.5 w-3.5" /> Draw Diagram
+                </button>
+                <button
+                  onClick={() => setInputMode("text")}
+                  className={cn(
+                    "flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors",
+                    inputMode === "text" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  <FileText className="h-3.5 w-3.5" /> Describe Diagram
+                </button>
               </div>
+
+              {inputMode === "draw" ? (
+                <div>
+                  <p className="text-xs text-muted-foreground mb-2">Draw your diagram below. Use different colours for curves, shifts, and labels. The AI will analyse your drawing.</p>
+                  <DrawingCanvas
+                    width={700}
+                    height={500}
+                    showGrid
+                    label="Your Diagram"
+                    onDrawEnd={(dataUrl) => setDiagramImage(dataUrl)}
+                    onSave={(dataUrl) => setDiagramImage(dataUrl)}
+                  />
+                  {diagramImage && (
+                    <p className="text-xs text-green-600 mt-1">✓ Diagram captured — ready to submit</p>
+                  )}
+                </div>
+              ) : (
+                <div>
+                  <label className="text-sm font-medium block mb-2">Your Diagram Description</label>
+                  <p className="text-xs text-muted-foreground mb-2">Describe your diagram using structured text. Include: axes labels, curve names & slopes, any shifts, equilibrium points, and dotted lines to axes.</p>
+                  <Textarea
+                    value={diagramDesc}
+                    onChange={e => setDiagramDesc(e.target.value)}
+                    rows={6}
+                    placeholder={`Example:\nX-axis: Quantity (Q)\nY-axis: Price (P)\nDemand curve D1 slopes downward\nSupply curve S1 slopes upward\nInitial equilibrium at P1, Q1\nSupply shifts left from S1 to S2 (due to higher costs)\nNew equilibrium at P2 (higher), Q2 (lower)`}
+                  />
+                </div>
+              )}
+
               <div>
                 <label className="text-sm font-medium block mb-2">Your Written Explanation</label>
                 <p className="text-xs text-muted-foreground mb-2">Explain the economic reasoning that connects to your diagram. Use chains of analysis and refer to your diagram.</p>
@@ -293,7 +347,7 @@ Speak directly to the student using "you" and "your".` }],
                 />
               </div>
               <div className="flex gap-2">
-                <Button onClick={markDiagram} disabled={isMarking || (!diagramDesc.trim() && !explanation.trim())} className="gap-2">
+                <Button onClick={markDiagram} disabled={isMarking || (!hasSubmission && !explanation.trim())} className="gap-2">
                   <Send className="h-4 w-4" /> {isMarking ? "Marking..." : "Submit for Marking"}
                 </Button>
                 <Button variant="outline" onClick={reset}>New Question</Button>
@@ -314,9 +368,17 @@ Speak directly to the student using "you" and "your".` }],
           <Card>
             <CardHeader><CardTitle className="font-serif text-lg">Your Diagram</CardTitle></CardHeader>
             <CardContent>
-              <p className="text-sm whitespace-pre-wrap mb-3">{diagramDesc}</p>
-              <p className="text-sm font-medium mb-1">Your Explanation:</p>
-              <p className="text-sm whitespace-pre-wrap">{explanation}</p>
+              {diagramImage && inputMode === "draw" ? (
+                <img src={diagramImage} alt="Your drawn diagram" className="rounded-lg border max-w-full" />
+              ) : (
+                <p className="text-sm whitespace-pre-wrap">{diagramDesc}</p>
+              )}
+              {explanation && (
+                <>
+                  <p className="text-sm font-medium mb-1 mt-3">Your Explanation:</p>
+                  <p className="text-sm whitespace-pre-wrap">{explanation}</p>
+                </>
+              )}
             </CardContent>
           </Card>
           <Card>
