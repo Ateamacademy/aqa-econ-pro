@@ -38,8 +38,6 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/papers" element={<PastPapers />} />
-              <Route path="/maths-papers" element={<MathsPastPapers />} />
-              <Route path="/chemistry-papers" element={<ChemistryPastPapers />} />
               <Route path="/edexcel-a-papers" element={<EdexcelAPastPapers />} />
               <Route path="/cambridge-papers" element={<CambridgePastPapers />} />
               <Route path="/edexcel-b-papers" element={<EdexcelBPastPapers />} />
@@ -48,6 +46,7 @@ const App = () => (
               <Route path="/tutor" element={<AITutor />} />
               <Route path="/grader" element={<EssayGrader />} />
               <Route path="/practice" element={<Practice />} />
+              <Route path="/diagram-practice" element={<DiagramPractice />} />
               <Route path="/notes" element={<StudyNotes />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/auth" element={<Auth />} />
