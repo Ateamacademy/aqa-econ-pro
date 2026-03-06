@@ -25,6 +25,10 @@ function getNavItems(subject: Subject) {
     ? { to: "/chemistry-papers", label: "Chem Papers", icon: FlaskConical }
     : subject === "edexcel-a"
     ? { to: "/edexcel-a-papers", label: "Edexcel A Papers", icon: TrendingUp }
+    : subject === "edexcel-b"
+    ? { to: "/edexcel-b-papers", label: "Edexcel B Papers", icon: TrendingUp }
+    : subject === "cambridge"
+    ? { to: "/cambridge-papers", label: "CAIE Papers", icon: TrendingUp }
     : { to: "/edexcel-b-papers", label: "Edexcel B Papers", icon: TrendingUp };
 
   return [
@@ -38,6 +42,7 @@ const SUBJECTS: { value: Subject; label: string }[] = [
   { value: "economics", label: "AQA Econ" },
   { value: "edexcel-a", label: "Edexcel A" },
   { value: "edexcel-b", label: "Edexcel B" },
+  { value: "cambridge", label: "CAIE" },
   { value: "maths", label: "Maths" },
   { value: "chemistry", label: "Chemistry" },
 ];
@@ -177,7 +182,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <footer className="border-t bg-card py-6">
         <div className="container text-center text-sm text-muted-foreground">
-          <p>ExamAce — AQA A-Level Economics · Edexcel A-Level Economics A & B · Edexcel GCSE Maths · AQA GCSE Chemistry</p>
+          <p>ExamAce — AQA A-Level Economics · Edexcel A-Level Economics A & B · Cambridge International Economics · Edexcel GCSE Maths · AQA GCSE Chemistry</p>
         </div>
       </footer>
     </div>

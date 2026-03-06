@@ -5,7 +5,7 @@
 
 export interface PredictedPaper {
   id: string;
-  subject: "maths" | "economics" | "chemistry" | "edexcel-a" | "edexcel-b" | "ocr";
+  subject: "maths" | "economics" | "chemistry" | "edexcel-a" | "edexcel-b" | "ocr" | "cambridge";
   paper: string; // "1" | "2" | "3"
   tier?: "Foundation" | "Higher";
   title: string;
@@ -3277,4 +3277,5 @@ import { mathsPredictedPapersExtra } from "./mathsPredictedPapersExtra";
 import { chemistryPredictedPapersExtra } from "./chemistryPredictedPapersExtra";
 import { edexcelAPredictedPapers } from "./edexcelAPredictedPapers";
 import { edexcelBPredictedPapers } from "./edexcelBPredictedPapers";
-predictedPapersLibrary.push(...chemistryPredictedPapers, ...economicsPredictedPapersExtra, ...mathsPredictedPapersExtra, ...chemistryPredictedPapersExtra, ...edexcelAPredictedPapers, ...edexcelBPredictedPapers);
+import { cambridgePredictedPapers } from "./cambridgePredictedPapers";
+predictedPapersLibrary.push(...chemistryPredictedPapers, ...economicsPredictedPapersExtra, ...mathsPredictedPapersExtra, ...chemistryPredictedPapersExtra, ...edexcelAPredictedPapers, ...edexcelBPredictedPapers, ...cambridgePredictedPapers);
