@@ -658,14 +658,14 @@ export default function PredictedPapers() {
   const remaining = FREE_LIMITS.predictedPapers - used;
 
   const paperOptions = paperOptionsBySubject[subject];
-  const isMaths = subject === "maths";
-  const isChemistry = subject === "chemistry";
+  const isMaths = false;
+  const isChemistry = false;
   const isEconomics = subject === "economics";
   const isEdexcelA = subject === "edexcel-a";
   const isEdexcelB = subject === "edexcel-b";
   const isOCR = subject === "ocr";
   const isCambridge = subject === "cambridge";
-  const isAnyEcon = isEconomics || isEdexcelA || isEdexcelB || isOCR || isCambridge;
+  const isAnyEcon = true;
 
   const libraryPapers = useMemo(
     () => predictedPapersLibrary.filter((p) => p.subject === subject),

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { BookOpen, Brain, Calculator, FileText, MessageCircle, PenTool, ArrowRight, Sparkles, FlaskConical } from "lucide-react";
+import { BookOpen, Brain, FileText, MessageCircle, PenTool, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -8,7 +8,7 @@ const features = [
   {
     icon: FileText,
     title: "Past Papers",
-    description: "Browse organised past papers for Economics, Maths, and Chemistry with direct links to questions and mark schemes.",
+    description: "Browse organised past papers for Economics with direct links to questions and mark schemes.",
     to: "/papers",
     color: "text-primary",
   },
@@ -53,8 +53,8 @@ const subjects = [
   { title: "AQA A-Level Economics", icon: FileText, papers: ["Paper 1: Markets & Market Failure", "Paper 2: National & International Economy", "Paper 3: Economic Principles & Issues"] },
   { title: "Edexcel A-Level Economics A", icon: FileText, papers: ["Paper 1: Markets & Business Behaviour", "Paper 2: The National & Global Economy", "Paper 3: Micro & Macroeconomics"] },
   { title: "Edexcel A-Level Economics B", icon: FileText, papers: ["Paper 1: Markets, Consumers & Firms", "Paper 2: The Wider Economic Environment", "Paper 3: The Global Economy"] },
-  { title: "Edexcel GCSE Maths", icon: Calculator, papers: ["Paper 1: Non-Calculator", "Paper 2: Calculator (1)", "Paper 3: Calculator (2)"] },
-  { title: "AQA GCSE Chemistry", icon: FlaskConical, papers: ["Paper 1: Topics 1–5 (Atomic Structure to Energy)", "Paper 2: Topics 6–10 (Rates to Resources)"] },
+  { title: "OCR A-Level Economics", icon: FileText, papers: ["Component 01: Microeconomics", "Component 02: Macroeconomics", "Component 03: Themes in Economics"] },
+  { title: "CAIE A-Level Economics", icon: FileText, papers: ["Paper 1: MCQ (AS)", "Paper 2: Data Response & Essay (AS)", "Paper 3: MCQ (A2)", "Paper 4: Data Response & Essay (A2)"] },
 ];
 
 const container = {
@@ -84,7 +84,7 @@ export default function Index() {
               Ace your <span className="italic text-accent">Exams</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              AI-powered revision for AQA Economics, Edexcel GCSE Maths & AQA GCSE Chemistry. Past papers, instant tutoring, answer grading, and practice — all in one place.
+              AI-powered revision for A-Level Economics — AQA, Edexcel, OCR & Cambridge International. Past papers, instant tutoring, answer grading, and practice — all in one place.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <Button asChild size="lg" className="gap-2 text-base">
@@ -104,14 +104,14 @@ export default function Index() {
       <section className="py-16 bg-muted/50">
         <div className="container">
           <h2 className="text-3xl md:text-4xl font-serif text-center mb-10">
-            Three Subjects, One Platform
+            Five Exam Boards, One Platform
           </h2>
           <motion.div
             variants={container}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto"
+            className="grid md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto"
           >
             {subjects.map((s) => {
               const Icon = s.icon;
@@ -147,7 +147,7 @@ export default function Index() {
             Everything You Need to Revise
           </h2>
           <p className="text-center text-muted-foreground mb-12 max-w-xl mx-auto">
-            Built for AQA Economics, Edexcel GCSE Maths & AQA GCSE Chemistry specifications.
+            Built for AQA, Edexcel, OCR & Cambridge International A-Level Economics specifications.
           </p>
           <motion.div
             variants={container}

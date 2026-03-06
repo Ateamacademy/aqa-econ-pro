@@ -30,7 +30,7 @@ export default function EssayGrader() {
     return (
       <div className="container py-16 max-w-3xl text-center">
         <Lock className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-        <h1 className="font-serif text-3xl mb-3">Sign in to use the {subject === "maths" ? "Answer" : "Essay"} Grader</h1>
+        <h1 className="font-serif text-3xl mb-3">Sign in to use the Essay Grader</h1>
         <Button onClick={() => navigate("/auth")}>Sign In</Button>
       </div>
     );
@@ -67,7 +67,7 @@ export default function EssayGrader() {
     });
   };
 
-  const graderLabel = subject === "maths" ? "Answer Grader" : "Essay Grader";
+  const graderLabel = "Essay Grader";
 
   return (
     <div className="container py-10 max-w-3xl">

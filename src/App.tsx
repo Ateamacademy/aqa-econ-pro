@@ -8,8 +8,6 @@ import { SubjectProvider } from "@/contexts/SubjectContext";
 import Layout from "@/components/Layout";
 import Index from "./pages/Index";
 import PastPapers from "./pages/PastPapers";
-import MathsPastPapers from "./pages/MathsPastPapers";
-import ChemistryPastPapers from "./pages/ChemistryPastPapers";
 import EdexcelAPastPapers from "./pages/EdexcelAPastPapers";
 import EdexcelBPastPapers from "./pages/EdexcelBPastPapers";
 import CambridgePastPapers from "./pages/CambridgePastPapers";
@@ -17,6 +15,7 @@ import OcrPastPapers from "./pages/OcrPastPapers";
 import AITutor from "./pages/AITutor";
 import EssayGrader from "./pages/EssayGrader";
 import Practice from "./pages/Practice";
+import DiagramPractice from "./pages/DiagramPractice";
 import StudyNotes from "./pages/StudyNotes";
 import Dashboard from "./pages/Dashboard";
 import Auth from "./pages/Auth";
@@ -39,8 +38,6 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/papers" element={<PastPapers />} />
-              <Route path="/maths-papers" element={<MathsPastPapers />} />
-              <Route path="/chemistry-papers" element={<ChemistryPastPapers />} />
               <Route path="/edexcel-a-papers" element={<EdexcelAPastPapers />} />
               <Route path="/cambridge-papers" element={<CambridgePastPapers />} />
               <Route path="/edexcel-b-papers" element={<EdexcelBPastPapers />} />
@@ -49,6 +46,7 @@ const App = () => (
               <Route path="/tutor" element={<AITutor />} />
               <Route path="/grader" element={<EssayGrader />} />
               <Route path="/practice" element={<Practice />} />
+              <Route path="/diagram-practice" element={<DiagramPractice />} />
               <Route path="/notes" element={<StudyNotes />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/auth" element={<Auth />} />

@@ -59,6 +59,39 @@ export type Database = {
         }
         Relationships: []
       }
+      practice_sessions: {
+        Row: {
+          created_at: string | null
+          feedback_summary: string | null
+          id: string
+          score_percent: number | null
+          session_type: string
+          subject: string
+          topic: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          feedback_summary?: string | null
+          id?: string
+          score_percent?: number | null
+          session_type?: string
+          subject: string
+          topic: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          feedback_summary?: string | null
+          id?: string
+          score_percent?: number | null
+          session_type?: string
+          subject?: string
+          topic?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string

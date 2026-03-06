@@ -1,0 +1,333 @@
+import { useState, useEffect } from "react";
+import { useAuth } from "@/contexts/AuthContext";
+import { useSubject } from "@/contexts/SubjectContext";
+import { useNavigate } from "react-router-dom";
+import { streamChat } from "@/lib/streamChat";
+import { supabase } from "@/integrations/supabase/client";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PenTool, Lock, Send, RotateCcw, CheckCircle2, XCircle, Info } from "lucide-react";
+import { toast } from "sonner";
+import ReactMarkdown from "react-markdown";
+import { FREE_LIMITS } from "@/lib/plans";
+
+const DIAGRAM_TOPICS: Record<string, string[]> = {
+  economics: [
+    "Supply & Demand — Shift in Demand",
+    "Supply & Demand — Shift in Supply",
+    "Indirect Tax (Ad Valorem / Specific)",
+    "Subsidy on a Good",
+    "Negative Externality (Overconsumption / Overproduction)",
+    "Positive Externality (Underconsumption / Underproduction)",
+    "Maximum Price (Price Ceiling)",
+    "Minimum Price (Price Floor)",
+    "AD/AS — Demand-Side Shock",
+    "AD/AS — Supply-Side Shock",
+    "AD/AS — Economic Growth (LRAS Shift)",
+    "Keynesian AS — Spare Capacity vs Full Employment",
+    "Labour Market — Wage Determination",
+    "Monopoly — Profit Maximisation (MC=MR)",
+    "Perfect Competition — Short Run & Long Run",
+  ],
+  "edexcel-a": [
+    "Supply & Demand — Market Equilibrium Change",
+    "Indirect Tax & Subsidy",
+    "Negative / Positive Externality (Welfare Loss)",
+    "AD/AS — Demand-Pull Inflation",
+    "AD/AS — Cost-Push Inflation",
+    "AD/AS — Supply-Side Policy Effect",
+    "Monopoly — Supernormal Profit",
+    "Oligopoly — Kinked Demand Curve",
+    "Labour Market — Minimum Wage",
+    "Exchange Rate Determination",
+    "Terms of Trade",
+    "J-Curve Effect (Balance of Payments)",
+  ],
+  "edexcel-b": [
+    "Supply & Demand — Price Mechanism",
+    "Market Failure — Externalities",
+    "AD/AS — Macroeconomic Equilibrium",
+    "AD/AS — Fiscal Policy Effect",
+    "Cost & Revenue Curves — Profit Maximisation",
+    "Market Structures — Monopoly vs Perfect Competition",
+    "Labour Market — Trade Union Effect",
+    "Phillips Curve",
+    "Lorenz Curve & Gini Coefficient",
+  ],
+  ocr: [
+    "Supply & Demand — Market Equilibrium",
+    "Indirect Tax — Incidence on Consumers & Producers",
+    "Negative Externality — Welfare Loss Triangle",
+    "Positive Externality — Welfare Gain",
+    "AD/AS — Demand-Pull Inflation",
+    "AD/AS — Cost-Push Inflation",
+    "AD/AS — Supply-Side Policy",
+    "Monopoly — Abnormal Profit",
+    "Contestable Markets — Hit-and-Run Entry",
+    "Labour Market — Monopsony",
+    "Phillips Curve — Short Run vs Long Run",
+    "Comparative Advantage & Terms of Trade",
+  ],
+  cambridge: [
+    "Supply & Demand — Market Equilibrium",
+    "Price Elasticity of Demand — Effect on Revenue",
+    "Indirect Tax — Consumer vs Producer Burden",
+    "Negative Externality — MSC vs MPC",
+    "Positive Externality — MSB vs MPB",
+    "AD/AS — Inflationary / Deflationary Gap",
+    "Keynesian AS — Horizontal, Upward Sloping, Vertical Sections",
+    "Monopoly — Price Discrimination",
+    "Oligopoly — Kinked Demand Curve",
+    "Perfect Competition — Long Run Equilibrium",
+    "Labour Market — Bilateral Monopoly",
+    "Comparative Advantage — PPC Approach",
+    "The Multiplier — AD Shift",
+    "Marshall-Lerner Condition — J-Curve",
+  ],
+};
+
+const DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced"] as const;
+
+export default function DiagramPractice() {
+  const { user, subscribed, profile, refreshProfile } = useAuth();
+  const { subject, subjectLabel, examBoard, level } = useSubject();
+  const navigate = useNavigate();
+
+  const topics = DIAGRAM_TOPICS[subject] || DIAGRAM_TOPICS.economics;
+
+  const [topic, setTopic] = useState(topics[0]);
+  const [difficulty, setDifficulty] = useState<string>("Intermediate");
+  const [generatedQ, setGeneratedQ] = useState("");
+  const [diagramDesc, setDiagramDesc] = useState("");
+  const [explanation, setExplanation] = useState("");
+  const [feedback, setFeedback] = useState("");
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [isMarking, setIsMarking] = useState(false);
+  const [step, setStep] = useState<"generate" | "answer" | "feedback">("generate");
+
+  useEffect(() => {
+    const t = DIAGRAM_TOPICS[subject] || DIAGRAM_TOPICS.economics;
+    setTopic(t[0]);
+    reset();
+  }, [subject]);
+
+  if (!user) {
+    return (
+      <div className="container py-16 max-w-3xl text-center">
+        <Lock className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
+        <h1 className="font-serif text-3xl mb-3">Sign in to practice diagrams</h1>
+        <Button onClick={() => navigate("/auth")}>Sign In</Button>
+      </div>
+    );
+  }
+
+  const canUse = subscribed || (profile && profile.free_questions_used < FREE_LIMITS.questions);
+
+  const generateQuestion = async () => {
+    if (!canUse) { toast.error("Free limit reached."); navigate("/pricing"); return; }
+    setIsGenerating(true);
+    setGeneratedQ("");
+    let result = "";
+
+    await streamChat({
+      messages: [{ role: "user", content: `Generate a ${difficulty}-level diagram practice question on: "${topic}" for ${examBoard} ${level} ${subjectLabel}.
+
+The question should:
+1. Present an economic scenario that requires a diagram to explain
+2. Specify what type of diagram is expected (e.g., "Draw and annotate a supply and demand diagram showing...")
+3. Ask the student to describe the diagram AND provide a written explanation connecting the diagram to the scenario
+4. State the mark allocation (typically 4-8 marks for diagram + explanation)
+
+Format: Give the scenario context, then the question. Nothing else.` }],
+      mode: "practice",
+      subject,
+      onDelta: (chunk) => { result += chunk; setGeneratedQ(result); },
+      onDone: () => { setIsGenerating(false); setStep("answer"); },
+      onError: (err) => { toast.error(err); setIsGenerating(false); },
+    });
+  };
+
+  const markDiagram = async () => {
+    setIsMarking(true);
+    setFeedback("");
+    let result = "";
+
+    await streamChat({
+      messages: [
+        { role: "user", content: `Question: ${generatedQ}
+
+Student's Diagram Description:
+${diagramDesc}
+
+Student's Written Explanation:
+${explanation}` },
+        { role: "user", content: `Mark this diagram submission using ${examBoard} ${level} ${subjectLabel} criteria.
+
+You MUST evaluate using ALL 5 diagram marking criteria:
+
+1. **AXES** — Are axes labelled correctly? (e.g., Price/P on Y-axis, Quantity/Q on X-axis; for macro: Price Level & Real GDP)
+2. **CURVE DIRECTION** — Are curves sloping the correct way? (Demand downward, Supply upward, LRAS vertical, etc.)
+3. **SHIFT DIRECTION** — Does the described shift match the scenario? (Right = increase, Left = decrease)
+4. **EQUILIBRIUM** — Is original equilibrium (P1,Q1) marked? Is new equilibrium (P2,Q2) identified with dotted lines to axes?
+5. **EXPLANATION ↔ DIAGRAM CONSISTENCY** — Does the written explanation logically match the diagram described? Are the direction of changes consistent?
+
+Structure your response as:
+- **Diagram Assessment**: tick/cross each of the 5 criteria with detail
+- **Mark Awarded**: X/Y marks
+- **What You Did Well**: specific praise
+- **How to Improve**: actionable steps
+- **Model Diagram Description**: Show what a perfect structured description looks like using the format:
+  - X-axis: ...
+  - Y-axis: ...
+  - Initial curves: ...
+  - Initial equilibrium: ...
+  - Shift: ...
+  - New equilibrium: ...
+  - Effect: ...
+- **Model Explanation**: A top-band written explanation that correctly connects to the diagram
+
+Speak directly to the student using "you" and "your".` }],
+      mode: "grade",
+      subject,
+      onDelta: (chunk) => { result += chunk; setFeedback(result); },
+      onDone: async () => {
+        setIsMarking(false);
+        setStep("feedback");
+        // Track session
+        if (user) {
+          await supabase.from("practice_sessions").insert({
+            user_id: user.id,
+            subject,
+            session_type: "diagram",
+            topic,
+          });
+        }
+        if (!subscribed && profile) {
+          await supabase.from("profiles").update({ free_questions_used: profile.free_questions_used + 1 }).eq("user_id", user.id);
+          refreshProfile();
+        }
+      },
+      onError: (err) => { toast.error(err); setIsMarking(false); },
+    });
+  };
+
+  const reset = () => { setStep("generate"); setGeneratedQ(""); setDiagramDesc(""); setExplanation(""); setFeedback(""); };
+
+  return (
+    <div className="container py-10 max-w-3xl">
+      <div className="mb-6">
+        <h1 className="text-3xl font-serif mb-1">Diagram Practice</h1>
+        <p className="text-sm text-muted-foreground">
+          {examBoard} {level} {subjectLabel} · {subscribed ? "Unlimited practice" : `${FREE_LIMITS.questions - (profile?.free_questions_used ?? 0)} free attempt(s) remaining`}
+        </p>
+      </div>
+
+      {/* Tips card */}
+      <Card className="mb-6 border-accent/30 bg-accent/5">
+        <CardContent className="p-4">
+          <div className="flex items-start gap-3">
+            <Info className="h-5 w-5 text-accent mt-0.5 shrink-0" />
+            <div className="text-sm space-y-1">
+              <p className="font-medium">How diagram marking works</p>
+              <p className="text-muted-foreground">Describe your diagram using structured text (axes, curves, shifts, equilibrium). The AI evaluates your description against 5 examiner criteria: axes labels, curve direction, shift direction, equilibrium identification, and explanation-diagram consistency.</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {step === "generate" && (
+        <Card>
+          <CardContent className="p-6 space-y-4">
+            <div>
+              <label className="text-sm font-medium mb-1 block">Diagram Topic</label>
+              <select value={topic} onChange={e => setTopic(e.target.value)} className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm">
+                {topics.map(t => <option key={t} value={t}>{t}</option>)}
+              </select>
+            </div>
+            <div>
+              <label className="text-sm font-medium mb-1 block">Difficulty</label>
+              <select value={difficulty} onChange={e => setDifficulty(e.target.value)} className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm">
+                {DIFFICULTY_LEVELS.map(d => <option key={d} value={d}>{d}</option>)}
+              </select>
+            </div>
+            <Button onClick={generateQuestion} disabled={isGenerating || !canUse} className="gap-2">
+              <PenTool className="h-4 w-4" />
+              {isGenerating ? "Generating..." : canUse ? "Generate Diagram Question" : "Subscribe for More"}
+            </Button>
+          </CardContent>
+        </Card>
+      )}
+
+      {step === "answer" && (
+        <div className="space-y-4">
+          <Card>
+            <CardHeader><CardTitle className="font-serif text-lg">Question</CardTitle></CardHeader>
+            <CardContent>
+              <div className="prose prose-sm max-w-none dark:prose-invert">
+                <ReactMarkdown>{generatedQ}</ReactMarkdown>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6 space-y-4">
+              <div>
+                <label className="text-sm font-medium block mb-2">Your Diagram Description</label>
+                <p className="text-xs text-muted-foreground mb-2">Describe your diagram using structured text. Include: axes labels, curve names & slopes, any shifts, equilibrium points, and dotted lines to axes.</p>
+                <Textarea
+                  value={diagramDesc}
+                  onChange={e => setDiagramDesc(e.target.value)}
+                  rows={6}
+                  placeholder={`Example:\nX-axis: Quantity (Q)\nY-axis: Price (P)\nDemand curve D1 slopes downward\nSupply curve S1 slopes upward\nInitial equilibrium at P1, Q1\nSupply shifts left from S1 to S2 (due to higher costs)\nNew equilibrium at P2 (higher), Q2 (lower)`}
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium block mb-2">Your Written Explanation</label>
+                <p className="text-xs text-muted-foreground mb-2">Explain the economic reasoning that connects to your diagram. Use chains of analysis and refer to your diagram.</p>
+                <Textarea
+                  value={explanation}
+                  onChange={e => setExplanation(e.target.value)}
+                  rows={6}
+                  placeholder="Explain the economic impact shown in your diagram. Reference the shifts, equilibrium changes, and connect to the scenario..."
+                />
+              </div>
+              <div className="flex gap-2">
+                <Button onClick={markDiagram} disabled={isMarking || (!diagramDesc.trim() && !explanation.trim())} className="gap-2">
+                  <Send className="h-4 w-4" /> {isMarking ? "Marking..." : "Submit for Marking"}
+                </Button>
+                <Button variant="outline" onClick={reset}>New Question</Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      )}
+
+      {step === "feedback" && (
+        <div className="space-y-4">
+          <Card>
+            <CardHeader><CardTitle className="font-serif text-lg">Question</CardTitle></CardHeader>
+            <CardContent>
+              <div className="prose prose-sm max-w-none dark:prose-invert"><ReactMarkdown>{generatedQ}</ReactMarkdown></div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader><CardTitle className="font-serif text-lg">Your Diagram</CardTitle></CardHeader>
+            <CardContent>
+              <p className="text-sm whitespace-pre-wrap mb-3">{diagramDesc}</p>
+              <p className="text-sm font-medium mb-1">Your Explanation:</p>
+              <p className="text-sm whitespace-pre-wrap">{explanation}</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader><CardTitle className="font-serif text-lg text-accent">Feedback</CardTitle></CardHeader>
+            <CardContent>
+              <div className="prose prose-sm max-w-none dark:prose-invert"><ReactMarkdown>{feedback}</ReactMarkdown></div>
+            </CardContent>
+          </Card>
+          <Button onClick={reset} className="gap-2"><PenTool className="h-4 w-4" /> Try Another Diagram</Button>
+        </div>
+      )}
+    </div>
+  );
+}

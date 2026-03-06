@@ -205,35 +205,9 @@ export default function StudyNotes() {
           </h2>
           {renderTopics(econPaper2Topics, "p2")}
         </>
-      ) : subject === "chemistry" ? (
-        <>
-          <h2 className="font-serif text-2xl mb-4 flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-primary" /> Atomic Structure & Bonding
-          </h2>
-          <p className="text-sm text-muted-foreground mb-4">Chemistry study notes coming soon. Use the AI Tutor to ask questions on any topic.</p>
-        </>
       ) : (
         <>
-          <h2 className="font-serif text-2xl mb-4 flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-primary" /> Number
-          </h2>
-          {renderTopics(mathsNumberTopics, "num")}
-          <h2 className="font-serif text-2xl mb-4 mt-8 flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-accent" /> Algebra
-          </h2>
-          {renderTopics(mathsAlgebraTopics, "alg")}
-          <h2 className="font-serif text-2xl mb-4 mt-8 flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-primary" /> Ratio, Proportion & Rates of Change
-          </h2>
-          {renderTopics(mathsRatioTopics, "rat")}
-          <h2 className="font-serif text-2xl mb-4 mt-8 flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-accent" /> Geometry & Measures
-          </h2>
-          {renderTopics(mathsGeometryTopics, "geo")}
-          <h2 className="font-serif text-2xl mb-4 mt-8 flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-primary" /> Probability & Statistics
-          </h2>
-          {renderTopics(mathsStatsTopics, "stat")}
+          <p className="text-sm text-muted-foreground mb-4">Study notes for {subjectLabel} coming soon. Use the AI Tutor to ask questions on any topic.</p>
         </>
       )}
     </div>

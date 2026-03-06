@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { BookOpen, Brain, FileText, GraduationCap, LayoutDashboard, MessageCircle, PenTool, LogIn, LogOut, Crown, Sparkles, Calculator, FlaskConical, TrendingUp } from "lucide-react";
+import { BookOpen, Brain, FileText, GraduationCap, LayoutDashboard, MessageCircle, PenTool, LogIn, LogOut, Crown, Sparkles, TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -12,6 +12,7 @@ const baseNavItems = [
   { to: "/tutor", label: "AI Tutor", icon: MessageCircle },
   { to: "/grader", label: "Grader", icon: PenTool },
   { to: "/practice", label: "Practice", icon: Brain },
+  { to: "/diagram-practice", label: "Diagrams", icon: PenTool },
   { to: "/notes", label: "Study Notes", icon: BookOpen },
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
 ];
@@ -19,10 +20,6 @@ const baseNavItems = [
 function getNavItems(subject: Subject) {
   const papersItem = subject === "economics"
     ? { to: "/papers", label: "Econ Papers", icon: FileText }
-    : subject === "maths"
-    ? { to: "/maths-papers", label: "Maths Papers", icon: Calculator }
-    : subject === "chemistry"
-    ? { to: "/chemistry-papers", label: "Chem Papers", icon: FlaskConical }
     : subject === "edexcel-a"
     ? { to: "/edexcel-a-papers", label: "Edexcel A Papers", icon: TrendingUp }
     : subject === "edexcel-b"
@@ -31,7 +28,7 @@ function getNavItems(subject: Subject) {
     ? { to: "/cambridge-papers", label: "CAIE Papers", icon: TrendingUp }
     : subject === "ocr"
     ? { to: "/ocr-papers", label: "OCR Papers", icon: TrendingUp }
-    : { to: "/edexcel-b-papers", label: "Edexcel B Papers", icon: TrendingUp };
+    : { to: "/papers", label: "Papers", icon: FileText };
 
   return [
     baseNavItems[0],
@@ -46,8 +43,6 @@ const SUBJECTS: { value: Subject; label: string }[] = [
   { value: "edexcel-b", label: "Edexcel B" },
   { value: "ocr", label: "OCR" },
   { value: "cambridge", label: "CAIE" },
-  { value: "maths", label: "Maths" },
-  { value: "chemistry", label: "Chemistry" },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -185,7 +180,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <footer className="border-t bg-card py-6">
         <div className="container text-center text-sm text-muted-foreground">
-          <p>ExamAce — AQA A-Level Economics · Edexcel A-Level Economics A & B · OCR A-Level Economics · Cambridge International Economics · Edexcel GCSE Maths · AQA GCSE Chemistry</p>
+          <p>ExamAce — AQA A-Level Economics · Edexcel A-Level Economics A & B · OCR A-Level Economics · Cambridge International Economics</p>
         </div>
       </footer>
     </div>
