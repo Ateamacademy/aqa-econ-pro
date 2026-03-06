@@ -84,7 +84,7 @@ export default function Index() {
               Ace your <span className="italic text-accent">Exams</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              AI-powered revision for AQA Economics, Edexcel GCSE Maths & AQA GCSE Chemistry. Past papers, instant tutoring, answer grading, and practice — all in one place.
+              AI-powered revision for A-Level Economics — AQA, Edexcel, OCR & Cambridge International. Past papers, instant tutoring, answer grading, and practice — all in one place.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <Button asChild size="lg" className="gap-2 text-base">
