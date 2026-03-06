@@ -3278,4 +3278,5 @@ import { chemistryPredictedPapersExtra } from "./chemistryPredictedPapersExtra";
 import { edexcelAPredictedPapers } from "./edexcelAPredictedPapers";
 import { edexcelBPredictedPapers } from "./edexcelBPredictedPapers";
 import { cambridgePredictedPapers } from "./cambridgePredictedPapers";
-predictedPapersLibrary.push(...chemistryPredictedPapers, ...economicsPredictedPapersExtra, ...mathsPredictedPapersExtra, ...chemistryPredictedPapersExtra, ...edexcelAPredictedPapers, ...edexcelBPredictedPapers, ...cambridgePredictedPapers);
+import { ocrPredictedPapers } from "./ocrPredictedPapers";
+predictedPapersLibrary.push(...chemistryPredictedPapers, ...economicsPredictedPapersExtra, ...mathsPredictedPapersExtra, ...chemistryPredictedPapersExtra, ...edexcelAPredictedPapers, ...edexcelBPredictedPapers, ...cambridgePredictedPapers, ...ocrPredictedPapers);
