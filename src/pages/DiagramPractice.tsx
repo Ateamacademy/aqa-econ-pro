@@ -13,6 +13,7 @@ import ReactMarkdown from "react-markdown";
 import { FREE_LIMITS } from "@/lib/plans";
 import { DrawingCanvas } from "@/components/tools/DrawingCanvas";
 import { cn } from "@/lib/utils";
+import { extractDiagramBlocks, EconDiagramCanvas } from "@/components/predicted-papers/EconDiagramSVG";
 
 const DIAGRAM_TOPICS: Record<string, string[]> = {
   economics: [
