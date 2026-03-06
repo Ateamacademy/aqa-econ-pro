@@ -13,6 +13,7 @@ import ChemistryPastPapers from "./pages/ChemistryPastPapers";
 import EdexcelAPastPapers from "./pages/EdexcelAPastPapers";
 import EdexcelBPastPapers from "./pages/EdexcelBPastPapers";
 import CambridgePastPapers from "./pages/CambridgePastPapers";
+import OcrPastPapers from "./pages/OcrPastPapers";
 import AITutor from "./pages/AITutor";
 import EssayGrader from "./pages/EssayGrader";
 import Practice from "./pages/Practice";
