@@ -147,8 +147,51 @@ serve(async (req) => {
       }
     }
 
-    contextPrompt += "\n### Template Lock (match official AQA layout):\n";
-    if ((paper || "") === "1" || (paper || "") === "2") {
+    contextPrompt += "\n### Template Lock:\n";
+    const subjectKey = subject || "economics";
+    if (subjectKey === "cambridge") {
+      if ((paper || "") === "1" || (paper || "") === "3") {
+        contextPrompt += "- Paper must contain 30 MCQs (1 mark each, total 30 marks).\n";
+        contextPrompt += "- Questions must cover the full syllabus range for the paper level.\n";
+        contextPrompt += `- Paper ${paper === "1" ? "1 = AS Level" : "3 = A2 Level"} content only.\n`;
+      } else {
+        contextPrompt += "- Section A: Data Response with structured questions (2, 4, 6, 8 marks) based on a data extract.\n";
+        contextPrompt += "- Section B: Essay questions with a choice, including at least one 12-mark and one 25-mark question.\n";
+        contextPrompt += "- 25-mark essays must require evaluation with counter-arguments and a justified conclusion.\n";
+        contextPrompt += `- Paper ${paper === "2" ? "2 = AS Level" : "4 = A2 Level"} content only.\n`;
+        contextPrompt += "- Use Cambridge command words: Define, Explain, Analyse, Evaluate, Discuss, Assess.\n";
+      }
+    } else if (subjectKey === "edexcel-a") {
+      if ((paper || "") === "1") {
+        contextPrompt += "- Paper 1 (9EC0/01): Markets and Business Behaviour.\n";
+        contextPrompt += "- Section A: Supported multiple-choice (5 × 4 marks) and short answer (2 + 5 marks).\n";
+        contextPrompt += "- Section B: Data response with 8-mark examine + 12/15-mark evaluate questions.\n";
+        contextPrompt += "- Section C: Extended open-response essay (25 marks, choice of 2).\n";
+      } else if ((paper || "") === "2") {
+        contextPrompt += "- Paper 2 (9EC0/02): The National and Global Economy.\n";
+        contextPrompt += "- Section A: Supported multiple-choice (5 × 4 marks) and short answer (2 + 5 marks).\n";
+        contextPrompt += "- Section B: Data response with 8-mark examine + 12/15-mark evaluate questions.\n";
+        contextPrompt += "- Section C: Extended open-response essay (25 marks, choice of 2).\n";
+      } else {
+        contextPrompt += "- Paper 3 (9EC0/03): Microeconomics and Macroeconomics synoptic paper.\n";
+        contextPrompt += "- Section A: Data response with quantitative and qualitative data (2 + 4 + 8 + 25 marks).\n";
+        contextPrompt += "- Section B: Extended essay (25 marks) requiring both micro and macro analysis.\n";
+      }
+    } else if (subjectKey === "edexcel-b") {
+      if ((paper || "") === "1") {
+        contextPrompt += "- Paper 1 (9EB0/01): Markets, Consumers and Firms.\n";
+        contextPrompt += "- Section A: Data response with short and extended questions.\n";
+        contextPrompt += "- Section B: Extended essay (20 marks, choice of 2).\n";
+      } else if ((paper || "") === "2") {
+        contextPrompt += "- Paper 2 (9EB0/02): The Wider Economic Environment.\n";
+        contextPrompt += "- Section A: Data response with short and extended questions.\n";
+        contextPrompt += "- Section B: Extended essay (20 marks, choice of 2).\n";
+      } else {
+        contextPrompt += "- Paper 3 (9EB0/03): The Global Economy.\n";
+        contextPrompt += "- Pre-release research theme with synoptic data response.\n";
+        contextPrompt += "- One 8-mark and one 20-mark extended response question.\n";
+      }
+    } else if ((paper || "") === "1" || (paper || "") === "2") {
       contextPrompt += "- Section A must include BOTH Context 1 and Context 2 (EITHER/OR layout).\n";
       contextPrompt += "- Context question pattern must be exactly: 2 marks, 4 marks, 9 marks, 25 marks.\n";
       contextPrompt += "- Section B must include Essay 1, Essay 2, Essay 3 with two parts each (15 + 25 marks).\n";
