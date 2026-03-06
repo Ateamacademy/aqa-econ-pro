@@ -44,6 +44,7 @@ const App = () => (
               <Route path="/edexcel-a-papers" element={<EdexcelAPastPapers />} />
               <Route path="/cambridge-papers" element={<CambridgePastPapers />} />
               <Route path="/edexcel-b-papers" element={<EdexcelBPastPapers />} />
+              <Route path="/ocr-papers" element={<OcrPastPapers />} />
               <Route path="/predicted" element={<PredictedPapers />} />
               <Route path="/tutor" element={<AITutor />} />
               <Route path="/grader" element={<EssayGrader />} />

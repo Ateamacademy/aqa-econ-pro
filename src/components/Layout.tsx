@@ -185,7 +185,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <footer className="border-t bg-card py-6">
         <div className="container text-center text-sm text-muted-foreground">
-          <p>ExamAce — AQA A-Level Economics · Edexcel A-Level Economics A & B · Cambridge International Economics · Edexcel GCSE Maths · AQA GCSE Chemistry</p>
+          <p>ExamAce — AQA A-Level Economics · Edexcel A-Level Economics A & B · OCR A-Level Economics · Cambridge International Economics · Edexcel GCSE Maths · AQA GCSE Chemistry</p>
         </div>
       </footer>
     </div>
