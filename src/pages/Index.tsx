@@ -8,7 +8,7 @@ const features = [
   {
     icon: FileText,
     title: "Past Papers",
-    description: "Browse organised past papers for Economics, Maths, and Chemistry with direct links to questions and mark schemes.",
+    description: "Browse organised past papers for Economics with direct links to questions and mark schemes.",
     to: "/papers",
     color: "text-primary",
   },
