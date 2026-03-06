@@ -44,6 +44,7 @@ const SUBJECTS: { value: Subject; label: string }[] = [
   { value: "economics", label: "AQA Econ" },
   { value: "edexcel-a", label: "Edexcel A" },
   { value: "edexcel-b", label: "Edexcel B" },
+  { value: "ocr", label: "OCR" },
   { value: "cambridge", label: "CAIE" },
   { value: "maths", label: "Maths" },
   { value: "chemistry", label: "Chemistry" },
