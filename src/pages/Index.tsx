@@ -147,7 +147,8 @@ export default function Index() {
             Everything You Need to Revise
           </h2>
           <p className="text-center text-muted-foreground mb-12 max-w-xl mx-auto">
-            Built for AQA Economics, Edexcel GCSE Maths & AQA GCSE Chemistry specifications.
+            Built for AQA, Edexcel, OCR & Cambridge International A-Level Economics specifications.
+          </p>
           </p>
           <motion.div
             variants={container}
