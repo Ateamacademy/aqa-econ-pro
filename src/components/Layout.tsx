@@ -29,6 +29,8 @@ function getNavItems(subject: Subject) {
     ? { to: "/edexcel-b-papers", label: "Edexcel B Papers", icon: TrendingUp }
     : subject === "cambridge"
     ? { to: "/cambridge-papers", label: "CAIE Papers", icon: TrendingUp }
+    : subject === "ocr"
+    ? { to: "/ocr-papers", label: "OCR Papers", icon: TrendingUp }
     : { to: "/edexcel-b-papers", label: "Edexcel B Papers", icon: TrendingUp };
 
   return [
