@@ -185,14 +185,17 @@ Structure your response as:
 - **Mark Awarded**: X/Y marks
 - **What You Did Well**: specific praise
 - **How to Improve**: actionable steps
-- **Model Diagram Description**: Show what a perfect structured description looks like using the format:
-  - X-axis: ...
-  - Y-axis: ...
-  - Initial curves: ...
-  - Initial equilibrium: ...
-  - Shift: ...
-  - New equilibrium: ...
-  - Effect: ...
+- **Model Diagram Description**: You MUST include a structured diagram block in EXACTLY this format (the app will render it as a visual SVG diagram):
+
+**Diagram: [Diagram Title]**
+- X-axis: [label]
+- Y-axis: [label]
+- Initial curves: [describe D1, S1 etc.]
+- Initial equilibrium: [P1, Q1]
+- Shift: [which curve shifts which direction, e.g. "Supply shifts left from S1 to S2"]
+- New equilibrium: [P2, Q2 and direction of change]
+- Key conclusion: [one sentence summary]
+
 - **Model Explanation**: A top-band written explanation that correctly connects to the diagram
 
 Speak directly to the student using "you" and "your".` }],
