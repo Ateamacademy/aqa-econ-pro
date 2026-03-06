@@ -269,6 +269,8 @@ FIGURE/CHART FORMAT:
 const CAIE_ECON_PAPER_PROMPT = (paperLabel: string) => {
   const paperNum = paperLabel.includes("1") ? "1" : paperLabel.includes("2") ? "2" : paperLabel.includes("3") ? "3" : "4";
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum, "cambridge");
+
+  const templates: Record<string, string> = {
     "1": `PAPER 1: Multiple Choice (AS) — 1 hour, 30 marks
 30 MCQs covering both AS micro and macro. Each worth 1 mark.
 Mix of: recall, calculation, diagram interpretation, and application.
