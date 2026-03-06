@@ -111,7 +111,7 @@ export default function Index() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto"
+            className="grid md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto"
           >
             {subjects.map((s) => {
               const Icon = s.icon;
