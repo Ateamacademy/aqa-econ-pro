@@ -129,7 +129,8 @@ export default function DiagramPractice() {
     );
   }
 
-  const canUse = subscribed || (profile && profile.free_questions_used < FREE_LIMITS.questions);
+  const diagramsUsed = profile?.free_questions_used ?? 0;
+  const canUse = subscribed || (profile && diagramsUsed < FREE_LIMITS.diagrams);
 
   const generateQuestion = async () => {
     if (!canUse) { toast.error("Free limit reached."); navigate("/pricing"); return; }
@@ -238,7 +239,7 @@ Speak directly to the student using "you" and "your".` }],
       <div className="mb-6">
         <h1 className="text-3xl font-serif mb-1">Diagram Practice</h1>
         <p className="text-sm text-muted-foreground">
-          {examBoard} {level} {subjectLabel} · {subscribed ? "Unlimited practice" : `${FREE_LIMITS.questions - (profile?.free_questions_used ?? 0)} free attempt(s) remaining`}
+          {examBoard} {level} {subjectLabel} · {subscribed ? "Unlimited practice" : `${Math.max(0, FREE_LIMITS.diagrams - (profile?.free_questions_used ?? 0))} free attempt(s) remaining`}
         </p>
       </div>
 
