@@ -320,7 +320,7 @@ Speak directly to the student using "you" and "your".` }],
                     onSave={(dataUrl) => setDiagramImage(dataUrl)}
                   />
                   {diagramImage && (
-                    <p className="text-xs text-green-600 mt-1">✓ Diagram captured — ready to submit</p>
+                    <p className="text-xs text-accent mt-1">✓ Diagram captured — ready to submit</p>
                   )}
                 </div>
               ) : (
