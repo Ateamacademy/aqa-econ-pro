@@ -207,7 +207,7 @@ FIGURE/CHART FORMAT:
 
 const OCR_ECON_PAPER_PROMPT = (paperLabel: string) => {
   const paperNum = paperLabel.includes("01") || paperLabel.includes("1") ? "1" : paperLabel.includes("02") || paperLabel.includes("2") ? "2" : "3";
-  const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum);
+  const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum, "ocr");
 
   const templates: Record<string, string> = {
     "1": `COMPONENT 01: Microeconomics (H460/01) — 2 hours, 80 marks
