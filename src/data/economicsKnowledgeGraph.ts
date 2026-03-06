@@ -1197,9 +1197,16 @@ export const CURRENT_ECONOMIC_CONTEXTS = {
  * Generate a knowledge-graph-enhanced prompt section for Economics predicted papers.
  * Includes synoptic HOTS questions and Bloom's taxonomy requirements.
  */
-export function generateKnowledgeGraphPrompt(paperNumber: string): string {
-  const relevantNodes = ECONOMICS_KNOWLEDGE_NODES.filter(
-    (n) => n.paper === paperNumber || n.paper === "3"
+export function generateKnowledgeGraphPrompt(paperNumber: string, subject?: string): string {
+  // Select the appropriate knowledge nodes based on subject
+  const nodes = subject === "ocr" || subject === "ocr_economics"
+    ? OCR_KNOWLEDGE_NODES
+    : subject === "cambridge"
+    ? CAMBRIDGE_KNOWLEDGE_NODES
+    : ECONOMICS_KNOWLEDGE_NODES;
+
+  const relevantNodes = nodes.filter(
+    (n) => n.paper === paperNumber || n.paper === "3" || n.paper === "4"
   );
 
   const hotsNodes = relevantNodes.filter(
