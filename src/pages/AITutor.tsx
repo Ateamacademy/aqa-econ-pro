@@ -36,11 +36,7 @@ export default function AITutor() {
     );
   }
 
-  const placeholders = subject === "maths"
-    ? { title: "AI Maths Tutor", subtitle: `Ask any ${examBoard} ${level} Maths question`, hero: "Ask me anything about Maths", hint: 'Try: "Solve 3x + 5 = 20" or "Explain circle theorems"' }
-    : subject === "chemistry"
-    ? { title: "AI Chemistry Tutor", subtitle: `Ask any ${examBoard} ${level} Chemistry question`, hero: "Ask me anything about Chemistry", hint: 'Try: "Explain ionic bonding" or "Balance Fe₂O₃ + C → Fe + CO₂"' }
-    : { title: "AI Economics Tutor", subtitle: `Ask any ${examBoard} ${level} Economics question`, hero: "Ask me anything about Economics", hint: 'Try: "Explain the multiplier effect" or "What causes market failure?"' };
+  const placeholders = { title: "AI Economics Tutor", subtitle: `Ask any ${examBoard} ${level} Economics question`, hero: "Ask me anything about Economics", hint: 'Try: "Explain the multiplier effect" or "What causes market failure?"' };
 
   const send = async () => {
     if (!input.trim() || isLoading) return;

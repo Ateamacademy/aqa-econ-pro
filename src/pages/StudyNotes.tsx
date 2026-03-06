@@ -205,13 +205,6 @@ export default function StudyNotes() {
           </h2>
           {renderTopics(econPaper2Topics, "p2")}
         </>
-      ) : subject === "chemistry" ? (
-        <>
-          <h2 className="font-serif text-2xl mb-4 flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-primary" /> Atomic Structure & Bonding
-          </h2>
-          <p className="text-sm text-muted-foreground mb-4">Chemistry study notes coming soon. Use the AI Tutor to ask questions on any topic.</p>
-        </>
       ) : (
         <>
           <h2 className="font-serif text-2xl mb-4 flex items-center gap-2">

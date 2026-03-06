@@ -67,7 +67,7 @@ export default function EssayGrader() {
     });
   };
 
-  const graderLabel = subject === "maths" ? "Answer Grader" : "Essay Grader";
+  const graderLabel = "Essay Grader";
 
   return (
     <div className="container py-10 max-w-3xl">
