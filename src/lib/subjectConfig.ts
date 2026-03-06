@@ -31,6 +31,12 @@ export const paperOptionsBySubject: Record<Subject, { value: string; label: stri
     { value: "2", label: "Component 02", title: "Macroeconomics", desc: "AD/AS, policy objectives, fiscal/monetary/supply-side, trade, financial sector (H460/02)" },
     { value: "3", label: "Component 03", title: "Themes in Economics", desc: "Synoptic — draws together micro and macro across all content areas (H460/03)" },
   ],
+  "cambridge": [
+    { value: "1", label: "Paper 1", title: "Multiple Choice (AS)", desc: "30 MCQs covering AS micro & macro — scarcity, markets, externalities, AD/AS, policy (9708/1)" },
+    { value: "2", label: "Paper 2", title: "Data Response & Essay (AS)", desc: "Data response with extracts + structured essay on AS topics (9708/2)" },
+    { value: "3", label: "Paper 3", title: "Multiple Choice (A2)", desc: "30 MCQs on A2 — market structures, labour markets, development, trade (9708/3)" },
+    { value: "4", label: "Paper 4", title: "Data Response & Essay (A2)", desc: "A2 data response + extended essays on development, trade, policy evaluation (9708/4)" },
+  ],
 };
 
 /* ── Practice: topics per subject ── */
@@ -94,6 +100,20 @@ export const topicsBySubject: Record<Subject, string[]> = {
     "International Trade & Globalisation", "Exchange Rates & Balance of Payments",
     "Financial Sector", "Inequality & Development",
   ],
+  "cambridge": [
+    "Scarcity, Choice & Opportunity Cost", "Production Possibility Curves",
+    "Demand, Supply & Market Equilibrium", "Elasticity (PED, YED, XED, PES)",
+    "Consumer & Producer Surplus", "Market Failure & Externalities",
+    "Public Goods & Merit Goods", "Government Intervention & Government Failure",
+    "National Income & Living Standards", "Aggregate Demand & Aggregate Supply",
+    "Inflation", "Unemployment", "Balance of Payments & Exchange Rates",
+    "Fiscal, Monetary & Supply-Side Policies", "The Multiplier",
+    "Market Structures (Perfect Competition, Monopoly, Oligopoly, Monopolistic Competition)",
+    "Contestable Markets", "Labour Market & Wage Determination",
+    "International Trade & Comparative Advantage", "Protectionism & Trade Blocs",
+    "Economic Development & Developing Countries", "Globalisation",
+    "Inequality & Poverty", "Role of the State in the Macroeconomy",
+  ],
 };
 
 /* ── Practice: question styles per subject ── */
@@ -104,6 +124,7 @@ export const stylesBySubject: Record<Subject, string[]> = {
   "edexcel-a": ["Multiple Choice", "Short Answer (Data Response)", "Essay Question (25 marks)"],
   "edexcel-b": ["Multiple Choice", "Short Answer (Data Response)", "Extended Open-Response"],
   "ocr": ["Short Answer (Data Response)", "Explain with Diagram (8 marks)", "Essay Question (25 marks)"],
+  "cambridge": ["Multiple Choice", "Short Answer (Data Response)", "Explain with Diagram", "Essay Question (25 marks)"],
 };
 
 /* ── Essay Grader: question types per subject ── */
@@ -132,5 +153,10 @@ export const questionTypesBySubject: Record<Subject, string[]> = {
   "ocr": [
     "2-mark define/calculate", "4-mark explain", "8-mark explain with diagram",
     "16-mark evaluate", "25-mark essay",
+  ],
+  "cambridge": [
+    "1-mark MCQ", "2-mark calculate/define", "4-mark explain",
+    "6-mark analyse with diagram", "8-mark evaluate", "20-mark data response evaluate",
+    "25-mark essay",
   ],
 };

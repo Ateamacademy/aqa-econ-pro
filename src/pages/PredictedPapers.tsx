@@ -266,6 +266,61 @@ FIGURE/CHART FORMAT:
 - Diagrams: structured text with axes, curves, equilibrium points`;
 };
 
+const CAIE_ECON_PAPER_PROMPT = (paperLabel: string) => {
+  const paperNum = paperLabel.includes("1") ? "1" : paperLabel.includes("2") ? "2" : paperLabel.includes("3") ? "3" : "4";
+
+  const templates: Record<string, string> = {
+    "1": `PAPER 1: Multiple Choice (AS) — 1 hour, 30 marks
+30 MCQs covering both AS micro and macro. Each worth 1 mark.
+Mix of: recall, calculation, diagram interpretation, and application.
+Topics: scarcity, PPC, demand/supply, elasticity, market failure, externalities, AD/AS, inflation, unemployment, fiscal/monetary policy, trade.`,
+    "2": `PAPER 2: Data Response and Essay (AS) — 1h30, 40 marks
+## Section A (choose ONE from TWO data response questions, 20 marks each)
+Each has a Table/Figure + Extract (150-250 words)
+Question pattern: 2m calculate → 2m identify → 4m explain → 6m analyse with diagram → 6m discuss/evaluate
+
+## Section B (choose ONE from TWO essays, 8 marks each)
+Short structured essay requiring explanation with economic reasoning.`,
+    "3": `PAPER 3: Multiple Choice (A2) — 1h15, 30 marks
+30 MCQs on A2 content. More analytical than Paper 1.
+Topics: market structures, costs/revenue, labour markets, price discrimination, game theory, development, trade theory, welfare economics, policy evaluation.`,
+    "4": `PAPER 4: Data Response and Essay (A2) — 2h15, 70 marks
+## Section A (choose ONE from TWO data response questions, 20 marks each)
+Each has Table + 2 Extracts (200-300 words each)
+Question pattern: 2m → 2m → 4m → 4m explain with diagram → 8m evaluate
+
+## Section B (choose ONE from THREE essays, 25 marks each)
+Extended evaluation essay requiring KAA + Evaluation + Judgement.
+Topics: market structures, development, trade, globalisation, policy.`,
+  };
+
+  return `You are an expert Cambridge International (CAIE) A-Level Economics (9708) chief examiner.
+
+Generate a COMPLETE predicted exam paper for ${paperLabel}.
+
+${templates[paperNum]}
+
+CRITICAL RULES:
+1. Follow the template structure EXACTLY
+2. Use realistic 2023-2025 global data in extracts
+3. Paper 1 & 3: exactly 30 MCQs with A/B/C/D options
+4. Paper 2 & 4: tables must have specific data for calculations
+5. Diagram questions must specify "Using a diagram" or "With the aid of a diagram"
+6. 25-mark essays require KAA + Evaluation + justified judgement
+7. Use CAIE command words: "Explain", "Analyse", "Evaluate", "Discuss", "Calculate"
+
+OUTPUT FORMAT:
+- Every question: Question XX [Y marks]
+- Do NOT bold question headers
+- MCQ options: - A, - B, - C, - D
+- Do NOT include mark schemes or answers
+
+FIGURE/CHART FORMAT:
+- NEVER use ASCII art
+- Data: markdown tables with Source line
+- Diagrams: structured text with axes, curves, equilibrium points`;
+};
+
 const ECON_PAPER_PROMPT = (paperLabel: string) => {
   const paperNum = paperLabel.includes("1") ? "1" : paperLabel.includes("2") ? "2" : "3";
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum);
@@ -609,7 +664,8 @@ export default function PredictedPapers() {
   const isEdexcelA = subject === "edexcel-a";
   const isEdexcelB = subject === "edexcel-b";
   const isOCR = subject === "ocr";
-  const isAnyEcon = isEconomics || isEdexcelA || isEdexcelB || isOCR;
+  const isCambridge = subject === "cambridge";
+  const isAnyEcon = isEconomics || isEdexcelA || isEdexcelB || isOCR || isCambridge;
 
   const libraryPapers = useMemo(
     () => predictedPapersLibrary.filter((p) => p.subject === subject),
@@ -649,7 +705,7 @@ export default function PredictedPapers() {
     if (isAnyEcon) {
       try {
         const { data: patternData } = await supabase.functions.invoke("retrieve-patterns", {
-          body: { paper, subject: isEdexcelA ? "edexcel-a" : isEdexcelB ? "edexcel-b" : isOCR ? "ocr_economics" : "economics", limit: 250 },
+          body: { paper, subject: isEdexcelA ? "edexcel-a" : isEdexcelB ? "edexcel-b" : isOCR ? "ocr_economics" : isCambridge ? "cambridge" : "economics", limit: 250 },
         });
         if (patternData?.contextPrompt) {
           dbContextPrompt = patternData.contextPrompt;
@@ -667,6 +723,8 @@ export default function PredictedPapers() {
       ? EDEXCEL_ECON_PAPER_PROMPT(paperLabel, subject as "edexcel-a" | "edexcel-b")
       : isOCR
       ? OCR_ECON_PAPER_PROMPT(paperLabel)
+      : isCambridge
+      ? CAIE_ECON_PAPER_PROMPT(paperLabel)
       : ECON_PAPER_PROMPT(paperLabel);
 
     // Inject DB-retrieved patterns for Economics

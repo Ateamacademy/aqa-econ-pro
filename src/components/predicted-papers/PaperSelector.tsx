@@ -8,6 +8,7 @@ const iconMap: Record<string, any> = {
   maths: [Calculator, Calculator, Calculator],
   "edexcel-a": [BarChart3, Globe, Landmark],
   "edexcel-b": [BarChart3, Globe, Landmark],
+  "cambridge": [BarChart3, Globe, BarChart3, Landmark],
 };
 
 const colorSets = [
