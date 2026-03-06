@@ -101,15 +101,6 @@ export const questionTypesBySubject: Record<Subject, string[]> = {
     "9-mark evaluate", "15-mark discuss", "25-mark essay",
     "4-mark define and explain", "5-mark extract question", "12-mark analyse",
   ],
-  maths: [
-    "1–2 mark short answer", "3–4 mark method question",
-    "5–6 mark multi-step problem", "Problem-solving / reasoning",
-  ],
-  chemistry: [
-    "1–2 mark recall", "3–4 mark application",
-    "6-mark extended response", "Required practical question",
-    "Calculation question", "Balanced equation question",
-  ],
   "edexcel-a": [
     "5-mark data response", "8-mark explain/analyse", "12-mark evaluate",
     "20-mark data response evaluate", "25-mark essay",

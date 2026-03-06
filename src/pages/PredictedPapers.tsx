@@ -658,6 +658,8 @@ export default function PredictedPapers() {
   const remaining = FREE_LIMITS.predictedPapers - used;
 
   const paperOptions = paperOptionsBySubject[subject];
+  const isMaths = false;
+  const isChemistry = false;
   const isEconomics = subject === "economics";
   const isEdexcelA = subject === "edexcel-a";
   const isEdexcelB = subject === "edexcel-b";
