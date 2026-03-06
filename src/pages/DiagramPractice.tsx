@@ -129,7 +129,8 @@ export default function DiagramPractice() {
     );
   }
 
-  const canUse = subscribed || (profile && profile.free_questions_used < FREE_LIMITS.questions);
+  const diagramsUsed = profile?.free_questions_used ?? 0;
+  const canUse = subscribed || (profile && diagramsUsed < FREE_LIMITS.diagrams);
 
   const generateQuestion = async () => {
     if (!canUse) { toast.error("Free limit reached."); navigate("/pricing"); return; }
