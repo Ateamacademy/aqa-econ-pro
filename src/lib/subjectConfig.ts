@@ -89,8 +89,6 @@ export const topicsBySubject: Record<Subject, string[]> = {
 /* ── Practice: question styles per subject ── */
 export const stylesBySubject: Record<Subject, string[]> = {
   economics: ["Multiple Choice", "Short Answer (Data Response)", "Essay Question"],
-  maths: ["Multiple Choice", "Short Answer (1–3 marks)", "Multi-step Problem (4–5 marks)"],
-  chemistry: ["Multiple Choice", "Short Answer (1–3 marks)", "Extended Response (6 marks)", "Required Practical"],
   "edexcel-a": ["Multiple Choice", "Short Answer (Data Response)", "Essay Question (25 marks)"],
   "edexcel-b": ["Multiple Choice", "Short Answer (Data Response)", "Extended Open-Response"],
   "ocr": ["Short Answer (Data Response)", "Explain with Diagram (8 marks)", "Essay Question (25 marks)"],
