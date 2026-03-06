@@ -6,132 +6,101 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
-// Economics question patterns from 2017-2024 AQA past papers
-const ECONOMICS_QUESTION_PATTERNS = [
-  // Paper 1 — Microeconomics
+// ── AQA Economics question patterns (existing) ──
+const AQA_PATTERNS = [
   { text: "Define the term 'opportunity cost'.", marks: 2, topic: "Scarcity & Choice", paper: "1", year: "2017-2024", bloom: "remember", tags: ["definition", "opportunity-cost"] },
   { text: "Using a PPF diagram, explain the concept of opportunity cost and how economic growth can be shown.", marks: 9, topic: "Economic Problem", paper: "1", year: "2017-2024", bloom: "apply", tags: ["PPF", "diagram", "growth"] },
   { text: "Calculate the PED from the data. Comment on the significance of your answer for the firm.", marks: 4, topic: "Elasticity", paper: "1", year: "2017-2024", bloom: "apply", tags: ["PED", "calculation", "data-response"] },
   { text: "Using a supply and demand diagram, explain the likely effect on the market for private rented accommodation of a rent cap below the equilibrium price.", marks: 9, topic: "Price Determination", paper: "1", year: "2024", bloom: "analyse", tags: ["supply-demand", "diagram", "price-controls", "housing"] },
   { text: "Evaluate the view that government intervention is always necessary to correct market failure in the provision of healthcare.", marks: 25, topic: "Market Failure", paper: "1", year: "2023", bloom: "evaluate", tags: ["evaluation", "market-failure", "healthcare", "government-intervention"] },
   { text: "Using a diagram, explain how a negative externality of production leads to a welfare loss.", marks: 9, topic: "Externalities", paper: "1", year: "2022", bloom: "analyse", tags: ["externalities", "MSC-MPC", "diagram", "welfare-loss"] },
-  { text: "Using a diagram, explain how a monopolist determines its profit-maximising level of output and price.", marks: 9, topic: "Market Structures", paper: "1", year: "2019", bloom: "analyse", tags: ["monopoly", "diagram", "MC=MR", "supernormal-profit"] },
   { text: "Evaluate the effectiveness of indirect taxes as a method of correcting market failure caused by negative externalities.", marks: 25, topic: "Government Intervention", paper: "1", year: "2018-2024", bloom: "evaluate", tags: ["evaluation", "taxation", "externalities", "PED", "incidence"] },
   { text: "Evaluate the view that monopolies are always against the public interest.", marks: 25, topic: "Market Structures", paper: "1", year: "2018-2024", bloom: "evaluate", tags: ["evaluation", "monopoly", "efficiency", "innovation", "consumer-welfare"] },
-  { text: "Using a monopsony diagram, explain why wages in the care sector may be below the competitive equilibrium.", marks: 9, topic: "Labour Market", paper: "1", year: "2018-2024", bloom: "analyse", tags: ["monopsony", "diagram", "labour-market", "wages"] },
-  { text: "Evaluate the impact of a national living wage on employment, poverty, and business costs.", marks: 25, topic: "Labour Market", paper: "1", year: "2018-2024", bloom: "evaluate", tags: ["evaluation", "minimum-wage", "unemployment", "poverty", "synoptic"] },
-  { text: "Evaluate the effectiveness of nudge theory as an alternative to traditional government intervention for correcting the under-consumption of merit goods.", marks: 25, topic: "Behavioural Economics", paper: "1", year: "2019-2024", bloom: "evaluate", tags: ["evaluation", "nudge", "behavioural", "merit-goods", "HOTS"] },
-  { text: "Using a diagram, explain why public goods represent a case of complete market failure.", marks: 9, topic: "Public Goods", paper: "1", year: "2017-2024", bloom: "analyse", tags: ["public-goods", "free-rider", "non-excludable", "diagram"] },
-  { text: "Evaluate the view that contestable markets benefit consumers more than perfect competition.", marks: 25, topic: "Market Structures", paper: "1", year: "2018-2024", bloom: "evaluate", tags: ["evaluation", "contestability", "hit-and-run", "barriers-to-entry", "HOTS"] },
-
-  // Paper 2 — Macroeconomics
   { text: "Using an AD/AS diagram, explain the likely impact on the UK economy of a significant increase in interest rates.", marks: 9, topic: "Monetary Policy", paper: "2", year: "2024", bloom: "analyse", tags: ["AD/AS", "diagram", "interest-rates", "monetary-policy"] },
   { text: "Evaluate the effectiveness of supply-side policies in achieving sustained economic growth.", marks: 25, topic: "Supply-Side Policies", paper: "2", year: "2024", bloom: "evaluate", tags: ["evaluation", "supply-side", "growth", "LRAS"] },
-  { text: "Using the data in Extract B, calculate the UK's balance of trade in goods.", marks: 2, topic: "Balance of Payments", paper: "2", year: "2023", bloom: "apply", tags: ["calculation", "trade-balance", "data-response"] },
   { text: "Calculate the multiplier if MPC is 0.8. Hence calculate the total impact on GDP of a £5 billion increase in government spending.", marks: 4, topic: "Multiplier", paper: "2", year: "2023", bloom: "apply", tags: ["multiplier", "calculation", "MPC", "fiscal-policy"] },
-  { text: "Using an AD/AS diagram, evaluate the likely impact of Brexit on the UK economy.", marks: 25, topic: "Globalisation", paper: "2", year: "2022", bloom: "evaluate", tags: ["evaluation", "AD/AS", "Brexit", "trade", "HOTS"] },
-  { text: "Using a Phillips Curve diagram, explain the relationship between unemployment and inflation.", marks: 9, topic: "Phillips Curve", paper: "2", year: "2019", bloom: "analyse", tags: ["Phillips-Curve", "diagram", "trade-off", "inflation-unemployment"] },
   { text: "Evaluate the effectiveness of quantitative easing as a monetary policy tool for stimulating economic growth.", marks: 25, topic: "Monetary Policy", paper: "2", year: "2018-2024", bloom: "evaluate", tags: ["evaluation", "QE", "monetary-policy", "liquidity-trap", "HOTS"] },
   { text: "Evaluate the view that fiscal policy is more effective than monetary policy in reducing unemployment during a recession.", marks: 25, topic: "Fiscal Policy", paper: "2", year: "2018-2024", bloom: "evaluate", tags: ["evaluation", "fiscal-vs-monetary", "recession", "multiplier", "HOTS", "synoptic"] },
-  { text: "Analyse the possible causes and consequences of a persistent current account deficit for the UK economy.", marks: 9, topic: "Balance of Payments", paper: "2", year: "2018-2024", bloom: "analyse", tags: ["current-account", "deficit", "competitiveness", "exchange-rate"] },
-  { text: "Evaluate the view that globalisation has been the primary cause of increasing income inequality in developed countries.", marks: 25, topic: "Globalisation", paper: "2", year: "2018-2024", bloom: "evaluate", tags: ["evaluation", "globalisation", "inequality", "Gini", "HOTS", "synoptic"] },
-  { text: "Using both PPF and AD/AS analysis, evaluate the likely long-run effects of significant government investment in AI infrastructure.", marks: 25, topic: "Economic Growth", paper: "2", year: "2024-2025", bloom: "evaluate", tags: ["evaluation", "PPF", "AD/AS", "AI", "technology", "synoptic", "HOTS"] },
-  { text: "Evaluate the extent to which economic growth is compatible with environmental sustainability.", marks: 25, topic: "Environment", paper: "2", year: "2018-2024", bloom: "evaluate", tags: ["evaluation", "growth", "sustainability", "carbon-tax", "HOTS"] },
-  { text: "Using the J-curve and Marshall-Lerner condition, evaluate whether a depreciation of sterling would reduce the UK's current account deficit.", marks: 25, topic: "Exchange Rates", paper: "2", year: "2018-2024", bloom: "evaluate", tags: ["evaluation", "J-curve", "Marshall-Lerner", "depreciation", "HOTS"] },
-
-  // Paper 3 — Synoptic
   { text: "With reference to both micro and macro concepts, evaluate the economic impact of a carbon border adjustment mechanism on UK trade and industry.", marks: 25, topic: "Synoptic", paper: "3", year: "2024-2025", bloom: "evaluate", tags: ["evaluation", "synoptic", "carbon-tax", "trade", "externalities", "HOTS"] },
-  { text: "Using concepts from both Papers 1 and 2, assess the likely economic effects of a significant increase in the UK national minimum wage to £15 per hour.", marks: 25, topic: "Synoptic", paper: "3", year: "2024-2025", bloom: "evaluate", tags: ["evaluation", "synoptic", "minimum-wage", "labour", "inflation", "HOTS"] },
-
-  // ── DIAGRAM-SPECIFIC QUESTION PATTERNS (from AQA 2017–2024 mark schemes) ──
-
-  // Supply & Demand diagram questions
-  { text: "Use a demand and supply diagram to explain the impact on price and quantity, of the changes in demand and supply of online sales in the retail grocery market. (Figure 1 and Extract B).", marks: 5, topic: "Price Determination", paper: "1", year: "2024", bloom: "analyse", tags: ["supply-demand", "diagram", "shift", "both-curves", "new-equilibrium", "KAA-marking"] },
-  { text: "Using a supply and demand diagram, explain the likely effect of an increase in the national minimum wage on the market for fast food workers.", marks: 9, topic: "Labour Market", paper: "1", year: "2023", bloom: "analyse", tags: ["supply-demand", "diagram", "minimum-wage", "labour-market", "excess-supply"] },
-  { text: "Using a supply and demand diagram, explain how a subsidy on electric vehicles would affect the market equilibrium price and quantity.", marks: 9, topic: "Government Intervention", paper: "1", year: "2022", bloom: "analyse", tags: ["supply-demand", "diagram", "subsidy", "shift-supply-right", "new-equilibrium"] },
-  { text: "Using a supply and demand diagram, explain the likely impact of a ban on single-use plastics on the market for reusable containers.", marks: 5, topic: "Price Determination", paper: "1", year: "2021", bloom: "analyse", tags: ["supply-demand", "diagram", "substitute", "demand-shift-right", "complement"] },
-  { text: "Using a diagram, explain how an increase in both demand and supply could lead to a higher equilibrium quantity but an ambiguous effect on price.", marks: 9, topic: "Price Determination", paper: "1", year: "2020", bloom: "analyse", tags: ["supply-demand", "diagram", "both-shifts", "ambiguous-price", "higher-quantity"] },
-
-  // AD/AS diagram questions
-  { text: "Using an AD/AS diagram, explain the likely short-run impact of a fall in consumer confidence on the UK economy.", marks: 9, topic: "Aggregate Demand", paper: "2", year: "2024", bloom: "analyse", tags: ["AD/AS", "diagram", "AD-shift-left", "consumer-confidence", "output-gap"] },
-  { text: "Using a Keynesian AD/AS diagram, explain why an economy might be stuck in a liquidity trap with high unemployment.", marks: 9, topic: "Monetary Policy", paper: "2", year: "2023", bloom: "analyse", tags: ["AD/AS", "diagram", "keynesian", "horizontal-AS", "spare-capacity", "liquidity-trap"] },
-  { text: "Using an AD/AS diagram, explain how supply-side policies might lead to both lower inflation and higher real GDP in the long run.", marks: 9, topic: "Supply-Side Policies", paper: "2", year: "2022", bloom: "analyse", tags: ["AD/AS", "diagram", "LRAS-shift-right", "supply-side", "long-run-growth"] },
-  { text: "Using both Classical and Keynesian AS diagrams, compare the likely effects of an increase in government spending on the price level and real output.", marks: 9, topic: "Aggregate Supply", paper: "2", year: "2021", bloom: "analyse", tags: ["AD/AS", "diagram", "classical-vs-keynesian", "comparison", "fiscal-policy"] },
-
-  // Externality diagram questions
-  { text: "Using a diagram, explain how a negative externality of consumption (such as smoking) leads to market failure and a welfare loss.", marks: 9, topic: "Externalities", paper: "1", year: "2024", bloom: "analyse", tags: ["externality", "diagram", "MSB-MPB", "welfare-loss", "overconsumption", "deadweight-loss"] },
-  { text: "Using an externality diagram, explain how a positive externality of production leads to under-provision in a free market.", marks: 9, topic: "Externalities", paper: "1", year: "2023", bloom: "analyse", tags: ["externality", "diagram", "MSC-MPC", "positive-externality", "under-provision"] },
-  { text: "Using an appropriate diagram, explain how tradeable pollution permits can correct a negative externality and achieve the socially optimal level of output.", marks: 9, topic: "Government Intervention", paper: "1", year: "2022", bloom: "analyse", tags: ["externality", "diagram", "permits", "MSC", "optimal-output", "internalise"] },
-
-  // Monopoly diagram questions
-  { text: "Using a diagram, explain how a profit-maximising monopolist determines its output and price. Show the area of supernormal profit.", marks: 9, topic: "Market Structures", paper: "1", year: "2024", bloom: "analyse", tags: ["monopoly", "diagram", "MC=MR", "supernormal-profit", "AR", "AC", "deadweight-loss"] },
-  { text: "Using a diagram, compare the price and output of a monopolist with that of a firm in perfect competition.", marks: 9, topic: "Market Structures", paper: "1", year: "2023", bloom: "analyse", tags: ["monopoly", "diagram", "perfect-competition", "comparison", "allocative-efficiency", "deadweight-loss"] },
-
-  // PPF diagram questions
-  { text: "Using a PPF diagram, explain how an increase in immigration might affect an economy's productive capacity and output.", marks: 9, topic: "Economic Problem", paper: "1", year: "2024", bloom: "apply", tags: ["PPF", "diagram", "outward-shift", "immigration", "productive-capacity"] },
-  { text: "Using a PPF diagram, explain why a country that chooses to produce more capital goods now may experience faster economic growth in the future.", marks: 9, topic: "Economic Problem", paper: "1", year: "2023", bloom: "apply", tags: ["PPF", "diagram", "capital-vs-consumer", "growth", "opportunity-cost"] },
-
-  // Labour Market diagram questions
-  { text: "Using a diagram, explain how the introduction of a national minimum wage above the equilibrium wage rate would affect employment in a competitive labour market.", marks: 9, topic: "Labour Market", paper: "1", year: "2024", bloom: "analyse", tags: ["labour-market", "diagram", "minimum-wage", "excess-supply", "unemployment", "wage-floor"] },
-  { text: "Using a monopsony diagram, explain why a monopsony employer pays a wage below the marginal revenue product of labour.", marks: 9, topic: "Labour Market", paper: "1", year: "2023", bloom: "analyse", tags: ["labour-market", "diagram", "monopsony", "MCL", "ACL", "MRP", "exploitation"] },
-
-  // Phillips Curve diagram questions
-  { text: "Using a Phillips Curve diagram, explain the short-run trade-off between inflation and unemployment and why this trade-off may not exist in the long run.", marks: 9, topic: "Phillips Curve", paper: "2", year: "2024", bloom: "analyse", tags: ["Phillips-Curve", "diagram", "SRPC", "LRPC", "NRU", "expectations", "trade-off"] },
-  { text: "Using a Phillips Curve diagram, explain how expansionary monetary policy might reduce unemployment in the short run but lead to higher inflation expectations.", marks: 9, topic: "Phillips Curve", paper: "2", year: "2023", bloom: "analyse", tags: ["Phillips-Curve", "diagram", "monetary-policy", "expectations-augmented", "NAIRU"] },
-
-  // Tariff / Trade diagram questions
-  { text: "Using a tariff diagram, explain the effects of imposing a tariff on imported steel on domestic producers, consumers, and government revenue.", marks: 9, topic: "Globalisation", paper: "2", year: "2024", bloom: "analyse", tags: ["tariff", "diagram", "protectionism", "deadweight-loss", "tariff-revenue", "consumer-surplus"] },
-  { text: "Using a diagram, explain how a quota on imported goods differs from a tariff in its effects on price, quantity, and government revenue.", marks: 9, topic: "Globalisation", paper: "2", year: "2023", bloom: "analyse", tags: ["quota", "diagram", "protectionism", "comparison", "trade"] },
-
-  // Lorenz Curve / Gini
-  { text: "Using a Lorenz Curve diagram, explain how the Gini coefficient measures income inequality and how progressive taxation might reduce it.", marks: 9, topic: "Inequality", paper: "2", year: "2024", bloom: "analyse", tags: ["Lorenz-Curve", "diagram", "Gini", "inequality", "progressive-tax", "redistribution"] },
-
-  // J-Curve diagram
-  { text: "Using a J-curve diagram, explain why a depreciation of sterling may initially worsen the UK's current account deficit before improving it.", marks: 9, topic: "Exchange Rates", paper: "2", year: "2024", bloom: "analyse", tags: ["J-curve", "diagram", "depreciation", "current-account", "Marshall-Lerner", "time-lags"] },
-
-  // Keynesian AS diagram
-  { text: "Using a Keynesian aggregate supply diagram, explain why an increase in aggregate demand may not lead to inflation when there is significant spare capacity in the economy.", marks: 9, topic: "Aggregate Supply", paper: "2", year: "2024", bloom: "analyse", tags: ["keynesian-AS", "diagram", "spare-capacity", "horizontal-range", "no-inflation", "output-gap"] },
-
-  // ── BOTH-CURVES-SHIFT PATTERN (AQA June 2024 Q6a exact style) ──
-  { text: "Use a demand and supply diagram to explain the impact on price and quantity, of the changes in demand and supply of online sales in the retail grocery market. (Figure 1 and Extract B).", marks: 5, topic: "Price Determination", paper: "1", year: "2024", bloom: "analyse", tags: ["both-curves-shift", "diagram", "D-shift-right", "S-shift-right", "new-equilibrium", "KAA-5mark", "Q6a-pattern"] },
-  { text: "Use a demand and supply diagram to explain the impact on price and quantity, of the changes in demand and supply of electric vehicles following government subsidies and falling battery costs.", marks: 5, topic: "Price Determination", paper: "1", year: "2024-2025", bloom: "analyse", tags: ["both-curves-shift", "diagram", "D-shift-right", "S-shift-right", "lower-price", "higher-quantity"] },
-  { text: "Use a demand and supply diagram to explain the impact on price and quantity, of the simultaneous increase in demand (due to population growth) and decrease in supply (due to climate change) in the UK wheat market.", marks: 5, topic: "Price Determination", paper: "1", year: "2024-2025", bloom: "analyse", tags: ["both-curves-shift", "diagram", "D-shift-right", "S-shift-left", "higher-price", "ambiguous-quantity"] },
-  { text: "Use a demand and supply diagram to explain the likely impact on the price and quantity of rental accommodation, following an increase in demand from students and a decrease in supply due to landlords leaving the market.", marks: 5, topic: "Price Determination", paper: "1", year: "2024-2025", bloom: "analyse", tags: ["both-curves-shift", "diagram", "D-shift-right", "S-shift-left", "housing", "higher-price"] },
-
-  // ── AQA KEY DEFINITIONS (from 783191448-a-level-economics-definitions.pdf) ──
-  { text: "Define 'opportunity cost' and explain its relevance to economic decision-making.", marks: 2, topic: "Economic Problem", paper: "1", year: "2017-2024", bloom: "remember", tags: ["definition", "opportunity-cost", "scarcity", "AQA-definitions"] },
-  { text: "Define 'allocative efficiency' and explain the condition under which it is achieved.", marks: 2, topic: "Market Structures", paper: "1", year: "2017-2024", bloom: "remember", tags: ["definition", "allocative-efficiency", "P=MC", "AQA-definitions"] },
-  { text: "Define 'market failure' and give two examples.", marks: 2, topic: "Market Failure", paper: "1", year: "2017-2024", bloom: "remember", tags: ["definition", "market-failure", "externalities", "public-goods", "AQA-definitions"] },
-  { text: "Define 'negative externality of production' and explain using the concepts of MSC and MPC.", marks: 4, topic: "Externalities", paper: "1", year: "2017-2024", bloom: "understand", tags: ["definition", "externality", "MSC", "MPC", "divergence", "AQA-definitions"] },
-  { text: "Define 'aggregate demand' and identify its four components.", marks: 2, topic: "Aggregate Demand", paper: "2", year: "2017-2024", bloom: "remember", tags: ["definition", "AD", "C+I+G+X-M", "AQA-definitions"] },
-  { text: "Define 'current account deficit' and explain one possible cause.", marks: 4, topic: "Balance of Payments", paper: "2", year: "2017-2024", bloom: "understand", tags: ["definition", "current-account", "trade-deficit", "AQA-definitions"] },
-  { text: "Define 'quantitative easing' and explain how it is intended to stimulate the economy.", marks: 4, topic: "Monetary Policy", paper: "2", year: "2017-2024", bloom: "understand", tags: ["definition", "QE", "money-supply", "transmission-mechanism", "AQA-definitions"] },
-  { text: "Define 'comparative advantage' and explain how it provides the basis for international trade.", marks: 4, topic: "Globalisation", paper: "2", year: "2017-2024", bloom: "understand", tags: ["definition", "comparative-advantage", "opportunity-cost", "specialisation", "AQA-definitions"] },
-
-  // ── AQA REVISION GUIDE MICRO PATTERNS (from 787396426-AQA-Revision-Guide-Micro.pdf) ──
-  { text: "Explain, using a diagram, how a subsidy corrects the under-consumption of a merit good by bringing output closer to the socially optimal level.", marks: 9, topic: "Government Intervention", paper: "1", year: "2017-2024", bloom: "analyse", tags: ["subsidy", "merit-good", "MSB", "MPB", "diagram", "under-consumption", "revision-guide"] },
-  { text: "Using a diagram, explain why a monopolist is allocatively and productively inefficient compared to a firm in perfect competition.", marks: 9, topic: "Market Structures", paper: "1", year: "2017-2024", bloom: "analyse", tags: ["monopoly", "perfect-competition", "efficiency", "P>MC", "diagram", "revision-guide"] },
-  { text: "Using a diagram, explain how the imposition of a minimum price above the equilibrium leads to excess supply in an agricultural market.", marks: 5, topic: "Government Intervention", paper: "1", year: "2017-2024", bloom: "analyse", tags: ["minimum-price", "floor-price", "excess-supply", "agriculture", "diagram", "revision-guide"] },
-  { text: "Explain why the free rider problem means that public goods will not be provided by the private sector.", marks: 4, topic: "Market Failure", paper: "1", year: "2017-2024", bloom: "understand", tags: ["public-goods", "free-rider", "non-excludable", "non-rivalrous", "revision-guide"] },
-  { text: "Using a diagram, explain how a trade union can raise wages above the competitive equilibrium but may cause unemployment.", marks: 9, topic: "Labour Market", paper: "1", year: "2017-2024", bloom: "analyse", tags: ["trade-union", "wage-bargaining", "unemployment", "labour-market", "diagram", "revision-guide"] },
-
-  // ── TES AQA AL ECONOMICS DIAGRAM PATTERNS ──
-  { text: "Using a circular flow of income diagram, explain the relationship between injections and withdrawals and their impact on national income.", marks: 9, topic: "National Income", paper: "2", year: "2017-2024", bloom: "analyse", tags: ["circular-flow", "injections", "withdrawals", "national-income", "multiplier", "TES-diagrams"] },
-  { text: "Using a Lorenz curve diagram, explain what the Gini coefficient measures and how a more progressive tax system would affect the curve.", marks: 9, topic: "Inequality", paper: "2", year: "2017-2024", bloom: "analyse", tags: ["Lorenz-curve", "Gini", "inequality", "progressive-tax", "redistribution", "TES-diagrams"] },
-  { text: "Using a kinked demand curve diagram, explain why prices tend to be rigid in an oligopolistic market.", marks: 9, topic: "Market Structures", paper: "1", year: "2017-2024", bloom: "analyse", tags: ["oligopoly", "kinked-demand", "price-rigidity", "game-theory", "diagram", "TES-diagrams"] },
-  { text: "Using a diagram, compare the impact of a specific tax versus an ad valorem tax on the equilibrium price and quantity in a market.", marks: 9, topic: "Government Intervention", paper: "1", year: "2017-2024", bloom: "analyse", tags: ["specific-tax", "ad-valorem-tax", "comparison", "diagram", "tax-incidence", "TES-diagrams"] },
-
-  // ── PAPER 3 DIAGRAM-BASED MCQ PATTERNS (AQA June 2024 Q10, Q11 style) ──
-  { text: "Figure 3 shows how the markets for Good X and Good Y are affected by an increase in the demand for Good X. It can be concluded that Good X and Good Y are in: A competitive demand, B composite demand, C derived demand, D joint supply.", marks: 1, topic: "Interrelated Markets", paper: "3", year: "2024", bloom: "analyse", tags: ["MCQ", "diagram", "joint-supply", "competitive-demand", "two-market-diagram", "Paper3-Section-A"] },
-  { text: "Figure 4 shows the short-run average costs (AC), marginal costs (MC), average revenue (AR) and marginal revenue (MR) curves for a typical firm in a monopolistically competitive market. In the long run, market forces are most likely to cause the firm's revenue curves to: A shift left and become flatter, B shift left and become steeper, C shift right and become flatter, D shift right and become steeper.", marks: 1, topic: "Market Structures", paper: "3", year: "2024", bloom: "analyse", tags: ["MCQ", "diagram", "monopolistic-competition", "cost-revenue-curves", "long-run-adjustment", "Paper3-Section-A"] },
-  { text: "Figure 5 shows the aggregate demand and aggregate supply curves for an economy. A decrease in business confidence would most likely cause: A a movement along AD from Y1 to Y2, B a shift of AD to the left, C a shift of SRAS to the left, D a shift of LRAS to the left.", marks: 1, topic: "Aggregate Demand", paper: "3", year: "2024", bloom: "apply", tags: ["MCQ", "diagram", "AD/AS", "business-confidence", "AD-shift", "Paper3-Section-A"] },
-  { text: "Figure 6 shows a production possibility frontier for an economy producing capital goods and consumer goods. A movement from point X inside the frontier to point Y on the frontier represents: A economic growth, B a reduction in unemployment, C an increase in opportunity cost, D productive inefficiency.", marks: 1, topic: "Economic Problem", paper: "3", year: "2024", bloom: "apply", tags: ["MCQ", "diagram", "PPF", "productive-efficiency", "unemployment", "Paper3-Section-A"] },
-  { text: "Figure 7 shows Lorenz curves for Country A (before tax) and Country B (after tax). Which statement is correct? A Country A has a lower Gini coefficient, B Progressive taxation has shifted the curve closer to the line of equality, C Country B has greater income inequality, D The Gini coefficient for Country B is closer to 1.", marks: 1, topic: "Inequality", paper: "3", year: "2024", bloom: "analyse", tags: ["MCQ", "diagram", "Lorenz-curve", "Gini-coefficient", "progressive-tax", "Paper3-Section-A"] },
-  { text: "Figure 8 shows the labour market for nurses. The introduction of a minimum wage at W2 above the equilibrium wage W1 would result in: A an increase in the quantity of labour demanded, B excess supply of labour equal to Q2 minus Q1, C a decrease in the supply of labour, D an increase in total wage costs and employment.", marks: 1, topic: "Labour Market", paper: "3", year: "2024", bloom: "apply", tags: ["MCQ", "diagram", "labour-market", "minimum-wage", "excess-supply", "Paper3-Section-A"] },
-  { text: "Figure 9 shows an externality diagram for a market with a negative externality of production. The welfare loss is represented by area: A triangle between MSC and MPC above the free market quantity, B triangle between MSC and MPC above the socially optimal quantity, C the shaded area between Q* and Qm bounded by MSC and MPC, D rectangle between P1 and P2.", marks: 1, topic: "Externalities", paper: "3", year: "2024", bloom: "analyse", tags: ["MCQ", "diagram", "externality", "welfare-loss", "MSC-MPC", "deadweight-loss", "Paper3-Section-A"] },
-  { text: "Figure 10 shows a tariff diagram for imported steel. The imposition of a tariff leads to: A an increase in consumer surplus, B a decrease in domestic production, C an increase in government revenue equal to the tariff × quantity of imports, D a decrease in the world price of steel.", marks: 1, topic: "Globalisation", paper: "3", year: "2024", bloom: "analyse", tags: ["MCQ", "diagram", "tariff", "protectionism", "government-revenue", "consumer-surplus", "Paper3-Section-A"] },
-  { text: "Figure 11 shows the kinked demand curve model for an oligopolistic firm. The kink in the demand curve at the current price explains: A why firms in oligopoly always collude, B price rigidity in oligopolistic markets, C why oligopolistic firms are productively efficient, D the tendency for oligopolistic firms to engage in price wars.", marks: 1, topic: "Market Structures", paper: "3", year: "2024", bloom: "analyse", tags: ["MCQ", "diagram", "oligopoly", "kinked-demand", "price-rigidity", "Paper3-Section-A"] },
 ];
+
+// ── OCR A-Level Economics H460 question patterns ──
+const OCR_PATTERNS = [
+  // Component 01 — Microeconomics
+  { text: "Explain the concept of scarcity and why it creates the need for choice.", marks: 4, topic: "Scarcity & Choice", paper: "1", year: "2017-2025", bloom: "understand", tags: ["scarcity", "choice", "opportunity-cost", "OCR-H460-01"] },
+  { text: "Using a demand and supply diagram, explain the effect of a minimum price on a market.", marks: 8, topic: "Price Determination", paper: "1", year: "2017-2025", bloom: "analyse", tags: ["supply-demand", "diagram", "minimum-price", "floor-price", "OCR-H460-01"] },
+  { text: "Using a diagram, explain why a negative externality of production leads to a misallocation of resources.", marks: 8, topic: "Market Failure", paper: "1", year: "2017-2025", bloom: "analyse", tags: ["externality", "diagram", "MSC-MPC", "misallocation", "OCR-H460-01"] },
+  { text: "Evaluate the effectiveness of indirect taxation as a means of correcting market failure caused by negative externalities.", marks: 12, topic: "Government Intervention", paper: "1", year: "2017-2025", bloom: "evaluate", tags: ["evaluation", "taxation", "externalities", "market-failure", "OCR-H460-01"] },
+  { text: "Using a diagram, explain why public goods are not provided by the free market.", marks: 8, topic: "Public Goods", paper: "1", year: "2017-2025", bloom: "analyse", tags: ["public-goods", "free-rider", "non-excludable", "diagram", "OCR-H460-01"] },
+  { text: "Explain the difference between merit goods and public goods.", marks: 4, topic: "Market Failure", paper: "1", year: "2017-2025", bloom: "understand", tags: ["merit-goods", "public-goods", "under-provision", "OCR-H460-01"] },
+  { text: "Using a diagram, explain how a monopolist determines price and output to maximise profit.", marks: 8, topic: "Market Structures", paper: "1", year: "2017-2025", bloom: "analyse", tags: ["monopoly", "MC=MR", "supernormal-profit", "diagram", "OCR-H460-01"] },
+  { text: "Evaluate whether monopolies are always against the consumer interest.", marks: 12, topic: "Market Structures", paper: "1", year: "2017-2025", bloom: "evaluate", tags: ["evaluation", "monopoly", "efficiency", "innovation", "OCR-H460-01"] },
+  { text: "Using a diagram, explain how the price mechanism allocates resources in a free market.", marks: 8, topic: "Price Mechanism", paper: "1", year: "2017-2025", bloom: "analyse", tags: ["price-mechanism", "rationing", "signalling", "incentive", "diagram", "OCR-H460-01"] },
+  { text: "Evaluate the extent to which contestable markets benefit consumers more than monopolistic markets.", marks: 12, topic: "Contestability", paper: "1", year: "2017-2025", bloom: "evaluate", tags: ["evaluation", "contestability", "barriers-to-entry", "consumer-welfare", "OCR-H460-01"] },
+  { text: "Explain, using examples, the concept of asymmetric information and how it can lead to market failure.", marks: 4, topic: "Market Failure", paper: "1", year: "2017-2025", bloom: "understand", tags: ["asymmetric-information", "adverse-selection", "moral-hazard", "OCR-H460-01"] },
+  { text: "Using a diagram, explain how a subsidy can be used to increase the consumption of a merit good towards the socially optimal level.", marks: 8, topic: "Government Intervention", paper: "1", year: "2017-2025", bloom: "analyse", tags: ["subsidy", "merit-good", "MSB", "diagram", "OCR-H460-01"] },
+  { text: "Evaluate the view that government failure is a bigger problem than market failure.", marks: 12, topic: "Government Failure", paper: "1", year: "2017-2025", bloom: "evaluate", tags: ["evaluation", "government-failure", "market-failure", "unintended-consequences", "OCR-H460-01"] },
+
+  // Component 02 — Macroeconomics
+  { text: "Using an AD/AS diagram, explain the likely impact of an increase in government spending on real GDP and the price level.", marks: 8, topic: "Fiscal Policy", paper: "2", year: "2017-2025", bloom: "analyse", tags: ["AD/AS", "diagram", "fiscal-policy", "multiplier", "OCR-H460-02"] },
+  { text: "Evaluate the effectiveness of monetary policy in controlling inflation.", marks: 12, topic: "Monetary Policy", paper: "2", year: "2017-2025", bloom: "evaluate", tags: ["evaluation", "monetary-policy", "inflation", "interest-rates", "OCR-H460-02"] },
+  { text: "Using an AD/AS diagram, explain how supply-side policies can lead to sustained economic growth without inflation.", marks: 8, topic: "Supply-Side Policies", paper: "2", year: "2017-2025", bloom: "analyse", tags: ["AD/AS", "LRAS", "supply-side", "diagram", "OCR-H460-02"] },
+  { text: "Explain, using the circular flow model, how an increase in exports affects national income.", marks: 4, topic: "National Income", paper: "2", year: "2017-2025", bloom: "understand", tags: ["circular-flow", "exports", "injections", "national-income", "OCR-H460-02"] },
+  { text: "Evaluate the view that a current account deficit is always harmful to an economy.", marks: 12, topic: "Balance of Payments", paper: "2", year: "2017-2025", bloom: "evaluate", tags: ["evaluation", "current-account", "deficit", "trade", "OCR-H460-02"] },
+  { text: "Using a Phillips Curve diagram, explain the short-run trade-off between inflation and unemployment.", marks: 8, topic: "Phillips Curve", paper: "2", year: "2017-2025", bloom: "analyse", tags: ["Phillips-Curve", "diagram", "inflation", "unemployment", "OCR-H460-02"] },
+  { text: "Evaluate the extent to which economic growth is compatible with reducing income inequality.", marks: 12, topic: "Economic Growth", paper: "2", year: "2017-2025", bloom: "evaluate", tags: ["evaluation", "growth", "inequality", "Gini", "OCR-H460-02"] },
+  { text: "Using data, calculate the rate of inflation and explain one limitation of the CPI as a measure of inflation.", marks: 4, topic: "Inflation", paper: "2", year: "2017-2025", bloom: "apply", tags: ["CPI", "calculation", "inflation", "limitations", "OCR-H460-02"] },
+  { text: "Evaluate the likely impact of Brexit on the UK's trade balance and economic growth.", marks: 12, topic: "Globalisation", paper: "2", year: "2017-2025", bloom: "evaluate", tags: ["evaluation", "Brexit", "trade", "growth", "OCR-H460-02"] },
+  { text: "Using a diagram, explain how a depreciation of the exchange rate might improve the current account balance in the long run.", marks: 8, topic: "Exchange Rates", paper: "2", year: "2017-2025", bloom: "analyse", tags: ["exchange-rate", "depreciation", "J-curve", "Marshall-Lerner", "diagram", "OCR-H460-02"] },
+
+  // Component 03 — Themes in Economics
+  { text: "With reference to both microeconomic and macroeconomic analysis, evaluate the impact of a significant increase in the national living wage on the UK economy.", marks: 25, topic: "Synoptic", paper: "3", year: "2017-2025", bloom: "evaluate", tags: ["synoptic", "minimum-wage", "labour-market", "inflation", "unemployment", "OCR-H460-03"] },
+  { text: "Using both micro and macro concepts, assess the economic case for and against the use of carbon taxes to combat climate change.", marks: 25, topic: "Synoptic", paper: "3", year: "2017-2025", bloom: "evaluate", tags: ["synoptic", "carbon-tax", "externalities", "fiscal-policy", "environment", "OCR-H460-03"] },
+  { text: "Evaluate the extent to which protectionist policies can improve economic welfare in a developing economy.", marks: 25, topic: "Synoptic", paper: "3", year: "2017-2025", bloom: "evaluate", tags: ["synoptic", "protectionism", "tariffs", "development", "infant-industry", "OCR-H460-03"] },
+  { text: "With reference to the data provided, evaluate the effectiveness of different government policies in reducing income inequality.", marks: 25, topic: "Synoptic", paper: "3", year: "2017-2025", bloom: "evaluate", tags: ["synoptic", "inequality", "progressive-tax", "transfer-payments", "evaluation", "OCR-H460-03"] },
+];
+
+// ── Cambridge International (CAIE 9708) question patterns ──
+const CAMBRIDGE_PATTERNS = [
+  // Paper 1 — Multiple Choice (AS)
+  { text: "A worker earns $40 per hour. Rather than work, she decides to visit a museum for three hours. The visit costs a total of $40. What is the opportunity cost of visiting the museum?", marks: 1, topic: "Opportunity Cost", paper: "1", year: "2024", bloom: "apply", tags: ["MCQ", "opportunity-cost", "calculation", "CAIE-9708-P1"] },
+  { text: "The price elasticity of demand for a product is -0.5. What will happen to total revenue if the firm raises its price?", marks: 1, topic: "Elasticity", paper: "1", year: "2017-2024", bloom: "apply", tags: ["MCQ", "PED", "total-revenue", "inelastic", "CAIE-9708-P1"] },
+  { text: "Which combination of characteristics describes a public good? (Non-rivalrous and non-excludable)", marks: 1, topic: "Market Failure", paper: "1", year: "2017-2024", bloom: "remember", tags: ["MCQ", "public-goods", "non-rivalrous", "non-excludable", "CAIE-9708-P1"] },
+  { text: "A government imposes a maximum price below the equilibrium in a market. What is the most likely result?", marks: 1, topic: "Government Intervention", paper: "1", year: "2017-2024", bloom: "apply", tags: ["MCQ", "maximum-price", "shortage", "excess-demand", "CAIE-9708-P1"] },
+  { text: "In a competitive market, what determines the equilibrium price?", marks: 1, topic: "Price Determination", paper: "1", year: "2017-2024", bloom: "understand", tags: ["MCQ", "supply-demand", "equilibrium", "CAIE-9708-P1"] },
+  { text: "Which policy is most likely to reduce demand-pull inflation?", marks: 1, topic: "Inflation", paper: "1", year: "2017-2024", bloom: "apply", tags: ["MCQ", "demand-pull", "inflation", "contractionary", "CAIE-9708-P1"] },
+
+  // Paper 2 — Data Response & Essay (AS)
+  { text: "Using a demand and supply diagram, analyse the likely effects on the market for oil of an OPEC decision to cut output.", marks: 8, topic: "Price Determination", paper: "2", year: "2024", bloom: "analyse", tags: ["data-response", "supply-demand", "diagram", "oil", "OPEC", "CAIE-9708-P2"] },
+  { text: "Discuss whether a government should intervene in a market where there are significant negative externalities of production.", marks: 12, topic: "Market Failure", paper: "2", year: "2023", bloom: "evaluate", tags: ["essay", "externalities", "government-intervention", "evaluation", "CAIE-9708-P2"] },
+  { text: "Explain the factors that influence the price elasticity of demand for a product.", marks: 8, topic: "Elasticity", paper: "2", year: "2022", bloom: "understand", tags: ["PED", "determinants", "substitutes", "necessity", "CAIE-9708-P2"] },
+  { text: "Discuss whether the advantages of a free market economy outweigh the disadvantages.", marks: 12, topic: "Economic Systems", paper: "2", year: "2021", bloom: "evaluate", tags: ["essay", "free-market", "mixed-economy", "evaluation", "CAIE-9708-P2"] },
+  { text: "Using the data provided, calculate the cross elasticity of demand and explain what the sign indicates about the relationship between the goods.", marks: 4, topic: "Elasticity", paper: "2", year: "2024", bloom: "apply", tags: ["XED", "calculation", "substitutes", "complements", "CAIE-9708-P2"] },
+  { text: "Discuss whether indirect taxes are the most effective way to correct market failure caused by demerit goods.", marks: 12, topic: "Government Intervention", paper: "2", year: "2024", bloom: "evaluate", tags: ["essay", "indirect-tax", "demerit-goods", "evaluation", "CAIE-9708-P2"] },
+
+  // Paper 3 — Multiple Choice (A2)
+  { text: "An economy is operating below full capacity. An increase in aggregate demand will most likely cause:", marks: 1, topic: "Aggregate Demand", paper: "3", year: "2024", bloom: "apply", tags: ["MCQ", "AD", "output-gap", "spare-capacity", "CAIE-9708-P3"] },
+  { text: "Which of the following is a supply-side policy?", marks: 1, topic: "Supply-Side Policies", paper: "3", year: "2017-2024", bloom: "remember", tags: ["MCQ", "supply-side", "LRAS", "CAIE-9708-P3"] },
+  { text: "According to the theory of comparative advantage, which country should specialise in which good?", marks: 1, topic: "Trade", paper: "3", year: "2017-2024", bloom: "apply", tags: ["MCQ", "comparative-advantage", "specialisation", "trade", "CAIE-9708-P3"] },
+  { text: "A country's current account shows a deficit. What might cause this?", marks: 1, topic: "Balance of Payments", paper: "3", year: "2017-2024", bloom: "understand", tags: ["MCQ", "current-account", "deficit", "imports", "CAIE-9708-P3"] },
+
+  // Paper 4 — Data Response & Essay (A2)
+  { text: "Using an AD/AS diagram, analyse the likely effects of a significant depreciation of the country's currency on its economy.", marks: 8, topic: "Exchange Rates", paper: "4", year: "2024", bloom: "analyse", tags: ["data-response", "AD/AS", "depreciation", "trade", "CAIE-9708-P4"] },
+  { text: "Evaluate whether protectionist policies can ever be justified for a developing economy.", marks: 12, topic: "Trade Policy", paper: "4", year: "2024", bloom: "evaluate", tags: ["essay", "protectionism", "infant-industry", "developing-economy", "evaluation", "CAIE-9708-P4"] },
+  { text: "Discuss the likely consequences of a large budget deficit for an economy.", marks: 12, topic: "Fiscal Policy", paper: "4", year: "2023", bloom: "evaluate", tags: ["essay", "budget-deficit", "national-debt", "crowding-out", "CAIE-9708-P4"] },
+  { text: "Assess the effectiveness of monetary policy in achieving price stability and economic growth simultaneously.", marks: 12, topic: "Monetary Policy", paper: "4", year: "2023", bloom: "evaluate", tags: ["essay", "monetary-policy", "inflation-targeting", "growth", "CAIE-9708-P4"] },
+  { text: "Evaluate the economic arguments for and against a country joining a customs union.", marks: 12, topic: "Economic Integration", paper: "4", year: "2022", bloom: "evaluate", tags: ["essay", "customs-union", "trade-creation", "trade-diversion", "evaluation", "CAIE-9708-P4"] },
+  { text: "Using the data provided, calculate the terms of trade index and explain its significance for the economy.", marks: 4, topic: "Trade", paper: "4", year: "2024", bloom: "apply", tags: ["terms-of-trade", "calculation", "data-response", "CAIE-9708-P4"] },
+  { text: "Evaluate the extent to which supply-side policies can solve the problem of unemployment in a developing economy.", marks: 12, topic: "Development", paper: "4", year: "2024", bloom: "evaluate", tags: ["essay", "supply-side", "unemployment", "development", "evaluation", "CAIE-9708-P4"] },
+  { text: "Discuss whether economic growth necessarily leads to economic development.", marks: 12, topic: "Development", paper: "4", year: "2022", bloom: "evaluate", tags: ["essay", "growth-vs-development", "HDI", "evaluation", "CAIE-9708-P4"] },
+  { text: "Evaluate the likely impact of an ageing population on government spending and the macroeconomy.", marks: 12, topic: "Macroeconomic Issues", paper: "4", year: "2024", bloom: "evaluate", tags: ["essay", "ageing-population", "dependency-ratio", "fiscal-pressure", "CAIE-9708-P4"] },
+];
+
+const ALL_PATTERNS: Record<string, typeof AQA_PATTERNS> = {
+  economics: AQA_PATTERNS,
+  ocr_economics: OCR_PATTERNS,
+  cambridge: CAMBRIDGE_PATTERNS,
+};
 
 async function generateEmbedding(text: string, apiKey: string): Promise<number[] | null> {
   try {
@@ -190,55 +159,68 @@ serve(async (req) => {
 
     const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
-    // Check if already seeded
-    const { count } = await supabase
-      .from("question_embeddings")
-      .select("*", { count: "exact", head: true });
+    // Accept optional subject parameter (default: seed all)
+    let body: { subject?: string } = {};
+    try { body = await req.json(); } catch { /* no body */ }
+    
+    const subjectsToSeed = body.subject 
+      ? { [body.subject]: ALL_PATTERNS[body.subject] }
+      : ALL_PATTERNS;
 
-    if (count && count > 0) {
-      return new Response(
-        JSON.stringify({ message: `Already seeded with ${count} question embeddings`, count }),
-        { headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
+    let totalSeeded = 0;
 
-    let seeded = 0;
-    const batchSize = 5;
+    for (const [subject, patterns] of Object.entries(subjectsToSeed)) {
+      if (!patterns) continue;
 
-    for (let i = 0; i < ECONOMICS_QUESTION_PATTERNS.length; i += batchSize) {
-      const batch = ECONOMICS_QUESTION_PATTERNS.slice(i, i + batchSize);
+      // Check if this subject is already seeded
+      const { count } = await supabase
+        .from("question_embeddings")
+        .select("*", { count: "exact", head: true })
+        .eq("subject", subject);
 
-      const inserts = [];
-      for (const q of batch) {
-        // Generate embedding with rate limiting
-        const embedding = await generateEmbedding(q.text, LOVABLE_API_KEY);
-
-        inserts.push({
-          subject: "economics",
-          paper: q.paper,
-          year: q.year,
-          question_text: q.text,
-          marks: q.marks,
-          topic: q.topic,
-          bloom_level: q.bloom,
-          tags: q.tags,
-          embedding: embedding ? `[${embedding.join(",")}]` : null,
-        });
+      if (count && count > 0) {
+        console.log(`Subject ${subject} already seeded with ${count} embeddings, skipping`);
+        continue;
       }
 
-      const { error } = await supabase.from("question_embeddings").insert(inserts);
-      if (error) {
-        console.error("Insert error:", error);
-      } else {
-        seeded += inserts.length;
+      const batchSize = 5;
+      let seeded = 0;
+
+      for (let i = 0; i < patterns.length; i += batchSize) {
+        const batch = patterns.slice(i, i + batchSize);
+
+        const inserts = [];
+        for (const q of batch) {
+          const embedding = await generateEmbedding(q.text, LOVABLE_API_KEY);
+          inserts.push({
+            subject,
+            paper: q.paper,
+            year: q.year,
+            question_text: q.text,
+            marks: q.marks,
+            topic: q.topic,
+            bloom_level: q.bloom,
+            tags: q.tags,
+            embedding: embedding ? `[${embedding.join(",")}]` : null,
+          });
+        }
+
+        const { error } = await supabase.from("question_embeddings").insert(inserts);
+        if (error) {
+          console.error(`Insert error for ${subject}:`, error);
+        } else {
+          seeded += inserts.length;
+        }
+
+        await new Promise((r) => setTimeout(r, 1000));
       }
 
-      // Small delay to avoid rate limiting
-      await new Promise((r) => setTimeout(r, 1000));
+      totalSeeded += seeded;
+      console.log(`Seeded ${seeded} embeddings for ${subject}`);
     }
 
     return new Response(
-      JSON.stringify({ message: `Seeded ${seeded} question embeddings`, seeded }),
+      JSON.stringify({ message: `Seeded ${totalSeeded} question embeddings across all subjects`, seeded: totalSeeded }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (e) {

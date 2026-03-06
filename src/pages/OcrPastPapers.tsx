@@ -5,42 +5,52 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ocrPastPapers, ocrComponentTitles } from "@/data/ocrPastPapers";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
 
 export default function OcrPastPapers() {
   const [search, setSearch] = useState("");
-  const [yearFilter, setYearFilter] = useState<string>("all");
-
-  const years = [...new Set(ocrPastPapers.map((p) => p.year))].sort((a, b) => b - a);
+  const [categoryFilter, setCategoryFilter] = useState<string>("all");
 
   const filtered = (component: 1 | 2 | 3) =>
     ocrPastPapers.filter((p) => {
       if (p.component !== component) return false;
-      if (yearFilter !== "all" && p.year !== Number(yearFilter)) return false;
+      if (categoryFilter !== "all" && p.session !== categoryFilter) return false;
       if (search) {
         const q = search.toLowerCase();
         return (
           p.type.toLowerCase().includes(q) ||
-          String(p.year).includes(q) ||
-          ocrComponentTitles[p.component].toLowerCase().includes(q)
+          p.label.toLowerCase().includes(q) ||
+          String(p.year).toLowerCase().includes(q)
         );
       }
       return true;
     });
+
+  const sessionBadge = (session: string) => {
+    switch (session) {
+      case "jun": return <Badge variant="default" className="text-xs">2025</Badge>;
+      case "practice": return <Badge variant="secondary" className="text-xs">Practice</Badge>;
+      case "sample": return <Badge variant="outline" className="text-xs">Sample</Badge>;
+      default: return null;
+    }
+  };
 
   return (
     <div className="container py-10">
       <div className="mb-8">
         <h1 className="text-4xl font-serif mb-2">OCR A-Level Economics Past Papers</h1>
         <p className="text-muted-foreground">
-          Browse OCR H460 A-Level Economics past papers and mark schemes.
+          Browse OCR H460 A-Level Economics papers, mark schemes, and practice materials.
         </p>
       </div>
 
       <div className="flex flex-col sm:flex-row gap-3 mb-6 flex-wrap">
         <Input placeholder="Search papers..." value={search} onChange={(e) => setSearch(e.target.value)} className="sm:max-w-xs" />
-        <select value={yearFilter} onChange={(e) => setYearFilter(e.target.value)} className="h-10 rounded-md border border-input bg-background px-3 text-sm">
-          <option value="all">All Years</option>
-          {years.map((y) => (<option key={y} value={y}>{y}</option>))}
+        <select value={categoryFilter} onChange={(e) => setCategoryFilter(e.target.value)} className="h-10 rounded-md border border-input bg-background px-3 text-sm">
+          <option value="all">All Categories</option>
+          <option value="jun">2025 Papers</option>
+          <option value="practice">Practice Papers</option>
+          <option value="sample">Sample Papers</option>
         </select>
       </div>
 
@@ -61,8 +71,11 @@ export default function OcrPastPapers() {
                     <div className="flex items-center gap-3">
                       <FileText className="h-5 w-5 text-muted-foreground shrink-0" />
                       <div>
-                        <p className="font-medium text-sm">June {p.year} — {p.type}</p>
-                        <p className="text-xs text-muted-foreground">Component {String(p.component).padStart(2, "0")}</p>
+                        <div className="flex items-center gap-2">
+                          <p className="font-medium text-sm">{p.label}</p>
+                          {sessionBadge(p.session)}
+                        </div>
+                        <p className="text-xs text-muted-foreground">{p.type}</p>
                       </div>
                     </div>
                     <Button variant="ghost" size="icon" asChild>
