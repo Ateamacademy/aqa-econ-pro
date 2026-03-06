@@ -12,6 +12,7 @@ const baseNavItems = [
   { to: "/tutor", label: "AI Tutor", icon: MessageCircle },
   { to: "/grader", label: "Grader", icon: PenTool },
   { to: "/practice", label: "Practice", icon: Brain },
+  { to: "/diagram-practice", label: "Diagrams", icon: PenTool },
   { to: "/notes", label: "Study Notes", icon: BookOpen },
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
 ];
