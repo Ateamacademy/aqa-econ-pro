@@ -10,7 +10,7 @@ export interface KnowledgeNode {
   id: string;
   topic: string;
   subtopic: string;
-  paper: "1" | "2" | "3";
+  paper: "1" | "2" | "3" | "4";
   bloomLevel: "remember" | "understand" | "apply" | "analyse" | "evaluate" | "create";
   keywords: string[];
   relatedTopics: string[]; // IDs of related nodes for synoptic links
