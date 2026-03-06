@@ -13,6 +13,7 @@ import ReactMarkdown from "react-markdown";
 import { FREE_LIMITS } from "@/lib/plans";
 import { DrawingCanvas } from "@/components/tools/DrawingCanvas";
 import { cn } from "@/lib/utils";
+import { extractDiagramBlocks, EconDiagramCanvas } from "@/components/predicted-papers/EconDiagramSVG";
 
 const DIAGRAM_TOPICS: Record<string, string[]> = {
   economics: [
@@ -184,14 +185,17 @@ Structure your response as:
 - **Mark Awarded**: X/Y marks
 - **What You Did Well**: specific praise
 - **How to Improve**: actionable steps
-- **Model Diagram Description**: Show what a perfect structured description looks like using the format:
-  - X-axis: ...
-  - Y-axis: ...
-  - Initial curves: ...
-  - Initial equilibrium: ...
-  - Shift: ...
-  - New equilibrium: ...
-  - Effect: ...
+- **Model Diagram Description**: You MUST include a structured diagram block in EXACTLY this format (the app will render it as a visual SVG diagram):
+
+**Diagram: [Diagram Title]**
+- X-axis: [label]
+- Y-axis: [label]
+- Initial curves: [describe D1, S1 etc.]
+- Initial equilibrium: [P1, Q1]
+- Shift: [which curve shifts which direction, e.g. "Supply shifts left from S1 to S2"]
+- New equilibrium: [P2, Q2 and direction of change]
+- Key conclusion: [one sentence summary]
+
 - **Model Explanation**: A top-band written explanation that correctly connects to the diagram
 
 Speak directly to the student using "you" and "your".` }],
@@ -384,7 +388,15 @@ Speak directly to the student using "you" and "your".` }],
           <Card>
             <CardHeader><CardTitle className="font-serif text-lg text-accent">Feedback</CardTitle></CardHeader>
             <CardContent>
-              <div className="prose prose-sm max-w-none dark:prose-invert"><ReactMarkdown>{feedback}</ReactMarkdown></div>
+              <div className="prose prose-sm max-w-none dark:prose-invert">
+                {extractDiagramBlocks(feedback).map((seg, i) =>
+                  seg.type === "diagram" ? (
+                    <EconDiagramCanvas key={i} diagram={seg.diagram} />
+                  ) : (
+                    <ReactMarkdown key={i}>{seg.content}</ReactMarkdown>
+                  )
+                )}
+              </div>
             </CardContent>
           </Card>
           <Button onClick={reset} className="gap-2"><PenTool className="h-4 w-4" /> Try Another Diagram</Button>
