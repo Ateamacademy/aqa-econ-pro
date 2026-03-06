@@ -104,7 +104,7 @@ export default function Index() {
       <section className="py-16 bg-muted/50">
         <div className="container">
           <h2 className="text-3xl md:text-4xl font-serif text-center mb-10">
-            Three Subjects, One Platform
+            Five Exam Boards, One Platform
           </h2>
           <motion.div
             variants={container}
