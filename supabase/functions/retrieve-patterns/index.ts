@@ -191,6 +191,27 @@ serve(async (req) => {
         contextPrompt += "- Pre-release research theme with synoptic data response.\n";
         contextPrompt += "- One 8-mark and one 20-mark extended response question.\n";
       }
+    } else if (subjectKey === "ocr") {
+      if ((paper || "") === "1") {
+        contextPrompt += "- Component 01 (H460/01): Microeconomics.\n";
+        contextPrompt += "- Section A: Data response with short-answer questions (2, 4, 8 marks) based on a stimulus extract.\n";
+        contextPrompt += "- Section B: Extended response questions including 8-mark 'explain with diagram' and 16-mark evaluate.\n";
+        contextPrompt += "- Section C: Essay question (25 marks, choice of 2) requiring evaluation with counter-arguments.\n";
+        contextPrompt += "- Use OCR command words: Define, Calculate, Explain, Analyse, Evaluate, Discuss, Assess.\n";
+        contextPrompt += "- 8-mark questions must require a clearly labelled diagram.\n";
+      } else if ((paper || "") === "2") {
+        contextPrompt += "- Component 02 (H460/02): Macroeconomics.\n";
+        contextPrompt += "- Section A: Data response with short-answer questions (2, 4, 8 marks) based on macroeconomic data.\n";
+        contextPrompt += "- Section B: Extended response questions including 8-mark analyse and 16-mark evaluate.\n";
+        contextPrompt += "- Section C: Essay question (25 marks, choice of 2) requiring evaluation of macro policy.\n";
+        contextPrompt += "- Use OCR command words: Define, Calculate, Explain, Analyse, Evaluate, Discuss, Assess.\n";
+      } else {
+        contextPrompt += "- Component 03 (H460/03): Themes in Economics (synoptic).\n";
+        contextPrompt += "- Paper draws together both microeconomic and macroeconomic content.\n";
+        contextPrompt += "- Section A: Data response with a pre-release-style case study and structured questions.\n";
+        contextPrompt += "- Section B: Extended synoptic essay (25 marks) requiring analysis from both micro and macro perspectives.\n";
+        contextPrompt += "- Questions must explicitly link micro concepts (e.g. externalities, market structures) to macro outcomes (e.g. growth, inequality).\n";
+      }
     } else if ((paper || "") === "1" || (paper || "") === "2") {
       contextPrompt += "- Section A must include BOTH Context 1 and Context 2 (EITHER/OR layout).\n";
       contextPrompt += "- Context question pattern must be exactly: 2 marks, 4 marks, 9 marks, 25 marks.\n";
