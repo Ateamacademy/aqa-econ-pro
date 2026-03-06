@@ -301,6 +301,8 @@ Generate a COMPLETE predicted exam paper for ${paperLabel}.
 
 ${templates[paperNum]}
 
+${knowledgeGraphSection}
+
 CRITICAL RULES:
 1. Follow the template structure EXACTLY
 2. Use realistic 2023-2025 global data in extracts
