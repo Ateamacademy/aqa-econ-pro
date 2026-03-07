@@ -274,6 +274,147 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta) {
       const wrapped = doc.splitTextToSize(figMatch[1], maxW);
       doc.text(wrapped, marginL, y);
       y += wrapped.length * 5.5 + 2;
+
+      // Check if following lines describe a line chart (axis + data points)
+      // Collect figure description lines
+      const figLines: string[] = [];
+      let fli = li + 1;
+      while (fli < lines.length) {
+        const fl = lines[fli].trim();
+        if (!fl || /^#{1,4}\s/.test(fl) || /^Question\s/i.test(fl) || /^\*{0,2}(?:Figure|Table|Extract)\s/i.test(fl)) break;
+        figLines.push(fl);
+        fli++;
+      }
+
+      // Detect if this is a line chart figure (has "Line N" patterns with year:value data)
+      const lineDataSets: { label: string; points: { year: string; value: number }[] }[] = [];
+      let currentSet: { label: string; points: { year: string; value: number }[] } | null = null;
+      let axisLabels = { x: "", y: "" };
+
+      for (const fl of figLines) {
+        const vAxisMatch = fl.match(/vertical\s*axis:\s*(.+)/i);
+        if (vAxisMatch) { axisLabels.y = vAxisMatch[1].trim(); continue; }
+        const hAxisMatch = fl.match(/horizontal\s*axis:\s*(.+)/i);
+        if (hAxisMatch) { axisLabels.x = hAxisMatch[1].trim(); continue; }
+        const lineMatch = fl.match(/^-?\s*Line\s+\d+\s*\(([^)]+)\):\s*(.+)/i);
+        if (lineMatch) {
+          if (currentSet) lineDataSets.push(currentSet);
+          currentSet = { label: lineMatch[2].trim(), points: [] };
+          continue;
+        }
+        const dataMatch = fl.match(/^-?\s*(\d{4}):\s*([\d.]+)%?/);
+        if (dataMatch && currentSet) {
+          currentSet.points.push({ year: dataMatch[1], value: parseFloat(dataMatch[2]) });
+        }
+      }
+      if (currentSet && currentSet.points.length > 0) lineDataSets.push(currentSet);
+
+      // Draw chart if we have data
+      if (lineDataSets.length > 0 && lineDataSets[0].points.length > 1) {
+        li = fli - 1; // Skip processed lines
+
+        const chartW = maxW * 0.85;
+        const chartH = 55;
+        const chartX = marginL + 15;
+        const chartY0 = y + 5;
+        y = ensureSpace(doc, y, chartH + 25, pageH);
+        const chartYEnd = chartY0 + chartH;
+
+        // Find min/max values
+        let allValues = lineDataSets.flatMap(ds => ds.points.map(p => p.value));
+        let minVal = Math.floor(Math.min(...allValues));
+        let maxVal = Math.ceil(Math.max(...allValues));
+        if (minVal === maxVal) { minVal -= 1; maxVal += 1; }
+        const range = maxVal - minVal;
+
+        // Draw axes
+        doc.setDrawColor(60, 60, 60);
+        doc.setLineWidth(0.4);
+        doc.line(chartX, chartY0, chartX, chartYEnd); // Y axis
+        doc.line(chartX, chartYEnd, chartX + chartW, chartYEnd); // X axis
+
+        // Y axis labels
+        doc.setFontSize(6);
+        doc.setFont("helvetica", "normal");
+        doc.setTextColor(80, 80, 80);
+        const yTicks = 5;
+        for (let t = 0; t <= yTicks; t++) {
+          const val = minVal + (range * t) / yTicks;
+          const ty = chartYEnd - (chartH * t) / yTicks;
+          doc.text(val.toFixed(1), chartX - 2, ty + 1, { align: "right" });
+          doc.setDrawColor(220, 220, 220);
+          doc.setLineWidth(0.1);
+          doc.line(chartX, ty, chartX + chartW, ty);
+        }
+
+        // Y axis label
+        if (axisLabels.y) {
+          doc.setFontSize(6);
+          doc.setTextColor(60, 60, 60);
+          doc.text(axisLabels.y, marginL, chartY0 - 2);
+        }
+
+        // Draw each data set
+        const colors: [number, number, number][] = [[0, 102, 204], [220, 50, 50], [40, 160, 40], [180, 100, 0]];
+        const years = lineDataSets[0].points.map(p => p.year);
+        const xStep = chartW / (years.length - 1);
+
+        // X axis labels
+        years.forEach((yr, i) => {
+          const tx = chartX + i * xStep;
+          doc.setFontSize(6);
+          doc.setTextColor(80, 80, 80);
+          doc.text(yr, tx, chartYEnd + 4, { align: "center" });
+        });
+
+        lineDataSets.forEach((ds, di) => {
+          const color = colors[di % colors.length];
+          doc.setDrawColor(color[0], color[1], color[2]);
+          doc.setLineWidth(di === 0 ? 0.6 : 0.4);
+
+          // Draw line
+          for (let pi = 0; pi < ds.points.length - 1; pi++) {
+            const x1 = chartX + pi * xStep;
+            const x2 = chartX + (pi + 1) * xStep;
+            const y1 = chartYEnd - ((ds.points[pi].value - minVal) / range) * chartH;
+            const y2 = chartYEnd - ((ds.points[pi + 1].value - minVal) / range) * chartH;
+            
+            // Dashed line for second dataset
+            if (di > 0) {
+              const segments = 8;
+              const dx = (x2 - x1) / segments;
+              const dy = (y2 - y1) / segments;
+              for (let s = 0; s < segments; s += 2) {
+                doc.line(x1 + s * dx, y1 + s * dy, x1 + (s + 1) * dx, y1 + (s + 1) * dy);
+              }
+            } else {
+              doc.line(x1, y1, x2, y2);
+            }
+          }
+
+          // Draw dots
+          doc.setFillColor(color[0], color[1], color[2]);
+          for (let pi = 0; pi < ds.points.length; pi++) {
+            const px = chartX + pi * xStep;
+            const py = chartYEnd - ((ds.points[pi].value - minVal) / range) * chartH;
+            doc.circle(px, py, 0.8, "F");
+          }
+        });
+
+        // Legend
+        let legendY = chartYEnd + 10;
+        doc.setFontSize(6);
+        lineDataSets.forEach((ds, di) => {
+          const color = colors[di % colors.length];
+          doc.setFillColor(color[0], color[1], color[2]);
+          doc.rect(chartX, legendY - 1.5, 4, 0.6, "F");
+          doc.setTextColor(60, 60, 60);
+          doc.text(ds.label, chartX + 6, legendY);
+          legendY += 4;
+        });
+
+        y = legendY + 3;
+      }
       continue;
     }
 
