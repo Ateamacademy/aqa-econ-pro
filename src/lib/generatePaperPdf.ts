@@ -500,7 +500,7 @@ export function generatePaperPdf(
     tier: meta?.tier,
     paperNumber,
     paperTitle: paperTitles[paperNumber] || title,
-    date: "AI-Generated Predicted Paper",
+    date: "Predicted Paper",
     timeAllowed: "2 hours",
     totalMarks: 80,
     paperRef: `7136/${paperNumber}`,

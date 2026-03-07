@@ -1117,7 +1117,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
               ) : (
                 <>
                   <h2 className="font-serif text-xl font-bold">{examBoard} {level} {subjectLabel} — Paper {paper}</h2>
-                  <p className="text-sm text-muted-foreground">AI-Generated Predicted Paper</p>
+                  <p className="text-sm text-muted-foreground">Predicted Paper</p>
                 </>
               )}
             </div>
