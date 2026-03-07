@@ -6,8 +6,9 @@ import { streamChat } from "@/lib/streamChat";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FileText, Lock, Sparkles, RotateCcw, ArrowRight, Library, Wand2, BookOpen, Download } from "lucide-react";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import { FREE_LIMITS } from "@/lib/plans";
@@ -996,135 +997,197 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
   }
 
   return (
-    <div className="container py-10 max-w-4xl">
-      <div className="text-center mb-8">
-        <span className="inline-flex items-center gap-1.5 text-xs font-medium bg-muted text-muted-foreground rounded-full px-3 py-1 mb-4">
-          <FileText className="h-3.5 w-3.5" /> {examBoard} {level} {subjectLabel}
-        </span>
-        <h1 className="text-3xl md:text-4xl font-serif font-bold mb-3">Predicted Papers</h1>
-        <p className="text-muted-foreground max-w-lg mx-auto">
-          Choose from our library of {libraryPapers.length} ready-made predicted papers or generate a fresh one with AI.
-        </p>
+    <div className="min-h-screen">
+      {/* Hero header */}
+      <div className="relative overflow-hidden bg-gradient-to-b from-muted/50 to-background pt-16 pb-12">
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div className="container max-w-4xl relative">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
+            className="text-center"
+          >
+            <span className="inline-flex items-center gap-1.5 text-xs font-medium bg-foreground/5 backdrop-blur-sm text-muted-foreground rounded-full px-4 py-1.5 mb-5 border border-border/50">
+              <FileText className="h-3.5 w-3.5" /> {examBoard} {level} {subjectLabel}
+            </span>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif' }}>
+              Predicted Papers
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
+              {libraryPapers.length} expertly crafted papers ready to practice, or generate a fresh one instantly.
+            </p>
+          </motion.div>
+        </div>
       </div>
 
-      {step === "select" && (
-        <Tabs value={mode} onValueChange={(v) => setMode(v as "library" | "generate")} className="space-y-6">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2">
-            <TabsTrigger value="library" className="gap-1.5"><Library className="h-4 w-4" /> Paper Library</TabsTrigger>
-            <TabsTrigger value="generate" className="gap-1.5"><Wand2 className="h-4 w-4" /> Generate New</TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="library" className="space-y-4">
-            {libraryPapers.length === 0 ? (
-              <p className="text-center text-muted-foreground py-8">No pre-generated papers for this subject yet.</p>
-            ) : (
-              <div className="grid sm:grid-cols-2 gap-4">
-                {libraryPapers.map((lp) => (
-                  <Card
-                    key={lp.id}
-                    className="group cursor-pointer hover:shadow-md hover:-translate-y-0.5 transition-all"
-                    onClick={() => openLibraryPaper(lp)}
-                  >
-                    <CardContent className="p-5">
-                      <div className="flex items-center gap-2 mb-2">
-                        <FileText className="h-5 w-5 text-accent shrink-0" />
-                        <h3 className="font-bold text-sm text-foreground group-hover:text-accent transition-colors">{lp.title}</h3>
-                      </div>
-                      <p className="text-xs text-muted-foreground leading-relaxed mb-3">{lp.description}</p>
-                      <div className="flex items-center gap-2">
-                        <span className="text-[11px] bg-muted text-muted-foreground px-2 py-0.5 rounded-full font-medium">
-                          {lp.totalMarks} marks
-                        </span>
-                        {lp.tier && (
-                          <span className="text-[11px] bg-muted text-muted-foreground px-2 py-0.5 rounded-full font-medium">
-                            {lp.tier}
-                          </span>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            )}
-          </TabsContent>
-
-          <TabsContent value="generate" className="space-y-6">
-            <PaperSelector selected={paper} onSelect={setPaper} subject={subject} />
-
-            {(isMaths || isChemistry) && (
-              <div>
-                <h3 className="text-sm font-semibold text-foreground mb-3">Select Tier</h3>
-                <TierSelector selected={tier} onSelect={setTier} />
-              </div>
-            )}
-
-            <div className="text-center space-y-2">
-              {!subscribed && (
-                <p className="text-sm text-muted-foreground">
-                  🎁 Free tier:{" "}
-                  <span className="font-bold text-foreground">{Math.max(0, remaining)}</span> of{" "}
-                  {FREE_LIMITS.predictedPapers} free paper remaining
-                  {remaining <= 0 && (
-                    <>
-                      {" — "}
-                      <button onClick={() => navigate("/pricing")} className="font-semibold text-primary underline underline-offset-2">
-                        Subscribe to Pro
-                      </button>
-                    </>
+      <div className="container max-w-5xl pb-16">
+        {step === "select" && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15, ease: [0.25, 0.4, 0.25, 1] }}
+          >
+            {/* Mode toggle */}
+            <div className="flex justify-center mb-10">
+              <div className="inline-flex items-center bg-muted/60 backdrop-blur rounded-full p-1 border border-border/50">
+                <button
+                  onClick={() => setMode("library")}
+                  className={cn(
+                    "flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300",
+                    mode === "library"
+                      ? "bg-foreground text-background shadow-lg"
+                      : "text-muted-foreground hover:text-foreground"
                   )}
-                </p>
-              )}
+                >
+                  <Library className="h-4 w-4" /> Paper Library
+                </button>
+                <button
+                  onClick={() => setMode("generate")}
+                  className={cn(
+                    "flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300",
+                    mode === "generate"
+                      ? "bg-foreground text-background shadow-lg"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  <Wand2 className="h-4 w-4" /> Generate New
+                </button>
+              </div>
+            </div>
 
-              <Button
-                onClick={canUse ? generatePaper : () => navigate("/pricing")}
-                disabled={isGenerating}
-                size="lg"
-                className="gap-2 px-8"
-              >
-                {isGenerating ? (
-                  <><Sparkles className="h-4 w-4 animate-spin" /> Generating Paper...</>
-                ) : canUse ? (
-                  <><Sparkles className="h-4 w-4" /> Generate Predicted Paper</>
+            {mode === "library" ? (
+              <div className="space-y-4">
+                {libraryPapers.length === 0 ? (
+                  <p className="text-center text-muted-foreground py-16">No pre-generated papers for this subject yet.</p>
                 ) : (
-                  <>Subscribe to Generate <ArrowRight className="h-4 w-4" /></>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {libraryPapers.map((lp, i) => (
+                      <motion.div
+                        key={lp.id}
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: i * 0.04, ease: [0.25, 0.4, 0.25, 1] }}
+                      >
+                        <button
+                          onClick={() => openLibraryPaper(lp)}
+                          className="w-full text-left group rounded-2xl border border-border/60 bg-card p-5 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 hover:border-primary/30"
+                        >
+                          <div className="flex items-start justify-between mb-3">
+                            <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                              <FileText className="h-5 w-5 text-primary" />
+                            </div>
+                            <ArrowRight className="h-4 w-4 text-muted-foreground/0 group-hover:text-primary transition-all duration-300 group-hover:translate-x-0.5" />
+                          </div>
+                          <h3 className="font-semibold text-sm text-foreground mb-1.5 group-hover:text-primary transition-colors">{lp.title}</h3>
+                          <p className="text-xs text-muted-foreground leading-relaxed mb-3 line-clamp-2">{lp.description}</p>
+                          <div className="flex items-center gap-2">
+                            <span className="text-[11px] bg-primary/8 text-primary/80 px-2.5 py-0.5 rounded-full font-medium">
+                              {lp.totalMarks} marks
+                            </span>
+                            {lp.tier && (
+                              <span className="text-[11px] bg-muted text-muted-foreground px-2.5 py-0.5 rounded-full font-medium">
+                                {lp.tier}
+                              </span>
+                            )}
+                          </div>
+                        </button>
+                      </motion.div>
+                    ))}
+                  </div>
                 )}
-              </Button>
-            </div>
-          </TabsContent>
-        </Tabs>
-      )}
+              </div>
+            ) : (
+              <div className="max-w-3xl mx-auto space-y-8">
+                <PaperSelector selected={paper} onSelect={setPaper} subject={subject} />
 
-      {isGenerating && generatedPaper && (
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <div className="prose prose-sm max-w-none dark:prose-invert">
-              <MathsMarkdown>{generatedPaper}</MathsMarkdown>
-            </div>
-          </CardContent>
-        </Card>
-      )}
+                {(isMaths || isChemistry) && (
+                  <div>
+                    <h3 className="text-sm font-semibold text-foreground mb-3">Select Tier</h3>
+                    <TierSelector selected={tier} onSelect={setTier} />
+                  </div>
+                )}
 
-      {step === "paper" && !isGenerating && (
-        <div className="space-y-5">
-          {/* Paper header + Download PDF */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div>
-              {selectedLibraryPaper ? (
-                <>
-                  <h2 className="font-serif text-xl font-bold">{selectedLibraryPaper.title}</h2>
-                  <p className="text-sm text-muted-foreground">{selectedLibraryPaper.description}</p>
-                </>
-              ) : (
-                <>
-                  <h2 className="font-serif text-xl font-bold">{examBoard} {level} {subjectLabel} — Paper {paper}</h2>
-                  <p className="text-sm text-muted-foreground">AI-Generated Predicted Paper</p>
-                </>
-              )}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="text-center space-y-4 pt-4"
+                >
+                  {!subscribed && (
+                    <p className="text-sm text-muted-foreground">
+                      <span className="font-semibold text-foreground">{Math.max(0, remaining)}</span> of{" "}
+                      {FREE_LIMITS.predictedPapers} free papers remaining
+                      {remaining <= 0 && (
+                        <>
+                          {" · "}
+                          <button onClick={() => navigate("/pricing")} className="font-semibold text-primary underline underline-offset-2">
+                            Upgrade to Pro
+                          </button>
+                        </>
+                      )}
+                    </p>
+                  )}
+
+                  <Button
+                    onClick={canUse ? generatePaper : () => navigate("/pricing")}
+                    disabled={isGenerating}
+                    size="lg"
+                    className="gap-2.5 px-10 h-12 rounded-full text-base shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-shadow"
+                  >
+                    {isGenerating ? (
+                      <><Sparkles className="h-4 w-4 animate-spin" /> Generating...</>
+                    ) : canUse ? (
+                      <><Sparkles className="h-4 w-4" /> Generate Paper</>
+                    ) : (
+                      <>Upgrade to Generate <ArrowRight className="h-4 w-4" /></>
+                    )}
+                  </Button>
+                </motion.div>
+              </div>
+            )}
+          </motion.div>
+        )}
+
+        {isGenerating && generatedPaper && (
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-8 rounded-2xl border border-border/60 bg-card overflow-hidden"
+          >
+            <div className="p-6 md:p-8">
+              <div className="prose prose-sm max-w-none dark:prose-invert">
+                <MathsMarkdown>{generatedPaper}</MathsMarkdown>
+              </div>
             </div>
-            <div className="flex gap-2">
+          </motion.div>
+        )}
+
+        {step === "paper" && !isGenerating && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
+            className="space-y-6 mt-8"
+          >
+            {/* Paper header */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-border/50">
+              <div>
+                {selectedLibraryPaper ? (
+                  <>
+                    <h2 className="text-2xl font-bold tracking-tight">{selectedLibraryPaper.title}</h2>
+                    <p className="text-sm text-muted-foreground mt-1">{selectedLibraryPaper.description}</p>
+                  </>
+                ) : (
+                  <>
+                    <h2 className="text-2xl font-bold tracking-tight">{examBoard} {level} {subjectLabel} — Paper {paper}</h2>
+                    <p className="text-sm text-muted-foreground mt-1">Predicted Paper</p>
+                  </>
+                )}
+              </div>
               <Button
                 size="lg"
-                className="gap-2"
+                className="gap-2.5 rounded-full shadow-lg shadow-primary/20"
                 onClick={() => {
                   const paperTitle = selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`;
                   const fullContent = paperContext + "\n\n" + parsedQuestions.map(q => `${q.label} [${q.marks} marks]\n${q.text}`).join("\n\n");
@@ -1137,68 +1200,74 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                   toast.success("PDF downloaded!");
                 }}
               >
-                <Download className="h-5 w-5" /> Download as PDF
+                <Download className="h-5 w-5" /> Download PDF
               </Button>
             </div>
-          </div>
 
-          {paperContext && (
-            <Card>
-              <CardContent className="p-6">
-                <div className="prose prose-sm max-w-none dark:prose-invert">
-                  <MathsMarkdown>{paperContext}</MathsMarkdown>
-                </div>
-              </CardContent>
-            </Card>
-          )}
-
-          {/* Chemistry reference materials */}
-          {isChemistry && (
-            <Card>
-              <CardContent className="p-4">
-                <Button
-                  variant="outline"
-                  onClick={() => setShowRefSheet(!showRefSheet)}
-                  className="w-full gap-2 justify-center"
-                >
-                  <BookOpen className="h-4 w-4" />
-                  {showRefSheet ? "Hide" : "Show"} Reference Materials (Periodic Table & Equation Sheet)
-                </Button>
-                {showRefSheet && (
-                  <div className="mt-4 space-y-6">
-                    <PeriodicTable />
-                    <ChemistryEquations />
+            {paperContext && (
+              <div className="rounded-2xl border border-border/60 bg-card overflow-hidden">
+                <div className="p-6 md:p-8">
+                  <div className="prose prose-sm max-w-none dark:prose-invert">
+                    <MathsMarkdown>{paperContext}</MathsMarkdown>
                   </div>
-                )}
-              </CardContent>
-            </Card>
-          )}
+                </div>
+              </div>
+            )}
 
-          {parsedQuestions.map((q) => (
-            <QuestionCard
-              key={q.id}
-              question={q}
-              answer={answers[q.id] || ""}
-              onAnswerChange={(val) => setAnswers((prev) => ({ ...prev, [q.id]: val }))}
-              onMark={(diagramImage) => markQuestion(q, diagramImage)}
-              isMarking={markingId === q.id}
-              feedback={feedbacks[q.id] || null}
-              showMathTools={isMaths || isChemistry || isAnyEcon}
-              showEconDiagram={false}
-              showDrawingCanvas={isMaths || isChemistry || isAnyEcon}
-              showGraphPaper={isMaths}
-              showGeometryTools={isMaths}
-              subject={subject}
-            />
-          ))}
+            {/* Chemistry reference materials */}
+            {isChemistry && (
+              <div className="rounded-2xl border border-border/60 bg-card overflow-hidden">
+                <div className="p-5">
+                  <Button
+                    variant="outline"
+                    onClick={() => setShowRefSheet(!showRefSheet)}
+                    className="w-full gap-2 justify-center rounded-xl"
+                  >
+                    <BookOpen className="h-4 w-4" />
+                    {showRefSheet ? "Hide" : "Show"} Reference Materials
+                  </Button>
+                  {showRefSheet && (
+                    <div className="mt-4 space-y-6">
+                      <PeriodicTable />
+                      <ChemistryEquations />
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
 
-          <div className="flex justify-center pt-4">
-            <Button variant="outline" onClick={reset} className="gap-2">
-              <RotateCcw className="h-4 w-4" /> Back to Paper Selection
-            </Button>
-          </div>
-        </div>
-      )}
+            {parsedQuestions.map((q, i) => (
+              <motion.div
+                key={q.id}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35, delay: i * 0.03, ease: [0.25, 0.4, 0.25, 1] }}
+              >
+                <QuestionCard
+                  question={q}
+                  answer={answers[q.id] || ""}
+                  onAnswerChange={(val) => setAnswers((prev) => ({ ...prev, [q.id]: val }))}
+                  onMark={(diagramImage) => markQuestion(q, diagramImage)}
+                  isMarking={markingId === q.id}
+                  feedback={feedbacks[q.id] || null}
+                  showMathTools={isMaths || isChemistry || isAnyEcon}
+                  showEconDiagram={false}
+                  showDrawingCanvas={isMaths || isChemistry || isAnyEcon}
+                  showGraphPaper={isMaths}
+                  showGeometryTools={isMaths}
+                  subject={subject}
+                />
+              </motion.div>
+            ))}
+
+            <div className="flex justify-center pt-6 pb-4">
+              <Button variant="outline" onClick={reset} className="gap-2 rounded-full px-6">
+                <RotateCcw className="h-4 w-4" /> Back to Papers
+              </Button>
+            </div>
+          </motion.div>
+        )}
+      </div>
     </div>
   );
 }

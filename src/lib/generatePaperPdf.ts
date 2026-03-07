@@ -40,7 +40,7 @@ function drawFooters(doc: jsPDF, meta: PaperMeta, marginL: number) {
     const ref = meta.paperRef || `7136/${meta.paperNumber || "1"}`;
     doc.text(ref, marginL, pageH - 10);
     doc.text(`Page ${i} of ${totalPages}`, pageW / 2, pageH - 10, { align: "center" });
-    doc.text("AI Predicted Paper", pageW - marginL, pageH - 10, { align: "right" });
+    doc.text("Predicted Paper", pageW - marginL, pageH - 10, { align: "right" });
   }
 }
 
@@ -89,7 +89,7 @@ function drawCoverPage(doc: jsPDF, meta: PaperMeta) {
   // Date / Time
   doc.setFontSize(10);
   doc.setFont("helvetica", "normal");
-  doc.text(meta.date || "AI-Generated Predicted Paper", marginL, y);
+  doc.text(meta.date || "Predicted Paper", marginL, y);
   y += 7;
   doc.text(`Time allowed: ${meta.timeAllowed || "2 hours"}`, marginL, y);
   y += 14;
@@ -189,7 +189,7 @@ function drawCoverPage(doc: jsPDF, meta: PaperMeta) {
   y += 8;
   doc.setFontSize(8);
   doc.setTextColor(100, 100, 100);
-  doc.text("AI-Generated Predicted Paper — For revision purposes only", marginL, y);
+  doc.text("Predicted Paper — For revision purposes only", marginL, y);
   doc.text(`7136/${pNum}`, pageW - marginR, y, { align: "right" });
 }
 
@@ -500,7 +500,7 @@ export function generatePaperPdf(
     tier: meta?.tier,
     paperNumber,
     paperTitle: paperTitles[paperNumber] || title,
-    date: "AI-Generated Predicted Paper",
+    date: "Predicted Paper",
     timeAllowed: "2 hours",
     totalMarks: 80,
     paperRef: `7136/${paperNumber}`,
