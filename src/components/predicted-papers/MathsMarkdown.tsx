@@ -4,10 +4,41 @@ import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import type { Components } from "react-markdown";
 import { extractDiagramBlocks, EconDiagramCanvas } from "./EconDiagramSVG";
+import { FigureChart } from "./FigureChart";
 
 interface MathsMarkdownProps {
   children: string;
   className?: string;
+}
+
+/** Extract "Figure N: Title" blocks followed by chart data (axis + Line data) */
+function extractFigureBlocks(text: string): { type: "text" | "figure"; content: string; figTitle?: string; figDesc?: string }[] {
+  const segments: { type: "text" | "figure"; content: string; figTitle?: string; figDesc?: string }[] = [];
+  // Match figure header followed by axis/line data
+  const figRegex = /(?:^|\n)\s*\*{0,2}(Figure\s+\d+[^*\n]*)\*{0,2}\s*\n((?:[\s\S]*?)(?=\n\s*(?:\*{0,2}(?:Figure|Table|Extract)\s|\#{1,4}\s|Question\s|Source:|$)))/gi;
+  
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  
+  while ((match = figRegex.exec(text)) !== null) {
+    const desc = match[2].trim();
+    // Only treat as chart if it has "Line" + year:value patterns
+    const hasLineData = /Line\s+\d+/i.test(desc) && /\d{4}:\s*[\d.]+%?/i.test(desc);
+    
+    if (hasLineData) {
+      if (match.index > lastIndex) {
+        segments.push({ type: "text", content: text.slice(lastIndex, match.index) });
+      }
+      segments.push({ type: "figure", content: "", figTitle: match[1].trim(), figDesc: desc });
+      lastIndex = match.index + match[0].length;
+    }
+  }
+  
+  if (lastIndex < text.length) {
+    segments.push({ type: "text", content: text.slice(lastIndex) });
+  }
+  
+  return segments.length > 0 ? segments : [{ type: "text", content: text }];
 }
 
 const markdownComponents: Components = {
@@ -75,30 +106,47 @@ const markdownComponents: Components = {
 /**
  * Renders markdown with LaTeX math support via KaTeX.
  * Automatically detects and renders economics diagrams as SVG visuals.
+ * Renders figure chart descriptions as interactive Recharts line charts.
  */
 export function MathsMarkdown({ children, className }: MathsMarkdownProps) {
-  const segments = extractDiagramBlocks(children);
-  const hasDiagrams = segments.some((s) => s.type === "diagram");
+  // First extract figure charts
+  const figSegments = extractFigureBlocks(children);
+  const hasFigures = figSegments.some(s => s.type === "figure");
 
-  if (!hasDiagrams) {
-    return (
-      <div className={className}>
+  const renderMarkdownWithDiagrams = (text: string, keyPrefix: string = "") => {
+    const segments = extractDiagramBlocks(text);
+    const hasDiagrams = segments.some((s) => s.type === "diagram");
+
+    if (!hasDiagrams) {
+      return (
         <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
-          {children}
+          {text}
         </ReactMarkdown>
-      </div>
+      );
+    }
+
+    return segments.map((seg, i) =>
+      seg.type === "diagram" ? (
+        <EconDiagramCanvas key={`${keyPrefix}d${i}`} diagram={seg.diagram} />
+      ) : (
+        <ReactMarkdown key={`${keyPrefix}m${i}`} remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
+          {seg.content}
+        </ReactMarkdown>
+      )
     );
+  };
+
+  if (!hasFigures) {
+    return <div className={className}>{renderMarkdownWithDiagrams(children)}</div>;
   }
 
   return (
     <div className={className}>
-      {segments.map((seg, i) =>
-        seg.type === "diagram" ? (
-          <EconDiagramCanvas key={i} diagram={seg.diagram} />
+      {figSegments.map((seg, i) =>
+        seg.type === "figure" ? (
+          <FigureChart key={`fig${i}`} title={seg.figTitle!} description={seg.figDesc!} />
         ) : (
-          <ReactMarkdown key={i} remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
-            {seg.content}
-          </ReactMarkdown>
+          <div key={`txt${i}`}>{renderMarkdownWithDiagrams(seg.content, `s${i}`)}</div>
         )
       )}
     </div>

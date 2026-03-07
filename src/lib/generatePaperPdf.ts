@@ -274,6 +274,147 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta) {
       const wrapped = doc.splitTextToSize(figMatch[1], maxW);
       doc.text(wrapped, marginL, y);
       y += wrapped.length * 5.5 + 2;
+
+      // Check if following lines describe a line chart (axis + data points)
+      // Collect figure description lines
+      const figLines: string[] = [];
+      let fli = li + 1;
+      while (fli < lines.length) {
+        const fl = lines[fli].trim();
+        if (!fl || /^#{1,4}\s/.test(fl) || /^Question\s/i.test(fl) || /^\*{0,2}(?:Figure|Table|Extract)\s/i.test(fl)) break;
+        figLines.push(fl);
+        fli++;
+      }
+
+      // Detect if this is a line chart figure (has "Line N" patterns with year:value data)
+      const lineDataSets: { label: string; points: { year: string; value: number }[] }[] = [];
+      let currentSet: { label: string; points: { year: string; value: number }[] } | null = null;
+      let axisLabels = { x: "", y: "" };
+
+      for (const fl of figLines) {
+        const vAxisMatch = fl.match(/vertical\s*axis:\s*(.+)/i);
+        if (vAxisMatch) { axisLabels.y = vAxisMatch[1].trim(); continue; }
+        const hAxisMatch = fl.match(/horizontal\s*axis:\s*(.+)/i);
+        if (hAxisMatch) { axisLabels.x = hAxisMatch[1].trim(); continue; }
+        const lineMatch = fl.match(/^-?\s*Line\s+\d+\s*\(([^)]+)\):\s*(.+)/i);
+        if (lineMatch) {
+          if (currentSet) lineDataSets.push(currentSet);
+          currentSet = { label: lineMatch[2].trim(), points: [] };
+          continue;
+        }
+        const dataMatch = fl.match(/^-?\s*(\d{4}):\s*([\d.]+)%?/);
+        if (dataMatch && currentSet) {
+          currentSet.points.push({ year: dataMatch[1], value: parseFloat(dataMatch[2]) });
+        }
+      }
+      if (currentSet && currentSet.points.length > 0) lineDataSets.push(currentSet);
+
+      // Draw chart if we have data
+      if (lineDataSets.length > 0 && lineDataSets[0].points.length > 1) {
+        li = fli - 1; // Skip processed lines
+
+        const chartW = maxW * 0.85;
+        const chartH = 55;
+        const chartX = marginL + 15;
+        const chartY0 = y + 5;
+        y = ensureSpace(doc, y, chartH + 25, pageH);
+        const chartYEnd = chartY0 + chartH;
+
+        // Find min/max values
+        let allValues = lineDataSets.flatMap(ds => ds.points.map(p => p.value));
+        let minVal = Math.floor(Math.min(...allValues));
+        let maxVal = Math.ceil(Math.max(...allValues));
+        if (minVal === maxVal) { minVal -= 1; maxVal += 1; }
+        const range = maxVal - minVal;
+
+        // Draw axes
+        doc.setDrawColor(60, 60, 60);
+        doc.setLineWidth(0.4);
+        doc.line(chartX, chartY0, chartX, chartYEnd); // Y axis
+        doc.line(chartX, chartYEnd, chartX + chartW, chartYEnd); // X axis
+
+        // Y axis labels
+        doc.setFontSize(6);
+        doc.setFont("helvetica", "normal");
+        doc.setTextColor(80, 80, 80);
+        const yTicks = 5;
+        for (let t = 0; t <= yTicks; t++) {
+          const val = minVal + (range * t) / yTicks;
+          const ty = chartYEnd - (chartH * t) / yTicks;
+          doc.text(val.toFixed(1), chartX - 2, ty + 1, { align: "right" });
+          doc.setDrawColor(220, 220, 220);
+          doc.setLineWidth(0.1);
+          doc.line(chartX, ty, chartX + chartW, ty);
+        }
+
+        // Y axis label
+        if (axisLabels.y) {
+          doc.setFontSize(6);
+          doc.setTextColor(60, 60, 60);
+          doc.text(axisLabels.y, marginL, chartY0 - 2);
+        }
+
+        // Draw each data set
+        const colors: [number, number, number][] = [[0, 102, 204], [220, 50, 50], [40, 160, 40], [180, 100, 0]];
+        const years = lineDataSets[0].points.map(p => p.year);
+        const xStep = chartW / (years.length - 1);
+
+        // X axis labels
+        years.forEach((yr, i) => {
+          const tx = chartX + i * xStep;
+          doc.setFontSize(6);
+          doc.setTextColor(80, 80, 80);
+          doc.text(yr, tx, chartYEnd + 4, { align: "center" });
+        });
+
+        lineDataSets.forEach((ds, di) => {
+          const color = colors[di % colors.length];
+          doc.setDrawColor(color[0], color[1], color[2]);
+          doc.setLineWidth(di === 0 ? 0.6 : 0.4);
+
+          // Draw line
+          for (let pi = 0; pi < ds.points.length - 1; pi++) {
+            const x1 = chartX + pi * xStep;
+            const x2 = chartX + (pi + 1) * xStep;
+            const y1 = chartYEnd - ((ds.points[pi].value - minVal) / range) * chartH;
+            const y2 = chartYEnd - ((ds.points[pi + 1].value - minVal) / range) * chartH;
+            
+            // Dashed line for second dataset
+            if (di > 0) {
+              const segments = 8;
+              const dx = (x2 - x1) / segments;
+              const dy = (y2 - y1) / segments;
+              for (let s = 0; s < segments; s += 2) {
+                doc.line(x1 + s * dx, y1 + s * dy, x1 + (s + 1) * dx, y1 + (s + 1) * dy);
+              }
+            } else {
+              doc.line(x1, y1, x2, y2);
+            }
+          }
+
+          // Draw dots
+          doc.setFillColor(color[0], color[1], color[2]);
+          for (let pi = 0; pi < ds.points.length; pi++) {
+            const px = chartX + pi * xStep;
+            const py = chartYEnd - ((ds.points[pi].value - minVal) / range) * chartH;
+            doc.circle(px, py, 0.8, "F");
+          }
+        });
+
+        // Legend
+        let legendY = chartYEnd + 10;
+        doc.setFontSize(6);
+        lineDataSets.forEach((ds, di) => {
+          const color = colors[di % colors.length];
+          doc.setFillColor(color[0], color[1], color[2]);
+          doc.rect(chartX, legendY - 1.5, 4, 0.6, "F");
+          doc.setTextColor(60, 60, 60);
+          doc.text(ds.label, chartX + 6, legendY);
+          legendY += 4;
+        });
+
+        y = legendY + 3;
+      }
       continue;
     }
 
@@ -397,30 +538,93 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta) {
       continue;
     }
 
-    // ── Table rows ──
+    // ── Table block ──
     if (line.trim().startsWith("|") && line.trim().endsWith("|")) {
-      // Skip separator lines
-      if (/^\|[\s\-:|]+\|$/.test(line.trim())) continue;
+      // Collect all contiguous table lines
+      const tableLines: string[] = [];
+      let tli = li;
+      while (tli < lines.length && lines[tli].trim().startsWith("|") && lines[tli].trim().endsWith("|")) {
+        tableLines.push(lines[tli].trim());
+        tli++;
+      }
+      // Skip processed lines (minus 1 because the for loop increments)
+      li = tli - 1;
 
-      y = ensureSpace(doc, y, 7, pageH);
-      const cells = line.split("|").filter((c) => c.trim()).map((c) => c.trim());
-      const colW = maxW / cells.length;
-      doc.setFontSize(8.5);
-      doc.setTextColor(0, 0, 0);
+      // Parse table: filter out separator rows
+      const dataRows = tableLines.filter(r => !/^\|[\s\-:|]+\|$/.test(r));
+      if (dataRows.length === 0) continue;
 
-      const isHeader = /\*\*/.test(line);
-      doc.setFont("helvetica", isHeader ? "bold" : "normal");
+      const parsedRows = dataRows.map(r =>
+        r.split("|").filter(c => c.trim() !== "").map(c => c.replace(/\*\*/g, "").trim())
+      );
+      const numCols = Math.max(...parsedRows.map(r => r.length));
 
-      cells.forEach((cell, i) => {
-        const clean = cell.replace(/\*\*/g, "");
-        doc.text(clean, marginL + i * colW + 2, y, { maxWidth: colW - 4 });
-      });
+      // Calculate column widths based on content
+      doc.setFontSize(7);
+      const colWidths: number[] = [];
+      for (let ci = 0; ci < numCols; ci++) {
+        let maxCellW = 0;
+        for (const row of parsedRows) {
+          const cellText = row[ci] || "";
+          const textW = doc.getTextWidth(cellText);
+          maxCellW = Math.max(maxCellW, textW);
+        }
+        colWidths.push(maxCellW + 6); // padding
+      }
+      // Scale to fit maxW
+      const totalW = colWidths.reduce((a, b) => a + b, 0);
+      const scale = totalW > maxW ? maxW / totalW : 1;
+      const finalWidths = colWidths.map(w => w * scale);
 
-      // Row border
-      doc.setDrawColor(200, 200, 200);
-      doc.setLineWidth(0.2);
-      doc.line(marginL, y + 2, pageW - marginR, y + 2);
-      y += lineH + 1;
+      // Ensure minimum column width
+      const minColW = maxW / (numCols * 2);
+      for (let ci = 0; ci < finalWidths.length; ci++) {
+        if (finalWidths[ci] < minColW) finalWidths[ci] = minColW;
+      }
+      // Re-scale if needed after minimum enforcement
+      const totalFinal = finalWidths.reduce((a, b) => a + b, 0);
+      if (totalFinal > maxW) {
+        const s2 = maxW / totalFinal;
+        for (let ci = 0; ci < finalWidths.length; ci++) finalWidths[ci] *= s2;
+      }
+
+      const rowH = 7;
+      const tableH = parsedRows.length * rowH + 2;
+      y = ensureSpace(doc, y, tableH, pageH);
+      y += 2;
+
+      for (let ri = 0; ri < parsedRows.length; ri++) {
+        y = ensureSpace(doc, y, rowH, pageH);
+        const row = parsedRows[ri];
+        const isHeader = ri === 0;
+
+        // Background for header
+        if (isHeader) {
+          doc.setFillColor(240, 240, 240);
+          doc.rect(marginL, y - 4.5, maxW, rowH, "F");
+        }
+
+        doc.setFontSize(7);
+        doc.setFont("helvetica", isHeader ? "bold" : "normal");
+        doc.setTextColor(0, 0, 0);
+
+        let xOff = marginL;
+        for (let ci = 0; ci < numCols; ci++) {
+          const cellText = row[ci] || "";
+          const cellW = finalWidths[ci];
+          // Wrap text within cell
+          const wrapped = doc.splitTextToSize(cellText, cellW - 3);
+          doc.text(wrapped[0] || "", xOff + 1.5, y);
+          xOff += cellW;
+        }
+
+        // Row border
+        doc.setDrawColor(200, 200, 200);
+        doc.setLineWidth(0.15);
+        doc.line(marginL, y + 2.5, marginL + maxW, y + 2.5);
+        y += rowH;
+      }
+      y += 3;
       continue;
     }
 
