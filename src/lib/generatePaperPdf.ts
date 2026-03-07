@@ -189,7 +189,7 @@ function drawCoverPage(doc: jsPDF, meta: PaperMeta) {
   y += 8;
   doc.setFontSize(8);
   doc.setTextColor(100, 100, 100);
-  doc.text("AI-Generated Predicted Paper — For revision purposes only", marginL, y);
+  doc.text("Predicted Paper — For revision purposes only", marginL, y);
   doc.text(`7136/${pNum}`, pageW - marginR, y, { align: "right" });
 }
 
