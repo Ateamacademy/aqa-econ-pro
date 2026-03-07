@@ -89,7 +89,7 @@ function drawCoverPage(doc: jsPDF, meta: PaperMeta) {
   // Date / Time
   doc.setFontSize(10);
   doc.setFont("helvetica", "normal");
-  doc.text(meta.date || "AI-Generated Predicted Paper", marginL, y);
+  doc.text(meta.date || "Predicted Paper", marginL, y);
   y += 7;
   doc.text(`Time allowed: ${meta.timeAllowed || "2 hours"}`, marginL, y);
   y += 14;
