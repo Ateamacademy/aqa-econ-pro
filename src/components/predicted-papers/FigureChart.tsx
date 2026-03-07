@@ -18,21 +18,30 @@ function parseChartData(description: string): { dataSets: DataSet[]; axisLabels:
   const dataSets: DataSet[] = [];
   let current: DataSet | null = null;
   const axisLabels = { x: "", y: "" };
+  let hasLineHeaders = false;
 
   for (const line of lines) {
     const vMatch = line.match(/vertical\s*axis:\s*(.+)/i);
     if (vMatch) { axisLabels.y = vMatch[1]; continue; }
     const hMatch = line.match(/horizontal\s*axis:\s*(.+)/i);
     if (hMatch) { axisLabels.x = hMatch[1]; continue; }
-    const lineMatch = line.match(/^-?\s*Line\s+\d+\s*\(([^)]+)\):\s*(.+)/i);
+    const lineMatch = line.match(/^-?\s*\*{0,2}Line\s+\d+\s*\(([^)]+)\):\s*(.+)\*{0,2}/i);
     if (lineMatch) {
+      hasLineHeaders = true;
       if (current) dataSets.push(current);
       current = { label: lineMatch[2].trim(), points: [] };
       continue;
     }
-    const dataMatch = line.match(/^-?\s*(\d{4}):\s*([\d.]+)%?/);
-    if (dataMatch && current) {
-      current.points.push({ year: dataMatch[1], value: parseFloat(dataMatch[2]) });
+    // Match data points: "2018: 2.5%", "• 2010: 0.15 million", "- 2020: 0.20"
+    const dataMatch = line.match(/^[-•*]?\s*(\d{4})(?:\s*\([^)]*\))?\s*:\s*([\d.]+)\s*(%|million|billion|bn)?/i);
+    if (dataMatch) {
+      if (!current && !hasLineHeaders) {
+        // Single series - create a default dataset
+        current = { label: "Value", points: [] };
+      }
+      if (current) {
+        current.points.push({ year: dataMatch[1], value: parseFloat(dataMatch[2]) });
+      }
     }
   }
   if (current && current.points.length > 0) dataSets.push(current);

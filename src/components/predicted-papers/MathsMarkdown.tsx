@@ -11,21 +11,22 @@ interface MathsMarkdownProps {
   className?: string;
 }
 
-/** Extract "Figure N: Title" blocks followed by chart data (axis + Line data) */
+/** Extract "Figure N: Title" blocks followed by chart data (axis + Line/data points) */
 function extractFigureBlocks(text: string): { type: "text" | "figure"; content: string; figTitle?: string; figDesc?: string }[] {
   const segments: { type: "text" | "figure"; content: string; figTitle?: string; figDesc?: string }[] = [];
-  // Match figure header followed by axis/line data
-  const figRegex = /(?:^|\n)\s*\*{0,2}(Figure\s+\d+[^*\n]*)\*{0,2}\s*\n((?:[\s\S]*?)(?=\n\s*(?:\*{0,2}(?:Figure|Table|Extract)\s|\#{1,4}\s|Question\s|Source:|$)))/gi;
+  // Match figure header followed by axis/line/data-point data
+  const figRegex = /(?:^|\n)\s*(?:#{1,4}\s*)?\*{0,2}(Figure\s+\d+[^*\n]*)\*{0,2}\s*\n((?:[\s\S]*?)(?=\n\s*(?:#{1,4}\s+(?!Data|Vertical|Horizontal|Line)|\*{0,2}(?:Figure|Table|Extract)\s|Question\s|Source:|$)))/gi;
   
   let lastIndex = 0;
   let match: RegExpExecArray | null;
   
   while ((match = figRegex.exec(text)) !== null) {
     const desc = match[2].trim();
-    // Only treat as chart if it has "Line" + year:value patterns
-    const hasLineData = /Line\s+\d+/i.test(desc) && /\d{4}:\s*[\d.]+%?/i.test(desc);
+    // Treat as chart if it has "Line N" + year:value OR has axis labels + year:value data points
+    const hasLineData = /Line\s+\d+/i.test(desc) && /\d{4}:\s*[\d.]+/i.test(desc);
+    const hasSingleSeriesData = /(?:vertical|horizontal)\s*axis:/i.test(desc) && /\d{4}:\s*[\d.]+/i.test(desc);
     
-    if (hasLineData) {
+    if (hasLineData || hasSingleSeriesData) {
       if (match.index > lastIndex) {
         segments.push({ type: "text", content: text.slice(lastIndex, match.index) });
       }
