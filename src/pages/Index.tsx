@@ -74,7 +74,7 @@ export default function Index() {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
+            transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] as [number, number, number, number] }}
           >
             <h1 className="text-5xl md:text-[80px] lg:text-[96px] font-semibold tracking-[-0.03em] leading-[1.05] mb-2">
               Ace your exams.
