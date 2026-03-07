@@ -397,30 +397,93 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta) {
       continue;
     }
 
-    // ── Table rows ──
+    // ── Table block ──
     if (line.trim().startsWith("|") && line.trim().endsWith("|")) {
-      // Skip separator lines
-      if (/^\|[\s\-:|]+\|$/.test(line.trim())) continue;
+      // Collect all contiguous table lines
+      const tableLines: string[] = [];
+      let tli = li;
+      while (tli < lines.length && lines[tli].trim().startsWith("|") && lines[tli].trim().endsWith("|")) {
+        tableLines.push(lines[tli].trim());
+        tli++;
+      }
+      // Skip processed lines (minus 1 because the for loop increments)
+      li = tli - 1;
 
-      y = ensureSpace(doc, y, 7, pageH);
-      const cells = line.split("|").filter((c) => c.trim()).map((c) => c.trim());
-      const colW = maxW / cells.length;
-      doc.setFontSize(8.5);
-      doc.setTextColor(0, 0, 0);
+      // Parse table: filter out separator rows
+      const dataRows = tableLines.filter(r => !/^\|[\s\-:|]+\|$/.test(r));
+      if (dataRows.length === 0) continue;
 
-      const isHeader = /\*\*/.test(line);
-      doc.setFont("helvetica", isHeader ? "bold" : "normal");
+      const parsedRows = dataRows.map(r =>
+        r.split("|").filter(c => c.trim() !== "").map(c => c.replace(/\*\*/g, "").trim())
+      );
+      const numCols = Math.max(...parsedRows.map(r => r.length));
 
-      cells.forEach((cell, i) => {
-        const clean = cell.replace(/\*\*/g, "");
-        doc.text(clean, marginL + i * colW + 2, y, { maxWidth: colW - 4 });
-      });
+      // Calculate column widths based on content
+      doc.setFontSize(7);
+      const colWidths: number[] = [];
+      for (let ci = 0; ci < numCols; ci++) {
+        let maxCellW = 0;
+        for (const row of parsedRows) {
+          const cellText = row[ci] || "";
+          const textW = doc.getTextWidth(cellText);
+          maxCellW = Math.max(maxCellW, textW);
+        }
+        colWidths.push(maxCellW + 6); // padding
+      }
+      // Scale to fit maxW
+      const totalW = colWidths.reduce((a, b) => a + b, 0);
+      const scale = totalW > maxW ? maxW / totalW : 1;
+      const finalWidths = colWidths.map(w => w * scale);
 
-      // Row border
-      doc.setDrawColor(200, 200, 200);
-      doc.setLineWidth(0.2);
-      doc.line(marginL, y + 2, pageW - marginR, y + 2);
-      y += lineH + 1;
+      // Ensure minimum column width
+      const minColW = maxW / (numCols * 2);
+      for (let ci = 0; ci < finalWidths.length; ci++) {
+        if (finalWidths[ci] < minColW) finalWidths[ci] = minColW;
+      }
+      // Re-scale if needed after minimum enforcement
+      const totalFinal = finalWidths.reduce((a, b) => a + b, 0);
+      if (totalFinal > maxW) {
+        const s2 = maxW / totalFinal;
+        for (let ci = 0; ci < finalWidths.length; ci++) finalWidths[ci] *= s2;
+      }
+
+      const rowH = 7;
+      const tableH = parsedRows.length * rowH + 2;
+      y = ensureSpace(doc, y, tableH, pageH);
+      y += 2;
+
+      for (let ri = 0; ri < parsedRows.length; ri++) {
+        y = ensureSpace(doc, y, rowH, pageH);
+        const row = parsedRows[ri];
+        const isHeader = ri === 0;
+
+        // Background for header
+        if (isHeader) {
+          doc.setFillColor(240, 240, 240);
+          doc.rect(marginL, y - 4.5, maxW, rowH, "F");
+        }
+
+        doc.setFontSize(7);
+        doc.setFont("helvetica", isHeader ? "bold" : "normal");
+        doc.setTextColor(0, 0, 0);
+
+        let xOff = marginL;
+        for (let ci = 0; ci < numCols; ci++) {
+          const cellText = row[ci] || "";
+          const cellW = finalWidths[ci];
+          // Wrap text within cell
+          const wrapped = doc.splitTextToSize(cellText, cellW - 3);
+          doc.text(wrapped[0] || "", xOff + 1.5, y);
+          xOff += cellW;
+        }
+
+        // Row border
+        doc.setDrawColor(200, 200, 200);
+        doc.setLineWidth(0.15);
+        doc.line(marginL, y + 2.5, marginL + maxW, y + 2.5);
+        y += rowH;
+      }
+      y += 3;
       continue;
     }
 
