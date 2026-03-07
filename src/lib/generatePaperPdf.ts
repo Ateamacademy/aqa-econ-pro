@@ -40,7 +40,7 @@ function drawFooters(doc: jsPDF, meta: PaperMeta, marginL: number) {
     const ref = meta.paperRef || `7136/${meta.paperNumber || "1"}`;
     doc.text(ref, marginL, pageH - 10);
     doc.text(`Page ${i} of ${totalPages}`, pageW / 2, pageH - 10, { align: "center" });
-    doc.text("AI Predicted Paper", pageW - marginL, pageH - 10, { align: "right" });
+    doc.text("Predicted Paper", pageW - marginL, pageH - 10, { align: "right" });
   }
 }
 
