@@ -1,138 +1,145 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { BookOpen, Brain, FileText, MessageCircle, PenTool, ArrowRight, Sparkles } from "lucide-react";
+import { BookOpen, Brain, FileText, MessageCircle, PenTool, ArrowRight, Sparkles, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 
 const features = [
   {
     icon: FileText,
     title: "Past Papers",
-    description: "Browse organised past papers for Economics with direct links to questions and mark schemes.",
+    description: "Browse organised past papers with direct links to questions and mark schemes.",
     to: "/papers",
-    color: "text-primary",
   },
   {
     icon: Sparkles,
     title: "Predicted Papers",
-    description: "AI-generated predicted exam papers with per-question marking, model answers, and examiner tips.",
+    description: "AI-generated predicted papers with per-question marking and examiner tips.",
     to: "/predicted",
-    color: "text-primary",
   },
   {
     icon: MessageCircle,
     title: "AI Tutor",
-    description: "Ask any question and get clear, exam-board-focused explanations with proper terminology and diagrams.",
+    description: "Ask any question and get exam-board-focused explanations instantly.",
     to: "/tutor",
-    color: "text-accent",
   },
   {
     icon: PenTool,
     title: "Answer Grader",
-    description: "Paste your response and receive marks, feedback, and improvement tips against official mark scheme criteria.",
+    description: "Paste your response and receive marks, feedback, and improvement tips.",
     to: "/grader",
-    color: "text-accent",
   },
   {
     icon: Brain,
     title: "Practice Questions",
-    description: "Generate exam-style questions on any topic — multiple choice, short answer, or extended — with instant marking.",
+    description: "Generate exam-style questions on any topic with instant AI marking.",
     to: "/practice",
-    color: "text-primary",
   },
   {
     icon: BookOpen,
     title: "Study Notes",
-    description: "Organised revision notes covering every specification topic with definitions, formulae, and key points.",
+    description: "Organised revision notes covering every specification topic.",
     to: "/notes",
-    color: "text-accent",
   },
 ];
 
-const subjects = [
-  { title: "AQA A-Level Economics", icon: FileText, papers: ["Paper 1: Markets & Market Failure", "Paper 2: National & International Economy", "Paper 3: Economic Principles & Issues"] },
-  { title: "Edexcel A-Level Economics A", icon: FileText, papers: ["Paper 1: Markets & Business Behaviour", "Paper 2: The National & Global Economy", "Paper 3: Micro & Macroeconomics"] },
-  { title: "Edexcel A-Level Economics B", icon: FileText, papers: ["Paper 1: Markets, Consumers & Firms", "Paper 2: The Wider Economic Environment", "Paper 3: The Global Economy"] },
-  { title: "OCR A-Level Economics", icon: FileText, papers: ["Component 01: Microeconomics", "Component 02: Macroeconomics", "Component 03: Themes in Economics"] },
-  { title: "CAIE A-Level Economics", icon: FileText, papers: ["Paper 1: MCQ (AS)", "Paper 2: Data Response & Essay (AS)", "Paper 3: MCQ (A2)", "Paper 4: Data Response & Essay (A2)"] },
+const boards = [
+  { name: "AQA", papers: "3 Papers", desc: "Markets, National Economy & Principles" },
+  { name: "Edexcel A", papers: "3 Papers", desc: "Markets, National & Global Economy" },
+  { name: "Edexcel B", papers: "3 Papers", desc: "Markets, Wider & Global Economy" },
+  { name: "OCR", papers: "3 Components", desc: "Micro, Macro & Themes" },
+  { name: "Cambridge", papers: "4 Papers", desc: "MCQ, Data Response & Essays" },
 ];
 
-const container = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.1 } },
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.4, 0.25, 1] as [number, number, number, number] } },
 };
 
-const item = {
+const stagger = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.08 } },
+};
+
+const cardFade = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.4, 0.25, 1] as [number, number, number, number] } },
 };
 
 export default function Index() {
   return (
-    <div>
-      {/* Hero */}
-      <section className="relative overflow-hidden py-20 md:py-32">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
-        <div className="container relative">
+    <div className="overflow-hidden">
+      {/* Hero — Apple style: centered, massive typography, clean */}
+      <section className="relative bg-background">
+        <div className="max-w-[980px] mx-auto px-4 pt-20 pb-16 md:pt-32 md:pb-24 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
+            transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] as [number, number, number, number] }}
           >
-            <h1 className="text-5xl md:text-7xl font-serif tracking-tight mb-6">
-              Ace your <span className="italic text-accent">Exams</span>
+            <h1 className="text-5xl md:text-[80px] lg:text-[96px] font-semibold tracking-[-0.03em] leading-[1.05] mb-2">
+              Ace your exams.
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              AI-powered revision for A-Level Economics — AQA, Edexcel, OCR & Cambridge International. Past papers, instant tutoring, answer grading, and practice — all in one place.
+            <p className="text-xl md:text-2xl text-muted-foreground font-normal mt-4 mb-1 tracking-tight">
+              AI-powered revision for A-Level Economics.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              <Button asChild size="lg" className="gap-2 text-base">
+            <p className="text-lg md:text-xl text-muted-foreground font-normal mb-8">
+              AQA · Edexcel · OCR · Cambridge International.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Button asChild size="lg" className="rounded-full px-8 text-base h-12 font-normal">
                 <Link to="/practice">
-                  Start Revising <ArrowRight className="h-4 w-4" />
+                  Start Revising <ArrowRight className="h-4 w-4 ml-1" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="text-base">
-                <Link to="/predicted">Predicted Papers</Link>
+              <Button asChild variant="outline" size="lg" className="rounded-full px-8 text-base h-12 font-normal border-foreground/20">
+                <Link to="/predicted">
+                  Predicted Papers <ChevronRight className="h-4 w-4 ml-0.5" />
+                </Link>
               </Button>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Subjects overview */}
-      <section className="py-16 bg-muted/50">
-        <div className="container">
-          <h2 className="text-3xl md:text-4xl font-serif text-center mb-10">
-            Five Exam Boards, One Platform
-          </h2>
+      {/* Features grid — dark section like Apple product sections */}
+      <section className="bg-foreground text-background">
+        <div className="max-w-[980px] mx-auto px-4 py-20 md:py-28">
           <motion.div
-            variants={container}
+            variants={fadeUp}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true }}
-            className="grid md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto"
+            viewport={{ once: true, margin: "-100px" }}
+            className="text-center mb-16"
           >
-            {subjects.map((s) => {
-              const Icon = s.icon;
+            <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.02em] mb-3">
+              Everything you need to revise.
+            </h2>
+            <p className="text-lg md:text-xl opacity-60 font-normal">
+              Six powerful tools. One platform.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+          >
+            {features.map((f) => {
+              const Icon = f.icon;
               return (
-                <motion.div key={s.title} variants={item}>
-                  <Card className="h-full hover:shadow-md transition-shadow">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-2 mb-3">
-                        <Icon className="h-5 w-5 text-accent" />
-                        <h3 className="font-serif text-lg">{s.title}</h3>
-                      </div>
-                      <ul className="space-y-1.5">
-                        {s.papers.map((p) => (
-                          <li key={p} className="text-sm text-muted-foreground flex items-center gap-2">
-                            <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
-                            {p}
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
+                <motion.div key={f.title} variants={cardFade}>
+                  <Link to={f.to}>
+                    <div className="group p-6 rounded-2xl bg-[hsl(0,0%,18%)] hover:bg-[hsl(0,0%,22%)] transition-all duration-300 h-full">
+                      <Icon className="h-8 w-8 mb-4 text-primary" />
+                      <h3 className="text-lg font-semibold mb-2 tracking-tight">{f.title}</h3>
+                      <p className="text-sm opacity-60 leading-relaxed">{f.description}</p>
+                      <span className="inline-flex items-center gap-1 text-primary text-sm mt-4 group-hover:gap-2 transition-all">
+                        Learn more <ChevronRight className="h-3.5 w-3.5" />
+                      </span>
+                    </div>
+                  </Link>
                 </motion.div>
               );
             })}
@@ -140,40 +147,67 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-16">
-        <div className="container">
-          <h2 className="text-3xl md:text-4xl font-serif text-center mb-4">
-            Everything You Need to Revise
-          </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-xl mx-auto">
-            Built for AQA, Edexcel, OCR & Cambridge International A-Level Economics specifications.
-          </p>
+      {/* Exam boards — light grey section */}
+      <section className="bg-secondary">
+        <div className="max-w-[980px] mx-auto px-4 py-20 md:py-28">
           <motion.div
-            variants={container}
+            variants={fadeUp}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true }}
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            viewport={{ once: true, margin: "-100px" }}
+            className="text-center mb-16"
           >
-            {features.map((f) => {
-              const Icon = f.icon;
-              return (
-                <motion.div key={f.title} variants={item}>
-                  <Link to={f.to}>
-                    <Card className="h-full group hover:shadow-md transition-all hover:-translate-y-0.5">
-                      <CardContent className="p-6">
-                        <Icon className={`h-8 w-8 mb-4 ${f.color}`} />
-                        <h3 className="font-serif text-xl mb-2 group-hover:text-accent transition-colors">
-                          {f.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{f.description}</p>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                </motion.div>
-              );
-            })}
+            <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.02em] mb-3">
+              Five exam boards. One platform.
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground font-normal">
+              Full coverage across every major A-Level Economics specification.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4"
+          >
+            {boards.map((b) => (
+              <motion.div key={b.name} variants={cardFade}>
+                <div className="bg-background rounded-2xl p-6 text-center hover:shadow-lg transition-shadow duration-300 h-full">
+                  <h3 className="text-lg font-semibold tracking-tight mb-1">{b.name}</h3>
+                  <p className="text-sm text-primary font-medium mb-2">{b.papers}</p>
+                  <p className="text-xs text-muted-foreground">{b.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA section */}
+      <section className="bg-background">
+        <div className="max-w-[980px] mx-auto px-4 py-20 md:py-28 text-center">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.02em] mb-3">
+              Start revising today.
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground font-normal mb-8">
+              Free to get started. No credit card required.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Button asChild size="lg" className="rounded-full px-8 text-base h-12 font-normal">
+                <Link to="/practice">Get Started Free</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-full px-8 text-base h-12 font-normal border-foreground/20">
+                <Link to="/pricing">See Pricing</Link>
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
