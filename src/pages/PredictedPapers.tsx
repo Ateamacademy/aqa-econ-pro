@@ -645,6 +645,7 @@ export default function PredictedPapers() {
   const [mode, setMode] = useState<"library" | "generate">("library");
   const [paper, setPaper] = useState("1");
   const [tier, setTier] = useState<"Foundation" | "Higher">("Higher");
+  const [topicScope, setTopicScope] = useState<"full" | "year1" | "year1+2">("full");
   const [generatedPaper, setGeneratedPaper] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [step, setStep] = useState<"select" | "paper">("select");
