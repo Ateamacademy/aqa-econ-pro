@@ -305,7 +305,7 @@ export function QuestionCard({
               </CollapsibleTrigger>
               {feedback && (
                 <CollapsibleContent className="mt-3 px-1">
-                  <div className="prose prose-sm max-w-none dark:prose-invert bg-muted/40 rounded-lg p-4">
+                  <div className="ai-response bg-muted/40 rounded-lg p-4">
                     <MathsMarkdown>{s.content}</MathsMarkdown>
                   </div>
                 </CollapsibleContent>
