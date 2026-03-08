@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PenTool, Lock, Send } from "lucide-react";
 import { toast } from "sonner";
-import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
+import { RevisionRenderer } from "@/components/revision/RevisionRenderer";
 import { FREE_LIMITS } from "@/lib/plans";
 import { questionTypesBySubject } from "@/lib/subjectConfig";
 
