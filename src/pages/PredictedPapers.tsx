@@ -732,10 +732,16 @@ export default function PredictedPapers() {
       ? CAIE_ECON_PAPER_PROMPT(paperLabel)
       : ECON_PAPER_PROMPT(paperLabel);
 
-    // Inject DB-retrieved patterns for Economics
+    // Inject DB-retrieved patterns + topic scope for Economics
+    const scopeInstruction = topicScope === "year1"
+      ? "\n\nIMPORTANT: Only use Year 1 (AS) topics. For AQA: microeconomics topics only (markets, market failure, government intervention). Do NOT include macroeconomics, trade, or Year 2 content."
+      : topicScope === "year1+2"
+      ? "\n\nUse the FULL specification — both Year 1 and Year 2 topics (micro + macro, including trade, development, and synoptic links)."
+      : "";
+
     const prompt = dbContextPrompt
-      ? `${basePrompt}\n\n${dbContextPrompt}\n\nMANDATORY QUALITY CHECK BEFORE FINAL OUTPUT: ensure the paper is full-length, exam-authentic, and as challenging as recent AQA papers (especially 9/25-mark questions). If any question feels too easy or generic, rewrite it to match A-Level standard before finishing.`
-      : basePrompt;
+      ? `${basePrompt}\n\n${dbContextPrompt}${scopeInstruction}\n\nMANDATORY QUALITY CHECK BEFORE FINAL OUTPUT: ensure the paper is full-length, exam-authentic, and as challenging as recent AQA papers (especially 9/25-mark questions). If any question feels too easy or generic, rewrite it to match A-Level standard before finishing.`
+      : `${basePrompt}${scopeInstruction}`;
 
     await streamChat({
       messages: [{ role: "user", content: prompt }],
