@@ -5,10 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { streamChat } from "@/lib/streamChat";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card } from "@/components/ui/card";
-import { MessageCircle, Send, Lock } from "lucide-react";
+import { MessageCircle, Send, Lock, Bot, User } from "lucide-react";
 import { toast } from "sonner";
-import ReactMarkdown from "react-markdown";
+import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -22,8 +21,6 @@ export default function AITutor() {
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages]);
-
-  // Reset chat when subject changes
   useEffect(() => { setMessages([]); }, [subject]);
 
   if (!user) {
@@ -35,8 +32,6 @@ export default function AITutor() {
       </div>
     );
   }
-
-  const placeholders = { title: "AI Economics Tutor", subtitle: `Ask any ${examBoard} ${level} Economics question`, hero: "Ask me anything about Economics", hint: 'Try: "Explain the multiplier effect" or "What causes market failure?"' };
 
   const send = async () => {
     if (!input.trim() || isLoading) return;
@@ -72,33 +67,64 @@ export default function AITutor() {
   return (
     <div className="container py-6 max-w-3xl flex flex-col" style={{ height: "calc(100vh - 8rem)" }}>
       <div className="mb-4">
-        <h1 className="text-3xl font-serif">{placeholders.title}</h1>
-        <p className="text-sm text-muted-foreground">{placeholders.subtitle}</p>
+        <h1 className="text-3xl font-semibold tracking-tight">AI {subjectLabel} Tutor</h1>
+        <p className="text-sm text-muted-foreground">{examBoard} {level} · Ask any question and get structured, exam-focused explanations</p>
       </div>
 
-      <Card className="flex-1 overflow-y-auto p-4 space-y-4 mb-4">
+      <div className="flex-1 overflow-y-auto rounded-2xl border border-border bg-card p-4 space-y-4 mb-4">
         {messages.length === 0 && (
-          <div className="text-center py-12 text-muted-foreground">
-            <MessageCircle className="h-10 w-10 mx-auto mb-3 text-accent" />
-            <p className="font-serif text-xl mb-1">{placeholders.hero}</p>
-            <p className="text-sm">{placeholders.hint}</p>
+          <div className="text-center py-16 text-muted-foreground">
+            <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+              <MessageCircle className="h-7 w-7 text-primary" />
+            </div>
+            <p className="font-semibold text-lg text-foreground mb-1">Ask me anything about {subjectLabel}</p>
+            <p className="text-sm max-w-md mx-auto">I'll break it down with clear headings, bullet points, key terms highlighted, and step-by-step explanations.</p>
+            <div className="flex flex-wrap justify-center gap-2 mt-5">
+              {["Explain the multiplier effect", "What causes market failure?", "Draw an AD/AS diagram"].map(s => (
+                <button key={s} onClick={() => { setInput(s); }} className="text-xs px-3 py-1.5 rounded-full border border-border hover:border-primary/40 hover:bg-primary/5 transition-colors text-muted-foreground hover:text-foreground">
+                  {s}
+                </button>
+              ))}
+            </div>
           </div>
         )}
         {messages.map((m, i) => (
-          <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
-            <div className={`max-w-[85%] rounded-lg px-4 py-3 text-sm ${
-              m.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted"
+          <div key={i} className={`flex gap-3 ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+            {m.role === "assistant" && (
+              <div className="h-7 w-7 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-1">
+                <Bot className="h-4 w-4 text-primary" />
+              </div>
+            )}
+            <div className={`max-w-[85%] rounded-2xl px-4 py-3 ${
+              m.role === "user"
+                ? "bg-primary text-primary-foreground text-sm"
+                : "bg-muted/50 border border-border/50"
             }`}>
               {m.role === "assistant" ? (
-                <div className="prose prose-sm max-w-none dark:prose-invert">
-                  <ReactMarkdown>{m.content}</ReactMarkdown>
+                <div className="ai-response">
+                  <MathsMarkdown>{m.content}</MathsMarkdown>
                 </div>
               ) : m.content}
             </div>
+            {m.role === "user" && (
+              <div className="h-7 w-7 rounded-full bg-foreground/10 flex items-center justify-center shrink-0 mt-1">
+                <User className="h-4 w-4 text-foreground/60" />
+              </div>
+            )}
           </div>
         ))}
+        {isLoading && messages[messages.length - 1]?.role !== "assistant" && (
+          <div className="flex gap-3">
+            <div className="h-7 w-7 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+              <Bot className="h-4 w-4 text-primary animate-pulse" />
+            </div>
+            <div className="bg-muted/50 border border-border/50 rounded-2xl px-4 py-3 text-sm text-muted-foreground">
+              Thinking...
+            </div>
+          </div>
+        )}
         <div ref={bottomRef} />
-      </Card>
+      </div>
 
       <form onSubmit={(e) => { e.preventDefault(); send(); }} className="flex gap-2">
         <Input
@@ -106,9 +132,9 @@ export default function AITutor() {
           onChange={e => setInput(e.target.value)}
           placeholder="Ask a question..."
           disabled={isLoading}
-          className="flex-1"
+          className="flex-1 rounded-full h-11 px-5"
         />
-        <Button type="submit" disabled={isLoading || !input.trim()} size="icon">
+        <Button type="submit" disabled={isLoading || !input.trim()} size="icon" className="rounded-full h-11 w-11">
           <Send className="h-4 w-4" />
         </Button>
       </form>

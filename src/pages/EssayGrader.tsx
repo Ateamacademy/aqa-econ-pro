@@ -113,8 +113,8 @@ export default function EssayGrader() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="prose prose-sm max-w-none dark:prose-invert">
-              <ReactMarkdown>{feedback}</ReactMarkdown>
+            <div className="ai-response">
+              <MathsMarkdown>{feedback}</MathsMarkdown>
             </div>
           </CardContent>
         </Card>

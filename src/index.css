@@ -144,3 +144,112 @@
     @apply text-lg md:text-xl font-normal hover:underline inline-flex items-center gap-1;
   }
 }
+
+/* ── Student-friendly AI response styling ── */
+.ai-response {
+  @apply text-sm leading-relaxed;
+}
+
+.ai-response h1,
+.ai-response h2,
+.ai-response h3,
+.ai-response h4 {
+  @apply font-bold tracking-tight mt-5 mb-2;
+  color: hsl(var(--foreground));
+}
+
+.ai-response h2 {
+  @apply text-lg border-b pb-2 mb-3;
+  border-color: hsl(var(--border));
+}
+
+.ai-response h3 {
+  @apply text-base;
+  color: hsl(var(--primary));
+}
+
+.ai-response h4 {
+  @apply text-sm font-semibold uppercase tracking-wide;
+  color: hsl(var(--muted-foreground));
+}
+
+.ai-response strong {
+  color: hsl(var(--primary));
+  @apply font-semibold;
+}
+
+.ai-response ul,
+.ai-response ol {
+  @apply my-2 ml-1 space-y-1.5;
+}
+
+.ai-response ul {
+  @apply list-none;
+}
+
+.ai-response ul > li {
+  @apply relative pl-5;
+}
+
+.ai-response ul > li::before {
+  content: "▸";
+  @apply absolute left-0 font-bold;
+  color: hsl(var(--primary));
+}
+
+.ai-response ol > li {
+  @apply pl-1;
+}
+
+.ai-response ol > li::marker {
+  @apply font-bold;
+  color: hsl(var(--primary));
+}
+
+.ai-response blockquote {
+  @apply my-3 pl-4 py-2 rounded-r-lg border-l-4 italic;
+  border-color: hsl(var(--primary));
+  background: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+}
+
+.ai-response code {
+  @apply px-1.5 py-0.5 rounded text-xs font-mono;
+  background: hsl(var(--muted));
+  color: hsl(var(--primary));
+}
+
+.ai-response hr {
+  @apply my-4;
+  border-color: hsl(var(--border));
+}
+
+.ai-response p {
+  @apply mb-2 leading-relaxed;
+}
+
+.ai-response table {
+  @apply w-full my-3 text-sm rounded-lg overflow-hidden border;
+  border-color: hsl(var(--border));
+}
+
+.ai-response thead {
+  background: hsl(var(--muted));
+}
+
+.ai-response th {
+  @apply px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider;
+  color: hsl(var(--foreground));
+}
+
+.ai-response td {
+  @apply px-3 py-2 border-t;
+  border-color: hsl(var(--border));
+}
+
+/* Key term highlight pill (used via markdown **bold**) */
+.ai-response .key-term {
+  @apply inline-block px-1.5 py-0.5 rounded-md text-xs font-semibold;
+  background: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+}
