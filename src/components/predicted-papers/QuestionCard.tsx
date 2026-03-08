@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { MathsMarkdown } from "./MathsMarkdown";
+import { RevisionRenderer } from "@/components/revision/RevisionRenderer";
 import { EquationToolbar } from "./EquationToolbar";
 import { DrawingCanvas } from "@/components/tools/DrawingCanvas";
 import { EconDiagramBuilder, type DiagramData } from "@/components/tools/EconDiagramBuilder";
