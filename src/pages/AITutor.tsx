@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MessageCircle, Send, Lock, Bot, User } from "lucide-react";
 import { toast } from "sonner";
-import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
+import { RevisionRenderer } from "@/components/revision/RevisionRenderer";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -101,9 +101,7 @@ export default function AITutor() {
                 : "bg-muted/50 border border-border/50"
             }`}>
               {m.role === "assistant" ? (
-                <div className="ai-response">
-                  <MathsMarkdown>{m.content}</MathsMarkdown>
-                </div>
+                <RevisionRenderer content={m.content} />
               ) : m.content}
             </div>
             {m.role === "user" && (

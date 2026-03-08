@@ -247,7 +247,122 @@
   border-color: hsl(var(--border));
 }
 
-/* Key term highlight pill (used via markdown **bold**) */
+/* ── Revision Card Color System ── */
+
+/* Color variables for revision boxes */
+:root {
+  --revision-blue: 211 100% 50%;
+  --revision-amber: 38 92% 50%;
+  --revision-green: 142 71% 45%;
+  --revision-red: 0 72% 51%;
+  --revision-purple: 271 76% 53%;
+  --revision-teal: 172 66% 40%;
+}
+
+.dark {
+  --revision-blue: 211 100% 60%;
+  --revision-amber: 38 92% 60%;
+  --revision-green: 142 71% 55%;
+  --revision-red: 0 72% 60%;
+  --revision-purple: 271 76% 63%;
+  --revision-teal: 172 66% 50%;
+}
+
+.revision-box {
+  @apply rounded-xl border-2 overflow-hidden my-3;
+}
+
+.revision-box-header {
+  @apply flex items-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-wider;
+}
+
+.revision-box-content {
+  @apply px-4 py-3 text-sm leading-relaxed;
+  background: hsl(var(--background));
+}
+
+/* Definition — Blue */
+.revision-definition {
+  border-color: hsl(var(--revision-blue) / 0.3);
+}
+.revision-definition .revision-box-header {
+  background: hsl(var(--revision-blue) / 0.1);
+  color: hsl(var(--revision-blue));
+}
+
+/* Example — Amber */
+.revision-example {
+  border-color: hsl(var(--revision-amber) / 0.3);
+}
+.revision-example .revision-box-header {
+  background: hsl(var(--revision-amber) / 0.1);
+  color: hsl(var(--revision-amber));
+}
+
+/* Exam Tip — Red */
+.revision-exam-tip {
+  border-color: hsl(var(--revision-red) / 0.3);
+}
+.revision-exam-tip .revision-box-header {
+  background: hsl(var(--revision-red) / 0.1);
+  color: hsl(var(--revision-red));
+}
+
+/* Formula — Purple */
+.revision-formula {
+  border-color: hsl(var(--revision-purple) / 0.3);
+}
+.revision-formula .revision-box-header {
+  background: hsl(var(--revision-purple) / 0.1);
+  color: hsl(var(--revision-purple));
+}
+
+/* Key Terms — Teal */
+.revision-key-terms {
+  border-color: hsl(var(--revision-teal) / 0.3);
+}
+.revision-key-terms .revision-box-header {
+  background: hsl(var(--revision-teal) / 0.1);
+  color: hsl(var(--revision-teal));
+}
+
+/* Diagram — Green */
+.revision-diagram {
+  border-color: hsl(var(--revision-green) / 0.3);
+}
+.revision-diagram .revision-box-header {
+  background: hsl(var(--revision-green) / 0.1);
+  color: hsl(var(--revision-green));
+}
+
+/* Analysis chain */
+.revision-analysis {
+  border-color: hsl(var(--primary) / 0.3);
+}
+.revision-analysis .revision-box-header {
+  background: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+}
+
+.revision-step-number {
+  @apply flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold shrink-0;
+  background: hsl(var(--primary) / 0.15);
+  color: hsl(var(--primary));
+}
+
+/* Revision topic card */
+.revision-topic-card {
+  @apply rounded-2xl border bg-card p-6 shadow-sm;
+  border-color: hsl(var(--border));
+}
+
+.revision-topic-title {
+  @apply text-xl font-bold tracking-tight mb-4 pb-3 border-b;
+  border-color: hsl(var(--border));
+  color: hsl(var(--foreground));
+}
+
+/* Key term highlight pill */
 .ai-response .key-term {
   @apply inline-block px-1.5 py-0.5 rounded-md text-xs font-semibold;
   background: hsl(var(--primary) / 0.1);

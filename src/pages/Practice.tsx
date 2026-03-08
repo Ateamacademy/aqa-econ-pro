@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Brain, Lock, Send } from "lucide-react";
 import { toast } from "sonner";
+import { RevisionRenderer } from "@/components/revision/RevisionRenderer";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import { FREE_LIMITS } from "@/lib/plans";
 import { topicsBySubject, stylesBySubject } from "@/lib/subjectConfig";
@@ -164,7 +165,7 @@ export default function Practice() {
           <Card>
             <CardHeader><CardTitle className="font-serif text-lg text-accent">Feedback</CardTitle></CardHeader>
             <CardContent>
-              <div className="ai-response"><MathsMarkdown>{feedback}</MathsMarkdown></div>
+              <RevisionRenderer content={feedback} />
             </CardContent>
           </Card>
           <Button onClick={reset} className="gap-2"><Brain className="h-4 w-4" /> Try Another Question</Button>
