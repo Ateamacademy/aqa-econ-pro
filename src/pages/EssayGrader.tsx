@@ -113,9 +113,7 @@ export default function EssayGrader() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="ai-response">
-              <MathsMarkdown>{feedback}</MathsMarkdown>
-            </div>
+            <RevisionRenderer content={feedback} />
           </CardContent>
         </Card>
       )}

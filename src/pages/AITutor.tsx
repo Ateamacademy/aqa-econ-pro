@@ -101,9 +101,7 @@ export default function AITutor() {
                 : "bg-muted/50 border border-border/50"
             }`}>
               {m.role === "assistant" ? (
-                <div className="ai-response">
-                  <MathsMarkdown>{m.content}</MathsMarkdown>
-                </div>
+                <RevisionRenderer content={m.content} />
               ) : m.content}
             </div>
             {m.role === "user" && (

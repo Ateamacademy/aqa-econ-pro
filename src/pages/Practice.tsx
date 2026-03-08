@@ -165,7 +165,7 @@ export default function Practice() {
           <Card>
             <CardHeader><CardTitle className="font-serif text-lg text-accent">Feedback</CardTitle></CardHeader>
             <CardContent>
-              <div className="ai-response"><MathsMarkdown>{feedback}</MathsMarkdown></div>
+              <RevisionRenderer content={feedback} />
             </CardContent>
           </Card>
           <Button onClick={reset} className="gap-2"><Brain className="h-4 w-4" /> Try Another Question</Button>
