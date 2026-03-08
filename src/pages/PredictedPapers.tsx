@@ -645,6 +645,7 @@ export default function PredictedPapers() {
   const [mode, setMode] = useState<"library" | "generate">("library");
   const [paper, setPaper] = useState("1");
   const [tier, setTier] = useState<"Foundation" | "Higher">("Higher");
+  const [topicScope, setTopicScope] = useState<"full" | "year1" | "year1+2">("full");
   const [generatedPaper, setGeneratedPaper] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [step, setStep] = useState<"select" | "paper">("select");
@@ -731,10 +732,16 @@ export default function PredictedPapers() {
       ? CAIE_ECON_PAPER_PROMPT(paperLabel)
       : ECON_PAPER_PROMPT(paperLabel);
 
-    // Inject DB-retrieved patterns for Economics
+    // Inject DB-retrieved patterns + topic scope for Economics
+    const scopeInstruction = topicScope === "year1"
+      ? "\n\nIMPORTANT: Only use Year 1 (AS) topics. For AQA: microeconomics topics only (markets, market failure, government intervention). Do NOT include macroeconomics, trade, or Year 2 content."
+      : topicScope === "year1+2"
+      ? "\n\nUse the FULL specification — both Year 1 and Year 2 topics (micro + macro, including trade, development, and synoptic links)."
+      : "";
+
     const prompt = dbContextPrompt
-      ? `${basePrompt}\n\n${dbContextPrompt}\n\nMANDATORY QUALITY CHECK BEFORE FINAL OUTPUT: ensure the paper is full-length, exam-authentic, and as challenging as recent AQA papers (especially 9/25-mark questions). If any question feels too easy or generic, rewrite it to match A-Level standard before finishing.`
-      : basePrompt;
+      ? `${basePrompt}\n\n${dbContextPrompt}${scopeInstruction}\n\nMANDATORY QUALITY CHECK BEFORE FINAL OUTPUT: ensure the paper is full-length, exam-authentic, and as challenging as recent AQA papers (especially 9/25-mark questions). If any question feels too easy or generic, rewrite it to match A-Level standard before finishing.`
+      : `${basePrompt}${scopeInstruction}`;
 
     await streamChat({
       messages: [{ role: "user", content: prompt }],
@@ -1107,6 +1114,40 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                     <TierSelector selected={tier} onSelect={setTier} />
                   </div>
                 )}
+
+                {/* Topic scope selector */}
+                <div>
+                  <h3 className="text-sm font-semibold text-foreground mb-3">Topic Coverage</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    {[
+                      { value: "year1" as const, label: "Year 1 Only", desc: "AS / Year 12 topics only — perfect if you haven't covered Year 2 yet" },
+                      { value: "year1+2" as const, label: "Year 1 + Year 2", desc: "Full A-Level specification — all micro and macro topics" },
+                      { value: "full" as const, label: "Full Predicted Paper", desc: "Complete exam paper matching the official structure and difficulty" },
+                    ].map(opt => (
+                      <button
+                        key={opt.value}
+                        onClick={() => setTopicScope(opt.value)}
+                        className={cn(
+                          "text-left rounded-xl border-2 p-4 transition-all duration-200",
+                          topicScope === opt.value
+                            ? "border-primary bg-primary/5 shadow-sm"
+                            : "border-border hover:border-primary/30 hover:bg-muted/30"
+                        )}
+                      >
+                        <div className="flex items-center gap-2 mb-1">
+                          <div className={cn(
+                            "h-4 w-4 rounded-full border-2 flex items-center justify-center",
+                            topicScope === opt.value ? "border-primary" : "border-muted-foreground/40"
+                          )}>
+                            {topicScope === opt.value && <div className="h-2 w-2 rounded-full bg-primary" />}
+                          </div>
+                          <span className="text-sm font-semibold text-foreground">{opt.label}</span>
+                        </div>
+                        <p className="text-xs text-muted-foreground leading-relaxed pl-6">{opt.desc}</p>
+                      </button>
+                    ))}
+                  </div>
+                </div>
 
                 <motion.div
                   initial={{ opacity: 0 }}

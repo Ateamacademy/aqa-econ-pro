@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PenTool, Lock, Send } from "lucide-react";
 import { toast } from "sonner";
-import ReactMarkdown from "react-markdown";
+import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import { FREE_LIMITS } from "@/lib/plans";
 import { questionTypesBySubject } from "@/lib/subjectConfig";
 
@@ -113,8 +113,8 @@ export default function EssayGrader() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="prose prose-sm max-w-none dark:prose-invert">
-              <ReactMarkdown>{feedback}</ReactMarkdown>
+            <div className="ai-response">
+              <MathsMarkdown>{feedback}</MathsMarkdown>
             </div>
           </CardContent>
         </Card>
