@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MessageCircle, Send, Lock, Bot, User } from "lucide-react";
 import { toast } from "sonner";
-import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
+import { RevisionRenderer } from "@/components/revision/RevisionRenderer";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
