@@ -160,7 +160,7 @@ export default function Index() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.02em] mb-3">
-              Five exam boards. One platform.
+              Seven exam boards. One platform.
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground font-normal">
               Full coverage across every major A-Level Economics specification.
