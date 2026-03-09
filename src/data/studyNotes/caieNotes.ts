@@ -131,7 +131,7 @@ export const caiePaper2Topics: Topic[] = [
           { term: "SRAS", definition: "Upward sloping — affected by costs of production" },
           { term: "LRAS", definition: "Vertical at full employment (classical) or L-shaped (Keynesian)" },
         ],
-        diagram: "lras_increase",
+        diagram: "sras_increase",
       },
       {
         title: "Inflation",
