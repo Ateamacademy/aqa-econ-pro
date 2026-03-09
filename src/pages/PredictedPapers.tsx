@@ -206,8 +206,8 @@ FIGURE/CHART FORMAT:
 - Diagrams: describe with bullet points (axes, curves, equilibrium points)`;
 };
 
-const OCR_ECON_PAPER_PROMPT = (paperLabel: string) => {
-  const paperNum = paperLabel.includes("01") || paperLabel.includes("1") ? "1" : paperLabel.includes("02") || paperLabel.includes("2") ? "2" : "3";
+const OCR_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
+  const paperNum = paperValue === "full" ? "3" : paperValue.includes("1") ? "1" : "2";
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum, "ocr");
 
   const templates: Record<string, string> = {
