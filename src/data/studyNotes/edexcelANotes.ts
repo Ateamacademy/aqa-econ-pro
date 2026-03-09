@@ -318,7 +318,7 @@ export const edexcelAPaper2Topics: Topic[] = [
           { term: "LRAS", definition: "Long-run aggregate supply — determined by quantity and quality of factors of production" },
         ],
         explanation: "**Keynesian LRAS:** Horizontal at low output (spare capacity), then vertical at full capacity\n**Classical LRAS:** Always vertical at full employment output",
-        diagram: "lras_increase",
+        diagram: "sras_increase",
       },
       {
         title: "The Multiplier",
