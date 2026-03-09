@@ -725,12 +725,12 @@ export default function PredictedPapers() {
       : isChemistry
       ? CHEM_PAPER_PROMPT(paperLabel, tier)
       : (isEdexcelA || isEdexcelB)
-      ? EDEXCEL_ECON_PAPER_PROMPT(paperLabel, subject as "edexcel-a" | "edexcel-b")
+      ? EDEXCEL_ECON_PAPER_PROMPT(paperLabel, subject as "edexcel-a" | "edexcel-b", paper)
       : isOCR
-      ? OCR_ECON_PAPER_PROMPT(paperLabel)
+      ? OCR_ECON_PAPER_PROMPT(paperLabel, paper)
       : isCambridge
-      ? CAIE_ECON_PAPER_PROMPT(paperLabel)
-      : ECON_PAPER_PROMPT(paperLabel);
+      ? CAIE_ECON_PAPER_PROMPT(paperLabel, paper)
+      : ECON_PAPER_PROMPT(paperLabel, paper);
 
     // Inject DB-retrieved patterns + topic scope for Economics
     const scopeInstruction = topicScope === "year1"
