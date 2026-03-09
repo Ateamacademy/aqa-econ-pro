@@ -47,6 +47,8 @@ const SUBJECTS: { value: Subject; label: string }[] = [
   { value: "edexcel-b", label: "Edexcel B" },
   { value: "ocr", label: "OCR" },
   { value: "cambridge", label: "CAIE" },
+  { value: "aqa-gcse", label: "GCSE" },
+  { value: "cambridge-igcse", label: "IGCSE" },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
