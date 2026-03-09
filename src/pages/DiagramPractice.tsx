@@ -382,47 +382,15 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
         </div>
       )}
 
-      {step === "feedback" && (
-        <div className="space-y-4">
-          <Card>
-            <CardHeader><CardTitle className="font-serif text-lg">Question</CardTitle></CardHeader>
-            <CardContent>
-              <div className="prose prose-sm max-w-none dark:prose-invert"><ReactMarkdown>{generatedQ}</ReactMarkdown></div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader><CardTitle className="font-serif text-lg">Your Diagram</CardTitle></CardHeader>
-            <CardContent>
-              {diagramImage && inputMode === "draw" ? (
-                <img src={diagramImage} alt="Your drawn diagram" className="rounded-lg border max-w-full" />
-              ) : (
-                <p className="text-sm whitespace-pre-wrap">{diagramDesc}</p>
-              )}
-              {explanation && (
-                <>
-                  <p className="text-sm font-medium mb-1 mt-3">Your Explanation:</p>
-                  <p className="text-sm whitespace-pre-wrap">{explanation}</p>
-                </>
-              )}
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader><CardTitle className="font-serif text-lg text-accent">Feedback</CardTitle></CardHeader>
-            <CardContent>
-              <div className="prose prose-sm max-w-none dark:prose-invert">
-                {extractDiagramBlocks(feedback).map((seg, i) =>
-                  seg.type === "diagram" ? (
-                    <EconDiagramCanvas key={i} diagram={seg.diagram} />
-                  ) : (
-                    <ReactMarkdown key={i}>{seg.content}</ReactMarkdown>
-                  )
-                )}
-              </div>
-            </CardContent>
-          </Card>
-          <Button onClick={reset} className="gap-2"><PenTool className="h-4 w-4" /> Try Another Diagram</Button>
-        </div>
-      )}
+      {step === "feedback" && <DiagramFeedbackView
+        generatedQ={generatedQ}
+        diagramImage={diagramImage}
+        inputMode={inputMode}
+        diagramDesc={diagramDesc}
+        explanation={explanation}
+        feedback={feedback}
+        onReset={reset}
+      />}
     </div>
   );
 }
