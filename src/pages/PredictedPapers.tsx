@@ -325,8 +325,8 @@ FIGURE/CHART FORMAT:
 - Diagrams: structured text with axes, curves, equilibrium points`;
 };
 
-const ECON_PAPER_PROMPT = (paperLabel: string) => {
-  const paperNum = paper === "full" ? "3" : paper.includes("1") ? "1" : "2";
+const ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
+  const paperNum = paperValue === "full" ? "3" : paperValue.includes("1") ? "1" : "2";
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum);
   const isSynopticPaper = paperNum === "3";
 
