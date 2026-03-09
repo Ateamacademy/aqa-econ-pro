@@ -201,7 +201,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <footer className="bg-secondary border-t">
         <div className="max-w-[1024px] mx-auto px-4 py-8">
           <p className="text-xs text-muted-foreground leading-relaxed">
-            ExamAce provides AI-powered revision tools for A-Level Economics across AQA, Edexcel A, Edexcel B, OCR, and Cambridge International exam boards. Past papers, predicted papers, AI tutoring, answer grading, and practice questions — all in one place.
+            ExamAce provides AI-powered revision tools for A-Level and GCSE Economics across AQA, Edexcel A, Edexcel B, OCR, Cambridge International, AQA GCSE, and CAIE IGCSE exam boards. Past papers, predicted papers, AI tutoring, answer grading, and practice questions — all in one place.
           </p>
           <div className="border-t border-border mt-4 pt-4 flex flex-col sm:flex-row items-center justify-between gap-2">
             <p className="text-xs text-muted-foreground">© 2026 ExamAce. All rights reserved.</p>
