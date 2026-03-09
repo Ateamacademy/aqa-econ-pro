@@ -28,6 +28,10 @@ function getNavItems(subject: Subject) {
     ? { to: "/cambridge-papers", label: "Papers", icon: FileText }
     : subject === "ocr"
     ? { to: "/ocr-papers", label: "Papers", icon: FileText }
+    : subject === "aqa-gcse"
+    ? { to: "/gcse-papers", label: "Papers", icon: FileText }
+    : subject === "cambridge-igcse"
+    ? { to: "/igcse-papers", label: "Papers", icon: FileText }
     : { to: "/papers", label: "Papers", icon: FileText };
 
   return [
