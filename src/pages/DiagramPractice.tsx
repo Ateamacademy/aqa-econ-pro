@@ -181,12 +181,32 @@ You MUST evaluate using ALL 5 diagram marking criteria:
 4. **EQUILIBRIUM** — Is original equilibrium (P1,Q1) marked? Is new equilibrium (P2,Q2) identified with dotted lines to axes?
 5. **EXPLANATION ↔ DIAGRAM CONSISTENCY** — Does the written explanation logically match the diagram? Are the direction of changes consistent?
 
-Structure your response as:
-- **Diagram Assessment**: tick/cross each of the 5 criteria with detail
-- **Mark Awarded**: X/Y marks
-- **What You Did Well**: specific praise
-- **How to Improve**: actionable steps
-- **Model Diagram Description**: You MUST include a structured diagram block in EXACTLY this format (the app will render it as a visual SVG diagram):
+You MUST structure your response using EXACTLY these section headers (the app parses them):
+
+## Your mark: X/Y
+
+State the mark awarded clearly.
+
+## Smart Mark feedback
+
+Give the main feedback summary in 2-3 sentences. Be direct and specific about what the student got right or wrong. Use bullet points for key corrections with **bold** for important terms.
+
+## Explain my feedback
+
+Provide a detailed breakdown of each of the 5 marking criteria. Use tick ✓ or cross ✗ for each:
+- **Axes**: ✓/✗ — detail
+- **Curve direction**: ✓/✗ — detail  
+- **Shift direction**: ✓/✗ — detail
+- **Equilibrium**: ✓/✗ — detail
+- **Explanation-diagram consistency**: ✓/✗ — detail
+
+## Improve my answer
+
+Give specific, actionable steps to improve. Include:
+- What to add or correct in the diagram
+- How to strengthen the written explanation
+- A memory trick or exam technique tip
+- You MUST include a structured diagram block in EXACTLY this format (the app will render it as a visual SVG diagram):
 
 **Diagram: [Diagram Title]**
 - X-axis: [label]
@@ -197,9 +217,9 @@ Structure your response as:
 - New equilibrium: [P2, Q2 and direction of change]
 - Key conclusion: [one sentence summary]
 
-- **Model Explanation**: A top-band written explanation that correctly connects to the diagram
+Then provide a model written explanation that would score full marks.
 
-Speak directly to the student using "you" and "your".` }],
+Speak directly to the student using "you" and "your". Be encouraging but honest.` }],
       mode: "grade",
       subject,
       onDelta: (chunk) => { result += chunk; setFeedback(result); },
