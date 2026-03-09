@@ -96,10 +96,10 @@ FIGURE/CHART/GRAPH FORMAT (CRITICAL — DO NOT USE ASCII ART):
   Source: Hypothetical representation of the UK housing market, 2024`;
 };
 
-const EDEXCEL_ECON_PAPER_PROMPT = (paperLabel: string, spec: "edexcel-a" | "edexcel-b") => {
+const EDEXCEL_ECON_PAPER_PROMPT = (paperLabel: string, spec: "edexcel-a" | "edexcel-b", paperValue: string) => {
   const isSpecA = spec === "edexcel-a";
   const specName = isSpecA ? "Edexcel Economics A (9EC0)" : "Edexcel Economics B (9EB0)";
-  const paperNum = paperLabel.includes("1") ? "1" : paperLabel.includes("2") ? "2" : "3";
+  const paperNum = paperValue === "full" ? "3" : paperValue.includes("1") ? "1" : "2";
 
   const specATemplates: Record<string, string> = {
     "1": `PAPER 1: Markets and Business Behaviour (9EC0/01) — 2 hours, 100 marks
