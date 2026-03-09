@@ -1,9 +1,10 @@
 /**
  * EconDiagramSVG — renders structured diagram descriptions as polished,
- * interactive SVG diagrams with animations, tooltips and a professional look.
+ * 3D-styled interactive SVG diagrams with depth, gradients, glow effects,
+ * animations, tooltips and a premium look.
  */
 import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface DiagramProps {
   type: string;
@@ -51,100 +52,157 @@ function getShiftInfo(shift: string): { curve: "supply" | "demand" | "ad" | "as"
   return { curve: "demand", direction };
 }
 
-/* ── Animated SVG line ── */
+/* ── Animated SVG line with gradient stroke ── */
 function AnimatedLine({
-  x1, y1, x2, y2, stroke, strokeWidth = 2.5, dashed = false, delay = 0,
+  x1, y1, x2, y2, stroke, strokeWidth = 3, dashed = false, delay = 0, gradientId,
 }: {
   x1: number; y1: number; x2: number; y2: number;
-  stroke: string; strokeWidth?: number; dashed?: boolean; delay?: number;
+  stroke: string; strokeWidth?: number; dashed?: boolean; delay?: number; gradientId?: string;
 }) {
   const length = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
   return (
     <motion.line
       x1={x1} y1={y1} x2={x2} y2={y2}
-      stroke={stroke}
+      stroke={gradientId ? `url(#${gradientId})` : stroke}
       strokeWidth={strokeWidth}
-      strokeDasharray={dashed ? "8,4" : `${length}`}
+      strokeDasharray={dashed ? "10,5" : `${length}`}
       strokeDashoffset={dashed ? 0 : length}
       strokeLinecap="round"
+      filter={dashed ? undefined : "url(#curveGlow)"}
       initial={dashed ? { opacity: 0 } : { strokeDashoffset: length }}
-      animate={dashed ? { opacity: 1 } : { strokeDashoffset: 0 }}
-      transition={{ duration: 0.8, delay, ease: "easeOut" }}
+      animate={dashed ? { opacity: 0.85 } : { strokeDashoffset: 0 }}
+      transition={{ duration: 1, delay, ease: "easeOut" }}
     />
   );
 }
 
-/* ── Tooltip dot ── */
+/* ── 3D Equilibrium dot with glow ── */
 function EquilibriumDot({
   cx, cy, fill, label, pLabel, qLabel,
-  margin, plotH, delay,
+  margin, plotH, delay, glowId,
 }: {
   cx: number; cy: number; fill: string; label: string;
   pLabel: string; qLabel: string;
   margin: { top: number; left: number }; plotH: number; delay: number;
+  glowId: string;
 }) {
   const [hovered, setHovered] = useState(false);
   return (
     <g onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{ cursor: "pointer" }}>
-      {/* Dotted lines to axes */}
+      {/* Dotted projection lines */}
       <motion.line
         x1={margin.left} y1={cy} x2={cx} y2={cy}
-        stroke={fill} strokeWidth={1.2} strokeDasharray="4,3" opacity={0.5}
+        stroke={fill} strokeWidth={1} strokeDasharray="3,4" opacity={0.4}
         initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-        transition={{ duration: 0.5, delay }}
+        transition={{ duration: 0.6, delay }}
       />
       <motion.line
         x1={cx} y1={cy} x2={cx} y2={margin.top + plotH}
-        stroke={fill} strokeWidth={1.2} strokeDasharray="4,3" opacity={0.5}
+        stroke={fill} strokeWidth={1} strokeDasharray="3,4" opacity={0.4}
         initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-        transition={{ duration: 0.5, delay: delay + 0.1 }}
+        transition={{ duration: 0.6, delay: delay + 0.1 }}
       />
 
       {/* Axis tick labels */}
-      <text x={margin.left - 6} y={cy + 4} textAnchor="end" fontSize="10" fontWeight="600" fill={fill}>{pLabel}</text>
-      <text x={cx} y={margin.top + plotH + 14} textAnchor="middle" fontSize="10" fontWeight="600" fill={fill}>{qLabel}</text>
+      <motion.text
+        x={margin.left - 8} y={cy + 4} textAnchor="end" fontSize="10" fontWeight="700" fill={fill}
+        initial={{ opacity: 0, x: margin.left - 20 }} animate={{ opacity: 1, x: margin.left - 8 }}
+        transition={{ delay: delay + 0.2, duration: 0.4 }}
+      >
+        {pLabel}
+      </motion.text>
+      <motion.text
+        x={cx} y={margin.top + plotH + 16} textAnchor="middle" fontSize="10" fontWeight="700" fill={fill}
+        initial={{ opacity: 0, y: margin.top + plotH + 28 }} animate={{ opacity: 1, y: margin.top + plotH + 16 }}
+        transition={{ delay: delay + 0.2, duration: 0.4 }}
+      >
+        {qLabel}
+      </motion.text>
 
-      {/* Glow ring on hover */}
-      {hovered && (
-        <circle cx={cx} cy={cy} r="14" fill={fill} opacity={0.12} />
-      )}
+      {/* Outer glow ring */}
+      <AnimatePresence>
+        {hovered && (
+          <motion.circle
+            cx={cx} cy={cy} r={20}
+            fill={fill} opacity={0.08}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 0.08 }}
+            exit={{ scale: 0, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          />
+        )}
+      </AnimatePresence>
 
-      {/* Dot */}
+      {/* 3D dot: shadow */}
       <motion.circle
-        cx={cx} cy={cy} r={hovered ? 6 : 5}
-        fill={fill} stroke="white" strokeWidth={2}
+        cx={cx + 1.5} cy={cy + 1.5} r={hovered ? 7 : 6}
+        fill="rgba(0,0,0,0.2)"
         initial={{ scale: 0 }} animate={{ scale: 1 }}
         transition={{ type: "spring", delay, stiffness: 300 }}
       />
+      {/* 3D dot: main */}
+      <motion.circle
+        cx={cx} cy={cy} r={hovered ? 7 : 6}
+        fill={`url(#${glowId})`} stroke="white" strokeWidth={2.5}
+        filter="url(#dotGlow)"
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+        transition={{ type: "spring", delay, stiffness: 300 }}
+      />
+      {/* Highlight spec */}
+      <motion.circle
+        cx={cx - 2} cy={cy - 2} r={2}
+        fill="rgba(255,255,255,0.6)"
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+        transition={{ type: "spring", delay: delay + 0.1, stiffness: 300 }}
+      />
 
-      {/* Label */}
-      <motion.text
-        x={cx + 10} y={cy - 8} fontSize="11" fontWeight="700" fill={fill}
-        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-        transition={{ delay: delay + 0.2 }}
-      >
-        {label}
-      </motion.text>
+      {/* Label with backdrop */}
+      <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: delay + 0.3 }}>
+        <rect x={cx + 10} y={cy - 18} width={24} height={18} rx={4} fill="hsl(var(--card))" stroke={fill} strokeWidth={1} opacity={0.9} />
+        <text x={cx + 22} y={cy - 5} fontSize="11" fontWeight="800" fill={fill} textAnchor="middle">
+          {label}
+        </text>
+      </motion.g>
 
-      {/* Tooltip */}
-      {hovered && (
-        <g>
-          <rect x={cx + 14} y={cy - 36} width={90} height={28} rx={6} fill="hsl(var(--popover))" stroke="hsl(var(--border))" strokeWidth={1} />
-          <text x={cx + 20} y={cy - 20} fontSize="9" fontWeight="500" fill="hsl(var(--popover-foreground))">
-            {pLabel}, {qLabel}
-          </text>
-        </g>
-      )}
+      {/* Tooltip on hover */}
+      <AnimatePresence>
+        {hovered && (
+          <motion.g
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 5 }}
+            transition={{ duration: 0.2 }}
+          >
+            <rect x={cx + 16} y={cy - 44} width={100} height={34} rx={8}
+              fill="hsl(var(--popover))" stroke="hsl(var(--border))" strokeWidth={1}
+              filter="url(#tooltipShadow)" />
+            <text x={cx + 24} y={cy - 30} fontSize="9" fontWeight="600" fill="hsl(var(--muted-foreground))">
+              Equilibrium
+            </text>
+            <text x={cx + 24} y={cy - 18} fontSize="10" fontWeight="700" fill="hsl(var(--popover-foreground))">
+              {pLabel}, {qLabel}
+            </text>
+          </motion.g>
+        )}
+      </AnimatePresence>
     </g>
   );
 }
 
-/* ── Shift arrow ── */
+/* ── 3D Shift arrow ── */
 function ShiftArrow({ x, y, offset, color, delay }: { x: number; y: number; offset: number; color: string; delay: number }) {
   const endX = x + offset * 0.55;
+  const arrowSize = 6;
+  const dir = offset > 0 ? 1 : -1;
   return (
-    <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay, duration: 0.4 }}>
-      <line x1={x} y1={y} x2={endX} y2={y} stroke={color} strokeWidth={1.8} markerEnd={`url(#arrow-${color.replace("#", "")})`} />
+    <motion.g initial={{ opacity: 0, x: -dir * 10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay, duration: 0.5, type: "spring" }}>
+      {/* Arrow body with glow */}
+      <line x1={x} y1={y} x2={endX - dir * arrowSize} y2={y} stroke={color} strokeWidth={2.5} strokeLinecap="round" filter="url(#curveGlow)" />
+      {/* Arrow head */}
+      <polygon
+        points={`${endX},${y} ${endX - dir * arrowSize},${y - arrowSize / 1.5} ${endX - dir * arrowSize},${y + arrowSize / 1.5}`}
+        fill={color}
+      />
     </motion.g>
   );
 }
@@ -161,22 +219,20 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
     return () => obs.disconnect();
   }, []);
 
-  const W = 440;
-  const H = 340;
-  const margin = { top: 24, right: 24, bottom: 48, left: 56 };
+  const W = 460;
+  const H = 360;
+  const margin = { top: 28, right: 28, bottom: 52, left: 60 };
   const plotW = W - margin.left - margin.right;
   const plotH = H - margin.top - margin.bottom;
 
   const shiftInfo = getShiftInfo(diagram.shift);
-  const shiftOffset = shiftInfo.direction === "right" ? 55 : -55;
+  const shiftOffset = shiftInfo.direction === "right" ? 58 : -58;
 
-  // Curve endpoints
-  const dX1 = margin.left + 25, dY1 = margin.top + 12;
-  const dX2 = margin.left + plotW - 15, dY2 = margin.top + plotH - 12;
-  const sX1 = margin.left + 25, sY1 = margin.top + plotH - 12;
-  const sX2 = margin.left + plotW - 15, sY2 = margin.top + 12;
+  const dX1 = margin.left + 25, dY1 = margin.top + 14;
+  const dX2 = margin.left + plotW - 15, dY2 = margin.top + plotH - 14;
+  const sX1 = margin.left + 25, sY1 = margin.top + plotH - 14;
+  const sX2 = margin.left + plotW - 15, sY2 = margin.top + 14;
 
-  // Equilibria
   const eqX = margin.left + plotW * 0.44;
   const eqY = margin.top + plotH * 0.44;
 
@@ -192,35 +248,99 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
     newEqY = eqY + (shiftInfo.direction === "right" ? -22 : 22);
   }
 
-  // Colors
-  const demandColor = "#2563eb"; // blue-600
-  const supplyColor = "#dc2626"; // red-600
-  const eq1Color = "#059669";    // emerald-600
-  const eq2Color = "#d97706";    // amber-600
+  const demandColor = "#2563eb";
+  const supplyColor = "#dc2626";
+  const eq1Color = "#059669";
+  const eq2Color = "#d97706";
 
   if (!animated) {
-    return <div ref={ref} className="h-[340px]" />;
+    return <div ref={ref} className="h-[380px]" />;
   }
 
   return (
-    <div ref={ref} className="my-5 rounded-2xl overflow-hidden border border-border/60 bg-gradient-to-br from-card via-card to-muted/20 shadow-lg">
+    <div ref={ref} className="my-6 rounded-2xl overflow-hidden border border-border/40 shadow-2xl relative">
+      {/* 3D depth layers */}
+      <div className="absolute inset-0 bg-gradient-to-br from-card via-card to-muted/30 rounded-2xl" />
+      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white/[0.04] rounded-2xl" />
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20 rounded-b-2xl" />
+
       {/* Header */}
-      <div className="flex items-center gap-2.5 px-5 py-3 border-b border-border/40 bg-muted/30">
-        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 text-primary text-sm">📊</span>
+      <div className="relative flex items-center gap-3 px-5 py-3.5 border-b border-border/30 bg-gradient-to-r from-muted/40 via-muted/20 to-transparent backdrop-blur-sm">
+        <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 shadow-inner">
+          <span className="text-sm">📊</span>
+        </div>
         <div>
-          <p className="text-[13px] font-semibold text-foreground leading-tight">MODEL DIAGRAM</p>
-          <p className="text-[11px] text-muted-foreground leading-tight">{diagram.type}</p>
+          <p className="text-xs font-bold tracking-widest text-primary/80 uppercase">Model Diagram</p>
+          <p className="text-[11px] text-muted-foreground leading-tight mt-0.5">{diagram.type}</p>
+        </div>
+        <div className="ml-auto flex gap-1">
+          <span className="h-2 w-2 rounded-full bg-primary/30 animate-pulse" />
+          <span className="h-2 w-2 rounded-full bg-primary/20" />
+          <span className="h-2 w-2 rounded-full bg-primary/10" />
         </div>
       </div>
 
-      {/* SVG */}
-      <div className="px-4 py-3">
-        <svg viewBox={`0 0 ${W} ${H}`} className="w-full max-w-[460px] mx-auto h-auto" role="img" aria-label={`Economics diagram: ${diagram.type}`}>
+      {/* SVG Diagram */}
+      <div className="relative px-4 py-4">
+        <svg viewBox={`0 0 ${W} ${H}`} className="w-full max-w-[480px] mx-auto h-auto drop-shadow-sm" role="img" aria-label={`Economics diagram: ${diagram.type}`}>
           <defs>
-            {/* Grid pattern */}
-            <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="hsl(var(--border))" strokeWidth="0.3" opacity="0.5" />
+            {/* Subtle grid */}
+            <pattern id="grid3d" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="hsl(var(--border))" strokeWidth="0.25" opacity="0.35" />
             </pattern>
+
+            {/* Background gradient for plot area */}
+            <linearGradient id="plotBg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="hsl(var(--muted))" stopOpacity="0.15" />
+              <stop offset="100%" stopColor="hsl(var(--muted))" stopOpacity="0.03" />
+            </linearGradient>
+
+            {/* Curve gradients */}
+            <linearGradient id="demandGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#3b82f6" />
+              <stop offset="100%" stopColor="#1d4ed8" />
+            </linearGradient>
+            <linearGradient id="supplyGrad" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0%" stopColor="#ef4444" />
+              <stop offset="100%" stopColor="#b91c1c" />
+            </linearGradient>
+
+            {/* Equilibrium dot gradients */}
+            <radialGradient id="eq1Grad" cx="35%" cy="35%">
+              <stop offset="0%" stopColor="#34d399" />
+              <stop offset="100%" stopColor="#059669" />
+            </radialGradient>
+            <radialGradient id="eq2Grad" cx="35%" cy="35%">
+              <stop offset="0%" stopColor="#fbbf24" />
+              <stop offset="100%" stopColor="#d97706" />
+            </radialGradient>
+
+            {/* Glow filters */}
+            <filter id="curveGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur" />
+              <feFlood floodColor="currentColor" floodOpacity="0.15" />
+              <feComposite in2="blur" operator="in" />
+              <feMerge>
+                <feMergeNode />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="dotGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur" />
+              <feFlood floodColor="currentColor" floodOpacity="0.25" />
+              <feComposite in2="blur" operator="in" />
+              <feMerge>
+                <feMergeNode />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="tooltipShadow" x="-10%" y="-10%" width="130%" height="150%">
+              <feDropShadow dx="0" dy="4" stdDeviation="6" floodOpacity="0.15" />
+            </filter>
+            <filter id="axisShadow">
+              <feDropShadow dx="1" dy="1" stdDeviation="0.5" floodOpacity="0.08" />
+            </filter>
+
             {/* Arrow markers */}
             {[{ id: demandColor }, { id: supplyColor }].map(({ id }) => (
               <marker key={id} id={`arrow-${id.replace("#", "")}`} markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
@@ -229,47 +349,72 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
             ))}
           </defs>
 
-          {/* Grid background */}
-          <rect x={margin.left} y={margin.top} width={plotW} height={plotH} fill="url(#grid)" rx="6" />
+          {/* Plot area with depth */}
+          <rect x={margin.left} y={margin.top} width={plotW} height={plotH} fill="url(#plotBg)" rx="8" />
+          <rect x={margin.left} y={margin.top} width={plotW} height={plotH} fill="url(#grid3d)" rx="8" />
+          {/* Subtle inner border for depth */}
+          <rect x={margin.left + 0.5} y={margin.top + 0.5} width={plotW - 1} height={plotH - 1} fill="none" stroke="hsl(var(--border))" strokeWidth="0.5" rx="8" opacity="0.3" />
 
-          {/* Axes */}
+          {/* Axes with 3D shadow */}
           <motion.line
-            x1={margin.left} y1={margin.top - 4} x2={margin.left} y2={margin.top + plotH}
-            stroke="hsl(var(--foreground))" strokeWidth={2.2} strokeLinecap="round"
-            initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.5 }}
+            x1={margin.left} y1={margin.top - 6} x2={margin.left} y2={margin.top + plotH}
+            stroke="hsl(var(--foreground))" strokeWidth={2.5} strokeLinecap="round"
+            filter="url(#axisShadow)"
+            initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6 }}
           />
           <motion.line
-            x1={margin.left} y1={margin.top + plotH} x2={margin.left + plotW + 4} y2={margin.top + plotH}
-            stroke="hsl(var(--foreground))" strokeWidth={2.2} strokeLinecap="round"
-            initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.5, delay: 0.1 }}
+            x1={margin.left} y1={margin.top + plotH} x2={margin.left + plotW + 6} y2={margin.top + plotH}
+            stroke="hsl(var(--foreground))" strokeWidth={2.5} strokeLinecap="round"
+            filter="url(#axisShadow)"
+            initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, delay: 0.1 }}
           />
 
           {/* Arrow tips */}
-          <polygon points={`${margin.left - 5},${margin.top + 4} ${margin.left},${margin.top - 6} ${margin.left + 5},${margin.top + 4}`} fill="hsl(var(--foreground))" />
-          <polygon points={`${margin.left + plotW - 2},${margin.top + plotH - 5} ${margin.left + plotW + 6},${margin.top + plotH} ${margin.left + plotW - 2},${margin.top + plotH + 5}`} fill="hsl(var(--foreground))" />
+          <motion.polygon
+            points={`${margin.left - 6},${margin.top + 2} ${margin.left},${margin.top - 8} ${margin.left + 6},${margin.top + 2}`}
+            fill="hsl(var(--foreground))"
+            initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
+          />
+          <motion.polygon
+            points={`${margin.left + plotW},${margin.top + plotH - 6} ${margin.left + plotW + 8},${margin.top + plotH} ${margin.left + plotW},${margin.top + plotH + 6}`}
+            fill="hsl(var(--foreground))"
+            initial={{ opacity: 0, x: -5 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}
+          />
 
           {/* Y-axis label */}
-          <text x={margin.left - 14} y={margin.top + plotH / 2} textAnchor="middle" transform={`rotate(-90 ${margin.left - 14} ${margin.top + plotH / 2})`} fontSize="12" fontWeight="700" fill="hsl(var(--foreground))" fontFamily="inherit">
+          <text x={margin.left - 18} y={margin.top + plotH / 2} textAnchor="middle"
+            transform={`rotate(-90 ${margin.left - 18} ${margin.top + plotH / 2})`}
+            fontSize="11" fontWeight="800" fill="hsl(var(--foreground))" fontFamily="inherit" letterSpacing="0.02em">
             {diagram.yAxis}
           </text>
           {/* X-axis label */}
-          <text x={margin.left + plotW / 2} y={H - 8} textAnchor="middle" fontSize="12" fontWeight="700" fill="hsl(var(--foreground))" fontFamily="inherit">
+          <text x={margin.left + plotW / 2} y={H - 6} textAnchor="middle"
+            fontSize="11" fontWeight="800" fill="hsl(var(--foreground))" fontFamily="inherit" letterSpacing="0.02em">
             {diagram.xAxis}
           </text>
 
           {/* ── Original Demand (D₁) ── */}
-          <AnimatedLine x1={dX1} y1={dY1} x2={dX2} y2={dY2} stroke={demandColor} delay={0.3} />
-          <motion.text x={dX2 + 6} y={dY2 + 2} fontSize="12" fontWeight="800" fill={demandColor} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}>D₁</motion.text>
+          <AnimatedLine x1={dX1} y1={dY1} x2={dX2} y2={dY2} stroke={demandColor} gradientId="demandGrad" delay={0.3} />
+          <motion.text x={dX2 + 8} y={dY2 + 4} fontSize="13" fontWeight="900" fill={demandColor}
+            initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.9 }}>
+            D₁
+          </motion.text>
 
           {/* ── Original Supply (S₁) ── */}
-          <AnimatedLine x1={sX1} y1={sY1} x2={sX2} y2={sY2} stroke={supplyColor} delay={0.5} />
-          <motion.text x={sX2 + 6} y={sY2 + 2} fontSize="12" fontWeight="800" fill={supplyColor} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1 }}>S₁</motion.text>
+          <AnimatedLine x1={sX1} y1={sY1} x2={sX2} y2={sY2} stroke={supplyColor} gradientId="supplyGrad" delay={0.5} />
+          <motion.text x={sX2 + 8} y={sY2 + 4} fontSize="13" fontWeight="900" fill={supplyColor}
+            initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.1 }}>
+            S₁
+          </motion.text>
 
           {/* ── Shifted Demand (D₂) ── */}
           {isDD && (
             <>
               <AnimatedLine x1={dX1 + shiftOffset} y1={dY1} x2={dX2 + shiftOffset} y2={dY2} stroke={demandColor} dashed delay={1.2} />
-              <motion.text x={dX2 + shiftOffset + 6} y={dY2 + 2} fontSize="12" fontWeight="800" fill={demandColor} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}>D₂</motion.text>
+              <motion.text x={dX2 + shiftOffset + 8} y={dY2 + 4} fontSize="13" fontWeight="900" fill={demandColor}
+                initial={{ opacity: 0 }} animate={{ opacity: 0.85 }} transition={{ delay: 1.5 }}>
+                D₂
+              </motion.text>
               <ShiftArrow x={dX1 + plotW * 0.28} y={dY1 + plotH * 0.28} offset={shiftOffset} color={demandColor} delay={1.3} />
             </>
           )}
@@ -278,35 +423,55 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
           {isSS && (
             <>
               <AnimatedLine x1={sX1 + shiftOffset} y1={sY1} x2={sX2 + shiftOffset} y2={sY2} stroke={supplyColor} dashed delay={1.2} />
-              <motion.text x={sX2 + shiftOffset + 6} y={sY2 + 2} fontSize="12" fontWeight="800" fill={supplyColor} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}>S₂</motion.text>
+              <motion.text x={sX2 + shiftOffset + 8} y={sY2 + 4} fontSize="13" fontWeight="900" fill={supplyColor}
+                initial={{ opacity: 0 }} animate={{ opacity: 0.85 }} transition={{ delay: 1.5 }}>
+                S₂
+              </motion.text>
               <ShiftArrow x={sX1 + plotW * 0.28} y={sY1 - plotH * 0.28} offset={shiftOffset} color={supplyColor} delay={1.3} />
             </>
           )}
 
           {/* ── Equilibria ── */}
-          <EquilibriumDot cx={eqX} cy={eqY} fill={eq1Color} label="E₁" pLabel="P₁" qLabel="Q₁" margin={margin} plotH={plotH} delay={0.9} />
-          <EquilibriumDot cx={newEqX} cy={newEqY} fill={eq2Color} label="E₂" pLabel="P₂" qLabel="Q₂" margin={margin} plotH={plotH} delay={1.4} />
+          <EquilibriumDot cx={eqX} cy={eqY} fill={eq1Color} label="E₁" pLabel="P₁" qLabel="Q₁" margin={margin} plotH={plotH} delay={0.9} glowId="eq1Grad" />
+          <EquilibriumDot cx={newEqX} cy={newEqY} fill={eq2Color} label="E₂" pLabel="P₂" qLabel="Q₂" margin={margin} plotH={plotH} delay={1.4} glowId="eq2Grad" />
         </svg>
       </div>
 
-      {/* Footer — conclusion & legend */}
-      <div className="px-5 pb-4 space-y-2.5">
-        {/* Legend */}
-        <div className="flex flex-wrap gap-x-4 gap-y-1 text-[11px]">
-          <span className="flex items-center gap-1.5"><span className="inline-block w-4 h-[3px] rounded" style={{ background: demandColor }} /> Demand</span>
-          <span className="flex items-center gap-1.5"><span className="inline-block w-4 h-[3px] rounded" style={{ background: supplyColor }} /> Supply</span>
-          <span className="flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: eq1Color }} /> Original eq.</span>
-          <span className="flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: eq2Color }} /> New eq.</span>
+      {/* Footer — legend & conclusion */}
+      <div className="relative px-5 pb-5 space-y-3">
+        {/* Legend with 3D pill badges */}
+        <div className="flex flex-wrap gap-2.5 text-[11px]">
+          {[
+            { color: demandColor, label: "Demand", type: "line" },
+            { color: supplyColor, label: "Supply", type: "line" },
+            { color: eq1Color, label: "Original eq.", type: "dot" },
+            { color: eq2Color, label: "New eq.", type: "dot" },
+          ].map(({ color, label, type }) => (
+            <span key={label} className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-muted/50 border border-border/30 font-medium" style={{ fontSize: 11 }}>
+              {type === "line" ? (
+                <span className="inline-block w-4 h-[3px] rounded-full" style={{ background: `linear-gradient(90deg, ${color}, ${color}dd)`, boxShadow: `0 0 4px ${color}40` }} />
+              ) : (
+                <span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: color, boxShadow: `0 0 6px ${color}50` }} />
+              )}
+              {label}
+            </span>
+          ))}
         </div>
 
         {diagram.conclusion && (
-          <p className="text-xs text-muted-foreground leading-relaxed border-t border-border/40 pt-2">
-            <span className="font-semibold text-foreground">Key conclusion: </span>{diagram.conclusion}
-          </p>
+          <div className="border-t border-border/30 pt-3">
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              <span className="font-bold text-foreground inline-flex items-center gap-1">
+                <span className="inline-block w-1 h-4 rounded-full bg-primary/60 mr-0.5" />
+                Key conclusion:
+              </span>{" "}
+              {diagram.conclusion}
+            </p>
+          </div>
         )}
         {diagram.shadedArea && (
           <p className="text-xs text-muted-foreground leading-relaxed">
-            <span className="font-semibold text-foreground">Shaded area: </span>{diagram.shadedArea}
+            <span className="font-bold text-foreground">Shaded area: </span>{diagram.shadedArea}
           </p>
         )}
       </div>
