@@ -48,6 +48,8 @@ const boards = [
   { name: "Edexcel B", papers: "3 Papers", desc: "Markets, Wider & Global Economy" },
   { name: "OCR", papers: "3 Components", desc: "Micro, Macro & Themes" },
   { name: "Cambridge", papers: "4 Papers", desc: "MCQ, Data Response & Essays" },
+  { name: "AQA GCSE", papers: "2 Papers", desc: "Markets & The Economy" },
+  { name: "CAIE IGCSE", papers: "2 Papers", desc: "MCQ & Structured Questions" },
 ];
 
 const fadeUp = {
