@@ -263,17 +263,6 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
         </p>
       </div>
 
-      <Card className="mb-6 border-accent/30 bg-accent/5">
-        <CardContent className="p-4">
-          <div className="flex items-start gap-3">
-            <Info className="h-5 w-5 text-accent mt-0.5 shrink-0" />
-            <div className="text-sm space-y-1">
-              <p className="font-medium">How diagram marking works</p>
-              <p className="text-muted-foreground">Draw your diagram using the canvas with multiple colours, or describe it using structured text. The AI evaluates your submission against 5 examiner criteria: axes labels, curve direction, shift direction, equilibrium identification, and explanation-diagram consistency.</p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
 
       {step === "generate" && (
         <Card>
