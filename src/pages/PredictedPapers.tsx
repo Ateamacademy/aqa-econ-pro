@@ -477,7 +477,7 @@ Question 31 [10 marks] — "To what extent, if at all, do the data suggest that.
 Question 32 [15 marks] — "Explain why/how..." (applied analysis using extracts)
 Question 33 [25 marks] — "After considering Extract D, and the original evidence... would you recommend that... Justify your recommendation." (full evaluation + justified recommendation)`;
 
-  const structureTemplate = isSynopticPaper
+  const structureTemplate = paper === "full"
     ? paper3Template
     : paperNum === "2" ? paper2Template : paper1Template;
 
