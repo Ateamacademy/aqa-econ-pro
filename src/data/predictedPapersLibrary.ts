@@ -5,7 +5,7 @@
 
 export interface PredictedPaper {
   id: string;
-  subject: "maths" | "economics" | "chemistry" | "edexcel-a" | "edexcel-b" | "ocr" | "cambridge";
+  subject: "maths" | "economics" | "chemistry" | "edexcel-a" | "edexcel-b" | "ocr" | "cambridge" | "aqa-gcse" | "cambridge-igcse";
   paper: string; // "1" | "2" | "3"
   tier?: "Foundation" | "Higher";
   title: string;
