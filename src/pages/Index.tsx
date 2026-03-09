@@ -172,7 +172,7 @@ export default function Index() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-50px" }}
-            className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4"
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
           >
             {boards.map((b) => (
               <motion.div key={b.name} variants={cardFade}>
