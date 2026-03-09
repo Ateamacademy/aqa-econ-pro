@@ -162,7 +162,7 @@ export const ocrComponent2Topics: Topic[] = [
           { term: "LRAS (Classical)", definition: "Vertical at full employment — output determined by supply-side factors" },
           { term: "LRAS (Keynesian)", definition: "Horizontal when spare capacity, vertical at full employment" },
         ],
-        diagram: "lras_increase",
+        diagram: "sras_increase",
       },
       {
         title: "The Multiplier",
