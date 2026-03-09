@@ -82,10 +82,10 @@ export default function Index() {
               Ace your exams.
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground font-normal mt-4 mb-1 tracking-tight">
-              AI-powered revision for A-Level Economics.
+              AI-powered revision for A-Level & GCSE Economics.
             </p>
             <p className="text-lg md:text-xl text-muted-foreground font-normal mb-8">
-              AQA · Edexcel · OCR · Cambridge International.
+              AQA · Edexcel · OCR · Cambridge · GCSE · IGCSE.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Button asChild size="lg" className="rounded-full px-8 text-base h-12 font-normal">
