@@ -1,14 +1,15 @@
-import { BarChart3, Globe, Landmark, Calculator, Check } from "lucide-react";
+import { BarChart3, Globe, Landmark, Calculator, Check, FileText } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { paperOptionsBySubject } from "@/lib/subjectConfig";
 import type { Subject } from "@/contexts/SubjectContext";
 
 const iconMap: Record<string, any> = {
-  economics: [BarChart3, Globe, Landmark],
+  economics: [BarChart3, Globe, FileText],
   maths: [Calculator, Calculator, Calculator],
-  "edexcel-a": [BarChart3, Globe, Landmark],
-  "edexcel-b": [BarChart3, Globe, Landmark],
-  "cambridge": [BarChart3, Globe, BarChart3, Landmark],
+  "edexcel-a": [BarChart3, Globe, FileText],
+  "edexcel-b": [BarChart3, Globe, FileText],
+  "cambridge": [BarChart3, Globe, FileText],
+  "ocr": [BarChart3, Globe, FileText],
 };
 
 const colorSets = [

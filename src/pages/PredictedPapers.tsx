@@ -267,8 +267,8 @@ FIGURE/CHART FORMAT:
 - Diagrams: structured text with axes, curves, equilibrium points`;
 };
 
-const CAIE_ECON_PAPER_PROMPT = (paperLabel: string) => {
-  const paperNum = paperLabel.includes("1") ? "1" : paperLabel.includes("2") ? "2" : paperLabel.includes("3") ? "3" : "4";
+const CAIE_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
+  const paperNum = paperValue === "full" ? "4" : paperValue.includes("1") ? "1" : "2";
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum, "cambridge");
 
   const templates: Record<string, string> = {
