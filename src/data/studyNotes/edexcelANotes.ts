@@ -361,7 +361,7 @@ export const edexcelAPaper2Topics: Topic[] = [
           { term: "Interventionist", definition: "Education & training, infrastructure investment, R&D subsidies" },
         ],
         explanation: "**Benefits:** Non-inflationary growth, improved competitiveness, lower natural rate of unemployment\n**Limitations:** Long time lags (5–10 years), expensive, may worsen inequality",
-        diagram: "lras_increase",
+        diagram: "sras_increase",
         examTip: "The best evaluation contrasts market-based vs interventionist approaches, discussing trade-offs between efficiency and equity.",
       },
     ],

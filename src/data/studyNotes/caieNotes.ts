@@ -180,7 +180,7 @@ export const caiePaper2Topics: Topic[] = [
           { term: "Market-Based", definition: "Deregulation, privatisation, tax incentives, trade liberalisation" },
           { term: "Interventionist", definition: "Education, training, infrastructure, healthcare investment" },
         ],
-        diagram: "lras_increase",
+        diagram: "sras_increase",
         examTip: "CAIE essays (25 marks) require balanced evaluation. Always discuss at least TWO limitations of any policy you recommend.",
       },
     ],

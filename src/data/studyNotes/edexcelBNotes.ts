@@ -217,7 +217,7 @@ export const edexcelBPaper2Topics: Topic[] = [
           { term: "Market-Based", definition: "Deregulation, privatisation, income tax cuts, trade union reform" },
           { term: "Interventionist", definition: "Education, training, infrastructure, industrial strategy" },
         ],
-        diagram: "lras_increase",
+        diagram: "sras_increase",
         examTip: "Evaluate by considering: which policies address the specific problem in the data? Market-based policies may worsen inequality; interventionist policies have long time lags.",
       },
     ],

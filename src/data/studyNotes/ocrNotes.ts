@@ -230,7 +230,7 @@ export const ocrComponent2Topics: Topic[] = [
           { term: "Market-Based", definition: "Deregulation, privatisation, tax cuts, flexible labour markets" },
           { term: "Interventionist", definition: "Education, training, infrastructure, R&D subsidies" },
         ],
-        diagram: "lras_increase",
+        diagram: "sras_increase",
         examTip: "For OCR 25-mark essays, weigh market-based vs interventionist policies. Argue which is most appropriate for the specific problem discussed.",
       },
     ],
