@@ -13,25 +13,17 @@ import {
 } from "@/components/revision/RevisionCard";
 import { EconDiagramTemplate, type DiagramType } from "@/components/revision/EconDiagramLibrary";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
+import type { Topic, Subtopic } from "@/data/studyNotes/edexcelANotes";
 
-interface Subtopic {
-  title: string;
-  definition?: string;
-  keyTerms?: { term: string; definition: string }[];
-  explanation?: string;
-  example?: string;
-  formula?: string;
-  examTip?: string;
-  diagram?: DiagramType;
-  content?: string; // legacy fallback
-}
+// Data imports
+import { edexcelAPaper1Topics, edexcelAPaper2Topics } from "@/data/studyNotes/edexcelANotes";
+import { edexcelBPaper1Topics, edexcelBPaper2Topics } from "@/data/studyNotes/edexcelBNotes";
+import { ocrComponent1Topics, ocrComponent2Topics } from "@/data/studyNotes/ocrNotes";
+import { caiePaper1Topics, caiePaper2Topics } from "@/data/studyNotes/caieNotes";
+import { gcsePaper1Topics, gcsePaper2Topics } from "@/data/studyNotes/gcseNotes";
+import { igcsePart1Topics, igcsePart2Topics } from "@/data/studyNotes/igcseNotes";
 
-interface Topic {
-  name: string;
-  subtopics: Subtopic[];
-}
-
-/* ── Economics Topics (Structured Revision Format) ── */
+/* ── AQA A-Level Topics (inline — already existed) ── */
 const econPaper1Topics: Topic[] = [
   {
     name: "The Economic Problem",
@@ -238,6 +230,46 @@ const econPaper2Topics: Topic[] = [
   },
 ];
 
+/* ── Paper configs per subject ── */
+interface PaperSection {
+  heading: string;
+  topics: Topic[];
+  prefix: string;
+}
+
+type Subject = import("@/contexts/SubjectContext").Subject;
+
+const paperSections: Record<Subject, PaperSection[]> = {
+  economics: [
+    { heading: "Paper 1 — Markets & Market Failure", topics: econPaper1Topics, prefix: "p1" },
+    { heading: "Paper 2 — National & International Economy", topics: econPaper2Topics, prefix: "p2" },
+  ],
+  "edexcel-a": [
+    { heading: "Paper 1 — Markets & Business Behaviour", topics: edexcelAPaper1Topics, prefix: "p1" },
+    { heading: "Paper 2 — The National & Global Economy", topics: edexcelAPaper2Topics, prefix: "p2" },
+  ],
+  "edexcel-b": [
+    { heading: "Paper 1 — Markets, Consumers & Firms", topics: edexcelBPaper1Topics, prefix: "p1" },
+    { heading: "Paper 2 — The Wider Economic Environment", topics: edexcelBPaper2Topics, prefix: "p2" },
+  ],
+  "ocr": [
+    { heading: "Component 01 — Microeconomics", topics: ocrComponent1Topics, prefix: "c1" },
+    { heading: "Component 02 — Macroeconomics", topics: ocrComponent2Topics, prefix: "c2" },
+  ],
+  "cambridge": [
+    { heading: "Paper 1 & 2 — AS Level (Micro & Macro)", topics: caiePaper1Topics, prefix: "p1" },
+    { heading: "Paper 3 & 4 — A2 Level (Advanced)", topics: caiePaper2Topics, prefix: "p2" },
+  ],
+  "aqa-gcse": [
+    { heading: "Paper 1 — How Markets Work", topics: gcsePaper1Topics, prefix: "p1" },
+    { heading: "Paper 2 — How the Economy Works", topics: gcsePaper2Topics, prefix: "p2" },
+  ],
+  "cambridge-igcse": [
+    { heading: "Paper 1 — Multiple Choice & Core Topics", topics: igcsePart1Topics, prefix: "p1" },
+    { heading: "Paper 2 — Structured Questions & Extended Topics", topics: igcsePart2Topics, prefix: "p2" },
+  ],
+};
+
 export default function StudyNotes() {
   const { subject, subjectLabel, examBoard, level } = useSubject();
   const [search, setSearch] = useState("");
@@ -248,7 +280,6 @@ export default function StudyNotes() {
   const toggle = (key: string) => setExpanded(prev => ({ ...prev, [key]: !prev[key] }));
 
   const renderSubtopic = (sub: Subtopic) => {
-    // If it has structured fields, render with revision cards
     if (sub.definition || sub.keyTerms || sub.diagram || sub.formula || sub.examTip) {
       return (
         <div className="space-y-3">
@@ -288,8 +319,6 @@ export default function StudyNotes() {
         </div>
       );
     }
-
-    // Legacy fallback
     return (
       <div className="prose prose-sm max-w-none dark:prose-invert">
         <MathsMarkdown>{sub.content || ""}</MathsMarkdown>
@@ -301,8 +330,8 @@ export default function StudyNotes() {
     return topics.filter(t => {
       if (!search) return true;
       const q = search.toLowerCase();
-      return t.name.toLowerCase().includes(q) || t.subtopics.some(s => 
-        s.title.toLowerCase().includes(q) || 
+      return t.name.toLowerCase().includes(q) || t.subtopics.some(s =>
+        s.title.toLowerCase().includes(q) ||
         (s.definition || "").toLowerCase().includes(q) ||
         (s.content || "").toLowerCase().includes(q)
       );
@@ -321,7 +350,7 @@ export default function StudyNotes() {
               {topic.subtopics.filter(s => {
                 if (!search) return true;
                 const q = search.toLowerCase();
-                return s.title.toLowerCase().includes(q) || 
+                return s.title.toLowerCase().includes(q) ||
                   (s.definition || "").toLowerCase().includes(q) ||
                   (s.content || "").toLowerCase().includes(q);
               }).map((sub) => (
@@ -336,6 +365,8 @@ export default function StudyNotes() {
     });
   };
 
+  const sections = paperSections[subject];
+
   return (
     <div className="container py-10 max-w-3xl">
       <div className="mb-8">
@@ -348,24 +379,14 @@ export default function StudyNotes() {
         <Input placeholder="Search topics, terms, definitions..." value={search} onChange={e => setSearch(e.target.value)} className="pl-10 rounded-full h-11" />
       </div>
 
-      {subject === "economics" ? (
-        <>
-          <h2 className="font-bold text-xl mb-4 flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-primary" /> Paper 1 — Markets & Market Failure
+      {sections.map((section, i) => (
+        <div key={section.prefix}>
+          <h2 className={`font-bold text-xl mb-4 flex items-center gap-2 ${i > 0 ? "mt-10" : ""}`}>
+            <BookOpen className="h-5 w-5 text-primary" /> {section.heading}
           </h2>
-          {renderTopics(econPaper1Topics, "p1")}
-          <h2 className="font-bold text-xl mb-4 mt-10 flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-primary" /> Paper 2 — National & International Economy
-          </h2>
-          {renderTopics(econPaper2Topics, "p2")}
-        </>
-      ) : (
-        <div className="text-center py-16">
-          <BookOpen className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-          <p className="text-muted-foreground">Study notes for {subjectLabel} coming soon.</p>
-          <p className="text-sm text-muted-foreground mt-1">Use the AI Tutor to ask questions on any topic.</p>
+          {renderTopics(section.topics, section.prefix)}
         </div>
-      )}
+      ))}
     </div>
   );
 }
