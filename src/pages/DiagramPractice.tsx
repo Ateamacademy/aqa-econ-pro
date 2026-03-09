@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PenTool, Lock, Send, RotateCcw, Info, Pencil, FileText } from "lucide-react";
+import { PenTool, Lock, Send, RotateCcw, Info, Pencil, FileText, ChevronDown, ChevronUp, MessageSquare, Lightbulb } from "lucide-react";
 import { toast } from "sonner";
 import ReactMarkdown from "react-markdown";
 import { FREE_LIMITS } from "@/lib/plans";
@@ -181,12 +181,32 @@ You MUST evaluate using ALL 5 diagram marking criteria:
 4. **EQUILIBRIUM** — Is original equilibrium (P1,Q1) marked? Is new equilibrium (P2,Q2) identified with dotted lines to axes?
 5. **EXPLANATION ↔ DIAGRAM CONSISTENCY** — Does the written explanation logically match the diagram? Are the direction of changes consistent?
 
-Structure your response as:
-- **Diagram Assessment**: tick/cross each of the 5 criteria with detail
-- **Mark Awarded**: X/Y marks
-- **What You Did Well**: specific praise
-- **How to Improve**: actionable steps
-- **Model Diagram Description**: You MUST include a structured diagram block in EXACTLY this format (the app will render it as a visual SVG diagram):
+You MUST structure your response using EXACTLY these section headers (the app parses them):
+
+## Your mark: X/Y
+
+State the mark awarded clearly.
+
+## Smart Mark feedback
+
+Give the main feedback summary in 2-3 sentences. Be direct and specific about what the student got right or wrong. Use bullet points for key corrections with **bold** for important terms.
+
+## Explain my feedback
+
+Provide a detailed breakdown of each of the 5 marking criteria. Use tick ✓ or cross ✗ for each:
+- **Axes**: ✓/✗ — detail
+- **Curve direction**: ✓/✗ — detail  
+- **Shift direction**: ✓/✗ — detail
+- **Equilibrium**: ✓/✗ — detail
+- **Explanation-diagram consistency**: ✓/✗ — detail
+
+## Improve my answer
+
+Give specific, actionable steps to improve. Include:
+- What to add or correct in the diagram
+- How to strengthen the written explanation
+- A memory trick or exam technique tip
+- You MUST include a structured diagram block in EXACTLY this format (the app will render it as a visual SVG diagram):
 
 **Diagram: [Diagram Title]**
 - X-axis: [label]
@@ -197,9 +217,9 @@ Structure your response as:
 - New equilibrium: [P2, Q2 and direction of change]
 - Key conclusion: [one sentence summary]
 
-- **Model Explanation**: A top-band written explanation that correctly connects to the diagram
+Then provide a model written explanation that would score full marks.
 
-Speak directly to the student using "you" and "your".` }],
+Speak directly to the student using "you" and "your". Be encouraging but honest.` }],
       mode: "grade",
       subject,
       onDelta: (chunk) => { result += chunk; setFeedback(result); },
@@ -362,47 +382,168 @@ Speak directly to the student using "you" and "your".` }],
         </div>
       )}
 
-      {step === "feedback" && (
-        <div className="space-y-4">
-          <Card>
-            <CardHeader><CardTitle className="font-serif text-lg">Question</CardTitle></CardHeader>
-            <CardContent>
-              <div className="prose prose-sm max-w-none dark:prose-invert"><ReactMarkdown>{generatedQ}</ReactMarkdown></div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader><CardTitle className="font-serif text-lg">Your Diagram</CardTitle></CardHeader>
-            <CardContent>
-              {diagramImage && inputMode === "draw" ? (
-                <img src={diagramImage} alt="Your drawn diagram" className="rounded-lg border max-w-full" />
-              ) : (
-                <p className="text-sm whitespace-pre-wrap">{diagramDesc}</p>
-              )}
-              {explanation && (
-                <>
-                  <p className="text-sm font-medium mb-1 mt-3">Your Explanation:</p>
-                  <p className="text-sm whitespace-pre-wrap">{explanation}</p>
-                </>
-              )}
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader><CardTitle className="font-serif text-lg text-accent">Feedback</CardTitle></CardHeader>
-            <CardContent>
-              <div className="prose prose-sm max-w-none dark:prose-invert">
-                {extractDiagramBlocks(feedback).map((seg, i) =>
-                  seg.type === "diagram" ? (
-                    <EconDiagramCanvas key={i} diagram={seg.diagram} />
-                  ) : (
-                    <ReactMarkdown key={i}>{seg.content}</ReactMarkdown>
-                  )
-                )}
-              </div>
-            </CardContent>
-          </Card>
-          <Button onClick={reset} className="gap-2"><PenTool className="h-4 w-4" /> Try Another Diagram</Button>
-        </div>
+      {step === "feedback" && <DiagramFeedbackView
+        generatedQ={generatedQ}
+        diagramImage={diagramImage}
+        inputMode={inputMode}
+        diagramDesc={diagramDesc}
+        explanation={explanation}
+        feedback={feedback}
+        onReset={reset}
+      />}
+    </div>
+  );
+}
+
+/* ── Smart Mark Feedback Component ── */
+function parseFeedbackSections(feedback: string) {
+  const sections: { mark: string; smartFeedback: string; explain: string; improve: string } = {
+    mark: "",
+    smartFeedback: "",
+    explain: "",
+    improve: "",
+  };
+
+  // Split by ## headers
+  const markMatch = feedback.match(/## Your mark:\s*([\s\S]*?)(?=##|$)/i);
+  const smartMatch = feedback.match(/## Smart Mark feedback\s*([\s\S]*?)(?=## Explain|## Improve|$)/i);
+  const explainMatch = feedback.match(/## Explain my feedback\s*([\s\S]*?)(?=## Improve|$)/i);
+  const improveMatch = feedback.match(/## Improve my answer\s*([\s\S]*?)$/i);
+
+  if (markMatch) sections.mark = markMatch[1].trim();
+  if (smartMatch) sections.smartFeedback = smartMatch[1].trim();
+  if (explainMatch) sections.explain = explainMatch[1].trim();
+  if (improveMatch) sections.improve = improveMatch[1].trim();
+
+  // Fallback: if no sections found, put everything in smartFeedback
+  if (!sections.mark && !sections.smartFeedback && !sections.explain) {
+    sections.smartFeedback = feedback;
+  }
+
+  return sections;
+}
+
+function DiagramFeedbackView({
+  generatedQ,
+  diagramImage,
+  inputMode,
+  diagramDesc,
+  explanation,
+  feedback,
+  onReset,
+}: {
+  generatedQ: string;
+  diagramImage: string | null;
+  inputMode: InputMode;
+  diagramDesc: string;
+  explanation: string;
+  feedback: string;
+  onReset: () => void;
+}) {
+  const [showExplain, setShowExplain] = useState(false);
+  const [showImprove, setShowImprove] = useState(false);
+  const sections = useMemo(() => parseFeedbackSections(feedback), [feedback]);
+
+  const renderContent = (text: string) => (
+    <div className="prose prose-sm max-w-none dark:prose-invert">
+      {extractDiagramBlocks(text).map((seg, i) =>
+        seg.type === "diagram" ? (
+          <EconDiagramCanvas key={i} diagram={seg.diagram} />
+        ) : (
+          <ReactMarkdown key={i}>{seg.content}</ReactMarkdown>
+        )
       )}
+    </div>
+  );
+
+  return (
+    <div className="space-y-4">
+      <Card>
+        <CardHeader><CardTitle className="font-serif text-lg">Question</CardTitle></CardHeader>
+        <CardContent>
+          <div className="prose prose-sm max-w-none dark:prose-invert"><ReactMarkdown>{generatedQ}</ReactMarkdown></div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader><CardTitle className="font-serif text-lg">Your Diagram</CardTitle></CardHeader>
+        <CardContent>
+          {diagramImage && inputMode === "draw" ? (
+            <img src={diagramImage} alt="Your drawn diagram" className="rounded-lg border max-w-full" />
+          ) : (
+            <p className="text-sm whitespace-pre-wrap">{diagramDesc}</p>
+          )}
+          {explanation && (
+            <>
+              <p className="text-sm font-medium mb-1 mt-3">Your Explanation:</p>
+              <p className="text-sm whitespace-pre-wrap">{explanation}</p>
+            </>
+          )}
+        </CardContent>
+      </Card>
+
+      {/* Mark display */}
+      {sections.mark && (
+        <Card className="border-primary/30 bg-primary/5">
+          <CardContent className="p-5">
+            <p className="text-xl font-bold text-foreground">Your mark: {sections.mark}</p>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Smart Mark feedback */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="font-serif text-lg">Smart Mark feedback</CardTitle>
+        </CardHeader>
+        <CardContent>
+          {renderContent(sections.smartFeedback)}
+        </CardContent>
+      </Card>
+
+      {/* Explain my feedback — collapsible */}
+      {sections.explain && (
+        <Card className="overflow-hidden">
+          <button
+            onClick={() => setShowExplain(!showExplain)}
+            className="w-full flex items-center justify-between p-5 text-left hover:bg-muted/30 transition-colors"
+          >
+            <div className="flex items-center gap-2">
+              <MessageSquare className="h-4 w-4 text-muted-foreground" />
+              <span className="font-semibold text-sm">Explain my feedback</span>
+            </div>
+            {showExplain ? <ChevronUp className="h-4 w-4 text-muted-foreground" /> : <ChevronDown className="h-4 w-4 text-muted-foreground" />}
+          </button>
+          {showExplain && (
+            <CardContent className="pt-0 pb-5 px-5 border-t border-border/50">
+              {renderContent(sections.explain)}
+            </CardContent>
+          )}
+        </Card>
+      )}
+
+      {/* Improve my answer — collapsible */}
+      {sections.improve && (
+        <Card className="overflow-hidden">
+          <button
+            onClick={() => setShowImprove(!showImprove)}
+            className="w-full flex items-center justify-between p-5 text-left hover:bg-muted/30 transition-colors"
+          >
+            <div className="flex items-center gap-2">
+              <Lightbulb className="h-4 w-4 text-muted-foreground" />
+              <span className="font-semibold text-sm">Improve my answer</span>
+            </div>
+            {showImprove ? <ChevronUp className="h-4 w-4 text-muted-foreground" /> : <ChevronDown className="h-4 w-4 text-muted-foreground" />}
+          </button>
+          {showImprove && (
+            <CardContent className="pt-0 pb-5 px-5 border-t border-border/50">
+              {renderContent(sections.improve)}
+            </CardContent>
+          )}
+        </Card>
+      )}
+
+      <Button onClick={onReset} className="gap-2"><PenTool className="h-4 w-4" /> Try Another Diagram</Button>
     </div>
   );
 }
