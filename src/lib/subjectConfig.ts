@@ -27,6 +27,16 @@ export const paperOptionsBySubject: Record<Subject, { value: string; label: stri
     { value: "2", label: "Paper 2", title: "Data Response & Essay (AS)", desc: "Data response with extracts + structured essay on AS topics (9708/2)" },
     { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete A2 paper — data response + extended essays on development, trade, policy (9708/3+4)" },
   ],
+  "aqa-gcse": [
+    { value: "1", label: "Paper 1", title: "How Markets Work", desc: "Microeconomics — economic foundations, resource allocation, how markets work (8136/1)" },
+    { value: "2", label: "Paper 2", title: "How the Economy Works", desc: "Macroeconomics — the role of markets, the economy, the UK & global economy (8136/2)" },
+    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete exam paper covering both micro & macro GCSE Economics topics" },
+  ],
+  "cambridge-igcse": [
+    { value: "1", label: "Paper 1", title: "Multiple Choice", desc: "30 MCQs covering all IGCSE Economics topics (0455/1)" },
+    { value: "2", label: "Paper 2", title: "Structured Questions", desc: "Data response and structured questions on micro & macro (0455/2)" },
+    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete IGCSE Economics predicted paper covering all topics" },
+  ],
 };
 
 /* ── Practice: topics per subject ── */

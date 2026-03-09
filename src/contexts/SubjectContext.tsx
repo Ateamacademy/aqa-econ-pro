@@ -26,6 +26,8 @@ const SUBJECT_META: Record<Subject, { label: string; board: string; level: strin
   "edexcel-b": { label: "Economics B", board: "Edexcel", level: "A-Level" },
   "ocr": { label: "Economics", board: "OCR", level: "A-Level" },
   "cambridge": { label: "Economics", board: "CAIE", level: "A-Level" },
+  "aqa-gcse": { label: "Economics", board: "AQA", level: "GCSE" },
+  "cambridge-igcse": { label: "Economics", board: "CAIE", level: "IGCSE" },
 };
 
 export function SubjectProvider({ children }: { children: ReactNode }) {
