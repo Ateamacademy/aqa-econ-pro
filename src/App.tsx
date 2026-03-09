@@ -12,6 +12,8 @@ import EdexcelAPastPapers from "./pages/EdexcelAPastPapers";
 import EdexcelBPastPapers from "./pages/EdexcelBPastPapers";
 import CambridgePastPapers from "./pages/CambridgePastPapers";
 import OcrPastPapers from "./pages/OcrPastPapers";
+import GcsePastPapers from "./pages/GcsePastPapers";
+import IgcsePastPapers from "./pages/IgcsePastPapers";
 import AITutor from "./pages/AITutor";
 import EssayGrader from "./pages/EssayGrader";
 import Practice from "./pages/Practice";
@@ -42,6 +44,8 @@ const App = () => (
               <Route path="/cambridge-papers" element={<CambridgePastPapers />} />
               <Route path="/edexcel-b-papers" element={<EdexcelBPastPapers />} />
               <Route path="/ocr-papers" element={<OcrPastPapers />} />
+              <Route path="/gcse-papers" element={<GcsePastPapers />} />
+              <Route path="/igcse-papers" element={<IgcsePastPapers />} />
               <Route path="/predicted" element={<PredictedPapers />} />
               <Route path="/tutor" element={<AITutor />} />
               <Route path="/grader" element={<EssayGrader />} />

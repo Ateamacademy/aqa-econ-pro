@@ -48,6 +48,8 @@ const boards = [
   { name: "Edexcel B", papers: "3 Papers", desc: "Markets, Wider & Global Economy" },
   { name: "OCR", papers: "3 Components", desc: "Micro, Macro & Themes" },
   { name: "Cambridge", papers: "4 Papers", desc: "MCQ, Data Response & Essays" },
+  { name: "AQA GCSE", papers: "2 Papers", desc: "Markets & The Economy" },
+  { name: "CAIE IGCSE", papers: "2 Papers", desc: "MCQ & Structured Questions" },
 ];
 
 const fadeUp = {
@@ -80,10 +82,10 @@ export default function Index() {
               Ace your exams.
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground font-normal mt-4 mb-1 tracking-tight">
-              AI-powered revision for A-Level Economics.
+              AI-powered revision for A-Level & GCSE Economics.
             </p>
             <p className="text-lg md:text-xl text-muted-foreground font-normal mb-8">
-              AQA · Edexcel · OCR · Cambridge International.
+              AQA · Edexcel · OCR · Cambridge · GCSE · IGCSE.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Button asChild size="lg" className="rounded-full px-8 text-base h-12 font-normal">
@@ -158,10 +160,10 @@ export default function Index() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.02em] mb-3">
-              Five exam boards. One platform.
+              Seven exam boards. One platform.
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground font-normal">
-              Full coverage across every major A-Level Economics specification.
+              Full coverage across every major A-Level and GCSE Economics specification.
             </p>
           </motion.div>
 
@@ -170,7 +172,7 @@ export default function Index() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-50px" }}
-            className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4"
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
           >
             {boards.map((b) => (
               <motion.div key={b.name} variants={cardFade}>

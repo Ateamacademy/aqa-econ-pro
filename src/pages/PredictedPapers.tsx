@@ -96,10 +96,10 @@ FIGURE/CHART/GRAPH FORMAT (CRITICAL — DO NOT USE ASCII ART):
   Source: Hypothetical representation of the UK housing market, 2024`;
 };
 
-const EDEXCEL_ECON_PAPER_PROMPT = (paperLabel: string, spec: "edexcel-a" | "edexcel-b") => {
+const EDEXCEL_ECON_PAPER_PROMPT = (paperLabel: string, spec: "edexcel-a" | "edexcel-b", paperValue: string) => {
   const isSpecA = spec === "edexcel-a";
   const specName = isSpecA ? "Edexcel Economics A (9EC0)" : "Edexcel Economics B (9EB0)";
-  const paperNum = paperLabel.includes("1") ? "1" : paperLabel.includes("2") ? "2" : "3";
+  const paperNum = paperValue === "full" ? "3" : paperValue.includes("1") ? "1" : "2";
 
   const specATemplates: Record<string, string> = {
     "1": `PAPER 1: Markets and Business Behaviour (9EC0/01) — 2 hours, 100 marks
@@ -206,8 +206,8 @@ FIGURE/CHART FORMAT:
 - Diagrams: describe with bullet points (axes, curves, equilibrium points)`;
 };
 
-const OCR_ECON_PAPER_PROMPT = (paperLabel: string) => {
-  const paperNum = paperLabel.includes("01") || paperLabel.includes("1") ? "1" : paperLabel.includes("02") || paperLabel.includes("2") ? "2" : "3";
+const OCR_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
+  const paperNum = paperValue === "full" ? "3" : paperValue.includes("1") ? "1" : "2";
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum, "ocr");
 
   const templates: Record<string, string> = {
@@ -267,8 +267,8 @@ FIGURE/CHART FORMAT:
 - Diagrams: structured text with axes, curves, equilibrium points`;
 };
 
-const CAIE_ECON_PAPER_PROMPT = (paperLabel: string) => {
-  const paperNum = paperLabel.includes("1") ? "1" : paperLabel.includes("2") ? "2" : paperLabel.includes("3") ? "3" : "4";
+const CAIE_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
+  const paperNum = paperValue === "full" ? "4" : paperValue.includes("1") ? "1" : "2";
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum, "cambridge");
 
   const templates: Record<string, string> = {
@@ -325,8 +325,8 @@ FIGURE/CHART FORMAT:
 - Diagrams: structured text with axes, curves, equilibrium points`;
 };
 
-const ECON_PAPER_PROMPT = (paperLabel: string) => {
-  const paperNum = paperLabel.includes("1") ? "1" : paperLabel.includes("2") ? "2" : "3";
+const ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
+  const paperNum = paperValue === "full" ? "3" : paperValue.includes("1") ? "1" : "2";
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum);
   const isSynopticPaper = paperNum === "3";
 
@@ -477,7 +477,7 @@ Question 31 [10 marks] — "To what extent, if at all, do the data suggest that.
 Question 32 [15 marks] — "Explain why/how..." (applied analysis using extracts)
 Question 33 [25 marks] — "After considering Extract D, and the original evidence... would you recommend that... Justify your recommendation." (full evaluation + justified recommendation)`;
 
-  const structureTemplate = isSynopticPaper
+  const structureTemplate = paperValue === "full"
     ? paper3Template
     : paperNum === "2" ? paper2Template : paper1Template;
 
@@ -725,12 +725,12 @@ export default function PredictedPapers() {
       : isChemistry
       ? CHEM_PAPER_PROMPT(paperLabel, tier)
       : (isEdexcelA || isEdexcelB)
-      ? EDEXCEL_ECON_PAPER_PROMPT(paperLabel, subject as "edexcel-a" | "edexcel-b")
+      ? EDEXCEL_ECON_PAPER_PROMPT(paperLabel, subject as "edexcel-a" | "edexcel-b", paper)
       : isOCR
-      ? OCR_ECON_PAPER_PROMPT(paperLabel)
+      ? OCR_ECON_PAPER_PROMPT(paperLabel, paper)
       : isCambridge
-      ? CAIE_ECON_PAPER_PROMPT(paperLabel)
-      : ECON_PAPER_PROMPT(paperLabel);
+      ? CAIE_ECON_PAPER_PROMPT(paperLabel, paper)
+      : ECON_PAPER_PROMPT(paperLabel, paper);
 
     // Inject DB-retrieved patterns + topic scope for Economics
     const scopeInstruction = topicScope === "year1"
