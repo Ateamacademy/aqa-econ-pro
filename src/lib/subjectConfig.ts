@@ -93,6 +93,20 @@ export const topicsBySubject: Record<Subject, string[]> = {
     "Economic Development & Developing Countries", "Globalisation",
     "Inequality & Poverty", "Role of the State in the Macroeconomy",
   ],
+  "aqa-gcse": [
+    "Economic Foundations", "Resource Allocation", "How Markets Work",
+    "Market Failure", "Government Intervention", "The Role of Money",
+    "The UK Economy", "Income & Expenditure", "Aggregate Demand & Supply",
+    "Economic Growth", "Unemployment", "Inflation", "International Trade",
+    "The Role of Government",
+  ],
+  "cambridge-igcse": [
+    "The Basic Economic Problem", "The Allocation of Resources",
+    "Microeconomic Decision Makers", "Government & the Macroeconomy",
+    "Economic Development", "International Trade & Globalisation",
+    "Demand & Supply", "Elasticity", "Market Failure", "Government Intervention",
+    "Living Standards", "Employment & Unemployment", "Inflation & Deflation",
+  ],
 };
 
 /* ── Practice: question styles per subject ── */
@@ -102,6 +116,8 @@ export const stylesBySubject: Record<Subject, string[]> = {
   "edexcel-b": ["Multiple Choice", "Short Answer (Data Response)", "Extended Open-Response"],
   "ocr": ["Short Answer (Data Response)", "Explain with Diagram (8 marks)", "Essay Question (25 marks)"],
   "cambridge": ["Multiple Choice", "Short Answer (Data Response)", "Explain with Diagram", "Essay Question (25 marks)"],
+  "aqa-gcse": ["Multiple Choice", "Short Answer", "Extended Response (6 marks)"],
+  "cambridge-igcse": ["Multiple Choice", "Short Answer (Data Response)", "Structured Question"],
 };
 
 /* ── Essay Grader: question types per subject ── */
@@ -126,5 +142,13 @@ export const questionTypesBySubject: Record<Subject, string[]> = {
     "1-mark MCQ", "2-mark calculate/define", "4-mark explain",
     "6-mark analyse with diagram", "8-mark evaluate", "20-mark data response evaluate",
     "25-mark essay",
+  ],
+  "aqa-gcse": [
+    "1-mark define", "2-mark explain", "4-mark analyse",
+    "6-mark evaluate", "9-mark extended response",
+  ],
+  "cambridge-igcse": [
+    "1-mark MCQ", "2-mark define", "4-mark explain",
+    "6-mark analyse", "8-mark evaluate",
   ],
 };
