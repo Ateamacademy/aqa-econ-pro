@@ -326,7 +326,7 @@ FIGURE/CHART FORMAT:
 };
 
 const ECON_PAPER_PROMPT = (paperLabel: string) => {
-  const paperNum = paperLabel.includes("1") ? "1" : paperLabel.includes("2") ? "2" : "3";
+  const paperNum = paper === "full" ? "3" : paper.includes("1") ? "1" : "2";
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum);
   const isSynopticPaper = paperNum === "3";
 
