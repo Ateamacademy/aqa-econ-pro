@@ -3279,4 +3279,6 @@ import { edexcelAPredictedPapers } from "./edexcelAPredictedPapers";
 import { edexcelBPredictedPapers } from "./edexcelBPredictedPapers";
 import { cambridgePredictedPapers } from "./cambridgePredictedPapers";
 import { ocrPredictedPapers } from "./ocrPredictedPapers";
-predictedPapersLibrary.push(...chemistryPredictedPapers, ...economicsPredictedPapersExtra, ...mathsPredictedPapersExtra, ...chemistryPredictedPapersExtra, ...edexcelAPredictedPapers, ...edexcelBPredictedPapers, ...cambridgePredictedPapers, ...ocrPredictedPapers);
+import { gcsePredictedPapers } from "./gcsePredictedPapers";
+import { igcsePredictedPapers } from "./igcsePredictedPapers";
+predictedPapersLibrary.push(...chemistryPredictedPapers, ...economicsPredictedPapersExtra, ...mathsPredictedPapersExtra, ...chemistryPredictedPapersExtra, ...edexcelAPredictedPapers, ...edexcelBPredictedPapers, ...cambridgePredictedPapers, ...ocrPredictedPapers, ...gcsePredictedPapers, ...igcsePredictedPapers);
