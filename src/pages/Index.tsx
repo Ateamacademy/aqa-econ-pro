@@ -163,7 +163,7 @@ export default function Index() {
               Seven exam boards. One platform.
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground font-normal">
-              Full coverage across every major A-Level Economics specification.
+              Full coverage across every major A-Level and GCSE Economics specification.
             </p>
           </motion.div>
 
