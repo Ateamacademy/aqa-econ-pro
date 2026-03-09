@@ -5,28 +5,27 @@ export const paperOptionsBySubject: Record<Subject, { value: string; label: stri
   economics: [
     { value: "1", label: "Paper 1", title: "Markets & Market Failure", desc: "Microeconomics — supply & demand, elasticity, market failure, government intervention" },
     { value: "2", label: "Paper 2", title: "National & International Economy", desc: "Macroeconomics — GDP, inflation, unemployment, fiscal & monetary policy, trade" },
-    { value: "3", label: "Paper 3", title: "Economic Principles & Issues", desc: "Mixed micro & macro — market structures, labour markets, inequality, policy conflicts" },
+    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete exam paper covering all topics — mirrors the official structure and difficulty" },
   ],
   "edexcel-a": [
     { value: "1", label: "Paper 1", title: "Markets & Business Behaviour", desc: "Microeconomics — demand, supply, market structures, labour markets, government intervention (9EC0/01)" },
     { value: "2", label: "Paper 2", title: "The National & Global Economy", desc: "Macroeconomics — AD/AS, economic performance, financial sector, trade, development (9EC0/02)" },
-    { value: "3", label: "Paper 3", title: "Micro & Macroeconomics", desc: "Synoptic — data response + extended open-response across all themes (9EC0/03)" },
+    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete synoptic paper covering all themes — data response + extended open-response (9EC0/03)" },
   ],
   "edexcel-b": [
     { value: "1", label: "Paper 1", title: "Markets, Consumers & Firms", desc: "How markets work, market failure, business behaviour, the labour market (9EB0/01)" },
     { value: "2", label: "Paper 2", title: "The Wider Economic Environment", desc: "Economic indicators, macroeconomic policy, inequality, the financial sector (9EB0/02)" },
-    { value: "3", label: "Paper 3", title: "The Global Economy", desc: "Globalisation, trade, development, financial markets, role of the state (9EB0/03)" },
+    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete synoptic paper — globalisation, trade, development, financial markets (9EB0/03)" },
   ],
   "ocr": [
     { value: "1", label: "Component 01", title: "Microeconomics", desc: "Markets, market failure, business objectives, market structures, labour market (H460/01)" },
     { value: "2", label: "Component 02", title: "Macroeconomics", desc: "AD/AS, policy objectives, fiscal/monetary/supply-side, trade, financial sector (H460/02)" },
-    { value: "3", label: "Component 03", title: "Themes in Economics", desc: "Synoptic — draws together micro and macro across all content areas (H460/03)" },
+    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Synoptic — draws together micro and macro across all content areas (H460/03)" },
   ],
   "cambridge": [
     { value: "1", label: "Paper 1", title: "Multiple Choice (AS)", desc: "30 MCQs covering AS micro & macro — scarcity, markets, externalities, AD/AS, policy (9708/1)" },
     { value: "2", label: "Paper 2", title: "Data Response & Essay (AS)", desc: "Data response with extracts + structured essay on AS topics (9708/2)" },
-    { value: "3", label: "Paper 3", title: "Multiple Choice (A2)", desc: "30 MCQs on A2 — market structures, labour markets, development, trade (9708/3)" },
-    { value: "4", label: "Paper 4", title: "Data Response & Essay (A2)", desc: "A2 data response + extended essays on development, trade, policy evaluation (9708/4)" },
+    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete A2 paper — data response + extended essays on development, trade, policy (9708/3+4)" },
   ],
 };
 
