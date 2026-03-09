@@ -181,7 +181,7 @@ export const edexcelBPaper2Topics: Topic[] = [
         title: "AS and Macroeconomic Equilibrium",
         definition: "**SRAS** reflects short-run production costs. **LRAS** reflects the economy's productive capacity at full employment.",
         explanation: "**SRAS shifts left:** Rising oil/energy prices, wage increases, supply chain disruptions\n**LRAS shifts right:** More/better labour, capital investment, technology, institutional improvements",
-        diagram: "lras_increase",
+        diagram: "sras_increase",
       },
       {
         title: "The Multiplier Effect",
