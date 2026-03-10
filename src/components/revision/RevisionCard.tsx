@@ -131,7 +131,7 @@ export function FormulaBox({ children }: { children: ReactNode }) {
           color="bg-[hsl(var(--revision-purple)/0.15)] text-[hsl(var(--revision-purple))]"
         />
         <div className="revision-box-content bg-[hsl(var(--foreground)/0.03)]">
-          <div className="font-handwriting text-xl text-center py-2 animate-write-in">
+          <div className="font-handwriting text-lg text-center py-2 animate-write-in italic">
             {children}
           </div>
         </div>
