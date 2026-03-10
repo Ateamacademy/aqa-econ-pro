@@ -994,7 +994,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       return (
         <>
           <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 - 60} y={dL.y2 + 14} text="D (elastic)" color={COLORS.demand} />
+          <Label x={dL.x2 + 4} y={dL.y2 + 4} text="D (elastic)" color={COLORS.demand} />
           <DashedToAxes x={mx + pw * 0.32} y={my + ph * 0.34} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Q₁" />
           <DashedToAxes x={mx + pw * 0.60} y={my + ph * 0.44} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P₂" qLabel="Q₂" />
           <Label x={mx + pw * 0.48} y={my + ph * 0.72} text="Small ΔP → Large ΔQ" color={COLORS.area} size={10} anchor="middle" bold={false} />
