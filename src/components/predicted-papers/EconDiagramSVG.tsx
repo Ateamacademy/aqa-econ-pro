@@ -409,16 +409,22 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
                 </motion.text>
 
                 {/* Y-axis label */}
-                <text x={margin.left - 32} y={margin.top + plotH / 2} textAnchor="middle"
-                  transform={`rotate(-90 ${margin.left - 32} ${margin.top + plotH / 2})`}
-                  fontSize="11" fontWeight="800" fill="hsl(var(--foreground))" fontFamily="inherit" letterSpacing="0.02em">
+                <motion.text
+                  x={16} y={margin.top + plotH / 2} textAnchor="middle"
+                  transform={`rotate(-90 16 ${margin.top + plotH / 2})`}
+                  fontSize="13" fontWeight="900" fill="hsl(var(--foreground))" fontFamily="inherit" letterSpacing="0.04em"
+                  initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}
+                >
                   {diagram.yAxis}
-                </text>
+                </motion.text>
                 {/* X-axis label */}
-                <text x={margin.left + plotW / 2} y={H - 4} textAnchor="middle"
-                  fontSize="11" fontWeight="800" fill="hsl(var(--foreground))" fontFamily="inherit" letterSpacing="0.02em">
+                <motion.text
+                  x={margin.left + plotW / 2} y={H - 6} textAnchor="middle"
+                  fontSize="13" fontWeight="900" fill="hsl(var(--foreground))" fontFamily="inherit" letterSpacing="0.04em"
+                  initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}
+                >
                   {diagram.xAxis}
-                </text>
+                </motion.text>
 
                 {/* Demand D₁ */}
                 <AnimatedLine x1={dX1} y1={dY1} x2={dX2} y2={dY2} stroke={demandColor} gradientId="demandGrad" delay={0.3} />
