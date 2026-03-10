@@ -753,10 +753,10 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={lrasX - 4} y={my + ph + 14} text="Yf" color={COLORS.lras} size={9} anchor="middle" />
           {/* SRAS₁ */}
           <GLine {...sras1L} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={sras1L.x2 - 44} y={sras1L.y2 + 14} text="SRAS₁" color={COLORS.supply} />
+          <Label x={sras1L.x2 + 4} y={sras1L.y2 + 4} text="SRAS₁" color={COLORS.supply} />
           {/* SRAS₂ — shifted left */}
           <GLine {...sras2L} color={COLORS.supply} gradientId="grad-supply" dashed />
-          <Label x={sras2L.x2 - 44} y={sras2L.y2 + 14} text="SRAS₂" color={COLORS.supply} />
+          <Label x={sras2L.x2 + 4} y={sras2L.y2 + 4} text="SRAS₂" color={COLORS.supply} />
           {/* Shift arrow between the two SRAS curves */}
           <ShiftArrow
             x1={(sras1L.x1 + sras1L.x2) / 2 + 5}
@@ -767,7 +767,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           />
           {/* AD */}
           <GLine {...adL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={adL.x2 - 18} y={adL.y2 - 4} text="AD" color={COLORS.demand} />
+          <Label x={adL.x2 + 4} y={adL.y2 - 6} text="AD" color={COLORS.demand} />
 
           <DashedToAxes x={eq1.x} y={eq1.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="PL₁" qLabel="Y₁" />
           <PremiumDot x={eq1.x} y={eq1.y} color={COLORS.eq} label="E₁" gradientId="dot-green"
