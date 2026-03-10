@@ -79,47 +79,67 @@ function AnimatedLine({
 /* ── 3D Equilibrium dot with glow ── */
 function EquilibriumDot({
   cx, cy, fill, label, pLabel, qLabel,
-  margin, plotH, delay, glowId,
+  margin, plotW, plotH, delay, glowId,
 }: {
   cx: number; cy: number; fill: string; label: string;
   pLabel: string; qLabel: string;
-  margin: { top: number; left: number }; plotH: number; delay: number;
+  margin: { top: number; left: number; right: number; bottom: number }; plotW: number; plotH: number; delay: number;
   glowId: string;
 }) {
   const [hovered, setHovered] = useState(false);
+  const axisBottom = margin.top + plotH;
+  const axisLeft = margin.left;
+
   return (
     <g onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{ cursor: "pointer" }}>
-      {/* Dotted projection lines */}
+      {/* Horizontal dotted line → to Y-axis */}
       <motion.line
-        x1={margin.left} y1={cy} x2={cx} y2={cy}
-        stroke={fill} strokeWidth={1} strokeDasharray="3,4" opacity={0.4}
+        x1={axisLeft} y1={cy} x2={cx} y2={cy}
+        stroke={fill} strokeWidth={1.2} strokeDasharray="4,4" opacity={0.5}
         initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
         transition={{ duration: 0.6, delay }}
       />
+      {/* Vertical dotted line → to X-axis */}
       <motion.line
-        x1={cx} y1={cy} x2={cx} y2={margin.top + plotH}
-        stroke={fill} strokeWidth={1} strokeDasharray="3,4" opacity={0.4}
+        x1={cx} y1={cy} x2={cx} y2={axisBottom}
+        stroke={fill} strokeWidth={1.2} strokeDasharray="4,4" opacity={0.5}
         initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
         transition={{ duration: 0.6, delay: delay + 0.1 }}
       />
 
-      {/* Axis tick labels */}
+      {/* Y-axis tick mark */}
+      <motion.line
+        x1={axisLeft - 5} y1={cy} x2={axisLeft} y2={cy}
+        stroke={fill} strokeWidth={2}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+        transition={{ delay: delay + 0.2 }}
+      />
+      {/* Y-axis tick label (P₁ / P₂) */}
       <motion.text
-        x={margin.left - 8} y={cy + 4} textAnchor="end" fontSize="10" fontWeight="700" fill={fill}
-        initial={{ opacity: 0, x: margin.left - 20 }} animate={{ opacity: 1, x: margin.left - 8 }}
-        transition={{ delay: delay + 0.2, duration: 0.4 }}
+        x={axisLeft - 9} y={cy + 4} textAnchor="end" fontSize="11" fontWeight="800" fill={fill}
+        initial={{ opacity: 0, x: axisLeft - 20 }} animate={{ opacity: 1, x: axisLeft - 9 }}
+        transition={{ delay: delay + 0.25, duration: 0.4 }}
       >
         {pLabel}
       </motion.text>
+
+      {/* X-axis tick mark */}
+      <motion.line
+        x1={cx} y1={axisBottom} x2={cx} y2={axisBottom + 5}
+        stroke={fill} strokeWidth={2}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+        transition={{ delay: delay + 0.2 }}
+      />
+      {/* X-axis tick label (Q₁ / Q₂) */}
       <motion.text
-        x={cx} y={margin.top + plotH + 16} textAnchor="middle" fontSize="10" fontWeight="700" fill={fill}
-        initial={{ opacity: 0, y: margin.top + plotH + 28 }} animate={{ opacity: 1, y: margin.top + plotH + 16 }}
-        transition={{ delay: delay + 0.2, duration: 0.4 }}
+        x={cx} y={axisBottom + 18} textAnchor="middle" fontSize="11" fontWeight="800" fill={fill}
+        initial={{ opacity: 0, y: axisBottom + 28 }} animate={{ opacity: 1, y: axisBottom + 18 }}
+        transition={{ delay: delay + 0.25, duration: 0.4 }}
       >
         {qLabel}
       </motion.text>
 
-      {/* Outer glow ring */}
+      {/* Outer glow ring on hover */}
       <AnimatePresence>
         {hovered && (
           <motion.circle
@@ -379,14 +399,23 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
                   initial={{ opacity: 0, x: -5 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}
                 />
 
+                {/* Origin "O" label */}
+                <motion.text
+                  x={margin.left - 10} y={margin.top + plotH + 16}
+                  textAnchor="middle" fontSize="12" fontWeight="800" fill="hsl(var(--foreground))"
+                  initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}
+                >
+                  O
+                </motion.text>
+
                 {/* Y-axis label */}
-                <text x={margin.left - 18} y={margin.top + plotH / 2} textAnchor="middle"
-                  transform={`rotate(-90 ${margin.left - 18} ${margin.top + plotH / 2})`}
+                <text x={margin.left - 32} y={margin.top + plotH / 2} textAnchor="middle"
+                  transform={`rotate(-90 ${margin.left - 32} ${margin.top + plotH / 2})`}
                   fontSize="11" fontWeight="800" fill="hsl(var(--foreground))" fontFamily="inherit" letterSpacing="0.02em">
                   {diagram.yAxis}
                 </text>
                 {/* X-axis label */}
-                <text x={margin.left + plotW / 2} y={H - 6} textAnchor="middle"
+                <text x={margin.left + plotW / 2} y={H - 4} textAnchor="middle"
                   fontSize="11" fontWeight="800" fill="hsl(var(--foreground))" fontFamily="inherit" letterSpacing="0.02em">
                   {diagram.xAxis}
                 </text>
@@ -430,8 +459,8 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
                 )}
 
                 {/* Equilibria */}
-                <EquilibriumDot cx={eqX} cy={eqY} fill={eq1Color} label="E₁" pLabel="P₁" qLabel="Q₁" margin={margin} plotH={plotH} delay={0.9} glowId="eq1Grad" />
-                <EquilibriumDot cx={newEqX} cy={newEqY} fill={eq2Color} label="E₂" pLabel="P₂" qLabel="Q₂" margin={margin} plotH={plotH} delay={1.4} glowId="eq2Grad" />
+                <EquilibriumDot cx={eqX} cy={eqY} fill={eq1Color} label="E₁" pLabel="P₁" qLabel="Q₁" margin={margin} plotW={plotW} plotH={plotH} delay={0.9} glowId="eq1Grad" />
+                <EquilibriumDot cx={newEqX} cy={newEqY} fill={eq2Color} label="E₂" pLabel="P₂" qLabel="Q₂" margin={margin} plotW={plotW} plotH={plotH} delay={1.4} glowId="eq2Grad" />
               </svg>
             </div>
 
