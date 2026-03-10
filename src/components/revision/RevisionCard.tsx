@@ -44,7 +44,7 @@ function HandwrittenHeader({
         <Icon className="h-3.5 w-3.5" />
       </div>
       <span className={cn(
-        "font-handwriting text-base font-semibold tracking-tight",
+        "font-handwriting text-lg font-bold tracking-wide",
         highlightColor || ""
       )}>
         {label}
@@ -90,7 +90,7 @@ export function ExampleBox({ children }: { children: ReactNode }) {
           color="bg-[hsl(var(--revision-amber)/0.15)] text-[hsl(var(--revision-amber))]"
         />
         <div className="revision-box-content">
-          <div className="sticky-note font-handwriting-alt text-[0.925rem] leading-[1.7]">
+          <div className="sticky-note font-handwriting-alt text-base leading-relaxed">
             {children}
           </div>
         </div>
@@ -131,7 +131,7 @@ export function FormulaBox({ children }: { children: ReactNode }) {
           color="bg-[hsl(var(--revision-purple)/0.15)] text-[hsl(var(--revision-purple))]"
         />
         <div className="revision-box-content bg-[hsl(var(--foreground)/0.03)]">
-          <div className="font-handwriting text-lg text-center py-2 animate-write-in italic">
+          <div className="font-handwriting text-xl text-center py-2 animate-write-in">
             {children}
           </div>
         </div>
@@ -161,10 +161,10 @@ export function KeyTermsList({ terms }: { terms: { term: string; definition: str
                 transition={{ duration: 0.4, delay: i * 0.08, ease: [0.25, 0.4, 0.25, 1] }}
                 className="flex gap-3 items-start"
               >
-                <dt className="font-handwriting font-bold text-base min-w-[100px] shrink-0 dynamic-highlight">
+                <dt className="font-handwriting font-bold text-lg min-w-[100px] shrink-0 highlighter-yellow">
                   {t.term}
                 </dt>
-                <dd className="text-sm opacity-90 pt-0.5 font-handwriting-alt text-[0.925rem] leading-[1.7]">
+                <dd className="text-sm opacity-90 pt-1 font-handwriting-alt text-base leading-relaxed">
                   {t.definition}
                 </dd>
               </motion.div>
@@ -213,8 +213,8 @@ export function AnalysisChain({ steps }: { steps: string[] }) {
                 transition={{ duration: 0.4, delay: i * 0.12, ease: [0.25, 0.4, 0.25, 1] }}
                 className="flex gap-3 items-start"
               >
-                <span className="revision-step-number font-handwriting text-sm">{i + 1}</span>
-                <span className="font-handwriting-alt text-[0.925rem] leading-[1.7]">{step}</span>
+                <span className="revision-step-number font-handwriting text-base">{i + 1}</span>
+                <span className="font-handwriting-alt text-base leading-relaxed">{step}</span>
               </motion.li>
             ))}
           </ol>
