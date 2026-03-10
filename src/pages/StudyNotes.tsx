@@ -251,7 +251,7 @@ export default function StudyNotes() {
               <ChevronRight className="h-4 w-4 text-primary" />
             </motion.div>
             <div className="flex-1 min-w-0">
-              <h3 className="font-handwriting font-bold text-xl tracking-tight">{topic.name}</h3>
+              <h3 className="font-handwriting font-bold text-lg tracking-tight">{topic.name}</h3>
             </div>
             <div className="flex items-center gap-2">
               {topic.subtopics.some(s => s.diagram) && (
