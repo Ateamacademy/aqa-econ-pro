@@ -84,7 +84,7 @@ function StatCard({ icon: Icon, label, value, delay }: { icon: any; label: strin
       </div>
       <div>
         <p className="text-2xl font-bold tracking-tight font-handwriting">{value}</p>
-        <p className="text-xs text-muted-foreground font-handwriting-alt">{label}</p>
+        <p className="text-xs text-muted-foreground font-handwriting-alt tracking-wide">{label}</p>
       </div>
     </motion.div>
   );
