@@ -174,8 +174,8 @@
 }
 
 .ai-response strong {
-  color: hsl(var(--primary));
-  @apply font-semibold;
+  @apply font-semibold dynamic-underline;
+  color: hsl(var(--foreground));
 }
 
 .ai-response ul,
