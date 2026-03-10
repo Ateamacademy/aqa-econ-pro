@@ -165,18 +165,38 @@ function CurvePath({ d, color, dashed, width = 2.5, glow, gradientId }: {
   );
 }
 
-function Label({ x, y, text, color, size = 11, anchor = "start", bold = true }: {
-  x: number; y: number; text: string; color: string; size?: number; anchor?: string; bold?: boolean;
+function Label({ x, y, text, color, size = 11, anchor = "start", bold = true, bg = true }: {
+  x: number; y: number; text: string; color: string; size?: number; anchor?: string; bold?: boolean; bg?: boolean;
 }) {
+  // Estimate text width for background rect
+  const charW = size * 0.62;
+  const textW = text.length * charW;
+  const textH = size + 2;
+  const pad = 3;
+  const anchorX = anchor === "middle" ? x - textW / 2 : anchor === "end" ? x - textW : x;
+
   return (
-    <text
-      x={x} y={y} fill={color} textAnchor={anchor} fontSize={size}
-      fontWeight={bold ? 700 : 500}
-      className="select-none"
-      style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
-    >
-      {text}
-    </text>
+    <g>
+      {bg && (
+        <rect
+          x={anchorX - pad}
+          y={y - textH + 2}
+          width={textW + pad * 2}
+          height={textH + pad}
+          rx={3}
+          fill="hsl(var(--card))"
+          opacity={0.88}
+        />
+      )}
+      <text
+        x={x} y={y} fill={color} textAnchor={anchor} fontSize={size}
+        fontWeight={bold ? 700 : 500}
+        className="select-none"
+        style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
+      >
+        {text}
+      </text>
+    </g>
   );
 }
 
