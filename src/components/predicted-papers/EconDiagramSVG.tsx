@@ -209,6 +209,7 @@ function ShiftArrow({ x, y, offset, color, delay }: { x: number; y: number; offs
 
 function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
   const [animated, setAnimated] = useState(false);
+  const [activePage, setActivePage] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
