@@ -165,18 +165,38 @@ function CurvePath({ d, color, dashed, width = 2.5, glow, gradientId }: {
   );
 }
 
-function Label({ x, y, text, color, size = 11, anchor = "start", bold = true }: {
-  x: number; y: number; text: string; color: string; size?: number; anchor?: string; bold?: boolean;
+function Label({ x, y, text, color, size = 11, anchor = "start", bold = true, bg = true }: {
+  x: number; y: number; text: string; color: string; size?: number; anchor?: string; bold?: boolean; bg?: boolean;
 }) {
+  // Estimate text width for background rect
+  const charW = size * 0.62;
+  const textW = text.length * charW;
+  const textH = size + 2;
+  const pad = 3;
+  const anchorX = anchor === "middle" ? x - textW / 2 : anchor === "end" ? x - textW : x;
+
   return (
-    <text
-      x={x} y={y} fill={color} textAnchor={anchor} fontSize={size}
-      fontWeight={bold ? 700 : 500}
-      className="select-none"
-      style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
-    >
-      {text}
-    </text>
+    <g>
+      {bg && (
+        <rect
+          x={anchorX - pad}
+          y={y - textH + 2}
+          width={textW + pad * 2}
+          height={textH + pad}
+          rx={3}
+          fill="hsl(var(--card))"
+          opacity={0.88}
+        />
+      )}
+      <text
+        x={x} y={y} fill={color} textAnchor={anchor} fontSize={size}
+        fontWeight={bold ? 700 : 500}
+        className="select-none"
+        style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
+      >
+        {text}
+      </text>
+    </g>
   );
 }
 
@@ -343,24 +363,24 @@ const supplyDemandBase = (p: DrawParams, shiftCurve?: "demand" | "supply", shift
     <>
       {/* Demand */}
       <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-      <Label x={dL.x2 - 16} y={dL.y2 - 6} text="D₁" color={COLORS.demand} />
+      <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D₁" color={COLORS.demand} />
 
       {shiftCurve === "demand" && (
         <>
           <GLine {...dShifted} color={COLORS.demand} gradientId="grad-demand" dashed />
-          <Label x={dShifted.x2 - 16} y={dShifted.y2 - 6} text="D₂" color={COLORS.demand} />
+          <Label x={dShifted.x2 + 4} y={dShifted.y2 - 6} text="D₂" color={COLORS.demand} />
           <ShiftArrow x1={eq1.x} y1={eq1.y} x2={eq2.x} y2={eq2.y} color={COLORS.shifted} />
         </>
       )}
 
       {/* Supply */}
       <GLine {...sL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-      <Label x={sL.x2 - 16} y={sL.y2 + 14} text="S₁" color={COLORS.supply} />
+      <Label x={sL.x2 + 4} y={sL.y2 + 4} text="S₁" color={COLORS.supply} />
 
       {shiftCurve === "supply" && (
         <>
           <GLine {...sShifted} color={COLORS.supply} gradientId="grad-supply" dashed />
-          <Label x={sShifted.x2 - 16} y={sShifted.y2 + 14} text="S₂" color={COLORS.supply} />
+          <Label x={sShifted.x2 + 4} y={sShifted.y2 + 4} text="S₂" color={COLORS.supply} />
           <ShiftArrow x1={eq1.x} y1={eq1.y} x2={eq2.x} y2={eq2.y} color={COLORS.shifted} />
         </>
       )}
@@ -465,24 +485,25 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       // Social optimum = S ∩ MSB
       const optEq = lineIntersect(sL.x1, sL.y1, sL.x2, sL.y2, msbL.x1, msbL.y1, msbL.x2, msbL.y2);
 
-      // DWL triangle vertex: point on MPC at Qm, point on MPC at Q*, and where MSB and MPB converge
-      // Simplified: triangle between freeEq, optEq, and a midpoint between them on the supply curve
-      const midDwlY = (freeEq.y + optEq.y) / 2;
+      // DWL triangle: area between MSB and MPC from Qₘ to Q*
+      // Vertex 3: MSB value at Qₘ (the social benefit NOT captured at free market qty)
+      const msbSlope = (msbL.y2 - msbL.y1) / (msbL.x2 - msbL.x1);
+      const msbAtFreeX = msbL.y1 + msbSlope * (freeEq.x - msbL.x1);
 
       return (
         <>
           <GLine {...sL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={sL.x2 - 50} y={sL.y2 + 14} text="S = MPC" color={COLORS.supply} />
+          <Label x={sL.x2 - 8} y={sL.y2 - 6} text="S = MPC" color={COLORS.supply} />
           <GLine {...mpbL} color={COLORS.mpb} width={2} />
-          <Label x={mpbL.x2 - 4} y={mpbL.y2 + 14} text="D = MPB" color={COLORS.mpb} />
+          <Label x={mpbL.x2 + 4} y={mpbL.y2 - 6} text="D = MPB" color={COLORS.mpb} />
           <GLine {...msbL} color={COLORS.demand} gradientId="grad-demand" dashed glow="glow-blue" />
-          <Label x={msbL.x2 - 22} y={msbL.y2 + 14} text="MSB" color={COLORS.demand} />
-          {/* Welfare loss triangle */}
+          <Label x={msbL.x2 + 4} y={msbL.y2 - 6} text="MSB" color={COLORS.demand} />
+          {/* Welfare loss triangle: freeEq → (Qₘ, MSB at Qₘ) → optEq */}
           <polygon
-            points={`${freeEq.x},${freeEq.y} ${optEq.x},${optEq.y} ${(freeEq.x + optEq.x) / 2},${midDwlY - 20}`}
-            fill={COLORS.area} fillOpacity={0.10} stroke="url(#grad-area)" strokeWidth={1.5} strokeDasharray="3,3"
+            points={`${freeEq.x},${freeEq.y} ${freeEq.x},${msbAtFreeX} ${optEq.x},${optEq.y}`}
+            fill={COLORS.area} fillOpacity={0.12} stroke="url(#grad-area)" strokeWidth={1.5} strokeDasharray="3,3"
           />
-          <Label x={(freeEq.x + optEq.x) / 2} y={(freeEq.y + optEq.y) / 2} text="DWL" color={COLORS.area} size={9} anchor="middle" />
+          <Label x={(freeEq.x + optEq.x) / 2} y={(freeEq.y + msbAtFreeX) / 2 + 4} text="DWL" color={COLORS.area} size={9} anchor="middle" />
           <DashedToAxes x={freeEq.x} y={freeEq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Qₘ" />
           <PremiumDot x={freeEq.x} y={freeEq.y} color={COLORS.eq} label="Free Mkt" gradientId="dot-green"
             tooltipText="✓ Free market under-provides — Qₘ < Q*" />
@@ -518,21 +539,25 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       // Social optimum = S ∩ MSB
       const optEq = lineIntersect(sL.x1, sL.y1, sL.x2, sL.y2, msbL.x1, msbL.y1, msbL.x2, msbL.y2);
 
-      const midDwlY = (freeEq.y + optEq.y) / 2;
+      // DWL: area between MPC and MSB from Q* to Qₘ (over-consumption region)
+      // Vertex 3: MSB value at Qₘ
+      const msbSlope = (msbL.y2 - msbL.y1) / (msbL.x2 - msbL.x1);
+      const msbAtFreeX = msbL.y1 + msbSlope * (freeEq.x - msbL.x1);
 
       return (
         <>
           <GLine {...sL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={sL.x2 - 50} y={sL.y2 + 14} text="S = MPC" color={COLORS.supply} />
+          <Label x={sL.x2 - 8} y={sL.y2 - 6} text="S = MPC" color={COLORS.supply} />
           <GLine {...mpbL} color={COLORS.mpb} width={2} />
-          <Label x={mpbL.x2 - 4} y={mpbL.y2 + 14} text="D = MPB" color={COLORS.mpb} />
+          <Label x={mpbL.x2 + 4} y={mpbL.y2 - 6} text="D = MPB" color={COLORS.mpb} />
           <GLine {...msbL} color={COLORS.demand} gradientId="grad-demand" dashed glow="glow-blue" />
-          <Label x={msbL.x2 - 22} y={msbL.y2 + 14} text="MSB" color={COLORS.demand} />
+          <Label x={msbL.x2 + 4} y={msbL.y2 - 6} text="MSB" color={COLORS.demand} />
+          {/* DWL triangle: optEq → freeEq → (Qₘ, MSB at Qₘ) */}
           <polygon
-            points={`${optEq.x},${optEq.y} ${freeEq.x},${freeEq.y} ${(optEq.x + freeEq.x) / 2},${midDwlY + 20}`}
-            fill={COLORS.area} fillOpacity={0.10} stroke="url(#grad-area)" strokeWidth={1.5} strokeDasharray="3,3"
+            points={`${optEq.x},${optEq.y} ${freeEq.x},${freeEq.y} ${freeEq.x},${msbAtFreeX}`}
+            fill={COLORS.area} fillOpacity={0.12} stroke="url(#grad-area)" strokeWidth={1.5} strokeDasharray="3,3"
           />
-          <Label x={(optEq.x + freeEq.x) / 2} y={(freeEq.y + optEq.y) / 2 + 4} text="DWL" color={COLORS.area} size={9} anchor="middle" />
+          <Label x={(optEq.x + freeEq.x) / 2} y={(freeEq.y + msbAtFreeX) / 2 + 4} text="DWL" color={COLORS.area} size={9} anchor="middle" />
           <DashedToAxes x={freeEq.x} y={freeEq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Qₘ" />
           <PremiumDot x={freeEq.x} y={freeEq.y} color={COLORS.eq} label="Free Mkt" gradientId="dot-green"
             tooltipText="✓ Over-consumption — Qₘ exceeds Q*" />
@@ -576,11 +601,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       return (
         <>
           <GLine {...mpcL} color={COLORS.mpc} width={2} />
-          <Label x={mpcL.x2 - 42} y={mpcL.y2 + 14} text="S = MPC" color={COLORS.mpc} />
+          <Label x={mpcL.x2 - 8} y={mpcL.y2 - 6} text="S = MPC" color={COLORS.mpc} />
           <GLine {...mscL} color={COLORS.msc} gradientId="grad-supply" dashed glow="glow-red" />
-          <Label x={mscL.x2 - 26} y={mscL.y2 + 14} text="MSC" color={COLORS.msc} />
+          <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.msc} />
           <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 - 46} y={dL.y2 - 6} text="D = MSB" color={COLORS.demand} />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MSB" color={COLORS.demand} />
           <polygon
             points={`${optEq.x},${optEq.y} ${freeEq.x},${freeEq.y} ${freeEq.x},${mscAtFreeX}`}
             fill={COLORS.area} fillOpacity={0.10} stroke="url(#grad-area)" strokeWidth={1.5} strokeDasharray="3,3"
@@ -629,11 +654,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={lrasX + 6} y={my + 20} text="LRAS" color={COLORS.lras} />
           <Label x={lrasX - 4} y={my + ph + 14} text="Yf" color={COLORS.lras} size={9} anchor="middle" />
           <GLine {...srasL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={srasL.x2 - 40} y={srasL.y2 + 14} text="SRAS" color={COLORS.supply} />
+          <Label x={srasL.x2 + 4} y={srasL.y2 + 4} text="SRAS" color={COLORS.supply} />
           <GLine {...ad1L} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={ad1L.x2 - 18} y={ad1L.y2 - 4} text="AD₁" color={COLORS.demand} />
+          <Label x={ad1L.x2 + 4} y={ad1L.y2 - 6} text="AD₁" color={COLORS.demand} />
           <GLine {...ad2L} color={COLORS.demand} gradientId="grad-demand" dashed />
-          <Label x={ad2L.x2 - 18} y={ad2L.y2 - 4} text="AD₂" color={COLORS.demand} />
+          <Label x={ad2L.x2 + 4} y={ad2L.y2 - 6} text="AD₂" color={COLORS.demand} />
           <ShiftArrow x1={eq1.x + 5} y1={eq1.y + 8} x2={eq2.x - 5} y2={eq2.y + 8} color={COLORS.shifted} />
 
           <DashedToAxes x={eq1.x} y={eq1.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="PL₁" qLabel="Y₁" />
@@ -674,11 +699,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={lrasX + 6} y={my + 20} text="LRAS" color={COLORS.lras} />
           <Label x={lrasX - 4} y={my + ph + 14} text="Yf" color={COLORS.lras} size={9} anchor="middle" />
           <GLine {...srasL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={srasL.x2 - 40} y={srasL.y2 + 14} text="SRAS" color={COLORS.supply} />
+          <Label x={srasL.x2 + 4} y={srasL.y2 + 4} text="SRAS" color={COLORS.supply} />
           <GLine {...ad1L} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={ad1L.x2 - 18} y={ad1L.y2 - 4} text="AD₁" color={COLORS.demand} />
+          <Label x={ad1L.x2 + 4} y={ad1L.y2 - 6} text="AD₁" color={COLORS.demand} />
           <GLine {...ad2L} color={COLORS.demand} gradientId="grad-demand" dashed />
-          <Label x={ad2L.x2 - 18} y={ad2L.y2 - 4} text="AD₂" color={COLORS.demand} />
+          <Label x={ad2L.x2 + 4} y={ad2L.y2 - 6} text="AD₂" color={COLORS.demand} />
           <ShiftArrow x1={eq1.x - 5} y1={eq1.y + 8} x2={eq2.x + 5} y2={eq2.y + 8} color={COLORS.shifted} />
 
           <DashedToAxes x={eq1.x} y={eq1.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="PL₁" qLabel="Y₁" />
@@ -728,10 +753,10 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={lrasX - 4} y={my + ph + 14} text="Yf" color={COLORS.lras} size={9} anchor="middle" />
           {/* SRAS₁ */}
           <GLine {...sras1L} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={sras1L.x2 - 44} y={sras1L.y2 + 14} text="SRAS₁" color={COLORS.supply} />
+          <Label x={sras1L.x2 + 4} y={sras1L.y2 + 4} text="SRAS₁" color={COLORS.supply} />
           {/* SRAS₂ — shifted left */}
           <GLine {...sras2L} color={COLORS.supply} gradientId="grad-supply" dashed />
-          <Label x={sras2L.x2 - 44} y={sras2L.y2 + 14} text="SRAS₂" color={COLORS.supply} />
+          <Label x={sras2L.x2 + 4} y={sras2L.y2 + 4} text="SRAS₂" color={COLORS.supply} />
           {/* Shift arrow between the two SRAS curves */}
           <ShiftArrow
             x1={(sras1L.x1 + sras1L.x2) / 2 + 5}
@@ -742,7 +767,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           />
           {/* AD */}
           <GLine {...adL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={adL.x2 - 18} y={adL.y2 - 4} text="AD" color={COLORS.demand} />
+          <Label x={adL.x2 + 4} y={adL.y2 - 6} text="AD" color={COLORS.demand} />
 
           <DashedToAxes x={eq1.x} y={eq1.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="PL₁" qLabel="Y₁" />
           <PremiumDot x={eq1.x} y={eq1.y} color={COLORS.eq} label="E₁" gradientId="dot-green"
@@ -782,9 +807,9 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={lrasX + 6} y={my + 20} text="LRAS" color={COLORS.lras} />
           <Label x={lrasX - 4} y={my + ph + 14} text="Yf" color={COLORS.lras} size={9} anchor="middle" />
           <GLine {...sras1L} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={sras1L.x2 - 44} y={sras1L.y2 + 14} text="SRAS₁" color={COLORS.supply} />
+          <Label x={sras1L.x2 + 4} y={sras1L.y2 + 4} text="SRAS₁" color={COLORS.supply} />
           <GLine {...sras2L} color={COLORS.supply} gradientId="grad-supply" dashed />
-          <Label x={sras2L.x2 - 44} y={sras2L.y2 + 14} text="SRAS₂" color={COLORS.supply} />
+          <Label x={sras2L.x2 + 4} y={sras2L.y2 + 4} text="SRAS₂" color={COLORS.supply} />
           <ShiftArrow
             x1={(sras1L.x1 + sras1L.x2) / 2 - 5}
             y1={(sras1L.y1 + sras1L.y2) / 2}
@@ -793,7 +818,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             color={COLORS.shifted}
           />
           <GLine {...adL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={adL.x2 - 18} y={adL.y2 - 4} text="AD" color={COLORS.demand} />
+          <Label x={adL.x2 + 4} y={adL.y2 - 6} text="AD" color={COLORS.demand} />
 
           <DashedToAxes x={eq1.x} y={eq1.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="PL₁" qLabel="Y₁" />
           <PremiumDot x={eq1.x} y={eq1.y} color={COLORS.eq} label="E₁" gradientId="dot-green"
@@ -837,11 +862,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       return (
         <>
           <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 - 10} y={dL.y2 - 6} text="D" color={COLORS.demand} />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color={COLORS.demand} />
           <GLine {...s1L} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={s1L.x2 - 14} y={s1L.y2 + 14} text="S₁" color={COLORS.supply} />
+          <Label x={s1L.x2 + 4} y={s1L.y2 + 4} text="S₁" color={COLORS.supply} />
           <GLine {...s2L} color={COLORS.supply} gradientId="grad-supply" dashed />
-          <Label x={s2L.x2 - 40} y={s2L.y2 + 14} text="S₁+Tax" color={COLORS.supply} />
+          <Label x={s2L.x2 + 4} y={s2L.y2 + 4} text="S₁+Tax" color={COLORS.supply} />
           {/* Tax revenue area: rectangle between consumer price and producer price at Q₂ */}
           <rect x={mx} y={eq2.y} width={eq2.x - mx} height={prodPriceY - eq2.y}
             fill="url(#grad-area)" fillOpacity={0.12} stroke="url(#grad-area)" strokeWidth={1} rx={3} />
@@ -969,7 +994,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       return (
         <>
           <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 - 60} y={dL.y2 + 14} text="D (elastic)" color={COLORS.demand} />
+          <Label x={dL.x2 + 4} y={dL.y2 + 4} text="D (elastic)" color={COLORS.demand} />
           <DashedToAxes x={mx + pw * 0.32} y={my + ph * 0.34} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Q₁" />
           <DashedToAxes x={mx + pw * 0.60} y={my + ph * 0.44} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P₂" qLabel="Q₂" />
           <Label x={mx + pw * 0.48} y={my + ph * 0.72} text="Small ΔP → Large ΔQ" color={COLORS.area} size={10} anchor="middle" bold={false} />
@@ -1038,11 +1063,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       return (
         <>
           <GLine {...mcL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={mcL.x2 - 24} y={mcL.y2 + 14} text="MC" color={COLORS.supply} />
+          <Label x={mcL.x2 + 4} y={mcL.y2 + 4} text="MC" color={COLORS.supply} />
           <GLine {...arL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={arL.x2 - 46} y={arL.y2 - 6} text="AR = D" color={COLORS.demand} />
+          <Label x={arL.x2 + 4} y={arL.y2 - 6} text="AR = D" color={COLORS.demand} />
           <GLine {...mrL} color={COLORS.mpb} dashed width={2} />
-          <Label x={mrL.x2 - 20} y={mrL.y2 - 6} text="MR" color={COLORS.mpb} />
+          <Label x={mrL.x2 + 4} y={mrL.y2 - 6} text="MR" color={COLORS.mpb} />
           {/* AC line (simplified as horizontal) */}
           <GLine x1={mx + pad} y1={acY} x2={mx + pw - pad} y2={acY} color={COLORS.lras} dashed width={1} />
           <Label x={mx + pw - pad - 18} y={acY - 6} text="AC" color={COLORS.lras} size={10} />
