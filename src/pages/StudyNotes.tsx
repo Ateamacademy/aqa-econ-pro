@@ -35,8 +35,10 @@ type Subject = import("@/contexts/SubjectContext").Subject;
 
 const paperSections: Record<Subject, PaperSection[]> = {
   economics: [
-    { heading: "Paper 1 — Markets & Market Failure", topics: econPaper1Topics, prefix: "p1" },
-    { heading: "Paper 2 — National & International Economy", topics: econPaper2Topics, prefix: "p2" },
+    { heading: "📗 Year 1 (AS) — Paper 1: Markets & Market Failure", topics: aqaYear1Paper1Topics, prefix: "y1p1" },
+    { heading: "📗 Year 1 (AS) — Paper 2: National Economy in a Global Context", topics: aqaYear1Paper2Topics, prefix: "y1p2" },
+    { heading: "📘 Year 2 (A2) — Paper 1: Markets & Market Failure (Extended)", topics: aqaYear2Paper1Topics, prefix: "y2p1" },
+    { heading: "📘 Year 2 (A2) — Paper 2: National & International Economy (Extended)", topics: aqaYear2Paper2Topics, prefix: "y2p2" },
   ],
   "edexcel-a": [
     { heading: "Paper 1 — Markets & Business Behaviour", topics: edexcelAPaper1Topics, prefix: "p1" },
