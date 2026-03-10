@@ -90,7 +90,7 @@ export function ExampleBox({ children }: { children: ReactNode }) {
           color="bg-[hsl(var(--revision-amber)/0.15)] text-[hsl(var(--revision-amber))]"
         />
         <div className="revision-box-content">
-          <div className="sticky-note font-handwriting-alt text-base leading-relaxed">
+          <div className="sticky-note font-handwriting-alt text-[0.925rem] leading-[1.7]">
             {children}
           </div>
         </div>
