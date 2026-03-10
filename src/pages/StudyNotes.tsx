@@ -113,7 +113,7 @@ function SectionHeader({ section, index }: { section: PaperSection; index: numbe
       </div>
       {/* Section body */}
       <div className="border-2 border-border rounded-b-xl rounded-tr-xl p-5 bg-card">
-        <h2 className="font-handwriting text-2xl font-bold tracking-tight text-foreground">
+        <h2 className="font-handwriting text-xl font-bold tracking-tight text-foreground italic">
           {section.heading}
         </h2>
         <div className="flex items-center gap-3 mt-2">
