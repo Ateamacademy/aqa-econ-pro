@@ -116,8 +116,8 @@ function EquilibriumDot({
       />
       {/* Y-axis tick label (P₁ / P₂) */}
       <motion.text
-        x={axisLeft - 9} y={cy + 4} textAnchor="end" fontSize="11" fontWeight="800" fill={fill}
-        initial={{ opacity: 0, x: axisLeft - 20 }} animate={{ opacity: 1, x: axisLeft - 9 }}
+        x={axisLeft - 10} y={cy + 5} textAnchor="end" fontSize="13" fontWeight="900" fill={fill}
+        initial={{ opacity: 0, x: axisLeft - 22 }} animate={{ opacity: 1, x: axisLeft - 10 }}
         transition={{ delay: delay + 0.25, duration: 0.4 }}
       >
         {pLabel}
@@ -125,15 +125,15 @@ function EquilibriumDot({
 
       {/* X-axis tick mark */}
       <motion.line
-        x1={cx} y1={axisBottom} x2={cx} y2={axisBottom + 5}
+        x1={cx} y1={axisBottom} x2={cx} y2={axisBottom + 6}
         stroke={fill} strokeWidth={2}
         initial={{ opacity: 0 }} animate={{ opacity: 1 }}
         transition={{ delay: delay + 0.2 }}
       />
       {/* X-axis tick label (Q₁ / Q₂) */}
       <motion.text
-        x={cx} y={axisBottom + 18} textAnchor="middle" fontSize="11" fontWeight="800" fill={fill}
-        initial={{ opacity: 0, y: axisBottom + 28 }} animate={{ opacity: 1, y: axisBottom + 18 }}
+        x={cx} y={axisBottom + 20} textAnchor="middle" fontSize="13" fontWeight="900" fill={fill}
+        initial={{ opacity: 0, y: axisBottom + 30 }} animate={{ opacity: 1, y: axisBottom + 20 }}
         transition={{ delay: delay + 0.25, duration: 0.4 }}
       >
         {qLabel}
@@ -240,9 +240,9 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
     return () => obs.disconnect();
   }, []);
 
-  const W = 460;
-  const H = 360;
-  const margin = { top: 28, right: 28, bottom: 52, left: 60 };
+  const W = 480;
+  const H = 380;
+  const margin = { top: 32, right: 32, bottom: 62, left: 72 };
   const plotW = W - margin.left - margin.right;
   const plotH = H - margin.top - margin.bottom;
 
@@ -409,16 +409,22 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
                 </motion.text>
 
                 {/* Y-axis label */}
-                <text x={margin.left - 32} y={margin.top + plotH / 2} textAnchor="middle"
-                  transform={`rotate(-90 ${margin.left - 32} ${margin.top + plotH / 2})`}
-                  fontSize="11" fontWeight="800" fill="hsl(var(--foreground))" fontFamily="inherit" letterSpacing="0.02em">
+                <motion.text
+                  x={16} y={margin.top + plotH / 2} textAnchor="middle"
+                  transform={`rotate(-90 16 ${margin.top + plotH / 2})`}
+                  fontSize="13" fontWeight="900" fill="hsl(var(--foreground))" fontFamily="inherit" letterSpacing="0.04em"
+                  initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}
+                >
                   {diagram.yAxis}
-                </text>
+                </motion.text>
                 {/* X-axis label */}
-                <text x={margin.left + plotW / 2} y={H - 4} textAnchor="middle"
-                  fontSize="11" fontWeight="800" fill="hsl(var(--foreground))" fontFamily="inherit" letterSpacing="0.02em">
+                <motion.text
+                  x={margin.left + plotW / 2} y={H - 6} textAnchor="middle"
+                  fontSize="13" fontWeight="900" fill="hsl(var(--foreground))" fontFamily="inherit" letterSpacing="0.04em"
+                  initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}
+                >
                   {diagram.xAxis}
-                </text>
+                </motion.text>
 
                 {/* Demand D₁ */}
                 <AnimatedLine x1={dX1} y1={dY1} x2={dX2} y2={dY2} stroke={demandColor} gradientId="demandGrad" delay={0.3} />
