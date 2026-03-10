@@ -1063,11 +1063,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       return (
         <>
           <GLine {...mcL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={mcL.x2 - 24} y={mcL.y2 + 14} text="MC" color={COLORS.supply} />
+          <Label x={mcL.x2 + 4} y={mcL.y2 + 4} text="MC" color={COLORS.supply} />
           <GLine {...arL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={arL.x2 - 46} y={arL.y2 - 6} text="AR = D" color={COLORS.demand} />
+          <Label x={arL.x2 + 4} y={arL.y2 - 6} text="AR = D" color={COLORS.demand} />
           <GLine {...mrL} color={COLORS.mpb} dashed width={2} />
-          <Label x={mrL.x2 - 20} y={mrL.y2 - 6} text="MR" color={COLORS.mpb} />
+          <Label x={mrL.x2 + 4} y={mrL.y2 - 6} text="MR" color={COLORS.mpb} />
           {/* AC line (simplified as horizontal) */}
           <GLine x1={mx + pad} y1={acY} x2={mx + pw - pad} y2={acY} color={COLORS.lras} dashed width={1} />
           <Label x={mx + pw - pad - 18} y={acY - 6} text="AC" color={COLORS.lras} size={10} />
