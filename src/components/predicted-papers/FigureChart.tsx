@@ -13,7 +13,59 @@ interface DataSet {
 
 const COLORS = ["hsl(211, 100%, 50%)", "hsl(0, 75%, 55%)", "hsl(140, 60%, 40%)", "hsl(35, 80%, 50%)"];
 
+/**
+ * Parse markdown tables: | Year | Col1 | Col2 | ...
+ * Returns datasets if table has numeric year-like first column and numeric data columns.
+ */
+function parseMarkdownTable(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
+  const lines = description.split("\n").map(l => l.trim()).filter(Boolean);
+  
+  // Find table rows (lines with | separators)
+  const tableRows = lines.filter(l => l.startsWith("|") && l.endsWith("|"));
+  if (tableRows.length < 3) return null; // Need header + separator + at least 1 data row
+  
+  // Check for separator row (|---|---|)
+  const sepIdx = tableRows.findIndex(r => /^\|[\s\-:]+\|/.test(r.replace(/[^|\-:\s]/g, '')));
+  if (sepIdx < 1) return null;
+  
+  const parseCells = (row: string) => row.split("|").slice(1, -1).map(c => c.trim());
+  
+  const headers = parseCells(tableRows[sepIdx - 1]);
+  const dataRows = tableRows.slice(sepIdx + 1).map(parseCells);
+  
+  if (headers.length < 2 || dataRows.length < 2) return null;
+  
+  // First column should be year-like or category labels
+  const dataSets: DataSet[] = [];
+  
+  for (let col = 1; col < headers.length; col++) {
+    const points: { year: string; value: number }[] = [];
+    for (const row of dataRows) {
+      const label = row[0]?.replace(/\*+/g, '').trim();
+      const rawVal = row[col]?.replace(/[,%£$€*]/g, '').trim();
+      const val = parseFloat(rawVal);
+      if (label && !isNaN(val)) {
+        points.push({ year: label, value: val });
+      }
+    }
+    if (points.length >= 2) {
+      dataSets.push({ label: headers[col].replace(/\*+/g, '').trim(), points });
+    }
+  }
+  
+  if (dataSets.length === 0) return null;
+  return {
+    dataSets,
+    axisLabels: { x: headers[0].replace(/\*+/g, '').trim(), y: dataSets.length === 1 ? dataSets[0].label : "" },
+  };
+}
+
 function parseChartData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
+  // First try markdown table format
+  const tableResult = parseMarkdownTable(description);
+  if (tableResult) return tableResult;
+
+  // Fallback: line-based format (Line 1, data points, axis labels)
   const lines = description.split("\n").map(l => l.trim());
   const dataSets: DataSet[] = [];
   let current: DataSet | null = null;
@@ -32,11 +84,9 @@ function parseChartData(description: string): { dataSets: DataSet[]; axisLabels:
       current = { label: lineMatch[2].trim(), points: [] };
       continue;
     }
-    // Match data points: "2018: 2.5%", "• 2010: 0.15 million", "- 2020: 0.20"
     const dataMatch = line.match(/^[-•*]?\s*(\d{4})(?:\s*\([^)]*\))?\s*:\s*([\d.]+)\s*(%|million|billion|bn)?/i);
     if (dataMatch) {
       if (!current && !hasLineHeaders) {
-        // Single series - create a default dataset
         current = { label: "Value", points: [] };
       }
       if (current) {
