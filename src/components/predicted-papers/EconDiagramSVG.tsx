@@ -450,8 +450,8 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
                 )}
 
                 {/* Equilibria */}
-                <EquilibriumDot cx={eqX} cy={eqY} fill={eq1Color} label="E₁" pLabel="P₁" qLabel="Q₁" margin={margin} plotH={plotH} delay={0.9} glowId="eq1Grad" />
-                <EquilibriumDot cx={newEqX} cy={newEqY} fill={eq2Color} label="E₂" pLabel="P₂" qLabel="Q₂" margin={margin} plotH={plotH} delay={1.4} glowId="eq2Grad" />
+                <EquilibriumDot cx={eqX} cy={eqY} fill={eq1Color} label="E₁" pLabel="P₁" qLabel="Q₁" margin={margin} plotW={plotW} plotH={plotH} delay={0.9} glowId="eq1Grad" />
+                <EquilibriumDot cx={newEqX} cy={newEqY} fill={eq2Color} label="E₂" pLabel="P₂" qLabel="Q₂" margin={margin} plotW={plotW} plotH={plotH} delay={1.4} glowId="eq2Grad" />
               </svg>
             </div>
 
