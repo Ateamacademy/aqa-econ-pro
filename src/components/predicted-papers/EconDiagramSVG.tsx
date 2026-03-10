@@ -240,9 +240,9 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
     return () => obs.disconnect();
   }, []);
 
-  const W = 460;
-  const H = 360;
-  const margin = { top: 28, right: 28, bottom: 52, left: 60 };
+  const W = 480;
+  const H = 380;
+  const margin = { top: 32, right: 32, bottom: 62, left: 72 };
   const plotW = W - margin.left - margin.right;
   const plotH = H - margin.top - margin.bottom;
 
