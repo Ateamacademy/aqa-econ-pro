@@ -1,9 +1,8 @@
 /**
- * Predefined SVG Economics Diagram Templates — Premium 3D Edition
+ * Predefined SVG Economics Diagram Templates — Premium Polished Edition
  * 
- * Features: gradient curve strokes, radial-gradient equilibrium dots with
- * specular highlights, glow filters, drop shadows, animated arrow tips,
- * pill-badge legends, depth layering, and hover-triggered tooltip animations.
+ * All curves are clipped to the plot area so nothing extends beyond axes.
+ * Hover annotations provide A-Level exam tips for producing high-quality diagrams.
  */
 
 import { cn } from "@/lib/utils";
@@ -40,6 +39,7 @@ interface DiagramConfig {
   xAxis: string;
   yAxis: string;
   legend?: { label: string; color: string }[];
+  examTips: string[];
   render: (p: DrawParams) => JSX.Element;
 }
 
@@ -61,107 +61,74 @@ const COLORS = {
   lras: "#6b7280",
 };
 
-/* ── Premium SVG Defs (filters, gradients) ── */
-function PremiumDefs() {
+/* ── SVG Defs ── */
+function PremiumDefs({ mx, my, pw, ph }: { mx: number; my: number; pw: number; ph: number }) {
   return (
     <defs>
+      {/* Clip path — nothing renders outside the plot area */}
+      <clipPath id="plot-clip">
+        <rect x={mx} y={my} width={pw} height={ph} />
+      </clipPath>
       {/* Glow filters */}
-      <filter id="glow-blue" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="3" result="blur" />
-        <feFlood floodColor="#3b82f6" floodOpacity="0.4" result="color" />
-        <feComposite in="color" in2="blur" operator="in" result="glow" />
-        <feMerge><feMergeNode in="glow" /><feMergeNode in="SourceGraphic" /></feMerge>
-      </filter>
-      <filter id="glow-red" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="3" result="blur" />
-        <feFlood floodColor="#ef4444" floodOpacity="0.4" result="color" />
-        <feComposite in="color" in2="blur" operator="in" result="glow" />
-        <feMerge><feMergeNode in="glow" /><feMergeNode in="SourceGraphic" /></feMerge>
-      </filter>
-      <filter id="glow-amber" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="3" result="blur" />
-        <feFlood floodColor="#f59e0b" floodOpacity="0.4" result="color" />
-        <feComposite in="color" in2="blur" operator="in" result="glow" />
-        <feMerge><feMergeNode in="glow" /><feMergeNode in="SourceGraphic" /></feMerge>
-      </filter>
-      <filter id="glow-green" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="3" result="blur" />
-        <feFlood floodColor="#16a34a" floodOpacity="0.4" result="color" />
-        <feComposite in="color" in2="blur" operator="in" result="glow" />
-        <feMerge><feMergeNode in="glow" /><feMergeNode in="SourceGraphic" /></feMerge>
-      </filter>
-      <filter id="glow-purple" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="3" result="blur" />
-        <feFlood floodColor="#8b5cf6" floodOpacity="0.4" result="color" />
-        <feComposite in="color" in2="blur" operator="in" result="glow" />
-        <feMerge><feMergeNode in="glow" /><feMergeNode in="SourceGraphic" /></feMerge>
-      </filter>
-      {/* Drop shadow for depth */}
+      {["blue|#3b82f6", "red|#ef4444", "amber|#f59e0b", "green|#16a34a", "purple|#8b5cf6"].map(s => {
+        const [name, col] = s.split("|");
+        return (
+          <filter key={name} id={`glow-${name}`} x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2.5" result="blur" />
+            <feFlood floodColor={col} floodOpacity="0.35" result="color" />
+            <feComposite in="color" in2="blur" operator="in" result="glow" />
+            <feMerge><feMergeNode in="glow" /><feMergeNode in="SourceGraphic" /></feMerge>
+          </filter>
+        );
+      })}
       <filter id="drop-shadow">
-        <feDropShadow dx="1" dy="2" stdDeviation="2" floodColor="#000" floodOpacity="0.12" />
+        <feDropShadow dx="1" dy="1.5" stdDeviation="1.5" floodColor="#000" floodOpacity="0.10" />
       </filter>
       {/* Gradient strokes */}
-      <linearGradient id="grad-demand" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#60a5fa" />
-        <stop offset="100%" stopColor="#2563eb" />
-      </linearGradient>
-      <linearGradient id="grad-supply" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#f87171" />
-        <stop offset="100%" stopColor="#dc2626" />
-      </linearGradient>
-      <linearGradient id="grad-shifted" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#fbbf24" />
-        <stop offset="100%" stopColor="#d97706" />
-      </linearGradient>
-      <linearGradient id="grad-eq" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#4ade80" />
-        <stop offset="100%" stopColor="#16a34a" />
-      </linearGradient>
-      <linearGradient id="grad-area" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#a78bfa" />
-        <stop offset="100%" stopColor="#7c3aed" />
-      </linearGradient>
-      <linearGradient id="grad-lras" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stopColor="#9ca3af" />
-        <stop offset="100%" stopColor="#4b5563" />
-      </linearGradient>
+      {[
+        { id: "grad-demand", c1: "#60a5fa", c2: "#2563eb" },
+        { id: "grad-supply", c1: "#f87171", c2: "#dc2626" },
+        { id: "grad-shifted", c1: "#fbbf24", c2: "#d97706" },
+        { id: "grad-eq", c1: "#4ade80", c2: "#16a34a" },
+        { id: "grad-area", c1: "#a78bfa", c2: "#7c3aed" },
+        { id: "grad-lras", c1: "#9ca3af", c2: "#4b5563" },
+      ].map(g => (
+        <linearGradient key={g.id} id={g.id} x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor={g.c1} />
+          <stop offset="100%" stopColor={g.c2} />
+        </linearGradient>
+      ))}
       {/* Radial gradients for dots */}
-      <radialGradient id="dot-green" cx="35%" cy="35%">
-        <stop offset="0%" stopColor="#86efac" />
-        <stop offset="60%" stopColor="#16a34a" />
-        <stop offset="100%" stopColor="#15803d" />
-      </radialGradient>
-      <radialGradient id="dot-amber" cx="35%" cy="35%">
-        <stop offset="0%" stopColor="#fde68a" />
-        <stop offset="60%" stopColor="#f59e0b" />
-        <stop offset="100%" stopColor="#d97706" />
-      </radialGradient>
-      <radialGradient id="dot-blue" cx="35%" cy="35%">
-        <stop offset="0%" stopColor="#bfdbfe" />
-        <stop offset="60%" stopColor="#3b82f6" />
-        <stop offset="100%" stopColor="#2563eb" />
-      </radialGradient>
-      {/* Animated arrow marker */}
-      <marker id="arrow-demand" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="url(#grad-demand)" />
-      </marker>
-      <marker id="arrow-supply" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="url(#grad-supply)" />
-      </marker>
-      <marker id="arrow-shifted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-        <path d="M 0 0 L 10 5 L 0 10 z" fill="url(#grad-shifted)" />
-      </marker>
-      {/* Grid pattern */}
+      {[
+        { id: "dot-green", c1: "#86efac", c2: "#16a34a", c3: "#15803d" },
+        { id: "dot-amber", c1: "#fde68a", c2: "#f59e0b", c3: "#d97706" },
+        { id: "dot-blue", c1: "#bfdbfe", c2: "#3b82f6", c3: "#2563eb" },
+      ].map(g => (
+        <radialGradient key={g.id} id={g.id} cx="35%" cy="35%">
+          <stop offset="0%" stopColor={g.c1} />
+          <stop offset="60%" stopColor={g.c2} />
+          <stop offset="100%" stopColor={g.c3} />
+        </radialGradient>
+      ))}
+      {/* Arrow markers */}
+      {["demand", "supply", "shifted"].map(name => (
+        <marker key={name} id={`arrow-${name}`} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill={`url(#grad-${name})`} />
+        </marker>
+      ))}
+      {/* Grid */}
       <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.3" opacity="0.08" />
+        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.25" opacity="0.06" />
       </pattern>
     </defs>
   );
 }
 
-/* ── Gradient Line with optional glow ── */
+/* ── Drawing primitives ── */
+
 function GLine({ x1, y1, x2, y2, color, dashed, width = 2.5, glow, gradientId }: {
-  x1: number; y1: number; x2: number; y2: number; color: string; dashed?: boolean; width?: number; glow?: string; gradientId?: string;
+  x1: number; y1: number; x2: number; y2: number; color: string;
+  dashed?: boolean; width?: number; glow?: string; gradientId?: string;
 }) {
   return (
     <line
@@ -171,35 +138,58 @@ function GLine({ x1, y1, x2, y2, color, dashed, width = 2.5, glow, gradientId }:
       strokeDasharray={dashed ? "6,3" : undefined}
       strokeLinecap="round"
       filter={glow ? `url(#${glow})` : undefined}
-      className="transition-all duration-300"
     />
   );
 }
 
-function Label({ x, y, text, color, size = 10, anchor = "start", bold = true }: {
+function CurvePath({ d, color, dashed, width = 2.5, glow, gradientId }: {
+  d: string; color: string;
+  dashed?: boolean; width?: number; glow?: string; gradientId?: string;
+}) {
+  return (
+    <path
+      d={d}
+      fill="none"
+      stroke={gradientId ? `url(#${gradientId})` : color}
+      strokeWidth={width}
+      strokeDasharray={dashed ? "6,3" : undefined}
+      strokeLinecap="round"
+      filter={glow ? `url(#${glow})` : undefined}
+    />
+  );
+}
+
+function Label({ x, y, text, color, size = 11, anchor = "start", bold = true }: {
   x: number; y: number; text: string; color: string; size?: number; anchor?: string; bold?: boolean;
 }) {
   return (
     <text
       x={x} y={y} fill={color} textAnchor={anchor} fontSize={size}
-      fontWeight={bold ? "bold" : "normal"}
-      className="drop-shadow-sm select-none"
-      style={{ textShadow: `0 1px 2px rgba(0,0,0,0.1)` }}
+      fontWeight={bold ? 700 : 500}
+      className="select-none"
+      style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
     >
       {text}
     </text>
   );
 }
 
-/* ── Premium 3D Dot with radial gradient, specular highlight & hover tooltip ── */
+/* ── Equilibrium dot with hover exam-tip tooltip ── */
 function PremiumDot({ x, y, color, label, labelPos = "tr", gradientId, tooltipText }: {
-  x: number; y: number; color: string; label: string; labelPos?: "tr" | "tl" | "br";
+  x: number; y: number; color: string; label: string; labelPos?: "tr" | "tl" | "br" | "bl";
   gradientId?: string; tooltipText?: string;
 }) {
   const [hovered, setHovered] = useState(false);
-  const dx = labelPos === "tl" ? -8 : 8;
-  const dy = labelPos === "br" ? 14 : -6;
+  const dx = labelPos.includes("l") ? -10 : 8;
+  const dy = labelPos.includes("b") ? 15 : -8;
   const grad = gradientId || "dot-green";
+
+  // Calculate tooltip position — keep it on-screen
+  const tipW = 160;
+  const tipH = 34;
+  const tipX = x - tipW / 2;
+  const tipY = y - 44;
+
   return (
     <g
       onMouseEnter={() => setHovered(true)}
@@ -207,54 +197,82 @@ function PremiumDot({ x, y, color, label, labelPos = "tr", gradientId, tooltipTe
       className="cursor-pointer"
     >
       {/* Outer glow ring */}
-      <circle cx={x} cy={y} r={hovered ? 12 : 8} fill={color} opacity={hovered ? 0.18 : 0.1}
+      <circle cx={x} cy={y} r={hovered ? 11 : 7} fill={color} opacity={hovered ? 0.2 : 0.08}
         className="transition-all duration-300" />
-      {/* Main dot with radial gradient */}
-      <circle cx={x} cy={y} r={hovered ? 6 : 5} fill={`url(#${grad})`}
-        stroke="white" strokeWidth={2} filter="url(#drop-shadow)"
+      {/* Main dot */}
+      <circle cx={x} cy={y} r={hovered ? 5.5 : 4.5} fill={`url(#${grad})`}
+        stroke="white" strokeWidth={1.5} filter="url(#drop-shadow)"
         className="transition-all duration-300" />
       {/* Specular highlight */}
-      <circle cx={x - 1.5} cy={y - 1.5} r={1.8} fill="white" opacity={0.7} />
+      <circle cx={x - 1.2} cy={y - 1.2} r={1.5} fill="white" opacity={0.65} />
       {/* Label */}
-      <Label x={x + dx} y={y + dy} text={label} color={color} size={9} />
-      {/* Hover tooltip */}
+      <text x={x + dx} y={y + dy} fill={color} fontSize={10} fontWeight={700}
+        textAnchor={labelPos.includes("l") ? "end" : "start"}
+        style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
+      >
+        {label}
+      </text>
+      {/* Hover tooltip with exam tip */}
       {hovered && tooltipText && (
-        <g className="animate-fade-in">
+        <g>
           <rect
-            x={x - 50} y={y - 32} width={100} height={20} rx={10}
-            fill="hsl(var(--popover))" stroke="hsl(var(--border))" strokeWidth={1}
-            filter="url(#drop-shadow)"
+            x={tipX} y={tipY} width={tipW} height={tipH} rx={8}
+            fill="hsl(var(--popover))" stroke="hsl(var(--border))" strokeWidth={0.8}
+            filter="url(#drop-shadow)" opacity={0.97}
           />
-          <text x={x} y={y - 18} textAnchor="middle" fontSize={8} fill="hsl(var(--popover-foreground))" fontWeight="600">
-            {tooltipText}
+          {/* Tooltip arrow */}
+          <polygon
+            points={`${x - 5},${tipY + tipH} ${x},${tipY + tipH + 5} ${x + 5},${tipY + tipH}`}
+            fill="hsl(var(--popover))" stroke="hsl(var(--border))" strokeWidth={0.8}
+          />
+          <rect x={x - 6} y={tipY + tipH - 1} width={12} height={3} fill="hsl(var(--popover))" />
+          <text x={x} y={tipY + 14} textAnchor="middle" fontSize={8.5} fontWeight={600}
+            fill="hsl(var(--popover-foreground))"
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
+          >
+            {tooltipText.length > 24 ? tooltipText.slice(0, 24) : tooltipText}
           </text>
+          {tooltipText.length > 24 && (
+            <text x={x} y={tipY + 26} textAnchor="middle" fontSize={8} fontWeight={500}
+              fill="hsl(var(--muted-foreground))"
+              style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
+            >
+              {tooltipText.slice(24, 52)}
+            </text>
+          )}
         </g>
       )}
     </g>
   );
 }
 
+/* ── Dashed projection lines to axes ── */
 function DashedToAxes({ x, y, mx, ph, my, color, pLabel, qLabel }: {
   x: number; y: number; mx: number; ph: number; my: number; color: string; pLabel: string; qLabel: string;
 }) {
   return (
     <>
-      <line x1={mx} y1={y} x2={x} y2={y} stroke={color} strokeWidth={1} strokeDasharray="4,3" opacity={0.6} />
-      <line x1={x} y1={y} x2={x} y2={my + ph} stroke={color} strokeWidth={1} strokeDasharray="4,3" opacity={0.6} />
-      {/* Pill badges for axis labels */}
+      {/* Horizontal to Y-axis */}
+      <line x1={mx} y1={y} x2={x} y2={y} stroke={color} strokeWidth={0.8} strokeDasharray="3,3" opacity={0.5} />
+      {/* Vertical to X-axis */}
+      <line x1={x} y1={y} x2={x} y2={my + ph} stroke={color} strokeWidth={0.8} strokeDasharray="3,3" opacity={0.5} />
+      {/* Y-axis pill label */}
       <g>
-        <rect x={mx - 22} y={y - 7} width={18} height={14} rx={7} fill={color} opacity={0.15} />
-        <text x={mx - 13} y={y + 4} fill={color} fontSize={8} fontWeight="bold" textAnchor="middle">{pLabel}</text>
+        <rect x={mx - 24} y={y - 8} width={20} height={16} rx={8} fill={color} opacity={0.12} />
+        <text x={mx - 14} y={y + 4} fill={color} fontSize={9} fontWeight={700} textAnchor="middle"
+          style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{pLabel}</text>
       </g>
+      {/* X-axis pill label */}
       <g>
-        <rect x={x - 9} y={my + ph + 3} width={18} height={14} rx={7} fill={color} opacity={0.15} />
-        <text x={x} y={my + ph + 14} fill={color} fontSize={8} fontWeight="bold" textAnchor="middle">{qLabel}</text>
+        <rect x={x - 10} y={my + ph + 2} width={20} height={16} rx={8} fill={color} opacity={0.12} />
+        <text x={x} y={my + ph + 14} fill={color} fontSize={9} fontWeight={700} textAnchor="middle"
+          style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{qLabel}</text>
       </g>
     </>
   );
 }
 
-/* ── Premium Axes with depth ── */
+/* ── Axes with origin, arrow tips, bold labels ── */
 function Axes({ mx, my, pw, ph, xLabel, yLabel }: {
   mx: number; my: number; pw: number; ph: number; xLabel: string; yLabel: string;
 }) {
@@ -262,115 +280,102 @@ function Axes({ mx, my, pw, ph, xLabel, yLabel }: {
     <>
       {/* Background grid */}
       <rect x={mx} y={my} width={pw} height={ph} fill="url(#grid)" />
-      {/* Axes with gradient feel */}
-      <line x1={mx} y1={my} x2={mx} y2={my + ph} stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" opacity={0.8} />
-      <line x1={mx} y1={my + ph} x2={mx + pw} y2={my + ph} stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" opacity={0.8} />
-      {/* Arrow tips */}
-      <polygon points={`${mx - 5},${my + 8} ${mx},${my - 4} ${mx + 5},${my + 8}`} fill="currentColor" opacity={0.8} />
-      <polygon points={`${mx + pw - 8},${my + ph - 5} ${mx + pw + 4},${my + ph} ${mx + pw - 8},${my + ph + 5}`} fill="currentColor" opacity={0.8} />
-      {/* Origin label */}
-      <text x={mx - 10} y={my + ph + 14} fontSize={10} fontWeight="bold" fill="currentColor" opacity={0.5}>O</text>
-      {/* Axis labels with pill background */}
-      <g>
-        <text
-          x={mx - 10} y={my + ph / 2}
-          textAnchor="middle"
-          transform={`rotate(-90 ${mx - 10} ${my + ph / 2})`}
-          fontSize={10} fontWeight={700} fill="currentColor" opacity={0.7}
-        >{yLabel}</text>
-      </g>
-      <text x={mx + pw / 2} y={my + ph + 32} textAnchor="middle" fontSize={10} fontWeight={700} fill="currentColor" opacity={0.7}>{xLabel}</text>
+      {/* Y-axis */}
+      <line x1={mx} y1={my} x2={mx} y2={my + ph} stroke="currentColor" strokeWidth={2} strokeLinecap="round" opacity={0.75} />
+      {/* X-axis */}
+      <line x1={mx} y1={my + ph} x2={mx + pw} y2={my + ph} stroke="currentColor" strokeWidth={2} strokeLinecap="round" opacity={0.75} />
+      {/* Y-axis arrow */}
+      <polygon points={`${mx - 4},${my + 6} ${mx},${my - 2} ${mx + 4},${my + 6}`} fill="currentColor" opacity={0.75} />
+      {/* X-axis arrow */}
+      <polygon points={`${mx + pw - 6},${my + ph - 4} ${mx + pw + 2},${my + ph} ${mx + pw - 6},${my + ph + 4}`} fill="currentColor" opacity={0.75} />
+      {/* Origin */}
+      <text x={mx - 12} y={my + ph + 14} fontSize={11} fontWeight={700} fill="currentColor" opacity={0.45}
+        style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>O</text>
+      {/* Y-axis label */}
+      <text
+        x={mx - 14} y={my + ph / 2}
+        textAnchor="middle"
+        transform={`rotate(-90 ${mx - 14} ${my + ph / 2})`}
+        fontSize={11} fontWeight={700} fill="currentColor" opacity={0.6}
+        style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
+      >{yLabel}</text>
+      {/* X-axis label */}
+      <text x={mx + pw / 2} y={my + ph + 34} textAnchor="middle" fontSize={11} fontWeight={700} fill="currentColor" opacity={0.6}
+        style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{xLabel}</text>
     </>
   );
 }
 
-/* ── Shift Arrow (animated) ── */
+/* ── Shift Arrow ── */
 function ShiftArrow({ x1, y1, x2, y2, color }: { x1: number; y1: number; x2: number; y2: number; color: string }) {
   return (
     <line
       x1={x1} y1={y1} x2={x2} y2={y2}
       stroke={color} strokeWidth={1.5} strokeDasharray="3,2"
-      markerEnd="url(#arrow-shifted)"
-      opacity={0.7}
+      markerEnd="url(#arrow-shifted)" opacity={0.7}
     >
       <animate attributeName="stroke-dashoffset" from="10" to="0" dur="1.5s" repeatCount="indefinite" />
     </line>
   );
 }
 
-/* ── Pill-Badge Legend ── */
-function PillLegend({ items, mx, my }: { items: { label: string; color: string }[]; mx: number; my: number }) {
-  let xOff = 0;
-  return (
-    <g>
-      {items.map((item, i) => {
-        const w = item.label.length * 6.5 + 20;
-        const el = (
-          <g key={i} transform={`translate(${mx + xOff}, ${my})`}>
-            <rect width={w} height={18} rx={9} fill={item.color} opacity={0.15} />
-            <circle cx={10} cy={9} r={4} fill={item.color} />
-            <text x={18} y={13} fontSize={8} fontWeight="bold" fill={item.color}>{item.label}</text>
-          </g>
-        );
-        xOff += w + 6;
-        return el;
-      })}
-    </g>
-  );
-}
-
-/* ── Diagram Definitions ── */
+/* ══════════════════════ DIAGRAM CONFIGS ══════════════════════ */
 
 const supplyDemandBase = (p: DrawParams, shiftCurve?: "demand" | "supply", shiftDir?: "left" | "right") => {
   const { mx, my, pw, ph } = p;
-  const offset = shiftDir === "right" ? 50 : shiftDir === "left" ? -50 : 0;
-  
-  const d = { x1: mx + 30, y1: my + 15, x2: mx + pw - 30, y2: my + ph - 15 };
-  const s = { x1: mx + 30, y1: my + ph - 15, x2: mx + pw - 30, y2: my + 15 };
-  
-  const eqX = mx + pw * 0.45;
-  const eqY = my + ph * 0.45;
-  
+  const offset = shiftDir === "right" ? 45 : shiftDir === "left" ? -45 : 0;
+
+  // Curves strictly within plot area
+  const d = { x1: mx + 8, y1: my + 8, x2: mx + pw - 8, y2: my + ph - 8 };
+  const s = { x1: mx + 8, y1: my + ph - 8, x2: mx + pw - 8, y2: my + 8 };
+
+  const eqX = mx + pw * 0.47;
+  const eqY = my + ph * 0.47;
+
   let newX = eqX, newY = eqY;
   if (shiftCurve === "supply") {
-    newX = eqX + (shiftDir === "left" ? -25 : 25);
-    newY = eqY + (shiftDir === "left" ? -20 : 20);
+    newX = eqX + (shiftDir === "left" ? -22 : 22);
+    newY = eqY + (shiftDir === "left" ? -18 : 18);
   } else if (shiftCurve === "demand") {
-    newX = eqX + (shiftDir === "right" ? 25 : -25);
-    newY = eqY + (shiftDir === "right" ? -20 : 20);
+    newX = eqX + (shiftDir === "right" ? 22 : -22);
+    newY = eqY + (shiftDir === "right" ? -18 : 18);
   }
-  
+
   return (
     <>
+      {/* Demand */}
       <GLine {...d} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-      <Label x={d.x2 + 4} y={d.y2 + 4} text="D₁" color={COLORS.demand} />
-      
+      <Label x={d.x2 - 16} y={d.y2 - 4} text="D₁" color={COLORS.demand} />
+
       {shiftCurve === "demand" && (
         <>
           <GLine x1={d.x1 + offset} y1={d.y1} x2={d.x2 + offset} y2={d.y2} color={COLORS.demand} gradientId="grad-demand" dashed />
-          <Label x={d.x2 + offset + 4} y={d.y2 + 4} text="D₂" color={COLORS.demand} />
+          <Label x={d.x2 + offset - 16} y={d.y2 - 4} text="D₂" color={COLORS.demand} />
           <ShiftArrow x1={eqX} y1={eqY} x2={newX} y2={newY} color={COLORS.shifted} />
         </>
       )}
-      
+
+      {/* Supply */}
       <GLine {...s} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-      <Label x={s.x2 + 4} y={s.y2 + 4} text="S₁" color={COLORS.supply} />
-      
+      <Label x={s.x2 - 16} y={s.y2 + 14} text="S₁" color={COLORS.supply} />
+
       {shiftCurve === "supply" && (
         <>
           <GLine x1={s.x1 + offset} y1={s.y1} x2={s.x2 + offset} y2={s.y2} color={COLORS.supply} gradientId="grad-supply" dashed />
-          <Label x={s.x2 + offset + 4} y={s.y2 + 4} text="S₂" color={COLORS.supply} />
+          <Label x={s.x2 + offset - 16} y={s.y2 + 14} text="S₂" color={COLORS.supply} />
           <ShiftArrow x1={eqX} y1={eqY} x2={newX} y2={newY} color={COLORS.shifted} />
         </>
       )}
-      
+
       <DashedToAxes x={eqX} y={eqY} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Q₁" />
-      <PremiumDot x={eqX} y={eqY} color={COLORS.eq} label="E₁" gradientId="dot-green" tooltipText={`Equilibrium: P₁, Q₁`} />
-      
+      <PremiumDot x={eqX} y={eqY} color={COLORS.eq} label="E₁" gradientId="dot-green"
+        tooltipText="✓ Always label equilibrium clearly with E₁" />
+
       {shiftCurve && (
         <>
           <DashedToAxes x={newX} y={newY} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P₂" qLabel="Q₂" />
-          <PremiumDot x={newX} y={newY} color={COLORS.shifted} label="E₂" gradientId="dot-amber" tooltipText={`New Equilibrium: P₂, Q₂`} />
+          <PremiumDot x={newX} y={newY} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
+            tooltipText="✓ Show new equilibrium E₂ with P₂, Q₂" />
         </>
       )}
     </>
@@ -382,62 +387,101 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     title: "Supply & Demand Equilibrium",
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
     legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "Equilibrium", color: COLORS.eq }],
+    examTips: [
+      "Always label both axes: Price (P) on Y, Quantity (Q) on X",
+      "Mark the equilibrium point clearly as E with dashed lines to both axes",
+      "Label curves at the end: D for demand, S for supply",
+      "Include origin 'O' at the intersection of axes",
+    ],
     render: (p) => <>{supplyDemandBase(p)}</>,
   },
   demand_increase: {
     title: "Increase in Demand",
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
     legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "Shift →", color: COLORS.shifted }],
+    examTips: [
+      "Show the original D₁ and shifted D₂ clearly",
+      "Use an arrow to indicate direction of the shift",
+      "Mark both E₁ and E₂ with corresponding P and Q values",
+      "State the cause of the shift in your written answer",
+    ],
     render: (p) => <>{supplyDemandBase(p, "demand", "right")}</>,
   },
   demand_decrease: {
     title: "Decrease in Demand",
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
     legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "Shift ←", color: COLORS.shifted }],
+    examTips: [
+      "D₂ shifts LEFT — closer to origin",
+      "Price falls from P₁ to P₂, quantity falls from Q₁ to Q₂",
+      "Always draw dashed projection lines to both axes",
+    ],
     render: (p) => <>{supplyDemandBase(p, "demand", "left")}</>,
   },
   supply_increase: {
     title: "Increase in Supply",
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
     legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "Shift →", color: COLORS.shifted }],
+    examTips: [
+      "Supply shifts RIGHT — more supplied at every price",
+      "Price falls, quantity rises — show both changes clearly",
+      "Common causes: technology improvement, lower input costs",
+    ],
     render: (p) => <>{supplyDemandBase(p, "supply", "right")}</>,
   },
   supply_decrease: {
     title: "Decrease in Supply",
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
     legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "Shift ←", color: COLORS.shifted }],
+    examTips: [
+      "Supply shifts LEFT — less supplied at every price",
+      "Price rises, quantity falls",
+      "Common causes: higher costs of production, indirect taxes",
+    ],
     render: (p) => <>{supplyDemandBase(p, "supply", "left")}</>,
   },
   positive_externality: {
     title: "Positive Consumption Externality",
     xAxis: "Quantity (Q)", yAxis: "Price / Cost / Benefit",
-    legend: [{ label: "MPC", color: COLORS.supply }, { label: "MPB", color: COLORS.mpb }, { label: "MSB", color: COLORS.demand }, { label: "Welfare Loss", color: COLORS.area }],
+    legend: [{ label: "MPC = S", color: COLORS.supply }, { label: "MPB = D", color: COLORS.mpb }, { label: "MSB", color: COLORS.demand }, { label: "Welfare Loss", color: COLORS.area }],
+    examTips: [
+      "MSB is above MPB — third-party benefits not captured",
+      "Triangle of welfare loss between free market & social optimum",
+      "Label Qₘ (free market) and Q* (social optimum) on X-axis",
+      "Explain the divergence: MSB > MPB means under-consumption",
+    ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
-      const sX1 = mx + 30, sY1 = my + ph - 15, sX2 = mx + pw - 30, sY2 = my + 15;
-      const mpbX1 = mx + 30, mpbY1 = my + 15, mpbX2 = mx + pw - 50, mpbY2 = my + ph - 30;
-      const msbX1 = mx + 60, msbY1 = my + 15, msbX2 = mx + pw - 20, msbY2 = my + ph - 30;
-      const freeEqX = mx + pw * 0.38, freeEqY = my + ph * 0.42;
-      const optEqX = mx + pw * 0.52, optEqY = my + ph * 0.35;
+      // Supply (MPC) — upward sloping
+      const sX1 = mx + 8, sY1 = my + ph - 8, sX2 = mx + pw - 8, sY2 = my + 8;
+      // MPB — downward, lower
+      const mpbX1 = mx + 8, mpbY1 = my + 20, mpbX2 = mx + pw * 0.72, mpbY2 = my + ph - 20;
+      // MSB — downward, higher (shifted right of MPB)
+      const msbX1 = mx + pw * 0.15, msbY1 = my + 12, msbX2 = mx + pw - 8, msbY2 = my + ph - 20;
+
+      const freeEqX = mx + pw * 0.36, freeEqY = my + ph * 0.44;
+      const optEqX = mx + pw * 0.50, optEqY = my + ph * 0.36;
+
       return (
         <>
           <GLine x1={sX1} y1={sY1} x2={sX2} y2={sY2} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={sX2 + 4} y={sY2 + 4} text="S = MPC" color={COLORS.supply} />
-          <GLine x1={mpbX1} y1={mpbY1} x2={mpbX2} y2={mpbY2} color={COLORS.mpb} />
-          <Label x={mpbX2 + 4} y={mpbY2 + 4} text="D = MPB" color={COLORS.mpb} />
+          <Label x={sX2 - 50} y={sY2 + 14} text="S = MPC" color={COLORS.supply} />
+          <GLine x1={mpbX1} y1={mpbY1} x2={mpbX2} y2={mpbY2} color={COLORS.mpb} width={2} />
+          <Label x={mpbX2 - 4} y={mpbY2 + 14} text="D = MPB" color={COLORS.mpb} />
           <GLine x1={msbX1} y1={msbY1} x2={msbX2} y2={msbY2} color={COLORS.demand} gradientId="grad-demand" dashed glow="glow-blue" />
-          <Label x={msbX2 + 4} y={msbY2 + 4} text="MSB" color={COLORS.demand} />
+          <Label x={msbX2 - 22} y={msbY2 + 14} text="MSB" color={COLORS.demand} />
+          {/* Welfare loss triangle */}
           <polygon
-            points={`${freeEqX},${freeEqY} ${optEqX},${optEqY} ${mx + pw * 0.45},${my + ph * 0.55}`}
-            fill={COLORS.area} fillOpacity={0.12} stroke="url(#grad-area)" strokeWidth={1.5} strokeDasharray="3,3"
-            filter="url(#glow-purple)"
+            points={`${freeEqX},${freeEqY} ${optEqX},${optEqY} ${mx + pw * 0.43},${my + ph * 0.54}`}
+            fill={COLORS.area} fillOpacity={0.10} stroke="url(#grad-area)" strokeWidth={1.5} strokeDasharray="3,3"
           />
-          <Label x={mx + pw * 0.42} y={my + ph * 0.48} text="Welfare" color={COLORS.area} size={8} anchor="middle" />
-          <Label x={mx + pw * 0.42} y={my + ph * 0.53} text="Loss" color={COLORS.area} size={8} anchor="middle" />
+          <Label x={mx + pw * 0.41} y={my + ph * 0.50} text="DWL" color={COLORS.area} size={9} anchor="middle" />
           <DashedToAxes x={freeEqX} y={freeEqY} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Qₘ" />
-          <PremiumDot x={freeEqX} y={freeEqY} color={COLORS.eq} label="Free Market" gradientId="dot-green" tooltipText="Free market equilibrium" />
+          <PremiumDot x={freeEqX} y={freeEqY} color={COLORS.eq} label="Free Mkt" gradientId="dot-green"
+            tooltipText="✓ Free market under-provides — Qₘ < Q*" />
           <DashedToAxes x={optEqX} y={optEqY} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P*" qLabel="Q*" />
-          <PremiumDot x={optEqX} y={optEqY} color={COLORS.shifted} label="Social Optimum" gradientId="dot-amber" tooltipText="Socially optimal output" />
+          <PremiumDot x={optEqX} y={optEqY} color={COLORS.shifted} label="Soc. Opt." labelPos="tr" gradientId="dot-amber"
+            tooltipText="✓ Socially optimal — where MSB = MSC" />
         </>
       );
     },
@@ -445,33 +489,41 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   negative_externality: {
     title: "Negative Consumption Externality",
     xAxis: "Quantity (Q)", yAxis: "Price / Cost / Benefit",
-    legend: [{ label: "MPC", color: COLORS.supply }, { label: "MPB", color: COLORS.mpb }, { label: "MSB", color: COLORS.demand }, { label: "Welfare Loss", color: COLORS.area }],
+    legend: [{ label: "MPC = S", color: COLORS.supply }, { label: "MPB = D", color: COLORS.mpb }, { label: "MSB", color: COLORS.demand }, { label: "Welfare Loss", color: COLORS.area }],
+    examTips: [
+      "MSB is below MPB — third-party costs not accounted for",
+      "Free market over-provides: Qₘ > Q*",
+      "Show welfare loss triangle between the two equilibria",
+      "Government may impose indirect tax to correct the failure",
+    ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
-      const sX1 = mx + 30, sY1 = my + ph - 15, sX2 = mx + pw - 30, sY2 = my + 15;
-      const mpbX1 = mx + 60, mpbY1 = my + 15, mpbX2 = mx + pw - 20, mpbY2 = my + ph - 30;
-      const msbX1 = mx + 30, msbY1 = my + 15, msbX2 = mx + pw - 50, msbY2 = my + ph - 30;
-      const freeEqX = mx + pw * 0.52, freeEqY = my + ph * 0.35;
-      const optEqX = mx + pw * 0.38, optEqY = my + ph * 0.42;
+      const sX1 = mx + 8, sY1 = my + ph - 8, sX2 = mx + pw - 8, sY2 = my + 8;
+      const mpbX1 = mx + pw * 0.15, mpbY1 = my + 12, mpbX2 = mx + pw - 8, mpbY2 = my + ph - 20;
+      const msbX1 = mx + 8, msbY1 = my + 20, msbX2 = mx + pw * 0.72, msbY2 = my + ph - 20;
+
+      const freeEqX = mx + pw * 0.50, freeEqY = my + ph * 0.36;
+      const optEqX = mx + pw * 0.36, optEqY = my + ph * 0.44;
+
       return (
         <>
           <GLine x1={sX1} y1={sY1} x2={sX2} y2={sY2} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={sX2 + 4} y={sY2 + 4} text="S = MPC" color={COLORS.supply} />
-          <GLine x1={mpbX1} y1={mpbY1} x2={mpbX2} y2={mpbY2} color={COLORS.mpb} />
-          <Label x={mpbX2 + 4} y={mpbY2 + 4} text="D = MPB" color={COLORS.mpb} />
+          <Label x={sX2 - 50} y={sY2 + 14} text="S = MPC" color={COLORS.supply} />
+          <GLine x1={mpbX1} y1={mpbY1} x2={mpbX2} y2={mpbY2} color={COLORS.mpb} width={2} />
+          <Label x={mpbX2 - 4} y={mpbY2 + 14} text="D = MPB" color={COLORS.mpb} />
           <GLine x1={msbX1} y1={msbY1} x2={msbX2} y2={msbY2} color={COLORS.demand} gradientId="grad-demand" dashed glow="glow-blue" />
-          <Label x={msbX2 + 4} y={msbY2 + 4} text="MSB" color={COLORS.demand} />
+          <Label x={msbX2 - 22} y={msbY2 + 14} text="MSB" color={COLORS.demand} />
           <polygon
-            points={`${optEqX},${optEqY} ${freeEqX},${freeEqY} ${mx + pw * 0.45},${my + ph * 0.55}`}
-            fill={COLORS.area} fillOpacity={0.12} stroke="url(#grad-area)" strokeWidth={1.5} strokeDasharray="3,3"
-            filter="url(#glow-purple)"
+            points={`${optEqX},${optEqY} ${freeEqX},${freeEqY} ${mx + pw * 0.43},${my + ph * 0.54}`}
+            fill={COLORS.area} fillOpacity={0.10} stroke="url(#grad-area)" strokeWidth={1.5} strokeDasharray="3,3"
           />
-          <Label x={mx + pw * 0.45} y={my + ph * 0.48} text="Welfare" color={COLORS.area} size={8} anchor="middle" />
-          <Label x={mx + pw * 0.45} y={my + ph * 0.53} text="Loss" color={COLORS.area} size={8} anchor="middle" />
+          <Label x={mx + pw * 0.44} y={my + ph * 0.50} text="DWL" color={COLORS.area} size={9} anchor="middle" />
           <DashedToAxes x={freeEqX} y={freeEqY} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Qₘ" />
-          <PremiumDot x={freeEqX} y={freeEqY} color={COLORS.eq} label="Free Market" gradientId="dot-green" tooltipText="Free market equilibrium" />
+          <PremiumDot x={freeEqX} y={freeEqY} color={COLORS.eq} label="Free Mkt" gradientId="dot-green"
+            tooltipText="✓ Over-consumption — Qₘ exceeds Q*" />
           <DashedToAxes x={optEqX} y={optEqY} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P*" qLabel="Q*" />
-          <PremiumDot x={optEqX} y={optEqY} color={COLORS.shifted} label="Social Optimum" gradientId="dot-amber" tooltipText="Socially optimal output" />
+          <PremiumDot x={optEqX} y={optEqY} color={COLORS.shifted} label="Soc. Opt." gradientId="dot-amber"
+            tooltipText="✓ Socially optimal where MSB = MSC" />
         </>
       );
     },
@@ -479,30 +531,41 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   negative_production_externality: {
     title: "Negative Production Externality",
     xAxis: "Quantity (Q)", yAxis: "Price / Cost / Benefit",
-    legend: [{ label: "MPC", color: COLORS.mpc }, { label: "MSC", color: COLORS.msc }, { label: "MSB", color: COLORS.demand }],
+    legend: [{ label: "MPC", color: COLORS.mpc }, { label: "MSC", color: COLORS.msc }, { label: "D = MSB", color: COLORS.demand }],
+    examTips: [
+      "MSC is above MPC — external costs of production",
+      "Overproduction in free market: Qₘ > Q*",
+      "Welfare loss triangle between MSC and MPC at free market output",
+      "Policy: tax = external cost per unit to internalise the externality",
+    ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
-      const mpcX1 = mx + 30, mpcY1 = my + ph - 15, mpcX2 = mx + pw - 20, mpcY2 = my + 25;
-      const mscX1 = mx + 60, mscY1 = my + ph - 15, mscX2 = mx + pw - 20, mscY2 = my + 5;
-      const dX1 = mx + 30, dY1 = my + 15, dX2 = mx + pw - 30, dY2 = my + ph - 15;
-      const freeEqX = mx + pw * 0.48, freeEqY = my + ph * 0.40;
-      const optEqX = mx + pw * 0.38, optEqY = my + ph * 0.35;
+      const mpcX1 = mx + 8, mpcY1 = my + ph - 8, mpcX2 = mx + pw - 8, mpcY2 = my + 25;
+      const mscX1 = mx + pw * 0.12, mscY1 = my + ph - 8, mscX2 = mx + pw - 8, mscY2 = my + 8;
+      const dX1 = mx + 8, dY1 = my + 15, dX2 = mx + pw - 8, dY2 = my + ph - 8;
+
+      const freeEqX = mx + pw * 0.47, freeEqY = my + ph * 0.42;
+      const optEqX = mx + pw * 0.37, optEqY = my + ph * 0.37;
+
       return (
         <>
-          <GLine x1={mpcX1} y1={mpcY1} x2={mpcX2} y2={mpcY2} color={COLORS.mpc} />
-          <Label x={mpcX2 + 4} y={mpcY2 + 4} text="S = MPC" color={COLORS.mpc} />
+          <GLine x1={mpcX1} y1={mpcY1} x2={mpcX2} y2={mpcY2} color={COLORS.mpc} width={2} />
+          <Label x={mpcX2 - 42} y={mpcY2 + 14} text="S = MPC" color={COLORS.mpc} />
           <GLine x1={mscX1} y1={mscY1} x2={mscX2} y2={mscY2} color={COLORS.msc} gradientId="grad-supply" dashed glow="glow-red" />
-          <Label x={mscX2 + 4} y={mscY2 - 4} text="MSC" color={COLORS.msc} />
+          <Label x={mscX2 - 26} y={mscY2 + 14} text="MSC" color={COLORS.msc} />
           <GLine x1={dX1} y1={dY1} x2={dX2} y2={dY2} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dX2 + 4} y={dY2 + 4} text="D = MSB" color={COLORS.demand} />
+          <Label x={dX2 - 46} y={dY2 - 4} text="D = MSB" color={COLORS.demand} />
           <polygon
-            points={`${optEqX},${optEqY} ${freeEqX},${freeEqY} ${mx + pw * 0.43},${my + ph * 0.28}`}
-            fill={COLORS.area} fillOpacity={0.12} stroke="url(#grad-area)" strokeWidth={1.5} strokeDasharray="3,3"
+            points={`${optEqX},${optEqY} ${freeEqX},${freeEqY} ${mx + pw * 0.42},${my + ph * 0.28}`}
+            fill={COLORS.area} fillOpacity={0.10} stroke="url(#grad-area)" strokeWidth={1.5} strokeDasharray="3,3"
           />
+          <Label x={mx + pw * 0.42} y={my + ph * 0.36} text="DWL" color={COLORS.area} size={9} anchor="middle" />
           <DashedToAxes x={freeEqX} y={freeEqY} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Qₘ" />
-          <PremiumDot x={freeEqX} y={freeEqY} color={COLORS.eq} label="Free Market" gradientId="dot-green" tooltipText="Free market equilibrium" />
+          <PremiumDot x={freeEqX} y={freeEqY} color={COLORS.eq} label="Free Mkt" gradientId="dot-green"
+            tooltipText="✓ Free market over-produces at Qₘ" />
           <DashedToAxes x={optEqX} y={optEqY} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P*" qLabel="Q*" />
-          <PremiumDot x={optEqX} y={optEqY} color={COLORS.shifted} label="Social Optimum" gradientId="dot-amber" tooltipText="Socially optimal output" />
+          <PremiumDot x={optEqX} y={optEqY} color={COLORS.shifted} label="Soc. Opt." gradientId="dot-amber"
+            tooltipText="✓ Optimal output where MSC = MSB" />
         </>
       );
     },
@@ -511,29 +574,41 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     title: "Increase in Aggregate Demand",
     xAxis: "Real GDP (Y)", yAxis: "Price Level (PL)",
     legend: [{ label: "AD", color: COLORS.demand }, { label: "SRAS", color: COLORS.supply }, { label: "LRAS", color: COLORS.lras }],
+    examTips: [
+      "LRAS is vertical at Yf (full employment output)",
+      "AD shifts RIGHT — demand-pull inflation if near Yf",
+      "Show both equilibria E₁ and E₂ with PL and Y values",
+      "Explain the multiplier effect in your written answer",
+    ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
-      const lrasX = mx + pw * 0.65;
-      const srasX1 = mx + 20, srasY1 = my + ph - 20, srasX2 = mx + pw - 20, srasY2 = my + 30;
-      const ad1X1 = mx + 20, ad1Y1 = my + 20, ad1X2 = mx + pw * 0.6, ad1Y2 = my + ph - 20;
-      const ad2X1 = mx + 60, ad2Y1 = my + 20, ad2X2 = mx + pw * 0.8, ad2Y2 = my + ph - 20;
-      const eq1X = mx + pw * 0.38, eq1Y = my + ph * 0.48;
-      const eq2X = mx + pw * 0.50, eq2Y = my + ph * 0.38;
+      const lrasX = mx + pw * 0.62;
+      const eq1X = mx + pw * 0.37, eq1Y = my + ph * 0.50;
+      const eq2X = mx + pw * 0.48, eq2Y = my + ph * 0.40;
+
       return (
         <>
-          <GLine x1={lrasX} y1={my + 10} x2={lrasX} y2={my + ph - 10} color={COLORS.lras} gradientId="grad-lras" width={2} />
-          <Label x={lrasX + 4} y={my + 20} text="LRAS" color={COLORS.lras} />
-          <GLine x1={srasX1} y1={srasY1} x2={srasX2} y2={srasY2} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={srasX2 + 4} y={srasY2 + 4} text="SRAS" color={COLORS.supply} />
-          <GLine x1={ad1X1} y1={ad1Y1} x2={ad1X2} y2={ad1Y2} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={ad1X2 + 4} y={ad1Y2 + 4} text="AD₁" color={COLORS.demand} />
-          <GLine x1={ad2X1} y1={ad2Y1} x2={ad2X2} y2={ad2Y2} color={COLORS.demand} gradientId="grad-demand" dashed />
-          <Label x={ad2X2 + 4} y={ad2Y2 + 4} text="AD₂" color={COLORS.demand} />
-          <ShiftArrow x1={(ad1X1 + ad1X2) / 2} y1={(ad1Y1 + ad1Y2) / 2} x2={(ad2X1 + ad2X2) / 2} y2={(ad2Y1 + ad2Y2) / 2} color={COLORS.shifted} />
+          {/* LRAS */}
+          <GLine x1={lrasX} y1={my + 8} x2={lrasX} y2={my + ph - 8} color={COLORS.lras} gradientId="grad-lras" width={2} />
+          <Label x={lrasX + 6} y={my + 20} text="LRAS" color={COLORS.lras} />
+          {/* SRAS */}
+          <GLine x1={mx + 8} y1={my + ph - 15} x2={mx + pw - 8} y2={my + 25} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
+          <Label x={mx + pw - 40} y={my + 20} text="SRAS" color={COLORS.supply} />
+          {/* AD₁ */}
+          <GLine x1={mx + 15} y1={my + 18} x2={mx + pw * 0.58} y2={my + ph - 15} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <Label x={mx + pw * 0.52} y={my + ph - 4} text="AD₁" color={COLORS.demand} />
+          {/* AD₂ */}
+          <GLine x1={mx + pw * 0.15} y1={my + 18} x2={mx + pw * 0.72} y2={my + ph - 15} color={COLORS.demand} gradientId="grad-demand" dashed />
+          <Label x={mx + pw * 0.66} y={my + ph - 4} text="AD₂" color={COLORS.demand} />
+          {/* Shift arrow */}
+          <ShiftArrow x1={mx + pw * 0.36} y1={my + ph * 0.55} x2={mx + pw * 0.46} y2={my + ph * 0.55} color={COLORS.shifted} />
+
           <DashedToAxes x={eq1X} y={eq1Y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="PL₁" qLabel="Y₁" />
-          <PremiumDot x={eq1X} y={eq1Y} color={COLORS.eq} label="E₁" gradientId="dot-green" tooltipText="Initial equilibrium" />
+          <PremiumDot x={eq1X} y={eq1Y} color={COLORS.eq} label="E₁" gradientId="dot-green"
+            tooltipText="✓ Label initial equilibrium clearly" />
           <DashedToAxes x={eq2X} y={eq2Y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="PL₂" qLabel="Y₂" />
-          <PremiumDot x={eq2X} y={eq2Y} color={COLORS.shifted} label="E₂" gradientId="dot-amber" tooltipText="New equilibrium after AD↑" />
+          <PremiumDot x={eq2X} y={eq2Y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
+            tooltipText="✓ AD↑ → higher PL & real GDP" />
         </>
       );
     },
@@ -542,29 +617,35 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     title: "Decrease in Aggregate Demand",
     xAxis: "Real GDP (Y)", yAxis: "Price Level (PL)",
     legend: [{ label: "AD", color: COLORS.demand }, { label: "SRAS", color: COLORS.supply }, { label: "LRAS", color: COLORS.lras }],
+    examTips: [
+      "AD shifts LEFT — deflationary pressure",
+      "Real GDP falls, price level falls",
+      "Risk of demand-deficient (cyclical) unemployment",
+    ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
-      const lrasX = mx + pw * 0.65;
-      const srasX1 = mx + 20, srasY1 = my + ph - 20, srasX2 = mx + pw - 20, srasY2 = my + 30;
-      const ad1X1 = mx + 60, ad1Y1 = my + 20, ad1X2 = mx + pw * 0.8, ad1Y2 = my + ph - 20;
-      const ad2X1 = mx + 20, ad2Y1 = my + 20, ad2X2 = mx + pw * 0.6, ad2Y2 = my + ph - 20;
-      const eq1X = mx + pw * 0.50, eq1Y = my + ph * 0.38;
-      const eq2X = mx + pw * 0.38, eq2Y = my + ph * 0.48;
+      const lrasX = mx + pw * 0.62;
+      const eq1X = mx + pw * 0.48, eq1Y = my + ph * 0.40;
+      const eq2X = mx + pw * 0.37, eq2Y = my + ph * 0.50;
+
       return (
         <>
-          <GLine x1={lrasX} y1={my + 10} x2={lrasX} y2={my + ph - 10} color={COLORS.lras} gradientId="grad-lras" width={2} />
-          <Label x={lrasX + 4} y={my + 20} text="LRAS" color={COLORS.lras} />
-          <GLine x1={srasX1} y1={srasY1} x2={srasX2} y2={srasY2} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={srasX2 + 4} y={srasY2 + 4} text="SRAS" color={COLORS.supply} />
-          <GLine x1={ad1X1} y1={ad1Y1} x2={ad1X2} y2={ad1Y2} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={ad1X2 + 4} y={ad1Y2 + 4} text="AD₁" color={COLORS.demand} />
-          <GLine x1={ad2X1} y1={ad2Y1} x2={ad2X2} y2={ad2Y2} color={COLORS.demand} gradientId="grad-demand" dashed />
-          <Label x={ad2X2 + 4} y={ad2Y2 + 4} text="AD₂" color={COLORS.demand} />
-          <ShiftArrow x1={(ad1X1 + ad1X2) / 2} y1={(ad1Y1 + ad1Y2) / 2} x2={(ad2X1 + ad2X2) / 2} y2={(ad2Y1 + ad2Y2) / 2} color={COLORS.shifted} />
+          <GLine x1={lrasX} y1={my + 8} x2={lrasX} y2={my + ph - 8} color={COLORS.lras} gradientId="grad-lras" width={2} />
+          <Label x={lrasX + 6} y={my + 20} text="LRAS" color={COLORS.lras} />
+          <GLine x1={mx + 8} y1={my + ph - 15} x2={mx + pw - 8} y2={my + 25} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
+          <Label x={mx + pw - 40} y={my + 20} text="SRAS" color={COLORS.supply} />
+          <GLine x1={mx + pw * 0.15} y1={my + 18} x2={mx + pw * 0.72} y2={my + ph - 15} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <Label x={mx + pw * 0.66} y={my + ph - 4} text="AD₁" color={COLORS.demand} />
+          <GLine x1={mx + 15} y1={my + 18} x2={mx + pw * 0.58} y2={my + ph - 15} color={COLORS.demand} gradientId="grad-demand" dashed />
+          <Label x={mx + pw * 0.52} y={my + ph - 4} text="AD₂" color={COLORS.demand} />
+          <ShiftArrow x1={mx + pw * 0.46} y1={my + ph * 0.55} x2={mx + pw * 0.36} y2={my + ph * 0.55} color={COLORS.shifted} />
+
           <DashedToAxes x={eq1X} y={eq1Y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="PL₁" qLabel="Y₁" />
-          <PremiumDot x={eq1X} y={eq1Y} color={COLORS.eq} label="E₁" gradientId="dot-green" tooltipText="Initial equilibrium" />
+          <PremiumDot x={eq1X} y={eq1Y} color={COLORS.eq} label="E₁" gradientId="dot-green"
+            tooltipText="✓ Initial equilibrium before AD↓" />
           <DashedToAxes x={eq2X} y={eq2Y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="PL₂" qLabel="Y₂" />
-          <PremiumDot x={eq2X} y={eq2Y} color={COLORS.shifted} label="E₂" gradientId="dot-amber" tooltipText="New equilibrium after AD↓" />
+          <PremiumDot x={eq2X} y={eq2Y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
+            tooltipText="✓ AD↓ → lower PL & GDP (recession)" />
         </>
       );
     },
@@ -573,28 +654,34 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     title: "Decrease in SRAS (Cost-Push Inflation)",
     xAxis: "Real GDP (Y)", yAxis: "Price Level (PL)",
     legend: [{ label: "SRAS", color: COLORS.supply }, { label: "AD", color: COLORS.demand }, { label: "LRAS", color: COLORS.lras }],
+    examTips: [
+      "SRAS shifts LEFT — higher costs of production",
+      "Creates stagflation: higher PL AND lower real GDP",
+      "Key causes: oil price shocks, rising wages, supply chain disruption",
+    ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
-      const lrasX = mx + pw * 0.65;
-      const sras1X1 = mx + 20, sras1Y1 = my + ph - 20, sras1X2 = mx + pw - 20, sras1Y2 = my + 30;
-      const sras2X1 = mx + 50, sras2Y1 = my + ph - 20, sras2X2 = mx + pw - 20, sras2Y2 = my + 10;
-      const adX1 = mx + 30, adY1 = my + 20, adX2 = mx + pw * 0.7, adY2 = my + ph - 20;
-      const eq1X = mx + pw * 0.45, eq1Y = my + ph * 0.42;
-      const eq2X = mx + pw * 0.38, eq2Y = my + ph * 0.32;
+      const lrasX = mx + pw * 0.62;
+      const eq1X = mx + pw * 0.44, eq1Y = my + ph * 0.44;
+      const eq2X = mx + pw * 0.36, eq2Y = my + ph * 0.34;
+
       return (
         <>
-          <GLine x1={lrasX} y1={my + 10} x2={lrasX} y2={my + ph - 10} color={COLORS.lras} gradientId="grad-lras" width={2} />
-          <Label x={lrasX + 4} y={my + 20} text="LRAS" color={COLORS.lras} />
-          <GLine x1={sras1X1} y1={sras1Y1} x2={sras1X2} y2={sras1Y2} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={sras1X2 + 4} y={sras1Y2 + 4} text="SRAS₁" color={COLORS.supply} />
-          <GLine x1={sras2X1} y1={sras2Y1} x2={sras2X2} y2={sras2Y2} color={COLORS.supply} gradientId="grad-supply" dashed />
-          <Label x={sras2X2 + 4} y={sras2Y2 + 4} text="SRAS₂" color={COLORS.supply} />
-          <GLine x1={adX1} y1={adY1} x2={adX2} y2={adY2} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={adX2 + 4} y={adY2 + 4} text="AD" color={COLORS.demand} />
+          <GLine x1={lrasX} y1={my + 8} x2={lrasX} y2={my + ph - 8} color={COLORS.lras} gradientId="grad-lras" width={2} />
+          <Label x={lrasX + 6} y={my + 20} text="LRAS" color={COLORS.lras} />
+          <GLine x1={mx + 8} y1={my + ph - 15} x2={mx + pw - 8} y2={my + 25} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
+          <Label x={mx + pw - 44} y={my + 20} text="SRAS₁" color={COLORS.supply} />
+          <GLine x1={mx + pw * 0.1} y1={my + ph - 15} x2={mx + pw * 0.85} y2={my + 12} color={COLORS.supply} gradientId="grad-supply" dashed />
+          <Label x={mx + pw * 0.78} y={my + 10} text="SRAS₂" color={COLORS.supply} />
+          <GLine x1={mx + 15} y1={my + 18} x2={mx + pw * 0.65} y2={my + ph - 15} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <Label x={mx + pw * 0.58} y={my + ph - 4} text="AD" color={COLORS.demand} />
+
           <DashedToAxes x={eq1X} y={eq1Y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="PL₁" qLabel="Y₁" />
-          <PremiumDot x={eq1X} y={eq1Y} color={COLORS.eq} label="E₁" gradientId="dot-green" tooltipText="Initial equilibrium" />
+          <PremiumDot x={eq1X} y={eq1Y} color={COLORS.eq} label="E₁" gradientId="dot-green"
+            tooltipText="✓ Initial equilibrium before cost shock" />
           <DashedToAxes x={eq2X} y={eq2Y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="PL₂" qLabel="Y₂" />
-          <PremiumDot x={eq2X} y={eq2Y} color={COLORS.shifted} label="E₂" gradientId="dot-amber" tooltipText="Stagflation: higher PL, lower Y" />
+          <PremiumDot x={eq2X} y={eq2Y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
+            tooltipText="✓ Stagflation: ↑PL + ↓GDP together" />
         </>
       );
     },
@@ -603,29 +690,41 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     title: "Effect of an Indirect Tax",
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
     legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "Tax Revenue", color: COLORS.area }],
+    examTips: [
+      "Supply shifts LEFT by the amount of the tax per unit",
+      "Show tax revenue as shaded area between P_consumer and P_producer",
+      "Consumer burden depends on PED — more inelastic = more burden",
+      "Label S₁ (pre-tax) and S₁+Tax clearly",
+    ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
-      const dX1 = mx + 30, dY1 = my + 15, dX2 = mx + pw - 30, dY2 = my + ph - 15;
-      const s1X1 = mx + 30, s1Y1 = my + ph - 15, s1X2 = mx + pw - 30, s1Y2 = my + 15;
-      const s2X1 = mx + 60, s2Y1 = my + ph - 15, s2X2 = mx + pw - 10, s2Y2 = my + 15;
-      const eq1X = mx + pw * 0.45, eq1Y = my + ph * 0.45;
+      const d = { x1: mx + 8, y1: my + 8, x2: mx + pw - 8, y2: my + ph - 8 };
+      const s1 = { x1: mx + 8, y1: my + ph - 8, x2: mx + pw - 8, y2: my + 8 };
+      const taxShift = 40;
+      const s2 = { x1: s1.x1 + taxShift, y1: s1.y1, x2: s1.x2 + taxShift, y2: s1.y2 };
+
+      const eq1X = mx + pw * 0.47, eq1Y = my + ph * 0.47;
       const eq2X = mx + pw * 0.38, eq2Y = my + ph * 0.38;
+
       return (
         <>
-          <GLine x1={dX1} y1={dY1} x2={dX2} y2={dY2} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dX2 + 4} y={dY2 + 4} text="D" color={COLORS.demand} />
-          <GLine x1={s1X1} y1={s1Y1} x2={s1X2} y2={s1Y2} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={s1X2 + 4} y={s1Y2 + 4} text="S₁" color={COLORS.supply} />
-          <GLine x1={s2X1} y1={s2Y1} x2={s2X2} y2={s2Y2} color={COLORS.supply} gradientId="grad-supply" dashed />
-          <Label x={s2X2 + 4} y={s2Y2 + 4} text="S₁ + Tax" color={COLORS.supply} />
-          <rect x={eq2X - 5} y={eq2Y} width={eq1X - eq2X + 10} height={20}
-            fill="url(#grad-area)" fillOpacity={0.15} stroke="url(#grad-area)" strokeWidth={1} rx={3}
-            filter="url(#glow-purple)" />
-          <Label x={mx + pw * 0.41} y={eq2Y + 14} text="Tax Revenue" color={COLORS.area} size={8} anchor="middle" />
+          <GLine {...d} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <Label x={d.x2 - 10} y={d.y2 - 4} text="D" color={COLORS.demand} />
+          <GLine {...s1} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
+          <Label x={s1.x2 - 14} y={s1.y2 + 14} text="S₁" color={COLORS.supply} />
+          <GLine {...s2} color={COLORS.supply} gradientId="grad-supply" dashed />
+          <Label x={s2.x2 - 30} y={s2.y2 + 14} text="S₁+Tax" color={COLORS.supply} />
+          {/* Tax revenue area */}
+          <rect x={eq2X - 4} y={eq2Y} width={eq1X - eq2X + 8} height={18}
+            fill="url(#grad-area)" fillOpacity={0.12} stroke="url(#grad-area)" strokeWidth={1} rx={3} />
+          <Label x={(eq1X + eq2X) / 2} y={eq2Y + 13} text="Tax Rev." color={COLORS.area} size={8} anchor="middle" />
+
           <DashedToAxes x={eq1X} y={eq1Y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Q₁" />
-          <PremiumDot x={eq1X} y={eq1Y} color={COLORS.eq} label="E₁" gradientId="dot-green" tooltipText="Pre-tax equilibrium" />
+          <PremiumDot x={eq1X} y={eq1Y} color={COLORS.eq} label="E₁" gradientId="dot-green"
+            tooltipText="✓ Pre-tax equilibrium" />
           <DashedToAxes x={eq2X} y={eq2Y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P₂" qLabel="Q₂" />
-          <PremiumDot x={eq2X} y={eq2Y} color={COLORS.shifted} label="E₂" gradientId="dot-amber" tooltipText="Post-tax equilibrium" />
+          <PremiumDot x={eq2X} y={eq2Y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
+            tooltipText="✓ After tax: higher P, lower Q" />
         </>
       );
     },
@@ -634,21 +733,25 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     title: "Production Possibility Frontier",
     xAxis: "Good B", yAxis: "Good A",
     legend: [{ label: "PPF", color: COLORS.demand }, { label: "Efficient", color: COLORS.eq }, { label: "Inefficient", color: COLORS.shifted }],
+    examTips: [
+      "Points ON the curve = productively efficient",
+      "Points INSIDE = unemployed resources / inefficiency",
+      "Points OUTSIDE = currently unattainable",
+      "Concave shape shows increasing opportunity cost",
+    ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
-      const cx = mx + pw * 0.85, cy = my + ph * 0.15;
-      const startX = mx + 10, startY = my + 15;
-      const endX = mx + pw - 15, endY = my + ph - 10;
       return (
         <>
-          <path
-            d={`M ${startX} ${startY} Q ${cx} ${cy} ${endX} ${endY}`}
-            fill="none" stroke="url(#grad-demand)" strokeWidth={3} strokeLinecap="round"
-            filter="url(#glow-blue)"
+          <CurvePath
+            d={`M ${mx + 8} ${my + 12} Q ${mx + pw * 0.8} ${my + ph * 0.08} ${mx + pw - 12} ${my + ph - 8}`}
+            color={COLORS.demand} gradientId="grad-demand" width={3} glow="glow-blue"
           />
-          <Label x={mx + pw * 0.55} y={my + 25} text="PPF" color={COLORS.demand} />
-          <PremiumDot x={mx + pw * 0.45} y={my + ph * 0.32} color={COLORS.eq} label="A (efficient)" gradientId="dot-green" tooltipText="On the frontier — productive efficiency" />
-          <PremiumDot x={mx + pw * 0.35} y={my + ph * 0.55} color={COLORS.shifted} label="B (inefficient)" gradientId="dot-amber" tooltipText="Inside the frontier — resources wasted" />
+          <Label x={mx + pw * 0.58} y={my + 18} text="PPF" color={COLORS.demand} />
+          <PremiumDot x={mx + pw * 0.42} y={my + ph * 0.30} color={COLORS.eq} label="A (efficient)" gradientId="dot-green"
+            tooltipText="✓ On the frontier = all resources used" />
+          <PremiumDot x={mx + pw * 0.30} y={my + ph * 0.55} color={COLORS.shifted} label="B (inefficient)" labelPos="br" gradientId="dot-amber"
+            tooltipText="✓ Inside = spare capacity / unemployment" />
         </>
       );
     },
@@ -657,22 +760,26 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     title: "Economic Growth (PPF Shift)",
     xAxis: "Good B", yAxis: "Good A",
     legend: [{ label: "PPF₁", color: COLORS.demand }, { label: "PPF₂ (Growth)", color: COLORS.shifted }],
+    examTips: [
+      "Outward shift = increase in productive capacity",
+      "Causes: investment, technology, education, immigration",
+      "Distinguish actual growth (moving to PPF) vs potential growth (shifting PPF)",
+    ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
       return (
         <>
-          <path
-            d={`M ${mx + 10} ${my + 20} Q ${mx + pw * 0.75} ${my + ph * 0.15} ${mx + pw * 0.7} ${my + ph - 10}`}
-            fill="none" stroke="url(#grad-demand)" strokeWidth={3} strokeLinecap="round" filter="url(#glow-blue)"
+          <CurvePath
+            d={`M ${mx + 8} ${my + 20} Q ${mx + pw * 0.72} ${my + ph * 0.10} ${mx + pw * 0.68} ${my + ph - 8}`}
+            color={COLORS.demand} gradientId="grad-demand" width={3} glow="glow-blue"
           />
-          <Label x={mx + pw * 0.45} y={my + 30} text="PPF₁" color={COLORS.demand} />
-          <path
-            d={`M ${mx + 10} ${my + 10} Q ${mx + pw * 0.9} ${my + ph * 0.1} ${mx + pw * 0.85} ${my + ph - 10}`}
-            fill="none" stroke="url(#grad-shifted)" strokeWidth={3} strokeLinecap="round" strokeDasharray="6,3"
-            filter="url(#glow-amber)"
+          <Label x={mx + pw * 0.42} y={my + 28} text="PPF₁" color={COLORS.demand} />
+          <CurvePath
+            d={`M ${mx + 8} ${my + 10} Q ${mx + pw * 0.88} ${my + ph * 0.06} ${mx + pw - 12} ${my + ph - 8}`}
+            color={COLORS.shifted} gradientId="grad-shifted" width={3} dashed glow="glow-amber"
           />
-          <Label x={mx + pw * 0.6} y={my + 18} text="PPF₂" color={COLORS.shifted} />
-          <ShiftArrow x1={mx + pw * 0.5} y1={my + ph * 0.35} x2={mx + pw * 0.6} y2={my + ph * 0.3} color={COLORS.shifted} />
+          <Label x={mx + pw * 0.62} y={my + 16} text="PPF₂" color={COLORS.shifted} />
+          <ShiftArrow x1={mx + pw * 0.48} y1={my + ph * 0.34} x2={mx + pw * 0.58} y2={my + ph * 0.28} color={COLORS.shifted} />
         </>
       );
     },
@@ -681,17 +788,24 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     title: "Short-Run Phillips Curve",
     xAxis: "Unemployment Rate (%)", yAxis: "Inflation Rate (%)",
     legend: [{ label: "SRPC", color: COLORS.demand }],
+    examTips: [
+      "Inverse relationship between inflation and unemployment",
+      "Trade-off only holds in the short run",
+      "Long-run Phillips Curve is vertical at the NRU (natural rate)",
+    ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
       return (
         <>
-          <path
-            d={`M ${mx + 30} ${my + 20} Q ${mx + pw * 0.3} ${my + ph * 0.5} ${mx + pw - 30} ${my + ph - 30}`}
-            fill="none" stroke="url(#grad-demand)" strokeWidth={3} strokeLinecap="round" filter="url(#glow-blue)"
+          <CurvePath
+            d={`M ${mx + 20} ${my + 15} Q ${mx + pw * 0.28} ${my + ph * 0.48} ${mx + pw - 20} ${my + ph - 20}`}
+            color={COLORS.demand} gradientId="grad-demand" width={3} glow="glow-blue"
           />
-          <Label x={mx + pw - 25} y={my + ph - 15} text="SRPC" color={COLORS.demand} />
-          <PremiumDot x={mx + pw * 0.3} y={my + ph * 0.3} color={COLORS.eq} label="Low U, high π" gradientId="dot-green" tooltipText="Trade-off: low unemployment → high inflation" />
-          <PremiumDot x={mx + pw * 0.65} y={my + ph * 0.65} color={COLORS.shifted} label="High U, low π" gradientId="dot-amber" tooltipText="Trade-off: high unemployment → low inflation" />
+          <Label x={mx + pw - 35} y={my + ph - 8} text="SRPC" color={COLORS.demand} />
+          <PremiumDot x={mx + pw * 0.28} y={my + ph * 0.28} color={COLORS.eq} label="Low U, High π" gradientId="dot-green"
+            tooltipText="✓ Boom: low unemployment, high inflation" />
+          <PremiumDot x={mx + pw * 0.62} y={my + ph * 0.62} color={COLORS.shifted} label="High U, Low π" labelPos="tl" gradientId="dot-amber"
+            tooltipText="✓ Recession: high unemployment, low inflation" />
         </>
       );
     },
@@ -700,15 +814,20 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     title: "Price Elastic Demand (PED > 1)",
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
     legend: [{ label: "Elastic D", color: COLORS.demand }],
+    examTips: [
+      "Shallow/flat curve = elastic demand",
+      "Small price change → large quantity change",
+      "Many substitutes, luxuries, long run — all increase elasticity",
+    ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
       return (
         <>
-          <GLine x1={mx + 20} y1={my + ph * 0.25} x2={mx + pw - 20} y2={my + ph * 0.55} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={mx + pw - 15} y={my + ph * 0.55 + 12} text="D (elastic)" color={COLORS.demand} />
-          <DashedToAxes x={mx + pw * 0.35} y={my + ph * 0.33} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Q₁" />
-          <DashedToAxes x={mx + pw * 0.6} y={my + ph * 0.42} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P₂" qLabel="Q₂" />
-          <Label x={mx + pw * 0.5} y={my + ph * 0.7} text="Small ΔP → Large ΔQ" color={COLORS.area} size={10} anchor="middle" />
+          <GLine x1={mx + 15} y1={my + ph * 0.28} x2={mx + pw - 15} y2={my + ph * 0.58} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <Label x={mx + pw - 60} y={my + ph * 0.58 + 14} text="D (elastic)" color={COLORS.demand} />
+          <DashedToAxes x={mx + pw * 0.32} y={my + ph * 0.34} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Q₁" />
+          <DashedToAxes x={mx + pw * 0.60} y={my + ph * 0.44} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P₂" qLabel="Q₂" />
+          <Label x={mx + pw * 0.48} y={my + ph * 0.72} text="Small ΔP → Large ΔQ" color={COLORS.area} size={10} anchor="middle" bold={false} />
         </>
       );
     },
@@ -717,15 +836,20 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     title: "Price Inelastic Demand (PED < 1)",
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
     legend: [{ label: "Inelastic D", color: COLORS.demand }],
+    examTips: [
+      "Steep curve = inelastic demand",
+      "Large price change → small quantity change",
+      "Necessities, few substitutes, short run — all decrease elasticity",
+    ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
       return (
         <>
-          <GLine x1={mx + pw * 0.35} y1={my + 15} x2={mx + pw * 0.55} y2={my + ph - 15} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={mx + pw * 0.55 + 4} y={my + ph - 10} text="D (inelastic)" color={COLORS.demand} />
-          <DashedToAxes x={mx + pw * 0.40} y={my + ph * 0.3} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Q₁" />
-          <DashedToAxes x={mx + pw * 0.47} y={my + ph * 0.55} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P₂" qLabel="Q₂" />
-          <Label x={mx + pw * 0.5} y={my + ph * 0.8} text="Large ΔP → Small ΔQ" color={COLORS.area} size={10} anchor="middle" />
+          <GLine x1={mx + pw * 0.36} y1={my + 12} x2={mx + pw * 0.54} y2={my + ph - 12} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <Label x={mx + pw * 0.54 + 6} y={my + ph - 8} text="D (inelastic)" color={COLORS.demand} />
+          <DashedToAxes x={mx + pw * 0.40} y={my + ph * 0.30} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Q₁" />
+          <DashedToAxes x={mx + pw * 0.47} y={my + ph * 0.56} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P₂" qLabel="Q₂" />
+          <Label x={mx + pw * 0.50} y={my + ph * 0.80} text="Large ΔP → Small ΔQ" color={COLORS.area} size={10} anchor="middle" bold={false} />
         </>
       );
     },
@@ -733,28 +857,39 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   monopoly: {
     title: "Monopoly Profit Maximisation",
     xAxis: "Quantity (Q)", yAxis: "Price / Cost / Revenue",
-    legend: [{ label: "MC", color: COLORS.supply }, { label: "AR = D", color: COLORS.demand }, { label: "MR", color: COLORS.mpb }, { label: "Profit", color: COLORS.area }],
+    legend: [{ label: "MC", color: COLORS.supply }, { label: "AR = D", color: COLORS.demand }, { label: "MR", color: COLORS.mpb }, { label: "Supernormal Profit", color: COLORS.area }],
+    examTips: [
+      "Profit max at MC = MR — always state this rule",
+      "Price read UP from Qₘ to AR curve, not MC",
+      "Supernormal profit = shaded area (AR - AC) × Qₘ",
+      "AR is above MR due to the price-making power",
+    ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
-      const mcX1 = mx + pw * 0.2, mcY1 = my + ph - 30, mcX2 = mx + pw - 20, mcY2 = my + 30;
-      const arX1 = mx + 20, arY1 = my + 20, arX2 = mx + pw - 20, arY2 = my + ph - 20;
-      const mrX1 = mx + 20, mrY1 = my + 20, mrX2 = mx + pw * 0.55, mrY2 = my + ph - 20;
-      const profitMaxX = mx + pw * 0.38;
-      const priceY = my + ph * 0.3;
-      const costY = my + ph * 0.5;
+      const profitMaxX = mx + pw * 0.36;
+      const priceY = my + ph * 0.30;
+      const costY = my + ph * 0.50;
+
       return (
         <>
-          <GLine x1={mcX1} y1={mcY1} x2={mcX2} y2={mcY2} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={mcX2 + 4} y={mcY2 + 4} text="MC" color={COLORS.supply} />
-          <GLine x1={arX1} y1={arY1} x2={arX2} y2={arY2} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={arX2 + 4} y={arY2 + 4} text="AR = D" color={COLORS.demand} />
-          <GLine x1={mrX1} y1={mrY1} x2={mrX2} y2={mrY2} color={COLORS.mpb} dashed />
-          <Label x={mrX2 + 4} y={mrY2 + 4} text="MR" color={COLORS.mpb} />
+          {/* MC — upward */}
+          <GLine x1={mx + pw * 0.18} y1={my + ph - 20} x2={mx + pw - 12} y2={my + 25} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
+          <Label x={mx + pw - 30} y={my + 20} text="MC" color={COLORS.supply} />
+          {/* AR = D — downward */}
+          <GLine x1={mx + 12} y1={my + 18} x2={mx + pw - 12} y2={my + ph - 15} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <Label x={mx + pw - 46} y={my + ph - 4} text="AR = D" color={COLORS.demand} />
+          {/* MR — steeper downward */}
+          <GLine x1={mx + 12} y1={my + 18} x2={mx + pw * 0.52} y2={my + ph - 15} color={COLORS.mpb} dashed width={2} />
+          <Label x={mx + pw * 0.52 - 20} y={my + ph - 4} text="MR" color={COLORS.mpb} />
+          {/* Supernormal profit area */}
           <rect x={mx} y={priceY} width={profitMaxX - mx} height={costY - priceY}
-            fill="url(#grad-area)" fillOpacity={0.12} rx={4} filter="url(#glow-purple)" />
-          <Label x={mx + (profitMaxX - mx) / 2} y={(priceY + costY) / 2 + 4} text="Supernormal Profit" color={COLORS.area} size={8} anchor="middle" />
+            fill="url(#grad-area)" fillOpacity={0.10} rx={3} />
+          <Label x={mx + (profitMaxX - mx) / 2} y={(priceY + costY) / 2 + 4} text="Supernormal" color={COLORS.area} size={8} anchor="middle" />
+          <Label x={mx + (profitMaxX - mx) / 2} y={(priceY + costY) / 2 + 14} text="Profit" color={COLORS.area} size={8} anchor="middle" />
+
           <DashedToAxes x={profitMaxX} y={priceY} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="Pₘ" qLabel="Qₘ" />
-          <PremiumDot x={profitMaxX} y={priceY} color={COLORS.eq} label="MC=MR" gradientId="dot-green" tooltipText="Profit-maximising output" />
+          <PremiumDot x={profitMaxX} y={priceY} color={COLORS.eq} label="MC=MR" labelPos="tr" gradientId="dot-green"
+            tooltipText="✓ Profit max where MC = MR" />
         </>
       );
     },
@@ -797,18 +932,43 @@ export function resolveDiagramType(raw: string): DiagramType | null {
   return null;
 }
 
+/* ── Exam Tips Panel (shown on diagram hover) ── */
+function ExamTipsPanel({ tips, visible }: { tips: string[]; visible: boolean }) {
+  if (!visible || !tips.length) return null;
+  return (
+    <div className="mt-3 px-3 py-2.5 rounded-xl bg-primary/5 border border-primary/15 animate-fade-in">
+      <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-1.5 flex items-center gap-1.5">
+        <span>📝</span> A-Level Exam Tips
+      </p>
+      <ul className="space-y-1">
+        {tips.map((tip, i) => (
+          <li key={i} className="text-xs text-muted-foreground flex items-start gap-1.5">
+            <span className="text-primary mt-0.5 shrink-0">✓</span>
+            <span>{tip}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export function EconDiagramTemplate({ type, className }: { type: DiagramType; className?: string }) {
   const config = DIAGRAMS[type];
+  const [hovered, setHovered] = useState(false);
   if (!config) return null;
-  
-  const W = 420, H = 340;
-  const mx = 55, my = 25, pw = W - mx - 25, ph = H - my - 50;
-  
+
+  const W = 420, H = 320;
+  const mx = 55, my = 25, pw = W - mx - 30, ph = H - my - 50;
+
   return (
-    <div className={cn(
-      "my-4 rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-muted/30 p-5 shadow-lg relative overflow-hidden group",
-      className
-    )}>
+    <div
+      className={cn(
+        "my-4 rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-muted/30 p-5 shadow-lg relative overflow-hidden group transition-shadow duration-300 hover:shadow-xl",
+        className
+      )}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
       {/* Subtle depth layer */}
       <div className="absolute inset-0 bg-gradient-to-tr from-primary/[0.02] to-transparent pointer-events-none" />
       <p className="text-xs font-bold uppercase tracking-widest mb-4 text-primary flex items-center gap-2 relative z-10">
@@ -816,9 +976,12 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
         {config.title}
       </p>
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full max-w-[480px] h-auto text-foreground relative z-10">
-        <PremiumDefs />
+        <PremiumDefs mx={mx} my={my} pw={pw} ph={ph} />
         <Axes mx={mx} my={my} pw={pw} ph={ph} xLabel={config.xAxis} yLabel={config.yAxis} />
-        {config.render({ W, H, mx, my, pw, ph })}
+        {/* All curves clipped to the plot area */}
+        <g clipPath="url(#plot-clip)">
+          {config.render({ W, H, mx, my, pw, ph })}
+        </g>
       </svg>
       {/* Pill-badge legend */}
       {config.legend && config.legend.length > 0 && (
@@ -839,6 +1002,8 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
           ))}
         </div>
       )}
+      {/* Exam tips panel — appears on hover */}
+      <ExamTipsPanel tips={config.examTips} visible={hovered} />
     </div>
   );
 }
