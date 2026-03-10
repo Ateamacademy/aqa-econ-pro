@@ -573,7 +573,8 @@
   @apply text-xl font-bold tracking-tight mb-4 pb-3 border-b font-handwriting;
   border-color: hsl(var(--border));
   color: hsl(var(--foreground));
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  font-style: italic;
 }
 
 /* Revision box hover lift */
