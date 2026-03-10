@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { useSubject } from "@/contexts/SubjectContext";
 import { Input } from "@/components/ui/input";
-import { BookOpen, ChevronDown, ChevronRight, Search, Layers, GraduationCap, Sparkles, TrendingUp } from "lucide-react";
+import { BookOpen, ChevronRight, Search, Layers, GraduationCap, Sparkles, TrendingUp, Pen } from "lucide-react";
 import {
   RevisionTopicCard,
   DefinitionBox,
@@ -14,7 +14,8 @@ import {
 import { EconDiagramTemplate, type DiagramType } from "@/components/revision/EconDiagramLibrary";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import type { Topic, Subtopic } from "@/data/studyNotes/edexcelANotes";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
+import { useRef } from "react";
 
 // Data imports
 import { aqaYear1Paper1Topics, aqaYear1Paper2Topics, aqaYear2Paper1Topics, aqaYear2Paper2Topics } from "@/data/studyNotes/aqaNotes";
@@ -69,7 +70,7 @@ const paperSections: Record<Subject, PaperSection[]> = {
   ],
 };
 
-/* ── Stat card for infographic header ── */
+/* ── Stat card with notebook aesthetic ── */
 function StatCard({ icon: Icon, label, value, delay }: { icon: any; label: string; value: string | number; delay: number }) {
   return (
     <motion.div
@@ -82,8 +83,62 @@ function StatCard({ icon: Icon, label, value, delay }: { icon: any; label: strin
         <Icon className="h-5 w-5 text-primary" />
       </div>
       <div>
-        <p className="text-2xl font-bold tracking-tight">{value}</p>
-        <p className="text-xs text-muted-foreground">{label}</p>
+        <p className="text-2xl font-bold tracking-tight font-handwriting">{value}</p>
+        <p className="text-xs text-muted-foreground font-handwriting-alt">{label}</p>
+      </div>
+    </motion.div>
+  );
+}
+
+/* ── Section header with notebook tab styling ── */
+function SectionHeader({ section, index }: { section: PaperSection; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-40px" });
+  const topicCount = section.topics.reduce((acc, t) => acc + t.subtopics.length, 0);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.4, 0.25, 1] }}
+      className={`${index > 0 ? "mt-14" : ""} mb-6`}
+    >
+      {/* Notebook tab */}
+      <div className="flex items-end gap-0 mb-0">
+        <div className="notebook-tab">
+          <span className="text-2xl mr-2">{section.icon}</span>
+          {section.heading.split("—")[0]?.trim()}
+        </div>
+      </div>
+      {/* Section body */}
+      <div className="border-2 border-border rounded-b-xl rounded-tr-xl p-5 bg-card">
+        <h2 className="font-handwriting text-2xl font-bold tracking-tight text-foreground">
+          {section.heading}
+        </h2>
+        <div className="flex items-center gap-3 mt-2">
+          <span className="text-sm text-muted-foreground font-handwriting-alt highlighter-blue">
+            {section.topics.length} modules
+          </span>
+          <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/40" />
+          <span className="text-sm text-muted-foreground font-handwriting-alt highlighter-yellow">
+            {topicCount} subtopics
+          </span>
+        </div>
+        {/* Hand-drawn underline */}
+        <svg className="w-full h-3 mt-3 overflow-visible" viewBox="0 0 400 8" preserveAspectRatio="none">
+          <motion.path
+            d="M0,4 C50,2 100,6 150,3 C200,1 250,7 300,4 C350,2 380,5 400,4"
+            fill="none"
+            stroke="hsl(var(--primary))"
+            strokeWidth="2"
+            strokeLinecap="round"
+            opacity="0.3"
+            initial={{ pathLength: 0 }}
+            animate={isInView ? { pathLength: 1 } : {}}
+            transition={{ duration: 1.2, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
+          />
+        </svg>
       </div>
     </motion.div>
   );
@@ -100,7 +155,6 @@ export default function StudyNotes() {
 
   const sections = paperSections[subject];
 
-  // Stats for infographic header
   const stats = useMemo(() => {
     let totalTopics = 0;
     let totalSubtopics = 0;
@@ -118,12 +172,7 @@ export default function StudyNotes() {
   const renderSubtopic = (sub: Subtopic, idx: number) => {
     if (sub.definition || sub.keyTerms || sub.diagram || sub.formula || sub.examTip) {
       return (
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.35, delay: idx * 0.06, ease: [0.25, 0.4, 0.25, 1] }}
-          className="space-y-3"
-        >
+        <div className="space-y-3">
           {sub.definition && (
             <DefinitionBox term={sub.title}>
               <MathsMarkdown>{sub.definition}</MathsMarkdown>
@@ -133,7 +182,7 @@ export default function StudyNotes() {
             <KeyTermsList terms={sub.keyTerms} />
           )}
           {sub.explanation && (
-            <div className="ai-response text-sm px-1">
+            <div className="ai-response text-sm px-1 font-handwriting-alt text-base leading-relaxed">
               <MathsMarkdown>{sub.explanation}</MathsMarkdown>
             </div>
           )}
@@ -157,18 +206,13 @@ export default function StudyNotes() {
               <MathsMarkdown>{sub.examTip}</MathsMarkdown>
             </ExamTipBox>
           )}
-        </motion.div>
+        </div>
       );
     }
     return (
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35, delay: idx * 0.06 }}
-        className="prose prose-sm max-w-none dark:prose-invert"
-      >
+      <div className="prose prose-sm max-w-none dark:prose-invert font-handwriting-alt text-base">
         <MathsMarkdown>{sub.content || ""}</MathsMarkdown>
-      </motion.div>
+      </div>
     );
   };
 
@@ -203,22 +247,19 @@ export default function StudyNotes() {
             onClick={() => toggle(key)}
             className="group w-full text-left px-5 py-4 flex items-center gap-3 hover:bg-muted/50 transition-all duration-300 rounded-xl border border-border bg-card hover:shadow-md"
           >
-            <motion.div
-              animate={{ rotate: isOpen ? 90 : 0 }}
-              transition={{ duration: 0.2 }}
-            >
+            <motion.div animate={{ rotate: isOpen ? 90 : 0 }} transition={{ duration: 0.2 }}>
               <ChevronRight className="h-4 w-4 text-primary" />
             </motion.div>
             <div className="flex-1 min-w-0">
-              <h3 className="font-bold text-base tracking-tight">{topic.name}</h3>
+              <h3 className="font-handwriting font-bold text-xl tracking-tight">{topic.name}</h3>
             </div>
             <div className="flex items-center gap-2">
               {topic.subtopics.some(s => s.diagram) && (
-                <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                  Diagrams
+                <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary/10 text-primary font-handwriting-alt">
+                  📐 Diagrams
                 </span>
               )}
-              <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-muted text-muted-foreground">
+              <span className="text-sm font-handwriting font-bold px-2.5 py-1 rounded-full bg-muted text-muted-foreground">
                 {topic.subtopics.length}
               </span>
             </div>
@@ -249,24 +290,26 @@ export default function StudyNotes() {
 
   return (
     <div className="container py-10 max-w-4xl">
-      {/* ── Hero header ── */}
+      {/* ── Hero header — notebook cover ── */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
         className="mb-10"
       >
-        <div className="flex items-center gap-3 mb-2">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
-            <GraduationCap className="h-6 w-6 text-primary" />
+        <div className="flex items-center gap-4 mb-3">
+          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 border-2 border-primary/20">
+            <Pen className="h-7 w-7 text-primary" />
           </div>
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">Study Notes</h1>
-            <p className="text-sm text-muted-foreground">{examBoard} {level} {subjectLabel}</p>
+            <h1 className="text-4xl font-handwriting font-bold tracking-tight">Study Notes</h1>
+            <p className="text-base text-muted-foreground font-handwriting-alt">
+              {examBoard} {level} {subjectLabel}
+            </p>
           </div>
         </div>
-        <p className="text-sm text-muted-foreground mt-3 max-w-xl">
-          Structured revision notes with interactive diagrams, key terms & exam tips — designed for efficient A* revision.
+        <p className="text-base text-muted-foreground font-handwriting-alt mt-3 max-w-xl leading-relaxed">
+          ✨ Handcrafted revision notes with interactive diagrams, key terms & exam tips — presented like a live lesson for efficient A* revision.
         </p>
       </motion.div>
 
@@ -290,47 +333,17 @@ export default function StudyNotes() {
           placeholder="Search topics, terms, definitions..."
           value={search}
           onChange={e => setSearch(e.target.value)}
-          className="pl-11 rounded-2xl h-12 text-sm border-border bg-card shadow-sm focus-visible:shadow-md transition-shadow"
+          className="pl-11 rounded-2xl h-12 text-sm border-border bg-card shadow-sm focus-visible:shadow-md transition-shadow font-handwriting-alt"
         />
       </motion.div>
 
       {/* ── Sections ── */}
-      {sections.map((section, i) => {
-        const topicCount = section.topics.reduce((acc, t) => acc + t.subtopics.length, 0);
-        return (
-          <motion.div
-            key={section.prefix}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 + i * 0.1, ease: [0.25, 0.4, 0.25, 1] }}
-          >
-            {/* Section divider */}
-            <div className={`${i > 0 ? "mt-12" : ""} mb-6`}>
-              <div className="flex items-center gap-3 mb-2">
-                <span className="text-2xl">{section.icon}</span>
-                <div className="flex-1">
-                  <h2 className="font-bold text-lg tracking-tight">{section.heading}</h2>
-                  <div className="flex items-center gap-3 mt-1">
-                    <span className="text-xs text-muted-foreground">{section.topics.length} modules</span>
-                    <span className="w-1 h-1 rounded-full bg-muted-foreground/40" />
-                    <span className="text-xs text-muted-foreground">{topicCount} subtopics</span>
-                  </div>
-                </div>
-              </div>
-              {/* Progress-style decoration bar */}
-              <div className="h-1 rounded-full bg-muted overflow-hidden mt-3">
-                <motion.div
-                  className="h-full rounded-full bg-primary/40"
-                  initial={{ width: 0 }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 1.2, delay: 0.5 + i * 0.15, ease: [0.25, 0.4, 0.25, 1] }}
-                />
-              </div>
-            </div>
-            {renderTopics(section.topics, section.prefix)}
-          </motion.div>
-        );
-      })}
+      {sections.map((section, i) => (
+        <div key={section.prefix}>
+          <SectionHeader section={section} index={i} />
+          {renderTopics(section.topics, section.prefix)}
+        </div>
+      ))}
     </div>
   );
 }
