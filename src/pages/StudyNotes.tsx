@@ -84,7 +84,7 @@ function StatCard({ icon: Icon, label, value, delay }: { icon: any; label: strin
       </div>
       <div>
         <p className="text-2xl font-bold tracking-tight font-handwriting">{value}</p>
-        <p className="text-xs text-muted-foreground font-handwriting-alt">{label}</p>
+        <p className="text-xs text-muted-foreground font-handwriting-alt tracking-wide">{label}</p>
       </div>
     </motion.div>
   );
@@ -113,7 +113,7 @@ function SectionHeader({ section, index }: { section: PaperSection; index: numbe
       </div>
       {/* Section body */}
       <div className="border-2 border-border rounded-b-xl rounded-tr-xl p-5 bg-card">
-        <h2 className="font-handwriting text-2xl font-bold tracking-tight text-foreground">
+        <h2 className="font-handwriting text-xl font-bold tracking-tight text-foreground italic">
           {section.heading}
         </h2>
         <div className="flex items-center gap-3 mt-2">
@@ -182,7 +182,7 @@ export default function StudyNotes() {
             <KeyTermsList terms={sub.keyTerms} />
           )}
           {sub.explanation && (
-            <div className="ai-response text-sm px-1 font-handwriting-alt text-base leading-relaxed">
+            <div className="ai-response text-sm px-1 font-handwriting-alt text-[0.925rem] leading-[1.7]">
               <MathsMarkdown>{sub.explanation}</MathsMarkdown>
             </div>
           )}
@@ -210,7 +210,7 @@ export default function StudyNotes() {
       );
     }
     return (
-      <div className="prose prose-sm max-w-none dark:prose-invert font-handwriting-alt text-base">
+      <div className="prose prose-sm max-w-none dark:prose-invert font-handwriting-alt text-[0.925rem] leading-[1.7]">
         <MathsMarkdown>{sub.content || ""}</MathsMarkdown>
       </div>
     );
@@ -251,15 +251,15 @@ export default function StudyNotes() {
               <ChevronRight className="h-4 w-4 text-primary" />
             </motion.div>
             <div className="flex-1 min-w-0">
-              <h3 className="font-handwriting font-bold text-xl tracking-tight">{topic.name}</h3>
+              <h3 className="font-handwriting font-bold text-lg tracking-tight">{topic.name}</h3>
             </div>
             <div className="flex items-center gap-2">
               {topic.subtopics.some(s => s.diagram) && (
-                <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary/10 text-primary font-handwriting-alt">
+                <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary/10 text-primary font-handwriting-alt leading-none">
                   📐 Diagrams
                 </span>
               )}
-              <span className="text-sm font-handwriting font-bold px-2.5 py-1 rounded-full bg-muted text-muted-foreground">
+              <span className="text-sm font-handwriting font-semibold px-2.5 py-1 rounded-full bg-muted text-muted-foreground">
                 {topic.subtopics.length}
               </span>
             </div>
