@@ -161,10 +161,10 @@ export function KeyTermsList({ terms }: { terms: { term: string; definition: str
                 transition={{ duration: 0.4, delay: i * 0.08, ease: [0.25, 0.4, 0.25, 1] }}
                 className="flex gap-3 items-start"
               >
-                <dt className="font-handwriting font-bold text-lg min-w-[100px] shrink-0 highlighter-yellow">
+                <dt className="font-handwriting font-bold text-base min-w-[100px] shrink-0 dynamic-highlight">
                   {t.term}
                 </dt>
-                <dd className="text-sm opacity-90 pt-1 font-handwriting-alt text-base leading-relaxed">
+                <dd className="text-sm opacity-90 pt-0.5 font-handwriting-alt text-[0.925rem] leading-[1.7]">
                   {t.definition}
                 </dd>
               </motion.div>
