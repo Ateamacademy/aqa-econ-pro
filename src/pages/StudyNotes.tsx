@@ -16,7 +16,7 @@ import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import type { Topic, Subtopic } from "@/data/studyNotes/edexcelANotes";
 
 // Data imports
-import { aqaPaper1Topics, aqaPaper2Topics } from "@/data/studyNotes/aqaNotes";
+import { aqaYear1Paper1Topics, aqaYear1Paper2Topics, aqaYear2Paper1Topics, aqaYear2Paper2Topics } from "@/data/studyNotes/aqaNotes";
 import { edexcelAPaper1Topics, edexcelAPaper2Topics } from "@/data/studyNotes/edexcelANotes";
 import { edexcelBPaper1Topics, edexcelBPaper2Topics } from "@/data/studyNotes/edexcelBNotes";
 import { ocrComponent1Topics, ocrComponent2Topics } from "@/data/studyNotes/ocrNotes";
