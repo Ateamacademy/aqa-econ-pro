@@ -268,9 +268,7 @@
   --revision-teal: 172 66% 50%;
 }
 
-.revision-box {
-  @apply rounded-xl border-2 overflow-hidden my-3;
-}
+/* Base .revision-box is defined below with hover effects */
 
 .revision-box-header {
   @apply flex items-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-wider;
