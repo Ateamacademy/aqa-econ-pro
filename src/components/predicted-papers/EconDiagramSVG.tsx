@@ -116,8 +116,8 @@ function EquilibriumDot({
       />
       {/* Y-axis tick label (P₁ / P₂) */}
       <motion.text
-        x={axisLeft - 9} y={cy + 4} textAnchor="end" fontSize="11" fontWeight="800" fill={fill}
-        initial={{ opacity: 0, x: axisLeft - 20 }} animate={{ opacity: 1, x: axisLeft - 9 }}
+        x={axisLeft - 10} y={cy + 5} textAnchor="end" fontSize="13" fontWeight="900" fill={fill}
+        initial={{ opacity: 0, x: axisLeft - 22 }} animate={{ opacity: 1, x: axisLeft - 10 }}
         transition={{ delay: delay + 0.25, duration: 0.4 }}
       >
         {pLabel}
@@ -125,15 +125,15 @@ function EquilibriumDot({
 
       {/* X-axis tick mark */}
       <motion.line
-        x1={cx} y1={axisBottom} x2={cx} y2={axisBottom + 5}
+        x1={cx} y1={axisBottom} x2={cx} y2={axisBottom + 6}
         stroke={fill} strokeWidth={2}
         initial={{ opacity: 0 }} animate={{ opacity: 1 }}
         transition={{ delay: delay + 0.2 }}
       />
       {/* X-axis tick label (Q₁ / Q₂) */}
       <motion.text
-        x={cx} y={axisBottom + 18} textAnchor="middle" fontSize="11" fontWeight="800" fill={fill}
-        initial={{ opacity: 0, y: axisBottom + 28 }} animate={{ opacity: 1, y: axisBottom + 18 }}
+        x={cx} y={axisBottom + 20} textAnchor="middle" fontSize="13" fontWeight="900" fill={fill}
+        initial={{ opacity: 0, y: axisBottom + 30 }} animate={{ opacity: 1, y: axisBottom + 20 }}
         transition={{ delay: delay + 0.25, duration: 0.4 }}
       >
         {qLabel}
