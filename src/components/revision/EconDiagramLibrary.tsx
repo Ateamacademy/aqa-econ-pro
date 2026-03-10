@@ -539,21 +539,25 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       // Social optimum = S ∩ MSB
       const optEq = lineIntersect(sL.x1, sL.y1, sL.x2, sL.y2, msbL.x1, msbL.y1, msbL.x2, msbL.y2);
 
-      const midDwlY = (freeEq.y + optEq.y) / 2;
+      // DWL: area between MPC and MSB from Q* to Qₘ (over-consumption region)
+      // Vertex 3: MSB value at Qₘ
+      const msbSlope = (msbL.y2 - msbL.y1) / (msbL.x2 - msbL.x1);
+      const msbAtFreeX = msbL.y1 + msbSlope * (freeEq.x - msbL.x1);
 
       return (
         <>
           <GLine {...sL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={sL.x2 - 50} y={sL.y2 + 14} text="S = MPC" color={COLORS.supply} />
+          <Label x={sL.x2 - 8} y={sL.y2 - 6} text="S = MPC" color={COLORS.supply} />
           <GLine {...mpbL} color={COLORS.mpb} width={2} />
-          <Label x={mpbL.x2 - 4} y={mpbL.y2 + 14} text="D = MPB" color={COLORS.mpb} />
+          <Label x={mpbL.x2 + 4} y={mpbL.y2 - 6} text="D = MPB" color={COLORS.mpb} />
           <GLine {...msbL} color={COLORS.demand} gradientId="grad-demand" dashed glow="glow-blue" />
-          <Label x={msbL.x2 - 22} y={msbL.y2 + 14} text="MSB" color={COLORS.demand} />
+          <Label x={msbL.x2 + 4} y={msbL.y2 - 6} text="MSB" color={COLORS.demand} />
+          {/* DWL triangle: optEq → freeEq → (Qₘ, MSB at Qₘ) */}
           <polygon
-            points={`${optEq.x},${optEq.y} ${freeEq.x},${freeEq.y} ${(optEq.x + freeEq.x) / 2},${midDwlY + 20}`}
-            fill={COLORS.area} fillOpacity={0.10} stroke="url(#grad-area)" strokeWidth={1.5} strokeDasharray="3,3"
+            points={`${optEq.x},${optEq.y} ${freeEq.x},${freeEq.y} ${freeEq.x},${msbAtFreeX}`}
+            fill={COLORS.area} fillOpacity={0.12} stroke="url(#grad-area)" strokeWidth={1.5} strokeDasharray="3,3"
           />
-          <Label x={(optEq.x + freeEq.x) / 2} y={(freeEq.y + optEq.y) / 2 + 4} text="DWL" color={COLORS.area} size={9} anchor="middle" />
+          <Label x={(optEq.x + freeEq.x) / 2} y={(freeEq.y + msbAtFreeX) / 2 + 4} text="DWL" color={COLORS.area} size={9} anchor="middle" />
           <DashedToAxes x={freeEq.x} y={freeEq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Qₘ" />
           <PremiumDot x={freeEq.x} y={freeEq.y} color={COLORS.eq} label="Free Mkt" gradientId="dot-green"
             tooltipText="✓ Over-consumption — Qₘ exceeds Q*" />
