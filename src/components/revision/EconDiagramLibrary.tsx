@@ -363,24 +363,24 @@ const supplyDemandBase = (p: DrawParams, shiftCurve?: "demand" | "supply", shift
     <>
       {/* Demand */}
       <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-      <Label x={dL.x2 - 16} y={dL.y2 - 6} text="D₁" color={COLORS.demand} />
+      <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D₁" color={COLORS.demand} />
 
       {shiftCurve === "demand" && (
         <>
           <GLine {...dShifted} color={COLORS.demand} gradientId="grad-demand" dashed />
-          <Label x={dShifted.x2 - 16} y={dShifted.y2 - 6} text="D₂" color={COLORS.demand} />
+          <Label x={dShifted.x2 + 4} y={dShifted.y2 - 6} text="D₂" color={COLORS.demand} />
           <ShiftArrow x1={eq1.x} y1={eq1.y} x2={eq2.x} y2={eq2.y} color={COLORS.shifted} />
         </>
       )}
 
       {/* Supply */}
       <GLine {...sL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-      <Label x={sL.x2 - 16} y={sL.y2 + 14} text="S₁" color={COLORS.supply} />
+      <Label x={sL.x2 + 4} y={sL.y2 + 4} text="S₁" color={COLORS.supply} />
 
       {shiftCurve === "supply" && (
         <>
           <GLine {...sShifted} color={COLORS.supply} gradientId="grad-supply" dashed />
-          <Label x={sShifted.x2 - 16} y={sShifted.y2 + 14} text="S₂" color={COLORS.supply} />
+          <Label x={sShifted.x2 + 4} y={sShifted.y2 + 4} text="S₂" color={COLORS.supply} />
           <ShiftArrow x1={eq1.x} y1={eq1.y} x2={eq2.x} y2={eq2.y} color={COLORS.shifted} />
         </>
       )}
