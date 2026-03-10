@@ -182,7 +182,7 @@ export default function StudyNotes() {
             <KeyTermsList terms={sub.keyTerms} />
           )}
           {sub.explanation && (
-            <div className="ai-response text-sm px-1 font-handwriting-alt text-base leading-relaxed">
+            <div className="ai-response text-sm px-1 font-handwriting-alt text-[0.925rem] leading-[1.7]">
               <MathsMarkdown>{sub.explanation}</MathsMarkdown>
             </div>
           )}
