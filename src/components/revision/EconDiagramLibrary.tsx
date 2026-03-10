@@ -601,11 +601,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       return (
         <>
           <GLine {...mpcL} color={COLORS.mpc} width={2} />
-          <Label x={mpcL.x2 - 42} y={mpcL.y2 + 14} text="S = MPC" color={COLORS.mpc} />
+          <Label x={mpcL.x2 - 8} y={mpcL.y2 - 6} text="S = MPC" color={COLORS.mpc} />
           <GLine {...mscL} color={COLORS.msc} gradientId="grad-supply" dashed glow="glow-red" />
-          <Label x={mscL.x2 - 26} y={mscL.y2 + 14} text="MSC" color={COLORS.msc} />
+          <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.msc} />
           <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 - 46} y={dL.y2 - 6} text="D = MSB" color={COLORS.demand} />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MSB" color={COLORS.demand} />
           <polygon
             points={`${optEq.x},${optEq.y} ${freeEq.x},${freeEq.y} ${freeEq.x},${mscAtFreeX}`}
             fill={COLORS.area} fillOpacity={0.10} stroke="url(#grad-area)" strokeWidth={1.5} strokeDasharray="3,3"
