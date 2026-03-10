@@ -213,8 +213,8 @@ export function AnalysisChain({ steps }: { steps: string[] }) {
                 transition={{ duration: 0.4, delay: i * 0.12, ease: [0.25, 0.4, 0.25, 1] }}
                 className="flex gap-3 items-start"
               >
-                <span className="revision-step-number font-handwriting text-base">{i + 1}</span>
-                <span className="font-handwriting-alt text-base leading-relaxed">{step}</span>
+                <span className="revision-step-number font-handwriting text-sm">{i + 1}</span>
+                <span className="font-handwriting-alt text-[0.925rem] leading-[1.7]">{step}</span>
               </motion.li>
             ))}
           </ol>

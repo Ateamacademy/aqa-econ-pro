@@ -259,7 +259,7 @@ export default function StudyNotes() {
                   📐 Diagrams
                 </span>
               )}
-              <span className="text-sm font-handwriting font-bold px-2.5 py-1 rounded-full bg-muted text-muted-foreground">
+              <span className="text-sm font-handwriting font-semibold px-2.5 py-1 rounded-full bg-muted text-muted-foreground">
                 {topic.subtopics.length}
               </span>
             </div>

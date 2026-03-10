@@ -618,9 +618,10 @@
 .margin-note {
   @apply text-xs font-handwriting-alt absolute -left-2 top-0;
   color: hsl(var(--notebook-margin));
-  transform: rotate(-5deg);
+  transform: rotate(-3deg);
   writing-mode: vertical-rl;
   text-orientation: mixed;
+  font-style: italic;
 }
 
 /* ── Pen cursor for writing effect ── */
