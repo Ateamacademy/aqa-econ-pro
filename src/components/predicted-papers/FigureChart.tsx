@@ -101,9 +101,49 @@ function parseChartData(description: string): { dataSets: DataSet[]; axisLabels:
 
 export function FigureChart({ title, description }: FigureChartProps) {
   const parsed = useMemo(() => parseChartData(description), [description]);
-  if (!parsed) return null;
+  const [showTable, setShowTable] = useState(false);
+  
+  // Extract the markdown table from description for raw display
+  const markdownTable = useMemo(() => {
+    const lines = description.split("\n");
+    const tableLines = lines.filter(l => l.trim().startsWith("|"));
+    return tableLines.length >= 3 ? tableLines.join("\n") : null;
+  }, [description]);
+
+  // Extract source line
+  const sourceLine = useMemo(() => {
+    const match = description.match(/Source:\s*.+/i);
+    return match ? match[0] : null;
+  }, [description]);
+  
+  if (!parsed) {
+    // If we couldn't parse chart data but there's a markdown table, render it as a table
+    if (markdownTable) {
+      return (
+        <div className="my-6 rounded-xl border border-border bg-card p-5">
+          <h4 className="text-sm font-semibold text-foreground mb-3">{title}</h4>
+          <div className="overflow-x-auto">
+            <ReactMarkdown components={{
+              table: ({ children }) => <table className="w-full text-sm border-collapse">{children}</table>,
+              thead: ({ children }) => <thead className="bg-muted/60 border-b border-border">{children}</thead>,
+              th: ({ children }) => <th className="px-4 py-2.5 text-left text-xs font-semibold text-foreground uppercase tracking-wider">{children}</th>,
+              td: ({ children }) => <td className="px-4 py-2 text-sm text-foreground/90 border-t border-border/50">{children}</td>,
+              tr: ({ children }) => <tr className="hover:bg-muted/30 transition-colors">{children}</tr>,
+            }}>
+              {markdownTable}
+            </ReactMarkdown>
+          </div>
+          {sourceLine && <p className="text-[11px] italic text-muted-foreground mt-2">{sourceLine}</p>}
+        </div>
+      );
+    }
+    return null;
+  }
 
   const { dataSets, axisLabels } = parsed;
+  
+  // Check if x-axis values are years (time series → line chart) or categories (→ bar chart)
+  const isTimeSeries = dataSets[0].points.every(p => /^\d{4}/.test(p.year));
 
   // Merge datasets into recharts format
   const chartData = dataSets[0].points.map((p, i) => {
@@ -116,49 +156,95 @@ export function FigureChart({ title, description }: FigureChartProps) {
 
   return (
     <div className="my-6 rounded-xl border border-border bg-card p-5">
-      <h4 className="text-sm font-semibold text-foreground mb-4">{title}</h4>
-      <ResponsiveContainer width="100%" height={280}>
-        <LineChart data={chartData} margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-          <XAxis
-            dataKey="year"
-            tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
-            label={axisLabels.x ? { value: axisLabels.x, position: "insideBottom", offset: -5, fontSize: 11, fill: "hsl(var(--muted-foreground))" } : undefined}
-          />
-          <YAxis
-            tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
-            label={axisLabels.y ? { value: axisLabels.y, angle: -90, position: "insideLeft", offset: 0, fontSize: 11, fill: "hsl(var(--muted-foreground))" } : undefined}
-          />
-          <Tooltip
-            contentStyle={{
-              backgroundColor: "hsl(var(--card))",
-              border: "1px solid hsl(var(--border))",
-              borderRadius: "8px",
-              fontSize: "12px",
-            }}
-          />
-          <Legend
-            wrapperStyle={{ fontSize: "11px" }}
-            formatter={(_, entry) => {
-              const idx = parseInt(String(entry.dataKey).replace("line", ""));
-              return dataSets[idx]?.label || "";
-            }}
-          />
-          {dataSets.map((ds, i) => (
-            <Line
-              key={i}
-              type="monotone"
-              dataKey={`line${i}`}
-              stroke={COLORS[i % COLORS.length]}
-              strokeWidth={2}
-              strokeDasharray={i > 0 ? "6 3" : undefined}
-              dot={{ r: 3, fill: COLORS[i % COLORS.length] }}
-              activeDot={{ r: 5 }}
-              name={ds.label}
-            />
-          ))}
-        </LineChart>
-      </ResponsiveContainer>
+      <div className="flex items-center justify-between mb-4">
+        <h4 className="text-sm font-semibold text-foreground">{title}</h4>
+        {markdownTable && (
+          <button
+            onClick={() => setShowTable(!showTable)}
+            className="text-[11px] text-primary hover:underline font-medium"
+          >
+            {showTable ? "Show Chart" : "Show Data Table"}
+          </button>
+        )}
+      </div>
+      
+      {showTable && markdownTable ? (
+        <div className="overflow-x-auto">
+          <ReactMarkdown components={{
+            table: ({ children }) => <table className="w-full text-sm border-collapse">{children}</table>,
+            thead: ({ children }) => <thead className="bg-muted/60 border-b border-border">{children}</thead>,
+            th: ({ children }) => <th className="px-4 py-2.5 text-left text-xs font-semibold text-foreground uppercase tracking-wider">{children}</th>,
+            td: ({ children }) => <td className="px-4 py-2 text-sm text-foreground/90 border-t border-border/50">{children}</td>,
+            tr: ({ children }) => <tr className="hover:bg-muted/30 transition-colors">{children}</tr>,
+          }}>
+            {markdownTable}
+          </ReactMarkdown>
+        </div>
+      ) : (
+        <ResponsiveContainer width="100%" height={280}>
+          {isTimeSeries ? (
+            <LineChart data={chartData} margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+              <XAxis
+                dataKey="year"
+                tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
+                label={axisLabels.x ? { value: axisLabels.x, position: "insideBottom", offset: -5, fontSize: 11, fill: "hsl(var(--muted-foreground))" } : undefined}
+              />
+              <YAxis
+                tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
+                label={axisLabels.y ? { value: axisLabels.y, angle: -90, position: "insideLeft", offset: 0, fontSize: 11, fill: "hsl(var(--muted-foreground))" } : undefined}
+              />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "hsl(var(--card))",
+                  border: "1px solid hsl(var(--border))",
+                  borderRadius: "8px",
+                  fontSize: "12px",
+                }}
+              />
+              <Legend
+                wrapperStyle={{ fontSize: "11px" }}
+                formatter={(_, entry) => {
+                  const idx = parseInt(String(entry.dataKey).replace("line", ""));
+                  return dataSets[idx]?.label || "";
+                }}
+              />
+              {dataSets.map((ds, i) => (
+                <Line
+                  key={i}
+                  type="monotone"
+                  dataKey={`line${i}`}
+                  stroke={COLORS[i % COLORS.length]}
+                  strokeWidth={2}
+                  strokeDasharray={i > 0 ? "6 3" : undefined}
+                  dot={{ r: 3, fill: COLORS[i % COLORS.length] }}
+                  activeDot={{ r: 5 }}
+                  name={ds.label}
+                />
+              ))}
+            </LineChart>
+          ) : (
+            <BarChart data={chartData} margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+              <XAxis dataKey="year" tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }} />
+              <YAxis tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }} />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "hsl(var(--card))",
+                  border: "1px solid hsl(var(--border))",
+                  borderRadius: "8px",
+                  fontSize: "12px",
+                }}
+              />
+              <Legend wrapperStyle={{ fontSize: "11px" }} />
+              {dataSets.map((ds, i) => (
+                <Bar key={i} dataKey={`line${i}`} fill={COLORS[i % COLORS.length]} name={ds.label} radius={[4, 4, 0, 0]} />
+              ))}
+            </BarChart>
+          )}
+        </ResponsiveContainer>
+      )}
+      {sourceLine && <p className="text-[11px] italic text-muted-foreground mt-2">{sourceLine}</p>}
     </div>
   );
 }
