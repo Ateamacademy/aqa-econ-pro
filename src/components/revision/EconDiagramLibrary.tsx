@@ -699,11 +699,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={lrasX + 6} y={my + 20} text="LRAS" color={COLORS.lras} />
           <Label x={lrasX - 4} y={my + ph + 14} text="Yf" color={COLORS.lras} size={9} anchor="middle" />
           <GLine {...srasL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={srasL.x2 - 40} y={srasL.y2 + 14} text="SRAS" color={COLORS.supply} />
+          <Label x={srasL.x2 + 4} y={srasL.y2 + 4} text="SRAS" color={COLORS.supply} />
           <GLine {...ad1L} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={ad1L.x2 - 18} y={ad1L.y2 - 4} text="AD₁" color={COLORS.demand} />
+          <Label x={ad1L.x2 + 4} y={ad1L.y2 - 6} text="AD₁" color={COLORS.demand} />
           <GLine {...ad2L} color={COLORS.demand} gradientId="grad-demand" dashed />
-          <Label x={ad2L.x2 - 18} y={ad2L.y2 - 4} text="AD₂" color={COLORS.demand} />
+          <Label x={ad2L.x2 + 4} y={ad2L.y2 - 6} text="AD₂" color={COLORS.demand} />
           <ShiftArrow x1={eq1.x - 5} y1={eq1.y + 8} x2={eq2.x + 5} y2={eq2.y + 8} color={COLORS.shifted} />
 
           <DashedToAxes x={eq1.x} y={eq1.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="PL₁" qLabel="Y₁" />
