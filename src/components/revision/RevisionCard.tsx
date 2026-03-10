@@ -44,7 +44,7 @@ function HandwrittenHeader({
         <Icon className="h-3.5 w-3.5" />
       </div>
       <span className={cn(
-        "font-handwriting text-lg font-bold tracking-wide",
+        "font-handwriting text-base font-semibold tracking-tight",
         highlightColor || ""
       )}>
         {label}
