@@ -210,7 +210,7 @@ export default function StudyNotes() {
       );
     }
     return (
-      <div className="prose prose-sm max-w-none dark:prose-invert font-handwriting-alt text-base">
+      <div className="prose prose-sm max-w-none dark:prose-invert font-handwriting-alt text-[0.925rem] leading-[1.7]">
         <MathsMarkdown>{sub.content || ""}</MathsMarkdown>
       </div>
     );
