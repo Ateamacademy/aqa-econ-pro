@@ -862,11 +862,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       return (
         <>
           <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 - 10} y={dL.y2 - 6} text="D" color={COLORS.demand} />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color={COLORS.demand} />
           <GLine {...s1L} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={s1L.x2 - 14} y={s1L.y2 + 14} text="S₁" color={COLORS.supply} />
+          <Label x={s1L.x2 + 4} y={s1L.y2 + 4} text="S₁" color={COLORS.supply} />
           <GLine {...s2L} color={COLORS.supply} gradientId="grad-supply" dashed />
-          <Label x={s2L.x2 - 40} y={s2L.y2 + 14} text="S₁+Tax" color={COLORS.supply} />
+          <Label x={s2L.x2 + 4} y={s2L.y2 + 4} text="S₁+Tax" color={COLORS.supply} />
           {/* Tax revenue area: rectangle between consumer price and producer price at Q₂ */}
           <rect x={mx} y={eq2.y} width={eq2.x - mx} height={prodPriceY - eq2.y}
             fill="url(#grad-area)" fillOpacity={0.12} stroke="url(#grad-area)" strokeWidth={1} rx={3} />
