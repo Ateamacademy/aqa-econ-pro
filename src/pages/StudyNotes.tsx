@@ -255,7 +255,7 @@ export default function StudyNotes() {
             </div>
             <div className="flex items-center gap-2">
               {topic.subtopics.some(s => s.diagram) && (
-                <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary/10 text-primary font-handwriting-alt">
+                <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary/10 text-primary font-handwriting-alt leading-none">
                   📐 Diagrams
                 </span>
               )}
