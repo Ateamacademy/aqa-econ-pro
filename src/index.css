@@ -354,12 +354,28 @@
 .revision-topic-card {
   @apply rounded-2xl border bg-card p-6 shadow-sm;
   border-color: hsl(var(--border));
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.revision-topic-card:hover {
+  box-shadow: 0 8px 30px -12px hsl(var(--primary) / 0.12);
 }
 
 .revision-topic-title {
   @apply text-xl font-bold tracking-tight mb-4 pb-3 border-b;
   border-color: hsl(var(--border));
   color: hsl(var(--foreground));
+}
+
+/* Revision box hover lift */
+.revision-box {
+  @apply rounded-xl border-2 overflow-hidden my-3;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.revision-box:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px -6px hsl(var(--foreground) / 0.08);
 }
 
 /* Key term highlight pill */
