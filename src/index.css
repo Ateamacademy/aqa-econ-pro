@@ -257,6 +257,12 @@
   --revision-red: 0 72% 51%;
   --revision-purple: 271 76% 53%;
   --revision-teal: 172 66% 40%;
+  --notebook-line: 0 0% 88%;
+  --notebook-margin: 0 72% 60%;
+  --highlighter-pink: 340 82% 76%;
+  --highlighter-yellow: 48 96% 72%;
+  --highlighter-blue: 211 90% 78%;
+  --highlighter-green: 142 60% 72%;
 }
 
 .dark {
@@ -266,10 +272,150 @@
   --revision-red: 0 72% 60%;
   --revision-purple: 271 76% 63%;
   --revision-teal: 172 66% 50%;
+  --notebook-line: 0 0% 22%;
+  --notebook-margin: 0 72% 40%;
+  --highlighter-pink: 340 60% 35%;
+  --highlighter-yellow: 48 60% 30%;
+  --highlighter-blue: 211 60% 30%;
+  --highlighter-green: 142 40% 28%;
 }
 
-/* Base .revision-box is defined below with hover effects */
+/* ── Handwriting font utilities ── */
+.font-handwriting {
+  font-family: 'Caveat', cursive;
+}
 
+.font-handwriting-alt {
+  font-family: 'Patrick Hand', cursive;
+}
+
+/* ── Writing animation (text appears as if being written) ── */
+@keyframes write-in {
+  from {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0.3;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+@keyframes write-fade-in {
+  0% { opacity: 0; transform: translateY(6px); filter: blur(2px); }
+  60% { opacity: 0.7; filter: blur(0.5px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes underline-draw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes highlighter-swipe {
+  from { transform: scaleX(0); opacity: 0.5; }
+  to { transform: scaleX(1); opacity: 1; }
+}
+
+@keyframes pen-cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-write-in {
+  animation: write-in 0.8s cubic-bezier(0.25, 0.4, 0.25, 1) both;
+}
+
+.animate-write-fade {
+  animation: write-fade-in 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) both;
+}
+
+/* ── Notebook paper background ── */
+.notebook-paper {
+  background-image:
+    repeating-linear-gradient(
+      transparent,
+      transparent 31px,
+      hsl(var(--notebook-line) / 0.4) 31px,
+      hsl(var(--notebook-line) / 0.4) 32px
+    );
+  background-size: 100% 32px;
+  background-position: 0 8px;
+}
+
+.notebook-margin {
+  border-left: 2px solid hsl(var(--notebook-margin) / 0.35);
+}
+
+/* ── Highlighter effects ── */
+.highlighter-pink {
+  background: linear-gradient(
+    180deg,
+    transparent 45%,
+    hsl(var(--highlighter-pink) / 0.4) 45%,
+    hsl(var(--highlighter-pink) / 0.4) 85%,
+    transparent 85%
+  );
+  padding: 0 4px;
+  border-radius: 2px;
+}
+
+.highlighter-yellow {
+  background: linear-gradient(
+    180deg,
+    transparent 45%,
+    hsl(var(--highlighter-yellow) / 0.5) 45%,
+    hsl(var(--highlighter-yellow) / 0.5) 85%,
+    transparent 85%
+  );
+  padding: 0 4px;
+  border-radius: 2px;
+}
+
+.highlighter-blue {
+  background: linear-gradient(
+    180deg,
+    transparent 45%,
+    hsl(var(--highlighter-blue) / 0.4) 45%,
+    hsl(var(--highlighter-blue) / 0.4) 85%,
+    transparent 85%
+  );
+  padding: 0 4px;
+  border-radius: 2px;
+}
+
+/* ── Sticky note callout ── */
+.sticky-note {
+  @apply p-4 rounded-sm shadow-md;
+  background: hsl(48 96% 89%);
+  transform: rotate(-1deg);
+  position: relative;
+}
+
+.dark .sticky-note {
+  background: hsl(48 30% 18%);
+}
+
+.sticky-note::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: hsl(var(--highlighter-yellow));
+  border-radius: 2px 2px 0 0;
+}
+
+/* ── Notebook section tab ── */
+.notebook-tab {
+  @apply relative px-4 py-2 rounded-t-lg font-handwriting text-lg font-bold;
+  border: 2px solid hsl(var(--border));
+  border-bottom: none;
+  background: hsl(var(--card));
+}
+
+/* ── Base .revision-box ── */
 .revision-box-header {
   @apply flex items-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-wider;
 }
@@ -348,9 +494,9 @@
   color: hsl(var(--primary));
 }
 
-/* Revision topic card */
+/* Revision topic card — notebook style */
 .revision-topic-card {
-  @apply rounded-2xl border bg-card p-6 shadow-sm;
+  @apply rounded-2xl border bg-card p-6 shadow-sm relative overflow-hidden;
   border-color: hsl(var(--border));
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -360,9 +506,10 @@
 }
 
 .revision-topic-title {
-  @apply text-xl font-bold tracking-tight mb-4 pb-3 border-b;
+  @apply text-xl font-bold tracking-tight mb-4 pb-3 border-b font-handwriting;
   border-color: hsl(var(--border));
   color: hsl(var(--foreground));
+  font-size: 1.5rem;
 }
 
 /* Revision box hover lift */
@@ -381,4 +528,40 @@
   @apply inline-block px-1.5 py-0.5 rounded-md text-xs font-semibold;
   background: hsl(var(--primary) / 0.1);
   color: hsl(var(--primary));
+}
+
+/* ── Handwritten underline decoration ── */
+.handwritten-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.handwritten-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 3px;
+  background: hsl(var(--primary) / 0.4);
+  border-radius: 2px;
+  transform-origin: left;
+  animation: underline-draw 0.6s cubic-bezier(0.25, 0.4, 0.25, 1) both;
+}
+
+/* ── Margin annotation ── */
+.margin-note {
+  @apply text-xs font-handwriting-alt absolute -left-2 top-0;
+  color: hsl(var(--notebook-margin));
+  transform: rotate(-5deg);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* ── Pen cursor for writing effect ── */
+.pen-cursor::after {
+  content: '|';
+  @apply font-bold ml-0.5;
+  color: hsl(var(--primary));
+  animation: pen-cursor-blink 0.8s infinite;
 }
