@@ -181,6 +181,27 @@ type FigureSegment =
 const FIGURE_TITLE_RE = /^\s*(?:[-•*]\s*)?(?:#{1,4}\s*)?(?:\*{1,2})?\s*(Figure\s+\d+\s*:?.*)\s*(?:\*{1,2})?\s*$/i;
 const SECTION_BREAK_RE = /^\s*(?:#{1,4}\s+(?!Data|Vertical|Horizontal|Line)|\*{0,2}(?:Figure|Table|Extract)\s+\w+|Question\s+\d+)/i;
 
+function hasCategoryValueData(desc: string): boolean {
+  if (!/values?\s*:/i.test(desc)) return false;
+
+  const lines = desc.split("\n").map((line) => line.trim()).filter(Boolean);
+  let valueCount = 0;
+
+  for (const rawLine of lines) {
+    const line = rawLine.replace(/^[-•*]\s*/, "").trim();
+
+    if (/^(vertical|horizontal)\s*axis:/i.test(line) || /^values?\s*:/i.test(line) || /^source\s*:/i.test(line)) {
+      continue;
+    }
+
+    if (/^[^:\n]{2,}:\s*[-+]?\d[\d,]*(?:\.\d+)?\b/i.test(line)) {
+      valueCount++;
+    }
+  }
+
+  return valueCount >= 2;
+}
+
 function extractFigureBlocks(text: string): FigureSegment[] {
   const lines = text.split("\n");
   const segments: FigureSegment[] = [];
@@ -236,8 +257,9 @@ function extractFigureBlocks(text: string): FigureSegment[] {
     const hasBulletData = /(?:vertical|horizontal)\s*axis:/i.test(desc) && /(?:at\s+[\d.]+%?|[\d.]+%?\s*(?:interest|rate))[^£$€\d]*[£$€]?\s*[\d,]+/i.test(desc);
     const hasTrendNarrative = /from\s+[\d,.]+\s*[^,\n]*?\s+in\s+\d{4}\s+to\s+[\d,.]+/i.test(desc);
     const hasValuesTupleData = /values?\s*:\s*.*\(\s*[-+]?\d[\d,.]*\s*\)/i.test(desc);
+    const hasCategoryValueList = hasCategoryValueData(desc);
 
-    if (hasLineData || hasSingleSeriesData || hasMarkdownTable || hasBulletData || hasTrendNarrative || hasValuesTupleData) {
+    if (hasLineData || hasSingleSeriesData || hasMarkdownTable || hasBulletData || hasTrendNarrative || hasValuesTupleData || hasCategoryValueList) {
       flushText();
       segments.push({ type: "figure", content: "", figTitle, figDesc: desc });
       i = j;

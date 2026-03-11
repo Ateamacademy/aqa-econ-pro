@@ -185,6 +185,56 @@ function parseTrendNarrativeData(description: string): { dataSets: DataSet[]; ax
   };
 }
 
+function parseCategoryValueData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
+  const axisLabels = { x: "", y: "" };
+  const lines = description.split("\n").map(l => l.trim()).filter(Boolean);
+  const hasValuesHeading = lines.some(line => /values?\s*:/i.test(line));
+  if (!hasValuesHeading) return null;
+
+  const points: { year: string; value: number }[] = [];
+  let inValuesSection = false;
+
+  for (const rawLine of lines) {
+    const line = rawLine.replace(/^[-•*]\s*/, "").trim();
+
+    const vMatch = line.match(/vertical\s*axis:\s*(.+)/i);
+    if (vMatch) {
+      axisLabels.y = vMatch[1].trim();
+      continue;
+    }
+
+    const hMatch = line.match(/horizontal\s*axis:\s*(.+)/i);
+    if (hMatch) {
+      axisLabels.x = hMatch[1].trim();
+      continue;
+    }
+
+    if (/^values?\s*:/i.test(line)) {
+      inValuesSection = true;
+      continue;
+    }
+
+    if (!inValuesSection) continue;
+
+    const withoutSource = line.replace(/\s+source\s*:.*/i, "").trim();
+    const valueMatch = withoutSource.match(/^(?!vertical\s*axis|horizontal\s*axis|values?\b)([^:\n]+):\s*([-+]?\d[\d,]*(?:\.\d+)?)/i);
+    if (!valueMatch) continue;
+
+    const category = valueMatch[1].trim();
+    const value = parseFloat(valueMatch[2].replace(/,/g, ""));
+    if (category && Number.isFinite(value)) {
+      points.push({ year: category, value });
+    }
+  }
+
+  if (points.length < 2) return null;
+
+  return {
+    dataSets: [{ label: axisLabels.y || "Value", points }],
+    axisLabels: { x: axisLabels.x || "Category", y: axisLabels.y },
+  };
+}
+
 function parseChartData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
   // Try markdown table first
   const tableResult = parseMarkdownTable(description);
@@ -197,6 +247,10 @@ function parseChartData(description: string): { dataSets: DataSet[]; axisLabels:
   // Try values tuple format: "Values: 2000 (3.5), 2005 (5.0), ..."
   const tupleResult = parseValueTupleData(description);
   if (tupleResult) return tupleResult;
+
+  // Try categorical value list format: "Values:\n- Water: 0.2"
+  const categoryResult = parseCategoryValueData(description);
+  if (categoryResult) return categoryResult;
 
   // Try trend narrative format
   const trendResult = parseTrendNarrativeData(description);
