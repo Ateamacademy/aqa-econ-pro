@@ -14,40 +14,115 @@ interface MathsMarkdownProps {
 /**
  * Pre-process markdown text to ensure tables render correctly.
  * ReactMarkdown requires blank lines before/after table blocks.
- * Also normalises pipe-separated table rows that may be on a single line.
+ * Handles both properly-formatted multi-line tables AND single-line
+ * concatenated tables from streaming output.
  */
 function preprocessMarkdown(text: string): string {
-  // Split any single-line table dumps back into proper rows
-  // e.g. "| Year | Value | |------|------| | 2020 | 50 |" → multi-line
-  let processed = text.replace(/\|\s*\|/g, "|\n|");
+  // Step 1: Detect if a table separator row exists on a line that also has data
+  // (i.e. the whole table was concatenated onto one line)
+  // Pattern: find separator row like |---|---| and count its columns
+  const sepMatch = text.match(/\|[\s\-:]+(?:\|[\s\-:]+)+\|/);
+  if (sepMatch) {
+    const colCount = sepMatch[0].split("|").length - 1; // number of columns (pipes - 1 for outer)
+    if (colCount >= 2) {
+      // Build regex to split rows: match sequences of colCount cells forming a complete row
+      // A row = | cell | cell | ... | (colCount pipes total including outer)
+      // We need to split when a closing | is followed by whitespace then opening | of next row
+      // BUT NOT between cells within the same row
+      // Strategy: count pipes - after every (colCount) pipes, that's a row boundary
+      const chars = text.split('');
+      let pipePositions: number[] = [];
+      for (let i = 0; i < chars.length; i++) {
+        if (chars[i] === '|') pipePositions.push(i);
+      }
+      
+      // Find the separator in the original text
+      const sepStart = text.indexOf(sepMatch[0]);
+      const sepEnd = sepStart + sepMatch[0].length;
+      
+      // Check if the line containing the separator also has other table rows
+      const lineOfSep = text.substring(
+        text.lastIndexOf('\n', sepStart) + 1,
+        text.indexOf('\n', sepEnd) === -1 ? text.length : text.indexOf('\n', sepEnd)
+      );
+      
+      const pipesInLine = (lineOfSep.match(/\|/g) || []).length;
+      // If this line has more pipes than a single row, the table is concatenated
+      if (pipesInLine > colCount) {
+        // Reconstruct: split by groups of colCount pipes
+        let result = '';
+        let lastEnd = 0;
+        let count = 0;
+        
+        // Find the start of the table block (first | before the separator)
+        let tableStart = sepStart;
+        while (tableStart > 0 && text[tableStart - 1] !== '\n') tableStart--;
+        // Find the last | that's part of the table
+        // Work through the text from tableStart
+        result = text.substring(0, tableStart);
+        
+        let pos = tableStart;
+        count = 0;
+        let rowStart = pos;
+        while (pos < text.length) {
+          if (text[pos] === '|') {
+            count++;
+            if (count === colCount) {
+              // End of a row
+              result += text.substring(rowStart, pos + 1) + '\n';
+              count = 0;
+              // Skip whitespace until next | or non-table content
+              let next = pos + 1;
+              while (next < text.length && (text[next] === ' ' || text[next] === '\n')) next++;
+              if (next < text.length && text[next] === '|') {
+                rowStart = next;
+                pos = next;
+              } else {
+                // End of table
+                rowStart = next;
+                pos = next;
+                break;
+              }
+            } else {
+              pos++;
+            }
+          } else {
+            pos++;
+          }
+        }
+        if (rowStart < text.length) {
+          result += text.substring(rowStart);
+        }
+        text = result;
+      }
+    }
+  }
 
-  // Ensure blank lines around table blocks so ReactMarkdown parses them
-  const lines = processed.split("\n");
-  const result: string[] = [];
+  // Step 2: Ensure blank lines around table blocks so ReactMarkdown parses them
+  const lines = text.split("\n");
+  const output: string[] = [];
   let inTable = false;
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
-    const isTableRow = line.trim().startsWith("|") && line.trim().endsWith("|");
+    const isTableRow = line.trim().startsWith("|") && line.trim().endsWith("|") && line.trim().length > 2;
 
     if (isTableRow && !inTable) {
-      // Starting a table — ensure blank line before
-      if (result.length > 0 && result[result.length - 1].trim() !== "") {
-        result.push("");
+      if (output.length > 0 && output[output.length - 1].trim() !== "") {
+        output.push("");
       }
       inTable = true;
     } else if (!isTableRow && inTable) {
-      // Leaving a table — ensure blank line after
-      if (result.length > 0 && result[result.length - 1].trim() !== "") {
-        result.push("");
+      if (output.length > 0 && output[output.length - 1].trim() !== "") {
+        output.push("");
       }
       inTable = false;
     }
 
-    result.push(line);
+    output.push(line);
   }
 
-  return result.join("\n");
+  return output.join("\n");
 }
 
 /** 
