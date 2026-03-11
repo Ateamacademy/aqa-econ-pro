@@ -202,6 +202,7 @@ export default function Dashboard() {
           { icon: Brain, label: "Questions", value: stats.questionSessions, color: "bg-primary/10 text-primary" },
           { icon: PenTool, label: "Diagrams", value: stats.diagramSessions, color: "bg-accent/10 text-accent" },
           { icon: FileText, label: "Essays", value: stats.essaySessions, color: "bg-highlight/10 text-highlight" },
+          { icon: StickyNote, label: "Notes Reviewed", value: stats.notesViewed, color: "bg-chart-4/10 text-chart-4" },
           { icon: Zap, label: "This Week", value: stats.thisWeek, color: "bg-destructive/10 text-destructive", badge: stats.weeklyChange !== 0 ? `${stats.weeklyChange > 0 ? "+" : ""}${stats.weeklyChange}%` : undefined },
         ].map(({ icon: Icon, label, value, color, badge }) => (
           <MotionCard key={label} variants={fadeUp}>
