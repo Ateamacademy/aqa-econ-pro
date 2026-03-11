@@ -305,11 +305,17 @@ export default function StudyNotes() {
                 className="overflow-hidden"
               >
                 <div className="mt-3 ml-4 space-y-6">
-                  {filteredSubs.map((sub, idx) => (
-                    <RevisionTopicCard key={sub.title} title={sub.title}>
-                      {renderSubtopic(sub, idx)}
-                    </RevisionTopicCard>
-                  ))}
+                  {filteredSubs.map((sub, idx) => {
+                    const viewKey = `${topic.name} — ${sub.title}`;
+                    // Mark as viewed when expanded
+                    if (user) markViewed(sub.title, topic.name);
+                    return (
+                      <RevisionTopicCard key={sub.title} title={sub.title}>
+                        {renderSubtopic(sub, idx)}
+                        <SubtopicPractice subtopicTitle={sub.title} topicName={topic.name} />
+                      </RevisionTopicCard>
+                    );
+                  })}
                 </div>
               </motion.div>
             )}
