@@ -315,9 +315,9 @@ function renderSegment(text: string, keyPrefix: string = "") {
 export function MathsMarkdown({ children, className }: MathsMarkdownProps) {
   // First extract figure charts
   const figSegments = extractFigureBlocks(children);
-  const hasFigures = figSegments.some(s => s.type === "figure");
+  const hasSpecialFigures = figSegments.some(s => s.type === "figure" || s.type === "sd-diagram");
 
-  if (!hasFigures) {
+  if (!hasSpecialFigures) {
     return <div className={className}>{renderSegment(children)}</div>;
   }
 
@@ -326,6 +326,8 @@ export function MathsMarkdown({ children, className }: MathsMarkdownProps) {
       {figSegments.map((seg, i) =>
         seg.type === "figure" ? (
           <FigureChart key={`fig${i}`} title={seg.figTitle!} description={seg.figDesc!} />
+        ) : seg.type === "sd-diagram" ? (
+          <EconDiagramCanvas key={`sddiag${i}`} diagram={seg.diagram!} />
         ) : (
           <div key={`txt${i}`}>{renderSegment(seg.content, `s${i}`)}</div>
         )
