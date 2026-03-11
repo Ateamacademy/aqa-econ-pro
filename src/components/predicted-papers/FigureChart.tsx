@@ -235,6 +235,77 @@ function parseCategoryValueData(description: string): { dataSets: DataSet[]; axi
   };
 }
 
+function parseLooseLabelValueData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
+  const axisLabels = { x: "", y: "" };
+  const lines = description.split("\n").map(l => l.trim()).filter(Boolean);
+  const points: { year: string; value: number }[] = [];
+  const seen = new Set<string>();
+
+  const addPoint = (label: string, rawValue: string) => {
+    const xVal = label.replace(/^[-•*]\s*/, "").trim();
+    const value = parseFloat(rawValue.replace(/,/g, ""));
+    if (!xVal || !Number.isFinite(value)) return;
+    const key = `${xVal}::${value}`;
+    if (seen.has(key)) return;
+    seen.add(key);
+    points.push({ year: xVal, value });
+  };
+
+  for (const rawLine of lines) {
+    const line = rawLine.replace(/^[-•*]\s*/, "").trim();
+    if (!line) continue;
+
+    const vMatch = line.match(/vertical\s*axis:\s*(.+)/i);
+    if (vMatch) {
+      axisLabels.y = vMatch[1].trim();
+      continue;
+    }
+
+    const hMatch = line.match(/horizontal\s*axis:\s*(.+)/i);
+    if (hMatch) {
+      axisLabels.x = hMatch[1].trim();
+      continue;
+    }
+
+    if (/^(source|values?|bar\s*chart\s*showing|chart\s*showing|data)\s*:/i.test(line)) {
+      continue;
+    }
+
+    const pairRegex = /([^,;:\n]{2,}?)\s*(?:[:=]|->|→)\s*[£$€]?\s*([-+]?\d[\d,]*(?:\.\d+)?)/gi;
+    const tupleRegex = /([^,;:\n]{2,}?)\s*\(\s*[£$€]?\s*([-+]?\d[\d,]*(?:\.\d+)?)\s*\)/gi;
+    const dashRegex = /([^,;:\n]{2,}?)\s*[–-]\s*[£$€]?\s*([-+]?\d[\d,]*(?:\.\d+)?)(?=\s*(?:,|;|$))/gi;
+
+    let matched = false;
+
+    for (const match of line.matchAll(pairRegex)) {
+      matched = true;
+      addPoint(match[1], match[2]);
+    }
+
+    for (const match of line.matchAll(tupleRegex)) {
+      matched = true;
+      addPoint(match[1], match[2]);
+    }
+
+    if (!matched) {
+      for (const match of line.matchAll(dashRegex)) {
+        addPoint(match[1], match[2]);
+      }
+    }
+  }
+
+  if (points.length < 2) return null;
+
+  if (!axisLabels.x) {
+    axisLabels.x = points.every(p => /^\d{4}(?:\s*(?:-|–|\/)\s*\d{2,4})?$/.test(p.year)) ? "Year" : "Category";
+  }
+
+  return {
+    dataSets: [{ label: axisLabels.y || "Value", points }],
+    axisLabels,
+  };
+}
+
 function parseChartData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
   // Try markdown table first
   const tableResult = parseMarkdownTable(description);
