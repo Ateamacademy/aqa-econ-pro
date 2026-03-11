@@ -197,7 +197,7 @@ export default function Dashboard() {
       </div>
 
       {/* Activity Breakdown Row */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-6">
         {[
           { icon: Brain, label: "Questions", value: stats.questionSessions, color: "bg-primary/10 text-primary" },
           { icon: PenTool, label: "Diagrams", value: stats.diagramSessions, color: "bg-accent/10 text-accent" },
