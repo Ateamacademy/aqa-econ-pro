@@ -267,9 +267,12 @@ function parseLooseLabelValueData(description: string): { dataSets: DataSet[]; a
       continue;
     }
 
-    if (/^(source|values?|bar\s*chart\s*showing|chart\s*showing|data)\s*:/i.test(line)) {
+    if (/^source\s*:/i.test(line)) {
       continue;
     }
+
+    const candidate = line.replace(/^(values?|bar\s*chart\s*showing|chart\s*showing|data)\s*:\s*/i, "").trim();
+    if (!candidate) continue;
 
     const pairRegex = /([^,;:\n]{2,}?)\s*(?:[:=]|->|→)\s*[£$€]?\s*([-+]?\d[\d,]*(?:\.\d+)?)/gi;
     const tupleRegex = /([^,;:\n]{2,}?)\s*\(\s*[£$€]?\s*([-+]?\d[\d,]*(?:\.\d+)?)\s*\)/gi;
@@ -277,18 +280,18 @@ function parseLooseLabelValueData(description: string): { dataSets: DataSet[]; a
 
     let matched = false;
 
-    for (const match of line.matchAll(pairRegex)) {
+    for (const match of candidate.matchAll(pairRegex)) {
       matched = true;
       addPoint(match[1], match[2]);
     }
 
-    for (const match of line.matchAll(tupleRegex)) {
+    for (const match of candidate.matchAll(tupleRegex)) {
       matched = true;
       addPoint(match[1], match[2]);
     }
 
     if (!matched) {
-      for (const match of line.matchAll(dashRegex)) {
+      for (const match of candidate.matchAll(dashRegex)) {
         addPoint(match[1], match[2]);
       }
     }
