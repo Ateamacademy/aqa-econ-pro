@@ -254,19 +254,33 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
   const sX1 = margin.left + 25, sY1 = margin.top + plotH - 14;
   const sX2 = margin.left + plotW - 15, sY2 = margin.top + 14;
 
-  const eqX = margin.left + plotW * 0.44;
-  const eqY = margin.top + plotH * 0.44;
+  // Calculate actual line intersection for equilibrium points
+  const lineIntersect = (
+    ax1: number, ay1: number, ax2: number, ay2: number,
+    bx1: number, by1: number, bx2: number, by2: number
+  ) => {
+    const denom = (ax1 - ax2) * (by1 - by2) - (ay1 - ay2) * (bx1 - bx2);
+    if (Math.abs(denom) < 0.001) return null;
+    const t = ((ax1 - bx1) * (by1 - by2) - (ay1 - by1) * (bx1 - bx2)) / denom;
+    return { x: ax1 + t * (ax2 - ax1), y: ay1 + t * (ay2 - ay1) };
+  };
 
-  let newEqX = eqX, newEqY = eqY;
+  // E₁ = intersection of D1 and S1
+  const eq1 = lineIntersect(dX1, dY1, dX2, dY2, sX1, sY1, sX2, sY2);
+  const eqX = eq1?.x ?? margin.left + plotW * 0.5;
+  const eqY = eq1?.y ?? margin.top + plotH * 0.5;
+
   const isSS = shiftInfo.curve === "supply" || shiftInfo.curve === "as";
   const isDD = shiftInfo.curve === "demand" || shiftInfo.curve === "ad";
 
+  // E₂ = intersection of shifted curve with the unchanged curve
+  let newEqX = eqX, newEqY = eqY;
   if (isSS) {
-    newEqX = eqX + (shiftInfo.direction === "left" ? -28 : 28);
-    newEqY = eqY + (shiftInfo.direction === "left" ? -22 : 22);
-  } else {
-    newEqX = eqX + (shiftInfo.direction === "right" ? 28 : -28);
-    newEqY = eqY + (shiftInfo.direction === "right" ? -22 : 22);
+    const eq2 = lineIntersect(dX1, dY1, dX2, dY2, sX1 + shiftOffset, sY1, sX2 + shiftOffset, sY2);
+    if (eq2) { newEqX = eq2.x; newEqY = eq2.y; }
+  } else if (isDD) {
+    const eq2 = lineIntersect(dX1 + shiftOffset, dY1, dX2 + shiftOffset, dY2, sX1, sY1, sX2, sY2);
+    if (eq2) { newEqX = eq2.x; newEqY = eq2.y; }
   }
 
   const demandColor = "#2563eb";
