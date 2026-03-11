@@ -75,9 +75,9 @@ function parseBulletPointData(description: string): { dataSets: DataSet[]; axisL
   const lines = description.split("\n").map(l => l.trim());
 
   for (const line of lines) {
-    const vMatch = line.match(/vertical\s*axis:\s*(.+)/i);
+    const vMatch = line.match(/(?:vertical|y)\s*-?\s*axis\s*:\s*(.+)/i);
     if (vMatch) axisLabels.y = vMatch[1].trim();
-    const hMatch = line.match(/horizontal\s*axis:\s*(.+)/i);
+    const hMatch = line.match(/(?:horizontal|x)\s*-?\s*axis\s*:\s*(.+)/i);
     if (hMatch) axisLabels.x = hMatch[1].trim();
   }
 
