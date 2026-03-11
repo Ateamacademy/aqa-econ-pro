@@ -182,19 +182,28 @@ const FIGURE_TITLE_RE = /^\s*(?:[-•*]\s*)?(?:#{1,4}\s*)?(?:\*{1,2})?\s*(Figure
 const SECTION_BREAK_RE = /^\s*(?:#{1,4}\s+(?!Data|Vertical|Horizontal|Line)|\*{0,2}(?:Figure|Table|Extract)\s+\w+|Question\s+\d+)/i;
 
 function hasCategoryValueData(desc: string): boolean {
-  if (!/values?\s*:/i.test(desc)) return false;
-
   const lines = desc.split("\n").map((line) => line.trim()).filter(Boolean);
+  const listHeadingRegex = /^(values?|bar\s*chart\s*showing|chart\s*showing|data)\s*:/i;
+  const hasListHeading = lines.some((rawLine) => listHeadingRegex.test(rawLine.replace(/^[-•*]\s*/, "").trim()));
+
+  let inCategorySection = !hasListHeading;
   let valueCount = 0;
 
   for (const rawLine of lines) {
     const line = rawLine.replace(/^[-•*]\s*/, "").trim();
 
-    if (/^(vertical|horizontal)\s*axis:/i.test(line) || /^values?\s*:/i.test(line) || /^source\s*:/i.test(line)) {
+    if (/^(vertical|horizontal)\s*axis:/i.test(line) || /^source\s*:/i.test(line)) {
       continue;
     }
 
-    if (/^[^:\n]{2,}:\s*[-+]?\d[\d,]*(?:\.\d+)?\b/i.test(line)) {
+    if (listHeadingRegex.test(line)) {
+      inCategorySection = true;
+      continue;
+    }
+
+    if (!inCategorySection) continue;
+
+    if (/^[^:\n]{2,}:\s*[£$€]?\s*[-+]?\d[\d,]*(?:\.\d+)?\b/i.test(line)) {
       valueCount++;
     }
   }

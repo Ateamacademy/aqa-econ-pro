@@ -188,11 +188,11 @@ function parseTrendNarrativeData(description: string): { dataSets: DataSet[]; ax
 function parseCategoryValueData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
   const axisLabels = { x: "", y: "" };
   const lines = description.split("\n").map(l => l.trim()).filter(Boolean);
-  const hasValuesHeading = lines.some(line => /values?\s*:/i.test(line));
-  if (!hasValuesHeading) return null;
+  const listHeadingRegex = /^(values?|bar\s*chart\s*showing|chart\s*showing|data)\s*:/i;
+  const hasListHeading = lines.some(line => listHeadingRegex.test(line.replace(/^[-•*]\s*/, "").trim()));
 
   const points: { year: string; value: number }[] = [];
-  let inValuesSection = false;
+  let inValuesSection = !hasListHeading;
 
   for (const rawLine of lines) {
     const line = rawLine.replace(/^[-•*]\s*/, "").trim();
@@ -209,7 +209,7 @@ function parseCategoryValueData(description: string): { dataSets: DataSet[]; axi
       continue;
     }
 
-    if (/^values?\s*:/i.test(line)) {
+    if (listHeadingRegex.test(line)) {
       inValuesSection = true;
       continue;
     }
@@ -217,7 +217,7 @@ function parseCategoryValueData(description: string): { dataSets: DataSet[]; axi
     if (!inValuesSection) continue;
 
     const withoutSource = line.replace(/\s+source\s*:.*/i, "").trim();
-    const valueMatch = withoutSource.match(/^(?!vertical\s*axis|horizontal\s*axis|values?\b)([^:\n]+):\s*([-+]?\d[\d,]*(?:\.\d+)?)/i);
+    const valueMatch = withoutSource.match(/^(?!vertical\s*axis|horizontal\s*axis|values?\b|bar\s*chart\s*showing\b|chart\s*showing\b|data\b)([^:\n]+):\s*[£$€]?\s*([-+]?\d[\d,]*(?:\.\d+)?)/i);
     if (!valueMatch) continue;
 
     const category = valueMatch[1].trim();
