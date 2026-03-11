@@ -211,6 +211,27 @@ function hasCategoryValueData(desc: string): boolean {
   return valueCount >= 2;
 }
 
+function hasLooseLabelValueData(desc: string): boolean {
+  const lines = desc.split("\n").map((line) => line.trim()).filter(Boolean);
+  let valueCount = 0;
+
+  for (const rawLine of lines) {
+    const line = rawLine.replace(/^[-•*]\s*/, "").trim();
+    if (!line || /^(vertical|horizontal)\s*axis:/i.test(line) || /^source\s*:/i.test(line)) {
+      continue;
+    }
+
+    const pairMatches = [...line.matchAll(/([^,;:\n]{2,}?)\s*(?:[:=]|->|→)\s*[£$€]?\s*([-+]?\d[\d,]*(?:\.\d+)?)/gi)].length;
+    const tupleMatches = [...line.matchAll(/([^,;:\n]{2,}?)\s*\(\s*[£$€]?\s*([-+]?\d[\d,]*(?:\.\d+)?)\s*\)/gi)].length;
+    const dashMatches = [...line.matchAll(/([^,;:\n]{2,}?)\s*[–-]\s*[£$€]?\s*([-+]?\d[\d,]*(?:\.\d+)?)(?=\s*(?:,|;|$))/gi)].length;
+
+    valueCount += pairMatches + tupleMatches + dashMatches;
+    if (valueCount >= 2) return true;
+  }
+
+  return false;
+}
+
 function extractFigureBlocks(text: string): FigureSegment[] {
   const lines = text.split("\n");
   const segments: FigureSegment[] = [];
@@ -250,7 +271,9 @@ function extractFigureBlocks(text: string): FigureSegment[] {
       j++;
     }
 
-    const desc = figLines.join("\n").trim();
+    const inlineDesc = figTitle.replace(/^Figure\s+\d+\s*:?\s*/i, "").trim();
+    const includeInlineDesc = /(?:vertical|horizontal)\s*axis|values?\s*:|\d\s*(?:[:=]|\(|[–-])\s*[£$€]?\s*\d/i.test(inlineDesc);
+    const desc = [includeInlineDesc ? inlineDesc : "", ...figLines].filter(Boolean).join("\n").trim();
 
     const diagramProps = parseFigureAsDiagram(figTitle, desc);
     if (diagramProps) {
@@ -267,8 +290,9 @@ function extractFigureBlocks(text: string): FigureSegment[] {
     const hasTrendNarrative = /from\s+[\d,.]+\s*[^,\n]*?\s+in\s+\d{4}\s+to\s+[\d,.]+/i.test(desc);
     const hasValuesTupleData = /values?\s*:\s*.*\(\s*[-+]?\d[\d,.]*\s*\)/i.test(desc);
     const hasCategoryValueList = hasCategoryValueData(desc);
+    const hasLoosePairs = hasLooseLabelValueData(desc);
 
-    if (hasLineData || hasSingleSeriesData || hasMarkdownTable || hasBulletData || hasTrendNarrative || hasValuesTupleData || hasCategoryValueList) {
+    if (hasLineData || hasSingleSeriesData || hasMarkdownTable || hasBulletData || hasTrendNarrative || hasValuesTupleData || hasCategoryValueList || hasLoosePairs) {
       flushText();
       segments.push({ type: "figure", content: "", figTitle, figDesc: desc });
       i = j;
