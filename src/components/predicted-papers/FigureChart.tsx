@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface FigureChartProps {
   title: string;
