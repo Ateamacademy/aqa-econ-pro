@@ -307,7 +307,7 @@ export function QuestionCard({
               {feedback && (
                 <CollapsibleContent className="mt-3 px-1">
                   <div className="bg-muted/40 rounded-lg p-4">
-                    <RevisionRenderer content={s.content} />
+                    <Suspense fallback={<div className="text-sm text-muted-foreground">Loading...</div>}><RevisionRenderer content={s.content} /></Suspense>
                   </div>
                 </CollapsibleContent>
               )}
