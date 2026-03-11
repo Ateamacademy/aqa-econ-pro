@@ -323,6 +323,10 @@ function parseChartData(description: string): { dataSets: DataSet[]; axisLabels:
   const categoryResult = parseCategoryValueData(description);
   if (categoryResult) return categoryResult;
 
+  // Try loose label/value pairs: "2019 = 20", "Q1 (35)", "UK: £120"
+  const looseLabelValueResult = parseLooseLabelValueData(description);
+  if (looseLabelValueResult) return looseLabelValueResult;
+
   // Try trend narrative format
   const trendResult = parseTrendNarrativeData(description);
   if (trendResult) return trendResult;
