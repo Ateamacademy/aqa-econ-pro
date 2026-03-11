@@ -257,8 +257,9 @@ function extractFigureBlocks(text: string): FigureSegment[] {
     const hasBulletData = /(?:vertical|horizontal)\s*axis:/i.test(desc) && /(?:at\s+[\d.]+%?|[\d.]+%?\s*(?:interest|rate))[^£$€\d]*[£$€]?\s*[\d,]+/i.test(desc);
     const hasTrendNarrative = /from\s+[\d,.]+\s*[^,\n]*?\s+in\s+\d{4}\s+to\s+[\d,.]+/i.test(desc);
     const hasValuesTupleData = /values?\s*:\s*.*\(\s*[-+]?\d[\d,.]*\s*\)/i.test(desc);
+    const hasCategoryValueList = hasCategoryValueData(desc);
 
-    if (hasLineData || hasSingleSeriesData || hasMarkdownTable || hasBulletData || hasTrendNarrative || hasValuesTupleData) {
+    if (hasLineData || hasSingleSeriesData || hasMarkdownTable || hasBulletData || hasTrendNarrative || hasValuesTupleData || hasCategoryValueList) {
       flushText();
       segments.push({ type: "figure", content: "", figTitle, figDesc: desc });
       i = j;
