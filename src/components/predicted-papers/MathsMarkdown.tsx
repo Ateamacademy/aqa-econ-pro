@@ -257,7 +257,7 @@ export function MathsMarkdown({ children, className }: MathsMarkdownProps) {
       seg.type === "diagram" ? (
         <EconDiagramCanvas key={`${keyPrefix}d${i}`} diagram={seg.diagram} />
       ) : (
-        <ReactMarkdown key={`${keyPrefix}m${i}`} remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
+        <ReactMarkdown key={`${keyPrefix}m${i}`} remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
           {seg.content}
         </ReactMarkdown>
       )
