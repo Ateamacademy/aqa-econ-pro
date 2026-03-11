@@ -103,28 +103,115 @@ function RenderedTable({ markdown }: { markdown: string }) {
   );
 }
 
-/** 
- * Extract "Figure N: Title" blocks followed by chart data.
+/**
+ * Parse a figure description that describes S&D / AD-AS curves into DiagramProps.
  */
-function extractFigureBlocks(text: string): { type: "text" | "figure"; content: string; figTitle?: string; figDesc?: string }[] {
-  const segments: { type: "text" | "figure"; content: string; figTitle?: string; figDesc?: string }[] = [];
-  const figRegex = /(?:^|\n)\s*(?:#{1,4}\s*)?\*{0,2}(Figure\s+\d+[^*\n]*)\*{0,2}\s*\n((?:[\s\S]*?)(?=\n\s*(?:#{1,4}\s+(?!Data|Vertical|Horizontal|Line)|\*{0,2}(?:Figure|Table|Extract)\s|Question\s|Source:|$)))/gi;
+function parseFigureAsDiagram(title: string, desc: string): import("./EconDiagramSVG").DiagramProps | null {
+  const lower = desc.toLowerCase();
+  
+  // Detect S&D curve references: D₀/S₀, D0/S0, demand/supply curves
+  const hasCurveRefs = /[ds][₀₁01]/i.test(desc) || (/demand/i.test(lower) && /supply/i.test(lower) && /shift/i.test(lower));
+  const hasAxes = /(?:vertical|horizontal)\s*axis/i.test(desc);
+  
+  if (!hasCurveRefs || !hasAxes) return null;
+  
+  // Extract axis labels
+  const vMatch = desc.match(/vertical\s*axis:\s*(.+)/i);
+  const hMatch = desc.match(/horizontal\s*axis:\s*(.+)/i);
+  const yAxis = vMatch?.[1]?.trim() || "Price (P)";
+  const xAxis = hMatch?.[1]?.trim() || "Quantity (Q)";
+  
+  // Determine shift type and direction
+  let shift = "";
+  let conclusion = "";
+  
+  const demandRight = /demand\b[^.]*shift[^.]*right/i.test(lower) || /demand\b[^.]*increase/i.test(lower);
+  const demandLeft = /demand\b[^.]*shift[^.]*left/i.test(lower) || /demand\b[^.]*decrease/i.test(lower);
+  const supplyRight = /supply\b[^.]*shift[^.]*right/i.test(lower) || /supply\b[^.]*increase/i.test(lower);
+  const supplyLeft = /supply\b[^.]*shift[^.]*left/i.test(lower) || /supply\b[^.]*decrease/i.test(lower);
+  
+  // Check for "both shift" or "more pronounced" patterns
+  const bothShift = (demandRight || demandLeft) && (supplyRight || supplyLeft);
+  const demandMorePronounced = /demand\b[^.]*more\s+pronounced/i.test(lower);
+  
+  if (bothShift && demandMorePronounced) {
+    // Both shift right but demand more – net effect is demand shift right
+    shift = "Demand shifts right (more pronounced than supply shift)";
+  } else if (demandRight) {
+    shift = "Demand shifts right";
+  } else if (demandLeft) {
+    shift = "Demand shifts left";
+  } else if (supplyRight) {
+    shift = "Supply shifts right";
+  } else if (supplyLeft) {
+    shift = "Supply shifts left";
+  }
+  
+  if (!shift) return null;
+  
+  // Extract conclusion from description
+  const leadingTo = desc.match(/leading\s+to\s+(.+?)(?:\.|$)/i);
+  const resultIn = desc.match(/result(?:s|ing)\s+in\s+(.+?)(?:\.|$)/i);
+  conclusion = leadingTo?.[1]?.trim() || resultIn?.[1]?.trim() || "";
+  
+  // Extract source
+  const sourceMatch = desc.match(/Source:\s*(.+)/i);
+  
+  return {
+    type: title,
+    xAxis,
+    yAxis,
+    initialCurves: "D₀ (original demand) and S₀ (original supply)",
+    initialEquilibrium: "E₀ at intersection of D₀ and S₀",
+    shift,
+    newEquilibrium: "E₁ at new intersection",
+    shadedArea: "",
+    conclusion: conclusion || (sourceMatch ? `${conclusion} (${sourceMatch[0]})` : ""),
+  };
+}
+
+/** 
+ * Extract "Figure N: Title" blocks followed by chart data or diagram descriptions.
+ */
+type FigureSegment = 
+  | { type: "text"; content: string; figTitle?: string; figDesc?: string; diagram?: never }
+  | { type: "figure"; content: string; figTitle: string; figDesc: string; diagram?: never }
+  | { type: "sd-diagram"; content: string; figTitle?: string; figDesc?: string; diagram: import("./EconDiagramSVG").DiagramProps };
+
+function extractFigureBlocks(text: string): FigureSegment[] {
+  const segments: FigureSegment[] = [];
+  const figRegex = /(?:^|\n)\s*(?:#{1,4}\s*)?\*{0,2}(Figure\s+\d+[^*\n]*)\*{0,2}\s*\n((?:[\s\S]*?)(?=\n\s*(?:#{1,4}\s+(?!Data|Vertical|Horizontal|Line)|\*{0,2}(?:Figure|Table|Extract)\s|Question\s|$)))/gi;
   
   let lastIndex = 0;
   let match: RegExpExecArray | null;
   
   while ((match = figRegex.exec(text)) !== null) {
     const desc = match[2].trim();
+    const figTitle = match[1].trim();
+    
+    // First check if it's an S&D / economics diagram
+    const diagramProps = parseFigureAsDiagram(figTitle, desc);
+    if (diagramProps) {
+      if (match.index > lastIndex) {
+        segments.push({ type: "text", content: text.slice(lastIndex, match.index) });
+      }
+      segments.push({ type: "sd-diagram", content: "", diagram: diagramProps });
+      lastIndex = match.index + match[0].length;
+      continue;
+    }
+    
+    // Then check for chart data
     const hasLineData = /Line\s+\d+/i.test(desc) && /\d{4}:\s*[\d.]+/i.test(desc);
     const hasSingleSeriesData = /(?:vertical|horizontal)\s*axis:/i.test(desc) && /\d{4}:\s*[\d.]+/i.test(desc);
     const hasMarkdownTable = /\|.*\|.*\|/.test(desc) && /\|\s*[\d,.]+\s*\|/.test(desc);
     const hasBulletData = /(?:vertical|horizontal)\s*axis:/i.test(desc) && /(?:at\s+[\d.]+%?|[\d.]+%?\s*(?:interest|rate))[^£$€\d]*[£$€]?\s*[\d,]+/i.test(desc);
+    const hasTrendNarrative = /from\s+[\d,.]+\s*[^,\n]*?\s+in\s+\d{4}\s+to\s+[\d,.]+/i.test(desc);
     
-    if (hasLineData || hasSingleSeriesData || hasMarkdownTable || hasBulletData) {
+    if (hasLineData || hasSingleSeriesData || hasMarkdownTable || hasBulletData || hasTrendNarrative) {
       if (match.index > lastIndex) {
         segments.push({ type: "text", content: text.slice(lastIndex, match.index) });
       }
-      segments.push({ type: "figure", content: "", figTitle: match[1].trim(), figDesc: desc });
+      segments.push({ type: "figure", content: "", figTitle, figDesc: desc });
       lastIndex = match.index + match[0].length;
     }
   }
@@ -228,9 +315,9 @@ function renderSegment(text: string, keyPrefix: string = "") {
 export function MathsMarkdown({ children, className }: MathsMarkdownProps) {
   // First extract figure charts
   const figSegments = extractFigureBlocks(children);
-  const hasFigures = figSegments.some(s => s.type === "figure");
+  const hasSpecialFigures = figSegments.some(s => s.type === "figure" || s.type === "sd-diagram");
 
-  if (!hasFigures) {
+  if (!hasSpecialFigures) {
     return <div className={className}>{renderSegment(children)}</div>;
   }
 
@@ -239,6 +326,8 @@ export function MathsMarkdown({ children, className }: MathsMarkdownProps) {
       {figSegments.map((seg, i) =>
         seg.type === "figure" ? (
           <FigureChart key={`fig${i}`} title={seg.figTitle!} description={seg.figDesc!} />
+        ) : seg.type === "sd-diagram" ? (
+          <EconDiagramCanvas key={`sddiag${i}`} diagram={seg.diagram!} />
         ) : (
           <div key={`txt${i}`}>{renderSegment(seg.content, `s${i}`)}</div>
         )
