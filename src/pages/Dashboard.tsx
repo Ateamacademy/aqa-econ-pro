@@ -65,18 +65,21 @@ export default function Dashboard() {
   // Derived stats
   const stats = useMemo(() => {
     const subjectSessions = sessions.filter(s => s.subject === subject);
-    const totalSessions = subjectSessions.length;
+    const totalSessions = subjectSessions.filter(s => s.session_type !== "note_view").length;
     const diagramSessions = subjectSessions.filter(s => s.session_type === "diagram").length;
     const questionSessions = subjectSessions.filter(s => s.session_type === "question").length;
     const essaySessions = subjectSessions.filter(s => s.session_type === "essay").length;
+    const noteViews = subjectSessions.filter(s => s.session_type === "note_view");
+    const notesViewed = new Set(noteViews.map(s => s.topic)).size;
 
     // Topics practiced
     const topicCounts: Record<string, number> = {};
-    subjectSessions.forEach(s => { topicCounts[s.topic] = (topicCounts[s.topic] || 0) + 1; });
+    subjectSessions.filter(s => s.session_type !== "note_view").forEach(s => { topicCounts[s.topic] = (topicCounts[s.topic] || 0) + 1; });
     const topTopics = Object.entries(topicCounts).sort((a, b) => b[1] - a[1]).slice(0, 6);
     const uniqueTopics = Object.keys(topicCounts).length;
 
-    // Activity last 14 days
+    // Activity last 14 days (exclude note_view from activity chart)
+    const activeSessions = subjectSessions.filter(s => s.session_type !== "note_view");
     const now = new Date();
     const last14 = Array.from({ length: 14 }, (_, i) => {
       const d = new Date(now);
@@ -85,7 +88,7 @@ export default function Dashboard() {
     });
     const dailyCounts = last14.map(date => ({
       date,
-      count: subjectSessions.filter(s => s.created_at.slice(0, 10) === date).length,
+      count: activeSessions.filter(s => s.created_at.slice(0, 10) === date).length,
     }));
     const maxDaily = Math.max(...dailyCounts.map(d => d.count), 1);
 
@@ -95,13 +98,13 @@ export default function Dashboard() {
       const d = new Date();
       d.setDate(d.getDate() - i);
       const key = d.toISOString().slice(0, 10);
-      if (subjectSessions.some(s => s.created_at.slice(0, 10) === key)) {
+      if (activeSessions.some(s => s.created_at.slice(0, 10) === key)) {
         streak++;
       } else if (i > 0) break;
     }
 
     // Scores
-    const scored = subjectSessions.filter(s => s.score_percent !== null);
+    const scored = activeSessions.filter(s => s.score_percent !== null);
     const avgScore = scored.length > 0 ? Math.round(scored.reduce((a, s) => a + (s.score_percent ?? 0), 0) / scored.length) : null;
 
     // Session type breakdown for mini pie
@@ -112,12 +115,12 @@ export default function Dashboard() {
     ].filter(t => t.count > 0);
 
     // Weekly comparison
-    const thisWeek = subjectSessions.filter(s => {
+    const thisWeek = activeSessions.filter(s => {
       const d = new Date(s.created_at);
       const diff = (now.getTime() - d.getTime()) / (1000 * 60 * 60 * 24);
       return diff <= 7;
     }).length;
-    const lastWeek = subjectSessions.filter(s => {
+    const lastWeek = activeSessions.filter(s => {
       const d = new Date(s.created_at);
       const diff = (now.getTime() - d.getTime()) / (1000 * 60 * 60 * 24);
       return diff > 7 && diff <= 14;
@@ -125,9 +128,9 @@ export default function Dashboard() {
     const weeklyChange = lastWeek > 0 ? Math.round(((thisWeek - lastWeek) / lastWeek) * 100) : thisWeek > 0 ? 100 : 0;
 
     return {
-      subjectSessions, totalSessions, diagramSessions, questionSessions, essaySessions,
+      subjectSessions: activeSessions, totalSessions, diagramSessions, questionSessions, essaySessions,
       topTopics, uniqueTopics, dailyCounts, maxDaily, streak, avgScore,
-      typeBreakdown, thisWeek, lastWeek, weeklyChange,
+      typeBreakdown, thisWeek, lastWeek, weeklyChange, notesViewed,
     };
   }, [sessions, subject]);
 
