@@ -207,13 +207,13 @@ function parseCategoryValueData(description: string): { dataSets: DataSet[]; axi
   for (const rawLine of lines) {
     const line = rawLine.replace(/^[-•*]\s*/, "").trim();
 
-    const vMatch = line.match(/vertical\s*axis:\s*(.+)/i);
+    const vMatch = line.match(/(?:vertical|y)\s*-?\s*axis\s*:\s*(.+)/i);
     if (vMatch) {
       axisLabels.y = vMatch[1].trim();
       continue;
     }
 
-    const hMatch = line.match(/horizontal\s*axis:\s*(.+)/i);
+    const hMatch = line.match(/(?:horizontal|x)\s*-?\s*axis\s*:\s*(.+)/i);
     if (hMatch) {
       axisLabels.x = hMatch[1].trim();
       continue;
