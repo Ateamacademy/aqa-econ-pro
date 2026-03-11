@@ -35,6 +35,12 @@ type QuestionFeedback = {
   markScheme: string;
   modelAnswer: string;
   examinerTip: string;
+  // Smart Mark format for diagram questions
+  isDiagramFeedback?: boolean;
+  mark?: string;
+  smartFeedback?: string;
+  explainFeedback?: string;
+  improveFeedback?: string;
 };
 
 const MATHS_PAPER_PROMPT = (paperLabel: string, isCalc: boolean, tier: "Foundation" | "Higher") => {
