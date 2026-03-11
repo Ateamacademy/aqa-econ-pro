@@ -271,7 +271,7 @@ function extractFigureBlocks(text: string): FigureSegment[] {
       j++;
     }
 
-    const inlineDesc = figTitle.replace(/^Figure\s+\d+\s*:??\s*/i, "").trim();
+    const inlineDesc = figTitle.replace(/^Figure\s+\d+\s*:?\s*/i, "").trim();
     const includeInlineDesc = /(?:vertical|horizontal)\s*axis|values?\s*:|\d\s*(?:[:=]|\(|[–-])\s*[£$€]?\s*\d/i.test(inlineDesc);
     const desc = [includeInlineDesc ? inlineDesc : "", ...figLines].filter(Boolean).join("\n").trim();
 
