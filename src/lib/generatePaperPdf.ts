@@ -346,6 +346,142 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta) {
         }
       }
 
+      // Check if it's an S&D / economics diagram figure
+      const figDescJoined = figLines.join(" ").toLowerCase();
+      const hasCurveRefs = /[ds][₀₁01]/i.test(figLines.join(" ")) || (/demand/i.test(figDescJoined) && /supply/i.test(figDescJoined) && /shift/i.test(figDescJoined));
+      
+      if (hasCurveRefs && lineDataSets.length === 0) {
+        li = fli - 1; // Skip processed lines
+
+        const diagramW = maxW * 0.7;
+        const diagramH = 70;
+        const dX = marginL + (maxW - diagramW) / 2 + 12;
+        y = ensureSpace(doc, y, diagramH + 35, pageH);
+        const dY0 = y + 8;
+        const dYEnd = dY0 + diagramH;
+        const dXEnd = dX + diagramW;
+
+        // Draw axes
+        doc.setDrawColor(40, 40, 40);
+        doc.setLineWidth(0.6);
+        doc.line(dX, dY0, dX, dYEnd); // Y axis
+        doc.line(dX, dYEnd, dXEnd, dYEnd); // X axis
+
+        // Axis labels
+        const figJoined = figLines.join("\n");
+        const vAxisM = figJoined.match(/vertical\s*axis:\s*(.+)/i);
+        const hAxisM = figJoined.match(/horizontal\s*axis:\s*(.+)/i);
+        doc.setFontSize(7);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(30, 30, 30);
+        doc.text(vAxisM?.[1]?.trim() || "Price (P)", dX - 3, dY0 - 2, { align: "right" });
+        doc.text(hAxisM?.[1]?.trim() || "Quantity (Q)", dXEnd + 2, dYEnd + 4);
+        doc.text("O", dX - 3, dYEnd + 4, { align: "right" });
+
+        // Determine shifts
+        const demandRight = /demand\b[^.]*shift[^.]*right/i.test(figDescJoined) || /demand\b[^.]*increase/i.test(figDescJoined);
+        const demandLeft = /demand\b[^.]*shift[^.]*left/i.test(figDescJoined) || /demand\b[^.]*decrease/i.test(figDescJoined);
+        const supplyRight = /supply\b[^.]*shift[^.]*right/i.test(figDescJoined) || /supply\b[^.]*increase/i.test(figDescJoined);
+        const supplyLeft = /supply\b[^.]*shift[^.]*left/i.test(figDescJoined) || /supply\b[^.]*decrease/i.test(figDescJoined);
+        const dShift = demandRight ? 18 : demandLeft ? -18 : 0;
+        const sShift = supplyRight ? 12 : supplyLeft ? -12 : 0;
+
+        // Original curves
+        const d0x1 = dX + 8, d0y1 = dY0 + 4;
+        const d0x2 = dXEnd - 8, d0y2 = dYEnd - 4;
+        const s0x1 = dX + 8, s0y1 = dYEnd - 4;
+        const s0x2 = dXEnd - 8, s0y2 = dY0 + 4;
+
+        // Draw D₀
+        doc.setDrawColor(0, 102, 204);
+        doc.setLineWidth(0.5);
+        doc.line(d0x1, d0y1, d0x2, d0y2);
+        doc.setFontSize(6.5);
+        doc.setTextColor(0, 102, 204);
+        doc.text("D₀", d0x2 + 1, d0y2 + 3);
+
+        // Draw S₀
+        doc.setDrawColor(220, 50, 50);
+        doc.setLineWidth(0.5);
+        doc.line(s0x1, s0y1, s0x2, s0y2);
+        doc.setTextColor(220, 50, 50);
+        doc.text("S₀", s0x2 + 1, s0y2 - 1);
+
+        // Calculate E₀ intersection
+        const denomE0 = (d0x1 - d0x2) * (s0y1 - s0y2) - (d0y1 - d0y2) * (s0x1 - s0x2);
+        const t0 = ((d0x1 - s0x1) * (s0y1 - s0y2) - (d0y1 - s0y1) * (s0x1 - s0x2)) / denomE0;
+        const e0x = d0x1 + t0 * (d0x2 - d0x1);
+        const e0y = d0y1 + t0 * (d0y2 - d0y1);
+
+        // Draw shifted curves if applicable
+        if (dShift !== 0) {
+          doc.setDrawColor(0, 70, 180);
+          doc.setLineWidth(0.5);
+          doc.line(d0x1 + dShift, d0y1, d0x2 + dShift, d0y2);
+          doc.setTextColor(0, 70, 180);
+          doc.text("D₁", d0x2 + dShift + 1, d0y2 + 3);
+        }
+        if (sShift !== 0) {
+          doc.setDrawColor(180, 30, 30);
+          doc.setLineWidth(0.5);
+          doc.line(s0x1 + sShift, s0y1, s0x2 + sShift, s0y2);
+          doc.setTextColor(180, 30, 30);
+          doc.text("S₁", s0x2 + sShift + 1, s0y2 - 1);
+        }
+
+        // E₀ dot and projection
+        doc.setFillColor(5, 150, 105);
+        doc.circle(e0x, e0y, 1, "F");
+        doc.setDrawColor(5, 150, 105);
+        doc.setLineWidth(0.15);
+        doc.setLineDashPattern([1, 1], 0);
+        doc.line(dX, e0y, e0x, e0y);
+        doc.line(e0x, e0y, e0x, dYEnd);
+        doc.setLineDashPattern([], 0);
+        doc.setFontSize(6);
+        doc.setTextColor(5, 150, 105);
+        doc.text("E₀", e0x + 2, e0y - 2);
+        doc.text("P₀", dX - 3, e0y + 1, { align: "right" });
+        doc.text("Q₀", e0x, dYEnd + 4, { align: "center" });
+
+        // Calculate E₁
+        const d1x1 = d0x1 + dShift, d1x2 = d0x2 + dShift;
+        const s1x1 = s0x1 + sShift, s1x2 = s0x2 + sShift;
+        const denomE1 = (d1x1 - d1x2) * (s0y1 - s0y2) - (d0y1 - d0y2) * (s1x1 - s1x2);
+        if (Math.abs(denomE1) > 0.001) {
+          const t1 = ((d1x1 - s1x1) * (s0y1 - s0y2) - (d0y1 - s0y1) * (s1x1 - s1x2)) / denomE1;
+          const e1x = d1x1 + t1 * (d1x2 - d1x1);
+          const e1y = d0y1 + t1 * (d0y2 - d0y1);
+
+          doc.setFillColor(217, 119, 6);
+          doc.circle(e1x, e1y, 1, "F");
+          doc.setDrawColor(217, 119, 6);
+          doc.setLineWidth(0.15);
+          doc.setLineDashPattern([1, 1], 0);
+          doc.line(dX, e1y, e1x, e1y);
+          doc.line(e1x, e1y, e1x, dYEnd);
+          doc.setLineDashPattern([], 0);
+          doc.setFontSize(6);
+          doc.setTextColor(217, 119, 6);
+          doc.text("E₁", e1x + 2, e1y - 2);
+          doc.text("P₁", dX - 3, e1y + 1, { align: "right" });
+          doc.text("Q₁", e1x, dYEnd + 4, { align: "center" });
+        }
+
+        // Source
+        const sourceText = figLines.join(" ").match(/Source:\s*.+/i)?.[0];
+        if (sourceText) {
+          doc.setFontSize(6.5);
+          doc.setFont("helvetica", "italic");
+          doc.setTextColor(100, 100, 100);
+          doc.text(doc.splitTextToSize(sourceText.replace(/^[•\-*\s]+/, "").trim(), diagramW), dX, dYEnd + 10);
+          y = dYEnd + 16;
+        } else {
+          y = dYEnd + 8;
+        }
+        continue;
+      }
+
       // Draw chart if we have data
       if (lineDataSets.length > 0 && lineDataSets[0].points.length > 1) {
         li = fli - 1; // Skip processed lines
