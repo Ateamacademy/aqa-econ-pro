@@ -200,7 +200,7 @@ export function FigureChart({ title, description }: FigureChartProps) {
       
       {showTable && markdownTable ? (
         <div className="overflow-x-auto">
-          <ReactMarkdown components={{
+          <ReactMarkdown remarkPlugins={[remarkGfm]} components={{
             table: ({ children }) => <table className="w-full text-sm border-collapse">{children}</table>,
             thead: ({ children }) => <thead className="bg-muted/60 border-b border-border">{children}</thead>,
             th: ({ children }) => <th className="px-4 py-2.5 text-left text-xs font-semibold text-foreground uppercase tracking-wider">{children}</th>,
