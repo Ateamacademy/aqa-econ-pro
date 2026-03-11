@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,24 +8,26 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import { SubjectProvider } from "@/contexts/SubjectContext";
 import Layout from "@/components/Layout";
 import Index from "./pages/Index";
-import PastPapers from "./pages/PastPapers";
-import EdexcelAPastPapers from "./pages/EdexcelAPastPapers";
-import EdexcelBPastPapers from "./pages/EdexcelBPastPapers";
-import CambridgePastPapers from "./pages/CambridgePastPapers";
-import OcrPastPapers from "./pages/OcrPastPapers";
-import GcsePastPapers from "./pages/GcsePastPapers";
-import IgcsePastPapers from "./pages/IgcsePastPapers";
-import AITutor from "./pages/AITutor";
-import EssayGrader from "./pages/EssayGrader";
-import Practice from "./pages/Practice";
-import DiagramPractice from "./pages/DiagramPractice";
-import StudyNotes from "./pages/StudyNotes";
-import Dashboard from "./pages/Dashboard";
 import Auth from "./pages/Auth";
 import ResetPassword from "./pages/ResetPassword";
-import Pricing from "./pages/Pricing";
-import PredictedPapers from "./pages/PredictedPapers";
 import NotFound from "./pages/NotFound";
+
+// Lazy-load feature pages to avoid bundler initialization order issues
+const PastPapers = lazy(() => import("./pages/PastPapers"));
+const EdexcelAPastPapers = lazy(() => import("./pages/EdexcelAPastPapers"));
+const EdexcelBPastPapers = lazy(() => import("./pages/EdexcelBPastPapers"));
+const CambridgePastPapers = lazy(() => import("./pages/CambridgePastPapers"));
+const OcrPastPapers = lazy(() => import("./pages/OcrPastPapers"));
+const GcsePastPapers = lazy(() => import("./pages/GcsePastPapers"));
+const IgcsePastPapers = lazy(() => import("./pages/IgcsePastPapers"));
+const AITutor = lazy(() => import("./pages/AITutor"));
+const EssayGrader = lazy(() => import("./pages/EssayGrader"));
+const Practice = lazy(() => import("./pages/Practice"));
+const DiagramPractice = lazy(() => import("./pages/DiagramPractice"));
+const StudyNotes = lazy(() => import("./pages/StudyNotes"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+const Pricing = lazy(() => import("./pages/Pricing"));
+const PredictedPapers = lazy(() => import("./pages/PredictedPapers"));
 
 const queryClient = new QueryClient();
 
