@@ -15,6 +15,16 @@ interface DataSet {
 
 const COLORS = ["hsl(211, 100%, 50%)", "hsl(0, 75%, 55%)", "hsl(140, 60%, 40%)", "hsl(35, 80%, 50%)"];
 
+function normalizeFigureDescription(description: string): string {
+  return description
+    .replace(/\r/g, "")
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
+    .replace(/[\*_`~]/g, "")
+    .split("\n")
+    .map((line) => line.replace(/^>\s?/, "").trimEnd())
+    .join("\n");
+}
+
 /**
  * Parse markdown tables: | Year | Col1 | Col2 | ...
  */
