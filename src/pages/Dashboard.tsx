@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import {
   Lock, Brain, PenTool, Crown, FileText, TrendingUp, Calendar, Target,
   BarChart3, Flame, BookOpen, GraduationCap, ArrowRight, Sparkles,
-  Clock, Award, Zap, LineChart, PieChart,
+  Clock, Award, Zap, LineChart, PieChart, StickyNote,
 } from "lucide-react";
 import { FREE_LIMITS } from "@/lib/plans";
 
