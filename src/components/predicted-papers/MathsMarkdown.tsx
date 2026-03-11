@@ -271,7 +271,9 @@ function extractFigureBlocks(text: string): FigureSegment[] {
       j++;
     }
 
-    const desc = figLines.join("\n").trim();
+    const inlineDesc = figTitle.replace(/^Figure\s+\d+\s*:??\s*/i, "").trim();
+    const includeInlineDesc = /(?:vertical|horizontal)\s*axis|values?\s*:|\d\s*(?:[:=]|\(|[–-])\s*[£$€]?\s*\d/i.test(inlineDesc);
+    const desc = [includeInlineDesc ? inlineDesc : "", ...figLines].filter(Boolean).join("\n").trim();
 
     const diagramProps = parseFigureAsDiagram(figTitle, desc);
     if (diagramProps) {
@@ -288,8 +290,9 @@ function extractFigureBlocks(text: string): FigureSegment[] {
     const hasTrendNarrative = /from\s+[\d,.]+\s*[^,\n]*?\s+in\s+\d{4}\s+to\s+[\d,.]+/i.test(desc);
     const hasValuesTupleData = /values?\s*:\s*.*\(\s*[-+]?\d[\d,.]*\s*\)/i.test(desc);
     const hasCategoryValueList = hasCategoryValueData(desc);
+    const hasLoosePairs = hasLooseLabelValueData(desc);
 
-    if (hasLineData || hasSingleSeriesData || hasMarkdownTable || hasBulletData || hasTrendNarrative || hasValuesTupleData || hasCategoryValueList) {
+    if (hasLineData || hasSingleSeriesData || hasMarkdownTable || hasBulletData || hasTrendNarrative || hasValuesTupleData || hasCategoryValueList || hasLoosePairs) {
       flushText();
       segments.push({ type: "figure", content: "", figTitle, figDesc: desc });
       i = j;
