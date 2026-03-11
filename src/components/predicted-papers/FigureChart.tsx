@@ -92,6 +92,49 @@ function parseBulletPointData(description: string): { dataSets: DataSet[]; axisL
   };
 }
 
+function parseValueTupleData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
+  const axisLabels = { x: "", y: "" };
+  const lines = description.split("\n").map(l => l.trim()).filter(Boolean);
+
+  for (const line of lines) {
+    const vMatch = line.match(/vertical\s*axis:\s*(.+)/i);
+    if (vMatch) axisLabels.y = vMatch[1].trim();
+    const hMatch = line.match(/horizontal\s*axis:\s*(.+)/i);
+    if (hMatch) axisLabels.x = hMatch[1].trim();
+  }
+
+  const valuesLine = lines.find(l => /values?\s*:/i.test(l));
+  if (!valuesLine) return null;
+
+  const valuesText = valuesLine
+    .replace(/^[-•*]\s*/, "")
+    .replace(/.*values?\s*:\s*/i, "")
+    .replace(/source\s*:.*/i, "");
+
+  const tupleRegex = /([^,]+?)\s*\(\s*([-+]?\d[\d,]*(?:\.\d+)?)\s*\)/g;
+  const points: { year: string; value: number }[] = [];
+  let match: RegExpExecArray | null;
+
+  while ((match = tupleRegex.exec(valuesText)) !== null) {
+    const xVal = match[1].replace(/^[-•*]\s*/, "").trim();
+    const yVal = parseFloat(match[2].replace(/,/g, ""));
+    if (xVal && Number.isFinite(yVal)) {
+      points.push({ year: xVal, value: yVal });
+    }
+  }
+
+  if (points.length < 2) return null;
+
+  if (!axisLabels.x && points.every(p => /^\d{4}$/.test(p.year))) {
+    axisLabels.x = "Year";
+  }
+
+  return {
+    dataSets: [{ label: axisLabels.y || "Value", points }],
+    axisLabels,
+  };
+}
+
 function parseTrendNarrativeData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
   const axisLabels = { x: "", y: "" };
   const lines = description.split("\n").map(l => l.trim());
