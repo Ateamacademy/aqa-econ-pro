@@ -247,7 +247,7 @@ export function MathsMarkdown({ children, className }: MathsMarkdownProps) {
 
     if (!hasDiagrams) {
       return (
-        <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
+        <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
           {text}
         </ReactMarkdown>
       );
