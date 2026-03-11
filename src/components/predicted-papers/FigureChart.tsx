@@ -92,6 +92,56 @@ function parseBulletPointData(description: string): { dataSets: DataSet[]; axisL
   };
 }
 
+function parseTrendNarrativeData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
+  const axisLabels = { x: "", y: "" };
+  const lines = description.split("\n").map(l => l.trim());
+
+  for (const line of lines) {
+    const vMatch = line.match(/vertical\s*axis:\s*(.+)/i);
+    if (vMatch) axisLabels.y = vMatch[1].trim();
+    const hMatch = line.match(/horizontal\s*axis:\s*(.+)/i);
+    if (hMatch) axisLabels.x = hMatch[1].trim();
+  }
+
+  const normalized = lines.join(" ");
+  const fromToMatch = normalized.match(/from\s+([\d,.]+)\s*[^,\n]*?\s+in\s+(\d{4})\s+to\s+([\d,.]+)\s*[^,\n]*?\s+in\s+(\d{4})/i);
+  if (!fromToMatch) return null;
+
+  const startValue = parseFloat(fromToMatch[1].replace(/,/g, ""));
+  const startYear = parseInt(fromToMatch[2], 10);
+  const endValue = parseFloat(fromToMatch[3].replace(/,/g, ""));
+  const endYear = parseInt(fromToMatch[4], 10);
+
+  if (!Number.isFinite(startValue) || !Number.isFinite(endValue) || !Number.isFinite(startYear) || !Number.isFinite(endYear) || endYear <= startYear) {
+    return null;
+  }
+
+  const points: { year: string; value: number }[] = [];
+  const span = endYear - startYear;
+  for (let year = startYear; year <= endYear; year++) {
+    const progress = (year - startYear) / span;
+    const value = startValue + (endValue - startValue) * progress;
+    points.push({ year: String(year), value: Math.round(value * 100) / 100 });
+  }
+
+  const flatRangeMatch = normalized.match(/flat\s+trend\s+from\s+(\d{4})\s*(?:-|–|to)\s*(\d{4})/i);
+  if (flatRangeMatch) {
+    const flatStart = parseInt(flatRangeMatch[1], 10);
+    const flatEnd = parseInt(flatRangeMatch[2], 10);
+    for (const point of points) {
+      const year = parseInt(point.year, 10);
+      if (year >= flatStart && year <= flatEnd) {
+        point.value = Math.round(endValue * 100) / 100;
+      }
+    }
+  }
+
+  return {
+    dataSets: [{ label: axisLabels.y || "Value", points }],
+    axisLabels: { x: axisLabels.x || "Year", y: axisLabels.y },
+  };
+}
+
 function parseChartData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
   // Try markdown table first
   const tableResult = parseMarkdownTable(description);
@@ -100,6 +150,10 @@ function parseChartData(description: string): { dataSets: DataSet[]; axisLabels:
   // Try bullet-point "At X%, value is Y" format
   const bulletResult = parseBulletPointData(description);
   if (bulletResult) return bulletResult;
+
+  // Try trend narrative format
+  const trendResult = parseTrendNarrativeData(description);
+  if (trendResult) return trendResult;
 
   // Fallback: line-based format (Line 1, data points, axis labels)
   const lines = description.split("\n").map(l => l.trim());

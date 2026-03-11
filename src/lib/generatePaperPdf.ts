@@ -286,7 +286,7 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta) {
         fli++;
       }
 
-      // Detect if this is a line chart figure (has "Line N" patterns with year:value data)
+      // Detect if this is a line chart figure (supports both explicit year:value lines and narrative trends)
       const lineDataSets: { label: string; points: { year: string; value: number }[] }[] = [];
       let currentSet: { label: string; points: { year: string; value: number }[] } | null = null;
       let axisLabels = { x: "", y: "" };
@@ -309,6 +309,43 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta) {
       }
       if (currentSet && currentSet.points.length > 0) lineDataSets.push(currentSet);
 
+      // Narrative trend fallback (e.g. "upward trend from 28% in 2010 to 35% in 2024")
+      if (lineDataSets.length === 0) {
+        const normalized = figLines.join(" ");
+        const fromToMatch = normalized.match(/from\s+([\d,.]+)\s*[^,\n]*?\s+in\s+(\d{4})\s+to\s+([\d,.]+)\s*[^,\n]*?\s+in\s+(\d{4})/i);
+        if (fromToMatch) {
+          const startValue = parseFloat(fromToMatch[1].replace(/,/g, ""));
+          const startYear = parseInt(fromToMatch[2], 10);
+          const endValue = parseFloat(fromToMatch[3].replace(/,/g, ""));
+          const endYear = parseInt(fromToMatch[4], 10);
+
+          if (Number.isFinite(startValue) && Number.isFinite(endValue) && Number.isFinite(startYear) && Number.isFinite(endYear) && endYear > startYear) {
+            const points: { year: string; value: number }[] = [];
+            const span = endYear - startYear;
+            for (let year = startYear; year <= endYear; year++) {
+              const progress = (year - startYear) / span;
+              const value = startValue + (endValue - startValue) * progress;
+              points.push({ year: String(year), value: Math.round(value * 100) / 100 });
+            }
+
+            const flatRangeMatch = normalized.match(/flat\s+trend\s+from\s+(\d{4})\s*(?:-|–|to)\s*(\d{4})/i);
+            if (flatRangeMatch) {
+              const flatStart = parseInt(flatRangeMatch[1], 10);
+              const flatEnd = parseInt(flatRangeMatch[2], 10);
+              for (const point of points) {
+                const year = parseInt(point.year, 10);
+                if (year >= flatStart && year <= flatEnd) {
+                  point.value = Math.round(endValue * 100) / 100;
+                }
+              }
+            }
+
+            lineDataSets.push({ label: axisLabels.y || "Value", points });
+            if (!axisLabels.x) axisLabels.x = "Year";
+          }
+        }
+      }
+
       // Draw chart if we have data
       if (lineDataSets.length > 0 && lineDataSets[0].points.length > 1) {
         li = fli - 1; // Skip processed lines
@@ -316,12 +353,12 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta) {
         const chartW = maxW * 0.85;
         const chartH = 55;
         const chartX = marginL + 15;
+        y = ensureSpace(doc, y, chartH + 30, pageH);
         const chartY0 = y + 5;
-        y = ensureSpace(doc, y, chartH + 25, pageH);
         const chartYEnd = chartY0 + chartH;
 
         // Find min/max values
-        let allValues = lineDataSets.flatMap(ds => ds.points.map(p => p.value));
+        const allValues = lineDataSets.flatMap(ds => ds.points.map(p => p.value));
         let minVal = Math.floor(Math.min(...allValues));
         let maxVal = Math.ceil(Math.max(...allValues));
         if (minVal === maxVal) { minVal -= 1; maxVal += 1; }
@@ -378,7 +415,7 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta) {
             const x2 = chartX + (pi + 1) * xStep;
             const y1 = chartYEnd - ((ds.points[pi].value - minVal) / range) * chartH;
             const y2 = chartYEnd - ((ds.points[pi + 1].value - minVal) / range) * chartH;
-            
+
             // Dashed line for second dataset
             if (di > 0) {
               const segments = 8;
@@ -413,7 +450,17 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta) {
           legendY += 4;
         });
 
-        y = legendY + 3;
+        const sourceText = figLines.join(" ").match(/Source:\s*.+/i)?.[0];
+        if (sourceText) {
+          doc.setFontSize(6.5);
+          doc.setFont("helvetica", "italic");
+          doc.setTextColor(100, 100, 100);
+          const cleanSource = sourceText.replace(/^[•\-*\s]+/, "").trim();
+          doc.text(doc.splitTextToSize(cleanSource, chartW), chartX, legendY + 2);
+          y = legendY + 7;
+        } else {
+          y = legendY + 3;
+        }
       }
       continue;
     }
