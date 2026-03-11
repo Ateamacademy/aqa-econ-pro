@@ -11,9 +11,49 @@ interface MathsMarkdownProps {
   className?: string;
 }
 
+/**
+ * Pre-process markdown text to ensure tables render correctly.
+ * ReactMarkdown requires blank lines before/after table blocks.
+ * Also normalises pipe-separated table rows that may be on a single line.
+ */
+function preprocessMarkdown(text: string): string {
+  // Split any single-line table dumps back into proper rows
+  // e.g. "| Year | Value | |------|------| | 2020 | 50 |" → multi-line
+  let processed = text.replace(/\|\s*\|/g, "|\n|");
+
+  // Ensure blank lines around table blocks so ReactMarkdown parses them
+  const lines = processed.split("\n");
+  const result: string[] = [];
+  let inTable = false;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const isTableRow = line.trim().startsWith("|") && line.trim().endsWith("|");
+
+    if (isTableRow && !inTable) {
+      // Starting a table — ensure blank line before
+      if (result.length > 0 && result[result.length - 1].trim() !== "") {
+        result.push("");
+      }
+      inTable = true;
+    } else if (!isTableRow && inTable) {
+      // Leaving a table — ensure blank line after
+      if (result.length > 0 && result[result.length - 1].trim() !== "") {
+        result.push("");
+      }
+      inTable = false;
+    }
+
+    result.push(line);
+  }
+
+  return result.join("\n");
+}
+
 /** 
  * Extract "Figure N: Title" blocks followed by chart data.
- * Supports: Line-based data, axis labels, AND markdown tables with numeric data.
+ * Supports: Line-based data, axis labels, markdown tables with numeric data,
+ * AND bullet-point data (e.g. "At 0.5% interest, monthly payment is £650").
  */
 function extractFigureBlocks(text: string): { type: "text" | "figure"; content: string; figTitle?: string; figDesc?: string }[] {
   const segments: { type: "text" | "figure"; content: string; figTitle?: string; figDesc?: string }[] = [];
@@ -25,12 +65,14 @@ function extractFigureBlocks(text: string): { type: "text" | "figure"; content: 
   
   while ((match = figRegex.exec(text)) !== null) {
     const desc = match[2].trim();
-    // Treat as chart if it has: Line-based data, axis+year data, OR a markdown table with numbers
+    // Treat as chart if it has: Line-based data, axis+year data, markdown table with numbers,
+    // OR bullet-point data with values (e.g. "At 0.5% interest, monthly payment is £650")
     const hasLineData = /Line\s+\d+/i.test(desc) && /\d{4}:\s*[\d.]+/i.test(desc);
     const hasSingleSeriesData = /(?:vertical|horizontal)\s*axis:/i.test(desc) && /\d{4}:\s*[\d.]+/i.test(desc);
     const hasMarkdownTable = /\|.*\|.*\|/.test(desc) && /\|\s*[\d,.]+\s*\|/.test(desc);
+    const hasBulletData = /(?:vertical|horizontal)\s*axis:/i.test(desc) && /(?:at\s+[\d.]+%?|[\d.]+%?\s*(?:interest|rate))[^£$€\d]*[£$€]?\s*[\d,]+/i.test(desc);
     
-    if (hasLineData || hasSingleSeriesData || hasMarkdownTable) {
+    if (hasLineData || hasSingleSeriesData || hasMarkdownTable || hasBulletData) {
       if (match.index > lastIndex) {
         segments.push({ type: "text", content: text.slice(lastIndex, match.index) });
       }
@@ -87,7 +129,8 @@ const markdownComponents: Components = {
   },
   strong: ({ children, ...props }) => {
     const text = typeof children === "string" ? children : "";
-    if (/^(Figure|Extract|Table)\s+\w+:?$/i.test(text.trim())) {
+    // Style Extract/Figure/Table headers as badges
+    if (/^(Figure|Extract|Table)\s+\w+/i.test(text.trim())) {
       return (
         <strong className="inline-block mt-4 mb-1 px-3 py-1 rounded-md bg-primary/10 text-primary text-xs font-bold uppercase tracking-wide border border-primary/20" {...props}>
           {children}
@@ -112,10 +155,14 @@ const markdownComponents: Components = {
  * Renders markdown with LaTeX math support via KaTeX.
  * Automatically detects and renders economics diagrams as SVG visuals.
  * Renders figure chart descriptions as interactive Recharts line charts.
+ * Pre-processes markdown to ensure tables always render correctly.
  */
 export function MathsMarkdown({ children, className }: MathsMarkdownProps) {
+  // Pre-process to fix table formatting
+  const processedText = preprocessMarkdown(children);
+
   // First extract figure charts
-  const figSegments = extractFigureBlocks(children);
+  const figSegments = extractFigureBlocks(processedText);
   const hasFigures = figSegments.some(s => s.type === "figure");
 
   const renderMarkdownWithDiagrams = (text: string, keyPrefix: string = "") => {
@@ -142,7 +189,7 @@ export function MathsMarkdown({ children, className }: MathsMarkdownProps) {
   };
 
   if (!hasFigures) {
-    return <div className={className}>{renderMarkdownWithDiagrams(children)}</div>;
+    return <div className={className}>{renderMarkdownWithDiagrams(processedText)}</div>;
   }
 
   return (
