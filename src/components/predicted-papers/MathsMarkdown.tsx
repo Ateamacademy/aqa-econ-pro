@@ -178,48 +178,77 @@ type FigureSegment =
   | { type: "figure"; content: string; figTitle: string; figDesc: string; diagram?: never }
   | { type: "sd-diagram"; content: string; figTitle?: string; figDesc?: string; diagram: import("./EconDiagramSVG").DiagramProps };
 
+const FIGURE_TITLE_RE = /^\s*(?:[-•*]\s*)?(?:#{1,4}\s*)?(?:\*{1,2})?\s*(Figure\s+\d+\s*:?.*)\s*(?:\*{1,2})?\s*$/i;
+const SECTION_BREAK_RE = /^\s*(?:#{1,4}\s+(?!Data|Vertical|Horizontal|Line)|\*{0,2}(?:Figure|Table|Extract)\s+\w+|Question\s+\d+)/i;
+
 function extractFigureBlocks(text: string): FigureSegment[] {
+  const lines = text.split("\n");
   const segments: FigureSegment[] = [];
-  const figRegex = /(?:^|\n)\s*(?:#{1,4}\s*)?\*{0,2}(Figure\s+\d+[^*\n]*)\*{0,2}\s*\n((?:[\s\S]*?)(?=\n\s*(?:#{1,4}\s+(?!Data|Vertical|Horizontal|Line)|\*{0,2}(?:Figure|Table|Extract)\s|Question\s|$)))/gi;
-  
-  let lastIndex = 0;
-  let match: RegExpExecArray | null;
-  
-  while ((match = figRegex.exec(text)) !== null) {
-    const desc = match[2].trim();
-    const figTitle = match[1].trim();
-    
-    // First check if it's an S&D / economics diagram
-    const diagramProps = parseFigureAsDiagram(figTitle, desc);
-    if (diagramProps) {
-      if (match.index > lastIndex) {
-        segments.push({ type: "text", content: text.slice(lastIndex, match.index) });
-      }
-      segments.push({ type: "sd-diagram", content: "", diagram: diagramProps });
-      lastIndex = match.index + match[0].length;
+  let textBuffer: string[] = [];
+  let i = 0;
+
+  const flushText = () => {
+    if (textBuffer.length > 0) {
+      segments.push({ type: "text", content: textBuffer.join("\n") });
+      textBuffer = [];
+    }
+  };
+
+  while (i < lines.length) {
+    const line = lines[i];
+    const titleMatch = line.match(FIGURE_TITLE_RE);
+
+    if (!titleMatch) {
+      textBuffer.push(line);
+      i++;
       continue;
     }
-    
-    // Then check for chart data
+
+    const figTitle = titleMatch[1].replace(/\*+/g, "").trim();
+    const figLines: string[] = [];
+    let j = i + 1;
+
+    while (j < lines.length) {
+      const next = lines[j];
+      const trimmed = next.trim();
+
+      if (trimmed && (FIGURE_TITLE_RE.test(trimmed) || SECTION_BREAK_RE.test(trimmed))) {
+        break;
+      }
+
+      figLines.push(next);
+      j++;
+    }
+
+    const desc = figLines.join("\n").trim();
+
+    const diagramProps = parseFigureAsDiagram(figTitle, desc);
+    if (diagramProps) {
+      flushText();
+      segments.push({ type: "sd-diagram", content: "", diagram: diagramProps });
+      i = j;
+      continue;
+    }
+
     const hasLineData = /Line\s+\d+/i.test(desc) && /\d{4}:\s*[\d.]+/i.test(desc);
     const hasSingleSeriesData = /(?:vertical|horizontal)\s*axis:/i.test(desc) && /\d{4}:\s*[\d.]+/i.test(desc);
     const hasMarkdownTable = /\|.*\|.*\|/.test(desc) && /\|\s*[\d,.]+\s*\|/.test(desc);
     const hasBulletData = /(?:vertical|horizontal)\s*axis:/i.test(desc) && /(?:at\s+[\d.]+%?|[\d.]+%?\s*(?:interest|rate))[^£$€\d]*[£$€]?\s*[\d,]+/i.test(desc);
     const hasTrendNarrative = /from\s+[\d,.]+\s*[^,\n]*?\s+in\s+\d{4}\s+to\s+[\d,.]+/i.test(desc);
-    
-    if (hasLineData || hasSingleSeriesData || hasMarkdownTable || hasBulletData || hasTrendNarrative) {
-      if (match.index > lastIndex) {
-        segments.push({ type: "text", content: text.slice(lastIndex, match.index) });
-      }
+    const hasValuesTupleData = /values?\s*:\s*.*\(\s*[-+]?\d[\d,.]*\s*\)/i.test(desc);
+
+    if (hasLineData || hasSingleSeriesData || hasMarkdownTable || hasBulletData || hasTrendNarrative || hasValuesTupleData) {
+      flushText();
       segments.push({ type: "figure", content: "", figTitle, figDesc: desc });
-      lastIndex = match.index + match[0].length;
+      i = j;
+      continue;
     }
+
+    textBuffer.push(...lines.slice(i, j));
+    i = j;
   }
-  
-  if (lastIndex < text.length) {
-    segments.push({ type: "text", content: text.slice(lastIndex) });
-  }
-  
+
+  flushText();
   return segments.length > 0 ? segments : [{ type: "text", content: text }];
 }
 

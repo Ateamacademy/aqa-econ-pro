@@ -194,6 +194,10 @@ function parseChartData(description: string): { dataSets: DataSet[]; axisLabels:
   const bulletResult = parseBulletPointData(description);
   if (bulletResult) return bulletResult;
 
+  // Try values tuple format: "Values: 2000 (3.5), 2005 (5.0), ..."
+  const tupleResult = parseValueTupleData(description);
+  if (tupleResult) return tupleResult;
+
   // Try trend narrative format
   const trendResult = parseTrendNarrativeData(description);
   if (trendResult) return trendResult;
@@ -214,7 +218,7 @@ function parseChartData(description: string): { dataSets: DataSet[]; axisLabels:
     if (lineMatch) {
       hasLineHeaders = true;
       if (current) dataSets.push(current);
-      current = { label: lineMatch[2].trim(), points: [] };
+      current = { label: lineMatch[1].trim(), points: [] };
       continue;
     }
     const dataMatch = line.match(/^[-•*]?\s*(\d{4})(?:\s*\([^)]*\))?\s*:\s*([\d.]+)\s*(%|million|billion|bn)?/i);
