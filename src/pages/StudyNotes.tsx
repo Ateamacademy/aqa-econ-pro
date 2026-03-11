@@ -1,7 +1,8 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
+import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { Input } from "@/components/ui/input";
-import { BookOpen, ChevronRight, Search, Layers, GraduationCap, Sparkles, TrendingUp, Pen } from "lucide-react";
+import { BookOpen, ChevronRight, Search, Layers, GraduationCap, Sparkles, TrendingUp, Pen, Eye } from "lucide-react";
 import {
   RevisionTopicCard,
   DefinitionBox,
@@ -16,6 +17,8 @@ import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import type { Topic, Subtopic } from "@/data/studyNotes/edexcelANotes";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useRef } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { SubtopicPractice } from "@/components/study-notes/SubtopicPractice";
 
 // Data imports
 import { aqaYear1Paper1Topics, aqaYear1Paper2Topics, aqaYear2Paper1Topics, aqaYear2Paper2Topics } from "@/data/studyNotes/aqaNotes";
@@ -145,11 +148,39 @@ function SectionHeader({ section, index }: { section: PaperSection; index: numbe
 }
 
 export default function StudyNotes() {
+  const { user } = useAuth();
   const { subject, subjectLabel, examBoard, level } = useSubject();
   const [search, setSearch] = useState("");
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+  const [viewedSubtopics, setViewedSubtopics] = useState<Set<string>>(new Set());
 
   useEffect(() => { setExpanded({}); setSearch(""); }, [subject]);
+
+  // Load viewed subtopics from DB
+  useEffect(() => {
+    if (!user) return;
+    supabase
+      .from("practice_sessions")
+      .select("topic")
+      .eq("user_id", user.id)
+      .eq("subject", subject)
+      .eq("session_type", "note_view")
+      .then(({ data }) => {
+        if (data) setViewedSubtopics(new Set(data.map(d => d.topic)));
+      });
+  }, [user, subject]);
+
+  const markViewed = useCallback(async (subtopicTitle: string, topicName: string) => {
+    const key = `${topicName} — ${subtopicTitle}`;
+    if (viewedSubtopics.has(key) || !user) return;
+    setViewedSubtopics(prev => new Set(prev).add(key));
+    await supabase.from("practice_sessions").insert({
+      user_id: user.id,
+      subject,
+      session_type: "note_view",
+      topic: key,
+    });
+  }, [user, subject, viewedSubtopics]);
 
   const toggle = (key: string) => setExpanded(prev => ({ ...prev, [key]: !prev[key] }));
 
@@ -274,11 +305,17 @@ export default function StudyNotes() {
                 className="overflow-hidden"
               >
                 <div className="mt-3 ml-4 space-y-6">
-                  {filteredSubs.map((sub, idx) => (
-                    <RevisionTopicCard key={sub.title} title={sub.title}>
-                      {renderSubtopic(sub, idx)}
-                    </RevisionTopicCard>
-                  ))}
+                  {filteredSubs.map((sub, idx) => {
+                    const viewKey = `${topic.name} — ${sub.title}`;
+                    // Mark as viewed when expanded
+                    if (user) markViewed(sub.title, topic.name);
+                    return (
+                      <RevisionTopicCard key={sub.title} title={sub.title}>
+                        {renderSubtopic(sub, idx)}
+                        <SubtopicPractice subtopicTitle={sub.title} topicName={topic.name} />
+                      </RevisionTopicCard>
+                    );
+                  })}
                 </div>
               </motion.div>
             )}
