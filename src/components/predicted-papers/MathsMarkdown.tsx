@@ -211,6 +211,27 @@ function hasCategoryValueData(desc: string): boolean {
   return valueCount >= 2;
 }
 
+function hasLooseLabelValueData(desc: string): boolean {
+  const lines = desc.split("\n").map((line) => line.trim()).filter(Boolean);
+  let valueCount = 0;
+
+  for (const rawLine of lines) {
+    const line = rawLine.replace(/^[-•*]\s*/, "").trim();
+    if (!line || /^(vertical|horizontal)\s*axis:/i.test(line) || /^source\s*:/i.test(line)) {
+      continue;
+    }
+
+    const pairMatches = [...line.matchAll(/([^,;:\n]{2,}?)\s*(?:[:=]|->|→)\s*[£$€]?\s*([-+]?\d[\d,]*(?:\.\d+)?)/gi)].length;
+    const tupleMatches = [...line.matchAll(/([^,;:\n]{2,}?)\s*\(\s*[£$€]?\s*([-+]?\d[\d,]*(?:\.\d+)?)\s*\)/gi)].length;
+    const dashMatches = [...line.matchAll(/([^,;:\n]{2,}?)\s*[–-]\s*[£$€]?\s*([-+]?\d[\d,]*(?:\.\d+)?)(?=\s*(?:,|;|$))/gi)].length;
+
+    valueCount += pairMatches + tupleMatches + dashMatches;
+    if (valueCount >= 2) return true;
+  }
+
+  return false;
+}
+
 function extractFigureBlocks(text: string): FigureSegment[] {
   const lines = text.split("\n");
   const segments: FigureSegment[] = [];
