@@ -844,7 +844,78 @@ Write a full model answer that would score ${question.marks}/${question.marks}. 
 
 ## Examiner Tip
 Give 2–3 specific, actionable tips. Mention common mistakes (e.g., forgetting state symbols, not balancing equations, missing units, misreading graph axes). Address the student directly.`
-        : `You are marking an AQA A-Level Economics answer using the EXACT AQA mark scheme methodology.
+        : (() => {
+          // Detect if this is a diagram question
+          const qTextLower = question.text.toLowerCase();
+          const isDiagramQ = /\b(diagram|draw|sketch)\b/i.test(qTextLower) && /\b(with the (help|aid) of|using|draw|sketch)\b/i.test(qTextLower);
+
+          if (isDiagramQ) {
+            // Smart Mark format for diagram questions (matches DiagramPractice)
+            return `You are marking a diagram-based Economics answer for ${examBoard} ${level}.
+
+Here is the context from the paper:
+${paperContext}
+
+Here is the question:
+${question.label} [${question.marks} marks]
+${question.text}
+
+Here is the student's answer:
+${answer}
+
+You MUST evaluate using ALL 5 diagram marking criteria:
+
+1. **AXES** — Are axes labelled correctly? (e.g., Price/P on Y-axis, Quantity/Q on X-axis; for macro: Price Level & Real GDP)
+2. **CURVE DIRECTION** — Are curves sloping the correct way? (Demand downward, Supply upward, LRAS vertical, etc.)
+3. **SHIFT DIRECTION** — Does the described shift match the scenario? (Right = increase, Left = decrease)
+4. **EQUILIBRIUM** — Is original equilibrium (P1,Q1) marked? Is new equilibrium (P2,Q2) identified with dotted lines?
+5. **EXPLANATION ↔ DIAGRAM CONSISTENCY** — Does the written answer match what the diagram shows?
+
+Use any "[DIAGRAM:" notes or "[DIAGRAM NOTES]" blocks in the student's answer as evidence of their diagram work.
+
+You MUST structure your response using EXACTLY these section headers (the app parses them):
+
+## Your mark: X/${question.marks}
+
+State the mark awarded clearly.
+
+## Smart Mark feedback
+
+Give the main feedback summary in 2-3 sentences. Be direct and specific about what the student got right or wrong. Use bullet points for key corrections with **bold** for important terms.
+
+## Explain my feedback
+
+Provide a detailed breakdown of each of the 5 marking criteria. Use tick ✓ or cross ✗ for each:
+- **Axes**: ✓/✗ — detail
+- **Curve direction**: ✓/✗ — detail
+- **Shift direction**: ✓/✗ — detail
+- **Equilibrium**: ✓/✗ — detail
+- **Explanation-diagram consistency**: ✓/✗ — detail
+
+## Improve my answer
+
+Give specific, actionable steps to improve. Include:
+- What to add or correct in the diagram
+- How to strengthen the written explanation
+- A memory trick or exam technique tip
+- You MUST include a structured diagram block in EXACTLY this format (the app will render it as a visual SVG diagram):
+
+**Diagram: [Diagram Title]**
+- **X-axis**: [label]
+- **Y-axis**: [label]
+- **Initial curves**: [describe D1, S1 etc.]
+- **Initial equilibrium**: [P1, Q1]
+- **Shift**: [which curve shifts which direction, e.g. "Supply shifts left from S1 to S2"]
+- **New equilibrium**: [P2, Q2 and direction of change]
+- **Key conclusion**: [one sentence summary]
+
+Then provide a model written explanation that would score full marks.
+
+Speak directly to the student using "you" and "your". Be encouraging but honest.`;
+          }
+
+          // Standard economics marking prompt
+          return `You are marking an AQA A-Level Economics answer using the EXACT AQA mark scheme methodology.
 
 Here is the context from the paper:
 ${paperContext}
@@ -908,7 +979,7 @@ question.marks === 15 ? `**For this 15-mark question:**
 4. **EQUILIBRIUM** (1 mark): Original equilibrium (P₁,Q₁) AND new equilibrium (P₂,Q₂) identified with dotted lines?
 5. **EXPLANATION-DIAGRAM CONSISTENCY** (1-2 marks): Does the written answer match what the diagram shows? If diagram shows supply left but student writes "price falls" → INCONSISTENT → deny marks.
 
-Use any "[DIAGRAM:" notes or "[DIAGRAM NOTES]" blocks in the student's answer as evidence of their hand-drawn diagram work. Students draw diagrams freehand using a drawing canvas — assess the diagram based on their written description of labels, curves, shifts, equilibrium points, and shaded areas. A well-described diagram with correct labels, shifts, and shading should receive full diagram marks.
+Use any "[DIAGRAM:" notes or "[DIAGRAM NOTES]" blocks in the student's answer as evidence of their hand-drawn diagram work.
 
 List each mark point and whether it was awarded. If a mark was lost, explain exactly why.
 
@@ -942,6 +1013,9 @@ Give 2-3 specific, actionable tips. For diagram questions:
 - Ensure your written explanation MATCHES your diagram — if you draw supply shifting left, your text must say "price rises and quantity falls"
 - A rough but correctly labelled diagram scores higher than a neat but incorrectly shifted one
 Address me directly. Be encouraging but honest about where I lost marks.`;
+        })();
+
+      const isDiagramQ = /\b(diagram|draw|sketch)\b/i.test(question.text.toLowerCase()) && /\b(with the (help|aid) of|using|draw|sketch)\b/i.test(question.text.toLowerCase());
 
       let result = "";
 
@@ -959,17 +1033,40 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
         subject,
         onDelta: (chunk) => { result += chunk; },
         onDone: async () => {
-          const markSchemeMatch = result.match(/## Mark Scheme\s*([\s\S]*?)(?=## Model Answer|$)/i);
-          const modelAnswerMatch = result.match(/## Model Answer\s*([\s\S]*?)(?=## Examiner Tip|$)/i);
-          const examinerTipMatch = result.match(/## Examiner Tip\s*([\s\S]*?)$/i);
+          let feedbackData: QuestionFeedback;
 
-          setFeedbacks((prev) => ({
-            ...prev,
-            [question.id]: {
+          if (isDiagramQ) {
+            // Parse Smart Mark format
+            const markMatch = result.match(/## Your mark:\s*([\s\S]*?)(?=##|$)/i);
+            const smartMatch = result.match(/## Smart Mark feedback\s*([\s\S]*?)(?=## Explain|## Improve|$)/i);
+            const explainMatch = result.match(/## Explain my feedback\s*([\s\S]*?)(?=## Improve|$)/i);
+            const improveMatch = result.match(/## Improve my answer\s*([\s\S]*?)$/i);
+
+            feedbackData = {
+              markScheme: "",
+              modelAnswer: "",
+              examinerTip: "",
+              isDiagramFeedback: true,
+              mark: markMatch?.[1]?.trim() || "",
+              smartFeedback: smartMatch?.[1]?.trim() || result,
+              explainFeedback: explainMatch?.[1]?.trim() || "",
+              improveFeedback: improveMatch?.[1]?.trim() || "",
+            };
+          } else {
+            const markSchemeMatch = result.match(/## Mark Scheme\s*([\s\S]*?)(?=## Model Answer|$)/i);
+            const modelAnswerMatch = result.match(/## Model Answer\s*([\s\S]*?)(?=## Examiner Tip|$)/i);
+            const examinerTipMatch = result.match(/## Examiner Tip\s*([\s\S]*?)$/i);
+
+            feedbackData = {
               markScheme: markSchemeMatch?.[1]?.trim() || result,
               modelAnswer: modelAnswerMatch?.[1]?.trim() || "",
               examinerTip: examinerTipMatch?.[1]?.trim() || "",
-            },
+            };
+          }
+
+          setFeedbacks((prev) => ({
+            ...prev,
+            [question.id]: feedbackData,
           }));
           setMarkingId(null);
 
