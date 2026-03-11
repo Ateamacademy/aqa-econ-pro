@@ -1,5 +1,5 @@
 import { useState, useRef, lazy, Suspense } from "react";
-import { Send, Clock, FileText, Lightbulb, ChevronDown, PenLine, BarChart3 } from "lucide-react";
+import { Send, Clock, FileText, Lightbulb, ChevronDown, ChevronUp, PenLine, BarChart3, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -11,6 +11,7 @@ import { EconDiagramBuilder, type DiagramData } from "@/components/tools/EconDia
 import { GraphPaper } from "@/components/tools/GraphPaper";
 import { GeometryTools } from "@/components/tools/GeometryTools";
 import { cn } from "@/lib/utils";
+import { extractDiagramBlocks, EconDiagramCanvas } from "./EconDiagramSVG";
 
 import type { ParsedQuestion, MCQOption } from "./parseQuestions";
 
@@ -24,6 +25,11 @@ interface QuestionCardProps {
     markScheme: string;
     modelAnswer: string;
     examinerTip: string;
+    isDiagramFeedback?: boolean;
+    mark?: string;
+    smartFeedback?: string;
+    explainFeedback?: string;
+    improveFeedback?: string;
   } | null;
   showMathTools?: boolean;
   showEconDiagram?: boolean;
@@ -53,6 +59,8 @@ export function QuestionCard({
   const [showDiagram, setShowDiagram] = useState(false);
   const [geoTool, setGeoTool] = useState<string | null>(null);
   const [canvasDataUrl, setCanvasDataUrl] = useState<string | null>(null);
+  const [showExplain, setShowExplain] = useState(false);
+  const [showImprove, setShowImprove] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   
   const isMCQ = !!question.mcqOptions && question.mcqOptions.length >= 2;
@@ -92,6 +100,20 @@ export function QuestionCard({
       el.selectionStart = el.selectionEnd = el.value.length;
     }, 0);
   };
+
+  const renderDiagramContent = (text: string) => (
+    <div className="prose prose-sm max-w-none dark:prose-invert">
+      {extractDiagramBlocks(text).map((seg, i) =>
+        seg.type === "diagram" ? (
+          <EconDiagramCanvas key={i} diagram={seg.diagram} />
+        ) : (
+          <Suspense key={i} fallback={<div className="text-sm text-muted-foreground">Loading...</div>}>
+            <RevisionRenderer content={seg.content} />
+          </Suspense>
+        )
+      )}
+    </div>
+  );
 
   const feedbackSections = [
     { key: "markScheme", label: "Mark Scheme", icon: Clock, content: feedback?.markScheme || "" },
@@ -284,36 +306,99 @@ export function QuestionCard({
 
       {/* Feedback sections */}
       <div className="p-4 flex flex-col gap-2">
-        <div className="flex flex-wrap items-center gap-2">
-          {feedbackSections.map((s) => (
-            <Collapsible key={s.key} open={openSection === s.key} onOpenChange={() => toggle(s.key)}>
-              <CollapsibleTrigger asChild>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="gap-1.5 text-xs"
-                  disabled={!feedback}
+        {feedback?.isDiagramFeedback ? (
+          /* Smart Mark format for diagram questions */
+          <div className="space-y-3">
+            {/* Mark display */}
+            {feedback.mark && (
+              <div className="rounded-lg border border-primary/30 bg-primary/5 p-4">
+                <p className="text-xl font-bold text-foreground">Your mark: {feedback.mark}</p>
+              </div>
+            )}
+
+            {/* Smart Mark feedback - always visible */}
+            {feedback.smartFeedback && (
+              <div className="rounded-lg border border-border bg-card p-4">
+                <h4 className="font-semibold text-sm mb-3">Smart Mark feedback</h4>
+                {renderDiagramContent(feedback.smartFeedback)}
+              </div>
+            )}
+
+            {/* Explain my feedback — collapsible */}
+            {feedback.explainFeedback && (
+              <div className="rounded-lg border border-border bg-card overflow-hidden">
+                <button
+                  onClick={() => setShowExplain(!showExplain)}
+                  className="w-full flex items-center justify-between p-4 text-left hover:bg-muted/30 transition-colors"
                 >
-                  <s.icon className="h-3.5 w-3.5" />
-                  {s.label}
-                  <ChevronDown
-                    className={cn(
-                      "h-3 w-3 transition-transform",
-                      openSection === s.key && "rotate-180"
-                    )}
-                  />
-                </Button>
-              </CollapsibleTrigger>
-              {feedback && (
-                <CollapsibleContent className="mt-3 px-1">
-                  <div className="bg-muted/40 rounded-lg p-4">
-                    <Suspense fallback={<div className="text-sm text-muted-foreground">Loading...</div>}><RevisionRenderer content={s.content} /></Suspense>
+                  <div className="flex items-center gap-2">
+                    <MessageSquare className="h-4 w-4 text-muted-foreground" />
+                    <span className="font-semibold text-sm">Explain my feedback</span>
                   </div>
-                </CollapsibleContent>
-              )}
-            </Collapsible>
-          ))}
-        </div>
+                  {showExplain ? <ChevronUp className="h-4 w-4 text-muted-foreground" /> : <ChevronDown className="h-4 w-4 text-muted-foreground" />}
+                </button>
+                {showExplain && (
+                  <div className="px-4 pb-4 border-t border-border/50">
+                    {renderDiagramContent(feedback.explainFeedback)}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Improve my answer — collapsible */}
+            {feedback.improveFeedback && (
+              <div className="rounded-lg border border-border bg-card overflow-hidden">
+                <button
+                  onClick={() => setShowImprove(!showImprove)}
+                  className="w-full flex items-center justify-between p-4 text-left hover:bg-muted/30 transition-colors"
+                >
+                  <div className="flex items-center gap-2">
+                    <Lightbulb className="h-4 w-4 text-muted-foreground" />
+                    <span className="font-semibold text-sm">Improve my answer</span>
+                  </div>
+                  {showImprove ? <ChevronUp className="h-4 w-4 text-muted-foreground" /> : <ChevronDown className="h-4 w-4 text-muted-foreground" />}
+                </button>
+                {showImprove && (
+                  <div className="px-4 pb-4 border-t border-border/50">
+                    {renderDiagramContent(feedback.improveFeedback)}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        ) : (
+          /* Standard format for non-diagram questions */
+          <div className="flex flex-wrap items-center gap-2">
+            {feedbackSections.map((s) => (
+              <Collapsible key={s.key} open={openSection === s.key} onOpenChange={() => toggle(s.key)}>
+                <CollapsibleTrigger asChild>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="gap-1.5 text-xs"
+                    disabled={!feedback}
+                  >
+                    <s.icon className="h-3.5 w-3.5" />
+                    {s.label}
+                    <ChevronDown
+                      className={cn(
+                        "h-3 w-3 transition-transform",
+                        openSection === s.key && "rotate-180"
+                      )}
+                    />
+                  </Button>
+                </CollapsibleTrigger>
+                {feedback && (
+                  <CollapsibleContent className="mt-3 px-1">
+                    <div className="bg-muted/40 rounded-lg p-4">
+                      <Suspense fallback={<div className="text-sm text-muted-foreground">Loading...</div>}><RevisionRenderer content={s.content} /></Suspense>
+                    </div>
+                  </CollapsibleContent>
+                )}
+              </Collapsible>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
