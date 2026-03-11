@@ -181,8 +181,19 @@ type FigureSegment =
 const FIGURE_TITLE_RE = /^\s*(?:[-•*]\s*)?(?:#{1,4}\s*)?(?:\*{1,2})?\s*(Figure\s+\d+\s*:?.*)\s*(?:\*{1,2})?\s*$/i;
 const SECTION_BREAK_RE = /^\s*(?:#{1,4}\s+(?!Data|Vertical|Horizontal|Line)|\*{0,2}(?:Figure|Table|Extract)\s+\w+|Question\s+\d+)/i;
 
+function normalizeFigureText(text: string): string {
+  return text
+    .replace(/\r/g, "")
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
+    .replace(/[\*_`~]/g, "")
+    .split("\n")
+    .map((line) => line.replace(/^>\s?/, "").trimEnd())
+    .join("\n");
+}
+
 function hasCategoryValueData(desc: string): boolean {
-  const lines = desc.split("\n").map((line) => line.trim()).filter(Boolean);
+  const normalized = normalizeFigureText(desc);
+  const lines = normalized.split("\n").map((line) => line.trim()).filter(Boolean);
   const listHeadingRegex = /^(values?|bar\s*chart\s*showing|chart\s*showing|data)\s*:/i;
   const hasListHeading = lines.some((rawLine) => listHeadingRegex.test(rawLine.replace(/^[-•*]\s*/, "").trim()));
 
@@ -192,7 +203,7 @@ function hasCategoryValueData(desc: string): boolean {
   for (const rawLine of lines) {
     const line = rawLine.replace(/^[-•*]\s*/, "").trim();
 
-    if (/^(vertical|horizontal)\s*axis:/i.test(line) || /^source\s*:/i.test(line)) {
+    if (/^(vertical|horizontal|x|y)\s*-?\s*axis:/i.test(line) || /^source\s*:/i.test(line)) {
       continue;
     }
 
@@ -212,12 +223,13 @@ function hasCategoryValueData(desc: string): boolean {
 }
 
 function hasLooseLabelValueData(desc: string): boolean {
-  const lines = desc.split("\n").map((line) => line.trim()).filter(Boolean);
+  const normalized = normalizeFigureText(desc);
+  const lines = normalized.split("\n").map((line) => line.trim()).filter(Boolean);
   let valueCount = 0;
 
   for (const rawLine of lines) {
     const line = rawLine.replace(/^[-•*]\s*/, "").trim();
-    if (!line || /^(vertical|horizontal)\s*axis:/i.test(line) || /^source\s*:/i.test(line)) {
+    if (!line || /^(vertical|horizontal|x|y)\s*-?\s*axis:/i.test(line) || /^source\s*:/i.test(line)) {
       continue;
     }
 
@@ -272,10 +284,11 @@ function extractFigureBlocks(text: string): FigureSegment[] {
     }
 
     const inlineDesc = figTitle.replace(/^Figure\s+\d+\s*:?\s*/i, "").trim();
-    const includeInlineDesc = /(?:vertical|horizontal)\s*axis|values?\s*:|\d\s*(?:[:=]|\(|[–-])\s*[£$€]?\s*\d/i.test(inlineDesc);
+    const includeInlineDesc = /(?:vertical|horizontal|x|y)\s*-?\s*axis|values?\s*:|\d\s*(?:[:=]|\(|[–-])\s*[£$€]?\s*\d/i.test(inlineDesc);
     const desc = [includeInlineDesc ? inlineDesc : "", ...figLines].filter(Boolean).join("\n").trim();
+    const normalizedDesc = normalizeFigureText(desc);
 
-    const diagramProps = parseFigureAsDiagram(figTitle, desc);
+    const diagramProps = parseFigureAsDiagram(figTitle, normalizedDesc);
     if (diagramProps) {
       flushText();
       segments.push({ type: "sd-diagram", content: "", diagram: diagramProps });
@@ -283,18 +296,19 @@ function extractFigureBlocks(text: string): FigureSegment[] {
       continue;
     }
 
-    const hasLineData = /Line\s+\d+/i.test(desc) && /\d{4}:\s*[\d.]+/i.test(desc);
-    const hasSingleSeriesData = /(?:vertical|horizontal)\s*axis:/i.test(desc) && /\d{4}:\s*[\d.]+/i.test(desc);
-    const hasMarkdownTable = /\|.*\|.*\|/.test(desc) && /\|\s*[\d,.]+\s*\|/.test(desc);
-    const hasBulletData = /(?:vertical|horizontal)\s*axis:/i.test(desc) && /(?:at\s+[\d.]+%?|[\d.]+%?\s*(?:interest|rate))[^£$€\d]*[£$€]?\s*[\d,]+/i.test(desc);
-    const hasTrendNarrative = /from\s+[\d,.]+\s*[^,\n]*?\s+in\s+\d{4}\s+to\s+[\d,.]+/i.test(desc);
-    const hasValuesTupleData = /values?\s*:\s*.*\(\s*[-+]?\d[\d,.]*\s*\)/i.test(desc);
-    const hasCategoryValueList = hasCategoryValueData(desc);
-    const hasLoosePairs = hasLooseLabelValueData(desc);
+    const hasLineData = /Line\s+\d+/i.test(normalizedDesc) && /\d{4}:\s*[\d.]+/i.test(normalizedDesc);
+    const hasSingleSeriesData = /(?:vertical|horizontal|x|y)\s*-?\s*axis:/i.test(normalizedDesc) && /(?:\d{4}|Q\d|\w+)\s*:\s*[£$€]?\s*[-+]?\d[\d,.]*/i.test(normalizedDesc);
+    const hasMarkdownTable = /\|.*\|.*\|/.test(normalizedDesc) && /\|\s*[\d,.]+\s*\|/.test(normalizedDesc);
+    const hasBulletData = /(?:vertical|horizontal|x|y)\s*-?\s*axis:/i.test(normalizedDesc) && /(?:at\s+[\d.]+%?|[\d.]+%?\s*(?:interest|rate))[^£$€\d]*[£$€]?\s*[\d,]+/i.test(normalizedDesc);
+    const hasTrendNarrative = /from\s+[\d,.]+\s*[^,\n]*?\s+in\s+\d{4}\s+to\s+[\d,.]+/i.test(normalizedDesc);
+    const hasValuesTupleData = /values?\s*:\s*.*\(\s*[-+]?\d[\d,.]*\s*\)/i.test(normalizedDesc);
+    const hasCategoryValueList = hasCategoryValueData(normalizedDesc);
+    const hasLoosePairs = hasLooseLabelValueData(normalizedDesc);
+    const hasLabelValueLines = /(?:^|\n)\s*[-•*]?\s*[^:\n]{2,}\s*:\s*[£$€]?\s*[-+]?\d[\d,]*(?:\.\d+)?/i.test(normalizedDesc);
 
-    if (hasLineData || hasSingleSeriesData || hasMarkdownTable || hasBulletData || hasTrendNarrative || hasValuesTupleData || hasCategoryValueList || hasLoosePairs) {
+    if (hasLineData || hasSingleSeriesData || hasMarkdownTable || hasBulletData || hasTrendNarrative || hasValuesTupleData || hasCategoryValueList || hasLoosePairs || hasLabelValueLines) {
       flushText();
-      segments.push({ type: "figure", content: "", figTitle, figDesc: desc });
+      segments.push({ type: "figure", content: "", figTitle, figDesc: normalizedDesc });
       i = j;
       continue;
     }

@@ -15,6 +15,16 @@ interface DataSet {
 
 const COLORS = ["hsl(211, 100%, 50%)", "hsl(0, 75%, 55%)", "hsl(140, 60%, 40%)", "hsl(35, 80%, 50%)"];
 
+function normalizeFigureDescription(description: string): string {
+  return description
+    .replace(/\r/g, "")
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
+    .replace(/[\*_`~]/g, "")
+    .split("\n")
+    .map((line) => line.replace(/^>\s?/, "").trimEnd())
+    .join("\n");
+}
+
 /**
  * Parse markdown tables: | Year | Col1 | Col2 | ...
  */
@@ -65,9 +75,9 @@ function parseBulletPointData(description: string): { dataSets: DataSet[]; axisL
   const lines = description.split("\n").map(l => l.trim());
 
   for (const line of lines) {
-    const vMatch = line.match(/vertical\s*axis:\s*(.+)/i);
+    const vMatch = line.match(/(?:vertical|y)\s*-?\s*axis\s*:\s*(.+)/i);
     if (vMatch) axisLabels.y = vMatch[1].trim();
-    const hMatch = line.match(/horizontal\s*axis:\s*(.+)/i);
+    const hMatch = line.match(/(?:horizontal|x)\s*-?\s*axis\s*:\s*(.+)/i);
     if (hMatch) axisLabels.x = hMatch[1].trim();
   }
 
@@ -97,9 +107,9 @@ function parseValueTupleData(description: string): { dataSets: DataSet[]; axisLa
   const lines = description.split("\n").map(l => l.trim()).filter(Boolean);
 
   for (const line of lines) {
-    const vMatch = line.match(/vertical\s*axis:\s*(.+)/i);
+    const vMatch = line.match(/(?:vertical|y)\s*-?\s*axis\s*:\s*(.+)/i);
     if (vMatch) axisLabels.y = vMatch[1].trim();
-    const hMatch = line.match(/horizontal\s*axis:\s*(.+)/i);
+    const hMatch = line.match(/(?:horizontal|x)\s*-?\s*axis\s*:\s*(.+)/i);
     if (hMatch) axisLabels.x = hMatch[1].trim();
   }
 
@@ -140,9 +150,9 @@ function parseTrendNarrativeData(description: string): { dataSets: DataSet[]; ax
   const lines = description.split("\n").map(l => l.trim());
 
   for (const line of lines) {
-    const vMatch = line.match(/vertical\s*axis:\s*(.+)/i);
+    const vMatch = line.match(/(?:vertical|y)\s*-?\s*axis\s*:\s*(.+)/i);
     if (vMatch) axisLabels.y = vMatch[1].trim();
-    const hMatch = line.match(/horizontal\s*axis:\s*(.+)/i);
+    const hMatch = line.match(/(?:horizontal|x)\s*-?\s*axis\s*:\s*(.+)/i);
     if (hMatch) axisLabels.x = hMatch[1].trim();
   }
 
@@ -197,13 +207,13 @@ function parseCategoryValueData(description: string): { dataSets: DataSet[]; axi
   for (const rawLine of lines) {
     const line = rawLine.replace(/^[-•*]\s*/, "").trim();
 
-    const vMatch = line.match(/vertical\s*axis:\s*(.+)/i);
+    const vMatch = line.match(/(?:vertical|y)\s*-?\s*axis\s*:\s*(.+)/i);
     if (vMatch) {
       axisLabels.y = vMatch[1].trim();
       continue;
     }
 
-    const hMatch = line.match(/horizontal\s*axis:\s*(.+)/i);
+    const hMatch = line.match(/(?:horizontal|x)\s*-?\s*axis\s*:\s*(.+)/i);
     if (hMatch) {
       axisLabels.x = hMatch[1].trim();
       continue;
@@ -217,7 +227,7 @@ function parseCategoryValueData(description: string): { dataSets: DataSet[]; axi
     if (!inValuesSection) continue;
 
     const withoutSource = line.replace(/\s+source\s*:.*/i, "").trim();
-    const valueMatch = withoutSource.match(/^(?!vertical\s*axis|horizontal\s*axis|values?\b|bar\s*chart\s*showing\b|chart\s*showing\b|data\b)([^:\n]+):\s*[£$€]?\s*([-+]?\d[\d,]*(?:\.\d+)?)/i);
+    const valueMatch = withoutSource.match(/^(?!(?:vertical|horizontal|x|y)\s*-?\s*axis|values?\b|bar\s*chart\s*showing\b|chart\s*showing\b|data\b)([^:\n]+):\s*[£$€]?\s*([-+]?\d[\d,]*(?:\.\d+)?)/i);
     if (!valueMatch) continue;
 
     const category = valueMatch[1].trim();
@@ -255,13 +265,13 @@ function parseLooseLabelValueData(description: string): { dataSets: DataSet[]; a
     const line = rawLine.replace(/^[-•*]\s*/, "").trim();
     if (!line) continue;
 
-    const vMatch = line.match(/vertical\s*axis:\s*(.+)/i);
+    const vMatch = line.match(/(?:vertical|y)\s*-?\s*axis\s*:\s*(.+)/i);
     if (vMatch) {
       axisLabels.y = vMatch[1].trim();
       continue;
     }
 
-    const hMatch = line.match(/horizontal\s*axis:\s*(.+)/i);
+    const hMatch = line.match(/(?:horizontal|x)\s*-?\s*axis\s*:\s*(.+)/i);
     if (hMatch) {
       axisLabels.x = hMatch[1].trim();
       continue;
@@ -310,41 +320,43 @@ function parseLooseLabelValueData(description: string): { dataSets: DataSet[]; a
 }
 
 function parseChartData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
+  const normalizedDescription = normalizeFigureDescription(description);
+
   // Try markdown table first
-  const tableResult = parseMarkdownTable(description);
+  const tableResult = parseMarkdownTable(normalizedDescription);
   if (tableResult) return tableResult;
 
   // Try bullet-point "At X%, value is Y" format
-  const bulletResult = parseBulletPointData(description);
+  const bulletResult = parseBulletPointData(normalizedDescription);
   if (bulletResult) return bulletResult;
 
   // Try values tuple format: "Values: 2000 (3.5), 2005 (5.0), ..."
-  const tupleResult = parseValueTupleData(description);
+  const tupleResult = parseValueTupleData(normalizedDescription);
   if (tupleResult) return tupleResult;
 
   // Try categorical value list format: "Values:\n- Water: 0.2"
-  const categoryResult = parseCategoryValueData(description);
+  const categoryResult = parseCategoryValueData(normalizedDescription);
   if (categoryResult) return categoryResult;
 
   // Try loose label/value pairs: "2019 = 20", "Q1 (35)", "UK: £120"
-  const looseLabelValueResult = parseLooseLabelValueData(description);
+  const looseLabelValueResult = parseLooseLabelValueData(normalizedDescription);
   if (looseLabelValueResult) return looseLabelValueResult;
 
   // Try trend narrative format
-  const trendResult = parseTrendNarrativeData(description);
+  const trendResult = parseTrendNarrativeData(normalizedDescription);
   if (trendResult) return trendResult;
 
   // Fallback: line-based format (Line 1, data points, axis labels)
-  const lines = description.split("\n").map(l => l.trim());
+  const lines = normalizedDescription.split("\n").map(l => l.trim());
   const dataSets: DataSet[] = [];
   let current: DataSet | null = null;
   const axisLabels = { x: "", y: "" };
   let hasLineHeaders = false;
 
   for (const line of lines) {
-    const vMatch = line.match(/vertical\s*axis:\s*(.+)/i);
+    const vMatch = line.match(/(?:vertical|y)\s*-?\s*axis\s*:\s*(.+)/i);
     if (vMatch) { axisLabels.y = vMatch[1]; continue; }
-    const hMatch = line.match(/horizontal\s*axis:\s*(.+)/i);
+    const hMatch = line.match(/(?:horizontal|x)\s*-?\s*axis\s*:\s*(.+)/i);
     if (hMatch) { axisLabels.x = hMatch[1]; continue; }
     const lineMatch = line.match(/^-?\s*\*{0,2}Line\s+\d+\s*\(([^)]+)\):\s*(.+)\*{0,2}/i);
     if (lineMatch) {
