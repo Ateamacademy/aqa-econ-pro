@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo, useCallback } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { Input } from "@/components/ui/input";
-import { BookOpen, ChevronRight, Search, Layers, GraduationCap, Sparkles, TrendingUp, Pen } from "lucide-react";
+import { BookOpen, ChevronRight, Search, Layers, GraduationCap, Sparkles, TrendingUp, Pen, Eye } from "lucide-react";
 import {
   RevisionTopicCard,
   DefinitionBox,
