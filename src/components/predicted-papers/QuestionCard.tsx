@@ -308,29 +308,35 @@ export function QuestionCard({
       {/* Feedback sections */}
       <div className="p-4 flex flex-col gap-2">
         {feedback?.isDiagramFeedback ? (
-          /* Smart Mark format for diagram questions */
+          /* Smart Mark format — matching Diagram Practice section */
           <div className="space-y-3">
             {/* Mark display */}
             {feedback.mark && (
-              <div className="rounded-lg border border-primary/30 bg-primary/5 p-4">
-                <p className="text-xl font-bold text-foreground">Your mark: {feedback.mark}</p>
-              </div>
+              <Card className="border-primary/30 bg-primary/5">
+                <CardContent className="p-5">
+                  <p className="text-xl font-bold text-foreground">Your mark: {feedback.mark}</p>
+                </CardContent>
+              </Card>
             )}
 
-            {/* Smart Mark feedback - always visible */}
+            {/* Smart Mark feedback */}
             {feedback.smartFeedback && (
-              <div className="rounded-lg border border-border bg-card p-4">
-                <h4 className="font-semibold text-sm mb-3">Smart Mark feedback</h4>
-                {renderDiagramContent(feedback.smartFeedback)}
-              </div>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="font-serif text-lg">Smart Mark feedback</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {renderDiagramContent(feedback.smartFeedback)}
+                </CardContent>
+              </Card>
             )}
 
             {/* Explain my feedback — collapsible */}
             {feedback.explainFeedback && (
-              <div className="rounded-lg border border-border bg-card overflow-hidden">
+              <Card className="overflow-hidden">
                 <button
                   onClick={() => setShowExplain(!showExplain)}
-                  className="w-full flex items-center justify-between p-4 text-left hover:bg-muted/30 transition-colors"
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-muted/30 transition-colors"
                 >
                   <div className="flex items-center gap-2">
                     <MessageSquare className="h-4 w-4 text-muted-foreground" />
@@ -339,19 +345,19 @@ export function QuestionCard({
                   {showExplain ? <ChevronUp className="h-4 w-4 text-muted-foreground" /> : <ChevronDown className="h-4 w-4 text-muted-foreground" />}
                 </button>
                 {showExplain && (
-                  <div className="px-4 pb-4 border-t border-border/50">
+                  <CardContent className="pt-0 pb-5 px-5 border-t border-border/50">
                     {renderDiagramContent(feedback.explainFeedback)}
-                  </div>
+                  </CardContent>
                 )}
-              </div>
+              </Card>
             )}
 
             {/* Improve my answer — collapsible */}
             {feedback.improveFeedback && (
-              <div className="rounded-lg border border-border bg-card overflow-hidden">
+              <Card className="overflow-hidden">
                 <button
                   onClick={() => setShowImprove(!showImprove)}
-                  className="w-full flex items-center justify-between p-4 text-left hover:bg-muted/30 transition-colors"
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-muted/30 transition-colors"
                 >
                   <div className="flex items-center gap-2">
                     <Lightbulb className="h-4 w-4 text-muted-foreground" />
@@ -360,11 +366,11 @@ export function QuestionCard({
                   {showImprove ? <ChevronUp className="h-4 w-4 text-muted-foreground" /> : <ChevronDown className="h-4 w-4 text-muted-foreground" />}
                 </button>
                 {showImprove && (
-                  <div className="px-4 pb-4 border-t border-border/50">
+                  <CardContent className="pt-0 pb-5 px-5 border-t border-border/50">
                     {renderDiagramContent(feedback.improveFeedback)}
-                  </div>
+                  </CardContent>
                 )}
-              </div>
+              </Card>
             )}
           </div>
         ) : (
