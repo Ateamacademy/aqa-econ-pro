@@ -13,127 +13,101 @@ interface MathsMarkdownProps {
 }
 
 /**
- * Pre-process markdown text to ensure tables render correctly.
- * ReactMarkdown requires blank lines before/after table blocks.
- * Handles both properly-formatted multi-line tables AND single-line
- * concatenated tables from streaming output.
+ * Extract markdown table blocks from text and return segments of text vs table.
+ * This ensures tables always render correctly regardless of remark plugin issues.
  */
-function preprocessMarkdown(text: string): string {
-  // Step 1: Detect if a table separator row exists on a line that also has data
-  // (i.e. the whole table was concatenated onto one line)
-  // Pattern: find separator row like |---|---| and count its columns
-  const sepMatch = text.match(/\|[\s\-:]+(?:\|[\s\-:]+)+\|/);
-  if (sepMatch) {
-    const colCount = sepMatch[0].split("|").length - 1; // number of columns (pipes - 1 for outer)
-    if (colCount >= 2) {
-      // Build regex to split rows: match sequences of colCount cells forming a complete row
-      // A row = | cell | cell | ... | (colCount pipes total including outer)
-      // We need to split when a closing | is followed by whitespace then opening | of next row
-      // BUT NOT between cells within the same row
-      // Strategy: count pipes - after every (colCount) pipes, that's a row boundary
-      const chars = text.split('');
-      let pipePositions: number[] = [];
-      for (let i = 0; i < chars.length; i++) {
-        if (chars[i] === '|') pipePositions.push(i);
-      }
-      
-      // Find the separator in the original text
-      const sepStart = text.indexOf(sepMatch[0]);
-      const sepEnd = sepStart + sepMatch[0].length;
-      
-      // Check if the line containing the separator also has other table rows
-      const lineOfSep = text.substring(
-        text.lastIndexOf('\n', sepStart) + 1,
-        text.indexOf('\n', sepEnd) === -1 ? text.length : text.indexOf('\n', sepEnd)
-      );
-      
-      const pipesInLine = (lineOfSep.match(/\|/g) || []).length;
-      // If this line has more pipes than a single row, the table is concatenated
-      if (pipesInLine > colCount) {
-        // Reconstruct: split by groups of colCount pipes
-        let result = '';
-        let lastEnd = 0;
-        let count = 0;
-        
-        // Find the start of the table block (first | before the separator)
-        let tableStart = sepStart;
-        while (tableStart > 0 && text[tableStart - 1] !== '\n') tableStart--;
-        // Find the last | that's part of the table
-        // Work through the text from tableStart
-        result = text.substring(0, tableStart);
-        
-        let pos = tableStart;
-        count = 0;
-        let rowStart = pos;
-        while (pos < text.length) {
-          if (text[pos] === '|') {
-            count++;
-            if (count === colCount) {
-              // End of a row
-              result += text.substring(rowStart, pos + 1) + '\n';
-              count = 0;
-              // Skip whitespace until next | or non-table content
-              let next = pos + 1;
-              while (next < text.length && (text[next] === ' ' || text[next] === '\n')) next++;
-              if (next < text.length && text[next] === '|') {
-                rowStart = next;
-                pos = next;
-              } else {
-                // End of table
-                rowStart = next;
-                pos = next;
-                break;
-              }
-            } else {
-              pos++;
-            }
-          } else {
-            pos++;
-          }
-        }
-        if (rowStart < text.length) {
-          result += text.substring(rowStart);
-        }
-        text = result;
-      }
-    }
-  }
-
-  // Step 2: Ensure blank lines around table blocks so ReactMarkdown parses them
+function extractTableBlocks(text: string): { type: "text" | "table"; content: string }[] {
   const lines = text.split("\n");
-  const output: string[] = [];
-  let inTable = false;
+  const segments: { type: "text" | "table"; content: string }[] = [];
+  let i = 0;
+  let textBuffer: string[] = [];
 
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    const isTableRow = line.trim().startsWith("|") && line.trim().endsWith("|") && line.trim().length > 2;
-
-    if (isTableRow && !inTable) {
-      if (output.length > 0 && output[output.length - 1].trim() !== "") {
-        output.push("");
-      }
-      inTable = true;
-    } else if (!isTableRow && inTable) {
-      if (output.length > 0 && output[output.length - 1].trim() !== "") {
-        output.push("");
-      }
-      inTable = false;
+  const flushText = () => {
+    if (textBuffer.length > 0) {
+      segments.push({ type: "text", content: textBuffer.join("\n") });
+      textBuffer = [];
     }
+  };
 
-    output.push(line);
+  while (i < lines.length) {
+    const line = lines[i].trim();
+    // Detect start of a markdown table: line starts and ends with |
+    if (line.startsWith("|") && line.endsWith("|") && line.length > 2) {
+      // Look ahead: need at least header + separator + 1 data row
+      const tableLines: string[] = [lines[i]];
+      let j = i + 1;
+      while (j < lines.length) {
+        const nextLine = lines[j].trim();
+        if (nextLine.startsWith("|") && nextLine.endsWith("|") && nextLine.length > 2) {
+          tableLines.push(lines[j]);
+          j++;
+        } else {
+          break;
+        }
+      }
+      // Check if we have a valid table (at least 3 rows with a separator)
+      const hasSeparator = tableLines.some(l => /^\|[\s\-:]+(\|[\s\-:]+)+\|$/.test(l.trim()));
+      if (tableLines.length >= 3 && hasSeparator) {
+        flushText();
+        segments.push({ type: "table", content: tableLines.join("\n") });
+        i = j;
+        continue;
+      }
+    }
+    textBuffer.push(lines[i]);
+    i++;
   }
+  flushText();
+  return segments;
+}
 
-  return output.join("\n");
+/**
+ * Render a markdown table string as a styled HTML table.
+ */
+function RenderedTable({ markdown }: { markdown: string }) {
+  const lines = markdown.split("\n").map(l => l.trim()).filter(Boolean);
+  const sepIdx = lines.findIndex(l => /^\|[\s\-:]+(\|[\s\-:]+)+\|$/.test(l));
+  if (sepIdx < 1) return null;
+
+  const parseCells = (row: string) =>
+    row.split("|").slice(1, -1).map(c => c.trim());
+
+  const headers = parseCells(lines[sepIdx - 1]);
+  const dataRows = lines.slice(sepIdx + 1).map(parseCells);
+
+  return (
+    <div className="my-4 overflow-x-auto rounded-lg border border-border bg-background shadow-sm">
+      <table className="w-full text-sm">
+        <thead className="bg-muted/60 border-b border-border">
+          <tr>
+            {headers.map((h, i) => (
+              <th key={i} className="px-4 py-2.5 text-left text-xs font-semibold text-foreground uppercase tracking-wider">
+                {h}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {dataRows.map((row, ri) => (
+            <tr key={ri} className="hover:bg-muted/30 transition-colors">
+              {row.map((cell, ci) => (
+                <td key={ci} className="px-4 py-2 text-sm text-foreground/90 border-t border-border/50">
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
 /** 
  * Extract "Figure N: Title" blocks followed by chart data.
- * Supports: Line-based data, axis labels, markdown tables with numeric data,
- * AND bullet-point data (e.g. "At 0.5% interest, monthly payment is £650").
  */
 function extractFigureBlocks(text: string): { type: "text" | "figure"; content: string; figTitle?: string; figDesc?: string }[] {
   const segments: { type: "text" | "figure"; content: string; figTitle?: string; figDesc?: string }[] = [];
-  // Match figure header followed by content until next major section
   const figRegex = /(?:^|\n)\s*(?:#{1,4}\s*)?\*{0,2}(Figure\s+\d+[^*\n]*)\*{0,2}\s*\n((?:[\s\S]*?)(?=\n\s*(?:#{1,4}\s+(?!Data|Vertical|Horizontal|Line)|\*{0,2}(?:Figure|Table|Extract)\s|Question\s|Source:|$)))/gi;
   
   let lastIndex = 0;
@@ -141,8 +115,6 @@ function extractFigureBlocks(text: string): { type: "text" | "figure"; content: 
   
   while ((match = figRegex.exec(text)) !== null) {
     const desc = match[2].trim();
-    // Treat as chart if it has: Line-based data, axis+year data, markdown table with numbers,
-    // OR bullet-point data with values (e.g. "At 0.5% interest, monthly payment is £650")
     const hasLineData = /Line\s+\d+/i.test(desc) && /\d{4}:\s*[\d.]+/i.test(desc);
     const hasSingleSeriesData = /(?:vertical|horizontal)\s*axis:/i.test(desc) && /\d{4}:\s*[\d.]+/i.test(desc);
     const hasMarkdownTable = /\|.*\|.*\|/.test(desc) && /\|\s*[\d,.]+\s*\|/.test(desc);
@@ -167,45 +139,32 @@ function extractFigureBlocks(text: string): { type: "text" | "figure"; content: 
 const markdownComponents: Components = {
   table: ({ children, ...props }) => (
     <div className="my-4 overflow-x-auto rounded-lg border border-border bg-background shadow-sm">
-      <table className="w-full text-sm" {...props}>
-        {children}
-      </table>
+      <table className="w-full text-sm" {...props}>{children}</table>
     </div>
   ),
   thead: ({ children, ...props }) => (
-    <thead className="bg-muted/60 border-b border-border" {...props}>
-      {children}
-    </thead>
+    <thead className="bg-muted/60 border-b border-border" {...props}>{children}</thead>
   ),
   th: ({ children, ...props }) => (
-    <th className="px-4 py-2.5 text-left text-xs font-semibold text-foreground uppercase tracking-wider" {...props}>
-      {children}
-    </th>
+    <th className="px-4 py-2.5 text-left text-xs font-semibold text-foreground uppercase tracking-wider" {...props}>{children}</th>
   ),
   td: ({ children, ...props }) => (
-    <td className="px-4 py-2 text-sm text-foreground/90 border-t border-border/50" {...props}>
-      {children}
-    </td>
+    <td className="px-4 py-2 text-sm text-foreground/90 border-t border-border/50" {...props}>{children}</td>
   ),
   tr: ({ children, ...props }) => (
-    <tr className="hover:bg-muted/30 transition-colors" {...props}>
-      {children}
-    </tr>
+    <tr className="hover:bg-muted/30 transition-colors" {...props}>{children}</tr>
   ),
   p: ({ children, ...props }) => {
     const text = typeof children === "string" ? children : "";
     if (typeof children === "string" && /^Source:/i.test(text.trim())) {
       return (
-        <p className="text-[11px] italic text-muted-foreground mt-1 mb-3" {...props}>
-          {children}
-        </p>
+        <p className="text-[11px] italic text-muted-foreground mt-1 mb-3" {...props}>{children}</p>
       );
     }
     return <p {...props}>{children}</p>;
   },
   strong: ({ children, ...props }) => {
     const text = typeof children === "string" ? children : "";
-    // Style Extract/Figure/Table headers as badges
     if (/^(Figure|Extract|Table)\s+\w+/i.test(text.trim())) {
       return (
         <strong className="inline-block mt-4 mb-1 px-3 py-1 rounded-md bg-primary/10 text-primary text-xs font-bold uppercase tracking-wide border border-primary/20" {...props}>
@@ -216,56 +175,63 @@ const markdownComponents: Components = {
     return <strong {...props}>{children}</strong>;
   },
   ul: ({ children, ...props }) => (
-    <ul className="my-2 ml-4 space-y-1 text-sm list-disc marker:text-muted-foreground/60" {...props}>
-      {children}
-    </ul>
+    <ul className="my-2 ml-4 space-y-1 text-sm list-disc marker:text-muted-foreground/60" {...props}>{children}</ul>
   ),
   li: ({ children, ...props }) => (
-    <li className="text-sm text-foreground/85 leading-relaxed" {...props}>
-      {children}
-    </li>
+    <li className="text-sm text-foreground/85 leading-relaxed" {...props}>{children}</li>
   ),
 };
 
 /**
- * Renders markdown with LaTeX math support via KaTeX.
- * Automatically detects and renders economics diagrams as SVG visuals.
- * Renders figure chart descriptions as interactive Recharts line charts.
- * Pre-processes markdown to ensure tables always render correctly.
+ * Renders a text segment: first extracts tables (rendered natively),
+ * then passes remaining text through ReactMarkdown with diagram support.
  */
-export function MathsMarkdown({ children, className }: MathsMarkdownProps) {
-  // Pre-process to fix table formatting
-  const processedText = preprocessMarkdown(children);
-
-  // First extract figure charts
-  const figSegments = extractFigureBlocks(processedText);
-  const hasFigures = figSegments.some(s => s.type === "figure");
-
-  const renderMarkdownWithDiagrams = (text: string, keyPrefix: string = "") => {
-    const segments = extractDiagramBlocks(text);
-    const hasDiagrams = segments.some((s) => s.type === "diagram");
+function renderSegment(text: string, keyPrefix: string = "") {
+  const tableSegments = extractTableBlocks(text);
+  
+  return tableSegments.map((seg, ti) => {
+    if (seg.type === "table") {
+      return <RenderedTable key={`${keyPrefix}t${ti}`} markdown={seg.content} />;
+    }
+    
+    // For text segments, check for diagrams
+    const diagSegments = extractDiagramBlocks(seg.content);
+    const hasDiagrams = diagSegments.some((s) => s.type === "diagram");
 
     if (!hasDiagrams) {
       return (
-        <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
-          {text}
+        <ReactMarkdown key={`${keyPrefix}m${ti}`} remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
+          {seg.content}
         </ReactMarkdown>
       );
     }
 
-    return segments.map((seg, i) =>
-      seg.type === "diagram" ? (
-        <EconDiagramCanvas key={`${keyPrefix}d${i}`} diagram={seg.diagram} />
-      ) : (
-        <ReactMarkdown key={`${keyPrefix}m${i}`} remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
-          {seg.content}
-        </ReactMarkdown>
-      )
+    return (
+      <div key={`${keyPrefix}d${ti}`}>
+        {diagSegments.map((ds, di) =>
+          ds.type === "diagram" ? (
+            <EconDiagramCanvas key={`${keyPrefix}d${ti}d${di}`} diagram={ds.diagram} />
+          ) : (
+            <ReactMarkdown key={`${keyPrefix}d${ti}m${di}`} remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
+              {ds.content}
+            </ReactMarkdown>
+          )
+        )}
+      </div>
     );
-  };
+  });
+}
+
+/**
+ * Renders markdown with LaTeX math, GFM tables, economics diagrams, and figure charts.
+ */
+export function MathsMarkdown({ children, className }: MathsMarkdownProps) {
+  // First extract figure charts
+  const figSegments = extractFigureBlocks(children);
+  const hasFigures = figSegments.some(s => s.type === "figure");
 
   if (!hasFigures) {
-    return <div className={className}>{renderMarkdownWithDiagrams(processedText)}</div>;
+    return <div className={className}>{renderSegment(children)}</div>;
   }
 
   return (
@@ -274,7 +240,7 @@ export function MathsMarkdown({ children, className }: MathsMarkdownProps) {
         seg.type === "figure" ? (
           <FigureChart key={`fig${i}`} title={seg.figTitle!} description={seg.figDesc!} />
         ) : (
-          <div key={`txt${i}`}>{renderMarkdownWithDiagrams(seg.content, `s${i}`)}</div>
+          <div key={`txt${i}`}>{renderSegment(seg.content, `s${i}`)}</div>
         )
       )}
     </div>
