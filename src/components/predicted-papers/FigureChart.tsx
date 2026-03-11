@@ -156,7 +156,7 @@ export function FigureChart({ title, description }: FigureChartProps) {
         <div className="my-6 rounded-xl border border-border bg-card p-5">
           <h4 className="text-sm font-semibold text-foreground mb-3">{title}</h4>
           <div className="overflow-x-auto">
-            <ReactMarkdown components={{
+            <ReactMarkdown remarkPlugins={[remarkGfm]} components={{
               table: ({ children }) => <table className="w-full text-sm border-collapse">{children}</table>,
               thead: ({ children }) => <thead className="bg-muted/60 border-b border-border">{children}</thead>,
               th: ({ children }) => <th className="px-4 py-2.5 text-left text-xs font-semibold text-foreground uppercase tracking-wider">{children}</th>,
