@@ -11,6 +11,7 @@ import { EconDiagramBuilder, type DiagramData } from "@/components/tools/EconDia
 import { GraphPaper } from "@/components/tools/GraphPaper";
 import { GeometryTools } from "@/components/tools/GeometryTools";
 import { cn } from "@/lib/utils";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { extractDiagramBlocks, EconDiagramCanvas } from "./EconDiagramSVG";
 
 import type { ParsedQuestion, MCQOption } from "./parseQuestions";
