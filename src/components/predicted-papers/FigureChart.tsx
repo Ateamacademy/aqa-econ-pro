@@ -16,34 +16,27 @@ const COLORS = ["hsl(211, 100%, 50%)", "hsl(0, 75%, 55%)", "hsl(140, 60%, 40%)",
 
 /**
  * Parse markdown tables: | Year | Col1 | Col2 | ...
- * Returns datasets if table has numeric year-like first column and numeric data columns.
  */
 function parseMarkdownTable(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
   const lines = description.split("\n").map(l => l.trim()).filter(Boolean);
-  
-  // Find table rows (lines with | separators)
   const tableRows = lines.filter(l => l.startsWith("|") && l.endsWith("|"));
-  if (tableRows.length < 3) return null; // Need header + separator + at least 1 data row
-  
-  // Check for separator row (|---|---|)
+  if (tableRows.length < 3) return null;
+
   const sepIdx = tableRows.findIndex(r => /^\|[\s\-:]+\|/.test(r.replace(/[^|\-:\s]/g, '')));
   if (sepIdx < 1) return null;
-  
+
   const parseCells = (row: string) => row.split("|").slice(1, -1).map(c => c.trim());
-  
   const headers = parseCells(tableRows[sepIdx - 1]);
   const dataRows = tableRows.slice(sepIdx + 1).map(parseCells);
-  
+
   if (headers.length < 2 || dataRows.length < 2) return null;
-  
-  // First column should be year-like or category labels
+
   const dataSets: DataSet[] = [];
-  
   for (let col = 1; col < headers.length; col++) {
     const points: { year: string; value: number }[] = [];
     for (const row of dataRows) {
       const label = row[0]?.replace(/\*+/g, '').trim();
-      const rawVal = row[col]?.replace(/[,%£$€*]/g, '').trim();
+      const rawVal = row[col]?.replace(/[,%£$€*()a-zA-Z\s]/g, '').trim();
       const val = parseFloat(rawVal);
       if (label && !isNaN(val)) {
         points.push({ year: label, value: val });
@@ -53,7 +46,7 @@ function parseMarkdownTable(description: string): { dataSets: DataSet[]; axisLab
       dataSets.push({ label: headers[col].replace(/\*+/g, '').trim(), points });
     }
   }
-  
+
   if (dataSets.length === 0) return null;
   return {
     dataSets,
@@ -61,10 +54,51 @@ function parseMarkdownTable(description: string): { dataSets: DataSet[]; axisLab
   };
 }
 
+/**
+ * Parse bullet-point data like:
+ *   "At 0.5% interest, monthly payment is £650"
+ *   "At 3.0% interest, monthly payment is £900"
+ */
+function parseBulletPointData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
+  const axisLabels = { x: "", y: "" };
+  const lines = description.split("\n").map(l => l.trim());
+
+  for (const line of lines) {
+    const vMatch = line.match(/vertical\s*axis:\s*(.+)/i);
+    if (vMatch) axisLabels.y = vMatch[1].trim();
+    const hMatch = line.match(/horizontal\s*axis:\s*(.+)/i);
+    if (hMatch) axisLabels.x = hMatch[1].trim();
+  }
+
+  // Match patterns like "At 0.5% interest, monthly payment is £650" or "At 0.5%, value is 650"
+  const bulletRegex = /(?:at|when)\s+([\d.]+)\s*(%|percent)?[^£$€\d]*?[£$€]?\s*([\d,]+)/gi;
+  const points: { year: string; value: number }[] = [];
+  let match: RegExpExecArray | null;
+
+  while ((match = bulletRegex.exec(description)) !== null) {
+    const xVal = match[1] + (match[2] || "%");
+    const yVal = parseFloat(match[3].replace(/,/g, ''));
+    if (!isNaN(yVal)) {
+      points.push({ year: xVal, value: yVal });
+    }
+  }
+
+  if (points.length < 2) return null;
+
+  return {
+    dataSets: [{ label: axisLabels.y || "Value", points }],
+    axisLabels,
+  };
+}
+
 function parseChartData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
-  // First try markdown table format
+  // Try markdown table first
   const tableResult = parseMarkdownTable(description);
   if (tableResult) return tableResult;
+
+  // Try bullet-point "At X%, value is Y" format
+  const bulletResult = parseBulletPointData(description);
+  if (bulletResult) return bulletResult;
 
   // Fallback: line-based format (Line 1, data points, axis labels)
   const lines = description.split("\n").map(l => l.trim());
@@ -104,21 +138,18 @@ export function FigureChart({ title, description }: FigureChartProps) {
   const parsed = useMemo(() => parseChartData(description), [description]);
   const [showTable, setShowTable] = useState(false);
   
-  // Extract the markdown table from description for raw display
   const markdownTable = useMemo(() => {
     const lines = description.split("\n");
     const tableLines = lines.filter(l => l.trim().startsWith("|"));
     return tableLines.length >= 3 ? tableLines.join("\n") : null;
   }, [description]);
 
-  // Extract source line
   const sourceLine = useMemo(() => {
     const match = description.match(/Source:\s*.+/i);
     return match ? match[0] : null;
   }, [description]);
   
   if (!parsed) {
-    // If we couldn't parse chart data but there's a markdown table, render it as a table
     if (markdownTable) {
       return (
         <div className="my-6 rounded-xl border border-border bg-card p-5">
@@ -142,11 +173,8 @@ export function FigureChart({ title, description }: FigureChartProps) {
   }
 
   const { dataSets, axisLabels } = parsed;
-  
-  // Check if x-axis values are years (time series → line chart) or categories (→ bar chart)
   const isTimeSeries = dataSets[0].points.every(p => /^\d{4}/.test(p.year));
 
-  // Merge datasets into recharts format
   const chartData = dataSets[0].points.map((p, i) => {
     const entry: Record<string, string | number> = { year: p.year };
     dataSets.forEach((ds, di) => {
