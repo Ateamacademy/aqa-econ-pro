@@ -17,6 +17,8 @@ import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import type { Topic, Subtopic } from "@/data/studyNotes/edexcelANotes";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useRef } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { SubtopicPractice } from "@/components/study-notes/SubtopicPractice";
 
 // Data imports
 import { aqaYear1Paper1Topics, aqaYear1Paper2Topics, aqaYear2Paper1Topics, aqaYear2Paper2Topics } from "@/data/studyNotes/aqaNotes";
