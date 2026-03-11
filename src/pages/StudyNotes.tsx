@@ -148,11 +148,39 @@ function SectionHeader({ section, index }: { section: PaperSection; index: numbe
 }
 
 export default function StudyNotes() {
+  const { user } = useAuth();
   const { subject, subjectLabel, examBoard, level } = useSubject();
   const [search, setSearch] = useState("");
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+  const [viewedSubtopics, setViewedSubtopics] = useState<Set<string>>(new Set());
 
   useEffect(() => { setExpanded({}); setSearch(""); }, [subject]);
+
+  // Load viewed subtopics from DB
+  useEffect(() => {
+    if (!user) return;
+    supabase
+      .from("practice_sessions")
+      .select("topic")
+      .eq("user_id", user.id)
+      .eq("subject", subject)
+      .eq("session_type", "note_view")
+      .then(({ data }) => {
+        if (data) setViewedSubtopics(new Set(data.map(d => d.topic)));
+      });
+  }, [user, subject]);
+
+  const markViewed = useCallback(async (subtopicTitle: string, topicName: string) => {
+    const key = `${topicName} — ${subtopicTitle}`;
+    if (viewedSubtopics.has(key) || !user) return;
+    setViewedSubtopics(prev => new Set(prev).add(key));
+    await supabase.from("practice_sessions").insert({
+      user_id: user.id,
+      subject,
+      session_type: "note_view",
+      topic: key,
+    });
+  }, [user, subject, viewedSubtopics]);
 
   const toggle = (key: string) => setExpanded(prev => ({ ...prev, [key]: !prev[key] }));
 
