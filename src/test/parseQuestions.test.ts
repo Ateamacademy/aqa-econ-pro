@@ -116,4 +116,37 @@ Explain one reason why scarcity is a problem.`;
     const { questions } = parseQuestions(gcse);
     expect(questions.length).toBe(3);
   });
+
+  it("should parse questions with markdown headers (### Question)", () => {
+    const withHeaders = `# OCR Paper
+
+### Question 1 [2 marks]
+Define market equilibrium.
+
+### Question 2 [4 marks]
+Explain two factors.
+
+## Section B
+
+### Question 3 [8 marks]
+Analyse the impact.`;
+
+    const { questions } = parseQuestions(withHeaders);
+    console.log("Header questions:", questions.map(q => `${q.label} [${q.marks}m]`));
+    expect(questions.length).toBe(3);
+    expect(questions[0].label).toBe("Question 1");
+  });
+
+  it("should parse bold questions with headers", () => {
+    const boldHeaders = `## Section A
+
+#### **Question 01** [2 marks]
+Define the term.
+
+#### **Question 02** [4 marks]
+Explain using data.`;
+
+    const { questions } = parseQuestions(boldHeaders);
+    expect(questions.length).toBe(2);
+  });
 });
