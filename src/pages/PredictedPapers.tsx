@@ -326,10 +326,14 @@ CRITICAL RULES:
 6. 25-mark essays require KAA + Evaluation + justified judgement
 7. Use CAIE command words: "Explain", "Analyse", "Evaluate", "Discuss", "Calculate"
 
-OUTPUT FORMAT:
-- Every question: Question XX [Y marks]
-- Do NOT bold question headers
-- MCQ options: - A, - B, - C, - D
+OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+- EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
+  Examples: Question 01 [1 marks], Question 02 [2 marks], Question 03 [4 marks]
+- Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks. Do NOT put marks at the end of the line after question text.
+- The question text MUST appear AFTER the [Y marks] tag, either on the same line or the next line
+- MCQ options on separate lines: - A, - B, - C, - D
+- WRONG: **Question 1** text [2], Question 1 text (2 marks)
+- CORRECT: Question 01 [1 marks] What is the basic economic problem?
 - Do NOT include mark schemes or answers
 
 FIGURE/CHART FORMAT:
