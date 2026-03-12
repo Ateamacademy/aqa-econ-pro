@@ -200,10 +200,14 @@ CRITICAL RULES:
 6. 15+ mark questions MUST require chains of reasoning, counter-arguments, and justified judgement
 7. Use precise command words: "Evaluate", "Assess", "To what extent", "Discuss"
 
-OUTPUT FORMAT (CRITICAL):
-- Every question MUST start: Question XX [Y marks]
-- Do NOT bold question headers
+OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+- EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
+  Examples: Question 01a [1 marks], Question 01b [3 marks], Question 06 [5 marks]
+- Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks. Do NOT put marks at the end of the line after question text.
+- The question text MUST appear AFTER the [Y marks] tag, either on the same line or the next line
 - MCQ options on separate lines: - A, - B, - C, - D
+- WRONG: **Question 1** text [2], Question 1 text (2 marks), Q1 [2 marks]
+- CORRECT: Question 01a [1 marks] Which of the following best describes allocative efficiency?
 - Do NOT include mark schemes or answers
 
 FIGURE/CHART FORMAT:
