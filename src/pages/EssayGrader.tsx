@@ -7,11 +7,11 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PenTool, Lock, Send } from "lucide-react";
+import { PenTool, Lock, Send, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 import { RevisionRenderer } from "@/components/revision/RevisionRenderer";
 import { FREE_LIMITS } from "@/lib/plans";
-import { questionTypesBySubject } from "@/lib/subjectConfig";
+import { questionTypesBySubject, topicsBySubject } from "@/lib/subjectConfig";
 
 export default function EssayGrader() {
   const { user, subscribed, profile, refreshProfile } = useAuth();
@@ -19,12 +19,14 @@ export default function EssayGrader() {
   const navigate = useNavigate();
 
   const questionTypes = questionTypesBySubject[subject];
+  const topics = topicsBySubject[subject];
 
   const [essay, setEssay] = useState("");
   const [questionType, setQuestionType] = useState(questionTypes[0]);
   const [question, setQuestion] = useState("");
   const [feedback, setFeedback] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isGeneratingQ, setIsGeneratingQ] = useState(false);
 
   if (!user) {
     return (
@@ -37,6 +39,33 @@ export default function EssayGrader() {
   }
 
   const canUse = subscribed || (profile && profile.free_papers_used < FREE_LIMITS.papers);
+
+  const handleGenerateQuestion = async () => {
+    setIsGeneratingQ(true);
+    setQuestion("");
+    let result = "";
+
+    const randomTopic = topics[Math.floor(Math.random() * topics.length)];
+
+    await streamChat({
+      messages: [{
+        role: "user",
+        content: `Generate ONE ${questionType} exam question for ${examBoard} ${level} ${subjectLabel} on the topic "${randomTopic}".
+
+RULES:
+- Write ONLY the question. No preamble, no answer, no explanation.
+- Include the mark allocation in brackets, e.g. [25 marks]
+- Match the exact style and wording of a real ${examBoard} exam paper.
+- Be concise. Maximum 3 sentences for the question stem.
+- If it's a data response question, include a brief extract (2-3 sentences) before the question.`,
+      }],
+      mode: "practice",
+      subject,
+      onDelta: (chunk) => { result += chunk; setQuestion(result); },
+      onDone: () => setIsGeneratingQ(false),
+      onError: (err) => { toast.error(err); setIsGeneratingQ(false); },
+    });
+  };
 
   const handleGrade = async () => {
     if (!essay.trim() || !question.trim()) { toast.error("Enter both the question and your answer"); return; }
@@ -91,8 +120,25 @@ export default function EssayGrader() {
             </select>
           </div>
           <div>
-            <label className="text-sm font-medium mb-1 block">Question</label>
-            <Textarea placeholder="Paste the exam question here..." value={question} onChange={e => setQuestion(e.target.value)} rows={3} />
+            <div className="flex items-center justify-between mb-1">
+              <label className="text-sm font-medium">Question</label>
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={handleGenerateQuestion}
+                disabled={isGeneratingQ}
+                className="gap-1.5 text-xs h-7"
+              >
+                <Sparkles className="h-3 w-3" />
+                {isGeneratingQ ? "Generating..." : "Generate Question"}
+              </Button>
+            </div>
+            <Textarea
+              placeholder="Paste the exam question here or click 'Generate Question' above..."
+              value={question}
+              onChange={e => setQuestion(e.target.value)}
+              rows={3}
+            />
           </div>
           <div>
             <label className="text-sm font-medium mb-1 block">Your Answer</label>

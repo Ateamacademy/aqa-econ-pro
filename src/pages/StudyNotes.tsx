@@ -147,6 +147,33 @@ function SectionHeader({ section, index }: { section: PaperSection; index: numbe
   );
 }
 
+const DIAGRAM_PROMPTS: Record<string, string> = {
+  supply_demand: "supply and demand",
+  demand_increase: "demand increase (rightward shift)",
+  demand_decrease: "demand decrease (leftward shift)",
+  supply_increase: "supply increase (rightward shift)",
+  supply_decrease: "supply decrease (leftward shift)",
+  positive_externality: "positive externality of consumption",
+  negative_externality: "negative externality of consumption",
+  negative_production_externality: "negative externality of production",
+  positive_production_externality: "positive externality of production",
+  ad_increase: "aggregate demand increase",
+  ad_decrease: "aggregate demand decrease",
+  sras_decrease: "short-run aggregate supply decrease (cost-push inflation)",
+  sras_increase: "short-run aggregate supply increase",
+  ped_elastic: "price elastic demand",
+  ped_inelastic: "price inelastic demand",
+  ppf: "production possibility frontier",
+  ppf_growth: "economic growth on a PPF",
+  phillips_curve: "Phillips curve",
+  tax_incidence: "indirect tax incidence",
+  subsidy: "subsidy",
+  price_floor: "minimum price (price floor)",
+  price_ceiling: "maximum price (price ceiling)",
+  monopoly: "monopoly profit maximisation",
+  perfect_competition: "perfect competition",
+};
+
 export default function StudyNotes() {
   const { user } = useAuth();
   const { subject, subjectLabel, examBoard, level } = useSubject();
@@ -223,8 +250,26 @@ export default function StudyNotes() {
             </FormulaBox>
           )}
           {sub.diagram && (
-            <DiagramBox title={sub.title}>
-              <EconDiagramTemplate type={sub.diagram} />
+            <DiagramBox title={`Diagram Practice: ${sub.title}`}>
+              <div className="space-y-3">
+                <p className="text-sm font-medium text-foreground/90 italic">
+                  Draw a fully labelled {DIAGRAM_PROMPTS[sub.diagram] || sub.title.toLowerCase()} diagram.
+                </p>
+                <ul className="text-xs text-muted-foreground space-y-1 ml-4 list-disc">
+                  <li>Label both axes correctly</li>
+                  <li>Show the original and new equilibrium positions</li>
+                  <li>Use arrows to indicate the direction of any shifts</li>
+                  <li>Label all curves clearly (e.g. D₁, S₁, D₂)</li>
+                </ul>
+                <details className="group">
+                  <summary className="text-xs font-semibold text-primary cursor-pointer hover:text-primary/80 transition-colors">
+                    Show model diagram
+                  </summary>
+                  <div className="mt-2">
+                    <EconDiagramTemplate type={sub.diagram} />
+                  </div>
+                </details>
+              </div>
             </DiagramBox>
           )}
           {sub.example && (
