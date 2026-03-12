@@ -59,7 +59,7 @@ export default function Pricing() {
           <Card className="max-w-md mx-auto border-accent">
             <CardContent className="p-8">
               <Crown className="h-12 w-12 mx-auto mb-4 text-accent" />
-              <h2 className="font-serif text-2xl mb-2">Active Subscriber</h2>
+              <h2 className="text-2xl font-bold mb-2">Active Subscriber</h2>
               <p className="text-muted-foreground mb-6">You have unlimited access to all features.</p>
               <Button onClick={handleManage} variant="outline">Manage Subscription</Button>
             </CardContent>
