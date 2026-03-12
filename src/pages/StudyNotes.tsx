@@ -223,8 +223,26 @@ export default function StudyNotes() {
             </FormulaBox>
           )}
           {sub.diagram && (
-            <DiagramBox title={sub.title}>
-              <EconDiagramTemplate type={sub.diagram} />
+            <DiagramBox title={`Diagram Practice: ${sub.title}`}>
+              <div className="space-y-3">
+                <p className="text-sm font-medium text-foreground/90 italic">
+                  Draw a fully labelled {DIAGRAM_PROMPTS[sub.diagram] || sub.title.toLowerCase()} diagram.
+                </p>
+                <ul className="text-xs text-muted-foreground space-y-1 ml-4 list-disc">
+                  <li>Label both axes correctly</li>
+                  <li>Show the original and new equilibrium positions</li>
+                  <li>Use arrows to indicate the direction of any shifts</li>
+                  <li>Label all curves clearly (e.g. D₁, S₁, D₂)</li>
+                </ul>
+                <details className="group">
+                  <summary className="text-xs font-semibold text-primary cursor-pointer hover:text-primary/80 transition-colors">
+                    Show model diagram
+                  </summary>
+                  <div className="mt-2">
+                    <EconDiagramTemplate type={sub.diagram} />
+                  </div>
+                </details>
+              </div>
             </DiagramBox>
           )}
           {sub.example && (

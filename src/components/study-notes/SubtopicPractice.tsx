@@ -35,9 +35,16 @@ export function SubtopicPractice({ subtopicTitle, topicName }: SubtopicPracticeP
     let result = "";
 
     await streamChat({
-      messages: [{ role: "user", content: `Generate a single exam-style practice question on the subtopic "${subtopicTitle}" (from the topic "${topicName}") for ${examBoard} ${level} ${subjectLabel}.
+      messages: [{ role: "user", content: `Generate ONE short exam-style question on "${subtopicTitle}" for ${examBoard} ${level} ${subjectLabel}.
 
-The question should be realistic for this exam board and test understanding of this specific subtopic. Include mark allocation in brackets e.g. [4 marks]. Give only the question, nothing else.` }],
+RULES:
+- Maximum 2 sentences. Be concise like a real exam paper.
+- Include mark allocation in brackets, e.g. [4 marks]
+- Do NOT include any preamble, explanation, or answer
+- Match the style of a real ${examBoard} exam paper
+- Examples of good style: "Define opportunity cost. [2 marks]", "Explain one reason why demand for electric vehicles has increased. [4 marks]", "Using a supply and demand diagram, analyse the impact of a minimum wage on unemployment. [8 marks]"
+
+Output ONLY the question text and mark allocation. Nothing else.` }],
       mode: "practice",
       subject,
       onDelta: (chunk) => { result += chunk; setQuestion(result); },
