@@ -43,13 +43,7 @@ const App = () => (
             <Suspense fallback={<div className="flex items-center justify-center min-h-[60vh]"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" /></div>}>
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/papers" element={<PastPapers />} />
-              <Route path="/edexcel-a-papers" element={<EdexcelAPastPapers />} />
-              <Route path="/cambridge-papers" element={<CambridgePastPapers />} />
-              <Route path="/edexcel-b-papers" element={<EdexcelBPastPapers />} />
-              <Route path="/ocr-papers" element={<OcrPastPapers />} />
-              <Route path="/gcse-papers" element={<GcsePastPapers />} />
-              <Route path="/igcse-papers" element={<IgcsePastPapers />} />
+              {/* Past paper routes hidden */}
               <Route path="/predicted" element={<PredictedPapers />} />
               <Route path="/tutor" element={<AITutor />} />
               <Route path="/grader" element={<EssayGrader />} />
