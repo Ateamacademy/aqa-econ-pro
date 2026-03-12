@@ -821,7 +821,7 @@ export default function PredictedPapers() {
     if (isAnyEcon) {
       try {
         const { data: patternData } = await supabase.functions.invoke("retrieve-patterns", {
-          body: { paper, subject: isEdexcelA ? "edexcel-a" : isEdexcelB ? "edexcel-b" : isOCR ? "ocr_economics" : isCambridge ? "cambridge" : "economics", limit: 250 },
+          body: { paper, subject: isEdexcelA ? "edexcel-a" : isEdexcelB ? "edexcel-b" : isOCR ? "ocr_economics" : isCambridge ? "cambridge" : isGCSE ? "aqa-gcse" : isIGCSE ? "cambridge-igcse" : "economics", limit: 250 },
         });
         if (patternData?.contextPrompt) {
           dbContextPrompt = patternData.contextPrompt;
@@ -841,6 +841,10 @@ export default function PredictedPapers() {
       ? OCR_ECON_PAPER_PROMPT(paperLabel, paper)
       : isCambridge
       ? CAIE_ECON_PAPER_PROMPT(paperLabel, paper)
+      : isGCSE
+      ? GCSE_ECON_PAPER_PROMPT(paperLabel, paper)
+      : isIGCSE
+      ? IGCSE_ECON_PAPER_PROMPT(paperLabel, paper)
       : ECON_PAPER_PROMPT(paperLabel, paper);
 
     // Inject DB-retrieved patterns + topic scope for Economics
