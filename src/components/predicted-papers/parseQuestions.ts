@@ -65,25 +65,37 @@ export function parseQuestions(markdown: string): { context: string; questions: 
     const end = i < matches.length - 1 ? matches[i + 1].index! : markdown.length;
     const fullText = markdown.slice(start, end).trim();
 
-    // Find where the marks portion ends (either "]" or ")")
-    const bracketClose = fullText.indexOf("]");
-    const parenClose = fullText.indexOf(")");
-    // Find the marks pattern end position
-    let marksClose = -1;
-    if (bracketClose > -1 && parenClose > -1) {
-      // Find which one closes the marks pattern (the one that has "marks" before it)
-      const beforeBracket = fullText.slice(0, bracketClose);
-      const beforeParen = fullText.slice(0, parenClose);
-      if (/\d+\s*marks?\s*$/.test(beforeBracket)) marksClose = bracketClose;
-      else if (/\d+\s*marks?\s*$/.test(beforeParen)) marksClose = parenClose;
-      else marksClose = Math.min(bracketClose, parenClose);
+    // Support both styles:
+    // 1) Question 1 [2 marks] <text>
+    // 2) Question 1 <text> [2 marks]
+    // 3) Question 1 [2 marks]\n<text>
+    const [headerLineRaw, ...restLines] = fullText.split("\n");
+    const headerLine = headerLineRaw?.trim() ?? "";
+    const remainingText = restLines.join("\n").trim();
+
+    const marksToken = headerLine.match(/(?:\[|\()\s*\d+\s*marks?\s*(?:\]|\))/i);
+    const headerPrefixRe = /^(?:#{1,4}\s+)?\**\s*(?:Q(?:uestion)?\s*)?\d{1,2}(?:\.\d+)?[a-z]?(?:\s*\([a-z]\))?\**\s*[:\-—–]?\s*/i;
+
+    let bodyText = "";
+
+    if (marksToken && typeof marksToken.index === "number") {
+      const beforeMarks = headerLine.slice(0, marksToken.index).trim();
+      const afterMarks = headerLine.slice(marksToken.index + marksToken[0].length).trim();
+      const inlineBeforeText = beforeMarks.replace(headerPrefixRe, "").trim();
+      const inlineText = [inlineBeforeText, afterMarks].filter(Boolean).join(" ").trim();
+      bodyText = [inlineText, remainingText].filter(Boolean).join("\n").trim();
     } else {
-      marksClose = bracketClose > -1 ? bracketClose : parenClose;
+      bodyText = remainingText;
     }
-    
-    // Everything after the marks close is question body
-    let bodyText = marksClose > -1 ? fullText.slice(marksClose + 1).trim() : "";
-    
+
+    // Fallback for odd one-line formats where marks parsing fails
+    if (!bodyText) {
+      bodyText = headerLine
+        .replace(headerPrefixRe, "")
+        .replace(/(?:\[|\()\s*\d+\s*marks?\s*(?:\]|\))/i, "")
+        .trim();
+    }
+
     // Strip leading dash/em-dash/colon separators
     bodyText = bodyText.replace(/^[-—–:]+\s*/, "");
 
