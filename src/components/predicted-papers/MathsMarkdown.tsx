@@ -437,7 +437,7 @@ export function MathsMarkdown({ children, className }: MathsMarkdownProps) {
   const hasSpecialFigures = figSegments.some(s => s.type === "figure" || s.type === "sd-diagram");
 
   if (!hasSpecialFigures) {
-    return <div className={className}>{renderSegment(children)}</div>;
+    return <div className={className}>{renderSegment(cleaned)}</div>;
   }
 
   return (
