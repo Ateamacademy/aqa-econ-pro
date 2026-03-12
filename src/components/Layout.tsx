@@ -17,28 +17,8 @@ const baseNavItems = [
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
 ];
 
-function getNavItems(subject: Subject) {
-  const papersItem = subject === "economics"
-    ? { to: "/papers", label: "Papers", icon: FileText }
-    : subject === "edexcel-a"
-    ? { to: "/edexcel-a-papers", label: "Papers", icon: FileText }
-    : subject === "edexcel-b"
-    ? { to: "/edexcel-b-papers", label: "Papers", icon: FileText }
-    : subject === "cambridge"
-    ? { to: "/cambridge-papers", label: "Papers", icon: FileText }
-    : subject === "ocr"
-    ? { to: "/ocr-papers", label: "Papers", icon: FileText }
-    : subject === "aqa-gcse"
-    ? { to: "/gcse-papers", label: "Papers", icon: FileText }
-    : subject === "cambridge-igcse"
-    ? { to: "/igcse-papers", label: "Papers", icon: FileText }
-    : { to: "/papers", label: "Papers", icon: FileText };
-
-  return [
-    baseNavItems[0],
-    papersItem,
-    ...baseNavItems.slice(1),
-  ];
+function getNavItems(_subject: Subject) {
+  return baseNavItems;
 }
 
 const SUBJECTS: { value: Subject; label: string }[] = [

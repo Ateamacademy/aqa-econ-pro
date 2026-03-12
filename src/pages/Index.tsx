@@ -5,12 +5,6 @@ import { Button } from "@/components/ui/button";
 
 const features = [
   {
-    icon: FileText,
-    title: "Past Papers",
-    description: "Browse organised past papers with direct links to questions and mark schemes.",
-    to: "/papers",
-  },
-  {
     icon: Sparkles,
     title: "Predicted Papers",
     description: "AI-generated predicted papers with per-question marking and examiner tips.",
