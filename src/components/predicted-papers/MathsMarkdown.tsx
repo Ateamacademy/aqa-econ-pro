@@ -415,7 +415,7 @@ function renderSegment(text: string, keyPrefix: string = "") {
  * Renders markdown with LaTeX math, GFM tables, economics diagrams, and figure charts.
  */
 /**
- * Strip "lines X-Y", "line X", "(lines X–Y)" etc. from extract text.
+ * Strip "lines X-Y", "line X", "(lines X–Y)" and standalone dashes used as separators.
  */
 function stripLineReferences(text: string): string {
   return text
@@ -425,6 +425,13 @@ function stripLineReferences(text: string): string {
     // "lines 5-8" or "lines 5–8" standalone
     .replace(/\blines?\s+\d+[\s–\-—]+\d+/gi, "")
     .replace(/\bline\s+\d+\b/gi, "")
+    // Remove em-dashes and en-dashes used as separators (" — ", " – ", " - " between words)
+    .replace(/\s+[—–]\s+/g, " ")
+    .replace(/\s+-\s+-?\s*/g, " ")
+    // Remove leading dashes on lines
+    .replace(/^[\s]*[-—–]+\s*/gm, "")
+    // Remove horizontal rules (--- or more)
+    .replace(/^-{3,}\s*$/gm, "")
     // Clean up double spaces
     .replace(/  +/g, " ")
     .trim();
