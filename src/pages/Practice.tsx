@@ -57,7 +57,18 @@ export default function Practice() {
     let result = "";
 
     await streamChat({
-      messages: [{ role: "user", content: `Generate a ${style} question on the topic: ${topic}. This should be in the style of ${examBoard} ${level} ${subjectLabel}. Just give me the question, nothing else.` }],
+      messages: [{ role: "user", content: `Generate ONE ${style} exam-style question on "${topic}" for ${examBoard} ${level} ${subjectLabel}.
+
+RULES:
+- Maximum 2 sentences. Be concise like a real exam paper.
+- Include mark allocation in brackets, e.g. [4 marks]
+- Do NOT include any preamble, explanation, or answer
+- Match the exact style and wording of a real ${examBoard} exam paper
+- For multiple choice: give 4 options labelled A–D
+- For short answer: "Define...", "State two...", "Calculate..."
+- For longer questions: "Explain...", "Evaluate...", "Discuss..."
+
+Output ONLY the question text and mark allocation. Nothing else.` }],
       mode: "practice",
       subject,
       onDelta: (chunk) => { result += chunk; setGeneratedQ(result); },
