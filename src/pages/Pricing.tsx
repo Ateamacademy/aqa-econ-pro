@@ -46,7 +46,7 @@ export default function Pricing() {
   return (
     <div className="container py-16 max-w-4xl">
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-serif mb-3">Unlock Full Access</h1>
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-3">Unlock Full Access</h1>
         <p className="text-muted-foreground text-lg">
           {subscribed
             ? "You have full access to all features!"
