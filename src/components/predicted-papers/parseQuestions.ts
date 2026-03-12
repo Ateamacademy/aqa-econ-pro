@@ -25,22 +25,27 @@ export interface ParsedQuestion {
 export function parseQuestions(markdown: string): { context: string; questions: ParsedQuestion[] } {
   // Try multiple regex patterns to maximize matching
   const patterns = [
-    // Pattern 1: "Question XX [Y marks]" or "Question XX (Y marks)" — most common
-    /(?:^|\n)\s*\**(?:Question\s+)((?:\d{1,2}(?:\.\d+)?[a-z]?(?:\s*\([a-z]\))?|0\s?\d{1,2}(?:\.\d+)?[a-z]?))\**[^\n\[\(]*?(?:\[|\()\s*(\d+)\s*marks?\s*(?:\]|\))/gi,
+    // Pattern 1: "Question XX [Y marks]" or "Question XX (Y marks)" — most common, handles bold and markdown headers
+    /(?:^|\n)\s*(?:#{1,4}\s+)?\**(?:Question\s+)((?:\d{1,2}(?:\.\d+)?[a-z]?(?:\s*\([a-z]\))?|0\s?\d{1,2}(?:\.\d+)?[a-z]?))\**[^\n\[\(]*?(?:\[|\()\s*(\d+)\s*marks?\s*(?:\]|\))/gi,
     // Pattern 2: bare number + marks e.g. "01 [2 marks]"
-    /(?:^|\n)\s*\**(?:Q(?:uestion)?\s*)?((?:\d{1,2}(?:\.\d+)?[a-z]?))\**\s*[:\-—–]?\s*(?:\[|\()\s*(\d+)\s*marks?\s*(?:\]|\))/gi,
+    /(?:^|\n)\s*(?:#{1,4}\s+)?\**(?:Q(?:uestion)?\s*)?((?:\d{1,2}(?:\.\d+)?[a-z]?))\**\s*[:\-—–]?\s*(?:\[|\()\s*(\d+)\s*marks?\s*(?:\]|\))/gi,
     // Pattern 3: marks at end of line e.g. "Question 01: What is... [2 marks]"  
-    /(?:^|\n)\s*\**(?:Question\s+)((?:\d{1,2}(?:\.\d+)?[a-z]?))\**[^\n]*?(?:\[|\()\s*(\d+)\s*marks?\s*(?:\]|\))/gi,
+    /(?:^|\n)\s*(?:#{1,4}\s+)?\**(?:Question\s+)((?:\d{1,2}(?:\.\d+)?[a-z]?))\**[^\n]*?(?:\[|\()\s*(\d+)\s*marks?\s*(?:\]|\))/gi,
+    // Pattern 4: "Question XX (Y)" with just a number in parens (some AI outputs)
+    /(?:^|\n)\s*(?:#{1,4}\s+)?\**(?:Question\s+)((?:\d{1,2}[a-z]?))\**[^\n]*?\((\d+)\)/gi,
   ];
 
   let matches: RegExpMatchArray[] = [];
   
   for (const regex of patterns) {
     const found = [...markdown.matchAll(regex)];
+    console.log(`[parseQuestions] Pattern ${patterns.indexOf(regex) + 1} found ${found.length} matches`, found.slice(0, 3).map(m => m[0].trim().slice(0, 60)));
     if (found.length > matches.length) {
       matches = found;
     }
   }
+
+  console.log(`[parseQuestions] Best match count: ${matches.length}`, matches.slice(0, 3).map(m => `Q${m[1]}[${m[2]}m]`));
 
   if (matches.length === 0) {
     return {

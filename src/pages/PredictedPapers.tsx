@@ -331,6 +331,109 @@ FIGURE/CHART FORMAT:
 - Diagrams: structured text with axes, curves, equilibrium points`;
 };
 
+const GCSE_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
+  const paperNum = paperValue === "full" ? "full" : paperValue.includes("1") ? "1" : "2";
+
+  const templates: Record<string, string> = {
+    "1": `PAPER 1: How Markets Work (8136/1) — 1 hour 45 minutes, 80 marks
+## Section A: Short Answer and Data Response (60 marks)
+Mix of 1-mark definitions, 2-mark state/explain, 4-mark explain, and 6-mark evaluate questions.
+Include 2-3 data extracts with tables/figures and Source lines.
+Question pattern builds from simple recall to extended response.
+
+## Section B: Extended Response (choose ONE from TWO, 20 marks each)
+Extended writing question requiring analysis and evaluation.
+Topics: economic foundations, resource allocation, supply & demand, elasticity, market failure, government intervention.`,
+    "2": `PAPER 2: How the Economy Works (8136/2) — 1 hour 45 minutes, 80 marks
+## Section A: Short Answer and Data Response (60 marks)
+Same structure as Paper 1 but MACRO topics.
+Include data on GDP, unemployment, inflation, trade balance.
+
+## Section B: Extended Response (choose ONE from TWO, 20 marks each)
+Topics: role of money, income & expenditure, AD/AS, economic growth, unemployment, inflation, international trade, government role.`,
+    "full": `FULL PAPER covering BOTH micro and macro GCSE topics — 80 marks total.
+## Section A: Short Answer and Data Response (60 marks)
+Mix of micro and macro questions with data extracts.
+## Section B: Extended Response (20 marks)
+Synoptic question requiring both micro and macro knowledge.`,
+  };
+
+  return `You are an expert AQA GCSE Economics (8136) chief examiner.
+
+Generate a COMPLETE predicted exam paper for ${paperLabel}.
+
+${templates[paperNum]}
+
+CRITICAL RULES:
+1. Follow the template structure EXACTLY
+2. Questions must be GCSE level — accessible but rigorous
+3. Include at least 2 data extracts with tables/figures
+4. 6-mark questions require analysis + evaluation
+5. Use AQA GCSE command words: "Define", "State", "Explain", "Analyse", "Evaluate"
+6. Include at least 2 MCQs (1 mark each with A/B/C/D options)
+
+OUTPUT FORMAT:
+- Every question: Question XX [Y marks]
+- Do NOT bold question headers or wrap in markdown headers
+- MCQ options: - A, - B, - C, - D
+- Do NOT include mark schemes or answers
+
+FIGURE/CHART FORMAT:
+- NEVER use ASCII art
+- Data: markdown tables with Source line
+- Diagrams: describe with structured text (axes, curves, key points)`;
+};
+
+const IGCSE_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
+  const paperNum = paperValue === "full" ? "full" : paperValue.includes("1") ? "1" : "2";
+
+  const templates: Record<string, string> = {
+    "1": `PAPER 1: Multiple Choice (0455/1) — 45 minutes, 30 marks
+30 MCQs covering all IGCSE Economics topics. Each worth 1 mark.
+Mix of: recall, application, data interpretation, and diagram analysis.
+Topics: basic economic problem, allocation of resources, microeconomic decision makers, government & macroeconomy, economic development, international trade.`,
+    "2": `PAPER 2: Structured Questions (0455/2) — 2 hours 15 minutes, 90 marks
+## Section A (compulsory, 20 marks)
+Data response with 1-2 extracts + figures.
+Questions: 2m define → 2m state → 4m explain → 6m analyse → 6m discuss
+
+## Section B (choose THREE from FOUR structured questions, ~23 marks each)
+Each question has sub-parts from 2-mark definitions to 8-mark evaluate.
+Topics must span the full IGCSE specification.`,
+    "full": `FULL PAPER covering all IGCSE Economics topics — 90 marks total.
+## Section A: Data Response (20 marks)
+Compulsory data response with extracts and figures.
+## Section B: Structured Questions (70 marks)
+4-5 structured questions with sub-parts.`,
+  };
+
+  return `You are an expert Cambridge IGCSE Economics (0455) chief examiner.
+
+Generate a COMPLETE predicted exam paper for ${paperLabel}.
+
+${templates[paperNum]}
+
+CRITICAL RULES:
+1. Follow the template structure EXACTLY
+2. Paper 1: exactly 30 MCQs with A/B/C/D options
+3. Paper 2: use realistic global data in extracts
+4. Questions must be IGCSE level — international context where possible
+5. Diagram questions must specify "Using a diagram" or "With the aid of a diagram"
+6. 8-mark questions require balanced analysis with evaluation
+7. Use Cambridge IGCSE command words: "Define", "Identify", "Explain", "Analyse", "Discuss", "Evaluate"
+
+OUTPUT FORMAT:
+- Every question: Question XX [Y marks]
+- Do NOT bold question headers or wrap in markdown headers
+- MCQ options: - A, - B, - C, - D
+- Do NOT include mark schemes or answers
+
+FIGURE/CHART FORMAT:
+- NEVER use ASCII art
+- Data: markdown tables with Source line
+- Diagrams: describe with structured text (axes, curves, key points)`;
+};
+
 const ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
   const paperNum = paperValue === "full" ? "3" : paperValue.includes("1") ? "1" : "2";
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum);
@@ -676,6 +779,8 @@ export default function PredictedPapers() {
   const isEdexcelB = subject === "edexcel-b";
   const isOCR = subject === "ocr";
   const isCambridge = subject === "cambridge";
+  const isGCSE = subject === "aqa-gcse";
+  const isIGCSE = subject === "cambridge-igcse";
   const isAnyEcon = true;
 
   const libraryPapers = useMemo(
@@ -716,7 +821,7 @@ export default function PredictedPapers() {
     if (isAnyEcon) {
       try {
         const { data: patternData } = await supabase.functions.invoke("retrieve-patterns", {
-          body: { paper, subject: isEdexcelA ? "edexcel-a" : isEdexcelB ? "edexcel-b" : isOCR ? "ocr_economics" : isCambridge ? "cambridge" : "economics", limit: 250 },
+          body: { paper, subject: isEdexcelA ? "edexcel-a" : isEdexcelB ? "edexcel-b" : isOCR ? "ocr_economics" : isCambridge ? "cambridge" : isGCSE ? "aqa-gcse" : isIGCSE ? "cambridge-igcse" : "economics", limit: 250 },
         });
         if (patternData?.contextPrompt) {
           dbContextPrompt = patternData.contextPrompt;
@@ -736,6 +841,10 @@ export default function PredictedPapers() {
       ? OCR_ECON_PAPER_PROMPT(paperLabel, paper)
       : isCambridge
       ? CAIE_ECON_PAPER_PROMPT(paperLabel, paper)
+      : isGCSE
+      ? GCSE_ECON_PAPER_PROMPT(paperLabel, paper)
+      : isIGCSE
+      ? IGCSE_ECON_PAPER_PROMPT(paperLabel, paper)
       : ECON_PAPER_PROMPT(paperLabel, paper);
 
     // Inject DB-retrieved patterns + topic scope for Economics
