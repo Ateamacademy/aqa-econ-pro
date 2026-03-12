@@ -77,7 +77,9 @@ export function parseQuestions(markdown: string): { context: string; questions: 
     const headerLine = headerLineRaw?.trim() ?? "";
     const remainingText = restLines.join("\n").trim();
 
-    const marksToken = headerLine.match(/(?:\[|\()\s*\d+\s*marks?\s*(?:\]|\))/i);
+    // Match marks token: [2 marks], (4 marks), or bare [16] at end of content
+    const marksToken = headerLine.match(/(?:\[|\()\s*\d+\s*marks?\s*(?:\]|\))/i)
+      || headerLine.match(/\[\d+\]\s*$/);
     const headerPrefixRe = /^(?:#{1,4}\s+)?\**\s*(?:Q(?:uestion)?\s*)?\d{1,2}(?:\.\d+)?[a-z]?(?:\s*\([a-z]\))?\**\s*[:\-—–]?\s*/i;
 
     let bodyText = "";
@@ -96,7 +98,7 @@ export function parseQuestions(markdown: string): { context: string; questions: 
     if (!bodyText) {
       bodyText = headerLine
         .replace(headerPrefixRe, "")
-        .replace(/(?:\[|\()\s*\d+\s*marks?\s*(?:\]|\))/i, "")
+        .replace(/(?:\[|\()\s*\d+\s*(?:marks?)?\s*(?:\]|\))/i, "")
         .trim();
     }
 
