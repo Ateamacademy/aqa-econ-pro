@@ -39,13 +39,10 @@ export function parseQuestions(markdown: string): { context: string; questions: 
   
   for (const regex of patterns) {
     const found = [...markdown.matchAll(regex)];
-    console.log(`[parseQuestions] Pattern ${patterns.indexOf(regex) + 1} found ${found.length} matches`, found.slice(0, 3).map(m => m[0].trim().slice(0, 60)));
     if (found.length > matches.length) {
       matches = found;
     }
   }
-
-  console.log(`[parseQuestions] Best match count: ${matches.length}`, matches.slice(0, 3).map(m => `Q${m[1]}[${m[2]}m]`));
 
   if (matches.length === 0) {
     return {
