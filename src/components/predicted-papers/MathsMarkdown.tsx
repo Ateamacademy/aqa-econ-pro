@@ -414,13 +414,30 @@ function renderSegment(text: string, keyPrefix: string = "") {
 /**
  * Renders markdown with LaTeX math, GFM tables, economics diagrams, and figure charts.
  */
+/**
+ * Strip "lines X-Y", "line X", "(lines X–Y)" etc. from extract text.
+ */
+function stripLineReferences(text: string): string {
+  return text
+    // "(lines 5-8)", "(lines 5–8)", "(line 5)"
+    .replace(/\s*\(lines?\s+\d+[\s–\-—]+\d+\)\s*/gi, " ")
+    .replace(/\s*\(line\s+\d+\)\s*/gi, " ")
+    // "lines 5-8" or "lines 5–8" standalone
+    .replace(/\blines?\s+\d+[\s–\-—]+\d+/gi, "")
+    .replace(/\bline\s+\d+\b/gi, "")
+    // Clean up double spaces
+    .replace(/  +/g, " ")
+    .trim();
+}
+
 export function MathsMarkdown({ children, className }: MathsMarkdownProps) {
+  const cleaned = stripLineReferences(children);
   // First extract figure charts
-  const figSegments = extractFigureBlocks(children);
+  const figSegments = extractFigureBlocks(cleaned);
   const hasSpecialFigures = figSegments.some(s => s.type === "figure" || s.type === "sd-diagram");
 
   if (!hasSpecialFigures) {
-    return <div className={className}>{renderSegment(children)}</div>;
+    return <div className={className}>{renderSegment(cleaned)}</div>;
   }
 
   return (

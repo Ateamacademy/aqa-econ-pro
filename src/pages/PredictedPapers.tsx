@@ -473,13 +473,13 @@ Study Extracts A, B and C and then answer all parts of Context 1 which follow.
 
 #### Extract A: [A data table with real-world statistics — 3-6 rows, 4-6 columns, with a Source line]
 #### Figure 1: [A chart/graph described with specific data points so questions can reference it]
-#### Extract B: [2-3 paragraphs of real-world context, 150-200 words, with Source line. Include specific quotes that questions will reference by line number.]
-#### Extract C: [2-3 paragraphs discussing policies/solutions, 150-200 words, with Source line. Include specific quotes that questions will reference by line number.]
+#### Extract B: [2-3 paragraphs of real-world context, 150-200 words, with Source line. Do NOT include line numbers or line references.]
+#### Extract C: [2-3 paragraphs discussing policies/solutions, 150-200 words, with Source line. Do NOT include line numbers or line references.]
 
 Question 01 [2 marks] — a calculation using data from Extract A
 Question 02 [4 marks] — "Explain how the data in Extract A show that..." (data interpretation)
-Question 03 [9 marks] — "With the help of a diagram, explain..." (quote a line from Extract B/C, require a labelled diagram + applied analysis)
-Question 04 [25 marks] — "Using the data in the extracts and your knowledge of economics, discuss/evaluate..." (quote a line from Extract C, deep evaluation with counter-arguments)
+Question 03 [9 marks] — "With the help of a diagram, explain..." (reference Extract B/C content directly, require a labelled diagram + applied analysis)
+Question 04 [25 marks] — "Using the data in the extracts and your knowledge of economics, discuss/evaluate..." (reference Extract C content directly, deep evaluation with counter-arguments)
 
 ### OR
 ### Context 2
