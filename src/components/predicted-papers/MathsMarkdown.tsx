@@ -346,7 +346,11 @@ const markdownComponents: Components = {
         <p className="text-[11px] italic text-muted-foreground mt-1 mb-3" {...props}>{children}</p>
       );
     }
-    return <p {...props}>{children}</p>;
+    return <p className="mb-3 leading-relaxed" {...props}>{children}</p>;
+  },
+  code: ({ children, ...props }) => {
+    // Prevent monospace font — render inline code as normal styled text
+    return <span className="font-sans font-semibold text-foreground" {...props}>{children}</span>;
   },
   strong: ({ children, ...props }) => {
     const text = typeof children === "string" ? children : "";
