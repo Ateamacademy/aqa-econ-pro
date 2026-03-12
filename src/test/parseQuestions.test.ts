@@ -137,16 +137,14 @@ Analyse the impact.`;
     expect(questions[0].label).toBe("Question 1");
   });
 
-  it("should parse bold questions with headers", () => {
-    const boldHeaders = `## Section A
+  it("should parse OCR inline format when question text comes before marks", () => {
+    const ocrInline = `Question 1 Define the term market equilibrium. [2 marks]
+Question 2 Using the extract, explain two causes of house price rises. [4 marks]
+Question 3 With the aid of a supply and demand diagram, analyse the impact of increased supply. [8 marks]`;
 
-#### **Question 01** [2 marks]
-Define the term.
-
-#### **Question 02** [4 marks]
-Explain using data.`;
-
-    const { questions } = parseQuestions(boldHeaders);
-    expect(questions.length).toBe(2);
+    const { questions } = parseQuestions(ocrInline);
+    expect(questions.length).toBe(3);
+    expect(questions[0].text).toContain("Define the term market equilibrium");
+    expect(questions[1].text).toContain("Using the extract");
   });
 });
