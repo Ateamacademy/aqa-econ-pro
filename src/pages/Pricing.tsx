@@ -75,7 +75,7 @@ export default function Pricing() {
                 </span>
               )}
               <CardHeader>
-                <CardTitle className="font-serif text-2xl">{plan.name}</CardTitle>
+                <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
                 <CardDescription className="text-2xl font-bold text-foreground">{plan.price}</CardDescription>
               </CardHeader>
               <CardContent>
