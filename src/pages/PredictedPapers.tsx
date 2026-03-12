@@ -676,6 +676,8 @@ export default function PredictedPapers() {
   const isEdexcelB = subject === "edexcel-b";
   const isOCR = subject === "ocr";
   const isCambridge = subject === "cambridge";
+  const isGCSE = subject === "aqa-gcse";
+  const isIGCSE = subject === "cambridge-igcse";
   const isAnyEcon = true;
 
   const libraryPapers = useMemo(
