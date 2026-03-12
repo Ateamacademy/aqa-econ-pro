@@ -33,6 +33,10 @@ export function parseQuestions(markdown: string): { context: string; questions: 
     /(?:^|\n)\s*(?:#{1,4}\s+)?\**(?:Question\s+)((?:\d{1,2}(?:\.\d+)?[a-z]?))\**[^\n]*?(?:\[|\()\s*(\d+)\s*marks?\s*(?:\]|\))/gi,
     // Pattern 4: "Question XX (Y)" with just a number in parens (some AI outputs)
     /(?:^|\n)\s*(?:#{1,4}\s+)?\**(?:Question\s+)((?:\d{1,2}[a-z]?))\**[^\n]*?\((\d+)\)/gi,
+    // Pattern 5: marks as just [N] without "marks" word e.g. "**Question 1** text [2]" or "Question 1 text [8]"
+    /(?:^|\n)\s*(?:#{1,4}\s+)?\**(?:Question\s+)((?:\d{1,2}(?:\.\d+)?[a-z]?(?:\s*\([a-z]\))?))\**[^\n]*?\[(\d+)\]/gi,
+    // Pattern 6: "Question N (a)" sub-parts with marks e.g. "Question 5 (a) text [10]" or "Question 5 (a) text [10 marks]"
+    /(?:^|\n)\s*(?:#{1,4}\s+)?\**(?:Question\s+)((?:\d{1,2})\s*\([a-z]\))\**[^\n]*?(?:\[|\()\s*(\d+)\s*(?:marks?)?\s*(?:\]|\))/gi,
   ];
 
   let matches: RegExpMatchArray[] = [];
@@ -73,7 +77,9 @@ export function parseQuestions(markdown: string): { context: string; questions: 
     const headerLine = headerLineRaw?.trim() ?? "";
     const remainingText = restLines.join("\n").trim();
 
-    const marksToken = headerLine.match(/(?:\[|\()\s*\d+\s*marks?\s*(?:\]|\))/i);
+    // Match marks token: [2 marks], (4 marks), or bare [16] at end of content
+    const marksToken = headerLine.match(/(?:\[|\()\s*\d+\s*marks?\s*(?:\]|\))/i)
+      || headerLine.match(/\[\d+\]\s*$/);
     const headerPrefixRe = /^(?:#{1,4}\s+)?\**\s*(?:Q(?:uestion)?\s*)?\d{1,2}(?:\.\d+)?[a-z]?(?:\s*\([a-z]\))?\**\s*[:\-—–]?\s*/i;
 
     let bodyText = "";
@@ -92,7 +98,7 @@ export function parseQuestions(markdown: string): { context: string; questions: 
     if (!bodyText) {
       bodyText = headerLine
         .replace(headerPrefixRe, "")
-        .replace(/(?:\[|\()\s*\d+\s*marks?\s*(?:\]|\))/i, "")
+        .replace(/(?:\[|\()\s*\d+\s*(?:marks?)?\s*(?:\]|\))/i, "")
         .trim();
     }
 

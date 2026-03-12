@@ -200,10 +200,14 @@ CRITICAL RULES:
 6. 15+ mark questions MUST require chains of reasoning, counter-arguments, and justified judgement
 7. Use precise command words: "Evaluate", "Assess", "To what extent", "Discuss"
 
-OUTPUT FORMAT (CRITICAL):
-- Every question MUST start: Question XX [Y marks]
-- Do NOT bold question headers
+OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+- EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
+  Examples: Question 01a [1 marks], Question 01b [3 marks], Question 06 [5 marks]
+- Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks. Do NOT put marks at the end of the line after question text.
+- The question text MUST appear AFTER the [Y marks] tag, either on the same line or the next line
 - MCQ options on separate lines: - A, - B, - C, - D
+- WRONG: **Question 1** text [2], Question 1 text (2 marks), Q1 [2 marks]
+- CORRECT: Question 01a [1 marks] Which of the following best describes allocative efficiency?
 - Do NOT include mark schemes or answers
 
 FIGURE/CHART FORMAT:
@@ -261,10 +265,13 @@ CRITICAL RULES:
 5. At least 40% of marks must target Analyse/Evaluate (AO3+AO4)
 6. Use OCR command words precisely: "Explain", "Evaluate", "Calculate"
 
-OUTPUT FORMAT:
-- Every question: Question XX [Y marks]
-- Do NOT bold question headers
-- MCQ options: - A, - B, - C, - D
+OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+- EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
+  Examples: Question 01 [2 marks], Question 02 [4 marks], Question 03 [8 marks]
+- Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks. Do NOT put marks at the end of the line after question text.
+- The question text MUST appear AFTER the [Y marks] tag, either on the same line or the next line
+- WRONG: **Question 1** Calculate... [2], Question 1 Calculate... [2 marks], Q1 [2 marks]
+- CORRECT: Question 01 [2 marks] Calculate the percentage change...
 - Do NOT include mark schemes or answers
 
 FIGURE/CHART FORMAT:
@@ -319,10 +326,14 @@ CRITICAL RULES:
 6. 25-mark essays require KAA + Evaluation + justified judgement
 7. Use CAIE command words: "Explain", "Analyse", "Evaluate", "Discuss", "Calculate"
 
-OUTPUT FORMAT:
-- Every question: Question XX [Y marks]
-- Do NOT bold question headers
-- MCQ options: - A, - B, - C, - D
+OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+- EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
+  Examples: Question 01 [1 marks], Question 02 [2 marks], Question 03 [4 marks]
+- Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks. Do NOT put marks at the end of the line after question text.
+- The question text MUST appear AFTER the [Y marks] tag, either on the same line or the next line
+- MCQ options on separate lines: - A, - B, - C, - D
+- WRONG: **Question 1** text [2], Question 1 text (2 marks)
+- CORRECT: Question 01 [1 marks] What is the basic economic problem?
 - Do NOT include mark schemes or answers
 
 FIGURE/CHART FORMAT:
@@ -372,10 +383,14 @@ CRITICAL RULES:
 5. Use AQA GCSE command words: "Define", "State", "Explain", "Analyse", "Evaluate"
 6. Include at least 2 MCQs (1 mark each with A/B/C/D options)
 
-OUTPUT FORMAT:
-- Every question: Question XX [Y marks]
-- Do NOT bold question headers or wrap in markdown headers
-- MCQ options: - A, - B, - C, - D
+OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+- EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
+  Examples: Question 01 [1 marks], Question 02 [2 marks], Question 03 [4 marks]
+- Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks. Do NOT put marks at the end of the line after question text.
+- The question text MUST appear AFTER the [Y marks] tag, either on the same line or the next line
+- MCQ options on separate lines: - A, - B, - C, - D
+- WRONG: **Question 1** text [2], Question 1 text (2 marks)
+- CORRECT: Question 01 [1 marks] Define the term "opportunity cost".
 - Do NOT include mark schemes or answers
 
 FIGURE/CHART FORMAT:
@@ -422,10 +437,14 @@ CRITICAL RULES:
 6. 8-mark questions require balanced analysis with evaluation
 7. Use Cambridge IGCSE command words: "Define", "Identify", "Explain", "Analyse", "Discuss", "Evaluate"
 
-OUTPUT FORMAT:
-- Every question: Question XX [Y marks]
-- Do NOT bold question headers or wrap in markdown headers
-- MCQ options: - A, - B, - C, - D
+OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+- EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
+  Examples: Question 01 [1 marks], Question 02 [2 marks], Question 03 [4 marks]
+- Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks. Do NOT put marks at the end of the line after question text.
+- The question text MUST appear AFTER the [Y marks] tag, either on the same line or the next line
+- MCQ options on separate lines: - A, - B, - C, - D
+- WRONG: **Question 1** text [2], Question 1 text (2 marks)
+- CORRECT: Question 01 [1 marks] What is meant by the term "scarcity"?
 - Do NOT include mark schemes or answers
 
 FIGURE/CHART FORMAT:

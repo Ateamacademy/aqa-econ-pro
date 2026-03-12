@@ -147,4 +147,28 @@ Question 3 With the aid of a supply and demand diagram, analyse the impact of in
     expect(questions[0].text).toContain("Define the term market equilibrium");
     expect(questions[1].text).toContain("Using the extract");
   });
+
+  it("should parse bold questions with marks as bare numbers [N] (no 'marks' word)", () => {
+    const boldNoMarks = `**Question 1** Calculate the percentage change in the Number of Energy Suppliers in the UK between January 2020 and January 2023. [2]
+**Question 2** Explain two reasons why the demand for energy is often considered to be price inelastic. [4]
+**Question 3** Explain, using a diagram, how a maximum price can lead to a shortage in the market. [8]
+**Question 4** Evaluate the extent to which the energy price cap is an effective policy for correcting market failures in the UK energy market. [16]`;
+
+    const { questions } = parseQuestions(boldNoMarks);
+    console.log("Bold no-marks:", questions.map(q => `${q.label} [${q.marks}m] "${q.text.slice(0,40)}..."`));
+    expect(questions.length).toBe(4);
+    expect(questions[0].marks).toBe(2);
+    expect(questions[0].text).toContain("Calculate the percentage change");
+    expect(questions[2].marks).toBe(8);
+    expect(questions[3].marks).toBe(16);
+  });
+
+  it("should parse sub-part questions like Question 5 (a) ... [10]", () => {
+    const subParts = `**Question 5** (a) Explain how the concept of derived demand applies to the labour market. [10] (b) Evaluate the view that an increase in the national minimum wage will always lead to a significant rise in unemployment. [15]
+**Question 6** (a) Explain how firms in an oligopolistic market might use non-price competition. [10] (b) Evaluate whether oligopolistic firms are likely to act in the best interests of consumers. [15]`;
+
+    const { questions } = parseQuestions(subParts);
+    console.log("Sub-parts:", questions.map(q => `${q.label} [${q.marks}m]`));
+    expect(questions.length).toBeGreaterThanOrEqual(2);
+  });
 });
