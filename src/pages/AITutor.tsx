@@ -67,21 +67,21 @@ export default function AITutor() {
   return (
     <div className="container py-6 max-w-3xl flex flex-col" style={{ height: "calc(100vh - 8rem)" }}>
       <div className="mb-4">
-        <h1 className="text-3xl font-semibold tracking-tight">AI {subjectLabel} Tutor</h1>
+        <h1 className="text-3xl font-bold tracking-tight">AI {subjectLabel} Tutor</h1>
         <p className="text-sm text-muted-foreground">{examBoard} {level} · Ask any question and get structured, exam-focused explanations</p>
       </div>
 
-      <div className="flex-1 overflow-y-auto rounded-2xl border border-border bg-card p-4 space-y-4 mb-4">
+      <div className="flex-1 overflow-y-auto rounded-2xl border border-border/60 bg-card p-4 space-y-4 mb-4">
         {messages.length === 0 && (
           <div className="text-center py-16 text-muted-foreground">
             <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
               <MessageCircle className="h-7 w-7 text-primary" />
             </div>
-            <p className="font-semibold text-lg text-foreground mb-1">Ask me anything about {subjectLabel}</p>
+            <p className="font-bold text-lg text-foreground mb-1">Ask me anything about {subjectLabel}</p>
             <p className="text-sm max-w-md mx-auto">I'll break it down with clear headings, bullet points, key terms highlighted, and step-by-step explanations.</p>
             <div className="flex flex-wrap justify-center gap-2 mt-5">
               {["Explain the multiplier effect", "What causes market failure?", "Draw an AD/AS diagram"].map(s => (
-                <button key={s} onClick={() => { setInput(s); }} className="text-xs px-3 py-1.5 rounded-full border border-border hover:border-primary/40 hover:bg-primary/5 transition-colors text-muted-foreground hover:text-foreground">
+                <button key={s} onClick={() => { setInput(s); }} className="text-xs px-3 py-1.5 rounded-full border border-border/60 hover:border-primary/40 hover:bg-primary/5 transition-all text-muted-foreground hover:text-foreground">
                   {s}
                 </button>
               ))}
@@ -91,21 +91,21 @@ export default function AITutor() {
         {messages.map((m, i) => (
           <div key={i} className={`flex gap-3 ${m.role === "user" ? "justify-end" : "justify-start"}`}>
             {m.role === "assistant" && (
-              <div className="h-7 w-7 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-1">
+              <div className="h-7 w-7 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 mt-1">
                 <Bot className="h-4 w-4 text-primary" />
               </div>
             )}
             <div className={`max-w-[85%] rounded-2xl px-4 py-3 ${
               m.role === "user"
                 ? "bg-primary text-primary-foreground text-sm"
-                : "bg-muted/50 border border-border/50"
+                : "bg-muted/50 border border-border/40"
             }`}>
               {m.role === "assistant" ? (
                 <RevisionRenderer content={m.content} />
               ) : m.content}
             </div>
             {m.role === "user" && (
-              <div className="h-7 w-7 rounded-full bg-foreground/10 flex items-center justify-center shrink-0 mt-1">
+              <div className="h-7 w-7 rounded-xl bg-foreground/10 flex items-center justify-center shrink-0 mt-1">
                 <User className="h-4 w-4 text-foreground/60" />
               </div>
             )}
@@ -113,10 +113,10 @@ export default function AITutor() {
         ))}
         {isLoading && messages[messages.length - 1]?.role !== "assistant" && (
           <div className="flex gap-3">
-            <div className="h-7 w-7 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+            <div className="h-7 w-7 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
               <Bot className="h-4 w-4 text-primary animate-pulse" />
             </div>
-            <div className="bg-muted/50 border border-border/50 rounded-2xl px-4 py-3 text-sm text-muted-foreground">
+            <div className="bg-muted/50 border border-border/40 rounded-2xl px-4 py-3 text-sm text-muted-foreground">
               Thinking...
             </div>
           </div>
@@ -130,9 +130,9 @@ export default function AITutor() {
           onChange={e => setInput(e.target.value)}
           placeholder="Ask a question..."
           disabled={isLoading}
-          className="flex-1 rounded-full h-11 px-5"
+          className="flex-1 rounded-full h-11 px-5 bg-card border-border/60"
         />
-        <Button type="submit" disabled={isLoading || !input.trim()} size="icon" className="rounded-full h-11 w-11">
+        <Button type="submit" disabled={isLoading || !input.trim()} size="icon" className="rounded-full h-11 w-11 shadow-lg shadow-primary/20">
           <Send className="h-4 w-4" />
         </Button>
       </form>
