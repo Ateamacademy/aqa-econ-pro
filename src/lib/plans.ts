@@ -18,6 +18,6 @@ export const PLANS = {
 export const FREE_LIMITS = {
   papers: 3,
   questions: 50,
-  diagrams: 20,
+  diagrams: 50,
   predictedPapers: 20,
 } as const;
