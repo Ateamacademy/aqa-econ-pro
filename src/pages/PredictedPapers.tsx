@@ -261,10 +261,13 @@ CRITICAL RULES:
 5. At least 40% of marks must target Analyse/Evaluate (AO3+AO4)
 6. Use OCR command words precisely: "Explain", "Evaluate", "Calculate"
 
-OUTPUT FORMAT:
-- Every question: Question XX [Y marks]
-- Do NOT bold question headers
-- MCQ options: - A, - B, - C, - D
+OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+- EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
+  Examples: Question 01 [2 marks], Question 02 [4 marks], Question 03 [8 marks]
+- Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks. Do NOT put marks at the end of the line after question text.
+- The question text MUST appear AFTER the [Y marks] tag, either on the same line or the next line
+- WRONG: **Question 1** Calculate... [2], Question 1 Calculate... [2 marks], Q1 [2 marks]
+- CORRECT: Question 01 [2 marks] Calculate the percentage change...
 - Do NOT include mark schemes or answers
 
 FIGURE/CHART FORMAT:
