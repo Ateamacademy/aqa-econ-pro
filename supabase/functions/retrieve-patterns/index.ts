@@ -223,6 +223,10 @@ serve(async (req) => {
       contextPrompt += "- Section B must be a synoptic case study with a 25-mark HOTS evaluation question.\n";
     }
 
+    contextPrompt += "\n### EXTRACT CONSISTENCY RULE (CRITICAL):\n";
+    contextPrompt += "- Questions MUST ONLY reference extracts/contexts that are actually provided in the paper.\n";
+    contextPrompt += "- Do NOT reference 'Extract D' if only Extracts A, B, C exist. Cross-check all references before finalising.\n";
+
     contextPrompt += "\n### Knowledge Graph — Synoptic Links:\n";
     const uniqueLinks = [...new Set(synopticLinks)].slice(0, 20);
     for (const link of uniqueLinks) {

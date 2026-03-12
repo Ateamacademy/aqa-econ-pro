@@ -330,6 +330,12 @@ FORMATTING RULES:
 - Use clear section headings and extract labels
 - Do NOT include mark schemes or answers in generated paper
 
+EXTRACT CONSISTENCY (CRITICAL):
+- If you create extracts (e.g., Extract A, Extract B, Extract C), questions MUST ONLY reference extracts that actually exist in the paper.
+- Do NOT reference "Extract D" if you only provided Extracts A, B, and C.
+- Before finalising, cross-check every question to ensure any "Extract X" or "Context X" reference matches a provided extract/context.
+- Number your extracts sequentially and ensure no gaps or phantom references.
+
 After the student answers, mark their response using AQA criteria (KAA + Evaluation) and give detailed feedback speaking directly to them.`;
       }
     }
