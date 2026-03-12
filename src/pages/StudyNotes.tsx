@@ -147,6 +147,33 @@ function SectionHeader({ section, index }: { section: PaperSection; index: numbe
   );
 }
 
+const DIAGRAM_PROMPTS: Record<string, string> = {
+  supply_demand: "supply and demand",
+  demand_increase: "demand increase (rightward shift)",
+  demand_decrease: "demand decrease (leftward shift)",
+  supply_increase: "supply increase (rightward shift)",
+  supply_decrease: "supply decrease (leftward shift)",
+  positive_externality: "positive externality of consumption",
+  negative_externality: "negative externality of consumption",
+  negative_production_externality: "negative externality of production",
+  positive_production_externality: "positive externality of production",
+  ad_increase: "aggregate demand increase",
+  ad_decrease: "aggregate demand decrease",
+  sras_decrease: "short-run aggregate supply decrease (cost-push inflation)",
+  sras_increase: "short-run aggregate supply increase",
+  ped_elastic: "price elastic demand",
+  ped_inelastic: "price inelastic demand",
+  ppf: "production possibility frontier",
+  ppf_growth: "economic growth on a PPF",
+  phillips_curve: "Phillips curve",
+  tax_incidence: "indirect tax incidence",
+  subsidy: "subsidy",
+  price_floor: "minimum price (price floor)",
+  price_ceiling: "maximum price (price ceiling)",
+  monopoly: "monopoly profit maximisation",
+  perfect_competition: "perfect competition",
+};
+
 export default function StudyNotes() {
   const { user } = useAuth();
   const { subject, subjectLabel, examBoard, level } = useSubject();
