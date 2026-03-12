@@ -437,10 +437,14 @@ CRITICAL RULES:
 6. 8-mark questions require balanced analysis with evaluation
 7. Use Cambridge IGCSE command words: "Define", "Identify", "Explain", "Analyse", "Discuss", "Evaluate"
 
-OUTPUT FORMAT:
-- Every question: Question XX [Y marks]
-- Do NOT bold question headers or wrap in markdown headers
-- MCQ options: - A, - B, - C, - D
+OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+- EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
+  Examples: Question 01 [1 marks], Question 02 [2 marks], Question 03 [4 marks]
+- Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks. Do NOT put marks at the end of the line after question text.
+- The question text MUST appear AFTER the [Y marks] tag, either on the same line or the next line
+- MCQ options on separate lines: - A, - B, - C, - D
+- WRONG: **Question 1** text [2], Question 1 text (2 marks)
+- CORRECT: Question 01 [1 marks] What is meant by the term "scarcity"?
 - Do NOT include mark schemes or answers
 
 FIGURE/CHART FORMAT:
