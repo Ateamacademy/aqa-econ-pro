@@ -1380,6 +1380,20 @@ const extendedLabourMarket: import("./edexcelANotes").Subtopic[] = [
   },
 ];
 
+/* ── Dedicated NMW subtopic (spec 4.1.6.6) ── */
+const nmwSubtopic: import("./edexcelANotes").Subtopic = {
+  title: "The National Minimum Wage (NMW) & National Living Wage (NLW)",
+  definition: "The **NMW** is the legal minimum hourly rate employers must pay workers. The **NLW** is the higher rate for workers aged 21+ (from April 2024). It is a price floor in the labour market.",
+  keyTerms: [
+    { term: "National Minimum Wage", definition: "Legal minimum hourly pay — varies by age (16-17, 18-20, 21+, apprentices)" },
+    { term: "National Living Wage", definition: "The NMW rate for workers aged 21+ — currently £11.44/hr (April 2024)" },
+    { term: "Real Living Wage", definition: "A voluntary, higher rate set by the Living Wage Foundation based on actual living costs (≈£12/hr, £13.15 in London)" },
+    { term: "Price Floor", definition: "A minimum price set above equilibrium — in the labour market, the NMW prevents wages falling below a set level" },
+  ],
+  explanation: "**Competitive labour market analysis:**\n- NMW set above equilibrium → Qs of labour > Qd → surplus of labour → unemployment\n- The higher the NMW above equilibrium, the greater the unemployment effect\n- Classical economists predict job losses, especially for low-skilled workers\n\n**Monopsony labour market analysis:**\n- If employer has monopsony power, wages are below competitive level\n- NMW can increase BOTH wages AND employment (up to competitive level)\n- This explains empirical evidence (Card & Krueger) showing minimal unemployment effects from moderate NMW increases\n\n**Arguments FOR the NMW:**\n✅ Reduces in-work poverty and income inequality\n✅ Corrects monopsony exploitation\n✅ Reduces the need for in-work benefits (taxpayer savings)\n✅ Increases motivation and reduces staff turnover\n✅ Boosts AD (low earners have high MPC)\n\n**Arguments AGAINST:**\n❌ May cause unemployment if set too high above equilibrium\n❌ May reduce employment of young/low-skilled workers most\n❌ Could lead to inflation if firms pass on higher costs\n❌ May encourage substitution of capital for labour (automation)\n❌ Regional variation — £11.44/hr may be appropriate in London but high in rural areas\n\n**Evaluation:** Empirical evidence suggests moderate NMW increases have had minimal negative employment effects in the UK, supporting the monopsony model. However, very large increases could cross the threshold where job losses become significant.",
+  examTip: "Always evaluate the NMW using BOTH the competitive model (predicts unemployment) and the monopsony model (predicts no unemployment or even increased employment). The best answers discuss which model better fits the UK labour market.",
+};
+
 /* ── Extended inequality subtopics ── */
 const extendedInequalitySubtopics: import("./edexcelANotes").Subtopic[] = [
   {
