@@ -80,7 +80,7 @@ export function EndOfTopicTest({ chapterName, subtopicTitles }: EndOfTopicTestPr
     await streamChat({
       messages: [{
         role: "user",
-        content: `Generate exactly 5 multiple-choice questions for an end-of-chapter test on "${chapterName}" for ${examBoard} ${level} ${subjectLabel}.
+      content: `Generate exactly 10 multiple-choice questions for an end-of-chapter test on "${chapterName}" for ${examBoard} ${level} ${subjectLabel}.
 
 Topics covered: ${topicsList}
 
@@ -97,16 +97,17 @@ B) [correct option](correct)
 C) [option]
 D) [option]
 
-...and so on for Q3, Q4, Q5.
+...and so on for Q3 through Q10.
 
 RULES:
 - Each question must have exactly 4 options (A-D)
 - Mark the correct answer with (correct) after the option text
 - Questions should test understanding, not just recall
-- Mix difficulty: 2 easy, 2 medium, 1 hard
+- Mix difficulty: 3 easy, 4 medium, 3 hard
 - Cover different subtopics from the chapter
 - Keep questions concise (1-2 sentences max)
-- Do NOT include any preamble or explanation, ONLY the 5 questions`
+- Include a mix of: definitions, application, analysis, and evaluation questions
+- Do NOT include any preamble or explanation, ONLY the 10 questions`
       }],
       mode: "practice",
       subject,
