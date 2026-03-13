@@ -5,10 +5,11 @@ import { streamChat } from "@/lib/streamChat";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { ClipboardCheck, RotateCcw, Trophy, ChevronRight, Loader2, CheckCircle2, XCircle } from "lucide-react";
+import { ClipboardCheck, ChevronRight, Loader2, Trophy } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { motion, AnimatePresence } from "framer-motion";
+import { TestResultsCarousel } from "./TestResultsCarousel";
 
 interface MCQ {
   question: string;
@@ -154,11 +155,6 @@ RULES:
     }
   };
 
-  const score = submitted
-    ? questions.reduce((acc, q, i) => acc + (selected[i] === q.correctIndex ? 1 : 0), 0)
-    : 0;
-  const scorePercent = submitted ? Math.round((score / questions.length) * 100) : 0;
-
   const reset = () => {
     setOpen(false);
     setQuestions([]);
@@ -278,66 +274,13 @@ RULES:
                   </div>
                 )}
 
-                {/* Results */}
                 {submitted && (
-                  <div className="space-y-4">
-                    {/* Score banner */}
-                    <div className={`text-center py-4 rounded-xl ${
-                      scorePercent >= 80 ? "bg-green-500/10" :
-                      scorePercent >= 60 ? "bg-yellow-500/10" :
-                      "bg-red-500/10"
-                    }`}>
-                      <Trophy className={`h-8 w-8 mx-auto mb-2 ${
-                        scorePercent >= 80 ? "text-green-500" :
-                        scorePercent >= 60 ? "text-yellow-500" :
-                        "text-red-500"
-                      }`} />
-                      <p className="text-2xl font-bold">{score}/{questions.length}</p>
-                      <p className="text-sm text-muted-foreground mt-1">{scorePercent}% — {
-                        scorePercent >= 80 ? "Excellent! 🎉" :
-                        scorePercent >= 60 ? "Good effort! Keep practising 💪" :
-                        "Review this chapter and try again 📖"
-                      }</p>
-                    </div>
-
-                    {/* Review answers */}
-                    <div className="space-y-3">
-                      {questions.map((q, qi) => {
-                        const isCorrect = selected[qi] === q.correctIndex;
-                        return (
-                          <div key={qi} className={`p-3 rounded-lg border text-sm ${
-                            isCorrect ? "border-green-500/30 bg-green-500/5" : "border-red-500/30 bg-red-500/5"
-                          }`}>
-                            <div className="flex items-start gap-2">
-                              {isCorrect ? (
-                                <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 shrink-0" />
-                              ) : (
-                                <XCircle className="h-4 w-4 text-red-500 mt-0.5 shrink-0" />
-                              )}
-                              <div>
-                                <p className="font-medium text-xs">{q.question}</p>
-                                {!isCorrect && (
-                                  <p className="text-xs text-muted-foreground mt-1">
-                                    Your answer: <span className="text-red-500">{q.options[selected[qi]!]}</span>
-                                    <br />
-                                    Correct: <span className="text-green-600 font-medium">{q.options[q.correctIndex]}</span>
-                                  </p>
-                                )}
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-
-                    {/* Actions */}
-                    <div className="flex gap-2 pt-2">
-                      <Button size="sm" variant="outline" onClick={() => { setOpen(true); generateTest(); }} className="gap-1.5">
-                        <RotateCcw className="h-3.5 w-3.5" /> Retake Test
-                      </Button>
-                      <Button size="sm" variant="ghost" onClick={reset}>Close</Button>
-                    </div>
-                  </div>
+                  <TestResultsCarousel
+                    questions={questions}
+                    selected={selected}
+                    onRetake={() => { setOpen(true); generateTest(); }}
+                    onClose={reset}
+                  />
                 )}
               </CardContent>
             </Card>
