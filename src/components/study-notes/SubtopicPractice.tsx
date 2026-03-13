@@ -7,9 +7,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Brain, Send, RotateCcw, ChevronDown, ChevronUp } from "lucide-react";
 import { toast } from "sonner";
-import ReactMarkdown from "react-markdown";
 import { supabase } from "@/integrations/supabase/client";
 import { motion, AnimatePresence } from "framer-motion";
+import { FeedbackCarousel } from "./FeedbackCarousel";
 
 interface SubtopicPracticeProps {
   subtopicTitle: string;
