@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import {
   Lock, Brain, PenTool, Crown, FileText, TrendingUp, Calendar, Target,
   BarChart3, Flame, BookOpen, GraduationCap, ArrowRight, Sparkles,
-  Clock, Award, Zap, LineChart, PieChart, StickyNote,
+  Clock, Award, Zap, LineChart, PieChart, StickyNote, ClipboardCheck,
 } from "lucide-react";
 import { FREE_LIMITS } from "@/lib/plans";
 
@@ -69,8 +69,21 @@ export default function Dashboard() {
     const diagramSessions = subjectSessions.filter(s => s.session_type === "diagram").length;
     const questionSessions = subjectSessions.filter(s => s.session_type === "question").length;
     const essaySessions = subjectSessions.filter(s => s.session_type === "essay").length;
+    const topicTestSessions = subjectSessions.filter(s => s.session_type === "topic_test");
     const noteViews = subjectSessions.filter(s => s.session_type === "note_view");
     const notesViewed = new Set(noteViews.map(s => s.topic)).size;
+
+    // Topic test scores - best score per chapter
+    const topicTestScores: Record<string, number> = {};
+    topicTestSessions.forEach(s => {
+      if (s.score_percent !== null) {
+        topicTestScores[s.topic] = Math.max(topicTestScores[s.topic] ?? 0, s.score_percent);
+      }
+    });
+    const topicTestEntries = Object.entries(topicTestScores).sort((a, b) => a[0].localeCompare(b[0]));
+    const topicTestAvg = topicTestEntries.length > 0
+      ? Math.round(topicTestEntries.reduce((a, [, v]) => a + v, 0) / topicTestEntries.length)
+      : null;
 
     // Topics practiced
     const topicCounts: Record<string, number> = {};
@@ -112,6 +125,7 @@ export default function Dashboard() {
       { type: "Questions", count: questionSessions, color: "hsl(var(--chart-1))" },
       { type: "Diagrams", count: diagramSessions, color: "hsl(var(--chart-2))" },
       { type: "Essays", count: essaySessions, color: "hsl(var(--chart-3))" },
+      { type: "Chapter Tests", count: topicTestSessions.length, color: "hsl(var(--chart-4))" },
     ].filter(t => t.count > 0);
 
     // Weekly comparison
@@ -131,6 +145,7 @@ export default function Dashboard() {
       subjectSessions: activeSessions, totalSessions, diagramSessions, questionSessions, essaySessions,
       topTopics, uniqueTopics, dailyCounts, maxDaily, streak, avgScore,
       typeBreakdown, thisWeek, lastWeek, weeklyChange, notesViewed,
+      topicTestEntries, topicTestAvg, topicTestCount: topicTestSessions.length,
     };
   }, [sessions, subject]);
 
@@ -335,7 +350,43 @@ export default function Dashboard() {
         </MotionCard>
       </div>
 
-      {/* Subscription + Free Limits */}
+      {/* Chapter Test Scores */}
+      {stats.topicTestEntries.length > 0 && (
+        <MotionCard variants={fadeUp} className="mb-6">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+              <ClipboardCheck className="h-4 w-4" /> Chapter Test Scores
+              {stats.topicTestAvg !== null && (
+                <span className="ml-auto text-xs font-semibold text-primary">Avg: {stats.topicTestAvg}%</span>
+              )}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-2.5">
+              {stats.topicTestEntries.map(([chapter, score], i) => {
+                const shortName = chapter.replace(/^Chapter \d+:\s*/, "");
+                return (
+                  <div key={chapter}>
+                    <div className="flex items-center justify-between text-xs mb-1">
+                      <span className="truncate mr-2">{shortName}</span>
+                      <span className={`font-semibold ${score >= 80 ? "text-green-500" : score >= 60 ? "text-yellow-500" : "text-red-500"}`}>{score}%</span>
+                    </div>
+                    <div className="h-1.5 rounded-full bg-muted overflow-hidden">
+                      <motion.div
+                        className={`h-full rounded-full ${score >= 80 ? "bg-green-500/70" : score >= 60 ? "bg-yellow-500/70" : "bg-red-500/70"}`}
+                        initial={{ width: 0 }}
+                        animate={{ width: `${score}%` }}
+                        transition={{ delay: i * 0.04, duration: 0.5 }}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </CardContent>
+        </MotionCard>
+      )}
+
       <div className="grid sm:grid-cols-3 gap-4 mb-6">
         {/* Subscription Card */}
         <MotionCard variants={fadeUp} className={subscribed ? "border-accent/30 bg-accent/5" : ""}>

@@ -19,9 +19,10 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useRef } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { SubtopicPractice } from "@/components/study-notes/SubtopicPractice";
+import { EndOfTopicTest } from "@/components/study-notes/EndOfTopicTest";
 
 // Data imports
-import { aqaYear1Paper1Topics, aqaYear1Paper2Topics, aqaYear2Paper1Topics, aqaYear2Paper2Topics } from "@/data/studyNotes/aqaNotes";
+import { aqaYear1Paper1Topics, aqaYear1Paper2Topics, aqaYear2Paper1Topics, aqaYear2Paper2Topics, aqaBook1MicroTopics, aqaBook1MacroTopics, aqaBook2MicroTopics, aqaBook2MacroTopics } from "@/data/studyNotes/aqaNotes";
 import { edexcelAPaper1Topics, edexcelAPaper2Topics } from "@/data/studyNotes/edexcelANotes";
 import { edexcelBPaper1Topics, edexcelBPaper2Topics } from "@/data/studyNotes/edexcelBNotes";
 import { ocrComponent1Topics, ocrComponent2Topics } from "@/data/studyNotes/ocrNotes";
@@ -42,10 +43,10 @@ type Subject = import("@/contexts/SubjectContext").Subject;
 
 const paperSections: Record<Subject, PaperSection[]> = {
   economics: [
-    { heading: "Year 1 (AS) — Paper 1: Markets & Market Failure", topics: aqaYear1Paper1Topics, prefix: "y1p1", icon: "📗", color: "var(--revision-green)" },
-    { heading: "Year 1 (AS) — Paper 2: National Economy in a Global Context", topics: aqaYear1Paper2Topics, prefix: "y1p2", icon: "📗", color: "var(--revision-blue)" },
-    { heading: "Year 2 (A2) — Paper 1: Markets & Market Failure (Extended)", topics: aqaYear2Paper1Topics, prefix: "y2p1", icon: "📘", color: "var(--revision-purple)" },
-    { heading: "Year 2 (A2) — Paper 2: National & International Economy (Extended)", topics: aqaYear2Paper2Topics, prefix: "y2p2", icon: "📘", color: "var(--revision-amber)" },
+    { heading: "Book 1 — Microeconomics (Chapters 1–5)", topics: aqaBook1MicroTopics, prefix: "b1m", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Book 1 — Macroeconomics (Chapters 6–9)", topics: aqaBook1MacroTopics, prefix: "b1M", icon: "📗", color: "var(--revision-blue)" },
+    { heading: "Book 2 — Microeconomics (Chapters 1–6)", topics: aqaBook2MicroTopics, prefix: "b2m", icon: "📘", color: "var(--revision-purple)" },
+    { heading: "Book 2 — Macroeconomics (Chapters 7–10)", topics: aqaBook2MacroTopics, prefix: "b2M", icon: "📘", color: "var(--revision-amber)" },
   ],
   "edexcel-a": [
     { heading: "Paper 1 — Markets & Business Behaviour", topics: edexcelAPaper1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
@@ -361,6 +362,11 @@ export default function StudyNotes() {
                       </RevisionTopicCard>
                     );
                   })}
+                  {/* End of Chapter Test */}
+                  <EndOfTopicTest
+                    chapterName={topic.name}
+                    subtopicTitles={filteredSubs.map(s => s.title)}
+                  />
                 </div>
               </motion.div>
             )}
