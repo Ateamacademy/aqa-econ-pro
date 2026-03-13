@@ -927,3 +927,351 @@ export const aqaYear2Paper2Topics: Topic[] = [
 /* ── Legacy exports for backward compatibility ── */
 export const aqaPaper1Topics: Topic[] = [...aqaYear1Paper1Topics, ...aqaYear2Paper1Topics];
 export const aqaPaper2Topics: Topic[] = [...aqaYear1Paper2Topics, ...aqaYear2Paper2Topics];
+
+/* ═══════════════════════════════════════════════════════════════
+ *  TEXTBOOK CHAPTER STRUCTURE
+ *  Based on Powell & Powell AQA A-Level Economics (Hodder Education)
+ *  Book 1 = Year 1 (AS), Book 2 = Year 2 (A2)
+ * ═══════════════════════════════════════════════════════════════ */
+
+/* ── NEW subtopics for content gaps ── */
+
+const elasticitySubtopics: import("./edexcelANotes").Subtopic[] = [
+  {
+    title: "Price Elasticity of Demand (PED)",
+    definition: "**PED** measures the responsiveness of quantity demanded to a change in price. It is always negative (inverse relationship) but we use the absolute value.",
+    keyTerms: [
+      { term: "PED", definition: "% change in Qd ÷ % change in P" },
+      { term: "Elastic Demand", definition: "PED > 1 — quantity demanded is highly responsive to price changes" },
+      { term: "Inelastic Demand", definition: "PED < 1 — quantity demanded is relatively unresponsive to price changes" },
+      { term: "Unit Elastic", definition: "PED = 1 — % change in Qd exactly equals % change in P" },
+      { term: "Perfectly Elastic", definition: "PED = ∞ — any price rise causes demand to fall to zero (horizontal demand curve)" },
+      { term: "Perfectly Inelastic", definition: "PED = 0 — demand is completely unresponsive to price (vertical demand curve)" },
+    ],
+    formula: "PED = % change in Qd ÷ % change in P",
+    explanation: "**Determinants of PED:**\n- **Substitutes:** More substitutes → more elastic (consumers can switch)\n- **Necessity vs luxury:** Necessities → inelastic; luxuries → elastic\n- **Proportion of income:** Higher proportion → more elastic\n- **Time period:** Longer time → more elastic (consumers find alternatives)\n- **Habit/addiction:** Addictive goods → more inelastic\n- **Brand loyalty:** Strong loyalty → more inelastic\n\n**PED and Total Revenue:**\n- Elastic demand: price ↓ → TR ↑ (volume effect outweighs price effect)\n- Inelastic demand: price ↑ → TR ↑ (price effect outweighs volume effect)\n- Unit elastic: TR unchanged when price changes\n\n**PED and tax incidence:** If demand is inelastic, consumers bear more of the tax burden. If elastic, producers bear more.",
+    examTip: "Always link PED to revenue. The key insight: firms with inelastic demand should raise prices to increase revenue; firms with elastic demand should lower prices.",
+    diagram: "ped_elastic",
+  },
+  {
+    title: "Income Elasticity of Demand (YED)",
+    definition: "**YED** measures the responsiveness of demand to a change in income. The SIGN matters: positive = normal good, negative = inferior good.",
+    keyTerms: [
+      { term: "YED", definition: "% change in Qd ÷ % change in Y (income)" },
+      { term: "Normal Good", definition: "YED > 0 — demand rises as income rises" },
+      { term: "Luxury Good", definition: "YED > 1 — demand rises more than proportionately as income rises" },
+      { term: "Necessity", definition: "0 < YED < 1 — demand rises less than proportionately as income rises" },
+      { term: "Inferior Good", definition: "YED < 0 — demand falls as income rises (consumers switch to better alternatives)" },
+    ],
+    formula: "YED = % change in Qd ÷ % change in Y",
+    explanation: "**Why YED matters:**\n- Firms use YED to predict how demand will change during economic growth or recession\n- Luxury goods firms benefit most during booms but suffer most during recessions\n- Inferior goods firms are counter-cyclical — demand rises during recessions\n- Supermarkets stock both luxury and inferior ranges to hedge against the economic cycle\n\n**Examples:**\n- Luxury: designer clothes (YED ≈ +2.5), fine dining, foreign holidays\n- Necessity: basic food (YED ≈ +0.2), utilities, toothpaste\n- Inferior: budget supermarket brands (YED ≈ −0.3), public transport, instant noodles",
+    example: "During the 2008-09 recession, demand for Aldi and Lidl (inferior goods) surged, while demand for premium brands like Waitrose fell. As the economy recovered, the trend reversed. This demonstrates YED in action.",
+  },
+  {
+    title: "Cross Elasticity of Demand (XED)",
+    definition: "**XED** measures the responsiveness of demand for good A to a change in the price of good B. The SIGN indicates the relationship between the goods.",
+    keyTerms: [
+      { term: "XED", definition: "% change in Qd of A ÷ % change in P of B" },
+      { term: "Substitutes", definition: "XED > 0 — price of B rises → demand for A rises (switch to A)" },
+      { term: "Complements", definition: "XED < 0 — price of B rises → demand for A falls (used together)" },
+      { term: "Unrelated Goods", definition: "XED ≈ 0 — no relationship between the goods" },
+    ],
+    formula: "XED = % change in Qd of A ÷ % change in P of B",
+    explanation: "**Why XED matters:**\n- Close substitutes: high positive XED (e.g., Coca-Cola & Pepsi ≈ +0.8)\n- Strong complements: high negative XED (e.g., printers & ink cartridges ≈ −0.6)\n- Firms use XED to predict how competitors' pricing affects their sales\n- Competition authorities use XED to define markets (high XED = same market)\n\n**Strategic implications:**\n- If XED is high → your product is easily substituted → focus on differentiation\n- If XED is negative → complementary goods → bundle pricing strategies\n- Firms monitor competitors' prices closely when XED is high",
+    examTip: "Remember: positive XED = substitutes, negative XED = complements. The MAGNITUDE shows how closely related the goods are. XED close to 0 = unrelated.",
+  },
+  {
+    title: "Price Elasticity of Supply (PES)",
+    definition: "**PES** measures the responsiveness of quantity supplied to a change in price. It is always positive (positive relationship between price and supply).",
+    keyTerms: [
+      { term: "PES", definition: "% change in Qs ÷ % change in P" },
+      { term: "Elastic Supply", definition: "PES > 1 — quantity supplied is highly responsive to price changes" },
+      { term: "Inelastic Supply", definition: "PES < 1 — quantity supplied is relatively unresponsive to price changes" },
+    ],
+    formula: "PES = % change in Qs ÷ % change in P",
+    explanation: "**Determinants of PES:**\n- **Spare capacity:** More spare capacity → more elastic (can increase output quickly)\n- **Stocks/inventories:** Large stocks → more elastic (can release stock immediately)\n- **Time period:** Longer time → more elastic (firms can invest in new capacity)\n- **Factor mobility:** Easy to switch resources → more elastic\n- **Nature of the product:** Manufacturing → more elastic; agriculture/mining → more inelastic (growing seasons, extraction limits)\n\n**PES and tax incidence:**\n- Inelastic supply + elastic demand → producers bear most of the tax burden\n- Elastic supply + inelastic demand → consumers bear most of the tax burden\n\n**Primary commodities** tend to have inelastic supply (take time to grow crops, extract minerals), making prices volatile.",
+    examTip: "PES is crucial for understanding tax incidence and price volatility. Agricultural goods have inelastic supply in the short run → small demand changes cause large price swings.",
+  },
+];
+
+const economicPerformanceSubtopics: import("./edexcelANotes").Subtopic[] = [
+  {
+    title: "Economic Growth & the Economic Cycle",
+    definition: "**Economic growth** is an increase in the productive potential of the economy, measured by real GDP. The **economic cycle** describes fluctuations in GDP around the long-run trend.",
+    keyTerms: [
+      { term: "Short-Run Growth", definition: "Increase in actual GDP — moving towards the PPF (using spare capacity)" },
+      { term: "Long-Run Growth", definition: "Increase in potential GDP — outward shift of the PPF (more/better resources)" },
+      { term: "Trend Rate of Growth", definition: "The long-run average growth rate of potential GDP (UK ≈ 2-2.5%)" },
+      { term: "Output Gap", definition: "Difference between actual and potential GDP" },
+      { term: "Positive Output Gap", definition: "Actual GDP > potential GDP → inflationary pressure" },
+      { term: "Negative Output Gap", definition: "Actual GDP < potential GDP → spare capacity, unemployment" },
+    ],
+    explanation: "**Phases of the economic cycle:**\n1. **Boom:** High growth, low unemployment, rising inflation, positive output gap\n2. **Slowdown:** Growth decelerating, confidence falling\n3. **Recession:** Two consecutive quarters of negative GDP growth, rising unemployment\n4. **Recovery:** GDP growing again, unemployment falling, confidence returning\n\n**Causes of economic cycles:**\n- Changes in consumer/business confidence (animal spirits)\n- External shocks (oil price, financial crisis, pandemic)\n- Policy changes (interest rate cuts/rises, fiscal stimulus)\n- Credit cycles (excessive lending → boom → bust)\n- Asset price bubbles (housing, stock market)\n\n**Costs of growth:** Environmental damage, inequality may worsen, inflation risk, resource depletion\n**Benefits of growth:** Higher living standards, lower unemployment, higher tax revenues, poverty reduction",
+    diagram: "ppf_growth",
+    examTip: "Distinguish clearly between short-run growth (AD shift, closing negative output gap) and long-run growth (LRAS shift, expanding productive capacity). Use PPF and AD/AS diagrams.",
+  },
+  {
+    title: "Employment & Unemployment",
+    definition: "**Unemployment** occurs when people who are willing and able to work at the going wage rate cannot find a job. It is both an economic waste and a social problem.",
+    keyTerms: [
+      { term: "Claimant Count", definition: "Number of people claiming unemployment-related benefits (JSA/UC)" },
+      { term: "Labour Force Survey (LFS)", definition: "ILO measure: people available and actively seeking work in the last 4 weeks" },
+      { term: "Cyclical Unemployment", definition: "Demand-deficient — caused by a fall in AD during recessions" },
+      { term: "Structural Unemployment", definition: "Mismatch between workers' skills and available jobs (occupational/geographical immobility)" },
+      { term: "Frictional Unemployment", definition: "Short-term — workers between jobs, searching for the right match" },
+      { term: "Seasonal Unemployment", definition: "Regular fluctuations in employment due to seasonal patterns" },
+      { term: "Real Wage Unemployment", definition: "Wages held above equilibrium (e.g., by unions or NMW) → labour supply > demand" },
+      { term: "Natural Rate of Unemployment", definition: "The rate at which the labour market is in equilibrium — frictional + structural" },
+    ],
+    explanation: "**Consequences of unemployment:**\n- Lost output (inside the PPF)\n- Fiscal costs (lower tax revenue + higher benefit spending)\n- Hysteresis (long-term unemployed lose skills)\n- Social costs (poverty, crime, mental health, inequality)\n\n**Policies to reduce unemployment:**\n- Cyclical: expansionary fiscal/monetary policy (↑AD)\n- Structural: education & training, relocation subsidies, information provision\n- Real wage: reform NMW, reduce union power (controversial)\n- Frictional: improve job matching (job centres, online platforms)\n\n**Key debate:** Is unemployment primarily a demand-side or supply-side problem?\n- Keynesian: demand-deficient → boost AD\n- Classical: supply-side → improve labour market flexibility",
+  },
+  {
+    title: "Inflation & Deflation",
+    definition: "**Inflation** is a sustained increase in the general price level. **Deflation** is a sustained decrease. **Disinflation** is a falling rate of inflation.",
+    keyTerms: [
+      { term: "CPI", definition: "Consumer Prices Index — weighted basket of goods, UK's main inflation measure (target: 2%)" },
+      { term: "RPI", definition: "Retail Prices Index — includes housing costs like mortgage interest payments" },
+      { term: "Demand-Pull Inflation", definition: "Inflation caused by excessive AD (too much money chasing too few goods)" },
+      { term: "Cost-Push Inflation", definition: "Inflation caused by rising costs of production (energy, wages, raw materials)" },
+      { term: "Quantity Theory of Money", definition: "MV = PQ — if V and Q are constant, increasing M causes proportional increase in P" },
+    ],
+    formula: "MV = PQ (Fisher's Equation of Exchange)",
+    explanation: "**Causes of inflation:**\n- **Demand-pull:** Excessive AD growth → economy overheats → prices rise. Caused by: tax cuts, low rates, credit expansion, rising confidence\n- **Cost-push:** Rising input costs → firms pass on to consumers. Caused by: oil price shocks, wage increases, currency depreciation, supply chain disruption\n- **Monetary:** Excessive money supply growth (quantity theory)\n\n**Consequences of inflation:**\n- Erosion of purchasing power (especially harmful for those on fixed incomes)\n- Uncertainty reduces investment and planning\n- International competitiveness falls (exports become expensive)\n- Menu costs, shoe-leather costs\n- Redistribution from savers to borrowers\n\n**Deflation risks:**\n- Consumers delay purchases (expect lower prices)\n- Rising real value of debt → defaults\n- Deflationary spiral (falling demand → lower prices → lower profits → job cuts → lower demand)\n- Monetary policy becomes ineffective (zero lower bound)",
+    examTip: "Always distinguish demand-pull from cost-push inflation — the policy response differs. Demand-pull → raise rates. Cost-push → dilemma (raising rates worsens the supply shock).",
+  },
+  {
+    title: "The Balance of Payments",
+    definition: "The **balance of payments** records all financial transactions between UK residents and the rest of the world over a period of time.",
+    keyTerms: [
+      { term: "Current Account", definition: "Trade in goods, trade in services, primary income (investment returns), secondary income (transfers)" },
+      { term: "Trade Deficit", definition: "Imports of goods and services exceed exports — UK has had a persistent trade deficit" },
+      { term: "Financial Account", definition: "Records investment flows — FDI, portfolio investment, bank deposits" },
+      { term: "Capital Account", definition: "Records transfers of capital assets (relatively small)" },
+    ],
+    explanation: "**The UK current account deficit:**\n- UK has run a persistent current account deficit (≈3-5% of GDP)\n- Driven by: trade deficit in goods (UK imports more manufactured goods than it exports)\n- Partly offset by: trade surplus in services (financial services, education, creative industries)\n\n**Causes of current account deficits:**\n- High domestic demand for imports (strong consumer spending)\n- Lack of international competitiveness (high costs, low productivity)\n- Strong exchange rate (makes exports expensive, imports cheap)\n- Structural decline of manufacturing\n\n**Does a deficit matter?**\n- Must be financed by capital/financial inflows (foreign investment)\n- If financed by FDI → generally sustainable and beneficial\n- If financed by debt → potentially unsustainable\n- UK benefits from being a major financial centre attracting investment",
+    examTip: "Evaluate whether a current account deficit matters by discussing HOW it is financed and whether it is sustainable. FDI-financed deficits are less concerning than debt-financed ones.",
+  },
+];
+
+const technologicalChangeSubtopic: import("./edexcelANotes").Subtopic = {
+  title: "Technological Change",
+  definition: "**Technological change** includes both invention (creating new ideas) and innovation (bringing ideas to market). It is a key driver of long-run growth and creative destruction.",
+  keyTerms: [
+    { term: "Invention", definition: "The creation of a new product, process, or idea" },
+    { term: "Innovation", definition: "The successful commercial application of an invention" },
+    { term: "Creative Destruction", definition: "New technologies and firms destroy existing ones — Schumpeter's view of capitalism" },
+    { term: "Process Innovation", definition: "New methods of production → lower costs → higher productivity" },
+    { term: "Product Innovation", definition: "Development of new or improved goods and services" },
+  ],
+  explanation: "**Effects of technological change:**\n- Lower costs of production → SRAS shifts right\n- New products and markets → economic growth\n- Increased productivity → LRAS shifts right\n- Creative destruction → structural unemployment in some sectors\n- May create natural monopolies (network effects in tech)\n- Can reduce barriers to entry (digital platforms) or increase them (patents, R&D costs)\n\n**Impact on market structure:**\n- Tech can increase competition (e.g., internet shopping, price comparison websites)\n- Tech can increase monopoly power (e.g., network effects, data advantages — Google, Amazon)\n- Disruption: Netflix vs Blockbuster, Uber vs taxis, Amazon vs high street\n\n**Policy implications:** Governments support innovation through R&D subsidies, patent protection, education investment, and digital infrastructure. But must balance innovation incentives (patents) with competition (avoiding permanent monopolies).",
+  example: "The smartphone revolution (iPhone, 2007) is a classic example of creative destruction. It destroyed the market for standalone cameras, MP3 players, GPS devices, and feature phones, while creating entirely new markets (app economy, mobile payments, ride-hailing).",
+};
+
+const utilityTheorySubtopic: import("./edexcelANotes").Subtopic = {
+  title: "Consumer Behaviour & Utility Theory",
+  definition: "**Utility** is the satisfaction a consumer gains from consuming a good or service. Rational consumers aim to maximise their total utility given their budget constraint.",
+  keyTerms: [
+    { term: "Total Utility", definition: "The overall satisfaction from consuming a given quantity of a good" },
+    { term: "Marginal Utility", definition: "The extra satisfaction from consuming one more unit of a good" },
+    { term: "Diminishing Marginal Utility", definition: "Each additional unit consumed provides less extra satisfaction than the previous one" },
+    { term: "Rational Consumer", definition: "A consumer who aims to maximise utility given their income and prices" },
+  ],
+  explanation: "**The hypothesis of diminishing marginal utility:**\n- First slice of pizza → very high MU\n- Second slice → still enjoyable but less MU\n- Third slice → even less MU\n- Fourth slice → MU may approach zero or become negative\n\n**Why this supports a downward-sloping demand curve:**\n- Consumers are only willing to pay a price equal to the marginal utility of the last unit\n- As they consume more, MU falls → willingness to pay falls\n- Therefore: lower price → more quantity demanded\n\n**Utility maximisation:** A rational consumer allocates spending so that the MU per £ is equal across all goods. If MU per £ is higher for good A than good B, buy more A and less B until equalised.",
+  examTip: "You don't need to know equi-marginal utility for AQA, but you DO need to understand how diminishing MU supports the law of demand. Link MU directly to willingness to pay.",
+};
+
+const imperfectInfoSubtopic: import("./edexcelANotes").Subtopic = {
+  title: "Imperfect & Asymmetric Information",
+  definition: "**Imperfect information** means economic agents lack complete knowledge. **Asymmetric information** means one party in a transaction has more information than the other.",
+  keyTerms: [
+    { term: "Asymmetric Information", definition: "Unequal information between buyer and seller — leads to market failure" },
+    { term: "Moral Hazard", definition: "One party changes behaviour after a transaction because the other can't monitor them (e.g., insured driver takes more risks)" },
+    { term: "Adverse Selection", definition: "Those most likely to make claims are most likely to buy insurance — drives up premiums" },
+  ],
+  explanation: "**How information failure causes market failure:**\n- Consumers may overconsume harmful goods (smoking — underestimate health risks)\n- Consumers may underconsume beneficial goods (exercise, pensions — underestimate long-term benefits)\n- Markets may produce 'lemons' (Akerlof) — sellers know quality, buyers don't → good products driven out\n\n**Examples:**\n- Second-hand car market (seller knows the car's history, buyer doesn't)\n- Insurance markets (buyers know their risk level, insurers don't)\n- Financial products (complex derivatives, mis-selling of PPI)\n- Healthcare (doctor knows more than patient → supplier-induced demand)\n\n**Solutions:** Regulation, mandatory disclosure, guarantees, professional standards, consumer protection laws, education/information campaigns",
+};
+
+const revisitingMarketFailureSubtopics: import("./edexcelANotes").Subtopic[] = [
+  {
+    title: "Environmental Market Failures & Property Rights",
+    definition: "Environmental problems are a major source of market failure, arising from missing markets, absent property rights, and the tragedy of the commons.",
+    keyTerms: [
+      { term: "Tragedy of the Commons", definition: "Shared resources (common goods) are overused because no individual bears the full cost" },
+      { term: "Property Rights", definition: "Legal ownership — if property rights are well-defined, externalities can be resolved through negotiation (Coase Theorem)" },
+      { term: "Carbon Trading", definition: "Tradable pollution permits create a market for the right to pollute — cap-and-trade" },
+    ],
+    explanation: "**Why the environment is a market failure:**\n- No property rights over the atmosphere, oceans, or biodiversity\n- Pollution is a negative externality — costs imposed on third parties\n- Future generations cannot participate in today's markets\n- Climate change is a global public 'bad' — non-excludable, non-rival damage\n\n**Solutions:**\n1. **Carbon taxes** (Pigouvian tax) — internalise the externality\n2. **Tradable permits** (cap-and-trade) — set a quantity limit and let the market find the cheapest way to reduce pollution\n3. **Regulation** — emission standards, bans on specific substances\n4. **Property rights** — Coase Theorem: if property rights are defined and transaction costs are low, private bargaining can solve externalities\n5. **International agreements** (Paris Agreement, COP conferences)\n\n**Evaluation:** Carbon taxes are efficient but regressive. Permits allow quantity certainty but are complex. Regulation is direct but may be inflexible. No single solution is sufficient for climate change.",
+    examTip: "Always evaluate environmental policies using: efficiency (does it minimise costs?), effectiveness (does it reduce pollution?), equity (who bears the burden?), and enforcement (can it be policed?).",
+  },
+  {
+    title: "Competition Policy",
+    definition: "**Competition policy** aims to promote competition, prevent abuse of market power, and protect consumer interests. In the UK, the CMA is the key regulator.",
+    keyTerms: [
+      { term: "CMA", definition: "Competition and Markets Authority — investigates mergers, cartels, and anti-competitive behaviour" },
+      { term: "Restrictive Practices", definition: "Price-fixing, market sharing, bid-rigging — illegal under Competition Act 1998" },
+      { term: "Merger Policy", definition: "CMA can block mergers that substantially lessen competition" },
+    ],
+    explanation: "**Tools of competition policy:**\n1. **Merger regulation:** CMA investigates mergers above thresholds, can block or impose conditions\n2. **Anti-cartel enforcement:** Detecting and punishing collusion, price-fixing (fines up to 10% of turnover)\n3. **Market investigations:** In-depth analysis of markets that appear to lack competition\n4. **Consumer protection:** Preventing misleading practices, ensuring fair terms\n\n**Evaluation:**\n✅ Prevents monopoly abuse, lowers prices, promotes innovation\n✅ Deters anti-competitive behaviour\n❌ Difficult to define the relevant market (narrow vs broad)\n❌ Breaking up large firms may lose economies of scale\n❌ Dynamic efficiency argument — large profits fund R&D\n❌ Regulatory capture — regulators may favour industry interests",
+  },
+  {
+    title: "Privatisation, Regulation & Deregulation",
+    definition: "**Privatisation** transfers state-owned enterprises to the private sector. **Regulation** imposes rules on firms. **Deregulation** removes regulations to increase competition.",
+    keyTerms: [
+      { term: "Privatisation", definition: "Sale of government-owned businesses to the private sector (e.g., BT, British Gas, Royal Mail)" },
+      { term: "Nationalisation", definition: "Government takeover of private firms (e.g., Northern Rock 2007, East Coast rail)" },
+      { term: "Regulatory Capture", definition: "Regulators act in the interests of the industry they regulate, not consumers" },
+    ],
+    explanation: "**Arguments for privatisation:**\n- Profit motive → efficiency and cost reduction\n- Competition → lower prices and better quality\n- Reduces government borrowing\n- Shareholder pressure for performance\n\n**Arguments against privatisation:**\n- Natural monopolies may charge monopoly prices\n- Short-termism (maximise profit, not long-term investment)\n- 'Cherry-picking' profitable services, abandoning unprofitable ones\n- Loss of public control over essential services\n\n**Regulation of privatised utilities:** Ofgem (energy), Ofwat (water), Ofcom (telecoms) — price capping (RPI-X), quality standards, service obligations\n\n**Deregulation:** Opening markets to new competitors (e.g., bus deregulation, energy market opening). Benefits: more competition, lower prices, innovation. Risks: cream-skimming, reduced service in unprofitable areas.",
+  },
+];
+
+const financialMarketsExtendedSubtopics: import("./edexcelANotes").Subtopic[] = [
+  {
+    title: "Structure of Financial Markets",
+    definition: "Financial markets consist of money markets (short-term), capital markets (long-term), and foreign exchange markets. They channel funds from savers to borrowers.",
+    keyTerms: [
+      { term: "Bond", definition: "Fixed-income debt instrument — government (gilts) or corporate bonds. Inverse relationship between bond price and yield" },
+      { term: "Equity (Shares)", definition: "Ownership stake in a company — dividends + capital gains" },
+      { term: "Yield", definition: "Annual return on a bond: coupon ÷ market price. Falls when bond prices rise" },
+      { term: "Narrow Money (M0)", definition: "Notes, coins, and central bank reserves — the most liquid form of money" },
+      { term: "Broad Money (M4)", definition: "Includes bank deposits — measures the total money supply in the economy" },
+    ],
+    explanation: "**Characteristics of money:** Medium of exchange, store of value, unit of account, standard of deferred payment\n\n**Bond prices and interest rates:**\n- When market interest rates RISE → existing bonds (with lower coupons) become less attractive → bond prices FALL → yield rises\n- When market interest rates FALL → existing bonds become more attractive → bond prices RISE → yield falls\n- This INVERSE relationship is fundamental to understanding monetary policy transmission\n\n**How firms raise finance:**\n1. Retained profits (internal finance — most common)\n2. Bank loans (debt finance)\n3. Corporate bonds (debt finance)\n4. Share issues (equity finance)\n\nEach has different costs, risks, and implications for ownership and control.",
+    examTip: "The inverse relationship between bond prices and interest rates is frequently tested. Remember: when rates rise, bond prices fall (and vice versa). Be able to explain WHY using the concept of opportunity cost.",
+  },
+  {
+    title: "Commercial & Investment Banks",
+    definition: "**Commercial banks** accept deposits and make loans to households and businesses. **Investment banks** help firms raise finance, trade securities, and advise on mergers.",
+    keyTerms: [
+      { term: "Credit Creation", definition: "Banks lend out a multiple of their deposits, creating new money in the process" },
+      { term: "Liquidity", definition: "How easily assets can be converted to cash — banks must balance liquidity with profitability" },
+      { term: "Capital Ratio", definition: "Bank's own capital as a % of its risk-weighted assets — higher ratio = safer" },
+    ],
+    explanation: "**How banks create credit (money):**\n1. Bank receives £100 deposit\n2. Keeps £10 as reserves (10% reserve ratio)\n3. Lends out £90\n4. Borrower spends £90 → ends up as deposit in another bank\n5. That bank keeps £9, lends £81\n6. Process repeats → total money created = £100 × (1/0.1) = £1,000\n\n**The bank's dilemma:** Profitability vs liquidity vs security\n- More lending → more profit but more risk\n- More reserves → safer but less profitable\n- Basel III regulations set minimum capital ratios to ensure stability\n\n**Ring-fencing (2019):** UK banks must separate retail banking (deposits, mortgages) from investment banking (trading, speculation) to protect depositors from investment losses.",
+  },
+];
+
+const revisitingMacroSubtopics: import("./edexcelANotes").Subtopic[] = [
+  {
+    title: "National Income & Circular Flow Revisited",
+    definition: "National income can be measured in three equivalent ways: income, output, and expenditure. The circular flow model shows how money flows between households, firms, government, and the rest of the world.",
+    keyTerms: [
+      { term: "Nominal GDP", definition: "GDP measured at current prices — includes the effect of inflation" },
+      { term: "Real GDP", definition: "GDP adjusted for inflation — measures actual changes in output" },
+      { term: "GDP per capita", definition: "GDP ÷ population — better indicator of living standards than total GDP" },
+      { term: "PPP", definition: "Purchasing Power Parity — adjusts for cost-of-living differences between countries" },
+    ],
+    explanation: "**Three measures of national income:**\n1. **Income approach:** Total wages + rent + interest + profit\n2. **Output approach:** Total value added by all industries\n3. **Expenditure approach:** C + I + G + (X − M)\n\nAll three give the same answer (in theory).\n\n**Limitations of GDP as a welfare measure:**\n- Ignores income distribution (GDP can rise while inequality worsens)\n- Ignores the informal/shadow economy\n- Ignores negative externalities (pollution not deducted)\n- Doesn't account for non-market activity (unpaid care work, volunteering)\n- Doesn't measure quality of life, happiness, or well-being\n- GDP per capita is better but still limited\n\n**Alternative measures:** HDI, GNH (Gross National Happiness), ISEW (Index of Sustainable Economic Welfare), genuine progress indicator",
+  },
+];
+
+const fiscalPolicyExtendedSubtopics: import("./edexcelANotes").Subtopic[] = [
+  {
+    title: "Fiscal Policy — Extended Analysis",
+    definition: "At A2, fiscal policy analysis requires deeper understanding of budget deficits, national debt, austerity, and the fiscal policy debates.",
+    keyTerms: [
+      { term: "Cyclical Deficit", definition: "Deficit caused by the economic cycle — falls automatically during recovery (automatic stabilisers)" },
+      { term: "Structural Deficit", definition: "Underlying deficit that persists even at full employment — requires deliberate policy action to close" },
+      { term: "Austerity", definition: "Reducing government spending and/or raising taxes to close the budget deficit" },
+      { term: "Fiscal Rules", definition: "Self-imposed limits on borrowing/debt (e.g., debt must fall as a % of GDP within 5 years)" },
+    ],
+    explanation: "**The austerity debate (2010-2019):**\n- UK ran large deficits after 2008 crisis (peaked at 10% of GDP)\n- Coalition government pursued austerity: spending cuts + tax rises\n- Keynesians argued: austerity during a recession reduces AD → prolongs the downturn → self-defeating\n- Fiscal conservatives argued: high debt is unsustainable → must restore fiscal credibility → lower bond yields\n\n**National debt considerations:**\n- UK national debt ≈ 100% of GDP (post-COVID)\n- Is this a problem? Depends on: interest costs, growth rate, whether debt is domestically held, what the borrowing funded\n- If growth rate > interest rate → debt-to-GDP ratio falls naturally\n- Borrowing for investment (infrastructure, education) may be self-financing if it raises future GDP\n\n**Automatic stabilisers vs discretionary policy:**\n- Automatic: tax revenues fall and benefit spending rises in recession (no policy decision needed)\n- Discretionary: deliberate changes (e.g., furlough scheme, tax cuts, spending announcements)\n- Automatic stabilisers are immediate; discretionary policy has time lags",
+    examTip: "For 25-mark essays, evaluate austerity by considering: Keynesian criticism (multiplier, hysteresis), fiscal credibility argument, composition of cuts (capital vs current spending), distributional impact.",
+  },
+];
+
+/* ═════════════════════════════════════════════════════════════
+ *  BOOK 1 — YEAR 1 (AS) — TEXTBOOK CHAPTER STRUCTURE
+ * ═════════════════════════════════════════════════════════════ */
+
+export const aqaBook1MicroTopics: Topic[] = [
+  {
+    name: "Chapter 1: Economic Methodology & the Economic Problem",
+    subtopics: aqaYear1Paper1Topics[0].subtopics,
+  },
+  {
+    name: "Chapter 2: Price Determination in a Competitive Market",
+    subtopics: [...aqaYear1Paper1Topics[1].subtopics, ...elasticitySubtopics],
+  },
+  {
+    name: "Chapter 3: Production, Costs & Revenue",
+    subtopics: aqaYear1Paper1Topics[2].subtopics,
+  },
+  {
+    name: "Chapter 4: Competitive & Concentrated Markets",
+    subtopics: aqaYear1Paper1Topics[3].subtopics,
+  },
+  {
+    name: "Chapter 5: Market Failure & Government Intervention",
+    subtopics: aqaYear1Paper1Topics[4].subtopics,
+  },
+];
+
+export const aqaBook1MacroTopics: Topic[] = [
+  {
+    name: "Chapter 6: The Measurement of Macroeconomic Performance",
+    subtopics: aqaYear1Paper2Topics[0].subtopics,
+  },
+  {
+    name: "Chapter 7: How the Macroeconomy Works",
+    subtopics: aqaYear1Paper2Topics[1].subtopics,
+  },
+  {
+    name: "Chapter 8: Economic Performance",
+    subtopics: economicPerformanceSubtopics,
+  },
+  {
+    name: "Chapter 9: Macroeconomic Policy",
+    subtopics: aqaYear1Paper2Topics[2].subtopics.filter(s => s.title !== "Macroeconomic Objectives"),
+  },
+];
+
+/* ═════════════════════════════════════════════════════════════
+ *  BOOK 2 — YEAR 2 (A2) — TEXTBOOK CHAPTER STRUCTURE
+ * ═════════════════════════════════════════════════════════════ */
+
+export const aqaBook2MicroTopics: Topic[] = [
+  {
+    name: "Chapter 1: Individual Economic Decision Making",
+    subtopics: [utilityTheorySubtopic, imperfectInfoSubtopic, ...aqaYear2Paper1Topics[0].subtopics],
+  },
+  {
+    name: "Chapter 2: Production, Costs & Revenue (Extended)",
+    subtopics: [technologicalChangeSubtopic],
+  },
+  {
+    name: "Chapter 3: Perfect Competition, Imperfect Competition & Monopoly",
+    subtopics: aqaYear2Paper1Topics[1].subtopics,
+  },
+  {
+    name: "Chapter 4: The Labour Market",
+    subtopics: aqaYear2Paper1Topics[2].subtopics,
+  },
+  {
+    name: "Chapter 5: Distribution of Income & Wealth, Poverty & Inequality",
+    subtopics: aqaYear2Paper1Topics[3].subtopics,
+  },
+  {
+    name: "Chapter 6: Revisiting Market Failure & Government Intervention",
+    subtopics: revisitingMarketFailureSubtopics,
+  },
+];
+
+export const aqaBook2MacroTopics: Topic[] = [
+  {
+    name: "Chapter 7: Revisiting & Developing Macroeconomic Theory",
+    subtopics: [...revisitingMacroSubtopics, ...aqaYear2Paper2Topics[0].subtopics],
+  },
+  {
+    name: "Chapter 8: Financial Markets & Monetary Policy",
+    subtopics: [...financialMarketsExtendedSubtopics, ...aqaYear2Paper2Topics[1].subtopics],
+  },
+  {
+    name: "Chapter 9: Fiscal Policy & Supply-Side Policies",
+    subtopics: fiscalPolicyExtendedSubtopics,
+  },
+  {
+    name: "Chapter 10: The International Economy",
+    subtopics: aqaYear2Paper2Topics[2].subtopics,
+  },
+];
