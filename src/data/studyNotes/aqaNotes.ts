@@ -1306,19 +1306,19 @@ const macroMeasurementExtended: import("./edexcelANotes").Subtopic[] = [
 
 export const aqaBook1MacroTopics: Topic[] = [
   {
-    name: "Chapter 6: The Measurement of Macroeconomic Performance",
+    name: "Chapter 9: Measuring Macroeconomic Performance",
     subtopics: [...aqaYear1Paper2Topics[0].subtopics, ...macroMeasurementExtended],
   },
   {
-    name: "Chapter 7: How the Macroeconomy Works",
+    name: "Chapter 10: How the Macroeconomy Works",
     subtopics: [circularFlowSubtopic, ...aqaYear1Paper2Topics[1].subtopics],
   },
   {
-    name: "Chapter 8: Economic Performance",
+    name: "Chapter 11: Economic Performance",
     subtopics: economicPerformanceSubtopics,
   },
   {
-    name: "Chapter 9: Macroeconomic Policy",
+    name: "Chapter 12: Macroeconomic Policy",
     subtopics: aqaYear1Paper2Topics[2].subtopics,
   },
 ];
