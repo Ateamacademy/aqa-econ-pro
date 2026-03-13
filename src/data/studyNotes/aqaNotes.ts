@@ -1438,27 +1438,27 @@ const extendedMarketFailure: import("./edexcelANotes").Subtopic[] = [
 
 export const aqaBook2MicroTopics: Topic[] = [
   {
-    name: "Chapter 1: Individual Economic Decision Making",
+    name: "Chapter 2: Individual Economic Decision Making",
     subtopics: [utilityTheorySubtopic, imperfectInfoSubtopic, ...aqaYear2Paper1Topics[0].subtopics],
   },
   {
-    name: "Chapter 2: Production, Costs & Revenue (Extended)",
+    name: "Chapter 4: Production, Costs & Revenue (Extended)",
     subtopics: [technologicalChangeSubtopic, ...extendedProductionCosts],
   },
   {
-    name: "Chapter 3: Perfect Competition, Imperfect Competition & Monopoly",
+    name: "Chapter 5: Perfect Competition, Imperfect Competition & Monopoly",
     subtopics: aqaYear2Paper1Topics[1].subtopics,
   },
   {
-    name: "Chapter 4: The Labour Market",
+    name: "Chapter 6: The Labour Market",
     subtopics: [...aqaYear2Paper1Topics[2].subtopics, ...extendedLabourMarket, nmwSubtopic],
   },
   {
-    name: "Chapter 5: Distribution of Income & Wealth, Poverty & Inequality",
+    name: "Chapter 7: Distribution of Income & Wealth, Poverty & Inequality",
     subtopics: [...aqaYear2Paper1Topics[3].subtopics, ...extendedInequalitySubtopics],
   },
   {
-    name: "Chapter 6: Revisiting Market Failure & Government Intervention",
+    name: "Chapter 8: Revisiting Market Failure & Government Intervention",
     subtopics: [...revisitingMarketFailureSubtopics, ...extendedMarketFailure],
   },
 ];
