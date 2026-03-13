@@ -362,6 +362,11 @@ export default function StudyNotes() {
                       </RevisionTopicCard>
                     );
                   })}
+                  {/* End of Chapter Test */}
+                  <EndOfTopicTest
+                    chapterName={topic.name}
+                    subtopicTitles={filteredSubs.map(s => s.title)}
+                  />
                 </div>
               </motion.div>
             )}
