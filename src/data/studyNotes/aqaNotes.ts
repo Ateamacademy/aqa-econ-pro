@@ -1539,19 +1539,19 @@ const extendedInternational: import("./edexcelANotes").Subtopic[] = [
 
 export const aqaBook2MacroTopics: Topic[] = [
   {
-    name: "Chapter 7: Revisiting & Developing Macroeconomic Theory",
+    name: "Chapter 10: Revisiting & Developing Macroeconomic Theory",
     subtopics: [...revisitingMacroSubtopics, ...aqaYear2Paper2Topics[0].subtopics, ...extendedMacroTheory],
   },
   {
-    name: "Chapter 8: Financial Markets & Monetary Policy",
+    name: "Chapter 12: Financial Markets & Monetary Policy",
     subtopics: [...financialMarketsExtendedSubtopics, ...aqaYear2Paper2Topics[1].subtopics],
   },
   {
-    name: "Chapter 9: Fiscal Policy & Supply-Side Policies",
+    name: "Chapter 13: Fiscal Policy & Supply-Side Policies",
     subtopics: [...fiscalPolicyExtendedSubtopics, ...extendedSupplySide],
   },
   {
-    name: "Chapter 10: The International Economy",
+    name: "Chapter 14: The International Economy",
     subtopics: [...aqaYear2Paper2Topics[2].subtopics, ...extendedInternational],
   },
 ];
