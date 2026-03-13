@@ -69,8 +69,21 @@ export default function Dashboard() {
     const diagramSessions = subjectSessions.filter(s => s.session_type === "diagram").length;
     const questionSessions = subjectSessions.filter(s => s.session_type === "question").length;
     const essaySessions = subjectSessions.filter(s => s.session_type === "essay").length;
+    const topicTestSessions = subjectSessions.filter(s => s.session_type === "topic_test");
     const noteViews = subjectSessions.filter(s => s.session_type === "note_view");
     const notesViewed = new Set(noteViews.map(s => s.topic)).size;
+
+    // Topic test scores - best score per chapter
+    const topicTestScores: Record<string, number> = {};
+    topicTestSessions.forEach(s => {
+      if (s.score_percent !== null) {
+        topicTestScores[s.topic] = Math.max(topicTestScores[s.topic] ?? 0, s.score_percent);
+      }
+    });
+    const topicTestEntries = Object.entries(topicTestScores).sort((a, b) => a[0].localeCompare(b[0]));
+    const topicTestAvg = topicTestEntries.length > 0
+      ? Math.round(topicTestEntries.reduce((a, [, v]) => a + v, 0) / topicTestEntries.length)
+      : null;
 
     // Topics practiced
     const topicCounts: Record<string, number> = {};
@@ -112,6 +125,7 @@ export default function Dashboard() {
       { type: "Questions", count: questionSessions, color: "hsl(var(--chart-1))" },
       { type: "Diagrams", count: diagramSessions, color: "hsl(var(--chart-2))" },
       { type: "Essays", count: essaySessions, color: "hsl(var(--chart-3))" },
+      { type: "Chapter Tests", count: topicTestSessions.length, color: "hsl(var(--chart-4))" },
     ].filter(t => t.count > 0);
 
     // Weekly comparison
@@ -131,6 +145,7 @@ export default function Dashboard() {
       subjectSessions: activeSessions, totalSessions, diagramSessions, questionSessions, essaySessions,
       topTopics, uniqueTopics, dailyCounts, maxDaily, streak, avgScore,
       typeBreakdown, thisWeek, lastWeek, weeklyChange, notesViewed,
+      topicTestEntries, topicTestAvg, topicTestCount: topicTestSessions.length,
     };
   }, [sessions, subject]);
 
