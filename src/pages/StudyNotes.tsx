@@ -43,10 +43,10 @@ type Subject = import("@/contexts/SubjectContext").Subject;
 
 const paperSections: Record<Subject, PaperSection[]> = {
   economics: [
-    { heading: "Year 1 (AS) — Paper 1: Markets & Market Failure", topics: aqaYear1Paper1Topics, prefix: "y1p1", icon: "📗", color: "var(--revision-green)" },
-    { heading: "Year 1 (AS) — Paper 2: National Economy in a Global Context", topics: aqaYear1Paper2Topics, prefix: "y1p2", icon: "📗", color: "var(--revision-blue)" },
-    { heading: "Year 2 (A2) — Paper 1: Markets & Market Failure (Extended)", topics: aqaYear2Paper1Topics, prefix: "y2p1", icon: "📘", color: "var(--revision-purple)" },
-    { heading: "Year 2 (A2) — Paper 2: National & International Economy (Extended)", topics: aqaYear2Paper2Topics, prefix: "y2p2", icon: "📘", color: "var(--revision-amber)" },
+    { heading: "Book 1 — Microeconomics (Chapters 1–5)", topics: aqaBook1MicroTopics, prefix: "b1m", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Book 1 — Macroeconomics (Chapters 6–9)", topics: aqaBook1MacroTopics, prefix: "b1M", icon: "📗", color: "var(--revision-blue)" },
+    { heading: "Book 2 — Microeconomics (Chapters 1–6)", topics: aqaBook2MicroTopics, prefix: "b2m", icon: "📘", color: "var(--revision-purple)" },
+    { heading: "Book 2 — Macroeconomics (Chapters 7–10)", topics: aqaBook2MacroTopics, prefix: "b2M", icon: "📘", color: "var(--revision-amber)" },
   ],
   "edexcel-a": [
     { heading: "Paper 1 — Markets & Business Behaviour", topics: edexcelAPaper1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
