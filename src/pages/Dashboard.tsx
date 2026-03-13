@@ -350,7 +350,43 @@ export default function Dashboard() {
         </MotionCard>
       </div>
 
-      {/* Subscription + Free Limits */}
+      {/* Chapter Test Scores */}
+      {stats.topicTestEntries.length > 0 && (
+        <MotionCard variants={fadeUp} className="mb-6">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+              <ClipboardCheck className="h-4 w-4" /> Chapter Test Scores
+              {stats.topicTestAvg !== null && (
+                <span className="ml-auto text-xs font-semibold text-primary">Avg: {stats.topicTestAvg}%</span>
+              )}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-2.5">
+              {stats.topicTestEntries.map(([chapter, score], i) => {
+                const shortName = chapter.replace(/^Chapter \d+:\s*/, "");
+                return (
+                  <div key={chapter}>
+                    <div className="flex items-center justify-between text-xs mb-1">
+                      <span className="truncate mr-2">{shortName}</span>
+                      <span className={`font-semibold ${score >= 80 ? "text-green-500" : score >= 60 ? "text-yellow-500" : "text-red-500"}`}>{score}%</span>
+                    </div>
+                    <div className="h-1.5 rounded-full bg-muted overflow-hidden">
+                      <motion.div
+                        className={`h-full rounded-full ${score >= 80 ? "bg-green-500/70" : score >= 60 ? "bg-yellow-500/70" : "bg-red-500/70"}`}
+                        initial={{ width: 0 }}
+                        animate={{ width: `${score}%` }}
+                        transition={{ delay: i * 0.04, duration: 0.5 }}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </CardContent>
+        </MotionCard>
+      )}
+
       <div className="grid sm:grid-cols-3 gap-4 mb-6">
         {/* Subscription Card */}
         <MotionCard variants={fadeUp} className={subscribed ? "border-accent/30 bg-accent/5" : ""}>
