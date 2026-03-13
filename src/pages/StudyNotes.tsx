@@ -19,9 +19,10 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useRef } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { SubtopicPractice } from "@/components/study-notes/SubtopicPractice";
+import { EndOfTopicTest } from "@/components/study-notes/EndOfTopicTest";
 
 // Data imports
-import { aqaYear1Paper1Topics, aqaYear1Paper2Topics, aqaYear2Paper1Topics, aqaYear2Paper2Topics } from "@/data/studyNotes/aqaNotes";
+import { aqaYear1Paper1Topics, aqaYear1Paper2Topics, aqaYear2Paper1Topics, aqaYear2Paper2Topics, aqaBook1MicroTopics, aqaBook1MacroTopics, aqaBook2MicroTopics, aqaBook2MacroTopics } from "@/data/studyNotes/aqaNotes";
 import { edexcelAPaper1Topics, edexcelAPaper2Topics } from "@/data/studyNotes/edexcelANotes";
 import { edexcelBPaper1Topics, edexcelBPaper2Topics } from "@/data/studyNotes/edexcelBNotes";
 import { ocrComponent1Topics, ocrComponent2Topics } from "@/data/studyNotes/ocrNotes";
