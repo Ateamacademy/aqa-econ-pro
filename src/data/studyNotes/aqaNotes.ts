@@ -1248,19 +1248,19 @@ export const aqaBook1MicroTopics: Topic[] = [
     subtopics: [...aqaYear1Paper1Topics[0].subtopics, ...additionalMethodologySubtopics],
   },
   {
-    name: "Chapter 2: Price Determination in a Competitive Market",
+    name: "Chapter 3: Price Determination in Competitive Markets",
     subtopics: [...aqaYear1Paper1Topics[1].subtopics, ...elasticitySubtopics],
   },
   {
-    name: "Chapter 3: Production, Costs & Revenue",
+    name: "Chapter 4: Production, Costs & Revenue",
     subtopics: aqaYear1Paper1Topics[2].subtopics,
   },
   {
-    name: "Chapter 4: Competitive & Concentrated Markets",
+    name: "Chapter 5: Perfect & Imperfectly Competitive Markets & Monopolies",
     subtopics: aqaYear1Paper1Topics[3].subtopics,
   },
   {
-    name: "Chapter 5: Market Failure & Government Intervention",
+    name: "Chapter 8: The Market Mechanism, Market Failure & Government Intervention",
     subtopics: [...aqaYear1Paper1Topics[4].subtopics, ...governmentInterventionExtended],
   },
 ];
