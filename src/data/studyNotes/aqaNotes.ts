@@ -1181,13 +1181,71 @@ const fiscalPolicyExtendedSubtopics: import("./edexcelANotes").Subtopic[] = [
 ];
 
 /* ═════════════════════════════════════════════════════════════
- *  BOOK 1 — YEAR 1 (AS) — TEXTBOOK CHAPTER STRUCTURE
+ *  YEAR 1 (AS) — MICROECONOMICS
  * ═════════════════════════════════════════════════════════════ */
+
+/* ── Additional Year 1 depth subtopics ── */
+
+const governmentInterventionExtended: import("./edexcelANotes").Subtopic[] = [
+  {
+    title: "Indirect Taxes & Subsidies",
+    definition: "**Indirect taxes** (e.g., VAT, excise duty) raise the cost of supply, shifting the supply curve leftward. **Subsidies** lower production costs, shifting supply rightward.",
+    keyTerms: [
+      { term: "Specific Tax", definition: "A fixed amount per unit (e.g., 58p per litre on petrol)" },
+      { term: "Ad Valorem Tax", definition: "A percentage of the price (e.g., 20% VAT)" },
+      { term: "Tax Incidence", definition: "How the burden of a tax is shared between consumers and producers — depends on PED and PES" },
+      { term: "Pigouvian Tax", definition: "A tax set equal to the marginal external cost to internalise a negative externality" },
+    ],
+    formula: "Tax revenue = tax per unit × quantity sold\nDeadweight loss = ½ × tax × ΔQ",
+    explanation: "**Tax incidence depends on elasticities:**\n- **Inelastic demand** → consumers bear most of the burden (firms can pass on the tax)\n- **Elastic demand** → producers bear most of the burden (consumers switch away)\n- **Inelastic supply** → producers bear more\n- **Elastic supply** → consumers bear more\n\n**Subsidies mirror taxes in reverse:**\n- Shift supply curve rightward by the subsidy amount\n- Benefit shared between consumers (lower prices) and producers (higher revenue)\n- Can correct positive externalities by encouraging production to the socially optimal level\n\n**Evaluation of indirect taxes:**\n✅ Generate government revenue, internalise externalities, discourage consumption of demerit goods\n❌ Regressive (take a larger % of income from the poor), may encourage black markets, difficult to set at the correct level, may reduce competitiveness",
+    diagram: "tax_incidence",
+    examTip: "Always discuss who bears the tax burden — it depends on relative elasticities, NOT who the tax is legally imposed on. Draw diagrams showing the incidence split.",
+  },
+  {
+    title: "Maximum & Minimum Prices",
+    definition: "**Maximum prices** (price ceilings) are set BELOW equilibrium to make goods affordable. **Minimum prices** (price floors) are set ABOVE equilibrium to protect producers.",
+    keyTerms: [
+      { term: "Price Ceiling", definition: "A maximum price set by government below the equilibrium — creates excess demand (shortages)" },
+      { term: "Price Floor", definition: "A minimum price set above the equilibrium — creates excess supply (surpluses)" },
+      { term: "Rationing", definition: "Non-price allocation methods needed when a price ceiling creates shortages (queues, vouchers, first-come-first-served)" },
+    ],
+    explanation: "**Maximum prices (e.g., rent controls):**\n- Set below equilibrium → Qd > Qs → shortage\n- Consumers benefit from lower prices (those who CAN get the good)\n- But: shortages, black markets, reduced quality, landlords withdraw supply\n- Allocative inefficiency — not allocated to those who value it most\n\n**Minimum prices (e.g., National Minimum Wage, agricultural price supports):**\n- Set above equilibrium → Qs > Qd → surplus\n- NMW: workers who keep their jobs earn more, but some may become unemployed\n- Agriculture: guarantees farmer income but creates butter mountains / wine lakes\n- Government may need to buy up surplus stock\n\n**Buffer stock schemes:** Government buys surplus when price is low and sells stock when price is high — stabilises prices but costly to operate and difficult to sustain.",
+    diagram: "price_ceiling",
+    examTip: "For price control questions, always identify: (1) who gains, (2) who loses, (3) the deadweight loss, and (4) unintended consequences (black markets, quality reduction).",
+  },
+  {
+    title: "Government Failure",
+    definition: "**Government failure** occurs when government intervention leads to a net welfare loss — the cure is worse than the disease.",
+    keyTerms: [
+      { term: "Government Failure", definition: "When intervention makes resource allocation WORSE than the free market outcome" },
+      { term: "Unintended Consequences", definition: "Secondary effects of policy not anticipated by policymakers" },
+      { term: "Regulatory Capture", definition: "Regulators act in the interests of the industry they regulate, not consumers" },
+      { term: "Moral Hazard", definition: "People take more risks because they are protected from the consequences (e.g., bank bailouts)" },
+    ],
+    explanation: "**Causes of government failure:**\n1. **Distortion of price signals** — subsidies, price controls interfere with the price mechanism\n2. **Unintended consequences** — e.g., biofuel subsidies raised food prices\n3. **Excessive bureaucracy and costs** — administration costs may exceed benefits\n4. **Information gaps** — government may lack data to set optimal tax/subsidy levels\n5. **Political short-termism** — policies designed to win elections, not maximise welfare\n6. **Regulatory capture** — industry lobbying influences regulation\n7. **Moral hazard** — bailouts incentivise risky behaviour\n\n**Examples:**\n- EU Common Agricultural Policy (butter mountains, wine lakes, high food prices)\n- UK biofuel mandate (raised global food prices)\n- 2008 bank bailouts (moral hazard — banks took excessive risks knowing they'd be rescued)\n- Prohibition (1920s USA — created organised crime, no reduction in drinking)\n\n**Key evaluation:** Compare the welfare loss from market failure WITH the potential welfare loss from government intervention. Sometimes doing nothing is better.",
+    examTip: "Government failure is the go-to evaluation for ANY question about government intervention. Always consider: Is the intervention worse than the market failure it's trying to correct?",
+  },
+];
+
+/* ── Additional depth for Chapter 1 ── */
+const additionalMethodologySubtopics: import("./edexcelANotes").Subtopic[] = [
+  {
+    title: "Economic Models & Assumptions",
+    definition: "**Economic models** are simplified representations of reality used to explain and predict economic behaviour. They rely on assumptions like ceteris paribus and rational economic agents.",
+    keyTerms: [
+      { term: "Model", definition: "A simplified framework to explain economic relationships (e.g., supply & demand, circular flow)" },
+      { term: "Ceteris Paribus", definition: "'All other things being equal' — isolates the effect of one variable" },
+      { term: "Rational Agent", definition: "An economic agent who acts in their own self-interest, weighing costs and benefits" },
+    ],
+    explanation: "**Why models matter:**\n- Reality is too complex to analyse without simplification\n- Models generate testable predictions (hypotheses)\n- They help identify cause and effect through ceteris paribus reasoning\n\n**Limitations of models:**\n- Based on unrealistic assumptions (perfect information, rationality)\n- Behavioural economics shows agents aren't always rational\n- Ceteris paribus rarely holds in the real world — many variables change simultaneously\n- Models may be culturally biased or outdated\n\n**The scientific method in economics:**\n1. Observe patterns → 2. Form hypothesis → 3. Build model → 4. Test with data → 5. Refine or reject\n\n**Deductive vs inductive reasoning:**\n- Deductive: from theory to prediction (if demand ↑, price should ↑)\n- Inductive: from data to theory (observe correlation, infer causation — but correlation ≠ causation!)",
+    examTip: "When asked about economic methodology, emphasise that models are useful simplifications, not perfect descriptions of reality. Evaluative comments about assumptions earn top marks.",
+  },
+];
 
 export const aqaBook1MicroTopics: Topic[] = [
   {
     name: "Chapter 1: Economic Methodology & the Economic Problem",
-    subtopics: aqaYear1Paper1Topics[0].subtopics,
+    subtopics: [...aqaYear1Paper1Topics[0].subtopics, ...additionalMethodologySubtopics],
   },
   {
     name: "Chapter 2: Price Determination in a Competitive Market",
@@ -1203,18 +1261,57 @@ export const aqaBook1MicroTopics: Topic[] = [
   },
   {
     name: "Chapter 5: Market Failure & Government Intervention",
-    subtopics: aqaYear1Paper1Topics[4].subtopics,
+    subtopics: [...aqaYear1Paper1Topics[4].subtopics, ...governmentInterventionExtended],
+  },
+];
+
+/* ── Additional macro depth subtopics ── */
+const circularFlowSubtopic: import("./edexcelANotes").Subtopic = {
+  title: "The Circular Flow of Income",
+  definition: "The **circular flow** model shows how income flows between households and firms, with injections (I, G, X) and withdrawals (S, T, M) determining the equilibrium level of national income.",
+  keyTerms: [
+    { term: "Injection", definition: "Addition to the circular flow — Investment (I), Government spending (G), Exports (X)" },
+    { term: "Withdrawal (Leakage)", definition: "Removal from the circular flow — Saving (S), Taxation (T), Imports (M)" },
+    { term: "Equilibrium National Income", definition: "Where total injections = total withdrawals (S + T + M = I + G + X)" },
+  ],
+  explanation: "**The simple model:** Households provide factors of production → firms pay factor incomes → households spend on goods → firms earn revenue → cycle continues.\n\n**With government and trade:**\n- Injections ADD spending: investment, government spending, export revenue\n- Withdrawals REMOVE spending: saving, taxation, import spending\n- If injections > withdrawals → national income RISES\n- If withdrawals > injections → national income FALLS\n- Equilibrium: J = W\n\n**Key insight:** A change in any injection or withdrawal has a MULTIPLIED effect on national income.",
+  examTip: "The circular flow is fundamental — link it to multiplier analysis. An increase in government spending (injection) has a multiplied effect on national income, but the size depends on the marginal propensity to withdraw.",
+};
+
+const macroMeasurementExtended: import("./edexcelANotes").Subtopic[] = [
+  {
+    title: "Measuring National Income (GDP, GNI, GNP)",
+    definition: "**GDP** measures the total value of goods and services produced within a country's borders. **GNI** adds net income from abroad. These are key indicators but have significant limitations.",
+    keyTerms: [
+      { term: "GDP (Gross Domestic Product)", definition: "Total value of goods & services produced within a country in a given period" },
+      { term: "GNI (Gross National Income)", definition: "GDP + net income from abroad (profits, dividends, interest from overseas assets)" },
+      { term: "Real GDP", definition: "GDP adjusted for inflation — measures changes in actual output" },
+      { term: "GDP Deflator", definition: "Price index used to convert nominal GDP to real GDP" },
+    ],
+    explanation: "**Three ways to measure GDP (all should be equal):**\n1. **Output method:** Sum of value added by each industry\n2. **Income method:** Sum of all factor incomes (wages, rent, interest, profit)\n3. **Expenditure method:** C + I + G + (X − M)\n\n**GDP vs GNI:**\n- Ireland: GDP much higher than GNI (multinationals report profits in Ireland but repatriate them)\n- UK: GNI slightly above GDP (UK earns significant investment income from abroad)\n\n**Why GDP is imperfect:**\n- Ignores distribution of income\n- Excludes unpaid work (childcare, volunteering)\n- Ignores the informal/underground economy\n- Doesn't account for environmental degradation\n- More ≠ better (earthquake rebuilding raises GDP)\n- PPP adjustments needed for international comparisons",
+    examTip: "Always state GDP limitations when evaluating economic performance. Compare GDP with broader measures like HDI, IHDI, or the Genuine Progress Indicator for top marks.",
+  },
+  {
+    title: "Index Numbers & the CPI",
+    definition: "**Index numbers** allow comparison of data over time by expressing values relative to a base year (= 100). The **CPI** is the UK's main inflation measure.",
+    keyTerms: [
+      { term: "Index Number", definition: "A number showing the value of a variable relative to a base year (base = 100)" },
+      { term: "CPI", definition: "Consumer Prices Index — tracks the cost of a weighted basket of ~700 goods and services" },
+      { term: "Base-Weighted Index", definition: "Uses quantities from the base year as weights (Laspeyres index — CPI is based on this)" },
+    ],
+    explanation: "**How CPI is calculated:**\n1. Choose a representative basket of goods & services (~700 items)\n2. Assign weights based on spending patterns (from the Living Costs & Food Survey)\n3. Collect prices from ~140 locations across the UK\n4. Calculate weighted price change from the base period\n5. Update the basket and weights annually\n\n**CPI vs RPI:**\n- CPI excludes mortgage interest payments; RPI includes them\n- CPI uses geometric mean; RPI uses arithmetic mean → RPI typically higher\n- CPI is the official inflation target measure\n- RPI still used for some contracts, index-linked gilts, student loan interest\n\n**Limitations of CPI:**\n- Substitution bias (consumers switch to cheaper alternatives)\n- New product bias (slow to include new goods)\n- Quality changes not fully captured\n- Doesn't reflect individual experience (your inflation ≠ average inflation)\n- Housing costs poorly represented",
+    examTip: "AQA frequently tests CPI limitations. Always mention the substitution bias and that CPI doesn't reflect individual spending patterns — a pensioner's inflation rate differs from a student's.",
   },
 ];
 
 export const aqaBook1MacroTopics: Topic[] = [
   {
     name: "Chapter 6: The Measurement of Macroeconomic Performance",
-    subtopics: aqaYear1Paper2Topics[0].subtopics,
+    subtopics: [...aqaYear1Paper2Topics[0].subtopics, ...macroMeasurementExtended],
   },
   {
     name: "Chapter 7: How the Macroeconomy Works",
-    subtopics: aqaYear1Paper2Topics[1].subtopics,
+    subtopics: [circularFlowSubtopic, ...aqaYear1Paper2Topics[1].subtopics],
   },
   {
     name: "Chapter 8: Economic Performance",
@@ -1222,13 +1319,108 @@ export const aqaBook1MacroTopics: Topic[] = [
   },
   {
     name: "Chapter 9: Macroeconomic Policy",
-    subtopics: aqaYear1Paper2Topics[2].subtopics.filter(s => s.title !== "Macroeconomic Objectives"),
+    subtopics: aqaYear1Paper2Topics[2].subtopics,
   },
 ];
 
 /* ═════════════════════════════════════════════════════════════
- *  BOOK 2 — YEAR 2 (A2) — TEXTBOOK CHAPTER STRUCTURE
+ *  YEAR 2 (A2) — MICROECONOMICS
  * ═════════════════════════════════════════════════════════════ */
+
+/* ── Extended production/costs subtopics for Year 2 Chapter 2 ── */
+const extendedProductionCosts: import("./edexcelANotes").Subtopic[] = [
+  {
+    title: "Short-Run & Long-Run Cost Curves (Revisited)",
+    definition: "At A2, you must understand the relationship between short-run and long-run cost curves in greater detail, including the 'envelope' curve and its implications for firm behaviour.",
+    keyTerms: [
+      { term: "LRAC (Envelope Curve)", definition: "The LRAC is tangent to an infinite number of SRAC curves — each representing a different plant size" },
+      { term: "Returns to Scale", definition: "How output changes when ALL inputs are increased proportionally" },
+      { term: "Constant Returns to Scale", definition: "Doubling all inputs doubles output → LRAC is flat" },
+    ],
+    explanation: "**The LRAC as the 'envelope' of SRAC curves:**\n- In the short run, at least one factor is fixed → firm is on a specific SRAC curve\n- In the long run, ALL factors are variable → firm can choose optimal plant size\n- LRAC shows the minimum cost achievable for each output level when ALL factors can be varied\n- Each point on the LRAC corresponds to the most efficient plant size for that output\n\n**Why the LRAC is typically U-shaped:**\n1. Initially falling: increasing returns to scale (economies of scale)\n2. Minimum point: constant returns to scale (MES reached)\n3. Eventually rising: decreasing returns to scale (diseconomies of scale)\n\n**L-shaped LRAC:** Some industries may experience continuous economies of scale with no diseconomies — the LRAC flattens but doesn't rise. This is more realistic for many modern industries (tech, services).\n\n**Policy implications:**\n- If MES is large relative to market size → natural monopoly / oligopoly\n- If MES is small → many efficient firms can coexist → competitive market",
+    examTip: "Draw the LRAC as an envelope of SRAC curves. Show how the firm selects the optimal plant size by choosing the SRAC that is tangent to the LRAC at the desired output level.",
+  },
+  {
+    title: "Revenue Maximisation & Sales Maximisation",
+    definition: "Firms may pursue objectives other than profit maximisation. **Revenue maximisation** occurs where MR = 0; **sales maximisation** occurs where AC = AR (normal profit constraint).",
+    keyTerms: [
+      { term: "Revenue Maximisation", definition: "Producing where MR = 0 (total revenue is at its peak)" },
+      { term: "Sales Maximisation", definition: "Producing the maximum output while still covering costs (AR = AC)" },
+      { term: "Satisficing", definition: "Earning enough profit to keep shareholders satisfied, then pursuing other goals (market share, growth)" },
+      { term: "Principal-Agent Problem", definition: "Managers (agents) may pursue their own objectives rather than those of shareholders (principals)" },
+    ],
+    explanation: "**Comparison of objectives:**\n\n| Objective | Condition | Output | Price |\n|---|---|---|---|\n| Profit max | MC = MR | Lowest | Highest |\n| Revenue max | MR = 0 | Higher | Lower |\n| Sales max | AC = AR | Highest | Lowest |\n\n**Why firms may not profit-maximise:**\n- Managers prefer revenue/growth (larger firms = higher salaries, prestige)\n- Satisficing: enough profit to prevent shareholder revolt, then pursue other goals\n- Market share objectives (especially in tech — Amazon prioritised growth over profits for years)\n- Corporate social responsibility (B Corps, stakeholder capitalism)\n- Price wars to drive out competitors (predatory pricing)\n\n**Williamson's managerial utility model:** Managers maximise their own utility (salary, staff, perks) subject to a minimum profit constraint.",
+    examTip: "For 25-mark essays on firm behaviour, always evaluate WHETHER firms actually profit-maximise. The principal-agent problem and satisficing are powerful evaluation points.",
+  },
+];
+
+/* ── Extended labour market subtopics ── */
+const extendedLabourMarket: import("./edexcelANotes").Subtopic[] = [
+  {
+    title: "Monopsony in the Labour Market",
+    definition: "A **monopsony** employer is a single (or dominant) buyer of labour. It has the power to set wages below the competitive equilibrium, creating a welfare loss.",
+    keyTerms: [
+      { term: "Monopsony", definition: "A market with a single or dominant buyer — in the labour market, one employer dominates" },
+      { term: "MCL (Marginal Cost of Labour)", definition: "The extra cost of hiring one more worker — above ACL because all workers must be paid the higher wage" },
+      { term: "ACL (Average Cost of Labour)", definition: "The wage rate — the supply curve of labour" },
+    ],
+    explanation: "**How monopsony depresses wages:**\n- Monopsonist faces an upward-sloping labour supply curve (must raise wages to attract more workers)\n- MCL > ACL (raising the wage for the marginal worker means raising it for ALL workers)\n- Profit-maximising employment: MCL = MRPL → employs fewer workers at a lower wage than competitive market\n\n**Examples:** NHS (largest UK employer of nurses), Amazon in small towns, agricultural employers in rural areas, Walmart in small US towns\n\n**NMW and monopsony:**\n- Classical model: NMW → unemployment\n- Monopsony model: NMW can INCREASE both wages AND employment (up to competitive level)\n- This explains why moderate NMW increases haven't caused significant unemployment (Card & Krueger, 1994)\n\n**Policy implications:** Monopsony power justifies government intervention in labour markets (NMW, trade unions, employment regulation).",
+    examTip: "The monopsony model is crucial for evaluating the NMW. It explains why a NMW can increase employment — contradicting the simple competitive model. Always use this in NMW evaluation questions.",
+  },
+  {
+    title: "Trade Unions & Wage Determination",
+    definition: "**Trade unions** are organisations of workers that collectively bargain with employers for better wages, conditions, and job security. They act as a monopoly seller of labour.",
+    keyTerms: [
+      { term: "Collective Bargaining", definition: "Negotiations between unions and employers over wages and working conditions" },
+      { term: "Bilateral Monopoly", definition: "A market with one buyer (monopsony employer) and one seller (trade union) — wage is indeterminate" },
+      { term: "Real Wage Unemployment", definition: "Unemployment caused by wages being held above the market-clearing level (by unions or NMW)" },
+    ],
+    explanation: "**Economic effects of trade unions:**\n\n**Arguments FOR unions:**\n- Correct monopsony power — push wages towards competitive level\n- Reduce inequality by raising wages for lower-paid workers\n- Improve working conditions, health and safety\n- Give workers a 'voice' → reduces labour turnover → raises productivity\n- Bilateral monopoly: counter monopsony power → wage closer to competitive equilibrium\n\n**Arguments AGAINST unions:**\n- May push wages above equilibrium → real wage unemployment\n- Restrictive practices reduce flexibility and productivity\n- Insider-outsider problem: protect existing members at expense of unemployed\n- May cause cost-push inflation if wage rises exceed productivity gains\n- Reduce firms' competitiveness in global markets\n\n**Evaluation:** Impact depends on: union density, employer's market power, labour market conditions, type of industry, and whether wages were initially below competitive level.",
+    examTip: "In bilateral monopoly, the wage outcome is theoretically indeterminate — it depends on bargaining power. This is a strong evaluative point for labour market essays.",
+  },
+];
+
+/* ── Extended inequality subtopics ── */
+const extendedInequalitySubtopics: import("./edexcelANotes").Subtopic[] = [
+  {
+    title: "The Lorenz Curve & Gini Coefficient",
+    definition: "The **Lorenz Curve** shows the cumulative distribution of income/wealth. The **Gini Coefficient** measures inequality on a scale from 0 (perfect equality) to 1 (perfect inequality).",
+    keyTerms: [
+      { term: "Lorenz Curve", definition: "A graph plotting cumulative % of population against cumulative % of income/wealth" },
+      { term: "Gini Coefficient", definition: "Area between Lorenz Curve and line of equality ÷ total area under the line (0 = equal, 1 = unequal)" },
+      { term: "Line of Perfect Equality", definition: "45° line on Lorenz diagram — each % of population earns the same % of income" },
+    ],
+    explanation: "**Reading the Lorenz Curve:**\n- The further the Lorenz Curve from the 45° line → the greater the inequality\n- UK Lorenz Curve for WEALTH is much further from equality than for INCOME\n- Wealth inequality > income inequality (wealth accumulates over generations)\n\n**UK Gini Coefficient:**\n- Before taxes/transfers: ~0.52 (high inequality)\n- After taxes/transfers: ~0.34 (significant redistribution)\n- UK is more unequal than Scandinavia (~0.27) but less than USA (~0.39)\n\n**Causes of rising inequality:**\n- Globalisation (returns to capital vs labour)\n- Technological change (skill-biased — raises demand for skilled workers)\n- Decline of trade union membership\n- Tax changes (top rate cuts, shift from direct to indirect taxes)\n- Housing wealth concentration\n- Executive pay growth outstripping average wages\n\n**Policies to reduce inequality:** Progressive taxation, means-tested benefits, NMW increases, education and training investment, inheritance tax reform.",
+    examTip: "Always distinguish between income and wealth inequality — they have different causes and policy solutions. The Gini coefficient is useful for international and historical comparisons.",
+  },
+  {
+    title: "Absolute & Relative Poverty",
+    definition: "**Absolute poverty** means lacking the income to afford basic necessities (food, shelter, clothing). **Relative poverty** means having significantly less than the average in society.",
+    keyTerms: [
+      { term: "Absolute Poverty", definition: "Income below the minimum needed to sustain life — World Bank: $2.15/day (2022 threshold)" },
+      { term: "Relative Poverty", definition: "Income below 60% of median household income (UK definition)" },
+      { term: "Poverty Trap", definition: "Situation where taking paid work results in loss of benefits, leaving people no better off" },
+    ],
+    explanation: "**Key distinction:**\n- Absolute poverty can be eliminated through economic growth\n- Relative poverty can persist even as living standards rise (it's about the gap)\n- A country can have NO absolute poverty but significant relative poverty (UK)\n\n**The poverty trap explained:**\n1. Person on benefits gets a job → loses housing benefit, tax credits, free prescriptions\n2. Effective marginal tax rate can exceed 70-80%\n3. Financial incentive to work is very weak → poverty trap\n4. Universal Credit was designed to address this by tapering benefits more gradually\n\n**Causes of poverty:**\n- Unemployment and low-wage employment\n- Lack of education and skills\n- Family breakdown, disability, mental health\n- Regional disparities\n- Structural changes in the economy (deindustrialisation)\n\n**Evaluation:** Economic growth is necessary but not sufficient to reduce poverty. Growth must be inclusive and accompanied by effective redistribution policies.",
+    examTip: "AQA commonly asks about the effectiveness of policies to reduce poverty. Always evaluate using the poverty trap — well-intentioned benefits can discourage work if not designed carefully.",
+  },
+];
+
+/* ── Extended market failure subtopics for Year 2 ── */
+const extendedMarketFailure: import("./edexcelANotes").Subtopic[] = [
+  {
+    title: "Cost-Benefit Analysis (CBA)",
+    definition: "**CBA** is a technique used by governments to assess whether a project should go ahead by comparing total social costs with total social benefits, expressed in monetary terms.",
+    keyTerms: [
+      { term: "Social Cost", definition: "Private cost + external cost" },
+      { term: "Social Benefit", definition: "Private benefit + external benefit" },
+      { term: "Net Present Value (NPV)", definition: "The difference between discounted benefits and discounted costs — project goes ahead if NPV > 0" },
+      { term: "Discount Rate", definition: "The rate used to convert future costs/benefits into present values — reflects time preference" },
+    ],
+    explanation: "**Steps in CBA:**\n1. Identify all costs and benefits (private AND external)\n2. Quantify them in monetary terms\n3. Apply a discount rate to future flows\n4. Compare total discounted benefits with total discounted costs\n5. If NPV > 0 → project should proceed\n\n**Advantages:** Considers externalities, provides a structured framework, allows comparison of different projects\n\n**Disadvantages:**\n- Extremely difficult to value externalities (what is a life worth? what is noise pollution worth?)\n- Discount rate choice is subjective and politically influenced\n- Risk of political manipulation (choosing assumptions to support a desired outcome)\n- Distributional effects ignored (who gains and who loses?)\n- Shadow pricing is inherently uncertain\n\n**Example:** HS2 — original CBA showed positive NPV based on time savings for business travellers. But costs escalated, assumptions were questioned, and distributional concerns (benefits concentrated in London/Birmingham) led to ongoing controversy.",
+    examTip: "CBA questions require you to evaluate the reliability of the analysis. Focus on: valuation difficulties, discount rate sensitivity, and the risk of political manipulation.",
+  },
+];
 
 export const aqaBook2MicroTopics: Topic[] = [
   {
@@ -1237,7 +1429,7 @@ export const aqaBook2MicroTopics: Topic[] = [
   },
   {
     name: "Chapter 2: Production, Costs & Revenue (Extended)",
-    subtopics: [technologicalChangeSubtopic],
+    subtopics: [technologicalChangeSubtopic, ...extendedProductionCosts],
   },
   {
     name: "Chapter 3: Perfect Competition, Imperfect Competition & Monopoly",
@@ -1245,22 +1437,96 @@ export const aqaBook2MicroTopics: Topic[] = [
   },
   {
     name: "Chapter 4: The Labour Market",
-    subtopics: aqaYear2Paper1Topics[2].subtopics,
+    subtopics: [...aqaYear2Paper1Topics[2].subtopics, ...extendedLabourMarket],
   },
   {
     name: "Chapter 5: Distribution of Income & Wealth, Poverty & Inequality",
-    subtopics: aqaYear2Paper1Topics[3].subtopics,
+    subtopics: [...aqaYear2Paper1Topics[3].subtopics, ...extendedInequalitySubtopics],
   },
   {
     name: "Chapter 6: Revisiting Market Failure & Government Intervention",
-    subtopics: revisitingMarketFailureSubtopics,
+    subtopics: [...revisitingMarketFailureSubtopics, ...extendedMarketFailure],
+  },
+];
+
+/* ═════════════════════════════════════════════════════════════
+ *  YEAR 2 (A2) — MACROECONOMICS
+ * ═════════════════════════════════════════════════════════════ */
+
+/* ── Extended macro theory subtopics ── */
+const extendedMacroTheory: import("./edexcelANotes").Subtopic[] = [
+  {
+    title: "The Phillips Curve & NAIRU",
+    definition: "The **Phillips Curve** shows an inverse relationship between unemployment and inflation. The **NAIRU** is the unemployment rate at which inflation is stable.",
+    keyTerms: [
+      { term: "Short-Run Phillips Curve (SRPC)", definition: "Shows a trade-off between unemployment and inflation in the short run" },
+      { term: "Long-Run Phillips Curve (LRPC)", definition: "Vertical at the NAIRU — no long-run trade-off (Friedman's view)" },
+      { term: "NAIRU", definition: "Non-Accelerating Inflation Rate of Unemployment — where inflation expectations are stable" },
+      { term: "Expectations-Augmented Phillips Curve", definition: "Friedman's model: if workers expect inflation, SRPC shifts up, maintaining unemployment at NAIRU" },
+    ],
+    explanation: "**Original Phillips Curve (1958):**\n- A.W. Phillips found an inverse relationship between wage inflation and unemployment (UK 1861-1957)\n- Policy implication: governments can choose a point on the curve (trade-off)\n\n**Friedman's critique (monetarist):**\n1. Trade-off is only SHORT-RUN\n2. Government expands AD → unemployment falls temporarily → inflation rises\n3. Workers demand higher wages to compensate for inflation\n4. Real wages return to equilibrium → unemployment returns to NAIRU\n5. Result: higher inflation at the same unemployment rate → SRPC shifts up\n6. LRPC is vertical at the NAIRU\n\n**Reducing NAIRU:** Supply-side policies (training, flexibility, information) shift the LRPC left\n\n**Post-2008 puzzle:** Low unemployment AND low inflation — possibly due to: globalisation suppressing wages, gig economy, low productivity growth, anchored inflation expectations.",
+    diagram: "phillips_curve",
+    examTip: "Always distinguish SRPC from LRPC. The short-run trade-off exists; the long-run trade-off doesn't (Friedman). Use this framework to evaluate demand-management policies.",
+  },
+  {
+    title: "Keynesian vs Classical/Monetarist Debate",
+    definition: "The central macroeconomic debate: Keynesians emphasise demand-side failures and government intervention; Classical/Monetarists emphasise market self-correction and minimal intervention.",
+    keyTerms: [
+      { term: "Keynesian Economics", definition: "Markets can fail → AD deficiency → unemployment → government must intervene (fiscal policy)" },
+      { term: "Classical Economics", definition: "Markets self-correct through flexible wages and prices → economy returns to full employment naturally" },
+      { term: "Monetarism", definition: "Inflation is 'always and everywhere a monetary phenomenon' (Friedman) → control money supply" },
+      { term: "New Classical", definition: "Rational expectations → government policy is anticipated and therefore ineffective" },
+    ],
+    explanation: "**Keynesian view:**\n- Wages and prices are 'sticky' downwards → markets don't clear\n- Economy can settle in equilibrium BELOW full employment (deflationary gap)\n- AD is the primary driver of output and employment\n- Fiscal policy is effective, especially during recessions\n- Animal spirits drive investment → inherent instability\n\n**Classical/Monetarist view:**\n- Economy is self-correcting in the long run (flexible wages/prices)\n- LRAS is vertical → AD changes only affect prices, not output (long run)\n- Government intervention causes more problems than it solves\n- Monetary policy should follow rules (e.g., money supply growth target)\n- Fiscal policy is ineffective (crowding out, Ricardian equivalence)\n\n**Modern synthesis:**\n- Most economists accept elements of both\n- Short run: Keynesian insights (sticky wages, AD matters)\n- Long run: Classical insights (supply-side determines growth)\n- Central bank independence + inflation targeting = practical compromise",
+    examTip: "For 25-mark macro essays, ALWAYS present both perspectives. State which is more applicable given the current economic context (recession → Keynesian; near full capacity → Classical).",
+  },
+];
+
+/* ── Extended supply-side policy subtopics ── */
+const extendedSupplySide: import("./edexcelANotes").Subtopic[] = [
+  {
+    title: "Evaluating Supply-Side Policies in Depth",
+    definition: "Supply-side policies shift LRAS right, but their effectiveness depends on the type of policy, time horizon, and economic context.",
+    explanation: "**Market-based supply-side policies — detailed evaluation:**\n\n**Income tax cuts:**\n✅ Incentivise work, increase labour supply, attract skilled workers from abroad\n❌ Laffer Curve is theoretical — tax cuts may simply reduce revenue without increasing supply\n❌ Benefits flow disproportionately to high earners → increases inequality\n❌ May require spending cuts → reduced public services\n\n**Deregulation:**\n✅ Removes bureaucratic barriers to entry → more competition → lower costs\n❌ May reduce consumer/worker/environmental protection (2008 financial crisis partly caused by deregulation)\n❌ Race to the bottom in standards\n\n**Interventionist supply-side policies — detailed evaluation:**\n\n**Education and training:**\n✅ Improves human capital → productivity → competitiveness\n✅ Reduces structural unemployment → lowers NAIRU\n❌ Very long time lags (10-20 years for school reforms to feed through)\n❌ Opportunity cost of public spending\n❌ Difficult to predict future skill needs\n\n**Infrastructure investment:**\n✅ Reduces transport costs, improves connectivity, attracts FDI\n✅ Has a multiplier effect on AD in the short run\n❌ Very expensive (HS2: £100bn+)\n❌ Planning delays, NIMBYism, cost overruns\n❌ Benefits may be geographically concentrated\n\n**Key evaluation:** Supply-side policies are necessary for sustainable growth but insufficient alone — they need to be combined with appropriate demand-side policies.",
+    examTip: "The best answers evaluate specific policies rather than discussing 'supply-side policies' in general. Use real-world examples (apprenticeship levy, R&D tax credits, HS2) to demonstrate applied understanding.",
+  },
+];
+
+/* ── Extended international economy subtopics ── */
+const extendedInternational: import("./edexcelANotes").Subtopic[] = [
+  {
+    title: "Protectionism & Trade Policy",
+    definition: "**Protectionism** involves government policies that restrict free trade to protect domestic industries. Methods include tariffs, quotas, subsidies, and non-tariff barriers.",
+    keyTerms: [
+      { term: "Tariff", definition: "A tax on imports — raises the price of imported goods" },
+      { term: "Quota", definition: "A physical limit on the quantity of imports allowed" },
+      { term: "Embargo", definition: "A complete ban on trade with a particular country" },
+      { term: "Non-Tariff Barriers", definition: "Regulations, standards, bureaucracy that restrict trade without tariffs (e.g., product standards, labelling)" },
+      { term: "Infant Industry Argument", definition: "Temporary protection for new industries until they achieve economies of scale to compete internationally" },
+    ],
+    explanation: "**Arguments FOR protection:**\n- **Infant industry:** New industries need time to grow and achieve EoS before competing with established foreign firms\n- **National security:** Strategic industries (defence, food, energy) shouldn't depend on imports\n- **Anti-dumping:** Prevent foreign firms selling below cost to destroy domestic competition\n- **Protect employment:** Prevent structural unemployment from import competition\n- **Improve BoP:** Reduce import spending\n\n**Arguments AGAINST protection:**\n- Higher prices for consumers → reduced consumer surplus\n- Reduced competition → less efficiency and innovation\n- Retaliation risk → trade wars (US-China tariffs 2018-2023)\n- Protects inefficient industries → misallocation of resources\n- Infant industries may never 'grow up' (permanent protection)\n- Comparative advantage not exploited → lower world output\n\n**The WTO:** Promotes free trade through negotiation and dispute resolution. Principles: MFN (most favoured nation), national treatment, tariff reduction.",
+    examTip: "For trade policy essays, always evaluate the infant industry argument critically — in practice, protection is rarely temporary because lobbying creates political pressure to maintain it.",
+  },
+  {
+    title: "Economic Integration & Trading Blocs",
+    definition: "**Economic integration** involves countries removing trade barriers between each other while potentially maintaining common external barriers. There are different degrees of integration.",
+    keyTerms: [
+      { term: "Free Trade Area (FTA)", definition: "Members remove tariffs between each other but maintain independent external tariffs (e.g., USMCA)" },
+      { term: "Customs Union", definition: "FTA + common external tariff (e.g., EU customs union)" },
+      { term: "Single Market", definition: "Customs union + free movement of goods, services, capital, and labour (EU Single Market)" },
+      { term: "Monetary Union", definition: "Single market + common currency (Eurozone)" },
+      { term: "Trade Creation", definition: "New trade that occurs because tariffs are removed → efficiency gains" },
+      { term: "Trade Diversion", definition: "Trade switched from an efficient non-member to a less efficient member → welfare loss" },
+    ],
+    explanation: "**Levels of integration (increasing):**\n1. Free Trade Area → 2. Customs Union → 3. Single Market → 4. Monetary Union → 5. Full Political Union\n\n**Benefits of integration:**\n- Trade creation → lower prices, greater choice\n- Economies of scale from larger market\n- Increased FDI (firms invest to access larger market)\n- Greater competition → efficiency\n- Political cooperation and stability\n\n**Costs of integration:**\n- Trade diversion (buying from less efficient partners)\n- Loss of sovereignty over trade policy, regulation, potentially monetary policy\n- Uneven distribution of benefits (core vs periphery)\n- Adjustment costs (structural unemployment in uncompetitive industries)\n\n**Brexit evaluation:** UK left the EU Single Market and Customs Union. Benefits: independent trade policy, regulatory autonomy. Costs: trade friction, reduced FDI, loss of passporting for financial services, supply chain disruption.",
+    examTip: "Always analyse trade agreements using trade creation vs trade diversion. The net effect determines whether the agreement improves or worsens welfare.",
   },
 ];
 
 export const aqaBook2MacroTopics: Topic[] = [
   {
     name: "Chapter 7: Revisiting & Developing Macroeconomic Theory",
-    subtopics: [...revisitingMacroSubtopics, ...aqaYear2Paper2Topics[0].subtopics],
+    subtopics: [...revisitingMacroSubtopics, ...aqaYear2Paper2Topics[0].subtopics, ...extendedMacroTheory],
   },
   {
     name: "Chapter 8: Financial Markets & Monetary Policy",
@@ -1268,10 +1534,10 @@ export const aqaBook2MacroTopics: Topic[] = [
   },
   {
     name: "Chapter 9: Fiscal Policy & Supply-Side Policies",
-    subtopics: fiscalPolicyExtendedSubtopics,
+    subtopics: [...fiscalPolicyExtendedSubtopics, ...extendedSupplySide],
   },
   {
     name: "Chapter 10: The International Economy",
-    subtopics: aqaYear2Paper2Topics[2].subtopics,
+    subtopics: [...aqaYear2Paper2Topics[2].subtopics, ...extendedInternational],
   },
 ];

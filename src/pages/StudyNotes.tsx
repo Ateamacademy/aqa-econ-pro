@@ -43,10 +43,10 @@ type Subject = import("@/contexts/SubjectContext").Subject;
 
 const paperSections: Record<Subject, PaperSection[]> = {
   economics: [
-    { heading: "Book 1 — Microeconomics (Chapters 1–5)", topics: aqaBook1MicroTopics, prefix: "b1m", icon: "📗", color: "var(--revision-green)" },
-    { heading: "Book 1 — Macroeconomics (Chapters 6–9)", topics: aqaBook1MacroTopics, prefix: "b1M", icon: "📗", color: "var(--revision-blue)" },
-    { heading: "Book 2 — Microeconomics (Chapters 1–6)", topics: aqaBook2MicroTopics, prefix: "b2m", icon: "📘", color: "var(--revision-purple)" },
-    { heading: "Book 2 — Macroeconomics (Chapters 7–10)", topics: aqaBook2MacroTopics, prefix: "b2M", icon: "📘", color: "var(--revision-amber)" },
+    { heading: "Year 1 — Microeconomics", topics: aqaBook1MicroTopics, prefix: "y1m", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Year 1 — Macroeconomics", topics: aqaBook1MacroTopics, prefix: "y1M", icon: "📗", color: "var(--revision-blue)" },
+    { heading: "Year 2 — Microeconomics", topics: aqaBook2MicroTopics, prefix: "y2m", icon: "📘", color: "var(--revision-purple)" },
+    { heading: "Year 2 — Macroeconomics", topics: aqaBook2MacroTopics, prefix: "y2M", icon: "📘", color: "var(--revision-amber)" },
   ],
   "edexcel-a": [
     { heading: "Paper 1 — Markets & Business Behaviour", topics: edexcelAPaper1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
