@@ -1451,7 +1451,7 @@ export const aqaBook2MicroTopics: Topic[] = [
   },
   {
     name: "Chapter 4: The Labour Market",
-    subtopics: [...aqaYear2Paper1Topics[2].subtopics, ...extendedLabourMarket],
+    subtopics: [...aqaYear2Paper1Topics[2].subtopics, ...extendedLabourMarket, nmwSubtopic],
   },
   {
     name: "Chapter 5: Distribution of Income & Wealth, Poverty & Inequality",
