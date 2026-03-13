@@ -155,11 +155,6 @@ RULES:
     }
   };
 
-  const score = submitted
-    ? questions.reduce((acc, q, i) => acc + (selected[i] === q.correctIndex ? 1 : 0), 0)
-    : 0;
-  const scorePercent = submitted ? Math.round((score / questions.length) * 100) : 0;
-
   const reset = () => {
     setOpen(false);
     setQuestions([]);
