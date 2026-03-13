@@ -114,9 +114,9 @@ RULES:
       onDelta: (chunk) => { result += chunk; setRawText(result); },
       onDone: () => {
         const parsed = parseMCQs(result);
-        if (parsed.length >= 3) {
-          setQuestions(parsed.slice(0, 5));
-          setSelected(new Array(Math.min(parsed.length, 5)).fill(null));
+        if (parsed.length >= 5) {
+          setQuestions(parsed.slice(0, 10));
+          setSelected(new Array(Math.min(parsed.length, 10)).fill(null));
         } else {
           toast.error("Failed to generate test. Try again.");
         }
