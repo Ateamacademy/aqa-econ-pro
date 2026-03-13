@@ -1248,19 +1248,19 @@ export const aqaBook1MicroTopics: Topic[] = [
     subtopics: [...aqaYear1Paper1Topics[0].subtopics, ...additionalMethodologySubtopics],
   },
   {
-    name: "Chapter 2: Price Determination in a Competitive Market",
+    name: "Chapter 3: Price Determination in Competitive Markets",
     subtopics: [...aqaYear1Paper1Topics[1].subtopics, ...elasticitySubtopics],
   },
   {
-    name: "Chapter 3: Production, Costs & Revenue",
+    name: "Chapter 4: Production, Costs & Revenue",
     subtopics: aqaYear1Paper1Topics[2].subtopics,
   },
   {
-    name: "Chapter 4: Competitive & Concentrated Markets",
+    name: "Chapter 5: Perfect & Imperfectly Competitive Markets & Monopolies",
     subtopics: aqaYear1Paper1Topics[3].subtopics,
   },
   {
-    name: "Chapter 5: Market Failure & Government Intervention",
+    name: "Chapter 8: The Market Mechanism, Market Failure & Government Intervention",
     subtopics: [...aqaYear1Paper1Topics[4].subtopics, ...governmentInterventionExtended],
   },
 ];
@@ -1306,19 +1306,19 @@ const macroMeasurementExtended: import("./edexcelANotes").Subtopic[] = [
 
 export const aqaBook1MacroTopics: Topic[] = [
   {
-    name: "Chapter 6: The Measurement of Macroeconomic Performance",
+    name: "Chapter 9: Measuring Macroeconomic Performance",
     subtopics: [...aqaYear1Paper2Topics[0].subtopics, ...macroMeasurementExtended],
   },
   {
-    name: "Chapter 7: How the Macroeconomy Works",
+    name: "Chapter 10: How the Macroeconomy Works",
     subtopics: [circularFlowSubtopic, ...aqaYear1Paper2Topics[1].subtopics],
   },
   {
-    name: "Chapter 8: Economic Performance",
+    name: "Chapter 11: Economic Performance",
     subtopics: economicPerformanceSubtopics,
   },
   {
-    name: "Chapter 9: Macroeconomic Policy",
+    name: "Chapter 12: Macroeconomic Policy",
     subtopics: aqaYear1Paper2Topics[2].subtopics,
   },
 ];
@@ -1438,27 +1438,27 @@ const extendedMarketFailure: import("./edexcelANotes").Subtopic[] = [
 
 export const aqaBook2MicroTopics: Topic[] = [
   {
-    name: "Chapter 1: Individual Economic Decision Making",
+    name: "Chapter 2: Individual Economic Decision Making",
     subtopics: [utilityTheorySubtopic, imperfectInfoSubtopic, ...aqaYear2Paper1Topics[0].subtopics],
   },
   {
-    name: "Chapter 2: Production, Costs & Revenue (Extended)",
+    name: "Chapter 4: Production, Costs & Revenue (Extended)",
     subtopics: [technologicalChangeSubtopic, ...extendedProductionCosts],
   },
   {
-    name: "Chapter 3: Perfect Competition, Imperfect Competition & Monopoly",
+    name: "Chapter 5: Perfect Competition, Imperfect Competition & Monopoly",
     subtopics: aqaYear2Paper1Topics[1].subtopics,
   },
   {
-    name: "Chapter 4: The Labour Market",
+    name: "Chapter 6: The Labour Market",
     subtopics: [...aqaYear2Paper1Topics[2].subtopics, ...extendedLabourMarket, nmwSubtopic],
   },
   {
-    name: "Chapter 5: Distribution of Income & Wealth, Poverty & Inequality",
+    name: "Chapter 7: Distribution of Income & Wealth, Poverty & Inequality",
     subtopics: [...aqaYear2Paper1Topics[3].subtopics, ...extendedInequalitySubtopics],
   },
   {
-    name: "Chapter 6: Revisiting Market Failure & Government Intervention",
+    name: "Chapter 8: Revisiting Market Failure & Government Intervention",
     subtopics: [...revisitingMarketFailureSubtopics, ...extendedMarketFailure],
   },
 ];
@@ -1539,19 +1539,19 @@ const extendedInternational: import("./edexcelANotes").Subtopic[] = [
 
 export const aqaBook2MacroTopics: Topic[] = [
   {
-    name: "Chapter 7: Revisiting & Developing Macroeconomic Theory",
+    name: "Chapter 10: Revisiting & Developing Macroeconomic Theory",
     subtopics: [...revisitingMacroSubtopics, ...aqaYear2Paper2Topics[0].subtopics, ...extendedMacroTheory],
   },
   {
-    name: "Chapter 8: Financial Markets & Monetary Policy",
+    name: "Chapter 12: Financial Markets & Monetary Policy",
     subtopics: [...financialMarketsExtendedSubtopics, ...aqaYear2Paper2Topics[1].subtopics],
   },
   {
-    name: "Chapter 9: Fiscal Policy & Supply-Side Policies",
+    name: "Chapter 13: Fiscal Policy & Supply-Side Policies",
     subtopics: [...fiscalPolicyExtendedSubtopics, ...extendedSupplySide],
   },
   {
-    name: "Chapter 10: The International Economy",
+    name: "Chapter 14: The International Economy",
     subtopics: [...aqaYear2Paper2Topics[2].subtopics, ...extendedInternational],
   },
 ];
