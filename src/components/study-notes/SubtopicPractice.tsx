@@ -120,9 +120,7 @@ Output ONLY the question text and mark allocation. Nothing else.` }],
                 <Card>
                   <CardContent className="p-4">
                     <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Practice Question</p>
-                    <div className="prose prose-sm max-w-none dark:prose-invert">
-                      <ReactMarkdown>{question}</ReactMarkdown>
-                    </div>
+                    <p className="text-sm leading-relaxed">{question}</p>
                   </CardContent>
                 </Card>
               )}
@@ -152,22 +150,14 @@ Output ONLY the question text and mark allocation. Nothing else.` }],
                 </div>
               )}
 
-              {/* Feedback */}
+              {/* Feedback carousel */}
               {step === "feedback" && feedback && (
-                <Card className="border-primary/20 bg-primary/5">
-                  <CardContent className="p-4">
-                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Feedback</p>
-                    <div className="prose prose-sm max-w-none dark:prose-invert">
-                      <ReactMarkdown>{feedback}</ReactMarkdown>
-                    </div>
-                    <div className="mt-3 flex gap-2">
-                      <Button size="sm" variant="outline" onClick={generateQuestion} className="gap-1.5">
-                        <RotateCcw className="h-3.5 w-3.5" /> Another Question
-                      </Button>
-                      <Button size="sm" variant="ghost" onClick={reset}>Close</Button>
-                    </div>
-                  </CardContent>
-                </Card>
+                <FeedbackCarousel
+                  feedback={feedback}
+                  question={question}
+                  onNewQuestion={generateQuestion}
+                  onClose={reset}
+                />
               )}
             </div>
           </motion.div>
