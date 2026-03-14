@@ -16,10 +16,31 @@ interface DataSet {
 const COLORS = ["hsl(211, 100%, 50%)", "hsl(0, 75%, 55%)", "hsl(140, 60%, 40%)", "hsl(35, 80%, 50%)"];
 
 function normalizeFigureDescription(description: string): string {
-  return description
+  let text = description
     .replace(/\r/g, "")
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
-    .replace(/[\*_`~]/g, "")
+    .replace(/[\*_`~]/g, "");
+
+  // Insert newlines before axis labels and category entries when they're inline
+  text = text
+    .replace(/\s+(Vertical\s+axis\s*:)/gi, "\n$1")
+    .replace(/\s+(Horizontal\s+axis\s*:)/gi, "\n$1")
+    .replace(/\s+((?:Bar|Line)\s+(?:chart|graph)\s+showing\s*:)/gi, "\n$1")
+    .replace(/\s+(Source\s*:)/gi, "\n$1");
+
+  // After "showing:", split inline category:value pairs
+  // Match patterns like "Label: £1.5bn" or "Label: 1.5" preceded by a space
+  const showingMatch = text.match(/(showing\s*:)\s*/i);
+  if (showingMatch) {
+    const idx = text.indexOf(showingMatch[0]) + showingMatch[0].length;
+    const before = text.slice(0, idx);
+    const after = text.slice(idx);
+    // Insert newline before each "SomeLabel: £N" or "SomeLabel: N" pattern
+    const split = after.replace(/\s+(?=[\w\s&/()']+:\s*[£$€]?\s*\d)/g, "\n");
+    text = before + "\n" + split;
+  }
+
+  return text
     .split("\n")
     .map((line) => line.replace(/^>\s?/, "").trimEnd())
     .join("\n");
