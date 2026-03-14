@@ -7,13 +7,12 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useSubject, type Subject } from "@/contexts/SubjectContext";
 
 const baseNavItems = [
-  { to: "/", label: "Home", icon: GraduationCap },
-  { to: "/predicted", label: "Predicted Papers", icon: Sparkles },
+  { to: "/notes", label: "Notes", icon: BookOpen },
   { to: "/tutor", label: "AI Tutor", icon: MessageCircle },
   { to: "/grader", label: "Grader", icon: PenTool },
   { to: "/practice", label: "Practice", icon: Brain },
   { to: "/diagram-practice", label: "Diagrams", icon: PenTool },
-  { to: "/notes", label: "Notes", icon: BookOpen },
+  { to: "/predicted", label: "Predicted Papers", icon: Sparkles },
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
 ];
 
@@ -42,29 +41,26 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       {/* Frosted glass navbar */}
-      <header className="sticky top-0 z-50 bg-[hsl(240,10%,8%/0.92)] backdrop-blur-2xl border-b border-[hsl(246,8%,20%)]">
-        <div className="max-w-[1080px] mx-auto flex h-12 items-center justify-between px-5 lg:px-0">
-          <Link to="/" className="flex items-center gap-2 shrink-0">
-            <div className="h-7 w-7 rounded-lg bg-primary flex items-center justify-center">
-              <GraduationCap className="h-4 w-4 text-primary-foreground" />
+      <header className="sticky top-0 z-50 bg-background border-b border-border">
+        <div className="max-w-[1280px] mx-auto flex h-14 items-center justify-between px-5 lg:px-6">
+          <Link to="/" className="flex items-center shrink-0">
+            <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
+              <GraduationCap className="h-4.5 w-4.5 text-primary-foreground" />
             </div>
-            <span className="text-sm font-semibold text-[hsl(240,7%,93%)] tracking-tight">
-              ExamAce
-            </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-0.5">
-            {navItems.slice(1).map((item) => {
+          <nav className="hidden lg:flex items-center gap-6 ml-8">
+            {navItems.map((item) => {
               const isActive = location.pathname === item.to;
               return (
                 <Link
                   key={item.to}
                   to={item.to}
                   className={cn(
-                    "px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200",
+                    "text-sm font-medium transition-colors",
                     isActive
-                      ? "text-primary-foreground bg-primary/20 text-[hsl(239,28%,85%)]"
-                      : "text-[hsl(240,7%,60%)] hover:text-[hsl(240,7%,90%)] hover:bg-[hsl(246,8%,15%)]"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
                   )}
                 >
                   {item.label}
@@ -73,18 +69,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             })}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-3 ml-auto">
             {/* Subject pill switcher */}
-            <div className="flex items-center bg-[hsl(246,8%,14%)] rounded-full p-0.5 gap-0.5">
+            <div className="flex items-center bg-muted rounded-full p-1 gap-0.5">
               {SUBJECTS.map((s) => (
                 <button
                   key={s.value}
                   onClick={() => setSubject(s.value)}
                   className={cn(
-                    "px-2.5 py-1 rounded-full text-[10px] font-semibold transition-all duration-200",
+                    "px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200",
                     subject === s.value
                       ? "bg-primary text-primary-foreground shadow-sm"
-                      : "text-[hsl(240,7%,55%)] hover:text-[hsl(240,7%,80%)]"
+                      : "text-muted-foreground hover:text-foreground"
                   )}
                 >
                   {s.label}
@@ -92,25 +88,23 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               ))}
             </div>
 
-            <div className="w-px h-5 bg-[hsl(246,8%,20%)] mx-1" />
-
             {!subscribed && (
-              <Link to="/pricing" className="text-[hsl(240,7%,60%)] hover:text-[hsl(240,7%,90%)] text-xs font-medium transition-colors">
+              <Link to="/pricing" className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors">
                 Pricing
               </Link>
             )}
             {user ? (
-              <button onClick={signOut} className="text-[hsl(240,7%,60%)] hover:text-[hsl(240,7%,90%)] text-xs font-medium transition-colors">
+              <button onClick={signOut} className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors">
                 Sign Out
               </button>
             ) : (
-              <Link to="/auth" className="text-xs font-medium px-3 py-1.5 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
+              <Link to="/auth" className="text-sm font-medium px-4 py-1.5 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
                 Sign In
               </Link>
             )}
           </div>
 
-          <button className="lg:hidden text-[hsl(240,7%,75%)]" onClick={() => setMobileOpen(!mobileOpen)}>
+          <button className="lg:hidden text-muted-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {mobileOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
@@ -123,9 +117,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <nav className="lg:hidden bg-[hsl(240,10%,8%)] border-t border-[hsl(246,8%,18%)] px-4 pb-4">
-            {/* Mobile subject switcher */}
-            <div className="flex flex-wrap items-center bg-[hsl(246,8%,14%)] rounded-xl p-1 gap-0.5 my-3">
+          <nav className="lg:hidden bg-background border-t border-border px-4 pb-4">
+            <div className="flex flex-wrap items-center bg-muted rounded-xl p-1 gap-0.5 my-3">
               {SUBJECTS.map((s) => (
                 <button
                   key={s.value}
@@ -134,7 +127,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     "flex-1 px-2 py-1.5 rounded-lg text-xs font-semibold transition-colors text-center min-w-[50px]",
                     subject === s.value
                       ? "bg-primary text-primary-foreground"
-                      : "text-[hsl(240,7%,55%)]"
+                      : "text-muted-foreground"
                   )}
                 >
                   {s.label}
@@ -142,6 +135,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               ))}
             </div>
 
+            <Link
+              to="/"
+              onClick={() => setMobileOpen(false)}
+              className={cn(
+                "flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors",
+                location.pathname === "/"
+                  ? "text-foreground bg-primary/15"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              <GraduationCap className="h-4 w-4" /> Home
+            </Link>
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = location.pathname === item.to;
@@ -153,8 +158,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   className={cn(
                     "flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors",
                     isActive
-                      ? "text-[hsl(240,7%,93%)] bg-primary/15"
-                      : "text-[hsl(240,7%,60%)] hover:text-[hsl(240,7%,90%)]"
+                      ? "text-foreground bg-primary/15"
+                      : "text-muted-foreground hover:text-foreground"
                   )}
                 >
                   <Icon className="h-4 w-4" /> {item.label}
@@ -162,16 +167,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               );
             })}
             {!subscribed && (
-              <Link to="/pricing" onClick={() => setMobileOpen(false)} className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm text-[hsl(240,7%,60%)] hover:text-[hsl(240,7%,90%)]">
+              <Link to="/pricing" onClick={() => setMobileOpen(false)} className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm text-muted-foreground hover:text-foreground">
                 <Crown className="h-4 w-4" /> Pricing
               </Link>
             )}
             {user ? (
-              <button onClick={() => { signOut(); setMobileOpen(false); }} className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm text-[hsl(240,7%,60%)] hover:text-[hsl(240,7%,90%)] text-left">
+              <button onClick={() => { signOut(); setMobileOpen(false); }} className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm text-muted-foreground hover:text-foreground text-left">
                 <LogOut className="h-4 w-4" /> Sign Out
               </button>
             ) : (
-              <Link to="/auth" onClick={() => setMobileOpen(false)} className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm text-[hsl(240,7%,60%)] hover:text-[hsl(240,7%,90%)]">
+              <Link to="/auth" onClick={() => setMobileOpen(false)} className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm text-muted-foreground hover:text-foreground">
                 <LogIn className="h-4 w-4" /> Sign In
               </Link>
             )}
@@ -182,22 +187,22 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <main className="flex-1">{children}</main>
 
       {/* Footer */}
-      <footer className="bg-[hsl(240,10%,8%)] border-t border-[hsl(246,8%,18%)]">
-        <div className="max-w-[1080px] mx-auto px-5 py-10">
+      <footer className="bg-card border-t border-border">
+        <div className="max-w-[1280px] mx-auto px-5 py-10">
           <div className="flex items-center gap-2 mb-4">
             <div className="h-6 w-6 rounded-md bg-primary flex items-center justify-center">
               <GraduationCap className="h-3.5 w-3.5 text-primary-foreground" />
             </div>
-            <span className="text-sm font-semibold text-[hsl(240,7%,80%)]">ExamAce</span>
+            <span className="text-sm font-semibold text-foreground">ExamAce</span>
           </div>
-          <p className="text-xs text-[hsl(240,7%,45%)] leading-relaxed max-w-2xl">
+          <p className="text-xs text-muted-foreground leading-relaxed max-w-2xl">
             ExamAce provides AI-powered revision tools for A-Level and GCSE Economics across AQA, Edexcel A, Edexcel B, OCR, Cambridge International, AQA GCSE, and CAIE IGCSE exam boards. Past papers, predicted papers, AI tutoring, answer grading, and practice questions in one place.
           </p>
-          <div className="border-t border-[hsl(246,8%,18%)] mt-6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2">
-            <p className="text-xs text-[hsl(240,7%,40%)]">© 2026 ExamAce. All rights reserved.</p>
+          <div className="border-t border-border mt-6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <p className="text-xs text-muted-foreground">© 2026 ExamAce. All rights reserved.</p>
             <div className="flex items-center gap-4">
-              <Link to="/pricing" className="text-xs text-[hsl(240,7%,50%)] hover:text-[hsl(240,7%,80%)] transition-colors">Pricing</Link>
-              <Link to="/auth" className="text-xs text-[hsl(240,7%,50%)] hover:text-[hsl(240,7%,80%)] transition-colors">Sign In</Link>
+              <Link to="/pricing" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Pricing</Link>
+              <Link to="/auth" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Sign In</Link>
             </div>
           </div>
         </div>
