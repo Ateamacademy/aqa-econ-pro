@@ -292,7 +292,8 @@ function extractFigureBlocks(text: string): FigureSegment[] {
     }
 
     const inlineDesc = figTitle.replace(/^Figure\s+\d+\s*:?\s*/i, "").trim();
-    const includeInlineDesc = /(?:vertical|horizontal|x|y)\s*-?\s*axis|values?\s*:|\d\s*(?:[:=]|\(|[–-])\s*[£$€]?\s*\d/i.test(inlineDesc);
+    // Always include inline description if it has meaningful content (>10 chars or contains key terms)
+    const includeInlineDesc = inlineDesc.length > 10 || /(?:vertical|horizontal|x|y)\s*-?\s*axis|values?\s*:|\d\s*(?:[:=]|\(|[–-])\s*[£$€]?\s*\d|demand|supply|line\s+[a-z]/i.test(inlineDesc);
     const desc = [includeInlineDesc ? inlineDesc : "", ...figLines].filter(Boolean).join("\n").trim();
     const normalizedDesc = normalizeFigureText(desc);
 
