@@ -109,15 +109,15 @@ function RenderedTable({ markdown }: { markdown: string }) {
 function parseFigureAsDiagram(title: string, desc: string): import("./EconDiagramSVG").DiagramProps | null {
   const lower = desc.toLowerCase();
   
-  // Detect S&D curve references: D₀/S₀, D0/S0, demand/supply curves
-  const hasCurveRefs = /[ds][₀₁01]/i.test(desc) || (/demand/i.test(lower) && /supply/i.test(lower) && /shift/i.test(lower));
+  // Detect S&D curve references: D₀/S₀, D0/S0, D₁/S₁, or demand/supply curve descriptions
+  const hasCurveRefs = /[ds][₀₁01₂2]/i.test(desc) || (/demand/i.test(lower) && /supply/i.test(lower));
   const hasAxes = /(?:vertical|horizontal)\s*axis/i.test(desc);
   
   if (!hasCurveRefs || !hasAxes) return null;
   
   // Extract axis labels
-  const vMatch = desc.match(/vertical\s*axis:\s*(.+)/i);
-  const hMatch = desc.match(/horizontal\s*axis:\s*(.+)/i);
+  const vMatch = desc.match(/vertical\s*axis:\s*(.+?)(?:\s+horizontal|\s*$)/i);
+  const hMatch = desc.match(/horizontal\s*axis:\s*(.+?)(?:\s+[DS][₀₁01₂2]|\s+The\s|\s*$)/i);
   const yAxis = vMatch?.[1]?.trim() || "Price (P)";
   const xAxis = hMatch?.[1]?.trim() || "Quantity (Q)";
   
@@ -135,7 +135,6 @@ function parseFigureAsDiagram(title: string, desc: string): import("./EconDiagra
   const demandMorePronounced = /demand\b[^.]*more\s+pronounced/i.test(lower);
   
   if (bothShift && demandMorePronounced) {
-    // Both shift right but demand more – net effect is demand shift right
     shift = "Demand shifts right (more pronounced than supply shift)";
   } else if (demandRight) {
     shift = "Demand shifts right";
@@ -147,26 +146,35 @@ function parseFigureAsDiagram(title: string, desc: string): import("./EconDiagra
     shift = "Supply shifts left";
   }
   
-  if (!shift) return null;
+  // Allow diagrams WITHOUT shifts — show initial equilibrium only
+  // (no shift is valid for "reference" figures that students must then analyse)
   
   // Extract conclusion from description
   const leadingTo = desc.match(/leading\s+to\s+(.+?)(?:\.|$)/i);
   const resultIn = desc.match(/result(?:s|ing)\s+in\s+(.+?)(?:\.|$)/i);
   conclusion = leadingTo?.[1]?.trim() || resultIn?.[1]?.trim() || "";
   
+  // Extract equilibrium label
+  const eqMatch = desc.match(/equilibrium[^.]*(?:are|is|at)\s+([EePp][\d₀₁₂])/i);
+  const eqLabel = eqMatch?.[1] || (shift ? "E₀" : "E₁");
+  
   // Extract source
   const sourceMatch = desc.match(/Source:\s*(.+)/i);
+  
+  // Determine curve labels from text
+  const dLabel = /D₁/i.test(desc) ? "D₁" : "D₀";
+  const sLabel = /S₁/i.test(desc) ? "S₁" : "S₀";
   
   return {
     type: title,
     xAxis,
     yAxis,
-    initialCurves: "D₀ (original demand) and S₀ (original supply)",
-    initialEquilibrium: "E₀ at intersection of D₀ and S₀",
-    shift,
-    newEquilibrium: "E₁ at new intersection",
+    initialCurves: `${dLabel} (demand) and ${sLabel} (supply)`,
+    initialEquilibrium: shift ? `E₀ at intersection of ${dLabel} and ${sLabel}` : `${eqLabel} at intersection of ${dLabel} and ${sLabel}`,
+    shift: shift || "",
+    newEquilibrium: shift ? "E₁ at new intersection" : "",
     shadedArea: "",
-    conclusion: conclusion || (sourceMatch ? `${conclusion} (${sourceMatch[0]})` : ""),
+    conclusion: conclusion || (sourceMatch ? sourceMatch[0] : ""),
   };
 }
 
