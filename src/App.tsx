@@ -26,6 +26,7 @@ const Practice = lazy(() => import("./pages/Practice"));
 const DiagramPractice = lazy(() => import("./pages/DiagramPractice"));
 const StudyNotes = lazy(() => import("./pages/StudyNotes"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
+const ExamReadiness = lazy(() => import("./pages/ExamReadiness"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 const PredictedPapers = lazy(() => import("./pages/PredictedPapers"));
 
