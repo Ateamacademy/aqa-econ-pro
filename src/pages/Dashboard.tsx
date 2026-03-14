@@ -13,6 +13,7 @@ import ActionCards from "@/components/dashboard/ActionCards";
 import PredictedGrade from "@/components/dashboard/PredictedGrade";
 import DailyGoalBanner from "@/components/dashboard/DailyGoalBanner";
 import ScoreDelta from "@/components/dashboard/ScoreDelta";
+import GradientMeshBg from "@/components/dashboard/GradientMeshBg";
 import { motion } from "framer-motion";
 import { Lock, Target, Zap, BarChart3, Award, Brain, PenTool, FileText, Flame, BookOpen, GraduationCap, Crown } from "lucide-react";
 import { Button } from "@/components/ui/button";
