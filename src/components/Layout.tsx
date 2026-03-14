@@ -41,29 +41,26 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       {/* Frosted glass navbar */}
-      <header className="sticky top-0 z-50 bg-[hsl(240,10%,8%/0.92)] backdrop-blur-2xl border-b border-[hsl(246,8%,20%)]">
-        <div className="max-w-[1080px] mx-auto flex h-12 items-center justify-between px-5 lg:px-0">
-          <Link to="/" className="flex items-center gap-2 shrink-0">
-            <div className="h-7 w-7 rounded-lg bg-primary flex items-center justify-center">
-              <GraduationCap className="h-4 w-4 text-primary-foreground" />
+      <header className="sticky top-0 z-50 bg-background border-b border-border">
+        <div className="max-w-[1280px] mx-auto flex h-14 items-center justify-between px-5 lg:px-6">
+          <Link to="/" className="flex items-center shrink-0">
+            <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
+              <GraduationCap className="h-4.5 w-4.5 text-primary-foreground" />
             </div>
-            <span className="text-sm font-semibold text-[hsl(240,7%,93%)] tracking-tight">
-              ExamAce
-            </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-0.5">
-            {navItems.slice(1).map((item) => {
+          <nav className="hidden lg:flex items-center gap-6 ml-8">
+            {navItems.map((item) => {
               const isActive = location.pathname === item.to;
               return (
                 <Link
                   key={item.to}
                   to={item.to}
                   className={cn(
-                    "px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200",
+                    "text-sm font-medium transition-colors",
                     isActive
-                      ? "text-primary-foreground bg-primary/20 text-[hsl(239,28%,85%)]"
-                      : "text-[hsl(240,7%,60%)] hover:text-[hsl(240,7%,90%)] hover:bg-[hsl(246,8%,15%)]"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
                   )}
                 >
                   {item.label}
@@ -72,18 +69,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             })}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-3 ml-auto">
             {/* Subject pill switcher */}
-            <div className="flex items-center bg-[hsl(246,8%,14%)] rounded-full p-0.5 gap-0.5">
+            <div className="flex items-center bg-muted rounded-full p-1 gap-0.5">
               {SUBJECTS.map((s) => (
                 <button
                   key={s.value}
                   onClick={() => setSubject(s.value)}
                   className={cn(
-                    "px-2.5 py-1 rounded-full text-[10px] font-semibold transition-all duration-200",
+                    "px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200",
                     subject === s.value
                       ? "bg-primary text-primary-foreground shadow-sm"
-                      : "text-[hsl(240,7%,55%)] hover:text-[hsl(240,7%,80%)]"
+                      : "text-muted-foreground hover:text-foreground"
                   )}
                 >
                   {s.label}
@@ -91,25 +88,23 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               ))}
             </div>
 
-            <div className="w-px h-5 bg-[hsl(246,8%,20%)] mx-1" />
-
             {!subscribed && (
-              <Link to="/pricing" className="text-[hsl(240,7%,60%)] hover:text-[hsl(240,7%,90%)] text-xs font-medium transition-colors">
+              <Link to="/pricing" className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors">
                 Pricing
               </Link>
             )}
             {user ? (
-              <button onClick={signOut} className="text-[hsl(240,7%,60%)] hover:text-[hsl(240,7%,90%)] text-xs font-medium transition-colors">
+              <button onClick={signOut} className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors">
                 Sign Out
               </button>
             ) : (
-              <Link to="/auth" className="text-xs font-medium px-3 py-1.5 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
+              <Link to="/auth" className="text-sm font-medium px-4 py-1.5 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
                 Sign In
               </Link>
             )}
           </div>
 
-          <button className="lg:hidden text-[hsl(240,7%,75%)]" onClick={() => setMobileOpen(!mobileOpen)}>
+          <button className="lg:hidden text-muted-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {mobileOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
