@@ -1,15 +1,37 @@
-export default function PredictedGrade() {
+interface Props {
+  score: number;
+}
+
+function predictedGrade(score: number): string {
+  if (score >= 80) return "A*";
+  if (score >= 70) return "A";
+  if (score >= 60) return "B";
+  if (score >= 50) return "C";
+  if (score >= 40) return "D";
+  return "E";
+}
+
+function gradeBoundary(grade: string): number {
+  const map: Record<string, number> = { "A*": 80, A: 70, B: 60, C: 50, D: 40, E: 30 };
+  return map[grade] ?? 30;
+}
+
+export default function PredictedGrade({ score }: Props) {
+  const grade = predictedGrade(score);
+  const boundary = gradeBoundary(grade);
+
   return (
     <div className="rounded-2xl bg-[#1a1a2e] border border-[#2a2a4a] p-5">
       <h3 className="text-[#64748b] text-xs font-medium mb-1">Predicted Grade</h3>
       <div className="flex items-baseline gap-2">
-        <span className="text-4xl font-bold text-[#f1f5f9]">A</span>
+        <span className="text-4xl font-bold text-[#f1f5f9]">{grade}</span>
         <div className="flex flex-col">
-          <span className="text-[10px] text-[#64748b]">Boundary: 72%</span>
-          <span className="text-[10px] text-[#22c55e] font-medium">Your avg: 78%</span>
+          <span className="text-[10px] text-[#64748b]">Boundary: {boundary}%</span>
+          <span className={`text-[10px] font-medium ${score >= boundary ? "text-[#22c55e]" : "text-[#f59e0b]"}`}>
+            Your avg: {score}%
+          </span>
         </div>
       </div>
-      {/* Mini sparkline */}
       <svg viewBox="0 0 120 30" className="w-full h-8 mt-3">
         <polyline
           points="0,25 15,22 30,20 45,18 60,16 75,13 90,10 105,8 120,5"

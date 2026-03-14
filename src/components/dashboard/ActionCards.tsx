@@ -1,35 +1,30 @@
 import { useNavigate } from "react-router-dom";
 
-const actions = [
-  {
-    icon: "📊",
-    label: "Practice elasticity diagrams",
-    points: 4,
-    accent: "#6366f1",
-    to: "/diagram-practice",
-  },
-  {
-    icon: "📝",
-    label: "Complete a predicted paper",
-    points: 6,
-    accent: "#a855f7",
-    to: "/predicted",
-  },
-  {
-    icon: "✍️",
-    label: "Submit an essay for grading",
-    points: 3,
-    accent: "#ec4899",
-    to: "/grader",
-  },
-];
+interface ActionItem {
+  icon: string;
+  label: string;
+  points: number;
+  accent: string;
+  to: string;
+}
 
-export default function ActionCards() {
+interface Props {
+  actions: ActionItem[];
+}
+
+export default function ActionCards({ actions }: Props) {
   const navigate = useNavigate();
+
+  // Fallback if no recommendations
+  const items = actions.length > 0 ? actions : [
+    { icon: "📊", label: "Practice elasticity diagrams", points: 4, accent: "#6366f1", to: "/diagram-practice" },
+    { icon: "📝", label: "Complete a predicted paper", points: 6, accent: "#a855f7", to: "/predicted" },
+    { icon: "✍️", label: "Submit an essay for grading", points: 3, accent: "#ec4899", to: "/grader" },
+  ];
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-      {actions.map((a) => (
+      {items.map((a) => (
         <div
           key={a.label}
           onClick={() => navigate(a.to)}

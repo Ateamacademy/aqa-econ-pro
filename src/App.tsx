@@ -26,7 +26,6 @@ const Practice = lazy(() => import("./pages/Practice"));
 const DiagramPractice = lazy(() => import("./pages/DiagramPractice"));
 const StudyNotes = lazy(() => import("./pages/StudyNotes"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
-const ExamReadiness = lazy(() => import("./pages/ExamReadiness"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 const PredictedPapers = lazy(() => import("./pages/PredictedPapers"));
 
@@ -52,7 +51,6 @@ const App = () => (
               <Route path="/diagram-practice" element={<DiagramPractice />} />
               <Route path="/notes" element={<StudyNotes />} />
               <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/readiness" element={<ExamReadiness />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/reset-password" element={<ResetPassword />} />
               <Route path="/pricing" element={<Pricing />} />

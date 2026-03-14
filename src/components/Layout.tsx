@@ -13,8 +13,7 @@ const baseNavItems = [
   { to: "/practice", label: "Practice", icon: Brain },
   { to: "/diagram-practice", label: "Diagrams", icon: PenTool },
   { to: "/predicted", label: "Predicted Papers", icon: Sparkles },
-  { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { to: "/readiness", label: "Readiness", icon: TrendingUp },
+  { to: "/dashboard", label: "Dashboard", icon: TrendingUp },
 ];
 
 function getNavItems(_subject: Subject) {
