@@ -415,6 +415,29 @@ export function FigureChart({ title, description }: FigureChartProps) {
         </div>
       );
     }
+    // Fallback: render as a styled figure info box for narrative descriptions
+    const hasAxes = /(?:vertical|horizontal)\s*axis/i.test(description);
+    const hasLines = /Line\s+[A-Z]/i.test(description);
+    if (hasAxes || hasLines) {
+      const lines = description.split(/\n/).map(l => l.trim()).filter(Boolean);
+      return (
+        <div className="my-6 rounded-xl border border-border bg-card p-5">
+          <h4 className="text-sm font-semibold text-foreground mb-3">{title}</h4>
+          <div className="bg-muted/30 rounded-lg p-4 space-y-1.5">
+            {lines.map((line, i) => {
+              if (/^source:/i.test(line)) {
+                return <p key={i} className="text-[11px] italic text-muted-foreground mt-2">{line}</p>;
+              }
+              if (/^(vertical|horizontal)\s*axis:/i.test(line) || /^Line\s+[A-Z]/i.test(line)) {
+                return <p key={i} className="text-sm text-foreground/90"><span className="font-semibold">{line.split(':')[0]}:</span>{line.slice(line.indexOf(':') + 1)}</p>;
+              }
+              return <p key={i} className="text-sm text-foreground/80">{line}</p>;
+            })}
+          </div>
+          {sourceLine && <p className="text-[11px] italic text-muted-foreground mt-2">{sourceLine}</p>}
+        </div>
+      );
+    }
     return null;
   }
 
