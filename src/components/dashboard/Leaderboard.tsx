@@ -1,16 +1,21 @@
 import { Trophy } from "lucide-react";
 
-const students = [
-  { rank: 1, name: "Alex", score: 83, isYou: false },
-  { rank: 2, name: "You", score: 78, isYou: true },
-  { rank: 3, name: "Jamie", score: 71, isYou: false },
-  { rank: 4, name: "Sam", score: 65, isYou: false },
-  { rank: 5, name: "Priya", score: 60, isYou: false },
-];
+interface Props {
+  userScore: number;
+}
 
-const avatarColors = ["#ec4899", "#6366f1", "#a855f7", "#22c55e", "#f59e0b"];
+export default function Leaderboard({ userScore }: Props) {
+  // Generate mock peers around the user's score
+  const students = [
+    { rank: 1, name: "Alex", score: Math.min(userScore + 5, 100), isYou: false },
+    { rank: 2, name: "You", score: userScore, isYou: true },
+    { rank: 3, name: "Jamie", score: Math.max(userScore - 7, 0), isYou: false },
+    { rank: 4, name: "Sam", score: Math.max(userScore - 13, 0), isYou: false },
+    { rank: 5, name: "Priya", score: Math.max(userScore - 18, 0), isYou: false },
+  ].sort((a, b) => b.score - a.score).map((s, i) => ({ ...s, rank: i + 1 }));
 
-export default function Leaderboard() {
+  const avatarColors = ["#ec4899", "#6366f1", "#a855f7", "#22c55e", "#f59e0b"];
+
   return (
     <div className="rounded-2xl bg-[#1a1a2e] border border-[#2a2a4a] p-5">
       <h3 className="text-[#f1f5f9] font-semibold text-sm mb-4">Leaderboard</h3>

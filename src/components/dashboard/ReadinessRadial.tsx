@@ -1,21 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { motion, useSpring, useTransform } from "framer-motion";
 
-export default function ReadinessRadial() {
-  const [progress, setProgress] = useState(0);
-  const target = 78;
+interface Props {
+  score: number;
+  stageName: string;
+}
+
+export default function ReadinessRadial({ score, stageName }: Props) {
   const radius = 90;
   const stroke = 10;
   const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (progress / 100) * circumference;
+
+  const springVal = useSpring(0, { stiffness: 40, damping: 20 });
+  const displayNum = useTransform(springVal, (v) => Math.round(v));
+  const offset = useTransform(springVal, (v) => circumference - (v / 100) * circumference);
+  const [displayScore, setDisplayScore] = useState(0);
 
   useEffect(() => {
-    const timer = setTimeout(() => setProgress(target), 100);
-    return () => clearTimeout(timer);
-  }, []);
+    springVal.set(score);
+    const unsub = displayNum.on("change", (v) => setDisplayScore(v));
+    return unsub;
+  }, [score, springVal, displayNum]);
 
   return (
     <div className="relative flex flex-col items-center justify-center">
-      {/* Outer glow */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div
           className="rounded-full"
@@ -46,7 +54,6 @@ export default function ReadinessRadial() {
             </feMerge>
           </filter>
         </defs>
-        {/* Background track */}
         <circle
           cx={radius + stroke + 5}
           cy={radius + stroke + 5}
@@ -55,8 +62,7 @@ export default function ReadinessRadial() {
           stroke="#2a2a4a"
           strokeWidth={stroke}
         />
-        {/* Progress ring */}
-        <circle
+        <motion.circle
           cx={radius + stroke + 5}
           cy={radius + stroke + 5}
           r={radius}
@@ -65,28 +71,18 @@ export default function ReadinessRadial() {
           strokeWidth={stroke}
           strokeLinecap="round"
           strokeDasharray={circumference}
-          strokeDashoffset={offset}
+          style={{ strokeDashoffset: offset }}
           filter="url(#glow)"
-          style={{
-            transition: "stroke-dashoffset 1.5s ease-out",
-          }}
         />
       </svg>
 
-      {/* Centre text */}
       <div className="absolute flex flex-col items-center">
         <div className="flex items-baseline">
-          <span className="text-5xl font-bold text-[#f1f5f9] tabular-nums">{progress}</span>
+          <span className="text-5xl font-bold text-[#f1f5f9] tabular-nums">{displayScore}</span>
           <span className="text-xl font-semibold text-[#a855f7] ml-0.5">%</span>
         </div>
-        <span className="text-sm text-[#64748b] mt-1 font-medium">Summit Approach</span>
+        <span className="text-sm text-[#64748b] mt-1 font-medium">{stageName}</span>
       </div>
-
-      {/* Shimmer overlay */}
-      <div
-        className="absolute inset-0 rounded-full pointer-events-none overflow-hidden"
-        style={{ animation: "shimmer 3s ease-in-out infinite" }}
-      />
     </div>
   );
 }

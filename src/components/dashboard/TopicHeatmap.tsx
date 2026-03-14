@@ -1,21 +1,11 @@
-const topics = [
-  { name: "Supply & Demand", mastery: 92 },
-  { name: "Elasticity", mastery: 85 },
-  { name: "Market Failure", mastery: 78 },
-  { name: "Externalities", mastery: 70 },
-  { name: "Gov Intervention", mastery: 65 },
-  { name: "Labour Markets", mastery: 45 },
-  { name: "Monetary Policy", mastery: 88 },
-  { name: "Fiscal Policy", mastery: 72 },
-  { name: "International Trade", mastery: 55 },
-  { name: "Development Econ", mastery: 38 },
-  { name: "Competition", mastery: 80 },
-  { name: "Business Objectives", mastery: 60 },
-  { name: "Macro Objectives", mastery: 75 },
-  { name: "Inflation", mastery: 82 },
-  { name: "Exchange Rates", mastery: 42 },
-  { name: "Growth", mastery: 68 },
-];
+interface TopicItem {
+  name: string;
+  mastery: number;
+}
+
+interface Props {
+  topics: TopicItem[];
+}
 
 function getCellColor(mastery: number) {
   if (mastery >= 80) return "#a855f7";
@@ -28,13 +18,13 @@ function getCellGlow(mastery: number) {
   return "none";
 }
 
-export default function TopicHeatmap() {
+export default function TopicHeatmap({ topics }: Props) {
   return (
     <div className="rounded-2xl bg-[#1a1a2e] border border-[#2a2a4a] p-5">
       <h3 className="text-[#f1f5f9] font-semibold text-sm mb-4">Topic Mastery</h3>
       <div className="grid grid-cols-4 gap-2">
         {topics.map((t) => {
-          const isWeak = t.mastery < 45;
+          const isWeak = t.mastery > 0 && t.mastery < 45;
           return (
             <div
               key={t.name}
