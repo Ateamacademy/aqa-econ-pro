@@ -305,6 +305,7 @@ function extractFigureBlocks(text: string): FigureSegment[] {
     }
 
     const hasLineData = /Line\s+\d+/i.test(normalizedDesc) && /\d{4}:\s*[\d.]+/i.test(normalizedDesc);
+    const hasNamedLineData = /Line\s+[A-Z]/i.test(normalizedDesc) && /(?:vertical|horizontal)\s*axis/i.test(normalizedDesc);
     const hasSingleSeriesData = /(?:vertical|horizontal|x|y)\s*-?\s*axis:/i.test(normalizedDesc) && /(?:\d{4}|Q\d|\w+)\s*:\s*[£$€]?\s*[-+]?\d[\d,.]*/i.test(normalizedDesc);
     const hasMarkdownTable = /\|.*\|.*\|/.test(normalizedDesc) && /\|\s*[\d,.]+\s*\|/.test(normalizedDesc);
     const hasBulletData = /(?:vertical|horizontal|x|y)\s*-?\s*axis:/i.test(normalizedDesc) && /(?:at\s+[\d.]+%?|[\d.]+%?\s*(?:interest|rate))[^£$€\d]*[£$€]?\s*[\d,]+/i.test(normalizedDesc);
@@ -314,7 +315,7 @@ function extractFigureBlocks(text: string): FigureSegment[] {
     const hasLoosePairs = hasLooseLabelValueData(normalizedDesc);
     const hasLabelValueLines = /(?:^|\n)\s*[-•*]?\s*[^:\n]{2,}\s*:\s*[£$€]?\s*[-+]?\d[\d,]*(?:\.\d+)?/i.test(normalizedDesc);
 
-    if (hasLineData || hasSingleSeriesData || hasMarkdownTable || hasBulletData || hasTrendNarrative || hasValuesTupleData || hasCategoryValueList || hasLoosePairs || hasLabelValueLines) {
+    if (hasLineData || hasNamedLineData || hasSingleSeriesData || hasMarkdownTable || hasBulletData || hasTrendNarrative || hasValuesTupleData || hasCategoryValueList || hasLoosePairs || hasLabelValueLines) {
       flushText();
       segments.push({ type: "figure", content: "", figTitle, figDesc: normalizedDesc });
       i = j;
