@@ -7,13 +7,12 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useSubject, type Subject } from "@/contexts/SubjectContext";
 
 const baseNavItems = [
-  { to: "/", label: "Home", icon: GraduationCap },
-  { to: "/predicted", label: "Predicted Papers", icon: Sparkles },
+  { to: "/notes", label: "Notes", icon: BookOpen },
   { to: "/tutor", label: "AI Tutor", icon: MessageCircle },
   { to: "/grader", label: "Grader", icon: PenTool },
   { to: "/practice", label: "Practice", icon: Brain },
   { to: "/diagram-practice", label: "Diagrams", icon: PenTool },
-  { to: "/notes", label: "Notes", icon: BookOpen },
+  { to: "/predicted", label: "Predicted Papers", icon: Sparkles },
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
 ];
 
