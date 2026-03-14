@@ -193,13 +193,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="h-6 w-6 rounded-md bg-primary flex items-center justify-center">
               <GraduationCap className="h-3.5 w-3.5 text-primary-foreground" />
             </div>
-            <span className="text-sm font-semibold text-foreground">ExamAce</span>
+            <span className="text-sm font-semibold text-foreground">Econ Rev</span>
           </div>
           <p className="text-xs text-muted-foreground leading-relaxed max-w-2xl">
-            ExamAce provides AI-powered revision tools for A-Level and GCSE Economics across AQA, Edexcel A, Edexcel B, OCR, Cambridge International, AQA GCSE, and CAIE IGCSE exam boards. Past papers, predicted papers, AI tutoring, answer grading, and practice questions in one place.
+            Econ Rev provides AI-powered revision tools for A-Level and GCSE Economics across AQA, Edexcel A, Edexcel B, OCR, Cambridge International, AQA GCSE, and CAIE IGCSE exam boards. Past papers, predicted papers, AI tutoring, answer grading, and practice questions in one place.
           </p>
           <div className="border-t border-border mt-6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2">
-            <p className="text-xs text-muted-foreground">© 2026 ExamAce. All rights reserved.</p>
+            <p className="text-xs text-muted-foreground">© 2026 Econ Rev. All rights reserved.</p>
             <div className="flex items-center gap-4">
               <Link to="/pricing" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Pricing</Link>
               <Link to="/auth" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Sign In</Link>
