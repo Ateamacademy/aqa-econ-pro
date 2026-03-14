@@ -319,12 +319,51 @@ function parseLooseLabelValueData(description: string): { dataSets: DataSet[]; a
   };
 }
 
+/**
+ * Parse inline year:value pairs like "2004: 4.8 2009: 5.4 2014: 5.0 2019: 7.0 2023: 7.5"
+ */
+function parseInlineYearValueData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
+  const axisLabels = { x: "", y: "" };
+  const lines = description.split("\n").map(l => l.trim());
+
+  for (const line of lines) {
+    const vMatch = line.match(/(?:vertical|y)\s*-?\s*axis\s*:\s*(.+?)(?=\s+(?:horizontal|x)\s*-?\s*axis|\s*$)/i);
+    if (vMatch) axisLabels.y = vMatch[1].trim();
+    const hMatch = line.match(/(?:horizontal|x)\s*-?\s*axis\s*:\s*(.+?)(?=\s+(?:vertical|y)\s*-?\s*axis|\s+(?:line|bar|showing)|\s*$)/i);
+    if (hMatch) axisLabels.x = hMatch[1].trim();
+  }
+
+  // Match patterns like "2004: 4.8" repeated inline
+  const fullText = lines.join(" ");
+  const pairRegex = /(\d{4})\s*:\s*([\d,.]+)/g;
+  const points: { year: string; value: number }[] = [];
+  let match: RegExpExecArray | null;
+
+  while ((match = pairRegex.exec(fullText)) !== null) {
+    const val = parseFloat(match[2].replace(/,/g, ''));
+    if (!isNaN(val)) {
+      points.push({ year: match[1], value: val });
+    }
+  }
+
+  if (points.length < 2) return null;
+
+  return {
+    dataSets: [{ label: axisLabels.y || "Value", points }],
+    axisLabels: { x: axisLabels.x || "Year", y: axisLabels.y },
+  };
+}
+
 function parseChartData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
   const normalizedDescription = normalizeFigureDescription(description);
 
   // Try markdown table first
   const tableResult = parseMarkdownTable(normalizedDescription);
   if (tableResult) return tableResult;
+
+  // Try inline year:value pairs (e.g. "2004: 4.8 2009: 5.4")
+  const inlineResult = parseInlineYearValueData(normalizedDescription);
+  if (inlineResult) return inlineResult;
 
   // Try bullet-point "At X%, value is Y" format
   const bulletResult = parseBulletPointData(normalizedDescription);
