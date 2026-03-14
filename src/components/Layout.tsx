@@ -71,13 +71,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           <div className="hidden lg:flex items-center gap-3 ml-auto">
             {/* Subject pill switcher */}
-            <div className="flex items-center bg-muted rounded-full p-1 gap-0.5">
+            <div className="flex items-center bg-[hsl(var(--primary)/0.08)] border border-border rounded-full p-1 gap-0.5">
               {SUBJECTS.map((s) => (
                 <button
                   key={s.value}
                   onClick={() => setSubject(s.value)}
                   className={cn(
-                    "px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200",
+                    "px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 whitespace-nowrap",
                     subject === s.value
                       ? "bg-primary text-primary-foreground shadow-sm"
                       : "text-muted-foreground hover:text-foreground"
