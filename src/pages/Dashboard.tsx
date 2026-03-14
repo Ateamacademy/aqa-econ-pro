@@ -90,6 +90,8 @@ export default function Dashboard() {
         }
       `}</style>
 
+      <GradientMeshBg stage={r.stage} />
+
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
         <motion.div variants={fadeUp} className="mb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
