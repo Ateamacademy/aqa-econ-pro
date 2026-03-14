@@ -117,9 +117,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <nav className="lg:hidden bg-[hsl(240,10%,8%)] border-t border-[hsl(246,8%,18%)] px-4 pb-4">
-            {/* Mobile subject switcher */}
-            <div className="flex flex-wrap items-center bg-[hsl(246,8%,14%)] rounded-xl p-1 gap-0.5 my-3">
+          <nav className="lg:hidden bg-background border-t border-border px-4 pb-4">
+            <div className="flex flex-wrap items-center bg-muted rounded-xl p-1 gap-0.5 my-3">
               {SUBJECTS.map((s) => (
                 <button
                   key={s.value}
@@ -128,7 +127,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     "flex-1 px-2 py-1.5 rounded-lg text-xs font-semibold transition-colors text-center min-w-[50px]",
                     subject === s.value
                       ? "bg-primary text-primary-foreground"
-                      : "text-[hsl(240,7%,55%)]"
+                      : "text-muted-foreground"
                   )}
                 >
                   {s.label}
@@ -136,6 +135,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               ))}
             </div>
 
+            <Link
+              to="/"
+              onClick={() => setMobileOpen(false)}
+              className={cn(
+                "flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors",
+                location.pathname === "/"
+                  ? "text-foreground bg-primary/15"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              <GraduationCap className="h-4 w-4" /> Home
+            </Link>
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = location.pathname === item.to;
@@ -147,8 +158,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   className={cn(
                     "flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors",
                     isActive
-                      ? "text-[hsl(240,7%,93%)] bg-primary/15"
-                      : "text-[hsl(240,7%,60%)] hover:text-[hsl(240,7%,90%)]"
+                      ? "text-foreground bg-primary/15"
+                      : "text-muted-foreground hover:text-foreground"
                   )}
                 >
                   <Icon className="h-4 w-4" /> {item.label}
@@ -156,16 +167,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               );
             })}
             {!subscribed && (
-              <Link to="/pricing" onClick={() => setMobileOpen(false)} className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm text-[hsl(240,7%,60%)] hover:text-[hsl(240,7%,90%)]">
+              <Link to="/pricing" onClick={() => setMobileOpen(false)} className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm text-muted-foreground hover:text-foreground">
                 <Crown className="h-4 w-4" /> Pricing
               </Link>
             )}
             {user ? (
-              <button onClick={() => { signOut(); setMobileOpen(false); }} className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm text-[hsl(240,7%,60%)] hover:text-[hsl(240,7%,90%)] text-left">
+              <button onClick={() => { signOut(); setMobileOpen(false); }} className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm text-muted-foreground hover:text-foreground text-left">
                 <LogOut className="h-4 w-4" /> Sign Out
               </button>
             ) : (
-              <Link to="/auth" onClick={() => setMobileOpen(false)} className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm text-[hsl(240,7%,60%)] hover:text-[hsl(240,7%,90%)]">
+              <Link to="/auth" onClick={() => setMobileOpen(false)} className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm text-muted-foreground hover:text-foreground">
                 <LogIn className="h-4 w-4" /> Sign In
               </Link>
             )}
