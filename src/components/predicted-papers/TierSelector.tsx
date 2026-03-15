@@ -12,18 +12,12 @@ const tiers = [
     label: "Foundation",
     desc: "Grades 1–5. Covers core topics with structured questions and guided working.",
     icon: GraduationCap,
-    accent: "border-emerald-600",
-    text: "text-emerald-600",
-    bg: "bg-emerald-600",
   },
   {
     value: "Higher" as const,
     label: "Higher",
     desc: "Grades 4–9. Includes advanced algebra, trigonometry, circle theorems, and proof.",
     icon: TrendingUp,
-    accent: "border-violet-600",
-    text: "text-violet-600",
-    bg: "bg-violet-600",
   },
 ];
 
