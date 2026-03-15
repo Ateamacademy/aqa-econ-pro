@@ -53,7 +53,7 @@ export default function Practice() {
   const canUse = subscribed || (profile && profile.free_questions_used < FREE_LIMITS.questions);
 
   const generateQuestion = async () => {
-    if (!canUse) { toast.error("Free question limit reached."); navigate("/pricing"); return; }
+    if (!canUse) { setShowUpgrade(true); return; }
     setIsGenerating(true);
     setGeneratedQ("");
     let result = "";
