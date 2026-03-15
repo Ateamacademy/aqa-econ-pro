@@ -1256,7 +1256,15 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
     setAnswers({});
     setFeedbacks({});
     setMarkingId(null);
+    setExamActive(false);
+    setExamFinished(false);
+    setTimeExpired(false);
   };
+
+  const handleSubmitExam = useCallback(() => {
+    setExamActive(false);
+    setExamFinished(true);
+  }, []);
 
   if (!user) {
     return (
