@@ -821,6 +821,23 @@ export default function PredictedPapers() {
   const isIGCSE = subject === "cambridge-igcse";
   const isAnyEcon = true;
 
+  const examDuration = useMemo(() => {
+    const subjectDurations = EXAM_DURATIONS[subject] || EXAM_DURATIONS.economics;
+    return subjectDurations[paper] || 120;
+  }, [subject, paper]);
+
+  const handleExamTimeUp = useCallback(() => {
+    setTimeExpired(true);
+    setExamActive(false);
+    setExamFinished(true);
+  }, []);
+
+  const handleStartExam = useCallback(() => {
+    setExamActive(true);
+    setExamFinished(false);
+    setTimeExpired(false);
+  }, []);
+
   const libraryPapers = useMemo(
     () => predictedPapersLibrary.filter((p) => p.subject === subject),
     [subject]
