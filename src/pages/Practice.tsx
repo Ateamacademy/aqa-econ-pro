@@ -13,6 +13,7 @@ import { RevisionRenderer } from "@/components/revision/RevisionRenderer";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import { FREE_LIMITS } from "@/lib/plans";
 import { topicsBySubject, stylesBySubject } from "@/lib/subjectConfig";
+import { UpgradeModal } from "@/components/UpgradeModal";
 
 export default function Practice() {
   const { user, subscribed, profile, refreshProfile } = useAuth();
