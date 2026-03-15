@@ -85,6 +85,7 @@ const marqueeItems = ["AQA", "Edexcel", "OCR", "WJEC", "Cambridge", "IB Economic
 export default function Index() {
   const heroRef = useRef<HTMLDivElement>(null);
   const shimmerRef = useRef<HTMLSpanElement>(null);
+  const subtitleShimmerRef = useRef<HTMLSpanElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const blob1Ref = useRef<HTMLDivElement>(null);
   const blob2Ref = useRef<HTMLDivElement>(null);
@@ -95,6 +96,16 @@ export default function Index() {
       // Shimmer on "Economics" text
       if (shimmerRef.current) {
         gsap.to(shimmerRef.current, {
+          backgroundPosition: "200% center",
+          duration: 3,
+          repeat: -1,
+          ease: "none",
+        });
+      }
+
+      // Shimmer on subtitle "personal Economics tutor on demand: 24/7"
+      if (subtitleShimmerRef.current) {
+        gsap.to(subtitleShimmerRef.current, {
           backgroundPosition: "200% center",
           duration: 3,
           repeat: -1,
@@ -183,15 +194,16 @@ export default function Index() {
             </h1>
 
             <p className="text-base lg:text-lg text-muted-foreground leading-relaxed max-w-lg mb-8">
-              Predicted papers, instant marking, diagram practice, and expert support; like having a{" "}
-              <span className="relative inline-block">
-                <motion.span
-                  className="bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] bg-clip-text text-transparent font-semibold"
-                  animate={{ backgroundPosition: ["0% center", "200% center"] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                >
-                  personal Economics tutor on demand: 24/7
-                </motion.span>
+              Predicted papers, instant marking, diagram practice &amp; expert support; like having a{" "}
+              <span
+                ref={subtitleShimmerRef}
+                className="inline-block bg-clip-text text-transparent font-semibold"
+                style={{
+                  backgroundImage: "linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--cyan-pop)), hsl(var(--primary)))",
+                  backgroundSize: "200% auto",
+                }}
+              >
+                personal Economics tutor on demand: 24/7
               </span>
             </p>
 

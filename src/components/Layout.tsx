@@ -244,7 +244,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <span className="text-sm font-bold text-foreground">Econ Rev</span>
               </div>
               <p className="text-xs text-muted-foreground leading-relaxed mb-4">
-                AI-powered economics revision for GCSE and A-Level students worldwide.
+                Predicted papers, instant marking, diagram practice &amp; expert support; like having a personal Economics tutor on demand 24/7.
               </p>
               <div className="flex items-center gap-3">
                 {["X", "IG", "TT"].map((s) => (
