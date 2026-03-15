@@ -1417,15 +1417,19 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                     <span className="h-5 w-5 rounded-md bg-primary/10 flex items-center justify-center text-primary text-xs font-bold">{(isMaths || isChemistry) ? "3" : "2"}</span>
                     Topic Coverage
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {[
                       { value: "year1" as const, label: "Year 1 Only", desc: "AS / Year 12 topics only — perfect if you haven't covered Year 2 yet" },
                       { value: "year1+2" as const, label: "Year 1 + Year 2", desc: "Full A-Level specification — all micro and macro topics" },
                       { value: "full" as const, label: "Full Predicted Paper", desc: "Complete exam paper matching the official structure and difficulty" },
+                      { value: "custom" as const, label: "Custom Topics", desc: "Choose exactly which topics to include in your paper" },
                     ].map(opt => (
                       <button
                         key={opt.value}
-                        onClick={() => setTopicScope(opt.value)}
+                        onClick={() => {
+                          setTopicScope(opt.value);
+                          if (opt.value !== "custom") setSelectedTopics([]);
+                        }}
                         className={cn(
                           "text-left rounded-xl border-2 p-4 transition-all duration-200",
                           topicScope === opt.value
@@ -1446,6 +1450,79 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                       </button>
                     ))}
                   </div>
+
+                  {/* Custom topic picker */}
+                  {topicScope === "custom" && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="mt-5"
+                    >
+                      <div className="rounded-xl border border-border bg-card/50 p-5">
+                        <div className="flex items-center justify-between mb-4">
+                          <h4 className="text-sm font-semibold text-foreground">
+                            Select Topics
+                            <span className="ml-2 text-xs font-normal text-muted-foreground">
+                              ({selectedTopics.length} selected)
+                            </span>
+                          </h4>
+                          <div className="flex gap-2">
+                            <button
+                              onClick={() => setSelectedTopics(topicsBySubject[subject] || [])}
+                              className="text-[11px] font-medium text-primary hover:text-primary/80 transition-colors"
+                            >
+                              Select All
+                            </button>
+                            <span className="text-muted-foreground/40">·</span>
+                            <button
+                              onClick={() => setSelectedTopics([])}
+                              className="text-[11px] font-medium text-muted-foreground hover:text-foreground transition-colors"
+                            >
+                              Clear
+                            </button>
+                          </div>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {(topicsBySubject[subject] || []).map((topic) => {
+                            const isSelected = selectedTopics.includes(topic);
+                            return (
+                              <button
+                                key={topic}
+                                onClick={() => {
+                                  setSelectedTopics((prev) =>
+                                    isSelected
+                                      ? prev.filter((t) => t !== topic)
+                                      : [...prev, topic]
+                                  );
+                                }}
+                                className={cn(
+                                  "px-3 py-1.5 rounded-full text-xs font-medium border transition-all duration-200",
+                                  isSelected
+                                    ? "bg-primary/15 border-primary/40 text-primary shadow-sm shadow-primary/10"
+                                    : "bg-card border-border text-muted-foreground hover:border-primary/30 hover:text-foreground"
+                                )}
+                              >
+                                {isSelected && <span className="mr-1">✓</span>}
+                                {topic}
+                              </button>
+                            );
+                          })}
+                        </div>
+                        {selectedTopics.length === 0 && (
+                          <p className="text-xs text-destructive mt-3">
+                            Please select at least one topic to generate a paper.
+                          </p>
+                        )}
+                        {selectedTopics.length > 0 && selectedTopics.length <= 2 && (
+                          <p className="text-xs text-warning mt-3">
+                            Tip: Selecting 3+ topics creates a more balanced paper.
+                          </p>
+                        )}
+                      </div>
+                    </motion.div>
+                  )}
                 </div>
 
                 <motion.div
