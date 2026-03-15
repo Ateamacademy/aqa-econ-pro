@@ -192,6 +192,16 @@ export default function Dashboard() {
             ))}
           </motion.div>
 
+          {/* Grade Trend + Predicted Grade */}
+          <div className="grid lg:grid-cols-2 gap-6 mb-6">
+            <motion.div variants={fadeUp}>
+              <GradeTrendChart sessions={sessions} subject={subject} />
+            </motion.div>
+            <motion.div variants={fadeUp}>
+              <PredictedGrade score={r.avgScore ?? r.score} />
+            </motion.div>
+          </div>
+
           {/* Action Cards */}
           <motion.div variants={fadeUp} className="mb-6">
             <h3 className="text-foreground font-semibold text-sm mb-3">Recommended Actions</h3>
@@ -203,7 +213,10 @@ export default function Dashboard() {
             {/* Left */}
             <div className="space-y-6">
               <motion.div variants={fadeUp}>
-                <RecentPapersTable />
+                <RecentPapersTable sessions={sessions} subject={subject} />
+              </motion.div>
+              <motion.div variants={fadeUp}>
+                <StrengthWeakness sessions={sessions} subject={subject} />
               </motion.div>
               <motion.div variants={fadeUp}>
                 <TopicHeatmap topics={r.topicMastery} />
@@ -216,10 +229,10 @@ export default function Dashboard() {
                 <StudyStreak streak={r.streak} weeklyDays={r.weeklyDays} />
               </motion.div>
               <motion.div variants={fadeUp}>
-                <Leaderboard userScore={r.score} />
+                <PerformanceOverTime sessions={sessions} subject={subject} />
               </motion.div>
               <motion.div variants={fadeUp}>
-                <GradeTrendChart />
+                <Leaderboard userScore={r.score} />
               </motion.div>
             </div>
           </div>
