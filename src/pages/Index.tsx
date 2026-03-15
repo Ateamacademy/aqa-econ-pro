@@ -114,16 +114,6 @@ export default function Index() {
         });
       }
 
-      // Floating dashboard card
-      if (cardRef.current) {
-        gsap.to(cardRef.current, {
-          y: -6,
-          duration: 4,
-          yoyo: true,
-          repeat: -1,
-          ease: "sine.inOut",
-        });
-      }
 
       // Blob drift
       if (blob1Ref.current) {
