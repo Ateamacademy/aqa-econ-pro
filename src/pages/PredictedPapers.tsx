@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useMemo } from "react";
+import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
@@ -6,7 +6,7 @@ import { streamChat } from "@/lib/streamChat";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { FileText, Lock, Sparkles, RotateCcw, ArrowRight, Library, Wand2, BookOpen, Download } from "lucide-react";
+import { FileText, Lock, Sparkles, RotateCcw, ArrowRight, Library, Wand2, BookOpen, Download, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
@@ -31,6 +31,19 @@ import {
 import { generateKnowledgeGraphPrompt } from "@/data/economicsKnowledgeGraph";
 import { generatePaperPdf } from "@/lib/generatePaperPdf";
 import { UpgradeModal } from "@/components/UpgradeModal";
+import { ExamTimer } from "@/components/predicted-papers/ExamTimer";
+import { ExamResultsSummary } from "@/components/predicted-papers/ExamResultsSummary";
+
+// Exam durations in minutes per subject + paper
+const EXAM_DURATIONS: Record<string, Record<string, number>> = {
+  economics:        { "1": 105, "2": 105, full: 120 },
+  "edexcel-a":      { "1": 120, "2": 120, full: 120 },
+  "edexcel-b":      { "1": 120, "2": 120, full: 120 },
+  "ocr":            { "1": 120, "2": 120, full: 120 },
+  "cambridge":      { "1": 75,  "2": 135, full: 135 },
+  "aqa-gcse":       { "1": 105, "2": 105, full: 105 },
+  "cambridge-igcse": { "1": 45, "2": 135, full: 135 },
+};
 
 type QuestionFeedback = {
   markScheme: string;
@@ -787,6 +800,10 @@ export default function PredictedPapers() {
   const [feedbacks, setFeedbacks] = useState<Record<string, QuestionFeedback>>({});
   const [markingId, setMarkingId] = useState<string | null>(null);
   const [showUpgrade, setShowUpgrade] = useState(false);
+  const [examActive, setExamActive] = useState(false);
+  const [examFinished, setExamFinished] = useState(false);
+  const [timeExpired, setTimeExpired] = useState(false);
+  const markAllRef = useRef(false);
 
   const used = (profile as any)?.free_predicted_papers_used ?? 0;
   const canUse = subscribed || used < FREE_LIMITS.predictedPapers;
@@ -803,6 +820,23 @@ export default function PredictedPapers() {
   const isGCSE = subject === "aqa-gcse";
   const isIGCSE = subject === "cambridge-igcse";
   const isAnyEcon = true;
+
+  const examDuration = useMemo(() => {
+    const subjectDurations = EXAM_DURATIONS[subject] || EXAM_DURATIONS.economics;
+    return subjectDurations[paper] || 120;
+  }, [subject, paper]);
+
+  const handleExamTimeUp = useCallback(() => {
+    setTimeExpired(true);
+    setExamActive(false);
+    setExamFinished(true);
+  }, []);
+
+  const handleStartExam = useCallback(() => {
+    setExamActive(true);
+    setExamFinished(false);
+    setTimeExpired(false);
+  }, []);
 
   const libraryPapers = useMemo(
     () => predictedPapersLibrary.filter((p) => p.subject === subject),
@@ -1222,7 +1256,15 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
     setAnswers({});
     setFeedbacks({});
     setMarkingId(null);
+    setExamActive(false);
+    setExamFinished(false);
+    setTimeExpired(false);
   };
+
+  const handleSubmitExam = useCallback(() => {
+    setExamActive(false);
+    setExamFinished(true);
+  }, []);
 
   if (!user) {
     return (
@@ -1458,7 +1500,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
           </motion.div>
         )}
 
-        {step === "paper" && !isGenerating && (
+        {step === "paper" && !isGenerating && !examFinished && (
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -1480,24 +1522,44 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                   </>
                 )}
               </div>
-              <Button
-                size="lg"
-                className="gap-2.5 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-shadow"
-                onClick={() => {
-                  const paperTitle = selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`;
-                  const fullContent = paperContext + "\n\n" + parsedQuestions.map(q => `${q.label} [${q.marks} marks]\n${q.text}`).join("\n\n");
-                  generatePaperPdf(paperTitle, fullContent, {
-                    subject: subjectLabel,
-                    examBoard,
-                    level,
-                    tier: (isMaths || isChemistry) ? tier : undefined,
-                  });
-                  toast.success("PDF downloaded!");
-                }}
-              >
-                <Download className="h-5 w-5" /> Download PDF
-              </Button>
+              <div className="flex items-center gap-3 flex-wrap">
+                {!examActive && (
+                  <ExamTimer
+                    durationMinutes={examDuration}
+                    onTimeUp={handleExamTimeUp}
+                    isActive={false}
+                    onStart={handleStartExam}
+                  />
+                )}
+                <Button
+                  size="lg"
+                  className="gap-2.5 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-shadow"
+                  onClick={() => {
+                    const paperTitle = selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`;
+                    const fullContent = paperContext + "\n\n" + parsedQuestions.map(q => `${q.label} [${q.marks} marks]\n${q.text}`).join("\n\n");
+                    generatePaperPdf(paperTitle, fullContent, {
+                      subject: subjectLabel,
+                      examBoard,
+                      level,
+                      tier: (isMaths || isChemistry) ? tier : undefined,
+                    });
+                    toast.success("PDF downloaded!");
+                  }}
+                >
+                  <Download className="h-5 w-5" /> Download PDF
+                </Button>
+              </div>
             </div>
+
+            {/* Sticky exam timer bar when active */}
+            {examActive && (
+              <ExamTimer
+                durationMinutes={examDuration}
+                onTimeUp={handleExamTimeUp}
+                isActive={examActive}
+                onStart={handleStartExam}
+              />
+            )}
 
             {paperContext && (
               <div className="rounded-2xl border border-border/60 bg-card overflow-hidden">
@@ -1555,12 +1617,35 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
               </motion.div>
             ))}
 
-            <div className="flex justify-center pt-8 pb-4">
+            <div className="flex flex-wrap justify-center gap-4 pt-8 pb-4">
+              {examActive && (
+                <Button
+                  onClick={handleSubmitExam}
+                  size="lg"
+                  className="gap-2 rounded-full px-10 bg-success hover:bg-success/90 text-white font-bold shadow-xl shadow-success/25"
+                >
+                  <CheckCircle className="h-5 w-5" /> Submit Exam
+                </Button>
+              )}
               <Button variant="outline" onClick={reset} className="gap-2 rounded-full px-8 border-border/60 hover:bg-card hover:border-primary/30 transition-all">
                 <RotateCcw className="h-4 w-4" /> Back to Papers
               </Button>
             </div>
           </motion.div>
+        )}
+
+        {/* Exam results view */}
+        {step === "paper" && examFinished && (
+          <div className="mt-8">
+            <ExamResultsSummary
+              questions={parsedQuestions}
+              feedbacks={feedbacks}
+              answers={answers}
+              onBackToPapers={reset}
+              paperTitle={selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} — Paper ${paper}`}
+              timeExpired={timeExpired}
+            />
+          </div>
         )}
       </div>
       <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="predicted papers" />
