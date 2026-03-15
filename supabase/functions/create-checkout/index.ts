@@ -24,7 +24,7 @@ serve(async (req) => {
 
     const { priceId } = await req.json();
     const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", { apiVersion: "2025-08-27.basil" });
-    
+
     const customers = await stripe.customers.list({ email: user.email, limit: 1 });
     let customerId;
     if (customers.data.length > 0) customerId = customers.data[0].id;
@@ -34,7 +34,7 @@ serve(async (req) => {
       customer: customerId,
       customer_email: customerId ? undefined : user.email,
       line_items: [{ price: priceId, quantity: 1 }],
-      mode: "subscription",
+      mode: "payment",
       success_url: `${origin}/?checkout=success`,
       cancel_url: `${origin}/pricing`,
     });

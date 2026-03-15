@@ -1,18 +1,11 @@
 // Stripe product/price IDs
-export const PLANS = {
-  monthly: {
-    name: "Monthly",
-    price: "£4.99/mo",
-    priceId: "price_1T4SwcLW1T0jThuRcIzckf1N",
-    productId: "prod_U2Y2lMRTLe9DFM",
-  },
-  yearly: {
-    name: "Yearly",
-    price: "£47.90/yr",
-    priceId: "price_1T4SwzLW1T0jThuR9pAk4POs",
-    productId: "prod_U2Y3nYXzLGATVE",
-    badge: "Save 20%",
-  },
+export const PLAN = {
+  name: "Econ Rev Pro",
+  price: "£29",
+  priceId: "price_1TBDpqLW1T0jThuR5Lq7KNMr",
+  productId: "prod_U9WtwjUWrx0aqq",
+  expiresAt: "2026-06-29T23:59:59Z",
+  description: "One-off payment · Full access until 29 June 2026",
 } as const;
 
 export const FREE_LIMITS = {

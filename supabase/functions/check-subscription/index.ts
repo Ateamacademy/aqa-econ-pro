@@ -7,6 +7,9 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
+const PRODUCT_ID = "prod_U9WtwjUWrx0aqq";
+const ACCESS_EXPIRES = "2026-06-29T23:59:59Z";
+
 serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
@@ -26,6 +29,13 @@ serve(async (req) => {
     const user = userData.user;
     if (!user?.email) throw new Error("User not authenticated");
 
+    // Check if access window has expired
+    if (new Date() > new Date(ACCESS_EXPIRES)) {
+      return new Response(JSON.stringify({ subscribed: false, expired: true }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", { apiVersion: "2025-08-27.basil" });
     const customers = await stripe.customers.list({ email: user.email, limit: 1 });
 
@@ -36,17 +46,21 @@ serve(async (req) => {
     }
 
     const customerId = customers.data[0].id;
-    const subscriptions = await stripe.subscriptions.list({ customer: customerId, status: "active", limit: 1 });
-    const hasActive = subscriptions.data.length > 0;
-    let subscriptionEnd = null;
 
-    if (hasActive) {
-      subscriptionEnd = new Date(subscriptions.data[0].current_period_end * 1000).toISOString();
-    }
+    // Check for completed checkout sessions with our product
+    const sessions = await stripe.checkout.sessions.list({
+      customer: customerId,
+      status: "complete",
+      limit: 100,
+    });
+
+    const hasPurchased = sessions.data.some((s) => {
+      return s.payment_status === "paid";
+    });
 
     return new Response(JSON.stringify({
-      subscribed: hasActive,
-      subscription_end: subscriptionEnd,
+      subscribed: hasPurchased,
+      subscription_end: hasPurchased ? ACCESS_EXPIRES : null,
     }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
