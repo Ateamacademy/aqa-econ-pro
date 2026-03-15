@@ -61,13 +61,13 @@ const freeFeatures = [
   "5 diagram builds with feedback",
 ];
 const proFeatures = [
-  "Unlimited AI Predicted Papers",
-  "Unlimited AI Marking",
+  "Unlimited Predicted Papers",
+  "Unlimited Marking",
   "Full readiness engine with mountain tracker",
-  "Diagram builder with AI feedback",
+  "Diagram builder with feedback",
   "Parent monitoring dashboard",
   "Performance analytics & grade trajectory",
-  "AI Tutor unlimited",
+  "24/7 Tutor unlimited",
   "Access to all future platform updates",
 ];
 
