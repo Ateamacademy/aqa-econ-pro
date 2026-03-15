@@ -184,6 +184,7 @@ Output ONLY the question text and mark allocation. Nothing else.` }],
           <Button onClick={reset} className="gap-2"><Brain className="h-4 w-4" /> Try Another Question</Button>
         </div>
       )}
+      <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="practice questions" />
     </div>
   );
 }
