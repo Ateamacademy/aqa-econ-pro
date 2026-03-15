@@ -53,12 +53,12 @@ const testimonials = [
 ];
 
 const freeFeatures = [
-  "3 AI Predicted Papers / month",
-  "3 AI Marking sessions / month",
+  "3 Predicted Papers / month",
+  "3 Marking sessions / month",
   "Full access to notes, questions & mark schemes",
-  "5 AI Tutor questions / month",
+  "5 Tutor questions / month",
   "Basic readiness score & progress tracking",
-  "5 diagram builds with AI feedback",
+  "5 diagram builds with feedback",
 ];
 const proFeatures = [
   "Unlimited AI Predicted Papers",
