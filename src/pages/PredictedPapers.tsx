@@ -31,6 +31,19 @@ import {
 import { generateKnowledgeGraphPrompt } from "@/data/economicsKnowledgeGraph";
 import { generatePaperPdf } from "@/lib/generatePaperPdf";
 import { UpgradeModal } from "@/components/UpgradeModal";
+import { ExamTimer } from "@/components/predicted-papers/ExamTimer";
+import { ExamResultsSummary } from "@/components/predicted-papers/ExamResultsSummary";
+
+// Exam durations in minutes per subject + paper
+const EXAM_DURATIONS: Record<string, Record<string, number>> = {
+  economics:        { "1": 105, "2": 105, full: 120 },
+  "edexcel-a":      { "1": 120, "2": 120, full: 120 },
+  "edexcel-b":      { "1": 120, "2": 120, full: 120 },
+  "ocr":            { "1": 120, "2": 120, full: 120 },
+  "cambridge":      { "1": 75,  "2": 135, full: 135 },
+  "aqa-gcse":       { "1": 105, "2": 105, full: 105 },
+  "cambridge-igcse": { "1": 45, "2": 135, full: 135 },
+};
 
 type QuestionFeedback = {
   markScheme: string;
