@@ -13,6 +13,7 @@ import { RevisionRenderer } from "@/components/revision/RevisionRenderer";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import { FREE_LIMITS } from "@/lib/plans";
 import { topicsBySubject, stylesBySubject } from "@/lib/subjectConfig";
+import { UpgradeModal } from "@/components/UpgradeModal";
 
 export default function Practice() {
   const { user, subscribed, profile, refreshProfile } = useAuth();
@@ -30,6 +31,7 @@ export default function Practice() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [isMarking, setIsMarking] = useState(false);
   const [step, setStep] = useState<"generate" | "answer" | "feedback">("generate");
+  const [showUpgrade, setShowUpgrade] = useState(false);
 
   // Reset when subject changes
   useEffect(() => {
@@ -51,7 +53,7 @@ export default function Practice() {
   const canUse = subscribed || (profile && profile.free_questions_used < FREE_LIMITS.questions);
 
   const generateQuestion = async () => {
-    if (!canUse) { toast.error("Free question limit reached."); navigate("/pricing"); return; }
+    if (!canUse) { setShowUpgrade(true); return; }
     setIsGenerating(true);
     setGeneratedQ("");
     let result = "";
@@ -182,6 +184,7 @@ Output ONLY the question text and mark allocation. Nothing else.` }],
           <Button onClick={reset} className="gap-2"><Brain className="h-4 w-4" /> Try Another Question</Button>
         </div>
       )}
+      <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="practice questions" />
     </div>
   );
 }

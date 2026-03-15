@@ -3,6 +3,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
 import { streamChat } from "@/lib/streamChat";
+import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -14,6 +15,8 @@ import { RevisionRenderer } from "@/components/revision/RevisionRenderer";
 import { topicsBySubject } from "@/lib/subjectConfig";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { FREE_LIMITS } from "@/lib/plans";
+import { UpgradeModal } from "@/components/UpgradeModal";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -36,7 +39,7 @@ const quickActions = [
 ];
 
 export default function AITutor() {
-  const { user } = useAuth();
+  const { user, subscribed, profile, refreshProfile } = useAuth();
   const { subject, subjectLabel, examBoard, level } = useSubject();
   const navigate = useNavigate();
   const [messages, setMessages] = useState<Msg[]>([]);
@@ -45,6 +48,10 @@ export default function AITutor() {
   const [activeTopic, setActiveTopic] = useState<string | null>(null);
   const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({ Microeconomics: true, Macroeconomics: false });
   const bottomRef = useRef<HTMLDivElement>(null);
+  const [showUpgrade, setShowUpgrade] = useState(false);
+
+  const tutorUsed = profile?.free_tutor_used ?? 0;
+  const canUse = subscribed || tutorUsed < FREE_LIMITS.tutorQuestions;
 
   const topics = topicsBySubject[subject] || [];
   const tree = buildTopicTree(topics);
@@ -73,6 +80,7 @@ export default function AITutor() {
   const send = async (overrideInput?: string) => {
     const text = overrideInput || input;
     if (!text.trim() || isLoading) return;
+    if (!canUse) { setShowUpgrade(true); return; }
     const userMsg: Msg = { role: "user", content: text };
     setMessages(prev => [...prev, userMsg]);
     setInput("");
@@ -96,7 +104,13 @@ export default function AITutor() {
         mode: "tutor",
         subject,
         onDelta: upsert,
-        onDone: () => setIsLoading(false),
+        onDone: async () => {
+          setIsLoading(false);
+          if (!subscribed && profile) {
+            await supabase.from("profiles").update({ free_tutor_used: (profile.free_tutor_used ?? 0) + 1 } as any).eq("user_id", user!.id);
+            refreshProfile();
+          }
+        },
         onError: (err) => { toast.error(err); setIsLoading(false); },
       });
     } catch { setIsLoading(false); }
@@ -308,6 +322,7 @@ export default function AITutor() {
           </form>
         </div>
       </div>
+      <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="AI Tutor questions" />
     </div>
   );
 }

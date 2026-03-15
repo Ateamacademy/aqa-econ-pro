@@ -30,6 +30,7 @@ import {
 } from "@/data/pastPaperPatterns";
 import { generateKnowledgeGraphPrompt } from "@/data/economicsKnowledgeGraph";
 import { generatePaperPdf } from "@/lib/generatePaperPdf";
+import { UpgradeModal } from "@/components/UpgradeModal";
 
 type QuestionFeedback = {
   markScheme: string;
@@ -785,6 +786,7 @@ export default function PredictedPapers() {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [feedbacks, setFeedbacks] = useState<Record<string, QuestionFeedback>>({});
   const [markingId, setMarkingId] = useState<string | null>(null);
+  const [showUpgrade, setShowUpgrade] = useState(false);
 
   const used = (profile as any)?.free_predicted_papers_used ?? 0;
   const canUse = subscribed || used < FREE_LIMITS.predictedPapers;
@@ -822,8 +824,7 @@ export default function PredictedPapers() {
 
   const generatePaper = async () => {
     if (!canUse) {
-      toast.error("Free predicted paper limit reached. Subscribe for unlimited access.");
-      navigate("/pricing");
+      setShowUpgrade(true);
       return;
     }
     setIsGenerating(true);
@@ -1415,7 +1416,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                       {remaining <= 0 && (
                         <>
                           {" · "}
-                          <button onClick={() => navigate("/pricing")} className="font-semibold text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">
+                          <button onClick={() => setShowUpgrade(true)} className="font-semibold text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">
                             Upgrade to Pro
                           </button>
                         </>
@@ -1424,7 +1425,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                   )}
 
                   <Button
-                    onClick={canUse ? generatePaper : () => navigate("/pricing")}
+                    onClick={canUse ? generatePaper : () => setShowUpgrade(true)}
                     disabled={isGenerating}
                     size="lg"
                     className="gap-2.5 px-12 h-13 rounded-full text-base font-bold shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:scale-[1.02] active:scale-[0.98] transition-all"
@@ -1562,6 +1563,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
           </motion.div>
         )}
       </div>
+      <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="predicted papers" />
     </div>
   );
 }

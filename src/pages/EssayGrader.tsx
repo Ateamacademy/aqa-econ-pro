@@ -12,6 +12,7 @@ import { toast } from "sonner";
 import { RevisionRenderer } from "@/components/revision/RevisionRenderer";
 import { FREE_LIMITS } from "@/lib/plans";
 import { questionTypesBySubject, topicsBySubject } from "@/lib/subjectConfig";
+import { UpgradeModal } from "@/components/UpgradeModal";
 
 export default function EssayGrader() {
   const { user, subscribed, profile, refreshProfile } = useAuth();
@@ -27,6 +28,7 @@ export default function EssayGrader() {
   const [feedback, setFeedback] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isGeneratingQ, setIsGeneratingQ] = useState(false);
+  const [showUpgrade, setShowUpgrade] = useState(false);
 
   if (!user) {
     return (
@@ -69,7 +71,7 @@ RULES:
 
   const handleGrade = async () => {
     if (!essay.trim() || !question.trim()) { toast.error("Enter both the question and your answer"); return; }
-    if (!canUse) { toast.error("Free limit reached. Subscribe for unlimited access."); navigate("/pricing"); return; }
+    if (!canUse) { setShowUpgrade(true); return; }
 
     setIsLoading(true);
     setFeedback("");
@@ -163,6 +165,7 @@ RULES:
           </CardContent>
         </Card>
       )}
+      <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="marking sessions" />
     </div>
   );
 }

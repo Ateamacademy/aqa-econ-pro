@@ -14,6 +14,7 @@ import { FREE_LIMITS } from "@/lib/plans";
 import { DrawingCanvas } from "@/components/tools/DrawingCanvas";
 import { cn } from "@/lib/utils";
 import { extractDiagramBlocks, EconDiagramCanvas } from "@/components/predicted-papers/EconDiagramSVG";
+import { UpgradeModal } from "@/components/UpgradeModal";
 
 const DIAGRAM_TOPICS: Record<string, string[]> = {
   economics: [
@@ -112,6 +113,7 @@ export default function DiagramPractice() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [isMarking, setIsMarking] = useState(false);
   const [step, setStep] = useState<"generate" | "answer" | "feedback">("generate");
+  const [showUpgrade, setShowUpgrade] = useState(false);
 
   useEffect(() => {
     const t = DIAGRAM_TOPICS[subject] || DIAGRAM_TOPICS.economics;
@@ -129,11 +131,11 @@ export default function DiagramPractice() {
     );
   }
 
-  const diagramsUsed = profile?.free_questions_used ?? 0;
+  const diagramsUsed = (profile as any)?.free_diagrams_used ?? 0;
   const canUse = subscribed || (profile && diagramsUsed < FREE_LIMITS.diagrams);
 
   const generateQuestion = async () => {
-    if (!canUse) { toast.error("Free limit reached."); navigate("/pricing"); return; }
+    if (!canUse) { setShowUpgrade(true); return; }
     setIsGenerating(true);
     setGeneratedQ("");
     let result = "";
@@ -235,7 +237,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
           });
         }
         if (!subscribed && profile) {
-          await supabase.from("profiles").update({ free_questions_used: profile.free_questions_used + 1 }).eq("user_id", user.id);
+          await supabase.from("profiles").update({ free_diagrams_used: diagramsUsed + 1 } as any).eq("user_id", user.id);
           refreshProfile();
         }
       },
@@ -380,6 +382,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
         feedback={feedback}
         onReset={reset}
       />}
+      <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="diagram practice sessions" />
     </div>
   );
 }
