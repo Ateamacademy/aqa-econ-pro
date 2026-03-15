@@ -70,7 +70,7 @@ export default function AITutor() {
         <div className="mx-auto mb-6 h-16 w-16 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20">
           <Lock className="h-7 w-7 text-primary" />
         </div>
-        <h1 className="text-3xl font-bold tracking-tight mb-3">Sign in to use the AI Tutor</h1>
+        <h1 className="text-3xl font-bold tracking-tight mb-3">Sign in to use the 24/7 Tutor</h1>
         <p className="text-muted-foreground mb-8 max-w-md mx-auto">Get instant, curriculum-aligned explanations for any economics topic.</p>
         <Button onClick={() => navigate("/auth")} size="lg" className="rounded-full px-10 shadow-lg shadow-primary/20">Sign In</Button>
       </div>
