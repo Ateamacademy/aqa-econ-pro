@@ -243,6 +243,7 @@ export default function Dashboard() {
           </div>
         </motion.div>
       </div>
+      <InviteParentModal open={showInviteParent} onOpenChange={setShowInviteParent} />
     </div>
   );
 }
