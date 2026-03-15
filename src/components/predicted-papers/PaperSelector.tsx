@@ -15,9 +15,9 @@ const iconMap: Record<string, any> = {
 };
 
 const colorSets = [
-  { color: "border-blue-600", bg: "text-blue-600" },
-  { color: "border-green-600", bg: "text-green-600" },
-  { color: "border-purple-600", bg: "text-purple-600" },
+  { color: "border-primary", bg: "text-primary" },
+  { color: "border-accent", bg: "text-accent" },
+  { color: "border-primary", bg: "text-primary" },
 ];
 
 interface PaperSelectorProps {
@@ -43,26 +43,28 @@ export function PaperSelector({ selected, onSelect, subject }: PaperSelectorProp
             key={p.value}
             onClick={() => onSelect(p.value)}
             className={cn(
-              "relative text-left rounded-xl border-2 p-5 transition-all hover:shadow-md",
+              "relative text-left rounded-xl border-2 p-5 transition-all duration-200 hover:shadow-lg hover:shadow-primary/5",
               isSelected
-                ? `${p.color} shadow-md bg-background`
-                : "border-border bg-card hover:border-muted-foreground/30"
+                ? "border-primary shadow-md shadow-primary/10 bg-card"
+                : "border-border bg-card hover:border-primary/30"
             )}
           >
             <div
               className={cn(
-                "absolute top-0 left-0 right-0 h-1 rounded-t-xl",
-                isSelected ? p.color.replace("border-", "bg-") : "bg-transparent"
+                "absolute top-0 left-0 right-0 h-1 rounded-t-xl transition-colors",
+                isSelected ? "bg-primary" : "bg-transparent"
               )}
             />
-            <Icon className={cn("h-8 w-8 mb-3", p.bg)} />
-            <span className={cn("inline-block text-xs font-semibold px-2 py-0.5 rounded mb-2", p.bg)}>
+            <div className={cn("h-10 w-10 rounded-lg flex items-center justify-center mb-3", isSelected ? "bg-primary/15" : "bg-muted")}>
+              <Icon className={cn("h-5 w-5", isSelected ? "text-primary" : "text-muted-foreground")} />
+            </div>
+            <span className={cn("inline-block text-xs font-semibold px-2 py-0.5 rounded mb-2", isSelected ? "text-primary bg-primary/10" : "text-muted-foreground bg-muted")}>
               {p.label}
             </span>
             <h3 className="font-bold text-foreground text-base mb-1">{p.title}</h3>
             <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
             {isSelected && (
-              <p className={cn("mt-3 text-xs font-medium flex items-center gap-1", p.bg)}>
+              <p className="mt-3 text-xs font-semibold flex items-center gap-1 text-primary">
                 <Check className="h-3.5 w-3.5" /> Selected
               </p>
             )}

@@ -1225,31 +1225,36 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
 
   if (!user) {
     return (
-      <div className="container py-16 max-w-3xl text-center">
-        <Lock className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-        <h1 className="font-serif text-3xl mb-3">Sign in to access Predicted Papers</h1>
-        <p className="text-muted-foreground mb-6">Generate AI-predicted exam papers with full marking and model solutions.</p>
-        <Button onClick={() => navigate("/auth")}>Sign In</Button>
+      <div className="container py-24 max-w-3xl text-center">
+        <div className="mx-auto mb-6 h-16 w-16 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20">
+          <Lock className="h-7 w-7 text-primary" />
+        </div>
+        <h1 className="text-3xl font-bold tracking-tight mb-3">Sign in to access Predicted Papers</h1>
+        <p className="text-muted-foreground mb-8 max-w-md mx-auto">Generate AI-predicted exam papers with full marking and model solutions.</p>
+        <Button onClick={() => navigate("/auth")} size="lg" className="rounded-full px-10 shadow-lg shadow-primary/20">Sign In</Button>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen dot-grid-bg">
       {/* Hero header */}
-      <div className="relative overflow-hidden bg-gradient-to-b from-muted/50 to-background pt-16 pb-12">
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+      <div className="relative overflow-hidden pt-20 pb-14">
+        {/* Gradient orbs */}
+        <div className="absolute top-0 left-1/4 w-[500px] h-[400px] bg-primary/8 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-10 right-1/4 w-[400px] h-[350px] bg-accent/6 rounded-full blur-[100px] pointer-events-none" />
+
         <div className="container max-w-4xl relative">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
+            transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
             className="text-center"
           >
-            <span className="inline-flex items-center gap-1.5 text-xs font-medium bg-foreground/5 backdrop-blur-sm text-muted-foreground rounded-full px-4 py-1.5 mb-5 border border-border/50">
-              <FileText className="h-3.5 w-3.5" /> {examBoard} {level} {subjectLabel}
+            <span className="inline-flex items-center gap-1.5 text-xs font-medium bg-card/80 backdrop-blur-sm text-muted-foreground rounded-full px-4 py-1.5 mb-6 border border-border/60">
+              <FileText className="h-3.5 w-3.5 text-primary" /> {examBoard} {level} {subjectLabel}
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif' }}>
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-5 bg-gradient-to-b from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent">
               Predicted Papers
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
@@ -1259,7 +1264,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
         </div>
       </div>
 
-      <div className="container max-w-5xl pb-16">
+      <div className="container max-w-5xl pb-20">
         {step === "select" && (
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -1267,14 +1272,14 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
             transition={{ duration: 0.5, delay: 0.15, ease: [0.25, 0.4, 0.25, 1] }}
           >
             {/* Mode toggle */}
-            <div className="flex justify-center mb-10">
-              <div className="inline-flex items-center bg-muted/60 backdrop-blur rounded-full p-1 border border-border/50">
+            <div className="flex justify-center mb-12">
+              <div className="inline-flex items-center bg-card/80 backdrop-blur-lg rounded-full p-1 border border-border/60 shadow-lg shadow-black/10">
                 <button
                   onClick={() => setMode("library")}
                   className={cn(
-                    "flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300",
+                    "flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300",
                     mode === "library"
-                      ? "bg-foreground text-background shadow-lg"
+                      ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30"
                       : "text-muted-foreground hover:text-foreground"
                   )}
                 >
@@ -1283,9 +1288,9 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                 <button
                   onClick={() => setMode("generate")}
                   className={cn(
-                    "flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300",
+                    "flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300",
                     mode === "generate"
-                      ? "bg-foreground text-background shadow-lg"
+                      ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30"
                       : "text-muted-foreground hover:text-foreground"
                   )}
                 >
@@ -1297,9 +1302,14 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
             {mode === "library" ? (
               <div className="space-y-4">
                 {libraryPapers.length === 0 ? (
-                  <p className="text-center text-muted-foreground py-16">No pre-generated papers for this subject yet.</p>
+                  <div className="flex flex-col items-center py-20">
+                    <div className="h-14 w-14 rounded-2xl bg-muted flex items-center justify-center mb-4">
+                      <FileText className="h-6 w-6 text-muted-foreground" />
+                    </div>
+                    <p className="text-muted-foreground">No pre-generated papers for this subject yet.</p>
+                  </div>
                 ) : (
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                     {libraryPapers.map((lp, i) => (
                       <motion.div
                         key={lp.id}
@@ -1309,22 +1319,22 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                       >
                         <button
                           onClick={() => openLibraryPaper(lp)}
-                          className="w-full text-left group rounded-2xl border border-border/60 bg-card p-5 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 hover:border-primary/30"
+                          className="w-full text-left group rounded-2xl border border-border/60 bg-card p-6 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 hover:border-primary/30"
                         >
-                          <div className="flex items-start justify-between mb-3">
-                            <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                          <div className="flex items-start justify-between mb-4">
+                            <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center border border-primary/10">
                               <FileText className="h-5 w-5 text-primary" />
                             </div>
                             <ArrowRight className="h-4 w-4 text-muted-foreground/0 group-hover:text-primary transition-all duration-300 group-hover:translate-x-0.5" />
                           </div>
-                          <h3 className="font-semibold text-sm text-foreground mb-1.5 group-hover:text-primary transition-colors">{lp.title}</h3>
-                          <p className="text-xs text-muted-foreground leading-relaxed mb-3 line-clamp-2">{lp.description}</p>
+                          <h3 className="font-bold text-sm text-foreground mb-1.5 group-hover:text-primary transition-colors">{lp.title}</h3>
+                          <p className="text-xs text-muted-foreground leading-relaxed mb-4 line-clamp-2">{lp.description}</p>
                           <div className="flex items-center gap-2">
-                            <span className="text-[11px] bg-primary/8 text-primary/80 px-2.5 py-0.5 rounded-full font-medium">
+                            <span className="text-[11px] bg-primary/10 text-primary px-2.5 py-1 rounded-full font-semibold">
                               {lp.totalMarks} marks
                             </span>
                             {lp.tier && (
-                              <span className="text-[11px] bg-muted text-muted-foreground px-2.5 py-0.5 rounded-full font-medium">
+                              <span className="text-[11px] bg-muted text-muted-foreground px-2.5 py-1 rounded-full font-medium">
                                 {lp.tier}
                               </span>
                             )}
@@ -1336,19 +1346,31 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                 )}
               </div>
             ) : (
-              <div className="max-w-3xl mx-auto space-y-8">
-                <PaperSelector selected={paper} onSelect={setPaper} subject={subject} />
+              <div className="max-w-3xl mx-auto space-y-10">
+                <div>
+                  <h3 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
+                    <span className="h-5 w-5 rounded-md bg-primary/10 flex items-center justify-center text-primary text-xs font-bold">1</span>
+                    Choose Paper
+                  </h3>
+                  <PaperSelector selected={paper} onSelect={setPaper} subject={subject} />
+                </div>
 
                 {(isMaths || isChemistry) && (
                   <div>
-                    <h3 className="text-sm font-semibold text-foreground mb-3">Select Tier</h3>
+                    <h3 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
+                      <span className="h-5 w-5 rounded-md bg-primary/10 flex items-center justify-center text-primary text-xs font-bold">2</span>
+                      Select Tier
+                    </h3>
                     <TierSelector selected={tier} onSelect={setTier} />
                   </div>
                 )}
 
                 {/* Topic scope selector */}
                 <div>
-                  <h3 className="text-sm font-semibold text-foreground mb-3">Topic Coverage</h3>
+                  <h3 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
+                    <span className="h-5 w-5 rounded-md bg-primary/10 flex items-center justify-center text-primary text-xs font-bold">{(isMaths || isChemistry) ? "3" : "2"}</span>
+                    Topic Coverage
+                  </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {[
                       { value: "year1" as const, label: "Year 1 Only", desc: "AS / Year 12 topics only — perfect if you haven't covered Year 2 yet" },
@@ -1361,13 +1383,13 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                         className={cn(
                           "text-left rounded-xl border-2 p-4 transition-all duration-200",
                           topicScope === opt.value
-                            ? "border-primary bg-primary/5 shadow-sm"
-                            : "border-border hover:border-primary/30 hover:bg-muted/30"
+                            ? "border-primary bg-primary/5 shadow-md shadow-primary/10"
+                            : "border-border hover:border-primary/30 hover:bg-card"
                         )}
                       >
                         <div className="flex items-center gap-2 mb-1">
                           <div className={cn(
-                            "h-4 w-4 rounded-full border-2 flex items-center justify-center",
+                            "h-4 w-4 rounded-full border-2 flex items-center justify-center transition-colors",
                             topicScope === opt.value ? "border-primary" : "border-muted-foreground/40"
                           )}>
                             {topicScope === opt.value && <div className="h-2 w-2 rounded-full bg-primary" />}
@@ -1384,16 +1406,16 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
-                  className="text-center space-y-4 pt-4"
+                  className="text-center space-y-4 pt-6"
                 >
                   {!subscribed && (
                     <p className="text-sm text-muted-foreground">
-                      <span className="font-semibold text-foreground">{Math.max(0, remaining)}</span> of{" "}
+                      <span className="font-bold text-foreground">{Math.max(0, remaining)}</span> of{" "}
                       {FREE_LIMITS.predictedPapers} free papers remaining
                       {remaining <= 0 && (
                         <>
                           {" · "}
-                          <button onClick={() => navigate("/pricing")} className="font-semibold text-primary underline underline-offset-2">
+                          <button onClick={() => navigate("/pricing")} className="font-semibold text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">
                             Upgrade to Pro
                           </button>
                         </>
@@ -1405,7 +1427,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                     onClick={canUse ? generatePaper : () => navigate("/pricing")}
                     disabled={isGenerating}
                     size="lg"
-                    className="gap-2.5 px-10 h-12 rounded-full text-base shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-shadow"
+                    className="gap-2.5 px-12 h-13 rounded-full text-base font-bold shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:scale-[1.02] active:scale-[0.98] transition-all"
                   >
                     {isGenerating ? (
                       <><Sparkles className="h-4 w-4 animate-spin" /> Generating...</>
@@ -1443,7 +1465,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
             className="space-y-6 mt-8"
           >
             {/* Paper header */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-border/50">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-5 border-b border-border/40">
               <div>
                 {selectedLibraryPaper ? (
                   <>
@@ -1459,7 +1481,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
               </div>
               <Button
                 size="lg"
-                className="gap-2.5 rounded-full shadow-lg shadow-primary/20"
+                className="gap-2.5 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-shadow"
                 onClick={() => {
                   const paperTitle = selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`;
                   const fullContent = paperContext + "\n\n" + parsedQuestions.map(q => `${q.label} [${q.marks} marks]\n${q.text}`).join("\n\n");
@@ -1532,8 +1554,8 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
               </motion.div>
             ))}
 
-            <div className="flex justify-center pt-6 pb-4">
-              <Button variant="outline" onClick={reset} className="gap-2 rounded-full px-6">
+            <div className="flex justify-center pt-8 pb-4">
+              <Button variant="outline" onClick={reset} className="gap-2 rounded-full px-8 border-border/60 hover:bg-card hover:border-primary/30 transition-all">
                 <RotateCcw className="h-4 w-4" /> Back to Papers
               </Button>
             </div>

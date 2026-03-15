@@ -12,18 +12,12 @@ const tiers = [
     label: "Foundation",
     desc: "Grades 1–5. Covers core topics with structured questions and guided working.",
     icon: GraduationCap,
-    accent: "border-emerald-600",
-    text: "text-emerald-600",
-    bg: "bg-emerald-600",
   },
   {
     value: "Higher" as const,
     label: "Higher",
     desc: "Grades 4–9. Includes advanced algebra, trigonometry, circle theorems, and proof.",
     icon: TrendingUp,
-    accent: "border-violet-600",
-    text: "text-violet-600",
-    bg: "bg-violet-600",
   },
 ];
 
@@ -38,19 +32,21 @@ export function TierSelector({ selected, onSelect }: TierSelectorProps) {
             key={t.value}
             onClick={() => onSelect(t.value)}
             className={cn(
-              "relative text-left rounded-xl border-2 p-5 transition-all hover:shadow-md",
+              "relative text-left rounded-xl border-2 p-5 transition-all duration-200 hover:shadow-lg hover:shadow-primary/5",
               isSelected
-                ? `${t.accent} shadow-md bg-background`
-                : "border-border bg-card hover:border-muted-foreground/30"
+                ? "border-primary shadow-md shadow-primary/10 bg-card"
+                : "border-border bg-card hover:border-primary/30"
             )}
           >
             <div
               className={cn(
-                "absolute top-0 left-0 right-0 h-1 rounded-t-xl",
-                isSelected ? t.bg : "bg-transparent"
+                "absolute top-0 left-0 right-0 h-1 rounded-t-xl transition-colors",
+                isSelected ? "bg-primary" : "bg-transparent"
               )}
             />
-            <Icon className={cn("h-7 w-7 mb-2", t.text)} />
+            <div className={cn("h-10 w-10 rounded-lg flex items-center justify-center mb-2", isSelected ? "bg-primary/15" : "bg-muted")}>
+              <Icon className={cn("h-5 w-5", isSelected ? "text-primary" : "text-muted-foreground")} />
+            </div>
             <h3 className="font-bold text-foreground text-base mb-1">{t.label}</h3>
             <p className="text-xs text-muted-foreground leading-relaxed">{t.desc}</p>
           </button>
