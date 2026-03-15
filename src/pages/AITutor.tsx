@@ -39,7 +39,7 @@ const quickActions = [
 ];
 
 export default function AITutor() {
-  const { user } = useAuth();
+  const { user, subscribed, profile, refreshProfile } = useAuth();
   const { subject, subjectLabel, examBoard, level } = useSubject();
   const navigate = useNavigate();
   const [messages, setMessages] = useState<Msg[]>([]);
