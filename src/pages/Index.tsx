@@ -103,6 +103,16 @@ export default function Index() {
         });
       }
 
+      // Shimmer on subtitle "personal Economics tutor on demand: 24/7"
+      if (subtitleShimmerRef.current) {
+        gsap.to(subtitleShimmerRef.current, {
+          backgroundPosition: "200% center",
+          duration: 3,
+          repeat: -1,
+          ease: "none",
+        });
+      }
+
       // Floating dashboard card
       if (cardRef.current) {
         gsap.to(cardRef.current, {
