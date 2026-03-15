@@ -233,11 +233,9 @@ export default function Dashboard() {
             <motion.div variants={fadeUp}>
               <TopicHeatmap topics={r.topicMastery} />
             </motion.div>
-            {r.stage >= 3 && (
-              <motion.div variants={fadeUp}>
-                <Leaderboard userScore={r.score} />
-              </motion.div>
-            )}
+            <motion.div variants={fadeUp}>
+              <Leaderboard userScore={r.score} />
+            </motion.div>
             <motion.div variants={fadeUp}>
               <PredictedGrade score={r.score} />
             </motion.div>
