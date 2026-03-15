@@ -1415,7 +1415,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                       {remaining <= 0 && (
                         <>
                           {" · "}
-                          <button onClick={() => navigate("/pricing")} className="font-semibold text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">
+                          <button onClick={() => setShowUpgrade(true)} className="font-semibold text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">
                             Upgrade to Pro
                           </button>
                         </>
