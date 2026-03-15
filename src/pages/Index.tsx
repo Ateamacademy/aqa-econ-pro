@@ -87,7 +87,7 @@ export default function Index() {
   const heroRef = useRef<HTMLDivElement>(null);
   const shimmerRef = useRef<HTMLSpanElement>(null);
   const subtitleShimmerRef = useRef<HTMLSpanElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
+  
   const blob1Ref = useRef<HTMLDivElement>(null);
   const blob2Ref = useRef<HTMLDivElement>(null);
   const ctaPulseRef = useRef<HTMLDivElement>(null);
@@ -114,16 +114,6 @@ export default function Index() {
         });
       }
 
-      // Floating dashboard card
-      if (cardRef.current) {
-        gsap.to(cardRef.current, {
-          y: -6,
-          duration: 4,
-          yoyo: true,
-          repeat: -1,
-          ease: "sine.inOut",
-        });
-      }
 
       // Blob drift
       if (blob1Ref.current) {
@@ -170,9 +160,8 @@ export default function Index() {
         <div ref={blob1Ref} className="absolute top-1/4 right-0 w-[60vw] h-[60vw] max-w-[900px] max-h-[900px] rounded-full pointer-events-none" style={{ background: "rgba(79,86,255,0.12)", filter: "blur(120px)" }} />
         <div ref={blob2Ref} className="absolute bottom-0 left-0 w-[40vw] h-[40vw] max-w-[600px] max-h-[600px] rounded-full pointer-events-none" style={{ background: "rgba(6,182,212,0.06)", filter: "blur(100px)" }} />
 
-        <div className="max-w-[1280px] mx-auto px-5 lg:px-6 w-full grid lg:grid-cols-2 gap-12 lg:gap-20 items-center py-20 lg:py-0">
-          {/* Left */}
-          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}>
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-6 w-full flex flex-col items-center text-center py-20 lg:py-0">
+          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }} className="max-w-3xl">
             {/* Eyebrow pill */}
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-8 glow-indigo-sm">
               <span className="text-xs">✦</span> Built for AQA · Edexcel · OCR · All Boards
@@ -194,7 +183,7 @@ export default function Index() {
               </span>
             </h1>
 
-            <p className="text-base lg:text-lg text-muted-foreground leading-relaxed max-w-lg mb-8">
+            <p className="text-base lg:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
               Predicted papers, instant marking, diagram practice &amp; expert support; like having a{" "}
               <span
                 ref={subtitleShimmerRef}
@@ -209,7 +198,7 @@ export default function Index() {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 mb-10">
+            <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
               <Button asChild size="lg" className="rounded-lg px-7 h-12 text-sm font-semibold gap-2 animate-glow-pulse">
                 <Link to="/predicted">
                   Generate My First Paper <ArrowRight className="h-4 w-4" />
@@ -223,7 +212,7 @@ export default function Index() {
             </div>
 
             {/* Micro stats */}
-            <div className="flex items-center gap-6 text-sm">
+            <div className="flex items-center justify-center gap-6 text-sm">
               {[
                 { val: "12,000+", label: "Students" },
                 { val: "94%", label: "Report Grade Improvement" },
@@ -237,67 +226,6 @@ export default function Index() {
                   </div>
                 </div>
               ))}
-            </div>
-          </motion.div>
-
-          {/* Right — floating dashboard preview */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
-            className="hidden lg:block"
-          >
-            <div
-              ref={cardRef}
-              className="relative rounded-2xl border border-border bg-card p-6"
-              style={{
-                transform: "perspective(1200px) rotateX(8deg) rotateY(-6deg)",
-                boxShadow: "0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(79,86,255,0.15)",
-              }}
-            >
-              {/* Mini readiness ring */}
-              <div className="flex items-center gap-4 mb-5">
-                <div className="relative w-16 h-16">
-                  <svg viewBox="0 0 64 64" className="w-full h-full -rotate-90">
-                    <circle cx="32" cy="32" r="26" fill="none" stroke="hsl(var(--border))" strokeWidth="5" />
-                    <circle cx="32" cy="32" r="26" fill="none" stroke="url(#heroGrad)" strokeWidth="5" strokeLinecap="round" strokeDasharray={`${0.78 * 163.36} ${163.36}`} />
-                    <defs>
-                      <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stopColor="hsl(239,84%,67%)" />
-                        <stop offset="100%" stopColor="hsl(188,95%,43%)" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                  <span className="absolute inset-0 flex items-center justify-center text-sm font-bold font-mono text-foreground">78</span>
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">Exam Readiness</p>
-                  <p className="text-sm font-semibold text-foreground">Summit Approach</p>
-                </div>
-              </div>
-
-              {/* Mini paper card */}
-              <div className="rounded-xl border border-border bg-popover p-4 mb-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-semibold text-foreground">Predicted Grade</span>
-                  <span className="text-lg font-bold font-mono text-primary">A</span>
-                </div>
-                <div className="h-8 flex items-end gap-0.5">
-                  {[40, 55, 50, 65, 60, 72, 68, 78].map((h, i) => (
-                    <div key={i} className="flex-1 rounded-sm bg-primary/30" style={{ height: `${h}%` }} />
-                  ))}
-                </div>
-              </div>
-
-              {/* AI chat bubble */}
-              <div className="rounded-xl bg-popover border border-border p-3 flex items-start gap-2">
-                <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
-                  <Bot className="h-3 w-3 text-primary" />
-                </div>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  <TypingText text="Fiscal policy involves government spending and taxation to influence aggregate demand..." />
-                </p>
-              </div>
             </div>
           </motion.div>
         </div>
