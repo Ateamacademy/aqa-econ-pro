@@ -12,6 +12,7 @@ import { toast } from "sonner";
 import { RevisionRenderer } from "@/components/revision/RevisionRenderer";
 import { FREE_LIMITS } from "@/lib/plans";
 import { questionTypesBySubject, topicsBySubject } from "@/lib/subjectConfig";
+import { UpgradeModal } from "@/components/UpgradeModal";
 
 export default function EssayGrader() {
   const { user, subscribed, profile, refreshProfile } = useAuth();
