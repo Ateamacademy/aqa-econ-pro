@@ -63,7 +63,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       >
         <div className="max-w-[1280px] mx-auto flex h-16 items-center justify-between px-5 lg:px-6">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 shrink-0">
+          <Link to="/" className="flex items-center gap-3 shrink-0 mr-8">
             <div className="h-8 w-8 rounded-lg bg-primary/20 border border-primary/30 flex items-center justify-center animate-inner-glow">
               <div className="h-4 w-4 rounded-sm bg-primary" />
             </div>
