@@ -237,7 +237,7 @@ export default function GradeStepLadder() {
                     height,
                     background: `linear-gradient(180deg, ${grade.color}, ${grade.color}80)`,
                     transformOrigin: "bottom",
-                    scaleY: 0,
+                    transform: "scaleY(0)",
                   }}
                 >
                   {/* Inner shimmer */}
