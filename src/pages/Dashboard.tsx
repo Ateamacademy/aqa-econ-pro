@@ -28,7 +28,7 @@ const sidebarNav = [
   { icon: FileText, label: "Predicted Papers", to: "/predicted" },
   { icon: BookOpen, label: "Study Notes", to: "/notes" },
   { icon: Compass, label: "Diagram Builder", to: "/diagram-practice" },
-  { icon: MessageCircle, label: "AI Tutor", to: "/tutor" },
+  { icon: MessageCircle, label: "24/7 Tutor", to: "/tutor" },
   { icon: BarChart3, label: "Progress", to: "/dashboard" },
   { icon: Settings, label: "Settings", to: "/dashboard" },
 ];
