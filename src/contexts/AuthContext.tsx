@@ -28,7 +28,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
   const [subscribed, setSubscribed] = useState(false);
   const [subscriptionEnd, setSubscriptionEnd] = useState<string | null>(null);
-  const [profile, setProfile] = useState<{ free_papers_used: number; free_questions_used: number; free_predicted_papers_used: number } | null>(null);
+  const [profile, setProfile] = useState<{ free_papers_used: number; free_questions_used: number; free_predicted_papers_used: number; free_tutor_used: number; free_diagrams_used: number } | null>(null);
 
   const refreshProfile = async () => {
     const { data: { user: u } } = await supabase.auth.getUser();
