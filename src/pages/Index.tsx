@@ -183,8 +183,16 @@ export default function Index() {
             </h1>
 
             <p className="text-base lg:text-lg text-muted-foreground leading-relaxed max-w-lg mb-8">
-              AI-powered predicted papers, instant marking, diagram practice,
-              and a personal tutor — all built for GCSE and A-Level students.
+              Predicted papers, instant marking, diagram practice, and expert support; like having a{" "}
+              <span className="relative inline-block">
+                <motion.span
+                  className="bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] bg-clip-text text-transparent font-semibold"
+                  animate={{ backgroundPosition: ["0% center", "200% center"] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                >
+                  personal Economics tutor on demand: 24/7
+                </motion.span>
+              </span>
             </p>
 
             {/* CTAs */}
