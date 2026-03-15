@@ -823,8 +823,7 @@ export default function PredictedPapers() {
 
   const generatePaper = async () => {
     if (!canUse) {
-      toast.error("Free predicted paper limit reached. Subscribe for unlimited access.");
-      navigate("/pricing");
+      setShowUpgrade(true);
       return;
     }
     setIsGenerating(true);
