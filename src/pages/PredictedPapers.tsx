@@ -30,6 +30,7 @@ import {
 } from "@/data/pastPaperPatterns";
 import { generateKnowledgeGraphPrompt } from "@/data/economicsKnowledgeGraph";
 import { generatePaperPdf } from "@/lib/generatePaperPdf";
+import { UpgradeModal } from "@/components/UpgradeModal";
 
 type QuestionFeedback = {
   markScheme: string;
