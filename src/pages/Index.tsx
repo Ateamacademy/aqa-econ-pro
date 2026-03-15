@@ -400,7 +400,7 @@ export default function Index() {
           {/* Right — copy */}
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] mb-6">
-              Exam Papers, Generated<br />by AI. Marked by AI.
+              Exam Papers, Generated<br />& Marked Instantly.
             </h2>
             <div className="space-y-4 mb-8">
               {[

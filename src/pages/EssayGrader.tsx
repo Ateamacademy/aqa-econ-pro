@@ -103,7 +103,7 @@ RULES:
   return (
     <div className="container py-10 max-w-3xl">
       <div className="mb-6">
-        <h1 className="text-3xl font-serif mb-1">AI {graderLabel}</h1>
+        <h1 className="text-3xl font-serif mb-1">{graderLabel}</h1>
         <p className="text-sm text-muted-foreground">
           {examBoard} {level} {subjectLabel} · {subscribed ? "Unlimited grading" : `${FREE_LIMITS.papers - (profile?.free_papers_used ?? 0)} free grading(s) remaining`}
         </p>

@@ -1231,7 +1231,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
           <Lock className="h-7 w-7 text-primary" />
         </div>
         <h1 className="text-3xl font-bold tracking-tight mb-3">Sign in to access Predicted Papers</h1>
-        <p className="text-muted-foreground mb-8 max-w-md mx-auto">Generate AI-predicted exam papers with full marking and model solutions.</p>
+        <p className="text-muted-foreground mb-8 max-w-md mx-auto">Generate predicted exam papers with full marking and model solutions.</p>
         <Button onClick={() => navigate("/auth")} size="lg" className="rounded-full px-10 shadow-lg shadow-primary/20">Sign In</Button>
       </div>
     );
