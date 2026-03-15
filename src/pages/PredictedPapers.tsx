@@ -1523,12 +1523,14 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                 )}
               </div>
               <div className="flex items-center gap-3 flex-wrap">
-                <ExamTimer
-                  durationMinutes={examDuration}
-                  onTimeUp={handleExamTimeUp}
-                  isActive={examActive}
-                  onStart={handleStartExam}
-                />
+                {!examActive && (
+                  <ExamTimer
+                    durationMinutes={examDuration}
+                    onTimeUp={handleExamTimeUp}
+                    isActive={false}
+                    onStart={handleStartExam}
+                  />
+                )}
                 <Button
                   size="lg"
                   className="gap-2.5 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-shadow"
