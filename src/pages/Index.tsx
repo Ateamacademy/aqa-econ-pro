@@ -303,7 +303,14 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ═══════ SOCIAL PROOF TICKER ═══════ */}
+      {/* ═══════ GRADE PROGRESSION ═══════ */}
+      <section className="py-16 lg:py-20 relative">
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-6">
+          <GradeStepLadder />
+        </div>
+      </section>
+
+
       <div className="relative overflow-hidden border-y border-border py-4" style={{ maskImage: "linear-gradient(90deg, transparent, black 10%, black 90%, transparent)" }}>
         <div className="flex animate-marquee whitespace-nowrap">
           {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, i) => (
