@@ -48,6 +48,10 @@ export default function AITutor() {
   const [activeTopic, setActiveTopic] = useState<string | null>(null);
   const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({ Microeconomics: true, Macroeconomics: false });
   const bottomRef = useRef<HTMLDivElement>(null);
+  const [showUpgrade, setShowUpgrade] = useState(false);
+
+  const tutorUsed = profile?.free_tutor_used ?? 0;
+  const canUse = subscribed || tutorUsed < FREE_LIMITS.tutorQuestions;
 
   const topics = topicsBySubject[subject] || [];
   const tree = buildTopicTree(topics);
