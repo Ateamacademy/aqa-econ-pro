@@ -3,6 +3,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
 import { streamChat } from "@/lib/streamChat";
+import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -14,6 +15,8 @@ import { RevisionRenderer } from "@/components/revision/RevisionRenderer";
 import { topicsBySubject } from "@/lib/subjectConfig";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { FREE_LIMITS } from "@/lib/plans";
+import { UpgradeModal } from "@/components/UpgradeModal";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
