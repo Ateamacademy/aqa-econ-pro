@@ -31,6 +31,7 @@ export default function Practice() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [isMarking, setIsMarking] = useState(false);
   const [step, setStep] = useState<"generate" | "answer" | "feedback">("generate");
+  const [showUpgrade, setShowUpgrade] = useState(false);
 
   // Reset when subject changes
   useEffect(() => {
