@@ -28,6 +28,7 @@ const StudyNotes = lazy(() => import("./pages/StudyNotes"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 const PredictedPapers = lazy(() => import("./pages/PredictedPapers"));
+const ParentDashboard = lazy(() => import("./pages/ParentDashboard"));
 
 const queryClient = new QueryClient();
 
