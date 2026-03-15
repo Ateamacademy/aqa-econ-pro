@@ -21,13 +21,13 @@ export default function PredictedGrade({ score }: Props) {
   const boundary = gradeBoundary(grade);
 
   return (
-    <div className="rounded-2xl bg-[#1a1a2e] border border-[#2a2a4a] p-5">
-      <h3 className="text-[#64748b] text-xs font-medium mb-1">Predicted Grade</h3>
+    <div className="rounded-2xl border border-border bg-card p-5">
+      <h3 className="text-muted-foreground text-xs font-medium mb-1">Predicted Grade</h3>
       <div className="flex items-baseline gap-2">
-        <span className="text-4xl font-bold text-[#f1f5f9]">{grade}</span>
+        <span className="text-4xl font-bold text-foreground font-mono">{grade}</span>
         <div className="flex flex-col">
-          <span className="text-[10px] text-[#64748b]">Boundary: {boundary}%</span>
-          <span className={`text-[10px] font-medium ${score >= boundary ? "text-[#22c55e]" : "text-[#f59e0b]"}`}>
+          <span className="text-[10px] text-muted-foreground">Boundary: {boundary}%</span>
+          <span className={`text-[10px] font-medium ${score >= boundary ? "text-success" : "text-warning"}`}>
             Your avg: {score}%
           </span>
         </div>
@@ -36,11 +36,11 @@ export default function PredictedGrade({ score }: Props) {
         <polyline
           points="0,25 15,22 30,20 45,18 60,16 75,13 90,10 105,8 120,5"
           fill="none"
-          stroke="#22c55e"
+          stroke="hsl(var(--success))"
           strokeWidth="2"
           strokeLinecap="round"
         />
-        <circle cx="120" cy="5" r="3" fill="#22c55e">
+        <circle cx="120" cy="5" r="3" fill="hsl(var(--success))">
           <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite" />
         </circle>
       </svg>

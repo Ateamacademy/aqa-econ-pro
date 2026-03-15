@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { supabase } from "@/integrations/supabase/client";
@@ -13,17 +13,29 @@ import ActionCards from "@/components/dashboard/ActionCards";
 import PredictedGrade from "@/components/dashboard/PredictedGrade";
 import DailyGoalBanner from "@/components/dashboard/DailyGoalBanner";
 import ScoreDelta from "@/components/dashboard/ScoreDelta";
-import GradientMeshBg from "@/components/dashboard/GradientMeshBg";
+import RecentPapersTable from "@/components/dashboard/RecentPapersTable";
+import GradeTrendChart from "@/components/dashboard/GradeTrendChart";
 import { motion } from "framer-motion";
-import { Lock, Target, Zap, BarChart3, Award, Brain, PenTool, FileText, Flame, BookOpen, GraduationCap, Crown } from "lucide-react";
+import {
+  Lock, LayoutDashboard, FileText, BookOpen, Compass, MessageCircle,
+  BarChart3, Settings, Crown, Bell, GraduationCap, ChevronRight,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-const STAGE_BG: Record<number, string> = {
-  0: "linear-gradient(135deg, #1a1a2e 0%, #1a1a2e 100%)",
-  1: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
-  2: "linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%)",
-  3: "linear-gradient(135deg, #0f0f1a 0%, #1a0a2e 50%, #0f0f1a 100%)",
-  4: "linear-gradient(135deg, #0f0f1a 0%, #2e1065 30%, #1a0a2e 70%, #0f0f1a 100%)",
+const sidebarNav = [
+  { icon: LayoutDashboard, label: "Dashboard", to: "/dashboard", active: true },
+  { icon: FileText, label: "Predicted Papers", to: "/predicted" },
+  { icon: BookOpen, label: "Study Notes", to: "/notes" },
+  { icon: Compass, label: "Diagram Builder", to: "/diagram-practice" },
+  { icon: MessageCircle, label: "AI Tutor", to: "/tutor" },
+  { icon: BarChart3, label: "Progress", to: "/dashboard" },
+  { icon: Settings, label: "Settings", to: "/dashboard" },
+];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.4, 0.25, 1] as [number, number, number, number] } },
 };
 
 export default function Dashboard() {
@@ -61,187 +73,156 @@ export default function Dashboard() {
 
   if (!user) {
     return (
-      <div className="min-h-[70vh] flex flex-col items-center justify-center gap-4 px-4" style={{ background: STAGE_BG[0] }}>
-        <Lock className="h-12 w-12 text-[#64748b]" />
-        <h1 className="text-2xl font-bold text-[#f1f5f9]">Sign in to view your dashboard</h1>
-        <Button onClick={() => navigate("/auth")} className="bg-[#6366f1] hover:bg-[#6366f1]/90">Sign In</Button>
+      <div className="min-h-[70vh] flex flex-col items-center justify-center gap-4 px-4 bg-background">
+        <Lock className="h-12 w-12 text-muted-foreground" />
+        <h1 className="text-2xl font-bold text-foreground">Sign in to view your dashboard</h1>
+        <Button onClick={() => navigate("/auth")}>Sign In</Button>
       </div>
     );
   }
 
-  const fadeUp = { hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } };
-
   return (
-    <motion.div
-      className="min-h-screen px-4 py-6 lg:px-8 lg:py-8"
-      initial="hidden"
-      animate="show"
-      variants={{ show: { transition: { staggerChildren: 0.06 } } }}
-      style={{
-        background: STAGE_BG[r.stage],
-        backgroundSize: r.stage >= 3 ? "400% 400%" : undefined,
-        animation: r.stage >= 3 ? "gradientDrift 20s ease infinite" : undefined,
-      }}
-    >
-      <style>{`
-        @keyframes gradientDrift {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-        }
-      `}</style>
-
-      <GradientMeshBg stage={r.stage} />
-
-      <div className="max-w-[1400px] mx-auto relative z-10">
-        {/* Header */}
-        <motion.div variants={fadeUp} className="mb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
-          <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#f1f5f9] flex items-center gap-2">
-              <GraduationCap className="h-6 w-6 text-[#a855f7]" /> Exam Readiness
-            </h1>
-            <p className="text-sm text-[#64748b] mt-1">{examBoard} {subjectLabel}</p>
-          </div>
-          <div className="flex items-center gap-2">
-            {subscribed ? (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#6366f1]/15 text-[#a855f7] text-xs font-semibold">
-                <Crown className="h-3.5 w-3.5" /> Pro
+    <div className="flex min-h-[calc(100vh-64px)] bg-background">
+      {/* ═══ SIDEBAR ═══ */}
+      <aside className="hidden lg:flex flex-col w-[240px] border-r border-border bg-background shrink-0 sticky top-16 h-[calc(100vh-64px)] overflow-y-auto">
+        {/* User */}
+        <div className="p-5 border-b border-border">
+          <div className="flex items-center gap-3">
+            <div className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center">
+              <span className="text-sm font-bold text-primary">
+                {user.email?.[0]?.toUpperCase() || "U"}
               </span>
-            ) : (
-              <Button size="sm" onClick={() => navigate("/pricing")} className="bg-[#6366f1] hover:bg-[#6366f1]/90 text-xs gap-1">
-                <Crown className="h-3.5 w-3.5" /> Upgrade
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground truncate">{user.email?.split("@")[0]}</p>
+              <span className="text-[10px] font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full">
+                {examBoard}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Nav */}
+        <nav className="flex-1 p-3 space-y-1">
+          {sidebarNav.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.label}
+                to={item.to}
+                className={cn(
+                  "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all",
+                  item.active
+                    ? "bg-popover text-foreground border-l-2 border-primary"
+                    : "text-muted-foreground hover:text-foreground hover:bg-popover/50"
+                )}
+              >
+                <Icon className="h-4 w-4" />
+                {item.label}
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Upgrade card */}
+        {!subscribed && (
+          <div className="p-3">
+            <div className="rounded-xl bg-primary/10 border border-primary/20 p-4">
+              <Crown className="h-5 w-5 text-primary mb-2" />
+              <p className="text-xs font-semibold text-foreground mb-1">Upgrade to Pro</p>
+              <p className="text-[10px] text-muted-foreground mb-3">Unlock unlimited papers, marking, and AI tutor.</p>
+              <Button size="sm" onClick={() => navigate("/pricing")} className="w-full text-xs h-8">
+                Upgrade
               </Button>
-            )}
+            </div>
+          </div>
+        )}
+      </aside>
+
+      {/* ═══ MAIN CONTENT ═══ */}
+      <div className="flex-1 min-w-0">
+        {/* Top bar */}
+        <div className="sticky top-16 z-30 bg-background/80 backdrop-blur-xl border-b border-border px-6 py-3 flex items-center justify-between gap-4">
+          <h1 className="text-lg font-bold text-foreground">Dashboard</h1>
+          <DailyGoalBanner />
+          <div className="flex items-center gap-3 shrink-0">
+            <button className="text-muted-foreground hover:text-foreground transition-colors">
+              <Bell className="h-5 w-5" />
+            </button>
+            <Button size="sm" onClick={() => navigate("/predicted")} className="gap-1.5 text-xs">
+              <FileText className="h-3.5 w-3.5" /> Generate New Paper
+            </Button>
+          </div>
+        </div>
+
+        {/* Dashboard content */}
+        <motion.div
+          className="p-6 lg:p-8 max-w-[1200px] mx-auto"
+          initial="hidden"
+          animate="show"
+          variants={{ show: { transition: { staggerChildren: 0.06 } } }}
+        >
+          {/* Readiness Score Hero */}
+          <motion.div variants={fadeUp} className="flex justify-center py-6 relative">
+            <ScoreDelta points={r.score > 0 ? 5 : 0} />
+            <ReadinessRadial score={r.score} stageName={r.stageName} stage={r.stage} />
+          </motion.div>
+
+          {/* Mountain Tracker */}
+          <motion.div variants={fadeUp} className="rounded-2xl border border-border bg-card p-5 mb-6">
+            <h3 className="text-foreground font-semibold text-sm mb-2">Your Journey</h3>
+            <MountainTracker activeStage={r.stage} />
+          </motion.div>
+
+          {/* Stats Row */}
+          <motion.div variants={fadeUp} className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+            {[
+              { label: "Readiness Score", value: `${r.score}%`, sub: `↑ ${r.weeklyChange} this week`, subColor: "text-success" },
+              { label: "Predicted Grade", value: r.score >= 80 ? "A*" : r.score >= 70 ? "A" : r.score >= 60 ? "B" : "C", sub: `Boundary: ${r.score >= 80 ? 80 : r.score >= 70 ? 70 : r.score >= 60 ? 60 : 50}%` },
+              { label: "Study Streak", value: `${r.streak} days`, sub: "🔥 Keep it up" },
+              { label: "Papers Completed", value: `${r.predictedPaperCount}`, sub: `${r.totalSessions} total sessions` },
+            ].map(({ label, value, sub, subColor }) => (
+              <div key={label} className="rounded-2xl border border-border bg-card p-4" style={{ borderTopWidth: "2px", borderTopColor: "hsl(var(--primary))" }}>
+                <p className="text-3xl font-bold text-foreground font-mono">{value}</p>
+                <p className="text-[10px] text-muted-foreground mt-0.5">{label}</p>
+                {sub && <p className={cn("text-[10px] mt-1 font-medium", subColor || "text-muted-foreground")}>{sub}</p>}
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Action Cards */}
+          <motion.div variants={fadeUp} className="mb-6">
+            <h3 className="text-foreground font-semibold text-sm mb-3">Recommended Actions</h3>
+            <ActionCards actions={r.recommendations} />
+          </motion.div>
+
+          {/* Two-Column Lower */}
+          <div className="grid lg:grid-cols-[1fr_340px] gap-6">
+            {/* Left */}
+            <div className="space-y-6">
+              <motion.div variants={fadeUp}>
+                <RecentPapersTable />
+              </motion.div>
+              <motion.div variants={fadeUp}>
+                <TopicHeatmap topics={r.topicMastery} />
+              </motion.div>
+            </div>
+
+            {/* Right */}
+            <div className="space-y-4">
+              <motion.div variants={fadeUp}>
+                <StudyStreak streak={r.streak} weeklyDays={r.weeklyDays} />
+              </motion.div>
+              <motion.div variants={fadeUp}>
+                <Leaderboard userScore={r.score} />
+              </motion.div>
+              <motion.div variants={fadeUp}>
+                <GradeTrendChart />
+              </motion.div>
+            </div>
           </div>
         </motion.div>
-
-        {/* Achievement badge for Peak Mastery */}
-        {r.stage === 4 && (
-          <motion.div variants={fadeUp} className="mb-4 rounded-xl bg-[#a855f7]/15 border border-[#a855f7]/30 px-4 py-3 flex items-center gap-3">
-            <Award className="h-5 w-5 text-[#a855f7]" />
-            <span className="text-[#f1f5f9] text-sm font-semibold">🏆 Exam Ready Economist — You've reached Peak Mastery!</span>
-          </motion.div>
-        )}
-
-        <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr_280px] gap-6">
-          {/* LEFT SIDEBAR */}
-          <aside className="space-y-4 order-2 lg:order-1">
-            <motion.div variants={fadeUp}>
-              <StudyStreak streak={r.streak} weeklyDays={r.weeklyDays} />
-            </motion.div>
-
-            <motion.div variants={fadeUp} className="rounded-2xl bg-[#1a1a2e] border border-[#2a2a4a] p-5">
-              <div className="flex items-center gap-2 mb-3">
-                <Target className="h-4 w-4 text-[#a855f7]" />
-                <h3 className="text-[#f1f5f9] font-semibold text-sm">Score Breakdown</h3>
-              </div>
-              <div className="space-y-2.5">
-                {[
-                  { label: "Questions (25%)", value: r.questionAccuracy, icon: Brain },
-                  { label: "Predicted (30%)", value: r.predictedPaperScore, icon: FileText },
-                  { label: "Essays (15%)", value: r.essayScore, icon: PenTool },
-                  { label: "Diagrams (10%)", value: r.diagramAccuracy, icon: PenTool },
-                  { label: "Topics (10%)", value: r.topicCoverage, icon: BookOpen },
-                  { label: "Streak (5%)", value: r.streakScore, icon: Flame },
-                ].map(({ label, value, icon: Icon }) => (
-                  <div key={label}>
-                    <div className="flex items-center justify-between text-[11px] mb-1">
-                      <span className="text-[#94a3b8] flex items-center gap-1.5">
-                        <Icon className="h-3 w-3 text-[#6366f1]" /> {label}
-                      </span>
-                      <span className="text-[#f1f5f9] font-semibold">{value}%</span>
-                    </div>
-                    <div className="h-1 rounded-full bg-[#2a2a4a] overflow-hidden">
-                      <motion.div
-                        className="h-full rounded-full bg-gradient-to-r from-[#6366f1] to-[#a855f7]"
-                        initial={{ width: 0 }}
-                        animate={{ width: `${value}%` }}
-                        transition={{ duration: 0.8, delay: 0.3 }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Activity Chart */}
-            <motion.div variants={fadeUp} className="rounded-2xl bg-[#1a1a2e] border border-[#2a2a4a] p-5">
-              <div className="flex items-center gap-2 mb-3">
-                <BarChart3 className="h-4 w-4 text-[#6366f1]" />
-                <h3 className="text-[#f1f5f9] font-semibold text-sm">14-Day Activity</h3>
-              </div>
-              <div className="flex items-end gap-1 h-20">
-                {r.dailyCounts.map((d, i) => {
-                  const maxDaily = Math.max(...r.dailyCounts.map(x => x.count), 1);
-                  const height = (d.count / maxDaily) * 64;
-                  const isToday = i === r.dailyCounts.length - 1;
-                  return (
-                    <div key={d.date} className="flex-1 flex flex-col items-center gap-0.5 group">
-                      <motion.div
-                        className={`w-full rounded-sm min-h-[2px] ${
-                          isToday ? "bg-[#a855f7]" : d.count > 0 ? "bg-[#6366f1]/60" : "bg-[#2a2a4a]"
-                        }`}
-                        initial={{ height: 0 }}
-                        animate={{ height: `${Math.max(height, 2)}px` }}
-                        transition={{ delay: i * 0.03, duration: 0.4 }}
-                      />
-                    </div>
-                  );
-                })}
-              </div>
-            </motion.div>
-          </aside>
-
-          {/* CENTRE */}
-          <main className="space-y-6 order-1 lg:order-2">
-            <motion.div variants={fadeUp}>
-              <DailyGoalBanner />
-            </motion.div>
-
-            <motion.div variants={fadeUp} className="relative flex justify-center py-8">
-              <ScoreDelta points={r.score > 0 ? 5 : 0} />
-              <ReadinessRadial score={r.score} stageName={r.stageName} stage={r.stage} />
-            </motion.div>
-
-            <motion.div variants={fadeUp} className="rounded-2xl bg-[#1a1a2e] border border-[#2a2a4a] p-5">
-              <h3 className="text-[#f1f5f9] font-semibold text-sm mb-2">Your Journey</h3>
-              <MountainTracker activeStage={r.stage} />
-            </motion.div>
-
-            <motion.div variants={fadeUp}>
-              <h3 className="text-[#f1f5f9] font-semibold text-sm mb-3">Recommended Actions</h3>
-              <ActionCards actions={r.recommendations} />
-            </motion.div>
-
-            {/* Stats row */}
-            <motion.div variants={fadeUp} className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {[
-                { label: "Sessions", value: r.totalSessions, color: "#6366f1" },
-                { label: "Questions", value: r.questionCount, color: "#a855f7" },
-                { label: "Essays", value: r.essayCount, color: "#ec4899" },
-                { label: "Topics", value: r.uniqueTopics, color: "#22c55e" },
-              ].map(({ label, value, color }) => (
-                <div key={label} className="rounded-2xl bg-[#1a1a2e] border border-[#2a2a4a] p-4 text-center">
-                  <p className="text-2xl font-bold text-[#f1f5f9] tabular-nums">{value}</p>
-                  <p className="text-[10px] text-[#64748b] mt-0.5">{label}</p>
-                </div>
-              ))}
-            </motion.div>
-          </main>
-
-          {/* RIGHT PANEL */}
-          <aside className="space-y-4 order-3">
-            <motion.div variants={fadeUp}>
-              <TopicHeatmap topics={r.topicMastery} />
-            </motion.div>
-            <motion.div variants={fadeUp}>
-              <Leaderboard userScore={r.score} />
-            </motion.div>
-            <motion.div variants={fadeUp}>
-              <PredictedGrade score={r.score} />
-            </motion.div>
-          </aside>
-        </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

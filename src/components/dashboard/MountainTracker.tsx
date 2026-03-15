@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const STAGES = [
   { label: "Base Camp", x: 40 },
   { label: "Early Ascent", x: 200 },
@@ -19,11 +17,11 @@ export default function MountainTracker({ activeStage }: Props) {
     <div className="w-full overflow-x-auto py-4">
       <svg viewBox="0 0 860 130" className="w-full min-w-[600px]" preserveAspectRatio="xMidYMid meet">
         <defs>
-          <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#6366f1" />
-            <stop offset="100%" stopColor="#a855f7" />
+          <linearGradient id="mtGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="hsl(var(--indigo-bright))" />
+            <stop offset="100%" stopColor="hsl(var(--cyan-pop))" />
           </linearGradient>
-          <filter id="waypointGlow">
+          <filter id="wpGlow">
             <feGaussianBlur stdDeviation="2" result="blur" />
             <feMerge>
               <feMergeNode in="blur" />
@@ -32,16 +30,17 @@ export default function MountainTracker({ activeStage }: Props) {
           </filter>
         </defs>
 
-        {/* Full path (grey) */}
+        {/* Full path (muted) */}
         <path
           d="M 40 90 Q 120 30 200 70 Q 300 20 400 60 Q 500 10 600 50 Q 700 5 800 30"
           fill="none"
-          stroke="#2a2a4a"
+          stroke="hsl(var(--border))"
           strokeWidth="3"
           strokeLinecap="round"
+          strokeDasharray="6 6"
         />
 
-        {/* Completed path segments with animated stroke */}
+        {/* Completed segments */}
         {[
           { d: "M 40 90 Q 120 30 200 70", stage: 1 },
           { d: "M 200 70 Q 300 20 400 60", stage: 2 },
@@ -53,20 +52,11 @@ export default function MountainTracker({ activeStage }: Props) {
               key={seg.stage}
               d={seg.d}
               fill="none"
-              stroke="url(#mountainGrad)"
+              stroke="url(#mtGrad)"
               strokeWidth="3"
               strokeLinecap="round"
-              filter={activeStage === seg.stage ? "url(#waypointGlow)" : undefined}
             />
           ) : null
-        )}
-
-        {/* Peak glow for stage 4 */}
-        {activeStage >= 4 && (
-          <circle cx={800} cy={30} r="20" fill="#a855f7" opacity="0.15">
-            <animate attributeName="r" values="15;25;15" dur="3s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.15;0.05;0.15" dur="3s" repeatCount="indefinite" />
-          </circle>
         )}
 
         {/* Waypoints */}
@@ -77,32 +67,26 @@ export default function MountainTracker({ activeStage }: Props) {
           return (
             <g key={s.label}>
               {isCurrent && (
-                <>
-                  <circle cx={s.x} cy={y} r="14" fill="#a855f7" opacity="0.2">
-                    <animate attributeName="r" values="10;18;10" dur="2.5s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="0.3;0.05;0.3" dur="2.5s" repeatCount="indefinite" />
-                  </circle>
-                  <circle cx={s.x} cy={y} r="8" fill="#a855f7" opacity="0.15">
-                    <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="0.2;0.08;0.2" dur="2s" repeatCount="indefinite" />
-                  </circle>
-                </>
+                <circle cx={s.x} cy={y} r="14" fill="hsl(var(--primary))" opacity="0.2">
+                  <animate attributeName="r" values="10;18;10" dur="2.5s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.3;0.05;0.3" dur="2.5s" repeatCount="indefinite" />
+                </circle>
               )}
               <circle
                 cx={s.x}
                 cy={y}
                 r="6"
-                fill={completed ? (isCurrent ? "#a855f7" : "#6366f1") : "#2a2a4a"}
-                stroke={completed ? "#a855f7" : "#3a3a5a"}
+                fill={completed ? (isCurrent ? "hsl(var(--primary))" : "hsl(var(--indigo-bright))") : "hsl(var(--border))"}
+                stroke={completed ? "hsl(var(--primary))" : "hsl(var(--border))"}
                 strokeWidth="2"
               />
-              {isCurrent && <circle cx={s.x} cy={y} r="3" fill="#f1f5f9" />}
+              {isCurrent && <circle cx={s.x} cy={y} r="3" fill="hsl(var(--foreground))" />}
               <text
                 x={s.x}
                 y={y + 24}
                 textAnchor="middle"
                 className="text-[9px]"
-                fill={completed ? "#f1f5f9" : "#64748b"}
+                fill={completed ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground))"}
                 fontWeight={isCurrent ? "600" : "400"}
               >
                 {s.label}
