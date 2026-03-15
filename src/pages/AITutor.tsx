@@ -70,7 +70,7 @@ export default function AITutor() {
         <div className="mx-auto mb-6 h-16 w-16 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20">
           <Lock className="h-7 w-7 text-primary" />
         </div>
-        <h1 className="text-3xl font-bold tracking-tight mb-3">Sign in to use the AI Tutor</h1>
+        <h1 className="text-3xl font-bold tracking-tight mb-3">Sign in to use the 24/7 Tutor</h1>
         <p className="text-muted-foreground mb-8 max-w-md mx-auto">Get instant, curriculum-aligned explanations for any economics topic.</p>
         <Button onClick={() => navigate("/auth")} size="lg" className="rounded-full px-10 shadow-lg shadow-primary/20">Sign In</Button>
       </div>
@@ -131,7 +131,7 @@ export default function AITutor() {
               <MessageCircle className="h-4 w-4 text-primary" />
             </div>
             <div>
-              <h2 className="text-sm font-bold text-foreground">AI {subjectLabel} Tutor</h2>
+              <h2 className="text-sm font-bold text-foreground">24/7 {subjectLabel} Tutor</h2>
               <p className="text-[10px] text-muted-foreground">{examBoard} {level}</p>
             </div>
           </div>
@@ -191,7 +191,7 @@ export default function AITutor() {
       <div className="flex-1 flex flex-col min-w-0 h-[calc(100vh-64px)]">
         {/* Chat header (mobile) */}
         <div className="lg:hidden px-5 py-3 border-b border-border bg-background/80 backdrop-blur-xl">
-          <h1 className="text-lg font-bold text-foreground">AI {subjectLabel} Tutor</h1>
+          <h1 className="text-lg font-bold text-foreground">24/7 {subjectLabel} Tutor</h1>
           <p className="text-xs text-muted-foreground">{examBoard} {level}</p>
         </div>
 

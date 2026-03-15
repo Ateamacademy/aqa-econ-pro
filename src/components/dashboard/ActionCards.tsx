@@ -32,7 +32,7 @@ export default function ActionCards({ actions }: Props) {
   const items = actions.length > 0 ? actions : [
     { icon: "📐", label: "Practice elasticity diagrams to boost diagram accuracy", points: 4, accent: "hsl(var(--primary))", to: "/diagram-practice" },
     { icon: "📝", label: "Complete a predicted paper to reach Peak Mastery", points: 6, accent: "hsl(var(--indigo-bright))", to: "/predicted" },
-    { icon: "✍️", label: "Submit an essay for AI grading to improve your essay score", points: 3, accent: "hsl(var(--cyan-pop))", to: "/grader" },
+    { icon: "✍️", label: "Submit an essay for grading to improve your essay score", points: 3, accent: "hsl(var(--cyan-pop))", to: "/grader" },
   ];
 
   return (

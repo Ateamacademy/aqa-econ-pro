@@ -266,7 +266,7 @@ export function QuestionCard({
                 subject === "chemistry"
                   ? "Type your answer here... Include balanced equations with state symbols where needed."
                   : subject === "economics"
-                  ? "Type your answer here... Use diagrams where relevant. The AI examiner will mark using AQA KAA criteria."
+                  ? "Type your answer here... Use diagrams where relevant. The examiner will mark using AQA KAA criteria."
                   : showMathTools
                   ? "Type your answer here... Show all working. Use the toolbar above for maths symbols."
                   : "Type your answer here... The AI examiner will mark it for you."

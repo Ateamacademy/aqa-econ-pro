@@ -9,7 +9,7 @@ import { useSubject, type Subject } from "@/contexts/SubjectContext";
 
 const navLinks = [
   { to: "/notes", label: "Notes" },
-  { to: "/tutor", label: "AI Tutor" },
+  { to: "/tutor", label: "24/7 Tutor" },
   { to: "/grader", label: "Grader" },
   { to: "/practice", label: "Practice" },
   { to: "/diagram-practice", label: "Diagrams" },

@@ -31,16 +31,16 @@ const cardVariant = {
 
 /* ─── data ─── */
 const features = [
-  { icon: FileText, title: "AI Predicted Papers", desc: "Generate full exam-format papers based on the latest mark schemes. Unique every time." },
-  { icon: Bot, title: "AI Marking & Feedback", desc: "Submit answers and get instant mark-scheme-accurate feedback with improvement tips." },
+  { icon: FileText, title: "Exam Board Specific Papers", desc: "Generate full exam-format papers based on the latest mark schemes. Unique every time." },
+  { icon: Bot, title: "Instant Marking & Feedback", desc: "Submit answers and get instant mark-scheme-accurate feedback with improvement tips." },
   { icon: BarChart3, title: "Progress Tracking", desc: "Visual readiness score, topic heatmaps, and grade trajectory charts updated after every session." },
-  { icon: Compass, title: "Diagram Builder", desc: "Practice drawing and labelling economic diagrams with AI accuracy feedback." },
-  { icon: MessageCircle, title: "AI Economics Tutor", desc: "Ask any economics question and get curriculum-aligned explanations instantly." },
+  { icon: Compass, title: "Diagram Builder", desc: "Practice drawing and labelling economic diagrams with accuracy feedback." },
+  { icon: MessageCircle, title: "24/7 Economics Tutor", desc: "Ask any economics question and get curriculum-aligned explanations instantly." },
   { icon: BookOpen, title: "Structured Notes", desc: "Clean, concise topic notes organised by syllabus. Linked to practice questions." },
 ];
 
 const steps = [
-  { num: "01", title: "Choose Your Topic", desc: "Pick a syllabus area or let AI recommend based on your weak spots." },
+  { num: "01", title: "Choose Your Topic", desc: "Pick a syllabus area or get recommendations based on your weak spots." },
   { num: "02", title: "Generate a Paper", desc: "Get a unique, exam-format paper matched to your board and specification." },
   { num: "03", title: "Submit & Get Marked", desc: "Write your answers and receive instant, mark-scheme-accurate feedback." },
   { num: "04", title: "Track Your Progress", desc: "Watch your readiness score climb as you revise smarter, not harder." },
@@ -48,33 +48,33 @@ const steps = [
 
 const testimonials = [
   { quote: "I went from a C to an A* in 6 weeks. The predicted papers were almost identical to the real thing.", name: "Maya", detail: "A-Level Economics, Edexcel" },
-  { quote: "The AI tutor explained diagrams better than my actual teacher. Worth every penny.", name: "James", detail: "GCSE Economics, AQA" },
+  { quote: "The tutor explained diagrams better than my actual teacher. Worth every penny.", name: "James", detail: "GCSE Economics, AQA" },
   { quote: "I used Econ Rev every day for 3 months. My predicted grade went from a 5 to an 8.", name: "Priya", detail: "GCSE Economics, OCR" },
 ];
 
 const freeFeatures = [
-  "3 AI Predicted Papers / month",
-  "3 AI Marking sessions / month",
+  "3 Predicted Papers / month",
+  "3 Marking sessions / month",
   "Full access to notes, questions & mark schemes",
-  "5 AI Tutor questions / month",
+  "5 Tutor questions / month",
   "Basic readiness score & progress tracking",
-  "5 diagram builds with AI feedback",
+  "5 diagram builds with feedback",
 ];
 const proFeatures = [
-  "Unlimited AI Predicted Papers",
-  "Unlimited AI Marking",
+  "Unlimited Predicted Papers",
+  "Unlimited Marking",
   "Full readiness engine with mountain tracker",
-  "Diagram builder with AI feedback",
+  "Diagram builder with feedback",
   "Parent monitoring dashboard",
   "Performance analytics & grade trajectory",
-  "AI Tutor unlimited",
+  "24/7 Tutor unlimited",
   "Access to all future platform updates",
 ];
 
 const faqItems = [
   { q: "What exam boards does Econ Rev support?", a: "We support AQA, Edexcel A, Edexcel B, OCR, Cambridge (CAIE), WJEC, and IB Economics for both GCSE and A-Level." },
-  { q: "How are the predicted papers generated?", a: "Our AI analyses past paper patterns, mark scheme structures, and syllabus weighting to generate unique, exam-format papers that reflect likely question types." },
-  { q: "How accurate is the AI marking?", a: "Our marking engine is trained on thousands of examiner-marked scripts and follows official mark schemes. It provides band-level accuracy with detailed improvement tips." },
+  { q: "How are the predicted papers generated?", a: "We analyse past paper patterns, mark scheme structures, and syllabus weighting to generate unique, exam-format papers that reflect likely question types." },
+  { q: "How accurate is the marking?", a: "Our marking engine is trained on thousands of examiner-marked scripts and follows official mark schemes. It provides band-level accuracy with detailed improvement tips." },
   { q: "Can I use Econ Rev for both GCSE and A-Level?", a: "Yes! Simply select your level and exam board. All content is tailored to your specific specification." },
   { q: "What happens after my exam window ends?", a: "Your access continues. The Exam Window Pass gives you lifetime access to all features for your current exam series." },
   { q: "Is there a version for schools or teachers?", a: "Yes, we offer school licences with teacher dashboards, class progress tracking, and bulk student accounts. Contact us for details." },
@@ -368,11 +368,11 @@ export default function Index() {
           >
             <div className="rounded-2xl border border-border bg-card overflow-hidden relative" style={{ borderTopColor: "hsl(var(--accent))", borderTopWidth: "2px" }}>
               <div className="absolute top-3 right-3 bg-primary/20 text-primary text-xs font-bold px-3 py-1 rounded-full animate-glow-pulse">
-                AI Generated
+                Predicted
               </div>
               <div className="p-6 border-b border-border">
                 <p className="text-xs text-muted-foreground font-medium mb-1">Economics — Paper 1</p>
-                <p className="text-sm font-bold">AI Predicted | June 2025</p>
+                <p className="text-sm font-bold">Predicted | June 2025</p>
               </div>
               <div className="p-6 space-y-4">
                 {[
@@ -385,10 +385,10 @@ export default function Index() {
                     <span className="shrink-0 text-xs font-mono font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">[{item.marks} marks]</span>
                   </div>
                 ))}
-                {/* AI marking overlay */}
+                {/* Marking overlay */}
                 <div className="mt-4 rounded-xl bg-destructive/10 border border-destructive/20 p-4">
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs font-bold text-destructive">AI Marking</span>
+                    <span className="text-xs font-bold text-destructive">Instant Marking</span>
                     <span className="font-mono text-sm font-bold text-foreground">7/8 marks</span>
                   </div>
                   <p className="text-xs text-muted-foreground">Strong analysis, develop evaluation further</p>
@@ -400,7 +400,7 @@ export default function Index() {
           {/* Right — copy */}
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] mb-6">
-              Exam Papers, Generated<br />by AI. Marked by AI.
+              Exam Papers, Generated<br />& Marked Instantly.
             </h2>
             <div className="space-y-4 mb-8">
               {[
