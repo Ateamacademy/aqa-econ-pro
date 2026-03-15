@@ -232,7 +232,7 @@ export default function Index() {
       </section>
 
       {/* ═══════ GRADE PROGRESSION ═══════ */}
-      <section className="py-16 lg:py-20 relative">
+      <section className="pt-0 pb-10 lg:pb-14 relative -mt-8">
         <div className="max-w-[1280px] mx-auto px-5 lg:px-6">
           <GradeStepLadder />
         </div>
