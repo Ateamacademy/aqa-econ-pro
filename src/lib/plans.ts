@@ -10,7 +10,8 @@ export const PLAN = {
 
 export const FREE_LIMITS = {
   papers: 3,
-  questions: 50,
-  diagrams: 50,
-  predictedPapers: 20,
+  marking: 3,
+  tutorQuestions: 5,
+  diagrams: 5,
+  predictedPapers: 3,
 } as const;

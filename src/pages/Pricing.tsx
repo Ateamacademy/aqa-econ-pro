@@ -8,22 +8,23 @@ import { Check, Crown, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 
 const freeFeatures = [
-  `${FREE_LIMITS.papers} AI Predicted Papers`,
-  `${FREE_LIMITS.papers} AI Marking sessions`,
-  "Access to structured notes",
-  "Basic progress tracking",
-  "AI Tutor (10 questions/day)",
+  `${FREE_LIMITS.predictedPapers} AI Predicted Papers / month`,
+  `${FREE_LIMITS.marking} AI Marking sessions / month`,
+  "Full access to notes, questions & mark schemes",
+  `${FREE_LIMITS.tutorQuestions} AI Tutor questions / month`,
+  "Basic readiness score & progress tracking",
+  `${FREE_LIMITS.diagrams} diagram builds with AI feedback`,
 ];
 
 const proFeatures = [
   "Unlimited AI Predicted Papers",
   "Unlimited AI Marking",
-  "Full topic notes library",
-  "Full readiness score engine",
-  "Diagram builder + AI feedback",
-  "AI Tutor unlimited",
-  "Progress reports",
+  "Full readiness engine with mountain tracker",
+  "Diagram builder with AI feedback",
   "Parent monitoring dashboard",
+  "Performance analytics & grade trajectory",
+  "AI Tutor unlimited",
+  "Access to all future platform updates",
 ];
 
 export default function Pricing() {
