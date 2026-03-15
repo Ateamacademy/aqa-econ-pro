@@ -15,6 +15,8 @@ import DailyGoalBanner from "@/components/dashboard/DailyGoalBanner";
 import ScoreDelta from "@/components/dashboard/ScoreDelta";
 import RecentPapersTable from "@/components/dashboard/RecentPapersTable";
 import GradeTrendChart from "@/components/dashboard/GradeTrendChart";
+import PerformanceOverTime from "@/components/dashboard/PerformanceOverTime";
+import StrengthWeakness from "@/components/dashboard/StrengthWeakness";
 import { motion } from "framer-motion";
 import {
   Lock, LayoutDashboard, FileText, BookOpen, Compass, MessageCircle,
