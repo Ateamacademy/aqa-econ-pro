@@ -35,7 +35,13 @@ serve(async (req) => {
     const user = userData.user;
     if (!user?.email) throw new Error("User not authenticated");
 
-    // Check if access window has expired
+    // Beta / tester whitelist — instant premium access
+    if (TESTER_EMAILS.includes(user.email.toLowerCase())) {
+      return new Response(JSON.stringify({ subscribed: true, subscription_end: ACCESS_EXPIRES, tester: true }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     if (new Date() > new Date(ACCESS_EXPIRES)) {
       return new Response(JSON.stringify({ subscribed: false, expired: true }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
