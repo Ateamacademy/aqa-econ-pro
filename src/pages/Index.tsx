@@ -385,10 +385,10 @@ export default function Index() {
                     <span className="shrink-0 text-xs font-mono font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">[{item.marks} marks]</span>
                   </div>
                 ))}
-                {/* AI marking overlay */}
+                {/* Marking overlay */}
                 <div className="mt-4 rounded-xl bg-destructive/10 border border-destructive/20 p-4">
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs font-bold text-destructive">AI Marking</span>
+                    <span className="text-xs font-bold text-destructive">Instant Marking</span>
                     <span className="font-mono text-sm font-bold text-foreground">7/8 marks</span>
                   </div>
                   <p className="text-xs text-muted-foreground">Strong analysis, develop evaluation further</p>

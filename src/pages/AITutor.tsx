@@ -191,7 +191,7 @@ export default function AITutor() {
       <div className="flex-1 flex flex-col min-w-0 h-[calc(100vh-64px)]">
         {/* Chat header (mobile) */}
         <div className="lg:hidden px-5 py-3 border-b border-border bg-background/80 backdrop-blur-xl">
-          <h1 className="text-lg font-bold text-foreground">AI {subjectLabel} Tutor</h1>
+          <h1 className="text-lg font-bold text-foreground">24/7 {subjectLabel} Tutor</h1>
           <p className="text-xs text-muted-foreground">{examBoard} {level}</p>
         </div>
 

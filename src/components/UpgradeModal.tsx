@@ -4,10 +4,10 @@ import { Crown, Check, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const benefits = [
-  "Unlimited AI Predicted Papers",
-  "Unlimited AI Marking & Grading",
-  "Unlimited AI Tutor questions",
-  "Unlimited diagram practice with AI feedback",
+  "Unlimited Predicted Papers",
+  "Unlimited Marking & Grading",
+  "Unlimited Tutor questions",
+  "Unlimited diagram practice with feedback",
   "Full readiness engine & performance analytics",
 ];
 

@@ -13,7 +13,7 @@ export interface ParsedQuestion {
 
 
 /**
- * Parses the AI-generated paper markdown into individual questions.
+ * Parses the generated paper markdown into individual questions.
  * Handles many formats:
  *   Question 01 [2 marks]
  *   Question 01 (2 marks)

@@ -130,7 +130,7 @@ export default function Dashboard() {
             <div className="rounded-xl bg-primary/10 border border-primary/20 p-4">
               <Crown className="h-5 w-5 text-primary mb-2" />
               <p className="text-xs font-semibold text-foreground mb-1">Upgrade to Pro</p>
-              <p className="text-[10px] text-muted-foreground mb-3">Unlock unlimited papers, marking, and AI tutor.</p>
+              <p className="text-[10px] text-muted-foreground mb-3">Unlock unlimited papers, marking, and 24/7 tutor.</p>
               <Button size="sm" onClick={() => navigate("/pricing")} className="w-full text-xs h-8">
                 Upgrade
               </Button>
