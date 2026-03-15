@@ -237,7 +237,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
           });
         }
         if (!subscribed && profile) {
-          await supabase.from("profiles").update({ free_questions_used: profile.free_questions_used + 1 }).eq("user_id", user.id);
+          await supabase.from("profiles").update({ free_diagrams_used: diagramsUsed + 1 } as any).eq("user_id", user.id);
           refreshProfile();
         }
       },

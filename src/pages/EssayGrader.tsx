@@ -165,6 +165,7 @@ RULES:
           </CardContent>
         </Card>
       )}
+      <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="marking sessions" />
     </div>
   );
 }

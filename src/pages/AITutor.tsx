@@ -322,6 +322,7 @@ export default function AITutor() {
           </form>
         </div>
       </div>
+      <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="AI Tutor questions" />
     </div>
   );
 }
