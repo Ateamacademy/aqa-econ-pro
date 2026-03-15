@@ -80,6 +80,7 @@ export default function AITutor() {
   const send = async (overrideInput?: string) => {
     const text = overrideInput || input;
     if (!text.trim() || isLoading) return;
+    if (!canUse) { setShowUpgrade(true); return; }
     const userMsg: Msg = { role: "user", content: text };
     setMessages(prev => [...prev, userMsg]);
     setInput("");
@@ -103,7 +104,13 @@ export default function AITutor() {
         mode: "tutor",
         subject,
         onDelta: upsert,
-        onDone: () => setIsLoading(false),
+        onDone: async () => {
+          setIsLoading(false);
+          if (!subscribed && profile) {
+            await supabase.from("profiles").update({ free_tutor_used: (profile.free_tutor_used ?? 0) + 1 } as any).eq("user_id", user!.id);
+            refreshProfile();
+          }
+        },
         onError: (err) => { toast.error(err); setIsLoading(false); },
       });
     } catch { setIsLoading(false); }
