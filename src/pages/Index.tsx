@@ -40,7 +40,7 @@ const features = [
 ];
 
 const steps = [
-  { num: "01", title: "Choose Your Topic", desc: "Pick a syllabus area or let AI recommend based on your weak spots." },
+  { num: "01", title: "Choose Your Topic", desc: "Pick a syllabus area or get recommendations based on your weak spots." },
   { num: "02", title: "Generate a Paper", desc: "Get a unique, exam-format paper matched to your board and specification." },
   { num: "03", title: "Submit & Get Marked", desc: "Write your answers and receive instant, mark-scheme-accurate feedback." },
   { num: "04", title: "Track Your Progress", desc: "Watch your readiness score climb as you revise smarter, not harder." },
