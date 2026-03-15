@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,103 +6,71 @@
 
 @layer base {
   :root {
-    --background: 240 7% 93%;
-    --foreground: 240 10% 5%;
+    /* Deep dark navy palette */
+    --background: 228 38% 5%;       /* #080B14 */
+    --foreground: 210 40% 96%;      /* #F1F5F9 */
 
-    --card: 250 10% 97%;
-    --card-foreground: 240 10% 5%;
+    --card: 228 38% 9%;             /* #0E1220 */
+    --card-foreground: 210 40% 96%;
 
-    --popover: 250 10% 97%;
-    --popover-foreground: 240 10% 5%;
+    --popover: 228 30% 12%;         /* #141828 */
+    --popover-foreground: 210 40% 96%;
 
-    --primary: 232 44% 51%;
+    --primary: 236 100% 65%;        /* #4F56FF */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 250 12% 91%;
-    --secondary-foreground: 240 10% 5%;
+    --secondary: 228 30% 12%;
+    --secondary-foreground: 210 40% 96%;
 
-    --muted: 250 10% 90%;
-    --muted-foreground: 246 8% 38%;
+    --muted: 228 30% 12%;
+    --muted-foreground: 215 16% 65%; /* #94A3B8 */
 
-    --accent: 239 28% 73%;
-    --accent-foreground: 240 10% 5%;
-
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 250 10% 84%;
-    --input: 250 10% 84%;
-    --ring: 232 44% 51%;
-
-    --radius: 1rem;
-
-    --chart-1: 232 44% 51%;
-    --chart-2: 273 17% 59%;
-    --chart-3: 295 11% 75%;
-    --chart-4: 239 28% 73%;
-    --chart-5: 0 72% 51%;
-
-    --sidebar-background: 240 10% 8%;
-    --sidebar-foreground: 240 7% 93%;
-    --sidebar-primary: 232 44% 51%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 246 8% 18%;
-    --sidebar-accent-foreground: 240 7% 93%;
-    --sidebar-border: 246 8% 18%;
-    --sidebar-ring: 232 44% 51%;
-
-    --highlight: 232 44% 51%;
-    --highlight-foreground: 0 0% 100%;
-
-    --surface-elevated: 250 10% 97%;
-    --surface-dark: 240 10% 8%;
-    --surface-dark-foreground: 240 7% 93%;
-  }
-
-  .dark {
-    --background: 240 10% 5%;
-    --foreground: 240 7% 93%;
-
-    --card: 240 10% 10%;
-    --card-foreground: 240 7% 93%;
-
-    --popover: 240 10% 10%;
-    --popover-foreground: 240 7% 93%;
-
-    --primary: 232 50% 58%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 246 8% 15%;
-    --secondary-foreground: 240 7% 93%;
-
-    --muted: 246 8% 15%;
-    --muted-foreground: 273 17% 59%;
-
-    --accent: 239 28% 50%;
+    --accent: 239 84% 67%;          /* #6366F1 */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62% 45%;
+    --destructive: 0 84% 60%;       /* #EF4444 */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 246 8% 20%;
-    --input: 246 8% 20%;
-    --ring: 232 50% 58%;
+    --border: 228 36% 18%;          /* #1E2440 */
+    --input: 228 36% 18%;
+    --ring: 236 100% 65%;
 
-    --highlight: 232 50% 58%;
+    --radius: 0.625rem;             /* 10px for buttons */
+
+    /* Extended palette */
+    --indigo-bright: 239 84% 67%;   /* #6366F1 */
+    --indigo-glow: 235 90% 74%;     /* #818CF8 */
+    --electric-blue: 217 91% 60%;   /* #3B82F6 */
+    --cyan-pop: 188 95% 43%;        /* #06B6D4 */
+    --success: 160 84% 39%;         /* #10B981 */
+    --warning: 38 92% 50%;          /* #F59E0B */
+    --border-glow: 233 66% 54%;     /* #3D4ED8 */
+    --surface-elevated: 228 30% 12%;/* #141828 */
+    --text-secondary: 215 16% 65%;  /* #94A3B8 */
+    --text-muted: 215 19% 35%;      /* #475569 */
+
+    /* Chart colors */
+    --chart-1: 236 100% 65%;
+    --chart-2: 239 84% 67%;
+    --chart-3: 188 95% 43%;
+    --chart-4: 217 91% 60%;
+    --chart-5: 0 84% 60%;
+
+    /* Sidebar */
+    --sidebar-background: 228 38% 5%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 236 100% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 228 30% 12%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 228 36% 18%;
+    --sidebar-ring: 236 100% 65%;
+
+    --highlight: 236 100% 65%;
     --highlight-foreground: 0 0% 100%;
 
-    --sidebar-background: 240 10% 4%;
-    --sidebar-foreground: 240 7% 93%;
-    --sidebar-primary: 232 50% 58%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 246 8% 12%;
-    --sidebar-accent-foreground: 240 7% 93%;
-    --sidebar-border: 246 8% 12%;
-    --sidebar-ring: 232 50% 58%;
-
-    --surface-elevated: 240 10% 12%;
-    --surface-dark: 240 10% 4%;
-    --surface-dark-foreground: 240 7% 93%;
+    --surface-dark: 228 38% 5%;
+    --surface-dark-foreground: 210 40% 96%;
   }
 }
 
@@ -113,36 +81,95 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
     letter-spacing: -0.02em;
   }
 }
 
-@layer utilities {
-  .apple-section {
-    @apply py-16 md:py-24;
-  }
+/* Dot-grid background texture */
+.dot-grid-bg {
+  background-image: radial-gradient(circle, hsl(var(--foreground) / 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
 
-  .apple-title {
-    @apply text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight;
-  }
+/* Mono font for data */
+.font-mono-data {
+  font-family: 'JetBrains Mono', monospace;
+}
 
-  .apple-subtitle {
-    @apply text-lg md:text-xl font-normal tracking-normal;
-    color: hsl(var(--muted-foreground));
-  }
+/* Indigo glow utility */
+.glow-indigo {
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.25);
+}
 
-  .apple-link {
-    color: hsl(var(--primary));
-    @apply text-lg md:text-xl font-normal hover:underline inline-flex items-center gap-1;
-  }
+.glow-indigo-sm {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+}
+
+/* Gradient text */
+.gradient-text-indigo {
+  background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--cyan-pop)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Glow pulse for CTAs */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(79, 86, 255, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(79, 86, 255, 0.5); }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Inner glow pulse for logo */
+@keyframes inner-glow {
+  0%, 100% { box-shadow: inset 0 0 8px rgba(99, 102, 241, 0.4); }
+  50% { box-shadow: inset 0 0 16px rgba(99, 102, 241, 0.7); }
+}
+
+.animate-inner-glow {
+  animation: inner-glow 2s ease-in-out infinite;
+}
+
+/* Heatmap cell pulse */
+@keyframes cell-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.03); opacity: 0.85; }
+}
+
+.animate-cell-pulse {
+  animation: cell-pulse 3s ease-in-out infinite;
+}
+
+/* Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
 }
 
 /* ── Student-friendly AI response styling ── */
@@ -248,8 +275,6 @@
 }
 
 /* ── Revision Card Color System ── */
-
-/* Color variables for revision boxes */
 :root {
   --revision-blue: 211 100% 50%;
   --revision-amber: 38 92% 50%;
@@ -257,21 +282,6 @@
   --revision-red: 0 72% 51%;
   --revision-purple: 271 76% 53%;
   --revision-teal: 172 66% 40%;
-  --notebook-line: 0 0% 88%;
-  --notebook-margin: 0 72% 60%;
-  --highlighter-pink: 340 82% 76%;
-  --highlighter-yellow: 48 96% 72%;
-  --highlighter-blue: 211 90% 78%;
-  --highlighter-green: 142 60% 72%;
-}
-
-.dark {
-  --revision-blue: 211 100% 60%;
-  --revision-amber: 38 92% 60%;
-  --revision-green: 142 71% 55%;
-  --revision-red: 0 72% 60%;
-  --revision-purple: 271 76% 63%;
-  --revision-teal: 172 66% 50%;
   --notebook-line: 0 0% 22%;
   --notebook-margin: 0 72% 40%;
   --highlighter-pink: 340 60% 35%;
@@ -289,16 +299,10 @@
   font-family: 'Patrick Hand', cursive;
 }
 
-/* ── Writing animation (text appears as if being written) ── */
+/* ── Writing animation ── */
 @keyframes write-in {
-  from {
-    clip-path: inset(0 100% 0 0);
-    opacity: 0.3;
-  }
-  to {
-    clip-path: inset(0 0 0 0);
-    opacity: 1;
-  }
+  from { clip-path: inset(0 100% 0 0); opacity: 0.3; }
+  to { clip-path: inset(0 0 0 0); opacity: 1; }
 }
 
 @keyframes write-fade-in {
@@ -310,16 +314,6 @@
 @keyframes underline-draw {
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }
-}
-
-@keyframes highlighter-swipe {
-  from { transform: scaleX(0); opacity: 0.5; }
-  to { transform: scaleX(1); opacity: 1; }
-}
-
-@keyframes pen-cursor-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
 }
 
 .animate-write-in {
@@ -347,75 +341,7 @@
   border-left: 2px solid hsl(var(--notebook-margin) / 0.35);
 }
 
-/* ── Highlighter effects ── */
-.highlighter-pink {
-  background: linear-gradient(
-    180deg,
-    transparent 45%,
-    hsl(var(--highlighter-pink) / 0.4) 45%,
-    hsl(var(--highlighter-pink) / 0.4) 85%,
-    transparent 85%
-  );
-  padding: 0 4px;
-  border-radius: 2px;
-}
-
-.highlighter-yellow {
-  background: linear-gradient(
-    180deg,
-    transparent 45%,
-    hsl(var(--highlighter-yellow) / 0.5) 45%,
-    hsl(var(--highlighter-yellow) / 0.5) 85%,
-    transparent 85%
-  );
-  padding: 0 4px;
-  border-radius: 2px;
-}
-
-.highlighter-blue {
-  background: linear-gradient(
-    180deg,
-    transparent 45%,
-    hsl(var(--highlighter-blue) / 0.4) 45%,
-    hsl(var(--highlighter-blue) / 0.4) 85%,
-    transparent 85%
-  );
-  padding: 0 4px;
-  border-radius: 2px;
-}
-
-/* ── Sticky note callout ── */
-.sticky-note {
-  @apply p-4 rounded-sm shadow-md;
-  background: hsl(48 96% 89%);
-  transform: rotate(-1deg);
-  position: relative;
-}
-
-.dark .sticky-note {
-  background: hsl(48 30% 18%);
-}
-
-.sticky-note::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: hsl(var(--highlighter-yellow));
-  border-radius: 2px 2px 0 0;
-}
-
-/* ── Notebook section tab ── */
-.notebook-tab {
-  @apply relative px-4 py-2 rounded-t-lg font-handwriting text-lg font-bold;
-  border: 2px solid hsl(var(--border));
-  border-bottom: none;
-  background: hsl(var(--card));
-}
-
-/* ── Base .revision-box ── */
+/* ── Revision box styles ── */
 .revision-box-header {
   @apply flex items-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-wider;
 }
@@ -425,68 +351,26 @@
   background: hsl(var(--background));
 }
 
-/* Definition — Blue */
-.revision-definition {
-  border-color: hsl(var(--revision-blue) / 0.3);
-}
-.revision-definition .revision-box-header {
-  background: hsl(var(--revision-blue) / 0.1);
-  color: hsl(var(--revision-blue));
-}
+.revision-definition { border-color: hsl(var(--revision-blue) / 0.3); }
+.revision-definition .revision-box-header { background: hsl(var(--revision-blue) / 0.1); color: hsl(var(--revision-blue)); }
 
-/* Example — Amber */
-.revision-example {
-  border-color: hsl(var(--revision-amber) / 0.3);
-}
-.revision-example .revision-box-header {
-  background: hsl(var(--revision-amber) / 0.1);
-  color: hsl(var(--revision-amber));
-}
+.revision-example { border-color: hsl(var(--revision-amber) / 0.3); }
+.revision-example .revision-box-header { background: hsl(var(--revision-amber) / 0.1); color: hsl(var(--revision-amber)); }
 
-/* Exam Tip — Red */
-.revision-exam-tip {
-  border-color: hsl(var(--revision-red) / 0.3);
-}
-.revision-exam-tip .revision-box-header {
-  background: hsl(var(--revision-red) / 0.1);
-  color: hsl(var(--revision-red));
-}
+.revision-exam-tip { border-color: hsl(var(--revision-red) / 0.3); }
+.revision-exam-tip .revision-box-header { background: hsl(var(--revision-red) / 0.1); color: hsl(var(--revision-red)); }
 
-/* Formula — Purple */
-.revision-formula {
-  border-color: hsl(var(--revision-purple) / 0.3);
-}
-.revision-formula .revision-box-header {
-  background: hsl(var(--revision-purple) / 0.1);
-  color: hsl(var(--revision-purple));
-}
+.revision-formula { border-color: hsl(var(--revision-purple) / 0.3); }
+.revision-formula .revision-box-header { background: hsl(var(--revision-purple) / 0.1); color: hsl(var(--revision-purple)); }
 
-/* Key Terms — Teal */
-.revision-key-terms {
-  border-color: hsl(var(--revision-teal) / 0.3);
-}
-.revision-key-terms .revision-box-header {
-  background: hsl(var(--revision-teal) / 0.1);
-  color: hsl(var(--revision-teal));
-}
+.revision-key-terms { border-color: hsl(var(--revision-teal) / 0.3); }
+.revision-key-terms .revision-box-header { background: hsl(var(--revision-teal) / 0.1); color: hsl(var(--revision-teal)); }
 
-/* Diagram — Green */
-.revision-diagram {
-  border-color: hsl(var(--revision-green) / 0.3);
-}
-.revision-diagram .revision-box-header {
-  background: hsl(var(--revision-green) / 0.1);
-  color: hsl(var(--revision-green));
-}
+.revision-diagram { border-color: hsl(var(--revision-green) / 0.3); }
+.revision-diagram .revision-box-header { background: hsl(var(--revision-green) / 0.1); color: hsl(var(--revision-green)); }
 
-/* Analysis chain */
-.revision-analysis {
-  border-color: hsl(var(--primary) / 0.3);
-}
-.revision-analysis .revision-box-header {
-  background: hsl(var(--primary) / 0.1);
-  color: hsl(var(--primary));
-}
+.revision-analysis { border-color: hsl(var(--primary) / 0.3); }
+.revision-analysis .revision-box-header { background: hsl(var(--primary) / 0.1); color: hsl(var(--primary)); }
 
 .revision-step-number {
   @apply flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold shrink-0;
@@ -494,7 +378,6 @@
   color: hsl(var(--primary));
 }
 
-/* Revision topic card — notebook style */
 .revision-topic-card {
   @apply rounded-2xl border bg-card p-6 shadow-sm relative overflow-hidden;
   border-color: hsl(var(--border));
@@ -512,7 +395,6 @@
   font-size: 1.5rem;
 }
 
-/* Revision box hover lift */
 .revision-box {
   @apply rounded-xl border-2 overflow-hidden my-3;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -523,14 +405,12 @@
   box-shadow: 0 4px 16px -6px hsl(var(--foreground) / 0.08);
 }
 
-/* Key term highlight pill */
 .ai-response .key-term {
   @apply inline-block px-1.5 py-0.5 rounded-md text-xs font-semibold;
   background: hsl(var(--primary) / 0.1);
   color: hsl(var(--primary));
 }
 
-/* ── Handwritten underline decoration ── */
 .handwritten-underline {
   position: relative;
   display: inline-block;
@@ -549,19 +429,14 @@
   animation: underline-draw 0.6s cubic-bezier(0.25, 0.4, 0.25, 1) both;
 }
 
-/* ── Margin annotation ── */
-.margin-note {
-  @apply text-xs font-handwriting-alt absolute -left-2 top-0;
-  color: hsl(var(--notebook-margin));
-  transform: rotate(-5deg);
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-}
-
-/* ── Pen cursor for writing effect ── */
 .pen-cursor::after {
   content: '|';
   @apply font-bold ml-0.5;
   color: hsl(var(--primary));
   animation: pen-cursor-blink 0.8s infinite;
+}
+
+@keyframes pen-cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
