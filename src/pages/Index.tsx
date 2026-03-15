@@ -551,7 +551,7 @@ export default function Index() {
           </div>
 
           <p className="text-center text-xs text-muted-foreground mt-6">
-            One payment. No subscription. Cancel anytime.
+            One payment. No subscription. Access ends 29 June 2026.
           </p>
         </div>
       </section>
