@@ -1563,6 +1563,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
           </motion.div>
         )}
       </div>
+      <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="predicted papers" />
     </div>
   );
 }
