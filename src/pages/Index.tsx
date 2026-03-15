@@ -53,21 +53,22 @@ const testimonials = [
 ];
 
 const freeFeatures = [
-  "3 AI Predicted Papers per month",
-  "3 AI Marking sessions",
-  "Access to structured notes",
-  "Basic progress tracking",
-  "AI Tutor (10 questions/day)",
+  "3 AI Predicted Papers / month",
+  "3 AI Marking sessions / month",
+  "Full access to notes, questions & mark schemes",
+  "5 AI Tutor questions / month",
+  "Basic readiness score & progress tracking",
+  "5 diagram builds with AI feedback",
 ];
 const proFeatures = [
   "Unlimited AI Predicted Papers",
   "Unlimited AI Marking",
-  "Full topic notes library",
-  "Full readiness score engine",
-  "Diagram builder + AI feedback",
-  "AI Tutor unlimited",
-  "Progress reports",
+  "Full readiness engine with mountain tracker",
+  "Diagram builder with AI feedback",
   "Parent monitoring dashboard",
+  "Performance analytics & grade trajectory",
+  "AI Tutor unlimited",
+  "Access to all future platform updates",
 ];
 
 const faqItems = [
@@ -529,10 +530,10 @@ export default function Index() {
               </div>
               <p className="text-sm font-bold text-primary mb-1">Exam Window Pass</p>
               <div className="flex items-baseline gap-1.5 mb-1">
-                <span className="text-4xl font-extrabold font-mono">£19</span>
+              <span className="text-4xl font-extrabold font-mono">£29</span>
                 <span className="text-sm text-muted-foreground">/one-off</span>
               </div>
-              <p className="text-sm text-muted-foreground mb-6">Unlimited access for your full exam season</p>
+              <p className="text-sm text-muted-foreground mb-6">Unlimited access until 29 June 2026</p>
               <div className="space-y-3 mb-8">
                 {proFeatures.map((f) => (
                   <div key={f} className="flex items-center gap-2.5">
@@ -550,7 +551,7 @@ export default function Index() {
           </div>
 
           <p className="text-center text-xs text-muted-foreground mt-6">
-            One payment. No subscription. Cancel anytime.
+            One payment. No subscription. Access ends 29 June 2026.
           </p>
         </div>
       </section>
