@@ -73,8 +73,8 @@ const proFeatures = [
 
 const faqItems = [
   { q: "What exam boards does Econ Rev support?", a: "We support AQA, Edexcel A, Edexcel B, OCR, Cambridge (CAIE), WJEC, and IB Economics for both GCSE and A-Level." },
-  { q: "How are the predicted papers generated?", a: "Our AI analyses past paper patterns, mark scheme structures, and syllabus weighting to generate unique, exam-format papers that reflect likely question types." },
-  { q: "How accurate is the AI marking?", a: "Our marking engine is trained on thousands of examiner-marked scripts and follows official mark schemes. It provides band-level accuracy with detailed improvement tips." },
+  { q: "How are the predicted papers generated?", a: "We analyse past paper patterns, mark scheme structures, and syllabus weighting to generate unique, exam-format papers that reflect likely question types." },
+  { q: "How accurate is the marking?", a: "Our marking engine is trained on thousands of examiner-marked scripts and follows official mark schemes. It provides band-level accuracy with detailed improvement tips." },
   { q: "Can I use Econ Rev for both GCSE and A-Level?", a: "Yes! Simply select your level and exam board. All content is tailored to your specific specification." },
   { q: "What happens after my exam window ends?", a: "Your access continues. The Exam Window Pass gives you lifetime access to all features for your current exam series." },
   { q: "Is there a version for schools or teachers?", a: "Yes, we offer school licences with teacher dashboards, class progress tracking, and bulk student accounts. Contact us for details." },
