@@ -8,7 +8,7 @@ interface AuthContextType {
   loading: boolean;
   subscribed: boolean;
   subscriptionEnd: string | null;
-  profile: { free_papers_used: number; free_questions_used: number; free_predicted_papers_used: number } | null;
+  profile: { free_papers_used: number; free_questions_used: number; free_predicted_papers_used: number; free_tutor_used: number; free_diagrams_used: number } | null;
   signOut: () => Promise<void>;
   refreshSubscription: () => Promise<void>;
   refreshProfile: () => Promise<void>;
