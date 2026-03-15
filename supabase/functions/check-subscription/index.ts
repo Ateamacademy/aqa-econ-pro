@@ -10,6 +10,12 @@ const corsHeaders = {
 const PRODUCT_ID = "prod_U9WtwjUWrx0aqq";
 const ACCESS_EXPIRES = "2026-06-29T23:59:59Z";
 
+const TESTER_EMAILS = [
+  "student1@email.com",
+  "student2@email.com",
+  "tester@email.com",
+];
+
 serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
@@ -29,7 +35,13 @@ serve(async (req) => {
     const user = userData.user;
     if (!user?.email) throw new Error("User not authenticated");
 
-    // Check if access window has expired
+    // Beta / tester whitelist — instant premium access
+    if (TESTER_EMAILS.includes(user.email.toLowerCase())) {
+      return new Response(JSON.stringify({ subscribed: true, subscription_end: ACCESS_EXPIRES, tester: true }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     if (new Date() > new Date(ACCESS_EXPIRES)) {
       return new Response(JSON.stringify({ subscribed: false, expired: true }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
