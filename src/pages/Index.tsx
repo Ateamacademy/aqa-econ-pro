@@ -53,21 +53,22 @@ const testimonials = [
 ];
 
 const freeFeatures = [
-  "3 AI Predicted Papers per month",
-  "3 AI Marking sessions",
-  "Access to structured notes",
-  "Basic progress tracking",
-  "AI Tutor (10 questions/day)",
+  "3 AI Predicted Papers / month",
+  "3 AI Marking sessions / month",
+  "Full access to notes, questions & mark schemes",
+  "5 AI Tutor questions / month",
+  "Basic readiness score & progress tracking",
+  "5 diagram builds with AI feedback",
 ];
 const proFeatures = [
   "Unlimited AI Predicted Papers",
   "Unlimited AI Marking",
-  "Full topic notes library",
-  "Full readiness score engine",
-  "Diagram builder + AI feedback",
-  "AI Tutor unlimited",
-  "Progress reports",
+  "Full readiness engine with mountain tracker",
+  "Diagram builder with AI feedback",
   "Parent monitoring dashboard",
+  "Performance analytics & grade trajectory",
+  "AI Tutor unlimited",
+  "Access to all future platform updates",
 ];
 
 const faqItems = [
