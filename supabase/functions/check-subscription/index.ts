@@ -10,6 +10,12 @@ const corsHeaders = {
 const PRODUCT_ID = "prod_U9WtwjUWrx0aqq";
 const ACCESS_EXPIRES = "2026-06-29T23:59:59Z";
 
+const TESTER_EMAILS = [
+  "student1@email.com",
+  "student2@email.com",
+  "tester@email.com",
+];
+
 serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
