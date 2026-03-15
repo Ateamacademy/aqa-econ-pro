@@ -113,6 +113,7 @@ export default function DiagramPractice() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [isMarking, setIsMarking] = useState(false);
   const [step, setStep] = useState<"generate" | "answer" | "feedback">("generate");
+  const [showUpgrade, setShowUpgrade] = useState(false);
 
   useEffect(() => {
     const t = DIAGRAM_TOPICS[subject] || DIAGRAM_TOPICS.economics;
