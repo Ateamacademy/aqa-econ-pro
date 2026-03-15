@@ -1,238 +1,319 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { BookOpen, Brain, FileText, MessageCircle, PenTool, ArrowRight, Sparkles, ChevronRight, TrendingUp, BarChart3, PieChart } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import {
+  FileText, Bot, BarChart3, Compass, MessageCircle, BookOpen,
+  ArrowRight, ChevronDown, Check, Star, ArrowUpRight,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
-const features = [
-  {
-    icon: Sparkles,
-    title: "Predicted Papers",
-    description: "AI-generated predicted papers with per-question marking and examiner tips.",
-    to: "/predicted",
-    tag: "Most Popular",
-  },
-  {
-    icon: MessageCircle,
-    title: "AI Tutor",
-    description: "Ask any economics question and get exam-board-focused explanations instantly.",
-    to: "/tutor",
-  },
-  {
-    icon: PenTool,
-    title: "Answer Grader",
-    description: "Paste your essay or data response and receive marks, feedback, and improvement tips.",
-    to: "/grader",
-  },
-  {
-    icon: Brain,
-    title: "Practice Questions",
-    description: "Generate exam-style economics questions on any topic with instant AI marking.",
-    to: "/practice",
-  },
-  {
-    icon: BookOpen,
-    title: "Study Notes",
-    description: "Organised revision notes covering every specification topic across all boards.",
-    to: "/notes",
-  },
-];
-
-const boards = [
-  { name: "AQA", level: "A-Level", papers: "3 Papers", desc: "Markets, National Economy & Principles" },
-  { name: "Edexcel A", level: "A-Level", papers: "3 Papers", desc: "Markets, National & Global Economy" },
-  { name: "Edexcel B", level: "A-Level", papers: "3 Papers", desc: "Markets, Wider & Global Economy" },
-  { name: "OCR", level: "A-Level", papers: "3 Components", desc: "Micro, Macro & Themes" },
-  { name: "Cambridge", level: "A-Level", papers: "4 Papers", desc: "MCQ, Data Response & Essays" },
-  { name: "AQA", level: "GCSE", papers: "2 Papers", desc: "Markets & The Economy" },
-  { name: "Cambridge", level: "IGCSE", papers: "2 Papers", desc: "MCQ & Structured Questions" },
-];
-
-const topics = [
-  "Supply & Demand", "Market Failure", "Fiscal Policy", "Monetary Policy",
-  "Elasticity", "Trade & Globalisation", "Aggregate Demand", "Unemployment",
-  "Inflation", "Economic Growth", "Exchange Rates", "Development",
-];
-
+/* ─── animation variants ─── */
+const ease = [0.25, 0.4, 0.25, 1] as [number, number, number, number];
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.4, 0.25, 1] as [number, number, number, number] } },
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
 };
-
 const stagger = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.08 } },
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1 } },
+};
+const cardVariant = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
 };
 
-const cardFade = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.4, 0.25, 1] as [number, number, number, number] } },
-};
+/* ─── data ─── */
+const features = [
+  { icon: FileText, title: "AI Predicted Papers", desc: "Generate full exam-format papers based on the latest mark schemes. Unique every time." },
+  { icon: Bot, title: "AI Marking & Feedback", desc: "Submit answers and get instant mark-scheme-accurate feedback with improvement tips." },
+  { icon: BarChart3, title: "Progress Tracking", desc: "Visual readiness score, topic heatmaps, and grade trajectory charts updated after every session." },
+  { icon: Compass, title: "Diagram Builder", desc: "Practice drawing and labelling economic diagrams with AI accuracy feedback." },
+  { icon: MessageCircle, title: "AI Economics Tutor", desc: "Ask any economics question and get curriculum-aligned explanations instantly." },
+  { icon: BookOpen, title: "Structured Notes", desc: "Clean, concise topic notes organised by syllabus. Linked to practice questions." },
+];
+
+const steps = [
+  { num: "01", title: "Choose Your Topic", desc: "Pick a syllabus area or let AI recommend based on your weak spots." },
+  { num: "02", title: "Generate a Paper", desc: "Get a unique, exam-format paper matched to your board and specification." },
+  { num: "03", title: "Submit & Get Marked", desc: "Write your answers and receive instant, mark-scheme-accurate feedback." },
+  { num: "04", title: "Track Your Progress", desc: "Watch your readiness score climb as you revise smarter, not harder." },
+];
+
+const testimonials = [
+  { quote: "I went from a C to an A* in 6 weeks. The predicted papers were almost identical to the real thing.", name: "Maya", detail: "A-Level Economics, Edexcel" },
+  { quote: "The AI tutor explained diagrams better than my actual teacher. Worth every penny.", name: "James", detail: "GCSE Economics, AQA" },
+  { quote: "I used Econ Rev every day for 3 months. My predicted grade went from a 5 to an 8.", name: "Priya", detail: "GCSE Economics, OCR" },
+];
+
+const freeFeatures = [
+  "3 AI Predicted Papers per month",
+  "3 AI Marking sessions",
+  "Access to structured notes",
+  "Basic progress tracking",
+  "AI Tutor (10 questions/day)",
+];
+const proFeatures = [
+  "Unlimited AI Predicted Papers",
+  "Unlimited AI Marking",
+  "Full topic notes library",
+  "Full readiness score engine",
+  "Diagram builder + AI feedback",
+  "AI Tutor unlimited",
+  "Progress reports",
+  "Parent monitoring dashboard",
+];
+
+const faqItems = [
+  { q: "What exam boards does Econ Rev support?", a: "We support AQA, Edexcel A, Edexcel B, OCR, Cambridge (CAIE), WJEC, and IB Economics for both GCSE and A-Level." },
+  { q: "How are the predicted papers generated?", a: "Our AI analyses past paper patterns, mark scheme structures, and syllabus weighting to generate unique, exam-format papers that reflect likely question types." },
+  { q: "How accurate is the AI marking?", a: "Our marking engine is trained on thousands of examiner-marked scripts and follows official mark schemes. It provides band-level accuracy with detailed improvement tips." },
+  { q: "Can I use Econ Rev for both GCSE and A-Level?", a: "Yes! Simply select your level and exam board. All content is tailored to your specific specification." },
+  { q: "What happens after my exam window ends?", a: "Your access continues. The Exam Window Pass gives you lifetime access to all features for your current exam series." },
+  { q: "Is there a version for schools or teachers?", a: "Yes, we offer school licences with teacher dashboards, class progress tracking, and bulk student accounts. Contact us for details." },
+];
+
+const marqueeItems = ["AQA", "Edexcel", "OCR", "WJEC", "Cambridge", "IB Economics", "GCSE", "A-Level"];
 
 export default function Index() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const shimmerRef = useRef<HTMLSpanElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const blob1Ref = useRef<HTMLDivElement>(null);
+  const blob2Ref = useRef<HTMLDivElement>(null);
+  const ctaPulseRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Shimmer on "Economics" text
+      if (shimmerRef.current) {
+        gsap.to(shimmerRef.current, {
+          backgroundPosition: "200% center",
+          duration: 3,
+          repeat: -1,
+          ease: "none",
+        });
+      }
+
+      // Floating dashboard card
+      if (cardRef.current) {
+        gsap.to(cardRef.current, {
+          y: -6,
+          duration: 4,
+          yoyo: true,
+          repeat: -1,
+          ease: "sine.inOut",
+        });
+      }
+
+      // Blob drift
+      if (blob1Ref.current) {
+        gsap.to(blob1Ref.current, {
+          x: 30,
+          y: -20,
+          duration: 60,
+          yoyo: true,
+          repeat: -1,
+          ease: "sine.inOut",
+        });
+      }
+      if (blob2Ref.current) {
+        gsap.to(blob2Ref.current, {
+          x: -20,
+          y: 30,
+          duration: 45,
+          yoyo: true,
+          repeat: -1,
+          ease: "sine.inOut",
+        });
+      }
+
+      // Final CTA pulse
+      if (ctaPulseRef.current) {
+        gsap.to(ctaPulseRef.current, {
+          scale: 1.05,
+          opacity: 0.6,
+          duration: 4,
+          yoyo: true,
+          repeat: -1,
+          ease: "sine.inOut",
+        });
+      }
+    });
+    return () => ctx.revert();
+  }, []);
+
   return (
     <div className="overflow-hidden">
-      {/* Hero */}
-      <section className="relative bg-background overflow-hidden">
-        {/* Subtle gradient orb behind hero */}
-        <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-primary/8 blur-[120px] pointer-events-none" />
+      {/* ═══════ HERO ═══════ */}
+      <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Blobs */}
+        <div ref={blob1Ref} className="absolute top-1/4 right-0 w-[60vw] h-[60vw] max-w-[900px] max-h-[900px] rounded-full pointer-events-none" style={{ background: "rgba(79,86,255,0.12)", filter: "blur(120px)" }} />
+        <div ref={blob2Ref} className="absolute bottom-0 left-0 w-[40vw] h-[40vw] max-w-[600px] max-h-[600px] rounded-full pointer-events-none" style={{ background: "rgba(6,182,212,0.06)", filter: "blur(100px)" }} />
 
-        <div className="max-w-[980px] mx-auto px-5 pt-24 pb-20 md:pt-36 md:pb-28 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] as [number, number, number, number] }}
-          >
-            {/* Subject badge */}
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-1.5 text-sm font-semibold mb-8 border border-primary/20">
-              <TrendingUp className="h-4 w-4" />
-              Built for Economics Students
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-6 w-full grid lg:grid-cols-2 gap-12 lg:gap-20 items-center py-20 lg:py-0">
+          {/* Left */}
+          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}>
+            {/* Eyebrow pill */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-8 glow-indigo-sm">
+              <span className="text-xs">✦</span> Built for AQA · Edexcel · OCR · All Boards
             </div>
 
-            <h1 className="text-5xl md:text-[72px] lg:text-[88px] font-bold tracking-[-0.04em] leading-[1.02] mb-2">
-              Ace your{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Economics
-              </span>{" "}
-              exams.
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground font-normal mt-5 mb-1 tracking-tight max-w-[640px] mx-auto leading-relaxed">
-              AI-powered revision for GCSE & A-Level Economics. Predicted papers, instant tutoring, and exam-style practice.
-            </p>
-            <p className="text-sm text-muted-foreground/70 font-normal mb-10 mt-4">
-              Covering <span className="font-semibold text-foreground/80">AQA</span> · <span className="font-semibold text-foreground/80">Edexcel A & B</span> · <span className="font-semibold text-foreground/80">OCR</span> · <span className="font-semibold text-foreground/80">Cambridge</span> · <span className="font-semibold text-foreground/80">GCSE</span> · <span className="font-semibold text-foreground/80">IGCSE</span>
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button asChild size="lg" className="rounded-full px-8 text-sm h-12 font-semibold shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all">
-                <Link to="/practice">
-                  Start Revising <ArrowRight className="h-4 w-4 ml-1" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full px-8 text-sm h-12 font-semibold border-border/60 bg-card/50 backdrop-blur-sm">
-                <Link to="/predicted">
-                  Predicted Papers <ChevronRight className="h-4 w-4 ml-0.5" />
-                </Link>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Scrolling topics strip */}
-        <div className="relative overflow-hidden py-4 border-y border-border/40 bg-card/50">
-          <motion.div
-            className="flex gap-6 whitespace-nowrap"
-            animate={{ x: [0, -600] }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          >
-            {[...topics, ...topics].map((t, i) => (
-              <span key={i} className="text-sm text-muted-foreground flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary/40" />
-                {t}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-[-0.03em] leading-[1.05] mb-6">
+              The Smartest Way to{" "}
+              <br className="hidden md:block" />
+              Revise{" "}
+              <span
+                ref={shimmerRef}
+                className="inline-block bg-clip-text text-transparent"
+                style={{
+                  backgroundImage: "linear-gradient(90deg, hsl(var(--accent)), hsl(var(--cyan-pop)), hsl(var(--accent)))",
+                  backgroundSize: "200% auto",
+                }}
+              >
+                Economics.
               </span>
-            ))}
+            </h1>
+
+            <p className="text-base lg:text-lg text-muted-foreground leading-relaxed max-w-lg mb-8">
+              AI-powered predicted papers, instant marking, diagram practice,
+              and a personal tutor — all built for GCSE and A-Level students.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-4 mb-10">
+              <Button asChild size="lg" className="rounded-lg px-7 h-12 text-sm font-semibold gap-2 animate-glow-pulse">
+                <Link to="/predicted">
+                  Generate My First Paper <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-lg px-7 h-12 text-sm font-semibold border-border gap-2">
+                <a href="#how-it-works">
+                  See How It Works <ChevronDown className="h-4 w-4" />
+                </a>
+              </Button>
+            </div>
+
+            {/* Micro stats */}
+            <div className="flex items-center gap-6 text-sm">
+              {[
+                { val: "12,000+", label: "Students" },
+                { val: "94%", label: "Report Grade Improvement" },
+                { val: "All", label: "Exam Boards" },
+              ].map((s, i) => (
+                <div key={s.label} className="flex items-center gap-3">
+                  {i > 0 && <div className="h-6 w-px bg-border" />}
+                  <div>
+                    <span className="font-bold text-foreground font-mono">{s.val}</span>
+                    <span className="text-muted-foreground ml-1.5">{s.label}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Right — floating dashboard preview */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
+            className="hidden lg:block"
+          >
+            <div
+              ref={cardRef}
+              className="relative rounded-2xl border border-border bg-card p-6"
+              style={{
+                transform: "perspective(1200px) rotateX(8deg) rotateY(-6deg)",
+                boxShadow: "0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(79,86,255,0.15)",
+              }}
+            >
+              {/* Mini readiness ring */}
+              <div className="flex items-center gap-4 mb-5">
+                <div className="relative w-16 h-16">
+                  <svg viewBox="0 0 64 64" className="w-full h-full -rotate-90">
+                    <circle cx="32" cy="32" r="26" fill="none" stroke="hsl(var(--border))" strokeWidth="5" />
+                    <circle cx="32" cy="32" r="26" fill="none" stroke="url(#heroGrad)" strokeWidth="5" strokeLinecap="round" strokeDasharray={`${0.78 * 163.36} ${163.36}`} />
+                    <defs>
+                      <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stopColor="hsl(239,84%,67%)" />
+                        <stop offset="100%" stopColor="hsl(188,95%,43%)" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <span className="absolute inset-0 flex items-center justify-center text-sm font-bold font-mono text-foreground">78</span>
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground">Exam Readiness</p>
+                  <p className="text-sm font-semibold text-foreground">Summit Approach</p>
+                </div>
+              </div>
+
+              {/* Mini paper card */}
+              <div className="rounded-xl border border-border bg-popover p-4 mb-4">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs font-semibold text-foreground">Predicted Grade</span>
+                  <span className="text-lg font-bold font-mono text-primary">A</span>
+                </div>
+                <div className="h-8 flex items-end gap-0.5">
+                  {[40, 55, 50, 65, 60, 72, 68, 78].map((h, i) => (
+                    <div key={i} className="flex-1 rounded-sm bg-primary/30" style={{ height: `${h}%` }} />
+                  ))}
+                </div>
+              </div>
+
+              {/* AI chat bubble */}
+              <div className="rounded-xl bg-popover border border-border p-3 flex items-start gap-2">
+                <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                  <Bot className="h-3 w-3 text-primary" />
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  <TypingText text="Fiscal policy involves government spending and taxation to influence aggregate demand..." />
+                </p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Exam boards */}
-      <section className="bg-background">
-        <div className="max-w-[980px] mx-auto px-5 py-20 md:py-28">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-14"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.03em] mb-3">
-              Every major exam board.
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground font-normal">
-              Full coverage for GCSE and A-Level Economics specifications.
-            </p>
-          </motion.div>
-
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-50px" }}
-          >
-            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3 ml-1">A-Level</p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-8">
-              {boards.filter(b => b.level === "A-Level").map((b) => (
-                <motion.div key={b.name + b.level} variants={cardFade}>
-                  <div className="bg-card border border-border/60 rounded-2xl p-5 text-center hover:shadow-lg hover:shadow-primary/5 hover:border-primary/30 hover:scale-[1.02] transition-all duration-300 h-full">
-                    <h3 className="text-base font-bold tracking-tight">{b.name}</h3>
-                    <p className="text-xs text-primary font-semibold mt-1">{b.papers}</p>
-                    <p className="text-[11px] text-muted-foreground mt-1.5 leading-snug">{b.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3 ml-1">GCSE & IGCSE</p>
-            <div className="grid grid-cols-2 gap-3 max-w-md">
-              {boards.filter(b => b.level !== "A-Level").map((b) => (
-                <motion.div key={b.name + b.level} variants={cardFade}>
-                  <div className="bg-card border border-border/60 rounded-2xl p-5 text-center hover:shadow-lg hover:shadow-primary/5 hover:border-primary/30 hover:scale-[1.02] transition-all duration-300 h-full">
-                    <div className="inline-block bg-primary/10 text-primary rounded-full px-2.5 py-0.5 text-[10px] font-bold mb-1.5">{b.level}</div>
-                    <h3 className="text-base font-bold tracking-tight">{b.name}</h3>
-                    <p className="text-xs text-primary font-semibold mt-1">{b.papers}</p>
-                    <p className="text-[11px] text-muted-foreground mt-1.5 leading-snug">{b.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+      {/* ═══════ SOCIAL PROOF TICKER ═══════ */}
+      <div className="relative overflow-hidden border-y border-border py-4" style={{ maskImage: "linear-gradient(90deg, transparent, black 10%, black 90%, transparent)" }}>
+        <div className="flex animate-marquee whitespace-nowrap">
+          {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, i) => (
+            <span key={i} className="mx-4 px-4 py-1.5 rounded-full border border-border bg-card text-xs font-medium text-muted-foreground">
+              {item}
+            </span>
+          ))}
         </div>
-      </section>
+      </div>
 
-      {/* Features grid — dark section */}
-      <section className="bg-[hsl(240,10%,8%)] text-[hsl(240,7%,93%)]">
-        <div className="max-w-[980px] mx-auto px-5 py-20 md:py-28">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.03em] mb-3">
-              Everything you need to revise Economics.
+      {/* ═══════ FEATURES ═══════ */}
+      <section id="features" className="py-24 lg:py-32">
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-6">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }} className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] mb-4">
+              Everything a Student Needs<br className="hidden md:block" />
+              to Walk into the Exam Confident.
             </h2>
-            <p className="text-lg md:text-xl text-[hsl(240,7%,55%)] font-normal">
-              Five powerful tools. One platform.
-            </p>
           </motion.div>
 
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-50px" }}
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
-          >
+          <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {features.map((f) => {
               const Icon = f.icon;
               return (
-                <motion.div key={f.title} variants={cardFade}>
-                  <Link to={f.to}>
-                    <div className="group relative p-6 rounded-2xl bg-[hsl(246,8%,14%)] border border-[hsl(246,8%,20%)] hover:border-primary/40 hover:bg-[hsl(246,8%,17%)] transition-all duration-300 h-full">
-                      {"tag" in f && f.tag && (
-                        <span className="absolute top-4 right-4 bg-primary/20 text-primary text-[10px] font-bold px-2.5 py-0.5 rounded-full">
-                          {f.tag}
-                        </span>
-                      )}
-                      <div className="h-10 w-10 rounded-xl bg-primary/15 flex items-center justify-center mb-4">
-                        <Icon className="h-5 w-5 text-primary" />
-                      </div>
-                      <h3 className="text-base font-bold mb-2 tracking-tight">{f.title}</h3>
-                      <p className="text-sm text-[hsl(240,7%,50%)] leading-relaxed">{f.description}</p>
-                      <span className="inline-flex items-center gap-1 text-primary text-sm font-medium mt-4 group-hover:gap-2 transition-all">
-                        Learn more <ChevronRight className="h-3.5 w-3.5" />
-                      </span>
+                <motion.div key={f.title} variants={cardVariant}>
+                  <div className="group rounded-2xl border border-border bg-card p-6 h-full hover:border-border-glow hover:-translate-y-1 transition-all duration-300">
+                    <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.3)] transition-shadow">
+                      <Icon className="h-5 w-5 text-primary" />
                     </div>
-                  </Link>
+                    <h3 className="text-base font-bold mb-2 tracking-tight">{f.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+                  </div>
                 </motion.div>
               );
             })}
@@ -240,58 +321,321 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Social proof / stats */}
-      <section className="bg-card border-y border-border/40">
-        <div className="max-w-[980px] mx-auto px-5 py-16 md:py-20">
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
-          >
-            {[
-              { value: "7", label: "Exam Boards" },
-              { value: "200+", label: "Economics Topics" },
-              { value: "1000+", label: "Practice Questions" },
-              { value: "A*", label: "Target Grade" },
-            ].map((stat) => (
-              <motion.div key={stat.label} variants={cardFade}>
-                <p className="text-4xl md:text-5xl font-bold bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent">{stat.value}</p>
-                <p className="text-sm text-muted-foreground mt-2 font-medium">{stat.label}</p>
+      {/* ═══════ HOW IT WORKS ═══════ */}
+      <section id="how-it-works" className="py-24 lg:py-32 bg-card/50">
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-6">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }} className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] mb-4">
+              From Zero to Exam Ready<br className="hidden md:block" />
+              in Four Steps.
+            </h2>
+          </motion.div>
+
+          <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} className="grid md:grid-cols-4 gap-6 relative">
+            {/* Connecting line */}
+            <div className="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-px border-t-2 border-dashed border-border" />
+
+            {steps.map((s) => (
+              <motion.div key={s.num} variants={cardVariant} className="text-center relative">
+                <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-primary/10 border border-primary/20 mb-5 mx-auto">
+                  <span className="text-xl font-bold font-mono text-primary">{s.num}</span>
+                </div>
+                <h3 className="text-base font-bold mb-2">{s.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* CTA section */}
-      <section className="bg-background relative overflow-hidden">
-        <div className="absolute bottom-[-200px] left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-primary/6 blur-[100px] pointer-events-none" />
-        <div className="max-w-[980px] mx-auto px-5 py-24 md:py-32 text-center relative z-10">
+      {/* ═══════ PREDICTED PAPERS SPOTLIGHT ═══════ */}
+      <section className="py-24 lg:py-32">
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Left — mock paper */}
           <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7 }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.03em] mb-3">
-              Start revising Economics today.
+            <div className="rounded-2xl border border-border bg-card overflow-hidden relative" style={{ borderTopColor: "hsl(var(--accent))", borderTopWidth: "2px" }}>
+              <div className="absolute top-3 right-3 bg-primary/20 text-primary text-xs font-bold px-3 py-1 rounded-full animate-glow-pulse">
+                AI Generated
+              </div>
+              <div className="p-6 border-b border-border">
+                <p className="text-xs text-muted-foreground font-medium mb-1">Economics — Paper 1</p>
+                <p className="text-sm font-bold">AI Predicted | June 2025</p>
+              </div>
+              <div className="p-6 space-y-4">
+                {[
+                  { q: "1. Define the term 'opportunity cost'.", marks: 2 },
+                  { q: "2. Explain how a fall in interest rates affects aggregate demand.", marks: 8 },
+                  { q: "3. Evaluate the effectiveness of supply-side policies in reducing unemployment.", marks: 25 },
+                ].map((item) => (
+                  <div key={item.marks} className="flex items-start justify-between gap-3">
+                    <p className="text-sm text-foreground">{item.q}</p>
+                    <span className="shrink-0 text-xs font-mono font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">[{item.marks} marks]</span>
+                  </div>
+                ))}
+                {/* AI marking overlay */}
+                <div className="mt-4 rounded-xl bg-destructive/10 border border-destructive/20 p-4">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-xs font-bold text-destructive">AI Marking</span>
+                    <span className="font-mono text-sm font-bold text-foreground">7/8 marks</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground">Strong analysis, develop evaluation further</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right — copy */}
+          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] mb-6">
+              Exam Papers, Generated<br />by AI. Marked by AI.
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground font-normal mb-10">
-              Free to get started. No credit card required.
+            <div className="space-y-4 mb-8">
+              {[
+                "Matches your exact exam board format",
+                "New unique paper every attempt",
+                "Instant mark-scheme-accurate feedback",
+              ].map((t) => (
+                <div key={t} className="flex items-center gap-3">
+                  <div className="h-5 w-5 rounded-full bg-success/20 flex items-center justify-center shrink-0">
+                    <Check className="h-3 w-3 text-success" />
+                  </div>
+                  <span className="text-sm text-muted-foreground">{t}</span>
+                </div>
+              ))}
+            </div>
+            <Button asChild size="lg" className="rounded-lg px-7 h-12 text-sm font-semibold gap-2">
+              <Link to="/predicted">
+                Generate My First Paper <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════ PROGRESS TRACKING SPOTLIGHT ═══════ */}
+      <section className="py-24 lg:py-32 bg-card/50">
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Left — copy */}
+          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] mb-6">
+              Know Exactly Where<br />You Stand, Every Day.
+            </h2>
+            <p className="text-base text-muted-foreground leading-relaxed mb-6">
+              Your readiness score tracks every question answered, paper completed, and concept mastered.
+              Watch your mountain climb progress from Base Camp to Peak Mastery as exam day approaches.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button asChild size="lg" className="rounded-full px-8 text-sm h-12 font-semibold shadow-lg shadow-primary/25">
-                <Link to="/practice">Get Started Free</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full px-8 text-sm h-12 font-semibold border-border/60 bg-card/50">
-                <Link to="/pricing">See Pricing</Link>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Set daily goals, maintain your study streak, and see exactly which topics need attention
+              with our intelligent heatmap system.
+            </p>
+          </motion.div>
+
+          {/* Right — mini dashboard */}
+          <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} className="space-y-4">
+            {/* Readiness ring */}
+            <motion.div variants={cardVariant} className="rounded-2xl border border-border bg-card p-6 flex items-center gap-6">
+              <div className="relative w-20 h-20 shrink-0">
+                <svg viewBox="0 0 80 80" className="w-full h-full -rotate-90">
+                  <circle cx="40" cy="40" r="32" fill="none" stroke="hsl(var(--border))" strokeWidth="6" />
+                  <circle cx="40" cy="40" r="32" fill="none" stroke="hsl(var(--accent))" strokeWidth="6" strokeLinecap="round" strokeDasharray={`${0.74 * 201} ${201}`} style={{ filter: "drop-shadow(0 0 8px rgba(99,102,241,0.5))" }} />
+                </svg>
+                <span className="absolute inset-0 flex items-center justify-center text-lg font-bold font-mono text-foreground">74%</span>
+              </div>
+              <div>
+                <p className="text-sm font-bold text-foreground">Summit Approach</p>
+                <p className="text-xs text-success font-medium">↑ +5 this week</p>
+              </div>
+            </motion.div>
+
+            {/* Heatmap */}
+            <motion.div variants={cardVariant} className="rounded-2xl border border-border bg-card p-5">
+              <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">Topic Mastery</p>
+              <div className="grid grid-cols-4 gap-1.5">
+                {[85, 72, 45, 90, 60, 38, 78, 55].map((v, i) => (
+                  <div key={i} className="h-8 rounded-md flex items-center justify-center text-[9px] font-mono font-bold" style={{ background: `hsl(var(--accent) / ${v / 100 * 0.7 + 0.1})`, color: v > 50 ? "white" : "hsl(var(--muted-foreground))" }}>
+                    {v}%
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Grade trend */}
+            <motion.div variants={cardVariant} className="rounded-2xl border border-border bg-card p-5">
+              <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">Grade Trend</p>
+              <div className="h-12 flex items-end gap-1">
+                {[55, 58, 62, 65, 70, 74].map((v, i) => (
+                  <div key={i} className="flex-1 rounded-sm bg-primary" style={{ height: `${v}%`, opacity: 0.4 + (i / 6) * 0.6 }} />
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════ TESTIMONIALS ═══════ */}
+      <section className="py-24 lg:py-32">
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-6">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }} className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] mb-4">
+              Students Who Trusted the Process.
+            </h2>
+          </motion.div>
+
+          <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} className="grid md:grid-cols-3 gap-4">
+            {testimonials.map((t) => (
+              <motion.div key={t.name} variants={cardVariant}>
+                <div className="rounded-2xl border border-border bg-card p-6 h-full border-l-2 border-l-primary">
+                  <div className="flex gap-0.5 mb-4">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-warning text-warning" />
+                    ))}
+                  </div>
+                  <p className="text-sm text-foreground leading-relaxed mb-5 italic">"{t.quote}"</p>
+                  <div>
+                    <p className="text-sm font-bold text-foreground">{t.name}</p>
+                    <p className="text-xs text-muted-foreground">{t.detail}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════ PRICING ═══════ */}
+      <section id="pricing" className="py-24 lg:py-32 bg-card/50">
+        <div className="max-w-[800px] mx-auto px-5 lg:px-6">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }} className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] mb-4">
+              Simple Pricing.<br />No Surprises.
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* Free */}
+            <div className="rounded-2xl border border-border bg-card p-7">
+              <p className="text-sm font-bold text-muted-foreground mb-1">Free</p>
+              <p className="text-4xl font-extrabold font-mono mb-1">£0</p>
+              <p className="text-sm text-muted-foreground mb-6">Limited attempts</p>
+              <div className="space-y-3 mb-8">
+                {freeFeatures.map((f) => (
+                  <div key={f} className="flex items-center gap-2.5">
+                    <Check className="h-4 w-4 text-success shrink-0" />
+                    <span className="text-sm text-muted-foreground">{f}</span>
+                  </div>
+                ))}
+              </div>
+              <Button asChild variant="outline" className="w-full rounded-lg h-11">
+                <Link to="/auth">Get Started Free</Link>
               </Button>
             </div>
+
+            {/* Pro */}
+            <motion.div whileHover={{ scale: 1.02 }} className="relative rounded-2xl border-2 border-primary bg-card p-7 glow-indigo">
+              <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
+                Popular
+              </div>
+              <p className="text-sm font-bold text-primary mb-1">Exam Window Pass</p>
+              <div className="flex items-baseline gap-1.5 mb-1">
+                <span className="text-4xl font-extrabold font-mono">£19</span>
+                <span className="text-sm text-muted-foreground">/one-off</span>
+              </div>
+              <p className="text-sm text-muted-foreground mb-6">Unlimited access for your full exam season</p>
+              <div className="space-y-3 mb-8">
+                {proFeatures.map((f) => (
+                  <div key={f} className="flex items-center gap-2.5">
+                    <Check className="h-4 w-4 text-success shrink-0" />
+                    <span className="text-sm text-foreground">{f}</span>
+                  </div>
+                ))}
+              </div>
+              <Button asChild className="w-full rounded-lg h-11 gap-2 animate-glow-pulse">
+                <Link to="/pricing">
+                  Get Unlimited Access <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </motion.div>
+          </div>
+
+          <p className="text-center text-xs text-muted-foreground mt-6">
+            One payment. No subscription. Cancel anytime.
+          </p>
+        </div>
+      </section>
+
+      {/* ═══════ FAQ ═══════ */}
+      <section id="faq" className="py-24 lg:py-32">
+        <div className="max-w-[720px] mx-auto px-5 lg:px-6">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }} className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] mb-4">
+              Frequently Asked Questions
+            </h2>
+          </motion.div>
+
+          <Accordion type="single" collapsible className="space-y-2">
+            {faqItems.map((item, i) => (
+              <AccordionItem key={i} value={`faq-${i}`} className="rounded-2xl border border-border bg-card px-5 data-[state=open]:border-primary/40 transition-colors">
+                <AccordionTrigger className="text-sm font-semibold hover:no-underline py-5">{item.q}</AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5">{item.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* ═══════ FINAL CTA ═══════ */}
+      <section className="py-24 lg:py-32 relative overflow-hidden">
+        <div ref={ctaPulseRef} className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-[600px] h-[600px] rounded-full" style={{ background: "radial-gradient(circle, rgba(79,86,255,0.12), transparent 70%)" }} />
+        </div>
+
+        <div className="max-w-[720px] mx-auto px-5 lg:px-6 text-center relative z-10">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] mb-6">
+              Your Exam Is Coming.<br />Start Preparing Today.
+            </h2>
+            <Button asChild size="lg" className="rounded-lg px-8 h-13 text-base font-semibold gap-2 animate-glow-pulse">
+              <Link to="/predicted">
+                Generate My First Predicted Paper <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+            <p className="text-sm text-muted-foreground mt-5">
+              Free to start. No credit card required.
+            </p>
           </motion.div>
         </div>
       </section>
     </div>
   );
+}
+
+/* ─── Typing text component ─── */
+function TypingText({ text }: { text: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    let i = 0;
+    el.textContent = "";
+    const interval = setInterval(() => {
+      if (i < text.length) {
+        el.textContent += text[i];
+        i++;
+      } else {
+        // Reset after pause
+        setTimeout(() => {
+          if (el) { el.textContent = ""; i = 0; }
+        }, 2000);
+      }
+    }, 40);
+    return () => clearInterval(interval);
+  }, [text]);
+
+  return <span ref={ref} />;
 }
