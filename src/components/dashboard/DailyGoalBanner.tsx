@@ -1,30 +1,15 @@
-import { useState } from "react";
-import { X } from "lucide-react";
-
 export default function DailyGoalBanner() {
-  const [visible, setVisible] = useState(true);
-  if (!visible) return null;
-
   return (
-    <div className="rounded-xl bg-[#1a1a2e] border border-[#2a2a4a] px-4 py-3 flex items-center gap-3">
-      <div className="flex-1 min-w-0">
-        <p className="text-[#f1f5f9] text-sm font-medium">
-          Daily Goal: Gain +3 readiness points today —{" "}
-          <span className="text-[#a855f7] font-bold">2/3 complete</span>
+    <div className="flex-1 min-w-0 hidden md:block">
+      <div className="flex items-center gap-3">
+        <p className="text-foreground text-sm font-medium whitespace-nowrap">
+          Today's Goal: <span className="text-primary font-bold">+3 Readiness Points</span>
+          <span className="text-muted-foreground ml-2 text-xs">1/3 complete</span>
         </p>
-        <div className="mt-2 h-1.5 rounded-full bg-[#2a2a4a] overflow-hidden">
-          <div
-            className="h-full rounded-full bg-gradient-to-r from-[#6366f1] to-[#a855f7]"
-            style={{ width: "66%" }}
-          />
+        <div className="flex-1 max-w-[200px] h-1.5 rounded-full bg-popover overflow-hidden">
+          <div className="h-full rounded-full bg-primary w-[33%]" />
         </div>
       </div>
-      <button
-        onClick={() => setVisible(false)}
-        className="text-[#64748b] hover:text-[#f1f5f9] transition-colors shrink-0"
-      >
-        <X className="h-4 w-4" />
-      </button>
     </div>
   );
 }

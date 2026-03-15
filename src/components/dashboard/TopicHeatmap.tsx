@@ -9,12 +9,6 @@ interface Props {
   topics: TopicItem[];
 }
 
-function getCellColor(mastery: number) {
-  if (mastery >= 80) return "#a855f7";
-  if (mastery >= 50) return "#6366f1";
-  return "#2a2a4a";
-}
-
 const cellVariants = {
   hidden: { opacity: 0, scale: 0.8 },
   show: (i: number) => ({
@@ -26,12 +20,12 @@ const cellVariants = {
 
 export default function TopicHeatmap({ topics }: Props) {
   return (
-    <div className="rounded-2xl bg-[#1a1a2e] border border-[#2a2a4a] p-5">
-      <h3 className="text-[#f1f5f9] font-semibold text-sm mb-4">Topic Mastery</h3>
+    <div className="rounded-2xl border border-border bg-card p-5">
+      <h3 className="text-foreground font-semibold text-sm mb-4">Topic Mastery</h3>
       <div className="grid grid-cols-4 gap-2">
         {topics.map((t, i) => {
           const isWeak = t.mastery > 0 && t.mastery < 45;
-          const color = getCellColor(t.mastery);
+          const intensity = t.mastery / 100;
           return (
             <motion.div
               key={t.name}
@@ -39,24 +33,18 @@ export default function TopicHeatmap({ topics }: Props) {
               variants={cellVariants}
               initial="hidden"
               animate="show"
-              whileHover={{
-                scale: 1.08,
-                boxShadow: t.mastery >= 50
-                  ? `0 0 16px 4px ${color}44`
-                  : "none",
-                transition: { duration: 0.2 },
-              }}
+              whileHover={{ scale: 1.08, transition: { duration: 0.2 } }}
               className={`rounded-xl p-2.5 flex flex-col items-center justify-center text-center cursor-default ${
-                isWeak ? "animate-pulse" : ""
+                isWeak ? "animate-cell-pulse" : ""
               }`}
               style={{
-                backgroundColor: color + "22",
-                border: `1px solid ${color}44`,
-                boxShadow: t.mastery >= 80 ? `0 0 12px rgba(168,85,247,0.25)` : "none",
+                backgroundColor: `hsl(var(--primary) / ${intensity * 0.5 + 0.05})`,
+                border: `1px solid hsl(var(--primary) / ${intensity * 0.3 + 0.1})`,
+                boxShadow: t.mastery >= 80 ? `0 0 12px hsl(var(--primary) / 0.25)` : "none",
               }}
             >
-              <span className="text-[10px] text-[#94a3b8] leading-tight line-clamp-2">{t.name}</span>
-              <span className="text-xs font-bold mt-1" style={{ color }}>
+              <span className="text-[10px] text-muted-foreground leading-tight line-clamp-2">{t.name}</span>
+              <span className="text-xs font-bold font-mono mt-1" style={{ color: t.mastery >= 50 ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground))" }}>
                 {t.mastery}%
               </span>
             </motion.div>

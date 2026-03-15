@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { ChevronRight } from "lucide-react";
 
 interface ActionItem {
   icon: string;
@@ -13,13 +14,15 @@ interface Props {
   actions: ActionItem[];
 }
 
+const ease = [0, 0, 0.2, 1] as const;
+
 const cardVariants = {
   hidden: { opacity: 0, y: 12, scale: 0.97 },
   show: (i: number) => ({
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { delay: i * 0.08, duration: 0.4, ease: [0, 0, 0.2, 1] as const },
+    transition: { delay: i * 0.08, duration: 0.4, ease },
   }),
 };
 
@@ -27,9 +30,9 @@ export default function ActionCards({ actions }: Props) {
   const navigate = useNavigate();
 
   const items = actions.length > 0 ? actions : [
-    { icon: "📊", label: "Practice elasticity diagrams", points: 4, accent: "#6366f1", to: "/diagram-practice" },
-    { icon: "📝", label: "Complete a predicted paper", points: 6, accent: "#a855f7", to: "/predicted" },
-    { icon: "✍️", label: "Submit an essay for grading", points: 3, accent: "#ec4899", to: "/grader" },
+    { icon: "📐", label: "Practice elasticity diagrams to boost diagram accuracy", points: 4, accent: "hsl(var(--primary))", to: "/diagram-practice" },
+    { icon: "📝", label: "Complete a predicted paper to reach Peak Mastery", points: 6, accent: "hsl(var(--indigo-bright))", to: "/predicted" },
+    { icon: "✍️", label: "Submit an essay for AI grading to improve your essay score", points: 3, accent: "hsl(var(--cyan-pop))", to: "/grader" },
   ];
 
   return (
@@ -42,35 +45,22 @@ export default function ActionCards({ actions }: Props) {
           initial="hidden"
           animate="show"
           whileHover={{
-            y: -3,
-            boxShadow: `0 8px 30px -8px ${a.accent}44`,
-            borderColor: `${a.accent}66`,
+            y: -2,
+            borderColor: "hsl(var(--border-glow))",
             transition: { duration: 0.2 },
           }}
           whileTap={{ scale: 0.98 }}
           onClick={() => navigate(a.to)}
-          className="rounded-2xl bg-[#1a1a2e] border border-[#2a2a4a] p-4 flex items-start gap-3 cursor-pointer"
-          style={{ borderLeftWidth: 3, borderLeftColor: a.accent }}
+          className="rounded-2xl border border-border bg-card p-4 flex items-start gap-3 cursor-pointer border-l-[3px] border-l-primary transition-all"
         >
-          <motion.span
-            className="text-xl mt-0.5"
-            whileHover={{ scale: 1.2, rotate: 5 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            {a.icon}
-          </motion.span>
+          <span className="text-xl mt-0.5">{a.icon}</span>
           <div className="flex-1 min-w-0">
-            <p className="text-[#f1f5f9] text-sm font-medium leading-snug">{a.label}</p>
-            <span
-              className="inline-block mt-2 text-[10px] font-bold px-2.5 py-1 rounded-full"
-              style={{
-                backgroundColor: a.accent + "22",
-                color: a.accent,
-              }}
-            >
+            <p className="text-foreground text-sm font-medium leading-snug">{a.label}</p>
+            <span className="inline-block mt-2 text-[10px] font-bold px-2.5 py-1 rounded-full bg-success/15 text-success">
               +{a.points} pts
             </span>
           </div>
+          <ChevronRight className="h-4 w-4 text-muted-foreground shrink-0 mt-1" />
         </motion.div>
       ))}
     </div>
