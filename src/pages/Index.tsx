@@ -85,6 +85,7 @@ const marqueeItems = ["AQA", "Edexcel", "OCR", "WJEC", "Cambridge", "IB Economic
 export default function Index() {
   const heroRef = useRef<HTMLDivElement>(null);
   const shimmerRef = useRef<HTMLSpanElement>(null);
+  const subtitleShimmerRef = useRef<HTMLSpanElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const blob1Ref = useRef<HTMLDivElement>(null);
   const blob2Ref = useRef<HTMLDivElement>(null);
