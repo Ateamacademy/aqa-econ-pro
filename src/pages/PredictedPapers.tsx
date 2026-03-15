@@ -16,7 +16,7 @@ import { PaperSelector } from "@/components/predicted-papers/PaperSelector";
 import { TierSelector } from "@/components/predicted-papers/TierSelector";
 import { QuestionCard } from "@/components/predicted-papers/QuestionCard";
 import { parseQuestions, type ParsedQuestion } from "@/components/predicted-papers/parseQuestions";
-import { paperOptionsBySubject } from "@/lib/subjectConfig";
+import { paperOptionsBySubject, topicsBySubject } from "@/lib/subjectConfig";
 import { PeriodicTable } from "@/components/tools/PeriodicTable";
 import { ChemistryEquations } from "@/components/tools/ChemistryEquations";
 import { predictedPapersLibrary, type PredictedPaper } from "@/data/predictedPapersLibrary";
@@ -787,7 +787,8 @@ export default function PredictedPapers() {
   const [mode, setMode] = useState<"library" | "generate">("library");
   const [paper, setPaper] = useState("1");
   const [tier, setTier] = useState<"Foundation" | "Higher">("Higher");
-  const [topicScope, setTopicScope] = useState<"full" | "year1" | "year1+2">("full");
+  const [topicScope, setTopicScope] = useState<"full" | "year1" | "year1+2" | "custom">("full");
+  const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const [generatedPaper, setGeneratedPaper] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [step, setStep] = useState<"select" | "paper">("select");
@@ -906,6 +907,8 @@ export default function PredictedPapers() {
       ? "\n\nIMPORTANT: Only use Year 1 (AS) topics. For AQA: microeconomics topics only (markets, market failure, government intervention). Do NOT include macroeconomics, trade, or Year 2 content."
       : topicScope === "year1+2"
       ? "\n\nUse the FULL specification — both Year 1 and Year 2 topics (micro + macro, including trade, development, and synoptic links)."
+      : topicScope === "custom" && selectedTopics.length > 0
+      ? `\n\nCUSTOM TOPIC SELECTION: The student has specifically chosen these topics. ONLY generate questions on these topics: ${selectedTopics.join(", ")}. Do NOT include questions on any other topics. Distribute marks evenly across the selected topics. Maintain the same exam structure and question types, but restrict content to the chosen topics only.`
       : "";
 
     const prompt = dbContextPrompt
@@ -1414,15 +1417,19 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                     <span className="h-5 w-5 rounded-md bg-primary/10 flex items-center justify-center text-primary text-xs font-bold">{(isMaths || isChemistry) ? "3" : "2"}</span>
                     Topic Coverage
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {[
                       { value: "year1" as const, label: "Year 1 Only", desc: "AS / Year 12 topics only — perfect if you haven't covered Year 2 yet" },
                       { value: "year1+2" as const, label: "Year 1 + Year 2", desc: "Full A-Level specification — all micro and macro topics" },
                       { value: "full" as const, label: "Full Predicted Paper", desc: "Complete exam paper matching the official structure and difficulty" },
+                      { value: "custom" as const, label: "Custom Topics", desc: "Choose exactly which topics to include in your paper" },
                     ].map(opt => (
                       <button
                         key={opt.value}
-                        onClick={() => setTopicScope(opt.value)}
+                        onClick={() => {
+                          setTopicScope(opt.value);
+                          if (opt.value !== "custom") setSelectedTopics([]);
+                        }}
                         className={cn(
                           "text-left rounded-xl border-2 p-4 transition-all duration-200",
                           topicScope === opt.value
@@ -1443,6 +1450,79 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                       </button>
                     ))}
                   </div>
+
+                  {/* Custom topic picker */}
+                  {topicScope === "custom" && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="mt-5"
+                    >
+                      <div className="rounded-xl border border-border bg-card/50 p-5">
+                        <div className="flex items-center justify-between mb-4">
+                          <h4 className="text-sm font-semibold text-foreground">
+                            Select Topics
+                            <span className="ml-2 text-xs font-normal text-muted-foreground">
+                              ({selectedTopics.length} selected)
+                            </span>
+                          </h4>
+                          <div className="flex gap-2">
+                            <button
+                              onClick={() => setSelectedTopics(topicsBySubject[subject] || [])}
+                              className="text-[11px] font-medium text-primary hover:text-primary/80 transition-colors"
+                            >
+                              Select All
+                            </button>
+                            <span className="text-muted-foreground/40">·</span>
+                            <button
+                              onClick={() => setSelectedTopics([])}
+                              className="text-[11px] font-medium text-muted-foreground hover:text-foreground transition-colors"
+                            >
+                              Clear
+                            </button>
+                          </div>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {(topicsBySubject[subject] || []).map((topic) => {
+                            const isSelected = selectedTopics.includes(topic);
+                            return (
+                              <button
+                                key={topic}
+                                onClick={() => {
+                                  setSelectedTopics((prev) =>
+                                    isSelected
+                                      ? prev.filter((t) => t !== topic)
+                                      : [...prev, topic]
+                                  );
+                                }}
+                                className={cn(
+                                  "px-3 py-1.5 rounded-full text-xs font-medium border transition-all duration-200",
+                                  isSelected
+                                    ? "bg-primary/15 border-primary/40 text-primary shadow-sm shadow-primary/10"
+                                    : "bg-card border-border text-muted-foreground hover:border-primary/30 hover:text-foreground"
+                                )}
+                              >
+                                {isSelected && <span className="mr-1">✓</span>}
+                                {topic}
+                              </button>
+                            );
+                          })}
+                        </div>
+                        {selectedTopics.length === 0 && (
+                          <p className="text-xs text-destructive mt-3">
+                            Please select at least one topic to generate a paper.
+                          </p>
+                        )}
+                        {selectedTopics.length > 0 && selectedTopics.length <= 2 && (
+                          <p className="text-xs text-warning mt-3">
+                            Tip: Selecting 3+ topics creates a more balanced paper.
+                          </p>
+                        )}
+                      </div>
+                    </motion.div>
+                  )}
                 </div>
 
                 <motion.div
@@ -1468,7 +1548,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
 
                   <Button
                     onClick={canUse ? generatePaper : () => setShowUpgrade(true)}
-                    disabled={isGenerating}
+                    disabled={isGenerating || (topicScope === "custom" && selectedTopics.length === 0)}
                     size="lg"
                     className="gap-2.5 px-12 h-13 rounded-full text-base font-bold shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:scale-[1.02] active:scale-[0.98] transition-all"
                   >
