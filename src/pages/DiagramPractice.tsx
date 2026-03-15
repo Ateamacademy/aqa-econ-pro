@@ -382,6 +382,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
         feedback={feedback}
         onReset={reset}
       />}
+      <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="diagram practice sessions" />
     </div>
   );
 }
