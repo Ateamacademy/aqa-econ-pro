@@ -331,20 +331,7 @@ export default function Index() {
             </h2>
           </motion.div>
 
-          <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} className="grid md:grid-cols-4 gap-6 relative">
-            {/* Connecting line */}
-            <div className="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-px border-t-2 border-dashed border-border" />
-
-            {steps.map((s) => (
-              <motion.div key={s.num} variants={cardVariant} className="text-center relative">
-                <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-primary/10 border border-primary/20 mb-5 mx-auto">
-                  <span className="text-xl font-bold font-mono text-primary">{s.num}</span>
-                </div>
-                <h3 className="text-base font-bold mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+          <HowItWorksTimeline steps={steps} />
         </div>
       </section>
 
@@ -638,4 +625,87 @@ function TypingText({ text }: { text: string }) {
   }, [text]);
 
   return <span ref={ref} />;
+}
+
+/* ─── How It Works Timeline with GSAP draw animation ─── */
+function HowItWorksTimeline({ steps }: { steps: { num: string; title: string; desc: string }[] }) {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const lineRef = useRef<SVGLineElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (!lineRef.current) return;
+      const length = lineRef.current.getTotalLength();
+      gsap.set(lineRef.current, { strokeDasharray: length, strokeDashoffset: length });
+      gsap.to(lineRef.current, {
+        strokeDashoffset: 0,
+        duration: 1.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+          once: true,
+        },
+      });
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
+
+  // Fallback: if ScrollTrigger isn't loaded, use IntersectionObserver
+  useEffect(() => {
+    if ((gsap as any).plugins?.find?.((p: any) => p.name === "scrollTrigger")) return;
+    const el = sectionRef.current;
+    if (!el || !lineRef.current) return;
+    const length = lineRef.current.getTotalLength();
+    gsap.set(lineRef.current, { strokeDasharray: length, strokeDashoffset: length });
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && lineRef.current) {
+          gsap.to(lineRef.current, { strokeDashoffset: 0, duration: 1.5, ease: "power2.out" });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={sectionRef} className="grid md:grid-cols-4 gap-6 relative">
+      {/* SVG connecting line */}
+      <svg className="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] w-[75%] h-[2px] overflow-visible" preserveAspectRatio="none">
+        <line
+          ref={lineRef}
+          x1="0"
+          y1="1"
+          x2="100%"
+          y2="1"
+          stroke="hsl(var(--primary))"
+          strokeWidth="2"
+          strokeDasharray="8 6"
+          strokeLinecap="round"
+          opacity="0.5"
+        />
+      </svg>
+
+      {steps.map((s, i) => (
+        <motion.div
+          key={s.num}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, delay: i * 0.15, ease: [0.25, 0.4, 0.25, 1] }}
+          className="text-center relative"
+        >
+          <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-primary/10 border border-primary/20 mb-5 mx-auto relative z-10">
+            <span className="text-xl font-bold font-mono text-primary">{s.num}</span>
+          </div>
+          <h3 className="text-base font-bold mb-2">{s.title}</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+        </motion.div>
+      ))}
+    </div>
+  );
 }
