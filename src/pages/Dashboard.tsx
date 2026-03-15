@@ -20,10 +20,11 @@ import StrengthWeakness from "@/components/dashboard/StrengthWeakness";
 import { motion } from "framer-motion";
 import {
   Lock, LayoutDashboard, FileText, BookOpen, Compass, MessageCircle,
-  BarChart3, Settings, Crown, Bell, GraduationCap, ChevronRight,
+  BarChart3, Settings, Crown, Bell, GraduationCap, ChevronRight, Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { InviteParentModal } from "@/components/dashboard/InviteParentModal";
 
 const sidebarNav = [
   { icon: LayoutDashboard, label: "Dashboard", to: "/dashboard", active: true },
@@ -46,6 +47,7 @@ export default function Dashboard() {
   const navigate = useNavigate();
   const [sessions, setSessions] = useState<SessionRow[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showInviteParent, setShowInviteParent] = useState(false);
 
   useEffect(() => {
     if (!user) return;
@@ -151,6 +153,9 @@ export default function Dashboard() {
             <button className="text-muted-foreground hover:text-foreground transition-colors">
               <Bell className="h-5 w-5" />
             </button>
+            <Button size="sm" variant="outline" onClick={() => setShowInviteParent(true)} className="gap-1.5 text-xs">
+              <Users className="h-3.5 w-3.5" /> Invite Parent
+            </Button>
             <Button size="sm" onClick={() => navigate("/predicted")} className="gap-1.5 text-xs">
               <FileText className="h-3.5 w-3.5" /> Generate New Paper
             </Button>
@@ -238,6 +243,7 @@ export default function Dashboard() {
           </div>
         </motion.div>
       </div>
+      <InviteParentModal open={showInviteParent} onOpenChange={setShowInviteParent} />
     </div>
   );
 }

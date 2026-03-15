@@ -28,6 +28,7 @@ const StudyNotes = lazy(() => import("./pages/StudyNotes"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 const PredictedPapers = lazy(() => import("./pages/PredictedPapers"));
+const ParentDashboard = lazy(() => import("./pages/ParentDashboard"));
 
 const queryClient = new QueryClient();
 
@@ -54,6 +55,7 @@ const App = () => (
               <Route path="/auth" element={<Auth />} />
               <Route path="/reset-password" element={<ResetPassword />} />
               <Route path="/pricing" element={<Pricing />} />
+              <Route path="/parent-dashboard" element={<ParentDashboard />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             </Suspense>

@@ -83,6 +83,39 @@ export type Database = {
         }
         Relationships: []
       }
+      parent_links: {
+        Row: {
+          accepted_at: string | null
+          created_at: string
+          id: string
+          invite_token: string
+          parent_email: string
+          parent_id: string | null
+          status: string
+          student_id: string
+        }
+        Insert: {
+          accepted_at?: string | null
+          created_at?: string
+          id?: string
+          invite_token?: string
+          parent_email: string
+          parent_id?: string | null
+          status?: string
+          student_id: string
+        }
+        Update: {
+          accepted_at?: string | null
+          created_at?: string
+          id?: string
+          invite_token?: string
+          parent_email?: string
+          parent_id?: string | null
+          status?: string
+          student_id?: string
+        }
+        Relationships: []
+      }
       practice_sessions: {
         Row: {
           created_at: string | null
@@ -199,6 +232,29 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      accept_parent_invite: { Args: { token: string }; Returns: boolean }
+      get_child_profiles: {
+        Args: { p_parent_id: string }
+        Returns: {
+          display_name: string
+          student_email: string
+          user_id: string
+        }[]
+      }
+      get_child_sessions: {
+        Args: { p_parent_id: string }
+        Returns: {
+          created_at: string
+          feedback_summary: string
+          id: string
+          score_percent: number
+          session_type: string
+          student_email: string
+          subject: string
+          topic: string
+          user_id: string
+        }[]
+      }
       get_friend_scores: {
         Args: { requesting_user_id: string }
         Returns: {
