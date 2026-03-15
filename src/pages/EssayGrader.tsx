@@ -28,6 +28,7 @@ export default function EssayGrader() {
   const [feedback, setFeedback] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isGeneratingQ, setIsGeneratingQ] = useState(false);
+  const [showUpgrade, setShowUpgrade] = useState(false);
 
   if (!user) {
     return (
