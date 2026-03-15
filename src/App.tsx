@@ -55,6 +55,7 @@ const App = () => (
               <Route path="/auth" element={<Auth />} />
               <Route path="/reset-password" element={<ResetPassword />} />
               <Route path="/pricing" element={<Pricing />} />
+              <Route path="/parent-dashboard" element={<ParentDashboard />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             </Suspense>

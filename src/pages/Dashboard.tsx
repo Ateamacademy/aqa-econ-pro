@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { InviteParentModal } from "@/components/dashboard/InviteParentModal";
 
 const sidebarNav = [
   { icon: LayoutDashboard, label: "Dashboard", to: "/dashboard", active: true },
