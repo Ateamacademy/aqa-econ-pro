@@ -15,9 +15,9 @@ const iconMap: Record<string, any> = {
 };
 
 const colorSets = [
-  { color: "border-blue-600", bg: "text-blue-600" },
-  { color: "border-green-600", bg: "text-green-600" },
-  { color: "border-purple-600", bg: "text-purple-600" },
+  { color: "border-primary", bg: "text-primary" },
+  { color: "border-accent", bg: "text-accent" },
+  { color: "border-primary", bg: "text-primary" },
 ];
 
 interface PaperSelectorProps {
