@@ -20,7 +20,7 @@ import StrengthWeakness from "@/components/dashboard/StrengthWeakness";
 import { motion } from "framer-motion";
 import {
   Lock, LayoutDashboard, FileText, BookOpen, Compass, MessageCircle,
-  BarChart3, Settings, Crown, Bell, GraduationCap, ChevronRight,
+  BarChart3, Settings, Crown, Bell, GraduationCap, ChevronRight, Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
