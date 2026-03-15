@@ -331,20 +331,7 @@ export default function Index() {
             </h2>
           </motion.div>
 
-          <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} className="grid md:grid-cols-4 gap-6 relative">
-            {/* Connecting line */}
-            <div className="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-px border-t-2 border-dashed border-border" />
-
-            {steps.map((s) => (
-              <motion.div key={s.num} variants={cardVariant} className="text-center relative">
-                <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-primary/10 border border-primary/20 mb-5 mx-auto">
-                  <span className="text-xl font-bold font-mono text-primary">{s.num}</span>
-                </div>
-                <h3 className="text-base font-bold mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+          <HowItWorksTimeline steps={steps} />
         </div>
       </section>
 

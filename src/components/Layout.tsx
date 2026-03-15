@@ -22,6 +22,7 @@ const homepageNavLinks = [
   { href: "#how-it-works", label: "How It Works" },
   { href: "#pricing", label: "Pricing" },
   { href: "#faq", label: "FAQ" },
+  { href: "#pricing", label: "For Schools" },
 ];
 
 const SUBJECTS: { value: Subject; label: string }[] = [
