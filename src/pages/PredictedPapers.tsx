@@ -16,7 +16,7 @@ import { PaperSelector } from "@/components/predicted-papers/PaperSelector";
 import { TierSelector } from "@/components/predicted-papers/TierSelector";
 import { QuestionCard } from "@/components/predicted-papers/QuestionCard";
 import { parseQuestions, type ParsedQuestion } from "@/components/predicted-papers/parseQuestions";
-import { paperOptionsBySubject } from "@/lib/subjectConfig";
+import { paperOptionsBySubject, topicsBySubject } from "@/lib/subjectConfig";
 import { PeriodicTable } from "@/components/tools/PeriodicTable";
 import { ChemistryEquations } from "@/components/tools/ChemistryEquations";
 import { predictedPapersLibrary, type PredictedPaper } from "@/data/predictedPapersLibrary";
