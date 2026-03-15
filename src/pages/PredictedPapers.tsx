@@ -1424,7 +1424,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                   )}
 
                   <Button
-                    onClick={canUse ? generatePaper : () => navigate("/pricing")}
+                    onClick={canUse ? generatePaper : () => setShowUpgrade(true)}
                     disabled={isGenerating}
                     size="lg"
                     className="gap-2.5 px-12 h-13 rounded-full text-base font-bold shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:scale-[1.02] active:scale-[0.98] transition-all"
