@@ -131,11 +131,11 @@ export default function DiagramPractice() {
     );
   }
 
-  const diagramsUsed = profile?.free_questions_used ?? 0;
+  const diagramsUsed = (profile as any)?.free_diagrams_used ?? 0;
   const canUse = subscribed || (profile && diagramsUsed < FREE_LIMITS.diagrams);
 
   const generateQuestion = async () => {
-    if (!canUse) { toast.error("Free limit reached."); navigate("/pricing"); return; }
+    if (!canUse) { setShowUpgrade(true); return; }
     setIsGenerating(true);
     setGeneratedQ("");
     let result = "";
