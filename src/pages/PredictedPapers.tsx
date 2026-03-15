@@ -1500,7 +1500,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
           </motion.div>
         )}
 
-        {step === "paper" && !isGenerating && (
+        {step === "paper" && !isGenerating && !examFinished && (
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -1522,24 +1522,42 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                   </>
                 )}
               </div>
-              <Button
-                size="lg"
-                className="gap-2.5 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-shadow"
-                onClick={() => {
-                  const paperTitle = selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`;
-                  const fullContent = paperContext + "\n\n" + parsedQuestions.map(q => `${q.label} [${q.marks} marks]\n${q.text}`).join("\n\n");
-                  generatePaperPdf(paperTitle, fullContent, {
-                    subject: subjectLabel,
-                    examBoard,
-                    level,
-                    tier: (isMaths || isChemistry) ? tier : undefined,
-                  });
-                  toast.success("PDF downloaded!");
-                }}
-              >
-                <Download className="h-5 w-5" /> Download PDF
-              </Button>
+              <div className="flex items-center gap-3 flex-wrap">
+                <ExamTimer
+                  durationMinutes={examDuration}
+                  onTimeUp={handleExamTimeUp}
+                  isActive={examActive}
+                  onStart={handleStartExam}
+                />
+                <Button
+                  size="lg"
+                  className="gap-2.5 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-shadow"
+                  onClick={() => {
+                    const paperTitle = selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`;
+                    const fullContent = paperContext + "\n\n" + parsedQuestions.map(q => `${q.label} [${q.marks} marks]\n${q.text}`).join("\n\n");
+                    generatePaperPdf(paperTitle, fullContent, {
+                      subject: subjectLabel,
+                      examBoard,
+                      level,
+                      tier: (isMaths || isChemistry) ? tier : undefined,
+                    });
+                    toast.success("PDF downloaded!");
+                  }}
+                >
+                  <Download className="h-5 w-5" /> Download PDF
+                </Button>
+              </div>
             </div>
+
+            {/* Sticky exam timer bar when active */}
+            {examActive && (
+              <ExamTimer
+                durationMinutes={examDuration}
+                onTimeUp={handleExamTimeUp}
+                isActive={examActive}
+                onStart={handleStartExam}
+              />
+            )}
 
             {paperContext && (
               <div className="rounded-2xl border border-border/60 bg-card overflow-hidden">
@@ -1597,12 +1615,35 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
               </motion.div>
             ))}
 
-            <div className="flex justify-center pt-8 pb-4">
+            <div className="flex flex-wrap justify-center gap-4 pt-8 pb-4">
+              {examActive && (
+                <Button
+                  onClick={handleSubmitExam}
+                  size="lg"
+                  className="gap-2 rounded-full px-10 bg-success hover:bg-success/90 text-white font-bold shadow-xl shadow-success/25"
+                >
+                  <CheckCircle className="h-5 w-5" /> Submit Exam
+                </Button>
+              )}
               <Button variant="outline" onClick={reset} className="gap-2 rounded-full px-8 border-border/60 hover:bg-card hover:border-primary/30 transition-all">
                 <RotateCcw className="h-4 w-4" /> Back to Papers
               </Button>
             </div>
           </motion.div>
+        )}
+
+        {/* Exam results view */}
+        {step === "paper" && examFinished && (
+          <div className="mt-8">
+            <ExamResultsSummary
+              questions={parsedQuestions}
+              feedbacks={feedbacks}
+              answers={answers}
+              onBackToPapers={reset}
+              paperTitle={selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} — Paper ${paper}`}
+              timeExpired={timeExpired}
+            />
+          </div>
         )}
       </div>
       <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="predicted papers" />
