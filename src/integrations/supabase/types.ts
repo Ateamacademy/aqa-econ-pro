@@ -59,6 +59,30 @@ export type Database = {
         }
         Relationships: []
       }
+      friendships: {
+        Row: {
+          addressee_id: string
+          created_at: string
+          id: string
+          requester_id: string
+          status: string
+        }
+        Insert: {
+          addressee_id: string
+          created_at?: string
+          id?: string
+          requester_id: string
+          status?: string
+        }
+        Update: {
+          addressee_id?: string
+          created_at?: string
+          id?: string
+          requester_id?: string
+          status?: string
+        }
+        Relationships: []
+      }
       practice_sessions: {
         Row: {
           created_at: string | null
@@ -95,6 +119,7 @@ export type Database = {
       profiles: {
         Row: {
           created_at: string
+          display_name: string | null
           free_papers_used: number
           free_predicted_papers_used: number
           free_questions_used: number
@@ -103,6 +128,7 @@ export type Database = {
         }
         Insert: {
           created_at?: string
+          display_name?: string | null
           free_papers_used?: number
           free_predicted_papers_used?: number
           free_questions_used?: number
@@ -111,6 +137,7 @@ export type Database = {
         }
         Update: {
           created_at?: string
+          display_name?: string | null
           free_papers_used?: number
           free_predicted_papers_used?: number
           free_questions_used?: number
@@ -166,6 +193,15 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_friend_scores: {
+        Args: { requesting_user_id: string }
+        Returns: {
+          display_name: string
+          score_avg: number
+          session_count: number
+          user_id: string
+        }[]
+      }
       is_own_profile: { Args: { profile_user_id: string }; Returns: boolean }
       search_similar_questions: {
         Args: {
