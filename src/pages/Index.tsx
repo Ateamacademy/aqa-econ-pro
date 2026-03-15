@@ -530,10 +530,10 @@ export default function Index() {
               </div>
               <p className="text-sm font-bold text-primary mb-1">Exam Window Pass</p>
               <div className="flex items-baseline gap-1.5 mb-1">
-                <span className="text-4xl font-extrabold font-mono">£19</span>
+              <span className="text-4xl font-extrabold font-mono">£29</span>
                 <span className="text-sm text-muted-foreground">/one-off</span>
               </div>
-              <p className="text-sm text-muted-foreground mb-6">Unlimited access for your full exam season</p>
+              <p className="text-sm text-muted-foreground mb-6">Unlimited access until 29 June 2026</p>
               <div className="space-y-3 mb-8">
                 {proFeatures.map((f) => (
                   <div key={f} className="flex items-center gap-2.5">
