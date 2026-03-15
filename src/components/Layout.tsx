@@ -20,7 +20,6 @@ const navLinks = [
 const homepageNavLinks = [
   { href: "#features", label: "Features" },
   { href: "#how-it-works", label: "How It Works" },
-  { href: "#pricing", label: "Pricing" },
   { href: "#faq", label: "FAQ" },
   { href: "#pricing", label: "For Schools" },
 ];
@@ -143,11 +142,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </>
             ) : (
               <>
-                {!subscribed && (
-                  <Link to="/pricing" className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors">
-                    Pricing
-                  </Link>
-                )}
+
+
                 {user ? (
                   <button onClick={signOut} className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors">
                     Sign Out
