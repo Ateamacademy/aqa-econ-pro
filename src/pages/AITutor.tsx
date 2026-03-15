@@ -131,7 +131,7 @@ export default function AITutor() {
               <MessageCircle className="h-4 w-4 text-primary" />
             </div>
             <div>
-              <h2 className="text-sm font-bold text-foreground">AI {subjectLabel} Tutor</h2>
+              <h2 className="text-sm font-bold text-foreground">24/7 {subjectLabel} Tutor</h2>
               <p className="text-[10px] text-muted-foreground">{examBoard} {level}</p>
             </div>
           </div>
