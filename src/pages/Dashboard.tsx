@@ -47,6 +47,7 @@ export default function Dashboard() {
   const navigate = useNavigate();
   const [sessions, setSessions] = useState<SessionRow[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showInviteParent, setShowInviteParent] = useState(false);
 
   useEffect(() => {
     if (!user) return;
