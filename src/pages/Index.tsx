@@ -368,11 +368,11 @@ export default function Index() {
           >
             <div className="rounded-2xl border border-border bg-card overflow-hidden relative" style={{ borderTopColor: "hsl(var(--accent))", borderTopWidth: "2px" }}>
               <div className="absolute top-3 right-3 bg-primary/20 text-primary text-xs font-bold px-3 py-1 rounded-full animate-glow-pulse">
-                AI Generated
+                Predicted
               </div>
               <div className="p-6 border-b border-border">
                 <p className="text-xs text-muted-foreground font-medium mb-1">Economics — Paper 1</p>
-                <p className="text-sm font-bold">AI Predicted | June 2025</p>
+                <p className="text-sm font-bold">Predicted | June 2025</p>
               </div>
               <div className="p-6 space-y-4">
                 {[
