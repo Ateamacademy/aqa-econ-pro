@@ -199,7 +199,7 @@ export default function Dashboard() {
 
             <motion.div variants={fadeUp} className="relative flex justify-center py-8">
               <ScoreDelta points={r.score > 0 ? 5 : 0} />
-              <ReadinessRadial score={r.score} stageName={r.stageName} />
+              <ReadinessRadial score={r.score} stageName={r.stageName} stage={r.stage} />
             </motion.div>
 
             <motion.div variants={fadeUp} className="rounded-2xl bg-[#1a1a2e] border border-[#2a2a4a] p-5">
