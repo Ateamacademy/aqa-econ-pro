@@ -785,6 +785,7 @@ export default function PredictedPapers() {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [feedbacks, setFeedbacks] = useState<Record<string, QuestionFeedback>>({});
   const [markingId, setMarkingId] = useState<string | null>(null);
+  const [showUpgrade, setShowUpgrade] = useState(false);
 
   const used = (profile as any)?.free_predicted_papers_used ?? 0;
   const canUse = subscribed || used < FREE_LIMITS.predictedPapers;
