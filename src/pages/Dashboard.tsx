@@ -13,6 +13,7 @@ import ActionCards from "@/components/dashboard/ActionCards";
 import PredictedGrade from "@/components/dashboard/PredictedGrade";
 import DailyGoalBanner from "@/components/dashboard/DailyGoalBanner";
 import ScoreDelta from "@/components/dashboard/ScoreDelta";
+import GradientMeshBg from "@/components/dashboard/GradientMeshBg";
 import { motion } from "framer-motion";
 import { Lock, Target, Zap, BarChart3, Award, Brain, PenTool, FileText, Flame, BookOpen, GraduationCap, Crown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -89,7 +90,9 @@ export default function Dashboard() {
         }
       `}</style>
 
-      <div className="max-w-[1400px] mx-auto">
+      <GradientMeshBg stage={r.stage} />
+
+      <div className="max-w-[1400px] mx-auto relative z-10">
         {/* Header */}
         <motion.div variants={fadeUp} className="mb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
           <div>
@@ -196,7 +199,7 @@ export default function Dashboard() {
 
             <motion.div variants={fadeUp} className="relative flex justify-center py-8">
               <ScoreDelta points={r.score > 0 ? 5 : 0} />
-              <ReadinessRadial score={r.score} stageName={r.stageName} />
+              <ReadinessRadial score={r.score} stageName={r.stageName} stage={r.stage} />
             </motion.div>
 
             <motion.div variants={fadeUp} className="rounded-2xl bg-[#1a1a2e] border border-[#2a2a4a] p-5">

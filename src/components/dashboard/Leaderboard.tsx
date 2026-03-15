@@ -1,11 +1,20 @@
 import { Trophy } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface Props {
   userScore: number;
 }
 
+const rowVariants = {
+  hidden: { opacity: 0, x: -12 },
+  show: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: i * 0.08, duration: 0.35, ease: [0, 0, 0.2, 1] as const },
+  }),
+};
+
 export default function Leaderboard({ userScore }: Props) {
-  // Generate mock peers around the user's score
   const students = [
     { rank: 1, name: "Alex", score: Math.min(userScore + 5, 100), isYou: false },
     { rank: 2, name: "You", score: userScore, isYou: true },
@@ -21,8 +30,13 @@ export default function Leaderboard({ userScore }: Props) {
       <h3 className="text-[#f1f5f9] font-semibold text-sm mb-4">Leaderboard</h3>
       <div className="space-y-2">
         {students.map((s, i) => (
-          <div
+          <motion.div
             key={s.name}
+            custom={i}
+            variants={rowVariants}
+            initial="hidden"
+            animate="show"
+            whileHover={{ x: 4, transition: { duration: 0.15 } }}
             className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors ${
               s.isYou ? "bg-[#6366f1]/15 border border-[#6366f1]/30" : "hover:bg-[#2a2a4a]/50"
             }`}
@@ -40,7 +54,7 @@ export default function Leaderboard({ userScore }: Props) {
               {s.name}
             </span>
             <span className="text-sm font-bold text-[#f1f5f9] tabular-nums">{s.score}</span>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
