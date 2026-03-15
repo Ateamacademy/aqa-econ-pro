@@ -71,7 +71,7 @@ RULES:
 
   const handleGrade = async () => {
     if (!essay.trim() || !question.trim()) { toast.error("Enter both the question and your answer"); return; }
-    if (!canUse) { toast.error("Free limit reached. Subscribe for unlimited access."); navigate("/pricing"); return; }
+    if (!canUse) { setShowUpgrade(true); return; }
 
     setIsLoading(true);
     setFeedback("");
