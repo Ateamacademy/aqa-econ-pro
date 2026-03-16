@@ -92,6 +92,16 @@ export default function Index() {
   const blob2Ref = useRef<HTMLDivElement>(null);
   const ctaPulseRef = useRef<HTMLDivElement>(null);
 
+  // Scroll to hash on mount (for links like /#pricing from other pages)
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash) {
+      setTimeout(() => {
+        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+      }, 300);
+    }
+  }, []);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Shimmer on "Economics" text
