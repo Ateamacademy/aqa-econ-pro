@@ -218,4 +218,21 @@ export const questionTypesBySubject: Record<Subject, string[]> = {
     "1-mark MCQ", "2-mark define", "4-mark explain",
     "6-mark analyse", "8-mark evaluate",
   ],
+  "ib": [
+    "10-mark short answer", "15-mark essay (Part a)",
+    "10-mark essay (Part b)", "HL Paper 3 calculation (4 marks)",
+    "HL policy response (8 marks)",
+  ],
+  "wjec": [
+    "2-mark define", "4-mark explain", "6-mark analyse with diagram",
+    "8-mark data response", "12-mark evaluate",
+  ],
+  "eduqas": [
+    "2-mark define", "4-mark explain", "8-mark analyse",
+    "12-mark data response", "20-mark evaluate essay",
+  ],
+  "edexcel-igcse": [
+    "1-mark define", "2-mark explain", "4-mark analyse",
+    "6-mark evaluate", "8-mark extended response",
+  ],
 };
