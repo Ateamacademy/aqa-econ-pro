@@ -85,7 +85,7 @@ export const eduqasComponent2Topics: Topic[] = [
         ],
         explanation: "AD shifts: consumer confidence, interest rates, fiscal policy, exchange rate, global demand.\n\nSRAS shifts: input costs, commodity prices, exchange rate, indirect taxes.\n\nLRAS shifts: labour force, technology, education, infrastructure, institutions.",
         examTip: "For Eduqas synoptic questions, show both Keynesian and Classical perspectives — demonstrating awareness of different schools of thought.",
-        diagram: "ad_as",
+        diagram: "ad_increase",
       },
       {
         title: "Macroeconomic Policy",
