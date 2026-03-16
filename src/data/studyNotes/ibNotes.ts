@@ -104,7 +104,7 @@ export const ibUnit1And2Topics: Topic[] = [
         ],
         explanation: "With a tax: new supply curve shifts left by the tax amount. Consumer pays part, producer absorbs part. Deadweight loss = welfare loss.\n\nHL: Calculate tax incidence using linear functions. The more inelastic side bears the greater burden.",
         examTip: "Always draw both the original and new supply curves, show the tax wedge, and shade the deadweight loss triangle.",
-        diagram: "tax-incidence",
+        diagram: "tax_incidence",
       },
       {
         title: "Externalities & Welfare Loss",
