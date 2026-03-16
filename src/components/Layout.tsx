@@ -1,8 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import { GraduationCap, LogIn, LogOut, Crown, ArrowRight } from "lucide-react";
+import { GraduationCap, LogIn, LogOut, Crown, ArrowRight, ChevronDown, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject, type Subject } from "@/contexts/SubjectContext";
@@ -42,10 +42,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [boardOpen, setBoardOpen] = useState(false);
+  const boardRef = useRef<HTMLDivElement>(null);
   const { user, subscribed, signOut } = useAuth();
   const { subject, setSubject } = useSubject();
   const isHomepage = location.pathname === "/";
+  const currentBoard = SUBJECTS.find((s) => s.value === subject);
 
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (boardRef.current && !boardRef.current.contains(e.target as Node)) setBoardOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", handleScroll);
@@ -113,21 +124,42 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* Right side */}
           <div className="hidden lg:flex items-center gap-3">
             {!isHomepage && (
-              <div className="flex items-center bg-card border border-border rounded-full p-1 gap-0.5 mr-2">
-                {SUBJECTS.map((s) => (
-                  <button
-                    key={s.value}
-                    onClick={() => setSubject(s.value)}
-                    className={cn(
-                      "px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 whitespace-nowrap",
-                      subject === s.value
-                        ? "bg-primary text-primary-foreground shadow-sm"
-                        : "text-muted-foreground hover:text-foreground"
-                    )}
-                  >
-                    {s.label}
-                  </button>
-                ))}
+              <div className="relative" ref={boardRef}>
+                <button
+                  onClick={() => setBoardOpen(!boardOpen)}
+                  className="flex items-center gap-2 bg-card border border-border rounded-lg px-3 py-1.5 text-xs font-semibold text-foreground hover:border-primary/40 transition-colors mr-2"
+                >
+                  <span className="h-2 w-2 rounded-full bg-primary" />
+                  {currentBoard?.label}
+                  <ChevronDown className={cn("h-3.5 w-3.5 text-muted-foreground transition-transform", boardOpen && "rotate-180")} />
+                </button>
+                <AnimatePresence>
+                  {boardOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 4 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute right-0 top-full mt-2 w-48 bg-card border border-border rounded-xl shadow-lg shadow-black/10 py-1.5 z-50"
+                    >
+                      {SUBJECTS.map((s) => (
+                        <button
+                          key={s.value}
+                          onClick={() => { setSubject(s.value); setBoardOpen(false); }}
+                          className={cn(
+                            "w-full flex items-center justify-between px-3.5 py-2 text-xs font-medium transition-colors",
+                            subject === s.value
+                              ? "text-primary bg-primary/10"
+                              : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                          )}
+                        >
+                          {s.label}
+                          {subject === s.value && <Check className="h-3.5 w-3.5" />}
+                        </button>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             )}
             {isHomepage ? (
