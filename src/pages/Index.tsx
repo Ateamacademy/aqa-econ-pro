@@ -32,12 +32,12 @@ const cardVariant = {
 
 /* ─── data ─── */
 const features = [
-  { icon: FileText, title: "Exam Board Specific Papers", desc: "Generate full exam-format papers based on the latest mark schemes. Unique every time." },
-  { icon: Bot, title: "Instant Marking & Feedback", desc: "Submit answers and get instant mark-scheme-accurate feedback with improvement tips." },
-  { icon: BarChart3, title: "Progress Tracking", desc: "Visual readiness score, topic heatmaps, and grade trajectory charts updated after every session." },
-  { icon: Compass, title: "Diagram Builder", desc: "Practice drawing and labelling economic diagrams with accuracy feedback." },
-  { icon: MessageCircle, title: "24/7 Economics Tutor", desc: "Ask any economics question and get curriculum-aligned explanations instantly." },
-  { icon: BookOpen, title: "Structured Notes", desc: "Clean, concise topic notes organised by syllabus. Linked to practice questions." },
+  { icon: FileText, title: "Exam Board Specific Papers", desc: "Generate full exam-format papers based on the latest mark schemes. Unique every time.", to: "/predicted" },
+  { icon: Bot, title: "Instant Marking & Feedback", desc: "Submit answers and get instant mark-scheme-accurate feedback with improvement tips.", to: "/grader" },
+  { icon: BarChart3, title: "Progress Tracking", desc: "Visual readiness score, topic heatmaps, and grade trajectory charts updated after every session.", to: "/dashboard" },
+  { icon: Compass, title: "Diagram Builder", desc: "Practice drawing and labelling economic diagrams with accuracy feedback.", to: "/diagram-practice" },
+  { icon: MessageCircle, title: "24/7 Economics Tutor", desc: "Ask any economics question and get curriculum-aligned explanations instantly.", to: "/tutor" },
+  { icon: BookOpen, title: "Structured Notes", desc: "Clean, concise topic notes organised by syllabus. Linked to practice questions.", to: "/notes" },
 ];
 
 const steps = [
