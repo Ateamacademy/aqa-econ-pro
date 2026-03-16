@@ -26,18 +26,20 @@ function normalizeFigureDescription(description: string): string {
     .replace(/\s+(Vertical\s+axis\s*:)/gi, "\n$1")
     .replace(/\s+(Horizontal\s+axis\s*:)/gi, "\n$1")
     .replace(/\s+((?:Bar|Line)\s+(?:chart|graph)\s+showing\s*:)/gi, "\n$1")
+    .replace(/\s+(Data\s+points?\s*:)/gi, "\n$1")
     .replace(/\s+(Source\s*:)/gi, "\n$1");
 
-  // After "showing:", split inline category:value pairs
-  // Match patterns like "Label: £1.5bn" or "Label: 1.5" preceded by a space
-  const showingMatch = text.match(/(showing\s*:)\s*/i);
-  if (showingMatch) {
-    const idx = text.indexOf(showingMatch[0]) + showingMatch[0].length;
-    const before = text.slice(0, idx);
-    const after = text.slice(idx);
-    // Insert newline before each "SomeLabel: £N" or "SomeLabel: N" pattern
-    const split = after.replace(/\s+(?=[\w\s&/()']+:\s*[£$€]?\s*\d)/g, "\n");
-    text = before + "\n" + split;
+  // After "showing:" or "Data points:", split inline category:value pairs
+  for (const headingPattern of [/(showing\s*:)\s*/i, /(Data\s+points?\s*:)\s*/i]) {
+    const headingMatch = text.match(headingPattern);
+    if (headingMatch) {
+      const idx = text.indexOf(headingMatch[0]) + headingMatch[0].length;
+      const before = text.slice(0, idx);
+      const after = text.slice(idx);
+      // Insert newline before each "SomeLabel: £N" or "SomeLabel: N" pattern
+      const split = after.replace(/\s+(?=[\w\s&/()']+:\s*[£$€]?\s*\d)/g, "\n");
+      text = before + "\n" + split;
+    }
   }
 
   return text
