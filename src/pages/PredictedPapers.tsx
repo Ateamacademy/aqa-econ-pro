@@ -895,6 +895,8 @@ export default function PredictedPapers() {
   const isCambridge = subject === "cambridge";
   const isGCSE = subject === "aqa-gcse";
   const isIGCSE = subject === "cambridge-igcse";
+  const isEdexcelIGCSE = subject === "edexcel-igcse";
+  const isAnyIGCSEorGCSE = isGCSE || isIGCSE || isEdexcelIGCSE;
   const isAnyEcon = true;
 
   const examDuration = useMemo(() => {
