@@ -293,12 +293,26 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">Product</h4>
               <div className="flex flex-col gap-2.5">
                 {[
-                  { label: "Features", to: "/#features" },
-                  { label: "Pricing", to: "/#pricing" },
-                  { label: "How It Works", to: "/#how-it-works" },
-                  { label: "For Schools", to: "/#faq" },
+                  { label: "Features", hash: "features" },
+                  { label: "Pricing", hash: "pricing" },
+                  { label: "How It Works", hash: "how-it-works" },
+                  { label: "For Schools", hash: "faq" },
                 ].map((l) => (
-                  <Link key={l.label} to={l.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors">{l.label}</Link>
+                  <a
+                    key={l.label}
+                    href={`/#${l.hash}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (location.pathname === "/") {
+                        document.getElementById(l.hash)?.scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        window.location.href = `/#${l.hash}`;
+                      }
+                    }}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+                  >
+                    {l.label}
+                  </a>
                 ))}
               </div>
             </div>
