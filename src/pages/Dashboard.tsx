@@ -169,17 +169,21 @@ export default function Dashboard() {
           animate="show"
           variants={{ show: { transition: { staggerChildren: 0.06 } } }}
         >
-          {/* Readiness Score Hero */}
-          <motion.div variants={fadeUp} className="flex justify-center py-6 relative">
-            <ScoreDelta points={r.score > 0 ? 5 : 0} />
-            <ReadinessRadial score={r.score} stageName={r.stageName} stage={r.stage} />
-          </motion.div>
+          {/* Readiness Score Hero — Pro only */}
+          {subscribed && (
+            <motion.div variants={fadeUp} className="flex justify-center py-6 relative">
+              <ScoreDelta points={r.score > 0 ? 5 : 0} />
+              <ReadinessRadial score={r.score} stageName={r.stageName} stage={r.stage} />
+            </motion.div>
+          )}
 
-          {/* Mountain Tracker */}
-          <motion.div variants={fadeUp} className="rounded-2xl border border-border bg-card p-5 mb-6">
-            <h3 className="text-foreground font-semibold text-sm mb-2">Your Journey</h3>
-            <MountainTracker activeStage={r.stage} />
-          </motion.div>
+          {/* Mountain Tracker — Pro only */}
+          {subscribed && (
+            <motion.div variants={fadeUp} className="rounded-2xl border border-border bg-card p-5 mb-6">
+              <h3 className="text-foreground font-semibold text-sm mb-2">Your Journey</h3>
+              <MountainTracker activeStage={r.stage} />
+            </motion.div>
+          )}
 
           {/* Stats Row */}
           <motion.div variants={fadeUp} className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
@@ -230,15 +234,21 @@ export default function Dashboard() {
 
             {/* Right */}
             <div className="space-y-4">
-              <motion.div variants={fadeUp}>
-                <StudyStreak streak={r.streak} weeklyDays={r.weeklyDays} />
-              </motion.div>
-              <motion.div variants={fadeUp}>
-                <PerformanceOverTime sessions={sessions} subject={subject} />
-              </motion.div>
-              <motion.div variants={fadeUp}>
-                <Leaderboard userScore={r.score} />
-              </motion.div>
+              {subscribed && (
+                <motion.div variants={fadeUp}>
+                  <StudyStreak streak={r.streak} weeklyDays={r.weeklyDays} />
+                </motion.div>
+              )}
+              {subscribed && (
+                <motion.div variants={fadeUp}>
+                  <PerformanceOverTime sessions={sessions} subject={subject} />
+                </motion.div>
+              )}
+              {subscribed && (
+                <motion.div variants={fadeUp}>
+                  <Leaderboard userScore={r.score} />
+                </motion.div>
+              )}
             </div>
           </div>
         </motion.div>
