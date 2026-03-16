@@ -974,12 +974,12 @@ export default function PredictedPapers() {
       : isCambridge
       ? CAIE_ECON_PAPER_PROMPT(paperLabel, paper)
       : isGCSE
-900:       ? GCSE_ECON_PAPER_PROMPT(paperLabel, paper)
-901:       : isIGCSE
-902:       ? IGCSE_ECON_PAPER_PROMPT(paperLabel, paper)
-903:       : isEdexcelIGCSE
-904:       ? EDEXCEL_IGCSE_ECON_PAPER_PROMPT(paperLabel, paper)
-905:       : ECON_PAPER_PROMPT(paperLabel, paper);
+      ? GCSE_ECON_PAPER_PROMPT(paperLabel, paper)
+      : isIGCSE
+      ? IGCSE_ECON_PAPER_PROMPT(paperLabel, paper)
+      : isEdexcelIGCSE
+      ? EDEXCEL_IGCSE_ECON_PAPER_PROMPT(paperLabel, paper)
+      : ECON_PAPER_PROMPT(paperLabel, paper);
 
     // Inject DB-retrieved patterns + topic scope for Economics
     const scopeInstruction = topicScope === "year1"
