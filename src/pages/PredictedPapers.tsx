@@ -43,6 +43,7 @@ const EXAM_DURATIONS: Record<string, Record<string, number>> = {
   "cambridge":      { "1": 75,  "2": 135, full: 135 },
   "aqa-gcse":       { "1": 105, "2": 105, full: 105 },
   "cambridge-igcse": { "1": 45, "2": 135, full: 135 },
+  "edexcel-igcse":  { "1": 75,  "2": 85,  full: 85 },
 };
 
 type QuestionFeedback = {
@@ -467,6 +468,80 @@ FIGURE/CHART FORMAT:
 - Diagrams: describe with structured text (axes, curves, key points)`;
 };
 
+const EDEXCEL_IGCSE_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
+  const paperNum = paperValue === "full" ? "full" : paperValue.includes("1") ? "1" : "2";
+
+  const templates: Record<string, string> = {
+    "1": `PAPER 1: Microeconomics and Business Economics (4EC1/01) — 1 hour 15 minutes, 80 marks
+## Section A: Multiple Choice (20 marks)
+20 MCQs covering microeconomics and business economics. Each worth 1 mark.
+Topics: scarcity, opportunity cost, PPC, demand & supply, elasticity, market failure, government intervention, costs & revenue, market structures, labour market.
+
+## Section B: Data Response (30 marks)
+One compulsory data response question with 2 extracts/figures.
+Questions: 2m define → 2m explain → 4m analyse → 6m explain with data → 8m discuss → 8m evaluate
+
+## Section C: Extended Writing (30 marks)
+Choose ONE from TWO extended writing questions.
+Each worth 30 marks total with sub-parts building from 4m explain to 12m evaluate.
+Topics must be within Edexcel IGCSE Paper 1 specification: the market system, demand & supply, elasticity, business costs/revenue/profit, market structures, labour market.`,
+    "2": `PAPER 2: Macroeconomics and the Global Economy (4EC1/02) — 1 hour 25 minutes, 80 marks
+## Section A: Multiple Choice (20 marks)
+20 MCQs covering macroeconomics and global economy. Each worth 1 mark.
+Topics: government objectives, GDP, inflation, unemployment, balance of payments, fiscal policy, monetary policy, supply-side policies, international trade, exchange rates, globalisation, development.
+
+## Section B: Data Response (30 marks)
+One compulsory data response question with economic data/extracts.
+Questions build from 2m definitions to 8m evaluate.
+
+## Section C: Extended Writing (30 marks)
+Choose ONE from TWO extended writing questions.
+Topics must be within Edexcel IGCSE Paper 2 specification: government objectives & indicators, fiscal & monetary policy, supply-side policies, international trade, exchange rates, globalisation.`,
+    "full": `FULL PAPER covering BOTH Paper 1 and Paper 2 Edexcel IGCSE Economics topics — 80 marks total.
+## Section A: Multiple Choice (20 marks)
+20 MCQs spanning both micro and macro IGCSE Economics topics.
+
+## Section B: Data Response (30 marks)
+Compulsory data response with extracts covering both micro and macro themes.
+
+## Section C: Extended Writing (30 marks)
+Choose ONE from TWO extended writing questions covering synoptic micro + macro content.`,
+  };
+
+  return `You are an expert Edexcel International GCSE Economics (4EC1) chief examiner.
+
+Generate a COMPLETE predicted exam paper for ${paperLabel}.
+
+${templates[paperNum]}
+
+CRITICAL RULES:
+1. Follow the template structure EXACTLY
+2. This is an IGCSE (International GCSE) paper — use international examples and contexts where appropriate
+3. Questions must be IGCSE level — accessible but rigorous, NOT A-Level difficulty
+4. Include at least 2 data extracts with tables/figures containing specific numerical data
+5. 8-mark questions require balanced analysis with evaluation
+6. Use Edexcel IGCSE command words: "Define", "State", "Explain", "Analyse", "Discuss", "Evaluate"
+7. All content must be within the Edexcel IGCSE Economics (4EC1) specification — do NOT include A-Level content
+
+SPECIFICATION SCOPE (4EC1):
+Paper 1 topics: The economic problem, demand & supply, price determination, elasticity (PED, PES), market failure, government intervention, business costs/revenue/profit, economies of scale, market structures (competitive vs monopoly), labour market, wage determination, minimum wage, trade unions.
+Paper 2 topics: Government objectives (growth, employment, inflation, balance of payments), GDP measurement, fiscal policy, monetary policy, supply-side policies, international trade, comparative advantage, protectionism (tariffs, quotas), exchange rates (floating, fixed, appreciation, depreciation), globalisation, economic development.
+
+OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+- EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
+  Examples: Question 01 [1 marks], Question 02 [2 marks], Question 03 [4 marks]
+- Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks.
+- The question text MUST appear AFTER the [Y marks] tag, either on the same line or the next line
+- MCQ options on separate lines: - A, - B, - C, - D
+- WRONG: **Question 1** text [2], Question 1 text (2 marks)
+- CORRECT: Question 01 [1 marks] What is meant by the term "opportunity cost"?
+- Do NOT include mark schemes or answers
+
+FIGURE/CHART FORMAT:
+- NEVER use ASCII art
+- Data: markdown tables with Source line
+- Diagrams: describe with structured text (axes, curves, key points)`;
+};
 const ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
   const paperNum = paperValue === "full" ? "3" : paperValue.includes("1") ? "1" : "2";
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum);
@@ -820,6 +895,8 @@ export default function PredictedPapers() {
   const isCambridge = subject === "cambridge";
   const isGCSE = subject === "aqa-gcse";
   const isIGCSE = subject === "cambridge-igcse";
+  const isEdexcelIGCSE = subject === "edexcel-igcse";
+  const isAnyIGCSEorGCSE = isGCSE || isIGCSE || isEdexcelIGCSE;
   const isAnyEcon = true;
 
   const examDuration = useMemo(() => {
@@ -876,7 +953,7 @@ export default function PredictedPapers() {
     if (isAnyEcon) {
       try {
         const { data: patternData } = await supabase.functions.invoke("retrieve-patterns", {
-          body: { paper, subject: isEdexcelA ? "edexcel-a" : isEdexcelB ? "edexcel-b" : isOCR ? "ocr_economics" : isCambridge ? "cambridge" : isGCSE ? "aqa-gcse" : isIGCSE ? "cambridge-igcse" : "economics", limit: 250 },
+          body: { paper, subject: isEdexcelA ? "edexcel-a" : isEdexcelB ? "edexcel-b" : isOCR ? "ocr_economics" : isCambridge ? "cambridge" : isGCSE ? "aqa-gcse" : isIGCSE ? "cambridge-igcse" : isEdexcelIGCSE ? "edexcel-igcse" : "economics", limit: 250 },
         });
         if (patternData?.contextPrompt) {
           dbContextPrompt = patternData.contextPrompt;
@@ -900,6 +977,8 @@ export default function PredictedPapers() {
       ? GCSE_ECON_PAPER_PROMPT(paperLabel, paper)
       : isIGCSE
       ? IGCSE_ECON_PAPER_PROMPT(paperLabel, paper)
+      : isEdexcelIGCSE
+      ? EDEXCEL_IGCSE_ECON_PAPER_PROMPT(paperLabel, paper)
       : ECON_PAPER_PROMPT(paperLabel, paper);
 
     // Inject DB-retrieved patterns + topic scope for Economics
@@ -1419,8 +1498,10 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {[
-                      { value: "year1" as const, label: "Year 1 Only", desc: "AS / Year 12 topics only — perfect if you haven't covered Year 2 yet" },
-                      { value: "year1+2" as const, label: "Year 1 + Year 2", desc: "Full A-Level specification — all micro and macro topics" },
+                      ...(!isAnyIGCSEorGCSE ? [
+                        { value: "year1" as const, label: "Year 1 Only", desc: "AS / Year 12 topics only — perfect if you haven't covered Year 2 yet" },
+                        { value: "year1+2" as const, label: "Year 1 + Year 2", desc: "Full A-Level specification — all micro and macro topics" },
+                      ] : []),
                       { value: "full" as const, label: "Full Predicted Paper", desc: "Complete exam paper matching the official structure and difficulty" },
                       { value: "custom" as const, label: "Custom Topics", desc: "Choose exactly which topics to include in your paper" },
                     ].map(opt => (
