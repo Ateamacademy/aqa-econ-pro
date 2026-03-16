@@ -32,7 +32,7 @@ export const edexcelIgcsePaper1Topics: Topic[] = [
         ],
         explanation: "Demand shifts: income, tastes, population, prices of substitutes/complements, expectations.\nSupply shifts: costs, technology, taxes/subsidies, number of firms, weather.\n\nPrice mechanism functions: signalling (information), rationing (allocation), incentive (motivation).",
         examTip: "Always draw fully labelled diagrams: axes (Price, Quantity), curves (D, S), equilibrium (E), and shifts (D₁→D₂).",
-        diagram: "supply-demand",
+        diagram: "supply_demand",
       },
       {
         title: "Elasticity",

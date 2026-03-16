@@ -160,7 +160,7 @@ export const ibUnit3And4Topics: Topic[] = [
         ],
         explanation: "**Keynesian AS** has three sections: horizontal (spare capacity), upward-sloping (near capacity), vertical (full employment).\n\n**New Classical AS**: LRAS is always vertical at Yn; short-run adjustments occur via shifting SRAS.\n\nIB students should be comfortable with BOTH models and know when to use each.",
         examTip: "Always specify whether you're using the Keynesian or New Classical model. IB examiners accept both but require consistency.",
-        diagram: "ad-as",
+        diagram: "ad_as",
       },
     ],
   },

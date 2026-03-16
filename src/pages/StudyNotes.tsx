@@ -29,6 +29,10 @@ import { ocrComponent1Topics, ocrComponent2Topics } from "@/data/studyNotes/ocrN
 import { caiePaper1Topics, caiePaper2Topics } from "@/data/studyNotes/caieNotes";
 import { gcsePaper1Topics, gcsePaper2Topics } from "@/data/studyNotes/gcseNotes";
 import { igcsePart1Topics, igcsePart2Topics } from "@/data/studyNotes/igcseNotes";
+import { ibUnit1And2Topics, ibUnit3And4Topics } from "@/data/studyNotes/ibNotes";
+import { wjecUnit1Topics, wjecUnit2Topics } from "@/data/studyNotes/wjecNotes";
+import { eduqasComponent1Topics, eduqasComponent2Topics } from "@/data/studyNotes/eduqasNotes";
+import { edexcelIgcsePaper1Topics, edexcelIgcsePaper2Topics } from "@/data/studyNotes/edexcelIgcseNotes";
 
 /* ── Paper configs per subject ── */
 interface PaperSection {
@@ -64,6 +68,18 @@ const paperSections: Record<Subject, PaperSection[]> = {
     { heading: "Paper 1 & 2 — AS Level (Micro & Macro)", topics: caiePaper1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
     { heading: "Paper 3 & 4 — A2 Level (Advanced)", topics: caiePaper2Topics, prefix: "p2", icon: "📘", color: "var(--revision-blue)" },
   ],
+  "ib": [
+    { heading: "Units 1 & 2 — Intro, Micro & Elasticities", topics: ibUnit1And2Topics, prefix: "u12", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Units 3 & 4 — Macro & Global Economy", topics: ibUnit3And4Topics, prefix: "u34", icon: "📘", color: "var(--revision-blue)" },
+  ],
+  "wjec": [
+    { heading: "Unit 1 — Introduction to Economics", topics: wjecUnit1Topics, prefix: "u1", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Unit 2 — Economics in Action", topics: wjecUnit2Topics, prefix: "u2", icon: "📘", color: "var(--revision-blue)" },
+  ],
+  "eduqas": [
+    { heading: "Component 1 — Markets & Market Failure", topics: eduqasComponent1Topics, prefix: "c1", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Component 2 — National & International Economy", topics: eduqasComponent2Topics, prefix: "c2", icon: "📘", color: "var(--revision-blue)" },
+  ],
   "aqa-gcse": [
     { heading: "Paper 1 — How Markets Work", topics: gcsePaper1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
     { heading: "Paper 2 — How the Economy Works", topics: gcsePaper2Topics, prefix: "p2", icon: "📘", color: "var(--revision-blue)" },
@@ -71,6 +87,10 @@ const paperSections: Record<Subject, PaperSection[]> = {
   "cambridge-igcse": [
     { heading: "Paper 1 — Multiple Choice & Core Topics", topics: igcsePart1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
     { heading: "Paper 2 — Structured Questions & Extended Topics", topics: igcsePart2Topics, prefix: "p2", icon: "📘", color: "var(--revision-blue)" },
+  ],
+  "edexcel-igcse": [
+    { heading: "Paper 1 — Microeconomics & Business Economics", topics: edexcelIgcsePaper1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Paper 2 — Macroeconomics & the Global Economy", topics: edexcelIgcsePaper2Topics, prefix: "p2", icon: "📘", color: "var(--revision-blue)" },
   ],
 };
 

@@ -88,7 +88,7 @@ export const wjecUnit2Topics: Topic[] = [
         ],
         explanation: "AD shifts: changes in C, I, G, or net exports. SRAS shifts: input costs, commodity prices, exchange rate. LRAS shifts: technology, labour force, capital stock, institutions.\n\nKeynesians emphasise demand management; supply-siders emphasise improving productive capacity.",
         examTip: "Show policy impacts on AD/AS diagrams. WJEC expects both the diagram AND written analysis — one without the other loses marks.",
-        diagram: "ad-as",
+        diagram: "ad_as",
       },
       {
         title: "Fiscal, Monetary & Supply-Side Policies",
