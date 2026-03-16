@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 
-export type Subject = "economics" | "edexcel-a" | "edexcel-b" | "ocr" | "cambridge" | "aqa-gcse" | "cambridge-igcse";
+export type Subject = "economics" | "edexcel-a" | "edexcel-b" | "ocr" | "cambridge" | "aqa-gcse" | "cambridge-igcse" | "ib" | "wjec" | "eduqas" | "edexcel-igcse";
 
 interface SubjectContextType {
   subject: Subject;
