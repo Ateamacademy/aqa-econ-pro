@@ -308,9 +308,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <div className="flex flex-col gap-2.5">
                 {[
                   { label: "Notes Library", to: "/notes" },
-                  { label: "Exam Boards", to: "/" },
-                  { label: "Blog", to: "/" },
-                  { label: "Help Centre", to: "/" },
+                  { label: "Exam Boards", to: "/predicted" },
+                  { label: "Blog", to: "/blog" },
+                  { label: "Help Centre", to: "/help" },
                 ].map((l) => (
                   <Link key={l.label} to={l.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors">{l.label}</Link>
                 ))}
