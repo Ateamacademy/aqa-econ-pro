@@ -250,7 +250,7 @@ function parseCategoryValueData(description: string): { dataSets: DataSet[]; axi
     if (!inValuesSection) continue;
 
     const withoutSource = line.replace(/\s+source\s*:.*/i, "").trim();
-    const valueMatch = withoutSource.match(/^(?!(?:vertical|horizontal|x|y)\s*-?\s*axis|values?\b|bar\s*chart\s*showing\b|chart\s*showing\b|data\b)([^:\n]+):\s*[£$€]?\s*([-+]?\d[\d,]*(?:\.\d+)?)/i);
+    const valueMatch = withoutSource.match(/^(?!(?:vertical|horizontal|x|y)\s*-?\s*axis|values?\b|bar\s*chart\s*showing\b|chart\s*showing\b|data(?:\s+points?)?\b)([^:\n]+):\s*[£$€]?\s*([-+]?\d[\d,]*(?:\.\d+)?)/i);
     if (!valueMatch) continue;
 
     const category = valueMatch[1].trim();
