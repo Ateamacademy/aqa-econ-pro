@@ -221,7 +221,7 @@ function parseTrendNarrativeData(description: string): { dataSets: DataSet[]; ax
 function parseCategoryValueData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
   const axisLabels = { x: "", y: "" };
   const lines = description.split("\n").map(l => l.trim()).filter(Boolean);
-  const listHeadingRegex = /^(values?|bar\s*chart\s*showing|chart\s*showing|data)\s*:/i;
+  const listHeadingRegex = /^(values?|bar\s*chart\s*showing|chart\s*showing|data(?:\s+points?)?)\s*:/i;
   const hasListHeading = lines.some(line => listHeadingRegex.test(line.replace(/^[-•*]\s*/, "").trim()));
 
   const points: { year: string; value: number }[] = [];

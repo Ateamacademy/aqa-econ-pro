@@ -222,7 +222,7 @@ function normalizeFigureText(text: string): string {
 function hasCategoryValueData(desc: string): boolean {
   const normalized = normalizeFigureText(desc);
   const lines = normalized.split("\n").map((line) => line.trim()).filter(Boolean);
-  const listHeadingRegex = /^(values?|bar\s*chart\s*showing|chart\s*showing|data)\s*:/i;
+  const listHeadingRegex = /^(values?|bar\s*chart\s*showing|chart\s*showing|data(?:\s+points?)?)\s*:/i;
   const hasListHeading = lines.some((rawLine) => listHeadingRegex.test(rawLine.replace(/^[-•*]\s*/, "").trim()));
 
   let inCategorySection = !hasListHeading;
