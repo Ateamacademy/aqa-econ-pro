@@ -42,10 +42,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [boardOpen, setBoardOpen] = useState(false);
+  const boardRef = useRef<HTMLDivElement>(null);
   const { user, subscribed, signOut } = useAuth();
   const { subject, setSubject } = useSubject();
   const isHomepage = location.pathname === "/";
+  const currentBoard = SUBJECTS.find((s) => s.value === subject);
 
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (boardRef.current && !boardRef.current.contains(e.target as Node)) setBoardOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", handleScroll);
