@@ -31,7 +31,7 @@ export const wjecUnit1Topics: Topic[] = [
         ],
         explanation: "Demand curve slopes downward (substitution, income, diminishing marginal utility effects). Supply curve slopes upward (profit incentive).\n\nShifts vs movements: price changes → movement along; non-price factors → shift of curve. Always distinguish clearly.",
         examTip: "WJEC loves sequential analysis: state the initial change, shift the correct curve, identify new equilibrium, state the effect on P and Q.",
-        diagram: "supply-demand",
+        diagram: "supply_demand",
       },
       {
         title: "Elasticity",
