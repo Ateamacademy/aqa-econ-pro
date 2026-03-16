@@ -29,6 +29,10 @@ const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 const PredictedPapers = lazy(() => import("./pages/PredictedPapers"));
 const ParentDashboard = lazy(() => import("./pages/ParentDashboard"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const Terms = lazy(() => import("./pages/Terms"));
 
 const queryClient = new QueryClient();
 
