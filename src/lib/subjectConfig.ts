@@ -181,6 +181,10 @@ export const stylesBySubject: Record<Subject, string[]> = {
   "cambridge": ["Multiple Choice", "Short Answer (Data Response)", "Explain with Diagram", "Essay Question (25 marks)"],
   "aqa-gcse": ["Multiple Choice", "Short Answer", "Extended Response (6 marks)"],
   "cambridge-igcse": ["Multiple Choice", "Short Answer (Data Response)", "Structured Question"],
+  "ib": ["Short Answer (Data Response)", "Essay Question (Part a/b)", "HL Paper 3 Calculation"],
+  "wjec": ["Short Answer (Data Response)", "Explain with Diagram", "Essay Question (12 marks)"],
+  "eduqas": ["Short Answer (Data Response)", "Explain with Diagram", "Essay Question (20 marks)"],
+  "edexcel-igcse": ["Multiple Choice", "Short Answer (Data Response)", "Structured Question (8 marks)"],
 };
 
 /* ── Essay Grader: question types per subject ── */
