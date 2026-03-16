@@ -14,6 +14,11 @@ const TESTER_EMAILS = [
   "student1@email.com",
   "student2@email.com",
   "tester@email.com",
+  "trial1@econrev.com",
+  "trial2@econrev.com",
+  "trial3@econrev.com",
+  "trial4@econrev.com",
+  "trial5@econrev.com",
 ];
 
 serve(async (req) => {
