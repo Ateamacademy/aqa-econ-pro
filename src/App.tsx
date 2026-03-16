@@ -33,6 +33,8 @@ const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
+const Blog = lazy(() => import("./pages/Blog"));
+const HelpCentre = lazy(() => import("./pages/HelpCentre"));
 
 const queryClient = new QueryClient();
 
