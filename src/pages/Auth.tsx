@@ -48,7 +48,7 @@ export default function Auth() {
     <div className="container py-16 max-w-md">
       <Card>
         <CardHeader className="text-center">
-          <CardTitle className="font-serif text-3xl">Welcome to EconAce</CardTitle>
+          <CardTitle className="font-serif text-3xl">Welcome to Econ Rev</CardTitle>
           <CardDescription>Sign in or create an account to get started</CardDescription>
         </CardHeader>
         <CardContent>
