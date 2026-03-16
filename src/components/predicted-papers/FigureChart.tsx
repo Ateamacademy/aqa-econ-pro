@@ -26,18 +26,20 @@ function normalizeFigureDescription(description: string): string {
     .replace(/\s+(Vertical\s+axis\s*:)/gi, "\n$1")
     .replace(/\s+(Horizontal\s+axis\s*:)/gi, "\n$1")
     .replace(/\s+((?:Bar|Line)\s+(?:chart|graph)\s+showing\s*:)/gi, "\n$1")
+    .replace(/\s+(Data\s+points?\s*:)/gi, "\n$1")
     .replace(/\s+(Source\s*:)/gi, "\n$1");
 
-  // After "showing:", split inline category:value pairs
-  // Match patterns like "Label: £1.5bn" or "Label: 1.5" preceded by a space
-  const showingMatch = text.match(/(showing\s*:)\s*/i);
-  if (showingMatch) {
-    const idx = text.indexOf(showingMatch[0]) + showingMatch[0].length;
-    const before = text.slice(0, idx);
-    const after = text.slice(idx);
-    // Insert newline before each "SomeLabel: £N" or "SomeLabel: N" pattern
-    const split = after.replace(/\s+(?=[\w\s&/()']+:\s*[£$€]?\s*\d)/g, "\n");
-    text = before + "\n" + split;
+  // After "showing:" or "Data points:", split inline category:value pairs
+  for (const headingPattern of [/(showing\s*:)\s*/i, /(Data\s+points?\s*:)\s*/i]) {
+    const headingMatch = text.match(headingPattern);
+    if (headingMatch) {
+      const idx = text.indexOf(headingMatch[0]) + headingMatch[0].length;
+      const before = text.slice(0, idx);
+      const after = text.slice(idx);
+      // Insert newline before each "SomeLabel: £N" or "SomeLabel: N" pattern
+      const split = after.replace(/\s+(?=[\w\s&/()']+:\s*[£$€]?\s*\d)/g, "\n");
+      text = before + "\n" + split;
+    }
   }
 
   return text
@@ -219,7 +221,7 @@ function parseTrendNarrativeData(description: string): { dataSets: DataSet[]; ax
 function parseCategoryValueData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
   const axisLabels = { x: "", y: "" };
   const lines = description.split("\n").map(l => l.trim()).filter(Boolean);
-  const listHeadingRegex = /^(values?|bar\s*chart\s*showing|chart\s*showing|data)\s*:/i;
+  const listHeadingRegex = /^(values?|bar\s*chart\s*showing|chart\s*showing|data(?:\s+points?)?)\s*:/i;
   const hasListHeading = lines.some(line => listHeadingRegex.test(line.replace(/^[-•*]\s*/, "").trim()));
 
   const points: { year: string; value: number }[] = [];
@@ -248,7 +250,7 @@ function parseCategoryValueData(description: string): { dataSets: DataSet[]; axi
     if (!inValuesSection) continue;
 
     const withoutSource = line.replace(/\s+source\s*:.*/i, "").trim();
-    const valueMatch = withoutSource.match(/^(?!(?:vertical|horizontal|x|y)\s*-?\s*axis|values?\b|bar\s*chart\s*showing\b|chart\s*showing\b|data\b)([^:\n]+):\s*[£$€]?\s*([-+]?\d[\d,]*(?:\.\d+)?)/i);
+    const valueMatch = withoutSource.match(/^(?!(?:vertical|horizontal|x|y)\s*-?\s*axis|values?\b|bar\s*chart\s*showing\b|chart\s*showing\b|data(?:\s+points?)?\b)([^:\n]+):\s*[£$€]?\s*([-+]?\d[\d,]*(?:\.\d+)?)/i);
     if (!valueMatch) continue;
 
     const category = valueMatch[1].trim();
