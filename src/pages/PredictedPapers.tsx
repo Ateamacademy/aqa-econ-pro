@@ -541,7 +541,7 @@ FIGURE/CHART FORMAT:
 - NEVER use ASCII art
 - Data: markdown tables with Source line
 - Diagrams: describe with structured text (axes, curves, key points)`;
-
+};
 const ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
   const paperNum = paperValue === "full" ? "3" : paperValue.includes("1") ? "1" : "2";
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum);
