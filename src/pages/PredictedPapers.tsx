@@ -1498,8 +1498,10 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {[
-                      { value: "year1" as const, label: "Year 1 Only", desc: "AS / Year 12 topics only — perfect if you haven't covered Year 2 yet" },
-                      { value: "year1+2" as const, label: "Year 1 + Year 2", desc: "Full A-Level specification — all micro and macro topics" },
+                      ...(!isAnyIGCSEorGCSE ? [
+                        { value: "year1" as const, label: "Year 1 Only", desc: "AS / Year 12 topics only — perfect if you haven't covered Year 2 yet" },
+                        { value: "year1+2" as const, label: "Year 1 + Year 2", desc: "Full A-Level specification — all micro and macro topics" },
+                      ] : []),
                       { value: "full" as const, label: "Full Predicted Paper", desc: "Complete exam paper matching the official structure and difficulty" },
                       { value: "custom" as const, label: "Custom Topics", desc: "Choose exactly which topics to include in your paper" },
                     ].map(opt => (
