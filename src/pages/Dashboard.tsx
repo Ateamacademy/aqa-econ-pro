@@ -169,17 +169,21 @@ export default function Dashboard() {
           animate="show"
           variants={{ show: { transition: { staggerChildren: 0.06 } } }}
         >
-          {/* Readiness Score Hero */}
-          <motion.div variants={fadeUp} className="flex justify-center py-6 relative">
-            <ScoreDelta points={r.score > 0 ? 5 : 0} />
-            <ReadinessRadial score={r.score} stageName={r.stageName} stage={r.stage} />
-          </motion.div>
+          {/* Readiness Score Hero — Pro only */}
+          {subscribed && (
+            <motion.div variants={fadeUp} className="flex justify-center py-6 relative">
+              <ScoreDelta points={r.score > 0 ? 5 : 0} />
+              <ReadinessRadial score={r.score} stageName={r.stageName} stage={r.stage} />
+            </motion.div>
+          )}
 
-          {/* Mountain Tracker */}
-          <motion.div variants={fadeUp} className="rounded-2xl border border-border bg-card p-5 mb-6">
-            <h3 className="text-foreground font-semibold text-sm mb-2">Your Journey</h3>
-            <MountainTracker activeStage={r.stage} />
-          </motion.div>
+          {/* Mountain Tracker — Pro only */}
+          {subscribed && (
+            <motion.div variants={fadeUp} className="rounded-2xl border border-border bg-card p-5 mb-6">
+              <h3 className="text-foreground font-semibold text-sm mb-2">Your Journey</h3>
+              <MountainTracker activeStage={r.stage} />
+            </motion.div>
+          )}
 
           {/* Stats Row */}
           <motion.div variants={fadeUp} className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
