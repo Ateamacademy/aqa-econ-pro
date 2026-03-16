@@ -48,7 +48,7 @@ export const ibUnit1And2Topics: Topic[] = [
         ],
         explanation: "Non-price determinants of demand: income, tastes, prices of related goods, expectations, demographics.\nNon-price determinants of supply: input costs, technology, taxes/subsidies, expectations, number of firms.\n\nIB HL students must also handle **linear demand/supply functions** and calculate equilibrium algebraically.",
         examTip: "When shifting curves, always state the determinant, direction of shift, and new equilibrium. Label diagrams fully with P₀→P₁ and Q₀→Q₁.",
-        diagram: "supply-demand",
+        diagram: "supply_demand",
       },
       {
         title: "Consumer & Producer Surplus",
