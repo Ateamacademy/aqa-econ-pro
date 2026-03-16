@@ -212,10 +212,12 @@ export default function Dashboard() {
           </div>
 
           {/* Action Cards */}
-          <motion.div variants={fadeUp} className="mb-6">
-            <h3 className="text-foreground font-semibold text-sm mb-3">Recommended Actions</h3>
-            <ActionCards actions={r.recommendations} />
-          </motion.div>
+          {subscribed && (
+            <motion.div variants={fadeUp} className="mb-6">
+              <h3 className="text-foreground font-semibold text-sm mb-3">Recommended Actions</h3>
+              <ActionCards actions={r.recommendations} />
+            </motion.div>
+          )}
 
           {/* Two-Column Lower */}
           <div className="grid lg:grid-cols-[1fr_340px] gap-6">
