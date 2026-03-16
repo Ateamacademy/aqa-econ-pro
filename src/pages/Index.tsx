@@ -32,12 +32,12 @@ const cardVariant = {
 
 /* ─── data ─── */
 const features = [
-  { icon: FileText, title: "Exam Board Specific Papers", desc: "Generate full exam-format papers based on the latest mark schemes. Unique every time." },
-  { icon: Bot, title: "Instant Marking & Feedback", desc: "Submit answers and get instant mark-scheme-accurate feedback with improvement tips." },
-  { icon: BarChart3, title: "Progress Tracking", desc: "Visual readiness score, topic heatmaps, and grade trajectory charts updated after every session." },
-  { icon: Compass, title: "Diagram Builder", desc: "Practice drawing and labelling economic diagrams with accuracy feedback." },
-  { icon: MessageCircle, title: "24/7 Economics Tutor", desc: "Ask any economics question and get curriculum-aligned explanations instantly." },
-  { icon: BookOpen, title: "Structured Notes", desc: "Clean, concise topic notes organised by syllabus. Linked to practice questions." },
+  { icon: FileText, title: "Exam Board Specific Papers", desc: "Generate full exam-format papers based on the latest mark schemes. Unique every time.", to: "/predicted" },
+  { icon: Bot, title: "Instant Marking & Feedback", desc: "Submit answers and get instant mark-scheme-accurate feedback with improvement tips.", to: "/grader" },
+  { icon: BarChart3, title: "Progress Tracking", desc: "Visual readiness score, topic heatmaps, and grade trajectory charts updated after every session.", to: "/dashboard" },
+  { icon: Compass, title: "Diagram Builder", desc: "Practice drawing and labelling economic diagrams with accuracy feedback.", to: "/diagram-practice" },
+  { icon: MessageCircle, title: "24/7 Economics Tutor", desc: "Ask any economics question and get curriculum-aligned explanations instantly.", to: "/tutor" },
+  { icon: BookOpen, title: "Structured Notes", desc: "Clean, concise topic notes organised by syllabus. Linked to practice questions.", to: "/notes" },
 ];
 
 const steps = [
@@ -264,13 +264,13 @@ export default function Index() {
               const Icon = f.icon;
               return (
                 <motion.div key={f.title} variants={cardVariant}>
-                  <div className="group rounded-2xl border border-border bg-card p-6 h-full hover:border-border-glow hover:-translate-y-1 transition-all duration-300">
+                  <Link to={f.to} className="group rounded-2xl border border-border bg-card p-6 h-full hover:border-border-glow hover:-translate-y-1 transition-all duration-300 block">
                     <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.3)] transition-shadow">
                       <Icon className="h-5 w-5 text-primary" />
                     </div>
                     <h3 className="text-base font-bold mb-2 tracking-tight">{f.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
-                  </div>
+                  </Link>
                 </motion.div>
               );
             })}
