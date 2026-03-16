@@ -31,7 +31,7 @@ export const eduqasComponent1Topics: Topic[] = [
         ],
         explanation: "Demand curve: downward sloping (law of diminishing marginal utility). Supply curve: upward sloping (profit motive).\n\nEquilibrium: where D = S. Disequilibrium → automatic adjustment via price changes.\n\nElasticity: PED, PES, YED, XED — all measure responsiveness to changes.",
         examTip: "For Eduqas, always explain the adjustment mechanism: excess demand → price rises → Qd falls, Qs rises → back to equilibrium.",
-        diagram: "supply-demand",
+        diagram: "supply_demand",
       },
       {
         title: "Market Failure & Government Intervention",
