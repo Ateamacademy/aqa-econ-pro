@@ -10,8 +10,12 @@ const iconMap: Record<string, any> = {
   "edexcel-b": [BarChart3, Globe, FileText],
   "cambridge": [BarChart3, Globe, FileText],
   "ocr": [BarChart3, Globe, FileText],
+  "ib": [BarChart3, Globe, FileText],
+  "wjec": [BarChart3, Globe, FileText],
+  "eduqas": [BarChart3, Globe, FileText],
   "aqa-gcse": [BarChart3, Globe, FileText],
   "cambridge-igcse": [BarChart3, Globe, FileText],
+  "edexcel-igcse": [BarChart3, Globe, FileText],
 };
 
 const colorSets = [

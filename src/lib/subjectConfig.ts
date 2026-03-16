@@ -37,8 +37,27 @@ export const paperOptionsBySubject: Record<Subject, { value: string; label: stri
     { value: "2", label: "Paper 2", title: "Structured Questions", desc: "Data response and structured questions on micro & macro (0455/2)" },
     { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete IGCSE Economics predicted paper covering all topics" },
   ],
+  "ib": [
+    { value: "1", label: "Paper 1", title: "Extended Response", desc: "Essay-based paper — two questions from different syllabus units, 1h15m SL / 1h30m HL" },
+    { value: "2", label: "Paper 2", title: "Data Response", desc: "Data response paper with quantitative and qualitative questions on real-world extracts" },
+    { value: "full", label: "Paper 3 (HL)", title: "HL Extension Paper", desc: "HL only — policy questions with calculations, diagrams, and extended analysis" },
+  ],
+  "wjec": [
+    { value: "1", label: "Unit 1", title: "Introduction to Economics", desc: "AS-level micro: market mechanisms, market failure, government intervention (1h30m)" },
+    { value: "2", label: "Unit 2", title: "Economics in Action", desc: "AS-level macro: economic indicators, AD/AS, fiscal & monetary policy (1h30m)" },
+    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete A2 paper — covers Units 3 & 4: micro & macro applied economics" },
+  ],
+  "eduqas": [
+    { value: "1", label: "Component 1", title: "Markets & Market Failure", desc: "Microeconomics — demand, supply, elasticity, market failure, government intervention (2h)" },
+    { value: "2", label: "Component 2", title: "National & International Economy", desc: "Macroeconomics — economic growth, inflation, trade, fiscal/monetary policy (2h)" },
+    { value: "full", label: "Component 3", title: "Full Synoptic Paper", desc: "Synoptic data response paper drawing on all micro and macro content (2h15m)" },
+  ],
+  "edexcel-igcse": [
+    { value: "1", label: "Paper 1", title: "Microeconomics & Business", desc: "Microeconomics and business economics — demand, supply, market structure (4EC1/01)" },
+    { value: "2", label: "Paper 2", title: "Macroeconomics & Global", desc: "Macroeconomics and the global economy — GDP, trade, development (4EC1/02)" },
+    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete IGCSE Economics predicted paper covering all topics" },
+  ],
 };
-
 /* ── Practice: topics per subject ── */
 export const topicsBySubject: Record<Subject, string[]> = {
   economics: [
@@ -107,6 +126,50 @@ export const topicsBySubject: Record<Subject, string[]> = {
     "Demand & Supply", "Elasticity", "Market Failure", "Government Intervention",
     "Living Standards", "Employment & Unemployment", "Inflation & Deflation",
   ],
+  "ib": [
+    "Introduction to Economics & the Economic Problem", "Demand", "Supply",
+    "Competitive Market Equilibrium", "Critique of Maximizing Behaviour (HL)",
+    "Elasticities of Demand (PED, YED, XED)", "Elasticity of Supply (PES)",
+    "Role of Government in Microeconomics", "Market Failure — Externalities",
+    "Market Failure — Public Goods", "Asymmetric Information (HL)", "Market Power (HL)",
+    "Measuring Economic Activity (GDP)", "Variations in Economic Activity — AD/AS",
+    "Macroeconomic Objectives", "Economics of Inequality & Poverty",
+    "Monetary Policy", "Fiscal Policy", "Supply-Side Policies",
+    "International Trade", "Exchange Rates", "Balance of Payments",
+    "Economic Integration", "Terms of Trade (HL)",
+    "Economic Development", "Barriers to Development", "Strategies for Development",
+  ],
+  "wjec": [
+    "Basic Economic Problem & Opportunity Cost", "Price Determination",
+    "Elasticity (PED, YED, XED, PES)", "Market Failure & Externalities",
+    "Public Goods & Merit Goods", "Government Intervention in Markets",
+    "National Economic Performance", "Aggregate Demand",
+    "Aggregate Supply", "Macroeconomic Policy Objectives",
+    "Fiscal Policy", "Monetary Policy", "Supply-Side Policies",
+    "Market Structures", "Labour Market", "Income Distribution & Poverty",
+    "International Trade & Globalisation", "Exchange Rates & Balance of Payments",
+    "Economic Growth & Development",
+  ],
+  "eduqas": [
+    "Basic Economic Problem", "Demand & Supply", "Elasticity",
+    "Market Failure & Externalities", "Public Goods & Merit Goods",
+    "Government Intervention", "Market Structures",
+    "Labour Market & Wage Determination", "Income Distribution",
+    "Macroeconomic Indicators", "Aggregate Demand & Aggregate Supply",
+    "Economic Growth", "Unemployment", "Inflation",
+    "Fiscal Policy", "Monetary Policy", "Supply-Side Policies",
+    "International Trade", "Exchange Rates & Balance of Payments",
+    "Globalisation", "Development Economics",
+  ],
+  "edexcel-igcse": [
+    "The Market System", "Demand & Supply", "Elasticity",
+    "Market Failure", "Government Intervention", "Business Economics",
+    "Costs, Revenue & Profit", "Market Structures",
+    "Labour Market", "Government & the Economy",
+    "Macroeconomic Objectives", "Fiscal Policy", "Monetary Policy",
+    "Supply-Side Policies", "International Trade",
+    "Exchange Rates", "Balance of Payments", "Globalisation & Development",
+  ],
 };
 
 /* ── Practice: question styles per subject ── */
@@ -118,6 +181,10 @@ export const stylesBySubject: Record<Subject, string[]> = {
   "cambridge": ["Multiple Choice", "Short Answer (Data Response)", "Explain with Diagram", "Essay Question (25 marks)"],
   "aqa-gcse": ["Multiple Choice", "Short Answer", "Extended Response (6 marks)"],
   "cambridge-igcse": ["Multiple Choice", "Short Answer (Data Response)", "Structured Question"],
+  "ib": ["Short Answer (Data Response)", "Essay Question (Part a/b)", "HL Paper 3 Calculation"],
+  "wjec": ["Short Answer (Data Response)", "Explain with Diagram", "Essay Question (12 marks)"],
+  "eduqas": ["Short Answer (Data Response)", "Explain with Diagram", "Essay Question (20 marks)"],
+  "edexcel-igcse": ["Multiple Choice", "Short Answer (Data Response)", "Structured Question (8 marks)"],
 };
 
 /* ── Essay Grader: question types per subject ── */
@@ -150,5 +217,22 @@ export const questionTypesBySubject: Record<Subject, string[]> = {
   "cambridge-igcse": [
     "1-mark MCQ", "2-mark define", "4-mark explain",
     "6-mark analyse", "8-mark evaluate",
+  ],
+  "ib": [
+    "10-mark short answer", "15-mark essay (Part a)",
+    "10-mark essay (Part b)", "HL Paper 3 calculation (4 marks)",
+    "HL policy response (8 marks)",
+  ],
+  "wjec": [
+    "2-mark define", "4-mark explain", "6-mark analyse with diagram",
+    "8-mark data response", "12-mark evaluate",
+  ],
+  "eduqas": [
+    "2-mark define", "4-mark explain", "8-mark analyse",
+    "12-mark data response", "20-mark evaluate essay",
+  ],
+  "edexcel-igcse": [
+    "1-mark define", "2-mark explain", "4-mark analyse",
+    "6-mark evaluate", "8-mark extended response",
   ],
 };
