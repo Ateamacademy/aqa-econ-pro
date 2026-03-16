@@ -124,21 +124,42 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* Right side */}
           <div className="hidden lg:flex items-center gap-3">
             {!isHomepage && (
-              <div className="flex items-center bg-card border border-border rounded-full p-1 gap-0.5 mr-2">
-                {SUBJECTS.map((s) => (
-                  <button
-                    key={s.value}
-                    onClick={() => setSubject(s.value)}
-                    className={cn(
-                      "px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 whitespace-nowrap",
-                      subject === s.value
-                        ? "bg-primary text-primary-foreground shadow-sm"
-                        : "text-muted-foreground hover:text-foreground"
-                    )}
-                  >
-                    {s.label}
-                  </button>
-                ))}
+              <div className="relative" ref={boardRef}>
+                <button
+                  onClick={() => setBoardOpen(!boardOpen)}
+                  className="flex items-center gap-2 bg-card border border-border rounded-lg px-3 py-1.5 text-xs font-semibold text-foreground hover:border-primary/40 transition-colors mr-2"
+                >
+                  <span className="h-2 w-2 rounded-full bg-primary" />
+                  {currentBoard?.label}
+                  <ChevronDown className={cn("h-3.5 w-3.5 text-muted-foreground transition-transform", boardOpen && "rotate-180")} />
+                </button>
+                <AnimatePresence>
+                  {boardOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 4 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute right-0 top-full mt-2 w-48 bg-card border border-border rounded-xl shadow-lg shadow-black/10 py-1.5 z-50"
+                    >
+                      {SUBJECTS.map((s) => (
+                        <button
+                          key={s.value}
+                          onClick={() => { setSubject(s.value); setBoardOpen(false); }}
+                          className={cn(
+                            "w-full flex items-center justify-between px-3.5 py-2 text-xs font-medium transition-colors",
+                            subject === s.value
+                              ? "text-primary bg-primary/10"
+                              : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                          )}
+                        >
+                          {s.label}
+                          {subject === s.value && <Check className="h-3.5 w-3.5" />}
+                        </button>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             )}
             {isHomepage ? (
