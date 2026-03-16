@@ -1,8 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import { GraduationCap, LogIn, LogOut, Crown, ArrowRight } from "lucide-react";
+import { GraduationCap, LogIn, LogOut, Crown, ArrowRight, ChevronDown, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject, type Subject } from "@/contexts/SubjectContext";
