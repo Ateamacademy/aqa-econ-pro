@@ -264,13 +264,13 @@ export default function Index() {
               const Icon = f.icon;
               return (
                 <motion.div key={f.title} variants={cardVariant}>
-                  <div className="group rounded-2xl border border-border bg-card p-6 h-full hover:border-border-glow hover:-translate-y-1 transition-all duration-300">
+                  <Link to={f.to} className="group rounded-2xl border border-border bg-card p-6 h-full hover:border-border-glow hover:-translate-y-1 transition-all duration-300 block">
                     <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.3)] transition-shadow">
                       <Icon className="h-5 w-5 text-primary" />
                     </div>
                     <h3 className="text-base font-bold mb-2 tracking-tight">{f.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
-                  </div>
+                  </Link>
                 </motion.div>
               );
             })}

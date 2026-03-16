@@ -320,8 +320,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">Company</h4>
               <div className="flex flex-col gap-2.5">
-                {["About", "Contact", "Privacy Policy", "Terms"].map((l) => (
-                  <span key={l} className="text-sm text-muted-foreground hover:text-foreground cursor-pointer transition-colors">{l}</span>
+                {[
+                  { label: "About", to: "/about" },
+                  { label: "Contact", to: "/contact" },
+                  { label: "Privacy Policy", to: "/privacy" },
+                  { label: "Terms", to: "/terms" },
+                ].map((l) => (
+                  <Link key={l.label} to={l.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors">{l.label}</Link>
                 ))}
               </div>
             </div>
