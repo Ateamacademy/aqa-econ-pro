@@ -190,10 +190,30 @@ const FIGURE_TITLE_RE = /^\s*(?:[-•*]\s*)?(?:#{1,4}\s*)?(?:\*{1,2})?\s*(Figure
 const SECTION_BREAK_RE = /^\s*(?:#{1,4}\s+(?!Data|Vertical|Horizontal|Line)|\*{0,2}(?:Figure|Table|Extract)\s+\w+|Question\s+\d+)/i;
 
 function normalizeFigureText(text: string): string {
-  return text
+  let result = text
     .replace(/\r/g, "")
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
-    .replace(/[\*_`~]/g, "")
+    .replace(/[\*_`~]/g, "");
+
+  // Split inline axis labels and data sections onto separate lines
+  result = result
+    .replace(/\s+(Vertical\s+axis\s*:)/gi, "\n$1")
+    .replace(/\s+(Horizontal\s+axis\s*:)/gi, "\n$1")
+    .replace(/\s+(Data\s+points?\s*:)/gi, "\n$1")
+    .replace(/\s+(Source\s*:)/gi, "\n$1");
+
+  // After "Data points:", split inline category:value pairs onto separate lines
+  const dpMatch = result.match(/(Data\s+points?\s*:)\s*/i);
+  if (dpMatch) {
+    const idx = result.indexOf(dpMatch[0]) + dpMatch[0].length;
+    const before = result.slice(0, idx);
+    const after = result.slice(idx);
+    // Insert newline before each "Label: Number" pattern
+    const split = after.replace(/\s+(?=[\w\s&/()']+:\s*[£$€]?\s*\d)/g, "\n");
+    result = before + "\n" + split;
+  }
+
+  return result
     .split("\n")
     .map((line) => line.replace(/^>\s?/, "").trimEnd())
     .join("\n");
