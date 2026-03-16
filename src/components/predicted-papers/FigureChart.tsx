@@ -375,12 +375,72 @@ function parseInlineYearValueData(description: string): { dataSets: DataSet[]; a
   };
 }
 
+/**
+ * Parse multi-series inline data like:
+ * "(blue): New Housing Completions, showing 179k (2020), 195k (2021) (red): Household Formation, showing 230k (2020)"
+ * Also handles: "Line A (blue): ... showing 179k (2020)" or "Series 1: ... showing 179k (2020)"
+ */
+function parseMultiSeriesInlineData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
+  const axisLabels = { x: "", y: "" };
+  const lines = description.split("\n").map(l => l.trim());
+
+  for (const line of lines) {
+    const vMatch = line.match(/(?:vertical|y)\s*-?\s*axis\s*:\s*(.+?)(?=\s+(?:horizontal|x)\s*-?\s*axis|\s+\(|\s*$)/i);
+    if (vMatch) axisLabels.y = vMatch[1].trim();
+    const hMatch = line.match(/(?:horizontal|x)\s*-?\s*axis\s*:\s*(.+?)(?=\s+(?:vertical|y)\s*-?\s*axis|\s+\(|\s*$)/i);
+    if (hMatch) axisLabels.x = hMatch[1].trim();
+  }
+
+  const fullText = lines.join(" ");
+
+  // Split by color/series markers: "(blue):", "(red):", "(green):", "(orange):" etc.
+  const seriesRegex = /\((\w+)\)\s*:?\s*([^(]*?),?\s*showing\s+([\s\S]*?)(?=\s*\(\w+\)\s*:|\s*Source\s*:|$)/gi;
+  const dataSets: DataSet[] = [];
+  let match: RegExpExecArray | null;
+
+  while ((match = seriesRegex.exec(fullText)) !== null) {
+    const label = match[2].trim().replace(/,\s*$/, '') || match[1];
+    const dataStr = match[3];
+
+    // Parse value-year pairs like "179k (2020), 195k (2021)" or "179,000 (2020)"
+    const pointRegex = /([£$€]?\s*[\d,.]+)\s*([kKmMbBnN]{1,2})?\s*\((\d{4}(?:\s*[Ff]orecast)?)\)/g;
+    const points: { year: string; value: number }[] = [];
+    let pm: RegExpExecArray | null;
+
+    while ((pm = pointRegex.exec(dataStr)) !== null) {
+      let rawVal = parseFloat(pm[1].replace(/[£$€,\s]/g, ''));
+      const unit = (pm[2] || '').toLowerCase();
+      if (unit === 'k') rawVal *= 1;        // keep as thousands
+      else if (unit === 'm') rawVal *= 1000; // convert to thousands
+      else if (unit === 'bn' || unit === 'b') rawVal *= 1000000;
+      if (!isNaN(rawVal)) {
+        points.push({ year: pm[3].trim(), value: rawVal });
+      }
+    }
+
+    if (points.length >= 2) {
+      dataSets.push({ label, points });
+    }
+  }
+
+  if (dataSets.length === 0) return null;
+
+  // Ensure all series have same x-axis points aligned
+  if (!axisLabels.x) axisLabels.x = "Year";
+
+  return { dataSets, axisLabels };
+}
+
 function parseChartData(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
   const normalizedDescription = normalizeFigureDescription(description);
 
   // Try markdown table first
   const tableResult = parseMarkdownTable(normalizedDescription);
   if (tableResult) return tableResult;
+
+  // Try multi-series inline format: "(blue): Label, showing 179k (2020), ..."
+  const multiSeriesResult = parseMultiSeriesInlineData(normalizedDescription);
+  if (multiSeriesResult) return multiSeriesResult;
 
   // Try inline year:value pairs (e.g. "2004: 4.8 2009: 5.4")
   const inlineResult = parseInlineYearValueData(normalizedDescription);
