@@ -1276,7 +1276,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       return (
         <>
           {/* Shaded Gini area */}
-          <path d={areaPath} fill={COLORS.area} fillOpacity={0.10} />
+          <path d={areaPath} fill={COLORS.area} fillOpacity={0.25} stroke={COLORS.area} strokeWidth={1.5} />
 
           {/* Line of equality */}
           <GLine {...eqLine} color={COLORS.lras} dashed width={2} />
