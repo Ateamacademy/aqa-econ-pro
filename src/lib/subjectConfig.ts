@@ -57,6 +57,11 @@ export const paperOptionsBySubject: Record<Subject, { value: string; label: stri
     { value: "2", label: "Paper 2", title: "Macroeconomics & Global", desc: "Macroeconomics and the global economy — GDP, trade, development (4EC1/02)" },
     { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete IGCSE Economics predicted paper covering all topics" },
   ],
+  "ocr-gcse": [
+    { value: "1", label: "Component 1", title: "Introduction to Economics", desc: "Microeconomics — the role of markets, market failure, the economy (J205/01)" },
+    { value: "2", label: "Component 2", title: "National & International Economics", desc: "Macroeconomics — the UK economy, international trade, globalisation (J205/02)" },
+    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete OCR GCSE Economics predicted paper covering all topics" },
+  ],
 };
 /* ── Practice: topics per subject ── */
 export const topicsBySubject: Record<Subject, string[]> = {
