@@ -16,6 +16,7 @@ const iconMap: Record<string, any> = {
   "aqa-gcse": [BarChart3, Globe, FileText],
   "cambridge-igcse": [BarChart3, Globe, FileText],
   "edexcel-igcse": [BarChart3, Globe, FileText],
+  "ocr-gcse": [BarChart3, Globe, FileText],
 };
 
 const colorSets = [
