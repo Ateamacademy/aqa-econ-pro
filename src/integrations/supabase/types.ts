@@ -338,6 +338,36 @@ export type Database = {
         }
         Relationships: []
       }
+      user_activity_log: {
+        Row: {
+          created_at: string
+          event_type: string
+          feature: string | null
+          id: string
+          metadata: Json | null
+          session_duration_seconds: number | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          event_type: string
+          feature?: string | null
+          id?: string
+          metadata?: Json | null
+          session_duration_seconds?: number | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          event_type?: string
+          feature?: string | null
+          id?: string
+          metadata?: Json | null
+          session_duration_seconds?: number | null
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
