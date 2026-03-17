@@ -57,6 +57,11 @@ export const paperOptionsBySubject: Record<Subject, { value: string; label: stri
     { value: "2", label: "Paper 2", title: "Macroeconomics & Global", desc: "Macroeconomics and the global economy — GDP, trade, development (4EC1/02)" },
     { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete IGCSE Economics predicted paper covering all topics" },
   ],
+  "ocr-gcse": [
+    { value: "1", label: "Component 1", title: "Introduction to Economics", desc: "Microeconomics — the role of markets, market failure, the economy (J205/01)" },
+    { value: "2", label: "Component 2", title: "National & International Economics", desc: "Macroeconomics — the UK economy, international trade, globalisation (J205/02)" },
+    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete OCR GCSE Economics predicted paper covering all topics" },
+  ],
 };
 /* ── Practice: topics per subject ── */
 export const topicsBySubject: Record<Subject, string[]> = {
@@ -170,6 +175,14 @@ export const topicsBySubject: Record<Subject, string[]> = {
     "Supply-Side Policies", "International Trade",
     "Exchange Rates", "Balance of Payments", "Globalisation & Development",
   ],
+  "ocr-gcse": [
+    "The Role of Markets", "Demand & Supply", "Elasticity",
+    "Market Failure", "Government Intervention", "The Labour Market",
+    "The Role of Money & Financial Markets",
+    "The UK Economy", "Economic Growth", "Unemployment", "Inflation",
+    "Fiscal Policy", "Monetary Policy", "Supply-Side Policies",
+    "International Trade", "Globalisation",
+  ],
 };
 
 /* ── Practice: question styles per subject ── */
@@ -185,6 +198,7 @@ export const stylesBySubject: Record<Subject, string[]> = {
   "wjec": ["Short Answer (Data Response)", "Explain with Diagram", "Essay Question (12 marks)"],
   "eduqas": ["Short Answer (Data Response)", "Explain with Diagram", "Essay Question (20 marks)"],
   "edexcel-igcse": ["Multiple Choice", "Short Answer (Data Response)", "Structured Question (8 marks)"],
+  "ocr-gcse": ["Multiple Choice", "Short Answer", "Extended Response (6 marks)"],
 };
 
 /* ── Essay Grader: question types per subject ── */
@@ -234,5 +248,9 @@ export const questionTypesBySubject: Record<Subject, string[]> = {
   "edexcel-igcse": [
     "1-mark define", "2-mark explain", "4-mark analyse",
     "6-mark evaluate", "8-mark extended response",
+  ],
+  "ocr-gcse": [
+    "1-mark define", "2-mark state", "4-mark explain",
+    "6-mark discuss/evaluate", "9-mark extended response",
   ],
 };

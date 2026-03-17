@@ -44,6 +44,7 @@ const EXAM_DURATIONS: Record<string, Record<string, number>> = {
   "aqa-gcse":       { "1": 105, "2": 105, full: 105 },
   "cambridge-igcse": { "1": 45, "2": 135, full: 135 },
   "edexcel-igcse":  { "1": 75,  "2": 85,  full: 85 },
+  "ocr-gcse":       { "1": 75,  "2": 75,  full: 75 },
 };
 
 type QuestionFeedback = {
@@ -896,7 +897,8 @@ export default function PredictedPapers() {
   const isGCSE = subject === "aqa-gcse";
   const isIGCSE = subject === "cambridge-igcse";
   const isEdexcelIGCSE = subject === "edexcel-igcse";
-  const isAnyIGCSEorGCSE = isGCSE || isIGCSE || isEdexcelIGCSE;
+  const isOcrGcse = subject === "ocr-gcse";
+  const isAnyIGCSEorGCSE = isGCSE || isIGCSE || isEdexcelIGCSE || isOcrGcse;
   const isAnyEcon = true;
 
   const examDuration = useMemo(() => {
@@ -953,7 +955,7 @@ export default function PredictedPapers() {
     if (isAnyEcon) {
       try {
         const { data: patternData } = await supabase.functions.invoke("retrieve-patterns", {
-          body: { paper, subject: isEdexcelA ? "edexcel-a" : isEdexcelB ? "edexcel-b" : isOCR ? "ocr_economics" : isCambridge ? "cambridge" : isGCSE ? "aqa-gcse" : isIGCSE ? "cambridge-igcse" : isEdexcelIGCSE ? "edexcel-igcse" : "economics", limit: 250 },
+          body: { paper, subject: isEdexcelA ? "edexcel-a" : isEdexcelB ? "edexcel-b" : isOCR ? "ocr_economics" : isCambridge ? "cambridge" : isGCSE ? "aqa-gcse" : isIGCSE ? "cambridge-igcse" : isEdexcelIGCSE ? "edexcel-igcse" : isOcrGcse ? "ocr_gcse" : "economics", limit: 250 },
         });
         if (patternData?.contextPrompt) {
           dbContextPrompt = patternData.contextPrompt;

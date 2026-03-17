@@ -36,6 +36,7 @@ const SUBJECTS: { value: Subject; label: string }[] = [
   { value: "aqa-gcse", label: "AQA GCSE" },
   { value: "cambridge-igcse", label: "CAIE IGCSE" },
   { value: "edexcel-igcse", label: "Edexcel IGCSE" },
+  { value: "ocr-gcse", label: "OCR GCSE" },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
