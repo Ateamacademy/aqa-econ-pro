@@ -1,10 +1,16 @@
 import { useState } from "react";
-import { Download, FileText } from "lucide-react";
+import { Download, FileText, ExternalLink, FolderOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { cambridgePastPapers, cambridgePaperTitles, sessionLabels } from "@/data/cambridgePastPapers";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+const DB_BASE = "https://www.dropbox.com/scl/fo/a6ihfh382tgxp98ex701g";
+
+const additionalResources = [
+  { label: "CAIE A-Level Economics Resources", url: `${DB_BASE}/AINXwAnem4EV6v7MKyB1T8c?rlkey=fqwe61nwgwsywutgo4i59tquj&dl=0` },
+];
 
 export default function CambridgePastPapers() {
   const [search, setSearch] = useState("");
