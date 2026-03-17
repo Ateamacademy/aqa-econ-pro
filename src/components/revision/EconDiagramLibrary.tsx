@@ -711,13 +711,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
       return (
         <>
-          <GLine {...mpcL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={mpcL.x2 - 8} y={mpcL.y2 - 6} text="S = MPC" color={COLORS.supply} />
-          <GLine {...mscL} color={COLORS.eq} width={2.5} dashed />
-          <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.eq} />
-          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MPB = MSB" color={COLORS.demand} />
-          {/* Welfare gain triangle — closed polygon with bold green boundary */}
+          {/* Welfare gain triangle — RENDERED FIRST so it sits behind curves */}
           <WelfareRegion
             points={[
               { x: freeEq.x, y: freeEq.y },
@@ -725,11 +719,18 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
               { x: optEq.x, y: optEq.y },
             ]}
             fill="#16a34a"
-            fillOpacity={0.35}
-            strokeWidth={2.5}
+            fillOpacity={0.45}
+            strokeWidth={3}
             label="WG"
             labelSize={9}
           />
+          {/* Curves rendered on top of welfare region */}
+          <GLine {...mpcL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
+          <Label x={mpcL.x2 - 8} y={mpcL.y2 - 6} text="S = MPC" color={COLORS.supply} />
+          <GLine {...mscL} color={COLORS.eq} width={2.5} dashed />
+          <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.eq} />
+          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MPB = MSB" color={COLORS.demand} />
           {/* Subsidy annotation arrow at Q* */}
           <line x1={optEq.x + 12} y1={mpcAtOptX} x2={optEq.x + 12} y2={optEq.y} stroke={COLORS.shifted} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
           <Label x={optEq.x + 18} y={(mpcAtOptX + optEq.y) / 2 + 3} text="Subsidy" color={COLORS.shifted} size={8} />
