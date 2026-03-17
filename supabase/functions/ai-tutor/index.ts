@@ -16,13 +16,19 @@ You are generating content for a REVISION GUIDE, not a ChatGPT conversation. Str
 4. Use **### How It Works** or **### Explanation** with numbered reasoning steps (1, 2, 3...)
 5. Use **### Example** for a specific real-world case (name, country, year, data)
 6. Use **### Formula** for any relevant equations (use LaTeX: $...$)
-7. Use **### Diagram** followed by the diagram type keyword on the SAME LINE. Available diagram types you can reference:
-   - supply_demand, demand_increase, demand_decrease, supply_increase, supply_decrease
-   - positive_externality, negative_externality, negative_production_externality
-   - ad_increase, ad_decrease, sras_decrease
-   - ped_elastic, ped_inelastic, ppf, ppf_growth, phillips_curve
-   - tax_incidence, monopoly
-   Example: "### Diagram: positive_externality" — the platform will render the actual SVG diagram automatically
+7. Use **### Diagram** followed by the diagram type keyword on the SAME LINE. You MUST use the EXACT keyword from this list — the platform renders a different professional SVG for each one:
+   MICRO: supply_demand, demand_increase, demand_decrease, supply_increase, supply_decrease
+   EXTERNALITIES: positive_externality, negative_externality, negative_production_externality, positive_production_externality
+   INTERVENTION: tax_incidence, subsidy, price_floor, price_ceiling
+   MACRO: ad_increase, ad_decrease, sras_decrease, sras_increase, keynesian_as
+   ELASTICITY: ped_elastic, ped_inelastic
+   PPF: ppf, ppf_growth
+   MARKET STRUCTURES: monopoly, perfect_competition, monopolistic_competition, oligopoly_payoff
+   COST CURVES: cost_curves, lrac, short_run_shutdown
+   DISTRIBUTION: lorenz_curve, phillips_curve
+   TRADE: trade_quota
+   Example: "### Diagram: positive_externality" or "### Diagram: monopoly"
+   CRITICAL: Pick the MOST SPECIFIC type. For pollution → negative_production_externality. For merit goods → positive_externality. For minimum wage → price_floor. For NHS/education → positive_externality. For sugar tax → tax_incidence. For cost-push inflation → sras_decrease. For demand-pull inflation → ad_increase.
 8. Use "> 📝 **Key Point:** ..." callout for the single most important takeaway
 9. Use "> 💡 **Exam Tip:** ..." callout at the end with exam-specific advice
 10. **Keep paragraphs SHORT** — maximum 2-3 sentences. Use bullet points aggressively.
