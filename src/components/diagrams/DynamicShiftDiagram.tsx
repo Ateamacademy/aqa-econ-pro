@@ -148,7 +148,7 @@ export function DynamicShiftDiagram({ initialShift, title, className }: DynamicS
         <text x={mx + pw / 2} y={my + ph + 35} fill="currentColor" fontSize="11" fontWeight="700" textAnchor="middle">Quantity (Q)</text>
         <text x={mx - 4} y={my + ph + 14} fill="currentColor" fontSize="10" fontWeight="700" textAnchor="middle">O</text>
 
-        <g clipPath="url(#shift-clip)">
+        <g clipPath={`url(#shift-clip-${uid})`}>
           {/* Original curves */}
           <line {...dL} stroke={COLORS.demand} strokeWidth="2.5" strokeLinecap="round" />
           <line {...sL} stroke={COLORS.supply} strokeWidth="2.5" strokeLinecap="round" />
