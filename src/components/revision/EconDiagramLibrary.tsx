@@ -1223,7 +1223,6 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       );
     },
   },
-};
 
   /* ── Short-Run Cost Curves (MC, ATC, AVC) ── */
   cost_curves: {
