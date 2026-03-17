@@ -1814,11 +1814,100 @@ export function resolveDiagramType(raw: string, shiftHint?: string): DiagramType
     }
   }
 
+  // Keyword-based inference from raw text (covers natural language AI descriptions)
+  const kwMap: [string[], DiagramType][] = [
+    // Externalities (check specific before general)
+    [["negative", "production", "externality"], "negative_production_externality"],
+    [["positive", "production", "externality"], "positive_production_externality"],
+    [["negative", "consumption", "externality"], "negative_externality"],
+    [["positive", "consumption", "externality"], "positive_externality"],
+    [["pollution", "externality"], "negative_production_externality"],
+    [["demerit", "good"], "negative_externality"],
+    [["merit", "good"], "positive_externality"],
+    [["msc", "mpc"], "negative_production_externality"],
+    [["msb", "mpb"], "positive_externality"],
+    [["overconsumption"], "negative_externality"],
+    [["underconsumption"], "positive_externality"],
+    [["overproduction"], "negative_production_externality"],
+    [["underproduction"], "positive_production_externality"],
+    [["welfare", "loss"], "negative_production_externality"],
+    [["market", "failure"], "negative_production_externality"],
+    [["negative", "externality"], "negative_production_externality"],
+    [["positive", "externality"], "positive_externality"],
+    [["externality"], "negative_production_externality"],
+    // Intervention
+    [["indirect", "tax"], "tax_incidence"],
+    [["tax", "incidence"], "tax_incidence"],
+    [["specific", "tax"], "tax_incidence"],
+    [["ad", "valorem"], "tax_incidence"],
+    [["pigouvian", "tax"], "tax_incidence"],
+    [["sugar", "tax"], "tax_incidence"],
+    [["subsidy"], "subsidy"],
+    [["minimum", "wage"], "price_floor"],
+    [["price", "floor"], "price_floor"],
+    [["minimum", "price"], "price_floor"],
+    [["buffer", "stock"], "price_floor"],
+    [["price", "ceiling"], "price_ceiling"],
+    [["maximum", "price"], "price_ceiling"],
+    [["rent", "control"], "price_ceiling"],
+    [["price", "cap"], "price_ceiling"],
+    // Macro
+    [["cost", "push"], "sras_decrease"],
+    [["demand", "pull"], "ad_increase"],
+    [["aggregate", "demand", "increase"], "ad_increase"],
+    [["aggregate", "demand", "decrease"], "ad_decrease"],
+    [["aggregate", "supply", "decrease"], "sras_decrease"],
+    [["aggregate", "supply", "increase"], "sras_increase"],
+    [["keynesian"], "keynesian_as"],
+    [["ad", "as"], "ad_increase"],
+    // Market structures
+    [["monopoly"], "monopoly"],
+    [["monopolistic", "competition"], "monopolistic_competition"],
+    [["perfect", "competition"], "perfect_competition"],
+    [["oligopoly"], "oligopoly_payoff"],
+    [["game", "theory"], "oligopoly_payoff"],
+    [["prisoner"], "oligopoly_payoff"],
+    [["payoff"], "oligopoly_payoff"],
+    // Cost curves
+    [["cost", "curve"], "cost_curves"],
+    [["lrac"], "lrac"],
+    [["economies", "scale"], "lrac"],
+    [["diseconomies"], "lrac"],
+    [["shutdown"], "short_run_shutdown"],
+    // PPF
+    [["ppf"], "ppf"],
+    [["production", "possibility"], "ppf"],
+    [["economic", "growth"], "ppf_growth"],
+    // Elasticity
+    [["elastic"], "ped_elastic"],
+    [["inelastic"], "ped_inelastic"],
+    // Distribution / other
+    [["lorenz"], "lorenz_curve"],
+    [["gini"], "lorenz_curve"],
+    [["inequality"], "lorenz_curve"],
+    [["phillips"], "phillips_curve"],
+    // Trade
+    [["quota"], "trade_quota"],
+    [["tariff"], "trade_quota"],
+    [["trade", "diagram"], "trade_quota"],
+    // S&D basics
+    [["supply", "demand"], "supply_demand"],
+    [["demand", "increase"], "demand_increase"],
+    [["demand", "decrease"], "demand_decrease"],
+    [["supply", "increase"], "supply_increase"],
+    [["supply", "decrease"], "supply_decrease"],
+    [["demand", "shift"], "demand_increase"],
+    [["supply", "shift"], "supply_increase"],
+  ];
+
+  for (const [keywords, dtype] of kwMap) {
+    if (keywords.every(kw => lc.includes(kw))) return dtype;
+  }
+
   // Use shift hint to infer diagram type (e.g. "Demand shifts left" → demand_decrease)
   if (shiftHint) {
     const sh = shiftHint.toLowerCase();
     const isLeft = sh.includes("left") || sh.includes("decrease") || sh.includes("inward");
-    const isRight = sh.includes("right") || sh.includes("increase") || sh.includes("outward");
     if (sh.includes("supply") || sh.includes("sras")) {
       if (sh.includes("aggregate") || sh.includes("sras")) return isLeft ? "sras_decrease" : "sras_increase";
       return isLeft ? "supply_decrease" : "supply_increase";

@@ -341,7 +341,22 @@ EXTRACT CONSISTENCY (CRITICAL):
 - If you create extracts (e.g., Extract A, Extract B, Extract C), questions MUST ONLY reference extracts that actually exist in the paper.
 - Do NOT reference "Extract D" if you only provided Extracts A, B, and C.
 - Before finalising, cross-check every question to ensure any "Extract X" or "Context X" reference matches a provided extract/context.
-- Number your extracts sequentially and ensure no gaps or phantom references.
+
+MODEL DIAGRAM REQUIREMENT (CRITICAL):
+When giving feedback on student answers that require diagrams, you MUST include "### Diagram: <exact_type_keyword>" using the diagram types from the formatting rules. Choose the MOST SPECIFIC type for each topic:
+- Pollution/carbon emissions → negative_production_externality
+- NHS/education/vaccination → positive_externality
+- Smoking/alcohol → negative_externality
+- Training/R&D spillovers → positive_production_externality
+- Sugar tax/indirect tax → tax_incidence
+- Subsidy on electric vehicles → subsidy
+- Minimum wage → price_floor
+- Rent control → price_ceiling
+- Inflation from oil prices → sras_decrease
+- Consumer confidence boost → ad_increase
+- Monopoly profit → monopoly
+- Economies of scale → lrac
+- Trade restrictions → trade_quota
 
 After the student answers, mark their response using AQA criteria (KAA + Evaluation) and give detailed feedback speaking directly to them.`;
       }
