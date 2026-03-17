@@ -35,7 +35,13 @@ export type DiagramType =
   | "monopoly"
   | "perfect_competition"
   | "lorenz_curve"
-  | "oligopoly_payoff";
+  | "oligopoly_payoff"
+  | "cost_curves"
+  | "lrac"
+  | "monopolistic_competition"
+  | "keynesian_as"
+  | "trade_quota"
+  | "short_run_shutdown";
 
 interface DiagramConfig {
   title: string;
