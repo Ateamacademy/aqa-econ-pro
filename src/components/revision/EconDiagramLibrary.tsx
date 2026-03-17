@@ -641,13 +641,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
       return (
         <>
-          <GLine {...mpcL} color={COLORS.mpc} width={2.5} />
-          <Label x={mpcL.x2 - 8} y={mpcL.y2 - 6} text="S = MPC" color={COLORS.mpc} />
-          <GLine {...mscL} color={COLORS.msc} gradientId="grad-supply" dashed glow="glow-red" />
-          <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.msc} />
-          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MPB = MSB" color={COLORS.demand} />
-          {/* Welfare loss triangle — closed polygon with bold red boundary */}
+          {/* Welfare loss triangle — RENDERED FIRST so it sits behind curves */}
           <WelfareRegion
             points={[
               { x: optEq.x, y: optEq.y },
@@ -655,11 +649,18 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
               { x: freeEq.x, y: mscAtFreeX },
             ]}
             fill="#ef4444"
-            fillOpacity={0.35}
-            strokeWidth={2.5}
+            fillOpacity={0.45}
+            strokeWidth={3}
             label="WL"
             labelSize={9}
           />
+          {/* Curves rendered on top of welfare region */}
+          <GLine {...mpcL} color={COLORS.mpc} width={2.5} />
+          <Label x={mpcL.x2 - 8} y={mpcL.y2 - 6} text="S = MPC" color={COLORS.mpc} />
+          <GLine {...mscL} color={COLORS.msc} gradientId="grad-supply" dashed glow="glow-red" />
+          <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.msc} />
+          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MPB = MSB" color={COLORS.demand} />
           {/* Tax annotation arrow at Q* — vertical gap between MSC and MPC */}
           <line x1={optEq.x - 10} y1={optEq.y} x2={optEq.x - 10} y2={mpcAtOptX} stroke={COLORS.shifted} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
           <Label x={optEq.x - 16} y={(optEq.y + mpcAtOptX) / 2 + 3} text="Tax" color={COLORS.shifted} size={8} anchor="end" />
