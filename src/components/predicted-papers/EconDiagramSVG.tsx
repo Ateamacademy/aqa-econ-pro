@@ -2,9 +2,14 @@
  * EconDiagramSVG — renders structured diagram descriptions as polished,
  * 3D-styled interactive SVG diagrams with depth, gradients, glow effects,
  * animations, tooltips and a premium look.
+ *
+ * When a known diagram type is detected (e.g. externalities, monopoly, AD/AS),
+ * it delegates to the predefined EconDiagramTemplate library for exam-accurate
+ * rendering with welfare loss/gain areas, proper curve labels, and colored boundaries.
  */
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { resolveDiagramType, EconDiagramTemplate } from "@/components/revision/EconDiagramLibrary";
 
 interface DiagramProps {
   type: string;
@@ -228,6 +233,9 @@ function ShiftArrow({ x, y, offset, color, delay }: { x: number; y: number; offs
 }
 
 function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
+  // Try to resolve to a predefined template for exam-accurate rendering
+  const resolvedType = resolveDiagramType(diagram.type);
+  
   const [animated, setAnimated] = useState(false);
   const [activePage, setActivePage] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
@@ -239,6 +247,22 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
+
+  // If we have a predefined template, use it — it has proper welfare loss/gain
+  // triangles, colored boundaries, correct curve labels (MSC, MPC, MSB, MPB), etc.
+  if (resolvedType) {
+    return (
+      <div className="my-6">
+        <EconDiagramTemplate type={resolvedType} />
+        {diagram.conclusion && (
+          <div className="mx-1 -mt-2 mb-4 px-4 py-2.5 rounded-xl bg-primary/5 border border-primary/15">
+            <p className="text-xs font-semibold text-primary mb-1">Key Conclusion</p>
+            <p className="text-sm text-foreground/80">{diagram.conclusion}</p>
+          </div>
+        )}
+      </div>
+    );
+  }
 
   const W = 480;
   const H = 380;
