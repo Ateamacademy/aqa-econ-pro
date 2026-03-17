@@ -42,6 +42,8 @@ export function DynamicShiftDiagram({ initialShift, title, className }: DynamicS
   const [curve, setCurve] = useState<CurveType>(initialShift?.curve ?? "demand");
   const [magnitude, setMagnitude] = useState(initialShift?.magnitude ?? 50);
   const [direction, setDirection] = useState<ShiftDirection>(initialShift?.direction ?? "right");
+  const rawId = useId();
+  const uid = rawId.replace(/:/g, "");
 
   const W = 420, H = 320;
   const mx = 55, my = 25, pw = W - mx - 30, ph = H - my - 50;
