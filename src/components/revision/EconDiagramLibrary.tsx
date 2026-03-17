@@ -59,6 +59,8 @@ interface DiagramConfig {
 interface DrawParams {
   W: number; H: number;
   mx: number; my: number; pw: number; ph: number;
+  /** Unique prefix for SVG IDs (clipPath, gradients) to avoid collisions */
+  uid: string;
 }
 
 const COLORS = {
