@@ -92,6 +92,7 @@ export default function EdexcelIgcsePastPapers() {
             </Card>
           ))}
         </div>
+      </div>
 
       {/* Additional Resources */}
       <div className="mb-8">
