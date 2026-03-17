@@ -198,6 +198,7 @@ export const stylesBySubject: Record<Subject, string[]> = {
   "wjec": ["Short Answer (Data Response)", "Explain with Diagram", "Essay Question (12 marks)"],
   "eduqas": ["Short Answer (Data Response)", "Explain with Diagram", "Essay Question (20 marks)"],
   "edexcel-igcse": ["Multiple Choice", "Short Answer (Data Response)", "Structured Question (8 marks)"],
+  "ocr-gcse": ["Multiple Choice", "Short Answer", "Extended Response (6 marks)"],
 };
 
 /* ── Essay Grader: question types per subject ── */
