@@ -35,7 +35,13 @@ export type DiagramType =
   | "monopoly"
   | "perfect_competition"
   | "lorenz_curve"
-  | "oligopoly_payoff";
+  | "oligopoly_payoff"
+  | "cost_curves"
+  | "lrac"
+  | "monopolistic_competition"
+  | "keynesian_as"
+  | "trade_quota"
+  | "short_run_shutdown";
 
 interface DiagramConfig {
   title: string;
@@ -1217,6 +1223,286 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       );
     },
   },
+
+  /* ── Short-Run Cost Curves (MC, ATC, AVC) ── */
+  cost_curves: {
+    title: "Short-Run Cost Curves (MC, ATC, AVC)",
+    xAxis: "Output (Q)", yAxis: "Costs (£)",
+    legend: [{ label: "MC", color: COLORS.supply }, { label: "ATC", color: COLORS.demand }, { label: "AVC", color: COLORS.shifted }],
+    examTips: [
+      "MC crosses ATC and AVC at their minimum points",
+      "ATC = AVC + AFC — the gap is AFC which falls as output rises",
+      "When MC < ATC, ATC is falling; when MC > ATC, ATC is rising",
+      "Shutdown point: P = min AVC (short run)",
+    ],
+    render: (p) => {
+      const { mx, my, pw, ph } = p;
+      const pad = 10;
+      const cx = mx + pw * 0.45;
+      // U-shaped ATC
+      const atcPath = `M ${mx + pad + 20} ${my + pad + 20} Q ${cx - 15} ${my + ph * 0.72} ${mx + pw - pad - 10} ${my + pad + 30}`;
+      // U-shaped AVC (below ATC, converging at high output)
+      const avcPath = `M ${mx + pad + 25} ${my + pad + 60} Q ${cx - 5} ${my + ph * 0.78} ${mx + pw - pad - 10} ${my + pad + 50}`;
+      // MC (steep U-shape, crossing both at their minima)
+      const mcPath = `M ${mx + pad + 35} ${my + ph - pad - 30} Q ${cx - 30} ${my + ph * 0.82} ${cx - 10} ${my + ph * 0.65} Q ${cx + 20} ${my + ph * 0.38} ${mx + pw - pad - 15} ${my + pad}`;
+
+      return (
+        <>
+          <CurvePath d={mcPath} color={COLORS.supply} gradientId="grad-supply" width={3} glow="glow-red" />
+          <Label x={mx + pw - pad - 5} y={my + pad + 8} text="MC" color={COLORS.supply} />
+          <CurvePath d={atcPath} color={COLORS.demand} gradientId="grad-demand" width={2.5} glow="glow-blue" />
+          <Label x={mx + pw - pad} y={my + pad + 40} text="ATC" color={COLORS.demand} />
+          <CurvePath d={avcPath} color={COLORS.shifted} gradientId="grad-shifted" width={2} />
+          <Label x={mx + pw - pad} y={my + pad + 58} text="AVC" color={COLORS.shifted} />
+          {/* AFC indication */}
+          <GLine x1={mx + pad + 30} y1={my + pad + 25} x2={mx + pad + 30} y2={my + pad + 64} color={COLORS.lras} dashed width={1} />
+          <Label x={mx + pad + 34} y={my + pad + 48} text="AFC" color={COLORS.lras} size={8} />
+        </>
+      );
+    },
+  },
+
+  /* ── Long-Run Average Cost (LRAC with Economies of Scale) ── */
+  lrac: {
+    title: "Long-Run Average Cost Curve",
+    xAxis: "Output (Q)", yAxis: "Long-Run Average Cost (£)",
+    legend: [{ label: "LRAC", color: COLORS.demand }, { label: "Economies", color: COLORS.eq }, { label: "Diseconomies", color: COLORS.supply }],
+    examTips: [
+      "Economies of scale: LRAC falls as output increases (Section A)",
+      "Constant returns: flat section = minimum efficient scale (Section B)",
+      "Diseconomies of scale: LRAC rises as firm becomes too large (Section C)",
+      "MES = minimum efficient scale — output where LRAC first reaches minimum",
+    ],
+    render: (p) => {
+      const { mx, my, pw, ph } = p;
+      const pad = 10;
+      // U-shaped LRAC — wide bottom for constant returns section
+      const lracPath = `M ${mx + pad + 10} ${my + pad + 10} Q ${mx + pw * 0.22} ${my + ph * 0.75} ${mx + pw * 0.38} ${my + ph * 0.68} L ${mx + pw * 0.58} ${my + ph * 0.68} Q ${mx + pw * 0.78} ${my + ph * 0.68} ${mx + pw - pad - 10} ${my + pad + 20}`;
+
+      // Section labels with brackets
+      const secAx = mx + pw * 0.22, secBx = mx + pw * 0.48, secCx = mx + pw * 0.75;
+      const botY = my + ph - pad - 8;
+
+      return (
+        <>
+          <CurvePath d={lracPath} color={COLORS.demand} gradientId="grad-demand" width={3} glow="glow-blue" />
+          <Label x={mx + pw - pad} y={my + pad + 28} text="LRAC" color={COLORS.demand} />
+          {/* Section markers */}
+          <rect x={mx + pad + 5} y={botY - 2} width={mx + pw * 0.36 - mx - pad - 5} height={16} rx={4} fill={COLORS.eq} fillOpacity={0.08} />
+          <text x={secAx} y={botY + 10} textAnchor="middle" fontSize={8} fontWeight={600} fill={COLORS.eq}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Economies of Scale</text>
+          <rect x={mx + pw * 0.36} y={botY - 2} width={pw * 0.24} height={16} rx={4} fill={COLORS.lras} fillOpacity={0.08} />
+          <text x={secBx} y={botY + 10} textAnchor="middle" fontSize={8} fontWeight={600} fill={COLORS.lras}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Constant Returns</text>
+          <rect x={mx + pw * 0.60} y={botY - 2} width={pw * 0.36} height={16} rx={4} fill={COLORS.supply} fillOpacity={0.08} />
+          <text x={secCx} y={botY + 10} textAnchor="middle" fontSize={8} fontWeight={600} fill={COLORS.supply}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Diseconomies of Scale</text>
+          {/* MES dotted line */}
+          <line x1={mx + pw * 0.38} y1={my + ph * 0.68} x2={mx + pw * 0.38} y2={my + ph - pad} stroke={COLORS.eq} strokeWidth={1} strokeDasharray="3,3" opacity={0.5} />
+          <text x={mx + pw * 0.38} y={my + ph - 2} textAnchor="middle" fontSize={8} fontWeight={700} fill={COLORS.eq}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>MES</text>
+        </>
+      );
+    },
+  },
+
+  /* ── Monopolistic Competition (Long-Run Normal Profit) ── */
+  monopolistic_competition: {
+    title: "Monopolistic Competition — Long-Run Equilibrium",
+    xAxis: "Quantity (Q)", yAxis: "Price / Cost / Revenue",
+    legend: [{ label: "MC", color: COLORS.supply }, { label: "AR = D", color: COLORS.demand }, { label: "MR", color: COLORS.mpb }, { label: "AC tangent", color: COLORS.lras }],
+    examTips: [
+      "Long-run: AR tangent to AC — normal profit only",
+      "Excess capacity: firm produces LEFT of min AC (not productively efficient)",
+      "P > MC so NOT allocatively efficient either",
+      "Short-run supernormal profit attracts entry → demand curve shifts left",
+    ],
+    render: (p) => {
+      const { mx, my, pw, ph } = p;
+      const pad = 10;
+      // MC: upward from low
+      const mcPath = `M ${mx + pw * 0.15} ${my + ph - pad - 20} Q ${mx + pw * 0.35} ${my + ph * 0.65} ${mx + pw * 0.70} ${my + pad + 5}`;
+      // AR = D: downward sloping (less steep than monopoly)
+      const arL = { x1: mx + pad + 15, y1: my + pad + 20, x2: mx + pw * 0.78, y2: my + ph - pad };
+      // MR: steeper downward
+      const mrL = { x1: mx + pad + 15, y1: my + pad + 20, x2: mx + pw * 0.45, y2: my + ph - pad };
+      // AC: U-shaped, tangent to AR at the equilibrium point
+      const tangentX = mx + pw * 0.38, tangentY = my + ph * 0.38;
+      const acPath = `M ${mx + pad + 25} ${my + pad + 30} Q ${tangentX - 10} ${tangentY + 18} ${tangentX} ${tangentY} Q ${tangentX + 30} ${tangentY - 8} ${mx + pw * 0.72} ${my + pad + 10}`;
+
+      return (
+        <>
+          <CurvePath d={mcPath} color={COLORS.supply} gradientId="grad-supply" width={2.5} glow="glow-red" />
+          <Label x={mx + pw * 0.72} y={my + pad + 12} text="MC" color={COLORS.supply} />
+          <GLine {...arL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <Label x={arL.x2 + 4} y={arL.y2 - 6} text="AR = D" color={COLORS.demand} />
+          <GLine {...mrL} color={COLORS.mpb} dashed width={2} />
+          <Label x={mrL.x2 + 4} y={mrL.y2 - 6} text="MR" color={COLORS.mpb} />
+          <CurvePath d={acPath} color={COLORS.lras} width={2} dashed />
+          <Label x={mx + pw * 0.73} y={my + pad + 18} text="AC" color={COLORS.lras} />
+          {/* Tangent point (normal profit) */}
+          <PremiumDot x={tangentX} y={tangentY} color={COLORS.eq} label="Normal Profit" gradientId="dot-green"
+            tooltipText="✓ AR tangent to AC = normal profit only" />
+          <DashedToAxes x={tangentX} y={tangentY} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P" qLabel="Q" />
+          {/* Excess capacity label */}
+          <Label x={mx + pw * 0.52} y={my + ph * 0.82} text="← Excess Capacity →" color={COLORS.area} size={9} anchor="middle" bold={false} />
+        </>
+      );
+    },
+  },
+
+  /* ── Keynesian Aggregate Supply ── */
+  keynesian_as: {
+    title: "Keynesian AS — Three Sections",
+    xAxis: "Real GDP (Y)", yAxis: "Price Level (PL)",
+    legend: [{ label: "Keynesian AS", color: COLORS.supply }, { label: "AD", color: COLORS.demand }],
+    examTips: [
+      "Horizontal section: spare capacity — output rises with NO inflation",
+      "Upward sloping: approaching full employment — output rises WITH some inflation",
+      "Vertical section: full employment (Yf) — only price level rises",
+      "Keynesian view: economy can get stuck below Yf with demand deficiency",
+    ],
+    render: (p) => {
+      const { mx, my, pw, ph } = p;
+      const pad = 10;
+      const yf = mx + pw * 0.72;
+      const flatY = my + ph * 0.68;
+
+      // Keynesian AS: horizontal → upward sloping → vertical
+      const kasPath = `M ${mx + pad + 5} ${flatY} L ${mx + pw * 0.42} ${flatY} Q ${mx + pw * 0.58} ${flatY - 10} ${yf} ${my + ph * 0.28} L ${yf} ${my + pad}`;
+
+      // AD curves at different positions
+      const ad1L = { x1: mx + pad + 20, y1: my + pad + 30, x2: mx + pw * 0.35, y2: my + ph - pad };
+      const ad2L = { x1: mx + pw * 0.15, y1: my + pad + 10, x2: mx + pw * 0.58, y2: my + ph - pad };
+      const ad3L = { x1: mx + pw * 0.40, y1: my + pad, x2: mx + pw * 0.82, y2: my + ph - pad };
+
+      return (
+        <>
+          <CurvePath d={kasPath} color={COLORS.supply} gradientId="grad-supply" width={3} glow="glow-red" />
+          <Label x={yf + 6} y={my + pad + 8} text="AS" color={COLORS.supply} />
+          {/* Section labels */}
+          <text x={mx + pw * 0.22} y={flatY + 18} textAnchor="middle" fontSize={7.5} fontWeight={600} fill={COLORS.eq}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Spare Capacity</text>
+          <text x={mx + pw * 0.56} y={my + ph * 0.42} textAnchor="middle" fontSize={7.5} fontWeight={600} fill={COLORS.shifted}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Near Full Emp.</text>
+          <text x={yf + 12} y={my + ph * 0.22} textAnchor="start" fontSize={7.5} fontWeight={600} fill={COLORS.lras}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Full Emp.</text>
+          {/* AD curves */}
+          <GLine {...ad1L} color={COLORS.demand} width={1.5} dashed />
+          <Label x={ad1L.x2 + 2} y={ad1L.y2 - 4} text="AD₁" color={COLORS.demand} size={9} />
+          <GLine {...ad2L} color={COLORS.demand} gradientId="grad-demand" width={2} />
+          <Label x={ad2L.x2 + 2} y={ad2L.y2 - 4} text="AD₂" color={COLORS.demand} size={9} />
+          <GLine {...ad3L} color={COLORS.demand} width={1.5} dashed />
+          <Label x={ad3L.x2 + 2} y={ad3L.y2 - 4} text="AD₃" color={COLORS.demand} size={9} />
+          {/* Yf label */}
+          <line x1={yf} y1={my + ph - pad} x2={yf} y2={my + ph - pad + 6} stroke="currentColor" strokeWidth={1.5} opacity={0.5} />
+          <text x={yf} y={my + ph + 14} textAnchor="middle" fontSize={9} fontWeight={700} fill="currentColor" opacity={0.6}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Yf</text>
+        </>
+      );
+    },
+  },
+
+  /* ── Trade with Quota ── */
+  trade_quota: {
+    title: "Effect of an Import Quota",
+    xAxis: "Quantity (Q)", yAxis: "Price (£)",
+    legend: [{ label: "S (Domestic)", color: COLORS.supply }, { label: "S (World)", color: COLORS.eq }, { label: "S+Quota", color: COLORS.shifted }, { label: "Demand", color: COLORS.demand }],
+    examTips: [
+      "World supply (Sw) is perfectly elastic at world price Pw",
+      "Quota restricts imports → S+Quota kinked above Sw",
+      "Price rises from Pw to Pq, domestic output rises, imports fall",
+      "Deadweight loss: areas between domestic S and D from Pw to Pq",
+    ],
+    render: (p) => {
+      const { mx, my, pw, ph } = p;
+      const pad = 10;
+      // Domestic supply: upward sloping
+      const dsL = { x1: mx + pad, y1: my + ph - pad, x2: mx + pw - pad, y2: my + pad + 30 };
+      // World supply: horizontal
+      const pwY = my + ph * 0.62;
+      // Quota supply: horizontal at higher price then follows domestic S
+      const pqY = my + ph * 0.45;
+      // Demand: downward
+      const dL = { x1: mx + pad + 10, y1: my + pad, x2: mx + pw - pad - 10, y2: my + ph - pad };
+
+      // Intersections
+      const dsSlopeLong = (dsL.y2 - dsL.y1) / (dsL.x2 - dsL.x1);
+      const dsAtPw = mx + pad + (pwY - (my + ph - pad)) / dsSlopeLong;
+      const dsAtPq = mx + pad + (pqY - (my + ph - pad)) / dsSlopeLong;
+      const dSlope = (dL.y2 - dL.y1) / (dL.x2 - dL.x1);
+      const dAtPw = dL.x1 + (pwY - dL.y1) / dSlope;
+      const dAtPq = dL.x1 + (pqY - dL.y1) / dSlope;
+
+      return (
+        <>
+          {/* Domestic supply */}
+          <GLine {...dsL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
+          <Label x={dsL.x2 + 2} y={dsL.y2 + 4} text="S (Dom.)" color={COLORS.supply} size={9} />
+          {/* World supply */}
+          <GLine x1={mx + pad} y1={pwY} x2={mx + pw - pad} y2={pwY} color={COLORS.eq} width={2} />
+          <Label x={mx + pw - pad + 2} y={pwY - 4} text="Sw" color={COLORS.eq} size={9} />
+          {/* Quota supply — kinked: horizontal at Pq from dsAtPq to a quota limit, then follows */}
+          <GLine x1={mx + pad} y1={pqY} x2={dAtPq} y2={pqY} color={COLORS.shifted} dashed width={2} />
+          <Label x={dAtPq + 4} y={pqY - 4} text="Sw+Quota" color={COLORS.shifted} size={9} />
+          {/* Demand */}
+          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color={COLORS.demand} />
+          {/* Imports bracket at Pw */}
+          <line x1={dsAtPw} y1={pwY + 8} x2={dAtPw} y2={pwY + 8} stroke={COLORS.area} strokeWidth={1.5} />
+          <Label x={(dsAtPw + dAtPw) / 2} y={pwY + 22} text="Imports (no quota)" color={COLORS.area} size={7} anchor="middle" bold={false} />
+          {/* Price labels */}
+          <text x={mx - 2} y={pwY + 4} textAnchor="end" fontSize={8} fontWeight={700} fill={COLORS.eq}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Pw</text>
+          <text x={mx - 2} y={pqY + 4} textAnchor="end" fontSize={8} fontWeight={700} fill={COLORS.shifted}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Pq</text>
+        </>
+      );
+    },
+  },
+
+  /* ── Short-Run Shutdown Point ── */
+  short_run_shutdown: {
+    title: "Short-Run Shutdown Point (P = min AVC)",
+    xAxis: "Output (Q)", yAxis: "Price / Cost (£)",
+    legend: [{ label: "MC", color: COLORS.supply }, { label: "ATC", color: COLORS.demand }, { label: "AVC", color: COLORS.shifted }, { label: "AR = MR", color: COLORS.eq }],
+    examTips: [
+      "Shutdown condition: AR < AVC (price below min AVC)",
+      "At shutdown point: P = min AVC — firm just covers variable costs",
+      "Below this price, losses exceed total fixed costs",
+      "Different from long-run shutdown: AR < AC",
+    ],
+    render: (p) => {
+      const { mx, my, pw, ph } = p;
+      const pad = 10;
+      // ATC U-shape
+      const atcPath = `M ${mx + pad + 20} ${my + pad + 10} Q ${mx + pw * 0.42} ${my + ph * 0.60} ${mx + pw - pad - 10} ${my + pad + 20}`;
+      // AVC U-shape (below ATC)
+      const avcMinY = my + ph * 0.65;
+      const avcMinX = mx + pw * 0.40;
+      const avcPath = `M ${mx + pad + 25} ${my + pad + 50} Q ${avcMinX - 5} ${avcMinY + 6} ${avcMinX} ${avcMinY} Q ${avcMinX + 30} ${avcMinY - 8} ${mx + pw - pad - 10} ${my + pad + 40}`;
+      // MC steep U-shape
+      const mcPath = `M ${mx + pad + 35} ${my + ph - pad - 20} Q ${mx + pw * 0.32} ${my + ph * 0.72} ${mx + pw * 0.38} ${avcMinY} Q ${mx + pw * 0.48} ${my + ph * 0.32} ${mx + pw - pad - 15} ${my + pad}`;
+      // AR = MR at shutdown price (horizontal at min AVC)
+      return (
+        <>
+          <CurvePath d={mcPath} color={COLORS.supply} gradientId="grad-supply" width={2.5} glow="glow-red" />
+          <Label x={mx + pw - pad - 5} y={my + pad + 8} text="MC" color={COLORS.supply} />
+          <CurvePath d={atcPath} color={COLORS.demand} gradientId="grad-demand" width={2} />
+          <Label x={mx + pw - pad} y={my + pad + 28} text="ATC" color={COLORS.demand} />
+          <CurvePath d={avcPath} color={COLORS.shifted} gradientId="grad-shifted" width={2} />
+          <Label x={mx + pw - pad} y={my + pad + 48} text="AVC" color={COLORS.shifted} />
+          {/* AR = MR at shutdown price */}
+          <GLine x1={mx + pad} y1={avcMinY} x2={mx + pw - pad} y2={avcMinY} color={COLORS.eq} width={1.5} dashed />
+          <Label x={mx + pw - pad + 2} y={avcMinY - 4} text="AR = MR" color={COLORS.eq} size={9} />
+          {/* Shutdown point */}
+          <PremiumDot x={avcMinX} y={avcMinY} color={COLORS.supply} label="Shutdown Point" gradientId="dot-green"
+            tooltipText="✓ P = min AVC — firm just covers variable costs" />
+          <DashedToAxes x={avcMinX} y={avcMinY} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="Ps" qLabel="Qs" />
+        </>
+      );
+    },
+  },
 };
 
 // Alias mappings
@@ -1254,6 +1540,33 @@ const ALIASES: Record<string, string> = {
   "game_theory": "oligopoly_payoff",
   "payoff_matrix": "oligopoly_payoff",
   "oligopoly": "oligopoly_payoff",
+  // New aliases from practice book
+  "cost_curve": "cost_curves",
+  "mc_ac": "cost_curves",
+  "mc_atc_avc": "cost_curves",
+  "short_run_costs": "cost_curves",
+  "average_cost": "cost_curves",
+  "marginal_cost": "cost_curves",
+  "long_run_average_cost": "lrac",
+  "economies_of_scale": "lrac",
+  "diseconomies_of_scale": "lrac",
+  "minimum_efficient_scale": "lrac",
+  "mes": "lrac",
+  "monopolistic": "monopolistic_competition",
+  "monopolistic_comp": "monopolistic_competition",
+  "excess_capacity": "monopolistic_competition",
+  "keynesian": "keynesian_as",
+  "keynesian_aggregate_supply": "keynesian_as",
+  "keynesian_adas": "keynesian_as",
+  "spare_capacity": "keynesian_as",
+  "quota": "trade_quota",
+  "import_quota": "trade_quota",
+  "tariff": "trade_quota",
+  "trade": "trade_quota",
+  "world_supply": "trade_quota",
+  "shutdown": "short_run_shutdown",
+  "shutdown_point": "short_run_shutdown",
+  "short_run_shutdown_point": "short_run_shutdown",
 };
 
 export function resolveDiagramType(raw: string): DiagramType | null {

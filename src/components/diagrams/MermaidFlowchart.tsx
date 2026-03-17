@@ -146,6 +146,75 @@ export const ECON_FLOWCHARTS: Record<string, FlowchartTemplate> = {
       "Key foundation for understanding GDP and multiplier",
     ],
   },
+  harrod_domar: {
+    title: "The Harrod-Domar Growth Model",
+    category: "Development Economics",
+    definition: `graph TD
+    A["Low savings ratio<br/>(s)"] --> B["Low investment<br/>(I = s × Y)"]
+    B --> C["Low capital<br/>accumulation"]
+    C --> D["Low productivity<br/>& output growth"]
+    D --> E["Low GDP<br/>per capita"]
+    E --> A
+    C --> F["High capital-output<br/>ratio worsens growth"]
+    D --> G["Poverty trap:<br/>cycle reinforces"]
+    style A fill:#ef4444,stroke:#dc2626,color:#fff
+    style E fill:#ef4444,stroke:#dc2626,color:#fff
+    style G fill:#f59e0b,stroke:#d97706,color:#fff
+    style B fill:#3b82f6,stroke:#2563eb,color:#fff`,
+    examTips: [
+      "Growth rate = savings ratio (s) / capital-output ratio (k)",
+      "Breaking the cycle requires: foreign aid, FDI, or forced savings",
+      "Criticisms: ignores diminishing returns, institutional quality, human capital",
+      "Relevant to developing economies stuck in poverty traps",
+    ],
+  },
+  balance_of_payments: {
+    title: "Balance of Payments — Current Account Deficit Chain",
+    category: "International Economics",
+    definition: `graph TD
+    A["Strong domestic<br/>currency"] --> B["Exports become<br/>more expensive"]
+    A --> C["Imports become<br/>cheaper"]
+    B --> D["Export revenue<br/>falls"]
+    C --> E["Import spending<br/>rises"]
+    D --> F["Current account<br/>deficit widens"]
+    E --> F
+    F --> G["Deficit must be<br/>financed"]
+    G --> H["Capital account<br/>surplus needed"]
+    G --> I["Currency<br/>depreciation pressure"]
+    style A fill:#3b82f6,stroke:#2563eb,color:#fff
+    style F fill:#ef4444,stroke:#dc2626,color:#fff
+    style I fill:#f59e0b,stroke:#d97706,color:#fff`,
+    examTips: [
+      "Marshall-Lerner condition: devaluation improves CA only if PED(X) + PED(M) > 1",
+      "J-curve effect: CA initially worsens before improving after depreciation",
+      "Expenditure-switching vs expenditure-reducing policies",
+    ],
+  },
+  inflation_causes: {
+    title: "Causes of Inflation — Demand-Pull vs Cost-Push",
+    category: "Macroeconomics",
+    definition: `graph TD
+    subgraph Demand-Pull
+    A1["Rise in AD"] --> A2["C, I, G, or X<br/>increases"]
+    A2 --> A3["Excess demand<br/>at current PL"]
+    A3 --> A4["Firms raise prices"]
+    end
+    subgraph Cost-Push
+    B1["Rise in costs<br/>of production"] --> B2["Wages, raw materials,<br/>energy prices"]
+    B2 --> B3["SRAS shifts left"]
+    B3 --> B4["Price level rises<br/>output falls"]
+    end
+    A4 --> C["Inflation"]
+    B4 --> C
+    style A1 fill:#3b82f6,stroke:#2563eb,color:#fff
+    style B1 fill:#ef4444,stroke:#dc2626,color:#fff
+    style C fill:#f59e0b,stroke:#d97706,color:#fff`,
+    examTips: [
+      "Demand-pull: 'too much money chasing too few goods'",
+      "Cost-push: leads to stagflation (↑PL + ↓GDP)",
+      "In evaluation, discuss which type is more significant in context",
+    ],
+  },
 };
 
 export function resolveFlowchartId(raw: string): string | null {
@@ -161,6 +230,16 @@ export function resolveFlowchartId(raw: string): string | null {
     government_spending: "fiscal_transmission",
     supply_side: "supply_side_policies",
     circular_flow_of_income: "circular_flow",
+    harrod_domar_model: "harrod_domar",
+    poverty_trap: "harrod_domar",
+    poverty_cycle: "harrod_domar",
+    bop: "balance_of_payments",
+    current_account: "balance_of_payments",
+    current_account_deficit: "balance_of_payments",
+    marshall_lerner: "balance_of_payments",
+    inflation: "inflation_causes",
+    demand_pull_vs_cost_push: "inflation_causes",
+    causes_of_inflation: "inflation_causes",
   };
   return aliases[key] || null;
 }
