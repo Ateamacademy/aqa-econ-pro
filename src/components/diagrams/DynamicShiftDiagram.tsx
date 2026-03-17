@@ -2,7 +2,7 @@
  * Dynamic Curve Shifting Component
  * Allows interactive control over which curve shifts and by how much.
  */
-import { useState, useMemo } from "react";
+import { useState, useMemo, useId } from "react";
 import { cn } from "@/lib/utils";
 import { Slider } from "@/components/ui/slider";
 
