@@ -1289,7 +1289,7 @@ export default function PredictedPapers() {
       : "";
 
     const prompt = dbContextPrompt
-      ? `${basePrompt}\n\n${dbContextPrompt}${scopeInstruction}\n\nMANDATORY QUALITY CHECK BEFORE FINAL OUTPUT: ensure the paper is full-length, exam-authentic, and as challenging as recent AQA papers (especially 9/25-mark questions). If any question feels too easy or generic, rewrite it to match A-Level standard before finishing.`
+      ? `${basePrompt}\n\n${dbContextPrompt}${scopeInstruction}\n\nMANDATORY QUALITY CHECK BEFORE FINAL OUTPUT: ensure the paper is full-length, exam-authentic, and matches the exact format, mark allocations, and difficulty level of recent ${examBoard} ${level} papers. If any question feels too easy or uses the wrong structure, rewrite it before finishing.`
       : `${basePrompt}${scopeInstruction}`;
 
     await streamChat({
