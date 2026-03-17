@@ -7,10 +7,19 @@ import { edexcelIgcsePastPapers, edexcelIgcsePaperTitles } from "@/data/edexcelI
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const DB_BASE = "https://www.dropbox.com/scl/fo/5bgrr9xxdquzczxgoeki8";
+const EXTRA_DB_BASE = "https://www.dropbox.com/scl/fo/rpunrrtk8js2ct7wccqob";
+const SPEC_URL = "https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/Economics/2017/Specification%20and%20SAMS/international-gcse-spec-9781446942789.pdf";
+const PMT_BASE = "https://www.physicsandmathstutor.com/past-papers/gcse-economics";
 
 const additionalResources = [
   { label: "Edexcel IGCSE Economics Resources", url: `${DB_BASE}/ACDp8GpoFGosLd8TvtF7Nj4?rlkey=g4mi7mns1zehcdh2jz1q23toz&dl=0` },
+  { label: "Additional Edexcel IGCSE Resources", url: `${EXTRA_DB_BASE}/ABfSWCpBMe9bkJ3fJdiSlNs?rlkey=y6zenlnsrxh953r8pgmibt4tq&dl=0` },
 ];
+
+const pmtPaperLinks = {
+  1: { title: "Paper 1 & Mark Schemes", url: `${PMT_BASE}/edexcel-igcse-paper-1/` },
+  2: { title: "Paper 2 & Mark Schemes", url: `${PMT_BASE}/edexcel-igcse-paper-2/` },
+};
 
 export default function EdexcelIgcsePastPapers() {
   const [search, setSearch] = useState("");
@@ -39,6 +48,50 @@ export default function EdexcelIgcsePastPapers() {
         <p className="text-muted-foreground">
           Browse Pearson Edexcel International GCSE Economics (4EC1) past papers and mark schemes from Physics & Maths Tutor.
         </p>
+      </div>
+
+      {/* Specification */}
+      <div className="mb-6">
+        <Card className="border-primary/20">
+          <CardContent className="p-5 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <FileText className="h-5 w-5 text-primary" />
+              <div>
+                <p className="font-semibold text-sm">Edexcel IGCSE Economics Specification (4EC1)</p>
+                <p className="text-xs text-muted-foreground">Official Pearson specification document</p>
+              </div>
+            </div>
+            <Button variant="outline" size="sm" className="gap-2" asChild>
+              <a href={SPEC_URL} target="_blank" rel="noopener noreferrer">
+                <Download className="h-3.5 w-3.5" /> Download PDF
+              </a>
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* PMT Direct Links */}
+      <div className="mb-8">
+        <h2 className="text-lg font-semibold mb-3 flex items-center gap-2">
+          <ExternalLink className="h-5 w-5 text-primary" /> Past Papers on PMT
+        </h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {([1, 2] as const).map((p) => (
+            <Card key={p} className="hover:shadow-sm transition-shadow">
+              <CardContent className="p-5">
+                <div className="flex items-center gap-3 mb-3">
+                  <FileText className="h-5 w-5 text-primary" />
+                  <h3 className="font-semibold text-sm">{pmtPaperLinks[p].title}</h3>
+                </div>
+                <Button variant="outline" size="sm" className="w-full gap-2" asChild>
+                  <a href={pmtPaperLinks[p].url} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="h-3.5 w-3.5" /> Browse on PMT
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
 
       {/* Additional Resources */}
