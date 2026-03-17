@@ -35,18 +35,48 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
     "Perfect Competition — Short Run & Long Run",
   ],
   "edexcel-a": [
+    // Section 1: PPFs, Markets and Allocation
+    "PPF — Balanced Growth / Biased Growth / Unemployed Resources",
     "Supply & Demand — Market Equilibrium Change",
     "Indirect Tax & Subsidy",
+    // Section 2: Market Failure
     "Negative / Positive Externality (Welfare Loss)",
+    "Negative Production Externality (MSC > MPC)",
+    // Section 3: Costs & Economies of Scale
+    "Short-Run Cost Curves (MC, ATC, AVC)",
+    "Long-Run Average Cost (Economies & Diseconomies of Scale)",
+    "Short-Run Shutdown Point (P = min AVC)",
+    // Section 4: Revenues, Profits & Other Objectives
+    "Monopoly — Supernormal Profit (MC = MR)",
+    "Perfect Competition — Short Run & Long Run Equilibrium",
+    "Monopolistic Competition — Normal Profit / Excess Capacity",
+    // Section 5: Market Structures
+    "Oligopoly — Kinked Demand Curve",
+    "Oligopoly — Game Theory / Payoff Matrix",
+    // Section 6: Labour Market
+    "Labour Market — Minimum Wage",
+    "Labour Market — Monopsony",
+    // Macro Section 1: National Income
     "AD/AS — Demand-Pull Inflation",
     "AD/AS — Cost-Push Inflation",
     "AD/AS — Supply-Side Policy Effect",
-    "Monopoly — Supernormal Profit",
-    "Oligopoly — Kinked Demand Curve",
-    "Labour Market — Minimum Wage",
+    "Keynesian AS — Spare Capacity vs Full Employment",
+    // Macro Section 2: Macro Objectives
+    "Phillips Curve — Short Run vs Long Run",
+    "Lorenz Curve & Gini Coefficient",
+    // Macro Section 3: Financial Markets
+    "Monetary Policy Transmission Mechanism (Flowchart)",
     "Exchange Rate Determination",
+    // Macro Section 4: Fiscal & Supply-Side
+    "Fiscal Policy Transmission Mechanism (Flowchart)",
+    "Multiplier Effect (Flowchart)",
+    // Macro Section 5: International Economy
+    "Trade Diagram — Effect of Import Quota / Tariff",
     "Terms of Trade",
     "J-Curve Effect (Balance of Payments)",
+    // Macro Section 6: Inequality & Development
+    "Harrod-Domar Growth Model (Flowchart)",
+    "Primary Product Dependency — Volatile Prices",
   ],
   "edexcel-b": [
     "Supply & Demand — Price Mechanism",

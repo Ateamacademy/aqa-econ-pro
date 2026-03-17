@@ -230,6 +230,16 @@ export function resolveFlowchartId(raw: string): string | null {
     government_spending: "fiscal_transmission",
     supply_side: "supply_side_policies",
     circular_flow_of_income: "circular_flow",
+    harrod_domar_model: "harrod_domar",
+    poverty_trap: "harrod_domar",
+    poverty_cycle: "harrod_domar",
+    bop: "balance_of_payments",
+    current_account: "balance_of_payments",
+    current_account_deficit: "balance_of_payments",
+    marshall_lerner: "balance_of_payments",
+    inflation: "inflation_causes",
+    demand_pull_vs_cost_push: "inflation_causes",
+    causes_of_inflation: "inflation_causes",
   };
   return aliases[key] || null;
 }
