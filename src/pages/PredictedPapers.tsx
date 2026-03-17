@@ -1269,6 +1269,14 @@ export default function PredictedPapers() {
       ? IGCSE_ECON_PAPER_PROMPT(paperLabel, paper)
       : isEdexcelIGCSE
       ? EDEXCEL_IGCSE_ECON_PAPER_PROMPT(paperLabel, paper)
+      : subject === "ib"
+      ? IB_ECON_PAPER_PROMPT(paperLabel, paper)
+      : subject === "wjec"
+      ? WJEC_ECON_PAPER_PROMPT(paperLabel, paper)
+      : subject === "eduqas"
+      ? EDUQAS_ECON_PAPER_PROMPT(paperLabel, paper)
+      : isOcrGcse
+      ? OCR_GCSE_ECON_PAPER_PROMPT(paperLabel, paper)
       : ECON_PAPER_PROMPT(paperLabel, paper);
 
     // Inject DB-retrieved patterns + topic scope for Economics
