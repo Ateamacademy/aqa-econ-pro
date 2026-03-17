@@ -33,7 +33,9 @@ export type DiagramType =
   | "price_floor"
   | "price_ceiling"
   | "monopoly"
-  | "perfect_competition";
+  | "perfect_competition"
+  | "lorenz_curve"
+  | "oligopoly_payoff";
 
 interface DiagramConfig {
   title: string;
@@ -1089,6 +1091,132 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       );
     },
   },
+
+  /* ── Lorenz Curve (Income Inequality) ── */
+  lorenz_curve: {
+    title: "Lorenz Curve — Income Distribution",
+    xAxis: "Cumulative % of Population", yAxis: "Cumulative % of Income",
+    legend: [{ label: "Line of Equality", color: COLORS.lras }, { label: "Lorenz Curve", color: COLORS.demand }, { label: "Gini Area", color: COLORS.area }],
+    examTips: [
+      "The further the Lorenz curve bows from the 45° line, the greater inequality",
+      "Gini coefficient = Area A / (Area A + Area B), range 0 to 1",
+      "0 = perfect equality, 1 = perfect inequality",
+      "Government redistribution shifts the curve closer to the 45° line",
+    ],
+    render: (p) => {
+      const { mx, my, pw, ph } = p;
+      const pad = 10;
+      const x0 = mx + pad, y0 = my + ph - pad;
+      const x1 = mx + pw - pad, y1 = my + pad;
+
+      // Line of equality (45° diagonal)
+      const eqLine = { x1: x0, y1: y0, x2: x1, y2: y1 };
+
+      // Lorenz curve (bowed below the equality line)
+      const lx1 = x0 + pw * 0.25, ly1 = y0 - ph * 0.06;
+      const lx2 = x0 + pw * 0.50, ly2 = y0 - ph * 0.18;
+      const lx3 = x0 + pw * 0.75, ly3 = y0 - ph * 0.42;
+      const lorenzPath = `M ${x0} ${y0} Q ${lx1} ${ly1 + 15} ${lx2} ${ly2 + 20} Q ${lx3 - 10} ${ly3 + 30} ${x1} ${y1}`;
+
+      // Shaded area between curves (simplified polygon)
+      const areaPath = `M ${x0} ${y0} L ${x1} ${y1} Q ${lx3 - 10} ${ly3 + 30} ${lx2} ${ly2 + 20} Q ${lx1} ${ly1 + 15} ${x0} ${y0} Z`;
+
+      return (
+        <>
+          {/* Shaded Gini area */}
+          <path d={areaPath} fill={COLORS.area} fillOpacity={0.10} />
+
+          {/* Line of equality */}
+          <GLine {...eqLine} color={COLORS.lras} dashed width={2} />
+          <Label x={x1 - 60} y={y1 + 20} text="Line of Equality" color={COLORS.lras} size={9} />
+
+          {/* Lorenz curve */}
+          <CurvePath d={lorenzPath} color={COLORS.demand} gradientId="grad-demand" width={3} glow="glow-blue" />
+          <Label x={lx2 - 20} y={ly2 + 42} text="Lorenz Curve" color={COLORS.demand} size={9} />
+
+          {/* Labels */}
+          <Label x={(x0 + x1) / 2 - 10} y={(y0 + y1) / 2 - 10} text="A" color={COLORS.area} size={14} anchor="middle" bg={false} />
+          <Label x={(x0 + x1) / 2 + 20} y={(y0 + y1) / 2 + 40} text="B" color={COLORS.demand} size={14} anchor="middle" bg={false} />
+        </>
+      );
+    },
+  },
+
+  /* ── Oligopoly Payoff Matrix (Game Theory) ── */
+  oligopoly_payoff: {
+    title: "Prisoner's Dilemma — Oligopoly Payoff Matrix",
+    xAxis: "", yAxis: "",
+    legend: [{ label: "Firm A", color: COLORS.demand }, { label: "Firm B", color: COLORS.supply }],
+    examTips: [
+      "Dominant strategy: both firms have incentive to cheat (lower price)",
+      "Nash equilibrium: both cheat — worst combined outcome",
+      "Collusion (both high price) is Pareto optimal but unstable",
+      "Key evaluation: repeated games, regulation, and trust can sustain collusion",
+    ],
+    render: (p) => {
+      const { mx, my, pw, ph } = p;
+      const cx = mx + pw * 0.5, cy = my + ph * 0.5;
+      const cellW = pw * 0.32, cellH = ph * 0.30;
+      const gapX = cellW + 8, gapY = cellH + 8;
+      const startX = cx - gapX / 2 - cellW / 2 + 10;
+      const startY = cy - gapY / 2 - cellH / 2 + 15;
+
+      const cells = [
+        { r: 0, c: 0, a: "£8m", b: "£8m", bg: "#16a34a20", border: "#16a34a" },
+        { r: 0, c: 1, a: "£2m", b: "£12m", bg: "#f59e0b15", border: "#f59e0b" },
+        { r: 1, c: 0, a: "£12m", b: "£2m", bg: "#f59e0b15", border: "#f59e0b" },
+        { r: 1, c: 1, a: "£5m", b: "£5m", bg: "#ef444420", border: "#ef4444" },
+      ];
+
+      const rowLabels = ["High Price", "Low Price"];
+      const colLabels = ["High Price", "Low Price"];
+
+      return (
+        <>
+          {/* Column header: Firm B */}
+          <text x={cx + 10} y={startY - 22} fill={COLORS.supply} fontSize="12" fontWeight="700" textAnchor="middle"
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Firm B</text>
+          {colLabels.map((label, ci) => (
+            <text key={`col${ci}`} x={startX + ci * gapX + cellW / 2} y={startY - 6} fill="currentColor" fontSize="9" fontWeight="600" textAnchor="middle"
+              style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{label}</text>
+          ))}
+          {/* Row header: Firm A */}
+          <text x={startX - 30} y={cy + 5} fill={COLORS.demand} fontSize="12" fontWeight="700" textAnchor="middle"
+            transform={`rotate(-90, ${startX - 30}, ${cy + 5})`}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Firm A</text>
+          {rowLabels.map((label, ri) => (
+            <text key={`row${ri}`} x={startX - 8} y={startY + ri * gapY + cellH / 2 + 4} fill="currentColor" fontSize="9" fontWeight="600" textAnchor="end"
+              style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{label}</text>
+          ))}
+
+          {/* Cells */}
+          {cells.map(({ r, c, a, b, bg, border }) => {
+            const x = startX + c * gapX;
+            const y = startY + r * gapY;
+            return (
+              <g key={`${r}${c}`}>
+                <rect x={x} y={y} width={cellW} height={cellH} rx={6} fill={bg} stroke={border} strokeWidth="1.5" />
+                {/* Diagonal line to separate A and B payoffs */}
+                <line x1={x} y1={y + cellH} x2={x + cellW} y2={y} stroke={border} strokeWidth="0.5" opacity="0.3" />
+                {/* Firm A payoff (top-left) */}
+                <text x={x + cellW * 0.3} y={y + cellH * 0.4} fill={COLORS.demand} fontSize="11" fontWeight="700" textAnchor="middle"
+                  style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{a}</text>
+                {/* Firm B payoff (bottom-right) */}
+                <text x={x + cellW * 0.7} y={y + cellH * 0.72} fill={COLORS.supply} fontSize="11" fontWeight="700" textAnchor="middle"
+                  style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{b}</text>
+              </g>
+            );
+          })}
+
+          {/* Nash equilibrium indicator */}
+          <text x={startX + gapX + cellW / 2} y={startY + gapY + cellH + 18} fill={COLORS.shifted} fontSize="9" fontWeight="700" textAnchor="middle"
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
+            ★ Nash Equilibrium (Both Low Price)
+          </text>
+        </>
+      );
+    },
+  },
 };
 
 // Alias mappings
@@ -1118,6 +1246,14 @@ const ALIASES: Record<string, string> = {
   "price_elasticity": "ped_elastic",
   "monopoly_profit": "monopoly",
   "profit_maximisation": "monopoly",
+  "lorenz": "lorenz_curve",
+  "income_inequality": "lorenz_curve",
+  "gini": "lorenz_curve",
+  "gini_coefficient": "lorenz_curve",
+  "prisoners_dilemma": "oligopoly_payoff",
+  "game_theory": "oligopoly_payoff",
+  "payoff_matrix": "oligopoly_payoff",
+  "oligopoly": "oligopoly_payoff",
 };
 
 export function resolveDiagramType(raw: string): DiagramType | null {
