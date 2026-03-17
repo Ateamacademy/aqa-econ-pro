@@ -137,7 +137,7 @@ export function DynamicShiftDiagram({ initialShift, title, className }: DynamicS
       {/* SVG Diagram */}
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full max-w-[480px] h-auto">
         <defs>
-          <clipPath id="shift-clip"><rect x={mx} y={my} width={pw} height={ph} /></clipPath>
+          <clipPath id={`shift-clip-${uid}`}><rect x={mx} y={my} width={pw} height={ph} /></clipPath>
         </defs>
         {/* Grid */}
         <rect x={mx} y={my} width={pw} height={ph} fill="none" stroke="currentColor" strokeWidth="0.3" opacity="0.1" />
