@@ -576,12 +576,19 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={mpbL.x2 + 4} y={mpbL.y2 - 6} text="D = MPB" color={COLORS.mpb} />
           <GLine {...msbL} color={COLORS.demand} gradientId="grad-demand" dashed glow="glow-blue" />
           <Label x={msbL.x2 + 4} y={msbL.y2 - 6} text="MSB" color={COLORS.demand} />
-          {/* Welfare loss triangle — solid fill with bold boundary */}
-          <polygon
-            points={`${optEq.x},${optEq.y} ${freeEq.x},${freeEq.y} ${freeEq.x},${msbAtFreeX}`}
-            fill="#ef4444" fillOpacity={0.3} stroke="#ef4444" strokeWidth={2}
+          {/* Welfare loss triangle — closed polygon with bold boundary */}
+          <WelfareRegion
+            points={[
+              { x: optEq.x, y: optEq.y },
+              { x: freeEq.x, y: freeEq.y },
+              { x: freeEq.x, y: msbAtFreeX },
+            ]}
+            fill="#ef4444"
+            fillOpacity={0.35}
+            strokeWidth={2.5}
+            label="WL"
+            labelSize={9}
           />
-          <Label x={(optEq.x + freeEq.x) / 2} y={(freeEq.y + msbAtFreeX) / 2 + 4} text="WL" color="#ef4444" size={9} anchor="middle" />
           {/* Tax annotation arrow at Q* */}
           <line x1={optEq.x - 10} y1={optEq.y} x2={optEq.x - 10} y2={mpbAtOptX} stroke={COLORS.shifted} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
           <Label x={optEq.x - 16} y={(optEq.y + mpbAtOptX) / 2 + 3} text="Tax" color={COLORS.shifted} size={8} anchor="end" />
