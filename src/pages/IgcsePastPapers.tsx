@@ -27,6 +27,30 @@ export default function IgcsePastPapers() {
         <p className="text-muted-foreground">Browse Cambridge International IGCSE Economics (0455) past papers and resources.</p>
       </div>
 
+      {/* Additional Resources */}
+      <div className="mb-8">
+        <h2 className="text-lg font-semibold mb-3 flex items-center gap-2">
+          <FolderOpen className="h-5 w-5 text-primary" /> Additional Resources
+        </h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {additionalResources.map((r) => (
+            <Card key={r.label} className="hover:shadow-sm transition-shadow border-primary/20">
+              <CardContent className="p-5">
+                <div className="flex items-center gap-3 mb-3">
+                  <ExternalLink className="h-5 w-5 text-primary" />
+                  <h3 className="font-semibold text-sm">{r.label}</h3>
+                </div>
+                <Button variant="outline" size="sm" className="w-full gap-2" asChild>
+                  <a href={r.url} target="_blank" rel="noopener noreferrer">
+                    <Download className="h-3.5 w-3.5" /> Browse Resources
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {resources.map((r) => (
           <Card key={r.label} className="hover:shadow-sm transition-shadow">
