@@ -6,10 +6,9 @@ import { Input } from "@/components/ui/input";
 import { ibPastPapers, ibPaperTitles } from "@/data/ibPastPapers";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-const DB_BASE = "https://www.dropbox.com/scl/fo/nnwc226sncb64devriexb";
-
 const additionalResources = [
-  { label: "IB Economics Resources", url: `${DB_BASE}/ANS9dE5bhz3PEyfQ12yAQ6Q?rlkey=pqayuq07hwiw8uygtt3jpikg1&dl=0` },
+  { label: "IB Economics HL Resources", url: "https://www.dropbox.com/scl/fo/8ftffx98ngsjgha80zh9m/ANnRZtTvNJ8Y1-Di16q3Ot0?rlkey=7xb20js9yw3hd6zqh9n9jpkkw&dl=0" },
+  { label: "IB Economics SL Resources", url: "https://www.dropbox.com/scl/fo/6ik4qultkpqkh9t8oxv0r/AHhTm3r7Uqw2Rf40kWPlgdY?rlkey=ha13m2hxd9v4n95giy54gp2em&dl=0" },
 ];
 
 export default function IbPastPapers() {

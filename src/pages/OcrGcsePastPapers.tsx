@@ -7,10 +7,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const PMT_BASE = "https://www.physicsandmathstutor.com/past-papers/gcse-economics";
 const SPEC_URL = "https://www.ocr.org.uk/Images/306377-specification-accredited-gcse-economics-j205.pdf";
 
-const DB_BASE = "https://www.dropbox.com/scl/fo/k2lzge03t6xo3dlfzw3cm";
-
 const additionalResources = [
-  { label: "OCR GCSE Economics Resources", url: `${DB_BASE}/AI1rn11oAtjHc2fKnjfPIHw?rlkey=y2fkr51adqws12ytno2vedq22&dl=0` },
+  { label: "OCR GCSE Economics Resources", url: "https://www.dropbox.com/scl/fo/ii3w8frzdph4q6vaxonow/AP3gyUDUhXj-eIS1pxYoka4?rlkey=bsc5tjyg2jxpzhy3a8oeky5w3&dl=0" },
 ];
 
 const paperLinks = {
