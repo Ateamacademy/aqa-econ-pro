@@ -1216,11 +1216,20 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           {/* AC line (simplified as horizontal) */}
           <GLine x1={mx + pad} y1={acY} x2={mx + pw - pad} y2={acY} color={COLORS.lras} dashed width={1} />
           <Label x={mx + pw - pad - 18} y={acY - 6} text="AC" color={COLORS.lras} size={10} />
-          {/* Supernormal profit area */}
-          <rect x={mx} y={priceY} width={mcMrInt.x - mx} height={acY - priceY}
-            fill="url(#grad-area)" fillOpacity={0.10} rx={3} />
-          <Label x={(mx + mcMrInt.x) / 2} y={(priceY + acY) / 2 + 4} text="Supernormal" color={COLORS.area} size={8} anchor="middle" />
-          <Label x={(mx + mcMrInt.x) / 2} y={(priceY + acY) / 2 + 14} text="Profit" color={COLORS.area} size={8} anchor="middle" />
+          {/* Supernormal profit area — closed polygon */}
+          <WelfareRegion
+            points={[
+              { x: mx, y: priceY },
+              { x: mcMrInt.x, y: priceY },
+              { x: mcMrInt.x, y: acY },
+              { x: mx, y: acY },
+            ]}
+            fill="#8b5cf6"
+            fillOpacity={0.20}
+            strokeWidth={2}
+            label="Supernormal Profit"
+            labelSize={8}
+          />
 
           {/* Projection from Qₘ up to AR (price) */}
           <DashedToAxes x={mcMrInt.x} y={priceY} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="Pₘ" qLabel="Qₘ" />
