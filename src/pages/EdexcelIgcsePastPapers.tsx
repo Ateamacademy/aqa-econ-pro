@@ -7,10 +7,19 @@ import { edexcelIgcsePastPapers, edexcelIgcsePaperTitles } from "@/data/edexcelI
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const DB_BASE = "https://www.dropbox.com/scl/fo/5bgrr9xxdquzczxgoeki8";
+const EXTRA_DB_BASE = "https://www.dropbox.com/scl/fo/rpunrrtk8js2ct7wccqob";
+const SPEC_URL = "https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/Economics/2017/Specification%20and%20SAMS/international-gcse-spec-9781446942789.pdf";
+const PMT_BASE = "https://www.physicsandmathstutor.com/past-papers/gcse-economics";
 
 const additionalResources = [
   { label: "Edexcel IGCSE Economics Resources", url: `${DB_BASE}/ACDp8GpoFGosLd8TvtF7Nj4?rlkey=g4mi7mns1zehcdh2jz1q23toz&dl=0` },
+  { label: "Additional Edexcel IGCSE Resources", url: `${EXTRA_DB_BASE}/ABfSWCpBMe9bkJ3fJdiSlNs?rlkey=y6zenlnsrxh953r8pgmibt4tq&dl=0` },
 ];
+
+const pmtPaperLinks = {
+  1: { title: "Paper 1 & Mark Schemes", url: `${PMT_BASE}/edexcel-igcse-paper-1/` },
+  2: { title: "Paper 2 & Mark Schemes", url: `${PMT_BASE}/edexcel-igcse-paper-2/` },
+};
 
 export default function EdexcelIgcsePastPapers() {
   const [search, setSearch] = useState("");
