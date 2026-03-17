@@ -44,6 +44,7 @@ const EXAM_DURATIONS: Record<string, Record<string, number>> = {
   "aqa-gcse":       { "1": 105, "2": 105, full: 105 },
   "cambridge-igcse": { "1": 45, "2": 135, full: 135 },
   "edexcel-igcse":  { "1": 75,  "2": 85,  full: 85 },
+  "ocr-gcse":       { "1": 75,  "2": 75,  full: 75 },
 };
 
 type QuestionFeedback = {
