@@ -93,6 +93,10 @@ const paperSections: Record<Subject, PaperSection[]> = {
     { heading: "Paper 1 — Microeconomics & Business Economics", topics: edexcelIgcsePaper1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
     { heading: "Paper 2 — Macroeconomics & the Global Economy", topics: edexcelIgcsePaper2Topics, prefix: "p2", icon: "📘", color: "var(--revision-blue)" },
   ],
+  "ocr-gcse": [
+    { heading: "Component 1 — Introduction to Economics", topics: ocrGcseComponent1Topics, prefix: "c1", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Component 2 — National & International Economics", topics: ocrGcseComponent2Topics, prefix: "c2", icon: "📘", color: "var(--revision-blue)" },
+  ],
 };
 
 /* ── Stat card with notebook aesthetic ── */
