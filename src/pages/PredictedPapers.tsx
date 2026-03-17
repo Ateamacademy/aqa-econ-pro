@@ -41,6 +41,9 @@ const EXAM_DURATIONS: Record<string, Record<string, number>> = {
   "edexcel-b":      { "1": 120, "2": 120, full: 120 },
   "ocr":            { "1": 120, "2": 120, full: 120 },
   "cambridge":      { "1": 75,  "2": 135, full: 135 },
+  "ib":             { "1": 90,  "2": 105, full: 105 },
+  "wjec":           { "1": 90,  "2": 90,  full: 120 },
+  "eduqas":         { "1": 120, "2": 120, full: 135 },
   "aqa-gcse":       { "1": 105, "2": 105, full: 105 },
   "cambridge-igcse": { "1": 45, "2": 135, full: 135 },
   "edexcel-igcse":  { "1": 75,  "2": 85,  full: 85 },
@@ -543,6 +546,294 @@ FIGURE/CHART FORMAT:
 - Data: markdown tables with Source line
 - Diagrams: describe with structured text (axes, curves, key points)`;
 };
+const IB_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
+  const paperNum = paperValue === "full" ? "3" : paperValue.includes("1") ? "1" : "2";
+
+  const templates: Record<string, string> = {
+    "1": `PAPER 1: Extended Response — SL: 1h15m, HL: 1h30m, 25 marks (SL) / 40 marks (HL)
+## Part (a) [10 marks] — Explain
+Using economic theory and real-world examples, explain [microeconomic/macroeconomic concept].
+Requires definitions, diagrams, and chains of reasoning.
+
+## Part (b) [15 marks] — Evaluate (SL: 15m, HL: 15m)
+"Evaluate the view that..." / "Discuss whether..." / "To what extent..."
+Requires: definitions (2), diagrams (1-2), real-world examples (2+), evaluation with counter-arguments, and a reasoned conclusion.
+
+STRUCTURE:
+- Choose ONE question from a choice of THREE. Each question is from a DIFFERENT syllabus unit.
+- Each question has Part (a) and Part (b).
+- HL candidates also answer a THIRD part: Part (c) [10 marks] — deeper analysis with HL extension content.
+- Syllabus units: Unit 1 (Intro to Economics), Unit 2 (Microeconomics), Unit 3 (Macroeconomics), Unit 4 (The Global Economy).`,
+    "2": `PAPER 2: Data Response — SL: 1h45m, HL: 1h45m, 40 marks
+## Question structure (choose ONE from TWO):
+Each question provides:
+- A real-world text extract (200-400 words) with economic data
+- Supporting data (table/chart with specific figures)
+
+Sub-questions:
+Question 01a [2 marks] — Define a key term from the text
+Question 01b [2 marks] — Define another key term from the text  
+Question 01c [4 marks] — Using an economic diagram, explain...
+Question 01d [4 marks] — Using the text/data, explain...
+Question 01e [4 marks] — Using an economic diagram, explain...
+Question 01f [8 marks] — Using information from the text/data AND your knowledge of economics, discuss/evaluate...
+
+HL ADDITIONAL (if HL):
+Question 01g [4 marks] — Calculate/analyse using quantitative data
+Question 01h [6 marks] — Evaluate with HL extension theory
+
+Topics span: micro, macro, international trade, development.`,
+    "3": `PAPER 3: HL Extension Paper — 1h45m, 60 marks (HL ONLY)
+## Question structure (answer TWO from THREE):
+Each question provides a brief scenario/context (2-3 sentences).
+
+Sub-questions per question:
+Question 01a [2 marks] — Define a key economic term
+Question 01b [4 marks] — Using a diagram, explain...
+Question 01c [4 marks] — Calculate (using given data: elasticity, multiplier, tariff effects, etc.)
+Question 01d [4 marks] — Using a diagram, explain a policy/theory
+Question 01e [6 marks] — Using your knowledge of economics, explain the likely consequences...
+Question 01f [10 marks] — "Evaluate..." / "Discuss..." / "To what extent..."
+
+HL-ONLY TOPICS to include: theory of the firm (revenue/cost curves), market power, asymmetric information, terms of trade, economic integration, fiscal/monetary effectiveness, Keynesian vs monetarist, market-based vs interventionist strategies for development.`,
+  };
+
+  return `You are an expert IB Economics examiner trained on every IB Economics paper from 2020–2024 (both SL and HL, Papers 1, 2, and 3).
+
+Generate a COMPLETE predicted exam paper for ${paperLabel}.
+
+${templates[paperNum]}
+
+CRITICAL RULES:
+1. Follow the IB Economics template structure EXACTLY — NOT AQA or any other board
+2. Use real-world examples and data from 2023-2025
+3. Paper 1: Essay-based, Part (a) = explain, Part (b) = evaluate with criteria
+4. Paper 2: Data response with extracts containing specific numerical data
+5. Paper 3 (HL only): Includes calculations (elasticity, multiplier, tariffs, terms of trade)
+6. Diagrams must be appropriate IB style (S&D, AD/AS, cost curves, Lorenz curve, J-curve, etc.)
+7. Use IB command words: "Define", "Explain", "Analyse", "Evaluate", "Discuss", "To what extent", "Compare and contrast"
+8. 10+ mark questions require: definitions, diagrams, real-world examples, stakeholder perspectives, and a reasoned conclusion
+
+OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+- EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
+  Examples: Question 01a [10 marks], Question 01b [15 marks], Question 02a [2 marks]
+- Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks.
+- The question text MUST appear AFTER the [Y marks] tag, either on the same line or the next line
+- WRONG: **Question 1** text [2], Question 1 text (2 marks)
+- CORRECT: Question 01a [10 marks] Using economic theory, explain how...
+- Do NOT include mark schemes or answers
+
+FIGURE/CHART FORMAT:
+- NEVER use ASCII art
+- Data: markdown tables with Source line
+- Diagrams: structured text with axes, curves, equilibrium points`;
+};
+
+const WJEC_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
+  const paperNum = paperValue === "full" ? "full" : paperValue.includes("1") ? "1" : "2";
+
+  const templates: Record<string, string> = {
+    "1": `UNIT 1: Introduction to Economics (AS) — 1h30m, 60 marks
+## Section A: Data Response (compulsory, 30 marks)
+Data stimulus with 1-2 extracts + data table.
+Question 01 [2 marks] — Define a key term
+Question 02 [2 marks] — State/identify from data
+Question 03 [4 marks] — Explain with reference to data
+Question 04 [6 marks] — Explain, using a diagram
+Question 05 [8 marks] — Analyse with data application
+Question 06 [8 marks] — Evaluate/Discuss
+
+## Section B: Essay (choose ONE from TWO, 30 marks)
+Question 07 [12 marks] — "Explain..." / "Analyse..."
+Question 08 [18 marks] — "Evaluate..." / "Discuss..." / "To what extent..."
+
+Topics: market mechanisms, demand & supply, elasticity, market failure, externalities, public goods, government intervention.`,
+    "2": `UNIT 2: Economics in Action (AS) — 1h30m, 60 marks
+Same structure as Unit 1 but MACRO topics:
+Section A: Data response (30 marks) with macroeconomic data
+Section B: Essay choice (30 marks) — 12m + 18m
+
+Topics: economic indicators, AD/AS, economic growth, unemployment, inflation, fiscal policy, monetary policy, supply-side policies, balance of payments.`,
+    "full": `UNITS 3 & 4: A2 Applied Economics — 2 hours, 80 marks
+## Section A: Data Response (compulsory, 40 marks)
+Extended case study with 3-4 extracts covering both micro and macro themes.
+Question 01 [2 marks] — Define
+Question 02 [4 marks] — Explain
+Question 03 [6 marks] — Analyse with diagram
+Question 04 [8 marks] — Assess/Evaluate
+Question 05 [20 marks] — Extended evaluation essay
+
+## Section B: Essay (choose ONE from THREE, 40 marks)
+Question 06/07/08 [40 marks] — Full essay with analysis and evaluation, requiring synoptic micro+macro links.
+Two-part structure: Part (a) [16 marks] explain/analyse + Part (b) [24 marks] evaluate.
+
+Topics: market structures, labour markets, income distribution, trade, globalisation, development, macro policy effectiveness.`,
+  };
+
+  return `You are an expert WJEC A-Level Economics examiner trained on WJEC Economics papers.
+
+Generate a COMPLETE predicted exam paper for ${paperLabel}.
+
+${templates[paperNum]}
+
+CRITICAL RULES:
+1. Follow the WJEC template structure EXACTLY — NOT AQA format
+2. WJEC uses Units (not Papers): Unit 1 = AS micro, Unit 2 = AS macro, Units 3/4 = A2
+3. Section A data response is compulsory; Section B is essay choice
+4. Use realistic Welsh/UK economic data and examples where appropriate
+5. 6-mark questions must require a labelled diagram
+6. 18+ mark questions require evaluation with counter-arguments and reasoned judgement
+7. Use WJEC command words: "Define", "Explain", "Analyse", "Evaluate", "Discuss", "To what extent"
+
+OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+- EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
+- Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks.
+- The question text MUST appear AFTER the [Y marks] tag
+- CORRECT: Question 01 [2 marks] Define the term "market failure".
+- Do NOT include mark schemes or answers
+
+FIGURE/CHART FORMAT:
+- NEVER use ASCII art
+- Data: markdown tables with Source line
+- Diagrams: structured text with axes, curves, equilibrium points`;
+};
+
+const EDUQAS_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
+  const paperNum = paperValue === "full" ? "3" : paperValue.includes("1") ? "1" : "2";
+
+  const templates: Record<string, string> = {
+    "1": `COMPONENT 1: Markets and Market Failure — 2 hours, 80 marks
+## Section A: Data Response (compulsory, 40 marks)
+Case study with 2-3 extracts + data figures.
+Question 01 [2 marks] — Define
+Question 02 [4 marks] — Explain with reference to data
+Question 03 [6 marks] — Explain using a diagram
+Question 04 [8 marks] — Analyse
+Question 05 [20 marks] — "Evaluate..." / "To what extent..."
+
+## Section B: Essay (choose ONE from THREE, 40 marks)
+Each essay has two parts:
+Part (a) [16 marks] — Explain/Analyse
+Part (b) [24 marks] — Evaluate with counter-arguments and judgement
+
+Topics: demand & supply, elasticity, market failure, externalities, public goods, merit goods, government intervention, market structures.`,
+    "2": `COMPONENT 2: National and International Economy — 2 hours, 80 marks
+Same structure as Component 1 but MACRO topics:
+Section A: Data response (40 marks) with macro data (GDP, inflation, trade)
+Section B: Essay choice (40 marks) — two-part essay
+
+Topics: economic growth, unemployment, inflation, AD/AS, fiscal policy, monetary policy, supply-side policies, international trade, exchange rates, balance of payments, globalisation, development.`,
+    "3": `COMPONENT 3: Synoptic Data Response — 2h15m, 80 marks
+SYNOPTIC PAPER — draws on BOTH micro AND macro content.
+## Section A: Data Response (compulsory, 40 marks)
+Extended case study with 3-4 extracts combining micro and macro themes.
+Question 01 [2 marks] — Define
+Question 02 [4 marks] — Explain
+Question 03 [8 marks] — Analyse with diagram
+Question 04 [26 marks] — Extended evaluation requiring synoptic links
+
+## Section B: Essay (choose ONE from TWO, 40 marks)
+Question 05/06 [40 marks] — Synoptic essay with two parts:
+Part (a) [16 marks] — Analyse
+Part (b) [24 marks] — Evaluate
+
+Each essay MUST require links between micro and macro concepts.`,
+  };
+
+  return `You are an expert Eduqas A-Level Economics examiner.
+
+Generate a COMPLETE predicted exam paper for ${paperLabel}.
+
+${templates[paperNum]}
+
+CRITICAL RULES:
+1. Follow the Eduqas template structure EXACTLY — NOT AQA or WJEC format
+2. Eduqas uses Components (not Papers): Component 1 = micro, Component 2 = macro, Component 3 = synoptic
+3. Section A is compulsory data response; Section B is essay choice
+4. Use realistic UK/Welsh economic data and examples
+5. 6-mark questions must require a labelled diagram
+6. 20+ mark questions require sustained evaluation with counter-arguments
+7. Use Eduqas command words: "Define", "Explain", "Analyse", "Evaluate", "Discuss", "To what extent"
+8. Component 3 questions MUST explicitly link micro and macro concepts
+
+OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+- EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
+- Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks.
+- The question text MUST appear AFTER the [Y marks] tag
+- CORRECT: Question 01 [2 marks] Define the term "opportunity cost".
+- Do NOT include mark schemes or answers
+
+FIGURE/CHART FORMAT:
+- NEVER use ASCII art
+- Data: markdown tables with Source line
+- Diagrams: structured text with axes, curves, equilibrium points`;
+};
+
+const OCR_GCSE_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
+  const paperNum = paperValue === "full" ? "full" : paperValue.includes("1") ? "1" : "2";
+
+  const templates: Record<string, string> = {
+    "1": `COMPONENT 1: Introduction to Economics (J205/01) — 1h15m, 60 marks
+## Section A: Multiple Choice (15 marks)
+15 MCQs (1 mark each, A/B/C/D). Mix of recall, application, and data interpretation.
+Topics: scarcity, opportunity cost, specialisation, demand & supply, PED, market failure, government intervention.
+
+## Section B: Short Answer and Data Response (25 marks)
+2-3 structured questions with sub-parts.
+Questions: 1m state → 2m explain → 4m analyse → 6m explain with diagram
+
+## Section C: Extended Response (20 marks)
+Choose ONE from TWO extended writing questions.
+Question has two parts:
+Part (a) [8 marks] — Explain/Analyse
+Part (b) [12 marks] — "Evaluate..." / "Discuss..."
+
+Topics: the role of markets, demand & supply, elasticity, market failure, externalities, government intervention.`,
+    "2": `COMPONENT 2: National and International Economics (J205/02) — 1h15m, 60 marks
+Same structure as Component 1 but MACRO topics:
+Section A: 15 MCQs (15 marks)
+Section B: Short answer and data response (25 marks) with macro data
+Section C: Extended response choice (20 marks)
+
+Topics: economic growth, unemployment, inflation, fiscal policy, monetary policy, international trade, globalisation, exchange rates.`,
+    "full": `FULL PAPER covering BOTH Components — 60 marks total.
+Section A: 15 MCQs spanning micro and macro (15 marks)
+Section B: Structured questions with data (25 marks)
+Section C: Extended response (20 marks)`,
+  };
+
+  return `You are an expert OCR GCSE Economics (J205) chief examiner.
+
+Generate a COMPLETE predicted exam paper for ${paperLabel}.
+
+${templates[paperNum]}
+
+CRITICAL RULES:
+1. Follow the OCR GCSE template structure EXACTLY — this is GCSE level, NOT A-Level
+2. This is OCR J205, NOT OCR H460 (A-Level) — keep difficulty appropriate for GCSE students
+3. Total marks: 60 per component (NOT 80)
+4. Duration: 1h15m per component (NOT 2 hours)
+5. Questions must be accessible for GCSE students aged 15-16
+6. Include at least 2 data extracts with tables/figures
+7. 6-mark questions require some analysis and evaluation
+8. 12-mark questions require balanced evaluation with counter-arguments
+9. Use OCR GCSE command words: "Define", "State", "Describe", "Explain", "Analyse", "Evaluate", "Discuss"
+10. MCQ options must have plausible distractors
+
+OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+- EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
+- Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks.
+- The question text MUST appear AFTER the [Y marks] tag
+- MCQ options on separate lines: - A, - B, - C, - D
+- CORRECT: Question 01 [1 marks] What is meant by the term "scarcity"?
+- Do NOT include mark schemes or answers
+
+FIGURE/CHART FORMAT:
+- NEVER use ASCII art
+- Data: markdown tables with Source line
+- Diagrams: structured text with axes, curves, key points`;
+};
+
 const ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
   const paperNum = paperValue === "full" ? "3" : paperValue.includes("1") ? "1" : "2";
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum);
@@ -898,7 +1189,8 @@ export default function PredictedPapers() {
   const isIGCSE = subject === "cambridge-igcse";
   const isEdexcelIGCSE = subject === "edexcel-igcse";
   const isOcrGcse = subject === "ocr-gcse";
-  const isAnyIGCSEorGCSE = isGCSE || isIGCSE || isEdexcelIGCSE || isOcrGcse;
+  const isIB = subject === "ib";
+  const isAnyIGCSEorGCSE = isGCSE || isIGCSE || isEdexcelIGCSE || isOcrGcse || isIB;
   const isAnyEcon = true;
 
   const examDuration = useMemo(() => {
@@ -955,7 +1247,7 @@ export default function PredictedPapers() {
     if (isAnyEcon) {
       try {
         const { data: patternData } = await supabase.functions.invoke("retrieve-patterns", {
-          body: { paper, subject: isEdexcelA ? "edexcel-a" : isEdexcelB ? "edexcel-b" : isOCR ? "ocr_economics" : isCambridge ? "cambridge" : isGCSE ? "aqa-gcse" : isIGCSE ? "cambridge-igcse" : isEdexcelIGCSE ? "edexcel-igcse" : isOcrGcse ? "ocr_gcse" : "economics", limit: 250 },
+          body: { paper, subject: isEdexcelA ? "edexcel-a" : isEdexcelB ? "edexcel-b" : isOCR ? "ocr_economics" : isCambridge ? "cambridge" : isGCSE ? "aqa-gcse" : isIGCSE ? "cambridge-igcse" : isEdexcelIGCSE ? "edexcel-igcse" : isOcrGcse ? "ocr_gcse" : isIB ? "ib_economics" : subject === "wjec" ? "wjec" : subject === "eduqas" ? "eduqas" : "economics", limit: 250 },
         });
         if (patternData?.contextPrompt) {
           dbContextPrompt = patternData.contextPrompt;
@@ -981,6 +1273,14 @@ export default function PredictedPapers() {
       ? IGCSE_ECON_PAPER_PROMPT(paperLabel, paper)
       : isEdexcelIGCSE
       ? EDEXCEL_IGCSE_ECON_PAPER_PROMPT(paperLabel, paper)
+      : subject === "ib"
+      ? IB_ECON_PAPER_PROMPT(paperLabel, paper)
+      : subject === "wjec"
+      ? WJEC_ECON_PAPER_PROMPT(paperLabel, paper)
+      : subject === "eduqas"
+      ? EDUQAS_ECON_PAPER_PROMPT(paperLabel, paper)
+      : isOcrGcse
+      ? OCR_GCSE_ECON_PAPER_PROMPT(paperLabel, paper)
       : ECON_PAPER_PROMPT(paperLabel, paper);
 
     // Inject DB-retrieved patterns + topic scope for Economics
@@ -993,7 +1293,7 @@ export default function PredictedPapers() {
       : "";
 
     const prompt = dbContextPrompt
-      ? `${basePrompt}\n\n${dbContextPrompt}${scopeInstruction}\n\nMANDATORY QUALITY CHECK BEFORE FINAL OUTPUT: ensure the paper is full-length, exam-authentic, and as challenging as recent AQA papers (especially 9/25-mark questions). If any question feels too easy or generic, rewrite it to match A-Level standard before finishing.`
+      ? `${basePrompt}\n\n${dbContextPrompt}${scopeInstruction}\n\nMANDATORY QUALITY CHECK BEFORE FINAL OUTPUT: ensure the paper is full-length, exam-authentic, and matches the exact format, mark allocations, and difficulty level of recent ${examBoard} ${level} papers. If any question feels too easy or uses the wrong structure, rewrite it before finishing.`
       : `${basePrompt}${scopeInstruction}`;
 
     await streamChat({

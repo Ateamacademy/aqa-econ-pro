@@ -212,6 +212,63 @@ serve(async (req) => {
         contextPrompt += "- Section B: Extended synoptic essay (25 marks) requiring analysis from both micro and macro perspectives.\n";
         contextPrompt += "- Questions must explicitly link micro concepts (e.g. externalities, market structures) to macro outcomes (e.g. growth, inequality).\n";
       }
+    } else if (subjectKey === "ib_economics" || subjectKey === "ib") {
+      if ((paper || "") === "1") {
+        contextPrompt += "- Paper 1: Extended Response essay paper.\n";
+        contextPrompt += "- Choose ONE from THREE questions, each from a different syllabus unit.\n";
+        contextPrompt += "- Each question: Part (a) [10 marks] explain + Part (b) [15 marks] evaluate.\n";
+        contextPrompt += "- HL adds Part (c) [10 marks] with HL extension content.\n";
+        contextPrompt += "- Use IB command words: Define, Explain, Analyse, Evaluate, Discuss, To what extent.\n";
+      } else if ((paper || "") === "2") {
+        contextPrompt += "- Paper 2: Data Response paper.\n";
+        contextPrompt += "- Choose ONE from TWO questions with text extract + data.\n";
+        contextPrompt += "- Sub-questions: 2m define, 2m define, 4m diagram, 4m explain, 4m diagram, 8m evaluate.\n";
+        contextPrompt += "- HL adds quantitative and extended evaluation sub-questions.\n";
+      } else {
+        contextPrompt += "- Paper 3 (HL only): Extension paper with calculations.\n";
+        contextPrompt += "- Answer TWO from THREE questions. Each has: 2m define, 4m diagram, 4m calculate, 4m diagram, 6m explain, 10m evaluate.\n";
+        contextPrompt += "- Must include HL-only topics: theory of the firm, asymmetric information, terms of trade.\n";
+      }
+    } else if (subjectKey === "wjec") {
+      if ((paper || "") === "1") {
+        contextPrompt += "- Unit 1: Introduction to Economics (AS) — 1h30m, 60 marks.\n";
+        contextPrompt += "- Section A: Compulsory data response (30 marks) — 2m, 2m, 4m, 6m, 8m, 8m.\n";
+        contextPrompt += "- Section B: Essay choice (30 marks) — 12m explain + 18m evaluate.\n";
+        contextPrompt += "- Topics: market mechanisms, demand & supply, elasticity, market failure, government intervention.\n";
+      } else if ((paper || "") === "2") {
+        contextPrompt += "- Unit 2: Economics in Action (AS) — 1h30m, 60 marks.\n";
+        contextPrompt += "- Same structure as Unit 1 but macroeconomic topics.\n";
+        contextPrompt += "- Topics: economic indicators, AD/AS, growth, unemployment, inflation, fiscal/monetary policy.\n";
+      } else {
+        contextPrompt += "- Units 3 & 4: A2 Applied Economics — 2 hours, 80 marks.\n";
+        contextPrompt += "- Section A: Extended data response (40 marks) with synoptic content.\n";
+        contextPrompt += "- Section B: Essay choice from three (40 marks) — Part (a) 16m + Part (b) 24m.\n";
+      }
+    } else if (subjectKey === "eduqas") {
+      if ((paper || "") === "1") {
+        contextPrompt += "- Component 1: Markets and Market Failure — 2 hours, 80 marks.\n";
+        contextPrompt += "- Section A: Data response (40 marks) — 2m, 4m, 6m, 8m, 20m.\n";
+        contextPrompt += "- Section B: Essay choice from three (40 marks) — Part (a) 16m + Part (b) 24m.\n";
+      } else if ((paper || "") === "2") {
+        contextPrompt += "- Component 2: National and International Economy — 2 hours, 80 marks.\n";
+        contextPrompt += "- Same structure as Component 1 but macroeconomic topics.\n";
+      } else {
+        contextPrompt += "- Component 3: Synoptic Data Response — 2h15m, 80 marks.\n";
+        contextPrompt += "- Section A: Data response (40 marks) with synoptic micro+macro content.\n";
+        contextPrompt += "- Section B: Synoptic essay (40 marks) — Part (a) 16m + Part (b) 24m.\n";
+      }
+    } else if (subjectKey === "ocr_gcse") {
+      if ((paper || "") === "1") {
+        contextPrompt += "- Component 1 (J205/01): Introduction to Economics — 1h15m, 60 marks.\n";
+        contextPrompt += "- Section A: 15 MCQs (15 marks).\n";
+        contextPrompt += "- Section B: Short answer and data response (25 marks) — 1m, 2m, 4m, 6m questions.\n";
+        contextPrompt += "- Section C: Extended response choice (20 marks) — Part (a) 8m + Part (b) 12m.\n";
+      } else if ((paper || "") === "2") {
+        contextPrompt += "- Component 2 (J205/02): National and International Economics — 1h15m, 60 marks.\n";
+        contextPrompt += "- Same structure as Component 1 but macroeconomic topics.\n";
+      } else {
+        contextPrompt += "- Full paper covering both components — 60 marks.\n";
+      }
     } else if ((paper || "") === "1" || (paper || "") === "2") {
       contextPrompt += "- Section A must include BOTH Context 1 and Context 2 (EITHER/OR layout).\n";
       contextPrompt += "- Context question pattern must be exactly: 2 marks, 4 marks, 9 marks, 25 marks.\n";
