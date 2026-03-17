@@ -687,12 +687,12 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.eq} />
           <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
           <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MPB = MSB" color={COLORS.demand} />
-          {/* Welfare gain triangle */}
+          {/* Welfare gain triangle — solid fill with bold green boundary */}
           <polygon
             points={`${freeEq.x},${freeEq.y} ${freeEq.x},${mscAtFreeX} ${optEq.x},${optEq.y}`}
-            fill={COLORS.area} fillOpacity={0.15} stroke="url(#grad-area)" strokeWidth={1.2} strokeDasharray="3,3"
+            fill="#16a34a" fillOpacity={0.25} stroke="#16a34a" strokeWidth={2}
           />
-          <Label x={(freeEq.x + optEq.x) / 2} y={(freeEq.y + mscAtFreeX) / 2 + 4} text="WL" color={COLORS.area} size={9} anchor="middle" />
+          <Label x={(freeEq.x + optEq.x) / 2} y={(freeEq.y + mscAtFreeX) / 2 + 4} text="WL" color="#16a34a" size={9} anchor="middle" />
           {/* Subsidy annotation arrow at Q* */}
           <line x1={optEq.x + 12} y1={mpcAtOptX} x2={optEq.x + 12} y2={optEq.y} stroke={COLORS.shifted} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
           <Label x={optEq.x + 18} y={(mpcAtOptX + optEq.y) / 2 + 3} text="Subsidy" color={COLORS.shifted} size={8} />
