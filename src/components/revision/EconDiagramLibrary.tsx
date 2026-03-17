@@ -625,10 +625,10 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.msc} />
           <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
           <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MPB = MSB" color={COLORS.demand} />
-          {/* Welfare loss triangle: red-shaded */}
+          {/* Welfare loss triangle — solid fill with bold red boundary */}
           <polygon
             points={`${optEq.x},${optEq.y} ${freeEq.x},${freeEq.y} ${freeEq.x},${mscAtFreeX}`}
-            fill="#ef4444" fillOpacity={0.15} stroke="#ef4444" strokeWidth={1.2} strokeDasharray="3,3"
+            fill="#ef4444" fillOpacity={0.3} stroke="#ef4444" strokeWidth={2}
           />
           <Label x={(optEq.x + freeEq.x) / 2} y={(optEq.y + freeEq.y + mscAtFreeX) / 3 - 2} text="WL" color="#ef4444" size={9} anchor="middle" />
           {/* Tax annotation arrow at Q* — vertical gap between MSC and MPC */}
