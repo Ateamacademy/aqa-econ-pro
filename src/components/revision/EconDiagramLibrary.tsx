@@ -989,10 +989,33 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={s1L.x2 + 4} y={s1L.y2 + 4} text="S₁" color={COLORS.supply} />
           <GLine {...s2L} color={COLORS.supply} gradientId="grad-supply" dashed />
           <Label x={s2L.x2 + 4} y={s2L.y2 + 4} text="S₁+Tax" color={COLORS.supply} />
-          {/* Tax revenue area: rectangle between consumer price and producer price at Q₂ */}
-          <rect x={mx} y={eq2.y} width={eq2.x - mx} height={prodPriceY - eq2.y}
-            fill="url(#grad-area)" fillOpacity={0.12} stroke="url(#grad-area)" strokeWidth={1} rx={3} />
-          <Label x={(mx + eq2.x) / 2} y={(eq2.y + prodPriceY) / 2 + 4} text="Tax Rev." color={COLORS.area} size={8} anchor="middle" />
+          {/* Tax revenue area — closed polygon */}
+          <WelfareRegion
+            points={[
+              { x: mx, y: eq2.y },
+              { x: eq2.x, y: eq2.y },
+              { x: eq2.x, y: prodPriceY },
+              { x: mx, y: prodPriceY },
+            ]}
+            fill="#8b5cf6"
+            fillOpacity={0.18}
+            strokeWidth={1.5}
+            label="Tax Rev."
+            labelSize={8}
+          />
+          {/* Deadweight loss triangle */}
+          <WelfareRegion
+            points={[
+              { x: eq2.x, y: eq2.y },
+              { x: eq1.x, y: eq1.y },
+              { x: eq2.x, y: prodPriceY },
+            ]}
+            fill="#ef4444"
+            fillOpacity={0.30}
+            strokeWidth={2.5}
+            label="DWL"
+            labelSize={8}
+          />
 
           <DashedToAxes x={eq1.x} y={eq1.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Q₁" />
           <PremiumDot x={eq1.x} y={eq1.y} color={COLORS.eq} label="E₁" gradientId="dot-green"
