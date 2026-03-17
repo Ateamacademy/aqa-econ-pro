@@ -1800,10 +1800,41 @@ const ALIASES: Record<string, string> = {
   "shift_in_supply": "supply_increase",
 };
 
-export function resolveDiagramType(raw: string): DiagramType | null {
+export function resolveDiagramType(raw: string, shiftHint?: string): DiagramType | null {
   const key = raw.toLowerCase().replace(/[\s-]+/g, "_").replace(/[^a-z0-9_]/g, "");
   if (key in DIAGRAMS) return key as DiagramType;
   if (key in ALIASES) return ALIASES[key] as DiagramType;
+
+  // Fuzzy: check if any alias key is contained in the raw string or vice-versa
+  const lc = raw.toLowerCase();
+  for (const [alias, dtype] of Object.entries(ALIASES)) {
+    const aliasWords = alias.replace(/_/g, " ");
+    if (lc.includes(aliasWords) || aliasWords.includes(lc.trim())) {
+      return dtype as DiagramType;
+    }
+  }
+
+  // Use shift hint to infer diagram type (e.g. "Demand shifts left" → demand_decrease)
+  if (shiftHint) {
+    const sh = shiftHint.toLowerCase();
+    const isLeft = sh.includes("left") || sh.includes("decrease") || sh.includes("inward");
+    const isRight = sh.includes("right") || sh.includes("increase") || sh.includes("outward");
+    if (sh.includes("supply") || sh.includes("sras")) {
+      if (sh.includes("aggregate") || sh.includes("sras")) return isLeft ? "sras_decrease" : "sras_increase";
+      return isLeft ? "supply_decrease" : "supply_increase";
+    }
+    if (sh.includes("ad") || sh.includes("aggregate demand")) return isLeft ? "ad_decrease" : "ad_increase";
+    if (sh.includes("demand")) return isLeft ? "demand_decrease" : "demand_increase";
+  }
+
+  // Last resort: if raw is very short, try partial keyword matches
+  if (key.length <= 3) {
+    if (key === "d" || key === "dd") return "demand_decrease";
+    if (key === "s" || key === "sd" || key === "ss") return "supply_demand";
+    if (key === "ad") return "ad_increase";
+    if (key === "as") return "sras_decrease";
+  }
+
   return null;
 }
 

@@ -234,7 +234,7 @@ function ShiftArrow({ x, y, offset, color, delay }: { x: number; y: number; offs
 
 function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
   // Try to resolve to a predefined template for exam-accurate rendering
-  const resolvedType = resolveDiagramType(diagram.type);
+  const resolvedType = resolveDiagramType(diagram.type, diagram.shift);
   
   const [animated, setAnimated] = useState(false);
   const [activePage, setActivePage] = useState(0);
