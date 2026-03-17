@@ -33,6 +33,7 @@ import { ibUnit1And2Topics, ibUnit3And4Topics } from "@/data/studyNotes/ibNotes"
 import { wjecUnit1Topics, wjecUnit2Topics } from "@/data/studyNotes/wjecNotes";
 import { eduqasComponent1Topics, eduqasComponent2Topics } from "@/data/studyNotes/eduqasNotes";
 import { edexcelIgcsePaper1Topics, edexcelIgcsePaper2Topics } from "@/data/studyNotes/edexcelIgcseNotes";
+import { ocrGcseComponent1Topics, ocrGcseComponent2Topics } from "@/data/studyNotes/ocrGcseNotes";
 
 /* ── Paper configs per subject ── */
 interface PaperSection {
