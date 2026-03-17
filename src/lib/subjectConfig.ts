@@ -175,6 +175,14 @@ export const topicsBySubject: Record<Subject, string[]> = {
     "Supply-Side Policies", "International Trade",
     "Exchange Rates", "Balance of Payments", "Globalisation & Development",
   ],
+  "ocr-gcse": [
+    "The Role of Markets", "Demand & Supply", "Elasticity",
+    "Market Failure", "Government Intervention", "The Labour Market",
+    "The Role of Money & Financial Markets",
+    "The UK Economy", "Economic Growth", "Unemployment", "Inflation",
+    "Fiscal Policy", "Monetary Policy", "Supply-Side Policies",
+    "International Trade", "Globalisation",
+  ],
 };
 
 /* ── Practice: question styles per subject ── */
