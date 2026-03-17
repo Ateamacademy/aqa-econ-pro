@@ -50,6 +50,49 @@ export default function EdexcelIgcsePastPapers() {
         </p>
       </div>
 
+      {/* Specification */}
+      <div className="mb-6">
+        <Card className="border-primary/20">
+          <CardContent className="p-5 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <FileText className="h-5 w-5 text-primary" />
+              <div>
+                <p className="font-semibold text-sm">Edexcel IGCSE Economics Specification (4EC1)</p>
+                <p className="text-xs text-muted-foreground">Official Pearson specification document</p>
+              </div>
+            </div>
+            <Button variant="outline" size="sm" className="gap-2" asChild>
+              <a href={SPEC_URL} target="_blank" rel="noopener noreferrer">
+                <Download className="h-3.5 w-3.5" /> Download PDF
+              </a>
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* PMT Direct Links */}
+      <div className="mb-8">
+        <h2 className="text-lg font-semibold mb-3 flex items-center gap-2">
+          <ExternalLink className="h-5 w-5 text-primary" /> Past Papers on PMT
+        </h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {([1, 2] as const).map((p) => (
+            <Card key={p} className="hover:shadow-sm transition-shadow">
+              <CardContent className="p-5">
+                <div className="flex items-center gap-3 mb-3">
+                  <FileText className="h-5 w-5 text-primary" />
+                  <h3 className="font-semibold text-sm">{pmtPaperLinks[p].title}</h3>
+                </div>
+                <Button variant="outline" size="sm" className="w-full gap-2" asChild>
+                  <a href={pmtPaperLinks[p].url} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="h-3.5 w-3.5" /> Browse on PMT
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
       {/* Additional Resources */}
       <div className="mb-8">
         <h2 className="text-lg font-semibold mb-3 flex items-center gap-2">
