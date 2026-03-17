@@ -2,9 +2,14 @@
  * EconDiagramSVG — renders structured diagram descriptions as polished,
  * 3D-styled interactive SVG diagrams with depth, gradients, glow effects,
  * animations, tooltips and a premium look.
+ *
+ * When a known diagram type is detected (e.g. externalities, monopoly, AD/AS),
+ * it delegates to the predefined EconDiagramTemplate library for exam-accurate
+ * rendering with welfare loss/gain areas, proper curve labels, and colored boundaries.
  */
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { resolveDiagramType, EconDiagramTemplate } from "@/components/revision/EconDiagramLibrary";
 
 interface DiagramProps {
   type: string;
