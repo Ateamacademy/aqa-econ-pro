@@ -3,36 +3,31 @@ import { Download, FileText, ExternalLink, FolderOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { cambridgePastPapers, cambridgePaperTitles, sessionLabels } from "@/data/cambridgePastPapers";
+import { ibPastPapers, ibPaperTitles } from "@/data/ibPastPapers";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-const DB_BASE = "https://www.dropbox.com/scl/fo/a6ihfh382tgxp98ex701g";
+const DB_BASE = "https://www.dropbox.com/scl/fo/nnwc226sncb64devriexb";
 
 const additionalResources = [
-  { label: "CAIE A-Level Economics Resources", url: `${DB_BASE}/AINXwAnem4EV6v7MKyB1T8c?rlkey=fqwe61nwgwsywutgo4i59tquj&dl=0` },
+  { label: "IB Economics Resources", url: `${DB_BASE}/ANS9dE5bhz3PEyfQ12yAQ6Q?rlkey=pqayuq07hwiw8uygtt3jpikg1&dl=0` },
 ];
 
-export default function CambridgePastPapers() {
+export default function IbPastPapers() {
   const [search, setSearch] = useState("");
   const [yearFilter, setYearFilter] = useState<string>("all");
-  const [sessionFilter, setSessionFilter] = useState<string>("all");
-  const [variantFilter, setVariantFilter] = useState<string>("all");
 
-  const years = [...new Set(cambridgePastPapers.map((p) => p.year))].sort((a, b) => b - a);
+  const years = [...new Set(ibPastPapers.map((p) => p.year))].filter((y): y is number => typeof y === "number").sort((a, b) => b - a);
 
-  const filtered = (paper: 1 | 2 | 3 | 4) =>
-    cambridgePastPapers.filter((p) => {
+  const filtered = (paper: 1 | 2 | 3) =>
+    ibPastPapers.filter((p) => {
       if (p.paper !== paper) return false;
-      if (yearFilter !== "all" && p.year !== Number(yearFilter)) return false;
-      if (sessionFilter !== "all" && p.session !== sessionFilter) return false;
-      if (variantFilter !== "all" && p.variant !== Number(variantFilter)) return false;
+      if (yearFilter !== "all") {
+        if (yearFilter === "specimen") { if (p.year !== "Specimen") return false; }
+        else if (p.year !== Number(yearFilter)) return false;
+      }
       if (search) {
         const q = search.toLowerCase();
-        return (
-          p.type.toLowerCase().includes(q) ||
-          String(p.year).includes(q) ||
-          cambridgePaperTitles[p.paper].toLowerCase().includes(q)
-        );
+        return p.type.toLowerCase().includes(q) || String(p.year).toLowerCase().includes(q);
       }
       return true;
     });
@@ -40,9 +35,9 @@ export default function CambridgePastPapers() {
   return (
     <div className="container py-10">
       <div className="mb-8">
-        <h1 className="text-4xl font-serif mb-2">Cambridge International A-Level Economics Past Papers</h1>
+        <h1 className="text-4xl font-serif mb-2">IB Economics HL Past Papers</h1>
         <p className="text-muted-foreground">
-          Browse CAIE 9708 AS & A-Level Economics past papers, mark schemes, and inserts from PapaCambridge.
+          Browse IB Economics Higher Level past papers and mark schemes. Papers cover the new syllabus (2022+) and legacy curriculum.
         </p>
       </div>
 
@@ -70,23 +65,12 @@ export default function CambridgePastPapers() {
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-3 mb-6 flex-wrap">
+      <div className="flex flex-col sm:flex-row gap-3 mb-6">
         <Input placeholder="Search papers..." value={search} onChange={(e) => setSearch(e.target.value)} className="sm:max-w-xs" />
         <select value={yearFilter} onChange={(e) => setYearFilter(e.target.value)} className="h-10 rounded-md border border-input bg-background px-3 text-sm">
           <option value="all">All Years</option>
           {years.map((y) => (<option key={y} value={y}>{y}</option>))}
-        </select>
-        <select value={sessionFilter} onChange={(e) => setSessionFilter(e.target.value)} className="h-10 rounded-md border border-input bg-background px-3 text-sm">
-          <option value="all">All Sessions</option>
-          <option value="s">May/June</option>
-          <option value="w">Oct/Nov</option>
-          <option value="m">March</option>
-        </select>
-        <select value={variantFilter} onChange={(e) => setVariantFilter(e.target.value)} className="h-10 rounded-md border border-input bg-background px-3 text-sm">
-          <option value="all">All Variants</option>
-          <option value="1">Variant 1</option>
-          <option value="2">Variant 2</option>
-          <option value="3">Variant 3</option>
+          <option value="specimen">Specimen</option>
         </select>
       </div>
 
@@ -95,12 +79,11 @@ export default function CambridgePastPapers() {
           <TabsTrigger value="1">Paper 1</TabsTrigger>
           <TabsTrigger value="2">Paper 2</TabsTrigger>
           <TabsTrigger value="3">Paper 3</TabsTrigger>
-          <TabsTrigger value="4">Paper 4</TabsTrigger>
         </TabsList>
 
-        {([1, 2, 3, 4] as const).map((paper) => (
+        {([1, 2, 3] as const).map((paper) => (
           <TabsContent key={paper} value={String(paper)}>
-            <p className="text-sm text-muted-foreground mb-4">{cambridgePaperTitles[paper]}</p>
+            <p className="text-sm text-muted-foreground mb-4">{ibPaperTitles[paper]}</p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {filtered(paper).map((p) => (
                 <Card key={p.id} className="hover:shadow-sm transition-shadow">
@@ -108,8 +91,8 @@ export default function CambridgePastPapers() {
                     <div className="flex items-center gap-3">
                       <FileText className="h-5 w-5 text-muted-foreground shrink-0" />
                       <div>
-                        <p className="font-medium text-sm">{sessionLabels[p.session]} {p.year} — {p.type}</p>
-                        <p className="text-xs text-muted-foreground">Paper {p.paper} · Variant {p.variant}</p>
+                        <p className="font-medium text-sm">{p.year === "Specimen" ? "Specimen" : p.year} — {p.type}</p>
+                        <p className="text-xs text-muted-foreground">Paper {p.paper}</p>
                       </div>
                     </div>
                     <Button variant="ghost" size="icon" asChild>

@@ -20,6 +20,9 @@ const CambridgePastPapers = lazy(() => import("./pages/CambridgePastPapers"));
 const OcrPastPapers = lazy(() => import("./pages/OcrPastPapers"));
 const GcsePastPapers = lazy(() => import("./pages/GcsePastPapers"));
 const IgcsePastPapers = lazy(() => import("./pages/IgcsePastPapers"));
+const IbPastPapers = lazy(() => import("./pages/IbPastPapers"));
+const EdexcelIgcsePastPapers = lazy(() => import("./pages/EdexcelIgcsePastPapers"));
+const OcrGcsePastPapers = lazy(() => import("./pages/OcrGcsePastPapers"));
 const AITutor = lazy(() => import("./pages/AITutor"));
 const EssayGrader = lazy(() => import("./pages/EssayGrader"));
 const Practice = lazy(() => import("./pages/Practice"));
@@ -51,7 +54,13 @@ const App = () => (
             <Suspense fallback={<div className="flex items-center justify-center min-h-[60vh]"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" /></div>}>
             <Routes>
               <Route path="/" element={<Index />} />
-              {/* Past paper routes hidden */}
+              {/* Past paper routes */}
+              <Route path="/past-papers/ib" element={<IbPastPapers />} />
+              <Route path="/past-papers/edexcel-igcse" element={<EdexcelIgcsePastPapers />} />
+              <Route path="/past-papers/ocr-gcse" element={<OcrGcsePastPapers />} />
+              <Route path="/past-papers/cambridge" element={<CambridgePastPapers />} />
+              <Route path="/past-papers/igcse" element={<IgcsePastPapers />} />
+              <Route path="/past-papers/gcse" element={<GcsePastPapers />} />
               <Route path="/predicted" element={<PredictedPapers />} />
               <Route path="/tutor" element={<AITutor />} />
               <Route path="/grader" element={<EssayGrader />} />
