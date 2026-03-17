@@ -105,20 +105,28 @@ export function parseQuestions(markdown: string): { context: string; questions: 
     // Strip leading dash/em-dash/colon separators
     bodyText = bodyText.replace(/^[-—–:]+\s*/, "");
 
-    // Extract MCQ options (lines starting with - A, - B, - C, - D or A., B., C., D.)
-    const mcqRegex = /^[-•]?\s*\**([A-D])\**[.\s]+(.+)$/gm;
-    const mcqMatches = [...bodyText.matchAll(mcqRegex)];
+    // Extract MCQ options — require either a leading dash/bullet OR a dot/paren after the letter
+    // to avoid matching sentences like "A consumer might..." as option A
+    const mcqWithDash = /^[-•]\s*\**([A-D])\**[.\s)]+(.+)$/gm;
+    const mcqWithDotParen = /^\**([A-D])\**[.)]\s+(.+)$/gm;
+    
+    let mcqMatches = [...bodyText.matchAll(mcqWithDash)];
+    let mcqRegexUsed: RegExp = mcqWithDash;
+    if (mcqMatches.length < 2) {
+      mcqMatches = [...bodyText.matchAll(mcqWithDotParen)];
+      mcqRegexUsed = mcqWithDotParen;
+    }
     
     let text = bodyText;
     let mcqOptions: MCQOption[] | undefined;
     
     if (mcqMatches.length >= 2) {
-      mcqOptions = mcqMatches.map(m => ({
-        letter: m[1],
-        text: m[2].trim().replace(/\*+$/g, ''),
-      }));
+      // Deduplicate by letter — keep last occurrence of each letter
+      const seen = new Map<string, string>();
+      mcqMatches.forEach(m => seen.set(m[1], m[2].trim().replace(/\*+$/g, '')));
+      mcqOptions = [...seen.entries()].map(([letter, optText]) => ({ letter, text: optText }));
       // Remove MCQ option lines from the question text
-      text = bodyText.replace(mcqRegex, '').trim();
+      text = bodyText.replace(mcqRegexUsed, '').trim();
     }
 
     const normalizedNumber = match[1].replace(/\s+/g, "");
