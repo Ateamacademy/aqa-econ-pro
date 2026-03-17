@@ -33,7 +33,9 @@ export type DiagramType =
   | "price_floor"
   | "price_ceiling"
   | "monopoly"
-  | "perfect_competition";
+  | "perfect_competition"
+  | "lorenz_curve"
+  | "oligopoly_payoff";
 
 interface DiagramConfig {
   title: string;
