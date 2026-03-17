@@ -504,13 +504,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
       return (
         <>
-          <GLine {...sL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={sL.x2 - 8} y={sL.y2 - 6} text="S = MPC" color={COLORS.supply} />
-          <GLine {...mpbL} color={COLORS.mpb} width={2} />
-          <Label x={mpbL.x2 + 4} y={mpbL.y2 - 6} text="D = MPB" color={COLORS.mpb} />
-          <GLine {...msbL} color={COLORS.demand} gradientId="grad-demand" dashed glow="glow-blue" />
-          <Label x={msbL.x2 + 4} y={msbL.y2 - 6} text="MSB" color={COLORS.demand} />
-          {/* Welfare loss triangle — closed polygon with bold boundary */}
+          {/* Welfare loss triangle — RENDERED FIRST so it sits behind curves */}
           <WelfareRegion
             points={[
               { x: freeEq.x, y: freeEq.y },
@@ -518,11 +512,18 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
               { x: optEq.x, y: optEq.y },
             ]}
             fill="#3b82f6"
-            fillOpacity={0.35}
-            strokeWidth={2.5}
+            fillOpacity={0.45}
+            strokeWidth={3}
             label="WL"
             labelSize={9}
           />
+          {/* Curves rendered on top of welfare region */}
+          <GLine {...sL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
+          <Label x={sL.x2 - 8} y={sL.y2 - 6} text="S = MPC" color={COLORS.supply} />
+          <GLine {...mpbL} color={COLORS.mpb} width={2} />
+          <Label x={mpbL.x2 + 4} y={mpbL.y2 - 6} text="D = MPB" color={COLORS.mpb} />
+          <GLine {...msbL} color={COLORS.demand} gradientId="grad-demand" dashed glow="glow-blue" />
+          <Label x={msbL.x2 + 4} y={msbL.y2 - 6} text="MSB" color={COLORS.demand} />
           {/* Subsidy annotation arrow at Q* */}
           <line x1={optEq.x + 12} y1={optEq.y} x2={optEq.x + 12} y2={mpbAtOptX} stroke={COLORS.eq} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
           <Label x={optEq.x + 18} y={(optEq.y + mpbAtOptX) / 2 + 3} text="Subsidy" color={COLORS.eq} size={8} />
@@ -570,13 +571,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
       return (
         <>
-          <GLine {...sL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={sL.x2 - 8} y={sL.y2 - 6} text="S = MPC" color={COLORS.supply} />
-          <GLine {...mpbL} color={COLORS.mpb} width={2} />
-          <Label x={mpbL.x2 + 4} y={mpbL.y2 - 6} text="D = MPB" color={COLORS.mpb} />
-          <GLine {...msbL} color={COLORS.demand} gradientId="grad-demand" dashed glow="glow-blue" />
-          <Label x={msbL.x2 + 4} y={msbL.y2 - 6} text="MSB" color={COLORS.demand} />
-          {/* Welfare loss triangle — closed polygon with bold boundary */}
+          {/* Welfare loss triangle — RENDERED FIRST so it sits behind curves */}
           <WelfareRegion
             points={[
               { x: optEq.x, y: optEq.y },
@@ -584,11 +579,18 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
               { x: freeEq.x, y: msbAtFreeX },
             ]}
             fill="#ef4444"
-            fillOpacity={0.35}
-            strokeWidth={2.5}
+            fillOpacity={0.45}
+            strokeWidth={3}
             label="WL"
             labelSize={9}
           />
+          {/* Curves rendered on top of welfare region */}
+          <GLine {...sL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
+          <Label x={sL.x2 - 8} y={sL.y2 - 6} text="S = MPC" color={COLORS.supply} />
+          <GLine {...mpbL} color={COLORS.mpb} width={2} />
+          <Label x={mpbL.x2 + 4} y={mpbL.y2 - 6} text="D = MPB" color={COLORS.mpb} />
+          <GLine {...msbL} color={COLORS.demand} gradientId="grad-demand" dashed glow="glow-blue" />
+          <Label x={msbL.x2 + 4} y={msbL.y2 - 6} text="MSB" color={COLORS.demand} />
           {/* Tax annotation arrow at Q* */}
           <line x1={optEq.x - 10} y1={optEq.y} x2={optEq.x - 10} y2={mpbAtOptX} stroke={COLORS.shifted} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
           <Label x={optEq.x - 16} y={(optEq.y + mpbAtOptX) / 2 + 3} text="Tax" color={COLORS.shifted} size={8} anchor="end" />
@@ -639,13 +641,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
       return (
         <>
-          <GLine {...mpcL} color={COLORS.mpc} width={2.5} />
-          <Label x={mpcL.x2 - 8} y={mpcL.y2 - 6} text="S = MPC" color={COLORS.mpc} />
-          <GLine {...mscL} color={COLORS.msc} gradientId="grad-supply" dashed glow="glow-red" />
-          <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.msc} />
-          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MPB = MSB" color={COLORS.demand} />
-          {/* Welfare loss triangle — closed polygon with bold red boundary */}
+          {/* Welfare loss triangle — RENDERED FIRST so it sits behind curves */}
           <WelfareRegion
             points={[
               { x: optEq.x, y: optEq.y },
@@ -653,11 +649,18 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
               { x: freeEq.x, y: mscAtFreeX },
             ]}
             fill="#ef4444"
-            fillOpacity={0.35}
-            strokeWidth={2.5}
+            fillOpacity={0.45}
+            strokeWidth={3}
             label="WL"
             labelSize={9}
           />
+          {/* Curves rendered on top of welfare region */}
+          <GLine {...mpcL} color={COLORS.mpc} width={2.5} />
+          <Label x={mpcL.x2 - 8} y={mpcL.y2 - 6} text="S = MPC" color={COLORS.mpc} />
+          <GLine {...mscL} color={COLORS.msc} gradientId="grad-supply" dashed glow="glow-red" />
+          <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.msc} />
+          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MPB = MSB" color={COLORS.demand} />
           {/* Tax annotation arrow at Q* — vertical gap between MSC and MPC */}
           <line x1={optEq.x - 10} y1={optEq.y} x2={optEq.x - 10} y2={mpcAtOptX} stroke={COLORS.shifted} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
           <Label x={optEq.x - 16} y={(optEq.y + mpcAtOptX) / 2 + 3} text="Tax" color={COLORS.shifted} size={8} anchor="end" />
@@ -708,13 +711,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
       return (
         <>
-          <GLine {...mpcL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={mpcL.x2 - 8} y={mpcL.y2 - 6} text="S = MPC" color={COLORS.supply} />
-          <GLine {...mscL} color={COLORS.eq} width={2.5} dashed />
-          <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.eq} />
-          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MPB = MSB" color={COLORS.demand} />
-          {/* Welfare gain triangle — closed polygon with bold green boundary */}
+          {/* Welfare gain triangle — RENDERED FIRST so it sits behind curves */}
           <WelfareRegion
             points={[
               { x: freeEq.x, y: freeEq.y },
@@ -722,11 +719,18 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
               { x: optEq.x, y: optEq.y },
             ]}
             fill="#16a34a"
-            fillOpacity={0.35}
-            strokeWidth={2.5}
+            fillOpacity={0.45}
+            strokeWidth={3}
             label="WG"
             labelSize={9}
           />
+          {/* Curves rendered on top of welfare region */}
+          <GLine {...mpcL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
+          <Label x={mpcL.x2 - 8} y={mpcL.y2 - 6} text="S = MPC" color={COLORS.supply} />
+          <GLine {...mscL} color={COLORS.eq} width={2.5} dashed />
+          <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.eq} />
+          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MPB = MSB" color={COLORS.demand} />
           {/* Subsidy annotation arrow at Q* */}
           <line x1={optEq.x + 12} y1={mpcAtOptX} x2={optEq.x + 12} y2={optEq.y} stroke={COLORS.shifted} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
           <Label x={optEq.x + 18} y={(mpcAtOptX + optEq.y) / 2 + 3} text="Subsidy" color={COLORS.shifted} size={8} />
