@@ -279,6 +279,7 @@ CRITICAL: NEVER use third person. ALWAYS use "you" and "your".`;
 4. Identify specific areas for improvement
 5. Provide a brief model answer excerpt showing what a top-band response looks like
 6. End with 2-3 actionable tips for their next attempt
+7. When the question requires a diagram, include "### Diagram: <exact_type_keyword>" using the available diagram types from the formatting rules. Always pick the most specific diagram type for the topic.
 CRITICAL: NEVER use third person. ALWAYS use "you" and "your".`;
       }
     }
