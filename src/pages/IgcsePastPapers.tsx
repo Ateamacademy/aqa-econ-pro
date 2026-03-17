@@ -1,9 +1,15 @@
 import { useState } from "react";
-import { Download, FileText } from "lucide-react";
+import { Download, FileText, ExternalLink, FolderOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 const DB_BASE = "https://www.dropbox.com/scl/fo/9dix0nd5sfit6bni4j3w8";
+
+const EXTRA_DB_BASE = "https://www.dropbox.com/scl/fo/07pgfxx9yf3iw75trvgtj";
+
+const additionalResources = [
+  { label: "CAIE IGCSE Economics Additional Resources", url: `${EXTRA_DB_BASE}/AAICrRS0H2SCJHMuvX5UYQ0?rlkey=8onaqbp0d073rhky5l7bzqkxs&dl=0` },
+];
 
 const resources = [
   { label: "Examination Resources", url: `${DB_BASE}/AFCJH6LF6HSTHgJfvAsNMyo/Examination%20Resources?rlkey=1wm8jv56olq85faaaienr8y3f&dl=0` },
