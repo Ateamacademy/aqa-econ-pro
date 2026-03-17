@@ -4,10 +4,14 @@
  * All curves are clipped to the plot area so nothing extends beyond axes.
  * Equilibrium points are computed from actual line intersections (not hardcoded).
  * Hover annotations provide A-Level exam tips for producing high-quality diagrams.
+ * 
+ * IMPORTANT: Each diagram instance uses a unique clipPath ID (via useId) to prevent
+ * SVG ID collisions when multiple diagrams render on the same page.
  */
 
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useState, useId } from "react";
+import { WelfareRegion } from "@/components/diagrams/WelfareRegion";
 
 export type DiagramType =
   | "supply_demand"
@@ -55,6 +59,8 @@ interface DiagramConfig {
 interface DrawParams {
   W: number; H: number;
   mx: number; my: number; pw: number; ph: number;
+  /** Unique prefix for SVG IDs (clipPath, gradients) to avoid collisions */
+  uid: string;
 }
 
 const COLORS = {
@@ -82,10 +88,10 @@ function lineIntersect(
 }
 
 /* ── SVG Defs ── */
-function PremiumDefs({ mx, my, pw, ph }: { mx: number; my: number; pw: number; ph: number }) {
+function PremiumDefs({ mx, my, pw, ph, uid }: { mx: number; my: number; pw: number; ph: number; uid: string }) {
   return (
     <defs>
-      <clipPath id="plot-clip">
+      <clipPath id={`plot-clip-${uid}`}>
         <rect x={mx} y={my} width={pw} height={ph} />
       </clipPath>
       {["blue|#3b82f6", "red|#ef4444", "amber|#f59e0b", "green|#16a34a", "purple|#8b5cf6"].map(s => {
@@ -504,12 +510,19 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={mpbL.x2 + 4} y={mpbL.y2 - 6} text="D = MPB" color={COLORS.mpb} />
           <GLine {...msbL} color={COLORS.demand} gradientId="grad-demand" dashed glow="glow-blue" />
           <Label x={msbL.x2 + 4} y={msbL.y2 - 6} text="MSB" color={COLORS.demand} />
-          {/* Welfare loss triangle — solid fill with bold boundary */}
-          <polygon
-            points={`${freeEq.x},${freeEq.y} ${freeEq.x},${msbAtFreeX} ${optEq.x},${optEq.y}`}
-            fill="#3b82f6" fillOpacity={0.25} stroke="#3b82f6" strokeWidth={2}
+          {/* Welfare loss triangle — closed polygon with bold boundary */}
+          <WelfareRegion
+            points={[
+              { x: freeEq.x, y: freeEq.y },
+              { x: freeEq.x, y: msbAtFreeX },
+              { x: optEq.x, y: optEq.y },
+            ]}
+            fill="#3b82f6"
+            fillOpacity={0.35}
+            strokeWidth={2.5}
+            label="WL"
+            labelSize={9}
           />
-          <Label x={(freeEq.x + optEq.x) / 2} y={(freeEq.y + msbAtFreeX) / 2 + 4} text="WL" color="#3b82f6" size={9} anchor="middle" />
           {/* Subsidy annotation arrow at Q* */}
           <line x1={optEq.x + 12} y1={optEq.y} x2={optEq.x + 12} y2={mpbAtOptX} stroke={COLORS.eq} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
           <Label x={optEq.x + 18} y={(optEq.y + mpbAtOptX) / 2 + 3} text="Subsidy" color={COLORS.eq} size={8} />
@@ -563,12 +576,19 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={mpbL.x2 + 4} y={mpbL.y2 - 6} text="D = MPB" color={COLORS.mpb} />
           <GLine {...msbL} color={COLORS.demand} gradientId="grad-demand" dashed glow="glow-blue" />
           <Label x={msbL.x2 + 4} y={msbL.y2 - 6} text="MSB" color={COLORS.demand} />
-          {/* Welfare loss triangle — solid fill with bold boundary */}
-          <polygon
-            points={`${optEq.x},${optEq.y} ${freeEq.x},${freeEq.y} ${freeEq.x},${msbAtFreeX}`}
-            fill="#ef4444" fillOpacity={0.3} stroke="#ef4444" strokeWidth={2}
+          {/* Welfare loss triangle — closed polygon with bold boundary */}
+          <WelfareRegion
+            points={[
+              { x: optEq.x, y: optEq.y },
+              { x: freeEq.x, y: freeEq.y },
+              { x: freeEq.x, y: msbAtFreeX },
+            ]}
+            fill="#ef4444"
+            fillOpacity={0.35}
+            strokeWidth={2.5}
+            label="WL"
+            labelSize={9}
           />
-          <Label x={(optEq.x + freeEq.x) / 2} y={(freeEq.y + msbAtFreeX) / 2 + 4} text="WL" color="#ef4444" size={9} anchor="middle" />
           {/* Tax annotation arrow at Q* */}
           <line x1={optEq.x - 10} y1={optEq.y} x2={optEq.x - 10} y2={mpbAtOptX} stroke={COLORS.shifted} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
           <Label x={optEq.x - 16} y={(optEq.y + mpbAtOptX) / 2 + 3} text="Tax" color={COLORS.shifted} size={8} anchor="end" />
@@ -625,12 +645,19 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.msc} />
           <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
           <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MPB = MSB" color={COLORS.demand} />
-          {/* Welfare loss triangle — solid fill with bold red boundary */}
-          <polygon
-            points={`${optEq.x},${optEq.y} ${freeEq.x},${freeEq.y} ${freeEq.x},${mscAtFreeX}`}
-            fill="#ef4444" fillOpacity={0.3} stroke="#ef4444" strokeWidth={2}
+          {/* Welfare loss triangle — closed polygon with bold red boundary */}
+          <WelfareRegion
+            points={[
+              { x: optEq.x, y: optEq.y },
+              { x: freeEq.x, y: freeEq.y },
+              { x: freeEq.x, y: mscAtFreeX },
+            ]}
+            fill="#ef4444"
+            fillOpacity={0.35}
+            strokeWidth={2.5}
+            label="WL"
+            labelSize={9}
           />
-          <Label x={(optEq.x + freeEq.x) / 2} y={(optEq.y + freeEq.y + mscAtFreeX) / 3 - 2} text="WL" color="#ef4444" size={9} anchor="middle" />
           {/* Tax annotation arrow at Q* — vertical gap between MSC and MPC */}
           <line x1={optEq.x - 10} y1={optEq.y} x2={optEq.x - 10} y2={mpcAtOptX} stroke={COLORS.shifted} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
           <Label x={optEq.x - 16} y={(optEq.y + mpcAtOptX) / 2 + 3} text="Tax" color={COLORS.shifted} size={8} anchor="end" />
@@ -687,12 +714,19 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.eq} />
           <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
           <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MPB = MSB" color={COLORS.demand} />
-          {/* Welfare gain triangle — solid fill with bold green boundary */}
-          <polygon
-            points={`${freeEq.x},${freeEq.y} ${freeEq.x},${mscAtFreeX} ${optEq.x},${optEq.y}`}
-            fill="#16a34a" fillOpacity={0.25} stroke="#16a34a" strokeWidth={2}
+          {/* Welfare gain triangle — closed polygon with bold green boundary */}
+          <WelfareRegion
+            points={[
+              { x: freeEq.x, y: freeEq.y },
+              { x: freeEq.x, y: mscAtFreeX },
+              { x: optEq.x, y: optEq.y },
+            ]}
+            fill="#16a34a"
+            fillOpacity={0.35}
+            strokeWidth={2.5}
+            label="WG"
+            labelSize={9}
           />
-          <Label x={(freeEq.x + optEq.x) / 2} y={(freeEq.y + mscAtFreeX) / 2 + 4} text="WL" color="#16a34a" size={9} anchor="middle" />
           {/* Subsidy annotation arrow at Q* */}
           <line x1={optEq.x + 12} y1={mpcAtOptX} x2={optEq.x + 12} y2={optEq.y} stroke={COLORS.shifted} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
           <Label x={optEq.x + 18} y={(mpcAtOptX + optEq.y) / 2 + 3} text="Subsidy" color={COLORS.shifted} size={8} />
@@ -955,10 +989,33 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={s1L.x2 + 4} y={s1L.y2 + 4} text="S₁" color={COLORS.supply} />
           <GLine {...s2L} color={COLORS.supply} gradientId="grad-supply" dashed />
           <Label x={s2L.x2 + 4} y={s2L.y2 + 4} text="S₁+Tax" color={COLORS.supply} />
-          {/* Tax revenue area: rectangle between consumer price and producer price at Q₂ */}
-          <rect x={mx} y={eq2.y} width={eq2.x - mx} height={prodPriceY - eq2.y}
-            fill="url(#grad-area)" fillOpacity={0.12} stroke="url(#grad-area)" strokeWidth={1} rx={3} />
-          <Label x={(mx + eq2.x) / 2} y={(eq2.y + prodPriceY) / 2 + 4} text="Tax Rev." color={COLORS.area} size={8} anchor="middle" />
+          {/* Tax revenue area — closed polygon */}
+          <WelfareRegion
+            points={[
+              { x: mx, y: eq2.y },
+              { x: eq2.x, y: eq2.y },
+              { x: eq2.x, y: prodPriceY },
+              { x: mx, y: prodPriceY },
+            ]}
+            fill="#8b5cf6"
+            fillOpacity={0.18}
+            strokeWidth={1.5}
+            label="Tax Rev."
+            labelSize={8}
+          />
+          {/* Deadweight loss triangle */}
+          <WelfareRegion
+            points={[
+              { x: eq2.x, y: eq2.y },
+              { x: eq1.x, y: eq1.y },
+              { x: eq2.x, y: prodPriceY },
+            ]}
+            fill="#ef4444"
+            fillOpacity={0.30}
+            strokeWidth={2.5}
+            label="DWL"
+            labelSize={8}
+          />
 
           <DashedToAxes x={eq1.x} y={eq1.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Q₁" />
           <PremiumDot x={eq1.x} y={eq1.y} color={COLORS.eq} label="E₁" gradientId="dot-green"
@@ -1159,11 +1216,20 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           {/* AC line (simplified as horizontal) */}
           <GLine x1={mx + pad} y1={acY} x2={mx + pw - pad} y2={acY} color={COLORS.lras} dashed width={1} />
           <Label x={mx + pw - pad - 18} y={acY - 6} text="AC" color={COLORS.lras} size={10} />
-          {/* Supernormal profit area */}
-          <rect x={mx} y={priceY} width={mcMrInt.x - mx} height={acY - priceY}
-            fill="url(#grad-area)" fillOpacity={0.10} rx={3} />
-          <Label x={(mx + mcMrInt.x) / 2} y={(priceY + acY) / 2 + 4} text="Supernormal" color={COLORS.area} size={8} anchor="middle" />
-          <Label x={(mx + mcMrInt.x) / 2} y={(priceY + acY) / 2 + 14} text="Profit" color={COLORS.area} size={8} anchor="middle" />
+          {/* Supernormal profit area — closed polygon */}
+          <WelfareRegion
+            points={[
+              { x: mx, y: priceY },
+              { x: mcMrInt.x, y: priceY },
+              { x: mcMrInt.x, y: acY },
+              { x: mx, y: acY },
+            ]}
+            fill="#8b5cf6"
+            fillOpacity={0.20}
+            strokeWidth={2}
+            label="Supernormal Profit"
+            labelSize={8}
+          />
 
           {/* Projection from Qₘ up to AR (price) */}
           <DashedToAxes x={mcMrInt.x} y={priceY} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="Pₘ" qLabel="Qₘ" />
@@ -1210,7 +1276,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       return (
         <>
           {/* Shaded Gini area */}
-          <path d={areaPath} fill={COLORS.area} fillOpacity={0.10} />
+          <path d={areaPath} fill={COLORS.area} fillOpacity={0.25} stroke={COLORS.area} strokeWidth={1.5} />
 
           {/* Line of equality */}
           <GLine {...eqLine} color={COLORS.lras} dashed width={2} />
@@ -1760,6 +1826,8 @@ function ExamTipsPanel({ tips, visible }: { tips: string[]; visible: boolean }) 
 export function EconDiagramTemplate({ type, className }: { type: DiagramType; className?: string }) {
   const config = DIAGRAMS[type];
   const [hovered, setHovered] = useState(false);
+  const rawId = useId();
+  const uid = rawId.replace(/:/g, "");
   if (!config) return null;
 
   const W = 420, H = 320;
@@ -1780,10 +1848,10 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
         {config.title}
       </p>
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full max-w-[480px] h-auto text-foreground relative z-10">
-        <PremiumDefs mx={mx} my={my} pw={pw} ph={ph} />
+        <PremiumDefs mx={mx} my={my} pw={pw} ph={ph} uid={uid} />
         <Axes mx={mx} my={my} pw={pw} ph={ph} xLabel={config.xAxis} yLabel={config.yAxis} />
-        <g clipPath="url(#plot-clip)">
-          {config.render({ W, H, mx, my, pw, ph })}
+        <g clipPath={`url(#plot-clip-${uid})`}>
+          {config.render({ W, H, mx, my, pw, ph, uid })}
         </g>
       </svg>
       {config.legend && config.legend.length > 0 && (

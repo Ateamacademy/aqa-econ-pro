@@ -2,7 +2,7 @@
  * Dynamic Curve Shifting Component
  * Allows interactive control over which curve shifts and by how much.
  */
-import { useState, useMemo } from "react";
+import { useState, useMemo, useId } from "react";
 import { cn } from "@/lib/utils";
 import { Slider } from "@/components/ui/slider";
 
@@ -42,6 +42,8 @@ export function DynamicShiftDiagram({ initialShift, title, className }: DynamicS
   const [curve, setCurve] = useState<CurveType>(initialShift?.curve ?? "demand");
   const [magnitude, setMagnitude] = useState(initialShift?.magnitude ?? 50);
   const [direction, setDirection] = useState<ShiftDirection>(initialShift?.direction ?? "right");
+  const rawId = useId();
+  const uid = rawId.replace(/:/g, "");
 
   const W = 420, H = 320;
   const mx = 55, my = 25, pw = W - mx - 30, ph = H - my - 50;
@@ -135,7 +137,7 @@ export function DynamicShiftDiagram({ initialShift, title, className }: DynamicS
       {/* SVG Diagram */}
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full max-w-[480px] h-auto">
         <defs>
-          <clipPath id="shift-clip"><rect x={mx} y={my} width={pw} height={ph} /></clipPath>
+          <clipPath id={`shift-clip-${uid}`}><rect x={mx} y={my} width={pw} height={ph} /></clipPath>
         </defs>
         {/* Grid */}
         <rect x={mx} y={my} width={pw} height={ph} fill="none" stroke="currentColor" strokeWidth="0.3" opacity="0.1" />
@@ -146,7 +148,7 @@ export function DynamicShiftDiagram({ initialShift, title, className }: DynamicS
         <text x={mx + pw / 2} y={my + ph + 35} fill="currentColor" fontSize="11" fontWeight="700" textAnchor="middle">Quantity (Q)</text>
         <text x={mx - 4} y={my + ph + 14} fill="currentColor" fontSize="10" fontWeight="700" textAnchor="middle">O</text>
 
-        <g clipPath="url(#shift-clip)">
+        <g clipPath={`url(#shift-clip-${uid})`}>
           {/* Original curves */}
           <line {...dL} stroke={COLORS.demand} strokeWidth="2.5" strokeLinecap="round" />
           <line {...sL} stroke={COLORS.supply} strokeWidth="2.5" strokeLinecap="round" />
