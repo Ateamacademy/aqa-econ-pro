@@ -249,4 +249,8 @@ export const questionTypesBySubject: Record<Subject, string[]> = {
     "1-mark define", "2-mark explain", "4-mark analyse",
     "6-mark evaluate", "8-mark extended response",
   ],
+  "ocr-gcse": [
+    "1-mark define", "2-mark state", "4-mark explain",
+    "6-mark discuss/evaluate", "9-mark extended response",
+  ],
 };
