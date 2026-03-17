@@ -4,10 +4,14 @@
  * All curves are clipped to the plot area so nothing extends beyond axes.
  * Equilibrium points are computed from actual line intersections (not hardcoded).
  * Hover annotations provide A-Level exam tips for producing high-quality diagrams.
+ * 
+ * IMPORTANT: Each diagram instance uses a unique clipPath ID (via useId) to prevent
+ * SVG ID collisions when multiple diagrams render on the same page.
  */
 
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useState, useId } from "react";
+import { WelfareRegion } from "@/components/diagrams/WelfareRegion";
 
 export type DiagramType =
   | "supply_demand"
