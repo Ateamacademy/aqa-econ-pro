@@ -25,17 +25,17 @@ const homepageNavLinks = [
 ];
 
 const SUBJECTS: { value: Subject; label: string }[] = [
-  { value: "economics", label: "AQA" },
-  { value: "edexcel-a", label: "Edexcel A" },
-  { value: "edexcel-b", label: "Edexcel B" },
-  { value: "ocr", label: "OCR" },
-  { value: "cambridge", label: "CAIE" },
-  { value: "ib", label: "IB" },
-  { value: "wjec", label: "WJEC" },
-  { value: "eduqas", label: "Eduqas" },
-  { value: "aqa-gcse", label: "GCSE" },
-  { value: "cambridge-igcse", label: "IGCSE" },
-  { value: "edexcel-igcse", label: "Edx IGCSE" },
+  { value: "economics", label: "AQA A-Level" },
+  { value: "edexcel-a", label: "Edexcel A A-Level" },
+  { value: "edexcel-b", label: "Edexcel B A-Level" },
+  { value: "ocr", label: "OCR A-Level" },
+  { value: "cambridge", label: "CAIE A-Level" },
+  { value: "ib", label: "IB HL/SL" },
+  { value: "wjec", label: "WJEC A-Level" },
+  { value: "eduqas", label: "Eduqas A-Level" },
+  { value: "aqa-gcse", label: "AQA GCSE" },
+  { value: "cambridge-igcse", label: "CAIE IGCSE" },
+  { value: "edexcel-igcse", label: "Edexcel IGCSE" },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
