@@ -236,24 +236,6 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
   // Try to resolve to a predefined template for exam-accurate rendering
   const resolvedType = resolveDiagramType(diagram.type);
   
-  // If we have a predefined template, use it — it has proper welfare loss/gain
-  // triangles, colored boundaries, correct curve labels (MSC, MPC, MSB, MPB), etc.
-  if (resolvedType) {
-    return (
-      <div className="my-6">
-        <EconDiagramTemplate type={resolvedType} />
-        {/* Show conclusion below the template diagram */}
-        {diagram.conclusion && (
-          <div className="mx-1 -mt-2 mb-4 px-4 py-2.5 rounded-xl bg-primary/5 border border-primary/15">
-            <p className="text-xs font-semibold text-primary mb-1">Key Conclusion</p>
-            <p className="text-sm text-foreground/80">{diagram.conclusion}</p>
-          </div>
-        )}
-      </div>
-    );
-  }
-
-  // Fallback: generic S&D renderer for unrecognized diagram types
   const [animated, setAnimated] = useState(false);
   const [activePage, setActivePage] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
@@ -265,6 +247,22 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
+
+  // If we have a predefined template, use it — it has proper welfare loss/gain
+  // triangles, colored boundaries, correct curve labels (MSC, MPC, MSB, MPB), etc.
+  if (resolvedType) {
+    return (
+      <div className="my-6">
+        <EconDiagramTemplate type={resolvedType} />
+        {diagram.conclusion && (
+          <div className="mx-1 -mt-2 mb-4 px-4 py-2.5 rounded-xl bg-primary/5 border border-primary/15">
+            <p className="text-xs font-semibold text-primary mb-1">Key Conclusion</p>
+            <p className="text-sm text-foreground/80">{diagram.conclusion}</p>
+          </div>
+        )}
+      </div>
+    );
+  }
 
   const W = 480;
   const H = 380;
