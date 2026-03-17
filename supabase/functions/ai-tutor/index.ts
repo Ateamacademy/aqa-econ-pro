@@ -16,13 +16,19 @@ You are generating content for a REVISION GUIDE, not a ChatGPT conversation. Str
 4. Use **### How It Works** or **### Explanation** with numbered reasoning steps (1, 2, 3...)
 5. Use **### Example** for a specific real-world case (name, country, year, data)
 6. Use **### Formula** for any relevant equations (use LaTeX: $...$)
-7. Use **### Diagram** followed by the diagram type keyword on the SAME LINE. Available diagram types you can reference:
-   - supply_demand, demand_increase, demand_decrease, supply_increase, supply_decrease
-   - positive_externality, negative_externality, negative_production_externality
-   - ad_increase, ad_decrease, sras_decrease
-   - ped_elastic, ped_inelastic, ppf, ppf_growth, phillips_curve
-   - tax_incidence, monopoly
-   Example: "### Diagram: positive_externality" — the platform will render the actual SVG diagram automatically
+7. Use **### Diagram** followed by the diagram type keyword on the SAME LINE. You MUST use the EXACT keyword from this list — the platform renders a different professional SVG for each one:
+   MICRO: supply_demand, demand_increase, demand_decrease, supply_increase, supply_decrease
+   EXTERNALITIES: positive_externality, negative_externality, negative_production_externality, positive_production_externality
+   INTERVENTION: tax_incidence, subsidy, price_floor, price_ceiling
+   MACRO: ad_increase, ad_decrease, sras_decrease, sras_increase, keynesian_as
+   ELASTICITY: ped_elastic, ped_inelastic
+   PPF: ppf, ppf_growth
+   MARKET STRUCTURES: monopoly, perfect_competition, monopolistic_competition, oligopoly_payoff
+   COST CURVES: cost_curves, lrac, short_run_shutdown
+   DISTRIBUTION: lorenz_curve, phillips_curve
+   TRADE: trade_quota
+   Example: "### Diagram: positive_externality" or "### Diagram: monopoly"
+   CRITICAL: Pick the MOST SPECIFIC type. For pollution → negative_production_externality. For merit goods → positive_externality. For minimum wage → price_floor. For NHS/education → positive_externality. For sugar tax → tax_incidence. For cost-push inflation → sras_decrease. For demand-pull inflation → ad_increase.
 8. Use "> 📝 **Key Point:** ..." callout for the single most important takeaway
 9. Use "> 💡 **Exam Tip:** ..." callout at the end with exam-specific advice
 10. **Keep paragraphs SHORT** — maximum 2-3 sentences. Use bullet points aggressively.
@@ -273,6 +279,7 @@ CRITICAL: NEVER use third person. ALWAYS use "you" and "your".`;
 4. Identify specific areas for improvement
 5. Provide a brief model answer excerpt showing what a top-band response looks like
 6. End with 2-3 actionable tips for their next attempt
+7. When the question requires a diagram, include "### Diagram: <exact_type_keyword>" using the available diagram types from the formatting rules. Always pick the most specific diagram type for the topic.
 CRITICAL: NEVER use third person. ALWAYS use "you" and "your".`;
       }
     }
@@ -334,7 +341,22 @@ EXTRACT CONSISTENCY (CRITICAL):
 - If you create extracts (e.g., Extract A, Extract B, Extract C), questions MUST ONLY reference extracts that actually exist in the paper.
 - Do NOT reference "Extract D" if you only provided Extracts A, B, and C.
 - Before finalising, cross-check every question to ensure any "Extract X" or "Context X" reference matches a provided extract/context.
-- Number your extracts sequentially and ensure no gaps or phantom references.
+
+MODEL DIAGRAM REQUIREMENT (CRITICAL):
+When giving feedback on student answers that require diagrams, you MUST include "### Diagram: <exact_type_keyword>" using the diagram types from the formatting rules. Choose the MOST SPECIFIC type for each topic:
+- Pollution/carbon emissions → negative_production_externality
+- NHS/education/vaccination → positive_externality
+- Smoking/alcohol → negative_externality
+- Training/R&D spillovers → positive_production_externality
+- Sugar tax/indirect tax → tax_incidence
+- Subsidy on electric vehicles → subsidy
+- Minimum wage → price_floor
+- Rent control → price_ceiling
+- Inflation from oil prices → sras_decrease
+- Consumer confidence boost → ad_increase
+- Monopoly profit → monopoly
+- Economies of scale → lrac
+- Trade restrictions → trade_quota
 
 After the student answers, mark their response using AQA criteria (KAA + Evaluation) and give detailed feedback speaking directly to them.`;
       }
