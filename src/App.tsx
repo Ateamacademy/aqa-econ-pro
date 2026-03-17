@@ -35,6 +35,7 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Blog = lazy(() => import("./pages/Blog"));
 const HelpCentre = lazy(() => import("./pages/HelpCentre"));
+const FounderDashboard = lazy(() => import("./pages/FounderDashboard"));
 
 const queryClient = new QueryClient();
 
@@ -68,6 +69,7 @@ const App = () => (
               <Route path="/terms" element={<Terms />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/help" element={<HelpCentre />} />
+              <Route path="/founder" element={<FounderDashboard />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             </Suspense>
