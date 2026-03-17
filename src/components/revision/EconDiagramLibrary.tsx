@@ -471,32 +471,30 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   positive_externality: {
     title: "Positive Consumption Externality",
     xAxis: "Quantity (Q)", yAxis: "Price / Cost / Benefit",
-    legend: [{ label: "MPC = S", color: COLORS.supply }, { label: "MPB = D", color: COLORS.mpb }, { label: "MSB", color: COLORS.demand }, { label: "Welfare Loss", color: COLORS.area }],
+    legend: [{ label: "MPC = S", color: COLORS.supply }, { label: "MPB = D", color: COLORS.mpb }, { label: "MSB", color: COLORS.demand }, { label: "Welfare Gain", color: COLORS.area }],
     examTips: [
-      "MSB is above MPB — third-party benefits not captured",
-      "Triangle of welfare loss between free market & social optimum",
-      "Label Qₘ (free market) and Q* (social optimum) on X-axis",
-      "Explain the divergence: MSB > MPB means under-consumption",
+      "MSB is above MPB — third-party benefits not captured by consumers",
+      "Under-consumption in free market: Qₘ < Q*",
+      "Welfare loss triangle between Qₘ and Q*",
+      "Policy: subsidy = external benefit per unit to internalise",
+      "Label subsidy arrow between MPC and MSB at Q*",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
       const pad = 10;
-      // Supply (MPC): upward sloping
       const sL = { x1: mx + pad, y1: my + ph - pad, x2: mx + pw - pad, y2: my + pad };
-      // MPB: downward sloping, lower/left
       const mpbL = { x1: mx + pad, y1: my + ph * 0.15, x2: mx + pw * 0.72, y2: my + ph - pad };
-      // MSB: downward sloping, higher/right (shifted right of MPB)
       const msbL = { x1: mx + pw * 0.18, y1: my + pad, x2: mx + pw - pad, y2: my + ph - pad };
 
-      // Free market eq = S ∩ MPB
       const freeEq = lineIntersect(sL.x1, sL.y1, sL.x2, sL.y2, mpbL.x1, mpbL.y1, mpbL.x2, mpbL.y2);
-      // Social optimum = S ∩ MSB
       const optEq = lineIntersect(sL.x1, sL.y1, sL.x2, sL.y2, msbL.x1, msbL.y1, msbL.x2, msbL.y2);
 
-      // DWL triangle: area between MSB and MPC from Qₘ to Q*
-      // Vertex 3: MSB value at Qₘ (the social benefit NOT captured at free market qty)
       const msbSlope = (msbL.y2 - msbL.y1) / (msbL.x2 - msbL.x1);
       const msbAtFreeX = msbL.y1 + msbSlope * (freeEq.x - msbL.x1);
+
+      // External benefit at Q*: gap between MSB and MPB
+      const mpbSlope = (mpbL.y2 - mpbL.y1) / (mpbL.x2 - mpbL.x1);
+      const mpbAtOptX = mpbL.y1 + mpbSlope * (optEq.x - mpbL.x1);
 
       return (
         <>
@@ -506,18 +504,24 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={mpbL.x2 + 4} y={mpbL.y2 - 6} text="D = MPB" color={COLORS.mpb} />
           <GLine {...msbL} color={COLORS.demand} gradientId="grad-demand" dashed glow="glow-blue" />
           <Label x={msbL.x2 + 4} y={msbL.y2 - 6} text="MSB" color={COLORS.demand} />
-          {/* Welfare loss triangle: freeEq → (Qₘ, MSB at Qₘ) → optEq */}
+          {/* Welfare loss triangle */}
           <polygon
             points={`${freeEq.x},${freeEq.y} ${freeEq.x},${msbAtFreeX} ${optEq.x},${optEq.y}`}
-            fill={COLORS.area} fillOpacity={0.12} stroke="url(#grad-area)" strokeWidth={1.5} strokeDasharray="3,3"
+            fill={COLORS.area} fillOpacity={0.15} stroke="url(#grad-area)" strokeWidth={1.5} strokeDasharray="3,3"
           />
-          <Label x={(freeEq.x + optEq.x) / 2} y={(freeEq.y + msbAtFreeX) / 2 + 4} text="DWL" color={COLORS.area} size={9} anchor="middle" />
+          <Label x={(freeEq.x + optEq.x) / 2} y={(freeEq.y + msbAtFreeX) / 2 + 4} text="WL" color={COLORS.area} size={9} anchor="middle" />
+          {/* Subsidy annotation arrow at Q* */}
+          <line x1={optEq.x + 12} y1={optEq.y} x2={optEq.x + 12} y2={mpbAtOptX} stroke={COLORS.eq} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
+          <Label x={optEq.x + 18} y={(optEq.y + mpbAtOptX) / 2 + 3} text="Subsidy" color={COLORS.eq} size={8} />
+          {/* Ext. benefit bracket */}
+          <line x1={freeEq.x - 8} y1={freeEq.y} x2={freeEq.x - 8} y2={msbAtFreeX} stroke={COLORS.area} strokeWidth={1.5} opacity={0.6} />
+          <Label x={freeEq.x - 14} y={(freeEq.y + msbAtFreeX) / 2 + 3} text="Ext. Benefit" color={COLORS.area} size={7} anchor="end" />
           <DashedToAxes x={freeEq.x} y={freeEq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Qₘ" />
           <PremiumDot x={freeEq.x} y={freeEq.y} color={COLORS.eq} label="Free Mkt" gradientId="dot-green"
-            tooltipText="✓ Free market under-provides — Qₘ < Q*" />
+            tooltipText="✓ Under-provides — Qₘ < Q*" />
           <DashedToAxes x={optEq.x} y={optEq.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P*" qLabel="Q*" />
           <PremiumDot x={optEq.x} y={optEq.y} color={COLORS.shifted} label="Soc. Opt." labelPos="tr" gradientId="dot-amber"
-            tooltipText="✓ Socially optimal — where MSB = MPC" />
+            tooltipText="✓ Optimal where MSB = MPC" />
         </>
       );
     },
@@ -527,30 +531,29 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     xAxis: "Quantity (Q)", yAxis: "Price / Cost / Benefit",
     legend: [{ label: "MPC = S", color: COLORS.supply }, { label: "MPB = D", color: COLORS.mpb }, { label: "MSB", color: COLORS.demand }, { label: "Welfare Loss", color: COLORS.area }],
     examTips: [
-      "MSB is below MPB — third-party costs not accounted for",
-      "Free market over-provides: Qₘ > Q*",
-      "Show welfare loss triangle between the two equilibria",
-      "Government may impose indirect tax to correct the failure",
+      "MSB is below MPB — consumers ignore external costs to third parties",
+      "Over-consumption in free market: Qₘ > Q*",
+      "Welfare loss = triangle between MSB and MPC from Q* to Qₘ",
+      "Policy: indirect tax = external cost per unit to internalise",
+      "Show tax arrow between MPB and MSB at optimal quantity",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
       const pad = 10;
-      // Supply (MPC): upward sloping
       const sL = { x1: mx + pad, y1: my + ph - pad, x2: mx + pw - pad, y2: my + pad };
-      // MPB: downward, higher/right (over-valued by consumers)
       const mpbL = { x1: mx + pw * 0.18, y1: my + pad, x2: mx + pw - pad, y2: my + ph - pad };
-      // MSB: downward, lower/left (true social benefit is less)
       const msbL = { x1: mx + pad, y1: my + ph * 0.15, x2: mx + pw * 0.72, y2: my + ph - pad };
 
-      // Free market eq = S ∩ MPB (over-consumption)
       const freeEq = lineIntersect(sL.x1, sL.y1, sL.x2, sL.y2, mpbL.x1, mpbL.y1, mpbL.x2, mpbL.y2);
-      // Social optimum = S ∩ MSB
       const optEq = lineIntersect(sL.x1, sL.y1, sL.x2, sL.y2, msbL.x1, msbL.y1, msbL.x2, msbL.y2);
 
-      // DWL: area between MPC and MSB from Q* to Qₘ (over-consumption region)
-      // Vertex 3: MSB value at Qₘ
+      // DWL vertex: MPC value at Qₘ
       const msbSlope = (msbL.y2 - msbL.y1) / (msbL.x2 - msbL.x1);
       const msbAtFreeX = msbL.y1 + msbSlope * (freeEq.x - msbL.x1);
+
+      // External cost annotation at Q*: gap between MPB and MSB
+      const mpbSlope = (mpbL.y2 - mpbL.y1) / (mpbL.x2 - mpbL.x1);
+      const mpbAtOptX = mpbL.y1 + mpbSlope * (optEq.x - mpbL.x1);
 
       return (
         <>
@@ -560,18 +563,24 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={mpbL.x2 + 4} y={mpbL.y2 - 6} text="D = MPB" color={COLORS.mpb} />
           <GLine {...msbL} color={COLORS.demand} gradientId="grad-demand" dashed glow="glow-blue" />
           <Label x={msbL.x2 + 4} y={msbL.y2 - 6} text="MSB" color={COLORS.demand} />
-          {/* DWL triangle: optEq → freeEq → (Qₘ, MSB at Qₘ) */}
+          {/* Welfare loss triangle: optEq → freeEq → (Qₘ, MSB at Qₘ) */}
           <polygon
             points={`${optEq.x},${optEq.y} ${freeEq.x},${freeEq.y} ${freeEq.x},${msbAtFreeX}`}
-            fill={COLORS.area} fillOpacity={0.12} stroke="url(#grad-area)" strokeWidth={1.5} strokeDasharray="3,3"
+            fill="#ef4444" fillOpacity={0.12} stroke="#ef4444" strokeWidth={1.2} strokeDasharray="3,3"
           />
-          <Label x={(optEq.x + freeEq.x) / 2} y={(freeEq.y + msbAtFreeX) / 2 + 4} text="DWL" color={COLORS.area} size={9} anchor="middle" />
+          <Label x={(optEq.x + freeEq.x) / 2} y={(freeEq.y + msbAtFreeX) / 2 + 4} text="WL" color={COLORS.area} size={9} anchor="middle" />
+          {/* Tax annotation arrow at Q* */}
+          <line x1={optEq.x - 10} y1={optEq.y} x2={optEq.x - 10} y2={mpbAtOptX} stroke={COLORS.shifted} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
+          <Label x={optEq.x - 16} y={(optEq.y + mpbAtOptX) / 2 + 3} text="Tax" color={COLORS.shifted} size={8} anchor="end" />
+          {/* External cost bracket at Qₘ */}
+          <line x1={freeEq.x + 8} y1={freeEq.y} x2={freeEq.x + 8} y2={msbAtFreeX} stroke="#ef4444" strokeWidth={1.5} opacity={0.6} />
+          <Label x={freeEq.x + 14} y={(freeEq.y + msbAtFreeX) / 2 + 3} text="Ext. Cost" color="#ef4444" size={7} />
           <DashedToAxes x={freeEq.x} y={freeEq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Qₘ" />
           <PremiumDot x={freeEq.x} y={freeEq.y} color={COLORS.eq} label="Free Mkt" gradientId="dot-green"
-            tooltipText="✓ Over-consumption — Qₘ exceeds Q*" />
+            tooltipText="✓ Over-consumption — Qₘ > Q*" />
           <DashedToAxes x={optEq.x} y={optEq.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P*" qLabel="Q*" />
           <PremiumDot x={optEq.x} y={optEq.y} color={COLORS.shifted} label="Soc. Opt." gradientId="dot-amber"
-            tooltipText="✓ Socially optimal where MSB = MPC" />
+            tooltipText="✓ Optimal where MSB = MPC" />
         </>
       );
     },
@@ -579,12 +588,13 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   negative_production_externality: {
     title: "Negative Production Externality",
     xAxis: "Quantity (Q)", yAxis: "Price / Cost / Benefit",
-    legend: [{ label: "MPC", color: COLORS.mpc }, { label: "MSC", color: COLORS.msc }, { label: "D = MSB", color: COLORS.demand }],
+    legend: [{ label: "MPC = S", color: COLORS.mpc }, { label: "MSC", color: COLORS.msc }, { label: "D = MPB = MSB", color: COLORS.demand }, { label: "Welfare Loss", color: "#ef4444" }],
     examTips: [
-      "MSC is above MPC — external costs of production",
+      "MSC is above MPC — producers ignore external costs (e.g. pollution)",
       "Overproduction in free market: Qₘ > Q*",
-      "Welfare loss triangle between MSC and MPC at free market output",
-      "Policy: tax = external cost per unit to internalise the externality",
+      "Welfare loss = triangle between MSC and MPC from Q* to Qₘ",
+      "Tax = external cost per unit shifts MPC up to MSC",
+      "Show the tax arrow between MPC and MSC at optimal quantity Q*",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
@@ -593,38 +603,108 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       const mpcL = { x1: mx + pad, y1: my + ph - pad, x2: mx + pw - pad, y2: my + ph * 0.15 };
       // MSC: upward sloping, above MPC (social cost higher)
       const mscL = { x1: mx + pw * 0.15, y1: my + ph - pad, x2: mx + pw - pad, y2: my + pad };
-      // D = MSB: downward sloping
+      // D = MSB = MPB: downward sloping
       const dL = { x1: mx + pad, y1: my + pad + 5, x2: mx + pw - pad, y2: my + ph - pad };
 
-      // Free market eq = MPC ∩ D
       const freeEq = lineIntersect(mpcL.x1, mpcL.y1, mpcL.x2, mpcL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
-      // Social optimum = MSC ∩ D
       const optEq = lineIntersect(mscL.x1, mscL.y1, mscL.x2, mscL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
 
-      // DWL top vertex: point on MSC directly above freeEq
-      // MSC at x=freeEq.x: interpolate
+      // DWL top vertex: MSC at freeEq.x
       const mscSlope = (mscL.y2 - mscL.y1) / (mscL.x2 - mscL.x1);
       const mscAtFreeX = mscL.y1 + mscSlope * (freeEq.x - mscL.x1);
 
+      // Tax annotation: MPC at Q* (gap = external cost)
+      const mpcSlope = (mpcL.y2 - mpcL.y1) / (mpcL.x2 - mpcL.x1);
+      const mpcAtOptX = mpcL.y1 + mpcSlope * (optEq.x - mpcL.x1);
+
       return (
         <>
-          <GLine {...mpcL} color={COLORS.mpc} width={2} />
+          <GLine {...mpcL} color={COLORS.mpc} width={2.5} />
           <Label x={mpcL.x2 - 8} y={mpcL.y2 - 6} text="S = MPC" color={COLORS.mpc} />
           <GLine {...mscL} color={COLORS.msc} gradientId="grad-supply" dashed glow="glow-red" />
           <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.msc} />
           <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MSB" color={COLORS.demand} />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MPB = MSB" color={COLORS.demand} />
+          {/* Welfare loss triangle: red-shaded */}
           <polygon
             points={`${optEq.x},${optEq.y} ${freeEq.x},${freeEq.y} ${freeEq.x},${mscAtFreeX}`}
-            fill={COLORS.area} fillOpacity={0.10} stroke="url(#grad-area)" strokeWidth={1.5} strokeDasharray="3,3"
+            fill="#ef4444" fillOpacity={0.15} stroke="#ef4444" strokeWidth={1.2} strokeDasharray="3,3"
           />
-          <Label x={(optEq.x + freeEq.x) / 2} y={(optEq.y + freeEq.y) / 2 - 6} text="DWL" color={COLORS.area} size={9} anchor="middle" />
-          <DashedToAxes x={freeEq.x} y={freeEq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Qₘ" />
+          <Label x={(optEq.x + freeEq.x) / 2} y={(optEq.y + freeEq.y + mscAtFreeX) / 3 - 2} text="WL" color="#ef4444" size={9} anchor="middle" />
+          {/* Tax annotation arrow at Q* — vertical gap between MSC and MPC */}
+          <line x1={optEq.x - 10} y1={optEq.y} x2={optEq.x - 10} y2={mpcAtOptX} stroke={COLORS.shifted} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
+          <Label x={optEq.x - 16} y={(optEq.y + mpcAtOptX) / 2 + 3} text="Tax" color={COLORS.shifted} size={8} anchor="end" />
+          {/* External cost bracket at Qₘ */}
+          <line x1={freeEq.x + 8} y1={freeEq.y} x2={freeEq.x + 8} y2={mscAtFreeX} stroke="#ef4444" strokeWidth={1.5} opacity={0.6} />
+          <Label x={freeEq.x + 14} y={(freeEq.y + mscAtFreeX) / 2 + 3} text="Ext. Cost" color="#ef4444" size={7} />
+          <DashedToAxes x={freeEq.x} y={freeEq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="Pₘ" qLabel="Qₘ" />
           <PremiumDot x={freeEq.x} y={freeEq.y} color={COLORS.eq} label="Free Mkt" gradientId="dot-green"
-            tooltipText="✓ Free market over-produces at Qₘ" />
+            tooltipText="✓ Over-produces at Qₘ" />
           <DashedToAxes x={optEq.x} y={optEq.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P*" qLabel="Q*" />
           <PremiumDot x={optEq.x} y={optEq.y} color={COLORS.shifted} label="Soc. Opt." gradientId="dot-amber"
-            tooltipText="✓ Optimal output where MSC = MSB" />
+            tooltipText="✓ Optimal: MSC = MSB" />
+        </>
+      );
+    },
+  },
+  positive_production_externality: {
+    title: "Positive Production Externality",
+    xAxis: "Quantity (Q)", yAxis: "Price / Cost / Benefit",
+    legend: [{ label: "MPC = S", color: COLORS.supply }, { label: "MSC", color: COLORS.eq }, { label: "D = MPB = MSB", color: COLORS.demand }, { label: "Welfare Gain", color: COLORS.area }],
+    examTips: [
+      "MSC is below MPC — production generates external benefits (e.g. training)",
+      "Under-production in free market: Qₘ < Q*",
+      "Welfare gain triangle between Q* and Qₘ",
+      "Policy: subsidy = external benefit per unit to shift MPC down to MSC",
+      "Show subsidy arrow between MPC and MSC at optimal quantity",
+    ],
+    render: (p) => {
+      const { mx, my, pw, ph } = p;
+      const pad = 10;
+      // MPC: upward sloping (private cost, higher)
+      const mpcL = { x1: mx + pw * 0.15, y1: my + ph - pad, x2: mx + pw - pad, y2: my + pad };
+      // MSC: upward sloping, BELOW MPC (social cost is lower due to ext. benefit)
+      const mscL = { x1: mx + pad, y1: my + ph - pad, x2: mx + pw - pad, y2: my + ph * 0.15 };
+      // D = MPB = MSB: downward sloping
+      const dL = { x1: mx + pad, y1: my + pad + 5, x2: mx + pw - pad, y2: my + ph - pad };
+
+      const freeEq = lineIntersect(mpcL.x1, mpcL.y1, mpcL.x2, mpcL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
+      const optEq = lineIntersect(mscL.x1, mscL.y1, mscL.x2, mscL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
+
+      // DWL bottom vertex: MSC at freeEq.x
+      const mscSlope = (mscL.y2 - mscL.y1) / (mscL.x2 - mscL.x1);
+      const mscAtFreeX = mscL.y1 + mscSlope * (freeEq.x - mscL.x1);
+
+      // Subsidy annotation: MPC at Q* (gap = external benefit)
+      const mpcSlope = (mpcL.y2 - mpcL.y1) / (mpcL.x2 - mpcL.x1);
+      const mpcAtOptX = mpcL.y1 + mpcSlope * (optEq.x - mpcL.x1);
+
+      return (
+        <>
+          <GLine {...mpcL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
+          <Label x={mpcL.x2 - 8} y={mpcL.y2 - 6} text="S = MPC" color={COLORS.supply} />
+          <GLine {...mscL} color={COLORS.eq} width={2.5} dashed />
+          <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.eq} />
+          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MPB = MSB" color={COLORS.demand} />
+          {/* Welfare gain triangle */}
+          <polygon
+            points={`${freeEq.x},${freeEq.y} ${freeEq.x},${mscAtFreeX} ${optEq.x},${optEq.y}`}
+            fill={COLORS.area} fillOpacity={0.15} stroke="url(#grad-area)" strokeWidth={1.2} strokeDasharray="3,3"
+          />
+          <Label x={(freeEq.x + optEq.x) / 2} y={(freeEq.y + mscAtFreeX) / 2 + 4} text="WL" color={COLORS.area} size={9} anchor="middle" />
+          {/* Subsidy annotation arrow at Q* */}
+          <line x1={optEq.x + 12} y1={mpcAtOptX} x2={optEq.x + 12} y2={optEq.y} stroke={COLORS.shifted} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
+          <Label x={optEq.x + 18} y={(mpcAtOptX + optEq.y) / 2 + 3} text="Subsidy" color={COLORS.shifted} size={8} />
+          {/* External benefit bracket at Qₘ */}
+          <line x1={freeEq.x - 8} y1={freeEq.y} x2={freeEq.x - 8} y2={mscAtFreeX} stroke={COLORS.area} strokeWidth={1.5} opacity={0.6} />
+          <Label x={freeEq.x - 14} y={(freeEq.y + mscAtFreeX) / 2 + 3} text="Ext. Benefit" color={COLORS.area} size={7} anchor="end" />
+          <DashedToAxes x={freeEq.x} y={freeEq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="Pₘ" qLabel="Qₘ" />
+          <PremiumDot x={freeEq.x} y={freeEq.y} color={COLORS.eq} label="Free Mkt" gradientId="dot-green"
+            tooltipText="✓ Under-produces at Qₘ" />
+          <DashedToAxes x={optEq.x} y={optEq.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P*" qLabel="Q*" />
+          <PremiumDot x={optEq.x} y={optEq.y} color={COLORS.shifted} label="Soc. Opt." gradientId="dot-amber"
+            tooltipText="✓ Optimal: MSC = MSB" />
         </>
       );
     },
