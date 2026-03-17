@@ -1766,6 +1766,8 @@ function ExamTipsPanel({ tips, visible }: { tips: string[]; visible: boolean }) 
 export function EconDiagramTemplate({ type, className }: { type: DiagramType; className?: string }) {
   const config = DIAGRAMS[type];
   const [hovered, setHovered] = useState(false);
+  const rawId = useId();
+  const uid = rawId.replace(/:/g, "");
   if (!config) return null;
 
   const W = 420, H = 320;
@@ -1786,10 +1788,10 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
         {config.title}
       </p>
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full max-w-[480px] h-auto text-foreground relative z-10">
-        <PremiumDefs mx={mx} my={my} pw={pw} ph={ph} />
+        <PremiumDefs mx={mx} my={my} pw={pw} ph={ph} uid={uid} />
         <Axes mx={mx} my={my} pw={pw} ph={ph} xLabel={config.xAxis} yLabel={config.yAxis} />
-        <g clipPath="url(#plot-clip)">
-          {config.render({ W, H, mx, my, pw, ph })}
+        <g clipPath={`url(#plot-clip-${uid})`}>
+          {config.render({ W, H, mx, my, pw, ph, uid })}
         </g>
       </svg>
       {config.legend && config.legend.length > 0 && (
