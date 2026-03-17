@@ -1247,7 +1247,7 @@ export default function PredictedPapers() {
     if (isAnyEcon) {
       try {
         const { data: patternData } = await supabase.functions.invoke("retrieve-patterns", {
-          body: { paper, subject: isEdexcelA ? "edexcel-a" : isEdexcelB ? "edexcel-b" : isOCR ? "ocr_economics" : isCambridge ? "cambridge" : isGCSE ? "aqa-gcse" : isIGCSE ? "cambridge-igcse" : isEdexcelIGCSE ? "edexcel-igcse" : isOcrGcse ? "ocr_gcse" : "economics", limit: 250 },
+          body: { paper, subject: isEdexcelA ? "edexcel-a" : isEdexcelB ? "edexcel-b" : isOCR ? "ocr_economics" : isCambridge ? "cambridge" : isGCSE ? "aqa-gcse" : isIGCSE ? "cambridge-igcse" : isEdexcelIGCSE ? "edexcel-igcse" : isOcrGcse ? "ocr_gcse" : isIB ? "ib_economics" : subject === "wjec" ? "wjec" : subject === "eduqas" ? "eduqas" : "economics", limit: 250 },
         });
         if (patternData?.contextPrompt) {
           dbContextPrompt = patternData.contextPrompt;
