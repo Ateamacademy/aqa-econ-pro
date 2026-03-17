@@ -88,10 +88,10 @@ function lineIntersect(
 }
 
 /* ── SVG Defs ── */
-function PremiumDefs({ mx, my, pw, ph }: { mx: number; my: number; pw: number; ph: number }) {
+function PremiumDefs({ mx, my, pw, ph, uid }: { mx: number; my: number; pw: number; ph: number; uid: string }) {
   return (
     <defs>
-      <clipPath id="plot-clip">
+      <clipPath id={`plot-clip-${uid}`}>
         <rect x={mx} y={my} width={pw} height={ph} />
       </clipPath>
       {["blue|#3b82f6", "red|#ef4444", "amber|#f59e0b", "green|#16a34a", "purple|#8b5cf6"].map(s => {
