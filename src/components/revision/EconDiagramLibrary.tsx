@@ -45,7 +45,8 @@ export type DiagramType =
   | "monopolistic_competition"
   | "keynesian_as"
   | "trade_quota"
-  | "short_run_shutdown";
+  | "short_run_shutdown"
+  | "labour_market";
 
 interface DiagramConfig {
   title: string;
