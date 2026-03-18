@@ -50,7 +50,7 @@ export const paperOptionsBySubject: Record<Subject, { value: string; label: stri
   "eduqas": [
     { value: "1", label: "Component 1", title: "Markets & Market Failure", desc: "Microeconomics — demand, supply, elasticity, market failure, government intervention (2h)" },
     { value: "2", label: "Component 2", title: "National & International Economy", desc: "Macroeconomics — economic growth, inflation, trade, fiscal/monetary policy (2h)" },
-    { value: "full", label: "Component 3", title: "Full Synoptic Paper", desc: "Synoptic data response paper drawing on all micro and macro content (2h15m)" },
+    { value: "full", label: "Component 3", title: "Synoptic Data Response", desc: "Synoptic data response paper drawing on all micro and macro content (2h15m)" },
   ],
   "edexcel-igcse": [
     { value: "1", label: "Paper 1", title: "Microeconomics & Business", desc: "Microeconomics and business economics — demand, supply, market structure (4EC1/01)" },
