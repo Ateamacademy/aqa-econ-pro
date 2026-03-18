@@ -3,9 +3,9 @@ import type { Subject } from "@/contexts/SubjectContext";
 /* ── Predicted Papers: paper options per subject ── */
 export const paperOptionsBySubject: Record<Subject, { value: string; label: string; title: string; desc: string }[]> = {
   economics: [
-    { value: "1", label: "Paper 1", title: "Markets & Market Failure", desc: "Microeconomics — supply & demand, elasticity, market failure, government intervention" },
-    { value: "2", label: "Paper 2", title: "National & International Economy", desc: "Macroeconomics — GDP, inflation, unemployment, fiscal & monetary policy, trade" },
-    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete exam paper covering all topics — mirrors the official structure and difficulty" },
+    { value: "1", label: "Paper 1", title: "Markets & Market Failure", desc: "Microeconomics — supply & demand, elasticity, market failure, government intervention (7136/1)" },
+    { value: "2", label: "Paper 2", title: "National & International Economy", desc: "Macroeconomics — GDP, inflation, unemployment, fiscal & monetary policy, trade (7136/2)" },
+    { value: "full", label: "Paper 3", title: "Economic Principles & Issues", desc: "Synoptic paper — 30 MCQs + case study investigation covering both micro & macro (7136/3)" },
   ],
   "edexcel-a": [
     { value: "1", label: "Paper 1", title: "Markets & Business Behaviour", desc: "Microeconomics — demand, supply, market structures, labour markets, government intervention (9EC0/01)" },
