@@ -14,6 +14,7 @@ import { FREE_LIMITS } from "@/lib/plans";
 import { DrawingCanvas } from "@/components/tools/DrawingCanvas";
 import { cn } from "@/lib/utils";
 import { extractDiagramBlocks, EconDiagramCanvas } from "@/components/predicted-papers/EconDiagramSVG";
+import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import { UpgradeModal } from "@/components/UpgradeModal";
 
 const DIAGRAM_TOPICS: Record<string, string[]> = {
@@ -123,6 +124,9 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
 
 const DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced"] as const;
 
+const inferDiagramType = (...parts: string[]) =>
+  resolveDiagramType(parts.filter(Boolean).join("\n")) ?? "supply_demand";
+
 type InputMode = "draw" | "text";
 
 export default function DiagramPractice() {
@@ -200,6 +204,8 @@ Format: Give the scenario context, then the question. Nothing else.` }],
         ]
       : `Question: ${generatedQ}\n\nStudent's Diagram Description:\n${diagramDesc}\n\nStudent's Written Explanation:\n${explanation}`;
 
+    const expectedDiagramType = inferDiagramType(topic, generatedQ, diagramDesc, explanation);
+
     await streamChat({
       messages: [
         { role: "user", content: diagramContent },
@@ -238,9 +244,12 @@ Give specific, actionable steps to improve. Include:
 - What to add or correct in the diagram
 - How to strengthen the written explanation
 - A memory trick or exam technique tip
-- You MUST include a structured diagram block in EXACTLY this format (the app will render it as a visual SVG diagram):
+- You MUST include exactly ONE structured diagram block using this exact keyword: 
+  ### Diagram: ${expectedDiagramType}
+- Do NOT use placeholders like [Diagram Title] and do NOT use a different diagram keyword.
+- Use this exact structure (the app parses it):
 
-**Diagram: [Diagram Title]**
+### Diagram: ${expectedDiagramType}
 - X-axis: [label]
 - Y-axis: [label]
 - Initial curves: [describe D1, S1 etc.]
@@ -404,6 +413,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
       )}
 
       {step === "feedback" && <DiagramFeedbackView
+        topic={topic}
         generatedQ={generatedQ}
         diagramImage={diagramImage}
         inputMode={inputMode}
@@ -446,6 +456,7 @@ function parseFeedbackSections(feedback: string) {
 }
 
 function DiagramFeedbackView({
+  topic,
   generatedQ,
   diagramImage,
   inputMode,
@@ -454,6 +465,7 @@ function DiagramFeedbackView({
   feedback,
   onReset,
 }: {
+  topic: string;
   generatedQ: string;
   diagramImage: string | null;
   inputMode: InputMode;
@@ -465,10 +477,14 @@ function DiagramFeedbackView({
   const [showExplain, setShowExplain] = useState(false);
   const [showImprove, setShowImprove] = useState(false);
   const sections = useMemo(() => parseFeedbackSections(feedback), [feedback]);
+  const expectedDiagramType = inferDiagramType(topic, generatedQ, diagramDesc, explanation);
 
   const renderContent = (text: string) => (
     <div className="prose prose-sm max-w-none dark:prose-invert">
-      {extractDiagramBlocks(text).map((seg, i) =>
+      {extractDiagramBlocks(text, {
+        contextText: `${topic}\n${generatedQ}`,
+        fallbackType: expectedDiagramType,
+      }).map((seg, i) =>
         seg.type === "diagram" ? (
           <EconDiagramCanvas key={i} diagram={seg.diagram} />
         ) : (

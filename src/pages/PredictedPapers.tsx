@@ -33,6 +33,7 @@ import { generatePaperPdf } from "@/lib/generatePaperPdf";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { ExamTimer } from "@/components/predicted-papers/ExamTimer";
 import { ExamResultsSummary } from "@/components/predicted-papers/ExamResultsSummary";
+import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 
 // Exam durations in minutes per subject + paper
 const EXAM_DURATIONS: Record<string, Record<string, number>> = {
@@ -1318,6 +1319,8 @@ export default function PredictedPapers() {
       if (!answer?.trim()) { toast.error("Please write your answer first."); return; }
       setMarkingId(question.id);
 
+      const expectedDiagramType = resolveDiagramType(`${question.text}\n${paperContext}\n${answer}`) ?? "supply_demand";
+
       const markingPrompt = isMaths
         ? `You are marking an Edexcel GCSE Maths (${tier} tier) answer.
 
@@ -1445,9 +1448,9 @@ Give specific, actionable steps to improve. Include:
 - What to add or correct in the diagram
 - How to strengthen the written explanation
 - A memory trick or exam technique tip
-- You MUST include a structured diagram block in EXACTLY this format (the app will render it as a visual SVG diagram):
+- You MUST include exactly ONE structured diagram block with this exact keyword (do not use placeholders):
 
-**Diagram: [Diagram Title]**
+### Diagram: ${expectedDiagramType}
 - **X-axis**: [label]
 - **Y-axis**: [label]
 - **Initial curves**: [describe D1, S1 etc.]
