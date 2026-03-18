@@ -1266,6 +1266,73 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     },
   },
 
+  /* ── Subsidy on a Good ── */
+  subsidy: {
+    title: "Effect of a Subsidy",
+    xAxis: "Quantity", yAxis: "Price",
+    legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "S + subsidy", color: COLORS.shifted }],
+    examTips: [
+      "Supply shifts RIGHT/DOWN by the amount of the subsidy per unit",
+      "Price falls from P to P1, quantity rises from Q to Q1",
+      "Show the shift arrow clearly from S to S + subsidy",
+      "Label both equilibrium points and project to axes",
+    ],
+    render: (p) => {
+      const { mx, my, pw, ph } = p;
+      const pad = 10;
+      const subsidyShift = 50; // RIGHT shift (subsidy lowers costs → supply shifts right/down)
+
+      // D: top-left to bottom-right
+      const dL = { x1: mx + pad, y1: my + pad, x2: mx + pw - pad, y2: my + ph - pad };
+      // S: bottom-left to top-right
+      const s1L = { x1: mx + pad, y1: my + ph - pad, x2: mx + pw - pad, y2: my + pad };
+      // S + subsidy: shifted RIGHT
+      const s2L = { x1: s1L.x1 + subsidyShift, y1: s1L.y1, x2: s1L.x2 + subsidyShift, y2: s1L.y2 };
+
+      const eq1 = lineIntersect(dL.x1, dL.y1, dL.x2, dL.y2, s1L.x1, s1L.y1, s1L.x2, s1L.y2);
+      const eq2 = lineIntersect(dL.x1, dL.y1, dL.x2, dL.y2, s2L.x1, s2L.y1, s2L.x2, s2L.y2);
+
+      // Shift arrow from old eq to new eq area
+      const arrowX = (eq1.x + eq2.x) / 2;
+      const s1Slope = (s1L.y2 - s1L.y1) / (s1L.x2 - s1L.x1);
+      const arrowY1 = s1L.y1 + s1Slope * (arrowX - s1L.x1);
+      const arrowY2 = s1L.y1 + s1Slope * (arrowX - s2L.x1 + (s1L.x1 - s1L.x1));
+      // Midpoint on both supply curves at arrowX
+      const s2Slope = (s2L.y2 - s2L.y1) / (s2L.x2 - s2L.x1);
+      const arrowFromY = s1L.y1 + s1Slope * (arrowX - s1L.x1);
+      const arrowToY = s2L.y1 + s2Slope * (arrowX - s2L.x1);
+
+      return (
+        <>
+          {/* Demand */}
+          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color={COLORS.demand} />
+          {/* Original supply S */}
+          <GLine {...s1L} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
+          <Label x={s1L.x2 + 4} y={s1L.y2 + 4} text="S" color={COLORS.supply} />
+          {/* S + subsidy */}
+          <GLine {...s2L} color={COLORS.shifted} gradientId="grad-shifted" glow="glow-amber" />
+          <Label x={s2L.x2 + 4} y={s2L.y2 + 4} text="S + subsidy" color={COLORS.shifted} />
+
+          {/* Shift arrow */}
+          <line x1={arrowFromY < arrowToY ? arrowX - 2 : arrowX} y1={arrowFromY}
+                x2={arrowFromY < arrowToY ? arrowX - 2 : arrowX} y2={arrowToY}
+                stroke="#f97316" strokeWidth={2.5} markerEnd="url(#arrow-shifted)" />
+
+          {/* Original equilibrium */}
+          <DashedToAxes x={eq1.x} y={eq1.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P" qLabel="Q" />
+          <PremiumDot x={eq1.x} y={eq1.y} color={COLORS.eq} label="E₁" gradientId="dot-green"
+            tooltipText="✓ Pre-subsidy equilibrium" />
+
+          {/* New equilibrium */}
+          <DashedToAxes x={eq2.x} y={eq2.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P1" qLabel="Q1" />
+          <PremiumDot x={eq2.x} y={eq2.y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
+            tooltipText="✓ After subsidy: lower P, higher Q" />
+        </>
+      );
+    },
+  },
+
   /* ── PPF ── */
   ppf: {
     title: "Production Possibility Frontier",
