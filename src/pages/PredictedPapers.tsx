@@ -1319,6 +1319,8 @@ export default function PredictedPapers() {
       if (!answer?.trim()) { toast.error("Please write your answer first."); return; }
       setMarkingId(question.id);
 
+      const expectedDiagramType = resolveDiagramType(`${question.text}\n${paperContext}\n${answer}`) ?? "supply_demand";
+
       const markingPrompt = isMaths
         ? `You are marking an Edexcel GCSE Maths (${tier} tier) answer.
 
