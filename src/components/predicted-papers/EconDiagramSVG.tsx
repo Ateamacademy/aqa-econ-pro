@@ -634,33 +634,65 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
 /**
  * Scans markdown text for diagram blocks and returns segments.
  */
-export function extractDiagramBlocks(text: string): Array<{ type: "text"; content: string } | { type: "diagram"; diagram: DiagramProps }> {
+export function extractDiagramBlocks(
+  text: string,
+  options: DiagramParseOptions = {}
+): Array<{ type: "text"; content: string } | { type: "diagram"; diagram: DiagramProps }> {
   const segments: Array<{ type: "text"; content: string } | { type: "diagram"; diagram: DiagramProps }> = [];
+  const lines = text.split("\n");
+  let i = 0;
+  let textBuffer: string[] = [];
 
-  const diagramRegex = /\*?\*?Diagram:\s*.+?\*?\*?\s*\n([\s\S]*?)(?=\n(?:\*?\*?Diagram:|\n##|\n\*\*[A-Z])|\n\n\n|$)/gi;
-  let lastIndex = 0;
-  let match;
+  const flushText = () => {
+    if (textBuffer.length > 0) {
+      segments.push({ type: "text", content: textBuffer.join("\n") });
+      textBuffer = [];
+    }
+  };
 
-  while ((match = diagramRegex.exec(text)) !== null) {
-    const fullMatch = match[0];
-    const startIdx = match.index;
+  const isDiagramStart = (line: string) =>
+    /^\s*(?![-•]\s)(?:#{2,4}\s*)?(?:\*\*)?Diagram\s*:/i.test(line);
 
-    if (startIdx > lastIndex) {
-      segments.push({ type: "text", content: text.slice(lastIndex, startIdx) });
+  const isSectionHeader = (line: string) =>
+    /^\s*#{1,4}\s+\S/.test(line) && !isDiagramStart(line);
+
+  while (i < lines.length) {
+    if (!isDiagramStart(lines[i])) {
+      textBuffer.push(lines[i]);
+      i++;
+      continue;
     }
 
-    const parsed = parseDiagramBlock(fullMatch);
+    flushText();
+
+    const blockLines = [lines[i]];
+    i++;
+
+    while (i < lines.length) {
+      if (isDiagramStart(lines[i]) || isSectionHeader(lines[i])) break;
+      blockLines.push(lines[i]);
+      i++;
+    }
+
+    const blockText = blockLines.join("\n");
+    const parsed = parseDiagramBlock(blockText, options);
     if (parsed) {
       segments.push({ type: "diagram", diagram: parsed });
     } else {
-      segments.push({ type: "text", content: fullMatch });
+      segments.push({ type: "text", content: blockText });
     }
-
-    lastIndex = startIdx + fullMatch.length;
   }
 
-  if (lastIndex < text.length) {
-    segments.push({ type: "text", content: text.slice(lastIndex) });
+  flushText();
+
+  const hasDiagram = segments.some((seg) => seg.type === "diagram");
+  if (!hasDiagram && (options.fallbackType || options.contextText)) {
+    const fallbackSeed = options.fallbackType ?? "supply_demand";
+    const fallbackBlock = `### Diagram: ${fallbackSeed}\n- X-axis: Quantity (Q)\n- Y-axis: Price (P)\n- Initial curves: D1 and S1\n- Shift: ${options.fallbackShift ?? ""}\n- Key conclusion: Use this as the reference diagram.`;
+    const fallbackParsed = parseDiagramBlock(fallbackBlock, options);
+    if (fallbackParsed) {
+      segments.push({ type: "diagram", diagram: fallbackParsed });
+    }
   }
 
   if (segments.length === 0) {
