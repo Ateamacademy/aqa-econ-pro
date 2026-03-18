@@ -103,9 +103,14 @@ export function QuestionCard({
     }, 0);
   };
 
+  const expectedDiagramType = resolveDiagramType(`${question.label}\n${question.text}\n${answer}`) ?? undefined;
+
   const renderDiagramContent = (text: string) => (
     <div className="prose prose-sm max-w-none dark:prose-invert">
-      {extractDiagramBlocks(text).map((seg, i) =>
+      {extractDiagramBlocks(text, {
+        contextText: `${question.label}\n${question.text}`,
+        fallbackType: expectedDiagramType,
+      }).map((seg, i) =>
         seg.type === "diagram" ? (
           <EconDiagramCanvas key={i} diagram={seg.diagram} />
         ) : (
