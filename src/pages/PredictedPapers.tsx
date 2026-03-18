@@ -1448,9 +1448,9 @@ Give specific, actionable steps to improve. Include:
 - What to add or correct in the diagram
 - How to strengthen the written explanation
 - A memory trick or exam technique tip
-- You MUST include a structured diagram block in EXACTLY this format (the app will render it as a visual SVG diagram):
+- You MUST include exactly ONE structured diagram block with this exact keyword (do not use placeholders):
 
-**Diagram: [Diagram Title]**
+### Diagram: ${expectedDiagramType}
 - **X-axis**: [label]
 - **Y-axis**: [label]
 - **Initial curves**: [describe D1, S1 etc.]
