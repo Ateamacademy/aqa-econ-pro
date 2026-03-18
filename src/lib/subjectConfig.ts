@@ -10,7 +10,7 @@ export const paperOptionsBySubject: Record<Subject, { value: string; label: stri
   "edexcel-a": [
     { value: "1", label: "Paper 1", title: "Markets & Business Behaviour", desc: "Microeconomics — demand, supply, market structures, labour markets, government intervention (9EC0/01)" },
     { value: "2", label: "Paper 2", title: "The National & Global Economy", desc: "Macroeconomics — AD/AS, economic performance, financial sector, trade, development (9EC0/02)" },
-    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete synoptic paper covering all themes — data response + extended open-response (9EC0/03)" },
+    { value: "full", label: "Paper 3", title: "Microeconomics & Macroeconomics", desc: "Synoptic paper — data response + extended open-response covering both micro & macro (9EC0/03)" },
   ],
   "edexcel-b": [
     { value: "1", label: "Paper 1", title: "Markets, Consumers & Firms", desc: "How markets work, market failure, business behaviour, the labour market (9EB0/01)" },
