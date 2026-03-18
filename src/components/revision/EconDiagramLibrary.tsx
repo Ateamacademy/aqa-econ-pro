@@ -1191,57 +1191,47 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     },
   },
 
-  /* ── Tax Incidence ── */
+  /* ── Tax Incidence (Ad Valorem / Specific) ── */
   tax_incidence: {
-    title: "Effect of an Indirect Tax",
-    xAxis: "Quantity (Q)", yAxis: "Price (P)",
-    legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "Tax Revenue", color: COLORS.area }],
+    title: "Effect of an Indirect Tax (Ad Valorem)",
+    xAxis: "Quantity", yAxis: "Price",
+    legend: [{ label: "D1", color: COLORS.demand }, { label: "S1", color: COLORS.supply }, { label: "S1 + Ad valorem tax", color: COLORS.shifted }, { label: "Welfare loss", color: "#ef4444" }],
     examTips: [
       "Supply shifts LEFT/UP by the amount of the tax per unit",
-      "Show tax revenue as shaded area between P_consumer and P_producer",
-      "Consumer burden depends on PED — more inelastic = more burden",
-      "Label S₁ (pre-tax) and S₁+Tax clearly",
+      "Ad valorem tax = percentage of price → S+Tax diverges from S",
+      "Welfare loss triangle between old and new equilibrium",
+      "Price rises from P1 to P2, quantity falls from Q1 to Q2",
+      "Label S1, S1 + Ad valorem tax and D1 clearly",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
       const pad = 10;
       const taxShift = -50; // LEFT shift (tax increases costs → supply shifts left/up)
 
+      // D1: top-left to bottom-right
       const dL = { x1: mx + pad, y1: my + pad, x2: mx + pw - pad, y2: my + ph - pad };
+      // S1: bottom-left to top-right
       const s1L = { x1: mx + pad, y1: my + ph - pad, x2: mx + pw - pad, y2: my + pad };
-      // S₁+Tax: shifted LEFT
+      // S1 + Ad valorem tax: shifted LEFT
       const s2L = { x1: s1L.x1 + taxShift, y1: s1L.y1, x2: s1L.x2 + taxShift, y2: s1L.y2 };
 
+      // Equilibria
       const eq1 = lineIntersect(dL.x1, dL.y1, dL.x2, dL.y2, s1L.x1, s1L.y1, s1L.x2, s1L.y2);
       const eq2 = lineIntersect(dL.x1, dL.y1, dL.x2, dL.y2, s2L.x1, s2L.y1, s2L.x2, s2L.y2);
 
-      // Producer price at Q₂ on original supply
+      // Producer price at Q2 on original supply (bottom of welfare loss)
       const s1Slope = (s1L.y2 - s1L.y1) / (s1L.x2 - s1L.x1);
       const prodPriceY = s1L.y1 + s1Slope * (eq2.x - s1L.x1);
 
+      // Tax annotation arrow between S1 and S1+tax at midpoint
+      const midX = (eq1.x + eq2.x) / 2;
+      const s2Slope = (s2L.y2 - s2L.y1) / (s2L.x2 - s2L.x1);
+      const s1AtMid = s1L.y1 + s1Slope * (midX - s1L.x1);
+      const s2AtMid = s2L.y1 + s2Slope * (midX - s2L.x1);
+
       return (
         <>
-          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color={COLORS.demand} />
-          <GLine {...s1L} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={s1L.x2 + 4} y={s1L.y2 + 4} text="S₁" color={COLORS.supply} />
-          <GLine {...s2L} color={COLORS.supply} gradientId="grad-supply" dashed />
-          <Label x={s2L.x2 + 4} y={s2L.y2 + 4} text="S₁+Tax" color={COLORS.supply} />
-          {/* Tax revenue area — closed polygon */}
-          <WelfareRegion
-            points={[
-              { x: mx, y: eq2.y },
-              { x: eq2.x, y: eq2.y },
-              { x: eq2.x, y: prodPriceY },
-              { x: mx, y: prodPriceY },
-            ]}
-            fill="#8b5cf6"
-            fillOpacity={0.18}
-            strokeWidth={1.5}
-            label="Tax Rev."
-            labelSize={8}
-          />
-          {/* Deadweight loss triangle */}
+          {/* Welfare loss triangle — red filled */}
           <WelfareRegion
             points={[
               { x: eq2.x, y: eq2.y },
@@ -1249,17 +1239,35 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
               { x: eq2.x, y: prodPriceY },
             ]}
             fill="#ef4444"
-            fillOpacity={0.30}
+            fillOpacity={0.55}
             strokeWidth={2.5}
-            label="DWL"
+            label="Welfare loss"
             labelSize={8}
           />
 
-          <DashedToAxes x={eq1.x} y={eq1.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Q₁" />
-          <PremiumDot x={eq1.x} y={eq1.y} color={COLORS.eq} label="E₁" gradientId="dot-green"
+          {/* D1 */}
+          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D1" color={COLORS.demand} />
+          {/* S1 */}
+          <GLine {...s1L} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
+          <Label x={s1L.x2 + 4} y={s1L.y2 + 4} text="S1" color={COLORS.supply} />
+          {/* S1 + Ad valorem tax */}
+          <GLine {...s2L} color={COLORS.shifted} gradientId="grad-shifted" glow="glow-amber" />
+          <Label x={s2L.x2 + 4} y={s2L.y2 + 4} text="S1 + Ad valorem tax" color={COLORS.shifted} />
+
+          {/* Tax - 20% annotation arrow between the two supply curves */}
+          <line x1={midX + 8} y1={s1AtMid} x2={midX + 8} y2={s2AtMid}
+                stroke="#1e293b" strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
+          <Label x={midX + 16} y={(s1AtMid + s2AtMid) / 2 + 3} text="Tax - 20%" color="#1e293b" size={9} />
+
+          {/* Original equilibrium P1 / Q1 */}
+          <DashedToAxes x={eq1.x} y={eq1.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P1" qLabel="Q1" />
+          <PremiumDot x={eq1.x} y={eq1.y} color={COLORS.eq} label="" gradientId="dot-green"
             tooltipText="✓ Pre-tax equilibrium" />
-          <DashedToAxes x={eq2.x} y={eq2.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P₂" qLabel="Q₂" />
-          <PremiumDot x={eq2.x} y={eq2.y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
+
+          {/* New equilibrium P2 / Q2 */}
+          <DashedToAxes x={eq2.x} y={eq2.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P2" qLabel="Q2" />
+          <PremiumDot x={eq2.x} y={eq2.y} color={COLORS.shifted} label="" gradientId="dot-amber"
             tooltipText="✓ After tax: higher P, lower Q" />
         </>
       );
