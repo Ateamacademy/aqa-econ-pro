@@ -23,23 +23,38 @@ interface DiagramProps {
   conclusion: string;
 }
 
-function parseDiagramBlock(text: string): DiagramProps | null {
-  const typeMatch = text.match(/\*?\*?Diagram:\s*(.+?)\*?\*?/i);
-  if (!typeMatch) return null;
+interface DiagramParseOptions {
+  contextText?: string;
+  fallbackType?: string;
+  fallbackShift?: string;
+}
 
+function parseDiagramBlock(text: string, options: DiagramParseOptions = {}): DiagramProps | null {
+  const headingMatch = text.match(/^\s*(?:#{2,4}\s*)?(?:\*\*)?Diagram\s*:\s*([^\n*]+?)(?:\*\*)?\s*$/im);
   const get = (label: string) => {
-    const re = new RegExp(`\\*?\\*?${label}\\*?\\*?:\\s*(.+)`, "im");
+    const re = new RegExp(`^\\s*(?:[-•*]\\s*)?\\*?\\*?${label}\\*?\\*?:\\s*(.+)$`, "im");
     const m = text.match(re);
     return m?.[1]?.trim() || "";
   };
 
+  const shift = get("Shift") || options.fallbackShift || "";
+  const rawType = headingMatch?.[1]?.trim() || "";
+
+  const resolvedType =
+    resolveDiagramType(rawType, shift) ||
+    (options.fallbackType ? resolveDiagramType(options.fallbackType, shift) : null) ||
+    (options.contextText ? resolveDiagramType(options.contextText, shift) : null);
+
+  const finalType = resolvedType || rawType || options.fallbackType;
+  if (!finalType) return null;
+
   return {
-    type: typeMatch[1].trim(),
+    type: finalType,
     xAxis: get("X-axis") || get("Horizontal axis") || "Quantity (Q)",
     yAxis: get("Y-axis") || get("Vertical axis") || "Price (P)",
     initialCurves: get("Initial curves") || get("Original curves") || "",
     initialEquilibrium: get("Initial equilibrium") || "",
-    shift: get("Shift") || "",
+    shift,
     newEquilibrium: get("New equilibrium") || "",
     shadedArea: get("Shaded area") || "",
     conclusion: get("Key conclusion") || get("Effect") || "",
