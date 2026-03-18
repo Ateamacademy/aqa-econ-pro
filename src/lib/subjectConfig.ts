@@ -25,7 +25,7 @@ export const paperOptionsBySubject: Record<Subject, { value: string; label: stri
   "cambridge": [
     { value: "1", label: "Paper 1", title: "Multiple Choice (AS)", desc: "30 MCQs covering AS micro & macro — scarcity, markets, externalities, AD/AS, policy (9708/1)" },
     { value: "2", label: "Paper 2", title: "Data Response & Essay (AS)", desc: "Data response with extracts + structured essay on AS topics (9708/2)" },
-    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete A2 paper — data response + extended essays on development, trade, policy (9708/3+4)" },
+    { value: "full", label: "Paper 3", title: "Multiple Choice (A2)", desc: "30 A2-level MCQs — market structures, costs/revenue, labour, development, trade (9708/3)" },
   ],
   "aqa-gcse": [
     { value: "1", label: "Paper 1", title: "How Markets Work", desc: "Microeconomics — economic foundations, resource allocation, how markets work (8136/1)" },
