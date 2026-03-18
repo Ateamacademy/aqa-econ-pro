@@ -2848,7 +2848,6 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       );
     },
   },
-  },
 
   /* ── LRAS Shift Right ── */
   lras_shift: {
@@ -3114,10 +3113,69 @@ const ALIASES: Record<string, string> = {
   // Trade
   "quota": "trade_quota",
   "import_quota": "trade_quota",
-  "tariff": "trade_quota",
+  "tariff_diagram": "tariff",
+  "tariff_impact": "tariff",
+  "import_tariff": "tariff",
   "trade": "trade_quota",
   "world_supply": "trade_quota",
   "trade_diagram": "trade_quota",
+  // LRAS shift
+  "lras_shift_right": "lras_shift",
+  "long_run_growth": "lras_shift",
+  "productive_capacity": "lras_shift",
+  // Laffer
+  "laffer": "laffer_curve",
+  "tax_revenue_curve": "laffer_curve",
+  // Multiplier
+  "multiplier": "multiplier_effect",
+  "fiscal_multiplier": "multiplier_effect",
+  "keynesian_multiplier": "multiplier_effect",
+  // Exchange rate
+  "currency_market": "exchange_rate",
+  "forex": "exchange_rate",
+  "foreign_exchange": "exchange_rate",
+  "depreciation_currency": "exchange_rate",
+  "appreciation_currency": "exchange_rate",
+  // J-curve
+  "j_curve_effect": "j_curve",
+  "marshall_lerner": "j_curve",
+  "trade_balance": "j_curve",
+  // Crowding out
+  "crowding_out_effect": "crowding_out",
+  "loanable_funds": "crowding_out",
+  // Kinked demand
+  "kinked_demand_curve": "kinked_demand",
+  "oligopoly_kinked": "kinked_demand",
+  "price_rigidity": "kinked_demand",
+  // Natural monopoly
+  "natural_monopoly_diagram": "natural_monopoly",
+  "falling_lratc": "natural_monopoly",
+  // Monopsony
+  "monopsony_labour": "monopsony",
+  "monopsony_diagram": "monopsony",
+  "dominant_employer": "monopsony",
+  "mcl_acl": "monopsony",
+  // Pollution permits
+  "tradeable_permits": "pollution_permits",
+  "carbon_permits": "pollution_permits",
+  "emissions_trading": "pollution_permits",
+  "cap_and_trade": "pollution_permits",
+  // Tax/subsidy externality
+  "pigouvian": "tax_externality",
+  "tax_negative_externality": "tax_externality",
+  "subsidy_positive_externality": "subsidy_externality",
+  "subsidy_merit_good": "subsidy_externality",
+  // Business objectives
+  "business_objectives_diagram": "business_objectives",
+  "revenue_maximisation": "business_objectives",
+  "sales_maximisation": "business_objectives",
+  // Price discrimination
+  "third_degree_price_discrimination": "price_discrimination",
+  "price_discrimination_diagram": "price_discrimination",
+  // Comparative advantage
+  "comparative_advantage_ppf": "comparative_advantage",
+  "gains_from_trade": "comparative_advantage",
+  "ricardian_trade": "comparative_advantage",
   // Shutdown
   "shutdown": "short_run_shutdown",
   "shutdown_point": "short_run_shutdown",
@@ -3248,9 +3306,36 @@ export function resolveDiagramType(raw: string, shiftHint?: string): DiagramType
     [["inequality"], "lorenz_curve"],
     [["phillips"], "phillips_curve"],
     // Trade
+    [["tariff", "welfare"], "tariff"],
+    [["tariff", "import"], "tariff"],
     [["quota"], "trade_quota"],
-    [["tariff"], "trade_quota"],
+    [["tariff"], "tariff"],
     [["trade", "diagram"], "trade_quota"],
+    // New macro
+    [["lras", "shift"], "lras_shift"],
+    [["laffer"], "laffer_curve"],
+    [["multiplier"], "multiplier_effect"],
+    [["exchange", "rate"], "exchange_rate"],
+    [["forex"], "exchange_rate"],
+    [["j", "curve"], "j_curve"],
+    [["crowding", "out"], "crowding_out"],
+    [["loanable", "funds"], "crowding_out"],
+    [["comparative", "advantage"], "comparative_advantage"],
+    // New micro
+    [["kinked", "demand"], "kinked_demand"],
+    [["natural", "monopoly"], "natural_monopoly"],
+    [["monopsony"], "monopsony"],
+    [["pollution", "permit"], "pollution_permits"],
+    [["cap", "trade"], "pollution_permits"],
+    [["emissions", "trading"], "pollution_permits"],
+    [["tax", "externality"], "tax_externality"],
+    [["pigouvian"], "tax_externality"],
+    [["subsidy", "externality"], "subsidy_externality"],
+    [["subsidy", "merit"], "subsidy_externality"],
+    [["business", "objectives"], "business_objectives"],
+    [["revenue", "maximis"], "business_objectives"],
+    [["sales", "maximis"], "business_objectives"],
+    [["price", "discrimination"], "price_discrimination"],
     // S&D basics
     [["supply", "demand"], "supply_demand"],
     [["demand", "increase"], "demand_increase"],
