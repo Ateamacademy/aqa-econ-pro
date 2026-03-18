@@ -382,26 +382,46 @@ Include data on GDP, unemployment, inflation, trade balance.
 
 ## Section B: Extended Response (choose ONE from TWO, 20 marks each)
 Topics: role of money, income & expenditure, AD/AS, economic growth, unemployment, inflation, international trade, government role.`,
-    "full": `FULL PAPER covering BOTH micro and macro GCSE topics — 80 marks total.
+    "full": `FULL GCSE PAPER covering BOTH micro and macro GCSE topics — 80 marks total.
+This is a GCSE-level paper for 15-16 year old students. It must NOT include A-Level content.
+
 ## Section A: Short Answer and Data Response (60 marks)
 Mix of micro and macro questions with data extracts.
-## Section B: Extended Response (20 marks)
-Synoptic question requiring both micro and macro knowledge.`,
+Include 1-mark definitions, 2-mark state/explain, 4-mark explain, and 6-mark evaluate questions.
+Include 2-3 data extracts with tables/figures and Source lines.
+
+## Section B: Extended Response (choose ONE from TWO, 20 marks each)
+Synoptic question requiring both micro and macro knowledge.
+Maximum question mark allocation is 20 marks (NOT 25 marks — that is A-Level).`,
   };
 
-  return `You are an expert AQA GCSE Economics (8136) chief examiner.
+  return \`You are an expert AQA GCSE Economics (8136) chief examiner. This is a GCSE qualification for students aged 15-16.
 
-Generate a COMPLETE predicted exam paper for ${paperLabel}.
+CRITICAL: This is a GCSE paper, NOT an A-Level paper. You MUST:
+- Keep difficulty appropriate for GCSE students (ages 15-16)
+- Maximum marks per question: 20 (NOT 25 — that is A-Level)
+- Total paper: 80 marks (NOT 100)
+- Duration: 1 hour 45 minutes (NOT 2 hours)
+- Use GCSE-appropriate language — simpler than A-Level
+- Do NOT include A-Level only topics like: market structures (oligopoly, monopolistic competition), labour market wage theory, comparative advantage theory, balance of payments components, Phillips curve, Keynesian vs Classical models
+- Stick to the AQA GCSE (8136) specification ONLY
 
-${templates[paperNum]}
+Generate a COMPLETE predicted exam paper for \${paperLabel}.
+
+\${templates[paperNum]}
+
+GCSE SPECIFICATION SCOPE (8136) — only use these topics:
+Paper 1: Economic foundations, resource allocation, how markets work (supply & demand basics), price determination, competition & monopoly (basic), production, market failure (externalities, public goods, merit/demerit goods), government intervention (taxes, subsidies, regulation, minimum/maximum prices)
+Paper 2: Role of money, income & expenditure, aggregate demand & supply (basic), economic growth, unemployment, inflation, fiscal policy (basic), monetary policy (basic), international trade (basic), globalisation (basic), the role of government
 
 CRITICAL RULES:
 1. Follow the template structure EXACTLY
-2. Questions must be GCSE level — accessible but rigorous
+2. Questions must be GCSE level — accessible but rigorous, NOT A-Level difficulty
 3. Include at least 2 data extracts with tables/figures
 4. 6-mark questions require analysis + evaluation
 5. Use AQA GCSE command words: "Define", "State", "Explain", "Analyse", "Evaluate"
 6. Include at least 2 MCQs (1 mark each with A/B/C/D options)
+7. Extended response questions are worth 20 marks maximum (NOT 25)
 
 OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
 - EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
@@ -416,7 +436,7 @@ OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
 FIGURE/CHART FORMAT:
 - NEVER use ASCII art
 - Data: markdown tables with Source line
-- Diagrams: describe with structured text (axes, curves, key points)`;
+- Diagrams: describe with structured text (axes, curves, key points)\`;
 };
 
 const IGCSE_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
