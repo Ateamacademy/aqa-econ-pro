@@ -46,7 +46,8 @@ export type DiagramType =
   | "keynesian_as"
   | "trade_quota"
   | "short_run_shutdown"
-  | "labour_market";
+  | "labour_market"
+  | "demand_side_shock";
 
 interface DiagramConfig {
   title: string;
@@ -839,6 +840,214 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <DashedToAxes x={eq2.x} y={eq2.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="PL₂" qLabel="Y₂" />
           <PremiumDot x={eq2.x} y={eq2.y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
             tooltipText="✓ AD↓ → lower PL & GDP (recession)" />
+        </>
+      );
+    },
+  },
+
+  /* ── Demand-Side Shock — Positive vs Negative (2 panels) ── */
+  demand_side_shock: {
+    title: "Aggregate Demand Shocks — Positive vs Negative",
+    xAxis: "", yAxis: "",
+    legend: [
+      { label: "AD", color: COLORS.demand },
+      { label: "SRAS", color: COLORS.supply },
+      { label: "LRAS", color: COLORS.lras },
+    ],
+    examTips: [
+      "Positive AD shock: AD shifts RIGHT → demand-pull inflation + shortage at old PL",
+      "Negative AD shock: AD shifts LEFT → deflation + surplus at old PL",
+      "Show both equilibria E₁/E₂ with price level and output projections",
+      "Key causes: changes in C, I, G, or Xn (net exports)",
+    ],
+    render: (p) => {
+      const { mx, my, pw, ph } = p;
+      const halfW = pw / 2;
+      const gap = 18;
+      const pad = 8;
+
+      const p1x = mx;
+      const p2x = mx + halfW + gap / 2;
+      const axTop = my + 18;
+      const axBot = my + ph - 18;
+      const axH = axBot - axTop;
+      const panelW = halfW - gap / 2;
+
+      const panelAxes = (ox: number, w: number, yLabel: string, xLabel: string) => (
+        <>
+          <line x1={ox + pad} y1={axTop} x2={ox + pad} y2={axBot} stroke="currentColor" strokeWidth={1.8} />
+          <line x1={ox + pad} y1={axBot} x2={ox + w - pad} y2={axBot} stroke="currentColor" strokeWidth={1.8} />
+          <text x={ox + pad - 3} y={axTop - 4} textAnchor="middle" fontSize={8} fontWeight={700} fill="currentColor" opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{yLabel}</text>
+          <text x={ox + w - pad} y={axBot + 14} textAnchor="end" fontSize={8} fontWeight={700} fill="currentColor" opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{xLabel}</text>
+          <text x={ox + pad - 2} y={axBot + 5} textAnchor="middle" fontSize={7} fontWeight={600} fill="currentColor" opacity={0.5}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>O</text>
+        </>
+      );
+
+      // ══════════════════════════════
+      // LEFT PANEL — Positive AD Shock
+      // ══════════════════════════════
+      const L = p1x + pad;
+      const R1 = p1x + panelW - pad;
+      const lrasX1 = L + (R1 - L) * 0.45;
+
+      // SRAS upward sloping
+      const sras1 = { x1: L + 5, y1: axBot - 4, x2: R1 - 5, y2: axTop + 4 };
+      // AD (original)
+      const ad1 = { x1: L + (R1 - L) * 0.08, y1: axTop + axH * 0.08, x2: L + (R1 - L) * 0.62, y2: axBot - 4 };
+      // AD₁ (shifted right)
+      const shift1 = (R1 - L) * 0.22;
+      const ad1s = { x1: ad1.x1 + shift1, y1: ad1.y1, x2: ad1.x2 + shift1, y2: ad1.y2 };
+
+      const eq1a = lineIntersect(sras1.x1, sras1.y1, sras1.x2, sras1.y2, ad1.x1, ad1.y1, ad1.x2, ad1.y2);
+      const eq1b = lineIntersect(sras1.x1, sras1.y1, sras1.x2, sras1.y2, ad1s.x1, ad1s.y1, ad1s.x2, ad1s.y2);
+
+      // Shortage = horizontal distance between AD₁ and SRAS at old price PLe
+      // On AD₁ at PLe y: solve for x
+      const adSlope = (ad1s.y2 - ad1s.y1) / (ad1s.x2 - ad1s.x1);
+      const adXatPLe = ad1s.x1 + (eq1a.y - ad1s.y1) / adSlope;
+      const srasSlope = (sras1.y2 - sras1.y1) / (sras1.x2 - sras1.x1);
+      const srasXatPLe = sras1.x1 + (eq1a.y - sras1.y1) / srasSlope;
+
+      // ══════════════════════════════
+      // RIGHT PANEL — Negative AD Shock
+      // ══════════════════════════════
+      const L2 = p2x + pad;
+      const R2 = p2x + panelW - pad;
+      const lrasX2 = L2 + (R2 - L2) * 0.55;
+
+      // SRAS
+      const sras2 = { x1: L2 + 5, y1: axBot - 4, x2: R2 - 5, y2: axTop + 4 };
+      // AD (original — further right)
+      const ad2 = { x1: L2 + (R2 - L2) * 0.25, y1: axTop + axH * 0.05, x2: R2 - 5, y2: axBot - 4 };
+      // AD₁ (shifted left)
+      const shift2 = -(R2 - L2) * 0.22;
+      const ad2s = { x1: ad2.x1 + shift2, y1: ad2.y1, x2: ad2.x2 + shift2, y2: ad2.y2 };
+
+      const eq2a = lineIntersect(sras2.x1, sras2.y1, sras2.x2, sras2.y2, ad2.x1, ad2.y1, ad2.x2, ad2.y2);
+      const eq2b = lineIntersect(sras2.x1, sras2.y1, sras2.x2, sras2.y2, ad2s.x1, ad2s.y1, ad2s.x2, ad2s.y2);
+
+      // Surplus at old PLe
+      const ad2Slope = (ad2s.y2 - ad2s.y1) / (ad2s.x2 - ad2s.x1);
+      const ad2XatPLe = ad2s.x1 + (eq2a.y - ad2s.y1) / ad2Slope;
+      const sras2Slope = (sras2.y2 - sras2.y1) / (sras2.x2 - sras2.x1);
+      const sras2XatPLe = sras2.x1 + (eq2a.y - sras2.y1) / sras2Slope;
+
+      return (
+        <>
+          {/* Panel titles */}
+          <rect x={p1x + panelW * 0.08} y={my} width={panelW * 0.84} height={15} rx={3} fill={COLORS.demand} opacity={0.12} />
+          <text x={p1x + panelW * 0.5} y={my + 11} textAnchor="middle" fontSize={8.5} fontWeight={700} fill={COLORS.demand}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Positive AD Shock</text>
+          <rect x={p2x + panelW * 0.08} y={my} width={panelW * 0.84} height={15} rx={3} fill={COLORS.supply} opacity={0.12} />
+          <text x={p2x + panelW * 0.5} y={my + 11} textAnchor="middle" fontSize={8.5} fontWeight={700} fill={COLORS.supply}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Negative AD Shock</text>
+
+          {/* ── LEFT PANEL ── */}
+          {panelAxes(p1x, panelW, "PL", "rGDP")}
+
+          {/* LRAS */}
+          <line x1={lrasX1} y1={axTop + 4} x2={lrasX1} y2={axBot - 4} stroke={COLORS.lras} strokeWidth={2} />
+          <Label x={lrasX1 + 3} y={axTop + 4} text="LRAS" color={COLORS.lras} size={8} />
+          <text x={lrasX1} y={axBot + 12} textAnchor="middle" fontSize={7} fontWeight={600} fill={COLORS.lras} opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Yfe</text>
+
+          {/* SRAS */}
+          <GLine {...sras1} color={COLORS.supply} width={2} />
+          <Label x={sras1.x2 + 2} y={sras1.y2 + 4} text="SRAS" color={COLORS.supply} size={8} />
+
+          {/* AD (original) */}
+          <GLine {...ad1} color={COLORS.demand} width={2} />
+          <Label x={ad1.x2 + 2} y={ad1.y2 - 4} text="AD" color={COLORS.demand} size={8} />
+
+          {/* AD₁ (shifted right) */}
+          <GLine {...ad1s} color={COLORS.demand} width={2} dashed />
+          <Label x={ad1s.x2 + 2} y={ad1s.y2 - 4} text="AD₁" color={COLORS.demand} size={8} />
+
+          {/* Shift arrow */}
+          <line x1={eq1a.x + 4} y1={eq1a.y + 10} x2={eq1b.x - 4} y2={eq1b.y + 10}
+            stroke={COLORS.demand} strokeWidth={1.5} markerEnd="url(#arrowHead)" opacity={0.7} />
+
+          {/* Equilibria */}
+          <circle cx={eq1a.x} cy={eq1a.y} r={3.5} fill={COLORS.eq} />
+          <circle cx={eq1b.x} cy={eq1b.y} r={3.5} fill={COLORS.shifted} />
+
+          {/* Projections E₁ */}
+          <line x1={eq1a.x} y1={eq1a.y} x2={L + pad} y2={eq1a.y} stroke={COLORS.eq} strokeWidth={0.8} strokeDasharray="3,2" opacity={0.5} />
+          <line x1={eq1a.x} y1={eq1a.y} x2={eq1a.x} y2={axBot} stroke={COLORS.eq} strokeWidth={0.8} strokeDasharray="3,2" opacity={0.5} />
+          <text x={L + pad - 2} y={eq1a.y + 3} textAnchor="end" fontSize={8} fontWeight={600} fill={COLORS.eq} opacity={0.8}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>PLe</text>
+          <text x={eq1a.x} y={axBot + 12} textAnchor="middle" fontSize={7} fontWeight={600} fill={COLORS.eq} opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Ye₁</text>
+
+          {/* Projections E₂ */}
+          <line x1={eq1b.x} y1={eq1b.y} x2={L + pad} y2={eq1b.y} stroke={COLORS.shifted} strokeWidth={0.8} strokeDasharray="3,2" opacity={0.5} />
+          <line x1={eq1b.x} y1={eq1b.y} x2={eq1b.x} y2={axBot} stroke={COLORS.shifted} strokeWidth={0.8} strokeDasharray="3,2" opacity={0.5} />
+          <text x={L + pad - 2} y={eq1b.y + 3} textAnchor="end" fontSize={8} fontWeight={600} fill={COLORS.shifted} opacity={0.8}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>PLa</text>
+          <text x={eq1b.x} y={axBot + 12} textAnchor="middle" fontSize={7} fontWeight={600} fill={COLORS.shifted} opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Yd</text>
+
+          {/* Shortage annotation at PLe level */}
+          <line x1={srasXatPLe + 2} y1={eq1a.y + 4} x2={adXatPLe - 2} y2={eq1a.y + 4}
+            stroke={COLORS.supply} strokeWidth={1.2} strokeDasharray="2,2" opacity={0.6} />
+          <text x={(srasXatPLe + adXatPLe) / 2} y={eq1a.y + 16} textAnchor="middle" fontSize={7} fontWeight={700} fill={COLORS.supply}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Shortage</text>
+
+          {/* D-pull inflation label */}
+          <text x={(eq1a.x + eq1b.x) / 2} y={eq1b.y - 8} textAnchor="middle" fontSize={6.5} fontWeight={600} fill={COLORS.demand} opacity={0.8}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>D-pull inflation</text>
+
+          {/* ── RIGHT PANEL ── */}
+          {panelAxes(p2x, panelW, "PL", "rGDP")}
+
+          {/* LRAS */}
+          <line x1={lrasX2} y1={axTop + 4} x2={lrasX2} y2={axBot - 4} stroke={COLORS.lras} strokeWidth={2} />
+          <Label x={lrasX2 + 3} y={axTop + 4} text="LRAS" color={COLORS.lras} size={8} />
+          <text x={lrasX2} y={axBot + 12} textAnchor="middle" fontSize={7} fontWeight={600} fill={COLORS.lras} opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Yfe</text>
+
+          {/* SRAS */}
+          <GLine {...sras2} color={COLORS.supply} width={2} />
+          <Label x={sras2.x2 + 2} y={sras2.y2 + 4} text="SRAS" color={COLORS.supply} size={8} />
+
+          {/* AD (original) */}
+          <GLine {...ad2} color={COLORS.demand} width={2} />
+          <Label x={ad2.x2 + 2} y={ad2.y2 - 4} text="AD" color={COLORS.demand} size={8} />
+
+          {/* AD₁ (shifted left) */}
+          <GLine {...ad2s} color={COLORS.demand} width={2} dashed />
+          <Label x={ad2s.x2 + 2} y={ad2s.y2 - 4} text="AD₁" color={COLORS.demand} size={8} />
+
+          {/* Shift arrow */}
+          <line x1={eq2a.x - 4} y1={eq2a.y + 10} x2={eq2b.x + 4} y2={eq2b.y + 10}
+            stroke={COLORS.demand} strokeWidth={1.5} markerEnd="url(#arrowHead)" opacity={0.7} />
+
+          {/* Equilibria */}
+          <circle cx={eq2a.x} cy={eq2a.y} r={3.5} fill={COLORS.eq} />
+          <circle cx={eq2b.x} cy={eq2b.y} r={3.5} fill={COLORS.shifted} />
+
+          {/* Projections E₁ */}
+          <line x1={eq2a.x} y1={eq2a.y} x2={L2 + pad} y2={eq2a.y} stroke={COLORS.eq} strokeWidth={0.8} strokeDasharray="3,2" opacity={0.5} />
+          <line x1={eq2a.x} y1={eq2a.y} x2={eq2a.x} y2={axBot} stroke={COLORS.eq} strokeWidth={0.8} strokeDasharray="3,2" opacity={0.5} />
+          <text x={L2 + pad - 2} y={eq2a.y + 3} textAnchor="end" fontSize={8} fontWeight={600} fill={COLORS.eq} opacity={0.8}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>PLe</text>
+
+          {/* Projections E₂ */}
+          <line x1={eq2b.x} y1={eq2b.y} x2={L2 + pad} y2={eq2b.y} stroke={COLORS.shifted} strokeWidth={0.8} strokeDasharray="3,2" opacity={0.5} />
+          <line x1={eq2b.x} y1={eq2b.y} x2={eq2b.x} y2={axBot} stroke={COLORS.shifted} strokeWidth={0.8} strokeDasharray="3,2" opacity={0.5} />
+          <text x={L2 + pad - 2} y={eq2b.y + 3} textAnchor="end" fontSize={8} fontWeight={600} fill={COLORS.shifted} opacity={0.8}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>PLb</text>
+          <text x={eq2b.x} y={axBot + 12} textAnchor="middle" fontSize={7} fontWeight={600} fill={COLORS.shifted} opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Y₀</text>
+
+          {/* Surplus annotation at PLe level */}
+          <line x1={ad2XatPLe + 2} y1={eq2a.y + 4} x2={sras2XatPLe - 2} y2={eq2a.y + 4}
+            stroke={COLORS.supply} strokeWidth={1.2} strokeDasharray="2,2" opacity={0.6} />
+          <text x={(ad2XatPLe + sras2XatPLe) / 2} y={eq2a.y + 16} textAnchor="middle" fontSize={7} fontWeight={700} fill={COLORS.supply}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Surplus</text>
         </>
       );
     },
@@ -2117,6 +2326,12 @@ const ALIASES: Record<string, string> = {
   "supply_shock": "sras_decrease",
   "negative_supply_shock": "sras_decrease",
   "stagflation": "sras_decrease",
+  "demand_side_shock": "demand_side_shock",
+  "demand_shock": "demand_side_shock",
+  "aggregate_demand_shock": "demand_side_shock",
+  "ad_shock": "demand_side_shock",
+  "positive_demand_shock": "demand_side_shock",
+  "negative_demand_shock": "demand_side_shock",
   // Tax/subsidy
   "indirect_tax": "tax_incidence",
   "taxation": "tax_incidence",
