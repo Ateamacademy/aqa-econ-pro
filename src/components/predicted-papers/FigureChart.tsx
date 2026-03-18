@@ -521,7 +521,13 @@ function parseChartData(description: string): { dataSets: DataSet[]; axisLabels:
 
 export function FigureChart({ title, description }: FigureChartProps) {
   const parsed = useMemo(() => parseChartData(description), [description]);
-  const [showTable, setShowTable] = useState(false);
+  // Default to table view when parser recommends it (e.g. multi-column tables with different scales)
+  const preferTableDefault = useMemo(() => {
+    const normalizedDescription = normalizeFigureDescription(description);
+    const tableResult = parseMarkdownTable(normalizedDescription);
+    return tableResult?.preferTable ?? false;
+  }, [description]);
+  const [showTable, setShowTable] = useState(preferTableDefault);
   
   const markdownTable = useMemo(() => {
     const lines = description.split("\n");
