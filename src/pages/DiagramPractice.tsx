@@ -124,6 +124,9 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
 
 const DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced"] as const;
 
+const inferDiagramType = (...parts: string[]) =>
+  resolveDiagramType(parts.filter(Boolean).join("\n")) ?? "supply_demand";
+
 type InputMode = "draw" | "text";
 
 export default function DiagramPractice() {
