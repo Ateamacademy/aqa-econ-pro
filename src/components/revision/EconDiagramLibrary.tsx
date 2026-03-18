@@ -1397,6 +1397,81 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     },
   },
 
+  /* ── Maximum Price (Price Ceiling) ── */
+  price_ceiling: {
+    title: "Maximum Price (Price Ceiling)",
+    xAxis: "Quantity (Q)", yAxis: "Price (P)",
+    legend: [
+      { label: "Demand", color: COLORS.demand },
+      { label: "Supply", color: COLORS.supply },
+      { label: "Price (max)", color: "#dc2626" },
+    ],
+    examTips: [
+      "Price ceiling must be set BELOW equilibrium to be effective",
+      "Creates excess demand (shortage): Qd > Qs at Pmax",
+      "Label M (Qs at Pmax) and N (Qd at Pmax) clearly",
+      "Show Pe and Qe at free-market equilibrium for comparison",
+      "Discuss consequences: shortages, black markets, rationing",
+    ],
+    render: (p) => {
+      const { mx, my, pw, ph } = p;
+      const pad = 10;
+
+      // Standard S and D lines
+      const dL = { x1: mx + pad, y1: my + pad + 10, x2: mx + pw - pad, y2: my + ph - pad };
+      const sL = { x1: mx + pad, y1: my + ph - pad, x2: mx + pw - pad, y2: my + pad + 10 };
+
+      // Equilibrium
+      const eq = lineIntersect(dL.x1, dL.y1, dL.x2, dL.y2, sL.x1, sL.y1, sL.x2, sL.y2);
+
+      // Price max line — below equilibrium
+      const pmaxY = eq.y + (my + ph - pad - eq.y) * 0.5;
+
+      // Find where Pmax intersects S (gives M = Qs) and D (gives N = Qd)
+      const sSlope = (sL.y2 - sL.y1) / (sL.x2 - sL.x1);
+      const dSlope = (dL.y2 - dL.y1) / (dL.x2 - dL.x1);
+      const mX = sL.x1 + (pmaxY - sL.y1) / sSlope;
+      const nX = dL.x1 + (pmaxY - dL.y1) / dSlope;
+
+      return (
+        <>
+          {/* S and D curves */}
+          <GLine {...sL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
+          <Label x={sL.x2 + 4} y={sL.y2 - 6} text="S" color={COLORS.supply} />
+          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color={COLORS.demand} />
+
+          {/* Equilibrium projections */}
+          <DashedToAxes x={eq.x} y={eq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="Pe" qLabel="Qe" />
+          <circle cx={eq.x} cy={eq.y} r={3.5} fill={COLORS.eq} />
+
+          {/* Price (max) horizontal line — bold red */}
+          <line
+            x1={mx + pad - 5}
+            y1={pmaxY}
+            x2={mx + pw - pad + 15}
+            y2={pmaxY}
+            stroke="#dc2626"
+            strokeWidth={2.5}
+          />
+          <Label x={mx + pw - pad + 18} y={pmaxY + 4} text="Price (max)" color="#dc2626" size={9} />
+
+          {/* M projection (Qs at Pmax) */}
+          <line x1={mX} y1={pmaxY} x2={mX} y2={my + ph} stroke="hsl(var(--foreground))" strokeWidth={1.2} strokeDasharray="5,3" opacity={0.5} />
+          <text x={mX} y={my + ph + 14} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>M</text>
+
+          {/* N projection (Qd at Pmax) */}
+          <line x1={nX} y1={pmaxY} x2={nX} y2={my + ph} stroke="hsl(var(--foreground))" strokeWidth={1.2} strokeDasharray="5,3" opacity={0.5} />
+          <text x={nX} y={my + ph + 14} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>N</text>
+
+          {/* Excess demand bracket between M and N */}
+          <line x1={mX} y1={pmaxY + 8} x2={nX} y2={pmaxY + 8} stroke={COLORS.area} strokeWidth={1.5} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
+          <Label x={(mX + nX) / 2} y={pmaxY + 22} text="Excess demand" color={COLORS.area} size={8} anchor="middle" bold={false} />
+        </>
+      );
+    },
+  },
+
   /* ── Monopoly ── */
   monopoly: {
     title: "Monopoly Profit Maximisation",
