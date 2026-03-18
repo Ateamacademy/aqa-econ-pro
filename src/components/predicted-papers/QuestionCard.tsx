@@ -13,6 +13,7 @@ import { GeometryTools } from "@/components/tools/GeometryTools";
 import { cn } from "@/lib/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { extractDiagramBlocks, EconDiagramCanvas } from "./EconDiagramSVG";
+import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 
 import type { ParsedQuestion, MCQOption } from "./parseQuestions";
 
