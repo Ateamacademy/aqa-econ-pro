@@ -2848,7 +2848,6 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       );
     },
   },
-  },
 
   /* ── LRAS Shift Right ── */
   lras_shift: {
