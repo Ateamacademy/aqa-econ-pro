@@ -844,64 +844,82 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     },
   },
 
-  /* ── SRAS shifts (Cost-Push / Positive Supply Shock) ── */
+  /* ── SRAS Decrease (Monetarist / Cost-Push) ── */
   sras_decrease: {
-    title: "Decrease in SRAS (Cost-Push Inflation)",
-    xAxis: "Real GDP (Y)", yAxis: "Price Level (PL)",
+    title: "Decrease in SRAS (Monetarist)",
+    xAxis: "Real Output", yAxis: "Price Level",
     legend: [{ label: "SRAS", color: COLORS.supply }, { label: "AD", color: COLORS.demand }, { label: "LRAS", color: COLORS.lras }],
     examTips: [
       "SRAS shifts LEFT — higher costs of production",
       "Creates stagflation: higher PL AND lower real GDP",
+      "Deflationary (recessionary) gap: Y₁ < Yf",
       "Key causes: oil price shocks, rising wages, supply chain disruption",
-      "E₂ must show both higher price level AND lower output",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
       const pad = 10;
-      const lrasX = mx + pw * 0.65;
-      const srasShift = -55; // LEFT shift
+      const lrasX = mx + pw * 0.52;
 
-      // SRAS₁: upward sloping
-      const sras1L = { x1: mx + pad, y1: my + ph - pad, x2: mx + pw - pad, y2: my + pad + 15 };
-      // SRAS₂: parallel leftward shift
-      const sras2L = { x1: sras1L.x1 + srasShift, y1: sras1L.y1, x2: sras1L.x2 + srasShift, y2: sras1L.y2 };
+      // SRAS (original): upward sloping, positioned so it intersects AD near LRAS
+      const srasL = { x1: mx + pad + 15, y1: my + ph - pad, x2: mx + pw - pad - 10, y2: my + pad + 10 };
+      // SRAS1 (shifted left)
+      const shift = -58;
+      const sras1L = { x1: srasL.x1 + shift, y1: srasL.y1, x2: srasL.x2 + shift, y2: srasL.y2 };
       // AD: downward sloping
-      const adL = { x1: mx + pw * 0.12, y1: my + pad, x2: mx + pw * 0.68, y2: my + ph - pad };
+      const adL = { x1: mx + pw * 0.15, y1: my + pad + 5, x2: mx + pw * 0.78, y2: my + ph - pad };
 
-      // E₁ = AD ∩ SRAS₁
-      const eq1 = lineIntersect(sras1L.x1, sras1L.y1, sras1L.x2, sras1L.y2, adL.x1, adL.y1, adL.x2, adL.y2);
-      // E₂ = AD ∩ SRAS₂
-      const eq2 = lineIntersect(sras2L.x1, sras2L.y1, sras2L.x2, sras2L.y2, adL.x1, adL.y1, adL.x2, adL.y2);
+      // E₁ = AD ∩ SRAS (original — at Yf)
+      const eq1 = lineIntersect(srasL.x1, srasL.y1, srasL.x2, srasL.y2, adL.x1, adL.y1, adL.x2, adL.y2);
+      // E₂ = AD ∩ SRAS1 (shifted — at Y₁)
+      const eq2 = lineIntersect(sras1L.x1, sras1L.y1, sras1L.x2, sras1L.y2, adL.x1, adL.y1, adL.x2, adL.y2);
 
       return (
         <>
-          <GLine x1={lrasX} y1={my + pad} x2={lrasX} y2={my + ph - pad} color={COLORS.lras} gradientId="grad-lras" width={2} />
-          <Label x={lrasX + 6} y={my + 20} text="LRAS" color={COLORS.lras} />
-          <Label x={lrasX - 4} y={my + ph + 14} text="Yf" color={COLORS.lras} size={9} anchor="middle" />
-          {/* SRAS₁ */}
-          <GLine {...sras1L} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={sras1L.x2 + 4} y={sras1L.y2 + 4} text="SRAS₁" color={COLORS.supply} />
-          {/* SRAS₂ — shifted left */}
-          <GLine {...sras2L} color={COLORS.supply} gradientId="grad-supply" dashed />
-          <Label x={sras2L.x2 + 4} y={sras2L.y2 + 4} text="SRAS₂" color={COLORS.supply} />
-          {/* Shift arrow between the two SRAS curves */}
+          {/* LRAS vertical at Yf */}
+          <GLine x1={lrasX} y1={my + pad} x2={lrasX} y2={my + ph - pad} color={COLORS.lras} gradientId="grad-lras" width={2.5} />
+          <Label x={lrasX + 5} y={my + 16} text="LRAS" color={COLORS.lras} />
+
+          {/* SRAS (original) */}
+          <GLine {...srasL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
+          <Label x={srasL.x2 + 4} y={srasL.y2 + 4} text="SRAS" color={COLORS.supply} />
+
+          {/* SRAS1 (shifted left) */}
+          <GLine {...sras1L} color={COLORS.supply} gradientId="grad-supply" />
+          <Label x={sras1L.x2 + 4} y={sras1L.y2 + 4} text="SRAS1" color={COLORS.supply} />
+
+          {/* Shift arrow — bold leftward */}
           <ShiftArrow
-            x1={(sras1L.x1 + sras1L.x2) / 2 + 5}
-            y1={(sras1L.y1 + sras1L.y2) / 2}
-            x2={(sras2L.x1 + sras2L.x2) / 2 - 5}
-            y2={(sras2L.y1 + sras2L.y2) / 2}
+            x1={(srasL.x1 + srasL.x2) / 2 + 5}
+            y1={(srasL.y1 + srasL.y2) / 2}
+            x2={(sras1L.x1 + sras1L.x2) / 2 - 5}
+            y2={(sras1L.y1 + sras1L.y2) / 2}
             color={COLORS.shifted}
           />
+
           {/* AD */}
           <GLine {...adL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
           <Label x={adL.x2 + 4} y={adL.y2 - 6} text="AD" color={COLORS.demand} />
 
-          <DashedToAxes x={eq1.x} y={eq1.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="PL₁" qLabel="Y₁" />
-          <PremiumDot x={eq1.x} y={eq1.y} color={COLORS.eq} label="E₁" gradientId="dot-green"
-            tooltipText="✓ Initial equilibrium before cost shock" />
-          <DashedToAxes x={eq2.x} y={eq2.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="PL₂" qLabel="Y₂" />
-          <PremiumDot x={eq2.x} y={eq2.y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
-            tooltipText="✓ Stagflation: ↑PL + ↓GDP together" />
+          {/* Price projections — dashed */}
+          <DashedToAxes x={eq1.x} y={eq1.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P" qLabel="" />
+          <DashedToAxes x={eq2.x} y={eq2.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P₁" qLabel="Y₁" />
+
+          {/* Equilibrium dots */}
+          <PremiumDot x={eq1.x} y={eq1.y} color={COLORS.eq} label="" gradientId="dot-green" />
+          <PremiumDot x={eq2.x} y={eq2.y} color={COLORS.shifted} label="" gradientId="dot-amber" />
+
+          {/* Yf label on x-axis */}
+          <line x1={lrasX} y1={my + ph - pad} x2={lrasX} y2={my + ph - pad + 6} stroke="currentColor" strokeWidth={1.5} opacity={0.5} />
+          <text x={lrasX} y={my + ph + 14} textAnchor="middle" fontSize={9} fontWeight={700} fill="currentColor" opacity={0.6}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Yf</text>
+
+          {/* Deflationary gap annotation */}
+          <line x1={eq2.x} y1={my + ph - pad + 20} x2={lrasX} y2={my + ph - pad + 20}
+            stroke={COLORS.shifted} strokeWidth={1.5} markerStart="url(#arrowHead)" markerEnd="url(#arrowHead)" />
+          <text x={(eq2.x + lrasX) / 2} y={my + ph - pad + 34} textAnchor="middle" fontSize={7.5} fontWeight={700} fill={COLORS.shifted}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Deflationary</text>
+          <text x={(eq2.x + lrasX) / 2} y={my + ph - pad + 44} textAnchor="middle" fontSize={7.5} fontWeight={700} fill={COLORS.shifted}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>gap</text>
         </>
       );
     },
