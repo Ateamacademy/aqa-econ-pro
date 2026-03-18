@@ -51,7 +51,7 @@ function normalizeFigureDescription(description: string): string {
 /**
  * Parse markdown tables: | Year | Col1 | Col2 | ...
  */
-function parseMarkdownTable(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
+function parseMarkdownTable(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string }; preferTable?: boolean } | null {
   const lines = description.split("\n").map(l => l.trim()).filter(Boolean);
   const tableRows = lines.filter(l => l.startsWith("|") && l.endsWith("|"));
   if (tableRows.length < 3) return null;
@@ -70,7 +70,8 @@ function parseMarkdownTable(description: string): { dataSets: DataSet[]; axisLab
     const points: { year: string; value: number }[] = [];
     for (const row of dataRows) {
       const label = row[0]?.replace(/\*+/g, '').trim();
-      const rawVal = row[col]?.replace(/[,%£$€*()a-zA-Z\s]/g, '').trim();
+      // Strip everything except digits, dots, minus signs
+      const rawVal = row[col]?.replace(/[^0-9.\-]/g, '').trim();
       const val = parseFloat(rawVal);
       if (label && !isNaN(val)) {
         points.push({ year: label, value: val });
@@ -82,9 +83,25 @@ function parseMarkdownTable(description: string): { dataSets: DataSet[]; axisLab
   }
 
   if (dataSets.length === 0) return null;
+
+  // When table has multiple numeric columns with very different scales, prefer table view
+  let preferTable = false;
+  if (dataSets.length >= 2) {
+    const ranges = dataSets.map(ds => {
+      const vals = ds.points.map(p => Math.abs(p.value));
+      return Math.max(...vals) - Math.min(...vals);
+    });
+    const maxRange = Math.max(...ranges);
+    const minRange = Math.min(...ranges);
+    if (maxRange > 0 && minRange > 0 && maxRange / minRange > 10) {
+      preferTable = true;
+    }
+  }
+
   return {
     dataSets,
     axisLabels: { x: headers[0].replace(/\*+/g, '').trim(), y: dataSets.length === 1 ? dataSets[0].label : "" },
+    preferTable,
   };
 }
 
