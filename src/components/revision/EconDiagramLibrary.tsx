@@ -2848,14 +2848,15 @@ const ALIASES: Record<string, string> = {
   // S&D basics
   "supply_and_demand": "supply_demand",
   "market_equilibrium": "supply_demand",
-  "demand_shift": "demand_increase",
+  "demand_shift": "demand_shift_dual",
   "supply_shift": "supply_increase",
   "increase_in_demand": "demand_increase",
   "decrease_in_demand": "demand_decrease",
   "increase_in_supply": "supply_increase",
   "decrease_in_supply": "supply_decrease",
-  "shift_in_demand": "demand_increase",
+  "shift_in_demand": "demand_shift_dual",
   "shift_in_supply": "supply_increase",
+  "demand_shift_dual": "demand_shift_dual",
 };
 
 export function resolveDiagramType(raw: string, shiftHint?: string): DiagramType | null {
