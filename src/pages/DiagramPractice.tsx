@@ -413,6 +413,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
       )}
 
       {step === "feedback" && <DiagramFeedbackView
+        topic={topic}
         generatedQ={generatedQ}
         diagramImage={diagramImage}
         inputMode={inputMode}
