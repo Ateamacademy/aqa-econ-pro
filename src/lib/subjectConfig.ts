@@ -3,29 +3,29 @@ import type { Subject } from "@/contexts/SubjectContext";
 /* ── Predicted Papers: paper options per subject ── */
 export const paperOptionsBySubject: Record<Subject, { value: string; label: string; title: string; desc: string }[]> = {
   economics: [
-    { value: "1", label: "Paper 1", title: "Markets & Market Failure", desc: "Microeconomics — supply & demand, elasticity, market failure, government intervention" },
-    { value: "2", label: "Paper 2", title: "National & International Economy", desc: "Macroeconomics — GDP, inflation, unemployment, fiscal & monetary policy, trade" },
-    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete exam paper covering all topics — mirrors the official structure and difficulty" },
+    { value: "1", label: "Paper 1", title: "Markets & Market Failure", desc: "Microeconomics — supply & demand, elasticity, market failure, government intervention (7136/1)" },
+    { value: "2", label: "Paper 2", title: "National & International Economy", desc: "Macroeconomics — GDP, inflation, unemployment, fiscal & monetary policy, trade (7136/2)" },
+    { value: "full", label: "Paper 3", title: "Economic Principles & Issues", desc: "Synoptic paper — 30 MCQs + case study investigation covering both micro & macro (7136/3)" },
   ],
   "edexcel-a": [
     { value: "1", label: "Paper 1", title: "Markets & Business Behaviour", desc: "Microeconomics — demand, supply, market structures, labour markets, government intervention (9EC0/01)" },
     { value: "2", label: "Paper 2", title: "The National & Global Economy", desc: "Macroeconomics — AD/AS, economic performance, financial sector, trade, development (9EC0/02)" },
-    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete synoptic paper covering all themes — data response + extended open-response (9EC0/03)" },
+    { value: "full", label: "Paper 3", title: "Microeconomics & Macroeconomics", desc: "Synoptic paper — data response + extended open-response covering both micro & macro (9EC0/03)" },
   ],
   "edexcel-b": [
     { value: "1", label: "Paper 1", title: "Markets, Consumers & Firms", desc: "How markets work, market failure, business behaviour, the labour market (9EB0/01)" },
     { value: "2", label: "Paper 2", title: "The Wider Economic Environment", desc: "Economic indicators, macroeconomic policy, inequality, the financial sector (9EB0/02)" },
-    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete synoptic paper — globalisation, trade, development, financial markets (9EB0/03)" },
+    { value: "full", label: "Paper 3", title: "The Global Economy", desc: "Synoptic paper — globalisation, trade, development, financial markets (9EB0/03)" },
   ],
   "ocr": [
     { value: "1", label: "Component 01", title: "Microeconomics", desc: "Markets, market failure, business objectives, market structures, labour market (H460/01)" },
     { value: "2", label: "Component 02", title: "Macroeconomics", desc: "AD/AS, policy objectives, fiscal/monetary/supply-side, trade, financial sector (H460/02)" },
-    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Synoptic — draws together micro and macro across all content areas (H460/03)" },
+    { value: "full", label: "Component 03", title: "Themes in Economics", desc: "Synoptic — draws together micro and macro across all content areas (H460/03)" },
   ],
   "cambridge": [
     { value: "1", label: "Paper 1", title: "Multiple Choice (AS)", desc: "30 MCQs covering AS micro & macro — scarcity, markets, externalities, AD/AS, policy (9708/1)" },
     { value: "2", label: "Paper 2", title: "Data Response & Essay (AS)", desc: "Data response with extracts + structured essay on AS topics (9708/2)" },
-    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete A2 paper — data response + extended essays on development, trade, policy (9708/3+4)" },
+    { value: "full", label: "Paper 3", title: "Multiple Choice (A2)", desc: "30 A2-level MCQs — market structures, costs/revenue, labour, development, trade (9708/3)" },
   ],
   "aqa-gcse": [
     { value: "1", label: "Paper 1", title: "How Markets Work", desc: "Microeconomics — economic foundations, resource allocation, how markets work (8136/1)" },
@@ -45,12 +45,12 @@ export const paperOptionsBySubject: Record<Subject, { value: string; label: stri
   "wjec": [
     { value: "1", label: "Unit 1", title: "Introduction to Economics", desc: "AS-level micro: market mechanisms, market failure, government intervention (1h30m)" },
     { value: "2", label: "Unit 2", title: "Economics in Action", desc: "AS-level macro: economic indicators, AD/AS, fiscal & monetary policy (1h30m)" },
-    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete A2 paper — covers Units 3 & 4: micro & macro applied economics" },
+    { value: "full", label: "Units 3 & 4", title: "A2 Applied Economics", desc: "A2 paper — micro & macro applied economics, synoptic data response + essay (2h)" },
   ],
   "eduqas": [
     { value: "1", label: "Component 1", title: "Markets & Market Failure", desc: "Microeconomics — demand, supply, elasticity, market failure, government intervention (2h)" },
     { value: "2", label: "Component 2", title: "National & International Economy", desc: "Macroeconomics — economic growth, inflation, trade, fiscal/monetary policy (2h)" },
-    { value: "full", label: "Component 3", title: "Full Synoptic Paper", desc: "Synoptic data response paper drawing on all micro and macro content (2h15m)" },
+    { value: "full", label: "Component 3", title: "Synoptic Data Response", desc: "Synoptic data response paper drawing on all micro and macro content (2h15m)" },
   ],
   "edexcel-igcse": [
     { value: "1", label: "Paper 1", title: "Microeconomics & Business", desc: "Microeconomics and business economics — demand, supply, market structure (4EC1/01)" },
