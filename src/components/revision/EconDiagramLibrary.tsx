@@ -48,7 +48,8 @@ export type DiagramType =
   | "short_run_shutdown"
   | "labour_market"
   | "demand_side_shock"
-  | "demand_shift_dual";
+  | "demand_shift_dual"
+  | "supply_shift_dual";
 
 interface DiagramConfig {
   title: string;
