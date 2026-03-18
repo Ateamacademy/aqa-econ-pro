@@ -204,6 +204,8 @@ Format: Give the scenario context, then the question. Nothing else.` }],
         ]
       : `Question: ${generatedQ}\n\nStudent's Diagram Description:\n${diagramDesc}\n\nStudent's Written Explanation:\n${explanation}`;
 
+    const expectedDiagramType = inferDiagramType(topic, generatedQ, diagramDesc, explanation);
+
     await streamChat({
       messages: [
         { role: "user", content: diagramContent },
