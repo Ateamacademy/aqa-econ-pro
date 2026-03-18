@@ -33,6 +33,7 @@ import { generatePaperPdf } from "@/lib/generatePaperPdf";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { ExamTimer } from "@/components/predicted-papers/ExamTimer";
 import { ExamResultsSummary } from "@/components/predicted-papers/ExamResultsSummary";
+import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 
 // Exam durations in minutes per subject + paper
 const EXAM_DURATIONS: Record<string, Record<string, number>> = {
