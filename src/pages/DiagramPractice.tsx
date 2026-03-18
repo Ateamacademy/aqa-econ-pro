@@ -14,6 +14,7 @@ import { FREE_LIMITS } from "@/lib/plans";
 import { DrawingCanvas } from "@/components/tools/DrawingCanvas";
 import { cn } from "@/lib/utils";
 import { extractDiagramBlocks, EconDiagramCanvas } from "@/components/predicted-papers/EconDiagramSVG";
+import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import { UpgradeModal } from "@/components/UpgradeModal";
 
 const DIAGRAM_TOPICS: Record<string, string[]> = {
