@@ -558,36 +558,35 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   },
   negative_externality: {
     title: "Negative Consumption Externality",
-    xAxis: "Quantity (Q)", yAxis: "Price / Cost / Benefit",
-    legend: [{ label: "MPC = S", color: COLORS.supply }, { label: "MPB = D", color: COLORS.mpb }, { label: "MSB", color: COLORS.demand }, { label: "Welfare Loss", color: COLORS.area }],
+    xAxis: "Output", yAxis: "Costs & Benefits",
+    legend: [{ label: "MPC = MSC", color: COLORS.supply }, { label: "MPB", color: COLORS.demand }, { label: "MSB", color: "#ef4444" }, { label: "Welfare Loss", color: "#ef4444" }],
     examTips: [
-      "MSB is below MPB — consumers ignore external costs to third parties",
-      "Over-consumption in free market: Qₘ > Q*",
-      "Welfare loss = triangle between MSB and MPC from Q* to Qₘ",
-      "Policy: indirect tax = external cost per unit to internalise",
-      "Show tax arrow between MPB and MSB at optimal quantity",
+      "MPC = MSC — no external costs in production",
+      "MSB is below MPB — consumers ignore harm to third parties (e.g. demerit goods)",
+      "Over-consumption in free market: Q(pri) > Q(soc)",
+      "Welfare loss = triangle between MPB and MSB from Q(soc) to Q(pri)",
+      "Policy: indirect tax to shift MPB down to MSB, or regulation/ban",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
       const pad = 10;
+      // MPC = MSC: upward sloping supply (red)
       const sL = { x1: mx + pad, y1: my + ph - pad, x2: mx + pw - pad, y2: my + pad };
-      const mpbL = { x1: mx + pw * 0.18, y1: my + pad, x2: mx + pw - pad, y2: my + ph - pad };
-      const msbL = { x1: mx + pad, y1: my + ph * 0.15, x2: mx + pw * 0.72, y2: my + ph - pad };
+      // MPB: downward sloping demand (blue) — what consumers pay
+      const mpbL = { x1: mx + pw * 0.12, y1: my + pad, x2: mx + pw - pad, y2: my + ph - pad };
+      // MSB: downward sloping, below MPB (red/lower) — true social benefit
+      const msbL = { x1: mx + pad, y1: my + ph * 0.28, x2: mx + pw * 0.78, y2: my + ph - pad };
 
       const freeEq = lineIntersect(sL.x1, sL.y1, sL.x2, sL.y2, mpbL.x1, mpbL.y1, mpbL.x2, mpbL.y2);
       const optEq = lineIntersect(sL.x1, sL.y1, sL.x2, sL.y2, msbL.x1, msbL.y1, msbL.x2, msbL.y2);
 
-      // DWL vertex: MPC value at Qₘ
+      // MSB at free market Q
       const msbSlope = (msbL.y2 - msbL.y1) / (msbL.x2 - msbL.x1);
       const msbAtFreeX = msbL.y1 + msbSlope * (freeEq.x - msbL.x1);
 
-      // External cost annotation at Q*: gap between MPB and MSB
-      const mpbSlope = (mpbL.y2 - mpbL.y1) / (mpbL.x2 - mpbL.x1);
-      const mpbAtOptX = mpbL.y1 + mpbSlope * (optEq.x - mpbL.x1);
-
       return (
         <>
-          {/* Welfare loss triangle — RENDERED FIRST so it sits behind curves */}
+          {/* Welfare loss triangle — behind curves */}
           <WelfareRegion
             points={[
               { x: optEq.x, y: optEq.y },
@@ -597,28 +596,24 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             fill="#ef4444"
             fillOpacity={0.45}
             strokeWidth={3}
-            label="WL"
+            label="DWL"
             labelSize={9}
           />
-          {/* Curves rendered on top of welfare region */}
+          {/* Curves rendered on top */}
           <GLine {...sL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={sL.x2 - 8} y={sL.y2 - 6} text="S = MPC" color={COLORS.supply} />
-          <GLine {...mpbL} color={COLORS.mpb} width={2} />
-          <Label x={mpbL.x2 + 4} y={mpbL.y2 - 6} text="D = MPB" color={COLORS.mpb} />
-          <GLine {...msbL} color={COLORS.demand} gradientId="grad-demand" dashed glow="glow-blue" />
-          <Label x={msbL.x2 + 4} y={msbL.y2 - 6} text="MSB" color={COLORS.demand} />
-          {/* Tax annotation arrow at Q* */}
-          <line x1={optEq.x - 10} y1={optEq.y} x2={optEq.x - 10} y2={mpbAtOptX} stroke={COLORS.shifted} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
-          <Label x={optEq.x - 16} y={(optEq.y + mpbAtOptX) / 2 + 3} text="Tax" color={COLORS.shifted} size={8} anchor="end" />
-          {/* External cost bracket at Qₘ */}
-          <line x1={freeEq.x + 8} y1={freeEq.y} x2={freeEq.x + 8} y2={msbAtFreeX} stroke="#ef4444" strokeWidth={1.5} opacity={0.6} />
-          <Label x={freeEq.x + 14} y={(freeEq.y + msbAtFreeX) / 2 + 3} text="Ext. Cost" color="#ef4444" size={7} />
-          <DashedToAxes x={freeEq.x} y={freeEq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="Qₘ" />
-          <PremiumDot x={freeEq.x} y={freeEq.y} color={COLORS.eq} label="Free Mkt" gradientId="dot-green"
-            tooltipText="✓ Over-consumption — Qₘ > Q*" />
-          <DashedToAxes x={optEq.x} y={optEq.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P*" qLabel="Q*" />
-          <PremiumDot x={optEq.x} y={optEq.y} color={COLORS.shifted} label="Soc. Opt." gradientId="dot-amber"
-            tooltipText="✓ Optimal where MSB = MPC" />
+          <Label x={sL.x2 - 8} y={sL.y2 - 6} text="MPC = MSC" color={COLORS.supply} />
+          <GLine {...mpbL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <Label x={mpbL.x2 + 4} y={mpbL.y2 - 6} text="MPB" color={COLORS.demand} />
+          <GLine {...msbL} color="#ef4444" width={2.5} dashed />
+          <Label x={msbL.x2 + 4} y={msbL.y2 - 6} text="MSB" color="#ef4444" />
+          {/* Dashed projections */}
+          <DashedToAxes x={freeEq.x} y={freeEq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P(pri)" qLabel="Q(pri)" />
+          <PremiumDot x={freeEq.x} y={freeEq.y} color={COLORS.eq} label="" gradientId="dot-green" />
+          <DashedToAxes x={optEq.x} y={optEq.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P(soc)" qLabel="Q(soc)" />
+          <PremiumDot x={optEq.x} y={optEq.y} color={COLORS.shifted} label="" gradientId="dot-amber" />
+          {/* Over-consumption bracket */}
+          <line x1={optEq.x} y1={my + ph - pad + 12} x2={freeEq.x} y2={my + ph - pad + 12} stroke="#ef4444" strokeWidth={1.5} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
+          <Label x={(optEq.x + freeEq.x) / 2} y={my + ph - pad + 22} text="Over consumption" color="#ef4444" size={7} />
         </>
       );
     },
