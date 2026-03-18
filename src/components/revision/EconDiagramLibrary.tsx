@@ -49,7 +49,23 @@ export type DiagramType =
   | "labour_market"
   | "demand_side_shock"
   | "demand_shift_dual"
-  | "supply_shift_dual";
+  | "supply_shift_dual"
+  | "lras_shift"
+  | "tariff"
+  | "laffer_curve"
+  | "multiplier_effect"
+  | "exchange_rate"
+  | "j_curve"
+  | "crowding_out"
+  | "kinked_demand"
+  | "natural_monopoly"
+  | "monopsony"
+  | "pollution_permits"
+  | "tax_externality"
+  | "subsidy_externality"
+  | "comparative_advantage"
+  | "business_objectives"
+  | "price_discrimination";
 
 interface DiagramConfig {
   title: string;
