@@ -20,7 +20,7 @@ export const paperOptionsBySubject: Record<Subject, { value: string; label: stri
   "ocr": [
     { value: "1", label: "Component 01", title: "Microeconomics", desc: "Markets, market failure, business objectives, market structures, labour market (H460/01)" },
     { value: "2", label: "Component 02", title: "Macroeconomics", desc: "AD/AS, policy objectives, fiscal/monetary/supply-side, trade, financial sector (H460/02)" },
-    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Synoptic — draws together micro and macro across all content areas (H460/03)" },
+    { value: "full", label: "Component 03", title: "Themes in Economics", desc: "Synoptic — draws together micro and macro across all content areas (H460/03)" },
   ],
   "cambridge": [
     { value: "1", label: "Paper 1", title: "Multiple Choice (AS)", desc: "30 MCQs covering AS micro & macro — scarcity, markets, externalities, AD/AS, policy (9708/1)" },
