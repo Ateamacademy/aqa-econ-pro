@@ -15,7 +15,7 @@ export const paperOptionsBySubject: Record<Subject, { value: string; label: stri
   "edexcel-b": [
     { value: "1", label: "Paper 1", title: "Markets, Consumers & Firms", desc: "How markets work, market failure, business behaviour, the labour market (9EB0/01)" },
     { value: "2", label: "Paper 2", title: "The Wider Economic Environment", desc: "Economic indicators, macroeconomic policy, inequality, the financial sector (9EB0/02)" },
-    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete synoptic paper — globalisation, trade, development, financial markets (9EB0/03)" },
+    { value: "full", label: "Paper 3", title: "The Global Economy", desc: "Synoptic paper — globalisation, trade, development, financial markets (9EB0/03)" },
   ],
   "ocr": [
     { value: "1", label: "Component 01", title: "Microeconomics", desc: "Markets, market failure, business objectives, market structures, labour market (H460/01)" },
