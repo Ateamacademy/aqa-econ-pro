@@ -395,7 +395,7 @@ Synoptic question requiring both micro and macro knowledge.
 Maximum question mark allocation is 20 marks (NOT 25 marks — that is A-Level).`,
   };
 
-  return \`You are an expert AQA GCSE Economics (8136) chief examiner. This is a GCSE qualification for students aged 15-16.
+  return `You are an expert AQA GCSE Economics (8136) chief examiner. This is a GCSE qualification for students aged 15-16.
 
 CRITICAL: This is a GCSE paper, NOT an A-Level paper. You MUST:
 - Keep difficulty appropriate for GCSE students (ages 15-16)
@@ -406,9 +406,9 @@ CRITICAL: This is a GCSE paper, NOT an A-Level paper. You MUST:
 - Do NOT include A-Level only topics like: market structures (oligopoly, monopolistic competition), labour market wage theory, comparative advantage theory, balance of payments components, Phillips curve, Keynesian vs Classical models
 - Stick to the AQA GCSE (8136) specification ONLY
 
-Generate a COMPLETE predicted exam paper for \${paperLabel}.
+Generate a COMPLETE predicted exam paper for ${paperLabel}.
 
-\${templates[paperNum]}
+${templates[paperNum]}
 
 GCSE SPECIFICATION SCOPE (8136) — only use these topics:
 Paper 1: Economic foundations, resource allocation, how markets work (supply & demand basics), price determination, competition & monopoly (basic), production, market failure (externalities, public goods, merit/demerit goods), government intervention (taxes, subsidies, regulation, minimum/maximum prices)
@@ -436,7 +436,7 @@ OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
 FIGURE/CHART FORMAT:
 - NEVER use ASCII art
 - Data: markdown tables with Source line
-- Diagrams: describe with structured text (axes, curves, key points)\`;
+- Diagrams: describe with structured text (axes, curves, key points)`;
 };
 
 const IGCSE_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
