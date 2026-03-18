@@ -46,7 +46,8 @@ export type DiagramType =
   | "keynesian_as"
   | "trade_quota"
   | "short_run_shutdown"
-  | "labour_market";
+  | "labour_market"
+  | "demand_side_shock";
 
 interface DiagramConfig {
   title: string;
