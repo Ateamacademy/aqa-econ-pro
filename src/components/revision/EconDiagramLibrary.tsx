@@ -45,7 +45,8 @@ export type DiagramType =
   | "monopolistic_competition"
   | "keynesian_as"
   | "trade_quota"
-  | "short_run_shutdown";
+  | "short_run_shutdown"
+  | "labour_market";
 
 interface DiagramConfig {
   title: string;
@@ -1814,6 +1815,105 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       );
     },
   },
+
+  /* ── Labour Market — Wage Determination (Industry + Firm) ── */
+  labour_market: {
+    title: "Labour Market — Wage Determination (Competitive)",
+    xAxis: "Quantity of Workers", yAxis: "Wage Rate",
+    legend: [
+      { label: "S (Industry)", color: COLORS.supply },
+      { label: "D = MRP", color: COLORS.demand },
+      { label: "SL = ACL = MCL", color: COLORS.eq },
+    ],
+    examTips: [
+      "Industry: wage set where D(MRP) = S of labour → W₁",
+      "Firm is a wage-taker: SL = ACL = MCL is perfectly elastic at W₁",
+      "Firm hires where D(MRP) = MCL to maximise profit",
+      "MRP = MPP × MR — demand for labour is a derived demand",
+      "Draw BOTH industry and firm diagrams side by side for full marks",
+    ],
+    render: (p) => {
+      const { mx, my, pw, ph } = p;
+      const gap = 16;
+      const halfW = (pw - gap) / 2;
+      const fullH = ph;
+      const pad = 6;
+
+      // Panel origins
+      const p1x = mx, p1y = my;                      // Left: Industry
+      const p2x = mx + halfW + gap, p2y = my;        // Right: Firm
+
+      const panelTitle = (x: number, y: number, text: string) => (
+        <text x={x + halfW / 2} y={y - 3} textAnchor="middle" fontSize={9} fontWeight={800}
+          fill="currentColor" opacity={0.7} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{text}</text>
+      );
+
+      const miniAxes = (ox: number, oy: number, xLbl: string, yLbl: string) => (
+        <>
+          <line x1={ox} y1={oy} x2={ox} y2={oy + fullH} stroke="currentColor" strokeWidth={1.5} opacity={0.6} />
+          <line x1={ox} y1={oy + fullH} x2={ox + halfW} y2={oy + fullH} stroke="currentColor" strokeWidth={1.5} opacity={0.6} />
+          <text x={ox - 8} y={oy + fullH / 2} textAnchor="middle" fontSize={7} fontWeight={600}
+            transform={`rotate(-90 ${ox - 8} ${oy + fullH / 2})`} fill="currentColor" opacity={0.5}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{yLbl}</text>
+          <text x={ox + halfW / 2} y={oy + fullH + 14} textAnchor="middle" fontSize={7} fontWeight={600}
+            fill="currentColor" opacity={0.5} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{xLbl}</text>
+        </>
+      );
+
+      // ═══ PANEL 1: Industry — S & D=MRP ═══
+      const sL = { x1: p1x + pad, y1: p1y + fullH - pad, x2: p1x + halfW - pad, y2: p1y + pad };
+      const dL = { x1: p1x + pad, y1: p1y + pad, x2: p1x + halfW - pad, y2: p1y + fullH - pad };
+      const eq = lineIntersect(sL.x1, sL.y1, sL.x2, sL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
+      const wageY = eq.y;
+
+      // ═══ PANEL 2: Firm — D=MRP curve (hill shape) + SL=ACL=MCL horizontal ═══
+      const mrpPeakX = p2x + halfW * 0.35;
+      const mrpPeakY = p2y + fullH * 0.15;
+      const mrpEndX = p2x + halfW - pad - 5;
+      const mrpEndY = p2y + fullH - pad - 10;
+      const mrpPath = `M ${p2x + pad + 5} ${p2y + fullH * 0.55} Q ${mrpPeakX - 10} ${mrpPeakY - 5} ${mrpPeakX} ${mrpPeakY} Q ${mrpPeakX + 30} ${mrpPeakY + 15} ${p2x + halfW * 0.6} ${wageY + 15} Q ${p2x + halfW * 0.78} ${wageY + 40} ${mrpEndX} ${mrpEndY}`;
+
+      // Firm hires where MRP = W₁ (on the downward part of MRP curve)
+      const firmQ1X = p2x + halfW * 0.58;
+
+      return (
+        <>
+          {/* ── Panel 1: Industry ── */}
+          {panelTitle(p1x, p1y, "Industry")}
+          {miniAxes(p1x, p1y, "Quantity of workers", "Wage rate")}
+          <GLine {...sL} color={COLORS.supply} width={2} />
+          <Label x={sL.x2 + 2} y={sL.y2 + 2} text="S" color={COLORS.supply} size={9} />
+          <GLine {...dL} color={COLORS.demand} width={2} />
+          <Label x={dL.x2 + 2} y={dL.y2 - 6} text="D=MRP" color={COLORS.demand} size={9} />
+          <circle cx={eq.x} cy={eq.y} r={3.5} fill={COLORS.supply} />
+          {/* W₁ and Q₁ projections — red dashed like reference */}
+          <line x1={p1x} y1={wageY} x2={eq.x} y2={wageY} stroke="#ef4444" strokeWidth={0.8} strokeDasharray="2,1.5" opacity={0.7} />
+          <line x1={eq.x} y1={wageY} x2={eq.x} y2={p1y + fullH} stroke="#ef4444" strokeWidth={0.8} strokeDasharray="2,1.5" opacity={0.7} />
+          <text x={p1x - 3} y={wageY + 3} textAnchor="end" fontSize={8} fontWeight={700} fill="currentColor" opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>W₁</text>
+          <text x={eq.x} y={p1y + fullH + 12} textAnchor="middle" fontSize={8} fontWeight={700} fill="currentColor" opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Q₁</text>
+
+          {/* ── Panel 2: Firm ── */}
+          {panelTitle(p2x, p2y, "Firm")}
+          {miniAxes(p2x, p2y, "Quantity of workers", "Wage rate")}
+          {/* SL = ACL = MCL horizontal at W₁ */}
+          <GLine x1={p2x + pad} y1={wageY} x2={p2x + halfW - pad} y2={wageY} color={COLORS.eq} width={2} />
+          <Label x={p2x + halfW - pad + 2} y={wageY - 3} text="SL=ACL=MCL" color={COLORS.eq} size={7} />
+          <text x={p2x - 3} y={wageY + 3} textAnchor="end" fontSize={8} fontWeight={700} fill="currentColor" opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>W₁</text>
+          {/* D = MRP curve (inverted U / hill shape) */}
+          <CurvePath d={mrpPath} color={COLORS.demand} width={2.5} />
+          <Label x={mrpEndX + 2} y={mrpEndY - 4} text="D=MRP" color={COLORS.demand} size={9} />
+          {/* Firm Q₁ projection */}
+          <line x1={firmQ1X} y1={wageY} x2={firmQ1X} y2={p2y + fullH} stroke="#ef4444" strokeWidth={0.8} strokeDasharray="2,1.5" opacity={0.7} />
+          <circle cx={firmQ1X} cy={wageY} r={3} fill={COLORS.eq} />
+          <text x={firmQ1X} y={p2y + fullH + 12} textAnchor="middle" fontSize={8} fontWeight={700} fill="currentColor" opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Q₁</text>
+        </>
+      );
+    },
+  },
 };
 
 // Alias mappings — comprehensive to catch AI-generated diagram titles
@@ -1945,6 +2045,18 @@ const ALIASES: Record<string, string> = {
   "shutdown": "short_run_shutdown",
   "shutdown_point": "short_run_shutdown",
   "short_run_shutdown_point": "short_run_shutdown",
+  // Labour market
+  "labour_market_diagram": "labour_market",
+  "labor_market": "labour_market",
+  "wage_determination": "labour_market",
+  "wage_rate": "labour_market",
+  "mrp": "labour_market",
+  "marginal_revenue_product": "labour_market",
+  "derived_demand": "labour_market",
+  "demand_for_labour": "labour_market",
+  "supply_of_labour": "labour_market",
+  "competitive_labour": "labour_market",
+  "acl_mcl": "labour_market",
   // Phillips
   "phillips": "phillips_curve",
   "inflation_unemployment": "phillips_curve",
@@ -2021,6 +2133,15 @@ export function resolveDiagramType(raw: string, shiftHint?: string): DiagramType
     [["aggregate", "supply", "increase"], "sras_increase"],
     [["keynesian"], "keynesian_as"],
     [["ad", "as"], "ad_increase"],
+    // Labour market
+    [["labour", "market"], "labour_market"],
+    [["labor", "market"], "labour_market"],
+    [["wage", "determination"], "labour_market"],
+    [["mrp"], "labour_market"],
+    [["marginal", "revenue", "product"], "labour_market"],
+    [["derived", "demand"], "labour_market"],
+    [["demand", "labour"], "labour_market"],
+    [["supply", "labour"], "labour_market"],
     // Market structures
     [["monopoly"], "monopoly"],
     [["monopolistic", "competition"], "monopolistic_competition"],
