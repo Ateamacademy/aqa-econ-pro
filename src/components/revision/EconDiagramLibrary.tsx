@@ -2326,6 +2326,12 @@ const ALIASES: Record<string, string> = {
   "supply_shock": "sras_decrease",
   "negative_supply_shock": "sras_decrease",
   "stagflation": "sras_decrease",
+  "demand_side_shock": "demand_side_shock",
+  "demand_shock": "demand_side_shock",
+  "aggregate_demand_shock": "demand_side_shock",
+  "ad_shock": "demand_side_shock",
+  "positive_demand_shock": "demand_side_shock",
+  "negative_demand_shock": "demand_side_shock",
   // Tax/subsidy
   "indirect_tax": "tax_incidence",
   "taxation": "tax_incidence",
