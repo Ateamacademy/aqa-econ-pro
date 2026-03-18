@@ -2133,6 +2133,15 @@ export function resolveDiagramType(raw: string, shiftHint?: string): DiagramType
     [["aggregate", "supply", "increase"], "sras_increase"],
     [["keynesian"], "keynesian_as"],
     [["ad", "as"], "ad_increase"],
+    // Labour market
+    [["labour", "market"], "labour_market"],
+    [["labor", "market"], "labour_market"],
+    [["wage", "determination"], "labour_market"],
+    [["mrp"], "labour_market"],
+    [["marginal", "revenue", "product"], "labour_market"],
+    [["derived", "demand"], "labour_market"],
+    [["demand", "labour"], "labour_market"],
+    [["supply", "labour"], "labour_market"],
     // Market structures
     [["monopoly"], "monopoly"],
     [["monopolistic", "competition"], "monopolistic_competition"],
