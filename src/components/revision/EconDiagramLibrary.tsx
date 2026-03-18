@@ -2045,6 +2045,18 @@ const ALIASES: Record<string, string> = {
   "shutdown": "short_run_shutdown",
   "shutdown_point": "short_run_shutdown",
   "short_run_shutdown_point": "short_run_shutdown",
+  // Labour market
+  "labour_market_diagram": "labour_market",
+  "labor_market": "labour_market",
+  "wage_determination": "labour_market",
+  "wage_rate": "labour_market",
+  "mrp": "labour_market",
+  "marginal_revenue_product": "labour_market",
+  "derived_demand": "labour_market",
+  "demand_for_labour": "labour_market",
+  "supply_of_labour": "labour_market",
+  "competitive_labour": "labour_market",
+  "acl_mcl": "labour_market",
   // Phillips
   "phillips": "phillips_curve",
   "inflation_unemployment": "phillips_curve",
