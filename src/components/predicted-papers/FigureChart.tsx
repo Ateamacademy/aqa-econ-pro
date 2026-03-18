@@ -667,9 +667,17 @@ export function FigureChart({ title, description }: FigureChartProps) {
               ))}
             </LineChart>
           ) : (
-            <BarChart data={chartData} margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
+            <BarChart data={chartData} margin={{ top: 5, right: 20, left: 10, bottom: 40 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-              <XAxis dataKey="year" tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }} />
+              <XAxis
+                dataKey="year"
+                tick={{ fontSize: 9, fill: "hsl(var(--muted-foreground))" }}
+                interval={0}
+                angle={-25}
+                textAnchor="end"
+                height={60}
+                tickFormatter={(val: string) => val.length > 18 ? val.slice(0, 16) + "…" : val}
+              />
               <YAxis tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }} />
               <Tooltip
                 contentStyle={{
