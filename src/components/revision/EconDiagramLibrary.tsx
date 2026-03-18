@@ -1181,68 +1181,59 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   monopoly: {
     title: "Monopoly Profit Maximisation",
     xAxis: "Quantity (Q)", yAxis: "Price / Cost / Revenue",
-    legend: [{ label: "MC", color: COLORS.supply }, { label: "AR = D", color: COLORS.demand }, { label: "MR", color: COLORS.mpb }, { label: "Supernormal Profit", color: COLORS.area }],
+    legend: [{ label: "MC", color: COLORS.eq }, { label: "Demand (AR)", color: COLORS.demand }, { label: "MR", color: COLORS.shifted }],
     examTips: [
       "Profit max at MC = MR — always state this rule",
-      "Price read UP from Qₘ to AR curve, not MC",
-      "Supernormal profit = shaded area (AR - AC) × Qₘ",
-      "AR is above MR due to the price-making power",
+      "Price read UP from Q₁ to the Demand (AR) curve, not MC",
+      "Supernormal profit = shaded area (AR - AC) × Q",
+      "AR is above MR because the monopolist is a price-maker",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
       const pad = 10;
 
-      // MC: upward sloping
-      const mcL = { x1: mx + pw * 0.18, y1: my + ph - pad - 10, x2: mx + pw - pad, y2: my + pad + 15 };
-      // AR = D: downward sloping
-      const arL = { x1: mx + pad, y1: my + pad + 10, x2: mx + pw - pad, y2: my + ph - pad };
-      // MR: steeper downward (same intercept, hits x-axis at half the quantity)
-      const mrL = { x1: mx + pad, y1: my + pad + 10, x2: mx + pw * 0.52, y2: my + ph - pad };
+      // Demand (AR): downward sloping — dark blue like reference
+      const arL = { x1: mx + pad + 5, y1: my + pad + 5, x2: mx + pw - pad, y2: my + ph - pad - 5 };
+      // MR: steeper downward (same y-intercept, reaches x-axis at ~half quantity) — amber/yellow
+      const mrL = { x1: mx + pad + 5, y1: my + pad + 5, x2: mx + pw * 0.52, y2: my + ph - pad - 5 };
+      // MC: curved upward from bottom-left — green like reference
+      const mcStartX = mx + pw * 0.12;
+      const mcStartY = my + ph * 0.72;
+      const mcMidX = mx + pw * 0.35;
+      const mcMidY = my + ph * 0.48;
+      const mcEndX = mx + pw * 0.72;
+      const mcEndY = my + pad + 5;
+      const mcPath = `M ${mcStartX} ${mcStartY} Q ${mcMidX} ${mcMidY + 15} ${mcMidX + 15} ${mcMidY} Q ${mcMidX + 35} ${mcMidY - 20} ${mcEndX} ${mcEndY}`;
 
-      // Profit max = MC ∩ MR
-      const mcMrInt = lineIntersect(mcL.x1, mcL.y1, mcL.x2, mcL.y2, mrL.x1, mrL.y1, mrL.x2, mrL.y2);
+      // Find MC=MR intersection (approximate: use the linear portion of MC near MR)
+      // MC roughly passes through (mcMidX+15, mcMidY) and (mcEndX, mcEndY)
+      const mcMrInt = lineIntersect(
+        mcMidX, mcMidY + 8, mcEndX, mcEndY,
+        mrL.x1, mrL.y1, mrL.x2, mrL.y2
+      );
 
-      // Price = AR at Qₘ (read up to AR curve)
+      // Price = read up from Q₁ to AR (demand) curve
       const arSlope = (arL.y2 - arL.y1) / (arL.x2 - arL.x1);
       const priceY = arL.y1 + arSlope * (mcMrInt.x - arL.x1);
 
-      // Approximate AC as horizontal line for supernormal profit illustration
-      const acY = (priceY + mcMrInt.y) / 2 + 8;
-
       return (
         <>
-          <GLine {...mcL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={mcL.x2 + 4} y={mcL.y2 + 4} text="MC" color={COLORS.supply} />
-          <GLine {...arL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={arL.x2 + 4} y={arL.y2 - 6} text="AR = D" color={COLORS.demand} />
-          <GLine {...mrL} color={COLORS.mpb} dashed width={2} />
-          <Label x={mrL.x2 + 4} y={mrL.y2 - 6} text="MR" color={COLORS.mpb} />
-          {/* AC line (simplified as horizontal) */}
-          <GLine x1={mx + pad} y1={acY} x2={mx + pw - pad} y2={acY} color={COLORS.lras} dashed width={1} />
-          <Label x={mx + pw - pad - 18} y={acY - 6} text="AC" color={COLORS.lras} size={10} />
-          {/* Supernormal profit area — closed polygon */}
-          <WelfareRegion
-            points={[
-              { x: mx, y: priceY },
-              { x: mcMrInt.x, y: priceY },
-              { x: mcMrInt.x, y: acY },
-              { x: mx, y: acY },
-            ]}
-            fill="#8b5cf6"
-            fillOpacity={0.20}
-            strokeWidth={2}
-            label="Supernormal Profit"
-            labelSize={8}
-          />
-
-          {/* Projection from Qₘ up to AR (price) */}
-          <DashedToAxes x={mcMrInt.x} y={priceY} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="Pₘ" qLabel="Qₘ" />
-          {/* MC=MR dot */}
-          <PremiumDot x={mcMrInt.x} y={mcMrInt.y} color={COLORS.shifted} label="MC=MR" labelPos="br" gradientId="dot-amber"
+          {/* Demand (AR) — blue */}
+          <GLine {...arL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" width={2.5} />
+          <Label x={arL.x2 + 4} y={arL.y2 - 8} text="Demand" color={COLORS.demand} />
+          {/* MR — amber */}
+          <GLine {...mrL} color={COLORS.shifted} gradientId="grad-shifted" width={2.5} />
+          <Label x={mrL.x2 + 4} y={mrL.y2 - 8} text="MR" color={COLORS.shifted} />
+          {/* MC — green curve */}
+          <CurvePath d={mcPath} color={COLORS.eq} width={2.5} glow="glow-green" />
+          <Label x={mcEndX + 4} y={mcEndY + 4} text="MC" color={COLORS.eq} />
+          {/* MC=MR intersection dot and label */}
+          <PremiumDot x={mcMrInt.x} y={mcMrInt.y} color={COLORS.eq} label="MR = MC" labelPos="bl" gradientId="dot-green"
             tooltipText="✓ Profit max rule: produce where MC=MR" />
+          {/* Projection lines: Q₁ down to x-axis, P₁ to y-axis via AR */}
+          <DashedToAxes x={mcMrInt.x} y={priceY} mx={mx} ph={ph} my={my} color={COLORS.demand} pLabel="P₁" qLabel="Q₁" />
           {/* Price dot on AR */}
-          <PremiumDot x={mcMrInt.x} y={priceY} color={COLORS.eq} label="Pₘ on AR" labelPos="tl" gradientId="dot-green"
-            tooltipText="✓ Price read UP to AR curve, not MC" />
+          <circle cx={mcMrInt.x} cy={priceY} r={3.5} fill={COLORS.demand} />
         </>
       );
     },
