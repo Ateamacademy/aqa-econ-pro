@@ -620,14 +620,14 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   },
   negative_production_externality: {
     title: "Negative Production Externality",
-    xAxis: "Quantity (Q)", yAxis: "Price / Cost / Benefit",
-    legend: [{ label: "MPC = S", color: COLORS.mpc }, { label: "MSC", color: COLORS.msc }, { label: "D = MPB = MSB", color: COLORS.demand }, { label: "Welfare Loss", color: "#ef4444" }],
+    xAxis: "Output", yAxis: "Costs and Benefits",
+    legend: [{ label: "MPC", color: COLORS.mpc }, { label: "MSC", color: COLORS.msc }, { label: "MSB = MPB", color: COLORS.demand }, { label: "Welfare Loss (ABC)", color: "#ef4444" }],
     examTips: [
       "MSC is above MPC — producers ignore external costs (e.g. pollution)",
-      "Overproduction in free market: Qₘ > Q*",
-      "Welfare loss = triangle between MSC and MPC from Q* to Qₘ",
-      "Tax = external cost per unit shifts MPC up to MSC",
-      "Show the tax arrow between MPC and MSC at optimal quantity Q*",
+      "Overproduction in free market: Qe > Qo",
+      "Welfare loss = triangle ABC between MSC and MSB from Qo to Qe",
+      "Marginal External Cost (MEC) = vertical gap between MSC and MPC",
+      "Policy: tax = MEC per unit to internalise externality",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
@@ -642,48 +642,53 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       const freeEq = lineIntersect(mpcL.x1, mpcL.y1, mpcL.x2, mpcL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
       const optEq = lineIntersect(mscL.x1, mscL.y1, mscL.x2, mscL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
 
-      // DWL top vertex: MSC at freeEq.x
+      // Point A: MSC at Qe (top of triangle)
       const mscSlope = (mscL.y2 - mscL.y1) / (mscL.x2 - mscL.x1);
       const mscAtFreeX = mscL.y1 + mscSlope * (freeEq.x - mscL.x1);
 
-      // Tax annotation: MPC at Q* (gap = external cost)
+      // MEC annotation: gap between MSC and MPC at midpoint
       const mpcSlope = (mpcL.y2 - mpcL.y1) / (mpcL.x2 - mpcL.x1);
-      const mpcAtOptX = mpcL.y1 + mpcSlope * (optEq.x - mpcL.x1);
+      const midX = (optEq.x + freeEq.x) / 2;
+      const mpcAtMid = mpcL.y1 + mpcSlope * (midX - mpcL.x1);
+      const mscAtMid = mscL.y1 + mscSlope * (midX - mscL.x1);
 
       return (
         <>
-          {/* Welfare loss triangle — RENDERED FIRST so it sits behind curves */}
+          {/* Welfare loss triangle ABC — behind curves */}
           <WelfareRegion
             points={[
-              { x: optEq.x, y: optEq.y },
-              { x: freeEq.x, y: freeEq.y },
-              { x: freeEq.x, y: mscAtFreeX },
+              { x: freeEq.x, y: mscAtFreeX },  // A
+              { x: freeEq.x, y: freeEq.y },     // B
+              { x: optEq.x, y: optEq.y },        // C
             ]}
             fill="#ef4444"
             fillOpacity={0.45}
             strokeWidth={3}
-            label="WL"
-            labelSize={9}
+            label="ABC"
+            labelSize={8}
           />
-          {/* Curves rendered on top of welfare region */}
+          {/* Curves rendered on top */}
           <GLine {...mpcL} color={COLORS.mpc} width={2.5} />
-          <Label x={mpcL.x2 - 8} y={mpcL.y2 - 6} text="S = MPC" color={COLORS.mpc} />
-          <GLine {...mscL} color={COLORS.msc} gradientId="grad-supply" dashed glow="glow-red" />
+          <Label x={mpcL.x2 - 8} y={mpcL.y2 - 6} text="MPC" color={COLORS.mpc} />
+          <GLine {...mscL} color={COLORS.msc} gradientId="grad-supply" glow="glow-red" />
           <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.msc} />
           <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MPB = MSB" color={COLORS.demand} />
-          {/* Tax annotation arrow at Q* — vertical gap between MSC and MPC */}
-          <line x1={optEq.x - 10} y1={optEq.y} x2={optEq.x - 10} y2={mpcAtOptX} stroke={COLORS.shifted} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
-          <Label x={optEq.x - 16} y={(optEq.y + mpcAtOptX) / 2 + 3} text="Tax" color={COLORS.shifted} size={8} anchor="end" />
-          {/* External cost bracket at Qₘ */}
-          <line x1={freeEq.x + 8} y1={freeEq.y} x2={freeEq.x + 8} y2={mscAtFreeX} stroke="#ef4444" strokeWidth={1.5} opacity={0.6} />
-          <Label x={freeEq.x + 14} y={(freeEq.y + mscAtFreeX) / 2 + 3} text="Ext. Cost" color="#ef4444" size={7} />
-          <DashedToAxes x={freeEq.x} y={freeEq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="Pₘ" qLabel="Qₘ" />
-          <PremiumDot x={freeEq.x} y={freeEq.y} color={COLORS.eq} label="Free Mkt" gradientId="dot-green"
-            tooltipText="✓ Over-produces at Qₘ" />
-          <DashedToAxes x={optEq.x} y={optEq.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P*" qLabel="Q*" />
-          <PremiumDot x={optEq.x} y={optEq.y} color={COLORS.shifted} label="Soc. Opt." gradientId="dot-amber"
-            tooltipText="✓ Optimal: MSC = MSB" />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="MSB = MPB" color={COLORS.demand} />
+          {/* MEC annotation arrow — vertical gap between MSC and MPC */}
+          <line x1={midX + 12} y1={mscAtMid} x2={midX + 12} y2={mpcAtMid} stroke={COLORS.shifted} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
+          <Label x={midX + 18} y={(mscAtMid + mpcAtMid) / 2 + 3} text="MEC" color={COLORS.shifted} size={8} />
+          {/* Point labels A, B, C */}
+          <Label x={freeEq.x + 6} y={mscAtFreeX - 4} text="A" color="#ef4444" size={9} />
+          <Label x={freeEq.x + 6} y={freeEq.y + 10} text="B" color="#ef4444" size={9} />
+          <Label x={optEq.x - 10} y={optEq.y + 3} text="C" color="#ef4444" size={9} anchor="end" />
+          {/* Dashed projections */}
+          <DashedToAxes x={optEq.x} y={optEq.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="Po" qLabel="Qo" />
+          <PremiumDot x={optEq.x} y={optEq.y} color={COLORS.shifted} label="" gradientId="dot-amber" />
+          <DashedToAxes x={freeEq.x} y={freeEq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="Pe" qLabel="Qe" />
+          <PremiumDot x={freeEq.x} y={freeEq.y} color={COLORS.eq} label="" gradientId="dot-green" />
+          {/* Over allocation bracket */}
+          <line x1={optEq.x} y1={my + ph - pad + 12} x2={freeEq.x} y2={my + ph - pad + 12} stroke="#ef4444" strokeWidth={1.5} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
+          <Label x={(optEq.x + freeEq.x) / 2} y={my + ph - pad + 22} text="Over allocation" color="#ef4444" size={7} />
         </>
       );
     },
