@@ -47,7 +47,8 @@ export type DiagramType =
   | "trade_quota"
   | "short_run_shutdown"
   | "labour_market"
-  | "demand_side_shock";
+  | "demand_side_shock"
+  | "demand_shift_dual";
 
 interface DiagramConfig {
   title: string;
@@ -1067,7 +1068,152 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     },
   },
 
-  /* ── SRAS Decrease / Supply-Side Shock ── */
+  /* ── Demand Shift — Left vs Right (2 panels) ── */
+  demand_shift_dual: {
+    title: "Shift in Demand — Left vs Right",
+    xAxis: "", yAxis: "",
+    legend: [
+      { label: "Demand", color: COLORS.demand },
+      { label: "Supply", color: COLORS.supply },
+      { label: "Shifted D", color: COLORS.demand },
+    ],
+    examTips: [
+      "Left shift: D₁ → D₂ leftward — price falls, quantity falls",
+      "Right shift: D₁ → D₂ rightward — price rises, quantity rises",
+      "Always show both equilibria with dashed projections to axes",
+      "State the cause of the shift clearly in your written answer",
+    ],
+    render: (p) => {
+      const { mx, my, pw, ph } = p;
+      const halfW = pw / 2;
+      const gap = 18;
+      const pad = 8;
+
+      const p1x = mx;
+      const p2x = mx + halfW + gap / 2;
+      const axTop = my + 18;
+      const axBot = my + ph - 18;
+      const panelW = halfW - gap / 2;
+
+      const panelAxes = (ox: number, w: number) => (
+        <>
+          <line x1={ox + pad} y1={axTop} x2={ox + pad} y2={axBot} stroke="currentColor" strokeWidth={1.8} />
+          <line x1={ox + pad} y1={axBot} x2={ox + w - pad} y2={axBot} stroke="currentColor" strokeWidth={1.8} />
+          <text x={ox + pad - 3} y={axTop - 4} textAnchor="middle" fontSize={8} fontWeight={700} fill="currentColor" opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p</text>
+          <text x={ox + w - pad} y={axBot + 14} textAnchor="end" fontSize={8} fontWeight={700} fill="currentColor" opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q</text>
+          <text x={ox + pad - 2} y={axBot + 5} textAnchor="middle" fontSize={7} fontWeight={600} fill="currentColor" opacity={0.5}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>O</text>
+        </>
+      );
+
+      // ═══════════════════════════
+      // LEFT PANEL — Demand Shifts Left
+      // ═══════════════════════════
+      const L1 = p1x + pad;
+      const R1 = p1x + panelW - pad;
+
+      // Supply: upward sloping (bottom-left to top-right)
+      const s1 = { x1: L1 + 5, y1: axBot - 4, x2: R1 - 5, y2: axTop + 4 };
+      // D₁ (original): downward sloping
+      const d1 = { x1: L1 + (R1 - L1) * 0.15, y1: axTop + 4, x2: R1 - 5, y2: axBot - 4 };
+      // D₂ (shifted left)
+      const shiftL = -(R1 - L1) * 0.22;
+      const d1s = { x1: d1.x1 + shiftL, y1: d1.y1, x2: d1.x2 + shiftL, y2: d1.y2 };
+
+      const eq1a = lineIntersect(s1.x1, s1.y1, s1.x2, s1.y2, d1.x1, d1.y1, d1.x2, d1.y2);
+      const eq1b = lineIntersect(s1.x1, s1.y1, s1.x2, s1.y2, d1s.x1, d1s.y1, d1s.x2, d1s.y2);
+
+      // ═══════════════════════════
+      // RIGHT PANEL — Demand Shifts Right
+      // ═══════════════════════════
+      const L2 = p2x + pad;
+      const R2 = p2x + panelW - pad;
+
+      // Supply: upward sloping
+      const s2 = { x1: L2 + 5, y1: axBot - 4, x2: R2 - 5, y2: axTop + 4 };
+      // D₁ (original): shifted left so D₂ is in a natural position
+      const d2 = { x1: L2 + (R2 - L2) * 0.05, y1: axTop + 4, x2: L2 + (R2 - L2) * 0.68, y2: axBot - 4 };
+      // D₂ (shifted right)
+      const shiftR = (R2 - L2) * 0.22;
+      const d2s = { x1: d2.x1 + shiftR, y1: d2.y1, x2: d2.x2 + shiftR, y2: d2.y2 };
+
+      const eq2a = lineIntersect(s2.x1, s2.y1, s2.x2, s2.y2, d2.x1, d2.y1, d2.x2, d2.y2);
+      const eq2b = lineIntersect(s2.x1, s2.y1, s2.x2, s2.y2, d2s.x1, d2s.y1, d2s.x2, d2s.y2);
+
+      return (
+        <>
+          {/* Panel titles */}
+          <rect x={p1x + panelW * 0.05} y={my} width={panelW * 0.9} height={15} rx={3} fill={COLORS.demand} opacity={0.12} />
+          <text x={p1x + panelW * 0.5} y={my + 11} textAnchor="middle" fontSize={8.5} fontWeight={700} fill={COLORS.demand}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>1. Demand Shifts to the Left</text>
+          <rect x={p2x + panelW * 0.05} y={my} width={panelW * 0.9} height={15} rx={3} fill={COLORS.eq} opacity={0.12} />
+          <text x={p2x + panelW * 0.5} y={my + 11} textAnchor="middle" fontSize={8.5} fontWeight={700} fill={COLORS.eq}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>2. Demand Shifts to the Right</text>
+
+          {/* ── LEFT PANEL ── */}
+          {panelAxes(p1x, panelW)}
+
+          {/* Supply */}
+          <GLine {...s1} color={COLORS.supply} width={2} />
+          <Label x={s1.x2 + 2} y={s1.y2 + 4} text="S" color={COLORS.supply} size={8} />
+
+          {/* D₁ (original) */}
+          <GLine {...d1} color={COLORS.demand} width={2} />
+          <Label x={d1.x2 + 2} y={d1.y2 - 4} text="D₁" color={COLORS.demand} size={8} />
+
+          {/* D₂ (shifted left) */}
+          <GLine {...d1s} color={COLORS.demand} width={2} dashed />
+          <Label x={d1s.x2 + 2} y={d1s.y2 - 4} text="D₂" color={COLORS.demand} size={8} />
+
+          {/* Shift arrows (↙) */}
+          <line x1={eq1a.x - 6} y1={eq1a.y - 4} x2={eq1b.x + 8} y2={eq1b.y + 6}
+            stroke="currentColor" strokeWidth={1.2} markerEnd="url(#arrowHead)" opacity={0.6} />
+          <line x1={(d1.x2 + d1s.x2) / 2 + 4} y1={(d1.y2 + d1s.y2) / 2 - 10} x2={(d1s.x2) + 6} y2={d1s.y2 - 6}
+            stroke="currentColor" strokeWidth={1.2} markerEnd="url(#arrowHead)" opacity={0.6} />
+
+          {/* Equilibria */}
+          <circle cx={eq1a.x} cy={eq1a.y} r={3.5} fill={COLORS.demand} />
+          <circle cx={eq1b.x} cy={eq1b.y} r={3.5} fill={COLORS.demand} />
+
+          {/* Annotation below left panel */}
+          <text x={p1x + panelW * 0.5} y={axBot + 28} textAnchor="middle" fontSize={8} fontWeight={700} fill="currentColor"
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p*↓ q*↓</text>
+
+          {/* ── RIGHT PANEL ── */}
+          {panelAxes(p2x, panelW)}
+
+          {/* Supply */}
+          <GLine {...s2} color={COLORS.supply} width={2} />
+          <Label x={s2.x2 + 2} y={s2.y2 + 4} text="S" color={COLORS.supply} size={8} />
+
+          {/* D₁ (original) */}
+          <GLine {...d2} color={COLORS.demand} width={2} />
+          <Label x={d2.x2 + 2} y={d2.y2 - 4} text="D₁" color={COLORS.demand} size={8} />
+
+          {/* D₂ (shifted right) */}
+          <GLine {...d2s} color={COLORS.demand} width={2} dashed />
+          <Label x={d2s.x2 + 2} y={d2s.y2 - 4} text="D₂" color={COLORS.demand} size={8} />
+
+          {/* Shift arrows (↗) */}
+          <line x1={eq2a.x + 6} y1={eq2a.y + 4} x2={eq2b.x - 8} y2={eq2b.y - 6}
+            stroke="currentColor" strokeWidth={1.2} markerEnd="url(#arrowHead)" opacity={0.6} />
+          <line x1={(d2.x2 + d2s.x2) / 2 - 4} y1={(d2.y2 + d2s.y2) / 2 + 6} x2={d2s.x2 - 6} y2={d2s.y2 + 4}
+            stroke="currentColor" strokeWidth={1.2} markerEnd="url(#arrowHead)" opacity={0.6} />
+
+          {/* Equilibria */}
+          <circle cx={eq2a.x} cy={eq2a.y} r={3.5} fill={COLORS.demand} />
+          <circle cx={eq2b.x} cy={eq2b.y} r={3.5} fill={COLORS.demand} />
+
+          {/* Annotation below right panel */}
+          <text x={p2x + panelW * 0.5} y={axBot + 28} textAnchor="middle" fontSize={8} fontWeight={700} fill="currentColor"
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p*↑ q*↑</text>
+        </>
+      );
+    },
+  },
+
   sras_decrease: {
     title: "Supply Side Shock",
     xAxis: "Real Output", yAxis: "Price Level",
@@ -2702,14 +2848,15 @@ const ALIASES: Record<string, string> = {
   // S&D basics
   "supply_and_demand": "supply_demand",
   "market_equilibrium": "supply_demand",
-  "demand_shift": "demand_increase",
+  "demand_shift": "demand_shift_dual",
   "supply_shift": "supply_increase",
   "increase_in_demand": "demand_increase",
   "decrease_in_demand": "demand_decrease",
   "increase_in_supply": "supply_increase",
   "decrease_in_supply": "supply_decrease",
-  "shift_in_demand": "demand_increase",
+  "shift_in_demand": "demand_shift_dual",
   "shift_in_supply": "supply_increase",
+  "demand_shift_dual": "demand_shift_dual",
 };
 
 export function resolveDiagramType(raw: string, shiftHint?: string): DiagramType | null {
