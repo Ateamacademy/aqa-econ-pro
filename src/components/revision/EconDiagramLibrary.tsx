@@ -1493,53 +1493,187 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     },
   },
 
-  /* ── Keynesian Aggregate Supply ── */
+  /* ── Keynesian AS — Spare Capacity vs Full Capacity (2 panels) ── */
   keynesian_as: {
-    title: "Keynesian AS — Three Sections",
-    xAxis: "Real GDP (Y)", yAxis: "Price Level (PL)",
-    legend: [{ label: "Keynesian AS", color: COLORS.supply }, { label: "AD", color: COLORS.demand }],
+    title: "Keynesian AS — Spare Capacity vs Full Employment",
+    xAxis: "", yAxis: "",
+    legend: [
+      { label: "AS", color: COLORS.supply },
+      { label: "LRAS", color: COLORS.lras },
+      { label: "AD", color: COLORS.demand },
+    ],
     examTips: [
-      "Horizontal section: spare capacity — output rises with NO inflation",
-      "Upward sloping: approaching full employment — output rises WITH some inflation",
-      "Vertical section: full employment (Yf) — only price level rises",
-      "Keynesian view: economy can get stuck below Yf with demand deficiency",
+      "Spare capacity: AD increase raises real output with little/no inflation",
+      "Full capacity: AD increase only raises price level (demand-pull inflation)",
+      "Keynesian AS is L-shaped: horizontal then vertical at Yfe",
+      "Growth occurs in spare-capacity region; inflation at full employment",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
-      const pad = 10;
-      const yf = mx + pw * 0.72;
-      const flatY = my + ph * 0.68;
+      const halfW = pw / 2;
+      const gap = 18;
+      const pad = 8;
 
-      // Keynesian AS: horizontal → upward sloping → vertical
-      const kasPath = `M ${mx + pad + 5} ${flatY} L ${mx + pw * 0.42} ${flatY} Q ${mx + pw * 0.58} ${flatY - 10} ${yf} ${my + ph * 0.28} L ${yf} ${my + pad}`;
+      // ── Panel origins ──
+      const p1x = mx;
+      const p2x = mx + halfW + gap / 2;
+      const axTop = my + 18;
+      const axBot = my + ph - 18;
+      const axH = axBot - axTop;
+      const panelW = halfW - gap / 2;
 
-      // AD curves at different positions
-      const ad1L = { x1: mx + pad + 20, y1: my + pad + 30, x2: mx + pw * 0.35, y2: my + ph - pad };
-      const ad2L = { x1: mx + pw * 0.15, y1: my + pad + 10, x2: mx + pw * 0.58, y2: my + ph - pad };
-      const ad3L = { x1: mx + pw * 0.40, y1: my + pad, x2: mx + pw * 0.82, y2: my + ph - pad };
+      // ── Helper: draw axes for a panel ──
+      const panelAxes = (ox: number, w: number, yLabel: string, xLabel: string) => (
+        <>
+          <line x1={ox + pad} y1={axTop} x2={ox + pad} y2={axBot} stroke="currentColor" strokeWidth={1.8} />
+          <line x1={ox + pad} y1={axBot} x2={ox + w - pad} y2={axBot} stroke="currentColor" strokeWidth={1.8} />
+          <text x={ox + pad - 3} y={axTop - 4} textAnchor="middle" fontSize={8} fontWeight={700} fill="currentColor" opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{yLabel}</text>
+          <text x={ox + w - pad} y={axBot + 14} textAnchor="end" fontSize={8} fontWeight={700} fill="currentColor" opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{xLabel}</text>
+          <text x={ox + pad - 2} y={axBot + 5} textAnchor="middle" fontSize={7} fontWeight={600} fill="currentColor" opacity={0.5}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>O</text>
+        </>
+      );
+
+      // ══════════════════════════════════════
+      // LEFT PANEL — Spare Capacity (Growth)
+      // ══════════════════════════════════════
+      const L = p1x + pad;
+      const R1 = p1x + panelW - pad;
+      const yfe1 = L + (R1 - L) * 0.72;
+      const flatY = axTop + axH * 0.62;
+
+      // Keynesian AS: horizontal → curve up → vertical at Yfe
+      const kasPath1 = `M ${L + 5} ${flatY} L ${L + (R1 - L) * 0.38} ${flatY} Q ${L + (R1 - L) * 0.55} ${flatY - 8} ${yfe1} ${axTop + axH * 0.2} L ${yfe1} ${axTop + 4}`;
+
+      // AD₁ (original — intersects in flat region)
+      const ad1_x1 = L + 8;
+      const ad1_y1 = axTop + axH * 0.12;
+      const ad1_x2 = L + (R1 - L) * 0.32;
+      const ad1_y2 = axBot - 4;
+      // AD₂ (shifted right — still in spare capacity but further)
+      const ad2_x1 = L + (R1 - L) * 0.12;
+      const ad2_y1 = axTop + axH * 0.08;
+      const ad2_x2 = L + (R1 - L) * 0.48;
+      const ad2_y2 = axBot - 4;
+
+      // Q outputs where AD hits flat section
+      const q1x = L + (R1 - L) * 0.18;
+      const q2x = L + (R1 - L) * 0.34;
+
+      // Shift arrows
+      const arrowMidY = axTop + axH * 0.45;
+
+      // ══════════════════════════════════════
+      // RIGHT PANEL — Full Capacity (Inflation)
+      // ══════════════════════════════════════
+      const L2 = p2x + pad;
+      const R2 = p2x + panelW - pad;
+      const yfe2 = L2 + (R2 - L2) * 0.48;
+
+      // LRAS vertical at Yfe
+      // AD (original)
+      const rAd_x1 = L2 + (R2 - L2) * 0.2;
+      const rAd_y1 = axTop + axH * 0.05;
+      const rAd_x2 = R2 - 8;
+      const rAd_y2 = axBot - 4;
+      // AD₁ shifted right
+      const rAd1_x1 = L2 + (R2 - L2) * 0.35;
+      const rAd1_y1 = axTop + axH * 0.02;
+      const rAd1_x2 = R2 + 4;
+      const rAd1_y2 = axBot - 14;
+
+      // Where AD intersects LRAS (vertical x = yfe2)
+      const adSlope = (rAd_y2 - rAd_y1) / (rAd_x2 - rAd_x1);
+      const pY = rAd_y1 + adSlope * (yfe2 - rAd_x1);
+      const ad1Slope = (rAd1_y2 - rAd1_y1) / (rAd1_x2 - rAd1_x1);
+      const p1Y = rAd1_y1 + ad1Slope * (yfe2 - rAd1_x1);
 
       return (
         <>
-          <CurvePath d={kasPath} color={COLORS.supply} gradientId="grad-supply" width={3} glow="glow-red" />
-          <Label x={yf + 6} y={my + pad + 8} text="AS" color={COLORS.supply} />
-          {/* Section labels */}
-          <text x={mx + pw * 0.22} y={flatY + 18} textAnchor="middle" fontSize={7.5} fontWeight={600} fill={COLORS.eq}
+          {/* ── Panel titles ── */}
+          <rect x={p1x + panelW * 0.15} y={my} width={panelW * 0.7} height={15} rx={3} fill={COLORS.lras} opacity={0.15} />
+          <text x={p1x + panelW * 0.5} y={my + 11} textAnchor="middle" fontSize={9} fontWeight={700} fill={COLORS.lras}
             style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Spare Capacity</text>
-          <text x={mx + pw * 0.56} y={my + ph * 0.42} textAnchor="middle" fontSize={7.5} fontWeight={600} fill={COLORS.shifted}
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Near Full Emp.</text>
-          <text x={yf + 12} y={my + ph * 0.22} textAnchor="start" fontSize={7.5} fontWeight={600} fill={COLORS.lras}
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Full Emp.</text>
-          {/* AD curves */}
-          <GLine {...ad1L} color={COLORS.demand} width={1.5} dashed />
-          <Label x={ad1L.x2 + 2} y={ad1L.y2 - 4} text="AD₁" color={COLORS.demand} size={9} />
-          <GLine {...ad2L} color={COLORS.demand} gradientId="grad-demand" width={2} />
-          <Label x={ad2L.x2 + 2} y={ad2L.y2 - 4} text="AD₂" color={COLORS.demand} size={9} />
-          <GLine {...ad3L} color={COLORS.demand} width={1.5} dashed />
-          <Label x={ad3L.x2 + 2} y={ad3L.y2 - 4} text="AD₃" color={COLORS.demand} size={9} />
-          {/* Yf label */}
-          <line x1={yf} y1={my + ph - pad} x2={yf} y2={my + ph - pad + 6} stroke="currentColor" strokeWidth={1.5} opacity={0.5} />
-          <text x={yf} y={my + ph + 14} textAnchor="middle" fontSize={9} fontWeight={700} fill="currentColor" opacity={0.6}
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Yf</text>
+          <rect x={p2x + panelW * 0.15} y={my} width={panelW * 0.7} height={15} rx={3} fill={COLORS.supply} opacity={0.15} />
+          <text x={p2x + panelW * 0.5} y={my + 11} textAnchor="middle" fontSize={9} fontWeight={700} fill={COLORS.supply}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Full Capacity</text>
+
+          {/* ── LEFT PANEL axes ── */}
+          {panelAxes(p1x, panelW, "Price\nLevel", "Real Output")}
+
+          {/* Keynesian AS curve */}
+          <CurvePath d={kasPath1} color={COLORS.supply} width={2.5} />
+          <Label x={yfe1 + 4} y={axTop + 6} text="AS" color={COLORS.supply} size={9} />
+
+          {/* AD₁ and AD₂ */}
+          <GLine x1={ad1_x1} y1={ad1_y1} x2={ad1_x2} y2={ad1_y2} color={COLORS.demand} width={1.8} />
+          <Label x={ad1_x1 - 1} y={ad1_y1 - 3} text="AD" color={COLORS.demand} size={8} />
+          <GLine x1={ad2_x1} y1={ad2_y1} x2={ad2_x2} y2={ad2_y2} color={COLORS.demand} width={2} />
+          <Label x={ad2_x1 + 4} y={ad2_y1 - 3} text="AD₁" color={COLORS.demand} size={8} />
+
+          {/* Shift arrow */}
+          <line x1={L + (R1 - L) * 0.18} y1={arrowMidY} x2={L + (R1 - L) * 0.28} y2={arrowMidY}
+            stroke={COLORS.demand} strokeWidth={1.5} markerEnd="url(#arrowHead)" opacity={0.7} />
+
+          {/* P horizontal dashed */}
+          <line x1={L + pad} y1={flatY} x2={q2x} y2={flatY} stroke={COLORS.eq} strokeWidth={1} strokeDasharray="3,3" opacity={0.5} />
+          <text x={L + pad - 2} y={flatY + 3} textAnchor="end" fontSize={8} fontWeight={600} fill="currentColor" opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>P</text>
+
+          {/* Q projections */}
+          <line x1={q1x} y1={flatY} x2={q1x} y2={axBot} stroke={COLORS.eq} strokeWidth={1} strokeDasharray="3,3" opacity={0.5} />
+          <text x={q1x} y={axBot + 12} textAnchor="middle" fontSize={7.5} fontWeight={600} fill="currentColor" opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Y</text>
+          <line x1={q2x} y1={flatY} x2={q2x} y2={axBot} stroke={COLORS.eq} strokeWidth={1} strokeDasharray="3,3" opacity={0.5} />
+          <text x={q2x} y={axBot + 12} textAnchor="middle" fontSize={7.5} fontWeight={600} fill="currentColor" opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Y₁</text>
+
+          {/* Yfe tick */}
+          <line x1={yfe1} y1={axBot} x2={yfe1} y2={axBot + 5} stroke="currentColor" strokeWidth={1} opacity={0.4} />
+          <text x={yfe1} y={axBot + 14} textAnchor="middle" fontSize={7.5} fontWeight={600} fill="currentColor" opacity={0.6}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Yꜰₑ</text>
+
+          {/* Growth badge */}
+          <rect x={p1x + panelW * 0.25} y={axBot + 20} width={panelW * 0.5} height={14} rx={4} fill={COLORS.eq} opacity={0.18} />
+          <text x={p1x + panelW * 0.5} y={axBot + 30} textAnchor="middle" fontSize={8} fontWeight={700} fill={COLORS.eq}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Growth</text>
+
+          {/* ── RIGHT PANEL axes ── */}
+          {panelAxes(p2x, panelW, "Price\nLevel", "Real Output")}
+
+          {/* LRAS vertical */}
+          <line x1={yfe2} y1={axTop + 4} x2={yfe2} y2={axBot - 4} stroke={COLORS.lras} strokeWidth={2.5} />
+          <Label x={yfe2 + 3} y={axTop + 4} text="LRAS" color={COLORS.lras} size={9} />
+
+          {/* AD and AD₁ */}
+          <GLine x1={rAd_x1} y1={rAd_y1} x2={rAd_x2} y2={rAd_y2} color={COLORS.demand} width={1.8} />
+          <Label x={rAd_x2 + 1} y={rAd_y2 - 3} text="AD" color={COLORS.demand} size={8} />
+          <GLine x1={rAd1_x1} y1={rAd1_y1} x2={rAd1_x2} y2={rAd1_y2} color={COLORS.demand} width={2} />
+          <Label x={rAd1_x2 + 1} y={rAd1_y2 - 3} text="AD₁" color={COLORS.demand} size={8} />
+
+          {/* Shift arrow */}
+          <line x1={L2 + (R2 - L2) * 0.55} y1={axTop + axH * 0.55} x2={L2 + (R2 - L2) * 0.65} y2={axTop + axH * 0.55}
+            stroke={COLORS.demand} strokeWidth={1.5} markerEnd="url(#arrowHead)" opacity={0.7} />
+
+          {/* P and P₁ projections */}
+          <line x1={L2 + pad} y1={pY} x2={yfe2} y2={pY} stroke={COLORS.eq} strokeWidth={1} strokeDasharray="3,3" opacity={0.5} />
+          <text x={L2 + pad - 2} y={pY + 3} textAnchor="end" fontSize={8} fontWeight={600} fill="currentColor" opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>P</text>
+          <line x1={L2 + pad} y1={p1Y} x2={yfe2} y2={p1Y} stroke={COLORS.eq} strokeWidth={1} strokeDasharray="3,3" opacity={0.5} />
+          <text x={L2 + pad - 2} y={p1Y + 3} textAnchor="end" fontSize={8} fontWeight={600} fill="currentColor" opacity={0.7}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>P₁</text>
+
+          {/* Yfe tick */}
+          <line x1={yfe2} y1={axBot} x2={yfe2} y2={axBot + 5} stroke="currentColor" strokeWidth={1} opacity={0.4} />
+          <text x={yfe2} y={axBot + 14} textAnchor="middle" fontSize={7.5} fontWeight={600} fill="currentColor" opacity={0.6}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Yꜰₑ</text>
+
+          {/* Inflation badge */}
+          <rect x={p2x + panelW * 0.2} y={axBot + 20} width={panelW * 0.6} height={14} rx={4} fill={COLORS.supply} opacity={0.18} />
+          <text x={p2x + panelW * 0.5} y={axBot + 30} textAnchor="middle" fontSize={8} fontWeight={700} fill={COLORS.supply}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Inflation</text>
         </>
       );
     },
