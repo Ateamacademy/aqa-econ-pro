@@ -456,6 +456,7 @@ function parseFeedbackSections(feedback: string) {
 }
 
 function DiagramFeedbackView({
+  topic,
   generatedQ,
   diagramImage,
   inputMode,
@@ -464,6 +465,7 @@ function DiagramFeedbackView({
   feedback,
   onReset,
 }: {
+  topic: string;
   generatedQ: string;
   diagramImage: string | null;
   inputMode: InputMode;
@@ -475,10 +477,14 @@ function DiagramFeedbackView({
   const [showExplain, setShowExplain] = useState(false);
   const [showImprove, setShowImprove] = useState(false);
   const sections = useMemo(() => parseFeedbackSections(feedback), [feedback]);
+  const expectedDiagramType = inferDiagramType(topic, generatedQ, diagramDesc, explanation);
 
   const renderContent = (text: string) => (
     <div className="prose prose-sm max-w-none dark:prose-invert">
-      {extractDiagramBlocks(text).map((seg, i) =>
+      {extractDiagramBlocks(text, {
+        contextText: `${topic}\n${generatedQ}`,
+        fallbackType: expectedDiagramType,
+      }).map((seg, i) =>
         seg.type === "diagram" ? (
           <EconDiagramCanvas key={i} diagram={seg.diagram} />
         ) : (
