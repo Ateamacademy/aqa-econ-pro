@@ -1653,6 +1653,176 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       );
     },
   },
+
+  /* ── Perfect Competition — Short-Run & Long-Run (4 panels) ── */
+  perfect_competition: {
+    title: "Perfect Competition — Short-Run & Long-Run",
+    xAxis: "Output", yAxis: "Price / Costs",
+    legend: [
+      { label: "S / MC", color: COLORS.supply },
+      { label: "D / AR=MR", color: COLORS.demand },
+      { label: "ATC", color: "#8b5cf6" },
+      { label: "Supernormal Profit", color: "#ef4444" },
+    ],
+    examTips: [
+      "SR: P > ATC → supernormal profit attracts new firms into the market",
+      "Entry of new firms shifts market supply right (S₁ → S₂) → price falls",
+      "LR: P = min ATC → only normal profit — no incentive to enter or exit",
+      "LR equilibrium: allocatively efficient (P = MC) AND productively efficient (min ATC)",
+      "Always draw BOTH the market AND the firm diagram side by side",
+    ],
+    render: (p) => {
+      const { mx, my, pw, ph } = p;
+      // 4-panel layout: 2×2 grid
+      const gap = 16;
+      const halfW = (pw - gap) / 2;
+      const halfH = (ph - gap) / 2;
+
+      // Panel origins
+      const p1x = mx, p1y = my;                      // Top-left: Market SR
+      const p2x = mx + halfW + gap, p2y = my;        // Top-right: Firm SR
+      const p3x = mx, p3y = my + halfH + gap;        // Bottom-left: Market LR
+      const p4x = mx + halfW + gap, p4y = my + halfH + gap; // Bottom-right: Firm LR
+
+      const pad = 6;
+      const atcColor = "#8b5cf6";
+      const mcColor = COLORS.supply; // cyan in ref but we use our system red/blue
+      const arColor = "#06b6d4"; // cyan for AR=MR=D
+
+      // ═══ Panel titles ═══
+      const panelTitle = (x: number, y: number, text: string) => (
+        <text x={x + halfW / 2} y={y - 3} textAnchor="middle" fontSize={8} fontWeight={700}
+          fill="currentColor" opacity={0.55} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{text}</text>
+      );
+
+      // ═══ Mini axes ═══
+      const miniAxes = (ox: number, oy: number, xLbl: string, yLbl: string) => (
+        <>
+          <line x1={ox} y1={oy} x2={ox} y2={oy + halfH} stroke="currentColor" strokeWidth={1.5} opacity={0.6} />
+          <line x1={ox} y1={oy + halfH} x2={ox + halfW} y2={oy + halfH} stroke="currentColor" strokeWidth={1.5} opacity={0.6} />
+          <text x={ox - 8} y={oy + halfH / 2} textAnchor="middle" fontSize={7} fontWeight={600}
+            transform={`rotate(-90 ${ox - 8} ${oy + halfH / 2})`} fill="currentColor" opacity={0.5}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{yLbl}</text>
+          <text x={ox + halfW / 2} y={oy + halfH + 14} textAnchor="middle" fontSize={7} fontWeight={600}
+            fill="currentColor" opacity={0.5} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{xLbl}</text>
+        </>
+      );
+
+      // ═══ PANEL 1: Market S&D (Short-Run) ═══
+      const s1 = { x1: p1x + pad, y1: p1y + halfH - pad, x2: p1x + halfW - pad, y2: p1y + pad };
+      const d1 = { x1: p1x + pad, y1: p1y + pad, x2: p1x + halfW - pad, y2: p1y + halfH - pad };
+      const eq1 = lineIntersect(s1.x1, s1.y1, s1.x2, s1.y2, d1.x1, d1.y1, d1.x2, d1.y2);
+      const srPriceY = eq1.y; // The short-run market price
+
+      // ═══ PANEL 2: Firm SR (MC, ATC, AR=MR=D horizontal at P₁) ═══
+      const firmPad = pad;
+      // ATC U-shape
+      const atcMinX = p2x + halfW * 0.48;
+      const atcMinY = srPriceY + 14; // ATC min BELOW price → supernormal profit
+      const atcStartY = p2y + pad + 5;
+      const atcEndY = p2y + pad + 12;
+      const atcPath = `M ${p2x + firmPad + 8} ${atcStartY} Q ${atcMinX - 8} ${atcMinY + 4} ${atcMinX} ${atcMinY} Q ${atcMinX + 20} ${atcMinY - 6} ${p2x + halfW - firmPad} ${atcEndY}`;
+      // MC steep curve crossing ATC at min
+      const mcPath = `M ${p2x + firmPad + 15} ${p2y + halfH - pad - 8} Q ${atcMinX - 20} ${atcMinY + 12} ${atcMinX} ${atcMinY} Q ${atcMinX + 15} ${atcMinY - 18} ${p2x + halfW - firmPad - 5} ${p2y + pad}`;
+      // AR=MR=D horizontal at market price
+      const arY = srPriceY;
+      // Profit-maximising Q: where MC = AR (find MC crossing the horizontal AR line)
+      const profitQ = atcMinX + 8; // approximately where MC crosses AR
+      // Supernormal profit rectangle: from ATC to AR, width = Q
+      const profitLeft = p2x + halfW * 0.28;
+      const profitRight = profitQ;
+
+      // ═══ PANEL 3: Market LR (S₁ → S₂ shift right, price falls) ═══
+      const s2offset = 30;
+      const s2 = { x1: s1.x1 + s2offset, y1: s1.y1, x2: s1.x2 + s2offset, y2: s1.y2 };
+      // Shift to panel 3 coordinates
+      const s3_1 = { x1: p3x + pad, y1: p3y + halfH - pad, x2: p3x + halfW - pad, y2: p3y + pad };
+      const d3 = { x1: p3x + pad, y1: p3y + pad, x2: p3x + halfW - pad, y2: p3y + halfH - pad };
+      const s3_2 = { x1: s3_1.x1 + s2offset, y1: s3_1.y1, x2: s3_1.x2 + s2offset, y2: s3_1.y2 };
+      const eq3_1 = lineIntersect(s3_1.x1, s3_1.y1, s3_1.x2, s3_1.y2, d3.x1, d3.y1, d3.x2, d3.y2);
+      const eq3_2 = lineIntersect(s3_2.x1, s3_2.y1, s3_2.x2, s3_2.y2, d3.x1, d3.y1, d3.x2, d3.y2);
+      const lrPriceY = eq3_2.y; // The long-run price (lower)
+
+      // ═══ PANEL 4: Firm LR (MC, ATC, AR=MR at min ATC → normal profit) ═══
+      const lrAtcMinX = p4x + halfW * 0.48;
+      const lrAtcMinY = lrPriceY; // In LR, price = min ATC
+      const lrAtcPath = `M ${p4x + firmPad + 8} ${p4y + pad + 5} Q ${lrAtcMinX - 8} ${lrAtcMinY + 4} ${lrAtcMinX} ${lrAtcMinY} Q ${lrAtcMinX + 20} ${lrAtcMinY - 6} ${p4x + halfW - firmPad} ${p4y + pad + 12}`;
+      const lrMcPath = `M ${p4x + firmPad + 15} ${p4y + halfH - pad - 8} Q ${lrAtcMinX - 20} ${lrAtcMinY + 12} ${lrAtcMinX} ${lrAtcMinY} Q ${lrAtcMinX + 15} ${lrAtcMinY - 18} ${p4x + halfW - firmPad - 5} ${p4y + pad}`;
+
+      return (
+        <>
+          {/* ── Panel 1: Market SR ── */}
+          {panelTitle(p1x, p1y, "Market (Short Run)")}
+          {miniAxes(p1x, p1y, "Output", "Price")}
+          <GLine {...s1} color={COLORS.supply} width={2} />
+          <Label x={s1.x2 + 2} y={s1.y2 + 2} text="S₁" color={COLORS.supply} size={9} />
+          <GLine {...d1} color={COLORS.demand} width={2} />
+          <Label x={d1.x2 + 2} y={d1.y2 - 4} text="D" color={COLORS.demand} size={9} />
+          <circle cx={eq1.x} cy={eq1.y} r={3} fill={COLORS.eq} />
+          {/* P₁ label */}
+          <line x1={p1x} y1={eq1.y} x2={eq1.x} y2={eq1.y} stroke={COLORS.eq} strokeWidth={0.6} strokeDasharray="2,2" opacity={0.5} />
+          <text x={p1x - 3} y={eq1.y + 3} textAnchor="end" fontSize={7} fontWeight={700} fill={COLORS.eq}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>P₁</text>
+
+          {/* ── Panel 2: Firm SR ── */}
+          {panelTitle(p2x, p2y, "Firm (Short Run)")}
+          {miniAxes(p2x, p2y, "Output", "Costs")}
+          {/* Supernormal profit area (red rectangle) */}
+          <rect x={profitLeft} y={arY} width={profitRight - profitLeft} height={atcMinY - arY}
+            fill="#ef4444" fillOpacity={0.25} stroke="#ef4444" strokeWidth={1} strokeOpacity={0.4} />
+          <text x={(profitLeft + profitRight) / 2} y={(arY + atcMinY) / 2 + 3} textAnchor="middle"
+            fontSize={6} fontWeight={700} fill="#ef4444" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
+            Supernormal Profit
+          </text>
+          <CurvePath d={mcPath} color={arColor} width={2.5} />
+          <Label x={p2x + halfW - firmPad} y={p2y + pad + 8} text="MC" color={arColor} size={9} />
+          <CurvePath d={atcPath} color={atcColor} width={2} />
+          <Label x={p2x + halfW - firmPad} y={atcEndY + 8} text="ATC" color={atcColor} size={9} />
+          {/* AR = MR = D horizontal */}
+          <GLine x1={p2x + firmPad} y1={arY} x2={p2x + halfW - firmPad} y2={arY} color={arColor} width={1.5} />
+          <Label x={p2x + halfW - firmPad + 2} y={arY - 2} text="AR=MR=D" color={arColor} size={7} />
+
+          {/* ── Panel 3: Market LR ── */}
+          {panelTitle(p3x, p3y, "Market (Long Run)")}
+          {miniAxes(p3x, p3y, "Output", "Price")}
+          <GLine {...s3_1} color={COLORS.supply} width={1.5} dashed />
+          <Label x={s3_1.x2 + 2} y={s3_1.y2 + 2} text="S₁" color={COLORS.supply} size={8} />
+          <GLine {...s3_2} color={COLORS.supply} width={2} />
+          <Label x={s3_2.x2 + 2} y={s3_2.y2 + 2} text="S₂" color={COLORS.supply} size={9} />
+          <GLine {...d3} color={COLORS.demand} width={2} />
+          <Label x={d3.x2 + 2} y={d3.y2 - 4} text="D" color={COLORS.demand} size={9} />
+          {/* Shift arrow */}
+          <ShiftArrow x1={eq3_1.x} y1={eq3_1.y} x2={eq3_2.x} y2={eq3_2.y} color={COLORS.shifted} />
+          <circle cx={eq3_1.x} cy={eq3_1.y} r={2.5} fill={COLORS.lras} />
+          <circle cx={eq3_2.x} cy={eq3_2.y} r={3} fill={COLORS.eq} />
+          {/* Price labels */}
+          <line x1={p3x} y1={eq3_1.y} x2={eq3_1.x} y2={eq3_1.y} stroke={COLORS.lras} strokeWidth={0.6} strokeDasharray="2,2" opacity={0.4} />
+          <text x={p3x - 3} y={eq3_1.y + 3} textAnchor="end" fontSize={7} fontWeight={600} fill={COLORS.lras}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>P₂</text>
+          <line x1={p3x} y1={eq3_2.y} x2={eq3_2.x} y2={eq3_2.y} stroke={COLORS.eq} strokeWidth={0.6} strokeDasharray="2,2" opacity={0.5} />
+          <text x={p3x - 3} y={eq3_2.y + 3} textAnchor="end" fontSize={7} fontWeight={700} fill={COLORS.eq}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>P₁</text>
+
+          {/* ── Panel 4: Firm LR ── */}
+          {panelTitle(p4x, p4y, "Firm (Long Run)")}
+          {miniAxes(p4x, p4y, "Output", "Costs")}
+          <CurvePath d={lrMcPath} color={arColor} width={2.5} />
+          <Label x={p4x + halfW - firmPad} y={p4y + pad + 8} text="MC" color={arColor} size={9} />
+          <CurvePath d={lrAtcPath} color={atcColor} width={2} />
+          <Label x={p4x + halfW - firmPad} y={p4y + pad + 20} text="ATC" color={atcColor} size={9} />
+          {/* AR = MR = D at min ATC (normal profit) */}
+          <GLine x1={p4x + firmPad} y1={lrPriceY} x2={p4x + halfW - firmPad} y2={lrPriceY} color={arColor} width={1.5} />
+          <Label x={p4x + halfW - firmPad + 2} y={lrPriceY - 2} text="AR=MR=D" color={arColor} size={7} />
+          {/* Normal profit dot */}
+          <circle cx={lrAtcMinX} cy={lrAtcMinY} r={3.5} fill={COLORS.eq} />
+          <text x={lrAtcMinX + 6} y={lrAtcMinY - 6} fontSize={7} fontWeight={700} fill={COLORS.eq}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Normal Profit</text>
+          {/* Dashed line down from LR eq */}
+          <line x1={lrAtcMinX} y1={lrAtcMinY} x2={lrAtcMinX} y2={p4y + halfH} stroke={COLORS.eq} strokeWidth={0.6} strokeDasharray="2,2" opacity={0.4} />
+        </>
+      );
+    },
+  },
 };
 
 // Alias mappings — comprehensive to catch AI-generated diagram titles
