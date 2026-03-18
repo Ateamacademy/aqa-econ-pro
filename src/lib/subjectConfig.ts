@@ -45,7 +45,7 @@ export const paperOptionsBySubject: Record<Subject, { value: string; label: stri
   "wjec": [
     { value: "1", label: "Unit 1", title: "Introduction to Economics", desc: "AS-level micro: market mechanisms, market failure, government intervention (1h30m)" },
     { value: "2", label: "Unit 2", title: "Economics in Action", desc: "AS-level macro: economic indicators, AD/AS, fiscal & monetary policy (1h30m)" },
-    { value: "full", label: "Full Paper", title: "Full Predicted Paper", desc: "Complete A2 paper — covers Units 3 & 4: micro & macro applied economics" },
+    { value: "full", label: "Units 3 & 4", title: "A2 Applied Economics", desc: "A2 paper — micro & macro applied economics, synoptic data response + essay (2h)" },
   ],
   "eduqas": [
     { value: "1", label: "Component 1", title: "Markets & Market Failure", desc: "Microeconomics — demand, supply, elasticity, market failure, government intervention (2h)" },
