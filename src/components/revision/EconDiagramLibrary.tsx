@@ -3166,7 +3166,7 @@ const ALIASES: Record<string, string> = {
   "subsidy_positive_externality": "subsidy_externality",
   "subsidy_merit_good": "subsidy_externality",
   // Business objectives
-  "profit_maximisation": "business_objectives",
+  "business_objectives_diagram": "business_objectives",
   "revenue_maximisation": "business_objectives",
   "sales_maximisation": "business_objectives",
   // Price discrimination
