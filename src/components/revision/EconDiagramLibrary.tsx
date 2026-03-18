@@ -2117,6 +2117,10 @@ const ALIASES: Record<string, string> = {
   "supply_side_improvement": "sras_increase",
   "aggregate_supply_increase": "sras_increase",
   "aggregate_supply_decrease": "sras_decrease",
+  "lras_shift": "sras_decrease",
+  "deflationary_gap": "sras_decrease",
+  "recessionary_gap": "sras_decrease",
+  "monetarist": "sras_decrease",
   // Tax/subsidy
   "indirect_tax": "tax_incidence",
   "taxation": "tax_incidence",
