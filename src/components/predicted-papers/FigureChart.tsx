@@ -51,7 +51,7 @@ function normalizeFigureDescription(description: string): string {
 /**
  * Parse markdown tables: | Year | Col1 | Col2 | ...
  */
-function parseMarkdownTable(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string } } | null {
+function parseMarkdownTable(description: string): { dataSets: DataSet[]; axisLabels: { x: string; y: string }; preferTable?: boolean } | null {
   const lines = description.split("\n").map(l => l.trim()).filter(Boolean);
   const tableRows = lines.filter(l => l.startsWith("|") && l.endsWith("|"));
   if (tableRows.length < 3) return null;
@@ -70,7 +70,8 @@ function parseMarkdownTable(description: string): { dataSets: DataSet[]; axisLab
     const points: { year: string; value: number }[] = [];
     for (const row of dataRows) {
       const label = row[0]?.replace(/\*+/g, '').trim();
-      const rawVal = row[col]?.replace(/[,%£$€*()a-zA-Z\s]/g, '').trim();
+      // Strip everything except digits, dots, minus signs
+      const rawVal = row[col]?.replace(/[^0-9.\-]/g, '').trim();
       const val = parseFloat(rawVal);
       if (label && !isNaN(val)) {
         points.push({ year: label, value: val });
@@ -82,9 +83,25 @@ function parseMarkdownTable(description: string): { dataSets: DataSet[]; axisLab
   }
 
   if (dataSets.length === 0) return null;
+
+  // When table has multiple numeric columns with very different scales, prefer table view
+  let preferTable = false;
+  if (dataSets.length >= 2) {
+    const ranges = dataSets.map(ds => {
+      const vals = ds.points.map(p => Math.abs(p.value));
+      return Math.max(...vals) - Math.min(...vals);
+    });
+    const maxRange = Math.max(...ranges);
+    const minRange = Math.min(...ranges);
+    if (maxRange > 0 && minRange > 0 && maxRange / minRange > 10) {
+      preferTable = true;
+    }
+  }
+
   return {
     dataSets,
     axisLabels: { x: headers[0].replace(/\*+/g, '').trim(), y: dataSets.length === 1 ? dataSets[0].label : "" },
+    preferTable,
   };
 }
 
@@ -504,7 +521,13 @@ function parseChartData(description: string): { dataSets: DataSet[]; axisLabels:
 
 export function FigureChart({ title, description }: FigureChartProps) {
   const parsed = useMemo(() => parseChartData(description), [description]);
-  const [showTable, setShowTable] = useState(false);
+  // Default to table view when parser recommends it (e.g. multi-column tables with different scales)
+  const preferTableDefault = useMemo(() => {
+    const normalizedDescription = normalizeFigureDescription(description);
+    const tableResult = parseMarkdownTable(normalizedDescription);
+    return tableResult?.preferTable ?? false;
+  }, [description]);
+  const [showTable, setShowTable] = useState(preferTableDefault);
   
   const markdownTable = useMemo(() => {
     const lines = description.split("\n");
@@ -644,9 +667,17 @@ export function FigureChart({ title, description }: FigureChartProps) {
               ))}
             </LineChart>
           ) : (
-            <BarChart data={chartData} margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
+            <BarChart data={chartData} margin={{ top: 5, right: 20, left: 10, bottom: 40 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-              <XAxis dataKey="year" tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }} />
+              <XAxis
+                dataKey="year"
+                tick={{ fontSize: 9, fill: "hsl(var(--muted-foreground))" }}
+                interval={0}
+                angle={-25}
+                textAnchor="end"
+                height={60}
+                tickFormatter={(val: string) => val.length > 18 ? val.slice(0, 16) + "…" : val}
+              />
               <YAxis tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }} />
               <Tooltip
                 contentStyle={{

@@ -395,42 +395,42 @@ Synoptic question requiring both micro and macro knowledge.
 Maximum question mark allocation is 20 marks (NOT 25 marks — that is A-Level).`,
   };
 
-  return `You are an expert AQA GCSE Economics (8136) chief examiner. This is a GCSE qualification for students aged 15-16.
+  return `You are an expert AQA GCSE Economics (8136) chief examiner. This is a GCSE qualification for students aged 15-16. You are NOT an A-Level examiner.
 
-CRITICAL: This is a GCSE paper, NOT an A-Level paper. You MUST:
-- Keep difficulty appropriate for GCSE students (ages 15-16)
-- Maximum marks per question: 20 (NOT 25 — that is A-Level)
-- Total paper: 80 marks (NOT 100)
+CRITICAL — THIS IS A GCSE PAPER (8136), NOT A-LEVEL (7136):
+- Qualification: AQA GCSE Economics (8136) for 15-16 year olds
+- Maximum marks per question: 20 marks (A-Level uses 25 — DO NOT use 25)
+- Total paper marks: 80 (NOT 100)
 - Duration: 1 hour 45 minutes (NOT 2 hours)
-- Use GCSE-appropriate language — simpler than A-Level
-- Do NOT include A-Level only topics like: market structures (oligopoly, monopolistic competition), labour market wage theory, comparative advantage theory, balance of payments components, Phillips curve, Keynesian vs Classical models
-- Stick to the AQA GCSE (8136) specification ONLY
+- Use GCSE-appropriate language — simpler, more accessible than A-Level
+- Section B extended responses are worth exactly 20 marks each
 
-Generate a COMPLETE predicted exam paper for ${paperLabel}.
+BANNED A-LEVEL TOPICS — DO NOT include any of these:
+oligopoly, monopolistic competition, contestable markets, game theory, kinked demand curve, price discrimination (1st/2nd/3rd degree), natural monopoly theory, X-inefficiency, productive vs allocative efficiency diagrams, labour market wage determination theory, marginal revenue product, monopsony, bilateral monopoly, Phillips curve, NAIRU, Keynesian vs Classical/Monetarist debate, multiplier calculations, accelerator theory, Laffer curve, comparative advantage (Ricardian model), terms of trade, J-curve, Marshall-Lerner condition, balance of payments components, exchange rate systems theory, Lorenz curve, Gini coefficient calculations, cost-benefit analysis (NPV)
 
-${templates[paperNum]}
-
-GCSE SPECIFICATION SCOPE (8136) — only use these topics:
-Paper 1: Economic foundations, resource allocation, how markets work (supply & demand basics), price determination, competition & monopoly (basic), production, market failure (externalities, public goods, merit/demerit goods), government intervention (taxes, subsidies, regulation, minimum/maximum prices)
+ALLOWED GCSE TOPICS ONLY (AQA 8136 specification):
+Paper 1: Economic foundations (scarcity, opportunity cost, PPC), resource allocation, supply & demand basics, price determination, competition vs monopoly (basic only), production, market failure (externalities, public/merit/demerit goods), government intervention (taxes, subsidies, regulation, price controls)
 Paper 2: Role of money, income & expenditure, aggregate demand & supply (basic), economic growth, unemployment, inflation, fiscal policy (basic), monetary policy (basic), international trade (basic), globalisation (basic), the role of government
 
-CRITICAL RULES:
+Generate a COMPLETE predicted exam paper for \${paperLabel}.
+
+\${templates[paperNum]}
+
+CRITICAL FORMATTING RULES:
 1. Follow the template structure EXACTLY
-2. Questions must be GCSE level — accessible but rigorous, NOT A-Level difficulty
-3. Include at least 2 data extracts with tables/figures
+2. Questions MUST be GCSE level — accessible and age-appropriate
+3. Include at least 2 data extracts with markdown tables and Source lines
 4. 6-mark questions require analysis + evaluation
 5. Use AQA GCSE command words: "Define", "State", "Explain", "Analyse", "Evaluate"
 6. Include at least 2 MCQs (1 mark each with A/B/C/D options)
-7. Extended response questions are worth 20 marks maximum (NOT 25)
+7. Extended response questions are worth 20 marks maximum
 
 OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
-- EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
+- EVERY question MUST start on its own line with: Question XX [Y marks]
   Examples: Question 01 [1 marks], Question 02 [2 marks], Question 03 [4 marks]
-- Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks. Do NOT put marks at the end of the line after question text.
-- The question text MUST appear AFTER the [Y marks] tag, either on the same line or the next line
+- Do NOT use bold/asterisks around question headers
+- The question text MUST appear AFTER the [Y marks] tag
 - MCQ options on separate lines: - A, - B, - C, - D
-- WRONG: **Question 1** text [2], Question 1 text (2 marks)
-- CORRECT: Question 01 [1 marks] Define the term "opportunity cost".
 - Do NOT include mark schemes or answers
 
 FIGURE/CHART FORMAT:
