@@ -647,76 +647,72 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     },
   },
   negative_production_externality: {
-    title: "Negative Production Externality",
-    xAxis: "Output", yAxis: "Costs and Benefits",
-    legend: [{ label: "MPC", color: COLORS.mpc }, { label: "MSC", color: COLORS.msc }, { label: "MSB = MPB", color: COLORS.demand }, { label: "Welfare Loss (ABC)", color: "#ef4444" }],
+    title: "Negative Externality of Production",
+    xAxis: "Quantity", yAxis: "Benefit /\ncost / price",
+    legend: [{ label: "MSC", color: COLORS.msc }, { label: "MPC", color: COLORS.demand }, { label: "MPB = MSB", color: COLORS.demand }, { label: "Welfare Loss ABE", color: "#ef4444" }],
     examTips: [
       "MSC is above MPC — producers ignore external costs (e.g. pollution)",
-      "Overproduction in free market: Qe > Qo",
-      "Welfare loss = triangle ABC between MSC and MSB from Qo to Qe",
-      "Marginal External Cost (MEC) = vertical gap between MSC and MPC",
-      "Policy: tax = MEC per unit to internalise externality",
+      "Free market produces where MPB = MPC: point E at (q, p)",
+      "Socially optimal outcome where MSC = MSB: point B at (q₁, p₁)",
+      "Overproduction of q − q₁. Welfare loss ABE",
+      "Example: firm pollution of air and water",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
       const pad = 10;
-      // MPC: upward sloping (private cost, lower)
-      const mpcL = { x1: mx + pad, y1: my + ph - pad, x2: mx + pw - pad, y2: my + ph * 0.15 };
-      // MSC: upward sloping, above MPC (social cost higher)
-      const mscL = { x1: mx + pw * 0.15, y1: my + ph - pad, x2: mx + pw - pad, y2: my + pad };
-      // D = MSB = MPB: downward sloping
-      const dL = { x1: mx + pad, y1: my + pad + 5, x2: mx + pw - pad, y2: my + ph - pad };
+      const axL = mx + pad;
+      const axBot = my + ph - pad;
+      const axTop = my + pad;
 
-      const freeEq = lineIntersect(mpcL.x1, mpcL.y1, mpcL.x2, mpcL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
-      const optEq = lineIntersect(mscL.x1, mscL.y1, mscL.x2, mscL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
+      // MPC: upward sloping (red) — private cost, lower
+      const mpcL = { x1: axL + pw * 0.05, y1: axBot, x2: mx + pw * 0.7, y2: axTop + ph * 0.1 };
+      // MSC: upward sloping, above MPC (blue) — social cost higher, steeper
+      const mscL = { x1: axL + pw * 0.2, y1: axBot, x2: mx + pw * 0.55, y2: axTop };
+      // MPB = MSB: downward sloping (red)
+      const dL = { x1: axL, y1: axTop + 5, x2: mx + pw - pad, y2: axBot };
 
-      // Point A: MSC at Qe (top of triangle)
+      // E = free market: MPC ∩ MPB
+      const ptE = lineIntersect(mpcL.x1, mpcL.y1, mpcL.x2, mpcL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
+      // B = social optimum: MSC ∩ MSB
+      const ptB = lineIntersect(mscL.x1, mscL.y1, mscL.x2, mscL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
+      // A = MSC at free market Q (above E)
       const mscSlope = (mscL.y2 - mscL.y1) / (mscL.x2 - mscL.x1);
-      const mscAtFreeX = mscL.y1 + mscSlope * (freeEq.x - mscL.x1);
-
-      // MEC annotation: gap between MSC and MPC at midpoint
-      const mpcSlope = (mpcL.y2 - mpcL.y1) / (mpcL.x2 - mpcL.x1);
-      const midX = (optEq.x + freeEq.x) / 2;
-      const mpcAtMid = mpcL.y1 + mpcSlope * (midX - mpcL.x1);
-      const mscAtMid = mscL.y1 + mscSlope * (midX - mscL.x1);
+      const ptA = { x: ptE.x, y: mscL.y1 + mscSlope * (ptE.x - mscL.x1) };
 
       return (
         <>
-          {/* Welfare loss triangle ABC — behind curves */}
+          {/* Welfare loss triangle ABE */}
           <WelfareRegion
             points={[
-              { x: freeEq.x, y: mscAtFreeX },  // A
-              { x: freeEq.x, y: freeEq.y },     // B
-              { x: optEq.x, y: optEq.y },        // C
+              { x: ptA.x, y: ptA.y },
+              { x: ptB.x, y: ptB.y },
+              { x: ptE.x, y: ptE.y },
             ]}
             fill="#ef4444"
-            fillOpacity={0.45}
-            strokeWidth={3}
-            label="ABC"
-            labelSize={8}
+            fillOpacity={0.18}
+            strokeWidth={0}
           />
-          {/* Curves rendered on top */}
-          <GLine {...mpcL} color={COLORS.mpc} width={2.5} />
-          <Label x={mpcL.x2 - 8} y={mpcL.y2 - 6} text="MPC" color={COLORS.mpc} />
-          <GLine {...mscL} color={COLORS.msc} gradientId="grad-supply" glow="glow-red" />
-          <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.msc} />
-          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="MSB = MPB" color={COLORS.demand} />
-          {/* MEC annotation arrow — vertical gap between MSC and MPC */}
-          <line x1={midX + 12} y1={mscAtMid} x2={midX + 12} y2={mpcAtMid} stroke={COLORS.shifted} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
-          <Label x={midX + 18} y={(mscAtMid + mpcAtMid) / 2 + 3} text="MEC" color={COLORS.shifted} size={8} />
-          {/* Point labels A, B, C */}
-          <Label x={freeEq.x + 6} y={mscAtFreeX - 4} text="A" color="#ef4444" size={9} />
-          <Label x={freeEq.x + 6} y={freeEq.y + 10} text="B" color="#ef4444" size={9} />
-          <Label x={optEq.x - 10} y={optEq.y + 3} text="C" color="#ef4444" size={9} anchor="end" />
-          {/* Dashed projections */}
-          <DashedToAxes x={optEq.x} y={optEq.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="Po" qLabel="Qo" />
-          <PremiumDot x={optEq.x} y={optEq.y} color={COLORS.shifted} label="" gradientId="dot-amber" />
-          <DashedToAxes x={freeEq.x} y={freeEq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="Pe" qLabel="Qe" />
-          <PremiumDot x={freeEq.x} y={freeEq.y} color={COLORS.eq} label="" gradientId="dot-green" />
-          {/* Over allocation bracket */}
-          <line x1={optEq.x} y1={my + ph - pad + 12} x2={freeEq.x} y2={my + ph - pad + 12} stroke="#ef4444" strokeWidth={1.5} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
-          <Label x={(optEq.x + freeEq.x) / 2} y={my + ph - pad + 22} text="Over allocation" color="#ef4444" size={7} />
+          {/* Curves */}
+          <GLine {...mscL} color={COLORS.msc} gradientId="grad-supply" glow="glow-red" width={2.5} />
+          <Label x={mscL.x2 - 4} y={mscL.y2 - 8} text="MSC" color={COLORS.msc} size={9} />
+          <GLine {...mpcL} color={COLORS.demand} width={2.5} />
+          <Label x={mpcL.x2 + 4} y={mpcL.y2 - 4} text="MPC" color={COLORS.demand} />
+          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" width={2.5} />
+          <Label x={dL.x2 + 4} y={dL.y2 - 8} text="MPB = MSB" color={COLORS.demand} />
+          {/* Dashed projections for E (q, p) */}
+          <line x1={ptE.x} y1={ptE.y} x2={mx} y2={ptE.y} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
+          <line x1={ptE.x} y1={ptE.y} x2={ptE.x} y2={axBot} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
+          <Label x={mx - 2} y={ptE.y + 3} text="p" color="hsl(var(--foreground))" size={10} anchor="end" />
+          <Label x={ptE.x} y={axBot + 14} text="q" color="hsl(var(--foreground))" size={10} />
+          {/* Dashed projections for B (q₁, p₁) */}
+          <line x1={ptB.x} y1={ptB.y} x2={mx} y2={ptB.y} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
+          <line x1={ptB.x} y1={ptB.y} x2={ptB.x} y2={axBot} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
+          <Label x={mx - 2} y={ptB.y + 3} text="p₁" color="hsl(var(--foreground))" size={10} anchor="end" />
+          <Label x={ptB.x} y={axBot + 14} text="q₁" color="hsl(var(--foreground))" size={10} />
+          {/* Point labels */}
+          <PremiumDot x={ptE.x} y={ptE.y} color={COLORS.eq} label="E" gradientId="dot-green" />
+          <PremiumDot x={ptB.x} y={ptB.y} color={COLORS.eq} label="B" gradientId="dot-amber" />
+          <Label x={ptA.x + 6} y={ptA.y - 4} text="A" color="#ef4444" size={9} />
         </>
       );
     },
