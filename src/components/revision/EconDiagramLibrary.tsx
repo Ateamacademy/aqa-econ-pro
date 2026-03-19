@@ -1186,147 +1186,98 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     },
   },
 
-  /* ── Supply Shift — Left vs Right (2 panels) ── */
+  /* ── Supply & Demand — Shift in Supply (Right) ── */
   supply_shift_dual: {
-    title: "Shift in Supply — Left vs Right",
-    xAxis: "", yAxis: "",
+    title: "Supply & Demand — Shift in Supply",
+    xAxis: "Quantity", yAxis: "Price",
     legend: [
       { label: "Demand", color: COLORS.demand },
-      { label: "Supply", color: COLORS.supply },
-      { label: "Shifted S", color: COLORS.supply },
+      { label: "Supply (S)", color: COLORS.supply },
+      { label: "Shifted (S₁)", color: COLORS.demand },
     ],
     examTips: [
-      "Left shift: S₁ → S₂ leftward — price rises, quantity falls",
-      "Right shift: S₁ → S₂ rightward — price falls, quantity rises",
+      "Right shift: S → S₁ — price falls from p to p₁, quantity rises from q to q₁",
+      "Causes: reduced labour/capital costs, technological improvements, higher productivity",
       "Always show both equilibria with dashed projections to axes",
       "State the cause of the shift clearly in your written answer",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
-      const halfW = pw / 2;
-      const gap = 18;
-      const pad = 8;
-
-      const p1x = mx;
-      const p2x = mx + halfW + gap / 2;
-      const axTop = my + 18;
+      const axL = mx + 10;
       const axBot = my + ph - 18;
-      const panelW = halfW - gap / 2;
+      const axTop = my + 18;
 
-      const panelAxes = (ox: number, w: number) => (
-        <>
-          <line x1={ox + pad} y1={axTop} x2={ox + pad} y2={axBot} stroke="currentColor" strokeWidth={1.8} />
-          <line x1={ox + pad} y1={axBot} x2={ox + w - pad} y2={axBot} stroke="currentColor" strokeWidth={1.8} />
-          <text x={ox + pad - 3} y={axTop - 4} textAnchor="middle" fontSize={8} fontWeight={700} fill="currentColor" opacity={0.7}
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p</text>
-          <text x={ox + w - pad} y={axBot + 14} textAnchor="end" fontSize={8} fontWeight={700} fill="currentColor" opacity={0.7}
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q</text>
-          <text x={ox + pad - 2} y={axBot + 5} textAnchor="middle" fontSize={7} fontWeight={600} fill="currentColor" opacity={0.5}
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>O</text>
-        </>
-      );
+      // Supply shift amount (rightward)
+      const shiftAmt = pw * 0.22;
 
-      // ═══════════════════════════
-      // LEFT PANEL — Supply Shifts Left
-      // ═══════════════════════════
-      const L1 = p1x + pad;
-      const R1 = p1x + panelW - pad;
+      // Demand: downward sloping (red)
+      const d = { x1: axL + pw * 0.08, y1: axTop + 5, x2: axL + pw * 0.75, y2: axBot - 5 };
 
-      // Demand: downward sloping
-      const d1 = { x1: L1 + (R1 - L1) * 0.1, y1: axTop + 4, x2: R1 - 5, y2: axBot - 4 };
-      // S₁ (original): upward sloping
-      const s1 = { x1: L1 + (R1 - L1) * 0.15, y1: axBot - 4, x2: R1 - 5, y2: axTop + 4 };
-      // S₂ (shifted left)
-      const shiftL = -(R1 - L1) * 0.22;
-      const s1s = { x1: s1.x1 + shiftL, y1: s1.y1, x2: s1.x2 + shiftL, y2: s1.y2 };
+      // S (original): upward sloping (red) — positioned left
+      const s = { x1: axL + pw * 0.05, y1: axBot - 5, x2: axL + pw * 0.55, y2: axTop + 5 };
 
-      const eq1a = lineIntersect(d1.x1, d1.y1, d1.x2, d1.y2, s1.x1, s1.y1, s1.x2, s1.y2);
-      const eq1b = lineIntersect(d1.x1, d1.y1, d1.x2, d1.y2, s1s.x1, s1s.y1, s1s.x2, s1s.y2);
+      // S₁ (shifted right): upward sloping (blue)
+      const s1 = { x1: s.x1 + shiftAmt, y1: s.y1, x2: s.x2 + shiftAmt, y2: s.y2 };
 
-      // ═══════════════════════════
-      // RIGHT PANEL — Supply Shifts Right
-      // ═══════════════════════════
-      const L2 = p2x + pad;
-      const R2 = p2x + panelW - pad;
+      // Equilibria
+      const eq1 = lineIntersect(d.x1, d.y1, d.x2, d.y2, s.x1, s.y1, s.x2, s.y2);
+      const eq2 = lineIntersect(d.x1, d.y1, d.x2, d.y2, s1.x1, s1.y1, s1.x2, s1.y2);
 
-      // Demand: downward sloping
-      const d2 = { x1: L2 + (R2 - L2) * 0.1, y1: axTop + 4, x2: R2 - 5, y2: axBot - 4 };
-      // S₁ (original): positioned so S₂ fits when shifted right
-      const s2 = { x1: L2 + 5, y1: axBot - 4, x2: L2 + (R2 - L2) * 0.7, y2: axTop + 4 };
-      // S₂ (shifted right)
-      const shiftR = (R2 - L2) * 0.22;
-      const s2s = { x1: s2.x1 + shiftR, y1: s2.y1, x2: s2.x2 + shiftR, y2: s2.y2 };
-
-      const eq2a = lineIntersect(d2.x1, d2.y1, d2.x2, d2.y2, s2.x1, s2.y1, s2.x2, s2.y2);
-      const eq2b = lineIntersect(d2.x1, d2.y1, d2.x2, d2.y2, s2s.x1, s2s.y1, s2s.x2, s2s.y2);
+      // Arrow midpoint between S and S₁
+      const arrowY = (axTop + axBot) / 2 + 10;
+      const arrowX1 = (s.x1 + s.x2) / 2 + 12;
+      const arrowX2 = (s1.x1 + s1.x2) / 2 - 12;
 
       return (
         <>
-          {/* Panel titles */}
-          <rect x={p1x + panelW * 0.05} y={my} width={panelW * 0.9} height={15} rx={3} fill={COLORS.supply} opacity={0.12} />
-          <text x={p1x + panelW * 0.5} y={my + 11} textAnchor="middle" fontSize={8.5} fontWeight={700} fill={COLORS.supply}
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>3. Supply Shifts to the Left</text>
-          <rect x={p2x + panelW * 0.05} y={my} width={panelW * 0.9} height={15} rx={3} fill={COLORS.eq} opacity={0.12} />
-          <text x={p2x + panelW * 0.5} y={my + 11} textAnchor="middle" fontSize={8.5} fontWeight={700} fill={COLORS.eq}
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>4. Supply Shifts to the Right</text>
+          {/* Dashed projections for original equilibrium (p, q) */}
+          <line x1={eq1.x} y1={eq1.y} x2={axL} y2={eq1.y}
+            stroke="currentColor" strokeWidth={1.2} strokeDasharray="4,3" opacity={0.5} />
+          <line x1={eq1.x} y1={eq1.y} x2={eq1.x} y2={axBot}
+            stroke="currentColor" strokeWidth={1.2} strokeDasharray="4,3" opacity={0.5} />
 
-          {/* ── LEFT PANEL ── */}
-          {panelAxes(p1x, panelW)}
+          {/* Dashed projections for new equilibrium (p₁, q₁) */}
+          <line x1={eq2.x} y1={eq2.y} x2={axL} y2={eq2.y}
+            stroke="currentColor" strokeWidth={1.2} strokeDasharray="4,3" opacity={0.5} />
+          <line x1={eq2.x} y1={eq2.y} x2={eq2.x} y2={axBot}
+            stroke="currentColor" strokeWidth={1.2} strokeDasharray="4,3" opacity={0.5} />
 
-          {/* Demand */}
-          <GLine {...d1} color={COLORS.demand} width={2} />
-          <Label x={d1.x2 + 2} y={d1.y2 - 4} text="D" color={COLORS.demand} size={8} />
+          {/* Demand curve (red) */}
+          <GLine {...d} color={COLORS.supply} width={2.5} />
+          <Label x={d.x2 + 4} y={d.y2 - 4} text="D" color={COLORS.supply} size={10} />
 
-          {/* S₁ (original) */}
-          <GLine {...s1} color={COLORS.supply} width={2} />
-          <Label x={s1.x2 + 2} y={s1.y2 + 4} text="S₁" color={COLORS.supply} size={8} />
+          {/* S — original supply (red) */}
+          <GLine {...s} color={COLORS.supply} width={2.5} />
+          <Label x={s.x2 + 4} y={s.y2 + 4} text="S" color={COLORS.supply} size={10} />
 
-          {/* S₂ (shifted left) */}
-          <GLine {...s1s} color={COLORS.supply} width={2} dashed />
-          <Label x={s1s.x2 + 2} y={s1s.y2 + 4} text="S₂" color={COLORS.supply} size={8} />
+          {/* S₁ — shifted right (blue) */}
+          <GLine {...s1} color={COLORS.demand} width={2.5} />
+          <Label x={s1.x2 + 4} y={s1.y2 + 4} text="S₁" color={COLORS.demand} size={10} />
 
-          {/* Shift arrows (↖) */}
-          <line x1={eq1a.x - 6} y1={eq1a.y + 4} x2={eq1b.x + 8} y2={eq1b.y - 6}
-            stroke="currentColor" strokeWidth={1.2} markerEnd="url(#arrowHead)" opacity={0.6} />
-          <line x1={(s1.x2 + s1s.x2) / 2 + 4} y1={(s1.y2 + s1s.y2) / 2 + 8} x2={s1s.x2 + 6} y2={s1s.y2 + 4}
-            stroke="currentColor" strokeWidth={1.2} markerEnd="url(#arrowHead)" opacity={0.6} />
+          {/* Shift arrow → */}
+          <defs>
+            <marker id="arrowShift" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+              <path d="M0,0 L8,3 L0,6 Z" fill="currentColor" opacity="0.7" />
+            </marker>
+          </defs>
+          <line x1={arrowX1} y1={arrowY} x2={arrowX2} y2={arrowY}
+            stroke="currentColor" strokeWidth={2} markerEnd="url(#arrowShift)" opacity={0.7} />
 
-          {/* Equilibria */}
-          <circle cx={eq1a.x} cy={eq1a.y} r={3.5} fill={COLORS.supply} />
-          <circle cx={eq1b.x} cy={eq1b.y} r={3.5} fill={COLORS.supply} />
+          {/* Equilibrium dots */}
+          <circle cx={eq1.x} cy={eq1.y} r={4} fill={COLORS.supply} />
+          <circle cx={eq2.x} cy={eq2.y} r={4} fill={COLORS.demand} />
 
-          {/* Annotation below left panel */}
-          <text x={p1x + panelW * 0.5} y={axBot + 28} textAnchor="middle" fontSize={8} fontWeight={700} fill="currentColor"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p*↑ q*↓</text>
+          {/* Axis labels: p, p₁ */}
+          <text x={axL - 6} y={eq1.y + 4} textAnchor="end" fontSize={10} fontWeight={700} fill="currentColor"
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p</text>
+          <text x={axL - 6} y={eq2.y + 4} textAnchor="end" fontSize={10} fontWeight={700} fill="currentColor"
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p₁</text>
 
-          {/* ── RIGHT PANEL ── */}
-          {panelAxes(p2x, panelW)}
-
-          {/* Demand */}
-          <GLine {...d2} color={COLORS.demand} width={2} />
-          <Label x={d2.x2 + 2} y={d2.y2 - 4} text="D" color={COLORS.demand} size={8} />
-
-          {/* S₁ (original) */}
-          <GLine {...s2} color={COLORS.supply} width={2} />
-          <Label x={s2.x2 + 2} y={s2.y2 + 4} text="S₁" color={COLORS.supply} size={8} />
-
-          {/* S₂ (shifted right) */}
-          <GLine {...s2s} color={COLORS.supply} width={2} dashed />
-          <Label x={s2s.x2 + 2} y={s2s.y2 + 4} text="S₂" color={COLORS.supply} size={8} />
-
-          {/* Shift arrows (↘) */}
-          <line x1={eq2a.x + 6} y1={eq2a.y - 4} x2={eq2b.x - 8} y2={eq2b.y + 6}
-            stroke="currentColor" strokeWidth={1.2} markerEnd="url(#arrowHead)" opacity={0.6} />
-          <line x1={(s2.x2 + s2s.x2) / 2 - 4} y1={(s2.y2 + s2s.y2) / 2 - 8} x2={s2s.x2 - 6} y2={s2s.y2 - 4}
-            stroke="currentColor" strokeWidth={1.2} markerEnd="url(#arrowHead)" opacity={0.6} />
-
-          {/* Equilibria */}
-          <circle cx={eq2a.x} cy={eq2a.y} r={3.5} fill={COLORS.supply} />
-          <circle cx={eq2b.x} cy={eq2b.y} r={3.5} fill={COLORS.supply} />
-
-          {/* Annotation below right panel */}
-          <text x={p2x + panelW * 0.5} y={axBot + 28} textAnchor="middle" fontSize={8} fontWeight={700} fill="currentColor"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p*↓ q*↑</text>
+          {/* Axis labels: q, q₁ */}
+          <text x={eq1.x} y={axBot + 16} textAnchor="middle" fontSize={10} fontWeight={700} fill="currentColor"
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q</text>
+          <text x={eq2.x} y={axBot + 16} textAnchor="middle" fontSize={10} fontWeight={700} fill="currentColor"
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q₁</text>
         </>
       );
     },
