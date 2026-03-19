@@ -1703,73 +1703,105 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   /* ── Maximum Price (Price Ceiling) ── */
   price_ceiling: {
     title: "Maximum Price (Price Ceiling)",
-    xAxis: "Quantity (Q)", yAxis: "Price (P)",
+    xAxis: "Quantity", yAxis: "Price",
     legend: [
-      { label: "Demand", color: COLORS.demand },
-      { label: "Supply", color: COLORS.supply },
-      { label: "Price (max)", color: "#dc2626" },
+      { label: "Supply (S)", color: COLORS.supply },
+      { label: "Demand (D)", color: COLORS.demand },
+      { label: "Max price", color: "#111" },
+      { label: "Welfare loss", color: "#16a34a" },
     ],
     examTips: [
-      "Price ceiling must be set BELOW equilibrium to be effective",
-      "Creates excess demand (shortage): Qd > Qs at Pmax",
-      "Label M (Qs at Pmax) and N (Qd at Pmax) clearly",
-      "Show Pe and Qe at free-market equilibrium for comparison",
-      "Discuss consequences: shortages, black markets, rationing",
+      "Max price at p₁ below the free market equilibrium",
+      "Leads to a shortage of q₁–q₂",
+      "Fall in firm revenue and producer surplus",
+      "Welfare loss (green area): units q–q₂ would be produced by the free market but are not under the max price",
+      "Example: rent controls in Stockholm, Sweden",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
       const pad = 10;
+      const axTop = my + pad;
+      const axBot = my + ph - pad;
+      const axL = mx + pad;
+      const axR = mx + pw - pad;
 
-      // Standard S and D lines
-      const dL = { x1: mx + pad, y1: my + pad + 10, x2: mx + pw - pad, y2: my + ph - pad };
-      const sL = { x1: mx + pad, y1: my + ph - pad, x2: mx + pw - pad, y2: my + pad + 10 };
+      // S upward (blue), D downward (red)
+      const sL = { x1: axL, y1: axBot, x2: axL + pw * 0.55, y2: axTop };
+      const dL = { x1: axL + pw * 0.15, y1: axTop, x2: axR, y2: axBot + 10 };
 
-      // Equilibrium
-      const eq = lineIntersect(dL.x1, dL.y1, dL.x2, dL.y2, sL.x1, sL.y1, sL.x2, sL.y2);
+      // Free-market equilibrium
+      const eq = lineIntersect(sL.x1, sL.y1, sL.x2, sL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
 
-      // Price max line — below equilibrium
-      const pmaxY = eq.y + (my + ph - pad - eq.y) * 0.5;
+      // Max price line at p₁ — below equilibrium
+      const pmaxY = eq.y + (axBot - eq.y) * 0.55;
 
-      // Find where Pmax intersects S (gives M = Qs) and D (gives N = Qd)
+      // Where Pmax intersects S (q₁) and D (q₂)
       const sSlope = (sL.y2 - sL.y1) / (sL.x2 - sL.x1);
       const dSlope = (dL.y2 - dL.y1) / (dL.x2 - dL.x1);
-      const mX = sL.x1 + (pmaxY - sL.y1) / sSlope;
-      const nX = dL.x1 + (pmaxY - dL.y1) / dSlope;
+      const q1X = sL.x1 + (pmaxY - sL.y1) / sSlope; // Qs at Pmax
+      const q2X = dL.x1 + (pmaxY - dL.y1) / dSlope; // Qd at Pmax
+
+      // Point on S at eq.x (the top of the welfare triangle)
+      const sAtEqX = sL.y1 + sSlope * (eq.x - sL.x1);
+
+      // Welfare loss triangle: vertices at (q1X, pmaxY), (eq.x, eq.y), (q2X, pmaxY)
+      // But per diagram: triangle between S and D from q1X to q2X through equilibrium
+      // Actually from the image: green triangle with vertices at:
+      // - where S meets Pmax (q1X, pmaxY)
+      // - equilibrium (eq.x, eq.y)  
+      // - where D meets Pmax (q2X, pmaxY)
+      const welfarePoints = [
+        { x: q1X, y: pmaxY },
+        { x: eq.x, y: eq.y },
+        { x: q2X, y: pmaxY },
+      ];
 
       return (
         <>
+          {/* Welfare loss triangle (behind curves) */}
+          <WelfareRegion
+            points={welfarePoints}
+            fill="#16a34a"
+            fillOpacity={0.55}
+            stroke="#16a34a"
+            strokeWidth={0}
+          />
+
           {/* S and D curves */}
-          <GLine {...sL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={sL.x2 + 4} y={sL.y2 - 6} text="S" color={COLORS.supply} />
-          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
+          <line x1={sL.x1} y1={sL.y1} x2={sL.x2} y2={sL.y2} stroke={COLORS.supply} strokeWidth={3} strokeLinecap="round" />
+          <Label x={sL.x2 + 4} y={sL.y2 + 12} text="S" color={COLORS.supply} />
+          <line x1={dL.x1} y1={dL.y1} x2={dL.x2} y2={dL.y2} stroke={COLORS.demand} strokeWidth={3} strokeLinecap="round" />
           <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color={COLORS.demand} />
 
-          {/* Equilibrium projections */}
-          <DashedToAxes x={eq.x} y={eq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="Pe" qLabel="Qe" />
-          <circle cx={eq.x} cy={eq.y} r={3.5} fill={COLORS.eq} />
-
-          {/* Price (max) horizontal line — bold red */}
+          {/* Max price horizontal line — bold black */}
           <line
-            x1={mx + pad - 5}
+            x1={mx}
             y1={pmaxY}
-            x2={mx + pw - pad + 15}
+            x2={axR + 15}
             y2={pmaxY}
-            stroke="#dc2626"
+            stroke="hsl(var(--foreground))"
             strokeWidth={2.5}
           />
-          <Label x={mx + pw - pad + 18} y={pmaxY + 4} text="Price (max)" color="#dc2626" size={9} />
+          <text x={axR + 18} y={pmaxY + 4} fill="hsl(var(--foreground))" fontSize={10} fontWeight={600} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Max price</text>
 
-          {/* M projection (Qs at Pmax) */}
-          <line x1={mX} y1={pmaxY} x2={mX} y2={my + ph} stroke="hsl(var(--foreground))" strokeWidth={1.2} strokeDasharray="5,3" opacity={0.5} />
-          <text x={mX} y={my + ph + 14} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>M</text>
+          {/* p label on Y-axis at equilibrium */}
+          <line x1={eq.x} y1={eq.y} x2={mx} y2={eq.y} stroke="hsl(var(--foreground))" strokeWidth={1.2} strokeDasharray="5,3" opacity={0.6} />
+          <text x={mx - 6} y={eq.y + 4} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="end" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p</text>
 
-          {/* N projection (Qd at Pmax) */}
-          <line x1={nX} y1={pmaxY} x2={nX} y2={my + ph} stroke="hsl(var(--foreground))" strokeWidth={1.2} strokeDasharray="5,3" opacity={0.5} />
-          <text x={nX} y={my + ph + 14} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>N</text>
+          {/* p₁ label on Y-axis at max price */}
+          <text x={mx - 6} y={pmaxY + 4} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="end" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p₁</text>
 
-          {/* Excess demand bracket between M and N */}
-          <line x1={mX} y1={pmaxY + 8} x2={nX} y2={pmaxY + 8} stroke={COLORS.area} strokeWidth={1.5} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
-          <Label x={(mX + nX) / 2} y={pmaxY + 22} text="Excess demand" color={COLORS.area} size={8} anchor="middle" bold={false} />
+          {/* q₁ projection (Qs at Pmax) */}
+          <line x1={q1X} y1={pmaxY} x2={q1X} y2={axBot} stroke="hsl(var(--foreground))" strokeWidth={1.5} strokeDasharray="5,3" opacity={0.6} />
+          <text x={q1X} y={axBot + 14} fill="hsl(var(--foreground))" fontSize={10} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q₁</text>
+
+          {/* q projection (equilibrium quantity) */}
+          <line x1={eq.x} y1={eq.y} x2={eq.x} y2={axBot} stroke="hsl(var(--foreground))" strokeWidth={1.5} strokeDasharray="5,3" opacity={0.6} />
+          <text x={eq.x} y={axBot + 14} fill="hsl(var(--foreground))" fontSize={10} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q</text>
+
+          {/* q₂ projection (Qd at Pmax) */}
+          <line x1={q2X} y1={pmaxY} x2={q2X} y2={axBot} stroke="hsl(var(--foreground))" strokeWidth={1.5} strokeDasharray="5,3" opacity={0.6} />
+          <text x={q2X} y={axBot + 14} fill="hsl(var(--foreground))" fontSize={10} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q₂</text>
         </>
       );
     },
