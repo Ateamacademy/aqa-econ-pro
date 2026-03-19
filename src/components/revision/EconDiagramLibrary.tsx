@@ -575,63 +575,73 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     },
   },
   negative_externality: {
-    title: "Negative Consumption Externality",
-    xAxis: "Output", yAxis: "Costs & Benefits",
-    legend: [{ label: "MPC = MSC", color: COLORS.supply }, { label: "MPB", color: COLORS.demand }, { label: "MSB", color: "#ef4444" }, { label: "Welfare Loss", color: "#ef4444" }],
+    title: "Negative Externality of Consumption",
+    xAxis: "Quantity", yAxis: "Benefit /\ncost / price",
+    legend: [{ label: "MSC = MPC", color: COLORS.msc }, { label: "MPB", color: COLORS.demand }, { label: "MSB", color: "#ef4444" }, { label: "Welfare Loss ABE", color: "#ef4444" }],
     examTips: [
-      "MPC = MSC — no external costs in production",
+      "MSC = MPC — no external costs in production",
       "MSB is below MPB — consumers ignore harm to third parties (e.g. demerit goods)",
-      "Over-consumption in free market: Q(pri) > Q(soc)",
-      "Welfare loss = triangle between MPB and MSB from Q(soc) to Q(pri)",
-      "Policy: indirect tax to shift MPB down to MSB, or regulation/ban",
+      "Free market outcome where MPB = MPC: point B at (q, p)",
+      "Socially optimal outcome where MSB = MSC: point E at (q₁, p₁)",
+      "Overconsumption of q − q₁. Welfare loss ABE",
+      "Example: air pollution caused by car consumption of petrol",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
       const pad = 10;
-      // MPC = MSC: upward sloping supply (red)
-      const sL = { x1: mx + pad, y1: my + ph - pad, x2: mx + pw - pad, y2: my + pad };
-      // MPB: downward sloping demand (blue) — what consumers pay
-      const mpbL = { x1: mx + pw * 0.12, y1: my + pad, x2: mx + pw - pad, y2: my + ph - pad };
-      // MSB: downward sloping, below MPB (red/lower) — true social benefit
-      const msbL = { x1: mx + pad, y1: my + ph * 0.28, x2: mx + pw * 0.78, y2: my + ph - pad };
+      const axL = mx + pad;
+      const axBot = my + ph - pad;
+      const axTop = my + pad;
 
-      const freeEq = lineIntersect(sL.x1, sL.y1, sL.x2, sL.y2, mpbL.x1, mpbL.y1, mpbL.x2, mpbL.y2);
-      const optEq = lineIntersect(sL.x1, sL.y1, sL.x2, sL.y2, msbL.x1, msbL.y1, msbL.x2, msbL.y2);
+      // MSC = MPC: upward sloping (blue)
+      const mscL = { x1: axL + pw * 0.08, y1: axBot, x2: mx + pw - pad, y2: axTop };
+      // MPB: downward sloping (red) — what consumers perceive
+      const mpbL = { x1: axL, y1: axTop + 5, x2: mx + pw * 0.75, y2: axBot };
+      // MSB: downward sloping, below MPB (red) — true social benefit
+      const msbL = { x1: axL + pw * 0.05, y1: my + ph * 0.45, x2: mx + pw * 0.58, y2: axBot };
 
-      // MSB at free market Q
+      // B = free market: MPB ∩ MSC
+      const ptB = lineIntersect(mscL.x1, mscL.y1, mscL.x2, mscL.y2, mpbL.x1, mpbL.y1, mpbL.x2, mpbL.y2);
+      // E = social optimum: MSB ∩ MSC
+      const ptE = lineIntersect(mscL.x1, mscL.y1, mscL.x2, mscL.y2, msbL.x1, msbL.y1, msbL.x2, msbL.y2);
+      // A = MSB at free market Q (below B)
       const msbSlope = (msbL.y2 - msbL.y1) / (msbL.x2 - msbL.x1);
-      const msbAtFreeX = msbL.y1 + msbSlope * (freeEq.x - msbL.x1);
+      const ptA = { x: ptB.x, y: msbL.y1 + msbSlope * (ptB.x - msbL.x1) };
 
       return (
         <>
-          {/* Welfare loss triangle — behind curves */}
+          {/* Welfare loss triangle ABE */}
           <WelfareRegion
             points={[
-              { x: optEq.x, y: optEq.y },
-              { x: freeEq.x, y: freeEq.y },
-              { x: freeEq.x, y: msbAtFreeX },
+              { x: ptA.x, y: ptA.y },
+              { x: ptB.x, y: ptB.y },
+              { x: ptE.x, y: ptE.y },
             ]}
             fill="#ef4444"
-            fillOpacity={0.45}
-            strokeWidth={3}
-            label="DWL"
-            labelSize={9}
+            fillOpacity={0.18}
+            strokeWidth={0}
           />
-          {/* Curves rendered on top */}
-          <GLine {...sL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={sL.x2 - 8} y={sL.y2 - 6} text="MPC = MSC" color={COLORS.supply} />
-          <GLine {...mpbL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={mpbL.x2 + 4} y={mpbL.y2 - 6} text="MPB" color={COLORS.demand} />
-          <GLine {...msbL} color="#ef4444" width={2.5} dashed />
+          {/* Curves */}
+          <GLine {...mscL} color={COLORS.msc} gradientId="grad-supply" glow="glow-red" width={2.5} />
+          <Label x={mscL.x2 - 4} y={mscL.y2 - 8} text="MSC = MPC" color={COLORS.msc} size={8} />
+          <GLine {...mpbL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" width={2.5} />
+          <Label x={mpbL.x2 + 4} y={mpbL.y2 - 8} text="MPB" color={COLORS.demand} />
+          <GLine {...msbL} color="#ef4444" width={2.5} />
           <Label x={msbL.x2 + 4} y={msbL.y2 - 6} text="MSB" color="#ef4444" />
-          {/* Dashed projections */}
-          <DashedToAxes x={freeEq.x} y={freeEq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P(pri)" qLabel="Q(pri)" />
-          <PremiumDot x={freeEq.x} y={freeEq.y} color={COLORS.eq} label="" gradientId="dot-green" />
-          <DashedToAxes x={optEq.x} y={optEq.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P(soc)" qLabel="Q(soc)" />
-          <PremiumDot x={optEq.x} y={optEq.y} color={COLORS.shifted} label="" gradientId="dot-amber" />
-          {/* Over-consumption bracket */}
-          <line x1={optEq.x} y1={my + ph - pad + 12} x2={freeEq.x} y2={my + ph - pad + 12} stroke="#ef4444" strokeWidth={1.5} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
-          <Label x={(optEq.x + freeEq.x) / 2} y={my + ph - pad + 22} text="Over consumption" color="#ef4444" size={7} />
+          {/* Dashed projections for B (q, p) */}
+          <line x1={ptB.x} y1={ptB.y} x2={mx} y2={ptB.y} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
+          <line x1={ptB.x} y1={ptB.y} x2={ptB.x} y2={axBot} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
+          <Label x={mx - 2} y={ptB.y + 3} text="p" color="hsl(var(--foreground))" size={10} anchor="end" />
+          <Label x={ptB.x} y={axBot + 14} text="q" color="hsl(var(--foreground))" size={10} />
+          {/* Dashed projections for E (q₁, p₁) */}
+          <line x1={ptE.x} y1={ptE.y} x2={mx} y2={ptE.y} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
+          <line x1={ptE.x} y1={ptE.y} x2={ptE.x} y2={axBot} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
+          <Label x={mx - 2} y={ptE.y + 3} text="p₁" color="hsl(var(--foreground))" size={10} anchor="end" />
+          <Label x={ptE.x} y={axBot + 14} text="q₁" color="hsl(var(--foreground))" size={10} />
+          {/* Point labels */}
+          <PremiumDot x={ptB.x} y={ptB.y} color={COLORS.eq} label="B" gradientId="dot-green" />
+          <PremiumDot x={ptE.x} y={ptE.y} color={COLORS.eq} label="E" gradientId="dot-amber" />
+          <Label x={ptA.x + 6} y={ptA.y + 4} text="A" color="#ef4444" size={9} />
         </>
       );
     },
