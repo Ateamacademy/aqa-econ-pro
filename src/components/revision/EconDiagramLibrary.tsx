@@ -710,71 +710,72 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     },
   },
   positive_production_externality: {
-    title: "Positive Production Externality",
-    xAxis: "Quantity (Q)", yAxis: "Price / Cost / Benefit",
-    legend: [{ label: "MPC = S", color: COLORS.supply }, { label: "MSC", color: COLORS.eq }, { label: "D = MPB = MSB", color: COLORS.demand }, { label: "Welfare Gain", color: COLORS.area }],
+    title: "Positive Externality of Production",
+    xAxis: "Quantity", yAxis: "Benefit /\ncost / price",
+    legend: [{ label: "MPC", color: COLORS.demand }, { label: "MSC", color: COLORS.msc }, { label: "MPB = MSB", color: COLORS.demand }, { label: "Welfare Loss ABE", color: "#ef4444" }],
     examTips: [
-      "MSC is below MPC — production generates external benefits (e.g. training)",
-      "Under-production in free market: Qₘ < Q*",
-      "Welfare gain triangle between Q* and Qₘ",
-      "Policy: subsidy = external benefit per unit to shift MPC down to MSC",
-      "Show subsidy arrow between MPC and MSC at optimal quantity",
+      "MSC is below MPC — production generates external benefits (e.g. job training)",
+      "Free market outcome where MPB = MPC: point B at (q, p)",
+      "Socially optimal outcome where MSB = MSC: point E at (q₁, p₁)",
+      "Underproduction of q₁ − q. Welfare loss ABE",
+      "Example: job training benefits other firms who can then hire the already trained workers",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
       const pad = 10;
-      // MPC: upward sloping (private cost, higher)
-      const mpcL = { x1: mx + pw * 0.15, y1: my + ph - pad, x2: mx + pw - pad, y2: my + pad };
-      // MSC: upward sloping, BELOW MPC (social cost is lower due to ext. benefit)
-      const mscL = { x1: mx + pad, y1: my + ph - pad, x2: mx + pw - pad, y2: my + ph * 0.15 };
-      // D = MPB = MSB: downward sloping
-      const dL = { x1: mx + pad, y1: my + pad + 5, x2: mx + pw - pad, y2: my + ph - pad };
+      const axL = mx + pad;
+      const axBot = my + ph - pad;
+      const axTop = my + pad;
 
-      const freeEq = lineIntersect(mpcL.x1, mpcL.y1, mpcL.x2, mpcL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
-      const optEq = lineIntersect(mscL.x1, mscL.y1, mscL.x2, mscL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
+      // MPC: upward sloping (red), steeper/higher — private cost
+      const mpcL = { x1: axL + pw * 0.2, y1: axBot, x2: mx + pw * 0.55, y2: axTop };
+      // MSC: upward sloping (blue), lower — social cost is lower due to external benefits
+      const mscL = { x1: axL + pw * 0.05, y1: axBot, x2: mx + pw * 0.7, y2: axTop + ph * 0.1 };
+      // MPB = MSB: downward sloping (red)
+      const dL = { x1: axL, y1: axTop + 5, x2: mx + pw - pad, y2: axBot };
 
-      // DWL bottom vertex: MSC at freeEq.x
+      // B = free market: MPC ∩ MPB
+      const ptB = lineIntersect(mpcL.x1, mpcL.y1, mpcL.x2, mpcL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
+      // E = social optimum: MSC ∩ MSB
+      const ptE = lineIntersect(mscL.x1, mscL.y1, mscL.x2, mscL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
+      // A = MSC at free market Q (below B)
       const mscSlope = (mscL.y2 - mscL.y1) / (mscL.x2 - mscL.x1);
-      const mscAtFreeX = mscL.y1 + mscSlope * (freeEq.x - mscL.x1);
-
-      // Subsidy annotation: MPC at Q* (gap = external benefit)
-      const mpcSlope = (mpcL.y2 - mpcL.y1) / (mpcL.x2 - mpcL.x1);
-      const mpcAtOptX = mpcL.y1 + mpcSlope * (optEq.x - mpcL.x1);
+      const ptA = { x: ptB.x, y: mscL.y1 + mscSlope * (ptB.x - mscL.x1) };
 
       return (
         <>
-          {/* Welfare gain triangle — RENDERED FIRST so it sits behind curves */}
+          {/* Welfare loss triangle ABE */}
           <WelfareRegion
             points={[
-              { x: freeEq.x, y: freeEq.y },
-              { x: freeEq.x, y: mscAtFreeX },
-              { x: optEq.x, y: optEq.y },
+              { x: ptA.x, y: ptA.y },
+              { x: ptB.x, y: ptB.y },
+              { x: ptE.x, y: ptE.y },
             ]}
-            fill="#16a34a"
-            fillOpacity={0.45}
-            strokeWidth={3}
-            label="WG"
-            labelSize={9}
+            fill="#ef4444"
+            fillOpacity={0.18}
+            strokeWidth={0}
           />
-          {/* Curves rendered on top of welfare region */}
-          <GLine {...mpcL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={mpcL.x2 - 8} y={mpcL.y2 - 6} text="S = MPC" color={COLORS.supply} />
-          <GLine {...mscL} color={COLORS.eq} width={2.5} dashed />
-          <Label x={mscL.x2 + 4} y={mscL.y2 - 6} text="MSC" color={COLORS.eq} />
-          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D = MPB = MSB" color={COLORS.demand} />
-          {/* Subsidy annotation arrow at Q* */}
-          <line x1={optEq.x + 12} y1={mpcAtOptX} x2={optEq.x + 12} y2={optEq.y} stroke={COLORS.shifted} strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
-          <Label x={optEq.x + 18} y={(mpcAtOptX + optEq.y) / 2 + 3} text="Subsidy" color={COLORS.shifted} size={8} />
-          {/* External benefit bracket at Qₘ */}
-          <line x1={freeEq.x - 8} y1={freeEq.y} x2={freeEq.x - 8} y2={mscAtFreeX} stroke={COLORS.area} strokeWidth={1.5} opacity={0.6} />
-          <Label x={freeEq.x - 14} y={(freeEq.y + mscAtFreeX) / 2 + 3} text="Ext. Benefit" color={COLORS.area} size={7} anchor="end" />
-          <DashedToAxes x={freeEq.x} y={freeEq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="Pₘ" qLabel="Qₘ" />
-          <PremiumDot x={freeEq.x} y={freeEq.y} color={COLORS.eq} label="Free Mkt" gradientId="dot-green"
-            tooltipText="✓ Under-produces at Qₘ" />
-          <DashedToAxes x={optEq.x} y={optEq.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P*" qLabel="Q*" />
-          <PremiumDot x={optEq.x} y={optEq.y} color={COLORS.shifted} label="Soc. Opt." gradientId="dot-amber"
-            tooltipText="✓ Optimal: MSC = MSB" />
+          {/* Curves */}
+          <GLine {...mpcL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" width={2.5} />
+          <Label x={mpcL.x2 - 4} y={mpcL.y2 - 8} text="MPC" color={COLORS.demand} size={9} />
+          <GLine {...mscL} color={COLORS.msc} gradientId="grad-supply" glow="glow-red" width={2.5} />
+          <Label x={mscL.x2 + 4} y={mscL.y2 - 4} text="MSC" color={COLORS.msc} size={9} />
+          <GLine {...dL} color={COLORS.demand} width={2.5} />
+          <Label x={dL.x2 + 4} y={dL.y2 - 8} text="MPB = MSB" color={COLORS.demand} />
+          {/* Dashed projections for B (q, p) */}
+          <line x1={ptB.x} y1={ptB.y} x2={mx} y2={ptB.y} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
+          <line x1={ptB.x} y1={ptB.y} x2={ptB.x} y2={axBot} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
+          <Label x={mx - 2} y={ptB.y + 3} text="p" color="hsl(var(--foreground))" size={10} anchor="end" />
+          <Label x={ptB.x} y={axBot + 14} text="q" color="hsl(var(--foreground))" size={10} />
+          {/* Dashed projections for E (q₁, p₁) */}
+          <line x1={ptE.x} y1={ptE.y} x2={mx} y2={ptE.y} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
+          <line x1={ptE.x} y1={ptE.y} x2={ptE.x} y2={axBot} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
+          <Label x={mx - 2} y={ptE.y + 3} text="p₁" color="hsl(var(--foreground))" size={10} anchor="end" />
+          <Label x={ptE.x} y={axBot + 14} text="q₁" color="hsl(var(--foreground))" size={10} />
+          {/* Point labels */}
+          <PremiumDot x={ptB.x} y={ptB.y} color={COLORS.eq} label="B" gradientId="dot-green" />
+          <PremiumDot x={ptE.x} y={ptE.y} color={COLORS.eq} label="E" gradientId="dot-amber" />
+          <Label x={ptA.x + 6} y={ptA.y + 4} text="A" color="#ef4444" size={9} />
         </>
       );
     },
