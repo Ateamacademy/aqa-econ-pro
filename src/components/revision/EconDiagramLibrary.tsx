@@ -1492,64 +1492,84 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   subsidy: {
     title: "Effect of a Subsidy",
     xAxis: "Quantity", yAxis: "Price",
-    legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "S + subsidy", color: COLORS.shifted }],
+    legend: [{ label: "S (original)", color: "#3b82f6" }, { label: "S₁ (after subsidy)", color: "#3b82f6" }, { label: "D", color: "#ef4444" }, { label: "Producer incidence", color: "#93c5fd" }, { label: "Consumer incidence", color: "#fca5a5" }],
     examTips: [
-      "Supply shifts RIGHT/DOWN by the amount of the subsidy per unit",
-      "Price falls from P to P1, quantity rises from Q to Q1",
-      "Show the shift arrow clearly from S to S + subsidy",
-      "Label both equilibrium points and project to axes",
+      "Subsidy shifts supply RIGHT from S to S₁",
+      "Price falls from p to p₁, quantity rises from q to q₁",
+      "Consumer incidence = area between p and p₁ (red)",
+      "Producer incidence = area between p and p₂ (blue)",
+      "Total cost of subsidy = (p₂ − p₁) × q₁",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
       const pad = 10;
-      const subsidyShift = 50; // RIGHT shift (subsidy lowers costs → supply shifts right/down)
+      const axBot = my + ph;
+      const axR = mx + pw;
+      const subsidyShift = pw * 0.22;
 
-      // D: top-left to bottom-right
-      const dL = { x1: mx + pad, y1: my + pad, x2: mx + pw - pad, y2: my + ph - pad };
-      // S: bottom-left to top-right
-      const s1L = { x1: mx + pad, y1: my + ph - pad, x2: mx + pw - pad, y2: my + pad };
-      // S + subsidy: shifted RIGHT
-      const s2L = { x1: s1L.x1 + subsidyShift, y1: s1L.y1, x2: s1L.x2 + subsidyShift, y2: s1L.y2 };
+      // S: bottom-left to top-right (blue)
+      const sL = { x1: mx + pad, y1: axBot - pad, x2: mx + pw - pad, y2: my + pad };
+      // S₁: shifted right (blue)
+      const s1L = { x1: sL.x1 + subsidyShift, y1: sL.y1, x2: sL.x2 + subsidyShift, y2: sL.y2 };
+      // D: top-left to bottom-right (red)
+      const dL = { x1: mx + pad, y1: my + pad, x2: mx + pw - pad, y2: axBot - pad };
 
-      const eq1 = lineIntersect(dL.x1, dL.y1, dL.x2, dL.y2, s1L.x1, s1L.y1, s1L.x2, s1L.y2);
-      const eq2 = lineIntersect(dL.x1, dL.y1, dL.x2, dL.y2, s2L.x1, s2L.y1, s2L.x2, s2L.y2);
+      // Equilibria
+      const eq = lineIntersect(dL.x1, dL.y1, dL.x2, dL.y2, sL.x1, sL.y1, sL.x2, sL.y2); // S ∩ D → (q, p)
+      const eq1 = lineIntersect(dL.x1, dL.y1, dL.x2, dL.y2, s1L.x1, s1L.y1, s1L.x2, s1L.y2); // S₁ ∩ D → (q₁, p₁)
 
-      // Shift arrow from old eq to new eq area
-      const arrowX = (eq1.x + eq2.x) / 2;
+      // p₂: price on original S at q₁ (what producers receive)
+      const sSlope = (sL.y2 - sL.y1) / (sL.x2 - sL.x1);
+      const p2Y = sL.y1 + sSlope * (eq1.x - sL.x1);
+
+      // Shift arrow
+      const arrowMidX = (eq.x + eq1.x) / 2;
+      const arrowFromY = sL.y1 + sSlope * (arrowMidX - sL.x1);
       const s1Slope = (s1L.y2 - s1L.y1) / (s1L.x2 - s1L.x1);
-      const arrowY1 = s1L.y1 + s1Slope * (arrowX - s1L.x1);
-      const arrowY2 = s1L.y1 + s1Slope * (arrowX - s2L.x1 + (s1L.x1 - s1L.x1));
-      // Midpoint on both supply curves at arrowX
-      const s2Slope = (s2L.y2 - s2L.y1) / (s2L.x2 - s2L.x1);
-      const arrowFromY = s1L.y1 + s1Slope * (arrowX - s1L.x1);
-      const arrowToY = s2L.y1 + s2Slope * (arrowX - s2L.x1);
+      const arrowToY = s1L.y1 + s1Slope * (arrowMidX - s1L.x1);
 
       return (
         <>
-          {/* Demand */}
-          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color={COLORS.demand} />
-          {/* Original supply S */}
-          <GLine {...s1L} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={s1L.x2 + 4} y={s1L.y2 + 4} text="S" color={COLORS.supply} />
-          {/* S + subsidy */}
-          <GLine {...s2L} color={COLORS.shifted} gradientId="grad-shifted" glow="glow-amber" />
-          <Label x={s2L.x2 + 4} y={s2L.y2 + 4} text="S + subsidy" color={COLORS.shifted} />
+          {/* Producer incidence: rectangle between p and p₂, from axis to q₁ */}
+          <rect x={mx} y={eq.y < p2Y ? eq.y : p2Y} width={eq1.x - mx} height={Math.abs(p2Y - eq.y)} fill="#3b82f6" fillOpacity={0.25} stroke="none" />
+          <text x={(mx + eq1.x) / 2} y={(eq.y + p2Y) / 2 + 4} fill="#2563eb" fontSize={10} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Producer incidence</text>
+
+          {/* Consumer incidence: rectangle between p₁ and p, from axis to q₁ */}
+          <rect x={mx} y={eq.y} width={eq1.x - mx} height={eq1.y - eq.y} fill="#ef4444" fillOpacity={0.25} stroke="none" />
+          <text x={(mx + eq1.x) / 2} y={(eq.y + eq1.y) / 2 + 4} fill="#dc2626" fontSize={10} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Consumer incidence</text>
+
+          {/* Demand (red) */}
+          <GLine {...dL} color="#ef4444" width={2.5} />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color="#ef4444" />
+          {/* Original supply S (blue) */}
+          <GLine {...sL} color="#3b82f6" width={2.5} />
+          <Label x={sL.x2 + 4} y={sL.y2 + 4} text="S" color="#3b82f6" />
+          {/* S₁ after subsidy (blue) */}
+          <GLine {...s1L} color="#3b82f6" width={2.5} />
+          <Label x={s1L.x2 + 4} y={s1L.y2 + 4} text="S₁" color="#3b82f6" />
 
           {/* Shift arrow */}
-          <line x1={arrowFromY < arrowToY ? arrowX - 2 : arrowX} y1={arrowFromY}
-                x2={arrowFromY < arrowToY ? arrowX - 2 : arrowX} y2={arrowToY}
-                stroke="#f97316" strokeWidth={2.5} markerEnd="url(#arrow-shifted)" />
+          <line x1={arrowMidX - 2} y1={arrowFromY} x2={arrowMidX + subsidyShift * 0.4} y2={arrowToY} stroke="#166534" strokeWidth={2.5} markerEnd="url(#arrow-shifted)" />
 
-          {/* Original equilibrium */}
-          <DashedToAxes x={eq1.x} y={eq1.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P" qLabel="Q" />
-          <PremiumDot x={eq1.x} y={eq1.y} color={COLORS.eq} label="E₁" gradientId="dot-green"
-            tooltipText="✓ Pre-subsidy equilibrium" />
+          {/* p₂ projection */}
+          <line x1={mx} y1={p2Y} x2={eq1.x} y2={p2Y} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" />
+          <text x={mx - 4} y={p2Y + 4} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="end" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p₂</text>
 
-          {/* New equilibrium */}
-          <DashedToAxes x={eq2.x} y={eq2.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P1" qLabel="Q1" />
-          <PremiumDot x={eq2.x} y={eq2.y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
-            tooltipText="✓ After subsidy: lower P, higher Q" />
+          {/* p projection */}
+          <line x1={mx} y1={eq.y} x2={eq.x} y2={eq.y} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" />
+          <line x1={eq.x} y1={eq.y} x2={eq.x} y2={axBot} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" />
+          <text x={mx - 4} y={eq.y + 4} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="end" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p</text>
+          <text x={eq.x} y={axBot + 14} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q</text>
+
+          {/* p₁ projection */}
+          <line x1={mx} y1={eq1.y} x2={eq1.x} y2={eq1.y} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" />
+          <line x1={eq1.x} y1={eq1.y} x2={eq1.x} y2={axBot} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" />
+          <text x={mx - 4} y={eq1.y + 4} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="end" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p₁</text>
+          <text x={eq1.x} y={axBot + 14} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q₁</text>
+
+          {/* Equilibrium dots */}
+          <PremiumDot x={eq.x} y={eq.y} color="#16a34a" label="" />
+          <PremiumDot x={eq1.x} y={eq1.y} color="#16a34a" label="" />
         </>
       );
     },
