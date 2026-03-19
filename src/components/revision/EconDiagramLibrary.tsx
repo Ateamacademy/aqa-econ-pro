@@ -1807,27 +1807,30 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     },
   },
 
-  /* ── Minimum Price (Price Floor) / Minimum Wage ── */
+  /* ── Minimum Price (Price Floor) ── */
   price_floor: {
     title: "Minimum Price (Price Floor)",
-    xAxis: "Quantity (Q)", yAxis: "Wage Rate / Price (P)",
+    xAxis: "Quantity", yAxis: "Price",
     legend: [
-      { label: "Demand", color: COLORS.demand },
-      { label: "Supply", color: COLORS.supply },
-      { label: "Minimum wage", color: "#ec4899" },
+      { label: "Supply (S)", color: COLORS.supply },
+      { label: "Demand (D)", color: COLORS.demand },
+      { label: "Min price (p₁)", color: "hsl(var(--foreground))" },
+      { label: "Welfare Loss", color: "#16a34a" },
     ],
     examTips: [
-      "Price floor must be set ABOVE equilibrium to be effective",
-      "Creates excess supply (surplus): Qs > Qd at Pmin",
-      "Show workers' surplus, firms' surplus, and deadweight loss",
-      "Label equilibrium (We, Qe) and quantities at the floor",
-      "Discuss consequences: unemployment, surpluses, government costs",
+      "Min price set at p₁, ABOVE free market equilibrium price p",
+      "Results in surplus (excess supply) of q₁ − q₂",
+      "Welfare loss shown by the green shaded triangle",
+      "Label equilibrium (p, q) and quantities at the floor (q₂, q₁)",
+      "Example: alcohol minimum unit pricing in Scotland",
     ],
     render: (p) => {
-      const { mx, my, pw, ph, uid } = p;
+      const { mx, my, pw, ph } = p;
       const pad = 10;
+      const axL = mx;
+      const axR = mx + pw;
 
-      // S (upward sloping) and D (downward sloping)
+      // D (downward — red) and S (upward — blue)
       const dL = { x1: mx + pad, y1: my + pad + 10, x2: mx + pw - pad, y2: my + ph - pad };
       const sL = { x1: mx + pad, y1: my + ph - pad, x2: mx + pw - pad, y2: my + pad + 10 };
 
@@ -1837,79 +1840,70 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       // Min price line — above equilibrium
       const pminY = eq.y - (eq.y - my - pad) * 0.45;
 
-      // Where Pmin intersects S (Qs — larger) and D (Qd — smaller)
+      // Where Pmin intersects S and D
       const sSlope = (sL.y2 - sL.y1) / (sL.x2 - sL.x1);
       const dSlope = (dL.y2 - dL.y1) / (dL.x2 - dL.x1);
-      const qsX = sL.x1 + (pminY - sL.y1) / sSlope; // supply at Pmin (right)
-      const qdX = dL.x1 + (pminY - dL.y1) / dSlope; // demand at Pmin (left)
+      const q1X = sL.x1 + (pminY - sL.y1) / sSlope; // supply at Pmin (right — q₁)
+      const q2X = dL.x1 + (pminY - dL.y1) / dSlope; // demand at Pmin (left — q₂)
 
-      // Welfare region points
-      // Workers' surplus: triangle below Pmin, above S, from origin to Qd
-      const sAtOrigin = { x: mx + pad, y: sL.y1 }; // S at x-axis start (bottom-left of S)
-      const sAtQd = sL.y1 + sSlope * (qdX - sL.x1);
-
-      // Deadweight loss triangle: between eq and the Qd point on both curves
-      const dwlPoints = [
-        { x: qdX, y: pminY },
+      // Welfare loss triangle: vertices at D∩Pmin, equilibrium, S∩Pmin
+      const welfarePoints = [
+        { x: q2X, y: pminY },
         { x: eq.x, y: eq.y },
-        { x: qdX, y: sAtQd },
-      ];
-
-      // Workers' surplus (blue): triangle — Pmin line from axis to Qd, down S curve, back to axis
-      const workerPoints = [
-        { x: mx + pad, y: pminY },
-        { x: qdX, y: pminY },
-        { x: qdX, y: sAtQd },
-        { x: mx + pad, y: sL.y1 },
-      ];
-
-      // Firms' surplus (yellow/amber): triangle above Pmin, below D, from axis to Qd
-      const dAtOrigin = dL.y1;
-      const firmPoints = [
-        { x: mx + pad, y: dAtOrigin },
-        { x: qdX, y: pminY },
-        { x: mx + pad, y: pminY },
+        { x: q1X, y: pminY },
       ];
 
       return (
         <>
-          {/* Welfare regions (behind curves) */}
-          <WelfareRegion points={workerPoints} fill="#3b82f6" fillOpacity={0.2} strokeWidth={0} label="Workers' surplus" labelSize={7} />
-          <WelfareRegion points={firmPoints} fill="#f59e0b" fillOpacity={0.2} strokeWidth={0} label="Firms' surplus" labelSize={7} />
-          <WelfareRegion points={dwlPoints} fill="#1e293b" fillOpacity={0.3} strokeWidth={0} label="DWL" labelSize={7} />
+          {/* Welfare loss triangle (behind curves) */}
+          <WelfareRegion points={welfarePoints} fill="#16a34a" fillOpacity={0.55} label="Welfare Loss" labelSize={7} />
 
-          {/* S and D curves */}
+          {/* S curve (blue — upward) */}
           <GLine {...sL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
           <Label x={sL.x2 + 4} y={sL.y2 - 6} text="S" color={COLORS.supply} />
+
+          {/* D curve (red — downward) */}
           <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
           <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color={COLORS.demand} />
 
-          {/* Equilibrium */}
-          <DashedToAxes x={eq.x} y={eq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="We" qLabel="Qe" />
-          <circle cx={eq.x} cy={eq.y} r={3.5} fill={COLORS.eq} />
-
-          {/* Minimum wage / price floor line — bold pink */}
+          {/* Min price line — bold black */}
           <line
-            x1={mx + pad - 5}
+            x1={axL}
             y1={pminY}
-            x2={mx + pw - pad + 15}
+            x2={axR + 15}
             y2={pminY}
-            stroke="#ec4899"
+            stroke="hsl(var(--foreground))"
             strokeWidth={2.5}
           />
-          <Label x={mx + pw - pad + 18} y={pminY + 4} text="Minimum wage" color="#ec4899" size={9} />
+          <Label x={axR + 18} y={pminY + 4} text="Min price" color="hsl(var(--foreground))" size={9} />
 
-          {/* Qd projection (demand at Pmin — left) */}
-          <line x1={qdX} y1={pminY} x2={qdX} y2={my + ph} stroke="hsl(var(--foreground))" strokeWidth={1.2} strokeDasharray="5,3" opacity={0.5} />
-          <text x={qdX} y={my + ph + 14} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Qd</text>
+          {/* p₁ label on Y-axis */}
+          <line x1={axL} y1={pminY} x2={axL - 5} y2={pminY} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
+          <text x={axL - 8} y={pminY + 4} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="end" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p₁</text>
 
-          {/* Qs projection (supply at Pmin — right) */}
-          <line x1={qsX} y1={pminY} x2={qsX} y2={my + ph} stroke="hsl(var(--foreground))" strokeWidth={1.2} strokeDasharray="5,3" opacity={0.5} />
-          <text x={qsX} y={my + ph + 14} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Qs</text>
+          {/* Equilibrium p label on Y-axis */}
+          <line x1={eq.x} y1={eq.y} x2={axL} y2={eq.y} stroke="hsl(var(--foreground))" strokeWidth={1.2} strokeDasharray="5,3" opacity={0.5} />
+          <line x1={axL} y1={eq.y} x2={axL - 5} y2={eq.y} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
+          <text x={axL - 8} y={eq.y + 4} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="end" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p</text>
 
-          {/* Excess supply bracket */}
-          <line x1={qdX} y1={pminY + 8} x2={qsX} y2={pminY + 8} stroke={COLORS.area} strokeWidth={1.5} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
-          <Label x={(qdX + qsX) / 2} y={pminY + 22} text="Excess supply" color={COLORS.area} size={8} anchor="middle" bold={false} />
+          {/* q₂ projection (demand at Pmin — left) */}
+          <line x1={q2X} y1={pminY} x2={q2X} y2={my + ph} stroke="hsl(var(--foreground))" strokeWidth={1.2} strokeDasharray="5,3" opacity={0.5} />
+          <text x={q2X} y={my + ph + 14} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q₂</text>
+
+          {/* q projection (equilibrium) */}
+          <line x1={eq.x} y1={eq.y} x2={eq.x} y2={my + ph} stroke="hsl(var(--foreground))" strokeWidth={1.2} strokeDasharray="5,3" opacity={0.5} />
+          <text x={eq.x} y={my + ph + 14} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q</text>
+
+          {/* q₁ projection (supply at Pmin — right) */}
+          <line x1={q1X} y1={pminY} x2={q1X} y2={my + ph} stroke="hsl(var(--foreground))" strokeWidth={1.2} strokeDasharray="5,3" opacity={0.5} />
+          <text x={q1X} y={my + ph + 14} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q₁</text>
+
+          {/* Excess supply arrow */}
+          <line x1={q2X + 2} y1={pminY - 18} x2={q1X - 2} y2={pminY - 18} stroke="hsl(var(--foreground))" strokeWidth={1.5} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
+          <Label x={(q2X + q1X) / 2} y={pminY - 26} text="Excess supply" color="hsl(var(--foreground))" size={8} anchor="middle" bold={false} />
+
+          {/* Equilibrium dot */}
+          <circle cx={eq.x} cy={eq.y} r={3.5} fill={COLORS.eq} />
         </>
       );
     },
