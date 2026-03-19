@@ -1931,61 +1931,93 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
   /* ── Monopoly ── */
   monopoly: {
-    title: "Monopoly Profit Maximisation",
-    xAxis: "Quantity (Q)", yAxis: "Price / Cost / Revenue",
-    legend: [{ label: "MC", color: COLORS.eq }, { label: "Demand (AR)", color: COLORS.demand }, { label: "MR", color: COLORS.shifted }],
+    title: "Monopoly — Business Objectives",
+    xAxis: "Output", yAxis: "Revenue / Cost",
+    legend: [
+      { label: "MC", color: COLORS.demand },
+      { label: "ATC", color: COLORS.demand },
+      { label: "AR", color: COLORS.supply },
+      { label: "MR", color: COLORS.supply },
+    ],
     examTips: [
-      "Profit max at MC = MR — always state this rule",
-      "Price read UP from Q₁ to the Demand (AR) curve, not MC",
-      "Supernormal profit = shaded area (AR - AC) × Q",
-      "AR is above MR because the monopolist is a price-maker",
+      "Profit max at MC = MR → (q, p)",
+      "Revenue max at MR = 0 → (q₁, p₁)",
+      "Sales max at AR = ATC → (q₂, p₂)",
+      "Price read UP from Q to the AR curve, not MC",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
       const pad = 10;
+      const axBot = my + ph;
 
-      // Demand (AR): downward sloping — dark blue like reference
-      const arL = { x1: mx + pad + 5, y1: my + pad + 5, x2: mx + pw - pad, y2: my + ph - pad - 5 };
-      // MR: steeper downward (same y-intercept, reaches x-axis at ~half quantity) — amber/yellow
-      const mrL = { x1: mx + pad + 5, y1: my + pad + 5, x2: mx + pw * 0.52, y2: my + ph - pad - 5 };
-      // MC: curved upward from bottom-left — green like reference
-      const mcStartX = mx + pw * 0.12;
-      const mcStartY = my + ph * 0.72;
-      const mcMidX = mx + pw * 0.35;
-      const mcMidY = my + ph * 0.48;
-      const mcEndX = mx + pw * 0.72;
-      const mcEndY = my + pad + 5;
-      const mcPath = `M ${mcStartX} ${mcStartY} Q ${mcMidX} ${mcMidY + 15} ${mcMidX + 15} ${mcMidY} Q ${mcMidX + 35} ${mcMidY - 20} ${mcEndX} ${mcEndY}`;
+      // AR (Demand): red, downward sloping
+      const arL = { x1: mx + pad, y1: my + pad + 15, x2: mx + pw - pad, y2: axBot - pad - 10 };
+      // MR: red, steeper (same intercept, hits x-axis at ~55% width)
+      const mrL = { x1: mx + pad, y1: my + pad + 15, x2: mx + pw * 0.55, y2: axBot - pad - 10 };
 
-      // Find MC=MR intersection (approximate: use the linear portion of MC near MR)
-      // MC roughly passes through (mcMidX+15, mcMidY) and (mcEndX, mcEndY)
+      // MC: blue, U-shaped curve rising steeply
+      const mcX0 = mx + pw * 0.18, mcY0 = my + ph * 0.58;
+      const mcX1 = mx + pw * 0.32, mcY1 = my + ph * 0.72;
+      const mcX2 = mx + pw * 0.42, mcY2 = my + ph * 0.52;
+      const mcX3 = mx + pw * 0.58, mcY3 = my + pad + 5;
+      const mcPath = `M ${mcX0} ${mcY0} Q ${mcX1 - 5} ${mcY1} ${mcX1 + 10} ${mcY1 - 5} Q ${mcX2 - 5} ${mcY2 + 20} ${mcX2} ${mcY2} Q ${mcX2 + 15} ${mcY2 - 25} ${mcX3} ${mcY3}`;
+
+      // ATC: blue, U-shaped, wider & shallower than MC
+      const atcX0 = mx + pad + 5, atcY0 = my + pad + 10;
+      const atcMidX = mx + pw * 0.48, atcMidY = my + ph * 0.58;
+      const atcEndX = mx + pw * 0.78, atcEndY = my + ph * 0.32;
+      const atcPath = `M ${atcX0} ${atcY0} Q ${mx + pw * 0.2} ${my + ph * 0.48} ${atcMidX} ${atcMidY} Q ${mx + pw * 0.62} ${atcMidY + 5} ${atcEndX} ${atcEndY}`;
+
+      // === Key points ===
+      // Profit max: MC = MR intersection
       const mcMrInt = lineIntersect(
-        mcMidX, mcMidY + 8, mcEndX, mcEndY,
+        mcX1 + 10, mcY1 - 5, mcX3, mcY3,
         mrL.x1, mrL.y1, mrL.x2, mrL.y2
       );
-
-      // Price = read up from Q₁ to AR (demand) curve
+      // Price at profit max: read up to AR
       const arSlope = (arL.y2 - arL.y1) / (arL.x2 - arL.x1);
-      const priceY = arL.y1 + arSlope * (mcMrInt.x - arL.x1);
+      const profitPriceY = arL.y1 + arSlope * (mcMrInt.x - arL.x1);
+
+      // Revenue max: MR = 0 (MR hits x-axis)
+      const revMaxX = mrL.x2;
+      const revMaxPriceY = arL.y1 + arSlope * (revMaxX - arL.x1);
+
+      // Sales max: AR = ATC intersection (approximate — use right portion of ATC)
+      const salesMaxInt = lineIntersect(
+        atcMidX, atcMidY, atcEndX, atcEndY,
+        arL.x1, arL.y1, arL.x2, arL.y2
+      );
 
       return (
         <>
-          {/* Demand (AR) — blue */}
-          <GLine {...arL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" width={2.5} />
-          <Label x={arL.x2 + 4} y={arL.y2 - 8} text="Demand" color={COLORS.demand} />
-          {/* MR — amber */}
-          <GLine {...mrL} color={COLORS.shifted} gradientId="grad-shifted" width={2.5} />
-          <Label x={mrL.x2 + 4} y={mrL.y2 - 8} text="MR" color={COLORS.shifted} />
-          {/* MC — green curve */}
-          <CurvePath d={mcPath} color={COLORS.eq} width={2.5} glow="glow-green" />
-          <Label x={mcEndX + 4} y={mcEndY + 4} text="MC" color={COLORS.eq} />
-          {/* MC=MR intersection dot and label */}
-          <PremiumDot x={mcMrInt.x} y={mcMrInt.y} color={COLORS.eq} label="MR = MC" labelPos="bl" gradientId="dot-green"
-            tooltipText="✓ Profit max rule: produce where MC=MR" />
-          {/* Projection lines: Q₁ down to x-axis, P₁ to y-axis via AR */}
-          <DashedToAxes x={mcMrInt.x} y={priceY} mx={mx} ph={ph} my={my} color={COLORS.demand} pLabel="P₁" qLabel="Q₁" />
-          {/* Price dot on AR */}
-          <circle cx={mcMrInt.x} cy={priceY} r={3.5} fill={COLORS.demand} />
+          {/* AR (Demand) — red */}
+          <GLine {...arL} color={COLORS.supply} width={2.5} />
+          <Label x={arL.x2 + 2} y={arL.y2 - 6} text="AR" color={COLORS.supply} size={10} />
+
+          {/* MR — red */}
+          <GLine {...mrL} color={COLORS.supply} width={2.5} />
+          <Label x={mrL.x2 - 4} y={mrL.y2 + 14} text="MR" color={COLORS.supply} size={10} />
+
+          {/* MC — blue curve */}
+          <CurvePath d={mcPath} color={COLORS.demand} width={2.5} />
+          <Label x={mcX3 - 8} y={mcY3 - 6} text="MC" color={COLORS.demand} size={10} />
+
+          {/* ATC — blue curve */}
+          <CurvePath d={atcPath} color={COLORS.demand} width={2.5} />
+          <Label x={atcEndX + 4} y={atcEndY + 4} text="ATC" color={COLORS.demand} size={10} />
+
+          {/* Profit max: MC=MR → (q, p) */}
+          <DashedToAxes x={mcMrInt.x} y={profitPriceY} mx={mx} ph={ph} my={my} color="currentColor" pLabel="p" qLabel="q" />
+          <circle cx={mcMrInt.x} cy={profitPriceY} r={3.5} fill={COLORS.supply} />
+          <circle cx={mcMrInt.x} cy={mcMrInt.y} r={3} fill={COLORS.demand} />
+
+          {/* Revenue max: MR=0 → (q₁, p₁) */}
+          <DashedToAxes x={revMaxX} y={revMaxPriceY} mx={mx} ph={ph} my={my} color="currentColor" pLabel="p₁" qLabel="q₁" />
+          <circle cx={revMaxX} cy={revMaxPriceY} r={3.5} fill={COLORS.supply} />
+
+          {/* Sales max: AR=ATC → (q₂, p₂) */}
+          <DashedToAxes x={salesMaxInt.x} y={salesMaxInt.y} mx={mx} ph={ph} my={my} color="currentColor" pLabel="p₂" qLabel="q₂" />
+          <circle cx={salesMaxInt.x} cy={salesMaxInt.y} r={3.5} fill={COLORS.demand} />
         </>
       );
     },
