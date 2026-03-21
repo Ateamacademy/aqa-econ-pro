@@ -135,7 +135,7 @@ export default function Auth() {
             <div className="mx-auto mb-3 flex items-center gap-2 text-2xl font-bold">
               <span className="text-3xl">📊</span>
               <span className="bg-gradient-to-r from-indigo-bright to-primary bg-clip-text text-transparent">
-                EconAce
+                Econ Rev
               </span>
             </div>
             <CardTitle className="font-serif text-2xl md:text-3xl text-foreground">
