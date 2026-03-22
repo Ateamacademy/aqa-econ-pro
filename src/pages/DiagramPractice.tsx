@@ -447,6 +447,16 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
               <div className="prose prose-sm max-w-none dark:prose-invert">
                 <ReactMarkdown>{generatedQ}</ReactMarkdown>
               </div>
+              {selectedScenario?.hints && selectedScenario.hints.length > 0 && (
+                <details className="mt-3">
+                  <summary className="text-xs font-medium text-muted-foreground cursor-pointer hover:text-foreground transition-colors">💡 Show hints</summary>
+                  <ul className="mt-2 space-y-1">
+                    {selectedScenario.hints.map((h, i) => (
+                      <li key={i} className="text-xs text-muted-foreground pl-3 border-l-2 border-primary/30">{h}</li>
+                    ))}
+                  </ul>
+                </details>
+              )}
             </CardContent>
           </Card>
 
