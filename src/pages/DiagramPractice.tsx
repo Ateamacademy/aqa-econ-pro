@@ -125,6 +125,8 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
 
 const DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced"] as const;
 
+type PracticeMode = "ai" | "scenario";
+
 const inferDiagramType = (...parts: string[]) =>
   resolveDiagramType(parts.filter(Boolean).join("\n")) ?? "supply_demand";
 
@@ -137,8 +139,11 @@ export default function DiagramPractice() {
 
   const topics = DIAGRAM_TOPICS[subject] || DIAGRAM_TOPICS.economics;
 
+  const [practiceMode, setPracticeMode] = useState<PracticeMode>("scenario");
   const [topic, setTopic] = useState(topics[0]);
   const [difficulty, setDifficulty] = useState<string>("Intermediate");
+  const [sectionFilter, setSectionFilter] = useState<DiagramSection | "all">("all");
+  const [selectedScenario, setSelectedScenario] = useState<DiagramScenario | null>(null);
   const [generatedQ, setGeneratedQ] = useState("");
   const [inputMode, setInputMode] = useState<InputMode>("draw");
   const [diagramImage, setDiagramImage] = useState<string | null>(null);
@@ -149,6 +154,13 @@ export default function DiagramPractice() {
   const [isMarking, setIsMarking] = useState(false);
   const [step, setStep] = useState<"generate" | "answer" | "feedback">("generate");
   const [showUpgrade, setShowUpgrade] = useState(false);
+
+  const filteredScenarios = useMemo(() => {
+    let pool = diagramScenarios;
+    if (sectionFilter !== "all") pool = pool.filter(s => s.section === sectionFilter);
+    if (difficulty !== "all") pool = pool.filter(s => s.difficulty === difficulty);
+    return pool;
+  }, [sectionFilter, difficulty]);
 
   useEffect(() => {
     const t = DIAGRAM_TOPICS[subject] || DIAGRAM_TOPICS.economics;
