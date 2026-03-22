@@ -33,7 +33,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const refreshProfile = async () => {
     const { data: { user: u } } = await supabase.auth.getUser();
     if (!u) return;
-    const { data } = await supabase.from("profiles").select("free_papers_used, free_questions_used, free_predicted_papers_used, free_tutor_used, free_diagrams_used").eq("user_id", u.id).single();
+    const { data } = await supabase.from("profiles").select("free_papers_used, free_questions_used, free_predicted_papers_used, free_tutor_used, free_diagrams_used, exam_board, target_grade, onboarding_completed").eq("user_id", u.id).single();
     if (data) setProfile(data);
   };
 
