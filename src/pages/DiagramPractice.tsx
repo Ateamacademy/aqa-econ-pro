@@ -7,7 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PenTool, Lock, Send, RotateCcw, Info, Pencil, FileText, ChevronDown, ChevronUp, MessageSquare, Lightbulb } from "lucide-react";
+import { PenTool, Lock, Send, RotateCcw, Info, Pencil, FileText, ChevronDown, ChevronUp, MessageSquare, Lightbulb, BookOpen, Sparkles, Shuffle } from "lucide-react";
 import { toast } from "sonner";
 import ReactMarkdown from "react-markdown";
 import { FREE_LIMITS } from "@/lib/plans";
@@ -16,6 +16,7 @@ import { cn } from "@/lib/utils";
 import { extractDiagramBlocks, EconDiagramCanvas } from "@/components/predicted-papers/EconDiagramSVG";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import { UpgradeModal } from "@/components/UpgradeModal";
+import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
 
 const DIAGRAM_TOPICS: Record<string, string[]> = {
   economics: [
