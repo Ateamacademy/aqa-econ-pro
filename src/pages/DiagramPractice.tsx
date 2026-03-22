@@ -402,9 +402,9 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                         <div className="flex items-center gap-1.5 flex-shrink-0">
                           <span className={cn(
                             "text-[10px] font-bold px-1.5 py-0.5 rounded",
-                            s.difficulty === "Foundation" ? "bg-green-500/10 text-green-600" :
-                            s.difficulty === "Intermediate" ? "bg-amber-500/10 text-amber-600" :
-                            "bg-red-500/10 text-red-600"
+                            s.difficulty === "Foundation" ? "bg-accent/20 text-accent-foreground" :
+                            s.difficulty === "Intermediate" ? "bg-secondary text-secondary-foreground" :
+                            "bg-destructive/10 text-destructive"
                           )}>{s.difficulty}</span>
                           <span className="text-[10px] font-bold text-muted-foreground">[{s.marks}]</span>
                         </div>
