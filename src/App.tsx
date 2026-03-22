@@ -40,7 +40,16 @@ const Blog = lazy(() => import("./pages/Blog"));
 const HelpCentre = lazy(() => import("./pages/HelpCentre"));
 const FounderDashboard = lazy(() => import("./pages/FounderDashboard"));
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 min cache for 50K user scale
+      gcTime: 10 * 60 * 1000,
+      retry: 2,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
