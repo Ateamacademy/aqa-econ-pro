@@ -240,34 +240,43 @@ export type Database = {
         Row: {
           created_at: string
           display_name: string | null
+          exam_board: string | null
           free_diagrams_used: number
           free_papers_used: number
           free_predicted_papers_used: number
           free_questions_used: number
           free_tutor_used: number
           id: string
+          onboarding_completed: boolean
+          target_grade: string | null
           user_id: string
         }
         Insert: {
           created_at?: string
           display_name?: string | null
+          exam_board?: string | null
           free_diagrams_used?: number
           free_papers_used?: number
           free_predicted_papers_used?: number
           free_questions_used?: number
           free_tutor_used?: number
           id?: string
+          onboarding_completed?: boolean
+          target_grade?: string | null
           user_id: string
         }
         Update: {
           created_at?: string
           display_name?: string | null
+          exam_board?: string | null
           free_diagrams_used?: number
           free_papers_used?: number
           free_predicted_papers_used?: number
           free_questions_used?: number
           free_tutor_used?: number
           id?: string
+          onboarding_completed?: boolean
+          target_grade?: string | null
           user_id?: string
         }
         Relationships: []

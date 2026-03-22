@@ -1,5 +1,6 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable/index";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,15 @@ import { motion } from "framer-motion";
 import { Eye, EyeOff, Mail, Lock, Loader2 } from "lucide-react";
 
 export default function Auth() {
+  const { user, profile } = useAuth();
   const navigate = useNavigate();
+
+  // Redirect logged-in users
+  useEffect(() => {
+    if (user && profile) {
+      navigate(profile.onboarding_completed ? "/dashboard" : "/onboarding", { replace: true });
+    }
+  }, [user, profile, navigate]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
