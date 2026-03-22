@@ -318,6 +318,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
     setDiagramImage(null);
     setExplanation("");
     setFeedback("");
+    setSelectedScenario(null);
   };
 
   const hasSubmission = inputMode === "draw" ? !!diagramImage : !!diagramDesc.trim();
@@ -331,28 +332,111 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
         </p>
       </div>
 
-
       {step === "generate" && (
-        <Card>
-          <CardContent className="p-6 space-y-4">
-            <div>
-              <label className="text-sm font-medium mb-1 block">Diagram Topic</label>
-              <select value={topic} onChange={e => setTopic(e.target.value)} className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm">
-                {topics.map(t => <option key={t} value={t}>{t}</option>)}
-              </select>
-            </div>
-            <div>
-              <label className="text-sm font-medium mb-1 block">Difficulty</label>
-              <select value={difficulty} onChange={e => setDifficulty(e.target.value)} className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm">
-                {DIFFICULTY_LEVELS.map(d => <option key={d} value={d}>{d}</option>)}
-              </select>
-            </div>
-            <Button onClick={generateQuestion} disabled={isGenerating || !canUse} className="gap-2">
-              <PenTool className="h-4 w-4" />
-              {isGenerating ? "Generating..." : canUse ? "Generate Diagram Question" : "Subscribe for More"}
-            </Button>
-          </CardContent>
-        </Card>
+        <div className="space-y-4">
+          {/* Mode toggle */}
+          <div className="flex items-center gap-1 bg-muted rounded-lg p-0.5 w-fit">
+            <button
+              onClick={() => setPracticeMode("scenario")}
+              className={cn(
+                "flex items-center gap-1.5 px-4 py-2 rounded-md text-sm font-medium transition-colors",
+                practiceMode === "scenario" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              <BookOpen className="h-3.5 w-3.5" /> Exam Scenarios
+            </button>
+            <button
+              onClick={() => setPracticeMode("ai")}
+              className={cn(
+                "flex items-center gap-1.5 px-4 py-2 rounded-md text-sm font-medium transition-colors",
+                practiceMode === "ai" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              <Sparkles className="h-3.5 w-3.5" /> AI Generated
+            </button>
+          </div>
+
+          {practiceMode === "scenario" ? (
+            <Card>
+              <CardContent className="p-6 space-y-4">
+                <p className="text-xs text-muted-foreground">
+                  Real-world scenario-based diagram questions modelled on exam practice books. Read the context, then draw & explain.
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="text-sm font-medium mb-1 block">Section</label>
+                    <select
+                      value={sectionFilter}
+                      onChange={e => setSectionFilter(e.target.value as DiagramSection | "all")}
+                      className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
+                    >
+                      <option value="all">All Sections</option>
+                      {DIAGRAM_SECTIONS.map(s => <option key={s} value={s}>{s}</option>)}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium mb-1 block">Difficulty</label>
+                    <select value={difficulty} onChange={e => setDifficulty(e.target.value)} className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm">
+                      {DIFFICULTY_LEVELS.map(d => <option key={d} value={d}>{d}</option>)}
+                    </select>
+                  </div>
+                </div>
+
+                <Button onClick={startRandomScenario} disabled={filteredScenarios.length === 0} className="gap-2 w-full">
+                  <Shuffle className="h-4 w-4" /> Random Scenario ({filteredScenarios.length} available)
+                </Button>
+
+                {/* Scenario list */}
+                <div className="space-y-2 max-h-[400px] overflow-y-auto pr-1">
+                  {filteredScenarios.map(s => (
+                    <button
+                      key={s.id}
+                      onClick={() => startScenario(s)}
+                      className="w-full text-left p-3 rounded-lg border border-border/60 hover:border-primary/40 hover:bg-primary/5 transition-all group"
+                    >
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors truncate">{s.topic}</p>
+                          <p className="text-xs text-muted-foreground line-clamp-2 mt-0.5">{s.scenario}</p>
+                        </div>
+                        <div className="flex items-center gap-1.5 flex-shrink-0">
+                          <span className={cn(
+                            "text-[10px] font-bold px-1.5 py-0.5 rounded",
+                            s.difficulty === "Foundation" ? "bg-green-500/10 text-green-600" :
+                            s.difficulty === "Intermediate" ? "bg-amber-500/10 text-amber-600" :
+                            "bg-red-500/10 text-red-600"
+                          )}>{s.difficulty}</span>
+                          <span className="text-[10px] font-bold text-muted-foreground">[{s.marks}]</span>
+                        </div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ) : (
+            <Card>
+              <CardContent className="p-6 space-y-4">
+                <div>
+                  <label className="text-sm font-medium mb-1 block">Diagram Topic</label>
+                  <select value={topic} onChange={e => setTopic(e.target.value)} className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm">
+                    {topics.map(t => <option key={t} value={t}>{t}</option>)}
+                  </select>
+                </div>
+                <div>
+                  <label className="text-sm font-medium mb-1 block">Difficulty</label>
+                  <select value={difficulty} onChange={e => setDifficulty(e.target.value)} className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm">
+                    {DIFFICULTY_LEVELS.map(d => <option key={d} value={d}>{d}</option>)}
+                  </select>
+                </div>
+                <Button onClick={generateQuestion} disabled={isGenerating || !canUse} className="gap-2">
+                  <PenTool className="h-4 w-4" />
+                  {isGenerating ? "Generating..." : canUse ? "Generate Diagram Question" : "Subscribe for More"}
+                </Button>
+              </CardContent>
+            </Card>
+          )}
+        </div>
       )}
 
       {step === "answer" && (
