@@ -205,6 +205,20 @@ Format: Give the scenario context, then the question. Nothing else.` }],
     });
   };
 
+  const startScenario = (scenario: DiagramScenario) => {
+    if (!canUse) { setShowUpgrade(true); return; }
+    setSelectedScenario(scenario);
+    setGeneratedQ(`**${scenario.topic}**\n\n${scenario.scenario}\n\n${scenario.question}`);
+    setStep("answer");
+  };
+
+  const startRandomScenario = () => {
+    const filters: { section?: DiagramSection; difficulty?: string } = {};
+    if (sectionFilter !== "all") filters.section = sectionFilter;
+    if (difficulty !== "all") filters.difficulty = difficulty;
+    const scenario = getRandomScenario(filters);
+    startScenario(scenario);
+  };
   const markDiagram = async () => {
     setIsMarking(true);
     setFeedback("");
