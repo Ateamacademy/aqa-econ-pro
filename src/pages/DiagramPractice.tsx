@@ -627,7 +627,7 @@ function DiagramFeedbackView({
         seg.type === "diagram" ? (
           <EconDiagramCanvas key={i} diagram={seg.diagram} />
         ) : (
-          <ReactMarkdown key={i}>{seg.content}</ReactMarkdown>
+          <MathsMarkdown key={i}>{seg.content}</MathsMarkdown>
         )
       )}
     </div>
