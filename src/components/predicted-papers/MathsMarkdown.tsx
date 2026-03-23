@@ -5,6 +5,7 @@ import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import type { Components } from "react-markdown";
 import { extractDiagramBlocks, EconDiagramCanvas } from "./EconDiagramSVG";
+import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import { FigureChart } from "./FigureChart";
 
 interface MathsMarkdownProps {
