@@ -465,9 +465,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
           <Card>
             <CardHeader><CardTitle className="font-serif text-lg">Question</CardTitle></CardHeader>
             <CardContent>
-              <div className="prose prose-sm max-w-none dark:prose-invert">
-                <ReactMarkdown>{generatedQ}</ReactMarkdown>
-              </div>
+              <MathsMarkdown className="prose prose-sm max-w-none dark:prose-invert">{generatedQ}</MathsMarkdown>
               {selectedScenario?.hints && selectedScenario.hints.length > 0 && (
                 <details className="mt-3">
                   <summary className="text-xs font-medium text-muted-foreground cursor-pointer hover:text-foreground transition-colors">💡 Show hints</summary>
