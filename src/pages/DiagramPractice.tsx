@@ -9,7 +9,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PenTool, Lock, Send, RotateCcw, Info, Pencil, FileText, ChevronDown, ChevronUp, MessageSquare, Lightbulb, BookOpen, Sparkles, Shuffle } from "lucide-react";
 import { toast } from "sonner";
-import ReactMarkdown from "react-markdown";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import { FREE_LIMITS } from "@/lib/plans";
 import { DrawingCanvas } from "@/components/tools/DrawingCanvas";
@@ -628,7 +627,7 @@ function DiagramFeedbackView({
         seg.type === "diagram" ? (
           <EconDiagramCanvas key={i} diagram={seg.diagram} />
         ) : (
-          <ReactMarkdown key={i}>{seg.content}</ReactMarkdown>
+          <MathsMarkdown key={i}>{seg.content}</MathsMarkdown>
         )
       )}
     </div>
