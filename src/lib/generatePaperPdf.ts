@@ -348,9 +348,11 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta) {
 
       // Check if it's an S&D / economics diagram figure
       const figDescJoined = figLines.join(" ").toLowerCase();
-      const hasCurveRefs = /[ds][₀₁01]/i.test(figLines.join(" ")) || (/demand/i.test(figDescJoined) && /supply/i.test(figDescJoined) && /shift/i.test(figDescJoined));
+      const figDescRaw = figLines.join(" ");
+      const hasDiagramFamily = /Diagram\s+family:\s*\S+/i.test(figDescRaw);
+      const hasCurveRefs = /[ds][₀₁01]/i.test(figDescRaw) || (/demand/i.test(figDescJoined) && /supply/i.test(figDescJoined) && /shift/i.test(figDescJoined));
       
-      if (hasCurveRefs && lineDataSets.length === 0) {
+      if ((hasCurveRefs || hasDiagramFamily) && lineDataSets.length === 0) {
         li = fli - 1; // Skip processed lines
 
         const diagramW = maxW * 0.7;
