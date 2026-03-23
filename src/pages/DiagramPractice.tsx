@@ -165,7 +165,13 @@ export default function DiagramPractice() {
   useEffect(() => {
     const t = DIAGRAM_TOPICS[subject] || DIAGRAM_TOPICS.economics;
     setTopic(t[0]);
-    reset();
+    setStep("generate");
+    setGeneratedQ("");
+    setDiagramDesc("");
+    setDiagramImage(null);
+    setExplanation("");
+    setFeedback("");
+    setSelectedScenario(null);
   }, [subject]);
 
   if (!user) {
