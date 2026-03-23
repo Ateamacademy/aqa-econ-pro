@@ -40,8 +40,11 @@ function parseDiagramBlock(text: string, options: DiagramParseOptions = {}): Dia
 
   const shift = get("Shift") || options.fallbackShift || "";
   const rawType = headingMatch?.[1]?.trim() || "";
+  const family = get("Diagram family") || "";
 
+  // Resolve using family first, then title, then fallbacks
   const resolvedType =
+    (family ? resolveDiagramType(family, shift) : null) ||
     resolveDiagramType(rawType, shift) ||
     (options.fallbackType ? resolveDiagramType(options.fallbackType, shift) : null) ||
     (options.contextText ? resolveDiagramType(options.contextText, shift) : null);
@@ -59,6 +62,7 @@ function parseDiagramBlock(text: string, options: DiagramParseOptions = {}): Dia
     newEquilibrium: get("New equilibrium") || "",
     shadedArea: get("Shaded area") || "",
     conclusion: get("Key conclusion") || get("Effect") || "",
+    family: family || undefined,
   };
 }
 
