@@ -1313,9 +1313,42 @@ export default function PredictedPapers() {
       ? `\n\nCUSTOM TOPIC SELECTION: The student has specifically chosen these topics. ONLY generate questions on these topics: ${selectedTopics.join(", ")}. Do NOT include questions on any other topics. Distribute marks evenly across the selected topics. Maintain the same exam structure and question types, but restrict content to the chosen topics only.`
       : "";
 
+    const ECON_DIAGRAM_FAMILY_RULES = `
+
+DIAGRAM FAMILY RULES (CRITICAL — include in every diagram block):
+When describing a diagram in a Figure block or in a model answer, you MUST include a "Diagram family" field that maps to a canonical diagram type. This ensures the app renders the correct interactive template.
+
+Use EXACTLY one of these canonical family IDs:
+- supply-demand, demand-increase, demand-decrease, supply-increase, supply-decrease
+- indirect-tax, subsidy, price-floor, price-ceiling
+- negative-externality-production, negative-externality-consumption, positive-externality-production, positive-externality-consumption
+- tax-externality, subsidy-externality, pollution-permits
+- adas-ad-shift, adas-ad-shift-left, adas-sras-shift, adas-sras-shift-right, lras-shift
+- keynesian-as, multiplier-effect, crowding-out, laffer-curve
+- monopoly-profit, perfect-competition, monopolistic-competition, kinked-demand, natural-monopoly
+- cost-curves, labour-market, monopsony-labour, business-objectives, price-discrimination
+- exchange-rate-demand, exchange-rate-supply, j-curve, tariff-welfare, import-quota, comparative-advantage
+- ppf, ppf-growth, lorenz-curve, srpc
+- demand-shift-dual, supply-shift-dual
+
+Example Figure format:
+**Figure 2:** Supply and Demand in the UK Coffee Market
+- Diagram family: supply-decrease
+- Vertical axis: Price (P)
+- Horizontal axis: Quantity (Q)
+- D₁ slopes downward; S₁ slopes upward
+- Equilibrium at E₁: P₁, Q₁
+- S₁ shifts left to S₂ due to rising input costs
+- New equilibrium at E₂: P₂ (higher), Q₂ (lower)
+Source: Hypothetical, 2024
+
+Every diagram block MUST include "Diagram family: <family-id>" on its own line.`;
+
+    const econDiagramAppendix = isAnyEcon ? ECON_DIAGRAM_FAMILY_RULES : "";
+
     const prompt = dbContextPrompt
-      ? `${basePrompt}\n\n${dbContextPrompt}${scopeInstruction}\n\nMANDATORY QUALITY CHECK BEFORE FINAL OUTPUT: ensure the paper is full-length, exam-authentic, and matches the exact format, mark allocations, and difficulty level of recent ${examBoard} ${level} papers. If any question feels too easy or uses the wrong structure, rewrite it before finishing.`
-      : `${basePrompt}${scopeInstruction}`;
+      ? `${basePrompt}\n\n${dbContextPrompt}${scopeInstruction}${econDiagramAppendix}\n\nMANDATORY QUALITY CHECK BEFORE FINAL OUTPUT: ensure the paper is full-length, exam-authentic, and matches the exact format, mark allocations, and difficulty level of recent ${examBoard} ${level} papers. If any question feels too easy or uses the wrong structure, rewrite it before finishing.`
+      : `${basePrompt}${scopeInstruction}${econDiagramAppendix}`;
 
     await streamChat({
       messages: [{ role: "user", content: prompt }],
