@@ -3326,7 +3326,12 @@ const ALIASES: Record<string, string> = {
 export function resolveDiagramType(raw: string, shiftHint?: string): DiagramType | null {
   const key = raw.toLowerCase().replace(/[\s-]+/g, "_").replace(/[^a-z0-9_]/g, "");
   if (key in DIAGRAMS) return key as DiagramType;
+  if (key in FAMILY_ALIASES) return FAMILY_ALIASES[key] as DiagramType;
   if (key in ALIASES) return ALIASES[key] as DiagramType;
+
+  // Also check the hyphenated form for family IDs
+  const hyphenKey = raw.toLowerCase().trim();
+  if (hyphenKey in FAMILY_ALIASES) return FAMILY_ALIASES[hyphenKey] as DiagramType;
 
   // Fuzzy: check if any alias key is contained in the raw string or vice-versa
   const lc = raw.toLowerCase();

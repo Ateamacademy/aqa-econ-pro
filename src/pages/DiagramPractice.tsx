@@ -639,7 +639,7 @@ function DiagramFeedbackView({
       <Card>
         <CardHeader><CardTitle className="font-serif text-lg">Question</CardTitle></CardHeader>
         <CardContent>
-          <div className="prose prose-sm max-w-none dark:prose-invert"><ReactMarkdown>{generatedQ}</ReactMarkdown></div>
+          <MathsMarkdown className="prose prose-sm max-w-none dark:prose-invert">{generatedQ}</MathsMarkdown>
         </CardContent>
       </Card>
 

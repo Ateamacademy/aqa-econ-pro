@@ -693,7 +693,7 @@ export function extractDiagramBlocks(
   const hasDiagram = segments.some((seg) => seg.type === "diagram");
   if (!hasDiagram && (options.fallbackType || options.contextText)) {
     const fallbackSeed = options.fallbackType ?? "supply_demand";
-    const fallbackBlock = `### Diagram: ${fallbackSeed}\n- X-axis: Quantity (Q)\n- Y-axis: Price (P)\n- Initial curves: D1 and S1\n- Shift: ${options.fallbackShift ?? ""}\n- Key conclusion: Use this as the reference diagram.`;
+    const fallbackBlock = `### Diagram: ${fallbackSeed}\n- Diagram family: ${fallbackSeed}\n- X-axis: Quantity (Q)\n- Y-axis: Price (P)\n- Initial curves: D1 and S1\n- Shift: ${options.fallbackShift ?? ""}\n- Key conclusion: Use this as the reference diagram.`;
     const fallbackParsed = parseDiagramBlock(fallbackBlock, options);
     if (fallbackParsed) {
       segments.push({ type: "diagram", diagram: fallbackParsed });
