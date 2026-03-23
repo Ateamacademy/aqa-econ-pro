@@ -21,6 +21,7 @@ interface DiagramProps {
   newEquilibrium: string;
   shadedArea?: string;
   conclusion: string;
+  family?: string;
 }
 
 interface DiagramParseOptions {
