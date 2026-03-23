@@ -110,11 +110,16 @@ function RenderedTable({ markdown }: { markdown: string }) {
 function parseFigureAsDiagram(title: string, desc: string): import("./EconDiagramSVG").DiagramProps | null {
   const lower = desc.toLowerCase();
   
+  // Check for "Diagram family:" field — this is the primary indicator from structured AI output
+  const familyMatch = desc.match(/Diagram\s+family:\s*(\S+)/i);
+  const familyId = familyMatch?.[1]?.trim() || "";
+  
   // Detect S&D curve references: D₀/S₀, D0/S0, D₁/S₁, or demand/supply curve descriptions
   const hasCurveRefs = /[ds][₀₁01₂2]/i.test(desc) || (/demand/i.test(lower) && /supply/i.test(lower));
   const hasAxes = /(?:vertical|horizontal)\s*axis/i.test(desc);
   
-  if (!hasCurveRefs || !hasAxes) return null;
+  // Accept if we have a Diagram family field, OR the traditional curve refs + axes
+  if (!familyId && (!hasCurveRefs || !hasAxes)) return null;
   
   // Extract axis labels
   const vMatch = desc.match(/vertical\s*axis:\s*(.+?)(?:\s+horizontal|\s*$)/i);
@@ -148,7 +153,6 @@ function parseFigureAsDiagram(title: string, desc: string): import("./EconDiagra
   }
   
   // Allow diagrams WITHOUT shifts — show initial equilibrium only
-  // (no shift is valid for "reference" figures that students must then analyse)
   
   // Extract conclusion from description
   const leadingTo = desc.match(/leading\s+to\s+(.+?)(?:\.|$)/i);
@@ -165,9 +169,13 @@ function parseFigureAsDiagram(title: string, desc: string): import("./EconDiagra
   // Determine curve labels from text
   const dLabel = /D₁/i.test(desc) ? "D₁" : "D₀";
   const sLabel = /S₁/i.test(desc) ? "S₁" : "S₀";
+
+  // If we have a family ID, try to resolve it to a known diagram type
+  const resolvedFromFamily = familyId ? resolveDiagramType(familyId, shift) : null;
+  const diagramType = resolvedFromFamily || title;
   
   return {
-    type: title,
+    type: diagramType,
     xAxis,
     yAxis,
     initialCurves: `${dLabel} (demand) and ${sLabel} (supply)`,
@@ -176,6 +184,7 @@ function parseFigureAsDiagram(title: string, desc: string): import("./EconDiagra
     newEquilibrium: shift ? "E₁ at new intersection" : "",
     shadedArea: "",
     conclusion: conclusion || (sourceMatch ? sourceMatch[0] : ""),
+    family: familyId || undefined,
   };
 }
 
