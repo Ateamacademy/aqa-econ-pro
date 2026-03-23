@@ -188,16 +188,36 @@ export default function DiagramPractice() {
     setGeneratedQ("");
     let result = "";
 
+    const FIGURE_CONTENT_GUIDANCE = `
+
+FIGURE CONTENT GUIDANCE (CRITICAL — the app renders these as interactive charts/diagrams):
+You MUST include exactly ONE Figure 1 block in the question using this format:
+
+**Figure 1: [Descriptive title for the diagram]**
+- Vertical axis: [Y-axis label, e.g. Price (P), Price Level, Cost/Revenue]
+- Horizontal axis: [X-axis label, e.g. Quantity (Q), Real GDP, Output]
+- [Curve 1 name] slopes [direction] (e.g. D₁ slopes downward from left to right)
+- [Curve 2 name] slopes [direction] (e.g. S₁ slopes upward from left to right)
+- Initial equilibrium at [label, e.g. E₁]: price P₁, quantity Q₁
+- [If shift required]: [Curve] shifts [direction] from [old label] to [new label] due to [reason]
+- [If shift required]: New equilibrium at [label, e.g. E₂]: price P₂, quantity Q₂
+- [If shaded area relevant]: Shaded area represents [welfare loss/gain/tax revenue/deadweight loss]
+Source: Hypothetical scenario for exam practice
+
+The figure must be scenario-specific — include the exact curves, labels, and shifts that match the economic context described in the question.`;
+
     await streamChat({
       messages: [{ role: "user", content: `Generate a ${difficulty}-level diagram practice question on: "${topic}" for ${examBoard} ${level} ${subjectLabel}.
 
 The question should:
 1. Present an economic scenario that requires a diagram to explain
-2. Specify what type of diagram is expected (e.g., "Draw and annotate a supply and demand diagram showing...")
-3. Ask the student to draw the diagram AND provide a written explanation connecting the diagram to the scenario
-4. State the mark allocation (typically 4-8 marks for diagram + explanation)
+2. Include a Figure 1 block showing the initial market/macro conditions as structured text (axes, curves, equilibrium)
+3. Specify what type of diagram is expected (e.g., "Draw and annotate a supply and demand diagram showing...")
+4. Ask the student to draw the diagram AND provide a written explanation connecting the diagram to the scenario
+5. State the mark allocation (typically 4-8 marks for diagram + explanation)
+${FIGURE_CONTENT_GUIDANCE}
 
-Format: Give the scenario context, then the question. Nothing else.` }],
+Format: Give the scenario context with Figure 1, then the question. Nothing else.` }],
       mode: "practice",
       subject,
       onDelta: (chunk) => { result += chunk; setGeneratedQ(result); },
