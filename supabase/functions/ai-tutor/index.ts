@@ -562,13 +562,13 @@ serve(async (req) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "google/gemini-2.5-flash",
+        model: "google/gemini-3-flash-preview",
         messages: [
           { role: "system", content: systemPrompt },
           ...processedMessages,
         ],
         stream: true,
-        reasoning: mode === "grade" ? { effort: "medium" } : undefined,
+        reasoning: (mode === "grade" || mode === "tutor") ? { effort: mode === "grade" ? "medium" : "low" } : undefined,
       }),
     });
 

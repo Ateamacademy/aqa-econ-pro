@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   MessageCircle, Send, Lock, Bot, User, Mic, ChevronRight, ChevronDown,
-  BookOpen, Lightbulb, HelpCircle, GraduationCap,
+  BookOpen, Lightbulb, HelpCircle, GraduationCap, Trash2,
 } from "lucide-react";
 import { toast } from "sonner";
 import { RevisionRenderer } from "@/components/revision/RevisionRenderer";
@@ -33,9 +33,10 @@ function buildTopicTree(topics: string[]) {
 }
 
 const quickActions = [
-  { label: "Explain this concept", icon: Lightbulb, prefix: "Explain the concept of " },
-  { label: "Give me an example", icon: BookOpen, prefix: "Give me a real-world example of " },
-  { label: "Test me on this", icon: GraduationCap, prefix: "Test me with a practice question on " },
+  { label: "Explain this", icon: Lightbulb, prefix: "Explain the concept of " },
+  { label: "Real-world example", icon: BookOpen, prefix: "Give me a real-world example of " },
+  { label: "Test me", icon: GraduationCap, prefix: "Test me with a practice question on " },
+  { label: "Compare & contrast", icon: HelpCircle, prefix: "Compare and contrast the key differences between " },
 ];
 
 export default function AITutor() {
@@ -71,7 +72,7 @@ export default function AITutor() {
           <Lock className="h-7 w-7 text-primary" />
         </div>
         <h1 className="text-3xl font-bold tracking-tight mb-3">Sign in to use the 24/7 Tutor</h1>
-        <p className="text-muted-foreground mb-8 max-w-md mx-auto">Get instant, curriculum-aligned explanations for any economics topic.</p>
+        <p className="text-muted-foreground mb-8 max-w-md mx-auto">Get instant, curriculum-aligned explanations for any topic.</p>
         <Button onClick={() => navigate("/auth")} size="lg" className="rounded-full px-10 shadow-lg shadow-primary/20">Sign In</Button>
       </div>
     );
@@ -120,18 +121,23 @@ export default function AITutor() {
     setExpandedGroups(prev => ({ ...prev, [label]: !prev[label] }));
   };
 
+  const clearChat = () => {
+    setMessages([]);
+    setActiveTopic(null);
+  };
+
   return (
-    <div className="flex min-h-[calc(100vh-64px)] bg-background dot-grid-bg">
-      {/* ═══ LEFT PANEL — Topic Navigator (35%) ═══ */}
-      <aside className="hidden lg:flex flex-col w-[35%] max-w-[380px] border-r border-border bg-background shrink-0 sticky top-16 h-[calc(100vh-64px)] overflow-hidden">
+    <div className="flex min-h-[calc(100vh-64px)] bg-background">
+      {/* ═══ LEFT PANEL — Topic Navigator ═══ */}
+      <aside className="hidden lg:flex flex-col w-[320px] border-r border-border bg-card/50 shrink-0 sticky top-16 h-[calc(100vh-64px)] overflow-hidden">
         {/* Header */}
-        <div className="p-5 border-b border-border">
-          <div className="flex items-center gap-3 mb-1">
+        <div className="p-4 border-b border-border/60">
+          <div className="flex items-center gap-3">
             <div className="h-9 w-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
               <MessageCircle className="h-4 w-4 text-primary" />
             </div>
-            <div>
-              <h2 className="text-sm font-bold text-foreground">24/7 {subjectLabel} Tutor</h2>
+            <div className="min-w-0">
+              <h2 className="text-sm font-bold text-foreground truncate">24/7 {subjectLabel} Tutor</h2>
               <p className="text-[10px] text-muted-foreground">{examBoard} {level}</p>
             </div>
           </div>
@@ -144,7 +150,7 @@ export default function AITutor() {
             <div key={group.label}>
               <button
                 onClick={() => toggleGroup(group.label)}
-                className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-muted-foreground hover:text-foreground hover:bg-card transition-colors"
+                className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
               >
                 {expandedGroups[group.label] ? (
                   <ChevronDown className="h-3.5 w-3.5 shrink-0" />
@@ -172,7 +178,7 @@ export default function AITutor() {
                             "w-full text-left px-3 py-1.5 rounded-lg text-xs transition-all truncate",
                             activeTopic === topic
                               ? "bg-primary/10 text-primary font-semibold border-l-2 border-primary"
-                              : "text-muted-foreground hover:text-foreground hover:bg-card"
+                              : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                           )}
                         >
                           {topic}
@@ -185,9 +191,18 @@ export default function AITutor() {
             </div>
           ))}
         </div>
+
+        {/* Clear chat button */}
+        {messages.length > 0 && (
+          <div className="p-3 border-t border-border/60">
+            <Button variant="ghost" size="sm" onClick={clearChat} className="w-full gap-2 text-xs text-muted-foreground hover:text-destructive">
+              <Trash2 className="h-3.5 w-3.5" /> Clear Conversation
+            </Button>
+          </div>
+        )}
       </aside>
 
-      {/* ═══ RIGHT PANEL — Chat Interface (65%) ═══ */}
+      {/* ═══ RIGHT PANEL — Chat Interface ═══ */}
       <div className="flex-1 flex flex-col min-w-0 h-[calc(100vh-64px)]">
         {/* Chat header (mobile) */}
         <div className="lg:hidden px-5 py-3 border-b border-border bg-background/80 backdrop-blur-xl">
@@ -196,19 +211,19 @@ export default function AITutor() {
         </div>
 
         {/* Messages area */}
-        <div className="flex-1 overflow-y-auto px-4 lg:px-8 py-6 space-y-4">
+        <div className="flex-1 overflow-y-auto px-4 lg:px-8 py-6 space-y-5">
           {messages.length === 0 && (
             <div className="flex flex-col items-center justify-center py-16 text-center">
               <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center mx-auto mb-5 border border-primary/15">
                 <Bot className="h-8 w-8 text-primary" />
               </div>
               <h2 className="text-xl font-bold text-foreground mb-2">Ask me anything about {subjectLabel}</h2>
-              <p className="text-sm text-muted-foreground max-w-md mb-6">
-                I'll break it down with clear headings, bullet points, key terms highlighted, and step-by-step explanations.
+              <p className="text-sm text-muted-foreground max-w-md mb-8">
+                I'll give you revision-guide-style answers with headings, diagrams, key terms, and exam tips.
               </p>
-              <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-3">Select a topic or try</p>
-              <div className="flex flex-wrap justify-center gap-2">
-                {["Explain the multiplier effect", "What causes market failure?", "Compare fiscal and monetary policy"].map(s => (
+              <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-3">Try asking</p>
+              <div className="flex flex-wrap justify-center gap-2 max-w-lg">
+                {["Explain the multiplier effect", "What causes market failure?", "Compare fiscal and monetary policy", "Draw a negative externality diagram"].map(s => (
                   <button
                     key={s}
                     onClick={() => send(s)}
@@ -238,7 +253,7 @@ export default function AITutor() {
                 "max-w-[85%] rounded-2xl px-4 py-3",
                 m.role === "user"
                   ? "bg-primary text-primary-foreground text-sm"
-                  : "bg-card border border-border/60"
+                  : "bg-card border border-border/60 shadow-sm"
               )}>
                 {m.role === "assistant" ? (
                   <RevisionRenderer content={m.content} />
@@ -257,7 +272,7 @@ export default function AITutor() {
               <div className="h-8 w-8 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center shrink-0">
                 <Bot className="h-4 w-4 text-primary animate-pulse" />
               </div>
-              <div className="bg-card border border-border/60 rounded-2xl px-4 py-3 text-sm text-muted-foreground">
+              <div className="bg-card border border-border/60 rounded-2xl px-4 py-3 text-sm text-muted-foreground shadow-sm">
                 <span className="inline-flex gap-1">
                   <span className="animate-bounce" style={{ animationDelay: "0ms" }}>·</span>
                   <span className="animate-bounce" style={{ animationDelay: "150ms" }}>·</span>
@@ -270,30 +285,32 @@ export default function AITutor() {
         </div>
 
         {/* Quick-action chips */}
-        <div className="px-4 lg:px-8 pb-2">
-          <div className="flex flex-wrap gap-2">
-            {quickActions.map((action) => {
-              const Icon = action.icon;
-              return (
-                <button
-                  key={action.label}
-                  onClick={() => {
-                    const topic = activeTopic || subjectLabel;
-                    send(`${action.prefix}${topic}`);
-                  }}
-                  disabled={isLoading}
-                  className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border border-border/60 bg-card hover:border-primary/40 hover:bg-primary/5 text-muted-foreground hover:text-foreground transition-all disabled:opacity-50"
-                >
-                  <Icon className="h-3 w-3" />
-                  {action.label}
-                </button>
-              );
-            })}
+        {messages.length > 0 && (
+          <div className="px-4 lg:px-8 pb-2">
+            <div className="flex flex-wrap gap-2">
+              {quickActions.map((action) => {
+                const Icon = action.icon;
+                return (
+                  <button
+                    key={action.label}
+                    onClick={() => {
+                      const topic = activeTopic || subjectLabel;
+                      send(`${action.prefix}${topic}`);
+                    }}
+                    disabled={isLoading}
+                    className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border border-border/60 bg-card hover:border-primary/40 hover:bg-primary/5 text-muted-foreground hover:text-foreground transition-all disabled:opacity-50"
+                  >
+                    <Icon className="h-3 w-3" />
+                    {action.label}
+                  </button>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Input bar */}
-        <div className="px-4 lg:px-8 pb-5 pt-2">
+        <div className="px-4 lg:px-8 pb-5 pt-2 border-t border-border/40 bg-background/80 backdrop-blur-sm">
           <form onSubmit={(e) => { e.preventDefault(); send(); }} className="flex gap-2 items-center">
             <div className="flex-1 relative">
               <Input
@@ -301,7 +318,7 @@ export default function AITutor() {
                 onChange={e => setInput(e.target.value)}
                 placeholder={activeTopic ? `Ask about ${activeTopic}...` : "Ask a question..."}
                 disabled={isLoading}
-                className="rounded-full h-12 pl-5 pr-12 bg-card border-border/60 text-sm"
+                className="rounded-full h-12 pl-5 pr-12 bg-card border-border/60 text-sm shadow-sm"
               />
               <button
                 type="button"
@@ -320,6 +337,9 @@ export default function AITutor() {
               <Send className="h-4 w-4" />
             </Button>
           </form>
+          <p className="text-[10px] text-muted-foreground text-center mt-2">
+            {subscribed ? "Unlimited questions" : `${FREE_LIMITS.tutorQuestions - tutorUsed} free question(s) remaining`}
+          </p>
         </div>
       </div>
       <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="AI Tutor questions" />

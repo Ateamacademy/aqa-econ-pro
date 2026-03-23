@@ -6,14 +6,22 @@ import { streamChat } from "@/lib/streamChat";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, Lock, Send } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Brain, Lock, Send, RotateCcw, Settings2, FileQuestion, MessageSquare, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
 import { RevisionRenderer } from "@/components/revision/RevisionRenderer";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import { FREE_LIMITS } from "@/lib/plans";
 import { topicsBySubject, stylesBySubject } from "@/lib/subjectConfig";
 import { UpgradeModal } from "@/components/UpgradeModal";
+import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
+
+const stepsMeta = [
+  { id: "generate", label: "Choose", icon: Settings2 },
+  { id: "answer", label: "Answer", icon: FileQuestion },
+  { id: "feedback", label: "Feedback", icon: MessageSquare },
+] as const;
 
 export default function Practice() {
   const { user, subscribed, profile, refreshProfile } = useAuth();
@@ -33,7 +41,6 @@ export default function Practice() {
   const [step, setStep] = useState<"generate" | "answer" | "feedback">("generate");
   const [showUpgrade, setShowUpgrade] = useState(false);
 
-  // Reset when subject changes
   useEffect(() => {
     setTopic(topicsBySubject[subject][0]);
     setStyle(stylesBySubject[subject][0]);
@@ -42,10 +49,13 @@ export default function Practice() {
 
   if (!user) {
     return (
-      <div className="container py-16 max-w-3xl text-center">
-        <Lock className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-        <h1 className="font-serif text-3xl mb-3">Sign in to practice</h1>
-        <Button onClick={() => navigate("/auth")}>Sign In</Button>
+      <div className="container py-24 max-w-3xl text-center">
+        <div className="mx-auto mb-6 h-16 w-16 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20">
+          <Lock className="h-7 w-7 text-primary" />
+        </div>
+        <h1 className="text-3xl font-bold tracking-tight mb-3">Sign in to practice</h1>
+        <p className="text-muted-foreground mb-8 max-w-md mx-auto">Generate exam-style questions and get instant AI marking.</p>
+        <Button onClick={() => navigate("/auth")} size="lg" className="rounded-full px-10 shadow-lg shadow-primary/20">Sign In</Button>
       </div>
     );
   }
@@ -82,6 +92,7 @@ Output ONLY the question text and mark allocation. Nothing else.` }],
   const markAnswer = async () => {
     setIsMarking(true);
     setFeedback("");
+    setStep("feedback");
     let result = "";
 
     await streamChat({
@@ -94,96 +105,166 @@ Output ONLY the question text and mark allocation. Nothing else.` }],
       onDelta: (chunk) => { result += chunk; setFeedback(result); },
       onDone: async () => {
         setIsMarking(false);
-        setStep("feedback");
         if (!subscribed && profile) {
           await supabase.from("profiles").update({ free_questions_used: profile.free_questions_used + 1 }).eq("user_id", user.id);
           refreshProfile();
         }
       },
-      onError: (err) => { toast.error(err); setIsMarking(false); },
+      onError: (err) => { toast.error(err); setIsMarking(false); setStep("answer"); },
     });
   };
 
   const reset = () => { setStep("generate"); setGeneratedQ(""); setAnswer(""); setFeedback(""); };
 
+  const stepIndex = stepsMeta.findIndex(s => s.id === step);
+
   return (
     <div className="container py-10 max-w-3xl">
-      <div className="mb-6">
-        <h1 className="text-3xl font-serif mb-1">Practice Questions</h1>
+      {/* Header */}
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold tracking-tight mb-1">Practice Questions</h1>
         <p className="text-sm text-muted-foreground">
           {examBoard} {level} {subjectLabel} · {subscribed ? "Unlimited practice" : `${FREE_LIMITS.questions - (profile?.free_questions_used ?? 0)} free question(s) remaining`}
         </p>
       </div>
 
-      {step === "generate" && (
-        <Card>
-          <CardContent className="p-6 space-y-4">
-            <div>
-              <label className="text-sm font-medium mb-1 block">Topic</label>
-              <select value={topic} onChange={e => setTopic(e.target.value)} className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm">
-                {topics.map(t => <option key={t} value={t}>{t}</option>)}
-              </select>
-            </div>
-            <div>
-              <label className="text-sm font-medium mb-1 block">Question Style</label>
-              <select value={style} onChange={e => setStyle(e.target.value)} className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm">
-                {styles.map(s => <option key={s} value={s}>{s}</option>)}
-              </select>
-            </div>
-            <Button onClick={generateQuestion} disabled={isGenerating || !canUse} className="gap-2">
-              <Brain className="h-4 w-4" />
-              {isGenerating ? "Generating..." : canUse ? "Generate Question" : "Subscribe for More"}
-            </Button>
-          </CardContent>
-        </Card>
-      )}
-
-      {step === "answer" && (
-        <div className="space-y-4">
-          <Card>
-            <CardHeader><CardTitle className="font-serif text-lg">Question</CardTitle></CardHeader>
-            <CardContent>
-              <div className="ai-response">
-                <MathsMarkdown>{generatedQ}</MathsMarkdown>
+      {/* Progress Steps */}
+      <div className="flex items-center gap-2 mb-8">
+        {stepsMeta.map((s, i) => {
+          const Icon = s.icon;
+          const isActive = step === s.id;
+          const isDone = stepIndex > i;
+          return (
+            <div key={s.id} className="flex items-center gap-2 flex-1">
+              <div className={cn(
+                "flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium transition-all flex-1",
+                isActive ? "bg-primary/10 text-primary border border-primary/20" :
+                isDone ? "bg-accent/50 text-accent-foreground" :
+                "bg-muted/50 text-muted-foreground"
+              )}>
+                {isDone ? <CheckCircle2 className="h-3.5 w-3.5 text-primary" /> : <Icon className="h-3.5 w-3.5" />}
+                {s.label}
               </div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="p-6 space-y-4">
-              <label className="text-sm font-medium block">Your Answer</label>
-              <Textarea value={answer} onChange={e => setAnswer(e.target.value)} rows={8} placeholder="Type your answer here..." />
-              <div className="flex gap-2">
-                <Button onClick={markAnswer} disabled={isMarking || !answer.trim()} className="gap-2">
-                  <Send className="h-4 w-4" /> {isMarking ? "Marking..." : "Submit for Marking"}
+              {i < stepsMeta.length - 1 && (
+                <div className={cn("h-px w-4 shrink-0", isDone ? "bg-primary/40" : "bg-border")} />
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      <AnimatePresence mode="wait">
+        {/* Step 1: Generate */}
+        {step === "generate" && (
+          <motion.div key="gen" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.25 }}>
+            <Card className="border-border/60">
+              <CardContent className="p-6 space-y-5">
+                <div>
+                  <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2 block">Topic</label>
+                  <select value={topic} onChange={e => setTopic(e.target.value)} className="h-10 w-full rounded-lg border border-input bg-background px-3 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                    {topics.map(t => <option key={t} value={t}>{t}</option>)}
+                  </select>
+                </div>
+                <div>
+                  <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2 block">Question Style</label>
+                  <select value={style} onChange={e => setStyle(e.target.value)} className="h-10 w-full rounded-lg border border-input bg-background px-3 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                    {styles.map(s => <option key={s} value={s}>{s}</option>)}
+                  </select>
+                </div>
+                <Button onClick={generateQuestion} disabled={isGenerating || !canUse} size="lg" className="w-full gap-2 rounded-xl h-12 shadow-lg shadow-primary/20">
+                  <Brain className="h-4 w-4" />
+                  {isGenerating ? "Generating..." : canUse ? "Generate Question" : "Subscribe for More"}
                 </Button>
-                <Button variant="outline" onClick={reset}>New Question</Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      )}
+              </CardContent>
+            </Card>
+          </motion.div>
+        )}
 
-      {step === "feedback" && (
-        <div className="space-y-4">
-          <Card>
-            <CardHeader><CardTitle className="font-serif text-lg">Question</CardTitle></CardHeader>
-            <CardContent>
-              <div className="ai-response"><MathsMarkdown>{generatedQ}</MathsMarkdown></div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader><CardTitle className="font-serif text-lg">Your Answer</CardTitle></CardHeader>
-            <CardContent><p className="text-sm whitespace-pre-wrap">{answer}</p></CardContent>
-          </Card>
-          <Card>
-            <CardHeader><CardTitle className="font-serif text-lg text-accent">Feedback</CardTitle></CardHeader>
-            <CardContent>
-              <RevisionRenderer content={feedback} />
-            </CardContent>
-          </Card>
-          <Button onClick={reset} className="gap-2"><Brain className="h-4 w-4" /> Try Another Question</Button>
-        </div>
-      )}
+        {/* Step 2: Answer */}
+        {step === "answer" && (
+          <motion.div key="ans" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.25 }}>
+            <div className="space-y-5">
+              <Card className="border-primary/20">
+                <CardContent className="p-5">
+                  <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">Question</p>
+                  <div className="ai-response text-sm">
+                    <MathsMarkdown>{generatedQ}</MathsMarkdown>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-border/60">
+                <CardContent className="p-5 space-y-4">
+                  <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground block">Your Answer</label>
+                  <Textarea value={answer} onChange={e => setAnswer(e.target.value)} rows={8} placeholder="Type your answer here..." className="resize-none" />
+                  <div className="flex gap-2">
+                    <Button onClick={markAnswer} disabled={isMarking || !answer.trim()} size="lg" className="flex-1 gap-2 rounded-xl h-12 shadow-lg shadow-primary/20">
+                      <Send className="h-4 w-4" /> {isMarking ? "Marking..." : "Submit for Marking"}
+                    </Button>
+                    <Button variant="outline" onClick={generateQuestion} disabled={isGenerating} className="gap-2 rounded-xl h-12">
+                      <RotateCcw className="h-4 w-4" /> New
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Step 3: Feedback */}
+        {step === "feedback" && (
+          <motion.div key="fb" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.25 }}>
+            <div className="space-y-5">
+              {/* Question recap */}
+              <Card className="border-border/60 bg-muted/30">
+                <CardContent className="p-4">
+                  <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">Question</p>
+                  <div className="text-sm text-foreground/80 ai-response"><MathsMarkdown>{generatedQ}</MathsMarkdown></div>
+                </CardContent>
+              </Card>
+
+              {/* Your answer recap */}
+              <Card className="border-border/60 bg-muted/30">
+                <CardContent className="p-4">
+                  <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">Your Answer</p>
+                  <p className="text-sm whitespace-pre-wrap text-foreground/80">{answer}</p>
+                </CardContent>
+              </Card>
+
+              {/* Feedback card */}
+              <Card className="border-primary/20">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <MessageSquare className="h-4 w-4 text-primary" />
+                    </div>
+                    <h2 className="text-lg font-bold text-foreground">Examiner Feedback</h2>
+                  </div>
+                  {feedback ? (
+                    <RevisionRenderer content={feedback} />
+                  ) : (
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <span className="inline-flex gap-1">
+                        <span className="animate-bounce" style={{ animationDelay: "0ms" }}>·</span>
+                        <span className="animate-bounce" style={{ animationDelay: "150ms" }}>·</span>
+                        <span className="animate-bounce" style={{ animationDelay: "300ms" }}>·</span>
+                      </span>
+                      Marking your answer...
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+
+              {!isMarking && feedback && (
+                <Button onClick={reset} className="gap-2 rounded-xl">
+                  <Brain className="h-4 w-4" /> Try Another Question
+                </Button>
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="practice questions" />
     </div>
   );
