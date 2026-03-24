@@ -438,7 +438,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   supply_demand: {
     title: "Supply & Demand Equilibrium",
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
-    legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "Equilibrium", color: COLORS.eq }],
+    legend: [{ label: "Demand", color: "#ef4444" }, { label: "Supply", color: "#3b82f6" }, { label: "Equilibrium", color: COLORS.eq }],
     examTips: [
       "Always label both axes: Price (P) on Y, Quantity (Q) on X",
       "Mark the equilibrium point clearly as E with dashed lines to both axes",
@@ -450,7 +450,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   demand_increase: {
     title: "Increase in Demand",
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
-    legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "Shift →", color: COLORS.shifted }],
+    legend: [{ label: "Demand", color: "#ef4444" }, { label: "Supply", color: "#3b82f6" }, { label: "Shift →", color: COLORS.shifted }],
     examTips: [
       "Show the original D₁ and shifted D₂ clearly",
       "Use an arrow to indicate direction of the shift",
@@ -462,7 +462,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   demand_decrease: {
     title: "Decrease in Demand",
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
-    legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "Shift ←", color: COLORS.shifted }],
+    legend: [{ label: "Demand", color: "#ef4444" }, { label: "Supply", color: "#3b82f6" }, { label: "Shift ←", color: COLORS.shifted }],
     examTips: [
       "D₂ shifts LEFT — closer to origin",
       "Price falls from P₁ to P₂, quantity falls from Q₁ to Q₂",
@@ -473,7 +473,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   supply_increase: {
     title: "Increase in Supply",
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
-    legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "Shift →", color: COLORS.shifted }],
+    legend: [{ label: "Demand", color: "#ef4444" }, { label: "Supply", color: "#3b82f6" }, { label: "Shift →", color: COLORS.shifted }],
     examTips: [
       "Supply shifts RIGHT — more supplied at every price",
       "Price falls, quantity rises — show both changes clearly",
@@ -484,7 +484,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   supply_decrease: {
     title: "Decrease in Supply",
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
-    legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "Shift ←", color: COLORS.shifted }],
+    legend: [{ label: "Demand", color: "#ef4444" }, { label: "Supply", color: "#3b82f6" }, { label: "Shift ←", color: COLORS.shifted }],
     examTips: [
       "Supply shifts LEFT — less supplied at every price",
       "Price rises, quantity falls",
