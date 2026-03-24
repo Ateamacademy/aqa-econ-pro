@@ -1157,25 +1157,25 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <line x1={eqNew.x} y1={eqNew.y} x2={eqNew.x} y2={axBot}
             stroke="currentColor" strokeWidth={1} strokeDasharray="4,3" opacity={0.5} />
 
-          {/* Supply curve */}
-          <GLine {...s} color={COLORS.supply} width={2.5} />
-          <Label x={s.x2 + 3} y={s.y2 + 10} text="S" color={COLORS.supply} size={10} />
+          {/* Supply curve (BLUE) */}
+          <GLine {...s} color="#3b82f6" width={2.5} />
+          <Label x={s.x2 + 3} y={s.y2 + 10} text="S" color="#3b82f6" size={10} />
 
-          {/* D (original demand) */}
-          <GLine {...d} color={COLORS.demand} width={2.5} />
-          <Label x={d.x2 + 3} y={d.y2 - 4} text="D" color={COLORS.demand} size={10} />
+          {/* D (original demand — RED) */}
+          <GLine {...d} color="#ef4444" width={2.5} />
+          <Label x={d.x2 + 3} y={d.y2 - 4} text="D" color="#ef4444" size={10} />
 
-          {/* D₁ (shifted right) */}
-          <GLine {...d1} color={COLORS.demand} width={2.5} />
-          <Label x={d1.x2 + 3} y={d1.y2 - 4} text="D₁" color={COLORS.demand} size={10} />
+          {/* D₁ (shifted right — RED) */}
+          <GLine {...d1} color="#ef4444" width={2.5} />
+          <Label x={d1.x2 + 3} y={d1.y2 - 4} text="D₁" color="#ef4444" size={10} />
 
           {/* Shift arrow between curves */}
           <line x1={arrowX1} y1={arrowY} x2={arrowX2} y2={arrowY}
             stroke={COLORS.eq} strokeWidth={2} markerEnd="url(#arrowHead)" />
 
           {/* Equilibrium dots */}
-          <circle cx={eqOrig.x} cy={eqOrig.y} r={4} fill={COLORS.demand} />
-          <circle cx={eqNew.x} cy={eqNew.y} r={4} fill={COLORS.demand} />
+          <circle cx={eqOrig.x} cy={eqOrig.y} r={4} fill="#ef4444" />
+          <circle cx={eqNew.x} cy={eqNew.y} r={4} fill="#ef4444" />
 
           {/* Axis labels: p, p₁ on Y-axis */}
           <text x={axL - 6} y={eqOrig.y + 4} textAnchor="end" fontSize={10} fontWeight={600} fill="currentColor"
@@ -1249,17 +1249,17 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <line x1={eq2.x} y1={eq2.y} x2={eq2.x} y2={axBot}
             stroke="currentColor" strokeWidth={1.2} strokeDasharray="4,3" opacity={0.5} />
 
-          {/* Demand curve (red) */}
-          <GLine {...d} color={COLORS.supply} width={2.5} />
-          <Label x={d.x2 + 4} y={d.y2 - 4} text="D" color={COLORS.supply} size={10} />
+          {/* Demand curve (RED) */}
+          <GLine {...d} color="#ef4444" width={2.5} />
+          <Label x={d.x2 + 4} y={d.y2 - 4} text="D" color="#ef4444" size={10} />
 
-          {/* S — original supply (red) */}
-          <GLine {...s} color={COLORS.supply} width={2.5} />
-          <Label x={s.x2 + 4} y={s.y2 + 4} text="S" color={COLORS.supply} size={10} />
+          {/* S — original supply (BLUE) */}
+          <GLine {...s} color="#3b82f6" width={2.5} />
+          <Label x={s.x2 + 4} y={s.y2 + 4} text="S" color="#3b82f6" size={10} />
 
-          {/* S₁ — shifted right (blue) */}
-          <GLine {...s1} color={COLORS.demand} width={2.5} />
-          <Label x={s1.x2 + 4} y={s1.y2 + 4} text="S₁" color={COLORS.demand} size={10} />
+          {/* S₁ — shifted right (BLUE) */}
+          <GLine {...s1} color="#3b82f6" width={2.5} />
+          <Label x={s1.x2 + 4} y={s1.y2 + 4} text="S₁" color="#3b82f6" size={10} />
 
           {/* Shift arrow → */}
           <defs>
@@ -1271,8 +1271,8 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             stroke="currentColor" strokeWidth={2} markerEnd="url(#arrowShift)" opacity={0.7} />
 
           {/* Equilibrium dots */}
-          <circle cx={eq1.x} cy={eq1.y} r={4} fill={COLORS.supply} />
-          <circle cx={eq2.x} cy={eq2.y} r={4} fill={COLORS.demand} />
+          <circle cx={eq1.x} cy={eq1.y} r={4} fill="#3b82f6" />
+          <circle cx={eq2.x} cy={eq2.y} r={4} fill="#3b82f6" />
 
           {/* Axis labels: p, p₁ */}
           <text x={axL - 6} y={eq1.y + 4} textAnchor="end" fontSize={10} fontWeight={700} fill="currentColor"
