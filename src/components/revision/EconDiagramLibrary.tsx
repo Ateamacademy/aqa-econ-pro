@@ -1795,11 +1795,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             strokeWidth={0}
           />
 
-          {/* S and D curves */}
-          <line x1={sL.x1} y1={sL.y1} x2={sL.x2} y2={sL.y2} stroke={COLORS.supply} strokeWidth={3} strokeLinecap="round" />
-          <Label x={sL.x2 + 4} y={sL.y2 + 12} text="S" color={COLORS.supply} />
-          <line x1={dL.x1} y1={dL.y1} x2={dL.x2} y2={dL.y2} stroke={COLORS.demand} strokeWidth={3} strokeLinecap="round" />
-          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color={COLORS.demand} />
+          {/* S (BLUE — supply) and D (RED — demand) */}
+          <line x1={sL.x1} y1={sL.y1} x2={sL.x2} y2={sL.y2} stroke="#3b82f6" strokeWidth={3} strokeLinecap="round" />
+          <Label x={sL.x2 + 4} y={sL.y2 + 12} text="S" color="#3b82f6" />
+          <line x1={dL.x1} y1={dL.y1} x2={dL.x2} y2={dL.y2} stroke="#ef4444" strokeWidth={3} strokeLinecap="round" />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color="#ef4444" />
 
           {/* Max price horizontal line — bold black */}
           <line
@@ -1886,13 +1886,13 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           {/* Welfare loss triangle (behind curves) */}
           <WelfareRegion points={welfarePoints} fill="#16a34a" fillOpacity={0.55} label="Welfare Loss" labelSize={7} />
 
-          {/* S curve (blue — upward) */}
-          <GLine {...sL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={sL.x2 + 4} y={sL.y2 - 6} text="S" color={COLORS.supply} />
+          {/* S curve (BLUE — supply, upward) */}
+          <GLine {...sL} color="#3b82f6" gradientId="grad-demand" glow="glow-blue" />
+          <Label x={sL.x2 + 4} y={sL.y2 - 6} text="S" color="#3b82f6" />
 
-          {/* D curve (red — downward) */}
-          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color={COLORS.demand} />
+          {/* D curve (RED — demand, downward) */}
+          <GLine {...dL} color="#ef4444" gradientId="grad-supply" glow="glow-red" />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color="#ef4444" />
 
           {/* Min price line — bold black */}
           <line
