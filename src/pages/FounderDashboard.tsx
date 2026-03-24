@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 /* ── constants ── */
-const ALLOWED_EMAILS = ["haider_78@outlook.com", "admin@econrev.co"];
+const ALLOWED_EMAILS = ["haider_78@outlook.com", "admin@econrev.co", "swapnil.kumar22@alumni.imperial.ac.uk"];
 
 const TIME_FILTERS = [
   { value: "7d", label: "7 D" },
