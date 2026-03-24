@@ -1097,9 +1097,9 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     title: "Supply & Demand — Shift in Demand",
     xAxis: "Quantity", yAxis: "Price",
     legend: [
-      { label: "Supply (S)", color: COLORS.supply },
-      { label: "Demand (D)", color: COLORS.demand },
-      { label: "Shifted Demand (D₁)", color: COLORS.demand },
+      { label: "Supply (S)", color: "#3b82f6" },
+      { label: "Demand (D)", color: "#ef4444" },
+      { label: "Shifted Demand (D₁)", color: "#ef4444" },
     ],
     examTips: [
       "Demand shift right: caused by ↑ incomes (normal good), ↑ advertising, ↑ price of substitute, ↓ price of complement",
@@ -1198,9 +1198,9 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     title: "Supply & Demand — Shift in Supply",
     xAxis: "Quantity", yAxis: "Price",
     legend: [
-      { label: "Demand", color: COLORS.demand },
-      { label: "Supply (S)", color: COLORS.supply },
-      { label: "Shifted (S₁)", color: COLORS.demand },
+      { label: "Demand (D)", color: "#ef4444" },
+      { label: "Supply (S)", color: "#3b82f6" },
+      { label: "Shifted (S₁)", color: "#3b82f6" },
     ],
     examTips: [
       "Right shift: S → S₁ — price falls from p to p₁, quantity rises from q to q₁",
