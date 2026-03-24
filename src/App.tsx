@@ -40,6 +40,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const HelpCentre = lazy(() => import("./pages/HelpCentre"));
 const FounderDashboard = lazy(() => import("./pages/FounderDashboard"));
 const Onboarding = lazy(() => import("./pages/Onboarding"));
+const DiagramTesting = lazy(() => import("./pages/DiagramTesting"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
