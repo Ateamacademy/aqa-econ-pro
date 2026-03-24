@@ -3140,7 +3140,7 @@ const ALIASES: Record<string, string> = {
   "supply_side_improvement": "sras_increase",
   "aggregate_supply_increase": "sras_increase",
   "aggregate_supply_decrease": "sras_decrease",
-  "lras_shift": "sras_decrease",
+  "lras_shift": "lras_shift",
   "deflationary_gap": "sras_decrease",
   "recessionary_gap": "sras_decrease",
   "monetarist": "sras_decrease",
@@ -3379,7 +3379,11 @@ export function resolveDiagramType(raw: string, shiftHint?: string): DiagramType
     [["maximum", "price"], "price_ceiling"],
     [["rent", "control"], "price_ceiling"],
     [["price", "cap"], "price_ceiling"],
-    // Macro
+    // Macro — specific before generic
+    [["supply", "side", "shock"], "sras_decrease"],
+    [["demand", "side", "shock"], "demand_side_shock"],
+    [["economic", "growth", "lras"], "lras_shift"],
+    [["lras", "shift"], "lras_shift"],
     [["cost", "push"], "sras_decrease"],
     [["demand", "pull"], "ad_increase"],
     [["aggregate", "demand", "increase"], "ad_increase"],

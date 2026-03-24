@@ -40,6 +40,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const HelpCentre = lazy(() => import("./pages/HelpCentre"));
 const FounderDashboard = lazy(() => import("./pages/FounderDashboard"));
 const Onboarding = lazy(() => import("./pages/Onboarding"));
+const DiagramTesting = lazy(() => import("./pages/DiagramTesting"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -90,6 +91,7 @@ const App = () => (
               <Route path="/help" element={<HelpCentre />} />
               <Route path="/founder" element={<FounderDashboard />} />
               <Route path="/onboarding" element={<Onboarding />} />
+              <Route path="/diagram-testing" element={<DiagramTesting />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             </Suspense>
