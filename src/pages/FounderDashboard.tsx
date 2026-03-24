@@ -133,12 +133,14 @@ function MetricCard({ title, value, subtitle, icon: Icon, trend, color }: {
               {subtitle && <p className="text-xs text-muted-foreground mt-1">{subtitle}</p>}
               {trend && <p className="text-xs text-emerald-400 mt-1">{trend}</p>}
             </div>
-            <div className="h-10 w-10 rounded-xl flex items-center justify-center shrink-0"
-              style={{ backgroundColor: color ? `${color}20` : undefined }}
-              className={!color ? "bg-primary/10" : undefined}
+            <div
+              className={`h-10 w-10 rounded-xl flex items-center justify-center shrink-0 ${!color ? "bg-primary/10" : ""}`}
+              style={color ? { backgroundColor: `${color}20` } : undefined}
             >
-              <Icon className="h-5 w-5" style={{ color: color || undefined }}
-                className={!color ? "text-primary" : undefined} />
+              <Icon
+                className={`h-5 w-5 ${!color ? "text-primary" : ""}`}
+                style={color ? { color } : undefined}
+              />
             </div>
           </div>
         </CardContent>
