@@ -330,7 +330,7 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
     return <div ref={ref} className="h-[380px]" />;
   }
 
-  const pageLabels = ["Diagram", "Analysis", "Key Points"];
+  const pageLabels = ["Diagram", "Analysis"];
 
   return (
     <div ref={ref} className="my-6 rounded-2xl overflow-hidden border border-border/40 shadow-2xl relative">
@@ -579,37 +579,6 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
           </motion.div>
         )}
 
-        {activePage === 2 && (
-          <motion.div key="keypoints" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 10 }} transition={{ duration: 0.25 }}
-            className="relative px-5 py-6 space-y-4 min-h-[320px]">
-            <h4 className="text-sm font-bold text-foreground flex items-center gap-2">
-              <span className="inline-block w-1 h-5 rounded-full bg-primary/60" />
-              Key Points
-            </h4>
-            <div className="space-y-3">
-              <div className="flex items-start gap-3 p-3 rounded-xl bg-muted/30 border border-border/20">
-                <span className="text-xs font-bold text-primary bg-primary/10 rounded-full h-6 w-6 flex items-center justify-center shrink-0">1</span>
-                <p className="text-sm text-foreground leading-relaxed">
-                  <span className="font-semibold">Axes:</span> {diagram.yAxis} (vertical) vs {diagram.xAxis} (horizontal)
-                </p>
-              </div>
-              <div className="flex items-start gap-3 p-3 rounded-xl bg-muted/30 border border-border/20">
-                <span className="text-xs font-bold text-primary bg-primary/10 rounded-full h-6 w-6 flex items-center justify-center shrink-0">2</span>
-                <p className="text-sm text-foreground leading-relaxed">
-                  <span className="font-semibold">Curves:</span> {diagram.initialCurves || "Demand and Supply curves shown"}
-                </p>
-              </div>
-              {diagram.conclusion && (
-                <div className="flex items-start gap-3 p-3 rounded-xl bg-muted/30 border border-border/20">
-                  <span className="text-xs font-bold text-primary bg-primary/10 rounded-full h-6 w-6 flex items-center justify-center shrink-0">3</span>
-                  <p className="text-sm text-foreground leading-relaxed">
-                    <span className="font-semibold">Conclusion:</span> {diagram.conclusion}
-                  </p>
-                </div>
-              )}
-            </div>
-          </motion.div>
-        )}
       </AnimatePresence>
 
       {/* Page indicator labels */}
