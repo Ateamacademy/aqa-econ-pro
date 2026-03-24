@@ -395,26 +395,26 @@ const supplyDemandBase = (p: DrawParams, shiftCurve?: "demand" | "supply", shift
 
   return (
     <>
-      {/* Demand */}
-      <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-      <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D₁" color={COLORS.demand} />
+      {/* Demand (RED) */}
+      <GLine {...dL} color="#ef4444" gradientId="grad-supply" glow="glow-red" />
+      <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D₁" color="#ef4444" />
 
       {shiftCurve === "demand" && (
         <>
-          <GLine {...dShifted} color={COLORS.demand} gradientId="grad-demand" dashed />
-          <Label x={dShifted.x2 + 4} y={dShifted.y2 - 6} text="D₂" color={COLORS.demand} />
+          <GLine {...dShifted} color="#ef4444" gradientId="grad-supply" dashed />
+          <Label x={dShifted.x2 + 4} y={dShifted.y2 - 6} text="D₂" color="#ef4444" />
           <ShiftArrow x1={eq1.x} y1={eq1.y} x2={eq2.x} y2={eq2.y} color={COLORS.shifted} />
         </>
       )}
 
-      {/* Supply */}
-      <GLine {...sL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-      <Label x={sL.x2 + 4} y={sL.y2 + 4} text="S₁" color={COLORS.supply} />
+      {/* Supply (BLUE) */}
+      <GLine {...sL} color="#3b82f6" gradientId="grad-demand" glow="glow-blue" />
+      <Label x={sL.x2 + 4} y={sL.y2 + 4} text="S₁" color="#3b82f6" />
 
       {shiftCurve === "supply" && (
         <>
-          <GLine {...sShifted} color={COLORS.supply} gradientId="grad-supply" dashed />
-          <Label x={sShifted.x2 + 4} y={sShifted.y2 + 4} text="S₂" color={COLORS.supply} />
+          <GLine {...sShifted} color="#3b82f6" gradientId="grad-demand" dashed />
+          <Label x={sShifted.x2 + 4} y={sShifted.y2 + 4} text="S₂" color="#3b82f6" />
           <ShiftArrow x1={eq1.x} y1={eq1.y} x2={eq2.x} y2={eq2.y} color={COLORS.shifted} />
         </>
       )}
@@ -438,7 +438,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   supply_demand: {
     title: "Supply & Demand Equilibrium",
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
-    legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "Equilibrium", color: COLORS.eq }],
+    legend: [{ label: "Demand", color: "#ef4444" }, { label: "Supply", color: "#3b82f6" }, { label: "Equilibrium", color: COLORS.eq }],
     examTips: [
       "Always label both axes: Price (P) on Y, Quantity (Q) on X",
       "Mark the equilibrium point clearly as E with dashed lines to both axes",
@@ -450,7 +450,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   demand_increase: {
     title: "Increase in Demand",
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
-    legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "Shift →", color: COLORS.shifted }],
+    legend: [{ label: "Demand", color: "#ef4444" }, { label: "Supply", color: "#3b82f6" }, { label: "Shift →", color: COLORS.shifted }],
     examTips: [
       "Show the original D₁ and shifted D₂ clearly",
       "Use an arrow to indicate direction of the shift",
@@ -462,7 +462,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   demand_decrease: {
     title: "Decrease in Demand",
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
-    legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "Shift ←", color: COLORS.shifted }],
+    legend: [{ label: "Demand", color: "#ef4444" }, { label: "Supply", color: "#3b82f6" }, { label: "Shift ←", color: COLORS.shifted }],
     examTips: [
       "D₂ shifts LEFT — closer to origin",
       "Price falls from P₁ to P₂, quantity falls from Q₁ to Q₂",
@@ -473,7 +473,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   supply_increase: {
     title: "Increase in Supply",
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
-    legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "Shift →", color: COLORS.shifted }],
+    legend: [{ label: "Demand", color: "#ef4444" }, { label: "Supply", color: "#3b82f6" }, { label: "Shift →", color: COLORS.shifted }],
     examTips: [
       "Supply shifts RIGHT — more supplied at every price",
       "Price falls, quantity rises — show both changes clearly",
@@ -484,7 +484,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   supply_decrease: {
     title: "Decrease in Supply",
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
-    legend: [{ label: "Demand", color: COLORS.demand }, { label: "Supply", color: COLORS.supply }, { label: "Shift ←", color: COLORS.shifted }],
+    legend: [{ label: "Demand", color: "#ef4444" }, { label: "Supply", color: "#3b82f6" }, { label: "Shift ←", color: COLORS.shifted }],
     examTips: [
       "Supply shifts LEFT — less supplied at every price",
       "Price rises, quantity falls",
@@ -1097,9 +1097,9 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     title: "Supply & Demand — Shift in Demand",
     xAxis: "Quantity", yAxis: "Price",
     legend: [
-      { label: "Supply (S)", color: COLORS.supply },
-      { label: "Demand (D)", color: COLORS.demand },
-      { label: "Shifted Demand (D₁)", color: COLORS.demand },
+      { label: "Supply (S)", color: "#3b82f6" },
+      { label: "Demand (D)", color: "#ef4444" },
+      { label: "Shifted Demand (D₁)", color: "#ef4444" },
     ],
     examTips: [
       "Demand shift right: caused by ↑ incomes (normal good), ↑ advertising, ↑ price of substitute, ↓ price of complement",
@@ -1157,25 +1157,25 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <line x1={eqNew.x} y1={eqNew.y} x2={eqNew.x} y2={axBot}
             stroke="currentColor" strokeWidth={1} strokeDasharray="4,3" opacity={0.5} />
 
-          {/* Supply curve */}
-          <GLine {...s} color={COLORS.supply} width={2.5} />
-          <Label x={s.x2 + 3} y={s.y2 + 10} text="S" color={COLORS.supply} size={10} />
+          {/* Supply curve (BLUE) */}
+          <GLine {...s} color="#3b82f6" width={2.5} />
+          <Label x={s.x2 + 3} y={s.y2 + 10} text="S" color="#3b82f6" size={10} />
 
-          {/* D (original demand) */}
-          <GLine {...d} color={COLORS.demand} width={2.5} />
-          <Label x={d.x2 + 3} y={d.y2 - 4} text="D" color={COLORS.demand} size={10} />
+          {/* D (original demand — RED) */}
+          <GLine {...d} color="#ef4444" width={2.5} />
+          <Label x={d.x2 + 3} y={d.y2 - 4} text="D" color="#ef4444" size={10} />
 
-          {/* D₁ (shifted right) */}
-          <GLine {...d1} color={COLORS.demand} width={2.5} />
-          <Label x={d1.x2 + 3} y={d1.y2 - 4} text="D₁" color={COLORS.demand} size={10} />
+          {/* D₁ (shifted right — RED) */}
+          <GLine {...d1} color="#ef4444" width={2.5} />
+          <Label x={d1.x2 + 3} y={d1.y2 - 4} text="D₁" color="#ef4444" size={10} />
 
           {/* Shift arrow between curves */}
           <line x1={arrowX1} y1={arrowY} x2={arrowX2} y2={arrowY}
             stroke={COLORS.eq} strokeWidth={2} markerEnd="url(#arrowHead)" />
 
           {/* Equilibrium dots */}
-          <circle cx={eqOrig.x} cy={eqOrig.y} r={4} fill={COLORS.demand} />
-          <circle cx={eqNew.x} cy={eqNew.y} r={4} fill={COLORS.demand} />
+          <circle cx={eqOrig.x} cy={eqOrig.y} r={4} fill="#ef4444" />
+          <circle cx={eqNew.x} cy={eqNew.y} r={4} fill="#ef4444" />
 
           {/* Axis labels: p, p₁ on Y-axis */}
           <text x={axL - 6} y={eqOrig.y + 4} textAnchor="end" fontSize={10} fontWeight={600} fill="currentColor"
@@ -1198,9 +1198,9 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     title: "Supply & Demand — Shift in Supply",
     xAxis: "Quantity", yAxis: "Price",
     legend: [
-      { label: "Demand", color: COLORS.demand },
-      { label: "Supply (S)", color: COLORS.supply },
-      { label: "Shifted (S₁)", color: COLORS.demand },
+      { label: "Demand (D)", color: "#ef4444" },
+      { label: "Supply (S)", color: "#3b82f6" },
+      { label: "Shifted (S₁)", color: "#3b82f6" },
     ],
     examTips: [
       "Right shift: S → S₁ — price falls from p to p₁, quantity rises from q to q₁",
@@ -1249,17 +1249,17 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <line x1={eq2.x} y1={eq2.y} x2={eq2.x} y2={axBot}
             stroke="currentColor" strokeWidth={1.2} strokeDasharray="4,3" opacity={0.5} />
 
-          {/* Demand curve (red) */}
-          <GLine {...d} color={COLORS.supply} width={2.5} />
-          <Label x={d.x2 + 4} y={d.y2 - 4} text="D" color={COLORS.supply} size={10} />
+          {/* Demand curve (RED) */}
+          <GLine {...d} color="#ef4444" width={2.5} />
+          <Label x={d.x2 + 4} y={d.y2 - 4} text="D" color="#ef4444" size={10} />
 
-          {/* S — original supply (red) */}
-          <GLine {...s} color={COLORS.supply} width={2.5} />
-          <Label x={s.x2 + 4} y={s.y2 + 4} text="S" color={COLORS.supply} size={10} />
+          {/* S — original supply (BLUE) */}
+          <GLine {...s} color="#3b82f6" width={2.5} />
+          <Label x={s.x2 + 4} y={s.y2 + 4} text="S" color="#3b82f6" size={10} />
 
-          {/* S₁ — shifted right (blue) */}
-          <GLine {...s1} color={COLORS.demand} width={2.5} />
-          <Label x={s1.x2 + 4} y={s1.y2 + 4} text="S₁" color={COLORS.demand} size={10} />
+          {/* S₁ — shifted right (BLUE) */}
+          <GLine {...s1} color="#3b82f6" width={2.5} />
+          <Label x={s1.x2 + 4} y={s1.y2 + 4} text="S₁" color="#3b82f6" size={10} />
 
           {/* Shift arrow → */}
           <defs>
@@ -1271,8 +1271,8 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             stroke="currentColor" strokeWidth={2} markerEnd="url(#arrowShift)" opacity={0.7} />
 
           {/* Equilibrium dots */}
-          <circle cx={eq1.x} cy={eq1.y} r={4} fill={COLORS.supply} />
-          <circle cx={eq2.x} cy={eq2.y} r={4} fill={COLORS.demand} />
+          <circle cx={eq1.x} cy={eq1.y} r={4} fill="#3b82f6" />
+          <circle cx={eq2.x} cy={eq2.y} r={4} fill="#3b82f6" />
 
           {/* Axis labels: p, p₁ */}
           <text x={axL - 6} y={eq1.y + 4} textAnchor="end" fontSize={10} fontWeight={700} fill="currentColor"

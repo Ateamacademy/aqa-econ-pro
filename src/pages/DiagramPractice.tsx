@@ -313,6 +313,8 @@ Give specific, actionable steps to improve. Include:
 
 Then provide a model written explanation that would score full marks.
 
+IMPORTANT: Do NOT include any "Key Point" or "Exam Tip" blocks in your response. Do NOT use "📝 Key Point:" or "💡 Exam Tip:" callouts. Keep your feedback structured using ONLY the section headers above.
+
 Speak directly to the student using "you" and "your". Be encouraging but honest.` }],
       mode: "grade",
       subject,
@@ -624,9 +626,17 @@ function DiagramFeedbackView({
   const sections = useMemo(() => parseFeedbackSections(feedback), [feedback]);
   const expectedDiagramType = inferDiagramType(topic, generatedQ, diagramDesc, explanation);
 
+  // Strip Key Point and Exam Tip callouts from diagram feedback
+  const stripAnnotations = (t: string) =>
+    t.replace(/^>\s*📝\s*\*?\*?Key\s*Point\*?\*?:?.*(?:\n>\s*.*)*/gim, "")
+     .replace(/^>\s*💡\s*\*?\*?Exam\s*Tip\*?\*?:?.*(?:\n>\s*.*)*/gim, "")
+     .replace(/^\*\*Key\s*Point:?\*\*:?.*$/gim, "")
+     .replace(/^\*\*Exam\s*Tip:?\*\*:?.*$/gim, "")
+     .trim();
+
   const renderContent = (text: string) => (
     <div className="prose prose-sm max-w-none dark:prose-invert">
-      {extractDiagramBlocks(text, {
+      {extractDiagramBlocks(stripAnnotations(text), {
         contextText: `${topic}\n${generatedQ}`,
         fallbackType: expectedDiagramType,
       }).map((seg, i) =>
