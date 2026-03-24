@@ -628,10 +628,15 @@ function DiagramFeedbackView({
 
   // Strip Key Point and Exam Tip callouts from diagram feedback
   const stripAnnotations = (t: string) =>
-    t.replace(/^>\s*📝\s*\*?\*?Key\s*Point\*?\*?:?.*(?:\n>\s*.*)*/gim, "")
-     .replace(/^>\s*💡\s*\*?\*?Exam\s*Tip\*?\*?:?.*(?:\n>\s*.*)*/gim, "")
-     .replace(/^\*\*Key\s*Point:?\*\*:?.*$/gim, "")
-     .replace(/^\*\*Exam\s*Tip:?\*\*:?.*$/gim, "")
+    t.replace(/^>?\s*📝\s*\*?\*?Key\s*Point\*?\*?:?.*(?:\n(?:>\s*.*|(?![\n#\*]).*\S.*)?)*/gim, "")
+     .replace(/^>?\s*💡\s*\*?\*?Exam\s*Tip\*?\*?:?.*(?:\n(?:>\s*.*|(?![\n#\*]).*\S.*)?)*/gim, "")
+     .replace(/^\*?\*?Key\s*Point:?\*?\*?:?.*$/gim, "")
+     .replace(/^\*?\*?Exam\s*Tip:?\*?\*?:?.*$/gim, "")
+     .replace(/^#{2,4}\s*Key\s*Point.*(?:\n(?!#{2,4}\s).*\S.*)*/gim, "")
+     .replace(/^#{2,4}\s*Exam\s*Tip.*(?:\n(?!#{2,4}\s).*\S.*)*/gim, "")
+     .replace(/📝\s*\*?\*?Key\s*Point\*?\*?:?[^\n]*/gi, "")
+     .replace(/💡\s*\*?\*?Exam\s*Tip\*?\*?:?[^\n]*/gi, "")
+     .replace(/\n{3,}/g, "\n\n")
      .trim();
 
   const renderContent = (text: string) => (

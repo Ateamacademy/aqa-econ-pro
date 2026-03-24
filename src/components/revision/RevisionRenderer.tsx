@@ -223,17 +223,9 @@ export function RevisionRenderer({ content, className }: RevisionRendererProps) 
                 </ExampleBox>
               );
             case "exam_tip":
-              return (
-                <ExamTipBox key={i}>
-                  <MathsMarkdown>{block.content}</MathsMarkdown>
-                </ExamTipBox>
-              );
             case "key_point":
-              return (
-                <DefinitionBox key={i} term="Key Point">
-                  <MathsMarkdown>{block.content}</MathsMarkdown>
-                </DefinitionBox>
-              );
+              // Stripped: do not render Key Point or Exam Tip blocks
+              return null;
             case "formula":
               return (
                 <FormulaBox key={i}>
