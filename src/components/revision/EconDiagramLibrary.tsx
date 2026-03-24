@@ -3379,7 +3379,11 @@ export function resolveDiagramType(raw: string, shiftHint?: string): DiagramType
     [["maximum", "price"], "price_ceiling"],
     [["rent", "control"], "price_ceiling"],
     [["price", "cap"], "price_ceiling"],
-    // Macro
+    // Macro — specific before generic
+    [["supply", "side", "shock"], "sras_decrease"],
+    [["demand", "side", "shock"], "demand_side_shock"],
+    [["economic", "growth", "lras"], "lras_shift"],
+    [["lras", "shift"], "lras_shift"],
     [["cost", "push"], "sras_decrease"],
     [["demand", "pull"], "ad_increase"],
     [["aggregate", "demand", "increase"], "ad_increase"],
