@@ -270,16 +270,10 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
 
   // If we have a predefined template, use it — it has proper welfare loss/gain
   // triangles, colored boundaries, correct curve labels (MSC, MPC, MSB, MPB), etc.
-  if (resolvedType) {
+    if (resolvedType) {
     return (
       <div className="my-6">
         <EconDiagramTemplate type={resolvedType} />
-        {diagram.conclusion && (
-          <div className="mx-1 -mt-2 mb-4 px-4 py-2.5 rounded-xl bg-primary/5 border border-primary/15">
-            <p className="text-xs font-semibold text-primary mb-1">Key Conclusion</p>
-            <p className="text-sm text-foreground/80">{diagram.conclusion}</p>
-          </div>
-        )}
       </div>
     );
   }

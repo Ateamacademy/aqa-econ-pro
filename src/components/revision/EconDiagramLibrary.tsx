@@ -497,7 +497,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   positive_externality: {
     title: "Positive Externality of Consumption",
     xAxis: "Quantity", yAxis: "Benefit /\ncost / price",
-    legend: [{ label: "MSC = MPC", color: COLORS.msc }, { label: "MSB", color: COLORS.demand }, { label: "MPB", color: COLORS.msc }, { label: "Welfare Loss ABE", color: "#ef4444" }],
+    legend: [{ label: "MSC = MPC", color: "#3b82f6" }, { label: "MSB", color: "#ef4444" }, { label: "MPB", color: "#ef4444" }, { label: "Welfare Loss ABE", color: "#ef4444" }],
     examTips: [
       "MSC = MPC — no external costs in production",
       "MSB is above MPB — consumption generates external benefits to third parties",
@@ -513,11 +513,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       const axBot = my + ph - pad;
       const axTop = my + pad;
 
-      // MSC = MPC: upward sloping (blue)
+      // MSC = MPC: upward sloping (BLUE — cost/supply side)
       const mscL = { x1: axL + pw * 0.08, y1: axBot, x2: mx + pw - pad, y2: axTop };
-      // MSB: downward sloping (red) — above MPB, true social benefit
+      // MSB: downward sloping (RED) — above MPB, true social benefit
       const msbL = { x1: axL, y1: axTop + 5, x2: mx + pw * 0.75, y2: axBot };
-      // MPB: downward sloping (blue) — what consumers perceive, below MSB
+      // MPB: downward sloping (RED) — what consumers perceive, below MSB
       const mpbL = { x1: axL + pw * 0.05, y1: my + ph * 0.45, x2: mx + pw * 0.58, y2: axBot };
 
       // E = free market: MPB ∩ MSC
@@ -541,13 +541,15 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             fillOpacity={0.18}
             strokeWidth={0}
           />
-          {/* Curves */}
-          <GLine {...mscL} color={COLORS.msc} gradientId="grad-supply" glow="glow-red" width={2.5} />
-          <Label x={mscL.x2 - 4} y={mscL.y2 - 8} text="MSC = MPC" color={COLORS.msc} size={8} />
-          <GLine {...msbL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" width={2.5} />
-          <Label x={msbL.x2 + 4} y={msbL.y2 - 8} text="MSB" color={COLORS.demand} />
-          <GLine {...mpbL} color={COLORS.msc} width={2.5} />
-          <Label x={mpbL.x2 + 4} y={mpbL.y2 - 6} text="MPB" color={COLORS.msc} />
+          {/* MSC = MPC (BLUE — cost curve) */}
+          <GLine {...mscL} color="#3b82f6" gradientId="grad-demand" glow="glow-blue" width={2.5} />
+          <Label x={mscL.x2 - 4} y={mscL.y2 - 8} text="MSC = MPC" color="#3b82f6" size={8} />
+          {/* MSB (RED — benefit curve, above MPB) */}
+          <GLine {...msbL} color="#ef4444" gradientId="grad-supply" glow="glow-red" width={2.5} />
+          <Label x={msbL.x2 + 4} y={msbL.y2 - 8} text="MSB" color="#ef4444" />
+          {/* MPB (RED — benefit curve, below MSB) */}
+          <GLine {...mpbL} color="#ef4444" width={2.5} />
+          <Label x={mpbL.x2 + 4} y={mpbL.y2 - 6} text="MPB" color="#ef4444" />
           {/* Dashed projections for E (q, p) */}
           <line x1={ptE.x} y1={ptE.y} x2={mx} y2={ptE.y} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
           <line x1={ptE.x} y1={ptE.y} x2={ptE.x} y2={axBot} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
@@ -569,7 +571,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   negative_externality: {
     title: "Negative Externality of Consumption",
     xAxis: "Quantity", yAxis: "Benefit /\ncost / price",
-    legend: [{ label: "MSC = MPC", color: COLORS.msc }, { label: "MPB", color: COLORS.demand }, { label: "MSB", color: "#ef4444" }, { label: "Welfare Loss ABE", color: "#ef4444" }],
+    legend: [{ label: "MSC = MPC", color: "#3b82f6" }, { label: "MPB", color: "#ef4444" }, { label: "MSB", color: "#ef4444" }, { label: "Welfare Loss ABE", color: "#ef4444" }],
     examTips: [
       "MSC = MPC — no external costs in production",
       "MSB is below MPB — consumers ignore harm to third parties (e.g. demerit goods)",
@@ -585,11 +587,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       const axBot = my + ph - pad;
       const axTop = my + pad;
 
-      // MSC = MPC: upward sloping (blue)
+      // MSC = MPC: upward sloping (BLUE — cost/supply side)
       const mscL = { x1: axL + pw * 0.08, y1: axBot, x2: mx + pw - pad, y2: axTop };
-      // MPB: downward sloping (red) — what consumers perceive
+      // MPB: downward sloping (RED) — what consumers perceive (above MSB)
       const mpbL = { x1: axL, y1: axTop + 5, x2: mx + pw * 0.75, y2: axBot };
-      // MSB: downward sloping, below MPB (red) — true social benefit
+      // MSB: downward sloping, below MPB (RED) — true social benefit
       const msbL = { x1: axL + pw * 0.05, y1: my + ph * 0.45, x2: mx + pw * 0.58, y2: axBot };
 
       // B = free market: MPB ∩ MSC
@@ -613,11 +615,13 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             fillOpacity={0.18}
             strokeWidth={0}
           />
-          {/* Curves */}
-          <GLine {...mscL} color={COLORS.msc} gradientId="grad-supply" glow="glow-red" width={2.5} />
-          <Label x={mscL.x2 - 4} y={mscL.y2 - 8} text="MSC = MPC" color={COLORS.msc} size={8} />
-          <GLine {...mpbL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" width={2.5} />
-          <Label x={mpbL.x2 + 4} y={mpbL.y2 - 8} text="MPB" color={COLORS.demand} />
+          {/* MSC = MPC (BLUE — cost curve) */}
+          <GLine {...mscL} color="#3b82f6" gradientId="grad-demand" glow="glow-blue" width={2.5} />
+          <Label x={mscL.x2 - 4} y={mscL.y2 - 8} text="MSC = MPC" color="#3b82f6" size={8} />
+          {/* MPB (RED — benefit curve, above MSB) */}
+          <GLine {...mpbL} color="#ef4444" gradientId="grad-supply" glow="glow-red" width={2.5} />
+          <Label x={mpbL.x2 + 4} y={mpbL.y2 - 8} text="MPB" color="#ef4444" />
+          {/* MSB (RED — benefit curve, below MPB) */}
           <GLine {...msbL} color="#ef4444" width={2.5} />
           <Label x={msbL.x2 + 4} y={msbL.y2 - 6} text="MSB" color="#ef4444" />
           {/* Dashed projections for B (q, p) */}
@@ -641,7 +645,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   negative_production_externality: {
     title: "Negative Externality of Production",
     xAxis: "Quantity", yAxis: "Benefit /\ncost / price",
-    legend: [{ label: "MSC", color: COLORS.msc }, { label: "MPC", color: COLORS.demand }, { label: "MPB = MSB", color: COLORS.demand }, { label: "Welfare Loss ABE", color: "#ef4444" }],
+    legend: [{ label: "MSC", color: "#3b82f6" }, { label: "MPC", color: "#ef4444" }, { label: "MPB = MSB", color: "#ef4444" }, { label: "Welfare Loss ABE", color: "#ef4444" }],
     examTips: [
       "MSC is above MPC — producers ignore external costs (e.g. pollution)",
       "Free market produces where MPB = MPC: point E at (q, p)",
@@ -656,11 +660,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       const axBot = my + ph - pad;
       const axTop = my + pad;
 
-      // MPC: upward sloping (red) — private cost, lower
+      // MPC: upward sloping (RED) — private cost, lower
       const mpcL = { x1: axL + pw * 0.05, y1: axBot, x2: mx + pw * 0.7, y2: axTop + ph * 0.1 };
-      // MSC: upward sloping, above MPC (blue) — social cost higher, steeper
+      // MSC: upward sloping, above MPC (BLUE) — social cost higher, steeper
       const mscL = { x1: axL + pw * 0.2, y1: axBot, x2: mx + pw * 0.55, y2: axTop };
-      // MPB = MSB: downward sloping (red)
+      // MPB = MSB: downward sloping (RED)
       const dL = { x1: axL, y1: axTop + 5, x2: mx + pw - pad, y2: axBot };
 
       // E = free market: MPC ∩ MPB
@@ -684,13 +688,15 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             fillOpacity={0.18}
             strokeWidth={0}
           />
-          {/* Curves */}
-          <GLine {...mscL} color={COLORS.msc} gradientId="grad-supply" glow="glow-red" width={2.5} />
-          <Label x={mscL.x2 - 4} y={mscL.y2 - 8} text="MSC" color={COLORS.msc} size={9} />
-          <GLine {...mpcL} color={COLORS.demand} width={2.5} />
-          <Label x={mpcL.x2 + 4} y={mpcL.y2 - 4} text="MPC" color={COLORS.demand} />
-          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" width={2.5} />
-          <Label x={dL.x2 + 4} y={dL.y2 - 8} text="MPB = MSB" color={COLORS.demand} />
+          {/* MSC (BLUE — social cost, above MPC) */}
+          <GLine {...mscL} color="#3b82f6" gradientId="grad-demand" glow="glow-blue" width={2.5} />
+          <Label x={mscL.x2 - 4} y={mscL.y2 - 8} text="MSC" color="#3b82f6" size={9} />
+          {/* MPC (RED — private cost, lower) */}
+          <GLine {...mpcL} color="#ef4444" width={2.5} />
+          <Label x={mpcL.x2 + 4} y={mpcL.y2 - 4} text="MPC" color="#ef4444" />
+          {/* MPB = MSB (RED — benefit/demand) */}
+          <GLine {...dL} color="#ef4444" gradientId="grad-supply" glow="glow-red" width={2.5} />
+          <Label x={dL.x2 + 4} y={dL.y2 - 8} text="MPB = MSB" color="#ef4444" />
           {/* Dashed projections for E (q, p) */}
           <line x1={ptE.x} y1={ptE.y} x2={mx} y2={ptE.y} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
           <line x1={ptE.x} y1={ptE.y} x2={ptE.x} y2={axBot} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
@@ -712,7 +718,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   positive_production_externality: {
     title: "Positive Externality of Production",
     xAxis: "Quantity", yAxis: "Benefit /\ncost / price",
-    legend: [{ label: "MPC", color: COLORS.demand }, { label: "MSC", color: COLORS.msc }, { label: "MPB = MSB", color: COLORS.demand }, { label: "Welfare Loss ABE", color: "#ef4444" }],
+    legend: [{ label: "MPC", color: "#ef4444" }, { label: "MSC", color: "#3b82f6" }, { label: "MPB = MSB", color: "#ef4444" }, { label: "Welfare Loss ABE", color: "#ef4444" }],
     examTips: [
       "MSC is below MPC — production generates external benefits (e.g. job training)",
       "Free market outcome where MPB = MPC: point B at (q, p)",
@@ -727,11 +733,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       const axBot = my + ph - pad;
       const axTop = my + pad;
 
-      // MPC: upward sloping (red), steeper/higher — private cost
+      // MPC: upward sloping (RED), steeper/higher — private cost
       const mpcL = { x1: axL + pw * 0.2, y1: axBot, x2: mx + pw * 0.55, y2: axTop };
-      // MSC: upward sloping (blue), lower — social cost is lower due to external benefits
+      // MSC: upward sloping (BLUE), lower — social cost is lower due to external benefits
       const mscL = { x1: axL + pw * 0.05, y1: axBot, x2: mx + pw * 0.7, y2: axTop + ph * 0.1 };
-      // MPB = MSB: downward sloping (red)
+      // MPB = MSB: downward sloping (RED)
       const dL = { x1: axL, y1: axTop + 5, x2: mx + pw - pad, y2: axBot };
 
       // B = free market: MPC ∩ MPB
@@ -755,13 +761,15 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             fillOpacity={0.18}
             strokeWidth={0}
           />
-          {/* Curves */}
-          <GLine {...mpcL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" width={2.5} />
-          <Label x={mpcL.x2 - 4} y={mpcL.y2 - 8} text="MPC" color={COLORS.demand} size={9} />
-          <GLine {...mscL} color={COLORS.msc} gradientId="grad-supply" glow="glow-red" width={2.5} />
-          <Label x={mscL.x2 + 4} y={mscL.y2 - 4} text="MSC" color={COLORS.msc} size={9} />
-          <GLine {...dL} color={COLORS.demand} width={2.5} />
-          <Label x={dL.x2 + 4} y={dL.y2 - 8} text="MPB = MSB" color={COLORS.demand} />
+          {/* MPC (RED — private cost, steeper/higher) */}
+          <GLine {...mpcL} color="#ef4444" gradientId="grad-supply" glow="glow-red" width={2.5} />
+          <Label x={mpcL.x2 - 4} y={mpcL.y2 - 8} text="MPC" color="#ef4444" size={9} />
+          {/* MSC (BLUE — social cost, lower) */}
+          <GLine {...mscL} color="#3b82f6" gradientId="grad-demand" glow="glow-blue" width={2.5} />
+          <Label x={mscL.x2 + 4} y={mscL.y2 - 4} text="MSC" color="#3b82f6" size={9} />
+          {/* MPB = MSB (RED — benefit/demand) */}
+          <GLine {...dL} color="#ef4444" width={2.5} />
+          <Label x={dL.x2 + 4} y={dL.y2 - 8} text="MPB = MSB" color="#ef4444" />
           {/* Dashed projections for B (q, p) */}
           <line x1={ptB.x} y1={ptB.y} x2={mx} y2={ptB.y} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
           <line x1={ptB.x} y1={ptB.y} x2={ptB.x} y2={axBot} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
@@ -1787,11 +1795,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             strokeWidth={0}
           />
 
-          {/* S and D curves */}
-          <line x1={sL.x1} y1={sL.y1} x2={sL.x2} y2={sL.y2} stroke={COLORS.supply} strokeWidth={3} strokeLinecap="round" />
-          <Label x={sL.x2 + 4} y={sL.y2 + 12} text="S" color={COLORS.supply} />
-          <line x1={dL.x1} y1={dL.y1} x2={dL.x2} y2={dL.y2} stroke={COLORS.demand} strokeWidth={3} strokeLinecap="round" />
-          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color={COLORS.demand} />
+          {/* S (BLUE — supply) and D (RED — demand) */}
+          <line x1={sL.x1} y1={sL.y1} x2={sL.x2} y2={sL.y2} stroke="#3b82f6" strokeWidth={3} strokeLinecap="round" />
+          <Label x={sL.x2 + 4} y={sL.y2 + 12} text="S" color="#3b82f6" />
+          <line x1={dL.x1} y1={dL.y1} x2={dL.x2} y2={dL.y2} stroke="#ef4444" strokeWidth={3} strokeLinecap="round" />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color="#ef4444" />
 
           {/* Max price horizontal line — bold black */}
           <line
@@ -1878,13 +1886,13 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           {/* Welfare loss triangle (behind curves) */}
           <WelfareRegion points={welfarePoints} fill="#16a34a" fillOpacity={0.55} label="Welfare Loss" labelSize={7} />
 
-          {/* S curve (blue — upward) */}
-          <GLine {...sL} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={sL.x2 + 4} y={sL.y2 - 6} text="S" color={COLORS.supply} />
+          {/* S curve (BLUE — supply, upward) */}
+          <GLine {...sL} color="#3b82f6" gradientId="grad-demand" glow="glow-blue" />
+          <Label x={sL.x2 + 4} y={sL.y2 - 6} text="S" color="#3b82f6" />
 
-          {/* D curve (red — downward) */}
-          <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color={COLORS.demand} />
+          {/* D curve (RED — demand, downward) */}
+          <GLine {...dL} color="#ef4444" gradientId="grad-supply" glow="glow-red" />
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color="#ef4444" />
 
           {/* Min price line — bold black */}
           <line
@@ -3564,7 +3572,7 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
           ))}
         </div>
       )}
-      <ExamTipsPanel tips={config.examTips} visible={hovered} />
+      {/* Exam tips removed per user request */}
     </div>
   );
 }
