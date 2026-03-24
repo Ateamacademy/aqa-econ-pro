@@ -79,7 +79,7 @@ const AQA_ALEVEL_SPECS: TopicTestSpec[] = [
     allowedFigures: ["negative_externality", "negative_production_externality"],
     testInputs: [
       { input: "Negative Externality (Overconsumption / Overproduction)", expectedFigure: "negative_externality" },
-      { input: "negative externality", expectedFigure: "negative_production_externality" },
+      { input: "negative externality", expectedFigure: "negative_externality" },
       { input: "overconsumption", expectedFigure: "negative_externality" },
       { input: "overproduction", expectedFigure: "negative_production_externality" },
       { input: "demerit good", expectedFigure: "negative_externality" },
