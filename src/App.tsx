@@ -41,6 +41,7 @@ const HelpCentre = lazy(() => import("./pages/HelpCentre"));
 const FounderDashboard = lazy(() => import("./pages/FounderDashboard"));
 const Onboarding = lazy(() => import("./pages/Onboarding"));
 const DiagramTesting = lazy(() => import("./pages/DiagramTesting"));
+const PaperLibrary = lazy(() => import("./pages/PaperLibrary"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -92,6 +93,7 @@ const App = () => (
               <Route path="/founder" element={<FounderDashboard />} />
               <Route path="/onboarding" element={<Onboarding />} />
               <Route path="/diagram-testing" element={<DiagramTesting />} />
+              <Route path="/paper-library" element={<PaperLibrary />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             </Suspense>
