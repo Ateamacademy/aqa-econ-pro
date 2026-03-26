@@ -123,9 +123,15 @@ export default function PaperLibrary() {
     limited: paperLibrary.filter((p) => p.difficulty === "limited-edition").length,
   }), []);
 
-  const handleOpenPaper = (paper: LibraryPaper) => {
-    setSubject(paper.subject);
-    navigate("/predicted");
+  const handleOpenPaper = (p: LibraryPaper) => {
+    setSubject(p.subject);
+    const params = new URLSearchParams({
+      paper: p.paper,
+      difficulty: p.difficulty,
+      set: String(p.set),
+      fromLibrary: "1",
+    });
+    navigate(`/predicted?${params.toString()}`);
   };
 
   return (

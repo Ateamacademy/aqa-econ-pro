@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { streamChat } from "@/lib/streamChat";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -1167,10 +1167,49 @@ FIGURE/CHART/GRAPH FORMAT (CRITICAL — DO NOT USE ASCII ART):
 FIRST PRINCIPLES: Generate questions from first principles of chemistry, not by copying. Each question should test genuine understanding. Create novel scenarios that mirror real exam difficulty and style.`;
 };
 
+/* ── Difficulty modifiers injected into AI prompt ── */
+const DIFFICULTY_PROMPT_MODIFIERS: Record<string, string> = {
+  moderate: `
+DIFFICULTY LEVEL: MODERATE
+- Exam-realistic difficulty matching the average real paper.
+- Questions should be accessible with clear command words.
+- Data response extracts should use straightforward data.
+- Essay/evaluation questions should expect standard-depth analysis.
+- Great for confidence-building and consolidating core knowledge.`,
+  hard: `
+DIFFICULTY LEVEL: HARD
+- Application-heavy questions requiring deeper analysis and evaluation.
+- Data extracts should include more complex, multi-variable data requiring interpretation.
+- At least 50% of marks must target Analyse/Evaluate (Bloom's 4-6).
+- Essay/evaluation questions must expect nuanced counter-arguments.
+- Extracts should cover less common topics or unusual real-world scenarios.
+- Calculation questions should require multi-step reasoning.`,
+  "very-hard": `
+DIFFICULTY LEVEL: VERY HARD
+- Top-grade difficulty designed for A*/A students aiming for the highest marks.
+- Extended reasoning, sophisticated counter-arguments, and reasoned judgement required throughout.
+- Data extracts must include complex, ambiguous data that could support multiple interpretations.
+- At least 60% of marks must target Analyse/Evaluate (Bloom's 5-6).
+- Questions should require synoptic links across multiple topics.
+- Calculation questions must require creative multi-step reasoning.
+- Essay questions must demand nuanced evaluation with "it depends on" factors and justified conclusions.`,
+  "limited-edition": `
+DIFFICULTY LEVEL: LIMITED EDITION (ELITE CHALLENGE)
+- This is the most original, demanding, and high-value predicted paper available.
+- Questions must go BEYOND typical exam difficulty — designed to stretch even the strongest students.
+- Use novel, topical, and unexpected real-world scenarios (2024-2025 cutting-edge issues).
+- Evaluation questions must demand sophisticated analysis with multiple competing perspectives.
+- At least 70% of marks must target Analyse/Evaluate (Bloom's 5-6).
+- Include at least one question that combines concepts from 3+ topic areas.
+- Data should be complex, requiring students to identify trends, anomalies, and draw nuanced conclusions.
+- This paper should feel exclusive and premium — the hardest paper a student has ever attempted.`,
+};
+
 export default function PredictedPapers() {
   const { user, subscribed, profile, refreshProfile } = useAuth();
   const { subject, subjectLabel, examBoard, level } = useSubject();
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const [mode, setMode] = useState<"library" | "generate">("library");
   const [paper, setPaper] = useState("1");
@@ -1180,6 +1219,8 @@ export default function PredictedPapers() {
   const [generatedPaper, setGeneratedPaper] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [step, setStep] = useState<"select" | "paper">("select");
+  const [libraryDifficulty, setLibraryDifficulty] = useState<string | null>(null);
+  const [librarySet, setLibrarySet] = useState<string | null>(null);
 
   const [selectedLibraryPaper, setSelectedLibraryPaper] = useState<PredictedPaper | null>(null);
   const [parsedQuestions, setParsedQuestions] = useState<ParsedQuestion[]>([]);
@@ -1193,6 +1234,7 @@ export default function PredictedPapers() {
   const [examFinished, setExamFinished] = useState(false);
   const [timeExpired, setTimeExpired] = useState(false);
   const markAllRef = useRef(false);
+  const autoGenTriggered = useRef(false);
 
   const used = (profile as any)?.free_predicted_papers_used ?? 0;
   const canUse = subscribed || used < FREE_LIMITS.predictedPapers;
@@ -1237,6 +1279,29 @@ export default function PredictedPapers() {
   );
 
   useEffect(() => { reset(); }, [subject]);
+
+  /* ── Auto-generate from Paper Library link ── */
+  useEffect(() => {
+    const fromLibrary = searchParams.get("fromLibrary");
+    const paramPaper = searchParams.get("paper");
+    const paramDifficulty = searchParams.get("difficulty");
+    const paramSet = searchParams.get("set");
+
+    if (fromLibrary === "1" && paramPaper && paramDifficulty && !autoGenTriggered.current) {
+      autoGenTriggered.current = true;
+      setPaper(paramPaper);
+      setLibraryDifficulty(paramDifficulty);
+      setLibrarySet(paramSet);
+      setMode("generate");
+      // Clear search params to prevent re-trigger
+      setSearchParams({}, { replace: true });
+      // Trigger generation after state settles
+      setTimeout(() => {
+        const genBtn = document.querySelector<HTMLButtonElement>('[data-auto-generate]');
+        if (genBtn) genBtn.click();
+      }, 300);
+    }
+  }, [searchParams]);
 
   const openLibraryPaper = (lp: PredictedPaper) => {
     setSelectedLibraryPaper(lp);
@@ -1346,9 +1411,16 @@ Every diagram block MUST include "Diagram family: <family-id>" on its own line.`
 
     const econDiagramAppendix = isAnyEcon ? ECON_DIAGRAM_FAMILY_RULES : "";
 
+    // Inject difficulty modifier from library selection
+    const difficultyModifier = libraryDifficulty && DIFFICULTY_PROMPT_MODIFIERS[libraryDifficulty]
+      ? DIFFICULTY_PROMPT_MODIFIERS[libraryDifficulty]
+      : "";
+
+    const setLabel = librarySet ? `\n\nPAPER SET: Set ${String.fromCharCode(64 + Number(librarySet))}. Generate a UNIQUE paper — do not repeat questions from other sets. Use a different theme/context for each set.` : "";
+
     const prompt = dbContextPrompt
-      ? `${basePrompt}\n\n${dbContextPrompt}${scopeInstruction}${econDiagramAppendix}\n\nMANDATORY QUALITY CHECK BEFORE FINAL OUTPUT: ensure the paper is full-length, exam-authentic, and matches the exact format, mark allocations, and difficulty level of recent ${examBoard} ${level} papers. If any question feels too easy or uses the wrong structure, rewrite it before finishing.`
-      : `${basePrompt}${scopeInstruction}${econDiagramAppendix}`;
+      ? `${basePrompt}\n\n${dbContextPrompt}${scopeInstruction}${econDiagramAppendix}${difficultyModifier}${setLabel}\n\nMANDATORY QUALITY CHECK BEFORE FINAL OUTPUT: ensure the paper is full-length, exam-authentic, and matches the exact format, mark allocations, and difficulty level of recent ${examBoard} ${level} papers. If any question feels too easy or uses the wrong structure, rewrite it before finishing.`
+      : `${basePrompt}${scopeInstruction}${econDiagramAppendix}${difficultyModifier}${setLabel}`;
 
     await streamChat({
       messages: [{ role: "user", content: prompt }],
@@ -1699,6 +1771,9 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
     setExamActive(false);
     setExamFinished(false);
     setTimeExpired(false);
+    setLibraryDifficulty(null);
+    setLibrarySet(null);
+    autoGenTriggered.current = false;
   };
 
   const handleSubmitExam = useCallback(() => {
@@ -1986,6 +2061,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                   )}
 
                   <Button
+                    data-auto-generate
                     onClick={canUse ? generatePaper : () => setShowUpgrade(true)}
                     disabled={isGenerating || (topicScope === "custom" && selectedTopics.length === 0)}
                     size="lg"
