@@ -1280,6 +1280,29 @@ export default function PredictedPapers() {
 
   useEffect(() => { reset(); }, [subject]);
 
+  /* ── Auto-generate from Paper Library link ── */
+  useEffect(() => {
+    const fromLibrary = searchParams.get("fromLibrary");
+    const paramPaper = searchParams.get("paper");
+    const paramDifficulty = searchParams.get("difficulty");
+    const paramSet = searchParams.get("set");
+
+    if (fromLibrary === "1" && paramPaper && paramDifficulty && !autoGenTriggered.current) {
+      autoGenTriggered.current = true;
+      setPaper(paramPaper);
+      setLibraryDifficulty(paramDifficulty);
+      setLibrarySet(paramSet);
+      setMode("generate");
+      // Clear search params to prevent re-trigger
+      setSearchParams({}, { replace: true });
+      // Trigger generation after state settles
+      setTimeout(() => {
+        const genBtn = document.querySelector<HTMLButtonElement>('[data-auto-generate]');
+        if (genBtn) genBtn.click();
+      }, 300);
+    }
+  }, [searchParams]);
+
   const openLibraryPaper = (lp: PredictedPaper) => {
     setSelectedLibraryPaper(lp);
     const { context, questions } = parseQuestions(lp.content);
