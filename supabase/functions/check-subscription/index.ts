@@ -22,6 +22,7 @@ const TESTER_EMAILS = [
   "aminul_miah@yahoo.co.uk",
   "swapnil.kumar22@alumni.imperial.ac.uk",
   "adeniyisarah05@gmail.com",
+  "swapnilkumar.2016@vitalum.ac.in",
 ];
 
 serve(async (req) => {
