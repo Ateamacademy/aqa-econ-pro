@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
@@ -7,16 +7,16 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PenTool, Lock, Send, RotateCcw, Info, Pencil, FileText, ChevronDown, ChevronUp, MessageSquare, Lightbulb, BookOpen, Sparkles, Shuffle, Crown } from "lucide-react";
+import { PenTool, Lock, Send, RotateCcw, Pencil, FileText, ChevronDown, ChevronUp, MessageSquare, Lightbulb, BookOpen, Sparkles, Shuffle, Crown } from "lucide-react";
 import { toast } from "sonner";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
-import { FREE_LIMITS } from "@/lib/plans";
 import { DrawingCanvas } from "@/components/tools/DrawingCanvas";
 import { cn } from "@/lib/utils";
 import { extractDiagramBlocks, EconDiagramCanvas } from "@/components/predicted-papers/EconDiagramSVG";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
+import { useDiagramAccess } from "@/hooks/useDiagramAccess";
 
 const DIAGRAM_TOPICS: Record<string, string[]> = {
   economics: [
@@ -133,7 +133,7 @@ const inferDiagramType = (...parts: string[]) =>
 type InputMode = "draw" | "text";
 
 export default function DiagramPractice() {
-  const { user, subscribed, profile, refreshProfile } = useAuth();
+  const { user } = useAuth();
   const { subject, subjectLabel, examBoard, level } = useSubject();
   const navigate = useNavigate();
 
@@ -154,6 +154,19 @@ export default function DiagramPractice() {
   const [isMarking, setIsMarking] = useState(false);
   const [step, setStep] = useState<"generate" | "answer" | "feedback">("generate");
   const [showUpgrade, setShowUpgrade] = useState(false);
+
+  const {
+    isLoading: isAccessLoading,
+    isAllowed,
+    remainingAttempts,
+    isPremium,
+    message: accessMessage,
+    error: accessError,
+    refresh: refreshAccess,
+    consumeAttempt,
+    resetAttemptsForTesting,
+  } = useDiagramAccess();
+  const isCertainlyBlocked = !isAccessLoading && !isAllowed && !isPremium;
 
   const filteredScenarios = useMemo(() => {
     let pool = diagramScenarios;
@@ -184,11 +197,22 @@ export default function DiagramPractice() {
     );
   }
 
-  const diagramsUsed = (profile as any)?.free_diagrams_used ?? 0;
-  const canUse = subscribed || (profile && diagramsUsed < FREE_LIMITS.diagrams);
+  const ensureEligible = async () => {
+    const latest = await refreshAccess();
+    if (!latest.isAllowed && !latest.isPremium) {
+      setShowUpgrade(true);
+      return false;
+    }
+    if (latest.isLoading) {
+      toast.info("We’re checking your available attempts...");
+      return false;
+    }
+    return true;
+  };
 
   const generateQuestion = async () => {
-    if (!canUse) { setShowUpgrade(true); return; }
+    if (isGenerating) return;
+    if (!(await ensureEligible())) return;
     setIsGenerating(true);
     setGeneratedQ("");
     let result = "";
@@ -231,19 +255,19 @@ Format: Give the scenario context with Figure 1, then the question. Nothing else
     });
   };
 
-  const startScenario = (scenario: DiagramScenario) => {
-    if (!canUse) { setShowUpgrade(true); return; }
+  const startScenario = async (scenario: DiagramScenario) => {
+    if (!(await ensureEligible())) return;
     setSelectedScenario(scenario);
     setGeneratedQ(`**${scenario.topic}**\n\n${scenario.scenario}\n\n${scenario.question}`);
     setStep("answer");
   };
 
-  const startRandomScenario = () => {
+  const startRandomScenario = async () => {
     const filters: { section?: DiagramSection; difficulty?: string } = {};
     if (sectionFilter !== "all") filters.section = sectionFilter;
     if (difficulty !== "all") filters.difficulty = difficulty;
     const scenario = getRandomScenario(filters);
-    startScenario(scenario);
+    await startScenario(scenario);
   };
   const markDiagram = async () => {
     setIsMarking(true);
@@ -330,10 +354,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             topic,
           });
         }
-        if (!subscribed && profile) {
-          await supabase.from("profiles").update({ free_diagrams_used: diagramsUsed + 1 } as any).eq("user_id", user.id);
-          refreshProfile();
-        }
+        await consumeAttempt();
       },
       onError: (err) => { toast.error(err); setIsMarking(false); },
     });
@@ -351,12 +372,18 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
 
   const hasSubmission = inputMode === "draw" ? !!diagramImage : !!diagramDesc.trim();
 
+  const handleDevReset = async () => {
+    const ok = await resetAttemptsForTesting();
+    if (ok) toast.success("Diagram attempts reset for testing.");
+    else toast.error("Unable to reset attempts.");
+  };
+
   return (
     <div className="container py-10 max-w-3xl">
       <div className="mb-6">
         <h1 className="text-3xl font-serif mb-1">Diagram Practice</h1>
         <p className="text-sm text-muted-foreground">
-          {examBoard} {level} {subjectLabel} · {subscribed ? "Unlimited practice" : `${Math.max(0, FREE_LIMITS.diagrams - (profile?.free_questions_used ?? 0))} free attempt(s) remaining`}
+          {examBoard} {level} {subjectLabel} · {accessMessage}
         </p>
       </div>
 
@@ -382,6 +409,13 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             >
               <Sparkles className="h-3.5 w-3.5" /> AI Generated
             </button>
+          </div>
+
+          <div className="rounded-md border border-border/60 bg-card/50 px-3 py-2">
+            <p className={cn("text-xs", isAccessLoading ? "text-muted-foreground animate-pulse" : "text-muted-foreground")}>{accessMessage}</p>
+            {import.meta.env.DEV && accessError && (
+              <p className="text-xs text-destructive mt-1">Debug: {accessError}</p>
+            )}
           </div>
 
           {practiceMode === "scenario" ? (
@@ -410,7 +444,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                   </div>
                 </div>
 
-                <Button onClick={startRandomScenario} disabled={filteredScenarios.length === 0} className="gap-2 w-full">
+                <Button onClick={() => void startRandomScenario()} disabled={filteredScenarios.length === 0 || isCertainlyBlocked} className="gap-2 w-full">
                   <Shuffle className="h-4 w-4" /> Random Scenario ({filteredScenarios.length} available)
                 </Button>
 
@@ -419,8 +453,12 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                   {filteredScenarios.map(s => (
                     <button
                       key={s.id}
-                      onClick={() => startScenario(s)}
-                      className="w-full text-left p-3 rounded-lg border border-border/60 hover:border-primary/40 hover:bg-primary/5 transition-all group"
+                      onClick={() => void startScenario(s)}
+                      disabled={isCertainlyBlocked}
+                      className={cn(
+                        "w-full text-left p-3 rounded-lg border border-border/60 hover:border-primary/40 hover:bg-primary/5 transition-all group",
+                        isCertainlyBlocked && "opacity-60 cursor-not-allowed hover:border-border/60 hover:bg-transparent"
+                      )}
                     >
                       <div className="flex items-start justify-between gap-2">
                         <div className="flex-1 min-w-0">
@@ -457,19 +495,35 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                     {DIFFICULTY_LEVELS.map(d => <option key={d} value={d}>{d}</option>)}
                   </select>
                 </div>
-                {canUse ? (
+                {!isCertainlyBlocked ? (
                   <Button onClick={generateQuestion} disabled={isGenerating} className="gap-2">
                     <PenTool className="h-4 w-4" />
                     {isGenerating ? "Generating..." : "Generate Diagram Question"}
                   </Button>
                 ) : (
                   <div className="space-y-2">
-                    <p className="text-xs text-muted-foreground">You've used all {FREE_LIMITS.diagrams} free diagram attempts.</p>
+                    <p className="text-xs text-muted-foreground">{accessMessage}</p>
                     <Button onClick={() => setShowUpgrade(true)} variant="default" className="gap-2 w-full bg-gradient-to-r from-primary to-primary/80">
                       <Crown className="h-4 w-4" /> Upgrade to Unlock Unlimited Diagrams
                     </Button>
                   </div>
                 )}
+              </CardContent>
+            </Card>
+          )}
+
+          {import.meta.env.DEV && (
+            <Card className="border-dashed border-border/70">
+              <CardContent className="p-4 space-y-2">
+                <p className="text-xs text-muted-foreground">Dev-only testing helpers · Remaining: {remainingAttempts ?? "∞"}</p>
+                <div className="flex flex-wrap gap-2">
+                  <Button size="sm" variant="outline" onClick={() => void refreshAccess()} className="gap-1.5">
+                    <RotateCcw className="h-3.5 w-3.5" /> Refresh eligibility
+                  </Button>
+                  <Button size="sm" variant="outline" onClick={() => void handleDevReset()}>
+                    Reset diagram attempts
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           )}
