@@ -13,6 +13,6 @@ export const FREE_LIMITS = {
   marking: 3,
   questions: 5,
   tutorQuestions: 5,
-  diagrams: 5,
+  diagrams: 20,
   predictedPapers: 3,
 } as const;
