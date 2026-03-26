@@ -457,10 +457,19 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                     {DIFFICULTY_LEVELS.map(d => <option key={d} value={d}>{d}</option>)}
                   </select>
                 </div>
-                <Button onClick={generateQuestion} disabled={isGenerating || !canUse} className="gap-2">
-                  <PenTool className="h-4 w-4" />
-                  {isGenerating ? "Generating..." : canUse ? "Generate Diagram Question" : "Subscribe for More"}
-                </Button>
+                {canUse ? (
+                  <Button onClick={generateQuestion} disabled={isGenerating} className="gap-2">
+                    <PenTool className="h-4 w-4" />
+                    {isGenerating ? "Generating..." : "Generate Diagram Question"}
+                  </Button>
+                ) : (
+                  <div className="space-y-2">
+                    <p className="text-xs text-muted-foreground">You've used all {FREE_LIMITS.diagrams} free diagram attempts.</p>
+                    <Button onClick={() => setShowUpgrade(true)} variant="default" className="gap-2 w-full bg-gradient-to-r from-primary to-primary/80">
+                      <Crown className="h-4 w-4" /> Upgrade to Unlock Unlimited Diagrams
+                    </Button>
+                  </div>
+                )}
               </CardContent>
             </Card>
           )}
