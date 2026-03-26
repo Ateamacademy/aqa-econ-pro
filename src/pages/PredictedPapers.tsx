@@ -2058,6 +2058,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                   )}
 
                   <Button
+                    data-auto-generate
                     onClick={canUse ? generatePaper : () => setShowUpgrade(true)}
                     disabled={isGenerating || (topicScope === "custom" && selectedTopics.length === 0)}
                     size="lg"
