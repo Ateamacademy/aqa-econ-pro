@@ -1411,9 +1411,16 @@ Every diagram block MUST include "Diagram family: <family-id>" on its own line.`
 
     const econDiagramAppendix = isAnyEcon ? ECON_DIAGRAM_FAMILY_RULES : "";
 
+    // Inject difficulty modifier from library selection
+    const difficultyModifier = libraryDifficulty && DIFFICULTY_PROMPT_MODIFIERS[libraryDifficulty]
+      ? DIFFICULTY_PROMPT_MODIFIERS[libraryDifficulty]
+      : "";
+
+    const setLabel = librarySet ? `\n\nPAPER SET: Set ${String.fromCharCode(64 + Number(librarySet))}. Generate a UNIQUE paper — do not repeat questions from other sets. Use a different theme/context for each set.` : "";
+
     const prompt = dbContextPrompt
-      ? `${basePrompt}\n\n${dbContextPrompt}${scopeInstruction}${econDiagramAppendix}\n\nMANDATORY QUALITY CHECK BEFORE FINAL OUTPUT: ensure the paper is full-length, exam-authentic, and matches the exact format, mark allocations, and difficulty level of recent ${examBoard} ${level} papers. If any question feels too easy or uses the wrong structure, rewrite it before finishing.`
-      : `${basePrompt}${scopeInstruction}${econDiagramAppendix}`;
+      ? `${basePrompt}\n\n${dbContextPrompt}${scopeInstruction}${econDiagramAppendix}${difficultyModifier}${setLabel}\n\nMANDATORY QUALITY CHECK BEFORE FINAL OUTPUT: ensure the paper is full-length, exam-authentic, and matches the exact format, mark allocations, and difficulty level of recent ${examBoard} ${level} papers. If any question feels too easy or uses the wrong structure, rewrite it before finishing.`
+      : `${basePrompt}${scopeInstruction}${econDiagramAppendix}${difficultyModifier}${setLabel}`;
 
     await streamChat({
       messages: [{ role: "user", content: prompt }],
