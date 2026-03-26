@@ -689,18 +689,48 @@ function DiagramFeedbackView({
   const sections = useMemo(() => parseFeedbackSections(feedback), [feedback]);
   const expectedDiagramType = inferDiagramType(topic, generatedQ, diagramDesc, explanation);
 
-  // Strip Key Point and Exam Tip callouts from diagram feedback
-  const stripAnnotations = (t: string) =>
-    t.replace(/^>?\s*📝\s*\*?\*?Key\s*Point\*?\*?:?.*(?:\n(?:>\s*.*|(?![\n#\*]).*\S.*)?)*/gim, "")
-     .replace(/^>?\s*💡\s*\*?\*?Exam\s*Tip\*?\*?:?.*(?:\n(?:>\s*.*|(?![\n#\*]).*\S.*)?)*/gim, "")
-     .replace(/^\*?\*?Key\s*Point:?\*?\*?:?.*$/gim, "")
-     .replace(/^\*?\*?Exam\s*Tip:?\*?\*?:?.*$/gim, "")
-     .replace(/^#{2,4}\s*Key\s*Point.*(?:\n(?!#{2,4}\s).*\S.*)*/gim, "")
-     .replace(/^#{2,4}\s*Exam\s*Tip.*(?:\n(?!#{2,4}\s).*\S.*)*/gim, "")
-     .replace(/📝\s*\*?\*?Key\s*Point\*?\*?:?[^\n]*/gi, "")
-     .replace(/💡\s*\*?\*?Exam\s*Tip\*?\*?:?[^\n]*/gi, "")
-     .replace(/\n{3,}/g, "\n\n")
-     .trim();
+  // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
+  const stripAnnotations = (t: string) => {
+    // Split into lines, then remove any contiguous block that starts with a Key Point or Exam Tip header
+    const lines = t.split("\n");
+    const result: string[] = [];
+    let skipping = false;
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      const stripped = line.replace(/^>\s*/, "").trim();
+
+      // Detect start of a Key Point or Exam Tip block (any emoji/markdown variant)
+      const isAnnotationHeader =
+        /📝\s*\*{0,2}Key\s*Point\*{0,2}/i.test(stripped) ||
+        /💡\s*\*{0,2}Exam\s*Tip\*{0,2}/i.test(stripped) ||
+        /^\*{0,2}Key\s*Point:?\*{0,2}/i.test(stripped) ||
+        /^\*{0,2}Exam\s*Tip:?\*{0,2}/i.test(stripped) ||
+        /^#{2,4}\s*Key\s*Point/i.test(stripped) ||
+        /^#{2,4}\s*Exam\s*Tip/i.test(stripped);
+
+      if (isAnnotationHeader) {
+        skipping = true;
+        continue;
+      }
+
+      // If skipping, continue until we hit an empty line, a new heading, or a new section marker
+      if (skipping) {
+        if (stripped === "" || /^#{1,4}\s/.test(stripped) || /^\*\*[A-Z]/.test(stripped)) {
+          skipping = false;
+          // Don't skip the blank line separator or new heading — include it
+          if (stripped !== "") {
+            result.push(line);
+          }
+        }
+        continue;
+      }
+
+      result.push(line);
+    }
+
+    return result.join("\n").replace(/\n{3,}/g, "\n\n").trim();
+  };
 
   const renderContent = (text: string) => (
     <div className="prose prose-sm max-w-none dark:prose-invert">
