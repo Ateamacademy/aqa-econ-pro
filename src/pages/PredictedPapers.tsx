@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { streamChat } from "@/lib/streamChat";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
