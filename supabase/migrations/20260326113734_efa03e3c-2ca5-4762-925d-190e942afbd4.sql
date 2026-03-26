@@ -1,0 +1,1 @@
+UPDATE profiles SET free_diagrams_used = 0, free_papers_used = 0, free_predicted_papers_used = 0, free_questions_used = 0, free_tutor_used = 0 WHERE user_id = 'ab02ceef-fa23-4944-a6c0-ebd0033b1540'
