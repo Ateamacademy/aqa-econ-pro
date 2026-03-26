@@ -9,6 +9,8 @@ export interface ParsedQuestion {
   marks: number;
   text: string;
   mcqOptions?: MCQOption[];
+  /** Section header that should appear BEFORE this question (e.g. "Section A", "Section B") */
+  sectionHeader?: string;
 }
 
 
@@ -64,10 +66,32 @@ export function parseQuestions(markdown: string): { context: string; questions: 
 
   const context = markdown.slice(0, matches[0].index).trim();
 
+  // Detect section headers between questions
+  const sectionHeaderRe = /^(?:#{1,4})\s+((?:Section\s+[A-Z]|EITHER|OR|Essay\s+\d|Context\s+\d|INVESTIGATION|Scenario|Component\s+\d)[^\n]*)/gmi;
+
+  // Build a map of position → section header text
+  const sectionHeaders: { index: number; header: string }[] = [];
+  let shMatch: RegExpExecArray | null;
+  while ((shMatch = sectionHeaderRe.exec(markdown)) !== null) {
+    sectionHeaders.push({ index: shMatch.index, header: shMatch[1].trim() });
+  }
+
   const questions: ParsedQuestion[] = matches.map((match, i) => {
     const start = match.index!;
     const end = i < matches.length - 1 ? matches[i + 1].index! : markdown.length;
     const fullText = markdown.slice(start, end).trim();
+
+    // Find the most recent section header before this question
+    let sectionHeader: string | undefined;
+    const prevEnd = i > 0 ? matches[i - 1].index! : (matches[0].index! > 0 ? 0 : -1);
+    const textBetween = markdown.slice(prevEnd === -1 ? 0 : (i > 0 ? matches[i - 1].index! + matches[i - 1][0].length : 0), start);
+    
+    // Check for section headers in the gap between this question and the previous one
+    for (const sh of sectionHeaders) {
+      if (sh.index >= (i > 0 ? matches[i - 1].index! : 0) && sh.index < start) {
+        sectionHeader = sh.header;
+      }
+    }
 
     // Support both styles:
     // 1) Question 1 [2 marks] <text>
@@ -105,6 +129,10 @@ export function parseQuestions(markdown: string): { context: string; questions: 
     // Strip leading dash/em-dash/colon separators
     bodyText = bodyText.replace(/^[-—–:]+\s*/, "");
 
+    // Strip section headers that got absorbed into this question's body text
+    // (they belong to the NEXT question's section, not this question's content)
+    bodyText = bodyText.replace(/^(?:#{1,4})\s+(?:Section\s+[A-Z]|EITHER|OR|Essay\s+\d|Context\s+\d|INVESTIGATION|Scenario|Component\s+\d)[^\n]*\n?/gmi, "").trim();
+
     // Extract MCQ options — require either a leading dash/bullet OR a dot/paren after the letter
     // to avoid matching sentences like "A consumer might..." as option A
     const mcqWithDash = /^[-•]\s*\**([A-D])\**[.\s)]+(.+)$/gm;
@@ -137,6 +165,7 @@ export function parseQuestions(markdown: string): { context: string; questions: 
       marks: parseInt(match[2], 10),
       text,
       mcqOptions,
+      sectionHeader,
     };
   });
 

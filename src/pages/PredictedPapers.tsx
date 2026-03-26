@@ -2189,27 +2189,42 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
             )}
 
             {parsedQuestions.map((q, i) => (
-              <motion.div
-                key={q.id}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.35, delay: i * 0.03, ease: [0.25, 0.4, 0.25, 1] }}
-              >
-                <QuestionCard
-                  question={q}
-                  answer={answers[q.id] || ""}
-                  onAnswerChange={(val) => setAnswers((prev) => ({ ...prev, [q.id]: val }))}
-                  onMark={(diagramImage) => markQuestion(q, diagramImage)}
-                  isMarking={markingId === q.id}
-                  feedback={feedbacks[q.id] || null}
-                  showMathTools={isMaths || isChemistry || isAnyEcon}
-                  showEconDiagram={false}
-                  showDrawingCanvas={isMaths || isChemistry || isAnyEcon}
-                  showGraphPaper={isMaths}
-                  showGeometryTools={isMaths}
-                  subject={subject}
-                />
-              </motion.div>
+              <div key={q.id}>
+                {q.sectionHeader && (
+                  <motion.div
+                    initial={{ opacity: 0, x: -8 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: i * 0.03 }}
+                    className="flex items-center gap-3 py-4 mt-4"
+                  >
+                    <div className="h-px flex-1 bg-gradient-to-r from-primary/40 to-transparent" />
+                    <span className="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20">
+                      {q.sectionHeader}
+                    </span>
+                    <div className="h-px flex-1 bg-gradient-to-l from-primary/40 to-transparent" />
+                  </motion.div>
+                )}
+                <motion.div
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.35, delay: i * 0.03, ease: [0.25, 0.4, 0.25, 1] }}
+                >
+                  <QuestionCard
+                    question={q}
+                    answer={answers[q.id] || ""}
+                    onAnswerChange={(val) => setAnswers((prev) => ({ ...prev, [q.id]: val }))}
+                    onMark={(diagramImage) => markQuestion(q, diagramImage)}
+                    isMarking={markingId === q.id}
+                    feedback={feedbacks[q.id] || null}
+                    showMathTools={isMaths || isChemistry || isAnyEcon}
+                    showEconDiagram={false}
+                    showDrawingCanvas={isMaths || isChemistry || isAnyEcon}
+                    showGraphPaper={isMaths}
+                    showGeometryTools={isMaths}
+                    subject={subject}
+                  />
+                </motion.div>
+              </div>
             ))}
 
             <div className="flex flex-wrap justify-center gap-4 pt-8 pb-4">
