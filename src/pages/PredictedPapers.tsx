@@ -1771,6 +1771,9 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
     setExamActive(false);
     setExamFinished(false);
     setTimeExpired(false);
+    setLibraryDifficulty(null);
+    setLibrarySet(null);
+    autoGenTriggered.current = false;
   };
 
   const handleSubmitExam = useCallback(() => {
