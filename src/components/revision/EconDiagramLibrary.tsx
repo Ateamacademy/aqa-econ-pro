@@ -1018,8 +1018,10 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             stroke={COLORS.demand} strokeWidth={1.5} markerEnd="url(#arrowHead)" opacity={0.7} />
 
           {/* Equilibria */}
-          <circle cx={eq1a.x} cy={eq1a.y} r={3.5} fill={COLORS.eq} />
-          <circle cx={eq1b.x} cy={eq1b.y} r={3.5} fill={COLORS.shifted} />
+          <PremiumDot x={eq1a.x} y={eq1a.y} color={COLORS.eq} label="E₁" gradientId="dot-green"
+            tooltipText="✓ Initial equilibrium" />
+          <PremiumDot x={eq1b.x} y={eq1b.y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
+            tooltipText="✓ After positive AD shock" />
 
           {/* Projections E₁ */}
           <line x1={eq1a.x} y1={eq1a.y} x2={L + pad} y2={eq1a.y} stroke={COLORS.eq} strokeWidth={0.8} strokeDasharray="3,2" opacity={0.5} />
@@ -1073,8 +1075,10 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             stroke={COLORS.demand} strokeWidth={1.5} markerEnd="url(#arrowHead)" opacity={0.7} />
 
           {/* Equilibria */}
-          <circle cx={eq2a.x} cy={eq2a.y} r={3.5} fill={COLORS.eq} />
-          <circle cx={eq2b.x} cy={eq2b.y} r={3.5} fill={COLORS.shifted} />
+          <PremiumDot x={eq2a.x} y={eq2a.y} color={COLORS.eq} label="E₁" gradientId="dot-green"
+            tooltipText="✓ Initial equilibrium" />
+          <PremiumDot x={eq2b.x} y={eq2b.y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
+            tooltipText="✓ After negative AD shock" />
 
           {/* Projections E₁ */}
           <line x1={eq2a.x} y1={eq2a.y} x2={L2 + pad} y2={eq2a.y} stroke={COLORS.eq} strokeWidth={0.8} strokeDasharray="3,2" opacity={0.5} />
@@ -1278,21 +1282,13 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <line x1={arrowX1} y1={arrowY} x2={arrowX2} y2={arrowY}
             stroke="currentColor" strokeWidth={2} markerEnd="url(#arrowShift)" opacity={0.7} />
 
-          {/* Equilibrium dots */}
-          <circle cx={eq1.x} cy={eq1.y} r={4} fill="#3b82f6" />
-          <circle cx={eq2.x} cy={eq2.y} r={4} fill="#3b82f6" />
-
-          {/* Axis labels: p, p₁ */}
-          <text x={axL - 6} y={eq1.y + 4} textAnchor="end" fontSize={10} fontWeight={700} fill="currentColor"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p</text>
-          <text x={axL - 6} y={eq2.y + 4} textAnchor="end" fontSize={10} fontWeight={700} fill="currentColor"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p₁</text>
-
-          {/* Axis labels: q, q₁ */}
-          <text x={eq1.x} y={axBot + 16} textAnchor="middle" fontSize={10} fontWeight={700} fill="currentColor"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q</text>
-          <text x={eq2.x} y={axBot + 16} textAnchor="middle" fontSize={10} fontWeight={700} fill="currentColor"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q₁</text>
+          {/* Equilibrium dots with labels */}
+          <DashedToAxes x={eq1.x} y={eq1.y} mx={axL} ph={axBot - axTop} my={axTop} color={COLORS.eq} pLabel="p" qLabel="q" />
+          <PremiumDot x={eq1.x} y={eq1.y} color={COLORS.eq} label="E₁" gradientId="dot-green"
+            tooltipText="✓ Original equilibrium" />
+          <DashedToAxes x={eq2.x} y={eq2.y} mx={axL} ph={axBot - axTop} my={axTop} color={COLORS.shifted} pLabel="p₁" qLabel="q₁" />
+          <PremiumDot x={eq2.x} y={eq2.y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
+            tooltipText="✓ New equilibrium after demand shift" />
         </>
       );
     },
@@ -1358,8 +1354,10 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <DashedToAxes x={eq2.x} y={eq2.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P₂" qLabel="Y₂" />
 
           {/* Equilibrium dots */}
-          <PremiumDot x={eq1.x} y={eq1.y} color={COLORS.eq} label="" gradientId="dot-green" />
-          <PremiumDot x={eq2.x} y={eq2.y} color={COLORS.shifted} label="" gradientId="dot-amber" />
+          <PremiumDot x={eq1.x} y={eq1.y} color={COLORS.eq} label="E₁" gradientId="dot-green"
+            tooltipText="✓ Initial equilibrium at Yfe" />
+          <PremiumDot x={eq2.x} y={eq2.y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
+            tooltipText="✓ Stagflation: higher PL, lower Y" />
 
           {/* Y_FE label on x-axis */}
           <line x1={lrasX} y1={my + ph - pad} x2={lrasX} y2={my + ph - pad + 6} stroke="currentColor" strokeWidth={1.5} opacity={0.5} />
