@@ -1838,6 +1838,14 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           {/* q₂ projection (Qd at Pmax) */}
           <line x1={q2X} y1={pmaxY} x2={q2X} y2={axBot} stroke="hsl(var(--foreground))" strokeWidth={1.5} strokeDasharray="5,3" opacity={0.6} />
           <text x={q2X} y={axBot + 14} fill="hsl(var(--foreground))" fontSize={10} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q₂</text>
+
+          {/* Excess demand arrow */}
+          <line x1={q1X + 2} y1={pmaxY + 15} x2={q2X - 2} y2={pmaxY + 15} stroke="hsl(var(--foreground))" strokeWidth={1.5} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
+          <Label x={(q1X + q2X) / 2} y={pmaxY + 28} text="Excess demand" color="hsl(var(--foreground))" size={8} anchor="middle" bold={false} />
+
+          {/* Equilibrium dot */}
+          <PremiumDot x={eq.x} y={eq.y} color={COLORS.eq} label="E" gradientId="dot-green"
+            tooltipText="✓ Free market equilibrium" />
         </>
       );
     },
