@@ -2476,6 +2476,12 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <text x={q2x} y={axBot + 12} textAnchor="middle" fontSize={7.5} fontWeight={600} fill="currentColor" opacity={0.7}
             style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Y₁</text>
 
+          {/* Equilibrium dots */}
+          <PremiumDot x={q1x} y={flatY} color={COLORS.eq} label="E₁" gradientId="dot-green"
+            tooltipText="✓ Initial output in spare capacity" />
+          <PremiumDot x={q2x} y={flatY} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
+            tooltipText="✓ Higher output, same price level" />
+
           {/* Yfe tick */}
           <line x1={yfe1} y1={axBot} x2={yfe1} y2={axBot + 5} stroke="currentColor" strokeWidth={1} opacity={0.4} />
           <text x={yfe1} y={axBot + 14} textAnchor="middle" fontSize={7.5} fontWeight={600} fill="currentColor" opacity={0.6}
@@ -2515,6 +2521,12 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <line x1={yfe2} y1={axBot} x2={yfe2} y2={axBot + 5} stroke="currentColor" strokeWidth={1} opacity={0.4} />
           <text x={yfe2} y={axBot + 14} textAnchor="middle" fontSize={7.5} fontWeight={600} fill="currentColor" opacity={0.6}
             style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Yꜰₑ</text>
+
+          {/* Equilibrium dots */}
+          <PremiumDot x={yfe2} y={pY} color={COLORS.eq} label="E₁" gradientId="dot-green"
+            tooltipText="✓ Initial equilibrium at Yfe" />
+          <PremiumDot x={yfe2} y={p1Y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
+            tooltipText="✓ Higher PL, same output (inflation)" />
 
           {/* Inflation badge */}
           <rect x={p2x + panelW * 0.2} y={axBot + 20} width={panelW * 0.6} height={14} rx={4} fill={COLORS.supply} opacity={0.18} />
@@ -2743,6 +2755,16 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <line x1={mx} y1={cY} x2={qX} y2={cY} stroke="currentColor" strokeWidth={1.2} strokeDasharray="3,3" opacity={0.5} />
           <text x={mx - 4} y={cY + 4} textAnchor="end" fontSize={10} fontWeight={700} fill="currentColor"
             style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>c</text>
+
+          {/* Supernormal profit region */}
+          <rect x={mx + srPadX} y={arY} width={qX - mx - srPadX} height={cY - arY}
+            fill="#22c55e" fillOpacity={0.15} stroke="#22c55e" strokeWidth={1} strokeOpacity={0.4} strokeDasharray="4 2" />
+          <text x={(mx + srPadX + qX) / 2} y={(arY + cY) / 2 + 3} fill="#22c55e" fontSize={7} fontWeight={700} textAnchor="middle" opacity={0.9}
+            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Supernormal Profit</text>
+
+          {/* Profit max dot */}
+          <PremiumDot x={qX} y={arY} color={arCol} label="Profit Max" gradientId="dot-green"
+            tooltipText="✓ MC=MR at quantity q" />
 
           {/* q projection */}
           <line x1={qX} y1={arY} x2={qX} y2={srB} stroke="currentColor" strokeWidth={1.2} strokeDasharray="3,3" opacity={0.5} />
