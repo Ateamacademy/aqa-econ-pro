@@ -1939,7 +1939,8 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={(q2X + q1X) / 2} y={pminY - 26} text="Excess supply" color="hsl(var(--foreground))" size={8} anchor="middle" bold={false} />
 
           {/* Equilibrium dot */}
-          <circle cx={eq.x} cy={eq.y} r={3.5} fill={COLORS.eq} />
+          <PremiumDot x={eq.x} y={eq.y} color={COLORS.eq} label="E" gradientId="dot-green"
+            tooltipText="✓ Free market equilibrium" />
         </>
       );
     },
@@ -2833,8 +2834,10 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <GLine {...dL} color={arCol} width={2} />
           <Label x={dL.x2 + 2} y={dL.y2 - 4} text="D" color={arCol} size={9} />
 
-          <circle cx={eq1.x} cy={eq1.y} r={3} fill="currentColor" />
-          <circle cx={eq2.x} cy={eq2.y} r={3} fill="currentColor" />
+          <PremiumDot x={eq1.x} y={eq1.y} color={COLORS.eq} label="E₁" gradientId="dot-green"
+            tooltipText="✓ Original industry equilibrium" />
+          <PremiumDot x={eq2.x} y={eq2.y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
+            tooltipText="✓ After entry: S→S₁, lower price" />
 
           <line x1={lrIndL} y1={eq1.y} x2={eq1.x} y2={eq1.y} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.4} />
           <line x1={lrIndL} y1={eq2.y} x2={eq2.x} y2={eq2.y} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.4} />
@@ -2920,7 +2923,8 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={sL.x2 + 2} y={sL.y2 + 2} text="S" color={COLORS.supply} size={9} />
           <GLine {...dL} color={COLORS.demand} width={2} />
           <Label x={dL.x2 + 2} y={dL.y2 - 6} text="D=MRP" color={COLORS.demand} size={9} />
-          <circle cx={eq.x} cy={eq.y} r={3.5} fill={COLORS.supply} />
+          <PremiumDot x={eq.x} y={eq.y} color={COLORS.eq} label="E" gradientId="dot-green"
+            tooltipText="✓ Wage W₁ set by D=S" />
           {/* W₁ and Q₁ projections — red dashed like reference */}
           <line x1={p1x} y1={wageY} x2={eq.x} y2={wageY} stroke="#ef4444" strokeWidth={0.8} strokeDasharray="2,1.5" opacity={0.7} />
           <line x1={eq.x} y1={wageY} x2={eq.x} y2={p1y + fullH} stroke="#ef4444" strokeWidth={0.8} strokeDasharray="2,1.5" opacity={0.7} />
@@ -2942,7 +2946,8 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={mrpEndX + 2} y={mrpEndY - 4} text="D=MRP" color={COLORS.demand} size={9} />
           {/* Firm Q₁ projection */}
           <line x1={firmQ1X} y1={wageY} x2={firmQ1X} y2={p2y + fullH} stroke="#ef4444" strokeWidth={0.8} strokeDasharray="2,1.5" opacity={0.7} />
-          <circle cx={firmQ1X} cy={wageY} r={3} fill={COLORS.eq} />
+          <PremiumDot x={firmQ1X} y={wageY} color={COLORS.eq} label="Hire" gradientId="dot-green"
+            tooltipText="✓ Firm hires where MRP=W₁" />
           <text x={firmQ1X} y={p2y + fullH + 12} textAnchor="middle" fontSize={8} fontWeight={700} fill="currentColor" opacity={0.7}
             style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Q₁</text>
         </>
