@@ -2006,11 +2006,49 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
         arL.x1, arL.y1, arL.x2, arL.y2
       );
 
+      // ATC cost at profit-max quantity (for supernormal profit region)
+      const atcAtQ = (() => {
+        // Approximate ATC y at mcMrInt.x using the ATC curve's two segments
+        const t = (mcMrInt.x - atcX0) / (atcEndX - atcX0);
+        if (t <= 0.5) {
+          const tt = t / 0.5;
+          return atcY0 + 2 * tt * (1 - tt) * (my + ph * 0.48) + tt * tt * atcMidY - (1 - tt) * (1 - tt) * atcY0 + (1 - tt) * (1 - tt) * atcY0;
+        }
+        // Simple linear interp on second segment
+        const tt = (mcMrInt.x - atcMidX) / (atcEndX - atcMidX);
+        return atcMidY + tt * (atcEndY - atcMidY);
+      })();
+
       return (
         <>
+          {/* Supernormal Profit bounded region */}
+          <rect
+            x={mx + 10}
+            y={profitPriceY}
+            width={mcMrInt.x - mx - 10}
+            height={atcAtQ - profitPriceY}
+            fill="#22c55e"
+            fillOpacity={0.15}
+            stroke="#22c55e"
+            strokeWidth={1}
+            strokeOpacity={0.4}
+            strokeDasharray="4 2"
+          />
+          <text
+            x={(mx + 10 + mcMrInt.x) / 2}
+            y={(profitPriceY + atcAtQ) / 2 + 3}
+            fill="#22c55e"
+            fontSize={8}
+            fontWeight={700}
+            textAnchor="middle"
+            opacity={0.9}
+          >
+            Supernormal Profit
+          </text>
+
           {/* AR (Demand) — red */}
           <GLine {...arL} color={COLORS.supply} width={2.5} />
-          <Label x={arL.x2 + 2} y={arL.y2 - 6} text="AR" color={COLORS.supply} size={10} />
+          <Label x={arL.x2 + 2} y={arL.y2 - 6} text="A" color={COLORS.supply} size={10} />
 
           {/* MR — red */}
           <GLine {...mrL} color={COLORS.supply} width={2.5} />
@@ -2026,16 +2064,16 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
           {/* Profit max: MC=MR → (q, p) */}
           <DashedToAxes x={mcMrInt.x} y={profitPriceY} mx={mx} ph={ph} my={my} color="currentColor" pLabel="p" qLabel="q" />
-          <circle cx={mcMrInt.x} cy={profitPriceY} r={3.5} fill={COLORS.supply} />
-          <circle cx={mcMrInt.x} cy={mcMrInt.y} r={3} fill={COLORS.demand} />
+          <PremiumDot x={mcMrInt.x} y={profitPriceY} label="Profit Max" tooltipText="Price read from AR at MC=MR quantity" color={COLORS.supply} />
+          <PremiumDot x={mcMrInt.x} y={mcMrInt.y} label="MC=MR" tooltipText="Profit maximisation: MC = MR" color={COLORS.demand} />
 
           {/* Revenue max: MR=0 → (q₁, p₁) */}
           <DashedToAxes x={revMaxX} y={revMaxPriceY} mx={mx} ph={ph} my={my} color="currentColor" pLabel="p₁" qLabel="q₁" />
-          <circle cx={revMaxX} cy={revMaxPriceY} r={3.5} fill={COLORS.supply} />
+          <PremiumDot x={revMaxX} y={revMaxPriceY} label="Rev Max" tooltipText="Revenue maximisation: MR = 0" color={COLORS.supply} />
 
           {/* Sales max: AR=ATC → (q₂, p₂) */}
           <DashedToAxes x={salesMaxInt.x} y={salesMaxInt.y} mx={mx} ph={ph} my={my} color="currentColor" pLabel="p₂" qLabel="q₂" />
-          <circle cx={salesMaxInt.x} cy={salesMaxInt.y} r={3.5} fill={COLORS.demand} />
+          <PremiumDot x={salesMaxInt.x} y={salesMaxInt.y} label="Sales Max" tooltipText="Sales maximisation: AR = ATC (normal profit)" color={COLORS.demand} />
         </>
       );
     },
