@@ -1288,7 +1288,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             tooltipText="✓ Original equilibrium" />
           <DashedToAxes x={eq2.x} y={eq2.y} mx={axL} ph={axBot - axTop} my={axTop} color={COLORS.shifted} pLabel="p₁" qLabel="q₁" />
           <PremiumDot x={eq2.x} y={eq2.y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
-            tooltipText="✓ New equilibrium after demand shift" />
+            tooltipText="✓ New equilibrium after supply shift" />
         </>
       );
     },
