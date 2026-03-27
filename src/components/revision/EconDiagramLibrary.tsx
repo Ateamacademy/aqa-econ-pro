@@ -540,6 +540,8 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             fill="#ef4444"
             fillOpacity={0.18}
             strokeWidth={0}
+            label="Welfare Loss"
+            labelSize={7}
           />
           {/* MSC = MPC (BLUE — cost curve) */}
           <GLine {...mscL} color="#3b82f6" gradientId="grad-demand" glow="glow-blue" width={2.5} />
@@ -614,6 +616,8 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             fill="#ef4444"
             fillOpacity={0.18}
             strokeWidth={0}
+            label="Welfare Loss"
+            labelSize={7}
           />
           {/* MSC = MPC (BLUE — cost curve) */}
           <GLine {...mscL} color="#3b82f6" gradientId="grad-demand" glow="glow-blue" width={2.5} />
@@ -687,6 +691,8 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             fill="#ef4444"
             fillOpacity={0.18}
             strokeWidth={0}
+            label="Welfare Loss"
+            labelSize={7}
           />
           {/* MSC (BLUE — social cost, above MPC) */}
           <GLine {...mscL} color="#3b82f6" gradientId="grad-demand" glow="glow-blue" width={2.5} />
@@ -760,6 +766,8 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             fill="#ef4444"
             fillOpacity={0.18}
             strokeWidth={0}
+            label="Welfare Loss"
+            labelSize={7}
           />
           {/* MPC (RED — private cost, steeper/higher) */}
           <GLine {...mpcL} color="#ef4444" gradientId="grad-supply" glow="glow-red" width={2.5} />
@@ -1484,12 +1492,12 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
           {/* Original equilibrium P1 / Q1 */}
           <DashedToAxes x={eq1.x} y={eq1.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P1" qLabel="Q1" />
-          <PremiumDot x={eq1.x} y={eq1.y} color={COLORS.eq} label="" gradientId="dot-green"
+          <PremiumDot x={eq1.x} y={eq1.y} color={COLORS.eq} label="E₁" gradientId="dot-green"
             tooltipText="✓ Pre-tax equilibrium" />
 
           {/* New equilibrium P2 / Q2 */}
           <DashedToAxes x={eq2.x} y={eq2.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P2" qLabel="Q2" />
-          <PremiumDot x={eq2.x} y={eq2.y} color={COLORS.shifted} label="" gradientId="dot-amber"
+          <PremiumDot x={eq2.x} y={eq2.y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
             tooltipText="✓ After tax: higher P, lower Q" />
         </>
       );
@@ -1576,8 +1584,8 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <text x={eq1.x} y={axBot + 14} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q₁</text>
 
           {/* Equilibrium dots */}
-          <PremiumDot x={eq.x} y={eq.y} color="#16a34a" label="" />
-          <PremiumDot x={eq1.x} y={eq1.y} color="#16a34a" label="" />
+          <PremiumDot x={eq.x} y={eq.y} color="#16a34a" label="E₁" tooltipText="✓ Pre-subsidy equilibrium" />
+          <PremiumDot x={eq1.x} y={eq1.y} color="#16a34a" label="E₂" tooltipText="✓ Post-subsidy equilibrium" />
         </>
       );
     },
@@ -1793,6 +1801,8 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             fillOpacity={0.55}
             stroke="#16a34a"
             strokeWidth={0}
+            label="Welfare Loss"
+            labelSize={7}
           />
 
           {/* S (BLUE — supply) and D (RED — demand) */}
