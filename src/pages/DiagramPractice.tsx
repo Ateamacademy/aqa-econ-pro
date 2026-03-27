@@ -691,7 +691,6 @@ function DiagramFeedbackView({
 
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {
-    // Split into lines, then remove any contiguous block that starts with a Key Point or Exam Tip header
     const lines = t.split("\n");
     const result: string[] = [];
     let skipping = false;
@@ -706,8 +705,16 @@ function DiagramFeedbackView({
         /💡\s*\*{0,2}Exam\s*Tip\*{0,2}/i.test(stripped) ||
         /^\*{0,2}Key\s*Point:?\*{0,2}/i.test(stripped) ||
         /^\*{0,2}Exam\s*Tip:?\*{0,2}/i.test(stripped) ||
-        /^#{2,4}\s*Key\s*Point/i.test(stripped) ||
-        /^#{2,4}\s*Exam\s*Tip/i.test(stripped);
+        /^#{1,4}\s*Key\s*Point/i.test(stripped) ||
+        /^#{1,4}\s*Exam\s*Tip/i.test(stripped) ||
+        /^#{1,4}\s*💡/i.test(stripped) ||
+        /^#{1,4}\s*📝/i.test(stripped) ||
+        /^>\s*\*{0,2}Key\s*Point/i.test(stripped) ||
+        /^>\s*\*{0,2}Exam\s*Tip/i.test(stripped) ||
+        /^Key\s*Point\s*[:\-]/i.test(stripped) ||
+        /^Exam\s*Tip\s*[:\-]/i.test(stripped) ||
+        /^⚠️?\s*\*{0,2}Exam\s*Tip/i.test(stripped) ||
+        /^\*{0,2}⚠\s*Exam\s*Tip/i.test(stripped);
 
       if (isAnnotationHeader) {
         skipping = true;
@@ -718,7 +725,6 @@ function DiagramFeedbackView({
       if (skipping) {
         if (stripped === "" || /^#{1,4}\s/.test(stripped) || /^\*\*[A-Z]/.test(stripped)) {
           skipping = false;
-          // Don't skip the blank line separator or new heading — include it
           if (stripped !== "") {
             result.push(line);
           }

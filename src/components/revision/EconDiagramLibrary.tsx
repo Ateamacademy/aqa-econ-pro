@@ -1185,21 +1185,13 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <line x1={arrowX1} y1={arrowY} x2={arrowX2} y2={arrowY}
             stroke={COLORS.eq} strokeWidth={2} markerEnd="url(#arrowHead)" />
 
-          {/* Equilibrium dots */}
-          <circle cx={eqOrig.x} cy={eqOrig.y} r={4} fill="#ef4444" />
-          <circle cx={eqNew.x} cy={eqNew.y} r={4} fill="#ef4444" />
-
-          {/* Axis labels: p, p₁ on Y-axis */}
-          <text x={axL - 6} y={eqOrig.y + 4} textAnchor="end" fontSize={10} fontWeight={600} fill="currentColor"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p</text>
-          <text x={axL - 6} y={eqNew.y + 4} textAnchor="end" fontSize={10} fontWeight={600} fill="currentColor"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p₁</text>
-
-          {/* Axis labels: q, q₁ on X-axis */}
-          <text x={eqOrig.x} y={axBot + 14} textAnchor="middle" fontSize={10} fontWeight={600} fill="currentColor"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q</text>
-          <text x={eqNew.x} y={axBot + 14} textAnchor="middle" fontSize={10} fontWeight={600} fill="currentColor"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q₁</text>
+          {/* Equilibrium dots with labels */}
+          <DashedToAxes x={eqOrig.x} y={eqOrig.y} mx={axL} ph={axBot - axTop} my={axTop} color={COLORS.eq} pLabel="p" qLabel="q" />
+          <PremiumDot x={eqOrig.x} y={eqOrig.y} color={COLORS.eq} label="E₁" gradientId="dot-green"
+            tooltipText="✓ Original equilibrium" />
+          <DashedToAxes x={eqNew.x} y={eqNew.y} mx={axL} ph={axBot - axTop} my={axTop} color={COLORS.shifted} pLabel="p₁" qLabel="q₁" />
+          <PremiumDot x={eqNew.x} y={eqNew.y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
+            tooltipText="✓ New equilibrium after demand shift" />
         </>
       );
     },
