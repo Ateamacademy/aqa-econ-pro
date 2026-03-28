@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { useState, useId } from "react";
 import { WelfareRegion } from "@/components/diagrams/WelfareRegion";
 import EconomicsDiagram, { type EconomicsDiagramProps } from "@/components/diagrams/EconomicsDiagram";
+import PerfectCompDiagram from "@/components/diagrams/PerfectCompDiagram";
 
 export type DiagramType =
   | "supply_demand"
@@ -2758,248 +2759,22 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
   /* ── Perfect Competition — Short-Run & Long-Run ── */
   perfect_competition: {
-    title: "Perfect Competition — Short-Run & Long-Run",
-    xAxis: "Output", yAxis: "Revenue / Cost",
+    title: "Perfect Competition — Industry & Firm",
+    xAxis: "Quantity", yAxis: "Price / Cost",
     legend: [
-      { label: "MC / ATC", color: "#3b82f6" },
-      { label: "AR=MR=p", color: "#ef4444" },
-      { label: "S / D (Industry)", color: "#3b82f6" },
+      { label: "D (Demand)", color: "#3b82f6" },
+      { label: "S₁ (Original)", color: "#f97316" },
+      { label: "S₂ (Shifted)", color: "#ef4444" },
+      { label: "MC", color: "#f97316" },
+      { label: "ATC", color: "#3b82f6" },
     ],
     examTips: [
-      "SR: Firms are price takers — AR=MR=p is horizontal at market price",
-      "SR: P > ATC at profit-maximising Q → supernormal profit = (p − c) × q",
-      "LR: Supernormal profit attracts entry → market supply shifts right S→S₁",
-      "LR: Price falls to p₁ = min ATC → only normal profit, no incentive to enter/exit",
-      "LR equilibrium: allocatively efficient (P=MC) AND productively efficient (min ATC)",
-      "Always draw BOTH the firm AND the industry diagram side by side for LR",
+      "Short run: P > ATC → supernormal profit attracts new firms",
+      "Long run: entry shifts S right → P falls to min ATC → normal profit",
+      "AR = MR = P = min ATC in long run (allocative + productive efficiency)",
+      "Key: In perfect competition, firms are price takers",
     ],
-    render: (p) => {
-      const { mx, my, pw, ph } = p;
-      const pad = 6;
-      const mcCol = "#3b82f6";
-      const arCol = "#ef4444";
-      const shiftCol = "#16a34a";
-
-      // Layout: SR panel on top (full width), LR panels below (2-panel side by side)
-      const srH = ph * 0.46;
-      const lrGap = 14;
-      const lrTop = my + srH + lrGap + 16;
-      const lrH = ph - srH - lrGap - 16;
-      const lrGapX = 24;
-      const lrHalfW = (pw - lrGapX) / 2;
-
-      // ═══ SHORT-RUN FIRM PANEL (top, full width) ═══
-      const srB = my + srH;
-      const srPadX = pad + 4;
-
-      // AR=MR=p horizontal at ~32% from top
-      const arY = my + srH * 0.32;
-      // ATC minimum at ~52% from top (below price → supernormal profit)
-      const atcMinX = mx + pw * 0.42;
-      const atcMinY = my + srH * 0.52;
-      const cY = atcMinY;
-
-      // MC curve
-      const mcStartX = mx + srPadX + 15;
-      const mcStartY = srB - pad - 5;
-      const mcTopX = mx + pw * 0.52;
-      const mcTopY = my + pad + 2;
-      const mcPath = `M ${mcStartX} ${mcStartY} Q ${atcMinX - 25} ${atcMinY + 15} ${atcMinX} ${atcMinY} Q ${atcMinX + 18} ${atcMinY - 22} ${mcTopX} ${mcTopY}`;
-
-      // ATC U-shape
-      const atcStartX = mx + srPadX + 8;
-      const atcStartY = my + pad + 10;
-      const atcEndX = mx + pw - srPadX;
-      const atcEndY = my + srH * 0.38;
-      const atcPath = `M ${atcStartX} ${atcStartY} Q ${atcMinX - 12} ${atcMinY + 5} ${atcMinX} ${atcMinY} Q ${atcMinX + 30} ${atcMinY - 8} ${atcEndX} ${atcEndY}`;
-
-      // Profit-max output q: where MC crosses AR
-      const qX = atcMinX + 16;
-
-      // ═══ LONG-RUN PANELS (bottom) ═══
-      const lrFirmL = mx, lrFirmR = mx + lrHalfW;
-      const lrIndL = mx + lrHalfW + lrGapX;
-
-      // Industry panel: S, S₁, D
-      const indPad = pad;
-      const sL = { x1: lrIndL + indPad, y1: lrTop + lrH - indPad, x2: lrIndL + lrHalfW - indPad, y2: lrTop + indPad };
-      const dL = { x1: lrIndL + indPad, y1: lrTop + indPad, x2: lrIndL + lrHalfW - indPad, y2: lrTop + lrH - indPad };
-      const eq1 = lineIntersect(sL.x1, sL.y1, sL.x2, sL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
-      const sShift = 28;
-      const s1L = { x1: sL.x1 + sShift, y1: sL.y1, x2: sL.x2 + sShift, y2: sL.y2 };
-      const eq2 = lineIntersect(s1L.x1, s1L.y1, s1L.x2, s1L.y2, dL.x1, dL.y1, dL.x2, dL.y2);
-
-      const miniAxes = (ox: number, oy: number, w: number, h: number, xLbl: string, yLbl: string) => (
-        <>
-          <line x1={ox} y1={oy} x2={ox} y2={oy + h} stroke="currentColor" strokeWidth={1.8} />
-          <line x1={ox} y1={oy + h} x2={ox + w} y2={oy + h} stroke="currentColor" strokeWidth={1.8} />
-          <text x={ox - 10} y={oy + h / 2} textAnchor="middle" fontSize={8} fontWeight={700}
-            transform={`rotate(-90 ${ox - 10} ${oy + h / 2})`} fill="currentColor"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{yLbl}</text>
-          <text x={ox + w / 2} y={oy + h + 16} textAnchor="middle" fontSize={8} fontWeight={700}
-            fill="currentColor" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{xLbl}</text>
-          <text x={ox - 4} y={oy + h + 12} textAnchor="middle" fontSize={8} fontWeight={700}
-            fill="currentColor" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>O</text>
-        </>
-      );
-
-      return (
-        <>
-          {/* ════ SR PANEL ════ */}
-          <text x={mx + pw / 2} y={my - 4} textAnchor="middle" fontSize={10} fontWeight={800}
-            fill="currentColor" opacity={0.7} textDecoration="underline"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
-            Perfect competition — short run
-          </text>
-          {miniAxes(mx, my, pw, srH, "Output", "Revenue / Cost")}
-
-          {/* ATC curve (blue) */}
-          <CurvePath d={atcPath} color={mcCol} width={2.5} />
-          <Label x={atcEndX + 2} y={atcEndY} text="ATC" color={mcCol} size={10} />
-
-          {/* MC curve (blue) */}
-          <CurvePath d={mcPath} color={mcCol} width={2.5} />
-          <Label x={mcTopX + 4} y={mcTopY + 2} text="MC" color={mcCol} size={10} />
-
-          {/* AR=MR=p horizontal (red, bold) */}
-          <GLine x1={mx + srPadX} y1={arY} x2={mx + pw - srPadX + 15} y2={arY} color={arCol} width={3} />
-          <Label x={mx + pw - srPadX + 18} y={arY + 1} text="AR=MR=p" color={arCol} size={9} />
-
-          {/* p label on y-axis */}
-          <text x={mx - 4} y={arY + 4} textAnchor="end" fontSize={10} fontWeight={700} fill="currentColor"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p</text>
-
-          {/* c label on y-axis with dotted projection */}
-          <line x1={mx} y1={cY} x2={qX} y2={cY} stroke="currentColor" strokeWidth={1.2} strokeDasharray="3,3" opacity={0.5} />
-          <text x={mx - 4} y={cY + 4} textAnchor="end" fontSize={10} fontWeight={700} fill="currentColor"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>c</text>
-
-          {/* Supernormal profit region */}
-          <rect x={mx + srPadX} y={arY} width={qX - mx - srPadX} height={cY - arY}
-            fill="#22c55e" fillOpacity={0.15} stroke="#22c55e" strokeWidth={1} strokeOpacity={0.4} strokeDasharray="4 2" />
-          <text x={(mx + srPadX + qX) / 2} y={(arY + cY) / 2 + 3} fill="#22c55e" fontSize={7} fontWeight={700} textAnchor="middle" opacity={0.9}
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Supernormal Profit</text>
-
-          {/* Profit max dot */}
-          <PremiumDot x={qX} y={arY} color={arCol} label="Profit Max" gradientId="dot-green"
-            tooltipText="✓ MC=MR at quantity q" />
-
-          {/* q projection */}
-          <line x1={qX} y1={arY} x2={qX} y2={srB} stroke="currentColor" strokeWidth={1.2} strokeDasharray="3,3" opacity={0.5} />
-          <text x={qX} y={srB + 14} textAnchor="middle" fontSize={10} fontWeight={700} fill="currentColor"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q</text>
-
-          {/* ════ LR SECTION TITLE ════ */}
-          <text x={mx + pw / 2} y={lrTop - 6} textAnchor="middle" fontSize={10} fontWeight={800}
-            fill="currentColor" opacity={0.7} textDecoration="underline"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
-            Perfect competition — long run
-          </text>
-
-          {/* ════ LR FIRM PANEL (left) ════ */}
-          <text x={lrFirmL + lrHalfW / 2} y={lrTop - 18} textAnchor="middle" fontSize={9} fontWeight={700}
-            fill="currentColor" opacity={0.6} textDecoration="underline"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Firm</text>
-          {miniAxes(lrFirmL, lrTop, lrHalfW, lrH, "Output", "Revenue / Cost")}
-
-          {(() => {
-            const fL = lrFirmL, fR = lrFirmR, fT = lrTop, fB = lrTop + lrH;
-            const fPad = pad + 2;
-            const fAtcMinX = fL + lrHalfW * 0.45;
-            const fAtcMinY = fT + lrH * 0.52;
-            const fMcTopX = fL + lrHalfW * 0.55;
-            const fMcTopY = fT + fPad;
-            const fMcStartX = fL + fPad + 10;
-            const fMcStartY = fB - fPad - 3;
-            const fAtcStartX = fL + fPad + 5;
-            const fAtcStartY = fT + fPad + 6;
-            const fAtcEndX = fR - fPad;
-            const fAtcEndY = fT + lrH * 0.38;
-
-            const fMcPath = `M ${fMcStartX} ${fMcStartY} Q ${fAtcMinX - 18} ${fAtcMinY + 12} ${fAtcMinX} ${fAtcMinY} Q ${fAtcMinX + 14} ${fAtcMinY - 18} ${fMcTopX} ${fMcTopY}`;
-            const fAtcPath = `M ${fAtcStartX} ${fAtcStartY} Q ${fAtcMinX - 10} ${fAtcMinY + 4} ${fAtcMinX} ${fAtcMinY} Q ${fAtcMinX + 22} ${fAtcMinY - 6} ${fAtcEndX} ${fAtcEndY}`;
-
-            const fArY = fT + lrH * 0.30;
-            const fAr1Y = fAtcMinY;
-            const fQ = fAtcMinX + 12;
-            const fQ1 = fAtcMinX;
-
-            return (
-              <>
-                <CurvePath d={fAtcPath} color={mcCol} width={2} />
-                <Label x={fAtcEndX + 2} y={fAtcEndY} text="ATC" color={mcCol} size={8} />
-                <CurvePath d={fMcPath} color={mcCol} width={2.5} />
-                <Label x={fMcTopX + 3} y={fMcTopY + 2} text="MC" color={mcCol} size={8} />
-
-                {/* AR=MR=p (original, red) */}
-                <GLine x1={fL + fPad} y1={fArY} x2={fR - fPad + 10} y2={fArY} color={arCol} width={2.5} />
-                <Label x={fR - fPad + 12} y={fArY + 1} text="AR=MR=p" color={arCol} size={7} />
-
-                {/* Green down arrow */}
-                <line x1={fR - fPad - 8} y1={fArY + 5} x2={fR - fPad - 8} y2={fAr1Y - 5}
-                  stroke={shiftCol} strokeWidth={2.5} markerEnd="url(#arrow-eq)" />
-
-                {/* AR₁=MR₁=p₁ (new lower, red) */}
-                <GLine x1={fL + fPad} y1={fAr1Y} x2={fR - fPad + 10} y2={fAr1Y} color={arCol} width={2} />
-                <Label x={fR - fPad + 12} y={fAr1Y + 1} text={"AR\u2081=MR\u2081=\np\u2081"} color={arCol} size={6} />
-
-                {/* p label */}
-                <text x={fL - 4} y={fArY + 4} textAnchor="end" fontSize={8} fontWeight={700} fill="currentColor"
-                  style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p</text>
-
-                {/* c / p₁ label */}
-                <line x1={fL} y1={fAr1Y} x2={fQ1} y2={fAr1Y} stroke="currentColor" strokeWidth={0.8} strokeDasharray="2,2" opacity={0.4} />
-                <text x={fL - 4} y={fAr1Y + 3} textAnchor="end" fontSize={8} fontWeight={700} fill="currentColor"
-                  style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>c</text>
-                <text x={fL - 4} y={fAr1Y + 12} textAnchor="end" fontSize={7} fontWeight={600} fill="currentColor"
-                  style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p₁</text>
-
-                {/* q₁ and q projections */}
-                <line x1={fQ1} y1={fAr1Y} x2={fQ1} y2={fB} stroke="currentColor" strokeWidth={1} strokeDasharray="3,3" opacity={0.4} />
-                <text x={fQ1} y={fB + 14} textAnchor="middle" fontSize={8} fontWeight={700} fill="currentColor"
-                  style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q₁</text>
-                <line x1={fQ} y1={fArY} x2={fQ} y2={fB} stroke="currentColor" strokeWidth={1} strokeDasharray="3,3" opacity={0.4} />
-                <text x={fQ} y={fB + 14} textAnchor="middle" fontSize={8} fontWeight={700} fill="currentColor"
-                  style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q</text>
-              </>
-            );
-          })()}
-
-          {/* ════ LR INDUSTRY PANEL (right) ════ */}
-          <text x={lrIndL + lrHalfW / 2} y={lrTop - 18} textAnchor="middle" fontSize={9} fontWeight={700}
-            fill="currentColor" opacity={0.6} textDecoration="underline"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Industry</text>
-          {miniAxes(lrIndL, lrTop, lrHalfW, lrH, "Quantity", "Price")}
-
-          <GLine {...sL} color={mcCol} width={2} />
-          <Label x={sL.x2 + 2} y={sL.y2 + 2} text="S" color={mcCol} size={9} />
-
-          <GLine {...s1L} color={mcCol} width={2} />
-          <Label x={s1L.x2 + 2} y={s1L.y2 + 2} text="S₁" color={mcCol} size={9} />
-
-          <ShiftArrow x1={eq1.x - 4} y1={eq1.y + 4} x2={eq2.x + 4} y2={eq2.y - 4} color={shiftCol} />
-
-          <GLine {...dL} color={arCol} width={2} />
-          <Label x={dL.x2 + 2} y={dL.y2 - 4} text="D" color={arCol} size={9} />
-
-          <PremiumDot x={eq1.x} y={eq1.y} color={COLORS.eq} label="E₁" gradientId="dot-green"
-            tooltipText="✓ Original industry equilibrium" />
-          <PremiumDot x={eq2.x} y={eq2.y} color={COLORS.shifted} label="E₂" gradientId="dot-amber"
-            tooltipText="✓ After entry: S→S₁, lower price" />
-
-          <line x1={lrIndL} y1={eq1.y} x2={eq1.x} y2={eq1.y} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.4} />
-          <line x1={lrIndL} y1={eq2.y} x2={eq2.x} y2={eq2.y} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.4} />
-
-          <line x1={eq1.x} y1={eq1.y} x2={eq1.x} y2={lrTop + lrH} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.4} />
-          <line x1={eq2.x} y1={eq2.y} x2={eq2.x} y2={lrTop + lrH} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.4} />
-
-          <text x={eq1.x} y={lrTop + lrH + 14} textAnchor="middle" fontSize={8} fontWeight={700} fill="currentColor"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q₂</text>
-          <text x={eq2.x} y={lrTop + lrH + 14} textAnchor="middle" fontSize={8} fontWeight={700} fill="currentColor"
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q₁</text>
-        </>
-      );
-    },
+    render: () => <></>,  // Rendering handled by PerfectCompDiagram via customComponent
   },
 
   /* ── Labour Market — Wage Determination (Industry + Firm) ── */
@@ -3728,6 +3503,11 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
   const rawId = useId();
   const uid = rawId.replace(/:/g, "");
   if (!config) return null;
+
+  // ── Perfect Competition: dedicated two-panel component ──
+  if (type === "perfect_competition") {
+    return <PerfectCompDiagram className={cn("my-4", className)} />;
+  }
 
   // ── Declarative path: delegate to the new EconomicsDiagram component ──
   if (config.declarative) {
