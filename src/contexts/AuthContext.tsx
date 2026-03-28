@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, useRef, useState, ReactNode } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import type { User, Session } from "@supabase/supabase-js";
 
@@ -29,6 +29,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [subscribed, setSubscribed] = useState(false);
   const [subscriptionEnd, setSubscriptionEnd] = useState<string | null>(null);
   const [profile, setProfile] = useState<{ free_papers_used: number; free_questions_used: number; free_predicted_papers_used: number; free_tutor_used: number; free_diagrams_used: number; exam_board: string | null; target_grade: string | null; onboarding_completed: boolean } | null>(null);
+  const subscriptionRefreshInFlight = useRef<Promise<void> | null>(null);
+  const lastSubscriptionRefreshAt = useRef(0);
 
   const refreshProfile = async () => {
     const { data: { user: u } } = await supabase.auth.getUser();
@@ -38,12 +40,29 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const refreshSubscription = async () => {
-    try {
-      const { data, error } = await supabase.functions.invoke("check-subscription");
-      if (error) { console.error("Sub check error:", error); return; }
-      setSubscribed(data?.subscribed ?? false);
-      setSubscriptionEnd(data?.subscription_end ?? null);
-    } catch (e) { console.error("Sub check failed:", e); }
+    const now = Date.now();
+    if (now - lastSubscriptionRefreshAt.current < 60_000) return;
+    if (subscriptionRefreshInFlight.current) return subscriptionRefreshInFlight.current;
+
+    const request = (async () => {
+      try {
+        const { data, error } = await supabase.functions.invoke("check-subscription");
+        if (error) {
+          console.error("Sub check error:", error);
+          return;
+        }
+        setSubscribed(data?.subscribed ?? false);
+        setSubscriptionEnd(data?.subscription_end ?? null);
+      } catch (e) {
+        console.error("Sub check failed:", e);
+      } finally {
+        lastSubscriptionRefreshAt.current = Date.now();
+        subscriptionRefreshInFlight.current = null;
+      }
+    })();
+
+    subscriptionRefreshInFlight.current = request;
+    return request;
   };
 
   useEffect(() => {
