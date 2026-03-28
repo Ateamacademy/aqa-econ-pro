@@ -25,6 +25,10 @@ const TESTER_EMAILS = [
   "swapnilkumar.2016@vitalum.ac.in",
 ];
 
+// In-memory cache: email → { result, timestamp }
+const cache = new Map<string, { result: Record<string, unknown>; ts: number }>();
+const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+
 serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
@@ -44,8 +48,10 @@ serve(async (req) => {
     const user = userData.user;
     if (!user?.email) throw new Error("User not authenticated");
 
+    const email = user.email.toLowerCase();
+
     // Beta / tester whitelist — instant premium access
-    if (TESTER_EMAILS.includes(user.email.toLowerCase())) {
+    if (TESTER_EMAILS.includes(email)) {
       return new Response(JSON.stringify({ subscribed: true, subscription_end: ACCESS_EXPIRES, tester: true }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
@@ -57,18 +63,27 @@ serve(async (req) => {
       });
     }
 
+    // Check cache first
+    const cached = cache.get(email);
+    if (cached && Date.now() - cached.ts < CACHE_TTL_MS) {
+      return new Response(JSON.stringify(cached.result), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", { apiVersion: "2025-08-27.basil" });
     const customers = await stripe.customers.list({ email: user.email, limit: 1 });
 
     if (customers.data.length === 0) {
-      return new Response(JSON.stringify({ subscribed: false }), {
+      const result = { subscribed: false };
+      cache.set(email, { result, ts: Date.now() });
+      return new Response(JSON.stringify(result), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 
     const customerId = customers.data[0].id;
 
-    // Check for completed checkout sessions with our product
     const sessions = await stripe.checkout.sessions.list({
       customer: customerId,
       status: "complete",
@@ -79,10 +94,14 @@ serve(async (req) => {
       return s.payment_status === "paid";
     });
 
-    return new Response(JSON.stringify({
+    const result = {
       subscribed: hasPurchased,
       subscription_end: hasPurchased ? ACCESS_EXPIRES : null,
-    }), {
+    };
+
+    cache.set(email, { result, ts: Date.now() });
+
+    return new Response(JSON.stringify(result), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (error) {
