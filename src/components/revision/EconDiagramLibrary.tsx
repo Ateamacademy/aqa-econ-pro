@@ -75,6 +75,8 @@ interface DiagramConfig {
   legend?: { label: string; color: string }[];
   examTips: string[];
   render: (p: DrawParams) => JSX.Element;
+  /** When set, EconDiagramTemplate renders the new declarative EconomicsDiagram component instead of manual SVG */
+  declarative?: Omit<EconomicsDiagramProps, "className">;
 }
 
 interface DrawParams {
