@@ -34,7 +34,7 @@ Deno.serve(async (req) => {
       });
     }
 
-    const ALLOWED_EMAILS = ["haider_78@outlook.com", "admin@econrev.co"];
+    const ALLOWED_EMAILS = ["admin@econrev.co", "swapnil.kumar22@alumni.imperial.ac.uk", "aminul.miah@ateamacademy.co.uk"];
     if (!ALLOWED_EMAILS.includes(user.email || "")) {
       return new Response(JSON.stringify({ error: "Forbidden" }), {
         status: 403,
