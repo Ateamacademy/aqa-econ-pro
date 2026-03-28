@@ -70,10 +70,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return () => subscription.unsubscribe();
   }, []);
 
-  // Auto-refresh subscription every 60s
+  // Auto-refresh subscription every 5 minutes (reduced to avoid Stripe rate limits)
   useEffect(() => {
     if (!user) return;
-    const interval = setInterval(refreshSubscription, 60000);
+    const interval = setInterval(refreshSubscription, 300000);
     return () => clearInterval(interval);
   }, [user]);
 
