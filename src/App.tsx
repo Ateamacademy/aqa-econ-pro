@@ -95,6 +95,7 @@ const App = () => (
               <Route path="/onboarding" element={<Onboarding />} />
               <Route path="/diagram-testing" element={<DiagramTesting />} />
               <Route path="/paper-library" element={<PaperLibrary />} />
+              <Route path="/diagram-library" element={<EconDiagramShowcase />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             </Suspense>
