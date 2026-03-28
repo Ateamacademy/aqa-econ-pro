@@ -597,6 +597,7 @@ export function FigureChart({ title, description }: FigureChartProps) {
     });
     return entry;
   });
+  const hasLongLabels = chartData.some(d => String(d.year).length > 12);
 
   return (
     <div className="my-6 rounded-xl border border-border bg-card p-5">
