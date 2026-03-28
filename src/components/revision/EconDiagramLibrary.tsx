@@ -199,22 +199,43 @@ function CurvePath({ d, color, dashed, width = 2.5, glow, gradientId }: {
   );
 }
 
+/** SVG layout constants — single source of truth */
+const SVG_W = 700;
+const SVG_H = 500;
+const SVG_PAD = 60; // minimum padding on all sides
+const LABEL_SAFE = 40; // labels must not render within 40px of SVG boundary
+
+function clampLabel(x: number, y: number, textW: number, textH: number, anchor: string) {
+  let cx = x;
+  let cy = y;
+  // Clamp so label (including its width) stays ≥ LABEL_SAFE from edges
+  if (anchor === "start") {
+    cx = Math.max(LABEL_SAFE, Math.min(cx, SVG_W - LABEL_SAFE - textW));
+  } else if (anchor === "end") {
+    cx = Math.max(LABEL_SAFE + textW, Math.min(cx, SVG_W - LABEL_SAFE));
+  } else {
+    cx = Math.max(LABEL_SAFE + textW / 2, Math.min(cx, SVG_W - LABEL_SAFE - textW / 2));
+  }
+  cy = Math.max(LABEL_SAFE + textH, Math.min(cy, SVG_H - LABEL_SAFE));
+  return { cx, cy };
+}
+
 function Label({ x, y, text, color, size = 11, anchor = "start", bold = true, bg = true }: {
   x: number; y: number; text: string; color: string; size?: number; anchor?: string; bold?: boolean; bg?: boolean;
 }) {
-  // Estimate text width for background rect
   const charW = size * 0.62;
   const textW = text.length * charW;
   const textH = size + 2;
   const pad = 3;
-  const anchorX = anchor === "middle" ? x - textW / 2 : anchor === "end" ? x - textW : x;
+  const { cx, cy } = clampLabel(x, y, textW, textH, anchor);
+  const anchorX = anchor === "middle" ? cx - textW / 2 : anchor === "end" ? cx - textW : cx;
 
   return (
     <g>
       {bg && (
         <rect
           x={anchorX - pad}
-          y={y - textH + 2}
+          y={cy - textH + 2}
           width={textW + pad * 2}
           height={textH + pad}
           rx={3}
@@ -223,7 +244,7 @@ function Label({ x, y, text, color, size = 11, anchor = "start", bold = true, bg
         />
       )}
       <text
-        x={x} y={y} fill={color} textAnchor={anchor} fontSize={size}
+        x={cx} y={cy} fill={color} textAnchor={anchor} fontSize={size}
         fontWeight={bold ? 700 : 500}
         className="select-none"
         style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
@@ -3603,8 +3624,8 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
   const uid = rawId.replace(/:/g, "");
   if (!config) return null;
 
-  const W = 420, H = 320;
-  const mx = 55, my = 25, pw = W - mx - 30, ph = H - my - 50;
+  const W = SVG_W, H = SVG_H;
+  const mx = SVG_PAD, my = SVG_PAD, pw = W - mx - SVG_PAD, ph = H - my - SVG_PAD;
 
   return (
     <div

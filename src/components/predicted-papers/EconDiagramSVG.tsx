@@ -278,9 +278,9 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
     );
   }
 
-  const W = 480;
-  const H = 380;
-  const margin = { top: 32, right: 32, bottom: 62, left: 72 };
+  const W = 700;
+  const H = 500;
+  const margin = { top: 60, right: 60, bottom: 60, left: 60 };
   const plotW = W - margin.left - margin.right;
   const plotH = H - margin.top - margin.bottom;
 
