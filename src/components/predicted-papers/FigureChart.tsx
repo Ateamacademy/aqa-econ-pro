@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import SmartXAxisTick from "@/components/ui/SmartXAxisTick";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
