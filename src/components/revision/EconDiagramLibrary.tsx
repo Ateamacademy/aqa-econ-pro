@@ -12,6 +12,7 @@
 import { cn } from "@/lib/utils";
 import { useState, useId } from "react";
 import { WelfareRegion } from "@/components/diagrams/WelfareRegion";
+import EconomicsDiagram, { type EconomicsDiagramProps } from "@/components/diagrams/EconomicsDiagram";
 
 export type DiagramType =
   | "supply_demand"
