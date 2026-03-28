@@ -42,6 +42,7 @@ const FounderDashboard = lazy(() => import("./pages/FounderDashboard"));
 const Onboarding = lazy(() => import("./pages/Onboarding"));
 const DiagramTesting = lazy(() => import("./pages/DiagramTesting"));
 const PaperLibrary = lazy(() => import("./pages/PaperLibrary"));
+const EconDiagramShowcase = lazy(() => import("./components/revision/EconDiagramShowcase"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -94,6 +95,7 @@ const App = () => (
               <Route path="/onboarding" element={<Onboarding />} />
               <Route path="/diagram-testing" element={<DiagramTesting />} />
               <Route path="/paper-library" element={<PaperLibrary />} />
+              <Route path="/diagram-library" element={<EconDiagramShowcase />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             </Suspense>
