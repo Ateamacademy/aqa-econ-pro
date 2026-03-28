@@ -12,6 +12,7 @@
 import { cn } from "@/lib/utils";
 import { useState, useId } from "react";
 import { WelfareRegion } from "@/components/diagrams/WelfareRegion";
+import EconomicsDiagram, { type EconomicsDiagramProps } from "@/components/diagrams/EconomicsDiagram";
 
 export type DiagramType =
   | "supply_demand"
@@ -74,6 +75,8 @@ interface DiagramConfig {
   legend?: { label: string; color: string }[];
   examTips: string[];
   render: (p: DrawParams) => JSX.Element;
+  /** When set, EconDiagramTemplate renders the new declarative EconomicsDiagram component instead of manual SVG */
+  declarative?: Omit<EconomicsDiagramProps, "className">;
 }
 
 interface DrawParams {
@@ -467,6 +470,18 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       "Include origin 'O' at the intersection of axes",
     ],
     render: (p) => <>{supplyDemandBase(p)}</>,
+    declarative: {
+      xAxis: "Quantity (Q)", yAxis: "Price (P)",
+      title: "Supply & Demand Equilibrium",
+      curves: [
+        { id: "D1", label: "D₁", slope: -0.95, intercept: 0.95, color: "#ef4444" },
+        { id: "S1", label: "S₁", slope: 0.95, intercept: 0.05, color: "#3b82f6" },
+      ],
+      equilibria: [
+        { label: "E₁", curveIds: ["D1", "S1"], color: "#16a34a", pLabel: "P₁", qLabel: "Q₁", tooltip: "✓ Always label equilibrium clearly with E₁" },
+      ],
+      legend: [{ label: "Demand", color: "#ef4444" }, { label: "Supply", color: "#3b82f6" }, { label: "Equilibrium", color: "#16a34a" }],
+    },
   },
   demand_increase: {
     title: "Increase in Demand",
@@ -479,6 +494,22 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       "State the cause of the shift in your written answer",
     ],
     render: (p) => <>{supplyDemandBase(p, "demand", "right")}</>,
+    declarative: {
+      xAxis: "Quantity (Q)", yAxis: "Price (P)",
+      title: "Increase in Demand",
+      curves: [
+        { id: "D1", label: "D₁", slope: -0.95, intercept: 0.95, color: "#ef4444" },
+        { id: "S1", label: "S₁", slope: 0.95, intercept: 0.05, color: "#3b82f6" },
+      ],
+      shiftedCurves: [
+        { id: "D2", label: "D₂", slope: -0.95, intercept: 0.95 + 0.086, color: "#ef4444", style: "dashed", originalId: "D1" },
+      ],
+      equilibria: [
+        { label: "E₁", curveIds: ["D1", "S1"], color: "#16a34a", pLabel: "P₁", qLabel: "Q₁", tooltip: "✓ Initial equilibrium" },
+        { label: "E₂", curveIds: ["D2", "S1"], color: "#d97706", pLabel: "P₂", qLabel: "Q₂", tooltip: "✓ D↑ → higher P & Q" },
+      ],
+      legend: [{ label: "Demand", color: "#ef4444" }, { label: "Supply", color: "#3b82f6" }, { label: "Shift →", color: "#f59e0b" }],
+    },
   },
   demand_decrease: {
     title: "Decrease in Demand",
@@ -490,6 +521,22 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       "Always draw dashed projection lines to both axes",
     ],
     render: (p) => <>{supplyDemandBase(p, "demand", "left")}</>,
+    declarative: {
+      xAxis: "Quantity (Q)", yAxis: "Price (P)",
+      title: "Decrease in Demand",
+      curves: [
+        { id: "D1", label: "D₁", slope: -0.95, intercept: 0.95, color: "#ef4444" },
+        { id: "S1", label: "S₁", slope: 0.95, intercept: 0.05, color: "#3b82f6" },
+      ],
+      shiftedCurves: [
+        { id: "D2", label: "D₂", slope: -0.95, intercept: 0.95 - 0.086, color: "#ef4444", style: "dashed", originalId: "D1" },
+      ],
+      equilibria: [
+        { label: "E₁", curveIds: ["D1", "S1"], color: "#16a34a", pLabel: "P₁", qLabel: "Q₁", tooltip: "✓ Initial equilibrium" },
+        { label: "E₂", curveIds: ["D2", "S1"], color: "#d97706", pLabel: "P₂", qLabel: "Q₂", tooltip: "✓ D↓ → lower P & Q" },
+      ],
+      legend: [{ label: "Demand", color: "#ef4444" }, { label: "Supply", color: "#3b82f6" }, { label: "Shift ←", color: "#f59e0b" }],
+    },
   },
   supply_increase: {
     title: "Increase in Supply",
@@ -501,6 +548,22 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       "Common causes: technology improvement, lower input costs",
     ],
     render: (p) => <>{supplyDemandBase(p, "supply", "right")}</>,
+    declarative: {
+      xAxis: "Quantity (Q)", yAxis: "Price (P)",
+      title: "Increase in Supply",
+      curves: [
+        { id: "D1", label: "D₁", slope: -0.95, intercept: 0.95, color: "#ef4444" },
+        { id: "S1", label: "S₁", slope: 0.95, intercept: 0.05, color: "#3b82f6" },
+      ],
+      shiftedCurves: [
+        { id: "S2", label: "S₂", slope: 0.95, intercept: 0.05 - 0.086, color: "#3b82f6", style: "dashed", originalId: "S1" },
+      ],
+      equilibria: [
+        { label: "E₁", curveIds: ["D1", "S1"], color: "#16a34a", pLabel: "P₁", qLabel: "Q₁", tooltip: "✓ Initial equilibrium" },
+        { label: "E₂", curveIds: ["D1", "S2"], color: "#d97706", pLabel: "P₂", qLabel: "Q₂", tooltip: "✓ S↑ → lower P, higher Q" },
+      ],
+      legend: [{ label: "Demand", color: "#ef4444" }, { label: "Supply", color: "#3b82f6" }, { label: "Shift →", color: "#f59e0b" }],
+    },
   },
   supply_decrease: {
     title: "Decrease in Supply",
@@ -512,6 +575,22 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       "Common causes: higher costs of production, indirect taxes",
     ],
     render: (p) => <>{supplyDemandBase(p, "supply", "left")}</>,
+    declarative: {
+      xAxis: "Quantity (Q)", yAxis: "Price (P)",
+      title: "Decrease in Supply",
+      curves: [
+        { id: "D1", label: "D₁", slope: -0.95, intercept: 0.95, color: "#ef4444" },
+        { id: "S1", label: "S₁", slope: 0.95, intercept: 0.05, color: "#3b82f6" },
+      ],
+      shiftedCurves: [
+        { id: "S2", label: "S₂", slope: 0.95, intercept: 0.05 + 0.086, color: "#3b82f6", style: "dashed", originalId: "S1" },
+      ],
+      equilibria: [
+        { label: "E₁", curveIds: ["D1", "S1"], color: "#16a34a", pLabel: "P₁", qLabel: "Q₁", tooltip: "✓ Initial equilibrium" },
+        { label: "E₂", curveIds: ["D1", "S2"], color: "#d97706", pLabel: "P₂", qLabel: "Q₂", tooltip: "✓ S↓ → higher P, lower Q" },
+      ],
+      legend: [{ label: "Demand", color: "#ef4444" }, { label: "Supply", color: "#3b82f6" }, { label: "Shift ←", color: "#f59e0b" }],
+    },
   },
 
   /* ── Externalities ── */
@@ -3624,6 +3703,21 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
   const uid = rawId.replace(/:/g, "");
   if (!config) return null;
 
+  // ── Declarative path: delegate to the new EconomicsDiagram component ──
+  if (config.declarative) {
+    return (
+      <div
+        className={cn(
+          "my-4 relative overflow-hidden group transition-shadow duration-300 hover:shadow-xl",
+          className
+        )}
+      >
+        <EconomicsDiagram {...config.declarative} className="" />
+      </div>
+    );
+  }
+
+  // ── Legacy path: manual SVG rendering ──
   const W = SVG_W, H = SVG_H;
   const mx = SVG_PAD, my = SVG_PAD, pw = W - mx - SVG_PAD, ph = H - my - SVG_PAD;
 
