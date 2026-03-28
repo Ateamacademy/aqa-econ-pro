@@ -699,4 +699,41 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       "Min wage can increase employment",
     ],
   },
+
+  /* ── Perfect Competition (two-panel) ──
+   * This is a MULTI-PANEL diagram rendered by PerfectCompDiagram.tsx
+   * The spec here is for registry/reference only — the actual rendering
+   * is handled by the dedicated component, not DiagramSpecRenderer.
+   */
+  perfectComp: {
+    title: "Perfect Competition — Industry & Firm",
+    axisLabels: { x: "Quantity", y: "Price / Cost" },
+    curves: [
+      // Panel (a) Industry
+      { id: "D", label: "D", params: { type: "linear", slope: -0.8, intercept: 9 }, color: "#3b82f6" },
+      { id: "S1", label: "S₁", params: { type: "linear", slope: 0.9, intercept: 0.5 }, color: "#f97316" },
+      { id: "S2", label: "S₂", params: { type: "linear", slope: 0.9, intercept: 2.2 }, color: "#ef4444", dash: true, shiftedFrom: "S1" },
+      // Panel (b) Firm
+      { id: "MC", label: "MC", params: { type: "quadratic", a: 0.6, b: -2, c: 3.5 }, color: "#f97316" },
+      { id: "ATC", label: "ATC", params: { type: "quadratic", a: 0.5, b: -2.2, c: 4.8 }, color: "#3b82f6" },
+    ],
+    equilibria: [
+      { id: "E1", label: "E₁", curve1: "D", curve2: "S1", color: "#16a34a", pLabel: "P₁", qLabel: "Q₁", tooltip: "LR equilibrium: firms enter → normal profit" },
+      { id: "E2", label: "E₂", curve1: "D", curve2: "S2", color: "#d97706", pLabel: "P₂", qLabel: "Q₂", tooltip: "SR equilibrium: higher price → supernormal profit" },
+    ],
+    legend: [
+      { label: "D (Demand)", color: "#3b82f6" },
+      { label: "S₁", color: "#f97316" },
+      { label: "S₂", color: "#ef4444" },
+      { label: "MC", color: "#f97316" },
+      { label: "ATC", color: "#3b82f6" },
+    ],
+    notes: "Two-panel diagram. Panel (a) shows industry S/D with S₁→S₂ shift. Panel (b) shows individual firm MC/ATC with SR supernormal profit and LR normal profit. Toggle between Short Run and Long Run views.",
+    examTips: [
+      "Short run: P > ATC → supernormal profit attracts new firms",
+      "Long run: entry shifts S right → P falls to min ATC → normal profit",
+      "AR = MR = P = min ATC in long run (allocative + productive efficiency)",
+      "Key: In perfect competition, firms are price takers",
+    ],
+  },
 };
