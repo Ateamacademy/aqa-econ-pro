@@ -74,7 +74,6 @@ export function useDiagramAccess() {
     profile,
     subscribed,
     refreshProfile,
-    refreshSubscription,
   } = useAuth();
 
   const usedRef = useRef<number>(normaliseUsed(profile?.free_diagrams_used));
@@ -126,27 +125,13 @@ export function useDiagramAccess() {
       let latestPremium = fallbackPremium;
       let errorMessage: string | null = null;
 
-      const [subscriptionResult, profileResult] = await Promise.allSettled([
-        supabase.functions.invoke("check-subscription"),
+      const [profileResult] = await Promise.allSettled([
         supabase
           .from("profiles")
           .select("free_diagrams_used")
           .eq("user_id", user.id)
           .maybeSingle(),
       ]);
-
-      if (subscriptionResult.status === "fulfilled") {
-        const { data, error } = subscriptionResult.value;
-        if (error) {
-          errorMessage = error.message;
-        } else if (typeof data?.subscribed === "boolean") {
-          latestPremium = data.subscribed;
-        }
-      } else {
-        errorMessage = subscriptionResult.reason instanceof Error
-          ? subscriptionResult.reason.message
-          : "Failed to check subscription status";
-      }
 
       if (profileResult.status === "fulfilled") {
         const { data, error } = profileResult.value;
@@ -181,11 +166,10 @@ export function useDiagramAccess() {
       });
 
       void refreshProfile();
-      void refreshSubscription();
 
       return applyState(next, latestUsed, latestPremium);
     },
-    [applyState, profile?.free_diagrams_used, refreshProfile, refreshSubscription, subscribed, user]
+    [applyState, profile?.free_diagrams_used, refreshProfile, subscribed, user]
   );
 
   const consumeAttempt = useCallback(async () => {

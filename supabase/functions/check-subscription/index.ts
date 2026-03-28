@@ -7,7 +7,6 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
-const PRODUCT_ID = "prod_U9WtwjUWrx0aqq";
 const ACCESS_EXPIRES = "2026-06-29T23:59:59Z";
 
 const TESTER_EMAILS = [
@@ -25,9 +24,14 @@ const TESTER_EMAILS = [
   "swapnilkumar.2016@vitalum.ac.in",
 ];
 
-// In-memory cache: email → { result, timestamp }
 const cache = new Map<string, { result: Record<string, unknown>; ts: number }>();
-const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+const CACHE_TTL_MS = 5 * 60 * 1000;
+
+const respond = (body: Record<string, unknown>, status = 200) =>
+  new Response(JSON.stringify(body), {
+    headers: { ...corsHeaders, "Content-Type": "application/json" },
+    status,
+  });
 
 serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
@@ -38,6 +42,8 @@ serve(async (req) => {
     { auth: { persistSession: false } }
   );
 
+  let email: string | null = null;
+
   try {
     const authHeader = req.headers.get("Authorization");
     if (!authHeader) throw new Error("No authorization header");
@@ -45,54 +51,44 @@ serve(async (req) => {
     const token = authHeader.replace("Bearer ", "");
     const { data: userData, error: userError } = await supabaseClient.auth.getUser(token);
     if (userError) throw new Error(`Auth error: ${userError.message}`);
+
     const user = userData.user;
     if (!user?.email) throw new Error("User not authenticated");
 
-    const email = user.email.toLowerCase();
+    email = user.email.toLowerCase();
 
-    // Beta / tester whitelist — instant premium access
     if (TESTER_EMAILS.includes(email)) {
-      return new Response(JSON.stringify({ subscribed: true, subscription_end: ACCESS_EXPIRES, tester: true }), {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      return respond({ subscribed: true, subscription_end: ACCESS_EXPIRES, tester: true });
     }
 
     if (new Date() > new Date(ACCESS_EXPIRES)) {
-      return new Response(JSON.stringify({ subscribed: false, expired: true }), {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      return respond({ subscribed: false, expired: true });
     }
 
-    // Check cache first
     const cached = cache.get(email);
     if (cached && Date.now() - cached.ts < CACHE_TTL_MS) {
-      return new Response(JSON.stringify(cached.result), {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      return respond(cached.result);
     }
 
-    const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", { apiVersion: "2025-08-27.basil" });
+    const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
+      apiVersion: "2025-08-27.basil",
+    });
+
     const customers = await stripe.customers.list({ email: user.email, limit: 1 });
 
     if (customers.data.length === 0) {
-      const result = { subscribed: false };
+      const result = { subscribed: false, subscription_end: null };
       cache.set(email, { result, ts: Date.now() });
-      return new Response(JSON.stringify(result), {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      return respond(result);
     }
 
-    const customerId = customers.data[0].id;
-
     const sessions = await stripe.checkout.sessions.list({
-      customer: customerId,
+      customer: customers.data[0].id,
       status: "complete",
-      limit: 100,
+      limit: 10,
     });
 
-    const hasPurchased = sessions.data.some((s) => {
-      return s.payment_status === "paid";
-    });
+    const hasPurchased = sessions.data.some((s) => s.payment_status === "paid");
 
     const result = {
       subscribed: hasPurchased,
@@ -100,14 +96,22 @@ serve(async (req) => {
     };
 
     cache.set(email, { result, ts: Date.now() });
-
-    return new Response(JSON.stringify(result), {
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
-    });
+    return respond(result);
   } catch (error) {
-    return new Response(JSON.stringify({ error: error.message }), {
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
-      status: 500,
-    });
+    const message = error instanceof Error ? error.message : String(error);
+    const statusCode = (error as { statusCode?: number })?.statusCode;
+    const isRateLimited = statusCode === 429 || /rate limit/i.test(message);
+
+    if (isRateLimited) {
+      if (email) {
+        const cached = cache.get(email);
+        if (cached) return respond({ ...cached.result, degraded: true });
+      }
+
+      // Fail-open with safe defaults to prevent frontend blank-screen loops.
+      return respond({ subscribed: false, subscription_end: null, degraded: true }, 200);
+    }
+
+    return respond({ error: message }, 500);
   }
 });
