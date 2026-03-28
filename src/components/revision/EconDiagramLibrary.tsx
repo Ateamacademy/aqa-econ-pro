@@ -3504,6 +3504,11 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
   const uid = rawId.replace(/:/g, "");
   if (!config) return null;
 
+  // ── Perfect Competition: dedicated two-panel component ──
+  if (type === "perfect_competition") {
+    return <PerfectCompDiagram className={cn("my-4", className)} />;
+  }
+
   // ── Declarative path: delegate to the new EconomicsDiagram component ──
   if (config.declarative) {
     return (
