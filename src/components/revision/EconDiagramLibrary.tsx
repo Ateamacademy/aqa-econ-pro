@@ -823,75 +823,101 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
   },
   positive_production_externality: {
     title: "Positive Externality of Production",
-    xAxis: "Quantity", yAxis: "Benefit /\ncost / price",
-    legend: [{ label: "MPC", color: "#ef4444" }, { label: "MSC", color: "#3b82f6" }, { label: "MPB = MSB", color: "#ef4444" }, { label: "Welfare Loss ABE", color: "#ef4444" }],
+    xAxis: "Quantity (Q)", yAxis: "Benefit / Cost / Price",
+    legend: [
+      { label: "S = MPC", color: "#ef4444" },
+      { label: "MSC", color: "#f97316" },
+      { label: "MPB = MSB = Demand", color: "#3b82f6" },
+      { label: "Welfare Loss", color: "#fb923c" },
+    ],
     examTips: [
-      "MSC is below MPC — production generates external benefits (e.g. job training)",
-      "Free market outcome where MPB = MPC: point B at (q, p)",
-      "Socially optimal outcome where MSB = MSC: point E at (q₁, p₁)",
-      "Underproduction of q₁ − q. Welfare loss ABE",
-      "Example: job training benefits other firms who can then hire the already trained workers",
+      "MSC is BELOW MPC — production generates external benefits (e.g. job training, R&D spillovers)",
+      "Free market: MPB ∩ MPC → Qm (under-produces relative to social optimum)",
+      "Social optimum: MPB ∩ MSC → Qopt (more output is desirable)",
+      "Welfare loss triangle between market eq, social optimum, and MPC at Qopt",
+      "Policy: subsidise production to close gap between MPC and MSC",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
-      const pad = 10;
-      const axL = mx + pad;
-      const axBot = my + ph - pad;
-      const axTop = my + pad;
 
-      // MPC: upward sloping (RED), steeper/higher — private cost
-      const mpcL = { x1: axL + pw * 0.2, y1: axBot, x2: mx + pw * 0.55, y2: axTop };
-      // MSC: upward sloping (BLUE), lower — social cost is lower due to external benefits
-      const mscL = { x1: axL + pw * 0.05, y1: axBot, x2: mx + pw * 0.7, y2: axTop + ph * 0.1 };
-      // MPB = MSB: downward sloping (RED)
-      const dL = { x1: axL, y1: axTop + 5, x2: mx + pw - pad, y2: axBot };
+      // Data-space equations (x: 0–10, y: 0–10):
+      //   MPB = MSB = Demand: y = -0.8x + 9
+      //   S = MPC:            y =  0.7x + 1   (ABOVE MSC)
+      //   MSC:                y =  0.4x + 0.5  (BELOW MPC)
+      const toSx = (v: number) => mx + (v / 10) * pw;
+      const toSy = (v: number) => my + ph - (v / 10) * ph;
 
-      // B = free market: MPC ∩ MPB
-      const ptB = lineIntersect(mpcL.x1, mpcL.y1, mpcL.x2, mpcL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
-      // E = social optimum: MSC ∩ MSB
-      const ptE = lineIntersect(mscL.x1, mscL.y1, mscL.x2, mscL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
-      // A = MSC at free market Q (below B)
-      const mscSlope = (mscL.y2 - mscL.y1) / (mscL.x2 - mscL.x1);
-      const ptA = { x: ptB.x, y: mscL.y1 + mscSlope * (ptB.x - mscL.x1) };
+      // Compute data-space intersections
+      // MPB ∩ MPC: -0.8x + 9 = 0.7x + 1 → 1.5x = 8 → x = 5.333
+      const qm = 8 / 1.5;
+      const pm = -0.8 * qm + 9;
+      // MPB ∩ MSC: -0.8x + 9 = 0.4x + 0.5 → 1.2x = 8.5 → x = 7.083
+      const qopt = 8.5 / 1.2;
+      const popt = -0.8 * qopt + 9;
+      // MPC value at Qopt
+      const mpcAtQopt = 0.7 * qopt + 1;
+
+      // SVG coordinates
+      const eqMarket = { x: toSx(qm), y: toSy(pm) };
+      const eqSocial = { x: toSx(qopt), y: toSy(popt) };
+      const mpcAtQoptSvg = { x: toSx(qopt), y: toSy(mpcAtQopt) };
+
+      // Curve endpoints in SVG (clip to data range 0–10)
+      // MPB line: x=0→y=9, x=10→y=1 (but clamp x where y≥0: x=11.25, so use x=10)
+      const mpbLine = { x1: toSx(0), y1: toSy(9), x2: toSx(10), y2: toSy(1) };
+      // MPC line: x=0→y=1, x=10→y=8
+      const mpcLine = { x1: toSx(0), y1: toSy(1), x2: toSx(10), y2: toSy(8) };
+      // MSC line: x=0→y=0.5, x=10→y=4.5
+      const mscLine = { x1: toSx(0), y1: toSy(0.5), x2: toSx(10), y2: toSy(4.5) };
 
       return (
         <>
-          {/* Welfare loss triangle ABE */}
-          <WelfareRegion
-            points={[
-              { x: ptA.x, y: ptA.y },
-              { x: ptB.x, y: ptB.y },
-              { x: ptE.x, y: ptE.y },
-            ]}
-            fill="#ef4444"
-            fillOpacity={0.18}
-            strokeWidth={0}
-            label="Welfare Loss"
-            labelSize={7}
+          {/* Welfare loss triangle: Market eq → Social optimum → MPC at Qopt */}
+          <polygon
+            points={`${eqMarket.x},${eqMarket.y} ${eqSocial.x},${eqSocial.y} ${mpcAtQoptSvg.x},${mpcAtQoptSvg.y}`}
+            fill="rgba(251,146,60,0.18)"
+            stroke="#f97316"
+            strokeWidth={1.5}
+            strokeDasharray="5,3"
           />
-          {/* MPC (RED — private cost, steeper/higher) */}
-          <GLine {...mpcL} color="#ef4444" gradientId="grad-supply" glow="glow-red" width={2.5} />
-          <Label x={mpcL.x2 - 4} y={mpcL.y2 - 8} text="MPC" color="#ef4444" size={9} />
-          {/* MSC (BLUE — social cost, lower) */}
-          <GLine {...mscL} color="#3b82f6" gradientId="grad-demand" glow="glow-blue" width={2.5} />
-          <Label x={mscL.x2 + 4} y={mscL.y2 - 4} text="MSC" color="#3b82f6" size={9} />
-          {/* MPB = MSB (RED — benefit/demand) */}
-          <GLine {...dL} color="#ef4444" width={2.5} />
-          <Label x={dL.x2 + 4} y={dL.y2 - 8} text="MPB = MSB" color="#ef4444" />
-          {/* Dashed projections for B (q, p) */}
-          <line x1={ptB.x} y1={ptB.y} x2={mx} y2={ptB.y} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
-          <line x1={ptB.x} y1={ptB.y} x2={ptB.x} y2={axBot} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
-          <Label x={mx - 2} y={ptB.y + 3} text="p" color="hsl(var(--foreground))" size={10} anchor="end" />
-          <Label x={ptB.x} y={axBot + 14} text="q" color="hsl(var(--foreground))" size={10} />
-          {/* Dashed projections for E (q₁, p₁) */}
-          <line x1={ptE.x} y1={ptE.y} x2={mx} y2={ptE.y} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
-          <line x1={ptE.x} y1={ptE.y} x2={ptE.x} y2={axBot} stroke="hsl(var(--foreground))" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
-          <Label x={mx - 2} y={ptE.y + 3} text="p₁" color="hsl(var(--foreground))" size={10} anchor="end" />
-          <Label x={ptE.x} y={axBot + 14} text="q₁" color="hsl(var(--foreground))" size={10} />
-          {/* Point labels */}
-          <PremiumDot x={ptB.x} y={ptB.y} color={COLORS.eq} label="B" gradientId="dot-green" />
-          <PremiumDot x={ptE.x} y={ptE.y} color={COLORS.eq} label="E" gradientId="dot-amber" />
-          <Label x={ptA.x + 6} y={ptA.y + 4} text="A" color="#ef4444" size={9} />
+          <Label
+            x={(eqMarket.x + eqSocial.x + mpcAtQoptSvg.x) / 3}
+            y={(eqMarket.y + eqSocial.y + mpcAtQoptSvg.y) / 3 + 4}
+            text="Welfare Loss"
+            color="#f97316"
+            size={8}
+            anchor="middle"
+          />
+
+          {/* S = MPC (Red — private cost, ABOVE MSC) */}
+          <GLine {...mpcLine} color="#ef4444" gradientId="grad-supply" glow="glow-red" width={2.5} />
+          <Label x={mpcLine.x2 - 8} y={mpcLine.y2 - 10} text="S = MPC" color="#ef4444" size={10} anchor="end" />
+
+          {/* MSC (Orange — social cost, BELOW MPC) */}
+          <GLine {...mscLine} color="#f97316" width={2.5} />
+          <Label x={mscLine.x2 - 8} y={mscLine.y2 + 14} text="MSC" color="#f97316" size={10} anchor="end" />
+
+          {/* MPB = MSB = Demand (Blue) */}
+          <GLine {...mpbLine} color="#3b82f6" gradientId="grad-demand" glow="glow-blue" width={2.5} />
+          <Label x={mpbLine.x2 - 8} y={mpbLine.y2 + 14} text="MPB = MSB = D" color="#3b82f6" size={9} anchor="end" />
+
+          {/* Dashed projections — Market equilibrium (Qm, Pm) */}
+          <line x1={eqMarket.x} y1={eqMarket.y} x2={mx} y2={eqMarket.y} stroke="#16a34a" strokeWidth={0.8} strokeDasharray="4,3" opacity={0.5} />
+          <line x1={eqMarket.x} y1={eqMarket.y} x2={eqMarket.x} y2={my + ph} stroke="#16a34a" strokeWidth={0.8} strokeDasharray="4,3" opacity={0.5} />
+          <Label x={mx - 4} y={eqMarket.y + 3} text="Pm" color="#16a34a" size={9} anchor="end" />
+          <Label x={eqMarket.x} y={my + ph + 14} text="Qm" color="#16a34a" size={9} anchor="middle" />
+
+          {/* Dashed projections — Social optimum (Qopt, Popt) */}
+          <line x1={eqSocial.x} y1={eqSocial.y} x2={mx} y2={eqSocial.y} stroke="#eab308" strokeWidth={0.8} strokeDasharray="4,3" opacity={0.5} />
+          <line x1={eqSocial.x} y1={eqSocial.y} x2={eqSocial.x} y2={my + ph} stroke="#eab308" strokeWidth={0.8} strokeDasharray="4,3" opacity={0.5} />
+          <Label x={mx - 4} y={eqSocial.y + 3} text="Popt" color="#eab308" size={9} anchor="end" />
+          <Label x={eqSocial.x} y={my + ph + 14} text="Qopt" color="#eab308" size={9} anchor="middle" />
+
+          {/* Equilibrium dots */}
+          <PremiumDot x={eqMarket.x} y={eqMarket.y} color="#16a34a" label="Market eq (Qm, Pm)" gradientId="dot-green"
+            tooltipText="Free market: MPB = MPC → under-production" />
+          <PremiumDot x={eqSocial.x} y={eqSocial.y} color="#eab308" label="Social optimum (Qopt, Popt)" gradientId="dot-amber"
+            tooltipText="Social optimum: MPB = MSC → more output" />
         </>
       );
     },
