@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, Cell, CartesianGrid } from "recharts";
+import SmartXAxisTick from "@/components/ui/SmartXAxisTick";
 import type { SessionRow } from "@/hooks/useReadinessScore";
 
 interface Props {
@@ -72,9 +73,10 @@ export default function PerformanceOverTime({ sessions, subject }: Props) {
             <CartesianGrid stroke="hsl(228,36%,18%)" strokeDasharray="3 3" vertical={false} />
             <XAxis
               dataKey="week"
-              tick={{ fill: "hsl(215,16%,65%)", fontSize: 10 }}
+              tick={<SmartXAxisTick fill="hsl(215,16%,65%)" fontSize={10} />}
               axisLine={false}
               tickLine={false}
+              height={chartData.some(d => d.week.length > 12) ? 60 : 30}
             />
             <YAxis
               domain={[0, 100]}
