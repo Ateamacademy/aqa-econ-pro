@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, Cell, CartesianGrid } from "recharts";
+import SmartXAxisTick from "@/components/ui/SmartXAxisTick";
 import type { SessionRow } from "@/hooks/useReadinessScore";
 
 interface Props {
