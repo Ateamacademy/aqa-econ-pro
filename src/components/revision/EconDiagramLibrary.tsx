@@ -3703,6 +3703,21 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
   const uid = rawId.replace(/:/g, "");
   if (!config) return null;
 
+  // ── Declarative path: delegate to the new EconomicsDiagram component ──
+  if (config.declarative) {
+    return (
+      <div
+        className={cn(
+          "my-4 relative overflow-hidden group transition-shadow duration-300 hover:shadow-xl",
+          className
+        )}
+      >
+        <EconomicsDiagram {...config.declarative} className="" />
+      </div>
+    );
+  }
+
+  // ── Legacy path: manual SVG rendering ──
   const W = SVG_W, H = SVG_H;
   const mx = SVG_PAD, my = SVG_PAD, pw = W - mx - SVG_PAD, ph = H - my - SVG_PAD;
 
