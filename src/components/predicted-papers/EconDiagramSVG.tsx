@@ -278,9 +278,9 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
     );
   }
 
-  const W = 480;
-  const H = 380;
-  const margin = { top: 32, right: 32, bottom: 62, left: 72 };
+  const W = 700;
+  const H = 500;
+  const margin = { top: 60, right: 60, bottom: 60, left: 60 };
   const plotW = W - margin.left - margin.right;
   const plotH = H - margin.top - margin.bottom;
 
@@ -327,7 +327,7 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
   const eq2Color = "#d97706";
 
   if (!animated) {
-    return <div ref={ref} className="h-[380px]" />;
+    return <div ref={ref} className="h-[500px]" />;
   }
 
   const pageLabels = ["Diagram", "Analysis"];
@@ -368,7 +368,7 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
           <motion.div key="diagram" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 10 }} transition={{ duration: 0.25 }}>
             {/* SVG Diagram */}
             <div className="relative px-4 py-4">
-              <svg viewBox={`0 0 ${W} ${H}`} className="w-full max-w-[480px] mx-auto h-auto drop-shadow-sm" role="img" aria-label={`Economics diagram: ${diagram.type}`}>
+              <svg viewBox={`0 0 ${W} ${H}`} className="w-full max-w-[700px] mx-auto h-auto drop-shadow-sm" role="img" aria-label={`Economics diagram: ${diagram.type}`}>
                 <defs>
                   <pattern id="grid3d" width="20" height="20" patternUnits="userSpaceOnUse">
                     <path d="M 20 0 L 0 0 0 20" fill="none" stroke="hsl(var(--border))" strokeWidth="0.25" opacity="0.35" />
