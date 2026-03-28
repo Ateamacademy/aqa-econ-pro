@@ -3641,7 +3641,7 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
         <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-primary/10 text-[10px]">📊</span>
         {config.title}
       </p>
-      <svg viewBox={`0 0 ${W} ${H}`} className="w-full max-w-[480px] h-auto text-foreground relative z-10">
+      <svg viewBox={`0 0 ${W} ${H}`} className="w-full max-w-[700px] h-auto text-foreground relative z-10">
         <PremiumDefs mx={mx} my={my} pw={pw} ph={ph} uid={uid} />
         <Axes mx={mx} my={my} pw={pw} ph={ph} xLabel={config.xAxis} yLabel={config.yAxis} />
         <g clipPath={`url(#plot-clip-${uid})`}>
