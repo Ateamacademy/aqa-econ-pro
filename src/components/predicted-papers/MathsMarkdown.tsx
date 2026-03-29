@@ -11,6 +11,8 @@ import { FigureChart } from "./FigureChart";
 interface MathsMarkdownProps {
   children: string;
   className?: string;
+  /** When true, S&D / economics diagrams are suppressed (useful for extract/context sections) */
+  suppressDiagrams?: boolean;
 }
 
 /**
