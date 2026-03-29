@@ -2160,7 +2160,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
               <div className="rounded-2xl border border-border/60 bg-card overflow-hidden">
                 <div className="p-6 md:p-8">
                   <div className="prose prose-sm max-w-none dark:prose-invert">
-                    <MathsMarkdown>{paperContext}</MathsMarkdown>
+                    <MathsMarkdown suppressDiagrams>{paperContext}</MathsMarkdown>
                   </div>
                 </div>
               </div>
