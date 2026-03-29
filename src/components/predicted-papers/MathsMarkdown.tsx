@@ -11,6 +11,8 @@ import { FigureChart } from "./FigureChart";
 interface MathsMarkdownProps {
   children: string;
   className?: string;
+  /** When true, S&D / economics diagrams are suppressed (useful for extract/context sections) */
+  suppressDiagrams?: boolean;
 }
 
 /**
@@ -477,11 +479,18 @@ function stripLineReferences(text: string): string {
     .trim();
 }
 
-export function MathsMarkdown({ children, className }: MathsMarkdownProps) {
+export function MathsMarkdown({ children, className, suppressDiagrams = false }: MathsMarkdownProps) {
   const cleaned = stripLineReferences(children);
   // First extract figure charts
   const figSegments = extractFigureBlocks(cleaned);
-  const hasSpecialFigures = figSegments.some(s => s.type === "figure" || s.type === "sd-diagram");
+
+  // When suppressDiagrams is true, drop S&D diagram segments entirely
+  // These are irrelevant economics diagrams that appear between extract blocks
+  const processedSegments = suppressDiagrams
+    ? figSegments.filter(seg => seg.type !== "sd-diagram")
+    : figSegments;
+
+  const hasSpecialFigures = processedSegments.some(s => s.type === "figure" || s.type === "sd-diagram");
 
   if (!hasSpecialFigures) {
     return <div className={className}>{renderSegment(cleaned)}</div>;
@@ -489,7 +498,7 @@ export function MathsMarkdown({ children, className }: MathsMarkdownProps) {
 
   return (
     <div className={className}>
-      {figSegments.map((seg, i) =>
+      {processedSegments.map((seg, i) =>
         seg.type === "figure" ? (
           <FigureChart key={`fig${i}`} title={seg.figTitle!} description={seg.figDesc!} />
         ) : seg.type === "sd-diagram" ? (
