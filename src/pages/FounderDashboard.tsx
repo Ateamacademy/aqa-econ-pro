@@ -149,9 +149,13 @@ export default function FounderDashboard() {
     setLoading(true); setError(null);
     try {
       const { data: result, error: fnError } = await supabase.functions.invoke("founder-analytics", { body: { timeRange } });
-      if (fnError) throw fnError;
+      if (fnError) throw new Error(fnError.message || "Edge function error");
+      if (result?.error) throw new Error(result.error);
       setData(result);
-    } catch (err: any) { setError(err.message || "Failed to load"); }
+    } catch (err: any) {
+      console.error("Founder analytics fetch failed:", err);
+      setError(err.message || "Failed to load analytics");
+    }
     finally { setLoading(false); }
   };
 
