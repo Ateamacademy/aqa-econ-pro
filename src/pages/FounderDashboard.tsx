@@ -141,7 +141,7 @@ export default function FounderDashboard() {
   const [activeNav, setActiveNav] = useState("insights");
   const mainRef = useRef<HTMLDivElement>(null);
 
-  const isAllowed = user?.email && ALLOWED_EMAILS.includes(user.email);
+  const isAllowed = user?.email && ALLOWED_EMAILS.includes(user.email.toLowerCase());
 
   useEffect(() => { if (user && isAllowed) fetchAnalytics(); }, [user, isAllowed, timeRange]);
 
