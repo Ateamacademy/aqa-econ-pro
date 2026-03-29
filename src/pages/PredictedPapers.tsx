@@ -1407,7 +1407,9 @@ Example Figure format:
 - New equilibrium at E₂: P₂ (higher), Q₂ (lower)
 Source: Hypothetical, 2024
 
-Every diagram block MUST include "Diagram family: <family-id>" on its own line.`;
+Every diagram block MUST include "Diagram family: <family-id>" on its own line.
+
+CRITICAL: Do NOT place economics diagram Figure blocks (supply & demand, AD/AS, externality, etc.) inside Extract or context sections. Diagram Figures belong ONLY inside or after questions that explicitly ask students to "draw", "sketch", or "use a diagram". Extract sections should contain ONLY text passages, data tables, and statistical charts — never theoretical economics diagrams.`;
 
     const econDiagramAppendix = isAnyEcon ? ECON_DIAGRAM_FAMILY_RULES : "";
 
