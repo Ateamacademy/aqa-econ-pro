@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 /* ── constants ── */
-const ALLOWED_EMAILS = ["admin@econrev.co", "swapnil.kumar22@alumni.imperial.ac.uk", "aminul.miah@ateamacademy.co.uk", "info@ateamacademy.co.uk"];
+const ALLOWED_EMAILS = ["admin@econrev.co", "swapnil.kumar22@alumni.imperial.ac.uk", "aminul.miah@ateamacademy.co.uk", "info@ateamacademy.co.uk"].map(e => e.toLowerCase());
 
 const TIME_FILTERS = [
   { value: "7d", label: "7 D" },
@@ -141,7 +141,7 @@ export default function FounderDashboard() {
   const [activeNav, setActiveNav] = useState("insights");
   const mainRef = useRef<HTMLDivElement>(null);
 
-  const isAllowed = user?.email && ALLOWED_EMAILS.includes(user.email);
+  const isAllowed = user?.email && ALLOWED_EMAILS.includes(user.email.toLowerCase());
 
   useEffect(() => { if (user && isAllowed) fetchAnalytics(); }, [user, isAllowed, timeRange]);
 
@@ -149,9 +149,13 @@ export default function FounderDashboard() {
     setLoading(true); setError(null);
     try {
       const { data: result, error: fnError } = await supabase.functions.invoke("founder-analytics", { body: { timeRange } });
-      if (fnError) throw fnError;
+      if (fnError) throw new Error(fnError.message || "Edge function error");
+      if (result?.error) throw new Error(result.error);
       setData(result);
-    } catch (err: any) { setError(err.message || "Failed to load"); }
+    } catch (err: any) {
+      console.error("Founder analytics fetch failed:", err);
+      setError(err.message || "Failed to load analytics");
+    }
     finally { setLoading(false); }
   };
 
@@ -167,11 +171,17 @@ export default function FounderDashboard() {
 
   /* guard states */
   if (authLoading) return <div className="flex items-center justify-center min-h-[60vh]"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" /></div>;
-  if (!user) return <div className="container py-20 text-center"><ShieldCheck className="h-12 w-12 text-muted-foreground mx-auto mb-4" /><h1 className="text-xl font-bold mb-2">Sign in required</h1></div>;
-  if (!isAllowed) return <div className="container py-20 text-center"><AlertCircle className="h-12 w-12 text-destructive mx-auto mb-4" /><h1 className="text-xl font-bold mb-2">Access Denied</h1><p className="text-sm text-muted-foreground">Restricted to authorised team members.</p></div>;
+  if (!user) return <div className="container py-20 text-center"><ShieldCheck className="h-12 w-12 text-muted-foreground mx-auto mb-4" /><h1 className="text-xl font-bold mb-2">Sign in required</h1><p className="text-sm text-muted-foreground">Please sign in to access the Founder Dashboard.</p></div>;
+  if (!isAllowed) return <div className="container py-20 text-center"><AlertCircle className="h-12 w-12 text-destructive mx-auto mb-4" /><h1 className="text-xl font-bold mb-2">Access Denied</h1><p className="text-sm text-muted-foreground">Restricted to authorised team members.</p><p className="text-xs text-muted-foreground/60 mt-2">Signed in as: {user.email}</p></div>;
   if (loading && !data) return <div className="flex items-center justify-center min-h-[60vh]"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" /></div>;
-  if (error) return <div className="container py-20 text-center"><AlertCircle className="h-12 w-12 text-destructive mx-auto mb-4" /><h1 className="text-xl font-bold mb-2">Error</h1><p className="text-sm text-muted-foreground">{error}</p></div>;
-  if (!data) return null;
+  if (error) return (
+    <div className="container py-20 text-center">
+      <AlertCircle className="h-12 w-12 text-destructive mx-auto mb-4" />
+      <h1 className="text-xl font-bold mb-2">Error Loading Dashboard</h1>
+      <p className="text-sm text-muted-foreground mb-4">{error}</p>
+      <Button onClick={fetchAnalytics} variant="outline" size="sm"><RefreshCw className="h-4 w-4 mr-2" />Retry</Button>
+    </div>
+  );
 
   /* derived data */
   const gradeDistData = Object.entries(data.learningOutcomes.gradeDistribution).map(([grade, count]) => ({ grade, count })).filter(d => d.count > 0);
