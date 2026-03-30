@@ -445,6 +445,7 @@ export const EDEXCEL_B_PROFILE: BoardProfile = {
 
 import { OCR_ALEVEL_PROFILE, OCR_AS_PROFILE } from "@/data/ocrBoardProfile";
 import { IB_HL_PROFILE, IB_SL_PROFILE } from "@/data/ibBoardProfile";
+import { WJEC_PROFILE, EDUQAS_PROFILE } from "@/data/wjecBoardProfile";
 
 /** All board profiles indexed by board id */
 export const BOARD_PROFILES: Record<string, BoardProfile> = {
@@ -454,6 +455,8 @@ export const BOARD_PROFILES: Record<string, BoardProfile> = {
   ocr_as: OCR_AS_PROFILE,
   ib_hl: IB_HL_PROFILE,
   ib_sl: IB_SL_PROFILE,
+  wjec: WJEC_PROFILE,
+  eduqas: EDUQAS_PROFILE,
 };
 
 /**

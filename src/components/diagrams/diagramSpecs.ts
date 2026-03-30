@@ -177,6 +177,7 @@ const C = {
 import { EDEXCEL_DIAGRAM_SPECS } from "@/data/edexcelDiagramSpecs";
 import { OCR_DIAGRAM_SPECS } from "@/data/ocrDiagramSpecs";
 import { IB_DIAGRAM_SPECS } from "@/data/ibDiagramSpecs";
+import { WJEC_DIAGRAM_SPECS } from "@/data/wjecDiagramSpecs";
 
 /* ══════════════════════════════════════════════
    DIAGRAM_SPECS — the canonical registry
@@ -189,6 +190,8 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   ...OCR_DIAGRAM_SPECS,
   /* ── IB Economics HL/SL diagrams ── */
   ...IB_DIAGRAM_SPECS,
+  /* ── WJEC / Eduqas diagrams ── */
+  ...WJEC_DIAGRAM_SPECS,
 
   /* ── Supply & Demand ── */
   supply_demand: {
