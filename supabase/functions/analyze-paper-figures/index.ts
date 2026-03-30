@@ -53,7 +53,7 @@ serve(async (req) => {
       throw new Error("LOVABLE_API_KEY is not configured");
     }
 
-    const systemPrompt = `You are an expert exam paper analyst specializing in UK and international economics exam papers, especially Edexcel A (9EC0), Edexcel B (9EB0), and OCR A-Level Economics (H460/H060).
+    const systemPrompt = `You are an expert exam paper analyst specializing in UK and international economics exam papers, especially Edexcel A (9EC0), Edexcel B (9EB0), OCR A-Level Economics (H460/H060), and IB Economics HL/SL.
 
 For each figure found between extract sections, determine:
 1. Whether the figure is semantically relevant to the surrounding extracts
