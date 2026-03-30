@@ -2169,6 +2169,20 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
               </div>
             )}
 
+            {/* Figure relevance analysis — works across all 12 exam boards */}
+            {generatedPaper && (
+              <FigureAnalysisPanel
+                paperContent={generatedPaper}
+                examBoard={`${examBoard} ${level}`}
+                paperTitle={selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} — Paper ${paper}`}
+                onCleanedContent={(cleaned) => {
+                  const { context, questions } = parseQuestions(cleaned);
+                  setPaperContext(context);
+                  setParsedQuestions(questions);
+                }}
+              />
+            )}
+
             {/* Chemistry reference materials */}
             {isChemistry && (
               <div className="rounded-2xl border border-border/60 bg-card overflow-hidden">
