@@ -176,6 +176,7 @@ const C = {
 
 import { EDEXCEL_DIAGRAM_SPECS } from "@/data/edexcelDiagramSpecs";
 import { OCR_DIAGRAM_SPECS } from "@/data/ocrDiagramSpecs";
+import { IB_DIAGRAM_SPECS } from "@/data/ibDiagramSpecs";
 
 /* ══════════════════════════════════════════════
    DIAGRAM_SPECS — the canonical registry
