@@ -443,10 +443,14 @@ export const EDEXCEL_B_PROFILE: BoardProfile = {
   },
 };
 
+import { OCR_ALEVEL_PROFILE, OCR_AS_PROFILE } from "@/data/ocrBoardProfile";
+
 /** All board profiles indexed by board id */
 export const BOARD_PROFILES: Record<string, BoardProfile> = {
   edexcel_a: EDEXCEL_A_PROFILE,
   edexcel_b: EDEXCEL_B_PROFILE,
+  ocr_alevel: OCR_ALEVEL_PROFILE,
+  ocr_as: OCR_AS_PROFILE,
 };
 
 /**
