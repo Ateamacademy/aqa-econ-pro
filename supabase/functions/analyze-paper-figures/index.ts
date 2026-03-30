@@ -17,6 +17,12 @@ interface FigureAnalysis {
   reason: string;
   isDuplicate: boolean;
   duplicateOf?: string;
+  diagramFamily?: string;
+  diagramSubType?: string;
+  detectedLabels?: string[];
+  missingLabels?: string[];
+  expectedStudentAction?: string;
+  relatedTopic?: string;
 }
 
 interface AnalysisResult {
