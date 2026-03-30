@@ -24,6 +24,12 @@ export interface FigureAnalysisItem {
   reason: string;
   isDuplicate: boolean;
   duplicateOf?: string;
+  diagramFamily?: string;
+  diagramSubType?: string;
+  detectedLabels?: string[];
+  missingLabels?: string[];
+  expectedStudentAction?: string;
+  relatedTopic?: string;
 }
 
 interface FigureAnalysisResult {
@@ -204,10 +210,38 @@ export function FigureAnalysisPanel({
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="px-3 pt-2 text-xs space-y-2">
+                      {fig.diagramFamily && (
+                        <div className="flex flex-wrap gap-1.5 mb-1">
+                          <Badge variant="outline" className="text-[10px] bg-primary/10 border-primary/20 text-primary">
+                            {fig.diagramFamily}
+                          </Badge>
+                          {fig.diagramSubType && (
+                            <Badge variant="outline" className="text-[10px]">{fig.diagramSubType}</Badge>
+                          )}
+                          {fig.expectedStudentAction && (
+                            <Badge variant="outline" className="text-[10px] bg-accent/10">{fig.expectedStudentAction}</Badge>
+                          )}
+                          {fig.relatedTopic && (
+                            <Badge variant="outline" className="text-[10px] text-muted-foreground">{fig.relatedTopic}</Badge>
+                          )}
+                        </div>
+                      )}
                       {fig.figureDescription && (
                         <p className="text-muted-foreground">{fig.figureDescription}</p>
                       )}
                       <p className="text-foreground/80">{fig.reason}</p>
+                      {fig.detectedLabels && fig.detectedLabels.length > 0 && (
+                        <div className="text-[10px]">
+                          <span className="text-muted-foreground">Labels found: </span>
+                          <span className="text-foreground/70">{fig.detectedLabels.join(", ")}</span>
+                        </div>
+                      )}
+                      {fig.missingLabels && fig.missingLabels.length > 0 && (
+                        <div className="text-[10px]">
+                          <span className="text-muted-foreground">Missing: </span>
+                          <span className="text-amber-400">{fig.missingLabels.join(", ")}</span>
+                        </div>
+                      )}
                       {fig.isDuplicate && fig.duplicateOf && (
                         <p className="text-amber-400 text-[10px]">
                           Duplicate of: {fig.duplicateOf}
