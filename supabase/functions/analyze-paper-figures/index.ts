@@ -17,6 +17,12 @@ interface FigureAnalysis {
   reason: string;
   isDuplicate: boolean;
   duplicateOf?: string;
+  diagramFamily?: string;
+  diagramSubType?: string;
+  detectedLabels?: string[];
+  missingLabels?: string[];
+  expectedStudentAction?: string;
+  relatedTopic?: string;
 }
 
 interface AnalysisResult {
@@ -47,13 +53,34 @@ serve(async (req) => {
       throw new Error("LOVABLE_API_KEY is not configured");
     }
 
-    const systemPrompt = `You are an expert exam paper analyst specializing in UK and international economics exam papers. Your task is to analyze figures, diagrams, graphs, and images placed between text extract sections in exam papers.
+    const systemPrompt = `You are an expert exam paper analyst specializing in UK and international economics exam papers, especially Edexcel A (9EC0) and Edexcel B (9EB0).
 
 For each figure found between extract sections, determine:
 1. Whether the figure is semantically relevant to the surrounding extracts
 2. Whether it is a duplicate of another figure in the paper
 3. A confidence score (0.0-1.0) for your relevance decision
 4. A clear explanation of your reasoning
+5. The ECONOMICS DIAGRAM FAMILY the figure belongs to
+6. What labels are visible and what labels are missing
+7. What student action the question expects
+
+DIAGRAM FAMILIES to classify into:
+- ppf (Production Possibility Frontier — balanced growth, biased, unemployment, shifts)
+- supply_demand (Supply & Demand — equilibrium, shifts, simultaneous)
+- externalities (Positive/negative, consumption/production — MSC, MPC, MSB, MPB)
+- consumer_producer_surplus (CS/PS shading)
+- tax_subsidy (Indirect tax, subsidy effects)
+- price_controls (Price floor, price ceiling)
+- cost_curves (MC, ATC, AVC, AFC, LRAC, economies of scale)
+- market_structures (Monopoly, perfect competition, monopolistic competition, oligopoly, kinked demand)
+- labour_market (DL=MRP, SL, minimum wage, monopsony)
+- ad_as (AD/AS — demand/supply shocks, LRAS shifts, Keynesian AS)
+- phillips_curve (SRPC, LRPC, NRU)
+- monetary_policy (Transmission mechanism, interest rates, QE)
+- exchange_rate (Currency market, depreciation/appreciation)
+- international_trade (Tariff, quota, subsidy, comparative advantage)
+- development (Lorenz curve, Harrod-Domar, commodity prices)
+- other (Not an economics diagram)
 
 RULES:
 - Data tables with specific statistics referenced by questions ARE relevant
@@ -62,33 +89,17 @@ RULES:
 - Generic diagrams not referenced by any question are IRRELEVANT
 - If the same figure appears in multiple sections, mark duplicates
 - Consider the exam board format when judging relevance
+- Always classify the diagram type even if irrelevant
+- Detect axis labels, curve names, equilibrium labels, shaded regions
 
-Respond with a JSON object matching this schema:
-{
-  "figures": [
-    {
-      "figureId": "fig-1",
-      "figureTitle": "Figure 1: ...",
-      "figureDescription": "Brief description",
-      "precedingExtract": "Last 50 words before the figure",
-      "followingExtract": "First 50 words after the figure",
-      "relevanceDecision": "relevant|irrelevant|duplicate|ambiguous",
-      "confidenceScore": 0.85,
-      "reason": "Why this decision was made",
-      "isDuplicate": false,
-      "duplicateOf": null
-    }
-  ],
-  "cleanedContent": "The full paper content with irrelevant figures removed or labeled",
-  "summary": "Brief summary of findings"
-}`;
+Respond with a JSON object matching the schema provided.`;
 
-    const userPrompt = `Analyze this ${examBoard || "exam"} paper "${paperTitle || "Untitled"}" for irrelevant figures between extract sections.
+    const userPrompt = `Analyze this ${examBoard || "exam"} paper "${paperTitle || "Untitled"}" for figures between extract sections. Classify each by economics diagram family.
 
 PAPER CONTENT:
 ${paperContent}
 
-Identify every Figure, diagram, graph, or chart block. For each one, determine if it belongs in its current position or if it's an irrelevant insertion. Return your analysis as JSON.`;
+For each Figure, diagram, graph, or chart: (1) classify its diagram family, (2) determine relevance, (3) list detected and missing labels, (4) identify expected student action. Return as JSON.`;
 
     const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
@@ -129,6 +140,12 @@ Identify every Figure, diagram, graph, or chart block. For each one, determine i
                         reason: { type: "string" },
                         isDuplicate: { type: "boolean" },
                         duplicateOf: { type: "string" },
+                        diagramFamily: { type: "string", description: "Economics diagram family: ppf, supply_demand, externalities, cost_curves, market_structures, labour_market, ad_as, phillips_curve, exchange_rate, international_trade, development, tax_subsidy, price_controls, consumer_producer_surplus, monetary_policy, other" },
+                        diagramSubType: { type: "string", description: "Specific sub-type e.g. 'monopoly_profit_max', 'ppf_balanced_growth'" },
+                        detectedLabels: { type: "array", items: { type: "string" }, description: "Labels visible in the figure" },
+                        missingLabels: { type: "array", items: { type: "string" }, description: "Labels that should be present but are missing" },
+                        expectedStudentAction: { type: "string", description: "What student should do: draw, label, shift, shade, calculate, explain, evaluate, adapt" },
+                        relatedTopic: { type: "string", description: "Economics topic this diagram relates to" },
                       },
                       required: [
                         "figureId",
@@ -138,6 +155,7 @@ Identify every Figure, diagram, graph, or chart block. For each one, determine i
                         "confidenceScore",
                         "reason",
                         "isDuplicate",
+                        "diagramFamily",
                       ],
                     },
                   },
