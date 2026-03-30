@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
+import { FigureAnalysisPanel } from "@/components/predicted-papers/FigureAnalysisPanel";
 import { FREE_LIMITS } from "@/lib/plans";
 import { PaperSelector } from "@/components/predicted-papers/PaperSelector";
 import { TierSelector } from "@/components/predicted-papers/TierSelector";
@@ -2166,6 +2167,20 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                   </div>
                 </div>
               </div>
+            )}
+
+            {/* Figure relevance analysis — works across all 12 exam boards */}
+            {generatedPaper && (
+              <FigureAnalysisPanel
+                paperContent={generatedPaper}
+                examBoard={`${examBoard} ${level}`}
+                paperTitle={selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} — Paper ${paper}`}
+                onCleanedContent={(cleaned) => {
+                  const { context, questions } = parseQuestions(cleaned);
+                  setPaperContext(context);
+                  setParsedQuestions(questions);
+                }}
+              />
             )}
 
             {/* Chemistry reference materials */}

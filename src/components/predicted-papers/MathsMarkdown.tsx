@@ -484,10 +484,22 @@ export function MathsMarkdown({ children, className, suppressDiagrams = false }:
   // First extract figure charts
   const figSegments = extractFigureBlocks(cleaned);
 
-  // When suppressDiagrams is true, drop S&D diagram segments entirely
-  // These are irrelevant economics diagrams that appear between extract blocks
+  // When suppressDiagrams is true, drop S&D diagram segments AND figure segments
+  // that contain economics diagram descriptions (not data charts/tables).
+  // These are irrelevant economics diagrams that appear between extract blocks.
   const processedSegments = suppressDiagrams
-    ? figSegments.filter(seg => seg.type !== "sd-diagram")
+    ? figSegments.filter(seg => {
+        if (seg.type === "sd-diagram") return false;
+        // Also suppress figure segments that describe economics diagrams (not data)
+        if (seg.type === "figure" && seg.figDesc) {
+          const desc = seg.figDesc.toLowerCase();
+          const isEconDiagram = /diagram\s+family:/i.test(seg.figDesc) ||
+            (/(?:demand|supply|ad|as|sras|lras|mc|mr|ar|atc|mpb|mpc|msb|msc)/i.test(desc) &&
+             /(?:curve|shift|equilibrium|intersection)/i.test(desc));
+          if (isEconDiagram) return false;
+        }
+        return true;
+      })
     : figSegments;
 
   const hasSpecialFigures = processedSegments.some(s => s.type === "figure" || s.type === "sd-diagram");
