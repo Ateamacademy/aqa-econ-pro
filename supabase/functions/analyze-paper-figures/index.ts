@@ -90,6 +90,16 @@ IB-SPECIFIC RULES:
 - IB requires real-world application context — note if the diagram links to a named country, industry, or current event
 - Distinguish IB command terms: "explain" (knowledge+understanding), "discuss" (two sides), "evaluate" (judgement), "examine" (consider)
 
+WJEC / EDUQAS-SPECIFIC RULES:
+- WJEC Wales uses Units 1–4: Unit 1 (micro foundations), Unit 2 (macro + labour), Unit 3 (market structures), Unit 4 (trade + development)
+- Eduqas uses Components 1–3: Component 1 (Markets & Market Failure), Component 2 (National & International Economy), Component 3 (Synoptic)
+- Both boards use standard MPC/MSC/MPB/MSB externality notation
+- Both boards expect Keynesian and Classical LRAS awareness
+- Labour market diagrams (D_L = MRP, S_L, NMW) are prominent in Unit 2/3
+- Trade diagrams (tariff, quota, exchange rate) feature heavily in Unit 4 / Component 2
+- Detect whether diagrams support data-response or essay-style questions
+- Classify diagram relevance by unit/component context
+
 RULES:
 - Data tables with specific statistics referenced by questions ARE relevant
 - Theoretical economics diagrams (S&D, AD/AS, etc.) placed between extracts with no question reference are IRRELEVANT
