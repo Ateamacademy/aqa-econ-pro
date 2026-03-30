@@ -53,7 +53,7 @@ serve(async (req) => {
       throw new Error("LOVABLE_API_KEY is not configured");
     }
 
-    const systemPrompt = `You are an expert exam paper analyst specializing in UK and international economics exam papers, especially Edexcel A (9EC0), Edexcel B (9EB0), and OCR A-Level Economics (H460/H060).
+    const systemPrompt = `You are an expert exam paper analyst specializing in UK and international economics exam papers, especially Edexcel A (9EC0), Edexcel B (9EB0), OCR A-Level Economics (H460/H060), and IB Economics HL/SL.
 
 For each figure found between extract sections, determine:
 1. Whether the figure is semantically relevant to the surrounding extracts
@@ -81,6 +81,14 @@ DIAGRAM FAMILIES to classify into:
 - international_trade (Tariff, quota, subsidy, comparative advantage)
 - development (Lorenz curve, Harrod-Domar, commodity prices)
 - other (Not an economics diagram)
+
+IB-SPECIFIC RULES:
+- IB diagrams must be linked to the surrounding question command term (explain, discuss, evaluate, examine, suggest, calculate, recommend)
+- Mark each diagram as HL-only, SL-only, or common HL/SL
+- IB HL-only families include: market power (monopoly, perfect comp, monopolistic comp), J-curve, Marshall-Lerner, trade diversion, asymmetric information
+- For IB Paper 3 (HL), figures may require calculations — flag expectedStudentAction as "calculate"
+- IB requires real-world application context — note if the diagram links to a named country, industry, or current event
+- Distinguish IB command terms: "explain" (knowledge+understanding), "discuss" (two sides), "evaluate" (judgement), "examine" (consider)
 
 RULES:
 - Data tables with specific statistics referenced by questions ARE relevant
