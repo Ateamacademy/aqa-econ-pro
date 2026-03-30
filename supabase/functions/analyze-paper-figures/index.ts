@@ -82,6 +82,14 @@ DIAGRAM FAMILIES to classify into:
 - development (Lorenz curve, Harrod-Domar, commodity prices)
 - other (Not an economics diagram)
 
+IB-SPECIFIC RULES:
+- IB diagrams must be linked to the surrounding question command term (explain, discuss, evaluate, examine, suggest, calculate, recommend)
+- Mark each diagram as HL-only, SL-only, or common HL/SL
+- IB HL-only families include: market power (monopoly, perfect comp, monopolistic comp), J-curve, Marshall-Lerner, trade diversion, asymmetric information
+- For IB Paper 3 (HL), figures may require calculations — flag expectedStudentAction as "calculate"
+- IB requires real-world application context — note if the diagram links to a named country, industry, or current event
+- Distinguish IB command terms: "explain" (knowledge+understanding), "discuss" (two sides), "evaluate" (judgement), "examine" (consider)
+
 RULES:
 - Data tables with specific statistics referenced by questions ARE relevant
 - Theoretical economics diagrams (S&D, AD/AS, etc.) placed between extracts with no question reference are IRRELEVANT
