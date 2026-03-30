@@ -175,6 +175,7 @@ const C = {
 };
 
 import { EDEXCEL_DIAGRAM_SPECS } from "@/data/edexcelDiagramSpecs";
+import { OCR_DIAGRAM_SPECS } from "@/data/ocrDiagramSpecs";
 
 /* ══════════════════════════════════════════════
    DIAGRAM_SPECS — the canonical registry
@@ -183,6 +184,8 @@ import { EDEXCEL_DIAGRAM_SPECS } from "@/data/edexcelDiagramSpecs";
 export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   /* ── Edexcel-specific diagrams (PPF variants, cost curves, etc.) ── */
   ...EDEXCEL_DIAGRAM_SPECS,
+  /* ── OCR A-Level diagrams ── */
+  ...OCR_DIAGRAM_SPECS,
 
   /* ── Supply & Demand ── */
   supply_demand: {

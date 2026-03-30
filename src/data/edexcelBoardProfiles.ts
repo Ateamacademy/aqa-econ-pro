@@ -443,10 +443,14 @@ export const EDEXCEL_B_PROFILE: BoardProfile = {
   },
 };
 
+import { OCR_ALEVEL_PROFILE, OCR_AS_PROFILE } from "@/data/ocrBoardProfile";
+
 /** All board profiles indexed by board id */
 export const BOARD_PROFILES: Record<string, BoardProfile> = {
   edexcel_a: EDEXCEL_A_PROFILE,
   edexcel_b: EDEXCEL_B_PROFILE,
+  ocr_alevel: OCR_ALEVEL_PROFILE,
+  ocr_as: OCR_AS_PROFILE,
 };
 
 /**
@@ -455,7 +459,7 @@ export const BOARD_PROFILES: Record<string, BoardProfile> = {
  */
 export function identifyDiagramFamily(
   text: string,
-  boardId: "edexcel_a" | "edexcel_b" = "edexcel_a"
+  boardId: string = "edexcel_a"
 ): DiagramFamilyProfile | null {
   const profile = BOARD_PROFILES[boardId];
   if (!profile) return null;
@@ -483,7 +487,7 @@ export function identifyDiagramFamily(
 /**
  * Get all diagram spec keys for a given board profile.
  */
-export function getAllSpecKeys(boardId: "edexcel_a" | "edexcel_b" = "edexcel_a"): string[] {
+export function getAllSpecKeys(boardId: string = "edexcel_a"): string[] {
   const profile = BOARD_PROFILES[boardId];
   if (!profile) return [];
   const keys = new Set<string>();
