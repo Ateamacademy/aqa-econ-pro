@@ -174,11 +174,16 @@ const C = {
   gold: "#eab308",
 };
 
+import { EDEXCEL_DIAGRAM_SPECS } from "@/data/edexcelDiagramSpecs";
+
 /* ══════════════════════════════════════════════
    DIAGRAM_SPECS — the canonical registry
    ══════════════════════════════════════════════ */
 
 export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
+  /* ── Edexcel-specific diagrams (PPF variants, cost curves, etc.) ── */
+  ...EDEXCEL_DIAGRAM_SPECS,
+
   /* ── Supply & Demand ── */
   supply_demand: {
     title: "Supply & Demand Equilibrium",
