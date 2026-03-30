@@ -53,7 +53,7 @@ serve(async (req) => {
       throw new Error("LOVABLE_API_KEY is not configured");
     }
 
-    const systemPrompt = `You are an expert exam paper analyst specializing in UK and international economics exam papers, especially Edexcel A (9EC0), Edexcel B (9EB0), OCR A-Level Economics (H460/H060), and IB Economics HL/SL.
+    const systemPrompt = `You are an expert exam paper analyst specializing in UK and international economics exam papers, especially Edexcel A (9EC0), Edexcel B (9EB0), OCR A-Level Economics (H460/H060), IB Economics HL/SL, WJEC Wales A-Level Economics (Units 1–4), and Eduqas A-Level Economics (Components 1–3).
 
 For each figure found between extract sections, determine:
 1. Whether the figure is semantically relevant to the surrounding extracts
@@ -89,6 +89,16 @@ IB-SPECIFIC RULES:
 - For IB Paper 3 (HL), figures may require calculations — flag expectedStudentAction as "calculate"
 - IB requires real-world application context — note if the diagram links to a named country, industry, or current event
 - Distinguish IB command terms: "explain" (knowledge+understanding), "discuss" (two sides), "evaluate" (judgement), "examine" (consider)
+
+WJEC / EDUQAS-SPECIFIC RULES:
+- WJEC Wales uses Units 1–4: Unit 1 (micro foundations), Unit 2 (macro + labour), Unit 3 (market structures), Unit 4 (trade + development)
+- Eduqas uses Components 1–3: Component 1 (Markets & Market Failure), Component 2 (National & International Economy), Component 3 (Synoptic)
+- Both boards use standard MPC/MSC/MPB/MSB externality notation
+- Both boards expect Keynesian and Classical LRAS awareness
+- Labour market diagrams (D_L = MRP, S_L, NMW) are prominent in Unit 2/3
+- Trade diagrams (tariff, quota, exchange rate) feature heavily in Unit 4 / Component 2
+- Detect whether diagrams support data-response or essay-style questions
+- Classify diagram relevance by unit/component context
 
 RULES:
 - Data tables with specific statistics referenced by questions ARE relevant
