@@ -187,6 +187,8 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   ...EDEXCEL_DIAGRAM_SPECS,
   /* ── OCR A-Level diagrams ── */
   ...OCR_DIAGRAM_SPECS,
+  /* ── IB Economics HL/SL diagrams ── */
+  ...IB_DIAGRAM_SPECS,
 
   /* ── Supply & Demand ── */
   supply_demand: {
