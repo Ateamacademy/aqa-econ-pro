@@ -254,9 +254,9 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       {
         type: "triangle" as const,
         vertices: [
-          { type: "fixed" as const, x: 0, y: 9 },
-          { type: "fixed" as const, x: 0, y: 5 },
-          { type: "fixed" as const, x: 5, y: 5 },
+          { x: 0, y: 9 },
+          { x: 0, y: 5 },
+          { x: 5, y: 5 },
         ],
         color: C.supply,
         opacity: 0.15,
@@ -286,9 +286,9 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       {
         type: "triangle" as const,
         vertices: [
-          { type: "fixed" as const, x: 0, y: 1 },
-          { type: "fixed" as const, x: 0, y: 5 },
-          { type: "fixed" as const, x: 5, y: 5 },
+          { x: 0, y: 1 },
+          { x: 0, y: 5 },
+          { x: 5, y: 5 },
         ],
         color: C.demand,
         opacity: 0.15,
@@ -340,9 +340,9 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       {
         type: "triangle" as const,
         vertices: [
-          { type: "equilibrium" as const, eqId: "Eopt" },
-          { type: "equilibrium" as const, eqId: "Efm" },
-          { type: "fixed" as const, x: 5.71, y: 6.43 },
+          { eq: "Eopt" },
+          { eq: "Efm" },
+          { x: 5.71, y: 6.43 },
         ],
         color: C.demand,
         opacity: 0.15,
@@ -382,9 +382,9 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       {
         type: "triangle" as const,
         vertices: [
-          { type: "equilibrium" as const, eqId: "Efm" },
-          { type: "equilibrium" as const, eqId: "Eopt" },
-          { type: "fixed" as const, x: 4.67, y: 3.77 },
+          { eq: "Efm" },
+          { eq: "Eopt" },
+          { x: 4.67, y: 3.77 },
         ],
         color: C.eq,
         opacity: 0.15,
@@ -423,9 +423,9 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       {
         type: "triangle" as const,
         vertices: [
-          { type: "equilibrium" as const, eqId: "Efm" },
-          { type: "equilibrium" as const, eqId: "Eopt" },
-          { type: "fixed" as const, x: 4.67, y: 7.27 },
+          { eq: "Efm" },
+          { eq: "Eopt" },
+          { x: 4.67, y: 7.27 },
         ],
         color: C.eq,
         opacity: 0.15,
@@ -464,9 +464,9 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       {
         type: "triangle" as const,
         vertices: [
-          { type: "equilibrium" as const, eqId: "Eopt" },
-          { type: "equilibrium" as const, eqId: "Efm" },
-          { type: "fixed" as const, x: 5.33, y: 5.73 },
+          { eq: "Eopt" },
+          { eq: "Efm" },
+          { x: 5.33, y: 5.73 },
         ],
         color: C.demand,
         opacity: 0.15,
@@ -510,9 +510,9 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       {
         type: "triangle" as const,
         vertices: [
-          { type: "equilibrium" as const, eqId: "Efm" },
-          { type: "equilibrium" as const, eqId: "Eopt" },
-          { type: "fixed" as const, x: 4, y: 6.6 },
+          { eq: "Efm" },
+          { eq: "Eopt" },
+          { x: 4, y: 6.6 },
         ],
         color: C.eq,
         opacity: 0.15,
@@ -553,9 +553,9 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       {
         type: "triangle" as const,
         vertices: [
-          { type: "equilibrium" as const, eqId: "Eopt" },
-          { type: "equilibrium" as const, eqId: "Efm" },
-          { type: "fixed" as const, x: 5.33, y: 5.73 },
+          { eq: "Eopt" },
+          { eq: "Efm" },
+          { x: 5.33, y: 5.73 },
         ],
         color: C.demand,
         opacity: 0.15,

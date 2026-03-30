@@ -30,7 +30,7 @@ const OCR_MICRO_FAMILIES: DiagramFamilyProfile[] = [
     curveNames: ["PPC (straight line)"],
     requiredLabels: ["Points x, y", "a, b (quantities)", "Axes in context"],
     commandWords: ["explain", "show", "illustrate"],
-    expectedActions: ["draw", "label", "explain", "contextualise"],
+    expectedActions: ["draw", "label", "explain", "explain"],
     specKeys: ["ocr_tradeoff_straight"],
     identificationKeywords: [
       "trade-off", "trade off", "constant opportunity cost",
@@ -45,7 +45,7 @@ const OCR_MICRO_FAMILIES: DiagramFamilyProfile[] = [
     curveNames: ["PPC", "PPC₁", "PPC₂"],
     requiredLabels: ["Efficient points (on PPC)", "Inefficient (inside)", "Unattainable (outside)", "Shift arrows"],
     commandWords: ["explain", "draw", "show", "illustrate", "demonstrate"],
-    expectedActions: ["draw", "label", "shift", "explain", "contextualise"],
+    expectedActions: ["draw", "label", "shift", "explain", "explain"],
     specKeys: [
       "ocr_ppc_basic", "ocr_ppc_shift_out", "ocr_ppc_biased",
       "ppf_balanced_growth", "ppf_biased_capital", "ppf_unemployment",
