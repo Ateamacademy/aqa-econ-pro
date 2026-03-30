@@ -459,7 +459,7 @@ export const BOARD_PROFILES: Record<string, BoardProfile> = {
  */
 export function identifyDiagramFamily(
   text: string,
-  boardId: "edexcel_a" | "edexcel_b" = "edexcel_a"
+  boardId: string = "edexcel_a"
 ): DiagramFamilyProfile | null {
   const profile = BOARD_PROFILES[boardId];
   if (!profile) return null;
