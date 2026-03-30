@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
+import { FigureAnalysisPanel } from "@/components/predicted-papers/FigureAnalysisPanel";
 import { FREE_LIMITS } from "@/lib/plans";
 import { PaperSelector } from "@/components/predicted-papers/PaperSelector";
 import { TierSelector } from "@/components/predicted-papers/TierSelector";
