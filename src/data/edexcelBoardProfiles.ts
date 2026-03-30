@@ -487,7 +487,7 @@ export function identifyDiagramFamily(
 /**
  * Get all diagram spec keys for a given board profile.
  */
-export function getAllSpecKeys(boardId: "edexcel_a" | "edexcel_b" = "edexcel_a"): string[] {
+export function getAllSpecKeys(boardId: string = "edexcel_a"): string[] {
   const profile = BOARD_PROFILES[boardId];
   if (!profile) return [];
   const keys = new Set<string>();
