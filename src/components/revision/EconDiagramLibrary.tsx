@@ -15,6 +15,7 @@ import { WelfareRegion } from "@/components/diagrams/WelfareRegion";
 import EconomicsDiagram, { type EconomicsDiagramProps } from "@/components/diagrams/EconomicsDiagram";
 import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram";
 import MonopolisticCompetitionDiagram from "@/components/MonopolisticCompetitionDiagram";
+import LorenzCurveDiagram from "@/components/diagrams/LorenzCurveDiagram";
 
 export type DiagramType =
   | "supply_demand"
@@ -3482,6 +3483,11 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
   // ── Monopolistic Competition: dedicated SR/LR component ──
   if (type === "monopolistic_competition") {
     return <div className={cn("my-4", className)}><MonopolisticCompetitionDiagram /></div>;
+  }
+
+  // ── Lorenz Curve: dedicated exam-accurate component ──
+  if (type === "lorenz_curve") {
+    return <div className={cn("my-4", className)}><LorenzCurveDiagram /></div>;
   }
 
   // ── Declarative path: delegate to the new EconomicsDiagram component ──

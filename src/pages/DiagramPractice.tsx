@@ -217,7 +217,25 @@ export default function DiagramPractice() {
     setGeneratedQ("");
     let result = "";
 
-    const FIGURE_CONTENT_GUIDANCE = `
+    const isLorenzTopic = /lorenz|gini|income\s*inequality|income\s*distribution|inequality/i.test(topic);
+
+    const FIGURE_CONTENT_GUIDANCE = isLorenzTopic ? `
+
+FIGURE CONTENT GUIDANCE (CRITICAL — Lorenz Curve topic detected):
+You MUST include exactly ONE Figure 1 block describing a LORENZ CURVE diagram. Do NOT describe supply/demand or any other diagram type.
+
+**Figure 1: Lorenz Curve — Income Distribution**
+- Vertical axis: Cumulative % of Income
+- Horizontal axis: Cumulative % of Population (Poorest to Richest)
+- Line of Perfect Equality: 45-degree straight line from origin to (100,100)
+- Lorenz Curve: convex curve bowed below the equality line
+- Area A: between the equality line and the Lorenz curve (represents inequality)
+- Area B: below the Lorenz curve
+- Gini Coefficient = Area A / (Area A + Area B)
+Source: Hypothetical scenario for exam practice
+
+If the question involves comparing two countries, describe TWO Lorenz curves: Country A (more equal, closer to line) and Country B (less equal, further from line).
+Do NOT mention supply, demand, tax, welfare loss, MC, MR, AC, or any micro/macro diagram.` : `
 
 FIGURE CONTENT GUIDANCE (CRITICAL — the app renders these as interactive charts/diagrams):
 You MUST include exactly ONE Figure 1 block in the question using this format:
@@ -283,18 +301,51 @@ Format: Give the scenario context with Figure 1, then the question. Nothing else
 
     const expectedDiagramType = selectedScenario?.expectedDiagramKeyword ?? inferDiagramType(topic, generatedQ, diagramDesc, explanation);
 
-    await streamChat({
-      messages: [
-        { role: "user", content: diagramContent },
-        { role: "user", content: `Mark this diagram submission using ${examBoard} ${level} ${subjectLabel} criteria.
+    // ── Topic-specific rubric: Lorenz Curve / Gini ──
+    const isLorenzTopic = expectedDiagramType === "lorenz_curve" ||
+      /lorenz|gini|income\s*inequality|income\s*distribution|cumulative\s*%\s*of\s*(income|population)|45[\s-]*degree|line\s*of\s*(perfect\s*)?equality/i.test(generatedQ + " " + topic);
 
+    const lorenzRubric = `
+CRITICAL TOPIC LOCK: This is a LORENZ CURVE / GINI COEFFICIENT question.
+You MUST ONLY evaluate against the Lorenz Curve rubric below. Do NOT mention or reference:
+- supply and demand, S1, D, D1
+- indirect tax, ad valorem tax, specific tax
+- welfare loss, deadweight loss
+- AC, MC, MR, AR
+- monopoly, oligopoly, perfect competition
+- PED, YED, XED
+- any micro/macro diagram that is NOT a Lorenz Curve
+If any of these terms appear in your feedback, you have made an error — remove them.
+
+Detected topic: Income inequality — Lorenz Curve / Gini coefficient
+Expected diagram: Lorenz Curve with 45-degree line of equality
+
+You MUST evaluate using ALL 6 Lorenz Curve marking criteria:
+
+1. **AXES** — X-axis = "Cumulative % of Population" (poorest to richest), Y-axis = "Cumulative % of Income"
+2. **LINE OF EQUALITY** — 45-degree straight line from origin to (100,100) present and labelled "Line of Perfect Equality"
+3. **CURVE SHAPE** — Lorenz curve is convex to the origin (bowed BELOW the equality line). A hump-shaped or concave curve is WRONG.
+4. **COMPARISON** (if question requires two countries) — Two curves drawn: Country A (more equal) closer to equality line, Country B (less equal) further away. Both clearly labelled.
+5. **GINI EXPLANATION** — Larger gap between curve and equality line = higher Gini = more inequality. Smaller gap = lower Gini = more equality. Gini = Area A / (Area A + Area B).
+6. **EXPLANATION ↔ DIAGRAM CONSISTENCY** — Written explanation matches the diagram drawn. If student says "Country A is more equal" then Country A's curve must be closer to the line.`;
+
+    const standardRubric = `
 You MUST evaluate using ALL 5 diagram marking criteria:
 
 1. **AXES** — Are axes labelled correctly? (e.g., Price/P on Y-axis, Quantity/Q on X-axis; for macro: Price Level & Real GDP)
 2. **CURVE DIRECTION** — Are curves sloping the correct way? (Demand downward, Supply upward, LRAS vertical, etc.)
 3. **SHIFT DIRECTION** — Does the described shift match the scenario? (Right = increase, Left = decrease)
 4. **EQUILIBRIUM** — Is original equilibrium (P1,Q1) marked? Is new equilibrium (P2,Q2) identified with dotted lines to axes?
-5. **EXPLANATION ↔ DIAGRAM CONSISTENCY** — Does the written explanation logically match the diagram? Are the direction of changes consistent?
+5. **EXPLANATION ↔ DIAGRAM CONSISTENCY** — Does the written explanation logically match the diagram? Are the direction of changes consistent?`;
+
+    const rubric = isLorenzTopic ? lorenzRubric : standardRubric;
+
+    await streamChat({
+      messages: [
+        { role: "user", content: diagramContent },
+        { role: "user", content: `Mark this diagram submission using ${examBoard} ${level} ${subjectLabel} criteria.
+
+${rubric}
 
 You MUST structure your response using EXACTLY these section headers (the app parses them):
 
@@ -308,12 +359,7 @@ Give the main feedback summary in 2-3 sentences. Be direct and specific about wh
 
 ## Explain my feedback
 
-Provide a detailed breakdown of each of the 5 marking criteria. Use tick ✓ or cross ✗ for each:
-- **Axes**: ✓/✗ — detail
-- **Curve direction**: ✓/✗ — detail  
-- **Shift direction**: ✓/✗ — detail
-- **Equilibrium**: ✓/✗ — detail
-- **Explanation-diagram consistency**: ✓/✗ — detail
+Provide a detailed breakdown of each marking criterion. Use tick ✓ or cross ✗ for each.
 
 ## Improve my answer
 
@@ -324,7 +370,14 @@ Give specific, actionable steps to improve. Include:
 - You MUST include exactly ONE structured diagram block using this exact keyword: 
   ### Diagram: ${expectedDiagramType}
 - Do NOT use placeholders like [Diagram Title] and do NOT use a different diagram keyword.
-- Use this exact structure (the app parses it):
+${isLorenzTopic ? `- For Lorenz Curve, use this structure:
+
+### Diagram: lorenz_curve
+- X-axis: Cumulative % of Population
+- Y-axis: Cumulative % of Income
+- Line of Perfect Equality: 45-degree line from origin
+- Lorenz Curve: convex below equality line
+- Key conclusion: The further the curve bows from the equality line, the greater income inequality` : `- Use this exact structure (the app parses it):
 
 ### Diagram: ${expectedDiagramType}
 - X-axis: [label]
@@ -333,7 +386,7 @@ Give specific, actionable steps to improve. Include:
 - Initial equilibrium: [P1, Q1]
 - Shift: [which curve shifts which direction, e.g. "Supply shifts left from S1 to S2"]
 - New equilibrium: [P2, Q2 and direction of change]
-- Key conclusion: [one sentence summary]
+- Key conclusion: [one sentence summary]`}
 
 Then provide a model written explanation that would score full marks.
 
