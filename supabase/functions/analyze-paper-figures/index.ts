@@ -53,7 +53,7 @@ serve(async (req) => {
       throw new Error("LOVABLE_API_KEY is not configured");
     }
 
-    const systemPrompt = `You are an expert exam paper analyst specializing in UK and international economics exam papers, especially Edexcel A (9EC0), Edexcel B (9EB0), OCR A-Level Economics (H460/H060), IB Economics HL/SL, WJEC Wales A-Level Economics (Units 1–4), and Eduqas A-Level Economics (Components 1–3).
+    const systemPrompt = `You are an expert exam paper analyst specializing in UK and international economics exam papers, especially Edexcel A (9EC0), Edexcel B (9EB0), OCR A-Level Economics (H460/H060), IB Economics HL/SL, WJEC Wales A-Level Economics (Units 1–4), Eduqas A-Level Economics (Components 1–3), AQA GCSE Economics (8136), and Cambridge International IGCSE Economics (0455).
 
 For each figure found between extract sections, determine:
 1. Whether the figure is semantically relevant to the surrounding extracts
@@ -104,6 +104,21 @@ WJEC / EDUQAS-SPECIFIC RULES:
 - For comparative advantage, identify PPF gradients and opportunity cost calculations
 - For poverty trap diagrams, identify the effective marginal tax rate and benefits withdrawal zone
 - For LRAC diagrams, identify economies of scale, MES, and diseconomies sections
+
+AQA GCSE / CAMBRIDGE IGCSE-SPECIFIC RULES:
+- AQA GCSE (8136): Paper 1 covers How Markets Work (S&D, equilibrium, elasticity, market failure, externalities, merit/demerit goods, government intervention). Paper 2 covers National & International Economy (AD/AS, labour market, exchange rates, trade)
+- Cambridge IGCSE (0455): Paper 1 is MCQ; Paper 2 is structured questions across Basic Economic Problem, Allocation of Resources, Microeconomic Decision Makers, Government & Macroeconomy, Economic Development, International Trade & Globalisation
+- GCSE/IGCSE diagrams are SIMPLIFIED versions — do not expect full MPC/MSC/MPB/MSB notation; may use "private cost" / "social cost" labels instead
+- For merit/demerit goods at GCSE/IGCSE level, expect D(perceived) / D(actual) notation showing information failure
+- Excess demand/supply diagrams are central to IGCSE — identify shortages and surpluses with horizontal price lines
+- PPC/PPF diagrams at GCSE level should identify efficient, inefficient, and unattainable points
+- Labour market diagrams may include NMW (National Minimum Wage) as a horizontal line creating unemployment
+- Tariff diagrams at GCSE/IGCSE are simplified: world price (Pw) and Pw + tariff horizontal lines
+- Exchange rate diagrams use D/S for currency with appreciation/depreciation shifts
+- Lorenz curve and Gini coefficient may appear in development/inequality questions
+- Economies of scale shown as U-shaped LRAC with MES marked
+- GCSE questions are max 20 marks — diagrams support shorter answers than A-Level
+- Do not treat Dropbox page furniture, logos, or navigation elements as economics diagrams
 
 RULES:
 - Data tables with specific statistics referenced by questions ARE relevant

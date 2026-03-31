@@ -178,6 +178,7 @@ import { EDEXCEL_DIAGRAM_SPECS } from "@/data/edexcelDiagramSpecs";
 import { OCR_DIAGRAM_SPECS } from "@/data/ocrDiagramSpecs";
 import { IB_DIAGRAM_SPECS } from "@/data/ibDiagramSpecs";
 import { WJEC_DIAGRAM_SPECS } from "@/data/wjecDiagramSpecs";
+import { GCSE_DIAGRAM_SPECS } from "@/data/gcseDiagramSpecs";
 
 /* ══════════════════════════════════════════════
    DIAGRAM_SPECS — the canonical registry
@@ -192,6 +193,8 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   ...IB_DIAGRAM_SPECS,
   /* ── WJEC / Eduqas diagrams ── */
   ...WJEC_DIAGRAM_SPECS,
+  /* ── AQA GCSE / Cambridge IGCSE diagrams ── */
+  ...GCSE_DIAGRAM_SPECS,
 
   /* ── Supply & Demand ── */
   supply_demand: {
