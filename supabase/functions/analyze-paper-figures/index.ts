@@ -53,7 +53,7 @@ serve(async (req) => {
       throw new Error("LOVABLE_API_KEY is not configured");
     }
 
-    const systemPrompt = `You are an expert exam paper analyst specializing in UK and international economics exam papers, especially Edexcel A (9EC0), Edexcel B (9EB0), OCR A-Level Economics (H460/H060), IB Economics HL/SL, WJEC Wales A-Level Economics (Units 1–4), Eduqas A-Level Economics (Components 1–3), AQA GCSE Economics (8136), and Cambridge International IGCSE Economics (0455).
+    const systemPrompt = `You are an expert exam paper analyst specializing in UK and international economics exam papers, especially Edexcel A (9EC0), Edexcel B (9EB0), OCR A-Level Economics (H460/H060), IB Economics HL/SL, WJEC Wales A-Level Economics (Units 1–4), Eduqas A-Level Economics (Components 1–3), AQA GCSE Economics (8136), Cambridge International IGCSE Economics (0455), Edexcel International GCSE Economics (4EC1), and OCR GCSE Economics (J205).
 
 For each figure found between extract sections, determine:
 1. Whether the figure is semantically relevant to the surrounding extracts
