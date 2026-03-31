@@ -380,7 +380,7 @@ export const diagramScenarios: DiagramScenario[] = [
     topic: "Negative Externality — Palm Oil",
     difficulty: "Advanced",
     scenario: "Iceland (the supermarket) produced an advert outlining the devastating impact of palm oil collection on orangutan habitats. The advert went viral on social media, making consumers much more aware of the environmental damage. Palm oil is used in many cosmetic products such as shampoo.",
-    question: "Draw a diagram showing the negative externalities caused by the production of palm oil. Then adapt your diagram to show the impact of improved consumer information (the viral advert). Show how the new equilibrium changes and any reduction in welfare loss. [8 marks]",
+    question: "Draw a negative externality of production diagram with 'MC/MB ($)' on the vertical axis and 'Quantity' on the horizontal axis. Show three curves: (1) MSC (Social Marginal Cost) above the supply curve, (2) S = MPC (Private Marginal Cost), and (3) D = MPB = MSB (demand). Label the private equilibrium at Qp, Pp and the social optimum at Qs, Ps. Shade the deadweight welfare loss triangle between MSC and MPB from Qs to Qp. Show the 'negative externality per unit' gap between MSC and MPC. [8 marks]",
     marks: 8,
     expectedDiagramKeyword: "negative_externality_production",
   },
