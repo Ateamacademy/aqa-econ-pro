@@ -87,9 +87,10 @@ export const diagramScenarios: DiagramScenario[] = [
     topic: "Cross Elasticity — Complements",
     difficulty: "Intermediate",
     scenario: "Apps and smartphones are complementary goods. A new generation of smartphones is released at a lower price point.",
-    question: "Draw a diagram showing the relationship between the market for smartphones and the market for apps. Use two side-by-side diagrams showing how a fall in the price of smartphones affects demand for apps.",
+    question: "Draw a cross-price elasticity of demand (XED) diagram with 'Price of Good Y' on the vertical axis and 'Quantity of Good X' on the horizontal axis. Show two curves: (1) a downward-sloping demand curve representing complementary goods (negative XED), and (2) an upward-sloping demand curve representing substitute goods (positive XED). Mark two price levels (P₁ and P₂) and two quantity levels (Q₁ and Q₂) with dashed projections. Explain the sign and magnitude of XED for each relationship.",
     marks: 6,
-    expectedDiagramKeyword: "supply_demand",
+    expectedDiagramKeyword: "xed",
+    hints: ["Complements: negative XED — price of Y rises, quantity of X falls", "Substitutes: positive XED — price of Y rises, quantity of X rises"],
   },
   {
     id: "elas-3",
@@ -97,9 +98,10 @@ export const diagramScenarios: DiagramScenario[] = [
     topic: "YED — Luxury Goods",
     difficulty: "Foundation",
     scenario: "Holidays to Disneyworld in the US have a high, positive income elasticity of demand — they are luxury goods.",
-    question: "Draw a diagram showing the relationship between income and quantity of holidays demanded. Label the axes appropriately and explain the shape of the curve.",
+    question: "Draw a YED (income elasticity of demand) diagram with 'Average Income (£) Week' on the vertical axis and 'Quantity' on the horizontal axis. Show two upward-sloping demand curves: (1) 'Demand for Normal Good (YED > 0)' — a steeper curve, and (2) 'Demand for Luxury Good (YED > 1)' — a flatter, more responsive curve. Mark two income levels (e.g. 550 and 800) and two quantity levels (e.g. 850 and 950) with dashed projections showing how luxury goods are more income-elastic.",
     marks: 4,
-    expectedDiagramKeyword: "supply_demand",
+    expectedDiagramKeyword: "yed",
+    hints: ["Normal goods: YED > 0 but < 1 — demand rises less than proportionally with income", "Luxury goods: YED > 1 — demand rises more than proportionally with income"],
   },
 
   // ── Section 3: Market Failure & Externalities ──
