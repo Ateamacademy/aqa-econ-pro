@@ -3506,7 +3506,7 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
 
   // ── Perfect Competition: dedicated two-panel component ──
   if (type === "perfect_competition") {
-    return <PerfectCompDiagram className={cn("my-4", className)} />;
+    return <div className={cn("my-4", className)}><PerfectCompetitionDiagram /></div>;
   }
 
   // ── Declarative path: delegate to the new EconomicsDiagram component ──
