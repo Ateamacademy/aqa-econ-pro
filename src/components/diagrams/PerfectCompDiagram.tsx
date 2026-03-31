@@ -354,7 +354,7 @@ export default function PerfectCompDiagram({ className }: { className?: string }
       </div>
 
       {/* ═══ Panel 2: Long Run ═══ */}
-      <div className="border border-black/70 bg-white rounded-sm p-4">
+      <div className="border border-border bg-card rounded-sm p-4">
         <div className="flex flex-col lg:flex-row items-start gap-4">
           <div className="flex-1 min-w-0">
             <LongRunPanel />
