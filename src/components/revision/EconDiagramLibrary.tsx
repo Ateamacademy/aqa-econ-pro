@@ -3485,6 +3485,11 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
     return <div className={cn("my-4", className)}><MonopolisticCompetitionDiagram /></div>;
   }
 
+  // ── Lorenz Curve: dedicated exam-accurate component ──
+  if (type === "lorenz_curve") {
+    return <div className={cn("my-4", className)}><LorenzCurveDiagram /></div>;
+  }
+
   // ── Declarative path: delegate to the new EconomicsDiagram component ──
   if (config.declarative) {
     return (

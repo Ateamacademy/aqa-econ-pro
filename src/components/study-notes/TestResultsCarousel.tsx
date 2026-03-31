@@ -30,6 +30,8 @@ interface TestResultsCarouselProps {
 /** Try to resolve a diagram type from question text */
 function detectDiagram(questionText: string): DiagramType | null {
   const mappings: [RegExp, string][] = [
+    // Lorenz / Gini MUST come first to prevent cross-topic fallback
+    [/lorenz\s*curve|gini\s*coefficient|gini|income\s*inequality|income\s*distribution|cumulative\s*%\s*of\s*(income|population)|line\s*of\s*(perfect\s*)?equality|45[\s-]*degree/i, "lorenz_curve"],
     [/supply\s*(curve\s*)?shift.*right|increase.*supply/i, "supply_increase"],
     [/supply\s*(curve\s*)?shift.*left|decrease.*supply|fall.*supply/i, "supply_decrease"],
     [/demand\s*(curve\s*)?shift.*right|increase.*demand/i, "demand_increase"],
