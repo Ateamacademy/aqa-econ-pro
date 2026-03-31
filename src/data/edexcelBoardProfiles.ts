@@ -447,6 +447,7 @@ import { OCR_ALEVEL_PROFILE, OCR_AS_PROFILE } from "@/data/ocrBoardProfile";
 import { IB_HL_PROFILE, IB_SL_PROFILE } from "@/data/ibBoardProfile";
 import { WJEC_PROFILE, EDUQAS_PROFILE } from "@/data/wjecBoardProfile";
 import { AQA_GCSE_PROFILE, CAIE_IGCSE_PROFILE } from "@/data/gcseBoardProfiles";
+import { EDEXCEL_IGCSE_PROFILE, OCR_GCSE_PROFILE } from "@/data/edexcelIgcseBoardProfiles";
 
 /** All board profiles indexed by board id */
 export const BOARD_PROFILES: Record<string, BoardProfile> = {
@@ -460,6 +461,8 @@ export const BOARD_PROFILES: Record<string, BoardProfile> = {
   eduqas: EDUQAS_PROFILE,
   aqa_gcse: AQA_GCSE_PROFILE,
   caie_igcse: CAIE_IGCSE_PROFILE,
+  edexcel_igcse: EDEXCEL_IGCSE_PROFILE,
+  ocr_gcse: OCR_GCSE_PROFILE,
 };
 
 /**
