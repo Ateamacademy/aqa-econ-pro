@@ -2425,38 +2425,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       "P > MC so NOT allocatively efficient either",
       "Short-run supernormal profit attracts entry → demand curve shifts left",
     ],
-    render: (p) => {
-      const { mx, my, pw, ph } = p;
-      const pad = 10;
-      // MC: upward from low
-      const mcPath = `M ${mx + pw * 0.15} ${my + ph - pad - 20} Q ${mx + pw * 0.35} ${my + ph * 0.65} ${mx + pw * 0.70} ${my + pad + 5}`;
-      // AR = D: downward sloping (less steep than monopoly)
-      const arL = { x1: mx + pad + 15, y1: my + pad + 20, x2: mx + pw * 0.78, y2: my + ph - pad };
-      // MR: steeper downward
-      const mrL = { x1: mx + pad + 15, y1: my + pad + 20, x2: mx + pw * 0.45, y2: my + ph - pad };
-      // AC: U-shaped, tangent to AR at the equilibrium point
-      const tangentX = mx + pw * 0.38, tangentY = my + ph * 0.38;
-      const acPath = `M ${mx + pad + 25} ${my + pad + 30} Q ${tangentX - 10} ${tangentY + 18} ${tangentX} ${tangentY} Q ${tangentX + 30} ${tangentY - 8} ${mx + pw * 0.72} ${my + pad + 10}`;
-
-      return (
-        <>
-          <CurvePath d={mcPath} color={COLORS.supply} gradientId="grad-supply" width={2.5} glow="glow-red" />
-          <Label x={mx + pw * 0.72} y={my + pad + 12} text="MC" color={COLORS.supply} />
-          <GLine {...arL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={arL.x2 + 4} y={arL.y2 - 6} text="AR = D" color={COLORS.demand} />
-          <GLine {...mrL} color={COLORS.mpb} dashed width={2} />
-          <Label x={mrL.x2 + 4} y={mrL.y2 - 6} text="MR" color={COLORS.mpb} />
-          <CurvePath d={acPath} color={COLORS.lras} width={2} dashed />
-          <Label x={mx + pw * 0.73} y={my + pad + 18} text="AC" color={COLORS.lras} />
-          {/* Tangent point (normal profit) */}
-          <PremiumDot x={tangentX} y={tangentY} color={COLORS.eq} label="Normal Profit" gradientId="dot-green"
-            tooltipText="✓ AR tangent to AC = normal profit only" />
-          <DashedToAxes x={tangentX} y={tangentY} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P" qLabel="Q" />
-          {/* Excess capacity label */}
-          <Label x={mx + pw * 0.52} y={my + ph * 0.82} text="← Excess Capacity →" color={COLORS.area} size={9} anchor="middle" bold={false} />
-        </>
-      );
-    },
+    render: () => <></>,  // Rendering handled by MonopolisticCompetitionDiagram via customComponent
   },
 
   /* ── Keynesian AS — Spare Capacity vs Full Capacity (2 panels) ── */
