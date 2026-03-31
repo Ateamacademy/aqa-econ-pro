@@ -218,9 +218,16 @@ export default function DiagramPractice() {
     let result = "";
 
     const isLorenzTopic = /lorenz|gini|income\s*inequality|income\s*distribution|inequality/i.test(topic);
+    const isYEDTopic = /\byed\b|income\s*elasticity/i.test(topic);
+    const isXEDTopic = /\bxed\b|cross.*elasticity|complements?\b|substitutes?\b/i.test(topic);
+    const isPhillipsTopic = /phillips\s*curve/i.test(topic);
+    const isNegExtProd = /negative\s*externality.*production|palm\s*oil|msc.*mpc|overproduction/i.test(topic);
+    const isSugarTax = /sugar\s*tax|pigouvian|welfare\s*analysis/i.test(topic);
 
-    const FIGURE_CONTENT_GUIDANCE = isLorenzTopic ? `
+    let FIGURE_CONTENT_GUIDANCE: string;
 
+    if (isLorenzTopic) {
+      FIGURE_CONTENT_GUIDANCE = `
 FIGURE CONTENT GUIDANCE (CRITICAL — Lorenz Curve topic detected):
 You MUST include exactly ONE Figure 1 block describing a LORENZ CURVE diagram. Do NOT describe supply/demand or any other diagram type.
 
@@ -235,8 +242,91 @@ You MUST include exactly ONE Figure 1 block describing a LORENZ CURVE diagram. D
 Source: Hypothetical scenario for exam practice
 
 If the question involves comparing two countries, describe TWO Lorenz curves: Country A (more equal, closer to line) and Country B (less equal, further from line).
-Do NOT mention supply, demand, tax, welfare loss, MC, MR, AC, or any micro/macro diagram.` : `
+Do NOT mention supply, demand, tax, welfare loss, MC, MR, AC, or any micro/macro diagram.`;
+    } else if (isYEDTopic) {
+      FIGURE_CONTENT_GUIDANCE = `
+FIGURE CONTENT GUIDANCE (CRITICAL — YED topic detected):
+You MUST include exactly ONE Figure 1 block describing a YED (Income Elasticity of Demand) diagram.
 
+**Figure 1: YED for a Normal Good and a Luxury Good**
+- Vertical axis: Average Income (£) Week
+- Horizontal axis: Quantity
+- Curve 1: "Demand for Normal Good YED>0" — upward-sloping, STEEP (quantity rises less than proportionally with income)
+- Curve 2: "Demand for Luxury Good YED>1" — upward-sloping, FLATTER (quantity rises more than proportionally with income)
+- Mark two income levels (e.g. 550, 800) and two quantity levels (e.g. 850, 950) with dashed projections
+- Both curves intersect or cross near the lower income level
+- At the higher income level, the luxury good curve shows a larger quantity increase
+Source: Hypothetical scenario for exam practice
+
+Do NOT draw supply and demand curves. This is an Engel curve / income-quantity diagram.`;
+    } else if (isXEDTopic) {
+      FIGURE_CONTENT_GUIDANCE = `
+FIGURE CONTENT GUIDANCE (CRITICAL — XED / Cross Elasticity topic detected):
+You MUST include exactly ONE Figure 1 block describing a Cross-Price Elasticity of Demand diagram.
+
+**Figure 1: Cross-Price Elasticity of Demand**
+- Vertical axis: Price of Good Y
+- Horizontal axis: Quantity of Good X
+- Curve 1: "Positive Cross Price Elasticity (substitutes)" — upward-sloping from bottom-left to top-right (red)
+- Curve 2: "Negative Cross Price Elasticity (complements)" — downward-sloping from top-left to bottom-right (blue)
+- Mark two price levels: Py1 (lower) and Py2 (higher)
+- Mark two quantity levels: Qx1 and Qx2
+- Dashed projections from (Qx1, Py1) and (Qx2, Py2)
+- Show XED calculation: % change in Qd of X / % change in price of Y
+- Substitutes: εxy > 0 (price of Y rises → Qty of X rises)
+- Complements: εxy < 0 (price of Y rises → Qty of X falls)
+Source: Hypothetical scenario for exam practice
+
+Do NOT draw standard supply and demand curves.`;
+    } else if (isPhillipsTopic) {
+      FIGURE_CONTENT_GUIDANCE = `
+FIGURE CONTENT GUIDANCE (CRITICAL — Phillips Curve topic detected):
+You MUST include exactly ONE Figure 1 block describing a DUAL-PANEL Phillips Curve diagram.
+
+**Figure 1: Phillips Curve Short/Long Run**
+
+Diagram A — AD/AS:
+- Vertical axis: PL (Price Level)
+- Horizontal axis: Real GDP
+- LRAS₁: vertical line at YFe (full employment output)
+- SRAS₁: upward-sloping short-run aggregate supply
+- SRAS₂: shifted left (higher costs from wage adjustment)
+- AD₁: downward-sloping aggregate demand (original)
+- AD₂: shifted right (expansionary policy)
+- Equilibria: Pe at (YFe, Pe), then P2 at (Y2, P2), then P3 at (YFe, P3)
+
+Diagram B — Phillips Curve:
+- Vertical axis: Inflation (%)
+- Horizontal axis: Unemployment (%)
+- LRPC₁: vertical at natural rate (e.g. 5%)
+- SRPC₁: downward-sloping short-run Phillips Curve
+- SRPC₂: shifted upward (higher inflation expectations)
+- Point A: (5%, 3%) — initial equilibrium on SRPC₁
+- Point B: (3%, 4%) — movement along SRPC₁ (lower unemployment, higher inflation)
+- Point C: (5%, 5%) — long-run adjustment on SRPC₂ (unemployment returns to natural rate)
+Source: Hypothetical scenario for exam practice
+
+Show BOTH diagrams side by side. The AD/AS diagram explains WHY the Phillips Curve shifts.`;
+    } else if (isNegExtProd || isSugarTax) {
+      FIGURE_CONTENT_GUIDANCE = `
+FIGURE CONTENT GUIDANCE (CRITICAL — Negative Externality of Production topic detected):
+You MUST include exactly ONE Figure 1 block describing a negative production externality diagram.
+
+**Figure 1: Negative Externality of Production**
+- Vertical axis: MC/MB ($) or P
+- Horizontal axis: Quantity
+- Curve 1: MSC (Social Marginal Cost) — upward-sloping, ABOVE the supply curve (steeper)
+- Curve 2: S = MPC (Private Marginal Cost) — upward-sloping supply curve
+- Curve 3: D = MPB = MSB — downward-sloping demand curve
+- The vertical gap between MSC and MPC = "Negative externality per unit"
+- Private equilibrium at Qp, Pp (where MPC = MPB)
+- Social optimum at Qs, Ps (where MSC = MSB), with Qs < Qp and Ps > Pp
+- Shade the deadweight welfare loss TRIANGLE between MSC and MPB from Qs to Qp
+Source: Hypothetical scenario for exam practice
+
+Do NOT draw an indirect tax wedge diagram. This is an externality diagram with MSC above MPC.`;
+    } else {
+      FIGURE_CONTENT_GUIDANCE = `
 FIGURE CONTENT GUIDANCE (CRITICAL — the app renders these as interactive charts/diagrams):
 You MUST include exactly ONE Figure 1 block in the question using this format:
 
@@ -252,6 +342,7 @@ You MUST include exactly ONE Figure 1 block in the question using this format:
 Source: Hypothetical scenario for exam practice
 
 The figure must be scenario-specific — include the exact curves, labels, and shifts that match the economic context described in the question.`;
+    }
 
     await streamChat({
       messages: [{ role: "user", content: `Generate a ${difficulty}-level diagram practice question on: "${topic}" for ${examBoard} ${level} ${subjectLabel}.
