@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 import { useState, useId } from "react";
 import { WelfareRegion } from "@/components/diagrams/WelfareRegion";
 import EconomicsDiagram, { type EconomicsDiagramProps } from "@/components/diagrams/EconomicsDiagram";
-import PerfectCompDiagram from "@/components/diagrams/PerfectCompDiagram";
+import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram";
 
 export type DiagramType =
   | "supply_demand"
@@ -3506,7 +3506,7 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
 
   // ── Perfect Competition: dedicated two-panel component ──
   if (type === "perfect_competition") {
-    return <PerfectCompDiagram className={cn("my-4", className)} />;
+    return <div className={cn("my-4", className)}><PerfectCompetitionDiagram /></div>;
   }
 
   // ── Declarative path: delegate to the new EconomicsDiagram component ──
