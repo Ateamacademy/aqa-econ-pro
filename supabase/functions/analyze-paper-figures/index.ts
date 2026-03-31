@@ -91,14 +91,19 @@ IB-SPECIFIC RULES:
 - Distinguish IB command terms: "explain" (knowledge+understanding), "discuss" (two sides), "evaluate" (judgement), "examine" (consider)
 
 WJEC / EDUQAS-SPECIFIC RULES:
-- WJEC Wales uses Units 1–4: Unit 1 (micro foundations), Unit 2 (macro + labour), Unit 3 (market structures), Unit 4 (trade + development)
+- WJEC Wales uses Units 1–4: Unit 1 (micro foundations, PPF, S&D, elasticity, externalities, merit/demerit goods), Unit 2 (macro AD/AS, Phillips curve, labour market, poverty trap), Unit 3 (market structures: perfect comp, monopoly, mon comp, oligopoly, costs/revenues), Unit 4 (trade: tariffs, quotas, subsidies, exchange rates, comparative advantage, development, Lorenz/Gini)
 - Eduqas uses Components 1–3: Component 1 (Markets & Market Failure), Component 2 (National & International Economy), Component 3 (Synoptic)
 - Both boards use standard MPC/MSC/MPB/MSB externality notation
+- Both boards also allow D(perceived)/D(actual) notation for merit/demerit goods with information failure
 - Both boards expect Keynesian and Classical LRAS awareness
-- Labour market diagrams (D_L = MRP, S_L, NMW) are prominent in Unit 2/3
-- Trade diagrams (tariff, quota, exchange rate) feature heavily in Unit 4 / Component 2
+- Labour market diagrams (D_L = MRP, S_L, NMW, monopsony MCL) are prominent in Unit 2/3
+- Trade diagrams (tariff, quota, trade subsidy, exchange rate appreciation/depreciation) in Unit 4 / Component 2
 - Detect whether diagrams support data-response or essay-style questions
 - Classify diagram relevance by unit/component context
+- For kinked demand (oligopoly), identify the MR discontinuity and price rigidity argument
+- For comparative advantage, identify PPF gradients and opportunity cost calculations
+- For poverty trap diagrams, identify the effective marginal tax rate and benefits withdrawal zone
+- For LRAC diagrams, identify economies of scale, MES, and diseconomies sections
 
 RULES:
 - Data tables with specific statistics referenced by questions ARE relevant
