@@ -193,6 +193,8 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   ...IB_DIAGRAM_SPECS,
   /* ── WJEC / Eduqas diagrams ── */
   ...WJEC_DIAGRAM_SPECS,
+  /* ── AQA GCSE / Cambridge IGCSE diagrams ── */
+  ...GCSE_DIAGRAM_SPECS,
 
   /* ── Supply & Demand ── */
   supply_demand: {
