@@ -328,13 +328,13 @@ function SRTheoryBox() {
 
 function LRTheoryBox() {
   return (
-    <div className="border border-black/80 p-4 text-sm leading-relaxed" style={{ fontFamily: "serif", maxWidth: 320 }}>
-      <p className="font-bold underline mb-2 text-black">Perfect competition – long run</p>
-      <p className="text-black/90 mb-1.5">There are no barriers to entry in perfect competition.</p>
-      <p className="text-black/90 mb-1.5">Suppose there are supernormal profits in the short run. Then firms enter the market, shifting supply right from S to S₁.</p>
-      <p className="text-black/90 mb-1.5">This lowers the industry equilibrium price from p to p₁.</p>
-      <p className="text-black/90 mb-1.5">The perfectly competitive firm now takes a lower price (p₁) as given. This shifts AR and MR down from AR to AR₁.</p>
-      <p className="text-black/90">Entry continues until supernormal profit is eliminated. In long-run equilibrium, firms earn normal profit only, where price = minimum ATC.</p>
+    <div className="border border-border p-4 text-sm leading-relaxed" style={{ fontFamily: "serif", maxWidth: 320 }}>
+      <p className="font-bold underline mb-2 text-foreground">Perfect competition – long run</p>
+      <p className="text-muted-foreground mb-1.5">There are no barriers to entry in perfect competition.</p>
+      <p className="text-muted-foreground mb-1.5">Suppose there are supernormal profits in the short run. Then firms enter the market, shifting supply right from S to S₁.</p>
+      <p className="text-muted-foreground mb-1.5">This lowers the industry equilibrium price from p to p₁.</p>
+      <p className="text-muted-foreground mb-1.5">The perfectly competitive firm now takes a lower price (p₁) as given. This shifts AR and MR down from AR to AR₁.</p>
+      <p className="text-muted-foreground">Entry continues until supernormal profit is eliminated. In long-run equilibrium, firms earn normal profit only, where price = minimum ATC.</p>
     </div>
   );
 }
