@@ -326,7 +326,7 @@ export const diagramScenarios: DiagramScenario[] = [
     topic: "Phillips Curve — SR vs LR",
     difficulty: "Advanced",
     scenario: "A central bank cuts interest rates to reduce unemployment. In the short run, this creates a trade-off between inflation and unemployment. However, in the long run, expectations adjust.",
-    question: "Draw a diagram showing both the short-run Phillips Curve (SRPC) and the long-run Phillips Curve (LRPC). Show how a movement along the SRPC leads to adaptive expectations and a shift to a new SRPC, with unemployment returning to its natural rate. [6 marks]",
+    question: "Draw TWO side-by-side diagrams:\n\nDiagram A — AD/AS: Show 'PL' on the vertical axis and 'Real GDP' on the horizontal axis. Draw LRAS₁ (vertical), SRAS₁, SRAS₂, AD₁, and AD₂. Mark equilibria showing how an AD shift raises the price level from Pe to P2 to P3, with output returning to YFe.\n\nDiagram B — Phillips Curve: Show 'Inflation' on the vertical axis and 'Unemployment' on the horizontal axis. Draw LRPC₁ (vertical at natural rate, e.g. 5%), SRPC₁, and SRPC₂ (shifted up). Mark points A (3%, 5%), B (4%, 3%), C (5%, 5%) showing the short-run trade-off and long-run adjustment. [6 marks]",
     marks: 6,
     expectedDiagramKeyword: "phillips_curve",
   },
