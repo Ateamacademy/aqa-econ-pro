@@ -92,50 +92,50 @@ function ShortRunPanel() {
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" style={{ maxWidth: 420 }}>
       {/* Axes */}
-      <line x1={ox} y1={12} x2={ox} y2={oy} stroke="black" strokeWidth={1.5} />
-      <line x1={ox} y1={oy} x2={W - 15} y2={oy} stroke="black" strokeWidth={1.5} />
-      <polygon points={`${ox - 3},16 ${ox},8 ${ox + 3},16`} fill="black" />
-      <polygon points={`${W - 19},${oy - 3} ${W - 12},${oy} ${W - 19},${oy + 3}`} fill="black" />
+      <line x1={ox} y1={12} x2={ox} y2={oy} stroke="currentColor" strokeWidth={1.5} />
+      <line x1={ox} y1={oy} x2={W - 15} y2={oy} stroke="currentColor" strokeWidth={1.5} />
+      <polygon points={`${ox - 3},16 ${ox},8 ${ox + 3},16`} fill="currentColor" />
+      <polygon points={`${W - 19},${oy - 3} ${W - 12},${oy} ${W - 19},${oy + 3}`} fill="currentColor" />
 
       {/* Axis labels */}
-      <text x={16} y={14} fontSize={10} fontWeight={600} fill="black" fontFamily="serif">Revenue /</text>
-      <text x={16} y={26} fontSize={10} fontWeight={600} fill="black" fontFamily="serif">Cost</text>
-      <text x={W - 50} y={oy + 16} fontSize={10} fontWeight={600} fill="black" fontFamily="serif">Output</text>
+      <text x={16} y={14} fontSize={10} fontWeight={600} fill="currentColor" fontFamily="serif">Revenue /</text>
+      <text x={16} y={26} fontSize={10} fontWeight={600} fill="currentColor" fontFamily="serif">Cost</text>
+      <text x={W - 50} y={oy + 16} fontSize={10} fontWeight={600} fill="currentColor" fontFamily="serif">Output</text>
 
       {/* AR = MR = p line (red, horizontal) */}
-      <line x1={ox} y1={py(p)} x2={W - 20} y2={py(p)} stroke="#dc2626" strokeWidth={2.5} />
-      <text x={W - 18} y={py(p) + 4} fontSize={9} fontWeight={700} fill="#dc2626" fontFamily="serif">AR=MR=p</text>
+      <line x1={ox} y1={py(p)} x2={W - 20} y2={py(p)} stroke="#ef4444" strokeWidth={2.5} />
+      <text x={W - 18} y={py(p) + 4} fontSize={9} fontWeight={700} fill="#ef4444" fontFamily="serif">AR=MR=p</text>
 
       {/* MC curve (blue) */}
-      <path d={mc} fill="none" stroke="#1d4ed8" strokeWidth={2.2} />
+      <path d={mc} fill="none" stroke="#3b82f6" strokeWidth={2.2} />
       {/* ATC curve (blue) */}
-      <path d={atc} fill="none" stroke="#1d4ed8" strokeWidth={2.2} />
+      <path d={atc} fill="none" stroke="#3b82f6" strokeWidth={2.2} />
 
       {/* Curve labels */}
       {(() => {
         const mcEndY = evalQuad(MC.a, MC.b, MC.c, 4.2);
-        return <text x={px(4.2) + 4} y={py(mcEndY) - 6} fontSize={10} fontWeight={700} fill="#1d4ed8" fontFamily="serif">MC</text>;
+        return <text x={px(4.2) + 4} y={py(mcEndY) - 6} fontSize={10} fontWeight={700} fill="#3b82f6" fontFamily="serif">MC</text>;
       })()}
       {(() => {
         const atcEndY = evalQuad(ATC.a, ATC.b, ATC.c, maxX);
-        return <text x={px(maxX) + 4} y={py(atcEndY) + 4} fontSize={10} fontWeight={700} fill="#1d4ed8" fontFamily="serif">ATC</text>;
+        return <text x={px(maxX) + 4} y={py(atcEndY) + 4} fontSize={10} fontWeight={700} fill="#3b82f6" fontFamily="serif">ATC</text>;
       })()}
 
       {/* Dotted projection: vertical from q */}
-      <line x1={px(q)} y1={py(p)} x2={px(q)} y2={oy} stroke="black" strokeWidth={0.8} strokeDasharray="3,3" />
+      <line x1={px(q)} y1={py(p)} x2={px(q)} y2={oy} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.5} />
       {/* Dotted projection: horizontal from c */}
-      <line x1={ox} y1={py(c)} x2={px(q)} y2={py(c)} stroke="black" strokeWidth={0.8} strokeDasharray="3,3" />
+      <line x1={ox} y1={py(c)} x2={px(q)} y2={py(c)} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.5} />
 
       {/* Axis markers */}
-      <text x={ox - 6} y={py(p) + 4} fontSize={10} fontWeight={700} fill="black" textAnchor="end" fontFamily="serif">p</text>
-      <text x={ox - 6} y={py(c) + 4} fontSize={10} fontWeight={700} fill="black" textAnchor="end" fontFamily="serif">c</text>
-      <text x={px(q)} y={oy + 14} fontSize={10} fontWeight={700} fill="black" textAnchor="middle" fontFamily="serif">q</text>
+      <text x={ox - 6} y={py(p) + 4} fontSize={10} fontWeight={700} fill="currentColor" textAnchor="end" fontFamily="serif">p</text>
+      <text x={ox - 6} y={py(c) + 4} fontSize={10} fontWeight={700} fill="currentColor" textAnchor="end" fontFamily="serif">c</text>
+      <text x={px(q)} y={oy + 14} fontSize={10} fontWeight={700} fill="currentColor" textAnchor="middle" fontFamily="serif">q</text>
 
       {/* Supernormal profit shading (light green) */}
       <rect
         x={px(0)} y={py(p)}
         width={px(q) - px(0)} height={py(c) - py(p)}
-        fill="rgba(34,197,94,0.08)" stroke="#16a34a" strokeWidth={0.8} strokeDasharray="3,2"
+        fill="rgba(74,222,128,0.12)" stroke="#16a34a" strokeWidth={0.8} strokeDasharray="3,2"
       />
     </svg>
   );
