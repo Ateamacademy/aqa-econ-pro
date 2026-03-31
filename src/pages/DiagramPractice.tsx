@@ -217,7 +217,25 @@ export default function DiagramPractice() {
     setGeneratedQ("");
     let result = "";
 
-    const FIGURE_CONTENT_GUIDANCE = `
+    const isLorenzTopic = /lorenz|gini|income\s*inequality|income\s*distribution|inequality/i.test(topic);
+
+    const FIGURE_CONTENT_GUIDANCE = isLorenzTopic ? `
+
+FIGURE CONTENT GUIDANCE (CRITICAL — Lorenz Curve topic detected):
+You MUST include exactly ONE Figure 1 block describing a LORENZ CURVE diagram. Do NOT describe supply/demand or any other diagram type.
+
+**Figure 1: Lorenz Curve — Income Distribution**
+- Vertical axis: Cumulative % of Income
+- Horizontal axis: Cumulative % of Population (Poorest to Richest)
+- Line of Perfect Equality: 45-degree straight line from origin to (100,100)
+- Lorenz Curve: convex curve bowed below the equality line
+- Area A: between the equality line and the Lorenz curve (represents inequality)
+- Area B: below the Lorenz curve
+- Gini Coefficient = Area A / (Area A + Area B)
+Source: Hypothetical scenario for exam practice
+
+If the question involves comparing two countries, describe TWO Lorenz curves: Country A (more equal, closer to line) and Country B (less equal, further from line).
+Do NOT mention supply, demand, tax, welfare loss, MC, MR, AC, or any micro/macro diagram.` : `
 
 FIGURE CONTENT GUIDANCE (CRITICAL — the app renders these as interactive charts/diagrams):
 You MUST include exactly ONE Figure 1 block in the question using this format:
