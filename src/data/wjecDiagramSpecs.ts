@@ -788,4 +788,603 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       "Evaluate: product differentiation, non-price competition, excess capacity",
     ],
   },
+
+  /* ══════════════════════════════════════════
+     29. DEMAND INCREASE
+     ══════════════════════════════════════════ */
+  wjec_demand_increase: {
+    title: "Increase in Demand",
+    axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
+    curves: [
+      { id: "D1", label: "D₁", params: { type: "linear", slope: -0.8, intercept: 8 }, color: C.demand },
+      { id: "D2", label: "D₂", params: { type: "linear", slope: -0.8, intercept: 10 }, color: C.demand, dash: true, shiftedFrom: "D1" },
+      { id: "S", label: "S", params: { type: "linear", slope: 0.8, intercept: 1 }, color: C.supply },
+    ],
+    equilibria: [
+      { id: "E1", label: "E₁", curve1: "D1", curve2: "S", color: C.eq, pLabel: "P₁", qLabel: "Q₁" },
+      { id: "E2", label: "E₂", curve1: "D2", curve2: "S", color: C.shifted, pLabel: "P₂", qLabel: "Q₂" },
+    ],
+    notes: "Demand shifts right: higher incomes, population growth, advertising, tastes. Both P and Q rise.",
+    examTips: [
+      "State the cause of the demand shift explicitly",
+      "Show both equilibria with dashed projections to axes",
+      "Link to price mechanism: signalling, incentive, rationing",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     30. DEMAND DECREASE
+     ══════════════════════════════════════════ */
+  wjec_demand_decrease: {
+    title: "Decrease in Demand",
+    axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
+    curves: [
+      { id: "D1", label: "D₁", params: { type: "linear", slope: -0.8, intercept: 9 }, color: C.demand },
+      { id: "D2", label: "D₂", params: { type: "linear", slope: -0.8, intercept: 7 }, color: C.demand, dash: true, shiftedFrom: "D1" },
+      { id: "S", label: "S", params: { type: "linear", slope: 0.8, intercept: 1 }, color: C.supply },
+    ],
+    equilibria: [
+      { id: "E1", label: "E₁", curve1: "D1", curve2: "S", color: C.eq, pLabel: "P₁", qLabel: "Q₁" },
+      { id: "E2", label: "E₂", curve1: "D2", curve2: "S", color: C.shifted, pLabel: "P₂", qLabel: "Q₂" },
+    ],
+    notes: "Demand shifts left: falling incomes, substitute price falls, adverse publicity. Both P and Q fall.",
+    examTips: [
+      "D₂ shifts LEFT — closer to origin",
+      "Price and quantity both fall",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     31. SUPPLY INCREASE
+     ══════════════════════════════════════════ */
+  wjec_supply_increase: {
+    title: "Increase in Supply",
+    axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
+    curves: [
+      { id: "D", label: "D", params: { type: "linear", slope: -0.8, intercept: 9 }, color: C.demand },
+      { id: "S1", label: "S₁", params: { type: "linear", slope: 0.8, intercept: 2 }, color: C.supply },
+      { id: "S2", label: "S₂", params: { type: "linear", slope: 0.8, intercept: 0 }, color: C.supply, dash: true, shiftedFrom: "S1" },
+    ],
+    equilibria: [
+      { id: "E1", label: "E₁", curve1: "D", curve2: "S1", color: C.eq, pLabel: "P₁", qLabel: "Q₁" },
+      { id: "E2", label: "E₂", curve1: "D", curve2: "S2", color: C.shifted, pLabel: "P₂", qLabel: "Q₂" },
+    ],
+    notes: "Supply shifts right: lower costs, technology improvement, more suppliers. Price falls, quantity rises.",
+    examTips: [
+      "Supply shifts RIGHT — more supplied at every price",
+      "Common causes: technology, lower input costs, entry of new firms",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     32. SUPPLY DECREASE
+     ══════════════════════════════════════════ */
+  wjec_supply_decrease: {
+    title: "Decrease in Supply",
+    axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
+    curves: [
+      { id: "D", label: "D", params: { type: "linear", slope: -0.8, intercept: 9 }, color: C.demand },
+      { id: "S1", label: "S₁", params: { type: "linear", slope: 0.8, intercept: 1 }, color: C.supply },
+      { id: "S2", label: "S₂", params: { type: "linear", slope: 0.8, intercept: 3 }, color: C.supply, dash: true, shiftedFrom: "S1" },
+    ],
+    equilibria: [
+      { id: "E1", label: "E₁", curve1: "D", curve2: "S1", color: C.eq, pLabel: "P₁", qLabel: "Q₁" },
+      { id: "E2", label: "E₂", curve1: "D", curve2: "S2", color: C.shifted, pLabel: "P₂", qLabel: "Q₂" },
+    ],
+    notes: "Supply shifts left: higher costs, supply chain disruption, indirect taxes. Price rises, quantity falls.",
+    examTips: [
+      "Supply shifts LEFT — less supplied at every price",
+      "Causes: higher raw material costs, increased indirect taxes",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     33. ELASTICITY — Elastic vs Inelastic Demand
+     ══════════════════════════════════════════ */
+  wjec_elasticity_ped: {
+    title: "Price Elasticity of Demand — Elastic vs Inelastic",
+    axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
+    curves: [
+      { id: "D_el", label: "D (elastic)", params: { type: "linear", slope: -0.3, intercept: 8 }, color: C.demand },
+      { id: "D_in", label: "D (inelastic)", params: { type: "linear", slope: -1.5, intercept: 12 }, color: C.orange },
+    ],
+    equilibria: [],
+    annotations: [
+      { text: "|PED| > 1", position: { x: 7, y: 6.5 }, color: C.demand, size: 11 },
+      { text: "|PED| < 1", position: { x: 3, y: 5 }, color: C.orange, size: 11 },
+      { text: "Elastic (flat)", position: { x: 8, y: 5.5 }, color: C.demand, size: 10 },
+      { text: "Inelastic (steep)", position: { x: 2, y: 3 }, color: C.orange, size: 10 },
+    ],
+    notes: "Elastic demand: %ΔQd > %ΔP (flat curve, many substitutes). Inelastic demand: %ΔQd < %ΔP (steep curve, necessities/addictive goods).",
+    examTips: [
+      "Flat = elastic (large Q response to P change), steep = inelastic",
+      "Revenue implications: elastic → P↑ = TR↓; inelastic → P↑ = TR↑",
+      "Determinants: substitutes, time, proportion of income, necessity/luxury",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     34. ELASTICITY — PES
+     ══════════════════════════════════════════ */
+  wjec_elasticity_pes: {
+    title: "Price Elasticity of Supply — Elastic vs Inelastic",
+    axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
+    curves: [
+      { id: "S_el", label: "S (elastic)", params: { type: "linear", slope: 0.3, intercept: 1 }, color: C.supply },
+      { id: "S_in", label: "S (inelastic)", params: { type: "linear", slope: 1.5, intercept: 0 }, color: C.orange },
+    ],
+    equilibria: [],
+    annotations: [
+      { text: "PES > 1 (flat)", position: { x: 8, y: 3.5 }, color: C.supply, size: 11 },
+      { text: "PES < 1 (steep)", position: { x: 3, y: 5 }, color: C.orange, size: 11 },
+    ],
+    notes: "Elastic supply: producers can easily adjust output. Inelastic supply: capacity constraints, time, perishable goods.",
+    examTips: [
+      "Short run → more inelastic; Long run → more elastic",
+      "Spare capacity and stock levels affect PES",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     35. MERIT GOOD (Information Failure)
+     ══════════════════════════════════════════ */
+  wjec_merit_good: {
+    title: "Merit Good — Under-Consumption",
+    axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
+    curves: [
+      { id: "S", label: "S (MPC)", params: { type: "linear", slope: 0.7, intercept: 1 }, color: C.supply },
+      { id: "D_perceived", label: "D (perceived MPB)", params: { type: "linear", slope: -0.7, intercept: 7.5 }, color: C.mpb },
+      { id: "D_actual", label: "D (actual MPB)", params: { type: "linear", slope: -0.7, intercept: 9.5 }, color: C.demand, dash: true },
+    ],
+    equilibria: [
+      { id: "Mkt", label: "Mkt", curve1: "S", curve2: "D_perceived", color: C.eq, pLabel: "P₁", qLabel: "Q₁", tooltip: "Consumers undervalue → underconsume" },
+      { id: "Opt", label: "Opt", curve1: "S", curve2: "D_actual", color: C.shifted, pLabel: "P₂", qLabel: "Q₂", tooltip: "If fully informed → higher consumption" },
+    ],
+    shading: [
+      {
+        type: "triangle",
+        vertices: [{ curve: "D_actual", atEqX: "Mkt" }, { eq: "Opt" }, { eq: "Mkt" }],
+        color: C.eq,
+        opacity: 0.15,
+        label: "Welfare loss",
+      },
+    ],
+    sanityChecks: [{ description: "Qm < Qopt (underconsumption)", check: { eq1: "Mkt", eq2: "Opt", axis: "x", relation: "<" } }],
+    notes: "Merit good: consumers undervalue benefits (information failure). Government corrects via subsidy, provision, or information campaigns.",
+    examTips: [
+      "WJEC allows D (perceived) / D (actual) notation for merit goods",
+      "Distinguish from positive externality: information failure vs external benefit",
+      "Correction: subsidy to close gap, or information provision to shift perceived D right",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     36. DEMERIT GOOD (Information Failure)
+     ══════════════════════════════════════════ */
+  wjec_demerit_good: {
+    title: "Demerit Good — Over-Consumption",
+    axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
+    curves: [
+      { id: "S", label: "S (MPC)", params: { type: "linear", slope: 0.7, intercept: 1 }, color: C.supply },
+      { id: "D_perceived", label: "D (perceived MPB)", params: { type: "linear", slope: -0.7, intercept: 9.5 }, color: C.demand },
+      { id: "D_actual", label: "D (actual MPB)", params: { type: "linear", slope: -0.7, intercept: 7.5 }, color: C.mpb, dash: true },
+    ],
+    equilibria: [
+      { id: "Mkt", label: "Mkt", curve1: "S", curve2: "D_perceived", color: C.eq, pLabel: "P₁", qLabel: "Q₁", tooltip: "Consumers overvalue → overconsume" },
+      { id: "Opt", label: "Opt", curve1: "S", curve2: "D_actual", color: C.shifted, pLabel: "P₂", qLabel: "Q₂", tooltip: "If fully informed → lower consumption" },
+    ],
+    shading: [
+      {
+        type: "triangle",
+        vertices: [{ curve: "D_actual", atEqX: "Mkt" }, { eq: "Mkt" }, { eq: "Opt" }],
+        color: C.demand,
+        opacity: 0.18,
+        label: "Welfare loss",
+      },
+    ],
+    sanityChecks: [{ description: "Qm > Qopt (overconsumption)", check: { eq1: "Mkt", eq2: "Opt", axis: "x", relation: ">" } }],
+    notes: "Demerit good: consumers overvalue benefits (alcohol, tobacco, gambling). Government corrects via tax, regulation, or information.",
+    examTips: [
+      "D (perceived) is ABOVE D (actual) — consumers think benefit is higher",
+      "Correction: indirect tax, minimum age, advertising bans, health warnings",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     37. LRAC — Economies of Scale
+     ══════════════════════════════════════════ */
+  wjec_lrac: {
+    title: "Long-Run Average Cost — Economies & Diseconomies",
+    axisLabels: { x: "Output (Q)", y: "Cost (£)" },
+    curves: [
+      {
+        id: "LRAC", label: "LRAC", params: {
+          type: "piecewise",
+          segments: [
+            { xFrom: 0, xTo: 4, curve: { type: "quadratic", a: 0.5, b: -4, c: 10 } },
+            { xFrom: 4, xTo: 6, curve: { type: "linear", slope: 0, intercept: 2 } },
+            { xFrom: 6, xTo: 10, curve: { type: "quadratic", a: 0.15, b: -1.8, c: 7.4 } },
+          ],
+        }, color: C.supply, width: 3,
+      },
+    ],
+    equilibria: [],
+    annotations: [
+      { text: "Economies of scale", position: { x: 2, y: 5 }, color: C.eq, size: 11 },
+      { text: "Constant returns", position: { x: 5, y: 1.5 }, color: C.lras, size: 11 },
+      { text: "Diseconomies of scale", position: { x: 8, y: 4 }, color: C.demand, size: 11 },
+      { text: "MES", position: { x: 4, y: 2.5 }, color: C.eq, size: 10 },
+    ],
+    notes: "LRAC falls with economies of scale (technical, managerial, financial, purchasing). MES = minimum efficient scale. Beyond optimal, diseconomies from coordination/communication failures.",
+    examTips: [
+      "Types of EoS: technical, managerial, financial, purchasing, risk-bearing",
+      "MES is where LRAC first reaches minimum — important for market structure analysis",
+      "Diseconomies: coordination failures, communication breakdowns, X-inefficiency",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     38. PERFECT COMPETITION — Short Run
+     ══════════════════════════════════════════ */
+  wjec_perfect_comp: {
+    title: "Perfect Competition — Short-Run Supernormal Profit",
+    axisLabels: { x: "Output (Q)", y: "Cost / Revenue (£)" },
+    curves: [
+      { id: "AR", label: "AR = MR = D", params: { type: "horizontal", y: 6 }, color: C.demand, width: 2 },
+      { id: "MC", label: "MC", params: { type: "quadratic", a: 0.35, b: -2.8, c: 9 }, color: C.supply },
+      { id: "ATC", label: "ATC", params: { type: "quadratic", a: 0.18, b: -1.5, c: 7 }, color: C.teal },
+    ],
+    equilibria: [],
+    annotations: [
+      { text: "Supernormal profit", position: { x: 5, y: 5.5 }, color: C.eq, size: 11 },
+      { text: "P = MR = AR", position: { x: 7, y: 6.3 }, color: C.demand, size: 10 },
+      { text: "MC = MR: profit max", position: { x: 6, y: 7.5 }, color: C.supply, size: 10 },
+    ],
+    notes: "Perfect comp: price taker, horizontal AR/MR. Short run: if P > ATC → supernormal profit. Long run: entry drives P down to min ATC → normal profit.",
+    examTips: [
+      "Firm is a price taker: AR = MR = P is a horizontal line",
+      "Profit max where MC = MR",
+      "Short run: shade (P − ATC) × Q for supernormal profit",
+      "Long run: AR tangent to ATC at min point → allocative + productive efficiency",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     39. OLIGOPOLY — Kinked Demand Curve
+     ══════════════════════════════════════════ */
+  wjec_kinked_demand: {
+    title: "Oligopoly — Kinked Demand Curve",
+    axisLabels: { x: "Output (Q)", y: "Price / Cost (£)" },
+    curves: [
+      {
+        id: "D_kinked", label: "D (kinked)", params: {
+          type: "piecewise",
+          segments: [
+            { xFrom: 0, xTo: 5, curve: { type: "linear", slope: -0.4, intercept: 8 } },
+            { xFrom: 5, xTo: 10, curve: { type: "linear", slope: -1.2, intercept: 12 } },
+          ],
+        }, color: C.demand, width: 3,
+      },
+      {
+        id: "MR_kinked", label: "MR", params: {
+          type: "piecewise",
+          segments: [
+            { xFrom: 0, xTo: 5, curve: { type: "linear", slope: -0.8, intercept: 8 } },
+            { xFrom: 5, xTo: 10, curve: { type: "linear", slope: -2.4, intercept: 16 } },
+          ],
+        }, color: C.pink, width: 2,
+      },
+      { id: "MC", label: "MC", params: { type: "quadratic", a: 0.2, b: -1.8, c: 6 }, color: C.supply },
+    ],
+    equilibria: [],
+    annotations: [
+      { text: "Kink at P*", position: { x: 5.3, y: 6.3 }, color: C.demand, size: 11 },
+      { text: "MR gap", position: { x: 5.3, y: 3.5 }, color: C.pink, size: 11 },
+      { text: "Price rigidity", position: { x: 7, y: 7 }, color: C.lras, size: 10 },
+    ],
+    notes: "Kinked demand: rivals match price cuts (elastic above kink, inelastic below). MR has a discontinuity. MC can shift within the gap without changing price → price rigidity.",
+    examTips: [
+      "Above kink: raise price → rivals don't follow → lose customers (elastic)",
+      "Below kink: cut price → rivals match → little gain (inelastic)",
+      "MR discontinuity at kink quantity explains price rigidity",
+      "Evaluate: non-price competition, game theory, collusion incentive",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     40. MONOPSONY LABOUR MARKET
+     ══════════════════════════════════════════ */
+  wjec_monopsony: {
+    title: "Monopsony Labour Market",
+    axisLabels: { x: "Quantity of Labour (Q)", y: "Wage Rate (W)" },
+    curves: [
+      { id: "DL", label: "D_L (MRP)", params: { type: "linear", slope: -0.8, intercept: 9 }, color: C.demand },
+      { id: "SL", label: "S_L (ACL)", params: { type: "linear", slope: 0.5, intercept: 1 }, color: C.supply },
+      { id: "MCL", label: "MCL", params: { type: "linear", slope: 1.0, intercept: 1 }, color: C.msc },
+    ],
+    equilibria: [
+      { id: "Mon", label: "Monopsony", curve1: "DL", curve2: "MCL", color: C.demand, pLabel: "Wm", qLabel: "Lm", tooltip: "Monopsony: MCL = MRP → low wage, low employment" },
+      { id: "Comp", label: "Competitive", curve1: "DL", curve2: "SL", color: C.eq, pLabel: "Wc", qLabel: "Lc", tooltip: "Competitive: D_L = S_L → higher wage and employment" },
+    ],
+    sanityChecks: [
+      { description: "Monopsony wage < competitive wage", check: { eq1: "Mon", eq2: "Comp", axis: "y", relation: "<" } },
+      { description: "Monopsony employment < competitive employment", check: { eq1: "Mon", eq2: "Comp", axis: "x", relation: "<" } },
+    ],
+    notes: "Monopsony: single buyer of labour. MCL > ACL (S_L). Employs where MCL = MRP but pays wage from S_L at that quantity. Lower wage and employment than competitive market.",
+    examTips: [
+      "MCL is steeper than S_L (ACL) — gradient is double",
+      "Monopsonist pays Wm from S_L curve, NOT from MCL",
+      "NMW above Wm but below Wc can increase BOTH employment and wage",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     41. COMPARATIVE ADVANTAGE
+     ══════════════════════════════════════════ */
+  wjec_comparative_advantage: {
+    title: "Comparative Advantage — PPF Basis",
+    axisLabels: { x: "Good X", y: "Good Y" },
+    curves: [
+      { id: "PPF_A", label: "Country A", params: { type: "linear", slope: -0.5, intercept: 8 }, color: C.supply },
+      { id: "PPF_B", label: "Country B", params: { type: "linear", slope: -2, intercept: 10 }, color: C.demand },
+    ],
+    equilibria: [],
+    annotations: [
+      { text: "A: OC of X = 0.5Y", position: { x: 7, y: 5 }, color: C.supply, size: 10 },
+      { text: "B: OC of X = 2Y", position: { x: 3, y: 5 }, color: C.demand, size: 10 },
+      { text: "A specialises in X", position: { x: 8, y: 2 }, color: C.eq, size: 11 },
+      { text: "B specialises in Y", position: { x: 1, y: 9 }, color: C.eq, size: 11 },
+    ],
+    notes: "Country A has lower OC for X → comparative advantage in X. Country B has lower OC for Y. Specialisation and trade → both gain (beyond individual PPF).",
+    examTips: [
+      "Calculate opportunity costs from PPF gradients",
+      "Lower OC = comparative advantage in that good",
+      "Trade at terms between the two OCs benefits both",
+      "WJEC Unit 4: apply to real-world trade scenarios",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     42. TRADE SUBSIDY
+     ══════════════════════════════════════════ */
+  wjec_trade_subsidy: {
+    title: "Export/Domestic Subsidy in Trade",
+    axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
+    curves: [
+      { id: "D", label: "D", params: { type: "linear", slope: -0.6, intercept: 9 }, color: C.demand },
+      { id: "S_dom", label: "S_dom", params: { type: "linear", slope: 0.7, intercept: 2 }, color: C.supply },
+      { id: "S_sub", label: "S_dom + subsidy", params: { type: "linear", slope: 0.7, intercept: 0 }, color: C.supply, dash: true, shiftedFrom: "S_dom" },
+      { id: "Pw", label: "Pw", params: { type: "horizontal", y: 3 }, color: C.eq, width: 2 },
+    ],
+    equilibria: [],
+    annotations: [
+      { text: "Domestic output rises", position: { x: 3, y: 4.5 }, color: C.eq, size: 10 },
+      { text: "Imports fall", position: { x: 6, y: 2.5 }, color: C.orange, size: 10 },
+      { text: "Govt cost", position: { x: 4, y: 1.5 }, color: C.demand, size: 10 },
+    ],
+    notes: "Subsidy to domestic producers shifts S right. At world price, domestic output rises and imports fall. Government bears the cost of the subsidy.",
+    examTips: [
+      "Unlike tariff: price stays at Pw for consumers",
+      "Imports still fall but without consumer price increase",
+      "Evaluate: WTO restrictions, opportunity cost, moral hazard",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     43. INTERRELATED MARKETS
+     ══════════════════════════════════════════ */
+  wjec_interrelated_markets: {
+    title: "Interrelated Markets — Substitutes",
+    axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
+    curves: [
+      { id: "D1", label: "D₁ (Mkt B)", params: { type: "linear", slope: -0.8, intercept: 8 }, color: C.demand },
+      { id: "D2", label: "D₂ (Mkt B)", params: { type: "linear", slope: -0.8, intercept: 10 }, color: C.demand, dash: true, shiftedFrom: "D1" },
+      { id: "S", label: "S (Mkt B)", params: { type: "linear", slope: 0.8, intercept: 1 }, color: C.supply },
+    ],
+    equilibria: [
+      { id: "E1", label: "E₁", curve1: "D1", curve2: "S", color: C.eq, pLabel: "P₁", qLabel: "Q₁" },
+      { id: "E2", label: "E₂", curve1: "D2", curve2: "S", color: C.shifted, pLabel: "P₂", qLabel: "Q₂" },
+    ],
+    annotations: [
+      { text: "Price of sub ↑ → D for this good ↑", position: { x: 5, y: 9 }, color: C.shifted, size: 10 },
+    ],
+    notes: "When price of a substitute rises, demand for this good increases (shifts right). Shows how markets are interconnected through substitution and complementary relationships.",
+    examTips: [
+      "WJEC Unit 1: explain knock-on effects across linked goods",
+      "Substitutes: price ↑ in A → demand ↑ in B",
+      "Complements: price ↑ in A → demand ↓ in B",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     44. FISCAL POLICY — Expansionary
+     ══════════════════════════════════════════ */
+  wjec_fiscal_expansion: {
+    title: "Expansionary Fiscal Policy",
+    axisLabels: { x: "Real GDP (Y)", y: "Price Level (PL)" },
+    curves: [
+      { id: "AD1", label: "AD₁", params: { type: "linear", slope: -0.7, intercept: 7.5 }, color: C.demand },
+      { id: "AD2", label: "AD₂", params: { type: "linear", slope: -0.7, intercept: 9.5 }, color: C.demand, dash: true, shiftedFrom: "AD1" },
+      { id: "SRAS", label: "SRAS", params: { type: "linear", slope: 0.8, intercept: 1 }, color: C.supply },
+      { id: "LRAS", label: "LRAS", params: { type: "vertical", x: 7 }, color: C.lras, dash: true, width: 2 },
+    ],
+    equilibria: [
+      { id: "E1", label: "E₁", curve1: "AD1", curve2: "SRAS", color: C.eq, pLabel: "PL₁", qLabel: "Y₁" },
+      { id: "E2", label: "E₂", curve1: "AD2", curve2: "SRAS", color: C.shifted, pLabel: "PL₂", qLabel: "Y₂" },
+    ],
+    annotations: [
+      { text: "↑G or ↓T", position: { x: 4, y: 8 }, color: C.shifted, size: 11 },
+    ],
+    notes: "Government increases spending (G↑) or cuts taxes (T↓). AD shifts right → higher Y, higher PL. Multiplier amplifies initial injection.",
+    examTips: [
+      "Show AD shift right from increased G or reduced T",
+      "Discuss multiplier: ΔY = k × ΔG where k = 1/(1−MPC)",
+      "Evaluate: time lags, crowding out, budget deficit, inflationary pressure",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     45. MONETARY POLICY — Interest Rate Cut
+     ══════════════════════════════════════════ */
+  wjec_monetary_expansion: {
+    title: "Expansionary Monetary Policy",
+    axisLabels: { x: "Real GDP (Y)", y: "Price Level (PL)" },
+    curves: [
+      { id: "AD1", label: "AD₁", params: { type: "linear", slope: -0.7, intercept: 7.5 }, color: C.demand },
+      { id: "AD2", label: "AD₂", params: { type: "linear", slope: -0.7, intercept: 9 }, color: C.demand, dash: true, shiftedFrom: "AD1" },
+      { id: "SRAS", label: "SRAS", params: { type: "linear", slope: 0.8, intercept: 1 }, color: C.supply },
+      { id: "LRAS", label: "LRAS", params: { type: "vertical", x: 7 }, color: C.lras, dash: true, width: 2 },
+    ],
+    equilibria: [
+      { id: "E1", label: "E₁", curve1: "AD1", curve2: "SRAS", color: C.eq, pLabel: "PL₁", qLabel: "Y₁" },
+      { id: "E2", label: "E₂", curve1: "AD2", curve2: "SRAS", color: C.shifted, pLabel: "PL₂", qLabel: "Y₂" },
+    ],
+    annotations: [
+      { text: "Interest rate ↓ → C↑ I↑", position: { x: 4, y: 8 }, color: C.shifted, size: 10 },
+    ],
+    notes: "Central bank cuts interest rate → cheaper borrowing → C↑ I↑ → AD shifts right. Also affects exchange rate (depreciation → X↑ M↓).",
+    examTips: [
+      "Transmission mechanism: r↓ → C↑ I↑ → AD↑ → Y↑",
+      "Also: r↓ → hot money outflow → depreciation → net exports ↑",
+      "Evaluate: time lags, liquidity trap, confidence, asset price bubbles",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     46. SUPPLY-SIDE POLICY
+     ══════════════════════════════════════════ */
+  wjec_supply_side: {
+    title: "Supply-Side Policy — LRAS Shift",
+    axisLabels: { x: "Real GDP (Y)", y: "Price Level (PL)" },
+    curves: [
+      { id: "AD", label: "AD", params: { type: "linear", slope: -0.7, intercept: 9 }, color: C.demand },
+      { id: "SRAS1", label: "SRAS₁", params: { type: "linear", slope: 0.8, intercept: 1.5 }, color: C.supply },
+      { id: "SRAS2", label: "SRAS₂", params: { type: "linear", slope: 0.8, intercept: 0 }, color: C.supply, dash: true, shiftedFrom: "SRAS1" },
+      { id: "LRAS1", label: "LRAS₁", params: { type: "vertical", x: 6 }, color: C.lras, dash: true, width: 2 },
+      { id: "LRAS2", label: "LRAS₂", params: { type: "vertical", x: 8 }, color: C.eq, dash: true, width: 2 },
+    ],
+    equilibria: [
+      { id: "E1", label: "E₁", curve1: "AD", curve2: "SRAS1", color: C.eq, pLabel: "PL₁", qLabel: "Y₁" },
+      { id: "E2", label: "E₂", curve1: "AD", curve2: "SRAS2", color: C.shifted, pLabel: "PL₂", qLabel: "Y₂" },
+    ],
+    annotations: [
+      { text: "Non-inflationary growth", position: { x: 7, y: 2 }, color: C.eq, size: 11 },
+    ],
+    notes: "Supply-side policies (education, deregulation, infrastructure, tax reform) shift both SRAS and LRAS right. Non-inflationary growth: higher Y, lower PL.",
+    examTips: [
+      "Both SRAS and LRAS shift right → long-run capacity increases",
+      "Examples: education/training, infrastructure, deregulation, lower corporation tax",
+      "Evaluate: time lags (very long), cost, inequality, environmental effects",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     47. EXCHANGE RATE — Appreciation
+     ══════════════════════════════════════════ */
+  wjec_appreciation: {
+    title: "Exchange Rate Appreciation",
+    axisLabels: { x: "Quantity of Currency", y: "Exchange Rate (£/$)" },
+    curves: [
+      { id: "D1", label: "D£₁", params: { type: "linear", slope: -0.7, intercept: 8 }, color: C.demand },
+      { id: "D2", label: "D£₂", params: { type: "linear", slope: -0.7, intercept: 10 }, color: C.demand, dash: true, shiftedFrom: "D1" },
+      { id: "S", label: "S£", params: { type: "linear", slope: 0.8, intercept: 1 }, color: C.supply },
+    ],
+    equilibria: [
+      { id: "E1", label: "E₁", curve1: "D1", curve2: "S", color: C.eq, pLabel: "ER₁", qLabel: "Q₁" },
+      { id: "E2", label: "E₂", curve1: "D2", curve2: "S", color: C.shifted, pLabel: "ER₂", qLabel: "Q₂" },
+    ],
+    notes: "Demand for £ increases (e.g. higher interest rates → hot money inflow). Exchange rate appreciates from ER₁ to ER₂.",
+    examTips: [
+      "Causes: higher UK interest rates, strong exports, FDI inflows, speculation",
+      "Effects: cheaper imports → lower inflation; expensive exports → trade deficit",
+      "SPICED: Strong Pound, Imports Cheap, Exports Dear",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     48. EXCHANGE RATE — Depreciation
+     ══════════════════════════════════════════ */
+  wjec_depreciation: {
+    title: "Exchange Rate Depreciation",
+    axisLabels: { x: "Quantity of Currency", y: "Exchange Rate (£/$)" },
+    curves: [
+      { id: "D", label: "D£", params: { type: "linear", slope: -0.7, intercept: 9 }, color: C.demand },
+      { id: "S1", label: "S£₁", params: { type: "linear", slope: 0.8, intercept: 1 }, color: C.supply },
+      { id: "S2", label: "S£₂", params: { type: "linear", slope: 0.8, intercept: 3 }, color: C.supply, dash: true, shiftedFrom: "S1" },
+    ],
+    equilibria: [
+      { id: "E1", label: "E₁", curve1: "D", curve2: "S1", color: C.eq, pLabel: "ER₁", qLabel: "Q₁" },
+      { id: "E2", label: "E₂", curve1: "D", curve2: "S2", color: C.shifted, pLabel: "ER₂", qLabel: "Q₂" },
+    ],
+    notes: "Supply of £ increases (e.g. UK imports more, capital outflows). Exchange rate depreciates from ER₁ to ER₂.",
+    examTips: [
+      "Causes: lower interest rates, rising imports, capital flight, uncertainty",
+      "Effects: exports cheaper → trade improvement (if Marshall-Lerner satisfied)",
+      "WPIDEC: Weak Pound, Imports Dear, Exports Cheap",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     49. POVERTY TRAP / CYCLE
+     ══════════════════════════════════════════ */
+  wjec_poverty_trap: {
+    title: "Poverty Trap — Low Income Cycle",
+    axisLabels: { x: "Income (Y)", y: "Effective Marginal Tax Rate (%)" },
+    curves: [
+      {
+        id: "EMTR", label: "Effective MTR", params: {
+          type: "piecewise",
+          segments: [
+            { xFrom: 0, xTo: 4, curve: { type: "linear", slope: 0, intercept: 8 } },
+            { xFrom: 4, xTo: 6, curve: { type: "linear", slope: -2, intercept: 16 } },
+            { xFrom: 6, xTo: 10, curve: { type: "linear", slope: 0, intercept: 4 } },
+          ],
+        }, color: C.demand, width: 3,
+      },
+    ],
+    equilibria: [],
+    annotations: [
+      { text: "Benefits withdrawn", position: { x: 2, y: 9 }, color: C.demand, size: 11 },
+      { text: "Trap zone: EMTR > 80%", position: { x: 2, y: 7 }, color: C.orange, size: 10 },
+      { text: "Normal tax rate", position: { x: 8, y: 4.5 }, color: C.supply, size: 11 },
+    ],
+    notes: "Poverty trap: as income rises, means-tested benefits are withdrawn and taxes begin. Effective marginal tax rate can exceed 80%, reducing incentive to work more.",
+    examTips: [
+      "WJEC Unit 2: link to labour supply and welfare dependency",
+      "Solutions: Universal Credit taper, increasing personal allowance, in-work benefits",
+      "Evaluate: trade-off between targeting support and maintaining incentives",
+    ],
+  },
+
+  /* ══════════════════════════════════════════
+     50. DEADWEIGHT LOSS FROM TAX
+     ══════════════════════════════════════════ */
+  wjec_dwl_tax: {
+    title: "Deadweight Loss from Indirect Tax",
+    axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
+    curves: [
+      { id: "D", label: "D", params: { type: "linear", slope: -0.8, intercept: 9 }, color: C.demand },
+      { id: "S1", label: "S₁", params: { type: "linear", slope: 0.8, intercept: 1 }, color: C.supply },
+      { id: "S2", label: "S₁ + tax", params: { type: "linear", slope: 0.8, intercept: 3 }, color: C.supply, dash: true, shiftedFrom: "S1" },
+    ],
+    equilibria: [
+      { id: "E1", label: "E₁", curve1: "D", curve2: "S1", color: C.eq, pLabel: "P₁", qLabel: "Q₁" },
+      { id: "E2", label: "E₂", curve1: "D", curve2: "S2", color: C.shifted, pLabel: "P₂", qLabel: "Q₂" },
+    ],
+    shading: [
+      {
+        type: "triangle",
+        vertices: [{ eq: "E1" }, { eq: "E2" }, { curve: "S1", atEqX: "E2" }],
+        color: C.demand,
+        opacity: 0.2,
+        label: "DWL",
+      },
+    ],
+    notes: "Tax creates deadweight loss: the triangle of lost welfare beyond what government captures as revenue. Represents transactions that no longer occur.",
+    examTips: [
+      "DWL = welfare lost from reduced output (Q₁ to Q₂)",
+      "Higher elasticity → larger DWL",
+      "Evaluate: DWL justified if correcting negative externality",
+    ],
+  },
 };
