@@ -143,28 +143,25 @@ function ShortRunPanel() {
 
 /* ═══════ Long Run Panel ═══════ */
 function LongRunPanel() {
-  const W = 600, H = 280;
+  const W = 620, H = 280;
   // Firm panel: left half
   const fOx = 55, fOy = H - 40;
-  const fSx = 42, fSy = 34;
+  const fSx = 44, fSy = 34;
   const fMaxX = 5.2;
   // Industry panel: right half
-  const iOx = 370, iOy = H - 40;
-  const iSx = 32, iSy = 34;
+  const iOx = 380, iOy = H - 40;
+  const iSx = 34, iSy = 34;
   const iMaxX = 5.5;
 
   const computed = useMemo(() => {
     const E1 = intersectLinear(D_IND.slope, D_IND.intercept, S_IND.slope, S_IND.intercept)!;
-    const E2 = intersectLinear(D_IND.slope, D_IND.intercept, S1_IND.slope, S1_IND.intercept)!;
-    const p = E2.y; // original SR high price
     const minATC = findMinATC(MC.a, MC.b, MC.c, ATC.a, ATC.b, ATC.c)!;
-    const p1 = minATC.y; // LR price = min ATC
-    const q = solveQuadForY(MC.a, MC.b, MC.c, p)!; // SR output
-    const q1 = minATC.x; // LR output
-    return { E1, E2, p, p1, q, q1, minATC };
+    const pe = minATC.y; // LR price = min ATC = normal profit
+    const qe = minATC.x; // LR firm output
+    return { E1, pe, qe };
   }, []);
 
-  const { E1, E2, p, p1, q, q1 } = computed;
+  const { E1, pe, qe } = computed;
   const mc = quadPath(MC.a, MC.b, MC.c, fOx, fOy, fSx, fSy, 0.6, fMaxX);
   const atc = quadPath(ATC.a, ATC.b, ATC.c, fOx, fOy, fSx, fSy, 0.4, fMaxX);
 
@@ -173,142 +170,95 @@ function LongRunPanel() {
   const ipx = (v: number) => iOx + v * iSx;
   const ipy = (v: number) => iOy - v * iSy;
 
-  // Industry curves
   const evalLin = (s: number, i: number, x: number) => s * x + i;
-  const dX0 = 0, dX1 = iMaxX;
-  const sX0 = 0, sX1 = iMaxX;
 
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" style={{ maxWidth: 700 }}>
-      {/* ═══ FIRM PANEL ═══ */}
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" style={{ maxWidth: 720 }}>
+      {/* ═══ FIRM PANEL (left) ═══ */}
       <text x={fOx + (fMaxX * fSx) / 2} y={14} textAnchor="middle" fontSize={11} fontWeight={700} fill="currentColor" fontFamily="serif" textDecoration="underline">Firm</text>
 
       {/* Axes */}
-      <line x1={fOx} y1={18} x2={fOx} y2={fOy} stroke="currentColor" strokeWidth={1.5} />
-      <line x1={fOx} y1={fOy} x2={fOx + fMaxX * fSx + 20} y2={fOy} stroke="currentColor" strokeWidth={1.5} />
-      <polygon points={`${fOx - 3},22 ${fOx},14 ${fOx + 3},22`} fill="currentColor" />
-      <polygon points={`${fOx + fMaxX * fSx + 16},${fOy - 3} ${fOx + fMaxX * fSx + 23},${fOy} ${fOx + fMaxX * fSx + 16},${fOy + 3}`} fill="currentColor" />
+      <line x1={fOx} y1={18} x2={fOx} y2={fOy} stroke="currentColor" strokeWidth={2} />
+      <line x1={fOx} y1={fOy} x2={fOx + fMaxX * fSx + 20} y2={fOy} stroke="currentColor" strokeWidth={2} />
+      <polygon points={`${fOx - 4},22 ${fOx},12 ${fOx + 4},22`} fill="currentColor" />
+      <polygon points={`${fOx + fMaxX * fSx + 16},${fOy - 4} ${fOx + fMaxX * fSx + 24},${fOy} ${fOx + fMaxX * fSx + 16},${fOy + 4}`} fill="currentColor" />
 
-      <text x={10} y={18} fontSize={9} fontWeight={600} fill="currentColor" fontFamily="serif">Revenue /</text>
-      <text x={10} y={29} fontSize={9} fontWeight={600} fill="currentColor" fontFamily="serif">Cost</text>
-      <text x={fOx + fMaxX * fSx - 10} y={fOy + 16} fontSize={9} fontWeight={600} fill="currentColor" fontFamily="serif">Output</text>
+      <text x={12} y={18} fontSize={10} fontWeight={700} fill="currentColor" fontFamily="serif">C/R</text>
+      <text x={fOx + fMaxX * fSx - 5} y={fOy + 16} fontSize={10} fontWeight={700} fill="currentColor" fontFamily="serif">Quantity</text>
 
       {/* MC curve (blue) */}
-      <path d={mc} fill="none" stroke="#3b82f6" strokeWidth={2.2} />
-      {/* ATC curve (blue) */}
-      <path d={atc} fill="none" stroke="#3b82f6" strokeWidth={2.2} />
+      <path d={mc} fill="none" stroke="#3b82f6" strokeWidth={2.5} />
+      {/* AC curve (blue) */}
+      <path d={atc} fill="none" stroke="#3b82f6" strokeWidth={2.5} />
 
       {/* MC label */}
       {(() => {
         const mcY = evalQuad(MC.a, MC.b, MC.c, 4.2);
-        return <text x={fpx(4.2) + 4} y={fpy(mcY) - 6} fontSize={10} fontWeight={700} fill="#3b82f6" fontFamily="serif">MC</text>;
+        return <text x={fpx(4.2) + 5} y={fpy(mcY) - 8} fontSize={11} fontWeight={700} fill="#3b82f6" fontFamily="serif">MC</text>;
       })()}
-      {/* ATC label */}
+      {/* AC label */}
       {(() => {
-        const atcY = evalQuad(ATC.a, ATC.b, ATC.c, fMaxX - 0.3);
-        return <text x={fpx(fMaxX - 0.3) + 6} y={fpy(atcY) + 4} fontSize={10} fontWeight={700} fill="#3b82f6" fontFamily="serif">ATC</text>;
+        const atcY = evalQuad(ATC.a, ATC.b, ATC.c, fMaxX - 0.2);
+        return <text x={fpx(fMaxX - 0.2) + 6} y={fpy(atcY) + 4} fontSize={11} fontWeight={700} fill="#3b82f6" fontFamily="serif">AC</text>;
       })()}
 
-      {/* AR = MR = p (upper red line) */}
-      <line x1={fOx} y1={fpy(p)} x2={fOx + fMaxX * fSx + 10} y2={fpy(p)} stroke="#ef4444" strokeWidth={2.2} />
-      <text x={fOx + fMaxX * fSx + 14} y={fpy(p) + 4} fontSize={8} fontWeight={700} fill="#ef4444" fontFamily="serif">AR=MR=p</text>
+      {/* AR = MR horizontal line at PE (red, dashed, bold) */}
+      <line x1={fOx} y1={fpy(pe)} x2={fOx + fMaxX * fSx + 10} y2={fpy(pe)} stroke="#ef4444" strokeWidth={3} strokeDasharray="8,4" />
+      <text x={fOx + fMaxX * fSx / 2} y={fpy(pe) + 16} fontSize={10} fontWeight={700} fill="#ef4444" fontFamily="serif" textAnchor="middle">AR = MR</text>
 
-      {/* AR₁ = MR₁ = p₁ (lower red line) */}
-      <line x1={fOx} y1={fpy(p1)} x2={fOx + fMaxX * fSx + 10} y2={fpy(p1)} stroke="#ef4444" strokeWidth={2.2} />
-      <text x={fOx + fMaxX * fSx + 14} y={fpy(p1) + 4} fontSize={7.5} fontWeight={700} fill="#ef4444" fontFamily="serif">AR₁=MR₁=p₁</text>
+      {/* Dashed projection: vertical from QE down to x-axis */}
+      <line x1={fpx(qe)} y1={fpy(pe)} x2={fpx(qe)} y2={fOy} stroke="#ef4444" strokeWidth={2} strokeDasharray="6,4" />
 
-      {/* Green downward arrow between the two price lines */}
-      {(() => {
-        const arrowX = fpx(2.8);
-        return (
-          <>
-            <line x1={arrowX} y1={fpy(p) + 4} x2={arrowX} y2={fpy(p1) - 4} stroke="#16a34a" strokeWidth={2} />
-            <polygon points={`${arrowX - 4},${fpy(p1) - 8} ${arrowX},${fpy(p1) - 2} ${arrowX + 4},${fpy(p1) - 8}`} fill="#16a34a" />
-          </>
-        );
-      })()}
+      {/* PE label on y-axis */}
+      <text x={fOx - 6} y={fpy(pe) + 4} fontSize={10} fontWeight={700} fill="#ef4444" textAnchor="end" fontFamily="serif">PE</text>
+      {/* QE label on x-axis */}
+      <text x={fpx(qe)} y={fOy + 15} fontSize={10} fontWeight={700} fill="#ef4444" textAnchor="middle" fontFamily="serif">QE</text>
 
-      {/* Dotted projections for q and q₁ */}
-      <line x1={fpx(q)} y1={fpy(p)} x2={fpx(q)} y2={fOy} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.5} />
-      <line x1={fpx(q1)} y1={fpy(p1)} x2={fpx(q1)} y2={fOy} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.5} />
+      {/* Equilibrium dot where MC = AC = AR */}
+      <circle cx={fpx(qe)} cy={fpy(pe)} r={4} fill="#ef4444" />
 
-      {/* Axis markers */}
-      <text x={fOx - 5} y={fpy(p) + 4} fontSize={9} fontWeight={700} fill="currentColor" textAnchor="end" fontFamily="serif">p</text>
-      <text x={fOx - 5} y={fpy(p1) + 4} fontSize={9} fontWeight={700} fill="currentColor" textAnchor="end" fontFamily="serif">c</text>
-      <text x={fOx - 5} y={fpy(p1) + 14} fontSize={9} fontWeight={700} fill="currentColor" textAnchor="end" fontFamily="serif">p₁</text>
-      <text x={fpx(q1)} y={fOy + 14} fontSize={9} fontWeight={700} fill="currentColor" textAnchor="middle" fontFamily="serif">q₁</text>
-      <text x={fpx(q)} y={fOy + 14} fontSize={9} fontWeight={700} fill="currentColor" textAnchor="middle" fontFamily="serif">q</text>
-
-      {/* ═══ INDUSTRY PANEL ═══ */}
+      {/* ═══ INDUSTRY PANEL (right) ═══ */}
       <text x={iOx + (iMaxX * iSx) / 2} y={14} textAnchor="middle" fontSize={11} fontWeight={700} fill="currentColor" fontFamily="serif" textDecoration="underline">Industry</text>
 
       {/* Axes */}
-      <line x1={iOx} y1={18} x2={iOx} y2={iOy} stroke="currentColor" strokeWidth={1.5} />
-      <line x1={iOx} y1={iOy} x2={iOx + iMaxX * iSx + 20} y2={iOy} stroke="currentColor" strokeWidth={1.5} />
-      <polygon points={`${iOx - 3},22 ${iOx},14 ${iOx + 3},22`} fill="currentColor" />
-      <polygon points={`${iOx + iMaxX * iSx + 16},${iOy - 3} ${iOx + iMaxX * iSx + 23},${iOy} ${iOx + iMaxX * iSx + 16},${iOy + 3}`} fill="currentColor" />
+      <line x1={iOx} y1={18} x2={iOx} y2={iOy} stroke="currentColor" strokeWidth={2} />
+      <line x1={iOx} y1={iOy} x2={iOx + iMaxX * iSx + 20} y2={iOy} stroke="currentColor" strokeWidth={2} />
+      <polygon points={`${iOx - 4},22 ${iOx},12 ${iOx + 4},22`} fill="currentColor" />
+      <polygon points={`${iOx + iMaxX * iSx + 16},${iOy - 4} ${iOx + iMaxX * iSx + 24},${iOy} ${iOx + iMaxX * iSx + 16},${iOy + 4}`} fill="currentColor" />
 
-      <text x={iOx - 30} y={20} fontSize={9} fontWeight={600} fill="currentColor" fontFamily="serif">Price</text>
-      <text x={iOx + iMaxX * iSx - 10} y={iOy + 16} fontSize={9} fontWeight={600} fill="currentColor" fontFamily="serif">Quantity</text>
+      <text x={iOx - 28} y={18} fontSize={10} fontWeight={700} fill="currentColor" fontFamily="serif">C/R</text>
+      <text x={iOx + iMaxX * iSx - 5} y={iOy + 16} fontSize={10} fontWeight={700} fill="currentColor" fontFamily="serif">Quantity</text>
 
-      {/* S (original supply, blue) */}
+      {/* S (supply, orange) */}
       <line
-        x1={ipx(sX0)} y1={ipy(evalLin(S_IND.slope, S_IND.intercept, sX0))}
-        x2={ipx(sX1)} y2={ipy(evalLin(S_IND.slope, S_IND.intercept, sX1))}
-        stroke="#3b82f6" strokeWidth={2.2}
+        x1={ipx(0)} y1={ipy(evalLin(S_IND.slope, S_IND.intercept, 0))}
+        x2={ipx(iMaxX)} y2={ipy(evalLin(S_IND.slope, S_IND.intercept, iMaxX))}
+        stroke="#f59e0b" strokeWidth={2.8}
       />
       <text
-        x={ipx(sX1) + 4} y={ipy(evalLin(S_IND.slope, S_IND.intercept, sX1)) - 2}
-        fontSize={10} fontWeight={700} fill="#3b82f6" fontFamily="serif">S</text>
+        x={ipx(iMaxX) + 5} y={ipy(evalLin(S_IND.slope, S_IND.intercept, iMaxX)) - 2}
+        fontSize={11} fontWeight={700} fill="#f59e0b" fontFamily="serif">S</text>
 
-      {/* S₁ (shifted supply, blue) */}
+      {/* D (demand, blue) */}
       <line
-        x1={ipx(sX0)} y1={ipy(evalLin(S1_IND.slope, S1_IND.intercept, sX0))}
-        x2={ipx(sX1)} y2={ipy(evalLin(S1_IND.slope, S1_IND.intercept, sX1))}
-        stroke="#3b82f6" strokeWidth={2.2}
+        x1={ipx(0)} y1={ipy(evalLin(D_IND.slope, D_IND.intercept, 0))}
+        x2={ipx(iMaxX)} y2={ipy(evalLin(D_IND.slope, D_IND.intercept, iMaxX))}
+        stroke="#3b82f6" strokeWidth={2.8}
       />
       <text
-        x={ipx(sX1) + 4} y={ipy(evalLin(S1_IND.slope, S1_IND.intercept, sX1)) - 2}
-        fontSize={10} fontWeight={700} fill="#3b82f6" fontFamily="serif">S₁</text>
+        x={ipx(iMaxX) + 5} y={ipy(evalLin(D_IND.slope, D_IND.intercept, iMaxX)) + 4}
+        fontSize={11} fontWeight={700} fill="#3b82f6" fontFamily="serif">D</text>
 
-      {/* Green rightward arrow between S and S₁ */}
-      {(() => {
-        const ay = 4;
-        const sMidX = (ipx(sX0) + ipx(sX1)) / 2 - 20;
-        const s1MidX = sMidX + 30;
-        const sMidY = ipy(ay);
-        return (
-          <>
-            <line x1={sMidX} y1={sMidY} x2={s1MidX - 4} y2={sMidY} stroke="#16a34a" strokeWidth={2} />
-            <polygon points={`${s1MidX - 8},${sMidY - 4} ${s1MidX},${sMidY} ${s1MidX - 8},${sMidY + 4}`} fill="#16a34a" />
-          </>
-        );
-      })()}
+      {/* Equilibrium dot */}
+      <circle cx={ipx(E1.x)} cy={ipy(E1.y)} r={4} fill="#16a34a" />
 
-      {/* D (demand, red) */}
-      <line
-        x1={ipx(dX0)} y1={ipy(evalLin(D_IND.slope, D_IND.intercept, dX0))}
-        x2={ipx(dX1)} y2={ipy(evalLin(D_IND.slope, D_IND.intercept, dX1))}
-        stroke="#ef4444" strokeWidth={2.2}
-      />
-      <text
-        x={ipx(dX1) + 4} y={ipy(evalLin(D_IND.slope, D_IND.intercept, dX1)) + 4}
-        fontSize={10} fontWeight={700} fill="#ef4444" fontFamily="serif">D</text>
+      {/* Dashed projections from equilibrium */}
+      <line x1={iOx} y1={ipy(E1.y)} x2={ipx(E1.x)} y2={ipy(E1.y)} stroke="#ef4444" strokeWidth={2} strokeDasharray="6,4" />
+      <line x1={ipx(E1.x)} y1={ipy(E1.y)} x2={ipx(E1.x)} y2={iOy} stroke="#ef4444" strokeWidth={2} strokeDasharray="6,4" />
 
-      {/* Industry equilibria projections */}
-      {/* E2 = D ∩ S1 (original high price) */}
-      <line x1={iOx} y1={ipy(E2.y)} x2={ipx(E2.x)} y2={ipy(E2.y)} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.5} />
-      <line x1={ipx(E2.x)} y1={ipy(E2.y)} x2={ipx(E2.x)} y2={iOy} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.5} />
-      <circle cx={ipx(E2.x)} cy={ipy(E2.y)} r={3} fill="currentColor" />
-
-      {/* E1 = D ∩ S (new LR equilibrium at lower price) */}
-      <line x1={iOx} y1={ipy(E1.y)} x2={ipx(E1.x)} y2={ipy(E1.y)} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.5} />
-      <line x1={ipx(E1.x)} y1={ipy(E1.y)} x2={ipx(E1.x)} y2={iOy} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.5} />
-      <circle cx={ipx(E1.x)} cy={ipy(E1.y)} r={3} fill="currentColor" />
-
-      {/* Industry axis labels */}
-      <text x={ipx(E2.x)} y={iOy + 14} fontSize={9} fontWeight={700} fill="currentColor" textAnchor="middle" fontFamily="serif">q₂</text>
-      <text x={ipx(E1.x)} y={iOy + 14} fontSize={9} fontWeight={700} fill="currentColor" textAnchor="middle" fontFamily="serif">q₃</text>
+      {/* PE and QE labels */}
+      <text x={iOx - 6} y={ipy(E1.y) + 4} fontSize={10} fontWeight={700} fill="#ef4444" textAnchor="end" fontFamily="serif">PE</text>
+      <text x={ipx(E1.x)} y={iOy + 15} fontSize={10} fontWeight={700} fill="#ef4444" textAnchor="middle" fontFamily="serif">QE</text>
     </svg>
   );
 }
@@ -329,12 +279,12 @@ function SRTheoryBox() {
 function LRTheoryBox() {
   return (
     <div className="border border-border p-4 text-sm leading-relaxed" style={{ fontFamily: "serif", maxWidth: 320 }}>
-      <p className="font-bold underline mb-2 text-foreground">Perfect competition – long run</p>
-      <p className="text-muted-foreground mb-1.5">There are no barriers to entry in perfect competition.</p>
-      <p className="text-muted-foreground mb-1.5">Suppose there are supernormal profits in the short run. Then firms enter the market, shifting supply right from S to S₁.</p>
-      <p className="text-muted-foreground mb-1.5">This lowers the industry equilibrium price from p to p₁.</p>
-      <p className="text-muted-foreground mb-1.5">The perfectly competitive firm now takes a lower price (p₁) as given. This shifts AR and MR down from AR to AR₁.</p>
-      <p className="text-muted-foreground">Entry continues until supernormal profit is eliminated. In long-run equilibrium, firms earn normal profit only, where price = minimum ATC.</p>
+      <p className="font-bold underline mb-2 text-foreground">Perfect competition – long run (normal profits)</p>
+      <p className="text-muted-foreground mb-1.5">In the long run, freedom of entry and exit eliminates supernormal profit.</p>
+      <p className="text-muted-foreground mb-1.5">New firms enter → market supply increases → equilibrium price falls to PE.</p>
+      <p className="text-muted-foreground mb-1.5">At PE, the firm produces where MC = AR = MR, and this exactly equals the minimum of AC.</p>
+      <p className="text-muted-foreground mb-1.5">The firm earns <strong>normal profit only</strong> (AR = AC). There is no supernormal profit rectangle.</p>
+      <p className="text-muted-foreground">The industry equilibrium (S ∩ D) sets the price PE that each price-taking firm accepts.</p>
     </div>
   );
 }
