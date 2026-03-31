@@ -89,7 +89,7 @@ export const diagramScenarios: DiagramScenario[] = [
     scenario: "Apps and smartphones are complementary goods. A new generation of smartphones is released at a lower price point.",
     question: "Draw a cross-price elasticity of demand (XED) diagram with 'Price of Good Y' on the vertical axis and 'Quantity of Good X' on the horizontal axis. Show two curves: (1) a downward-sloping demand curve representing complementary goods (negative XED), and (2) an upward-sloping demand curve representing substitute goods (positive XED). Mark two price levels (P₁ and P₂) and two quantity levels (Q₁ and Q₂) with dashed projections. Explain the sign and magnitude of XED for each relationship.",
     marks: 6,
-    expectedDiagramKeyword: "xed",
+    expectedDiagramKeyword: "supply_demand",
     hints: ["Complements: negative XED — price of Y rises, quantity of X falls", "Substitutes: positive XED — price of Y rises, quantity of X rises"],
   },
   {
