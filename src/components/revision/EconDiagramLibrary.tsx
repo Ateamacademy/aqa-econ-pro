@@ -14,6 +14,7 @@ import { useState, useId } from "react";
 import { WelfareRegion } from "@/components/diagrams/WelfareRegion";
 import EconomicsDiagram, { type EconomicsDiagramProps } from "@/components/diagrams/EconomicsDiagram";
 import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram";
+import MonopolisticCompetitionDiagram from "@/components/MonopolisticCompetitionDiagram";
 
 export type DiagramType =
   | "supply_demand"
