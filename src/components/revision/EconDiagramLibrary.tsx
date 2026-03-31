@@ -3510,6 +3510,11 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
     return <div className={cn("my-4", className)}><PerfectCompetitionDiagram /></div>;
   }
 
+  // ── Monopolistic Competition: dedicated SR/LR component ──
+  if (type === "monopolistic_competition") {
+    return <div className={cn("my-4", className)}><MonopolisticCompetitionDiagram /></div>;
+  }
+
   // ── Declarative path: delegate to the new EconomicsDiagram component ──
   if (config.declarative) {
     return (
