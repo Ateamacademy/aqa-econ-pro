@@ -240,6 +240,7 @@ export const aqaYear1Paper1Topics: Topic[] = [
         ],
         explanation: "**Assumptions:** Many small buyers and sellers, homogeneous products, perfect information, no barriers to entry/exit, price takers, profit maximisers\n\n**Short run:** Firms can earn supernormal profit (P > AC) or subnormal profit (P < AC)\n**Long run:** Entry/exit drives profit to normal:\n- Supernormal profit → new firms enter → supply ↑ → price ↓ → profit eroded\n- Subnormal profit → firms exit → supply ↓ → price ↑ → losses eliminated\n\n**Efficiency:** Allocatively efficient (P = MC) and productively efficient (min AC) in the long run.\n**Limitation:** May lack dynamic efficiency — normal profits mean little R&D investment. Also completely unrealistic — no real market meets all assumptions.",
         examTip: "Perfect competition is the benchmark. Always compare other structures against it. In the long run: P = MC (allocative) and P = min AC (productive). But dynamic efficiency may be lacking.",
+        diagram: "perfect_competition" as any,
       },
       {
         title: "Monopoly",
