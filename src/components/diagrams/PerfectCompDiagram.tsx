@@ -316,12 +316,12 @@ function LongRunPanel() {
 /* ═══════ Theory Text Boxes ═══════ */
 function SRTheoryBox() {
   return (
-    <div className="border border-black/80 p-4 text-sm leading-relaxed" style={{ fontFamily: "serif", maxWidth: 320 }}>
-      <p className="font-bold underline mb-2 text-black">Perfect competition – short run</p>
-      <p className="text-black/90 mb-1.5">Firms are price takers in perfect competition. So the price (which is also average revenue, AR) is taken as given (fixed).</p>
-      <p className="text-black/90 mb-1.5">Firms profit-maximise where MC = MR.</p>
-      <p className="text-black/90 mb-1.5">In the short run, firms can earn supernormal profits when price {">"} ATC.</p>
-      <p className="text-black/90">Supernormal profit is (p − c) × q.</p>
+    <div className="border border-border p-4 text-sm leading-relaxed" style={{ fontFamily: "serif", maxWidth: 320 }}>
+      <p className="font-bold underline mb-2 text-foreground">Perfect competition – short run</p>
+      <p className="text-muted-foreground mb-1.5">Firms are price takers in perfect competition. So the price (which is also average revenue, AR) is taken as given (fixed).</p>
+      <p className="text-muted-foreground mb-1.5">Firms profit-maximise where MC = MR.</p>
+      <p className="text-muted-foreground mb-1.5">In the short run, firms can earn supernormal profits when price {">"} ATC.</p>
+      <p className="text-muted-foreground">Supernormal profit is (p − c) × q.</p>
     </div>
   );
 }
