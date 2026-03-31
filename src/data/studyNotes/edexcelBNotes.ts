@@ -186,6 +186,7 @@ export const edexcelBPaper1Topics: Topic[] = [
         title: "Perfect Competition",
         definition: "Many firms, identical products, perfect information, no barriers to entry — the benchmark for efficiency.",
         explanation: "**Short run:** Can earn supernormal profit\n**Long run:** Entry eliminates supernormal profit → P = MC (allocative efficiency), P = min AC (productive efficiency)\n\n**Reality:** No market is perfectly competitive. Used as theoretical benchmark to evaluate real market structures.",
+        diagram: "perfect_competition" as any,
       },
       {
         title: "Monopoly & Monopoly Power",

@@ -275,6 +275,7 @@ export const edexcelAPaper1Topics: Topic[] = [
         ],
         explanation: "**Short run:** Firms can earn supernormal or subnormal profit\n**Long run:** New entry/exit drives profit to normal → allocatively efficient (P = MC) and productively efficient (min AC)\n\n**Unrealistic but useful as a benchmark** — shows what perfect efficiency looks like",
         examTip: "Perfect competition is allocatively efficient (P = MC) and productively efficient (min AC) in the long run. Use this as a benchmark against other structures.",
+        diagram: "perfect_competition" as any,
       },
       {
         title: "Monopolistic Competition",

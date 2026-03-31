@@ -225,6 +225,7 @@ export const ocrComponent1Topics: Topic[] = [
         title: "Perfect Competition",
         definition: "Many firms, identical products, perfect information, no barriers — allocatively and productively efficient in long run.",
         explanation: "**Assumptions:** Many buyers/sellers, homogeneous products, perfect information, no barriers, price takers\n\n**Short run:** Supernormal/subnormal profit possible\n**Long run:** Normal profit only. P = MC (allocative), P = min AC (productive)\n\n**Unrealistic but useful as theoretical benchmark** — shows maximum efficiency achievable",
+        diagram: "perfect_competition" as any,
       },
       {
         title: "Monopoly",
