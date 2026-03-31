@@ -120,6 +120,34 @@ AQA GCSE / CAMBRIDGE IGCSE-SPECIFIC RULES:
 - GCSE questions are max 20 marks — diagrams support shorter answers than A-Level
 - Do not treat Dropbox page furniture, logos, or navigation elements as economics diagrams
 
+EDEXCEL INTERNATIONAL GCSE (4EC1)-SPECIFIC RULES:
+- Paper 1: Microeconomics & Business Economics (scarcity, PPF, S&D, elasticity PED/PES, externalities, merit/demerit goods, costs/revenue/profit, economies of scale, market structures, labour market)
+- Paper 2: Macroeconomics & Global Economy (GDP, inflation, unemployment, fiscal/monetary/supply-side policy, AD/AS, exchange rates, trade protection tariffs/quotas, comparative advantage, globalisation, Lorenz/Gini)
+- Uses Pe/Qe notation for equilibrium
+- Price mechanism explicitly has three functions: signalling, rationing, incentive
+- PED and PES require formula + calculation + interpretation
+- Costs/revenue: TC = FC + VC, TR = P × Q, Profit = TR − TC, break-even where TR = TC
+- Externality diagrams use both simplified (private cost / social cost) and full notation (MPC/MSC/MPB/MSB)
+- Merit/demerit goods use D(perceived) / D(actual) information failure model
+- Exchange rate diagrams: SPICED mnemonic (Strong Pound, Imports Cheap, Exports Dear)
+- Tariff diagrams: Pw and Pw + tariff horizontal lines, identify imports, domestic output, tariff revenue
+- Quota diagrams: show restricted imports and quota rent
+- Comparative advantage: compare PPF gradients / opportunity costs
+- 8-mark questions require: explanation + mechanism + at least one evaluation point
+
+OCR GCSE (J205)-SPECIFIC RULES:
+- Component 1 (Introduction to Economics): economic problem, markets, demand (draw using data), supply, price/equilibrium, competition (monopoly/oligopoly), production/costs/revenue/profit (calculate TC, AC, TR, AR), labour market (wage determination), money/financial markets, limitations of markets (externalities)
+- Component 2 (National & International Economics): economic growth (GDP), unemployment (Claimant Count), income distribution, price stability (CPI), fiscal policy (budget deficit/surplus), monetary policy (interest rates), supply-side policies, externalities correction (taxation, subsidies, legislation, regulation, information), international trade, balance of payments, exchange rates (draw S&D), globalisation
+- OCR command words: State, Explain, Calculate, Draw, Analyse, Evaluate
+- OCR requires 'chains of reasoning' in analysis questions
+- OCR requires drawing demand and supply curves using data from tables
+- OCR requires calculating: unemployment rate, currency conversions, inflation effects, TC/AC/TR/AR/profit
+- Externality correction: OCR lists five specific methods (taxation, subsidies, state provision, legislation/regulation, information provision)
+- Exchange rate diagrams must be DRAWN by students — OCR explicitly requires this
+- Competition diagrams compare competitive vs monopoly outcomes for consumers and producers
+- Questions max 80 marks per paper, synoptic in 6-mark extended response questions
+- Do not treat PMT page furniture, logos, or navigation elements as economics diagrams
+
 RULES:
 - Data tables with specific statistics referenced by questions ARE relevant
 - Theoretical economics diagrams (S&D, AD/AS, etc.) placed between extracts with no question reference are IRRELEVANT
