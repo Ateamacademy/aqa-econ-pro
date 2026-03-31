@@ -181,41 +181,41 @@ function LongRunPanel() {
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" style={{ maxWidth: 700 }}>
       {/* ═══ FIRM PANEL ═══ */}
-      <text x={fOx + (fMaxX * fSx) / 2} y={14} textAnchor="middle" fontSize={11} fontWeight={700} fill="black" fontFamily="serif" textDecoration="underline">Firm</text>
+      <text x={fOx + (fMaxX * fSx) / 2} y={14} textAnchor="middle" fontSize={11} fontWeight={700} fill="currentColor" fontFamily="serif" textDecoration="underline">Firm</text>
 
       {/* Axes */}
-      <line x1={fOx} y1={18} x2={fOx} y2={fOy} stroke="black" strokeWidth={1.5} />
-      <line x1={fOx} y1={fOy} x2={fOx + fMaxX * fSx + 20} y2={fOy} stroke="black" strokeWidth={1.5} />
-      <polygon points={`${fOx - 3},22 ${fOx},14 ${fOx + 3},22`} fill="black" />
-      <polygon points={`${fOx + fMaxX * fSx + 16},${fOy - 3} ${fOx + fMaxX * fSx + 23},${fOy} ${fOx + fMaxX * fSx + 16},${fOy + 3}`} fill="black" />
+      <line x1={fOx} y1={18} x2={fOx} y2={fOy} stroke="currentColor" strokeWidth={1.5} />
+      <line x1={fOx} y1={fOy} x2={fOx + fMaxX * fSx + 20} y2={fOy} stroke="currentColor" strokeWidth={1.5} />
+      <polygon points={`${fOx - 3},22 ${fOx},14 ${fOx + 3},22`} fill="currentColor" />
+      <polygon points={`${fOx + fMaxX * fSx + 16},${fOy - 3} ${fOx + fMaxX * fSx + 23},${fOy} ${fOx + fMaxX * fSx + 16},${fOy + 3}`} fill="currentColor" />
 
-      <text x={10} y={18} fontSize={9} fontWeight={600} fill="black" fontFamily="serif">Revenue /</text>
-      <text x={10} y={29} fontSize={9} fontWeight={600} fill="black" fontFamily="serif">Cost</text>
-      <text x={fOx + fMaxX * fSx - 10} y={fOy + 16} fontSize={9} fontWeight={600} fill="black" fontFamily="serif">Output</text>
+      <text x={10} y={18} fontSize={9} fontWeight={600} fill="currentColor" fontFamily="serif">Revenue /</text>
+      <text x={10} y={29} fontSize={9} fontWeight={600} fill="currentColor" fontFamily="serif">Cost</text>
+      <text x={fOx + fMaxX * fSx - 10} y={fOy + 16} fontSize={9} fontWeight={600} fill="currentColor" fontFamily="serif">Output</text>
 
       {/* MC curve (blue) */}
-      <path d={mc} fill="none" stroke="#1d4ed8" strokeWidth={2.2} />
+      <path d={mc} fill="none" stroke="#3b82f6" strokeWidth={2.2} />
       {/* ATC curve (blue) */}
-      <path d={atc} fill="none" stroke="#1d4ed8" strokeWidth={2.2} />
+      <path d={atc} fill="none" stroke="#3b82f6" strokeWidth={2.2} />
 
       {/* MC label */}
       {(() => {
         const mcY = evalQuad(MC.a, MC.b, MC.c, 4.2);
-        return <text x={fpx(4.2) + 4} y={fpy(mcY) - 6} fontSize={10} fontWeight={700} fill="#1d4ed8" fontFamily="serif">MC</text>;
+        return <text x={fpx(4.2) + 4} y={fpy(mcY) - 6} fontSize={10} fontWeight={700} fill="#3b82f6" fontFamily="serif">MC</text>;
       })()}
       {/* ATC label */}
       {(() => {
         const atcY = evalQuad(ATC.a, ATC.b, ATC.c, fMaxX - 0.3);
-        return <text x={fpx(fMaxX - 0.3) + 6} y={fpy(atcY) + 4} fontSize={10} fontWeight={700} fill="#1d4ed8" fontFamily="serif">ATC</text>;
+        return <text x={fpx(fMaxX - 0.3) + 6} y={fpy(atcY) + 4} fontSize={10} fontWeight={700} fill="#3b82f6" fontFamily="serif">ATC</text>;
       })()}
 
       {/* AR = MR = p (upper red line) */}
-      <line x1={fOx} y1={fpy(p)} x2={fOx + fMaxX * fSx + 10} y2={fpy(p)} stroke="#dc2626" strokeWidth={2.2} />
-      <text x={fOx + fMaxX * fSx + 14} y={fpy(p) + 4} fontSize={8} fontWeight={700} fill="#dc2626" fontFamily="serif">AR=MR=p</text>
+      <line x1={fOx} y1={fpy(p)} x2={fOx + fMaxX * fSx + 10} y2={fpy(p)} stroke="#ef4444" strokeWidth={2.2} />
+      <text x={fOx + fMaxX * fSx + 14} y={fpy(p) + 4} fontSize={8} fontWeight={700} fill="#ef4444" fontFamily="serif">AR=MR=p</text>
 
       {/* AR₁ = MR₁ = p₁ (lower red line) */}
-      <line x1={fOx} y1={fpy(p1)} x2={fOx + fMaxX * fSx + 10} y2={fpy(p1)} stroke="#dc2626" strokeWidth={2.2} />
-      <text x={fOx + fMaxX * fSx + 14} y={fpy(p1) + 4} fontSize={7.5} fontWeight={700} fill="#dc2626" fontFamily="serif">AR₁=MR₁=p₁</text>
+      <line x1={fOx} y1={fpy(p1)} x2={fOx + fMaxX * fSx + 10} y2={fpy(p1)} stroke="#ef4444" strokeWidth={2.2} />
+      <text x={fOx + fMaxX * fSx + 14} y={fpy(p1) + 4} fontSize={7.5} fontWeight={700} fill="#ef4444" fontFamily="serif">AR₁=MR₁=p₁</text>
 
       {/* Green downward arrow between the two price lines */}
       {(() => {
@@ -229,47 +229,47 @@ function LongRunPanel() {
       })()}
 
       {/* Dotted projections for q and q₁ */}
-      <line x1={fpx(q)} y1={fpy(p)} x2={fpx(q)} y2={fOy} stroke="black" strokeWidth={0.8} strokeDasharray="3,3" />
-      <line x1={fpx(q1)} y1={fpy(p1)} x2={fpx(q1)} y2={fOy} stroke="black" strokeWidth={0.8} strokeDasharray="3,3" />
+      <line x1={fpx(q)} y1={fpy(p)} x2={fpx(q)} y2={fOy} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.5} />
+      <line x1={fpx(q1)} y1={fpy(p1)} x2={fpx(q1)} y2={fOy} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.5} />
 
       {/* Axis markers */}
-      <text x={fOx - 5} y={fpy(p) + 4} fontSize={9} fontWeight={700} fill="black" textAnchor="end" fontFamily="serif">p</text>
-      <text x={fOx - 5} y={fpy(p1) + 4} fontSize={9} fontWeight={700} fill="black" textAnchor="end" fontFamily="serif">c</text>
-      <text x={fOx - 5} y={fpy(p1) + 14} fontSize={9} fontWeight={700} fill="black" textAnchor="end" fontFamily="serif">p₁</text>
-      <text x={fpx(q1)} y={fOy + 14} fontSize={9} fontWeight={700} fill="black" textAnchor="middle" fontFamily="serif">q₁</text>
-      <text x={fpx(q)} y={fOy + 14} fontSize={9} fontWeight={700} fill="black" textAnchor="middle" fontFamily="serif">q</text>
+      <text x={fOx - 5} y={fpy(p) + 4} fontSize={9} fontWeight={700} fill="currentColor" textAnchor="end" fontFamily="serif">p</text>
+      <text x={fOx - 5} y={fpy(p1) + 4} fontSize={9} fontWeight={700} fill="currentColor" textAnchor="end" fontFamily="serif">c</text>
+      <text x={fOx - 5} y={fpy(p1) + 14} fontSize={9} fontWeight={700} fill="currentColor" textAnchor="end" fontFamily="serif">p₁</text>
+      <text x={fpx(q1)} y={fOy + 14} fontSize={9} fontWeight={700} fill="currentColor" textAnchor="middle" fontFamily="serif">q₁</text>
+      <text x={fpx(q)} y={fOy + 14} fontSize={9} fontWeight={700} fill="currentColor" textAnchor="middle" fontFamily="serif">q</text>
 
       {/* ═══ INDUSTRY PANEL ═══ */}
-      <text x={iOx + (iMaxX * iSx) / 2} y={14} textAnchor="middle" fontSize={11} fontWeight={700} fill="black" fontFamily="serif" textDecoration="underline">Industry</text>
+      <text x={iOx + (iMaxX * iSx) / 2} y={14} textAnchor="middle" fontSize={11} fontWeight={700} fill="currentColor" fontFamily="serif" textDecoration="underline">Industry</text>
 
       {/* Axes */}
-      <line x1={iOx} y1={18} x2={iOx} y2={iOy} stroke="black" strokeWidth={1.5} />
-      <line x1={iOx} y1={iOy} x2={iOx + iMaxX * iSx + 20} y2={iOy} stroke="black" strokeWidth={1.5} />
-      <polygon points={`${iOx - 3},22 ${iOx},14 ${iOx + 3},22`} fill="black" />
-      <polygon points={`${iOx + iMaxX * iSx + 16},${iOy - 3} ${iOx + iMaxX * iSx + 23},${iOy} ${iOx + iMaxX * iSx + 16},${iOy + 3}`} fill="black" />
+      <line x1={iOx} y1={18} x2={iOx} y2={iOy} stroke="currentColor" strokeWidth={1.5} />
+      <line x1={iOx} y1={iOy} x2={iOx + iMaxX * iSx + 20} y2={iOy} stroke="currentColor" strokeWidth={1.5} />
+      <polygon points={`${iOx - 3},22 ${iOx},14 ${iOx + 3},22`} fill="currentColor" />
+      <polygon points={`${iOx + iMaxX * iSx + 16},${iOy - 3} ${iOx + iMaxX * iSx + 23},${iOy} ${iOx + iMaxX * iSx + 16},${iOy + 3}`} fill="currentColor" />
 
-      <text x={iOx - 30} y={20} fontSize={9} fontWeight={600} fill="black" fontFamily="serif">Price</text>
-      <text x={iOx + iMaxX * iSx - 10} y={iOy + 16} fontSize={9} fontWeight={600} fill="black" fontFamily="serif">Quantity</text>
+      <text x={iOx - 30} y={20} fontSize={9} fontWeight={600} fill="currentColor" fontFamily="serif">Price</text>
+      <text x={iOx + iMaxX * iSx - 10} y={iOy + 16} fontSize={9} fontWeight={600} fill="currentColor" fontFamily="serif">Quantity</text>
 
       {/* S (original supply, blue) */}
       <line
         x1={ipx(sX0)} y1={ipy(evalLin(S_IND.slope, S_IND.intercept, sX0))}
         x2={ipx(sX1)} y2={ipy(evalLin(S_IND.slope, S_IND.intercept, sX1))}
-        stroke="#1d4ed8" strokeWidth={2.2}
+        stroke="#3b82f6" strokeWidth={2.2}
       />
       <text
         x={ipx(sX1) + 4} y={ipy(evalLin(S_IND.slope, S_IND.intercept, sX1)) - 2}
-        fontSize={10} fontWeight={700} fill="#1d4ed8" fontFamily="serif">S</text>
+        fontSize={10} fontWeight={700} fill="#3b82f6" fontFamily="serif">S</text>
 
       {/* S₁ (shifted supply, blue) */}
       <line
         x1={ipx(sX0)} y1={ipy(evalLin(S1_IND.slope, S1_IND.intercept, sX0))}
         x2={ipx(sX1)} y2={ipy(evalLin(S1_IND.slope, S1_IND.intercept, sX1))}
-        stroke="#1d4ed8" strokeWidth={2.2}
+        stroke="#3b82f6" strokeWidth={2.2}
       />
       <text
         x={ipx(sX1) + 4} y={ipy(evalLin(S1_IND.slope, S1_IND.intercept, sX1)) - 2}
-        fontSize={10} fontWeight={700} fill="#1d4ed8" fontFamily="serif">S₁</text>
+        fontSize={10} fontWeight={700} fill="#3b82f6" fontFamily="serif">S₁</text>
 
       {/* Green rightward arrow between S and S₁ */}
       {(() => {
@@ -289,26 +289,26 @@ function LongRunPanel() {
       <line
         x1={ipx(dX0)} y1={ipy(evalLin(D_IND.slope, D_IND.intercept, dX0))}
         x2={ipx(dX1)} y2={ipy(evalLin(D_IND.slope, D_IND.intercept, dX1))}
-        stroke="#dc2626" strokeWidth={2.2}
+        stroke="#ef4444" strokeWidth={2.2}
       />
       <text
         x={ipx(dX1) + 4} y={ipy(evalLin(D_IND.slope, D_IND.intercept, dX1)) + 4}
-        fontSize={10} fontWeight={700} fill="#dc2626" fontFamily="serif">D</text>
+        fontSize={10} fontWeight={700} fill="#ef4444" fontFamily="serif">D</text>
 
       {/* Industry equilibria projections */}
       {/* E2 = D ∩ S1 (original high price) */}
-      <line x1={iOx} y1={ipy(E2.y)} x2={ipx(E2.x)} y2={ipy(E2.y)} stroke="black" strokeWidth={0.8} strokeDasharray="3,3" />
-      <line x1={ipx(E2.x)} y1={ipy(E2.y)} x2={ipx(E2.x)} y2={iOy} stroke="black" strokeWidth={0.8} strokeDasharray="3,3" />
-      <circle cx={ipx(E2.x)} cy={ipy(E2.y)} r={3} fill="black" />
+      <line x1={iOx} y1={ipy(E2.y)} x2={ipx(E2.x)} y2={ipy(E2.y)} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.5} />
+      <line x1={ipx(E2.x)} y1={ipy(E2.y)} x2={ipx(E2.x)} y2={iOy} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.5} />
+      <circle cx={ipx(E2.x)} cy={ipy(E2.y)} r={3} fill="currentColor" />
 
       {/* E1 = D ∩ S (new LR equilibrium at lower price) */}
-      <line x1={iOx} y1={ipy(E1.y)} x2={ipx(E1.x)} y2={ipy(E1.y)} stroke="black" strokeWidth={0.8} strokeDasharray="3,3" />
-      <line x1={ipx(E1.x)} y1={ipy(E1.y)} x2={ipx(E1.x)} y2={iOy} stroke="black" strokeWidth={0.8} strokeDasharray="3,3" />
-      <circle cx={ipx(E1.x)} cy={ipy(E1.y)} r={3} fill="black" />
+      <line x1={iOx} y1={ipy(E1.y)} x2={ipx(E1.x)} y2={ipy(E1.y)} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.5} />
+      <line x1={ipx(E1.x)} y1={ipy(E1.y)} x2={ipx(E1.x)} y2={iOy} stroke="currentColor" strokeWidth={0.8} strokeDasharray="3,3" opacity={0.5} />
+      <circle cx={ipx(E1.x)} cy={ipy(E1.y)} r={3} fill="currentColor" />
 
       {/* Industry axis labels */}
-      <text x={ipx(E2.x)} y={iOy + 14} fontSize={9} fontWeight={700} fill="black" textAnchor="middle" fontFamily="serif">q₂</text>
-      <text x={ipx(E1.x)} y={iOy + 14} fontSize={9} fontWeight={700} fill="black" textAnchor="middle" fontFamily="serif">q₃</text>
+      <text x={ipx(E2.x)} y={iOy + 14} fontSize={9} fontWeight={700} fill="currentColor" textAnchor="middle" fontFamily="serif">q₂</text>
+      <text x={ipx(E1.x)} y={iOy + 14} fontSize={9} fontWeight={700} fill="currentColor" textAnchor="middle" fontFamily="serif">q₃</text>
     </svg>
   );
 }
