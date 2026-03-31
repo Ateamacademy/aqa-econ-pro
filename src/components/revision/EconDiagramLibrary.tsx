@@ -15,7 +15,7 @@ import { WelfareRegion } from "@/components/diagrams/WelfareRegion";
 import EconomicsDiagram, { type EconomicsDiagramProps } from "@/components/diagrams/EconomicsDiagram";
 import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram";
 import MonopolisticCompetitionDiagram from "@/components/MonopolisticCompetitionDiagram";
-import LorenzCurveDiagram from "@/components/diagrams/LorenzCurveDiagram";
+import LorenzCurveDiagram from "@/components/LorenzCurveDiagram";
 
 export type DiagramType =
   | "supply_demand"
