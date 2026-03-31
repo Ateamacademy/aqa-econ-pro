@@ -279,12 +279,12 @@ function SRTheoryBox() {
 function LRTheoryBox() {
   return (
     <div className="border border-border p-4 text-sm leading-relaxed" style={{ fontFamily: "serif", maxWidth: 320 }}>
-      <p className="font-bold underline mb-2 text-foreground">Perfect competition – long run</p>
-      <p className="text-muted-foreground mb-1.5">There are no barriers to entry in perfect competition.</p>
-      <p className="text-muted-foreground mb-1.5">Suppose there are supernormal profits in the short run. Then firms enter the market, shifting supply right from S to S₁.</p>
-      <p className="text-muted-foreground mb-1.5">This lowers the industry equilibrium price from p to p₁.</p>
-      <p className="text-muted-foreground mb-1.5">The perfectly competitive firm now takes a lower price (p₁) as given. This shifts AR and MR down from AR to AR₁.</p>
-      <p className="text-muted-foreground">Entry continues until supernormal profit is eliminated. In long-run equilibrium, firms earn normal profit only, where price = minimum ATC.</p>
+      <p className="font-bold underline mb-2 text-foreground">Perfect competition – long run (normal profits)</p>
+      <p className="text-muted-foreground mb-1.5">In the long run, freedom of entry and exit eliminates supernormal profit.</p>
+      <p className="text-muted-foreground mb-1.5">New firms enter → market supply increases → equilibrium price falls to PE.</p>
+      <p className="text-muted-foreground mb-1.5">At PE, the firm produces where MC = AR = MR, and this exactly equals the minimum of AC.</p>
+      <p className="text-muted-foreground mb-1.5">The firm earns <strong>normal profit only</strong> (AR = AC). There is no supernormal profit rectangle.</p>
+      <p className="text-muted-foreground">The industry equilibrium (S ∩ D) sets the price PE that each price-taking firm accepts.</p>
     </div>
   );
 }
