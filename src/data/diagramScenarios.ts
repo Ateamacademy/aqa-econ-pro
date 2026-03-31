@@ -400,9 +400,9 @@ export const diagramScenarios: DiagramScenario[] = [
     topic: "Sugar Tax — Welfare Analysis",
     difficulty: "Advanced",
     scenario: "The UK sugar tax was imposed in 2018. Before the tax, the equilibrium price of a sugary drink was £1.90. After the tax, the consumer price rose to £2.50 and the producer price fell to £1.90, with total tax revenue collected by the government.",
-    question: "Draw a supply and demand diagram for sugary drinks showing the impact of the specific tax. Calculate and shade the areas representing: (A) consumer surplus after the tax, (B) producer surplus after the tax, (C) government revenue, and (D) deadweight welfare loss. [8 marks]",
+    question: "Draw a negative externality of production diagram showing the sugar tax as a Pigouvian tax. Show 'P' on the vertical axis and 'Q' on the horizontal axis. Include: (1) S = PMC (private marginal cost / supply), (2) SMC (social marginal cost — above PMC by the externality), (3) D = PMB = SMB (demand). Mark the free-market equilibrium at Q1, P1 and the socially optimal equilibrium at Q2, P2. Shade the deadweight welfare loss triangle between the two equilibria. [8 marks]",
     marks: 8,
-    expectedDiagramKeyword: "indirect_tax",
+    expectedDiagramKeyword: "negative_externality_production",
   },
   {
     id: "rw-4",
