@@ -344,7 +344,7 @@ export default function PerfectCompDiagram({ className }: { className?: string }
   return (
     <div className={`space-y-8 ${className ?? ""}`}>
       {/* ═══ Panel 1: Short Run ═══ */}
-      <div className="border border-black/70 bg-white rounded-sm p-4">
+      <div className="border border-border bg-card rounded-sm p-4">
         <div className="flex flex-col md:flex-row items-start gap-4">
           <div className="flex-1 min-w-0">
             <ShortRunPanel />
