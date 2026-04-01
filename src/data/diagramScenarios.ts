@@ -135,7 +135,7 @@ export const diagramScenarios: DiagramScenario[] = [
     scenario: "Due to the addictive nature of alcohol and the fact that health effects are experienced far in the future, consumers suffer from information failure. This means demand is higher than it would be with full information.",
     question: "Draw a diagram showing the information gap in the alcohol consumption market. Show the perceived demand curve and the true demand curve (with full information), and indicate the extent of over-consumption. [5 marks]",
     marks: 5,
-    expectedDiagramKeyword: "demerit_good",
+    expectedDiagramKeyword: "information_failure_demerit",
   },
 
   // ── Section 4: Government Intervention ──

@@ -18,6 +18,7 @@ import MonopolisticCompetitionDiagram from "@/components/MonopolisticCompetition
 import LorenzCurveDiagram from "@/components/LorenzCurveDiagram";
 import LRACDiagram from "@/components/diagrams/LRACDiagram";
 import SpecificAdValoremDiagram from "@/components/SpecificAdValoremDiagram";
+import InformationFailureDemeritGood from "@/components/InformationFailureDemeritGood";
 
 export type DiagramType =
   | "supply_demand"
@@ -72,7 +73,8 @@ export type DiagramType =
   | "comparative_advantage"
   | "business_objectives"
   | "price_discrimination"
-  | "specific_ad_valorem";
+  | "specific_ad_valorem"
+  | "information_failure_demerit";
 
 interface DiagramConfig {
   title: string;
@@ -2993,6 +2995,20 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     ],
     render: () => <SpecificAdValoremDiagram />,
   },
+
+  /* ── Information Failure — Demerit Good (locked component) ── */
+  information_failure_demerit: {
+    title: "Information Failure — Demerit Good",
+    xAxis: "Quantity", yAxis: "Costs & Benefits £s",
+    legend: [{ label: "S = MPC = MSC", color: COLORS.supply }, { label: "D = MPB (over-valuation)", color: COLORS.demand }, { label: "MSB (correct valuation)", color: "#16a34a" }],
+    examTips: [
+      "D = MPB represents consumers' perceived (over-valued) demand",
+      "MSB shows the true social benefit with full information",
+      "Welfare loss triangle forms between N, M, and I",
+      "Over-consumption = Qmkt − Qef due to information failure",
+    ],
+    render: () => <InformationFailureDemeritGood />,
+  },
 };
 
 // Canonical family-id aliases for structured "Diagram family: ..." values
@@ -3086,8 +3102,10 @@ const ALIASES: Record<string, string> = {
   "external_benefits": "positive_production_externality",
   "merit_good": "positive_externality",
   "merit_goods": "positive_externality",
-  "demerit_good": "negative_externality",
-  "demerit_goods": "negative_externality",
+  "demerit_good": "information_failure_demerit",
+  "demerit_goods": "information_failure_demerit",
+  "information_failure": "information_failure_demerit",
+  "information_failure_demerit_good": "information_failure_demerit",
   "overconsumption": "negative_externality",
   "underconsumption": "positive_externality",
   "overproduction": "negative_production_externality",
