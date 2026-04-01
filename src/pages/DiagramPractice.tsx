@@ -1020,6 +1020,7 @@ function DiagramFeedbackView({
           </button>
           {showExplain && (
             <CardContent className="pt-0 pb-5 px-5 border-t border-border/50">
+              {/* INSERT_LORENZ_CURVE_HERE */}
               {renderContent(explainFeedbackText)}
               {hasReferenceDiagram && (
                 <div className="mt-4 pt-4 border-t border-border/50">
