@@ -778,6 +778,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
         explanation={explanation}
         feedback={feedback}
         onReset={reset}
+        scenarioKeyword={selectedScenario?.expectedDiagramKeyword}
       />}
       <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="diagram practice sessions" />
     </div>
