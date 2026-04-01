@@ -895,6 +895,27 @@ function DiagramFeedbackView({
     return result.join("\n").replace(/\n{3,}/g, "\n\n").trim();
   };
 
+  const stripLorenzTaxArtifacts = (t: string) => {
+    if (!isLorenzTopic) return t;
+
+    const taxArtifactPattern = /(effect of an indirect tax|ad valorem|indirect tax|tax incidence|welfare loss|s(?:1|₁)\s*\+|(?:^|\W)d(?:1|₁)(?:\W|$)|(?:^|\W)s(?:1|₁)(?:\W|$)|(?:^|\W)e(?:1|₁|2|₂)(?:\W|$))/i;
+
+    const cleanedParagraphs = t
+      .split(/\n\s*\n/)
+      .filter((paragraph) => !taxArtifactPattern.test(paragraph.trim()));
+
+    return cleanedParagraphs
+      .join("\n\n")
+      .split("\n")
+      .filter((line) => !taxArtifactPattern.test(line.trim()))
+      .join("\n")
+      .replace(/\n{3,}/g, "\n\n")
+      .trim();
+  };
+
+  const smartFeedbackText = isLorenzTopic ? stripLorenzTaxArtifacts(sections.smartFeedback) : sections.smartFeedback;
+  const explainFeedbackText = isLorenzTopic ? stripLorenzTaxArtifacts(sections.explain) : sections.explain;
+
   const renderContent = (text: string) => {
     if (hasReferenceDiagram) {
       // For topics with dedicated reference diagrams, skip ALL diagram extraction
@@ -966,7 +987,7 @@ function DiagramFeedbackView({
           <CardTitle className="font-serif text-lg">Smart Mark feedback</CardTitle>
         </CardHeader>
         <CardContent>
-          {renderContent(sections.smartFeedback)}
+          {renderContent(smartFeedbackText)}
           {isLorenzTopic && (
             <div className="mt-4 pt-4 border-t border-border/50">
               <p className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wide">Reference Diagram</p>
@@ -997,7 +1018,7 @@ function DiagramFeedbackView({
           </button>
           {showExplain && (
             <CardContent className="pt-0 pb-5 px-5 border-t border-border/50">
-              {renderContent(sections.explain)}
+              {renderContent(explainFeedbackText)}
               {hasReferenceDiagram && (
                 <div className="mt-4 pt-4 border-t border-border/50">
                   <p className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wide">Reference Diagram</p>
