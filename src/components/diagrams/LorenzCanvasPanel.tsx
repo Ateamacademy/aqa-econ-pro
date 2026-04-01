@@ -5,16 +5,24 @@ import { cn } from "@/lib/utils";
 interface LorenzCanvasPanelProps {
   /** If true, regions always on, no toggles shown */
   locked?: boolean;
+  showRegionsToggle?: boolean;
+  showRefToggle?: boolean;
   height?: number;
   className?: string;
 }
 
-export default function LorenzCanvasPanel({ locked = false, height = 420, className }: LorenzCanvasPanelProps) {
+export default function LorenzCanvasPanel({
+  locked = false,
+  showRegionsToggle = true,
+  showRefToggle = true,
+  height = 420,
+  className,
+}: LorenzCanvasPanelProps) {
   const [showRegions, setShowRegions] = useState(true);
   const [showRef, setShowRef] = useState(false);
 
-  const effectiveRegions = locked ? true : showRegions;
-  const effectiveRef = locked ? false : showRef;
+  const effectiveRegions = locked || !showRegionsToggle ? true : showRegions;
+  const effectiveRef = locked || !showRefToggle ? false : showRef;
 
   const canvasRef = useLorenzCanvas({ showRegions: effectiveRegions, showRef: effectiveRef, height });
 
@@ -34,10 +42,14 @@ export default function LorenzCanvasPanel({ locked = false, height = 420, classN
       </div>
 
       {/* Toggles (hidden when locked) */}
-      {!locked && (
+      {!locked && (showRegionsToggle || showRefToggle) && (
         <div className="flex items-center gap-4 mb-2">
-          <Toggle label="Show Gini regions (A & B)" checked={showRegions} onChange={setShowRegions} />
-          <Toggle label="Show 20% reference lines" checked={showRef} onChange={setShowRef} />
+          {showRegionsToggle && (
+            <Toggle label="Show Gini regions (A & B)" checked={showRegions} onChange={setShowRegions} />
+          )}
+          {showRefToggle && (
+            <Toggle label="Show 20% reference lines" checked={showRef} onChange={setShowRef} />
+          )}
         </div>
       )}
 

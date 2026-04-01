@@ -14,7 +14,7 @@ import { DrawingCanvas } from "@/components/tools/DrawingCanvas";
 import { cn } from "@/lib/utils";
 import { extractDiagramBlocks, EconDiagramCanvas } from "@/components/predicted-papers/EconDiagramSVG";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
-import LorenzCanvasPanel from "@/components/diagrams/LorenzCanvasPanel";
+import LorenzCurveChart from "@/components/diagrams/LorenzCurveChart";
 import LRACDiagram from "@/components/diagrams/LRACDiagram";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
@@ -840,7 +840,7 @@ function DiagramFeedbackView({
   const isLRACTopic = /lrac|long.run average cost|economies.*scale|diseconomies|envelope/i.test(topic);
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
-    if (isLorenzTopic) return <LorenzCanvasPanel locked={locked} height={locked ? 390 : 420} className="mt-3" />;
+    if (isLorenzTopic) return <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
     if (isLRACTopic) return <LRACDiagram className="mt-3" />;
     return null;
   };
