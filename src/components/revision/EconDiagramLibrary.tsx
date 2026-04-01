@@ -72,7 +72,8 @@ export type DiagramType =
   | "comparative_advantage"
   | "business_objectives"
   | "price_discrimination"
-  | "specific_ad_valorem";
+  | "specific_ad_valorem"
+  | "information_failure_demerit";
 
 interface DiagramConfig {
   title: string;
