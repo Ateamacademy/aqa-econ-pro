@@ -188,7 +188,7 @@ export const diagramScenarios: DiagramScenario[] = [
     scenario: "The EU Emissions Trading Scheme (EU-ETS) operates as a 'cap-and-trade' system. Carbon-producing firms receive permits; the government reduces the total 'cap' over time. By 2030, carbon emissions will be 43% lower than in 2005.",
     question: "Draw a supply and demand diagram for the market for carbon permits. Show what happens when the government reduces the cap (supply of permits). Show the impact on the equilibrium price and quantity of permits, and explain how this reduces pollution. [6 marks]",
     marks: 6,
-    expectedDiagramKeyword: "supply_demand",
+    expectedDiagramKeyword: "tradable_pollution_permits",
   },
 
   // ── Section 5: Costs & Economies of Scale ──

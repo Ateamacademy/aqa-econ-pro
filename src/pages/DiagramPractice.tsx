@@ -18,6 +18,7 @@ import LorenzCurveChart from "@/components/diagrams/LorenzCurveChart";
 import LRACDiagram from "@/components/diagrams/LRACDiagram";
 import SpecificAdValoremDiagram from "@/components/SpecificAdValoremDiagram";
 import InformationFailureDemeritGood from "@/components/InformationFailureDemeritGood";
+import TradablePollutionPermits from "@/components/TradablePollutionPermits";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
@@ -845,15 +846,17 @@ function DiagramFeedbackView({
   const isLRACTopic = /lrac|long.run average cost|economies.*scale|diseconomies|envelope/i.test(topic);
   const isSpecificAdValoremTopic = expectedDiagramType === "specific_ad_valorem" || /ad\s*valorem\s*vs\s*specific|specific\s*tax\s*&\s*ad\s*valorem|specific.*ad\s*valorem/i.test(topic);
   const isInfoFailureDemeritTopic = expectedDiagramType === "information_failure_demerit" || /information\s*failure.*demerit|demerit\s*good|over.?consumption.*information/i.test(topic);
+  const isTradablePollutionTopic = expectedDiagramType === "tradable_pollution_permits" || /tradable\s*pollution\s*permits|cap.and.trade|emissions?\s*trading/i.test(topic);
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     if (isLorenzTopic) return <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
     if (isLRACTopic) return <LRACDiagram className="mt-3" />;
     if (isSpecificAdValoremTopic) return <div className="my-4"><SpecificAdValoremDiagram /></div>;
     if (isInfoFailureDemeritTopic) return <div className="my-4"><InformationFailureDemeritGood /></div>;
+    if (isTradablePollutionTopic) return <div className="my-4"><TradablePollutionPermits /></div>;
     return null;
   };
-  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic;
+  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic;
 
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {
