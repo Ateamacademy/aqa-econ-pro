@@ -14,7 +14,7 @@ import { DrawingCanvas } from "@/components/tools/DrawingCanvas";
 import { cn } from "@/lib/utils";
 import { extractDiagramBlocks, EconDiagramCanvas } from "@/components/predicted-papers/EconDiagramSVG";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
-import LorenzCurveDiagram from "@/components/LorenzCurveDiagram";
+import LorenzCanvasPanel from "@/components/diagrams/LorenzCanvasPanel";
 import LRACDiagram from "@/components/diagrams/LRACDiagram";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
