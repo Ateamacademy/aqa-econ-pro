@@ -18,6 +18,7 @@ import MonopolisticCompetitionDiagram from "@/components/MonopolisticCompetition
 import LorenzCurveDiagram from "@/components/LorenzCurveDiagram";
 import LRACDiagram from "@/components/diagrams/LRACDiagram";
 import SpecificAdValoremDiagram from "@/components/SpecificAdValoremDiagram";
+import InformationFailureDemeritGood from "@/components/InformationFailureDemeritGood";
 
 export type DiagramType =
   | "supply_demand"
