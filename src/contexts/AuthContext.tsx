@@ -84,9 +84,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setUser(session?.user ?? null);
       setLoading(false);
       if (session?.user) { refreshSubscription(); refreshProfile(); }
+    }).catch((err) => {
+      console.error("Auth session error:", err);
+      setLoading(false);
     });
 
-    return () => subscription.unsubscribe();
+    // Safety timeout: never stay loading forever
+    const safetyTimeout = setTimeout(() => {
+      setLoading((prev) => {
+        if (prev) console.warn("Auth loading timed out after 8s");
+        return false;
+      });
+    }, 8000);
+
+    return () => { subscription.unsubscribe(); clearTimeout(safetyTimeout); };
   }, []);
 
   // Auto-refresh subscription every 5 minutes (reduced to avoid Stripe rate limits)

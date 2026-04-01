@@ -64,7 +64,7 @@ const App = () => (
         <AuthProvider>
           <SubjectProvider>
           <Layout>
-            <Suspense fallback={<div className="flex items-center justify-center min-h-[60vh]"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" /></div>}>
+            <Suspense fallback={<div className="flex items-center justify-center min-h-[60vh]"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" /><p className="ml-3 text-sm text-muted-foreground">Loading…</p></div>}>
             <Routes>
               <Route path="/" element={<Index />} />
               {/* Past paper routes */}
