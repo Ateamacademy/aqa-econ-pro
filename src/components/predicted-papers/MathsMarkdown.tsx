@@ -417,12 +417,28 @@ const markdownComponents: Components = {
  * Renders a text segment: first extracts tables (rendered natively),
  * then passes remaining text through ReactMarkdown with diagram support.
  */
-function renderSegment(text: string, keyPrefix: string = "") {
+function renderSegment(text: string, keyPrefix: string = "", suppressDiagrams: boolean = false) {
   const tableSegments = extractTableBlocks(text);
   
   return tableSegments.map((seg, ti) => {
     if (seg.type === "table") {
       return <RenderedTable key={`${keyPrefix}t${ti}`} markdown={seg.content} />;
+    }
+
+    if (suppressDiagrams) {
+      const plainContent = extractDiagramBlocks(seg.content)
+        .filter((block) => block.type !== "diagram")
+        .map((block) => block.content)
+        .join("\n")
+        .trim();
+
+      if (!plainContent) return null;
+
+      return (
+        <ReactMarkdown key={`${keyPrefix}m${ti}`} remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
+          {plainContent}
+        </ReactMarkdown>
+      );
     }
     
     // For text segments, check for diagrams
@@ -502,12 +518,6 @@ export function MathsMarkdown({ children, className, suppressDiagrams = false }:
       })
     : figSegments;
 
-  const hasSpecialFigures = processedSegments.some(s => s.type === "figure" || s.type === "sd-diagram");
-
-  if (!hasSpecialFigures) {
-    return <div className={className}>{renderSegment(cleaned)}</div>;
-  }
-
   return (
     <div className={className}>
       {processedSegments.map((seg, i) =>
@@ -516,7 +526,7 @@ export function MathsMarkdown({ children, className, suppressDiagrams = false }:
         ) : seg.type === "sd-diagram" ? (
           <EconDiagramCanvas key={`sddiag${i}`} diagram={seg.diagram!} />
         ) : (
-          <div key={`txt${i}`}>{renderSegment(seg.content, `s${i}`)}</div>
+          <div key={`txt${i}`}>{renderSegment(seg.content, `s${i}`, suppressDiagrams)}</div>
         )
       )}
     </div>
