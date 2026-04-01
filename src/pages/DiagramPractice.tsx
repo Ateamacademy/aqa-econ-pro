@@ -844,14 +844,16 @@ function DiagramFeedbackView({
   const isLorenzTopic = /lorenz|gini|income\s*inequality|income\s*distribution/i.test(topic);
   const isLRACTopic = /lrac|long.run average cost|economies.*scale|diseconomies|envelope/i.test(topic);
   const isSpecificAdValoremTopic = expectedDiagramType === "specific_ad_valorem" || /ad\s*valorem\s*vs\s*specific|specific\s*tax\s*&\s*ad\s*valorem|specific.*ad\s*valorem/i.test(topic);
+  const isInfoFailureDemeritTopic = expectedDiagramType === "information_failure_demerit" || /information\s*failure.*demerit|demerit\s*good|over.?consumption.*information/i.test(topic);
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     if (isLorenzTopic) return <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
     if (isLRACTopic) return <LRACDiagram className="mt-3" />;
     if (isSpecificAdValoremTopic) return <div className="my-4"><SpecificAdValoremDiagram /></div>;
+    if (isInfoFailureDemeritTopic) return <div className="my-4"><InformationFailureDemeritGood /></div>;
     return null;
   };
-  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic;
+  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic;
 
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {
