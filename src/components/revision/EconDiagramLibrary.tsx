@@ -3491,6 +3491,11 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
     return <div className={cn("my-4", className)}><LorenzCurveDiagram /></div>;
   }
 
+  // ── LRAC: dedicated exam-accurate component ──
+  if (type === "lrac") {
+    return <div className={cn("my-4", className)}><LRACDiagram /></div>;
+  }
+
   // ── Declarative path: delegate to the new EconomicsDiagram component ──
   if (config.declarative) {
     return (
