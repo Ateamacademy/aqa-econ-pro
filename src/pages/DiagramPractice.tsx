@@ -19,6 +19,7 @@ import LRACDiagram from "@/components/diagrams/LRACDiagram";
 import SpecificAdValoremDiagram from "@/components/SpecificAdValoremDiagram";
 import InformationFailureDemeritGood from "@/components/InformationFailureDemeritGood";
 import TradablePollutionPermits from "@/components/TradablePollutionPermits";
+import ShutDownPriceShortRun from "@/components/ShutDownPriceShortRun";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
