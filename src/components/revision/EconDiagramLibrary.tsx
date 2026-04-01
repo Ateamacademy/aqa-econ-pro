@@ -71,7 +71,8 @@ export type DiagramType =
   | "subsidy_externality"
   | "comparative_advantage"
   | "business_objectives"
-  | "price_discrimination";
+  | "price_discrimination"
+  | "specific_ad_valorem";
 
 interface DiagramConfig {
   title: string;
