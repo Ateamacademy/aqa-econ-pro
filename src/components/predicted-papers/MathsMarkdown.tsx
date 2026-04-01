@@ -512,7 +512,8 @@ export function MathsMarkdown({ children, className, suppressDiagrams = false }:
           const isEconDiagram = /diagram\s+family:/i.test(seg.figDesc) ||
             (/(?:demand|supply|ad|as|sras|lras|mc|mr|ar|atc|mpb|mpc|msb|msc)/i.test(desc) &&
              /(?:curve|shift|equilibrium|intersection)/i.test(desc));
-          if (isEconDiagram) return false;
+          const isTaxDiagram = /ad\s*valorem|indirect\s*tax|tax\s*incidence|welfare\s*loss/i.test(desc);
+          if (isEconDiagram || isTaxDiagram) return false;
         }
         return true;
       })

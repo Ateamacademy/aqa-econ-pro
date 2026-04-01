@@ -915,6 +915,7 @@ function DiagramFeedbackView({
 
   const smartFeedbackText = isLorenzTopic ? stripLorenzTaxArtifacts(sections.smartFeedback) : sections.smartFeedback;
   const explainFeedbackText = isLorenzTopic ? stripLorenzTaxArtifacts(sections.explain) : sections.explain;
+  const improveFeedbackText = isLorenzTopic ? stripLorenzTaxArtifacts(sections.improve) : sections.improve;
 
   const renderContent = (text: string) => {
     if (hasReferenceDiagram) {
@@ -987,6 +988,7 @@ function DiagramFeedbackView({
           <CardTitle className="font-serif text-lg">Smart Mark feedback</CardTitle>
         </CardHeader>
         <CardContent>
+          {/* INSERT_LORENZ_CURVE_HERE */}
           {renderContent(smartFeedbackText)}
           {isLorenzTopic && (
             <div className="mt-4 pt-4 border-t border-border/50">
@@ -1018,6 +1020,7 @@ function DiagramFeedbackView({
           </button>
           {showExplain && (
             <CardContent className="pt-0 pb-5 px-5 border-t border-border/50">
+              {/* INSERT_LORENZ_CURVE_HERE */}
               {renderContent(explainFeedbackText)}
               {hasReferenceDiagram && (
                 <div className="mt-4 pt-4 border-t border-border/50">
@@ -1045,7 +1048,8 @@ function DiagramFeedbackView({
           </button>
           {showImprove && (
             <CardContent className="pt-0 pb-5 px-5 border-t border-border/50">
-              {renderContent(sections.improve)}
+              {/* INSERT_LORENZ_CURVE_HERE */}
+              {renderContent(improveFeedbackText)}
               {hasReferenceDiagram && (
                 <div className="mt-4 pt-4 border-t border-border/50">
                   <p className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wide">Reference Diagram</p>
