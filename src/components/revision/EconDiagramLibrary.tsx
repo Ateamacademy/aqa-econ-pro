@@ -16,6 +16,7 @@ import EconomicsDiagram, { type EconomicsDiagramProps } from "@/components/diagr
 import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram";
 import MonopolisticCompetitionDiagram from "@/components/MonopolisticCompetitionDiagram";
 import LorenzCurveDiagram from "@/components/LorenzCurveDiagram";
+import LRACDiagram from "@/components/diagrams/LRACDiagram";
 
 export type DiagramType =
   | "supply_demand"
@@ -3488,6 +3489,11 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
   // ── Lorenz Curve: dedicated exam-accurate component ──
   if (type === "lorenz_curve") {
     return <div className={cn("my-4", className)}><LorenzCurveDiagram /></div>;
+  }
+
+  // ── LRAC: dedicated exam-accurate component ──
+  if (type === "lrac") {
+    return <div className={cn("my-4", className)}><LRACDiagram /></div>;
   }
 
   // ── Declarative path: delegate to the new EconomicsDiagram component ──

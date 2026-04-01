@@ -14,6 +14,8 @@ import { DrawingCanvas } from "@/components/tools/DrawingCanvas";
 import { cn } from "@/lib/utils";
 import { extractDiagramBlocks, EconDiagramCanvas } from "@/components/predicted-papers/EconDiagramSVG";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
+import LorenzCurveDiagram from "@/components/LorenzCurveDiagram";
+import LRACDiagram from "@/components/diagrams/LRACDiagram";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
@@ -833,6 +835,17 @@ function DiagramFeedbackView({
   const sections = useMemo(() => parseFeedbackSections(feedback), [feedback]);
   const expectedDiagramType = inferDiagramType(topic, generatedQ, diagramDesc, explanation);
 
+  // Determine if we should show a dedicated reference diagram component
+  const isLorenzTopic = /lorenz|gini|income\s*inequality|income\s*distribution/i.test(topic);
+  const isLRACTopic = /lrac|long.run average cost|economies.*scale|diseconomies|envelope/i.test(topic);
+
+  const ReferenceDiagram = () => {
+    if (isLorenzTopic) return <LorenzCurveDiagram className="mt-3" />;
+    if (isLRACTopic) return <LRACDiagram className="mt-3" />;
+    return null;
+  };
+  const hasReferenceDiagram = isLorenzTopic || isLRACTopic;
+
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {
     const lines = t.split("\n");
@@ -939,6 +952,12 @@ function DiagramFeedbackView({
         </CardHeader>
         <CardContent>
           {renderContent(sections.smartFeedback)}
+          {hasReferenceDiagram && (
+            <div className="mt-4 pt-4 border-t border-border/50">
+              <p className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wide">Reference Diagram</p>
+              <ReferenceDiagram />
+            </div>
+          )}
         </CardContent>
       </Card>
 
@@ -958,6 +977,12 @@ function DiagramFeedbackView({
           {showExplain && (
             <CardContent className="pt-0 pb-5 px-5 border-t border-border/50">
               {renderContent(sections.explain)}
+              {hasReferenceDiagram && (
+                <div className="mt-4 pt-4 border-t border-border/50">
+                  <p className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wide">Reference Diagram</p>
+                  <ReferenceDiagram />
+                </div>
+              )}
             </CardContent>
           )}
         </Card>
@@ -979,6 +1004,12 @@ function DiagramFeedbackView({
           {showImprove && (
             <CardContent className="pt-0 pb-5 px-5 border-t border-border/50">
               {renderContent(sections.improve)}
+              {hasReferenceDiagram && (
+                <div className="mt-4 pt-4 border-t border-border/50">
+                  <p className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wide">Reference Diagram</p>
+                  <ReferenceDiagram />
+                </div>
+              )}
             </CardContent>
           )}
         </Card>
