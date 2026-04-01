@@ -822,6 +822,7 @@ function DiagramFeedbackView({
   explanation,
   feedback,
   onReset,
+  scenarioKeyword,
 }: {
   topic: string;
   generatedQ: string;
@@ -831,11 +832,12 @@ function DiagramFeedbackView({
   explanation: string;
   feedback: string;
   onReset: () => void;
+  scenarioKeyword?: string;
 }) {
   const [showExplain, setShowExplain] = useState(false);
   const [showImprove, setShowImprove] = useState(false);
   const sections = useMemo(() => parseFeedbackSections(feedback), [feedback]);
-  const expectedDiagramType = inferDiagramType(topic, generatedQ, diagramDesc, explanation);
+  const expectedDiagramType = scenarioKeyword ?? inferDiagramType(topic, generatedQ, diagramDesc, explanation);
 
   // Determine if we should show a dedicated reference diagram component
   const isLorenzTopic = /lorenz|gini|income\s*inequality|income\s*distribution/i.test(topic);
