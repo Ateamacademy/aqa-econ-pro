@@ -915,6 +915,7 @@ function DiagramFeedbackView({
 
   const smartFeedbackText = isLorenzTopic ? stripLorenzTaxArtifacts(sections.smartFeedback) : sections.smartFeedback;
   const explainFeedbackText = isLorenzTopic ? stripLorenzTaxArtifacts(sections.explain) : sections.explain;
+  const improveFeedbackText = isLorenzTopic ? stripLorenzTaxArtifacts(sections.improve) : sections.improve;
 
   const renderContent = (text: string) => {
     if (hasReferenceDiagram) {
