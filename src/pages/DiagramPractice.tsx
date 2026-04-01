@@ -848,6 +848,7 @@ function DiagramFeedbackView({
   const isSpecificAdValoremTopic = expectedDiagramType === "specific_ad_valorem" || /ad\s*valorem\s*vs\s*specific|specific\s*tax\s*&\s*ad\s*valorem|specific.*ad\s*valorem/i.test(topic);
   const isInfoFailureDemeritTopic = expectedDiagramType === "information_failure_demerit" || /information\s*failure.*demerit|demerit\s*good|over.?consumption.*information/i.test(topic);
   const isTradablePollutionTopic = expectedDiagramType === "tradable_pollution_permits" || /tradable\s*pollution\s*permits|cap.and.trade|emissions?\s*trading/i.test(topic);
+  const isShutdownTopic = expectedDiagramType === "shutdown_short_run" || /shut.?down\s*p(rice|oint)|short.run\s*shutdown/i.test(topic);
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     if (isLorenzTopic) return <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
@@ -855,9 +856,10 @@ function DiagramFeedbackView({
     if (isSpecificAdValoremTopic) return <div className="my-4"><SpecificAdValoremDiagram /></div>;
     if (isInfoFailureDemeritTopic) return <div className="my-4"><InformationFailureDemeritGood /></div>;
     if (isTradablePollutionTopic) return <div className="my-4"><TradablePollutionPermits /></div>;
+    if (isShutdownTopic) return <div className="my-4"><ShutDownPriceShortRun /></div>;
     return null;
   };
-  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic;
+  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic;
 
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {

@@ -220,7 +220,7 @@ export const diagramScenarios: DiagramScenario[] = [
     scenario: "A small bakery faces rising ingredient costs. It is currently making a loss but is deciding whether to continue operating in the short run or shut down.",
     question: "Draw a diagram showing the firm's cost and revenue curves. Identify the shutdown point where P = min AVC. Show the area of loss the firm makes when price is between AVC and ATC. Explain why the firm continues to operate in the short run. [6 marks]",
     marks: 6,
-    expectedDiagramKeyword: "perfect_competition",
+    expectedDiagramKeyword: "shutdown_short_run",
   },
 
   // ── Section 6: Revenue, Profits & Market Structures ──
