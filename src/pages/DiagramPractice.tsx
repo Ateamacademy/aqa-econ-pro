@@ -977,6 +977,12 @@ function DiagramFeedbackView({
           {showExplain && (
             <CardContent className="pt-0 pb-5 px-5 border-t border-border/50">
               {renderContent(sections.explain)}
+              {hasReferenceDiagram && (
+                <div className="mt-4 pt-4 border-t border-border/50">
+                  <p className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wide">Reference Diagram</p>
+                  <ReferenceDiagram />
+                </div>
+              )}
             </CardContent>
           )}
         </Card>
