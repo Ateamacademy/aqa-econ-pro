@@ -17,6 +17,7 @@ import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram";
 import MonopolisticCompetitionDiagram from "@/components/MonopolisticCompetitionDiagram";
 import LorenzCurveDiagram from "@/components/LorenzCurveDiagram";
 import LRACDiagram from "@/components/diagrams/LRACDiagram";
+import SpecificAdValoremDiagram from "@/components/SpecificAdValoremDiagram";
 
 export type DiagramType =
   | "supply_demand"
@@ -70,7 +71,8 @@ export type DiagramType =
   | "subsidy_externality"
   | "comparative_advantage"
   | "business_objectives"
-  | "price_discrimination";
+  | "price_discrimination"
+  | "specific_ad_valorem";
 
 interface DiagramConfig {
   title: string;
@@ -2976,6 +2978,20 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     legend: [{ label: "Elastic group", color: COLORS.demand }, { label: "Inelastic group", color: COLORS.supply }, { label: "MC=AC", color: COLORS.lras }],
     examTips: ["Lower price to elastic group", "Higher price to inelastic group", "Requires: market power, identifiable groups, no resale", "Total profit increases vs single price"],
     render: (p) => { const { mx, my, pw, ph } = p; const axBot = my + ph; const gap = 16; const hW = (pw - gap) / 2; const p1x = mx; const p2x = mx + hW + gap; const mcY = my + ph * 0.5; const p1Y = my + ph * 0.42; const p2Y = my + ph * 0.28; return (<><line x1={p1x} y1={my} x2={p1x} y2={axBot} stroke="currentColor" strokeWidth={1.5} opacity={0.6} /><line x1={p1x} y1={axBot} x2={p1x + hW} y2={axBot} stroke="currentColor" strokeWidth={1.5} opacity={0.6} /><line x1={p2x} y1={my} x2={p2x} y2={axBot} stroke="currentColor" strokeWidth={1.5} opacity={0.6} /><line x1={p2x} y1={axBot} x2={p2x + hW} y2={axBot} stroke="currentColor" strokeWidth={1.5} opacity={0.6} /><text x={p1x + hW / 2} y={my - 5} textAnchor="middle" fontSize={9} fontWeight={800} fill={COLORS.demand} opacity={0.8} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Elastic Group</text><text x={p2x + hW / 2} y={my - 5} textAnchor="middle" fontSize={9} fontWeight={800} fill={COLORS.supply} opacity={0.8} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Inelastic Group</text><GLine x1={p1x + 3} y1={mcY} x2={p1x + hW - 3} y2={mcY} color={COLORS.lras} width={1.5} /><GLine x1={p2x + 3} y1={mcY} x2={p2x + hW - 3} y2={mcY} color={COLORS.lras} width={1.5} /><text x={p1x + hW - 3} y={mcY - 4} textAnchor="end" fontSize={7} fontWeight={600} fill={COLORS.lras} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>MC=AC</text><text x={p2x + hW - 3} y={mcY - 4} textAnchor="end" fontSize={7} fontWeight={600} fill={COLORS.lras} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>MC=AC</text><GLine x1={p1x + 5} y1={my + 20} x2={p1x + hW - 5} y2={axBot - 20} color={COLORS.demand} width={2} /><Label x={p1x + hW - 3} y={axBot - 18} text="AR" color={COLORS.demand} size={8} /><GLine x1={p1x + 5} y1={my + 20} x2={p1x + hW * 0.55} y2={axBot - 20} color={COLORS.area} width={1.5} /><Label x={p1x + hW * 0.57} y={axBot - 18} text="MR" color={COLORS.area} size={8} /><GLine x1={p2x + hW * 0.15} y1={my + 10} x2={p2x + hW - 5} y2={axBot - 25} color={COLORS.supply} width={2} /><Label x={p2x + hW - 3} y={axBot - 23} text="AR" color={COLORS.supply} size={8} /><GLine x1={p2x + hW * 0.15} y1={my + 10} x2={p2x + hW * 0.55} y2={axBot - 25} color={COLORS.area} width={1.5} /><Label x={p2x + hW * 0.57} y={axBot - 23} text="MR" color={COLORS.area} size={8} /><line x1={p1x} y1={p1Y} x2={p1x + hW * 0.4} y2={p1Y} stroke={COLORS.demand} strokeWidth={0.8} strokeDasharray="2,2" opacity={0.5} /><text x={p1x - 3} y={p1Y + 3} textAnchor="end" fontSize={8} fontWeight={700} fill={COLORS.demand} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p₁</text><line x1={p2x} y1={p2Y} x2={p2x + hW * 0.35} y2={p2Y} stroke={COLORS.supply} strokeWidth={0.8} strokeDasharray="2,2" opacity={0.5} /><text x={p2x - 3} y={p2Y + 3} textAnchor="end" fontSize={8} fontWeight={700} fill={COLORS.supply} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p₂</text><text x={p1x + hW / 2} y={axBot + 14} textAnchor="middle" fontSize={7} fontWeight={600} fill={COLORS.demand} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Lower price</text><text x={p2x + hW / 2} y={axBot + 14} textAnchor="middle" fontSize={7} fontWeight={600} fill={COLORS.supply} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Higher price</text></>); },
+  },
+
+  /* ── Specific Tax & Ad Valorem Tax (locked component) ── */
+  specific_ad_valorem: {
+    title: "Specific Tax & Ad Valorem Tax",
+    xAxis: "Quantity", yAxis: "Price",
+    legend: [{ label: "Specific Tax", color: "#c8a800" }, { label: "Ad Valorem Tax", color: "#e14e4e" }],
+    examTips: [
+      "Specific tax = fixed amount per unit → parallel shift of supply",
+      "Ad valorem tax = percentage of price → supply pivots (diverges)",
+      "Both create welfare loss and raise price / reduce quantity",
+      "Label the tax wedge clearly between S and S+Tax",
+    ],
+    render: () => <SpecificAdValoremDiagram />,
   },
 };
 
