@@ -895,20 +895,28 @@ function DiagramFeedbackView({
     return result.join("\n").replace(/\n{3,}/g, "\n\n").trim();
   };
 
-  const renderContent = (text: string) => (
-    <div className="prose prose-sm max-w-none dark:prose-invert">
-      {extractDiagramBlocks(stripAnnotations(text), {
-        contextText: `${topic}\n${generatedQ}`,
-        fallbackType: expectedDiagramType,
-      }).map((seg, i) =>
-        seg.type === "diagram" ? (
-          <EconDiagramCanvas key={i} diagram={seg.diagram} />
-        ) : (
-          <MathsMarkdown key={i}>{seg.content}</MathsMarkdown>
-        )
-      )}
-    </div>
-  );
+  const renderContent = (text: string) => {
+    const segments = extractDiagramBlocks(stripAnnotations(text), {
+      contextText: `${topic}\n${generatedQ}`,
+      fallbackType: expectedDiagramType,
+    });
+
+    return (
+      <div className="prose prose-sm max-w-none dark:prose-invert">
+        {segments.map((seg, i) =>
+          seg.type === "diagram" ? (
+            // If this topic has a dedicated reference diagram, suppress AI-embedded diagrams
+            // to prevent cross-topic contamination (e.g. tax diagram in Lorenz feedback)
+            hasReferenceDiagram ? null : (
+              <EconDiagramCanvas key={i} diagram={seg.diagram} />
+            )
+          ) : (
+            <MathsMarkdown key={i}>{seg.content}</MathsMarkdown>
+          )
+        )}
+      </div>
+    );
+  };
 
   return (
     <div className="space-y-4">
