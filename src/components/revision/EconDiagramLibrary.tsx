@@ -16,6 +16,7 @@ import EconomicsDiagram, { type EconomicsDiagramProps } from "@/components/diagr
 import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram";
 import MonopolisticCompetitionDiagram from "@/components/MonopolisticCompetitionDiagram";
 import LorenzCurveDiagram from "@/components/LorenzCurveDiagram";
+import LRACDiagram from "@/components/diagrams/LRACDiagram";
 
 export type DiagramType =
   | "supply_demand"
