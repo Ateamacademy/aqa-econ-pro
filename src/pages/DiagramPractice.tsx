@@ -988,7 +988,7 @@ function DiagramFeedbackView({
           <CardTitle className="font-serif text-lg">Smart Mark feedback</CardTitle>
         </CardHeader>
         <CardContent>
-          {/* INSERT_LORENZ_CURVE_HERE */}
+          {isLorenzTopic && <LorenzCurveChart showRegionsToggle showRefToggle height={420} />}
           {renderContent(smartFeedbackText)}
           {isLorenzTopic && (
             <div className="mt-4 pt-4 border-t border-border/50">
