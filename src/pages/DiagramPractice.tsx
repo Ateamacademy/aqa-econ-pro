@@ -839,8 +839,8 @@ function DiagramFeedbackView({
   const isLorenzTopic = /lorenz|gini|income\s*inequality|income\s*distribution/i.test(topic);
   const isLRACTopic = /lrac|long.run average cost|economies.*scale|diseconomies|envelope/i.test(topic);
 
-  const ReferenceDiagram = () => {
-    if (isLorenzTopic) return <LorenzCurveDiagram className="mt-3" />;
+  const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
+    if (isLorenzTopic) return <LorenzCanvasPanel locked={locked} height={locked ? 390 : 420} className="mt-3" />;
     if (isLRACTopic) return <LRACDiagram className="mt-3" />;
     return null;
   };
