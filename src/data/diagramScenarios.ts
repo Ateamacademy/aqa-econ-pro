@@ -178,7 +178,7 @@ export const diagramScenarios: DiagramScenario[] = [
     scenario: "The government uses indirect taxes to correct market failure. VAT is an ad valorem tax (percentage of price), while the sugar tax is a specific tax (fixed amount per unit).",
     question: "Draw two separate diagrams: one showing the impact of an ad valorem tax and one showing a specific (unit) tax on a supply and demand diagram. Clearly show how the supply curve shifts differently in each case. [6 marks]",
     marks: 6,
-    expectedDiagramKeyword: "indirect_tax",
+    expectedDiagramKeyword: "specific_ad_valorem",
   },
   {
     id: "gov-5",

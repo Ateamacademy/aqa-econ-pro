@@ -16,6 +16,7 @@ import { extractDiagramBlocks, EconDiagramCanvas } from "@/components/predicted-
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import LorenzCurveChart from "@/components/diagrams/LorenzCurveChart";
 import LRACDiagram from "@/components/diagrams/LRACDiagram";
+import SpecificAdValoremDiagram from "@/components/SpecificAdValoremDiagram";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
@@ -777,6 +778,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
         explanation={explanation}
         feedback={feedback}
         onReset={reset}
+        scenarioKeyword={selectedScenario?.expectedDiagramKeyword}
       />}
       <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="diagram practice sessions" />
     </div>
@@ -820,6 +822,7 @@ function DiagramFeedbackView({
   explanation,
   feedback,
   onReset,
+  scenarioKeyword,
 }: {
   topic: string;
   generatedQ: string;
@@ -829,22 +832,25 @@ function DiagramFeedbackView({
   explanation: string;
   feedback: string;
   onReset: () => void;
+  scenarioKeyword?: string;
 }) {
   const [showExplain, setShowExplain] = useState(false);
   const [showImprove, setShowImprove] = useState(false);
   const sections = useMemo(() => parseFeedbackSections(feedback), [feedback]);
-  const expectedDiagramType = inferDiagramType(topic, generatedQ, diagramDesc, explanation);
+  const expectedDiagramType = scenarioKeyword ?? inferDiagramType(topic, generatedQ, diagramDesc, explanation);
 
   // Determine if we should show a dedicated reference diagram component
   const isLorenzTopic = /lorenz|gini|income\s*inequality|income\s*distribution/i.test(topic);
   const isLRACTopic = /lrac|long.run average cost|economies.*scale|diseconomies|envelope/i.test(topic);
+  const isSpecificAdValoremTopic = expectedDiagramType === "specific_ad_valorem" || /ad\s*valorem\s*vs\s*specific|specific\s*tax\s*&\s*ad\s*valorem|specific.*ad\s*valorem/i.test(topic);
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     if (isLorenzTopic) return <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
     if (isLRACTopic) return <LRACDiagram className="mt-3" />;
+    if (isSpecificAdValoremTopic) return <div className="my-4"><SpecificAdValoremDiagram /></div>;
     return null;
   };
-  const hasReferenceDiagram = isLorenzTopic || isLRACTopic;
+  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic;
 
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {
