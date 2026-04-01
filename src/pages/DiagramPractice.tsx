@@ -835,6 +835,17 @@ function DiagramFeedbackView({
   const sections = useMemo(() => parseFeedbackSections(feedback), [feedback]);
   const expectedDiagramType = inferDiagramType(topic, generatedQ, diagramDesc, explanation);
 
+  // Determine if we should show a dedicated reference diagram component
+  const isLorenzTopic = /lorenz|gini|income\s*inequality|income\s*distribution/i.test(topic);
+  const isLRACTopic = /lrac|long.run average cost|economies.*scale|diseconomies|envelope/i.test(topic);
+
+  const ReferenceDiagram = () => {
+    if (isLorenzTopic) return <LorenzCurveDiagram className="mt-3" />;
+    if (isLRACTopic) return <LRACDiagram className="mt-3" />;
+    return null;
+  };
+  const hasReferenceDiagram = isLorenzTopic || isLRACTopic;
+
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {
     const lines = t.split("\n");
