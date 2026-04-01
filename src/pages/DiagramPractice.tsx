@@ -896,6 +896,17 @@ function DiagramFeedbackView({
   };
 
   const renderContent = (text: string) => {
+    if (hasReferenceDiagram) {
+      // For topics with dedicated reference diagrams, skip ALL diagram extraction
+      // and render pure text only — this prevents cross-topic contamination
+      // (e.g. Ad Valorem tax diagram appearing in Lorenz Curve feedback)
+      return (
+        <div className="prose prose-sm max-w-none dark:prose-invert">
+          <MathsMarkdown suppressDiagrams>{stripAnnotations(text)}</MathsMarkdown>
+        </div>
+      );
+    }
+
     const segments = extractDiagramBlocks(stripAnnotations(text), {
       contextText: `${topic}\n${generatedQ}`,
       fallbackType: expectedDiagramType,
@@ -905,11 +916,7 @@ function DiagramFeedbackView({
       <div className="prose prose-sm max-w-none dark:prose-invert">
         {segments.map((seg, i) =>
           seg.type === "diagram" ? (
-            // If this topic has a dedicated reference diagram, suppress AI-embedded diagrams
-            // to prevent cross-topic contamination (e.g. tax diagram in Lorenz feedback)
-            hasReferenceDiagram ? null : (
-              <EconDiagramCanvas key={i} diagram={seg.diagram} />
-            )
+            <EconDiagramCanvas key={i} diagram={seg.diagram} />
           ) : (
             <MathsMarkdown key={i}>{seg.content}</MathsMarkdown>
           )
