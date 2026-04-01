@@ -2995,6 +2995,20 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     ],
     render: () => <SpecificAdValoremDiagram />,
   },
+
+  /* ── Information Failure — Demerit Good (locked component) ── */
+  information_failure_demerit: {
+    title: "Information Failure — Demerit Good",
+    xAxis: "Quantity", yAxis: "Costs & Benefits £s",
+    legend: [{ label: "S = MPC = MSC", color: COLORS.supply }, { label: "D = MPB (over-valuation)", color: COLORS.demand }, { label: "MSB (correct valuation)", color: "#16a34a" }],
+    examTips: [
+      "D = MPB represents consumers' perceived (over-valued) demand",
+      "MSB shows the true social benefit with full information",
+      "Welfare loss triangle forms between N, M, and I",
+      "Over-consumption = Qmkt − Qef due to information failure",
+    ],
+    render: () => <InformationFailureDemeritGood />,
+  },
 };
 
 // Canonical family-id aliases for structured "Diagram family: ..." values
