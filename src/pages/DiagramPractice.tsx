@@ -960,7 +960,13 @@ function DiagramFeedbackView({
         </CardHeader>
         <CardContent>
           {renderContent(sections.smartFeedback)}
-          {hasReferenceDiagram && (
+          {isLorenzTopic && (
+            <div className="mt-4 pt-4 border-t border-border/50">
+              <p className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wide">Reference Diagram</p>
+              <ReferenceDiagram />
+            </div>
+          )}
+          {isLRACTopic && (
             <div className="mt-4 pt-4 border-t border-border/50">
               <p className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wide">Reference Diagram</p>
               <ReferenceDiagram />
