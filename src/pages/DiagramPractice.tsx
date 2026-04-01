@@ -1048,7 +1048,7 @@ function DiagramFeedbackView({
           </button>
           {showImprove && (
             <CardContent className="pt-0 pb-5 px-5 border-t border-border/50">
-              {/* INSERT_LORENZ_CURVE_HERE */}
+              {isLorenzTopic && <LorenzCurveChart showRegionsToggle={false} showRefToggle={false} height={420} />}
               {renderContent(improveFeedbackText)}
               {hasReferenceDiagram && (
                 <div className="mt-4 pt-4 border-t border-border/50">
