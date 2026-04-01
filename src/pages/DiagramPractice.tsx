@@ -1021,7 +1021,19 @@ function DiagramFeedbackView({
               {hasReferenceDiagram && (
                 <div className="mt-4 pt-4 border-t border-border/50">
                   <p className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wide">Reference Diagram</p>
-                  <ReferenceDiagram />
+                  <ReferenceDiagram locked />
+                  {isLorenzTopic && (
+                    <div className="grid grid-cols-2 gap-3 mt-4">
+                      <div className="rounded-lg border border-border/50 p-3">
+                        <p className="text-sm font-semibold" style={{ color: "#4ade80" }}>Country A</p>
+                        <p className="text-xs text-muted-foreground mt-1">Gini ≈ 0.29 — curve stays close to the diagonal line of equality, indicating relatively low income inequality.</p>
+                      </div>
+                      <div className="rounded-lg border border-border/50 p-3">
+                        <p className="text-sm font-semibold" style={{ color: "#fb923c" }}>Country B</p>
+                        <p className="text-xs text-muted-foreground mt-1">Gini ≈ 0.56 — curve bows sharply toward the bottom-right, indicating significantly higher income inequality.</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
             </CardContent>
