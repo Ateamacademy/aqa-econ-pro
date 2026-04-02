@@ -24,6 +24,7 @@ import KinkedDemandCurve from "@/components/KinkedDemandCurve";
 import MonopsonyEmployerCurve from "@/components/MonopsonyEmployerCurve";
 import PhillipsCurveSRvsLR from "@/components/PhillipsCurveSRvsLR";
 import KeynesianASSpareCurve from "@/components/KeynesianASSpareCurve";
+import TariffDiagram from "@/components/TariffDiagram";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
@@ -899,6 +900,7 @@ function DiagramFeedbackView({
   const isMonopsonyTopic = expectedDiagramType === "monopsony" || /monopsony|monopsony\s*employer/i.test(topic);
   const isPhillipsCurveTopic = expectedDiagramType === "phillips_curve" || /phillips\s*curve/i.test(topic);
   const isKeynesianASTopic = expectedDiagramType === "keynesian_as" || /keynesian\s*a[sg]|spare\s*capacity.*as|as\s*spare\s*capacity/i.test(topic);
+  const isTariffTopic = expectedDiagramType === "tariff" || /\btariff\b|import\s*duty|trade\s*protection.*tariff/i.test(topic);
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     if (isLorenzTopic) return <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
@@ -911,9 +913,10 @@ function DiagramFeedbackView({
     if (isMonopsonyTopic) return <div className="my-4"><MonopsonyEmployerCurve /></div>;
     if (isPhillipsCurveTopic) return <div className="my-4"><PhillipsCurveSRvsLR /></div>;
     if (isKeynesianASTopic) return <div className="my-4"><KeynesianASSpareCurve /></div>;
+    if (isTariffTopic) return <div className="my-4"><TariffDiagram /></div>;
     return null;
   };
-  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic;
+  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic;
 
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {
