@@ -402,7 +402,7 @@ export const diagramScenarios: DiagramScenario[] = [
     scenario: "The UK sugar tax was imposed in 2018. Before the tax, the equilibrium price of a sugary drink was £1.90. After the tax, the consumer price rose to £2.50 and the producer price fell to £1.90, with total tax revenue collected by the government.",
     question: "Draw a negative externality of production diagram showing the sugar tax as a Pigouvian tax. Show 'P' on the vertical axis and 'Q' on the horizontal axis. Include: (1) S = PMC (private marginal cost / supply), (2) SMC (social marginal cost — above PMC by the externality), (3) D = PMB = SMB (demand). Mark the free-market equilibrium at Q1, P1 and the socially optimal equilibrium at Q2, P2. Shade the deadweight welfare loss triangle between the two equilibria. [8 marks]",
     marks: 8,
-    expectedDiagramKeyword: "negative_externality_production",
+    expectedDiagramKeyword: "sugar_tax",
   },
   {
     id: "rw-4",
