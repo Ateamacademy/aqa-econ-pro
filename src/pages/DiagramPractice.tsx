@@ -26,6 +26,7 @@ import PhillipsCurveSRvsLR from "@/components/PhillipsCurveSRvsLR";
 import KeynesianASSpareCurve from "@/components/KeynesianASSpareCurve";
 import TariffDiagram from "@/components/TariffDiagram";
 import NegativeExternalityDiagram from "@/components/NegativeExternalityDiagram";
+import NegativeExternalityPalmOil from "@/components/NegativeExternalityPalmOil";
 import SugarTaxWelfareAnalysis from "@/components/SugarTaxWelfareAnalysis";
 import CompetitionMonopolySurplusChart from "@/components/CompetitionMonopolySurplusChart";
 import { UpgradeModal } from "@/components/UpgradeModal";
