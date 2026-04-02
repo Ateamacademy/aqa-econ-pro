@@ -864,9 +864,10 @@ function DiagramFeedbackView({
     if (isShutdownTopic) return <div className="my-4"><ShutDownPriceShortRun /></div>;
     if (isKinkedDemandTopic) return <div className="my-4"><KinkedDemandCurve /></div>;
     if (isMonopsonyTopic) return <div className="my-4"><MonopsonyEmployerCurve /></div>;
+    if (isPhillipsCurveTopic) return <div className="my-4"><PhillipsCurveSRvsLR /></div>;
     return null;
   };
-  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic;
+  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic;
 
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {
