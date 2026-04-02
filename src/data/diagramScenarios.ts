@@ -392,7 +392,7 @@ export const diagramScenarios: DiagramScenario[] = [
     scenario: "In the market for fast food: (1) the price of meat rises (an essential ingredient), (2) a health-conscious movement reduces demand, (3) a 'fat tax' is imposed, and (4) a new cooking oil speeds up chip production.",
     question: "Draw a supply and demand diagram for the fast food market. Starting from initial equilibrium, show the combined impact of ALL four changes on the market. Identify which shifts are demand-side and which are supply-side, and determine the overall effect on price and quantity. [8 marks]",
     marks: 8,
-    expectedDiagramKeyword: "supply_demand",
+    expectedDiagramKeyword: "supply_demand_multiple_shifts",
   },
   {
     id: "rw-3",
