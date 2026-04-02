@@ -26,6 +26,7 @@ import PhillipsCurveSRvsLR from "@/components/PhillipsCurveSRvsLR";
 import KeynesianASSpareCurve from "@/components/KeynesianASSpareCurve";
 import TariffDiagram from "@/components/TariffDiagram";
 import NegativeExternalityDiagram from "@/components/NegativeExternalityDiagram";
+import NegativeExternalityPalmOil from "@/components/NegativeExternalityPalmOil";
 import SugarTaxWelfareAnalysis from "@/components/SugarTaxWelfareAnalysis";
 import CompetitionMonopolySurplusChart from "@/components/CompetitionMonopolySurplusChart";
 import { UpgradeModal } from "@/components/UpgradeModal";
@@ -919,7 +920,7 @@ function DiagramFeedbackView({
     if (isPhillipsCurveTopic) return <div className="my-4"><PhillipsCurveSRvsLR /></div>;
     if (isKeynesianASTopic) return <div className="my-4"><KeynesianASSpareCurve /></div>;
     if (isTariffTopic) return <div className="my-4"><TariffDiagram /></div>;
-    if (isNegativeExternalityTopic) return <div className="my-4"><NegativeExternalityDiagram /></div>;
+    if (isNegativeExternalityTopic) return <div className="my-4"><NegativeExternalityPalmOil /></div>;
     if (isSugarTaxTopic) return <div className="my-4"><SugarTaxWelfareAnalysis /></div>;
     if (isCompetitionCSTopic) return <div className="my-4"><CompetitionMonopolySurplusChart /></div>;
     return null;
