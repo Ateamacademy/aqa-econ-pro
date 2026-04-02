@@ -27,6 +27,7 @@ import KeynesianASSpareCurve from "@/components/KeynesianASSpareCurve";
 import TariffDiagram from "@/components/TariffDiagram";
 import NegativeExternalityDiagram from "@/components/NegativeExternalityDiagram";
 import SugarTaxWelfareAnalysis from "@/components/SugarTaxWelfareAnalysis";
+import CompetitionConsumerSurplus from "@/components/CompetitionConsumerSurplus";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
@@ -905,7 +906,7 @@ function DiagramFeedbackView({
   const isTariffTopic = expectedDiagramType === "tariff" || /\btariff\b|import\s*duty|trade\s*protection.*tariff/i.test(topic);
   const isNegativeExternalityTopic = expectedDiagramType === "negative_externality" || /negative\s*externality|palm\s*oil|msc.*mpc|overproduction.*externality/i.test(topic);
   const isSugarTaxTopic = expectedDiagramType === "sugar_tax" || /sugar\s*tax|pigouvian.*tax|welfare\s*analysis.*tax/i.test(topic);
-
+  const isCompetitionCSTopic = expectedDiagramType === "competition_consumer_surplus" || /competition.*consumer\s*surplus|consumer\s*surplus.*monopoly|economic\s*surplus.*competitive|competitive.*monopoly.*surplus/i.test(topic);
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     if (isLorenzTopic) return <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
     if (isLRACTopic) return <LRACDiagram className="mt-3" />;
@@ -920,9 +921,10 @@ function DiagramFeedbackView({
     if (isTariffTopic) return <div className="my-4"><TariffDiagram /></div>;
     if (isNegativeExternalityTopic) return <div className="my-4"><NegativeExternalityDiagram /></div>;
     if (isSugarTaxTopic) return <div className="my-4"><SugarTaxWelfareAnalysis /></div>;
+    if (isCompetitionCSTopic) return <div className="my-4"><CompetitionConsumerSurplus /></div>;
     return null;
   };
-  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isNegativeExternalityTopic || isSugarTaxTopic;
+  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic;
 
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {
