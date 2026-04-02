@@ -516,6 +516,23 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             session_type: "diagram",
             topic,
           });
+
+          // Fire structured marking in background
+          const studentAnswer = inputMode === "draw"
+            ? `[Drawn diagram submitted]\n\nWritten explanation: ${explanation}`
+            : `Diagram description: ${diagramDesc}\n\nWritten explanation: ${explanation}`;
+
+          markDiagramStructured({
+            question: generatedQ,
+            studentAnswer,
+            diagramType: expectedDiagramType,
+            difficulty,
+            totalMarks: selectedScenario?.marks || 4,
+            board: examBoard,
+            answerType: inputMode === "draw" ? "image" : "text",
+            scenarioId: selectedScenario?.id,
+            userId: user.id,
+          });
         }
         await consumeAttempt();
       },
@@ -531,6 +548,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
     setExplanation("");
     setFeedback("");
     setSelectedScenario(null);
+    resetStructured();
   };
 
   const hasSubmission = inputMode === "draw" ? !!diagramImage : !!diagramDesc.trim();
