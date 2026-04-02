@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, lazy, Suspense } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PenTool, Lock, Send, RotateCcw, Pencil, FileText, ChevronDown, ChevronUp, MessageSquare, Lightbulb, BookOpen, Sparkles, Shuffle, Crown } from "lucide-react";
+import { PenTool, Lock, Send, RotateCcw, Pencil, FileText, ChevronDown, ChevronUp, MessageSquare, Lightbulb, BookOpen, Sparkles, Shuffle, Crown, BarChart3 } from "lucide-react";
 import { toast } from "sonner";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import { DrawingCanvas } from "@/components/tools/DrawingCanvas";
@@ -27,6 +27,13 @@ import KeynesianASSpareCurve from "@/components/KeynesianASSpareCurve";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
+import { useDiagramMarking } from "@/hooks/useDiagramMarking";
+import { AIMarkingPanel } from "@/components/diagram-marking/AIMarkingPanel";
+import type { DiagramMarkingResult } from "@/components/diagram-marking/types";
+
+const DiagramAnalyticsDashboard = lazy(() =>
+  import("@/components/diagram-marking/DiagramAnalyticsDashboard").then(m => ({ default: m.DiagramAnalyticsDashboard }))
+);
 
 const DIAGRAM_TOPICS: Record<string, string[]> = {
   economics: [
@@ -162,8 +169,10 @@ export default function DiagramPractice() {
   const [feedback, setFeedback] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [isMarking, setIsMarking] = useState(false);
-  const [step, setStep] = useState<"generate" | "answer" | "feedback">("generate");
+  const [step, setStep] = useState<"generate" | "answer" | "feedback" | "analytics">("generate");
   const [showUpgrade, setShowUpgrade] = useState(false);
+  const [markingTab, setMarkingTab] = useState<"enhanced" | "streaming">("enhanced");
+  const { markDiagram: markDiagramStructured, isMarking: isStructuredMarking, result: structuredResult, reset: resetStructured } = useDiagramMarking();
 
   const {
     isLoading: isAccessLoading,
@@ -507,6 +516,23 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             session_type: "diagram",
             topic,
           });
+
+          // Fire structured marking in background
+          const studentAnswer = inputMode === "draw"
+            ? `[Drawn diagram submitted]\n\nWritten explanation: ${explanation}`
+            : `Diagram description: ${diagramDesc}\n\nWritten explanation: ${explanation}`;
+
+          markDiagramStructured({
+            question: generatedQ,
+            studentAnswer,
+            diagramType: expectedDiagramType,
+            difficulty,
+            totalMarks: selectedScenario?.marks || 4,
+            board: examBoard,
+            answerType: inputMode === "draw" ? "image" : "text",
+            scenarioId: selectedScenario?.id,
+            userId: user.id,
+          });
         }
         await consumeAttempt();
       },
@@ -522,6 +548,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
     setExplanation("");
     setFeedback("");
     setSelectedScenario(null);
+    resetStructured();
   };
 
   const hasSubmission = inputMode === "draw" ? !!diagramImage : !!diagramDesc.trim();
@@ -533,13 +560,28 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
   };
 
   return (
-    <div className="container py-10 max-w-3xl">
-      <div className="mb-6">
-        <h1 className="text-3xl font-serif mb-1">Diagram Practice</h1>
-        <p className="text-sm text-muted-foreground">
-          {examBoard} {level} {subjectLabel} · {accessMessage}
-        </p>
+    <div className="container py-10 max-w-4xl">
+      <div className="mb-6 flex items-center justify-between">
+        <div>
+          <h1 className="text-3xl font-serif mb-1">Diagram Practice</h1>
+          <p className="text-sm text-muted-foreground">
+            {examBoard} {level} {subjectLabel} · {accessMessage}
+          </p>
+        </div>
+        {step !== "analytics" ? (
+          <Button variant="outline" size="sm" className="gap-1.5" onClick={() => setStep("analytics")}>
+            <BarChart3 className="h-3.5 w-3.5" /> My Analytics
+          </Button>
+        ) : (
+          <Button variant="outline" size="sm" onClick={() => setStep("generate")}>← Back</Button>
+        )}
       </div>
+
+      {step === "analytics" && (
+        <Suspense fallback={<p className="text-sm text-muted-foreground animate-pulse">Loading analytics...</p>}>
+          <DiagramAnalyticsDashboard />
+        </Suspense>
+      )}
 
       {step === "generate" && (
         <div className="space-y-4">

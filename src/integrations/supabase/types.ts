@@ -14,6 +14,168 @@ export type Database = {
   }
   public: {
     Tables: {
+      diagram_exemplars: {
+        Row: {
+          board: string | null
+          created_at: string
+          diagram_type: string
+          exemplar_image_url: string | null
+          exemplar_text: string
+          id: string
+          mark_level: string
+          tags: string[]
+        }
+        Insert: {
+          board?: string | null
+          created_at?: string
+          diagram_type: string
+          exemplar_image_url?: string | null
+          exemplar_text: string
+          id?: string
+          mark_level?: string
+          tags?: string[]
+        }
+        Update: {
+          board?: string | null
+          created_at?: string
+          diagram_type?: string
+          exemplar_image_url?: string | null
+          exemplar_text?: string
+          id?: string
+          mark_level?: string
+          tags?: string[]
+        }
+        Relationships: []
+      }
+      diagram_mark_schemes: {
+        Row: {
+          accepted_labels: string[]
+          board: string | null
+          component_name: string
+          created_at: string
+          diagram_type: string
+          id: string
+          mark_value: number
+          notes: string | null
+          positional_required: boolean
+          strict_mode: boolean
+          updated_at: string
+        }
+        Insert: {
+          accepted_labels?: string[]
+          board?: string | null
+          component_name: string
+          created_at?: string
+          diagram_type: string
+          id?: string
+          mark_value?: number
+          notes?: string | null
+          positional_required?: boolean
+          strict_mode?: boolean
+          updated_at?: string
+        }
+        Update: {
+          accepted_labels?: string[]
+          board?: string | null
+          component_name?: string
+          created_at?: string
+          diagram_type?: string
+          id?: string
+          mark_value?: number
+          notes?: string | null
+          positional_required?: boolean
+          strict_mode?: boolean
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      diagram_marking_results: {
+        Row: {
+          answer_type: string
+          component_results: Json
+          created_at: string
+          diagram_type: string
+          difficulty: string
+          examiner_report: Json | null
+          feedback_text: string | null
+          id: string
+          marks_awarded: number
+          question_text: string | null
+          retry_of: string | null
+          scenario_id: string | null
+          student_answer: string | null
+          topic: string
+          total_marks: number
+          user_id: string
+        }
+        Insert: {
+          answer_type?: string
+          component_results?: Json
+          created_at?: string
+          diagram_type: string
+          difficulty?: string
+          examiner_report?: Json | null
+          feedback_text?: string | null
+          id?: string
+          marks_awarded?: number
+          question_text?: string | null
+          retry_of?: string | null
+          scenario_id?: string | null
+          student_answer?: string | null
+          topic: string
+          total_marks: number
+          user_id: string
+        }
+        Update: {
+          answer_type?: string
+          component_results?: Json
+          created_at?: string
+          diagram_type?: string
+          difficulty?: string
+          examiner_report?: Json | null
+          feedback_text?: string | null
+          id?: string
+          marks_awarded?: number
+          question_text?: string | null
+          retry_of?: string | null
+          scenario_id?: string | null
+          student_answer?: string | null
+          topic?: string
+          total_marks?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      diagram_misconceptions: {
+        Row: {
+          correct_explanation: string | null
+          created_at: string
+          diagram_type: string
+          frequency_count: number
+          id: string
+          misconception_text: string
+          severity: string
+        }
+        Insert: {
+          correct_explanation?: string | null
+          created_at?: string
+          diagram_type: string
+          frequency_count?: number
+          id?: string
+          misconception_text: string
+          severity?: string
+        }
+        Update: {
+          correct_explanation?: string | null
+          created_at?: string
+          diagram_type?: string
+          frequency_count?: number
+          id?: string
+          misconception_text?: string
+          severity?: string
+        }
+        Relationships: []
+      }
       econ_knowledge_nodes: {
         Row: {
           bloom_level: string
