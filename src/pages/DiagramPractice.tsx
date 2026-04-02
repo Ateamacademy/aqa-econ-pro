@@ -856,6 +856,7 @@ function DiagramFeedbackView({
   const isKinkedDemandTopic = expectedDiagramType === "kinked_demand" || /kinked\s*demand|oligopoly.*kinked|price\s*rigidity.*oligop/i.test(topic);
   const isMonopsonyTopic = expectedDiagramType === "monopsony" || /monopsony|monopsony\s*employer/i.test(topic);
   const isPhillipsCurveTopic = expectedDiagramType === "phillips_curve" || /phillips\s*curve/i.test(topic);
+  const isKeynesianASTopic = expectedDiagramType === "keynesian_as" || /keynesian\s*a[sg]|spare\s*capacity.*as|as\s*spare\s*capacity/i.test(topic);
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     if (isLorenzTopic) return <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
