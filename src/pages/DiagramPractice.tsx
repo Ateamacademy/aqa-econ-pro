@@ -23,6 +23,7 @@ import ShutDownPriceShortRun from "@/components/ShutDownPriceShortRun";
 import KinkedDemandCurve from "@/components/KinkedDemandCurve";
 import MonopsonyEmployerCurve from "@/components/MonopsonyEmployerCurve";
 import PhillipsCurveSRvsLR from "@/components/PhillipsCurveSRvsLR";
+import KeynesianASSpareCurve from "@/components/KeynesianASSpareCurve";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
@@ -855,6 +856,7 @@ function DiagramFeedbackView({
   const isKinkedDemandTopic = expectedDiagramType === "kinked_demand" || /kinked\s*demand|oligopoly.*kinked|price\s*rigidity.*oligop/i.test(topic);
   const isMonopsonyTopic = expectedDiagramType === "monopsony" || /monopsony|monopsony\s*employer/i.test(topic);
   const isPhillipsCurveTopic = expectedDiagramType === "phillips_curve" || /phillips\s*curve/i.test(topic);
+  const isKeynesianASTopic = expectedDiagramType === "keynesian_as" || /keynesian\s*a[sg]|spare\s*capacity.*as|as\s*spare\s*capacity/i.test(topic);
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     if (isLorenzTopic) return <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
@@ -866,9 +868,10 @@ function DiagramFeedbackView({
     if (isKinkedDemandTopic) return <div className="my-4"><KinkedDemandCurve /></div>;
     if (isMonopsonyTopic) return <div className="my-4"><MonopsonyEmployerCurve /></div>;
     if (isPhillipsCurveTopic) return <div className="my-4"><PhillipsCurveSRvsLR /></div>;
+    if (isKeynesianASTopic) return <div className="my-4"><KeynesianASSpareCurve /></div>;
     return null;
   };
-  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic;
+  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic;
 
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {
