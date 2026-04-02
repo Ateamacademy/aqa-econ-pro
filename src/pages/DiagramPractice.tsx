@@ -23,6 +23,7 @@ import ShutDownPriceShortRun from "@/components/ShutDownPriceShortRun";
 import KinkedDemandCurve from "@/components/KinkedDemandCurve";
 import MonopsonyEmployerCurve from "@/components/MonopsonyEmployerCurve";
 import PhillipsCurveSRvsLR from "@/components/PhillipsCurveSRvsLR";
+import KeynesianASSpareCurve from "@/components/KeynesianASSpareCurve";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
