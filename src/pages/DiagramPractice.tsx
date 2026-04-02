@@ -26,6 +26,7 @@ import PhillipsCurveSRvsLR from "@/components/PhillipsCurveSRvsLR";
 import KeynesianASSpareCurve from "@/components/KeynesianASSpareCurve";
 import TariffDiagram from "@/components/TariffDiagram";
 import NegativeExternalityDiagram from "@/components/NegativeExternalityDiagram";
+import SugarTaxWelfareAnalysis from "@/components/SugarTaxWelfareAnalysis";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
