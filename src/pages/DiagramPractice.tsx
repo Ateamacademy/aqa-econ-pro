@@ -868,6 +868,7 @@ function DiagramFeedbackView({
     if (isKinkedDemandTopic) return <div className="my-4"><KinkedDemandCurve /></div>;
     if (isMonopsonyTopic) return <div className="my-4"><MonopsonyEmployerCurve /></div>;
     if (isPhillipsCurveTopic) return <div className="my-4"><PhillipsCurveSRvsLR /></div>;
+    if (isKeynesianASTopic) return <div className="my-4"><KeynesianASSpareCurve /></div>;
     return null;
   };
   const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic;
