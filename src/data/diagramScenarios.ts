@@ -412,7 +412,7 @@ export const diagramScenarios: DiagramScenario[] = [
     scenario: "The proposed merger between Sainsbury's and Asda would create 463 areas where there is a 'realistic prospect of a substantial lessening of competition' according to the CMA. This could lead to higher prices or worse service for shoppers.",
     question: "Draw a supply and demand diagram for the food retailing market showing the potential market failure from reduced competition after the merger. Show the loss of consumer surplus by shading the relevant area on your diagram. [6 marks]",
     marks: 6,
-    expectedDiagramKeyword: "supply_demand",
+    expectedDiagramKeyword: "competition_consumer_surplus",
   },
 ];
 
