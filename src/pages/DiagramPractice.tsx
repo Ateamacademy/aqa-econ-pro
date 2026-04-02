@@ -169,8 +169,10 @@ export default function DiagramPractice() {
   const [feedback, setFeedback] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [isMarking, setIsMarking] = useState(false);
-  const [step, setStep] = useState<"generate" | "answer" | "feedback">("generate");
+  const [step, setStep] = useState<"generate" | "answer" | "feedback" | "analytics">("generate");
   const [showUpgrade, setShowUpgrade] = useState(false);
+  const [markingTab, setMarkingTab] = useState<"enhanced" | "streaming">("enhanced");
+  const { markDiagram: markDiagramStructured, isMarking: isStructuredMarking, result: structuredResult, reset: resetStructured } = useDiagramMarking();
 
   const {
     isLoading: isAccessLoading,
