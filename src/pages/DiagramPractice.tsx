@@ -921,7 +921,7 @@ function DiagramFeedbackView({
     if (isTariffTopic) return <div className="my-4"><TariffDiagram /></div>;
     if (isNegativeExternalityTopic) return <div className="my-4"><NegativeExternalityDiagram /></div>;
     if (isSugarTaxTopic) return <div className="my-4"><SugarTaxWelfareAnalysis /></div>;
-    if (isCompetitionCSTopic) return <div className="my-4"><CompetitionConsumerSurplus /></div>;
+    if (isCompetitionCSTopic) return <div className="my-4"><CompetitionMonopolySurplusChart /></div>;
     return null;
   };
   const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic;
