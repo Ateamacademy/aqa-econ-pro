@@ -560,13 +560,28 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
   };
 
   return (
-    <div className="container py-10 max-w-3xl">
-      <div className="mb-6">
-        <h1 className="text-3xl font-serif mb-1">Diagram Practice</h1>
-        <p className="text-sm text-muted-foreground">
-          {examBoard} {level} {subjectLabel} · {accessMessage}
-        </p>
+    <div className="container py-10 max-w-4xl">
+      <div className="mb-6 flex items-center justify-between">
+        <div>
+          <h1 className="text-3xl font-serif mb-1">Diagram Practice</h1>
+          <p className="text-sm text-muted-foreground">
+            {examBoard} {level} {subjectLabel} · {accessMessage}
+          </p>
+        </div>
+        {step !== "analytics" ? (
+          <Button variant="outline" size="sm" className="gap-1.5" onClick={() => setStep("analytics")}>
+            <BarChart3 className="h-3.5 w-3.5" /> My Analytics
+          </Button>
+        ) : (
+          <Button variant="outline" size="sm" onClick={() => setStep("generate")}>← Back</Button>
+        )}
       </div>
+
+      {step === "analytics" && (
+        <Suspense fallback={<p className="text-sm text-muted-foreground animate-pulse">Loading analytics...</p>}>
+          <DiagramAnalyticsDashboard />
+        </Suspense>
+      )}
 
       {step === "generate" && (
         <div className="space-y-4">
