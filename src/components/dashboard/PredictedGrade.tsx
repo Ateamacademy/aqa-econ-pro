@@ -82,8 +82,9 @@ export default function PredictedGrade({ score }: Props) {
         const activeEl = gradeRefs.current[targetIdx];
         if (activeEl) {
           const primaryHsl = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
+          const [h, s, l] = primaryHsl.split(/\s+/);
           gsap.to(activeEl, {
-            boxShadow: `0 0 24px hsla(${primaryHsl}, 0.6)`,
+            boxShadow: `0 0 24px rgba(79, 86, 255, 0.6)`,
             duration: 0.6,
             ease: "power2.out",
             yoyo: true,
