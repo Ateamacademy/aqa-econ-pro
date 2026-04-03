@@ -30,6 +30,7 @@ import NegativeExternalityPalmOil from "@/components/NegativeExternalityPalmOil"
 import SugarTaxWelfareAnalysis from "@/components/SugarTaxWelfareAnalysis";
 import CompetitionMonopolySurplusChart from "@/components/CompetitionMonopolySurplusChart";
 import SupplyDemandMultipleShifts from "@/components/SupplyDemandMultipleShifts";
+import PPFBalancedGrowth from "@/components/PPFBalancedGrowth";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
