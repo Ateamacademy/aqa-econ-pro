@@ -81,8 +81,9 @@ export default function PredictedGrade({ score }: Props) {
         // Final glow pulse on active grade
         const activeEl = gradeRefs.current[targetIdx];
         if (activeEl) {
+          const primaryHsl = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
           gsap.to(activeEl, {
-            boxShadow: "0 0 24px hsl(var(--primary) / 0.6)",
+            boxShadow: `0 0 24px hsla(${primaryHsl}, 0.6)`,
             duration: 0.6,
             ease: "power2.out",
             yoyo: true,
