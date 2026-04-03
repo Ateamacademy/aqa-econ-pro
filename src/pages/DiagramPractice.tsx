@@ -931,6 +931,7 @@ function DiagramFeedbackView({
     if (isCompetitionCSTopic) return <div className="my-4"><CompetitionMonopolySurplusChart /></div>;
     if (isSupplyDemandMultipleShiftsTopic) return <div className="my-4"><SupplyDemandMultipleShifts /></div>;
     if (isPPFTopic) return <div className="my-4"><PPFBalancedGrowth /></div>;
+    if (isPPFNaturalDisasterTopic) return <div className="my-4"><PPFNaturalDisaster /></div>;
     return null;
   };
   const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic;
