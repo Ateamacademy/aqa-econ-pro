@@ -66,7 +66,7 @@ export const diagramScenarios: DiagramScenario[] = [
     scenario: "A devastating earthquake destroys a proportion of all factors of production in a small island economy.",
     question: "Draw a PPF diagram showing the impact of this natural disaster on the economy's productive capacity. Label all axes and show both the original and new PPF positions.",
     marks: 4,
-    expectedDiagramKeyword: "ppf",
+    expectedDiagramKeyword: "ppf_natural_disaster",
   },
 
   // ── Section 2: Elasticity & Revenue ──
