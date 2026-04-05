@@ -7,7 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PenTool, Lock, Send, RotateCcw, Pencil, FileText, ChevronDown, ChevronUp, MessageSquare, Lightbulb, BookOpen, Sparkles, Shuffle, Crown, BarChart3 } from "lucide-react";
+import { PenTool, Lock, Send, RotateCcw, Pencil, FileText, ChevronDown, ChevronUp, MessageSquare, Lightbulb, BookOpen, Sparkles, Shuffle, Crown, BarChart3, Eye } from "lucide-react";
 import { toast } from "sonner";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import { DrawingCanvas } from "@/components/tools/DrawingCanvas";
@@ -753,6 +753,36 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
               )}
             </CardContent>
           </Card>
+
+          {/* Reference diagram — shown before submission as a collapsible guide */}
+          {selectedScenario?.expectedDiagramKeyword && (() => {
+            const kw = selectedScenario.expectedDiagramKeyword;
+            const Comp = (() => {
+              if (kw === "ped_revenue_impact") return PEDRevenueImpact;
+              if (kw === "ppf_natural_disaster") return PPFNaturalDisaster;
+              if (kw === "ppf") return PPFBalancedGrowth;
+              if (kw === "supply_demand_multiple_shifts") return SupplyDemandMultipleShifts;
+              if (kw === "competition_consumer_surplus") return CompetitionMonopolySurplusChart;
+              if (kw === "sugar_tax") return SugarTaxWelfareAnalysis;
+              if (kw === "negative_externality" || kw === "negative_externality_production") return NegativeExternalityPalmOil;
+              return null;
+            })();
+            if (!Comp) return null;
+            return (
+              <Card>
+                <CardContent className="p-4">
+                  <details className="group">
+                    <summary className="text-xs font-semibold text-primary cursor-pointer hover:text-primary/80 transition-colors flex items-center gap-1.5">
+                      <Eye className="h-3.5 w-3.5" /> Show reference diagram
+                    </summary>
+                    <div className="mt-3">
+                      <Comp />
+                    </div>
+                  </details>
+                </CardContent>
+              </Card>
+            );
+          })()}
 
           <Card>
             <CardContent className="p-6 space-y-4">

@@ -13,6 +13,7 @@ import {
   DiagramBox,
 } from "@/components/revision/RevisionCard";
 import { EconDiagramTemplate, type DiagramType } from "@/components/revision/EconDiagramLibrary";
+import { getCustomDiagramComponent } from "@/components/CustomDiagramResolver";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import type { Topic, Subtopic } from "@/data/studyNotes/edexcelANotes";
 import { motion, AnimatePresence, useInView } from "framer-motion";
@@ -292,7 +293,11 @@ export default function StudyNotes() {
                     Show model diagram
                   </summary>
                   <div className="mt-2">
-                    <EconDiagramTemplate type={sub.diagram} />
+                    {(() => {
+                      const CustomComp = getCustomDiagramComponent(sub.diagram!);
+                      if (CustomComp) return <CustomComp />;
+                      return <EconDiagramTemplate type={sub.diagram} />;
+                    })()}
                   </div>
                 </details>
               </div>
