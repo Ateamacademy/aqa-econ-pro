@@ -2,6 +2,7 @@
  * CustomDiagramResolver — Maps diagram keywords to custom SVG diagram components.
  * Used in both DiagramPractice (reference diagrams) and StudyNotes (model diagrams).
  */
+import type { ComponentType } from "react";
 import NegativeExternalityPalmOil from "@/components/NegativeExternalityPalmOil";
 import SugarTaxWelfareAnalysis from "@/components/SugarTaxWelfareAnalysis";
 import CompetitionMonopolySurplusChart from "@/components/CompetitionMonopolySurplusChart";
@@ -11,10 +12,11 @@ import PPFNaturalDisaster from "@/components/PPFNaturalDisaster";
 import PEDRevenueImpact from "@/components/PEDRevenueImpact";
 
 /** Maps a diagram keyword to a custom SVG component, or returns null if none exists */
-export function getCustomDiagramComponent(keyword: string): React.ComponentType | null {
+export function getCustomDiagramComponent(keyword: string): ComponentType | null {
   switch (keyword) {
     case "negative_externality":
     case "negative_externality_production":
+    case "negative_production_externality":
       return NegativeExternalityPalmOil;
     case "sugar_tax":
       return SugarTaxWelfareAnalysis;
@@ -23,11 +25,13 @@ export function getCustomDiagramComponent(keyword: string): React.ComponentType 
     case "supply_demand_multiple_shifts":
       return SupplyDemandMultipleShifts;
     case "ppf":
+    case "ppf_growth":
       return PPFBalancedGrowth;
     case "ppf_natural_disaster":
       return PPFNaturalDisaster;
     case "ped_revenue_impact":
     case "ped_elastic":
+    case "ped_inelastic":
       return PEDRevenueImpact;
     default:
       return null;
