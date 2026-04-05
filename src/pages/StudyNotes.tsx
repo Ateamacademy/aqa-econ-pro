@@ -13,6 +13,7 @@ import {
   DiagramBox,
 } from "@/components/revision/RevisionCard";
 import { EconDiagramTemplate, type DiagramType } from "@/components/revision/EconDiagramLibrary";
+import { getCustomDiagramComponent } from "@/components/CustomDiagramResolver";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import type { Topic, Subtopic } from "@/data/studyNotes/edexcelANotes";
 import { motion, AnimatePresence, useInView } from "framer-motion";
