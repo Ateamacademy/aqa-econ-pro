@@ -65,17 +65,23 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
   "edexcel-a": [
     // Section 1: PPFs, Markets and Allocation
     "PPF — Balanced Growth / Biased Growth / Unemployed Resources",
+    "PPF — Natural Disaster",
     "Supply & Demand — Market Equilibrium Change",
+    "Supply & Demand — Multiple Shifts",
+    // Section 1.5: Elasticity & Revenue
+    "PED — Revenue Impact",
     "Indirect Tax & Subsidy",
     // Section 2: Market Failure
     "Negative / Positive Externality (Welfare Loss)",
     "Negative Production Externality (MSC > MPC)",
+    "Sugar Tax — Welfare Analysis",
     // Section 3: Costs & Economies of Scale
     "Short-Run Cost Curves (MC, ATC, AVC)",
     "Long-Run Average Cost (Economies & Diseconomies of Scale)",
     "Short-Run Shutdown Point (P = min AVC)",
     // Section 4: Revenues, Profits & Other Objectives
     "Monopoly — Supernormal Profit (MC = MR)",
+    "Competition vs Monopoly — Consumer Surplus",
     "Perfect Competition — Short Run & Long Run Equilibrium",
     "Monopolistic Competition — Normal Profit / Excess Capacity",
     // Section 5: Market Structures
@@ -758,13 +764,13 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
           {selectedScenario?.expectedDiagramKeyword && (() => {
             const kw = selectedScenario.expectedDiagramKeyword;
             const Comp = (() => {
-              if (kw === "ped_revenue_impact") return PEDRevenueImpact;
+              if (kw === "ped_revenue_impact" || kw === "ped_elastic" || kw === "ped_inelastic") return PEDRevenueImpact;
               if (kw === "ppf_natural_disaster") return PPFNaturalDisaster;
-              if (kw === "ppf") return PPFBalancedGrowth;
+              if (kw === "ppf" || kw === "ppf_growth") return PPFBalancedGrowth;
               if (kw === "supply_demand_multiple_shifts") return SupplyDemandMultipleShifts;
               if (kw === "competition_consumer_surplus") return CompetitionMonopolySurplusChart;
               if (kw === "sugar_tax") return SugarTaxWelfareAnalysis;
-              if (kw === "negative_externality" || kw === "negative_externality_production") return NegativeExternalityPalmOil;
+              if (kw === "negative_externality" || kw === "negative_externality_production" || kw === "negative_production_externality") return NegativeExternalityPalmOil;
               return null;
             })();
             if (!Comp) return null;
@@ -939,13 +945,13 @@ function DiagramFeedbackView({
   const isPhillipsCurveTopic = expectedDiagramType === "phillips_curve" || /phillips\s*curve/i.test(topic);
   const isKeynesianASTopic = expectedDiagramType === "keynesian_as" || /keynesian\s*a[sg]|spare\s*capacity.*as|as\s*spare\s*capacity/i.test(topic);
   const isTariffTopic = expectedDiagramType === "tariff" || /\btariff\b|import\s*duty|trade\s*protection.*tariff/i.test(topic);
-  const isNegativeExternalityTopic = expectedDiagramType === "negative_externality" || expectedDiagramType === "negative_externality_production" || /negative\s*externality|palm\s*oil|msc.*mpc|overproduction.*externality/i.test(topic);
+  const isNegativeExternalityTopic = expectedDiagramType === "negative_externality" || expectedDiagramType === "negative_externality_production" || expectedDiagramType === "negative_production_externality" || /negative\s*externality|palm\s*oil|msc.*mpc|overproduction.*externality/i.test(topic);
   const isSugarTaxTopic = expectedDiagramType === "sugar_tax" || /sugar\s*tax|pigouvian.*tax|welfare\s*analysis.*tax/i.test(topic);
   const isCompetitionCSTopic = expectedDiagramType === "competition_consumer_surplus" || /competition.*consumer\s*surplus|consumer\s*surplus.*monopoly|economic\s*surplus.*competitive|competitive.*monopoly.*surplus/i.test(topic);
   const isSupplyDemandMultipleShiftsTopic = expectedDiagramType === "supply_demand_multiple_shifts" || /multiple\s*shifts|supply.*demand.*multiple/i.test(topic);
   const isPPFNaturalDisasterTopic = expectedDiagramType === "ppf_natural_disaster" || /natural\s*disaster|earthquake|ppf.*inward.*shift|inward.*ppf/i.test(topic);
-  const isPEDRevenueImpactTopic = expectedDiagramType === "ped_revenue_impact" || /ped.*revenue.*impact|revenue.*impact.*ped|price\s*elasticity.*revenue/i.test(topic);
-  const isPPFTopic = !isPPFNaturalDisasterTopic && (expectedDiagramType === "ppf" || /\bppf\b|production\s*possibility|balanced\s*growth|biased\s*growth|unemployed\s*resources/i.test(topic));
+  const isPEDRevenueImpactTopic = expectedDiagramType === "ped_revenue_impact" || expectedDiagramType === "ped_elastic" || expectedDiagramType === "ped_inelastic" || /ped.*revenue.*impact|revenue.*impact.*ped|price\s*elasticity.*revenue/i.test(topic);
+  const isPPFTopic = !isPPFNaturalDisasterTopic && (expectedDiagramType === "ppf" || expectedDiagramType === "ppf_growth" || /\bppf\b|production\s*possibility|balanced\s*growth|biased\s*growth|unemployed\s*resources/i.test(topic));
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     if (isLorenzTopic) return <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
     if (isLRACTopic) return <LRACDiagram className="mt-3" />;
