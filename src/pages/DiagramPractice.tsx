@@ -33,6 +33,10 @@ import SupplyDemandMultipleShifts from "@/components/SupplyDemandMultipleShifts"
 import PPFBalancedGrowth from "@/components/PPFBalancedGrowth";
 import PPFNaturalDisaster from "@/components/PPFNaturalDisaster";
 import PEDRevenueImpact from "@/components/PEDRevenueImpact";
+import YEDLuxuryGoods from "@/components/YEDLuxuryGoods";
+import MaximumPriceCeiling from "@/components/MaximumPriceCeiling";
+import ShortRunCostCurves from "@/components/ShortRunCostCurves";
+import MinimumWageDiagram from "@/components/MinimumWageDiagram";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
@@ -771,6 +775,10 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
               if (kw === "competition_consumer_surplus") return CompetitionMonopolySurplusChart;
               if (kw === "sugar_tax") return SugarTaxWelfareAnalysis;
               if (kw === "negative_externality" || kw === "negative_externality_production" || kw === "negative_production_externality") return NegativeExternalityPalmOil;
+              if (kw === "yed_luxury" || kw === "yed") return YEDLuxuryGoods;
+              if (kw === "maximum_price" || kw === "price_ceiling") return MaximumPriceCeiling;
+              if (kw === "cost_curves" || kw === "short_run_costs") return ShortRunCostCurves;
+              if (kw === "minimum_wage") return MinimumWageDiagram;
               return null;
             })();
             if (!Comp) return null;
