@@ -7,7 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PenTool, Lock, Send, RotateCcw, Pencil, FileText, ChevronDown, ChevronUp, MessageSquare, Lightbulb, BookOpen, Sparkles, Shuffle, Crown, BarChart3 } from "lucide-react";
+import { PenTool, Lock, Send, RotateCcw, Pencil, FileText, ChevronDown, ChevronUp, MessageSquare, Lightbulb, BookOpen, Sparkles, Shuffle, Crown, BarChart3, Eye } from "lucide-react";
 import { toast } from "sonner";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import { DrawingCanvas } from "@/components/tools/DrawingCanvas";
@@ -784,6 +784,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             );
           })()}
 
+          <Card>
             <CardContent className="p-6 space-y-4">
               {/* Mode toggle */}
               <div className="flex items-center gap-1 bg-muted rounded-lg p-0.5 w-fit">
