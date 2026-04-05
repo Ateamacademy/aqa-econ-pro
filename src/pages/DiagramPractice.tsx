@@ -163,8 +163,82 @@ const DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced"] as const;
 
 type PracticeMode = "ai" | "scenario";
 
+type BoardScenarioTemplate = {
+  section: DiagramSection;
+  topic: string;
+  difficulty: "Foundation" | "Intermediate" | "Advanced";
+  marks: number;
+  expectedDiagramKeyword?: string;
+};
+
 const inferDiagramType = (...parts: string[]) =>
   resolveDiagramType(parts.filter(Boolean).join("\n")) ?? "supply_demand";
+
+const buildBoardScenarioTemplates = (subject: string): BoardScenarioTemplate[] => {
+  const sectionMap: Record<string, DiagramSection> = {
+    "PPF": "PPFs, Markets & Allocation",
+    "Supply & Demand": "PPFs, Markets & Allocation",
+    "Price Mechanism": "PPFs, Markets & Allocation",
+    "Elasticity": "Elasticity & Revenue",
+    "Revenue": "Revenue, Profits & Objectives",
+    "Market Failure": "Market Failure & Externalities",
+    "Externality": "Market Failure & Externalities",
+    "Government Intervention": "Government Intervention",
+    "Indirect Tax": "Government Intervention",
+    "Subsidy": "Government Intervention",
+    "Cost": "Costs & Economies of Scale",
+    "Economies": "Costs & Economies of Scale",
+    "Monopoly": "Revenue, Profits & Objectives",
+    "Competition": "Market Structures",
+    "Market Structures": "Market Structures",
+    "Oligopoly": "Market Structures",
+    "Labour Market": "Labour Market",
+    "National Income": "National Income & Macro Equilibrium",
+    "AD/AS": "National Income & Macro Equilibrium",
+    "Aggregate Demand": "National Income & Macro Equilibrium",
+    "Aggregate Supply": "National Income & Macro Equilibrium",
+    "Macro": "Macro Objectives",
+    "Phillips Curve": "Macro Objectives",
+    "Lorenz Curve": "Inequality & Development",
+    "Monetary Policy": "Financial Markets & Monetary Policy",
+    "Financial Markets": "Financial Markets & Monetary Policy",
+    "Fiscal Policy": "Fiscal & Supply-Side Policies",
+    "Supply-Side Policy": "Fiscal & Supply-Side Policies",
+    "International": "International Economy",
+    "Trade": "International Economy",
+    "Exchange Rate": "International Economy",
+    "J-Curve": "International Economy",
+    "Development": "Inequality & Development",
+    "Inequality": "Inequality & Development",
+  };
+
+  const inferSectionFromTopic = (topic: string): DiagramSection => {
+    const match = Object.entries(sectionMap).find(([needle]) => topic.toLowerCase().includes(needle.toLowerCase()));
+    return match?.[1] ?? "PPFs, Markets & Allocation";
+  };
+
+  const inferDifficultyFromTopic = (topic: string): "Foundation" | "Intermediate" | "Advanced" => {
+    if (/oligopoly|phillips|lorenz|monopsony|tradable|j-curve|specific|ad valorem|shutdown|welfare|multiple shifts/i.test(topic)) return "Advanced";
+    if (/externalit|subsidy|minimum price|maximum price|cost|monopoly|perfect competition|keynesian|exchange rate|tariff/i.test(topic)) return "Intermediate";
+    return "Foundation";
+  };
+
+  const inferMarksFromDifficulty = (difficulty: "Foundation" | "Intermediate" | "Advanced") =>
+    difficulty === "Foundation" ? 4 : difficulty === "Intermediate" ? 6 : 8;
+
+  const uniqueTopics = Array.from(new Set(DIAGRAM_TOPICS[subject] || DIAGRAM_TOPICS.economics));
+
+  return uniqueTopics.map((topic) => {
+    const difficulty = inferDifficultyFromTopic(topic);
+    return {
+      section: inferSectionFromTopic(topic),
+      topic,
+      difficulty,
+      marks: inferMarksFromDifficulty(difficulty),
+      expectedDiagramKeyword: resolveDiagramType(topic) ?? undefined,
+    };
+  });
+};
 
 type InputMode = "draw" | "text";
 
@@ -206,12 +280,35 @@ export default function DiagramPractice() {
   } = useDiagramAccess();
   const isCertainlyBlocked = !isAccessLoading && !isAllowed && !isPremium;
 
+  const boardScenarioTemplates = useMemo(() => buildBoardScenarioTemplates(subject), [subject]);
+
   const filteredScenarios = useMemo(() => {
-    let pool = diagramScenarios;
-    if (sectionFilter !== "all") pool = pool.filter(s => s.section === sectionFilter);
-    if (difficulty !== "all") pool = pool.filter(s => s.difficulty === difficulty);
-    return pool;
-  }, [sectionFilter, difficulty]);
+    if (practiceMode === "scenario") {
+      if (subject === "economics") {
+        let pool = diagramScenarios;
+        if (sectionFilter !== "all") pool = pool.filter(s => s.section === sectionFilter);
+        if (difficulty !== "all") pool = pool.filter(s => s.difficulty === difficulty);
+        return pool;
+      }
+
+      return boardScenarioTemplates
+        .filter(s => sectionFilter === "all" || s.section === sectionFilter)
+        .filter(s => difficulty === "all" || s.difficulty === difficulty)
+        .map((s, index) => ({
+          id: `${subject}-${index}-${s.expectedDiagramKeyword ?? "topic"}`,
+          section: s.section,
+          topic: s.topic,
+          difficulty: s.difficulty,
+          scenario: `Board-specific diagram practice for ${examBoard} ${level}: ${s.topic}.`,
+          question: `Generate and answer an exam-style ${s.marks}-mark diagram task for ${examBoard} ${level} on "${s.topic}". Your diagram and explanation should match the style expected for ${subjectLabel}.`,
+          marks: s.marks,
+          expectedDiagramKeyword: s.expectedDiagramKeyword ?? inferDiagramType(s.topic),
+          hints: [`This task is aligned to ${examBoard} ${level}.`, `Focus on the conventions and command style expected in ${subjectLabel}.`],
+        }));
+    }
+
+    return [];
+  }, [boardScenarioTemplates, difficulty, examBoard, level, practiceMode, sectionFilter, subject, subjectLabel]);
 
   useEffect(() => {
     const t = DIAGRAM_TOPICS[subject] || DIAGRAM_TOPICS.economics;
@@ -405,6 +502,49 @@ Format: Give the scenario context with Figure 1, then the question. Nothing else
   const startScenario = async (scenario: DiagramScenario) => {
     if (!(await ensureEligible())) return;
     setSelectedScenario(scenario);
+
+    if (subject !== "economics") {
+      setIsGenerating(true);
+      setGeneratedQ("");
+      let result = "";
+
+      await streamChat({
+        messages: [{
+          role: "user",
+          content: `Generate one board-specific diagram practice question for ${examBoard} ${level} ${subjectLabel}.
+
+Topic: ${scenario.topic}
+Section: ${scenario.section}
+Difficulty: ${scenario.difficulty}
+Marks: ${scenario.marks}
+Expected diagram type: ${scenario.expectedDiagramKeyword ?? inferDiagramType(scenario.topic)}
+
+Requirements:
+- Match the tone, command words, and diagram expectations of ${examBoard} ${level}
+- Make it feel like a real exam-style diagram prompt
+- Include clear scenario context
+- Tell the student to draw and annotate the diagram, then explain it
+- Keep it tightly focused on this section/topic only
+- End with the mark allocation in brackets
+
+Return only the finished question.`
+        }],
+        mode: "practice",
+        subject,
+        onDelta: (chunk) => { result += chunk; setGeneratedQ(result); },
+        onDone: () => {
+          setIsGenerating(false);
+          setStep("answer");
+        },
+        onError: (err) => {
+          toast.error(err);
+          setIsGenerating(false);
+        },
+      });
+
+      return;
+    }
+
     setGeneratedQ(`**${scenario.topic}**\n\n${scenario.scenario}\n\n${scenario.question}`);
     setStep("answer");
   };
