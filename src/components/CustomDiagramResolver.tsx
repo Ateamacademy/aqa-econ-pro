@@ -10,6 +10,10 @@ import SupplyDemandMultipleShifts from "@/components/SupplyDemandMultipleShifts"
 import PPFBalancedGrowth from "@/components/PPFBalancedGrowth";
 import PPFNaturalDisaster from "@/components/PPFNaturalDisaster";
 import PEDRevenueImpact from "@/components/PEDRevenueImpact";
+import YEDLuxuryGoods from "@/components/YEDLuxuryGoods";
+import MaximumPriceCeiling from "@/components/MaximumPriceCeiling";
+import ShortRunCostCurves from "@/components/ShortRunCostCurves";
+import MinimumWageDiagram from "@/components/MinimumWageDiagram";
 
 /** Maps a diagram keyword to a custom SVG component, or returns null if none exists */
 export function getCustomDiagramComponent(keyword: string): ComponentType | null {
@@ -33,6 +37,17 @@ export function getCustomDiagramComponent(keyword: string): ComponentType | null
     case "ped_elastic":
     case "ped_inelastic":
       return PEDRevenueImpact;
+    case "yed_luxury":
+    case "yed":
+      return YEDLuxuryGoods;
+    case "maximum_price":
+    case "price_ceiling":
+      return MaximumPriceCeiling;
+    case "cost_curves":
+    case "short_run_costs":
+      return ShortRunCostCurves;
+    case "minimum_wage":
+      return MinimumWageDiagram;
     default:
       return null;
   }

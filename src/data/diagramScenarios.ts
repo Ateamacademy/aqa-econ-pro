@@ -100,7 +100,7 @@ export const diagramScenarios: DiagramScenario[] = [
     scenario: "Holidays to Disneyworld in the US have a high, positive income elasticity of demand — they are luxury goods.",
     question: "Draw a YED (income elasticity of demand) diagram with 'Average Income (£) Week' on the vertical axis and 'Quantity' on the horizontal axis. Show two upward-sloping demand curves: (1) 'Demand for Normal Good (YED > 0)' — a steeper curve, and (2) 'Demand for Luxury Good (YED > 1)' — a flatter, more responsive curve. Mark two income levels (e.g. 550 and 800) and two quantity levels (e.g. 850 and 950) with dashed projections showing how luxury goods are more income-elastic.",
     marks: 4,
-    expectedDiagramKeyword: "supply_demand",
+    expectedDiagramKeyword: "yed_luxury",
     hints: ["Normal goods: YED > 0 but < 1 — demand rises less than proportionally with income", "Luxury goods: YED > 1 — demand rises more than proportionally with income"],
   },
 
