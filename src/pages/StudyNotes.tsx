@@ -293,7 +293,11 @@ export default function StudyNotes() {
                     Show model diagram
                   </summary>
                   <div className="mt-2">
-                    <EconDiagramTemplate type={sub.diagram} />
+                    {(() => {
+                      const CustomComp = getCustomDiagramComponent(sub.diagram!);
+                      if (CustomComp) return <CustomComp />;
+                      return <EconDiagramTemplate type={sub.diagram} />;
+                    })()}
                   </div>
                 </details>
               </div>
