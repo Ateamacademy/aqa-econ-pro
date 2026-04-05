@@ -934,9 +934,10 @@ function DiagramFeedbackView({
     if (isSupplyDemandMultipleShiftsTopic) return <div className="my-4"><SupplyDemandMultipleShifts /></div>;
     if (isPPFTopic) return <div className="my-4"><PPFBalancedGrowth /></div>;
     if (isPPFNaturalDisasterTopic) return <div className="my-4"><PPFNaturalDisaster /></div>;
+    if (isPEDRevenueImpactTopic) return <div className="my-4"><PEDRevenueImpact /></div>;
     return null;
   };
-  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic || isPPFNaturalDisasterTopic;
+  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic || isPPFNaturalDisasterTopic || isPEDRevenueImpactTopic;
 
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {
