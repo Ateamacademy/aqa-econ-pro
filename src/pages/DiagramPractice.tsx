@@ -32,6 +32,7 @@ import CompetitionMonopolySurplusChart from "@/components/CompetitionMonopolySur
 import SupplyDemandMultipleShifts from "@/components/SupplyDemandMultipleShifts";
 import PPFBalancedGrowth from "@/components/PPFBalancedGrowth";
 import PPFNaturalDisaster from "@/components/PPFNaturalDisaster";
+import PEDRevenueImpact from "@/components/PEDRevenueImpact";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
@@ -913,6 +914,7 @@ function DiagramFeedbackView({
   const isCompetitionCSTopic = expectedDiagramType === "competition_consumer_surplus" || /competition.*consumer\s*surplus|consumer\s*surplus.*monopoly|economic\s*surplus.*competitive|competitive.*monopoly.*surplus/i.test(topic);
   const isSupplyDemandMultipleShiftsTopic = expectedDiagramType === "supply_demand_multiple_shifts" || /multiple\s*shifts|supply.*demand.*multiple/i.test(topic);
   const isPPFNaturalDisasterTopic = expectedDiagramType === "ppf_natural_disaster" || /natural\s*disaster|earthquake|ppf.*inward.*shift|inward.*ppf/i.test(topic);
+  const isPEDRevenueImpactTopic = expectedDiagramType === "ped_revenue_impact" || /ped.*revenue.*impact|revenue.*impact.*ped|price\s*elasticity.*revenue/i.test(topic);
   const isPPFTopic = !isPPFNaturalDisasterTopic && (expectedDiagramType === "ppf" || /\bppf\b|production\s*possibility|balanced\s*growth|biased\s*growth|unemployed\s*resources/i.test(topic));
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     if (isLorenzTopic) return <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
@@ -932,9 +934,10 @@ function DiagramFeedbackView({
     if (isSupplyDemandMultipleShiftsTopic) return <div className="my-4"><SupplyDemandMultipleShifts /></div>;
     if (isPPFTopic) return <div className="my-4"><PPFBalancedGrowth /></div>;
     if (isPPFNaturalDisasterTopic) return <div className="my-4"><PPFNaturalDisaster /></div>;
+    if (isPEDRevenueImpactTopic) return <div className="my-4"><PEDRevenueImpact /></div>;
     return null;
   };
-  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic || isPPFNaturalDisasterTopic;
+  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic || isPPFNaturalDisasterTopic || isPEDRevenueImpactTopic;
 
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {
