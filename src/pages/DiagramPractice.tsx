@@ -960,6 +960,10 @@ function DiagramFeedbackView({
   const isPPFNaturalDisasterTopic = expectedDiagramType === "ppf_natural_disaster" || /natural\s*disaster|earthquake|ppf.*inward.*shift|inward.*ppf/i.test(topic);
   const isPEDRevenueImpactTopic = expectedDiagramType === "ped_revenue_impact" || expectedDiagramType === "ped_elastic" || expectedDiagramType === "ped_inelastic" || /ped.*revenue.*impact|revenue.*impact.*ped|price\s*elasticity.*revenue/i.test(topic);
   const isPPFTopic = !isPPFNaturalDisasterTopic && (expectedDiagramType === "ppf" || expectedDiagramType === "ppf_growth" || /\bppf\b|production\s*possibility|balanced\s*growth|biased\s*growth|unemployed\s*resources/i.test(topic));
+  const isYEDLuxuryTopic = expectedDiagramType === "yed_luxury" || expectedDiagramType === "yed" || /\byed\b|income\s*elasticity.*demand|luxury\s*good/i.test(topic);
+  const isMaxPriceTopic = expectedDiagramType === "maximum_price" || expectedDiagramType === "price_ceiling" || /maximum\s*price|price\s*ceiling/i.test(topic);
+  const isShortRunCostsTopic = expectedDiagramType === "cost_curves" || expectedDiagramType === "short_run_costs" || /short.run\s*cost|cost\s*curves?\b|atc.*avc.*mc|mc.*atc/i.test(topic);
+  const isMinWageTopic = expectedDiagramType === "minimum_wage" || /minimum\s*wage|wage\s*floor|national\s*minimum\s*wage/i.test(topic);
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     if (isLorenzTopic) return <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
     if (isLRACTopic) return <LRACDiagram className="mt-3" />;
@@ -979,9 +983,13 @@ function DiagramFeedbackView({
     if (isPPFTopic) return <div className="my-4"><PPFBalancedGrowth /></div>;
     if (isPPFNaturalDisasterTopic) return <div className="my-4"><PPFNaturalDisaster /></div>;
     if (isPEDRevenueImpactTopic) return <div className="my-4"><PEDRevenueImpact /></div>;
+    if (isYEDLuxuryTopic) return <div className="my-4"><EconYEDLuxury /></div>;
+    if (isMaxPriceTopic) return <div className="my-4"><EconMaxPrice /></div>;
+    if (isShortRunCostsTopic) return <div className="my-4"><EconShortRunCosts /></div>;
+    if (isMinWageTopic) return <div className="my-4"><EconMinWage /></div>;
     return null;
   };
-  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic || isPPFNaturalDisasterTopic || isPEDRevenueImpactTopic;
+  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic || isPPFNaturalDisasterTopic || isPEDRevenueImpactTopic || isYEDLuxuryTopic || isMaxPriceTopic || isShortRunCostsTopic || isMinWageTopic;
 
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {
