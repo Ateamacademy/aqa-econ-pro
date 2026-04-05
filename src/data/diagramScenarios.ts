@@ -78,7 +78,7 @@ export const diagramScenarios: DiagramScenario[] = [
     scenario: "A petrol retailer increases its price by 10%. Petrol has very price inelastic demand because there are few substitutes for most drivers.",
     question: "Draw a demand curve for petrol showing price inelastic demand. Show the price increase and shade the area of revenue gained and any area of revenue lost. What is the net effect on total revenue?",
     marks: 5,
-    expectedDiagramKeyword: "supply_demand",
+    expectedDiagramKeyword: "ped_revenue_impact",
     hints: ["A steep demand curve represents inelastic demand", "Revenue gained > revenue lost for inelastic goods"],
   },
   {
