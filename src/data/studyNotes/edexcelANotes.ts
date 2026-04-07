@@ -109,6 +109,7 @@ export const edexcelAPaper1Topics: Topic[] = [
         ],
         explanation: "**YED significance for firms:**\n- Luxury goods firms benefit in booms, suffer in recessions\n- Inferior goods firms are recession-proof\n- Firms can use YED to forecast demand changes\n\n**XED significance:**\n- Close substitutes = high positive XED = intense competition\n- Strong complements = high negative XED = bundling opportunities",
         example: "As incomes rise, demand for budget airlines may fall (inferior) while demand for premium airlines rises (luxury normal). During COVID-19 recession, Aldi and Lidl (inferior goods) saw rising demand.",
+        diagram: "yed_luxury" as any,
       },
       {
         title: "Price Elasticity of Supply",
@@ -218,6 +219,7 @@ export const edexcelAPaper1Topics: Topic[] = [
         definition: "**Maximum prices** (price ceilings) are set below equilibrium to protect consumers. **Minimum prices** (price floors) are set above equilibrium to protect producers.",
         explanation: "**Max price:** Creates excess demand / shortage → need for rationing → black markets → lower quality\n**Min price:** Creates excess supply / surplus → government may need to buy surplus → cost to taxpayer\n\n**Examples:** Rent controls in London (max price), National Minimum Wage (min price in labour market), Minimum Unit Pricing for alcohol in Scotland",
         example: "The National Minimum Wage is a price floor in the labour market — it creates a surplus of labour (unemployment) if set above equilibrium, but monopsony theory suggests it can raise wages without job losses.",
+        diagram: "maximum_price" as any,
       },
       {
         title: "Regulation & Tradable Permits",
@@ -265,6 +267,7 @@ export const edexcelAPaper1Topics: Topic[] = [
         ],
         formula: "Profit = TR − TC\nMR = ΔTR ÷ ΔQ\nMC = ΔTC ÷ ΔQ\nAR = TR ÷ Q",
         explanation: "**Short run:** At least one factor fixed (e.g., capital)\n**Long run:** All factors variable\n\n**Shut-down rule:** Firm shuts down if P < AVC (short run) or P < AC (long run)\n**Profit maximisation:** MC = MR",
+        diagram: "cost_curves" as any,
       },
       {
         title: "Perfect Competition",
@@ -331,6 +334,7 @@ export const edexcelAPaper1Topics: Topic[] = [
         formula: "MRP = MPP × MR",
         explanation: "**Wage determination:** In perfect competition, wage = MRP. With monopsony power, wages are lower and employment is lower.\n\n**NMW analysis:** Above equilibrium → unemployment (classical). But monopsony → NMW can raise wages AND employment.\n\n**Wage differentials:** Skills, qualifications, compensating differentials (dangerous jobs), trade unions, discrimination, regional differences",
         examTip: "For labour market questions, always consider trade unions vs monopsony power, and how the NMW affects different labour markets differently.",
+        diagram: "minimum_wage" as any,
       },
     ],
   },
