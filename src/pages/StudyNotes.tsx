@@ -294,7 +294,7 @@ export default function StudyNotes() {
                   </summary>
                   <div className="mt-2">
                     {(() => {
-                      const CustomComp = getCustomDiagramComponent(sub.diagram!);
+                      const CustomComp = getCustomDiagramComponent(sub.diagram!, examBoard);
                       if (CustomComp) return <CustomComp />;
                       return <EconDiagramTemplate type={sub.diagram} />;
                     })()}

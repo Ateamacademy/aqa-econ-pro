@@ -1,6 +1,7 @@
 /**
  * CustomDiagramResolver — Maps diagram keywords to custom SVG diagram components.
  * Used in both DiagramPractice (reference diagrams) and StudyNotes (model diagrams).
+ * Board-aware: some keywords resolve to different components per exam board.
  */
 import type { ComponentType } from "react";
 import NegativeExternalityPalmOil from "@/components/NegativeExternalityPalmOil";
@@ -15,8 +16,22 @@ import EconMaxPrice from "@/components/EconMaxPrice";
 import EconShortRunCosts from "@/components/EconShortRunCosts";
 import EconMinWage from "@/components/EconMinWage";
 
-/** Maps a diagram keyword to a custom SVG component, or returns null if none exists */
-export function getCustomDiagramComponent(keyword: string): ComponentType | null {
+/** Edexcel-A-only diagram keywords */
+const EDEXCEL_A_ONLY = new Set([
+  "yed_luxury", "yed",
+  "maximum_price", "price_ceiling",
+  "cost_curves", "short_run_costs",
+  "minimum_wage",
+]);
+
+/** Maps a diagram keyword to a custom SVG component, or returns null if none exists.
+ *  Pass `board` to restrict board-specific diagrams. */
+export function getCustomDiagramComponent(keyword: string, board?: string): ComponentType | null {
+  // Gate Edexcel-A-only diagrams
+  if (EDEXCEL_A_ONLY.has(keyword) && board && !board.toLowerCase().includes("edexcel") ) {
+    return null; // fall through to generic EconDiagramTemplate for other boards
+  }
+
   switch (keyword) {
     case "negative_externality":
     case "negative_externality_production":
@@ -54,8 +69,8 @@ export function getCustomDiagramComponent(keyword: string): ComponentType | null
 }
 
 /** Render a custom diagram if one exists for the keyword, wrapped in a div */
-export function CustomDiagramDisplay({ keyword }: { keyword: string }) {
-  const Component = getCustomDiagramComponent(keyword);
+export function CustomDiagramDisplay({ keyword, board }: { keyword: string; board?: string }) {
+  const Component = getCustomDiagramComponent(keyword, board);
   if (!Component) return null;
   return (
     <div className="my-4">
