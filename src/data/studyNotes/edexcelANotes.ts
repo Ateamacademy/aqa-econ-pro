@@ -437,6 +437,7 @@ export const edexcelAPaper2Topics: Topic[] = [
         ],
         explanation: "Initial injection → rounds of spending → each round smaller due to withdrawals (saving, tax, imports)\n\n**Larger multiplier when:** High MPC, low tax rates, low import propensity\n**Smaller multiplier when:** High savings rate, open economy, high tax rates\n\n**The multiplier works in reverse** — a withdrawal has a multiplied negative effect on GDP",
         examTip: "Always consider the multiplier when evaluating fiscal policy effectiveness. A small multiplier weakens the case for government spending.",
+        diagram: "multiplier_effect" as any,
       },
       {
         title: "The Accelerator",
@@ -460,7 +461,7 @@ export const edexcelAPaper2Topics: Topic[] = [
           { term: "National Debt", definition: "Total accumulated stock of government borrowing" },
         ],
         explanation: "**Expansionary:** ↑G or ↓T → ↑AD → ↑output and employment\n**Contractionary:** ↓G or ↑T → ↓AD → ↓inflation\n\n**Evaluation:** Time lags (recognition, implementation, impact), opportunity cost, crowding out (government borrowing raises interest rates → less private investment), effect on national debt, political constraints, size of multiplier",
-        diagram: "ad_increase",
+        diagram: "fiscal_policy_ad" as any,
       },
       {
         title: "Monetary Policy",
@@ -511,6 +512,7 @@ export const edexcelAPaper2Topics: Topic[] = [
           { term: "Terms of Trade", definition: "Ratio of export prices to import prices" },
         ],
         explanation: "**Ricardo's theory:** Even if one country is better at everything, both gain from specialisation and trade\n\n**Free trade benefits:** Lower prices, greater choice, economies of scale, promotes innovation, technology transfer, specialisation\n**Limitations:** Constant costs assumption, transport costs, exchange rates, power imbalances, infant industry argument, environmental costs of transport",
+        diagram: "terms_of_trade" as any,
       },
       {
         title: "Protectionism",
@@ -573,11 +575,13 @@ export const edexcelAPaper2Topics: Topic[] = [
         title: "Barriers to Development",
         definition: "Developing countries face structural obstacles preventing sustained economic development.",
         explanation: "**Key barriers:**\n- **Corruption** — misallocation of resources, deters FDI\n- **Poor infrastructure** — limits trade and productivity\n- **Debt burden** — interest payments divert spending from development\n- **Trade dependency** — reliance on primary commodities\n- **Climate vulnerability** — natural disasters destroy capital\n- **Conflict** — destroys infrastructure, creates refugees\n- **Brain drain** — skilled workers emigrate\n- **Disease** — HIV/AIDS, malaria reduce labour force\n- **Population growth** — outpaces economic growth\n- **Poor governance** — weak institutions, property rights\n\n**Prebisch-Singer hypothesis:** Terms of trade for primary commodities decline over time → commodity-dependent countries fall further behind",
+        diagram: "primary_product_dependency" as any,
       },
       {
         title: "Development Strategies",
         definition: "Countries use various strategies to promote economic development, each with advantages and limitations.",
         explanation: "**Trade liberalisation:** Open markets → specialisation → growth. But may expose infant industries.\n**FDI attraction:** Creates jobs, technology transfer. But profits repatriated, exploitation.\n**Aid:** Bilateral/multilateral → fills savings gap. But may create dependency, corruption.\n**Microfinance:** Small loans to entrepreneurs → empowerment. But high interest rates.\n**Education investment:** Long-term human capital. But expensive, takes decades.\n**Institutional reform:** Property rights, rule of law. But politically difficult.\n\n**Washington Consensus:** Free markets, privatisation, fiscal discipline. Criticised for ignoring inequality.\n**Post-Washington Consensus:** More role for government, institutions matter, inclusive growth.",
+        diagram: "harrod_domar_ppf" as any,
         examTip: "Evaluate each strategy by considering: who benefits (elites vs poor), time horizon, sustainability, and whether it addresses root causes.",
       },
     ],

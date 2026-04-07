@@ -15,6 +15,11 @@ import EconYEDLuxury from "@/components/EconYEDLuxury";
 import EconMaxPrice from "@/components/EconMaxPrice";
 import EconShortRunCosts from "@/components/EconShortRunCosts";
 import EconMinWage from "@/components/EconMinWage";
+import EconPrimaryProductDependency from "@/components/EconPrimaryProductDependency";
+import EconHarrodDomarPPF from "@/components/EconHarrodDomarPPF";
+import EconMultiplierEffect from "@/components/EconMultiplierEffect";
+import EconFiscalPolicyAD from "@/components/EconFiscalPolicyAD";
+import EconTermsOfTrade from "@/components/EconTermsOfTrade";
 
 /** Edexcel-A-only diagram keywords */
 const EDEXCEL_A_ONLY = new Set([
@@ -22,6 +27,11 @@ const EDEXCEL_A_ONLY = new Set([
   "maximum_price", "price_ceiling",
   "cost_curves", "short_run_costs",
   "minimum_wage",
+  "primary_product_dependency",
+  "harrod_domar_ppf",
+  "multiplier_effect",
+  "fiscal_policy_ad",
+  "terms_of_trade",
 ]);
 
 /** Maps a diagram keyword to a custom SVG component, or returns null if none exists.
@@ -63,6 +73,16 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
       return EconShortRunCosts;
     case "minimum_wage":
       return EconMinWage;
+    case "primary_product_dependency":
+      return EconPrimaryProductDependency;
+    case "harrod_domar_ppf":
+      return EconHarrodDomarPPF;
+    case "multiplier_effect":
+      return EconMultiplierEffect;
+    case "fiscal_policy_ad":
+      return EconFiscalPolicyAD;
+    case "terms_of_trade":
+      return EconTermsOfTrade;
     default:
       return null;
   }
