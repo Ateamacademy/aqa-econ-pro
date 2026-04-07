@@ -73,6 +73,16 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
       return EconShortRunCosts;
     case "minimum_wage":
       return EconMinWage;
+    case "primary_product_dependency":
+      return EconPrimaryProductDependency;
+    case "harrod_domar_ppf":
+      return EconHarrodDomarPPF;
+    case "multiplier_effect":
+      return EconMultiplierEffect;
+    case "fiscal_policy_ad":
+      return EconFiscalPolicyAD;
+    case "terms_of_trade":
+      return EconTermsOfTrade;
     default:
       return null;
   }
