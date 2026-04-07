@@ -42,6 +42,7 @@ import EconHarrodDomarPPF from "@/components/EconHarrodDomarPPF";
 import EconMultiplierEffect from "@/components/EconMultiplierEffect";
 import EconFiscalPolicyAD from "@/components/EconFiscalPolicyAD";
 import EconTermsOfTrade from "@/components/EconTermsOfTrade";
+import EdexcelDiagram from "@/components/EdexcelDiagram";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
@@ -940,7 +941,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                       <Eye className="h-3.5 w-3.5" /> Show reference diagram
                     </summary>
                     <div className="mt-3">
-                      <Comp />
+                      {subject === "edexcel-a" ? <EdexcelDiagram diagramType={kw} fallback={<Comp />} /> : <Comp />}
                     </div>
                   </details>
                 </CardContent>
@@ -1086,10 +1087,15 @@ function DiagramFeedbackView({
   onReset: () => void;
   scenarioKeyword?: string;
 }) {
+  const { subject } = useSubject();
   const [showExplain, setShowExplain] = useState(false);
   const [showImprove, setShowImprove] = useState(false);
   const sections = useMemo(() => parseFeedbackSections(feedback), [feedback]);
   const expectedDiagramType = scenarioKeyword ?? inferDiagramType(topic, generatedQ, diagramDesc, explanation);
+  const renderBoardSpecificDiagram = (diagramType: string, fallback: JSX.Element) => {
+    if (subject !== "edexcel-a") return fallback;
+    return <EdexcelDiagram diagramType={diagramType} fallback={fallback} />;
+  };
 
   // Determine if we should show a dedicated reference diagram component
   const isLorenzTopic = /lorenz|gini|income\s*inequality|income\s*distribution/i.test(topic);
@@ -1122,31 +1128,31 @@ function DiagramFeedbackView({
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     if (isLorenzTopic) return <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
     if (isLRACTopic) return <LRACDiagram className="mt-3" />;
-    if (isSpecificAdValoremTopic) return <div className="my-4"><SpecificAdValoremDiagram /></div>;
-    if (isInfoFailureDemeritTopic) return <div className="my-4"><InformationFailureDemeritGood /></div>;
-    if (isTradablePollutionTopic) return <div className="my-4"><TradablePollutionPermits /></div>;
-    if (isShutdownTopic) return <div className="my-4"><ShutDownPriceShortRun /></div>;
-    if (isKinkedDemandTopic) return <div className="my-4"><KinkedDemandCurve /></div>;
-    if (isMonopsonyTopic) return <div className="my-4"><MonopsonyEmployerCurve /></div>;
-    if (isPhillipsCurveTopic) return <div className="my-4"><PhillipsCurveSRvsLR /></div>;
-    if (isKeynesianASTopic) return <div className="my-4"><KeynesianASSpareCurve /></div>;
-    if (isTariffTopic) return <div className="my-4"><TariffDiagram /></div>;
-    if (isNegativeExternalityTopic) return <div className="my-4"><NegativeExternalityPalmOil /></div>;
-    if (isSugarTaxTopic) return <div className="my-4"><SugarTaxWelfareAnalysis /></div>;
-    if (isCompetitionCSTopic) return <div className="my-4"><CompetitionMonopolySurplusChart /></div>;
-    if (isSupplyDemandMultipleShiftsTopic) return <div className="my-4"><SupplyDemandMultipleShifts /></div>;
-    if (isPPFNaturalDisasterTopic) return <div className="my-4"><PPFNaturalDisaster /></div>;
-    if (isPrimaryProductTopic) return <div className="my-4"><EconCoffeePriceVolatility /></div>;
-    if (isHarrodDomarTopic) return <div className="my-4"><EconHarrodDomarPPF /></div>;
-    if (isMultiplierTopic) return <div className="my-4"><EconMultiplierEffect /></div>;
-    if (isFiscalPolicyTopic) return <div className="my-4"><EconFiscalPolicyAD /></div>;
-    if (isTermsOfTradeTopic) return <div className="my-4"><EconTermsOfTrade /></div>;
-    if (isPPFTopic) return <div className="my-4"><PPFBalancedGrowth /></div>;
-    if (isPEDRevenueImpactTopic) return <div className="my-4"><PEDRevenueImpact /></div>;
-    if (isYEDLuxuryTopic) return <div className="my-4"><EconYEDLuxury /></div>;
-    if (isMaxPriceTopic) return <div className="my-4"><EconMaxPrice /></div>;
-    if (isShortRunCostsTopic) return <div className="my-4"><EconShortRunCosts /></div>;
-    if (isMinWageTopic) return <div className="my-4"><EconMinWage /></div>;
+    if (isSpecificAdValoremTopic) return renderBoardSpecificDiagram("specific_ad_valorem", <div className="my-4"><SpecificAdValoremDiagram /></div>);
+    if (isInfoFailureDemeritTopic) return renderBoardSpecificDiagram("information_failure_demerit", <div className="my-4"><InformationFailureDemeritGood /></div>);
+    if (isTradablePollutionTopic) return renderBoardSpecificDiagram("tradable_pollution_permits", <div className="my-4"><TradablePollutionPermits /></div>);
+    if (isShutdownTopic) return renderBoardSpecificDiagram("shutdown_short_run", <div className="my-4"><ShutDownPriceShortRun /></div>);
+    if (isKinkedDemandTopic) return renderBoardSpecificDiagram("kinked_demand", <div className="my-4"><KinkedDemandCurve /></div>);
+    if (isMonopsonyTopic) return renderBoardSpecificDiagram("monopsony", <div className="my-4"><MonopsonyEmployerCurve /></div>);
+    if (isPhillipsCurveTopic) return renderBoardSpecificDiagram("phillips_curve", <div className="my-4"><PhillipsCurveSRvsLR /></div>);
+    if (isKeynesianASTopic) return renderBoardSpecificDiagram("keynesian_as", <div className="my-4"><KeynesianASSpareCurve /></div>);
+    if (isTariffTopic) return renderBoardSpecificDiagram("tariff", <div className="my-4"><TariffDiagram /></div>);
+    if (isNegativeExternalityTopic) return renderBoardSpecificDiagram("negative_externality", <div className="my-4"><NegativeExternalityPalmOil /></div>);
+    if (isSugarTaxTopic) return renderBoardSpecificDiagram("sugar_tax", <div className="my-4"><SugarTaxWelfareAnalysis /></div>);
+    if (isCompetitionCSTopic) return renderBoardSpecificDiagram("competition_consumer_surplus", <div className="my-4"><CompetitionMonopolySurplusChart /></div>);
+    if (isSupplyDemandMultipleShiftsTopic) return renderBoardSpecificDiagram("supply_demand_multiple_shifts", <div className="my-4"><SupplyDemandMultipleShifts /></div>);
+    if (isPPFNaturalDisasterTopic) return renderBoardSpecificDiagram("ppf_natural_disaster", <div className="my-4"><PPFNaturalDisaster /></div>);
+    if (isPrimaryProductTopic) return renderBoardSpecificDiagram("primary_product_dependency", <div className="my-4"><EconCoffeePriceVolatility /></div>);
+    if (isHarrodDomarTopic) return renderBoardSpecificDiagram("harrod_domar_ppf", <div className="my-4"><EconHarrodDomarPPF /></div>);
+    if (isMultiplierTopic) return renderBoardSpecificDiagram("multiplier_effect", <div className="my-4"><EconMultiplierEffect /></div>);
+    if (isFiscalPolicyTopic) return renderBoardSpecificDiagram("fiscal_policy_ad", <div className="my-4"><EconFiscalPolicyAD /></div>);
+    if (isTermsOfTradeTopic) return renderBoardSpecificDiagram("terms_of_trade", <div className="my-4"><EconTermsOfTrade /></div>);
+    if (isPPFTopic) return renderBoardSpecificDiagram("ppf_growth", <div className="my-4"><PPFBalancedGrowth /></div>);
+    if (isPEDRevenueImpactTopic) return renderBoardSpecificDiagram("ped_revenue_impact", <div className="my-4"><PEDRevenueImpact /></div>);
+    if (isYEDLuxuryTopic) return renderBoardSpecificDiagram("yed_luxury", <div className="my-4"><EconYEDLuxury /></div>);
+    if (isMaxPriceTopic) return renderBoardSpecificDiagram("maximum_price", <div className="my-4"><EconMaxPrice /></div>);
+    if (isShortRunCostsTopic) return renderBoardSpecificDiagram("short_run_costs", <div className="my-4"><EconShortRunCosts /></div>);
+    if (isMinWageTopic) return renderBoardSpecificDiagram("minimum_wage", <div className="my-4"><EconMinWage /></div>);
     return null;
   };
   const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic || isPPFNaturalDisasterTopic || isPEDRevenueImpactTopic || isYEDLuxuryTopic || isMaxPriceTopic || isShortRunCostsTopic || isMinWageTopic || isPrimaryProductTopic || isHarrodDomarTopic || isMultiplierTopic || isFiscalPolicyTopic || isTermsOfTradeTopic;
