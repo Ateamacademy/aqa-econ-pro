@@ -37,7 +37,7 @@ import EconYEDLuxury from "@/components/EconYEDLuxury";
 import EconMaxPrice from "@/components/EconMaxPrice";
 import EconShortRunCosts from "@/components/EconShortRunCosts";
 import EconMinWage from "@/components/EconMinWage";
-import EconPrimaryProductDependency from "@/components/EconPrimaryProductDependency";
+import EconCoffeePriceVolatility from "@/components/EconCoffeePriceVolatility";
 import EconHarrodDomarPPF from "@/components/EconHarrodDomarPPF";
 import EconMultiplierEffect from "@/components/EconMultiplierEffect";
 import EconFiscalPolicyAD from "@/components/EconFiscalPolicyAD";
@@ -924,7 +924,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
               if (kw === "maximum_price" || kw === "price_ceiling") return EconMaxPrice;
               if (kw === "cost_curves" || kw === "short_run_costs") return EconShortRunCosts;
               if (kw === "minimum_wage") return EconMinWage;
-              if (kw === "primary_product_dependency") return EconPrimaryProductDependency;
+              if (kw === "primary_product_dependency") return EconCoffeePriceVolatility;
               if (kw === "harrod_domar_ppf") return EconHarrodDomarPPF;
               if (kw === "multiplier_effect") return EconMultiplierEffect;
               if (kw === "fiscal_policy_ad") return EconFiscalPolicyAD;
@@ -1136,7 +1136,7 @@ function DiagramFeedbackView({
     if (isCompetitionCSTopic) return <div className="my-4"><CompetitionMonopolySurplusChart /></div>;
     if (isSupplyDemandMultipleShiftsTopic) return <div className="my-4"><SupplyDemandMultipleShifts /></div>;
     if (isPPFNaturalDisasterTopic) return <div className="my-4"><PPFNaturalDisaster /></div>;
-    if (isPrimaryProductTopic) return <div className="my-4"><EconPrimaryProductDependency /></div>;
+    if (isPrimaryProductTopic) return <div className="my-4"><EconCoffeePriceVolatility /></div>;
     if (isHarrodDomarTopic) return <div className="my-4"><EconHarrodDomarPPF /></div>;
     if (isMultiplierTopic) return <div className="my-4"><EconMultiplierEffect /></div>;
     if (isFiscalPolicyTopic) return <div className="my-4"><EconFiscalPolicyAD /></div>;
