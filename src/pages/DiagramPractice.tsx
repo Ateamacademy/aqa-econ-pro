@@ -48,6 +48,7 @@ import EdexcelDiagram from "@/components/EdexcelDiagram";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
 import { getScenarioDiagramKeyword } from "@/lib/boardScenarioDiagramKeywords";
+import { normalizeDiagramKeyword } from "@/lib/diagramKeywordAliases";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
 import { useDiagramMarking } from "@/hooks/useDiagramMarking";
 import { AIMarkingPanel } from "@/components/diagram-marking/AIMarkingPanel";
@@ -244,7 +245,7 @@ const buildBoardScenarioTemplates = (subject: string): BoardScenarioTemplate[] =
       topic,
       difficulty,
       marks: inferMarksFromDifficulty(difficulty),
-        expectedDiagramKeyword: getScenarioDiagramKeyword(subject, topic, resolveDiagramType(topic)),
+        expectedDiagramKeyword: normalizeDiagramKeyword(getScenarioDiagramKeyword(subject, topic, resolveDiagramType(topic))) ?? inferDiagramType(topic),
     };
   });
 };
@@ -577,7 +578,8 @@ Return only the finished question.`
         ]
       : `Question: ${generatedQ}\n\nStudent's Diagram Description:\n${diagramDesc}\n\nStudent's Written Explanation:\n${explanation}`;
 
-    const expectedDiagramType = selectedScenario?.expectedDiagramKeyword ?? inferDiagramType(topic, generatedQ, diagramDesc, explanation);
+    const inferredDiagramType = inferDiagramType(topic, generatedQ, diagramDesc, explanation);
+    const expectedDiagramType = normalizeDiagramKeyword(selectedScenario?.expectedDiagramKeyword ?? inferredDiagramType) ?? inferredDiagramType;
 
     // ── Topic-specific rubric: Lorenz Curve / Gini ──
     const isLorenzTopic = expectedDiagramType === "lorenz_curve" ||
@@ -915,7 +917,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
 
           {/* Reference diagram — shown before submission as a collapsible guide */}
           {selectedScenario?.expectedDiagramKeyword && (() => {
-            const kw = selectedScenario.expectedDiagramKeyword;
+            const kw = normalizeDiagramKeyword(selectedScenario.expectedDiagramKeyword) ?? selectedScenario.expectedDiagramKeyword;
             const Comp = (() => {
               if (kw === "ped_revenue_impact" || kw === "ped_elastic" || kw === "ped_inelastic") return PEDRevenueImpact;
               if (kw === "ppf_natural_disaster") return PPFNaturalDisaster;
@@ -1104,10 +1106,22 @@ function DiagramFeedbackView({
   const [showExplain, setShowExplain] = useState(false);
   const [showImprove, setShowImprove] = useState(false);
   const sections = useMemo(() => parseFeedbackSections(feedback), [feedback]);
-  const expectedDiagramType = scenarioKeyword ?? inferDiagramType(topic, generatedQ, diagramDesc, explanation);
+  const inferredDiagramType = inferDiagramType(topic, generatedQ, diagramDesc, explanation);
+  const expectedDiagramType = normalizeDiagramKeyword(scenarioKeyword ?? inferredDiagramType) ?? inferredDiagramType;
   const renderBoardSpecificDiagram = (diagramType: string, fallback: JSX.Element) => {
+    const normalizedDiagramType = normalizeDiagramKeyword(diagramType) ?? diagramType;
     if (subject !== "edexcel-a") return fallback;
-    return <EdexcelDiagram diagramType={diagramType} fallback={fallback} />;
+
+    if (import.meta.env.DEV) {
+      console.debug("[DiagramPractice] Edexcel reference diagram", {
+        requested: diagramType,
+        normalized: normalizedDiagramType,
+        subject,
+        topic,
+      });
+    }
+
+    return <EdexcelDiagram diagramType={normalizedDiagramType} fallback={fallback} />;
   };
 
   // Determine if we should show a dedicated reference diagram component

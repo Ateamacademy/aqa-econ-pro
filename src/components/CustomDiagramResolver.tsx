@@ -20,6 +20,7 @@ import EconHarrodDomarPPF from "@/components/EconHarrodDomarPPF";
 import EconMultiplierEffect from "@/components/EconMultiplierEffect";
 import EconFiscalPolicyAD from "@/components/EconFiscalPolicyAD";
 import EconTermsOfTrade from "@/components/EconTermsOfTrade";
+import { normalizeDiagramKeyword } from "@/lib/diagramKeywordAliases";
 
 /** Edexcel-A-only diagram keywords */
 const EDEXCEL_A_ONLY = new Set([
@@ -38,12 +39,14 @@ const EDEXCEL_A_ONLY = new Set([
 /** Maps a diagram keyword to a custom SVG component, or returns null if none exists.
  *  Pass `board` to restrict board-specific diagrams. */
 export function getCustomDiagramComponent(keyword: string, board?: string): ComponentType | null {
+  const normalizedKeyword = normalizeDiagramKeyword(keyword) ?? keyword;
+
   // Gate Edexcel-A-only diagrams
-  if (EDEXCEL_A_ONLY.has(keyword) && board && !board.toLowerCase().includes("edexcel") ) {
+  if (EDEXCEL_A_ONLY.has(normalizedKeyword) && board && !board.toLowerCase().includes("edexcel") ) {
     return null; // fall through to generic EconDiagramTemplate for other boards
   }
 
-  switch (keyword) {
+  switch (normalizedKeyword) {
     case "negative_externality":
     case "negative_externality_production":
     case "negative_production_externality":

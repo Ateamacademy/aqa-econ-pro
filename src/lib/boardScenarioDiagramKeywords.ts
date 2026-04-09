@@ -1,3 +1,5 @@
+import { normalizeDiagramKeyword } from "@/lib/diagramKeywordAliases";
+
 const BOARD_SCENARIO_DIAGRAM_KEYWORDS: Record<string, Record<string, string>> = {
   "edexcel-a": {
     // Section 1: PPFs, Markets & Allocation
@@ -52,5 +54,5 @@ const BOARD_SCENARIO_DIAGRAM_KEYWORDS: Record<string, Record<string, string>> = 
 };
 
 export function getScenarioDiagramKeyword(subject: string, topic: string, fallback?: string | null) {
-  return BOARD_SCENARIO_DIAGRAM_KEYWORDS[subject]?.[topic] ?? fallback ?? undefined;
+  return normalizeDiagramKeyword(BOARD_SCENARIO_DIAGRAM_KEYWORDS[subject]?.[topic] ?? fallback) ?? undefined;
 }
