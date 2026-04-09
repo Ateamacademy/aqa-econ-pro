@@ -11,6 +11,9 @@ const DIAGRAM_KEYWORD_ALIASES: Record<string, string> = {
   fiscal_ad: "fiscal_policy_ad",
   terms_trade: "terms_of_trade",
   short_run_shutdown: "shutdown_short_run",
+  monopolistic_competition_lr: "monopolistic_competition",
+  monopolistic_competition_sr: "monopolistic_competition",
+  perfectcomp: "perfect_competition",
   yed: "yed_luxury",
 };
 
