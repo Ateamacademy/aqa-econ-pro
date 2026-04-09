@@ -32,6 +32,7 @@ const EDEXCEL_A_ONLY = new Set([
   "multiplier_effect",
   "fiscal_policy_ad",
   "terms_of_trade",
+  "monetary_policy",
 ]);
 
 /** Maps a diagram keyword to a custom SVG component, or returns null if none exists.
