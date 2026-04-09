@@ -1,0 +1,22 @@
+const DIAGRAM_KEYWORD_ALIASES: Record<string, string> = {
+  ped_revenue: "ped_revenue_impact",
+  ppf_balanced_growth: "ppf_growth",
+  ppf_biased_growth: "ppf_growth",
+  ppf_unemployment: "ppf_growth",
+  ppf_inward_shift: "ppf_natural_disaster",
+  max_price: "maximum_price",
+  min_wage: "minimum_wage",
+  primary_product: "primary_product_dependency",
+  harrod_domar: "harrod_domar_ppf",
+  fiscal_ad: "fiscal_policy_ad",
+  terms_trade: "terms_of_trade",
+  short_run_shutdown: "shutdown_short_run",
+  yed: "yed_luxury",
+};
+
+export function normalizeDiagramKeyword(keyword?: string | null) {
+  if (!keyword) return undefined;
+
+  const normalized = keyword.toLowerCase().trim().replace(/[\s-]+/g, "_");
+  return DIAGRAM_KEYWORD_ALIASES[normalized] ?? normalized;
+}

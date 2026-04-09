@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
 export type Subject = "economics" | "edexcel-a" | "edexcel-b" | "ocr" | "cambridge" | "aqa-gcse" | "cambridge-igcse" | "ib" | "wjec" | "eduqas" | "edexcel-igcse" | "ocr-gcse";
 
@@ -35,8 +35,21 @@ const SUBJECT_META: Record<Subject, { label: string; board: string; level: strin
   "ocr-gcse": { label: "Economics", board: "OCR", level: "GCSE" },
 };
 
+const SUBJECT_STORAGE_KEY = "econ-rev-subject";
+
 export function SubjectProvider({ children }: { children: ReactNode }) {
-  const [subject, setSubject] = useState<Subject>("economics");
+  const [subject, setSubject] = useState<Subject>(() => {
+    if (typeof window === "undefined") return "economics";
+
+    const storedSubject = window.localStorage.getItem(SUBJECT_STORAGE_KEY);
+    return storedSubject && storedSubject in SUBJECT_META ? (storedSubject as Subject) : "economics";
+  });
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(SUBJECT_STORAGE_KEY, subject);
+    }
+  }, [subject]);
 
   const meta = SUBJECT_META[subject];
 
