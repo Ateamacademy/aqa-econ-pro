@@ -45,6 +45,7 @@ import EconTermsOfTrade from "@/components/EconTermsOfTrade";
 import EdexcelDiagram from "@/components/EdexcelDiagram";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
+import { getScenarioDiagramKeyword } from "@/lib/boardScenarioDiagramKeywords";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
 import { useDiagramMarking } from "@/hooks/useDiagramMarking";
 import { AIMarkingPanel } from "@/components/diagram-marking/AIMarkingPanel";
@@ -241,7 +242,7 @@ const buildBoardScenarioTemplates = (subject: string): BoardScenarioTemplate[] =
       topic,
       difficulty,
       marks: inferMarksFromDifficulty(difficulty),
-      expectedDiagramKeyword: resolveDiagramType(topic) ?? undefined,
+        expectedDiagramKeyword: getScenarioDiagramKeyword(subject, topic, resolveDiagramType(topic)),
     };
   });
 };
