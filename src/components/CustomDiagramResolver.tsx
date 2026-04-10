@@ -21,6 +21,7 @@ import EconHarrodDomarPPF from "@/components/EconHarrodDomarPPF";
 import EconMultiplierEffect from "@/components/EconMultiplierEffect";
 import EconFiscalPolicyAD from "@/components/EconFiscalPolicyAD";
 import EconTermsOfTrade from "@/components/EconTermsOfTrade";
+import EconCoffeeMarketUK from "@/components/EconCoffeeMarketUK";
 import MonopolisticCompetitionDiagram from "@/components/MonopolisticCompetitionDiagram";
 import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram";
 import { normalizeDiagramKeyword } from "@/lib/diagramKeywordAliases";
@@ -90,6 +91,9 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
       return EconFiscalPolicyAD;
     case "terms_of_trade":
       return EconTermsOfTrade;
+    case "supply_demand":
+    case "coffee_market_uk":
+      return EconCoffeeMarketUK;
     case "monopolistic_competition":
       return MonopolisticCompetitionDiagram;
     case "perfect_competition":
