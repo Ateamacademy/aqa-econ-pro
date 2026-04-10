@@ -43,6 +43,7 @@ import EconHarrodDomarPPF from "@/components/EconHarrodDomarPPF";
 import EconMultiplierEffect from "@/components/EconMultiplierEffect";
 import EconFiscalPolicyAD from "@/components/EconFiscalPolicyAD";
 import EconTermsOfTrade from "@/components/EconTermsOfTrade";
+import EconCoffeeMarketUK from "@/components/EconCoffeeMarketUK";
 import MonopolisticCompetitionDiagram from "@/components/MonopolisticCompetitionDiagram";
 import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram";
 import EdexcelDiagram from "@/components/EdexcelDiagram";
