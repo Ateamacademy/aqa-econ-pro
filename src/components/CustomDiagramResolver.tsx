@@ -8,7 +8,7 @@ import NegativeExternalityPalmOil from "@/components/NegativeExternalityPalmOil"
 import SugarTaxWelfareAnalysis from "@/components/SugarTaxWelfareAnalysis";
 import CompetitionMonopolySurplusChart from "@/components/CompetitionMonopolySurplusChart";
 import SupplyDemandMultipleShifts from "@/components/SupplyDemandMultipleShifts";
-import PPFBalancedGrowth from "@/components/PPFBalancedGrowth";
+import EconPPFUKCapacity from "@/components/EconPPFUKCapacity";
 import PPFNaturalDisaster from "@/components/PPFNaturalDisaster";
 import PEDRevenueImpact from "@/components/PEDRevenueImpact";
 import EconYEDLuxury from "@/components/EconYEDLuxury";
@@ -62,7 +62,7 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
       return SupplyDemandMultipleShifts;
     case "ppf":
     case "ppf_growth":
-      return PPFBalancedGrowth;
+      return EconPPFUKCapacity;
     case "ppf_natural_disaster":
       return PPFNaturalDisaster;
     case "ped_revenue_impact":

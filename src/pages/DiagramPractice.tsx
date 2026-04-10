@@ -30,7 +30,7 @@ import NegativeExternalityPalmOil from "@/components/NegativeExternalityPalmOil"
 import SugarTaxWelfareAnalysis from "@/components/SugarTaxWelfareAnalysis";
 import CompetitionMonopolySurplusChart from "@/components/CompetitionMonopolySurplusChart";
 import SupplyDemandMultipleShifts from "@/components/SupplyDemandMultipleShifts";
-import PPFBalancedGrowth from "@/components/PPFBalancedGrowth";
+import EconPPFUKCapacity from "@/components/EconPPFUKCapacity";
 import PPFNaturalDisaster from "@/components/PPFNaturalDisaster";
 import PEDRevenueImpact from "@/components/PEDRevenueImpact";
 import EconYEDLuxury from "@/components/EconYEDLuxury";
@@ -922,7 +922,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             const Comp = (() => {
               if (kw === "ped_revenue_impact" || kw === "ped_elastic" || kw === "ped_inelastic") return PEDRevenueImpact;
               if (kw === "ppf_natural_disaster") return PPFNaturalDisaster;
-              if (kw === "ppf" || kw === "ppf_growth") return PPFBalancedGrowth;
+              if (kw === "ppf" || kw === "ppf_growth") return EconPPFUKCapacity;
               if (kw === "supply_demand_multiple_shifts") return SupplyDemandMultipleShifts;
               if (kw === "competition_consumer_surplus") return CompetitionMonopolySurplusChart;
               if (kw === "sugar_tax") return SugarTaxWelfareAnalysis;
@@ -1179,7 +1179,7 @@ function DiagramFeedbackView({
     if (isTermsOfTradeTopic) return renderBoardSpecificDiagram("terms_of_trade", <div className="my-4"><EconTermsOfTrade /></div>);
     if (isMonopolisticCompetitionTopic) return renderBoardSpecificDiagram("monopolistic_competition", <div className="my-4"><MonopolisticCompetitionDiagram /></div>);
     if (isPerfectCompetitionTopic) return renderBoardSpecificDiagram("perfect_competition", <div className="my-4"><PerfectCompetitionDiagram /></div>);
-    if (isPPFTopic) return renderBoardSpecificDiagram("ppf_growth", <div className="my-4"><PPFBalancedGrowth /></div>);
+    if (isPPFTopic) return renderBoardSpecificDiagram("ppf_growth", <div className="my-4"><EconPPFUKCapacity /></div>);
     if (isPEDRevenueImpactTopic) return renderBoardSpecificDiagram("ped_revenue_impact", <div className="my-4"><PEDRevenueImpact /></div>);
     if (isYEDLuxuryTopic) return renderBoardSpecificDiagram("yed_luxury", <div className="my-4"><EconYEDLuxury /></div>);
     if (isMaxPriceTopic) return renderBoardSpecificDiagram("maximum_price", <div className="my-4"><EconMaxPrice /></div>);
