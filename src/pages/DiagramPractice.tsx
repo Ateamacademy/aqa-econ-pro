@@ -38,6 +38,7 @@ import EconMaxPrice from "@/components/EconMaxPrice";
 import EconShortRunCosts from "@/components/EconShortRunCosts";
 import EconMinWage from "@/components/EconMinWage";
 import EconCoffeePriceVolatility from "@/components/EconCoffeePriceVolatility";
+import EconPrimaryProductDependency from "@/components/EconPrimaryProductDependency";
 import EconHarrodDomarPPF from "@/components/EconHarrodDomarPPF";
 import EconMultiplierEffect from "@/components/EconMultiplierEffect";
 import EconFiscalPolicyAD from "@/components/EconFiscalPolicyAD";
@@ -930,7 +931,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
               if (kw === "maximum_price" || kw === "price_ceiling") return EconMaxPrice;
               if (kw === "cost_curves" || kw === "short_run_costs") return EconShortRunCosts;
               if (kw === "minimum_wage") return EconMinWage;
-              if (kw === "primary_product_dependency") return EconCoffeePriceVolatility;
+              if (kw === "primary_product_dependency") return EconPrimaryProductDependency;
               if (kw === "harrod_domar_ppf") return EconHarrodDomarPPF;
               if (kw === "multiplier_effect") return EconMultiplierEffect;
               if (kw === "fiscal_policy_ad") return EconFiscalPolicyAD;
@@ -1171,7 +1172,7 @@ function DiagramFeedbackView({
     if (isCompetitionCSTopic) return renderBoardSpecificDiagram("competition_consumer_surplus", <div className="my-4"><CompetitionMonopolySurplusChart /></div>);
     if (isSupplyDemandMultipleShiftsTopic) return renderBoardSpecificDiagram("supply_demand_multiple_shifts", <div className="my-4"><SupplyDemandMultipleShifts /></div>);
     if (isPPFNaturalDisasterTopic) return renderBoardSpecificDiagram("ppf_natural_disaster", <div className="my-4"><PPFNaturalDisaster /></div>);
-    if (isPrimaryProductTopic) return renderBoardSpecificDiagram("primary_product_dependency", <div className="my-4"><EconCoffeePriceVolatility /></div>);
+    if (isPrimaryProductTopic) return renderBoardSpecificDiagram("primary_product_dependency", <div className="my-4"><EconPrimaryProductDependency /></div>);
     if (isHarrodDomarTopic) return renderBoardSpecificDiagram("harrod_domar_ppf", <div className="my-4"><EconHarrodDomarPPF /></div>);
     if (isMultiplierTopic) return renderBoardSpecificDiagram("multiplier_effect", <div className="my-4"><EconMultiplierEffect /></div>);
     if (isFiscalPolicyTopic) return renderBoardSpecificDiagram("fiscal_policy_ad", <div className="my-4"><EconFiscalPolicyAD /></div>);
