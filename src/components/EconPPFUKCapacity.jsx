@@ -1,41 +1,79 @@
 export default function EconPPFUKCapacity() {
   return (
-    <div style={{background:'#fff',borderRadius:'8px',padding:'8px',maxWidth:'620px',margin:'0 auto',fontFamily:"'Arial',sans-serif",border:'1px solid #ccc'}}>
-      <svg viewBox="0 0 620 540" width="100%" style={{display:'block'}}>
+    <div style={{background:'#fff',borderRadius:'8px',padding:'8px',maxWidth:'640px',margin:'0 auto',fontFamily:"'Arial',sans-serif",border:'1px solid #ccc'}}>
+      <svg viewBox="0 0 640 620" width="100%" style={{display:'block'}}>
         <defs>
           <marker id="ukR" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#111"/></marker>
           <marker id="ukU" markerWidth="7" markerHeight="10" refX="3.5" refY="1" orient="auto"><polygon points="0 10,3.5 0,7 10" fill="#111"/></marker>
           <marker id="ukBlue" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#1a5fb4"/></marker>
         </defs>
-        <rect width="620" height="540" fill="#fff"/>
-        <text x="310" y="28" textAnchor="middle" fontSize="15" fontWeight="bold" fill="#111">UK Productive Capacity: Effect of Vocational Training</text>
-        <text x="310" y="46" textAnchor="middle" fontSize="12" fill="#555">and Capital Investment on the PPF</text>
-        <line x1="85" y1="468" x2="85" y2="30" stroke="#111" strokeWidth="2.5" markerEnd="url(#ukU)"/>
-        <line x1="85" y1="468" x2="542" y2="468" stroke="#111" strokeWidth="2.5" markerEnd="url(#ukR)"/>
-        <text x="77" y="24" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Capital</text>
-        <text x="77" y="38" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Goods</text>
-        <text x="302.5" y="508" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Consumer Goods</text>
-        <text x="75" y="484" textAnchor="middle" fontSize="13" fill="#111">O</text>
-        <polyline points="85.0,174.0 89.8,174.0 94.6,174.1 99.3,174.3 104.1,174.6 108.9,174.9 113.7,175.3 118.4,175.8 123.2,176.3 127.9,176.9 132.6,177.6 137.4,178.4 142.1,179.2 146.7,180.1 151.4,181.1 156.1,182.1 160.7,183.2 165.3,184.4 170.0,185.7 174.5,187.0 179.1,188.4 183.6,189.9 188.1,191.4 192.6,193.0 197.1,194.6 201.5,196.4 205.9,198.2 210.3,200.0 214.6,202.0 219.0,204.0 223.2,206.0 227.5,208.2 231.7,210.4 235.9,212.6 240.0,214.9 244.1,217.3 248.2,219.8 252.2,222.3 256.2,224.8 260.1,227.5 264.0,230.1 267.8,232.9 271.6,235.7 275.4,238.6 279.1,241.5 282.8,244.4 286.4,247.5 289.9,250.5 293.4,253.7 296.9,256.9 300.3,260.1 303.7,263.4 307.0,266.7 310.2,270.1 313.4,273.6 316.5,277.1 319.6,280.6 322.6,284.2 325.6,287.8 328.5,291.5 331.3,295.2 334.1,298.9 336.8,302.7 339.5,306.6 342.1,310.5 344.6,314.4 347.1,318.3 349.5,322.3 351.8,326.4 354.1,330.4 356.3,334.5 358.4,338.7 360.5,342.8 362.5,347.0 364.5,351.2 366.3,355.5 368.1,359.8 369.8,364.1 371.5,368.4 373.1,372.8 374.6,377.1 376.0,381.6 377.4,386.0 378.7,390.4 379.9,394.9 381.1,399.4 382.2,403.9 383.2,408.4 384.1,412.9 385.0,417.5 385.8,422.0 386.5,426.6 387.1,431.2 387.7,435.7 388.1,440.3 388.6,444.9 388.9,449.5 389.2,454.2 389.3,458.8 389.5,463.4 389.5,468.0" fill="none" stroke="#111" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
-        <polyline points="85.0,81.6 91.3,81.6 97.6,81.8 103.9,82.0 110.1,82.4 116.4,82.8 122.7,83.3 128.9,83.9 135.2,84.6 141.4,85.5 147.6,86.4 153.8,87.4 160.0,88.4 166.2,89.6 172.3,90.9 178.4,92.3 184.5,93.7 190.6,95.3 196.7,96.9 202.7,98.7 208.7,100.5 214.6,102.4 220.6,104.4 226.5,106.5 232.3,108.7 238.1,111.0 243.9,113.4 249.7,115.8 255.4,118.4 261.1,121.0 266.7,123.7 272.3,126.5 277.8,129.4 283.3,132.4 288.7,135.4 294.1,138.5 299.4,141.8 304.7,145.0 309.9,148.4 315.1,151.9 320.2,155.4 325.3,159.0 330.3,162.7 335.2,166.4 340.1,170.3 344.9,174.2 349.7,178.2 354.3,182.2 359.0,186.3 363.5,190.5 368.0,194.8 372.4,199.1 376.7,203.5 381.0,207.9 385.2,212.5 389.3,217.1 393.4,221.7 397.3,226.4 401.2,231.2 405.0,236.0 408.8,240.9 412.4,245.8 416.0,250.8 419.5,255.9 422.9,261.0 426.2,266.1 429.5,271.3 432.6,276.6 435.7,281.9 438.7,287.2 441.6,292.6 444.4,298.0 447.1,303.5 449.7,309.0 452.3,314.5 454.7,320.1 457.1,325.8 459.4,331.4 461.5,337.1 463.6,342.8 465.6,348.6 467.5,354.4 469.3,360.2 471.0,366.0 472.6,371.9 474.1,377.8 475.6,383.7 476.9,389.6 478.1,395.6 479.2,401.6 480.3,407.6 481.2,413.6 482.0,419.6 482.8,425.6 483.4,431.6 484.0,437.7 484.4,443.7 484.8,449.8 485.0,455.9 485.2,461.9 485.2,468.0" fill="none" stroke="#1a5fb4" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
-        <text x="393.8" y="473.4" textAnchor="start" fontSize="14" fontWeight="bold" fill="#111">PPF</text>
-        <text x="427.8" y="477.4" fontSize="11" fill="#111">1</text>
-        <text x="489.6" y="473.4" textAnchor="start" fontSize="14" fontWeight="bold" fill="#1a5fb4">PPF</text>
-        <text x="523.6" y="477.4" fontSize="11" fill="#1a5fb4">2</text>
-        <line x1="128.5" y1="182.4" x2="141.6" y2="98.4" stroke="#1a5fb4" strokeWidth="2.2" markerEnd="url(#ukBlue)"/>
-        <line x1="259.0" y1="228.6" x2="311.2" y2="157.2" stroke="#1a5fb4" strokeWidth="2.2" markerEnd="url(#ukBlue)"/>
-        <line x1="367.8" y1="426.0" x2="450.4" y2="413.4" stroke="#1a5fb4" strokeWidth="2.2" markerEnd="url(#ukBlue)"/>
-        <line x1="85" y1="260.1" x2="300.3" y2="260.1" stroke="rgba(0,0,0,0.30)" strokeWidth="1.3" strokeDasharray="7,5"/>
-        <line x1="300.3" y1="260.1" x2="300.3" y2="468" stroke="rgba(0,0,0,0.30)" strokeWidth="1.3" strokeDasharray="7,5"/>
-        <line x1="85" y1="194.6" x2="368.2" y2="194.6" stroke="rgba(26,95,180,0.35)" strokeWidth="1.3" strokeDasharray="7,5"/>
-        <line x1="368.2" y1="194.6" x2="368.2" y2="468" stroke="rgba(26,95,180,0.35)" strokeWidth="1.3" strokeDasharray="7,5"/>
-        <circle cx="300.3" cy="260.1" r="5" fill="#fff" stroke="#111" strokeWidth="2"/>
-        <circle cx="368.2" cy="194.6" r="5" fill="#fff" stroke="#1a5fb4" strokeWidth="2"/>
-        <rect x="90" y="460" width="430" height="58" rx="5" fill="#f0f4fb" stroke="#c8d4e8" strokeWidth="1"/>
-        <text x="100" y="478" fontSize="11" fontWeight="bold" fill="#111">Microeconomic Reasoning:</text>
-        <text x="100" y="493" fontSize="11" fill="#333">Vocational training improves labour productivity (human capital). Capital</text>
-        <text x="100" y="507" fontSize="11" fill="#333">investment expands the capital stock. Both increase the quantity and quality</text>
-        <text x="100" y="521" fontSize="11" fill="#333">of factors of production, shifting the PPF outward from PPF1 to PPF2.</text>
+        <rect width="640" height="620" fill="#fff"/>
+
+        {/* Title */}
+        <text x="320" y="30" textAnchor="middle" fontSize="15" fontWeight="bold" fill="#111">UK Productive Capacity: Effect of Vocational Training</text>
+        <text x="320" y="50" textAnchor="middle" fontSize="12" fill="#555">and Capital Investment on the PPF</text>
+
+        {/* Y-axis */}
+        <line x1="100" y1="420" x2="100" y2="53" stroke="#111" strokeWidth="2.5" markerEnd="url(#ukU)"/>
+        {/* X-axis */}
+        <line x1="100" y1="420" x2="538" y2="420" stroke="#111" strokeWidth="2.5" markerEnd="url(#ukR)"/>
+
+        {/* Axis labels */}
+        <text x="96" y="45" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Capital</text>
+        <text x="96" y="59" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Goods</text>
+        <text x="319" y="456" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Consumer Goods</text>
+        <text x="86" y="436" textAnchor="middle" fontSize="13" fill="#111">O</text>
+
+        {/* Y-axis capacity ticks */}
+        <line x1="94" y1="110.0" x2="106" y2="110.0" stroke="#888" strokeWidth="1.2"/>
+        <line x1="94" y1="30.0" x2="106" y2="30.0" stroke="#1a5fb4" strokeWidth="1.2"/>
+
+        {/* X-axis capacity ticks */}
+        <line x1="432.0" y1="414" x2="432.0" y2="426" stroke="#888" strokeWidth="1.2"/>
+        <line x1="512.0" y1="414" x2="512.0" y2="426" stroke="#1a5fb4" strokeWidth="1.2"/>
+
+        {/* PPF1 (black) */}
+        <polyline points="100.0,110.0 105.2,110.0 110.4,110.2 115.5,110.3 120.7,110.6 125.9,111.0 131.1,111.4 136.2,111.9 141.4,112.4 146.5,113.1 151.6,113.8 156.7,114.6 161.8,115.5 166.9,116.4 172.0,117.5 177.0,118.6 182.1,119.7 187.1,121.0 192.1,122.3 197.0,123.7 202.0,125.2 206.9,126.7 211.8,128.3 216.6,130.0 221.5,131.8 226.3,133.6 231.1,135.5 235.8,137.5 240.5,139.5 245.2,141.6 249.8,143.8 254.4,146.0 259.0,148.3 263.5,150.7 268.0,153.2 272.4,155.7 276.8,158.3 281.2,160.9 285.5,163.6 289.8,166.4 294.0,169.2 298.1,172.1 302.3,175.1 306.3,178.1 310.3,181.1 314.3,184.3 318.2,187.5 322.1,190.7 325.9,194.0 329.7,197.4 333.3,200.8 337.0,204.3 340.6,207.8 344.1,211.4 347.5,215.0 350.9,218.7 354.3,222.4 357.5,226.2 360.8,230.0 363.9,233.9 367.0,237.8 370.0,241.7 372.9,245.8 375.8,249.8 378.6,253.9 381.4,258.0 384.0,262.2 386.6,266.4 389.2,270.7 391.6,274.9 394.0,279.3 396.3,283.6 398.6,288.0 400.8,292.4 402.9,296.9 404.9,301.4 406.8,305.9 408.7,310.4 410.5,315.0 412.2,319.6 413.8,324.2 415.4,328.8 416.9,333.5 418.3,338.2 419.6,342.9 420.9,347.6 422.1,352.4 423.1,357.1 424.2,361.9 425.1,366.7 425.9,371.5 426.7,376.3 427.4,381.1 428.0,386.0 428.5,390.8 429.0,395.7 429.3,400.5 429.6,405.4 429.8,410.3 430.0,415.1 430.0,420.0" fill="none" stroke="#111" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
+
+        {/* PPF2 (blue) */}
+        <polyline points="100.0,30.0 106.4,30.0 112.9,30.2 119.3,30.4 125.7,30.8 132.2,31.2 138.6,31.7 145.0,32.4 151.4,33.1 157.8,33.9 164.1,34.8 170.5,35.8 176.8,36.9 183.1,38.1 189.4,39.4 195.7,40.8 202.0,42.3 208.2,43.8 214.4,45.5 220.6,47.2 226.7,49.1 232.8,51.0 238.9,53.1 244.9,55.2 250.9,57.4 256.9,59.7 262.8,62.1 268.7,64.6 274.6,67.1 280.4,69.8 286.1,72.5 291.9,75.3 297.5,78.2 303.1,81.2 308.7,84.3 314.2,87.5 319.7,90.7 325.1,94.0 330.5,97.4 335.8,100.9 341.0,104.5 346.2,108.1 351.3,111.8 356.3,115.6 361.3,119.5 366.3,123.4 371.1,127.5 375.9,131.5 380.7,135.7 385.3,139.9 389.9,144.2 394.4,148.6 398.9,153.0 403.2,157.5 407.5,162.1 411.8,166.7 415.9,171.4 420.0,176.2 424.0,181.0 427.9,185.8 431.7,190.8 435.4,195.7 439.1,200.8 442.7,205.9 446.2,211.0 449.6,216.2 452.9,221.5 456.1,226.8 459.3,232.1 462.3,237.5 465.3,242.9 468.2,248.4 471.0,253.9 473.7,259.5 476.3,265.1 478.8,270.8 481.2,276.4 483.5,282.1 485.8,287.9 487.9,293.7 489.9,299.5 491.9,305.3 493.7,311.2 495.5,317.1 497.1,323.0 498.7,329.0 500.1,334.9 501.5,340.9 502.7,346.9 503.9,352.9 505.0,359.0 505.9,365.0 506.8,371.1 507.5,377.2 508.2,383.3 508.7,389.4 509.2,395.5 509.5,401.6 509.8,407.7 509.9,413.9 510.0,420.0" fill="none" stroke="#1a5fb4" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
+
+        {/* PPF1 label — below x-axis at curve end, clearly spaced */}
+        <text x="438.0" y="438.0" textAnchor="start" fontSize="14" fontWeight="bold" fill="#111">PPF</text>
+        <text x="472.0" y="442.0" fontSize="11" fill="#111">1</text>
+
+        {/* PPF2 label — further right, same row */}
+        <text x="518.0" y="438.0" textAnchor="start" fontSize="14" fontWeight="bold" fill="#1a5fb4">PPF</text>
+        <text x="552.0" y="442.0" fontSize="11" fill="#1a5fb4">2</text>
+
+        {/* Three outward shift arrows */}
+        <line x1="172.0" y1="117.5" x2="191.5" y2="37.4" stroke="#1a5fb4" strokeWidth="2.2" markerEnd="url(#ukBlue)"/>
+        <line x1="286.3" y1="164.1" x2="333.5" y2="96.1" stroke="#1a5fb4" strokeWidth="2.2" markerEnd="url(#ukBlue)"/>
+        <line x1="409.9" y1="313.5" x2="487.0" y2="284.0" stroke="#1a5fb4" strokeWidth="2.2" markerEnd="url(#ukBlue)"/>
+
+        {/* "Outward shift" annotation — placed in open space centre-right */}
+        <text x="360.0" y="107.0" fontSize="12" fontWeight="bold" fill="#1a5fb4">Economic Growth</text>
+        <text x="360.0" y="123.0" fontSize="12" fill="#1a5fb4">(Outward Shift)</text>
+        <line x1="400.0" y1="127.0" x2="191.5" y2="37.4" stroke="#1a5fb4" strokeWidth="1.2" strokeDasharray="5,4"/>
+
+        {/* Dashed guides from PPF1 sample point */}
+        <line x1="100" y1="200.8" x2="333.3" y2="200.8" stroke="rgba(0,0,0,0.28)" strokeWidth="1.3" strokeDasharray="7,5"/>
+        <line x1="333.3" y1="200.8" x2="333.3" y2="420" stroke="rgba(0,0,0,0.28)" strokeWidth="1.3" strokeDasharray="7,5"/>
+
+        {/* Dashed guides from PPF2 sample point */}
+        <line x1="100" y1="144.2" x2="389.9" y2="144.2" stroke="rgba(26,95,180,0.32)" strokeWidth="1.3" strokeDasharray="7,5"/>
+        <line x1="389.9" y1="144.2" x2="389.9" y2="420" stroke="rgba(26,95,180,0.32)" strokeWidth="1.3" strokeDasharray="7,5"/>
+
+        {/* Dots at sample points */}
+        <circle cx="333.3" cy="200.8" r="5" fill="#fff" stroke="#111" strokeWidth="2"/>
+        <circle cx="389.9" cy="144.2" r="5" fill="#fff" stroke="#1a5fb4" strokeWidth="2"/>
+
+        {/* Reasoning box — well below chart, with generous padding */}
+        <rect x="100" y="472" width="438" height="80" rx="6" fill="#f0f4fb" stroke="#c8d4e8" strokeWidth="1.2"/>
+        <text x="112" y="492" fontSize="11" fontWeight="bold" fill="#111">Microeconomic Reasoning:</text>
+        <text x="112" y="509" fontSize="11" fill="#333">Vocational training improves labour productivity (human capital).</text>
+        <text x="112" y="525" fontSize="11" fill="#333">Capital investment expands the capital stock. Both increase the quantity</text>
+        <text x="112" y="541" fontSize="11" fill="#333">and quality of factors of production, shifting the PPF outward (PPF1 to PPF2).</text>
       </svg>
     </div>
   );
