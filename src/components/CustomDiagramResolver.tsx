@@ -16,6 +16,7 @@ import EconMaxPrice from "@/components/EconMaxPrice";
 import EconShortRunCosts from "@/components/EconShortRunCosts";
 import EconMinWage from "@/components/EconMinWage";
 import EconCoffeePriceVolatility from "@/components/EconCoffeePriceVolatility";
+import EconPrimaryProductDependency from "@/components/EconPrimaryProductDependency";
 import EconHarrodDomarPPF from "@/components/EconHarrodDomarPPF";
 import EconMultiplierEffect from "@/components/EconMultiplierEffect";
 import EconFiscalPolicyAD from "@/components/EconFiscalPolicyAD";
@@ -80,7 +81,7 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
     case "minimum_wage":
       return EconMinWage;
     case "primary_product_dependency":
-      return EconCoffeePriceVolatility;
+      return EconPrimaryProductDependency;
     case "harrod_domar_ppf":
       return EconHarrodDomarPPF;
     case "multiplier_effect":
