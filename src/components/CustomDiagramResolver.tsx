@@ -4,6 +4,7 @@
  * Board-aware: some keywords resolve to different components per exam board.
  */
 import type { ComponentType } from "react";
+import EconIndirectTaxDiagram from "@/components/EconIndirectTaxDiagram";
 import NegativeExternalityPalmOil from "@/components/NegativeExternalityPalmOil";
 import SugarTaxWelfareAnalysis from "@/components/SugarTaxWelfareAnalysis";
 import CompetitionMonopolySurplusChart from "@/components/CompetitionMonopolySurplusChart";
@@ -120,6 +121,8 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
       return MonopolisticCompetitionDiagram;
     case "perfect_competition":
       return PerfectCompetitionDiagram;
+    case "indirect_tax":
+      return EconIndirectTaxDiagram;
     default:
       return null;
   }

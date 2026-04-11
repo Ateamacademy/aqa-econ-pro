@@ -17,6 +17,7 @@ import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import LorenzCurveChart from "@/components/diagrams/LorenzCurveChart";
 import LRACDiagram from "@/components/diagrams/LRACDiagram";
 import SpecificAdValoremDiagram from "@/components/SpecificAdValoremDiagram";
+import EconIndirectTaxDiagram from "@/components/EconIndirectTaxDiagram";
 import InformationFailureDemeritGood from "@/components/InformationFailureDemeritGood";
 import TradablePollutionPermits from "@/components/TradablePollutionPermits";
 import ShutDownPriceShortRun from "@/components/ShutDownPriceShortRun";
@@ -949,6 +950,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
               if (kw === "terms_of_trade") return EconTermsOfTradeUK;
               if (kw === "supply_demand" || kw === "coffee_market_uk") return EconCoffeeMarketUK;
               if (kw === "specific_ad_valorem") return SpecificAdValoremDiagram;
+              if (kw === "indirect_tax") return EconIndirectTaxDiagram;
               if (kw === "shutdown_short_run") return ShutDownPriceShortRun;
               if (kw === "kinked_demand") return KinkedDemandCurve;
               if (kw === "monopsony") return MonopsonyEmployerCurve;
@@ -1145,6 +1147,7 @@ function DiagramFeedbackView({
   const isLorenzTopic = /lorenz|gini|income\s*inequality|income\s*distribution/i.test(topic);
   const isLRACTopic = /lrac|long.run average cost|economies.*scale|diseconomies|envelope/i.test(topic);
   const isSpecificAdValoremTopic = expectedDiagramType === "specific_ad_valorem" || /ad\s*valorem\s*vs\s*specific|specific\s*tax\s*&\s*ad\s*valorem|specific.*ad\s*valorem/i.test(topic);
+  const isIndirectTaxTopic = expectedDiagramType === "indirect_tax" || /indirect\s*tax\s*&?\s*subsid|indirect\s*tax.*subsid/i.test(topic);
   const isInfoFailureDemeritTopic = expectedDiagramType === "information_failure_demerit" || /information\s*failure.*demerit|demerit\s*good|over.?consumption.*information/i.test(topic);
   const isTradablePollutionTopic = expectedDiagramType === "tradable_pollution_permits" || /tradable\s*pollution\s*permits|cap.and.trade|emissions?\s*trading/i.test(topic);
   const isShutdownTopic = expectedDiagramType === "shutdown_short_run" || /shut.?down\s*p(rice|oint)|short.run\s*shutdown/i.test(topic);
@@ -1178,6 +1181,7 @@ function DiagramFeedbackView({
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     if (isLorenzTopic) return <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
     if (isLRACTopic) return <LRACDiagram className="mt-3" />;
+    if (isIndirectTaxTopic) return renderBoardSpecificDiagram("indirect_tax", <div className="my-4"><EconIndirectTaxDiagram /></div>);
     if (isSpecificAdValoremTopic) return renderBoardSpecificDiagram("specific_ad_valorem", <div className="my-4"><SpecificAdValoremDiagram /></div>);
     if (isInfoFailureDemeritTopic) return renderBoardSpecificDiagram("information_failure_demerit", <div className="my-4"><InformationFailureDemeritGood /></div>);
     if (isTradablePollutionTopic) return renderBoardSpecificDiagram("tradable_pollution_permits", <div className="my-4"><TradablePollutionPermits /></div>);
