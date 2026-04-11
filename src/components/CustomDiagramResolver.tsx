@@ -28,6 +28,11 @@ import EconTermsOfTrade from "@/components/EconTermsOfTrade";
 import EconCoffeeMarketUK from "@/components/EconCoffeeMarketUK";
 import MonopolisticCompetitionDiagram from "@/components/MonopolisticCompetitionDiagram";
 import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram";
+import EconFiscalADAS from "@/components/EconFiscalADAS";
+import EconMultiplierCircular from "@/components/EconMultiplierCircular";
+import EconTermsOfTradeUK from "@/components/EconTermsOfTradeUK";
+import EconHarrodDomarPPFEthiopia from "@/components/EconHarrodDomarPPFEthiopia";
+import EconZambiaCopperVolatility from "@/components/EconZambiaCopperVolatility";
 import { normalizeDiagramKeyword } from "@/lib/diagramKeywordAliases";
 
 /** Edexcel-A-only diagram keywords */
@@ -99,15 +104,15 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
     case "monetary_transmission":
       return EconMonetaryPolicyFlow;
     case "primary_product_dependency":
-      return EconPrimaryProductDependency;
+      return EconZambiaCopperVolatility;
     case "harrod_domar_ppf":
-      return EconHarrodDomarPPF;
+      return EconHarrodDomarPPFEthiopia;
     case "multiplier_effect":
-      return EconMultiplierEffect;
+      return EconMultiplierCircular;
     case "fiscal_policy_ad":
-      return EconFiscalPolicyAD;
+      return EconFiscalADAS;
     case "terms_of_trade":
-      return EconTermsOfTrade;
+      return EconTermsOfTradeUK;
     case "supply_demand":
     case "coffee_market_uk":
       return EconCoffeeMarketUK;
