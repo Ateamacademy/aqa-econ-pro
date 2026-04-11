@@ -28,6 +28,7 @@ import KeynesianASSpareCurve from "@/components/KeynesianASSpareCurve";
 import TariffDiagram from "@/components/TariffDiagram";
 import NegativeExternalityDiagram from "@/components/NegativeExternalityDiagram";
 import NegativeExternalityPalmOil from "@/components/NegativeExternalityPalmOil";
+import EconNegativeExternalityDark from "@/components/EconNegativeExternalityDark";
 import SugarTaxWelfareAnalysis from "@/components/SugarTaxWelfareAnalysis";
 import CompetitionMonopolySurplusChart from "@/components/CompetitionMonopolySurplusChart";
 import SupplyDemandMultipleShifts from "@/components/SupplyDemandMultipleShifts";
@@ -935,7 +936,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
               if (kw === "supply_demand_multiple_shifts") return SupplyDemandMultipleShifts;
               if (kw === "competition_consumer_surplus") return CompetitionMonopolySurplusChart;
               if (kw === "sugar_tax") return SugarTaxWelfareAnalysis;
-              if (kw === "negative_externality" || kw === "negative_externality_production" || kw === "negative_production_externality") return NegativeExternalityPalmOil;
+              if (kw === "negative_externality" || kw === "negative_externality_production" || kw === "negative_production_externality") return EconNegativeExternalityDark;
               if (kw === "yed_luxury" || kw === "yed") return EconYEDLuxury;
               if (kw === "maximum_price" || kw === "price_ceiling") return EconMaxPrice;
               if (kw === "cost_curves" || kw === "short_run_costs") return EconShortRunCosts;
@@ -1191,7 +1192,7 @@ function DiagramFeedbackView({
     if (isPhillipsCurveTopic) return renderBoardSpecificDiagram("phillips_curve", <div className="my-4"><PhillipsCurveSRvsLR /></div>);
     if (isKeynesianASTopic) return renderBoardSpecificDiagram("keynesian_as", <div className="my-4"><KeynesianASSpareCurve /></div>);
     if (isTariffTopic) return renderBoardSpecificDiagram("tariff", <div className="my-4"><TariffDiagram /></div>);
-    if (isNegativeExternalityTopic) return renderBoardSpecificDiagram("negative_externality", <div className="my-4"><NegativeExternalityPalmOil /></div>);
+    if (isNegativeExternalityTopic) return renderBoardSpecificDiagram("negative_externality", <div className="my-4"><EconNegativeExternalityDark /></div>);
     if (isSugarTaxTopic) return renderBoardSpecificDiagram("sugar_tax", <div className="my-4"><SugarTaxWelfareAnalysis /></div>);
     if (isCompetitionCSTopic) return renderBoardSpecificDiagram("competition_consumer_surplus", <div className="my-4"><CompetitionMonopolySurplusChart /></div>);
     if (isSupplyDemandMultipleShiftsTopic) return renderBoardSpecificDiagram("supply_demand_multiple_shifts", <div className="my-4"><SupplyDemandMultipleShifts /></div>);
