@@ -11,6 +11,7 @@ import SupplyDemandMultipleShifts from "@/components/SupplyDemandMultipleShifts"
 import EconPPFUKCapacity from "@/components/EconPPFUKCapacity";
 import PPFNaturalDisaster from "@/components/PPFNaturalDisaster";
 import PEDRevenueImpact from "@/components/PEDRevenueImpact";
+import EconPEDRevenueElastic from "@/components/EconPEDRevenueElastic";
 import EconYEDLuxury from "@/components/EconYEDLuxury";
 import EconMaxPrice from "@/components/EconMaxPrice";
 import EconShortRunCosts from "@/components/EconShortRunCosts";
