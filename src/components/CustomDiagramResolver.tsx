@@ -15,12 +15,15 @@ import EconPEDRevenueElastic from "@/components/EconPEDRevenueElastic";
 import EconYEDLuxury from "@/components/EconYEDLuxury";
 import EconMaxPrice from "@/components/EconMaxPrice";
 import EconShortRunCosts from "@/components/EconShortRunCosts";
-import EconMinWage from "@/components/EconMinWage";
+import EconLabourMinWage from "@/components/EconLabourMinWage";
 import EconCoffeePriceVolatility from "@/components/EconCoffeePriceVolatility";
 import EconPrimaryProductDependency from "@/components/EconPrimaryProductDependency";
 import EconHarrodDomarPPF from "@/components/EconHarrodDomarPPF";
 import EconMultiplierEffect from "@/components/EconMultiplierEffect";
 import EconFiscalPolicyAD from "@/components/EconFiscalPolicyAD";
+import EconADDemandPull from "@/components/EconADDemandPull";
+import EconADSupplySide from "@/components/EconADSupplySide";
+import EconMonetaryPolicyFlow from "@/components/EconMonetaryPolicyFlow";
 import EconTermsOfTrade from "@/components/EconTermsOfTrade";
 import EconCoffeeMarketUK from "@/components/EconCoffeeMarketUK";
 import MonopolisticCompetitionDiagram from "@/components/MonopolisticCompetitionDiagram";
@@ -38,7 +41,10 @@ const EDEXCEL_A_ONLY = new Set([
   "multiplier_effect",
   "fiscal_policy_ad",
   "terms_of_trade",
-  "monetary_policy",
+  "monetary_policy", "monetary_transmission",
+  "demand_pull", "ad_demand_pull",
+  "supply_side", "ad_supply_side",
+  "labour_minimum_wage",
 ]);
 
 /** Maps a diagram keyword to a custom SVG component, or returns null if none exists.
@@ -82,7 +88,16 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
     case "short_run_costs":
       return EconShortRunCosts;
     case "minimum_wage":
-      return EconMinWage;
+    case "labour_minimum_wage":
+      return EconLabourMinWage;
+    case "demand_pull":
+    case "ad_demand_pull":
+      return EconADDemandPull;
+    case "supply_side":
+    case "ad_supply_side":
+      return EconADSupplySide;
+    case "monetary_transmission":
+      return EconMonetaryPolicyFlow;
     case "primary_product_dependency":
       return EconPrimaryProductDependency;
     case "harrod_domar_ppf":
