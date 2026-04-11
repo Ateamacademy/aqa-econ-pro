@@ -6,7 +6,7 @@
 import type { ComponentType } from "react";
 import EconIndirectTaxDiagram from "@/components/EconIndirectTaxDiagram";
 import NegativeExternalityPalmOil from "@/components/NegativeExternalityPalmOil";
-import EconNegativeExternalityDark from "@/components/EconNegativeExternalityDark";
+import EconNegExtUKEnergy from "@/components/EconNegExtUKEnergy";
 import SugarTaxWelfareAnalysis from "@/components/SugarTaxWelfareAnalysis";
 import CompetitionMonopolySurplusChart from "@/components/CompetitionMonopolySurplusChart";
 import SupplyDemandMultipleShifts from "@/components/SupplyDemandMultipleShifts";
@@ -68,7 +68,7 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
     case "negative_externality":
     case "negative_externality_production":
     case "negative_production_externality":
-      return EconNegativeExternalityDark;
+      return EconNegExtUKEnergy;
     case "sugar_tax":
       return SugarTaxWelfareAnalysis;
     case "competition_consumer_surplus":
