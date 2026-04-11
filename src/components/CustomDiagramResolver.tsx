@@ -6,6 +6,7 @@
 import type { ComponentType } from "react";
 import EconIndirectTaxDiagram from "@/components/EconIndirectTaxDiagram";
 import NegativeExternalityPalmOil from "@/components/NegativeExternalityPalmOil";
+import EconNegativeExternalityDark from "@/components/EconNegativeExternalityDark";
 import SugarTaxWelfareAnalysis from "@/components/SugarTaxWelfareAnalysis";
 import CompetitionMonopolySurplusChart from "@/components/CompetitionMonopolySurplusChart";
 import SupplyDemandMultipleShifts from "@/components/SupplyDemandMultipleShifts";
