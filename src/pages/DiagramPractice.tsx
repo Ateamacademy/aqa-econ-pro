@@ -921,6 +921,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
           {/* Reference diagram — shown before submission as a collapsible guide */}
           {selectedScenario?.expectedDiagramKeyword && (() => {
             const kw = normalizeDiagramKeyword(selectedScenario.expectedDiagramKeyword) ?? selectedScenario.expectedDiagramKeyword;
+            const isPEDDual = kw === "ped_revenue_impact";
             const Comp = (() => {
               if (kw === "ped_revenue_impact" || kw === "ped_inelastic") return PEDRevenueImpact;
               if (kw === "ped_elastic") return EconPEDRevenueElastic;
