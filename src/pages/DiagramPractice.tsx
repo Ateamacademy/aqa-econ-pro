@@ -921,6 +921,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
           {/* Reference diagram — shown before submission as a collapsible guide */}
           {selectedScenario?.expectedDiagramKeyword && (() => {
             const kw = normalizeDiagramKeyword(selectedScenario.expectedDiagramKeyword) ?? selectedScenario.expectedDiagramKeyword;
+            const isPEDDual = kw === "ped_revenue_impact";
             const Comp = (() => {
               if (kw === "ped_revenue_impact" || kw === "ped_inelastic") return PEDRevenueImpact;
               if (kw === "ped_elastic") return EconPEDRevenueElastic;
@@ -961,7 +962,11 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                       <Eye className="h-3.5 w-3.5" /> Show reference diagram
                     </summary>
                     <div className="mt-3">
-                      {subject === "edexcel-a" ? <EdexcelDiagram diagramType={kw} fallback={<Comp />} /> : <Comp />}
+                      {subject === "edexcel-a" ? (
+                        <EdexcelDiagram diagramType={kw} fallback={<><Comp />{isPEDDual && <EconPEDRevenueElastic />}</>} />
+                      ) : (
+                        <><Comp />{isPEDDual && <EconPEDRevenueElastic />}</>
+                      )}
                     </div>
                   </details>
                 </CardContent>
