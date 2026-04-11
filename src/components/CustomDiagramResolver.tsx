@@ -68,9 +68,10 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
     case "ppf_natural_disaster":
       return PPFNaturalDisaster;
     case "ped_revenue_impact":
-    case "ped_elastic":
     case "ped_inelastic":
       return PEDRevenueImpact;
+    case "ped_elastic":
+      return EconPEDRevenueElastic;
     case "yed_luxury":
     case "yed":
       return EconYEDLuxury;
