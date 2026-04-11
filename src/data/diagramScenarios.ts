@@ -181,6 +181,16 @@ export const diagramScenarios: DiagramScenario[] = [
     expectedDiagramKeyword: "specific_ad_valorem",
   },
   {
+    id: "gov-4b",
+    section: "Government Intervention",
+    topic: "Indirect Tax & Subsidy",
+    difficulty: "Intermediate",
+    scenario: "The UK government imposes a specific (per-unit) indirect tax on cigarettes to discourage consumption and correct the negative externality of smoking. The tax raises the cost of production by a fixed amount per unit, shifting the supply curve leftward.",
+    question: "Draw a supply and demand diagram showing the impact of a specific indirect tax on the cigarette market. Show the original and new supply curves (S1 and S1+Tax), the change in equilibrium price and quantity, the consumer and producer burden of the tax, and the deadweight welfare loss triangle. [6 marks]",
+    marks: 6,
+    expectedDiagramKeyword: "indirect_tax",
+  },
+  {
     id: "gov-5",
     section: "Government Intervention",
     topic: "Tradable Pollution Permits",
