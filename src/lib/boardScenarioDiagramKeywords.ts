@@ -9,7 +9,7 @@ const BOARD_SCENARIO_DIAGRAM_KEYWORDS: Record<string, Record<string, string>> = 
     "Supply & Demand — Multiple Shifts": "supply_demand_multiple_shifts",
     // Section 1.5: Elasticity & Revenue
     "PED — Revenue Impact": "ped_revenue_impact",
-    "Indirect Tax & Subsidy": "specific_ad_valorem",
+    "Indirect Tax & Subsidy": "indirect_tax",
     // Section 2: Market Failure
     "Negative / Positive Externality (Welfare Loss)": "negative_externality",
     "Negative Production Externality (MSC > MPC)": "negative_production_externality",
