@@ -37,7 +37,10 @@ import EconPEDRevenueElastic from "@/components/EconPEDRevenueElastic";
 import EconYEDLuxury from "@/components/EconYEDLuxury";
 import EconMaxPrice from "@/components/EconMaxPrice";
 import EconShortRunCosts from "@/components/EconShortRunCosts";
-import EconMinWage from "@/components/EconMinWage";
+import EconLabourMinWage from "@/components/EconLabourMinWage";
+import EconADDemandPull from "@/components/EconADDemandPull";
+import EconADSupplySide from "@/components/EconADSupplySide";
+import EconMonetaryPolicyFlow from "@/components/EconMonetaryPolicyFlow";
 import EconCoffeePriceVolatility from "@/components/EconCoffeePriceVolatility";
 import EconPrimaryProductDependency from "@/components/EconPrimaryProductDependency";
 import EconHarrodDomarPPF from "@/components/EconHarrodDomarPPF";
@@ -934,7 +937,10 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
               if (kw === "yed_luxury" || kw === "yed") return EconYEDLuxury;
               if (kw === "maximum_price" || kw === "price_ceiling") return EconMaxPrice;
               if (kw === "cost_curves" || kw === "short_run_costs") return EconShortRunCosts;
-              if (kw === "minimum_wage") return EconMinWage;
+              if (kw === "minimum_wage" || kw === "labour_minimum_wage") return EconLabourMinWage;
+              if (kw === "demand_pull" || kw === "ad_demand_pull") return EconADDemandPull;
+              if (kw === "supply_side" || kw === "ad_supply_side") return EconADSupplySide;
+              if (kw === "monetary_transmission" || kw === "monetary_policy") return EconMonetaryPolicyFlow;
               if (kw === "primary_product_dependency") return EconPrimaryProductDependency;
               if (kw === "harrod_domar_ppf") return EconHarrodDomarPPF;
               if (kw === "multiplier_effect") return EconMultiplierEffect;
@@ -1156,7 +1162,10 @@ function DiagramFeedbackView({
   const isYEDLuxuryTopic = expectedDiagramType === "yed_luxury" || expectedDiagramType === "yed" || /\byed\b|income\s*elasticity.*demand|luxury\s*good/i.test(topic);
   const isMaxPriceTopic = expectedDiagramType === "maximum_price" || expectedDiagramType === "price_ceiling" || /maximum\s*price|price\s*ceiling/i.test(topic);
   const isShortRunCostsTopic = expectedDiagramType === "cost_curves" || expectedDiagramType === "short_run_costs" || /short.run\s*cost|cost\s*curves?\b|atc.*avc.*mc|mc.*atc/i.test(topic);
-  const isMinWageTopic = expectedDiagramType === "minimum_wage" || /minimum\s*wage|wage\s*floor|national\s*minimum\s*wage/i.test(topic);
+  const isMinWageTopic = expectedDiagramType === "minimum_wage" || expectedDiagramType === "labour_minimum_wage" || /minimum\s*wage|wage\s*floor|national\s*minimum\s*wage/i.test(topic);
+  const isDemandPullTopic = expectedDiagramType === "demand_pull" || expectedDiagramType === "ad_demand_pull" || /demand.pull\s*inflation/i.test(topic);
+  const isSupplySideTopic = expectedDiagramType === "supply_side" || expectedDiagramType === "ad_supply_side" || /supply.side\s*policy\s*effect/i.test(topic);
+  const isMonetaryPolicyTopic = expectedDiagramType === "monetary_transmission" || expectedDiagramType === "monetary_policy" || /monetary\s*policy\s*transmission/i.test(topic);
   const isPrimaryProductTopic = expectedDiagramType === "primary_product_dependency" || /primary\s*product\s*depend|commodity\s*price\s*volatil/i.test(topic);
   const isHarrodDomarTopic = expectedDiagramType === "harrod_domar_ppf" || /harrod.domar/i.test(topic);
   const isMultiplierTopic = expectedDiagramType === "multiplier_effect" || /\bmultiplier\s*effect\b/i.test(topic);
@@ -1195,10 +1204,13 @@ function DiagramFeedbackView({
     if (isYEDLuxuryTopic) return renderBoardSpecificDiagram("yed_luxury", <div className="my-4"><EconYEDLuxury /></div>);
     if (isMaxPriceTopic) return renderBoardSpecificDiagram("maximum_price", <div className="my-4"><EconMaxPrice /></div>);
     if (isShortRunCostsTopic) return renderBoardSpecificDiagram("short_run_costs", <div className="my-4"><EconShortRunCosts /></div>);
-    if (isMinWageTopic) return renderBoardSpecificDiagram("minimum_wage", <div className="my-4"><EconMinWage /></div>);
+    if (isMinWageTopic) return renderBoardSpecificDiagram("labour_minimum_wage", <div className="my-4"><EconLabourMinWage /></div>);
+    if (isDemandPullTopic) return renderBoardSpecificDiagram("demand_pull", <div className="my-4"><EconADDemandPull /></div>);
+    if (isSupplySideTopic) return renderBoardSpecificDiagram("supply_side", <div className="my-4"><EconADSupplySide /></div>);
+    if (isMonetaryPolicyTopic) return renderBoardSpecificDiagram("monetary_transmission", <div className="my-4"><EconMonetaryPolicyFlow /></div>);
     return null;
   };
-  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic || isPPFNaturalDisasterTopic || isPEDRevenueImpactTopic || isYEDLuxuryTopic || isMaxPriceTopic || isShortRunCostsTopic || isMinWageTopic || isPrimaryProductTopic || isHarrodDomarTopic || isMultiplierTopic || isFiscalPolicyTopic || isTermsOfTradeTopic || isCoffeeMarketTopic || isMonopolisticCompetitionTopic || isPerfectCompetitionTopic;
+  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic || isPPFNaturalDisasterTopic || isPEDRevenueImpactTopic || isYEDLuxuryTopic || isMaxPriceTopic || isShortRunCostsTopic || isMinWageTopic || isPrimaryProductTopic || isHarrodDomarTopic || isMultiplierTopic || isFiscalPolicyTopic || isTermsOfTradeTopic || isCoffeeMarketTopic || isMonopolisticCompetitionTopic || isPerfectCompetitionTopic || isDemandPullTopic || isSupplySideTopic || isMonetaryPolicyTopic;
 
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {

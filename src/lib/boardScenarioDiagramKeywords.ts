@@ -27,18 +27,18 @@ const BOARD_SCENARIO_DIAGRAM_KEYWORDS: Record<string, Record<string, string>> = 
     "Oligopoly — Kinked Demand Curve": "kinked_demand",
     "Oligopoly — Game Theory / Payoff Matrix": "game_theory",
     // Section 6: Labour Market
-    "Labour Market — Minimum Wage": "minimum_wage",
+    "Labour Market — Minimum Wage": "labour_minimum_wage",
     "Labour Market — Monopsony": "monopsony",
     // Macro Section 1: National Income
-    "AD/AS — Demand-Pull Inflation": "ad_as",
+    "AD/AS — Demand-Pull Inflation": "demand_pull",
     "AD/AS — Cost-Push Inflation": "ad_as",
-    "AD/AS — Supply-Side Policy Effect": "ad_as",
+    "AD/AS — Supply-Side Policy Effect": "supply_side",
     "Keynesian AS — Spare Capacity vs Full Employment": "keynesian_as",
     // Macro Section 2: Macro Objectives
     "Phillips Curve — Short Run vs Long Run": "phillips_curve",
     "Lorenz Curve & Gini Coefficient": "lorenz_curve",
     // Macro Section 3: Financial Markets
-    "Monetary Policy Transmission Mechanism (Flowchart)": "monetary_policy",
+    "Monetary Policy Transmission Mechanism (Flowchart)": "monetary_transmission",
     "Exchange Rate Determination": "exchange_rate",
     // Macro Section 4: Fiscal & Supply-Side
     "Fiscal Policy Transmission Mechanism (Flowchart)": "fiscal_policy_ad",
