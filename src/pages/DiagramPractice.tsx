@@ -518,6 +518,7 @@ Format: Give the scenario context with Figure 1, then the question. Nothing else
   const startScenario = async (scenario: DiagramScenario) => {
     if (!(await ensureEligible())) return;
     setSelectedScenario(scenario);
+    setTopic(scenario.topic);
 
     if (subject !== "economics") {
       setIsGenerating(true);
@@ -1158,7 +1159,6 @@ function DiagramFeedbackView({
   const isSupplyDemandMultipleShiftsTopic = expectedDiagramType === "supply_demand_multiple_shifts" || /multiple\s*shifts|supply.*demand.*multiple/i.test(topic);
   const isPPFNaturalDisasterTopic = expectedDiagramType === "ppf_natural_disaster" || /natural\s*disaster|earthquake|ppf.*inward.*shift|inward.*ppf/i.test(topic);
   const isPEDRevenueImpactTopic = expectedDiagramType === "ped_revenue_impact" || expectedDiagramType === "ped_elastic" || expectedDiagramType === "ped_inelastic" || /ped.*revenue.*impact|revenue.*impact.*ped|price\s*elasticity.*revenue/i.test(topic);
-  const isPPFTopic = !isPPFNaturalDisasterTopic && !isPEDRevenueImpactTopic && (expectedDiagramType === "ppf" || expectedDiagramType === "ppf_growth" || /\bppf\b|production\s*possibility|balanced\s*growth|biased\s*growth|unemployed\s*resources/i.test(topic));
   const isYEDLuxuryTopic = expectedDiagramType === "yed_luxury" || expectedDiagramType === "yed" || /\byed\b|income\s*elasticity.*demand|luxury\s*good/i.test(topic);
   const isMaxPriceTopic = expectedDiagramType === "maximum_price" || expectedDiagramType === "price_ceiling" || /maximum\s*price|price\s*ceiling/i.test(topic);
   const isShortRunCostsTopic = expectedDiagramType === "cost_curves" || expectedDiagramType === "short_run_costs" || /short.run\s*cost|cost\s*curves?\b|atc.*avc.*mc|mc.*atc/i.test(topic);
@@ -1166,6 +1166,7 @@ function DiagramFeedbackView({
   const isDemandPullTopic = expectedDiagramType === "demand_pull" || expectedDiagramType === "ad_demand_pull" || /demand.pull\s*inflation/i.test(topic);
   const isSupplySideTopic = expectedDiagramType === "supply_side" || expectedDiagramType === "ad_supply_side" || /supply.side\s*policy\s*effect/i.test(topic);
   const isMonetaryPolicyTopic = expectedDiagramType === "monetary_transmission" || expectedDiagramType === "monetary_policy" || /monetary\s*policy\s*transmission/i.test(topic);
+  const isPPFTopic = !isPPFNaturalDisasterTopic && !isPEDRevenueImpactTopic && !isDemandPullTopic && !isSupplySideTopic && !isMonetaryPolicyTopic && (expectedDiagramType === "ppf" || expectedDiagramType === "ppf_growth" || /\bppf\b|production\s*possibility|balanced\s*growth|biased\s*growth|unemployed\s*resources/i.test(topic));
   const isPrimaryProductTopic = expectedDiagramType === "primary_product_dependency" || /primary\s*product\s*depend|commodity\s*price\s*volatil/i.test(topic);
   const isHarrodDomarTopic = expectedDiagramType === "harrod_domar_ppf" || /harrod.domar/i.test(topic);
   const isMultiplierTopic = expectedDiagramType === "multiplier_effect" || /\bmultiplier\s*effect\b/i.test(topic);
@@ -1200,14 +1201,14 @@ function DiagramFeedbackView({
     if (isMonopolisticCompetitionTopic) return renderBoardSpecificDiagram("monopolistic_competition", <div className="my-4"><MonopolisticCompetitionDiagram /></div>);
     if (isPerfectCompetitionTopic) return renderBoardSpecificDiagram("perfect_competition", <div className="my-4"><PerfectCompetitionDiagram /></div>);
     if (isPEDRevenueImpactTopic) return renderBoardSpecificDiagram("ped_revenue_impact", <div className="my-4"><PEDRevenueImpact /><EconPEDRevenueElastic /></div>);
+    if (isDemandPullTopic) return renderBoardSpecificDiagram("demand_pull", <div className="my-4"><EconADDemandPull /></div>);
+    if (isSupplySideTopic) return renderBoardSpecificDiagram("supply_side", <div className="my-4"><EconADSupplySide /></div>);
+    if (isMonetaryPolicyTopic) return renderBoardSpecificDiagram("monetary_transmission", <div className="my-4"><EconMonetaryPolicyFlow /></div>);
     if (isPPFTopic) return renderBoardSpecificDiagram("ppf_growth", <div className="my-4"><EconPPFUKCapacity /></div>);
     if (isYEDLuxuryTopic) return renderBoardSpecificDiagram("yed_luxury", <div className="my-4"><EconYEDLuxury /></div>);
     if (isMaxPriceTopic) return renderBoardSpecificDiagram("maximum_price", <div className="my-4"><EconMaxPrice /></div>);
     if (isShortRunCostsTopic) return renderBoardSpecificDiagram("short_run_costs", <div className="my-4"><EconShortRunCosts /></div>);
     if (isMinWageTopic) return renderBoardSpecificDiagram("labour_minimum_wage", <div className="my-4"><EconLabourMinWage /></div>);
-    if (isDemandPullTopic) return renderBoardSpecificDiagram("demand_pull", <div className="my-4"><EconADDemandPull /></div>);
-    if (isSupplySideTopic) return renderBoardSpecificDiagram("supply_side", <div className="my-4"><EconADSupplySide /></div>);
-    if (isMonetaryPolicyTopic) return renderBoardSpecificDiagram("monetary_transmission", <div className="my-4"><EconMonetaryPolicyFlow /></div>);
     return null;
   };
   const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic || isPPFNaturalDisasterTopic || isPEDRevenueImpactTopic || isYEDLuxuryTopic || isMaxPriceTopic || isShortRunCostsTopic || isMinWageTopic || isPrimaryProductTopic || isHarrodDomarTopic || isMultiplierTopic || isFiscalPolicyTopic || isTermsOfTradeTopic || isCoffeeMarketTopic || isMonopolisticCompetitionTopic || isPerfectCompetitionTopic || isDemandPullTopic || isSupplySideTopic || isMonetaryPolicyTopic;
