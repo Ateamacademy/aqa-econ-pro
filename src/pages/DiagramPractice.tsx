@@ -1162,7 +1162,10 @@ function DiagramFeedbackView({
   const isYEDLuxuryTopic = expectedDiagramType === "yed_luxury" || expectedDiagramType === "yed" || /\byed\b|income\s*elasticity.*demand|luxury\s*good/i.test(topic);
   const isMaxPriceTopic = expectedDiagramType === "maximum_price" || expectedDiagramType === "price_ceiling" || /maximum\s*price|price\s*ceiling/i.test(topic);
   const isShortRunCostsTopic = expectedDiagramType === "cost_curves" || expectedDiagramType === "short_run_costs" || /short.run\s*cost|cost\s*curves?\b|atc.*avc.*mc|mc.*atc/i.test(topic);
-  const isMinWageTopic = expectedDiagramType === "minimum_wage" || /minimum\s*wage|wage\s*floor|national\s*minimum\s*wage/i.test(topic);
+  const isMinWageTopic = expectedDiagramType === "minimum_wage" || expectedDiagramType === "labour_minimum_wage" || /minimum\s*wage|wage\s*floor|national\s*minimum\s*wage/i.test(topic);
+  const isDemandPullTopic = expectedDiagramType === "demand_pull" || expectedDiagramType === "ad_demand_pull" || /demand.pull\s*inflation/i.test(topic);
+  const isSupplySideTopic = expectedDiagramType === "supply_side" || expectedDiagramType === "ad_supply_side" || /supply.side\s*policy\s*effect/i.test(topic);
+  const isMonetaryPolicyTopic = expectedDiagramType === "monetary_transmission" || expectedDiagramType === "monetary_policy" || /monetary\s*policy\s*transmission/i.test(topic);
   const isPrimaryProductTopic = expectedDiagramType === "primary_product_dependency" || /primary\s*product\s*depend|commodity\s*price\s*volatil/i.test(topic);
   const isHarrodDomarTopic = expectedDiagramType === "harrod_domar_ppf" || /harrod.domar/i.test(topic);
   const isMultiplierTopic = expectedDiagramType === "multiplier_effect" || /\bmultiplier\s*effect\b/i.test(topic);
