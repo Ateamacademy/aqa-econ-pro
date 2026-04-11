@@ -962,7 +962,11 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                       <Eye className="h-3.5 w-3.5" /> Show reference diagram
                     </summary>
                     <div className="mt-3">
-                      {subject === "edexcel-a" ? <EdexcelDiagram diagramType={kw} fallback={<Comp />} /> : <Comp />}
+                      {subject === "edexcel-a" ? (
+                        <EdexcelDiagram diagramType={kw} fallback={<><Comp />{isPEDDual && <EconPEDRevenueElastic />}</>} />
+                      ) : (
+                        <><Comp />{isPEDDual && <EconPEDRevenueElastic />}</>
+                      )}
                     </div>
                   </details>
                 </CardContent>
