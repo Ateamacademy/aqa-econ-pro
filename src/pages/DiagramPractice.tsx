@@ -1190,8 +1190,8 @@ function DiagramFeedbackView({
     if (isCoffeeMarketTopic) return renderBoardSpecificDiagram("supply_demand", <div className="my-4"><EconCoffeeMarketUK /></div>);
     if (isMonopolisticCompetitionTopic) return renderBoardSpecificDiagram("monopolistic_competition", <div className="my-4"><MonopolisticCompetitionDiagram /></div>);
     if (isPerfectCompetitionTopic) return renderBoardSpecificDiagram("perfect_competition", <div className="my-4"><PerfectCompetitionDiagram /></div>);
-    if (isPPFTopic) return renderBoardSpecificDiagram("ppf_growth", <div className="my-4"><EconPPFUKCapacity /></div>);
     if (isPEDRevenueImpactTopic) return renderBoardSpecificDiagram("ped_revenue_impact", <div className="my-4"><PEDRevenueImpact /><EconPEDRevenueElastic /></div>);
+    if (isPPFTopic) return renderBoardSpecificDiagram("ppf_growth", <div className="my-4"><EconPPFUKCapacity /></div>);
     if (isYEDLuxuryTopic) return renderBoardSpecificDiagram("yed_luxury", <div className="my-4"><EconYEDLuxury /></div>);
     if (isMaxPriceTopic) return renderBoardSpecificDiagram("maximum_price", <div className="my-4"><EconMaxPrice /></div>);
     if (isShortRunCostsTopic) return renderBoardSpecificDiagram("short_run_costs", <div className="my-4"><EconShortRunCosts /></div>);
