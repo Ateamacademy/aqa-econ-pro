@@ -1222,9 +1222,11 @@ function DiagramFeedbackView({
     if (isMaxPriceTopic) return renderBoardSpecificDiagram("maximum_price", <div className="my-4"><EconMaxPrice /></div>);
     if (isShortRunCostsTopic) return renderBoardSpecificDiagram("short_run_costs", <div className="my-4"><EconShortRunCostsFull /></div>);
     if (isMinWageTopic) return renderBoardSpecificDiagram("labour_minimum_wage", <div className="my-4"><EconLabourMinWage /></div>);
+    if (isMonopolyProfitTopic) return renderBoardSpecificDiagram("monopoly", <div className="my-4"><EconMonopolySupernormalProfit /></div>);
+    if (isCostPushTopic) return renderBoardSpecificDiagram("cost_push_inflation", <div className="my-4"><EconADASCostPush /></div>);
     return null;
   };
-  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic || isPPFNaturalDisasterTopic || isPEDRevenueImpactTopic || isYEDLuxuryTopic || isMaxPriceTopic || isShortRunCostsTopic || isMinWageTopic || isPrimaryProductTopic || isHarrodDomarTopic || isMultiplierTopic || isFiscalPolicyTopic || isTermsOfTradeTopic || isCoffeeMarketTopic || isMonopolisticCompetitionTopic || isPerfectCompetitionTopic || isDemandPullTopic || isSupplySideTopic || isMonetaryPolicyTopic;
+  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic || isPPFNaturalDisasterTopic || isPEDRevenueImpactTopic || isYEDLuxuryTopic || isMaxPriceTopic || isShortRunCostsTopic || isMinWageTopic || isPrimaryProductTopic || isHarrodDomarTopic || isMultiplierTopic || isFiscalPolicyTopic || isTermsOfTradeTopic || isCoffeeMarketTopic || isMonopolisticCompetitionTopic || isPerfectCompetitionTopic || isDemandPullTopic || isSupplySideTopic || isMonetaryPolicyTopic || isMonopolyProfitTopic || isCostPushTopic;
 
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {
