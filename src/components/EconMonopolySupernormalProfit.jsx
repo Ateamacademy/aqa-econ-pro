@@ -1,19 +1,19 @@
-export default function CompetitionMonopolySurplusChart() {
+export default function EconMonopolySupernormalProfit() {
   return (
     <div style={{background:'#fff',borderRadius:'8px',padding:'8px',maxWidth:'700px',margin:'0 auto',fontFamily:"'Arial',sans-serif",border:'1px solid #ccc'}}>
       <svg viewBox="0 0 700 540" width="100%" style={{display:'block'}}>
         <defs>
-          <marker id="cmR" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#111"/></marker>
-          <marker id="cmU" markerWidth="7" markerHeight="9" refX="3.5" refY="1" orient="auto"><polygon points="0 9,3.5 0,7 9" fill="#111"/></marker>
-          <marker id="cmBlkD" markerWidth="7" markerHeight="9" refX="3.5" refY="8" orient="auto"><polygon points="0 0,7 0,3.5 8" fill="#111"/></marker>
+          <marker id="mnR" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#111"/></marker>
+          <marker id="mnU" markerWidth="7" markerHeight="9" refX="3.5" refY="1" orient="auto"><polygon points="0 9,3.5 0,7 9" fill="#111"/></marker>
         </defs>
         <rect width="700" height="540" fill="#fff"/>
-        <text x="350" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Competition vs Monopoly — Consumer Surplus</text>
-        <line x1="80" y1="470" x2="80" y2="40" stroke="#111" strokeWidth="2.2" markerEnd="url(#cmU)"/>
-        <line x1="80" y1="470" x2="642" y2="470" stroke="#111" strokeWidth="2.2" markerEnd="url(#cmR)"/>
+        <text x="350" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Monopoly — Supernormal Profit</text>
+        <line x1="80" y1="470" x2="80" y2="40" stroke="#111" strokeWidth="2.2" markerEnd="url(#mnU)"/>
+        <line x1="80" y1="470" x2="642" y2="470" stroke="#111" strokeWidth="2.2" markerEnd="url(#mnR)"/>
         <text x="76" y="34" fontSize="12" fontWeight="bold" fill="#111">Price/costs</text>
         <text x="630" y="478" fontSize="13" fontWeight="bold" fill="#111">Output</text>
-        <polygon points="297.2,216.6 297.2,271.2 392.6,271.2" fill="rgba(220,38,38,0.80)"/>
+        <polygon points="80,216.6 297.2,216.6 297.2,332.7 80,332.7" fill="rgba(180,180,180,0.35)"/>
+        <text x="188.6" y="279.65" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Supernormal profit</text>
         <polyline points="119.2,27.7 125.2,80.9 131.3,121.3 137.4,153.0 143.4,178.4 149.5,199.3 155.6,216.6 161.7,231.3 167.8,243.8 173.8,254.6 179.9,263.9 186.0,272.1 192.1,279.4 198.1,285.7 204.2,291.4 210.3,296.5 216.3,301.0 222.4,305.1 228.5,308.8 234.6,312.1 240.7,315.1 246.7,317.8 252.8,320.3 258.9,322.5 265.0,324.6 271.0,326.4 277.1,328.1 283.2,329.7 289.3,331.1 295.3,332.4 301.4,333.5 307.5,334.6 313.5,335.5 319.6,336.4 325.7,337.2 331.8,337.9 337.8,338.5 343.9,339.0 350.0,339.5 356.1,340.0 362.2,340.3 368.2,340.7 374.3,341.0 380.4,341.2 386.4,341.4 392.5,341.5 398.6,341.6 404.7,341.7 410.8,341.8 416.8,341.8 422.9,341.7 429.0,341.7 435.1,341.6 441.1,341.5 447.2,341.4 453.3,341.2 459.3,341.1 465.4,340.9 471.5,340.7 477.6,340.4 483.7,340.2 489.7,339.9 495.8,339.6 501.9,339.3 507.9,339.0 514.0,338.6 520.1,338.3 526.2,337.9 532.3,337.6 538.3,337.2 544.4,336.8 550.5,336.4 556.5,335.9 562.6,335.5 568.7,335.1 574.8,334.6 580.9,334.1 586.9,333.7 593.0,333.2" fill="none" stroke="#111" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
         <text x="599.0" y="325.2" fontSize="13" fontWeight="bold" fill="#111">AC</text>
         <polyline points="96.2,452.3 101.7,450.5 107.3,448.5 112.8,446.4 118.3,444.2 123.9,441.9 129.4,439.4 134.9,437.0 140.5,434.4 146.0,431.7 151.6,429.0 157.1,426.3 162.6,423.4 168.2,420.6 173.7,417.6 179.2,414.6 184.8,411.6 190.3,408.5 195.8,405.3 201.4,402.2 206.9,398.9 212.4,395.7 218.0,392.3 223.5,389.0 229.0,385.6 234.6,382.2 240.1,378.7 245.6,375.2 251.2,371.7 256.7,368.1 262.3,364.5 267.8,360.8 273.3,357.2 278.9,353.4 284.4,349.7 289.9,345.9 295.5,342.2 301.0,338.3 306.5,334.5 312.1,330.6 317.6,326.7 323.1,322.7 328.7,318.8 334.2,314.8 339.7,310.8 345.3,306.7 350.8,302.7 356.3,298.6 361.9,294.4 367.4,290.3 372.9,286.1 378.5,281.9 384.0,277.7 389.6,273.5 395.1,269.2 400.6,264.9 406.2,260.6 411.7,256.3 417.2,252.0 422.8,247.6 428.3,243.2 433.8,238.8 439.4,234.4 444.9,229.9 450.4,225.4 456.0,220.9 461.5,216.4 467.0,211.9 472.6,207.3 478.1,202.8 483.6,198.2 489.2,193.6 494.7,188.9 500.3,184.3 505.8,179.6 511.3,174.9 516.9,170.2 522.4,165.5 527.9,160.8 533.5,156.0 539.0,151.3" fill="none" stroke="#111" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -23,18 +23,15 @@ export default function CompetitionMonopolySurplusChart() {
         <polyline points="80.0,92.3 84.0,97.0 88.1,101.6 92.2,106.2 96.2,110.9 100.3,115.5 104.3,120.1 108.3,124.8 112.4,129.4 116.5,134.0 120.5,138.7 124.6,143.3 128.6,148.0 132.7,152.6 136.7,157.2 140.8,161.9 144.8,166.5 148.8,171.1 152.9,175.8 156.9,180.4 161.0,185.0 165.1,189.7 169.1,194.3 173.1,198.9 177.2,203.6 181.3,208.2 185.3,212.8 189.4,217.5 193.4,222.1 197.4,226.7 201.5,231.4 205.6,236.0 209.6,240.7 213.6,245.3 217.7,249.9 221.8,254.6 225.8,259.2 229.9,263.8 233.9,268.5 237.9,273.1 242.0,277.7 246.1,282.4 250.1,287.0 254.1,291.6 258.2,296.3 262.3,300.9 266.3,305.5 270.4,310.2 274.4,314.8 278.5,319.4 282.5,324.1 286.5,328.7 290.6,333.4 294.6,338.0 298.7,342.6 302.8,347.3 306.8,351.9 310.9,356.5 314.9,361.2 319.0,365.8 323.0,370.4 327.0,375.1 331.1,379.7 335.1,384.3 339.2,389.0 343.3,393.6 347.3,398.2 351.4,402.9 355.4,407.5 359.5,412.1 363.5,416.8 367.6,421.4 371.6,426.1 375.6,430.7 379.7,435.3 383.8,440.0 387.8,444.6 391.9,449.2 395.9,453.9 399.9,458.5 404.0,463.1" fill="none" stroke="#111" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
         <text x="410.0" y="479.1" fontSize="13" fontWeight="bold" fill="#111">MR</text>
         <line x1="80" y1="216.6" x2="297.2" y2="216.6" stroke="#cc0000" strokeWidth="1.5" strokeDasharray="6,4"/>
-        <line x1="80" y1="271.2" x2="392.6" y2="271.2" stroke="#cc0000" strokeWidth="1.5" strokeDasharray="6,4"/>
+        <line x1="80" y1="332.7" x2="297.2" y2="332.7" stroke="#cc0000" strokeWidth="1.5" strokeDasharray="6,4"/>
         <line x1="297.2" y1="216.6" x2="297.2" y2="470" stroke="#cc0000" strokeWidth="1.5" strokeDasharray="6,4"/>
-        <line x1="392.6" y1="271.2" x2="392.6" y2="470" stroke="#cc0000" strokeWidth="1.5" strokeDasharray="6,4"/>
-        <circle cx="392.6" cy="271.2" r="7" fill="#cc0000"/>
-        <text x="70" y="220.6" textAnchor="end" fontSize="13" fontWeight="bold" fill="#cc0000">Pm</text>
-        <text x="70" y="275.2" textAnchor="end" fontSize="13" fontWeight="bold" fill="#cc0000">Pc</text>
-        <text x="297.2" y="490" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#cc0000">Pm</text>
-        <text x="392.6" y="490" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#cc0000">Pc</text>
-        <text x="237.2" y="186.6" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">Consumer</text>
-        <text x="237.2" y="200.6" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">deadweight</text>
-        <text x="237.2" y="214.6" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">loss</text>
-        <line x1="237.2" y1="216.6" x2="297.2" y2="243.89999999999998" stroke="#111" strokeWidth="1.5" markerEnd="url(#cmBlkD)"/>
+        <circle cx="297.2" cy="216.6" r="6" fill="#fff" stroke="#111" strokeWidth="2"/>
+        <text x="305.2" y="210.6" fontSize="13" fontWeight="bold" fill="#111">A</text>
+        <circle cx="297.2" cy="332.7" r="7" fill="#cc0000"/>
+        <text x="305.2" y="337.7" fontSize="13" fontWeight="bold" fill="#111">B</text>
+        <text x="70" y="220.6" textAnchor="end" fontSize="13" fontWeight="bold" fill="#cc0000">P1</text>
+        <text x="70" y="336.7" textAnchor="end" fontSize="13" fontWeight="bold" fill="#cc0000">C</text>
+        <text x="297.2" y="490" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#cc0000">Q1</text>
       </svg>
     </div>
   );
