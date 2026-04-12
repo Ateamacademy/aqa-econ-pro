@@ -1202,8 +1202,13 @@ function DiagramFeedbackView({
   const isPerfectCompetitionTopic = expectedDiagramType === "perfect_competition" || /perfect\s*competition/i.test(topic);
   const isMonopolyProfitTopic = expectedDiagramType === "monopoly" || /monopoly.*supernormal|supernormal\s*profit.*monopoly|monopoly.*mc\s*=\s*mr/i.test(topic);
   const isCostPushTopic = expectedDiagramType === "cost_push_inflation" || expectedDiagramType === "ad_as" || /cost.push\s*inflation/i.test(topic);
+  const isGameTheoryTopic = expectedDiagramType === "game_theory" || expectedDiagramType === "payoff_matrix" || /game\s*theory|payoff\s*matrix|prisoner.*dilemma/i.test(topic);
+  const isJCurveTopic = expectedDiagramType === "j_curve" || /j.curve|marshall.lerner|current\s*account.*depreciation/i.test(topic);
+  const isEdexcelA = examBoard === "edexcel-a";
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
-    if (isLorenzTopic) return <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
+    if (isGameTheoryTopic) return renderBoardSpecificDiagram("game_theory", <div className="my-4"><EconGameTheoryPayoff /></div>);
+    if (isJCurveTopic) return renderBoardSpecificDiagram("j_curve", <div className="my-4"><EconJCurveEffect /></div>);
+    if (isLorenzTopic) return isEdexcelA ? renderBoardSpecificDiagram("lorenz_curve", <div className="my-4"><EconEdexcelLorenzCurve /></div>) : <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
     if (isLRACTopic) return renderBoardSpecificDiagram("lrac", <div className="my-4"><EconLRACScaleCurves /></div>);
     if (isIndirectTaxTopic) return renderBoardSpecificDiagram("indirect_tax", <div className="my-4"><EconIndirectTaxDiagram /></div>);
     if (isSpecificAdValoremTopic) return renderBoardSpecificDiagram("specific_ad_valorem", <div className="my-4"><SpecificAdValoremDiagram /></div>);
@@ -1211,8 +1216,8 @@ function DiagramFeedbackView({
     if (isTradablePollutionTopic) return renderBoardSpecificDiagram("tradable_pollution_permits", <div className="my-4"><TradablePollutionPermits /></div>);
     if (isShutdownTopic) return renderBoardSpecificDiagram("shutdown_short_run", <div className="my-4"><EconShortRunShutdown /></div>);
     if (isKinkedDemandTopic) return renderBoardSpecificDiagram("kinked_demand", <div className="my-4"><EconOligopolyKinkedDemand /></div>);
-    if (isMonopsonyTopic) return renderBoardSpecificDiagram("monopsony", <div className="my-4"><MonopsonyEmployerCurve /></div>);
-    if (isPhillipsCurveTopic) return renderBoardSpecificDiagram("phillips_curve", <div className="my-4"><PhillipsCurveSRvsLR /></div>);
+    if (isMonopsonyTopic) return renderBoardSpecificDiagram("monopsony", isEdexcelA ? <div className="my-4"><EconEdexcelMonopsony /></div> : <div className="my-4"><MonopsonyEmployerCurve /></div>);
+    if (isPhillipsCurveTopic) return renderBoardSpecificDiagram("phillips_curve", isEdexcelA ? <div className="my-4"><EconEdexcelPhillipsCurve /></div> : <div className="my-4"><PhillipsCurveSRvsLR /></div>);
     if (isKeynesianASTopic) return renderBoardSpecificDiagram("keynesian_as", <div className="my-4"><EconKeynesianAS /></div>);
     if (isTariffTopic) return renderBoardSpecificDiagram("tariff", <div className="my-4"><EconImportQuotaTariff /></div>);
     if (isExchangeRateTopic) return renderBoardSpecificDiagram("exchange_rate", <div className="my-4"><EconExchangeRateINR /></div>);
