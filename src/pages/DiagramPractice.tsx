@@ -1211,6 +1211,7 @@ function DiagramFeedbackView({
     if (isKeynesianASTopic) return renderBoardSpecificDiagram("keynesian_as", <div className="my-4"><KeynesianASSpareCurve /></div>);
     if (isTariffTopic) return renderBoardSpecificDiagram("tariff", <div className="my-4"><TariffDiagram /></div>);
     if (isExchangeRateTopic) return renderBoardSpecificDiagram("exchange_rate", <div className="my-4"><EconExchangeRateINR /></div>);
+    if (isNegativeExternalityCoalTopic) return renderBoardSpecificDiagram("negative_externality_coal", <div className="my-4"><EconNegativeExternalityCoal /></div>);
     if (isNegativeExternalityTopic) return renderBoardSpecificDiagram("negative_externality", <div className="my-4"><EconNegExtUKEnergy /></div>);
     if (isSugarTaxTopic) return renderBoardSpecificDiagram("sugar_tax", <div className="my-4"><SugarTaxWelfareAnalysis /></div>);
     if (isCompetitionCSTopic) return renderBoardSpecificDiagram("competition_consumer_surplus", <div className="my-4"><CompetitionMonopolySurplusChart /></div>);
