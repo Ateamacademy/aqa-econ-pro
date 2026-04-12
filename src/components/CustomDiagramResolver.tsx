@@ -42,6 +42,10 @@ import EconADASCostPush from "@/components/EconADASCostPush";
 import EconKeynesianAS from "@/components/EconKeynesianAS";
 import EconExchangeRateINR from "@/components/EconExchangeRateINR";
 import EconImportQuotaTariff from "@/components/EconImportQuotaTariff";
+import EconEVMultipleShifts from "@/components/EconEVMultipleShifts";
+import EconNegativeExternalityCoal from "@/components/EconNegativeExternalityCoal";
+import EconShortRunShutdown from "@/components/EconShortRunShutdown";
+import EconOligopolyKinkedDemand from "@/components/EconOligopolyKinkedDemand";
 import { normalizeDiagramKeyword } from "@/lib/diagramKeywordAliases";
 
 /** Edexcel-A-only diagram keywords */
@@ -65,6 +69,11 @@ const EDEXCEL_A_ONLY = new Set([
   "keynesian_as",
   "exchange_rate",
   "tariff",
+  "ev_multiple_shifts",
+  "negative_externality_coal",
+  "shutdown_point",
+  "kinked_demand_oligopoly",
+  "sugar_tax_sdil",
 ]);
 
 /** Maps a diagram keyword to a custom SVG component, or returns null if none exists.
@@ -83,11 +92,20 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
     case "negative_production_externality":
       return EconNegExtUKEnergy;
     case "sugar_tax":
+    case "sugar_tax_sdil":
       return SugarTaxWelfareAnalysis;
     case "competition_consumer_surplus":
       return CompetitionMonopolySurplusChart;
     case "supply_demand_multiple_shifts":
       return SupplyDemandMultipleShifts;
+    case "ev_multiple_shifts":
+      return EconEVMultipleShifts;
+    case "negative_externality_coal":
+      return EconNegativeExternalityCoal;
+    case "shutdown_point":
+      return EconShortRunShutdown;
+    case "kinked_demand_oligopoly":
+      return EconOligopolyKinkedDemand;
     case "ppf":
     case "ppf_growth":
       return EconPPFUKCapacity;

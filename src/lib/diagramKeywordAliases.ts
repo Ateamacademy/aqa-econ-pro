@@ -16,7 +16,8 @@ const DIAGRAM_KEYWORD_ALIASES: Record<string, string> = {
   harrod_domar: "harrod_domar_ppf",
   fiscal_ad: "fiscal_policy_ad",
   terms_trade: "terms_of_trade",
-  short_run_shutdown: "shutdown_short_run",
+  short_run_shutdown: "shutdown_point",
+  shutdown_short_run: "shutdown_point",
   monopolistic_competition_lr: "monopolistic_competition",
   monopolistic_competition_sr: "monopolistic_competition",
   perfectcomp: "perfect_competition",
@@ -33,6 +34,12 @@ const DIAGRAM_KEYWORD_ALIASES: Record<string, string> = {
   inr_usd: "exchange_rate",
   import_quota: "tariff",
   tariff_diagram: "tariff",
+  supply_demand_shifts: "ev_multiple_shifts",
+  welfare_loss: "negative_externality_coal",
+  sdil_welfare: "sugar_tax_sdil",
+  min_avc: "shutdown_point",
+  oligopoly: "kinked_demand_oligopoly",
+  kinked_demand: "kinked_demand_oligopoly",
 };
 
 export function normalizeDiagramKeyword(keyword?: string | null) {
