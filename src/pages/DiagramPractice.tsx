@@ -1185,6 +1185,8 @@ function DiagramFeedbackView({
   const isCoffeeMarketTopic = expectedDiagramType === "supply_demand" || expectedDiagramType === "coffee_market_uk" || /market\s*equilibrium\s*change|coffee\s*market/i.test(topic);
   const isMonopolisticCompetitionTopic = expectedDiagramType === "monopolistic_competition" || /monopolistic\s*competition|excess\s*capacity/i.test(topic);
   const isPerfectCompetitionTopic = expectedDiagramType === "perfect_competition" || /perfect\s*competition/i.test(topic);
+  const isMonopolyProfitTopic = expectedDiagramType === "monopoly" || /monopoly.*supernormal|supernormal\s*profit.*monopoly|monopoly.*mc\s*=\s*mr/i.test(topic);
+  const isCostPushTopic = expectedDiagramType === "cost_push_inflation" || expectedDiagramType === "ad_as" || /cost.push\s*inflation/i.test(topic);
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     if (isLorenzTopic) return <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
     if (isLRACTopic) return renderBoardSpecificDiagram("lrac", <div className="my-4"><EconLRACScaleCurves /></div>);
