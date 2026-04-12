@@ -1187,7 +1187,7 @@ function DiagramFeedbackView({
   const isPerfectCompetitionTopic = expectedDiagramType === "perfect_competition" || /perfect\s*competition/i.test(topic);
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     if (isLorenzTopic) return <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
-    if (isLRACTopic) return <LRACDiagram className="mt-3" />;
+    if (isLRACTopic) return renderBoardSpecificDiagram("lrac", <div className="my-4"><EconLRACScaleCurves /></div>);
     if (isIndirectTaxTopic) return renderBoardSpecificDiagram("indirect_tax", <div className="my-4"><EconIndirectTaxDiagram /></div>);
     if (isSpecificAdValoremTopic) return renderBoardSpecificDiagram("specific_ad_valorem", <div className="my-4"><SpecificAdValoremDiagram /></div>);
     if (isInfoFailureDemeritTopic) return renderBoardSpecificDiagram("information_failure_demerit", <div className="my-4"><InformationFailureDemeritGood /></div>);
@@ -1210,7 +1210,7 @@ function DiagramFeedbackView({
     if (isTermsOfTradeTopic) return renderBoardSpecificDiagram("terms_of_trade", <div className="my-4"><EconTermsOfTradeUK /></div>);
     if (isCoffeeMarketTopic) return renderBoardSpecificDiagram("supply_demand", <div className="my-4"><EconCoffeeMarketUK /></div>);
     if (isMonopolisticCompetitionTopic) return renderBoardSpecificDiagram("monopolistic_competition", <div className="my-4"><MonopolisticCompetitionDiagram /></div>);
-    if (isPerfectCompetitionTopic) return renderBoardSpecificDiagram("perfect_competition", <div className="my-4"><PerfectCompetitionDiagram /></div>);
+    if (isPerfectCompetitionTopic) return renderBoardSpecificDiagram("perfect_competition", <div className="my-4"><EconPerfectCompetition /></div>);
     if (isPEDRevenueImpactTopic) return renderBoardSpecificDiagram("ped_revenue_impact", <div className="my-4"><PEDRevenueImpact /><EconPEDRevenueElastic /></div>);
     if (isDemandPullTopic) return renderBoardSpecificDiagram("demand_pull", <div className="my-4"><EconADDemandPull /></div>);
     if (isSupplySideTopic) return renderBoardSpecificDiagram("supply_side", <div className="my-4"><EconADSupplySide /></div>);
