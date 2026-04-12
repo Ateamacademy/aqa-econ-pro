@@ -1204,8 +1204,8 @@ function DiagramFeedbackView({
     if (isSpecificAdValoremTopic) return renderBoardSpecificDiagram("specific_ad_valorem", <div className="my-4"><SpecificAdValoremDiagram /></div>);
     if (isInfoFailureDemeritTopic) return renderBoardSpecificDiagram("information_failure_demerit", <div className="my-4"><InformationFailureDemeritGood /></div>);
     if (isTradablePollutionTopic) return renderBoardSpecificDiagram("tradable_pollution_permits", <div className="my-4"><TradablePollutionPermits /></div>);
-    if (isShutdownTopic) return renderBoardSpecificDiagram("shutdown_short_run", <div className="my-4"><ShutDownPriceShortRun /></div>);
-    if (isKinkedDemandTopic) return renderBoardSpecificDiagram("kinked_demand", <div className="my-4"><KinkedDemandCurve /></div>);
+    if (isShutdownTopic) return renderBoardSpecificDiagram("shutdown_short_run", <div className="my-4"><EconShortRunShutdown /></div>);
+    if (isKinkedDemandTopic) return renderBoardSpecificDiagram("kinked_demand", <div className="my-4"><EconOligopolyKinkedDemand /></div>);
     if (isMonopsonyTopic) return renderBoardSpecificDiagram("monopsony", <div className="my-4"><MonopsonyEmployerCurve /></div>);
     if (isPhillipsCurveTopic) return renderBoardSpecificDiagram("phillips_curve", <div className="my-4"><PhillipsCurveSRvsLR /></div>);
     if (isKeynesianASTopic) return renderBoardSpecificDiagram("keynesian_as", <div className="my-4"><KeynesianASSpareCurve /></div>);
