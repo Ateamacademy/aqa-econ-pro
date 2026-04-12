@@ -93,7 +93,7 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
       return EconMaxPrice;
     case "cost_curves":
     case "short_run_costs":
-      return EconShortRunCosts;
+      return EconShortRunCostsFull;
     case "minimum_wage":
     case "labour_minimum_wage":
       return EconLabourMinWage;
