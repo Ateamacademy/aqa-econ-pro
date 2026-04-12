@@ -33,6 +33,12 @@ const DIAGRAM_KEYWORD_ALIASES: Record<string, string> = {
   inr_usd: "exchange_rate",
   import_quota: "tariff",
   tariff_diagram: "tariff",
+  supply_demand_shifts: "ev_multiple_shifts",
+  welfare_loss: "negative_externality_coal",
+  sdil_welfare: "sugar_tax_sdil",
+  min_avc: "shutdown_point",
+  oligopoly: "kinked_demand_oligopoly",
+  kinked_demand: "kinked_demand_oligopoly",
 };
 
 export function normalizeDiagramKeyword(keyword?: string | null) {
