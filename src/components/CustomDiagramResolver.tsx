@@ -128,7 +128,7 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
     case "monopolistic_competition":
       return MonopolisticCompetitionDiagram;
     case "perfect_competition":
-      return PerfectCompetitionDiagram;
+      return EconPerfectCompetition;
     case "indirect_tax":
       return EconIndirectTaxDiagram;
     case "lrac":
