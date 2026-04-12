@@ -16,6 +16,10 @@ import { extractDiagramBlocks, EconDiagramCanvas } from "@/components/predicted-
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import LorenzCurveChart from "@/components/diagrams/LorenzCurveChart";
 import LRACDiagram from "@/components/diagrams/LRACDiagram";
+import EconLRACScaleCurves from "@/components/EconLRACScaleCurves";
+import EconMonopolySupernormalProfit from "@/components/EconMonopolySupernormalProfit";
+import EconPerfectCompetition from "@/components/EconPerfectCompetition";
+import EconADASCostPush from "@/components/EconADASCostPush";
 import SpecificAdValoremDiagram from "@/components/SpecificAdValoremDiagram";
 import EconIndirectTaxDiagram from "@/components/EconIndirectTaxDiagram";
 import InformationFailureDemeritGood from "@/components/InformationFailureDemeritGood";
@@ -958,9 +962,11 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
               if (kw === "phillips_curve") return PhillipsCurveSRvsLR;
               if (kw === "keynesian_as") return KeynesianASSpareCurve;
               if (kw === "tariff") return TariffDiagram;
-              if (kw === "lrac") return LRACDiagram;
+              if (kw === "lrac") return EconLRACScaleCurves;
+              if (kw === "monopoly") return EconMonopolySupernormalProfit;
               if (kw === "monopolistic_competition") return MonopolisticCompetitionDiagram;
-              if (kw === "perfect_competition") return PerfectCompetitionDiagram;
+              if (kw === "perfect_competition") return EconPerfectCompetition;
+              if (kw === "cost_push_inflation") return EconADASCostPush;
               return null;
             })();
             if (!Comp) return null;
