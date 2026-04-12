@@ -963,8 +963,8 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
               if (kw === "kinked_demand") return KinkedDemandCurve;
               if (kw === "monopsony") return MonopsonyEmployerCurve;
               if (kw === "phillips_curve") return PhillipsCurveSRvsLR;
-              if (kw === "keynesian_as") return isEdexcelA ? EconKeynesianAS : KeynesianASSpareCurve;
-              if (kw === "tariff" || kw === "import_quota") return isEdexcelA ? EconImportQuotaTariff : TariffDiagram;
+              if (kw === "keynesian_as") return subject === "edexcel-a" ? EconKeynesianAS : KeynesianASSpareCurve;
+              if (kw === "tariff" || kw === "import_quota") return subject === "edexcel-a" ? EconImportQuotaTariff : TariffDiagram;
               if (kw === "exchange_rate") return EconExchangeRateINR;
               if (kw === "lrac") return EconLRACScaleCurves;
               if (kw === "monopoly") return EconMonopolySupernormalProfit;
@@ -1203,8 +1203,8 @@ function DiagramFeedbackView({
     if (isKinkedDemandTopic) return renderBoardSpecificDiagram("kinked_demand", <div className="my-4"><KinkedDemandCurve /></div>);
     if (isMonopsonyTopic) return renderBoardSpecificDiagram("monopsony", <div className="my-4"><MonopsonyEmployerCurve /></div>);
     if (isPhillipsCurveTopic) return renderBoardSpecificDiagram("phillips_curve", <div className="my-4"><PhillipsCurveSRvsLR /></div>);
-    if (isKeynesianASTopic) return renderBoardSpecificDiagram("keynesian_as", isEdexcelA ? <div className="my-4"><EconKeynesianAS /></div> : <div className="my-4"><KeynesianASSpareCurve /></div>);
-    if (isTariffTopic) return renderBoardSpecificDiagram("tariff", isEdexcelA ? <div className="my-4"><EconImportQuotaTariff /></div> : <div className="my-4"><TariffDiagram /></div>);
+    if (isKeynesianASTopic) return renderBoardSpecificDiagram("keynesian_as", <div className="my-4"><KeynesianASSpareCurve /></div>);
+    if (isTariffTopic) return renderBoardSpecificDiagram("tariff", <div className="my-4"><TariffDiagram /></div>);
     if (isExchangeRateTopic) return renderBoardSpecificDiagram("exchange_rate", <div className="my-4"><EconExchangeRateINR /></div>);
     if (isNegativeExternalityTopic) return renderBoardSpecificDiagram("negative_externality", <div className="my-4"><EconNegExtUKEnergy /></div>);
     if (isSugarTaxTopic) return renderBoardSpecificDiagram("sugar_tax", <div className="my-4"><SugarTaxWelfareAnalysis /></div>);
