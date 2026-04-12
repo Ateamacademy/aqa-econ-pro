@@ -1141,7 +1141,7 @@ function DiagramFeedbackView({
   onReset: () => void;
   scenarioKeyword?: string;
 }) {
-  const { subject } = useSubject();
+  const { subject, examBoard } = useSubject();
   const [showExplain, setShowExplain] = useState(false);
   const [showImprove, setShowImprove] = useState(false);
   const sections = useMemo(() => parseFeedbackSections(feedback), [feedback]);
