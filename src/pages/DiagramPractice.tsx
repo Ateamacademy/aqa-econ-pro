@@ -38,7 +38,7 @@ import PEDRevenueImpact from "@/components/PEDRevenueImpact";
 import EconPEDRevenueElastic from "@/components/EconPEDRevenueElastic";
 import EconYEDLuxury from "@/components/EconYEDLuxury";
 import EconMaxPrice from "@/components/EconMaxPrice";
-import EconShortRunCosts from "@/components/EconShortRunCosts";
+import EconShortRunCostsFull from "@/components/EconShortRunCostsFull";
 import EconLabourMinWage from "@/components/EconLabourMinWage";
 import EconADDemandPull from "@/components/EconADDemandPull";
 import EconADSupplySide from "@/components/EconADSupplySide";
@@ -939,7 +939,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
               if (kw === "negative_externality" || kw === "negative_externality_production" || kw === "negative_production_externality") return EconNegExtUKEnergy;
               if (kw === "yed_luxury" || kw === "yed") return EconYEDLuxury;
               if (kw === "maximum_price" || kw === "price_ceiling") return EconMaxPrice;
-              if (kw === "cost_curves" || kw === "short_run_costs") return EconShortRunCosts;
+              if (kw === "cost_curves" || kw === "short_run_costs") return EconShortRunCostsFull;
               if (kw === "minimum_wage" || kw === "labour_minimum_wage") return EconLabourMinWage;
               if (kw === "demand_pull" || kw === "ad_demand_pull") return EconADDemandPull;
               if (kw === "supply_side" || kw === "ad_supply_side") return EconADSupplySide;
@@ -1212,7 +1212,7 @@ function DiagramFeedbackView({
     if (isPPFTopic) return renderBoardSpecificDiagram("ppf_growth", <div className="my-4"><EconPPFUKCapacity /></div>);
     if (isYEDLuxuryTopic) return renderBoardSpecificDiagram("yed_luxury", <div className="my-4"><EconYEDLuxury /></div>);
     if (isMaxPriceTopic) return renderBoardSpecificDiagram("maximum_price", <div className="my-4"><EconMaxPrice /></div>);
-    if (isShortRunCostsTopic) return renderBoardSpecificDiagram("short_run_costs", <div className="my-4"><EconShortRunCosts /></div>);
+    if (isShortRunCostsTopic) return renderBoardSpecificDiagram("short_run_costs", <div className="my-4"><EconShortRunCostsFull /></div>);
     if (isMinWageTopic) return renderBoardSpecificDiagram("labour_minimum_wage", <div className="my-4"><EconLabourMinWage /></div>);
     return null;
   };

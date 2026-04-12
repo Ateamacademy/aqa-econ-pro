@@ -16,7 +16,7 @@ import PEDRevenueImpact from "@/components/PEDRevenueImpact";
 import EconPEDRevenueElastic from "@/components/EconPEDRevenueElastic";
 import EconYEDLuxury from "@/components/EconYEDLuxury";
 import EconMaxPrice from "@/components/EconMaxPrice";
-import EconShortRunCosts from "@/components/EconShortRunCosts";
+import EconShortRunCostsFull from "@/components/EconShortRunCostsFull";
 import EconLabourMinWage from "@/components/EconLabourMinWage";
 import EconCoffeePriceVolatility from "@/components/EconCoffeePriceVolatility";
 import EconPrimaryProductDependency from "@/components/EconPrimaryProductDependency";
@@ -93,7 +93,7 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
       return EconMaxPrice;
     case "cost_curves":
     case "short_run_costs":
-      return EconShortRunCosts;
+      return EconShortRunCostsFull;
     case "minimum_wage":
     case "labour_minimum_wage":
       return EconLabourMinWage;
