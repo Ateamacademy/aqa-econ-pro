@@ -1213,7 +1213,7 @@ function DiagramFeedbackView({
     if (isNegativeExternalityTopic) return renderBoardSpecificDiagram("negative_externality", <div className="my-4"><EconNegExtUKEnergy /></div>);
     if (isSugarTaxTopic) return renderBoardSpecificDiagram("sugar_tax", <div className="my-4"><SugarTaxWelfareAnalysis /></div>);
     if (isCompetitionCSTopic) return renderBoardSpecificDiagram("competition_consumer_surplus", <div className="my-4"><CompetitionMonopolySurplusChart /></div>);
-    if (isSupplyDemandMultipleShiftsTopic) return renderBoardSpecificDiagram("supply_demand_multiple_shifts", <div className="my-4"><SupplyDemandMultipleShifts /></div>);
+    if (isSupplyDemandMultipleShiftsTopic) return renderBoardSpecificDiagram("supply_demand_multiple_shifts", <div className="my-4"><EconEVMultipleShifts /></div>);
     if (isPPFNaturalDisasterTopic) return renderBoardSpecificDiagram("ppf_natural_disaster", <div className="my-4"><PPFNaturalDisaster /></div>);
     if (isPrimaryProductTopic) return renderBoardSpecificDiagram("primary_product_dependency", <div className="my-4"><EconZambiaCopperVolatility /></div>);
     if (isHarrodDomarTopic) return renderBoardSpecificDiagram("harrod_domar_ppf", <div className="my-4"><EconHarrodDomarPPFEthiopia /></div>);
