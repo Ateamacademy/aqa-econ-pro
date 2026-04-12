@@ -16,6 +16,10 @@ import { extractDiagramBlocks, EconDiagramCanvas } from "@/components/predicted-
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import LorenzCurveChart from "@/components/diagrams/LorenzCurveChart";
 import LRACDiagram from "@/components/diagrams/LRACDiagram";
+import EconLRACScaleCurves from "@/components/EconLRACScaleCurves";
+import EconMonopolySupernormalProfit from "@/components/EconMonopolySupernormalProfit";
+import EconPerfectCompetition from "@/components/EconPerfectCompetition";
+import EconADASCostPush from "@/components/EconADASCostPush";
 import SpecificAdValoremDiagram from "@/components/SpecificAdValoremDiagram";
 import EconIndirectTaxDiagram from "@/components/EconIndirectTaxDiagram";
 import InformationFailureDemeritGood from "@/components/InformationFailureDemeritGood";
@@ -958,9 +962,11 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
               if (kw === "phillips_curve") return PhillipsCurveSRvsLR;
               if (kw === "keynesian_as") return KeynesianASSpareCurve;
               if (kw === "tariff") return TariffDiagram;
-              if (kw === "lrac") return LRACDiagram;
+              if (kw === "lrac") return EconLRACScaleCurves;
+              if (kw === "monopoly") return EconMonopolySupernormalProfit;
               if (kw === "monopolistic_competition") return MonopolisticCompetitionDiagram;
-              if (kw === "perfect_competition") return PerfectCompetitionDiagram;
+              if (kw === "perfect_competition") return EconPerfectCompetition;
+              if (kw === "cost_push_inflation") return EconADASCostPush;
               return null;
             })();
             if (!Comp) return null;
@@ -1179,9 +1185,11 @@ function DiagramFeedbackView({
   const isCoffeeMarketTopic = expectedDiagramType === "supply_demand" || expectedDiagramType === "coffee_market_uk" || /market\s*equilibrium\s*change|coffee\s*market/i.test(topic);
   const isMonopolisticCompetitionTopic = expectedDiagramType === "monopolistic_competition" || /monopolistic\s*competition|excess\s*capacity/i.test(topic);
   const isPerfectCompetitionTopic = expectedDiagramType === "perfect_competition" || /perfect\s*competition/i.test(topic);
+  const isMonopolyProfitTopic = expectedDiagramType === "monopoly" || /monopoly.*supernormal|supernormal\s*profit.*monopoly|monopoly.*mc\s*=\s*mr/i.test(topic);
+  const isCostPushTopic = expectedDiagramType === "cost_push_inflation" || expectedDiagramType === "ad_as" || /cost.push\s*inflation/i.test(topic);
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     if (isLorenzTopic) return <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
-    if (isLRACTopic) return <LRACDiagram className="mt-3" />;
+    if (isLRACTopic) return renderBoardSpecificDiagram("lrac", <div className="my-4"><EconLRACScaleCurves /></div>);
     if (isIndirectTaxTopic) return renderBoardSpecificDiagram("indirect_tax", <div className="my-4"><EconIndirectTaxDiagram /></div>);
     if (isSpecificAdValoremTopic) return renderBoardSpecificDiagram("specific_ad_valorem", <div className="my-4"><SpecificAdValoremDiagram /></div>);
     if (isInfoFailureDemeritTopic) return renderBoardSpecificDiagram("information_failure_demerit", <div className="my-4"><InformationFailureDemeritGood /></div>);
@@ -1204,7 +1212,7 @@ function DiagramFeedbackView({
     if (isTermsOfTradeTopic) return renderBoardSpecificDiagram("terms_of_trade", <div className="my-4"><EconTermsOfTradeUK /></div>);
     if (isCoffeeMarketTopic) return renderBoardSpecificDiagram("supply_demand", <div className="my-4"><EconCoffeeMarketUK /></div>);
     if (isMonopolisticCompetitionTopic) return renderBoardSpecificDiagram("monopolistic_competition", <div className="my-4"><MonopolisticCompetitionDiagram /></div>);
-    if (isPerfectCompetitionTopic) return renderBoardSpecificDiagram("perfect_competition", <div className="my-4"><PerfectCompetitionDiagram /></div>);
+    if (isPerfectCompetitionTopic) return renderBoardSpecificDiagram("perfect_competition", <div className="my-4"><EconPerfectCompetition /></div>);
     if (isPEDRevenueImpactTopic) return renderBoardSpecificDiagram("ped_revenue_impact", <div className="my-4"><PEDRevenueImpact /><EconPEDRevenueElastic /></div>);
     if (isDemandPullTopic) return renderBoardSpecificDiagram("demand_pull", <div className="my-4"><EconADDemandPull /></div>);
     if (isSupplySideTopic) return renderBoardSpecificDiagram("supply_side", <div className="my-4"><EconADSupplySide /></div>);
@@ -1214,9 +1222,11 @@ function DiagramFeedbackView({
     if (isMaxPriceTopic) return renderBoardSpecificDiagram("maximum_price", <div className="my-4"><EconMaxPrice /></div>);
     if (isShortRunCostsTopic) return renderBoardSpecificDiagram("short_run_costs", <div className="my-4"><EconShortRunCostsFull /></div>);
     if (isMinWageTopic) return renderBoardSpecificDiagram("labour_minimum_wage", <div className="my-4"><EconLabourMinWage /></div>);
+    if (isMonopolyProfitTopic) return renderBoardSpecificDiagram("monopoly", <div className="my-4"><EconMonopolySupernormalProfit /></div>);
+    if (isCostPushTopic) return renderBoardSpecificDiagram("cost_push_inflation", <div className="my-4"><EconADASCostPush /></div>);
     return null;
   };
-  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic || isPPFNaturalDisasterTopic || isPEDRevenueImpactTopic || isYEDLuxuryTopic || isMaxPriceTopic || isShortRunCostsTopic || isMinWageTopic || isPrimaryProductTopic || isHarrodDomarTopic || isMultiplierTopic || isFiscalPolicyTopic || isTermsOfTradeTopic || isCoffeeMarketTopic || isMonopolisticCompetitionTopic || isPerfectCompetitionTopic || isDemandPullTopic || isSupplySideTopic || isMonetaryPolicyTopic;
+  const hasReferenceDiagram = isLorenzTopic || isLRACTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic || isPPFNaturalDisasterTopic || isPEDRevenueImpactTopic || isYEDLuxuryTopic || isMaxPriceTopic || isShortRunCostsTopic || isMinWageTopic || isPrimaryProductTopic || isHarrodDomarTopic || isMultiplierTopic || isFiscalPolicyTopic || isTermsOfTradeTopic || isCoffeeMarketTopic || isMonopolisticCompetitionTopic || isPerfectCompetitionTopic || isDemandPullTopic || isSupplySideTopic || isMonetaryPolicyTopic || isMonopolyProfitTopic || isCostPushTopic;
 
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {

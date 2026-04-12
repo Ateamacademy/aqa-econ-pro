@@ -35,6 +35,10 @@ import EconMultiplierCircular from "@/components/EconMultiplierCircular";
 import EconTermsOfTradeUK from "@/components/EconTermsOfTradeUK";
 import EconHarrodDomarPPFEthiopia from "@/components/EconHarrodDomarPPFEthiopia";
 import EconZambiaCopperVolatility from "@/components/EconZambiaCopperVolatility";
+import EconLRACScaleCurves from "@/components/EconLRACScaleCurves";
+import EconMonopolySupernormalProfit from "@/components/EconMonopolySupernormalProfit";
+import EconPerfectCompetition from "@/components/EconPerfectCompetition";
+import EconADASCostPush from "@/components/EconADASCostPush";
 import { normalizeDiagramKeyword } from "@/lib/diagramKeywordAliases";
 
 /** Edexcel-A-only diagram keywords */
@@ -52,6 +56,9 @@ const EDEXCEL_A_ONLY = new Set([
   "demand_pull", "ad_demand_pull",
   "supply_side", "ad_supply_side",
   "labour_minimum_wage",
+  "lrac",
+  "monopoly",
+  "cost_push_inflation",
 ]);
 
 /** Maps a diagram keyword to a custom SVG component, or returns null if none exists.
@@ -121,9 +128,15 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
     case "monopolistic_competition":
       return MonopolisticCompetitionDiagram;
     case "perfect_competition":
-      return PerfectCompetitionDiagram;
+      return EconPerfectCompetition;
     case "indirect_tax":
       return EconIndirectTaxDiagram;
+    case "lrac":
+      return EconLRACScaleCurves;
+    case "monopoly":
+      return EconMonopolySupernormalProfit;
+    case "cost_push_inflation":
+      return EconADASCostPush;
     default:
       return null;
   }

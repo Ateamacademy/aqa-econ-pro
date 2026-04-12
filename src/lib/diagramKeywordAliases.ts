@@ -20,7 +20,15 @@ const DIAGRAM_KEYWORD_ALIASES: Record<string, string> = {
   monopolistic_competition_lr: "monopolistic_competition",
   monopolistic_competition_sr: "monopolistic_competition",
   perfectcomp: "perfect_competition",
+  perfect_comp_lr: "perfect_competition",
   yed: "yed_luxury",
+  lrac_scale: "lrac",
+  economies_scale: "lrac",
+  monopoly_profit: "monopoly",
+  supernormal_profit: "monopoly",
+  cost_push: "cost_push_inflation",
+  ad_as_cost_push: "cost_push_inflation",
+  ad_as: "cost_push_inflation",
 };
 
 export function normalizeDiagramKeyword(keyword?: string | null) {
