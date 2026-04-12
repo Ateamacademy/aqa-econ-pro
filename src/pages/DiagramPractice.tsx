@@ -1172,7 +1172,8 @@ function DiagramFeedbackView({
   const isKeynesianASTopic = expectedDiagramType === "keynesian_as" || /keynesian\s*a[sg]|spare\s*capacity.*as|as\s*spare\s*capacity/i.test(topic);
   const isTariffTopic = expectedDiagramType === "tariff" || expectedDiagramType === "import_quota" || /\btariff\b|import\s*(duty|quota)|trade\s*protection.*tariff/i.test(topic);
   const isExchangeRateTopic = expectedDiagramType === "exchange_rate" || /exchange\s*rate\s*determin/i.test(topic);
-  const isNegativeExternalityTopic = expectedDiagramType === "negative_externality" || expectedDiagramType === "negative_externality_production" || expectedDiagramType === "negative_production_externality" || /negative\s*externality|palm\s*oil|msc.*mpc|overproduction.*externality/i.test(topic);
+  const isNegativeExternalityCoalTopic = expectedDiagramType === "negative_externality" || /negative.*externality.*welfare|welfare\s*loss.*externality|positive.*externality.*welfare/i.test(topic);
+  const isNegativeExternalityTopic = !isNegativeExternalityCoalTopic && (expectedDiagramType === "negative_externality_production" || expectedDiagramType === "negative_production_externality" || /negative\s*externality|palm\s*oil|msc.*mpc|overproduction.*externality/i.test(topic));
   const isSugarTaxTopic = expectedDiagramType === "sugar_tax" || /sugar\s*tax|pigouvian.*tax|welfare\s*analysis.*tax/i.test(topic);
   const isCompetitionCSTopic = expectedDiagramType === "competition_consumer_surplus" || /competition.*consumer\s*surplus|consumer\s*surplus.*monopoly|economic\s*surplus.*competitive|competitive.*monopoly.*surplus/i.test(topic);
   const isSupplyDemandMultipleShiftsTopic = expectedDiagramType === "supply_demand_multiple_shifts" || /multiple\s*shifts|supply.*demand.*multiple/i.test(topic);
