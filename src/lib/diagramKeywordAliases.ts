@@ -29,6 +29,10 @@ const DIAGRAM_KEYWORD_ALIASES: Record<string, string> = {
   cost_push: "cost_push_inflation",
   ad_as_cost_push: "cost_push_inflation",
   ad_as: "cost_push_inflation",
+  spare_capacity: "keynesian_as",
+  inr_usd: "exchange_rate",
+  import_quota: "tariff",
+  tariff_diagram: "tariff",
 };
 
 export function normalizeDiagramKeyword(keyword?: string | null) {

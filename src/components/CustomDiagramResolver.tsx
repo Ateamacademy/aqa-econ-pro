@@ -39,6 +39,9 @@ import EconLRACScaleCurves from "@/components/EconLRACScaleCurves";
 import EconMonopolySupernormalProfit from "@/components/EconMonopolySupernormalProfit";
 import EconPerfectCompetition from "@/components/EconPerfectCompetition";
 import EconADASCostPush from "@/components/EconADASCostPush";
+import EconKeynesianAS from "@/components/EconKeynesianAS";
+import EconExchangeRateINR from "@/components/EconExchangeRateINR";
+import EconImportQuotaTariff from "@/components/EconImportQuotaTariff";
 import { normalizeDiagramKeyword } from "@/lib/diagramKeywordAliases";
 
 /** Edexcel-A-only diagram keywords */
@@ -59,6 +62,9 @@ const EDEXCEL_A_ONLY = new Set([
   "lrac",
   "monopoly",
   "cost_push_inflation",
+  "keynesian_as",
+  "exchange_rate",
+  "tariff",
 ]);
 
 /** Maps a diagram keyword to a custom SVG component, or returns null if none exists.
@@ -137,6 +143,13 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
       return EconMonopolySupernormalProfit;
     case "cost_push_inflation":
       return EconADASCostPush;
+    case "keynesian_as":
+      return EconKeynesianAS;
+    case "exchange_rate":
+      return EconExchangeRateINR;
+    case "tariff":
+    case "import_quota":
+      return EconImportQuotaTariff;
     default:
       return null;
   }
