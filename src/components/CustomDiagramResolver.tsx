@@ -35,6 +35,10 @@ import EconMultiplierCircular from "@/components/EconMultiplierCircular";
 import EconTermsOfTradeUK from "@/components/EconTermsOfTradeUK";
 import EconHarrodDomarPPFEthiopia from "@/components/EconHarrodDomarPPFEthiopia";
 import EconZambiaCopperVolatility from "@/components/EconZambiaCopperVolatility";
+import EconLRACScaleCurves from "@/components/EconLRACScaleCurves";
+import EconMonopolySupernormalProfit from "@/components/EconMonopolySupernormalProfit";
+import EconPerfectCompetition from "@/components/EconPerfectCompetition";
+import EconADASCostPush from "@/components/EconADASCostPush";
 import { normalizeDiagramKeyword } from "@/lib/diagramKeywordAliases";
 
 /** Edexcel-A-only diagram keywords */
@@ -124,6 +128,14 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
       return PerfectCompetitionDiagram;
     case "indirect_tax":
       return EconIndirectTaxDiagram;
+    case "lrac":
+      return EconLRACScaleCurves;
+    case "monopoly":
+      return EconMonopolySupernormalProfit;
+    case "perfect_competition":
+      return EconPerfectCompetition;
+    case "cost_push_inflation":
+      return EconADASCostPush;
     default:
       return null;
   }
