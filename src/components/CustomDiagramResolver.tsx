@@ -135,8 +135,6 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
       return EconLRACScaleCurves;
     case "monopoly":
       return EconMonopolySupernormalProfit;
-    case "perfect_competition":
-      return EconPerfectCompetition;
     case "cost_push_inflation":
       return EconADASCostPush;
     default:
