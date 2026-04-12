@@ -9,6 +9,13 @@ import { SubjectProvider } from "@/contexts/SubjectContext";
 import Layout from "@/components/Layout";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
+
+// Paper marking pages
+const Papers = lazy(() => import("./pages/Papers"));
+const PaperOverview = lazy(() => import("./pages/PaperOverview"));
+const PaperAttempt = lazy(() => import("./pages/PaperAttempt"));
+const PaperResults = lazy(() => import("./pages/PaperResults"));
+const HistoryPage = lazy(() => import("./pages/History"));
 import ResetPassword from "./pages/ResetPassword";
 import NotFound from "./pages/NotFound";
 
@@ -96,6 +103,11 @@ const App = () => (
               <Route path="/diagram-testing" element={<DiagramTesting />} />
               <Route path="/paper-library" element={<PaperLibrary />} />
               <Route path="/diagram-library" element={<EconDiagramShowcase />} />
+              <Route path="/papers" element={<Papers />} />
+              <Route path="/papers/:paperId" element={<PaperOverview />} />
+              <Route path="/papers/:paperId/attempt" element={<PaperAttempt />} />
+              <Route path="/papers/:paperId/results" element={<PaperResults />} />
+              <Route path="/history" element={<HistoryPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             </Suspense>
