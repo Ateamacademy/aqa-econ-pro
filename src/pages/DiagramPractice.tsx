@@ -1208,8 +1208,8 @@ function DiagramFeedbackView({
     if (isKinkedDemandTopic) return renderBoardSpecificDiagram("kinked_demand", <div className="my-4"><EconOligopolyKinkedDemand /></div>);
     if (isMonopsonyTopic) return renderBoardSpecificDiagram("monopsony", <div className="my-4"><MonopsonyEmployerCurve /></div>);
     if (isPhillipsCurveTopic) return renderBoardSpecificDiagram("phillips_curve", <div className="my-4"><PhillipsCurveSRvsLR /></div>);
-    if (isKeynesianASTopic) return renderBoardSpecificDiagram("keynesian_as", <div className="my-4"><KeynesianASSpareCurve /></div>);
-    if (isTariffTopic) return renderBoardSpecificDiagram("tariff", <div className="my-4"><TariffDiagram /></div>);
+    if (isKeynesianASTopic) return renderBoardSpecificDiagram("keynesian_as", <div className="my-4"><EconKeynesianAS /></div>);
+    if (isTariffTopic) return renderBoardSpecificDiagram("tariff", <div className="my-4"><EconImportQuotaTariff /></div>);
     if (isExchangeRateTopic) return renderBoardSpecificDiagram("exchange_rate", <div className="my-4"><EconExchangeRateINR /></div>);
     if (isNegativeExternalityCoalTopic) return renderBoardSpecificDiagram("negative_externality_coal", <div className="my-4"><EconNegativeExternalityCoal /></div>);
     if (isNegativeExternalityTopic) return renderBoardSpecificDiagram("negative_externality", <div className="my-4"><EconNegExtUKEnergy /></div>);
