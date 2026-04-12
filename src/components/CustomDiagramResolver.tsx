@@ -56,6 +56,9 @@ const EDEXCEL_A_ONLY = new Set([
   "demand_pull", "ad_demand_pull",
   "supply_side", "ad_supply_side",
   "labour_minimum_wage",
+  "lrac",
+  "monopoly",
+  "cost_push_inflation",
 ]);
 
 /** Maps a diagram keyword to a custom SVG component, or returns null if none exists.
