@@ -1204,7 +1204,7 @@ function DiagramFeedbackView({
   const isCostPushTopic = expectedDiagramType === "cost_push_inflation" || expectedDiagramType === "ad_as" || /cost.push\s*inflation/i.test(topic);
   const isGameTheoryTopic = expectedDiagramType === "game_theory" || expectedDiagramType === "payoff_matrix" || /game\s*theory|payoff\s*matrix|prisoner.*dilemma/i.test(topic);
   const isJCurveTopic = expectedDiagramType === "j_curve" || /j.curve|marshall.lerner|current\s*account.*depreciation/i.test(topic);
-  const isEdexcelA = examBoard === "edexcel-a";
+  const isEdexcelA = subject === "edexcel-a";
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     if (isGameTheoryTopic) return renderBoardSpecificDiagram("game_theory", <div className="my-4"><EconGameTheoryPayoff /></div>);
     if (isJCurveTopic) return renderBoardSpecificDiagram("j_curve", <div className="my-4"><EconJCurveEffect /></div>);
