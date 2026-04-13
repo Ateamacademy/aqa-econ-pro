@@ -50,6 +50,7 @@ const Onboarding = lazy(() => import("./pages/Onboarding"));
 const DiagramTesting = lazy(() => import("./pages/DiagramTesting"));
 const PaperLibrary = lazy(() => import("./pages/PaperLibrary"));
 const EconDiagramShowcase = lazy(() => import("./components/revision/EconDiagramShowcase"));
+const MarkingDebug = lazy(() => import("./pages/MarkingDebug"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
