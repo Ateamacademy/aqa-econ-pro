@@ -109,6 +109,8 @@ const App = () => (
               <Route path="/papers/:paperId/attempt" element={<PaperAttempt />} />
               <Route path="/papers/:paperId/results" element={<PaperResults />} />
               <Route path="/history" element={<HistoryPage />} />
+              <Route path="/debug/marking-tests" element={<MarkingDebug />} />
+              <Route path="/debug/integrity" element={<MarkingDebug />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             </Suspense>
