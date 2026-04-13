@@ -209,6 +209,48 @@ type BoardScenarioTemplate = {
 const inferDiagramType = (...parts: string[]) =>
   resolveDiagramType(parts.filter(Boolean).join("\n")) ?? "supply_demand";
 
+const SECTION_MAP: Record<string, DiagramSection> = {
+  "PPF": "PPFs, Markets & Allocation",
+  "Supply & Demand": "PPFs, Markets & Allocation",
+  "Price Mechanism": "PPFs, Markets & Allocation",
+  "Elasticity": "Elasticity & Revenue",
+  "Revenue": "Revenue, Profits & Objectives",
+  "Market Failure": "Market Failure & Externalities",
+  "Externality": "Market Failure & Externalities",
+  "Government Intervention": "Government Intervention",
+  "Indirect Tax": "Government Intervention",
+  "Subsidy": "Government Intervention",
+  "Cost": "Costs & Economies of Scale",
+  "Economies": "Costs & Economies of Scale",
+  "Monopoly": "Revenue, Profits & Objectives",
+  "Competition": "Market Structures",
+  "Market Structures": "Market Structures",
+  "Oligopoly": "Market Structures",
+  "Labour Market": "Labour Market",
+  "National Income": "National Income & Macro Equilibrium",
+  "AD/AS": "National Income & Macro Equilibrium",
+  "Aggregate Demand": "National Income & Macro Equilibrium",
+  "Aggregate Supply": "National Income & Macro Equilibrium",
+  "Macro": "Macro Objectives",
+  "Phillips Curve": "Macro Objectives",
+  "Lorenz Curve": "Inequality & Development",
+  "Monetary Policy": "Financial Markets & Monetary Policy",
+  "Financial Markets": "Financial Markets & Monetary Policy",
+  "Fiscal Policy": "Fiscal & Supply-Side Policies",
+  "Supply-Side Policy": "Fiscal & Supply-Side Policies",
+  "International": "International Economy",
+  "Trade": "International Economy",
+  "Exchange Rate": "International Economy",
+  "J-Curve": "International Economy",
+  "Development": "Inequality & Development",
+  "Inequality": "Inequality & Development",
+};
+
+const inferSectionFromTopicStr = (topic: string): DiagramSection => {
+  const match = Object.entries(SECTION_MAP).find(([needle]) => topic.toLowerCase().includes(needle.toLowerCase()));
+  return match?.[1] ?? "PPFs, Markets & Allocation";
+};
+
 const buildBoardScenarioTemplates = (subject: string): BoardScenarioTemplate[] => {
   const sectionMap: Record<string, DiagramSection> = {
     "PPF": "PPFs, Markets & Allocation",
