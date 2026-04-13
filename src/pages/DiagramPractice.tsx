@@ -620,6 +620,18 @@ Format: Give the scenario context with Figure 1, then the question. Nothing else
     setSelectedScenario(scenario);
     setTopic(scenario.topic);
 
+    // Check if this is an Edexcel B topic with real scenario data
+    const edexcelBTopic = subject === "edexcel-b"
+      ? edexcelBTopics.find((t) => `edexcel-b-${t.slug}` === scenario.id)
+      : undefined;
+
+    if (edexcelBTopic) {
+      // Use the real scenario data directly — no AI generation needed
+      setGeneratedQ(`**${edexcelBTopic.title}** · Foundation · ${edexcelBTopic.marks} marks\n\n${edexcelBTopic.scenario}\n\n${edexcelBTopic.question}`);
+      setStep("answer");
+      return;
+    }
+
     if (subject !== "economics") {
       setIsGenerating(true);
       setGeneratedQ("");
