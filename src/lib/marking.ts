@@ -1,6 +1,9 @@
 import type { Rubric } from "./rubrics";
 import type { MarkingResult, SynthesisResult } from "./validation";
 import { parseMarkingJSON, parseSynthesisJSON, validateMarks, enforceAxesCap } from "./validation";
+import { verifyDiagramImage, type VerificationReport } from "./verification";
+import { validateAndCorrectMarks, checkWordCountGate, checkKeyTermGate, checkContextGate, checkPlagiarismGate } from "./markValidator";
+import { logMarkingEvent } from "./markingTelemetry";
 
 const EDGE_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/mark-exam`;
 const AUTH_HEADER = `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`;
@@ -22,7 +25,8 @@ function buildDiagramPrompt(
   question: string,
   rubric: Rubric,
   studentAnswer: string,
-  hasImage: boolean
+  hasImage: boolean,
+  verification: VerificationReport | null
 ): string {
   const reqList = (rubric.diagramRequirements ?? [])
     .map((r, i) => `  ${i + 1}. [${r.id}] ${r.requirement} (${r.marks} mark${r.marks > 1 ? "s" : ""})${r.critical ? " [CRITICAL]" : ""}`)
@@ -31,6 +35,14 @@ function buildDiagramPrompt(
   const levelList = rubric.levels
     .map((l) => `  Level ${l.level} (${l.markRange[0]}-${l.markRange[1]}): ${l.descriptor}`)
     .join("\n");
+
+  let verificationSection = "";
+  if (verification) {
+    verificationSection = `\n\nVERIFICATION REPORT (authoritative — you cannot override this):
+${JSON.stringify(verification, null, 2)}
+
+Remember: if verification says a feature is absent, marks for that feature = 0. Do not be generous. Do not assume. The student earns marks by showing the work, not by potentially knowing it.`;
+  }
 
   return `QUESTION: ${question}
 
@@ -56,6 +68,7 @@ ${rubric.commonErrors.map((e) => `  • ${e}`).join("\n")}
 STUDENT SUBMISSION:
 ${hasImage ? "See attached diagram image plus written explanation below:" : ""}
 ${studentAnswer}
+${verificationSection}
 
 MARKING INSTRUCTIONS:
 1. For EACH diagramRequirement, decide: fully met / partially met / not met. Award the stated marks accordingly.
@@ -63,10 +76,30 @@ MARKING INSTRUCTIONS:
 3. A diagram with missing axes labels cannot score above Level 2 regardless of prose quality.
 4. Application marks REQUIRE direct engagement with the scenario's contextHooks — generic textbook answers cap at mid-Level 2.
 5. If the student's diagram contains a factual error, deduct the relevant requirement marks AND flag it in errors.
-6. Output JSON EXACTLY in the shape specified. No markdown, no prose outside JSON.`;
+6. For every mark you award, cite a specific feature from the verification report or a direct quote from the written explanation. Citations like 'shows understanding' or 'attempts to draw' are FORBIDDEN.
+7. If the written explanation is empty or under 20 words, the writtenExplanation AO scores are all 0.
+8. Output JSON EXACTLY in the shape specified. No markdown, no prose outside JSON.`;
 }
 
-const SYSTEM_PROMPT = `You are a senior Edexcel A-Level Economics examiner marking to the official mark scheme. You are STRICT, FAIR, and EVIDENCE-BASED. You never award marks that are not earned. You never withhold marks that are earned. You quote directly from the student's work to justify every decision. You reply with ONLY a single JSON object, no prose, no markdown fences.
+const STRICT_SYSTEM_PROMPT = `You are a senior Edexcel A-Level Economics examiner. You mark to the official mark scheme with ZERO generosity bias. You DO NOT award marks for effort, attempt, or potential. You award marks ONLY for features that are demonstrably present in the student's submission.
+
+HARD RULES — VIOLATION OF ANY OF THESE INVALIDATES YOUR MARKING:
+
+1. You will receive a verification report describing what is literally in the diagram. You may NOT award marks for any feature flagged as absent in that report. If the verification says 'no axes', you award 0 for the axes requirement — no exceptions, no benefit of the doubt.
+
+2. If verification.completeness == 'empty': total score MUST be 0. Output only zeros.
+
+3. If verification.completeness == 'sparse': maximum possible total is 1, and only if there is identifiable economic content.
+
+4. If verification.completeness == 'partial': maximum possible total is 50% of totalMarks.
+
+5. You may not award 'half marks for trying'. A requirement is either met (full marks), partially met (clearly defined fraction stated in rubric), or not met (zero).
+
+6. For every mark you award, you MUST cite a specific feature from the verification report or a direct quote from the written explanation. Citations like 'shows understanding' or 'attempts to draw' are FORBIDDEN — only concrete evidence counts.
+
+7. If the written explanation is empty or under 20 words, the writtenExplanation AO scores are all 0.
+
+8. You reply with ONLY a single JSON object, no prose, no markdown fences.
 
 Output JSON must have this exact shape:
 {
@@ -97,16 +130,36 @@ Output JSON must have this exact shape:
   "nextSteps": [string, string]
 }`;
 
+export interface MarkingOutput {
+  result: MarkingResult;
+  warning: string | null;
+  verification: VerificationReport | null;
+  flags: {
+    capped: boolean;
+    capReason: string | null;
+    correctedRequirements: string[];
+    recalculated: boolean;
+    originalTotal: number;
+  };
+}
+
 export async function markDiagramAnswer(
   question: string,
   rubric: Rubric,
   studentAnswer: string,
-  imageBase64?: string
-): Promise<{ result: MarkingResult; warning: string | null }> {
-  const userPrompt = buildDiagramPrompt(question, rubric, studentAnswer, !!imageBase64);
+  imageBase64?: string,
+  inkRatio: number = 1
+): Promise<MarkingOutput> {
+  // Step 1: Run verification on image if present
+  let verification: VerificationReport | null = null;
+  if (imageBase64) {
+    verification = await verifyDiagramImage(imageBase64);
+  }
+
+  const userPrompt = buildDiagramPrompt(question, rubric, studentAnswer, !!imageBase64, verification);
 
   const messages: Array<{ role: string; content: unknown }> = [
-    { role: "system", content: SYSTEM_PROMPT },
+    { role: "system", content: STRICT_SYSTEM_PROMPT },
   ];
 
   if (imageBase64) {
@@ -125,7 +178,26 @@ export async function markDiagramAnswer(
   let result = parseMarkingJSON(raw);
   result = enforceAxesCap(result, rubric);
   const warning = validateMarks(result, rubric);
-  return { result, warning };
+
+  // Step 2: Post-marking validation
+  const wordCount = studentAnswer.trim().split(/\s+/).filter(Boolean).length;
+  const { result: validatedResult, flags } = validateAndCorrectMarks(
+    result, rubric, verification, inkRatio, wordCount
+  );
+
+  // Step 3: Telemetry
+  logMarkingEvent({
+    timestamp: new Date().toISOString(),
+    questionId: rubric.id,
+    inkRatio,
+    verificationCompleteness: verification?.completeness ?? null,
+    claudeRawTotal: result.totalAwarded,
+    validatedTotal: validatedResult.totalAwarded,
+    capped: flags.capped,
+    capReason: flags.capReason,
+  });
+
+  return { result: validatedResult, warning, verification, flags };
 }
 
 export async function markSubQuestion(
@@ -134,16 +206,59 @@ export async function markSubQuestion(
   studentAnswer: string,
   extract?: string,
   imageBase64?: string
-): Promise<{ result: MarkingResult; warning: string | null }> {
+): Promise<MarkingOutput> {
+  const wordCount = studentAnswer.trim().split(/\s+/).filter(Boolean).length;
+
+  // Word count gate
+  const { passed: wordGatePassed, minWords } = checkWordCountGate(wordCount, rubric.totalMarks);
+  if (!wordGatePassed) {
+    const zeroResult: MarkingResult = {
+      totalAwarded: 0,
+      totalPossible: rubric.totalMarks,
+      level: 1,
+      levelJustification: `Answer too short (${wordCount} words, minimum ${minWords} required for ${rubric.totalMarks}-mark question).`,
+      requirementBreakdown: [],
+      writtenExplanation: {
+        ao1: { score: 0, outOf: 2, comment: "Answer too brief." },
+        ao2: { score: 0, outOf: 2, comment: "Answer too brief." },
+        ao3: { score: 0, outOf: 2, comment: "Answer too brief." },
+        ao4: null,
+      },
+      strengths: ["N/A"],
+      improvements: [`Write at least ${minWords} words to demonstrate the economics required for this mark band.`],
+      modelImprovement: "",
+      nextSteps: ["Practise writing under timed conditions to build up answer length."],
+    };
+    return {
+      result: zeroResult,
+      warning: `Your answer is too short to demonstrate the economics required for this mark band (${wordCount}/${minWords} words).`,
+      verification: null,
+      flags: { capped: true, capReason: "Word count gate", correctedRequirements: [], recalculated: false, originalTotal: 0 },
+    };
+  }
+
+  // Key term gate check (for later cap enforcement)
+  const keyTermCheck = checkKeyTermGate(studentAnswer, rubric.keyTerms);
+
+  // Context engagement gate
+  const contextCheck = checkContextGate(studentAnswer, rubric.contextHooks);
+
+  // Run verification if image present
+  let verification: VerificationReport | null = null;
+  if (imageBase64) {
+    verification = await verifyDiagramImage(imageBase64);
+  }
+
   const prompt = buildDiagramPrompt(
     `${question}${extract ? `\n\nEXTRACT:\n${extract}` : ""}`,
     rubric,
     studentAnswer,
-    !!imageBase64
+    !!imageBase64,
+    verification
   );
 
   const messages: Array<{ role: string; content: unknown }> = [
-    { role: "system", content: SYSTEM_PROMPT },
+    { role: "system", content: STRICT_SYSTEM_PROMPT },
   ];
 
   if (imageBase64) {
@@ -161,8 +276,45 @@ export async function markSubQuestion(
   const raw = await callMarkingEdge({ messages, maxTokens: 2000 });
   let result = parseMarkingJSON(raw);
   result = enforceAxesCap(result, rubric);
-  const warning = validateMarks(result, rubric);
-  return { result, warning };
+
+  // Apply key term cap
+  if (!keyTermCheck.passed && result.writtenExplanation.ao1) {
+    const lowestBand = Math.min(1, result.writtenExplanation.ao1.outOf);
+    if (result.writtenExplanation.ao1.score > lowestBand) {
+      result.writtenExplanation.ao1 = {
+        ...result.writtenExplanation.ao1,
+        score: lowestBand,
+        comment: `${result.writtenExplanation.ao1.comment} [Capped: only ${keyTermCheck.found}/${keyTermCheck.total} key terms used]`,
+      };
+    }
+  }
+
+  // Apply context gate cap
+  if (!contextCheck.passed && (rubric.questionType === "data-response" || rubric.questionType === "essay")) {
+    if (result.writtenExplanation.ao2) {
+      result.writtenExplanation.ao2 = {
+        ...result.writtenExplanation.ao2,
+        score: 0,
+        comment: `${result.writtenExplanation.ao2.comment} [Capped at 0: no context hooks referenced — this is a textbook answer, not a contextualised one]`,
+      };
+    }
+  }
+
+  const { result: validatedResult, flags } = validateAndCorrectMarks(result, rubric, verification, 1, wordCount);
+  const warning = validateMarks(validatedResult, rubric);
+
+  logMarkingEvent({
+    timestamp: new Date().toISOString(),
+    questionId: rubric.id,
+    inkRatio: 1,
+    verificationCompleteness: verification?.completeness ?? null,
+    claudeRawTotal: result.totalAwarded,
+    validatedTotal: validatedResult.totalAwarded,
+    capped: flags.capped,
+    capReason: flags.capReason,
+  });
+
+  return { result: validatedResult, warning, verification, flags };
 }
 
 export async function synthesisePaper(
