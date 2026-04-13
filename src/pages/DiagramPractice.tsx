@@ -665,9 +665,14 @@ Format: Give the scenario context with Figure 1, then the question. Nothing else
       ? edexcelBTopics.find((t) => `edexcel-b-${t.slug}` === scenario.id)
       : undefined;
 
-    if (edexcelBTopic) {
-      // Use the real scenario data directly — no AI generation needed
-      setGeneratedQ(`**${edexcelBTopic.title}** · ${edexcelBTopic.tier} · ${edexcelBTopic.marks} marks\n\n${edexcelBTopic.scenario}\n\n${edexcelBTopic.question}`);
+    // Check if this is an OCR topic with real scenario data
+    const ocrTopic = subject === "ocr"
+      ? ocrTopics.find((t) => `ocr-${t.slug}` === scenario.id)
+      : undefined;
+
+    const boardTopic = edexcelBTopic || ocrTopic;
+    if (boardTopic) {
+      setGeneratedQ(`**${boardTopic.title}** · ${boardTopic.tier} · ${boardTopic.marks} marks\n\n${boardTopic.scenario}\n\n${boardTopic.question}`);
       setStep("answer");
       return;
     }
