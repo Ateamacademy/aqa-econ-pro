@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, lazy, Suspense } from "react";
 import { edexcelBTopics, type EdexcelBTopic } from "@/data/topicsEdexcelB";
+import { ocrTopics, type OcrTopic } from "@/data/topicsOcr";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
@@ -408,6 +409,44 @@ export default function DiagramPractice() {
         return combined;
       }
 
+      // OCR: inject real topic data for Foundation SVG topics
+      if (subject === "ocr") {
+        const ocrScenarios: DiagramScenario[] = ocrTopics.map((t) => ({
+          id: `ocr-${t.slug}`,
+          section: t.section ? inferSectionFromTopicStr(t.section) : inferSectionFromTopicStr(t.title),
+          topic: t.title,
+          difficulty: t.tier as "Foundation" | "Intermediate" | "Advanced",
+          scenario: t.scenario,
+          question: t.question,
+          marks: t.marks,
+          expectedDiagramKeyword: t.slug,
+          hints: [`${t.tier} · ${t.marks} marks`, `OCR A-Level`],
+          scenarioVariant: t.scenarioVariant,
+        }));
+
+        const ocrSlugs = new Set(ocrTopics.map((t) => t.title));
+        const remainingTemplates = boardScenarioTemplates
+          .filter((s) => !ocrSlugs.has(s.topic))
+          .filter((s) => sectionFilter === "all" || s.section === sectionFilter)
+          .filter((s) => difficulty === "all" || s.difficulty === difficulty)
+          .map((s, index) => ({
+            id: `${subject}-gen-${index}-${s.expectedDiagramKeyword ?? "topic"}`,
+            section: s.section,
+            topic: s.topic,
+            difficulty: s.difficulty,
+            scenario: `Board-specific diagram practice for OCR ${level}: ${s.topic}.`,
+            question: `Generate and answer an exam-style ${s.marks}-mark diagram task for OCR ${level} on "${s.topic}". Your diagram and explanation should match the style expected for ${subjectLabel}.`,
+            marks: s.marks,
+            expectedDiagramKeyword: s.expectedDiagramKeyword ?? inferDiagramType(s.topic),
+            hints: [`This task is aligned to OCR ${level}.`, `Focus on the conventions and command style expected in ${subjectLabel}.`],
+          }));
+
+        const combined = [
+          ...ocrScenarios.filter((s) => sectionFilter === "all" || s.section === sectionFilter).filter((s) => difficulty === "all" || s.difficulty === difficulty),
+          ...remainingTemplates,
+        ];
+        return combined;
+      }
       return boardScenarioTemplates
         .filter(s => sectionFilter === "all" || s.section === sectionFilter)
         .filter(s => difficulty === "all" || s.difficulty === difficulty)
@@ -626,9 +665,14 @@ Format: Give the scenario context with Figure 1, then the question. Nothing else
       ? edexcelBTopics.find((t) => `edexcel-b-${t.slug}` === scenario.id)
       : undefined;
 
-    if (edexcelBTopic) {
-      // Use the real scenario data directly — no AI generation needed
-      setGeneratedQ(`**${edexcelBTopic.title}** · ${edexcelBTopic.tier} · ${edexcelBTopic.marks} marks\n\n${edexcelBTopic.scenario}\n\n${edexcelBTopic.question}`);
+    // Check if this is an OCR topic with real scenario data
+    const ocrTopic = subject === "ocr"
+      ? ocrTopics.find((t) => `ocr-${t.slug}` === scenario.id)
+      : undefined;
+
+    const boardTopic = edexcelBTopic || ocrTopic;
+    if (boardTopic) {
+      setGeneratedQ(`**${boardTopic.title}** · ${boardTopic.tier} · ${boardTopic.marks} marks\n\n${boardTopic.scenario}\n\n${boardTopic.question}`);
       setStep("answer");
       return;
     }
@@ -1045,12 +1089,16 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
 
           {/* Reference diagram — shown before submission as a collapsible guide */}
           {(() => {
-            // Check for Edexcel B SVG figure first
+            // Check for Edexcel B or OCR SVG figure first
             const edexcelBTopic = subject === "edexcel-b" && selectedScenario
               ? edexcelBTopics.find((t) => `edexcel-b-${t.slug}` === selectedScenario.id)
               : undefined;
+            const ocrRefTopic = subject === "ocr" && selectedScenario
+              ? ocrTopics.find((t) => `ocr-${t.slug}` === selectedScenario.id)
+              : undefined;
+            const boardRefTopic = edexcelBTopic || ocrRefTopic;
 
-            if (edexcelBTopic) {
+            if (boardRefTopic) {
               return (
                 <Card>
                   <CardContent className="p-4">
@@ -1059,7 +1107,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                         <Eye className="h-3.5 w-3.5" /> Show reference diagram
                       </summary>
                       <div className="mt-3">
-                        <img src={edexcelBTopic.figureFile} alt={edexcelBTopic.title} className="w-full rounded-lg bg-white p-2" />
+                        <img src={boardRefTopic.figureFile} alt={boardRefTopic.title} className="w-full rounded-lg bg-white p-2" />
                       </div>
                     </details>
                   </CardContent>
@@ -1338,11 +1386,15 @@ function DiagramFeedbackView({
   const edexcelBFeedbackTopic = subject === "edexcel-b" && scenarioId
     ? edexcelBTopics.find((t) => `edexcel-b-${t.slug}` === scenarioId)
     : undefined;
+  const ocrFeedbackTopic = subject === "ocr" && scenarioId
+    ? ocrTopics.find((t) => `ocr-${t.slug}` === scenarioId)
+    : undefined;
+  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic;
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
-    // Edexcel B SVG figure
-    if (edexcelBFeedbackTopic) {
-      return <div className="my-4"><img src={edexcelBFeedbackTopic.figureFile} alt={edexcelBFeedbackTopic.title} className="w-full rounded-lg bg-white p-2" /></div>;
+    // Board-specific SVG figure (Edexcel B or OCR)
+    if (boardFeedbackTopic) {
+      return <div className="my-4"><img src={boardFeedbackTopic.figureFile} alt={boardFeedbackTopic.title} className="w-full rounded-lg bg-white p-2" /></div>;
     }
     if (isGameTheoryTopic) return renderBoardSpecificDiagram("game_theory", <div className="my-4"><EconGameTheoryPayoff /></div>);
     if (isJCurveTopic) return renderBoardSpecificDiagram("j_curve", <div className="my-4"><EconJCurveEffect /></div>);
@@ -1386,7 +1438,7 @@ function DiagramFeedbackView({
     if (isCostPushTopic) return renderBoardSpecificDiagram("cost_push_inflation", <div className="my-4"><EconADASCostPush /></div>);
     return null;
   };
-  const hasReferenceDiagram = !!edexcelBFeedbackTopic || isGameTheoryTopic || isJCurveTopic || isLorenzTopic || isLRACTopic || isIndirectTaxTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isExchangeRateTopic || isNegativeExternalityCoalTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic || isPPFNaturalDisasterTopic || isPEDRevenueImpactTopic || isYEDLuxuryTopic || isMaxPriceTopic || isShortRunCostsTopic || isMinWageTopic || isPrimaryProductTopic || isHarrodDomarTopic || isMultiplierTopic || isFiscalPolicyTopic || isTermsOfTradeTopic || isCoffeeMarketTopic || isMonopolisticCompetitionTopic || isPerfectCompetitionTopic || isDemandPullTopic || isSupplySideTopic || isMonetaryPolicyTopic || isMonopolyProfitTopic || isCostPushTopic;
+  const hasReferenceDiagram = !!boardFeedbackTopic || isGameTheoryTopic || isJCurveTopic || isLorenzTopic || isLRACTopic || isIndirectTaxTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isExchangeRateTopic || isNegativeExternalityCoalTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic || isPPFNaturalDisasterTopic || isPEDRevenueImpactTopic || isYEDLuxuryTopic || isMaxPriceTopic || isShortRunCostsTopic || isMinWageTopic || isPrimaryProductTopic || isHarrodDomarTopic || isMultiplierTopic || isFiscalPolicyTopic || isTermsOfTradeTopic || isCoffeeMarketTopic || isMonopolisticCompetitionTopic || isPerfectCompetitionTopic || isDemandPullTopic || isSupplySideTopic || isMonetaryPolicyTopic || isMonopolyProfitTopic || isCostPushTopic;
 
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {

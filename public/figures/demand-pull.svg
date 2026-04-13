@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 460" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="460" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Demand-Pull Inflation — UK Post-COVID Consumer Surge (2021–22)</text>
+
+  <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="540" y="420" font-size="12" fill="#0f172a">Real GDP (Y)</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Price Level</text>
+
+  <!-- SRAS (upward sloping) -->
+  <line x1="130" y1="380" x2="570" y2="100" stroke="#0284c7" stroke-width="2.5"/>
+  <text x="575" y="105" font-size="12" font-weight="600" fill="#0284c7">SRAS</text>
+
+  <!-- AD1 -->
+  <line x1="130" y1="100" x2="490" y2="380" stroke="#15803d" stroke-width="2.4"/>
+  <text x="490" y="395" font-size="11" font-weight="600" fill="#15803d">AD1</text>
+
+  <!-- AD2 -->
+  <line x1="230" y1="100" x2="580" y2="380" stroke="#be123c" stroke-width="2.4"/>
+  <text x="585" y="395" font-size="11" font-weight="600" fill="#be123c">AD2</text>
+
+  <!-- Shift arrow -->
+  <defs>
+    <marker id="arrDP" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#be123c"/></marker>
+  </defs>
+  <path d="M 200 180 L 290 180" fill="none" stroke="#be123c" stroke-width="2" marker-end="url(#arrDP)"/>
+  <text x="245" y="170" text-anchor="middle" font-size="10" fill="#be123c" font-style="italic">↑C</text>
+
+  <!-- Eq1: intersection of AD1 and SRAS -->
+  <!-- AD1: (130,100) to (490,380), slope = (380-100)/(490-130) = 0.778; y = 100 + 0.778(x-130)
+       SRAS: (130,380) to (570,100), slope = (100-380)/(570-130) = -0.636; y = 380 - 0.636(x-130)
+       100 + 0.778(x-130) = 380 - 0.636(x-130) -> 1.414(x-130) = 280 -> x-130 = 198 -> x ≈ 328, y ≈ 254 -->
+  <circle cx="328" cy="254" r="5" fill="#15803d"/>
+  <line x1="90" y1="254" x2="328" y2="254" stroke="#15803d" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="328" y1="254" x2="328" y2="400" stroke="#15803d" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="258" font-size="11" font-weight="700" fill="#15803d">P1</text>
+  <text x="328" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d">Y1</text>
+
+  <!-- Eq2: AD2: y = 100 + 0.8(x-230). Set to SRAS: 100 + 0.8(x-230) = 380 - 0.636(x-130)
+       0.8x - 184 + 0.636x - 82.7 = 280 -> 1.436x = 546.7 -> x ≈ 381, y ≈ 100 + 0.8*151 = 220.8
+  -->
+  <circle cx="381" cy="221" r="5" fill="#be123c"/>
+  <line x1="90" y1="221" x2="381" y2="221" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="381" y1="221" x2="381" y2="400" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="225" font-size="11" font-weight="700" fill="#be123c">P2</text>
+  <text x="381" y="430" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Y2</text>
+
+  <text x="310" y="445" text-anchor="middle" font-size="11" fill="#334155">↑C shifts AD right → higher price level (P1→P2) and higher real output (Y1→Y2): demand-pull inflation.</text>
+</svg>
