@@ -1089,12 +1089,16 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
 
           {/* Reference diagram — shown before submission as a collapsible guide */}
           {(() => {
-            // Check for Edexcel B SVG figure first
+            // Check for Edexcel B or OCR SVG figure first
             const edexcelBTopic = subject === "edexcel-b" && selectedScenario
               ? edexcelBTopics.find((t) => `edexcel-b-${t.slug}` === selectedScenario.id)
               : undefined;
+            const ocrRefTopic = subject === "ocr" && selectedScenario
+              ? ocrTopics.find((t) => `ocr-${t.slug}` === selectedScenario.id)
+              : undefined;
+            const boardRefTopic = edexcelBTopic || ocrRefTopic;
 
-            if (edexcelBTopic) {
+            if (boardRefTopic) {
               return (
                 <Card>
                   <CardContent className="p-4">
