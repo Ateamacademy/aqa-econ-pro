@@ -372,14 +372,14 @@ export default function DiagramPractice() {
       if (subject === "edexcel-b") {
         const edexcelBScenarios: DiagramScenario[] = edexcelBTopics.map((t) => ({
           id: `edexcel-b-${t.slug}`,
-          section: inferSectionFromTopicStr(t.title),
+          section: t.section ? inferSectionFromTopicStr(t.section) : inferSectionFromTopicStr(t.title),
           topic: t.title,
-          difficulty: t.tier as "Foundation",
+          difficulty: t.tier as "Foundation" | "Intermediate" | "Advanced",
           scenario: t.scenario,
           question: t.question,
           marks: t.marks,
           expectedDiagramKeyword: t.slug,
-          hints: [`Foundation · ${t.marks} marks`, `Edexcel B A-Level`],
+          hints: [`${t.tier} · ${t.marks} marks`, `Edexcel B A-Level`],
         }));
 
         // Merge with generated board templates for remaining topics
@@ -627,7 +627,7 @@ Format: Give the scenario context with Figure 1, then the question. Nothing else
 
     if (edexcelBTopic) {
       // Use the real scenario data directly — no AI generation needed
-      setGeneratedQ(`**${edexcelBTopic.title}** · Foundation · ${edexcelBTopic.marks} marks\n\n${edexcelBTopic.scenario}\n\n${edexcelBTopic.question}`);
+      setGeneratedQ(`**${edexcelBTopic.title}** · ${edexcelBTopic.tier} · ${edexcelBTopic.marks} marks\n\n${edexcelBTopic.scenario}\n\n${edexcelBTopic.question}`);
       setStep("answer");
       return;
     }
@@ -955,6 +955,8 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                             "text-[10px] font-bold px-1.5 py-0.5 rounded border",
                             s.difficulty === "Foundation" && subject === "edexcel-b"
                               ? "bg-violet-500/15 text-violet-300 border-violet-400/40"
+                              : s.difficulty === "Intermediate" && subject === "edexcel-b"
+                              ? "bg-indigo-500/15 text-indigo-300 border-indigo-400/40"
                               : s.difficulty === "Foundation" ? "bg-accent/20 text-accent-foreground border-transparent" :
                               s.difficulty === "Intermediate" ? "bg-secondary text-secondary-foreground border-transparent" :
                               "bg-destructive/10 text-destructive border-transparent"
