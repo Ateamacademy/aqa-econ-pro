@@ -1035,7 +1035,31 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
           </Card>
 
           {/* Reference diagram — shown before submission as a collapsible guide */}
-          {selectedScenario?.expectedDiagramKeyword && (() => {
+          {(() => {
+            // Check for Edexcel B SVG figure first
+            const edexcelBTopic = subject === "edexcel-b" && selectedScenario
+              ? edexcelBTopics.find((t) => `edexcel-b-${t.slug}` === selectedScenario.id)
+              : undefined;
+
+            if (edexcelBTopic) {
+              return (
+                <Card>
+                  <CardContent className="p-4">
+                    <details className="group">
+                      <summary className="text-xs font-semibold text-primary cursor-pointer hover:text-primary/80 transition-colors flex items-center gap-1.5">
+                        <Eye className="h-3.5 w-3.5" /> Show reference diagram
+                      </summary>
+                      <div className="mt-3">
+                        <img src={edexcelBTopic.figureFile} alt={edexcelBTopic.title} className="w-full rounded-lg bg-white p-2" />
+                      </div>
+                    </details>
+                  </CardContent>
+                </Card>
+              );
+            }
+
+            if (!selectedScenario?.expectedDiagramKeyword) return null;
+
             const kw = normalizeDiagramKeyword(selectedScenario.expectedDiagramKeyword) ?? selectedScenario.expectedDiagramKeyword;
             const isPEDDual = kw === "ped_revenue_impact";
             const Comp = (() => {
