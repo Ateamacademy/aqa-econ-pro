@@ -1326,7 +1326,15 @@ function DiagramFeedbackView({
   const isGameTheoryTopic = expectedDiagramType === "game_theory" || expectedDiagramType === "payoff_matrix" || /game\s*theory|payoff\s*matrix|prisoner.*dilemma/i.test(topic);
   const isJCurveTopic = expectedDiagramType === "j_curve" || /j.curve|marshall.lerner|current\s*account.*depreciation/i.test(topic);
   const isEdexcelA = subject === "edexcel-a";
+  const edexcelBFeedbackTopic = subject === "edexcel-b" && scenarioId
+    ? edexcelBTopics.find((t) => `edexcel-b-${t.slug}` === scenarioId)
+    : undefined;
+
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
+    // Edexcel B SVG figure
+    if (edexcelBFeedbackTopic) {
+      return <div className="my-4"><img src={edexcelBFeedbackTopic.figureFile} alt={edexcelBFeedbackTopic.title} className="w-full rounded-lg bg-white p-2" /></div>;
+    }
     if (isGameTheoryTopic) return renderBoardSpecificDiagram("game_theory", <div className="my-4"><EconGameTheoryPayoff /></div>);
     if (isJCurveTopic) return renderBoardSpecificDiagram("j_curve", <div className="my-4"><EconJCurveEffect /></div>);
     if (isLorenzTopic) return isEdexcelA ? renderBoardSpecificDiagram("lorenz_curve", <div className="my-4"><EconEdexcelLorenzCurve /></div>) : <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
