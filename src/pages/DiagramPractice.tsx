@@ -952,10 +952,12 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                         </div>
                         <div className="flex items-center gap-1.5 flex-shrink-0">
                           <span className={cn(
-                            "text-[10px] font-bold px-1.5 py-0.5 rounded",
-                            s.difficulty === "Foundation" ? "bg-accent/20 text-accent-foreground" :
-                            s.difficulty === "Intermediate" ? "bg-secondary text-secondary-foreground" :
-                            "bg-destructive/10 text-destructive"
+                            "text-[10px] font-bold px-1.5 py-0.5 rounded border",
+                            s.difficulty === "Foundation" && subject === "edexcel-b"
+                              ? "bg-violet-500/15 text-violet-300 border-violet-400/40"
+                              : s.difficulty === "Foundation" ? "bg-accent/20 text-accent-foreground border-transparent" :
+                              s.difficulty === "Intermediate" ? "bg-secondary text-secondary-foreground border-transparent" :
+                              "bg-destructive/10 text-destructive border-transparent"
                           )}>{s.difficulty}</span>
                           <span className="text-[10px] font-bold text-muted-foreground">[{s.marks}]</span>
                         </div>
