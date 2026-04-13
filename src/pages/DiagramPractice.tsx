@@ -393,11 +393,11 @@ export default function DiagramPractice() {
             section: s.section,
             topic: s.topic,
             difficulty: s.difficulty,
-            scenario: `Board-specific diagram practice for ${examBoard} ${level}: ${s.topic}.`,
-            question: `Generate and answer an exam-style ${s.marks}-mark diagram task for ${examBoard} ${level} on "${s.topic}". Your diagram and explanation should match the style expected for ${subjectLabel}.`,
+            scenario: `Board-specific diagram practice for ${subject === "edexcel-b" ? "Edexcel B" : examBoard} ${level}: ${s.topic}.`,
+            question: `Generate and answer an exam-style ${s.marks}-mark diagram task for ${subject === "edexcel-b" ? "Edexcel B" : examBoard} ${level} on "${s.topic}". Your diagram and explanation should match the style expected for ${subjectLabel}.`,
             marks: s.marks,
             expectedDiagramKeyword: s.expectedDiagramKeyword ?? inferDiagramType(s.topic),
-            hints: [`This task is aligned to ${examBoard} ${level}.`, `Focus on the conventions and command style expected in ${subjectLabel}.`],
+            hints: [`This task is aligned to ${subject === "edexcel-b" ? "Edexcel B" : examBoard} ${level}.`, `Focus on the conventions and command style expected in ${subjectLabel}.`],
           }));
 
         const combined = [
