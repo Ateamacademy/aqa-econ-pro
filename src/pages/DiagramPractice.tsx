@@ -409,7 +409,46 @@ export default function DiagramPractice() {
         return combined;
       }
 
-      return boardScenarioTemplates
+      // OCR: inject real topic data for Foundation SVG topics
+      if (subject === "ocr") {
+        const ocrScenarios: DiagramScenario[] = ocrTopics.map((t) => ({
+          id: `ocr-${t.slug}`,
+          section: t.section ? inferSectionFromTopicStr(t.section) : inferSectionFromTopicStr(t.title),
+          topic: t.title,
+          difficulty: t.tier as "Foundation" | "Intermediate" | "Advanced",
+          scenario: t.scenario,
+          question: t.question,
+          marks: t.marks,
+          expectedDiagramKeyword: t.slug,
+          hints: [`${t.tier} · ${t.marks} marks`, `OCR A-Level`],
+          scenarioVariant: t.scenarioVariant,
+        }));
+
+        const ocrSlugs = new Set(ocrTopics.map((t) => t.title));
+        const remainingTemplates = boardScenarioTemplates
+          .filter((s) => !ocrSlugs.has(s.topic))
+          .filter((s) => sectionFilter === "all" || s.section === sectionFilter)
+          .filter((s) => difficulty === "all" || s.difficulty === difficulty)
+          .map((s, index) => ({
+            id: `${subject}-gen-${index}-${s.expectedDiagramKeyword ?? "topic"}`,
+            section: s.section,
+            topic: s.topic,
+            difficulty: s.difficulty,
+            scenario: `Board-specific diagram practice for OCR ${level}: ${s.topic}.`,
+            question: `Generate and answer an exam-style ${s.marks}-mark diagram task for OCR ${level} on "${s.topic}". Your diagram and explanation should match the style expected for ${subjectLabel}.`,
+            marks: s.marks,
+            expectedDiagramKeyword: s.expectedDiagramKeyword ?? inferDiagramType(s.topic),
+            hints: [`This task is aligned to OCR ${level}.`, `Focus on the conventions and command style expected in ${subjectLabel}.`],
+          }));
+
+        const combined = [
+          ...ocrScenarios.filter((s) => sectionFilter === "all" || s.section === sectionFilter).filter((s) => difficulty === "all" || s.difficulty === difficulty),
+          ...remainingTemplates,
+        ];
+        return combined;
+      }
+
+
         .filter(s => sectionFilter === "all" || s.section === sectionFilter)
         .filter(s => difficulty === "all" || s.difficulty === difficulty)
         .map((s, index) => ({
