@@ -197,4 +197,101 @@ export const ocrTopics: OcrTopic[] = [
       { requirement: "Written explanation links AR > ATC to abnormal profit and barriers-to-entry to long-run persistence", marks: 1 },
     ],
   },
+
+  // ── Advanced [8 marks] ──
+  {
+    slug: "negative-externality-welfare",
+    board: "OCR",
+    tier: "Advanced",
+    section: "Market Failure",
+    marks: 8,
+    title: "Negative Externality — Welfare Loss Triangle",
+    scenario:
+      "The UK Government has identified that continued operation of coal-fired power stations generates significant external costs — carbon emissions and local air pollution. These costs are not reflected in the market price of electricity, producing misallocation of resources and a welfare loss to society.",
+    question:
+      "Using a negative production externality diagram, explain why the unregulated production of electricity from coal leads to market failure. Your answer must show the socially optimum level of output and the resulting area of deadweight welfare loss. [Key point: to reach top band, ensure the vertical distance between MPC and MSC clearly represents the Marginal External Cost (MEC).]",
+    figureFile: "/figures/neg-externality-welfare.svg",
+    explanation:
+      "In a free market, producers weigh only their PRIVATE costs (MPC). Firms maximise profit where MPC = MPB (=MSB) giving market output Qm at market price Pm. The TRUE social cost of coal electricity is MSC = MPC + MEC, where MEC captures carbon emissions and local air pollution valued in £ terms. MSC sits ABOVE MPC by a constant MEC vertical gap. The SOCIALLY OPTIMUM output is Q* where MSC = MSB, at a higher price P*. Between Q* and Qm, each additional unit adds MSC > MSB — the shaded WELFARE-LOSS TRIANGLE bounded by MSC, MSB, and the vertical at Qm. This is the deadweight loss: net welfare society loses from over-production.",
+    keyTerms: ["negative externality", "MPC", "MSC", "MEC", "MPB/MSB", "social optimum", "welfare loss", "deadweight loss", "Pigouvian tax"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Price and Quantity", marks: 1 },
+      { requirement: "MPB = MSB = Demand (downward), MPC = Supply (upward), MSC (upward, above MPC by constant MEC gap) — all three labelled", marks: 2 },
+      { requirement: "MEC gap annotated as vertical distance between MPC and MSC", marks: 1 },
+      { requirement: "Market equilibrium Qm, Pm (MPC = MPB) AND social optimum Q*, P* (MSC = MSB) both marked; Q* < Qm", marks: 2 },
+      { requirement: "Welfare-loss triangle correctly shaded between Q* and Qm, bounded by MSC above and MSB below", marks: 1 },
+      { requirement: "Written explanation: over-production logic + link to Pigouvian tax correction", marks: 1 },
+    ],
+  },
+  {
+    slug: "positive-externality-welfare",
+    board: "OCR",
+    tier: "Advanced",
+    section: "Market Failure",
+    marks: 8,
+    title: "Positive Externality — Welfare Gain",
+    scenario:
+      "In 2024 the UK government faced pressure to reintroduce EV consumer incentives. Private benefit to the driver includes lower running costs, but society also benefits: reduced NO₂ emissions and improved urban air quality lower the NHS cost burden. In a free market, consumers consider only MPB, leading to consumption BELOW the social optimum.",
+    question:
+      "Using a positive externality diagram, explain why the free market under-consumes electric vehicles and identify the area of welfare gain that would be created if the economy moved to the socially optimum level of output. Your response should include:\n1. A correctly labelled positive externality diagram showing MPB, MSB, and MSC curves.\n2. Clear identification of the market equilibrium (Q1) and the socially optimum equilibrium (Q*).\n3. Shading of the area representing the potential welfare gain at the free market equilibrium.\n4. A written explanation of why the Marginal External Benefit (MEB) leads to market failure.",
+    figureFile: "/figures/pos-externality-welfare.svg",
+    explanation:
+      "EVs generate a POSITIVE consumption externality: cleaner air benefits non-drivers (reduced respiratory illness → lower NHS costs, productivity gains). MSB = MPB + MEB, so MSB sits ABOVE MPB by a constant MEB gap. In the free market, consumers weigh only MPB, so market equilibrium is at Q1 where MPB = MPC (=MSC). But the SOCIAL OPTIMUM is at Q* where MSB = MSC, with Q* > Q1 — society wants MORE EVs than the market provides. Under-consumption occurs because consumers don't capture the external benefit themselves.",
+    keyTerms: ["positive externality", "MPB", "MSB", "MEB", "MPC = MSC", "social optimum", "welfare gain", "under-consumption", "subsidy"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Price and Quantity", marks: 1 },
+      { requirement: "MPC = MSC (upward), MPB (downward), MSB (downward, ABOVE MPB by constant MEB) — all three labelled", marks: 2 },
+      { requirement: "MEB gap annotated as vertical distance between MPB and MSB", marks: 1 },
+      { requirement: "Market equilibrium Q1 (MPB = MSC) and social optimum Q* (MSB = MSC) marked; Q* > Q1", marks: 2 },
+      { requirement: "Welfare-gain triangle shaded between Q1 and Q*, bounded by MSB above and MSC below", marks: 1 },
+      { requirement: "Written explanation: MEB causes under-consumption + subsidy corrects", marks: 1 },
+    ],
+  },
+  {
+    slug: "monopsony-social-care",
+    board: "OCR",
+    tier: "Advanced",
+    section: "Labour Market",
+    marks: 8,
+    title: "Labour Market — Monopsony",
+    scenario:
+      "In many UK regions the local authority is the dominant buyer of social care services — effectively sole employer for thousands of care workers. Reports indicate wage restraint: pay is significantly below competing retail and hospitality sectors.",
+    question:
+      "Using a labour market diagram, explain how monopsony power in the social care sector can lead to BOTH lower wages AND lower levels of employment compared to a perfectly competitive labour market. You must:\n1. Draw a correctly labelled monopsony labour market diagram.\n2. Annotate the profit-max (cost-min) employment L1 and wage W1.\n3. Contrast with the competitive equilibrium (Wc, Lc).\n4. Provide a logical chain of reasoning on the MCL–ACL relationship.",
+    figureFile: "/figures/monopsony-care.svg",
+    explanation:
+      "The monopsonist faces the upward-sloping market supply of labour (S_L = AC_L). To attract an additional worker, the monopsonist must raise the wage — AND pay that higher wage to ALL existing workers (no wage discrimination). Therefore MC_L rises faster than AC_L: the MC_L curve sits ABOVE and is STEEPER than AC_L. Profit-maximising employment is where MC_L = MRP_L (=D_L), giving employment L1. The wage paid is read off the supply curve (AC_L) at L1, giving W1 — which is BELOW MC_L at that point.",
+    keyTerms: ["monopsony", "MC_L", "AC_L", "MRP_L", "wage exploitation", "competitive equilibrium", "supply of labour", "profit maximisation"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Wage Rate and Employment", marks: 1 },
+      { requirement: "S_L = AC_L (upward), MC_L (upward, ABOVE and STEEPER than AC_L), MRP_L = D_L (downward) — all three labelled", marks: 2 },
+      { requirement: "Monopsony point: L1 at MC_L = MRP_L; W1 read down to AC_L at L1", marks: 1 },
+      { requirement: "Competitive point: Lc at S_L = MRP_L; Wc on same curve. Lc > L1 AND Wc > W1 clearly shown", marks: 2 },
+      { requirement: "'Lost wages' rectangle between Wc and W1 at L1 shaded", marks: 1 },
+      { requirement: "Written explanation: MC_L > AC_L logic because raising wage applies to ALL workers", marks: 1 },
+    ],
+  },
+  {
+    slug: "phillips-curve-srlr",
+    board: "OCR",
+    tier: "Advanced",
+    section: "Macroeconomics",
+    marks: 8,
+    title: "Phillips Curve — Short Run vs Long Run",
+    scenario:
+      "The UK economy in 2024 faced persistent inflation above the 2% target. After expansionary monetary and fiscal policy, unemployment initially fell below its Natural Rate (NRU) but eventually returned to the NRU as inflation expectations adjusted upward.",
+    question:
+      "Using BOTH an AD/AS diagram AND a Phillips Curve diagram, explain why an attempt by the government to reduce unemployment below the NRU through expansionary policy will only lead to higher inflation in the long run. Your response should show:\n1. In the AD/AS diagram: AD shifting right along SRAS, causing a temporary expansion of output above YFE, then SRAS shifting left as input costs adjust.\n2. In the Phillips Curve diagram: a movement from point A to B along SRPC1 (lower unemployment, higher inflation), then a shift to SRPC2 returning to the NRU at point C with permanently higher inflation.\n3. A vertical LRPC at the NRU.",
+    figureFile: "/figures/phillips-srlr.svg",
+    explanation:
+      "PANEL A (AD/AS): The economy starts at long-run equilibrium where AD1 = SRAS1 = LRAS at YFE, price level Pe. Expansionary policy shifts AD1→AD2, moving equilibrium UP along SRAS1 to Y2 (above YFE) and price level P2. Output above YFE is unsustainable — an inflationary gap emerges. Workers notice their real wages have fallen and negotiate higher nominal wages; firms' input costs rise; SRAS1 shifts LEFT to SRAS2. Final long-run equilibrium returns to YFE (on LRAS) but at higher price level P3. PANEL B (Phillips): Movement from A (NRU, π1) to B (U1<NRU, π2) is ALONG SRPC1. Inflation expectations adjust upward, shifting SRPC1→SRPC2. Unemployment returns to the NRU but inflation is now permanently higher — point C. The LRPC is vertical at the NRU.",
+    keyTerms: ["Phillips Curve", "SRPC", "LRPC", "NRU", "natural rate", "inflation expectations", "expectations-augmented", "AD/AS", "LRAS", "money neutrality"],
+    diagramRequirements: [
+      { requirement: "TWO-panel diagram: AD/AS on left, Phillips on right, both axes labelled", marks: 2 },
+      { requirement: "AD/AS panel: AD1, AD2, SRAS1, SRAS2, LRAS — all labelled — with YFE, Y2 and price levels Pe, P2, P3 marked", marks: 2 },
+      { requirement: "Phillips panel: SRPC1, SRPC2 (shifted right/up) and vertical LRPC at NRU labelled", marks: 2 },
+      { requirement: "Three points A, B, C on Phillips panel: A (NRU, π1), B (U1<NRU, π2), C (NRU, π2) with movement A→B→C indicated", marks: 1 },
+      { requirement: "Written explanation links the two panels: AD shift = movement along SRPC; SRAS shift = SRPC shift; LRPC = vertical at NRU", marks: 1 },
+    ],
+  },
 ];
