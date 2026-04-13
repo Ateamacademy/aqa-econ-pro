@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 460" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="460" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">UK Coffee Market — Cost Shock (2024)</text>
+
+  <line x1="90" y1="400" x2="570" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="540" y="420" font-size="12" fill="#0f172a">Quantity (Q)</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Price (P)</text>
+
+  <line x1="130" y1="110" x2="540" y2="380" stroke="#15803d" stroke-width="2.5"/>
+  <text x="545" y="385" font-size="12" font-weight="600" fill="#15803d">D (unchanged)</text>
+
+  <line x1="130" y1="380" x2="540" y2="110" stroke="#0284c7" stroke-width="2.5"/>
+  <text x="545" y="115" font-size="12" font-weight="600" fill="#0284c7">S1</text>
+
+  <line x1="130" y1="300" x2="510" y2="50" stroke="#be123c" stroke-width="2.5"/>
+  <text x="510" y="45" font-size="12" font-weight="600" fill="#be123c">S2 (cost ↑)</text>
+
+  <defs>
+    <marker id="arrSD" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#be123c"/>
+    </marker>
+  </defs>
+  <path d="M 350 230 Q 320 200 290 175" fill="none" stroke="#be123c" stroke-width="1.8" marker-end="url(#arrSD)"/>
+  <text x="360" y="225" font-size="10" fill="#be123c" font-style="italic">supply shifts left</text>
+
+  <circle cx="335" cy="245" r="5" fill="#0284c7"/>
+  <line x1="90" y1="245" x2="335" y2="245" stroke="#0284c7" stroke-dasharray="4,4" stroke-width="1.3"/>
+  <line x1="335" y1="245" x2="335" y2="400" stroke="#0284c7" stroke-dasharray="4,4" stroke-width="1.3"/>
+  <text x="68" y="249" font-size="11" font-weight="700" fill="#0284c7">P1</text>
+  <text x="335" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#0284c7">Q1</text>
+
+  <circle cx="274" cy="205" r="5" fill="#be123c"/>
+  <line x1="90" y1="205" x2="274" y2="205" stroke="#be123c" stroke-dasharray="4,4" stroke-width="1.3"/>
+  <line x1="274" y1="205" x2="274" y2="400" stroke="#be123c" stroke-dasharray="4,4" stroke-width="1.3"/>
+  <text x="68" y="209" font-size="11" font-weight="700" fill="#be123c">P2</text>
+  <text x="274" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Q2</text>
+
+  <text x="310" y="445" text-anchor="middle" font-size="11" fill="#334155">Higher input costs (beans + wages) shift S left → equilibrium price ↑ (P1→P2), quantity ↓ (Q1→Q2)</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 470" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="470" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Trade Union Wage Floor — UK Rail Industry (ASLEF)</text>
+
+  <!-- Axes -->
+  <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="540" y="420" font-size="12" fill="#0f172a">Quantity of Labour (Q)</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Wage (W)</text>
+
+  <!-- SL upward sloping -->
+  <line x1="130" y1="380" x2="550" y2="100" stroke="#0284c7" stroke-width="2.5"/>
+  <text x="555" y="105" font-size="12" font-weight="600" fill="#0284c7">SL</text>
+
+  <!-- DL downward sloping -->
+  <line x1="130" y1="100" x2="550" y2="380" stroke="#15803d" stroke-width="2.5"/>
+  <text x="555" y="385" font-size="12" font-weight="600" fill="#15803d">DL</text>
+
+  <!-- Free-market equilibrium at (340, 240) -->
+  <circle cx="340" cy="240" r="5" fill="#0f172a"/>
+  <line x1="90" y1="240" x2="340" y2="240" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="340" y1="240" x2="340" y2="400" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="65" y="244" font-size="11" font-weight="700" fill="#0f172a">We</text>
+  <text x="340" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">Qe</text>
+
+  <!-- Union wage Wu at y=170 -->
+  <line x1="90" y1="170" x2="500" y2="170" stroke="#be123c" stroke-width="2.2"/>
+  <text x="505" y="174" font-size="12" font-weight="700" fill="#be123c">Wu (union wage)</text>
+  <text x="68" y="174" font-size="11" font-weight="700" fill="#be123c">Wu</text>
+
+  <!-- Qd at (235, 170) on DL -->
+  <circle cx="235" cy="170" r="4.5" fill="#be123c"/>
+  <line x1="235" y1="170" x2="235" y2="400" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="235" y="430" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Qd</text>
+
+  <!-- Qs at (445, 170) on SL -->
+  <circle cx="445" cy="170" r="4.5" fill="#be123c"/>
+  <line x1="445" y1="170" x2="445" y2="400" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="445" y="430" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Qs</text>
+
+  <!-- Excess supply bracket on the wage line, between Qd and Qs -->
+  <line x1="235" y1="150" x2="445" y2="150" stroke="#be123c" stroke-width="2"/>
+  <line x1="235" y1="150" x2="235" y2="160" stroke="#be123c" stroke-width="2"/>
+  <line x1="445" y1="150" x2="445" y2="160" stroke="#be123c" stroke-width="2"/>
+  <text x="340" y="142" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Excess supply of labour</text>
+  <text x="340" y="155" text-anchor="middle" font-size="10" fill="#be123c">(unemployment in rail industry)</text>
+
+  <text x="310" y="450" text-anchor="middle" font-size="11" fill="#334155">Union sets Wu &gt; We → at Wu, Qs &gt; Qd. Gap (Qs − Qd) = excess supply of labour.</text>
+</svg>

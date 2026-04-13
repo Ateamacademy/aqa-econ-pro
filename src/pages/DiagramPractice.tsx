@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, lazy, Suspense } from "react";
+import { edexcelBTopics, type EdexcelBTopic } from "@/data/topicsEdexcelB";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
@@ -208,6 +209,48 @@ type BoardScenarioTemplate = {
 const inferDiagramType = (...parts: string[]) =>
   resolveDiagramType(parts.filter(Boolean).join("\n")) ?? "supply_demand";
 
+const SECTION_MAP: Record<string, DiagramSection> = {
+  "PPF": "PPFs, Markets & Allocation",
+  "Supply & Demand": "PPFs, Markets & Allocation",
+  "Price Mechanism": "PPFs, Markets & Allocation",
+  "Elasticity": "Elasticity & Revenue",
+  "Revenue": "Revenue, Profits & Objectives",
+  "Market Failure": "Market Failure & Externalities",
+  "Externality": "Market Failure & Externalities",
+  "Government Intervention": "Government Intervention",
+  "Indirect Tax": "Government Intervention",
+  "Subsidy": "Government Intervention",
+  "Cost": "Costs & Economies of Scale",
+  "Economies": "Costs & Economies of Scale",
+  "Monopoly": "Revenue, Profits & Objectives",
+  "Competition": "Market Structures",
+  "Market Structures": "Market Structures",
+  "Oligopoly": "Market Structures",
+  "Labour Market": "Labour Market",
+  "National Income": "National Income & Macro Equilibrium",
+  "AD/AS": "National Income & Macro Equilibrium",
+  "Aggregate Demand": "National Income & Macro Equilibrium",
+  "Aggregate Supply": "National Income & Macro Equilibrium",
+  "Macro": "Macro Objectives",
+  "Phillips Curve": "Macro Objectives",
+  "Lorenz Curve": "Inequality & Development",
+  "Monetary Policy": "Financial Markets & Monetary Policy",
+  "Financial Markets": "Financial Markets & Monetary Policy",
+  "Fiscal Policy": "Fiscal & Supply-Side Policies",
+  "Supply-Side Policy": "Fiscal & Supply-Side Policies",
+  "International": "International Economy",
+  "Trade": "International Economy",
+  "Exchange Rate": "International Economy",
+  "J-Curve": "International Economy",
+  "Development": "Inequality & Development",
+  "Inequality": "Inequality & Development",
+};
+
+const inferSectionFromTopicStr = (topic: string): DiagramSection => {
+  const match = Object.entries(SECTION_MAP).find(([needle]) => topic.toLowerCase().includes(needle.toLowerCase()));
+  return match?.[1] ?? "PPFs, Markets & Allocation";
+};
+
 const buildBoardScenarioTemplates = (subject: string): BoardScenarioTemplate[] => {
   const sectionMap: Record<string, DiagramSection> = {
     "PPF": "PPFs, Markets & Allocation",
@@ -323,6 +366,45 @@ export default function DiagramPractice() {
         if (sectionFilter !== "all") pool = pool.filter(s => s.section === sectionFilter);
         if (difficulty !== "all") pool = pool.filter(s => s.difficulty === difficulty);
         return pool;
+      }
+
+      // Edexcel B: inject real topic data for the 4 Foundation SVG topics
+      if (subject === "edexcel-b") {
+        const edexcelBScenarios: DiagramScenario[] = edexcelBTopics.map((t) => ({
+          id: `edexcel-b-${t.slug}`,
+          section: inferSectionFromTopicStr(t.title),
+          topic: t.title,
+          difficulty: t.tier as "Foundation",
+          scenario: t.scenario,
+          question: t.question,
+          marks: t.marks,
+          expectedDiagramKeyword: t.slug,
+          hints: [`Foundation · ${t.marks} marks`, `Edexcel B A-Level`],
+        }));
+
+        // Merge with generated board templates for remaining topics
+        const edexcelBSlugs = new Set(edexcelBTopics.map((t) => t.title));
+        const remainingTemplates = boardScenarioTemplates
+          .filter((s) => !edexcelBSlugs.has(s.topic))
+          .filter((s) => sectionFilter === "all" || s.section === sectionFilter)
+          .filter((s) => difficulty === "all" || s.difficulty === difficulty)
+          .map((s, index) => ({
+            id: `${subject}-gen-${index}-${s.expectedDiagramKeyword ?? "topic"}`,
+            section: s.section,
+            topic: s.topic,
+            difficulty: s.difficulty,
+            scenario: `Board-specific diagram practice for ${examBoard} ${level}: ${s.topic}.`,
+            question: `Generate and answer an exam-style ${s.marks}-mark diagram task for ${examBoard} ${level} on "${s.topic}". Your diagram and explanation should match the style expected for ${subjectLabel}.`,
+            marks: s.marks,
+            expectedDiagramKeyword: s.expectedDiagramKeyword ?? inferDiagramType(s.topic),
+            hints: [`This task is aligned to ${examBoard} ${level}.`, `Focus on the conventions and command style expected in ${subjectLabel}.`],
+          }));
+
+        const combined = [
+          ...edexcelBScenarios.filter((s) => sectionFilter === "all" || s.section === sectionFilter).filter((s) => difficulty === "all" || s.difficulty === difficulty),
+          ...remainingTemplates,
+        ];
+        return combined;
       }
 
       return boardScenarioTemplates
@@ -537,6 +619,18 @@ Format: Give the scenario context with Figure 1, then the question. Nothing else
     if (!(await ensureEligible())) return;
     setSelectedScenario(scenario);
     setTopic(scenario.topic);
+
+    // Check if this is an Edexcel B topic with real scenario data
+    const edexcelBTopic = subject === "edexcel-b"
+      ? edexcelBTopics.find((t) => `edexcel-b-${t.slug}` === scenario.id)
+      : undefined;
+
+    if (edexcelBTopic) {
+      // Use the real scenario data directly — no AI generation needed
+      setGeneratedQ(`**${edexcelBTopic.title}** · Foundation · ${edexcelBTopic.marks} marks\n\n${edexcelBTopic.scenario}\n\n${edexcelBTopic.question}`);
+      setStep("answer");
+      return;
+    }
 
     if (subject !== "economics") {
       setIsGenerating(true);
@@ -858,10 +952,12 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                         </div>
                         <div className="flex items-center gap-1.5 flex-shrink-0">
                           <span className={cn(
-                            "text-[10px] font-bold px-1.5 py-0.5 rounded",
-                            s.difficulty === "Foundation" ? "bg-accent/20 text-accent-foreground" :
-                            s.difficulty === "Intermediate" ? "bg-secondary text-secondary-foreground" :
-                            "bg-destructive/10 text-destructive"
+                            "text-[10px] font-bold px-1.5 py-0.5 rounded border",
+                            s.difficulty === "Foundation" && subject === "edexcel-b"
+                              ? "bg-violet-500/15 text-violet-300 border-violet-400/40"
+                              : s.difficulty === "Foundation" ? "bg-accent/20 text-accent-foreground border-transparent" :
+                              s.difficulty === "Intermediate" ? "bg-secondary text-secondary-foreground border-transparent" :
+                              "bg-destructive/10 text-destructive border-transparent"
                           )}>{s.difficulty}</span>
                           <span className="text-[10px] font-bold text-muted-foreground">[{s.marks}]</span>
                         </div>
@@ -941,7 +1037,31 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
           </Card>
 
           {/* Reference diagram — shown before submission as a collapsible guide */}
-          {selectedScenario?.expectedDiagramKeyword && (() => {
+          {(() => {
+            // Check for Edexcel B SVG figure first
+            const edexcelBTopic = subject === "edexcel-b" && selectedScenario
+              ? edexcelBTopics.find((t) => `edexcel-b-${t.slug}` === selectedScenario.id)
+              : undefined;
+
+            if (edexcelBTopic) {
+              return (
+                <Card>
+                  <CardContent className="p-4">
+                    <details className="group">
+                      <summary className="text-xs font-semibold text-primary cursor-pointer hover:text-primary/80 transition-colors flex items-center gap-1.5">
+                        <Eye className="h-3.5 w-3.5" /> Show reference diagram
+                      </summary>
+                      <div className="mt-3">
+                        <img src={edexcelBTopic.figureFile} alt={edexcelBTopic.title} className="w-full rounded-lg bg-white p-2" />
+                      </div>
+                    </details>
+                  </CardContent>
+                </Card>
+              );
+            }
+
+            if (!selectedScenario?.expectedDiagramKeyword) return null;
+
             const kw = normalizeDiagramKeyword(selectedScenario.expectedDiagramKeyword) ?? selectedScenario.expectedDiagramKeyword;
             const isPEDDual = kw === "ped_revenue_impact";
             const Comp = (() => {
@@ -1086,6 +1206,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
         feedback={feedback}
         onReset={reset}
         scenarioKeyword={selectedScenario?.expectedDiagramKeyword}
+        scenarioId={selectedScenario?.id}
       />}
       <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="diagram practice sessions" />
     </div>
@@ -1130,6 +1251,7 @@ function DiagramFeedbackView({
   feedback,
   onReset,
   scenarioKeyword,
+  scenarioId,
 }: {
   topic: string;
   generatedQ: string;
@@ -1140,6 +1262,7 @@ function DiagramFeedbackView({
   feedback: string;
   onReset: () => void;
   scenarioKeyword?: string;
+  scenarioId?: string;
 }) {
   const { subject, examBoard } = useSubject();
   const [showExplain, setShowExplain] = useState(false);
@@ -1205,7 +1328,15 @@ function DiagramFeedbackView({
   const isGameTheoryTopic = expectedDiagramType === "game_theory" || expectedDiagramType === "payoff_matrix" || /game\s*theory|payoff\s*matrix|prisoner.*dilemma/i.test(topic);
   const isJCurveTopic = expectedDiagramType === "j_curve" || /j.curve|marshall.lerner|current\s*account.*depreciation/i.test(topic);
   const isEdexcelA = subject === "edexcel-a";
+  const edexcelBFeedbackTopic = subject === "edexcel-b" && scenarioId
+    ? edexcelBTopics.find((t) => `edexcel-b-${t.slug}` === scenarioId)
+    : undefined;
+
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
+    // Edexcel B SVG figure
+    if (edexcelBFeedbackTopic) {
+      return <div className="my-4"><img src={edexcelBFeedbackTopic.figureFile} alt={edexcelBFeedbackTopic.title} className="w-full rounded-lg bg-white p-2" /></div>;
+    }
     if (isGameTheoryTopic) return renderBoardSpecificDiagram("game_theory", <div className="my-4"><EconGameTheoryPayoff /></div>);
     if (isJCurveTopic) return renderBoardSpecificDiagram("j_curve", <div className="my-4"><EconJCurveEffect /></div>);
     if (isLorenzTopic) return isEdexcelA ? renderBoardSpecificDiagram("lorenz_curve", <div className="my-4"><EconEdexcelLorenzCurve /></div>) : <LorenzCurveChart showRegionsToggle={!locked} showRefToggle={!locked} height={locked ? 390 : 420} className="mt-3" />;
@@ -1248,7 +1379,7 @@ function DiagramFeedbackView({
     if (isCostPushTopic) return renderBoardSpecificDiagram("cost_push_inflation", <div className="my-4"><EconADASCostPush /></div>);
     return null;
   };
-  const hasReferenceDiagram = isGameTheoryTopic || isJCurveTopic || isLorenzTopic || isLRACTopic || isIndirectTaxTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isExchangeRateTopic || isNegativeExternalityCoalTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic || isPPFNaturalDisasterTopic || isPEDRevenueImpactTopic || isYEDLuxuryTopic || isMaxPriceTopic || isShortRunCostsTopic || isMinWageTopic || isPrimaryProductTopic || isHarrodDomarTopic || isMultiplierTopic || isFiscalPolicyTopic || isTermsOfTradeTopic || isCoffeeMarketTopic || isMonopolisticCompetitionTopic || isPerfectCompetitionTopic || isDemandPullTopic || isSupplySideTopic || isMonetaryPolicyTopic || isMonopolyProfitTopic || isCostPushTopic;
+  const hasReferenceDiagram = !!edexcelBFeedbackTopic || isGameTheoryTopic || isJCurveTopic || isLorenzTopic || isLRACTopic || isIndirectTaxTopic || isSpecificAdValoremTopic || isInfoFailureDemeritTopic || isTradablePollutionTopic || isShutdownTopic || isKinkedDemandTopic || isMonopsonyTopic || isPhillipsCurveTopic || isKeynesianASTopic || isTariffTopic || isExchangeRateTopic || isNegativeExternalityCoalTopic || isNegativeExternalityTopic || isSugarTaxTopic || isCompetitionCSTopic || isSupplyDemandMultipleShiftsTopic || isPPFTopic || isPPFNaturalDisasterTopic || isPEDRevenueImpactTopic || isYEDLuxuryTopic || isMaxPriceTopic || isShortRunCostsTopic || isMinWageTopic || isPrimaryProductTopic || isHarrodDomarTopic || isMultiplierTopic || isFiscalPolicyTopic || isTermsOfTradeTopic || isCoffeeMarketTopic || isMonopolisticCompetitionTopic || isPerfectCompetitionTopic || isDemandPullTopic || isSupplySideTopic || isMonetaryPolicyTopic || isMonopolyProfitTopic || isCostPushTopic;
 
   // Aggressively strip ALL Key Point and Exam Tip blocks (any format)
   const stripAnnotations = (t: string) => {

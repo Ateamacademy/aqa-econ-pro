@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 480" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="480" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Expansionary Fiscal Policy + Multiplier Effect (UK 2024)</text>
+
+  <!-- Axes -->
+  <line x1="90" y1="400" x2="610" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="565" y="420" font-size="12" fill="#0f172a">Real GDP (Y)</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Price Level</text>
+
+  <!-- LRAS at x=510 -->
+  <line x1="510" y1="60" x2="510" y2="400" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="515" y="75" font-size="12" font-weight="700" fill="#7c3aed">LRAS</text>
+
+  <!-- SRAS -->
+  <line x1="130" y1="380" x2="570" y2="116" stroke="#0284c7" stroke-width="2.5"/>
+  <text x="575" y="115" font-size="12" font-weight="600" fill="#0284c7">SRAS</text>
+
+  <!-- AD1 -->
+  <line x1="130" y1="110" x2="450" y2="380" stroke="#15803d" stroke-width="2.3"/>
+  <text x="448" y="395" font-size="11" font-weight="600" fill="#15803d">AD1</text>
+
+  <!-- AD2 -->
+  <line x1="200" y1="110" x2="520" y2="380" stroke="#d97706" stroke-width="2.3"/>
+  <text x="520" y="395" font-size="11" font-weight="600" fill="#d97706">AD2</text>
+
+  <!-- AD3 (multiplier) -->
+  <line x1="270" y1="110" x2="590" y2="380" stroke="#be123c" stroke-width="2.3"/>
+  <text x="595" y="395" font-size="11" font-weight="600" fill="#be123c">AD3</text>
+
+  <!-- Shift arrows -->
+  <defs>
+    <marker id="arrAD3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#be123c"/>
+    </marker>
+  </defs>
+  <path d="M 180 175 L 295 175" fill="none" stroke="#be123c" stroke-width="2" marker-end="url(#arrAD3)"/>
+  <text x="237" y="166" text-anchor="middle" font-size="10" fill="#be123c" font-style="italic">↑G then multiplier</text>
+
+  <!-- Equilibria -->
+  <!-- Eq1 (317, 268) -->
+  <circle cx="317" cy="268" r="4.5" fill="#15803d"/>
+  <line x1="90" y1="268" x2="317" y2="268" stroke="#15803d" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="317" y1="268" x2="317" y2="400" stroke="#15803d" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="62" y="272" font-size="10" font-weight="700" fill="#15803d">GPL1</text>
+  <text x="317" y="415" text-anchor="middle" font-size="10" font-weight="700" fill="#15803d">Y1</text>
+
+  <!-- Eq2 (358, 243) -->
+  <circle cx="358" cy="243" r="4.5" fill="#d97706"/>
+  <line x1="90" y1="243" x2="358" y2="243" stroke="#d97706" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="358" y1="243" x2="358" y2="400" stroke="#d97706" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="62" y="247" font-size="10" font-weight="700" fill="#d97706">GPL2</text>
+  <text x="358" y="430" text-anchor="middle" font-size="10" font-weight="700" fill="#d97706">Y2</text>
+
+  <!-- Eq3 (399, 219) -->
+  <circle cx="399" cy="219" r="4.5" fill="#be123c"/>
+  <line x1="90" y1="219" x2="399" y2="219" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="399" y1="219" x2="399" y2="400" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="62" y="223" font-size="10" font-weight="700" fill="#be123c">GPL3</text>
+  <text x="399" y="415" text-anchor="middle" font-size="10" font-weight="700" fill="#be123c">Y3</text>
+
+  <!-- YP marker -->
+  <text x="510" y="415" text-anchor="middle" font-size="10" fill="#7c3aed">YP</text>
+
+  <!-- Annotation box: multiplier -->
+  <rect x="425" y="145" width="170" height="55" fill="#fef3c7" stroke="#b45309" stroke-width="1"/>
+  <text x="510" y="163" text-anchor="middle" font-size="10" font-weight="700" fill="#78350f">Multiplier effect:</text>
+  <text x="510" y="178" text-anchor="middle" font-size="10" fill="#78350f">extra induced spending</text>
+  <text x="510" y="192" text-anchor="middle" font-size="10" fill="#78350f">→ AD2 shifts to AD3</text>
+
+  <text x="310" y="455" text-anchor="middle" font-size="11" fill="#334155">Spare capacity → most impact on output (Y), modest price-level rise. If AD3 reaches LRAS, further rises are purely inflationary.</text>
+</svg>
