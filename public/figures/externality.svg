@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 470" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="470" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Negative Production Externality — UK Coal-Fired Electricity</text>
+
+  <!-- Axes -->
+  <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="555" y="420" font-size="12" fill="#0f172a">Output (Q)</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Costs /</text>
+  <text x="60" y="70" font-size="12" fill="#0f172a">Benefits (£)</text>
+
+  <!-- MPB = MSB (downward) -->
+  <line x1="130" y1="120" x2="540" y2="380" stroke="#15803d" stroke-width="2.5"/>
+  <text x="545" y="385" font-size="12" font-weight="600" fill="#15803d">MPB = MSB</text>
+
+  <!-- MPC (upward) -->
+  <line x1="130" y1="380" x2="540" y2="120" stroke="#0284c7" stroke-width="2.5"/>
+  <text x="545" y="123" font-size="12" font-weight="600" fill="#0284c7">MPC</text>
+
+  <!-- MSC (upward, parallel, above MPC) -->
+  <line x1="130" y1="320" x2="510" y2="80" stroke="#be123c" stroke-width="2.5"/>
+  <text x="510" y="73" font-size="12" font-weight="600" fill="#be123c">MSC</text>
+
+  <!-- External cost arrow (vertical gap) -->
+  <defs>
+    <marker id="arrExt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#be123c"/>
+    </marker>
+    <marker id="arrExt2" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M10,0 L0,5 L10,10 z" fill="#be123c"/>
+    </marker>
+  </defs>
+  <line x1="200" y1="325" x2="200" y2="260" stroke="#be123c" stroke-width="1.3" marker-end="url(#arrExt)" marker-start="url(#arrExt2)"/>
+  <text x="130" y="290" font-size="10" fill="#be123c" font-style="italic">external</text>
+  <text x="130" y="303" font-size="10" fill="#be123c" font-style="italic">cost</text>
+
+  <!-- Welfare loss triangle: (288, 220), (335, 250), (335, 190) -->
+  <polygon points="288,220 335,250 335,190" fill="#fecaca" stroke="#991b1b" stroke-width="1.5"/>
+
+  <!-- Social optimum Q* at (288, 220) -->
+  <circle cx="288" cy="220" r="5" fill="#be123c"/>
+  <line x1="288" y1="220" x2="288" y2="400" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="90" y1="220" x2="288" y2="220" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="288" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Q*</text>
+  <text x="68" y="224" font-size="11" font-weight="700" fill="#be123c">P*</text>
+
+  <!-- Free market Q1 at (335, 250) -->
+  <circle cx="335" cy="250" r="5" fill="#0284c7"/>
+  <line x1="335" y1="250" x2="335" y2="400" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="90" y1="250" x2="335" y2="250" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="335" y="430" text-anchor="middle" font-size="11" font-weight="700" fill="#0284c7">Q1</text>
+  <text x="68" y="254" font-size="11" font-weight="700" fill="#0284c7">P1</text>
+
+  <!-- Welfare loss label -->
+  <line x1="400" y1="160" x2="340" y2="215" stroke="#991b1b" stroke-width="1.3"/>
+  <text x="405" y="158" font-size="11" font-weight="700" fill="#991b1b">Deadweight</text>
+  <text x="405" y="172" font-size="11" font-weight="700" fill="#991b1b">welfare loss</text>
+
+  <!-- Conclusion -->
+  <text x="310" y="450" text-anchor="middle" font-size="11" fill="#334155">Free market over-produces: Q1 &gt; Q*. Shaded triangle = loss of social welfare from units where MSC &gt; MSB.</text>
+</svg>
