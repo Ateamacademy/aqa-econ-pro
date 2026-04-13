@@ -1249,6 +1249,7 @@ function DiagramFeedbackView({
   feedback,
   onReset,
   scenarioKeyword,
+  scenarioId,
 }: {
   topic: string;
   generatedQ: string;
@@ -1259,6 +1260,7 @@ function DiagramFeedbackView({
   feedback: string;
   onReset: () => void;
   scenarioKeyword?: string;
+  scenarioId?: string;
 }) {
   const { subject, examBoard } = useSubject();
   const [showExplain, setShowExplain] = useState(false);
