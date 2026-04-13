@@ -326,6 +326,45 @@ export default function DiagramPractice() {
         return pool;
       }
 
+      // Edexcel B: inject real topic data for the 4 Foundation SVG topics
+      if (subject === "edexcel-b") {
+        const edexcelBScenarios: DiagramScenario[] = edexcelBTopics.map((t) => ({
+          id: `edexcel-b-${t.slug}`,
+          section: inferSectionFromTopicStr(t.title),
+          topic: t.title,
+          difficulty: t.tier as "Foundation",
+          scenario: t.scenario,
+          question: t.question,
+          marks: t.marks,
+          expectedDiagramKeyword: t.slug,
+          hints: [`Foundation · ${t.marks} marks`, `Edexcel B A-Level`],
+        }));
+
+        // Merge with generated board templates for remaining topics
+        const edexcelBSlugs = new Set(edexcelBTopics.map((t) => t.title));
+        const remainingTemplates = boardScenarioTemplates
+          .filter((s) => !edexcelBSlugs.has(s.topic))
+          .filter((s) => sectionFilter === "all" || s.section === sectionFilter)
+          .filter((s) => difficulty === "all" || s.difficulty === difficulty)
+          .map((s, index) => ({
+            id: `${subject}-gen-${index}-${s.expectedDiagramKeyword ?? "topic"}`,
+            section: s.section,
+            topic: s.topic,
+            difficulty: s.difficulty,
+            scenario: `Board-specific diagram practice for ${examBoard} ${level}: ${s.topic}.`,
+            question: `Generate and answer an exam-style ${s.marks}-mark diagram task for ${examBoard} ${level} on "${s.topic}". Your diagram and explanation should match the style expected for ${subjectLabel}.`,
+            marks: s.marks,
+            expectedDiagramKeyword: s.expectedDiagramKeyword ?? inferDiagramType(s.topic),
+            hints: [`This task is aligned to ${examBoard} ${level}.`, `Focus on the conventions and command style expected in ${subjectLabel}.`],
+          }));
+
+        const combined = [
+          ...edexcelBScenarios.filter((s) => sectionFilter === "all" || s.section === sectionFilter).filter((s) => difficulty === "all" || s.difficulty === difficulty),
+          ...remainingTemplates,
+        ];
+        return combined;
+      }
+
       return boardScenarioTemplates
         .filter(s => sectionFilter === "all" || s.section === sectionFilter)
         .filter(s => difficulty === "all" || s.difficulty === difficulty)
