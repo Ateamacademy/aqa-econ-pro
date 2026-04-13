@@ -1,7 +1,7 @@
 export interface EdexcelBTopic {
   slug: string;
   board: "Edexcel B";
-  tier: "Foundation" | "Intermediate";
+  tier: "Foundation" | "Intermediate" | "Advanced";
   section: string;
   marks: number;
   title: string;
@@ -11,6 +11,7 @@ export interface EdexcelBTopic {
   explanation: string;
   keyTerms: string[];
   diagramRequirements: { requirement: string; marks: number }[];
+  scenarioVariant?: string;
 }
 
 export const edexcelBTopics: EdexcelBTopic[] = [
