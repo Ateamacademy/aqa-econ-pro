@@ -14,6 +14,7 @@ export interface DiagramScenario {
   marks: number;
   expectedDiagramKeyword: string;
   hints?: string[];
+  scenarioVariant?: string;
 }
 
 export const DIAGRAM_SECTIONS = [

@@ -1,7 +1,7 @@
 export interface EdexcelBTopic {
   slug: string;
   board: "Edexcel B";
-  tier: "Foundation" | "Intermediate";
+  tier: "Foundation" | "Intermediate" | "Advanced";
   section: string;
   marks: number;
   title: string;
@@ -11,6 +11,7 @@ export interface EdexcelBTopic {
   explanation: string;
   keyTerms: string[];
   diagramRequirements: { requirement: string; marks: number }[];
+  scenarioVariant?: string;
 }
 
 export const edexcelBTopics: EdexcelBTopic[] = [
@@ -172,6 +173,58 @@ export const edexcelBTopics: EdexcelBTopic[] = [
       { requirement: "Demand and MR (steeper) drawn and labelled", marks: 1 },
       { requirement: "Qm at MC=MR, Pm read up to D at Qm", marks: 1 },
       { requirement: "Supernormal profit rectangle shaded; explanation covers EoS + barriers vs PC free entry", marks: 1 },
+    ],
+  },
+
+  // ── Advanced [8 marks] ──
+  {
+    slug: "phillips-curve-movement",
+    board: "Edexcel B",
+    tier: "Advanced",
+    section: "Macroeconomics",
+    marks: 8,
+    scenarioVariant: "Single-curve movement",
+    title: "Phillips Curve",
+    scenario:
+      "In 2024 the UK economy experienced persistent cost-push inflation alongside a softening labour market. The Bank of England held interest rates high to curb prices, while some economists argued the government should use fiscal stimulus to lower unemployment. Critics argue any short-term fall in unemployment would only fuel further inflation — illustrating the classic trade-off policymakers face.",
+    question:
+      "Using an appropriate diagram, explain the trade-off between inflation and unemployment in the UK economy. You must:\n1. Draw and correctly label a Short-Run Phillips Curve (SRPC).\n2. Annotate the movement along the curve to show the effect of an increase in Aggregate Demand.\n3. Explain the economic reasoning behind the relationship shown in your diagram.",
+    figureFile: "/figures/phillips-movement.svg",
+    explanation:
+      "The SRPC plots inflation (y) against unemployment (x) and shows an INVERSE relationship — convex to the origin because at very low unemployment, further reductions cost disproportionately more inflation (labour market becomes tight, wages spike, firms pass costs on). Point A: starting equilibrium (e.g. unemployment 6%, inflation 2%). A fiscal stimulus raises AD → firms hire more workers → unemployment falls to 3% but wage and price pressures rise → inflation climbs to 5% (point B). Movement A→B is ALONG the same SRPC — no shift. Mechanism: the Phillips relationship works through wage-price dynamics: lower unemployment means tighter labour market, stronger worker bargaining power, higher nominal wage growth, which firms pass on as higher prices.",
+    keyTerms: ["Phillips Curve", "SRPC", "inflation", "unemployment", "trade-off", "aggregate demand", "wage-price spiral", "tight labour market"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Inflation rate (%) on y-axis, Unemployment rate (%) on x-axis; realistic % values shown", marks: 1 },
+      { requirement: "Single downward-sloping SRPC drawn, convex to origin, labelled 'SRPC' or 'Phillips Curve'", marks: 2 },
+      { requirement: "Point A marked at high-unemployment/low-inflation position (e.g. 6%, 2%)", marks: 1 },
+      { requirement: "Point B marked at low-unemployment/high-inflation position (e.g. 3%, 5%)", marks: 1 },
+      { requirement: "Arrow from A to B along the curve, labelled '↑AD' or similar", marks: 1 },
+      { requirement: "Written explanation: inverse relationship + wage-price mechanism + AD stimulus logic", marks: 2 },
+    ],
+  },
+  {
+    slug: "lorenz-gini-brazil",
+    board: "Edexcel B",
+    tier: "Advanced",
+    section: "Inequality",
+    marks: 8,
+    scenarioVariant: "Cross-country comparison",
+    title: "Lorenz Curve & Gini Coefficient",
+    scenario:
+      "Between 2021 and 2024 the UK's Gini Coefficient fluctuated between 0.34 and 0.36, reflecting persistent income inequality. Brazil — despite significant economic growth over the last decade — maintains a Gini Coefficient of approximately 0.49. Critics of UK fiscal policy argue that a shift from progressive taxation toward indirect taxes (like VAT) may further skew the distribution of income, moving the economy away from the line of perfect equality.",
+    question:
+      "Using the context provided, draw a Lorenz Curve diagram to illustrate the difference in income inequality between a country with a high Gini Coefficient (Brazil) and a country with a lower Gini Coefficient (UK). You must:\n1. Correctly label the axes and the line of perfect equality.\n2. Annotate the areas required to calculate the Gini Coefficient.\n3. Explain how the distance between the Lorenz Curve and the line of equality relates to the degree of inequality in these two nations.",
+    figureFile: "/figures/lorenz-brazil.svg",
+    explanation:
+      "The 45° line is the line of perfect equality — every x% of the population receives exactly x% of total income. A country's Lorenz curve bows BELOW this line; the greater the bow, the greater the inequality. UK curve sits closer to the 45° line (Gini ≈ 0.35). Brazil's curve sits further away (Gini ≈ 0.49) — the bottom 50% of Brazilians hold a much smaller share of national income than the bottom 50% of UK residents. Gini = A / (A + B), where A is the area between the 45° line and the Lorenz curve, and B is the area under the Lorenz curve. As A grows, G rises toward 1; as A shrinks, G falls toward 0. Policy link: progressive taxes pull the curve TOWARD the 45° line (redistributive); indirect taxes like VAT are regressive and push it AWAY, raising G.",
+    keyTerms: ["Lorenz Curve", "Gini Coefficient", "line of perfect equality", "cumulative income", "deciles", "progressive taxation", "regressive taxation", "redistribution"],
+    diagramRequirements: [
+      { requirement: "Axes labelled: cumulative % population (x) and cumulative % income (y), both 0–100", marks: 1 },
+      { requirement: "45° line of perfect equality drawn and labelled", marks: 1 },
+      { requirement: "Two Lorenz curves drawn: UK closer to 45° line, Brazil further, both labelled with Gini values", marks: 2 },
+      { requirement: "Areas A (between 45° line and Lorenz curve) and B (below Lorenz curve) annotated for at least one country", marks: 1 },
+      { requirement: "Gini formula G = A/(A+B) shown on the diagram", marks: 1 },
+      { requirement: "Written explanation: higher distance = higher G = more inequality; link to UK vs Brazil figures", marks: 2 },
     ],
   },
 ];
