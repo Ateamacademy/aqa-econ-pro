@@ -447,8 +447,7 @@ export default function DiagramPractice() {
         ];
         return combined;
       }
-
-
+      return boardScenarioTemplates
         .filter(s => sectionFilter === "all" || s.section === sectionFilter)
         .filter(s => difficulty === "all" || s.difficulty === difficulty)
         .map((s, index) => ({
