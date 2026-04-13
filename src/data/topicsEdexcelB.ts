@@ -1,7 +1,8 @@
 export interface EdexcelBTopic {
   slug: string;
   board: "Edexcel B";
-  tier: "Foundation";
+  tier: "Foundation" | "Intermediate";
+  section: string;
   marks: number;
   title: string;
   scenario: string;
@@ -13,10 +14,12 @@ export interface EdexcelBTopic {
 }
 
 export const edexcelBTopics: EdexcelBTopic[] = [
+  // ── Foundation [4 marks] ──
   {
     slug: "supply-demand-coffee",
     board: "Edexcel B",
     tier: "Foundation",
+    section: "Microeconomics",
     marks: 4,
     title: "Supply & Demand — Price Mechanism",
     scenario:
@@ -38,6 +41,7 @@ export const edexcelBTopics: EdexcelBTopic[] = [
     slug: "adas-macro-equilibrium",
     board: "Edexcel B",
     tier: "Foundation",
+    section: "Macroeconomics",
     marks: 4,
     title: "AD/AS — Macroeconomic Equilibrium",
     scenario:
@@ -59,6 +63,7 @@ export const edexcelBTopics: EdexcelBTopic[] = [
     slug: "adas-fiscal-effect",
     board: "Edexcel B",
     tier: "Foundation",
+    section: "Macroeconomics",
     marks: 4,
     title: "AD/AS — Fiscal Policy Effect",
     scenario:
@@ -80,6 +85,7 @@ export const edexcelBTopics: EdexcelBTopic[] = [
     slug: "labour-trade-union",
     board: "Edexcel B",
     tier: "Foundation",
+    section: "Labour Market",
     marks: 4,
     title: "Labour Market — Trade Union Effect",
     scenario:
@@ -95,6 +101,77 @@ export const edexcelBTopics: EdexcelBTopic[] = [
       { requirement: "Upward-sloping SL and downward-sloping DL with free-market equilibrium We, Qe shown", marks: 1 },
       { requirement: "Union wage Wu drawn as horizontal line ABOVE We", marks: 1 },
       { requirement: "Excess supply (Qs − Qd) clearly identified at Wu", marks: 1 },
+    ],
+  },
+
+  // ── Intermediate [6 marks] ──
+  {
+    slug: "externalities-coal",
+    board: "Edexcel B",
+    tier: "Intermediate",
+    section: "Market Failure",
+    marks: 6,
+    title: "Market Failure — Externalities",
+    scenario:
+      "In 2024, the UK officially closed its last coal-fired power station, ending 142 years of coal-generated electricity. Coal provided cheap, reliable energy for firms, but combustion released carbon dioxide and sulfur dioxide — contributing to global warming and respiratory illnesses. These costs are not reflected in the market price of electricity paid by consumers.",
+    question:
+      "Using a negative production externality diagram, explain why the unregulated production of coal-fired electricity leads to a misallocation of resources and a deadweight loss to society.",
+    figureFile: "/figures/externality.svg",
+    explanation:
+      "In a free market, firms produce where MPC = MPB (= MSB), giving output Q1 at price P1 — they ignore the external cost of pollution. The true social marginal cost (MSC) lies ABOVE MPC by the value of the external cost. The socially optimal output is Q* (< Q1), where MSC = MSB, at a higher price P*. Between Q* and Q1 the extra units generate MSC > MSB — the shaded triangle is the deadweight welfare loss. The market OVER-PRODUCES coal electricity because prices don't reflect the full social cost. Government intervention (carbon tax, emissions cap, closure mandate) internalises the externality and shifts output toward Q*.",
+    keyTerms: ["negative externality", "MPC", "MSC", "MPB/MSB", "social optimum", "deadweight loss", "welfare loss", "misallocation"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Costs/Benefits (£) and Output (Q)", marks: 1 },
+      { requirement: "MPC, MPB (=MSB), MSC curves drawn and labelled; MSC clearly ABOVE MPC", marks: 2 },
+      { requirement: "Free market equilibrium Q1 (MPC=MPB) and social optimum Q* (MSC=MSB) both identified; Q* < Q1", marks: 1 },
+      { requirement: "Welfare loss triangle correctly shaded between Q* and Q1, bounded by MSC and MSB", marks: 1 },
+      { requirement: "Written explanation links over-production to ignored external cost + deadweight loss", marks: 1 },
+    ],
+  },
+  {
+    slug: "monopoly-netflix",
+    board: "Edexcel B",
+    tier: "Intermediate",
+    section: "Market Structures",
+    marks: 6,
+    title: "Cost & Revenue Curves — Profit Maximisation",
+    scenario:
+      "Netflix dominates the UK video-on-demand market with approximately 45% share. Despite rising competition from Disney+ and Amazon Prime, the firm retains significant monopoly power through its vast library of original content and strong brand loyalty. Netflix seeks to profit-maximise to fund its multi-billion pound content production budget.",
+    question:
+      "Draw a monopoly diagram to illustrate a firm operating at the profit-maximising level of output. Label the area of supernormal profit and the price (P) and quantity (Q) levels. Using your diagram, explain the reasoning behind the firm's choice of output and why this generates supernormal profit in the long run.",
+    figureFile: "/figures/monopoly-profit.svg",
+    explanation:
+      "A profit-maximising monopolist produces where MC = MR (Qm). The price is set by going UP from Qm to the demand (AR) curve, giving Pm. Since MR lies below D=AR for a price-maker (a discount must be offered on all units to sell one more), Pm > MC at Qm. The unit cost at Qm is read off the ATC curve. Supernormal profit = (Pm − ATC) × Qm — the shaded rectangle. Netflix can sustain this in the long run because of HIGH BARRIERS TO ENTRY: sunk costs in original content, network effects of a large subscriber base, brand loyalty, and intellectual property. These barriers stop new entrants from competing profits away (unlike in perfect competition).",
+    keyTerms: ["profit maximisation", "MC=MR", "demand", "AR", "MR", "ATC", "supernormal profit", "barriers to entry", "price-maker"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Cost/Revenue (£) and Output (Q)", marks: 1 },
+      { requirement: "Demand (=AR), MR (steeper, below AR), MC (U), ATC (U) all drawn and labelled", marks: 2 },
+      { requirement: "Profit-max point at MC=MR with Qm marked; Pm read up to AR from Qm", marks: 1 },
+      { requirement: "ATC at Qm identified; supernormal profit rectangle clearly shaded", marks: 1 },
+      { requirement: "Written explanation covers MC=MR rule AND barriers-to-entry reasoning for LR profits", marks: 1 },
+    ],
+  },
+  {
+    slug: "natural-monopoly-water",
+    board: "Edexcel B",
+    tier: "Intermediate",
+    section: "Market Structures",
+    marks: 6,
+    title: "Market Structures — Monopoly vs Perfect Competition",
+    scenario:
+      "The UK water industry is dominated by regional monopolies (Thames Water, United Utilities). These operate as natural monopolies: high fixed costs and significant economies of scale make it inefficient for more than one firm to provide the infrastructure. Unlike perfect competition, these firms set prices above MC, earning supernormal profits. Ofwat monitors these profits to protect consumers while keeping firms viable.",
+    question:
+      "Using the information in Extract A and your own economic knowledge, draw a diagram to show a firm operating as a monopoly. Identify the area of supernormal profit and the price/output levels chosen by a profit-maximising firm. Briefly explain why a monopolist can maintain these profits in the long run compared to a firm in perfect competition.",
+    figureFile: "/figures/natural-monopoly.svg",
+    explanation:
+      "A natural monopolist's LRAC falls continuously over the relevant output range because of large economies of scale from high fixed infrastructure costs. MC lies BELOW LRAC (a falling average pulls MC beneath it). Profit-max output Qm is where MC = MR. Pm is found on the demand curve at Qm. Pm exceeds LRAC at Qm, so supernormal profit = (Pm − LRAC) × Qm (shaded rectangle). These profits persist in the long run because high sunk infrastructure costs act as a barrier to entry — no rival can build parallel pipes or the grid profitably. Contrast perfect competition: homogeneous goods, many firms, free entry/exit, so any supernormal profit attracts entrants, LRAC shifts right, and profits compete away to normal in the long run. Ofwat regulates price to prevent consumer exploitation while letting firms earn enough to invest.",
+    keyTerms: ["natural monopoly", "economies of scale", "LRAC", "barriers to entry", "MC=MR", "supernormal profit", "perfect competition", "homogeneous goods", "regulation"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Cost/Revenue (£) and Output (Q)", marks: 1 },
+      { requirement: "Downward-sloping LRAC (economies of scale) with MC drawn BELOW LRAC, both labelled", marks: 2 },
+      { requirement: "Demand and MR (steeper) drawn and labelled", marks: 1 },
+      { requirement: "Qm at MC=MR, Pm read up to D at Qm", marks: 1 },
+      { requirement: "Supernormal profit rectangle shaded; explanation covers EoS + barriers vs PC free entry", marks: 1 },
     ],
   },
 ];
