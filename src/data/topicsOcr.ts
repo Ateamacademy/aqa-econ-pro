@@ -148,4 +148,53 @@ export const ocrTopics: OcrTopic[] = [
       { requirement: "Quota volume (Qd2 − Qs2) labelled; producer-surplus increase annotated", marks: 1 },
     ],
   },
+
+  // ── Intermediate [6 marks] ──
+  {
+    slug: "cost-push-energy",
+    board: "OCR",
+    tier: "Intermediate",
+    section: "Macroeconomics",
+    marks: 6,
+    title: "AD/AS — Cost-Push Inflation",
+    scenario:
+      "In 2022–2023 the UK experienced a major supply-side shock as global wholesale gas and electricity prices hit record highs. This raised production costs across nearly all industrial sectors. The UK faced cost-push inflation — the general price level rose despite sluggish growth.",
+    question:
+      "Using the information provided and your macro knowledge, draw an AD/AS diagram to show the effect of an increase in energy prices on the UK's price level and real GDP. You must:\n1. Draw and correctly label the diagram using the Short-Run Aggregate Supply (SRAS) curve.\n2. Annotate the diagram to show the change in equilibrium.\n3. Explain the transmission mechanism through which rising energy costs lead to a change in the macroeconomic equilibrium.",
+    figureFile: "/figures/cost-push.svg",
+    explanation:
+      "Energy is a core input for firms across manufacturing, services, transport, and retail. When wholesale gas and electricity prices rise, per-unit production costs rise for essentially every firm simultaneously — this is a NEGATIVE supply-side shock. The SRAS curve shifts LEFT from SRAS1 to SRAS2 (producers now require a higher price to supply the same output). At unchanged AD, the new equilibrium moves from A (Y1, P1) to B (Y2, P2). Real output FALLS (Y1→Y2) and the price level RISES (P1→P2) — the definition of STAGFLATION. Transmission mechanism: ↑energy cost → ↑unit production cost → firms raise output prices to protect margins → ↑general price level; simultaneously firms cut output because higher costs squeeze profitability at any given price → ↓real GDP. Note LRAS is unchanged (productive capacity is unaffected unless the cost shock becomes permanent).",
+    keyTerms: ["cost-push inflation", "supply-side shock", "SRAS", "transmission mechanism", "stagflation", "real GDP", "price level", "production costs"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Price Level and Real Output (Y); LRAS drawn vertical at YFE", marks: 1 },
+      { requirement: "AD drawn downward-sloping and SRAS1 drawn upward-sloping", marks: 1 },
+      { requirement: "SRAS shifts LEFT to SRAS2 with clear arrow indicating the leftward shift", marks: 2 },
+      { requirement: "Initial equilibrium A (Y1=YFE, P1) and new equilibrium B (Y2, P2) both marked; P2 > P1 and Y2 < YFE", marks: 1 },
+      { requirement: "Written explanation covers transmission mechanism: ↑energy cost → ↑unit cost → SRAS shifts left → stagflation", marks: 1 },
+    ],
+  },
+  {
+    slug: "monopoly-abnormal-profit",
+    board: "OCR",
+    tier: "Intermediate",
+    section: "Market Structures",
+    marks: 6,
+    title: "Monopoly — Abnormal Profit",
+    scenario:
+      "In the UK, regional water companies often operate as natural monopolies within their geographic areas. High barriers to entry — especially sunk costs in infrastructure — mean these firms face little or no competition. In 2023 several reported significant financial returns, sparking public debate about profit levels for essential-utility providers.",
+    question:
+      "Using a diagram, explain how a monopoly firm can earn abnormal profit in the long run. In your response you should:\n1. Draw and correctly label a monopoly diagram.\n2. Identify the area of supernormal (abnormal) profit.\n3. Explain the relationship between Average Revenue (AR) and Average Total Cost (ATC) that allows this profit to persist.",
+    figureFile: "/figures/monopoly-abnormal.svg",
+    explanation:
+      "A monopolist profit-maximises where MC = MR, giving output Qm. The price Pm is found by going UP from Qm to the DEMAND (=AR) curve. The AVERAGE TOTAL COST at Qm is read off the ATC curve. Because Pm (=AR at Qm) > ATC at Qm, the firm earns ABNORMAL (SUPERNORMAL) PROFIT equal to (AR − ATC) × Q — the shaded rectangle. This profit persists in the LONG RUN because HIGH BARRIERS TO ENTRY prevent rivals entering and bidding profits away. For UK water companies, barriers include: enormous sunk costs in pipe networks and treatment plants, geographical/legal monopoly rights granted by regulators, and economies of scale that make duplicate infrastructure wasteful.",
+    keyTerms: ["monopoly", "profit maximisation", "MC=MR", "abnormal profit", "supernormal profit", "AR", "ATC", "barriers to entry", "sunk costs", "long run"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Price/Cost and Output (Q)", marks: 1 },
+      { requirement: "D = AR (downward sloping) and MR (steeper, half-slope) drawn and labelled", marks: 1 },
+      { requirement: "MC (U-shape) and ATC (U-shape) drawn and labelled", marks: 1 },
+      { requirement: "Profit-max point identified at MC = MR giving Qm; Pm read up to AR", marks: 1 },
+      { requirement: "ATC at Qm identified; abnormal profit rectangle clearly shaded with AR > ATC labelled", marks: 1 },
+      { requirement: "Written explanation links AR > ATC to abnormal profit and barriers-to-entry to long-run persistence", marks: 1 },
+    ],
+  },
 ];
