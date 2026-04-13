@@ -328,7 +328,7 @@ export default function DiagramPractice() {
 
   const [practiceMode, setPracticeMode] = useState<PracticeMode>("scenario");
   const [topic, setTopic] = useState(topics[0]);
-  const [difficulty, setDifficulty] = useState<string>("Intermediate");
+  const [difficulty, setDifficulty] = useState<string>("all");
   const [sectionFilter, setSectionFilter] = useState<DiagramSection | "all">("all");
   const [selectedScenario, setSelectedScenario] = useState<DiagramScenario | null>(null);
   const [generatedQ, setGeneratedQ] = useState("");
@@ -924,6 +924,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                   <div>
                     <label className="text-sm font-medium mb-1 block">Difficulty</label>
                     <select value={difficulty} onChange={e => setDifficulty(e.target.value)} className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm">
+                      <option value="all">All</option>
                       {DIFFICULTY_LEVELS.map(d => <option key={d} value={d}>{d}</option>)}
                     </select>
                   </div>
