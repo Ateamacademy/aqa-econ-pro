@@ -951,8 +951,8 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors truncate">{s.topic}</p>
                           <p className="text-xs text-muted-foreground line-clamp-2 mt-0.5">{s.scenario}</p>
-                          {s.scenarioVariant && (
-                            <p className="text-[10px] italic text-muted-foreground/70 mt-0.5">Scenario variant: {s.scenarioVariant}</p>
+                          {('scenarioVariant' in s) && (s as any).scenarioVariant && (
+                            <p className="text-[10px] italic text-muted-foreground/70 mt-0.5">Scenario variant: {(s as any).scenarioVariant}</p>
                           )}
                         </div>
                         <div className="flex items-center gap-1.5 flex-shrink-0">
