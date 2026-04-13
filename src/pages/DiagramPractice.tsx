@@ -1107,7 +1107,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                         <Eye className="h-3.5 w-3.5" /> Show reference diagram
                       </summary>
                       <div className="mt-3">
-                        <img src={edexcelBTopic.figureFile} alt={edexcelBTopic.title} className="w-full rounded-lg bg-white p-2" />
+                        <img src={boardRefTopic.figureFile} alt={boardRefTopic.title} className="w-full rounded-lg bg-white p-2" />
                       </div>
                     </details>
                   </CardContent>
@@ -1386,11 +1386,15 @@ function DiagramFeedbackView({
   const edexcelBFeedbackTopic = subject === "edexcel-b" && scenarioId
     ? edexcelBTopics.find((t) => `edexcel-b-${t.slug}` === scenarioId)
     : undefined;
+  const ocrFeedbackTopic = subject === "ocr" && scenarioId
+    ? ocrTopics.find((t) => `ocr-${t.slug}` === scenarioId)
+    : undefined;
+  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic;
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
-    // Edexcel B SVG figure
-    if (edexcelBFeedbackTopic) {
-      return <div className="my-4"><img src={edexcelBFeedbackTopic.figureFile} alt={edexcelBFeedbackTopic.title} className="w-full rounded-lg bg-white p-2" /></div>;
+    // Board-specific SVG figure (Edexcel B or OCR)
+    if (boardFeedbackTopic) {
+      return <div className="my-4"><img src={boardFeedbackTopic.figureFile} alt={boardFeedbackTopic.title} className="w-full rounded-lg bg-white p-2" /></div>;
     }
     if (isGameTheoryTopic) return renderBoardSpecificDiagram("game_theory", <div className="my-4"><EconGameTheoryPayoff /></div>);
     if (isJCurveTopic) return renderBoardSpecificDiagram("j_curve", <div className="my-4"><EconJCurveEffect /></div>);
