@@ -950,6 +950,9 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
 
           {practiceMode === "scenario" ? (
             <Card>
+              <div className="font-medium text-slate-400 py-3 px-4 rounded-t-lg bg-slate-900/60 border-b border-border/40">
+                Unlimited practice
+              </div>
               <CardContent className="p-6 space-y-4">
                 <p className="text-xs text-muted-foreground">
                   Real-world scenario-based diagram questions modelled on exam practice books. Read the context, then draw & explain.

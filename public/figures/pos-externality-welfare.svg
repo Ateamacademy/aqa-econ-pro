@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 480" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="480" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Positive Consumption Externality — UK Electric Vehicles</text>
+
+  <line x1="90" y1="410" x2="600" y2="410" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="410" stroke="#0f172a" stroke-width="2"/>
+  <text x="555" y="430" font-size="12" fill="#0f172a">Quantity (Q)</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Price (£)</text>
+
+  <!-- MPC = MSC (upward) -->
+  <line x1="130" y1="390" x2="540" y2="120" stroke="#15803d" stroke-width="2.6"/>
+  <text x="545" y="125" font-size="11" font-weight="600" fill="#15803d">MPC = MSC</text>
+
+  <!-- MPB (downward, original) -->
+  <line x1="130" y1="180" x2="500" y2="390" stroke="#d97706" stroke-width="2.6"/>
+  <text x="505" y="395" font-size="11" font-weight="600" fill="#d97706">MPB</text>
+
+  <!-- MSB (shifted up by MEB, parallel) -->
+  <line x1="130" y1="110" x2="560" y2="355" stroke="#be123c" stroke-width="2.6"/>
+  <text x="565" y="360" font-size="11" font-weight="600" fill="#be123c">MSB</text>
+
+  <!-- MEB gap bracket -->
+  <defs>
+    <marker id="arrMEBu" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#be123c"/></marker>
+    <marker id="arrMEBd" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#be123c"/></marker>
+  </defs>
+  <line x1="450" y1="285" x2="450" y2="318" stroke="#be123c" stroke-width="1.5" marker-start="url(#arrMEBd)" marker-end="url(#arrMEBu)"/>
+  <text x="458" y="307" font-size="11" font-weight="700" fill="#be123c">MEB</text>
+
+  <!-- Equilibria:
+       MPC = MSC line: (130,390)→(540,120) slope -0.659, y = 390 - 0.659(x-130)
+       MPB: (130,180)→(500,390) slope 210/370 = 0.568, y = 180 + 0.568(x-130)
+       Q1 (MPB=MPC): 180+0.568(x-130) = 390 - 0.659(x-130) -> 1.227(x-130) = 210 -> x-130=171.1 -> x=301.1, y≈277
+       MSB: (130,110)→(560,355) slope 245/430 = 0.570, y = 110 + 0.570(x-130)
+       Q* (MSB=MSC): 110+0.570(x-130) = 390-0.659(x-130) -> 1.229(x-130) = 280 -> x-130=227.8 -> x=357.8, y≈240 -->
+  
+  <!-- Market equilibrium Q1 at (301, 277) -->
+  <circle cx="301" cy="277" r="5" fill="#d97706"/>
+  <line x1="90" y1="277" x2="301" y2="277" stroke="#d97706" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="301" y1="277" x2="301" y2="410" stroke="#d97706" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="281" font-size="11" font-weight="700" fill="#d97706">P1</text>
+  <text x="301" y="425" text-anchor="middle" font-size="11" font-weight="700" fill="#d97706">Q1</text>
+
+  <!-- Social optimum Q* at (358, 240) -->
+  <circle cx="358" cy="240" r="5" fill="#be123c"/>
+  <line x1="90" y1="240" x2="358" y2="240" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="358" y1="240" x2="358" y2="410" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="244" font-size="11" font-weight="700" fill="#be123c">P*</text>
+  <text x="358" y="440" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Q*</text>
+
+  <!-- Welfare gain triangle: 
+       Q1 on MPB at (301, 277) 
+       Point on MSB at Q1: y = 110 + 0.570*(301-130) = 110 + 97.5 = 207.5 → (301, 208)
+       Q* at (358, 240) where MSB = MSC
+       Triangle: (301, 277), (301, 208), (358, 240) -->
+  <polygon points="301,277 301,208 358,240" fill="#bbf7d0" fill-opacity="0.7" stroke="#15803d" stroke-width="1.5"/>
+
+  <!-- Welfare gain label with pointer -->
+  <line x1="400" y1="175" x2="335" y2="230" stroke="#15803d" stroke-width="1.3"/>
+  <text x="405" y="173" font-size="11" font-weight="700" fill="#15803d">Welfare Gain</text>
+  <text x="405" y="187" font-size="10" fill="#15803d">(potential, at Q*)</text>
+
+  <text x="310" y="465" text-anchor="middle" font-size="11" fill="#334155">MSB &gt; MPB by MEB (cleaner air, lower NHS burden). Free market under-consumes (Q1 &lt; Q*). Shaded triangle = welfare gain.</text>
+</svg>

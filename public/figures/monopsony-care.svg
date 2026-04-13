@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 480" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="480" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Monopsony in UK Social Care — Lower Wages &amp; Lower Employment</text>
+
+  <line x1="90" y1="410" x2="600" y2="410" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="410" stroke="#0f172a" stroke-width="2"/>
+  <text x="530" y="430" font-size="12" fill="#0f172a">Employment (L)</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Wage (W)</text>
+
+  <!-- S_L = AC_L (upward) -->
+  <line x1="130" y1="390" x2="550" y2="110" stroke="#0284c7" stroke-width="2.5"/>
+  <text x="555" y="115" font-size="11" font-weight="600" fill="#0284c7">S_L = AC_L</text>
+
+  <!-- MC_L (upward, steeper, above AC_L) -->
+  <line x1="130" y1="390" x2="420" y2="90" stroke="#be123c" stroke-width="2.5"/>
+  <text x="395" y="85" font-size="11" font-weight="600" fill="#be123c">MC_L</text>
+
+  <!-- MRP_L = D_L (downward) -->
+  <line x1="130" y1="110" x2="560" y2="390" stroke="#15803d" stroke-width="2.5"/>
+  <text x="565" y="395" font-size="11" font-weight="600" fill="#15803d">MRP_L = D_L</text>
+
+  <!-- Equilibria:
+       AC_L: (130,390)→(550,110) slope -280/420 = -0.667, y = 390 - 0.667(x-130)
+       MC_L: (130,390)→(420,90) slope -300/290 = -1.034, y = 390 - 1.034(x-130)
+       MRP_L: (130,110)→(560,390) slope 280/430 = 0.651, y = 110 + 0.651(x-130)
+       
+       Competitive (S_L = MRP_L): 390 - 0.667(x-130) = 110 + 0.651(x-130) -> 1.318(x-130)=280 -> x=342.4, y=248
+       Monopsony profit-max (MC_L = MRP_L): 390 - 1.034(x-130) = 110 + 0.651(x-130) -> 1.685(x-130)=280 -> x=296.2, y=218
+       Wage at L1 (read off AC_L at x=296): y = 390 - 0.667*166 = 279
+  -->
+
+  <!-- Competitive point: Lc, Wc at (342, 248) -->
+  <circle cx="342" cy="248" r="5" fill="#15803d"/>
+  <line x1="90" y1="248" x2="342" y2="248" stroke="#15803d" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="342" y1="248" x2="342" y2="410" stroke="#15803d" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="252" font-size="11" font-weight="700" fill="#15803d">Wc</text>
+  <text x="342" y="425" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d">Lc</text>
+
+  <!-- Monopsony profit-max at (296, 218) -->
+  <circle cx="296" cy="218" r="5" fill="#be123c"/>
+  <text x="304" y="214" font-size="10" font-weight="700" fill="#be123c">MC_L=MRP_L</text>
+
+  <!-- Drop to AC_L at L1: wage W1 at (296, 279) -->
+  <circle cx="296" cy="279" r="5" fill="#0284c7"/>
+  <line x1="296" y1="218" x2="296" y2="410" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="90" y1="279" x2="296" y2="279" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="283" font-size="11" font-weight="700" fill="#0284c7">W1</text>
+  <text x="296" y="440" text-anchor="middle" font-size="11" font-weight="700" fill="#0284c7">L1</text>
+
+  <!-- Lost wages rectangle: between W1 and Wc, width 0 to L1 (i.e. from x=90 to x=296) -->
+  <rect x="90" y="248" width="206" height="31" fill="#fef08a" fill-opacity="0.55" stroke="#a16207" stroke-width="1.2"/>
+  <text x="193" y="268" text-anchor="middle" font-size="10" font-weight="700" fill="#854d0e">Lost wages (exploitation)</text>
+
+  <!-- Annotation: MC_L above AC_L because -->
+  <rect x="425" y="135" width="175" height="80" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="513" y="152" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a8a">MC_L &gt; AC_L because:</text>
+  <text x="513" y="168" text-anchor="middle" font-size="10" fill="#1e3a8a">hiring ↑1 worker requires</text>
+  <text x="513" y="182" text-anchor="middle" font-size="10" fill="#1e3a8a">raising wage for ALL</text>
+  <text x="513" y="196" text-anchor="middle" font-size="10" fill="#1e3a8a">existing workers</text>
+  <text x="513" y="210" text-anchor="middle" font-size="10" fill="#1e3a8a">(no wage discrimination)</text>
+
+  <text x="310" y="465" text-anchor="middle" font-size="11" fill="#334155">Monopsony: L1 &lt; Lc and W1 &lt; Wc. Care workers earn less than retail/hospitality despite similar skills.</text>
+</svg>

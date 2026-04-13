@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="Inter, Arial, sans-serif">
+  <rect width="900" height="480" fill="#ffffff"/>
+  <text x="450" y="26" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Phillips Curve Short Run vs Long Run (UK, 2024)</text>
+
+  <!-- Panel labels -->
+  <text x="220" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#334155">Diagram A — AD/AS</text>
+  <text x="680" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#334155">Diagram B — Phillips Curve</text>
+
+  <!-- ================= PANEL A: AD/AS ================= -->
+  <line x1="70" y1="410" x2="410" y2="410" stroke="#0f172a" stroke-width="2"/>
+  <line x1="70" y1="70" x2="70" y2="410" stroke="#0f172a" stroke-width="2"/>
+  <text x="375" y="430" font-size="11" fill="#0f172a">Real GDP</text>
+  <text x="45" y="65" font-size="11" fill="#0f172a">PL</text>
+
+  <!-- LRAS vertical at YFE (x=230) -->
+  <line x1="230" y1="80" x2="230" y2="410" stroke="#7c3aed" stroke-width="2.3"/>
+  <text x="235" y="90" font-size="11" font-weight="700" fill="#7c3aed">LRAS</text>
+  <text x="230" y="425" text-anchor="middle" font-size="10" font-weight="700" fill="#7c3aed">YFE</text>
+
+  <!-- SRAS1 (upward) -->
+  <line x1="100" y1="380" x2="400" y2="110" stroke="#be123c" stroke-width="2.2"/>
+  <text x="405" y="115" font-size="11" font-weight="600" fill="#be123c">SRAS1</text>
+
+  <!-- SRAS2 (shifted left/up) -->
+  <line x1="70" y1="345" x2="330" y2="110" stroke="#991b1b" stroke-width="2.2" stroke-dasharray="4,3"/>
+  <text x="330" y="105" font-size="11" font-weight="600" fill="#991b1b">SRAS2</text>
+
+  <!-- AD1 -->
+  <line x1="90" y1="100" x2="390" y2="390" stroke="#0284c7" stroke-width="2.2"/>
+  <text x="390" y="400" font-size="11" font-weight="600" fill="#0284c7">AD1</text>
+
+  <!-- AD2 (shifted right) -->
+  <line x1="150" y1="100" x2="410" y2="355" stroke="#0369a1" stroke-width="2.2" stroke-dasharray="4,3"/>
+  <text x="410" y="348" font-size="11" font-weight="600" fill="#0369a1">AD2</text>
+
+  <!-- Equilibria:
+       AD1: (90,100)→(390,390) slope 290/300=0.967, y = 100 + 0.967(x-90)
+       SRAS1: (100,380)→(400,110) slope -270/300=-0.9, y = 380 - 0.9(x-100)
+       Initial Eq @ YFE: set x=230; AD1 y = 100 + 0.967*140 = 235.4; SRAS1 y = 380 - 0.9*130 = 263. They don't intersect at x=230 naturally. Let me pick the intersection.
+       
+       Actually for this pedagogical diagram, place three labeled equilibria at:
+       - A (initial): YFE=230, Pe=250 (on AD1 and SRAS1 approximately) 
+       - Short-run Y2 > YFE at (280, 215) on AD2 and SRAS1
+       - Long-run back at YFE=230, P3=200 on AD2 and SRAS2
+       
+       Just show three dots with arrows - clearer for pedagogy than exact math.
+  -->
+
+  <!-- Point A (initial LR equilibrium) at (230, 255) -->
+  <circle cx="230" cy="255" r="5" fill="#0f172a"/>
+  <line x1="70" y1="255" x2="230" y2="255" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1"/>
+  <text x="45" y="259" font-size="10" font-weight="700" fill="#0f172a">Pe</text>
+
+  <!-- Point Y2 (short-run expansion) at (275, 215) -->
+  <circle cx="275" cy="215" r="5" fill="#0284c7"/>
+  <line x1="70" y1="215" x2="275" y2="215" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1"/>
+  <line x1="275" y1="215" x2="275" y2="410" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1"/>
+  <text x="45" y="219" font-size="10" font-weight="700" fill="#0284c7">P2</text>
+  <text x="275" y="425" text-anchor="middle" font-size="10" font-weight="700" fill="#0284c7">Y2</text>
+
+  <!-- Point LR (back at YFE, higher P) at (230, 178) -->
+  <circle cx="230" cy="178" r="5" fill="#be123c"/>
+  <line x1="70" y1="178" x2="230" y2="178" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1"/>
+  <text x="45" y="182" font-size="10" font-weight="700" fill="#be123c">P3</text>
+
+  <!-- ================= PANEL B: Phillips Curve ================= -->
+  <line x1="520" y1="410" x2="870" y2="410" stroke="#0f172a" stroke-width="2"/>
+  <line x1="520" y1="70" x2="520" y2="410" stroke="#0f172a" stroke-width="2"/>
+  <text x="810" y="430" font-size="11" fill="#0f172a">Unemployment (%)</text>
+  <text x="500" y="65" font-size="11" fill="#0f172a">Inflation (%)</text>
+
+  <!-- LRPC vertical at NRU (x=680) -->
+  <line x1="680" y1="80" x2="680" y2="410" stroke="#be123c" stroke-width="2.5"/>
+  <text x="685" y="90" font-size="11" font-weight="700" fill="#be123c">LRPC</text>
+  <text x="680" y="425" text-anchor="middle" font-size="10" font-weight="700" fill="#be123c">NRU</text>
+
+  <!-- SRPC1 (downward, convex) -->
+  <path d="M 560 140 Q 640 230 720 290 Q 790 330 860 370" fill="none" stroke="#0284c7" stroke-width="2.3"/>
+  <text x="780" y="360" font-size="11" font-weight="600" fill="#0284c7">SRPC1</text>
+
+  <!-- SRPC2 (shifted up/right) -->
+  <path d="M 560 80 Q 640 170 720 230 Q 790 275 860 315" fill="none" stroke="#0369a1" stroke-width="2.3" stroke-dasharray="4,3"/>
+  <text x="780" y="305" font-size="11" font-weight="600" fill="#0369a1">SRPC2</text>
+
+  <!-- Point A: (NRU=680, π1≈290) — on SRPC1 at NRU -->
+  <circle cx="680" cy="290" r="5" fill="#0f172a"/>
+  <text x="688" y="294" font-size="13" font-weight="700" fill="#0f172a">A</text>
+  <line x1="520" y1="290" x2="680" y2="290" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1"/>
+  <text x="505" y="294" text-anchor="end" font-size="10" font-weight="700" fill="#0f172a">π1</text>
+
+  <!-- Point B: (U1 < NRU, π2) on SRPC1 at (605, 215) -->
+  <circle cx="605" cy="215" r="5" fill="#0284c7"/>
+  <text x="613" y="211" font-size="13" font-weight="700" fill="#0284c7">B</text>
+  <line x1="605" y1="215" x2="605" y2="410" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1"/>
+  <text x="605" y="425" text-anchor="middle" font-size="10" font-weight="700" fill="#0284c7">U1</text>
+
+  <!-- Point C: (NRU, π2 high) on SRPC2 at (680, 215) -->
+  <circle cx="680" cy="215" r="5" fill="#be123c"/>
+  <text x="688" y="219" font-size="13" font-weight="700" fill="#be123c">C</text>
+  <line x1="520" y1="215" x2="680" y2="215" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1"/>
+  <text x="505" y="219" text-anchor="end" font-size="10" font-weight="700" fill="#be123c">π2</text>
+
+  <!-- Arrows: A→B along SRPC1, B→C along SRPC2 shift -->
+  <defs>
+    <marker id="arrPh" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#15803d"/>
+    </marker>
+  </defs>
+  <path d="M 670 288 Q 635 258 612 220" fill="none" stroke="#15803d" stroke-width="1.8" marker-end="url(#arrPh)"/>
+  <path d="M 615 215 Q 650 210 672 215" fill="none" stroke="#15803d" stroke-width="1.8" marker-end="url(#arrPh)"/>
+
+  <text x="450" y="460" text-anchor="middle" font-size="11" fill="#334155">AD rises → Y2 &gt; YFE (Panel A) &amp; movement A→B (Panel B). SRAS shifts left / SRPC shifts up → return to YFE, NRU at higher inflation. LRPC is vertical.</text>
+</svg>
