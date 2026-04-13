@@ -216,17 +216,66 @@ serve(async (req) => {
       });
     }
 
-    const aiResult = await response.json();
+    const responseText = await response.text();
+    let aiResult;
+    try {
+      aiResult = JSON.parse(responseText);
+    } catch {
+      console.error("AI gateway returned non-JSON:", responseText.substring(0, 500));
+      return new Response(JSON.stringify({ error: "AI gateway returned an invalid response. Please try again." }), {
+        status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
     const rawContent = aiResult.choices?.[0]?.message?.content || "";
 
-    // Parse JSON from response (strip markdown fences if present)
+    if (!rawContent || rawContent.trim().length === 0) {
+      console.error("AI returned empty content");
+      return new Response(JSON.stringify({ error: "AI returned an empty response. Please try again." }), {
+        status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    // Robust JSON extraction with repair
+    function extractJson(text: string): unknown {
+      let cleaned = text.replace(/```json\s*/gi, "").replace(/```\s*/g, "").trim();
+      // Remove control characters
+      cleaned = cleaned.replace(/[\x00-\x1F\x7F]/g, (ch) => ch === "\n" || ch === "\t" ? ch : "");
+
+      const jsonStart = cleaned.search(/[\{\[]/);
+      const startChar = jsonStart !== -1 ? cleaned[jsonStart] : "{";
+      const endChar = startChar === "[" ? "]" : "}";
+      const jsonEnd = cleaned.lastIndexOf(endChar);
+
+      if (jsonStart === -1 || jsonEnd === -1 || jsonEnd <= jsonStart) {
+        throw new Error("No JSON object found in response");
+      }
+
+      cleaned = cleaned.substring(jsonStart, jsonEnd + 1);
+
+      try {
+        return JSON.parse(cleaned);
+      } catch {
+        // Fix trailing commas and unbalanced braces
+        cleaned = cleaned.replace(/,\s*}/g, "}").replace(/,\s*]/g, "]");
+        let braces = 0, brackets = 0;
+        for (const c of cleaned) {
+          if (c === "{") braces++;
+          if (c === "}") braces--;
+          if (c === "[") brackets++;
+          if (c === "]") brackets--;
+        }
+        while (brackets > 0) { cleaned += "]"; brackets--; }
+        while (braces > 0) { cleaned += "}"; braces--; }
+        return JSON.parse(cleaned);
+      }
+    }
+
     let markingResult;
     try {
-      const cleaned = rawContent.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
-      markingResult = JSON.parse(cleaned);
-    } catch {
+      markingResult = extractJson(rawContent);
+    } catch (parseErr) {
       console.error("Failed to parse marking JSON:", rawContent.substring(0, 500));
-      return new Response(JSON.stringify({ error: "Failed to parse marking result", raw: rawContent }), {
+      return new Response(JSON.stringify({ error: "Failed to parse marking result. Please try again." }), {
         status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
