@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 470" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="470" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">UK Housing Market — Planning Reform + High Mortgage Rates</text>
+
+  <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="545" y="420" font-size="12" fill="#0f172a">Quantity of Housing</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Price (£)</text>
+
+  <!-- D1 (original demand) -->
+  <line x1="180" y1="100" x2="540" y2="380" stroke="#15803d" stroke-width="2.4"/>
+  <text x="545" y="385" font-size="11" font-weight="600" fill="#15803d">D1</text>
+
+  <!-- D2 (demand shifts LEFT due to high mortgage rates) -->
+  <line x1="130" y1="130" x2="470" y2="380" stroke="#059669" stroke-width="2.4" stroke-dasharray="5,3"/>
+  <text x="470" y="395" font-size="11" font-weight="600" fill="#059669">D2 (↑rates)</text>
+
+  <!-- S1 (original supply) -->
+  <line x1="170" y1="380" x2="540" y2="100" stroke="#0284c7" stroke-width="2.4"/>
+  <text x="545" y="105" font-size="11" font-weight="600" fill="#0284c7">S1</text>
+
+  <!-- S2 (supply shifts RIGHT due to planning reform) -->
+  <line x1="240" y1="380" x2="600" y2="110" stroke="#0369a1" stroke-width="2.4" stroke-dasharray="5,3"/>
+  <text x="570" y="100" font-size="11" font-weight="600" fill="#0369a1">S2 (reform)</text>
+
+  <!-- Shift arrows -->
+  <defs>
+    <marker id="arrH" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <path d="M 380 200 L 420 200" fill="none" stroke="#0369a1" stroke-width="1.8" marker-end="url(#arrH)"/>
+  <path d="M 380 330 L 340 330" fill="none" stroke="#059669" stroke-width="1.8" marker-end="url(#arrH)"/>
+
+  <!-- E1: intersection of D1 and S1 ≈ (355, 240) -->
+  <circle cx="355" cy="240" r="5" fill="#0f172a"/>
+  <line x1="90" y1="240" x2="355" y2="240" stroke="#0f172a" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="355" y1="240" x2="355" y2="400" stroke="#0f172a" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="244" font-size="11" font-weight="700" fill="#0f172a">P1</text>
+  <text x="355" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">Q1</text>
+
+  <!-- E2: intersection of D2 and S2 ≈ (355, 295) approximately same Q, lower P -->
+  <circle cx="355" cy="295" r="5" fill="#be123c"/>
+  <line x1="90" y1="295" x2="355" y2="295" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="299" font-size="11" font-weight="700" fill="#be123c">P2</text>
+
+  <!-- Price falls arrow -->
+  <path d="M 108 250 L 108 285" fill="none" stroke="#be123c" stroke-width="2" marker-end="url(#arrH)"/>
+
+  <text x="310" y="445" text-anchor="middle" font-size="11" fill="#334155">Supply rises, demand falls → Price falls unambiguously (P1→P2). Quantity change depends on relative shift sizes.</text>
+</svg>

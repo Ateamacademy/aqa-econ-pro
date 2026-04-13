@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 460" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="460" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Increased Government Infrastructure Spending — Short Run (UK)</text>
+
+  <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="540" y="420" font-size="12" fill="#0f172a">Real GDP (Y)</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Price Level</text>
+
+  <!-- SRAS -->
+  <line x1="130" y1="380" x2="570" y2="100" stroke="#0284c7" stroke-width="2.5"/>
+  <text x="575" y="105" font-size="12" font-weight="600" fill="#0284c7">SRAS</text>
+
+  <!-- AD1 -->
+  <line x1="130" y1="100" x2="490" y2="380" stroke="#15803d" stroke-width="2.4"/>
+  <text x="490" y="395" font-size="11" font-weight="600" fill="#15803d">AD1</text>
+
+  <!-- AD2 -->
+  <line x1="230" y1="100" x2="580" y2="380" stroke="#be123c" stroke-width="2.4"/>
+  <text x="585" y="395" font-size="11" font-weight="600" fill="#be123c">AD2</text>
+
+  <!-- Shift arrow labelled ↑G -->
+  <defs>
+    <marker id="arrG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#be123c"/></marker>
+  </defs>
+  <path d="M 200 180 L 290 180" fill="none" stroke="#be123c" stroke-width="2" marker-end="url(#arrG)"/>
+  <text x="245" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">↑G</text>
+
+  <!-- Eq1 (328, 254) -->
+  <circle cx="328" cy="254" r="5" fill="#15803d"/>
+  <line x1="90" y1="254" x2="328" y2="254" stroke="#15803d" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="328" y1="254" x2="328" y2="400" stroke="#15803d" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="258" font-size="11" font-weight="700" fill="#15803d">P1</text>
+  <text x="328" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d">Y1</text>
+
+  <!-- Eq2 (381, 221) -->
+  <circle cx="381" cy="221" r="5" fill="#be123c"/>
+  <line x1="90" y1="221" x2="381" y2="221" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="381" y1="221" x2="381" y2="400" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="225" font-size="11" font-weight="700" fill="#be123c">P2</text>
+  <text x="381" y="430" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Y2</text>
+
+  <!-- Annotation box -->
+  <rect x="415" y="130" width="175" height="70" fill="#fef3c7" stroke="#b45309" stroke-width="1"/>
+  <text x="503" y="148" text-anchor="middle" font-size="10" font-weight="700" fill="#78350f">Short run:</text>
+  <text x="503" y="162" text-anchor="middle" font-size="10" fill="#78350f">G ↑ → AD shifts right</text>
+  <text x="503" y="176" text-anchor="middle" font-size="10" fill="#78350f">SRAS unchanged</text>
+  <text x="503" y="190" text-anchor="middle" font-size="10" fill="#78350f">(LRAS shifts later)</text>
+
+  <text x="310" y="445" text-anchor="middle" font-size="11" fill="#334155">G (component of AD) rises → AD1→AD2 → Y↑, P↑ in the short run.</text>
+</svg>

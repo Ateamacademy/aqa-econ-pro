@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 470" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="470" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Contestable Market — UK Short-Haul Aviation (Hit-and-Run Threat)</text>
+
+  <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="545" y="420" font-size="12" fill="#0f172a">Quantity of Flights</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Price (£)</text>
+
+  <!-- Demand -->
+  <line x1="130" y1="100" x2="540" y2="380" stroke="#15803d" stroke-width="2.5"/>
+  <text x="545" y="385" font-size="12" font-weight="600" fill="#15803d">D</text>
+
+  <!-- S1 (less-contestable, steep left — high prices) -->
+  <line x1="150" y1="380" x2="380" y2="80" stroke="#0284c7" stroke-width="2.4"/>
+  <text x="360" y="75" font-size="11" font-weight="600" fill="#0284c7">S1 (incumbent)</text>
+
+  <!-- S2 (post threat of entry, shifted RIGHT) -->
+  <line x1="250" y1="380" x2="540" y2="110" stroke="#be123c" stroke-width="2.4" stroke-dasharray="5,3"/>
+  <text x="545" y="115" font-size="11" font-weight="600" fill="#be123c">S2 (threat of entry)</text>
+
+  <!-- Shift arrow -->
+  <defs>
+    <marker id="arrC" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#be123c"/></marker>
+  </defs>
+  <path d="M 285 280 L 345 280" fill="none" stroke="#be123c" stroke-width="2" marker-end="url(#arrC)"/>
+  <text x="315" y="270" text-anchor="middle" font-size="10" fill="#be123c" font-style="italic">entry threat</text>
+
+  <!-- Equilibria -->
+  <!-- D: from (130,100) to (540,380), slope 280/410 = 0.683, y = 100 + 0.683(x-130)
+       S1: from (150,380) to (380,80), slope -300/230 = -1.304, y = 380 - 1.304(x-150)
+       E1: 100 + 0.683(x-130) = 380 - 1.304(x-150)
+         0.683x - 88.8 + 1.304x - 195.6 = 280
+         1.987x = 564.4 -> x ≈ 284, y ≈ 100 + 0.683*154 ≈ 205 -->
+  <circle cx="284" cy="205" r="5" fill="#0284c7"/>
+  <line x1="90" y1="205" x2="284" y2="205" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="284" y1="205" x2="284" y2="400" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="209" font-size="11" font-weight="700" fill="#0284c7">P1</text>
+  <text x="284" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#0284c7">Q1</text>
+
+  <!-- E2: S2 from (250,380) to (540,110), slope -270/290 = -0.931, y = 380 - 0.931(x-250)
+       100 + 0.683(x-130) = 380 - 0.931(x-250)
+       0.683x - 88.8 + 0.931x - 232.75 = 280
+       1.614x = 601.55 -> x ≈ 373, y ≈ 100 + 0.683*243 ≈ 266 -->
+  <circle cx="373" cy="266" r="5" fill="#be123c"/>
+  <line x1="90" y1="266" x2="373" y2="266" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="373" y1="266" x2="373" y2="400" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="270" font-size="11" font-weight="700" fill="#be123c">P2</text>
+  <text x="373" y="430" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Q2</text>
+
+  <text x="310" y="455" text-anchor="middle" font-size="11" fill="#334155">Credible entry threat forces incumbents to expand → supply shifts right, P falls (P1→P2), Q rises (Q1→Q2).</text>
+</svg>
