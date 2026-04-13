@@ -380,6 +380,7 @@ export default function DiagramPractice() {
           marks: t.marks,
           expectedDiagramKeyword: t.slug,
           hints: [`${t.tier} · ${t.marks} marks`, `Edexcel B A-Level`],
+          scenarioVariant: t.scenarioVariant,
         }));
 
         // Merge with generated board templates for remaining topics
