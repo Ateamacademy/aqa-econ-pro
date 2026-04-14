@@ -1241,7 +1241,10 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             const ibRefTopic = subject === "ib" && selectedScenario
               ? ibTopics.find((t) => `ib-${t.slug}` === selectedScenario.id)
               : undefined;
-            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic || ibRefTopic;
+            const wjecRefTopic = subject === "wjec" && selectedScenario
+              ? wjecTopics.find((t) => `wjec-${t.slug}` === selectedScenario.id)
+              : undefined;
+            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic || ibRefTopic || wjecRefTopic;
 
             if (boardRefTopic) {
               return (
@@ -1540,7 +1543,10 @@ function DiagramFeedbackView({
   const ibFeedbackTopic = subject === "ib" && scenarioId
     ? ibTopics.find((t) => `ib-${t.slug}` === scenarioId)
     : undefined;
-  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic;
+  const wjecFeedbackTopic = subject === "wjec" && scenarioId
+    ? wjecTopics.find((t) => `wjec-${t.slug}` === scenarioId)
+    : undefined;
+  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic || wjecFeedbackTopic;
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     // Board-specific SVG figure (Edexcel B or OCR)
