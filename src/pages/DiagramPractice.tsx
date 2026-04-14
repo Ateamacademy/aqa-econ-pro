@@ -801,7 +801,12 @@ Format: Give the scenario context with Figure 1, then the question. Nothing else
       ? ibTopics.find((t) => `ib-${t.slug}` === scenario.id)
       : undefined;
 
-    const boardTopic = edexcelBTopic || ocrTopic || caieTopic || ibTopic;
+    // Check if this is a WJEC topic with real scenario data
+    const wjecTopic = subject === "wjec"
+      ? wjecTopics.find((t) => `wjec-${t.slug}` === scenario.id)
+      : undefined;
+
+    const boardTopic = edexcelBTopic || ocrTopic || caieTopic || ibTopic || wjecTopic;
     if (boardTopic) {
       setGeneratedQ(`**${boardTopic.title}** · ${boardTopic.tier} · ${boardTopic.marks} marks\n\n${boardTopic.scenario}\n\n${boardTopic.question}`);
       setStep("answer");
