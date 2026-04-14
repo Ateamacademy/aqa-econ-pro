@@ -148,4 +148,32 @@ export const wjecTopics: WjecTopic[] = [
       { requirement: "New equilibrium We2 > We1 and Le2 > Le1 clearly marked", marks: 1 },
     ],
   },
+
+  // ── Advanced [8 marks] ──
+  {
+    slug: "wjec-indirect-tax-sugar",
+    board: "WJEC",
+    tier: "Advanced",
+    section: "Microeconomics",
+    marks: 8,
+    title: "Indirect Tax (Ad Valorem / Specific)",
+    scenario:
+      "The Welsh Government is concerned about rising healthcare costs from overconsumption of highly processed, high-sugar snacks. To address the negative consumption externalities, policymakers are considering a SPECIFIC indirect tax on sugar-sweetened confectionery to discourage consumption and internalise the external costs.",
+    question:
+      "Using a demand and supply diagram, explain the impact of imposing a specific indirect tax on the market for sugary snacks in Wales. In your response you must:\n- Show the impact on equilibrium price and equilibrium quantity.\n- Identify and label the areas of tax incidence for both consumer and producer.\n- Annotate the total tax revenue generated for the government.",
+    figureFile: "/figures/wjec-indirect-tax-sugar.svg",
+    explanation:
+      "A specific indirect tax raises producers' per-unit costs, shifting supply VERTICALLY UP from S to S1 by the tax amount. Initial equilibrium (PE, QE) where S meets D. New equilibrium (P1, Q1) where S1 meets D — P1 > PE and Q1 < QE. Four key reference points: W at (Q1, P1) = new equilibrium on D and S1; Y at (Q1, PE) = horizontal reference at original price; Z at (Q1, A) = price the producer receives NET of tax, read off the original S curve at Q1; A on the price axis = producer net price. Vertical distance P1 − A = TAX PER UNIT. Areas: CONSUMER TAX (upper, rectangle W-Y between P1 and PE across 0→Q1) = (P1 − PE) × Q1 — the price rise consumers absorb; PRODUCER TAX (lower, rectangle Y-Z between PE and A across 0→Q1) = (PE − A) × Q1 — the fall in net price producers accept. TOTAL TAX REVENUE = Consumer Tax + Producer Tax = (P1 − A) × Q1 = tax × Q1 — the full rectangle P1-W-Z-A. The SPLIT depends on ELASTICITIES: demand for sugary snacks is relatively inelastic (habit-forming), so consumers bear the LARGER burden.",
+    keyTerms: ["specific tax", "ad valorem", "indirect tax", "tax incidence", "consumer tax", "producer tax", "tax revenue", "PED", "negative externality", "supply shift"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Price and Quantity", marks: 1 },
+      { requirement: "Original supply S and demand D drawn with initial equilibrium PE, QE", marks: 1 },
+      { requirement: "S shifts vertically UP to S1 by tax amount; both curves labelled with vertical tax distance visible", marks: 1 },
+      { requirement: "New equilibrium W at (P1, Q1) on S1 and D; P1 > PE and Q1 < QE clearly marked", marks: 1 },
+      { requirement: "Net producer price A (on original S at Q1) marked; points Y (at Q1, PE) and Z (at Q1, A) labelled", marks: 1 },
+      { requirement: "Consumer Tax rectangle (upper, between P1 and PE across 0→Q1) shaded/labelled", marks: 1 },
+      { requirement: "Producer Tax rectangle (lower, between PE and A across 0→Q1) shaded/labelled", marks: 1 },
+      { requirement: "Written explanation links incidence to PED and connects to externality internalisation", marks: 1 },
+    ],
+  },
 ];
