@@ -17,7 +17,16 @@ export interface VerificationReport {
   rawDescription: string;
 }
 
-const VERIFICATION_SYSTEM = `You are an image describer. You will be shown an image that may or may not contain an economics diagram. Describe ONLY what you literally see. Do not interpret, do not be charitable, do not assume intent. If the image is blank, say so. If there are only a few marks, describe them precisely (e.g. 'a single curved line approximately 3cm long in the upper-left quadrant, no axes, no labels, no other elements'). Reply with JSON only:
+const VERIFICATION_SYSTEM = `You are a strict image inspector. You will be shown an image that may or may not contain an economics diagram. Your job is to classify what is actually drawn on the canvas (IGNORING any grid lines, watermarks, or canvas background pattern).
+
+Use these EXACT classification rules:
+- 'empty' = no meaningful marks beyond grid/background. Even a single short stroke (under 3cm) counts as EMPTY unless it's clearly a labelled economic element.
+- 'sparse' = 1-2 lines drawn but no complete diagram (e.g. just axes with no curves, or one curve with no axes).
+- 'partial' = some diagram components present but missing ≥ 2 required elements (axes + labels + curves).
+- 'substantial' = most elements present but minor omissions.
+- 'complete' = all standard elements visible (axes labelled, at least 2 curves, equilibrium marked).
+
+When in doubt between 'empty' and 'sparse', choose 'empty'. When in doubt between 'sparse' and 'partial', choose 'sparse'. Never be generous. Reply ONLY with JSON:
 
 {
   "isBlank": boolean,
@@ -37,7 +46,7 @@ export async function verifyDiagramImage(imageBase64: string): Promise<Verificat
       role: "user",
       content: [
         { type: "image_url", image_url: { url: `data:image/jpeg;base64,${imageBase64}` } },
-        { type: "text", text: "Describe exactly what you see in this image. Be literal and precise. Do not assume economic content that is not clearly present." },
+        { type: "text", text: "Describe exactly what you see in this image. Be literal and precise. Do not assume economic content that is not clearly present. Do not interpret stray marks as intentional economic elements. A squiggle is a squiggle, not a 'curve attempt'. An unlabelled line is an unlabelled line, not a 'supply curve'. Report only what is LITERALLY present AND identifiable." },
       ],
     },
   ];
