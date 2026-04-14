@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 470" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="470" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Long-Run Growth — Human-Capital Investment Shifts LRAS Right</text>
+
+  <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="545" y="420" font-size="12" fill="#0f172a">Real GDP (Y)</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Price Level</text>
+
+  <!-- LRAS1 (vertical at x=300) -->
+  <line x1="300" y1="60" x2="300" y2="400" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="260" y="75" font-size="12" font-weight="700" fill="#7c3aed">LRAS1</text>
+  <text x="300" y="417" text-anchor="middle" font-size="11" font-weight="700" fill="#7c3aed">Yp1</text>
+
+  <!-- LRAS2 (vertical at x=420, shifted right) -->
+  <line x1="420" y1="60" x2="420" y2="400" stroke="#be123c" stroke-width="2.5"/>
+  <text x="427" y="75" font-size="12" font-weight="700" fill="#be123c">LRAS2</text>
+  <text x="420" y="417" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Yp2</text>
+
+  <!-- Shift arrow -->
+  <defs>
+    <marker id="arrLRAS" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#be123c"/></marker>
+  </defs>
+  <path d="M 310 110 L 410 110" fill="none" stroke="#be123c" stroke-width="2" marker-end="url(#arrLRAS)"/>
+  <text x="360" y="100" text-anchor="middle" font-size="10" fill="#be123c" font-style="italic">↑ labour quality (vocational training)</text>
+
+  <!-- AD -->
+  <line x1="130" y1="100" x2="560" y2="380" stroke="#0284c7" stroke-width="2.5"/>
+  <text x="565" y="385" font-size="12" font-weight="600" fill="#0284c7">AD</text>
+
+  <!-- E1 on LRAS1: AD at x=300. y = 100 + (380-100)/(560-130)*(300-130) = 100 + 0.651*170 = 210.7 -->
+  <circle cx="300" cy="211" r="5" fill="#7c3aed"/>
+  <line x1="90" y1="211" x2="300" y2="211" stroke="#7c3aed" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="215" font-size="11" font-weight="700" fill="#7c3aed">P1</text>
+
+  <!-- E2 on LRAS2: AD at x=420. y = 100 + 0.651*290 = 288.7 -->
+  <circle cx="420" cy="289" r="5" fill="#be123c"/>
+  <line x1="90" y1="289" x2="420" y2="289" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="293" font-size="11" font-weight="700" fill="#be123c">P2</text>
+
+  <!-- Label the vertical LRAS nature -->
+  <rect x="440" y="140" width="150" height="60" fill="#f1f5f9" stroke="#cbd5e1"/>
+  <text x="515" y="158" text-anchor="middle" font-size="10" font-weight="700" fill="#334155">Monetarist / New Classical</text>
+  <text x="515" y="174" text-anchor="middle" font-size="10" fill="#334155">vertical LRAS →</text>
+  <text x="515" y="190" text-anchor="middle" font-size="10" fill="#334155">Y = Yp long-run</text>
+
+  <text x="310" y="455" text-anchor="middle" font-size="11" fill="#334155">Better human capital → ↑ productivity → LRAS shifts right. Non-inflationary growth: Yp ↑ and P ↓.</text>
+</svg>
