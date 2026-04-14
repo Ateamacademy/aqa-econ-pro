@@ -756,7 +756,12 @@ Format: Give the scenario context with Figure 1, then the question. Nothing else
       ? caieTopics.find((t) => `caie-${t.slug}` === scenario.id)
       : undefined;
 
-    const boardTopic = edexcelBTopic || ocrTopic || caieTopic;
+    // Check if this is an IB topic with real scenario data
+    const ibTopic = subject === "ib"
+      ? ibTopics.find((t) => `ib-${t.slug}` === scenario.id)
+      : undefined;
+
+    const boardTopic = edexcelBTopic || ocrTopic || caieTopic || ibTopic;
     if (boardTopic) {
       setGeneratedQ(`**${boardTopic.title}** · ${boardTopic.tier} · ${boardTopic.marks} marks\n\n${boardTopic.scenario}\n\n${boardTopic.question}`);
       setStep("answer");
