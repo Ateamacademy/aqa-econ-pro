@@ -1,6 +1,7 @@
 /**
  * Pre-flight image validation gates.
  * Runs client-side BEFORE any marking API call.
+ * STRICT thresholds — zero tolerance for empty/near-empty submissions.
  */
 
 export interface ValidationResult {
@@ -39,38 +40,77 @@ async function loadImageToCanvas(imageSrc: string): Promise<{
 }
 
 /**
- * Determine the background colour by sampling corners.
+ * Determine the background colour by sampling corners and edges.
  */
 function detectBackground(data: Uint8ClampedArray, width: number, height: number): [number, number, number] {
-  const corners = [
-    0, // top-left
-    (width - 1) * 4, // top-right
-    (height - 1) * width * 4, // bottom-left
-    ((height - 1) * width + width - 1) * 4, // bottom-right
+  const samplePoints = [
+    0,
+    (width - 1) * 4,
+    (height - 1) * width * 4,
+    ((height - 1) * width + width - 1) * 4,
+    // Also sample mid-edges for better grid detection
+    (Math.floor(width / 2)) * 4,
+    ((height - 1) * width + Math.floor(width / 2)) * 4,
+    (Math.floor(height / 2) * width) * 4,
+    (Math.floor(height / 2) * width + width - 1) * 4,
   ];
 
-  let r = 0, g = 0, b = 0;
-  for (const idx of corners) {
-    r += data[idx];
-    g += data[idx + 1];
-    b += data[idx + 2];
+  let r = 0, g = 0, b = 0, count = 0;
+  for (const idx of samplePoints) {
+    if (idx + 2 < data.length) {
+      r += data[idx];
+      g += data[idx + 1];
+      b += data[idx + 2];
+      count++;
+    }
   }
-  return [Math.round(r / 4), Math.round(g / 4), Math.round(b / 4)];
+  return [Math.round(r / count), Math.round(g / count), Math.round(b / count)];
 }
 
 /**
- * Check if a pixel is "ink" (significantly different from background).
+ * Detect grid lines pattern. Returns true if pixel matches common grid colors.
+ */
+function isGridPixel(
+  r: number, g: number, b: number,
+  bgR: number, bgG: number, bgB: number
+): boolean {
+  // Grid lines are typically very light grey on white background
+  // or very subtle variations from the background
+  const diffR = Math.abs(r - bgR);
+  const diffG = Math.abs(g - bgG);
+  const diffB = Math.abs(b - bgB);
+
+  // If background is white-ish (>220), grid lines are typically 200-240 range
+  if (bgR > 220 && bgG > 220 && bgB > 220) {
+    // Very light grey that's close to background = grid
+    if (diffR < 40 && diffG < 40 && diffB < 40 && diffR > 5) {
+      // Check if it's a uniform grey (grid lines are usually uniform)
+      if (Math.abs(r - g) < 10 && Math.abs(g - b) < 10) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
+/**
+ * Check if a pixel is "ink" (significantly different from background),
+ * EXCLUDING grid line patterns.
  */
 function isInk(
   r: number, g: number, b: number,
   bgR: number, bgG: number, bgB: number,
   threshold = 30
 ): boolean {
+  // First exclude grid pixels
+  if (isGridPixel(r, g, b, bgR, bgG, bgB)) return false;
+
   return Math.abs(r - bgR) > threshold || Math.abs(g - bgG) > threshold || Math.abs(b - bgB) > threshold;
 }
 
 /**
- * GATE A: Pixel content check — compute ink ratio.
+ * GATE A: Pixel content check — compute ink ratio (grid-subtracted).
  */
 function gateA(
   data: Uint8ClampedArray, width: number, height: number,
@@ -123,21 +163,33 @@ function gateB(
 
 /**
  * GATE C: Connected component count (8-connectivity flood fill).
+ * Also tracks the largest component's span.
  */
-function gateC(inkPixels: boolean[][], width: number, height: number): number {
+function gateC(inkPixels: boolean[][], width: number, height: number): {
+  componentCount: number;
+  largestSpanWidthRatio: number;
+  largestSpanHeightRatio: number;
+} {
   const visited: boolean[][] = Array.from({ length: height }, () => new Array(width).fill(false));
   let componentCount = 0;
+  let largestSpanWidth = 0;
+  let largestSpanHeight = 0;
 
-  const MIN_COMPONENT_SIZE = 10; // ignore tiny noise specs
+  const MIN_COMPONENT_SIZE = 10;
 
-  function floodFill(startX: number, startY: number): number {
+  function floodFill(startX: number, startY: number): { size: number; spanW: number; spanH: number } {
     const stack: [number, number][] = [[startX, startY]];
     visited[startY][startX] = true;
     let size = 0;
+    let cMinX = startX, cMaxX = startX, cMinY = startY, cMaxY = startY;
 
     while (stack.length > 0) {
       const [cx, cy] = stack.pop()!;
       size++;
+      if (cx < cMinX) cMinX = cx;
+      if (cx > cMaxX) cMaxX = cx;
+      if (cy < cMinY) cMinY = cy;
+      if (cy > cMaxY) cMaxY = cy;
 
       for (let dy = -1; dy <= 1; dy++) {
         for (let dx = -1; dx <= 1; dx++) {
@@ -151,34 +203,53 @@ function gateC(inkPixels: boolean[][], width: number, height: number): number {
         }
       }
     }
-    return size;
+    return { size, spanW: cMaxX - cMinX + 1, spanH: cMaxY - cMinY + 1 };
   }
 
   for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
       if (inkPixels[y][x] && !visited[y][x]) {
-        const size = floodFill(x, y);
-        if (size >= MIN_COMPONENT_SIZE) componentCount++;
+        const { size, spanW, spanH } = floodFill(x, y);
+        if (size >= MIN_COMPONENT_SIZE) {
+          componentCount++;
+          if (spanW > largestSpanWidth) largestSpanWidth = spanW;
+          if (spanH > largestSpanHeight) largestSpanHeight = spanH;
+        }
       }
     }
   }
 
-  return componentCount;
+  return {
+    componentCount,
+    largestSpanWidthRatio: width > 0 ? largestSpanWidth / width : 0,
+    largestSpanHeightRatio: height > 0 ? largestSpanHeight / height : 0,
+  };
+}
+
+/**
+ * Get minimum required components based on total marks.
+ */
+function getMinComponents(totalMarks: number): number {
+  if (totalMarks >= 12) return 8; // two-panel topics
+  if (totalMarks >= 8) return 6;
+  if (totalMarks >= 6) return 5;
+  return 4; // 4-mark Foundation
 }
 
 /**
  * Run all three validation gates on an image.
  * Returns a result indicating whether the image passes pre-flight checks.
  */
-export async function validateDiagramImage(imageSrc: string): Promise<ValidationResult> {
+export async function validateDiagramImage(imageSrc: string, totalMarks: number = 4): Promise<ValidationResult> {
   try {
     const { data, width, height } = await loadImageToCanvas(imageSrc);
     const [bgR, bgG, bgB] = detectBackground(data, width, height);
 
-    // GATE A: Ink ratio
+    // GATE A: Ink ratio (grid-subtracted)
     const { inkRatio, inkPixels } = gateA(data, width, height, bgR, bgG, bgB);
 
-    if (inkRatio < 0.005) {
+    // Hard reject: ink < 1%
+    if (inkRatio < 0.01) {
       return {
         passed: false,
         gate: "A",
@@ -187,20 +258,20 @@ export async function validateDiagramImage(imageSrc: string): Promise<Validation
       };
     }
 
-    if (inkRatio < 0.02) {
+    // Hard reject: ink < 3% (too sparse)
+    if (inkRatio < 0.03) {
       return {
         passed: false,
         gate: "A",
-        message: "Your diagram looks very sparse — are you sure you want to submit? You may receive 0 marks.",
+        message: "Your diagram is too sparse to be marked. Please add axes, curves, and labels before submitting.",
         inkRatio,
-        needsConfirmation: true,
       };
     }
 
-    // GATE B: Bounding box
+    // GATE B: Bounding box — BOTH width AND height must be ≥ 20%
     const { bbWidthRatio, bbHeightRatio } = gateB(inkPixels, width, height);
 
-    if (bbWidthRatio < 0.15 || bbHeightRatio < 0.15) {
+    if (bbWidthRatio < 0.20 || bbHeightRatio < 0.20) {
       return {
         passed: false,
         gate: "B",
@@ -209,14 +280,26 @@ export async function validateDiagramImage(imageSrc: string): Promise<Validation
       };
     }
 
-    // GATE C: Connected components
-    const componentCount = gateC(inkPixels, width, height);
+    // GATE C: Connected components (mark-tier aware)
+    const { componentCount, largestSpanWidthRatio, largestSpanHeightRatio } = gateC(inkPixels, width, height);
+    const minComponents = getMinComponents(totalMarks);
 
-    if (componentCount < 3) {
+    if (componentCount < minComponents) {
       return {
         passed: false,
         gate: "C",
-        message: "An economics diagram needs at least axes and one curve. Your submission has too few distinct elements.",
+        message: `An economics diagram needs at least axes, curves, and labels. Your submission has too few distinct elements (${componentCount} detected, ${minComponents} required for a ${totalMarks}-mark question).`,
+        inkRatio,
+        componentCount,
+      };
+    }
+
+    // NEW: At least ONE component must span > 25% of canvas width OR height
+    if (largestSpanWidthRatio < 0.25 && largestSpanHeightRatio < 0.25) {
+      return {
+        passed: false,
+        gate: "C",
+        message: "No element in your diagram spans enough of the canvas. Draw axes and curves that use a significant portion of the available space.",
         inkRatio,
         componentCount,
       };
@@ -224,8 +307,8 @@ export async function validateDiagramImage(imageSrc: string): Promise<Validation
 
     return { passed: true, gate: null, message: "Validation passed", inkRatio, componentCount };
   } catch (e) {
-    // If validation itself fails, allow submission but log
-    console.warn("Image validation failed, allowing submission:", e);
-    return { passed: true, gate: null, message: "Validation skipped", inkRatio: 1 };
+    // If validation itself fails, BLOCK submission for safety (was: allow)
+    console.warn("Image validation failed, blocking submission:", e);
+    return { passed: false, gate: "A", message: "Image validation failed — please redraw and resubmit.", inkRatio: 0 };
   }
 }

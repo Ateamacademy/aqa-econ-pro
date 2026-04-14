@@ -50,6 +50,10 @@ export interface DiagramMarkingResult {
   model_answer: ModelAnswer;
   follow_up_questions: FollowUpQuestion[];
   misconceptions_detected: MisconceptionDetected[];
+  // Integrity fields (set by client-side validation pipeline)
+  _capApplied?: "empty" | "sparse" | "partial" | null;
+  _capReason?: string | null;
+  _gateBlocked?: boolean;
 }
 
 export type AnswerType = "labels" | "text" | "image";

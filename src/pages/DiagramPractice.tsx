@@ -81,6 +81,7 @@ import { normalizeDiagramKeyword } from "@/lib/diagramKeywordAliases";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
 import { useDiagramMarking } from "@/hooks/useDiagramMarking";
 import { AIMarkingPanel } from "@/components/diagram-marking/AIMarkingPanel";
+import { EmptyDiagramResult } from "@/components/EmptyDiagramResult";
 import type { DiagramMarkingResult } from "@/components/diagram-marking/types";
 
 const DiagramAnalyticsDashboard = lazy(() =>
@@ -987,10 +988,15 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             topic,
           });
 
-          // Fire structured marking in background
+          // Fire structured marking in background — routes through markDiagram.ts entry point
           const studentAnswer = inputMode === "draw"
             ? `[Drawn diagram submitted]\n\nWritten explanation: ${explanation}`
             : `Diagram description: ${diagramDesc}\n\nWritten explanation: ${explanation}`;
+
+          // Extract base64 from data URL for image validation pipeline
+          const imageBase64 = inputMode === "draw" && diagramImage
+            ? diagramImage.replace(/^data:image\/\w+;base64,/, "")
+            : undefined;
 
           markDiagramStructured({
             question: generatedQ,
@@ -1002,6 +1008,8 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             answerType: inputMode === "draw" ? "image" : "text",
             scenarioId: selectedScenario?.id,
             userId: user.id,
+            imageBase64,
+            imageSrc: inputMode === "draw" ? diagramImage ?? undefined : undefined,
           });
         }
         await consumeAttempt();

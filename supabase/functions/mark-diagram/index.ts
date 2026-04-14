@@ -125,6 +125,17 @@ STRICT ZERO-MARK RULES (CRITICAL — apply these BEFORE any other marking):
 14. Do NOT give "benefit of the doubt" marks for shapes that could be interpreted as correct curves but have no labels. Unlabelled lines are ambiguous and score 0.
 15. A component can only score marks if the student has explicitly shown that specific element — never infer knowledge from an ambiguous drawing.
 
+FORBIDDEN MARK AWARDS (CRITICAL — violating these is a SEVERE ERROR):
+16. Do NOT award marks for 'attempting to set up axes' without labels.
+17. Do NOT award marks for 'a line that could be a curve' without a label.
+18. Do NOT award 'partial credit' unless the rubric explicitly lists a partial-marks tier for that requirement.
+19. Do NOT award 'understanding demonstrated' marks without diagram evidence of that understanding.
+20. Do NOT award 1 mark for 'axes present' unless BOTH axes are present AND BOTH are labelled with economic variables (e.g. Price, Quantity).
+21. If the submission has no identifiable curves or no axis labels, your total MUST be 0. Any non-zero total is a SEVERE ERROR.
+
+MIN-MARKS THRESHOLD CHECK:
+If your marks_awarded would be 1 or 2 out of ${totalMarks}: REVIEW WHETHER IT SHOULD BE 0. A near-zero score implies the diagram is near-empty. Verify that the components you awarded marks for have explicit evidence. If not, reduce to 0.
+
 Return ONLY the JSON object. No markdown code fences, no explanation text outside the JSON.`;
 }
 
