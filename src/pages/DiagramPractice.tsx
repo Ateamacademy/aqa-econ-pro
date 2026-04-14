@@ -81,6 +81,7 @@ import { normalizeDiagramKeyword } from "@/lib/diagramKeywordAliases";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
 import { useDiagramMarking } from "@/hooks/useDiagramMarking";
 import { AIMarkingPanel } from "@/components/diagram-marking/AIMarkingPanel";
+import { EmptyDiagramResult } from "@/components/EmptyDiagramResult";
 import type { DiagramMarkingResult } from "@/components/diagram-marking/types";
 
 const DiagramAnalyticsDashboard = lazy(() =>
