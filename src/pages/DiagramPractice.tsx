@@ -3,6 +3,7 @@ import { edexcelBTopics, type EdexcelBTopic } from "@/data/topicsEdexcelB";
 import { ocrTopics, type OcrTopic } from "@/data/topicsOcr";
 import { caieTopics, type CaieTopic } from "@/data/topicsCaie";
 import { ibTopics, type IbTopic } from "@/data/topicsIb";
+import { wjecTopics, type WjecTopic } from "@/data/topicsWjec";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
@@ -523,6 +524,45 @@ export default function DiagramPractice() {
 
         const combined = [
           ...ibScenarios.filter((s) => sectionFilter === "all" || s.section === sectionFilter).filter((s) => difficulty === "all" || s.difficulty === difficulty),
+          ...remainingTemplates,
+        ];
+        return combined;
+      }
+
+      // WJEC: inject real topic data
+      if (subject === "wjec") {
+        const wjecScenarios: DiagramScenario[] = wjecTopics.map((t) => ({
+          id: `wjec-${t.slug}`,
+          section: t.section ? inferSectionFromTopicStr(t.section) : inferSectionFromTopicStr(t.title),
+          topic: t.title,
+          difficulty: t.tier as "Foundation" | "Intermediate" | "Advanced",
+          scenario: t.scenario,
+          question: t.question,
+          marks: t.marks,
+          expectedDiagramKeyword: t.slug,
+          hints: [`${t.tier} · ${t.marks} marks`, `WJEC A-Level`],
+          scenarioVariant: t.scenarioVariant,
+        }));
+
+        const wjecSlugs = new Set(wjecTopics.map((t) => t.title));
+        const remainingTemplates = boardScenarioTemplates
+          .filter((s) => !wjecSlugs.has(s.topic))
+          .filter((s) => sectionFilter === "all" || s.section === sectionFilter)
+          .filter((s) => difficulty === "all" || s.difficulty === difficulty)
+          .map((s, index) => ({
+            id: `${subject}-gen-${index}-${s.expectedDiagramKeyword ?? "topic"}`,
+            section: s.section,
+            topic: s.topic,
+            difficulty: s.difficulty,
+            scenario: `Board-specific diagram practice for WJEC A-Level: ${s.topic}.`,
+            question: `Generate and answer an exam-style ${s.marks}-mark diagram task for WJEC A-Level on "${s.topic}". Your diagram and explanation should match the style expected for ${subjectLabel}.`,
+            marks: s.marks,
+            expectedDiagramKeyword: s.expectedDiagramKeyword ?? inferDiagramType(s.topic),
+            hints: [`This task is aligned to WJEC A-Level.`, `Focus on the conventions and command style expected in ${subjectLabel}.`],
+          }));
+
+        const combined = [
+          ...wjecScenarios.filter((s) => sectionFilter === "all" || s.section === sectionFilter).filter((s) => difficulty === "all" || s.difficulty === difficulty),
           ...remainingTemplates,
         ];
         return combined;
