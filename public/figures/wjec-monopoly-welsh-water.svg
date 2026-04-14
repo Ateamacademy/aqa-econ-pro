@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 470" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="470" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Monopoly Profit Maximisation — Dŵr Cymru (Welsh Water)</text>
+
+  <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="555" y="420" font-size="12" fill="#0f172a">Output (Q)</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Price /</text>
+  <text x="60" y="70" font-size="12" fill="#0f172a">Cost</text>
+
+  <!-- Supernormal profit rectangle (drawn first, behind curves) -->
+  <rect x="90" y="170" width="140" height="50" fill="#fef3c7" fill-opacity="0.75" stroke="#a16207" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+  <!-- D = AR -->
+  <line x1="130" y1="100" x2="530" y2="380" stroke="#0284c7" stroke-width="2.5"/>
+  <text x="535" y="385" font-size="12" font-weight="600" fill="#0284c7">AR = D</text>
+
+  <!-- MR (steeper) -->
+  <line x1="130" y1="128" x2="324" y2="400" stroke="#7c3aed" stroke-width="2.3"/>
+  <text x="305" y="395" font-size="12" font-weight="600" fill="#7c3aed">MR</text>
+
+  <!-- AC U-shape -->
+  <path d="M 130 140 C 200 220 270 265 320 265 C 400 255 470 240 540 230" fill="none" stroke="#d97706" stroke-width="2.5"/>
+  <text x="545" y="232" font-size="12" font-weight="600" fill="#d97706">AC</text>
+
+  <!-- MC U-shape passing through MC=MR at (230, 268) -->
+  <path d="M 130 240 C 170 290 205 290 230 268 C 280 235 370 130 520 50" fill="none" stroke="#15803d" stroke-width="2.5"/>
+  <text x="510" y="48" font-size="12" font-weight="600" fill="#15803d">MC</text>
+
+  <!-- MC=MR point -->
+  <circle cx="230" cy="268" r="5" fill="#0f172a"/>
+  <text x="238" y="263" font-size="10" font-weight="700" fill="#0f172a">MC = MR</text>
+
+  <line x1="230" y1="100" x2="230" y2="400" stroke="#475569" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="230" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">Q1</text>
+
+  <!-- P1 on AR at Q1 -->
+  <circle cx="230" cy="170" r="5" fill="#0284c7"/>
+  <line x1="90" y1="170" x2="230" y2="170" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="174" font-size="11" font-weight="700" fill="#0284c7">P1</text>
+
+  <!-- AC at Q1 -->
+  <circle cx="230" cy="220" r="5" fill="#d97706"/>
+  <line x1="90" y1="220" x2="230" y2="220" stroke="#d97706" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="60" y="224" font-size="10" font-weight="700" fill="#d97706">AC</text>
+
+  <text x="160" y="195" text-anchor="middle" font-size="11" font-weight="700" fill="#a16207">Supernormal</text>
+  <text x="160" y="210" text-anchor="middle" font-size="11" font-weight="700" fill="#a16207">Profit</text>
+
+  <text x="310" y="445" text-anchor="middle" font-size="11" fill="#334155">MC = MR → Q1. P1 from AR curve. AR &gt; AC → supernormal profit. Natural monopoly + regulation by Ofwat.</text>
+</svg>
