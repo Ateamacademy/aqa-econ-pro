@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 480" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="480" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Keynesian AS — Recession + Expansionary Fiscal Policy</text>
+
+  <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="540" y="420" font-size="12" fill="#0f172a">Real GDP (Y)</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Price Level</text>
+
+  <!-- Keynesian AS: three sections
+       Horizontal section: x=130 to x=260, y=320 (flat low)
+       Intermediate: x=260 to x=430, curving upward from y=320 to y=180
+       Vertical: x=430 to x=440, from y=180 to y=80 -->
+  <path d="M 130 320 L 260 320 C 320 320 380 280 420 200 C 430 160 435 120 437 80"
+        fill="none" stroke="#0284c7" stroke-width="3"/>
+  <text x="450" y="85" font-size="12" font-weight="700" fill="#0284c7">AS</text>
+
+  <!-- Section labels with dashed loops -->
+  <ellipse cx="195" cy="340" rx="85" ry="22" fill="none" stroke="#64748b" stroke-dasharray="4,3" stroke-width="1"/>
+  <text x="195" y="372" text-anchor="middle" font-size="10" font-weight="700" fill="#334155">Horizontal (spare capacity)</text>
+
+  <ellipse cx="345" cy="270" rx="60" ry="18" fill="none" stroke="#64748b" stroke-dasharray="4,3" stroke-width="1"/>
+  <text x="345" y="232" text-anchor="middle" font-size="10" font-weight="700" fill="#334155">Intermediate</text>
+
+  <ellipse cx="436" cy="130" rx="22" ry="55" fill="none" stroke="#64748b" stroke-dasharray="4,3" stroke-width="1"/>
+  <text x="478" y="105" font-size="10" font-weight="700" fill="#334155">Vertical</text>
+  <text x="478" y="118" font-size="10" font-weight="700" fill="#334155">(full employment)</text>
+
+  <!-- AD1 (downward, intersects horizontal section at Y1 ≈ 190) -->
+  <line x1="110" y1="200" x2="290" y2="390" stroke="#15803d" stroke-width="2.3"/>
+  <text x="290" y="400" font-size="11" font-weight="600" fill="#15803d">AD1</text>
+
+  <!-- AD2 (shifted right, still in horizontal section at Y2 ≈ 240) -->
+  <line x1="160" y1="200" x2="340" y2="390" stroke="#be123c" stroke-width="2.3"/>
+  <text x="340" y="400" font-size="11" font-weight="600" fill="#be123c">AD2</text>
+
+  <!-- Shift arrow -->
+  <defs>
+    <marker id="arrK" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#be123c"/></marker>
+  </defs>
+  <path d="M 150 260 L 220 260" fill="none" stroke="#be123c" stroke-width="1.8" marker-end="url(#arrK)"/>
+
+  <!-- Equilibrium E1 on horizontal section: at y=320, find where AD1 crosses y=320
+       AD1: (110,200)→(290,390) slope=190/180=1.056; y=200+1.056(x-110); 
+       At y=320: 120=1.056(x-110) → x=223.6 -->
+  <circle cx="224" cy="320" r="5" fill="#15803d"/>
+  <line x1="224" y1="320" x2="224" y2="400" stroke="#15803d" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="224" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d">Y1</text>
+
+  <!-- Equilibrium E2: AD2 at y=320
+       AD2: (160,200)→(340,390), same slope 1.056; y=200+1.056(x-160); at y=320: 120=1.056(x-160) -> x=273.6 -->
+  <circle cx="274" cy="320" r="5" fill="#be123c"/>
+  <line x1="274" y1="320" x2="274" y2="400" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="274" y="430" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Y2</text>
+
+  <!-- Common price level -->
+  <line x1="90" y1="320" x2="224" y2="320" stroke="#0f172a" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="324" font-size="11" font-weight="700" fill="#0f172a">P1</text>
+
+  <text x="310" y="445" text-anchor="middle" font-size="11" fill="#334155">In the HORIZONTAL section: AD rises → Y ↑ with P UNCHANGED. No inflation cost until economy nears full employment.</text>
+</svg>
