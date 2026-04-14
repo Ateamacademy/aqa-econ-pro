@@ -148,4 +148,191 @@ export const ibTopics: IbTopic[] = [
       { requirement: "New equilibrium We2 > We1 and Le2 < Le1 clearly marked", marks: 1 },
     ],
   },
+
+  // ── Intermediate [6 marks] ──
+  {
+    slug: "ib-subsidy-solar",
+    board: "IB HL/SL",
+    tier: "Intermediate",
+    section: "Microeconomics",
+    marks: 6,
+    title: "Subsidy on a Good",
+    scenario:
+      "Spain provides a direct per-unit subsidy to domestic manufacturers of photovoltaic (solar) panels as part of its renewable-energy transition. The goal: lower consumer prices and expand installed solar capacity.",
+    question:
+      "Using a subsidy diagram, explain the impact of this government intervention on the Spanish solar panel market, specifically addressing the effect on equilibrium price, equilibrium quantity, and producer revenue.",
+    figureFile: "/figures/ib-subsidy.svg",
+    explanation:
+      "A per-unit subsidy lowers the marginal cost of production → supply shifts VERTICALLY DOWN by the subsidy amount (S1→S2). New equilibrium at (P1, Q1) with price LOWER (PE→P1) and quantity HIGHER (QE→Q1). Consumers pay P1; producers RECEIVE P1 + subsidy per unit = price A (on original S curve at Q1). Total producer revenue = A × Q1. Subsidy area is split between CONSUMER SUBSIDY (PE − P1) × Q1 and PRODUCER SUBSIDY (A − PE) × Q1. The split depends on PED and PES. Allocative efficiency case: justified if positive externalities of consumption bring MSB above MPB.",
+    keyTerms: ["subsidy", "supply shift", "equilibrium price", "equilibrium quantity", "producer revenue", "consumer subsidy", "producer subsidy", "positive externality"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Price and Quantity", marks: 1 },
+      { requirement: "Original S1 and D drawn with equilibrium PE, QE", marks: 1 },
+      { requirement: "S1 shifts vertically DOWN to S2 by subsidy amount (arrow labelled 'subsidy')", marks: 1 },
+      { requirement: "New equilibrium P1 < PE and Q1 > QE marked; producer receives A > PE on original S curve at Q1", marks: 1 },
+      { requirement: "Producer subsidy (A − PE) and Consumer subsidy (PE − P1) rectangles shaded and labelled", marks: 1 },
+      { requirement: "Written explanation covers revenue impact and government cost", marks: 1 },
+    ],
+  },
+  {
+    slug: "ib-neg-externality-soda",
+    board: "IB HL/SL",
+    tier: "Intermediate",
+    section: "Market Failure",
+    marks: 6,
+    title: "Negative Externality (Overconsumption / Overproduction)",
+    scenario:
+      "Overconsumption of high-sugar soft drinks in high-income countries is linked to rising Type 2 diabetes and obesity. These create major burdens on public healthcare and reduce economy-wide productivity.",
+    question:
+      "Using a negative externality diagram, explain why overconsumption of high-sugar soft drinks leads to market failure. You must: 1) draw MPB, MSB, MSC; 2) identify market equilibrium and social optimum; 3) shade the welfare loss; 4) explain why the market fails to allocate efficiently.",
+    figureFile: "/figures/ib-neg-ext-soda.svg",
+    explanation:
+      "Soft drinks generate NEGATIVE CONSUMPTION EXTERNALITIES: third parties bear costs not reflected in market transactions. MSB = MPB − MEC, so MSB lies BELOW MPB. Free market equilibrium at (Pe, Qe) where MPC (=MSC) meets MPB. Social optimum at (Po, Qo) where MSC meets MSB — Qo < Qe. Between Qo and Qe, MSC > MSB — the WELFARE-LOSS TRIANGLE. Correction: sin tax raises private price toward MSC, reducing consumption toward Qo.",
+    keyTerms: ["negative externality of consumption", "MPB", "MSB", "MSC", "MEC", "over-consumption", "welfare loss", "sugar tax", "market failure"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Costs/Benefits and Output", marks: 1 },
+      { requirement: "MPC = MSC (upward), MPB (downward), MSB (downward, BELOW MPB by MEC) — all three labelled", marks: 2 },
+      { requirement: "Market equilibrium (Qe, Pe) at MPC=MPB and social optimum (Qo, Po) at MSC=MSB; Qo < Qe", marks: 1 },
+      { requirement: "Welfare-loss triangle shaded between Qo and Qe", marks: 1 },
+      { requirement: "Written explanation links over-consumption to failure to internalise external cost", marks: 1 },
+    ],
+  },
+  {
+    slug: "ib-pos-externality-healthcare",
+    board: "IB HL/SL",
+    tier: "Intermediate",
+    section: "Market Failure",
+    marks: 6,
+    title: "Positive Externality (Underconsumption / Underproduction)",
+    scenario:
+      "In a middle-income country, consumption of preventive healthcare (annual check-ups, vaccinations) is below the socially optimal level. Individuals gain privately; society also benefits via reduced infectious-disease transmission and lower public-healthcare burden.",
+    question:
+      "Using a positive externalities diagram, explain why the free market under-provides preventive healthcare services and identify the welfare loss. Your answer must: define positive externalities of consumption; draw MPB, MSB, MSC; annotate market equilibrium and social optimum; shade welfare loss; explain using the relationship between curves.",
+    figureFile: "/figures/ib-pos-ext-healthcare.svg",
+    explanation:
+      "Preventive healthcare generates POSITIVE CONSUMPTION EXTERNALITIES: MSB = MPB + MEB, so MSB lies ABOVE MPB. Free market equilibrium at (Pm, Qm) where MPC (=MSC) meets MPB. Social optimum at (Ps, Qs) where MSC meets MSB; Qs > Qm. Between Qm and Qs MSB > MSC — the WELFARE-LOSS TRIANGLE of under-consumption. Correction: subsidy equal to MEB shifts MPB up to MSB, moving output to Qs.",
+    keyTerms: ["positive externality of consumption", "MPB", "MSB", "MEB", "MPC = MSC", "under-consumption", "welfare loss", "subsidy", "market failure"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Price/Costs/Benefits and Output", marks: 1 },
+      { requirement: "MPC = MSC (upward), MPB (downward), MSB (downward, ABOVE MPB by MEB) — all three labelled", marks: 2 },
+      { requirement: "MEB gap annotated between MPB and MSB", marks: 1 },
+      { requirement: "Market equilibrium (Qm) and social optimum (Qs) with Qs > Qm; welfare-loss triangle shaded", marks: 1 },
+      { requirement: "Written explanation covers under-consumption logic + subsidy correction", marks: 1 },
+    ],
+  },
+  {
+    slug: "ib-max-price-rent",
+    board: "IB HL/SL",
+    tier: "Intermediate",
+    section: "Microeconomics",
+    marks: 6,
+    title: "Maximum Price (Price Ceiling)",
+    scenario:
+      "Berlin has faced rapidly rising housing costs. The local government imposed a MAXIMUM PRICE (price ceiling) on residential rents, set BELOW the market equilibrium, to make housing more affordable for low-income households.",
+    question:
+      "Using a maximum price diagram, explain the impacts of setting a rent ceiling below market equilibrium. Your answer must identify the shortage and explain consequences.",
+    figureFile: "/figures/ib-max-price.svg",
+    explanation:
+      "A price ceiling Pmax BELOW equilibrium Pe is BINDING. At Pmax: quantity SUPPLIED falls (Q→Qs) and quantity DEMANDED rises (Q→Qd). The gap Qd − Qs is EXCESS DEMAND (SHORTAGE). Consequences: queues, deterioration of housing stock, black markets, reduced investment. A DEADWEIGHT-LOSS TRIANGLE emerges because mutually beneficial trades between Qs and Q are prevented.",
+    keyTerms: ["price ceiling", "maximum price", "excess demand", "shortage", "consumer surplus", "producer surplus", "deadweight loss", "binding"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Price and Quantity", marks: 1 },
+      { requirement: "Standard S (upward) and D (downward) with equilibrium P, Q marked", marks: 1 },
+      { requirement: "Horizontal Pmax line BELOW equilibrium P", marks: 1 },
+      { requirement: "Qs (on S at Pmax) and Qd (on D at Pmax); excess demand bracket labelled", marks: 2 },
+      { requirement: "Deadweight-loss triangle shaded; written explanation of shortage and welfare loss", marks: 1 },
+    ],
+  },
+  {
+    slug: "ib-min-price-sugar",
+    board: "IB HL/SL",
+    tier: "Intermediate",
+    section: "Microeconomics",
+    marks: 6,
+    title: "Minimum Price (Price Floor)",
+    scenario:
+      "In 2023 a developing nation considers a MINIMUM PRICE on raw sugar cane — ABOVE equilibrium — to protect small-scale farmers from volatile global prices and rising production costs.",
+    question:
+      "Using a price floor diagram, explain how imposing a minimum price ABOVE equilibrium affects the sugar-cane market and the impacts on consumer and producer surplus.",
+    figureFile: "/figures/ib-min-price.svg",
+    explanation:
+      "A price floor Pmin ABOVE equilibrium Pe is BINDING. At Pmin: quantity SUPPLIED rises (Qe→Qs) and quantity DEMANDED falls (Qe→Qd). Qs − Qd is EXCESS SUPPLY (SURPLUS). Consequences: unsold stockpiles, government buy-ups, dumping. CONSUMER SURPLUS falls; PRODUCER SURPLUS effect depends on whether government buys surplus. DEADWEIGHT LOSS triangle emerges between Qd and Qe.",
+    keyTerms: ["price floor", "minimum price", "excess supply", "surplus", "consumer surplus", "producer surplus", "deadweight loss", "farmer protection"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Price and Quantity", marks: 1 },
+      { requirement: "S (upward) and D (downward) with equilibrium Pe, Qe marked", marks: 1 },
+      { requirement: "Horizontal Pmin line ABOVE equilibrium", marks: 1 },
+      { requirement: "Qd (demand at Pmin) and Qs (supply at Pmin); excess supply bracket labelled", marks: 2 },
+      { requirement: "Written explanation covers CS falling, PS effect, deadweight loss", marks: 1 },
+    ],
+  },
+  {
+    slug: "ib-keynesian-spare-vs-full",
+    board: "IB HL/SL",
+    tier: "Intermediate",
+    section: "Macroeconomics",
+    marks: 6,
+    title: "Keynesian AS — Spare Capacity vs Full Employment",
+    scenario:
+      "Spain is currently experiencing significant spare capacity: 11.5% unemployment and low consumer confidence. The government plans a large fiscal stimulus to raise AD.",
+    question:
+      "Using a Keynesian AS diagram, explain how an increase in AD affects Spain's Real GDP and Average Price Level when operating at a LOW level of output, compared to when approaching Full Employment (Yfe).",
+    figureFile: "/figures/ib-keynesian-spare-full.svg",
+    explanation:
+      "The Keynesian AS has THREE sections: HORIZONTAL (spare capacity) — AD shift → output rises, price unchanged; INTERMEDIATE (bottlenecks) — both Y and P rise; VERTICAL (full employment Yfe) — AD shift → ALL effect on price, no output response. In Spain's current position: fiscal stimulus shifts AD right along horizontal section, Real GDP rises, price unchanged. At Yfe: AD shift raises price but leaves output stuck — pure inflation.",
+    keyTerms: ["Keynesian AS", "spare capacity", "full employment", "horizontal section", "vertical section", "bottlenecks", "Yfe", "fiscal stimulus"],
+    diagramRequirements: [
+      { requirement: "TWO side-by-side panels (Spare Capacity | Full Capacity)", marks: 1 },
+      { requirement: "Each panel labels Price Level and Real Output axes", marks: 1 },
+      { requirement: "Spare Capacity panel: AD shifts right along horizontal AS — Y↑ with P unchanged", marks: 2 },
+      { requirement: "Full Capacity panel: vertical AS at Yfe; AD shifts right → P↑ with Y unchanged", marks: 1 },
+      { requirement: "Written explanation contrasts the two cases", marks: 1 },
+    ],
+  },
+  {
+    slug: "ib-monopoly-profit-max",
+    board: "IB HL/SL",
+    tier: "Intermediate",
+    section: "Market Structures",
+    marks: 6,
+    title: "Monopoly — Profit Maximisation (MC=MR)",
+    scenario:
+      "Pharmaceutical firm HealthGen has a 20-year patent on a new life-saving drug — sole provider. Objective: maximise abnormal profit.",
+    question:
+      "Using a monopoly diagram, explain how HealthGen determines its profit-maximising output and price. You must: draw and label a monopoly diagram; identify Q1 and P1; shade abnormal profit; explain why the firm chooses MC = MR output.",
+    figureFile: "/figures/ib-monopoly-profitmax.svg",
+    explanation:
+      "A monopolist faces the entire market demand curve (D = AR, downward-sloping). MR lies BELOW AR. Profit max rule: produce where MC = MR. At Q1, the firm reads price up to AR at P1. AC at Q1 is below P1. ABNORMAL PROFIT = (P1 − AC) × Q1 — the shaded rectangle. Patent protection is a barrier to entry, so abnormal profit persists in the long run.",
+    keyTerms: ["monopoly", "profit maximisation", "MC = MR", "AR", "MR", "AC", "abnormal profit", "barriers to entry", "patent"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Price/Cost and Output", marks: 1 },
+      { requirement: "D = AR (downward), MR (steeper, below AR), MC (U), AC (U) drawn and labelled", marks: 2 },
+      { requirement: "Profit-max point at MC = MR with Q1 marked; P1 read up to AR at Q1", marks: 1 },
+      { requirement: "AC at Q1 identified below P1; abnormal profit rectangle shaded", marks: 1 },
+      { requirement: "Written explanation covers MC=MR rule + patent as barrier → long-run profit", marks: 1 },
+    ],
+  },
+  {
+    slug: "ib-perfect-comp-lr-kale",
+    board: "IB HL/SL",
+    tier: "Intermediate",
+    section: "Market Structures",
+    marks: 6,
+    title: "Perfect Competition — Short Run & Long Run",
+    scenario:
+      "UK organic kale market is near-perfectly competitive: many small producers, homogeneous product. 2021–23 health-food demand surge produced abnormal profits for existing farmers in the short run.",
+    question:
+      "Using a perfect competition diagram, draw and annotate the transition from short-run abnormal profit to long-run equilibrium. You must: 1) draw market and firm side-by-side; 2) label initial SR price P1 and output q1; 3) show new-firm entry shifting market supply; 4) identify LR equilibrium P2, q2 at normal profit; 5) explain the adjustment process.",
+    figureFile: "/figures/ib-pc-lr-kale.svg",
+    explanation:
+      "TWO PANELS. Market: D shifts right (demand surge), price rises to P1. Firm (price-taker): AR=MR horizontal at P1. Firm produces where MC = MR at q1, earning abnormal profit (P1 − ATC at q1) × q1. LONG RUN: freedom of entry → new farmers enter, market supply shifts RIGHT (S1→S2). Price falls to min ATC = P2. Firm produces at q2 where MC = MR = min ATC, earning only NORMAL PROFIT. P = MC = min AC → productive AND allocative efficiency.",
+    keyTerms: ["perfect competition", "price taker", "abnormal profit", "normal profit", "freedom of entry", "perfect information", "min ATC", "long-run equilibrium", "supply shift"],
+    diagramRequirements: [
+      { requirement: "Two-panel diagram: Firm (left) and Market (right), both axes labelled", marks: 2 },
+      { requirement: "Market panel: D1/D2 and S1/S2 shifts shown", marks: 1 },
+      { requirement: "Firm panel: MC, ATC (U-shape); AR=MR horizontal at P1 (SR) and P2 = min ATC (LR)", marks: 1 },
+      { requirement: "SR abnormal profit rectangle shaded; LR: no profit at min ATC", marks: 1 },
+      { requirement: "Written explanation of entry + supply-shift mechanism leading to normal profit", marks: 1 },
+    ],
+  },
 ];
