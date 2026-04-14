@@ -1193,7 +1193,10 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             const caieRefTopic = subject === "cambridge" && selectedScenario
               ? caieTopics.find((t) => `caie-${t.slug}` === selectedScenario.id)
               : undefined;
-            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic;
+            const ibRefTopic = subject === "ib" && selectedScenario
+              ? ibTopics.find((t) => `ib-${t.slug}` === selectedScenario.id)
+              : undefined;
+            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic || ibRefTopic;
 
             if (boardRefTopic) {
               return (
@@ -1489,7 +1492,10 @@ function DiagramFeedbackView({
   const caieFeedbackTopic = subject === "cambridge" && scenarioId
     ? caieTopics.find((t) => `caie-${t.slug}` === scenarioId)
     : undefined;
-  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic;
+  const ibFeedbackTopic = subject === "ib" && scenarioId
+    ? ibTopics.find((t) => `ib-${t.slug}` === scenarioId)
+    : undefined;
+  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic;
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     // Board-specific SVG figure (Edexcel B or OCR)
