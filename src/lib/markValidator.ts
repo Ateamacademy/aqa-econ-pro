@@ -127,6 +127,38 @@ export function validateAndCorrectMarks(
 
   let correctedResult = { ...result };
 
+  // ZERO-CHECK (FIRST validation step): if verification says empty/no curves, force 0
+  if (verification) {
+    const essentiallyEmpty =
+      verification.completeness === "empty" ||
+      verification.isBlank ||
+      (!verification.hasAxes.horizontal && !verification.hasAxes.vertical) ||
+      verification.curvesDetected.length === 0;
+
+    if (essentiallyEmpty || inkRatio < 0.03) {
+      flags.capped = true;
+      flags.capReason = `OVERRIDE: Marker returned ${result.totalAwarded}/${result.totalPossible}, corrected to 0 because verification detected empty/near-empty diagram.`;
+      correctedResult.totalAwarded = 0;
+      correctedResult.level = 1;
+      correctedResult.levelJustification = flags.capReason;
+      correctedResult.requirementBreakdown = correctedResult.requirementBreakdown.map((r) => ({
+        ...r,
+        marksAwarded: 0,
+        status: "missing" as const,
+        examinerNote: `${r.examinerNote} [CORRECTED: diagram verified as empty/near-empty]`,
+      }));
+      correctedResult.writtenExplanation = {
+        ao1: { score: 0, outOf: correctedResult.writtenExplanation.ao1.outOf, comment: "No diagram detected — written marks withheld." },
+        ao2: { score: 0, outOf: correctedResult.writtenExplanation.ao2.outOf, comment: "No diagram detected — written marks withheld." },
+        ao3: { score: 0, outOf: correctedResult.writtenExplanation.ao3.outOf, comment: "No diagram detected — written marks withheld." },
+        ao4: correctedResult.writtenExplanation.ao4
+          ? { score: 0, outOf: correctedResult.writtenExplanation.ao4.outOf, comment: "No diagram detected — written marks withheld." }
+          : null,
+      };
+      return { result: correctedResult, flags };
+    }
+  }
+
   // 1. Cross-check requirements if verification available
   if (verification) {
     const { corrected, corrections } = crossCheckRequirements(result.requirementBreakdown, verification);
