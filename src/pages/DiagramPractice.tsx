@@ -1145,7 +1145,10 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             const ocrRefTopic = subject === "ocr" && selectedScenario
               ? ocrTopics.find((t) => `ocr-${t.slug}` === selectedScenario.id)
               : undefined;
-            const boardRefTopic = edexcelBTopic || ocrRefTopic;
+            const caieRefTopic = subject === "cambridge" && selectedScenario
+              ? caieTopics.find((t) => `caie-${t.slug}` === selectedScenario.id)
+              : undefined;
+            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic;
 
             if (boardRefTopic) {
               return (
