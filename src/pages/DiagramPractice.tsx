@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo, lazy, Suspense } from "react";
 import { edexcelBTopics, type EdexcelBTopic } from "@/data/topicsEdexcelB";
 import { ocrTopics, type OcrTopic } from "@/data/topicsOcr";
+import { caieTopics, type CaieTopic } from "@/data/topicsCaie";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
@@ -447,6 +448,46 @@ export default function DiagramPractice() {
         ];
         return combined;
       }
+
+      // CAIE: inject real topic data
+      if (subject === "cambridge") {
+        const caieScenarios: DiagramScenario[] = caieTopics.map((t) => ({
+          id: `caie-${t.slug}`,
+          section: t.section ? inferSectionFromTopicStr(t.section) : inferSectionFromTopicStr(t.title),
+          topic: t.title,
+          difficulty: t.tier as "Foundation" | "Intermediate" | "Advanced",
+          scenario: t.scenario,
+          question: t.question,
+          marks: t.marks,
+          expectedDiagramKeyword: t.slug,
+          hints: [`${t.tier} · ${t.marks} marks`, `CAIE A-Level`],
+          scenarioVariant: t.scenarioVariant,
+        }));
+
+        const caieSlugs = new Set(caieTopics.map((t) => t.title));
+        const remainingTemplates = boardScenarioTemplates
+          .filter((s) => !caieSlugs.has(s.topic))
+          .filter((s) => sectionFilter === "all" || s.section === sectionFilter)
+          .filter((s) => difficulty === "all" || s.difficulty === difficulty)
+          .map((s, index) => ({
+            id: `${subject}-gen-${index}-${s.expectedDiagramKeyword ?? "topic"}`,
+            section: s.section,
+            topic: s.topic,
+            difficulty: s.difficulty,
+            scenario: `Board-specific diagram practice for CAIE A-Level: ${s.topic}.`,
+            question: `Generate and answer an exam-style ${s.marks}-mark diagram task for CAIE A-Level on "${s.topic}". Your diagram and explanation should match the style expected for ${subjectLabel}.`,
+            marks: s.marks,
+            expectedDiagramKeyword: s.expectedDiagramKeyword ?? inferDiagramType(s.topic),
+            hints: [`This task is aligned to CAIE A-Level.`, `Focus on the conventions and command style expected in ${subjectLabel}.`],
+          }));
+
+        const combined = [
+          ...caieScenarios.filter((s) => sectionFilter === "all" || s.section === sectionFilter).filter((s) => difficulty === "all" || s.difficulty === difficulty),
+          ...remainingTemplates,
+        ];
+        return combined;
+      }
+
       return boardScenarioTemplates
         .filter(s => sectionFilter === "all" || s.section === sectionFilter)
         .filter(s => difficulty === "all" || s.difficulty === difficulty)
@@ -670,7 +711,12 @@ Format: Give the scenario context with Figure 1, then the question. Nothing else
       ? ocrTopics.find((t) => `ocr-${t.slug}` === scenario.id)
       : undefined;
 
-    const boardTopic = edexcelBTopic || ocrTopic;
+    // Check if this is a CAIE topic with real scenario data
+    const caieTopic = subject === "cambridge"
+      ? caieTopics.find((t) => `caie-${t.slug}` === scenario.id)
+      : undefined;
+
+    const boardTopic = edexcelBTopic || ocrTopic || caieTopic;
     if (boardTopic) {
       setGeneratedQ(`**${boardTopic.title}** · ${boardTopic.tier} · ${boardTopic.marks} marks\n\n${boardTopic.scenario}\n\n${boardTopic.question}`);
       setStep("answer");
@@ -1099,7 +1145,10 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             const ocrRefTopic = subject === "ocr" && selectedScenario
               ? ocrTopics.find((t) => `ocr-${t.slug}` === selectedScenario.id)
               : undefined;
-            const boardRefTopic = edexcelBTopic || ocrRefTopic;
+            const caieRefTopic = subject === "cambridge" && selectedScenario
+              ? caieTopics.find((t) => `caie-${t.slug}` === selectedScenario.id)
+              : undefined;
+            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic;
 
             if (boardRefTopic) {
               return (
@@ -1392,7 +1441,10 @@ function DiagramFeedbackView({
   const ocrFeedbackTopic = subject === "ocr" && scenarioId
     ? ocrTopics.find((t) => `ocr-${t.slug}` === scenarioId)
     : undefined;
-  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic;
+  const caieFeedbackTopic = subject === "cambridge" && scenarioId
+    ? caieTopics.find((t) => `caie-${t.slug}` === scenarioId)
+    : undefined;
+  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic;
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     // Board-specific SVG figure (Edexcel B or OCR)
