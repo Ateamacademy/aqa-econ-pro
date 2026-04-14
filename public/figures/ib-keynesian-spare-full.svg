@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="Inter, Arial, sans-serif">
+  <rect width="900" height="480" fill="#ffffff"/>
+  <text x="450" y="26" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Keynesian AS — Spare Capacity vs Full Capacity</text>
+
+  <rect x="70" y="42" width="340" height="26" fill="#334155"/>
+  <text x="240" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Spare Capacity (Growth)</text>
+
+  <rect x="490" y="42" width="340" height="26" fill="#334155"/>
+  <text x="660" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Full Capacity (Inflation)</text>
+
+  <!-- ========== PANEL A: Spare Capacity ========== -->
+  <line x1="90" y1="410" x2="410" y2="410" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="90" x2="90" y2="410" stroke="#0f172a" stroke-width="2"/>
+  <text x="360" y="430" font-size="11" fill="#0f172a">Real Output</text>
+  <text x="55" y="100" font-size="11" fill="#0f172a">Price Level</text>
+
+  <!-- Keynesian AS with curve: flat from x=110-240 at y=340, then upward curve to vertical at x=400 -->
+  <path d="M 110 340 L 240 340 C 300 340 360 300 390 220 C 395 180 398 130 400 100"
+        fill="none" stroke="#be123c" stroke-width="2.8"/>
+  <text x="405" y="110" font-size="11" font-weight="700" fill="#be123c">AS</text>
+  <text x="400" y="425" text-anchor="middle" font-size="10" font-weight="700" fill="#334155">YFE</text>
+
+  <!-- AD: positioned so intersection is in horizontal section at around x=175 -->
+  <line x1="95" y1="230" x2="240" y2="400" stroke="#0284c7" stroke-width="2.3"/>
+  <text x="118" y="225" font-size="11" font-weight="600" fill="#0284c7">AD</text>
+
+  <!-- AD1 shifted right, intersection still in horizontal section around x=225 -->
+  <line x1="150" y1="230" x2="295" y2="400" stroke="#0369a1" stroke-width="2.3" stroke-dasharray="4,3"/>
+  <text x="175" y="225" font-size="11" font-weight="600" fill="#0369a1">AD1</text>
+
+  <defs>
+    <marker id="arrKsp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0369a1"/></marker>
+  </defs>
+  <path d="M 140 280 L 200 280" fill="none" stroke="#0369a1" stroke-width="1.8" marker-end="url(#arrKsp)"/>
+
+  <!-- E on horizontal section. AD y at given x: y = 230 + (400-230)/(240-95) * (x-95) = 230 + 1.172(x-95). At y=340: 110=1.172(x-95) -> x=188.8 -->
+  <circle cx="189" cy="340" r="4.5" fill="#be123c"/>
+  <line x1="189" y1="340" x2="189" y2="410" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="189" y="425" text-anchor="middle" font-size="10" font-weight="700" fill="#be123c">Y</text>
+
+  <!-- E1 on horizontal section. AD1 y = 230+1.172(x-150). At y=340: x=243.8. But that's past x=240 (end of flat). Actually 243.8 is only slightly past, and the curve starts rising very gradually. Let me check AS value at x=243: following the curve, still near 340. Good enough for visual. -->
+  <circle cx="244" cy="340" r="4.5" fill="#0369a1"/>
+  <line x1="244" y1="340" x2="244" y2="410" stroke="#0369a1" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="244" y="425" text-anchor="middle" font-size="10" font-weight="700" fill="#0369a1">Y1</text>
+
+  <!-- Common price level horizontal line -->
+  <line x1="90" y1="340" x2="189" y2="340" stroke="#0f172a" stroke-dasharray="3,3" stroke-width="1"/>
+  <text x="68" y="344" font-size="11" font-weight="700" fill="#0f172a">P</text>
+
+  <!-- ========== PANEL B: Full Capacity ========== -->
+  <line x1="510" y1="410" x2="830" y2="410" stroke="#0f172a" stroke-width="2"/>
+  <line x1="510" y1="90" x2="510" y2="410" stroke="#0f172a" stroke-width="2"/>
+  <text x="780" y="430" font-size="11" fill="#0f172a">Real Output</text>
+  <text x="475" y="100" font-size="11" fill="#0f172a">Price Level</text>
+
+  <!-- LRAS vertical at YFE (x=700) -->
+  <line x1="700" y1="90" x2="700" y2="410" stroke="#be123c" stroke-width="2.8"/>
+  <text x="705" y="105" font-size="11" font-weight="700" fill="#be123c">LRAS</text>
+  <text x="700" y="425" text-anchor="middle" font-size="10" font-weight="700" fill="#be123c">YFE</text>
+
+  <!-- AD intersecting at (700, 250) -->
+  <line x1="535" y1="150" x2="830" y2="390" stroke="#0284c7" stroke-width="2.3"/>
+  <text x="540" y="145" font-size="11" font-weight="600" fill="#0284c7">AD</text>
+
+  <!-- AD1 (shifted right) -->
+  <line x1="600" y1="120" x2="895" y2="360" stroke="#0369a1" stroke-width="2.3" stroke-dasharray="4,3"/>
+  <text x="605" y="115" font-size="11" font-weight="600" fill="#0369a1">AD1</text>
+
+  <defs>
+    <marker id="arrKsp2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0369a1"/></marker>
+  </defs>
+  <path d="M 600 210 L 660 210" fill="none" stroke="#0369a1" stroke-width="1.8" marker-end="url(#arrKsp2)"/>
+
+  <!-- Equilibrium E on LRAS: AD at x=700. AD slope = (390-150)/(830-535) = 240/295 = 0.814. y = 150 + 0.814(700-535) = 150+134.3=284.3 -->
+  <circle cx="700" cy="284" r="4.5" fill="#0284c7"/>
+  <line x1="510" y1="284" x2="700" y2="284" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="490" y="288" text-anchor="end" font-size="10" font-weight="700" fill="#0284c7">P</text>
+
+  <!-- Equilibrium E1 on LRAS with AD1: AD1 slope = (360-120)/(895-600) = 240/295 = 0.814. y = 120+0.814(700-600) = 120+81.4=201.4 -->
+  <circle cx="700" cy="201" r="4.5" fill="#0369a1"/>
+  <line x1="510" y1="201" x2="700" y2="201" stroke="#0369a1" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="490" y="205" text-anchor="end" font-size="10" font-weight="700" fill="#0369a1">P1</text>
+
+  <!-- Price-up arrow on y-axis -->
+  <path d="M 528 280 L 528 210" fill="none" stroke="#15803d" stroke-width="2" marker-end="url(#arrKsp2)"/>
+
+  <text x="240" y="465" text-anchor="middle" font-size="10" font-weight="700" fill="#15803d">AD shift → Y ↑, P unchanged</text>
+  <text x="660" y="465" text-anchor="middle" font-size="10" font-weight="700" fill="#be123c">AD shift → P ↑, Y unchanged</text>
+</svg>
