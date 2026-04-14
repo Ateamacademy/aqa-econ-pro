@@ -291,27 +291,27 @@ export const caieTopics: CaieTopic[] = [
 
   // ── Advanced [8 marks] ──
   {
-    slug: "caie-oligopoly-kinked-demand",
+    slug: "caie-oligopoly-kinked",
     board: "CAIE",
     tier: "Advanced",
     section: "Market Structures",
     marks: 8,
     title: "Oligopoly — Kinked Demand Curve",
     scenario:
-      "The UK supermarket industry is dominated by four firms (Tesco, Sainsbury's, Asda, Morrisons) controlling over 65% of market share. Despite frequent cost fluctuations from supply-chain disruptions, retail prices for staple goods remain remarkably stable over extended periods. Economists attribute this price rigidity to the interdependence of oligopolistic firms.",
+      "The market for domestic airline services in a developing economy is dominated by three large firms. Despite significant fluctuations in global aviation fuel prices (a major variable cost), flight ticket prices have remained remarkably stable over the last 18 months. Economists suggest this is due to INTERDEPENDENCE and fear of price wars.",
     question:
-      "Using a kinked demand curve diagram, explain why prices in an oligopolistic market tend to be rigid even when costs change. Your response must:\n1. Draw a correctly labelled kinked demand curve with the associated discontinuous MR curve.\n2. Show how MC can shift within the MR gap without changing price or output.\n3. Explain the asymmetric response assumption underlying the kink.\n4. Evaluate whether the kinked demand model fully explains oligopoly pricing behaviour.",
+      "With the aid of a kinked demand curve diagram, explain why prices in an oligopoly often remain 'sticky' or rigid, even when marginal costs change. You must: 1) draw and label the kinked demand curve (AR), corresponding MR, and MC curves; 2) explain the different price elasticities of demand above and below the current market price; 3) show how a change in costs may not lead to a change in profit-maximising price or output.",
     figureFile: "/figures/caie-kinked-demand.svg",
     explanation:
-      "The kinked demand curve model assumes ASYMMETRIC RESPONSES by rival firms. If one firm RAISES price above P₀, rivals do NOT follow — the firm loses customers rapidly, making demand ELASTIC above the kink. If the firm CUTS price below P₀, rivals MATCH the cut to protect market share — the firm gains few extra customers, making demand INELASTIC below the kink. This creates a KINK at the prevailing price P₀. The MR curve has a VERTICAL DISCONTINUITY (gap) at Q₀ because the slope of the demand curve changes abruptly at the kink. MC can shift anywhere within this gap (MC₁ to MC₂) without altering the profit-maximising output Q₀ or price P₀ — explaining PRICE RIGIDITY. Evaluation: the model explains WHY prices are sticky but NOT how P₀ was determined initially. It also assumes rivals always match cuts but never match rises — which may not hold in practice (e.g. during inflation all firms may raise prices). Game theory and contestability offer complementary explanations.",
-    keyTerms: ["kinked demand", "oligopoly", "price rigidity", "interdependence", "discontinuous MR", "elastic", "inelastic", "asymmetric response", "MR gap", "game theory"],
+      "The kinked demand curve (Sweezy 1939) models oligopolistic interdependence. The firm FACES a kinked AR curve at the current market price P with the KINK at equilibrium point E. ABOVE P (price rises): demand is ELASTIC because rivals will NOT follow a price rise — they keep their prices to steal customers. Our firm loses a lot of sales for a small price rise. BELOW P (price cuts): demand is INELASTIC because rivals WILL follow a price cut — they must, to avoid losing customers. So our firm gains few extra customers from cutting price. The MR curve corresponding to the kinked AR has a VERTICAL DISCONTINUITY (gap) directly below the kink because the slope changes abruptly. Profit-maximising firms produce where MC = MR. If the MC curve passes through the DISCONTINUITY (anywhere within the vertical gap), then MC can shift UP OR DOWN within that range and the MC=MR intersection stays at Q, so price and output DON'T CHANGE — this explains price rigidity in oligopoly. Only when cost changes are large enough to push MC above or below the entire gap does price adjust. Applies directly to the airline case: fuel-cost shocks are absorbed into margins rather than passed to ticket prices, because firms fear triggering a price war.",
+    keyTerms: ["oligopoly", "kinked demand", "interdependence", "price rigidity", "AR", "MR discontinuity", "elastic above", "inelastic below", "MC=MR", "price war"],
     diagramRequirements: [
-      { requirement: "Axes labelled Price/Cost & Revenue and Output (Q)", marks: 1 },
-      { requirement: "Kinked AR (D) curve with elastic section above kink and inelastic section below; kink point E at P₀, Q₀ marked", marks: 2 },
-      { requirement: "Discontinuous MR curve with vertical gap at Q₀ clearly shown", marks: 2 },
-      { requirement: "Two MC curves (MC₁ and MC₂) both passing through the MR gap; price P₀ and output Q₀ unchanged", marks: 1 },
-      { requirement: "Written explanation of asymmetric rival response and why MC shifts don't change P₀", marks: 1 },
-      { requirement: "Evaluation: limitation of model (doesn't explain initial P₀) or alternative theory referenced", marks: 1 },
+      { requirement: "Axes labelled Cost/Revenue and Output", marks: 1 },
+      { requirement: "Kinked AR curve drawn with clear KINK at point E, price P and quantity Q marked", marks: 2 },
+      { requirement: "ELASTIC upper segment and INELASTIC lower segment both labelled", marks: 1 },
+      { requirement: "MR curve drawn with clear VERTICAL DISCONTINUITY beneath the kink", marks: 2 },
+      { requirement: "MC curve drawn passing THROUGH the MR discontinuity; MC1 and MC2 both shown to demonstrate price stays at P", marks: 1 },
+      { requirement: "Written explanation links the gap to price rigidity", marks: 1 },
     ],
   },
   {
@@ -322,20 +322,21 @@ export const caieTopics: CaieTopic[] = [
     marks: 8,
     title: "Marshall-Lerner Condition — J-Curve",
     scenario:
-      "In 2022, the Turkish lira depreciated by over 40% against the US dollar. Initially Turkey's current account deficit WORSENED despite the cheaper currency making exports more competitive. Only after 18 months did the trade balance begin to improve as export volumes grew and import substitution took effect.",
+      "In 2023, a developing economy with a persistent current-account deficit allowed its currency to undergo significant depreciation against major trading partners. In the first six months the trade balance WORSENED, causing political pressure to reverse the policy. Central bank economists argue the Marshall-Lerner condition will eventually be met, improving net trade in the long run.",
     question:
-      "Using a J-Curve diagram, explain why a depreciation of the exchange rate may initially worsen a country's current account balance before eventually improving it. Your response must:\n1. Draw a correctly labelled J-Curve showing the current account balance over time.\n2. Identify the initial deficit, the worst point, and the long-run improvement.\n3. Explain the Marshall-Lerner condition (PEDx + PEDm > 1) and why it is not met in the short run.\n4. Evaluate the assumption that the J-Curve effect always leads to eventual improvement.",
+      "Using a J-curve diagram, explain the likely effect of currency depreciation on this country's current-account balance in BOTH the short run and the long run. You must: 1) draw and label the J-curve (trade balance on y, time on x); 2) identify the depreciation event and the 'dip' into deeper deficit; 3) explain why the trade balance worsens in the short run (PEDx + PEDm < 1); 4) define the Marshall-Lerner condition and explain improvement in the long run (PEDx + PEDm > 1).",
     figureFile: "/figures/caie-j-curve.svg",
     explanation:
-      "Following depreciation, the IMMEDIATE effect is that import prices rise (in domestic currency) while export prices fall (in foreign currency). In the SHORT RUN, trade contracts are fixed and consumer habits are slow to change — PEDx and PEDm are both LOW. The Marshall-Lerner condition (PEDx + PEDm > 1) is NOT met, so the value effect dominates: spending on imports rises faster than export revenue grows → current account WORSENS (the downward dip of the J). Over time (12–24 months), exporters win new contracts, consumers switch from expensive imports to domestic substitutes, and PED values rise. Once PEDx + PEDm > 1 (Marshall-Lerner met), volume effects dominate value effects → current account IMPROVES and eventually moves into surplus. The J-Curve traces this path: initial worsening then improvement. Evaluation: the J-Curve assumes supply-side capacity exists to meet rising export demand — if the economy is at full capacity, exports cannot expand. Also, if inflation erodes the competitive gain (real exchange rate), the improvement may be temporary. Turkey's case shows the pattern but structural factors (energy import dependency) may prevent full correction.",
-    keyTerms: ["J-Curve", "Marshall-Lerner condition", "PEDx", "PEDm", "depreciation", "current account", "trade balance", "volume effect", "value effect", "short run", "long run"],
+      "The Marshall-Lerner condition states that a currency depreciation will improve the current account ONLY IF the sum of price elasticities of demand for exports and imports exceeds 1 (PEDx + PEDm > 1). Short run: demand for exports and imports is relatively INELASTIC because (i) existing trade contracts are already signed at fixed volumes and prices, (ii) consumers take time to switch to domestic substitutes, and (iii) firms take time to source new suppliers. When the currency depreciates: import prices rise (in domestic currency) but import volumes barely fall → import spending rises; export prices fall (in foreign currency) but export volumes barely rise → export earnings fall or stay flat. Net effect: trade balance WORSENS — the 'dip' of the J. LONG RUN: as contracts expire and consumers/firms adjust, PEDx + PEDm grows above 1. Cheaper exports become more competitive abroad → export VOLUMES rise significantly; expensive imports get substituted for domestic goods → import volumes fall. Net trade position improves, rising ABOVE the original starting level — completing the J shape. Policy takeaway: the depreciation isn't failing at month 6 — it's tracing the short-run dip. The central bank is right to hold the line; reversing now would lock in the short-run pain without the long-run gain.",
+    keyTerms: ["Marshall-Lerner condition", "J-curve", "depreciation", "current account", "PEDx", "PEDm", "short run", "long run", "trade balance", "price inelastic"],
     diagramRequirements: [
-      { requirement: "Axes labelled Current Account Balance (vertical) and Time (horizontal); zero line marked", marks: 1 },
-      { requirement: "J-shaped curve drawn: starting at initial deficit D₀, worsening after depreciation to worst point, then improving past zero to surplus", marks: 2 },
-      { requirement: "Depreciation point marked on time axis with vertical dashed line", marks: 1 },
-      { requirement: "Short-run phase labelled with PEDx + PEDm < 1; long-run phase labelled with M-L condition met", marks: 2 },
-      { requirement: "Written explanation of why volume effects lag behind value effects in the short run", marks: 1 },
-      { requirement: "Evaluation: limitation of J-Curve assumption (e.g. supply-side constraints, inflation erosion)", marks: 1 },
+      { requirement: "Axes labelled: trade balance / current account (y-axis, with zero line) and Time (x-axis)", marks: 1 },
+      { requirement: "Horizontal line showing initial trade balance before depreciation", marks: 1 },
+      { requirement: "Vertical dashed line marking depreciation event; labelled 'depreciation'", marks: 1 },
+      { requirement: "J-shaped curve: flat → dip down (SR deficit worsens) → rise back up through zero → rise ABOVE original level (LR improvement)", marks: 2 },
+      { requirement: "Short-run trough explicitly marked and labelled", marks: 1 },
+      { requirement: "Long-run improved level explicitly marked and labelled", marks: 1 },
+      { requirement: "Marshall-Lerner condition stated: SR PEDx+PEDm < 1; LR PEDx+PEDm > 1", marks: 1 },
     ],
   },
 ];
