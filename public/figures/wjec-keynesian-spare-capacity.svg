@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 480" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="480" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Keynesian AS — Welsh Economy with 60% Capacity Utilisation</text>
+
+  <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="540" y="420" font-size="12" fill="#0f172a">Real GDP (Y)</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Price Level</text>
+
+  <!-- Keynesian AS with three sections -->
+  <path d="M 110 340 L 250 340 C 310 340 370 300 400 220 C 405 180 410 130 410 90"
+        fill="none" stroke="#be123c" stroke-width="2.8"/>
+  <text x="415" y="100" font-size="12" font-weight="700" fill="#be123c">AS</text>
+  <text x="410" y="420" text-anchor="middle" font-size="10" font-weight="700" fill="#334155">Yfe</text>
+
+  <!-- Section labels -->
+  <ellipse cx="180" cy="355" rx="75" ry="18" fill="none" stroke="#64748b" stroke-dasharray="4,3" stroke-width="1"/>
+  <text x="180" y="380" text-anchor="middle" font-size="10" font-weight="700" fill="#334155">Horizontal (spare capacity)</text>
+
+  <ellipse cx="410" cy="140" rx="20" ry="45" fill="none" stroke="#64748b" stroke-dasharray="4,3" stroke-width="1"/>
+  <text x="455" y="125" font-size="10" font-weight="700" fill="#334155">Vertical</text>
+
+  <!-- AD1 and AD2 both in horizontal section -->
+  <line x1="95" y1="230" x2="250" y2="400" stroke="#0284c7" stroke-width="2.3"/>
+  <text x="118" y="225" font-size="11" font-weight="600" fill="#0284c7">AD1</text>
+
+  <line x1="150" y1="230" x2="305" y2="400" stroke="#0369a1" stroke-width="2.3" stroke-dasharray="4,3"/>
+  <text x="175" y="225" font-size="11" font-weight="600" fill="#0369a1">AD2</text>
+
+  <defs>
+    <marker id="arrWJK" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0369a1"/></marker>
+  </defs>
+  <path d="M 140 280 L 200 280" fill="none" stroke="#0369a1" stroke-width="1.8" marker-end="url(#arrWJK)"/>
+  <text x="170" y="273" text-anchor="middle" font-size="9" fill="#0369a1" font-style="italic">↑ infrastructure spending</text>
+
+  <!-- Equilibria on horizontal section at y=340:
+       AD1 y = 230 + (400-230)/(250-95) * (x-95) = 230 + 1.097(x-95). At y=340: 110=1.097(x-95) -> x=195.3
+       AD2 y = 230 + 1.097(x-150). At y=340: 110=1.097(x-150) -> x=250.3 (just at edge of flat section - good)
+  -->
+  <circle cx="195" cy="340" r="4.5" fill="#0284c7"/>
+  <line x1="195" y1="340" x2="195" y2="400" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="195" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#0284c7">Y1</text>
+
+  <circle cx="250" cy="340" r="4.5" fill="#0369a1"/>
+  <line x1="250" y1="340" x2="250" y2="400" stroke="#0369a1" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="250" y="430" text-anchor="middle" font-size="11" font-weight="700" fill="#0369a1">Y2</text>
+
+  <!-- Price level line -->
+  <line x1="90" y1="340" x2="195" y2="340" stroke="#0f172a" stroke-dasharray="3,3" stroke-width="1"/>
+  <text x="68" y="344" font-size="11" font-weight="700" fill="#0f172a">P</text>
+
+  <text x="310" y="465" text-anchor="middle" font-size="11" fill="#334155">In horizontal section: AD shift → Real GDP rises (Y1→Y2), price level unchanged at P. Unemployed resources absorb the stimulus.</text>
+</svg>

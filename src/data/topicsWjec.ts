@@ -176,4 +176,191 @@ export const wjecTopics: WjecTopic[] = [
       { requirement: "Written explanation links incidence to PED and connects to externality internalisation", marks: 1 },
     ],
   },
+
+  // ── Intermediate [6 marks] ──
+  {
+    slug: "wjec-subsidy-ev",
+    board: "WJEC",
+    tier: "Intermediate",
+    section: "Microeconomics",
+    marks: 6,
+    title: "Subsidy on a Good",
+    scenario:
+      "The Welsh Government is considering increasing financial support for domestic EV component manufacturers. High battery-production costs keep EV market prices well above petrol vehicles, leading to under-consumption of this merit good.",
+    question:
+      "Using a supply and demand diagram, explain how a government subsidy to EV component manufacturers could correct a market failure. Annotate the effect on equilibrium price, quantity traded, and total cost of subsidy to the government.",
+    figureFile: "/figures/wjec-subsidy-ev.svg",
+    explanation:
+      "A per-unit subsidy reduces producers' marginal cost, shifting supply VERTICALLY DOWN by the subsidy amount (S1→S2). Initial equilibrium at (PE, QE). New equilibrium at (P1, Q1) where P1 < PE and Q1 > QE — consumers pay a lower price and more is produced. Producer receives A > PE per unit, where A is the price on the ORIGINAL S curve at Q1. Subsidy per unit = A − P1 (vertical gap between the two supply curves). CONSUMER SUBSIDY rectangle (PE − P1) × Q1 represents the price fall consumers enjoy. PRODUCER SUBSIDY rectangle (A − PE) × Q1 represents the price rise producers enjoy above the original. TOTAL GOVERNMENT COST = (A − P1) × Q1 = the full subsidy rectangle P1 to A, across 0 → Q1. Policy rationale: EVs are a MERIT GOOD with positive consumption externalities (cleaner air, decarbonisation). A subsidy internalises the external benefit, moving output toward the socially optimum level.",
+    keyTerms: ["subsidy", "supply shift", "consumer subsidy", "producer subsidy", "merit good", "positive externality", "government expenditure", "total subsidy cost"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Price and Quantity", marks: 1 },
+      { requirement: "Original S1 and D drawn with equilibrium PE, QE", marks: 1 },
+      { requirement: "S1 shifts vertically DOWN to S2 by subsidy amount", marks: 1 },
+      { requirement: "New equilibrium P1 < PE and Q1 > QE marked; producer receives A > PE on original S at Q1", marks: 1 },
+      { requirement: "Consumer and Producer subsidy rectangles shaded/labelled; total government cost = (A − P1) × Q1 annotated", marks: 1 },
+      { requirement: "Written explanation links to merit-good/externality correction", marks: 1 },
+    ],
+  },
+  {
+    slug: "wjec-neg-externality-hfss",
+    board: "WJEC",
+    tier: "Intermediate",
+    section: "Market Failure",
+    marks: 6,
+    title: "Negative Externality (Overconsumption / Overproduction)",
+    scenario:
+      "The Welsh Government is concerned about high consumption of high-fat, salt and sugar (HFSS) foods. External costs include NHS Wales strain from rising type 2 diabetes and heart disease. Consumers ignore these third-party effects; market price is too low, leading to misallocation of resources and allocative inefficiency.",
+    question:
+      "Using a marginal social cost/benefit diagram, explain why the free market over-consumes goods that create negative externalities of consumption such as sugary snacks. You must: 1) draw and correctly label the diagram; 2) identify market equilibrium and social optimum; 3) shade and label the welfare loss.",
+    figureFile: "/figures/wjec-neg-ext-hfss.svg",
+    explanation:
+      "HFSS foods generate NEGATIVE CONSUMPTION EXTERNALITIES: third parties (taxpayers funding NHS, employers losing productivity) bear costs not reflected in market transactions. MSB = MPB − MEC, so MSB lies BELOW MPB by a constant MEC. Free market equilibrium at (Pe, Qe) where MPC (=MSC) meets MPB. SOCIAL OPTIMUM at (Po, Qo) where MSC meets MSB; Qo < Qe. Between Qo and Qe each unit has MSC > MSB — the shaded WELFARE LOSS TRIANGLE (deadweight loss). Allocative efficiency fails because P = MPB rather than P = MSB → over-allocation of resources to HFSS. Correction: sin tax on sugar and salt raises private price toward MSC, reducing consumption toward Qo.",
+    keyTerms: ["negative externality of consumption", "MPB", "MSB", "MSC", "MEC", "over-consumption", "welfare loss", "allocative inefficiency", "merit good", "sin tax"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Costs/Benefits and Quantity", marks: 1 },
+      { requirement: "MPC = MSC (upward), MPB (downward), MSB (downward, BELOW MPB by MEC) labelled", marks: 2 },
+      { requirement: "Market equilibrium (Qe, Pe) and social optimum (Qo, Po) with Qo < Qe", marks: 1 },
+      { requirement: "Welfare loss triangle shaded between Qo and Qe, bounded by MSC above MSB below", marks: 1 },
+      { requirement: "Written explanation covers over-consumption logic + corrective tax", marks: 1 },
+    ],
+  },
+  {
+    slug: "wjec-pos-externality-flu",
+    board: "WJEC",
+    tier: "Intermediate",
+    section: "Market Failure",
+    marks: 6,
+    title: "Positive Externality (Underconsumption / Underproduction)",
+    scenario:
+      "In 2024 the Welsh Government announced extra funding for the nationwide influenza vaccination programme. Vaccinations protect the individual AND reduce transmission to others — especially the vulnerable. Despite these external benefits, the free market results in consumption below the socially optimum level.",
+    question:
+      "Using a positive externality diagram, explain why the free market provision of vaccinations leads to market failure. You must: 1) draw MPB, MSB, MSC; 2) identify market equilibrium and social optimum; 3) shade welfare loss; 4) explain the reasoning.",
+    figureFile: "/figures/wjec-pos-ext-flu.svg",
+    explanation:
+      "Flu vaccines generate POSITIVE CONSUMPTION EXTERNALITIES: individual immunity PLUS herd immunity (reduced transmission to others). MSB = MPB + MEB, so MSB lies ABOVE MPB by constant MEB. Free market equilibrium at (P1, Q1) where MPC (=MSC) meets MPB. SOCIAL OPTIMUM at (P2, Q2) where MSC meets MSB; Q2 > Q1. Between Q1 and Q2 MSB > MSC — the shaded WELFARE LOSS represents the deadweight loss from under-consumption of a valuable good. Market fails because consumers don't capture the external benefit themselves. Correction: subsidy or free provision shifts MPB up to meet MSB, moving consumption to Q2.",
+    keyTerms: ["positive externality of consumption", "MPB", "MSB", "MEB", "MPC = MSC", "under-consumption", "welfare loss", "merit good", "subsidy", "herd immunity"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Costs/Benefits and Output/Quantity", marks: 1 },
+      { requirement: "MPC = MSC (upward), MPB (downward), MSB (downward, ABOVE MPB by MEB) labelled", marks: 2 },
+      { requirement: "Market equilibrium (Q1, P1) and social optimum (Q2, P2) with Q2 > Q1", marks: 1 },
+      { requirement: "Welfare loss/gain triangle shaded between Q1 and Q2 (MSB above, MSC below)", marks: 1 },
+      { requirement: "Written explanation covers under-consumption logic + subsidy correction", marks: 1 },
+    ],
+  },
+  {
+    slug: "wjec-max-price-cardiff-rent",
+    board: "WJEC",
+    tier: "Intermediate",
+    section: "Microeconomics",
+    marks: 6,
+    title: "Maximum Price (Price Ceiling)",
+    scenario:
+      "The Welsh Government faces calls to introduce a MAXIMUM PRICE (price ceiling) on private rental properties in Cardiff, where rents have risen over 10% in a single year. Proponents want affordable housing as a merit good; critics warn of welfare loss and housing shortages.",
+    question:
+      "Using a demand and supply diagram, explain the likely impact of the Welsh Government imposing a maximum price on private rentals. You must: 1) draw and annotate the price-ceiling diagram; 2) label excess demand; 3) explain the change in quantity supplied.",
+    figureFile: "/figures/wjec-max-price-rent.svg",
+    explanation:
+      "A maximum price Pc BELOW equilibrium Pe is BINDING. At Pc: quantity SUPPLIED falls (Qe→Qs) because landlords find renting unprofitable at the lower regulated price; some withdraw properties, others let existing stock deteriorate. Quantity DEMANDED rises (Qe→Qd) because more renters can afford to apply at the lower price. The gap Qd − Qs = EXCESS DEMAND (housing SHORTAGE). Consequences: long waiting lists, queues, informal black markets where rents above Pc are paid illegally, reduced investment in new housing. WELFARE LOSS triangle emerges because mutually beneficial trades between Qs and Qe are now prevented.",
+    keyTerms: ["price ceiling", "maximum price", "excess demand", "shortage", "welfare loss", "binding", "black market", "allocative efficiency"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Price (Rent) and Quantity (Rentals)", marks: 1 },
+      { requirement: "S (upward) and D (downward) with equilibrium Pe, Qe marked", marks: 1 },
+      { requirement: "Pc horizontal line BELOW equilibrium, labelled Price Ceiling", marks: 1 },
+      { requirement: "Qs (on S at Pc) and Qd (on D at Pc); excess demand bracket Qs→Qd labelled", marks: 2 },
+      { requirement: "Welfare loss triangle shaded; written explanation of shortage consequences", marks: 1 },
+    ],
+  },
+  {
+    slug: "wjec-min-price-nlw",
+    board: "WJEC",
+    tier: "Intermediate",
+    section: "Microeconomics",
+    marks: 6,
+    title: "Minimum Price (Price Floor)",
+    scenario:
+      "April 2024: UK Government raised the National Living Wage to £11.44/hour for workers aged 21+. Designed to improve living standards, but some economists warn setting wages well above equilibrium may cause unintended employment effects in hospitality and retail.",
+    question:
+      "Using a demand and supply diagram, explain the likely effect on the UK's low-skilled labour market of raising the National Living Wage above equilibrium. You should: 1) draw and label the price floor; 2) identify excess supply (unemployment); 3) explain the change in quantity demanded and supplied.",
+    figureFile: "/figures/wjec-min-price-nlw.svg",
+    explanation:
+      "The labour market has Labour Supply (upward) and Labour Demand (downward, = MRPL). Competitive equilibrium at (We, Le). A statutory minimum wage Wmin > We is BINDING. At Wmin: quantity of LABOUR SUPPLIED rises (Le → Ls) because more workers want to work at higher pay; quantity of LABOUR DEMANDED falls (Le → Ld) because employers find fewer workers profitable at Wmin (MRPL < Wmin for marginal workers). Gap Ls − Ld = EXCESS SUPPLY OF LABOUR = UNEMPLOYMENT caused by the policy. Impacts: existing workers who keep jobs enjoy higher wages (winners); some workers (especially young/low-skilled) are priced out of employment entirely (losers).",
+    keyTerms: ["price floor", "minimum wage", "National Living Wage", "excess supply", "unemployment", "MRPL", "labour demand", "labour supply", "binding"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Wage and Employment/Quantity of Labour", marks: 1 },
+      { requirement: "Labour supply (upward) and labour demand (downward) with equilibrium We, Le marked", marks: 1 },
+      { requirement: "Wmin horizontal line ABOVE equilibrium labelled £11.44 or Wmin", marks: 1 },
+      { requirement: "Ld (on demand curve at Wmin) and Ls (on supply curve at Wmin)", marks: 2 },
+      { requirement: "Excess supply bracket Ld→Ls labelled 'unemployment'; written explanation of demand/supply response", marks: 1 },
+    ],
+  },
+  {
+    slug: "wjec-keynesian-spare-capacity",
+    board: "WJEC",
+    tier: "Intermediate",
+    section: "Macroeconomics",
+    marks: 6,
+    title: "Keynesian AS — Spare Capacity vs Full Employment",
+    scenario:
+      "The Welsh economy is currently experiencing significant under-utilisation of resources: high unemployment in former industrial hubs, many factories at only 60% capacity. The Welsh Government proposes a significant increase in infrastructure spending to stimulate AD.",
+    question:
+      "Using a Keynesian AS diagram, illustrate and explain the impact of rising AD on real output and price level when the economy has significant spare capacity. You must: 1) draw a correctly labelled Keynesian AS; 2) show initial AD1/AS equilibrium in the horizontal section; 3) show AD2 shift staying within spare capacity; 4) explain why price level does not change.",
+    figureFile: "/figures/wjec-keynesian-spare-capacity.svg",
+    explanation:
+      "The Keynesian AS curve has three sections. HORIZONTAL (spare capacity) — unemployed workers and idle capital mean firms can hire/produce more at existing wages/costs, so AS is PERFECTLY ELASTIC; AD shifts raise output but NOT price level. INTERMEDIATE — bottlenecks emerge as specific inputs become scarce; further AD rises raise both Y and P. VERTICAL (full employment Yfe) — perfectly inelastic; all resources fully employed, AD rises raise ONLY the price level. For the WELSH ECONOMY in recession: AD1 intersects AS in the horizontal section at Y1, price level P. Infrastructure stimulus shifts AD1→AD2 along this horizontal section. New equilibrium: real output rises (Y1→Y2) with price level UNCHANGED at P.",
+    keyTerms: ["Keynesian AS", "spare capacity", "horizontal section", "bottlenecks", "full employment", "perfectly elastic", "AD shift", "output gap"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Price Level and Real Output", marks: 1 },
+      { requirement: "Keynesian AS drawn with three visible sections: horizontal, intermediate, vertical", marks: 2 },
+      { requirement: "AD1 drawn intersecting AS in the HORIZONTAL section at Y1, P1", marks: 1 },
+      { requirement: "AD shifts RIGHT to AD2 staying within the horizontal section", marks: 1 },
+      { requirement: "Y2 > Y1 with P unchanged at P1; written explanation of why P doesn't change in the horizontal section", marks: 1 },
+    ],
+  },
+  {
+    slug: "wjec-monopoly-welsh-water",
+    board: "WJEC",
+    tier: "Intermediate",
+    section: "Market Structures",
+    marks: 6,
+    title: "Monopoly — Profit Maximisation (MC=MR)",
+    scenario:
+      "Dŵr Cymru (Welsh Water) operates as a regional monopoly for water and sewerage services. Unlike firms in competitive markets, it faces a downward-sloping AR curve and sets output where total profit is maximised.",
+    question:
+      "Using an appropriate diagram, explain how a monopolist like Welsh Water identifies its profit-maximising price and output level. You must: 1) draw AR, MR, MC, AC; 2) label profit-maximising equilibrium; 3) shade supernormal profit; 4) explain the firm's logical steps.",
+    figureFile: "/figures/wjec-monopoly-welsh-water.svg",
+    explanation:
+      "A monopolist faces the entire market demand (D = AR, downward). MR lies BELOW AR because selling one more unit requires lowering price on ALL units (not just the marginal one). Profit-max rule: choose output where MC = MR. Below that output, MR > MC so extra units add to profit — expand; above it, MR < MC so extra units lose money — contract. At Q1 (MC = MR), price P1 is found by going UP to the AR curve. Average cost AC at Q1 is below P1 (for a profitable monopoly). SUPERNORMAL PROFIT = (P1 − AC) × Q1 — the shaded rectangle. For Welsh Water: natural-monopoly cost structure (high fixed infrastructure costs, huge economies of scale in pipe networks) means a single firm is more efficient than duplication.",
+    keyTerms: ["monopoly", "profit maximisation", "MC = MR", "AR", "MR", "AC", "supernormal profit", "barriers to entry", "natural monopoly", "regulator"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Price/Cost and Output", marks: 1 },
+      { requirement: "AR = D (downward), MR (steeper below AR), MC (U), AC (U) drawn and labelled", marks: 2 },
+      { requirement: "Profit-max at MC = MR giving Q1; P1 read up to AR", marks: 1 },
+      { requirement: "AC at Q1 marked below P1; supernormal profit rectangle (P1 − AC) × Q1 shaded", marks: 1 },
+      { requirement: "Written explanation of MC=MR rule + barriers to long-run profit", marks: 1 },
+    ],
+  },
+  {
+    slug: "wjec-pc-sr-lr-courier",
+    board: "WJEC",
+    tier: "Intermediate",
+    section: "Market Structures",
+    marks: 6,
+    title: "Perfect Competition — Short Run & Long Run",
+    scenario:
+      "The UK courier industry has seen an influx of small independent drivers via gig-economy platforms — approximating perfect competition (many firms, homogeneous service, low barriers). A sudden surge in home-delivery demand has lifted your firm into short-run supernormal profit.",
+    question:
+      "Using a perfect competition diagram, illustrate the SR equilibrium with supernormal profit, then show the transition to LR equilibrium with only normal profit. You must: 1) draw MC, AC, AR, MR for the firm; 2) shade SR supernormal profit; 3) explain how entry drives the market to LR.",
+    figureFile: "/figures/wjec-pc-sr-lr-courier.svg",
+    explanation:
+      "TWO PANELS. FIRM (left): price-taker sees horizontal AR = MR at the market-determined price. SR: after demand surge, AR = MR is above min AC, firm produces where MC = MR at q1 earning supernormal profit (P1 − AC) × q1 — shaded rectangle. LR ADJUSTMENT: perfect information means new courier drivers observe profits; absence of barriers to entry lets them enter freely. Market supply curve shifts RIGHT as more drivers join. Market price falls from P1 back down toward min AC. Firm's AR line drops accordingly. This continues until P = min AC — no further incentive to enter, no firms exiting. LR EQUILIBRIUM: firm produces at q2 where MC = MR = AR = min AC, earning ONLY NORMAL PROFIT (zero economic profit).",
+    keyTerms: ["perfect competition", "price taker", "homogeneous product", "freedom of entry", "supernormal profit", "normal profit", "min AC", "long-run equilibrium", "allocative efficiency", "productive efficiency"],
+    diagramRequirements: [
+      { requirement: "Two-panel diagram: Firm (left) and Market (right), both axes labelled", marks: 2 },
+      { requirement: "Market panel: D and S drawn; SR price P1 higher than LR price P2", marks: 1 },
+      { requirement: "Firm panel: MC, AC (U-shape); AR=MR horizontal at P1 (SR) and at P2 = min AC (LR)", marks: 1 },
+      { requirement: "SR supernormal profit rectangle shaded; LR: AR line tangent to min AC, no profit rectangle", marks: 1 },
+      { requirement: "Written explanation of entry mechanism leading to normal profit", marks: 1 },
+    ],
+  },
 ];
