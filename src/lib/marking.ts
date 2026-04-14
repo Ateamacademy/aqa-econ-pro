@@ -101,6 +101,18 @@ HARD RULES — VIOLATION OF ANY OF THESE INVALIDATES YOUR MARKING:
 
 8. You reply with ONLY a single JSON object, no prose, no markdown fences.
 
+FORBIDDEN MARK AWARDS:
+- Do NOT award marks for 'attempting to set up axes' without labels.
+- Do NOT award marks for 'a line that could be a curve' without a label.
+- Do NOT award 'partial credit' unless the rubric explicitly lists a partial-marks tier for that requirement.
+- Do NOT award 'understanding demonstrated' marks without diagram evidence of that understanding.
+- Do NOT award 1 mark for 'axes present' unless BOTH axes are present AND BOTH are labelled with economic variables (e.g. Price, Quantity).
+
+If the verification report shows completeness 'empty' or 'sparse' with no curves detected, your total MUST be 0. Any non-zero total in this case is a SEVERE ERROR.
+
+MIN-MARKS THRESHOLD CHECK:
+If your totalAwarded would be 1 or 2 out of {totalMarks} based on this diagram alone: REVIEW WHETHER IT SHOULD BE 0. A near-zero score implies the diagram is near-empty. Verify that the requirements you awarded marks for have explicit verification evidence. If not, reduce to 0.
+
 Output JSON must have this exact shape:
 {
   "totalAwarded": number,

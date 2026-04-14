@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { markDiagram, type DiagramMarkingInput } from "@/lib/markDiagram";
 import type { DiagramMarkingResult } from "@/components/diagram-marking/types";
 
 interface MarkDiagramParams {
@@ -12,6 +12,8 @@ interface MarkDiagramParams {
   answerType: "labels" | "text" | "image";
   scenarioId?: string;
   userId?: string;
+  imageBase64?: string;
+  imageSrc?: string;
 }
 
 export function useDiagramMarking() {
@@ -19,28 +21,13 @@ export function useDiagramMarking() {
   const [result, setResult] = useState<DiagramMarkingResult | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const markDiagram = useCallback(async (params: MarkDiagramParams) => {
+  const markDiagramCall = useCallback(async (params: MarkDiagramParams) => {
     setIsMarking(true);
     setError(null);
     setResult(null);
 
     try {
-      const url = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/mark-diagram`;
-      const resp = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
-        },
-        body: JSON.stringify(params),
-      });
-
-      if (!resp.ok) {
-        const err = await resp.json().catch(() => ({ error: "Marking failed" }));
-        throw new Error(err.error || `Marking failed (${resp.status})`);
-      }
-
-      const data: DiagramMarkingResult = await resp.json();
+      const data = await markDiagram(params as DiagramMarkingInput);
       setResult(data);
       return data;
     } catch (e) {
@@ -57,5 +44,5 @@ export function useDiagramMarking() {
     setError(null);
   }, []);
 
-  return { markDiagram, isMarking, result, error, reset };
+  return { markDiagram: markDiagramCall, isMarking, result, error, reset };
 }
