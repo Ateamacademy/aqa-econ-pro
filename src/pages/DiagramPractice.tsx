@@ -1441,7 +1441,10 @@ function DiagramFeedbackView({
   const ocrFeedbackTopic = subject === "ocr" && scenarioId
     ? ocrTopics.find((t) => `ocr-${t.slug}` === scenarioId)
     : undefined;
-  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic;
+  const caieFeedbackTopic = subject === "cambridge" && scenarioId
+    ? caieTopics.find((t) => `caie-${t.slug}` === scenarioId)
+    : undefined;
+  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic;
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     // Board-specific SVG figure (Edexcel B or OCR)
