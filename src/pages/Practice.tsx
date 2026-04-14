@@ -116,7 +116,7 @@ Output ONLY the question text and mark allocation. Nothing else.` }],
     });
   };
 
-  const reset = () => { setStep("generate"); setGeneratedQ(""); setAnswer(""); setFeedback(""); };
+  // reset is defined above the useEffect (line 44)
 
   const stepIndex = stepsMeta.findIndex(s => s.id === step);
 
