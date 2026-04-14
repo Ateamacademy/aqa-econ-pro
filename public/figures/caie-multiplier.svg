@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 480" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="480" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Multiplier Effect — $500m Initial Investment → Larger Y Rise</text>
+
+  <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="540" y="420" font-size="12" fill="#0f172a">Real GDP (Y)</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Price Level</text>
+
+  <!-- SRAS -->
+  <line x1="130" y1="380" x2="570" y2="100" stroke="#0284c7" stroke-width="2.5"/>
+  <text x="575" y="105" font-size="12" font-weight="600" fill="#0284c7">SRAS</text>
+
+  <!-- AD1 -->
+  <line x1="130" y1="100" x2="450" y2="390" stroke="#15803d" stroke-width="2.3"/>
+  <text x="445" y="400" font-size="11" font-weight="600" fill="#15803d">AD1</text>
+
+  <!-- AD2 (initial shift, small) -->
+  <line x1="190" y1="100" x2="510" y2="390" stroke="#d97706" stroke-width="2.3"/>
+  <text x="510" y="400" font-size="11" font-weight="600" fill="#d97706">AD2</text>
+
+  <!-- AD_Final (after multiplier, bigger shift) -->
+  <line x1="300" y1="100" x2="595" y2="365" stroke="#be123c" stroke-width="2.5"/>
+  <text x="585" y="345" font-size="11" font-weight="600" fill="#be123c">AD_Final</text>
+
+  <!-- Shift arrows -->
+  <defs>
+    <marker id="arrM" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker>
+  </defs>
+  <!-- Initial investment arrow AD1 -> AD2 -->
+  <path d="M 170 190 L 220 190" fill="none" stroke="#d97706" stroke-width="2" marker-end="url(#arrM)"/>
+  <text x="195" y="180" text-anchor="middle" font-size="9" fill="#d97706" font-weight="700">↑I ($500m)</text>
+
+  <!-- Multiplier arrow AD2 -> AD_Final (larger) -->
+  <path d="M 240 160 L 330 160" fill="none" stroke="#be123c" stroke-width="2" marker-end="url(#arrM)"/>
+  <text x="285" y="150" text-anchor="middle" font-size="9" fill="#be123c" font-weight="700">multiplier effect</text>
+
+  <!-- Equilibria (approximate):
+       AD1: (130,100)→(450,390) slope 290/320=0.906, y=100+0.906(x-130)
+       SRAS: (130,380)→(570,100) slope -280/440=-0.636, y=380-0.636(x-130)
+       E1: 100+0.906(x-130)=380-0.636(x-130) -> 1.542(x-130)=280 -> x-130=181.6 -> x=311.6, y=264.5
+  -->
+  <circle cx="312" cy="265" r="4" fill="#15803d"/>
+  <line x1="312" y1="265" x2="312" y2="400" stroke="#15803d" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="312" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d">Y1</text>
+
+  <!-- AD2: (190,100)→(510,390), slope 290/320=0.906, y=100+0.906(x-190)
+       E2: 100+0.906(x-190)=380-0.636(x-130)
+         100 + 0.906x - 172.1 = 380 - 0.636x + 82.7
+         -72.1 + 0.906x = 462.7 - 0.636x
+         1.542x = 534.8 -> x=346.8, y=100+0.906*156.8=242
+  -->
+  <circle cx="347" cy="242" r="4" fill="#d97706"/>
+  <line x1="347" y1="242" x2="347" y2="400" stroke="#d97706" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="347" y="432" text-anchor="middle" font-size="10" font-weight="700" fill="#d97706">Y2</text>
+
+  <!-- AD_Final: (300,100)→(595,365), slope 265/295=0.898, y=100+0.898(x-300)
+       EF: 100+0.898(x-300)=380-0.636(x-130)
+         100 + 0.898x - 269.4 = 380 - 0.636x + 82.7
+         -169.4 + 0.898x = 462.7 - 0.636x
+         1.534x = 632.1 -> x=412.1, y=100+0.898*112.1=200.7 -->
+  <circle cx="412" cy="201" r="5" fill="#be123c"/>
+  <line x1="412" y1="201" x2="412" y2="400" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="412" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Y_Final</text>
+
+  <!-- Bracket showing Y1→Y_Final total rise with multiplier label -->
+  <line x1="312" y1="445" x2="412" y2="445" stroke="#0f172a" stroke-width="1.5"/>
+  <line x1="312" y1="440" x2="312" y2="450" stroke="#0f172a" stroke-width="1.5"/>
+  <line x1="412" y1="440" x2="412" y2="450" stroke="#0f172a" stroke-width="1.5"/>
+  <text x="362" y="462" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">Total rise &gt; initial injection</text>
+
+  <!-- Multiplier formula -->
+  <rect x="435" y="85" width="155" height="55" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="513" y="104" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a8a">Multiplier</text>
+  <text x="513" y="124" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a8a">k = 1 / (1 − MPC)</text>
+</svg>

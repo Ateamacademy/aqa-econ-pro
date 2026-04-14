@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 470" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="470" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Global Arabica Coffee Market — Bumper Brazilian Harvest</text>
+
+  <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="540" y="420" font-size="12" fill="#0f172a">Quantity (Q)</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Price (P)</text>
+
+  <!-- Demand (downward) -->
+  <line x1="130" y1="100" x2="540" y2="380" stroke="#15803d" stroke-width="2.5"/>
+  <text x="545" y="385" font-size="12" font-weight="600" fill="#15803d">D</text>
+
+  <!-- S1 (original supply) -->
+  <line x1="130" y1="380" x2="540" y2="100" stroke="#0284c7" stroke-width="2.5"/>
+  <text x="545" y="105" font-size="12" font-weight="600" fill="#0284c7">S1</text>
+
+  <!-- S2 (shifted RIGHT, parallel down) -->
+  <line x1="220" y1="400" x2="600" y2="140" stroke="#be123c" stroke-width="2.5" stroke-dasharray="5,3"/>
+  <text x="555" y="155" font-size="12" font-weight="600" fill="#be123c">S2</text>
+
+  <!-- Shift arrow -->
+  <defs>
+    <marker id="arrSC" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#be123c"/></marker>
+  </defs>
+  <path d="M 320 200 L 390 225" fill="none" stroke="#be123c" stroke-width="1.8" marker-end="url(#arrSC)"/>
+  <text x="335" y="190" font-size="10" fill="#be123c" font-style="italic">good harvest →</text>
+  <text x="335" y="203" font-size="10" fill="#be123c" font-style="italic">supply shifts right</text>
+
+  <!-- E1: S1 ∩ D
+       D: (130,100)→(540,380) slope 280/410=0.683, y=100+0.683(x-130)
+       S1: (130,380)→(540,100) slope -280/410=-0.683, y=380-0.683(x-130)
+       Set: 100+0.683(x-130)=380-0.683(x-130) -> 1.366(x-130)=280 -> x=335, y=240 -->
+  <circle cx="335" cy="240" r="5" fill="#0284c7"/>
+  <line x1="90" y1="240" x2="335" y2="240" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="335" y1="240" x2="335" y2="400" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="244" font-size="11" font-weight="700" fill="#0284c7">Pe1</text>
+  <text x="335" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#0284c7">Qe1</text>
+
+  <!-- E2: S2 ∩ D
+       S2: (220,400)→(600,140) slope -260/380=-0.684, y=400-0.684(x-220)
+       Set: 100+0.683(x-130)=400-0.684(x-220) -> 1.367x - 88.8 = 400 + 150.5 - 88.8 wait let me redo
+         100+0.683(x-130) = 400 - 0.684(x-220)
+         100 + 0.683x - 88.8 = 400 - 0.684x + 150.5
+         11.2 + 0.683x = 550.5 - 0.684x
+         1.367x = 539.3 -> x = 394.5, y = 100 + 0.683*(264.5) = 100 + 180.6 = 280.6 -->
+  <circle cx="395" cy="281" r="5" fill="#be123c"/>
+  <line x1="90" y1="281" x2="395" y2="281" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="395" y1="281" x2="395" y2="400" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="285" font-size="11" font-weight="700" fill="#be123c">Pe2</text>
+  <text x="395" y="430" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Qe2</text>
+
+  <text x="310" y="455" text-anchor="middle" font-size="11" fill="#334155">Good harvest → supply rises → equilibrium moves along D: price falls (Pe1→Pe2), quantity rises (Qe1→Qe2).</text>
+</svg>
