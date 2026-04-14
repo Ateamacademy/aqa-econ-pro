@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo, lazy, Suspense } from "react";
 import { edexcelBTopics, type EdexcelBTopic } from "@/data/topicsEdexcelB";
 import { ocrTopics, type OcrTopic } from "@/data/topicsOcr";
 import { caieTopics, type CaieTopic } from "@/data/topicsCaie";
+import { ibTopics, type IbTopic } from "@/data/topicsIb";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
