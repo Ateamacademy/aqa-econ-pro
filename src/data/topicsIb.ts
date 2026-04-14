@@ -335,4 +335,43 @@ export const ibTopics: IbTopic[] = [
       { requirement: "Written explanation of entry + supply-shift mechanism leading to normal profit", marks: 1 },
     ],
   },
+
+  // ── Advanced [8 marks] ──
+  {
+    slug: "ib-indirect-tax-soda",
+    board: "IB HL/SL",
+    tier: "Advanced",
+    section: "Microeconomics",
+    marks: 8,
+    title: "Indirect Tax (Ad Valorem / Specific)",
+    scenario:
+      "France has imposed a SPECIFIC indirect tax on sugar-sweetened beverages to address rising obesity rates. The tax is paid by producers but passed on to consumers through higher shelf prices.",
+    question:
+      "Using an appropriate diagram, explain how the imposition of a specific indirect tax on high-sugar soda producers affects market price, quantity traded, and tax incidence for consumers and producers. In your response you must:\n1. Draw and properly label a tax_incidence diagram.\n2. Show the shift in the supply curve and the vertical distance representing the tax.\n3. Identify areas representing consumer burden, producer burden, and government revenue.\n4. Explain the transition from initial to new equilibrium, referencing PED and PES in determining incidence.",
+    figureFile: "/figures/ib-indirect-tax-soda.svg",
+    explanation:
+      "A specific indirect tax shifts the supply curve VERTICALLY UP by the tax amount (S → S1 = S + Tax). Initial equilibrium: (PE, QE) where S meets D. New equilibrium: (P1, Q1) where S1 meets D, with P1 > PE and Q1 < QE. Critical reference points: P1 = consumer price paid (at point W on D), A = price producer receives NET of tax (read off original S at Q1), vertical distance P1 − A = tax per unit. CONSUMER BURDEN (upper rectangle W-Y) = (P1 − PE) × Q1. PRODUCER BURDEN (lower rectangle Y-Z) = (PE − A) × Q1. GOVERNMENT REVENUE = consumer burden + producer burden = tax × Q1. The SPLIT depends on ELASTICITIES: the more INELASTIC side bears the GREATER burden. If PED < PES: consumer burden > producer burden — classic sin-tax result for soft drinks. Welfare implications: DEADWEIGHT LOSS triangle to the right of Q1. Policy justification rests on whether health gains from reduced soda consumption outweigh this deadweight loss — plausible given the negative consumption externality.",
+    keyTerms: [
+      "specific tax",
+      "ad valorem",
+      "indirect tax",
+      "tax incidence",
+      "consumer burden",
+      "producer burden",
+      "government revenue",
+      "PED",
+      "PES",
+      "deadweight loss",
+      "supply shift",
+    ],
+    diagramRequirements: [
+      { requirement: "Axes labelled Price and Quantity", marks: 1 },
+      { requirement: "Original supply S and demand D drawn with initial equilibrium PE, QE", marks: 1 },
+      { requirement: "S shifts VERTICALLY UP to S1 by tax amount; both supply curves labelled", marks: 1 },
+      { requirement: "New equilibrium P1, Q1 on S1 and D; P1 > PE and Q1 < QE", marks: 1 },
+      { requirement: "Net producer price A on original S at Q1 marked; vertical bracket P1 − A = tax per unit", marks: 1 },
+      { requirement: "Consumer burden rectangle AND Producer burden rectangle clearly shaded/labelled", marks: 2 },
+      { requirement: "Written explanation links tax split to relative PED vs PES and identifies government revenue", marks: 1 },
+    ],
+  },
 ];
