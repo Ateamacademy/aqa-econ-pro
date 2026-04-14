@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 480" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="480" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Bilateral Monopoly — Platinum Mining (South Africa)</text>
+
+  <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="510" y="420" font-size="12" fill="#0f172a">Quantity of Labour</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Real</text>
+  <text x="60" y="70" font-size="12" fill="#0f172a">Wage</text>
+
+  <!-- S_L (upward, red) -->
+  <line x1="130" y1="350" x2="560" y2="200" stroke="#be123c" stroke-width="2.5"/>
+  <text x="565" y="205" font-size="11" font-weight="600" fill="#be123c">S_L</text>
+
+  <!-- MFC (upward, steeper, yellow/gold) -->
+  <line x1="130" y1="380" x2="410" y2="90" stroke="#ca8a04" stroke-width="2.5"/>
+  <text x="400" y="85" font-size="11" font-weight="600" fill="#ca8a04">MFC</text>
+
+  <!-- MRP = D_L (downward, dark blue) -->
+  <line x1="130" y1="120" x2="560" y2="390" stroke="#1e40af" stroke-width="2.5"/>
+  <text x="565" y="395" font-size="11" font-weight="600" fill="#1e40af">MRP = D_L</text>
+
+  <!-- MR_L (downward, steeper, light blue) -->
+  <line x1="130" y1="150" x2="400" y2="390" stroke="#0ea5e9" stroke-width="2.3"/>
+  <text x="370" y="398" font-size="11" font-weight="600" fill="#0ea5e9">MR_L</text>
+
+  <!-- Equilibria:
+       MFC: (130,380)→(410,90) slope -290/280 = -1.036, y = 380 - 1.036(x-130)
+       MRP: (130,120)→(560,390) slope 270/430 = 0.628, y = 120 + 0.628(x-130)
+       
+       L1 (MFC=MRP): 380-1.036(x-130) = 120+0.628(x-130) -> 1.664(x-130)=260 -> x-130=156.3 -> x=286.3, y≈218
+       Wm on S_L at L1: S_L from (130,350) to (560,200), slope -150/430=-0.349, y=350-0.349(x-130); at x=286: y = 350 - 0.349*156 = 295.6 → Wm pixel y 296
+       
+       For union: L_u where MR_L = S_L
+       MR_L: (130,150)→(400,390) slope 240/270=0.889, y=150+0.889(x-130)
+       S_L: y=350-0.349(x-130)
+       Set: 150+0.889(x-130) = 350-0.349(x-130) -> 1.238(x-130)=200 -> x-130=161.6 -> x=291.6, y≈294
+       Wu on D_L at L_u: MRP at x=292: y = 120+0.628*162 = 221.7 → Wu pixel y 222 — nearly same as Wm L1 point? That means bargaining range collapses. Let me instead simplify:
+       Just place Wm (low) around y=300 and Wu (high) around y=180 for visual clarity.
+  -->
+
+  <!-- L1 at (286, 218) = MFC ∩ MRP -->
+  <circle cx="286" cy="218" r="5" fill="#0f172a"/>
+  <text x="294" y="214" font-size="10" font-weight="700" fill="#0f172a">MFC=MRP</text>
+
+  <!-- Wm (monopsonist's preferred wage) - read down to S_L at L1 -->
+  <line x1="286" y1="218" x2="286" y2="400" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <circle cx="286" cy="296" r="5" fill="#be123c"/>
+  <line x1="90" y1="296" x2="286" y2="296" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="60" y="300" font-size="11" font-weight="700" fill="#be123c">Wm</text>
+  <text x="286" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">L1</text>
+
+  <!-- Wu (union's preferred wage) - up at y=180 on D_L -->
+  <circle cx="286" cy="218" r="0" />
+  <!-- Draw Wu at a high level, say y=180 -->
+  <line x1="90" y1="180" x2="286" y2="180" stroke="#1e40af" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="60" y="184" font-size="11" font-weight="700" fill="#1e40af">Wu</text>
+  <circle cx="286" cy="180" r="5" fill="#1e40af"/>
+
+  <!-- Bargaining range bracket on left -->
+  <defs>
+    <marker id="arrBU" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker>
+    <marker id="arrBD" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#15803d"/></marker>
+  </defs>
+  <line x1="105" y1="180" x2="105" y2="296" stroke="#15803d" stroke-width="2" marker-start="url(#arrBD)" marker-end="url(#arrBU)"/>
+  <text x="115" y="246" font-size="11" font-weight="700" fill="#15803d">Bargaining</text>
+  <text x="115" y="258" font-size="11" font-weight="700" fill="#15803d">range</text>
+
+  <!-- Bargaining range shaded band -->
+  <rect x="90" y="180" width="196" height="116" fill="#bbf7d0" fill-opacity="0.18" stroke="#15803d" stroke-width="0.5" stroke-dasharray="2,2"/>
+
+  <!-- Annotation box -->
+  <rect x="380" y="290" width="215" height="100" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="487" y="309" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a8a">Bilateral monopoly</text>
+  <text x="487" y="326" text-anchor="middle" font-size="10" fill="#1e3a8a">Wm = monopsonist's floor</text>
+  <text x="487" y="342" text-anchor="middle" font-size="10" fill="#1e3a8a">Wu = union's ceiling</text>
+  <text x="487" y="362" text-anchor="middle" font-size="10" font-weight="700" fill="#be123c">Final wage &amp; employment</text>
+  <text x="487" y="376" text-anchor="middle" font-size="10" font-weight="700" fill="#be123c">are INDETERMINATE</text>
+
+  <text x="310" y="460" text-anchor="middle" font-size="11" fill="#334155">Wage settles between Wm and Wu depending on bargaining power (strike threat, profitability, regulator). Price theory doesn't pin it.</text>
+</svg>

@@ -148,4 +148,144 @@ export const caieTopics: CaieTopic[] = [
       { requirement: "Final equilibrium Y_Final clearly further right than Y2; gap Y_Final−Y1 > initial shift, with 'multiplier effect' annotated", marks: 1 },
     ],
   },
+
+  // ── Intermediate [6 marks] ──
+  {
+    slug: "caie-neg-externality-copper",
+    board: "CAIE",
+    tier: "Intermediate",
+    section: "Market Failure",
+    marks: 6,
+    title: "Negative Externality — MSC vs MPC",
+    scenario:
+      "In Zambia and Chile, copper extraction by private firms often causes environmental degradation — water contamination and air pollution from smelting plants. Mining firms focus on private costs; external costs fall on local agriculture and healthcare systems and are not reflected in the copper market price.",
+    question:
+      "With the aid of a diagram, explain how the existence of negative externalities in copper production leads to misallocation of resources and market failure. Your response must: 1) label MPC, MSC, MSB; 2) identify market equilibrium (Qm, Pm) and socially optimum (Qs, Ps); 3) shade the deadweight welfare loss; 4) explain the relationship between curves and why allocative efficiency fails.",
+    figureFile: "/figures/caie-neg-ext-copper.svg",
+    explanation:
+      "Mining firms equate MPC = MSB (=MPB) giving market output Qm at price Pm. The true social cost of copper includes pollution damage to farms and healthcare costs: MSC = MPC + MEC, so MSC lies ABOVE MPC by a constant external-cost gap. The SOCIALLY OPTIMUM output is Qs (< Qm) where MSC = MSB, at higher price Ps. Between Qs and Qm every additional unit has MSC > MSB — the shaded WELFARE LOSS triangle. Market failure arises because prices don't capture the full social cost: resources over-allocated to copper. Allocative efficiency fails because P = MPC rather than P = MSC. Corrective policy: Pigouvian tax equal to MEC or tradable pollution permits shift MPC toward MSC and reduce output toward Qs.",
+    keyTerms: ["negative externality", "MPC", "MSC", "MSB", "market failure", "allocative efficiency", "deadweight welfare loss", "over-production", "Pigouvian tax"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Benefit/Cost and Quantity", marks: 1 },
+      { requirement: "MPB = MSB (downward), MPC (upward), MSC (upward, ABOVE MPC by constant MEC gap) — all three labelled", marks: 2 },
+      { requirement: "Market equilibrium Qm, Pm (MPC = MSB) AND social optimum Qs, Ps (MSC = MSB) both marked; Qs < Qm", marks: 1 },
+      { requirement: "Welfare-loss triangle shaded between Qs and Qm bounded by MSC and MSB", marks: 1 },
+      { requirement: "Written explanation links over-production to ignored external cost and loss of allocative efficiency", marks: 1 },
+    ],
+  },
+  {
+    slug: "caie-pos-externality-vaccines",
+    board: "CAIE",
+    tier: "Intermediate",
+    section: "Market Failure",
+    marks: 6,
+    title: "Positive Externality — MSB vs MPB",
+    scenario:
+      "In developing economies like India and Vietnam, governments fund free or subsidised vaccinations. An individual gains private immunity (MPB), but vaccination also reduces transmission risk to the wider community — a positive external benefit not reflected in the market price. COVID-19 rollouts in 2021 illustrated this: private immunity plus economy-wide reopening benefits.",
+    question:
+      "With the aid of a diagram, explain how positive externalities of consumption in the healthcare market lead to market failure and under-consumption of vaccinations.",
+    figureFile: "/figures/caie-pos-ext-vaccines.svg",
+    explanation:
+      "In a free market, consumers weigh only MPB. Market equilibrium: MPC = MPB at Qm, price Pm. Because vaccination carries external benefits (herd immunity, reduced hospital transmission, economic reopening), MSB = MPB + External Benefit lies ABOVE MPB by a constant EB gap. The SOCIAL OPTIMUM is at Qs (> Qm) where MSB = MSC (= MPC). Between Qm and Qs, MSB > MSC — society values those units more than the private cost, but the market under-provides. The WELFARE-GAIN TRIANGLE represents the lost welfare — a deadweight loss from UNDER-CONSUMPTION. Correction: subsidy equal to EB shifts MPB up to meet MSB → output moves to Qs.",
+    keyTerms: ["positive externality", "MPB", "MSB", "external benefit", "MPC = MSC", "under-consumption", "welfare gain", "deadweight loss", "subsidy"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Price and Quantity", marks: 1 },
+      { requirement: "MPC = MSC (upward), MPB (downward), MSB (downward, ABOVE MPB by constant EB) — all three labelled", marks: 2 },
+      { requirement: "EB gap annotated as vertical distance between MPB and MSB", marks: 1 },
+      { requirement: "Market equilibrium Qm (MPC = MPB) AND social optimum Qs (MSC = MSB) marked; Qs > Qm", marks: 1 },
+      { requirement: "Welfare-gain triangle between Qm and Qs shaded with written explanation of subsidy correction", marks: 1 },
+    ],
+  },
+  {
+    slug: "caie-keynesian-as",
+    board: "CAIE",
+    tier: "Intermediate",
+    section: "Macroeconomics",
+    marks: 6,
+    title: "Keynesian AS — Horizontal, Upward Sloping, Vertical Sections",
+    scenario:
+      "An economy is in severe recession with 12% unemployment. The government implements expansionary fiscal policy — increased infrastructure spending — to stimulate AD.",
+    question:
+      "Use a Keynesian AS diagram to illustrate how an increase in Aggregate Demand affects Real GDP and Price Level when starting from significant spare capacity. You must: 1) draw a Keynesian AS curve with its three distinct sections; 2) show the initial equilibrium at low output Y1 and a rightward AD shift; 3) explain the P-Y relationship in the horizontal section.",
+    figureFile: "/figures/caie-keynesian-as.svg",
+    explanation:
+      "The Keynesian AS curve has THREE sections: HORIZONTAL (deep recession, massive spare capacity — firms can expand output without raising prices because unemployed workers/resources are available at existing wages); INTERMEDIATE (upward sloping — as output rises, bottlenecks emerge, some resources become scarce, costs and prices rise modestly); VERTICAL (near full employment — no additional output is possible, so any AD rise translates purely into price level rises). Starting at Y1 in the HORIZONTAL section, expansionary fiscal policy shifts AD1→AD2. The new equilibrium moves right along the horizontal section: real GDP rises (Y1→Y2) with NO rise in the price level.",
+    keyTerms: ["Keynesian AS", "horizontal section", "intermediate section", "vertical section", "spare capacity", "full employment", "AD shift", "recessionary gap"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Price Level and Real GDP", marks: 1 },
+      { requirement: "Keynesian AS drawn with three clearly distinct sections: horizontal (left), upward-sloping (middle), vertical (right) — labelled", marks: 2 },
+      { requirement: "Initial AD1 intersects AS in the HORIZONTAL section at Y1, P1", marks: 1 },
+      { requirement: "AD shifts RIGHT to AD2 with arrow", marks: 1 },
+      { requirement: "New equilibrium Y2 > Y1 with P unchanged (since still in horizontal section); written explanation of P-Y relationship", marks: 1 },
+    ],
+  },
+  {
+    slug: "caie-price-discrimination-rail",
+    board: "CAIE",
+    tier: "Intermediate",
+    section: "Market Structures",
+    marks: 6,
+    title: "Monopoly — Price Discrimination",
+    scenario:
+      "A natural monopoly high-speed rail operator runs between two cities. It identifies two market segments: BUSINESS travellers (price-inelastic demand — strict schedules) and LEISURE travellers (price-elastic — can switch mode or date). The firm uses third-degree price discrimination to increase producer surplus and total revenue.",
+    question:
+      "Using an appropriate diagram, explain how a monopoly can increase total profit by charging different prices to business and leisure travellers. You must: 1) draw two separate sub-markets (A: Business, B: Leisure) alongside a combined MR/MC diagram; 2) annotate P1, P2 and Q1, Q2; 3) explain the two essential conditions for success; 4) analyse MC = MR in each market.",
+    figureFile: "/figures/caie-price-discrimination.svg",
+    explanation:
+      "Third-degree price discrimination charges different prices to different groups with different PEDs. The firm faces a COMBINED MC. Profit max in EACH sub-market requires MR_A = MC and MR_B = MC. Business market (A): steep (inelastic) demand → P_A (HIGH). Leisure market (B): flat (elastic) demand → P_B (LOWER). Result: P_A > P_B. Combined total profit > single-price profit because the firm extracts more consumer surplus from each segment. TWO ESSENTIAL CONDITIONS: (i) market power to set price; (ii) ability to SEGREGATE markets and PREVENT RESALE (arbitrage).",
+    keyTerms: ["price discrimination", "third-degree", "sub-markets", "MC = MR", "PED", "arbitrage", "market segregation", "producer surplus"],
+    diagramRequirements: [
+      { requirement: "Three-panel diagram: Market A (business), Market B (leisure), Combined MC", marks: 1 },
+      { requirement: "Market A: steep D_A, steeper MR_A; Market B: flatter D_B, MR_B", marks: 1 },
+      { requirement: "Combined MC line shown as horizontal (or mildly upward) in each panel", marks: 1 },
+      { requirement: "P_A and Q_A identified in Market A where MR_A = MC; P_B and Q_B in Market B where MR_B = MC; P_A > P_B clearly shown", marks: 2 },
+      { requirement: "Written explanation of two conditions: market power + prevention of arbitrage", marks: 1 },
+    ],
+  },
+  {
+    slug: "caie-perfect-competition-lr",
+    board: "CAIE",
+    tier: "Intermediate",
+    section: "Market Structures",
+    marks: 6,
+    title: "Perfect Competition — Long Run Equilibrium",
+    scenario:
+      "The international wheat market is a near-approximation of perfect competition. An unexpected permanent rise in demand (from global health awareness) initially generates supernormal profit for existing firms in the SHORT RUN.",
+    question:
+      "Using a correctly labelled diagram for BOTH the market AND an individual firm, explain the process by which a perfectly competitive market returns to long-run equilibrium following entry of new firms. You must: 1) draw the perfect_competition diagram showing SR → LR transition; 2) explain the role of freedom of entry and perfect information; 3) identify the final profit level.",
+    figureFile: "/figures/caie-perfect-competition.svg",
+    explanation:
+      "TWO PANELS. Market (right panel): D shifts right (D1→D2) due to higher demand. Market price rises Pe1→Pe2. Firm (left panel): at Pe2 the firm produces where MC = MR and earns SUPERNORMAL PROFIT — shaded rectangle between Pe2 and ATC. In the LONG RUN: perfect information means new firms observe the supernormal profit; freedom of entry means they enter the industry. Market supply shifts RIGHT. Market price falls back until it equals minimum ATC — profits competed away. Firm produces at MC = MR = min ATC earning only NORMAL PROFIT. Long-run equilibrium: P = MC = min AC → productive AND allocative efficiency.",
+    keyTerms: ["perfect competition", "price taker", "supernormal profit", "normal profit", "freedom of entry", "perfect information", "min ATC", "productive efficiency", "allocative efficiency", "long-run equilibrium"],
+    diagramRequirements: [
+      { requirement: "Two-panel diagram: individual firm (left) + industry/market (right), both axes labelled", marks: 2 },
+      { requirement: "Market panel: D1, D2 shift right, initial equilibrium Pe1 and short-run Pe2 marked", marks: 1 },
+      { requirement: "Firm panel: MC (U-shape), ATC (U-shape), AR=MR horizontal at market price; profit-max at MC=MR", marks: 1 },
+      { requirement: "SR supernormal profit rectangle shaded when AR = Pe2; LR AR drops to Pe3 = min ATC with only normal profit", marks: 1 },
+      { requirement: "Written explanation covers entry mechanism + final profit = normal", marks: 1 },
+    ],
+  },
+  {
+    slug: "caie-bilateral-monopoly",
+    board: "CAIE",
+    tier: "Intermediate",
+    section: "Labour Market",
+    marks: 6,
+    title: "Labour Market — Bilateral Monopoly",
+    scenario:
+      "In a remote region of South Africa, a single large mining corporation is the monopsony employer of thousands of specialised drill operators. Those operators are all members of a powerful trade union — the sole supplier of this labour. The union demands higher real wages and better safety conditions, threatening strike action.",
+    question:
+      "With the aid of a labour market diagram, explain how the interaction between a monopsony employer and a monopolistic supplier of labour (trade union) determines the wage rate and employment in a bilateral monopoly. You must: 1) draw and focus on the range of wage negotiations between monopsonist's preferred Wm and union's preferred Wu; 2) identify profit-maximising employment L1; 3) explain why the final outcome for wages and employment is INDETERMINATE.",
+    figureFile: "/figures/caie-bilateral-monopoly.svg",
+    explanation:
+      "The diagram shows four curves: S_L (labour supply, upward), MFC (marginal factor cost of labour, upward, ABOVE S_L), MRP = D_L (labour demand, downward), MR_L (marginal revenue of labour to the union, below D_L). Without a union, the monopsonist employs L1 at MFC = MRP, paying wage Wm off S_L at L1 (LOW wage). Without the monopsonist, the union would pick L_u where MR_L = S_L and charge wage Wu off D_L (HIGH wage). The negotiated wage falls somewhere in the range [Wm, Wu]. The final wage depends on BARGAINING POWER. Outcome is INDETERMINATE because standard price theory doesn't pin down a unique equilibrium.",
+    keyTerms: ["bilateral monopoly", "monopsony", "trade union", "MFC", "S_L", "MRP", "MR_L", "bargaining range", "wage determination", "indeterminate"],
+    diagramRequirements: [
+      { requirement: "Axes labelled Real Wage Rate and Quantity of Labour", marks: 1 },
+      { requirement: "Four curves: S_L (upward), MFC (upward, above S_L), MRP = D_L (downward), MR_L (downward, below D_L) — all labelled", marks: 2 },
+      { requirement: "Monopsonist's preferred Wm identified at L1 (MFC = MRP)", marks: 1 },
+      { requirement: "Union's preferred Wu identified at higher wage (on D_L at the union's chosen employment)", marks: 1 },
+      { requirement: "Bargaining range [Wm, Wu] shaded or bracketed; written explanation identifies indeterminacy", marks: 1 },
+    ],
+  },
 ];

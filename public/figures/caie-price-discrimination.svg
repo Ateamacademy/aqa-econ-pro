@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" font-family="Inter, Arial, sans-serif">
+  <rect width="900" height="450" fill="#ffffff"/>
+  <text x="450" y="26" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Third-Degree Price Discrimination — High-Speed Rail</text>
+
+  <!-- Panel titles -->
+  <text x="150" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#be123c">Market A: Business (inelastic)</text>
+  <text x="450" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#334155">Combined MC</text>
+  <text x="750" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#0284c7">Market B: Leisure (elastic)</text>
+
+  <!-- ========== PANEL A: Business ========== -->
+  <line x1="50" y1="400" x2="270" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="50" y1="70" x2="50" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="250" y="418" font-size="10" fill="#0f172a">Q</text>
+  <text x="30" y="75" font-size="10" fill="#0f172a">P</text>
+
+  <!-- Steep demand D_A -->
+  <line x1="95" y1="90" x2="170" y2="390" stroke="#be123c" stroke-width="2.3"/>
+  <text x="175" y="393" font-size="11" font-weight="600" fill="#be123c">D_A</text>
+
+  <!-- MR_A (steeper, same intercept) -->
+  <line x1="95" y1="100" x2="132" y2="390" stroke="#7c3aed" stroke-width="2.2"/>
+  <text x="138" y="396" font-size="11" font-weight="600" fill="#7c3aed">MR_A</text>
+
+  <!-- MC horizontal at y=230 -->
+  <line x1="50" y1="230" x2="270" y2="230" stroke="#0f172a" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="225" y="223" font-size="10" font-weight="700" fill="#0f172a">MC</text>
+
+  <!-- MR_A = MC intersection: MR_A line from (95,100) to (132,390), slope=290/37=7.838; y=100+7.838(x-95); at y=230: 130=7.838(x-95) -> x=111.6 -->
+  <circle cx="112" cy="230" r="4" fill="#7c3aed"/>
+  <line x1="112" y1="230" x2="112" y2="400" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1"/>
+  <text x="112" y="415" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">Q_A</text>
+
+  <!-- P_A on D_A at x=112: D_A from (95,90) to (170,390), slope 300/75=4; y=90+4(x-95); at x=112: y=90+4*17=158 -->
+  <circle cx="112" cy="158" r="5" fill="#be123c"/>
+  <line x1="50" y1="158" x2="112" y2="158" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="30" y="162" font-size="11" font-weight="700" fill="#be123c">P_A</text>
+
+  <!-- ========== PANEL C (MIDDLE): Combined MC schematic ========== -->
+  <line x1="340" y1="400" x2="560" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="340" y1="70" x2="340" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="540" y="418" font-size="10" fill="#0f172a">Q</text>
+  <text x="320" y="75" font-size="10" fill="#0f172a">P</text>
+
+  <!-- Combined demand/MR conceptual -->
+  <line x1="385" y1="110" x2="550" y2="390" stroke="#334155" stroke-width="2.2"/>
+  <text x="555" y="393" font-size="11" font-weight="600" fill="#334155">D_total</text>
+
+  <line x1="385" y1="130" x2="460" y2="390" stroke="#7c3aed" stroke-width="2.2"/>
+  <text x="465" y="396" font-size="11" font-weight="600" fill="#7c3aed">MR_total</text>
+
+  <line x1="340" y1="230" x2="560" y2="230" stroke="#0f172a" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="520" y="223" font-size="10" font-weight="700" fill="#0f172a">MC</text>
+
+  <text x="450" y="265" text-anchor="middle" font-size="9" fill="#334155" font-style="italic">single-price monopoly</text>
+  <text x="450" y="278" text-anchor="middle" font-size="9" fill="#334155" font-style="italic">would set P, Q here</text>
+
+  <!-- ========== PANEL B: Leisure ========== -->
+  <line x1="630" y1="400" x2="850" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="630" y1="70" x2="630" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="830" y="418" font-size="10" fill="#0f172a">Q</text>
+  <text x="612" y="75" font-size="10" fill="#0f172a">P</text>
+
+  <!-- Flatter demand D_B -->
+  <line x1="660" y1="220" x2="840" y2="350" stroke="#0284c7" stroke-width="2.3"/>
+  <text x="843" y="353" font-size="11" font-weight="600" fill="#0284c7">D_B</text>
+
+  <!-- MR_B (twice the slope, same intercept) -->
+  <line x1="660" y1="220" x2="750" y2="350" stroke="#7c3aed" stroke-width="2.2"/>
+  <text x="755" y="355" font-size="11" font-weight="600" fill="#7c3aed">MR_B</text>
+
+  <!-- MC line -->
+  <line x1="630" y1="290" x2="850" y2="290" stroke="#0f172a" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="810" y="283" font-size="10" font-weight="700" fill="#0f172a">MC</text>
+
+  <!-- MR_B = MC: MR_B from (660,220) to (750,350), slope=130/90=1.444; y=220+1.444(x-660); at y=290: 70=1.444(x-660) -> x=708.5 -->
+  <circle cx="709" cy="290" r="4" fill="#7c3aed"/>
+  <line x1="709" y1="290" x2="709" y2="400" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1"/>
+  <text x="709" y="415" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">Q_B</text>
+
+  <!-- P_B on D_B at x=709: D_B from (660,220) to (840,350), slope=130/180=0.722; y=220+0.722(x-660); at x=709: y=220+0.722*49=255 -->
+  <circle cx="709" cy="255" r="5" fill="#0284c7"/>
+  <line x1="630" y1="255" x2="709" y2="255" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="609" y="259" font-size="11" font-weight="700" fill="#0284c7">P_B</text>
+
+  <!-- Comparison bar: P_A > P_B -->
+  <rect x="250" y="430" width="400" height="1" fill="none"/>
+  <text x="450" y="438" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">Inelastic segment pays more: P_A &gt; P_B. MC = MR_A in A; MC = MR_B in B.</text>
+</svg>
