@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 470" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="470" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">UK EV Market — Lower Battery Costs Shift Supply Right</text>
+
+  <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="545" y="420" font-size="12" fill="#0f172a">Quantity of EVs</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Price (P)</text>
+
+  <!-- Demand -->
+  <line x1="130" y1="110" x2="540" y2="380" stroke="#15803d" stroke-width="2.5"/>
+  <text x="545" y="385" font-size="12" font-weight="600" fill="#15803d">D</text>
+
+  <!-- S1 -->
+  <line x1="130" y1="380" x2="490" y2="110" stroke="#0284c7" stroke-width="2.4"/>
+  <text x="490" y="100" font-size="11" font-weight="600" fill="#0284c7">S1</text>
+
+  <!-- S2 shifted right -->
+  <line x1="220" y1="380" x2="580" y2="110" stroke="#be123c" stroke-width="2.4" stroke-dasharray="5,3"/>
+  <text x="585" y="100" font-size="11" font-weight="600" fill="#be123c">S2</text>
+
+  <defs>
+    <marker id="arrWJ2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#be123c"/></marker>
+  </defs>
+  <path d="M 310 250 L 380 250" fill="none" stroke="#be123c" stroke-width="2" marker-end="url(#arrWJ2)"/>
+  <text x="345" y="240" text-anchor="middle" font-size="10" fill="#be123c" font-style="italic">↓ battery costs</text>
+
+  <!-- E1 at (322, 236) -->
+  <circle cx="322" cy="236" r="5" fill="#0284c7"/>
+  <line x1="90" y1="236" x2="322" y2="236" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="322" y1="236" x2="322" y2="400" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="240" font-size="11" font-weight="700" fill="#0284c7">P1</text>
+  <text x="322" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#0284c7">Q1</text>
+
+  <!-- E2 at (370, 268) -->
+  <circle cx="370" cy="268" r="5" fill="#be123c"/>
+  <line x1="90" y1="268" x2="370" y2="268" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="370" y1="268" x2="370" y2="400" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="272" font-size="11" font-weight="700" fill="#be123c">P2</text>
+  <text x="370" y="430" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Q2</text>
+
+  <text x="310" y="455" text-anchor="middle" font-size="11" fill="#334155">Lower production costs → S shifts right → equilibrium P falls (P1→P2), Q rises (Q1→Q2).</text>
+</svg>
