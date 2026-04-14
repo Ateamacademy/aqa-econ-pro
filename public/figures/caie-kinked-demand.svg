@@ -1,65 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 480" font-family="Inter, Arial, sans-serif">
-  <rect width="620" height="480" fill="#ffffff"/>
-  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Oligopoly — Kinked Demand Curve</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 470" font-family="Inter, Arial, sans-serif">
+  <rect width="620" height="470" fill="#ffffff"/>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Kinked Demand Curve — Oligopoly Price Rigidity (Airline Market)</text>
 
-  <line x1="80" y1="420" x2="590" y2="420" stroke="#0f172a" stroke-width="2"/>
-  <line x1="80" y1="50" x2="80" y2="420" stroke="#0f172a" stroke-width="2"/>
-  <text x="530" y="445" font-size="12" fill="#0f172a">Output (Q)</text>
-  <text x="30" y="55" font-size="11" fill="#0f172a">Price /</text>
-  <text x="30" y="70" font-size="11" fill="#0f172a">Cost &amp;</text>
-  <text x="30" y="85" font-size="11" fill="#0f172a">Revenue</text>
-  <text x="85" y="445" font-size="12" fill="#0f172a">O</text>
+  <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
+  <text x="545" y="420" font-size="12" fill="#0f172a">Output (Q)</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Cost /</text>
+  <text x="60" y="70" font-size="12" fill="#0f172a">Revenue</text>
 
-  <!-- AR (D) kinked: elastic above, inelastic below kink at (300, 210) -->
-  <!-- Elastic portion (steeper, green-blue) -->
-  <line x1="120" y1="70" x2="300" y2="210" stroke="#0284c7" stroke-width="2.8"/>
-  <!-- Inelastic portion (flatter, blue) -->
-  <line x1="300" y1="210" x2="560" y2="380" stroke="#0284c7" stroke-width="2.8"/>
-  <text x="565" y="385" font-size="12" font-weight="600" fill="#0284c7">AR (D)</text>
-
-  <!-- Labels for elastic/inelastic sections -->
-  <text x="160" y="110" font-size="11" font-weight="600" fill="#15803d">Elastic (PED &gt; 1)</text>
-  <text x="400" y="310" font-size="11" font-weight="600" fill="#0284c7">Inelastic</text>
-  <text x="400" y="325" font-size="11" font-weight="600" fill="#0284c7">(PED &lt; 1)</text>
-
-  <!-- MR: two sections with vertical gap -->
-  <!-- Upper MR (steeper, from top-left to gap) -->
-  <line x1="120" y1="100" x2="300" y2="320" stroke="#15803d" stroke-width="2.5"/>
-  <!-- Lower MR (from gap to bottom-right) -->
-  <line x1="300" y1="370" x2="480" y2="420" stroke="#15803d" stroke-width="2.5"/>
-  <text x="485" y="418" font-size="12" font-weight="600" fill="#15803d">MR</text>
-
-  <!-- Vertical MR gap -->
-  <line x1="300" y1="320" x2="300" y2="370" stroke="#15803d" stroke-width="2" stroke-dasharray="4,3"/>
-  <text x="260" y="350" font-size="10" font-weight="700" fill="#15803d">gap</text>
-
-  <!-- MC1 (horizontal, through gap, brown/orange) -->
-  <line x1="130" y1="335" x2="560" y2="335" stroke="#d97706" stroke-width="2.3"/>
-  <text x="565" y="340" font-size="11" font-weight="600" fill="#d97706">MC₁</text>
-
-  <!-- MC2 (horizontal, also through gap, dashed red) -->
-  <line x1="130" y1="355" x2="560" y2="355" stroke="#be123c" stroke-width="2" stroke-dasharray="5,3"/>
-  <text x="565" y="360" font-size="11" font-weight="600" fill="#be123c">MC₂</text>
+  <!-- Kinked AR curve:
+       Upper segment (elastic, shallow slope): from (130, 110) to KINK at (300, 220)
+       Lower segment (inelastic, steep slope): from KINK (300, 220) to (530, 380)
+  -->
+  <line x1="130" y1="110" x2="300" y2="220" stroke="#0284c7" stroke-width="2.8"/>
+  <line x1="300" y1="220" x2="530" y2="380" stroke="#0284c7" stroke-width="2.8"/>
+  <text x="160" y="100" font-size="11" font-weight="600" fill="#0284c7">AR (elastic above)</text>
+  <text x="440" y="400" font-size="11" font-weight="600" fill="#0284c7">AR (inelastic below)</text>
 
   <!-- Kink point E -->
-  <circle cx="300" cy="210" r="6" fill="#0284c7"/>
-  <text x="312" y="200" font-size="13" font-weight="700" fill="#0f172a">E</text>
+  <circle cx="300" cy="220" r="6" fill="#0f172a" stroke="#fff" stroke-width="2"/>
+  <text x="308" y="215" font-size="13" font-weight="700" fill="#0f172a">E</text>
+  <line x1="90" y1="220" x2="300" y2="220" stroke="#0f172a" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <line x1="300" y1="220" x2="300" y2="400" stroke="#0f172a" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="224" font-size="11" font-weight="700" fill="#0f172a">P</text>
+  <text x="300" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">Q</text>
 
-  <!-- P0 dashed to kink -->
-  <line x1="80" y1="210" x2="300" y2="210" stroke="#64748b" stroke-dasharray="4,3" stroke-width="1.2"/>
-  <text x="60" y="215" font-size="12" font-weight="700" fill="#0f172a">P₀</text>
+  <!-- MR curve with DISCONTINUITY:
+       Upper MR segment (corresponds to elastic AR, steeper): from (130, 140) to just above the gap at (300, 250)
+       Gap: from (300, 250) to (300, 320) — vertical dashed to show discontinuity
+       Lower MR segment (corresponds to inelastic AR, much steeper): from (300, 320) down to about (410, 400)
+  -->
+  <line x1="130" y1="140" x2="300" y2="250" stroke="#7c3aed" stroke-width="2.3"/>
+  <line x1="300" y1="320" x2="410" y2="400" stroke="#7c3aed" stroke-width="2.3"/>
+  <text x="175" y="160" font-size="11" font-weight="600" fill="#7c3aed">MR (upper)</text>
+  <text x="335" y="395" font-size="11" font-weight="600" fill="#7c3aed">MR (lower)</text>
 
-  <!-- Q0 dashed down -->
-  <line x1="300" y1="210" x2="300" y2="420" stroke="#64748b" stroke-dasharray="4,3" stroke-width="1.2"/>
-  <text x="300" y="440" text-anchor="middle" font-size="12" font-weight="700" fill="#0f172a">Q₀</text>
+  <!-- Discontinuity gap (vertical dashed) -->
+  <line x1="300" y1="250" x2="300" y2="320" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <circle cx="300" cy="250" r="3.5" fill="#fff" stroke="#7c3aed" stroke-width="2"/>
+  <circle cx="300" cy="320" r="3.5" fill="#fff" stroke="#7c3aed" stroke-width="2"/>
 
-  <!-- MC1 and MC2 dots on gap -->
-  <circle cx="300" cy="335" r="4" fill="#d97706"/>
-  <circle cx="300" cy="355" r="4" fill="#be123c"/>
+  <!-- Annotate discontinuity -->
+  <text x="338" y="285" font-size="10" font-weight="700" fill="#7c3aed">MR discontinuity</text>
+  <text x="338" y="297" font-size="10" fill="#7c3aed">(vertical gap)</text>
 
-  <!-- Annotation box -->
-  <rect x="370" y="80" width="210" height="60" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
-  <text x="380" y="100" font-size="10" font-weight="600" fill="#334155">MC can shift between MC₁ and MC₂</text>
-  <text x="380" y="115" font-size="10" font-weight="600" fill="#334155">without changing P₀ or Q₀ → price</text>
-  <text x="380" y="130" font-size="10" font-weight="600" fill="#334155">rigidity in oligopoly markets.</text>
+  <!-- MC1 (lower) passing through the gap around y=280 -->
+  <path d="M 140 340 C 220 300 270 285 320 280 C 420 265 510 225 540 200" fill="none" stroke="#15803d" stroke-width="2.3"/>
+  <text x="545" y="205" font-size="11" font-weight="600" fill="#15803d">MC1</text>
+
+  <!-- MC2 (higher, shifted up, also passing through the gap) -->
+  <path d="M 140 310 C 220 270 270 255 320 250 C 410 235 500 195 540 170" fill="none" stroke="#be123c" stroke-width="2.3" stroke-dasharray="5,3"/>
+  <text x="545" y="175" font-size="11" font-weight="600" fill="#be123c">MC2</text>
+
+  <!-- Shift arrow -->
+  <defs>
+    <marker id="arrKD" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#be123c"/></marker>
+  </defs>
+  <path d="M 450 235 L 450 210" fill="none" stroke="#be123c" stroke-width="1.8" marker-end="url(#arrKD)"/>
+  <text x="460" y="227" font-size="10" fill="#be123c" font-style="italic">↑ fuel cost</text>
+
+  <!-- Conclusion box -->
+  <rect x="380" y="90" width="210" height="70" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="485" y="108" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a8a">MC shifts within the MR gap →</text>
+  <text x="485" y="124" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a8a">MC = MR still at Q →</text>
+  <text x="485" y="140" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a8a">Price stays at P</text>
+  <text x="485" y="154" text-anchor="middle" font-size="10" fill="#334155" font-style="italic">(price rigidity)</text>
+
+  <text x="310" y="445" text-anchor="middle" font-size="11" fill="#334155">Above P rivals don't follow → elastic. Below P rivals follow → inelastic. MC shifts absorbed into margins → stable ticket prices.</text>
 </svg>
