@@ -41,6 +41,8 @@ export default function Practice() {
   const [step, setStep] = useState<"generate" | "answer" | "feedback">("generate");
   const [showUpgrade, setShowUpgrade] = useState(false);
 
+  const reset = () => { setStep("generate"); setGeneratedQ(""); setAnswer(""); setFeedback(""); };
+
   useEffect(() => {
     setTopic(topicsBySubject[subject][0]);
     setStyle(stylesBySubject[subject][0]);
