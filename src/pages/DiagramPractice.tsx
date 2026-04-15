@@ -5,6 +5,7 @@ import { caieTopics, type CaieTopic } from "@/data/topicsCaie";
 import { ibTopics, type IbTopic } from "@/data/topicsIb";
 import { wjecTopics, type WjecTopic } from "@/data/topicsWjec";
 import { eduqasTopics, type EduqasTopic } from "@/data/topicsEduqas";
+import { gcseTopics, type GcseTopic } from "@/data/topicsGcse";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
@@ -218,16 +219,27 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
     // Advanced (8 marks)
     "Indirect Tax (Ad Valorem / Specific)",
   ],
+  "aqa-gcse": [
+    // Foundation (4 marks) — generic topics inferred by difficulty engine
+    "Supply & Demand — Shift in Demand",
+    "Supply & Demand — Shift in Supply",
+    "AD/AS — Demand-Side Shock",
+    "AD/AS — Supply-Side Shock",
+    "AD/AS — Economic Growth (LRAS Shift)",
+    "Labour Market — Wage Determination",
+    // Higher (9 marks)
+    "Indirect Tax (Ad Valorem / Specific)",
+  ],
 };
 
-const DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced"] as const;
+const DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced", "Higher"] as const;
 
 type PracticeMode = "ai" | "scenario";
 
 type BoardScenarioTemplate = {
   section: DiagramSection;
   topic: string;
-  difficulty: "Foundation" | "Intermediate" | "Advanced";
+  difficulty: "Foundation" | "Intermediate" | "Advanced" | "Higher";
   marks: number;
   expectedDiagramKeyword?: string;
 };
@@ -320,14 +332,16 @@ const buildBoardScenarioTemplates = (subject: string): BoardScenarioTemplate[] =
     return match?.[1] ?? "PPFs, Markets & Allocation";
   };
 
-  const inferDifficultyFromTopic = (topic: string): "Foundation" | "Intermediate" | "Advanced" => {
+  const inferDifficultyFromTopic = (topic: string): "Foundation" | "Intermediate" | "Advanced" | "Higher" => {
+    // AQA GCSE Higher tier: 9-mark extended-response
+    if (subject === "aqa-gcse" && /ad valorem|specific|indirect tax/i.test(topic)) return "Higher";
     if (/oligopoly|phillips|lorenz|monopsony|tradable|j-curve|specific|ad valorem|shutdown|welfare|multiple shifts/i.test(topic)) return "Advanced";
     if (/externalit|subsidy|minimum price|maximum price|cost|monopoly|perfect competition|keynesian|exchange rate|tariff/i.test(topic)) return "Intermediate";
     return "Foundation";
   };
 
-  const inferMarksFromDifficulty = (difficulty: "Foundation" | "Intermediate" | "Advanced") =>
-    difficulty === "Foundation" ? 4 : difficulty === "Intermediate" ? 6 : 8;
+  const inferMarksFromDifficulty = (difficulty: "Foundation" | "Intermediate" | "Advanced" | "Higher") =>
+    difficulty === "Foundation" ? 4 : difficulty === "Intermediate" ? 6 : difficulty === "Higher" ? 9 : 8;
 
   const uniqueTopics = Array.from(new Set(DIAGRAM_TOPICS[subject] || DIAGRAM_TOPICS.economics));
 
