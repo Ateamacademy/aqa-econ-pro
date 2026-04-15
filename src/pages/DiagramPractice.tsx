@@ -1300,7 +1300,10 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             const wjecRefTopic = subject === "wjec" && selectedScenario
               ? wjecTopics.find((t) => `wjec-${t.slug}` === selectedScenario.id)
               : undefined;
-            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic || ibRefTopic || wjecRefTopic;
+            const eduqasRefTopic = subject === "eduqas" && selectedScenario
+              ? eduqasTopics.find((t) => `eduqas-${t.slug}` === selectedScenario.id)
+              : undefined;
+            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic || ibRefTopic || wjecRefTopic || eduqasRefTopic;
 
             if (boardRefTopic) {
               return (
@@ -1602,7 +1605,10 @@ function DiagramFeedbackView({
   const wjecFeedbackTopic = subject === "wjec" && scenarioId
     ? wjecTopics.find((t) => `wjec-${t.slug}` === scenarioId)
     : undefined;
-  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic || wjecFeedbackTopic;
+  const eduqasFeedbackTopic = subject === "eduqas" && scenarioId
+    ? eduqasTopics.find((t) => `eduqas-${t.slug}` === scenarioId)
+    : undefined;
+  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic || wjecFeedbackTopic || eduqasFeedbackTopic;
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     // Board-specific SVG figure (Edexcel B or OCR)
