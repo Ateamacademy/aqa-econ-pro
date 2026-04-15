@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 540" font-family="Arial, sans-serif">
+  <style>
+    .axis { stroke:#111; stroke-width:2; fill:none; }
+    .curve { stroke-width:2.5; fill:none; }
+    .d1 { stroke:#1976d2; }
+    .d2 { stroke:#0d47a1; }
+    .s1 { stroke:#c62828; }
+    .s2 { stroke:#7f0000; }
+    .dotted { stroke:#444; stroke-width:1.4; stroke-dasharray:5,4; fill:none; }
+    .arrowR { stroke:#0d47a1; stroke-width:2.2; fill:none; marker-end:url(#aR); }
+    .arrowL { stroke:#7f0000; stroke-width:2.2; fill:none; marker-end:url(#aL); }
+    .lbl   { font-size:14px; fill:#111; }
+    .lblB  { font-size:14px; fill:#111; font-weight:700; }
+    .ttl   { font-size:18px; font-weight:700; fill:#111; }
+    .sub   { font-size:12px; fill:#444; }
+    .pt    { fill:#111; }
+  </style>
+  <defs>
+    <marker id="aR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0d47a1"/>
+    </marker>
+    <marker id="aL" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7f0000"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="28" text-anchor="middle" class="ttl">UK Nursing Labour Market 2021–24 — Dual Shift</text>
+  <text x="350" y="48" text-anchor="middle" class="sub">Demand for nurses rises (D1 → D2) while supply falls (S1 → S2): wage rises sharply</text>
+
+  <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
+  <line class="axis" x1="90"  y1="450" x2="640" y2="450"/>
+  <text x="40"  y="80"  class="lblB">Wage (W)</text>
+  <text x="510" y="475" class="lblB">Quantity of Labour (Nurses)</text>
+
+  <!-- D1 (initial): (120,140) to (610,440); slope = 0.612; y = 0.612x + 66.5 -->
+  <line class="curve d1" x1="120" y1="140" x2="610" y2="440"/>
+  <text x="615" y="450" class="lbl" fill="#1976d2">D1</text>
+
+  <!-- D2 (right shift, parallel): from (220,140) to (640,397); shifted right by ~80px in x.
+       y = 0.612(x-80) + 66.5 = 0.612x + 17.5; at x=220, y=152; at x=640, y=409
+       Use simple endpoints: (220,140) to (640,397) with slope (397-140)/(640-220) = 0.612 ✓ -->
+  <line class="curve d2" x1="220" y1="140" x2="640" y2="397"/>
+  <text x="645" y="397" class="lbl" fill="#0d47a1">D2</text>
+
+  <!-- S1 (initial): (130,430) to (620,130); slope = -0.612; y = -0.612x + 509.6 -->
+  <line class="curve s1" x1="130" y1="430" x2="620" y2="130"/>
+  <text x="630" y="135" class="lbl" fill="#c62828">S1</text>
+
+  <!-- S2 (left shift, parallel): shift left by ~80px. y = -0.612x + (509.6 - 0.612*80) = -0.612x + 460.6
+       Endpoints: at x=90, y=405.5. At y=130, x=(460.6-130)/0.612=540
+       So S2 from (90, 406) to (540, 130) -->
+  <line class="curve s2" x1="90" y1="406" x2="540" y2="130"/>
+  <text x="100" y="395" class="lbl" fill="#7f0000">S2</text>
+
+  <!-- E1: D1 ∩ S1: 0.612x + 66.5 = -0.612x + 509.6 → 1.224x = 443.1 → x=362, y=288 -->
+  <circle class="pt" cx="362" cy="288" r="4.5"/>
+  <line class="dotted" x1="362" y1="288" x2="362" y2="450"/>
+  <line class="dotted" x1="362" y1="288" x2="90"  y2="288"/>
+  <text x="60"  y="293" class="lblB">W1</text>
+  <text x="357" y="468" class="lblB">Q1</text>
+  <text x="370" y="284" class="lbl">E1</text>
+
+  <!-- E2: D2 ∩ S2: 0.612x + 17.5 = -0.612x + 460.6 → 1.224x = 443.1 → x=362, y=239 
+       (same x! because both shifts are equal magnitude in opposite directions, employment unchanged - which is the textbook ambiguous case)
+       Wage rises from 288 to 239 (smaller y = higher on screen = higher wage). ✓ -->
+  <circle class="pt" cx="362" cy="239" r="4.5"/>
+  <line class="dotted" x1="362" y1="239" x2="90"  y2="239"/>
+  <text x="60"  y="244" class="lblB">W2</text>
+  <text x="370" y="235" class="lbl">E2</text>
+
+  <!-- Arrows: D shifts right, S shifts left -->
+  <path class="arrowR" d="M 240 380 q 50 -10 90 -3"/>
+  <text x="240" y="400" class="lbl" fill="#0d47a1">D shifts right</text>
+
+  <path class="arrowL" d="M 460 200 q -50 -8 -90 -3"/>
+  <text x="365" y="195" class="lbl" fill="#7f0000">S shifts left</text>
+
+  <text x="90"  y="495" class="sub">Ageing population raises healthcare demand → derived demand for nurses rises (D shifts right).</text>
+  <text x="90"  y="512" class="sub">Shortage of qualified nurses reduces labour supply at every wage (S shifts left).</text>
+  <text x="90"  y="529" class="sub">Both effects unambiguously raise the equilibrium wage (W2 well above W1). The effect on employment is ambiguous — depends on relative shift sizes.</text>
+</svg>

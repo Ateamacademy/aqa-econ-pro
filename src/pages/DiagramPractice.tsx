@@ -6,6 +6,7 @@ import { ibTopics, type IbTopic } from "@/data/topicsIb";
 import { wjecTopics, type WjecTopic } from "@/data/topicsWjec";
 import { eduqasTopics, type EduqasTopic } from "@/data/topicsEduqas";
 import { gcseTopics, type GcseTopic } from "@/data/topicsGcse";
+import { caieIgcseTopics, type CaieIgcseTopic } from "@/data/topicsCaieIgcse";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
@@ -229,6 +230,15 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
     "Labour Market — Wage Determination",
     // Higher (9 marks)
     "Indirect Tax (Ad Valorem / Specific)",
+  ],
+  "cambridge-igcse": [
+    // Foundation (4 marks)
+    "Supply & Demand — Shift in Demand",
+    "Supply & Demand — Shift in Supply",
+    "AD/AS — Demand-Side Shock",
+    "AD/AS — Supply-Side Shock",
+    "AD/AS — Economic Growth (LRAS Shift)",
+    "Labour Market — Wage Determination",
   ],
 };
 
@@ -692,6 +702,45 @@ export default function DiagramPractice() {
         return combined;
       }
 
+      // CAIE IGCSE: inject real topic data
+      if (subject === "cambridge-igcse") {
+        const caieIgcseScenarios: DiagramScenario[] = caieIgcseTopics.map((t) => ({
+          id: `caie-igcse-${t.slug}`,
+          section: t.section ? inferSectionFromTopicStr(t.section) : inferSectionFromTopicStr(t.title),
+          topic: t.title,
+          difficulty: t.tier as "Foundation" | "Higher",
+          scenario: t.scenario,
+          question: t.question,
+          marks: t.marks,
+          expectedDiagramKeyword: t.slug,
+          hints: [`${t.tier} · ${t.marks} marks`, `CAIE IGCSE`],
+          scenarioVariant: t.scenarioVariant,
+        }));
+
+        const caieIgcseSlugs = new Set(caieIgcseTopics.map((t) => t.title));
+        const remainingTemplates = boardScenarioTemplates
+          .filter((s) => !caieIgcseSlugs.has(s.topic))
+          .filter((s) => sectionFilter === "all" || s.section === sectionFilter)
+          .filter((s) => difficulty === "all" || s.difficulty === difficulty)
+          .map((s, index) => ({
+            id: `${subject}-gen-${index}-${s.expectedDiagramKeyword ?? "topic"}`,
+            section: s.section,
+            topic: s.topic,
+            difficulty: s.difficulty,
+            scenario: `Board-specific diagram practice for CAIE IGCSE: ${s.topic}.`,
+            question: `Generate and answer an exam-style ${s.marks}-mark diagram task for CAIE IGCSE on "${s.topic}". Your diagram and explanation should match the style expected for ${subjectLabel}.`,
+            marks: s.marks,
+            expectedDiagramKeyword: s.expectedDiagramKeyword ?? inferDiagramType(s.topic),
+            hints: [`This task is aligned to CAIE IGCSE.`, `Focus on the conventions and command style expected in ${subjectLabel}.`],
+          }));
+
+        const combined = [
+          ...caieIgcseScenarios.filter((s) => sectionFilter === "all" || s.section === sectionFilter).filter((s) => difficulty === "all" || s.difficulty === difficulty),
+          ...remainingTemplates,
+        ];
+        return combined;
+      }
+
       return boardScenarioTemplates
         .filter(s => sectionFilter === "all" || s.section === sectionFilter)
         .filter(s => difficulty === "all" || s.difficulty === difficulty)
@@ -935,7 +984,17 @@ Format: Give the scenario context with Figure 1, then the question. Nothing else
       ? eduqasTopics.find((t) => `eduqas-${t.slug}` === scenario.id)
       : undefined;
 
-    const boardTopic = edexcelBTopic || ocrTopic || caieTopic || ibTopic || wjecTopic || eduqasTopic;
+    // Check if this is a CAIE IGCSE topic with real scenario data
+    const caieIgcseTopic = subject === "cambridge-igcse"
+      ? caieIgcseTopics.find((t) => `caie-igcse-${t.slug}` === scenario.id)
+      : undefined;
+
+    // Check if this is an AQA GCSE topic with real scenario data
+    const gcseTopic = subject === "aqa-gcse"
+      ? gcseTopics.find((t) => `gcse-${t.slug}` === scenario.id)
+      : undefined;
+
+    const boardTopic = edexcelBTopic || ocrTopic || caieTopic || ibTopic || wjecTopic || eduqasTopic || caieIgcseTopic || gcseTopic;
     if (boardTopic) {
       setGeneratedQ(`**${boardTopic.title}** · ${boardTopic.tier} · ${boardTopic.marks} marks\n\n${boardTopic.scenario}\n\n${boardTopic.question}`);
       setStep("answer");
@@ -1389,7 +1448,10 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             const gcseRefTopic = subject === "aqa-gcse" && selectedScenario
               ? gcseTopics.find((t) => `gcse-${t.slug}` === selectedScenario.id)
               : undefined;
-            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic || ibRefTopic || wjecRefTopic || eduqasRefTopic || gcseRefTopic;
+            const caieIgcseRefTopic = subject === "cambridge-igcse" && selectedScenario
+              ? caieIgcseTopics.find((t) => `caie-igcse-${t.slug}` === selectedScenario.id)
+              : undefined;
+            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic || ibRefTopic || wjecRefTopic || eduqasRefTopic || gcseRefTopic || caieIgcseRefTopic;
 
             if (boardRefTopic) {
               return (
@@ -1697,7 +1759,10 @@ function DiagramFeedbackView({
   const gcseFeedbackTopic = subject === "aqa-gcse" && scenarioId
     ? gcseTopics.find((t) => `gcse-${t.slug}` === scenarioId)
     : undefined;
-  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic || wjecFeedbackTopic || eduqasFeedbackTopic || gcseFeedbackTopic;
+  const caieIgcseFeedbackTopic = subject === "cambridge-igcse" && scenarioId
+    ? caieIgcseTopics.find((t) => `caie-igcse-${t.slug}` === scenarioId)
+    : undefined;
+  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic || wjecFeedbackTopic || eduqasFeedbackTopic || gcseFeedbackTopic || caieIgcseFeedbackTopic;
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     // Board-specific SVG figure (Edexcel B or OCR)

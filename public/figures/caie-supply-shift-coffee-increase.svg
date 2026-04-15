@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520" font-family="Arial, sans-serif">
+  <style>
+    .axis { stroke:#111; stroke-width:2; fill:none; }
+    .curve { stroke-width:2.5; fill:none; }
+    .d  { stroke:#1976d2; }
+    .s1 { stroke:#c62828; }
+    .s2 { stroke:#2e7d32; }
+    .dotted { stroke:#444; stroke-width:1.4; stroke-dasharray:5,4; fill:none; }
+    .arrow { stroke:#2e7d32; stroke-width:2.2; fill:none; marker-end:url(#a); }
+    .lbl   { font-size:14px; fill:#111; }
+    .lblB  { font-size:14px; fill:#111; font-weight:700; }
+    .ttl   { font-size:18px; font-weight:700; fill:#111; }
+    .sub   { font-size:12px; fill:#444; }
+    .pt    { fill:#111; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2e7d32"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="30" text-anchor="middle" class="ttl">Global Coffee Market 2023 — Increase in Supply</text>
+  <text x="350" y="50" text-anchor="middle" class="sub">Favourable Brazilian weather + cheaper fertilizer lower production costs: S1 → S2</text>
+
+  <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
+  <line class="axis" x1="90"  y1="450" x2="640" y2="450"/>
+  <text x="60"  y="80"  class="lblB">Price (£)</text>
+  <text x="540" y="475" class="lblB">Quantity of Coffee</text>
+
+  <!-- Demand: y = 0.625x + 55, (120,130) to (600,430) -->
+  <line class="curve d" x1="120" y1="130" x2="600" y2="430"/>
+  <text x="610" y="430" class="lbl" fill="#1976d2">D</text>
+
+  <!-- S1 (original): (130,430) to (600,130); y = -0.638x + 512.98 -->
+  <line class="curve s1" x1="130" y1="430" x2="600" y2="130"/>
+  <text x="610" y="130" class="lbl" fill="#c62828">S1</text>
+
+  <!-- S2 (shifted RIGHT - parallel right by 80 in x): y = -0.638x + 462.98... 
+       For right shift: new constant = old + 0.638*80 = 562.98? No - to shift right means at given y, x is larger.
+       Original: y=-0.638x+512.98 at y=288 gives x=352. To shift right (x larger), need y=-0.638x+C where C>512.98.
+       Use C = 512.98 + 50 = 562.98. At y=288: x = (562.98-288)/0.638 = 431. So shifted right. ✓
+       Endpoints: at y=430, x=(562.98-430)/0.638=208. At y=130, x=(562.98-130)/0.638=678 (off chart). Use clip at x=620: y=-0.638*620+562.98=167.4
+       So S2 from (208, 430) to (620, 167) -->
+  <line class="curve s2" x1="208" y1="430" x2="620" y2="167"/>
+  <text x="630" y="167" class="lbl" fill="#2e7d32">S2</text>
+
+  <!-- E1: D ∩ S1 → x≈363, y≈282 -->
+  <circle class="pt" cx="363" cy="282" r="4.5"/>
+  <line class="dotted" x1="363" y1="282" x2="363" y2="450"/>
+  <line class="dotted" x1="363" y1="282" x2="90"  y2="282"/>
+  <text x="68"  y="287" class="lblB">P1</text>
+  <text x="357" y="468" class="lblB">Q1</text>
+  <text x="370" y="278" class="lbl">E1</text>
+
+  <!-- E2: D ∩ S2: 0.625x + 55 = -0.638x + 562.98 → 1.263x = 507.98 → x=402, y=306 -->
+  <circle class="pt" cx="402" cy="306" r="4.5"/>
+  <line class="dotted" x1="402" y1="306" x2="402" y2="450"/>
+  <line class="dotted" x1="402" y1="306" x2="90"  y2="306"/>
+  <text x="68"  y="311" class="lblB">P2</text>
+  <text x="396" y="468" class="lblB">Q2</text>
+  <text x="409" y="302" class="lbl">E2</text>
+
+  <path class="arrow" d="M 290 380 q 50 10 80 5"/>
+  <text x="285" y="400" class="lbl" fill="#2e7d32">S shifts right</text>
+
+  <text x="90"  y="495" class="sub">Better growing conditions and lower fertilizer costs cut farmers' costs of production.</text>
+  <text x="90"  y="512" class="sub">More coffee is supplied at every price → S1 → S2 → equilibrium moves to (P2, Q2): lower price, higher quantity.</text>
+</svg>
