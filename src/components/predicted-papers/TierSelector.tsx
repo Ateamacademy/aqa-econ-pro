@@ -16,7 +16,7 @@ const tiers = [
   {
     value: "Higher" as const,
     label: "Higher",
-    desc: "Grades 4–9. Includes advanced algebra, trigonometry, circle theorems, and proof.",
+    desc: "Grades 4–9. Includes advanced topics, extended-response questions, and higher-order analysis.",
     icon: TrendingUp,
   },
 ];
