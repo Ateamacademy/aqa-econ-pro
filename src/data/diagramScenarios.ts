@@ -8,7 +8,7 @@ export interface DiagramScenario {
   id: string;
   section: string;
   topic: string;
-  difficulty: "Foundation" | "Intermediate" | "Advanced" | "Higher";
+  difficulty: "Foundation" | "Intermediate" | "Advanced";
   scenario: string;
   question: string;
   marks: number;

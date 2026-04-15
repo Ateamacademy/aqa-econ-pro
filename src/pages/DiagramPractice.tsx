@@ -232,23 +232,16 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
   ],
 };
 
-const ALL_DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced", "Higher"] as const;
+const ALL_DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced"] as const;
 
-const BOARD_DIFFICULTY_LEVELS: Record<string, readonly string[]> = {
-  "aqa-gcse": ["Foundation", "Intermediate", "Higher"],
-  "eduqas": ["Foundation", "Intermediate", "Advanced"],
-  // default: all four
-};
-
-const getDifficultyLevels = (board: string) =>
-  BOARD_DIFFICULTY_LEVELS[board] ?? ALL_DIFFICULTY_LEVELS;
+const getDifficultyLevels = (_board: string) => ALL_DIFFICULTY_LEVELS;
 
 type PracticeMode = "ai" | "scenario";
 
 type BoardScenarioTemplate = {
   section: DiagramSection;
   topic: string;
-  difficulty: "Foundation" | "Intermediate" | "Advanced" | "Higher";
+  difficulty: "Foundation" | "Intermediate" | "Advanced";
   marks: number;
   expectedDiagramKeyword?: string;
 };
@@ -341,16 +334,14 @@ const buildBoardScenarioTemplates = (subject: string): BoardScenarioTemplate[] =
     return match?.[1] ?? "PPFs, Markets & Allocation";
   };
 
-  const inferDifficultyFromTopic = (topic: string): "Foundation" | "Intermediate" | "Advanced" | "Higher" => {
-    // AQA GCSE Higher tier: 9-mark extended-response
-    if (subject === "aqa-gcse" && /ad valorem|specific|indirect tax/i.test(topic)) return "Higher";
-    if (/oligopoly|phillips|lorenz|monopsony|tradable|j-curve|specific|ad valorem|shutdown|welfare|multiple shifts/i.test(topic)) return "Advanced";
+  const inferDifficultyFromTopic = (topic: string): "Foundation" | "Intermediate" | "Advanced" => {
+    if (/oligopoly|phillips|lorenz|monopsony|tradable|j-curve|specific|ad valorem|shutdown|welfare|multiple shifts|indirect tax/i.test(topic)) return "Advanced";
     if (/externalit|subsidy|minimum price|maximum price|cost|monopoly|perfect competition|keynesian|exchange rate|tariff/i.test(topic)) return "Intermediate";
     return "Foundation";
   };
 
-  const inferMarksFromDifficulty = (difficulty: "Foundation" | "Intermediate" | "Advanced" | "Higher") =>
-    difficulty === "Foundation" ? 4 : difficulty === "Intermediate" ? 6 : difficulty === "Higher" ? 9 : 8;
+  const inferMarksFromDifficulty = (difficulty: "Foundation" | "Intermediate" | "Advanced") =>
+    difficulty === "Foundation" ? 4 : difficulty === "Intermediate" ? 6 : 8;
 
   const uniqueTopics = Array.from(new Set(DIAGRAM_TOPICS[subject] || DIAGRAM_TOPICS.economics));
 
@@ -658,7 +649,7 @@ export default function DiagramPractice() {
           id: `gcse-${t.slug}`,
           section: t.section ? inferSectionFromTopicStr(t.section) : inferSectionFromTopicStr(t.title),
           topic: t.title,
-          difficulty: t.tier as "Foundation" | "Intermediate" | "Advanced" | "Higher",
+          difficulty: t.tier as "Foundation" | "Intermediate" | "Advanced",
           scenario: t.scenario,
           question: t.question,
           marks: t.marks,
@@ -1282,7 +1273,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                               ? "bg-indigo-500/15 text-indigo-300 border-indigo-400/40"
                               : s.difficulty === "Foundation" ? "bg-accent/20 text-accent-foreground border-transparent" :
                               s.difficulty === "Intermediate" ? "bg-secondary text-secondary-foreground border-transparent" :
-                              s.difficulty === "Higher" ? "bg-amber-500/15 text-amber-300 border-amber-400/40" :
+                              
                               "bg-destructive/10 text-destructive border-transparent"
                           )}>{s.difficulty}</span>
                           <span className="text-[10px] font-bold text-muted-foreground">[{s.marks}]</span>
