@@ -153,4 +153,138 @@ export const caieIgcseTopics: CaieIgcseTopic[] = [
     ],
     scenarioVariant: "Wage Determination in the UK Nursing Labour Market",
   },
+
+  // ── Higher (6 marks) ────────────────────────────────────────
+  {
+    slug: "caie-indirect-tax-cigarettes",
+    board: "CAIE-IGCSE",
+    tier: "Higher",
+    section: "Government Intervention — Indirect Tax",
+    marks: 6,
+    title: "Government Intervention — Indirect Tax",
+    scenario:
+      "The government of a developing country introduces a specific tax on cigarettes to reduce smoking rates and raise revenue for public health services. Prior to the tax, the market was in equilibrium at price P1 and quantity Q1.",
+    question:
+      "Using a supply and demand diagram, analyse the impact of a specific indirect tax on the market for cigarettes. In your answer, show the tax wedge, identify the new equilibrium, and explain how the tax burden is shared between consumers and producers. Discuss whether the tax is likely to significantly reduce smoking.",
+    figureFile: "/figures/caie-indirect-tax.svg",
+    explanation:
+      "A specific tax adds a fixed amount to each unit's cost of production, shifting the supply curve upward (parallel) from S to S + Tax. The new equilibrium sits at a higher consumer price (P2) and lower quantity (Q2). The vertical gap between P2 and P_prod is the tax wedge — government revenue per unit. Consumer incidence = P2 − P1; producer incidence = P1 − P_prod. Because demand for cigarettes is highly price inelastic (addictive good), consumers bear most of the tax burden and quantity falls only slightly — the tax raises substantial revenue but may not significantly reduce consumption.",
+    keyTerms: ["indirect tax", "specific tax", "tax incidence", "tax wedge", "price inelasticity"],
+    diagramRequirements: [
+      { requirement: "Correctly labelled diagram showing S → S + Tax shift and new equilibrium (P2, Q2)", marks: 2 },
+      { requirement: "Clear identification of tax wedge (P2 − P_prod) and government revenue area", marks: 2 },
+      { requirement: "Analysis of consumer vs producer burden and link to PED of cigarettes", marks: 2 },
+    ],
+    scenarioVariant: "Specific Tax on Cigarettes in a Developing Country",
+  },
+  {
+    slug: "caie-neg-ext-copper-mining",
+    board: "CAIE-IGCSE",
+    tier: "Higher",
+    section: "Market Failure — Negative Externality",
+    marks: 6,
+    title: "Market Failure — Negative Externality",
+    scenario:
+      "A large copper mining company in Zambia produces significant water and air pollution that affects local communities. The private costs of production (MPC) do not include the environmental and health costs imposed on third parties.",
+    question:
+      "Using an externality diagram with MPC, MSC, and MPB curves, explain why the free market over-produces copper relative to the socially optimal level. Identify the deadweight welfare loss and suggest one government policy to correct this market failure.",
+    figureFile: "/figures/caie-neg-ext-copper.svg",
+    explanation:
+      "Copper mining creates negative externalities (water pollution, respiratory illness) that impose costs on third parties not involved in the transaction. MSC > MPC at every output level — the gap is the external cost per unit. The free market produces at Qm (where MPB = MPC), but the socially optimal output is Q* (where MSB = MSC). Over-production of Qm − Q* units creates a deadweight welfare loss (the shaded triangle). Government could impose a Pigouvian tax equal to the external cost at Q*, shifting MPC up to MSC and internalising the externality.",
+    keyTerms: ["negative externality", "MSC", "MPC", "deadweight welfare loss", "Pigouvian tax"],
+    diagramRequirements: [
+      { requirement: "Draw MPC, MSC, and MPB/MSB with correct relative positions (MSC above MPC)", marks: 2 },
+      { requirement: "Identify free market output (Qm) and socially optimal output (Q*) with DWL", marks: 2 },
+      { requirement: "Explain external cost and suggest a corrective policy (e.g. tax, regulation)", marks: 2 },
+    ],
+    scenarioVariant: "Copper Mining Pollution in Zambia",
+  },
+  {
+    slug: "caie-pos-ext-vaccines",
+    board: "CAIE-IGCSE",
+    tier: "Higher",
+    section: "Market Failure — Positive Externality",
+    marks: 6,
+    title: "Market Failure — Positive Externality",
+    scenario:
+      "The World Health Organisation (WHO) recommends that all children receive vaccinations against measles. Vaccination creates benefits not only for the individual (private benefit) but also for the wider community through herd immunity (external benefit).",
+    question:
+      "Using an externality diagram, explain why the free market is likely to under-provide vaccinations. Show the difference between the free market and socially optimal outcomes, and suggest one policy the government could use to increase vaccination rates.",
+    figureFile: "/figures/caie-pos-ext-vaccines.svg",
+    explanation:
+      "Vaccination creates positive externalities — herd immunity protects unvaccinated individuals, reducing disease transmission. MSB > MPB at every quantity. The free market produces at Qm (where MPB = MPC), but the socially optimal output is Q* (where MSB = MSC). The gap Qm to Q* represents under-consumption — a welfare loss. Government can subsidise vaccines (shifting MPC down to encourage consumption to Q*), provide them free through the NHS, or mandate vaccination for school entry.",
+    keyTerms: ["positive externality", "MSB", "MPB", "under-consumption", "merit good"],
+    diagramRequirements: [
+      { requirement: "Draw MPC/MSC, MPB, and MSB with correct positions (MSB above MPB)", marks: 2 },
+      { requirement: "Identify free market output (Qm) vs socially optimal output (Q*)", marks: 2 },
+      { requirement: "Explain external benefit and suggest a corrective policy (subsidy, provision)", marks: 2 },
+    ],
+    scenarioVariant: "Childhood Vaccination and Herd Immunity",
+  },
+  {
+    slug: "caie-perfect-comp-sr",
+    board: "CAIE-IGCSE",
+    tier: "Higher",
+    section: "Market Structure — Perfect Competition",
+    marks: 6,
+    title: "Market Structure — Perfect Competition",
+    scenario:
+      "A small wheat farmer operates in a perfectly competitive market. In the short run, the market price is above the farmer's average total cost (ATC), allowing the firm to earn abnormal profit.",
+    question:
+      "Using a diagram showing MC, ATC, and AR/MR, explain how a perfectly competitive firm determines its profit-maximising output in the short run. Show the area of abnormal profit and explain why this profit cannot persist in the long run.",
+    figureFile: "/figures/caie-perfect-competition.svg",
+    explanation:
+      "The firm is a price taker — it faces a perfectly elastic demand curve at the market price (AR = MR = P). Profit is maximised where MC = MR, giving output Q*. At Q*, AR > ATC, so the firm earns abnormal (supernormal) profit — the shaded rectangle between AR and ATC over the range 0 to Q*. In the long run, abnormal profit attracts new entrants → market supply increases → market price falls until AR = ATC and only normal profit remains. This is allocative efficiency: P = MC at long-run equilibrium.",
+    keyTerms: ["perfect competition", "abnormal profit", "MC = MR rule", "price taker", "allocative efficiency"],
+    diagramRequirements: [
+      { requirement: "Draw MC, ATC curves and horizontal AR = MR = P line", marks: 2 },
+      { requirement: "Identify profit-maximising output (Q*) where MC = MR and shade abnormal profit", marks: 2 },
+      { requirement: "Explain long-run adjustment: entry of firms, price falls to ATC, normal profit only", marks: 2 },
+    ],
+    scenarioVariant: "Wheat Farming — Short-Run Abnormal Profit",
+  },
+  {
+    slug: "caie-price-discrimination-airlines",
+    board: "CAIE-IGCSE",
+    tier: "Higher",
+    section: "Market Structure — Price Discrimination",
+    marks: 6,
+    title: "Market Structure — Price Discrimination",
+    scenario:
+      "A major airline charges business travellers significantly higher fares than leisure travellers for the same flight. Business travellers have inelastic demand (they must travel for work), while leisure travellers have elastic demand (they can choose alternative holidays).",
+    question:
+      "Using diagrams for two separate markets, explain how third-degree price discrimination works. Show why the airline charges a higher price to business travellers and a lower price to leisure travellers. Discuss the conditions necessary for price discrimination to be successful.",
+    figureFile: "/figures/caie-price-discrimination.svg",
+    explanation:
+      "Third-degree price discrimination involves charging different prices to different groups of consumers for the same product. The airline segments the market by PED: business travellers (inelastic demand → steep curve → higher fare P_b) and leisure travellers (elastic demand → flat curve → lower fare P_l). The firm sets MR = MC in each market. Conditions required: (1) market power (price maker), (2) ability to separate markets (prevent resale between groups), (3) different PED between groups. The firm increases total revenue compared to charging a single price.",
+    keyTerms: ["price discrimination", "third-degree", "PED", "market power", "consumer surplus"],
+    diagramRequirements: [
+      { requirement: "Draw two market diagrams showing different demand elasticities (steep vs flat)", marks: 2 },
+      { requirement: "Show higher price in inelastic market (P_b) and lower price in elastic market (P_l)", marks: 2 },
+      { requirement: "Explain conditions for price discrimination and its effect on revenue", marks: 2 },
+    ],
+    scenarioVariant: "Airline Pricing — Business vs Leisure Travellers",
+  },
+  {
+    slug: "caie-ped-revenue-elastic",
+    board: "CAIE-IGCSE",
+    tier: "Higher",
+    section: "Elasticity — PED and Revenue",
+    marks: 6,
+    title: "Elasticity — PED and Revenue",
+    scenario:
+      "A supermarket chain is considering whether to reduce the price of its branded smartphones. Market research suggests that the demand for these smartphones is price elastic (|PED| > 1), meaning consumers are highly responsive to price changes.",
+    question:
+      "Using a diagram, explain the relationship between price elasticity of demand and total revenue. Show what happens to total revenue when the supermarket reduces the price of smartphones. Identify the areas of revenue gained and revenue lost on your diagram.",
+    figureFile: "/figures/caie-ped-elastic.svg",
+    explanation:
+      "When |PED| > 1, the percentage change in quantity demanded exceeds the percentage change in price. A price cut from P1 to P2 causes a proportionally larger increase in quantity from Q1 to Q2. Revenue lost (on existing units sold at a lower price) is smaller than revenue gained (from the large increase in units sold). Net effect: total revenue rises. The diagram shows the red 'revenue lost' rectangle is smaller than the green 'revenue gained' rectangle. This is why firms with elastic demand should cut prices — and why firms with inelastic demand should raise prices — to maximise total revenue.",
+    keyTerms: ["PED", "elastic demand", "total revenue", "revenue maximisation", "price strategy"],
+    diagramRequirements: [
+      { requirement: "Draw a relatively flat (elastic) demand curve with two price-quantity points", marks: 2 },
+      { requirement: "Show and label revenue lost (red) and revenue gained (green) areas", marks: 2 },
+      { requirement: "Explain why TR rises when price falls with elastic demand (|PED| > 1)", marks: 2 },
+    ],
+    scenarioVariant: "Smartphone Pricing — Elastic Demand and Revenue",
+  },
 ];
