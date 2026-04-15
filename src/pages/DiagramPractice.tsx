@@ -232,7 +232,16 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
   ],
 };
 
-const DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced", "Higher"] as const;
+const ALL_DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced", "Higher"] as const;
+
+const BOARD_DIFFICULTY_LEVELS: Record<string, readonly string[]> = {
+  "aqa-gcse": ["Foundation", "Intermediate", "Higher"],
+  "eduqas": ["Foundation", "Intermediate", "Advanced"],
+  // default: all four
+};
+
+const getDifficultyLevels = (board: string) =>
+  BOARD_DIFFICULTY_LEVELS[board] ?? ALL_DIFFICULTY_LEVELS;
 
 type PracticeMode = "ai" | "scenario";
 
@@ -1235,7 +1244,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                     <label className="text-sm font-medium mb-1 block">Difficulty</label>
                     <select value={difficulty} onChange={e => setDifficulty(e.target.value)} className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm">
                       <option value="all">All</option>
-                      {DIFFICULTY_LEVELS.map(d => <option key={d} value={d}>{d}</option>)}
+                      {getDifficultyLevels(subject).map(d => <option key={d} value={d}>{d}</option>)}
                     </select>
                   </div>
                 </div>
@@ -1296,7 +1305,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                 <div>
                   <label className="text-sm font-medium mb-1 block">Difficulty</label>
                   <select value={difficulty} onChange={e => setDifficulty(e.target.value)} className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm">
-                    {DIFFICULTY_LEVELS.map(d => <option key={d} value={d}>{d}</option>)}
+                    {getDifficultyLevels(subject).map(d => <option key={d} value={d}>{d}</option>)}
                   </select>
                 </div>
                 {!isCertainlyBlocked ? (
