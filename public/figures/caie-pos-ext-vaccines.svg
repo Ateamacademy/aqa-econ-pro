@@ -1,51 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 480" font-family="Inter, Arial, sans-serif">
-  <rect width="620" height="480" fill="#ffffff"/>
-  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Positive Consumption Externality — Vaccinations (India/Vietnam)</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 540" font-family="Arial, sans-serif">
+  <style>
+    .axis { stroke:#111; stroke-width:2; fill:none; }
+    .curve { stroke-width:2.5; fill:none; }
+    .mpb { stroke:#1976d2; }
+    .msb { stroke:#0d47a1; stroke-dasharray:2,2; }
+    .msc { stroke:#c62828; }
+    .dotted { stroke:#444; stroke-width:1.4; stroke-dasharray:5,4; fill:none; }
+    .dwl   { fill:#66bb6a; opacity:0.55; stroke:#1b5e20; stroke-width:1; }
+    .lbl   { font-size:14px; fill:#111; }
+    .lblB  { font-size:14px; fill:#111; font-weight:700; }
+    .ttl   { font-size:18px; font-weight:700; fill:#111; }
+    .sub   { font-size:12px; fill:#444; }
+    .pt    { fill:#111; }
+  </style>
 
-  <line x1="90" y1="410" x2="600" y2="410" stroke="#0f172a" stroke-width="2"/>
-  <line x1="90" y1="60" x2="90" y2="410" stroke="#0f172a" stroke-width="2"/>
-  <text x="555" y="430" font-size="12" fill="#0f172a">Quantity (Q)</text>
-  <text x="60" y="55" font-size="12" fill="#0f172a">Price (£)</text>
+  <text x="350" y="28" text-anchor="middle" class="ttl">Positive Externality of Consumption — Childhood Vaccinations</text>
+  <text x="350" y="48" text-anchor="middle" class="sub">Herd immunity benefits third parties: MSB sits above MPB → market under-provides vaccinations</text>
 
-  <!-- MPC = MSC (upward) -->
-  <line x1="130" y1="390" x2="540" y2="120" stroke="#15803d" stroke-width="2.6"/>
-  <text x="545" y="125" font-size="11" font-weight="600" fill="#15803d">MPC = MSC</text>
+  <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
+  <line class="axis" x1="90"  y1="450" x2="640" y2="450"/>
+  <text x="40"  y="80"  class="lblB">Price /</text>
+  <text x="40"  y="98"  class="lblB">Benefit</text>
+  <text x="555" y="475" class="lblB">Quantity (vaccinations)</text>
 
-  <!-- MPB (downward) -->
-  <line x1="130" y1="180" x2="500" y2="390" stroke="#d97706" stroke-width="2.6"/>
-  <text x="505" y="395" font-size="11" font-weight="600" fill="#d97706">MPB</text>
+  <!-- Welfare loss triangle: vertices at E1 (315, 292), MSB at Q1 (315, 232), and E* (359, 259) -->
+  <polygon class="dwl" points="315,292 315,232 359,259"/>
 
-  <!-- MSB (downward, above MPB by EB) -->
-  <line x1="130" y1="110" x2="560" y2="355" stroke="#be123c" stroke-width="2.6"/>
-  <text x="565" y="360" font-size="11" font-weight="600" fill="#be123c">MSB</text>
+  <!-- MPB (private benefit, lower curve). y = 0.625x + 95; from (120,170) to (560,445) -->
+  <line class="curve mpb" x1="120" y1="170" x2="560" y2="445"/>
+  <text x="565" y="445" class="lbl" fill="#1976d2">MPB</text>
 
-  <!-- EB bracket -->
-  <defs>
-    <marker id="arrEBu" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#be123c"/></marker>
-    <marker id="arrEBd" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#be123c"/></marker>
-  </defs>
-  <line x1="450" y1="285" x2="450" y2="318" stroke="#be123c" stroke-width="1.5" marker-start="url(#arrEBd)" marker-end="url(#arrEBu)"/>
-  <text x="458" y="307" font-size="11" font-weight="700" fill="#be123c">EB</text>
+  <!-- MSB (social benefit, above MPB by external benefit). y = 0.625x + 35; from (120,110) to (560,385) -->
+  <line class="curve msb" x1="120" y1="110" x2="560" y2="385"/>
+  <text x="565" y="385" class="lbl" fill="#0d47a1">MSB</text>
 
-  <!-- Qm at (301, 277); Qs at (358, 240) -->
-  <circle cx="301" cy="277" r="5" fill="#d97706"/>
-  <line x1="90" y1="277" x2="301" y2="277" stroke="#d97706" stroke-dasharray="3,3" stroke-width="1.2"/>
-  <line x1="301" y1="277" x2="301" y2="410" stroke="#d97706" stroke-dasharray="3,3" stroke-width="1.2"/>
-  <text x="68" y="281" font-size="11" font-weight="700" fill="#d97706">Pm</text>
-  <text x="301" y="425" text-anchor="middle" font-size="11" font-weight="700" fill="#d97706">Qm</text>
+  <!-- MSC = MPC (supply). y = -0.744x + 526.7; from (130,430) to (560,110) -->
+  <line class="curve msc" x1="130" y1="430" x2="560" y2="110"/>
+  <text x="565" y="110" class="lbl" fill="#c62828">MSC = MPC</text>
 
-  <circle cx="358" cy="240" r="5" fill="#be123c"/>
-  <line x1="90" y1="240" x2="358" y2="240" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
-  <line x1="358" y1="240" x2="358" y2="410" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
-  <text x="68" y="244" font-size="11" font-weight="700" fill="#be123c">Ps</text>
-  <text x="358" y="440" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Qs</text>
+  <!-- Free market E1 = MPB ∩ MSC: x≈315, y≈292 -->
+  <circle class="pt" cx="315" cy="292" r="4.5"/>
+  <line class="dotted" x1="315" y1="292" x2="315" y2="450"/>
+  <line class="dotted" x1="315" y1="292" x2="90"  y2="292"/>
+  <text x="60"  y="297" class="lblB">P1</text>
+  <text x="308" y="468" class="lblB">Q1</text>
+  <text x="285" y="289" class="lbl">E1</text>
 
-  <!-- Welfare gain triangle -->
-  <polygon points="301,277 301,208 358,240" fill="#bbf7d0" fill-opacity="0.7" stroke="#15803d" stroke-width="1.5"/>
+  <!-- Social optimum E* = MSB ∩ MSC: x≈359, y≈259 -->
+  <circle class="pt" cx="359" cy="259" r="4.5"/>
+  <line class="dotted" x1="359" y1="259" x2="359" y2="450"/>
+  <line class="dotted" x1="359" y1="259" x2="90"  y2="259"/>
+  <text x="60"  y="264" class="lblB">P*</text>
+  <text x="354" y="468" class="lblB">Q*</text>
+  <text x="365" y="255" class="lbl">E*</text>
 
-  <line x1="400" y1="175" x2="335" y2="230" stroke="#15803d" stroke-width="1.3"/>
-  <text x="405" y="173" font-size="11" font-weight="700" fill="#15803d">Welfare Gain</text>
-  <text x="405" y="187" font-size="10" fill="#15803d">(lost due to Qm &lt; Qs)</text>
+  <line class="dotted" x1="335" y1="265" x2="450" y2="220" stroke="#1b5e20"/>
+  <text x="455" y="222" class="lbl" fill="#1b5e20">Welfare loss (DWL)</text>
 
-  <text x="310" y="465" text-anchor="middle" font-size="11" fill="#334155">Vaccinations → MSB &gt; MPB by EB. Market under-consumes (Qm &lt; Qs). Subsidy shifts MPB to MSB → reaches Qs.</text>
+  <text x="90"  y="495" class="sub">Free market chooses MPB = MSC at Q1; social optimum is at MSB = MSC at Q* &gt; Q1 → underconsumption.</text>
+  <text x="90"  y="512" class="sub">Between Q1 and Q*, MSB &gt; MSC: each extra vaccination benefits society more than it costs to deliver.</text>
+  <text x="90"  y="529" class="sub">Policy: a per-dose subsidy (or free public provision) shifts effective MPB up to MSB and moves uptake to Q*.</text>
 </svg>
