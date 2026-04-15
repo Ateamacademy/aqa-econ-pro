@@ -850,7 +850,12 @@ Format: Give the scenario context with Figure 1, then the question. Nothing else
       ? wjecTopics.find((t) => `wjec-${t.slug}` === scenario.id)
       : undefined;
 
-    const boardTopic = edexcelBTopic || ocrTopic || caieTopic || ibTopic || wjecTopic;
+    // Check if this is an Eduqas topic with real scenario data
+    const eduqasTopic = subject === "eduqas"
+      ? eduqasTopics.find((t) => `eduqas-${t.slug}` === scenario.id)
+      : undefined;
+
+    const boardTopic = edexcelBTopic || ocrTopic || caieTopic || ibTopic || wjecTopic || eduqasTopic;
     if (boardTopic) {
       setGeneratedQ(`**${boardTopic.title}** · ${boardTopic.tier} · ${boardTopic.marks} marks\n\n${boardTopic.scenario}\n\n${boardTopic.question}`);
       setStep("answer");
