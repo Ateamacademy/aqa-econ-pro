@@ -5,6 +5,7 @@ import { caieTopics, type CaieTopic } from "@/data/topicsCaie";
 import { ibTopics, type IbTopic } from "@/data/topicsIb";
 import { wjecTopics, type WjecTopic } from "@/data/topicsWjec";
 import { eduqasTopics, type EduqasTopic } from "@/data/topicsEduqas";
+import { gcseTopics, type GcseTopic } from "@/data/topicsGcse";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
@@ -218,16 +219,27 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
     // Advanced (8 marks)
     "Indirect Tax (Ad Valorem / Specific)",
   ],
+  "aqa-gcse": [
+    // Foundation (4 marks) — generic topics inferred by difficulty engine
+    "Supply & Demand — Shift in Demand",
+    "Supply & Demand — Shift in Supply",
+    "AD/AS — Demand-Side Shock",
+    "AD/AS — Supply-Side Shock",
+    "AD/AS — Economic Growth (LRAS Shift)",
+    "Labour Market — Wage Determination",
+    // Higher (9 marks)
+    "Indirect Tax (Ad Valorem / Specific)",
+  ],
 };
 
-const DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced"] as const;
+const DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced", "Higher"] as const;
 
 type PracticeMode = "ai" | "scenario";
 
 type BoardScenarioTemplate = {
   section: DiagramSection;
   topic: string;
-  difficulty: "Foundation" | "Intermediate" | "Advanced";
+  difficulty: "Foundation" | "Intermediate" | "Advanced" | "Higher";
   marks: number;
   expectedDiagramKeyword?: string;
 };
@@ -320,14 +332,16 @@ const buildBoardScenarioTemplates = (subject: string): BoardScenarioTemplate[] =
     return match?.[1] ?? "PPFs, Markets & Allocation";
   };
 
-  const inferDifficultyFromTopic = (topic: string): "Foundation" | "Intermediate" | "Advanced" => {
+  const inferDifficultyFromTopic = (topic: string): "Foundation" | "Intermediate" | "Advanced" | "Higher" => {
+    // AQA GCSE Higher tier: 9-mark extended-response
+    if (subject === "aqa-gcse" && /ad valorem|specific|indirect tax/i.test(topic)) return "Higher";
     if (/oligopoly|phillips|lorenz|monopsony|tradable|j-curve|specific|ad valorem|shutdown|welfare|multiple shifts/i.test(topic)) return "Advanced";
     if (/externalit|subsidy|minimum price|maximum price|cost|monopoly|perfect competition|keynesian|exchange rate|tariff/i.test(topic)) return "Intermediate";
     return "Foundation";
   };
 
-  const inferMarksFromDifficulty = (difficulty: "Foundation" | "Intermediate" | "Advanced") =>
-    difficulty === "Foundation" ? 4 : difficulty === "Intermediate" ? 6 : 8;
+  const inferMarksFromDifficulty = (difficulty: "Foundation" | "Intermediate" | "Advanced" | "Higher") =>
+    difficulty === "Foundation" ? 4 : difficulty === "Intermediate" ? 6 : difficulty === "Higher" ? 9 : 8;
 
   const uniqueTopics = Array.from(new Set(DIAGRAM_TOPICS[subject] || DIAGRAM_TOPICS.economics));
 
@@ -624,6 +638,45 @@ export default function DiagramPractice() {
 
         const combined = [
           ...eduqasScenarios.filter((s) => sectionFilter === "all" || s.section === sectionFilter).filter((s) => difficulty === "all" || s.difficulty === difficulty),
+          ...remainingTemplates,
+        ];
+        return combined;
+      }
+
+      // AQA GCSE: inject real topic data
+      if (subject === "aqa-gcse") {
+        const gcseScenarios: DiagramScenario[] = gcseTopics.map((t) => ({
+          id: `gcse-${t.slug}`,
+          section: t.section ? inferSectionFromTopicStr(t.section) : inferSectionFromTopicStr(t.title),
+          topic: t.title,
+          difficulty: t.tier as "Foundation" | "Intermediate" | "Advanced" | "Higher",
+          scenario: t.scenario,
+          question: t.question,
+          marks: t.marks,
+          expectedDiagramKeyword: t.slug,
+          hints: [`${t.tier} · ${t.marks} marks`, `AQA GCSE`],
+          scenarioVariant: t.scenarioVariant,
+        }));
+
+        const gcseSlugs = new Set(gcseTopics.map((t) => t.title));
+        const remainingTemplates = boardScenarioTemplates
+          .filter((s) => !gcseSlugs.has(s.topic))
+          .filter((s) => sectionFilter === "all" || s.section === sectionFilter)
+          .filter((s) => difficulty === "all" || s.difficulty === difficulty)
+          .map((s, index) => ({
+            id: `${subject}-gen-${index}-${s.expectedDiagramKeyword ?? "topic"}`,
+            section: s.section,
+            topic: s.topic,
+            difficulty: s.difficulty,
+            scenario: `Board-specific diagram practice for AQA GCSE: ${s.topic}.`,
+            question: `Generate and answer an exam-style ${s.marks}-mark diagram task for AQA GCSE on "${s.topic}". Your diagram and explanation should match the style expected for ${subjectLabel}.`,
+            marks: s.marks,
+            expectedDiagramKeyword: s.expectedDiagramKeyword ?? inferDiagramType(s.topic),
+            hints: [`This task is aligned to AQA GCSE.`, `Focus on the conventions and command style expected in ${subjectLabel}.`],
+          }));
+
+        const combined = [
+          ...gcseScenarios.filter((s) => sectionFilter === "all" || s.section === sectionFilter).filter((s) => difficulty === "all" || s.difficulty === difficulty),
           ...remainingTemplates,
         ];
         return combined;
@@ -1220,6 +1273,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                               ? "bg-indigo-500/15 text-indigo-300 border-indigo-400/40"
                               : s.difficulty === "Foundation" ? "bg-accent/20 text-accent-foreground border-transparent" :
                               s.difficulty === "Intermediate" ? "bg-secondary text-secondary-foreground border-transparent" :
+                              s.difficulty === "Higher" ? "bg-amber-500/15 text-amber-300 border-amber-400/40" :
                               "bg-destructive/10 text-destructive border-transparent"
                           )}>{s.difficulty}</span>
                           <span className="text-[10px] font-bold text-muted-foreground">[{s.marks}]</span>

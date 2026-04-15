@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 540" font-family="Arial, sans-serif">
+  <style>
+    .axis { stroke:#111; stroke-width:2; fill:none; }
+    .curve { stroke-width:2.5; fill:none; }
+    .d  { stroke:#1976d2; }
+    .s1 { stroke:#c62828; }
+    .s2 { stroke:#7f0000; }
+    .dotted { stroke:#444; stroke-width:1.4; stroke-dasharray:5,4; fill:none; }
+    .arrow { stroke:#7f0000; stroke-width:2.2; fill:none; marker-end:url(#a3); }
+    .revenue { fill:#fff59d; opacity:0.55; stroke:#827717; stroke-width:1; }
+    .wedgeLine { stroke:#5e35b1; stroke-width:2; fill:none; }
+    .incCons { stroke:#1565c0; stroke-width:1.6; fill:none; }
+    .incProd { stroke:#2e7d32; stroke-width:1.6; fill:none; }
+    .lbl   { font-size:13px; fill:#111; }
+    .lblB  { font-size:14px; fill:#111; font-weight:700; }
+    .ttl   { font-size:18px; font-weight:700; fill:#111; }
+    .sub   { font-size:12px; fill:#444; }
+    .pt    { fill:#111; }
+  </style>
+  <defs>
+    <marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7f0000"/>
+    </marker>
+    <marker id="purple" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5e35b1"/>
+    </marker>
+    <marker id="blueArr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1565c0"/>
+    </marker>
+    <marker id="greenArr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2e7d32"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="28" text-anchor="middle" class="ttl">UK Soft Drinks Industry Levy — Ad Valorem Indirect Tax</text>
+  <text x="350" y="48" text-anchor="middle" class="sub">A 20% ad valorem tax pivots Supply from the origin: S → S + tax (steeper)</text>
+
+  <!-- Axes -->
+  <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
+  <line class="axis" x1="90"  y1="450" x2="640" y2="450"/>
+  <text x="55"  y="80"  class="lblB">Price (P)</text>
+  <text x="600" y="475" class="lblB">Quantity (Q)</text>
+
+  <!-- Tax revenue rectangle: x[90, 306], y[246, 303] -->
+  <rect class="revenue" x="90" y="246" width="216" height="57"/>
+
+  <!-- Demand: y = 0.625x + 55, from (120,130) to (600,430) -->
+  <line class="curve d" x1="120" y1="130" x2="600" y2="430"/>
+  <text x="610" y="430" class="lbl" fill="#1976d2">D</text>
+
+  <!-- Supply S (passes through origin (90,450)): from (90,450) to (560,130) -->
+  <line class="curve s1" x1="90" y1="450" x2="560" y2="130"/>
+  <text x="568" y="130" class="lbl" fill="#c62828">S</text>
+
+  <!-- Supply S2 (S + ad valorem tax, steeper, also through origin) -->
+  <line class="curve s2" x1="90" y1="450" x2="430" y2="130"/>
+  <text x="350" y="125" class="lbl" fill="#7f0000">S + ad valorem tax</text>
+
+  <!-- E1: D ∩ S → (349, 273) -->
+  <circle class="pt" cx="349" cy="273" r="4.5"/>
+  <line class="dotted" x1="349" y1="273" x2="349" y2="450"/>
+  <line class="dotted" x1="349" y1="273" x2="90"  y2="273"/>
+  <text x="60"  y="278" class="lblB">P1</text>
+  <text x="343" y="468" class="lblB">Q1</text>
+  <text x="356" y="269" class="lbl">E1</text>
+
+  <!-- E2: D ∩ S2 → (306, 246) -->
+  <circle class="pt" cx="306" cy="246" r="4.5"/>
+  <line class="dotted" x1="306" y1="246" x2="306" y2="450"/>
+  <line class="dotted" x1="306" y1="246" x2="90"  y2="246"/>
+  <text x="60"  y="251" class="lblB">P2</text>
+  <text x="300" y="468" class="lblB">Q2</text>
+  <text x="278" y="243" class="lbl">E2</text>
+
+  <!-- Producer price at Q2 (on original S at x=306): y = 303 -->
+  <circle class="pt" cx="306" cy="303" r="4.5"/>
+  <line class="dotted" x1="306" y1="303" x2="90"  y2="303"/>
+  <text x="32"  y="308" class="lblB">P_prod</text>
+
+  <!-- Tax revenue label (centred inside the box) -->
+  <text x="200" y="282" class="lblB" fill="#827717" text-anchor="middle">Tax revenue</text>
+
+  <!-- Tax wedge bracket on the right side at Q2 -->
+  <line class="wedgeLine" x1="380" y1="246" x2="380" y2="303" marker-start="url(#purple)" marker-end="url(#purple)"/>
+  <text x="388" y="270" class="lblB" fill="#5e35b1">Tax wedge</text>
+  <text x="388" y="286" class="lbl"  fill="#5e35b1">(per unit)</text>
+
+  <!-- Consumer incidence bracket: above the chart at the top -->
+  <line class="incCons" x1="500" y1="246" x2="500" y2="273" marker-start="url(#blueArr)" marker-end="url(#blueArr)"/>
+  <text x="510" y="252" class="lbl" fill="#1565c0">Consumer</text>
+  <text x="510" y="266" class="lbl" fill="#1565c0">incidence</text>
+
+  <!-- Producer incidence bracket: below P1 -->
+  <line class="incProd" x1="500" y1="273" x2="500" y2="303" marker-start="url(#greenArr)" marker-end="url(#greenArr)"/>
+  <text x="510" y="285" class="lbl" fill="#2e7d32">Producer</text>
+  <text x="510" y="299" class="lbl" fill="#2e7d32">incidence</text>
+
+  <!-- Connect incidence brackets visually to the price levels (light dotted extension) -->
+  <line class="dotted" x1="350" y1="246" x2="500" y2="246"/>
+  <line class="dotted" x1="350" y1="273" x2="500" y2="273"/>
+  <line class="dotted" x1="350" y1="303" x2="500" y2="303"/>
+
+  <!-- Shift arrow showing the supply pivot -->
+  <path class="arrow" d="M 220 360 q -10 -40 -50 -65"/>
+  <text x="190" y="380" class="lbl" fill="#7f0000">S pivots up</text>
+
+  <text x="90"  y="495" class="sub">Tax raises firms' costs → S pivots up to S + tax. Equilibrium moves from (P1, Q1) to (P2, Q2): higher price, lower quantity.</text>
+  <text x="90"  y="512" class="sub">Tax wedge at Q2 = (price consumer pays P2) − (price producer keeps P_prod). Yellow box = tax revenue = wedge × Q2.</text>
+  <text x="90"  y="529" class="sub">Burden split depends on relative elasticities. Note: a specific (per-unit) tax would shift S parallel — same wedge at every Q.</text>
+</svg>
