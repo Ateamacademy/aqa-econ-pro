@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 540" font-family="Arial, sans-serif">
+  <style>
+    .axis { stroke:#111; stroke-width:2; fill:none; }
+    .curve { stroke-width:2.5; fill:none; }
+    .d  { stroke:#1976d2; }
+    .s  { stroke:#c62828; }
+    .pmax { stroke:#d32f2f; stroke-width:2.5; }
+    .dotted { stroke:#444; stroke-width:1.4; stroke-dasharray:5,4; fill:none; }
+    .shortage { fill:#ffcdd2; opacity:0.55; stroke:#b71c1c; stroke-width:1; }
+    .lbl   { font-size:14px; fill:#111; }
+    .lblB  { font-size:14px; fill:#111; font-weight:700; }
+    .ttl   { font-size:18px; font-weight:700; fill:#111; }
+    .sub   { font-size:12px; fill:#444; }
+    .pt    { fill:#111; }
+  </style>
+
+  <text x="350" y="28" text-anchor="middle" class="ttl">Maximum Price (Rent Control) — UK Private Rental Market</text>
+  <text x="350" y="48" text-anchor="middle" class="sub">A price ceiling Pmax set below equilibrium creates excess demand (a housing shortage)</text>
+
+  <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
+  <line class="axis" x1="90"  y1="450" x2="640" y2="450"/>
+  <text x="40"  y="80"  class="lblB">Rent (£)</text>
+  <text x="540" y="475" class="lblB">Quantity of Housing</text>
+
+  <!-- Shortage rectangle visual band: between Qs (242) and Qd (488), at level Pmax (y=360) -->
+  <rect class="shortage" x="242" y="355" width="246" height="10"/>
+
+  <!-- Demand: y = 0.625x + 55, (120,130) to (600,430) -->
+  <line class="curve d" x1="120" y1="130" x2="600" y2="430"/>
+  <text x="610" y="430" class="lbl" fill="#1976d2">D</text>
+
+  <!-- Supply: y = -0.625x + 511.25, (130,430) to (610,130) -->
+  <line class="curve s" x1="130" y1="430" x2="610" y2="130"/>
+  <text x="620" y="130" class="lbl" fill="#c62828">S</text>
+
+  <!-- Free market equilibrium at x=365, y=283 -->
+  <circle class="pt" cx="365" cy="283" r="4.5"/>
+  <line class="dotted" x1="365" y1="283" x2="365" y2="450"/>
+  <line class="dotted" x1="365" y1="283" x2="90"  y2="283"/>
+  <text x="60"  y="288" class="lblB">Pe</text>
+  <text x="358" y="468" class="lblB">Qe</text>
+  <text x="372" y="280" class="lbl">E</text>
+
+  <!-- Pmax line at y=360 (below equilibrium price) -->
+  <line class="pmax" x1="90" y1="360" x2="630" y2="360"/>
+  <text x="40"  y="365" class="lblB" fill="#d32f2f">Pmax</text>
+  <text x="635" y="365" class="lbl"  fill="#d32f2f">Price ceiling</text>
+
+  <!-- Qs at intersection of Pmax & S: x=242, y=360 -->
+  <circle class="pt" cx="242" cy="360" r="4.5"/>
+  <line class="dotted" x1="242" y1="360" x2="242" y2="450"/>
+  <text x="234" y="468" class="lblB">Qs</text>
+
+  <!-- Qd at intersection of Pmax & D: x=488, y=360 -->
+  <circle class="pt" cx="488" cy="360" r="4.5"/>
+  <line class="dotted" x1="488" y1="360" x2="488" y2="450"/>
+  <text x="480" y="468" class="lblB">Qd</text>
+
+  <!-- Bracket showing shortage -->
+  <line x1="242" y1="385" x2="488" y2="385" stroke="#b71c1c" stroke-width="1.6"/>
+  <line x1="242" y1="380" x2="242" y2="390" stroke="#b71c1c" stroke-width="1.6"/>
+  <line x1="488" y1="380" x2="488" y2="390" stroke="#b71c1c" stroke-width="1.6"/>
+  <text x="320" y="405" class="lblB" fill="#b71c1c">Shortage = Qd − Qs</text>
+
+  <text x="90"  y="495" class="sub">At the binding ceiling, landlords supply less (contraction along S) and tenants demand more (extension along D).</text>
+  <text x="90"  y="512" class="sub">A persistent shortage emerges. Side-effects can include queues, informal "key money", reduced quality, and black markets.</text>
+  <text x="90"  y="529" class="sub">A maximum price below equilibrium is binding; one set above the equilibrium has no effect on the market.</text>
+</svg>

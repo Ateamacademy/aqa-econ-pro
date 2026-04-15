@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 540" font-family="Arial, sans-serif">
+  <style>
+    .axis { stroke:#111; stroke-width:2; fill:none; }
+    .curve { stroke-width:2.5; fill:none; }
+    .d  { stroke:#1976d2; }
+    .s  { stroke:#c62828; }
+    .pmin { stroke:#388e3c; stroke-width:2.5; }
+    .dotted { stroke:#444; stroke-width:1.4; stroke-dasharray:5,4; fill:none; }
+    .surplus { fill:#c8e6c9; opacity:0.55; stroke:#1b5e20; stroke-width:1; }
+    .lbl   { font-size:14px; fill:#111; }
+    .lblB  { font-size:14px; fill:#111; font-weight:700; }
+    .ttl   { font-size:18px; font-weight:700; fill:#111; }
+    .sub   { font-size:12px; fill:#444; }
+    .pt    { fill:#111; }
+  </style>
+
+  <text x="350" y="28" text-anchor="middle" class="ttl">Minimum Price (National Living Wage) — Low-Skilled Labour Market</text>
+  <text x="350" y="48" text-anchor="middle" class="sub">A wage floor Pmin set above equilibrium creates excess supply of labour (classical unemployment)</text>
+
+  <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
+  <line class="axis" x1="90"  y1="450" x2="640" y2="450"/>
+  <text x="40"  y="80"  class="lblB">Wage (W)</text>
+  <text x="540" y="445" class="lblB" text-anchor="end">Quantity of Labour (L)</text>
+
+  <!-- Surplus band at Pmin level (y=200) between Q1 (232) and Q2 (498) -->
+  <rect class="surplus" x="232" y="195" width="266" height="10"/>
+
+  <!-- Demand for labour DL: y = 0.625x + 55, (120,130) to (600,430) -->
+  <line class="curve d" x1="120" y1="130" x2="600" y2="430"/>
+  <text x="610" y="430" class="lbl" fill="#1976d2">DL = MRP</text>
+
+  <!-- Supply of labour SL: y = -0.625x + 511.25, (130,430) to (610,130) -->
+  <line class="curve s" x1="130" y1="430" x2="610" y2="130"/>
+  <text x="620" y="130" class="lbl" fill="#c62828">SL</text>
+
+  <!-- Free market equilibrium at x=365, y=283 -->
+  <circle class="pt" cx="365" cy="283" r="4.5"/>
+  <line class="dotted" x1="365" y1="283" x2="365" y2="450"/>
+  <line class="dotted" x1="365" y1="283" x2="90"  y2="283"/>
+  <text x="60"  y="288" class="lblB">Pe</text>
+  <text x="358" y="468" class="lblB">Qe</text>
+  <text x="372" y="280" class="lbl">E</text>
+
+  <!-- Pmin line at y=200 (above equilibrium, smaller y = higher wage) -->
+  <line class="pmin" x1="90" y1="200" x2="630" y2="200"/>
+  <text x="40"  y="205" class="lblB" fill="#388e3c">P1</text>
+  <text x="635" y="205" class="lbl"  fill="#388e3c">Wage floor</text>
+
+  <!-- Q1 (Qd at Pmin): D ∩ Pmin: x = (200-55)/0.625 = 232 -->
+  <circle class="pt" cx="232" cy="200" r="4.5"/>
+  <line class="dotted" x1="232" y1="200" x2="232" y2="450"/>
+  <text x="222" y="468" class="lblB">Q1</text>
+
+  <!-- Q2 (Qs at Pmin): S ∩ Pmin: x = (511.25-200)/0.625 = 498 -->
+  <circle class="pt" cx="498" cy="200" r="4.5"/>
+  <line class="dotted" x1="498" y1="200" x2="498" y2="450"/>
+  <text x="495" y="468" class="lblB">Q2</text>
+
+  <!-- Bracket showing unemployment -->
+  <line x1="232" y1="170" x2="498" y2="170" stroke="#1b5e20" stroke-width="1.6"/>
+  <line x1="232" y1="165" x2="232" y2="175" stroke="#1b5e20" stroke-width="1.6"/>
+  <line x1="498" y1="165" x2="498" y2="175" stroke="#1b5e20" stroke-width="1.6"/>
+  <text x="290" y="155" class="lblB" fill="#1b5e20">Excess supply of labour (unemployment)</text>
+
+  <text x="90"  y="495" class="sub">At wage P1 firms hire fewer workers (contraction of labour demand to Q1) while more workers want jobs (extension of supply to Q2).</text>
+  <text x="90"  y="512" class="sub">The gap Q2 − Q1 is classical unemployment — a surplus of labour created by the binding wage floor.</text>
+  <text x="90"  y="529" class="sub">A minimum price below the equilibrium would not bind; the floor only "bites" when set above the market-clearing wage.</text>
+</svg>
