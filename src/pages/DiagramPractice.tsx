@@ -4,6 +4,7 @@ import { ocrTopics, type OcrTopic } from "@/data/topicsOcr";
 import { caieTopics, type CaieTopic } from "@/data/topicsCaie";
 import { ibTopics, type IbTopic } from "@/data/topicsIb";
 import { wjecTopics, type WjecTopic } from "@/data/topicsWjec";
+import { eduqasTopics, type EduqasTopic } from "@/data/topicsEduqas";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
