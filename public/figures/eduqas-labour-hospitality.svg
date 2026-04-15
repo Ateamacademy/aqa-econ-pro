@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520" font-family="Arial, sans-serif">
+  <style>
+    .axis { stroke:#111; stroke-width:2; fill:none; }
+    .curve { stroke-width:2.5; fill:none; }
+    .d  { stroke:#1976d2; }
+    .s1 { stroke:#c62828; }
+    .s2 { stroke:#7f0000; }
+    .dotted { stroke:#444; stroke-width:1.4; stroke-dasharray:5,4; fill:none; }
+    .arrow { stroke:#7f0000; stroke-width:2.2; fill:none; marker-end:url(#a); }
+    .lbl   { font-size:14px; fill:#111; }
+    .lblB  { font-size:14px; fill:#111; font-weight:700; }
+    .ttl   { font-size:18px; font-weight:700; fill:#111; }
+    .sub   { font-size:12px; fill:#444; }
+    .pt    { fill:#111; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7f0000"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="30" text-anchor="middle" class="ttl">UK Hospitality Sector — Decrease in Labour Supply</text>
+  <text x="350" y="50" text-anchor="middle" class="sub">Fewer available workers shift the supply of labour left (S1 → S2)</text>
+
+  <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
+  <line class="axis" x1="90"  y1="450" x2="640" y2="450"/>
+  <text x="40"  y="80"  class="lblB">Wage Rate (W)</text>
+  <text x="510" y="475" class="lblB">Quantity of Labour (L)</text>
+
+  <!-- D = MRP: downward sloping. (120,140) to (610,440) -->
+  <line class="curve d" x1="120" y1="140" x2="610" y2="440"/>
+  <text x="615" y="450" class="lbl" fill="#1976d2">D = MRP</text>
+
+  <line class="curve s1" x1="130" y1="430" x2="620" y2="130"/>
+  <text x="630" y="135" class="lbl" fill="#c62828">S1</text>
+
+  <line class="curve s2" x1="90" y1="406" x2="540" y2="130"/>
+  <text x="100" y="395" class="lbl" fill="#7f0000">S2</text>
+
+  <circle class="pt" cx="362" cy="288" r="4.5"/>
+  <line class="dotted" x1="362" y1="288" x2="362" y2="450"/>
+  <line class="dotted" x1="362" y1="288" x2="90"  y2="288"/>
+  <text x="58"  y="293" class="lblB">W1</text>
+  <text x="357" y="468" class="lblB">L1</text>
+  <text x="370" y="284" class="lbl">E1</text>
+
+  <circle class="pt" cx="322" cy="264" r="4.5"/>
+  <line class="dotted" x1="322" y1="264" x2="322" y2="450"/>
+  <line class="dotted" x1="322" y1="264" x2="90"  y2="264"/>
+  <text x="58"  y="269" class="lblB">W2</text>
+  <text x="315" y="468" class="lblB">L2</text>
+  <text x="300" y="260" class="lbl">E2</text>
+
+  <!-- Shift arrow -->
+  <path class="arrow" d="M 360 350 q -50 -8 -90 -3"/>
+  <text x="280" y="340" class="lbl" fill="#7f0000">S shifts left</text>
+
+  <!-- Caption -->
+  <text x="90"  y="495" class="sub">Fewer workers willing/able to work in hospitality at every wage → labour supply contracts.</text>
+  <text x="90"  y="512" class="sub">Equilibrium moves from (W1,L1) to (W2,L2): wage rate rises and quantity of labour employed falls.</text>
+</svg>
