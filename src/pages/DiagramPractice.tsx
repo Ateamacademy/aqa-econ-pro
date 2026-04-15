@@ -232,7 +232,16 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
   ],
 };
 
-const DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced", "Higher"] as const;
+const ALL_DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced", "Higher"] as const;
+
+const BOARD_DIFFICULTY_LEVELS: Record<string, readonly string[]> = {
+  "aqa-gcse": ["Foundation", "Intermediate", "Higher"],
+  "eduqas": ["Foundation", "Intermediate", "Advanced"],
+  // default: all four
+};
+
+const getDifficultyLevels = (board: string) =>
+  BOARD_DIFFICULTY_LEVELS[board] ?? ALL_DIFFICULTY_LEVELS;
 
 type PracticeMode = "ai" | "scenario";
 
