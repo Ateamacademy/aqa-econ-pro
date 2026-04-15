@@ -643,6 +643,45 @@ export default function DiagramPractice() {
         return combined;
       }
 
+      // AQA GCSE: inject real topic data
+      if (subject === "aqa-gcse") {
+        const gcseScenarios: DiagramScenario[] = gcseTopics.map((t) => ({
+          id: `gcse-${t.slug}`,
+          section: t.section ? inferSectionFromTopicStr(t.section) : inferSectionFromTopicStr(t.title),
+          topic: t.title,
+          difficulty: t.tier as "Foundation" | "Intermediate" | "Advanced" | "Higher",
+          scenario: t.scenario,
+          question: t.question,
+          marks: t.marks,
+          expectedDiagramKeyword: t.slug,
+          hints: [`${t.tier} · ${t.marks} marks`, `AQA GCSE`],
+          scenarioVariant: t.scenarioVariant,
+        }));
+
+        const gcseSlugs = new Set(gcseTopics.map((t) => t.title));
+        const remainingTemplates = boardScenarioTemplates
+          .filter((s) => !gcseSlugs.has(s.topic))
+          .filter((s) => sectionFilter === "all" || s.section === sectionFilter)
+          .filter((s) => difficulty === "all" || s.difficulty === difficulty)
+          .map((s, index) => ({
+            id: `${subject}-gen-${index}-${s.expectedDiagramKeyword ?? "topic"}`,
+            section: s.section,
+            topic: s.topic,
+            difficulty: s.difficulty,
+            scenario: `Board-specific diagram practice for AQA GCSE: ${s.topic}.`,
+            question: `Generate and answer an exam-style ${s.marks}-mark diagram task for AQA GCSE on "${s.topic}". Your diagram and explanation should match the style expected for ${subjectLabel}.`,
+            marks: s.marks,
+            expectedDiagramKeyword: s.expectedDiagramKeyword ?? inferDiagramType(s.topic),
+            hints: [`This task is aligned to AQA GCSE.`, `Focus on the conventions and command style expected in ${subjectLabel}.`],
+          }));
+
+        const combined = [
+          ...gcseScenarios.filter((s) => sectionFilter === "all" || s.section === sectionFilter).filter((s) => difficulty === "all" || s.difficulty === difficulty),
+          ...remainingTemplates,
+        ];
+        return combined;
+      }
+
       return boardScenarioTemplates
         .filter(s => sectionFilter === "all" || s.section === sectionFilter)
         .filter(s => difficulty === "all" || s.difficulty === difficulty)
@@ -1234,6 +1273,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                               ? "bg-indigo-500/15 text-indigo-300 border-indigo-400/40"
                               : s.difficulty === "Foundation" ? "bg-accent/20 text-accent-foreground border-transparent" :
                               s.difficulty === "Intermediate" ? "bg-secondary text-secondary-foreground border-transparent" :
+                              s.difficulty === "Higher" ? "bg-amber-500/15 text-amber-300 border-amber-400/40" :
                               "bg-destructive/10 text-destructive border-transparent"
                           )}>{s.difficulty}</span>
                           <span className="text-[10px] font-bold text-muted-foreground">[{s.marks}]</span>
