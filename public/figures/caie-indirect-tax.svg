@@ -1,57 +1,105 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 470" font-family="Inter, Arial, sans-serif">
-  <rect width="620" height="470" fill="#ffffff"/>
-  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Specific Indirect Tax — Sugary Drinks with Inelastic Demand</text>
-
-  <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
-  <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
-  <text x="545" y="420" font-size="12" fill="#0f172a">Quantity (Q)</text>
-  <text x="60" y="55" font-size="12" fill="#0f172a">Price (P)</text>
-
-  <!-- Steep inelastic demand -->
-  <line x1="275" y1="80" x2="350" y2="400" stroke="#15803d" stroke-width="2.6"/>
-  <text x="355" y="395" font-size="11" font-weight="600" fill="#15803d">D (inelastic)</text>
-
-  <!-- S1 -->
-  <line x1="130" y1="380" x2="540" y2="140" stroke="#0284c7" stroke-width="2.4"/>
-  <text x="540" y="135" font-size="11" font-weight="600" fill="#0284c7">S1</text>
-
-  <!-- S1 + Tax (parallel up) -->
-  <line x1="130" y1="320" x2="540" y2="80" stroke="#be123c" stroke-width="2.4"/>
-  <text x="540" y="75" font-size="11" font-weight="600" fill="#be123c">S1 + Tax</text>
-
-  <!-- Reuse same equilibria from OCR indirect tax figure: E1 (319, 269), E2 (307, 217), Pnet (307, 277) -->
-
-  <circle cx="319" cy="269" r="5" fill="#0f172a"/>
-  <line x1="90" y1="269" x2="319" y2="269" stroke="#0f172a" stroke-dasharray="3,3" stroke-width="1.2"/>
-  <line x1="319" y1="269" x2="319" y2="400" stroke="#0f172a" stroke-dasharray="3,3" stroke-width="1.2"/>
-  <text x="68" y="273" font-size="11" font-weight="700" fill="#0f172a">P1</text>
-  <text x="319" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">Q1</text>
-
-  <circle cx="307" cy="217" r="5" fill="#be123c"/>
-  <line x1="90" y1="217" x2="307" y2="217" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
-  <line x1="307" y1="217" x2="307" y2="400" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
-  <text x="68" y="221" font-size="11" font-weight="700" fill="#be123c">P2</text>
-  <text x="307" y="430" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Q2</text>
-
-  <circle cx="307" cy="277" r="5" fill="#d97706"/>
-  <line x1="90" y1="277" x2="307" y2="277" stroke="#d97706" stroke-dasharray="3,3" stroke-width="1.2"/>
-  <text x="45" y="281" font-size="11" font-weight="700" fill="#d97706">Pnet</text>
-
-  <!-- Consumer burden (top) -->
-  <rect x="90" y="217" width="217" height="52" fill="#bfdbfe" fill-opacity="0.65" stroke="#1e3a8a" stroke-width="1"/>
-  <text x="198" y="248" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a8a">Consumer burden</text>
-
-  <!-- Producer burden (bottom) -->
-  <rect x="90" y="269" width="217" height="8" fill="#bbf7d0" fill-opacity="0.8" stroke="#14532d" stroke-width="1"/>
-  <text x="360" y="278" font-size="10" font-weight="700" fill="#14532d">Producer burden (small)</text>
-
-  <!-- Tax gap bracket on right side -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 540" font-family="Arial, sans-serif">
+  <style>
+    .axis { stroke:#111; stroke-width:2; fill:none; }
+    .curve { stroke-width:2.5; fill:none; }
+    .d  { stroke:#1976d2; }
+    .s1 { stroke:#c62828; }
+    .s2 { stroke:#7f0000; }
+    .dotted { stroke:#444; stroke-width:1.4; stroke-dasharray:5,4; fill:none; }
+    .arrow { stroke:#7f0000; stroke-width:2.2; fill:none; marker-end:url(#a); }
+    .revenue { fill:#fff59d; opacity:0.55; stroke:#827717; stroke-width:1; }
+    .wedgeLine { stroke:#5e35b1; stroke-width:2; fill:none; }
+    .incCons { stroke:#1565c0; stroke-width:1.6; fill:none; }
+    .incProd { stroke:#2e7d32; stroke-width:1.6; fill:none; }
+    .lbl   { font-size:13px; fill:#111; }
+    .lblB  { font-size:14px; fill:#111; font-weight:700; }
+    .ttl   { font-size:18px; font-weight:700; fill:#111; }
+    .sub   { font-size:12px; fill:#444; }
+    .pt    { fill:#111; }
+  </style>
   <defs>
-    <marker id="arrTxU" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#be123c"/></marker>
-    <marker id="arrTxD" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#be123c"/></marker>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7f0000"/>
+    </marker>
+    <marker id="purple" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5e35b1"/>
+    </marker>
+    <marker id="blueArr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1565c0"/>
+    </marker>
+    <marker id="greenArr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2e7d32"/>
+    </marker>
   </defs>
-  <line x1="440" y1="217" x2="440" y2="277" stroke="#be123c" stroke-width="1.3" marker-start="url(#arrTxD)" marker-end="url(#arrTxU)"/>
-  <text x="448" y="250" font-size="11" font-weight="700" fill="#be123c">Tax</text>
 
-  <text x="310" y="455" text-anchor="middle" font-size="11" fill="#334155">Inelastic D → consumers bear most of tax. Consumer burden (P1→P2) &gt; producer burden (P1→Pnet). Weak Q fall means policy raises revenue but only modestly curbs consumption.</text>
+  <text x="350" y="28" text-anchor="middle" class="ttl">Specific Tax on Cigarettes — Developing Country</text>
+  <text x="350" y="48" text-anchor="middle" class="sub">A per-unit (specific) tax shifts Supply parallel up by the tax amount: S1 → S2</text>
+
+  <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
+  <line class="axis" x1="90"  y1="450" x2="640" y2="450"/>
+  <text x="55"  y="80"  class="lblB">Price (P)</text>
+  <text x="600" y="475" class="lblB">Quantity (Q)</text>
+
+  <!-- Tax revenue rectangle: x[90, 314], y[225, 286] -->
+  <rect class="revenue" x="90" y="225" width="224" height="61"/>
+
+  <line class="curve d" x1="120" y1="130" x2="600" y2="430"/>
+  <text x="610" y="430" class="lbl" fill="#1976d2">D</text>
+
+  <line class="curve s1" x1="130" y1="430" x2="600" y2="130"/>
+  <text x="610" y="130" class="lbl" fill="#c62828">S1</text>
+
+  <line class="curve s2" x1="90" y1="396" x2="506" y2="130"/>
+  <text x="510" y="130" class="lbl" fill="#7f0000">S2 = S + tax</text>
+
+  <!-- E1: D ∩ S1 → x≈363, y≈282 -->
+  <circle class="pt" cx="363" cy="282" r="4.5"/>
+  <line class="dotted" x1="363" y1="282" x2="363" y2="450"/>
+  <line class="dotted" x1="363" y1="282" x2="90"  y2="282"/>
+  <text x="60"  y="287" class="lblB">P1</text>
+  <text x="357" y="468" class="lblB">Q1</text>
+  <text x="370" y="278" class="lbl">E1</text>
+
+  <circle class="pt" cx="314" cy="252" r="4.5"/>
+  <line class="dotted" x1="314" y1="252" x2="314" y2="450"/>
+  <line class="dotted" x1="314" y1="252" x2="90"  y2="252"/>
+  <text x="60"  y="225" class="lblB">P2</text>
+  <text x="307" y="468" class="lblB">Q2</text>
+  <text x="285" y="248" class="lbl">E2</text>
+
+  <circle class="pt" cx="314" cy="313" r="4.5"/>
+  <line class="dotted" x1="314" y1="313" x2="90"  y2="313"/>
+  <text x="32"  y="318" class="lblB">P_prod</text>
+
+  <line class="dotted" x1="314" y1="252" x2="90"  y2="252"/>
+
+  <!-- Tax wedge bracket on the right at Q2 -->
+  <line class="wedgeLine" x1="385" y1="252" x2="385" y2="313" marker-start="url(#purple)" marker-end="url(#purple)"/>
+  <text x="395" y="278" class="lblB" fill="#5e35b1">Tax wedge</text>
+  <text x="395" y="294" class="lbl"  fill="#5e35b1">(per unit)</text>
+
+  <!-- Consumer & Producer incidence brackets to the right -->
+  <line class="incCons" x1="500" y1="252" x2="500" y2="282" marker-start="url(#blueArr)" marker-end="url(#blueArr)"/>
+  <text x="510" y="262" class="lbl" fill="#1565c0">Consumer</text>
+  <text x="510" y="276" class="lbl" fill="#1565c0">incidence</text>
+
+  <line class="incProd" x1="500" y1="282" x2="500" y2="313" marker-start="url(#greenArr)" marker-end="url(#greenArr)"/>
+  <text x="510" y="294" class="lbl" fill="#2e7d32">Producer</text>
+  <text x="510" y="308" class="lbl" fill="#2e7d32">incidence</text>
+
+  <!-- Connect incidence brackets to price levels -->
+  <line class="dotted" x1="370" y1="252" x2="500" y2="252"/>
+  <line class="dotted" x1="370" y1="282" x2="500" y2="282"/>
+  <line class="dotted" x1="370" y1="313" x2="500" y2="313"/>
+
+  <!-- Tax revenue label inside the rectangle -->
+  <text x="200" y="262" class="lblB" fill="#827717" text-anchor="middle">Tax revenue</text>
+
+  <!-- Shift arrow showing parallel upward shift -->
+  <path class="arrow" d="M 240 360 q -10 -40 -55 -50"/>
+  <text x="220" y="380" class="lbl" fill="#7f0000">S shifts up</text>
+
+  <text x="90"  y="495" class="sub">Specific (per-unit) tax raises sellers' costs by a fixed £ amount → S shifts parallel up. New equilibrium: P↑, Q↓.</text>
+  <text x="90"  y="512" class="sub">Tax wedge = P2 (consumer pays) − P_prod (seller keeps). Yellow box = tax revenue = wedge × Q2.</text>
+  <text x="90"  y="529" class="sub">Cigarette demand is highly inelastic (addictive) → consumers bear most of the burden; quantity falls only modestly.</text>
 </svg>

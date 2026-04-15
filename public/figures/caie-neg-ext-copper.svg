@@ -1,56 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 480" font-family="Inter, Arial, sans-serif">
-  <rect width="620" height="480" fill="#ffffff"/>
-  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Negative Production Externality — Copper Mining (Zambia/Chile)</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 540" font-family="Arial, sans-serif">
+  <style>
+    .axis { stroke:#111; stroke-width:2; fill:none; }
+    .curve { stroke-width:2.5; fill:none; }
+    .mpc { stroke:#c62828; }
+    .msc { stroke:#7f0000; stroke-dasharray:2,2; }
+    .pmb { stroke:#1976d2; }
+    .dotted { stroke:#444; stroke-width:1.4; stroke-dasharray:5,4; fill:none; }
+    .dwl   { fill:#ef5350; opacity:0.55; stroke:#b71c1c; stroke-width:1; }
+    .lbl   { font-size:14px; fill:#111; }
+    .lblB  { font-size:14px; fill:#111; font-weight:700; }
+    .ttl   { font-size:18px; font-weight:700; fill:#111; }
+    .sub   { font-size:12px; fill:#444; }
+    .pt    { fill:#111; }
+  </style>
 
-  <line x1="90" y1="410" x2="600" y2="410" stroke="#0f172a" stroke-width="2"/>
-  <line x1="90" y1="60" x2="90" y2="410" stroke="#0f172a" stroke-width="2"/>
-  <text x="555" y="430" font-size="12" fill="#0f172a">Quantity (Q)</text>
-  <text x="60" y="55" font-size="12" fill="#0f172a">Benefit /</text>
-  <text x="60" y="70" font-size="12" fill="#0f172a">Cost (£)</text>
+  <text x="350" y="28" text-anchor="middle" class="ttl">Negative Externality of Production — Zambian Copper Mining</text>
+  <text x="350" y="48" text-anchor="middle" class="sub">Pollution costs ignored by the firm: MSC sits above MPC → market over-produces copper</text>
 
-  <!-- MPB = MSB (downward) -->
-  <line x1="130" y1="120" x2="540" y2="390" stroke="#0284c7" stroke-width="2.6"/>
-  <text x="545" y="395" font-size="11" font-weight="600" fill="#0284c7">MPB = MSB</text>
+  <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
+  <line class="axis" x1="90"  y1="450" x2="640" y2="450"/>
+  <text x="40"  y="80"  class="lblB">Price /</text>
+  <text x="40"  y="98"  class="lblB">Cost</text>
+  <text x="555" y="475" class="lblB">Quantity of Copper</text>
 
-  <!-- MPC (upward) -->
-  <line x1="130" y1="390" x2="540" y2="120" stroke="#15803d" stroke-width="2.6"/>
-  <text x="545" y="125" font-size="11" font-weight="600" fill="#15803d">MPC</text>
+  <!-- Welfare loss triangle: vertices at E* (315, 259), MSC at Q1 (363, 224), and E1 (363, 282) -->
+  <polygon class="dwl" points="315,259 363,224 363,282"/>
 
-  <!-- MSC (upward, above MPC by ~55px) -->
-  <line x1="130" y1="335" x2="510" y2="85" stroke="#be123c" stroke-width="2.6"/>
-  <text x="510" y="78" font-size="11" font-weight="600" fill="#be123c">MSC</text>
+  <!-- MPC = S (private supply, upward sloping). y = -0.744x + 526.7; from (130,430) to (560,110) -->
+  <line class="curve mpc" x1="130" y1="430" x2="560" y2="110"/>
+  <text x="565" y="110" class="lbl" fill="#c62828">MPC = S</text>
 
-  <!-- MEC bracket -->
-  <defs>
-    <marker id="arrMECu" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#be123c"/></marker>
-    <marker id="arrMECd" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#be123c"/></marker>
-  </defs>
-  <line x1="450" y1="168" x2="450" y2="223" stroke="#be123c" stroke-width="1.5" marker-start="url(#arrMECd)" marker-end="url(#arrMECu)"/>
-  <text x="458" y="201" font-size="11" font-weight="700" fill="#be123c">MEC</text>
+  <!-- MSC (above MPC, parallel up by 60). y = -0.744x + 466.7; from (90, 399) to (450, 130) -->
+  <line class="curve msc" x1="90" y1="399" x2="450" y2="130"/>
+  <text x="430" y="120" class="lbl" fill="#7f0000">MSC</text>
 
-  <!-- Equilibria: same geometry as OCR externality but relabelled for CAIE -->
-  <!-- Qm (MPC = MPB) at (335, 255); Qs (MSC = MSB) at (293, 227) -->
+  <!-- D = MPB = MSB (consumption has no externality here). y = 0.625x + 35; from (120,110) to (560,385) -->
+  <line class="curve pmb" x1="120" y1="110" x2="560" y2="385"/>
+  <text x="565" y="385" class="lbl" fill="#1976d2">D = MPB = MSB</text>
 
-  <!-- Market Qm, Pm at (335, 255) -->
-  <circle cx="335" cy="255" r="5" fill="#0284c7"/>
-  <line x1="90" y1="255" x2="335" y2="255" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1.2"/>
-  <line x1="335" y1="255" x2="335" y2="410" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1.2"/>
-  <text x="68" y="259" font-size="11" font-weight="700" fill="#0284c7">Pm</text>
-  <text x="335" y="425" text-anchor="middle" font-size="11" font-weight="700" fill="#0284c7">Qm</text>
+  <!-- Free market E1 = MPB ∩ MPC: x≈363, y≈282 (where copper firm chooses) -->
+  <circle class="pt" cx="363" cy="282" r="4.5"/>
+  <line class="dotted" x1="363" y1="282" x2="363" y2="450"/>
+  <line class="dotted" x1="363" y1="282" x2="90"  y2="282"/>
+  <text x="60"  y="287" class="lblB">P1</text>
+  <text x="357" y="468" class="lblB">Q1</text>
+  <text x="370" y="278" class="lbl">E1</text>
 
-  <!-- Social optimum Qs, Ps at (293, 227) -->
-  <circle cx="293" cy="227" r="5" fill="#be123c"/>
-  <line x1="90" y1="227" x2="293" y2="227" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
-  <line x1="293" y1="227" x2="293" y2="410" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
-  <text x="68" y="231" font-size="11" font-weight="700" fill="#be123c">Ps</text>
-  <text x="293" y="440" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Qs</text>
+  <!-- Social optimum E* = MPB ∩ MSC: 0.625x+35 = -0.744x+466.7 → 1.369x = 431.7 → x=315.4, y=232.1 -->
+  <circle class="pt" cx="315" cy="232" r="4.5"/>
+  <line class="dotted" x1="315" y1="232" x2="315" y2="450"/>
+  <line class="dotted" x1="315" y1="232" x2="90"  y2="232"/>
+  <text x="60"  y="237" class="lblB">P*</text>
+  <text x="306" y="468" class="lblB">Q*</text>
+  <text x="285" y="229" class="lbl">E*</text>
 
-  <!-- Welfare loss triangle: (293, 227), (335, 255), (335, 200) -->
-  <polygon points="293,227 335,255 335,200" fill="#64748b" fill-opacity="0.65" stroke="#0f172a" stroke-width="1.5"/>
+  <line class="dotted" x1="345" y1="250" x2="450" y2="200" stroke="#b71c1c"/>
+  <text x="455" y="205" class="lbl" fill="#b71c1c">Welfare loss (DWL)</text>
 
-  <line x1="380" y1="180" x2="335" y2="220" stroke="#0f172a" stroke-width="1.3"/>
-  <text x="385" y="176" font-size="11" font-weight="700" fill="#0f172a">Deadweight</text>
-  <text x="385" y="190" font-size="11" font-weight="700" fill="#0f172a">Welfare Loss</text>
-
-  <text x="310" y="465" text-anchor="middle" font-size="11" fill="#334155">Mining firms ignore pollution → MSC &gt; MPC. Qm &gt; Qs → over-production. Shaded triangle = deadweight loss.</text>
+  <text x="90"  y="495" class="sub">Mining firms set MPB = MPC at Q1; the social optimum is at MPB = MSC at Q* &lt; Q1 → overproduction.</text>
+  <text x="90"  y="512" class="sub">Between Q* and Q1, MSC &gt; MSB: each extra tonne costs society more (pollution, health) than it benefits.</text>
+  <text x="90"  y="529" class="sub">Policy: a per-tonne pollution tax (Pigouvian tax) of size MSC−MPC internalises the externality and moves output to Q*.</text>
 </svg>
