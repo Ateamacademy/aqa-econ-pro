@@ -246,7 +246,7 @@ type PracticeMode = "ai" | "scenario";
 type BoardScenarioTemplate = {
   section: DiagramSection;
   topic: string;
-  difficulty: "Foundation" | "Intermediate" | "Advanced";
+  difficulty: "Foundation" | "Intermediate" | "Advanced" | "Higher";
   marks: number;
   expectedDiagramKeyword?: string;
 };
