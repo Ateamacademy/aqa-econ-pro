@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520" font-family="Arial, sans-serif">
+  <style>
+    .axis { stroke:#111; stroke-width:2; fill:none; }
+    .curve { stroke-width:2.5; fill:none; }
+    .d1 { stroke:#1976d2; }
+    .d2 { stroke:#0d47a1; }
+    .s  { stroke:#c62828; }
+    .dotted { stroke:#444; stroke-width:1.4; stroke-dasharray:5,4; fill:none; }
+    .arrow { stroke:#0d47a1; stroke-width:2; fill:none; marker-end:url(#a); }
+    .lbl   { font-size:14px; fill:#111; }
+    .lblB  { font-size:14px; fill:#111; font-weight:700; }
+    .ttl   { font-size:18px; font-weight:700; fill:#111; }
+    .sub   { font-size:12px; fill:#444; }
+    .pt    { fill:#111; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0d47a1"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="30" text-anchor="middle" class="ttl">UK Electric Vehicle Market — Increase in Demand</text>
+  <text x="350" y="50" text-anchor="middle" class="sub">Subsidy ↑ and greener tastes shift Demand right (D1 → D2)</text>
+
+  <!-- Axes -->
+  <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
+  <line class="axis" x1="90"  y1="450" x2="640" y2="450"/>
+  <text x="60"  y="80"  class="lblB">Price (£)</text>
+  <text x="650" y="455" class="lblB">Quantity of EVs</text>
+
+  <!-- Supply curve (upward) -->
+  <line class="curve s" x1="130" y1="430" x2="600" y2="120"/>
+  <text x="610" y="120" class="lbl" fill="#c62828">S</text>
+
+  <!-- Demand 1 (downward) -->
+  <line class="curve d1" x1="120" y1="130" x2="540" y2="430"/>
+  <text x="545" y="445" class="lbl" fill="#1976d2">D1</text>
+
+  <!-- Demand 2 (downward, shifted right) -->
+  <line class="curve d2" x1="220" y1="130" x2="640" y2="430"/>
+  <text x="645" y="445" class="lbl" fill="#0d47a1">D2</text>
+
+  <circle class="pt" cx="343" cy="289" r="4"/>
+  <line class="dotted" x1="343" y1="289" x2="343" y2="450"/>
+  <line class="dotted" x1="343" y1="289" x2="90"  y2="289"/>
+  <text x="70"  y="294" class="lblB">P1</text>
+  <text x="338" y="468" class="lblB">Q1</text>
+  <text x="350" y="285" class="lb">E1</text>
+
+  <circle class="pt" cx="395" cy="255" r="4"/>
+  <line class="dotted" x1="395" y1="255" x2="395" y2="450"/>
+  <line class="dotted" x1="395" y1="255" x2="90"  y2="255"/>
+  <text x="70"  y="260" class="lblB">P2</text>
+  <text x="390" y="468" class="lblB">Q2</text>
+  <text x="402" y="251" class="lbl">E2</text>
+
+  <!-- Shift arrow -->
+  <path class="arrow" d="M 250 350 q 40 -10 80 0"/>
+  <text x="260" y="345" class="lbl" fill="#0d47a1">D shifts right</text>
+
+  <!-- Caption -->
+  <text x="90"  y="495" class="sub">Subsidy lowers effective price for buyers; greener preferences raise willingness to pay.</text>
+  <text x="90"  y="512" class="sub">Both factors increase demand at every price → D1 → D2 → equilibrium moves from (P1,Q1) to (P2,Q2): P↑ and Q↑.</text>
+</svg>
