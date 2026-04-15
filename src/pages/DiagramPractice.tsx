@@ -1386,7 +1386,10 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             const eduqasRefTopic = subject === "eduqas" && selectedScenario
               ? eduqasTopics.find((t) => `eduqas-${t.slug}` === selectedScenario.id)
               : undefined;
-            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic || ibRefTopic || wjecRefTopic || eduqasRefTopic;
+            const gcseRefTopic = subject === "aqa-gcse" && selectedScenario
+              ? gcseTopics.find((t) => `gcse-${t.slug}` === selectedScenario.id)
+              : undefined;
+            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic || ibRefTopic || wjecRefTopic || eduqasRefTopic || gcseRefTopic;
 
             if (boardRefTopic) {
               return (
@@ -1691,7 +1694,10 @@ function DiagramFeedbackView({
   const eduqasFeedbackTopic = subject === "eduqas" && scenarioId
     ? eduqasTopics.find((t) => `eduqas-${t.slug}` === scenarioId)
     : undefined;
-  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic || wjecFeedbackTopic || eduqasFeedbackTopic;
+  const gcseFeedbackTopic = subject === "aqa-gcse" && scenarioId
+    ? gcseTopics.find((t) => `gcse-${t.slug}` === scenarioId)
+    : undefined;
+  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic || wjecFeedbackTopic || eduqasFeedbackTopic || gcseFeedbackTopic;
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     // Board-specific SVG figure (Edexcel B or OCR)
