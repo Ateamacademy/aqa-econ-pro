@@ -339,14 +339,19 @@ const buildBoardScenarioTemplates = (subject: string): BoardScenarioTemplate[] =
     return match?.[1] ?? "PPFs, Markets & Allocation";
   };
 
-  const inferDifficultyFromTopic = (topic: string): "Foundation" | "Intermediate" | "Advanced" => {
+  const inferDifficultyFromTopic = (topic: string): "Foundation" | "Intermediate" | "Advanced" | "Higher" => {
+    if (isGcseBoard(subject)) {
+      // GCSE boards: only Foundation and Higher
+      if (/oligopoly|phillips|lorenz|monopsony|tradable|j-curve|specific|ad valorem|shutdown|welfare|multiple shifts|indirect tax|externalit|subsidy|minimum price|maximum price|cost|monopoly|perfect competition|keynesian|exchange rate|tariff/i.test(topic)) return "Higher";
+      return "Foundation";
+    }
     if (/oligopoly|phillips|lorenz|monopsony|tradable|j-curve|specific|ad valorem|shutdown|welfare|multiple shifts|indirect tax/i.test(topic)) return "Advanced";
     if (/externalit|subsidy|minimum price|maximum price|cost|monopoly|perfect competition|keynesian|exchange rate|tariff/i.test(topic)) return "Intermediate";
     return "Foundation";
   };
 
-  const inferMarksFromDifficulty = (difficulty: "Foundation" | "Intermediate" | "Advanced") =>
-    difficulty === "Foundation" ? 4 : difficulty === "Intermediate" ? 6 : 8;
+  const inferMarksFromDifficulty = (difficulty: "Foundation" | "Intermediate" | "Advanced" | "Higher") =>
+    difficulty === "Foundation" ? 4 : difficulty === "Higher" ? 9 : difficulty === "Intermediate" ? 6 : 8;
 
   const uniqueTopics = Array.from(new Set(DIAGRAM_TOPICS[subject] || DIAGRAM_TOPICS.economics));
 
