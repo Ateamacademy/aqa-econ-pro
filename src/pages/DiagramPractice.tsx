@@ -6,6 +6,7 @@ import { ibTopics, type IbTopic } from "@/data/topicsIb";
 import { wjecTopics, type WjecTopic } from "@/data/topicsWjec";
 import { eduqasTopics, type EduqasTopic } from "@/data/topicsEduqas";
 import { gcseTopics, type GcseTopic } from "@/data/topicsGcse";
+import { caieIgcseTopics, type CaieIgcseTopic } from "@/data/topicsCaieIgcse";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
@@ -229,6 +230,15 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
     "Labour Market — Wage Determination",
     // Higher (9 marks)
     "Indirect Tax (Ad Valorem / Specific)",
+  ],
+  "cambridge-igcse": [
+    // Foundation (4 marks)
+    "Supply & Demand — Shift in Demand",
+    "Supply & Demand — Shift in Supply",
+    "AD/AS — Demand-Side Shock",
+    "AD/AS — Supply-Side Shock",
+    "AD/AS — Economic Growth (LRAS Shift)",
+    "Labour Market — Wage Determination",
   ],
 };
 
