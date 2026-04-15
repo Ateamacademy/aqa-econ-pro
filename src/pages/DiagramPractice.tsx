@@ -199,6 +199,23 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
     "Marshall-Lerner Condition — J-Curve",
   ],
   eduqas: [
+    // Foundation (4 marks)
+    "Supply & Demand — Shift in Demand",
+    "Supply & Demand — Shift in Supply",
+    "AD/AS — Demand Shock",
+    "AD/AS — Supply Shock",
+    "AD/AS — Long-Run Growth",
+    "Labour Market — Wage Determination",
+    // Intermediate (6 marks)
+    "Subsidy on a Good",
+    "Negative Externality — Overconsumption",
+    "Positive Externality — Underconsumption",
+    "Maximum Price (Price Ceiling)",
+    "Minimum Price (Price Floor)",
+    "Keynesian AS — Spare Capacity vs Full Employment",
+    "Monopoly — Profit Maximisation (MC=MR)",
+    "Perfect Competition — Short Run & Long Run",
+    // Advanced (8 marks)
     "Indirect Tax (Ad Valorem / Specific)",
   ],
 };
