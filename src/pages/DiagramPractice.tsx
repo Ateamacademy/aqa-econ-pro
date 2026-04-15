@@ -1244,7 +1244,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                     <label className="text-sm font-medium mb-1 block">Difficulty</label>
                     <select value={difficulty} onChange={e => setDifficulty(e.target.value)} className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm">
                       <option value="all">All</option>
-                      {DIFFICULTY_LEVELS.map(d => <option key={d} value={d}>{d}</option>)}
+                      {getDifficultyLevels(subject).map(d => <option key={d} value={d}>{d}</option>)}
                     </select>
                   </div>
                 </div>
