@@ -984,7 +984,17 @@ Format: Give the scenario context with Figure 1, then the question. Nothing else
       ? eduqasTopics.find((t) => `eduqas-${t.slug}` === scenario.id)
       : undefined;
 
-    const boardTopic = edexcelBTopic || ocrTopic || caieTopic || ibTopic || wjecTopic || eduqasTopic;
+    // Check if this is a CAIE IGCSE topic with real scenario data
+    const caieIgcseTopic = subject === "cambridge-igcse"
+      ? caieIgcseTopics.find((t) => `caie-igcse-${t.slug}` === scenario.id)
+      : undefined;
+
+    // Check if this is an AQA GCSE topic with real scenario data
+    const gcseTopic = subject === "aqa-gcse"
+      ? gcseTopics.find((t) => `gcse-${t.slug}` === scenario.id)
+      : undefined;
+
+    const boardTopic = edexcelBTopic || ocrTopic || caieTopic || ibTopic || wjecTopic || eduqasTopic || caieIgcseTopic || gcseTopic;
     if (boardTopic) {
       setGeneratedQ(`**${boardTopic.title}** · ${boardTopic.tier} · ${boardTopic.marks} marks\n\n${boardTopic.scenario}\n\n${boardTopic.question}`);
       setStep("answer");
@@ -1438,7 +1448,10 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             const gcseRefTopic = subject === "aqa-gcse" && selectedScenario
               ? gcseTopics.find((t) => `gcse-${t.slug}` === selectedScenario.id)
               : undefined;
-            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic || ibRefTopic || wjecRefTopic || eduqasRefTopic || gcseRefTopic;
+            const caieIgcseRefTopic = subject === "cambridge-igcse" && selectedScenario
+              ? caieIgcseTopics.find((t) => `caie-igcse-${t.slug}` === selectedScenario.id)
+              : undefined;
+            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic || ibRefTopic || wjecRefTopic || eduqasRefTopic || gcseRefTopic || caieIgcseRefTopic;
 
             if (boardRefTopic) {
               return (
@@ -1746,7 +1759,10 @@ function DiagramFeedbackView({
   const gcseFeedbackTopic = subject === "aqa-gcse" && scenarioId
     ? gcseTopics.find((t) => `gcse-${t.slug}` === scenarioId)
     : undefined;
-  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic || wjecFeedbackTopic || eduqasFeedbackTopic || gcseFeedbackTopic;
+  const caieIgcseFeedbackTopic = subject === "cambridge-igcse" && scenarioId
+    ? caieIgcseTopics.find((t) => `caie-igcse-${t.slug}` === scenarioId)
+    : undefined;
+  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic || wjecFeedbackTopic || eduqasFeedbackTopic || gcseFeedbackTopic || caieIgcseFeedbackTopic;
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     // Board-specific SVG figure (Edexcel B or OCR)
