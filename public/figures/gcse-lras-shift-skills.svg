@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 540" font-family="Arial, sans-serif">
+  <style>
+    .axis { stroke:#111; stroke-width:2; fill:none; }
+    .curve { stroke-width:2.5; fill:none; }
+    .ad   { stroke:#1976d2; }
+    .sras { stroke:#c62828; }
+    .lras1{ stroke:#2e7d32; }
+    .lras2{ stroke:#1b5e20; stroke-dasharray:4,3; }
+    .dotted { stroke:#444; stroke-width:1.4; stroke-dasharray:5,4; fill:none; }
+    .arrow { stroke:#1b5e20; stroke-width:2.2; fill:none; marker-end:url(#a4); }
+    .lbl   { font-size:14px; fill:#111; }
+    .lblB  { font-size:14px; fill:#111; font-weight:700; }
+    .ttl   { font-size:18px; font-weight:700; fill:#111; }
+    .sub   { font-size:12px; fill:#444; }
+    .pt    { fill:#111; }
+  </style>
+  <defs>
+    <marker id="a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1b5e20"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="28" text-anchor="middle" class="ttl">UK "Skills for Life" Scheme — Long-Run Economic Growth</text>
+  <text x="350" y="48" text-anchor="middle" class="sub">Higher labour productivity raises productive capacity → LRAS shifts right (LRAS1 → LRAS2)</text>
+
+  <!-- Axes -->
+  <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
+  <line class="axis" x1="90"  y1="450" x2="640" y2="450"/>
+  <text x="55"  y="80"  class="lblB">Price Level</text>
+  <text x="610" y="475" class="lblB">Real GDP (Y)</text>
+
+  <!-- AD: (130,140) to (610,440) -->
+  <line class="curve ad" x1="130" y1="140" x2="610" y2="440"/>
+  <text x="615" y="450" class="lbl" fill="#1976d2">AD</text>
+
+  <!-- SRAS: (140,430) to (620,130) -->
+  <line class="curve sras" x1="140" y1="430" x2="620" y2="130"/>
+  <text x="630" y="135" class="lbl" fill="#c62828">SRAS</text>
+
+  <!-- LRAS1 vertical at x=367 (current full-employment output) -->
+  <line class="curve lras1" x1="367" y1="100" x2="367" y2="450"/>
+  <text x="320" y="110" class="lbl" fill="#2e7d32">LRAS1</text>
+
+  <!-- LRAS2 vertical at x=470 (after productivity gains) -->
+  <line class="curve lras2" x1="470" y1="100" x2="470" y2="450"/>
+  <text x="478" y="110" class="lbl" fill="#1b5e20">LRAS2</text>
+
+  <!-- E1: AD ∩ SRAS (≈ LRAS1) at (367, 288) -->
+  <circle class="pt" cx="367" cy="288" r="4.5"/>
+  <line class="dotted" x1="367" y1="288" x2="90"  y2="288"/>
+  <text x="60"  y="293" class="lblB">P1</text>
+  <text x="358" y="468" class="lblB">Y1</text>
+  <text x="374" y="284" class="lbl">E1</text>
+
+  <!-- E2: New long-run equilibrium at LRAS2 ∩ AD: at x=470, AD y = 0.625*470 + 58.75 = 352.5 -->
+  <circle class="pt" cx="470" cy="352" r="4.5"/>
+  <line class="dotted" x1="470" y1="352" x2="90"  y2="352"/>
+  <line class="dotted" x1="470" y1="352" x2="470" y2="450"/>
+  <text x="60"  y="357" class="lblB">P2</text>
+  <text x="462" y="468" class="lblB">Y2</text>
+  <text x="478" y="348" class="lbl">E2</text>
+
+  <!-- LRAS shift arrow -->
+  <path class="arrow" d="M 380 200 q 50 -5 80 0"/>
+  <text x="375" y="195" class="lbl" fill="#1b5e20">LRAS shifts right</text>
+
+  <!-- Caption -->
+  <text x="90"  y="495" class="sub">£5bn of skills funding lifts worker productivity → the economy can sustainably produce more at every price level.</text>
+  <text x="90"  y="512" class="sub">LRAS shifts right (LRAS1 → LRAS2). New equilibrium has higher Real GDP (Y2 &gt; Y1) and lower Price Level (P2 &lt; P1).</text>
+  <text x="90"  y="529" class="sub">This is non-inflationary growth — improved supply-side capacity, not just demand stimulus.</text>
+</svg>
