@@ -232,9 +232,14 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
   ],
 };
 
-const ALL_DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced"] as const;
+const GCSE_BOARDS = ["aqa-gcse", "cambridge-igcse", "edexcel-igcse", "ocr-gcse"];
 
-const getDifficultyLevels = (_board: string) => ALL_DIFFICULTY_LEVELS;
+const isGcseBoard = (board: string) => GCSE_BOARDS.includes(board);
+
+const ALL_DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced"] as const;
+const GCSE_DIFFICULTY_LEVELS = ["Foundation", "Higher"] as const;
+
+const getDifficultyLevels = (board: string) => isGcseBoard(board) ? GCSE_DIFFICULTY_LEVELS : ALL_DIFFICULTY_LEVELS;
 
 type PracticeMode = "ai" | "scenario";
 
