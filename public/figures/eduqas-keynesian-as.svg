@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 540" font-family="Arial, sans-serif">
+  <style>
+    .axis { stroke:#111; stroke-width:2; fill:none; }
+    .as { stroke:#c62828; stroke-width:3; fill:none; }
+    .ad { stroke:#1976d2; stroke-width:2.5; fill:none; }
+    .ad2 { stroke:#0d47a1; stroke-width:2.5; fill:none; }
+    .ad3 { stroke:#5e35b1; stroke-width:2.5; fill:none; }
+    .ad4 { stroke:#311b92; stroke-width:2.5; fill:none; }
+    .dotted { stroke:#444; stroke-width:1.4; stroke-dasharray:5,4; fill:none; }
+    .arrow { stroke-width:2.2; fill:none; marker-end:url(#a1); }
+    .lbl   { font-size:13px; fill:#111; }
+    .lblB  { font-size:14px; fill:#111; font-weight:700; }
+    .ttl   { font-size:18px; font-weight:700; fill:#111; }
+    .sub   { font-size:12px; fill:#444; }
+    .pt    { fill:#111; }
+  </style>
+  <defs>
+    <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1976d2"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="28" text-anchor="middle" class="ttl">Keynesian AS — Spare Capacity vs Full Employment</text>
+  <text x="350" y="48" text-anchor="middle" class="sub">Same +ΔAD has very different effects depending on where the economy is on the Keynesian AS curve</text>
+
+  <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
+  <line class="axis" x1="90"  y1="450" x2="640" y2="450"/>
+  <text x="55"  y="80"  class="lblB">Price Level</text>
+  <text x="540" y="475" class="lblB">Real National Output</text>
+
+  <!-- Keynesian AS: horizontal at low Y, curves up, vertical at YFE (x=500) -->
+  <path class="as" d="M 100 380 L 280 380 Q 410 380 470 250 Q 495 150 500 100 L 500 450"/>
+  <text x="320" y="370" class="lbl" fill="#c62828">Keynesian AS</text>
+
+  <!-- YFE label -->
+  <line class="dotted" x1="500" y1="100" x2="500" y2="450"/>
+  <text x="492" y="468" class="lblB">YFE</text>
+
+  <!-- LEFT REGION: Spare capacity. AD1 (initial) and AD2 (rightward shift) both cross AS in horizontal region -->
+  <!-- AD1: from (110, 250) to (300, 440); slope = 190/190 = 1; y = x + 140; at y=380, x=240 -->
+  <line class="ad" x1="110" y1="250" x2="300" y2="440"/>
+  <text x="100" y="245" class="lbl" fill="#1976d2">AD1</text>
+
+  <!-- AD2: parallel right by ~40px; from (150, 250) to (340, 440); at y=380, x=280 -->
+  <line class="ad2" x1="150" y1="250" x2="340" y2="440"/>
+  <text x="345" y="445" class="lbl" fill="#0d47a1">AD2</text>
+
+  <!-- Equilibria in spare capacity region (both at PL = same y=380) -->
+  <circle class="pt" cx="240" cy="380" r="4.5"/>
+  <circle class="pt" cx="280" cy="380" r="4.5"/>
+
+  <line class="dotted" x1="240" y1="380" x2="240" y2="450"/>
+  <line class="dotted" x1="280" y1="380" x2="280" y2="450"/>
+  <text x="232" y="468" class="lblB">Y</text>
+  <text x="272" y="468" class="lblB">Y1</text>
+
+  <line class="dotted" x1="240" y1="380" x2="90"  y2="380"/>
+  <text x="60"  y="385" class="lblB">P</text>
+
+  <!-- Arrow showing AD shift right in spare capacity -->
+  <path class="arrow" d="M 195 320 q 30 -5 55 0" stroke="#1976d2"/>
+  <text x="200" y="310" class="lbl" fill="#1976d2">AD shifts right</text>
+
+  <!-- RIGHT REGION: Full employment. AD3 and AD4 both cross AS in vertical region (at x=500) -->
+  <!-- AD3: from (350, 130) to (560, 350); slope = 220/210 ≈ 1.048; y = 1.048x - 236.7; at x=500, y=287.3 -->
+  <line class="ad3" x1="350" y1="130" x2="560" y2="350"/>
+  <text x="345" y="125" class="lbl" fill="#5e35b1">AD3</text>
+
+  <!-- AD4: parallel right; from (390, 130) to (600, 350); at x=500, y=265 -->
+  <line class="ad4" x1="390" y1="130" x2="600" y2="350"/>
+  <text x="605" y="350" class="lbl" fill="#311b92">AD4</text>
+
+  <!-- Equilibria on vertical AS at x=500 -->
+  <circle class="pt" cx="500" cy="287" r="4.5"/>
+  <circle class="pt" cx="500" cy="245" r="4.5"/>
+
+  <line class="dotted" x1="500" y1="287" x2="90" y2="287"/>
+  <line class="dotted" x1="500" y1="245" x2="90" y2="245"/>
+  <text x="60"  y="292" class="lblB">P3</text>
+  <text x="60"  y="250" class="lblB">P4</text>
+
+  <!-- Arrow showing AD shift right at full employment -->
+  <path class="arrow" d="M 410 200 q 30 -5 55 0" stroke="#5e35b1"/>
+  <text x="415" y="190" class="lbl" fill="#5e35b1">AD shifts right</text>
+
+  <text x="90"  y="495" class="sub">LEFT (spare capacity): AD1 → AD2 raises Real Output (Y → Y1) with no rise in the price level — pure growth.</text>
+  <text x="90"  y="512" class="sub">RIGHT (full employment): AD3 → AD4 leaves Y unchanged at YFE but raises the price level (P3 → P4) — pure inflation.</text>
+  <text x="90"  y="529" class="sub">In the curved "bottleneck" middle region, an AD rise generates a mix of extra output and rising prices.</text>
+</svg>

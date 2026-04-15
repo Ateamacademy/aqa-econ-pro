@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 540" font-family="Arial, sans-serif">
+  <style>
+    .axis { stroke:#111; stroke-width:2; fill:none; }
+    .curve { stroke-width:2.5; fill:none; }
+    .d  { stroke:#1976d2; }
+    .s1 { stroke:#c62828; }
+    .s2 { stroke:#e65100; }
+    .dotted { stroke:#444; stroke-width:1.4; stroke-dasharray:5,4; fill:none; }
+    .arrow { stroke:#e65100; stroke-width:2.2; fill:none; marker-end:url(#a); }
+    .gov   { fill:#fff59d; opacity:0.55; stroke:#827717; stroke-width:1; }
+    .lbl   { font-size:14px; fill:#111; }
+    .lblB  { font-size:14px; fill:#111; font-weight:700; }
+    .ttl   { font-size:18px; font-weight:700; fill:#111; }
+    .sub   { font-size:12px; fill:#444; }
+    .pt    { fill:#111; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e65100"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="28" text-anchor="middle" class="ttl">UK Electric Vehicle Market — Producer Subsidy</text>
+  <text x="350" y="48" text-anchor="middle" class="sub">Per-unit subsidy to manufacturers shifts Supply right (S → S1)</text>
+
+  <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
+  <line class="axis" x1="90"  y1="450" x2="640" y2="450"/>
+  <text x="55"  y="80"  class="lblB">Price (£)</text>
+  <text x="540" y="475" class="lblB">Quantity of EVs</text>
+
+  <!-- Government expenditure rectangle: x [90, 395], y [241, 298] -->
+  <rect class="gov" x="90" y="241" width="305" height="57"/>
+
+  <!-- Demand: y = 0.625x + 55, from (120,130) to (600,430) -->
+  <line class="curve d" x1="120" y1="130" x2="600" y2="430"/>
+  <text x="610" y="430" class="lbl" fill="#1976d2">D</text>
+
+  <!-- Supply S1 (original): y = -0.714x + 522.86, from (130,430) to (550,130) -->
+  <line class="curve s1" x1="130" y1="430" x2="550" y2="130"/>
+  <text x="560" y="130" class="lbl" fill="#c62828">S</text>
+
+  <!-- Supply S2 (post-subsidy, parallel right by 80px): y = -0.714x + 580; endpoints (210,430) to (630,130) -->
+  <line class="curve s2" x1="210" y1="430" x2="630" y2="130"/>
+  <text x="640" y="130" class="lbl" fill="#e65100">S + subsidy</text>
+
+  <!-- E0: D ∩ S1, x≈352, y≈272 -->
+  <circle class="pt" cx="352" cy="272" r="4.5"/>
+  <line class="dotted" x1="352" y1="272" x2="352" y2="450"/>
+  <line class="dotted" x1="352" y1="272" x2="90"  y2="272"/>
+  <text x="60"  y="277" class="lblB">P</text>
+  <text x="346" y="468" class="lblB">Q</text>
+  <text x="358" y="268" class="lbl">E</text>
+
+  <!-- E1 (new, post-subsidy): D ∩ S2: 0.625x + 55 = -0.714x + 580 → x≈392, y≈300 -->
+  <circle class="pt" cx="392" cy="300" r="4.5"/>
+  <line class="dotted" x1="392" y1="300" x2="392" y2="450"/>
+  <line class="dotted" x1="392" y1="300" x2="90"  y2="300"/>
+  <text x="40"  y="305" class="lblB">P_consumer</text>
+  <text x="386" y="468" class="lblB">Q1</text>
+
+  <!-- Producer price (vertical extent of subsidy at Q1=392 on S1): y = -0.714*392 + 522.86 = 243 -->
+  <circle class="pt" cx="392" cy="243" r="4.5"/>
+  <line class="dotted" x1="392" y1="243" x2="90"  y2="243"/>
+  <text x="40"  y="248" class="lblB">P_producer</text>
+
+  <!-- Bracket showing subsidy per unit (right side of rectangle) -->
+  <line class="dotted" x1="402" y1="243" x2="420" y2="243" stroke="#827717"/>
+  <line class="dotted" x1="402" y1="300" x2="420" y2="300" stroke="#827717"/>
+  <line x1="415" y1="243" x2="415" y2="300" stroke="#827717" stroke-width="1.4" fill="none"/>
+  <text x="425" y="275" class="lbl" fill="#827717">subsidy / unit</text>
+
+  <!-- Shift arrow -->
+  <path class="arrow" d="M 250 380 q 50 -10 90 -3"/>
+  <text x="245" y="400" class="lbl" fill="#e65100">S shifts right</text>
+
+  <text x="90"  y="500" class="sub">Shaded yellow box = government expenditure on subsidy = (subsidy per unit) × Q1.</text>
+  <text x="90"  y="517" class="sub">Consumers pay a lower price (P → P_consumer); producers receive a higher price (P → P_producer).</text>
+  <text x="90"  y="532" class="sub">Both consumer surplus and producer surplus expand; quantity rises from Q to Q1.</text>
+</svg>
