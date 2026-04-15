@@ -1,7 +1,7 @@
 export interface GcseTopic {
   slug: string;
   board: "AQA";
-  tier: "Foundation" | "Intermediate" | "Advanced";
+  tier: "Foundation" | "Higher";
   section: string;
   marks: number;
   title: string;
@@ -19,7 +19,7 @@ export const gcseTopics: GcseTopic[] = [
   {
     slug: "gcse-indirect-tax-sdil",
     board: "AQA",
-    tier: "Advanced",
+    tier: "Higher",
     section: "Government Intervention",
     marks: 9,
     title: "Indirect Tax (Ad Valorem / Specific)",
