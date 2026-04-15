@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520" font-family="Arial, sans-serif">
+  <style>
+    .axis { stroke:#111; stroke-width:2; fill:none; }
+    .curve { stroke-width:2.5; fill:none; }
+    .ad1 { stroke:#1976d2; }
+    .ad2 { stroke:#0d47a1; }
+    .sras{ stroke:#c62828; }
+    .lras{ stroke:#2e7d32; }
+    .dotted { stroke:#444; stroke-width:1.4; stroke-dasharray:5,4; fill:none; }
+    .arrow { stroke:#0d47a1; stroke-width:2.2; fill:none; marker-end:url(#a); }
+    .lbl   { font-size:14px; fill:#111; }
+    .lblB  { font-size:14px; fill:#111; font-weight:700; }
+    .ttl   { font-size:18px; font-weight:700; fill:#111; }
+    .sub   { font-size:12px; fill:#444; }
+    .pt    { fill:#111; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0d47a1"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="30" text-anchor="middle" class="ttl">UK Demand-Pull Inflation — Rising Consumer Spending</text>
+  <text x="350" y="50" text-anchor="middle" class="sub">Higher confidence and disposable income raise consumption (C) → AD shifts right (AD1 → AD2)</text>
+
+  <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
+  <line class="axis" x1="90"  y1="450" x2="640" y2="450"/>
+  <text x="55"  y="80"  class="lblB">Price Level</text>
+  <text x="610" y="475" class="lblB">Real GDP (Y)</text>
+
+  <line class="curve lras" x1="470" y1="100" x2="470" y2="450"/>
+  <text x="478" y="110" class="lbl" fill="#2e7d32">LRAS</text>
+
+  <line class="curve sras" x1="140" y1="430" x2="620" y2="130"/>
+  <text x="630" y="135" class="lbl" fill="#c62828">SRAS</text>
+
+  <!-- AD1 (initial): (130,140) to (610,440) -->
+  <line class="curve ad1" x1="130" y1="140" x2="610" y2="440"/>
+  <text x="615" y="450" class="lbl" fill="#1976d2">AD1</text>
+
+  <!-- AD2 (right shift): parallel right by ~70px in x. From (200,140) to (640,415) clipped at right.
+       slope = 0.625; intercept y - 0.625x = c. Old: y = 0.625x + 58.75. New (right shift): y = 0.625(x-70) + 58.75 = 0.625x + 14.99
+       Endpoints: at x=200, y = 140; at x=640, y = 415 -->
+  <line class="curve ad2" x1="200" y1="140" x2="640" y2="415"/>
+  <text x="645" y="425" class="lbl" fill="#0d47a1">AD2</text>
+
+  <!-- E1: AD1 ∩ SRAS → (367, 288) -->
+  <circle class="pt" cx="367" cy="288" r="4.5"/>
+  <line class="dotted" x1="367" y1="288" x2="367" y2="450"/>
+  <line class="dotted" x1="367" y1="288" x2="90"  y2="288"/>
+  <text x="60"  y="293" class="lblB">P1</text>
+  <text x="362" y="468" class="lblB">Y1</text>
+  <text x="374" y="284" class="lbl">E1</text>
+
+  <!-- E2: AD2 ∩ SRAS: 0.625x + 14.99 = -0.625x + 517.5 → 1.25x = 502.51 → x ≈ 402, y ≈ 266 -->
+  <circle class="pt" cx="402" cy="266" r="4.5"/>
+  <line class="dotted" x1="402" y1="266" x2="402" y2="450"/>
+  <line class="dotted" x1="402" y1="266" x2="90"  y2="266"/>
+  <text x="60"  y="271" class="lblB">P2</text>
+  <text x="395" y="468" class="lblB">Y2</text>
+  <text x="409" y="262" class="lbl">E2</text>
+
+  <path class="arrow" d="M 290 360 q 40 -8 80 -3"/>
+  <text x="290" y="378" class="lbl" fill="#0d47a1">AD shifts right</text>
+
+  <text x="90"  y="495" class="sub">Rising consumer spending is the largest component of AD; AD shifts right from AD1 to AD2.</text>
+  <text x="90"  y="512" class="sub">New equilibrium has higher Real GDP (Y2 &gt; Y1) AND higher price level (P2 &gt; P1) — demand-pull inflation.</text>
+</svg>
