@@ -659,7 +659,7 @@ export default function DiagramPractice() {
           id: `gcse-${t.slug}`,
           section: t.section ? inferSectionFromTopicStr(t.section) : inferSectionFromTopicStr(t.title),
           topic: t.title,
-          difficulty: t.tier as "Foundation" | "Intermediate" | "Advanced",
+          difficulty: t.tier as "Foundation" | "Higher",
           scenario: t.scenario,
           question: t.question,
           marks: t.marks,
@@ -1281,6 +1281,8 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                               ? "bg-violet-500/15 text-violet-300 border-violet-400/40"
                               : s.difficulty === "Intermediate" && subject === "edexcel-b"
                               ? "bg-indigo-500/15 text-indigo-300 border-indigo-400/40"
+                              : s.difficulty === "Higher"
+                              ? "bg-amber-500/15 text-amber-300 border-amber-400/40"
                               : s.difficulty === "Foundation" ? "bg-accent/20 text-accent-foreground border-transparent" :
                               s.difficulty === "Intermediate" ? "bg-secondary text-secondary-foreground border-transparent" :
                               
