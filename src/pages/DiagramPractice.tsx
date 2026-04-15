@@ -649,7 +649,7 @@ export default function DiagramPractice() {
           id: `gcse-${t.slug}`,
           section: t.section ? inferSectionFromTopicStr(t.section) : inferSectionFromTopicStr(t.title),
           topic: t.title,
-          difficulty: (t.tier === "Higher" ? "Advanced" : t.tier) as "Foundation" | "Intermediate" | "Advanced",
+          difficulty: t.tier as "Foundation" | "Intermediate" | "Advanced",
           scenario: t.scenario,
           question: t.question,
           marks: t.marks,
