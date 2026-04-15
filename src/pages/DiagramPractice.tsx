@@ -4,6 +4,7 @@ import { ocrTopics, type OcrTopic } from "@/data/topicsOcr";
 import { caieTopics, type CaieTopic } from "@/data/topicsCaie";
 import { ibTopics, type IbTopic } from "@/data/topicsIb";
 import { wjecTopics, type WjecTopic } from "@/data/topicsWjec";
+import { eduqasTopics, type EduqasTopic } from "@/data/topicsEduqas";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
@@ -196,6 +197,9 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
     "Comparative Advantage — PPC Approach",
     "The Multiplier — AD Shift",
     "Marshall-Lerner Condition — J-Curve",
+  ],
+  eduqas: [
+    "Indirect Tax (Ad Valorem / Specific)",
   ],
 };
 
@@ -569,6 +573,45 @@ export default function DiagramPractice() {
         return combined;
       }
 
+      // Eduqas: inject real topic data
+      if (subject === "eduqas") {
+        const eduqasScenarios: DiagramScenario[] = eduqasTopics.map((t) => ({
+          id: `eduqas-${t.slug}`,
+          section: t.section ? inferSectionFromTopicStr(t.section) : inferSectionFromTopicStr(t.title),
+          topic: t.title,
+          difficulty: t.tier as "Foundation" | "Intermediate" | "Advanced",
+          scenario: t.scenario,
+          question: t.question,
+          marks: t.marks,
+          expectedDiagramKeyword: t.slug,
+          hints: [`${t.tier} · ${t.marks} marks`, `Eduqas A-Level`],
+          scenarioVariant: t.scenarioVariant,
+        }));
+
+        const eduqasSlugs = new Set(eduqasTopics.map((t) => t.title));
+        const remainingTemplates = boardScenarioTemplates
+          .filter((s) => !eduqasSlugs.has(s.topic))
+          .filter((s) => sectionFilter === "all" || s.section === sectionFilter)
+          .filter((s) => difficulty === "all" || s.difficulty === difficulty)
+          .map((s, index) => ({
+            id: `${subject}-gen-${index}-${s.expectedDiagramKeyword ?? "topic"}`,
+            section: s.section,
+            topic: s.topic,
+            difficulty: s.difficulty,
+            scenario: `Board-specific diagram practice for Eduqas A-Level: ${s.topic}.`,
+            question: `Generate and answer an exam-style ${s.marks}-mark diagram task for Eduqas A-Level on "${s.topic}". Your diagram and explanation should match the style expected for ${subjectLabel}.`,
+            marks: s.marks,
+            expectedDiagramKeyword: s.expectedDiagramKeyword ?? inferDiagramType(s.topic),
+            hints: [`This task is aligned to Eduqas A-Level.`, `Focus on the conventions and command style expected in ${subjectLabel}.`],
+          }));
+
+        const combined = [
+          ...eduqasScenarios.filter((s) => sectionFilter === "all" || s.section === sectionFilter).filter((s) => difficulty === "all" || s.difficulty === difficulty),
+          ...remainingTemplates,
+        ];
+        return combined;
+      }
+
       return boardScenarioTemplates
         .filter(s => sectionFilter === "all" || s.section === sectionFilter)
         .filter(s => difficulty === "all" || s.difficulty === difficulty)
@@ -807,7 +850,12 @@ Format: Give the scenario context with Figure 1, then the question. Nothing else
       ? wjecTopics.find((t) => `wjec-${t.slug}` === scenario.id)
       : undefined;
 
-    const boardTopic = edexcelBTopic || ocrTopic || caieTopic || ibTopic || wjecTopic;
+    // Check if this is an Eduqas topic with real scenario data
+    const eduqasTopic = subject === "eduqas"
+      ? eduqasTopics.find((t) => `eduqas-${t.slug}` === scenario.id)
+      : undefined;
+
+    const boardTopic = edexcelBTopic || ocrTopic || caieTopic || ibTopic || wjecTopic || eduqasTopic;
     if (boardTopic) {
       setGeneratedQ(`**${boardTopic.title}** · ${boardTopic.tier} · ${boardTopic.marks} marks\n\n${boardTopic.scenario}\n\n${boardTopic.question}`);
       setStep("answer");
@@ -1252,7 +1300,10 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             const wjecRefTopic = subject === "wjec" && selectedScenario
               ? wjecTopics.find((t) => `wjec-${t.slug}` === selectedScenario.id)
               : undefined;
-            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic || ibRefTopic || wjecRefTopic;
+            const eduqasRefTopic = subject === "eduqas" && selectedScenario
+              ? eduqasTopics.find((t) => `eduqas-${t.slug}` === selectedScenario.id)
+              : undefined;
+            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic || ibRefTopic || wjecRefTopic || eduqasRefTopic;
 
             if (boardRefTopic) {
               return (
@@ -1554,7 +1605,10 @@ function DiagramFeedbackView({
   const wjecFeedbackTopic = subject === "wjec" && scenarioId
     ? wjecTopics.find((t) => `wjec-${t.slug}` === scenarioId)
     : undefined;
-  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic || wjecFeedbackTopic;
+  const eduqasFeedbackTopic = subject === "eduqas" && scenarioId
+    ? eduqasTopics.find((t) => `eduqas-${t.slug}` === scenarioId)
+    : undefined;
+  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic || wjecFeedbackTopic || eduqasFeedbackTopic;
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     // Board-specific SVG figure (Edexcel B or OCR)

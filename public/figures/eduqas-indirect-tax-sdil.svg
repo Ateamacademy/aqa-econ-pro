@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" font-family="Inter, Arial, sans-serif">
+  <rect width="640" height="480" fill="#ffffff"/>
+  <text x="320" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Specific Indirect Tax — UK Soft Drinks Industry Levy (SDIL, 2018)</text>
+
+  <!-- Axes -->
+  <line x1="90" y1="410" x2="610" y2="410" stroke="#0f172a" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="410" stroke="#0f172a" stroke-width="2"/>
+  <text x="555" y="430" font-size="12" fill="#0f172a">Quantity (litres)</text>
+  <text x="60" y="55" font-size="12" fill="#0f172a">Price (£)</text>
+
+  <!-- Demand D: from (130, 110) to (560, 390), slope 0.651
+       y = 110 + 0.651(x-130) -->
+  <line x1="130" y1="110" x2="560" y2="390" stroke="#0284c7" stroke-width="2.5"/>
+  <text x="565" y="395" font-size="12" font-weight="600" fill="#0284c7">D</text>
+
+  <!-- Original Supply S1: (130, 400) to (520, 110), slope -0.744 -->
+  <line x1="130" y1="400" x2="520" y2="110" stroke="#0284c7" stroke-width="2.5"/>
+  <text x="525" y="115" font-size="12" font-weight="600" fill="#0284c7">S1</text>
+
+  <!-- S2 = S1 + Tax shifted up 70 px: (130, 330) to (520, 40) -->
+  <line x1="130" y1="330" x2="520" y2="40" stroke="#15803d" stroke-width="2.5"/>
+  <text x="525" y="45" font-size="12" font-weight="700" fill="#15803d">S2 = S1 + Tax</text>
+
+  <!-- Computed equilibria (same geometry as IB/WJEC tax figures):
+       Initial eq (S1=D): x = 337.9, y = 245.3 → (P1, Q1)
+       New eq (S2=D): x = 287.7, y = 212.7 → (P2, Q2) ; this is point A
+       B on D at Q2 with horizontal P1 line: visually at (Q2, P1) → (288, 245)
+       C on S1 at Q2: y = 400 - 0.744*(287.7-130) = 282.7 → (288, 283); P3 horizontal -->
+
+  <!-- Initial equilibrium (Q1, P1) -->
+  <circle cx="338" cy="245" r="5" fill="#0f172a"/>
+
+  <!-- A = new equilibrium on S2 and D, at (Q2, P2) -->
+  <circle cx="288" cy="213" r="5" fill="#be123c"/>
+  <text x="293" y="208" font-size="12" font-weight="700" fill="#0f172a">A</text>
+
+  <!-- B = (Q2, P1) — middle reference -->
+  <circle cx="288" cy="245" r="5" fill="#0f172a"/>
+  <text x="293" y="240" font-size="12" font-weight="700" fill="#0f172a">B</text>
+
+  <!-- C = (Q2, P3) on S1 -->
+  <circle cx="288" cy="283" r="5" fill="#0f172a"/>
+  <text x="293" y="299" font-size="12" font-weight="700" fill="#0f172a">C</text>
+
+  <!-- Horizontal dashed lines for prices -->
+  <line x1="90" y1="213" x2="288" y2="213" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="217" text-anchor="end" font-size="11" font-weight="700" fill="#be123c">P2</text>
+
+  <line x1="90" y1="245" x2="338" y2="245" stroke="#0f172a" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="249" text-anchor="end" font-size="11" font-weight="700" fill="#0f172a">P1</text>
+
+  <line x1="90" y1="283" x2="288" y2="283" stroke="#d97706" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <text x="68" y="287" text-anchor="end" font-size="11" font-weight="700" fill="#d97706">P3</text>
+
+  <!-- Vertical dashed lines for Q2 and Q1 -->
+  <line x1="288" y1="213" x2="288" y2="410" stroke="#475569" stroke-dasharray="3,3" stroke-width="1"/>
+  <line x1="338" y1="245" x2="338" y2="410" stroke="#475569" stroke-dasharray="3,3" stroke-width="1"/>
+  <text x="288" y="425" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Q2</text>
+  <text x="338" y="425" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">Q1</text>
+
+  <!-- Consumer burden rectangle: between P2 (213) and P1 (245), x 90 to 288 -->
+  <rect x="90" y="213" width="198" height="32" fill="#bfdbfe" fill-opacity="0.65" stroke="#1e3a8a" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="189" y="233" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a8a">Consumer Burden</text>
+
+  <!-- Producer burden rectangle: between P1 (245) and P3 (283), x 90 to 288 -->
+  <rect x="90" y="245" width="198" height="38" fill="#fef3c7" fill-opacity="0.75" stroke="#a16207" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="189" y="268" text-anchor="middle" font-size="11" font-weight="700" fill="#a16207">Producer Burden</text>
+
+  <!-- Tax per unit bracket -->
+  <defs>
+    <marker id="arrEqT" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker>
+    <marker id="arrEqTe" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#15803d"/></marker>
+  </defs>
+  <line x1="395" y1="213" x2="395" y2="283" stroke="#15803d" stroke-width="1.5" marker-start="url(#arrEqTe)" marker-end="url(#arrEqT)"/>
+  <text x="403" y="248" font-size="11" font-weight="700" fill="#15803d">Tax</text>
+  <text x="403" y="261" font-size="10" fill="#15803d">per unit</text>
+  <text x="403" y="274" font-size="9" fill="#15803d">(£0.24/L)</text>
+
+  <!-- Total tax revenue annotation -->
+  <rect x="430" y="350" width="190" height="50" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="525" y="370" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">Total tax revenue</text>
+  <text x="525" y="388" text-anchor="middle" font-size="11" fill="#334155">= (P2 − P3) × Q2</text>
+
+  <text x="320" y="460" text-anchor="middle" font-size="11" fill="#334155">Inelastic D for sugary drinks → consumer burden P1-P2-A-B &gt; producer burden P1-P3-C-B. Most of the tax is passed to consumers.</text>
+</svg>
