@@ -1694,7 +1694,10 @@ function DiagramFeedbackView({
   const eduqasFeedbackTopic = subject === "eduqas" && scenarioId
     ? eduqasTopics.find((t) => `eduqas-${t.slug}` === scenarioId)
     : undefined;
-  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic || wjecFeedbackTopic || eduqasFeedbackTopic;
+  const gcseFeedbackTopic = subject === "aqa-gcse" && scenarioId
+    ? gcseTopics.find((t) => `gcse-${t.slug}` === scenarioId)
+    : undefined;
+  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic || wjecFeedbackTopic || eduqasFeedbackTopic || gcseFeedbackTopic;
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     // Board-specific SVG figure (Edexcel B or OCR)
