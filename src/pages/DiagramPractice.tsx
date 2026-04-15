@@ -198,6 +198,9 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
     "The Multiplier — AD Shift",
     "Marshall-Lerner Condition — J-Curve",
   ],
+  eduqas: [
+    "Indirect Tax (Ad Valorem / Specific)",
+  ],
 };
 
 const DIFFICULTY_LEVELS = ["Foundation", "Intermediate", "Advanced"] as const;
