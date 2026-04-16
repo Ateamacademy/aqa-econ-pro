@@ -8,6 +8,7 @@ import { eduqasTopics, type EduqasTopic } from "@/data/topicsEduqas";
 import { gcseTopics, type GcseTopic } from "@/data/topicsGcse";
 import { caieIgcseTopics, type CaieIgcseTopic } from "@/data/topicsCaieIgcse";
 import { edexcelIgcseTopics, type EdexcelIgcseTopic } from "@/data/topicsEdexcelIgcse";
+import { ocrGcseTopics, type OcrGcseTopic } from "@/data/topicsOcrGcse";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
@@ -266,6 +267,15 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
     "Supply & Demand — Price Volatility",
     "Labour Market — Monopsony Power",
     "Elasticity — PED and Revenue",
+  ],
+  "ocr-gcse": [
+    // Foundation (4 marks)
+    "Supply & Demand — Shift in Demand",
+    "Supply & Demand — Shift in Supply",
+    "AD/AS — Demand-Side Shock",
+    "AD/AS — Supply-Side Shock",
+    "AD/AS — Economic Growth (LRAS Shift)",
+    "Labour Market — Wage Determination",
   ],
 };
 
