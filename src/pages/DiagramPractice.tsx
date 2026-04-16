@@ -7,6 +7,7 @@ import { wjecTopics, type WjecTopic } from "@/data/topicsWjec";
 import { eduqasTopics, type EduqasTopic } from "@/data/topicsEduqas";
 import { gcseTopics, type GcseTopic } from "@/data/topicsGcse";
 import { caieIgcseTopics, type CaieIgcseTopic } from "@/data/topicsCaieIgcse";
+import { edexcelIgcseTopics, type EdexcelIgcseTopic } from "@/data/topicsEdexcelIgcse";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
