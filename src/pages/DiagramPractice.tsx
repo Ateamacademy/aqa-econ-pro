@@ -249,16 +249,22 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
     "Elasticity — PED and Revenue",
   ],
   "edexcel-igcse": [
-    // Foundation (4 marks) & Higher (6 marks)
+    // Foundation (4 marks)
     "Supply & Demand — Shift in Demand",
     "Supply & Demand — Shift in Supply",
     "AD/AS — Demand-Side Shock",
     "AD/AS — Supply-Side Shock",
     "AD/AS — Economic Growth (LRAS Shift)",
     "Labour Market — Wage Determination",
-    // Higher only
+    // Higher only (6 marks)
+    "Government Intervention — Maximum Price",
+    "Government Intervention — Subsidy",
     "Government Intervention — Indirect Tax",
+    "Market Failure — Positive Externality",
     "Market Failure — Negative Externality",
+    "AD/AS — Keynesian vs Classical",
+    "Supply & Demand — Price Volatility",
+    "Labour Market — Monopsony Power",
     "Elasticity — PED and Revenue",
   ],
 };
