@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <rect width="700" height="500" fill="#fff"/>
+  <defs>
+    <marker id="ih" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#222"/></marker>
+    <marker id="iv" markerWidth="6" markerHeight="8" refX="3" refY="1" orient="auto"><polygon points="0,8 3,0 6,8" fill="#222"/></marker>
+  </defs>
+  <text x="350" y="30" text-anchor="middle" font-size="18" font-weight="bold" font-family="Arial" fill="#222">PED &amp; Revenue: Netflix Price Increase (Inelastic)</text>
+  <line x1="80" y1="430" x2="80" y2="50" stroke="#222" stroke-width="2.5" marker-end="url(#iv)"/>
+  <line x1="80" y1="430" x2="640" y2="430" stroke="#222" stroke-width="2.5" marker-end="url(#ih)"/>
+  <text x="40" y="240" text-anchor="middle" font-size="15" font-weight="bold" font-family="Arial" fill="#222" transform="rotate(-90,40,240)">Price (£/month)</text>
+  <text x="400" y="470" text-anchor="middle" font-size="15" font-weight="bold" font-family="Arial" fill="#222">Quantity of Subscribers</text>
+  <!-- D (inelastic, red, steep) -->
+  <line x1="300" y1="80" x2="420" y2="410" stroke="#dc2626" stroke-width="3"/>
+  <text x="430" y="415" font-size="14" font-weight="bold" font-family="Arial" fill="#dc2626">D (inelastic)</text>
+  <!-- S1 (blue) -->
+  <line x1="200" y1="400" x2="480" y2="80" stroke="#2563eb" stroke-width="3"/>
+  <text x="485" y="78" font-size="16" font-weight="bold" font-family="Arial" fill="#2563eb">S₁</text>
+  <!-- S2 (green, shifted left) -->
+  <line x1="150" y1="380" x2="410" y2="80" stroke="#16a34a" stroke-width="3"/>
+  <text x="380" y="68" font-size="16" font-weight="bold" font-family="Arial" fill="#16a34a">S₂</text>
+  <!-- E1 at ~(370, 260) -->
+  <circle cx="370" cy="260" r="6" fill="#222"/>
+  <line x1="80" y1="260" x2="370" y2="260" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="370" y1="260" x2="370" y2="430" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="62" y="265" text-anchor="end" font-size="14" font-weight="bold" font-family="Arial" fill="#222">P₁</text>
+  <text x="370" y="450" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial" fill="#222">Q₁</text>
+  <!-- E2 at ~(340, 170) -->
+  <circle cx="340" cy="170" r="6" fill="#222"/>
+  <line x1="80" y1="170" x2="340" y2="170" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="340" y1="170" x2="340" y2="430" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="62" y="175" text-anchor="end" font-size="14" font-weight="bold" font-family="Arial" fill="#222">P₂</text>
+  <text x="340" y="450" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial" fill="#222">Q₂</text>
+  <!-- GAIN rectangle (green area) -->
+  <rect x="80" y="170" width="260" height="90" fill="#16a34a" fill-opacity="0.2" stroke="#16a34a" stroke-width="1"/>
+  <text x="200" y="220" text-anchor="middle" font-size="15" font-weight="bold" font-family="Arial" fill="#16a34a">GAIN</text>
+  <!-- LOSS rectangle (red area) -->
+  <rect x="340" y="260" width="30" height="170" fill="#dc2626" fill-opacity="0.2" stroke="#dc2626" stroke-width="1"/>
+  <text x="355" y="350" text-anchor="middle" font-size="12" font-weight="bold" font-family="Arial" fill="#dc2626">LOSS</text>
+  <!-- Annotation box -->
+  <rect x="480" y="120" width="150" height="50" rx="5" fill="#fff" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="555" y="142" text-anchor="middle" font-size="13" font-weight="bold" font-family="Arial" fill="#16a34a">Gain > Loss</text>
+  <text x="555" y="160" text-anchor="middle" font-size="13" font-weight="bold" font-family="Arial" fill="#16a34a">→ TR rises</text>
+</svg>

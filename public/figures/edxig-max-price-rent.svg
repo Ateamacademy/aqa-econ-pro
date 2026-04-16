@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <rect width="700" height="500" fill="#fff"/>
+  <defs>
+    <marker id="ah" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#222"/></marker>
+    <marker id="av" markerWidth="6" markerHeight="8" refX="3" refY="1" orient="auto"><polygon points="0,8 3,0 6,8" fill="#222"/></marker>
+    <marker id="arl" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto"><polygon points="8,0 0,3 8,6" fill="#dc2626"/></marker>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#dc2626"/></marker>
+  </defs>
+  <!-- Title -->
+  <text x="350" y="30" text-anchor="middle" font-size="18" font-weight="bold" font-family="Arial" fill="#222">Maximum Price: Edinburgh Rent Freeze</text>
+  <!-- Axes -->
+  <line x1="80" y1="430" x2="80" y2="50" stroke="#222" stroke-width="2.5" marker-end="url(#av)"/>
+  <line x1="80" y1="430" x2="640" y2="430" stroke="#222" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="40" y="240" text-anchor="middle" font-size="16" font-weight="bold" font-family="Arial" fill="#222" transform="rotate(-90,40,240)">Rent (£)</text>
+  <text x="400" y="470" text-anchor="middle" font-size="15" font-weight="bold" font-family="Arial" fill="#222">Quantity of Rental Apartments</text>
+  <!-- S (blue, upward) -->
+  <line x1="100" y1="400" x2="580" y2="80" stroke="#2563eb" stroke-width="3"/>
+  <text x="585" y="78" font-size="16" font-weight="bold" font-family="Arial" fill="#2563eb">S</text>
+  <!-- D (red, downward) -->
+  <line x1="100" y1="100" x2="580" y2="400" stroke="#dc2626" stroke-width="3"/>
+  <text x="585" y="405" font-size="16" font-weight="bold" font-family="Arial" fill="#dc2626">D</text>
+  <!-- Equilibrium at (340, 240) -->
+  <circle cx="340" cy="240" r="6" fill="#222"/>
+  <line x1="80" y1="240" x2="340" y2="240" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="340" y1="240" x2="340" y2="430" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="62" y="245" text-anchor="end" font-size="14" font-weight="bold" font-family="Arial" fill="#222">Pe</text>
+  <text x="340" y="450" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial" fill="#222">Qe</text>
+  <!-- Max Price line at y=320, below Pe -->
+  <line x1="85" y1="320" x2="600" y2="320" stroke="#dc2626" stroke-width="3" stroke-dasharray="12,6"/>
+  <text x="605" y="318" font-size="13" font-weight="bold" font-family="Arial" fill="#dc2626">Max Price</text>
+  <!-- Qs on S at y=320: approx x=212 -->
+  <circle cx="212" cy="320" r="5" fill="#2563eb"/>
+  <line x1="212" y1="320" x2="212" y2="430" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="212" y="450" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial" fill="#2563eb">Qs</text>
+  <!-- Qd on D at y=320: approx x=472 -->
+  <circle cx="472" cy="320" r="5" fill="#dc2626"/>
+  <line x1="472" y1="320" x2="472" y2="430" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="472" y="450" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial" fill="#dc2626">Qd</text>
+  <!-- Shortage bracket -->
+  <line x1="220" y1="355" x2="464" y2="355" stroke="#dc2626" stroke-width="2.5" marker-start="url(#arl)" marker-end="url(#arr)"/>
+  <text x="342" y="380" text-anchor="middle" font-size="15" font-weight="bold" font-family="Arial" fill="#dc2626">SHORTAGE</text>
+</svg>

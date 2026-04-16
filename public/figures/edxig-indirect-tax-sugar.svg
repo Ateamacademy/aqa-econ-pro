@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <rect width="700" height="500" fill="#fff"/>
+  <defs>
+    <marker id="gh" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#222"/></marker>
+    <marker id="gv" markerWidth="6" markerHeight="8" refX="3" refY="1" orient="auto"><polygon points="0,8 3,0 6,8" fill="#222"/></marker>
+    <marker id="gg" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#16a34a"/></marker>
+  </defs>
+  <text x="350" y="30" text-anchor="middle" font-size="18" font-weight="bold" font-family="Arial" fill="#222">Indirect Tax: UK Sugar Drinks Industry Levy</text>
+  <line x1="80" y1="430" x2="80" y2="50" stroke="#222" stroke-width="2.5" marker-end="url(#gv)"/>
+  <line x1="80" y1="430" x2="640" y2="430" stroke="#222" stroke-width="2.5" marker-end="url(#gh)"/>
+  <text x="40" y="240" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial" fill="#222" transform="rotate(-90,40,240)">Price (£ per litre)</text>
+  <text x="400" y="470" text-anchor="middle" font-size="15" font-weight="bold" font-family="Arial" fill="#222">Quantity of Sugary Drinks</text>
+  <!-- D (red) -->
+  <line x1="100" y1="100" x2="560" y2="400" stroke="#dc2626" stroke-width="3"/>
+  <text x="565" y="405" font-size="16" font-weight="bold" font-family="Arial" fill="#dc2626">D</text>
+  <!-- S (blue) -->
+  <line x1="120" y1="400" x2="560" y2="100" stroke="#2563eb" stroke-width="3"/>
+  <text x="565" y="98" font-size="16" font-weight="bold" font-family="Arial" fill="#2563eb">S</text>
+  <!-- S+tax (green, shifted up) -->
+  <line x1="120" y1="320" x2="520" y2="60" stroke="#16a34a" stroke-width="3"/>
+  <text x="525" y="58" font-size="14" font-weight="bold" font-family="Arial" fill="#16a34a">S + tax</text>
+  <!-- Original eq at ~(345, 250) -->
+  <circle cx="345" cy="250" r="6" fill="#222"/>
+  <line x1="80" y1="250" x2="345" y2="250" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="345" y1="250" x2="345" y2="430" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="62" y="255" text-anchor="end" font-size="14" font-weight="bold" font-family="Arial" fill="#222">P</text>
+  <text x="345" y="450" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial" fill="#222">Q</text>
+  <!-- New eq at ~(290, 215) -->
+  <circle cx="290" cy="215" r="6" fill="#222"/>
+  <line x1="80" y1="215" x2="290" y2="215" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="290" y1="215" x2="290" y2="430" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="62" y="220" text-anchor="end" font-size="14" font-weight="bold" font-family="Arial" fill="#222">P₁</text>
+  <text x="290" y="450" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial" fill="#222">Q₁</text>
+  <!-- Pp (producer price) on original S at Q₁ -->
+  <line x1="80" y1="290" x2="290" y2="290" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="62" y="295" text-anchor="end" font-size="14" font-weight="bold" font-family="Arial" fill="#222">Pₚ</text>
+  <circle cx="290" cy="290" r="4" fill="#222"/>
+  <!-- Tax revenue rectangle -->
+  <rect x="80" y="215" width="210" height="75" fill="#dc2626" fill-opacity="0.15" stroke="#dc2626" stroke-width="1"/>
+  <text x="160" y="260" text-anchor="middle" font-size="13" font-weight="bold" font-family="Arial" fill="#dc2626">Tax Revenue</text>
+  <!-- S shifts up annotation -->
+  <text x="420" y="310" font-size="12" font-family="Arial" fill="#16a34a">S shifts up</text>
+  <text x="420" y="327" font-size="12" font-family="Arial" fill="#16a34a">by tax per unit</text>
+</svg>

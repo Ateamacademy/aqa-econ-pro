@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <rect width="700" height="500" fill="#fff"/>
+  <defs>
+    <marker id="fh" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#222"/></marker>
+    <marker id="fv" markerWidth="6" markerHeight="8" refX="3" refY="1" orient="auto"><polygon points="0,8 3,0 6,8" fill="#222"/></marker>
+  </defs>
+  <text x="350" y="30" text-anchor="middle" font-size="18" font-weight="bold" font-family="Arial" fill="#222">Monopsony: UK Social Care Sector</text>
+  <line x1="80" y1="430" x2="80" y2="50" stroke="#222" stroke-width="2.5" marker-end="url(#fv)"/>
+  <line x1="80" y1="430" x2="640" y2="430" stroke="#222" stroke-width="2.5" marker-end="url(#fh)"/>
+  <text x="40" y="240" text-anchor="middle" font-size="15" font-weight="bold" font-family="Arial" fill="#222" transform="rotate(-90,40,240)">Wage Rate</text>
+  <text x="400" y="470" text-anchor="middle" font-size="15" font-weight="bold" font-family="Arial" fill="#222">Quantity of Care Workers</text>
+  <!-- S = ACL (blue, upward) -->
+  <line x1="100" y1="400" x2="560" y2="80" stroke="#2563eb" stroke-width="3"/>
+  <text x="565" y="78" font-size="13" font-weight="bold" font-family="Arial" fill="#2563eb">S = ACL</text>
+  <!-- MCL (cyan, steeper) -->
+  <line x1="100" y1="400" x2="400" y2="60" stroke="#06b6d4" stroke-width="3"/>
+  <text x="405" y="55" font-size="14" font-weight="bold" font-family="Arial" fill="#06b6d4">MCL</text>
+  <!-- D = MRP (red, downward) -->
+  <line x1="100" y1="100" x2="560" y2="400" stroke="#dc2626" stroke-width="3"/>
+  <text x="565" y="405" font-size="14" font-weight="bold" font-family="Arial" fill="#dc2626">D = MRP</text>
+  <!-- Competitive eq: S∩D at ~(330, 230) -->
+  <circle cx="330" cy="230" r="5" fill="#222"/>
+  <line x1="80" y1="230" x2="330" y2="230" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="330" y1="230" x2="330" y2="430" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="62" y="235" text-anchor="end" font-size="14" font-weight="bold" font-family="Arial" fill="#222">Wc</text>
+  <text x="330" y="450" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial" fill="#222">Qc</text>
+  <!-- MCL=MRP at ~(250, 180) → Qm=250, then Wm on ACL at x=250 → y~310 -->
+  <circle cx="250" cy="180" r="5" fill="#222"/>
+  <circle cx="250" cy="310" r="5" fill="#222"/>
+  <line x1="250" y1="180" x2="250" y2="430" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="80" y1="310" x2="250" y2="310" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="62" y="315" text-anchor="end" font-size="14" font-weight="bold" font-family="Arial" fill="#dc2626">Wₘ</text>
+  <text x="250" y="450" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial" fill="#dc2626">Qₘ</text>
+  <!-- Lost wages shaded area -->
+  <rect x="80" y="230" width="170" height="80" fill="#ec4899" fill-opacity="0.2"/>
+  <text x="140" y="275" text-anchor="middle" font-size="12" font-weight="bold" font-family="Arial" fill="#ec4899">Lost wages</text>
+  <text x="140" y="292" text-anchor="middle" font-size="12" font-weight="bold" font-family="Arial" fill="#ec4899">(under-payment)</text>
+</svg>
