@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <rect width="700" height="500" fill="#fff"/>
+  <defs>
+    <marker id="owh" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#222"/></marker>
+    <marker id="owv" markerWidth="6" markerHeight="8" refX="3" refY="1" orient="auto"><polygon points="0,8 3,0 6,8" fill="#222"/></marker>
+  </defs>
+  <text x="350" y="30" text-anchor="middle" font-size="18" font-weight="bold" font-family="Arial" fill="#222">2023 European Drought: Wheat Price Volatility</text>
+  <line x1="80" y1="430" x2="80" y2="50" stroke="#222" stroke-width="2.5" marker-end="url(#owv)"/>
+  <line x1="80" y1="430" x2="640" y2="430" stroke="#222" stroke-width="2.5" marker-end="url(#owh)"/>
+  <text x="40" y="240" text-anchor="middle" font-size="15" font-weight="bold" font-family="Arial" fill="#222" transform="rotate(-90,40,240)">Price ($/tonne)</text>
+  <text x="400" y="470" text-anchor="middle" font-size="15" font-weight="bold" font-family="Arial" fill="#222">Quantity of Wheat</text>
+  <!-- D inelastic (red, steep) -->
+  <line x1="300" y1="80" x2="400" y2="420" stroke="#dc2626" stroke-width="3"/>
+  <text x="405" y="425" font-size="13" font-weight="bold" font-family="Arial" fill="#dc2626">D (inelastic)</text>
+  <!-- S1 (blue, steep) -->
+  <line x1="340" y1="420" x2="430" y2="80" stroke="#2563eb" stroke-width="3"/>
+  <text x="435" y="78" font-size="16" font-weight="bold" font-family="Arial" fill="#2563eb">S₁</text>
+  <!-- S2 shifted left (green, steep) -->
+  <line x1="280" y1="420" x2="370" y2="80" stroke="#16a34a" stroke-width="3"/>
+  <text x="350" y="70" font-size="16" font-weight="bold" font-family="Arial" fill="#16a34a">S₂</text>
+  <!-- E1 at ~(370, 280) -->
+  <circle cx="370" cy="280" r="6" fill="#222"/>
+  <line x1="80" y1="280" x2="370" y2="280" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="370" y1="280" x2="370" y2="430" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="62" y="285" text-anchor="end" font-size="14" font-weight="bold" font-family="Arial" fill="#222">P₁</text>
+  <text x="370" y="450" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial" fill="#222">Q₁</text>
+  <!-- E2 at ~(340, 170) -->
+  <circle cx="340" cy="170" r="6" fill="#222"/>
+  <line x1="80" y1="170" x2="340" y2="170" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="340" y1="170" x2="340" y2="430" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="62" y="175" text-anchor="end" font-size="14" font-weight="bold" font-family="Arial" fill="#222">P₂</text>
+  <text x="340" y="450" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial" fill="#222">Q₂</text>
+  <!-- Annotations -->
+  <text x="120" y="150" font-size="13" font-weight="bold" font-family="Arial" fill="#16a34a">Small ΔQ</text>
+  <text x="120" y="168" font-size="13" font-weight="bold" font-family="Arial" fill="#16a34a">LARGE ΔP</text>
+</svg>
