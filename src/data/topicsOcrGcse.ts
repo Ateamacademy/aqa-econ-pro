@@ -166,7 +166,7 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
       "In 2018, the UK introduced the Soft Drinks Industry Levy (SDIL), commonly known as the 'sugar tax'. Drinks containing more than 8g of sugar per 100ml were taxed at 24p per litre, while those with 5–8g were taxed at 18p per litre. The policy aimed to correct the negative externality of obesity and incentivise producers to reformulate recipes.",
     question:
       "Using an appropriate diagram, explain the impact of a specific indirect tax on the market for high-sugar soft drinks. Draw the shift in supply, identify the new equilibrium (P₁, Q₁), shade the total tax revenue area, and explain how the tax reduces sugar consumption.",
-    figureFile: "/figures/gcse-indirect-tax-sdil.svg",
+    figureFile: "/figures/ocrh-sugar-tax.svg",
     explanation:
       "The tax acts as an additional cost of production for firms. The supply curve shifts upwards by the tax amount — new supply is S + tax. At the old price there is excess demand; the price rises to P₁. Consumers respond with a contraction in Qd — movement along D. New equilibrium has lower Q₁ and the tax revenue is the rectangle between P₁ and Pp, width Q₁. Mexico's 2014 soda tax led to a 6% average decline in taxed beverage purchases.",
     keyTerms: ["specific tax", "contraction in demand", "incidence of tax", "tax revenue"],
@@ -191,7 +191,7 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
       "The fast fashion industry produces approximately 92 million tonnes of textile waste per year globally. Manufacturing processes release toxic chemicals into water systems, and carbon emissions from the industry account for 10% of global emissions. Retail prices of £5 T-shirts do not reflect these costs — they are borne by local communities and future generations.",
     question:
       "Using a negative production externality diagram, analyse the impact of fast fashion on market efficiency. Label MPC, MSC, and MSB (=D). Identify the market and socially optimum outputs, shade the welfare loss, and explain why the market fails.",
-    figureFile: "/figures/gcse-ad-demand-shock.svg",
+    figureFile: "/figures/ocrh-fashion.svg",
     explanation:
       "Pollution is an external cost of production — not borne by the firm. MSC lies above MPC; the vertical gap is the MEC (marginal external cost). The market produces at Q₁ where MPC = MSB, but society prefers Q* where MSC = MSB — fewer units produced. Because Q₁ > Q*, there is overproduction and the welfare loss triangle appears between MSC and MSB from Q* to Q₁. In Bangladesh, the textile sector discharges untreated waste into the Buriganga River.",
     keyTerms: ["MPC", "MSC", "external cost (MEC)", "welfare loss", "overproduction"],
@@ -216,7 +216,7 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
       "In 2023, the Scottish Government introduced a rent freeze capping private rents at their September 2022 levels. This was a response to a cost-of-living crisis where average rents in Edinburgh rose by 13% year-on-year. The policy aims to protect tenants, but economists warn it may have unintended consequences for the housing supply.",
     question:
       "Draw a demand and supply diagram to show the effect of a maximum price being imposed on the market for rental apartments. Show the original equilibrium, the level of the maximum price, and the resulting shortage. Using your diagram, explain the impact on the quantity of apartments available.",
-    figureFile: "/figures/gcse-labour-market-hospitality.svg",
+    figureFile: "/figures/ocrh-max-price.svg",
     explanation:
       "A maximum price (price ceiling) must be set below the equilibrium price to be effective. At the lower rent, landlords reduce supply (contraction in supply — Qs falls) as letting becomes less profitable. Meanwhile, more tenants wish to rent at the lower price (extension in demand — Qd rises). The gap between Qd and Qs is the shortage (excess demand). In Berlin (2020), the 'Mietendeckel' rent cap led to a significant decrease in apartments listed for rent.",
     keyTerms: ["price ceiling", "excess demand", "shortage", "equilibrium", "incentive"],
