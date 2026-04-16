@@ -248,6 +248,15 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
     "Market Structure — Price Discrimination",
     "Elasticity — PED and Revenue",
   ],
+  "edexcel-igcse": [
+    // Foundation (4 marks)
+    "Supply & Demand — Shift in Demand",
+    "Supply & Demand — Shift in Supply",
+    "AD/AS — Demand-Side Shock",
+    "AD/AS — Supply-Side Shock",
+    "AD/AS — Economic Growth (LRAS Shift)",
+    "Labour Market — Wage Determination",
+  ],
 };
 
 const GCSE_BOARDS = ["aqa-gcse", "cambridge-igcse", "edexcel-igcse", "ocr-gcse"];
