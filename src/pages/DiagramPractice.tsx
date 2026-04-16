@@ -1507,7 +1507,10 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             const caieIgcseRefTopic = subject === "cambridge-igcse" && selectedScenario
               ? caieIgcseTopics.find((t) => `caie-igcse-${t.slug}` === selectedScenario.id)
               : undefined;
-            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic || ibRefTopic || wjecRefTopic || eduqasRefTopic || gcseRefTopic || caieIgcseRefTopic;
+            const edxigRefTopic = subject === "edexcel-igcse" && selectedScenario
+              ? edexcelIgcseTopics.find((t) => `edxig-${t.slug}` === selectedScenario.id)
+              : undefined;
+            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic || ibRefTopic || wjecRefTopic || eduqasRefTopic || gcseRefTopic || caieIgcseRefTopic || edxigRefTopic;
 
             if (boardRefTopic) {
               return (
