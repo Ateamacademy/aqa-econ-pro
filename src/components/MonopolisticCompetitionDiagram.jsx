@@ -464,7 +464,7 @@ function DiagramSVG({ showLR }) {
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function MonopolisticCompetitionDiagram() {
-  const [showLR, setShowLR] = useState(false);
+  const [showLR, setShowLR] = useState(true);
 
   const legendItems = showLR
     ? [
