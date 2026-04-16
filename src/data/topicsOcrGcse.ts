@@ -166,7 +166,7 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
       "In 2018, the UK introduced the Soft Drinks Industry Levy (SDIL), commonly known as the 'sugar tax'. Drinks containing more than 8g of sugar per 100ml were taxed at 24p per litre, while those with 5–8g were taxed at 18p per litre. The policy aimed to correct the negative externality of obesity and incentivise producers to reformulate recipes.",
     question:
       "Using an appropriate diagram, explain the impact of a specific indirect tax on the market for high-sugar soft drinks. Draw the shift in supply, identify the new equilibrium (P₁, Q₁), shade the total tax revenue area, and explain how the tax reduces sugar consumption.",
-    figureFile: "/figures/gcse-indirect-tax-sdil.svg",
+    figureFile: "/figures/ocrh-sugar-tax.svg",
     explanation:
       "The tax acts as an additional cost of production for firms. The supply curve shifts upwards by the tax amount — new supply is S + tax. At the old price there is excess demand; the price rises to P₁. Consumers respond with a contraction in Qd — movement along D. New equilibrium has lower Q₁ and the tax revenue is the rectangle between P₁ and Pp, width Q₁. Mexico's 2014 soda tax led to a 6% average decline in taxed beverage purchases.",
     keyTerms: ["specific tax", "contraction in demand", "incidence of tax", "tax revenue"],
@@ -191,7 +191,7 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
       "The fast fashion industry produces approximately 92 million tonnes of textile waste per year globally. Manufacturing processes release toxic chemicals into water systems, and carbon emissions from the industry account for 10% of global emissions. Retail prices of £5 T-shirts do not reflect these costs — they are borne by local communities and future generations.",
     question:
       "Using a negative production externality diagram, analyse the impact of fast fashion on market efficiency. Label MPC, MSC, and MSB (=D). Identify the market and socially optimum outputs, shade the welfare loss, and explain why the market fails.",
-    figureFile: "/figures/gcse-ad-demand-shock.svg",
+    figureFile: "/figures/ocrh-fashion.svg",
     explanation:
       "Pollution is an external cost of production — not borne by the firm. MSC lies above MPC; the vertical gap is the MEC (marginal external cost). The market produces at Q₁ where MPC = MSB, but society prefers Q* where MSC = MSB — fewer units produced. Because Q₁ > Q*, there is overproduction and the welfare loss triangle appears between MSC and MSB from Q* to Q₁. In Bangladesh, the textile sector discharges untreated waste into the Buriganga River.",
     keyTerms: ["MPC", "MSC", "external cost (MEC)", "welfare loss", "overproduction"],
@@ -216,7 +216,7 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
       "In 2023, the Scottish Government introduced a rent freeze capping private rents at their September 2022 levels. This was a response to a cost-of-living crisis where average rents in Edinburgh rose by 13% year-on-year. The policy aims to protect tenants, but economists warn it may have unintended consequences for the housing supply.",
     question:
       "Draw a demand and supply diagram to show the effect of a maximum price being imposed on the market for rental apartments. Show the original equilibrium, the level of the maximum price, and the resulting shortage. Using your diagram, explain the impact on the quantity of apartments available.",
-    figureFile: "/figures/gcse-labour-market-hospitality.svg",
+    figureFile: "/figures/ocrh-max-price.svg",
     explanation:
       "A maximum price (price ceiling) must be set below the equilibrium price to be effective. At the lower rent, landlords reduce supply (contraction in supply — Qs falls) as letting becomes less profitable. Meanwhile, more tenants wish to rent at the lower price (extension in demand — Qd rises). The gap between Qd and Qs is the shortage (excess demand). In Berlin (2020), the 'Mietendeckel' rent cap led to a significant decrease in apartments listed for rent.",
     keyTerms: ["price ceiling", "excess demand", "shortage", "equilibrium", "incentive"],
@@ -241,7 +241,7 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
       "The UK's childhood vaccination programme provides free immunisations against diseases including measles, whooping cough, and meningitis. In 2023, MMR vaccination rates fell to 85% in England — below the 95% threshold needed for herd immunity. Private clinics charge up to £200 per MMR dose, leaving low-income families unable to afford full protection without NHS support.",
     question:
       "With the use of a positive externality diagram, explain why the free market provides fewer vaccinations than are socially desirable. You must label MSB, MPB (= D), the market equilibrium, the social optimum, and the resulting welfare loss.",
-    figureFile: "/figures/gcse-lras-shift-skills.svg",
+    figureFile: "/figures/ocrh-vaccines.svg",
     explanation:
       "Individuals consume vaccinations based on their own MPB (personal protection). But vaccinated people reduce disease transmission — a benefit to others. MSB > MPB. The market stops at Qm where MPB = MPC, but this is below the social optimum Q* where MSB = MSC. Between Qm and Q*, society would gain more benefit than the cost — this gap is the welfare loss. The UK COVID-19 vaccination programme generated huge positive externalities.",
     keyTerms: ["MPB", "MSB", "external benefit", "welfare loss", "under-consumption"],
@@ -266,7 +266,7 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
       "During the 2020 recession, UK Real GDP fell by 9.7% — the largest annual decline in over 300 years. Unemployment rose to 5.2% and there was significant spare capacity across the economy. The government responded with major fiscal expansion: furlough, increased NHS spending, and infrastructure projects worth £600 billion.",
     question:
       "Using a Keynesian AS diagram, show the effect of increased government spending on an economy with high unemployment. Explain the impact on output and the price level, distinguishing between the spare capacity and full employment regions.",
-    figureFile: "/figures/gcse-as-supply-shock.svg",
+    figureFile: "/figures/ocrh-keynesian.svg",
     explanation:
       "The Keynesian AS curve has three stages: perfectly elastic (spare capacity), upward sloping (bottlenecks), and perfectly inelastic (full employment at Yf). Increased government spending (G) raises AD — the curve shifts right. Because the economy begins with spare capacity, AD meets AS on the horizontal section. Firms hire idle workers without bidding up input prices. Real GDP rises significantly (Y₁ → Y₂) with little or no increase in the price level.",
     keyTerms: ["Keynesian AS", "spare capacity", "full employment", "fiscal expansion", "multiplier"],
@@ -291,7 +291,7 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
       "Netflix raised its standard subscription price from £10.99 to £12.99 per month in the UK in 2023. Market research suggests that demand for Netflix is relatively price inelastic in the short run (|PED| ≈ 0.5) because consumers are locked into viewing habits and close substitutes offer different content libraries. Netflix reported an increase in total revenue despite small subscriber losses.",
     question:
       "Analyse, using a demand diagram, how the price increase leads to higher total revenue. Draw a price-inelastic demand curve, label P₁/P₂ and Q₁/Q₂, indicate the revenue gain and loss rectangles, and explain the PED–TR relationship.",
-    figureFile: "/figures/gcse-demand-shift-evs.svg",
+    figureFile: "/figures/ocrh-ped-elastic.svg",
     explanation:
       "Because demand is inelastic, the percentage increase in price exceeds the percentage decrease in quantity. Revenue GAIN area (vertical rectangle at kept subscribers × price rise) is LARGER than revenue LOSS (horizontal rectangle of lost subscribers × old price). Therefore Total Revenue (P × Q) RISES when price rises, because the 'price effect' outweighs the 'quantity effect'. Spotify's 2023 price rise showed similar inelastic demand behaviour.",
     keyTerms: ["PED", "total revenue", "price inelastic", "price elastic", "substitutes"],
@@ -316,7 +316,7 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
       "The UK government's Plug-in Car Grant offered up to £2,500 off the purchase price of qualifying electric vehicles until 2022, and similar schemes continue across Europe. France's 'bonus écologique' provides up to €7,000 for EVs priced under €47,000. These subsidies aim to accelerate the transition from petrol and diesel cars to reduce transport emissions.",
     question:
       "Using a demand and supply diagram, analyse the effect of a government subsidy on the market for electric vehicles. Show the supply shift, label original and new equilibria, and explain how the subsidy affects the cost of production for firms and the price paid by consumers.",
-    figureFile: "/figures/gcse-supply-shift-bread.svg",
+    figureFile: "/figures/ocrh-ev-subsidy.svg",
     explanation:
       "The government pays EV manufacturers a grant per car produced. This reduces firms' unit costs of production. Firms supply more at every price level — the supply curve shifts right/down (S₁ → S₂). The new market equilibrium has a lower consumer price (P₂) and higher quantity (Q₂). The subsidy is shared between consumer (lower price) and producer (higher revenue per unit). Germany's €4,500 EV subsidy helped cut retail prices and support carbon emissions targets.",
     keyTerms: ["subsidy", "cost of production", "supply shift", "consumer surplus", "producer surplus"],
@@ -341,7 +341,7 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
       "Global wheat prices doubled between June 2021 and March 2022, rising from $280 to $580 per tonne following Russia's invasion of Ukraine. Russia and Ukraine together account for approximately 30% of global wheat exports. Wheat is a staple food — demand is highly price inelastic — and crops cannot be grown quickly, making supply inelastic too.",
     question:
       "On a supply and demand diagram, show the effects of a significant decrease in the supply of wheat. Draw inelastic demand and supply curves, show the shift in supply, label old and new equilibria, and explain how inelasticity leads to a large change in price.",
-    figureFile: "/figures/gcse-as-supply-shock.svg",
+    figureFile: "/figures/ocrh-wheat.svg",
     explanation:
       "Both D and S are steep because they are price inelastic. The war shifts supply left (S → S₁). Because the curves are steep, the horizontal gap between Q and Q₁ is small — production drops slightly. But the vertical gap between P and P₁ is very large — prices surge. Inelastic commodities experience extreme volatility when hit by supply shocks. In 2022, global wheat prices spiked nearly 30% after supply disruptions in Ukraine.",
     keyTerms: ["price inelastic demand", "price inelastic supply", "commodity", "price volatility"],
@@ -366,7 +366,7 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
       "The UK social care sector employs approximately 1.5 million workers, but local authorities (councils) are often the dominant employer of care workers in their area. Care worker wages averaged £10.50 per hour in 2023 — barely above the National Living Wage. Because councils set care fees and workers have few alternative employers nearby, the market behaves like a monopsony.",
     question:
       "Using a labour market diagram, analyse how monopsony power affects the equilibrium wage and level of employment compared to a perfectly competitive labour market. Show MCL, ACL (=S), and MRP (=D). Label monopsony wage (Wm) and employment (Qm) and competitive wage (Wc) and employment (Qc).",
-    figureFile: "/figures/gcse-labour-market-hospitality.svg",
+    figureFile: "/figures/ocrh-monopsony.svg",
     explanation:
       "The monopsony firm hires where MCL = MRP to maximise profit. At the chosen employment level Qm, the firm pays only what's needed to attract Qm workers — found on ACL at Wm. Because MCL > ACL, both the monopsony wage (Wm) and employment (Qm) are lower than in a competitive market (Wc, Qc). The firm captures the gap between Wm and the MRP as extra profit — workers are underpaid relative to their productivity.",
     keyTerms: ["monopsony", "MCL", "ACL", "MRP", "wage suppression"],
