@@ -531,13 +531,20 @@ export default function MonopolisticCompetitionDiagram() {
 
         {/* Toggle */}
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <span style={{
-            fontSize: 11,
-            color: !showLR ? C.ar_sr : C.muted,
-            fontWeight: !showLR ? 700 : 400,
-          }}>Short run</span>
-          <div
+          <span
+            onClick={() => setShowLR(false)}
+            style={{
+              fontSize: 11,
+              color: !showLR ? C.ar_sr : C.muted,
+              fontWeight: !showLR ? 700 : 400,
+              cursor: "pointer",
+              userSelect: "none",
+            }}
+          >Short run</span>
+          <button
+            type="button"
             onClick={() => setShowLR(v => !v)}
+            aria-label="Toggle short run / long run"
             style={{
               width: 46, height: 24, borderRadius: 12,
               position: "relative",
@@ -545,6 +552,8 @@ export default function MonopolisticCompetitionDiagram() {
               cursor: "pointer",
               transition: "background 0.2s",
               flexShrink: 0,
+              border: "none",
+              padding: 0,
             }}
           >
             <div style={{
@@ -554,13 +563,19 @@ export default function MonopolisticCompetitionDiagram() {
               borderRadius: "50%",
               background: "white",
               transition: "left 0.2s",
+              pointerEvents: "none",
             }} />
-          </div>
-          <span style={{
-            fontSize: 11,
-            color: showLR ? C.ar_lr : C.muted,
-            fontWeight: showLR ? 700 : 400,
-          }}>Long run</span>
+          </button>
+          <span
+            onClick={() => setShowLR(true)}
+            style={{
+              fontSize: 11,
+              color: showLR ? C.ar_lr : C.muted,
+              fontWeight: showLR ? 700 : 400,
+              cursor: "pointer",
+              userSelect: "none",
+            }}
+          >Long run</span>
         </div>
       </div>
 
