@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <rect width="700" height="500" fill="#fff"/>
+  <defs>
+    <marker id="dh" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#222"/></marker>
+    <marker id="dv" markerWidth="6" markerHeight="8" refX="3" refY="1" orient="auto"><polygon points="0,8 3,0 6,8" fill="#222"/></marker>
+    <marker id="do" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#f97316"/></marker>
+  </defs>
+  <text x="350" y="30" text-anchor="middle" font-size="18" font-weight="bold" font-family="Arial" fill="#222">Keynesian AS: UK 2020-2021 Recovery</text>
+  <line x1="80" y1="430" x2="80" y2="50" stroke="#222" stroke-width="2.5" marker-end="url(#dv)"/>
+  <line x1="80" y1="430" x2="640" y2="430" stroke="#222" stroke-width="2.5" marker-end="url(#dh)"/>
+  <text x="40" y="240" text-anchor="middle" font-size="15" font-weight="bold" font-family="Arial" fill="#222" transform="rotate(-90,40,240)">Price Level</text>
+  <text x="400" y="470" text-anchor="middle" font-size="15" font-weight="bold" font-family="Arial" fill="#222">Real GDP (Y)</text>
+  <!-- Keynesian AS: flat → curving → vertical -->
+  <path d="M 90 310 L 340 310 Q 420 310 460 220 L 470 80" stroke="#2563eb" stroke-width="3" fill="none"/>
+  <text x="380" y="70" font-size="14" font-weight="bold" font-family="Arial" fill="#2563eb">AS (Keynesian)</text>
+  <!-- LRAS vertical -->
+  <line x1="470" y1="80" x2="470" y2="430" stroke="#2563eb" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="470" y="450" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial" fill="#2563eb">Yf</text>
+  <!-- Spare capacity label -->
+  <text x="140" y="328" font-size="12" font-style="italic" font-family="Arial" fill="#2563eb">Spare capacity</text>
+  <!-- AD1 (red) -->
+  <line x1="100" y1="130" x2="380" y2="400" stroke="#dc2626" stroke-width="3"/>
+  <text x="385" y="408" font-size="15" font-weight="bold" font-family="Arial" fill="#dc2626">AD₁</text>
+  <!-- AD2 (orange, shifted right) -->
+  <line x1="200" y1="130" x2="500" y2="420" stroke="#f97316" stroke-width="3"/>
+  <text x="505" y="425" font-size="15" font-weight="bold" font-family="Arial" fill="#f97316">AD₂</text>
+  <!-- E1 on flat section: AD1 at y=310, x~260 -->
+  <circle cx="260" cy="310" r="6" fill="#222"/>
+  <line x1="80" y1="310" x2="260" y2="310" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="260" y1="310" x2="260" y2="430" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="62" y="315" text-anchor="end" font-size="14" font-weight="bold" font-family="Arial" fill="#222">P₁</text>
+  <text x="260" y="450" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial" fill="#222">Y₁</text>
+  <!-- E2: AD2 near flat/curving, ~(360, 305) -->
+  <circle cx="360" cy="305" r="6" fill="#222"/>
+  <line x1="80" y1="300" x2="360" y2="300" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="360" y1="305" x2="360" y2="430" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="62" y="300" text-anchor="end" font-size="14" font-weight="bold" font-family="Arial" fill="#222">P₂</text>
+  <text x="360" y="450" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial" fill="#222">Y₂</text>
+  <!-- Shift arrow -->
+  <path d="M 270 240 Q 310 230 350 230" stroke="#f97316" stroke-width="2.5" fill="none" marker-end="url(#do)"/>
+  <text x="250" y="215" font-size="12" font-family="Arial" fill="#f97316">AD shifts right</text>
+  <text x="250" y="230" font-size="12" font-family="Arial" fill="#f97316">( ↑ G spending)</text>
+</svg>
