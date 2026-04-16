@@ -1646,6 +1646,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
               return null;
             })();
             if (kw === "lorenz_curve") {
+              const isAqaLorenz = selectedScenario?.id === "aqa-lorenz-gini" || subject === "economics";
               return (
                 <Card>
                   <CardContent className="p-4">
@@ -1654,7 +1655,15 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                         <Eye className="h-3.5 w-3.5" /> Show reference diagram
                       </summary>
                       <div className="mt-3">
-                        <LorenzCurveChart showRegionsToggle showRefToggle height={420} />
+                        {isAqaLorenz ? (
+                          <img
+                            src="/figures/aqa-lorenz-gini.png"
+                            alt="Lorenz Curve & Gini Coefficient — Country A vs Country B"
+                            className="w-full rounded-lg bg-white p-2"
+                          />
+                        ) : (
+                          <LorenzCurveChart showRegionsToggle showRefToggle height={420} />
+                        )}
                       </div>
                     </details>
                   </CardContent>
