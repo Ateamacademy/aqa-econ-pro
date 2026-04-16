@@ -283,6 +283,9 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
     "Market Failure — Positive Externality",
     "AD/AS — Keynesian AS Curve",
     "Elasticity — PED and Revenue",
+    "Government Intervention — Subsidy",
+    "Supply & Demand — Price Volatility",
+    "Labour Market — Monopsony Power",
   ],
 };
 
