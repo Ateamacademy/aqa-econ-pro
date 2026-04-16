@@ -1821,7 +1821,10 @@ function DiagramFeedbackView({
   const caieIgcseFeedbackTopic = subject === "cambridge-igcse" && scenarioId
     ? caieIgcseTopics.find((t) => `caie-igcse-${t.slug}` === scenarioId)
     : undefined;
-  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic || wjecFeedbackTopic || eduqasFeedbackTopic || gcseFeedbackTopic || caieIgcseFeedbackTopic;
+  const edxigFeedbackTopic = subject === "edexcel-igcse" && scenarioId
+    ? edexcelIgcseTopics.find((t) => `edxig-${t.slug}` === scenarioId)
+    : undefined;
+  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic || wjecFeedbackTopic || eduqasFeedbackTopic || gcseFeedbackTopic || caieIgcseFeedbackTopic || edxigFeedbackTopic;
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     // Board-specific SVG figure (Edexcel B or OCR)
