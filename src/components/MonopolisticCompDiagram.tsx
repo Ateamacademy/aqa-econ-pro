@@ -17,7 +17,7 @@ const PTS = {
 };
 
 const MonopolisticCompDiagram = () => {
-  const [isLongRun, setIsLongRun] = useState(false);
+  const [isLongRun, setIsLongRun] = useState(true);
 
   return (
     <div className="w-full">
