@@ -1,0 +1,37 @@
+<svg viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+  <rect width="700" height="500" fill="#fff"/>
+  <text x="350" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#1e293b">Economic Growth: Malaysia Digital Infrastructure</text>
+  <!-- Axes -->
+  <line x1="80" y1="60" x2="80" y2="440" stroke="#1e293b" stroke-width="2.5"/>
+  <line x1="80" y1="440" x2="650" y2="440" stroke="#1e293b" stroke-width="2.5"/>
+  <text x="35" y="250" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b" transform="rotate(-90,35,250)">Price Level</text>
+  <text x="380" y="485" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">Real GDP (Y)</text>
+  <!-- AD -->
+  <line x1="140" y1="90" x2="600" y2="420" stroke="#ef4444" stroke-width="3"/>
+  <text x="605" y="430" font-size="15" font-weight="700" fill="#ef4444">AD</text>
+  <!-- SRAS -->
+  <line x1="120" y1="410" x2="600" y2="80" stroke="#3b82f6" stroke-width="3"/>
+  <text x="610" y="75" font-size="15" font-weight="700" fill="#3b82f6">SRAS</text>
+  <!-- LRAS1 vertical -->
+  <line x1="340" y1="70" x2="340" y2="430" stroke="#7c3aed" stroke-width="3"/>
+  <text x="320" y="62" font-size="15" font-weight="700" fill="#7c3aed">LRAS₁</text>
+  <!-- LRAS2 vertical dashed -->
+  <line x1="470" y1="70" x2="470" y2="430" stroke="#7c3aed" stroke-width="3" stroke-dasharray="8,5"/>
+  <text x="450" y="62" font-size="15" font-weight="700" fill="#7c3aed">LRAS₂</text>
+  <!-- E1 at (340, 245) -->
+  <circle cx="340" cy="245" r="5" fill="#1e293b" stroke="#fff" stroke-width="1.5"/>
+  <line x1="80" y1="245" x2="340" y2="245" stroke="#94a3b8" stroke-dasharray="5,4" stroke-width="1.2"/>
+  <text x="60" y="250" text-anchor="end" font-size="14" fill="#1e293b">P₁</text>
+  <text x="340" y="458" text-anchor="middle" font-size="14" fill="#1e293b">Y₁</text>
+  <!-- E2 on AD at x=470 => y ~ 330 -->
+  <circle cx="470" cy="330" r="5" fill="#1e293b" stroke="#fff" stroke-width="1.5"/>
+  <line x1="80" y1="330" x2="470" y2="330" stroke="#94a3b8" stroke-dasharray="5,4" stroke-width="1.2"/>
+  <line x1="470" y1="330" x2="470" y2="440" stroke="#94a3b8" stroke-dasharray="5,4" stroke-width="1.2"/>
+  <text x="60" y="335" text-anchor="end" font-size="14" fill="#1e293b">P₂</text>
+  <text x="470" y="458" text-anchor="middle" font-size="14" fill="#1e293b">Y₂</text>
+  <!-- Shift arrow -->
+  <defs><marker id="arrLRAS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7c3aed"/></marker></defs>
+  <path d="M 350 140 L 460 140" stroke="#7c3aed" stroke-width="2.5" fill="none" marker-end="url(#arrLRAS)"/>
+  <text x="355" y="128" font-size="13" fill="#7c3aed" font-weight="600">LRAS shifts right</text>
+  <text x="355" y="146" font-size="12" fill="#7c3aed">(↑ productive capacity)</text>
+</svg>
