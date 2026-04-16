@@ -1641,8 +1641,26 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
               if (kw === "monopolistic_competition") return MonopolisticCompetitionDiagram;
               if (kw === "perfect_competition") return EconPerfectCompetition;
               if (kw === "cost_push_inflation") return EconADASCostPush;
+              if (kw === "game_theory") return EconGameTheoryPayoff;
+              if (kw === "j_curve") return EconJCurveEffect;
               return null;
             })();
+            if (kw === "lorenz_curve") {
+              return (
+                <Card>
+                  <CardContent className="p-4">
+                    <details className="group" open>
+                      <summary className="text-xs font-semibold text-primary cursor-pointer hover:text-primary/80 transition-colors flex items-center gap-1.5">
+                        <Eye className="h-3.5 w-3.5" /> Show reference diagram
+                      </summary>
+                      <div className="mt-3">
+                        <LorenzCurveChart showRegionsToggle showRefToggle height={420} />
+                      </div>
+                    </details>
+                  </CardContent>
+                </Card>
+              );
+            }
             if (!Comp) return null;
             return (
               <Card>
