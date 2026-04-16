@@ -1646,7 +1646,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
               return null;
             })();
             if (kw === "lorenz_curve") {
-              const isAqaLorenz = selectedScenario?.id === "aqa-lorenz-gini" || subject === "aqa";
+              const isAqaLorenz = selectedScenario?.id === "aqa-lorenz-gini" || subject === "economics";
               return (
                 <Card>
                   <CardContent className="p-4">
