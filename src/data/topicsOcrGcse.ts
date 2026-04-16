@@ -241,7 +241,7 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
       "The UK's childhood vaccination programme provides free immunisations against diseases including measles, whooping cough, and meningitis. In 2023, MMR vaccination rates fell to 85% in England — below the 95% threshold needed for herd immunity. Private clinics charge up to £200 per MMR dose, leaving low-income families unable to afford full protection without NHS support.",
     question:
       "With the use of a positive externality diagram, explain why the free market provides fewer vaccinations than are socially desirable. You must label MSB, MPB (= D), the market equilibrium, the social optimum, and the resulting welfare loss.",
-    figureFile: "/figures/gcse-lras-shift-skills.svg",
+    figureFile: "/figures/ocrh-vaccines.svg",
     explanation:
       "Individuals consume vaccinations based on their own MPB (personal protection). But vaccinated people reduce disease transmission — a benefit to others. MSB > MPB. The market stops at Qm where MPB = MPC, but this is below the social optimum Q* where MSB = MSC. Between Qm and Q*, society would gain more benefit than the cost — this gap is the welfare loss. The UK COVID-19 vaccination programme generated huge positive externalities.",
     keyTerms: ["MPB", "MSB", "external benefit", "welfare loss", "under-consumption"],
@@ -266,7 +266,7 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
       "During the 2020 recession, UK Real GDP fell by 9.7% — the largest annual decline in over 300 years. Unemployment rose to 5.2% and there was significant spare capacity across the economy. The government responded with major fiscal expansion: furlough, increased NHS spending, and infrastructure projects worth £600 billion.",
     question:
       "Using a Keynesian AS diagram, show the effect of increased government spending on an economy with high unemployment. Explain the impact on output and the price level, distinguishing between the spare capacity and full employment regions.",
-    figureFile: "/figures/gcse-as-supply-shock.svg",
+    figureFile: "/figures/ocrh-keynesian.svg",
     explanation:
       "The Keynesian AS curve has three stages: perfectly elastic (spare capacity), upward sloping (bottlenecks), and perfectly inelastic (full employment at Yf). Increased government spending (G) raises AD — the curve shifts right. Because the economy begins with spare capacity, AD meets AS on the horizontal section. Firms hire idle workers without bidding up input prices. Real GDP rises significantly (Y₁ → Y₂) with little or no increase in the price level.",
     keyTerms: ["Keynesian AS", "spare capacity", "full employment", "fiscal expansion", "multiplier"],
@@ -291,7 +291,7 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
       "Netflix raised its standard subscription price from £10.99 to £12.99 per month in the UK in 2023. Market research suggests that demand for Netflix is relatively price inelastic in the short run (|PED| ≈ 0.5) because consumers are locked into viewing habits and close substitutes offer different content libraries. Netflix reported an increase in total revenue despite small subscriber losses.",
     question:
       "Analyse, using a demand diagram, how the price increase leads to higher total revenue. Draw a price-inelastic demand curve, label P₁/P₂ and Q₁/Q₂, indicate the revenue gain and loss rectangles, and explain the PED–TR relationship.",
-    figureFile: "/figures/gcse-demand-shift-evs.svg",
+    figureFile: "/figures/ocrh-ped-elastic.svg",
     explanation:
       "Because demand is inelastic, the percentage increase in price exceeds the percentage decrease in quantity. Revenue GAIN area (vertical rectangle at kept subscribers × price rise) is LARGER than revenue LOSS (horizontal rectangle of lost subscribers × old price). Therefore Total Revenue (P × Q) RISES when price rises, because the 'price effect' outweighs the 'quantity effect'. Spotify's 2023 price rise showed similar inelastic demand behaviour.",
     keyTerms: ["PED", "total revenue", "price inelastic", "price elastic", "substitutes"],
@@ -316,7 +316,7 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
       "The UK government's Plug-in Car Grant offered up to £2,500 off the purchase price of qualifying electric vehicles until 2022, and similar schemes continue across Europe. France's 'bonus écologique' provides up to €7,000 for EVs priced under €47,000. These subsidies aim to accelerate the transition from petrol and diesel cars to reduce transport emissions.",
     question:
       "Using a demand and supply diagram, analyse the effect of a government subsidy on the market for electric vehicles. Show the supply shift, label original and new equilibria, and explain how the subsidy affects the cost of production for firms and the price paid by consumers.",
-    figureFile: "/figures/gcse-supply-shift-bread.svg",
+    figureFile: "/figures/ocrh-ev-subsidy.svg",
     explanation:
       "The government pays EV manufacturers a grant per car produced. This reduces firms' unit costs of production. Firms supply more at every price level — the supply curve shifts right/down (S₁ → S₂). The new market equilibrium has a lower consumer price (P₂) and higher quantity (Q₂). The subsidy is shared between consumer (lower price) and producer (higher revenue per unit). Germany's €4,500 EV subsidy helped cut retail prices and support carbon emissions targets.",
     keyTerms: ["subsidy", "cost of production", "supply shift", "consumer surplus", "producer surplus"],
@@ -341,7 +341,7 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
       "Global wheat prices doubled between June 2021 and March 2022, rising from $280 to $580 per tonne following Russia's invasion of Ukraine. Russia and Ukraine together account for approximately 30% of global wheat exports. Wheat is a staple food — demand is highly price inelastic — and crops cannot be grown quickly, making supply inelastic too.",
     question:
       "On a supply and demand diagram, show the effects of a significant decrease in the supply of wheat. Draw inelastic demand and supply curves, show the shift in supply, label old and new equilibria, and explain how inelasticity leads to a large change in price.",
-    figureFile: "/figures/gcse-as-supply-shock.svg",
+    figureFile: "/figures/ocrh-wheat.svg",
     explanation:
       "Both D and S are steep because they are price inelastic. The war shifts supply left (S → S₁). Because the curves are steep, the horizontal gap between Q and Q₁ is small — production drops slightly. But the vertical gap between P and P₁ is very large — prices surge. Inelastic commodities experience extreme volatility when hit by supply shocks. In 2022, global wheat prices spiked nearly 30% after supply disruptions in Ukraine.",
     keyTerms: ["price inelastic demand", "price inelastic supply", "commodity", "price volatility"],
@@ -366,7 +366,7 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
       "The UK social care sector employs approximately 1.5 million workers, but local authorities (councils) are often the dominant employer of care workers in their area. Care worker wages averaged £10.50 per hour in 2023 — barely above the National Living Wage. Because councils set care fees and workers have few alternative employers nearby, the market behaves like a monopsony.",
     question:
       "Using a labour market diagram, analyse how monopsony power affects the equilibrium wage and level of employment compared to a perfectly competitive labour market. Show MCL, ACL (=S), and MRP (=D). Label monopsony wage (Wm) and employment (Qm) and competitive wage (Wc) and employment (Qc).",
-    figureFile: "/figures/gcse-labour-market-hospitality.svg",
+    figureFile: "/figures/ocrh-monopsony.svg",
     explanation:
       "The monopsony firm hires where MCL = MRP to maximise profit. At the chosen employment level Qm, the firm pays only what's needed to attract Qm workers — found on ACL at Wm. Because MCL > ACL, both the monopsony wage (Wm) and employment (Qm) are lower than in a competitive market (Wc, Qc). The firm captures the gap between Wm and the MRP as extra profit — workers are underpaid relative to their productivity.",
     keyTerms: ["monopsony", "MCL", "ACL", "MRP", "wage suppression"],
