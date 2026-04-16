@@ -25,6 +25,7 @@ import { cn } from "@/lib/utils";
 import { extractDiagramBlocks, EconDiagramCanvas } from "@/components/predicted-papers/EconDiagramSVG";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import LorenzCurveChart from "@/components/diagrams/LorenzCurveChart";
+import MonopolisticCompDiagram from "@/components/MonopolisticCompDiagram";
 import LRACDiagram from "@/components/diagrams/LRACDiagram";
 import EconLRACScaleCurves from "@/components/EconLRACScaleCurves";
 import EconMonopolySupernormalProfit from "@/components/EconMonopolySupernormalProfit";
