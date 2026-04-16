@@ -14,7 +14,7 @@ import { useState, useId } from "react";
 import { WelfareRegion } from "@/components/diagrams/WelfareRegion";
 import EconomicsDiagram, { type EconomicsDiagramProps } from "@/components/diagrams/EconomicsDiagram";
 import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram";
-import MonopolisticCompetitionDiagram from "@/components/MonopolisticCompetitionDiagram";
+import MonopolisticCompDiagram from "@/components/MonopolisticCompDiagram";
 import LorenzCurveDiagram from "@/components/LorenzCurveDiagram";
 import LRACDiagram from "@/components/diagrams/LRACDiagram";
 import SpecificAdValoremDiagram from "@/components/SpecificAdValoremDiagram";
@@ -3517,7 +3517,7 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
 
   // ── Monopolistic Competition: dedicated SR/LR component ──
   if (type === "monopolistic_competition") {
-    return <div className={cn("my-4", className)}><MonopolisticCompetitionDiagram /></div>;
+    return <div className={cn("my-4", className)}><MonopolisticCompDiagram /></div>;
   }
 
   // ── Lorenz Curve: dedicated exam-accurate component ──

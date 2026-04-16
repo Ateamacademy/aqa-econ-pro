@@ -28,7 +28,7 @@ import EconADSupplySide from "@/components/EconADSupplySide";
 import EconMonetaryPolicyFlow from "@/components/EconMonetaryPolicyFlow";
 import EconTermsOfTrade from "@/components/EconTermsOfTrade";
 import EconCoffeeMarketUK from "@/components/EconCoffeeMarketUK";
-import MonopolisticCompetitionDiagram from "@/components/MonopolisticCompetitionDiagram";
+import MonopolisticCompDiagram from "@/components/MonopolisticCompDiagram";
 import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram";
 import EconFiscalADAS from "@/components/EconFiscalADAS";
 import EconMultiplierCircular from "@/components/EconMultiplierCircular";
@@ -150,7 +150,7 @@ export function getCustomDiagramComponent(keyword: string, board?: string): Comp
     case "coffee_market_uk":
       return EconCoffeeMarketUK;
     case "monopolistic_competition":
-      return MonopolisticCompetitionDiagram;
+      return MonopolisticCompDiagram;
     case "perfect_competition":
       return EconPerfectCompetition;
     case "indirect_tax":
