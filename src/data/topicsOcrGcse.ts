@@ -153,4 +153,156 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
     ],
     scenarioVariant: "UK Hospitality — Post-COVID Labour Demand Surge",
   },
+
+  // ===== HIGHER TIER (6 marks) =====
+  {
+    slug: "ocr-indirect-tax-sdil",
+    board: "OCR-GCSE",
+    tier: "Higher",
+    section: "Government Intervention — Indirect Tax",
+    marks: 6,
+    title: "Government Intervention — Indirect Tax",
+    scenario:
+      "In 2018, the UK introduced the Soft Drinks Industry Levy (SDIL), commonly known as the 'sugar tax'. Drinks containing more than 8g of sugar per 100ml were taxed at 24p per litre, while those with 5–8g were taxed at 18p per litre. The policy aimed to correct the negative externality of obesity and incentivise producers to reformulate recipes.",
+    question:
+      "Using an appropriate diagram, explain the impact of a specific indirect tax on the market for high-sugar soft drinks. Draw the shift in supply, identify the new equilibrium (P₁, Q₁), shade the total tax revenue area, and explain how the tax reduces sugar consumption.",
+    figureFile: "/figures/gcse-indirect-tax-sdil.svg",
+    explanation:
+      "The tax acts as an additional cost of production for firms. The supply curve shifts upwards by the tax amount — new supply is S + tax. At the old price there is excess demand; the price rises to P₁. Consumers respond with a contraction in Qd — movement along D. New equilibrium has lower Q₁ and the tax revenue is the rectangle between P₁ and Pp, width Q₁. Mexico's 2014 soda tax led to a 6% average decline in taxed beverage purchases.",
+    keyTerms: ["specific tax", "contraction in demand", "incidence of tax", "tax revenue"],
+    diagramRequirements: [
+      { requirement: "Draw D and S curves with original equilibrium (P, Q)", marks: 1 },
+      { requirement: "Shift supply vertically upwards by the per-unit tax (S → S + tax)", marks: 1 },
+      { requirement: "Label new consumer price P₁, quantity Q₁, and producer-received price Pp", marks: 1 },
+      { requirement: "Shade the tax revenue rectangle (width Q₁, height P₁ − Pp)", marks: 1 },
+      { requirement: "Explain the mechanism — how the tax raises costs and reduces consumption", marks: 1 },
+      { requirement: "Evaluate effectiveness — reformulation, regressive impact, or substitution", marks: 1 },
+    ],
+    scenarioVariant: "UK Sugar Tax (SDIL) — Tax Incidence and Effectiveness",
+  },
+  {
+    slug: "ocr-neg-ext-fast-fashion",
+    board: "OCR-GCSE",
+    tier: "Higher",
+    section: "Market Failure — Negative Externality",
+    marks: 6,
+    title: "Market Failure — Negative Externality",
+    scenario:
+      "The fast fashion industry produces approximately 92 million tonnes of textile waste per year globally. Manufacturing processes release toxic chemicals into water systems, and carbon emissions from the industry account for 10% of global emissions. Retail prices of £5 T-shirts do not reflect these costs — they are borne by local communities and future generations.",
+    question:
+      "Using a negative production externality diagram, analyse the impact of fast fashion on market efficiency. Label MPC, MSC, and MSB (=D). Identify the market and socially optimum outputs, shade the welfare loss, and explain why the market fails.",
+    figureFile: "/figures/gcse-ad-demand-shock.svg",
+    explanation:
+      "Pollution is an external cost of production — not borne by the firm. MSC lies above MPC; the vertical gap is the MEC (marginal external cost). The market produces at Q₁ where MPC = MSB, but society prefers Q* where MSC = MSB — fewer units produced. Because Q₁ > Q*, there is overproduction and the welfare loss triangle appears between MSC and MSB from Q* to Q₁. In Bangladesh, the textile sector discharges untreated waste into the Buriganga River.",
+    keyTerms: ["MPC", "MSC", "external cost (MEC)", "welfare loss", "overproduction"],
+    diagramRequirements: [
+      { requirement: "Draw D = MPB = MSB (downward sloping)", marks: 1 },
+      { requirement: "Draw S = MPC (upward sloping)", marks: 1 },
+      { requirement: "Draw MSC above MPC (parallel shift up by MEC)", marks: 1 },
+      { requirement: "Label market equilibrium (Q₁, P₁) and social optimum (Q*, P*)", marks: 1 },
+      { requirement: "Shade the welfare loss triangle between Q* and Q₁", marks: 1 },
+      { requirement: "Explain overproduction — why the free market ignores external costs", marks: 1 },
+    ],
+    scenarioVariant: "Fast Fashion Pollution — Overproduction and Environmental Externalities",
+  },
+  {
+    slug: "ocr-max-price-rent",
+    board: "OCR-GCSE",
+    tier: "Higher",
+    section: "Government Intervention — Maximum Price",
+    marks: 6,
+    title: "Government Intervention — Maximum Price",
+    scenario:
+      "In 2023, the Scottish Government introduced a rent freeze capping private rents at their September 2022 levels. This was a response to a cost-of-living crisis where average rents in Edinburgh rose by 13% year-on-year. The policy aims to protect tenants, but economists warn it may have unintended consequences for the housing supply.",
+    question:
+      "Draw a demand and supply diagram to show the effect of a maximum price being imposed on the market for rental apartments. Show the original equilibrium, the level of the maximum price, and the resulting shortage. Using your diagram, explain the impact on the quantity of apartments available.",
+    figureFile: "/figures/gcse-labour-market-hospitality.svg",
+    explanation:
+      "A maximum price (price ceiling) must be set below the equilibrium price to be effective. At the lower rent, landlords reduce supply (contraction in supply — Qs falls) as letting becomes less profitable. Meanwhile, more tenants wish to rent at the lower price (extension in demand — Qd rises). The gap between Qd and Qs is the shortage (excess demand). In Berlin (2020), the 'Mietendeckel' rent cap led to a significant decrease in apartments listed for rent.",
+    keyTerms: ["price ceiling", "excess demand", "shortage", "equilibrium", "incentive"],
+    diagramRequirements: [
+      { requirement: "Draw a standard demand and supply diagram for rental apartments", marks: 1 },
+      { requirement: "Mark the original equilibrium (Pe, Qe)", marks: 1 },
+      { requirement: "Draw the maximum price horizontal line clearly BELOW Pe", marks: 1 },
+      { requirement: "Identify Qs and Qd at the maximum price and label the shortage", marks: 1 },
+      { requirement: "Explain the mechanism — why supply contracts and demand extends", marks: 1 },
+      { requirement: "Evaluate — unintended consequences such as black markets or reduced quality", marks: 1 },
+    ],
+    scenarioVariant: "Edinburgh Rent Freeze — Maximum Price and Housing Shortage",
+  },
+  {
+    slug: "ocr-pos-ext-vaccines",
+    board: "OCR-GCSE",
+    tier: "Higher",
+    section: "Market Failure — Positive Externality",
+    marks: 6,
+    title: "Market Failure — Positive Externality",
+    scenario:
+      "The UK's childhood vaccination programme provides free immunisations against diseases including measles, whooping cough, and meningitis. In 2023, MMR vaccination rates fell to 85% in England — below the 95% threshold needed for herd immunity. Private clinics charge up to £200 per MMR dose, leaving low-income families unable to afford full protection without NHS support.",
+    question:
+      "With the use of a positive externality diagram, explain why the free market provides fewer vaccinations than are socially desirable. You must label MSB, MPB (= D), the market equilibrium, the social optimum, and the resulting welfare loss.",
+    figureFile: "/figures/gcse-lras-shift-skills.svg",
+    explanation:
+      "Individuals consume vaccinations based on their own MPB (personal protection). But vaccinated people reduce disease transmission — a benefit to others. MSB > MPB. The market stops at Qm where MPB = MPC, but this is below the social optimum Q* where MSB = MSC. Between Qm and Q*, society would gain more benefit than the cost — this gap is the welfare loss. The UK COVID-19 vaccination programme generated huge positive externalities.",
+    keyTerms: ["MPB", "MSB", "external benefit", "welfare loss", "under-consumption"],
+    diagramRequirements: [
+      { requirement: "Draw D = MPB, S = MPC = MSC, and MSB (parallel and to the right of D)", marks: 1 },
+      { requirement: "Label market equilibrium (Qm, Pm) where D = S", marks: 1 },
+      { requirement: "Label social optimum (Q*, P*) where MSB = MSC", marks: 1 },
+      { requirement: "Shade the welfare loss triangle between Qm and Q*", marks: 1 },
+      { requirement: "Explain why the free market under-consumes vaccinations", marks: 1 },
+      { requirement: "Suggest a government intervention to correct the market failure", marks: 1 },
+    ],
+    scenarioVariant: "UK Childhood Vaccinations — Under-Provision and Herd Immunity",
+  },
+  {
+    slug: "ocr-keynesian-spare-capacity",
+    board: "OCR-GCSE",
+    tier: "Higher",
+    section: "AD/AS — Keynesian AS Curve",
+    marks: 6,
+    title: "AD/AS — Keynesian AS Curve",
+    scenario:
+      "During the 2020 recession, UK Real GDP fell by 9.7% — the largest annual decline in over 300 years. Unemployment rose to 5.2% and there was significant spare capacity across the economy. The government responded with major fiscal expansion: furlough, increased NHS spending, and infrastructure projects worth £600 billion.",
+    question:
+      "Using a Keynesian AS diagram, show the effect of increased government spending on an economy with high unemployment. Explain the impact on output and the price level, distinguishing between the spare capacity and full employment regions.",
+    figureFile: "/figures/gcse-as-supply-shock.svg",
+    explanation:
+      "The Keynesian AS curve has three stages: perfectly elastic (spare capacity), upward sloping (bottlenecks), and perfectly inelastic (full employment at Yf). Increased government spending (G) raises AD — the curve shifts right. Because the economy begins with spare capacity, AD meets AS on the horizontal section. Firms hire idle workers without bidding up input prices. Real GDP rises significantly (Y₁ → Y₂) with little or no increase in the price level.",
+    keyTerms: ["Keynesian AS", "spare capacity", "full employment", "fiscal expansion", "multiplier"],
+    diagramRequirements: [
+      { requirement: "Draw a Keynesian AS curve with horizontal, upward-sloping, and vertical sections", marks: 1 },
+      { requirement: "Draw AD₁ intersecting AS on the horizontal (spare capacity) section", marks: 1 },
+      { requirement: "Shift AD rightward to AD₂", marks: 1 },
+      { requirement: "Label Y₁, Y₂, P₁, P₂ (note: P₂ ≈ P₁ in spare capacity region)", marks: 1 },
+      { requirement: "Explain using the concept of spare capacity why prices don't rise", marks: 1 },
+      { requirement: "Explain what happens if AD shifts further into the vertical section", marks: 1 },
+    ],
+    scenarioVariant: "UK 2020–2021 Recovery — Spare Capacity vs Inflationary Pressure",
+  },
+  {
+    slug: "ocr-ped-elastic-demand",
+    board: "OCR-GCSE",
+    tier: "Higher",
+    section: "Elasticity — PED and Revenue",
+    marks: 6,
+    title: "Elasticity — PED and Revenue",
+    scenario:
+      "Netflix raised its standard subscription price from £10.99 to £12.99 per month in the UK in 2023. Market research suggests that demand for Netflix is relatively price inelastic in the short run (|PED| ≈ 0.5) because consumers are locked into viewing habits and close substitutes offer different content libraries. Netflix reported an increase in total revenue despite small subscriber losses.",
+    question:
+      "Analyse, using a demand diagram, how the price increase leads to higher total revenue. Draw a price-inelastic demand curve, label P₁/P₂ and Q₁/Q₂, indicate the revenue gain and loss rectangles, and explain the PED–TR relationship.",
+    figureFile: "/figures/gcse-demand-shift-evs.svg",
+    explanation:
+      "Because demand is inelastic, the percentage increase in price exceeds the percentage decrease in quantity. Revenue GAIN area (vertical rectangle at kept subscribers × price rise) is LARGER than revenue LOSS (horizontal rectangle of lost subscribers × old price). Therefore Total Revenue (P × Q) RISES when price rises, because the 'price effect' outweighs the 'quantity effect'. Spotify's 2023 price rise showed similar inelastic demand behaviour.",
+    keyTerms: ["PED", "total revenue", "price inelastic", "price elastic", "substitutes"],
+    diagramRequirements: [
+      { requirement: "Draw a STEEP (inelastic) demand curve", marks: 1 },
+      { requirement: "Show price rising from P₁ to P₂", marks: 1 },
+      { requirement: "Label Q₁ > Q₂ (small fall in quantity)", marks: 1 },
+      { requirement: "Shade 'gain' rectangle: (P₂ − P₁) × Q₂", marks: 1 },
+      { requirement: "Shade 'loss' rectangle: P₁ × (Q₁ − Q₂)", marks: 1 },
+      { requirement: "Explain why gain > loss when |PED| < 1", marks: 1 },
+    ],
+    scenarioVariant: "Netflix Price Increase — Short-Run vs Long-Run Revenue Effects",
+  },
 ];

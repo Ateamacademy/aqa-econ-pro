@@ -276,6 +276,13 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
     "AD/AS — Supply-Side Shock",
     "AD/AS — Economic Growth (LRAS Shift)",
     "Labour Market — Wage Determination",
+    // Higher (6 marks)
+    "Government Intervention — Indirect Tax",
+    "Market Failure — Negative Externality",
+    "Government Intervention — Maximum Price",
+    "Market Failure — Positive Externality",
+    "AD/AS — Keynesian AS Curve",
+    "Elasticity — PED and Revenue",
   ],
 };
 
