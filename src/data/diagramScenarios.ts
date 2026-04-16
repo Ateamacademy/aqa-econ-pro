@@ -352,6 +352,17 @@ export const diagramScenarios: DiagramScenario[] = [
     marks: 6,
     expectedDiagramKeyword: "lorenz_curve",
   },
+  {
+    id: "aqa-monop-comp-sr-lr",
+    section: "Market Structures",
+    topic: "Monopolistic Competition — Short Run vs Long Run",
+    difficulty: "Higher",
+    scenarioVariant: "Supernormal profit (SR) → Entry of new firms → Normal profit (LR) with excess capacity",
+    scenario: "An independent artisan coffee shop differentiates itself through branding, ambience and locally roasted beans. In the short run, demand is sufficient for it to charge a price above average cost and earn supernormal profit. Attracted by these profits, new differentiated coffee shops enter the local market, causing the firm's demand (AR) curve to shift left and become more elastic. In the long run, AR is tangent to AC and the firm earns only normal profit, while producing below the minimum efficient scale (excess capacity).",
+    question: "Draw TWO side-by-side cost and revenue diagrams for a firm in monopolistic competition.\n\nDiagram A — Short Run: Show AR=D, MR, AC and MC. Mark profit-maximising output Q₁ where MR=MC, price P₁ on AR, and shade the supernormal profit rectangle (P₁ − AC₁) × Q₁. Label 'Profit max (MR = MC)'.\n\nDiagram B — Long Run: Show the new AR₂=D₂ and MR₂ after entry of new firms. AR₂ must be tangent to AC at output Q₂, with P₂ = AC at that point (normal profit only). Mark Q₂ to the LEFT of AC minimum and label the horizontal gap to AC min as 'Excess capacity'. Annotate 'New firms enter → D shifts left' and 'AR tangent to AC → zero supernormal profit'. [8 marks]",
+    marks: 8,
+    expectedDiagramKeyword: "monopolistic_competition",
+  },
 
   // ── Macro Section 3: International ──
   {
