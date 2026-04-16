@@ -1981,7 +1981,17 @@ function DiagramFeedbackView({
     if (isFiscalPolicyTopic) return renderBoardSpecificDiagram("fiscal_policy_ad", <div className="my-4"><EconFiscalADAS /></div>);
     if (isTermsOfTradeTopic) return renderBoardSpecificDiagram("terms_of_trade", <div className="my-4"><EconTermsOfTradeUK /></div>);
     if (isCoffeeMarketTopic) return renderBoardSpecificDiagram("supply_demand", <div className="my-4"><EconCoffeeMarketUK /></div>);
-    if (isMonopolisticCompetitionTopic) return renderBoardSpecificDiagram("monopolistic_competition", <div className="my-4"><MonopolisticCompetitionDiagram /></div>);
+    if (isMonopolisticCompetitionTopic) {
+      if (scenarioId === "aqa-monop-comp-sr-lr") {
+        return (
+          <div className="my-4 grid gap-3 md:grid-cols-2">
+            <img src="/figures/aqa-monopolistic-short-run.png" alt="Monopolistic Competition — Short Run" className="w-full rounded-lg bg-white p-2" />
+            <img src="/figures/aqa-monopolistic-long-run.png" alt="Monopolistic Competition — Long Run" className="w-full rounded-lg bg-white p-2" />
+          </div>
+        );
+      }
+      return renderBoardSpecificDiagram("monopolistic_competition", <div className="my-4"><MonopolisticCompetitionDiagram /></div>);
+    }
     if (isPerfectCompetitionTopic) return renderBoardSpecificDiagram("perfect_competition", <div className="my-4"><EconPerfectCompetition /></div>);
     if (isPEDRevenueImpactTopic) return renderBoardSpecificDiagram("ped_revenue_impact", <div className="my-4"><PEDRevenueImpact /><EconPEDRevenueElastic /></div>);
     if (isDemandPullTopic) return renderBoardSpecificDiagram("demand_pull", <div className="my-4"><EconADDemandPull /></div>);
