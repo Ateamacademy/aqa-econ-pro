@@ -72,7 +72,6 @@ import EconMultiplierCircular from "@/components/EconMultiplierCircular";
 import EconFiscalADAS from "@/components/EconFiscalADAS";
 import EconTermsOfTradeUK from "@/components/EconTermsOfTradeUK";
 import EconCoffeeMarketUK from "@/components/EconCoffeeMarketUK";
-import MonopolisticCompetitionDiagram from "@/components/MonopolisticCompetitionDiagram";
 import EconGameTheoryPayoff from "@/components/EconGameTheoryPayoff";
 import EconJCurveEffect from "@/components/EconJCurveEffect";
 import EconEdexcelLorenzCurve from "@/components/EconEdexcelLorenzCurve";
@@ -1639,7 +1638,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
               if (kw === "exchange_rate") return EconExchangeRateINR;
               if (kw === "lrac") return EconLRACScaleCurves;
               if (kw === "monopoly") return EconMonopolySupernormalProfit;
-              if (kw === "monopolistic_competition") return MonopolisticCompetitionDiagram;
+              if (kw === "monopolistic_competition") return MonopolisticCompDiagram;
               if (kw === "perfect_competition") return EconPerfectCompetition;
               if (kw === "cost_push_inflation") return EconADASCostPush;
               if (kw === "game_theory") return EconGameTheoryPayoff;
@@ -1985,7 +1984,7 @@ function DiagramFeedbackView({
       if (scenarioId === "aqa-monop-comp-sr-lr") {
         return <div className="my-4"><MonopolisticCompDiagram /></div>;
       }
-      return renderBoardSpecificDiagram("monopolistic_competition", <div className="my-4"><MonopolisticCompetitionDiagram /></div>);
+      return renderBoardSpecificDiagram("monopolistic_competition", <div className="my-4"><MonopolisticCompDiagram /></div>);
     }
     if (isPerfectCompetitionTopic) return renderBoardSpecificDiagram("perfect_competition", <div className="my-4"><EconPerfectCompetition /></div>);
     if (isPEDRevenueImpactTopic) return renderBoardSpecificDiagram("ped_revenue_impact", <div className="my-4"><PEDRevenueImpact /><EconPEDRevenueElastic /></div>);
