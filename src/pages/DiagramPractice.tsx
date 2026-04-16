@@ -1678,9 +1678,8 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                       <summary className="text-xs font-semibold text-primary cursor-pointer hover:text-primary/80 transition-colors flex items-center gap-1.5">
                         <Eye className="h-3.5 w-3.5" /> Show reference diagram
                       </summary>
-                      <div className="mt-3 grid gap-3 md:grid-cols-2">
-                        <img src="/figures/aqa-monopolistic-short-run.png" alt="Monopolistic Competition — Short Run" className="w-full rounded-lg bg-white p-2" />
-                        <img src="/figures/aqa-monopolistic-long-run.png" alt="Monopolistic Competition — Long Run" className="w-full rounded-lg bg-white p-2" />
+                      <div className="mt-3">
+                        <MonopolisticCompDiagram />
                       </div>
                     </details>
                   </CardContent>
@@ -1983,12 +1982,7 @@ function DiagramFeedbackView({
     if (isCoffeeMarketTopic) return renderBoardSpecificDiagram("supply_demand", <div className="my-4"><EconCoffeeMarketUK /></div>);
     if (isMonopolisticCompetitionTopic) {
       if (scenarioId === "aqa-monop-comp-sr-lr") {
-        return (
-          <div className="my-4 grid gap-3 md:grid-cols-2">
-            <img src="/figures/aqa-monopolistic-short-run.png" alt="Monopolistic Competition — Short Run" className="w-full rounded-lg bg-white p-2" />
-            <img src="/figures/aqa-monopolistic-long-run.png" alt="Monopolistic Competition — Long Run" className="w-full rounded-lg bg-white p-2" />
-          </div>
-        );
+        return <div className="my-4"><MonopolisticCompDiagram /></div>;
       }
       return renderBoardSpecificDiagram("monopolistic_competition", <div className="my-4"><MonopolisticCompetitionDiagram /></div>);
     }
