@@ -305,4 +305,79 @@ export const ocrGcseTopics: OcrGcseTopic[] = [
     ],
     scenarioVariant: "Netflix Price Increase — Short-Run vs Long-Run Revenue Effects",
   },
+  {
+    slug: "ocr-subsidy-ev-green",
+    board: "OCR-GCSE",
+    tier: "Higher",
+    section: "Government Intervention — Subsidy",
+    marks: 6,
+    title: "Government Intervention — Subsidy",
+    scenario:
+      "The UK government's Plug-in Car Grant offered up to £2,500 off the purchase price of qualifying electric vehicles until 2022, and similar schemes continue across Europe. France's 'bonus écologique' provides up to €7,000 for EVs priced under €47,000. These subsidies aim to accelerate the transition from petrol and diesel cars to reduce transport emissions.",
+    question:
+      "Using a demand and supply diagram, analyse the effect of a government subsidy on the market for electric vehicles. Show the supply shift, label original and new equilibria, and explain how the subsidy affects the cost of production for firms and the price paid by consumers.",
+    figureFile: "/figures/gcse-supply-shift-bread.svg",
+    explanation:
+      "The government pays EV manufacturers a grant per car produced. This reduces firms' unit costs of production. Firms supply more at every price level — the supply curve shifts right/down (S₁ → S₂). The new market equilibrium has a lower consumer price (P₂) and higher quantity (Q₂). The subsidy is shared between consumer (lower price) and producer (higher revenue per unit). Germany's €4,500 EV subsidy helped cut retail prices and support carbon emissions targets.",
+    keyTerms: ["subsidy", "cost of production", "supply shift", "consumer surplus", "producer surplus"],
+    diagramRequirements: [
+      { requirement: "Draw a demand and supply diagram for EVs with original equilibrium (P₁, Q₁)", marks: 1 },
+      { requirement: "Show the supply curve shifting right/down by the subsidy amount (S₁ → S₂)", marks: 1 },
+      { requirement: "Label new equilibrium price (P₂) and quantity (Q₂)", marks: 1 },
+      { requirement: "Show the price received by producers (Pp) above the new consumer price", marks: 1 },
+      { requirement: "Explain the cost-of-production mechanism", marks: 1 },
+      { requirement: "Evaluate effectiveness — deadweight loss, opportunity cost, or equity", marks: 1 },
+    ],
+    scenarioVariant: "UK/France EV Subsidy — Environmental Effectiveness and Equity",
+  },
+  {
+    slug: "ocr-wheat-price-volatility",
+    board: "OCR-GCSE",
+    tier: "Higher",
+    section: "Supply & Demand — Price Volatility",
+    marks: 6,
+    title: "Supply & Demand — Price Volatility",
+    scenario:
+      "Global wheat prices doubled between June 2021 and March 2022, rising from $280 to $580 per tonne following Russia's invasion of Ukraine. Russia and Ukraine together account for approximately 30% of global wheat exports. Wheat is a staple food — demand is highly price inelastic — and crops cannot be grown quickly, making supply inelastic too.",
+    question:
+      "On a supply and demand diagram, show the effects of a significant decrease in the supply of wheat. Draw inelastic demand and supply curves, show the shift in supply, label old and new equilibria, and explain how inelasticity leads to a large change in price.",
+    figureFile: "/figures/gcse-as-supply-shock.svg",
+    explanation:
+      "Both D and S are steep because they are price inelastic. The war shifts supply left (S → S₁). Because the curves are steep, the horizontal gap between Q and Q₁ is small — production drops slightly. But the vertical gap between P and P₁ is very large — prices surge. Inelastic commodities experience extreme volatility when hit by supply shocks. In 2022, global wheat prices spiked nearly 30% after supply disruptions in Ukraine.",
+    keyTerms: ["price inelastic demand", "price inelastic supply", "commodity", "price volatility"],
+    diagramRequirements: [
+      { requirement: "Draw STEEP (inelastic) demand and supply curves", marks: 1 },
+      { requirement: "Show supply shifting left (S → S₁)", marks: 1 },
+      { requirement: "Label old equilibrium (P, Q) and new (P₁, Q₁)", marks: 1 },
+      { requirement: "Note how the vertical gap (price change) greatly exceeds the horizontal gap (quantity change)", marks: 1 },
+      { requirement: "Explain using inelasticity why price changes are disproportionately large", marks: 1 },
+      { requirement: "Evaluate impact on food security in developing countries", marks: 1 },
+    ],
+    scenarioVariant: "Global Wheat Crisis 2022 — Price Volatility and Food Security",
+  },
+  {
+    slug: "ocr-monopsony-social-care",
+    board: "OCR-GCSE",
+    tier: "Higher",
+    section: "Labour Market — Monopsony Power",
+    marks: 6,
+    title: "Labour Market — Monopsony Power",
+    scenario:
+      "The UK social care sector employs approximately 1.5 million workers, but local authorities (councils) are often the dominant employer of care workers in their area. Care worker wages averaged £10.50 per hour in 2023 — barely above the National Living Wage. Because councils set care fees and workers have few alternative employers nearby, the market behaves like a monopsony.",
+    question:
+      "Using a labour market diagram, analyse how monopsony power affects the equilibrium wage and level of employment compared to a perfectly competitive labour market. Show MCL, ACL (=S), and MRP (=D). Label monopsony wage (Wm) and employment (Qm) and competitive wage (Wc) and employment (Qc).",
+    figureFile: "/figures/gcse-labour-market-hospitality.svg",
+    explanation:
+      "The monopsony firm hires where MCL = MRP to maximise profit. At the chosen employment level Qm, the firm pays only what's needed to attract Qm workers — found on ACL at Wm. Because MCL > ACL, both the monopsony wage (Wm) and employment (Qm) are lower than in a competitive market (Wc, Qc). The firm captures the gap between Wm and the MRP as extra profit — workers are underpaid relative to their productivity.",
+    keyTerms: ["monopsony", "MCL", "ACL", "MRP", "wage suppression"],
+    diagramRequirements: [
+      { requirement: "Draw ACL (labour supply, upward sloping)", marks: 1 },
+      { requirement: "Draw MCL above and steeper than ACL", marks: 1 },
+      { requirement: "Draw MRP (labour demand, downward sloping)", marks: 1 },
+      { requirement: "Find monopsony quantity where MCL = MRP; then find Wm on ACL", marks: 1 },
+      { requirement: "Compare with competitive equilibrium where ACL = MRP (Wc, Qc)", marks: 1 },
+      { requirement: "Explain the firm's profit-maximising logic and impact on workers", marks: 1 },
+    ],
+    scenarioVariant: "UK Social Care — Monopsony Wage Suppression and Minimum Wage Paradox",
+  },
 ];
