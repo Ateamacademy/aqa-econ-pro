@@ -1,0 +1,35 @@
+<svg viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+  <rect width="700" height="500" fill="#fff"/>
+  <text x="350" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#1e293b">Labour Market: Software Engineers</text>
+  <!-- Axes -->
+  <line x1="80" y1="60" x2="80" y2="440" stroke="#1e293b" stroke-width="2.5"/>
+  <line x1="80" y1="440" x2="650" y2="440" stroke="#1e293b" stroke-width="2.5"/>
+  <text x="35" y="250" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b" transform="rotate(-90,35,250)">Wage Rate (W)</text>
+  <text x="380" y="485" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">Quantity of Software Engineers</text>
+  <!-- S_L -->
+  <line x1="120" y1="410" x2="600" y2="80" stroke="#3b82f6" stroke-width="3"/>
+  <text x="610" y="75" font-size="15" font-weight="700" fill="#3b82f6">S₁</text>
+  <!-- D1 = MRP1 -->
+  <line x1="100" y1="100" x2="480" y2="420" stroke="#ef4444" stroke-width="3"/>
+  <text x="485" y="430" font-size="14" font-weight="700" fill="#ef4444">D₁ = MRP₁</text>
+  <!-- D2 = MRP2 shifted right -->
+  <line x1="220" y1="100" x2="600" y2="420" stroke="#f97316" stroke-width="3"/>
+  <text x="530" y="430" font-size="14" font-weight="700" fill="#f97316">D₂ = MRP₂</text>
+  <!-- E1 at approx (280, 260) -->
+  <circle cx="280" cy="260" r="5" fill="#1e293b" stroke="#fff" stroke-width="1.5"/>
+  <line x1="80" y1="260" x2="280" y2="260" stroke="#94a3b8" stroke-dasharray="5,4" stroke-width="1.2"/>
+  <line x1="280" y1="260" x2="280" y2="440" stroke="#94a3b8" stroke-dasharray="5,4" stroke-width="1.2"/>
+  <text x="60" y="265" text-anchor="end" font-size="14" fill="#1e293b">W₁</text>
+  <text x="280" y="458" text-anchor="middle" font-size="14" fill="#1e293b">Q₁</text>
+  <!-- E2 at approx (380, 195) -->
+  <circle cx="380" cy="195" r="5" fill="#1e293b" stroke="#fff" stroke-width="1.5"/>
+  <line x1="80" y1="195" x2="380" y2="195" stroke="#94a3b8" stroke-dasharray="5,4" stroke-width="1.2"/>
+  <line x1="380" y1="195" x2="380" y2="440" stroke="#94a3b8" stroke-dasharray="5,4" stroke-width="1.2"/>
+  <text x="60" y="200" text-anchor="end" font-size="14" fill="#1e293b">W₂</text>
+  <text x="380" y="458" text-anchor="middle" font-size="14" fill="#1e293b">Q₂</text>
+  <!-- Shift arrow -->
+  <defs><marker id="arrLAB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#f97316"/></marker></defs>
+  <path d="M 310 300 Q 350 290 390 280" stroke="#f97316" stroke-width="2.5" fill="none" marker-end="url(#arrLAB)"/>
+  <text x="270" y="330" font-size="13" fill="#f97316" font-weight="600">Demand for labour</text>
+  <text x="270" y="348" font-size="13" fill="#f97316" font-weight="600">shifts right</text>
+</svg>

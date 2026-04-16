@@ -7,6 +7,7 @@ import { wjecTopics, type WjecTopic } from "@/data/topicsWjec";
 import { eduqasTopics, type EduqasTopic } from "@/data/topicsEduqas";
 import { gcseTopics, type GcseTopic } from "@/data/topicsGcse";
 import { caieIgcseTopics, type CaieIgcseTopic } from "@/data/topicsCaieIgcse";
+import { edexcelIgcseTopics, type EdexcelIgcseTopic } from "@/data/topicsEdexcelIgcse";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate } from "react-router-dom";
@@ -246,6 +247,15 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
     "Market Structure — Perfect Competition",
     "Market Structure — Price Discrimination",
     "Elasticity — PED and Revenue",
+  ],
+  "edexcel-igcse": [
+    // Foundation (4 marks)
+    "Supply & Demand — Shift in Demand",
+    "Supply & Demand — Shift in Supply",
+    "AD/AS — Demand-Side Shock",
+    "AD/AS — Supply-Side Shock",
+    "AD/AS — Economic Growth (LRAS Shift)",
+    "Labour Market — Wage Determination",
   ],
 };
 
@@ -743,6 +753,45 @@ export default function DiagramPractice() {
 
         const combined = [
           ...caieIgcseScenarios.filter((s) => sectionFilter === "all" || s.section === sectionFilter).filter((s) => difficulty === "all" || s.difficulty === difficulty),
+          ...remainingTemplates,
+        ];
+        return combined;
+      }
+
+      // Edexcel IGCSE: inject real topic data
+      if (subject === "edexcel-igcse") {
+        const edxigScenarios: DiagramScenario[] = edexcelIgcseTopics.map((t) => ({
+          id: `edxig-${t.slug}`,
+          section: t.section ? inferSectionFromTopicStr(t.section) : inferSectionFromTopicStr(t.title),
+          topic: t.title,
+          difficulty: t.tier as "Foundation" | "Higher",
+          scenario: t.scenario,
+          question: t.question,
+          marks: t.marks,
+          expectedDiagramKeyword: t.slug,
+          hints: [`${t.tier} · ${t.marks} marks`, `Edexcel IGCSE`],
+          scenarioVariant: t.scenarioVariant,
+        }));
+
+        const edxigSlugs = new Set(edexcelIgcseTopics.map((t) => t.title));
+        const remainingTemplates = boardScenarioTemplates
+          .filter((s) => !edxigSlugs.has(s.topic))
+          .filter((s) => sectionFilter === "all" || s.section === sectionFilter)
+          .filter((s) => difficulty === "all" || s.difficulty === difficulty)
+          .map((s, index) => ({
+            id: `${subject}-gen-${index}-${s.expectedDiagramKeyword ?? "topic"}`,
+            section: s.section,
+            topic: s.topic,
+            difficulty: s.difficulty,
+            scenario: `Board-specific diagram practice for Edexcel IGCSE: ${s.topic}.`,
+            question: `Generate and answer an exam-style ${s.marks}-mark diagram task for Edexcel IGCSE on "${s.topic}". Your diagram and explanation should match the style expected for ${subjectLabel}.`,
+            marks: s.marks,
+            expectedDiagramKeyword: s.expectedDiagramKeyword ?? inferDiagramType(s.topic),
+            hints: [`This task is aligned to Edexcel IGCSE.`, `Focus on the conventions and command style expected in ${subjectLabel}.`],
+          }));
+
+        const combined = [
+          ...edxigScenarios.filter((s) => sectionFilter === "all" || s.section === sectionFilter).filter((s) => difficulty === "all" || s.difficulty === difficulty),
           ...remainingTemplates,
         ];
         return combined;
@@ -1458,7 +1507,10 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             const caieIgcseRefTopic = subject === "cambridge-igcse" && selectedScenario
               ? caieIgcseTopics.find((t) => `caie-igcse-${t.slug}` === selectedScenario.id)
               : undefined;
-            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic || ibRefTopic || wjecRefTopic || eduqasRefTopic || gcseRefTopic || caieIgcseRefTopic;
+            const edxigRefTopic = subject === "edexcel-igcse" && selectedScenario
+              ? edexcelIgcseTopics.find((t) => `edxig-${t.slug}` === selectedScenario.id)
+              : undefined;
+            const boardRefTopic = edexcelBTopic || ocrRefTopic || caieRefTopic || ibRefTopic || wjecRefTopic || eduqasRefTopic || gcseRefTopic || caieIgcseRefTopic || edxigRefTopic;
 
             if (boardRefTopic) {
               return (
@@ -1769,7 +1821,10 @@ function DiagramFeedbackView({
   const caieIgcseFeedbackTopic = subject === "cambridge-igcse" && scenarioId
     ? caieIgcseTopics.find((t) => `caie-igcse-${t.slug}` === scenarioId)
     : undefined;
-  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic || wjecFeedbackTopic || eduqasFeedbackTopic || gcseFeedbackTopic || caieIgcseFeedbackTopic;
+  const edxigFeedbackTopic = subject === "edexcel-igcse" && scenarioId
+    ? edexcelIgcseTopics.find((t) => `edxig-${t.slug}` === scenarioId)
+    : undefined;
+  const boardFeedbackTopic = edexcelBFeedbackTopic || ocrFeedbackTopic || caieFeedbackTopic || ibFeedbackTopic || wjecFeedbackTopic || eduqasFeedbackTopic || gcseFeedbackTopic || caieIgcseFeedbackTopic || edxigFeedbackTopic;
 
   const ReferenceDiagram = ({ locked = false }: { locked?: boolean }) => {
     // Board-specific SVG figure (Edexcel B or OCR)
