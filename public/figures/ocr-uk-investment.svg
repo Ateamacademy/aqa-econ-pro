@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <rect width="700" height="500" fill="#fff"/>
+  <defs>
+    <marker id="oih" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#222"/></marker>
+    <marker id="oiv" markerWidth="6" markerHeight="8" refX="3" refY="1" orient="auto"><polygon points="0,8 3,0 6,8" fill="#222"/></marker>
+    <marker id="oip" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#7c3aed"/></marker>
+  </defs>
+  <text x="350" y="30" text-anchor="middle" font-size="18" font-weight="bold" font-family="Arial" fill="#222">Economic Growth: UK Broadband + Training Investment</text>
+  <line x1="80" y1="430" x2="80" y2="50" stroke="#222" stroke-width="2.5" marker-end="url(#oiv)"/>
+  <line x1="80" y1="430" x2="640" y2="430" stroke="#222" stroke-width="2.5" marker-end="url(#oih)"/>
+  <text x="40" y="240" text-anchor="middle" font-size="15" font-weight="bold" font-family="Arial" fill="#222" transform="rotate(-90,40,240)">Price Level</text>
+  <text x="400" y="470" text-anchor="middle" font-size="15" font-weight="bold" font-family="Arial" fill="#222">Real GDP (Y)</text>
+  <!-- AD (red) -->
+  <line x1="120" y1="100" x2="560" y2="400" stroke="#dc2626" stroke-width="3"/>
+  <text x="565" y="405" font-size="16" font-weight="bold" font-family="Arial" fill="#dc2626">AD</text>
+  <!-- SRAS (blue) -->
+  <line x1="100" y1="400" x2="560" y2="80" stroke="#2563eb" stroke-width="3"/>
+  <text x="565" y="78" font-size="14" font-weight="bold" font-family="Arial" fill="#2563eb">SRAS</text>
+  <!-- LRAS1 (purple, solid) -->
+  <line x1="340" y1="60" x2="340" y2="420" stroke="#7c3aed" stroke-width="3"/>
+  <text x="310" y="55" font-size="14" font-weight="bold" font-family="Arial" fill="#7c3aed">LRAS₁</text>
+  <!-- LRAS2 (purple, dashed) -->
+  <line x1="460" y1="60" x2="460" y2="420" stroke="#7c3aed" stroke-width="3" stroke-dasharray="8,5"/>
+  <text x="435" y="55" font-size="14" font-weight="bold" font-family="Arial" fill="#7c3aed">LRAS₂</text>
+  <!-- E1 at ~(340, 220) -->
+  <circle cx="340" cy="220" r="6" fill="#222"/>
+  <line x1="80" y1="220" x2="340" y2="220" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="62" y="225" text-anchor="end" font-size="14" font-weight="bold" font-family="Arial" fill="#222">P</text>
+  <text x="340" y="450" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial" fill="#222">Y</text>
+  <!-- E2 at ~(460, 295) on AD -->
+  <circle cx="460" cy="295" r="6" fill="#222"/>
+  <line x1="80" y1="295" x2="460" y2="295" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="460" y1="295" x2="460" y2="430" stroke="#999" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="62" y="300" text-anchor="end" font-size="14" font-weight="bold" font-family="Arial" fill="#222">P₁</text>
+  <text x="460" y="450" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial" fill="#222">Y₁</text>
+  <!-- Shift arrow -->
+  <path d="M 350 130 L 450 130" stroke="#7c3aed" stroke-width="2.5" fill="none" marker-end="url(#oip)"/>
+  <text x="340" y="110" font-size="12" font-family="Arial" fill="#7c3aed">LRAS shifts right</text>
+  <text x="340" y="125" font-size="12" font-family="Arial" fill="#7c3aed">(↑ productive capacity)</text>
+</svg>
