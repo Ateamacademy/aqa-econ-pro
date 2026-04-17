@@ -204,7 +204,9 @@ function ExtractPanel({ extract }: { extract: AqaExtract }) {
   return (
     <div className="rounded-xl bg-muted/30 border border-border p-4 sm:p-5 mb-3">
       <div className="text-xs font-bold uppercase tracking-wider text-indigo-300 mb-2">{extract.title}</div>
-      <p className="text-sm text-foreground/90 leading-relaxed whitespace-pre-line">{extract.body}</p>
+      <div className="text-sm text-foreground/90 leading-relaxed">
+        <MathsMarkdown content={extract.body} />
+      </div>
       {extract.figures?.map((f) => (
         <div key={f.id} className="mt-4 rounded-lg bg-card border border-border p-3">
           <div className="text-xs font-semibold text-foreground mb-2">{f.title}</div>
@@ -248,7 +250,9 @@ function QuestionBlock({
           [{q.marks} mark{q.marks === 1 ? "" : "s"}]
         </span>
       </div>
-      <p className="text-sm text-foreground/90 mb-3">{q.prompt}</p>
+      <div className="text-sm text-foreground/90 mb-3">
+        <MathsMarkdown content={q.prompt} />
+      </div>
       <Textarea
         value={value}
         onChange={(e) => onChange(e.target.value)}
