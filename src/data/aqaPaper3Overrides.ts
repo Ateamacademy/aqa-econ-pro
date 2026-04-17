@@ -8,6 +8,10 @@ interface McqSpec {
   justification: string;
   /** Optional inline diagram/table description rendered before the stem. */
   figure?: string;
+  /** Optional reference SVG filename in /public/figures (no leading slash). */
+  figureKey?: string;
+  /** Caption shown under the SVG. */
+  figureCaption?: string;
 }
 
 interface AqaPaper3Set {
@@ -50,6 +54,8 @@ function bank(setSeed: string): McqSpec[] {
     },
     {
       figure: "**Figure 1:** A monopoly diagram with downward-sloping AR (D), MR below AR, U-shaped AC and MC. Profit-maximising output Qₘ where MC=MR; price Pₘ read off the AR curve directly above Qₘ.",
+      figureKey: "monopoly-profit.svg",
+      figureCaption: "Figure 1 — Monopoly profit maximisation",
       stem: "Based on the information in Figure 1, the monopolist's profit-maximising output is determined where:",
       options: ["MC = AC", "MC = MR", "AR = AC", "AR = MR"],
       answer: "B",
@@ -63,6 +69,8 @@ function bank(setSeed: string): McqSpec[] {
     },
     {
       figure: "**Figure 2:** A supply and demand diagram showing an indirect tax shifting S to S+tax. Consumer burden is the rectangle between P₁ and the new consumer price; producer burden is between P₁ and the new producer price.",
+      figureKey: "indirect-tax.svg",
+      figureCaption: "Figure 2 — Incidence of an indirect tax",
       stem: "Based on Figure 2, an indirect tax on a good with relatively inelastic demand will mainly fall on:",
       options: ["Producers", "Consumers", "The government", "Workers"],
       answer: "B",
@@ -88,6 +96,8 @@ function bank(setSeed: string): McqSpec[] {
     },
     {
       figure: "**Figure 3:** An AD/AS diagram with AD₁, SRAS, and LRAS shown. AD₂ is drawn to the right of AD₁. Equilibrium initially at (P₁, Y₁) below LRAS.",
+      figureKey: "adas-equilibrium.svg",
+      figureCaption: "Figure 3 — AD shift with spare capacity",
       stem: "Based on Figure 3, an increase in aggregate demand from AD₁ to AD₂ when the economy has spare capacity will most likely:",
       options: ["Increase output and the price level significantly", "Increase output significantly with little change in the price level", "Increase the price level with no change in output", "Reduce output and the price level"],
       answer: "B",
@@ -150,6 +160,8 @@ function bank(setSeed: string): McqSpec[] {
     },
     {
       figure: "**Figure 4:** A kinked demand curve diagram for an oligopolist with a kink at price P*, AR steeply sloped above P* and shallowly sloped below, with a vertical discontinuity in MR at the kink.",
+      figureKey: "caie-kinked-demand.svg",
+      figureCaption: "Figure 4 — Kinked demand curve (oligopoly)",
       stem: "Based on Figure 4, which one of the following is a feature of the oligopolistic market shown?",
       options: ["Price flexibility above the kink", "Price rigidity at the kink", "Price flexibility below the kink", "Perfectly elastic demand throughout"],
       answer: "B",
@@ -181,6 +193,8 @@ function bank(setSeed: string): McqSpec[] {
     },
     {
       figure: "**Figure 5:** A short-run Phillips curve showing an inverse relationship between the inflation rate (vertical axis) and the unemployment rate (horizontal axis).",
+      figureKey: "phillips-srlr.svg",
+      figureCaption: "Figure 5 — Short-run Phillips curve",
       stem: "Based on Figure 5, which one of the following is most consistent with the short-run Phillips curve relationship?",
       options: ["Inflation and unemployment rise together", "Inflation falls as unemployment falls", "Inflation rises as unemployment falls", "Inflation and unemployment are unrelated"],
       answer: "C",
@@ -212,6 +226,8 @@ function bank(setSeed: string): McqSpec[] {
     },
     {
       figure: "**Figure 6:** A Lorenz curve diagram with the line of perfect equality and a Lorenz curve for Country A above (closer to the line) and Country B below (further from the line).",
+      figureKey: "lorenz-brazil.svg",
+      figureCaption: "Figure 6 — Lorenz curves comparing two countries",
       stem: "Based on Figure 6, which one of the following statements is correct?",
       options: ["Country B has a lower Gini coefficient", "Country A has greater income equality than Country B", "The two countries have identical Gini coefficients", "Country A has a higher Gini coefficient than Country B"],
       answer: "B",
@@ -434,8 +450,11 @@ Critics, including the Institute of Economic Affairs, warned of crowding out, go
 
 function renderMcq(stem: McqSpec, n: number): string {
   const figureBlock = stem.figure ? `${stem.figure}\n\n` : "";
+  const svgBlock = stem.figureKey
+    ? `\n\n![${stem.figureCaption ?? "Reference figure"}](/figures/${stem.figureKey})\n`
+    : "";
   return `Question ${n.toString().padStart(2, "0")} [1 marks]
-${figureBlock}${stem.stem}
+${figureBlock}${stem.stem}${svgBlock}
 
 A. ${stem.options[0]}
 B. ${stem.options[1]}
@@ -452,8 +471,24 @@ ${ext.body}
 *Source: ${ext.source}*`;
 }
 
+function caseFigureFor(caseTitle: string): { key: string; caption: string } {
+  if (/net zero|green|carbon|emission|climate/i.test(caseTitle))
+    return { key: "neg-externality-welfare.svg", caption: "Reference figure — Negative production externality (carbon)" };
+  if (/financial|credit|bank|regulation/i.test(caseTitle))
+    return { key: "ad-as-g.svg", caption: "Reference figure — AD/AS framework for financial shocks" };
+  if (/public sector|fiscal|tax|spending/i.test(caseTitle))
+    return { key: "adas-fiscal.svg", caption: "Reference figure — Fiscal policy in AD/AS" };
+  if (/behavioural|nudge/i.test(caseTitle))
+    return { key: "externality.svg", caption: "Reference figure — Behavioural correction of market failure" };
+  if (/competition|digital|monopoly/i.test(caseTitle))
+    return { key: "monopoly-profit.svg", caption: "Reference figure — Monopoly profit maximisation" };
+  // Default: productivity / regional inequality
+  return { key: "lorenz-brazil.svg", caption: "Reference figure — Lorenz curves and regional inequality" };
+}
+
 function buildPaper(set: AqaPaper3Set): string {
   const mcqBlock = set.mcqs.slice(0, 30).map((m, i) => renderMcq(m, i + 1)).join("\n\n");
+  const ref = caseFigureFor(set.caseTitle);
   return `# AQA A-Level Economics (7136) — Paper 3: Economic Principles and Issues — ${set.setLabel}
 
 **Time: 2 hours | Total: 80 marks**
@@ -481,6 +516,8 @@ ${set.extracts.extractB}
 ${renderExtractProse("C", set.extracts.extractC)}
 
 ${renderExtractProse("D", set.extracts.extractD)}
+
+![${ref.caption}](/figures/${ref.key})
 
 Question 31 [10 marks]
 ${set.q31}
@@ -521,6 +558,12 @@ ${mcqLines}
 ${renderLevelMark({
   questionLabel: "3\u20091",
   totalMarks: 9 as 9, // Q31 is 10 marks but we use 9-mark band template — see note
+  diagram: {
+    primary: `Reference figure for case study: ${set.caseTitle}.`,
+    requiredLabels: ["Axes labelled", "Curves labelled", "Equilibrium points marked"],
+    figureKey: caseFigureFor(set.caseTitle).key,
+    figureCaption: caseFigureFor(set.caseTitle).caption,
+  },
   indicativeContent: set.q31Content,
 })}
 
