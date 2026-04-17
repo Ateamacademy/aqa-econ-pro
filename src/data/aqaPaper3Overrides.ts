@@ -223,7 +223,8 @@ function bank(setSeed: string): McqSpec[] {
       answer: "B",
       justification: "Opportunity cost = value of the next-best alternative forgone.",
     },
-  ].map((m) => ({ ...m, _seed: setSeed } as McqSpec));
+  ].map((m) => ({ ...m })) as McqSpec[];
+  void setSeed;
 }
 
 const SETS: Record<string, AqaPaper3Set> = {};
