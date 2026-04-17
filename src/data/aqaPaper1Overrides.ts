@@ -425,12 +425,6 @@ function buildPaper(set: AqaPaper1OverrideSet): string {
 
 ## Section A — Data response (40 marks)
 
-**Answer EITHER Context 1 OR Context 2.**
-
----
-
-## EITHER
-
 ### Context 1 — ${set.c1.title}
 *Total for this Context: 40 marks*
 
@@ -454,34 +448,6 @@ ${set.c1.q03}${figureMd(set.c1.q03Diagram)}
 
 Question 04 [25 marks]
 ${set.c1.q04}
-
----
-
-## OR
-
-### Context 2 — ${set.c2.title}
-*Total for this Context: 40 marks*
-
-Study Extracts D, E and F and then answer all parts of Context 2 which follow.
-
-### Extract D
-${set.c2.extractD}
-
-${renderExtract("E", set.c2.extractE)}
-
-${renderExtract("F", set.c2.extractF)}
-
-Question 05 [2 marks]
-${set.c2.q05}
-
-Question 06 [4 marks]
-${set.c2.q06}
-
-Question 07 [9 marks]
-${set.c2.q07}${figureMd(set.c2.q07Diagram)}
-
-Question 08 [25 marks]
-${set.c2.q08}
 
 ---
 
@@ -526,7 +492,7 @@ ${set.essays[2].evaluate}`;
 function buildMarkScheme(set: AqaPaper1OverrideSet): string {
   const sections: string[] = [
     `# AQA A-Level Economics (7136/1) — Mark Scheme — ${set.setLabel}`,
-    `**Total: 80 marks** | Section A: answer EITHER Context 1 OR Context 2 (40 marks). Section B: answer ONE essay (40 marks).`,
+    `**Total: 80 marks** | Section A: data response (40 marks). Section B: answer ONE essay (40 marks).`,
     `---`,
     `## Section A — Context 1`,
     renderPointMark({
@@ -568,49 +534,6 @@ function buildMarkScheme(set: AqaPaper1OverrideSet): string {
         "App: explicit reference to Extracts A–C and the data on rents, vacancy rates and student numbers.",
         "An: chains of reasoning for each policy with clear cause-and-effect.",
         "E: counter-arguments (landlord exit, time lags, distributional impact); prioritised judgement with supported conclusion.",
-      ],
-    }),
-    `---`,
-    `## Section A — Context 2`,
-    renderPointMark({
-      questionLabel: "0\u20095",
-      totalMarks: 2,
-      expectedAnswer: `${set.c2.q05Answer} (working: ${set.c2.q05Hint}).`,
-      markPoints: [
-        { description: `Correct answer (${set.c2.q05Answer}) to the required decimal places`, marks: 2 },
-        { description: "Correct method but wrong final answer", marks: 1 },
-      ],
-    }),
-    renderPointMark({
-      questionLabel: "0\u20096",
-      totalMarks: 4,
-      expectedAnswer: "Two explained references to Extract D data.",
-      markPoints: [
-        { description: "First data reference identified", marks: 1 },
-        { description: "First reference developed", marks: 1 },
-        { description: "Second data reference identified", marks: 1 },
-        { description: "Second reference developed", marks: 1 },
-      ],
-    }),
-    renderLevelMark({
-      questionLabel: "0\u20097",
-      totalMarks: 9,
-      diagram: set.c2.q07Diagram,
-      indicativeContent: [
-        "K: definitions and theory underlying the policy/mechanism.",
-        "App: data from Extracts D–F integrated.",
-        "An: developed chain explaining the mechanism with diagram support.",
-        "E: brief acknowledgement of limitations.",
-      ],
-    }),
-    renderLevelMark({
-      questionLabel: "0\u20098",
-      totalMarks: 25,
-      indicativeContent: [
-        "K: precise definitions of key policy concepts.",
-        "App: sustained reference to Extracts D, E and F.",
-        "An: rigorous chains for two or more policies.",
-        "E: balanced evaluation, prioritised judgement, supported conclusion.",
       ],
     }),
     `---`,
