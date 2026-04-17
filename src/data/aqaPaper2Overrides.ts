@@ -3,6 +3,19 @@ import {
   renderPointMark,
 } from "./aqaMarkSchemeBuilder";
 
+export interface DiagramSpec {
+  primary: string;
+  alternatives?: string[];
+  requiredLabels: string[];
+  figureKey?: string;
+  figureCaption?: string;
+}
+
+function figureMd(diagram?: DiagramSpec): string {
+  if (!diagram?.figureKey) return "";
+  return `\n\n![${diagram.figureCaption ?? "Figure (reference diagram)"}](/figures/${diagram.figureKey})`;
+}
+
 interface VariantSpec {
   setLabel: string;
   macro1: { topic: string; focus: string };
@@ -24,7 +37,7 @@ interface ContextBlock {
   prose2: { subtitle: string; body: string; source: string };
   q1: string; q1Answer: string; q1Working: string;
   q2: string;
-  q3: string; q3Diagram: { primary: string; alternatives?: string[]; requiredLabels: string[] };
+  q3: string; q3Diagram: DiagramSpec;
   q4: string;
 }
 
@@ -34,7 +47,7 @@ interface EssayBlock {
   evaluate: string;
   explainContent: string[];
   evaluateContent: string[];
-  diagram?: { primary: string; alternatives?: string[]; requiredLabels: string[] };
+  diagram?: DiagramSpec;
 }
 
 function makeContext(

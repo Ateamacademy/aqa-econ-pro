@@ -3,6 +3,22 @@ import {
   renderPointMark,
 } from "./aqaMarkSchemeBuilder";
 
+/** A diagram-requirement for a paper question. The optional `figureKey`
+ *  resolves to a file in `/public/figures` and is rendered as the canonical
+ *  reference figure in both the Question Paper and the Mark Scheme. */
+export interface DiagramSpec {
+  primary: string;
+  alternatives?: string[];
+  requiredLabels: string[];
+  figureKey?: string;
+  figureCaption?: string;
+}
+
+function figureMd(diagram?: DiagramSpec): string {
+  if (!diagram?.figureKey) return "";
+  return `\n\n![${diagram.figureCaption ?? "Figure (reference diagram)"}](/figures/${diagram.figureKey})`;
+}
+
 export interface AqaPaper1OverrideSet {
   setLabel: string;
 
@@ -14,7 +30,7 @@ export interface AqaPaper1OverrideSet {
     extractC: { subtitle: string; body: string; source: string };
     q01: string; q01Answer: string; q01Hint: string;
     q02: string;
-    q03: string; q03Diagram: { primary: string; alternatives?: string[]; requiredLabels: string[] };
+    q03: string; q03Diagram: DiagramSpec;
     q04: string;
   };
 
@@ -26,7 +42,7 @@ export interface AqaPaper1OverrideSet {
     extractF: { subtitle: string; body: string; source: string };
     q05: string; q05Answer: string; q05Hint: string;
     q06: string;
-    q07: string; q07Diagram: { primary: string; alternatives?: string[]; requiredLabels: string[] };
+    q07: string; q07Diagram: DiagramSpec;
     q08: string;
   };
 
@@ -37,7 +53,7 @@ export interface AqaPaper1OverrideSet {
     evaluate: string;
     explainContent: string[];
     evaluateContent: string[];
-    diagram?: { primary: string; alternatives?: string[]; requiredLabels: string[] };
+    diagram?: DiagramSpec;
   }>;
 }
 
