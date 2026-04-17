@@ -172,18 +172,22 @@ function PaperRow({ paper, pinned = false }: { paper: GeneratedPaper; pinned?: b
                   ))}
                 </div>
 
-                {/* per-question chips */}
-                <div className="flex flex-wrap items-center gap-1 mt-2">
-                  {questionMarkChips(paper.paperNumber).map((c, i) => (
-                    <span
-                      key={i}
-                      className="text-[10px] px-1.5 py-0.5 rounded bg-card border border-border text-muted-foreground"
-                    >
-                      <span className="text-foreground font-semibold">{c.label}</span>
-                      <span className="mx-1 opacity-50">·</span>
-                      {c.sub}
-                    </span>
-                  ))}
+                {/* per-question chips — format matches validator: Q1·2, Q31·10 etc. */}
+                <div className="flex flex-wrap items-center gap-1 mt-2" data-testid="mark-chips">
+                  {questionMarkChips(paper.paperNumber).map((c, i) => {
+                    const compact = `${c.label}·${c.sub.replace(/\s*\(.*\)\s*/g, "").trim()}`;
+                    return (
+                      <span
+                        key={i}
+                        className="text-[10px] px-1.5 py-0.5 rounded bg-card border border-border text-muted-foreground font-mono"
+                        data-chip={compact}
+                      >
+                        <span className="text-foreground font-semibold">{c.label}</span>
+                        <span className="opacity-50">·</span>
+                        <span>{c.sub}</span>
+                      </span>
+                    );
+                  })}
                 </div>
 
                 <div className="flex items-center gap-3 text-[11px] text-muted-foreground mt-3">
