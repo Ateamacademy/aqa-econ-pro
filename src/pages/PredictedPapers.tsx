@@ -22,6 +22,8 @@ import { PeriodicTable } from "@/components/tools/PeriodicTable";
 import { ChemistryEquations } from "@/components/tools/ChemistryEquations";
 import { predictedPapersLibrary, type PredictedPaper } from "@/data/predictedPapersLibrary";
 import { getAqaPaper1OverrideContent } from "@/data/aqaPaper1Overrides";
+import { getAqaPaper2OverrideContent } from "@/data/aqaPaper2Overrides";
+import { getAqaPaper3OverrideContent } from "@/data/aqaPaper3Overrides";
 import {
   MATHS_PAST_PAPER_KNOWLEDGE,
   CHEMISTRY_PAST_PAPER_KNOWLEDGE,
@@ -1309,22 +1311,38 @@ export default function PredictedPapers() {
     }
   }, [searchParams]);
 
-  const isValidAqaPaper1Structure = (questions: ParsedQuestion[]) => {
+  const isValidAqaPaperStructure = (questions: ParsedQuestion[], paperNumber?: string) => {
     if (subject !== "economics") return true;
-    const expectedMarks = [2, 4, 9, 25, 15, 25];
-    return questions.length === expectedMarks.length && questions.every((q, index) => q.marks === expectedMarks[index]);
+    if (paperNumber === "1" || paperNumber === "2") {
+      const expected = [2, 4, 9, 25, 15, 25];
+      return questions.length === expected.length && questions.every((q, i) => q.marks === expected[i]);
+    }
+    if (paperNumber === "3") {
+      // 30 × 1 mark MCQs + 10 + 15 + 25
+      if (questions.length !== 33) return false;
+      for (let i = 0; i < 30; i++) if (questions[i].marks !== 1) return false;
+      return questions[30].marks === 10 && questions[31].marks === 15 && questions[32].marks === 25;
+    }
+    return true;
   };
 
   const parsePredictedPaperContent = (rawContent: string, paperId?: string | null, paperNumber?: string) => {
-    const overrideContent = subject === "economics" && paperNumber === "1" && paperId
-      ? getAqaPaper1OverrideContent(paperId)
-      : null;
+    let overrideContent: string | null = null;
+    if (subject === "economics" && paperId) {
+      if (paperNumber === "1") overrideContent = getAqaPaper1OverrideContent(paperId);
+      else if (paperNumber === "2") overrideContent = getAqaPaper2OverrideContent(paperId);
+      else if (paperNumber === "3") overrideContent = getAqaPaper3OverrideContent(paperId);
+    }
 
     const effectiveContent = overrideContent ?? rawContent;
     const parsed = parseQuestions(effectiveContent);
 
-    if (subject === "economics" && paperNumber === "1" && !isValidAqaPaper1Structure(parsed.questions)) {
-      toast.error("AQA Paper 1 must follow the 2/4/9/25 + 15/25 marking pattern. This paper was rejected.");
+    if (subject === "economics" && !isValidAqaPaperStructure(parsed.questions, paperNumber)) {
+      const expected =
+        paperNumber === "3"
+          ? "30 × 1-mark MCQs + 10/15/25"
+          : "2/4/9/25 + 15/25";
+      toast.error(`AQA Paper ${paperNumber} must follow the ${expected} marking pattern. This paper was rejected.`);
       return null;
     }
 
