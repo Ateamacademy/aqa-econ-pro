@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { getAqaPaperById } from "@/data/aqaPapers";
 import type { GeneratedPaper, AqaQuestion, AqaExtract, AqaMarkSchemeEntry } from "@/lib/aqa-spec";
 import { AQA_SPEC } from "@/lib/aqa-spec";
+import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 
 type View = "qp" | "insert" | "markscheme";
 
