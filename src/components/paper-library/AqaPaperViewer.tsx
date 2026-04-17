@@ -156,9 +156,21 @@ export default function AqaPaperViewer({ paperId, initialView = "qp" }: Props) {
                 <Button variant="outline" size="sm" onClick={() => navigate("/paper-library")} className="gap-1.5">
                   <Save className="h-3.5 w-3.5" /> Save & Exit
                 </Button>
-                <Button size="sm" className="gap-1.5" onClick={() => setView("markscheme")}>
-                  Submit attempt <Send className="h-3.5 w-3.5" />
-                </Button>
+                <div className="flex items-center gap-2">
+                  <Button variant="outline" size="sm" className="gap-1.5" onClick={() => setView("markscheme")}>
+                    View mark scheme
+                  </Button>
+                  <Button
+                    size="sm"
+                    className="gap-1.5"
+                    onClick={() => {
+                      localStorage.setItem(STORAGE_KEY(paper.id), JSON.stringify({ answers, mcqChoices, ts: Date.now() }));
+                      navigate(`/predicted/aqa/mark/${paper.id}`);
+                    }}
+                  >
+                    Submit & mark <Send className="h-3.5 w-3.5" />
+                  </Button>
+                </div>
               </div>
             </div>
 
