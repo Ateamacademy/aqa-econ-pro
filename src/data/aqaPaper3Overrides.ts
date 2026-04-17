@@ -558,6 +558,12 @@ ${mcqLines}
 ${renderLevelMark({
   questionLabel: "3\u20091",
   totalMarks: 9 as 9, // Q31 is 10 marks but we use 9-mark band template — see note
+  diagram: {
+    primary: `Reference figure for case study: ${set.caseTitle}.`,
+    requiredLabels: ["Axes labelled", "Curves labelled", "Equilibrium points marked"],
+    figureKey: caseFigureFor(set.caseTitle).key,
+    figureCaption: caseFigureFor(set.caseTitle).caption,
+  },
   indicativeContent: set.q31Content,
 })}
 
