@@ -20,6 +20,9 @@ import {
   type LibraryPaper,
 } from "@/data/paperLibraryData";
 import type { Subject } from "@/contexts/SubjectContext";
+import AqaPaperLibrarySection from "@/components/paper-library/AqaPaperLibrarySection";
+import AqaGenerateNewPanel from "@/components/paper-library/AqaGenerateNewPanel";
+import type { PaperNumber } from "@/lib/aqa-spec";
 
 /* ── Difficulty config ── */
 const DIFF_CONFIG: Record<Difficulty, { icon: typeof Star; color: string; bg: string; border: string; glow: string }> = {
@@ -77,6 +80,9 @@ export default function PaperLibrary() {
   const [boardFilter, setBoardFilter] = useState<Subject | "all">("all");
   const [diffFilter, setDiffFilter] = useState<Difficulty | "all">("all");
   const [paperFilter, setPaperFilter] = useState<string>("all");
+  const [topTab, setTopTab] = useState<"library" | "generate">("library");
+  const [aqaRefreshKey, setAqaRefreshKey] = useState(0);
+  const [generatePaperFor, setGeneratePaperFor] = useState<PaperNumber>(1);
 
   /* ── Filtered papers ── */
   const filtered = useMemo(() => {
