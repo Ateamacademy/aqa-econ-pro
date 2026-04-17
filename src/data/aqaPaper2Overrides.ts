@@ -240,40 +240,17 @@ ${set.c1.q4}
 
 ## Section B — Essay (40 marks)
 
-**Answer ONE essay (both parts) from Essay 1, Essay 2 OR Essay 3.**
+**Answer both parts of the essay below.**
 
 ---
 
-### Essay 1
 ${set.essays[0].stimulus}
 
-Question 09 [15 marks]
+Question 05 [15 marks]
 ${set.essays[0].explain}${figureMd(set.essays[0].diagram)}
 
-Question 10 [25 marks]
-${set.essays[0].evaluate}
-
----
-
-### Essay 2
-${set.essays[1].stimulus}
-
-Question 11 [15 marks]
-${set.essays[1].explain}${figureMd(set.essays[1].diagram)}
-
-Question 12 [25 marks]
-${set.essays[1].evaluate}
-
----
-
-### Essay 3
-${set.essays[2].stimulus}
-
-Question 13 [15 marks]
-${set.essays[2].explain}${figureMd(set.essays[2].diagram)}
-
-Question 14 [25 marks]
-${set.essays[2].evaluate}`;
+Question 06 [25 marks]
+${set.essays[0].evaluate}`;
 }
 
 function buildMarkScheme(set: AqaPaper2Set): string {
@@ -324,29 +301,25 @@ function buildMarkScheme(set: AqaPaper2Set): string {
       ],
     }),
     `---`,
-    `## Section B — Essays`,
+    `## Section B — Essay`,
   ];
 
-  set.essays.forEach((essay, i) => {
-    const explainNum = (9 + i * 2).toString().padStart(2, "0").split("").join("\u2009");
-    const evaluateNum = (10 + i * 2).toString().padStart(2, "0").split("").join("\u2009");
-    sections.push(`### Essay ${i + 1}`);
-    sections.push(
-      renderLevelMark({
-        questionLabel: explainNum,
-        totalMarks: 15,
-        diagram: essay.diagram,
-        indicativeContent: essay.explainContent,
-      }),
-    );
-    sections.push(
-      renderLevelMark({
-        questionLabel: evaluateNum,
-        totalMarks: 25,
-        indicativeContent: essay.evaluateContent,
-      }),
-    );
-  });
+  const essay = set.essays[0];
+  sections.push(
+    renderLevelMark({
+      questionLabel: "0\u20095",
+      totalMarks: 15,
+      diagram: essay.diagram,
+      indicativeContent: essay.explainContent,
+    }),
+  );
+  sections.push(
+    renderLevelMark({
+      questionLabel: "0\u20096",
+      totalMarks: 25,
+      indicativeContent: essay.evaluateContent,
+    }),
+  );
 
   return sections.join("\n\n");
 }
