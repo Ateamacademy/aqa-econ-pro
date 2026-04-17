@@ -157,6 +157,14 @@ export interface AqaQuestion {
   mcqAnswer?: "A" | "B" | "C" | "D";
   /** For Section B essays where the student picks 1 of 3. */
   contextLabel?: string;
+  /** True when AQA conventions expect (or strongly support) a student-drawn diagram. */
+  requiresDiagram?: boolean;
+  /** True when a diagram would help but is genuinely optional (15/25-mark essays). */
+  diagramOptional?: boolean;
+  /** Template the canvas preselects when mounted. */
+  diagramType?: import("./aqa-diagram-rubric").DiagramType;
+  /** AQA-style rubric for AI marking; populated whenever requiresDiagram is true. */
+  diagramRubric?: import("./aqa-diagram-rubric").AqaDiagramRubric;
 }
 
 export interface AqaLevelDescriptor {

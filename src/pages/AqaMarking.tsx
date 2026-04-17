@@ -6,9 +6,9 @@ import { getAqaPaperById } from "@/data/aqaPapers";
 import {
   AqaSelfAssessmentPanel,
   AqaAiFeedbackPanel,
-  AqaDiagramRubricCheck,
   AqaMarkingReport,
   AqaTierBadge,
+  AqaDiagramMarkPanel,
   emptySelfAssessment,
   type SelfAssessment,
   type MarkedQuestion,
@@ -19,7 +19,8 @@ import {
   type CalcMarkSpec,
   type KaaeSelfScore,
 } from "@/lib/aqa-marking-engine";
-import { defaultAdAsRubric, defaultSdRubric } from "@/lib/aqa-diagram-rubric";
+import { defaultAdAsRubric, defaultSdRubric, type CanvasElement } from "@/lib/aqa-diagram-rubric";
+import { loadSavedDiagrams } from "@/components/paper-library/InlineDiagramCanvas";
 import { cn } from "@/lib/utils";
 
 const STORAGE_KEY = (id: string) => `aqa-attempt-${id}`;
@@ -122,8 +123,19 @@ export default function AqaMarking() {
     return markCalculation(spec, answers[q.number] ?? "");
   });
 
+  // Resolve diagram-required questions (rubric attached at paper-generation tagging time).
+  const diagramQs = paper.questions.filter((q) => q.requiresDiagram || q.diagramOptional);
+  const savedDiagrams = loadSavedDiagrams(paper.id, diagramQs.map((q) => q.number));
+
+  /** Best-effort canvas-element shim: until the canvas exports structured
+   *  primitives, treat presence of a saved data URL as "drew something". */
+  const elementsFor = (qn: number): CanvasElement[] => (savedDiagrams[qn] ? [{ type: "raster" } as CanvasElement] : []);
+  const hasDiagram = (qn: number) => !!savedDiagrams[qn];
+
   // Diagram rubric per extended Q (best-effort default, paper number aware).
   const rubricFor = (qNum: number) => {
+    const q = paper.questions.find((x) => x.number === qNum);
+    if (q?.diagramRubric) return q.diagramRubric;
     if (paper.paperNumber === 1) return defaultSdRubric("the relevant market");
     return defaultAdAsRubric("the relevant macro shock");
   };
@@ -296,19 +308,23 @@ export default function AqaMarking() {
               </section>
             )}
 
-            {extendedQs.some((q) => /diagram/i.test(q.prompt)) && (
+            {diagramQs.length > 0 && (
               <section className="rounded-2xl border border-border bg-card p-4 space-y-3">
-                <h3 className="text-sm font-bold">Diagram rubric checks</h3>
-                {extendedQs
-                  .filter((q) => /diagram/i.test(q.prompt))
-                  .map((q) => (
-                    <div key={q.number} className="rounded-lg border border-border p-3">
-                      <div className="text-xs font-bold mb-2">
-                        Q{q.number} ({q.marks} marks)
-                      </div>
-                      <AqaDiagramRubricCheck rubric={rubricFor(q.number)} elements={[]} />
-                    </div>
-                  ))}
+                <h3 className="text-sm font-bold">Diagram marking ({diagramQs.length})</h3>
+                <p className="text-[11px] text-muted-foreground">
+                  Structural checks run automatically. Optional contextual analysis recommends an AQA level — never a mark.
+                </p>
+                {diagramQs.map((q) => (
+                  <AqaDiagramMarkPanel
+                    key={q.number}
+                    questionNumber={q.number}
+                    prompt={q.prompt}
+                    rubric={rubricFor(q.number)}
+                    diagramElements={elementsFor(q.number)}
+                    hasDiagram={hasDiagram(q.number)}
+                    writtenAnswer={answers[q.number] ?? ""}
+                  />
+                ))}
               </section>
             )}
 

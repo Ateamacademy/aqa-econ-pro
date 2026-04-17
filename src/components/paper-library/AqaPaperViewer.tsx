@@ -10,6 +10,7 @@ import { getAqaPaperById } from "@/data/aqaPapers";
 import type { GeneratedPaper, AqaQuestion, AqaExtract, AqaMarkSchemeEntry } from "@/lib/aqa-spec";
 import { AQA_SPEC } from "@/lib/aqa-spec";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
+import { InlineDiagramCanvas } from "@/components/paper-library/InlineDiagramCanvas";
 
 type View = "qp" | "insert" | "markscheme";
 
@@ -123,6 +124,7 @@ export default function AqaPaperViewer({ paperId, initialView = "qp" }: Props) {
                       : <QuestionBlock
                           key={q.number}
                           q={q}
+                          paperId={paper.id}
                           value={answers[q.number] || ""}
                           onChange={(v) => setAnswers((p) => ({ ...p, [q.number]: v }))}
                           active={activeQ === q.number}
@@ -143,6 +145,7 @@ export default function AqaPaperViewer({ paperId, initialView = "qp" }: Props) {
                     <QuestionBlock
                       key={q.number}
                       q={q}
+                      paperId={paper.id}
                       value={answers[q.number] || ""}
                       onChange={(v) => setAnswers((p) => ({ ...p, [q.number]: v }))}
                       active={activeQ === q.number}
@@ -247,16 +250,27 @@ function ExtractPanel({ extract }: { extract: AqaExtract }) {
 }
 
 function QuestionBlock({
-  q, value, onChange, active, onFocus,
+  q, paperId, value, onChange, active, onFocus,
 }: {
-  q: AqaQuestion; value: string; onChange: (v: string) => void; active: boolean; onFocus: () => void;
+  q: AqaQuestion; paperId: string; value: string; onChange: (v: string) => void; active: boolean; onFocus: () => void;
 }) {
+  const showCanvas = q.requiresDiagram || q.diagramOptional;
   return (
     <div id={`q-${q.number}`} className={cn("rounded-xl border bg-card p-4 sm:p-5 transition-colors", active ? "border-indigo-500/40" : "border-border")}>
       <div className="flex items-start justify-between gap-3 mb-2">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <span className="text-sm font-bold text-foreground">Question {q.number}</span>
           {q.contextLabel && <Badge variant="outline" className="text-[10px]">{q.contextLabel}</Badge>}
+          {q.requiresDiagram && (
+            <Badge className="text-[10px] bg-indigo-500/15 border-indigo-500/40 text-indigo-200 hover:bg-indigo-500/15">
+              Diagram required
+            </Badge>
+          )}
+          {q.diagramOptional && !q.requiresDiagram && (
+            <Badge variant="outline" className="text-[10px] border-indigo-500/30 text-indigo-200/80">
+              Diagram supports top band
+            </Badge>
+          )}
         </div>
         <span className="font-mono text-[11px] font-semibold text-foreground bg-muted/50 border border-border px-2 py-0.5 rounded">
           [{q.marks} mark{q.marks === 1 ? "" : "s"}]
@@ -265,11 +279,20 @@ function QuestionBlock({
       <div className="text-sm text-foreground/90 mb-3">
         <MathsMarkdown>{q.prompt}</MathsMarkdown>
       </div>
+      {showCanvas && (
+        <InlineDiagramCanvas
+          questionNumber={q.number}
+          paperId={paperId}
+          rubric={q.diagramRubric}
+          diagramType={q.diagramType}
+          optional={!!q.diagramOptional && !q.requiresDiagram}
+        />
+      )}
       <Textarea
         value={value}
         onChange={(e) => onChange(e.target.value)}
         onFocus={onFocus}
-        placeholder="Type your answer here…"
+        placeholder={showCanvas ? "Write your explanation here — refer to your diagram." : "Type your answer here…"}
         className="min-h-[140px]"
       />
     </div>
