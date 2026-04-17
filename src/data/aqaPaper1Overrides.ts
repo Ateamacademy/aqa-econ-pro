@@ -162,6 +162,12 @@ Alternative policies — such as targeted concessionary fares, road pricing, or 
           "Magnitude depends on PED for labour, market structure, regional wage differentials, and how firms absorb costs (margins vs prices).",
           "Judgement: net welfare effect contingent on labour market structure and complementary policies (e.g. training).",
         ],
+        diagram: {
+          primary: "A competitive labour market with W_min above the equilibrium wage W*, showing excess supply of labour (unemployment) between the quantity demanded and supplied at the minimum wage.",
+          requiredLabels: ["Wage (W)", "Quantity of labour (L)", "S_L", "D_L", "W_min", "W*", "Excess supply (unemployment)"],
+          figureKey: "labour-union.svg",
+          figureCaption: "Figure 4 — Minimum wage above competitive equilibrium",
+        },
       },
       {
         stimulus: "In 2024 Public Health England reported that 64% of UK adults are overweight or obese. The Soft Drinks Industry Levy raised £415m in 2024 and prompted reformulation by major brands; the government has consulted on extending the levy to high-sugar milk-based drinks.",
@@ -178,6 +184,12 @@ Alternative policies — such as targeted concessionary fares, road pricing, or 
           "Alternatives: education, advertising restrictions, regulation, nudges (default options, labelling).",
           "Judgement: most effective when used in combination; indirect tax alone insufficient.",
         ],
+        diagram: {
+          primary: "A negative consumption externality / demerit good diagram with MPB above MSB and over-consumption at the free-market equilibrium; an indirect tax shifts S to S+tax to reduce quantity to the socially optimal level.",
+          requiredLabels: ["Price", "Quantity", "S=MPC", "S+tax", "MPB=D", "MSB", "Q₁", "Q*", "Welfare loss"],
+          figureKey: "indirect-tax.svg",
+          figureCaption: "Figure 5 — Indirect tax on a demerit good (SDIL)",
+        },
       },
       {
         stimulus: "The UK Emissions Trading Scheme covers around a third of UK emissions. The carbon price rose from £22/tonne in 2019 to £78/tonne in 2024, prompting major manufacturers including the steel and chemical industries to lobby for relief, citing international competitiveness.",
@@ -194,6 +206,12 @@ Alternative policies — such as targeted concessionary fares, road pricing, or 
           "Regulation strengths: certainty of outcomes, simpler to enforce in some sectors.",
           "Judgement: effectiveness depends on sector characteristics; mixed approaches typically optimal.",
         ],
+        diagram: {
+          primary: "A negative production externality diagram with MSC above MPC; the welfare loss triangle exists at the free-market equilibrium where Q₁ > Q*. Permits / tax internalise the externality, shifting MPC up to MSC.",
+          requiredLabels: ["Price", "Quantity", "MPC", "MSC", "D=MPB=MSB", "Q₁", "Q*", "Welfare loss"],
+          figureKey: "neg-externality-welfare.svg",
+          figureCaption: "Figure 6 — Negative production externality and welfare loss",
+        },
       },
     ],
   },
