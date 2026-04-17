@@ -450,8 +450,11 @@ Critics, including the Institute of Economic Affairs, warned of crowding out, go
 
 function renderMcq(stem: McqSpec, n: number): string {
   const figureBlock = stem.figure ? `${stem.figure}\n\n` : "";
+  const svgBlock = stem.figureKey
+    ? `\n\n![${stem.figureCaption ?? "Reference figure"}](/figures/${stem.figureKey})\n`
+    : "";
   return `Question ${n.toString().padStart(2, "0")} [1 marks]
-${figureBlock}${stem.stem}
+${figureBlock}${stem.stem}${svgBlock}
 
 A. ${stem.options[0]}
 B. ${stem.options[1]}
