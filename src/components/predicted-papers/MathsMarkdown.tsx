@@ -411,6 +411,26 @@ const markdownComponents: Components = {
   li: ({ children, ...props }) => (
     <li className="text-sm text-foreground/85 leading-relaxed" {...props}>{children}</li>
   ),
+  img: ({ src, alt, ...props }) => {
+    // Render reference figure SVGs from /public/figures with a caption.
+    const caption = typeof alt === "string" ? alt : "";
+    return (
+      <figure className="my-4 rounded-lg border border-border bg-card p-3">
+        <img
+          src={src as string}
+          alt={caption || "Reference diagram"}
+          loading="lazy"
+          className="w-full max-w-xl mx-auto h-auto block"
+          {...props}
+        />
+        {caption && (
+          <figcaption className="mt-2 text-center text-[11px] italic text-muted-foreground">
+            {caption}
+          </figcaption>
+        )}
+      </figure>
+    );
+  },
 };
 
 /**
