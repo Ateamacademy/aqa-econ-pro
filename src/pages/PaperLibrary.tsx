@@ -294,6 +294,8 @@ export default function PaperLibrary() {
           </div>
         )}
       </section>
+        </>
+      )}
     </div>
   );
 }
