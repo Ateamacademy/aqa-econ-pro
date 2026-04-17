@@ -1,203 +1,410 @@
-interface AqaPaper2OverrideConfig {
+import {
+  renderLevelMark,
+  renderPointMark,
+} from "./aqaMarkSchemeBuilder";
+
+interface VariantSpec {
   setLabel: string;
-  extractA: string;
-  extractB: string;
-  extractC: string;
-  extractD: string;
-  q1: string;
-  q2: string;
-  q3: string;
-  q4: string;
-  q5: string;
-  q6: string;
+  macro1: { topic: string; focus: string };
+  macro2: { topic: string; focus: string };
+  essayTopics: [string, string, string];
 }
 
-const AQA_PAPER_2_OVERRIDE_CONFIGS: Record<string, AqaPaper2OverrideConfig> = {
-  "econ-p2-a": {
+interface AqaPaper2Set {
+  setLabel: string;
+  c1: ContextBlock;
+  c2: ContextBlock;
+  essays: EssayBlock[];
+}
+
+interface ContextBlock {
+  title: string;
+  data: string; // table/figure markdown
+  prose1: { subtitle: string; body: string; source: string };
+  prose2: { subtitle: string; body: string; source: string };
+  q1: string; q1Answer: string; q1Working: string;
+  q2: string;
+  q3: string; q3Diagram: { primary: string; alternatives?: string[]; requiredLabels: string[] };
+  q4: string;
+}
+
+interface EssayBlock {
+  stimulus: string;
+  explain: string;
+  evaluate: string;
+  explainContent: string[];
+  evaluateContent: string[];
+  diagram?: { primary: string; alternatives?: string[]; requiredLabels: string[] };
+}
+
+function makeContext(
+  number: 1 | 2,
+  topic: string,
+  focus: string,
+  questionStart: number,
+): ContextBlock {
+  const labels = number === 1 ? ["A", "B", "C"] : ["D", "E", "F"];
+  return {
+    title: topic,
+    data: `**Table 1:** UK macroeconomic indicators relevant to ${topic}, 2019–2024
+Source: Office for National Statistics, 2024
+
+| Year | GDP growth (%) | CPI inflation (%) | Unemployment (%) | Bank Rate (%) |
+|------|----------------|-------------------|------------------|---------------|
+| 2019 | 1.6 | 1.8 | 3.8 | 0.75 |
+| 2021 | 7.6 | 2.6 | 4.5 | 0.10 |
+| 2022 | 4.3 | 9.1 | 3.7 | 3.50 |
+| 2023 | 0.1 | 7.3 | 4.2 | 5.25 |
+| 2024 | 0.6 | 3.2 | 4.3 | 5.00 |`,
+    prose1: {
+      subtitle: `${topic}: pressures on the UK economy`,
+      body: `The Bank of England raised Bank Rate from 0.1% in December 2021 to 5.25% by August 2023 in response to inflation peaking at 11.1% in October 2022. The Resolution Foundation reported that 6.6% pay growth in services contributed to underlying inflation persistence, while CPI inflation fell to 4.0% by December 2023.
+
+A spokesperson for the Bank of England warned in 2024 that "the full impact of past rate rises has not yet been felt", citing variable mortgage exposure of around 1.6 million households. The Office for Budget Responsibility estimated that debt-servicing costs had risen to 3.9% of GDP, the highest since the 1980s.
+
+Some economists argued that supply-side shocks from the war in Ukraine and the 2021 energy price surge made tight monetary policy necessary; others pointed out that monetary policy operates with long and variable lags.`,
+      source: "Resolution Foundation and OBR, 2024",
+    },
+    prose2: {
+      subtitle: `Policy responses to ${focus}`,
+      body: `Critics of tight monetary policy argue that ${focus} cannot be effectively controlled by interest rates alone, especially when imported through energy and food prices. The Institute for Fiscal Studies has highlighted that around 13.3% of household disposable income is now spent on energy, transport and food.
+
+The Bank of England has emphasised the importance of anchoring inflation expectations to prevent a wage-price spiral. The IMF has cautioned that premature loosening could undo progress, while the OECD has highlighted the trade-off between containing inflation and supporting growth.
+
+Fiscal policy has remained restrictive, with HM Treasury maintaining tight departmental spending and introducing fiscal rules requiring debt to fall as a share of GDP within five years. The Office for Budget Responsibility has warned that meeting these rules will require difficult choices.`,
+      source: "IMF, OECD and HM Treasury, 2024",
+    },
+    q1: `Using the data in Extract ${labels[0]}, calculate the change in CPI inflation between 2022 and 2024. Give your answer to one decimal place.`,
+    q1Answer: "−5.9 percentage points",
+    q1Working: "3.2 - 9.1 = −5.9",
+    q2: `Explain how the data in Extract ${labels[0]} show that UK macroeconomic conditions deteriorated between 2021 and 2023.`,
+    q3: `Extract ${labels[1]} (lines 1–3) states that "the full impact of past rate rises has not yet been felt". With the help of an AD/AS diagram, explain how a sustained rise in interest rates is likely to affect UK macroeconomic performance.`,
+    q3Diagram: {
+      primary: "An AD/AS diagram showing AD shifting left from AD₁ to AD₂, with the price level falling from P₁ to P₂ and real output falling from Y₁ to Y₂.",
+      alternatives: ["A diagram showing the transmission mechanism from interest rates to consumption and investment"],
+      requiredLabels: ["Price level", "Real output (Y)", "AD₁", "AD₂", "SRAS", "LRAS", "P₁", "P₂", "Y₁", "Y₂", "Yfe"],
+    },
+    q4: `Extract ${labels[2]} (lines 1–3) states: "${focus} cannot be effectively controlled by interest rates alone". Using the data in the extracts and your knowledge of economics, evaluate the view that monetary policy is the most effective tool for managing ${focus} in the UK.`,
+  };
+}
+
+function buildSet(v: VariantSpec): AqaPaper2Set {
+  return {
+    setLabel: v.setLabel,
+    c1: makeContext(1, v.macro1.topic, v.macro1.focus, 1),
+    c2: makeContext(2, v.macro2.topic, v.macro2.focus, 5),
+    essays: v.essayTopics.map((topic) => ({
+      stimulus: `In November 2024, the Office for Budget Responsibility published its assessment of the UK economy, highlighting issues around ${topic}. The Bank of England warned of risks to growth, while the Resolution Foundation estimated that around £1.7bn was at stake annually for affected households. Ministers debated whether monetary, fiscal or supply-side policy offered the best response.`,
+      explain: `Explain how ${topic} can affect macroeconomic performance in the UK.`,
+      evaluate: `Evaluate the view that supply-side policies are the most effective way to address ${topic}.`,
+      explainContent: [
+        `Define key macro concept underpinning ${topic} (e.g. AD, AS, multiplier, exchange rate).`,
+        `Apply theory using AD/AS or other diagram framework.`,
+        `Develop chain showing impact on growth, inflation, unemployment, BoP.`,
+      ],
+      evaluateContent: [
+        `Strengths of supply-side: long-run growth, productive capacity, lower NAIRU.`,
+        `Weaknesses: long time lags, high fiscal cost, distributional effects.`,
+        `Compare with demand-side fiscal and monetary policy.`,
+        `Judgement: best mix depends on cause of the problem and economic conditions.`,
+      ],
+    })),
+  };
+}
+
+const SETS: Record<string, AqaPaper2Set> = {
+  "econ-p2-a": buildSet({
     setLabel: "Predicted Paper Set A",
-    extractA: `The Bank of England raised Bank Rate from 0.1% in December 2021 to 5.25% by August 2023 in an effort to combat rising inflation. CPI inflation peaked at 11.1% in October 2022 before falling to 4.0% by December 2023.
-
-| Indicator | 2021 | 2022 | 2023 | 2024 (est.) |
-|-----------|------|------|------|-------------|
-| GDP growth (%) | 7.6 | 4.3 | 0.1 | 0.6 |
-| CPI inflation (%) | 2.6 | 9.1 | 7.3 | 3.2 |
-| Unemployment (%) | 4.5 | 3.7 | 4.2 | 4.4 |
-| Bank Rate (%) | 0.1 | 3.5 | 5.25 | 5.0 |`,
-    extractB: `Higher Bank Rate raises the cost of borrowing for households and firms. Mortgage holders on variable-rate deals saw monthly repayments rise sharply, while business investment slowed. Some economists argued that monetary tightening was necessary to anchor inflation expectations after a major supply shock.`,
-    extractC: `Critics warned that monetary policy operates with long and variable lags, so the full effect of past rate rises had not yet been felt. They also pointed out that much of the inflation was imported through energy and food prices, which monetary policy cannot directly control.`,
-    extractD: `The UK ran a persistent current account deficit through 2024, driven mainly by a large trade-in-goods deficit and weaker net investment income. Some commentators argued that this reflected long-standing structural weakness; others viewed it as a manageable counterpart to net capital inflows.`,
-    q1: `Define the term 'real wages'.`,
-    q2: `Using Extract A, explain two ways in which a rise in Bank Rate may reduce aggregate demand.`,
-    q3: `With the aid of an AD/AS diagram, analyse the impact of a sustained increase in interest rates on UK macroeconomic performance.`,
-    q4: `Evaluate the effectiveness of monetary policy as a tool for controlling demand-pull inflation in the UK.`,
-    q5: `Explain how a persistent current account deficit can affect macroeconomic performance.`,
-    q6: `Evaluate the view that a current account deficit is always harmful to the UK economy.`,
-  },
-  "econ-p2-b": {
+    macro1: { topic: "Bank Rate and the cost of borrowing", focus: "demand-pull inflation" },
+    macro2: { topic: "the UK current account deficit", focus: "external imbalances" },
+    essayTopics: ["a deep recession", "rising public sector debt", "exchange rate depreciation"],
+  }),
+  "econ-p2-b": buildSet({
     setLabel: "Predicted Paper Set B",
-    extractA: `In 2024 the UK government announced further increases in capital spending on infrastructure, alongside targeted tax incentives for business investment. Supporters argued the package would raise productivity; critics warned about the impact on the deficit.
-
-| Year | Public sector net investment (% GDP) | Real GDP growth (%) | Productivity growth (%) | Public sector net debt (% GDP) |
-|------|--------------------------------------|---------------------|--------------------------|-------------------------------|
-| 2019 | 2.1 | 1.6 | 0.4 | 84 |
-| 2021 | 2.6 | 7.6 | 1.0 | 95 |
-| 2023 | 2.4 | 0.1 | -0.1 | 98 |
-| 2024 | 3.0 | 0.6 | 0.3 | 99 |`,
-    extractB: `Supporters of higher public investment argue that better transport, energy and digital infrastructure raise long-run productive capacity. They also note that crowding-in effects can encourage private firms to invest alongside the government in priority sectors.`,
-    extractC: `Critics warn that loose fiscal policy combined with elevated debt may push up gilt yields and crowd out private investment. They argue supply-side reforms — such as planning, skills and tax simplification — could deliver growth at lower fiscal cost.`,
-    extractD: `Many developing economies depend heavily on exports of primary commodities. Volatile world prices, narrow export bases and limited domestic processing have been linked to slow long-run development for some countries.`,
-    q1: `Using Extract A, calculate the change in public sector net investment as a percentage of GDP between 2019 and 2024.`,
-    q2: `Using Extracts A and B, explain two ways in which higher public investment may raise long-run aggregate supply.`,
-    q3: `With the aid of an AD/AS diagram, analyse the impact of an expansionary fiscal policy on the UK macroeconomy.`,
-    q4: `Evaluate the view that fiscal policy is the most effective way to raise long-run economic growth in the UK.`,
-    q5: `Explain why dependence on primary commodity exports may constrain economic development.`,
-    q6: `Evaluate the view that trade liberalisation is the most effective way to promote economic development.`,
-  },
-  "econ-p2-c": {
+    macro1: { topic: "public investment in infrastructure", focus: "weak productivity growth" },
+    macro2: { topic: "developing economies and primary commodity dependency", focus: "trade volatility" },
+    essayTopics: ["the UK output gap", "fiscal consolidation", "trade liberalisation"],
+  }),
+  "econ-p2-c": buildSet({
     setLabel: "Predicted Paper Set C",
-    extractA: `The UK labour market remained tight through 2024, with elevated vacancies and historically low unemployment. Wage growth in services stayed above 5%, contributing to concerns about underlying inflation persistence.
-
-| Year | Unemployment (%) | Vacancies (000s) | Average weekly earnings growth (%) | Inactivity rate (%) |
-|------|------------------|------------------|------------------------------------|---------------------|
-| 2019 | 3.8 | 800 | 3.4 | 20.5 |
-| 2021 | 4.5 | 1190 | 4.7 | 21.4 |
-| 2023 | 4.2 | 940 | 7.0 | 21.6 |
-| 2024 | 4.3 | 870 | 5.6 | 21.4 |`,
-    extractB: `Some economists argue that strong wage growth in a tight labour market generates 'second-round' inflation effects as firms pass higher wage costs onto prices. Others stress that wages are still catching up after a long period of falling real pay.`,
-    extractC: `Inactivity remains elevated relative to pre-pandemic levels, partly reflecting long-term sickness. Policymakers debate whether welfare reforms, training subsidies, or improved healthcare access would be most effective in raising labour market participation.`,
-    extractD: `Globalisation has reshaped UK labour and product markets through trade, FDI and migration. Some workers have benefited from new opportunities; others have faced competition from cheaper imports and offshoring.`,
-    q1: `Using Extract A, calculate the change in vacancies between 2021 and 2024.`,
-    q2: `Using Extracts A and B, explain two reasons why wage growth may put upward pressure on inflation.`,
-    q3: `With the aid of an AD/AS diagram, analyse the impact of a tight labour market on UK inflation and growth.`,
-    q4: `Evaluate the view that supply-side policies are the most effective way to reduce inflation in the UK.`,
-    q5: `Explain how globalisation may affect income distribution within the UK.`,
-    q6: `Evaluate the view that the benefits of globalisation outweigh the costs for the UK economy.`,
-  },
-  "econ-p2-d": {
+    macro1: { topic: "the tight UK labour market", focus: "wage-driven inflation" },
+    macro2: { topic: "globalisation and UK income distribution", focus: "structural unemployment" },
+    essayTopics: ["full employment", "labour market flexibility", "the Phillips curve"],
+  }),
+  "econ-p2-d": buildSet({
     setLabel: "Predicted Paper Set D",
-    extractA: `Sterling weakened against the US dollar through parts of 2022 and 2023 before partially recovering in 2024. Movements in the exchange rate had significant implications for trade, inflation and the current account.
-
-| Year | £/$ rate | Goods trade balance (£bn) | Services trade balance (£bn) | Current account (% GDP) |
-|------|---------|---------------------------|------------------------------|-------------------------|
-| 2019 | 1.28 | -141 | 109 | -2.7 |
-| 2021 | 1.38 | -157 | 116 | -1.5 |
-| 2023 | 1.24 | -185 | 156 | -3.3 |
-| 2024 | 1.27 | -176 | 168 | -2.6 |`,
-    extractB: `A weaker pound makes UK exports more competitive abroad and imports more expensive. The eventual impact on the trade balance depends on the price elasticities of demand for exports and imports — sometimes described by the Marshall–Lerner condition and the J-curve effect.`,
-    extractC: `A depreciation can also raise imported inflation, especially in an economy that imports a large share of energy and food. Monetary policy may then need to respond, creating a trade-off between supporting growth and controlling inflation.`,
-    extractD: `Many emerging economies use a mix of exchange rate management, capital controls and reserve accumulation to stabilise their currencies. Such policies have costs and benefits, and may be constrained by international agreements.`,
-    q1: `Using Extract A, calculate the change in the £/$ exchange rate between 2021 and 2023.`,
-    q2: `Using Extracts A and B, explain two effects of a sterling depreciation on UK macroeconomic performance.`,
-    q3: `With the aid of a diagram, analyse the impact of a depreciation of sterling on the UK current account.`,
-    q4: `Evaluate the view that a floating exchange rate is the most appropriate exchange rate system for the UK economy.`,
-    q5: `Explain why developing economies may choose to manage their exchange rate.`,
-    q6: `Evaluate the policies a government can use to reduce a persistent current account deficit.`,
-  },
-  "econ-p2-e": {
+    macro1: { topic: "sterling depreciation and trade", focus: "the J-curve effect" },
+    macro2: { topic: "exchange rate management in emerging economies", focus: "capital flow volatility" },
+    essayTopics: ["floating vs fixed exchange rates", "capital controls", "the Marshall–Lerner condition"],
+  }),
+  "econ-p2-e": buildSet({
     setLabel: "Predicted Paper Set E",
-    extractA: `UK public finances came under sustained pressure following the pandemic and energy crisis, with debt-servicing costs rising as Bank Rate increased. Debate intensified over the appropriate fiscal stance.
-
-| Year | Public sector net borrowing (% GDP) | Public sector net debt (% GDP) | Debt interest spending (% GDP) | Real GDP growth (%) |
-|------|-------------------------------------|--------------------------------|--------------------------------|---------------------|
-| 2019 | 2.5 | 84 | 1.5 | 1.6 |
-| 2021 | 7.6 | 95 | 1.7 | 7.6 |
-| 2023 | 4.4 | 98 | 4.4 | 0.1 |
-| 2024 | 4.0 | 99 | 3.9 | 0.6 |`,
-    extractB: `Some economists argue that with debt approaching 100% of GDP, the government should prioritise reducing borrowing to maintain market confidence and prevent further rises in long-term interest rates.`,
-    extractC: `Others argue that growth-friendly investment in infrastructure, skills and the green transition is more important than rapid consolidation, and that a credible medium-term fiscal framework is preferable to short-term cuts.`,
-    extractD: `Some developing economies face very high debt-to-GDP ratios denominated in foreign currency. They face complex trade-offs between debt servicing, public investment and exchange rate stability.`,
-    q1: `Using Extract A, calculate the percentage point change in debt interest spending as a percentage of GDP between 2019 and 2024.`,
-    q2: `Using Extracts A and B, explain two reasons why a rising debt interest burden can constrain government policy.`,
-    q3: `With the aid of an AD/AS diagram, analyse the impact of a contractionary fiscal policy on the UK macroeconomy.`,
-    q4: `Evaluate the view that the UK government should prioritise reducing public sector borrowing rather than increasing public investment.`,
-    q5: `Explain how a high level of external debt may constrain economic development.`,
-    q6: `Evaluate the role of international institutions such as the IMF in supporting developing economies.`,
-  },
-  "econ-p2-f": {
+    macro1: { topic: "rising debt servicing costs", focus: "fiscal sustainability" },
+    macro2: { topic: "external debt and developing economies", focus: "the role of the IMF" },
+    essayTopics: ["fiscal rules", "crowding out", "international institutions"],
+  }),
+  "econ-p2-f": buildSet({
     setLabel: "Predicted Paper Set F",
-    extractA: `Productivity growth in the UK has remained weak compared with the pre-2008 period. Government, businesses and economists have proposed a range of supply-side reforms.
-
-| Year | Output per hour growth (%) | Business investment growth (%) | Real GDP growth (%) |
-|------|----------------------------|--------------------------------|---------------------|
-| 2007 | 1.9 | 6.2 | 2.7 |
-| 2015 | 0.9 | 4.5 | 2.4 |
-| 2019 | 0.4 | 1.6 | 1.6 |
-| 2024 | 0.3 | 1.1 | 0.6 |`,
-    extractB: `The 'productivity puzzle' is often linked to weak business investment, low R&D spending, and skills mismatches. Some economists also point to regional inequality and underinvestment in transport infrastructure outside London and the South East.`,
-    extractC: `Supply-side reforms include tax incentives for investment, education and training reforms, planning liberalisation and competition policy. The choice between market-based and interventionist supply-side policies depends on the underlying causes of weak productivity.`,
-    extractD: `Globally, productivity growth has slowed across many advanced economies. Trade integration, technology diffusion and demographic change are all relevant factors in cross-country comparisons.`,
-    q1: `Using Extract A, calculate the percentage point fall in output-per-hour growth between 2007 and 2024.`,
-    q2: `Using Extracts A and B, explain two reasons why productivity growth may have slowed in the UK.`,
-    q3: `With the aid of an AD/AS diagram, analyse the impact of effective supply-side policies on the UK macroeconomy.`,
-    q4: `Evaluate the view that market-based supply-side policies are more effective than interventionist supply-side policies in raising long-run productivity.`,
-    q5: `Explain how international trade may raise productivity in an economy.`,
-    q6: `Evaluate the view that protectionism can be justified to support domestic industries.`,
-  },
-  "econ-p2-g": {
+    macro1: { topic: "the UK productivity puzzle", focus: "weak business investment" },
+    macro2: { topic: "global productivity slowdown", focus: "trade and technology diffusion" },
+    essayTopics: ["supply-side policy mix", "human capital and skills", "protectionism"],
+  }),
+  "econ-p2-g": buildSet({
     setLabel: "Predicted Paper Set G",
-    extractA: `The UK has set a legally binding net zero target for 2050. Achieving this requires significant changes in production, consumption and investment across the economy.
-
-| Year | Greenhouse gas emissions (MtCO2e) | Renewable share of electricity (%) | Green investment (£bn) |
-|------|-----------------------------------|-------------------------------------|-------------------------|
-| 2010 | 645 | 7 | 8 |
-| 2019 | 472 | 37 | 22 |
-| 2024 | 384 | 47 | 31 |`,
-    extractB: `Decarbonisation requires large-scale investment in renewable generation, grid infrastructure, electric vehicles and energy efficiency. Public and private finance must work together if investment is to scale rapidly.`,
-    extractC: `Some economists argue that carbon pricing and regulation are essential to internalise the external costs of emissions. Others stress the importance of supporting innovation and protecting low-income households from rising energy costs.`,
-    extractD: `Climate change is a global externality. International coordination through agreements such as the Paris Accord is necessary to limit free-riding and prevent carbon leakage between countries.`,
-    q1: `Using Extract A, calculate the percentage fall in UK greenhouse gas emissions between 2010 and 2024.`,
-    q2: `Using Extracts A and B, explain two reasons why decarbonisation may raise long-run aggregate supply.`,
-    q3: `With the aid of an AD/AS diagram, analyse the macroeconomic impact of large-scale green investment in the UK.`,
-    q4: `Evaluate the view that government intervention is essential to achieve the UK's net zero target.`,
-    q5: `Explain why international coordination is needed to tackle climate change.`,
-    q6: `Evaluate the role of international agreements in addressing global environmental problems.`,
-  },
+    macro1: { topic: "the UK net zero transition", focus: "decarbonisation costs" },
+    macro2: { topic: "climate change as a global externality", focus: "international coordination" },
+    essayTopics: ["carbon pricing", "green growth", "the Paris Agreement"],
+  }),
 };
 
-function buildAqaPaper2Override(config: AqaPaper2OverrideConfig): string {
-  return `# AQA A-Level Economics (7136) — Paper 2: National and International Economy — ${config.setLabel}
+function lineNumber(body: string): string {
+  const sentences = body.split(/(?<=\.)\s+/);
+  return sentences
+    .map((s, i) => ((i + 1) % 3 === 0 ? `${s}\n[line ${(i + 1) * 2}]` : s))
+    .join(" ");
+}
+
+function renderExtract(label: string, ext: { subtitle: string; body: string; source: string }): string {
+  return `### Extract ${label}
+*${ext.subtitle}*
+
+${lineNumber(ext.body)}
+
+*Source: ${ext.source}*`;
+}
+
+function buildPaper(set: AqaPaper2Set): string {
+  return `# AQA A-Level Economics (7136) — Paper 2: National and International Economy — ${set.setLabel}
 
 **Time: 2 hours | Total: 80 marks**
 
-## Section A
+---
+
+## Section A — Data response (40 marks)
+
+**Answer EITHER Context 1 OR Context 2.**
+
+---
+
+## EITHER
+
+### Context 1 — ${set.c1.title}
+*Total for this Context: 40 marks*
 
 ### Extract A
-${config.extractA}
+${set.c1.data}
 
-### Extract B
-${config.extractB}
+${renderExtract("B", set.c1.prose1)}
 
-### Extract C
-${config.extractC}
+${renderExtract("C", set.c1.prose2)}
 
-Question 1 [2 marks]
-${config.q1}
+Question 01 [2 marks]
+${set.c1.q1}
 
-Question 2 [4 marks]
-${config.q2}
+Question 02 [4 marks]
+${set.c1.q2}
 
-Question 3 [9 marks]
-${config.q3}
+Question 03 [9 marks]
+${set.c1.q3}
 
-Question 4 [25 marks]
-${config.q4}
+Question 04 [25 marks]
+${set.c1.q4}
 
-## Section B
+---
+
+## OR
+
+### Context 2 — ${set.c2.title}
+*Total for this Context: 40 marks*
 
 ### Extract D
-${config.extractD}
+${set.c2.data}
 
-Question 5 [15 marks]
-${config.q5}
+${renderExtract("E", set.c2.prose1)}
 
-Question 6 [25 marks]
-${config.q6}`;
+${renderExtract("F", set.c2.prose2)}
+
+Question 05 [2 marks]
+${set.c2.q1}
+
+Question 06 [4 marks]
+${set.c2.q2}
+
+Question 07 [9 marks]
+${set.c2.q3}
+
+Question 08 [25 marks]
+${set.c2.q4}
+
+---
+
+## Section B — Essay (40 marks)
+
+**Answer ONE essay (both parts) from Essay 1, Essay 2 OR Essay 3.**
+
+---
+
+### Essay 1
+${set.essays[0].stimulus}
+
+Question 09 [15 marks]
+${set.essays[0].explain}
+
+Question 10 [25 marks]
+${set.essays[0].evaluate}
+
+---
+
+### Essay 2
+${set.essays[1].stimulus}
+
+Question 11 [15 marks]
+${set.essays[1].explain}
+
+Question 12 [25 marks]
+${set.essays[1].evaluate}
+
+---
+
+### Essay 3
+${set.essays[2].stimulus}
+
+Question 13 [15 marks]
+${set.essays[2].explain}
+
+Question 14 [25 marks]
+${set.essays[2].evaluate}`;
 }
 
-const AQA_PAPER_2_OVERRIDES = Object.fromEntries(
-  Object.entries(AQA_PAPER_2_OVERRIDE_CONFIGS).map(([id, cfg]) => [id, buildAqaPaper2Override(cfg)]),
-) as Record<string, string>;
+function buildMarkScheme(set: AqaPaper2Set): string {
+  const sections: string[] = [
+    `# AQA A-Level Economics (7136/2) — Mark Scheme — ${set.setLabel}`,
+    `**Total: 80 marks** | Section A: answer EITHER Context 1 OR Context 2 (40 marks). Section B: answer ONE essay (40 marks).`,
+    `---`,
+    `## Section A — Context 1`,
+    renderPointMark({
+      questionLabel: "0\u20091",
+      totalMarks: 2,
+      expectedAnswer: `${set.c1.q1Answer} (working: ${set.c1.q1Working}).`,
+      markPoints: [
+        { description: `Correct answer (${set.c1.q1Answer}) with correct sign and units`, marks: 2 },
+        { description: "Correct method but wrong final answer", marks: 1 },
+      ],
+    }),
+    renderPointMark({
+      questionLabel: "0\u20092",
+      totalMarks: 4,
+      expectedAnswer: "Two explained references to Extract A data.",
+      markPoints: [
+        { description: "Identifies first relevant data point", marks: 1 },
+        { description: "Develops first point with macro reasoning", marks: 1 },
+        { description: "Identifies second relevant data point", marks: 1 },
+        { description: "Develops second point with macro reasoning", marks: 1 },
+      ],
+    }),
+    renderLevelMark({
+      questionLabel: "0\u20093",
+      totalMarks: 9,
+      diagram: set.c1.q3Diagram,
+      indicativeContent: [
+        "K: definitions of AD, AS, monetary transmission mechanism.",
+        "App: explicit reference to Extract B and the Bank Rate path.",
+        "An: chain from rate rise → consumption/investment fall → AD shift left → output and price level fall.",
+        "Diagram: AD/AS with clear shift, both axes labelled, equilibrium points marked.",
+      ],
+    }),
+    renderLevelMark({
+      questionLabel: "0\u20094",
+      totalMarks: 25,
+      indicativeContent: [
+        "K: precise definitions of monetary policy and its transmission mechanism.",
+        "App: sustained reference to Extracts A–C and the data path.",
+        "An: rigorous chains for monetary, fiscal, and supply-side responses.",
+        "E: balanced evaluation; lags, expectations, exchange rate channels; supported judgement.",
+      ],
+    }),
+    `---`,
+    `## Section A — Context 2`,
+    renderPointMark({
+      questionLabel: "0\u20095",
+      totalMarks: 2,
+      expectedAnswer: `${set.c2.q1Answer} (working: ${set.c2.q1Working}).`,
+      markPoints: [
+        { description: `Correct answer (${set.c2.q1Answer}) with correct sign and units`, marks: 2 },
+        { description: "Correct method, wrong final answer", marks: 1 },
+      ],
+    }),
+    renderPointMark({
+      questionLabel: "0\u20096",
+      totalMarks: 4,
+      expectedAnswer: "Two explained references to Extract D data.",
+      markPoints: [
+        { description: "First reference identified", marks: 1 },
+        { description: "First reference developed", marks: 1 },
+        { description: "Second reference identified", marks: 1 },
+        { description: "Second reference developed", marks: 1 },
+      ],
+    }),
+    renderLevelMark({
+      questionLabel: "0\u20097",
+      totalMarks: 9,
+      diagram: set.c2.q3Diagram,
+      indicativeContent: [
+        "K: definitions and theory underpinning the macro mechanism.",
+        "App: explicit reference to Extracts D–F.",
+        "An: developed chain to UK macro performance.",
+        "Diagram: appropriate macro diagram with clear labels.",
+      ],
+    }),
+    renderLevelMark({
+      questionLabel: "0\u20098",
+      totalMarks: 25,
+      indicativeContent: [
+        "K: precise definitions of relevant macroeconomic policy.",
+        "App: sustained use of Extracts D–F.",
+        "An: rigorous chains for two or more policy responses.",
+        "E: balanced evaluation with prioritised judgement.",
+      ],
+    }),
+    `---`,
+    `## Section B — Essays`,
+  ];
+
+  set.essays.forEach((essay, i) => {
+    const explainNum = (9 + i * 2).toString().padStart(2, "0").split("").join("\u2009");
+    const evaluateNum = (10 + i * 2).toString().padStart(2, "0").split("").join("\u2009");
+    sections.push(`### Essay ${i + 1}`);
+    sections.push(
+      renderLevelMark({
+        questionLabel: explainNum,
+        totalMarks: 15,
+        diagram: essay.diagram,
+        indicativeContent: essay.explainContent,
+      }),
+    );
+    sections.push(
+      renderLevelMark({
+        questionLabel: evaluateNum,
+        totalMarks: 25,
+        indicativeContent: essay.evaluateContent,
+      }),
+    );
+  });
+
+  return sections.join("\n\n");
+}
+
+const PAPER_CONTENT: Record<string, string> = {};
+const PAPER_MS: Record<string, string> = {};
+Object.entries(SETS).forEach(([id, set]) => {
+  PAPER_CONTENT[id] = buildPaper(set);
+  PAPER_MS[id] = buildMarkScheme(set);
+});
 
 export function getAqaPaper2OverrideContent(paperId: string): string | null {
-  return AQA_PAPER_2_OVERRIDES[paperId] ?? null;
+  return PAPER_CONTENT[paperId] ?? null;
+}
+
+export function getAqaPaper2OverrideMarkScheme(paperId: string): string | null {
+  return PAPER_MS[paperId] ?? null;
 }

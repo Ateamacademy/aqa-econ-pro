@@ -1314,8 +1314,13 @@ export default function PredictedPapers() {
   const isValidAqaPaperStructure = (questions: ParsedQuestion[], paperNumber?: string) => {
     if (subject !== "economics") return true;
     if (paperNumber === "1" || paperNumber === "2") {
-      const expected = [2, 4, 9, 25, 15, 25];
-      return questions.length === expected.length && questions.every((q, i) => q.marks === expected[i]);
+      // New AQA structure: Section A has TWO contexts (Q01–04 + Q05–08), Section B has THREE essays (Q09–14).
+      // Accept either the new 14-question format OR the legacy 6-question format for backward compatibility.
+      const newFormat = [2, 4, 9, 25, 2, 4, 9, 25, 15, 25, 15, 25, 15, 25];
+      const legacyFormat = [2, 4, 9, 25, 15, 25];
+      const matches = (expected: number[]) =>
+        questions.length === expected.length && questions.every((q, i) => q.marks === expected[i]);
+      return matches(newFormat) || matches(legacyFormat);
     }
     if (paperNumber === "3") {
       // 30 × 1 mark MCQs + 10 + 15 + 25

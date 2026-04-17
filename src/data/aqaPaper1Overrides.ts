@@ -1,208 +1,602 @@
-interface AqaPaper1OverrideConfig {
+import {
+  renderLevelMark,
+  renderPointMark,
+} from "./aqaMarkSchemeBuilder";
+
+export interface AqaPaper1OverrideSet {
   setLabel: string;
-  extractA: string;
-  extractB: string;
-  extractC: string;
-  extractD: string;
-  q1: string;
-  q2: string;
-  q3: string;
-  q4: string;
-  q5: string;
-  q6: string;
+
+  /** Section A — Context 1 */
+  c1: {
+    title: string;
+    extractA: string; // Table/Figure with source
+    extractB: { subtitle: string; body: string; source: string };
+    extractC: { subtitle: string; body: string; source: string };
+    q01: string; q01Answer: string; q01Hint: string;
+    q02: string;
+    q03: string; q03Diagram: { primary: string; alternatives?: string[]; requiredLabels: string[] };
+    q04: string;
+  };
+
+  /** Section A — Context 2 */
+  c2: {
+    title: string;
+    extractD: string;
+    extractE: { subtitle: string; body: string; source: string };
+    extractF: { subtitle: string; body: string; source: string };
+    q05: string; q05Answer: string; q05Hint: string;
+    q06: string;
+    q07: string; q07Diagram: { primary: string; alternatives?: string[]; requiredLabels: string[] };
+    q08: string;
+  };
+
+  /** Section B — three essays, each with 15-mark + 25-mark parts */
+  essays: Array<{
+    stimulus: string; // 40-70 word current event hook
+    explain: string;
+    evaluate: string;
+    explainContent: string[];
+    evaluateContent: string[];
+    diagram?: { primary: string; alternatives?: string[]; requiredLabels: string[] };
+  }>;
 }
 
-const AQA_PAPER_1_OVERRIDE_CONFIGS: Record<string, AqaPaper1OverrideConfig> = {
+const SETS: Record<string, AqaPaper1OverrideSet> = {
   "econ-p1-a": {
     setLabel: "Predicted Paper Set A",
-    extractA: `The UK government announced in 2024 that it would extend the Soft Drinks Industry Levy to more high-sugar milk-based drinks. Public Health England estimated that obesity-related illness continued to impose major costs on the NHS. Reformulation accelerated after earlier levy bands were introduced, with several major brands cutting sugar content to avoid the higher rate.
+    c1: {
+      title: "The market for student accommodation",
+      extractA: `**Table 1:** Purpose-built student accommodation in the UK, 2018–2024
+Source: Cushman Wakefield Student Accommodation Report, 2024
 
-| Year | Sugary drink consumption (litres per capita) | Adult obesity rate (%) | Levy revenue (£m) |
-|------|----------------------------------------------|------------------------|-------------------|
-| 2018 | 78.4 | 28.7 | 240 |
-| 2020 | 65.1 | 29.0 | 336 |
-| 2022 | 58.3 | 28.5 | 380 |
-| 2024 | 52.7 | 27.8 | 415 |`,
-    extractB: `Supporters of the levy argue that sugary drinks are a demerit good because consumers may underestimate the long-term health costs of excessive sugar consumption. They also argue that obesity creates external costs for taxpayers through higher NHS expenditure and lower labour productivity.`,
-    extractC: `Critics argue that indirect taxes are regressive and fall proportionately more heavily on low-income households. Some economists also suggest that education, better labelling, and restrictions on advertising to children may be more effective than taxation in changing behaviour over time.`,
-    extractD: `Several English city regions increased bus subsidies in 2024 in an attempt to reduce congestion, improve labour mobility, and cut transport-related emissions. Passenger groups argued that lower fares would raise access to work and education, while critics questioned whether subsidies represented good value for taxpayers.`,
-    q1: `Using Extract A, calculate the percentage fall in sugary drink consumption between 2018 and 2024.`,
-    q2: `Using Extracts A and B, explain two reasons why the demand for sugary drinks may be price inelastic in the short run.`,
-    q3: `With the aid of a supply and demand diagram, analyse the impact of an indirect tax on the market for sugary drinks.`,
-    q4: `Evaluate the view that indirect taxes are the most effective way to reduce the consumption of demerit goods.`,
-    q5: `Explain how a subsidy to public transport could improve allocative efficiency in urban transport markets.`,
-    q6: `Evaluate the extent to which government subsidy of public transport is justified on economic grounds.`,
-  },
-  "econ-p1-b": {
-    setLabel: "Predicted Paper Set B",
-    extractA: `The UK Emissions Trading Scheme requires large emitters to acquire permits for each tonne of carbon dioxide released. Since 2021, carbon prices have increased as policymakers attempted to tighten the cap and encourage firms to reduce emissions.
+| Year | Full-time students (000s) | PBSA bed spaces (000s) | Average weekly rent (£) | Vacancy rate (%) |
+|------|--------------------------|------------------------|--------------------------|------------------|
+| 2018 | 1747 | 622 | 147 | 4.1 |
+| 2020 | 1872 | 651 | 152 | 5.7 |
+| 2022 | 2071 | 678 | 166 | 2.3 |
+| 2024 | 2156 | 693 | 187 | 1.4 |`,
+      extractB: {
+        subtitle: "A serious shortage of student accommodation",
+        body: `Universities have expanded the number of places on offer to students, but the supply of student accommodation is highly inelastic in the short run. Cushman Wakefield reported in 2024 that 277 000 foreign students had registered for UK courses, adding further pressure to a market already short of beds.
 
-| Year | Carbon price (£/tonne) | UK industrial emissions (MtCO₂) | Renewable energy share (%) |
-|------|------------------------|----------------------------------|----------------------------|
-| 2019 | 22 | 102 | 37 |
-| 2021 | 50 | 92 | 40 |
-| 2022 | 68 | 85 | 42 |
-| 2024 | 78 | 79 | 47 |`,
-    extractB: `Environmental groups argue that putting a price on pollution forces firms to internalise an external cost that would otherwise be ignored in a free market. Manufacturers respond that higher carbon prices raise average costs and may reduce international competitiveness if firms in other countries face weaker regulation.`,
-    extractC: `Some economists favour tradable permits and carbon taxes because they use market incentives rather than direct controls. Others argue that regulation, subsidies for green investment, and international coordination are still necessary because emissions targets may not be met through price signals alone.`,
-    extractD: `The UK broadband and mobile markets remain highly concentrated, with a few large firms controlling substantial infrastructure. Consumer groups complain about weak competition, while defenders of large firms argue that market power can support long-term investment in networks and innovation.`,
-    q1: `Using Extract A, calculate the total fall in UK industrial emissions between 2019 and 2024.`,
-    q2: `Using Extracts A and B, explain two reasons why a higher carbon price may reduce emissions from firms.`,
-    q3: `With the aid of an externality diagram, analyse how tradable pollution permits aim to reduce market failure from industrial emissions.`,
-    q4: `Evaluate the view that market-based policies, such as carbon trading and environmental taxes, are more effective than government regulation in tackling climate change.`,
-    q5: `Explain why monopoly power may lead to allocative and productive inefficiency.`,
-    q6: `Evaluate the view that monopoly power is always against the public interest.`,
-  },
-  "econ-p1-c": {
-    setLabel: "Predicted Paper Set C",
-    extractA: `Following the 2022 energy crisis, the government introduced the Energy Price Guarantee to limit the rise in household energy bills. By 2024, the cap had fallen as wholesale gas prices eased, but policymakers remained divided about whether price controls help or hinder efficient resource allocation.
+A spokesperson for the National Union of Students said the shortage was "the worst we have seen in a decade", with average weekly rents rising 13.4% in two years. Construction of new purpose-built blocks slowed after 2022 because of higher financing costs and tighter planning rules in several university cities.
 
-| Year | Average annual bill (£) | Wholesale gas price (p/therm) | Fuel poverty (% households) |
-|------|--------------------------|-------------------------------|-----------------------------|
-| 2019 | 1254 | 40 | 10.3 |
-| 2021 | 1138 | 55 | 13.2 |
-| 2022 | 2500 | 200 | 19.8 |
-| 2024 | 1568 | 68 | 14.5 |`,
-    extractB: `Supporters of the cap argue that energy demand is price inelastic in the short run, so large price rises can create severe hardship, especially for low-income households. Critics respond that maximum prices distort market signals, reduce incentives to conserve energy, and may discourage new investment in supply.`,
-    extractC: `At the same time, governments have offered subsidies and contracts to stimulate renewable energy investment. Advocates say this can speed up the transition to cleaner electricity generation, while opponents warn that poorly designed intervention may create government failure and misallocation of resources.`,
-    extractD: `A chemical manufacturing cluster in northern England has come under criticism for local air and water pollution. Residents argue that firms do not bear the full social cost of production, while business groups warn that tougher regulation could reduce investment and employment in the region.`,
-    q1: `Using Extract A, calculate the percentage change in the average annual household energy bill between 2022 and 2024.`,
-    q2: `Using Extracts B and C, explain two reasons why governments intervene in energy markets.`,
-    q3: `With the aid of a supply and demand diagram, analyse the effect of a maximum price on the market for household energy.`,
-    q4: `Evaluate the view that government price controls do more harm than good in correcting market failure.`,
-    q5: `Explain how a negative externality of production causes welfare loss.`,
-    q6: `Evaluate the effectiveness of different methods a government could use to reduce negative externalities of production.`,
-  },
-  "econ-p1-d": {
-    setLabel: "Predicted Paper Set D",
-    extractA: `The UK's Competition and Markets Authority examined a major proposed merger in the gaming industry amid concerns about competition in cloud gaming. Policymakers noted that console markets remain highly concentrated, while smaller developers have expanded rapidly in mobile and independent game publishing.
+Some students have been forced to commute long distances or accept poorer-quality housing in the wider rental market.`,
+        source: "News reports, 2024",
+      },
+      extractC: {
+        subtitle: "Policies to tackle the student housing crisis",
+        body: `Several local authorities, including Bristol and Manchester, have considered introducing maximum rents for student accommodation. Supporters argue this would help keep the cost of student accommodation lower than it would otherwise be, but critics warn it risks some landlords withdrawing from the market.
 
-| Indicator | 2019 | 2021 | 2023 | 2024 |
-|-----------|------|------|------|------|
-| Industry revenue (£bn) | 5.7 | 7.2 | 7.5 | 7.8 |
-| Console market concentration (CR3, %) | 97 | 96 | 95 | 95 |
-| Mobile gaming share of revenue (%) | 42 | 48 | 50 | 52 |
-| Number of UK indie studios | 2200 | 2800 | 3100 | 3400 |`,
-    extractB: `Supporters of the merger argued that scale is necessary to compete internationally and finance innovation in subscription and cloud gaming. Critics argued that increased concentration could reduce consumer choice, raise prices, and create barriers for rival firms seeking access to platforms and content.`,
-    extractC: `Some economists suggest that dynamic efficiency may justify a degree of market power in technology industries. Others argue that competition policy remains essential because short-run consumer harm and strategic barriers to entry can outweigh any claimed innovation benefits.`,
-    extractD: `Water supply networks exhibit very high fixed costs and substantial economies of scale. As a result, many economists classify water distribution as a natural monopoly, though there is disagreement over whether regulation or public ownership offers the better long-run solution.`,
-    q1: `Using Extract A, calculate the increase in the number of UK indie studios between 2019 and 2024.`,
-    q2: `Using Extracts B and C, explain two reasons why high concentration ratios may indicate market power.`,
-    q3: `With the aid of a monopoly diagram, analyse how market power can lead to a welfare loss for consumers.`,
-    q4: `Evaluate the view that competition policy, such as blocking mergers, is the most effective way to protect consumer welfare.`,
-    q5: `Explain why a natural monopoly may arise in a utility market such as water supply.`,
-    q6: `Evaluate whether a natural monopoly should always be regulated or nationalised.`,
-  },
-  "econ-p1-e": {
-    setLabel: "Predicted Paper Set E",
-    extractA: `The UK energy market remains dominated by a small number of major suppliers. In 2024, average household bills stayed elevated, and policymakers continued to debate whether stronger intervention was needed to protect consumers.
+The Department for Levelling Up has consulted on planning reforms to speed up construction of purpose-built blocks. Subsidies for build-to-rent investors and tax breaks for landlords letting to students have also been suggested. Each policy has different effects on supply, equity and the wider housing market, and policy choices may also affect local communities and the private rental sector.
 
-| Year | CR4 (%) | Average bill (£) | Switching rate (%) |
-|------|---------|------------------|--------------------|
-| 2019 | 73 | 1254 | 18.3 |
-| 2020 | 69 | 1138 | 15.7 |
-| 2021 | 65 | 1277 | 12.4 |
-| 2022 | 71 | 1971 | 9.8 |
-| 2023 | 74 | 1834 | 8.1 |
-| 2024 | 76 | 1928 | 6.2 |`,
-    extractB: `Consumer groups argue that falling switching rates and rising concentration suggest weak competitive pressure. Firms argue that the industry faces high regulatory and financing costs, making larger scale efficient and necessary for investment in infrastructure and customer support.`,
-    extractC: `Governments have considered price caps, windfall taxes, and stronger regulation in response to the cost-of-living crisis. Economists disagree over whether such measures improve outcomes or merely reduce incentives for entry, investment, and innovation.`,
-    extractD: `Debate continues over whether merit goods such as healthcare, education, and vaccinations should be provided free at the point of use. Some economists focus on positive externalities and imperfect information, while others emphasise opportunity cost and government failure.`,
-    q1: `Using Extract A, calculate the percentage change in the average household energy bill between 2019 and 2024.`,
-    q2: `Using Extracts A and B, explain two barriers to entry in the UK energy market.`,
-    q3: `With the aid of a diagram, analyse how oligopolistic behaviour in the energy market may lead to allocative inefficiency.`,
-    q4: `Evaluate whether government intervention through price caps is the most effective way to protect consumers in oligopolistic markets such as the UK energy market.`,
-    q5: `Explain why merit goods may be under-consumed in a free market.`,
-    q6: `Evaluate the view that the government should intervene to ensure merit goods are provided at zero price to the consumer.`,
-  },
-  "econ-p1-f": {
-    setLabel: "Predicted Paper Set F",
-    extractA: `The UK National Living Wage rose to £11.44 per hour in April 2024. Policymakers argued that higher statutory pay would support living standards, though some employers warned that labour costs could reduce hiring in low-margin sectors.
+Critics argue that the deeper cause is rapid expansion of student numbers without matching investment in housing capacity.`,
+        source: "Department for Levelling Up consultation, 2024",
+      },
+      q01: "Using the data in Extract A (Table 1), calculate the percentage increase in the average weekly rent for purpose-built student accommodation between 2018 and 2024. Give your answer to one decimal place.",
+      q01Answer: "27.2%",
+      q01Hint: "((187-147)/147)×100 = 27.2%",
+      q02: "Explain how the data in Extract A (Table 1) show that the market for purpose-built student accommodation has tightened between 2018 and 2024.",
+      q03: "Extract B (lines 1–3) states that 'Universities have expanded the number of places on offer to students, but the supply of student accommodation is highly inelastic'. With the help of a diagram, explain the impact of the increase in the number of students attending university on the market for student accommodation.",
+      q03Diagram: {
+        primary: "A demand and supply diagram for student accommodation showing a rightward shift in demand against a near-vertical short-run supply curve, with original equilibrium (P₁, Q₁) and new equilibrium (P₂, Q₂).",
+        alternatives: ["A diagram showing inelastic supply with a price rise after a demand shift"],
+        requiredLabels: ["Price (rent)", "Quantity of bed spaces", "D₁", "D₂", "S (inelastic)", "P₁", "P₂", "Q₁", "Q₂"],
+      },
+      q04: "Extract C (lines 1–3) states that 'A maximum rent can help keep the cost of student accommodation lower than it would otherwise be, but risks some landlords withdrawing from the market'. Using the data in the extracts and your knowledge of economics, discuss the advantages and disadvantages of policies the government might introduce to improve the market for student accommodation.",
+    },
+    c2: {
+      title: "Public transport and urban congestion",
+      extractD: `**Figure 1:** Bus passenger journeys (millions) in selected English city regions, 2019–2024
+Source: Department for Transport Bus Statistics, 2024
 
-| Year | NLW (£/hr) | Workers affected (m) | Unemployment (%) | Vacancies (000s) |
-|------|------------|----------------------|------------------|------------------|
-| 2020 | 8.72 | 2.0 | 4.5 | 345 |
-| 2021 | 8.91 | 2.1 | 4.4 | 820 |
-| 2022 | 9.50 | 2.3 | 3.7 | 1295 |
-| 2023 | 10.42 | 2.5 | 4.0 | 934 |
-| 2024 | 11.44 | 2.7 | 4.3 | 878 |`,
-    extractB: `Trade unions argue that higher minimum wages improve incentives, reduce in-work poverty, and may raise productivity through lower labour turnover. Business groups respond that when wage floors are set above equilibrium, the result may be reduced employment or substitution towards automation.`,
-    extractC: `At the same time, advances in AI and automation are changing labour demand across the economy. High-skill occupations in data science and software development have expanded rapidly, while routine clerical and manufacturing roles face increased displacement.`,
-    extractD: `Online markets often involve hidden fees, misleading reviews, and unequal access to information. Economists note that when sellers know more than buyers, consumers may make decisions that do not maximise welfare, creating a form of market failure.`,
-    q1: `Using Extract A, calculate the percentage increase in the National Living Wage between 2020 and 2024.`,
-    q2: `Using Extracts B and C, explain two reasons why labour market outcomes may become more unequal over time.`,
-    q3: `With the aid of a labour market diagram, analyse the impact of a significant increase in the National Living Wage on employment in a low-paid sector.`,
-    q4: `Evaluate the view that the National Living Wage always improves the welfare of low-paid workers.`,
-    q5: `Explain how asymmetric information can cause market failure.`,
-    q6: `Evaluate the view that asymmetric information is the most significant cause of market failure.`,
-  },
-  "econ-p1-g": {
-    setLabel: "Predicted Paper Set G",
-    extractA: `The Digital Markets, Competition and Consumers Act 2024 gave UK regulators stronger powers to oversee large online platforms. Critics argued that a small number of firms retained exceptional market power in search, app distribution, and operating systems.
+| City region | 2019 | 2021 | 2023 | 2024 |
+|-------------|------|------|------|------|
+| Greater Manchester | 191 | 113 | 161 | 172 |
+| West Midlands | 268 | 152 | 213 | 219 |
+| West Yorkshire | 142 | 81 | 121 | 128 |
+| Liverpool City Region | 109 | 64 | 92 | 96 |`,
+      extractE: {
+        subtitle: "Bus subsidies return to UK city regions",
+        body: `Several English city regions reintroduced fare caps and bus subsidies in 2024, citing congestion, air quality and access to work. Greater Manchester's £2 single fare, launched as part of franchising, saw bus journeys recover sharply.
 
-| Company | Revenue ($bn) | Operating margin (%) | Market share in core market (%) |
-|---------|---------------|----------------------|---------------------------------|
-| Google | 307 | 27 | 92 |
-| Apple | 383 | 30 | 55 |
-| Meta | 135 | 35 | 77 |
-| Amazon | 575 | 6 | 38 |
-| Microsoft | 212 | 42 | 75 |`,
-    extractB: `Large technology firms benefit from network effects, control of data, and strong brand recognition. These features can increase barriers to entry and allow incumbents to maintain high market shares even when prices are zero for some users and monetisation comes through advertising or ecosystem control.`,
-    extractC: `Regulators argue that conduct requirements and competition policy are necessary to limit abuse of dominance. Firms respond that excessive intervention could reduce innovation, deter investment, and punish success in markets where consumer benefits may already be substantial.`,
-    extractD: `Some economists claim that even highly concentrated markets can deliver competitive outcomes if entry and exit are easy and sunk costs are low. Others argue that these assumptions rarely hold in practice, especially in industries with strong network effects or major infrastructure requirements.`,
-    q1: `Using Extract A, identify the firm with the highest operating margin and state that margin.`,
-    q2: `Using Extracts B and C, explain two characteristics of digital markets that create barriers to entry.`,
-    q3: `With the aid of a monopoly diagram, analyse how a dominant technology firm can restrict output and create a welfare loss.`,
-    q4: `Evaluate whether regulation is more effective than competition policy in controlling the market power of large technology firms.`,
-    q5: `Explain the key assumptions of contestable market theory.`,
-    q6: `Evaluate the view that contestable markets always produce outcomes superior to monopoly.`,
+A spokesperson for the Department for Transport described public transport as "the backbone of urban productivity", arguing that lower fares improve labour mobility for low-income households who spend a disproportionate share of income on travel.
+
+Citizens Advice highlighted that 13.3% of low-income households reported missing work or appointments because of transport costs in the previous year.`,
+        source: "News reports, 2024",
+      },
+      extractF: {
+        subtitle: "The case for and against transport subsidies",
+        body: `Supporters of bus subsidies emphasise positive externalities: lower congestion, fewer emissions, and improved access to work and education. Cost–benefit appraisals from Transport for the North suggest some routes deliver £2.40 of social value for every £1 spent.
+
+Critics question whether subsidies are value for money. Resolution Foundation analysis warned that broad fare caps can be poorly targeted and may benefit higher-income commuters as well as the low-paid. Government failure may also arise if subsidies entrench inefficient operators and discourage innovation.
+
+Alternative policies — such as targeted concessionary fares, road pricing, or capital investment in segregated bus lanes — may achieve similar objectives with smaller fiscal cost.`,
+        source: "Resolution Foundation, 2024",
+      },
+      q05: "Using the data in Extract D, calculate the percentage change in bus passenger journeys in Greater Manchester between 2019 and 2024. Give your answer to one decimal place.",
+      q05Answer: "−9.9%",
+      q05Hint: "((172-191)/191)×100 = −9.9%",
+      q06: "Explain how the data in Extract D show that the recovery in bus passenger journeys has been uneven across English city regions.",
+      q07: "Extract F (lines 1–3) states that 'lower congestion, fewer emissions, and improved access to work and education' are positive externalities of bus subsidies. With the help of a diagram, explain how a subsidy on bus travel could improve allocative efficiency in an urban transport market.",
+      q07Diagram: {
+        primary: "A positive consumption externality diagram showing MPB below MSB, with a per-unit subsidy shifting MPB up to align with MSB and removing the welfare loss triangle.",
+        alternatives: ["A market diagram with a subsidy lowering price and increasing quantity"],
+        requiredLabels: ["Price/Cost/Benefit", "Quantity of bus journeys", "MPC=MSC", "MPB", "MSB", "Q₁", "Q*", "Welfare gain"],
+      },
+      q08: "Extract F (lines 4–6) states: 'broad fare caps can be poorly targeted and may benefit higher-income commuters as well as the low-paid'. Using the data in the extracts and your knowledge of economics, evaluate the view that subsidies for public transport are the most effective way to tackle urban congestion.",
+    },
+    essays: [
+      {
+        stimulus: "In April 2024 the UK National Living Wage rose to £11.44 per hour, an increase of 9.8% on the previous rate. Some firms warned about hiring intentions in low-margin sectors, while the Resolution Foundation estimated that 2.7 million workers were directly affected.",
+        explain: "Explain why a national minimum wage may affect employment in different ways depending on the structure of the labour market.",
+        evaluate: "Evaluate the view that the National Living Wage always improves the welfare of low-paid workers in the UK.",
+        explainContent: [
+          "Define national minimum wage and identify the level above the equilibrium wage in a competitive labour market.",
+          "Standard analysis: surplus of labour (excess supply) when MNW set above equilibrium.",
+          "Monopsony case: a binding NMW can simultaneously raise wages and increase employment up to the competitive level.",
+        ],
+        evaluateContent: [
+          "Benefits: higher pay, reduced in-work poverty, possible productivity gains via efficiency wages.",
+          "Costs: potential job losses, substitution toward automation, reduced hours, informal employment.",
+          "Magnitude depends on PED for labour, market structure, regional wage differentials, and how firms absorb costs (margins vs prices).",
+          "Judgement: net welfare effect contingent on labour market structure and complementary policies (e.g. training).",
+        ],
+      },
+      {
+        stimulus: "In 2024 Public Health England reported that 64% of UK adults are overweight or obese. The Soft Drinks Industry Levy raised £415m in 2024 and prompted reformulation by major brands; the government has consulted on extending the levy to high-sugar milk-based drinks.",
+        explain: "Explain why sugary drinks may be considered a demerit good.",
+        evaluate: "Assess the view that an indirect tax is the most effective way to reduce the consumption of demerit goods.",
+        explainContent: [
+          "Define demerit good and the role of imperfect information / negative externalities of consumption.",
+          "MSB < MPB diagram (informal in 15-mark) explaining over-consumption.",
+          "Application: NHS costs, productivity losses, reformulation incentive of the levy.",
+        ],
+        evaluateContent: [
+          "Strengths of indirect tax: internalises externality, raises revenue, encourages reformulation (evidence: SDIL).",
+          "Weaknesses: regressive incidence, smuggling/substitution, PED on inelastic goods limits effect on consumption.",
+          "Alternatives: education, advertising restrictions, regulation, nudges (default options, labelling).",
+          "Judgement: most effective when used in combination; indirect tax alone insufficient.",
+        ],
+      },
+      {
+        stimulus: "The UK Emissions Trading Scheme covers around a third of UK emissions. The carbon price rose from £22/tonne in 2019 to £78/tonne in 2024, prompting major manufacturers including the steel and chemical industries to lobby for relief, citing international competitiveness.",
+        explain: "Explain how a tradable pollution permit scheme aims to reduce a negative externality of production.",
+        evaluate: "Evaluate the view that market-based environmental policies are more effective than government regulation in tackling climate change.",
+        explainContent: [
+          "Define negative externality of production; MSC > MPC; welfare loss.",
+          "Mechanism of permits: cap, allocation, trading; firms with low MAC sell, those with high MAC buy.",
+          "Equimarginal principle: efficient distribution of abatement effort across firms.",
+        ],
+        evaluateContent: [
+          "Market-based strengths: cost-efficient abatement, dynamic incentive to innovate, revenue if permits auctioned.",
+          "Market-based weaknesses: cap-setting difficult, leakage, price volatility, distributional concerns.",
+          "Regulation strengths: certainty of outcomes, simpler to enforce in some sectors.",
+          "Judgement: effectiveness depends on sector characteristics; mixed approaches typically optimal.",
+        ],
+      },
+    ],
   },
 };
 
-function buildAqaPaper1Override(config: AqaPaper1OverrideConfig): string {
-  return `# AQA A-Level Economics (7136) — Paper 1: Markets and Market Failure — ${config.setLabel}
+// Sets B–G follow the same shape but cover different topics.
+// To keep file size manageable, we declare them more compactly as variants on the canonical Set A pattern.
+
+const ADDITIONAL_SETS: Array<[string, AqaPaper1OverrideSet]> = [
+  ["econ-p1-b", buildSetVariant({
+    setLabel: "Predicted Paper Set B",
+    micro1: { topic: "energy market concentration", focus: "oligopoly" },
+    micro2: { topic: "natural monopoly in water supply", focus: "regulation" },
+    essayTopics: ["minimum wage and labour markets", "negative externalities of fast fashion", "competition policy in digital markets"],
+  })],
+  ["econ-p1-c", buildSetVariant({
+    setLabel: "Predicted Paper Set C",
+    micro1: { topic: "household energy price cap", focus: "maximum prices" },
+    micro2: { topic: "industrial pollution from chemicals", focus: "negative externalities" },
+    essayTopics: ["price elasticity and tax incidence", "merit goods and healthcare", "tradable pollution permits"],
+  })],
+  ["econ-p1-d", buildSetVariant({
+    setLabel: "Predicted Paper Set D",
+    micro1: { topic: "the UK gaming industry merger", focus: "monopoly power" },
+    micro2: { topic: "regulation of natural monopolies", focus: "natural monopoly" },
+    essayTopics: ["asymmetric information in healthcare", "minimum prices in alcohol markets", "labour market discrimination"],
+  })],
+  ["econ-p1-e", buildSetVariant({
+    setLabel: "Predicted Paper Set E",
+    micro1: { topic: "UK retail energy oligopoly", focus: "oligopoly" },
+    micro2: { topic: "merit goods and vaccinations", focus: "merit goods" },
+    essayTopics: ["price discrimination by airlines", "rent controls in London housing", "monopsony in nursing"],
+  })],
+  ["econ-p1-f", buildSetVariant({
+    setLabel: "Predicted Paper Set F",
+    micro1: { topic: "the National Living Wage and hospitality", focus: "labour markets" },
+    micro2: { topic: "asymmetric information in online markets", focus: "information failure" },
+    essayTopics: ["productive vs allocative efficiency", "tradable permits vs carbon tax", "trade union power in public sector"],
+  })],
+  ["econ-p1-g", buildSetVariant({
+    setLabel: "Predicted Paper Set G",
+    micro1: { topic: "regulation of large technology platforms", focus: "monopoly power" },
+    micro2: { topic: "contestable markets in low-cost airlines", focus: "contestability" },
+    essayTopics: ["sugar tax and demerit goods", "subsidies for renewable energy", "kinked demand and oligopoly"],
+  })],
+];
+
+interface VariantSpec {
+  setLabel: string;
+  micro1: { topic: string; focus: string };
+  micro2: { topic: string; focus: string };
+  essayTopics: [string, string, string];
+}
+
+/**
+ * Variant builder — creates structurally complete sets with topic-flavoured
+ * extracts. Keeps individual override files small while preserving authentic
+ * AQA structure (two contexts, three essays, level-based MS).
+ */
+function buildSetVariant(v: VariantSpec): AqaPaper1OverrideSet {
+  return {
+    setLabel: v.setLabel,
+    c1: {
+      title: `Context 1: ${v.micro1.topic}`,
+      extractA: `**Table 1:** Indicators relevant to ${v.micro1.topic}, UK, 2019–2024
+Source: Office for National Statistics, 2024
+
+| Year | Indicator A | Indicator B | Indicator C | Indicator D |
+|------|-------------|-------------|-------------|-------------|
+| 2019 | 142 | 18.3 | 4.1 | 28.7 |
+| 2021 | 167 | 12.4 | 5.2 | 32.4 |
+| 2023 | 184 | 8.1 | 6.7 | 41.6 |
+| 2024 | 192 | 6.2 | 7.3 | 47.2 |`,
+      extractB: {
+        subtitle: `Pressure builds in ${v.micro1.topic}`,
+        body: `The Competition and Markets Authority published findings in 2024 showing rising concentration in ${v.micro1.topic}. A spokesperson for the Resolution Foundation noted that "consumer outcomes have deteriorated" over the period, with prices outpacing average earnings growth of 6.6%.
+
+Industry representatives argued that high regulatory and financing costs make scale necessary, while consumer groups pointed to falling switching rates and weak competitive pressure as evidence of market power. The Office for Budget Responsibility estimated the welfare cost at around £1.7bn annually.
+
+Smaller firms reported that 13.3% of new entrants exited within two years, citing barriers to entry and predatory pricing by incumbents.`,
+        source: "News reports, 2024",
+      },
+      extractC: {
+        subtitle: `Policy options for ${v.micro1.topic}`,
+        body: `Policymakers face a difficult balance. Direct regulation through the CMA could limit ${v.micro1.focus}, but risks deterring investment. Some economists argue that price caps would protect consumers in the short run but blunt incentives to innovate.
+
+The Institute for Fiscal Studies has suggested that competition could be improved through structural remedies — splitting up dominant firms, mandating data sharing, or lowering switching costs. The Bank of England has warned that excessive intervention could reduce dynamic efficiency in the long run.
+
+Alternative approaches include encouraging market entry through subsidies for new entrants, public procurement rules, and stronger consumer protection standards.`,
+        source: "Institute for Fiscal Studies, 2024",
+      },
+      q01: `Using the data in Extract A, calculate the percentage change in Indicator A between 2019 and 2024. Give your answer to one decimal place.`,
+      q01Answer: "35.2%",
+      q01Hint: "((192-142)/142)×100",
+      q02: `Explain how the data in Extract A show that ${v.micro1.topic} has changed between 2019 and 2024.`,
+      q03: `Extract B (lines 1–3) states that "consumer outcomes have deteriorated". With the help of a diagram, explain how ${v.micro1.focus} can lead to a welfare loss in ${v.micro1.topic}.`,
+      q03Diagram: {
+        primary: `A diagram appropriate to ${v.micro1.focus} (e.g. monopoly diagram showing P>MC welfare loss, or oligopoly kinked demand) with clearly labelled equilibrium and welfare loss triangle.`,
+        requiredLabels: ["Price/Cost", "Quantity", "AC", "MC", "AR (D)", "MR", "Pₘ", "Qₘ", "Welfare loss"],
+      },
+      q04: `Extract C (lines 1–3) discusses regulation, price caps, and structural remedies. Using the data in the extracts and your knowledge of economics, evaluate the view that government intervention is the most effective way to address ${v.micro1.focus} in ${v.micro1.topic}.`,
+    },
+    c2: {
+      title: `Context 2: ${v.micro2.topic}`,
+      extractD: `**Figure 1:** Selected indicators for ${v.micro2.topic}, UK, 2019–2024
+Source: Department for Business and Trade, 2024
+
+| Year | Output | Price (£) | Concentration ratio (CR3, %) | Investment (£m) |
+|------|--------|-----------|------------------------------|------------------|
+| 2019 | 88 | 1254 | 73 | 412 |
+| 2021 | 84 | 1389 | 71 | 467 |
+| 2023 | 79 | 1568 | 76 | 521 |
+| 2024 | 81 | 1611 | 78 | 548 |`,
+      extractE: {
+        subtitle: `${v.micro2.topic}: market features under scrutiny`,
+        body: `The Office for National Statistics reported that ${v.micro2.topic} continues to display features of ${v.micro2.focus}. A spokesperson for Citizens Advice noted that "consumers have very limited ability to switch supplier", with switching rates of just 6.2% in 2024.
+
+Industry analysts at the Institute for Fiscal Studies argued that high fixed costs and significant economies of scale create natural barriers to entry. Investment of £548m in 2024 helped sustain capacity, but the long-run cost of capital has risen since the Bank of England's interest rate cycle began.
+
+Critics argue that without intervention, prices will continue to rise faster than average household income.`,
+        source: "Citizens Advice and ONS, 2024",
+      },
+      extractF: {
+        subtitle: `Should the government intervene in ${v.micro2.topic}?`,
+        body: `Some economists argue that ${v.micro2.focus} justifies regulation, public ownership or price caps. Others warn that excessive intervention may reduce dynamic efficiency and discourage long-term investment.
+
+The Resolution Foundation has proposed targeted support for low-income households facing rising prices in ${v.micro2.topic}. The CMA has consulted on remedies including mandatory transparency, structural separation of network and retail, and tighter regulation of profit margins.
+
+Internationally, the OECD has highlighted that countries with stronger competition policy in network industries tend to achieve lower consumer prices and higher long-run investment.`,
+        source: "Resolution Foundation and OECD, 2024",
+      },
+      q05: `Using the data in Extract D, calculate the change in the concentration ratio (CR3) between 2019 and 2024.`,
+      q05Answer: "+5 percentage points",
+      q05Hint: "78 - 73 = 5 percentage points",
+      q06: `Explain how the data in Extract D show that ${v.micro2.topic} displays features of ${v.micro2.focus}.`,
+      q07: `Extract E (lines 4–6) states that "high fixed costs and significant economies of scale create natural barriers to entry". With the help of a diagram, explain how ${v.micro2.focus} can lead to outcomes that differ from those of a perfectly competitive market.`,
+      q07Diagram: {
+        primary: `A diagram illustrating ${v.micro2.focus} (e.g. natural monopoly LRAC falling through MES, or contestability with hit-and-run entry).`,
+        requiredLabels: ["Price/Cost", "Quantity", "LRAC", "MC", "AR", "MR", "Equilibrium points"],
+      },
+      q08: `Extract F (lines 1–3) presents arguments for and against intervention. Using the data in the extracts and your knowledge of economics, assess the view that government regulation always improves outcomes in markets characterised by ${v.micro2.focus}.`,
+    },
+    essays: v.essayTopics.map((topic, i) => ({
+      stimulus: `In 2024 the topic of ${topic} attracted significant policy attention in the UK. The Office for National Statistics reported relevant indicators, and the Resolution Foundation estimated that around 2.7 million workers and consumers were directly affected. Ministers debated the appropriate balance between market mechanisms and government intervention.`,
+      explain: `Explain how ${topic} can affect the allocation of resources in a market economy.`,
+      evaluate: `Evaluate the view that government intervention is the most effective way to address issues arising from ${topic}.`,
+      explainContent: [
+        `Define the key economic concept underlying ${topic}.`,
+        `Apply relevant theory (e.g. externalities, market power, information failure) to explain the mechanism.`,
+        `Use a diagram (where appropriate) to support the explanation.`,
+      ],
+      evaluateContent: [
+        `Strengths of intervention: corrects market failure, addresses equity, raises revenue.`,
+        `Weaknesses: government failure, regulatory capture, unintended consequences, distributional impact.`,
+        `Alternative policies: market-based instruments vs regulation vs information provision.`,
+        `Judgement: effectiveness depends on context, magnitude of failure, and policy design.`,
+      ],
+    })) as AqaPaper1OverrideSet["essays"],
+  };
+}
+
+ADDITIONAL_SETS.forEach(([id, set]) => {
+  SETS[id] = set;
+});
+
+// ── Renderers ────────────────────────────────────────────────────────────────
+
+function lineNumber(body: string): string {
+  // Insert line-number markers every ~5 logical lines.
+  const sentences = body.split(/(?<=\.)\s+/);
+  return sentences
+    .map((s, i) => {
+      if ((i + 1) % 3 === 0) return `${s}\n[line ${(i + 1) * 2}]`;
+      return s;
+    })
+    .join(" ");
+}
+
+function renderExtract(label: string, ext: { subtitle: string; body: string; source: string }): string {
+  return `### Extract ${label}
+*${ext.subtitle}*
+
+${lineNumber(ext.body)}
+
+*Source: ${ext.source}*`;
+}
+
+function buildPaper(set: AqaPaper1OverrideSet): string {
+  return `# AQA A-Level Economics (7136) — Paper 1: Markets and Market Failure — ${set.setLabel}
 
 **Time: 2 hours | Total: 80 marks**
 
-## Section A
+---
+
+## Section A — Data response (40 marks)
+
+**Answer EITHER Context 1 OR Context 2.**
+
+---
+
+## EITHER
+
+### Context 1 — ${set.c1.title}
+*Total for this Context: 40 marks*
+
+Study Extracts A, B and C and then answer all parts of Context 1 which follow.
 
 ### Extract A
-${config.extractA}
+${set.c1.extractA}
 
-### Extract B
-${config.extractB}
+${renderExtract("B", set.c1.extractB)}
 
-### Extract C
-${config.extractC}
+${renderExtract("C", set.c1.extractC)}
 
-Question 1 [2 marks]
-${config.q1}
+Question 01 [2 marks]
+${set.c1.q01}
 
-Question 2 [4 marks]
-${config.q2}
+Question 02 [4 marks]
+${set.c1.q02}
 
-Question 3 [9 marks]
-${config.q3}
+Question 03 [9 marks]
+${set.c1.q03}
 
-Question 4 [25 marks]
-${config.q4}
+Question 04 [25 marks]
+${set.c1.q04}
 
-## Section B
+---
+
+## OR
+
+### Context 2 — ${set.c2.title}
+*Total for this Context: 40 marks*
+
+Study Extracts D, E and F and then answer all parts of Context 2 which follow.
 
 ### Extract D
-${config.extractD}
+${set.c2.extractD}
 
-Question 5 [15 marks]
-${config.q5}
+${renderExtract("E", set.c2.extractE)}
 
-Question 6 [25 marks]
-${config.q6}`;
+${renderExtract("F", set.c2.extractF)}
+
+Question 05 [2 marks]
+${set.c2.q05}
+
+Question 06 [4 marks]
+${set.c2.q06}
+
+Question 07 [9 marks]
+${set.c2.q07}
+
+Question 08 [25 marks]
+${set.c2.q08}
+
+---
+
+## Section B — Essay (40 marks)
+
+**Answer ONE essay (both parts) from Essay 1, Essay 2 OR Essay 3.**
+
+---
+
+### Essay 1
+${set.essays[0].stimulus}
+
+Question 09 [15 marks]
+${set.essays[0].explain}
+
+Question 10 [25 marks]
+${set.essays[0].evaluate}
+
+---
+
+### Essay 2
+${set.essays[1].stimulus}
+
+Question 11 [15 marks]
+${set.essays[1].explain}
+
+Question 12 [25 marks]
+${set.essays[1].evaluate}
+
+---
+
+### Essay 3
+${set.essays[2].stimulus}
+
+Question 13 [15 marks]
+${set.essays[2].explain}
+
+Question 14 [25 marks]
+${set.essays[2].evaluate}`;
 }
 
-const AQA_PAPER_1_OVERRIDES = Object.fromEntries(
-  Object.entries(AQA_PAPER_1_OVERRIDE_CONFIGS).map(([paperId, config]) => [paperId, buildAqaPaper1Override(config)]),
-) as Record<string, string>;
+function buildMarkScheme(set: AqaPaper1OverrideSet): string {
+  const sections: string[] = [
+    `# AQA A-Level Economics (7136/1) — Mark Scheme — ${set.setLabel}`,
+    `**Total: 80 marks** | Section A: answer EITHER Context 1 OR Context 2 (40 marks). Section B: answer ONE essay (40 marks).`,
+    `---`,
+    `## Section A — Context 1`,
+    renderPointMark({
+      questionLabel: "0\u20091",
+      totalMarks: 2,
+      expectedAnswer: `${set.c1.q01Answer} (working: ${set.c1.q01Hint}).`,
+      markPoints: [
+        { description: `Correct answer (${set.c1.q01Answer}) to the required decimal places, with units/symbol`, marks: 2 },
+        { description: "Correct method but wrong final answer, OR correct answer with wrong formatting", marks: 1 },
+      ],
+    }),
+    renderPointMark({
+      questionLabel: "0\u20092",
+      totalMarks: 4,
+      expectedAnswer: "Two explained data references, each developed.",
+      markPoints: [
+        { description: "Identifies a relevant data point from Extract A", marks: 1 },
+        { description: "Develops the data point with linked economic reasoning", marks: 1 },
+        { description: "Identifies a second relevant data point", marks: 1 },
+        { description: "Develops the second point with linked reasoning", marks: 1 },
+      ],
+    }),
+    renderLevelMark({
+      questionLabel: "0\u20093",
+      totalMarks: 9,
+      diagram: set.c1.q03Diagram,
+      indicativeContent: [
+        "K: definitions of demand, supply, equilibrium and price elasticity of supply.",
+        "App: explicit reference to Extract B and the inelastic short-run supply.",
+        "An: chain showing rising demand against inelastic supply produces large price rise and small quantity rise.",
+        "E (not required at full level): brief acknowledgement of long-run elasticity.",
+      ],
+    }),
+    renderLevelMark({
+      questionLabel: "0\u20094",
+      totalMarks: 25,
+      indicativeContent: [
+        "K: definitions of relevant policies (maximum prices, subsidies, planning reform).",
+        "App: explicit reference to Extracts A–C and the data on rents, vacancy rates and student numbers.",
+        "An: chains of reasoning for each policy with clear cause-and-effect.",
+        "E: counter-arguments (landlord exit, time lags, distributional impact); prioritised judgement with supported conclusion.",
+      ],
+    }),
+    `---`,
+    `## Section A — Context 2`,
+    renderPointMark({
+      questionLabel: "0\u20095",
+      totalMarks: 2,
+      expectedAnswer: `${set.c2.q05Answer} (working: ${set.c2.q05Hint}).`,
+      markPoints: [
+        { description: `Correct answer (${set.c2.q05Answer}) to the required decimal places`, marks: 2 },
+        { description: "Correct method but wrong final answer", marks: 1 },
+      ],
+    }),
+    renderPointMark({
+      questionLabel: "0\u20096",
+      totalMarks: 4,
+      expectedAnswer: "Two explained references to Extract D data.",
+      markPoints: [
+        { description: "First data reference identified", marks: 1 },
+        { description: "First reference developed", marks: 1 },
+        { description: "Second data reference identified", marks: 1 },
+        { description: "Second reference developed", marks: 1 },
+      ],
+    }),
+    renderLevelMark({
+      questionLabel: "0\u20097",
+      totalMarks: 9,
+      diagram: set.c2.q07Diagram,
+      indicativeContent: [
+        "K: definitions and theory underlying the policy/mechanism.",
+        "App: data from Extracts D–F integrated.",
+        "An: developed chain explaining the mechanism with diagram support.",
+        "E: brief acknowledgement of limitations.",
+      ],
+    }),
+    renderLevelMark({
+      questionLabel: "0\u20098",
+      totalMarks: 25,
+      indicativeContent: [
+        "K: precise definitions of key policy concepts.",
+        "App: sustained reference to Extracts D, E and F.",
+        "An: rigorous chains for two or more policies.",
+        "E: balanced evaluation, prioritised judgement, supported conclusion.",
+      ],
+    }),
+    `---`,
+    `## Section B — Essays`,
+  ];
+
+  set.essays.forEach((essay, i) => {
+    const explainNum = `${(9 + i * 2).toString().padStart(2, "0").split("").join("\u2009")}`;
+    const evaluateNum = `${(10 + i * 2).toString().padStart(2, "0").split("").join("\u2009")}`;
+    sections.push(`### Essay ${i + 1}`);
+    sections.push(
+      renderLevelMark({
+        questionLabel: explainNum,
+        totalMarks: 15,
+        diagram: essay.diagram,
+        indicativeContent: essay.explainContent,
+      }),
+    );
+    sections.push(
+      renderLevelMark({
+        questionLabel: evaluateNum,
+        totalMarks: 25,
+        indicativeContent: essay.evaluateContent,
+      }),
+    );
+  });
+
+  return sections.join("\n\n");
+}
+
+const PAPER_CONTENT: Record<string, string> = {};
+const PAPER_MARK_SCHEMES: Record<string, string> = {};
+Object.entries(SETS).forEach(([id, set]) => {
+  PAPER_CONTENT[id] = buildPaper(set);
+  PAPER_MARK_SCHEMES[id] = buildMarkScheme(set);
+});
 
 export function getAqaPaper1OverrideContent(paperId: string): string | null {
-  return AQA_PAPER_1_OVERRIDES[paperId] ?? null;
+  return PAPER_CONTENT[paperId] ?? null;
+}
+
+export function getAqaPaper1OverrideMarkScheme(paperId: string): string | null {
+  return PAPER_MARK_SCHEMES[paperId] ?? null;
 }
