@@ -21,6 +21,7 @@ import { paperOptionsBySubject, topicsBySubject } from "@/lib/subjectConfig";
 import { PeriodicTable } from "@/components/tools/PeriodicTable";
 import { ChemistryEquations } from "@/components/tools/ChemistryEquations";
 import { predictedPapersLibrary, type PredictedPaper } from "@/data/predictedPapersLibrary";
+import { getAqaPaper1OverrideContent } from "@/data/aqaPaper1Overrides";
 import {
   MATHS_PAST_PAPER_KNOWLEDGE,
   CHEMISTRY_PAST_PAPER_KNOWLEDGE,
@@ -1308,11 +1309,35 @@ export default function PredictedPapers() {
     }
   }, [searchParams]);
 
+  const isValidAqaPaper1Structure = (questions: ParsedQuestion[]) => {
+    if (subject !== "economics") return true;
+    const expectedMarks = [2, 4, 9, 25, 15, 25];
+    return questions.length === expectedMarks.length && questions.every((q, index) => q.marks === expectedMarks[index]);
+  };
+
+  const parsePredictedPaperContent = (rawContent: string, paperId?: string | null, paperNumber?: string) => {
+    const overrideContent = subject === "economics" && paperNumber === "1" && paperId
+      ? getAqaPaper1OverrideContent(paperId)
+      : null;
+
+    const effectiveContent = overrideContent ?? rawContent;
+    const parsed = parseQuestions(effectiveContent);
+
+    if (subject === "economics" && paperNumber === "1" && !isValidAqaPaper1Structure(parsed.questions)) {
+      toast.error("AQA Paper 1 must follow the 2/4/9/25 + 15/25 marking pattern. This paper was rejected.");
+      return null;
+    }
+
+    return parsed;
+  };
+
   const openLibraryPaper = (lp: PredictedPaper) => {
+    const parsed = parsePredictedPaperContent(lp.content, lp.id, lp.paper);
+    if (!parsed) return;
+
     setSelectedLibraryPaper(lp);
-    const { context, questions } = parseQuestions(lp.content);
-    setPaperContext(context);
-    setParsedQuestions(questions);
+    setPaperContext(parsed.context);
+    setParsedQuestions(parsed.questions);
     setAnswers({});
     setFeedbacks({});
     setMarkingId(null);
@@ -1333,7 +1358,6 @@ export default function PredictedPapers() {
     const paperLabel = selectedPaper ? `${selectedPaper.label}: ${selectedPaper.title}` : `Paper ${paper}`;
     const isCalc = paper !== "1";
 
-    // For Economics, fetch past paper patterns from vector DB + knowledge graph
     let dbContextPrompt = "";
     if (isAnyEcon) {
       try {
@@ -1374,7 +1398,6 @@ export default function PredictedPapers() {
       ? OCR_GCSE_ECON_PAPER_PROMPT(paperLabel, paper)
       : ECON_PAPER_PROMPT(paperLabel, paper);
 
-    // Inject DB-retrieved patterns + topic scope for Economics
     const scopeInstruction = topicScope === "year1"
       ? "\n\nIMPORTANT: Only use Year 1 (AS) topics. For AQA: microeconomics topics only (markets, market failure, government intervention). Do NOT include macroeconomics, trade, or Year 2 content."
       : topicScope === "year1+2"
@@ -1417,8 +1440,6 @@ Every diagram block MUST include "Diagram family: <family-id>" on its own line.
 CRITICAL: Do NOT place economics diagram Figure blocks (supply & demand, AD/AS, externality, etc.) inside Extract or context sections. Diagram Figures belong ONLY inside or after questions that explicitly ask students to "draw", "sketch", or "use a diagram". Extract sections should contain ONLY text passages, data tables, and statistical charts — never theoretical economics diagrams.`;
 
     const econDiagramAppendix = isAnyEcon ? ECON_DIAGRAM_FAMILY_RULES : "";
-
-    // Inject difficulty modifier from library selection
     const difficultyModifier = libraryDifficulty && DIFFICULTY_PROMPT_MODIFIERS[libraryDifficulty]
       ? DIFFICULTY_PROMPT_MODIFIERS[libraryDifficulty]
       : "";
@@ -1436,9 +1457,10 @@ CRITICAL: Do NOT place economics diagram Figure blocks (supply & demand, AD/AS, 
       onDelta: (chunk) => { result += chunk; setGeneratedPaper(result); },
       onDone: () => {
         setIsGenerating(false);
-        const { context, questions } = parseQuestions(result);
-        setPaperContext(context);
-        setParsedQuestions(questions);
+        const parsed = parsePredictedPaperContent(result, null, paper);
+        if (!parsed) return;
+        setPaperContext(parsed.context);
+        setParsedQuestions(parsed.questions);
         setStep("paper");
       },
       onError: (err) => { toast.error(err); setIsGenerating(false); },
