@@ -471,8 +471,24 @@ ${ext.body}
 *Source: ${ext.source}*`;
 }
 
+function caseFigureFor(caseTitle: string): { key: string; caption: string } {
+  if (/net zero|green|carbon|emission|climate/i.test(caseTitle))
+    return { key: "neg-externality-welfare.svg", caption: "Reference figure — Negative production externality (carbon)" };
+  if (/financial|credit|bank|regulation/i.test(caseTitle))
+    return { key: "ad-as-g.svg", caption: "Reference figure — AD/AS framework for financial shocks" };
+  if (/public sector|fiscal|tax|spending/i.test(caseTitle))
+    return { key: "adas-fiscal.svg", caption: "Reference figure — Fiscal policy in AD/AS" };
+  if (/behavioural|nudge/i.test(caseTitle))
+    return { key: "externality.svg", caption: "Reference figure — Behavioural correction of market failure" };
+  if (/competition|digital|monopoly/i.test(caseTitle))
+    return { key: "monopoly-profit.svg", caption: "Reference figure — Monopoly profit maximisation" };
+  // Default: productivity / regional inequality
+  return { key: "lorenz-brazil.svg", caption: "Reference figure — Lorenz curves and regional inequality" };
+}
+
 function buildPaper(set: AqaPaper3Set): string {
   const mcqBlock = set.mcqs.slice(0, 30).map((m, i) => renderMcq(m, i + 1)).join("\n\n");
+  const ref = caseFigureFor(set.caseTitle);
   return `# AQA A-Level Economics (7136) — Paper 3: Economic Principles and Issues — ${set.setLabel}
 
 **Time: 2 hours | Total: 80 marks**
@@ -500,6 +516,8 @@ ${set.extracts.extractB}
 ${renderExtractProse("C", set.extracts.extractC)}
 
 ${renderExtractProse("D", set.extracts.extractD)}
+
+![${ref.caption}](/figures/${ref.key})
 
 Question 31 [10 marks]
 ${set.q31}
