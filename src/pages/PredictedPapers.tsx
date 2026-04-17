@@ -947,19 +947,21 @@ Total for this context: 40 marks
 [Same structure with Extracts D, E, F + Questions 05-08]
 
 ## Section B
-Answer one essay from this section. Each essay carries 40 marks.
+Answer ONE essay from this section. Each essay carries 40 marks TOTAL, split into TWO compulsory parts: a 15-mark "Explain/Analyse" part FOLLOWED BY a 25-mark "Evaluate" part. You MUST output BOTH parts for every essay choice. NEVER collapse the essay into a single 25-mark or 40-mark question — that is incorrect AQA format.
 
 ### Essay 1
 Question 09 [15 marks] — Explain (macro analysis)
 Question 10 [25 marks] — Evaluate/Assess/Discuss
 
 ### Essay 2
-Question 11 [15 marks]
-Question 12 [25 marks]
+Question 11 [15 marks] — Explain
+Question 12 [25 marks] — Evaluate
 
 ### Essay 3
-Question 13 [15 marks]
-Question 14 [25 marks]`;
+Question 13 [15 marks] — Explain
+Question 14 [25 marks] — Evaluate
+
+CRITICAL: Section B MUST contain exactly SIX questions (09, 10, 11, 12, 13, 14) — three essay choices, each with a 15-mark part AND a 25-mark part. Total Section B = 40 marks (student answers ONE pair: 15 + 25).`;
 
   const paper3Template = `PAPER 3 TEMPLATE — Economic Principles and Issues (7136/3):
 EXACT STRUCTURE:
