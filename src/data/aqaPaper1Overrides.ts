@@ -1,6 +1,5 @@
 import {
   renderLevelMark,
-  renderMcqMark,
   renderPointMark,
 } from "./aqaMarkSchemeBuilder";
 

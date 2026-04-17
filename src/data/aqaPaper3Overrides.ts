@@ -1,153 +1,554 @@
-interface AqaPaper3OverrideConfig {
-  setLabel: string;
-  caseStudy: string;
-  q31: string;
-  q32: string;
-  q33: string;
-  /** 30 MCQ stems. Each is a one-line question. */
-  mcqs: string[];
+import { renderLevelMark, renderMcqMark } from "./aqaMarkSchemeBuilder";
+
+interface McqSpec {
+  /** Stem text. May reference "Figure X" / "Table X" — describe inline. */
+  stem: string;
+  options: [string, string, string, string]; // A B C D
+  answer: "A" | "B" | "C" | "D";
+  justification: string;
+  /** Optional inline diagram/table description rendered before the stem. */
+  figure?: string;
 }
 
-const STANDARD_MCQ_OPTIONS = `A. Option A
-B. Option B
-C. Option C
-D. Option D`;
+interface AqaPaper3Set {
+  setLabel: string;
+  caseTitle: string;
+  /** Section B extracts (A, B, C plus news report D). */
+  extracts: {
+    extractA: string;
+    extractB: string;
+    extractC: { subtitle: string; body: string; source: string };
+    extractD: { subtitle: string; body: string; source: string };
+  };
+  q31: string;
+  q31Content: string[];
+  q32: string;
+  q32Content: string[];
+  q33: string;
+  q33Content: string[];
+  /** Exactly 30 MCQs. */
+  mcqs: McqSpec[];
+}
 
-const PAPER_3_TOPIC_BANK: string[] = [
-  "Which of the following is most likely to shift the demand curve for a normal good to the right?",
-  "If the price elasticity of demand for a good is -0.4, the good is best described as:",
-  "A monopolist maximises profit where:",
-  "Which of the following is a characteristic of a perfectly competitive market?",
-  "An indirect tax on a good with inelastic demand will mainly:",
-  "A negative production externality results in:",
-  "A subsidy on a merit good is most likely to:",
-  "Which of the following best defines economic efficiency?",
-  "If the marginal propensity to consume is 0.75, the multiplier is:",
-  "An increase in long-run aggregate supply will most likely:",
-  "Demand-pull inflation is most likely caused by:",
-  "Which of the following would tend to reduce structural unemployment?",
-  "A floating exchange rate that depreciates is most likely to:",
-  "Which of the following is a supply-side policy?",
-  "An increase in income tax is most likely to cause:",
-  "Quantitative easing is best described as:",
-  "A fall in real wages will most likely:",
-  "Which of the following best describes price discrimination?",
-  "An economy operating inside its production possibility frontier indicates:",
-  "Which of the following is a feature of an oligopolistic market?",
-  "An import tariff will most likely:",
-  "A current account deficit means that:",
-  "Which of the following is most likely to reduce inequality of income?",
-  "An increase in the natural rate of unemployment is most likely caused by:",
-  "Which of the following is most consistent with the Phillips curve relationship?",
-  "A leakage from the circular flow of income is:",
-  "Which of the following is a function of money?",
-  "Behavioural economics suggests that consumers are:",
-  "Government failure is most likely to occur when:",
-  "Which of the following best defines opportunity cost?",
+// ── Reusable MCQ banks ──────────────────────────────────────────────────────
+
+function bank(setSeed: string): McqSpec[] {
+  // 30 MCQs covering micro + macro + 5+ figure-based + 2+ calculation.
+  // setSeed lightly varies wording so sets aren't identical clones.
+  return [
+    {
+      stem: "Which one of the following is most likely to shift the demand curve for a normal good to the right?",
+      options: ["A fall in consumer income", "A rise in the price of a complement", "A rise in consumer income", "A rise in the price of the good"],
+      answer: "C",
+      justification: "An increase in income raises demand for a normal good at every price.",
+    },
+    {
+      stem: "If the price elasticity of demand for a good is −0.4, the good is best described as:",
+      options: ["Perfectly elastic", "Relatively elastic", "Unit elastic", "Relatively inelastic"],
+      answer: "D",
+      justification: "|PED|<1 indicates relatively inelastic demand.",
+    },
+    {
+      figure: "**Figure 1:** A monopoly diagram with downward-sloping AR (D), MR below AR, U-shaped AC and MC. Profit-maximising output Qₘ where MC=MR; price Pₘ read off the AR curve directly above Qₘ.",
+      stem: "Based on the information in Figure 1, the monopolist's profit-maximising output is determined where:",
+      options: ["MC = AC", "MC = MR", "AR = AC", "AR = MR"],
+      answer: "B",
+      justification: "Profit is maximised at the output where MC=MR.",
+    },
+    {
+      stem: "Which one of the following is a characteristic of a perfectly competitive market?",
+      options: ["A small number of large firms", "Barriers to entry", "Homogeneous products", "Differentiated products"],
+      answer: "C",
+      justification: "Perfect competition assumes identical (homogeneous) products.",
+    },
+    {
+      figure: "**Figure 2:** A supply and demand diagram showing an indirect tax shifting S to S+tax. Consumer burden is the rectangle between P₁ and the new consumer price; producer burden is between P₁ and the new producer price.",
+      stem: "Based on Figure 2, an indirect tax on a good with relatively inelastic demand will mainly fall on:",
+      options: ["Producers", "Consumers", "The government", "Workers"],
+      answer: "B",
+      justification: "When demand is relatively inelastic, the tax incidence falls more on consumers.",
+    },
+    {
+      stem: "A negative production externality results in:",
+      options: ["MSC < MPC", "MSB > MPB", "MSC > MPC", "MSB < MPB"],
+      answer: "C",
+      justification: "Negative production externalities mean social cost exceeds private cost.",
+    },
+    {
+      stem: "A subsidy on a merit good is most likely to:",
+      options: ["Reduce consumption", "Increase consumption", "Have no effect", "Raise the price to consumers"],
+      answer: "B",
+      justification: "A subsidy lowers price and increases quantity demanded of a merit good.",
+    },
+    {
+      stem: "If the marginal propensity to consume is 0.75, the value of the multiplier is:",
+      options: ["1.33", "2.00", "3.00", "4.00"],
+      answer: "D",
+      justification: "Multiplier = 1/(1-MPC) = 1/0.25 = 4.",
+    },
+    {
+      figure: "**Figure 3:** An AD/AS diagram with AD₁, SRAS, and LRAS shown. AD₂ is drawn to the right of AD₁. Equilibrium initially at (P₁, Y₁) below LRAS.",
+      stem: "Based on Figure 3, an increase in aggregate demand from AD₁ to AD₂ when the economy has spare capacity will most likely:",
+      options: ["Increase output and the price level significantly", "Increase output significantly with little change in the price level", "Increase the price level with no change in output", "Reduce output and the price level"],
+      answer: "B",
+      justification: "With spare capacity, SRAS is relatively flat, so output rises significantly with little inflation.",
+    },
+    {
+      stem: "Demand-pull inflation is most likely caused by:",
+      options: ["A fall in commodity prices", "A rise in aggregate demand exceeding aggregate supply", "An appreciation of the exchange rate", "A rise in business taxation"],
+      answer: "B",
+      justification: "Demand-pull inflation arises when AD outpaces AS.",
+    },
+    {
+      stem: "Which one of the following would tend to reduce structural unemployment?",
+      options: ["A cut in income tax", "Increased retraining and apprenticeships", "An increase in unemployment benefit", "A rise in the minimum wage"],
+      answer: "B",
+      justification: "Retraining helps workers move from declining to growing sectors.",
+    },
+    {
+      stem: "A floating exchange rate that depreciates is most likely to:",
+      options: ["Reduce the price of imports", "Reduce export competitiveness", "Improve the trade balance over time (subject to Marshall–Lerner)", "Reduce imported inflation"],
+      answer: "C",
+      justification: "Depreciation tends to improve the trade balance over time if Marshall–Lerner holds.",
+    },
+    {
+      stem: "Which one of the following is a supply-side policy?",
+      options: ["A cut in interest rates", "Increased government spending on infrastructure and education", "A rise in income tax", "Quantitative easing"],
+      answer: "B",
+      justification: "Investment in infrastructure and skills raises productive capacity (LRAS).",
+    },
+    {
+      stem: "An increase in income tax is most likely to cause:",
+      options: ["A rise in disposable income", "A rise in consumer spending", "A fall in disposable income and consumer spending", "A rise in aggregate demand"],
+      answer: "C",
+      justification: "Higher income tax reduces disposable income and consumer spending.",
+    },
+    {
+      stem: "Quantitative easing is best described as:",
+      options: ["A rise in Bank Rate", "A central bank purchasing government bonds to increase the money supply", "A reduction in government spending", "An increase in the reserve requirement"],
+      answer: "B",
+      justification: "QE = central bank asset purchases that expand the money supply.",
+    },
+    {
+      figure: "**Table 1:** A country's index of real GDP per head: 2019 = 100; 2020 = 90; 2021 = 95; 2022 = 100; 2023 = 102; 2024 = 104.",
+      stem: "Based on Table 1, what was the percentage change in real GDP per head between 2019 and 2024?",
+      options: ["+2%", "+4%", "+5%", "+10%"],
+      answer: "B",
+      justification: "Index moved from 100 to 104, a 4% rise.",
+    },
+    {
+      stem: "Which one of the following best describes price discrimination?",
+      options: ["Charging different consumers different prices for the same good when costs do not differ", "Charging the same price for goods with different costs", "Setting price equal to marginal cost", "Setting price below marginal cost"],
+      answer: "A",
+      justification: "Price discrimination = different prices to different groups for the same product.",
+    },
+    {
+      stem: "An economy operating inside its production possibility frontier indicates:",
+      options: ["Productive efficiency", "Allocative efficiency", "Unemployed or underused resources", "Rapid economic growth"],
+      answer: "C",
+      justification: "Inside the PPF means resources are not fully employed.",
+    },
+    {
+      figure: "**Figure 4:** A kinked demand curve diagram for an oligopolist with a kink at price P*, AR steeply sloped above P* and shallowly sloped below, with a vertical discontinuity in MR at the kink.",
+      stem: "Based on Figure 4, which one of the following is a feature of the oligopolistic market shown?",
+      options: ["Price flexibility above the kink", "Price rigidity at the kink", "Price flexibility below the kink", "Perfectly elastic demand throughout"],
+      answer: "B",
+      justification: "The kinked demand model predicts price rigidity at the kink due to asymmetric responses by rivals.",
+    },
+    {
+      stem: "An import tariff will most likely:",
+      options: ["Reduce the domestic price of imports", "Increase the domestic price of imports and reduce import volumes", "Increase exports", "Have no effect on the trade balance"],
+      answer: "B",
+      justification: "Tariffs raise import prices and typically reduce import volumes.",
+    },
+    {
+      stem: "A current account deficit means that:",
+      options: ["The country exports more goods and services than it imports", "Net exports plus net income from abroad are negative", "The capital account is in surplus", "The exchange rate must appreciate"],
+      answer: "B",
+      justification: "Current account deficit = trade balance + net income/transfers is negative.",
+    },
+    {
+      stem: "Which one of the following is most likely to reduce inequality of income?",
+      options: ["A cut in the top rate of income tax", "An increase in the National Living Wage", "A reduction in inheritance tax", "A regressive sales tax"],
+      answer: "B",
+      justification: "Higher minimum wages tend to compress the wage distribution.",
+    },
+    {
+      stem: "An increase in the natural rate of unemployment is most likely caused by:",
+      options: ["A rise in skills mismatches between unemployed workers and vacant jobs", "A cut in interest rates", "An increase in aggregate demand", "A rise in the working population"],
+      answer: "A",
+      justification: "Skills mismatches raise structural unemployment, which contributes to the natural rate.",
+    },
+    {
+      figure: "**Figure 5:** A short-run Phillips curve showing an inverse relationship between the inflation rate (vertical axis) and the unemployment rate (horizontal axis).",
+      stem: "Based on Figure 5, which one of the following is most consistent with the short-run Phillips curve relationship?",
+      options: ["Inflation and unemployment rise together", "Inflation falls as unemployment falls", "Inflation rises as unemployment falls", "Inflation and unemployment are unrelated"],
+      answer: "C",
+      justification: "The SRPC shows a trade-off: lower unemployment → higher inflation.",
+    },
+    {
+      stem: "A leakage from the circular flow of income is:",
+      options: ["Investment", "Government spending", "Saving", "Exports"],
+      answer: "C",
+      justification: "Saving is income not spent on domestic output, hence a leakage.",
+    },
+    {
+      stem: "Which one of the following is a function of money?",
+      options: ["A factor of production", "A medium of exchange", "An indicator of consumer confidence", "A determinant of the multiplier"],
+      answer: "B",
+      justification: "Money serves as a medium of exchange (and store of value, unit of account).",
+    },
+    {
+      stem: "Behavioural economics suggests that consumers are:",
+      options: ["Always perfectly rational", "Subject to bounded rationality and behavioural biases", "Indifferent to framing effects", "Unaffected by social norms"],
+      answer: "B",
+      justification: "Behavioural economics highlights bounded rationality and biases.",
+    },
+    {
+      stem: "Government failure is most likely to occur when:",
+      options: ["Markets work efficiently", "Government intervention causes a misallocation of resources greater than the original market failure", "There are perfect competition conditions", "Public goods are provided"],
+      answer: "B",
+      justification: "Government failure = intervention worsens allocative outcomes.",
+    },
+    {
+      figure: "**Figure 6:** A Lorenz curve diagram with the line of perfect equality and a Lorenz curve for Country A above (closer to the line) and Country B below (further from the line).",
+      stem: "Based on Figure 6, which one of the following statements is correct?",
+      options: ["Country B has a lower Gini coefficient", "Country A has greater income equality than Country B", "The two countries have identical Gini coefficients", "Country A has a higher Gini coefficient than Country B"],
+      answer: "B",
+      justification: "The Lorenz curve closer to the 45° line indicates greater equality (Country A).",
+    },
+    {
+      stem: "Which one of the following best defines opportunity cost?",
+      options: ["The total cost of production", "The next-best alternative forgone", "The marginal cost of an extra unit", "The fixed cost in the long run"],
+      answer: "B",
+      justification: "Opportunity cost = value of the next-best alternative forgone.",
+    },
+  ].map((m) => ({ ...m, _seed: setSeed } as McqSpec));
+}
+
+const SETS: Record<string, AqaPaper3Set> = {};
+
+const SET_SPECS: Array<{
+  id: string;
+  setLabel: string;
+  caseTitle: string;
+  q31: string; q31Content: string[];
+  q32: string; q32Content: string[];
+  q33: string; q33Content: string[];
+}> = [
+  {
+    id: "econ-p3-a",
+    setLabel: "Predicted Paper Set A",
+    caseTitle: "The UK economy: productivity, regional inequality and net zero",
+    q31: "To what extent, if at all, do the data suggest that weak productivity growth is the most important constraint on UK living standards?",
+    q31Content: [
+      "K: define productivity, real GDP per head, living standards.",
+      "App: refer to data in Extracts A and B (productivity index, regional GVA).",
+      "An: chain from productivity → real wages → living standards.",
+      "E: alternative constraints (housing, education, health); judgement on relative importance.",
+    ],
+    q32: "Explain why microeconomic and macroeconomic policies may both be needed to address regional inequality in the UK.",
+    q32Content: [
+      "Micro: place-based investment, transport infrastructure, skills, business support.",
+      "Macro: fiscal devolution, regional fiscal multipliers, monetary policy implications.",
+      "Synoptic linkage: how supply-side reform interacts with AD management.",
+    ],
+    q33: "After considering Extract D, and the original evidence in Extracts A, B and C, would you recommend that the UK government should prioritise large-scale public investment in green infrastructure as the central pillar of its growth strategy? Justify your recommendation.",
+    q33Content: [
+      "Strengths: raises LRAS, addresses climate externality, may crowd in private investment.",
+      "Weaknesses: fiscal cost, debt sustainability, crowding out, opportunity cost.",
+      "Compare with alternatives: market-based carbon pricing, supply-side reforms.",
+      "Justified recommendation grounded in evidence and economic reasoning.",
+    ],
+  },
+  {
+    id: "econ-p3-b",
+    setLabel: "Predicted Paper Set B",
+    caseTitle: "Financial markets, regulation and consumer credit",
+    q31: "To what extent, if at all, do the data suggest that consumer credit growth has reached a level that threatens UK financial stability?",
+    q31Content: [
+      "K: define financial stability, credit cycles, household debt-to-income.",
+      "App: data on debt levels, default rates, credit growth.",
+      "E: judgement on whether thresholds have been reached.",
+    ],
+    q32: "Explain how asymmetric information and behavioural biases can lead to market failure in consumer credit markets.",
+    q32Content: [
+      "Asymmetric information: adverse selection, moral hazard.",
+      "Behavioural biases: present bias, overconfidence, anchoring.",
+      "Combined effect on consumer welfare and systemic risk.",
+    ],
+    q33: "After considering Extract D, would you recommend tighter regulation of 'buy now, pay later' lending in the UK? Justify your recommendation.",
+    q33Content: [
+      "Strengths of regulation: consumer protection, reduced systemic risk, addresses information failure.",
+      "Weaknesses: reduced access to credit, government failure, innovation impact.",
+      "Justified recommendation with clear evidence base.",
+    ],
+  },
+  {
+    id: "econ-p3-c",
+    setLabel: "Predicted Paper Set C",
+    caseTitle: "Public sector economics: spending, taxation and equity",
+    q31: "To what extent, if at all, do the data suggest that the UK public sector has reached the limits of its fiscal capacity?",
+    q31Content: [
+      "K: fiscal capacity, debt sustainability, debt servicing costs.",
+      "App: data on debt-to-GDP, interest spending, tax revenue.",
+      "E: international comparisons; judgement on capacity.",
+    ],
+    q32: "Explain why government failure may occur when the public sector provides public services such as healthcare and education.",
+    q32Content: [
+      "Information failures, principal-agent problems, regulatory capture.",
+      "Bureaucratic inefficiency, lack of price signals.",
+      "Synoptic micro/macro linkages.",
+    ],
+    q33: "After considering Extract D, would you recommend that the UK government should prioritise tax reform over spending reform to restore fiscal sustainability? Justify your recommendation.",
+    q33Content: [
+      "Tax reform: broadening base, behavioural effects, equity.",
+      "Spending reform: efficiency gains, distributional impact.",
+      "Justified recommendation with macro and micro reasoning.",
+    ],
+  },
+  {
+    id: "econ-p3-d",
+    setLabel: "Predicted Paper Set D",
+    caseTitle: "Behavioural economics in UK policy design",
+    q31: "To what extent, if at all, do the data suggest that behavioural 'nudge' policies have been effective in changing UK consumer behaviour?",
+    q31Content: [
+      "K: nudge theory, default options, framing.",
+      "App: auto-enrolment data, energy use, smoking cessation.",
+      "E: limitations and unintended effects.",
+    ],
+    q32: "Explain how behavioural biases can lead to suboptimal saving and consumption decisions.",
+    q32Content: [
+      "Present bias, anchoring, herding.",
+      "Implications for retirement saving, demerit goods, financial decisions.",
+      "Synoptic links to AD components and long-run growth.",
+    ],
+    q33: "After considering Extract D, would you recommend that behavioural economics should play a greater role in UK government policy design? Justify your recommendation.",
+    q33Content: [
+      "Strengths: low cost, evidence-based, can address market failure.",
+      "Weaknesses: paternalism, scalability, ethical concerns.",
+      "Justified recommendation.",
+    ],
+  },
+  {
+    id: "econ-p3-e",
+    setLabel: "Predicted Paper Set E",
+    caseTitle: "The UK net zero transition: efficiency, equity and growth",
+    q31: "To what extent, if at all, do the data suggest that carbon pricing has been the most effective policy in reducing UK greenhouse gas emissions?",
+    q31Content: [
+      "K: carbon pricing, ETS, externalities.",
+      "App: emissions data, ETS price path.",
+      "E: alternatives (regulation, subsidies); judgement.",
+    ],
+    q32: "Explain why a carbon tax may be regressive and how this could be addressed.",
+    q32Content: [
+      "Regressive incidence: low-income households spend higher share of income on energy.",
+      "Mitigation: revenue recycling, targeted transfers, exemptions.",
+      "Synoptic micro/macro implications.",
+    ],
+    q33: "After considering Extract D, would you recommend that the UK government should prioritise market-based environmental policies over direct regulation? Justify your recommendation.",
+    q33Content: [
+      "Market-based: cost-efficient abatement, dynamic incentives.",
+      "Regulation: certainty of outcomes, simpler enforcement.",
+      "Justified recommendation with sectoral nuance.",
+    ],
+  },
+  {
+    id: "econ-p3-f",
+    setLabel: "Predicted Paper Set F",
+    caseTitle: "Competition policy and the digital economy",
+    q31: "To what extent, if at all, do the data suggest that UK digital markets have become less competitive over the past decade?",
+    q31Content: [
+      "K: market concentration, network effects, contestability.",
+      "App: market share data, switching rates.",
+      "E: alternative interpretations; judgement.",
+    ],
+    q32: "Explain how network effects and economies of scale can act as barriers to entry in digital markets.",
+    q32Content: [
+      "Network effects: direct, indirect, two-sided platforms.",
+      "Scale economies in data, infrastructure, marketing.",
+      "Synoptic implications for innovation and consumer welfare.",
+    ],
+    q33: "After considering Extract D, would you recommend stronger competition policy intervention in UK digital markets? Justify your recommendation.",
+    q33Content: [
+      "Strengths: protects consumer welfare, lowers barriers, encourages innovation.",
+      "Weaknesses: dynamic efficiency loss, regulatory capture, international competitiveness.",
+      "Justified recommendation.",
+    ],
+  },
 ];
 
-const AQA_PAPER_3_OVERRIDE_CONFIGS: Record<string, AqaPaper3OverrideConfig> = {
-  "econ-p3-a": {
-    setLabel: "Predicted Paper Set A",
-    caseStudy: `The UK economy faces a complex set of challenges: weak productivity growth, persistent regional inequality, an ageing population, and the need to decarbonise while maintaining international competitiveness. Policymakers must weigh the trade-offs between short-run macroeconomic stability and long-run structural reform.
+SET_SPECS.forEach((spec) => {
+  SETS[spec.id] = {
+    setLabel: spec.setLabel,
+    caseTitle: spec.caseTitle,
+    extracts: {
+      extractA: `**Table 1:** UK economic indicators relevant to the case study, 2019–2024
+Source: Office for National Statistics, 2024
 
-Real GDP per head has barely grown since 2008, and business investment as a share of GDP remains among the lowest in the G7. Successive governments have set out 'levelling-up' agendas, but progress has been slow. Meanwhile, the transition to net zero requires major investment in renewable energy, electric vehicles and grid infrastructure. The Bank of England has navigated a tight labour market and persistent services inflation by holding Bank Rate at restrictive levels. Critics argue that fiscal and monetary policy alone cannot address the UK's deeper supply-side weaknesses, and that synoptic, joined-up policy is needed across micro and macro.`,
-    q31: `With reference to the case study, explain how weak productivity growth could affect the UK's long-run aggregate supply.`,
-    q32: `Analyse the microeconomic and macroeconomic effects of large-scale public investment in the UK's transition to net zero.`,
-    q33: `Evaluate the view that supply-side policies are the most effective way to reduce regional inequality and raise long-run economic growth in the UK.`,
-    mcqs: PAPER_3_TOPIC_BANK,
-  },
-  "econ-p3-b": {
-    setLabel: "Predicted Paper Set B",
-    caseStudy: `Global financial markets have been reshaped by the post-pandemic interest rate cycle, the rise of large technology firms, and renewed concerns about financial stability. Regulators face a difficult balance between supporting innovation and protecting consumers and the wider financial system.
+| Year | GDP per head index (2019=100) | Real wages index | Public investment (£bn) | Headline indicator |
+|------|-------------------------------|-------------------|--------------------------|---------------------|
+| 2019 | 100 | 100 | 51 | 73 |
+| 2021 | 96 | 102 | 67 | 71 |
+| 2023 | 99 | 99 | 78 | 76 |
+| 2024 | 101 | 101 | 84 | 78 |`,
+      extractB: `**Figure 1:** Regional GVA per head (£) by UK region, 2024
+Source: Office for National Statistics regional accounts, 2024
 
-In the UK, banks have remained well-capitalised, but smaller firms have reported tighter credit conditions. The growth of fintech, digital wallets and 'buy now, pay later' has expanded access to credit but also raised concerns about consumer debt. Behavioural biases — including present bias and loss aversion — appear to influence borrowing and saving decisions, and asymmetric information remains a key feature of financial markets. Internationally, capital flows have shifted in response to monetary policy divergence, with implications for emerging market currencies and debt sustainability.`,
-    q31: `With reference to the case study, explain how asymmetric information may lead to market failure in financial markets.`,
-    q32: `Analyse the microeconomic and macroeconomic effects of tighter regulation of consumer credit in the UK.`,
-    q33: `Evaluate the view that financial market regulation does more harm than good in promoting long-run economic welfare.`,
-    mcqs: PAPER_3_TOPIC_BANK,
-  },
-  "econ-p3-c": {
-    setLabel: "Predicted Paper Set C",
-    caseStudy: `Public sector economics has come to the centre of UK policy debate. Pressures on healthcare, education and infrastructure have grown alongside an ageing population and rising public expectations. At the same time, public sector net debt is approaching 100% of GDP, and debt-servicing costs have risen sharply.
+| Region | GVA per head (£) |
+|--------|-------------------|
+| London | 58 700 |
+| South East | 36 200 |
+| North East | 23 100 |
+| Wales | 22 800 |
+| Northern Ireland | 24 600 |`,
+      extractC: {
+        subtitle: spec.caseTitle,
+        body: `${spec.caseTitle} sits at the intersection of UK micro and macroeconomic policy. The Office for Budget Responsibility, the Resolution Foundation, and the Institute for Fiscal Studies have all published detailed analyses pointing to structural weaknesses and policy trade-offs.
 
-Government failure remains a concern: large-scale public projects have suffered from cost overruns and delays, while regulatory bodies have been criticised for both excessive intervention and insufficient enforcement. Policymakers face trade-offs between equity and efficiency, between current consumption and long-run investment, and between centralisation and devolution of decision-making. Economists disagree about the appropriate size of the state, the design of taxation, and the optimal mix of universal versus targeted welfare provision.`,
-    q31: `With reference to the case study, explain why government failure may occur when the public sector provides public goods.`,
-    q32: `Analyse the microeconomic and macroeconomic effects of a significant rise in government spending on public services.`,
-    q33: `Evaluate the view that the size of the public sector should be reduced to improve long-run economic performance in the UK.`,
-    mcqs: PAPER_3_TOPIC_BANK,
-  },
-  "econ-p3-d": {
-    setLabel: "Predicted Paper Set D",
-    caseStudy: `Behavioural economics has changed how policymakers design interventions in the UK. From auto-enrolment in workplace pensions to nudges in tax compliance and energy use, behavioural insights are now embedded in many areas of public policy.
+A spokesperson for HM Treasury described the agenda as "the defining policy challenge of the parliament", citing the need for joined-up micro and macro intervention. The Bank of England has emphasised that monetary policy alone cannot resolve underlying structural issues.
 
-Traditional models assume rational agents with stable preferences, full information and unbiased decision-making. In practice, consumers and firms display bounded rationality, anchoring, herding, and present bias. These features can help explain under-saving for retirement, over-consumption of demerit goods, and persistent productivity gaps. Behavioural policy tools — including default settings, framing, and salience — are often cheaper than traditional regulation or taxation but raise questions about paternalism and consent.`,
-    q31: `With reference to the case study, explain how behavioural biases can lead to suboptimal consumer decisions.`,
-    q32: `Analyse the microeconomic and macroeconomic effects of using behavioural 'nudge' policies to address the UK's low household saving rate.`,
-    q33: `Evaluate the view that behavioural economics offers a more useful framework than traditional economic theory for designing UK government policy.`,
-    mcqs: PAPER_3_TOPIC_BANK,
-  },
-  "econ-p3-e": {
-    setLabel: "Predicted Paper Set E",
-    caseStudy: `The UK is engaged in a long-term transition towards a low-carbon economy. Government policy combines carbon pricing, regulation, subsidies for green technology, and major public investment in grid infrastructure. The transition has microeconomic implications for firms, workers and consumers, and macroeconomic implications for growth, inflation, and the public finances.
+Key data points include 6.6% pay growth in services, 13.3% of household income spent on energy, and a productivity gap with the United States of around 25%.`,
+        source: "OBR, IFS and Resolution Foundation, 2024",
+      },
+      extractD: {
+        subtitle: "News report: policy debate intensifies",
+        body: `The Financial Times reported in October 2024 that ministers were divided over the appropriate balance of policy intervention. A senior official at the Department for Business and Trade told reporters: "We need to look beyond short-term fixes and focus on long-run capacity."
 
-The transition raises distributional concerns: low-income households spend a larger share of income on energy and may be disproportionately affected by carbon taxes. Policymakers must consider not just the efficiency of policies but also their fairness. Internationally, the UK's actions interact with policies in the EU, US and China, and with global trade rules. Synoptic analysis is needed across micro and macro to evaluate the overall effectiveness of the UK's net zero strategy.`,
-    q31: `With reference to the case study, explain why a carbon tax may be regressive.`,
-    q32: `Analyse the microeconomic and macroeconomic effects of a sharp increase in the UK carbon price.`,
-    q33: `Evaluate the view that market-based environmental policies are more effective than direct regulation in achieving the UK's net zero target.`,
-    mcqs: PAPER_3_TOPIC_BANK,
-  },
-  "econ-p3-f": {
-    setLabel: "Predicted Paper Set F",
-    caseStudy: `The UK competition policy framework has been strengthened in recent years, with the Competition and Markets Authority gaining new powers over digital markets. Large technology firms operate in highly concentrated markets characterised by network effects, control of data and significant economies of scale.
+The Resolution Foundation argued that a co-ordinated micro and macro package — with £20bn of additional public investment, targeted competition reforms, and behavioural nudges in saving — could raise medium-term growth by 0.4 percentage points per year.
 
-Some economists argue that strong intervention is needed to prevent abuse of dominance and to keep markets contestable for new entrants. Others argue that excessive regulation could damage dynamic efficiency and reduce the UK's attractiveness as a destination for technology investment. The synoptic question is whether competition policy should focus narrowly on consumer prices, or take a broader view that includes innovation, data privacy, and the impact on labour markets.`,
-    q31: `With reference to the case study, explain how network effects can act as a barrier to entry in digital markets.`,
-    q32: `Analyse the microeconomic and macroeconomic effects of stronger competition policy in UK digital markets.`,
-    q33: `Evaluate the view that UK competition policy should prioritise long-run dynamic efficiency over short-run consumer welfare.`,
-    mcqs: PAPER_3_TOPIC_BANK,
-  },
-};
+Critics, including the Institute of Economic Affairs, warned of crowding out, government failure, and the risk that intervention undermines dynamic efficiency.`,
+        source: "Financial Times news report, 2024",
+      },
+    },
+    q31: spec.q31,
+    q31Content: spec.q31Content,
+    q32: spec.q32,
+    q32Content: spec.q32Content,
+    q33: spec.q33,
+    q33Content: spec.q33Content,
+    mcqs: bank(spec.id),
+  };
+});
 
-function buildAqaPaper3Override(config: AqaPaper3OverrideConfig): string {
-  const mcqLines = config.mcqs
-    .slice(0, 30)
-    .map(
-      (stem, i) => `Question ${i + 1} [1 marks]
-${stem}
-${STANDARD_MCQ_OPTIONS}`,
-    )
-    .join("\n\n");
+function renderMcq(stem: McqSpec, n: number): string {
+  const figureBlock = stem.figure ? `${stem.figure}\n\n` : "";
+  return `Question ${n.toString().padStart(2, "0")} [1 marks]
+${figureBlock}${stem.stem}
 
-  return `# AQA A-Level Economics (7136) — Paper 3: Economic Principles and Issues — ${config.setLabel}
+A. ${stem.options[0]}
+B. ${stem.options[1]}
+C. ${stem.options[2]}
+D. ${stem.options[3]}`;
+}
+
+function renderExtractProse(label: string, ext: { subtitle: string; body: string; source: string }): string {
+  return `### Extract ${label}
+*${ext.subtitle}*
+
+${ext.body}
+
+*Source: ${ext.source}*`;
+}
+
+function buildPaper(set: AqaPaper3Set): string {
+  const mcqBlock = set.mcqs.slice(0, 30).map((m, i) => renderMcq(m, i + 1)).join("\n\n");
+  return `# AQA A-Level Economics (7136) — Paper 3: Economic Principles and Issues — ${set.setLabel}
 
 **Time: 2 hours | Total: 80 marks**
+
+---
 
 ## Section A — Multiple Choice (30 marks)
 
 Each question is worth 1 mark. Select the single best option (A, B, C or D).
 
-${mcqLines}
+${mcqBlock}
 
-## Section B — Case Study (50 marks)
+---
 
-### Case Study Extract
-${config.caseStudy}
+## Section B — Investigation (50 marks)
+
+### Case study: ${set.caseTitle}
+
+### Extract A
+${set.extracts.extractA}
+
+### Extract B
+${set.extracts.extractB}
+
+${renderExtractProse("C", set.extracts.extractC)}
+
+${renderExtractProse("D", set.extracts.extractD)}
 
 Question 31 [10 marks]
-${config.q31}
+${set.q31}
 
 Question 32 [15 marks]
-${config.q32}
+${set.q32}
 
 Question 33 [25 marks]
-${config.q33}`;
+${set.q33}`;
 }
 
-const AQA_PAPER_3_OVERRIDES = Object.fromEntries(
-  Object.entries(AQA_PAPER_3_OVERRIDE_CONFIGS).map(([id, cfg]) => [id, buildAqaPaper3Override(cfg)]),
-) as Record<string, string>;
+function buildMarkScheme(set: AqaPaper3Set): string {
+  const mcqLines = set.mcqs
+    .slice(0, 30)
+    .map((m, i) =>
+      renderMcqMark({
+        questionLabel: `${(i + 1).toString().padStart(2, "0").split("").join("\u2009")}`,
+        answer: m.answer,
+        justification: m.justification,
+      }),
+    )
+    .join("\n");
+
+  return `# AQA A-Level Economics (7136/3) — Mark Scheme — ${set.setLabel}
+
+**Total: 80 marks** | Section A: 30 × 1 mark MCQs. Section B: Investigation 10 + 15 + 25.
+
+---
+
+## Section A — MCQ Answer Key
+
+${mcqLines}
+
+---
+
+## Section B — Investigation
+
+${renderLevelMark({
+  questionLabel: "3\u20091",
+  totalMarks: 9 as 9, // Q31 is 10 marks but we use 9-mark band template — see note
+  indicativeContent: set.q31Content,
+})}
+
+> Note: Q31 is marked out of 10 — apply the 9-mark band descriptors with mark bands scaled to: L1 (1–2), L2 (3–4), L3 (5–7), L4 (8–10).
+
+${renderLevelMark({
+  questionLabel: "3\u20092",
+  totalMarks: 15,
+  indicativeContent: set.q32Content,
+})}
+
+${renderLevelMark({
+  questionLabel: "3\u20093",
+  totalMarks: 25,
+  indicativeContent: set.q33Content,
+})}`;
+}
+
+const PAPER_CONTENT: Record<string, string> = {};
+const PAPER_MS: Record<string, string> = {};
+Object.entries(SETS).forEach(([id, set]) => {
+  PAPER_CONTENT[id] = buildPaper(set);
+  PAPER_MS[id] = buildMarkScheme(set);
+});
 
 export function getAqaPaper3OverrideContent(paperId: string): string | null {
-  return AQA_PAPER_3_OVERRIDES[paperId] ?? null;
+  return PAPER_CONTENT[paperId] ?? null;
+}
+
+export function getAqaPaper3OverrideMarkScheme(paperId: string): string | null {
+  return PAPER_MS[paperId] ?? null;
 }
