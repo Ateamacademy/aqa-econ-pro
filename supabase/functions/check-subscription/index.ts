@@ -48,14 +48,18 @@ serve(async (req) => {
 
   try {
     const authHeader = req.headers.get("Authorization");
-    if (!authHeader) throw new Error("No authorization header");
+    if (!authHeader) {
+      return respond({ subscribed: false, subscription_end: null, unauthenticated: true });
+    }
 
     const token = authHeader.replace("Bearer ", "");
     const { data: userData, error: userError } = await supabaseClient.auth.getUser(token);
-    if (userError) throw new Error(`Auth error: ${userError.message}`);
+    if (userError || !userData?.user?.email) {
+      // Token missing sub claim, expired, or anon key — treat as unauthenticated, don't 500
+      return respond({ subscribed: false, subscription_end: null, unauthenticated: true });
+    }
 
     const user = userData.user;
-    if (!user?.email) throw new Error("User not authenticated");
 
     email = user.email.toLowerCase();
 
