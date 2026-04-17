@@ -214,12 +214,6 @@ function buildPaper(set: AqaPaper2Set): string {
 
 ## Section A — Data response (40 marks)
 
-**Answer EITHER Context 1 OR Context 2.**
-
----
-
-## EITHER
-
 ### Context 1 — ${set.c1.title}
 *Total for this Context: 40 marks*
 
@@ -241,32 +235,6 @@ ${set.c1.q3}${figureMd(set.c1.q3Diagram)}
 
 Question 04 [25 marks]
 ${set.c1.q4}
-
----
-
-## OR
-
-### Context 2 — ${set.c2.title}
-*Total for this Context: 40 marks*
-
-### Extract D
-${set.c2.data}
-
-${renderExtract("E", set.c2.prose1)}
-
-${renderExtract("F", set.c2.prose2)}
-
-Question 05 [2 marks]
-${set.c2.q1}
-
-Question 06 [4 marks]
-${set.c2.q2}
-
-Question 07 [9 marks]
-${set.c2.q3}${figureMd(set.c2.q3Diagram)}
-
-Question 08 [25 marks]
-${set.c2.q4}
 
 ---
 
@@ -311,7 +279,7 @@ ${set.essays[2].evaluate}`;
 function buildMarkScheme(set: AqaPaper2Set): string {
   const sections: string[] = [
     `# AQA A-Level Economics (7136/2) — Mark Scheme — ${set.setLabel}`,
-    `**Total: 80 marks** | Section A: answer EITHER Context 1 OR Context 2 (40 marks). Section B: answer ONE essay (40 marks).`,
+    `**Total: 80 marks** | Section A: data response (40 marks). Section B: answer ONE essay (40 marks).`,
     `---`,
     `## Section A — Context 1`,
     renderPointMark({
@@ -353,49 +321,6 @@ function buildMarkScheme(set: AqaPaper2Set): string {
         "App: sustained reference to Extracts A–C and the data path.",
         "An: rigorous chains for monetary, fiscal, and supply-side responses.",
         "E: balanced evaluation; lags, expectations, exchange rate channels; supported judgement.",
-      ],
-    }),
-    `---`,
-    `## Section A — Context 2`,
-    renderPointMark({
-      questionLabel: "0\u20095",
-      totalMarks: 2,
-      expectedAnswer: `${set.c2.q1Answer} (working: ${set.c2.q1Working}).`,
-      markPoints: [
-        { description: `Correct answer (${set.c2.q1Answer}) with correct sign and units`, marks: 2 },
-        { description: "Correct method, wrong final answer", marks: 1 },
-      ],
-    }),
-    renderPointMark({
-      questionLabel: "0\u20096",
-      totalMarks: 4,
-      expectedAnswer: "Two explained references to Extract D data.",
-      markPoints: [
-        { description: "First reference identified", marks: 1 },
-        { description: "First reference developed", marks: 1 },
-        { description: "Second reference identified", marks: 1 },
-        { description: "Second reference developed", marks: 1 },
-      ],
-    }),
-    renderLevelMark({
-      questionLabel: "0\u20097",
-      totalMarks: 9,
-      diagram: set.c2.q3Diagram,
-      indicativeContent: [
-        "K: definitions and theory underpinning the macro mechanism.",
-        "App: explicit reference to Extracts D–F.",
-        "An: developed chain to UK macro performance.",
-        "Diagram: appropriate macro diagram with clear labels.",
-      ],
-    }),
-    renderLevelMark({
-      questionLabel: "0\u20098",
-      totalMarks: 25,
-      indicativeContent: [
-        "K: precise definitions of relevant macroeconomic policy.",
-        "App: sustained use of Extracts D–F.",
-        "An: rigorous chains for two or more policy responses.",
-        "E: balanced evaluation with prioritised judgement.",
       ],
     }),
     `---`,
