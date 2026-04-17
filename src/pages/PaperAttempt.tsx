@@ -1,21 +1,28 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { useState, useEffect, useCallback, useRef } from "react";
 import { getPaperById } from "@/lib/rubrics";
 import { markSubQuestion, synthesisePaper } from "@/lib/marking";
-import type { MarkingResult, SynthesisResult } from "@/lib/validation";
-import { validateMarks } from "@/lib/validation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { MarkingLoader } from "@/components/marking/MarkingLoader";
 import { cn } from "@/lib/utils";
 import { Clock, Save, Send, ChevronLeft, ChevronRight, Upload } from "lucide-react";
+import { getAqaPaperById } from "@/data/aqaPapers";
+import AqaPaperViewer from "@/components/paper-library/AqaPaperViewer";
 
 const STORAGE_KEY = (paperId: string) => `paper-attempt-${paperId}`;
 
 export default function PaperAttempt() {
   const { paperId } = useParams<{ paperId: string }>();
   const navigate = useNavigate();
+
+  // ── AQA papers route through the new exam-style viewer ──
+  const aqaPaper = paperId ? getAqaPaperById(paperId) : undefined;
+  if (aqaPaper) {
+    return <AqaPaperViewer paperId={paperId!} />;
+  }
+
   const paper = getPaperById(paperId || "");
   const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -23,6 +30,7 @@ export default function PaperAttempt() {
   const [timeLeft, setTimeLeft] = useState(0);
   const [isMarking, setIsMarking] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
 
   // Load saved answers
   useEffect(() => {
