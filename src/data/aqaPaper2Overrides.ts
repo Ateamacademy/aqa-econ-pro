@@ -96,6 +96,13 @@ Fiscal policy has remained restrictive, with HM Treasury maintaining tight depar
       primary: "An AD/AS diagram showing AD shifting left from AD₁ to AD₂, with the price level falling from P₁ to P₂ and real output falling from Y₁ to Y₂.",
       alternatives: ["A diagram showing the transmission mechanism from interest rates to consumption and investment"],
       requiredLabels: ["Price level", "Real output (Y)", "AD₁", "AD₂", "SRAS", "LRAS", "P₁", "P₂", "Y₁", "Y₂", "Yfe"],
+      figureKey:
+        /supply\s*shock|cost.?push|oil|energy/i.test(focus) ? "cost-push.svg" :
+        /demand|interest|monetary|fiscal|aggregate demand/i.test(focus) ? "ad-as-g.svg" :
+        /growth|lras|productivity/i.test(focus) ? "adas-equilibrium.svg" :
+        /trade|export|exchange|globalisation/i.test(focus) ? "caie-j-curve.svg" :
+        "ad-as-g.svg",
+      figureCaption: `Figure — AD/AS analysis of ${focus}`,
     },
     q4: `Extract ${labels[2]} (lines 1–3) states: "${focus} cannot be effectively controlled by interest rates alone". Using the data in the extracts and your knowledge of economics, evaluate the view that monetary policy is the most effective tool for managing ${focus} in the UK.`,
   };
