@@ -8,6 +8,10 @@ interface McqSpec {
   justification: string;
   /** Optional inline diagram/table description rendered before the stem. */
   figure?: string;
+  /** Optional reference SVG filename in /public/figures (no leading slash). */
+  figureKey?: string;
+  /** Caption shown under the SVG. */
+  figureCaption?: string;
 }
 
 interface AqaPaper3Set {
