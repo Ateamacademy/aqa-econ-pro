@@ -3,6 +3,19 @@ import {
   renderPointMark,
 } from "./aqaMarkSchemeBuilder";
 
+export interface DiagramSpec {
+  primary: string;
+  alternatives?: string[];
+  requiredLabels: string[];
+  figureKey?: string;
+  figureCaption?: string;
+}
+
+function figureMd(diagram?: DiagramSpec): string {
+  if (!diagram?.figureKey) return "";
+  return `\n\n![${diagram.figureCaption ?? "Figure (reference diagram)"}](/figures/${diagram.figureKey})`;
+}
+
 interface VariantSpec {
   setLabel: string;
   macro1: { topic: string; focus: string };
@@ -24,7 +37,7 @@ interface ContextBlock {
   prose2: { subtitle: string; body: string; source: string };
   q1: string; q1Answer: string; q1Working: string;
   q2: string;
-  q3: string; q3Diagram: { primary: string; alternatives?: string[]; requiredLabels: string[] };
+  q3: string; q3Diagram: DiagramSpec;
   q4: string;
 }
 
@@ -34,7 +47,7 @@ interface EssayBlock {
   evaluate: string;
   explainContent: string[];
   evaluateContent: string[];
-  diagram?: { primary: string; alternatives?: string[]; requiredLabels: string[] };
+  diagram?: DiagramSpec;
 }
 
 function makeContext(
@@ -83,6 +96,13 @@ Fiscal policy has remained restrictive, with HM Treasury maintaining tight depar
       primary: "An AD/AS diagram showing AD shifting left from AD₁ to AD₂, with the price level falling from P₁ to P₂ and real output falling from Y₁ to Y₂.",
       alternatives: ["A diagram showing the transmission mechanism from interest rates to consumption and investment"],
       requiredLabels: ["Price level", "Real output (Y)", "AD₁", "AD₂", "SRAS", "LRAS", "P₁", "P₂", "Y₁", "Y₂", "Yfe"],
+      figureKey:
+        /supply\s*shock|cost.?push|oil|energy/i.test(focus) ? "cost-push.svg" :
+        /demand|interest|monetary|fiscal|aggregate demand/i.test(focus) ? "ad-as-g.svg" :
+        /growth|lras|productivity/i.test(focus) ? "adas-equilibrium.svg" :
+        /trade|export|exchange|globalisation/i.test(focus) ? "caie-j-curve.svg" :
+        "ad-as-g.svg",
+      figureCaption: `Figure — AD/AS analysis of ${focus}`,
     },
     q4: `Extract ${labels[2]} (lines 1–3) states: "${focus} cannot be effectively controlled by interest rates alone". Using the data in the extracts and your knowledge of economics, evaluate the view that monetary policy is the most effective tool for managing ${focus} in the UK.`,
   };
@@ -108,6 +128,18 @@ function buildSet(v: VariantSpec): AqaPaper2Set {
         `Compare with demand-side fiscal and monetary policy.`,
         `Judgement: best mix depends on cause of the problem and economic conditions.`,
       ],
+      diagram: {
+        primary: `An AD/AS or related macro diagram appropriate to ${topic}, with clearly labelled axes, equilibrium points and shifts.`,
+        requiredLabels: ["Price level", "Real output (Y)", "AD", "SRAS", "LRAS", "Equilibrium points"],
+        figureKey:
+          /phillips|nairu|unemployment/i.test(topic) ? "phillips-srlr.svg" :
+          /j.?curve|marshall|exchange|sterling|depreciation/i.test(topic) ? "caie-j-curve.svg" :
+          /fiscal|public|debt|crowding|consolidation/i.test(topic) ? "adas-fiscal.svg" :
+          /supply.?side|productivity|skills|growth|lras|carbon|green/i.test(topic) ? "adas-equilibrium.svg" :
+          /protectionism|trade|tariff|liberalisation/i.test(topic) ? "quota.svg" :
+          "ad-as-g.svg",
+        figureCaption: `Figure — Reference diagram for ${topic}`,
+      },
     })),
   };
 }

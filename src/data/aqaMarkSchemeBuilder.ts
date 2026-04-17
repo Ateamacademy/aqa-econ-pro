@@ -17,11 +17,15 @@ export interface PointMarkSpec {
 export interface LevelMarkSpec {
   questionLabel: string;
   totalMarks: 9 | 15 | 25;
-  /** Optional diagram requirement for 9/25-mark questions. */
+  /** Optional diagram requirement for 9/15/25-mark questions. */
   diagram?: {
     primary: string;
     alternatives?: string[];
     requiredLabels: string[];
+    /** Filename in /public/figures (no leading slash) — rendered as the canonical reference figure. */
+    figureKey?: string;
+    /** Caption shown under the figure. Defaults to "Reference diagram". */
+    figureCaption?: string;
   };
   /** Indicative content the answer should engage with. */
   indicativeContent: string[];
@@ -121,7 +125,10 @@ export function renderLevelMark(spec: LevelMarkSpec): string {
     const alts = spec.diagram.alternatives && spec.diagram.alternatives.length > 0
       ? `\nAlternatives accepted: ${spec.diagram.alternatives.join("; ")}`
       : "";
-    diagramBlock = `\n\n**Required diagram:** ${spec.diagram.primary}${alts}\n**Labels required:** ${spec.diagram.requiredLabels.join(", ")}`;
+    const figure = spec.diagram.figureKey
+      ? `\n\n![${spec.diagram.figureCaption ?? "Reference diagram"}](/figures/${spec.diagram.figureKey})`
+      : "";
+    diagramBlock = `\n\n**Required diagram:** ${spec.diagram.primary}${alts}\n**Labels required:** ${spec.diagram.requiredLabels.join(", ")}${figure}`;
   }
 
   return `**Question ${spec.questionLabel} (${spec.totalMarks} marks)**

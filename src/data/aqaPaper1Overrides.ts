@@ -3,6 +3,22 @@ import {
   renderPointMark,
 } from "./aqaMarkSchemeBuilder";
 
+/** A diagram-requirement for a paper question. The optional `figureKey`
+ *  resolves to a file in `/public/figures` and is rendered as the canonical
+ *  reference figure in both the Question Paper and the Mark Scheme. */
+export interface DiagramSpec {
+  primary: string;
+  alternatives?: string[];
+  requiredLabels: string[];
+  figureKey?: string;
+  figureCaption?: string;
+}
+
+function figureMd(diagram?: DiagramSpec): string {
+  if (!diagram?.figureKey) return "";
+  return `\n\n![${diagram.figureCaption ?? "Figure (reference diagram)"}](/figures/${diagram.figureKey})`;
+}
+
 export interface AqaPaper1OverrideSet {
   setLabel: string;
 
@@ -14,7 +30,7 @@ export interface AqaPaper1OverrideSet {
     extractC: { subtitle: string; body: string; source: string };
     q01: string; q01Answer: string; q01Hint: string;
     q02: string;
-    q03: string; q03Diagram: { primary: string; alternatives?: string[]; requiredLabels: string[] };
+    q03: string; q03Diagram: DiagramSpec;
     q04: string;
   };
 
@@ -26,7 +42,7 @@ export interface AqaPaper1OverrideSet {
     extractF: { subtitle: string; body: string; source: string };
     q05: string; q05Answer: string; q05Hint: string;
     q06: string;
-    q07: string; q07Diagram: { primary: string; alternatives?: string[]; requiredLabels: string[] };
+    q07: string; q07Diagram: DiagramSpec;
     q08: string;
   };
 
@@ -37,7 +53,7 @@ export interface AqaPaper1OverrideSet {
     evaluate: string;
     explainContent: string[];
     evaluateContent: string[];
-    diagram?: { primary: string; alternatives?: string[]; requiredLabels: string[] };
+    diagram?: DiagramSpec;
   }>;
 }
 
@@ -82,6 +98,8 @@ Critics argue that the deeper cause is rapid expansion of student numbers withou
         primary: "A demand and supply diagram for student accommodation showing a rightward shift in demand against a near-vertical short-run supply curve, with original equilibrium (P₁, Q₁) and new equilibrium (P₂, Q₂).",
         alternatives: ["A diagram showing inelastic supply with a price rise after a demand shift"],
         requiredLabels: ["Price (rent)", "Quantity of bed spaces", "D₁", "D₂", "S (inelastic)", "P₁", "P₂", "Q₁", "Q₂"],
+        figureKey: "sd-housing.svg",
+        figureCaption: "Figure 2 — Demand shift against inelastic short-run supply (PBSA market)",
       },
       q04: "Extract C (lines 1–3) states that 'A maximum rent can help keep the cost of student accommodation lower than it would otherwise be, but risks some landlords withdrawing from the market'. Using the data in the extracts and your knowledge of economics, discuss the advantages and disadvantages of policies the government might introduce to improve the market for student accommodation.",
     },
@@ -123,6 +141,8 @@ Alternative policies — such as targeted concessionary fares, road pricing, or 
         primary: "A positive consumption externality diagram showing MPB below MSB, with a per-unit subsidy shifting MPB up to align with MSB and removing the welfare loss triangle.",
         alternatives: ["A market diagram with a subsidy lowering price and increasing quantity"],
         requiredLabels: ["Price/Cost/Benefit", "Quantity of bus journeys", "MPC=MSC", "MPB", "MSB", "Q₁", "Q*", "Welfare gain"],
+        figureKey: "pos-externality-welfare.svg",
+        figureCaption: "Figure 3 — Positive consumption externality with corrective subsidy",
       },
       q08: "Extract F (lines 4–6) states: 'broad fare caps can be poorly targeted and may benefit higher-income commuters as well as the low-paid'. Using the data in the extracts and your knowledge of economics, evaluate the view that subsidies for public transport are the most effective way to tackle urban congestion.",
     },
@@ -142,6 +162,12 @@ Alternative policies — such as targeted concessionary fares, road pricing, or 
           "Magnitude depends on PED for labour, market structure, regional wage differentials, and how firms absorb costs (margins vs prices).",
           "Judgement: net welfare effect contingent on labour market structure and complementary policies (e.g. training).",
         ],
+        diagram: {
+          primary: "A competitive labour market with W_min above the equilibrium wage W*, showing excess supply of labour (unemployment) between the quantity demanded and supplied at the minimum wage.",
+          requiredLabels: ["Wage (W)", "Quantity of labour (L)", "S_L", "D_L", "W_min", "W*", "Excess supply (unemployment)"],
+          figureKey: "labour-union.svg",
+          figureCaption: "Figure 4 — Minimum wage above competitive equilibrium",
+        },
       },
       {
         stimulus: "In 2024 Public Health England reported that 64% of UK adults are overweight or obese. The Soft Drinks Industry Levy raised £415m in 2024 and prompted reformulation by major brands; the government has consulted on extending the levy to high-sugar milk-based drinks.",
@@ -158,6 +184,12 @@ Alternative policies — such as targeted concessionary fares, road pricing, or 
           "Alternatives: education, advertising restrictions, regulation, nudges (default options, labelling).",
           "Judgement: most effective when used in combination; indirect tax alone insufficient.",
         ],
+        diagram: {
+          primary: "A negative consumption externality / demerit good diagram with MPB above MSB and over-consumption at the free-market equilibrium; an indirect tax shifts S to S+tax to reduce quantity to the socially optimal level.",
+          requiredLabels: ["Price", "Quantity", "S=MPC", "S+tax", "MPB=D", "MSB", "Q₁", "Q*", "Welfare loss"],
+          figureKey: "indirect-tax.svg",
+          figureCaption: "Figure 5 — Indirect tax on a demerit good (SDIL)",
+        },
       },
       {
         stimulus: "The UK Emissions Trading Scheme covers around a third of UK emissions. The carbon price rose from £22/tonne in 2019 to £78/tonne in 2024, prompting major manufacturers including the steel and chemical industries to lobby for relief, citing international competitiveness.",
@@ -174,6 +206,12 @@ Alternative policies — such as targeted concessionary fares, road pricing, or 
           "Regulation strengths: certainty of outcomes, simpler to enforce in some sectors.",
           "Judgement: effectiveness depends on sector characteristics; mixed approaches typically optimal.",
         ],
+        diagram: {
+          primary: "A negative production externality diagram with MSC above MPC; the welfare loss triangle exists at the free-market equilibrium where Q₁ > Q*. Permits / tax internalise the externality, shifting MPC up to MSC.",
+          requiredLabels: ["Price", "Quantity", "MPC", "MSC", "D=MPB=MSB", "Q₁", "Q*", "Welfare loss"],
+          figureKey: "neg-externality-welfare.svg",
+          figureCaption: "Figure 6 — Negative production externality and welfare loss",
+        },
       },
     ],
   },
@@ -273,6 +311,8 @@ Alternative approaches include encouraging market entry through subsidies for ne
       q03Diagram: {
         primary: `A diagram appropriate to ${v.micro1.focus} (e.g. monopoly diagram showing P>MC welfare loss, or oligopoly kinked demand) with clearly labelled equilibrium and welfare loss triangle.`,
         requiredLabels: ["Price/Cost", "Quantity", "AC", "MC", "AR (D)", "MR", "Pₘ", "Qₘ", "Welfare loss"],
+        figureKey: /oligopoly|kinked/i.test(v.micro1.focus) ? "caie-kinked-demand.svg" : "monopoly-profit.svg",
+        figureCaption: `Figure — ${v.micro1.focus} (welfare analysis)`,
       },
       q04: `Extract C (lines 1–3) discusses regulation, price caps, and structural remedies. Using the data in the extracts and your knowledge of economics, evaluate the view that government intervention is the most effective way to address ${v.micro1.focus} in ${v.micro1.topic}.`,
     },
@@ -313,6 +353,8 @@ Internationally, the OECD has highlighted that countries with stronger competiti
       q07Diagram: {
         primary: `A diagram illustrating ${v.micro2.focus} (e.g. natural monopoly LRAC falling through MES, or contestability with hit-and-run entry).`,
         requiredLabels: ["Price/Cost", "Quantity", "LRAC", "MC", "AR", "MR", "Equilibrium points"],
+        figureKey: /contestab/i.test(v.micro2.focus) ? "contestable.svg" : "natural-monopoly.svg",
+        figureCaption: `Figure — ${v.micro2.focus}`,
       },
       q08: `Extract F (lines 1–3) presents arguments for and against intervention. Using the data in the extracts and your knowledge of economics, assess the view that government regulation always improves outcomes in markets characterised by ${v.micro2.focus}.`,
     },
@@ -331,6 +373,19 @@ Internationally, the OECD has highlighted that countries with stronger competiti
         `Alternative policies: market-based instruments vs regulation vs information provision.`,
         `Judgement: effectiveness depends on context, magnitude of failure, and policy design.`,
       ],
+      diagram: {
+        primary: `A diagram appropriate to ${topic}: market with intervention, externality, or labour market analysis.`,
+        requiredLabels: ["Price/Wage", "Quantity", "S", "D", "Equilibrium", "Welfare effect"],
+        figureKey:
+          /externalit|pollut|sugar|tax|fashion|carbon/i.test(topic) ? "neg-externality-welfare.svg" :
+          /minimum wage|labour|monopsony|union|nursing/i.test(topic) ? "labour-union.svg" :
+          /merit|vaccin|healthcare|education/i.test(topic) ? "pos-externality-welfare.svg" :
+          /price discrimination|monopoly|natural monopoly|digital|tech/i.test(topic) ? "monopoly-profit.svg" :
+          /rent|max(imum)?\s*price|ceiling/i.test(topic) ? "sd-housing.svg" :
+          /min(imum)?\s*price|alcohol/i.test(topic) ? "indirect-tax.svg" :
+          "indirect-tax.svg",
+        figureCaption: `Figure — Reference diagram for ${topic}`,
+      },
     })) as AqaPaper1OverrideSet["essays"],
   };
 }
@@ -395,7 +450,7 @@ Question 02 [4 marks]
 ${set.c1.q02}
 
 Question 03 [9 marks]
-${set.c1.q03}
+${set.c1.q03}${figureMd(set.c1.q03Diagram)}
 
 Question 04 [25 marks]
 ${set.c1.q04}
@@ -423,7 +478,7 @@ Question 06 [4 marks]
 ${set.c2.q06}
 
 Question 07 [9 marks]
-${set.c2.q07}
+${set.c2.q07}${figureMd(set.c2.q07Diagram)}
 
 Question 08 [25 marks]
 ${set.c2.q08}
@@ -440,7 +495,7 @@ ${set.c2.q08}
 ${set.essays[0].stimulus}
 
 Question 09 [15 marks]
-${set.essays[0].explain}
+${set.essays[0].explain}${figureMd(set.essays[0].diagram)}
 
 Question 10 [25 marks]
 ${set.essays[0].evaluate}
@@ -451,7 +506,7 @@ ${set.essays[0].evaluate}
 ${set.essays[1].stimulus}
 
 Question 11 [15 marks]
-${set.essays[1].explain}
+${set.essays[1].explain}${figureMd(set.essays[1].diagram)}
 
 Question 12 [25 marks]
 ${set.essays[1].evaluate}
@@ -462,7 +517,7 @@ ${set.essays[1].evaluate}
 ${set.essays[2].stimulus}
 
 Question 13 [15 marks]
-${set.essays[2].explain}
+${set.essays[2].explain}${figureMd(set.essays[2].diagram)}
 
 Question 14 [25 marks]
 ${set.essays[2].evaluate}`;
