@@ -51,6 +51,7 @@ const DiagramTesting = lazy(() => import("./pages/DiagramTesting"));
 const PaperLibrary = lazy(() => import("./pages/PaperLibrary"));
 const EconDiagramShowcase = lazy(() => import("./components/revision/EconDiagramShowcase"));
 const MarkingDebug = lazy(() => import("./pages/MarkingDebug"));
+const AqaMarking = lazy(() => import("./pages/AqaMarking"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -109,6 +110,7 @@ const App = () => (
               <Route path="/papers/:paperId/attempt" element={<PaperAttempt />} />
               <Route path="/papers/:paperId/results" element={<PaperResults />} />
               <Route path="/history" element={<HistoryPage />} />
+              <Route path="/predicted/aqa/mark/:setId" element={<AqaMarking />} />
               <Route path="/debug/marking-tests" element={<MarkingDebug />} />
               <Route path="/debug/integrity" element={<MarkingDebug />} />
               <Route path="*" element={<NotFound />} />
