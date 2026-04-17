@@ -128,6 +128,18 @@ function buildSet(v: VariantSpec): AqaPaper2Set {
         `Compare with demand-side fiscal and monetary policy.`,
         `Judgement: best mix depends on cause of the problem and economic conditions.`,
       ],
+      diagram: {
+        primary: `An AD/AS or related macro diagram appropriate to ${topic}, with clearly labelled axes, equilibrium points and shifts.`,
+        requiredLabels: ["Price level", "Real output (Y)", "AD", "SRAS", "LRAS", "Equilibrium points"],
+        figureKey:
+          /phillips|nairu|unemployment/i.test(topic) ? "phillips-srlr.svg" :
+          /j.?curve|marshall|exchange|sterling|depreciation/i.test(topic) ? "caie-j-curve.svg" :
+          /fiscal|public|debt|crowding|consolidation/i.test(topic) ? "adas-fiscal.svg" :
+          /supply.?side|productivity|skills|growth|lras|carbon|green/i.test(topic) ? "adas-equilibrium.svg" :
+          /protectionism|trade|tariff|liberalisation/i.test(topic) ? "quota.svg" :
+          "ad-as-g.svg",
+        figureCaption: `Figure — Reference diagram for ${topic}`,
+      },
     })),
   };
 }
