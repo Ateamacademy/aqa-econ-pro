@@ -237,7 +237,7 @@ Question 02 [4 marks]
 ${set.c1.q2}
 
 Question 03 [9 marks]
-${set.c1.q3}
+${set.c1.q3}${figureMd(set.c1.q3Diagram)}
 
 Question 04 [25 marks]
 ${set.c1.q4}
@@ -263,7 +263,7 @@ Question 06 [4 marks]
 ${set.c2.q2}
 
 Question 07 [9 marks]
-${set.c2.q3}
+${set.c2.q3}${figureMd(set.c2.q3Diagram)}
 
 Question 08 [25 marks]
 ${set.c2.q4}
@@ -280,7 +280,7 @@ ${set.c2.q4}
 ${set.essays[0].stimulus}
 
 Question 09 [15 marks]
-${set.essays[0].explain}
+${set.essays[0].explain}${figureMd(set.essays[0].diagram)}
 
 Question 10 [25 marks]
 ${set.essays[0].evaluate}
@@ -291,7 +291,7 @@ ${set.essays[0].evaluate}
 ${set.essays[1].stimulus}
 
 Question 11 [15 marks]
-${set.essays[1].explain}
+${set.essays[1].explain}${figureMd(set.essays[1].diagram)}
 
 Question 12 [25 marks]
 ${set.essays[1].evaluate}
@@ -302,7 +302,7 @@ ${set.essays[1].evaluate}
 ${set.essays[2].stimulus}
 
 Question 13 [15 marks]
-${set.essays[2].explain}
+${set.essays[2].explain}${figureMd(set.essays[2].diagram)}
 
 Question 14 [25 marks]
 ${set.essays[2].evaluate}`;
