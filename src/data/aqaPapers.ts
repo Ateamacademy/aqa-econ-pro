@@ -402,10 +402,13 @@ export function deleteGeneratedPaper(id: string): void {
   window.localStorage.setItem(STORE_KEY, JSON.stringify(all));
 }
 
+import { tagPaperWithDiagrams } from "@/lib/aqa-diagram-tagging";
+
 export function getAllAqaPapers(): GeneratedPaper[] {
-  return [...AQA_SPECIMENS, ...AQA_SEEDED_SESSIONS, ...loadGeneratedPapers()];
+  return [...AQA_SPECIMENS, ...AQA_SEEDED_SESSIONS, ...loadGeneratedPapers()].map(tagPaperWithDiagrams);
 }
 
 export function getAqaPaperById(id: string): GeneratedPaper | undefined {
-  return getAllAqaPapers().find((p) => p.id === id);
+  const found = [...AQA_SPECIMENS, ...AQA_SEEDED_SESSIONS, ...loadGeneratedPapers()].find((p) => p.id === id);
+  return found ? tagPaperWithDiagrams(found) : undefined;
 }
