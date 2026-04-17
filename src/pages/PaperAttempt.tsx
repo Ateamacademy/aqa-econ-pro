@@ -15,14 +15,14 @@ const STORAGE_KEY = (paperId: string) => `paper-attempt-${paperId}`;
 
 export default function PaperAttempt() {
   const { paperId } = useParams<{ paperId: string }>();
-  const navigate = useNavigate();
-
-  // ── AQA papers route through the new exam-style viewer ──
   const aqaPaper = paperId ? getAqaPaperById(paperId) : undefined;
-  if (aqaPaper) {
-    return <AqaPaperViewer paperId={paperId!} />;
-  }
+  if (aqaPaper) return <AqaPaperViewer paperId={paperId!} />;
+  return <LegacyPaperAttempt />;
+}
 
+function LegacyPaperAttempt() {
+  const { paperId } = useParams<{ paperId: string }>();
+  const navigate = useNavigate();
   const paper = getPaperById(paperId || "");
   const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -30,6 +30,7 @@ export default function PaperAttempt() {
   const [timeLeft, setTimeLeft] = useState(0);
   const [isMarking, setIsMarking] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
 
 
   // Load saved answers
