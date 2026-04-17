@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { getAqaPaperById } from "@/data/aqaPapers";
 import {
   AqaSelfAssessmentPanel,
-  AqaAiFeedbackPanel,
   AqaMarkingReport,
   AqaTierBadge,
   AqaDiagramMarkPanel,
@@ -41,7 +40,6 @@ export default function AqaMarking() {
   const [mcqChoices, setMcqChoices] = useState<Record<number, "A" | "B" | "C" | "D">>({});
   const [selfAssess, setSelfAssess] = useState<Record<number, SelfAssessment>>({});
   const [step, setStep] = useState<"auto" | "self" | "report">("auto");
-  const [showAi, setShowAi] = useState<Record<number, boolean>>({});
 
   // hydrate
   useEffect(() => {
@@ -348,38 +346,15 @@ export default function AqaMarking() {
             </p>
 
             {[...fourMarkQs, ...extendedQs].map((q) => (
-              <div key={q.number} className="space-y-2">
-                <AqaSelfAssessmentPanel
-                  questionNumber={q.number}
-                  totalMarks={q.marks}
-                  prompt={q.prompt}
-                  studentAnswer={answers[q.number] ?? ""}
-                  value={selfAssess[q.number] ?? emptySelfAssessment()}
-                  onChange={(v) => setSelfAssess((p) => ({ ...p, [q.number]: v }))}
-                />
-                <div className="flex justify-end">
-                  {showAi[q.number] ? (
-                    <AqaAiFeedbackPanel
-                      questionNumber={q.number}
-                      totalMarks={q.marks}
-                      prompt={q.prompt}
-                      studentAnswer={answers[q.number] ?? ""}
-                      indicativeContent={
-                        paper.markScheme.find((m) => m.questionNumber === q.number)?.pointMarks ?? []
-                      }
-                    />
-                  ) : (
-                    <Button
-                      onClick={() => setShowAi((p) => ({ ...p, [q.number]: true }))}
-                      size="sm"
-                      variant="outline"
-                      className="text-xs gap-1.5 border-purple-500/40 text-purple-200 hover:bg-purple-500/10"
-                    >
-                      Optional: Tier 3 AI feedback
-                    </Button>
-                  )}
-                </div>
-              </div>
+              <AqaSelfAssessmentPanel
+                key={q.number}
+                questionNumber={q.number}
+                totalMarks={q.marks}
+                prompt={q.prompt}
+                studentAnswer={answers[q.number] ?? ""}
+                value={selfAssess[q.number] ?? emptySelfAssessment()}
+                onChange={(v) => setSelfAssess((p) => ({ ...p, [q.number]: v }))}
+              />
             ))}
 
             <div className="flex justify-between">
