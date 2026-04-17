@@ -311,6 +311,8 @@ Alternative approaches include encouraging market entry through subsidies for ne
       q03Diagram: {
         primary: `A diagram appropriate to ${v.micro1.focus} (e.g. monopoly diagram showing P>MC welfare loss, or oligopoly kinked demand) with clearly labelled equilibrium and welfare loss triangle.`,
         requiredLabels: ["Price/Cost", "Quantity", "AC", "MC", "AR (D)", "MR", "Pₘ", "Qₘ", "Welfare loss"],
+        figureKey: /oligopoly|kinked/i.test(v.micro1.focus) ? "caie-kinked-demand.svg" : "monopoly-profit.svg",
+        figureCaption: `Figure — ${v.micro1.focus} (welfare analysis)`,
       },
       q04: `Extract C (lines 1–3) discusses regulation, price caps, and structural remedies. Using the data in the extracts and your knowledge of economics, evaluate the view that government intervention is the most effective way to address ${v.micro1.focus} in ${v.micro1.topic}.`,
     },
@@ -351,6 +353,8 @@ Internationally, the OECD has highlighted that countries with stronger competiti
       q07Diagram: {
         primary: `A diagram illustrating ${v.micro2.focus} (e.g. natural monopoly LRAC falling through MES, or contestability with hit-and-run entry).`,
         requiredLabels: ["Price/Cost", "Quantity", "LRAC", "MC", "AR", "MR", "Equilibrium points"],
+        figureKey: /contestab/i.test(v.micro2.focus) ? "contestable.svg" : "natural-monopoly.svg",
+        figureCaption: `Figure — ${v.micro2.focus}`,
       },
       q08: `Extract F (lines 1–3) presents arguments for and against intervention. Using the data in the extracts and your knowledge of economics, assess the view that government regulation always improves outcomes in markets characterised by ${v.micro2.focus}.`,
     },
@@ -369,6 +373,19 @@ Internationally, the OECD has highlighted that countries with stronger competiti
         `Alternative policies: market-based instruments vs regulation vs information provision.`,
         `Judgement: effectiveness depends on context, magnitude of failure, and policy design.`,
       ],
+      diagram: {
+        primary: `A diagram appropriate to ${topic}: market with intervention, externality, or labour market analysis.`,
+        requiredLabels: ["Price/Wage", "Quantity", "S", "D", "Equilibrium", "Welfare effect"],
+        figureKey:
+          /externalit|pollut|sugar|tax|fashion|carbon/i.test(topic) ? "neg-externality-welfare.svg" :
+          /minimum wage|labour|monopsony|union|nursing/i.test(topic) ? "labour-union.svg" :
+          /merit|vaccin|healthcare|education/i.test(topic) ? "pos-externality-welfare.svg" :
+          /price discrimination|monopoly|natural monopoly|digital|tech/i.test(topic) ? "monopoly-profit.svg" :
+          /rent|max(imum)?\s*price|ceiling/i.test(topic) ? "sd-housing.svg" :
+          /min(imum)?\s*price|alcohol/i.test(topic) ? "indirect-tax.svg" :
+          "indirect-tax.svg",
+        figureCaption: `Figure — Reference diagram for ${topic}`,
+      },
     })) as AqaPaper1OverrideSet["essays"],
   };
 }
