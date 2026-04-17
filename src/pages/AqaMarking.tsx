@@ -308,19 +308,23 @@ export default function AqaMarking() {
               </section>
             )}
 
-            {extendedQs.some((q) => /diagram/i.test(q.prompt)) && (
+            {diagramQs.length > 0 && (
               <section className="rounded-2xl border border-border bg-card p-4 space-y-3">
-                <h3 className="text-sm font-bold">Diagram rubric checks</h3>
-                {extendedQs
-                  .filter((q) => /diagram/i.test(q.prompt))
-                  .map((q) => (
-                    <div key={q.number} className="rounded-lg border border-border p-3">
-                      <div className="text-xs font-bold mb-2">
-                        Q{q.number} ({q.marks} marks)
-                      </div>
-                      <AqaDiagramRubricCheck rubric={rubricFor(q.number)} elements={[]} />
-                    </div>
-                  ))}
+                <h3 className="text-sm font-bold">Diagram marking ({diagramQs.length})</h3>
+                <p className="text-[11px] text-muted-foreground">
+                  Structural checks run automatically. Optional contextual analysis recommends an AQA level — never a mark.
+                </p>
+                {diagramQs.map((q) => (
+                  <AqaDiagramMarkPanel
+                    key={q.number}
+                    questionNumber={q.number}
+                    prompt={q.prompt}
+                    rubric={rubricFor(q.number)}
+                    diagramElements={elementsFor(q.number)}
+                    hasDiagram={hasDiagram(q.number)}
+                    writtenAnswer={answers[q.number] ?? ""}
+                  />
+                ))}
               </section>
             )}
 
