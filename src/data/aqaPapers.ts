@@ -340,6 +340,39 @@ export const AQA_SPECIMENS: GeneratedPaper[] = [
 ];
 
 /* ──────────────────────────────────────────────────────────────────────────
+   PMT-style ready-made practice sessions (Set A / B / C per paper).
+   These reuse the specimen content but are presented as separate sessions
+   so each paper tab has a browseable list out of the box, mirroring
+   PMT's "June 2022 / June 2023 / June 2024" layout.
+────────────────────────────────────────────────────────────────────────── */
+
+function makeSession(base: GeneratedPaper, set: "A" | "B" | "C", focus: string[], date: string): GeneratedPaper {
+  return {
+    ...base,
+    id: `${base.id}-set-${set.toLowerCase()}`,
+    practiceSetLabel: `Practice Set ${set}`,
+    focus,
+    createdAt: date,
+    status: "generated",
+  };
+}
+
+export const AQA_SEEDED_SESSIONS: GeneratedPaper[] = [
+  // Paper 1 — micro
+  makeSession(AQA_SPECIMEN_PAPER_1, "A", ["Price determination", "Elasticity", "Agricultural markets"], "2024-10-12T00:00:00.000Z"),
+  makeSession(AQA_SPECIMEN_PAPER_1, "B", ["Externalities", "Government intervention", "Environmental policy"], "2024-11-08T00:00:00.000Z"),
+  makeSession(AQA_SPECIMEN_PAPER_1, "C", ["Market structures", "Monopoly & competition policy"], "2025-01-15T00:00:00.000Z"),
+  // Paper 2 — macro
+  makeSession(AQA_SPECIMEN_PAPER_2, "A", ["Inflation", "Monetary policy"], "2024-10-12T00:00:00.000Z"),
+  makeSession(AQA_SPECIMEN_PAPER_2, "B", ["Fiscal policy", "Public-sector debt"], "2024-11-08T00:00:00.000Z"),
+  makeSession(AQA_SPECIMEN_PAPER_2, "C", ["International trade", "Exchange rates", "Globalisation"], "2025-01-15T00:00:00.000Z"),
+  // Paper 3 — synoptic
+  makeSession(AQA_SPECIMEN_PAPER_3, "A", ["Behavioural economics", "Public sector economics"], "2024-10-12T00:00:00.000Z"),
+  makeSession(AQA_SPECIMEN_PAPER_3, "B", ["Synoptic micro & macro", "Financial markets"], "2024-11-08T00:00:00.000Z"),
+  makeSession(AQA_SPECIMEN_PAPER_3, "C", ["Public sector economics", "Synoptic micro & macro"], "2025-01-15T00:00:00.000Z"),
+];
+
+/* ──────────────────────────────────────────────────────────────────────────
    In-memory session store (localStorage-backed) for AI-generated papers.
 ────────────────────────────────────────────────────────────────────────── */
 
@@ -370,7 +403,7 @@ export function deleteGeneratedPaper(id: string): void {
 }
 
 export function getAllAqaPapers(): GeneratedPaper[] {
-  return [...AQA_SPECIMENS, ...loadGeneratedPapers()];
+  return [...AQA_SPECIMENS, ...AQA_SEEDED_SESSIONS, ...loadGeneratedPapers()];
 }
 
 export function getAqaPaperById(id: string): GeneratedPaper | undefined {
