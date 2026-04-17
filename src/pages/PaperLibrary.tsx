@@ -188,8 +188,48 @@ export default function PaperLibrary() {
         </div>
       </section>
 
-      {/* ── Filters ── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-4">
+      {/* ── Top pill-switch: Paper Library | Generate New ── */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+        <div className="inline-flex p-1 rounded-xl bg-card border border-border">
+          <button
+            onClick={() => setTopTab("library")}
+            className={cn(
+              "px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors",
+              topTab === "library" ? "bg-indigo-500/15 text-indigo-200 border border-indigo-500/30" : "text-muted-foreground hover:text-foreground",
+            )}
+          >
+            Paper Library
+          </button>
+          <button
+            onClick={() => setTopTab("generate")}
+            className={cn(
+              "px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors",
+              topTab === "generate" ? "bg-indigo-500/15 text-indigo-200 border border-indigo-500/30" : "text-muted-foreground hover:text-foreground",
+            )}
+          >
+            Generate New
+          </button>
+        </div>
+      </section>
+
+      {topTab === "generate" ? (
+        <AqaGenerateNewPanel
+          initialPaper={generatePaperFor}
+          onGenerated={() => { setAqaRefreshKey((k) => k + 1); setTopTab("library"); }}
+        />
+      ) : (
+        <>
+          {/* AQA-spec library above the multi-board grid */}
+          <AqaPaperLibrarySection
+            refreshKey={aqaRefreshKey}
+            onGenerateClick={(n) => { setGeneratePaperFor(n); setTopTab("generate"); }}
+          />
+
+          {/* Existing multi-board library (unchanged) */}
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-4 mt-8 border-t border-border/40 pt-8">
+            <h2 className="text-xl font-bold text-foreground">All boards & levels</h2>
+            <p className="text-sm text-muted-foreground">Browse the full multi-board library.</p>
+
         {/* Search + Level */}
         <div className="flex flex-col sm:flex-row gap-3">
           <div className="relative flex-1">
