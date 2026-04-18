@@ -195,14 +195,18 @@ function drawCoverPage(doc: jsPDF, meta: PaperMeta) {
 
 // ─── Content Renderer ───────────────────────────────────────────────
 
-function renderContent(doc: jsPDF, content: string, meta: PaperMeta) {
+export function renderPaperMarkdown(doc: jsPDF, content: string, startY?: number): number {
+  return renderContent(doc, content, {} as PaperMeta, startY);
+}
+
+function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: number): number {
   const pageW = doc.internal.pageSize.getWidth();
   const pageH = doc.internal.pageSize.getHeight();
   const marginL = 20;
   const marginR = 20;
   const maxW = pageW - marginL - marginR;
   const lineH = 5.5;
-  let y = 25;
+  let y = startY ?? 25;
 
   const lines = content.split("\n");
 
