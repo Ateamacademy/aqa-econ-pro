@@ -368,32 +368,53 @@ export type Database = {
       practice_sessions: {
         Row: {
           created_at: string | null
+          duration_seconds: number | null
           feedback_summary: string | null
           id: string
+          kaae_skills: Json | null
+          marks_awarded: number | null
+          max_score: number | null
+          paper_id: string | null
           score_percent: number | null
           session_type: string
+          status: string
           subject: string
           topic: string
+          total_marks: number | null
           user_id: string
         }
         Insert: {
           created_at?: string | null
+          duration_seconds?: number | null
           feedback_summary?: string | null
           id?: string
+          kaae_skills?: Json | null
+          marks_awarded?: number | null
+          max_score?: number | null
+          paper_id?: string | null
           score_percent?: number | null
           session_type?: string
+          status?: string
           subject: string
           topic: string
+          total_marks?: number | null
           user_id: string
         }
         Update: {
           created_at?: string | null
+          duration_seconds?: number | null
           feedback_summary?: string | null
           id?: string
+          kaae_skills?: Json | null
+          marks_awarded?: number | null
+          max_score?: number | null
+          paper_id?: string | null
           score_percent?: number | null
           session_type?: string
+          status?: string
           subject?: string
           topic?: string
+          total_marks?: number | null
           user_id?: string
         }
         Relationships: []
@@ -403,6 +424,9 @@ export type Database = {
           created_at: string
           display_name: string | null
           exam_board: string | null
+          exam_paper1_date: string | null
+          exam_paper2_date: string | null
+          exam_paper3_date: string | null
           free_diagrams_used: number
           free_papers_used: number
           free_predicted_papers_used: number
@@ -417,6 +441,9 @@ export type Database = {
           created_at?: string
           display_name?: string | null
           exam_board?: string | null
+          exam_paper1_date?: string | null
+          exam_paper2_date?: string | null
+          exam_paper3_date?: string | null
           free_diagrams_used?: number
           free_papers_used?: number
           free_predicted_papers_used?: number
@@ -431,6 +458,9 @@ export type Database = {
           created_at?: string
           display_name?: string | null
           exam_board?: string | null
+          exam_paper1_date?: string | null
+          exam_paper2_date?: string | null
+          exam_paper3_date?: string | null
           free_diagrams_used?: number
           free_papers_used?: number
           free_predicted_papers_used?: number
