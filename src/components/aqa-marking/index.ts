@@ -3,3 +3,5 @@ export { AqaDiagramRubricCheck } from "./AqaDiagramRubricCheck";
 export { AqaSelfAssessmentPanel, emptySelfAssessment, type SelfAssessment } from "./AqaSelfAssessmentPanel";
 export { AqaMarkingReport, type MarkedQuestion } from "./AqaMarkingReport";
 export { AqaDiagramMarkPanel } from "./AqaDiagramMarkPanel";
+export { AiAnalysisCard } from "./AiAnalysisCard";
+export { AiAnalysisTrigger } from "./AiAnalysisTrigger";
