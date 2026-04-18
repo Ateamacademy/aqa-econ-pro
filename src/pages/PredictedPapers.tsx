@@ -39,9 +39,10 @@ import { ExamTimer } from "@/components/predicted-papers/ExamTimer";
 import { ExamResultsSummary } from "@/components/predicted-papers/ExamResultsSummary";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 
-// Exam durations in minutes per subject + paper
+// Exam durations in minutes per subject + paper.
+// AQA A-Level Economics (7136) — every paper is 2 hours. Source of truth: AQA_SPEC.durationMinutes.
 const EXAM_DURATIONS: Record<string, Record<string, number>> = {
-  economics:        { "1": 105, "2": 105, full: 120 },
+  economics:        { "1": 120, "2": 120, full: 120 },
   "edexcel-a":      { "1": 120, "2": 120, full: 120 },
   "edexcel-b":      { "1": 120, "2": 120, full: 120 },
   "ocr":            { "1": 120, "2": 120, full: 120 },
@@ -1314,17 +1315,16 @@ export default function PredictedPapers() {
   const isValidAqaPaperStructure = (questions: ParsedQuestion[], paperNumber?: string) => {
     if (subject !== "economics") return true;
     if (paperNumber === "1" || paperNumber === "2") {
-      // AQA structure: Section A ONE context (Q01–04: 2/4/9/25), Section B ONE essay (Q05–06: 15/25).
-      // Accept current 6-question format plus legacy formats for backward compatibility.
-      const currentFormat = [2, 4, 9, 25, 15, 25];
-      const threeEssayFormat = [2, 4, 9, 25, 15, 25, 15, 25, 15, 25];
-      const twoContextFormat = [2, 4, 9, 25, 2, 4, 9, 25, 15, 25, 15, 25, 15, 25];
+      // AQA Papers 1 & 2 (canonical): two contexts (Q01–08: 2/4/9/25 × 2) + three essays (Q09–14: 15/25 × 3).
+      // Backward-compatible legacy formats also accepted so older generated papers don't break.
+      const canonicalFormat   = [2, 4, 9, 25, 2, 4, 9, 25, 15, 25, 15, 25, 15, 25];
+      const legacyOneContext  = [2, 4, 9, 25, 15, 25];
+      const legacyOneCtx3Ess  = [2, 4, 9, 25, 15, 25, 15, 25, 15, 25];
       const matches = (expected: number[]) =>
         questions.length === expected.length && questions.every((q, i) => q.marks === expected[i]);
-      return matches(currentFormat) || matches(threeEssayFormat) || matches(twoContextFormat);
+      return matches(canonicalFormat) || matches(legacyOneCtx3Ess) || matches(legacyOneContext);
     }
     if (paperNumber === "3") {
-      // 30 × 1 mark MCQs + 10 + 15 + 25
       if (questions.length !== 33) return false;
       for (let i = 0; i < 30; i++) if (questions[i].marks !== 1) return false;
       return questions[30].marks === 10 && questions[31].marks === 15 && questions[32].marks === 25;
