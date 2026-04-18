@@ -26,12 +26,7 @@ export function useAiMarking() {
   const runOne = useCallback(async (payload: AiMarkingPayload) => {
     setByQuestion((p) => ({ ...p, [payload.questionId]: { status: "loading" } }));
     const result = await callAiMarking(payload);
-    setByQuestion((p) => ({
-      ...p,
-      [payload.questionId]: result.ok
-        ? { status: "done", analysis: result.analysis, cached: result.cached }
-        : { status: "error", error: result.error, retryAfterSec: result.retryAfterSec },
-    }));
+    setByQuestion((p) => ({ ...p, [payload.questionId]: toState(result) }));
     return result;
   }, []);
 
@@ -49,11 +44,7 @@ export function useAiMarking() {
         );
         setByQuestion((p) => {
           const next = { ...p };
-          for (const { pl, r } of results) {
-            next[pl.questionId] = r.ok
-              ? { status: "done", analysis: r.analysis, cached: r.cached }
-              : { status: "error", error: r.error, retryAfterSec: r.retryAfterSec };
-          }
+          for (const { pl, r } of results) next[pl.questionId] = toState(r);
           return next;
         });
         return results;

@@ -53,6 +53,7 @@ const EconDiagramShowcase = lazy(() => import("./components/revision/EconDiagram
 const MarkingDebug = lazy(() => import("./pages/MarkingDebug"));
 const AqaMarking = lazy(() => import("./pages/AqaMarking"));
 const AdminDeduplicationReport = lazy(() => import("./pages/AdminDeduplicationReport"));
+const AdminAiUsage = lazy(() => import("./pages/AdminAiUsage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -113,6 +114,7 @@ const App = () => (
               <Route path="/history" element={<HistoryPage />} />
               <Route path="/predicted/aqa/mark/:setId" element={<AqaMarking />} />
               <Route path="/admin/deduplication-report" element={<AdminDeduplicationReport />} />
+              <Route path="/admin/ai-usage" element={<AdminAiUsage />} />
               <Route path="/debug/marking-tests" element={<MarkingDebug />} />
               <Route path="/debug/integrity" element={<MarkingDebug />} />
               <Route path="*" element={<NotFound />} />
