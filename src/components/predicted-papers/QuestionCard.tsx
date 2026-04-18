@@ -152,11 +152,33 @@ export function QuestionCard({
           <span className="text-[11px] bg-muted text-muted-foreground px-2 py-0.5 rounded-full font-medium">
             {question.marks} marks
           </span>
+          {aqaDiagramRequired && !aqaDiagramOptional && (
+            <span className="text-[10px] uppercase tracking-wider bg-primary/15 text-primary border border-primary/30 px-2 py-0.5 rounded-full font-bold">
+              Diagram required
+            </span>
+          )}
         </div>
         <div className="text-sm text-foreground/90">
           <MathsMarkdown>{question.text}</MathsMarkdown>
         </div>
+
+        {/* Inline AQA drawing canvas — sits between question stem and answer field */}
+        {aqaDiagramRequired && !feedback && paperKey && (
+          <PredictedPaperDiagramBlock
+            questionId={question.id}
+            paperKey={paperKey}
+            required={aqaDiagramRequired}
+            optional={aqaDiagramOptional}
+            diagramType={question.diagramType}
+            rubric={question.diagramRubric as AqaDiagramRubric | undefined}
+            onChange={(dataUrl) => {
+              setAqaDiagramDataUrl(dataUrl);
+              onDiagramImageChange?.(question.id, dataUrl);
+            }}
+          />
+        )}
       </div>
+
 
       {/* Answer area */}
       <div className="p-5 border-b border-border bg-muted/30">
