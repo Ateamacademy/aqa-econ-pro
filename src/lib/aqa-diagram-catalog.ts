@@ -15,6 +15,17 @@
  * `markingTier: "macro"` enforces "Price level" axes when the figure is
  * rendered with a scenario override; `"micro"` uses "Price/Quantity".
  */
+/**
+ * Bridge note:
+ *
+ * The interactive Diagrams tab uses `src/components/revision/EconDiagramLibrary.tsx`
+ * as the source of truth for live diagram templates. This catalog keeps the
+ * existing predicted-paper SVG metadata, then bridges solution rendering back
+ * to that working diagram source via `EconDiagramTemplate` + `resolveDiagramType`
+ * so PDFs and on-screen mark schemes use the same live diagram family logic.
+ */
+import { EconDiagramTemplate, resolveDiagramType, type DiagramType as LibraryDiagramType } from "@/components/revision/EconDiagramLibrary";
+import type { ComponentType } from "react";
 import type { DiagramType } from "./aqa-diagram-rubric";
 
 export type DiagramMarkingTier = "macro" | "micro";
@@ -40,6 +51,11 @@ export interface AqaDiagramCatalogEntry {
   description: string;
   /** Pre-baked scenarios so different sets get different stories on the same figure. */
   scenarios: string[];
+}
+
+export interface DiagramCatalogComponentEntry extends AqaDiagramCatalogEntry {
+  Component?: ComponentType<{ scenario?: string; theme?: "dark" | "light"; className?: string }>;
+  sourceDiagramType?: LibraryDiagramType;
 }
 
 export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
