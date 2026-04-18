@@ -334,7 +334,7 @@ export function QuestionCard({
         <div className="px-4 pt-4">
           <Button
             size="sm"
-            onClick={() => onMark(canvasDataUrl || undefined)}
+            onClick={() => onMark(aqaDiagramDataUrl || canvasDataUrl || undefined)}
             disabled={isMarking || !answer.trim()}
             className="gap-1.5"
           >
