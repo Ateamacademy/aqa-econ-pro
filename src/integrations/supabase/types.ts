@@ -512,6 +512,48 @@ export type Database = {
         }
         Relationships: []
       }
+      predicted_paper_solutions: {
+        Row: {
+          created_at: string
+          has_legacy_unmapped: boolean
+          id: string
+          legacy_unmapped_ids: string[]
+          mark_scheme: Json
+          marks: number
+          paper_id: string
+          question_number: string
+          question_text: string | null
+          schema_version: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          has_legacy_unmapped?: boolean
+          id?: string
+          legacy_unmapped_ids?: string[]
+          mark_scheme?: Json
+          marks?: number
+          paper_id: string
+          question_number: string
+          question_text?: string | null
+          schema_version?: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          has_legacy_unmapped?: boolean
+          id?: string
+          legacy_unmapped_ids?: string[]
+          mark_scheme?: Json
+          marks?: number
+          paper_id?: string
+          question_number?: string
+          question_text?: string | null
+          schema_version?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string
