@@ -217,7 +217,7 @@ function ReportDialog({ open, onOpenChange, context }: ReportDialogProps) {
 
         {status === "success" ? (
           <div className="py-8 text-center space-y-3">
-            <CheckCircle2 className="h-10 w-10 mx-auto text-green-500" />
+            <CheckCircle2 className="h-10 w-10 mx-auto text-primary" />
             <div className="font-semibold">Report sent</div>
             <p className="text-sm text-muted-foreground">
               Thank you — an administrator will look into it.

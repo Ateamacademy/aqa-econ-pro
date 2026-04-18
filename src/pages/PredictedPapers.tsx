@@ -2196,6 +2196,13 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                 >
                   <Download className="h-5 w-5" /> Download PDF
                 </Button>
+                <ReportButton
+                  context={{
+                    page: `Predicted Papers → ${selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Paper ${paper}`}`,
+                    board: examBoard,
+                    paperCode: selectedLibraryPaper?.paperCode || `${examBoard} Paper ${paper}`,
+                  }}
+                />
               </div>
             </div>
 
