@@ -26,6 +26,7 @@ import {
   defaultAdAsRubric,
   defaultSdRubric,
 } from "./aqa-diagram-rubric";
+import { pickReferenceFigure } from "./aqa-diagram-catalog";
 
 export interface AqaDiagramTag {
   requiresDiagram: boolean;
@@ -33,6 +34,12 @@ export interface AqaDiagramTag {
   optional: boolean;
   diagramType: DiagramType;
   rubric: AqaDiagramRubric;
+  /** Catalog id of the read-only reference figure (if available). */
+  referenceFigureId?: string;
+  /** Per-question scenario override (e.g. "UK NHS Nursing — RCN"). */
+  referenceFigureScenario?: string;
+  /** True when no catalog entry covered this diagram type. */
+  referenceFigureMissing?: boolean;
 }
 
 const EXPLICIT_DIAGRAM_RE =
@@ -138,46 +145,53 @@ export interface TaggerInput {
   isMcq: boolean;
   /** AQA paper number — 1, 2, or 3. */
   paper: 1 | 2 | 3;
+  /** Set letter A..G (used to rotate scenarios across the library). */
+  setLabel?: string;
+}
+
+function attachReferenceFigure(
+  base: AqaDiagramTag,
+  q: TaggerInput,
+): AqaDiagramTag {
+  const pick = pickReferenceFigure({
+    diagramType: base.diagramType,
+    paperSetLabel: q.setLabel,
+    questionNumber: q.number,
+    hint: q.text,
+  });
+  if (!pick) {
+    return { ...base, referenceFigureMissing: true };
+  }
+  return {
+    ...base,
+    referenceFigureId: pick.entry.id,
+    referenceFigureScenario: pick.scenario,
+  };
 }
 
 export function tagAqaQuestion(q: TaggerInput): AqaDiagramTag | null {
-  if (q.isMcq) return null; // MCQs never require student-drawn diagrams
+  if (q.isMcq) return null;
 
   const stem = q.text;
   const diagramType = classifyDiagramType(stem);
   const explicit = EXPLICIT_DIAGRAM_RE.test(stem);
+  const base = (optional: boolean): AqaDiagramTag => ({
+    requiresDiagram: true,
+    optional,
+    diagramType,
+    rubric: buildRubric(diagramType, stem),
+  });
 
-  // Paper 1 & 2
   if (q.paper === 1 || q.paper === 2) {
-    if (q.marks === 9 && explicit) {
-      return { requiresDiagram: true, optional: false, diagramType, rubric: buildRubric(diagramType, stem) };
-    }
-    if (q.marks === 25) {
-      // Required when stem says so OR topic strongly benefits.
-      if (explicit || isDiagramFriendlyTopic(stem)) {
-        return { requiresDiagram: true, optional: false, diagramType, rubric: buildRubric(diagramType, stem) };
-      }
-    }
-    if (q.marks === 15) {
-      return { requiresDiagram: true, optional: true, diagramType, rubric: buildRubric(diagramType, stem) };
-    }
-    if (q.marks === 25 || q.marks === 20) {
-      // Section B essays — optional.
-      return { requiresDiagram: true, optional: true, diagramType, rubric: buildRubric(diagramType, stem) };
-    }
+    if (q.marks === 9 && explicit) return attachReferenceFigure(base(false), q);
+    if (q.marks === 25 && (explicit || isDiagramFriendlyTopic(stem))) return attachReferenceFigure(base(false), q);
+    if (q.marks === 15) return attachReferenceFigure(base(true), q);
+    if (q.marks === 25 || q.marks === 20) return attachReferenceFigure(base(true), q);
   }
 
-  // Paper 3
-  if (q.paper === 3) {
-    if (q.marks === 10 || q.marks === 15 || q.marks === 25) {
-      const required = explicit || (q.marks >= 15 && isDiagramFriendlyTopic(stem));
-      return {
-        requiresDiagram: true,
-        optional: !required,
-        diagramType,
-        rubric: buildRubric(diagramType, stem),
-      };
-    }
+  if (q.paper === 3 && (q.marks === 10 || q.marks === 15 || q.marks === 25)) {
+    const required = explicit || (q.marks >= 15 && isDiagramFriendlyTopic(stem));
+    return attachReferenceFigure(base(!required), q);
   }
 
   return null;

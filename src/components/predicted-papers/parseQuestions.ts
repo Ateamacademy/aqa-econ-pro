@@ -21,6 +21,12 @@ export interface ParsedQuestion {
   diagramType?: string;
   /** AQA-style rubric the marker uses. Opaque to the parser; set by the tagger. */
   diagramRubric?: unknown;
+  /** AQA reference figure id (catalog entry) for the read-only diagram panel. */
+  referenceFigureId?: string;
+  /** Per-question scenario override displayed as the figure title. */
+  referenceFigureScenario?: string;
+  /** True when no figure was found in the catalog for this question's diagram type. */
+  referenceFigureMissing?: boolean;
 }
 
 

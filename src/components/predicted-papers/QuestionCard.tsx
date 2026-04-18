@@ -15,6 +15,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { extractDiagramBlocks, EconDiagramCanvas } from "./EconDiagramSVG";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import { PredictedPaperDiagramBlock } from "./PredictedPaperDiagramBlock";
+import { ReferenceFigurePanel } from "./ReferenceFigurePanel";
 import type { AqaDiagramRubric } from "@/lib/aqa-diagram-rubric";
 
 import type { ParsedQuestion, MCQOption } from "./parseQuestions";
@@ -162,20 +163,30 @@ export function QuestionCard({
           <MathsMarkdown>{question.text}</MathsMarkdown>
         </div>
 
-        {/* Inline AQA drawing canvas — sits between question stem and answer field */}
-        {aqaDiagramRequired && !feedback && paperKey && (
-          <PredictedPaperDiagramBlock
-            questionId={question.id}
-            paperKey={paperKey}
-            required={aqaDiagramRequired}
-            optional={aqaDiagramOptional}
-            diagramType={question.diagramType}
-            rubric={question.diagramRubric as AqaDiagramRubric | undefined}
-            onChange={(dataUrl) => {
-              setAqaDiagramDataUrl(dataUrl);
-              onDiagramImageChange?.(question.id, dataUrl);
-            }}
-          />
+        {/* AQA reference figure + drawing canvas — side-by-side on lg, stacked on mobile */}
+        {(aqaDiagramRequired || question.referenceFigureId || question.referenceFigureMissing) && !feedback && paperKey && (
+          <div className="mt-3 grid grid-cols-1 lg:grid-cols-2 gap-3">
+            <ReferenceFigurePanel
+              referenceFigureId={question.referenceFigureId}
+              scenario={question.referenceFigureScenario}
+              questionLabel={question.label}
+              paperKey={paperKey}
+            />
+            {aqaDiagramRequired && (
+              <PredictedPaperDiagramBlock
+                questionId={question.id}
+                paperKey={paperKey}
+                required={aqaDiagramRequired}
+                optional={aqaDiagramOptional}
+                diagramType={question.diagramType}
+                rubric={question.diagramRubric as AqaDiagramRubric | undefined}
+                onChange={(dataUrl) => {
+                  setAqaDiagramDataUrl(dataUrl);
+                  onDiagramImageChange?.(question.id, dataUrl);
+                }}
+              />
+            )}
+          </div>
         )}
       </div>
 
