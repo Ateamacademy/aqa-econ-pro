@@ -14,6 +14,8 @@ import { cn } from "@/lib/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { extractDiagramBlocks, EconDiagramCanvas } from "./EconDiagramSVG";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
+import { PredictedPaperDiagramBlock } from "./PredictedPaperDiagramBlock";
+import type { AqaDiagramRubric } from "@/lib/aqa-diagram-rubric";
 
 import type { ParsedQuestion, MCQOption } from "./parseQuestions";
 
@@ -39,6 +41,10 @@ interface QuestionCardProps {
   showGraphPaper?: boolean;
   showGeometryTools?: boolean;
   subject?: string;
+  /** Stable key per loaded paper — used to namespace localStorage drawings. */
+  paperKey?: string;
+  /** Called when student finishes a stroke on the inline AQA canvas. */
+  onDiagramImageChange?: (questionId: string, dataUrl: string) => void;
 }
 
 export function QuestionCard({
