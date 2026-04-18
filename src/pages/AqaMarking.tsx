@@ -43,7 +43,8 @@ export default function AqaMarking() {
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [mcqChoices, setMcqChoices] = useState<Record<number, "A" | "B" | "C" | "D">>({});
   const [selfAssess, setSelfAssess] = useState<Record<number, SelfAssessment>>({});
-  const [step, setStep] = useState<"auto" | "self" | "report">("auto");
+  const [step, setStep] = useState<"auto" | "self" | "ai" | "report">("auto");
+  const ai = useAiMarking();
 
   // hydrate
   useEffect(() => {
