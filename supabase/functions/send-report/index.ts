@@ -123,7 +123,10 @@ Deno.serve(async (req) => {
   // Email via Resend (best-effort)
   const resendApiKey = Deno.env.get("RESEND_API_KEY");
   const adminEmail = Deno.env.get("ADMIN_EMAIL");
-  const fromEmail = Deno.env.get("FROM_EMAIL") ?? "onboarding@resend.dev";
+  // The "From" header always uses Resend's verified sandbox sender so delivery
+  // works without domain verification. The reporter's email (if provided) is
+  // surfaced via Reply-To and inside the email body.
+  const fromEmail = "Econ Rev Reports <onboarding@resend.dev>";
 
   if (!resendApiKey || !adminEmail) {
     // Saved but not emailed — still success from user POV
@@ -156,7 +159,7 @@ Deno.serve(async (req) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: `Econ Rev Reports <${fromEmail}>`,
+        from: fromEmail,
         to: [adminEmail],
         reply_to: userEmail || undefined,
         subject,
