@@ -3226,140 +3226,7 @@ Question 33 [25 marks]
 "A higher National Living Wage does more harm than good for the UK economy." Evaluate this statement using the case study and your own economic knowledge.`,
   },
 
-  // ── ECONOMICS PAPER 1: Set D ──
-  {
-    id: "econ-p1-d",
-    subject: "economics",
-    paper: "1",
-    title: "Paper 1 — Set D",
-    description: "Market structures, welfare analysis, cost curves, and competition policy.",
-    totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/1) — Paper 1: Markets and Market Failure — Predicted Paper Set D
-
-**Time: 2 hours | Total: 80 marks**
-
-Answer ALL questions in Section A and ONE question from Section B.
-
----
-
-## Section A: Data Response (40 marks)
-
-**Extract A — Competition policy and the UK gaming market**
-
-The UK Competition and Markets Authority initially blocked Microsoft's £55bn acquisition of Activision Blizzard in 2023, citing concerns about competition in cloud gaming. The decision was overturned only after Microsoft divested Activision's cloud-gaming rights to Ubisoft for 15 years. The UK gaming market is worth £7.8bn (2024). Three console firms — Sony, Microsoft, Nintendo — hold ~95% of the console segment, but mobile gaming, where over 3,000 indie studios compete, now generates 52% of industry revenue.
-
-**Extract B — UK gaming industry, 2019–2024**
-
-| Indicator                                | 2019 | 2021 | 2023 | 2024 |
-|------------------------------------------|------|------|------|------|
-| Industry revenue (£bn)                   | 5.7  | 7.2  | 7.5  | 7.8  |
-| Console concentration ratio CR3 (%)      | 97   | 96   | 95   | 95   |
-| Mobile gaming share of revenue (%)       | 42   | 48   | 50   | 52   |
-| Average new console-game price (£)       | 49.99| 59.99| 69.99| 69.99|
-| Number of UK indie studios               | 2,200| 2,800| 3,100| 3,400|
-
-**Extract C — Further commentary**
-
-Industry analysts argue the console segment is a tight oligopoly with high entry barriers (chip supply contracts, exclusive game catalogues, network effects), while the mobile segment is closer to a contestable market because development costs and distribution barriers are low.
-
-Question 1 [2 marks]
-Using Extract B, calculate the three-firm concentration ratio for the console market in 2024 and state what it suggests about market structure.
-
-Question 2 [4 marks]
-Using a profit-maximising monopoly diagram (with AR, MR, MC and AC), show the area of supernormal profit and the deadweight loss.
-
-Question 3 [9 marks]
-Using the extracts and your knowledge of economics, analyse two ways in which the growth of indie studios in mobile gaming may make that market more contestable.
-
-Question 4 [25 marks]
-Using the extracts and your own knowledge, evaluate the view that blocking mergers, such as the Microsoft–Activision deal, is the most effective way to protect consumer welfare.
-
----
-
-## Section B: Essay (40 marks)
-
-Answer EITHER Question 5 OR Question 6.
-
-**Short extract:**
-Some economists argue concentrated markets benefit consumers through dynamic efficiency and economies of scale, while others believe the welfare losses of monopoly outweigh these gains.
-
-Question 5 [15 marks]
-Explain, using a cost-curve diagram, why a natural monopoly may achieve productive efficiency that competing firms cannot.
-
-Question 6 [25 marks]
-"Monopoly power is always against the consumer interest." Evaluate this statement using diagrams and real-world examples.`,
-  },
-
-  // ── ECONOMICS PAPER 2: Set D ──
-  {
-    id: "econ-p2-d",
-    subject: "economics",
-    paper: "2",
-    title: "Paper 2 — Set D",
-    description: "International trade, exchange rates, balance of payments, and globalisation with AD/AS analysis.",
-    totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/2) — Paper 2: National and International Economy — Predicted Paper Set D
-
-**Time: 2 hours | Total: 80 marks**
-
-Answer ALL questions in Section A and ONE question from Section B.
-
----
-
-## Section A: Data Response (40 marks)
-
-**Extract A — China's slowdown and UK macroeconomic spillovers**
-
-China's GDP growth slowed to 4.6% in 2024, below the 5% target for the first time outside the pandemic. A property crisis (including Evergrande's collapse) wiped out an estimated $7tn of household wealth; youth unemployment hit 21%. Beijing announced a ¥1tn fiscal stimulus and cut benchmark lending rates three times. For the UK — for which China is the sixth-largest export market (£25bn) — a yuan that depreciated 8% against sterling intensified deflationary pressure on UK manufacturers.
-
-**Extract B — Comparative macro indicators, 2024**
-
-| Indicator               | UK   | China | Eurozone |
-|-------------------------|------|-------|----------|
-| GDP growth (%)          | 0.6  | 4.6   | 0.4      |
-| Inflation (%)           | 3.2  | 0.2   | 2.4      |
-| Unemployment (%)        | 4.3  | 5.1   | 6.4      |
-| Budget deficit (% GDP)  | 4.8  | 7.1   | 3.0      |
-| Current account (% GDP) | -2.8 | +1.5  | +2.3     |
-| Central bank rate (%)   | 4.75 | 3.45  | 3.75     |
-
-**Extract C — Further commentary**
-
-**Extract C — Sterling exchange rates, 2024**
-
-| Currency pair        | Jan 2024 | Jun 2024 | Dec 2024 |
-|----------------------|----------|----------|----------|
-| £/$                  | 1.27     | 1.26     | 1.25     |
-| £/€                  | 1.17     | 1.16     | 1.18     |
-| £/¥ (Chinese yuan)   | 9.05     | 9.32     | 9.78     |
-
-Question 1 [2 marks]
-Using Extract C, calculate the percentage depreciation of the Chinese yuan against the pound between January and December 2024.
-
-Question 2 [4 marks]
-Using an AD/AS diagram, explain how cheaper imports from China affect UK real output and the UK price level.
-
-Question 3 [9 marks]
-Using the extracts and your knowledge of economics, analyse two reasons why China's fiscal stimulus may fail to lift Chinese aggregate demand significantly.
-
-Question 4 [25 marks]
-Using the extracts and your own knowledge, evaluate the view that a current account surplus is always preferable to a current account deficit for a developed economy.
-
----
-
-## Section B: Essay (40 marks)
-
-Answer EITHER Question 5 OR Question 6.
-
-**Short extract:**
-Exchange-rate movements and external shocks transmit rapidly across open economies. Whether floating or fixed regimes deliver better macroeconomic stability remains contested.
-
-Question 5 [15 marks]
-Explain how a depreciation in the exchange rate may improve the current account, drawing the J-curve effect.
-
-Question 6 [25 marks]
-"Floating exchange rates provide better macroeconomic stability than fixed exchange rates for developed economies." Evaluate this statement.`,
-  },
+  // (Removed Set D entries — AQA Economics library is locked to Sets A/B/C per paper.)
 
   // ── ECONOMICS PAPER 3: Set C ──
   {
@@ -3625,4 +3492,6 @@ import { cambridgePredictedPapers } from "./cambridgePredictedPapers";
 import { ocrPredictedPapers } from "./ocrPredictedPapers";
 import { gcsePredictedPapers } from "./gcsePredictedPapers";
 import { igcsePredictedPapers } from "./igcsePredictedPapers";
-predictedPapersLibrary.push(...chemistryPredictedPapers, ...economicsPredictedPapersExtra, ...mathsPredictedPapersExtra, ...chemistryPredictedPapersExtra, ...edexcelAPredictedPapers, ...edexcelBPredictedPapers, ...cambridgePredictedPapers, ...ocrPredictedPapers, ...gcsePredictedPapers, ...igcsePredictedPapers);
+// economicsPredictedPapersExtra intentionally not spread — AQA Economics
+// predicted-paper library is locked to 9 papers (Paper 1/2/3 × Sets A/B/C).
+predictedPapersLibrary.push(...chemistryPredictedPapers, ...mathsPredictedPapersExtra, ...chemistryPredictedPapersExtra, ...edexcelAPredictedPapers, ...edexcelBPredictedPapers, ...cambridgePredictedPapers, ...ocrPredictedPapers, ...gcsePredictedPapers, ...igcsePredictedPapers);
