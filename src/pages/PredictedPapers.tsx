@@ -1361,10 +1361,13 @@ export default function PredictedPapers() {
     return true;
   };
 
-  function parsePredictedPaperContent(rawContent: string, paperNumber?: string) {
+  function parsePredictedPaperContent(rawContent: string, paperNumber?: string, opts?: { trusted?: boolean }) {
     const parsed = parseQuestions(rawContent);
 
-    if (subject === "economics" && !isValidAqaPaperStructure(parsed.questions, paperNumber)) {
+    // Trusted (library-authored) papers bypass the strict generator structure validator —
+    // they are hand-curated and use the real AQA "choose-one-essay" format which doesn't
+    // match the deterministic shape the generator must produce.
+    if (!opts?.trusted && subject === "economics" && !isValidAqaPaperStructure(parsed.questions, paperNumber)) {
       const expected =
         paperNumber === "3"
           ? "30 × 1-mark MCQs + 10/15/25"
@@ -1377,7 +1380,7 @@ export default function PredictedPapers() {
   }
 
   function openLibraryPaper(lp: PredictedPaper) {
-    const parsed = parsePredictedPaperContent(lp.content, lp.paper);
+    const parsed = parsePredictedPaperContent(lp.content, lp.paper, { trusted: true });
     if (!parsed) return;
 
     setSelectedLibraryPaper(lp);
