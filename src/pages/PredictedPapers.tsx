@@ -2201,7 +2201,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                   context={{
                     page: `Predicted Papers → ${selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Paper ${paper}`}`,
                     board: examBoard,
-                    paperCode: selectedLibraryPaper?.paperCode || `${examBoard} Paper ${paper}`,
+                    paperCode: `${examBoard} Paper ${paper}`,
                   }}
                 />
               </div>
