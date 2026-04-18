@@ -1893,6 +1893,87 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
     [answers, paperContext, feedbacks, subscribed, used, user?.id, refreshProfile, subject, tier, isMaths]
   );
 
+  const handleDownloadSolutions = useCallback(async () => {
+    if (parsedQuestions.length === 0) {
+      toast.error("No questions to generate solutions for.");
+      return;
+    }
+    if (solutionLoading) return;
+
+    setSolutionLoading(true);
+    setSolutionProgress({ done: 0, total: parsedQuestions.length });
+    toast.info(`Generating solutions for ${parsedQuestions.length} questions… this can take a minute.`);
+
+    const entries: SolutionEntry[] = [];
+
+    try {
+      for (let i = 0; i < parsedQuestions.length; i++) {
+        const q = parsedQuestions[i];
+
+        const prompt = `You are a senior ${examBoard} ${level} ${subjectLabel} examiner writing the OFFICIAL mark scheme and a top-band model answer for a predicted paper.
+
+PAPER CONTEXT (extracts / figures the question may reference):
+${paperContext || "(no paper-level extracts)"}
+
+QUESTION:
+${q.label} [${q.marks} marks]
+${q.text}
+
+Produce the response in EXACTLY this structure (use these exact headings, no extras):
+
+## Mark Scheme
+A clear, examiner-style breakdown of how the ${q.marks} marks are awarded. Use the appropriate AO framework (Knowledge / Application / Analysis / Evaluation for essays; level-of-response bands where relevant). List the specific points a candidate must make to access each mark. Be concise and exam-board accurate.
+
+## Model Answer
+A full top-band answer that would score full marks. Write it as a candidate would, in continuous prose where appropriate. For diagram questions, describe the diagram fully (axes, curves, shifts, equilibria, shaded areas) in words. Use real economic theory and refer to the paper context where the question demands it.
+
+## Examiner Tip
+2–3 short, actionable tips on technique that distinguish a top-band answer from a mid-band one for this specific question.
+
+Do NOT include any other headings, preamble, or commentary outside these three sections.`;
+
+        let raw = "";
+        await streamChat({
+          messages: [{ role: "user", content: prompt }],
+          mode: "grade",
+          subject,
+          onDelta: (chunk) => { raw += chunk; },
+          onDone: () => {},
+          onError: (err) => { throw new Error(err); },
+        });
+
+        const msMatch = raw.match(/##\s*Mark Scheme\s*([\s\S]*?)(?=##\s*Model Answer|$)/i);
+        const maMatch = raw.match(/##\s*Model Answer\s*([\s\S]*?)(?=##\s*Examiner Tip|$)/i);
+        const tipMatch = raw.match(/##\s*Examiner Tip\s*([\s\S]*?)$/i);
+
+        entries.push({
+          label: q.label,
+          marks: q.marks,
+          questionText: q.text,
+          markScheme: msMatch?.[1]?.trim() || raw.trim() || "(no mark scheme returned)",
+          modelAnswer: maMatch?.[1]?.trim() || "",
+          examinerTip: tipMatch?.[1]?.trim() || "",
+        });
+
+        setSolutionProgress({ done: i + 1, total: parsedQuestions.length });
+      }
+
+      const paperTitle = selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`;
+      generateSolutionPdf(paperTitle, entries, {
+        subject: subjectLabel,
+        examBoard,
+        level,
+        tier: (isMaths || isChemistry) ? tier : undefined,
+      });
+      toast.success("Solution PDF downloaded!");
+    } catch (e: any) {
+      toast.error(e?.message || "Failed to generate solutions.");
+    } finally {
+      setSolutionLoading(false);
+      setSolutionProgress({ done: 0, total: 0 });
+    }
+  }, [parsedQuestions, paperContext, examBoard, level, subjectLabel, paper, selectedLibraryPaper, subject, tier, isMaths, isChemistry, solutionLoading]);
+
   const reset = () => {
     setStep("select");
     setGeneratedPaper("");
