@@ -418,8 +418,7 @@ ${lineNumber(ext.body)}
 
 function buildPaper(set: AqaPaper1OverrideSet): string {
   const c1 = set.c1;
-  const c2 = set.c2;
-  const [e1, e2, e3] = set.essays;
+  const [e1] = set.essays;
 
   return `# AQA A-Level Economics (7136) — Paper 1: Markets and Market Failure — ${set.setLabel}
 
@@ -429,10 +428,9 @@ function buildPaper(set: AqaPaper1OverrideSet): string {
 
 ## Section A — Data response (40 marks)
 
-### Context 1 — ${c1.title}
-*Total for this Context: 40 marks*
+### ${c1.title}
 
-Study Extracts A, B and C and then answer all parts of Context 1 which follow.
+Study Extracts A, B and C and then answer all parts which follow.
 
 ### Extract A
 ${c1.extractA}
@@ -455,80 +453,27 @@ ${c1.q04}
 
 ---
 
-### Context 2 — ${c2.title}
-*Total for this Context: 40 marks — answer EITHER Context 1 OR Context 2*
-
-Study Extracts D, E and F and then answer all parts of Context 2 which follow.
-
-### Extract D
-${c2.extractD}
-
-${renderExtract("E", c2.extractE)}
-
-${renderExtract("F", c2.extractF)}
-
-Question 05 [2 marks]
-${c2.q05}
-
-Question 06 [4 marks]
-${c2.q06}
-
-Question 07 [9 marks]
-${c2.q07}${figureMd(c2.q07Diagram)}
-
-Question 08 [25 marks]
-${c2.q08}
-
----
-
 ## Section B — Essay (40 marks)
 
-**Choose ONE of the following three essays. Answer BOTH parts (a) and (b) of the essay you choose.**
+You are advised to spend 1 hour on this section. Answer BOTH parts.
 
-You are advised to spend 1 hour on this section.
-
----
-
-### Essay 1
 ${e1.stimulus}
 
-Question 09 [15 marks]
+Question 05 [15 marks]
 ${e1.explain}${figureMd(e1.diagram)}
 
-Question 10 [25 marks]
-${e1.evaluate}
-
----
-
-### Essay 2
-${e2.stimulus}
-
-Question 11 [15 marks]
-${e2.explain}${figureMd(e2.diagram)}
-
-Question 12 [25 marks]
-${e2.evaluate}
-
----
-
-### Essay 3
-${e3.stimulus}
-
-Question 13 [15 marks]
-${e3.explain}${figureMd(e3.diagram)}
-
-Question 14 [25 marks]
-${e3.evaluate}`;
+Question 06 [25 marks]
+${e1.evaluate}`;
 }
 
 function buildMarkScheme(set: AqaPaper1OverrideSet): string {
   const c1 = set.c1;
-  const c2 = set.c2;
+  const [e1] = set.essays;
   const sections: string[] = [
     `# AQA A-Level Economics (7136/1) — Mark Scheme — ${set.setLabel}`,
-    `**Total: 80 marks** | Section A: data response (40 marks, answer EITHER Context 1 OR Context 2). Section B: answer ONE of three essays (40 marks).`,
+    `**Total: 80 marks** | Section A: data response (40 marks, Q01–Q04). Section B: essay (40 marks, Q05–Q06).`,
     `---`,
-    `## Section A — Context 1 (Q01–Q04)`,
+    `## Section A — Data response (Q01–Q04)`,
     renderPointMark({
       questionLabel: "0\u20091",
       totalMarks: 2,
@@ -571,72 +516,19 @@ function buildMarkScheme(set: AqaPaper1OverrideSet): string {
       ],
     }),
     `---`,
-    `## Section A — Context 2 (Q05–Q08)`,
-    renderPointMark({
+    `## Section B — Essay (Q05–Q06)`,
+    renderLevelMark({
       questionLabel: "0\u20095",
-      totalMarks: 2,
-      expectedAnswer: `${c2.q05Answer} (working: ${c2.q05Hint}).`,
-      markPoints: [
-        { description: `Correct answer (${c2.q05Answer}) with correct sign and units`, marks: 2 },
-        { description: "Correct method but wrong final answer", marks: 1 },
-      ],
+      totalMarks: 15,
+      diagram: e1.diagram,
+      indicativeContent: e1.explainContent,
     }),
-    renderPointMark({
+    renderLevelMark({
       questionLabel: "0\u20096",
-      totalMarks: 4,
-      expectedAnswer: "Two explained data references from Extract D.",
-      markPoints: [
-        { description: "Identifies a relevant data point from Extract D", marks: 1 },
-        { description: "Develops the data point with linked reasoning", marks: 1 },
-        { description: "Identifies a second relevant data point", marks: 1 },
-        { description: "Develops the second point with linked reasoning", marks: 1 },
-      ],
-    }),
-    renderLevelMark({
-      questionLabel: "0\u20097",
-      totalMarks: 9,
-      diagram: c2.q07Diagram,
-      indicativeContent: [
-        "K: definitions relevant to Context 2 (e.g. natural monopoly, contestability, externalities).",
-        "App: explicit reference to Extract E data.",
-        "An: developed chain from market structure to outcomes.",
-        "Diagram: clearly labelled axes, curves, equilibrium points.",
-      ],
-    }),
-    renderLevelMark({
-      questionLabel: "0\u20098",
       totalMarks: 25,
-      indicativeContent: [
-        "K: definitions of intervention tools relevant to Context 2.",
-        "App: sustained reference to Extracts D–F and the data.",
-        "An: rigorous chains of reasoning for each policy option.",
-        "E: balanced counter-arguments and supported judgement.",
-      ],
+      indicativeContent: e1.evaluateContent,
     }),
-    `---`,
-    `## Section B — Essay (answer ONE of Essays 1, 2 or 3)`,
   ];
-
-  set.essays.forEach((essay, i) => {
-    const explainNum = String(9 + i * 2).padStart(2, "0");
-    const evaluateNum = String(10 + i * 2).padStart(2, "0");
-    sections.push(`### Essay ${i + 1}`);
-    sections.push(
-      renderLevelMark({
-        questionLabel: explainNum.replace(/(\d)(\d)/, "$1\u2009$2"),
-        totalMarks: 15,
-        diagram: essay.diagram,
-        indicativeContent: essay.explainContent,
-      }),
-    );
-    sections.push(
-      renderLevelMark({
-        questionLabel: evaluateNum.replace(/(\d)(\d)/, "$1\u2009$2"),
-        totalMarks: 25,
-        indicativeContent: essay.evaluateContent,
-      }),
-    );
-  });
 
   return sections.join("\n\n");
 }
