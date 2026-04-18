@@ -425,7 +425,7 @@ export default function AqaMarking() {
                     prompt: q.prompt,
                   },
                   studentAnswer: answers[q.number] ?? "",
-                  diagramData: { hasDiagram: true, rubricSummary: rubricFor(q.number).title ?? "diagram rubric" },
+                  diagramData: { hasDiagram: true, rubricSummary: "diagram rubric" },
                 }));
 
               return (
