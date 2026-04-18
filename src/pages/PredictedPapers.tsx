@@ -1992,6 +1992,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
           markScheme: msMatch?.[1]?.trim() || raw.trim() || "(no mark scheme returned)",
           modelAnswer: maMatch?.[1]?.trim() || "",
           examinerTip: tipMatch?.[1]?.trim() || "",
+          figuresMarkdown: figuresForQuestion(q.text),
         });
 
         setSolutionProgress({ done: i + 1, total: parsedQuestions.length });
