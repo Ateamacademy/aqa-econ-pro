@@ -515,6 +515,48 @@ export type Database = {
         }
         Relationships: []
       }
+      reports: {
+        Row: {
+          board: string | null
+          category: string
+          created_at: string
+          description: string
+          id: string
+          page: string
+          paper_code: string | null
+          question_number: string | null
+          session_id: string
+          status: string
+          user_email: string | null
+        }
+        Insert: {
+          board?: string | null
+          category: string
+          created_at?: string
+          description: string
+          id?: string
+          page: string
+          paper_code?: string | null
+          question_number?: string | null
+          session_id: string
+          status?: string
+          user_email?: string | null
+        }
+        Update: {
+          board?: string | null
+          category?: string
+          created_at?: string
+          description?: string
+          id?: string
+          page?: string
+          paper_code?: string | null
+          question_number?: string | null
+          session_id?: string
+          status?: string
+          user_email?: string | null
+        }
+        Relationships: []
+      }
       suppressed_emails: {
         Row: {
           created_at: string
