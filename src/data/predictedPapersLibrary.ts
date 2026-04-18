@@ -442,52 +442,59 @@ A shop buys a phone for £120 and sells it for £156. Calculate the percentage p
     title: "Paper 1 — Set A",
     description: "Markets and Market Failure. Data response and essay questions.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics — Paper 1: Markets and Market Failure — Predicted Paper Set A
+    content: `# AQA A-Level Economics (7136/1) — Paper 1: Markets and Market Failure — Predicted Paper Set A
 
 **Time: 2 hours | Total: 80 marks**
 
+Answer ALL questions in Section A and ONE question from Section B.
+
 ---
 
-## Section A: Data Response
+## Section A: Data Response (40 marks)
 
-**Context / Extract A:**
+**Extract A — The UK sugar tax debate**
 
-The UK government announced in 2024 that it would introduce a sugar tax on milkshakes and other high-sugar drinks not previously covered by the Soft Drinks Industry Levy (SDIL). Public Health England estimates that excess sugar consumption costs the NHS approximately £6 billion per year. Industry groups argue that the tax disproportionately affects lower-income households. Meanwhile, reformulated drinks that reduced sugar content below the levy thresholds accounted for over 50% of soft drink sales by volume in 2023.
+The UK government announced in 2024 that it would extend the Soft Drinks Industry Levy (SDIL) to milkshakes and other previously exempt high-sugar drinks. Public Health England estimates that excess sugar consumption costs the NHS approximately £6 billion per year. Reformulated drinks that reduced sugar content below the levy thresholds accounted for over 50% of soft drink sales by volume in 2023. Industry groups argue the tax is regressive and disproportionately affects lower-income households, while public-health campaigners describe the levy as one of the most successful examples of behavioural government intervention.
 
-**Extract B — Data:**
+**Extract B — Sugar consumption and SDIL revenue, 2018–2024**
 
-| Year | Sugary drink consumption (litres per capita) | Obesity rate (%) | SDIL revenue (£m) |
-|------|----------------------------------------------|------------------|--------------------|
+| Year | Sugary drink consumption (litres per capita) | Adult obesity rate (%) | SDIL revenue (£m) |
+|------|----------------------------------------------|------------------------|--------------------|
 | 2018 | 78.4 | 28.7 | 240 |
 | 2020 | 65.1 | 29.0 | 336 |
 | 2022 | 58.3 | 28.5 | 380 |
 | 2024 | 52.7 | 27.8 | 415 |
 
-Question 1.1 [2 marks]
+**Extract C — Distributional impact**
+
+A 2024 IFS study found that households in the lowest income decile spent 0.7% of disposable income on SDIL-affected products, compared with 0.2% for the highest decile. Critics therefore describe the levy as regressive in incidence, although supporters argue the long-run health gains accrue disproportionately to lower-income groups, who suffer the highest rates of diet-related disease.
+
+Question 1 [2 marks]
 Using Extract B, calculate the percentage change in sugary drink consumption between 2018 and 2024.
 
-Question 1.2 [4 marks]
-Using a supply and demand diagram, explain how the introduction of a sugar tax would affect the market for sugary drinks.
+Question 2 [4 marks]
+Using a supply and demand diagram, explain how the introduction of the sugar tax affects the market for high-sugar soft drinks.
 
-Question 1.3 [9 marks]
-Using the data and your economic knowledge, explain why the sugar tax might be considered an example of government intervention to correct market failure.
+Question 3 [9 marks]
+Using the extracts and your knowledge of economics, analyse why the sugar tax may be considered an example of government intervention to correct market failure.
 
-Question 1.4 [25 marks]
-Evaluate the view that indirect taxes are the most effective way to reduce the consumption of demerit goods. Refer to the information provided and your own knowledge of economics.
+Question 4 [25 marks]
+Using the extracts and your own knowledge, evaluate the view that indirect taxes are the most effective way to reduce consumption of demerit goods.
 
 ---
 
-## Section B: Essay Questions (choose one)
+## Section B: Essay (40 marks)
 
-**Either**
+Answer EITHER Question 5 OR Question 6.
 
-Question 2 [25 marks]
-"Free markets always lead to an efficient allocation of resources." Evaluate this statement.
+**Short extract:**
+Critics of unregulated markets argue that profit-seeking firms systematically under-provide public goods, over-exploit common resources and ignore negative externalities. Supporters reply that competition, the price mechanism and consumer sovereignty deliver superior outcomes to those produced by government intervention.
 
-**Or**
+Question 5 [15 marks]
+Explain how the existence of negative externalities and public goods can lead to market failure.
 
-Question 3 [25 marks]
-Evaluate the extent to which government subsidy of public transport is justified on economic grounds.`,
+Question 6 [25 marks]
+"Free markets always lead to an efficient allocation of resources." Evaluate this statement with reference to real-world examples.`,
   },
 
   // ── ECONOMICS PAPER 2 ──
