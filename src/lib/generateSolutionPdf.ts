@@ -379,7 +379,38 @@ function drawSectionHeader(doc: jsPDF, y: number, label: string, color: [number,
   return y + 5;
 }
 
-function drawQuestion(doc: jsPDF, entry: SolutionEntry, y: number): number {
+function drawDiagramImage(doc: jsPDF, diagram: ResolvedDiagram, y: number): number {
+  const { pageW } = pageWH(doc);
+  const maxW = pageW - MARGIN_L - MARGIN_R;
+  // Convert px aspect ratio to mm. Cap width at 140mm so it sits nicely on A4.
+  const widthMm = Math.min(maxW, 140);
+  const aspect = diagram.heightPx / diagram.widthPx || 0.7;
+  const heightMm = Math.min(120, widthMm * aspect);
+  // Caption + image needs ~heightMm + 10
+  y = ensureSpace(doc, y, heightMm + 12);
+  // Centre horizontally
+  const x = MARGIN_L + (maxW - widthMm) / 2;
+  try {
+    doc.addImage(diagram.pngDataUrl, "PNG", x, y, widthMm, heightMm, undefined, "FAST");
+  } catch (err) {
+    if (import.meta.env.DEV) console.warn("[generateSolutionPdf] addImage failed", diagram.catalogId, err);
+    return y;
+  }
+  y += heightMm + 2;
+  doc.setFont("helvetica", "italic");
+  doc.setFontSize(8.5);
+  doc.setTextColor(110, 110, 110);
+  doc.text(`Reference diagram: ${diagram.title}`, pageW / 2, y + 3, { align: "center" });
+  doc.setTextColor(30, 30, 30);
+  return y + 8;
+}
+
+function drawQuestion(
+  doc: jsPDF,
+  entry: SolutionEntry,
+  diagrams: ResolvedDiagram[],
+  y: number,
+): number {
   const { pageW } = pageWH(doc);
   const maxW = pageW - MARGIN_L - MARGIN_R;
 
@@ -413,12 +444,24 @@ function drawQuestion(doc: jsPDF, entry: SolutionEntry, y: number): number {
     y += 2;
   }
 
-  // Mark Scheme
+  // Embedded reference diagram(s)
+  for (const d of diagrams) {
+    y = drawDiagramImage(doc, d, y);
+  }
+
+  // Mark Scheme — strip placeholder lines so raw "Diagram: tax_incidence" never shows
   y = drawSectionHeader(doc, y, "Mark Scheme", [37, 99, 235]);
   doc.setFont("helvetica", "normal");
   doc.setFontSize(10);
   doc.setTextColor(30, 30, 30);
-  y = writeWrapped(doc, clean(entry.markScheme) || "(no mark scheme generated)", MARGIN_L, y, maxW, 5);
+  y = writeWrapped(
+    doc,
+    stripDiagramPlaceholders(clean(entry.markScheme)) || "(no mark scheme generated)",
+    MARGIN_L,
+    y,
+    maxW,
+    5,
+  );
   y += 4;
 
   // Model Answer
@@ -427,7 +470,7 @@ function drawQuestion(doc: jsPDF, entry: SolutionEntry, y: number): number {
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
     doc.setTextColor(30, 30, 30);
-    y = writeWrapped(doc, clean(entry.modelAnswer), MARGIN_L, y, maxW, 5);
+    y = writeWrapped(doc, stripDiagramPlaceholders(clean(entry.modelAnswer)), MARGIN_L, y, maxW, 5);
     y += 4;
   }
 
@@ -453,7 +496,7 @@ function drawQuestion(doc: jsPDF, entry: SolutionEntry, y: number): number {
 
 // ─── Main Export ────────────────────────────────────────────────────
 
-export function generateSolutionPdf(
+export async function generateSolutionPdf(
   title: string,
   entries: SolutionEntry[],
   meta?: { subject?: string; examBoard?: string; level?: string; tier?: string },
@@ -480,6 +523,17 @@ export function generateSolutionPdf(
     totalMarks: entries.reduce((s, e) => s + (e.marks || 0), 0),
   };
 
+  // Pre-resolve diagrams for every question BEFORE drawing so jsPDF stays sync.
+  const diagramsByEntry: ResolvedDiagram[][] = [];
+  for (const entry of entries) {
+    try {
+      diagramsByEntry.push(await resolveEntryDiagrams(entry));
+    } catch (err) {
+      if (import.meta.env.DEV) console.warn("[generateSolutionPdf] diagram resolve failed", entry.label, err);
+      diagramsByEntry.push([]);
+    }
+  }
+
   // Cover
   drawCover(doc, fullMeta);
 
@@ -503,8 +557,8 @@ export function generateSolutionPdf(
   );
   y += 8;
 
-  for (const entry of entries) {
-    y = drawQuestion(doc, entry, y);
+  for (let i = 0; i < entries.length; i++) {
+    y = drawQuestion(doc, entries[i], diagramsByEntry[i] ?? [], y);
   }
 
   drawFooters(doc, fullMeta);
