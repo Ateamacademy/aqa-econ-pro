@@ -1502,7 +1502,7 @@ CRITICAL: Do NOT place economics diagram Figure blocks (supply & demand, AD/AS, 
       onDelta: (chunk) => { result += chunk; setGeneratedPaper(result); },
       onDone: () => {
         setIsGenerating(false);
-        const parsed = parsePredictedPaperContent(result, null, paper);
+        const parsed = parsePredictedPaperContent(result, paper);
         if (!parsed) return;
         setPaperContext(parsed.context);
         setParsedQuestions(parsed.questions);

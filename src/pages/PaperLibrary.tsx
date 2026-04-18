@@ -133,6 +133,7 @@ export default function PaperLibrary() {
     setSubject(p.subject);
     const params = new URLSearchParams({
       paper: p.paper,
+      paperId: p.id,
       difficulty: p.difficulty,
       set: String(p.set),
       fromLibrary: "1",
