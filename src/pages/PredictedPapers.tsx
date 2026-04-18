@@ -57,6 +57,22 @@ const EXAM_DURATIONS: Record<string, Record<string, number>> = {
   "ocr-gcse":       { "1": 75,  "2": 75,  full: 75 },
 };
 
+// Display-only mapping: rename Set A/B/C to Moderate/Hard/Advanced for predicted papers.
+// Underlying paper IDs and data structures keep the Set A/B/C convention so routing,
+// sorting, and library lookups continue to work unchanged.
+const SET_LABEL_DISPLAY_MAP: Record<string, string> = {
+  A: "Moderate",
+  B: "Hard",
+  C: "Advanced",
+};
+
+function displayPaperTitle(title: string): string {
+  return title.replace(/Set\s+([A-Z])\b/gi, (match, letter: string) => {
+    const mapped = SET_LABEL_DISPLAY_MAP[letter.toUpperCase()];
+    return mapped ?? match;
+  });
+}
+
 type QuestionFeedback = {
   markScheme: string;
   modelAnswer: string;
