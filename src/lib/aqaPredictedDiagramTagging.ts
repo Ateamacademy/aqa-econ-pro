@@ -169,6 +169,21 @@ function attachReferenceFigure(
   };
 }
 
+/**
+ * Tagging policy for AQA reference figures.
+ *
+ * Reference figures are PRE-SUPPLIED, read-only diagrams that frame the
+ * question (the student reasons FROM them). They must NEVER be attached to
+ * essays where the student is expected to choose and draw their own diagram
+ * — doing so leaks the answer.
+ *
+ * AQA convention used here:
+ *  - Paper 1/2 Section A 9-mark "with the help of a diagram" → reference figure.
+ *  - Paper 1/2 Section B 25-mark essays → student-drawn only, NO reference figure.
+ *  - Paper 1/2 15-mark data-response → student-drawn only, NO reference figure.
+ *  - Paper 3 case-study questions → reference figure only when stem explicitly
+ *    says "Figure X" / "with the help of a diagram"; otherwise student-drawn only.
+ */
 export function tagAqaQuestion(q: TaggerInput): AqaDiagramTag | null {
   if (q.isMcq) return null;
 
@@ -181,17 +196,32 @@ export function tagAqaQuestion(q: TaggerInput): AqaDiagramTag | null {
     diagramType,
     rubric: buildRubric(diagramType, stem),
   });
+  // Student-drawn only: requires a canvas but never a pre-supplied figure.
+  const studentDrawnOnly = (optional: boolean): AqaDiagramTag => ({
+    ...base(optional),
+    referenceFigureMissing: false,
+  });
 
   if (q.paper === 1 || q.paper === 2) {
+    // Section A 9-mark — only when stem explicitly asks for a diagram.
     if (q.marks === 9 && explicit) return attachReferenceFigure(base(false), q);
-    if (q.marks === 25 && (explicit || isDiagramFriendlyTopic(stem))) return attachReferenceFigure(base(false), q);
-    if (q.marks === 15) return attachReferenceFigure(base(true), q);
-    if (q.marks === 25 || q.marks === 20) return attachReferenceFigure(base(true), q);
+    // Section A 15-mark data response — student-drawn, no pre-supplied figure.
+    if (q.marks === 15) return studentDrawnOnly(true);
+    // Section B 25-mark essays — student-drawn, no pre-supplied figure.
+    // Diagram-friendly topics still get a canvas (optional), but NEVER a reference figure.
+    if (q.marks === 25 || q.marks === 20) {
+      const optional = !isDiagramFriendlyTopic(stem);
+      return studentDrawnOnly(optional);
+    }
   }
 
   if (q.paper === 3 && (q.marks === 10 || q.marks === 15 || q.marks === 25)) {
-    const required = explicit || (q.marks >= 15 && isDiagramFriendlyTopic(stem));
-    return attachReferenceFigure(base(!required), q);
+    // Paper 3 only gets a reference figure when the stem explicitly cites one
+    // (e.g. "Figure 1 shows…", "with the help of a diagram"). Otherwise the
+    // student draws their own — diagram-friendly topics make the canvas required.
+    if (explicit) return attachReferenceFigure(base(false), q);
+    const required = q.marks >= 15 && isDiagramFriendlyTopic(stem);
+    return studentDrawnOnly(!required);
   }
 
   return null;
