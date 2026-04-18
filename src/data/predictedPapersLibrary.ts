@@ -3226,9 +3226,8 @@ Question 33 [25 marks]
 "A higher National Living Wage does more harm than good for the UK economy." Evaluate this statement using the case study and your own economic knowledge.`,
   },
 
-  // ── ECONOMICS PAPER 1: Set D ──
-  {
-    id: "econ-p1-d",
+  // (Removed Set D entries — AQA Economics library is locked to Sets A/B/C per paper.)
+
     subject: "economics",
     paper: "1",
     title: "Paper 1 — Set D",
