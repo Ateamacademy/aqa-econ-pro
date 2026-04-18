@@ -2360,6 +2360,24 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                 >
                   <Download className="h-5 w-5" /> Download PDF
                 </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="gap-2.5 rounded-full"
+                  onClick={handleDownloadSolutions}
+                  disabled={solutionLoading || parsedQuestions.length === 0}
+                >
+                  {solutionLoading ? (
+                    <>
+                      <Loader2 className="h-5 w-5 animate-spin" />
+                      Building solutions… {solutionProgress.done}/{solutionProgress.total}
+                    </>
+                  ) : (
+                    <>
+                      <ClipboardCheck className="h-5 w-5" /> Download Solution PDF
+                    </>
+                  )}
+                </Button>
                 <ReportButton
                   context={{
                     page: `Predicted Papers → ${selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Paper ${paper}`}`,
