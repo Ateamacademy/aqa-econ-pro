@@ -308,6 +308,30 @@ export type Database = {
         }
         Relationships: []
       }
+      fingerprint_whitelist: {
+        Row: {
+          created_at: string
+          fingerprint_a_id: string
+          fingerprint_b_id: string
+          id: string
+          reason: string | null
+        }
+        Insert: {
+          created_at?: string
+          fingerprint_a_id: string
+          fingerprint_b_id: string
+          id?: string
+          reason?: string | null
+        }
+        Update: {
+          created_at?: string
+          fingerprint_a_id?: string
+          fingerprint_b_id?: string
+          id?: string
+          reason?: string | null
+        }
+        Relationships: []
+      }
       friendships: {
         Row: {
           addressee_id: string
@@ -512,6 +536,60 @@ export type Database = {
           tags?: string[]
           topic?: string
           year?: string | null
+        }
+        Relationships: []
+      }
+      question_fingerprints: {
+        Row: {
+          created_at: string
+          id: string
+          marks: number
+          mcq_answer_value: string | null
+          mcq_concept: string | null
+          normalised_text: string
+          paper_code: string
+          paper_id: string | null
+          question_number: string
+          scenario_key: string | null
+          section: string
+          semantic_core: string
+          set_label: string
+          token_set: string[]
+          whitelisted_pair_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          marks: number
+          mcq_answer_value?: string | null
+          mcq_concept?: string | null
+          normalised_text: string
+          paper_code: string
+          paper_id?: string | null
+          question_number: string
+          scenario_key?: string | null
+          section: string
+          semantic_core: string
+          set_label: string
+          token_set?: string[]
+          whitelisted_pair_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          marks?: number
+          mcq_answer_value?: string | null
+          mcq_concept?: string | null
+          normalised_text?: string
+          paper_code?: string
+          paper_id?: string | null
+          question_number?: string
+          scenario_key?: string | null
+          section?: string
+          semantic_core?: string
+          set_label?: string
+          token_set?: string[]
+          whitelisted_pair_id?: string | null
         }
         Relationships: []
       }
