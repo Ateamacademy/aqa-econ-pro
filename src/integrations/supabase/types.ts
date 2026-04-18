@@ -458,6 +458,45 @@ export type Database = {
         }
         Relationships: []
       }
+      pdf_diagram_failures: {
+        Row: {
+          context: Json
+          created_at: string
+          debug_enabled: boolean
+          diagram_id: string | null
+          failure_kind: string
+          failure_message: string | null
+          id: string
+          paper_id: string
+          question_number: string | null
+          user_id: string
+        }
+        Insert: {
+          context?: Json
+          created_at?: string
+          debug_enabled?: boolean
+          diagram_id?: string | null
+          failure_kind: string
+          failure_message?: string | null
+          id?: string
+          paper_id: string
+          question_number?: string | null
+          user_id: string
+        }
+        Update: {
+          context?: Json
+          created_at?: string
+          debug_enabled?: boolean
+          diagram_id?: string | null
+          failure_kind?: string
+          failure_message?: string | null
+          id?: string
+          paper_id?: string
+          question_number?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       practice_sessions: {
         Row: {
           created_at: string | null
@@ -515,11 +554,13 @@ export type Database = {
       predicted_paper_solutions: {
         Row: {
           created_at: string
+          generated_by_user_id: string | null
           has_legacy_unmapped: boolean
           id: string
           legacy_unmapped_ids: string[]
           mark_scheme: Json
           marks: number
+          migration_debug: Json
           paper_id: string
           question_number: string
           question_text: string | null
@@ -528,11 +569,13 @@ export type Database = {
         }
         Insert: {
           created_at?: string
+          generated_by_user_id?: string | null
           has_legacy_unmapped?: boolean
           id?: string
           legacy_unmapped_ids?: string[]
           mark_scheme?: Json
           marks?: number
+          migration_debug?: Json
           paper_id: string
           question_number: string
           question_text?: string | null
@@ -541,11 +584,13 @@ export type Database = {
         }
         Update: {
           created_at?: string
+          generated_by_user_id?: string | null
           has_legacy_unmapped?: boolean
           id?: string
           legacy_unmapped_ids?: string[]
           mark_scheme?: Json
           marks?: number
+          migration_debug?: Json
           paper_id?: string
           question_number?: string
           question_text?: string | null
