@@ -82,12 +82,14 @@ export function ReferenceFigurePanel({
             </p>
             <div className="flex flex-wrap gap-2 mt-2.5">
               <ReportButton
-                page="predicted-papers"
-                category="missing_figure"
-                board="aqa"
-                paperCode={paperKey}
-                questionNumber={questionLabel}
-                description="Reference figure missing for this AQA predicted-paper question."
+                context={{
+                  page: "predicted-papers",
+                  board: "aqa",
+                  paperCode: paperKey,
+                  questionNumber: questionLabel,
+                }}
+                variant="outline"
+                size="sm"
               />
               <Link
                 to="/diagram-library"
