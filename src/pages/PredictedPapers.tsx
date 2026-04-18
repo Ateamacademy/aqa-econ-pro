@@ -1788,17 +1788,34 @@ Give 2-3 specific, actionable tips. For diagram questions:
 Address me directly. Be encouraging but honest about where I lost marks.`;
         })();
 
-      const isDiagramQ = /\b(diagram|draw|sketch)\b/i.test(question.text.toLowerCase()) && /\b(with the (help|aid) of|using|draw|sketch)\b/i.test(question.text.toLowerCase());
+      // AQA-tagged diagram questions force the Smart Mark path even when the
+      // legacy regex misses them (e.g. "Analyse using an AD/AS framework").
+      const isDiagramQ =
+        !!question.requiresDiagram ||
+        (/\b(diagram|draw|sketch)\b/i.test(question.text.toLowerCase()) &&
+          /\b(with the (help|aid) of|using|draw|sketch)\b/i.test(question.text.toLowerCase()));
 
       let result = "";
 
-      // Build multimodal message if diagram image is provided
+      // When an AQA rubric is attached, surface the examiner's expected diagram
+      // verbatim so the marker grades against AQA's mark-scheme convention.
+      const rubric = question.diagramRubric as { primaryExpected?: string; requiredLabels?: string[] } | undefined;
+      const aqaRubricBlock = rubric
+        ? `\n\n[AQA EXPECTED DIAGRAM]\nPrimary expected: ${rubric.primaryExpected ?? "(none)"}\nRequired labels on canvas: ${(rubric.requiredLabels ?? []).join(", ") || "(none specified)"}\nMark holistically against AQA's level-of-response framework. Recommend a Level (L1–L4) — do NOT output 'X/Y' style numerical fractions.`
+        : "";
+
       const messageContent: any = diagramImage
         ? [
-            { type: "text", text: markingPrompt + "\n\n[The student has drawn a diagram — see the attached image. Apply the DIAGRAM MARKING CHECKLIST: (1) Are axes labelled Price and Quantity? (2) Is demand downward sloping? (3) Is supply upward sloping? (4) Is the shift in the correct direction for the scenario? (5) Is the new equilibrium correctly identified? Check if the written explanation logically matches what the diagram shows. Award/deny marks accordingly.]" },
+            {
+              type: "text",
+              text:
+                markingPrompt +
+                aqaRubricBlock +
+                "\n\n[The student has drawn a diagram — see the attached image. Apply the DIAGRAM MARKING CHECKLIST: (1) Are axes labelled Price and Quantity (or Price level / Real output for macro)? (2) Is demand downward sloping? (3) Is supply upward sloping? (4) Is the shift in the correct direction for the scenario? (5) Is the new equilibrium correctly identified? Check if the written explanation logically matches what the diagram shows. Award/deny marks accordingly.]",
+            },
             { type: "image_url", image_url: { url: diagramImage } },
           ]
-        : markingPrompt;
+        : markingPrompt + aqaRubricBlock;
 
       await streamChat({
         messages: [{ role: "user", content: messageContent }],
