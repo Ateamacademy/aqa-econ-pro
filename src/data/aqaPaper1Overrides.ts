@@ -225,7 +225,7 @@ const ADDITIONAL_SETS: Array<[string, AqaPaper1OverrideSet]> = [
     setLabel: "Predicted Paper Set B",
     micro1: { topic: "energy market concentration", focus: "oligopoly" },
     micro2: { topic: "natural monopoly in water supply", focus: "regulation" },
-    essayTopics: ["minimum wage and labour markets", "negative externalities of fast fashion", "competition policy in digital markets"],
+    essayTopics: ["asymmetric information in second-hand car markets", "negative externalities of fast fashion", "competition policy in digital markets"],
   })],
   ["econ-p1-c", buildSetVariant({
     setLabel: "Predicted Paper Set C",
@@ -243,13 +243,13 @@ const ADDITIONAL_SETS: Array<[string, AqaPaper1OverrideSet]> = [
     setLabel: "Predicted Paper Set E",
     micro1: { topic: "UK retail energy oligopoly", focus: "oligopoly" },
     micro2: { topic: "merit goods and vaccinations", focus: "merit goods" },
-    essayTopics: ["price discrimination by airlines", "rent controls in London housing", "monopsony in nursing"],
+    essayTopics: ["price discrimination by airlines", "rent controls in London housing", "price discrimination in streaming services"],
   })],
   ["econ-p1-f", buildSetVariant({
     setLabel: "Predicted Paper Set F",
     micro1: { topic: "the National Living Wage and hospitality", focus: "labour markets" },
     micro2: { topic: "asymmetric information in online markets", focus: "information failure" },
-    essayTopics: ["productive vs allocative efficiency", "tradable permits vs carbon tax", "trade union power in public sector"],
+    essayTopics: ["productive vs allocative efficiency", "tradable permits vs carbon tax", "carbon tax versus tradable permits in shipping"],
   })],
   ["econ-p1-g", buildSetVariant({
     setLabel: "Predicted Paper Set G",
