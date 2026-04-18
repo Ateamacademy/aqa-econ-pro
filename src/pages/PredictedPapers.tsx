@@ -1406,12 +1406,17 @@ export default function PredictedPapers() {
   }
 
   function openLibraryPaper(lp: PredictedPaper) {
-    const parsed = parsePredictedPaperContent(lp.content, lp.paper);
-    if (!parsed) return;
-
+    const setLabel = (lp.id.match(/-([a-g])$/i)?.[1] ?? "A").toUpperCase();
+    const baseParsed = parseQuestions(lp.content);
+    if (subject === "economics" && !isValidAqaPaperStructure(baseParsed.questions, lp.paper)) {
+      const expected = lp.paper === "3" ? "30 × 1-mark MCQs + 10/15/25" : "2/4/9/25 + 15/25";
+      toast.error(`AQA Paper ${lp.paper} must follow the ${expected} marking pattern.`);
+      return;
+    }
+    const questions = applyAqaDiagramTags(baseParsed.questions, lp.paper, setLabel);
     setSelectedLibraryPaper(lp);
-    setPaperContext(parsed.context);
-    setParsedQuestions(parsed.questions);
+    setPaperContext(baseParsed.context);
+    setParsedQuestions(questions);
     setAnswers({});
     setFeedbacks({});
     setMarkingId(null);
