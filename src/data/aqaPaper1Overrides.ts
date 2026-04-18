@@ -417,6 +417,10 @@ ${lineNumber(ext.body)}
 }
 
 function buildPaper(set: AqaPaper1OverrideSet): string {
+  const c1 = set.c1;
+  const c2 = set.c2;
+  const [e1, e2, e3] = set.essays;
+
   return `# AQA A-Level Economics (7136) — Paper 1: Markets and Market Failure — ${set.setLabel}
 
 **Time: 2 hours | Total: 80 marks**
@@ -425,45 +429,96 @@ function buildPaper(set: AqaPaper1OverrideSet): string {
 
 ## Section A — Data response (40 marks)
 
-### Context 1 — ${set.c1.title}
+### Context 1 — ${c1.title}
 *Total for this Context: 40 marks*
 
 Study Extracts A, B and C and then answer all parts of Context 1 which follow.
 
 ### Extract A
-${set.c1.extractA}
+${c1.extractA}
 
-${renderExtract("B", set.c1.extractB)}
+${renderExtract("B", c1.extractB)}
 
-${renderExtract("C", set.c1.extractC)}
+${renderExtract("C", c1.extractC)}
 
 Question 01 [2 marks]
-${set.c1.q01}
+${c1.q01}
 
 Question 02 [4 marks]
-${set.c1.q02}
+${c1.q02}
 
 Question 03 [9 marks]
-${set.c1.q03}${figureMd(set.c1.q03Diagram)}
+${c1.q03}${figureMd(c1.q03Diagram)}
 
 Question 04 [25 marks]
-${set.c1.q04}
+${c1.q04}
+
+---
+
+### Context 2 — ${c2.title}
+*Total for this Context: 40 marks — answer EITHER Context 1 OR Context 2*
+
+Study Extracts D, E and F and then answer all parts of Context 2 which follow.
+
+### Extract D
+${c2.extractD}
+
+${renderExtract("E", c2.extractE)}
+
+${renderExtract("F", c2.extractF)}
+
+Question 05 [2 marks]
+${c2.q05}
+
+Question 06 [4 marks]
+${c2.q06}
+
+Question 07 [9 marks]
+${c2.q07}${figureMd(c2.q07Diagram)}
+
+Question 08 [25 marks]
+${c2.q08}
 
 ---
 
 ## Section B — Essay (40 marks)
 
-**Answer both parts of the essay below.**
+**Choose ONE of the following three essays. Answer BOTH parts (a) and (b) of the essay you choose.**
+
+You are advised to spend 1 hour on this section.
 
 ---
 
-${set.essays[0].stimulus}
+### Essay 1
+${e1.stimulus}
 
-Question 05 [15 marks]
-${set.essays[0].explain}${figureMd(set.essays[0].diagram)}
+Question 09 [15 marks]
+${e1.explain}${figureMd(e1.diagram)}
 
-Question 06 [25 marks]
-${set.essays[0].evaluate}`;
+Question 10 [25 marks]
+${e1.evaluate}
+
+---
+
+### Essay 2
+${e2.stimulus}
+
+Question 11 [15 marks]
+${e2.explain}${figureMd(e2.diagram)}
+
+Question 12 [25 marks]
+${e2.evaluate}
+
+---
+
+### Essay 3
+${e3.stimulus}
+
+Question 13 [15 marks]
+${e3.explain}${figureMd(e3.diagram)}
+
+Question 14 [25 marks]
+${e3.evaluate}`;
 }
 
 function buildMarkScheme(set: AqaPaper1OverrideSet): string {
