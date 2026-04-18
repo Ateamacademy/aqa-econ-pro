@@ -1284,7 +1284,21 @@ export default function PredictedPapers() {
   }, []);
 
   const libraryPapers = useMemo(
-    () => predictedPapersLibrary.filter((p) => p.subject === subject),
+    () => {
+      const filtered = predictedPapersLibrary.filter((p) => p.subject === subject);
+      // Group by paper number, then by set label (A, B, C...) so cards display:
+      // Paper 1 — Set A, Paper 1 — Set B, … then Paper 2 — Set A, Paper 2 — Set B, …
+      const setLabel = (title: string) => {
+        const m = title.match(/Set\s+([A-Z])/i);
+        return m ? m[1].toUpperCase() : "Z";
+      };
+      return [...filtered].sort((a, b) => {
+        const pa = parseInt(a.paper, 10) || 0;
+        const pb = parseInt(b.paper, 10) || 0;
+        if (pa !== pb) return pa - pb;
+        return setLabel(a.title).localeCompare(setLabel(b.title));
+      });
+    },
     [subject]
   );
 
