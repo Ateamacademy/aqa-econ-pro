@@ -55,7 +55,7 @@ export const AQA_SPEC: Record<PaperCode, AqaPaperSpec> = {
       },
       {
         id: "B",
-        name: "Section B — Essay (choose one of three contexts)",
+        name: "Section B — Essay",
         marks: 40,
         questions: [
           { number: 5, marks: 15, skill: "Explain / analyse", format: "WRITTEN" },
@@ -85,7 +85,7 @@ export const AQA_SPEC: Record<PaperCode, AqaPaperSpec> = {
       },
       {
         id: "B",
-        name: "Section B — Essay (choose one of three contexts)",
+        name: "Section B — Essay",
         marks: 40,
         questions: [
           { number: 5, marks: 15, skill: "Explain / analyse", format: "WRITTEN" },
