@@ -466,6 +466,7 @@ function EssayPicker({
 
 /* ── Mark scheme: side-by-side with question ── */
 function MarkSchemeView({ paper }: { paper: GeneratedPaper }) {
+  return (
     <div className="space-y-4">
       <div className="rounded-lg border border-indigo-500/30 bg-indigo-500/5 p-3 text-xs text-indigo-200">
         Mark scheme uses AQA's level-based descriptors for extended response (Knowledge / Application / Analysis + Evaluation).
