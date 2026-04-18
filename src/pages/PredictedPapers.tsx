@@ -32,6 +32,7 @@ import {
 } from "@/data/pastPaperPatterns";
 import { generateKnowledgeGraphPrompt } from "@/data/economicsKnowledgeGraph";
 import { generatePaperPdf } from "@/lib/generatePaperPdf";
+import { generateSolutionPdf, type SolutionEntry } from "@/lib/generateSolutionPdf";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { ReportButton } from "@/components/report/ReportButton";
 import { ExamTimer } from "@/components/predicted-papers/ExamTimer";
@@ -1245,6 +1246,8 @@ export default function PredictedPapers() {
   const [timeExpired, setTimeExpired] = useState(false);
   const markAllRef = useRef(false);
   const autoGenTriggered = useRef(false);
+  const [solutionLoading, setSolutionLoading] = useState(false);
+  const [solutionProgress, setSolutionProgress] = useState<{ done: number; total: number }>({ done: 0, total: 0 });
 
   const used = (profile as any)?.free_predicted_papers_used ?? 0;
   const canUse = subscribed || used < FREE_LIMITS.predictedPapers;
