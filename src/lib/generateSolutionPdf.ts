@@ -195,6 +195,10 @@ export interface SolutionEntry {
   modelAnswer: string;    // top-band model
   examinerTip?: string;   // optional tip
   figuresMarkdown?: string; // markdown blocks for figures/tables this question references
+  /** Catalog id (or legacy alias) for the reference diagram this question expects. */
+  referenceFigureId?: string;
+  /** True if AI marker tagged this question as requiring a diagram. */
+  requiresDiagram?: boolean;
 }
 
 interface SolutionMeta {
