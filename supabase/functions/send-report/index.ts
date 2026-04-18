@@ -159,7 +159,7 @@ Deno.serve(async (req) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: `Econ Rev Reports <${fromEmail}>`,
+        from: fromEmail,
         to: [adminEmail],
         reply_to: userEmail || undefined,
         subject,
