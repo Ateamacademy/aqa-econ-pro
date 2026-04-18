@@ -11,6 +11,7 @@ import type { GeneratedPaper, AqaQuestion, AqaExtract, AqaMarkSchemeEntry } from
 import { AQA_SPEC } from "@/lib/aqa-spec";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import { InlineDiagramCanvas } from "@/components/paper-library/InlineDiagramCanvas";
+import { ReportButton } from "@/components/report/ReportButton";
 
 type View = "qp" | "insert" | "markscheme";
 

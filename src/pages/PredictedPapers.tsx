@@ -35,6 +35,7 @@ import {
 import { generateKnowledgeGraphPrompt } from "@/data/economicsKnowledgeGraph";
 import { generatePaperPdf } from "@/lib/generatePaperPdf";
 import { UpgradeModal } from "@/components/UpgradeModal";
+import { ReportButton } from "@/components/report/ReportButton";
 import { ExamTimer } from "@/components/predicted-papers/ExamTimer";
 import { ExamResultsSummary } from "@/components/predicted-papers/ExamResultsSummary";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
