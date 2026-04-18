@@ -145,6 +145,28 @@ export interface TaggerInput {
   isMcq: boolean;
   /** AQA paper number — 1, 2, or 3. */
   paper: 1 | 2 | 3;
+  /** Set letter A..G (used to rotate scenarios across the library). */
+  setLabel?: string;
+}
+
+function attachReferenceFigure(
+  base: AqaDiagramTag,
+  q: TaggerInput,
+): AqaDiagramTag {
+  const pick = pickReferenceFigure({
+    diagramType: base.diagramType,
+    paperSetLabel: q.setLabel,
+    questionNumber: q.number,
+    hint: q.text,
+  });
+  if (!pick) {
+    return { ...base, referenceFigureMissing: true };
+  }
+  return {
+    ...base,
+    referenceFigureId: pick.entry.id,
+    referenceFigureScenario: pick.scenario,
+  };
 }
 
 export function tagAqaQuestion(q: TaggerInput): AqaDiagramTag | null {
