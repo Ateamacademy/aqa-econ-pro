@@ -57,6 +57,22 @@ const EXAM_DURATIONS: Record<string, Record<string, number>> = {
   "ocr-gcse":       { "1": 75,  "2": 75,  full: 75 },
 };
 
+// Display-only mapping: rename Set A/B/C to Moderate/Hard/Advanced for predicted papers.
+// Underlying paper IDs and data structures keep the Set A/B/C convention so routing,
+// sorting, and library lookups continue to work unchanged.
+const SET_LABEL_DISPLAY_MAP: Record<string, string> = {
+  A: "Moderate",
+  B: "Hard",
+  C: "Advanced",
+};
+
+function displayPaperTitle(title: string): string {
+  return title.replace(/Set\s+([A-Z])\b/gi, (match, letter: string) => {
+    const mapped = SET_LABEL_DISPLAY_MAP[letter.toUpperCase()];
+    return mapped ?? match;
+  });
+}
+
 type QuestionFeedback = {
   markScheme: string;
   modelAnswer: string;
@@ -1998,7 +2014,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
         setSolutionProgress({ done: i + 1, total: parsedQuestions.length });
       }
 
-      const paperTitle = selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`;
+      const paperTitle = displayPaperTitle(selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`);
       generateSolutionPdf(paperTitle, entries, {
         subject: subjectLabel,
         examBoard,
@@ -2142,7 +2158,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                             </div>
                             <ArrowRight className="h-4 w-4 text-muted-foreground/0 group-hover:text-primary transition-all duration-300 group-hover:translate-x-0.5" />
                           </div>
-                          <h3 className="font-bold text-sm text-foreground mb-1.5 group-hover:text-primary transition-colors">{lp.title}</h3>
+                          <h3 className="font-bold text-sm text-foreground mb-1.5 group-hover:text-primary transition-colors">{displayPaperTitle(lp.title)}</h3>
                           <p className="text-xs text-muted-foreground leading-relaxed mb-4 line-clamp-2">{lp.description}</p>
                           <div className="flex items-center gap-2">
                             <span className="text-[11px] bg-primary/10 text-primary px-2.5 py-1 rounded-full font-semibold">
@@ -2364,7 +2380,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
               <div>
                 {selectedLibraryPaper ? (
                   <>
-                    <h2 className="text-2xl font-bold tracking-tight">{selectedLibraryPaper.title}</h2>
+                    <h2 className="text-2xl font-bold tracking-tight">{displayPaperTitle(selectedLibraryPaper.title)}</h2>
                     <p className="text-sm text-muted-foreground mt-1">{selectedLibraryPaper.description}</p>
                   </>
                 ) : (
@@ -2387,7 +2403,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                   size="lg"
                   className="gap-2.5 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-shadow"
                   onClick={() => {
-                    const paperTitle = selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`;
+                    const paperTitle = displayPaperTitle(selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`);
                     const fullContent = paperContext + "\n\n" + parsedQuestions.map(q => `${q.label} [${q.marks} marks]\n${q.text}`).join("\n\n");
                     generatePaperPdf(paperTitle, fullContent, {
                       subject: subjectLabel,
@@ -2420,7 +2436,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                 </Button>
                 <ReportButton
                   context={{
-                    page: `Predicted Papers → ${selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Paper ${paper}`}`,
+                    page: `Predicted Papers → ${displayPaperTitle(selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Paper ${paper}`)}`,
                     board: examBoard,
                     paperCode: `${examBoard} Paper ${paper}`,
                   }}
@@ -2453,7 +2469,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
               <FigureAnalysisPanel
                 paperContent={generatedPaper}
                 examBoard={`${examBoard} ${level}`}
-                paperTitle={selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} — Paper ${paper}`}
+                paperTitle={displayPaperTitle(selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} — Paper ${paper}`)}
                 onCleanedContent={(cleaned) => {
                   const { context, questions } = parseQuestions(cleaned);
                   setPaperContext(context);
@@ -2549,7 +2565,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
               feedbacks={feedbacks}
               answers={answers}
               onBackToPapers={reset}
-              paperTitle={selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} — Paper ${paper}`}
+              paperTitle={displayPaperTitle(selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} — Paper ${paper}`)}
               timeExpired={timeExpired}
             />
           </div>
