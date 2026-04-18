@@ -14,6 +14,75 @@ export type Database = {
   }
   public: {
     Tables: {
+      ai_marking_cache: {
+        Row: {
+          analysis: Json
+          cache_key: string
+          created_at: string
+          expires_at: string
+          id: string
+          question_id: string
+        }
+        Insert: {
+          analysis: Json
+          cache_key: string
+          created_at?: string
+          expires_at?: string
+          id?: string
+          question_id: string
+        }
+        Update: {
+          analysis?: Json
+          cache_key?: string
+          created_at?: string
+          expires_at?: string
+          id?: string
+          question_id?: string
+        }
+        Relationships: []
+      }
+      ai_usage_log: {
+        Row: {
+          cache_hit: boolean
+          created_at: string
+          id: string
+          input_tokens: number | null
+          model: string
+          output_tokens: number | null
+          paper_id: string | null
+          provider: string
+          question_id: string | null
+          status: string
+          user_id: string | null
+        }
+        Insert: {
+          cache_hit?: boolean
+          created_at?: string
+          id?: string
+          input_tokens?: number | null
+          model: string
+          output_tokens?: number | null
+          paper_id?: string | null
+          provider: string
+          question_id?: string | null
+          status?: string
+          user_id?: string | null
+        }
+        Update: {
+          cache_hit?: boolean
+          created_at?: string
+          id?: string
+          input_tokens?: number | null
+          model?: string
+          output_tokens?: number | null
+          paper_id?: string | null
+          provider?: string
+          question_id?: string | null
+          status?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       diagram_exemplars: {
         Row: {
           board: string | null
