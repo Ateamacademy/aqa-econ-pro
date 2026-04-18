@@ -1,5 +1,177 @@
 import jsPDF from "jspdf";
 import { renderPaperMarkdown } from "./generatePaperPdf";
+import { getCatalogEntry, AQA_DIAGRAM_CATALOG } from "./aqa-diagram-catalog";
+
+// ─── Diagram embedding ────────────────────────────────────────────────
+//
+// Resolve a diagram reference (catalog id, legacy AI keyword, or scenario hint)
+// to an SVG path under /public, fetch it, rasterise to PNG, and return a
+// base64 data URL embeddable via jsPDF.addImage. All work happens before the
+// PDF is generated so jsPDF stays sync.
+
+const LEGACY_DIAGRAM_ID_MAP: Record<string, string> = {
+  tax_incidence: "indirect-tax",
+  indirect_tax: "indirect-tax",
+  sugar_tax: "indirect-tax",
+  sdil: "indirect-tax",
+  negative_externality: "negative-externality",
+  negative_externality_coal: "negative-externality",
+  negative_production_externality: "negative-externality-welfare",
+  positive_externality: "positive-externality-welfare",
+  externality: "negative-externality",
+  welfare_loss: "negative-externality-welfare",
+  demand_decrease: "supply-demand-housing",
+  demand_shift: "supply-demand-housing",
+  supply_shift: "supply-demand-cost-shock",
+  cost_shock: "supply-demand-cost-shock",
+  supply_demand: "supply-demand-cost-shock",
+  monopoly: "monopoly-supernormal-profit",
+  monopoly_profit: "monopoly-supernormal-profit",
+  natural_monopoly: "natural-monopoly",
+  kinked_demand: "kinked-demand",
+  oligopoly: "kinked-demand",
+  ad_as: "ad-as-equilibrium",
+  ad_as_demand_pull: "ad-as-demand-pull",
+  ad_as_cost_push: "ad-as-cost-push",
+  cost_push: "ad-as-cost-push",
+  cost_push_inflation: "ad-as-cost-push",
+  demand_pull: "ad-as-demand-pull",
+  fiscal_policy_ad: "ad-as-fiscal",
+  phillips: "phillips-srlr",
+  phillips_curve: "phillips-srlr",
+  labour_market: "labour-market-union",
+  monopsony: "labour-monopsony",
+  lorenz: "lorenz-curve",
+  lorenz_curve: "lorenz-curve",
+  gini: "lorenz-curve",
+  quota: "import-quota",
+  import_quota: "import-quota",
+};
+
+function resolveDiagramReference(raw: string): string | null {
+  if (!raw) return null;
+  const cleaned = raw.toLowerCase().trim().replace(/[\s-]+/g, "_").replace(/[^a-z0-9_]/g, "");
+  // Direct catalog id match (canonical hyphenated form)
+  const hyphen = cleaned.replace(/_/g, "-");
+  if (getCatalogEntry(hyphen)) return hyphen;
+  // Legacy id map
+  if (LEGACY_DIAGRAM_ID_MAP[cleaned]) return LEGACY_DIAGRAM_ID_MAP[cleaned];
+  // Substring match against catalog
+  for (const entry of AQA_DIAGRAM_CATALOG) {
+    if (cleaned.includes(entry.id.replace(/-/g, "_"))) return entry.id;
+  }
+  return null;
+}
+
+/** Detect diagram references inside mark-scheme / model-answer markdown. */
+function extractDiagramIds(text: string): string[] {
+  if (!text) return [];
+  const ids = new Set<string>();
+  // "Diagram: foo_bar" / "Diagram - foo bar" / "Required diagram: foo"
+  const reA = /(?:^|\n)\s*(?:required\s+)?diagram\s*[:\-–]\s*([a-z0-9_\- ]{3,60})/gi;
+  let m: RegExpExecArray | null;
+  while ((m = reA.exec(text))) {
+    const resolved = resolveDiagramReference(m[1]);
+    if (resolved) ids.add(resolved);
+  }
+  // "**Figure N:** Title — Diagram family: foo"
+  const reB = /diagram\s+family\s*[:\-–]\s*([a-z0-9_\- ]{3,60})/gi;
+  while ((m = reB.exec(text))) {
+    const resolved = resolveDiagramReference(m[1]);
+    if (resolved) ids.add(resolved);
+  }
+  return Array.from(ids);
+}
+
+/** Strip noisy diagram placeholder lines so they don't render as raw text. */
+function stripDiagramPlaceholders(text: string): string {
+  if (!text) return text;
+  return text
+    .replace(/(?:^|\n)\s*(?:required\s+)?diagram\s*[:\-–]\s*[a-z0-9_\- ]{3,60}\s*(?=\n|$)/gi, "\n")
+    .replace(/diagram\s+family\s*[:\-–]\s*[a-z0-9_\- ]{3,60}/gi, "")
+    .replace(/\n{3,}/g, "\n\n");
+}
+
+async function rasteriseSvgToPng(svgPath: string, targetWidth = 900): Promise<string | null> {
+  try {
+    const res = await fetch(svgPath);
+    if (!res.ok) return null;
+    let svgText = await res.text();
+    // Force a white background for print-safety.
+    if (!/background/i.test(svgText)) {
+      svgText = svgText.replace(/<svg(\s)/i, '<svg style="background:#ffffff"$1');
+    }
+    const blob = new Blob([svgText], { type: "image/svg+xml;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    try {
+      const img = await new Promise<HTMLImageElement>((resolve, reject) => {
+        const i = new Image();
+        i.onload = () => resolve(i);
+        i.onerror = (e) => reject(e);
+        i.src = url;
+      });
+      const ratio = img.height / img.width || 0.7;
+      const w = targetWidth;
+      const h = Math.round(w * ratio);
+      const canvas = document.createElement("canvas");
+      canvas.width = w;
+      canvas.height = h;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return null;
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, w, h);
+      ctx.drawImage(img, 0, 0, w, h);
+      return canvas.toDataURL("image/png");
+    } finally {
+      URL.revokeObjectURL(url);
+    }
+  } catch (err) {
+    if (import.meta.env.DEV) console.warn("[generateSolutionPdf] svg rasterise failed", svgPath, err);
+    return null;
+  }
+}
+
+interface ResolvedDiagram {
+  catalogId: string;
+  title: string;
+  pngDataUrl: string;
+  widthPx: number;
+  heightPx: number;
+}
+
+async function resolveEntryDiagrams(entry: SolutionEntry): Promise<ResolvedDiagram[]> {
+  const ids = new Set<string>();
+  if (entry.referenceFigureId) {
+    const resolved = resolveDiagramReference(entry.referenceFigureId);
+    if (resolved) ids.add(resolved);
+  }
+  for (const id of extractDiagramIds(entry.markScheme)) ids.add(id);
+  for (const id of extractDiagramIds(entry.modelAnswer)) ids.add(id);
+  for (const id of extractDiagramIds(entry.questionText)) ids.add(id);
+
+  const out: ResolvedDiagram[] = [];
+  for (const id of ids) {
+    const cat = getCatalogEntry(id);
+    if (!cat) continue;
+    const png = await rasteriseSvgToPng(cat.svgPath, 900);
+    if (!png) continue;
+    // Read image dims from a temp <img> for aspect ratio
+    const dims = await new Promise<{ w: number; h: number }>((resolve) => {
+      const img = new Image();
+      img.onload = () => resolve({ w: img.width, h: img.height });
+      img.onerror = () => resolve({ w: 900, h: 600 });
+      img.src = png;
+    });
+    out.push({
+      catalogId: id,
+      title: cat.title,
+      pngDataUrl: png,
+      widthPx: dims.w,
+      heightPx: dims.h,
+    });
+  }
+  return out;
+}
 
 /**
  * Solution / Mark Scheme PDF generator for Predicted Papers.
