@@ -21,9 +21,6 @@ import { paperOptionsBySubject, topicsBySubject } from "@/lib/subjectConfig";
 import { PeriodicTable } from "@/components/tools/PeriodicTable";
 import { ChemistryEquations } from "@/components/tools/ChemistryEquations";
 import { predictedPapersLibrary, type PredictedPaper } from "@/data/predictedPapersLibrary";
-import { getAqaPaper1OverrideContent } from "@/data/aqaPaper1Overrides";
-import { getAqaPaper2OverrideContent } from "@/data/aqaPaper2Overrides";
-import { getAqaPaper3OverrideContent } from "@/data/aqaPaper3Overrides";
 import {
   MATHS_PAST_PAPER_KNOWLEDGE,
   CHEMISTRY_PAST_PAPER_KNOWLEDGE,
@@ -1310,22 +1307,39 @@ export default function PredictedPapers() {
     const paramPaper = searchParams.get("paper");
     const paramDifficulty = searchParams.get("difficulty");
     const paramSet = searchParams.get("set");
+    const paramPaperId = searchParams.get("paperId");
 
-    if (fromLibrary === "1" && paramPaper && paramDifficulty && !autoGenTriggered.current) {
-      autoGenTriggered.current = true;
-      setPaper(paramPaper);
-      setLibraryDifficulty(paramDifficulty);
-      setLibrarySet(paramSet);
-      setMode("generate");
-      // Clear search params to prevent re-trigger
-      setSearchParams({}, { replace: true });
-      // Trigger generation after state settles
-      setTimeout(() => {
-        const genBtn = document.querySelector<HTMLButtonElement>('[data-auto-generate]');
-        if (genBtn) genBtn.click();
-      }, 300);
+    if (fromLibrary !== "1" || !paramPaper || autoGenTriggered.current) return;
+
+    autoGenTriggered.current = true;
+    setPaper(paramPaper);
+
+    const targetSetLabel = paramSet ? `Set ${String.fromCharCode(64 + Number(paramSet))}` : null;
+    const exactLibraryPaper = predictedPapersLibrary.find((candidate) => {
+      if (candidate.subject !== subject) return false;
+      if (candidate.paper !== paramPaper) return false;
+      if (paramPaperId) return candidate.id === paramPaperId;
+      if (targetSetLabel && !candidate.title.includes(targetSetLabel)) return false;
+      return true;
+    });
+
+    setSearchParams({}, { replace: true });
+
+    if (exactLibraryPaper) {
+      setMode("library");
+      openLibraryPaper(exactLibraryPaper);
+      return;
     }
-  }, [searchParams]);
+
+    if (paramDifficulty) setLibraryDifficulty(paramDifficulty);
+    setLibrarySet(paramSet);
+    setMode("generate");
+
+    setTimeout(() => {
+      const genBtn = document.querySelector<HTMLButtonElement>('[data-auto-generate]');
+      if (genBtn) genBtn.click();
+    }, 300);
+  }, [searchParams, subject]);
 
   const isValidAqaPaperStructure = (questions: ParsedQuestion[], paperNumber?: string) => {
     if (subject !== "economics") return true;
@@ -1347,16 +1361,8 @@ export default function PredictedPapers() {
     return true;
   };
 
-  const parsePredictedPaperContent = (rawContent: string, paperId?: string | null, paperNumber?: string) => {
-    let overrideContent: string | null = null;
-    if (subject === "economics" && paperId) {
-      if (paperNumber === "1") overrideContent = getAqaPaper1OverrideContent(paperId);
-      else if (paperNumber === "2") overrideContent = getAqaPaper2OverrideContent(paperId);
-      else if (paperNumber === "3") overrideContent = getAqaPaper3OverrideContent(paperId);
-    }
-
-    const effectiveContent = overrideContent ?? rawContent;
-    const parsed = parseQuestions(effectiveContent);
+  function parsePredictedPaperContent(rawContent: string, paperNumber?: string) {
+    const parsed = parseQuestions(rawContent);
 
     if (subject === "economics" && !isValidAqaPaperStructure(parsed.questions, paperNumber)) {
       const expected =
@@ -1368,10 +1374,10 @@ export default function PredictedPapers() {
     }
 
     return parsed;
-  };
+  }
 
-  const openLibraryPaper = (lp: PredictedPaper) => {
-    const parsed = parsePredictedPaperContent(lp.content, lp.id, lp.paper);
+  function openLibraryPaper(lp: PredictedPaper) {
+    const parsed = parsePredictedPaperContent(lp.content, lp.paper);
     if (!parsed) return;
 
     setSelectedLibraryPaper(lp);
@@ -1381,7 +1387,7 @@ export default function PredictedPapers() {
     setFeedbacks({});
     setMarkingId(null);
     setStep("paper");
-  };
+  }
 
   const generatePaper = async () => {
     if (!canUse) {
@@ -1496,7 +1502,7 @@ CRITICAL: Do NOT place economics diagram Figure blocks (supply & demand, AD/AS, 
       onDelta: (chunk) => { result += chunk; setGeneratedPaper(result); },
       onDone: () => {
         setIsGenerating(false);
-        const parsed = parsePredictedPaperContent(result, null, paper);
+        const parsed = parsePredictedPaperContent(result, paper);
         if (!parsed) return;
         setPaperContext(parsed.context);
         setParsedQuestions(parsed.questions);
