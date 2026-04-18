@@ -230,6 +230,13 @@ function drawQuestion(doc: jsPDF, entry: SolutionEntry, y: number): number {
   y = writeWrapped(doc, clean(entry.questionText), MARGIN_L, y, maxW, 5);
   y += 4;
 
+  // Referenced figures / tables (rendered with the question-paper engine)
+  if (entry.figuresMarkdown && entry.figuresMarkdown.trim()) {
+    y = ensureSpace(doc, y, 20);
+    y = renderPaperMarkdown(doc, entry.figuresMarkdown, y);
+    y += 2;
+  }
+
   // Mark Scheme
   y = drawSectionHeader(doc, y, "Mark Scheme", [37, 99, 235]);
   doc.setFont("helvetica", "normal");
