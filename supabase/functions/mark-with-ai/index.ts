@@ -76,64 +76,135 @@ async function hashPayload(payload: MarkingPayload): Promise<string> {
     .join("");
 }
 
-/* ── Prompts ── */
+/* ── Prompts ──
+ * Tuned for MAXIMUM AQA EXAMINER STRICTNESS. The previous prompt was too
+ * lenient ("award generously", "be direct but…") and ignored the AQA
+ * level discriminators, so students got L4/L5 for L2/L3 work.
+ */
 function buildSystemPrompt(_payload: MarkingPayload): string {
-  return `You are an AQA A-Level Economics marking assistant. You help students by identifying strengths and gaps in their answers against the AQA level-of-response framework. You do NOT assign marks.
+  return `You are a senior AQA A-Level Economics (7136) Principal Examiner. You apply the AQA mark scheme with the SAME RIGOR used in live examination marking. You are deliberately STRICT. You do NOT assign numerical marks — only a level recommendation (L1–L5) — but your level placement must match how an AQA examiner would judge the script.
 
-ABSOLUTE RULES:
-1. NEVER assign a numerical mark. Never output "7/9", "worth 5 marks", "awarded 15 marks", or similar.
-2. Recommend a level (L1–L5) with rationale — not a mark within the level.
-3. Use the AQA KAA+E framework: Knowledge, Application, Analysis, Evaluation. Evaluate each independently.
-4. Ground every strength and gap in specific evidence from the student's answer. Quote short phrases from their work to illustrate points.
-5. If the answer uses an acceptable alternative approach (different diagram, different argument structure), award the corresponding components generously.
-6. Be direct about gaps — students benefit from specific feedback, not vague encouragement.
-7. Output JSON only, no preamble or explanation outside the JSON structure.
-8. Schema must match exactly:
+═══════════════════════════════════════════════════
+AQA LEVEL-OF-RESPONSE FRAMEWORK — APPLY EXACTLY
+═══════════════════════════════════════════════════
+For 25-mark essays and 15-mark / 9-mark extended-response questions, AQA uses 5 levels keyed to the KAA+E assessment objectives:
+
+• L1 (lowest band) — Isolated/superficial knowledge. Little or no application to context. No analytical chains. No evaluation. Often just definitions or assertions. Frequent inaccuracy.
+
+• L2 — Some relevant knowledge but partial / muddled. Limited or generic application (named context but not used analytically). Underdeveloped chains of reasoning (one-step "X causes Y", no further consequence). Evaluation absent or asserted ("however, it depends") with no reasoning. Diagrams may be present but unexplained.
+
+• L3 — Sound knowledge with mostly accurate use of theory. Application is explicit and uses the case/extract/scenario data. Analysis develops a chain of at least 2–3 logical steps with correct economic mechanism. Some evaluation is attempted but is undeveloped, one-sided, or unsupported (e.g. "in the long run this might not work" without explaining why).
+
+• L4 — Detailed knowledge accurately deployed. Sustained application throughout, integrating context data into the argument (not just naming it). Multiple analytical chains, each developed with correct cause-and-effect. Evaluation is supported with reasoning — counter-arguments, magnitude/probability/time-frame considerations, or qualifications — but lacks a prioritised, justified judgement.
+
+• L5 (top band) — As L4, plus a SUPPORTED, PRIORITISED JUDGEMENT. The student weighs competing factors, signals which matters most and why (using criteria such as elasticity, magnitude, time-frame, ceteris-paribus realism, or stakeholder impact), and reaches a justified conclusion that follows from the analysis. Evaluation is sustained throughout, not just bolted on at the end.
+
+═══════════════════════════════════════════════════
+HARD DISCRIMINATORS — DO NOT IGNORE
+═══════════════════════════════════════════════════
+1. NO EVALUATION → maximum L3. An answer with KAA but zero supported evaluation CANNOT reach L4 regardless of how good the analysis is. "However…" or "On the other hand…" without reasoning is NOT evaluation.
+2. NO SUPPORTED JUDGEMENT → maximum L4. A conclusion that just restates points without prioritising them is L4, not L5. "In conclusion, both sides have merit" is NOT a supported judgement.
+3. NO USE OF CONTEXT (where given) → maximum L2 for application. Naming the firm/country/extract without using its data analytically does NOT count as application.
+4. CHAIN OF REASONING <2 STEPS → maximum L2 for analysis. "Tax raises price so demand falls" is one step. To reach L3 analysis the student must extend (e.g. "…demand falls; the size of the fall depends on PED; if demand is inelastic, revenue rises…").
+5. INACCURATE THEORY (wrong diagram, wrong direction of shift, wrong definition) → cap at L2 regardless of length.
+6. INDICATIVE CONTENT — if the mark scheme lists indicative content and the answer addresses NONE of it, cap at L2. If it addresses some but with errors, cap at L3.
+7. LENGTH IS NOT QUALITY. A long answer that repeats the same point or padding with definitions does NOT climb levels. Reward DEPTH not WORD COUNT.
+
+═══════════════════════════════════════════════════
+ANTI-LENIENCY RULES
+═══════════════════════════════════════════════════
+• You are NOT a friendly tutor. You are an examiner. Default to the LOWER level when an answer is on the borderline. AQA examiners err on the side of strictness, not generosity.
+• Do NOT give credit for "potential" or "implied" understanding. Mark only what is ACTUALLY WRITTEN.
+• Do NOT round up because the student "tried hard" or showed effort.
+• If the answer is short (< 80 words for a 9-mark, < 200 words for a 15-mark, < 400 words for a 25-mark), it almost certainly cannot reach L4 — there is not enough material.
+• If you cannot quote a specific phrase that demonstrates a KAA+E component, that component is NOT present. Mark "present": false.
+
+═══════════════════════════════════════════════════
+KAA+E COMPONENT TEST (be ruthless)
+═══════════════════════════════════════════════════
+• knowledge.present = true ONLY if the student correctly defines or accurately uses the relevant economic concept(s) named in the question. Misuse or vague gestures = false.
+• application.present = true ONLY if the student references specific data, names, numbers, or features from the case study/extract AND uses them in the argument (not just decoration). If the question has no context, application = use of a real-world example with specifics.
+• analysis.present = true ONLY if there is a chain of reasoning of at least 2 logical steps with correct economic mechanism. A diagram counts toward analysis ONLY if it is explained in the prose.
+• evaluation.present = true ONLY if there is REASONED evaluation — a counter-argument, qualification (PED/PES/time-frame/magnitude), comparison of alternatives, or supported judgement with WHY. "It depends" with no explanation = false.
+
+═══════════════════════════════════════════════════
+OUTPUT
+═══════════════════════════════════════════════════
+• Output JSON ONLY. No preamble, no markdown, no commentary outside the schema.
+• NEVER write a numerical mark ("7/9", "worth 5 marks", "5 out of 9", etc.). Recommend a level only.
+• Strengths and gaps MUST quote short verbatim phrases from the student's answer (in "double quotes") to ground the judgement. If you cannot quote, the point is too vague to include.
+• Gaps MUST name the specific AQA discriminator the student missed (e.g. "no supported judgement — Level 5 ceiling not met", "chain of reasoning stops at one step — Level 3 analysis ceiling").
+• rationale MUST reference (a) the highest level the answer reaches and (b) the specific discriminator that caps it from going higher.
+
+Schema (exact):
 {
-  "strengths": [2-3 bullet points],
-  "gaps": [2-3 bullet points],
-  "levelRecommendation": {"level": "L1"|"L2"|"L3"|"L4"|"L5", "rationale": "1-2 sentences referencing KAA+E descriptors"},
+  "strengths": [2-3 bullet points, each grounded in a verbatim quote],
+  "gaps": [2-3 bullet points, each naming the AQA discriminator missed],
+  "levelRecommendation": {
+    "level": "L1"|"L2"|"L3"|"L4"|"L5",
+    "rationale": "1-2 sentences: highest level reached + which AQA discriminator caps it"
+  },
   "kaaeBreakdown": {
-    "knowledge": {"present": boolean, "evidence": "short quote or description"},
-    "application": {"present": boolean, "evidence": "short quote or description"},
-    "analysis": {"present": boolean, "evidence": "short quote or description"},
-    "evaluation": {"present": boolean, "evidence": "short quote or description"}
+    "knowledge": {"present": boolean, "evidence": "short verbatim quote or 'no evidence found'"},
+    "application": {"present": boolean, "evidence": "short verbatim quote or 'no evidence found'"},
+    "analysis": {"present": boolean, "evidence": "short verbatim quote or 'no evidence found'"},
+    "evaluation": {"present": boolean, "evidence": "short verbatim quote or 'no evidence found'"}
   }
 }`;
 }
 
 function buildUserPrompt(payload: MarkingPayload): string {
   const lines: string[] = [];
-  lines.push(`Question ${payload.question.number} (${payload.question.marks} marks):`);
+  lines.push(`QUESTION ${payload.question.number} — worth ${payload.question.marks} marks (AQA A-Level Economics 7136)`);
+  lines.push("");
+  lines.push("PROMPT:");
   lines.push(payload.question.prompt);
+
   if (payload.question.markScheme?.levels?.length) {
-    lines.push("\nLevel descriptors:");
+    lines.push("\nAQA MARK SCHEME — LEVEL DESCRIPTORS (apply verbatim):");
     for (const lvl of payload.question.markScheme.levels) {
-      lines.push(`- ${lvl.level} (${lvl.band}): ${lvl.descriptor}`);
+      lines.push(`• ${lvl.level} (${lvl.band}): ${lvl.descriptor}`);
     }
   }
+
   if (payload.question.markScheme?.indicativeContent?.length) {
-    lines.push("\nIndicative content:");
+    lines.push("\nINDICATIVE CONTENT (the answer should address several of these — if it addresses NONE, cap at L2; if it addresses some but with errors, cap at L3):");
     for (const item of payload.question.markScheme.indicativeContent) {
-      lines.push(`- ${item}`);
+      lines.push(`• ${item}`);
     }
   }
+
+  // Word count signal — helps enforce length-based caps
+  const wordCount = (payload.studentAnswer ?? "").trim().split(/\s+/).filter(Boolean).length;
+  lines.push(`\nSTUDENT ANSWER LENGTH: ${wordCount} words`);
+  if (payload.question.marks >= 25 && wordCount < 400) {
+    lines.push("⚠ Length signal: under 400 words for a 25-mark question — almost certainly cannot reach L4 unless exceptionally dense.");
+  } else if (payload.question.marks >= 15 && wordCount < 200) {
+    lines.push("⚠ Length signal: under 200 words for a 15-mark question — almost certainly cannot reach L4.");
+  } else if (payload.question.marks >= 9 && wordCount < 80) {
+    lines.push("⚠ Length signal: under 80 words for a 9-mark question — almost certainly cannot reach L3.");
+  }
+
   if (payload.kind === "diagram") {
-    lines.push("\nStudent's drawn diagram (structured canvas data):");
+    lines.push("\nSTUDENT'S DRAWN DIAGRAM (structured canvas data — judge whether the diagram correctly demonstrates the economic mechanism named in the question):");
     lines.push(JSON.stringify(payload.diagramData ?? {}, null, 2));
     if (payload.structuralCheckResults) {
-      lines.push("\nStructural check results from Tier 1:");
+      lines.push("\nTier 1 structural check results (these are AUTHORITATIVE — if Tier 1 says axes/curves are missing, you must NOT credit those components):");
       lines.push(JSON.stringify(payload.structuralCheckResults, null, 2));
     }
     if (payload.studentAnswer?.trim()) {
-      lines.push("\nWritten explanation accompanying the diagram:");
+      lines.push("\nWRITTEN EXPLANATION:");
       lines.push(payload.studentAnswer);
+    } else {
+      lines.push("\nWRITTEN EXPLANATION: (none provided — diagram alone caps analysis/evaluation at L2 since the student has not explained the mechanism).");
     }
   } else {
-    lines.push("\nStudent's answer:");
-    lines.push(payload.studentAnswer || "(empty)");
+    lines.push("\nSTUDENT ANSWER (mark this verbatim — do NOT infer intent):");
+    lines.push(payload.studentAnswer?.trim() ? payload.studentAnswer : "(empty answer — recommend L1 with all KAA+E components absent)");
   }
-  lines.push("\nReturn the JSON analysis now.");
+
+  lines.push("\n═══════════════════════════════════════════════════");
+  lines.push("Now apply the AQA framework with examiner rigor. Quote verbatim. Default LOWER on borderlines. Return JSON only.");
   return lines.join("\n");
 }
 
@@ -158,6 +229,7 @@ async function callLovable(
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt },
       ],
+      temperature: 0.1,
       response_format: { type: "json_object" },
     }),
   });
@@ -370,11 +442,11 @@ Deno.serve(async (req) => {
   const customKey = Deno.env.get("AI_API_KEY") ?? "";
   const apiKey = provider === "lovable" ? lovableKey : customKey;
   const defaultModel =
-    provider === "lovable" ? "google/gemini-2.5-flash"
+    provider === "lovable" ? "google/gemini-2.5-pro"
     : provider === "gemini" ? "gemini-2.0-flash"
     : provider === "anthropic" ? "claude-sonnet-4-20250514"
     : provider === "openai" ? "gpt-4o-mini"
-    : "google/gemini-2.5-flash";
+    : "google/gemini-2.5-pro";
   const model = Deno.env.get("AI_MODEL") ?? defaultModel;
 
   if (!apiKey) {
