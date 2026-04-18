@@ -14,6 +14,8 @@ import { cn } from "@/lib/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { extractDiagramBlocks, EconDiagramCanvas } from "./EconDiagramSVG";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
+import { PredictedPaperDiagramBlock } from "./PredictedPaperDiagramBlock";
+import type { AqaDiagramRubric } from "@/lib/aqa-diagram-rubric";
 
 import type { ParsedQuestion, MCQOption } from "./parseQuestions";
 
@@ -39,6 +41,10 @@ interface QuestionCardProps {
   showGraphPaper?: boolean;
   showGeometryTools?: boolean;
   subject?: string;
+  /** Stable key per loaded paper — used to namespace localStorage drawings. */
+  paperKey?: string;
+  /** Called when student finishes a stroke on the inline AQA canvas. */
+  onDiagramImageChange?: (questionId: string, dataUrl: string) => void;
 }
 
 export function QuestionCard({
@@ -54,6 +60,8 @@ export function QuestionCard({
   showGraphPaper = false,
   showGeometryTools = false,
   subject = "economics",
+  paperKey,
+  onDiagramImageChange,
 }: QuestionCardProps) {
   const [openSection, setOpenSection] = useState<string | null>(null);
   const [showCanvas, setShowCanvas] = useState(false);
@@ -61,11 +69,14 @@ export function QuestionCard({
   const [showDiagram, setShowDiagram] = useState(false);
   const [geoTool, setGeoTool] = useState<string | null>(null);
   const [canvasDataUrl, setCanvasDataUrl] = useState<string | null>(null);
+  const [aqaDiagramDataUrl, setAqaDiagramDataUrl] = useState<string | null>(null);
   const [showExplain, setShowExplain] = useState(false);
   const [showImprove, setShowImprove] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-  
+
   const isMCQ = !!question.mcqOptions && question.mcqOptions.length >= 2;
+  const aqaDiagramRequired = !!question.requiresDiagram;
+  const aqaDiagramOptional = !!question.diagramOptional;
 
   const toggle = (section: string) =>
     setOpenSection((prev) => (prev === section ? null : section));
@@ -141,11 +152,33 @@ export function QuestionCard({
           <span className="text-[11px] bg-muted text-muted-foreground px-2 py-0.5 rounded-full font-medium">
             {question.marks} marks
           </span>
+          {aqaDiagramRequired && !aqaDiagramOptional && (
+            <span className="text-[10px] uppercase tracking-wider bg-primary/15 text-primary border border-primary/30 px-2 py-0.5 rounded-full font-bold">
+              Diagram required
+            </span>
+          )}
         </div>
         <div className="text-sm text-foreground/90">
           <MathsMarkdown>{question.text}</MathsMarkdown>
         </div>
+
+        {/* Inline AQA drawing canvas — sits between question stem and answer field */}
+        {aqaDiagramRequired && !feedback && paperKey && (
+          <PredictedPaperDiagramBlock
+            questionId={question.id}
+            paperKey={paperKey}
+            required={aqaDiagramRequired}
+            optional={aqaDiagramOptional}
+            diagramType={question.diagramType}
+            rubric={question.diagramRubric as AqaDiagramRubric | undefined}
+            onChange={(dataUrl) => {
+              setAqaDiagramDataUrl(dataUrl);
+              onDiagramImageChange?.(question.id, dataUrl);
+            }}
+          />
+        )}
       </div>
+
 
       {/* Answer area */}
       <div className="p-5 border-b border-border bg-muted/30">
@@ -301,7 +334,7 @@ export function QuestionCard({
         <div className="px-4 pt-4">
           <Button
             size="sm"
-            onClick={() => onMark(canvasDataUrl || undefined)}
+            onClick={() => onMark(aqaDiagramDataUrl || canvasDataUrl || undefined)}
             disabled={isMarking || !answer.trim()}
             className="gap-1.5"
           >

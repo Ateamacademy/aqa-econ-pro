@@ -36,6 +36,7 @@ import { ReportButton } from "@/components/report/ReportButton";
 import { ExamTimer } from "@/components/predicted-papers/ExamTimer";
 import { ExamResultsSummary } from "@/components/predicted-papers/ExamResultsSummary";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
+import { tagAqaQuestion, inferPaperFromContext } from "@/lib/aqaPredictedDiagramTagging";
 
 // Exam durations in minutes per subject + paper.
 // AQA A-Level Economics (7136) — every paper is 2 hours. Source of truth: AQA_SPEC.durationMinutes.
@@ -1358,6 +1359,32 @@ export default function PredictedPapers() {
     return true;
   };
 
+  function applyAqaDiagramTags(
+    questions: ParsedQuestion[],
+    paperNumber?: string,
+  ): ParsedQuestion[] {
+    if (subject !== "economics") return questions;
+    const paperNum = inferPaperFromContext(paperNumber ?? paper);
+    return questions.map((q) => {
+      const isMcq = !!q.mcqOptions && q.mcqOptions.length >= 2;
+      const tag = tagAqaQuestion({
+        number: q.number ?? "",
+        marks: q.marks,
+        text: q.text,
+        isMcq,
+        paper: paperNum,
+      });
+      if (!tag) return q;
+      return {
+        ...q,
+        requiresDiagram: tag.requiresDiagram,
+        diagramOptional: tag.optional,
+        diagramType: tag.diagramType,
+        diagramRubric: tag.rubric,
+      };
+    });
+  }
+
   function parsePredictedPaperContent(rawContent: string, paperNumber?: string) {
     const parsed = parseQuestions(rawContent);
 
@@ -1370,7 +1397,7 @@ export default function PredictedPapers() {
       return null;
     }
 
-    return parsed;
+    return { ...parsed, questions: applyAqaDiagramTags(parsed.questions, paperNumber) };
   }
 
   function openLibraryPaper(lp: PredictedPaper) {
@@ -2314,6 +2341,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                     showGraphPaper={isMaths}
                     showGeometryTools={isMaths}
                     subject={subject}
+                    paperKey={selectedLibraryPaper?.id || `${examBoard}-${paper}`}
                   />
                 </motion.div>
               </div>
