@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PenTool, Lock, Send, RotateCcw, Pencil, FileText, ChevronDown, ChevronUp, MessageSquare, Lightbulb, BookOpen, Sparkles, Shuffle, Crown, BarChart3, Eye } from "lucide-react";
+import { ReportButton } from "@/components/report/ReportButton";
 import { toast } from "sonner";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import { DrawingCanvas } from "@/components/tools/DrawingCanvas";
@@ -1358,13 +1359,21 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             {examBoard} {level} {subjectLabel} · {accessMessage}
           </p>
         </div>
-        {step !== "analytics" ? (
-          <Button variant="outline" size="sm" className="gap-1.5" onClick={() => setStep("analytics")}>
-            <BarChart3 className="h-3.5 w-3.5" /> My Analytics
-          </Button>
-        ) : (
-          <Button variant="outline" size="sm" onClick={() => setStep("generate")}>← Back</Button>
-        )}
+        <div className="flex items-center gap-2">
+          <ReportButton
+            context={{
+              page: "Diagrams → Diagram Practice",
+              board: examBoard,
+            }}
+          />
+          {step !== "analytics" ? (
+            <Button variant="outline" size="sm" className="gap-1.5" onClick={() => setStep("analytics")}>
+              <BarChart3 className="h-3.5 w-3.5" /> My Analytics
+            </Button>
+          ) : (
+            <Button variant="outline" size="sm" onClick={() => setStep("generate")}>← Back</Button>
+          )}
+        </div>
       </div>
 
       {step === "analytics" && (

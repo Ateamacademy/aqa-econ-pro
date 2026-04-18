@@ -11,6 +11,7 @@ import type { GeneratedPaper, AqaQuestion, AqaExtract, AqaMarkSchemeEntry } from
 import { AQA_SPEC } from "@/lib/aqa-spec";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import { InlineDiagramCanvas } from "@/components/paper-library/InlineDiagramCanvas";
+import { ReportButton } from "@/components/report/ReportButton";
 
 type View = "qp" | "insert" | "markscheme";
 
@@ -94,6 +95,15 @@ export default function AqaPaperViewer({ paperId, initialView = "qp" }: Props) {
             <span className="hidden sm:inline">{paper.totalMarks} marks</span>
             <span className="hidden sm:inline">·</span>
             <span className="flex items-center gap-1 font-mono"><Clock className="h-3.5 w-3.5" /> {fmt(timeLeft)}</span>
+            <ReportButton
+              context={{
+                page: `Predicted Papers → ${paper.title}`,
+                board: "AQA",
+                paperCode: paper.paperCode,
+              }}
+              label="Report"
+              className="ml-1"
+            />
           </div>
         </div>
         {/* sub-toggle: QP | Insert | MS */}

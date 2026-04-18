@@ -35,6 +35,7 @@ import {
 import { generateKnowledgeGraphPrompt } from "@/data/economicsKnowledgeGraph";
 import { generatePaperPdf } from "@/lib/generatePaperPdf";
 import { UpgradeModal } from "@/components/UpgradeModal";
+import { ReportButton } from "@/components/report/ReportButton";
 import { ExamTimer } from "@/components/predicted-papers/ExamTimer";
 import { ExamResultsSummary } from "@/components/predicted-papers/ExamResultsSummary";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
@@ -2196,6 +2197,13 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                 >
                   <Download className="h-5 w-5" /> Download PDF
                 </Button>
+                <ReportButton
+                  context={{
+                    page: `Predicted Papers → ${selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Paper ${paper}`}`,
+                    board: examBoard,
+                    paperCode: `${examBoard} Paper ${paper}`,
+                  }}
+                />
               </div>
             </div>
 
