@@ -241,7 +241,7 @@ export default function AqaMarking() {
         </div>
         {/* Step nav */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-3 flex gap-2">
-          {(["auto", "self", "report"] as const).map((s, i) => (
+          {(["auto", "self", "ai", "report"] as const).map((s, i) => (
             <button
               key={s}
               onClick={() => setStep(s)}
@@ -252,7 +252,14 @@ export default function AqaMarking() {
                   : "bg-card border-border text-muted-foreground hover:text-foreground",
               )}
             >
-              {i + 1}. {s === "auto" ? "Tier 1 · Auto" : s === "self" ? "Tier 2 · Self-assess" : "Report"}
+              {i + 1}.{" "}
+              {s === "auto"
+                ? "Tier 1 · Auto"
+                : s === "self"
+                ? "Tier 2 · Self-assess"
+                : s === "ai"
+                ? "Tier 3 · AI analysis"
+                : "Report"}
             </button>
           ))}
         </div>
