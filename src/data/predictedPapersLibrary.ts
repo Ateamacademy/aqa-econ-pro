@@ -446,7 +446,7 @@ A shop buys a phone for £120 and sells it for £156. Calculate the percentage p
 
 **Time: 2 hours | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer ALL questions in both Section A and Section B.
 
 ---
 
@@ -485,7 +485,7 @@ Using the extracts and your own knowledge, evaluate the view that indirect taxes
 
 ## Section B: Essay (40 marks)
 
-Answer EITHER Question 5 OR Question 6.
+Answer BOTH Question 5 AND Question 6.
 
 **Short extract:**
 Critics of unregulated markets argue that profit-seeking firms systematically under-provide public goods, over-exploit common resources and ignore negative externalities. Supporters reply that competition, the price mechanism and consumer sovereignty deliver superior outcomes to those produced by government intervention.
@@ -509,7 +509,7 @@ Question 6 [25 marks]
 
 **Time: 2 hours | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer ALL questions in both Section A and Section B.
 
 ---
 
@@ -548,7 +548,7 @@ Using the extracts and your own knowledge, evaluate the effectiveness of monetar
 
 ## Section B: Essay (40 marks)
 
-Answer EITHER Question 5 OR Question 6.
+Answer BOTH Question 5 AND Question 6.
 
 **Short extract:**
 The UK ran a current account deficit of around 3% of GDP in 2024, financed largely by capital inflows. Some economists view persistent deficits as a symptom of structural weakness; others argue they simply reflect the UK's role as a global financial centre and pose no immediate threat to macroeconomic stability.
@@ -820,7 +820,7 @@ Question 33 [25 marks]
 
 **Time: 2 hours | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer ALL questions in both Section A and Section B.
 
 ---
 
@@ -859,7 +859,7 @@ Using the extracts and your own knowledge, evaluate the view that tradable pollu
 
 ## Section B: Essay (40 marks)
 
-Answer EITHER Question 5 OR Question 6.
+Answer BOTH Question 5 AND Question 6.
 
 **Short extract:**
 Critics of unregulated markets argue that profit-seeking firms over-exploit common resources, ignore externalities and under-supply public goods. Supporters reply that property rights and tradable markets, not direct regulation, deliver superior outcomes.
@@ -883,7 +883,7 @@ Question 6 [25 marks]
 
 **Time: 2 hours | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer ALL questions in both Section A and Section B.
 
 ---
 
@@ -923,7 +923,7 @@ Using the extracts and your own knowledge, evaluate the view that free trade agr
 
 ## Section B: Essay (40 marks)
 
-Answer EITHER Question 5 OR Question 6.
+Answer BOTH Question 5 AND Question 6.
 
 **Short extract:**
 Globalisation has integrated product, capital and labour markets, creating winners and losers within and between countries. The role of trade agreements in shaping these outcomes is contested.
@@ -1640,7 +1640,7 @@ The line graph shows the cost of electricity over 5 years:
 
 **Time: 2 hours | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer ALL questions in both Section A and Section B.
 
 ---
 
@@ -1681,7 +1681,7 @@ Using the extracts and your own knowledge, evaluate the view that reducing the b
 
 ## Section B: Essay (40 marks)
 
-Answer EITHER Question 5 OR Question 6.
+Answer BOTH Question 5 AND Question 6.
 
 **Short extract:**
 Monetary and fiscal policy face long and variable lags and may conflict in their objectives. Central bank independence is widely regarded as critical for credible inflation targeting.
@@ -1705,7 +1705,7 @@ Question 6 [25 marks]
 
 **Time: 2 hours | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer ALL questions in both Section A and Section B.
 
 ---
 
@@ -1744,7 +1744,7 @@ Using the extracts and your own knowledge, evaluate the view that maximum prices
 
 ## Section B: Essay (40 marks)
 
-Answer EITHER Question 5 OR Question 6.
+Answer BOTH Question 5 AND Question 6.
 
 **Short extract:**
 Government intervention in markets often involves trade-offs between equity and efficiency. Maximum prices, subsidies and direct provision may protect consumers but distort price signals and impose deadweight losses.
