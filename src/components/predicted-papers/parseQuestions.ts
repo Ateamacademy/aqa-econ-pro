@@ -176,6 +176,7 @@ export function parseQuestions(markdown: string): { context: string; questions: 
       text,
       mcqOptions,
       sectionHeader,
+      number: normalizedNumber,
     };
   });
 
