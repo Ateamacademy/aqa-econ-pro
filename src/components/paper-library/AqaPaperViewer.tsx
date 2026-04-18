@@ -139,22 +139,36 @@ export default function AqaPaperViewer({ paperId, initialView = "qp" }: Props) {
               {/* Section B */}
               <section>
                 <h2 className="text-lg font-bold text-foreground border-b-2 border-indigo-500/40 pb-1 mb-4">
-                  Section B {paper.paperNumber === 3 ? "— Case study (50 marks)" : "— Essay (40 marks)"}
+                  Section B {paper.paperNumber === 3 ? "— Case study (50 marks)" : "— Essay (40 marks) — choose ONE"}
                 </h2>
                 {paper.paperNumber === 3 && (paper.extracts ?? []).map((e) => <ExtractPanel key={e.id} extract={e} />)}
-                <div className="space-y-4 mt-4">
-                  {sectionB.map((q) => (
-                    <QuestionBlock
-                      key={q.number}
-                      q={q}
-                      paperId={paper.id}
-                      value={answers[q.number] || ""}
-                      onChange={(v) => setAnswers((p) => ({ ...p, [q.number]: v }))}
-                      active={activeQ === q.number}
-                      onFocus={() => setActiveQ(q.number)}
-                    />
-                  ))}
-                </div>
+
+                {paper.paperNumber !== 3 ? (
+                  <EssayPicker
+                    sectionB={sectionB}
+                    chosen={chosenEssay}
+                    onChoose={setChosenEssay}
+                    paperId={paper.id}
+                    answers={answers}
+                    onChange={(n, v) => setAnswers((p) => ({ ...p, [n]: v }))}
+                    activeQ={activeQ}
+                    onFocus={setActiveQ}
+                  />
+                ) : (
+                  <div className="space-y-4 mt-4">
+                    {sectionB.map((q) => (
+                      <QuestionBlock
+                        key={q.number}
+                        q={q}
+                        paperId={paper.id}
+                        value={answers[q.number] || ""}
+                        onChange={(v) => setAnswers((p) => ({ ...p, [q.number]: v }))}
+                        active={activeQ === q.number}
+                        onFocus={() => setActiveQ(q.number)}
+                      />
+                    ))}
+                  </div>
+                )}
               </section>
 
               <div className="flex items-center justify-between pt-4">
