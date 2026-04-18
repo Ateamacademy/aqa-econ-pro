@@ -32,6 +32,7 @@ export default function AqaPaperViewer({ paperId, initialView = "qp" }: Props) {
   const [mcqChoices, setMcqChoices] = useState<Record<number, "A" | "B" | "C" | "D">>({});
   const [activeQ, setActiveQ] = useState<number | null>(null);
   const [timeLeft, setTimeLeft] = useState(0);
+  const [chosenEssay, setChosenEssay] = useState<1 | 2 | 3 | null>(null);
 
   // hydrate
   useEffect(() => {
@@ -42,6 +43,7 @@ export default function AqaPaperViewer({ paperId, initialView = "qp" }: Props) {
       if (saved) {
         setAnswers(saved.answers || {});
         setMcqChoices(saved.mcqChoices || {});
+        if (saved.chosenEssay) setChosenEssay(saved.chosenEssay);
       }
     } catch { /* ignore */ }
   }, [paper]);
@@ -50,10 +52,10 @@ export default function AqaPaperViewer({ paperId, initialView = "qp" }: Props) {
   useEffect(() => {
     if (!paper) return;
     const t = setInterval(() => {
-      localStorage.setItem(STORAGE_KEY(paper.id), JSON.stringify({ answers, mcqChoices, ts: Date.now() }));
+      localStorage.setItem(STORAGE_KEY(paper.id), JSON.stringify({ answers, mcqChoices, chosenEssay, ts: Date.now() }));
     }, 10_000);
     return () => clearInterval(t);
-  }, [paper, answers, mcqChoices]);
+  }, [paper, answers, mcqChoices, chosenEssay]);
 
   // timer
   useEffect(() => {
