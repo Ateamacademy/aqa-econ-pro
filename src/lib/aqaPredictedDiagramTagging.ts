@@ -26,6 +26,7 @@ import {
   defaultAdAsRubric,
   defaultSdRubric,
 } from "./aqa-diagram-rubric";
+import { pickReferenceFigure } from "./aqa-diagram-catalog";
 
 export interface AqaDiagramTag {
   requiresDiagram: boolean;
@@ -33,6 +34,12 @@ export interface AqaDiagramTag {
   optional: boolean;
   diagramType: DiagramType;
   rubric: AqaDiagramRubric;
+  /** Catalog id of the read-only reference figure (if available). */
+  referenceFigureId?: string;
+  /** Per-question scenario override (e.g. "UK NHS Nursing — RCN"). */
+  referenceFigureScenario?: string;
+  /** True when no catalog entry covered this diagram type. */
+  referenceFigureMissing?: boolean;
 }
 
 const EXPLICIT_DIAGRAM_RE =
