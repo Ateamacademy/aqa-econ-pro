@@ -206,6 +206,9 @@ ${lineNumber(ext.body)}
 }
 
 function buildPaper(set: AqaPaper2Set): string {
+  const c1 = set.c1;
+  const c2 = set.c2;
+  const [e1, e2, e3] = set.essays;
   return `# AQA A-Level Economics (7136) — Paper 2: National and International Economy — ${set.setLabel}
 
 **Time: 2 hours | Total: 80 marks**
@@ -214,43 +217,92 @@ function buildPaper(set: AqaPaper2Set): string {
 
 ## Section A — Data response (40 marks)
 
-### Context 1 — ${set.c1.title}
+### Context 1 — ${c1.title}
 *Total for this Context: 40 marks*
 
 ### Extract A
-${set.c1.data}
+${c1.data}
 
-${renderExtract("B", set.c1.prose1)}
+${renderExtract("B", c1.prose1)}
 
-${renderExtract("C", set.c1.prose2)}
+${renderExtract("C", c1.prose2)}
 
 Question 01 [2 marks]
-${set.c1.q1}
+${c1.q1}
 
 Question 02 [4 marks]
-${set.c1.q2}
+${c1.q2}
 
 Question 03 [9 marks]
-${set.c1.q3}${figureMd(set.c1.q3Diagram)}
+${c1.q3}${figureMd(c1.q3Diagram)}
 
 Question 04 [25 marks]
-${set.c1.q4}
+${c1.q4}
+
+---
+
+### Context 2 — ${c2.title}
+*Total for this Context: 40 marks — answer EITHER Context 1 OR Context 2*
+
+### Extract D
+${c2.data}
+
+${renderExtract("E", c2.prose1)}
+
+${renderExtract("F", c2.prose2)}
+
+Question 05 [2 marks]
+${c2.q1}
+
+Question 06 [4 marks]
+${c2.q2}
+
+Question 07 [9 marks]
+${c2.q3}${figureMd(c2.q3Diagram)}
+
+Question 08 [25 marks]
+${c2.q4}
 
 ---
 
 ## Section B — Essay (40 marks)
 
-**Answer both parts of the essay below.**
+**Choose ONE of the following three essays. Answer BOTH parts (a) and (b) of the essay you choose.**
+
+You are advised to spend 1 hour on this section.
 
 ---
 
-${set.essays[0].stimulus}
+### Essay 1
+${e1.stimulus}
 
-Question 05 [15 marks]
-${set.essays[0].explain}${figureMd(set.essays[0].diagram)}
+Question 09 [15 marks]
+${e1.explain}${figureMd(e1.diagram)}
 
-Question 06 [25 marks]
-${set.essays[0].evaluate}`;
+Question 10 [25 marks]
+${e1.evaluate}
+
+---
+
+### Essay 2
+${e2.stimulus}
+
+Question 11 [15 marks]
+${e2.explain}${figureMd(e2.diagram)}
+
+Question 12 [25 marks]
+${e2.evaluate}
+
+---
+
+### Essay 3
+${e3.stimulus}
+
+Question 13 [15 marks]
+${e3.explain}${figureMd(e3.diagram)}
+
+Question 14 [25 marks]
+${e3.evaluate}`;
 }
 
 function buildMarkScheme(set: AqaPaper2Set): string {
