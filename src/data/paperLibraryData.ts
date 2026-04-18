@@ -29,8 +29,8 @@ const BOARDS: BoardMeta[] = [
   {
     subject: "economics", boardLabel: "AQA", level: "A-Level",
     papers: [
-      { value: "1", label: "Paper 1", title: "Markets & Market Failure", marks: 80, duration: 105 },
-      { value: "2", label: "Paper 2", title: "National & International Economy", marks: 80, duration: 105 },
+      { value: "1", label: "Paper 1", title: "Markets & Market Failure", marks: 80, duration: 120 },
+      { value: "2", label: "Paper 2", title: "National & International Economy", marks: 80, duration: 120 },
       { value: "full", label: "Paper 3", title: "Economic Principles & Issues", marks: 80, duration: 120 },
     ],
   },
