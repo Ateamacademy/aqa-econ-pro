@@ -306,17 +306,19 @@ ${e3.evaluate}`;
 }
 
 function buildMarkScheme(set: AqaPaper2Set): string {
+  const c1 = set.c1;
+  const c2 = set.c2;
   const sections: string[] = [
     `# AQA A-Level Economics (7136/2) — Mark Scheme — ${set.setLabel}`,
-    `**Total: 80 marks** | Section A: data response (40 marks). Section B: answer ONE essay (40 marks).`,
+    `**Total: 80 marks** | Section A: data response (40 marks, EITHER Context 1 OR Context 2). Section B: answer ONE of three essays (40 marks).`,
     `---`,
-    `## Section A — Context 1`,
+    `## Section A — Context 1 (Q01–Q04)`,
     renderPointMark({
       questionLabel: "0\u20091",
       totalMarks: 2,
-      expectedAnswer: `${set.c1.q1Answer} (working: ${set.c1.q1Working}).`,
+      expectedAnswer: `${c1.q1Answer} (working: ${c1.q1Working}).`,
       markPoints: [
-        { description: `Correct answer (${set.c1.q1Answer}) with correct sign and units`, marks: 2 },
+        { description: `Correct answer (${c1.q1Answer}) with correct sign and units`, marks: 2 },
         { description: "Correct method but wrong final answer", marks: 1 },
       ],
     }),
@@ -334,7 +336,7 @@ function buildMarkScheme(set: AqaPaper2Set): string {
     renderLevelMark({
       questionLabel: "0\u20093",
       totalMarks: 9,
-      diagram: set.c1.q3Diagram,
+      diagram: c1.q3Diagram,
       indicativeContent: [
         "K: definitions of AD, AS, monetary transmission mechanism.",
         "App: explicit reference to Extract B and the Bank Rate path.",
@@ -353,25 +355,72 @@ function buildMarkScheme(set: AqaPaper2Set): string {
       ],
     }),
     `---`,
-    `## Section B — Essay`,
+    `## Section A — Context 2 (Q05–Q08)`,
+    renderPointMark({
+      questionLabel: "0\u20095",
+      totalMarks: 2,
+      expectedAnswer: `${c2.q1Answer} (working: ${c2.q1Working}).`,
+      markPoints: [
+        { description: `Correct answer (${c2.q1Answer}) with correct sign and units`, marks: 2 },
+        { description: "Correct method but wrong final answer", marks: 1 },
+      ],
+    }),
+    renderPointMark({
+      questionLabel: "0\u20096",
+      totalMarks: 4,
+      expectedAnswer: "Two explained references to Extract D data.",
+      markPoints: [
+        { description: "Identifies first relevant data point", marks: 1 },
+        { description: "Develops first point with macro reasoning", marks: 1 },
+        { description: "Identifies second relevant data point", marks: 1 },
+        { description: "Develops second point with macro reasoning", marks: 1 },
+      ],
+    }),
+    renderLevelMark({
+      questionLabel: "0\u20097",
+      totalMarks: 9,
+      diagram: c2.q3Diagram,
+      indicativeContent: [
+        "K: definitions relevant to Context 2 macro mechanism.",
+        "App: explicit reference to Extract E.",
+        "An: developed chains across AD/AS or external balances.",
+        "Diagram: clearly labelled axes, curves, equilibrium points.",
+      ],
+    }),
+    renderLevelMark({
+      questionLabel: "0\u20098",
+      totalMarks: 25,
+      indicativeContent: [
+        "K: precise definitions of relevant macro policy tools.",
+        "App: sustained reference to Extracts D–F and data.",
+        "An: rigorous policy chains.",
+        "E: balanced counter-arguments; supported conclusion.",
+      ],
+    }),
+    `---`,
+    `## Section B — Essay (answer ONE of Essays 1, 2 or 3)`,
   ];
 
-  const essay = set.essays[0];
-  sections.push(
-    renderLevelMark({
-      questionLabel: "0\u20095",
-      totalMarks: 15,
-      diagram: essay.diagram,
-      indicativeContent: essay.explainContent,
-    }),
-  );
-  sections.push(
-    renderLevelMark({
-      questionLabel: "0\u20096",
-      totalMarks: 25,
-      indicativeContent: essay.evaluateContent,
-    }),
-  );
+  set.essays.forEach((essay, i) => {
+    const explainNum = String(9 + i * 2).padStart(2, "0");
+    const evaluateNum = String(10 + i * 2).padStart(2, "0");
+    sections.push(`### Essay ${i + 1}`);
+    sections.push(
+      renderLevelMark({
+        questionLabel: explainNum.replace(/(\d)(\d)/, "$1\u2009$2"),
+        totalMarks: 15,
+        diagram: essay.diagram,
+        indicativeContent: essay.explainContent,
+      }),
+    );
+    sections.push(
+      renderLevelMark({
+        questionLabel: evaluateNum.replace(/(\d)(\d)/, "$1\u2009$2"),
+        totalMarks: 25,
+        indicativeContent: essay.evaluateContent,
+      }),
+    );
+  });
 
   return sections.join("\n\n");
 }
