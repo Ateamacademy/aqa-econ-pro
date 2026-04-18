@@ -1137,4 +1137,257 @@ Analyse whether increased private sector involvement in healthcare delivery woul
 Question 35 [25 marks]
 "The NHS model of free-at-the-point-of-use healthcare is unsustainable and should be replaced by an insurance-based system." Evaluate this statement.`,
   },
+
+  // ── ECONOMICS PAPER 3: Set G ──
+  {
+    id: "econ-p3-g",
+    subject: "economics",
+    paper: "3",
+    title: "Paper 3 — Set G",
+    description: "Economic Principles & Issues. 30 MCQs + case study on climate economics and net zero.",
+    totalMarks: 80,
+    content: `# AQA A-Level Economics (7136) — Paper 3 — Predicted Paper Set G
+
+**Time: 2 hours | Total: 80 marks**
+
+## Section A — Multiple Choice Questions (30 marks)
+
+Question 1 [1 marks]
+A carbon emissions trading scheme works by:
+A. Banning all carbon-emitting industries
+B. Setting a cap on emissions and allowing firms to trade permits
+C. Imposing a uniform tax on all energy use
+D. Subsidising renewable energy producers directly
+
+Question 2 [1 marks]
+The Coase theorem suggests that, with low transaction costs:
+A. Government regulation is always required to fix externalities
+B. Property rights and bargaining can resolve externalities efficiently
+C. Pigouvian taxes are always optimal
+D. Markets cannot internalise external costs
+
+Question 3 [1 marks]
+A common pool resource (e.g. fisheries) is best characterised as:
+A. Non-rival and non-excludable
+B. Rival and non-excludable
+C. Rival and excludable
+D. Non-rival and excludable
+
+Question 4 [1 marks]
+Green Quantitative Easing refers to:
+A. Central bank purchases of green bonds to support climate-aligned investment
+B. Tax cuts for environmental charities
+C. Subsidies for petrol-powered vehicles
+D. A reduction in interest rates for all firms
+
+Question 5 [1 marks]
+Which of the following is the strongest example of a Pigouvian subsidy?
+A. A grant for installing residential heat pumps
+B. A duty on imported steel
+C. A levy on single-use plastics
+D. A windfall tax on oil profits
+
+Question 6 [1 marks]
+The "rebound effect" of energy efficiency improvements describes:
+A. A short-term recession caused by green policy
+B. Increased energy use as efficiency lowers the effective price of energy services
+C. The political backlash against carbon taxes
+D. Higher inflation following subsidy cuts
+
+Question 7 [1 marks]
+Stranded assets in the context of net zero refer to:
+A. Renewable energy infrastructure
+B. Fossil fuel reserves and capital that lose value before the end of their economic life
+C. Government bonds held by foreign investors
+D. Land used for carbon offset forestry
+
+Question 8 [1 marks]
+A "just transition" policy aims to:
+A. Maximise short-run profits in fossil fuel industries
+B. Distribute the costs and benefits of decarbonisation equitably across regions and workers
+C. Replace all market mechanisms with central planning
+D. Eliminate all government intervention in energy markets
+
+Question 9 [1 marks]
+Carbon Border Adjustment Mechanisms (CBAMs) are designed primarily to address:
+A. Trade deficits with developing economies
+B. Carbon leakage when domestic carbon prices push production abroad
+C. Currency manipulation by trading partners
+D. Subsidy disputes at the WTO
+
+Question 10 [1 marks]
+The discount rate used in climate cost-benefit analysis matters because:
+A. It determines the exchange rate for green bonds
+B. A lower discount rate increases the present value of long-term climate damages
+C. It sets the central bank's policy rate
+D. It is used to calculate the carbon tax rate
+
+Question 11 [1 marks]
+A subsidy on electric vehicles (EVs) is most likely to:
+A. Increase the consumer surplus of EV buyers and reduce negative externalities from petrol vehicles
+B. Eliminate all road congestion
+C. Reduce demand for charging infrastructure
+D. Raise the price paid by EV consumers
+
+Question 12 [1 marks]
+The Kuznets environmental curve hypothesises that:
+A. Pollution rises indefinitely with GDP per capita
+B. Pollution falls indefinitely with GDP per capita
+C. Pollution rises with GDP and then falls beyond a threshold income level
+D. There is no relationship between pollution and income
+
+Question 13 [1 marks]
+A "greenium" is best described as:
+A. The yield premium investors require to hold polluting assets
+B. The lower yield investors accept on green bonds compared to conventional bonds
+C. A tax on luxury goods
+D. The wage premium paid in renewable industries
+
+Question 14 [1 marks]
+Which is the most likely macroeconomic effect of a sharp, unexpected rise in global oil prices?
+A. A leftward shift of SRAS and stagflationary pressure
+B. A rightward shift of LRAS
+C. An increase in the natural rate of employment
+D. Demand-pull deflation
+
+Question 15 [1 marks]
+A government targeting net zero by 2050 is most likely to use:
+A. Only voluntary corporate pledges
+B. A policy mix of carbon pricing, regulation, and public investment
+C. A single uniform sales tax on all goods
+D. Capital controls on international finance
+
+Question 16 [1 marks]
+The "social cost of carbon" measures:
+A. The market price of a tonne of CO2 in the EU ETS
+B. The estimated present value of future damages from emitting one extra tonne of CO2
+C. The administrative cost of climate regulation
+D. The retail electricity bill of an average household
+
+Question 17 [1 marks]
+A windfall tax on oil and gas company profits is most defensible on:
+A. Allocative efficiency grounds alone
+B. Distributional and equity grounds, given supernormal profits during energy shocks
+C. Productive efficiency grounds
+D. Comparative advantage grounds
+
+Question 18 [1 marks]
+Which best describes a "missing market" in the context of biodiversity loss?
+A. The market for renewable electricity
+B. The absence of priced property rights in ecosystem services
+C. A monopoly in seed production
+D. A free-trade area for agricultural goods
+
+Question 19 [1 marks]
+A negative supply shock from a drought is most likely to cause:
+A. A rightward shift of AS and lower prices
+B. A leftward shift of AS, higher prices and lower output
+C. A rightward shift of AD only
+D. No change in equilibrium
+
+Question 20 [1 marks]
+A green industrial strategy that subsidises domestic battery production may risk:
+A. Improved comparative advantage in energy
+B. Retaliatory tariffs and accusations of protectionism
+C. A balanced budget surplus
+D. Lower long-run aggregate supply
+
+Question 21 [1 marks]
+Compared with a carbon tax, a tradable permit system:
+A. Provides certainty over the quantity of emissions but not the price
+B. Provides certainty over the price of emissions but not the quantity
+C. Provides certainty over both price and quantity
+D. Provides certainty over neither
+
+Question 22 [1 marks]
+A "double dividend" from environmental taxes refers to:
+A. Two separate Pigouvian taxes on the same good
+B. Cutting emissions while using the revenue to lower distortionary taxes elsewhere
+C. Doubling the tax rate every five years
+D. Hypothecating revenue exclusively to environmental projects
+
+Question 23 [1 marks]
+The principal–agent problem in the context of company climate disclosures arises because:
+A. Shareholders and managers may have different time horizons and incentives over climate risk
+B. Auditors are state-owned
+C. Customers can directly hire managers
+D. Workers always own equity
+
+Question 24 [1 marks]
+A "green paradox" suggests that anticipated future climate policy may:
+A. Encourage fossil fuel owners to extract reserves more quickly today
+B. Eliminate all fossil fuel demand instantly
+C. Have no behavioural effects
+D. Permanently lower the discount rate
+
+Question 25 [1 marks]
+Which is the most accurate description of "additionality" in carbon offset markets?
+A. Emissions reductions that would have occurred anyway without the offset payment
+B. Emissions reductions that would not have occurred without the offset payment
+C. The administrative fee charged by an offset broker
+D. The number of offsets purchased by a single firm
+
+Question 26 [1 marks]
+Investment in flood defences is best classified as a:
+A. Pure private good
+B. Pure public good
+C. Quasi-public good with non-rival but partially excludable benefits
+D. Demerit good
+
+Question 27 [1 marks]
+A government adopting a "green golden rule" may borrow:
+A. Only to fund current departmental spending
+B. To finance investment in productive low-carbon assets while balancing the current budget
+C. Without any limit
+D. Only from the central bank
+
+Question 28 [1 marks]
+A regressive impact of a flat-rate carbon tax can be mitigated by:
+A. Lowering the tax rate to zero
+B. Recycling revenue via lump-sum dividends or targeted transfers to low-income households
+C. Exempting all firms from the tax
+D. Raising income tax thresholds for top earners only
+
+Question 29 [1 marks]
+Which best describes "sustainable development" in the Brundtland sense?
+A. Maximising GDP growth in the next quarter
+B. Meeting present needs without compromising the ability of future generations to meet theirs
+C. Eliminating all international trade
+D. Returning to pre-industrial output levels
+
+Question 30 [1 marks]
+A central bank conducting climate stress tests is primarily concerned with:
+A. Setting the carbon tax rate
+B. Assessing the resilience of the financial system to physical and transition climate risks
+C. Replacing fiscal policy with monetary policy
+D. Subsidising green start-ups directly
+
+## Section B — Case Study: UK Net Zero Transition and the Energy System
+
+**Extract A:** The UK has legislated a binding target of net zero greenhouse gas emissions by 2050. The Climate Change Committee (CCC) estimates required investment of around £50 billion per year through the 2030s, peaking near 1.5% of GDP, with offsetting operating cost savings later. Renewables now supply over 40% of UK electricity, but heating and transport remain heavily fossil-fuel dependent.
+
+**Extract B:** Selected UK climate and energy indicators, 2019–2024.
+
+| Year | Territorial GHG emissions (MtCO2e) | Renewable share of electricity (%) | Heat pump installations (000s) | Average household energy bill (£) |
+|------|------------------------------------:|------------------------------------:|------------------------------:|----------------------------------:|
+| 2019 | 455 | 37 | 27  | 1,280 |
+| 2021 | 427 | 40 | 35  | 1,400 |
+| 2023 | 384 | 43 | 60  | 2,300 |
+| 2024 | 371 | 45 | 95  | 1,920 |
+
+Source: BEIS / DESNZ statistical releases, 2024.
+
+**Extract C:** A 2024 Resolution Foundation report finds that, without compensating transfers, a uniform UK carbon price of £100/tCO2 would cost the poorest decile around 2.4% of disposable income, versus 0.6% for the richest decile. Yet failing to invest in low-carbon infrastructure risks higher future climate damages and stranded fossil assets.
+
+**Extract D:** Critics argue that aggressive net zero policy reduces UK competitiveness against trading partners with weaker climate rules, encouraging carbon leakage. Supporters counter that early movers gain comparative advantage in green technology, that CBAMs can level the playing field, and that the social cost of inaction far exceeds the cost of transition.
+
+Question 31 [10 marks]
+To what extent, if at all, do the data in Extracts A and B suggest that the UK is on track to meet its net zero target by 2050?
+
+Question 32 [15 marks]
+Explain how a combination of carbon pricing, public investment and regulation can be used to address the market failures associated with greenhouse gas emissions in the UK economy. Use a diagram in your answer.
+
+Question 33 [25 marks]
+After considering Extract D, and the original evidence in Extracts A, B and C, would you recommend that the UK government should accelerate its net zero investment programme even if this means significantly higher public borrowing in the short run? Justify your recommendation.`,
+  },
 ];
