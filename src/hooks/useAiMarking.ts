@@ -16,7 +16,7 @@ export interface AiMarkingState {
 }
 
 function toState(r: AiMarkingResult): AiMarkingState {
-  if (r.ok) return { status: "done", analysis: r.analysis, cached: r.cached };
+  if (r.ok === true) return { status: "done", analysis: r.analysis, cached: r.cached };
   return { status: "error", error: r.error, retryAfterSec: r.retryAfterSec };
 }
 
