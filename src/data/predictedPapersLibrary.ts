@@ -816,52 +816,59 @@ Question 33 [25 marks]
     title: "Paper 1 — Set B",
     description: "Markets and Market Failure. Environmental economics focus.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics — Paper 1: Markets and Market Failure — Predicted Paper Set B
+    content: `# AQA A-Level Economics (7136/1) — Paper 1: Markets and Market Failure — Predicted Paper Set B
 
 **Time: 2 hours | Total: 80 marks**
 
----
-
-## Section A: Data Response
-
-**Context / Extract A:**
-
-The UK Emissions Trading Scheme (UK ETS) was launched in January 2021 following Brexit, replacing the EU ETS. Under the scheme, large industrial emitters must buy permits (allowances) for each tonne of CO₂ they emit. The price of carbon allowances rose from £50/tonne in early 2021 to £78/tonne in mid-2024. Environmental groups argue the cap is too generous, allowing firms to continue polluting. Industry groups warn that high carbon prices push manufacturing overseas — a phenomenon known as "carbon leakage."
-
-**Extract B — Data:**
-
-| Year | Carbon price (£/tonne) | UK industrial emissions (MtCO₂) | Renewable energy share (%) |
-|------|------------------------|----------------------------------|---------------------------|
-| 2019 | 22 (EU ETS) | 102 | 37 |
-| 2021 | 50 | 92 | 40 |
-| 2022 | 68 | 85 | 42 |
-| 2024 | 78 | 79 | 47 |
-
-Question 1.1 [2 marks]
-Using Extract B, calculate the fall in UK industrial emissions between 2019 and 2024.
-
-Question 1.2 [4 marks]
-Using a diagram, explain how a carbon trading scheme (cap-and-trade) aims to internalise the external costs of pollution.
-
-Question 1.3 [9 marks]
-Using the data and your economic knowledge, analyse the extent to which the UK ETS has been successful in reducing carbon emissions.
-
-Question 1.4 [25 marks]
-Evaluate the view that market-based policies, such as carbon trading and environmental taxes, are more effective than government regulation in tackling climate change.
+Answer ALL questions in Section A and ONE question from Section B.
 
 ---
 
-## Section B: Essay Questions (choose one)
+## Section A: Data Response (40 marks)
 
-**Either**
+**Extract A — Carbon trading and UK industrial emissions**
 
-Question 2 [25 marks]
-Evaluate the view that monopoly power is always against the public interest.
+The UK Emissions Trading Scheme (UK ETS) launched in 2021 after Brexit, replacing UK participation in the EU ETS. Large industrial emitters must surrender allowances for every tonne of CO₂ released. The carbon allowance price climbed from £50/tonne in early 2021 to £78/tonne in mid-2024. Environmental groups argue the cap is too generous, while energy-intensive manufacturers warn that high carbon prices encourage carbon leakage as production relocates to jurisdictions with weaker regulation.
 
-**Or**
+**Extract B — UK industrial emissions and carbon allowance prices, 2019–2024**
 
-Question 3 [25 marks]
-"The provision of information is sufficient to correct market failure caused by merit goods." Evaluate this statement.`,
+| Year | Carbon price (£/tonne) | UK industrial emissions (MtCO₂) | Renewable share of generation (%) |
+|------|------------------------|----------------------------------|------------------------------------|
+| 2019 | 22 (EU ETS)            | 102                              | 37                                 |
+| 2021 | 50                     | 92                               | 40                                 |
+| 2022 | 68                     | 85                               | 42                                 |
+| 2024 | 78                     | 79                               | 47                                 |
+
+**Extract C — Further commentary**
+
+A 2024 CBI survey reported that 41% of energy-intensive UK firms had postponed planned investment in low-carbon production because of allowance price uncertainty. Government modelling suggested that, without the ETS, UK industrial emissions would have been 9–14 MtCO₂ higher in 2024.
+
+Question 1 [2 marks]
+Using Extract B, calculate the percentage fall in UK industrial emissions between 2019 and 2024.
+
+Question 2 [4 marks]
+Using a supply and demand diagram for tradable pollution permits, explain how a tightening of the cap raises the carbon price.
+
+Question 3 [9 marks]
+Using the extracts and your knowledge of economics, analyse two ways in which the UK ETS may correct the market failure associated with industrial pollution.
+
+Question 4 [25 marks]
+Using the extracts and your own knowledge, evaluate the view that tradable pollution permits are a more effective policy than indirect taxation for reducing industrial carbon emissions.
+
+---
+
+## Section B: Essay (40 marks)
+
+Answer EITHER Question 5 OR Question 6.
+
+**Short extract:**
+Critics of unregulated markets argue that profit-seeking firms over-exploit common resources, ignore externalities and under-supply public goods. Supporters reply that property rights and tradable markets, not direct regulation, deliver superior outcomes.
+
+Question 5 [15 marks]
+Explain, using a diagram, how negative externalities of production lead to allocative inefficiency.
+
+Question 6 [25 marks]
+"Market-based environmental policies are always more efficient than command-and-control regulation." Evaluate this view with reference to recent UK examples.`,
   },
 
   // ── ECONOMICS PAPER 2: Set B ──
@@ -872,53 +879,60 @@ Question 3 [25 marks]
     title: "Paper 2 — Set B",
     description: "National and International Economy. Trade and globalisation focus.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics — Paper 2: National and International Economy — Predicted Paper Set B
+    content: `# AQA A-Level Economics (7136/2) — Paper 2: National and International Economy — Predicted Paper Set B
 
 **Time: 2 hours | Total: 80 marks**
 
+Answer ALL questions in Section A and ONE question from Section B.
+
 ---
 
-## Section A: Data Response
+## Section A: Data Response (40 marks)
 
-**Context / Extract A:**
+**Extract A — UK trade and CPTPP membership**
 
-Since Brexit, the UK has pursued independent trade deals, signing agreements with Australia, New Zealand, Japan, and joining the CPTPP (Comprehensive and Progressive Agreement for Trans-Pacific Partnership) in 2023. However, UK goods exports to the EU fell by 15% between 2019 and 2023, with small businesses citing increased border checks and paperwork as key barriers. The UK's current account deficit widened to 3.1% of GDP in 2023. Meanwhile, the UK attracted £29.5 billion in foreign direct investment (FDI) in 2023, remaining one of the top destinations in Europe.
+Since Brexit, the UK has signed independent trade deals with Australia, New Zealand and Japan and joined the CPTPP in 2023. UK goods exports to the EU fell 15% between 2019 and 2023; small businesses cite paperwork and rules-of-origin as the main barriers. The current account deficit widened to 3.1% of GDP in 2023. Inward FDI remained one of the highest in Europe at £29.5bn.
 
-**Extract B — Data:**
+**Extract B — UK trade and FDI, 2019–2023**
 
-| Indicator | 2019 | 2021 | 2023 |
-|-----------|------|------|------|
-| UK goods exports to EU (£bn) | 170 | 138 | 145 |
-| UK goods imports from EU (£bn) | 228 | 195 | 215 |
-| Current account balance (% of GDP) | -2.7 | -1.5 | -3.1 |
-| Inward FDI (£bn) | 36.2 | 24.1 | 29.5 |
-| £/€ exchange rate | 1.14 | 1.16 | 1.15 |
+| Indicator                          | 2019 | 2021 | 2023 |
+|------------------------------------|------|------|------|
+| UK goods exports to EU (£bn)       | 170  | 138  | 145  |
+| UK goods imports from EU (£bn)     | 228  | 195  | 215  |
+| Current account balance (% GDP)    | -2.7 | -1.5 | -3.1 |
+| Inward FDI (£bn)                   | 36.2 | 24.1 | 29.5 |
+| £/€ exchange rate                  | 1.14 | 1.16 | 1.15 |
 
-Question 1.1 [2 marks]
+**Extract C — Further commentary**
+
+OBR analysis estimates that CPTPP membership will raise UK GDP by 0.08% over 15 years — small relative to the 4% long-run hit estimated from leaving the EU single market. Supporters argue the deal hedges against rising protectionism and unlocks future Asian growth.
+
+Question 1 [2 marks]
 Using Extract B, calculate the UK's trade deficit in goods with the EU in 2023.
 
-Question 1.2 [4 marks]
-Using an appropriate diagram, explain the likely impact of a depreciation of the pound on the UK's current account.
+Question 2 [4 marks]
+Using an AD/AS diagram, explain how a fall in net exports affects UK real output and the price level.
 
-Question 1.3 [9 marks]
-Using the data and your economic knowledge, analyse the potential benefits and costs of the UK joining the CPTPP.
+Question 3 [9 marks]
+Using the extracts and your knowledge of economics, analyse two potential macroeconomic benefits to the UK of joining the CPTPP.
 
-Question 1.4 [25 marks]
-Evaluate the extent to which free trade agreements are beneficial for the UK economy. Use the data provided and your own knowledge.
+Question 4 [25 marks]
+Using the extracts and your own knowledge, evaluate the view that free trade agreements such as CPTPP are beneficial for UK long-run economic growth.
 
 ---
 
-## Section B: Essay Questions (choose one)
+## Section B: Essay (40 marks)
 
-**Either**
+Answer EITHER Question 5 OR Question 6.
 
-Question 2 [25 marks]
-"Fiscal policy is a more effective tool than monetary policy for reducing inequality." Evaluate this statement.
+**Short extract:**
+Globalisation has integrated product, capital and labour markets, creating winners and losers within and between countries. The role of trade agreements in shaping these outcomes is contested.
 
-**Or**
+Question 5 [15 marks]
+Explain how comparative advantage can lead to mutual gains from trade between two countries.
 
-Question 3 [25 marks]
-Evaluate the view that economic growth inevitably leads to environmental degradation.`,
+Question 6 [25 marks]
+"Globalisation has done more to reduce poverty than any government policy." Evaluate this statement.`,
   },
 
   // ── CHEMISTRY PAPER 1: Higher ──
@@ -1622,78 +1636,61 @@ The line graph shows the cost of electricity over 5 years:
     title: "Paper 2 — Set C",
     description: "Macroeconomic analysis focus: AD/AS diagrams, Phillips curve, multiplier, fiscal/monetary policy evaluation.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics — Paper 2: National and International Economy — Predicted Paper Set C (Macroeconomic Analysis Focus)
+    content: `# AQA A-Level Economics (7136/2) — Paper 2: National and International Economy — Predicted Paper Set C
 
 **Time: 2 hours | Total: 80 marks**
 
----
-
-## Section A: Data Response
-
-**Context / Extract A:**
-
-In 2024–25, the UK government faced a significant fiscal challenge. The national debt exceeded 100% of GDP for the first time since the 1960s, standing at £2.7 trillion. Despite this, the government increased public spending by 3.5% in real terms, focusing on health, education, and infrastructure (HS2 Northern Leg cancellation notwithstanding). The Office for Budget Responsibility (OBR) forecast GDP growth of 0.6% for 2024, rising to 1.4% in 2025. Unemployment held steady at 4.3%, but youth unemployment remained at 12.1%.
-
-The Bank of England began cutting interest rates from 5.25% in late 2024, with rates falling to 4.5% by early 2025. Inflation had returned to 2.3%, close to the 2% target. However, core inflation (excluding food and energy) remained sticky at 3.6%, driven by services sector wage growth. The pound depreciated by 5% against the dollar over the year.
-
-**Extract B — Macroeconomic Data:**
-
-| Indicator | 2022 | 2023 | 2024 | 2025 (forecast) |
-|-----------|------|------|------|-----------------|
-| Real GDP growth (%) | 4.3 | 0.1 | 0.6 | 1.4 |
-| CPI inflation (%) | 9.1 | 7.3 | 3.2 | 2.3 |
-| Unemployment (%) | 3.7 | 4.2 | 4.3 | 4.1 |
-| Budget deficit (% GDP) | 5.1 | 4.3 | 4.8 | 3.9 |
-| National debt (% GDP) | 85 | 93 | 101 | 103 |
-| Base rate (%) | 3.5 | 5.25 | 4.75 | 4.0 |
-| Current account (% GDP) | -3.8 | -3.1 | -2.8 | -2.5 |
-
-**Extract C — AD/AS Analysis:**
-
-Economists have debated whether the UK's recent inflation was primarily demand-pull or cost-push. The post-pandemic recovery saw a surge in consumer spending (supported by excess savings of £200bn), while simultaneously supply chains were disrupted and energy prices spiked due to geopolitical events. By 2024, the supply-side pressures had largely eased, but domestic demand remained subdued due to the lagged effects of monetary tightening.
-
-Question 1.1 [2 marks]
-Using Extract B, calculate the change in the budget deficit as a percentage of GDP between 2023 and 2024.
-
-Question 1.2 [4 marks]
-Using an AD/AS diagram, illustrate and explain the impact of the Bank of England cutting interest rates on the UK economy.
-
-Question 1.3 [4 marks]
-Using Extract B, explain the relationship between the base rate and inflation between 2022 and 2025. Reference the concept of time lags in monetary policy transmission.
-
-Question 1.4 [9 marks]
-Using the extracts and your economic knowledge, analyse whether the UK's inflation between 2022 and 2024 was primarily demand-pull or cost-push. Use AD/AS analysis in your answer.
-
-Question 1.5 [25 marks]
-"Reducing the budget deficit should be the government's top macroeconomic priority." Evaluate this statement with reference to the data provided and your knowledge of macroeconomic policy objectives and conflicts.
+Answer ALL questions in Section A and ONE question from Section B.
 
 ---
 
-## Section B: Essay Questions (choose one)
+## Section A: Data Response (40 marks)
 
-**Either**
+**Extract A — UK fiscal stance and the inflation cycle**
 
-Question 2 [25 marks]
-Using AD/AS diagrams where appropriate, evaluate the view that supply-side policies are more effective than demand-side policies in achieving sustained economic growth without inflation.
+In 2024 UK national debt exceeded 100% of GDP for the first time since the 1960s, at £2.7 trillion. Despite this, real public spending rose 3.5%. The OBR forecast GDP growth of 0.6% in 2024 rising to 1.4% in 2025. The Bank of England began cutting Bank Rate from 5.25% in late 2024 as headline CPI fell to 2.3%, although core inflation remained sticky at 3.6%. The pound depreciated 5% against the dollar.
 
-In your answer, you should:
-- Explain the difference between short-run and long-run aggregate supply
-- Analyse at least two specific supply-side policies and two demand-side policies
-- Evaluate the effectiveness of each approach using real-world examples
-- Consider potential conflicts between macroeconomic objectives
-- Draw and reference at least two AD/AS diagrams
+**Extract B — UK macroeconomic indicators, 2022–2025**
 
-**Or**
+| Indicator                  | 2022 | 2023 | 2024 | 2025 (f) |
+|----------------------------|------|------|------|----------|
+| Real GDP growth (%)        | 4.3  | 0.1  | 0.6  | 1.4      |
+| CPI inflation (%)          | 9.1  | 7.3  | 3.2  | 2.3      |
+| Unemployment (%)           | 3.7  | 4.2  | 4.3  | 4.1      |
+| Budget deficit (% GDP)     | 5.1  | 4.3  | 4.8  | 3.9      |
+| National debt (% GDP)      | 85   | 93   | 101  | 103      |
+| Bank Rate (%)              | 3.5  | 5.25 | 4.75 | 4.0      |
 
-Question 3 [25 marks]
-"The Phillips Curve relationship between unemployment and inflation no longer holds in the modern UK economy." Evaluate this statement.
+**Extract C — Further commentary**
 
-In your answer, you should:
-- Explain the original Phillips Curve and the expectations-augmented Phillips Curve
-- Analyse evidence from the UK economy between 2020 and 2025
-- Consider the role of supply shocks, globalisation, and labour market changes
-- Use appropriate diagrams to support your analysis
-- Evaluate whether the breakdown of the Phillips Curve has implications for monetary policy`,
+Economists disagree on whether 2022–24 inflation was demand-pull (excess household savings of c. £200bn after the pandemic) or cost-push (gas prices, supply-chain disruption). By 2024 the supply-side pressures had eased, but demand remained weak owing to the lagged effect of monetary tightening.
+
+Question 1 [2 marks]
+Using Extract B, calculate the change in the UK budget deficit as a share of GDP between 2023 and 2024.
+
+Question 2 [4 marks]
+Using an AD/AS diagram, explain the likely effect on UK real output and the price level of a cut in Bank Rate.
+
+Question 3 [9 marks]
+Using the extracts and your knowledge of economics, analyse two reasons why UK inflation between 2022 and 2024 may have been driven primarily by cost-push factors.
+
+Question 4 [25 marks]
+Using the extracts and your own knowledge, evaluate the view that reducing the budget deficit should be the UK government's top macroeconomic priority.
+
+---
+
+## Section B: Essay (40 marks)
+
+Answer EITHER Question 5 OR Question 6.
+
+**Short extract:**
+Monetary and fiscal policy face long and variable lags and may conflict in their objectives. Central bank independence is widely regarded as critical for credible inflation targeting.
+
+Question 5 [15 marks]
+Explain how the transmission mechanism of monetary policy affects aggregate demand.
+
+Question 6 [25 marks]
+"Fiscal policy is more effective than monetary policy in stabilising the macroeconomy after a deep recession." Evaluate this statement.`,
   },
 
   // ── ECONOMICS PAPER 1: Set C (Diagram & Graph Focus) ──
@@ -1704,69 +1701,59 @@ In your answer, you should:
     title: "Paper 1 — Set C",
     description: "Diagram & graph focus: supply/demand shifts, welfare analysis, elasticity diagrams, market structures.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics — Paper 1: Markets and Market Failure — Predicted Paper Set C (Diagram & Graph Focus)
+    content: `# AQA A-Level Economics (7136/1) — Paper 1: Markets and Market Failure — Predicted Paper Set C
 
 **Time: 2 hours | Total: 80 marks**
 
----
-
-## Section A: Data Response
-
-**Context / Extract A:**
-
-The UK energy market has undergone significant changes. Following the 2022 energy crisis, the government introduced the Energy Price Guarantee (EPG), capping average household energy bills at £2,500 per year. By 2024, the cap was adjusted quarterly by Ofgem, falling to £1,568 as wholesale gas prices declined. Critics argue the cap distorts price signals, while supporters say it protects vulnerable consumers.
-
-The UK's electricity generation mix also shifted: renewables generated 47% of electricity in 2024, up from 37% in 2019. However, the intermittent nature of wind and solar power means gas remains essential for baseload generation.
-
-**Extract B — UK Energy Market Data:**
-
-| Year | Average annual bill (£) | Wholesale gas price (p/therm) | Renewables share (%) | Fuel poverty (% households) |
-|------|------------------------|------------------------------|---------------------|---------------------------|
-| 2019 | 1,254 | 40 | 37 | 10.3 |
-| 2021 | 1,138 | 55 | 40 | 13.2 |
-| 2022 | 2,500 (capped) | 200 | 42 | 19.8 |
-| 2024 | 1,568 (capped) | 68 | 47 | 14.5 |
-
-Question 1.1 [2 marks]
-Using Extract B, calculate the percentage of households in fuel poverty in 2024 compared to 2022.
-
-Question 1.2 [4 marks]
-Draw a supply and demand diagram to show the effect of a maximum price (price ceiling) on the energy market. Label the areas of consumer surplus, producer surplus, and deadweight loss.
-
-Question 1.3 [4 marks]
-Using a diagram, explain how a subsidy to renewable energy producers would affect the market for electricity. Show the effect on equilibrium price and quantity.
-
-Question 1.4 [9 marks]
-Using the data and your economic knowledge, analyse the costs and benefits of the energy price cap as a form of government intervention.
-
-Question 1.5 [25 marks]
-"Government price controls do more harm than good in correcting market failure." Evaluate this statement with reference to the energy market and other examples.
+Answer ALL questions in Section A and ONE question from Section B.
 
 ---
 
-## Section B: Essay Questions (choose one)
+## Section A: Data Response (40 marks)
 
-**Either**
+**Extract A — UK energy price cap and the household energy market**
 
-Question 2 [25 marks]
-Using appropriate diagrams, evaluate the effectiveness of different methods a government could use to reduce negative externalities of production.
+Following the 2022 wholesale gas price spike, the UK government introduced the Energy Price Guarantee, capping the average dual-fuel household bill at £2,500. From 2024 the cap is reset quarterly by Ofgem and fell to £1,568. Critics argue the cap dampens price signals to invest in efficiency; supporters say it shielded vulnerable households at a critical moment. Renewables generated 47% of UK electricity in 2024, up from 37% in 2019, but gas remains essential for baseload supply.
 
-In your answer, you should include:
-- A diagram showing the divergence between private and social costs
-- Analysis of at least three policy options (e.g., taxation, regulation, tradeable permits)
-- Evaluation of the strengths and limitations of each approach
-- Real-world examples
+**Extract B — UK energy market data, 2019–2024**
 
-**Or**
+| Year | Average annual bill (£) | Wholesale gas (p/therm) | Renewables share (%) | Fuel poverty (% of households) |
+|------|-------------------------|-------------------------|----------------------|--------------------------------|
+| 2019 | 1,254                   | 40                      | 37                   | 10.3                           |
+| 2021 | 1,138                   | 55                      | 40                   | 13.2                           |
+| 2022 | 2,500 (capped)          | 200                     | 42                   | 19.8                           |
+| 2024 | 1,568 (capped)          | 68                      | 47                   | 14.5                           |
 
-Question 3 [25 marks]
-"Perfect competition is always more beneficial to consumers than monopoly." Using diagrams, evaluate this statement.
+**Extract C — Further commentary**
 
-In your answer, you should:
-- Draw and compare diagrams of perfect competition and monopoly
-- Analyse allocative and productive efficiency in each market structure
-- Consider dynamic efficiency, natural monopoly, and contestable markets
-- Evaluate with reference to real-world examples`,
+Ofgem estimates that the price cap created an effective shortage at the peak of the crisis: at the capped price, quantity demanded exceeded the quantity suppliers were willing to supply at unsubsidised cost, requiring £40bn of taxpayer support to retailers. Income-based studies show the lowest decile spent 11% of disposable income on energy in 2022 versus 4% for the top decile.
+
+Question 1 [2 marks]
+Using Extract B, calculate the change in the proportion of households in fuel poverty between 2019 and 2024.
+
+Question 2 [4 marks]
+Using a supply and demand diagram, explain how a maximum price (price ceiling) below equilibrium creates excess demand in the household energy market.
+
+Question 3 [9 marks]
+Using the extracts and your knowledge of economics, analyse two reasons why the energy price cap may correct or worsen market failure.
+
+Question 4 [25 marks]
+Using the extracts and your own knowledge, evaluate the view that maximum prices are the most effective way to protect consumers in essential markets such as energy.
+
+---
+
+## Section B: Essay (40 marks)
+
+Answer EITHER Question 5 OR Question 6.
+
+**Short extract:**
+Government intervention in markets often involves trade-offs between equity and efficiency. Maximum prices, subsidies and direct provision may protect consumers but distort price signals and impose deadweight losses.
+
+Question 5 [15 marks]
+Explain, using a diagram, how a per-unit subsidy to renewable electricity producers affects equilibrium price and quantity.
+
+Question 6 [25 marks]
+"Government failure is often worse than the market failure it tries to correct." Evaluate this statement with reference to UK price controls or subsidies.`,
   },
 
   // ── MATHS PAPER 3: Foundation — Set A ──
@@ -2992,16 +2979,18 @@ Describe how metals can be extracted using phytomining or bioleaching. State one
     title: "Paper 3 — Set B",
     description: "Synoptic. MCQ + Case study on UK labour market with diagram-based analysis.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics — Paper 3: Economic Principles and Issues — Predicted Paper Set B
+    content: `# AQA A-Level Economics (7136/3) — Paper 3: Economic Principles and Issues — Predicted Paper Set B
 
 **Time: 2 hours | Total: 80 marks**
+
+Answer ALL questions in Section A and ALL questions in Section B.
 
 ---
 
 ## Section A: Multiple Choice (30 marks)
 
 Question 1 [1 marks]
-A merit good is one where:
+A merit good is one for which:
 A. Social benefits exceed private benefits
 B. Social costs exceed private costs
 C. It is provided free at the point of use
@@ -3026,7 +3015,7 @@ The multiplier effect means that:
 A. Investment always increases GDP
 B. An initial change in spending leads to a larger change in national income
 C. Tax revenue multiplies government spending
-D. Interest rate changes have no effect on GDP
+D. Interest-rate changes have no effect on GDP
 
 Question 5 [1 marks]
 Which best describes allocative efficiency?
@@ -3039,81 +3028,202 @@ Question 6 [1 marks]
 Quantitative easing involves:
 A. Raising interest rates to reduce money supply
 B. Cutting government spending
-C. Central bank purchasing government bonds to increase money supply
-D. Increasing the reserve ratio for banks
+C. A central bank buying assets to expand the money supply
+D. Increasing the bank reserve ratio
 
 Question 7 [1 marks]
 A natural monopoly occurs when:
 A. There are no barriers to entry
-B. Long-run average costs fall continuously as output increases
+B. Long-run average cost falls continuously as output rises
 C. The firm is state-owned
 D. There are many small firms in the market
 
 Question 8 [1 marks]
-The Laffer Curve shows the relationship between:
+The Laffer curve shows the relationship between:
 A. Tax rates and tax revenue
 B. Unemployment and inflation
 C. Interest rates and investment
 D. Government spending and GDP
 
 Question 9 [1 marks]
-If MPC = 0.75, the value of the multiplier is:
+If the marginal propensity to consume is 0.75, the multiplier is:
 A. 0.75
 B. 3
 C. 4
 D. 1.33
 
 Question 10 [1 marks]
-Supply-side policies aim to:
+Supply-side policies aim primarily to:
 A. Increase aggregate demand
 B. Shift the LRAS curve to the right
 C. Reduce the money supply
 D. Increase government borrowing
 
+Question 11 [1 marks]
+A perfectly contestable market requires:
+A. Many small firms
+B. Zero barriers to entry and exit
+C. Homogeneous products
+D. Perfect information
+
+Question 12 [1 marks]
+Which is most likely to reduce the natural rate of unemployment?
+A. A rise in unemployment benefits
+B. Improved geographical labour mobility
+C. A rise in interest rates
+D. A cut in income tax for high earners
+
+Question 13 [1 marks]
+A progressive tax system is one in which:
+A. The marginal tax rate is constant
+B. The average tax rate falls as income rises
+C. The average tax rate rises as income rises
+D. Everyone pays the same lump sum
+
+Question 14 [1 marks]
+The long-run Phillips curve is generally drawn as:
+A. Downward sloping
+B. Upward sloping
+C. Horizontal
+D. Vertical at the natural rate of unemployment
+
+Question 15 [1 marks]
+A monopsonist in the labour market is:
+A. A single seller of labour
+B. A single buyer of labour
+C. A trade union
+D. A firm in perfect competition
+
+Question 16 [1 marks]
+A government imposes a tax on a good with perfectly inelastic demand. The tax is:
+A. Borne entirely by producers
+B. Borne entirely by consumers
+C. Shared equally
+D. Avoided through reformulation
+
+Question 17 [1 marks]
+Frictional unemployment refers to workers who are:
+A. Permanently outside the labour force
+B. Between jobs while searching
+C. Unemployed because of a fall in AD
+D. Out of work owing to skill mismatch
+
+Question 18 [1 marks]
+The Lorenz curve is used to measure:
+A. The rate of inflation
+B. The level of unemployment
+C. The distribution of income or wealth
+D. Real GDP per capita
+
+Question 19 [1 marks]
+Which is most likely to cause cost-push inflation?
+A. A rise in raw-material prices
+B. A cut in interest rates during a boom
+C. An increase in consumer confidence
+D. A fall in income tax
+
+Question 20 [1 marks]
+A profit-maximising monopolist produces where:
+A. AR = AC
+B. MR = MC
+C. P = MC
+D. AR = MC
+
+Question 21 [1 marks]
+The Gini coefficient ranges between:
+A. 0 and 1, where 0 indicates perfect equality
+B. 0 and 1, where 1 indicates perfect equality
+C. -1 and 1
+D. 0 and 100, where 0 indicates perfect inequality
+
+Question 22 [1 marks]
+A floating exchange rate is most likely to depreciate when:
+A. Domestic interest rates rise
+B. Domestic exports become more competitive
+C. Domestic inflation rises faster than abroad
+D. The current account moves into surplus
+
+Question 23 [1 marks]
+A firm experiences economies of scale when:
+A. Long-run average cost falls as output rises
+B. Marginal cost equals average cost
+C. Total cost falls as output rises
+D. Average revenue rises as output rises
+
+Question 24 [1 marks]
+Which would shift the SRAS curve to the left?
+A. A fall in oil prices
+B. An increase in productivity
+C. A rise in indirect taxes
+D. A decrease in wage costs
+
+Question 25 [1 marks]
+In oligopoly, the kinked-demand curve assumes that rivals will:
+A. Match price rises but ignore price cuts
+B. Match price cuts but ignore price rises
+C. Match all price changes
+D. Ignore all price changes
+
+Question 26 [1 marks]
+Cross elasticity of demand between two goods is positive. The goods are:
+A. Complements
+B. Substitutes
+C. Normal goods
+D. Inferior goods
+
+Question 27 [1 marks]
+The principle of comparative advantage states that countries should specialise in goods in which they have the:
+A. Lowest absolute cost
+B. Highest absolute cost
+C. Lowest opportunity cost
+D. Largest market
+
+Question 28 [1 marks]
+A government runs a budget deficit when:
+A. Tax revenue exceeds public spending
+B. Public spending exceeds tax revenue
+C. The national debt falls
+D. Net exports are negative
+
+Question 29 [1 marks]
+A merit good is best defined as a good that is:
+A. Provided by the public sector
+B. Under-consumed relative to the social optimum
+C. Non-rival and non-excludable
+D. Always provided free of charge
+
+Question 30 [1 marks]
+A firm in long-run monopolistic competition earns:
+A. Supernormal profit
+B. Normal profit only
+C. A loss equal to fixed cost
+D. Profit equal to marginal cost
+
 ---
 
-## Section B: Case Study
+## Section B: Case Study (50 marks)
 
-**Case Study — The UK Labour Market**
+**Case Study — The UK labour market**
 
-The UK labour market has experienced significant structural changes. Following Brexit, net migration from the EU fell from +250,000 per year to +50,000, creating labour shortages in hospitality, agriculture, and social care. The government responded by expanding the Skilled Worker visa scheme, with non-EU net migration rising to 600,000 in 2023.
+Net migration from the EU fell from +250,000 per year before Brexit to +50,000 by 2023, contributing to vacancies in hospitality, agriculture and social care. Non-EU net migration rose to 600,000 in 2023 under an expanded Skilled Worker visa. The National Living Wage rose 20% to £11.44 by April 2024. Labour-force participation among 50–64 year-olds fell from 73% to 68% between 2019 and 2023, partly because of long-term sickness. The Treasury estimates this added inactivity costs the economy around £16bn per year in lost output.
 
-Meanwhile, the National Living Wage increased from £9.50 (2022) to £11.44 (2024), a 20% rise. Employers' groups warned this would reduce hiring, particularly in small businesses, while trade unions argued it was still below the "real living wage" of £12.00. Zero-hours contracts made up 3.1% of all employment (approximately 1 million workers).
+| Indicator                              | 2019 | 2021 | 2023 | 2024 |
+|----------------------------------------|------|------|------|------|
+| Unemployment rate (%)                  | 3.8  | 4.5  | 4.2  | 4.3  |
+| Average weekly earnings growth (%)     | 3.5  | 4.8  | 7.2  | 5.8  |
+| CPI inflation (%)                      | 1.7  | 2.6  | 7.3  | 3.2  |
+| Real wage growth (%)                   | 1.8  | 2.2  | -0.1 | 2.6  |
+| National Living Wage (£/hour)          | 8.21 | 8.91 | 10.42| 11.44|
+| Economic inactivity, 16–64 (%)         | 20.2 | 21.5 | 21.3 | 21.8 |
 
-The labour force participation rate for those aged 50–64 fell from 73% to 68% between 2019 and 2023, partly due to long-term health conditions. Economists estimate this "economic inactivity" costs the economy £16 billion per year in lost output.
+Question 31 [10 marks]
+Using a labour-market supply and demand diagram, explain how a National Living Wage set above equilibrium creates unemployment in a competitive market. Use the data in the table.
 
-**Data Table:**
+Question 32 [15 marks]
+Using the case study and your knowledge of economics, analyse the impact of higher net migration on the UK labour market, considering wages, employment and productivity.
 
-| Indicator | 2019 | 2021 | 2023 | 2024 |
-|-----------|------|------|------|------|
-| Unemployment rate (%) | 3.8 | 4.5 | 4.2 | 4.3 |
-| Average weekly earnings growth (%) | 3.5 | 4.8 | 7.2 | 5.8 |
-| CPI inflation (%) | 1.7 | 2.6 | 7.3 | 3.2 |
-| Real wage growth (%) | 1.8 | 2.2 | -0.1 | 2.6 |
-| National Living Wage (£/hr) | 8.21 | 8.91 | 10.42 | 11.44 |
-| Economic inactivity (% 16–64) | 20.2 | 21.5 | 21.3 | 21.8 |
-
-Question 11 [2 marks]
-Calculate real wage growth in 2023. Show your working.
-
-Question 12 [4 marks]
-Using a labour market supply and demand diagram, show the effect of a National Living Wage set above the market equilibrium wage. Label any resulting unemployment.
-
-Question 13 [4 marks]
-Using an AD/AS diagram, explain how an increase in economic inactivity among over-50s might affect the macroeconomy.
-
-Question 14 [9 marks]
-Using the case study and your economic knowledge, analyse the impact of immigration on the UK labour market. Consider effects on wages, employment, and productivity.
-
-Question 15 [25 marks]
-"A higher National Living Wage does more harm than good for the UK economy." Evaluate this statement.
-
-In your answer, you should:
-- Use labour market diagrams to show the theoretical effects
-- Analyse the impact on different stakeholders (workers, firms, consumers, government)
-- Consider monopsony power and its implications for the minimum wage
-- Evaluate using real-world evidence from the case study
-- Consider both microeconomic and macroeconomic effects`,
+Question 33 [25 marks]
+"A higher National Living Wage does more harm than good for the UK economy." Evaluate this statement using the case study and your own economic knowledge.`,
   },
 
   // ── ECONOMICS PAPER 1: Set D ──
@@ -3124,70 +3234,60 @@ In your answer, you should:
     title: "Paper 1 — Set D",
     description: "Market structures, welfare analysis, cost curves, and competition policy.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics — Paper 1: Markets and Market Failure — Predicted Paper Set D
+    content: `# AQA A-Level Economics (7136/1) — Paper 1: Markets and Market Failure — Predicted Paper Set D
 
 **Time: 2 hours | Total: 80 marks**
 
----
-
-## Section A: Data Response
-
-**Context / Extract A:**
-
-The UK's Competition and Markets Authority (CMA) blocked Microsoft's proposed £55 billion acquisition of Activision Blizzard in June 2023, citing concerns about competition in the cloud gaming market. The CMA argued that the merger would give Microsoft an unfair advantage in cloud gaming, where the market is "still nascent and rapidly evolving." The decision was later overturned following restructured terms that diverted Activision's cloud gaming rights to Ubisoft for 15 years.
-
-The UK gaming market is worth £7.8 billion annually (2024), making it the sixth largest in the world. Three major firms — Sony, Microsoft, and Nintendo — dominate the console market with a combined market share of approximately 95%. Mobile gaming accounts for 52% of industry revenue, with thousands of smaller developers competing.
-
-**Extract B — UK Gaming Industry Data:**
-
-| Indicator | 2019 | 2021 | 2023 | 2024 |
-|-----------|------|------|------|------|
-| Industry revenue (£bn) | 5.7 | 7.2 | 7.5 | 7.8 |
-| Console market concentration (CR3, %) | 97 | 96 | 95 | 95 |
-| Mobile gaming share of revenue (%) | 42 | 48 | 50 | 52 |
-| Average game price (£) | 49.99 | 59.99 | 69.99 | 69.99 |
-| Number of indie game studios (UK) | 2,200 | 2,800 | 3,100 | 3,400 |
-
-Question 1.1 [2 marks]
-Using Extract B, calculate the three-firm concentration ratio for the console market in 2024 and explain what this suggests about the market structure.
-
-Question 1.2 [4 marks]
-Using a diagram, show the profit-maximising position for a monopolist (or oligopolist with market power). Label the areas of supernormal profit and deadweight loss. Include AR, MR, MC, and AC curves.
-
-Question 1.3 [4 marks]
-Using a diagram, explain how the entry of indie game studios into the mobile gaming market represents a more contestable market compared to the console market.
-
-Question 1.4 [9 marks]
-Using the extracts and your economic knowledge, analyse whether consumers benefit from high market concentration in the gaming console market. Consider static and dynamic efficiency.
-
-Question 1.5 [25 marks]
-"Competition policy, such as blocking mergers, is the most effective way to protect consumer welfare." Evaluate this view with reference to the gaming industry and other examples.
+Answer ALL questions in Section A and ONE question from Section B.
 
 ---
 
-## Section B: Essay Questions (choose one)
+## Section A: Data Response (40 marks)
 
-**Either**
+**Extract A — Competition policy and the UK gaming market**
 
-Question 2 [25 marks]
-Using appropriate diagrams, evaluate whether a natural monopoly should always be regulated or nationalised.
+The UK Competition and Markets Authority initially blocked Microsoft's £55bn acquisition of Activision Blizzard in 2023, citing concerns about competition in cloud gaming. The decision was overturned only after Microsoft divested Activision's cloud-gaming rights to Ubisoft for 15 years. The UK gaming market is worth £7.8bn (2024). Three console firms — Sony, Microsoft, Nintendo — hold ~95% of the console segment, but mobile gaming, where over 3,000 indie studios compete, now generates 52% of industry revenue.
 
-In your answer:
-- Draw a natural monopoly diagram showing LRAC falling continuously
-- Compare unregulated monopoly, average cost pricing, and marginal cost pricing
-- Analyse the problem of allocative vs productive efficiency
-- Evaluate different regulatory approaches
+**Extract B — UK gaming industry, 2019–2024**
 
-**Or**
+| Indicator                                | 2019 | 2021 | 2023 | 2024 |
+|------------------------------------------|------|------|------|------|
+| Industry revenue (£bn)                   | 5.7  | 7.2  | 7.5  | 7.8  |
+| Console concentration ratio CR3 (%)      | 97   | 96   | 95   | 95   |
+| Mobile gaming share of revenue (%)       | 42   | 48   | 50   | 52   |
+| Average new console-game price (£)       | 49.99| 59.99| 69.99| 69.99|
+| Number of UK indie studios               | 2,200| 2,800| 3,100| 3,400|
 
-Question 3 [25 marks]
-"The concept of consumer surplus is the best measure of consumer welfare." Evaluate this statement using diagrams.
+**Extract C — Further commentary**
 
-In your answer:
-- Draw a supply and demand diagram showing consumer surplus
-- Analyse how consumer surplus changes with price discrimination, taxation, and subsidies
-- Evaluate limitations of consumer surplus as a welfare measure
-- Consider alternative measures of welfare`,
+Industry analysts argue the console segment is a tight oligopoly with high entry barriers (chip supply contracts, exclusive game catalogues, network effects), while the mobile segment is closer to a contestable market because development costs and distribution barriers are low.
+
+Question 1 [2 marks]
+Using Extract B, calculate the three-firm concentration ratio for the console market in 2024 and state what it suggests about market structure.
+
+Question 2 [4 marks]
+Using a profit-maximising monopoly diagram (with AR, MR, MC and AC), show the area of supernormal profit and the deadweight loss.
+
+Question 3 [9 marks]
+Using the extracts and your knowledge of economics, analyse two ways in which the growth of indie studios in mobile gaming may make that market more contestable.
+
+Question 4 [25 marks]
+Using the extracts and your own knowledge, evaluate the view that blocking mergers, such as the Microsoft–Activision deal, is the most effective way to protect consumer welfare.
+
+---
+
+## Section B: Essay (40 marks)
+
+Answer EITHER Question 5 OR Question 6.
+
+**Short extract:**
+Some economists argue concentrated markets benefit consumers through dynamic efficiency and economies of scale, while others believe the welfare losses of monopoly outweigh these gains.
+
+Question 5 [15 marks]
+Explain, using a cost-curve diagram, why a natural monopoly may achieve productive efficiency that competing firms cannot.
+
+Question 6 [25 marks]
+"Monopoly power is always against the consumer interest." Evaluate this statement using diagrams and real-world examples.`,
   },
 
   // ── ECONOMICS PAPER 2: Set D ──
@@ -3198,83 +3298,67 @@ In your answer:
     title: "Paper 2 — Set D",
     description: "International trade, exchange rates, balance of payments, and globalisation with AD/AS analysis.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics — Paper 2: National and International Economy — Predicted Paper Set D
+    content: `# AQA A-Level Economics (7136/2) — Paper 2: National and International Economy — Predicted Paper Set D
 
 **Time: 2 hours | Total: 80 marks**
 
+Answer ALL questions in Section A and ONE question from Section B.
+
 ---
 
-## Section A: Data Response
+## Section A: Data Response (40 marks)
 
-**Context / Extract A:**
+**Extract A — China's slowdown and UK macroeconomic spillovers**
 
-China's economic slowdown in 2024 sent shockwaves through the global economy. GDP growth slowed to 4.6% — below the government's 5% target for the first time in decades (excluding the pandemic year). A property market crisis, with major developers like Evergrande collapsing, wiped out an estimated $7 trillion in household wealth. Consumer confidence fell to its lowest level since 2020, and youth unemployment rose to 21%.
+China's GDP growth slowed to 4.6% in 2024, below the 5% target for the first time outside the pandemic. A property crisis (including Evergrande's collapse) wiped out an estimated $7tn of household wealth; youth unemployment hit 21%. Beijing announced a ¥1tn fiscal stimulus and cut benchmark lending rates three times. For the UK — for which China is the sixth-largest export market (£25bn) — a yuan that depreciated 8% against sterling intensified deflationary pressure on UK manufacturers.
 
-The Chinese government responded with a ¥1 trillion fiscal stimulus package and cut the benchmark lending rate three times. However, economists warned of a "liquidity trap" — despite low interest rates, businesses and consumers were unwilling to borrow and spend.
+**Extract B — Comparative macro indicators, 2024**
 
-For the UK, China is the sixth largest export market (£25bn in 2024). A weaker Chinese yuan (depreciating 8% against the pound in 2024) made Chinese imports cheaper, contributing to deflationary pressures in UK manufacturing.
+| Indicator               | UK   | China | Eurozone |
+|-------------------------|------|-------|----------|
+| GDP growth (%)          | 0.6  | 4.6   | 0.4      |
+| Inflation (%)           | 3.2  | 0.2   | 2.4      |
+| Unemployment (%)        | 4.3  | 5.1   | 6.4      |
+| Budget deficit (% GDP)  | 4.8  | 7.1   | 3.0      |
+| Current account (% GDP) | -2.8 | +1.5  | +2.3     |
+| Central bank rate (%)   | 4.75 | 3.45  | 3.75     |
 
-**Extract B — Comparative Macroeconomic Data:**
+**Extract C — Further commentary**
 
-| Indicator | UK 2024 | China 2024 | Eurozone 2024 |
-|-----------|---------|------------|---------------|
-| GDP growth (%) | 0.6 | 4.6 | 0.4 |
-| Inflation (%) | 3.2 | 0.2 | 2.4 |
-| Unemployment (%) | 4.3 | 5.1 | 6.4 |
-| Budget deficit (% GDP) | 4.8 | 7.1 | 3.0 |
-| Current account (% GDP) | -2.8 | +1.5 | +2.3 |
-| Central bank rate (%) | 4.75 | 3.45 | 3.75 |
+**Extract C — Sterling exchange rates, 2024**
 
-**Extract C — Exchange Rate Data:**
+| Currency pair        | Jan 2024 | Jun 2024 | Dec 2024 |
+|----------------------|----------|----------|----------|
+| £/$                  | 1.27     | 1.26     | 1.25     |
+| £/€                  | 1.17     | 1.16     | 1.18     |
+| £/¥ (Chinese yuan)   | 9.05     | 9.32     | 9.78     |
 
-| Currency pair | Jan 2024 | Jun 2024 | Dec 2024 |
-|--------------|----------|----------|----------|
-| £/$ | 1.27 | 1.26 | 1.25 |
-| £/€ | 1.17 | 1.16 | 1.18 |
-| £/¥ (Chinese yuan) | 9.05 | 9.32 | 9.78 |
-
-Question 1.1 [2 marks]
+Question 1 [2 marks]
 Using Extract C, calculate the percentage depreciation of the Chinese yuan against the pound between January and December 2024.
 
-Question 1.2 [4 marks]
-Using an exchange rate diagram (with price of £ in yuan on y-axis and quantity of pounds on x-axis), show how a depreciation of the yuan against the pound would occur. Label the shift clearly.
+Question 2 [4 marks]
+Using an AD/AS diagram, explain how cheaper imports from China affect UK real output and the UK price level.
 
-Question 1.3 [4 marks]
-Using an AD/AS diagram, illustrate how cheaper Chinese imports might affect the UK economy. Consider both the price level and real GDP.
+Question 3 [9 marks]
+Using the extracts and your knowledge of economics, analyse two reasons why China's fiscal stimulus may fail to lift Chinese aggregate demand significantly.
 
-Question 1.4 [9 marks]
-Using the extracts and your economic knowledge, analyse whether China's fiscal stimulus package would be effective in increasing economic growth. Consider the multiplier, confidence, and the liquidity trap.
-
-Question 1.5 [25 marks]
-"A current account surplus is always preferable to a current account deficit." Evaluate this statement with reference to the UK, China, and Eurozone data provided.
+Question 4 [25 marks]
+Using the extracts and your own knowledge, evaluate the view that a current account surplus is always preferable to a current account deficit for a developed economy.
 
 ---
 
-## Section B: Essay Questions (choose one)
+## Section B: Essay (40 marks)
 
-**Either**
+Answer EITHER Question 5 OR Question 6.
 
-Question 2 [25 marks]
-Using AD/AS diagrams, evaluate the view that fiscal policy is more effective than monetary policy in managing the macroeconomy during a period of low growth and rising inflation (stagflation).
+**Short extract:**
+Exchange-rate movements and external shocks transmit rapidly across open economies. Whether floating or fixed regimes deliver better macroeconomic stability remains contested.
 
-In your answer:
-- Define stagflation and show it on an AD/AS diagram
-- Analyse the effectiveness of expansionary fiscal policy with a Keynesian LRAS curve
-- Analyse the limitations of monetary policy when interest rates are near zero
-- Evaluate conflicts between policy objectives
-- Use multiplier analysis where appropriate
+Question 5 [15 marks]
+Explain how a depreciation in the exchange rate may improve the current account, drawing the J-curve effect.
 
-**Or**
-
-Question 3 [25 marks]
-"Globalisation has increased inequality both within and between countries." Evaluate this statement.
-
-In your answer:
-- Define globalisation and identify its key features (trade liberalisation, FDI, technology transfer)
-- Use appropriate diagrams (e.g., comparative advantage, AD/AS)
-- Analyse winners and losers from globalisation in developed and developing countries
-- Evaluate the role of institutions (WTO, IMF, World Bank) in managing globalisation
-- Consider both income inequality and wealth inequality`,
+Question 6 [25 marks]
+"Floating exchange rates provide better macroeconomic stability than fixed exchange rates for developed economies." Evaluate this statement.`,
   },
 
   // ── ECONOMICS PAPER 3: Set C ──
@@ -3285,44 +3369,46 @@ In your answer:
     title: "Paper 3 — Set C",
     description: "Synoptic. MCQ + Case study on inequality, housing, and progressive taxation.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics — Paper 3: Economic Principles and Issues — Predicted Paper Set C
+    content: `# AQA A-Level Economics (7136/3) — Paper 3: Economic Principles and Issues — Predicted Paper Set C
 
 **Time: 2 hours | Total: 80 marks**
+
+Answer ALL questions in Section A and ALL questions in Section B.
 
 ---
 
 ## Section A: Multiple Choice (30 marks)
 
 Question 1 [1 marks]
-A Lorenz Curve that is further from the line of equality indicates:
-A. Greater equality of income
-B. Greater inequality of income
-C. A higher GDP per capita
+A Lorenz curve further from the line of equality indicates:
+A. Greater income equality
+B. Greater income inequality
+C. Higher GDP per capita
 D. A progressive tax system
 
 Question 2 [1 marks]
-A progressive tax is one where:
-A. Everyone pays the same percentage of income
-B. The tax rate increases as income increases
-C. The tax rate decreases as income increases
-D. A fixed amount is charged regardless of income
+A progressive tax is one in which:
+A. Everyone pays the same %
+B. The tax rate rises with income
+C. The tax rate falls with income
+D. A fixed amount is charged
 
 Question 3 [1 marks]
-Which of the following is NOT a characteristic of a public good?
+Which is NOT a characteristic of a public good?
 A. Non-rival
 B. Non-excludable
-C. Free rider problem
+C. Free-rider problem
 D. Positive externalities
 
 Question 4 [1 marks]
-If the government increases spending by £5 billion and the multiplier is 2.5, the total increase in national income is:
-A. £2 billion
-B. £5 billion
-C. £7.5 billion
-D. £12.5 billion
+If government spending rises by £5bn and the multiplier is 2.5, national income rises by:
+A. £2bn
+B. £5bn
+C. £7.5bn
+D. £12.5bn
 
 Question 5 [1 marks]
-The J-curve effect suggests that following a currency depreciation:
+The J-curve effect implies that following depreciation:
 A. The current account improves immediately
 B. The current account worsens before improving
 C. Inflation falls then rises
@@ -3330,29 +3416,29 @@ D. GDP growth accelerates immediately
 
 Question 6 [1 marks]
 Monopsony in the labour market is most likely to result in:
-A. Wages above the marginal revenue product
-B. Wages below the competitive equilibrium
-C. Higher employment levels
-D. Perfect competition in the product market
+A. Wages above the MRP
+B. Wages below the competitive level
+C. Higher employment
+D. Perfect competition in goods markets
 
 Question 7 [1 marks]
 The natural rate of unemployment is the rate at which:
 A. There is no unemployment
 B. Inflation is zero
-C. The labour market is in equilibrium (no excess demand or supply)
-D. GDP is at its maximum level
+C. The labour market is in equilibrium
+D. GDP is at maximum
 
 Question 8 [1 marks]
-Which diagram shows the impact of a per-unit tax on a good?
-A. A rightward shift of the demand curve
-B. A leftward (upward) shift of the supply curve
-C. A rightward shift of the supply curve
-D. A leftward shift of the demand curve
+The impact of a per-unit tax on a good is shown by:
+A. A rightward shift of demand
+B. A leftward (upward) shift of supply
+C. A rightward shift of supply
+D. A leftward shift of demand
 
 Question 9 [1 marks]
 Contestable markets are characterised by:
 A. High barriers to entry
-B. Freedom of entry and exit with low sunk costs
+B. Free entry/exit with low sunk costs
 C. A single dominant firm
 D. Price discrimination
 
@@ -3360,61 +3446,171 @@ Question 10 [1 marks]
 An increase in the marginal propensity to save would:
 A. Increase the multiplier
 B. Decrease the multiplier
-C. Have no effect on the multiplier
+C. Have no effect
 D. Increase aggregate demand
+
+Question 11 [1 marks]
+Which is most likely to reduce structural unemployment?
+A. A cut in interest rates
+B. Retraining schemes
+C. A rise in benefits
+D. A rise in income tax
+
+Question 12 [1 marks]
+A firm operating in a perfectly competitive market in long-run equilibrium earns:
+A. Supernormal profit
+B. Normal profit
+C. A loss
+D. Negative MR
+
+Question 13 [1 marks]
+The marginal social cost equals the marginal social benefit when:
+A. Output is maximised
+B. Allocative efficiency is achieved
+C. Profit is maximised
+D. Total revenue is maximised
+
+Question 14 [1 marks]
+A merit good is most likely to be:
+A. Over-consumed
+B. Under-consumed
+C. Not consumed at all
+D. Consumed only by the rich
+
+Question 15 [1 marks]
+The accelerator effect refers to:
+A. A change in investment caused by a change in the rate of growth of output
+B. A change in consumption from a change in income
+C. A change in interest rates from a change in inflation
+D. A change in net exports from a change in the exchange rate
+
+Question 16 [1 marks]
+Which would shift the LRAS curve to the right?
+A. A fall in productivity
+B. An increase in net immigration of skilled workers
+C. A rise in trade-union power
+D. A rise in indirect taxation
+
+Question 17 [1 marks]
+A regressive tax is one in which:
+A. The marginal tax rate is zero
+B. The average tax rate falls as income rises
+C. The average tax rate rises as income rises
+D. Only the rich pay tax
+
+Question 18 [1 marks]
+The free-rider problem applies most clearly to:
+A. Private goods
+B. Public goods
+C. Merit goods
+D. Demerit goods
+
+Question 19 [1 marks]
+A firm with monopsony power will set the wage:
+A. Above marginal cost of labour
+B. Below marginal revenue product
+C. Equal to marginal revenue product
+D. Above marginal revenue product
+
+Question 20 [1 marks]
+Cyclical unemployment is most directly caused by:
+A. Skill mismatches
+B. A fall in aggregate demand
+C. Seasonal demand changes
+D. Frictions in job search
+
+Question 21 [1 marks]
+A government policy of cutting interest rates is an example of:
+A. Expansionary fiscal policy
+B. Contractionary fiscal policy
+C. Expansionary monetary policy
+D. Contractionary monetary policy
+
+Question 22 [1 marks]
+The substitution effect of a wage rise on labour supply is:
+A. Always negative
+B. Always positive
+C. Always zero
+D. Indeterminate
+
+Question 23 [1 marks]
+A negative externality of consumption means:
+A. Private benefit exceeds social benefit
+B. Social benefit exceeds private benefit
+C. Private cost exceeds social cost
+D. No externality exists
+
+Question 24 [1 marks]
+A nation's terms of trade improve when:
+A. Export prices rise relative to import prices
+B. Import prices rise relative to export prices
+C. The current account improves
+D. The exchange rate depreciates
+
+Question 25 [1 marks]
+Government failure occurs when intervention:
+A. Always corrects market failure
+B. Creates a worse outcome than the market
+C. Has no effect
+D. Eliminates externalities
+
+Question 26 [1 marks]
+A subsidy on a good with positive externalities should:
+A. Reduce output to social optimum
+B. Increase output to social optimum
+C. Have no effect
+D. Reduce price below MC
+
+Question 27 [1 marks]
+The opportunity cost of a decision is best defined as:
+A. The accounting cost
+B. The benefit forgone from the next best alternative
+C. The total cost incurred
+D. The marginal cost of production
+
+Question 28 [1 marks]
+A producer in perfect competition is:
+A. A price maker
+B. A price taker
+C. Earning supernormal profit in the long run
+D. Restricted in entry
+
+Question 29 [1 marks]
+The price elasticity of supply is likely to be higher when:
+A. There is spare capacity
+B. Production is highly specialised
+C. The time period is short
+D. Inputs are scarce
+
+Question 30 [1 marks]
+A current account deficit can be financed by:
+A. Net inflows on the financial account
+B. A fall in exports
+C. A rise in imports
+D. A fall in interest rates
 
 ---
 
-## Section B: Case Study
+## Section B: Case Study (50 marks)
 
-**Case Study — Income Inequality and the UK Tax System**
+**Case Study — Income inequality and the UK tax system**
 
-The UK's Gini coefficient has risen from 0.25 in 1979 to 0.36 in 2024, indicating a significant increase in income inequality. The top 10% of earners take home 28% of all income after tax, while the bottom 10% receive just 3%. Wealth inequality is even starker: the wealthiest 10% of households hold 43% of all wealth.
+The UK Gini coefficient rose from 0.25 in 1979 to 0.36 in 2024. The top decile of earners take 28% of post-tax income; the bottom decile take 3%. Wealth inequality is sharper: the top 10% hold 43% of total wealth. Direct income tax bands are progressive, but indirect taxes (VAT, fuel and alcohol duty) are regressive, taking 27% of disposable income from the bottom quintile against 14% from the top. Universal Credit's 55p taper is criticised for creating a poverty trap.
 
-The UK tax system uses progressive income tax bands:
-| Band | Income range | Tax rate |
-|------|-------------|----------|
-| Personal allowance | £0 – £12,570 | 0% |
-| Basic rate | £12,571 – £50,270 | 20% |
-| Higher rate | £50,271 – £125,140 | 40% |
-| Additional rate | Over £125,140 | 45% |
+| Income group | Avg gross income (£) | Direct tax (% income) | Indirect tax (% income) | Benefits received (£) | Net income (£) |
+|--------------|----------------------|-----------------------|-------------------------|-----------------------|----------------|
+| Bottom 20%   | 12,400               | 10                    | 27                      | 8,900                 | 16,700         |
+| Middle 20%   | 32,800               | 18                    | 18                      | 3,200                 | 28,800         |
+| Top 20%      | 82,300               | 25                    | 14                      | 400                   | 50,300         |
 
-However, indirect taxes (VAT at 20%, fuel duty, alcohol/tobacco duty) are regressive — they take a larger proportion of income from poorer households. The poorest 20% of households spend 27% of their disposable income on indirect taxes, compared to 14% for the richest 20%.
+Question 31 [10 marks]
+Using a Lorenz curve diagram, show how a rise in the Gini coefficient from 0.25 to 0.36 would be represented. Label both curves and the line of equality.
 
-Universal Credit replaced six separate benefits in 2013 and currently supports 5.9 million households. Critics argue that the £85 taper rate (losing 55p of benefit for every £1 earned above threshold) creates a "poverty trap" that disincentivises work.
+Question 32 [15 marks]
+Using the case study and your knowledge of economics, analyse whether the UK tax system is genuinely progressive when both direct and indirect taxes are considered.
 
-**Data Table:**
-
-| Indicator | Bottom 20% | Middle 20% | Top 20% |
-|-----------|-----------|-----------|---------|
-| Average gross income (£) | 12,400 | 32,800 | 82,300 |
-| Direct tax as % of gross income | 10% | 18% | 25% |
-| Indirect tax as % of gross income | 27% | 18% | 14% |
-| Total tax burden (%) | 37% | 36% | 39% |
-| Benefits received (£) | 8,900 | 3,200 | 400 |
-| Post-tax, post-benefit income (£) | 16,700 | 28,800 | 50,300 |
-
-Question 11 [2 marks]
-Using the data table, calculate the total tax paid (in £) by a household in the middle 20% income group.
-
-Question 12 [4 marks]
-Using a Lorenz Curve diagram, explain how a rise in the Gini coefficient from 0.25 to 0.36 would be shown. Label the axes, the line of equality, and show two Lorenz Curves.
-
-Question 13 [4 marks]
-Using a supply and demand diagram for the labour market, explain how a "poverty trap" created by the benefits taper rate might reduce labour supply. Show the effect on the equilibrium wage and employment.
-
-Question 14 [9 marks]
-Using the case study and your economic knowledge, analyse whether the UK tax system is truly progressive when both direct and indirect taxes are considered.
-
-Question 15 [25 marks]
-"Reducing income inequality should be the primary objective of government economic policy." Evaluate this statement.
-
-In your answer, you should:
-- Analyse the causes and consequences of income inequality (efficiency vs equity debate)
-- Evaluate specific policies to reduce inequality (progressive taxes, minimum wage, benefits, education spending)
-- Use appropriate diagrams (Lorenz Curve, labour market, AD/AS)
-- Consider potential conflicts with other macroeconomic objectives (growth, inflation, government debt)
-- Evaluate using real-world evidence from the case study`,
+Question 33 [25 marks]
+"Reducing income inequality should be the primary objective of UK government economic policy." Evaluate this statement using the case study and your own knowledge.`,
   },
 ];
 

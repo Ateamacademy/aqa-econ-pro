@@ -9,72 +9,60 @@ export const economicsPredictedPapersExtra: PredictedPaper[] = [
     title: "Paper 1 — Set E",
     description: "Markets and Market Failure. Focus on externalities and government intervention.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136) — Paper 1 — Predicted Paper Set E
+    content: `# AQA A-Level Economics (7136/1) — Paper 1: Markets and Market Failure — Predicted Paper Set E
 
 **Time: 2 hours | Total: 80 marks**
 
-## Section A — Context 1: The UK Energy Market
+Answer ALL questions in Section A and ONE question from Section B.
 
-**Extract A:** The UK energy market has undergone significant deregulation since the 1990s, yet remains dominated by a small number of large firms. In 2024, the average dual-fuel bill rose to £1,928, prompting renewed debate about price caps and windfall taxes. Ofgem reported switching rates fell by 34% as consumers faced limited choice.
+---
 
-**Extract B:** Table showing UK energy market concentration ratios (2019–2024), average bills, and switching rates.
+## Section A: Data Response (40 marks)
 
-| Year | CR4 (%) | Avg Bill (£) | Switching Rate (%) |
-|------|---------|-------------|-------------------|
-| 2019 | 73 | 1,254 | 18.3 |
-| 2020 | 69 | 1,138 | 15.7 |
-| 2021 | 65 | 1,277 | 12.4 |
-| 2022 | 71 | 1,971 | 9.8 |
-| 2023 | 74 | 1,834 | 8.1 |
-| 2024 | 76 | 1,928 | 6.2 |
+**Extract A — UK supermarket concentration and grocery prices**
+
+The UK grocery market is dominated by four supermarkets — Tesco, Sainsbury's, Asda and Morrisons — with a combined market share of around 65% in 2024. Discounters Aldi and Lidl have grown rapidly, reaching 18% combined share, up from 7% a decade earlier. Food CPI inflation peaked at 19.2% in March 2023 before falling to 4.5% in mid-2024. The CMA opened a market study into pricing practices and "shrinkflation" in 2023, finding "weak evidence of excess profitability but real concerns about transparency".
+
+**Extract B — UK grocery sector data, 2019–2024**
+
+| Indicator                              | 2019 | 2021 | 2023 | 2024 |
+|----------------------------------------|------|------|------|------|
+| CR4 grocery market share (%)           | 67   | 65   | 64   | 65   |
+| Aldi + Lidl combined share (%)         | 13   | 14   | 17   | 18   |
+| Food CPI inflation (%)                 | 1.4  | 0.5  | 19.2 | 4.5  |
+| Average supermarket operating margin (%)| 3.2 | 2.9  | 3.4  | 3.6  |
+| Loyalty-card members (millions)        | 28   | 33   | 39   | 44   |
+
+**Extract C — Further commentary**
+
+Consumer groups argue that loyalty-card pricing — where non-members pay headline prices substantially above member prices — is a form of price discrimination that exploits less digitally engaged shoppers. Industry argues that scale economies and tight margins mean concentration delivers low prices in aggregate.
 
 Question 1 [2 marks]
-Using Extract B, calculate the percentage change in the average energy bill between 2019 and 2024.
+Using Extract B, calculate the percentage point change in the combined Aldi and Lidl market share between 2019 and 2024.
 
 Question 2 [4 marks]
-Using Extract A and your own knowledge, explain two barriers to entry in the UK energy market.
+Using a supply and demand diagram, explain how an increase in input costs leads to higher equilibrium grocery prices.
 
 Question 3 [9 marks]
-Using a diagram, analyse how oligopolistic behaviour in the energy market may lead to allocative inefficiency. You must use a kinked demand curve in your analysis.
+Using the extracts and your knowledge of economics, analyse two characteristics that suggest the UK grocery market is an oligopoly.
 
 Question 4 [25 marks]
-Evaluate whether government intervention through price caps is the most effective way to protect consumers in oligopolistic markets such as the UK energy market.
+Using the extracts and your own knowledge, evaluate the view that high market concentration in UK supermarkets harms consumer welfare.
 
-## Section A — Context 2: Urban Air Pollution
+---
 
-**Extract C:** The World Health Organisation estimates that 99% of the global population breathes air exceeding WHO guideline limits. London's Ultra Low Emission Zone (ULEZ) expanded to cover all London boroughs in August 2023, charging non-compliant vehicles £12.50 per day.
+## Section B: Essay (40 marks)
 
-**Extract D:** Data on London air quality (NO₂ levels μg/m³) and ULEZ impact.
+Answer EITHER Question 5 OR Question 6.
 
-| Indicator | Pre-ULEZ (2018) | Post-Expansion (2024) |
-|-----------|-----------------|----------------------|
-| Central London NO₂ | 52 | 26 |
-| Inner London NO₂ | 44 | 31 |
-| Outer London NO₂ | 36 | 29 |
-| Compliant vehicles (%) | 39 | 96 |
+**Short extract:**
+Price discrimination — charging different prices to different consumers for essentially the same product — is widespread in modern retail, transport and digital markets. Whether it raises or lowers welfare is contested.
 
-Question 5 [2 marks]
-Define the term 'negative externality'.
+Question 5 [15 marks]
+Explain, using a diagram, the conditions required for successful third-degree price discrimination.
 
-Question 6 [4 marks]
-Using Extract D, explain two effects of the ULEZ expansion on air quality in London.
-
-Question 7 [9 marks]
-Using an externality diagram, analyse the market failure caused by vehicle emissions. Show the divergence between MSC and MPC and identify the welfare loss.
-
-Question 8 [25 marks]
-"Direct regulation, such as emission zones, is always more effective than indirect taxation in correcting negative externalities." Evaluate this statement with reference to urban air pollution.
-
-## Section B — Essays
-
-Question 9 [25 marks]
-Evaluate the view that monopoly power is always against the public interest.
-
-Question 10 [25 marks]
-Discuss whether the concept of consumer surplus is a useful measure of economic welfare.
-
-Question 11 [25 marks]
-"The government should intervene to ensure merit goods are provided at zero price to the consumer." Evaluate this view.`,
+Question 6 [25 marks]
+"Price discrimination always reduces consumer welfare." Evaluate this statement using diagrams and real-world examples.`,
   },
 
   // ── ECONOMICS PAPER 2: Set E ──
@@ -85,62 +73,60 @@ Question 11 [25 marks]
     title: "Paper 2 — Set E",
     description: "National & International Economy. Focus on monetary policy and trade.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136) — Paper 2 — Predicted Paper Set E
+    content: `# AQA A-Level Economics (7136/2) — Paper 2: National and International Economy — Predicted Paper Set E
 
 **Time: 2 hours | Total: 80 marks**
 
-## Section A — Context 1: UK Inflation and Monetary Policy
+Answer ALL questions in Section A and ONE question from Section B.
 
-**Extract A:** The Bank of England raised interest rates 14 consecutive times between December 2021 and August 2023, taking the base rate from 0.1% to 5.25%. By late 2024, CPI inflation had fallen to 2.3%, though core inflation remained at 3.6%, driven by persistent services inflation.
+---
 
-**Extract B:** UK macroeconomic indicators 2020–2024.
+## Section A: Data Response (40 marks)
 
-| Year | Base Rate (%) | CPI (%) | Core CPI (%) | GDP Growth (%) | Unemployment (%) |
-|------|-------------|---------|-------------|---------------|-----------------|
-| 2020 | 0.10 | 0.9 | 1.4 | -9.3 | 4.5 |
-| 2021 | 0.25 | 2.6 | 2.3 | 7.6 | 4.4 |
-| 2022 | 3.50 | 9.1 | 5.8 | 4.3 | 3.7 |
-| 2023 | 5.25 | 6.7 | 5.1 | 0.1 | 4.0 |
-| 2024 | 5.00 | 2.3 | 3.6 | 0.8 | 4.3 |
+**Extract A — UK productivity puzzle and supply-side policy**
+
+UK labour productivity growth has averaged just 0.4% per year since 2008, compared with 2.2% in the previous decade — a gap dubbed the "productivity puzzle". The 2024 Autumn Statement raised public investment to 2.5% of GDP and announced full expensing of capital allowances. The OBR estimates these measures will raise potential output by 0.4% over a decade. Critics argue the UK still spends below the OECD average on R&D (1.7% vs 2.5% of GDP).
+
+**Extract B — UK productivity and investment indicators**
+
+| Indicator                                | 2010 | 2015 | 2020 | 2024 |
+|------------------------------------------|------|------|------|------|
+| Output per hour growth (%)               | 1.4  | 0.6  | -0.3 | 0.5  |
+| Business investment (% GDP)              | 11.2 | 11.0 | 10.4 | 10.8 |
+| R&D spending (% GDP)                     | 1.6  | 1.6  | 1.7  | 1.7  |
+| Public infrastructure spending (% GDP)   | 1.9  | 2.0  | 2.2  | 2.5  |
+| Real GDP per capita (£, 2019 prices)     | 28,500| 30,200| 30,900| 31,400|
+
+**Extract C — Further commentary**
+
+Bank of England research argues that weak diffusion of best-practice technology, low managerial quality and skill shortages — rather than a single dominant cause — explain the puzzle. Supply-side reforms therefore need to be broad-based.
 
 Question 1 [2 marks]
-Using Extract B, identify the year in which the UK experienced the highest rate of CPI inflation.
+Using Extract B, calculate the percentage change in UK real GDP per capita between 2010 and 2024.
 
 Question 2 [4 marks]
-Using the data, explain two consequences of persistently high core inflation for the UK economy.
+Using an AD/AS diagram, explain how successful supply-side policies shift LRAS and affect equilibrium price level and output.
 
 Question 3 [9 marks]
-Using an AD/AS diagram, analyse the impact of successive interest rate rises on the UK economy. Consider both demand-side and supply-side effects.
+Using the extracts and your knowledge of economics, analyse two reasons why higher business investment may raise long-run UK productivity.
 
 Question 4 [25 marks]
-Evaluate whether monetary policy alone is sufficient to achieve price stability without causing a recession.
+Using the extracts and your own knowledge, evaluate the view that supply-side policies are more effective than demand-side policies in raising long-run UK growth.
 
-## Section A — Context 2: UK-China Trade Relations
+---
 
-**Extract C:** China is the UK's fourth-largest trading partner with bilateral trade worth £93 billion in 2023. However, the trade deficit with China widened to £40 billion, prompting concerns about strategic dependency, particularly in critical minerals and semiconductors.
+## Section B: Essay (40 marks)
 
-Question 5 [2 marks]
-Define the term 'trade deficit'.
+Answer EITHER Question 5 OR Question 6.
 
-Question 6 [4 marks]
-Using Extract C, explain two possible consequences of the UK's trade deficit with China.
+**Short extract:**
+Long-run growth depends on the quality and quantity of factor inputs and on technological progress. Whether market-oriented or interventionist supply-side policy works best is debated.
 
-Question 7 [9 marks]
-Using a diagram, analyse how the imposition of tariffs on Chinese imports might affect the UK economy. Show the welfare effects on a tariff diagram.
+Question 5 [15 marks]
+Explain how investment in human capital can raise long-run economic growth.
 
-Question 8 [25 marks]
-"The benefits of free trade with China outweigh the costs for the UK economy." Evaluate this statement.
-
-## Section B — Essays
-
-Question 9 [25 marks]
-Evaluate the effectiveness of supply-side policies in achieving sustained economic growth.
-
-Question 10 [25 marks]
-"A floating exchange rate is always preferable to a fixed exchange rate for a country like the UK." Discuss.
-
-Question 11 [25 marks]
-Evaluate whether fiscal policy or monetary policy is more effective in managing the economic cycle.`,
+Question 6 [25 marks]
+"Free-market supply-side policies are always more effective than interventionist supply-side policies in raising long-run growth." Evaluate this statement.`,
   },
 
   // ── ECONOMICS PAPER 3: Set D ──
@@ -151,240 +137,249 @@ Evaluate whether fiscal policy or monetary policy is more effective in managing 
     title: "Paper 3 — Set D",
     description: "Economic Principles & Issues. 30 MCQs + case study.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136) — Paper 3 — Predicted Paper Set D
+    content: `# AQA A-Level Economics (7136/3) — Paper 3: Economic Principles and Issues — Predicted Paper Set D
 
 **Time: 2 hours | Total: 80 marks**
 
-## Section A — Multiple Choice Questions (30 marks)
+Answer ALL questions in Section A and ALL questions in Section B.
+
+---
+
+## Section A: Multiple Choice (30 marks)
 
 Question 1 [1 marks]
-Which of the following best describes the concept of opportunity cost?
-A. The monetary cost of a decision
-B. The next best alternative forgone
-C. The total cost of all alternatives
-D. The cost of factors of production
+An increase in demand for a normal good will, ceteris paribus:
+A. Decrease equilibrium price and quantity
+B. Increase equilibrium price and quantity
+C. Increase price, decrease quantity
+D. Decrease price, increase quantity
 
 Question 2 [1 marks]
-A leftward shift of the supply curve for wheat is most likely caused by:
-A. A fall in the price of wheat
-B. Improved farming technology
-C. A severe drought
-D. An increase in demand for wheat
+The price elasticity of supply for housing is likely to be:
+A. Highly elastic in the short run
+B. Inelastic in the short run
+C. Perfectly elastic
+D. Perfectly inelastic in the long run
 
 Question 3 [1 marks]
-If PED for a product is −0.4, a 10% increase in price will lead to:
-A. A 40% fall in quantity demanded
-B. A 4% fall in quantity demanded
-C. A 4% rise in quantity demanded
-D. No change in quantity demanded
+A rise in mortgage interest rates will most likely:
+A. Increase housing demand
+B. Reduce housing demand
+C. Reduce housing supply
+D. Have no effect on housing
 
 Question 4 [1 marks]
-A natural monopoly exists when:
-A. A firm has a patent on its product
-B. Minimum efficient scale is very large relative to market demand
-C. There are no barriers to entry
-D. The government grants an exclusive licence
+Help-to-Buy is best classified as a:
+A. Supply-side policy
+B. Demand-side policy
+C. Trade policy
+D. Monetary policy
 
 Question 5 [1 marks]
-Quantitative easing works primarily by:
-A. Increasing the money supply through bond purchases
-B. Raising interest rates to attract savings
-C. Cutting government spending to reduce the deficit
-D. Imposing price controls on essential goods
+The opportunity cost of building social housing on green-belt land is:
+A. The accounting cost of construction
+B. The benefit forgone from the next-best use of the land
+C. Negative
+D. Always equal to market price
 
 Question 6 [1 marks]
-The Phillips Curve suggests a trade-off between:
-A. Economic growth and the balance of payments
-B. Inflation and unemployment
-C. Government spending and taxation
-D. Imports and exports
+A maximum price (rent control) below equilibrium leads to:
+A. Excess supply
+B. Excess demand
+C. Equilibrium
+D. An increase in supply
 
 Question 7 [1 marks]
-If the cross elasticity of demand between goods X and Y is +2.5, the goods are:
-A. Complements
-B. Substitutes
-C. Inferior goods
-D. Giffen goods
+A rise in net immigration is most likely to:
+A. Reduce housing demand
+B. Increase housing demand
+C. Reduce housing supply
+D. Have no effect on housing
 
 Question 8 [1 marks]
-A monopsony employer in the labour market will:
-A. Pay wages above the marginal revenue product
-B. Employ more workers than a competitive market
-C. Pay wages below the MRP and employ fewer workers
-D. Have no impact on wage levels
+Land banking by developers may be evidence of:
+A. Perfect competition
+B. Allocative efficiency
+C. Market power
+D. Price discrimination
 
 Question 9 [1 marks]
-The Laffer Curve suggests that:
-A. Higher tax rates always increase tax revenue
-B. There is a tax rate that maximises revenue
-C. Tax cuts always reduce revenue
-D. Government spending and revenue are unrelated
+The substitution effect of a fall in house prices on owner-occupation is:
+A. Negative
+B. Positive
+C. Zero
+D. Indeterminate
 
 Question 10 [1 marks]
-A depreciation of the pound would most likely:
-A. Reduce the cost of imports
-B. Increase export competitiveness
-C. Reduce the current account deficit permanently
-D. Cause deflation
+A subsidy on housebuilding shifts the supply curve:
+A. Leftward (upward)
+B. Rightward (downward)
+C. Vertically only
+D. No effect
 
 Question 11 [1 marks]
-Government failure occurs when:
-A. The market reaches equilibrium
-B. Intervention leads to a net welfare loss
-C. Public goods are provided efficiently
-D. Externalities are fully internalised
+A regressive tax on housing transactions tends to fall most on:
+A. High-income households
+B. Low-income households
+C. Investors only
+D. First-time buyers only
 
 Question 12 [1 marks]
-Third-degree price discrimination requires:
-A. Perfect information for all consumers
-B. The ability to separate markets with different PEDs
-C. A perfectly competitive market
-D. Homogeneous consumers
+The deadweight loss from a tax on housing transactions arises because:
+A. Both buyers and sellers gain
+B. Some mutually beneficial trades no longer occur
+C. Government revenue is zero
+D. Producers lose all surplus
 
 Question 13 [1 marks]
-In a game theory model, a Nash equilibrium occurs when:
-A. Both firms collude to maximise joint profits
-B. Neither firm can improve its outcome by changing strategy unilaterally
-C. Both firms adopt dominant strategies
-D. The market reaches perfect competition
+Quantitative easing has been argued to raise asset prices because:
+A. It reduces the money supply
+B. It lowers long-term interest rates
+C. It raises wages
+D. It causes deflation
 
 Question 14 [1 marks]
-An increase in the national minimum wage above the equilibrium wage is expected to:
-A. Increase employment in all sectors
-B. Reduce unemployment
-C. Create a surplus of labour (unemployment)
-D. Have no effect on the labour market
+A perfectly contestable housing-development market would require:
+A. High sunk costs
+B. Low or zero entry/exit barriers
+C. A single dominant firm
+D. Government intervention
 
 Question 15 [1 marks]
-The multiplier effect will be larger when:
-A. The marginal propensity to save is high
-B. The marginal propensity to consume is high
-C. Tax rates are very high
-D. The economy is at full capacity
+Which of the following is a market failure in the housing market?
+A. Long-run profit
+B. Negative externalities of overcrowding
+C. High firm entry
+D. Price flexibility
 
 Question 16 [1 marks]
-Absolute advantage refers to:
-A. The ability to produce at a lower opportunity cost
-B. Having more natural resources
-C. The ability to produce more of a good using the same resources
-D. Having a trade surplus
+A rise in the marginal propensity to consume out of housing wealth is known as the:
+A. Multiplier effect
+B. Wealth effect
+C. Accelerator effect
+D. Substitution effect
 
 Question 17 [1 marks]
-A merit good is under-consumed in a free market because:
-A. It has high production costs
-B. Consumers underestimate the private and social benefits
-C. It generates negative externalities
-D. It is a public good
+A mortgage interest rate cut acts most directly on AD via:
+A. Net exports
+B. Investment
+C. Government spending
+D. Consumption
 
 Question 18 [1 marks]
-If aggregate demand increases when the economy is at full capacity, the most likely result is:
-A. A fall in the price level
-B. Demand-pull inflation
-C. Increased real GDP
-D. Cost-push inflation
+A fall in real wages will most likely:
+A. Increase housing demand
+B. Reduce housing demand
+C. Reduce housing supply
+D. Have no effect
 
 Question 19 [1 marks]
-A contestable market is characterised by:
-A. Many firms and high barriers to entry
-B. Freedom of entry and exit with low sunk costs
-C. Only one dominant firm
-D. Government regulation of prices
+Stamp Duty is best classified as a/an:
+A. Direct progressive tax
+B. Direct regressive tax
+C. Indirect transaction tax
+D. Subsidy
 
 Question 20 [1 marks]
-The J-curve effect suggests that following a currency depreciation:
-A. The trade balance improves immediately
-B. The trade balance worsens before improving
-C. Inflation falls in the short run
-D. Interest rates automatically rise
+Negative equity occurs when:
+A. House prices rise above mortgage debt
+B. House prices fall below mortgage debt
+C. Mortgage interest rates fall
+D. Wages rise
 
 Question 21 [1 marks]
-Producer surplus is:
-A. The difference between the price received and the cost of production
-B. The total revenue earned by all firms
-C. The profit maximising output level
-D. The area above the demand curve
+A planning restriction is most likely a/an:
+A. Supply-side support
+B. Supply-side constraint
+C. Demand-side stimulus
+D. Demand-side constraint
 
 Question 22 [1 marks]
-An economy experiencing stagflation faces:
-A. High growth and low inflation
-B. Rising unemployment and rising inflation
-C. Falling unemployment and falling prices
-D. A trade surplus and budget surplus
+The income elasticity of demand for owner-occupied housing is most likely:
+A. Negative
+B. Less than 1
+C. Greater than 1
+D. Zero
 
 Question 23 [1 marks]
-In the circular flow model, an injection includes:
-A. Savings
-B. Taxation
-C. Government spending
-D. Imports
+The cobweb theorem in housebuilding implies:
+A. Stable equilibrium
+B. Lagged supply causing price oscillations
+C. Perfect foresight
+D. No supply response
 
 Question 24 [1 marks]
-A subsidy on electric vehicles would shift:
-A. The demand curve to the right
-B. The supply curve to the right
-C. The supply curve to the left
-D. The demand curve to the left
+A stable, low-inflation environment generally:
+A. Reduces investment in housing
+B. Encourages long-term mortgage lending
+C. Increases mortgage default
+D. Reduces housebuilding
 
 Question 25 [1 marks]
-The theory of comparative advantage assumes:
-A. Constant returns to scale
-B. Perfect factor mobility between countries
-C. Constant opportunity costs
-D. Trade barriers exist
+The Bank of England's Financial Policy Committee can:
+A. Set the Bank Rate
+B. Use macroprudential tools to limit mortgage lending
+C. Run fiscal policy
+D. Set income tax
 
 Question 26 [1 marks]
-A regressive tax takes:
-A. A higher proportion of income from the poor
-B. The same amount from everyone
-C. A higher proportion from the rich
-D. No revenue from low earners
+The 'crowding out' effect refers to:
+A. Government spending reducing private investment
+B. Public goods displacing private goods
+C. Net exports falling with depreciation
+D. An increase in productivity
 
 Question 27 [1 marks]
-Structural unemployment is caused by:
-A. Seasonal fluctuations in demand
-B. Changes in the structure of the economy
-C. Workers voluntarily leaving jobs
-D. A general lack of aggregate demand
+Which is most likely to ease housing affordability for first-time buyers?
+A. Higher Help-to-Buy equity loans
+B. More planning permissions
+C. Higher Stamp Duty
+D. Higher mortgage rates
 
 Question 28 [1 marks]
-A positive output gap indicates that:
-A. Actual GDP is below potential GDP
-B. Actual GDP exceeds potential GDP
-C. The economy is in recession
-D. Unemployment is rising
+A monopsony in construction labour will set wages:
+A. Above the competitive wage
+B. Below the competitive wage
+C. Equal to MRP
+D. Above MRP
 
 Question 29 [1 marks]
-Asymmetric information is a cause of market failure because:
-A. Both parties have perfect information
-B. One party has more information, leading to adverse selection
-C. The government intervenes too much
-D. There are too many firms in the market
+A rise in real GDP per capita most likely:
+A. Reduces housing demand
+B. Increases housing demand
+C. Reduces house prices
+D. Has no effect on housing
 
 Question 30 [1 marks]
-The Heckscher-Ohlin model of trade suggests countries export goods that:
-A. Have the highest absolute cost
-B. Use their abundant factor of production intensively
-C. Are produced by monopolies
-D. Have perfectly elastic demand
+UK private rent inflation in 2024, per Extract B context, is best described as:
+A. Falling sharply
+B. Stable at zero
+C. Higher than wage growth
+D. Equal to mortgage rates
 
-## Section B — Case Study: The UK Housing Market Crisis
+---
 
-**Extract:** The UK housing market in 2024 shows a persistent supply–demand imbalance. Average house prices reached £290,000, representing 8.3 times average earnings. New housing completions fell to 234,000 in 2023, well below the government target of 300,000 per year. Planning restrictions, labour shortages in construction, and rising material costs constrain supply. Meanwhile, Help to Buy stimulated demand without addressing supply bottlenecks.
+## Section B: Case Study (50 marks)
 
-Question 31 [2 marks]
-Using the data, calculate the average earnings implied by the house price to earnings ratio.
+**Case Study — UK housing affordability**
 
-Question 32 [4 marks]
-Using a supply and demand diagram for the housing market, explain why house prices have risen significantly.
+Average UK house prices rose from £195,000 in 2014 to £290,000 in 2024 — a 49% increase. First-time buyers now require an average deposit of £62,000, equivalent to 2.5 years of average pre-tax earnings. Help-to-Buy equity loans (up to 20%, or 40% in London) supported demand. Housebuilding completions have averaged 180,000 per year, well below the 340,000 government target. Planning restrictions, land-banking and skills shortages are cited as supply-side barriers.
 
-Question 33 [4 marks]
-Explain two supply-side factors that constrain new house building in the UK.
+| Indicator                              | 2014 | 2018 | 2022 | 2024 |
+|----------------------------------------|------|------|------|------|
+| Average house price (£000s)            | 195  | 235  | 285  | 290  |
+| Housing starts (000s)                  | 137  | 165  | 178  | 180  |
+| Mortgage rate, 2-yr fixed (%)          | 3.4  | 2.0  | 4.7  | 4.5  |
+| Private rent inflation (%)             | 2.1  | 1.6  | 4.4  | 6.2  |
 
-Question 34 [9 marks]
-Analyse the effectiveness of demand-side policies (such as Help to Buy) in solving the UK housing affordability crisis.
+Question 31 [10 marks]
+Using a supply and demand diagram for housing, explain why average UK house prices rose between 2014 and 2024.
 
-Question 35 [25 marks]
-"Government intervention in the housing market creates more problems than it solves." Evaluate this statement, considering both demand-side and supply-side policies, with reference to the case study data and your own economic knowledge.`,
+Question 32 [15 marks]
+Using the case study and your knowledge of economics, analyse the likely effects of demand-side schemes such as Help to Buy on house prices and on housing affordability.
+
+Question 33 [25 marks]
+"Supply-side policies are more effective than demand-side interventions in solving the UK housing affordability crisis." Evaluate this statement.`,
   },
 
   // ── ECONOMICS PAPER 1: Set F ──
@@ -395,62 +390,59 @@ Question 35 [25 marks]
     title: "Paper 1 — Set F",
     description: "Markets and Market Failure. Labour market and wage inequality focus.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136) — Paper 1 — Predicted Paper Set F
+    content: `# AQA A-Level Economics (7136/1) — Paper 1: Markets and Market Failure — Predicted Paper Set F
 
 **Time: 2 hours | Total: 80 marks**
 
-## Section A — Context 1: The UK Labour Market
+Answer ALL questions in Section A and ONE question from Section B.
 
-**Extract A:** The UK National Living Wage rose to £11.44 per hour in April 2024, a 9.8% increase. The Low Pay Commission reported that 2.7 million workers benefited. However, employer groups warned of job losses in hospitality and retail, where profit margins average just 3–5%.
+---
 
-**Extract B:** UK labour market data.
+## Section A: Data Response (40 marks)
 
-| Year | NLW (£/hr) | Workers Affected (m) | Unemployment (%) | Vacancies (000s) |
-|------|-----------|---------------------|-----------------|-----------------|
-| 2020 | 8.72 | 2.0 | 4.5 | 345 |
-| 2021 | 8.91 | 2.1 | 4.4 | 820 |
-| 2022 | 9.50 | 2.3 | 3.7 | 1,295 |
-| 2023 | 10.42 | 2.5 | 4.0 | 934 |
-| 2024 | 11.44 | 2.7 | 4.3 | 878 |
+**Extract A — Labour market shortages and the National Living Wage**
+
+The UK National Living Wage rose from £9.50 in 2022 to £11.44 in April 2024 — a 20% increase. Hospitality, social care and retail report persistent vacancies, with the Low Pay Commission noting that hospitality wages now sit 8% above the statutory minimum on average. Critics warn higher minimum wages reduce employment for young workers, while supporters cite monopsony evidence showing limited disemployment effects in low-pay sectors.
+
+**Extract B — UK labour market indicators, 2019–2024**
+
+| Indicator                              | 2019 | 2021 | 2023 | 2024 |
+|----------------------------------------|------|------|------|------|
+| National Living Wage (£/hour)          | 8.21 | 8.91 | 10.42| 11.44|
+| Hospitality vacancy rate (%)           | 3.2  | 4.6  | 4.1  | 3.8  |
+| 18–24 unemployment rate (%)            | 11.7 | 12.4 | 11.9 | 12.2 |
+| Real wage growth, all workers (%)      | 1.8  | 2.2  | -0.1 | 2.6  |
+
+**Extract C — Further commentary**
+
+Trade unions describe many UK low-pay sectors as monopsonistic, with a single dominant local employer — for example a regional care provider — able to set wages below the competitive level. Employer associations counter that statutory wage rises in monopsonistic sectors still risk reducing hours offered.
 
 Question 1 [2 marks]
-Calculate the percentage increase in the NLW from 2020 to 2024.
+Using Extract B, calculate the percentage change in the National Living Wage between 2019 and 2024.
 
 Question 2 [4 marks]
-Using Extract B, explain two factors that may explain the fall in vacancies from 2022 to 2024.
+Using a competitive labour-market diagram, show the effect on employment of a National Living Wage set above the equilibrium wage.
 
 Question 3 [9 marks]
-Using a labour market diagram, analyse the impact of a significant increase in the National Living Wage on employment in the hospitality sector. Show the wage floor above equilibrium and identify any resulting unemployment.
+Using the extracts and your knowledge of economics, analyse two reasons why the disemployment effect of a higher minimum wage may be small in monopsonistic labour markets.
 
 Question 4 [25 marks]
-"The National Living Wage always improves the welfare of low-paid workers." Evaluate this statement.
+Using the extracts and your own knowledge, evaluate the view that a high National Living Wage does more harm than good in the UK labour market.
 
-## Section A — Context 2: The Rise of AI and Automation
+---
 
-**Extract C:** A report by the OECD estimates that 27% of jobs in OECD countries are at high risk of automation. In the UK, 1.5 million jobs in manufacturing and administration could be automated by 2030. However, the AI sector itself created 130,000 new jobs in 2024, predominantly in high-skill roles.
+## Section B: Essay (40 marks)
 
-Question 5 [2 marks]
-Define the term 'structural unemployment'.
+Answer EITHER Question 5 OR Question 6.
 
-Question 6 [4 marks]
-Using Extract C, explain two ways in which AI and automation may create labour market inequality.
+**Short extract:**
+Labour markets often deviate from the perfectly competitive model. Trade unions, monopsony employers and skill mismatches all influence wage and employment outcomes.
 
-Question 7 [9 marks]
-Using a diagram, analyse how technological change leads to structural unemployment in low-skill sectors while increasing demand in high-skill sectors. Use two separate labour market diagrams.
+Question 5 [15 marks]
+Explain, using a diagram, how a profit-maximising monopsonist sets wages and employment below the competitive level.
 
-Question 8 [25 marks]
-Evaluate whether government intervention through education and training is the most effective response to the structural unemployment caused by technological change.
-
-## Section B — Essays
-
-Question 9 [25 marks]
-"Perfect competition is the most desirable market structure for consumers." Evaluate this view.
-
-Question 10 [25 marks]
-Evaluate the view that asymmetric information is the most significant cause of market failure.
-
-Question 11 [25 marks]
-"Competition policy is more effective than regulation in promoting consumer welfare." Discuss.`,
+Question 6 [25 marks]
+"Government intervention in labour markets — through minimum wages and trade-union legislation — improves both equity and efficiency." Evaluate this view.`,
   },
 
   // ── ECONOMICS PAPER 2: Set F ──
@@ -461,62 +453,60 @@ Question 11 [25 marks]
     title: "Paper 2 — Set F",
     description: "National & International Economy. Development and globalisation focus.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136) — Paper 2 — Predicted Paper Set F
+    content: `# AQA A-Level Economics (7136/2) — Paper 2: National and International Economy — Predicted Paper Set F
 
 **Time: 2 hours | Total: 80 marks**
 
-## Section A — Context 1: UK Fiscal Policy and National Debt
+Answer ALL questions in Section A and ONE question from Section B.
 
-**Extract A:** UK national debt reached £2.7 trillion in 2024, equivalent to 98% of GDP. Annual debt interest payments exceeded £100 billion for the first time. The government faced a "fiscal trilemma": pressure to cut taxes, increase public spending, and reduce the deficit simultaneously.
+---
 
-**Extract B:** UK fiscal data.
+## Section A: Data Response (40 marks)
 
-| Year | Debt (% GDP) | Deficit (£bn) | Debt Interest (£bn) | Tax Revenue (£bn) |
-|------|-------------|-------------|--------------------|--------------------|
-| 2020 | 96 | 325 | 39 | 795 |
-| 2021 | 97 | 132 | 56 | 819 |
-| 2022 | 99 | 128 | 83 | 879 |
-| 2023 | 97 | 116 | 94 | 897 |
-| 2024 | 98 | 105 | 103 | 921 |
+**Extract A — UK unemployment, the Phillips curve and wage growth**
+
+UK unemployment fell to 3.5% in early 2022 — the lowest in nearly 50 years — yet wage growth was outpaced by inflation, leaving real wages falling. The Bank of England argues that the UK NAIRU has risen since the pandemic owing to higher long-term sickness inactivity. Critics question whether the Phillips curve still operates: services inflation has remained sticky despite slack appearing in goods markets.
+
+**Extract B — UK labour market and inflation, 2020–2024**
+
+| Indicator                              | 2020 | 2022 | 2023 | 2024 |
+|----------------------------------------|------|------|------|------|
+| Unemployment rate (%)                  | 4.5  | 3.7  | 4.2  | 4.3  |
+| Economic inactivity, 16–64 (%)         | 20.7 | 21.5 | 21.3 | 21.8 |
+| Average earnings growth (%)            | 2.4  | 6.0  | 7.2  | 5.8  |
+| CPI inflation (%)                      | 0.9  | 9.1  | 7.3  | 3.2  |
+| Real wage growth (%)                   | 1.5  | -3.1 | -0.1 | 2.6  |
+
+**Extract C — Further commentary**
+
+MPC research suggests that the natural rate of unemployment may now be 4.5–5.0%, well above the 3.5% trough. If accurate, recent wage and price pressure is consistent with the labour market still being tight even at apparently moderate unemployment.
 
 Question 1 [2 marks]
-Using Extract B, calculate debt interest as a percentage of tax revenue in 2024.
+Using Extract B, calculate UK real wage growth in 2024 and confirm the figure shown in the table.
 
 Question 2 [4 marks]
-Using the data, explain two consequences of rising national debt for the UK economy.
+Using a short-run Phillips curve diagram, explain the relationship between unemployment and inflation.
 
 Question 3 [9 marks]
-Using an AD/AS diagram, analyse the impact of austerity measures (spending cuts) on the UK economy. Consider both short-run and long-run effects.
+Using the extracts and your knowledge of economics, analyse two reasons why the UK NAIRU may have risen since the pandemic.
 
 Question 4 [25 marks]
-"Reducing the national debt should be the primary fiscal objective." Evaluate this view.
+Using the extracts and your own knowledge, evaluate the view that the Phillips-curve relationship between inflation and unemployment no longer holds in the UK.
 
-## Section A — Context 2: Economic Development in Sub-Saharan Africa
+---
 
-**Extract C:** Sub-Saharan Africa's GDP grew by 3.8% in 2024, driven by Nigeria (oil) and Kenya (services). However, 431 million people remained in extreme poverty. Foreign direct investment inflows declined by 12% to $28 billion, while external debt reached $800 billion.
+## Section B: Essay (40 marks)
 
-Question 5 [2 marks]
-Define the term 'economic development'.
+Answer EITHER Question 5 OR Question 6.
 
-Question 6 [4 marks]
-Using Extract C, explain two indicators that suggest GDP growth has not led to economic development in Sub-Saharan Africa.
+**Short extract:**
+Unemployment imposes large social and economic costs. Policy responses range from active labour-market programmes to demand-management.
 
-Question 7 [9 marks]
-Using an appropriate diagram, analyse how FDI can promote economic growth in developing economies. Use an AD/AS or PPF diagram.
+Question 5 [15 marks]
+Explain, using diagrams, the difference between cyclical, structural and frictional unemployment.
 
-Question 8 [25 marks]
-"Aid is more effective than trade in promoting economic development in Sub-Saharan Africa." Evaluate this statement.
-
-## Section B — Essays
-
-Question 9 [25 marks]
-Evaluate the impact of globalisation on income inequality within developed economies.
-
-Question 10 [25 marks]
-"Protectionism is never justified in a world of free trade." Discuss.
-
-Question 11 [25 marks]
-Evaluate whether economic growth is compatible with environmental sustainability.`,
+Question 6 [25 marks]
+"In a modern economy, unemployment is largely a structural problem and cannot be solved by demand-side policy alone." Evaluate this statement.`,
   },
 
   // ── ECONOMICS PAPER 3: Set E ──
@@ -527,240 +517,249 @@ Evaluate whether economic growth is compatible with environmental sustainability
     title: "Paper 3 — Set E",
     description: "Economic Principles & Issues. 30 MCQs + case study on productivity.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136) — Paper 3 — Predicted Paper Set E
+    content: `# AQA A-Level Economics (7136/3) — Paper 3: Economic Principles and Issues — Predicted Paper Set E
 
 **Time: 2 hours | Total: 80 marks**
 
-## Section A — Multiple Choice Questions (30 marks)
+Answer ALL questions in Section A and ALL questions in Section B.
+
+---
+
+## Section A: Multiple Choice (30 marks)
 
 Question 1 [1 marks]
-A movement along the demand curve is caused by:
-A. A change in consumer income
-B. A change in the price of the good itself
-C. A change in advertising spending
-D. A change in population size
+A negative externality of production exists when:
+A. Private cost exceeds social cost
+B. Social cost exceeds private cost
+C. Private benefit exceeds social benefit
+D. No externality exists
 
 Question 2 [1 marks]
-Government failure is most likely when:
-A. Regulation creates unintended consequences
-B. Public goods are efficiently provided
-C. Externalities are fully internalised
-D. Markets are perfectly competitive
+A Pigouvian tax aims to set price equal to:
+A. Private marginal cost
+B. Social marginal cost
+C. Average revenue
+D. Marginal revenue
 
 Question 3 [1 marks]
-Cost-push inflation is most likely caused by:
-A. Increased consumer spending
-B. A rise in raw material costs
-C. Lower interest rates
-D. Increased government spending
+Tradable pollution permits create a market for:
+A. Goods
+B. The right to pollute
+C. Subsidies
+D. Public goods
 
 Question 4 [1 marks]
-Allocative efficiency occurs when:
-A. Price equals marginal cost
-B. Average cost is minimised
-C. Profits are maximised
-D. All resources are employed
+Carbon leakage refers to:
+A. Loss of carbon from oceans
+B. Production relocating to weaker-regulation countries
+C. Carbon escaping pipelines
+D. Carbon stored underground
 
 Question 5 [1 marks]
-A positive externality of consumption exists when:
-A. MSB > MPB
-B. MSC > MPC
-C. MPB > MSB
-D. MPC > MSC
+A subsidy to renewable producers shifts the supply curve:
+A. Leftward
+B. Rightward (downward)
+C. Vertically only
+D. No effect
 
 Question 6 [1 marks]
-In the Keynesian model, the AS curve is:
-A. Vertical at all output levels
-B. Horizontal at low output, vertical at full capacity
-C. Always upward sloping
-D. Downward sloping
+A merit good provided through subsidy:
+A. Should be reduced to social optimum
+B. Should be raised to social optimum
+C. Has no externalities
+D. Reduces consumer surplus
 
 Question 7 [1 marks]
-A bilateral monopoly in the labour market has:
-A. One buyer and one seller of labour
-B. Many buyers and many sellers
-C. One buyer and many sellers
-D. Many buyers and one seller
+The Coase theorem suggests that, with low transaction costs:
+A. Government must always intervene
+B. Bargaining can resolve externalities
+C. Property rights are irrelevant
+D. Markets always fail
 
 Question 8 [1 marks]
-The crowding-out effect suggests that:
-A. Private investment falls when government borrowing rises
-B. Government spending always increases GDP
-C. Tax cuts have no effect on consumption
-D. Monetary policy is always effective
+A regulatory standard sets:
+A. A maximum price
+B. A minimum quantity allowed
+C. A maximum allowable level of an externality
+D. A subsidy rate
 
 Question 9 [1 marks]
-Transfer earnings are:
-A. The total amount a factor is paid
-B. The minimum payment to keep a factor in its current use
-C. Economic rent minus wages
-D. Payment for unused resources
+Public goods are best characterised by:
+A. Rivalry and excludability
+B. Non-rivalry and non-excludability
+C. Free pricing
+D. Allocative efficiency
 
 Question 10 [1 marks]
-A country has a comparative advantage in producing good X if:
-A. It can produce more of good X than any other country
-B. It has a lower opportunity cost of producing good X
-C. Its absolute cost of production is lower
-D. It has more natural resources
+A common-pool resource is most likely to be:
+A. Over-exploited
+B. Under-consumed
+C. Allocatively efficient
+D. A merit good
 
 Question 11 [1 marks]
-Hysteresis in the labour market refers to:
-A. Workers voluntarily choosing unemployment
-B. Long-term unemployment reducing employability
-C. Seasonal fluctuations in employment
-D. Full employment equilibrium
+A negative externality reduces:
+A. Private surplus
+B. Total social surplus at market output
+C. Total cost
+D. Marginal benefit
 
 Question 12 [1 marks]
-Price discrimination can increase total welfare when:
-A. It enables a monopolist to serve customers who would otherwise not buy
-B. It always transfers surplus from consumers to producers
-C. It eliminates all consumer surplus
-D. It reduces output below the competitive level
+A carbon tax is best classified as a/an:
+A. Indirect tax aimed at correcting externalities
+B. Direct tax on income
+C. Subsidy
+D. Quota
 
 Question 13 [1 marks]
-The accelerator theory links:
-A. Investment to changes in national income
-B. Consumption to interest rates
-C. Savings to tax rates
-D. Exports to exchange rates
+A renewable subsidy raises consumer surplus when:
+A. Demand is perfectly inelastic
+B. Supply is perfectly inelastic
+C. Demand and supply are downward and upward sloping
+D. Externalities are zero
 
 Question 14 [1 marks]
-Supply-side policies to reduce unemployment include:
-A. Increasing aggregate demand through fiscal stimulus
-B. Reducing trade union power and improving training
-C. Raising the national minimum wage
-D. Imposing import quotas
+The deadweight loss from a negative externality without intervention is:
+A. Equal to total revenue
+B. The triangle between MSC and MPC at market output
+C. Always zero
+D. Equal to total cost
 
 Question 15 [1 marks]
-A Pigouvian tax is designed to:
-A. Raise revenue for the government
-B. Internalise external costs
-C. Subsidise merit goods
-D. Create barriers to entry
+The income elasticity of demand for EVs is likely to be:
+A. Greater than 1
+B. Less than 0
+C. Equal to 0
+D. Equal to 1
 
 Question 16 [1 marks]
-If the marginal propensity to consume is 0.8, the multiplier is:
-A. 2
-B. 4
-C. 5
-D. 8
+A producer subsidy is most efficient when externalities are:
+A. Negative
+B. Positive
+C. Zero
+D. Constant
 
 Question 17 [1 marks]
-A current account surplus means:
-A. The country imports more than it exports
-B. Capital flows out of the country
-C. The country exports more than it imports
-D. The exchange rate is depreciating
+The principle 'polluter pays' is best implemented via:
+A. Lump-sum subsidies
+B. Pigouvian tax
+C. Negative income tax
+D. Public ownership
 
 Question 18 [1 marks]
-Dynamic efficiency involves:
-A. Producing at the lowest point on the average cost curve
-B. Innovation and investment in new processes over time
-C. Price equalling marginal cost at all times
-D. Perfect factor mobility
+Free-riding is least likely to occur in markets for:
+A. Lighthouse services
+B. Excludable private goods
+C. National defence
+D. Open-access fisheries
 
 Question 19 [1 marks]
-A binding price floor set above equilibrium will:
-A. Create a shortage
-B. Create a surplus
-C. Have no effect on the market
-D. Reduce the price to equilibrium
+A long-run shift to renewables shifts the LRAS curve:
+A. Leftward
+B. Rightward through productivity gains
+C. Vertically downward
+D. Has no effect
 
 Question 20 [1 marks]
-Real GDP is calculated by:
-A. Adding inflation to nominal GDP
-B. Adjusting nominal GDP for price changes
-C. Dividing nominal GDP by population
-D. Multiplying GDP by the exchange rate
+The marginal social benefit of vaccination exceeds private benefit because of:
+A. Negative externalities
+B. Positive externalities
+C. No externalities
+D. Demerit good characteristics
 
 Question 21 [1 marks]
-A tariff is most accurately described as:
-A. A limit on the quantity of imports
-B. A tax on imported goods
-C. A subsidy to domestic producers
-D. A voluntary export restraint
+A government may prefer regulation over taxation when:
+A. Damage is irreversible and large
+B. Externalities are small
+C. The market is competitive
+D. Information is perfect
 
 Question 22 [1 marks]
-Perfectly elastic demand means:
-A. Any price change causes zero change in quantity
-B. Any price increase causes quantity demanded to fall to zero
-C. Demand is completely unresponsive to price
-D. The demand curve is vertical
+The 'tragedy of the commons' refers to:
+A. Public-good free-riding
+B. Over-use of common-pool resources
+C. Government failure
+D. Allocative efficiency
 
 Question 23 [1 marks]
-Moral hazard occurs when:
-A. Both parties have full information
-B. One party takes more risk because they are insured against loss
-C. Markets are perfectly competitive
-D. The government provides too little regulation
+Setting a permit cap at MSC = MSB requires:
+A. No information on damage
+B. Accurate marginal damage estimates
+C. Zero monitoring cost
+D. Perfect competition only
 
 Question 24 [1 marks]
-X-inefficiency is most likely in:
-A. Perfectly competitive markets
-B. Contestable markets
-C. Monopolies with weak competitive pressure
-D. Markets with many small firms
+A consumer subsidy on EVs is funded ultimately by:
+A. Producers
+B. Consumers of EVs
+C. Taxpayers
+D. Foreign governments
 
 Question 25 [1 marks]
-The terms of trade measure:
-A. The quantity of exports minus imports
-B. The ratio of export prices to import prices
-C. The value of the exchange rate
-D. Total trade as a percentage of GDP
+Output beyond the social optimum implies:
+A. Net welfare gain
+B. Net welfare loss
+C. No deadweight loss
+D. Allocative efficiency
 
 Question 26 [1 marks]
-Fiscal drag occurs when:
-A. Government spending is cut
-B. Inflation pushes taxpayers into higher brackets
-C. Interest rates rise
-D. The exchange rate appreciates
+A landfill tax is an example of:
+A. A subsidy
+B. A Pigouvian tax
+C. A maximum price
+D. A trade tariff
 
 Question 27 [1 marks]
-A negative output gap indicates:
-A. Actual GDP exceeds potential GDP
-B. Actual GDP is below potential GDP
-C. The economy is at full employment
-D. Inflation is rising above target
+A successful environmental policy increases:
+A. Private cost only
+B. Social welfare net of intervention costs
+C. Private benefits only
+D. Government spending only
 
 Question 28 [1 marks]
-The infant industry argument justifies:
-A. Free trade agreements
-B. Temporary protection for new domestic industries
-C. Permanent tariffs on all imports
-D. Deregulation of all markets
+The CCC argues the next decade of decarbonisation is harder because:
+A. The remaining sectors have low MAC
+B. The remaining sectors have high marginal abatement costs
+C. Emissions are zero
+D. Markets work perfectly
 
 Question 29 [1 marks]
-Economic rent in the labour market is:
-A. The total wage paid
-B. Payment above transfer earnings
-C. The cost of hiring a worker
-D. Payment for overtime work
+A green innovation breakthrough most likely shifts:
+A. AD leftward
+B. LRAS leftward
+C. LRAS rightward
+D. SRAS leftward
 
 Question 30 [1 marks]
-If MPC + MPS + MPT + MPM = 1, a rise in the tax rate will:
-A. Increase the multiplier
-B. Decrease the multiplier
-C. Have no effect on the multiplier
-D. Make the multiplier negative
+Time inconsistency in climate policy refers to:
+A. Lags in monetary policy
+B. Governments later abandoning their pledges
+C. Differing exchange rates
+D. Variable supply
 
-## Section B — Case Study: UK Productivity Puzzle
+---
 
-**Extract:** The UK's output per hour worked remains 16% below the G7 average. Between 2010 and 2024, UK labour productivity grew by just 0.4% per year, compared to 1.2% in the USA and 0.9% in Germany. Business investment as a share of GDP fell to 10%, the lowest in the G7. Skills shortages persist in STEM sectors, with 36% of vacancies classified as skill-shortage vacancies.
+## Section B: Case Study (50 marks)
 
-Question 31 [2 marks]
-Using the data, calculate how many more years of 0.4% annual growth it would take the UK to match the US level of productivity (16% gap, simple calculation).
+**Case Study — Climate change and UK environmental policy**
 
-Question 32 [4 marks]
-Using the case study, explain two causes of the UK's low productivity growth.
+The UK is committed by law to net-zero greenhouse gas emissions by 2050. The Climate Change Committee (CCC) reports the UK has cut emissions 48% since 1990, more than any G7 economy, but warns the next decade will be much harder as transport and heating remain hard to decarbonise. Carbon pricing through the UK ETS now covers around 28% of UK emissions; the rest are addressed through regulation, subsidies for renewables and EV grants.
 
-Question 33 [4 marks]
-Using a PPF diagram, explain how increased investment in technology could shift the UK's productive potential.
+| Indicator                              | 2010 | 2015 | 2020 | 2024 |
+|----------------------------------------|------|------|------|------|
+| UK emissions, MtCO₂e                   | 600  | 510  | 410  | 370  |
+| Renewable share of generation (%)      | 7    | 25   | 43   | 47   |
+| EV share of new car sales (%)          | 0.1  | 1.1  | 10.7 | 20.5 |
+| Carbon allowance price (£/tonne)       | 12   | 8    | 33   | 78   |
 
-Question 34 [9 marks]
-Analyse the links between low productivity, wage stagnation, and rising inequality in the UK economy.
+Question 31 [10 marks]
+Using an MSC/MSB diagram for industrial CO₂ emissions, explain how a tradable permit system can move output closer to the social optimum.
 
-Question 35 [25 marks]
-"Supply-side policies are the only effective way to solve the UK's productivity crisis." Evaluate this statement.`,
+Question 32 [15 marks]
+Using the case study and your knowledge of economics, analyse two reasons why subsidies for electric vehicles may correct positive externalities in the UK transport market.
+
+Question 33 [25 marks]
+"Market-based environmental policies are more effective than regulation in achieving net zero." Evaluate this statement using the case study and your own knowledge.`,
   },
 
   // ── ECONOMICS PAPER 1: Set G ──
@@ -771,62 +770,59 @@ Question 35 [25 marks]
     title: "Paper 1 — Set G",
     description: "Markets and Market Failure. Technology markets and digital regulation.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136) — Paper 1 — Predicted Paper Set G
+    content: `# AQA A-Level Economics (7136/1) — Paper 1: Markets and Market Failure — Predicted Paper Set G
 
 **Time: 2 hours | Total: 80 marks**
 
-## Section A — Context 1: Big Tech and Market Power
+Answer ALL questions in Section A and ONE question from Section B.
 
-**Extract A:** The Digital Markets Act (DMA) came into force in the EU in 2023, targeting 'gatekeeper' platforms including Google, Apple, Amazon, Meta, and Microsoft. These five firms had combined revenues of $1.5 trillion in 2023, with operating margins averaging 28%. The UK's Digital Markets, Competition and Consumers Act 2024 granted the CMA powers to impose conduct requirements.
+---
 
-**Extract B:** Big Tech market metrics.
+## Section A: Data Response (40 marks)
 
-| Company | Revenue ($bn) | Operating Margin (%) | Market Share in Core Market (%) |
-|---------|-------------|--------------------|-----------------------------|
-| Google | 307 | 27 | 92 (Search) |
-| Apple | 383 | 30 | 28 (Smartphones), 55 (App Store) |
-| Meta | 135 | 35 | 77 (Social Media) |
-| Amazon | 575 | 6 | 38 (E-commerce) |
-| Microsoft | 212 | 42 | 75 (Desktop OS) |
+**Extract A — Demerit goods and the UK alcohol market**
+
+Alcohol-related harm cost the UK NHS an estimated £4.9bn in 2023. Scotland introduced minimum unit pricing (MUP) at 50p per unit in 2018, raising it to 65p in September 2024. Public Health Scotland reports a 13.4% fall in alcohol-related deaths and 4.1% lower per-capita consumption since MUP introduction. Industry argues MUP is a regressive tax that fails to target problem drinkers.
+
+**Extract B — Alcohol market and harm indicators**
+
+| Indicator                              | 2018 | 2020 | 2022 | 2024 |
+|----------------------------------------|------|------|------|------|
+| Per-capita alcohol consumption (litres)| 9.7  | 9.4  | 9.2  | 9.0  |
+| Alcohol-attributable deaths (per 100k) | 11.9 | 14.0 | 13.1 | 11.5 |
+| Real alcohol duty receipts (£bn)       | 12.1 | 11.8 | 12.4 | 12.6 |
+| Off-trade share of sales (%)           | 60   | 71   | 65   | 63   |
+
+**Extract C — Further commentary**
+
+An IFS study found that, while MUP raises the cost of the cheapest, strongest products most, the lowest-income decile spends a higher share of disposable income on these products. Health economists therefore stress the need to evaluate distributional effects alongside health gains.
 
 Question 1 [2 marks]
-Using Extract B, identify which company has the highest operating margin and suggest one reason for this.
+Using Extract B, calculate the percentage fall in per-capita alcohol consumption between 2018 and 2024.
 
 Question 2 [4 marks]
-Explain two characteristics of the digital market that create natural barriers to entry.
+Using a marginal social cost / marginal social benefit diagram, show why the free market over-consumes alcohol.
 
 Question 3 [9 marks]
-Using a monopoly diagram, analyse how a dominant tech firm can restrict output and raise prices above the competitive level. Identify the welfare (deadweight) loss.
+Using the extracts and your knowledge of economics, analyse two ways in which a minimum unit price for alcohol may correct the market failure associated with demerit goods.
 
 Question 4 [25 marks]
-Evaluate whether regulation such as the Digital Markets Act is more effective than competition policy in controlling the market power of Big Tech firms.
+Using the extracts and your own knowledge, evaluate the view that minimum pricing is a more effective policy than indirect taxation in reducing the consumption of demerit goods.
 
-## Section A — Context 2: The UK Water Industry
+---
 
-**Extract C:** Water companies in England and Wales discharged sewage into rivers and seas over 464,000 times in 2023, totalling 3.6 million hours of discharges. Thames Water, serving 15 million customers, accumulated £15.6 billion in debt while paying £7.2 billion in dividends since privatisation. The water regulator Ofwat proposed allowing a 40% increase in bills over 2025–2030 to fund infrastructure investment.
+## Section B: Essay (40 marks)
 
-Question 5 [2 marks]
-Define the term 'natural monopoly'.
+Answer EITHER Question 5 OR Question 6.
 
-Question 6 [4 marks]
-Using the case study, explain two examples of market failure in the UK water industry.
+**Short extract:**
+Demerit goods generate large negative externalities of consumption and information failures. Policy responses range from taxation and regulation to behavioural nudges.
 
-Question 7 [9 marks]
-Using a natural monopoly diagram, analyse the case for regulating water companies through average cost pricing. Show the natural monopoly cost conditions and the regulated price.
+Question 5 [15 marks]
+Explain, using a diagram, how an indirect tax on a demerit good can move output closer to the social optimum.
 
-Question 8 [25 marks]
-"The UK water industry shows that privatisation of natural monopolies has failed." Evaluate this statement.
-
-## Section B — Essays
-
-Question 9 [25 marks]
-Evaluate the view that contestable markets always produce outcomes superior to monopoly.
-
-Question 10 [25 marks]
-"Government provision of public goods is always preferable to private provision." Evaluate this view.
-
-Question 11 [25 marks]
-Discuss whether behavioural economics provides a more useful framework than traditional rational choice theory for understanding consumer decision-making.`,
+Question 6 [25 marks]
+"For demerit goods, regulation is always more effective than taxation." Evaluate this statement using diagrams and real-world examples.`,
   },
 
   // ── ECONOMICS PAPER 2: Set G ──
@@ -837,61 +833,59 @@ Discuss whether behavioural economics provides a more useful framework than trad
     title: "Paper 2 — Set G",
     description: "National & International Economy. Green transition and inequality.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136) — Paper 2 — Predicted Paper Set G
+    content: `# AQA A-Level Economics (7136/2) — Paper 2: National and International Economy — Predicted Paper Set G
 
 **Time: 2 hours | Total: 80 marks**
 
-## Section A — Context 1: The Green Transition and Economic Growth
+Answer ALL questions in Section A and ONE question from Section B.
 
-**Extract A:** Global investment in clean energy reached $1.8 trillion in 2024, surpassing fossil fuel investment for the first time. The UK aims for net zero by 2050 but faces a "green skills gap" — 480,000 new workers are needed in renewable energy, retrofitting, and EV manufacturing by 2030. The cost of offshore wind fell 70% since 2012 to £44/MWh.
+---
 
-**Extract B:** UK energy investment data.
+## Section A: Data Response (40 marks)
 
-| Indicator | 2019 | 2024 |
-|-----------|------|------|
-| Renewable energy investment (£bn) | 8.2 | 22.5 |
-| Fossil fuel investment (£bn) | 11.4 | 6.3 |
-| Green jobs (000s) | 247 | 410 |
-| Carbon emissions (MtCO₂) | 351 | 284 |
+**Extract A — Global development: Sub-Saharan Africa and growth strategy**
+
+Sub-Saharan Africa's economies are forecast to grow by 4.0% in 2025, compared with 1.9% in advanced economies, but per-capita GDP remains a fraction of OECD levels. External debt servicing now consumes 17% of government revenue across Sub-Saharan Africa, crowding out spending on health and education. China is the largest bilateral creditor, accounting for around 12% of total external debt.
+
+**Extract B — Selected Sub-Saharan economies, 2024**
+
+| Country     | Real GDP growth (%) | Gross capital formation (% GDP) | External debt (% GDP) | Adult literacy (%) |
+|-------------|---------------------|---------------------------------|-----------------------|--------------------|
+| Kenya       | 5.0                 | 16                              | 71                    | 83                 |
+| Nigeria     | 3.1                 | 22                              | 38                    | 62                 |
+| Ethiopia    | 6.2                 | 30                              | 26                    | 52                 |
+| South Africa| 0.9                 | 14                              | 75                    | 95                 |
+
+**Extract C — Further commentary**
+
+Critics of debt-financed development argue that high debt-service ratios constrain investment in human capital, locking countries in a low-productivity trap. Others stress that prudent borrowing for productive infrastructure can pay back in higher long-run growth.
 
 Question 1 [2 marks]
-Using Extract B, calculate the percentage change in carbon emissions between 2019 and 2024.
+Using Extract B, calculate the difference in adult literacy rates between South Africa and Ethiopia.
 
 Question 2 [4 marks]
-Using the data, explain two benefits of the green transition for the UK economy.
+Using an AD/AS or Harrod–Domar style diagram, explain how higher investment can raise long-run growth in a developing economy.
 
 Question 3 [9 marks]
-Using an AD/AS diagram, analyse how large-scale green investment could affect both short-run and long-run aggregate supply.
+Using the extracts and your knowledge of economics, analyse two reasons why high external debt may constrain economic development.
 
 Question 4 [25 marks]
-Evaluate whether the pursuit of net zero by 2050 is compatible with sustained economic growth in the UK.
+Using the extracts and your own knowledge, evaluate the view that increased foreign aid is the most effective way to promote development in Sub-Saharan Africa.
 
-## Section A — Context 2: UK Regional Inequality
+---
 
-**Extract C:** GDP per capita in London was £61,000 in 2024, compared to £22,000 in the North East — a ratio of 2.8:1. The government's "Levelling Up" programme allocated £4.8 billion to regional investment funds. Critics argue this is insufficient given that London receives over 50% of UK transport infrastructure spending per capita.
+## Section B: Essay (40 marks)
 
-Question 5 [2 marks]
-Define the term 'regional multiplier'.
+Answer EITHER Question 5 OR Question 6.
 
-Question 6 [4 marks]
-Using Extract C, explain two causes of regional inequality in the UK.
+**Short extract:**
+Strategies for economic development range from market-led approaches (trade liberalisation, FDI) to interventionist approaches (industrial policy, state-led infrastructure investment).
 
-Question 7 [9 marks]
-Using the multiplier concept and an appropriate diagram, analyse how increased infrastructure spending in the North East could reduce regional inequality.
+Question 5 [15 marks]
+Explain how trade liberalisation can promote economic development in low-income countries.
 
-Question 8 [25 marks]
-"Levelling Up policies are an inefficient use of public funds compared to investing in areas of existing comparative advantage." Evaluate this view.
-
-## Section B — Essays
-
-Question 9 [25 marks]
-Evaluate the effectiveness of quantitative easing as a tool for stimulating economic recovery.
-
-Question 10 [25 marks]
-"The benefits of immigration to the UK economy outweigh the costs." Discuss.
-
-Question 11 [25 marks]
-Evaluate whether a universal basic income (UBI) would be a more effective policy than means-tested benefits for reducing poverty.`,
+Question 6 [25 marks]
+"For low-income economies, market-oriented development strategies are always more effective than interventionist ones." Evaluate this statement.`,
   },
 
   // ── ECONOMICS PAPER 3: Set F ──
@@ -902,240 +896,249 @@ Evaluate whether a universal basic income (UBI) would be a more effective policy
     title: "Paper 3 — Set F",
     description: "Economic Principles & Issues. 30 MCQs + case study on healthcare.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136) — Paper 3 — Predicted Paper Set F
+    content: `# AQA A-Level Economics (7136/3) — Paper 3: Economic Principles and Issues — Predicted Paper Set F
 
 **Time: 2 hours | Total: 80 marks**
 
-## Section A — Multiple Choice Questions (30 marks)
+Answer ALL questions in Section A and ALL questions in Section B.
+
+---
+
+## Section A: Multiple Choice (30 marks)
 
 Question 1 [1 marks]
-Consumer surplus is represented graphically by the area:
-A. Below the supply curve and above the price
-B. Above the demand curve and below the price
-C. Below the demand curve and above the price
-D. Between the supply and demand curves
+A commercial bank's primary role is to:
+A. Print money
+B. Channel savings to borrowers
+C. Set the Bank Rate
+D. Issue government bonds
 
 Question 2 [1 marks]
-A minimum price set below the equilibrium price will:
-A. Create a surplus
-B. Create a shortage
-C. Have no effect
-D. Eliminate the market
+A central bank acts as:
+A. A lender of first resort
+B. A lender of last resort
+C. A retail bank
+D. A trade union
 
 Question 3 [1 marks]
-The main purpose of a buffer stock scheme is to:
-A. Increase prices permanently
-B. Stabilise prices by buying and selling reserves
-C. Eliminate competition
-D. Reduce imports
+A higher capital ratio reduces:
+A. Bank lending capacity in the very short run
+B. Government revenue
+C. The Bank Rate
+D. The money supply directly
 
 Question 4 [1 marks]
-An increase in the marginal rate of income tax is likely to:
-A. Increase the incentive to work more hours
-B. Reduce the substitution effect of leisure for work
-C. Reduce the incentive to work through the substitution effect
-D. Have no effect on labour supply
+Quantitative easing aims to:
+A. Raise the Bank Rate
+B. Reduce reserves
+C. Lower long-term yields and raise asset prices
+D. Raise income tax
 
 Question 5 [1 marks]
-A public good is characterised by:
-A. Excludability and rivalry
-B. Non-excludability and non-rivalry
-C. Excludability and non-rivalry
-D. Non-excludability and rivalry
+Asymmetric information in lending leads to:
+A. Adverse selection
+B. Allocative efficiency
+C. Lower default rates
+D. No externalities
 
 Question 6 [1 marks]
-In the long run, a firm in monopolistic competition will:
-A. Make supernormal profits
-B. Make normal profits only
-C. Make losses
-D. Leave the industry
+Moral hazard refers to behaviour that:
+A. Reduces risk
+B. Becomes riskier when costs are externalised
+C. Improves efficiency
+D. Eliminates risk
 
 Question 7 [1 marks]
-The IS-LM model suggests that expansionary fiscal policy:
-A. Shifts the IS curve left
-B. Shifts the LM curve right
-C. Shifts the IS curve right
-D. Has no effect in a liquidity trap
+A loan-to-value ratio cap is an example of:
+A. Monetary policy
+B. Macroprudential policy
+C. Fiscal policy
+D. Trade policy
 
 Question 8 [1 marks]
-A fall in the exchange rate is likely to:
-A. Reduce the price of imports
-B. Increase the competitiveness of exports
-C. Reduce the rate of inflation
-D. Strengthen the current account surplus immediately
+A liquidity trap occurs when:
+A. Money demand is perfectly inelastic
+B. Interest rates cannot effectively fall further
+C. Inflation is high
+D. Banks have no reserves
 
 Question 9 [1 marks]
-The theory of second best argues that:
-A. Removing one distortion always improves welfare
-B. Removing one market distortion may not improve welfare if others remain
-C. Perfect competition is always the best outcome
-D. Government intervention always creates deadweight loss
+Bank runs can be limited by:
+A. Removing deposit insurance
+B. Deposit insurance schemes
+C. Higher reserve requirements alone
+D. Privatising the central bank
 
 Question 10 [1 marks]
-A monopsony employer pays:
-A. Wages above the competitive equilibrium
-B. Wages at the MRP
-C. Wages below the MRP
-D. The same wage as a competitive employer
+A bond's yield rises when:
+A. The bond price rises
+B. The bond price falls
+C. Inflation falls
+D. Demand for the bond rises
 
 Question 11 [1 marks]
-GDP per capita is calculated by:
-A. GDP × population
-B. GDP ÷ population
-C. GDP + exports − imports
-D. GDP − depreciation
+Securitisation of mortgages was a contributor to crisis because:
+A. It made risk fully transparent
+B. It dispersed risk in opaque ways
+C. It eliminated default
+D. It raised capital ratios
 
 Question 12 [1 marks]
-A decrease in corporation tax is an example of:
-A. Demand-side fiscal policy
-B. Contractionary monetary policy
-C. Supply-side fiscal policy
-D. Protectionist trade policy
+Excessive credit growth before 2008 is best described as:
+A. Allocatively efficient
+B. A symptom of financial deregulation
+C. Macroprudentially safe
+D. A liquidity trap
 
 Question 13 [1 marks]
-Hot money flows refer to:
-A. Long-term foreign direct investment
-B. Short-term speculative capital movements
-C. Government aid to developing countries
-D. Trade in physical goods
+A counter-cyclical capital buffer requires banks to:
+A. Hold less capital in booms
+B. Hold more capital in booms
+C. Hold no capital
+D. Lend more in downturns only
 
 Question 14 [1 marks]
-In a perfectly competitive labour market, the firm's demand for labour is determined by:
-A. The national minimum wage
-B. The marginal revenue product of labour
-C. The average cost of labour
-D. Trade union bargaining power
+The Bank of England's primary objective is:
+A. Maximising GDP
+B. Price stability
+C. Maximising tax revenue
+D. Reducing inequality
 
 Question 15 [1 marks]
-Deadweight loss from a tax is smallest when:
-A. Demand is perfectly elastic
-B. Supply is perfectly elastic
-C. Demand is perfectly inelastic
-D. Both supply and demand are elastic
+A 'too big to fail' bank creates:
+A. Moral hazard
+B. No externality
+C. Allocative efficiency
+D. Liquidity
 
 Question 16 [1 marks]
-The infant industry argument is weakened by:
-A. The difficulty of removing protection once established
-B. The success of all protected industries
-C. Free trade always harming developing countries
-D. Comparative advantage being irrelevant
+The Basel III framework focuses on:
+A. Trade policy
+B. Bank capital and liquidity standards
+C. Taxation
+D. Monetary aggregates
 
 Question 17 [1 marks]
-A vertical Phillips Curve in the long run implies:
-A. There is no trade-off between inflation and unemployment
-B. Lower inflation always reduces unemployment
-C. The natural rate of unemployment is zero
-D. Fiscal policy can permanently reduce unemployment
+The shadow banking sector refers to:
+A. Illegal banks
+B. Non-bank financial institutions performing bank-like functions
+C. Central banks
+D. Investment banks only
 
 Question 18 [1 marks]
-An increase in government spending financed by borrowing will:
-A. Always improve economic growth
-B. Risk crowding out private investment
-C. Automatically reduce inflation
-D. Improve the trade balance
+A credit boom is most likely to:
+A. Reduce financial stability
+B. Eliminate moral hazard
+C. Reduce asset prices
+D. Lower bank profits
 
 Question 19 [1 marks]
-The Lorenz Curve shows:
-A. The relationship between tax rates and revenue
-B. The distribution of income or wealth in an economy
-C. The trade-off between inflation and unemployment
-D. The relationship between exchange rates and trade
+A bond credit rating downgrade typically:
+A. Reduces yields
+B. Raises yields
+C. Has no effect
+D. Raises bond prices
 
 Question 20 [1 marks]
-A subsidy given to a firm with positive externalities aims to:
-A. Reduce output to the socially optimal level
-B. Increase output to the socially optimal level
-C. Eliminate consumer surplus
-D. Create a deadweight loss
+A credit crunch is characterised by:
+A. Easy credit
+B. Sharp tightening of credit availability
+C. Low interest rates only
+D. Stable lending
 
 Question 21 [1 marks]
-Limit pricing is a strategy used by:
-A. Firms in perfect competition
-B. Dominant firms to deter entry
-C. Governments to regulate monopolies
-D. Consumers to bargain for lower prices
+The UK Financial Policy Committee can:
+A. Set income tax
+B. Use macroprudential tools
+C. Set the Bank Rate
+D. Issue bonds directly
 
 Question 22 [1 marks]
-In an open economy, the multiplier is reduced by:
-A. A high MPC
-B. A high MPM
-C. Low tax rates
-D. Low savings rates
+Forward guidance refers to:
+A. Communicating likely future policy
+B. Setting future fiscal policy
+C. Issuing forward contracts
+D. Closing banks
 
 Question 23 [1 marks]
-The Gini coefficient ranges from:
-A. −1 to +1
-B. 0 to 100
-C. 0 to 1
-D. 1 to 10
+The transmission mechanism of monetary policy works through:
+A. Only the exchange rate
+B. Multiple channels including credit and asset prices
+C. Only government spending
+D. Only tax rates
 
 Question 24 [1 marks]
-A customs union differs from a free trade area because:
-A. It has no tariffs between members
-B. Members adopt a common external tariff
-C. It prohibits all trade with non-members
-D. It requires political union
+A financial intermediary primarily reduces:
+A. Productivity
+B. Search and information costs
+C. Income inequality
+D. Government revenue
 
 Question 25 [1 marks]
-Rational ignorance occurs when:
-A. Consumers have too much information
-B. The cost of acquiring information exceeds the benefit
-C. The government restricts access to data
-D. All consumers are perfectly informed
+A run on a building society is most likely if depositors fear:
+A. Excess profits
+B. Insolvency
+C. High interest rates
+D. Deflation
 
 Question 26 [1 marks]
-Economies of scale are a barrier to entry because:
-A. Small firms cannot achieve the same low unit costs
-B. All firms have identical cost structures
-C. Government regulations prevent new firms from entering
-D. Consumers prefer established brands
+The Bank Rate primarily affects:
+A. Direct retail lending only
+B. Short-term wholesale rates and broad credit conditions
+C. Only mortgages
+D. Foreign aid
 
 Question 27 [1 marks]
-A depreciation of the currency is shown on an exchange rate diagram by:
-A. A leftward shift of demand for the currency
-B. An increase in the equilibrium exchange rate
-C. A rightward shift of supply of the currency
-D. Both A and C
+Helicopter money refers to:
+A. Direct cash transfers financed by central bank money creation
+B. Foreign aid
+C. Quantitative tightening
+D. A tax cut
 
 Question 28 [1 marks]
-The natural rate of unemployment includes:
-A. Cyclical and structural unemployment
-B. Frictional and structural unemployment
-C. Only demand-deficient unemployment
-D. Zero unemployment
+The natural rate of interest is the rate at which:
+A. Inflation is zero
+B. Output is at potential and inflation is stable
+C. Unemployment is zero
+D. Bank Rate is zero
 
 Question 29 [1 marks]
-Peak pricing by train companies is an example of:
-A. First-degree price discrimination
-B. Second-degree price discrimination
-C. Third-degree price discrimination
-D. Predatory pricing
+Excessive household debt makes monetary policy:
+A. Less powerful
+B. More powerful through interest-rate sensitivity
+C. Irrelevant
+D. Independent of inflation
 
 Question 30 [1 marks]
-The paradox of thrift suggests that:
-A. Increased savings always lead to higher investment
-B. If everyone saves more, total savings may fall due to reduced national income
-C. Thrift is always beneficial for the economy
-D. Consumption has no effect on GDP
+A persistent zero lower bound on interest rates suggests a need for:
+A. More fiscal policy or unconventional monetary policy
+B. Less government spending
+C. Higher reserve requirements only
+D. No policy
 
-## Section B — Case Study: NHS Funding and Healthcare Market Failure
+---
 
-**Extract:** The NHS budget reached £182 billion in 2024/25, yet waiting lists exceeded 7.5 million. The UK spends 10.3% of GDP on healthcare, compared to 16.6% in the USA (where 27 million remain uninsured). Private healthcare spending in the UK grew 12% in 2024 as patients sought faster treatment. A two-tier system is emerging.
+## Section B: Case Study (50 marks)
 
-Question 31 [2 marks]
-Calculate the approximate total UK GDP implied by healthcare spending of 10.3% equalling £182 billion.
+**Case Study — Financial markets and macroprudential policy**
 
-Question 32 [4 marks]
-Using the case study, explain two types of market failure in the healthcare market.
+The 2008 financial crisis exposed gaps in regulation. Since then the UK has created the Financial Policy Committee (FPC), which can use macroprudential tools to limit risky lending — for example LTV/LTI mortgage caps and counter-cyclical capital buffers. Bank of England research suggests these tools have lowered the probability of a crisis without materially reducing GDP growth. Critics warn excessive regulation can reduce credit availability for productive investment.
 
-Question 33 [4 marks]
-Using a diagram, explain why healthcare is considered a merit good and show the under-consumption in a free market.
+| Indicator                              | 2007 | 2012 | 2018 | 2024 |
+|----------------------------------------|------|------|------|------|
+| UK bank capital ratio (Tier 1, %)      | 7.5  | 11.5 | 16.0 | 17.5 |
+| UK private credit, % GDP               | 195  | 165  | 145  | 142  |
+| Mortgage LTV >90% (% of new loans)     | 14   | 4    | 4    | 5    |
+| Bank Rate (%)                          | 5.25 | 0.5  | 0.75 | 4.75 |
 
-Question 34 [9 marks]
-Analyse whether increased private sector involvement in healthcare delivery would improve efficiency and reduce waiting lists.
+Question 31 [10 marks]
+Using a diagram of the loanable funds market, explain how a counter-cyclical capital buffer affects the supply of credit and the equilibrium interest rate.
 
-Question 35 [25 marks]
-"The NHS model of free-at-the-point-of-use healthcare is unsustainable and should be replaced by an insurance-based system." Evaluate this statement.`,
+Question 32 [15 marks]
+Using the case study and your knowledge of economics, analyse two ways in which macroprudential policy can reduce the risk of a financial crisis.
+
+Question 33 [25 marks]
+"Stricter macroprudential regulation always reduces long-run economic growth." Evaluate this statement using the case study and your own knowledge.`,
   },
 
   // ── ECONOMICS PAPER 3: Set G ──
@@ -1146,248 +1149,248 @@ Question 35 [25 marks]
     title: "Paper 3 — Set G",
     description: "Economic Principles & Issues. 30 MCQs + case study on climate economics and net zero.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136) — Paper 3 — Predicted Paper Set G
+    content: `# AQA A-Level Economics (7136/3) — Paper 3: Economic Principles and Issues — Predicted Paper Set G
 
 **Time: 2 hours | Total: 80 marks**
 
-## Section A — Multiple Choice Questions (30 marks)
+Answer ALL questions in Section A and ALL questions in Section B.
+
+---
+
+## Section A: Multiple Choice (30 marks)
 
 Question 1 [1 marks]
-A carbon emissions trading scheme works by:
-A. Banning all carbon-emitting industries
-B. Setting a cap on emissions and allowing firms to trade permits
-C. Imposing a uniform tax on all energy use
-D. Subsidising renewable energy producers directly
+Bounded rationality describes:
+A. Perfect calculation by consumers
+B. Limits on cognitive processing
+C. Pure altruism
+D. Maximisation in all contexts
 
 Question 2 [1 marks]
-The Coase theorem suggests that, with low transaction costs:
-A. Government regulation is always required to fix externalities
-B. Property rights and bargaining can resolve externalities efficiently
-C. Pigouvian taxes are always optimal
-D. Markets cannot internalise external costs
+Present bias means individuals:
+A. Value the future too much
+B. Over-weight current rewards
+C. Discount the future to zero
+D. Have no time preference
 
 Question 3 [1 marks]
-A common pool resource (e.g. fisheries) is best characterised as:
-A. Non-rival and non-excludable
-B. Rival and non-excludable
-C. Rival and excludable
-D. Non-rival and excludable
+A 'nudge' is a policy that:
+A. Mandates a behaviour
+B. Bans an option
+C. Changes default architecture
+D. Imposes a tax
 
 Question 4 [1 marks]
-Green Quantitative Easing refers to:
-A. Central bank purchases of green bonds to support climate-aligned investment
-B. Tax cuts for environmental charities
-C. Subsidies for petrol-powered vehicles
-D. A reduction in interest rates for all firms
+Loss aversion refers to:
+A. Symmetric treatment of gains and losses
+B. Greater sensitivity to losses than equivalent gains
+C. Indifference to losses
+D. Always preferring risk
 
 Question 5 [1 marks]
-Which of the following is the strongest example of a Pigouvian subsidy?
-A. A grant for installing residential heat pumps
-B. A duty on imported steel
-C. A levy on single-use plastics
-D. A windfall tax on oil profits
+The endowment effect is the tendency to:
+A. Over-value goods one already owns
+B. Sell at low prices
+C. Ignore sunk costs
+D. Over-pay for new goods
 
 Question 6 [1 marks]
-The "rebound effect" of energy efficiency improvements describes:
-A. A short-term recession caused by green policy
-B. Increased energy use as efficiency lowers the effective price of energy services
-C. The political backlash against carbon taxes
-D. Higher inflation following subsidy cuts
+A heuristic is best described as:
+A. A logical proof
+B. A mental shortcut for decisions
+C. A government policy
+D. A statistical model
 
 Question 7 [1 marks]
-Stranded assets in the context of net zero refer to:
-A. Renewable energy infrastructure
-B. Fossil fuel reserves and capital that lose value before the end of their economic life
-C. Government bonds held by foreign investors
-D. Land used for carbon offset forestry
+Auto-enrolment into pensions exploits:
+A. Loss aversion
+B. Default bias and inertia
+C. Present bias only
+D. Unbounded rationality
 
 Question 8 [1 marks]
-A "just transition" policy aims to:
-A. Maximise short-run profits in fossil fuel industries
-B. Distribute the costs and benefits of decarbonisation equitably across regions and workers
-C. Replace all market mechanisms with central planning
-D. Eliminate all government intervention in energy markets
+Choice architecture refers to:
+A. Building design
+B. The way options are presented to decision-makers
+C. Government building policy
+D. Online security
 
 Question 9 [1 marks]
-Carbon Border Adjustment Mechanisms (CBAMs) are designed primarily to address:
-A. Trade deficits with developing economies
-B. Carbon leakage when domestic carbon prices push production abroad
-C. Currency manipulation by trading partners
-D. Subsidy disputes at the WTO
+A behavioural failure can be addressed by:
+A. Banning all advertising
+B. Information provision and well-designed defaults
+C. Removing all taxes
+D. Eliminating government
 
 Question 10 [1 marks]
-The discount rate used in climate cost-benefit analysis matters because:
-A. It determines the exchange rate for green bonds
-B. A lower discount rate increases the present value of long-term climate damages
-C. It sets the central bank's policy rate
-D. It is used to calculate the carbon tax rate
+Anchoring describes:
+A. Setting fixed exchange rates
+B. Initial information disproportionately influencing later decisions
+C. Perfect information
+D. Profit maximisation
 
 Question 11 [1 marks]
-A subsidy on electric vehicles (EVs) is most likely to:
-A. Increase the consumer surplus of EV buyers and reduce negative externalities from petrol vehicles
-B. Eliminate all road congestion
-C. Reduce demand for charging infrastructure
-D. Raise the price paid by EV consumers
+Status-quo bias is the tendency to:
+A. Always choose risk
+B. Stick with the current option
+C. Switch frequently
+D. Save more
 
 Question 12 [1 marks]
-The Kuznets environmental curve hypothesises that:
-A. Pollution rises indefinitely with GDP per capita
-B. Pollution falls indefinitely with GDP per capita
-C. Pollution rises with GDP and then falls beyond a threshold income level
-D. There is no relationship between pollution and income
+A negative externality of consumption may be made worse by:
+A. Present bias amplifying short-run benefits
+B. Fully rational behaviour
+C. No bias at all
+D. High switching costs
 
 Question 13 [1 marks]
-A "greenium" is best described as:
-A. The yield premium investors require to hold polluting assets
-B. The lower yield investors accept on green bonds compared to conventional bonds
-C. A tax on luxury goods
-D. The wage premium paid in renewable industries
+A merit good is more likely to be under-consumed when:
+A. Information is perfect
+B. Long-term benefits are heavily discounted
+C. Externalities are zero
+D. All agents are rational
 
 Question 14 [1 marks]
-Which is the most likely macroeconomic effect of a sharp, unexpected rise in global oil prices?
-A. A leftward shift of SRAS and stagflationary pressure
-B. A rightward shift of LRAS
-C. An increase in the natural rate of employment
-D. Demand-pull deflation
+The 'sunk cost fallacy' is the tendency to:
+A. Ignore irrecoverable costs
+B. Continue investing because of past costs
+C. Maximise expected utility
+D. Discount future losses
 
 Question 15 [1 marks]
-A government targeting net zero by 2050 is most likely to use:
-A. Only voluntary corporate pledges
-B. A policy mix of carbon pricing, regulation, and public investment
-C. A single uniform sales tax on all goods
-D. Capital controls on international finance
+A nudge respects consumer freedom by:
+A. Eliminating the option
+B. Banning a choice
+C. Preserving freedom of choice
+D. Imposing a fine
 
 Question 16 [1 marks]
-The "social cost of carbon" measures:
-A. The market price of a tonne of CO2 in the EU ETS
-B. The estimated present value of future damages from emitting one extra tonne of CO2
-C. The administrative cost of climate regulation
-D. The retail electricity bill of an average household
+A regulatory ban differs from a nudge because it:
+A. Preserves freedom of choice
+B. Removes the choice altogether
+C. Has no welfare effect
+D. Always raises welfare
 
 Question 17 [1 marks]
-A windfall tax on oil and gas company profits is most defensible on:
-A. Allocative efficiency grounds alone
-B. Distributional and equity grounds, given supernormal profits during energy shocks
-C. Productive efficiency grounds
-D. Comparative advantage grounds
+Framing effects mean:
+A. Choices are unaffected by description
+B. The way information is presented changes choices
+C. Prices alone determine demand
+D. Quantity determines demand
 
 Question 18 [1 marks]
-Which best describes a "missing market" in the context of biodiversity loss?
-A. The market for renewable electricity
-B. The absence of priced property rights in ecosystem services
-C. A monopoly in seed production
-D. A free-trade area for agricultural goods
+Consumers may save too little for retirement because of:
+A. Loss aversion alone
+B. Present bias and complexity
+C. Perfect rationality
+D. Excess long-run optimism
 
 Question 19 [1 marks]
-A negative supply shock from a drought is most likely to cause:
-A. A rightward shift of AS and lower prices
-B. A leftward shift of AS, higher prices and lower output
-C. A rightward shift of AD only
-D. No change in equilibrium
+A behavioural insight applied to tax compliance is:
+A. A higher fine only
+B. A reframed letter using social norms
+C. A complete tax cut
+D. A new bureaucracy
 
 Question 20 [1 marks]
-A green industrial strategy that subsidises domestic battery production may risk:
-A. Improved comparative advantage in energy
-B. Retaliatory tariffs and accusations of protectionism
-C. A balanced budget surplus
-D. Lower long-run aggregate supply
+Information failure is most likely with:
+A. Routine purchases
+B. Infrequent and complex purchases
+C. Identical goods
+D. Perfectly informed buyers
 
 Question 21 [1 marks]
-Compared with a carbon tax, a tradable permit system:
-A. Provides certainty over the quantity of emissions but not the price
-B. Provides certainty over the price of emissions but not the quantity
-C. Provides certainty over both price and quantity
-D. Provides certainty over neither
+A government that designs policies using behavioural insights is sometimes called:
+A. A 'libertarian paternalist'
+B. A laissez-faire state
+C. A planned economy
+D. A prohibitionist
 
 Question 22 [1 marks]
-A "double dividend" from environmental taxes refers to:
-A. Two separate Pigouvian taxes on the same good
-B. Cutting emissions while using the revenue to lower distortionary taxes elsewhere
-C. Doubling the tax rate every five years
-D. Hypothecating revenue exclusively to environmental projects
+The endowment effect predicts that house owners may:
+A. Underprice their property
+B. Overprice their property
+C. Be indifferent
+D. Trade frequently
 
 Question 23 [1 marks]
-The principal–agent problem in the context of company climate disclosures arises because:
-A. Shareholders and managers may have different time horizons and incentives over climate risk
-B. Auditors are state-owned
-C. Customers can directly hire managers
-D. Workers always own equity
+A default 'opt-out' for organ donation has been found to:
+A. Reduce donations
+B. Increase donations
+C. Have no effect
+D. Eliminate donations
 
 Question 24 [1 marks]
-A "green paradox" suggests that anticipated future climate policy may:
-A. Encourage fossil fuel owners to extract reserves more quickly today
-B. Eliminate all fossil fuel demand instantly
-C. Have no behavioural effects
-D. Permanently lower the discount rate
+Information overload may lead consumers to:
+A. Choose optimally
+B. Use heuristics
+C. Search exhaustively
+D. Always pay more
 
 Question 25 [1 marks]
-Which is the most accurate description of "additionality" in carbon offset markets?
-A. Emissions reductions that would have occurred anyway without the offset payment
-B. Emissions reductions that would not have occurred without the offset payment
-C. The administrative fee charged by an offset broker
-D. The number of offsets purchased by a single firm
+A demerit good is more likely to be over-consumed when:
+A. Long-run harms are heavily discounted
+B. All consumers are rational
+C. Externalities are positive
+D. Information is perfect
 
 Question 26 [1 marks]
-Investment in flood defences is best classified as a:
-A. Pure private good
-B. Pure public good
-C. Quasi-public good with non-rival but partially excludable benefits
-D. Demerit good
+A behavioural failure that justifies merit-good provision is:
+A. Hyperbolic discounting
+B. No discounting
+C. Symmetric preferences
+D. Perfect information
 
 Question 27 [1 marks]
-A government adopting a "green golden rule" may borrow:
-A. Only to fund current departmental spending
-B. To finance investment in productive low-carbon assets while balancing the current budget
-C. Without any limit
-D. Only from the central bank
+A 'cooling-off period' for online purchases counters:
+A. Status-quo bias
+B. Impulsive present bias
+C. Information failure only
+D. No bias
 
 Question 28 [1 marks]
-A regressive impact of a flat-rate carbon tax can be mitigated by:
-A. Lowering the tax rate to zero
-B. Recycling revenue via lump-sum dividends or targeted transfers to low-income households
-C. Exempting all firms from the tax
-D. Raising income tax thresholds for top earners only
+Cigarette plain packaging is best described as a:
+A. Tax
+B. Subsidy
+C. Regulation that reduces salience cues
+D. Default opt-in
 
 Question 29 [1 marks]
-Which best describes "sustainable development" in the Brundtland sense?
-A. Maximising GDP growth in the next quarter
-B. Meeting present needs without compromising the ability of future generations to meet theirs
-C. Eliminating all international trade
-D. Returning to pre-industrial output levels
+Behavioural economics suggests demand curves may:
+A. Always be linear
+B. Be reference-dependent
+C. Be perfectly inelastic
+D. Have no slope
 
 Question 30 [1 marks]
-A central bank conducting climate stress tests is primarily concerned with:
-A. Setting the carbon tax rate
-B. Assessing the resilience of the financial system to physical and transition climate risks
-C. Replacing fiscal policy with monetary policy
-D. Subsidising green start-ups directly
+A criticism of nudges is that they:
+A. Always work
+B. May be paternalistic and lack transparency
+C. Eliminate market failure
+D. Replace fiscal policy
 
-## Section B — Case Study: UK Net Zero Transition and the Energy System
+---
 
-**Extract A:** The UK has legislated a binding target of net zero greenhouse gas emissions by 2050. The Climate Change Committee (CCC) estimates required investment of around £50 billion per year through the 2030s, peaking near 1.5% of GDP, with offsetting operating cost savings later. Renewables now supply over 40% of UK electricity, but heating and transport remain heavily fossil-fuel dependent.
+## Section B: Case Study (50 marks)
 
-**Extract B:** Selected UK climate and energy indicators, 2019–2024.
+**Case Study — Behavioural economics and policy**
 
-| Year | Territorial GHG emissions (MtCO2e) | Renewable share of electricity (%) | Heat pump installations (000s) | Average household energy bill (£) |
-|------|------------------------------------:|------------------------------------:|------------------------------:|----------------------------------:|
-| 2019 | 455 | 37 | 27  | 1,280 |
-| 2021 | 427 | 40 | 35  | 1,400 |
-| 2023 | 384 | 43 | 60  | 2,300 |
-| 2024 | 371 | 45 | 95  | 1,920 |
+Behavioural economics rejects the assumption of fully rational agents. Bounded rationality, present bias, loss aversion and heuristics produce systematic deviations from neoclassical predictions. The UK Behavioural Insights Team ("Nudge Unit") has applied these ideas to public policy, including auto-enrolment in pensions, default green-energy tariffs, simplified tax letters and reminders to pay fines.
 
-Source: BEIS / DESNZ statistical releases, 2024.
-
-**Extract C:** A 2024 Resolution Foundation report finds that, without compensating transfers, a uniform UK carbon price of £100/tCO2 would cost the poorest decile around 2.4% of disposable income, versus 0.6% for the richest decile. Yet failing to invest in low-carbon infrastructure risks higher future climate damages and stranded fossil assets.
-
-**Extract D:** Critics argue that aggressive net zero policy reduces UK competitiveness against trading partners with weaker climate rules, encouraging carbon leakage. Supporters counter that early movers gain comparative advantage in green technology, that CBAMs can level the playing field, and that the social cost of inaction far exceeds the cost of transition.
+| Behavioural intervention            | Context                  | Estimated effect                  |
+|------------------------------------|--------------------------|-----------------------------------|
+| Auto-enrolment into workplace pensions | UK, 2012–2024         | Pension participation +57 pp      |
+| Default opt-in to green tariffs    | UK retail energy, 2019   | Switch rate +30 pp                |
+| Personalised text reminders        | UK court fines, 2014     | Late-payment rate -33%            |
+| Re-framed tax letter ('most people pay')| HMRC, 2010          | Self-assessment payment +5 pp     |
 
 Question 31 [10 marks]
-To what extent, if at all, do the data in Extracts A and B suggest that the UK is on track to meet its net zero target by 2050?
+Using a labelled supply and demand diagram, explain how a 'default option' nudge in the energy market changes consumer choice without restricting it.
 
 Question 32 [15 marks]
-Explain how a combination of carbon pricing, public investment and regulation can be used to address the market failures associated with greenhouse gas emissions in the UK economy. Use a diagram in your answer.
+Using the case study and your knowledge of economics, analyse two reasons why behavioural failures may prevent consumers from making allocatively efficient decisions.
 
 Question 33 [25 marks]
-After considering Extract D, and the original evidence in Extracts A, B and C, would you recommend that the UK government should accelerate its net zero investment programme even if this means significantly higher public borrowing in the short run? Justify your recommendation.`,
+"Nudges are a more effective and ethical policy tool than taxation or regulation." Evaluate this statement.`,
   },
 ];
