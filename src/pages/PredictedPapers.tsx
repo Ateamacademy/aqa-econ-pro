@@ -1906,6 +1906,45 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
 
     const entries: SolutionEntry[] = [];
 
+    // Pre-extract figure / table blocks from the paper context so we can attach
+    // any figures referenced by a question to its solution entry.
+    const figureBlocks: { id: string; aliases: string[]; markdown: string }[] = [];
+    if (paperContext) {
+      const ctxLines = paperContext.split("\n");
+      const headerRe = /^#{0,4}\s*\*{0,2}((Figure|Table)\s+([A-Z0-9]+))(?::.*)?\*{0,2}\s*$/i;
+      const stopRe = /^#{1,4}\s|^Question\s|^\*{0,2}(?:Figure|Table|Extract)\s/i;
+      for (let i = 0; i < ctxLines.length; i++) {
+        const m = ctxLines[i].trim().match(headerRe);
+        if (!m) continue;
+        const kind = m[2];
+        const num = m[3];
+        const id = `${kind} ${num}`.toLowerCase();
+        const block: string[] = [ctxLines[i]];
+        let j = i + 1;
+        while (j < ctxLines.length) {
+          const ln = ctxLines[j].trim();
+          if (ln && stopRe.test(ln)) break;
+          block.push(ctxLines[j]);
+          j++;
+        }
+        figureBlocks.push({
+          id,
+          aliases: [`${kind} ${num}`, `${kind}${num}`].map(s => s.toLowerCase()),
+          markdown: block.join("\n").trimEnd(),
+        });
+      }
+    }
+
+    const figuresForQuestion = (qText: string): string => {
+      if (!qText || figureBlocks.length === 0) return "";
+      const lower = qText.toLowerCase();
+      const matched: string[] = [];
+      for (const b of figureBlocks) {
+        if (b.aliases.some(a => lower.includes(a))) matched.push(b.markdown);
+      }
+      return matched.join("\n\n");
+    };
+
     try {
       for (let i = 0; i < parsedQuestions.length; i++) {
         const q = parsedQuestions[i];
@@ -1953,6 +1992,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
           markScheme: msMatch?.[1]?.trim() || raw.trim() || "(no mark scheme returned)",
           modelAnswer: maMatch?.[1]?.trim() || "",
           examinerTip: tipMatch?.[1]?.trim() || "",
+          figuresMarkdown: figuresForQuestion(q.text),
         });
 
         setSolutionProgress({ done: i + 1, total: parsedQuestions.length });

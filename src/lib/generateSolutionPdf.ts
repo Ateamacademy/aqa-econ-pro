@@ -1,4 +1,5 @@
 import jsPDF from "jspdf";
+import { renderPaperMarkdown } from "./generatePaperPdf";
 
 /**
  * Solution / Mark Scheme PDF generator for Predicted Papers.
@@ -6,6 +7,7 @@ import jsPDF from "jspdf";
  * Mirrors the visual style of generatePaperPdf but renders, per question:
  *   • Question label + marks
  *   • Question stem
+ *   • Any referenced figures / tables (rendered with the same engine as the question paper)
  *   • Mark Scheme (AO breakdown)
  *   • Model Answer (top-band)
  *   • Examiner Tip
@@ -20,6 +22,7 @@ export interface SolutionEntry {
   markScheme: string;     // marker breakdown
   modelAnswer: string;    // top-band model
   examinerTip?: string;   // optional tip
+  figuresMarkdown?: string; // markdown blocks for figures/tables this question references
 }
 
 interface SolutionMeta {
@@ -226,6 +229,13 @@ function drawQuestion(doc: jsPDF, entry: SolutionEntry, y: number): number {
   doc.setTextColor(70, 70, 70);
   y = writeWrapped(doc, clean(entry.questionText), MARGIN_L, y, maxW, 5);
   y += 4;
+
+  // Referenced figures / tables (rendered with the question-paper engine)
+  if (entry.figuresMarkdown && entry.figuresMarkdown.trim()) {
+    y = ensureSpace(doc, y, 20);
+    y = renderPaperMarkdown(doc, entry.figuresMarkdown, y);
+    y += 2;
+  }
 
   // Mark Scheme
   y = drawSectionHeader(doc, y, "Mark Scheme", [37, 99, 235]);
