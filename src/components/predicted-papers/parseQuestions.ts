@@ -11,6 +11,16 @@ export interface ParsedQuestion {
   mcqOptions?: MCQOption[];
   /** Section header that should appear BEFORE this question (e.g. "Section A", "Section B") */
   sectionHeader?: string;
+  /** Raw question number as parsed (e.g. "03", "31", "5"). Useful for diagram tagging. */
+  number?: string;
+  /** Set by AQA tagger (`tagAqaQuestion`) — true when student should draw a diagram. */
+  requiresDiagram?: boolean;
+  /** Set by AQA tagger — true when the diagram is supported but not strictly required. */
+  diagramOptional?: boolean;
+  /** Diagram template to preselect (e.g. "adAs", "supplyDemand"). */
+  diagramType?: string;
+  /** AQA-style rubric the marker uses. Opaque to the parser; set by the tagger. */
+  diagramRubric?: unknown;
 }
 
 
