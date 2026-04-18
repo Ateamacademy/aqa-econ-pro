@@ -32,6 +32,7 @@ export default function AqaPaperViewer({ paperId, initialView = "qp" }: Props) {
   const [mcqChoices, setMcqChoices] = useState<Record<number, "A" | "B" | "C" | "D">>({});
   const [activeQ, setActiveQ] = useState<number | null>(null);
   const [timeLeft, setTimeLeft] = useState(0);
+  const [chosenEssay, setChosenEssay] = useState<1 | 2 | 3 | null>(null);
 
   // hydrate
   useEffect(() => {
@@ -42,6 +43,7 @@ export default function AqaPaperViewer({ paperId, initialView = "qp" }: Props) {
       if (saved) {
         setAnswers(saved.answers || {});
         setMcqChoices(saved.mcqChoices || {});
+        if (saved.chosenEssay) setChosenEssay(saved.chosenEssay);
       }
     } catch { /* ignore */ }
   }, [paper]);
@@ -50,10 +52,10 @@ export default function AqaPaperViewer({ paperId, initialView = "qp" }: Props) {
   useEffect(() => {
     if (!paper) return;
     const t = setInterval(() => {
-      localStorage.setItem(STORAGE_KEY(paper.id), JSON.stringify({ answers, mcqChoices, ts: Date.now() }));
+      localStorage.setItem(STORAGE_KEY(paper.id), JSON.stringify({ answers, mcqChoices, chosenEssay, ts: Date.now() }));
     }, 10_000);
     return () => clearInterval(t);
-  }, [paper, answers, mcqChoices]);
+  }, [paper, answers, mcqChoices, chosenEssay]);
 
   // timer
   useEffect(() => {
@@ -137,22 +139,36 @@ export default function AqaPaperViewer({ paperId, initialView = "qp" }: Props) {
               {/* Section B */}
               <section>
                 <h2 className="text-lg font-bold text-foreground border-b-2 border-indigo-500/40 pb-1 mb-4">
-                  Section B {paper.paperNumber === 3 ? "— Case study (50 marks)" : "— Essay (40 marks)"}
+                  Section B {paper.paperNumber === 3 ? "— Case study (50 marks)" : "— Essay (40 marks) — choose ONE"}
                 </h2>
                 {paper.paperNumber === 3 && (paper.extracts ?? []).map((e) => <ExtractPanel key={e.id} extract={e} />)}
-                <div className="space-y-4 mt-4">
-                  {sectionB.map((q) => (
-                    <QuestionBlock
-                      key={q.number}
-                      q={q}
-                      paperId={paper.id}
-                      value={answers[q.number] || ""}
-                      onChange={(v) => setAnswers((p) => ({ ...p, [q.number]: v }))}
-                      active={activeQ === q.number}
-                      onFocus={() => setActiveQ(q.number)}
-                    />
-                  ))}
-                </div>
+
+                {paper.paperNumber !== 3 ? (
+                  <EssayPicker
+                    sectionB={sectionB}
+                    chosen={chosenEssay}
+                    onChoose={setChosenEssay}
+                    paperId={paper.id}
+                    answers={answers}
+                    onChange={(n, v) => setAnswers((p) => ({ ...p, [n]: v }))}
+                    activeQ={activeQ}
+                    onFocus={setActiveQ}
+                  />
+                ) : (
+                  <div className="space-y-4 mt-4">
+                    {sectionB.map((q) => (
+                      <QuestionBlock
+                        key={q.number}
+                        q={q}
+                        paperId={paper.id}
+                        value={answers[q.number] || ""}
+                        onChange={(v) => setAnswers((p) => ({ ...p, [q.number]: v }))}
+                        active={activeQ === q.number}
+                        onFocus={() => setActiveQ(q.number)}
+                      />
+                    ))}
+                  </div>
+                )}
               </section>
 
               <div className="flex items-center justify-between pt-4">
@@ -365,6 +381,87 @@ function NavGrid({ questions, answers, mcqChoices, onJump }: {
 function InsertView({ extracts }: { extracts: AqaExtract[] }) {
   if (!extracts.length) return <p className="text-sm text-muted-foreground">No insert / case-study material attached.</p>;
   return <div>{extracts.map((e) => <ExtractPanel key={e.id} extract={e} />)}</div>;
+}
+
+/* ── Section B essay picker (AQA P1/P2): 3 essays × (15+25) ── */
+function EssayPicker({
+  sectionB, chosen, onChoose, paperId, answers, onChange, activeQ, onFocus,
+}: {
+  sectionB: AqaQuestion[];
+  chosen: 1 | 2 | 3 | null;
+  onChoose: (n: 1 | 2 | 3) => void;
+  paperId: string;
+  answers: Record<number, string>;
+  onChange: (n: number, v: string) => void;
+  activeQ: number | null;
+  onFocus: (n: number) => void;
+}) {
+  // Group by pairs starting at the first Section B question
+  const sorted = [...sectionB].sort((a, b) => a.number - b.number);
+  const essays: AqaQuestion[][] = [];
+  for (let i = 0; i < sorted.length; i += 2) {
+    if (sorted[i + 1]) essays.push([sorted[i], sorted[i + 1]]);
+  }
+  // Show only first 3 essays
+  const options = essays.slice(0, 3);
+
+  return (
+    <div className="mt-4 space-y-3">
+      <p className="text-xs text-muted-foreground italic">You are advised to spend 1 hour on this section. Choose ONE essay and answer both parts (a) and (b).</p>
+      <div className="space-y-3">
+        {options.map((pair, idx) => {
+          const essayNum = (idx + 1) as 1 | 2 | 3;
+          const isChosen = chosen === essayNum;
+          const [partA, partB] = pair;
+          return (
+            <div
+              key={essayNum}
+              className={cn(
+                "rounded-xl border transition-colors",
+                isChosen ? "border-indigo-500/50 bg-indigo-500/5" : "border-border bg-card",
+              )}
+            >
+              <button
+                onClick={() => onChoose(essayNum)}
+                className="w-full text-left px-4 py-3 flex items-center gap-3 border-b border-border/40"
+              >
+                <span
+                  className={cn(
+                    "h-4 w-4 rounded-full border-2 flex items-center justify-center shrink-0",
+                    isChosen ? "border-indigo-400" : "border-muted-foreground/40",
+                  )}
+                >
+                  {isChosen && <span className="h-2 w-2 rounded-full bg-indigo-400" />}
+                </span>
+                <span className="text-sm font-bold text-foreground">Essay {essayNum}</span>
+                <span className="text-[10px] font-mono text-muted-foreground ml-auto">
+                  Q{partA.number} (15) + Q{partB.number} (25) = 40 marks
+                </span>
+              </button>
+              {isChosen && (
+                <div className="p-4 space-y-4">
+                  {pair.map((q) => (
+                    <QuestionBlock
+                      key={q.number}
+                      q={q}
+                      paperId={paperId}
+                      value={answers[q.number] || ""}
+                      onChange={(v) => onChange(q.number, v)}
+                      active={activeQ === q.number}
+                      onFocus={() => onFocus(q.number)}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+      {!chosen && (
+        <p className="text-xs text-amber-300/80 px-1">Select one essay above to reveal the questions.</p>
+      )}
+    </div>
+  );
 }
 
 /* ── Mark scheme: side-by-side with question ── */
