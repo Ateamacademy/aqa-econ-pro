@@ -2009,13 +2009,15 @@ Do NOT include any other headings, preamble, or commentary outside these three s
           modelAnswer: maMatch?.[1]?.trim() || "",
           examinerTip: tipMatch?.[1]?.trim() || "",
           figuresMarkdown: figuresForQuestion(q.text),
+          referenceFigureId: (q as any).referenceFigureId,
+          requiresDiagram: !!(q as any).requiresDiagram,
         });
 
         setSolutionProgress({ done: i + 1, total: parsedQuestions.length });
       }
 
       const paperTitle = displayPaperTitle(selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`);
-      generateSolutionPdf(paperTitle, entries, {
+      await generateSolutionPdf(paperTitle, entries, {
         subject: subjectLabel,
         examBoard,
         level,
