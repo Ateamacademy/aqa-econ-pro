@@ -225,7 +225,7 @@ const ADDITIONAL_SETS: Array<[string, AqaPaper1OverrideSet]> = [
     setLabel: "Predicted Paper Set B",
     micro1: { topic: "energy market concentration", focus: "oligopoly" },
     micro2: { topic: "natural monopoly in water supply", focus: "regulation" },
-    essayTopics: ["minimum wage and labour markets", "negative externalities of fast fashion", "competition policy in digital markets"],
+    essayTopics: ["asymmetric information in second-hand car markets", "negative externalities of fast fashion", "competition policy in digital markets"],
   })],
   ["econ-p1-c", buildSetVariant({
     setLabel: "Predicted Paper Set C",
