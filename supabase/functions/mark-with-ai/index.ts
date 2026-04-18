@@ -442,11 +442,11 @@ Deno.serve(async (req) => {
   const customKey = Deno.env.get("AI_API_KEY") ?? "";
   const apiKey = provider === "lovable" ? lovableKey : customKey;
   const defaultModel =
-    provider === "lovable" ? "google/gemini-2.5-flash"
+    provider === "lovable" ? "google/gemini-2.5-pro"
     : provider === "gemini" ? "gemini-2.0-flash"
     : provider === "anthropic" ? "claude-sonnet-4-20250514"
     : provider === "openai" ? "gpt-4o-mini"
-    : "google/gemini-2.5-flash";
+    : "google/gemini-2.5-pro";
   const model = Deno.env.get("AI_MODEL") ?? defaultModel;
 
   if (!apiKey) {
