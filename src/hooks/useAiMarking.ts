@@ -39,13 +39,14 @@ export function useAiMarking() {
     async (payloads: AiMarkingPayload[]) => {
       setIsRunning(true);
       try {
-        // mark all pending up-front so the UI shows progress immediately
         setByQuestion((p) => {
           const next = { ...p };
           for (const pl of payloads) next[pl.questionId] = { status: "loading" };
           return next;
         });
-        const results = await Promise.all(payloads.map((pl) => callAiMarking(pl).then((r) => ({ pl, r }))));
+        const results = await Promise.all(
+          payloads.map((pl) => callAiMarking(pl).then((r) => ({ pl, r }))),
+        );
         setByQuestion((p) => {
           const next = { ...p };
           for (const { pl, r } of results) {
