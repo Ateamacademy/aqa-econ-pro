@@ -1344,16 +1344,13 @@ export default function PredictedPapers() {
   const isValidAqaPaperStructure = (questions: ParsedQuestion[], paperNumber?: string) => {
     if (subject !== "economics") return true;
     if (paperNumber === "1" || paperNumber === "2") {
-      // AQA Papers 1 & 2 (canonical): two contexts (Q01–08: 2/4/9/25 × 2) + three essays (Q09–14: 15/25 × 3).
-      // Backward-compatible legacy formats also accepted so older generated papers don't break.
-      const canonicalFormat   = [2, 4, 9, 25, 2, 4, 9, 25, 15, 25, 15, 25, 15, 25];
-      const legacyOneContext  = [2, 4, 9, 25, 15, 25];
-      const legacyOneCtx3Ess  = [2, 4, 9, 25, 15, 25, 15, 25, 15, 25];
-      const matches = (expected: number[]) =>
-        questions.length === expected.length && questions.every((q, i) => q.marks === expected[i]);
-      return matches(canonicalFormat) || matches(legacyOneCtx3Ess) || matches(legacyOneContext);
+      // AQA A-Level Paper 1 & 2 (7136/1, 7136/2) — exact official shape:
+      // Section A: 2 + 4 + 9 + 25 (40 marks). Section B: choose ONE of two essays (15 + 25 = 40 marks).
+      const required = [2, 4, 9, 25, 15, 25];
+      return questions.length === required.length && questions.every((q, i) => q.marks === required[i]);
     }
     if (paperNumber === "3") {
+      // AQA A-Level Paper 3 (7136/3): 30 × 1-mark MCQs + 10/15/25 case study = 80 marks, 33 questions.
       if (questions.length !== 33) return false;
       for (let i = 0; i < 30; i++) if (questions[i].marks !== 1) return false;
       return questions[30].marks === 10 && questions[31].marks === 15 && questions[32].marks === 25;
@@ -1361,13 +1358,10 @@ export default function PredictedPapers() {
     return true;
   };
 
-  function parsePredictedPaperContent(rawContent: string, paperNumber?: string, opts?: { trusted?: boolean }) {
+  function parsePredictedPaperContent(rawContent: string, paperNumber?: string) {
     const parsed = parseQuestions(rawContent);
 
-    // Trusted (library-authored) papers bypass the strict generator structure validator —
-    // they are hand-curated and use the real AQA "choose-one-essay" format which doesn't
-    // match the deterministic shape the generator must produce.
-    if (!opts?.trusted && subject === "economics" && !isValidAqaPaperStructure(parsed.questions, paperNumber)) {
+    if (subject === "economics" && !isValidAqaPaperStructure(parsed.questions, paperNumber)) {
       const expected =
         paperNumber === "3"
           ? "30 × 1-mark MCQs + 10/15/25"
@@ -1380,7 +1374,7 @@ export default function PredictedPapers() {
   }
 
   function openLibraryPaper(lp: PredictedPaper) {
-    const parsed = parsePredictedPaperContent(lp.content, lp.paper, { trusted: true });
+    const parsed = parsePredictedPaperContent(lp.content, lp.paper);
     if (!parsed) return;
 
     setSelectedLibraryPaper(lp);
