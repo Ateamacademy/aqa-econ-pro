@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PenTool, Lock, Send, RotateCcw, Pencil, FileText, ChevronDown, ChevronUp, MessageSquare, Lightbulb, BookOpen, Sparkles, Shuffle, Crown, BarChart3, Eye } from "lucide-react";
+import { ReportButton } from "@/components/report/ReportButton";
 import { toast } from "sonner";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
 import { DrawingCanvas } from "@/components/tools/DrawingCanvas";
