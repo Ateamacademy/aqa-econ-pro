@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { useAuth } from "@/contexts/AuthContext";
+import { canGeneratePapers } from "@/lib/paperGenAccess";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { streamChat } from "@/lib/streamChat";
@@ -1215,6 +1216,7 @@ DIFFICULTY LEVEL: LIMITED EDITION (ELITE CHALLENGE)
 
 export default function PredictedPapers() {
   const { user, subscribed, profile, refreshProfile } = useAuth();
+  const canGenerate = canGeneratePapers(user?.email);
   const { subject, subjectLabel, examBoard, level } = useSubject();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -1334,6 +1336,10 @@ export default function PredictedPapers() {
 
     if (paramDifficulty) setLibraryDifficulty(paramDifficulty);
     setLibrarySet(paramSet);
+    if (!canGenerate) {
+      setMode("library");
+      return;
+    }
     setMode("generate");
 
     setTimeout(() => {
@@ -1968,17 +1974,19 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                 >
                   <Library className="h-4 w-4" /> Paper Library
                 </button>
-                <button
-                  onClick={() => setMode("generate")}
-                  className={cn(
-                    "flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300",
-                    mode === "generate"
-                      ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30"
-                      : "text-muted-foreground hover:text-foreground"
-                  )}
-                >
-                  <Wand2 className="h-4 w-4" /> Generate New
-                </button>
+                {canGenerate && (
+                  <button
+                    onClick={() => setMode("generate")}
+                    className={cn(
+                      "flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300",
+                      mode === "generate"
+                        ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    <Wand2 className="h-4 w-4" /> Generate New
+                  </button>
+                )}
               </div>
             </div>
 

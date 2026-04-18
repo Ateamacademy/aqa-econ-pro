@@ -12,6 +12,8 @@ import { Input } from "@/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
 import { useSubject } from "@/contexts/SubjectContext";
+import { useAuth } from "@/contexts/AuthContext";
+import { canGeneratePapers } from "@/lib/paperGenAccess";
 import {
   paperLibrary,
   BOARDS,
@@ -74,6 +76,8 @@ const BOARD_OPTIONS: { subject: Subject; label: string; level: string }[] = BOAR
 export default function PaperLibrary() {
   const navigate = useNavigate();
   const { setSubject } = useSubject();
+  const { user } = useAuth();
+  const canGenerate = canGeneratePapers(user?.email);
 
   const [search, setSearch] = useState("");
   const [levelFilter, setLevelFilter] = useState("all");
@@ -189,31 +193,33 @@ export default function PaperLibrary() {
         </div>
       </section>
 
-      {/* ── Top pill-switch: Paper Library | Generate New ── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-        <div className="inline-flex p-1 rounded-xl bg-card border border-border">
-          <button
-            onClick={() => setTopTab("library")}
-            className={cn(
-              "px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors",
-              topTab === "library" ? "bg-indigo-500/15 text-indigo-200 border border-indigo-500/30" : "text-muted-foreground hover:text-foreground",
-            )}
-          >
-            Paper Library
-          </button>
-          <button
-            onClick={() => setTopTab("generate")}
-            className={cn(
-              "px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors",
-              topTab === "generate" ? "bg-indigo-500/15 text-indigo-200 border border-indigo-500/30" : "text-muted-foreground hover:text-foreground",
-            )}
-          >
-            Generate New
-          </button>
-        </div>
-      </section>
+      {/* ── Top pill-switch: Paper Library | Generate New (admin only) ── */}
+      {canGenerate && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+          <div className="inline-flex p-1 rounded-xl bg-card border border-border">
+            <button
+              onClick={() => setTopTab("library")}
+              className={cn(
+                "px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors",
+                topTab === "library" ? "bg-indigo-500/15 text-indigo-200 border border-indigo-500/30" : "text-muted-foreground hover:text-foreground",
+              )}
+            >
+              Paper Library
+            </button>
+            <button
+              onClick={() => setTopTab("generate")}
+              className={cn(
+                "px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors",
+                topTab === "generate" ? "bg-indigo-500/15 text-indigo-200 border border-indigo-500/30" : "text-muted-foreground hover:text-foreground",
+              )}
+            >
+              Generate New
+            </button>
+          </div>
+        </section>
+      )}
 
-      {topTab === "generate" ? (
+      {canGenerate && topTab === "generate" ? (
         <AqaGenerateNewPanel
           initialPaper={generatePaperFor}
           onGenerated={() => { setAqaRefreshKey((k) => k + 1); setTopTab("library"); }}
