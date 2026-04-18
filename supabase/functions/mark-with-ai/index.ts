@@ -229,6 +229,7 @@ async function callLovable(
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt },
       ],
+      temperature: 0.1,
       response_format: { type: "json_object" },
     }),
   });
