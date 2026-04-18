@@ -373,6 +373,134 @@ export default function AqaMarking() {
               <Button onClick={() => setStep("auto")} size="sm" variant="outline">
                 ← Back to Tier 1
               </Button>
+              <Button onClick={() => setStep("ai")} size="sm">
+                Continue to Tier 3 →
+              </Button>
+            </div>
+          </div>
+        )}
+
+        {step === "ai" && (
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h2 className="text-lg font-bold text-foreground">Tier 3 — AI analysis (optional)</h2>
+              <span className="text-[10px] font-bold uppercase tracking-wider rounded border border-purple-500/40 text-purple-200 px-2 py-0.5">
+                AI · advisory
+              </span>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              Optional analytical feedback on your extended-response answers and diagrams. The AI
+              never assigns a numerical mark — your self-assessment from Tier 2 stays the source of
+              truth.
+            </p>
+
+            {(() => {
+              const aiTargets = [...fourMarkQs, ...extendedQs].filter(
+                (q) => (answers[q.number] ?? "").trim().length > 0,
+              );
+              const completed = aiTargets.filter(
+                (q) => ai.byQuestion[`q-${q.number}`]?.status === "done",
+              ).length;
+              const buildPayloads = (): AiMarkingPayload[] =>
+                aiTargets.map((q) => ({
+                  kind: "extended-response",
+                  paperId: paper.id,
+                  questionId: `q-${q.number}`,
+                  question: {
+                    number: String(q.number),
+                    marks: q.marks,
+                    prompt: q.prompt,
+                  },
+                  studentAnswer: answers[q.number] ?? "",
+                }));
+              const diagramTargets = diagramQs.filter((q) => hasDiagram(q.number));
+              const buildDiagramPayloads = (): AiMarkingPayload[] =>
+                diagramTargets.map((q) => ({
+                  kind: "diagram",
+                  paperId: paper.id,
+                  questionId: `qd-${q.number}`,
+                  question: {
+                    number: String(q.number),
+                    marks: q.marks,
+                    prompt: q.prompt,
+                  },
+                  studentAnswer: answers[q.number] ?? "",
+                  diagramData: { hasDiagram: true, rubricSummary: rubricFor(q.number).title ?? "diagram rubric" },
+                }));
+
+              return (
+                <>
+                  <AiAnalysisTrigger
+                    questionCount={completed}
+                    totalQuestions={aiTargets.length + diagramTargets.length}
+                    isRunning={ai.isRunning}
+                    hasAnyResults={completed > 0}
+                    onRun={() => ai.runMany([...buildPayloads(), ...buildDiagramPayloads()])}
+                  />
+
+                  {ai.globallyUnavailable && (
+                    <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-3 text-xs text-amber-200">
+                      AI analysis isn't configured for this project yet. Tiers 1 and 2 still work —
+                      proceed to the report.
+                    </div>
+                  )}
+
+                  {aiTargets.map((q) => {
+                    const state = ai.byQuestion[`q-${q.number}`];
+                    if (!state) return null;
+                    const sa = selfAssess[q.number];
+                    return (
+                      <AiAnalysisCard
+                        key={`q-${q.number}`}
+                        questionNumber={String(q.number)}
+                        totalMarks={q.marks}
+                        selfAssessedLevel={sa?.selectedLevel ? `L${sa.selectedLevel}` : undefined}
+                        state={state}
+                        variant="extended"
+                        onRetry={() =>
+                          ai.runOne({
+                            kind: "extended-response",
+                            paperId: paper.id,
+                            questionId: `q-${q.number}`,
+                            question: { number: String(q.number), marks: q.marks, prompt: q.prompt },
+                            studentAnswer: answers[q.number] ?? "",
+                          })
+                        }
+                      />
+                    );
+                  })}
+
+                  {diagramTargets.map((q) => {
+                    const state = ai.byQuestion[`qd-${q.number}`];
+                    if (!state) return null;
+                    return (
+                      <AiAnalysisCard
+                        key={`qd-${q.number}`}
+                        questionNumber={String(q.number)}
+                        totalMarks={q.marks}
+                        state={state}
+                        variant="diagram"
+                        onRetry={() =>
+                          ai.runOne({
+                            kind: "diagram",
+                            paperId: paper.id,
+                            questionId: `qd-${q.number}`,
+                            question: { number: String(q.number), marks: q.marks, prompt: q.prompt },
+                            studentAnswer: answers[q.number] ?? "",
+                            diagramData: { hasDiagram: true },
+                          })
+                        }
+                      />
+                    );
+                  })}
+                </>
+              );
+            })()}
+
+            <div className="flex justify-between">
+              <Button onClick={() => setStep("self")} size="sm" variant="outline">
+                ← Back to Tier 2
+              </Button>
               <Button onClick={() => setStep("report")} size="sm">
                 Generate report →
               </Button>
