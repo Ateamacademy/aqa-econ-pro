@@ -505,52 +505,59 @@ Question 6 [25 marks]
     title: "Paper 2 — Set A",
     description: "National and International Economy. Macro data response and essays.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics — Paper 2: National and International Economy — Predicted Paper Set A
+    content: `# AQA A-Level Economics (7136/2) — Paper 2: National and International Economy — Predicted Paper Set A
 
 **Time: 2 hours | Total: 80 marks**
 
+Answer ALL questions in Section A and ONE question from Section B.
+
 ---
 
-## Section A: Data Response
+## Section A: Data Response (40 marks)
 
-**Context / Extract A:**
+**Extract A — UK monetary tightening, 2021–2024**
 
-The Bank of England raised interest rates from 0.1% in December 2021 to 5.25% by August 2023 in an effort to combat rising inflation. CPI inflation peaked at 11.1% in October 2022 before falling to 4.0% by December 2023. However, GDP growth slowed significantly, with the UK economy narrowly avoiding a technical recession in Q3 and Q4 2023. Unemployment remained relatively low at 4.2%, but real wages fell for the longest sustained period since records began.
+The Bank of England raised Bank Rate from 0.1% in December 2021 to 5.25% by August 2023 in response to surging inflation. CPI peaked at 11.1% in October 2022 before falling back to 4.0% by December 2023. GDP growth slowed sharply, the UK narrowly avoided a technical recession in late 2023, and real wages fell for the longest sustained period since records began. Unemployment remained low at 4.2%, suggesting a degree of labour-market resilience despite the tightening cycle.
 
-**Extract B — Data:**
+**Extract B — Key UK macroeconomic indicators**
 
 | Indicator | 2021 | 2022 | 2023 | 2024 (est.) |
 |-----------|------|------|------|-------------|
-| GDP Growth (%) | 7.6 | 4.3 | 0.1 | 0.6 |
-| CPI Inflation (%) | 2.6 | 9.1 | 7.3 | 3.2 |
+| Real GDP growth (%) | 7.6 | 4.3 | 0.1 | 0.6 |
+| CPI inflation (%) | 2.6 | 9.1 | 7.3 | 3.2 |
 | Unemployment (%) | 4.5 | 3.7 | 4.2 | 4.4 |
-| Base Rate (%) | 0.1 | 3.5 | 5.25 | 5.0 |
+| Bank Rate (%) | 0.1 | 3.5 | 5.25 | 5.0 |
 
-Question 1.1 [2 marks]
+**Extract C — Transmission lags and household debt**
+
+The MPC has repeatedly noted that monetary policy operates with "long and variable lags." UK household debt-to-income remains above 130%, meaning small changes in interest rates have a disproportionately large effect on disposable incomes. Approximately 1.6 million fixed-rate mortgages were due to refinance during 2024, creating a delayed cost-push shock to consumer spending.
+
+Question 1 [2 marks]
 Define the term 'real wages'.
 
-Question 1.2 [4 marks]
-Using an AD/AS diagram, explain the likely impact of higher interest rates on the UK economy.
+Question 2 [4 marks]
+Using an AD/AS diagram, explain the likely impact of higher interest rates on aggregate demand in the UK.
 
-Question 1.3 [9 marks]
-Using the extracts and your economic knowledge, analyse the trade-off faced by the Bank of England between controlling inflation and maintaining economic growth.
+Question 3 [9 marks]
+Using the extracts and your knowledge of economics, analyse the trade-off faced by the Bank of England between controlling inflation and maintaining economic growth.
 
-Question 1.4 [25 marks]
-Evaluate the effectiveness of monetary policy as a tool for managing the macroeconomy. Use the data provided and your own knowledge.
+Question 4 [25 marks]
+Using the extracts and your own knowledge, evaluate the effectiveness of monetary policy as a tool for managing the UK macroeconomy.
 
 ---
 
-## Section B: Essay Questions (choose one)
+## Section B: Essay (40 marks)
 
-**Either**
+Answer EITHER Question 5 OR Question 6.
 
-Question 2 [25 marks]
-"A current account deficit is always harmful to the UK economy." Evaluate this statement.
+**Short extract:**
+The UK ran a current account deficit of around 3% of GDP in 2024, financed largely by capital inflows. Some economists view persistent deficits as a symptom of structural weakness; others argue they simply reflect the UK's role as a global financial centre and pose no immediate threat to macroeconomic stability.
 
-**Or**
+Question 5 [15 marks]
+Explain the main causes of a current account deficit on the UK's balance of payments.
 
-Question 3 [25 marks]
-Evaluate the extent to which supply-side policies are more effective than demand-side policies in achieving long-run economic growth.`,
+Question 6 [25 marks]
+"Supply-side policies are more effective than demand-side policies in achieving long-run economic growth." Evaluate this statement.`,
   },
 
   // ── ECONOMICS PAPER 3 ──
