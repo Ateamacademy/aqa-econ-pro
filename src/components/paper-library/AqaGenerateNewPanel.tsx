@@ -211,6 +211,13 @@ export default function AqaGenerateNewPanel({ initialPaper = 1, onGenerated }: P
               </label>
             )}
 
+            {coverageWarn && (
+              <div className="rounded-lg border border-amber-500/40 bg-amber-500/10 p-3 text-xs text-amber-200 flex items-start gap-2">
+                <AlertTriangle className="h-3.5 w-3.5 mt-0.5 shrink-0" />
+                <span>{coverageWarn}</span>
+              </div>
+            )}
+
             {error && (
               <div className="rounded-lg border border-red-500/40 bg-red-500/10 p-3 text-xs text-red-200 flex items-start gap-2">
                 <AlertTriangle className="h-3.5 w-3.5 mt-0.5 shrink-0" />
@@ -218,9 +225,11 @@ export default function AqaGenerateNewPanel({ initialPaper = 1, onGenerated }: P
               </div>
             )}
 
-            <Button onClick={handleGenerate} className="w-full gap-2">
-              <Sparkles className="h-3.5 w-3.5" /> Generate paper
+            <Button onClick={handleGenerate} className="w-full gap-2" disabled={busy}>
+              <Sparkles className="h-3.5 w-3.5" /> {busy ? "Generating…" : "Generate paper"}
             </Button>
+
+            <GenerationProgressPanel events={events} busy={busy} />
           </CardContent>
         </Card>
 
