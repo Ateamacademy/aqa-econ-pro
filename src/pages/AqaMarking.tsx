@@ -8,6 +8,8 @@ import {
   AqaMarkingReport,
   AqaTierBadge,
   AqaDiagramMarkPanel,
+  AiAnalysisTrigger,
+  AiAnalysisCard,
   emptySelfAssessment,
   type SelfAssessment,
   type MarkedQuestion,
@@ -20,6 +22,8 @@ import {
 } from "@/lib/aqa-marking-engine";
 import { defaultAdAsRubric, defaultSdRubric, type CanvasElement } from "@/lib/aqa-diagram-rubric";
 import { loadSavedDiagrams } from "@/components/paper-library/InlineDiagramCanvas";
+import { useAiMarking } from "@/hooks/useAiMarking";
+import type { AiMarkingPayload } from "@/lib/aiMarking";
 import { cn } from "@/lib/utils";
 
 const STORAGE_KEY = (id: string) => `aqa-attempt-${id}`;
