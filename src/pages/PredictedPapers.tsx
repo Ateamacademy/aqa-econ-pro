@@ -1362,6 +1362,7 @@ export default function PredictedPapers() {
   function applyAqaDiagramTags(
     questions: ParsedQuestion[],
     paperNumber?: string,
+    setLabel?: string,
   ): ParsedQuestion[] {
     if (subject !== "economics") return questions;
     const paperNum = inferPaperFromContext(paperNumber ?? paper);
@@ -1373,6 +1374,7 @@ export default function PredictedPapers() {
         text: q.text,
         isMcq,
         paper: paperNum,
+        setLabel,
       });
       if (!tag) return q;
       return {
@@ -1381,6 +1383,9 @@ export default function PredictedPapers() {
         diagramOptional: tag.optional,
         diagramType: tag.diagramType,
         diagramRubric: tag.rubric,
+        referenceFigureId: tag.referenceFigureId,
+        referenceFigureScenario: tag.referenceFigureScenario,
+        referenceFigureMissing: tag.referenceFigureMissing,
       };
     });
   }
