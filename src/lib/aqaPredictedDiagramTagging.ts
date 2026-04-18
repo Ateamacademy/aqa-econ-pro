@@ -170,43 +170,28 @@ function attachReferenceFigure(
 }
 
 export function tagAqaQuestion(q: TaggerInput): AqaDiagramTag | null {
-  if (q.isMcq) return null; // MCQs never require student-drawn diagrams
+  if (q.isMcq) return null;
 
   const stem = q.text;
   const diagramType = classifyDiagramType(stem);
   const explicit = EXPLICIT_DIAGRAM_RE.test(stem);
+  const base = (optional: boolean): AqaDiagramTag => ({
+    requiresDiagram: true,
+    optional,
+    diagramType,
+    rubric: buildRubric(diagramType, stem),
+  });
 
-  // Paper 1 & 2
   if (q.paper === 1 || q.paper === 2) {
-    if (q.marks === 9 && explicit) {
-      return { requiresDiagram: true, optional: false, diagramType, rubric: buildRubric(diagramType, stem) };
-    }
-    if (q.marks === 25) {
-      // Required when stem says so OR topic strongly benefits.
-      if (explicit || isDiagramFriendlyTopic(stem)) {
-        return { requiresDiagram: true, optional: false, diagramType, rubric: buildRubric(diagramType, stem) };
-      }
-    }
-    if (q.marks === 15) {
-      return { requiresDiagram: true, optional: true, diagramType, rubric: buildRubric(diagramType, stem) };
-    }
-    if (q.marks === 25 || q.marks === 20) {
-      // Section B essays — optional.
-      return { requiresDiagram: true, optional: true, diagramType, rubric: buildRubric(diagramType, stem) };
-    }
+    if (q.marks === 9 && explicit) return attachReferenceFigure(base(false), q);
+    if (q.marks === 25 && (explicit || isDiagramFriendlyTopic(stem))) return attachReferenceFigure(base(false), q);
+    if (q.marks === 15) return attachReferenceFigure(base(true), q);
+    if (q.marks === 25 || q.marks === 20) return attachReferenceFigure(base(true), q);
   }
 
-  // Paper 3
-  if (q.paper === 3) {
-    if (q.marks === 10 || q.marks === 15 || q.marks === 25) {
-      const required = explicit || (q.marks >= 15 && isDiagramFriendlyTopic(stem));
-      return {
-        requiresDiagram: true,
-        optional: !required,
-        diagramType,
-        rubric: buildRubric(diagramType, stem),
-      };
-    }
+  if (q.paper === 3 && (q.marks === 10 || q.marks === 15 || q.marks === 25)) {
+    const required = explicit || (q.marks >= 15 && isDiagramFriendlyTopic(stem));
+    return attachReferenceFigure(base(!required), q);
   }
 
   return null;
