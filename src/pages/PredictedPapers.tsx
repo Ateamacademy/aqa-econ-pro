@@ -1397,7 +1397,7 @@ export default function PredictedPapers() {
       return null;
     }
 
-    return parsed;
+    return { ...parsed, questions: applyAqaDiagramTags(parsed.questions, paperNumber) };
   }
 
   function openLibraryPaper(lp: PredictedPaper) {
@@ -2341,6 +2341,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                     showGraphPaper={isMaths}
                     showGeometryTools={isMaths}
                     subject={subject}
+                    paperKey={selectedLibraryPaper?.id || `${examBoard}-${paper}`}
                   />
                 </motion.div>
               </div>
