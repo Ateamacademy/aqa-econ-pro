@@ -1359,6 +1359,32 @@ export default function PredictedPapers() {
     return true;
   };
 
+  function applyAqaDiagramTags(
+    questions: ParsedQuestion[],
+    paperNumber?: string,
+  ): ParsedQuestion[] {
+    if (subject !== "economics") return questions;
+    const paperNum = inferPaperFromContext(paperNumber ?? paper);
+    return questions.map((q) => {
+      const isMcq = !!q.mcqOptions && q.mcqOptions.length >= 2;
+      const tag = tagAqaQuestion({
+        number: q.number ?? "",
+        marks: q.marks,
+        text: q.text,
+        isMcq,
+        paper: paperNum,
+      });
+      if (!tag) return q;
+      return {
+        ...q,
+        requiresDiagram: tag.requiresDiagram,
+        diagramOptional: tag.optional,
+        diagramType: tag.diagramType,
+        diagramRubric: tag.rubric,
+      };
+    });
+  }
+
   function parsePredictedPaperContent(rawContent: string, paperNumber?: string) {
     const parsed = parseQuestions(rawContent);
 
