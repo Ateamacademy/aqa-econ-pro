@@ -469,7 +469,7 @@ export type Database = {
           id: string
           paper_id: string
           question_number: string | null
-          user_id: string | null
+          user_id: string
         }
         Insert: {
           context?: Json
@@ -481,7 +481,7 @@ export type Database = {
           id?: string
           paper_id: string
           question_number?: string | null
-          user_id?: string | null
+          user_id: string
         }
         Update: {
           context?: Json
@@ -493,7 +493,7 @@ export type Database = {
           id?: string
           paper_id?: string
           question_number?: string | null
-          user_id?: string | null
+          user_id?: string
         }
         Relationships: []
       }
@@ -554,6 +554,7 @@ export type Database = {
       predicted_paper_solutions: {
         Row: {
           created_at: string
+          generated_by_user_id: string | null
           has_legacy_unmapped: boolean
           id: string
           legacy_unmapped_ids: string[]
@@ -568,6 +569,7 @@ export type Database = {
         }
         Insert: {
           created_at?: string
+          generated_by_user_id?: string | null
           has_legacy_unmapped?: boolean
           id?: string
           legacy_unmapped_ids?: string[]
@@ -582,6 +584,7 @@ export type Database = {
         }
         Update: {
           created_at?: string
+          generated_by_user_id?: string | null
           has_legacy_unmapped?: boolean
           id?: string
           legacy_unmapped_ids?: string[]
