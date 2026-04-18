@@ -442,52 +442,59 @@ A shop buys a phone for £120 and sells it for £156. Calculate the percentage p
     title: "Paper 1 — Set A",
     description: "Markets and Market Failure. Data response and essay questions.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics — Paper 1: Markets and Market Failure — Predicted Paper Set A
+    content: `# AQA A-Level Economics (7136/1) — Paper 1: Markets and Market Failure — Predicted Paper Set A
 
 **Time: 2 hours | Total: 80 marks**
 
+Answer ALL questions in Section A and ONE question from Section B.
+
 ---
 
-## Section A: Data Response
+## Section A: Data Response (40 marks)
 
-**Context / Extract A:**
+**Extract A — The UK sugar tax debate**
 
-The UK government announced in 2024 that it would introduce a sugar tax on milkshakes and other high-sugar drinks not previously covered by the Soft Drinks Industry Levy (SDIL). Public Health England estimates that excess sugar consumption costs the NHS approximately £6 billion per year. Industry groups argue that the tax disproportionately affects lower-income households. Meanwhile, reformulated drinks that reduced sugar content below the levy thresholds accounted for over 50% of soft drink sales by volume in 2023.
+The UK government announced in 2024 that it would extend the Soft Drinks Industry Levy (SDIL) to milkshakes and other previously exempt high-sugar drinks. Public Health England estimates that excess sugar consumption costs the NHS approximately £6 billion per year. Reformulated drinks that reduced sugar content below the levy thresholds accounted for over 50% of soft drink sales by volume in 2023. Industry groups argue the tax is regressive and disproportionately affects lower-income households, while public-health campaigners describe the levy as one of the most successful examples of behavioural government intervention.
 
-**Extract B — Data:**
+**Extract B — Sugar consumption and SDIL revenue, 2018–2024**
 
-| Year | Sugary drink consumption (litres per capita) | Obesity rate (%) | SDIL revenue (£m) |
-|------|----------------------------------------------|------------------|--------------------|
+| Year | Sugary drink consumption (litres per capita) | Adult obesity rate (%) | SDIL revenue (£m) |
+|------|----------------------------------------------|------------------------|--------------------|
 | 2018 | 78.4 | 28.7 | 240 |
 | 2020 | 65.1 | 29.0 | 336 |
 | 2022 | 58.3 | 28.5 | 380 |
 | 2024 | 52.7 | 27.8 | 415 |
 
-Question 1.1 [2 marks]
+**Extract C — Distributional impact**
+
+A 2024 IFS study found that households in the lowest income decile spent 0.7% of disposable income on SDIL-affected products, compared with 0.2% for the highest decile. Critics therefore describe the levy as regressive in incidence, although supporters argue the long-run health gains accrue disproportionately to lower-income groups, who suffer the highest rates of diet-related disease.
+
+Question 1 [2 marks]
 Using Extract B, calculate the percentage change in sugary drink consumption between 2018 and 2024.
 
-Question 1.2 [4 marks]
-Using a supply and demand diagram, explain how the introduction of a sugar tax would affect the market for sugary drinks.
+Question 2 [4 marks]
+Using a supply and demand diagram, explain how the introduction of the sugar tax affects the market for high-sugar soft drinks.
 
-Question 1.3 [9 marks]
-Using the data and your economic knowledge, explain why the sugar tax might be considered an example of government intervention to correct market failure.
+Question 3 [9 marks]
+Using the extracts and your knowledge of economics, analyse why the sugar tax may be considered an example of government intervention to correct market failure.
 
-Question 1.4 [25 marks]
-Evaluate the view that indirect taxes are the most effective way to reduce the consumption of demerit goods. Refer to the information provided and your own knowledge of economics.
+Question 4 [25 marks]
+Using the extracts and your own knowledge, evaluate the view that indirect taxes are the most effective way to reduce consumption of demerit goods.
 
 ---
 
-## Section B: Essay Questions (choose one)
+## Section B: Essay (40 marks)
 
-**Either**
+Answer EITHER Question 5 OR Question 6.
 
-Question 2 [25 marks]
-"Free markets always lead to an efficient allocation of resources." Evaluate this statement.
+**Short extract:**
+Critics of unregulated markets argue that profit-seeking firms systematically under-provide public goods, over-exploit common resources and ignore negative externalities. Supporters reply that competition, the price mechanism and consumer sovereignty deliver superior outcomes to those produced by government intervention.
 
-**Or**
+Question 5 [15 marks]
+Explain how the existence of negative externalities and public goods can lead to market failure.
 
-Question 3 [25 marks]
-Evaluate the extent to which government subsidy of public transport is justified on economic grounds.`,
+Question 6 [25 marks]
+"Free markets always lead to an efficient allocation of resources." Evaluate this statement with reference to real-world examples.`,
   },
 
   // ── ECONOMICS PAPER 2 ──
@@ -498,52 +505,59 @@ Evaluate the extent to which government subsidy of public transport is justified
     title: "Paper 2 — Set A",
     description: "National and International Economy. Macro data response and essays.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics — Paper 2: National and International Economy — Predicted Paper Set A
+    content: `# AQA A-Level Economics (7136/2) — Paper 2: National and International Economy — Predicted Paper Set A
 
 **Time: 2 hours | Total: 80 marks**
 
+Answer ALL questions in Section A and ONE question from Section B.
+
 ---
 
-## Section A: Data Response
+## Section A: Data Response (40 marks)
 
-**Context / Extract A:**
+**Extract A — UK monetary tightening, 2021–2024**
 
-The Bank of England raised interest rates from 0.1% in December 2021 to 5.25% by August 2023 in an effort to combat rising inflation. CPI inflation peaked at 11.1% in October 2022 before falling to 4.0% by December 2023. However, GDP growth slowed significantly, with the UK economy narrowly avoiding a technical recession in Q3 and Q4 2023. Unemployment remained relatively low at 4.2%, but real wages fell for the longest sustained period since records began.
+The Bank of England raised Bank Rate from 0.1% in December 2021 to 5.25% by August 2023 in response to surging inflation. CPI peaked at 11.1% in October 2022 before falling back to 4.0% by December 2023. GDP growth slowed sharply, the UK narrowly avoided a technical recession in late 2023, and real wages fell for the longest sustained period since records began. Unemployment remained low at 4.2%, suggesting a degree of labour-market resilience despite the tightening cycle.
 
-**Extract B — Data:**
+**Extract B — Key UK macroeconomic indicators**
 
 | Indicator | 2021 | 2022 | 2023 | 2024 (est.) |
 |-----------|------|------|------|-------------|
-| GDP Growth (%) | 7.6 | 4.3 | 0.1 | 0.6 |
-| CPI Inflation (%) | 2.6 | 9.1 | 7.3 | 3.2 |
+| Real GDP growth (%) | 7.6 | 4.3 | 0.1 | 0.6 |
+| CPI inflation (%) | 2.6 | 9.1 | 7.3 | 3.2 |
 | Unemployment (%) | 4.5 | 3.7 | 4.2 | 4.4 |
-| Base Rate (%) | 0.1 | 3.5 | 5.25 | 5.0 |
+| Bank Rate (%) | 0.1 | 3.5 | 5.25 | 5.0 |
 
-Question 1.1 [2 marks]
+**Extract C — Transmission lags and household debt**
+
+The MPC has repeatedly noted that monetary policy operates with "long and variable lags." UK household debt-to-income remains above 130%, meaning small changes in interest rates have a disproportionately large effect on disposable incomes. Approximately 1.6 million fixed-rate mortgages were due to refinance during 2024, creating a delayed cost-push shock to consumer spending.
+
+Question 1 [2 marks]
 Define the term 'real wages'.
 
-Question 1.2 [4 marks]
-Using an AD/AS diagram, explain the likely impact of higher interest rates on the UK economy.
+Question 2 [4 marks]
+Using an AD/AS diagram, explain the likely impact of higher interest rates on aggregate demand in the UK.
 
-Question 1.3 [9 marks]
-Using the extracts and your economic knowledge, analyse the trade-off faced by the Bank of England between controlling inflation and maintaining economic growth.
+Question 3 [9 marks]
+Using the extracts and your knowledge of economics, analyse the trade-off faced by the Bank of England between controlling inflation and maintaining economic growth.
 
-Question 1.4 [25 marks]
-Evaluate the effectiveness of monetary policy as a tool for managing the macroeconomy. Use the data provided and your own knowledge.
+Question 4 [25 marks]
+Using the extracts and your own knowledge, evaluate the effectiveness of monetary policy as a tool for managing the UK macroeconomy.
 
 ---
 
-## Section B: Essay Questions (choose one)
+## Section B: Essay (40 marks)
 
-**Either**
+Answer EITHER Question 5 OR Question 6.
 
-Question 2 [25 marks]
-"A current account deficit is always harmful to the UK economy." Evaluate this statement.
+**Short extract:**
+The UK ran a current account deficit of around 3% of GDP in 2024, financed largely by capital inflows. Some economists view persistent deficits as a symptom of structural weakness; others argue they simply reflect the UK's role as a global financial centre and pose no immediate threat to macroeconomic stability.
 
-**Or**
+Question 5 [15 marks]
+Explain the main causes of a current account deficit on the UK's balance of payments.
 
-Question 3 [25 marks]
-Evaluate the extent to which supply-side policies are more effective than demand-side policies in achieving long-run economic growth.`,
+Question 6 [25 marks]
+"Supply-side policies are more effective than demand-side policies in achieving long-run economic growth." Evaluate this statement.`,
   },
 
   // ── ECONOMICS PAPER 3 ──
@@ -552,11 +566,13 @@ Evaluate the extent to which supply-side policies are more effective than demand
     subject: "economics",
     paper: "3",
     title: "Paper 3 — Set A",
-    description: "Economic Principles and Issues. MCQ and case study with synoptic essay.",
+    description: "Economic Principles and Issues. 30 multiple choice questions plus a synoptic case study.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics — Paper 3: Economic Principles and Issues — Predicted Paper Set A
+    content: `# AQA A-Level Economics (7136/3) — Paper 3: Economic Principles and Issues — Predicted Paper Set A
 
 **Time: 2 hours | Total: 80 marks**
+
+Answer ALL questions in Section A and ALL questions in Section B.
 
 ---
 
@@ -564,9 +580,9 @@ Evaluate the extent to which supply-side policies are more effective than demand
 
 Question 1 [1 marks]
 Which of the following is an example of a positive economic statement?
-A. The government should increase spending on the NHS.
-B. Unemployment in the UK fell to 4.2% in 2023.
-C. It would be better to reduce income inequality.
+A. The government should increase NHS spending.
+B. UK unemployment fell to 4.2% in 2023.
+C. Income inequality ought to be reduced.
 D. Minimum wages are the best way to reduce poverty.
 
 Question 2 [1 marks]
@@ -574,7 +590,7 @@ A negative externality of consumption means that:
 A. Social benefits exceed private benefits
 B. Social costs exceed private costs
 C. Private costs exceed social costs
-D. The good is overconsumed at the free market equilibrium
+D. Marginal private benefit exceeds marginal social benefit
 
 Question 3 [1 marks]
 If the cross elasticity of demand between two goods is positive, the goods are:
@@ -588,14 +604,14 @@ An increase in the money supply with no change in real output is most likely to 
 A. Deflation
 B. Demand-pull inflation
 C. Cost-push inflation
-D. A decrease in aggregate demand
+D. A fall in aggregate demand
 
 Question 5 [1 marks]
 Which of the following is a supply-side policy?
 A. Raising interest rates
 B. Increasing government spending on infrastructure
-C. Reducing income tax rates
-D. Increasing the minimum wage
+C. Reducing income tax to improve work incentives
+D. Increasing the National Living Wage
 
 Question 6 [1 marks]
 An economy operating inside its production possibility frontier is:
@@ -608,7 +624,7 @@ Question 7 [1 marks]
 Price discrimination requires:
 A. A perfectly competitive market
 B. Firms that are price takers
-C. The ability to separate consumers into groups with different price elasticities of demand
+C. The ability to separate consumers by price elasticity of demand
 D. Homogeneous products
 
 Question 8 [1 marks]
@@ -632,32 +648,164 @@ B. An increase in labour productivity
 C. A rise in raw material costs
 D. A decrease in indirect taxes
 
+Question 11 [1 marks]
+A profit-maximising monopolist produces where:
+A. AR = AC
+B. MR = MC
+C. P = MC
+D. AR = MC
+
+Question 12 [1 marks]
+Allocative efficiency in a market occurs when:
+A. AC is minimised
+B. P = MC
+C. MR = MC
+D. Total revenue is maximised
+
+Question 13 [1 marks]
+A government imposes a per-unit tax on a good with perfectly inelastic demand. The tax is:
+A. Borne entirely by producers
+B. Borne entirely by consumers
+C. Shared equally between consumers and producers
+D. Avoided through reformulation
+
+Question 14 [1 marks]
+The Lorenz curve is used to measure:
+A. The rate of inflation
+B. The level of unemployment
+C. The distribution of income or wealth
+D. Real GDP per capita
+
+Question 15 [1 marks]
+A floating exchange rate is most likely to depreciate when:
+A. UK interest rates rise relative to the US
+B. UK exports become more competitive
+C. UK inflation rises faster than its trading partners
+D. The UK current account moves into surplus
+
+Question 16 [1 marks]
+Which of the following best describes structural unemployment?
+A. Unemployment caused by a fall in aggregate demand
+B. Unemployment between jobs as workers search
+C. Unemployment caused by a mismatch of skills
+D. Unemployment caused by seasonal industries
+
+Question 17 [1 marks]
+A firm experiences economies of scale when:
+A. Long-run average cost falls as output rises
+B. Marginal cost equals average cost
+C. Total cost falls as output rises
+D. Average revenue rises as output rises
+
+Question 18 [1 marks]
+A perfectly contestable market requires:
+A. Many small firms
+B. Zero barriers to entry and exit
+C. Homogeneous products
+D. Perfect information
+
+Question 19 [1 marks]
+Which of the following is most likely to reduce the natural rate of unemployment?
+A. An increase in unemployment benefits
+B. Improved geographical labour mobility
+C. A rise in interest rates
+D. A cut in the marginal income tax rate on high earners
+
+Question 20 [1 marks]
+A progressive tax system is one in which:
+A. The marginal tax rate is constant
+B. The average tax rate falls as income rises
+C. The average tax rate rises as income rises
+D. Everyone pays the same lump sum
+
+Question 21 [1 marks]
+The Phillips curve in the long run is generally drawn as:
+A. Downward sloping
+B. Upward sloping
+C. Horizontal
+D. Vertical at the natural rate of unemployment
+
+Question 22 [1 marks]
+A merit good is best defined as a good that is:
+A. Provided by the public sector
+B. Under-consumed relative to the socially optimal level
+C. Non-rival and non-excludable
+D. Always provided free of charge
+
+Question 23 [1 marks]
+Quantitative easing is most accurately described as:
+A. A cut in income tax to stimulate consumption
+B. A central bank purchase of assets to expand the money supply
+C. An increase in government spending financed by borrowing
+D. A rise in the bank reserve requirement
+
+Question 24 [1 marks]
+An increase in labour productivity will most likely cause:
+A. SRAS to shift left
+B. LRAS to shift right
+C. AD to shift left
+D. The Phillips curve to shift right
+
+Question 25 [1 marks]
+In oligopolistic markets, the kinked demand curve assumes that rivals will:
+A. Match price rises but ignore price cuts
+B. Match price cuts but ignore price rises
+C. Match all price changes
+D. Ignore all price changes
+
+Question 26 [1 marks]
+The principle of comparative advantage states that countries should specialise in goods in which they have the:
+A. Lowest absolute cost
+B. Highest absolute cost
+C. Lowest opportunity cost
+D. Largest market
+
+Question 27 [1 marks]
+A government runs a budget deficit when:
+A. Tax revenue exceeds public spending
+B. Public spending exceeds tax revenue
+C. The national debt falls
+D. Net exports are negative
+
+Question 28 [1 marks]
+Which of the following is most likely to cause demand-pull inflation?
+A. A rise in oil prices
+B. A fall in labour productivity
+C. A large cut in interest rates during a boom
+D. An increase in business taxation
+
+Question 29 [1 marks]
+The Gini coefficient ranges between:
+A. 0 and 1, where 0 indicates perfect equality
+B. 0 and 1, where 1 indicates perfect equality
+C. -1 and 1
+D. 0 and 100, where 0 indicates perfect inequality
+
+Question 30 [1 marks]
+A firm in long-run equilibrium under monopolistic competition earns:
+A. Supernormal profit
+B. Normal profit only
+C. A loss equal to fixed cost
+D. Profit equal to marginal cost
+
 ---
 
-## Section B: Case Study
+## Section B: Case Study (50 marks)
 
 **Case Study — The UK Housing Market**
 
-The UK housing market has experienced significant price growth over the past decade. Average house prices increased from £195,000 in 2014 to £290,000 in 2024, an increase of approximately 49%. In some regions, such as the South East, prices have grown even faster. First-time buyers now need an average deposit of £62,000 — equivalent to 2.5 years of pre-tax earnings for an average worker.
+The UK housing market has experienced significant price growth over the past decade. Average house prices rose from £195,000 in 2014 to £290,000 in 2024 — an increase of approximately 49%. First-time buyers now need an average deposit of £62,000, equivalent to 2.5 years of pre-tax earnings for an average worker.
 
-The government introduced the Help to Buy scheme to support first-time buyers with equity loans of up to 20% (40% in London). Economists have debated whether this demand-side intervention simply pushed prices higher. Meanwhile, housebuilding completions have averaged 180,000 per year — significantly below the 340,000 homes per year that the government has targeted.
+The government introduced the Help to Buy scheme to support first-time buyers with equity loans of up to 20% (40% in London). Economists have debated whether this demand-side intervention simply pushed prices higher. Housebuilding completions averaged 180,000 per year — well below the government target of 340,000. Planning restrictions, land banking by developers and skilled labour shortages in construction have been cited as major supply-side barriers.
 
-Planning restrictions, land banking by developers, and skilled labour shortages in construction have been cited as major supply-side barriers.
+Question 31 [10 marks]
+Using a supply and demand diagram, explain why UK house prices have risen significantly between 2014 and 2024.
 
-Question 11 [2 marks]
-Calculate the percentage increase in average house prices between 2014 and 2024.
+Question 32 [15 marks]
+Analyse the likely effects of the Help to Buy scheme on house prices and the housing market.
 
-Question 12 [4 marks]
-Explain, using a supply and demand diagram, why house prices have risen significantly.
-
-Question 13 [9 marks]
-Analyse the effectiveness of the Help to Buy scheme as a solution to housing affordability.
-
-Question 14 [10 marks]
-Evaluate whether supply-side measures would be more effective than demand-side interventions in solving the UK housing crisis.
-
-Question 15 [25 marks]
-"Government intervention in markets does more harm than good." Using the case study and your own economic knowledge, evaluate this statement with reference to both microeconomic and macroeconomic arguments.`,
+Question 33 [25 marks]
+"Supply-side policies are more effective than demand-side interventions in solving the UK housing affordability crisis." Using the case study and your own economic knowledge, evaluate this statement.`,
   },
 
   // ── ECONOMICS PAPER 1: Set B ──
