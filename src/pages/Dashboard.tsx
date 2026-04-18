@@ -76,6 +76,7 @@ export default function Dashboard() {
   }, [user]);
 
   const r = useReadinessScore(sessions, subject);
+  const dash = useDashboardState(sessions as any, subject);
 
   if (!user) {
     return (
@@ -150,7 +151,7 @@ export default function Dashboard() {
         {/* Top bar */}
         <div className="sticky top-16 z-30 bg-background/80 backdrop-blur-xl border-b border-border px-6 py-3 flex items-center justify-between gap-4">
           <h1 className="text-lg font-bold text-foreground">Dashboard</h1>
-          <DailyGoalBanner />
+          <div className="flex-1" />
           <div className="flex items-center gap-3 shrink-0">
             <button className="text-muted-foreground hover:text-foreground transition-colors">
               <Bell className="h-5 w-5" />
@@ -171,45 +172,42 @@ export default function Dashboard() {
           animate="show"
           variants={{ show: { transition: { staggerChildren: 0.06 } } }}
         >
+          {/* Daily Action Card — for everyone */}
+          <motion.div variants={fadeUp}>
+            <DailyActionCard action={dash.dailyAction} today={dash.today} />
+          </motion.div>
+
           {/* Readiness Score Hero — Pro only */}
           {subscribed && (
             <motion.div variants={fadeUp} className="flex justify-center py-6 relative">
-              <ScoreDelta points={r.score > 0 ? 5 : 0} />
-              <ReadinessRadial score={r.score} stageName={r.stageName} stage={r.stage} />
+              <ScoreDelta points={dash.readinessScore.weeklyChange} />
+              <ReadinessRadial
+                score={dash.readinessScore.value}
+                stageName={dash.readinessScore.stageName}
+                stage={dash.readinessScore.stage}
+              />
             </motion.div>
           )}
 
-          {/* Mountain Tracker — Pro only */}
+          {/* Interactive Journey — Pro only */}
           {subscribed && (
-            <motion.div variants={fadeUp} className="rounded-2xl border border-border bg-card p-5 mb-6">
-              <h3 className="text-foreground font-semibold text-sm mb-2">Your Journey</h3>
-              <MountainTracker activeStage={r.stage} />
+            <motion.div variants={fadeUp}>
+              <InteractiveJourney state={dash} />
             </motion.div>
           )}
 
-          {/* Stats Row */}
-          <motion.div variants={fadeUp} className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-            {[
-              { label: "Readiness Score", value: `${r.score}%`, sub: `↑ ${r.weeklyChange} this week`, subColor: "text-success" },
-              { label: "Predicted Grade", value: r.score >= 80 ? "A*" : r.score >= 70 ? "A" : r.score >= 60 ? "B" : "C", sub: `Boundary: ${r.score >= 80 ? 80 : r.score >= 70 ? 70 : r.score >= 60 ? 60 : 50}%` },
-              { label: "Study Streak", value: `${r.streak} days`, sub: "🔥 Keep it up" },
-              { label: "Papers Completed", value: `${r.predictedPaperCount}`, sub: `${r.totalSessions} total sessions` },
-            ].map(({ label, value, sub, subColor }) => (
-              <div key={label} className="rounded-2xl border border-border bg-card p-4" style={{ borderTopWidth: "2px", borderTopColor: "hsl(var(--primary))" }}>
-                <p className="text-3xl font-bold text-foreground font-mono">{value}</p>
-                <p className="text-[10px] text-muted-foreground mt-0.5">{label}</p>
-                {sub && <p className={cn("text-[10px] mt-1 font-medium", subColor || "text-muted-foreground")}>{sub}</p>}
-              </div>
-            ))}
+          {/* Stat tiles — clickable */}
+          <motion.div variants={fadeUp}>
+            <StatTiles state={dash} />
           </motion.div>
 
-          {/* Grade Trend + Predicted Grade */}
+          {/* Grade Trend + Likelihood */}
           <div className="grid lg:grid-cols-2 gap-6 mb-6">
             <motion.div variants={fadeUp}>
-              <GradeTrendChart sessions={sessions} subject={subject} />
+              <GradeTrendPanel state={dash} />
             </motion.div>
             <motion.div variants={fadeUp}>
-              <PredictedGrade score={r.avgScore ?? r.score} />
+              <GradeLikelihoodPanel state={dash} />
             </motion.div>
           </div>
 
