@@ -863,8 +863,9 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
       y = ensureSpace(doc, y, lineH, pageH);
       doc.text(wl, marginL, y);
       y += lineH;
-    }
   }
+  return y;
+}
 }
 
 // ─── Main Export ────────────────────────────────────────────────────
