@@ -30,6 +30,8 @@ export default function AdminMissingFigures() {
     let total = 0;
     for (const lp of predictedPapersLibrary.filter((p) => p.subject === "economics")) {
       const paperNum = inferPaperFromContext(lp.paper);
+      // Derive set letter from the id suffix (e.g. "econ-p1-a" → "A").
+      const setLabel = (lp.id.match(/-([a-g])$/i)?.[1] ?? "A").toUpperCase();
       const parsed = parseQuestions(lp.content);
       for (const q of parsed.questions) {
         const isMcq = !!q.mcqOptions && q.mcqOptions.length >= 2;
@@ -44,7 +46,7 @@ export default function AdminMissingFigures() {
         total++;
         const pick = pickReferenceFigure({
           diagramType: tag.diagramType,
-          paperSetLabel: lp.set,
+          paperSetLabel: setLabel,
           questionNumber: q.number,
           hint: q.text,
         });
@@ -54,7 +56,7 @@ export default function AdminMissingFigures() {
           out.push({
             paperId: lp.id,
             paperLabel: lp.title,
-            setLabel: lp.set,
+            setLabel,
             questionLabel: q.label,
             diagramType: tag.diagramType,
             marks: q.marks,
