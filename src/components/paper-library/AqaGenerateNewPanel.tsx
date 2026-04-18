@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Sparkles, Lock, AlertTriangle, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -10,9 +10,11 @@ import {
   AQA_SPEC, AQA_TOPIC_FOCUS, blueprintStrip, questionMarkChips,
   type PaperNumber,
 } from "@/lib/aqa-spec";
-import { generateAqaPaper } from "@/lib/aqaPaperGenerator";
 import { saveGeneratedPaper } from "@/data/aqaPapers";
 import { toast } from "sonner";
+import { generateWithDedup, type ProgressEvent } from "@/lib/uniqueness/runWithDedup";
+import { getScenarioCoverage } from "@/lib/uniqueness/dedupClient";
+import GenerationProgressPanel from "./GenerationProgressPanel";
 
 interface Props {
   initialPaper?: PaperNumber;
@@ -27,31 +29,62 @@ export default function AqaGenerateNewPanel({ initialPaper = 1, onGenerated }: P
   const [thematicEssays, setThematicEssays] = useState(false);
   const [synopticMcq, setSynopticMcq] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [events, setEvents] = useState<ProgressEvent[]>([]);
+  const [coverageWarn, setCoverageWarn] = useState<string | null>(null);
 
   const spec = AQA_SPEC[`PAPER_${paperNumber}`];
   const focusOptions = AQA_TOPIC_FOCUS[paperNumber];
 
+  useEffect(() => {
+    let mounted = true;
+    (async () => {
+      const cov = await getScenarioCoverage(spec.code);
+      if (!mounted) return;
+      if (cov.exhausted) {
+        setCoverageWarn(
+          `You already have ${cov.used} scenarios used for ${spec.code} (${Math.round(cov.ratio * 100)}% of the estimated pool). Generating another may force a less-typical scenario.`,
+        );
+      } else {
+        setCoverageWarn(null);
+      }
+    })();
+    return () => {
+      mounted = false;
+    };
+  }, [spec.code]);
+
   const toggleFocus = (f: string) =>
     setFocus((prev) => (prev.includes(f) ? prev.filter((x) => x !== f) : [...prev, f]));
 
-  const handleGenerate = () => {
+  const handleGenerate = async () => {
     setError(null);
+    setEvents([]);
+    setBusy(true);
     try {
-      const paper = generateAqaPaper({
-        paperNumber,
-        practiceSetLabel: practiceSetLabel.trim() || `Practice Set ${new Date().toLocaleDateString("en-GB")}`,
-        focus,
-        difficulty,
-        thematicEssays: paperNumber !== 3 ? thematicEssays : undefined,
-        synopticMcq: paperNumber === 3 ? synopticMcq : undefined,
-      });
+      const { paper, fingerprintsSaved } = await generateWithDedup(
+        {
+          paperNumber,
+          practiceSetLabel: practiceSetLabel.trim() || `Practice Set ${new Date().toLocaleDateString("en-GB")}`,
+          focus,
+          difficulty,
+          thematicEssays: paperNumber !== 3 ? thematicEssays : undefined,
+          synopticMcq: paperNumber === 3 ? synopticMcq : undefined,
+        },
+        (e) => setEvents((prev) => [...prev, e]),
+      );
       saveGeneratedPaper(paper);
-      toast.success(`Generated ${paper.title} — ${paper.practiceSetLabel}`);
+      toast.success(
+        `Generated ${paper.title} — ${paper.practiceSetLabel}` +
+          (fingerprintsSaved > 0 ? ` · ${fingerprintsSaved} fingerprints saved` : ""),
+      );
       onGenerated?.();
     } catch (e) {
       const msg = e instanceof Error ? e.message : String(e);
       setError(msg);
-      toast.error("Generation failed — paper rejected by validator");
+      toast.error("Generation failed — uniqueness check rejected paper");
+    } finally {
+      setBusy(false);
     }
   };
 
