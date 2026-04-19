@@ -1306,13 +1306,20 @@ export default function PredictedPapers() {
 
   const libraryPapers = useMemo(
     () => {
-      const filtered = predictedPapersLibrary.filter((p) => p.subject === subject);
-      // Group by paper number, then by set label (A, B, C...) so cards display:
-      // Paper 1 — Set A, Paper 1 — Set B, … then Paper 2 — Set A, Paper 2 — Set B, …
       const setLabel = (title: string) => {
         const m = title.match(/Set\s+([A-Z])/i);
         return m ? m[1].toUpperCase() : "Z";
       };
+      // Product rule: every board exposes exactly Sets A/B/C × Papers 1/2/3 = 9 papers.
+      // AQA A-Level is exempt — it ships with 7 sets per paper (A–G) and that
+      // extended library must NOT be reduced.
+      const isAqa = subject === "economics";
+      const allowedSets = new Set(["A", "B", "C"]);
+      const filtered = predictedPapersLibrary.filter((p) => {
+        if (p.subject !== subject) return false;
+        if (isAqa) return true;
+        return allowedSets.has(setLabel(p.title));
+      });
       return [...filtered].sort((a, b) => {
         const pa = parseInt(a.paper, 10) || 0;
         const pb = parseInt(b.paper, 10) || 0;
