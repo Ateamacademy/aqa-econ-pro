@@ -209,8 +209,6 @@ function attachReferenceFigure(
  *    says "Figure X" / "with the help of a diagram"; otherwise student-drawn only.
  */
 export function tagAqaQuestion(q: TaggerInput): AqaDiagramTag | null {
-  if (q.isMcq) return null;
-
   const stem = q.text;
   const diagramType = classifyDiagramType(stem);
   const explicit = EXPLICIT_DIAGRAM_RE.test(stem);
@@ -225,6 +223,20 @@ export function tagAqaQuestion(q: TaggerInput): AqaDiagramTag | null {
     ...base(optional),
     referenceFigureMissing: false,
   });
+
+  // Paper 3 MCQs (Section A, Q1–30): attach a stimulus reference figure to
+  // every MCQ. The student doesn't draw — it's a read-only stimulus they
+  // reason from. `requiresDiagram` stays false so no canvas is shown.
+  if (q.isMcq) {
+    if (q.paper !== 3) return null;
+    const mcqBase: AqaDiagramTag = {
+      requiresDiagram: false,
+      optional: true,
+      diagramType,
+      rubric: buildRubric(diagramType, stem),
+    };
+    return attachReferenceFigure(mcqBase, q);
+  }
 
   if (q.paper === 1 || q.paper === 2) {
     // Section A 9-mark — only when stem explicitly asks for a diagram.
