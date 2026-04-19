@@ -138,6 +138,12 @@ function bank(setSeed: string): McqSpec[] {
       justification: "The kinked demand model predicts price rigidity at the kink due to asymmetric responses by rivals.",
     },
     {
+      stem: "An import tariff will most likely:",
+      options: ["Reduce the domestic price of imports", "Increase the domestic price of imports and reduce import volumes", "Increase exports", "Have no effect on the trade balance"],
+      answer: "B",
+      justification: "Tariffs raise import prices and typically reduce import volumes.",
+    },
+    {
       stem: "Which one of the following is most likely to reduce inequality of income?",
       options: ["A cut in the top rate of income tax", "An increase in the National Living Wage", "A reduction in inheritance tax", "A regressive sales tax"],
       answer: "B",
