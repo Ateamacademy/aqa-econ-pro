@@ -1,3 +1,4 @@
+import React from "react";
 import { MONOP_COMP_COLORS, SHARED_COST_PATHS, SHARED_MARKERS, svgLabelStyle } from "@/components/Diagrams/monopolisticCompetitionShared";
 
 const LONG_RUN_PATHS = {
@@ -6,7 +7,7 @@ const LONG_RUN_PATHS = {
   ghost: "M 120 150 L 845 525",
 } as const;
 
-export function MonopCompLongRunSvg() {
+function MonopCompLongRunSvgInner() {
   const q2x = 360;
   const p2y = 382;
 
@@ -60,3 +61,5 @@ export function MonopCompLongRunSvg() {
     </svg>
   );
 }
+
+export const MonopCompLongRunSvg = React.memo(MonopCompLongRunSvgInner);
