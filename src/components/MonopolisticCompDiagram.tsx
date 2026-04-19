@@ -1,17 +1,22 @@
 import { useState } from "react";
 
-const SR_PATHS = {
-  ar: "M 85,88 L 96,96 L 107,103 L 119,110 L 130,117 L 141,124 L 152,131 L 164,139 L 175,146 L 186,153 L 197,160 L 209,167 L 220,174 L 231,182 L 242,189 L 254,196 L 265,203 L 276,210 L 288,218 L 299,225 L 310,232 L 321,239 L 333,246 L 344,253 L 355,261 L 366,268 L 378,275 L 389,282 L 400,289 L 412,296 L 423,304 L 434,311 L 445,318 L 457,325 L 468,332 L 479,340 L 490,347 L 502,354 L 513,361 L 524,368 L 536,375",
-  mr: "M 85,98 L 91,106 L 98,114 L 104,123 L 111,131 L 117,139 L 124,147 L 130,156 L 137,164 L 143,172 L 150,180 L 156,189 L 163,197 L 169,205 L 176,213 L 182,222 L 189,230 L 195,238 L 202,247 L 208,255 L 215,263 L 221,271 L 228,280 L 234,288 L 241,296 L 247,304 L 254,313 L 260,321 L 266,329 L 273,337 L 279,346 L 286,354 L 292,362",
+// Long-run AR: tangent to AC at Q≈266, P≈327 (further left, lower price)
+const LR_PATHS = {
+  ar: "M 85,250 L 105,258 L 125,265 L 145,273 L 165,281 L 185,289 L 205,297 L 225,305 L 245,313 L 266,321 L 285,329 L 305,337 L 325,345 L 345,353 L 365,361 L 385,369 L 405,377 L 425,385 L 445,393 L 465,401 L 485,409 L 505,417 L 525,425",
+  mr: "M 85,255 L 100,266 L 115,277 L 130,288 L 145,299 L 160,310 L 175,321 L 190,332 L 205,343 L 220,354 L 235,365 L 250,376 L 265,387 L 280,398 L 295,409 L 310,420",
 };
 
-const LR_PATHS = {
-  ar: "M 85,283 L 96,286 L 107,289 L 119,291 L 130,294 L 141,297 L 152,300 L 164,302 L 175,305 L 186,308 L 197,310 L 209,313 L 220,316 L 231,318 L 242,321 L 254,324 L 265,326 L 276,329 L 288,332 L 299,334 L 310,337 L 321,340 L 333,343 L 344,345 L 355,348 L 366,351 L 378,353 L 389,356 L 400,359 L 412,361 L 423,364 L 434,367 L 445,369 L 457,372 L 468,375 L 479,378 L 490,380 L 502,383 L 513,386 L 524,388 L 536,391",
-  mr: "M 85,287 L 92,290 L 100,294 L 107,298 L 115,301 L 122,305 L 130,308 L 137,312 L 144,315 L 152,319 L 159,323 L 167,326 L 174,330 L 182,333 L 189,337 L 197,340 L 204,344 L 212,348 L 219,351 L 227,355 L 234,358 L 242,362 L 249,365 L 257,369 L 264,373 L 272,376 L 279,380 L 286,383 L 294,387 L 301,390 L 309,394 L 316,397 L 324,401 L 331,405 L 339,408 L 346,412 L 354,415 L 361,419 L 369,422 L 376,426 L 384,430",
+// Short-run AR: clearly RIGHT of long-run AR (higher demand before entry erodes it)
+// Tangent-style higher curve so P₁ > AC(Q₁) producing supernormal profit rectangle
+const SR_PATHS = {
+  ar: "M 85,170 L 110,180 L 135,190 L 160,200 L 185,210 L 210,220 L 235,230 L 260,240 L 285,250 L 310,260 L 335,270 L 360,280 L 385,290 L 410,300 L 435,310 L 460,320 L 485,330 L 510,340 L 535,350",
+  mr: "M 85,175 L 105,192 L 125,209 L 145,226 L 165,243 L 185,260 L 205,277 L 225,294 L 245,311 L 265,328 L 285,345 L 305,362 L 325,379 L 345,396 L 365,413",
 };
 
 const SHARED_PATHS = {
+  // U-shaped MC rising sharply on the right
   mc: "M 109,254 L 118,269 L 127,283 L 136,296 L 145,308 L 155,318 L 164,328 L 173,337 L 182,344 L 191,351 L 200,356 L 209,361 L 218,364 L 227,366 L 236,367 L 245,368 L 254,367 L 263,365 L 272,361 L 281,357 L 290,352 L 300,346 L 309,338 L 318,330 L 327,320 L 336,310 L 345,298 L 354,285 L 363,272 L 372,257 L 381,241 L 390,224 L 399,206 L 408,187 L 417,167 L 426,145 L 436,123 L 445,100 L 454,75 L 463,50",
+  // U-shaped AC, minimum near x≈315, y≈332
   ac: "M 109,229 L 119,239 L 129,248 L 139,257 L 149,266 L 159,274 L 169,281 L 180,288 L 190,294 L 200,300 L 210,305 L 220,310 L 230,315 L 240,319 L 250,322 L 260,325 L 270,328 L 280,330 L 290,331 L 300,332 L 310,332 L 320,332 L 330,332 L 340,331 L 350,329 L 360,327 L 370,325 L 380,322 L 390,319 L 401,315 L 411,310 L 421,305 L 431,300 L 441,294 L 451,288 L 461,281 L 471,273 L 481,265 L 491,257 L 501,248 L 511,239",
 };
 
@@ -31,17 +36,134 @@ const COLORS = {
   danger: "hsl(var(--destructive))",
   toggleOff: "hsl(var(--muted-foreground) / 0.45)",
   toggleKnob: "hsl(var(--primary-foreground))",
-  profitFill: "hsl(var(--success) / 0.15)",
+  profitFill: "hsl(var(--success) / 0.18)",
   profitText: "hsl(var(--success))",
   ghost: "hsl(var(--electric-blue) / 0.15)",
 };
 
-const monoStyle = {
-  fontFamily: "'JetBrains Mono', monospace",
-};
+const monoStyle = { fontFamily: "'JetBrains Mono', monospace" };
+
+type Mode = "short-run" | "long-run";
+
+// === SHORT-RUN VIEW ===
+// Profit max: MR=MC at Q₁≈245, price read off AR at Q₁ → P₁≈230 (above AC≈322)
+function ShortRunSvg() {
+  const Q1_X = 245;
+  const P1_Y = 230;        // P read off AR₁ at Q₁
+  const AC_AT_Q1_Y = 322;  // AC value at Q₁
+
+  return (
+    <g>
+      {/* Supernormal profit rectangle */}
+      <rect
+        x={70}
+        y={P1_Y}
+        width={Q1_X - 70}
+        height={AC_AT_Q1_Y - P1_Y}
+        fill={COLORS.profitFill}
+        stroke={COLORS.profitText}
+        strokeWidth="1.2"
+        strokeDasharray="4 3"
+      />
+      <text x={(70 + Q1_X) / 2} y={(P1_Y + AC_AT_Q1_Y) / 2 - 4} fill={COLORS.profitText} fontSize="11" fontWeight="700" textAnchor="middle">
+        Supernormal
+      </text>
+      <text x={(70 + Q1_X) / 2} y={(P1_Y + AC_AT_Q1_Y) / 2 + 10} fill={COLORS.profitText} fontSize="11" fontWeight="700" textAnchor="middle">
+        profit
+      </text>
+
+      {/* AR₁ = D₁ */}
+      <path d={SR_PATHS.ar} fill="none" stroke={COLORS.shortRun} strokeWidth="2.5" />
+      <text x="540" y="350" fill={COLORS.shortRun} fontSize="12" fontWeight="700">AR₁ = D₁</text>
+
+      {/* MR₁ */}
+      <path d={SR_PATHS.mr} fill="none" stroke={COLORS.shortRun} strokeWidth="2" strokeDasharray="8 5" />
+      <text x="335" y="400" fill={COLORS.shortRun} fontSize="12" fontWeight="700">MR₁</text>
+
+      {/* Profit-max marker (MR=MC at Q₁) */}
+      <circle cx={Q1_X} cy={P1_Y + 90} r="6" fill="none" stroke={COLORS.marginalCost} strokeWidth="2.2" />
+      <circle cx={Q1_X} cy={P1_Y + 90} r="2.5" fill={COLORS.marginalCost} />
+
+      {/* Price/output guides */}
+      <line x1="70" y1={P1_Y} x2={Q1_X} y2={P1_Y} stroke={COLORS.shortRun} strokeWidth="1" strokeDasharray="4 3" />
+      <line x1={Q1_X} y1={P1_Y} x2={Q1_X} y2="430" stroke={COLORS.averageCost} strokeWidth="1" strokeDasharray="4 3" />
+      <line x1="70" y1={AC_AT_Q1_Y} x2={Q1_X} y2={AC_AT_Q1_Y} stroke={COLORS.averageCost} strokeWidth="1" strokeDasharray="4 3" />
+
+      {/* Equilibrium dot on AR */}
+      <circle cx={Q1_X} cy={P1_Y} r="6" fill="none" stroke={COLORS.shortRun} strokeWidth="2" />
+      <circle cx={Q1_X} cy={P1_Y} r="2.5" fill={COLORS.shortRun} />
+
+      <text x="60" y={P1_Y + 4} fill={COLORS.shortRun} fontSize="12" fontWeight="700" textAnchor="end">P₁</text>
+      <text x="60" y={AC_AT_Q1_Y + 4} fill={COLORS.averageCost} fontSize="12" fontWeight="700" textAnchor="end">AC₁</text>
+      <text x={Q1_X} y="446" fill={COLORS.averageCost} fontSize="12" fontWeight="700" textAnchor="middle">Q₁</text>
+
+      {/* Profit-max callout */}
+      <rect x={Q1_X + 18} y={P1_Y + 78} width="92" height="28" rx="4" fill={COLORS.surface} stroke={COLORS.border} strokeWidth="0.8" />
+      <text x={Q1_X + 64} y={P1_Y + 90} fill={COLORS.textStrong} fontSize="9" fontWeight="600" textAnchor="middle">Profit max</text>
+      <text x={Q1_X + 64} y={P1_Y + 101} fill={COLORS.text} fontSize="8" textAnchor="middle">(MR₁ = MC)</text>
+    </g>
+  );
+}
+
+// === LONG-RUN VIEW ===
+function LongRunSvg() {
+  const Q2_X = 266;
+  const P2_Y = 321;        // tangent: P = AC
+
+  return (
+    <g>
+      {/* Ghost short-run AR for context */}
+      <path d={SR_PATHS.ar} fill="none" stroke={COLORS.shortRun} strokeWidth="1" opacity="0.18" strokeDasharray="3 4" />
+      <text x="540" y="335" fill={COLORS.shortRun} fontSize="9" opacity="0.4" fontStyle="italic">D₁ (was)</text>
+
+      {/* AR₂ = D₂ (tangent to AC) */}
+      <path d={LR_PATHS.ar} fill="none" stroke={COLORS.shortRun} strokeWidth="2.5" />
+      <text x="530" y="430" fill={COLORS.shortRun} fontSize="12" fontWeight="700">AR₂ = D₂</text>
+
+      {/* MR₂ */}
+      <path d={LR_PATHS.mr} fill="none" stroke={COLORS.shortRun} strokeWidth="2" strokeDasharray="8 5" />
+      <text x="320" y="425" fill={COLORS.shortRun} fontSize="12" fontWeight="700">MR₂</text>
+
+      {/* Tangent point */}
+      <circle cx={Q2_X} cy={P2_Y} r="8" fill="none" stroke={COLORS.averageCost} strokeWidth="2.5" />
+      <circle cx={Q2_X} cy={P2_Y} r="3" fill={COLORS.averageCost} />
+
+      {/* Normal-profit callout */}
+      <rect x={Q2_X + 20} y={P2_Y - 40} width="135" height="38" rx="5" fill={COLORS.surface} stroke={COLORS.border} strokeWidth="0.8" />
+      <text x={Q2_X + 88} y={P2_Y - 24} fill={COLORS.textStrong} fontSize="11" fontWeight="700" textAnchor="middle">Normal profit</text>
+      <text x={Q2_X + 88} y={P2_Y - 10} fill={COLORS.text} fontSize="9" textAnchor="middle">(P = AC at Q₂)</text>
+
+      {/* Guides */}
+      <line x1="70" y1={P2_Y} x2={Q2_X} y2={P2_Y} stroke={COLORS.shortRun} strokeWidth="1" strokeDasharray="4 3" />
+      <line x1={Q2_X} y1={P2_Y} x2={Q2_X} y2="430" stroke={COLORS.averageCost} strokeWidth="1" strokeDasharray="4 3" />
+
+      <text x="60" y={P2_Y + 4} fill={COLORS.shortRun} fontSize="12" fontWeight="700" textAnchor="end">P₂</text>
+      <text x={Q2_X} y="446" fill={COLORS.averageCost} fontSize="12" fontWeight="700" textAnchor="middle">Q₂</text>
+
+      {/* Entry annotation */}
+      <line x1="400" y1="140" x2="310" y2="140" stroke={COLORS.longRun} strokeWidth="2" />
+      <polygon points="310,140 320,135 320,145" fill={COLORS.longRun} />
+      <text x="355" y="128" fill={COLORS.longRun} fontSize="11" fontWeight="700" textAnchor="middle">New firms enter</text>
+      <text x="355" y="158" fill={COLORS.longRun} fontSize="11" fontWeight="700" textAnchor="middle">→ D shifts left</text>
+
+      {/* Excess capacity arrow Q₂ → AC min (≈315) */}
+      <line x1={Q2_X} y1="418" x2="315" y2="418" stroke={COLORS.danger} strokeWidth="1.5" />
+      <polygon points={`${Q2_X},418 ${Q2_X + 6},414 ${Q2_X + 6},422`} fill={COLORS.danger} />
+      <polygon points="315,418 309,414 309,422" fill={COLORS.danger} />
+      <text x={(Q2_X + 315) / 2} y="412" fill={COLORS.danger} fontSize="9" fontWeight="700" textAnchor="middle">Excess capacity</text>
+
+      <circle cx="315" cy="332" r="3" fill={COLORS.averageCost} />
+      <text x="323" y="336" fill={COLORS.averageCost} fontSize="9" fontStyle="italic">AC min</text>
+
+      <text x="85" y="347" fill={COLORS.averageCost} fontSize="9" fontStyle="italic">AR tangent to AC</text>
+      <text x="85" y="359" fill={COLORS.averageCost} fontSize="9" fontStyle="italic">→ zero supernormal profit</text>
+    </g>
+  );
+}
 
 export default function MonopolisticCompDiagram() {
-  const [longRun, setLongRun] = useState(true);
+  const [mode, setMode] = useState<Mode>("long-run");
+  const longRun = mode === "long-run";
 
   return (
     <div style={{ width: "100%" }}>
@@ -78,29 +200,34 @@ export default function MonopolisticCompDiagram() {
           >
             {longRun
               ? "Long run → entry erodes profit → AR tangent to AC → normal profit"
-              : "Short run → MR = MC → supernormal profit (same diagram as monopoly)"}
+              : "Short run → MR = MC → P > AC → supernormal profit"}
           </div>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <span
-            onClick={() => setLongRun(false)}
+          <button
+            type="button"
+            onClick={() => setMode("short-run")}
             style={{
               fontSize: "12px",
               fontWeight: 600,
               cursor: "pointer",
               color: !longRun ? COLORS.shortRun : COLORS.text,
               userSelect: "none",
+              background: "transparent",
+              border: "none",
+              padding: 0,
             }}
           >
             Short run
-          </span>
+          </button>
 
           <button
             type="button"
-            onClick={() => setLongRun((prev) => !prev)}
+            onClick={() => setMode(longRun ? "short-run" : "long-run")}
             aria-label="Toggle short run and long run"
-            aria-pressed={longRun}
+            role="switch"
+            aria-checked={longRun}
             style={{
               position: "relative",
               width: "48px",
@@ -111,6 +238,7 @@ export default function MonopolisticCompDiagram() {
               backgroundColor: longRun ? COLORS.accent : COLORS.toggleOff,
               transition: "background-color 0.3s, border-color 0.3s",
               flexShrink: 0,
+              padding: 0,
             }}
           >
             <div
@@ -128,22 +256,27 @@ export default function MonopolisticCompDiagram() {
             />
           </button>
 
-          <span
-            onClick={() => setLongRun(true)}
+          <button
+            type="button"
+            onClick={() => setMode("long-run")}
             style={{
               fontSize: "12px",
               fontWeight: 600,
               cursor: "pointer",
               color: longRun ? COLORS.longRun : COLORS.text,
               userSelect: "none",
+              background: "transparent",
+              border: "none",
+              padding: 0,
             }}
           >
             Long run
-          </span>
+          </button>
         </div>
       </div>
 
       <svg
+        key={mode}
         viewBox="0 0 620 480"
         xmlns="http://www.w3.org/2000/svg"
         style={{
@@ -152,6 +285,7 @@ export default function MonopolisticCompDiagram() {
           backgroundColor: COLORS.panel,
           borderRadius: "8px",
           border: `1px solid ${COLORS.border}`,
+          transition: "opacity 0.3s",
         }}
       >
         <line x1="70" y1="40" x2="70" y2="430" stroke={COLORS.axis} strokeWidth="1.5" />
@@ -165,85 +299,14 @@ export default function MonopolisticCompDiagram() {
           Quantity (Q)
         </text>
 
+        {/* Shared cost curves */}
         <path d={SHARED_PATHS.mc} fill="none" stroke={COLORS.marginalCost} strokeWidth="2.8" strokeLinecap="round" />
         <text x="390" y="218" fill={COLORS.marginalCost} fontSize="14" fontWeight="700">MC</text>
 
         <path d={SHARED_PATHS.ac} fill="none" stroke={COLORS.averageCost} strokeWidth="2.8" strokeLinecap="round" />
         <text x="500" y="232" fill={COLORS.averageCost} fontSize="14" fontWeight="700">AC</text>
 
-        {!longRun && (
-          <g>
-            <path d={SR_PATHS.ar} fill="none" stroke={COLORS.shortRun} strokeWidth="2.5" />
-            <text x="530" y="382" fill={COLORS.shortRun} fontSize="12" fontWeight="700">AR = D</text>
-
-            <path d={SR_PATHS.mr} fill="none" stroke={COLORS.shortRun} strokeWidth="2" strokeDasharray="8 5" />
-            <text x="285" y="378" fill={COLORS.shortRun} fontSize="12" fontWeight="700">MR</text>
-
-            <rect x="70" y="217" width="216" height="114" fill={COLORS.profitFill} stroke={COLORS.averageCost} strokeWidth="1.5" strokeDasharray="4 2" />
-            <text x="178" y="268" fill={COLORS.profitText} fontSize="11" fontWeight="700" textAnchor="middle">Supernormal</text>
-            <text x="178" y="282" fill={COLORS.profitText} fontSize="11" fontWeight="700" textAnchor="middle">profit</text>
-
-            <circle cx="286" cy="355" r="7" fill="none" stroke={COLORS.marginalCost} strokeWidth="2.5" />
-            <circle cx="286" cy="355" r="2.5" fill={COLORS.marginalCost} />
-
-            <rect x="296" y="337" width="82" height="28" rx="4" fill={COLORS.surface} stroke={COLORS.border} strokeWidth="0.8" />
-            <text x="337" y="349" fill={COLORS.textStrong} fontSize="9" fontWeight="600" textAnchor="middle">Profit max</text>
-            <text x="337" y="360" fill={COLORS.text} fontSize="8" textAnchor="middle">(MR = MC)</text>
-
-            <circle cx="286" cy="217" r="6" fill="none" stroke={COLORS.shortRun} strokeWidth="2" />
-            <circle cx="286" cy="217" r="2" fill={COLORS.shortRun} />
-
-            <line x1="70" y1="217" x2="286" y2="217" stroke={COLORS.shortRun} strokeWidth="1" strokeDasharray="4 3" />
-            <line x1="286" y1="217" x2="286" y2="430" stroke={COLORS.averageCost} strokeWidth="1" strokeDasharray="4 3" />
-            <line x1="70" y1="331" x2="286" y2="331" stroke={COLORS.averageCost} strokeWidth="1" strokeDasharray="4 3" />
-
-            <text x="60" y="221" fill={COLORS.shortRun} fontSize="12" fontWeight="700" textAnchor="end">P₁</text>
-            <text x="60" y="335" fill={COLORS.averageCost} fontSize="12" fontWeight="700" textAnchor="end">AC₁</text>
-            <text x="286" y="446" fill={COLORS.averageCost} fontSize="12" fontWeight="700" textAnchor="middle">Q₁</text>
-          </g>
-        )}
-
-        {longRun && (
-          <g>
-            <path d={SR_PATHS.ar} fill="none" stroke={COLORS.shortRun} strokeWidth="1" opacity="0.15" />
-            <text x="530" y="370" fill={COLORS.shortRun} fontSize="9" opacity="0.3" fontStyle="italic">D₁</text>
-
-            <path d={LR_PATHS.ar} fill="none" stroke={COLORS.shortRun} strokeWidth="2.5" />
-            <text x="530" y="398" fill={COLORS.shortRun} fontSize="12" fontWeight="700">AR₂ = D₂</text>
-
-            <path d={LR_PATHS.mr} fill="none" stroke={COLORS.shortRun} strokeWidth="2" strokeDasharray="8 5" />
-            <text x="370" y="445" fill={COLORS.shortRun} fontSize="12" fontWeight="700">MR₂</text>
-
-            <circle cx="266" cy="327" r="8" fill="none" stroke={COLORS.averageCost} strokeWidth="2.5" />
-            <circle cx="266" cy="327" r="3" fill={COLORS.averageCost} />
-
-            <rect x="280" y="280" width="135" height="38" rx="5" fill={COLORS.surface} stroke={COLORS.border} strokeWidth="0.8" />
-            <text x="348" y="296" fill={COLORS.textStrong} fontSize="11" fontWeight="700" textAnchor="middle">Normal profit</text>
-            <text x="348" y="310" fill={COLORS.text} fontSize="9" textAnchor="middle">(P = AC at Q₂)</text>
-
-            <line x1="70" y1="327" x2="266" y2="327" stroke={COLORS.shortRun} strokeWidth="1" strokeDasharray="4 3" />
-            <line x1="266" y1="327" x2="266" y2="430" stroke={COLORS.averageCost} strokeWidth="1" strokeDasharray="4 3" />
-
-            <text x="60" y="331" fill={COLORS.shortRun} fontSize="12" fontWeight="700" textAnchor="end">P₂</text>
-            <text x="266" y="446" fill={COLORS.averageCost} fontSize="12" fontWeight="700" textAnchor="middle">Q₂</text>
-
-            <line x1="400" y1="140" x2="310" y2="140" stroke={COLORS.longRun} strokeWidth="2" />
-            <polygon points="310,140 320,135 320,145" fill={COLORS.longRun} />
-            <text x="355" y="128" fill={COLORS.longRun} fontSize="11" fontWeight="700" textAnchor="middle">New firms enter</text>
-            <text x="355" y="158" fill={COLORS.longRun} fontSize="11" fontWeight="700" textAnchor="middle">→ D shifts left</text>
-
-            <line x1="266" y1="418" x2="315" y2="418" stroke={COLORS.danger} strokeWidth="1.5" />
-            <polygon points="266,418 272,414 272,422" fill={COLORS.danger} />
-            <polygon points="315,418 309,414 309,422" fill={COLORS.danger} />
-            <text x="290" y="412" fill={COLORS.danger} fontSize="9" fontWeight="700" textAnchor="middle">Excess capacity</text>
-
-            <circle cx="315" cy="332" r="3" fill={COLORS.averageCost} />
-            <text x="323" y="336" fill={COLORS.averageCost} fontSize="9" fontStyle="italic">AC min</text>
-
-            <text x="85" y="347" fill={COLORS.averageCost} fontSize="9" fontStyle="italic">AR tangent to AC</text>
-            <text x="85" y="359" fill={COLORS.averageCost} fontSize="9" fontStyle="italic">→ zero supernormal profit</text>
-          </g>
-        )}
+        {longRun ? <LongRunSvg /> : <ShortRunSvg />}
       </svg>
 
       <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", marginTop: "8px", padding: "0 4px" }}>
