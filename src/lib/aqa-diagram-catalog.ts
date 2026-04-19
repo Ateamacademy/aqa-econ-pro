@@ -613,6 +613,40 @@ export function pickReferenceFigure(input: {
 }
 
 /**
+ * High-fidelity diagram rotation for Paper 3 MCQs (Q1–30).
+ *
+ * Six React-component diagrams, 5 MCQs each, deterministic on (set, qNumber):
+ *   1–5   Monopolistic Competition
+ *   6–10  J-Curve Effect
+ *   11–15 Specific vs Ad Valorem Tax
+ *   16–20 Lorenz Curve & Gini
+ *   21–25 PED Revenue Impact
+ *   26–30 Negative Externality (Palm Oil)
+ */
+const PAPER3_MCQ_ROTATION_IDS = [
+  "monopolistic-competition",
+  "j-curve-effect",
+  "specific-ad-valorem",
+  "lorenz-curve",
+  "ped-revenue-impact",
+  "neg-externality-palm-oil",
+];
+
+export function pickPaper3McqFigure(input: {
+  paperSetLabel?: string;
+  questionNumber?: string;
+}): { entry: AqaDiagramCatalogEntry; scenario: string } | null {
+  const qNum = parseInt((input.questionNumber ?? "1").replace(/\D/g, ""), 10) || 1;
+  const bucket = Math.min(5, Math.max(0, Math.floor((qNum - 1) / 5)));
+  const entry = getCatalogEntry(PAPER3_MCQ_ROTATION_IDS[bucket]);
+  if (!entry) return null;
+  if (entry.scenarios.length === 0) return { entry, scenario: entry.title };
+  const setSeed = (input.paperSetLabel ?? "A").toUpperCase().charCodeAt(0) - 65;
+  const idx = ((setSeed * 3 + qNum) % entry.scenarios.length + entry.scenarios.length) % entry.scenarios.length;
+  return { entry, scenario: entry.scenarios[idx] };
+}
+
+/**
  * Coverage report — used by the admin dashboard to surface gaps. Returns
  * the list of (spec area code, covered?) tuples.
  */
