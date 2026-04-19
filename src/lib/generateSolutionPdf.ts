@@ -1,4 +1,7 @@
 import jsPDF from "jspdf";
+import { createRoot } from "react-dom/client";
+import { createElement } from "react";
+import { flushSync } from "react-dom";
 import { renderPaperMarkdown } from "./generatePaperPdf";
 import { getCatalogEntry, AQA_DIAGRAM_CATALOG } from "./aqa-diagram-catalog";
 
@@ -92,42 +95,104 @@ function stripDiagramPlaceholders(text: string): string {
     .replace(/\n{3,}/g, "\n\n");
 }
 
-async function rasteriseSvgToPng(svgPath: string, targetWidth = 900): Promise<string | null> {
+/** Load any image (svg/png/jpg) into an HTMLImageElement. */
+async function loadImageFromUrl(url: string): Promise<HTMLImageElement> {
+  return new Promise((resolve, reject) => {
+    const i = new Image();
+    i.crossOrigin = "anonymous";
+    i.onload = () => resolve(i);
+    i.onerror = (e) => reject(e);
+    i.src = url;
+  });
+}
+
+function imageToPngDataUrl(img: HTMLImageElement, targetWidth = 900): string | null {
+  const ratio = img.height / img.width || 0.7;
+  const w = targetWidth;
+  const h = Math.round(w * ratio);
+  const canvas = document.createElement("canvas");
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return null;
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, w, h);
+  ctx.drawImage(img, 0, 0, w, h);
+  return canvas.toDataURL("image/png");
+}
+
+async function rasteriseAssetToPng(assetPath: string, targetWidth = 900): Promise<string | null> {
   try {
-    const res = await fetch(svgPath);
-    if (!res.ok) return null;
-    let svgText = await res.text();
-    // Force a white background for print-safety.
+    const lower = assetPath.toLowerCase();
+    const isSvg = lower.endsWith(".svg") || lower.includes(".svg?");
+    if (isSvg) {
+      const res = await fetch(assetPath);
+      if (!res.ok) return null;
+      let svgText = await res.text();
+      if (!/background/i.test(svgText)) {
+        svgText = svgText.replace(/<svg(\s)/i, '<svg style="background:#ffffff"$1');
+      }
+      const blob = new Blob([svgText], { type: "image/svg+xml;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      try {
+        const img = await loadImageFromUrl(url);
+        return imageToPngDataUrl(img, targetWidth);
+      } finally {
+        URL.revokeObjectURL(url);
+      }
+    }
+    // Raster (png/jpg/webp): load directly.
+    const img = await loadImageFromUrl(assetPath);
+    return imageToPngDataUrl(img, targetWidth);
+  } catch (err) {
+    if (import.meta.env.DEV) console.warn("[generateSolutionPdf] asset rasterise failed", assetPath, err);
+    return null;
+  }
+}
+
+/** Render a React diagram component off-screen, serialise its <svg>, rasterise to PNG. */
+async function rasteriseReactDiagramToPng(
+  Component: React.ComponentType,
+  targetWidth = 900,
+): Promise<string | null> {
+  const host = document.createElement("div");
+  host.style.position = "fixed";
+  host.style.left = "-99999px";
+  host.style.top = "0";
+  host.style.width = "900px";
+  host.style.background = "#ffffff";
+  host.style.pointerEvents = "none";
+  document.body.appendChild(host);
+  const root = createRoot(host);
+  try {
+    flushSync(() => {
+      root.render(createElement(Component));
+    });
+    // Give layout a tick (fonts, etc.)
+    await new Promise((r) => requestAnimationFrame(() => r(null)));
+    const svg = host.querySelector("svg");
+    if (!svg) return null;
+    // Ensure xmlns
+    if (!svg.getAttribute("xmlns")) svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    const serialiser = new XMLSerializer();
+    let svgText = serialiser.serializeToString(svg);
     if (!/background/i.test(svgText)) {
       svgText = svgText.replace(/<svg(\s)/i, '<svg style="background:#ffffff"$1');
     }
     const blob = new Blob([svgText], { type: "image/svg+xml;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     try {
-      const img = await new Promise<HTMLImageElement>((resolve, reject) => {
-        const i = new Image();
-        i.onload = () => resolve(i);
-        i.onerror = (e) => reject(e);
-        i.src = url;
-      });
-      const ratio = img.height / img.width || 0.7;
-      const w = targetWidth;
-      const h = Math.round(w * ratio);
-      const canvas = document.createElement("canvas");
-      canvas.width = w;
-      canvas.height = h;
-      const ctx = canvas.getContext("2d");
-      if (!ctx) return null;
-      ctx.fillStyle = "#ffffff";
-      ctx.fillRect(0, 0, w, h);
-      ctx.drawImage(img, 0, 0, w, h);
-      return canvas.toDataURL("image/png");
+      const img = await loadImageFromUrl(url);
+      return imageToPngDataUrl(img, targetWidth);
     } finally {
       URL.revokeObjectURL(url);
     }
   } catch (err) {
-    if (import.meta.env.DEV) console.warn("[generateSolutionPdf] svg rasterise failed", svgPath, err);
+    if (import.meta.env.DEV) console.warn("[generateSolutionPdf] react diagram rasterise failed", err);
     return null;
+  } finally {
+    try { root.unmount(); } catch {}
+    try { document.body.removeChild(host); } catch {}
   }
 }
 
@@ -153,14 +218,22 @@ async function resolveEntryDiagrams(entry: SolutionEntry): Promise<ResolvedDiagr
   for (const id of ids) {
     const cat = getCatalogEntry(id);
     if (!cat) continue;
-    const png = await rasteriseSvgToPng(cat.svgPath, 900);
+    // Prefer the high-fidelity React component when present (matches on-screen),
+    // fall back to the catalog asset path (.svg / .png).
+    let png: string | null = null;
+    if (cat.Component) {
+      png = await rasteriseReactDiagramToPng(cat.Component, 900);
+    }
+    if (!png) {
+      png = await rasteriseAssetToPng(cat.svgPath, 900);
+    }
     if (!png) continue;
     // Read image dims from a temp <img> for aspect ratio
     const dims = await new Promise<{ w: number; h: number }>((resolve) => {
       const img = new Image();
       img.onload = () => resolve({ w: img.width, h: img.height });
       img.onerror = () => resolve({ w: 900, h: 600 });
-      img.src = png;
+      img.src = png!;
     });
     out.push({
       catalogId: id,
