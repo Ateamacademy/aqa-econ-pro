@@ -19,20 +19,19 @@ const COLORS = {
 
 export function RunToggle({ mode, onChange }: RunToggleProps) {
   const isLongRun = mode === "long-run";
-
-  const handleToggle = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    event.stopPropagation();
+  const handleToggle = React.useCallback(() => {
     onChange(isLongRun ? "short-run" : "long-run");
-  };
+  }, [isLongRun, onChange]);
 
-  const handleSetMode = (next: RunMode) => {
-    return (event: React.MouseEvent<HTMLButtonElement>) => {
-      event.preventDefault();
-      event.stopPropagation();
-      onChange(next);
-    };
-  };
+  const handleSetShortRun = React.useCallback(() => {
+    if (!isLongRun) return;
+    onChange("short-run");
+  }, [isLongRun, onChange]);
+
+  const handleSetLongRun = React.useCallback(() => {
+    if (isLongRun) return;
+    onChange("long-run");
+  }, [isLongRun, onChange]);
 
   return (
     <div
@@ -41,7 +40,7 @@ export function RunToggle({ mode, onChange }: RunToggleProps) {
     >
       <button
         type="button"
-        onClick={handleSetMode("short-run")}
+        onClick={handleSetShortRun}
         className="text-sm transition-colors"
         style={{
           pointerEvents: "auto",
@@ -89,7 +88,7 @@ export function RunToggle({ mode, onChange }: RunToggleProps) {
 
       <button
         type="button"
-        onClick={handleSetMode("long-run")}
+        onClick={handleSetLongRun}
         className="text-sm transition-colors"
         style={{
           pointerEvents: "auto",
