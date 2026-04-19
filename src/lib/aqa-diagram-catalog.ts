@@ -26,6 +26,12 @@
  */
 import { EconDiagramTemplate, resolveDiagramType, type DiagramType as LibraryDiagramType } from "@/components/revision/EconDiagramLibrary";
 import type { ComponentType } from "react";
+import MonopolisticCompDiagram from "@/components/MonopolisticCompDiagram";
+import EconJCurveEffect from "@/components/EconJCurveEffect";
+import SpecificAdValoremDiagram from "@/components/SpecificAdValoremDiagram";
+import LorenzCurveDiagram from "@/components/diagrams/LorenzCurveDiagram";
+import PEDRevenueImpact from "@/components/PEDRevenueImpact";
+import NegativeExternalityPalmOil from "@/components/NegativeExternalityPalmOil";
 import type { DiagramType } from "./aqa-diagram-rubric";
 
 export type DiagramMarkingTier = "macro" | "micro";
@@ -37,6 +43,8 @@ export interface AqaDiagramCatalogEntry {
   title: string;
   /** Path under /public — fetched & inlined at render time. */
   svgPath: string;
+  /** Optional React component override — when present, used instead of fetching `svgPath`. */
+  Component?: ComponentType;
   /** Optional React component name for high-fidelity upgrade. */
   componentName?: string;
   /** Macro vs micro — determines axis-label convention. */
@@ -54,7 +62,6 @@ export interface AqaDiagramCatalogEntry {
 }
 
 export interface DiagramCatalogComponentEntry extends AqaDiagramCatalogEntry {
-  Component?: ComponentType<{ scenario?: string; theme?: "dark" | "light"; className?: string }>;
   sourceDiagramType?: LibraryDiagramType;
 }
 
