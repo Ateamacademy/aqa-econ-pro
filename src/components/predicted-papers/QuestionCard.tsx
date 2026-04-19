@@ -164,14 +164,16 @@ export function QuestionCard({
         </div>
 
         {/* AQA reference figure + drawing canvas — side-by-side on lg, stacked on mobile */}
-        {(aqaDiagramRequired || question.referenceFigureId || question.referenceFigureMissing) && !feedback && paperKey && (
-          <div className="mt-3 grid grid-cols-1 lg:grid-cols-2 gap-3">
-            <ReferenceFigurePanel
-              referenceFigureId={question.referenceFigureId}
-              scenario={question.referenceFigureScenario}
-              questionLabel={question.label}
-              paperKey={paperKey}
-            />
+        {(aqaDiagramRequired || question.referenceFigureId) && !feedback && paperKey && (
+          <div className={`mt-3 grid grid-cols-1 gap-3 ${question.referenceFigureId && aqaDiagramRequired ? "lg:grid-cols-2" : ""}`}>
+            {question.referenceFigureId && (
+              <ReferenceFigurePanel
+                referenceFigureId={question.referenceFigureId}
+                scenario={question.referenceFigureScenario}
+                questionLabel={question.label}
+                paperKey={paperKey}
+              />
+            )}
             {aqaDiagramRequired && (
               <PredictedPaperDiagramBlock
                 questionId={question.id}
