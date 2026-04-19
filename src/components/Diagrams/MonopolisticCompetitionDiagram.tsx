@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 
 import { MonopCompLongRunSvg } from "@/components/Diagrams/MonopCompLongRunSvg";
@@ -12,14 +12,38 @@ const captionStyle = {
   lineHeight: 1.6,
 };
 
+const STORAGE_KEY = "monopcomp-mode";
+
+function readStoredMode(): RunMode {
+  try {
+    const stored = sessionStorage.getItem(STORAGE_KEY);
+    if (stored === "short-run" || stored === "long-run") return stored;
+  } catch {
+    // sessionStorage unavailable
+  }
+  return "short-run";
+}
+
 export default function MonopolisticCompetitionDiagram() {
-  const [mode, setMode] = useState<RunMode>("short-run");
+  // Initialise from sessionStorage so re-mounts (e.g. when parent recreates
+  // inline component definitions) don't snap the toggle back to short-run.
+  const [mode, setModeState] = useState<RunMode>(readStoredMode);
+
+  const setMode = useCallback((next: RunMode) => {
+    setModeState(next);
+    try {
+      sessionStorage.setItem(STORAGE_KEY, next);
+    } catch {
+      // ignore
+    }
+  }, []);
+
   const location = useLocation();
   const isClickDebugEnabled = useMemo(
     () => new URLSearchParams(location.search).get("debug-clicks") === "1",
     [location.search],
   );
-  const ActiveDiagram = mode === "short-run" ? MonopCompShortRunSvg : MonopCompLongRunSvg;
+
   const caption =
     mode === "short-run"
       ? "Short run: the firm sets MC = MR at Q₁, charges P₁ from AR. Because P₁ > AC₁, the firm earns supernormal profit (shaded rectangle). This attracts entrants — switch to Long run."
@@ -29,14 +53,8 @@ export default function MonopolisticCompetitionDiagram() {
     if (!isClickDebugEnabled) return;
 
     const handler = (event: MouseEvent) => {
-      const path = event.composedPath();
       const target = event.target instanceof Element ? `${event.target.tagName}.${event.target.className}` : String(event.target);
-      const composedPath = path
-        .slice(0, 8)
-        .map((el) => (el instanceof Element ? `${el.tagName}.${el.className}` : String(el)))
-        .join(" -> ");
       console.log(`[Click debug] ${target}`);
-      console.log(`[Click debug path] ${composedPath}`);
     };
 
     document.addEventListener("click", handler, true);
@@ -53,8 +71,15 @@ export default function MonopolisticCompetitionDiagram() {
         <RunToggle mode={mode} onChange={setMode} />
       </div>
 
+      {/* Keep BOTH SVGs mounted; swap via display so toggling is instant
+          and never triggers a remount/repaint of the inactive variant. */}
       <div className="overflow-hidden rounded-xl border border-border bg-card/40" style={{ pointerEvents: "auto" }}>
-        <ActiveDiagram />
+        <div style={{ display: mode === "short-run" ? "block" : "none" }}>
+          <MonopCompShortRunSvg />
+        </div>
+        <div style={{ display: mode === "long-run" ? "block" : "none" }}>
+          <MonopCompLongRunSvg />
+        </div>
       </div>
 
       <div className="mt-4" style={captionStyle}>
