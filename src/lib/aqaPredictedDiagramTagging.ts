@@ -224,18 +224,27 @@ export function tagAqaQuestion(q: TaggerInput): AqaDiagramTag | null {
     referenceFigureMissing: false,
   });
 
-  // Paper 3 MCQs (Section A, Q1–30): attach a stimulus reference figure to
-  // every MCQ. The student doesn't draw — it's a read-only stimulus they
-  // reason from. `requiresDiagram` stays false so no canvas is shown.
+  // Paper 3 MCQs (Section A, Q1–30): attach a high-fidelity stimulus figure
+  // rotated across the 6 flagship diagrams (5 MCQs each), deterministic on
+  // (set, qNumber). The student doesn't draw — it's a read-only stimulus.
   if (q.isMcq) {
     if (q.paper !== 3) return null;
+    const pick = pickPaper3McqFigure({
+      paperSetLabel: q.setLabel,
+      questionNumber: q.number,
+    });
     const mcqBase: AqaDiagramTag = {
       requiresDiagram: false,
       optional: true,
       diagramType,
       rubric: buildRubric(diagramType, stem),
     };
-    return attachReferenceFigure(mcqBase, q);
+    if (!pick) return { ...mcqBase, referenceFigureMissing: true };
+    return {
+      ...mcqBase,
+      referenceFigureId: pick.entry.id,
+      referenceFigureScenario: pick.scenario,
+    };
   }
 
   if (q.paper === 1 || q.paper === 2) {
