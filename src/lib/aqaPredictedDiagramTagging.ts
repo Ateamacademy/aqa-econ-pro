@@ -26,7 +26,15 @@ import {
   defaultAdAsRubric,
   defaultSdRubric,
 } from "./aqa-diagram-rubric";
-import { pickReferenceFigure, pickPaper3McqFigure } from "./aqa-diagram-catalog";
+import { pickReferenceFigure } from "./aqa-diagram-catalog";
+
+/**
+ * Real AQA 7136/3 MCQ stems only carry a stimulus figure when the question
+ * itself names one ("Figure 1 shows…", "The diagram shows…", "The table shows…").
+ * Most MCQs are pure prose. We mirror that — no blanket figure rotation.
+ */
+const MCQ_EXPLICIT_STIMULUS_RE =
+  /\b(figure\s*\d+|the (diagram|figure|graph|chart|table) (shows|above|below)|shown (in|on) the (diagram|figure|graph|chart|table)|refer to (the|figure))\b/i;
 
 export interface AqaDiagramTag {
   requiresDiagram: boolean;
@@ -224,21 +232,28 @@ export function tagAqaQuestion(q: TaggerInput): AqaDiagramTag | null {
     referenceFigureMissing: false,
   });
 
-  // Paper 3 MCQs (Section A, Q1–30): attach a high-fidelity stimulus figure
-  // rotated across the 6 flagship diagrams (5 MCQs each), deterministic on
-  // (set, qNumber). The student doesn't draw — it's a read-only stimulus.
+  // Paper 3 MCQs (Section A, Q1–30): mirror real AQA 7136/3 — most MCQs are
+  // pure prose. A figure is only attached when (a) the stem explicitly names
+  // one ("Figure 1 shows…", "the table shows…") AND (b) the classifier
+  // resolved a concrete diagram family that we can supply a matching figure
+  // for. Otherwise: no figure (irrelevant rotated diagrams are worse than none).
   if (q.isMcq) {
     if (q.paper !== 3) return null;
-    const pick = pickPaper3McqFigure({
-      paperSetLabel: q.setLabel,
-      questionNumber: q.number,
-    });
     const mcqBase: AqaDiagramTag = {
       requiresDiagram: false,
       optional: true,
       diagramType,
       rubric: buildRubric(diagramType, stem),
     };
+    const stemReferencesFigure = MCQ_EXPLICIT_STIMULUS_RE.test(stem);
+    if (!stemReferencesFigure) return mcqBase;
+    // Stem cites a figure — try to pick one that matches the classified type.
+    const pick = pickReferenceFigure({
+      diagramType,
+      paperSetLabel: q.setLabel,
+      questionNumber: q.number,
+      hint: stem,
+    });
     if (!pick) return { ...mcqBase, referenceFigureMissing: true };
     return {
       ...mcqBase,
