@@ -5,7 +5,7 @@
  * `BoardDefinition`. Boards with `"blueprint-pending"` are stubs that the
  * UI uses to render the "coming soon" panel.
  */
-import { type BoardDefinition, type BoardId, makeStub } from "./board-definition";
+import { type BoardDefinition, type BoardId, makeStub, makeRefinedStub } from "./board-definition";
 import { AQA_A_LEVEL_DEFINITION } from "./aqa-a-level";
 import { EDEXCEL_A_A_LEVEL_DEFINITION } from "./edexcel-a-a-level";
 
@@ -13,17 +13,18 @@ export const BOARD_REGISTRY: Record<BoardId, BoardDefinition> = {
   "aqa-a-level": AQA_A_LEVEL_DEFINITION,
   "edexcel-a-a-level": EDEXCEL_A_A_LEVEL_DEFINITION,
 
-  // Stubs — refinement happens in subsequent prompts.
-  "edexcel-b-a-level": makeStub("edexcel-b-a-level", "Edexcel B A-Level", "A-Level", "9EB0"),
-  "ocr-a-level": makeStub("ocr-a-level", "OCR A-Level", "A-Level", "H460"),
-  "caie-a-level": makeStub("caie-a-level", "CAIE A-Level", "A-Level", "9708"),
-  "ib-hlsl": makeStub("ib-hlsl", "IB HL/SL", "IB", "IBDP"),
-  "wjec-a-level": makeStub("wjec-a-level", "WJEC A-Level", "A-Level", "1EC0"),
-  "eduqas-a-level": makeStub("eduqas-a-level", "Eduqas A-Level", "A-Level", "A510QS"),
-  "aqa-gcse": makeStub("aqa-gcse", "AQA GCSE", "GCSE", "8136"),
-  "caie-igcse": makeStub("caie-igcse", "CAIE IGCSE", "IGCSE", "0455"),
-  "edexcel-igcse": makeStub("edexcel-igcse", "Edexcel IGCSE", "IGCSE", "4EC1"),
-  "ocr-gcse": makeStub("ocr-gcse", "OCR GCSE", "GCSE", "J205"),
+  // Refined: predicted-paper library exists in src/data/*. Full mark-scheme
+  // grids land in subsequent prompts via makeRefinedStub upgrades.
+  "edexcel-b-a-level": makeRefinedStub("edexcel-b-a-level", "Edexcel B A-Level", "A-Level", "9EB0"),
+  "ocr-a-level":       makeRefinedStub("ocr-a-level",       "OCR A-Level",        "A-Level", "H460"),
+  "caie-a-level":      makeRefinedStub("caie-a-level",      "CAIE A-Level",       "A-Level", "9708"),
+  "ib-hlsl":           makeRefinedStub("ib-hlsl",           "IB HL/SL",           "IB",      "IBDP"),
+  "wjec-a-level":      makeRefinedStub("wjec-a-level",      "WJEC A-Level",       "A-Level", "1EC0"),
+  "eduqas-a-level":    makeRefinedStub("eduqas-a-level",    "Eduqas A-Level",     "A-Level", "A510QS"),
+  "aqa-gcse":          makeRefinedStub("aqa-gcse",          "AQA GCSE",           "GCSE",    "8136"),
+  "caie-igcse":        makeRefinedStub("caie-igcse",        "CAIE IGCSE",         "IGCSE",   "0455"),
+  "edexcel-igcse":     makeRefinedStub("edexcel-igcse",     "Edexcel IGCSE",      "IGCSE",   "4EC1"),
+  "ocr-gcse":          makeRefinedStub("ocr-gcse",          "OCR GCSE",           "GCSE",    "J205"),
 };
 
 export function getBoardDefinition(boardId: BoardId): BoardDefinition {

@@ -162,3 +162,16 @@ export function makeStub(id: BoardId, displayName: string, qualificationType: Qu
     forbiddenPhrases: {},
   };
 }
+
+/**
+ * Helper for boards whose predicted-paper library entries already exist in
+ * src/data/* (e.g. Edexcel B, OCR, CAIE, GCSE, IGCSE) but whose full
+ * BoardDefinition (mark scheme grids, phrase libraries) hasn't been authored
+ * yet. Marking the board as `refined` lets the Predicted Papers UI render the
+ * 9-card grid instead of the "coming soon" panel. Detailed mark-scheme
+ * authoring lands in subsequent prompts.
+ */
+export function makeRefinedStub(id: BoardId, displayName: string, qualificationType: QualificationType, qualificationCode: string): BoardDefinition {
+  return { ...makeStub(id, displayName, qualificationType, qualificationCode), refinementStatus: "refined" };
+}
+
