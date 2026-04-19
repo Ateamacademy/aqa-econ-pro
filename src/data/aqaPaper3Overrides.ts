@@ -62,12 +62,6 @@ function bank(setSeed: string): McqSpec[] {
       justification: "Profit is maximised at the output where MC=MR.",
     },
     {
-      stem: "Which one of the following is a characteristic of a perfectly competitive market?",
-      options: ["A small number of large firms", "Barriers to entry", "Homogeneous products", "Differentiated products"],
-      answer: "C",
-      justification: "Perfect competition assumes identical (homogeneous) products.",
-    },
-    {
       figure: "**Figure 2:** A supply and demand diagram showing an indirect tax shifting S to S+tax. Consumer burden is the rectangle between P₁ and the new consumer price; producer burden is between P₁ and the new producer price.",
       figureKey: "indirect-tax.svg",
       figureCaption: "Figure 2 — Incidence of an indirect tax",
@@ -75,18 +69,6 @@ function bank(setSeed: string): McqSpec[] {
       options: ["Producers", "Consumers", "The government", "Workers"],
       answer: "B",
       justification: "When demand is relatively inelastic, the tax incidence falls more on consumers.",
-    },
-    {
-      stem: "A negative production externality results in:",
-      options: ["MSC < MPC", "MSB > MPB", "MSC > MPC", "MSB < MPB"],
-      answer: "C",
-      justification: "Negative production externalities mean social cost exceeds private cost.",
-    },
-    {
-      stem: "A subsidy on a merit good is most likely to:",
-      options: ["Reduce consumption", "Increase consumption", "Have no effect", "Raise the price to consumers"],
-      answer: "B",
-      justification: "A subsidy lowers price and increases quantity demanded of a merit good.",
     },
     {
       stem: "If the marginal propensity to consume is 0.75, the value of the multiplier is:",
@@ -120,18 +102,6 @@ function bank(setSeed: string): McqSpec[] {
       options: ["Reduce the price of imports", "Reduce export competitiveness", "Improve the trade balance over time (subject to Marshall–Lerner)", "Reduce imported inflation"],
       answer: "C",
       justification: "Depreciation tends to improve the trade balance over time if Marshall–Lerner holds.",
-    },
-    {
-      stem: "Which one of the following is a supply-side policy?",
-      options: ["A cut in interest rates", "Increased government spending on infrastructure and education", "A rise in income tax", "Quantitative easing"],
-      answer: "B",
-      justification: "Investment in infrastructure and skills raises productive capacity (LRAS).",
-    },
-    {
-      stem: "An increase in income tax is most likely to cause:",
-      options: ["A rise in disposable income", "A rise in consumer spending", "A fall in disposable income and consumer spending", "A rise in aggregate demand"],
-      answer: "C",
-      justification: "Higher income tax reduces disposable income and consumer spending.",
     },
     {
       stem: "Quantitative easing is best described as:",
