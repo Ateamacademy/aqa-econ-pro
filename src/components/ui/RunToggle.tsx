@@ -23,17 +23,13 @@ export function RunToggle({ mode, onChange }: RunToggleProps) {
   const handleToggle = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     event.stopPropagation();
-    console.log("[RunToggle] clicked — current mode:", mode);
-    const next = isLongRun ? "short-run" : "long-run";
-    console.log("[RunToggle] switching to:", next);
-    onChange(next);
+    onChange(isLongRun ? "short-run" : "long-run");
   };
 
   const handleSetMode =
-    (next: RunMode, label: string) => (event: React.MouseEvent<HTMLButtonElement>) => {
+    (next: RunMode) => (event: React.MouseEvent<HTMLButtonElement>) => {
       event.preventDefault();
       event.stopPropagation();
-      console.log(`[RunToggle] ${label} label clicked`);
       onChange(next);
     };
 
