@@ -16,13 +16,19 @@ export type DiagramType =
   | "supplyDemand"
   | "ppf"
   | "monopoly"
+  | "monopolisticComp"
   | "perfectComp"
   | "monopsony"
   | "labour"
   | "externality"
+  | "negExtPalmOil"
   | "indirectTax"
+  | "specificAdValorem"
   | "subsidy"
   | "priceControl"
+  | "pedRevenue"
+  | "lorenz"
+  | "jCurve"
   | "other";
 
 /** A single checkable component in a diagram rubric. */

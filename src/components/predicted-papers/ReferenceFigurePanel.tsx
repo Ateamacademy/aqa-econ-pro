@@ -34,11 +34,12 @@ export function ReferenceFigurePanel({
   paperKey,
 }: Props) {
   const entry = referenceFigureId ? getCatalogEntry(referenceFigureId) : undefined;
+  const ComponentOverride = entry?.Component;
   const [svg, setSvg] = useState<string | null>(null);
   const [err, setErr] = useState(false);
 
   useEffect(() => {
-    if (!entry) return;
+    if (!entry || ComponentOverride) return;
     let cancel = false;
     setErr(false);
     setSvg(null);
@@ -65,7 +66,7 @@ export function ReferenceFigurePanel({
     return () => {
       cancel = true;
     };
-  }, [entry, scenario]);
+  }, [entry, scenario, ComponentOverride]);
 
   if (!referenceFigureId || !entry) {
     return (
@@ -125,7 +126,11 @@ export function ReferenceFigurePanel({
       </div>
 
       <div className="p-3 bg-white" role="img" aria-label={entry.description}>
-        {svg ? (
+        {ComponentOverride ? (
+          <div className="w-full [&>div]:w-full [&_svg]:w-full [&_svg]:h-auto [&_svg]:max-h-[420px] pointer-events-none select-none">
+            <ComponentOverride />
+          </div>
+        ) : svg ? (
           <div
             className="w-full [&>svg]:w-full [&>svg]:h-auto [&>svg]:max-h-[360px] pointer-events-none select-none"
             dangerouslySetInnerHTML={{ __html: svg }}
