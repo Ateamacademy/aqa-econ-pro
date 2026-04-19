@@ -35,6 +35,8 @@ import { generatePaperPdf } from "@/lib/generatePaperPdf";
 import { generateSolutionPdf, type SolutionEntry } from "@/lib/generateSolutionPdf";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { ReportButton } from "@/components/report/ReportButton";
+import { ComingSoonBoard } from "@/components/predicted-papers/ComingSoonBoard";
+import { subjectToBoardId, getBoardDefinition } from "@/lib/boards/registry";
 import { ExamTimer } from "@/components/predicted-papers/ExamTimer";
 import { ExamResultsSummary } from "@/components/predicted-papers/ExamResultsSummary";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
