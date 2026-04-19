@@ -53,7 +53,6 @@ Using the extracts and your own knowledge, evaluate the view that high market co
 
 ## Section B: Essay (40 marks)
 
-Answer BOTH Question 5 AND Question 6.
 
 **Short extract:**
 Price discrimination — charging different prices to different consumers for essentially the same product — is widespread in modern retail, transport and digital markets. Whether it raises or lowers welfare is contested.
@@ -117,7 +116,6 @@ Using the extracts and your own knowledge, evaluate the view that supply-side po
 
 ## Section B: Essay (40 marks)
 
-Answer BOTH Question 5 AND Question 6.
 
 **Short extract:**
 Long-run growth depends on the quality and quantity of factor inputs and on technological progress. Whether market-oriented or interventionist supply-side policy works best is debated.
@@ -433,7 +431,6 @@ Using the extracts and your own knowledge, evaluate the view that a high Nationa
 
 ## Section B: Essay (40 marks)
 
-Answer BOTH Question 5 AND Question 6.
 
 **Short extract:**
 Labour markets often deviate from the perfectly competitive model. Trade unions, monopsony employers and skill mismatches all influence wage and employment outcomes.
@@ -497,7 +494,6 @@ Using the extracts and your own knowledge, evaluate the view that the Phillips-c
 
 ## Section B: Essay (40 marks)
 
-Answer BOTH Question 5 AND Question 6.
 
 **Short extract:**
 Unemployment imposes large social and economic costs. Policy responses range from active labour-market programmes to demand-management.
@@ -813,7 +809,6 @@ Using the extracts and your own knowledge, evaluate the view that minimum pricin
 
 ## Section B: Essay (40 marks)
 
-Answer BOTH Question 5 AND Question 6.
 
 **Short extract:**
 Demerit goods generate large negative externalities of consumption and information failures. Policy responses range from taxation and regulation to behavioural nudges.
@@ -876,7 +871,6 @@ Using the extracts and your own knowledge, evaluate the view that increased fore
 
 ## Section B: Essay (40 marks)
 
-Answer BOTH Question 5 AND Question 6.
 
 **Short extract:**
 Strategies for economic development range from market-led approaches (trade liberalisation, FDI) to interventionist approaches (industrial policy, state-led infrastructure investment).
