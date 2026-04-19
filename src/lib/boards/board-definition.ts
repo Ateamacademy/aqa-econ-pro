@@ -61,13 +61,13 @@ export type MarkSchemeConvention = {
 };
 
 export type PhraseLibrary = {
-  twoMarkCalc: string[];
-  shortExplain: string[];
-  diagramExplain: string[];
-  extendedEvaluate: string[];
-  mcqStems: string[];
-  essayExplain: string[];
-  essayEvaluate: string[];
+  twoMarkCalc: readonly string[];
+  shortExplain: readonly string[];
+  diagramExplain: readonly string[];
+  extendedEvaluate: readonly string[];
+  mcqStems: readonly string[];
+  essayExplain: readonly string[];
+  essayEvaluate: readonly string[];
 };
 
 export type GradeBoundarySet = {
