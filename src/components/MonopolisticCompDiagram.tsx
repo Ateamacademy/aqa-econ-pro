@@ -162,7 +162,7 @@ function LongRunSvg() {
 }
 
 export default function MonopolisticCompDiagram() {
-  const [mode, setMode] = useState<Mode>("long-run");
+  const [mode, setMode] = useState<Mode>("short-run");
   const longRun = mode === "long-run";
 
   return (
