@@ -12,7 +12,6 @@
  * Admin gate: email matches the project admin.
  */
 import { useEffect, useMemo, useState } from "react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -74,11 +73,6 @@ export default function MarkingConventionVerification() {
 
   return (
     <div className="container mx-auto max-w-5xl px-4 py-8">
-      <Helmet>
-        <title>Marking Convention Verification | Admin</title>
-        <meta name="description" content="Admin tool to verify non-AQA board marking conventions before they reach production papers." />
-      </Helmet>
-
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">Marking convention verification</h1>
         <p className="mt-1 text-sm text-muted-foreground">
