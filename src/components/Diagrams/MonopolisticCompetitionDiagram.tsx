@@ -32,8 +32,6 @@ const MonopolisticCompetitionDiagram = forwardRef<HTMLDivElement>(function Monop
     return () => document.removeEventListener("click", handler, true);
   }, [location.search]);
 
-  console.log("[MonopCompDiagram] render — mode:", mode);
-
   return (
     <div ref={ref} className="w-full">
       <div className="mb-4 flex flex-wrap items-start justify-between gap-4">
@@ -48,11 +46,35 @@ const MonopolisticCompetitionDiagram = forwardRef<HTMLDivElement>(function Monop
       </div>
 
       <div
-        key={mode}
-        className="overflow-hidden rounded-xl border border-border bg-card/40 transition-opacity duration-300"
+        className="relative overflow-hidden rounded-xl border border-border bg-card/40"
         style={{ pointerEvents: "auto" }}
       >
-        {mode === "short-run" ? <MonopCompShortRunSvg /> : <MonopCompLongRunSvg />}
+        <div
+          className="transition-opacity duration-200"
+          style={{
+            opacity: mode === "short-run" ? 1 : 0,
+            pointerEvents: mode === "short-run" ? "auto" : "none",
+            position: mode === "short-run" ? "relative" : "absolute",
+            inset: mode === "short-run" ? undefined : 0,
+            visibility: mode === "short-run" ? "visible" : "hidden",
+          }}
+          aria-hidden={mode !== "short-run"}
+        >
+          <MonopCompShortRunSvg />
+        </div>
+        <div
+          className="transition-opacity duration-200"
+          style={{
+            opacity: mode === "long-run" ? 1 : 0,
+            pointerEvents: mode === "long-run" ? "auto" : "none",
+            position: mode === "long-run" ? "relative" : "absolute",
+            inset: mode === "long-run" ? undefined : 0,
+            visibility: mode === "long-run" ? "visible" : "hidden",
+          }}
+          aria-hidden={mode !== "long-run"}
+        >
+          <MonopCompLongRunSvg />
+        </div>
       </div>
 
       <div className="mt-4" style={captionStyle}>
