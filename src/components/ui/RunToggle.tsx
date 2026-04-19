@@ -26,12 +26,13 @@ export function RunToggle({ mode, onChange }: RunToggleProps) {
     onChange(isLongRun ? "short-run" : "long-run");
   };
 
-  const handleSetMode =
-    (next: RunMode) => (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSetMode = (next: RunMode) => {
+    return (event: React.MouseEvent<HTMLButtonElement>) => {
       event.preventDefault();
       event.stopPropagation();
       onChange(next);
     };
+  };
 
   return (
     <div
