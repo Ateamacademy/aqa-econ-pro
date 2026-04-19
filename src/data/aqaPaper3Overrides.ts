@@ -177,12 +177,6 @@ function bank(setSeed: string): McqSpec[] {
       justification: "Saving is income not spent on domestic output, hence a leakage.",
     },
     {
-      stem: "Which one of the following is a function of money?",
-      options: ["A factor of production", "A medium of exchange", "An indicator of consumer confidence", "A determinant of the multiplier"],
-      answer: "B",
-      justification: "Money serves as a medium of exchange (and store of value, unit of account).",
-    },
-    {
       stem: "Behavioural economics suggests that consumers are:",
       options: ["Always perfectly rational", "Subject to bounded rationality and behavioural biases", "Indifferent to framing effects", "Unaffected by social norms"],
       answer: "B",
