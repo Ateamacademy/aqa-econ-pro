@@ -20,95 +20,64 @@ const COLORS = {
 export function RunToggle({ mode, onChange }: RunToggleProps) {
   const isLongRun = mode === "long-run";
 
-  const handleToggle = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    event.stopPropagation();
-    console.log("[RunToggle] clicked — current mode:", mode);
-    const next = isLongRun ? "short-run" : "long-run";
-    console.log("[RunToggle] switching to:", next);
+  const handleSetMode = (next: RunMode, label: string) => {
+    console.log(`[RunToggle] ${label} selected`);
     onChange(next);
   };
 
-  const handleSetMode =
-    (next: RunMode, label: string) => (event: React.MouseEvent<HTMLButtonElement>) => {
-      event.preventDefault();
-      event.stopPropagation();
-      console.log(`[RunToggle] ${label} label clicked`);
-      onChange(next);
-    };
-
   return (
-    <div
-      className="inline-flex items-center gap-3"
-      style={{ pointerEvents: "auto", position: "relative", zIndex: 2 }}
+    <fieldset
+      aria-label="Select short run or long run"
+      className="inline-flex rounded-full border p-1"
+      style={{
+        pointerEvents: "auto",
+        position: "relative",
+        zIndex: 10,
+        borderColor: COLORS.trackBorder,
+        background: COLORS.trackOff,
+      }}
     >
-      <button
-        type="button"
-        onClick={handleSetMode("short-run", "Short run")}
-        className="text-sm transition-colors"
+      <legend className="sr-only">Run mode</legend>
+
+      <label
+        className="relative inline-flex cursor-pointer items-center rounded-full px-3 py-1.5 text-sm transition-colors"
         style={{
           pointerEvents: "auto",
-          cursor: "pointer",
           color: isLongRun ? COLORS.mutedText : COLORS.activeText,
           fontWeight: isLongRun ? 500 : 700,
-        }}
-        onMouseEnter={(event) => {
-          if (isLongRun) event.currentTarget.style.color = COLORS.mutedHover;
-        }}
-        onMouseLeave={(event) => {
-          if (isLongRun) event.currentTarget.style.color = COLORS.mutedText;
+          background: isLongRun ? "transparent" : COLORS.trackOn,
         }}
       >
-        Short run
-      </button>
-
-      <button
-        type="button"
-        onClick={handleToggle}
-        aria-label="Toggle short run and long run"
-        role="switch"
-        aria-checked={isLongRun}
-        className="relative inline-flex h-7 w-14 items-center rounded-full border transition-all duration-200"
-        style={{
-          pointerEvents: "auto",
-          cursor: "pointer",
-          background: isLongRun ? COLORS.trackOn : COLORS.trackOff,
-          borderColor: COLORS.trackBorder,
-          padding: 0,
-          position: "relative",
-        }}
-      >
-        <span
-          aria-hidden="true"
-          className="absolute h-5 w-5 rounded-full transition-all duration-200"
-          style={{
-            pointerEvents: "none",
-            background: COLORS.thumb,
-            left: isLongRun ? "calc(100% - 1.4rem)" : "0.15rem",
-            boxShadow: "0 1px 3px hsl(0 0% 0% / 0.28)",
-          }}
+        <input
+          type="radio"
+          name="monopolistic-run-mode"
+          value="short-run"
+          checked={!isLongRun}
+          onChange={() => handleSetMode("short-run", "Short run")}
+          className="sr-only"
         />
-      </button>
+        <span>Short run</span>
+      </label>
 
-      <button
-        type="button"
-        onClick={handleSetMode("long-run", "Long run")}
-        className="text-sm transition-colors"
+      <label
+        className="relative inline-flex cursor-pointer items-center rounded-full px-3 py-1.5 text-sm transition-colors"
         style={{
           pointerEvents: "auto",
-          cursor: "pointer",
           color: isLongRun ? COLORS.activeText : COLORS.mutedText,
           fontWeight: isLongRun ? 700 : 500,
-        }}
-        onMouseEnter={(event) => {
-          if (!isLongRun) event.currentTarget.style.color = COLORS.mutedHover;
-        }}
-        onMouseLeave={(event) => {
-          if (!isLongRun) event.currentTarget.style.color = COLORS.mutedText;
+          background: isLongRun ? COLORS.trackOn : "transparent",
         }}
       >
-        Long run
-      </button>
-    </div>
+        <input
+          type="radio"
+          name="monopolistic-run-mode"
+          value="long-run"
+          checked={isLongRun}
+          onChange={() => handleSetMode("long-run", "Long run")}
+          className="sr-only"
+        />
+        <span>Long run</span>
+      </label>
+    </fieldset>
   );
 }
