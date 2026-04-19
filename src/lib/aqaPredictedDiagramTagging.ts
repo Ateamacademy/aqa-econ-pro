@@ -26,7 +26,15 @@ import {
   defaultAdAsRubric,
   defaultSdRubric,
 } from "./aqa-diagram-rubric";
-import { pickReferenceFigure, pickPaper3McqFigure } from "./aqa-diagram-catalog";
+import { pickReferenceFigure } from "./aqa-diagram-catalog";
+
+/**
+ * Real AQA 7136/3 MCQ stems only carry a stimulus figure when the question
+ * itself names one ("Figure 1 shows…", "The diagram shows…", "The table shows…").
+ * Most MCQs are pure prose. We mirror that — no blanket figure rotation.
+ */
+const MCQ_EXPLICIT_STIMULUS_RE =
+  /\b(figure\s*\d+|the (diagram|figure|graph|chart|table) (shows|above|below)|shown (in|on) the (diagram|figure|graph|chart|table)|refer to (the|figure))\b/i;
 
 export interface AqaDiagramTag {
   requiresDiagram: boolean;
