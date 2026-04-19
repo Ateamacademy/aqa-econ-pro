@@ -3486,6 +3486,7 @@ import { cambridgePredictedPapers } from "./cambridgePredictedPapers";
 import { ocrPredictedPapers } from "./ocrPredictedPapers";
 import { gcsePredictedPapers } from "./gcsePredictedPapers";
 import { igcsePredictedPapers } from "./igcsePredictedPapers";
+import { multiBoardPredictedPapers } from "./multiBoardPredictedPapers";
 // economicsPredictedPapersExtra intentionally not spread — AQA Economics
 // predicted-paper library is locked to 9 papers (Paper 1/2/3 × Sets A/B/C).
-predictedPapersLibrary.push(...chemistryPredictedPapers, ...mathsPredictedPapersExtra, ...chemistryPredictedPapersExtra, ...edexcelAPredictedPapers, ...edexcelBPredictedPapers, ...cambridgePredictedPapers, ...ocrPredictedPapers, ...gcsePredictedPapers, ...igcsePredictedPapers);
+predictedPapersLibrary.push(...chemistryPredictedPapers, ...mathsPredictedPapersExtra, ...chemistryPredictedPapersExtra, ...edexcelAPredictedPapers, ...edexcelBPredictedPapers, ...cambridgePredictedPapers, ...ocrPredictedPapers, ...gcsePredictedPapers, ...igcsePredictedPapers, ...multiBoardPredictedPapers);
