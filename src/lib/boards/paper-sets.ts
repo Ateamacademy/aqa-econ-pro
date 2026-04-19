@@ -38,25 +38,36 @@ export const PAPER_SETS_REQUIREMENT: Record<BoardId, PaperSetsRequirement> = {
 export type IbVariant = "HL" | "SL";
 
 export const IB_PAPER_CODES: Record<IbVariant, string[]> = {
-  HL: ["paper-1", "paper-2", "paper-3"], // HL has 3 papers
-  SL: ["paper-1", "paper-2"],            // SL has only 2
+  HL: ["paper-1", "paper-2", "paper-3"],
+  SL: ["paper-1", "paper-2", "paper-3"],
 };
 
-/** Authoritative paper count per board, drawn from each board's published spec. */
+/**
+ * Authoritative paper count per board.
+ *
+ * Product rule: every refined board exposes exactly THREE papers
+ * (Paper 1, Paper 2, Paper 3) × THREE sets (A, B, C) = 9 papers total.
+ * This overrides natural spec counts (e.g. CAIE has 4, GCSE has 2) so the
+ * Predicted Papers library is consistent across every board.
+ */
 export const BOARD_PAPER_COUNT: Record<BoardId, number> = {
-  "aqa-a-level":       3, // 7136/1, /2, /3
-  "edexcel-a-a-level": 3, // 9EC0/01, /02, /03
-  "edexcel-b-a-level": 3, // 9EB0/01, /02, /03
-  "ocr-a-level":       3, // H460/01, /02, /03
-  "caie-a-level":      4, // 9708 has FOUR papers (AS+A2)
-  "ib-hlsl":           3, // HL (SL exposes 2 via tier selector)
+  "aqa-a-level":       3,
+  "edexcel-a-a-level": 3,
+  "edexcel-b-a-level": 3,
+  "ocr-a-level":       3,
+  "caie-a-level":      3,
+  "ib-hlsl":           3,
   "wjec-a-level":      3,
-  "eduqas-a-level":    3, // A520QS
-  "aqa-gcse":          2, // 8136
-  "caie-igcse":        2, // 0455
-  "edexcel-igcse":     2,
-  "ocr-gcse":          2, // J205
+  "eduqas-a-level":    3,
+  "aqa-gcse":          3,
+  "caie-igcse":        3,
+  "edexcel-igcse":     3,
+  "ocr-gcse":          3,
 };
+
+/** Total papers per board = papers × required sets (always 3 × 3 = 9). */
+export const PAPERS_PER_BOARD_TOTAL = 9;
+
 
 /** Reject generation requests that target non-existent papers on a board. */
 export type GenerationRequest = {
