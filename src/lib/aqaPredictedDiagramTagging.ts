@@ -60,29 +60,41 @@ const AD_AS_HINTS = [
 
 const PHILLIPS_HINTS = [/phillips curve|trade.?off between (inflation|unemployment)/i];
 const PPF_HINTS = [/production possibility|ppf|opportunity cost frontier/i];
+const MONOP_COMP_HINTS = [/monopolistic competition|short.?run.*long.?run.*entry|differentiated product/i];
 const MONOPOLY_HINTS = [/monopoly|monopolist|price discrimination/i];
 const PERFECT_COMP_HINTS = [/perfect competition|competitive market.*long run/i];
 const MONOPSONY_HINTS = [/monopsony/i];
 const LABOUR_HINTS = [/labour market|wage|trade union|minimum wage|national living wage/i];
+const PALM_OIL_HINTS = [/palm oil|deforestation.*palm|indonesia.*palm|malaysia.*palm/i];
 const EXTERNALITY_HINTS = [
   /externalit|merit good|demerit good|msc|msb|social (cost|benefit)|negative externalit|positive externalit/i,
 ];
+const SPECIFIC_AD_VAL_HINTS = [/specific tax.*ad valorem|ad valorem.*specific|specific (vs|versus) ad valorem/i];
 const INDIRECT_TAX_HINTS = [/indirect tax|excise duty|sugar tax|sin tax|specific tax|ad valorem/i];
 const SUBSIDY_HINTS = [/subsid/i];
 const PRICE_CONTROL_HINTS = [/maximum price|minimum price|price ceiling|price floor|rent control/i];
+const PED_REVENUE_HINTS = [/(price elasticity|ped).*(revenue|total revenue)|elasticity.*(revenue|tr)/i];
+const LORENZ_HINTS = [/lorenz|gini coefficient|gini ratio/i];
+const J_CURVE_HINTS = [/j.?curve|marshall.?lerner|current account.*depreciat/i];
 
 function classifyDiagramType(stem: string): DiagramType {
   const s = stem.toLowerCase();
+  if (J_CURVE_HINTS.some((re) => re.test(s))) return "jCurve";
+  if (LORENZ_HINTS.some((re) => re.test(s))) return "lorenz";
   if (PHILLIPS_HINTS.some((re) => re.test(s))) return "phillips";
   if (PPF_HINTS.some((re) => re.test(s))) return "ppf";
+  if (MONOP_COMP_HINTS.some((re) => re.test(s))) return "monopolisticComp";
   if (MONOPOLY_HINTS.some((re) => re.test(s))) return "monopoly";
   if (PERFECT_COMP_HINTS.some((re) => re.test(s))) return "perfectComp";
   if (MONOPSONY_HINTS.some((re) => re.test(s))) return "monopsony";
   if (LABOUR_HINTS.some((re) => re.test(s))) return "labour";
   if (PRICE_CONTROL_HINTS.some((re) => re.test(s))) return "priceControl";
+  if (SPECIFIC_AD_VAL_HINTS.some((re) => re.test(s))) return "specificAdValorem";
   if (INDIRECT_TAX_HINTS.some((re) => re.test(s))) return "indirectTax";
   if (SUBSIDY_HINTS.some((re) => re.test(s))) return "subsidy";
+  if (PALM_OIL_HINTS.some((re) => re.test(s))) return "negExtPalmOil";
   if (EXTERNALITY_HINTS.some((re) => re.test(s))) return "externality";
+  if (PED_REVENUE_HINTS.some((re) => re.test(s))) return "pedRevenue";
   if (AD_AS_HINTS.some((re) => re.test(s))) return "adAs";
   if (SUPPLY_DEMAND_HINTS.some((re) => re.test(s))) return "supplyDemand";
   return "supplyDemand";
