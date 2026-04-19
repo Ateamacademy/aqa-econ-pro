@@ -34,11 +34,12 @@ export function ReferenceFigurePanel({
   paperKey,
 }: Props) {
   const entry = referenceFigureId ? getCatalogEntry(referenceFigureId) : undefined;
+  const ComponentOverride = entry?.Component;
   const [svg, setSvg] = useState<string | null>(null);
   const [err, setErr] = useState(false);
 
   useEffect(() => {
-    if (!entry) return;
+    if (!entry || ComponentOverride) return;
     let cancel = false;
     setErr(false);
     setSvg(null);
@@ -65,7 +66,7 @@ export function ReferenceFigurePanel({
     return () => {
       cancel = true;
     };
-  }, [entry, scenario]);
+  }, [entry, scenario, ComponentOverride]);
 
   if (!referenceFigureId || !entry) {
     return (
