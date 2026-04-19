@@ -35,12 +35,9 @@ const MonopolisticCompetitionDiagram = forwardRef<HTMLDivElement>(function Monop
   return (
     <div ref={ref} className="w-full">
       <div className="mb-4 flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <div className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">Reference diagram</div>
-          <h3 className="mt-1 text-lg font-semibold text-foreground">
-            Monopolistic Competition: {mode === "short-run" ? "Short Run" : "Long Run"}
-          </h3>
-        </div>
+        <h3 className="text-lg font-semibold text-foreground">
+          Monopolistic Competition: {mode === "short-run" ? "Short Run" : "Long Run"}
+        </h3>
 
         <RunToggle mode={mode} onChange={setMode} />
       </div>
