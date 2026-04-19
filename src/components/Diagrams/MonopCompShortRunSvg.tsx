@@ -51,3 +51,5 @@ function MonopCompShortRunSvgInner() {
     </svg>
   );
 }
+
+export const MonopCompShortRunSvg = React.memo(MonopCompShortRunSvgInner);
