@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import { MonopCompLongRunSvg } from "@/components/Diagrams/MonopCompLongRunSvg";
@@ -12,7 +12,7 @@ const captionStyle = {
   lineHeight: 1.6,
 };
 
-const MonopolisticCompetitionDiagram = forwardRef<HTMLDivElement>(function MonopolisticCompetitionDiagram(_, ref) {
+export default function MonopolisticCompetitionDiagram() {
   const [mode, setMode] = useState<RunMode>("short-run");
   const location = useLocation();
   const isClickDebugEnabled = useMemo(
@@ -44,7 +44,7 @@ const MonopolisticCompetitionDiagram = forwardRef<HTMLDivElement>(function Monop
   }, [isClickDebugEnabled]);
 
   return (
-    <div ref={ref} className="w-full">
+    <div className="w-full">
       <div className="mb-4 flex flex-wrap items-start justify-between gap-4">
         <h3 className="text-lg font-semibold text-foreground">
           Monopolistic Competition: {mode === "short-run" ? "Short Run" : "Long Run"}
@@ -62,6 +62,4 @@ const MonopolisticCompetitionDiagram = forwardRef<HTMLDivElement>(function Monop
       </div>
     </div>
   );
-});
-
-export default MonopolisticCompetitionDiagram;
+}
