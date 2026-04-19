@@ -35,6 +35,8 @@ import { generatePaperPdf } from "@/lib/generatePaperPdf";
 import { generateSolutionPdf, type SolutionEntry } from "@/lib/generateSolutionPdf";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { ReportButton } from "@/components/report/ReportButton";
+import { ComingSoonBoard } from "@/components/predicted-papers/ComingSoonBoard";
+import { subjectToBoardId, getBoardDefinition } from "@/lib/boards/registry";
 import { ExamTimer } from "@/components/predicted-papers/ExamTimer";
 import { ExamResultsSummary } from "@/components/predicted-papers/ExamResultsSummary";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
@@ -2096,7 +2098,19 @@ Do NOT include any other headings, preamble, or commentary outside these three s
       </div>
 
       <div className="container max-w-5xl pb-20">
-        {step === "select" && (
+        {(() => {
+          const boardId = subjectToBoardId(subject);
+          const def = boardId ? getBoardDefinition(boardId) : null;
+          if (def && def.refinementStatus !== "refined" && step === "select") {
+            return <ComingSoonBoard boardName={def.displayName} />;
+          }
+          return null;
+        })()}
+        {step === "select" && (() => {
+          const boardId = subjectToBoardId(subject);
+          const def = boardId ? getBoardDefinition(boardId) : null;
+          return def && def.refinementStatus !== "refined" ? null : true;
+        })() && (
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
