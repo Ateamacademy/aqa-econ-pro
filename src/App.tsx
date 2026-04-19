@@ -56,6 +56,7 @@ const AdminDeduplicationReport = lazy(() => import("./pages/AdminDeduplicationRe
 const AdminAiUsage = lazy(() => import("./pages/AdminAiUsage"));
 const AdminMissingFigures = lazy(() => import("./pages/AdminMissingFigures"));
 const AdminBoardStatus = lazy(() => import("./pages/AdminBoardStatus"));
+const AdminBoardCoverage = lazy(() => import("./pages/AdminBoardCoverage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -119,6 +120,7 @@ const App = () => (
               <Route path="/admin/ai-usage" element={<AdminAiUsage />} />
              <Route path="/admin/missing-figures" element={<AdminMissingFigures />} />
              <Route path="/admin/board-status" element={<AdminBoardStatus />} />
+             <Route path="/admin/board-coverage" element={<AdminBoardCoverage />} />
               <Route path="/debug/marking-tests" element={<MarkingDebug />} />
               <Route path="/debug/integrity" element={<MarkingDebug />} />
               <Route path="*" element={<NotFound />} />
