@@ -61,3 +61,5 @@ function MonopCompLongRunSvgInner() {
     </svg>
   );
 }
+
+export const MonopCompLongRunSvg = React.memo(MonopCompLongRunSvgInner);
