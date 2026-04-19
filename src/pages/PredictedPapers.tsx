@@ -1315,9 +1315,12 @@ export default function PredictedPapers() {
       // extended library must NOT be reduced.
       const isAqa = subject === "economics";
       const allowedSets = new Set(["A", "B", "C"]);
+      const allowedPapers = new Set(["1", "2", "3"]);
       const filtered = predictedPapersLibrary.filter((p) => {
         if (p.subject !== subject) return false;
         if (isAqa) return true;
+        // Every non-AQA board: exactly Papers 1/2/3 × Sets A/B/C = 9 cards.
+        if (!allowedPapers.has(p.paper)) return false;
         return allowedSets.has(setLabel(p.title));
       });
       return [...filtered].sort((a, b) => {
