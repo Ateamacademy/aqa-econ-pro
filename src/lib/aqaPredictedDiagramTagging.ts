@@ -109,14 +109,20 @@ function isDiagramFriendlyTopic(stem: string): boolean {
     ...SUPPLY_DEMAND_HINTS,
     ...AD_AS_HINTS,
     ...PHILLIPS_HINTS,
+    ...MONOP_COMP_HINTS,
     ...MONOPOLY_HINTS,
     ...PERFECT_COMP_HINTS,
     ...MONOPSONY_HINTS,
     ...LABOUR_HINTS,
     ...EXTERNALITY_HINTS,
+    ...PALM_OIL_HINTS,
     ...INDIRECT_TAX_HINTS,
+    ...SPECIFIC_AD_VAL_HINTS,
     ...SUBSIDY_HINTS,
     ...PRICE_CONTROL_HINTS,
+    ...PED_REVENUE_HINTS,
+    ...LORENZ_HINTS,
+    ...J_CURVE_HINTS,
   ].some((re) => re.test(stem));
 }
 
