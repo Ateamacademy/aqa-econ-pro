@@ -40,7 +40,7 @@ export function RunToggle({ mode, onChange }: RunToggleProps) {
     >
       <button
         type="button"
-        onClick={handleSetMode("short-run", "Short run")}
+        onClick={handleSetMode("short-run")}
         className="text-sm transition-colors"
         style={{
           pointerEvents: "auto",
@@ -88,7 +88,7 @@ export function RunToggle({ mode, onChange }: RunToggleProps) {
 
       <button
         type="button"
-        onClick={handleSetMode("long-run", "Long run")}
+        onClick={handleSetMode("long-run")}
         className="text-sm transition-colors"
         style={{
           pointerEvents: "auto",
