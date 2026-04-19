@@ -1,3 +1,4 @@
+import React from "react";
 import { MONOP_COMP_COLORS, SHARED_COST_PATHS, SHARED_MARKERS, svgLabelStyle } from "@/components/Diagrams/monopolisticCompetitionShared";
 
 const SHORT_RUN_PATHS = {
@@ -5,7 +6,7 @@ const SHORT_RUN_PATHS = {
   mr: "M 120 150 L 555 640",
 } as const;
 
-export function MonopCompShortRunSvg() {
+function MonopCompShortRunSvgInner() {
   const q1x = 395;
   const p1y = 292;
   const ac1y = 510;
