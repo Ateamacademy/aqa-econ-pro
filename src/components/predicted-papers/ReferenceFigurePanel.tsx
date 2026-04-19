@@ -126,7 +126,11 @@ export function ReferenceFigurePanel({
       </div>
 
       <div className="p-3 bg-white" role="img" aria-label={entry.description}>
-        {svg ? (
+        {ComponentOverride ? (
+          <div className="w-full [&>div]:w-full [&_svg]:w-full [&_svg]:h-auto [&_svg]:max-h-[420px] pointer-events-none select-none">
+            <ComponentOverride />
+          </div>
+        ) : svg ? (
           <div
             className="w-full [&>svg]:w-full [&>svg]:h-auto [&>svg]:max-h-[360px] pointer-events-none select-none"
             dangerouslySetInnerHTML={{ __html: svg }}
