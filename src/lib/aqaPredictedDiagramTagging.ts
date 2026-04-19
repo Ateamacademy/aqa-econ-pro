@@ -136,17 +136,23 @@ export function buildRubric(diagramType: DiagramType, stem: string): AqaDiagramR
     case "adAs":
     case "lras":
     case "phillips":
+    case "jCurve":
       return defaultAdAsRubric(trimmed);
     case "supplyDemand":
     case "indirectTax":
+    case "specificAdValorem":
     case "subsidy":
     case "priceControl":
     case "labour":
     case "externality":
+    case "negExtPalmOil":
     case "monopoly":
+    case "monopolisticComp":
     case "perfectComp":
     case "monopsony":
     case "ppf":
+    case "pedRevenue":
+    case "lorenz":
     case "other":
     default:
       return defaultSdRubric(trimmed);
