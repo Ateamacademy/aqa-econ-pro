@@ -218,14 +218,22 @@ async function resolveEntryDiagrams(entry: SolutionEntry): Promise<ResolvedDiagr
   for (const id of ids) {
     const cat = getCatalogEntry(id);
     if (!cat) continue;
-    const png = await rasteriseSvgToPng(cat.svgPath, 900);
+    // Prefer the high-fidelity React component when present (matches on-screen),
+    // fall back to the catalog asset path (.svg / .png).
+    let png: string | null = null;
+    if (cat.Component) {
+      png = await rasteriseReactDiagramToPng(cat.Component, 900);
+    }
+    if (!png) {
+      png = await rasteriseAssetToPng(cat.svgPath, 900);
+    }
     if (!png) continue;
     // Read image dims from a temp <img> for aspect ratio
     const dims = await new Promise<{ w: number; h: number }>((resolve) => {
       const img = new Image();
       img.onload = () => resolve({ w: img.width, h: img.height });
       img.onerror = () => resolve({ w: 900, h: 600 });
-      img.src = png;
+      img.src = png!;
     });
     out.push({
       catalogId: id,
