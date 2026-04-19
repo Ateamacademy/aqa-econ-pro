@@ -437,8 +437,9 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
     id: "lorenz-curve",
     title: "Lorenz Curve & Gini Coefficient",
     svgPath: "/figures/lorenz-brazil.svg",
+    Component: LorenzCurveDiagram,
     markingTier: "micro",
-    diagramTypes: ["other"],
+    diagramTypes: ["lorenz", "other"],
     suitableFor: ["4.2.6.2"],
     labels: ["Cumulative % income", "Cumulative % population", "Line of equality", "Lorenz curve", "Gini = A/(A+B)"],
     description:
@@ -448,6 +449,99 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
       "UK Wealth Distribution",
       "UK Regional Income Comparison",
       "UK Pre-Tax vs Post-Tax Income",
+    ],
+  },
+  // ── Monopolistic competition ───────────────────────────────────────
+  {
+    id: "monopolistic-competition",
+    title: "Monopolistic Competition — Short Run vs Long Run",
+    svgPath: "/figures/aqa-monopolistic-short-run.png",
+    Component: MonopolisticCompDiagram,
+    markingTier: "micro",
+    diagramTypes: ["monopolisticComp"],
+    suitableFor: ["4.1.6.4", "4.1.6.7"],
+    labels: ["P", "Q", "AR", "MR", "AC", "MC", "Pm", "Qm"],
+    description:
+      "Monopolistic competition diagram toggling between short-run supernormal profit and long-run normal profit as entry erodes profits.",
+    scenarios: [
+      "UK Independent Coffee Shops",
+      "UK Hairdressing Salons",
+      "UK Restaurant Chains — Casual Dining",
+      "UK Boutique Fashion Retail",
+    ],
+  },
+  // ── J-Curve effect ─────────────────────────────────────────────────
+  {
+    id: "j-curve-effect",
+    title: "J-Curve — Current Account after Depreciation",
+    svgPath: "/figures/caie-j-curve.svg",
+    Component: EconJCurveEffect,
+    markingTier: "macro",
+    diagramTypes: ["jCurve"],
+    suitableFor: ["4.2.5.4"],
+    labels: ["Time", "Current account", "Depreciation", "Surplus", "Deficit"],
+    description:
+      "J-Curve diagram showing how a currency depreciation initially worsens the current account before improving it as the Marshall–Lerner condition takes effect over time.",
+    scenarios: [
+      "UK Sterling Depreciation 2022",
+      "UK Brexit Referendum Sterling Slide",
+      "UK 2008 Financial Crisis Sterling Fall",
+    ],
+  },
+  // ── Specific vs Ad Valorem tax ─────────────────────────────────────
+  {
+    id: "specific-ad-valorem",
+    title: "Specific Tax vs Ad Valorem Tax",
+    svgPath: "/figures/indirect-tax.svg",
+    Component: SpecificAdValoremDiagram,
+    markingTier: "micro",
+    diagramTypes: ["specificAdValorem", "indirectTax"],
+    suitableFor: ["4.1.7.3", "4.1.4.2"],
+    labels: ["P", "Q", "S", "S+specific", "S+ad valorem", "D", "P1", "P2"],
+    description:
+      "Side-by-side comparison of specific (parallel) vs ad valorem (pivoted) shifts of the supply curve following the imposition of an indirect tax.",
+    scenarios: [
+      "UK Tobacco Excise — Specific vs Ad Valorem",
+      "UK Alcohol Duty — Wine vs Beer",
+      "UK Sugar-Sweetened Drinks Levy",
+      "UK Fuel Duty vs VAT",
+    ],
+  },
+  // ── PED Revenue impact ─────────────────────────────────────────────
+  {
+    id: "ped-revenue-impact",
+    title: "PED & Total Revenue Impact",
+    svgPath: "/figures/caie-ped-elastic.svg",
+    Component: PEDRevenueImpact,
+    markingTier: "micro",
+    diagramTypes: ["pedRevenue", "supplyDemand"],
+    suitableFor: ["4.1.3.1"],
+    labels: ["P", "Q", "AR", "MR", "Elastic", "Inelastic", "Unit elastic"],
+    description:
+      "Demand curve with elastic and inelastic regions, showing how a price change affects total revenue depending on the elasticity at that point.",
+    scenarios: [
+      "UK Premium Streaming Subscriptions",
+      "UK Cigarette Demand",
+      "UK Petrol Pricing",
+      "UK Luxury Cars",
+    ],
+  },
+  // ── Negative externality — palm oil ────────────────────────────────
+  {
+    id: "neg-externality-palm-oil",
+    title: "Negative Externality of Production — Palm Oil",
+    svgPath: "/figures/externality.svg",
+    Component: NegativeExternalityPalmOil,
+    markingTier: "micro",
+    diagramTypes: ["negExtPalmOil", "externality"],
+    suitableFor: ["4.1.7.1", "4.1.7.2"],
+    labels: ["P", "Q", "MPC", "MSC", "MPB=MSB", "Qp", "Qs", "Welfare loss"],
+    description:
+      "Negative production externality applied to palm oil — MSC above MPC, market output Qp above social optimum Qs, with welfare-loss triangle between MSC and MPB from Qs to Qp.",
+    scenarios: [
+      "Indonesian Palm Oil Deforestation",
+      "Malaysian Palm Oil Plantations",
+      "UK Palm Oil Imports — Supply Chain Externality",
     ],
   },
   // ── Trade & quotas ─────────────────────────────────────────────────
