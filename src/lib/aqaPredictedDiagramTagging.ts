@@ -26,7 +26,7 @@ import {
   defaultAdAsRubric,
   defaultSdRubric,
 } from "./aqa-diagram-rubric";
-import { pickReferenceFigure } from "./aqa-diagram-catalog";
+import { pickReferenceFigure, pickPaper3McqFigure } from "./aqa-diagram-catalog";
 
 export interface AqaDiagramTag {
   requiresDiagram: boolean;
