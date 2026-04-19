@@ -57,6 +57,7 @@ const AdminAiUsage = lazy(() => import("./pages/AdminAiUsage"));
 const AdminMissingFigures = lazy(() => import("./pages/AdminMissingFigures"));
 const AdminBoardStatus = lazy(() => import("./pages/AdminBoardStatus"));
 const AdminBoardCoverage = lazy(() => import("./pages/AdminBoardCoverage"));
+const AdminMarkingConventionVerification = lazy(() => import("./pages/AdminMarkingConventionVerification"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -121,6 +122,7 @@ const App = () => (
              <Route path="/admin/missing-figures" element={<AdminMissingFigures />} />
              <Route path="/admin/board-status" element={<AdminBoardStatus />} />
              <Route path="/admin/board-coverage" element={<AdminBoardCoverage />} />
+             <Route path="/admin/marking-convention-verification" element={<AdminMarkingConventionVerification />} />
               <Route path="/debug/marking-tests" element={<MarkingDebug />} />
               <Route path="/debug/integrity" element={<MarkingDebug />} />
               <Route path="*" element={<NotFound />} />
