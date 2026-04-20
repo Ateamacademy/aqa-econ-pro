@@ -443,17 +443,126 @@ function drawFooters(doc: jsPDF, meta: SolutionMeta) {
   }
 }
 
-// Strip markdown emphasis but keep readable structure
+// ─── Markdown / LaTeX → plain-text normalisation ──────────────────────
+//
+// jsPDF's Helvetica font is WinAnsi only — it cannot render most emoji or
+// extended Unicode (e.g. 🔑, Ø=ÜÝ artefacts, fullwidth math). It also has
+// no markdown awareness, so any *, |, $...$, ~~, > characters reach the
+// page verbatim. `clean()` is the single sanitiser that:
+//   1. flattens markdown emphasis / headings / code spans
+//   2. converts inline LaTeX ($...$, \frac, \text, \times) to readable
+//      plain text so prose like "$\frac{52.7-78.4}{78.4} \times 100$"
+//      becomes "(52.7-78.4)/78.4 × 100"
+//   3. converts list/table syntax into wrapped paragraphs with line
+//      breaks instead of leaking raw "* item * item" or "| a | b |"
+//   4. strips characters Helvetica cannot encode (replaces with a safe
+//      ASCII equivalent or drops them)
+function latexToPlain(input: string): string {
+  let s = input;
+  // \frac{a}{b} → (a)/(b)
+  s = s.replace(/\\d?frac\s*\{([^{}]+)\}\s*\{([^{}]+)\}/g, "($1)/($2)");
+  // \text{...}, \mathrm{...}, \mathbf{...} → contents only
+  s = s.replace(/\\(?:text|mathrm|mathbf|mathit|operatorname)\s*\{([^{}]*)\}/g, "$1");
+  // \times → ×, \div → ÷, \pm → ±, \cdot → ·, \approx → ≈, \neq → ≠, \leq → ≤, \geq → ≥
+  s = s
+    .replace(/\\times\b/g, "×")
+    .replace(/\\div\b/g, "÷")
+    .replace(/\\pm\b/g, "±")
+    .replace(/\\cdot\b/g, "·")
+    .replace(/\\approx\b/g, "≈")
+    .replace(/\\neq\b/g, "≠")
+    .replace(/\\leq\b/g, "≤")
+    .replace(/\\geq\b/g, "≥")
+    .replace(/\\rightarrow\b|\\to\b/g, "→")
+    .replace(/\\leftarrow\b/g, "←")
+    .replace(/\\Delta\b/g, "Δ")
+    .replace(/\\percent\b/g, "%")
+    .replace(/\\%/g, "%")
+    .replace(/\\\$/g, "$")
+    .replace(/\\,|\\;|\\!|\\:/g, " ")
+    .replace(/\\\\/g, " ");
+  // Subscripts / superscripts: a_1 → a₁, a^2 → a², {…} groups stripped
+  const SUBS: Record<string, string> = { "0":"₀","1":"₁","2":"₂","3":"₃","4":"₄","5":"₅","6":"₆","7":"₇","8":"₈","9":"₉" };
+  const SUPS: Record<string, string> = { "0":"⁰","1":"¹","2":"²","3":"³","4":"⁴","5":"⁵","6":"⁶","7":"⁷","8":"⁸","9":"⁹" };
+  s = s.replace(/_\{([^{}]+)\}/g, (_m, g) => g.split("").map((c: string) => SUBS[c] ?? c).join(""));
+  s = s.replace(/\^\{([^{}]+)\}/g, (_m, g) => g.split("").map((c: string) => SUPS[c] ?? c).join(""));
+  s = s.replace(/_([0-9])/g, (_m, c) => SUBS[c] ?? `_${c}`);
+  s = s.replace(/\^([0-9])/g, (_m, c) => SUPS[c] ?? `^${c}`);
+  // Drop residual single-char braces / backslash commands we didn't catch
+  s = s.replace(/\\[a-zA-Z]+\b/g, "").replace(/[{}]/g, "");
+  return s;
+}
+
+function stripUnsafeGlyphs(input: string): string {
+  // jsPDF Helvetica cannot encode characters outside WinAnsi (≈ U+0000–U+00FF
+  // plus a small set). Emoji and fancy Unicode show up as "Ø=ÜÝ" or boxes.
+  // Map the common offenders, then drop anything else above U+02FF.
+  return input
+    .replace(/[\u{1F300}-\u{1FAFF}\u{1F000}-\u{1F2FF}\u{2600}-\u{27BF}]/gu, "") // emoji & misc symbols
+    .replace(/[\u200B-\u200F\u2028-\u202F\u205F\u2060\uFEFF]/g, " ")             // zero-width / bidi
+    .replace(/[\u2018\u2019\u201A\u201B]/g, "'")
+    .replace(/[\u201C\u201D\u201E\u201F]/g, '"')
+    .replace(/[\u2013\u2014]/g, "-")
+    .replace(/\u2026/g, "...")
+    .replace(/[\u02B0-\u02FF\u0300-\u036F]/g, "");
+}
+
+function flattenMarkdownTable(block: string): string {
+  // Convert a pipe table into "row1col1 | row1col2" lines (drop the |---|---| separator).
+  const lines = block.split("\n").map((l) => l.trim()).filter(Boolean);
+  return lines
+    .filter((l) => !/^\|?\s*:?-{2,}/.test(l.replace(/\|/g, "")))
+    .map((l) => l.replace(/^\|/, "").replace(/\|$/, "").split("|").map((c) => c.trim()).join("  •  "))
+    .join("\n");
+}
+
+function normaliseListsAndTables(text: string): string {
+  let s = text;
+  // Detect inline-collapsed bullet runs ("foo. * Bar: baz * Qux: …") that
+  // appear when the model returns a bullet list on a single line. Split on
+  // " * " when surrounded by sentence text; preserve real prose asterisks.
+  s = s.replace(/\s\*\s+(?=[A-Z(])/g, "\n• ");
+  // Leading "* " or "- " bullets at line start → "• "
+  s = s.replace(/^[\t ]*[*\-]\s+/gm, "• ");
+  // Numbered lists "1. " stay as-is, just ensure they sit on their own line.
+  s = s.replace(/(?<!\n)\n(?=\d{1,2}\.\s)/g, "\n");
+  // Markdown tables: detect contiguous pipe-line blocks and flatten them.
+  s = s.replace(/(?:^\|.*\|\s*\n?){2,}/gm, (block) => `\n${flattenMarkdownTable(block)}\n`);
+  // Block quotes "> "
+  s = s.replace(/^[\t ]*>\s?/gm, "");
+  return s;
+}
+
+function stripInlineLatex(text: string): string {
+  // $$...$$ display math
+  let s = text.replace(/\$\$([\s\S]+?)\$\$/g, (_m, inner) => latexToPlain(inner));
+  // $...$ inline math (non-greedy, single line)
+  s = s.replace(/\$([^\n$]+?)\$/g, (_m, inner) => latexToPlain(inner));
+  // Bare \frac / \text outside $...$ (defensive)
+  if (/\\(?:frac|text|times|div|approx|leq|geq|Delta)\b/.test(s)) {
+    s = latexToPlain(s);
+  }
+  return s;
+}
+
+// Strip markdown emphasis & convert LaTeX/markdown to plain readable text.
 function clean(text: string): string {
   if (!text) return "";
-  return text
-    .replace(/\r/g, "")
-    .replace(/\*\*(.+?)\*\*/g, "$1")
-    .replace(/__(.+?)__/g, "$1")
-    .replace(/`([^`]+)`/g, "$1")
-    .replace(/^#+\s*/gm, "")
-    .replace(/\n{3,}/g, "\n\n")
-    .trim();
+  let s = text.replace(/\r/g, "");
+  // 1. inline emphasis & code
+  s = s.replace(/\*\*([^*]+?)\*\*/g, "$1");
+  s = s.replace(/__([^_]+?)__/g, "$1");
+  s = s.replace(/`([^`]+)`/g, "$1");
+  s = s.replace(/^#{1,6}\s*/gm, "");
+  // 2. LaTeX → plain
+  s = stripInlineLatex(s);
+  // 3. lists & tables → line-broken plain text
+  s = normaliseListsAndTables(s);
+  // 4. unsafe glyphs (emoji, smart quotes, bidi marks)
+  s = stripUnsafeGlyphs(s);
+  // 5. tidy whitespace
+  s = s.replace(/[ \t]{2,}/g, " ").replace(/\n{3,}/g, "\n\n").trim();
+  return s;
 }
 
 function writeWrapped(
