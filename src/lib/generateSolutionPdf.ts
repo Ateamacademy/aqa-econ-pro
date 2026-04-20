@@ -1005,28 +1005,37 @@ export async function generateSolutionPdf(
   // Cover
   drawCover(doc, fullMeta);
 
-  // Body
+  // Booklet intro page
   doc.addPage();
-  let y = PAGE_TOP;
+  let y = PAGE_TOP + 4;
 
-  // Booklet title
   doc.setFont("helvetica", "bold");
-  doc.setFontSize(16);
-  doc.setTextColor(15, 23, 42);
-  doc.text(`${fullMeta.paperTitle} — Mark Scheme`, MARGIN_L, y);
+  doc.setFontSize(18);
+  doc.setTextColor(...COLOR_INK);
+  doc.text(`${fullMeta.paperTitle}`, MARGIN_L, y);
+  y += 7;
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(11);
+  doc.setTextColor(...COLOR_BAND_INK);
+  doc.text(`Mark scheme · ${fullMeta.paperRef}`, MARGIN_L, y);
   y += 6;
+
+  doc.setDrawColor(...COLOR_RULE);
+  doc.setLineWidth(0.4);
+  doc.line(MARGIN_L, y, pageWH(doc).pageW - MARGIN_R, y);
+  y += 5;
+
   doc.setFont("helvetica", "normal");
   doc.setFontSize(9.5);
-  doc.setTextColor(110, 110, 110);
+  doc.setTextColor(...COLOR_MUTED);
   doc.text(
-    `${fullMeta.examBoard} ${fullMeta.level} ${fullMeta.subject}  •  Total: ${fullMeta.totalMarks} marks  •  ${entries.length} questions`,
+    `${fullMeta.examBoard} · ${fullMeta.level} · ${fullMeta.subject}    Total: ${fullMeta.totalMarks} marks    Questions: ${entries.length}`,
     MARGIN_L,
     y,
   );
-  y += 8;
 
   for (let i = 0; i < entries.length; i++) {
-    y = drawQuestion(doc, entries[i], diagramsByEntry[i] ?? [], y);
+    y = drawQuestion(doc, entries[i], diagramsByEntry[i] ?? [], y, i === 0);
   }
 
   drawFooters(doc, fullMeta);
