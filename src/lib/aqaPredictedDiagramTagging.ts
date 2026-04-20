@@ -51,7 +51,7 @@ export interface AqaDiagramTag {
 }
 
 const EXPLICIT_DIAGRAM_RE =
-  /\b(with the (help|aid) of (an? )?diagram|using (an? )?diagram|draw (an? )?diagram|sketch (an? )?diagram|illustrate.*diagram|on (an? )?diagram)\b/i;
+  /\b(with the (help|aid) of (?:an?\s+)?(?:fully\s+labelled\s+)?(?:appropriate\s+)?(?:[a-z\-]+\s+){0,4}diagram|using (?:an?\s+)?(?:fully\s+labelled\s+)?(?:[a-z\-]+\s+){0,4}diagram|draw (?:an?\s+)?(?:fully\s+labelled\s+)?(?:[a-z\-]+\s+){0,4}diagram|sketch (?:an?\s+)?(?:fully\s+labelled\s+)?(?:[a-z\-]+\s+){0,4}diagram|illustrate[^.\n]{0,80}diagram|on (?:your|an?\s+)?diagram|your diagram|tax incidence diagram|welfare loss triangle|negative externality diagram)\b/i;
 
 const SUPPLY_DEMAND_HINTS = [
   /supply\s*(and|&)?\s*demand|s\s*&\s*d|s\/d/i,
@@ -263,6 +263,8 @@ export function tagAqaQuestion(q: TaggerInput): AqaDiagramTag | null {
   }
 
   if (q.paper === 1 || q.paper === 2) {
+    // Short explicit diagram questions (e.g. 4-mark "With the help of a fully labelled…")
+    if (q.marks === 4 && explicit) return attachReferenceFigure(base(false), q);
     // Section A 9-mark — only when stem explicitly asks for a diagram.
     if (q.marks === 9 && explicit) return attachReferenceFigure(base(false), q);
     // Section A 15-mark data response — student-drawn, no pre-supplied figure.
