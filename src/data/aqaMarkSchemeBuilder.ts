@@ -44,14 +44,17 @@ const NINE_MARK_BANDS: Array<[number, number]> = [
   [7, 9],
 ];
 
+// 15-mark — AQA 3-level structure (reviewer-confirmed canonical template).
+// AO3 (Analysis) is the TOP-BAND discriminator — NOT AO4. 15-mark questions
+// do not require evaluation.
 const FIFTEEN_MARK_BANDS: Array<[number, number]> = [
-  [1, 3],
-  [4, 6],
-  [7, 9],
-  [10, 12],
-  [13, 15],
+  [1, 5],
+  [6, 10],
+  [11, 15],
 ];
 
+// 25-mark — AQA 5-level structure (reviewer-confirmed canonical template).
+// AO4 (Evaluation) is the TOP-BAND discriminator — supported judgement required.
 const TWENTYFIVE_MARK_BANDS: Array<[number, number]> = [
   [1, 5],
   [6, 10],
@@ -67,20 +70,20 @@ const NINE_MARK_DESCRIPTORS = [
   "Good knowledge and understanding. Good application to the issue. Good analysis with developed chains of reasoning supported by an accurate, fully-labelled diagram.",
 ];
 
+// 15-mark — 3 levels, AO3 (Analysis) as the top-band discriminator.
 const FIFTEEN_MARK_DESCRIPTORS = [
-  "No creditable content.",
-  "Limited knowledge and understanding. Weak or no application. No analysis or evaluation.",
-  "Some knowledge and understanding. Some application. Limited analysis. Little or no evaluation.",
-  "Reasonable knowledge and understanding. Reasonable application. Reasonable analysis. Some evaluation — conclusion may be unsupported.",
-  "Good knowledge and understanding. Good application to the issue. Good analysis. Good evaluation, leading to a supported conclusion.",
+  "**Level 1 (1–5 marks) – Basic.** Vague or incorrect definitions. Very basic statements. No real analytical chains. No clear link to the question's economic concept.",
+  "**Level 2 (6–10 marks) – Mid-Level.** Definitions partially correct. Some explanation, often unbalanced (one concept covered well, the other weak). Chains of reasoning incomplete. Examples generic or missing. Weak use of economic terminology.",
+  "**Level 3 (11–15 marks) – Top Band.** AO1: accurate definitions of relevant concepts. AO2: clear use of relevant examples. **AO3 (top-band discriminator):** fully developed chains of reasoning with explicit logical chains (e.g. \"firms ignore external costs → price too low → over-consumption → welfare loss\"). Note: AO4 (evaluation) is NOT required at 15 marks.",
 ];
 
+// 25-mark — 5 levels, AO4 (Evaluation) as the top-band discriminator.
 const TWENTYFIVE_MARK_DESCRIPTORS = [
-  "Limited knowledge and understanding. Weak or no application. No analysis or evaluation.",
-  "Some knowledge and understanding. Some application. Limited analysis. Little or no evaluation.",
-  "Reasonable knowledge and understanding. Reasonable application. Reasonable analysis. Some evaluation, but conclusion may be unsupported.",
-  "Good knowledge and understanding. Good application throughout. Good analysis with developed chains of reasoning. Good evaluation with a clear judgement.",
-  "Precise knowledge and full theoretical depth. Sustained application throughout. Rigorous, multi-step analysis. Balanced evaluation with a prioritised, well-supported conclusion.",
+  "**Level 1 (1–5 marks) – Minimal.** Very basic points. No real structure. No evaluation.",
+  "**Level 2 (6–10 marks) – Basic.** Limited knowledge. Weak or unclear analysis. Very little evaluation. No real use of extract.",
+  "**Level 3 (11–15 marks) – Mid-Level.** Sound but basic explanation. Chains of reasoning short or underdeveloped. Limited or generic evaluation. Weak use of extract.",
+  "**Level 4 (16–20 marks) – Strong Answer.** AO1/AO2: good knowledge and application; some use of extract (may not be fully integrated). AO3: clear chains of reasoning but may lack depth in places. AO4: evaluation present but uneven or less developed; judgement may be generic.",
+  "**Level 5 (21–25 marks) – Top Band.** AO1: precise understanding of the topic. AO2: strong, consistent use of extracts; specific numerical data cited; UK-contextualised. AO3: well-developed chains of reasoning with clear transmission mechanisms. **AO4 (top-band discriminator):** balanced, well-developed evaluation throughout; supported, contextual judgement; multiple developed evaluation points (e.g. time lags, dependence on confidence, structural vs cyclical factors, regressivity, PED). **A supported judgement / conclusion paragraph is required.**",
 ];
 
 function levelTable(bands: Array<[number, number]>, descriptors: string[]): string {
