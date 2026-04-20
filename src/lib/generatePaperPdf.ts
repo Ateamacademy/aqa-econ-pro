@@ -941,6 +941,13 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
 
 // ─── Main Export ────────────────────────────────────────────────────
 
+function isEdexcelAMeta(meta?: { examBoard?: string; level?: string }): boolean {
+  const b = (meta?.examBoard || "").toLowerCase();
+  if (!b || b.includes("aqa")) return false;
+  if (/\bedexcel[\s\-(]*b\b/i.test(b)) return false;
+  return b.includes("edexcel");
+}
+
 export function generatePaperPdf(
   title: string,
   content: string,
@@ -952,11 +959,20 @@ export function generatePaperPdf(
   const paperNumMatch = title.match(/Paper\s*(\d)/i);
   const paperNumber = paperNumMatch ? paperNumMatch[1] : "1";
 
-  const paperTitles: Record<string, string> = {
+  const edexcel = isEdexcelAMeta(meta);
+
+  const aqaPaperTitles: Record<string, string> = {
     "1": "Paper 1 Markets and Market Failure",
     "2": "Paper 2 National and International Economy",
     "3": "Paper 3 Economic Principles and Issues",
   };
+  const edexcelPaperTitles: Record<string, string> = {
+    "1": "Paper 1 Markets and Business Behaviour",
+    "2": "Paper 2 The National and Global Economy",
+    "3": "Paper 3 Microeconomics and Macroeconomics",
+  };
+  const paperTitles = edexcel ? edexcelPaperTitles : aqaPaperTitles;
+  const paperRef = edexcel ? `9EC0/0${paperNumber}` : `7136/${paperNumber}`;
 
   const fullMeta: PaperMeta = {
     subject: meta?.subject || "Economics",
@@ -967,8 +983,8 @@ export function generatePaperPdf(
     paperTitle: paperTitles[paperNumber] || title,
     date: "Predicted Paper",
     timeAllowed: "2 hours",
-    totalMarks: 80,
-    paperRef: `7136/${paperNumber}`,
+    totalMarks: edexcel ? 100 : 80,
+    paperRef,
   };
 
   // Page 1: Cover page
