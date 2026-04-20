@@ -567,11 +567,14 @@ function renderMcq(stem: McqSpec, n: number): string {
   // line as a figure-block and strips the following lines (including the
   // markdown image), silently removing the MCQ's reference figure. Emitting
   // only the markdown image keeps it visible on-screen and in PDF exports.
+  const stimulusBlock = stem.figure && !stem.figureKey
+    ? `\n\n${stem.figure}\n`
+    : "";
   const svgBlock = stem.figureKey
     ? `\n\n![${stem.figureCaption ?? `Figure ${n}`}](/figures/${stem.figureKey})\n`
     : "";
   return `Question ${n.toString().padStart(2, "0")} [1 marks]
-${stem.stem}${svgBlock}
+${stimulusBlock}${stem.stem}${svgBlock}
 
 A. ${stem.options[0]}
 B. ${stem.options[1]}
