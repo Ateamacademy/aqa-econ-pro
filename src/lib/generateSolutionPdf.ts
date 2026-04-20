@@ -917,6 +917,74 @@ function drawLevelsTable(doc: jsPDF, y: number, marks: number): number {
   return y + 4;
 }
 
+/**
+ * Edexcel A (9EC0) per-skill mark allocation table.
+ * Replaces AQA's "Levels of response" descriptor grid.
+ */
+function drawEdexcelSkillTable(doc: jsPDF, y: number, marks: number): number {
+  const split = getEdexcelASkillSplit(marks);
+  if (!split) return y;
+  const { pageW } = pageWH(doc);
+  const x = MARGIN_L;
+  const w = pageW - MARGIN_L - MARGIN_R;
+  const rows: Array<{ k: string; name: string; max: number; descriptor: string }> = [
+    { k: "K",  name: "Knowledge",   max: split.K,
+      descriptor: "Define key terms accurately; identify relevant concepts, theories or models from the specification." },
+    { k: "Ap", name: "Application", max: split.Ap,
+      descriptor: "Apply theory to the context, extract and use figures from the data response, refer to named markets/firms." },
+    { k: "An", name: "Analysis",    max: split.An,
+      descriptor: "Develop multi-step chains of reasoning; use accurate diagrams; draw quantitative inferences from the data." },
+    { k: "Ev", name: "Evaluation",  max: split.Ev,
+      descriptor: "Weigh arguments (magnitude, time, stakeholders, assumptions); reach a prioritised, supported judgement." },
+  ].filter((r) => r.max > 0);
+
+  y = drawSectionHeader(doc, y, "Mark allocation (K · Ap · An · Ev)");
+
+  const cSkill = 28;
+  const cMarks = 16;
+  const cDesc = w - cSkill - cMarks;
+  doc.setDrawColor(...COLOR_RULE);
+  doc.setLineWidth(0.25);
+
+  // Header row
+  const headH = 5;
+  y = ensureSpace(doc, y, headH + 2);
+  doc.setFillColor(...COLOR_BAND_BG);
+  doc.rect(MARGIN_L, y, w, headH, "FD");
+  doc.line(MARGIN_L + cSkill, y, MARGIN_L + cSkill, y + headH);
+  doc.line(MARGIN_L + cSkill + cMarks, y, MARGIN_L + cSkill + cMarks, y + headH);
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(8);
+  doc.setTextColor(...COLOR_BAND_INK);
+  doc.text("Skill", MARGIN_L + 2, y + 3.5);
+  doc.text("Marks", MARGIN_L + cSkill + 2, y + 3.5);
+  doc.text("What earns the mark", MARGIN_L + cSkill + cMarks + 2, y + 3.5);
+  y += headH;
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(8);
+  doc.setTextColor(...COLOR_INK);
+  for (const r of rows) {
+    const lines = doc.splitTextToSize(r.descriptor, cDesc - 4) as string[];
+    const h = Math.max(headH, lines.length * 3.6 + 2);
+    y = ensureSpace(doc, y, h);
+    doc.rect(MARGIN_L, y, w, h, "D");
+    doc.line(MARGIN_L + cSkill, y, MARGIN_L + cSkill, y + h);
+    doc.line(MARGIN_L + cSkill + cMarks, y, MARGIN_L + cSkill + cMarks, y + h);
+    doc.setFont("helvetica", "bold");
+    doc.text(`${r.k} — ${r.name}`, MARGIN_L + 2, y + 3.6);
+    doc.setFont("helvetica", "normal");
+    doc.text(`${r.max}`, MARGIN_L + cSkill + 2, y + 3.6);
+    let ty = y + 3.6;
+    for (const ln of lines) {
+      doc.text(ln, MARGIN_L + cSkill + cMarks + 2, ty);
+      ty += 3.6;
+    }
+    y += h;
+  }
+  return y + 4;
+}
+
 function drawQuestion(
   doc: jsPDF,
   entry: SolutionEntry,
