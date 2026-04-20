@@ -137,27 +137,22 @@ export default function AdminQaTracker() {
   async function runValidators() {
     setRunning(true);
     try {
-      const [{ AQA_PAPER1_OVERRIDES }, { AQA_PAPER2_OVERRIDES }] = await Promise.all([
-        import("@/data/aqaPaper1Overrides"),
-        import("@/data/aqaPaper2Overrides"),
-      ]);
+      // Validators run over what we can statically harvest. The override
+      // modules expose getter functions per paper-id; we sample known ids.
+      const p1 = await import("@/data/aqaPaper1Overrides");
+      const p2 = await import("@/data/aqaPaper2Overrides");
       const records: any[] = [];
-      const harvest = (set: any, paper: string) => {
-        if (!set?.questions) return;
-        for (const q of set.questions) {
-          records.push({
-            paper_code: paper,
-            paper_set: set.label ?? set.id ?? "?",
-            question_number: q.number ?? "?",
-            marks: q.marks ?? 0,
-            stem: q.text ?? q.stem ?? "",
-            markScheme: q.markScheme ?? "",
-            modelAnswer: q.modelAnswer ?? "",
-          });
-        }
-      };
-      Object.values(AQA_PAPER1_OVERRIDES ?? {}).forEach((s: any) => harvest(s, "7136/1"));
-      Object.values(AQA_PAPER2_OVERRIDES ?? {}).forEach((s: any) => harvest(s, "7136/2"));
+      const sets = ["A", "B", "C", "D", "E", "F", "G"];
+      for (const set of sets) {
+        const id1 = `aqa-7136-1-${set.toLowerCase()}`;
+        const id2 = `aqa-7136-2-${set.toLowerCase()}`;
+        const content1 = p1.getAqaPaper1OverrideContent?.(id1) ?? "";
+        const ms1 = p1.getAqaPaper1OverrideMarkScheme?.(id1) ?? "";
+        const content2 = p2.getAqaPaper2OverrideContent?.(id2) ?? "";
+        const ms2 = p2.getAqaPaper2OverrideMarkScheme?.(id2) ?? "";
+        if (content1) records.push({ paper_code: "7136/1", paper_set: set, question_number: "all", marks: 25, stem: content1, markScheme: ms1, modelAnswer: ms1 });
+        if (content2) records.push({ paper_code: "7136/2", paper_set: set, question_number: "all", marks: 25, stem: content2, markScheme: ms2, modelAnswer: ms2 });
+      }
       const result = runRegressionValidators(records);
       setAutoIssues(result.issues);
       toast.success(`Validators ran: ${result.passed} passed, ${result.failed} new issues`);
