@@ -272,12 +272,30 @@ async function resolveEntryDiagrams(entry: SolutionEntry): Promise<ResolvedDiagr
   for (const id of extractDiagramIds(entry.markScheme)) ids.add(id);
   for (const id of extractDiagramIds(entry.modelAnswer)) ids.add(id);
   for (const id of extractDiagramIds(entry.questionText)) ids.add(id);
+  if (import.meta.env.DEV) {
+    console.info("[solution-pipeline] resolve:start", {
+      label: entry.label,
+      requiresDiagram: !!entry.requiresDiagram,
+      referenceFigureId: entry.referenceFigureId ?? null,
+      diagramType: entry.diagramType ?? null,
+      referenceFigureScenario: entry.referenceFigureScenario ?? null,
+      extractedIds: Array.from(ids),
+    });
+  }
   if (ids.size === 0 && entry.requiresDiagram && entry.diagramType) {
     const picked = pickReferenceFigure({
       diagramType: entry.diagramType,
       questionNumber: entry.label,
       hint: [entry.questionText, entry.markScheme, entry.modelAnswer, entry.referenceFigureScenario].filter(Boolean).join("\n"),
     });
+    if (import.meta.env.DEV) {
+      console.info("[solution-pipeline] resolve:pickReferenceFigure", {
+        label: entry.label,
+        diagramType: entry.diagramType,
+        picked: picked?.entry.id ?? null,
+        scenario: picked?.scenario ?? null,
+      });
+    }
     if (picked) ids.add(picked.entry.id);
   }
   if (entry.requiresDiagram && ids.size === 0) {
@@ -287,6 +305,13 @@ async function resolveEntryDiagrams(entry: SolutionEntry): Promise<ResolvedDiagr
   const out: ResolvedDiagram[] = [];
   for (const id of ids) {
     const cat = getCatalogEntry(id);
+    if (import.meta.env.DEV) {
+      console.info("[solution-pipeline] resolve:catalog", {
+        label: entry.label,
+        requestedId: id,
+        matchedCatalogId: cat?.id ?? null,
+      });
+    }
     if (!cat) continue;
     // Prefer the high-fidelity React component when present (matches on-screen),
     // fall back to the catalog asset path (.svg / .png).
@@ -311,6 +336,15 @@ async function resolveEntryDiagrams(entry: SolutionEntry): Promise<ResolvedDiagr
       pngDataUrl: png,
       widthPx: dims.w,
       heightPx: dims.h,
+    });
+  }
+  if (import.meta.env.DEV) {
+    console.info("[solution-pipeline] resolve:done", {
+      label: entry.label,
+      resolvedDiagramIds: out.map((diagram) => diagram.catalogId),
+      count: out.length,
+      fallbackDetected: /diagram description\s*:|(?:^|\n)\s*[*-]\s*(?:x-axis|y-axis)\s*:/im.test(`${entry.markScheme}\n${entry.modelAnswer}`),
+      rawMarkdownDetected: /\|\s*Level\s*\||(?:^|\n)\s*\|\s*:?-{3,}|(?:^|\n)\s*[*-]\s+/m.test(`${entry.markScheme}\n${entry.modelAnswer}\n${entry.examinerTip ?? ""}`),
     });
   }
   if (entry.requiresDiagram && out.length === 0) {
@@ -604,6 +638,13 @@ function drawQuestion(
   }
 
   // Embedded reference diagram(s)
+  if (import.meta.env.DEV) {
+    console.info("[solution-pipeline] render:question", {
+      label: entry.label,
+      diagramCount: diagrams.length,
+      diagramIds: diagrams.map((diagram) => diagram.catalogId),
+    });
+  }
   for (const d of diagrams) {
     y = drawDiagramImage(doc, d, y);
   }

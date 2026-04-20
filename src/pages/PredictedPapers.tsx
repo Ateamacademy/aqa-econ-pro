@@ -1413,6 +1413,20 @@ export default function PredictedPapers() {
         paper: paperNum,
         setLabel,
       });
+      if (import.meta.env.DEV) {
+        console.info("[solution-pipeline] tag", {
+          label: q.label,
+          number: q.number,
+          marks: q.marks,
+          paper: paperNum,
+          explicitStem: q.text.slice(0, 160),
+          requiresDiagram: !!tag?.requiresDiagram,
+          optional: !!tag?.optional,
+          diagramType: tag?.diagramType ?? null,
+          referenceFigureId: tag?.referenceFigureId ?? null,
+          referenceFigureMissing: tag?.referenceFigureMissing ?? null,
+        });
+      }
       if (!tag) return q;
       return {
         ...q,
@@ -2013,13 +2027,33 @@ Do NOT include any other headings, preamble, or commentary outside these three s
         const maMatch = raw.match(/##\s*Model Answer\s*([\s\S]*?)(?=##\s*Examiner Tip|$)/i);
         const tipMatch = raw.match(/##\s*Examiner Tip\s*([\s\S]*?)$/i);
 
+        const markScheme = msMatch?.[1]?.trim() || raw.trim() || "(no mark scheme returned)";
+        const modelAnswer = maMatch?.[1]?.trim() || "";
+        const examinerTip = tipMatch?.[1]?.trim() || "";
+        const fallbackDetected = /diagram description\s*:|(?:^|\n)\s*[*-]\s*(?:x-axis|y-axis)\s*:/im.test(`${markScheme}\n${modelAnswer}`);
+        const rawMarkdownDetected = /\|\s*Level\s*\||(?:^|\n)\s*\|\s*:?-{3,}|(?:^|\n)\s*[*-]\s+/m.test(`${markScheme}\n${modelAnswer}\n${examinerTip}`);
+        if (import.meta.env.DEV) {
+          console.info("[solution-pipeline] llm-output", {
+            label: q.label,
+            requiresDiagram: !!(q as any).requiresDiagram,
+            referenceFigureId: (q as any).referenceFigureId ?? null,
+            diagramTypeOnQuestion: (q as any).diagramType ?? null,
+            diagramTypePassedToSolutionEntry: null,
+            referenceFigureScenarioPassedToSolutionEntry: null,
+            fallbackDetected,
+            rawMarkdownDetected,
+            markSchemePreview: markScheme.slice(0, 220),
+            modelAnswerPreview: modelAnswer.slice(0, 220),
+          });
+        }
+
         entries.push({
           label: q.label,
           marks: q.marks,
           questionText: q.text,
-          markScheme: msMatch?.[1]?.trim() || raw.trim() || "(no mark scheme returned)",
-          modelAnswer: maMatch?.[1]?.trim() || "",
-          examinerTip: tipMatch?.[1]?.trim() || "",
+          markScheme,
+          modelAnswer,
+          examinerTip,
           figuresMarkdown: figuresForQuestion(q.text),
           referenceFigureId: (q as any).referenceFigureId,
           requiresDiagram: !!(q as any).requiresDiagram,
