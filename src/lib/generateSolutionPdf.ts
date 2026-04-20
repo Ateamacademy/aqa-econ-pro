@@ -474,7 +474,7 @@ function drawFooters(doc: jsPDF, meta: SolutionMeta) {
     doc.setFontSize(7.5);
     doc.setFont("helvetica", "normal");
     doc.setTextColor(...COLOR_MUTED);
-    const ref = meta.paperRef || `7136/${meta.paperNumber || "1"}`;
+    const ref = meta.paperRef || (isEdexcelA(meta) ? `9EC0/0${meta.paperNumber || "1"}` : `7136/${meta.paperNumber || "1"}`);
     doc.text(`${ref} – Predicted Mark Scheme`, MARGIN_L, pageH - 10);
     doc.text(`${i} of ${totalPages}`, pageW / 2, pageH - 10, { align: "center" });
     doc.text(meta.examBoard || "AQA", pageW - MARGIN_R, pageH - 10, { align: "right" });
