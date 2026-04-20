@@ -489,12 +489,16 @@ Critics, including the Institute of Economic Affairs, warned of crowding out, go
 });
 
 function renderMcq(stem: McqSpec, n: number): string {
-  const figureBlock = stem.figure ? `${stem.figure}\n\n` : "";
+  // NOTE: drop the prose "**Figure N:**" intro — the predicted-paper viewer
+  // runs `<MathsMarkdown suppressDiagrams>`, which treats any `**Figure N:**`
+  // line as a figure-block and strips the following lines (including the
+  // markdown image), silently removing the MCQ's reference figure. Emitting
+  // only the markdown image keeps it visible on-screen and in PDF exports.
   const svgBlock = stem.figureKey
-    ? `\n\n![${stem.figureCaption ?? "Reference figure"}](/figures/${stem.figureKey})\n`
+    ? `\n\n![${stem.figureCaption ?? `Figure ${n}`}](/figures/${stem.figureKey})\n`
     : "";
   return `Question ${n.toString().padStart(2, "0")} [1 marks]
-${figureBlock}${stem.stem}${svgBlock}
+${stem.stem}${svgBlock}
 
 A. ${stem.options[0]}
 B. ${stem.options[1]}
