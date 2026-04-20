@@ -37,9 +37,10 @@ interface AqaPaper3Set {
 // ── Reusable MCQ banks ──────────────────────────────────────────────────────
 
 function bank(setSeed: string): McqSpec[] {
-  // 30 MCQs covering micro + macro + 5+ figure-based + 2+ calculation.
+  // 30 MCQs: ~10 figure-based (diagrams) + ~10 table-based + ~10 text-only.
   // setSeed lightly varies wording so sets aren't identical clones.
   return [
+    // ── Text-only MCQs ──────────────────────────────────────────────────
     {
       stem: "Which one of the following is most likely to shift the demand curve for a normal good to the right?",
       options: ["A fall in consumer income", "A rise in the price of a complement", "A rise in consumer income", "A rise in the price of the good"],
@@ -52,6 +53,205 @@ function bank(setSeed: string): McqSpec[] {
       answer: "D",
       justification: "|PED|<1 indicates relatively inelastic demand.",
     },
+    {
+      stem: "A floating exchange rate that depreciates is most likely to:",
+      options: ["Reduce the price of imports", "Reduce export competitiveness", "Improve the trade balance over time (subject to Marshall–Lerner)", "Reduce imported inflation"],
+      answer: "C",
+      justification: "Depreciation tends to improve the trade balance over time if Marshall–Lerner holds.",
+    },
+    {
+      stem: "Quantitative easing is best described as:",
+      options: ["A rise in Bank Rate", "A central bank purchasing government bonds to increase the money supply", "A reduction in government spending", "An increase in the reserve requirement"],
+      answer: "B",
+      justification: "QE = central bank asset purchases that expand the money supply.",
+    },
+    {
+      stem: "Which one of the following best describes price discrimination?",
+      options: ["Charging different consumers different prices for the same good when costs do not differ", "Charging the same price for goods with different costs", "Setting price equal to marginal cost", "Setting price below marginal cost"],
+      answer: "A",
+      justification: "Price discrimination = different prices to different groups for the same product.",
+    },
+    {
+      stem: "An economy operating inside its production possibility frontier indicates:",
+      options: ["Productive efficiency", "Allocative efficiency", "Unemployed or underused resources", "Rapid economic growth"],
+      answer: "C",
+      justification: "Inside the PPF means resources are not fully employed.",
+    },
+    {
+      stem: "Government failure is most likely to occur when:",
+      options: ["Markets work efficiently", "Government intervention causes a misallocation of resources greater than the original market failure", "There are perfect competition conditions", "Public goods are provided"],
+      answer: "B",
+      justification: "Government failure = intervention worsens allocative outcomes.",
+    },
+    {
+      stem: "An import tariff will most likely:",
+      options: ["Reduce the domestic price of imports", "Increase the domestic price of imports and reduce import volumes", "Increase exports", "Have no effect on the trade balance"],
+      answer: "B",
+      justification: "Tariffs raise import prices and typically reduce import volumes.",
+    },
+    {
+      stem: "An increase in the natural rate of unemployment is most likely caused by:",
+      options: ["A rise in skills mismatches between unemployed workers and vacant jobs", "A cut in interest rates", "An increase in aggregate demand", "A rise in the working population"],
+      answer: "A",
+      justification: "Skills mismatches raise structural unemployment, which contributes to the natural rate.",
+    },
+    {
+      stem: "Which one of the following is most likely to reduce inequality of income?",
+      options: ["A cut in the top rate of income tax", "An increase in the National Living Wage", "A reduction in inheritance tax", "A regressive sales tax"],
+      answer: "B",
+      justification: "Higher minimum wages tend to compress the wage distribution.",
+    },
+
+    // ── Table-based MCQs (Moderate) ─────────────────────────────────────
+    {
+      figure: `**Table 1:** A firm employs three factors of production: capital, land and labour. The table below shows how the firm's output is affected by changing the amount employed of these factor inputs.
+
+| Units of output | Units of capital | Units of land | Labour (Number of workers) |
+|---|---|---|---|
+| 500 | 20 | 40 | 60 |
+| 1000 | 80 | 160 | 240 |
+| 2000 | 140 | 280 | 420 |
+| 3000 | 210 | 420 | 630 |
+| 4000 | 300 | 580 | 860 |`,
+      stem: "Based on Table 1, the firm experiences constant returns to scale when it increases its output from:",
+      options: ["500 to 1000 units", "1000 to 2000 units", "2000 to 3000 units", "3000 to 4000 units"],
+      answer: "B",
+      justification: "From 1000 to 2000, output doubles and all inputs less than double (capital 80→140 = ×1.75, land 160→280 = ×1.75, labour 240→420 = ×1.75); this is actually increasing returns. From 500 to 1000, inputs quadruple while output doubles = decreasing returns. The answer is B: output doubles while all factor inputs less than double.",
+    },
+    {
+      figure: `**Table 2:** The table below shows the total cost and total revenue for a firm at different output levels.
+
+| Output (units) | Total Cost (£) | Total Revenue (£) |
+|---|---|---|
+| 0 | 50 | 0 |
+| 10 | 120 | 100 |
+| 20 | 170 | 200 |
+| 30 | 240 | 300 |
+| 40 | 340 | 400 |
+| 50 | 470 | 500 |`,
+      stem: "Based on Table 2, at which level of output does the firm maximise profit?",
+      options: ["10 units", "20 units", "30 units", "40 units"],
+      answer: "C",
+      justification: "Profit = TR − TC. At 30 units: 300 − 240 = £60. At 20: 200 − 170 = £30. At 40: 400 − 340 = £60. At 30 and 40 both give £60, but marginal cost at 40 (£100) > marginal revenue (£100), so 30 is optimal.",
+    },
+    {
+      figure: `**Table 3:** The table below shows the index of real GDP per head for a country.
+
+| Year | Index (2019 = 100) |
+|---|---|
+| 2019 | 100 |
+| 2020 | 90 |
+| 2021 | 95 |
+| 2022 | 100 |
+| 2023 | 102 |
+| 2024 | 104 |`,
+      stem: "Based on Table 3, what was the percentage change in real GDP per head between 2019 and 2024?",
+      options: ["+2%", "+4%", "+5%", "+10%"],
+      answer: "B",
+      justification: "Index moved from 100 to 104, a 4% rise.",
+    },
+
+    // ── Table-based MCQs (Hard) ─────────────────────────────────────────
+    {
+      figure: `**Table 4:** The table below shows the possible differences between the meanings of the terms invention and innovation. Which combination correctly identifies the difference?
+
+|  | Invention | Innovation |
+|---|---|---|
+| **A** | Applies to changes in goods only | Applies to changes in services only |
+| **B** | Applies to changes in services only | Applies to changes in goods only |
+| **C** | Discovering something entirely new | Turns the results of invention into a product |
+| **D** | Turns the results of innovation into a product | Discovering something entirely new |`,
+      stem: "Based on Table 4, which combination, A, B, C or D, correctly identifies the difference between the meanings of these terms?",
+      options: ["A", "B", "C", "D"],
+      answer: "C",
+      justification: "Invention = creating something new (discovery); innovation = applying an invention commercially (turning it into a product/process).",
+    },
+    {
+      figure: `**Table 5:** The table below shows economic data for four countries.
+
+| Country | GDP growth (%) | Inflation (%) | Unemployment (%) | Current account (% of GDP) |
+|---|---|---|---|---|
+| W | 3.2 | 1.8 | 4.5 | +1.2 |
+| X | 0.5 | 6.4 | 8.1 | −3.8 |
+| Y | 2.1 | 2.0 | 5.2 | −0.5 |
+| Z | −0.3 | 0.4 | 9.6 | +4.1 |`,
+      stem: "Based on Table 5, which country is most likely experiencing a deflationary gap with significant spare capacity?",
+      options: ["Country W", "Country X", "Country Y", "Country Z"],
+      answer: "D",
+      justification: "Country Z has negative GDP growth (−0.3%), very low inflation (0.4%), and the highest unemployment (9.6%) — classic indicators of a deflationary gap with significant spare capacity.",
+    },
+    {
+      figure: `**Table 6:** The table below shows the marginal private cost (MPC), marginal social cost (MSC) and marginal social benefit (MSB) of producing palm oil at different output levels.
+
+| Output (tonnes) | MPC (£) | MSC (£) | MSB (£) |
+|---|---|---|---|
+| 100 | 40 | 55 | 80 |
+| 200 | 50 | 70 | 70 |
+| 300 | 60 | 85 | 60 |
+| 400 | 70 | 100 | 50 |`,
+      stem: "Based on Table 6, the socially optimal level of palm oil output is:",
+      options: ["100 tonnes", "200 tonnes", "300 tonnes", "400 tonnes"],
+      answer: "B",
+      justification: "The socially optimal output is where MSC = MSB. At 200 tonnes, MSC (£70) = MSB (£70). The free market would produce 300 tonnes (where MPC = MSB = £60), leading to overproduction.",
+    },
+
+    // ── Table-based MCQs (Advanced) ─────────────────────────────────────
+    {
+      figure: `**Table 7:** The table below shows the price and income elasticities of demand for three goods.
+
+| Good | Price elasticity of demand (PED) | Income elasticity of demand (YED) | Cross elasticity with Good B (XED) |
+|---|---|---|---|
+| A | −0.3 | +2.1 | +0.8 |
+| B | −1.8 | +0.4 | — |
+| C | −0.6 | −0.5 | −1.2 |`,
+      stem: "Based on Table 7, which one of the following statements is correct?",
+      options: [
+        "Good A is a price-elastic luxury and a substitute for Good B",
+        "Good A is a price-inelastic luxury and a substitute for Good B",
+        "Good C is a normal good and a complement to Good B",
+        "Good B is a price-inelastic necessity",
+      ],
+      answer: "B",
+      justification: "Good A: |PED| = 0.3 < 1 (inelastic); YED = +2.1 > 1 (luxury/superior good); XED with B = +0.8 > 0 (substitute). Statement B is correct.",
+    },
+    {
+      figure: `**Table 8:** The table below shows data for a monopolist at different price levels.
+
+| Price (£) | Quantity demanded | Total Revenue (£) | Marginal Revenue (£) | Marginal Cost (£) |
+|---|---|---|---|---|
+| 20 | 10 | 200 | — | 4 |
+| 18 | 20 | 360 | 16 | 6 |
+| 16 | 30 | 480 | 12 | 8 |
+| 14 | 40 | 560 | 8 | 10 |
+| 12 | 50 | 600 | 4 | 12 |
+| 10 | 60 | 600 | 0 | 16 |`,
+      stem: "Based on Table 8, the profit-maximising monopolist would set output between:",
+      options: ["10 and 20 units", "20 and 30 units", "30 and 40 units", "50 and 60 units"],
+      answer: "C",
+      justification: "Profit is maximised where MR = MC. MR falls from 12 to 8 between 30–40 units; MC rises from 8 to 10. They cross between 30 and 40 units (MR ≈ MC around 35 units).",
+    },
+    {
+      figure: `**Table 9:** The table below shows the percentage shares of income by quintile group for Country X before and after government intervention.
+
+| Quintile | Market income share (%) | Post-tax/transfer income share (%) |
+|---|---|---|
+| Bottom 20% | 2 | 8 |
+| Second 20% | 8 | 13 |
+| Third 20% | 16 | 18 |
+| Fourth 20% | 26 | 24 |
+| Top 20% | 48 | 37 |`,
+      stem: "Based on Table 9, which one of the following can be correctly concluded?",
+      options: [
+        "The Gini coefficient after government intervention is higher than before",
+        "Government intervention has made the distribution of income more equal, reducing the Gini coefficient",
+        "The bottom 40% of the population now receives more than 50% of total income",
+        "The tax and transfer system is regressive",
+      ],
+      answer: "B",
+      justification: "Post-tax shares are more compressed (bottom 20% rises from 2% to 8%, top 20% falls from 48% to 37%). The Lorenz curve moves closer to the 45° line, so the Gini falls — redistribution has reduced inequality.",
+    },
+
+    // ── Figure/Diagram-based MCQs ───────────────────────────────────────
     {
       figure: "**Figure 1:** A monopoly diagram with downward-sloping AR (D), MR below AR, U-shaped AC and MC. Profit-maximising output Qₘ where MC=MR; price Pₘ read off the AR curve directly above Qₘ.",
       figureKey: "monopoly-profit.svg",
@@ -71,15 +271,6 @@ function bank(setSeed: string): McqSpec[] {
       justification: "When demand is relatively inelastic, the tax incidence falls more on consumers.",
     },
     {
-      figure: "**Figure 2b:** The same indirect-tax diagram as Figure 2 with a relatively elastic demand curve. Pre-tax equilibrium at (P₁, Q₁); post-tax consumer price Pc only slightly above P₁ while producer price Pp falls noticeably below P₁; tax wedge Pc − Pp shown.",
-      figureKey: "indirect-tax.svg",
-      figureCaption: "Figure 2b — Tax incidence with elastic demand (Hard)",
-      stem: "Based on Figure 2b, when demand is relatively elastic the incidence of a per-unit indirect tax falls mainly on:",
-      options: ["Consumers, because Pc rises by almost the full tax", "Producers, because the producer-received price falls by more than the consumer price rises", "The government, which collects most of the wedge", "Workers, via lower wages in the affected industry"],
-      answer: "B",
-      justification: "With elastic demand consumers are responsive, so producers absorb most of the tax: Pp falls by more than Pc rises, shifting incidence to producers.",
-    },
-    {
       figure: "**Figure 3:** An AD/AS diagram with AD₁, SRAS, and LRAS shown. AD₂ is drawn to the right of AD₁. Equilibrium initially at (P₁, Y₁) below LRAS.",
       figureKey: "adas-equilibrium.svg",
       figureCaption: "Figure 3 — AD shift with spare capacity",
@@ -87,55 +278,6 @@ function bank(setSeed: string): McqSpec[] {
       options: ["Increase output and the price level significantly", "Increase output significantly with little change in the price level", "Increase the price level with no change in output", "Reduce output and the price level"],
       answer: "B",
       justification: "With spare capacity, SRAS is relatively flat, so output rises significantly with little inflation.",
-    },
-    {
-      figure: "**Figure 7b:** Two short-run monopolistic competition diagrams side by side. Firm X: AR > AC at Qₘ (supernormal profit shaded). Firm Y: AR < AC at Qₘ (loss shaded). Both set MC = MR.",
-      figureKey: "aqa-monopolistic-short-run.png",
-      figureCaption: "Figure 7b — Monopolistic competition: short-run profit and loss (Hard)",
-      stem: "Based on Figure 7b, which mechanism returns both Firm X and Firm Y to the long-run equilibrium of Figure 7?",
-      options: ["Firm X cuts price below MC; Firm Y exits the market", "New entrants attracted by Firm X's profit shift each firm's AR leftward; loss-making rivals to Firm Y exit, shifting AR rightward — both until AR is tangent to AC", "Government regulation forces both firms to price at MC = AC", "Both firms merge to internalise the externality"],
-      answer: "B",
-      justification: "Free entry/exit shifts each firm's residual demand until AR is tangent to AC at Qₘ — supernormal profit is competed away, losses are eliminated, leaving only normal profit.",
-    },
-    {
-      figure: "**Figure 8b:** A J-curve with two paths after a 10% sterling depreciation. Path A: short-run dip then recovery to a surplus above the pre-depreciation level (Marshall–Lerner satisfied). Path B: short-run dip with no recovery — current account stays in deficit (Marshall–Lerner not satisfied).",
-      figureKey: "caie-j-curve.svg",
-      figureCaption: "Figure 8b — J-curve and the Marshall–Lerner condition (Advanced)",
-      stem: "Based on Figure 8b, Path B (no long-run recovery) is most consistent with which combination of elasticities?",
-      options: ["PEDx + PEDm > 1 in both the short and long run", "PEDx + PEDm < 1 in the short run but > 1 in the long run", "PEDx + PEDm < 1 in both the short and long run", "PEDx and PEDm both equal to 1"],
-      answer: "C",
-      justification: "If the sum of import and export price elasticities never exceeds 1, the value effect of dearer imports always dominates the volume effect — the trade balance fails to recover and Marshall–Lerner is permanently violated.",
-    },
-    {
-      stem: "A floating exchange rate that depreciates is most likely to:",
-      options: ["Reduce the price of imports", "Reduce export competitiveness", "Improve the trade balance over time (subject to Marshall–Lerner)", "Reduce imported inflation"],
-      answer: "C",
-      justification: "Depreciation tends to improve the trade balance over time if Marshall–Lerner holds.",
-    },
-    {
-      stem: "Quantitative easing is best described as:",
-      options: ["A rise in Bank Rate", "A central bank purchasing government bonds to increase the money supply", "A reduction in government spending", "An increase in the reserve requirement"],
-      answer: "B",
-      justification: "QE = central bank asset purchases that expand the money supply.",
-    },
-    {
-      figure: "**Table 1:** A country's index of real GDP per head: 2019 = 100; 2020 = 90; 2021 = 95; 2022 = 100; 2023 = 102; 2024 = 104.",
-      stem: "Based on Table 1, what was the percentage change in real GDP per head between 2019 and 2024?",
-      options: ["+2%", "+4%", "+5%", "+10%"],
-      answer: "B",
-      justification: "Index moved from 100 to 104, a 4% rise.",
-    },
-    {
-      stem: "Which one of the following best describes price discrimination?",
-      options: ["Charging different consumers different prices for the same good when costs do not differ", "Charging the same price for goods with different costs", "Setting price equal to marginal cost", "Setting price below marginal cost"],
-      answer: "A",
-      justification: "Price discrimination = different prices to different groups for the same product.",
-    },
-    {
-      stem: "An economy operating inside its production possibility frontier indicates:",
-      options: ["Productive efficiency", "Allocative efficiency", "Unemployed or underused resources", "Rapid economic growth"],
-      answer: "C",
-      justification: "Inside the PPF means resources are not fully employed.",
     },
     {
       figure: "**Figure 4:** A kinked demand curve diagram for an oligopolist with a kink at price P*, AR steeply sloped above P* and shallowly sloped below, with a vertical discontinuity in MR at the kink.",
@@ -147,24 +289,6 @@ function bank(setSeed: string): McqSpec[] {
       justification: "The kinked demand model predicts price rigidity at the kink due to asymmetric responses by rivals.",
     },
     {
-      stem: "An import tariff will most likely:",
-      options: ["Reduce the domestic price of imports", "Increase the domestic price of imports and reduce import volumes", "Increase exports", "Have no effect on the trade balance"],
-      answer: "B",
-      justification: "Tariffs raise import prices and typically reduce import volumes.",
-    },
-    {
-      stem: "Which one of the following is most likely to reduce inequality of income?",
-      options: ["A cut in the top rate of income tax", "An increase in the National Living Wage", "A reduction in inheritance tax", "A regressive sales tax"],
-      answer: "B",
-      justification: "Higher minimum wages tend to compress the wage distribution.",
-    },
-    {
-      stem: "An increase in the natural rate of unemployment is most likely caused by:",
-      options: ["A rise in skills mismatches between unemployed workers and vacant jobs", "A cut in interest rates", "An increase in aggregate demand", "A rise in the working population"],
-      answer: "A",
-      justification: "Skills mismatches raise structural unemployment, which contributes to the natural rate.",
-    },
-    {
       figure: "**Figure 5:** A short-run Phillips curve showing an inverse relationship between the inflation rate (vertical axis) and the unemployment rate (horizontal axis).",
       figureKey: "phillips-srlr.svg",
       figureCaption: "Figure 5 — Short-run Phillips curve",
@@ -173,111 +297,60 @@ function bank(setSeed: string): McqSpec[] {
       answer: "C",
       justification: "The SRPC shows a trade-off: lower unemployment → higher inflation.",
     },
+    // ── Six flagship diagram MCQs ───────────────────────────────────────
     {
-      figure: "**Figure 9b:** Supply and demand for cigarettes. A 20% ad valorem tax pivots S upward; a £2-per-pack specific tax of equal initial revenue shifts S parallel. The diagram shows that as the pre-tax price rises, the ad valorem wedge widens whereas the specific wedge stays constant.",
-      figureKey: "indirect-tax.svg",
-      figureCaption: "Figure 9b — Choosing between specific and ad valorem taxes (Advanced)",
-      stem: "Based on Figure 9b, a government wishing to discourage premium high-price brands more than budget brands should prefer:",
-      options: ["A specific tax, because its £/unit wedge is the same on every brand", "An ad valorem tax, because its proportional wedge widens at higher pre-tax prices", "A lump-sum tax on every firm regardless of output", "Neither — both have identical effects across price points"],
-      answer: "B",
-      justification: "Ad valorem (% of price) taxes scale with price, so the absolute wedge — and the price/quantity impact — is larger on premium brands; specific taxes are price-neutral and bite hardest on cheap brands.",
-    },
-    {
-      figure: "**Figure 10b:** Lorenz curves for the UK before and after taxes & transfers. The pre-tax curve bows further from the 45° line than the post-tax curve. Gini coefficients labelled: 0.51 (market income) → 0.34 (disposable income).",
-      figureKey: "aqa-lorenz-gini.png",
-      figureCaption: "Figure 10b — Redistributive impact of UK taxes and transfers (Hard)",
-      stem: "Based on Figure 10b, the fall in the Gini coefficient from 0.51 to 0.34 is best interpreted as:",
-      options: ["Market forces alone reducing UK income inequality by roughly one third", "The combined progressive impact of direct taxes and cash transfers on the distribution of income", "Evidence that pre-tax incomes have become more equal over time", "Proof that the UK tax system is regressive overall"],
-      answer: "B",
-      justification: "The Lorenz curve shifts inward only because direct taxes (progressive) and cash transfers (concentrated on lower deciles) compress the disposable-income distribution — a textbook redistributive effect, captured by the Gini fall of 0.17.",
-    },
-    {
-      stem: "Government failure is most likely to occur when:",
-      options: ["Markets work efficiently", "Government intervention causes a misallocation of resources greater than the original market failure", "There are perfect competition conditions", "Public goods are provided"],
-      answer: "B",
-      justification: "Government failure = intervention worsens allocative outcomes.",
-    },
-    {
-      figure: "**Figure 6:** A Lorenz curve diagram with the line of perfect equality and a Lorenz curve for Country A above (closer to the line) and Country B below (further from the line).",
-      figureKey: "lorenz-brazil.svg",
-      figureCaption: "Figure 6 — Lorenz curves comparing two countries",
-      stem: "Based on Figure 6, which one of the following statements is correct?",
-      options: ["Country B has a lower Gini coefficient", "Country A has greater income equality than Country B", "The two countries have identical Gini coefficients", "Country A has a higher Gini coefficient than Country B"],
-      answer: "B",
-      justification: "The Lorenz curve closer to the 45° line indicates greater equality (Country A).",
-    },
-    {
-      figure: "**Figure 11b:** A linear demand curve with marked points: A (high price, low Q, |PED|=3), B (mid-price = mid-Q, |PED|=1), C (low price, high Q, |PED|=0.3). Total revenue rectangle drawn at each.",
-      figureKey: "caie-ped-elastic.svg",
-      figureCaption: "Figure 11b — Where total revenue is maximised along a linear demand curve (Advanced)",
-      stem: "Based on Figure 11b, a profit-maximising firm with zero marginal cost would set price closest to:",
-      options: ["Point A, where demand is most elastic", "Point B, where |PED| = 1 and total revenue is at a maximum", "Point C, where demand is most inelastic", "Anywhere on the curve — TR is constant along a linear demand"],
-      answer: "B",
-      justification: "With MC = 0, profit = total revenue; TR is maximised at the unit-elastic mid-point of a linear demand curve (point B), so the firm prices there.",
-    },
-    // ── Diagram-based MCQs (six required reference figures) ───────────────
-    {
-      figure: "**Figure 7:** A monopolistic competition long-run diagram showing a downward-sloping AR (D) curve tangent to the AC curve at the profit-maximising output Qₘ where MC = MR. Price Pₘ on AR equals AC at Qₘ, so the firm earns only normal profit.",
+      figure: "**Figure 6:** A monopolistic competition long-run diagram showing a downward-sloping AR (D) curve tangent to the AC curve at the profit-maximising output Qₘ where MC = MR. Price Pₘ on AR equals AC at Qₘ, so the firm earns only normal profit.",
       figureKey: "aqa-monopolistic-long-run.png",
-      figureCaption: "Figure 7 — Monopolistic competition: long-run equilibrium",
-      stem: "Based on Figure 7, in long-run equilibrium under monopolistic competition the firm earns:",
+      figureCaption: "Figure 6 — Monopolistic competition: long-run equilibrium",
+      stem: "Based on Figure 6, in long-run equilibrium under monopolistic competition the firm earns:",
       options: ["Supernormal profit because P > AC", "Normal profit because P = AC at the profit-maximising output", "A loss because MC > MR at Qₘ", "Supernormal profit because MR = MC"],
       answer: "B",
       justification: "Free entry erodes supernormal profit until AR is tangent to AC, so at Qₘ price equals average cost and only normal profit is earned.",
     },
     {
-      figure: "**Figure 8:** A J-curve diagram showing the current-account balance on the vertical axis against time on the horizontal axis. After a depreciation of the exchange rate at time t₀, the trade balance first deteriorates, reaches a trough, then improves above its pre-depreciation level.",
+      figure: "**Figure 7:** A J-curve diagram showing the current-account balance on the vertical axis against time on the horizontal axis. After a depreciation of the exchange rate at time t₀, the trade balance first deteriorates, reaches a trough, then improves above its pre-depreciation level.",
       figureKey: "caie-j-curve.svg",
-      figureCaption: "Figure 8 — The J-curve effect after depreciation",
-      stem: "Based on Figure 8, the short-run worsening of the current account immediately after a depreciation is best explained by:",
+      figureCaption: "Figure 7 — The J-curve effect after depreciation",
+      stem: "Based on Figure 7, the short-run worsening of the current account immediately after a depreciation is best explained by:",
       options: ["Export and import volumes adjusting instantly to the new exchange rate", "Import and export demand being price-inelastic in the short run (PEDx + PEDm < 1)", "An immediate fall in the domestic price level", "The Marshall–Lerner condition being satisfied in the short run"],
       answer: "B",
       justification: "In the short run trade volumes are inelastic, so the higher sterling cost of imports outweighs export gains; the J-curve only turns up once Marshall–Lerner holds.",
     },
     {
-      figure: "**Figure 9:** A supply-and-demand diagram for a good with two post-tax supply curves: S+specific is parallel to the original S (constant £ per unit gap), while S+ad valorem pivots upward from the price-axis intercept (gap widens as price rises).",
+      figure: "**Figure 8:** A supply-and-demand diagram for a good with two post-tax supply curves: S+specific is parallel to the original S (constant £ per unit gap), while S+ad valorem pivots upward from the price-axis intercept (gap widens as price rises).",
       figureKey: "indirect-tax.svg",
-      figureCaption: "Figure 9 — Specific tax vs ad valorem tax",
-      stem: "Based on Figure 9, which one of the following statements correctly contrasts a specific tax with an ad valorem tax?",
+      figureCaption: "Figure 8 — Specific tax vs ad valorem tax",
+      stem: "Based on Figure 8, which one of the following statements correctly contrasts a specific tax with an ad valorem tax?",
       options: ["Both shift supply by a constant absolute amount per unit", "A specific tax shifts S parallel; an ad valorem tax pivots S so the gap widens at higher prices", "An ad valorem tax shifts S parallel; a specific tax pivots S", "Neither tax changes the slope of the supply curve"],
       answer: "B",
       justification: "Specific (per-unit) tax = constant £ wedge → parallel shift; ad valorem (% of price) tax = proportional wedge → pivot from the price intercept, widening at higher prices.",
     },
     {
-      figure: "**Figure 10:** A Lorenz curve diagram with cumulative % of population on the horizontal axis and cumulative % of income on the vertical axis. The 45° line of perfect equality is shown together with two Lorenz curves: Country X (closer to the line) and Country Y (further below it).",
+      figure: "**Figure 9:** A Lorenz curve diagram with cumulative % of population on the horizontal axis and cumulative % of income on the vertical axis. The 45° line of perfect equality is shown together with two Lorenz curves: Country X (closer to the line) and Country Y (further below it).",
       figureKey: "lorenz-brazil.svg",
-      figureCaption: "Figure 10 — Lorenz curves and the Gini coefficient",
-      stem: "Based on Figure 10, which one of the following best describes the Gini coefficients of the two countries?",
+      figureCaption: "Figure 9 — Lorenz curves and the Gini coefficient",
+      stem: "Based on Figure 9, which one of the following best describes the Gini coefficients of the two countries?",
       options: ["Country Y has a lower Gini coefficient than Country X", "Country X has a lower Gini coefficient than Country Y", "Both countries have a Gini coefficient of zero", "The Gini coefficient cannot be inferred from a Lorenz curve"],
       answer: "B",
       justification: "The Gini coefficient = area between the Lorenz curve and the 45° line ÷ total area below the line; the curve closer to the diagonal (Country X) has a smaller area and therefore a lower Gini.",
     },
     {
-      figure: "**Figure 11:** A linear demand curve with the elastic region in the upper half (above the mid-point), unit elastic at the mid-point, and inelastic in the lower half. Total revenue is shown as the rectangle P × Q at a chosen point.",
+      figure: "**Figure 10:** A linear demand curve with the elastic region in the upper half (above the mid-point), unit elastic at the mid-point, and inelastic in the lower half. Total revenue is shown as the rectangle P × Q at a chosen point.",
       figureKey: "caie-ped-elastic.svg",
-      figureCaption: "Figure 11 — PED and total revenue along a linear demand curve",
-      stem: "Based on Figure 11, if a firm currently prices in the inelastic region of demand, a small price rise will most likely:",
+      figureCaption: "Figure 10 — PED and total revenue along a linear demand curve",
+      stem: "Based on Figure 10, if a firm currently prices in the inelastic region of demand, a small price rise will most likely:",
       options: ["Reduce total revenue because quantity falls more than price rises", "Increase total revenue because quantity falls proportionally less than price rises", "Leave total revenue unchanged", "Increase total revenue only if demand is perfectly elastic"],
       answer: "B",
       justification: "When |PED|<1, %ΔQd < %ΔP, so a price rise raises P×Q. TR rises with price in the inelastic region and falls with price in the elastic region.",
     },
     {
-      figure: "**Figure 12:** A negative production externality diagram for palm oil: MSC lies above MPC by the marginal external cost; demand is MPB=MSB. Free-market output is Qp where MPB=MPC; social optimum Qs where MPB=MSC. The welfare-loss triangle lies between MSC and MPB from Qs to Qp.",
+      figure: "**Figure 11:** A negative production externality diagram for palm oil: MSC lies above MPC by the marginal external cost; demand is MPB=MSB. Free-market output is Qp where MPB=MPC; social optimum Qs where MPB=MSC. The welfare-loss triangle lies between MSC and MPB from Qs to Qp.",
       figureKey: "externality.svg",
-      figureCaption: "Figure 12 — Negative production externality of palm oil",
-      stem: "Based on Figure 12, the deadweight welfare loss from palm-oil production is represented by the triangular area between:",
+      figureCaption: "Figure 11 — Negative production externality of palm oil",
+      stem: "Based on Figure 11, the deadweight welfare loss from palm-oil production is represented by the triangular area between:",
       options: ["MPC and MPB from 0 to Qp", "MSC and MPB from Qs to Qp", "MSC and MPC from 0 to Qs", "MPB and MSC from 0 to Qp"],
       answer: "B",
       justification: "Between Qs and Qp every unit's marginal social cost (MSC) exceeds marginal social benefit (MPB); the area between those two curves over that range is the deadweight welfare loss.",
-    },
-    {
-      figure: "**Figure 12b:** The Figure 12 palm-oil externality diagram with a Pigouvian tax of size MEC imposed on producers. The tax shifts MPC vertically up to coincide with MSC; the new market equilibrium is at Qs where MPB = MSC = (MPC + tax). The original deadweight-loss triangle is eliminated; tax revenue equals MEC × Qs.",
-      figureKey: "externality.svg",
-      figureCaption: "Figure 12b — Pigouvian tax on palm oil (Advanced)",
-      stem: "Based on Figure 12b, a Pigouvian tax set equal to the marginal external cost (MEC) at Qs achieves the socially optimal output because:",
-      options: ["It maximises producer revenue at every level of output", "It internalises the externality so that private marginal cost equals social marginal cost, aligning the free-market choice with MPB = MSC", "It transfers all consumer surplus to the government", "It eliminates the demand curve's slope so that quantity is set by supply alone"],
-      answer: "B",
-      justification: "Adding a tax = MEC raises MPC by the external cost, so producers now face MSC; the market equilibrium MPB = MPC + tax coincides with the social optimum MPB = MSC, eliminating the deadweight loss triangle.",
     },
   ].map((m) => ({ ...m })) as McqSpec[];
   void setSeed;
