@@ -16,6 +16,7 @@ interface PaperMeta {
   timeAllowed?: string;
   totalMarks?: number;
   paperRef?: string;
+  isEdexcel?: boolean;
 }
 
 // ─── Helpers ────────────────────────────────────────────────────────
@@ -88,6 +89,194 @@ function drawFooters(doc: jsPDF, meta: PaperMeta, marginL: number) {
 }
 
 // ─── Cover Page ─────────────────────────────────────────────────────
+
+/** Authentic Pearson Edexcel 9EC0 cover page. Mirrors the layout of the
+ *  attached June 2017–2019 9EC0/01 question papers: candidate info box at
+ *  the top with Paper Reference and Total Marks cells, "Pearson Edexcel
+ *  Level 3 GCE" + Date band + Time/Paper Reference row, then
+ *  Economics A / Advanced / Paper N: <title>, then bullet Instructions,
+ *  Information and Advice blocks. */
+function drawEdexcelCoverPage(doc: jsPDF, meta: PaperMeta) {
+  const pageW = doc.internal.pageSize.getWidth();
+  const pageH = doc.internal.pageSize.getHeight();
+  const marginL = 22;
+  const marginR = 22;
+  const innerW = pageW - marginL - marginR;
+  const pNum = meta.paperNumber || "1";
+  const ref = meta.paperRef || `9EC0/0${pNum}`;
+
+  // Outer rounded info box
+  let y = 30;
+  const boxX = marginL;
+  const boxY = y;
+  const boxW = innerW;
+  const boxH = 100;
+  doc.setDrawColor(120, 120, 120);
+  doc.setLineWidth(0.5);
+  doc.roundedRect(boxX, boxY, boxW, boxH, 3, 3, "S");
+
+  // Top instruction strip
+  doc.setFontSize(8);
+  doc.setFont("helvetica", "bold");
+  doc.setTextColor(0, 0, 0);
+  doc.text(
+    "Please check the examination details below before entering your candidate information",
+    boxX + boxW / 2,
+    boxY + 6,
+    { align: "center" }
+  );
+
+  // Candidate name cells
+  const cellY = boxY + 10;
+  const cellH = 10;
+  const nameW = boxW * 0.55;
+  doc.setLineWidth(0.4);
+  doc.rect(boxX + 4, cellY, nameW / 2 - 2, cellH, "S");
+  doc.rect(boxX + 4 + nameW / 2, cellY, nameW / 2 - 2, cellH, "S");
+  doc.setFontSize(7.5);
+  doc.setFont("helvetica", "normal");
+  doc.text("Candidate surname", boxX + 6, cellY + 3.5);
+  doc.text("Other names", boxX + 6 + nameW / 2, cellY + 3.5);
+
+  // Centre / Candidate number cells
+  const numX = boxX + 4 + nameW + 2;
+  const numW = boxW - nameW - 10;
+  doc.setFontSize(7.5);
+  doc.text("Centre Number", numX, cellY + 3.5);
+  doc.text("Candidate Number", numX + numW / 2, cellY + 3.5);
+  for (let i = 0; i < 6; i++) {
+    doc.rect(numX + i * 4, cellY + 4.5, 3.6, 5, "S");
+  }
+  for (let i = 0; i < 6; i++) {
+    doc.rect(numX + numW / 2 + i * 4, cellY + 4.5, 3.6, 5, "S");
+  }
+
+  // Pearson Edexcel Level 3 GCE block
+  let by = boxY + 26;
+  doc.setFontSize(11);
+  doc.setFont("helvetica", "bold");
+  doc.text("Pearson Edexcel", boxX + 4, by);
+  by += 5;
+  doc.text("Level 3 GCE", boxX + 4, by);
+
+  // Date band (filled grey rounded)
+  by += 6;
+  doc.setFillColor(245, 245, 245);
+  doc.setDrawColor(120, 120, 120);
+  doc.roundedRect(boxX + 4, by - 4, boxW - 8, 9, 1.5, 1.5, "FD");
+  doc.setFontSize(13);
+  doc.setFont("helvetica", "bold");
+  doc.setTextColor(0, 0, 0);
+  doc.text(meta.date || "Predicted Paper", boxX + 7, by + 2);
+
+  // Time / Paper Reference row
+  by += 11;
+  doc.setFontSize(8.5);
+  doc.setFont("helvetica", "normal");
+  doc.text(`Morning (Time: ${meta.timeAllowed || "2 hours"})`, boxX + 7, by);
+  doc.text(`Paper Reference  ${ref}`, boxX + boxW - 7, by, { align: "right" });
+  doc.setLineWidth(0.3);
+  doc.line(boxX + 4, by + 2, boxW + boxX - 4, by + 2);
+
+  // Subject / level / paper title
+  by += 7;
+  doc.setFontSize(15);
+  doc.setFont("helvetica", "bold");
+  doc.text("Economics A", boxX + 4, by);
+  by += 5;
+  doc.setFontSize(10);
+  doc.text("Advanced", boxX + 4, by);
+  by += 5;
+  doc.setFontSize(11);
+  const ptitle = meta.paperTitle || `Paper ${pNum}`;
+  doc.text(ptitle, boxX + 4, by);
+
+  // Total Marks cell (right side, last row inside box)
+  const tmY = boxY + boxH - 18;
+  doc.setLineWidth(0.4);
+  doc.setFillColor(255, 255, 255);
+  doc.rect(boxX + 4, tmY, boxW - 38, 14, "S");
+  doc.rect(boxX + boxW - 32, tmY, 28, 14, "S");
+  doc.setFontSize(8);
+  doc.setFont("helvetica", "normal");
+  doc.text("You do not need any other materials.", boxX + 7, tmY + 5);
+  doc.setFont("helvetica", "bold");
+  doc.text("Total Marks", boxX + boxW - 30, tmY + 4);
+
+  // Instructions block (below the box)
+  y = boxY + boxH + 8;
+  doc.setFontSize(11);
+  doc.setFont("helvetica", "bold");
+  doc.setTextColor(0, 0, 0);
+  doc.text("Instructions", marginL, y);
+  y += 5;
+  doc.setFontSize(9.5);
+  doc.setFont("helvetica", "normal");
+  const totalMarks = meta.totalMarks || 100;
+  const isPaper3 = pNum === "3";
+  const instructions = [
+    "Use black ink or ball-point pen.",
+    "Fill in the boxes at the top of this page with your name, centre number and candidate number.",
+    isPaper3
+      ? "There are two sections in this question paper. Answer ALL questions from Section A and Section B."
+      : "There are three sections in this question paper. Answer ALL questions from Section A and Section B. Answer ONE question from Section C.",
+    "Answer the questions in the spaces provided – there may be more space than you need.",
+  ];
+  for (const instr of instructions) {
+    const lines = doc.splitTextToSize(`•  ${instr}`, innerW - 4);
+    for (const l of lines) {
+      doc.text(l, marginL, y);
+      y += 4.8;
+    }
+  }
+  y += 4;
+
+  doc.setFontSize(11);
+  doc.setFont("helvetica", "bold");
+  doc.text("Information", marginL, y);
+  y += 5;
+  doc.setFontSize(9.5);
+  doc.setFont("helvetica", "normal");
+  const info = [
+    `The total mark for this paper is ${totalMarks}.`,
+    "The marks for each question are shown in brackets – use this as a guide as to how much time to spend on each question.",
+    "Calculators may be used.",
+  ];
+  for (const inf of info) {
+    const lines = doc.splitTextToSize(`•  ${inf}`, innerW - 4);
+    for (const l of lines) {
+      doc.text(l, marginL, y);
+      y += 4.8;
+    }
+  }
+  y += 4;
+
+  doc.setFontSize(11);
+  doc.setFont("helvetica", "bold");
+  doc.text("Advice", marginL, y);
+  y += 5;
+  doc.setFontSize(9.5);
+  doc.setFont("helvetica", "normal");
+  const advice = [
+    "Read each question carefully before you start to answer it.",
+    "Check your answers if you have time at the end.",
+  ];
+  for (const a of advice) {
+    doc.text(`•  ${a}`, marginL, y);
+    y += 4.8;
+  }
+
+  // Bottom paper-reference strip
+  const stripY = pageH - 22;
+  doc.setFontSize(8);
+  doc.setFont("helvetica", "bold");
+  doc.setTextColor(80, 80, 80);
+  doc.text("Predicted Paper — For revision purposes only", marginL, stripY);
+  doc.text(ref, pageW - marginR, stripY, { align: "right" });
+  doc.setFontSize(8);
+  doc.setFont("helvetica", "italic");
+  doc.text("Turn over ▶", pageW - marginR, stripY - 6, { align: "right" });
+}
 
 function drawCoverPage(doc: jsPDF, meta: PaperMeta) {
   const pageW = doc.internal.pageSize.getWidth();
@@ -271,7 +460,7 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
       continue;
     }
 
-    // ── Section headers (Section A, Section B) ──
+    // ── Section headers (Section A, Section B, Section C) ──
     const sectionMatch = line.match(/^#{1,2}\s*(Section\s+[A-Z])/i);
     if (sectionMatch) {
       // New page for each section
@@ -279,16 +468,87 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
         doc.addPage();
         y = 25;
       }
-      doc.setFontSize(16);
-      doc.setFont("helvetica", "bold");
-      doc.setTextColor(0, 0, 0);
-      doc.text(sectionMatch[1], marginL, y);
-      y += 4;
-      doc.setDrawColor(0, 0, 0);
-      doc.setLineWidth(0.8);
-      doc.line(marginL, y, pageW - marginR, y);
-      y += 8;
+      const secLetter = sectionMatch[1].slice(-1).toUpperCase();
+      if (meta.isEdexcel) {
+        // Authentic Pearson banner: rounded grey-bordered box with section
+        // title, "Answer ALL questions" line and recommended timing.
+        const bannerH = secLetter === "B" ? 36 : 30;
+        doc.setDrawColor(170, 170, 170);
+        doc.setLineWidth(0.5);
+        doc.roundedRect(marginL, y, pageW - marginL - marginR, bannerH, 2.5, 2.5, "S");
+        let by = y + 8;
+        doc.setFontSize(13);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(0, 0, 0);
+        doc.text(`SECTION ${secLetter}`, pageW / 2, by, { align: "center" });
+        by += 7;
+        doc.setFontSize(9.5);
+        doc.setFont("helvetica", "bold");
+        const sub1 =
+          secLetter === "C"
+            ? "Answer ONE question. Write your answer in the space provided."
+            : "Answer ALL questions. Write your answers in the spaces provided.";
+        doc.text(sub1, pageW / 2, by, { align: "center" });
+        by += 6;
+        const minutes = secLetter === "B" ? "1 hour" : "30 minutes";
+        doc.text(`You are advised to spend ${minutes} on this section.`, pageW / 2, by, { align: "center" });
+        if (secLetter === "B") {
+          by += 6;
+          doc.setFont("helvetica", "italic");
+          doc.text("Read the figures and extracts before answering.", pageW / 2, by, { align: "center" });
+        }
+        y += bannerH + 8;
+      } else {
+        doc.setFontSize(16);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(0, 0, 0);
+        doc.text(sectionMatch[1], marginL, y);
+        y += 4;
+        doc.setDrawColor(0, 0, 0);
+        doc.setLineWidth(0.8);
+        doc.line(marginL, y, pageW - marginR, y);
+        y += 8;
+      }
       continue;
+    }
+
+    // ── Edexcel "Total for Question N = X marks" / "TOTAL FOR SECTION X = Y MARKS" ──
+    if (meta.isEdexcel) {
+      const totalQ = line.match(/^\s*\(?\s*Total for Question\s+(\d+(?:[a-z\(\)]*)?)\s*=\s*(\d+)\s*marks\s*\)?\s*$/i);
+      const totalSec = line.match(/^\s*TOTAL FOR (?:SECTION\s+([A-Z])|PAPER)\s*=\s*(\d+)\s*MARKS\s*$/i);
+      if (totalQ) {
+        y = ensureSpace(doc, y, 12, pageH);
+        y += 3;
+        doc.setDrawColor(160, 160, 160);
+        doc.setLineWidth(0.3);
+        doc.line(marginL, y - 2, pageW - marginR, y - 2);
+        doc.setFontSize(10);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(0, 0, 0);
+        doc.text(
+          `(Total for Question ${totalQ[1]} = ${totalQ[2]} marks)`,
+          pageW - marginR,
+          y + 3,
+          { align: "right" }
+        );
+        y += 8;
+        continue;
+      }
+      if (totalSec) {
+        y = ensureSpace(doc, y, 14, pageH);
+        y += 3;
+        const label = line.toUpperCase().includes("PAPER")
+          ? `TOTAL FOR PAPER = ${totalSec[2]} MARKS`
+          : `TOTAL FOR SECTION ${totalSec[1]} = ${totalSec[2]} MARKS`;
+        doc.setFillColor(235, 235, 235);
+        doc.rect(marginL, y - 1, pageW - marginL - marginR, 7, "F");
+        doc.setFontSize(10);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(0, 0, 0);
+        doc.text(label, pageW - marginR - 2, y + 4, { align: "right" });
+        y += 11;
+        continue;
+      }
     }
 
     // ── Context / EITHER / OR / Essay headers ──
@@ -713,22 +973,71 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
     }
 
     // ── Question line with marks badge ──
-    const questionMatch = line.match(/^(?:\*{0,2})?(?:Question\s*)?((?:\d{1,2}(?:\.\d+)?[a-z]?|0\s?\d{1,2}(?:\.\d+)?[a-z]?))\s*(?:\*{0,2})[^\[]*?\[\s*(\d+)\s*marks?\s*\]/i);
+    // Accepts: "1 [5 marks]", "1(a) [4 marks]", "6(b) [8 marks]", "1.a [4 marks]",
+    //          "Question 6(c) [10 marks]", "0 1 [4 marks]" (AQA two-digit prefix).
+    const questionMatch = line.match(
+      /^(?:\*{0,2})?(?:Question\s*)?((?:\d{1,2}(?:\([a-z]\))?(?:\.\d+)?[a-z]?|0\s?\d{1,2}(?:\.\d+)?[a-z]?))\s*(?:\*{0,2})[^\[]*?\[\s*(\d+)\s*marks?\s*\]/i
+    );
     if (questionMatch) {
       y = ensureSpace(doc, y, 12, pageH);
       y += 4;
 
-      const qNum = questionMatch[1].replace(/\s+/g, "");
+      const qNumRaw = questionMatch[1].replace(/\s+/g, "");
       const marks = questionMatch[2];
-      const qLabel = `Question ${qNum}`;
 
-      // Question number in bold
+      if (meta.isEdexcel) {
+        // Pearson layout: parent number "1" in left gutter (bold, large),
+        // sub-part "(a)" indented; mark indicator "(N)" flush right.
+        const subMatch = qNumRaw.match(/^(\d{1,2})(?:\(([a-z])\)|\.([a-z]))?$/i);
+        const parent = subMatch?.[1] ?? qNumRaw;
+        const sub = subMatch ? (subMatch[2] || subMatch[3] || "") : "";
+        const gutterX = marginL;
+        const bodyX = marginL + 8;
+        doc.setFontSize(11);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(0, 0, 0);
+        if (!sub) {
+          // Parent question line — show "1" in the gutter
+          doc.text(parent, gutterX, y);
+        } else {
+          // Sub-part — indent "(a)"
+          doc.setFontSize(10);
+          doc.text(`(${sub})`, bodyX - 2, y);
+        }
+        // Right-aligned mark indicator "(N)" in italics
+        doc.setFontSize(9.5);
+        doc.setFont("helvetica", "italic");
+        doc.setTextColor(0, 0, 0);
+        doc.text(`(${marks})`, pageW - marginR, y, { align: "right" });
+
+        // Question text on next line, indented to bodyX
+        const afterHeader = line.replace(
+          /^(?:\*{0,2})?(?:Question\s*)?(?:\d{1,2}(?:\([a-z]\))?(?:\.\d+)?[a-z]?|0\s?\d{1,2}(?:\.\d+)?[a-z]?)\s*(?:\*{0,2})[^\[]*?\[\s*\d+\s*marks?\s*\]\s*/i,
+          ""
+        ).trim();
+        if (afterHeader) {
+          y += 5;
+          doc.setFontSize(10);
+          doc.setFont("helvetica", "normal");
+          doc.setTextColor(20, 20, 20);
+          const wrapped = doc.splitTextToSize(afterHeader, maxW - 8);
+          for (const wl of wrapped) {
+            y = ensureSpace(doc, y, lineH, pageH);
+            doc.text(wl, bodyX, y);
+            y += lineH;
+          }
+        }
+        y += 4;
+        continue;
+      }
+
+      // AQA / default: "Question N" label + grey rounded marks badge
+      const qLabel = `Question ${qNumRaw}`;
       doc.setFontSize(11);
       doc.setFont("helvetica", "bold");
       doc.setTextColor(0, 0, 0);
       doc.text(qLabel, marginL, y);
 
-      // Marks badge (right-aligned, rounded rect)
       const badgeText = `${marks} marks`;
       doc.setFontSize(8.5);
       const badgeW = doc.getTextWidth(badgeText) + 8;
@@ -741,8 +1050,10 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
 
       y += 7;
 
-      // Check if there's question text after the header on the same line
-      const afterHeader = line.replace(/^(?:\*{0,2})?(?:Question\s*)?(?:\d{1,2}(?:\.\d+)?[a-z]?|0\s?\d{1,2}(?:\.\d+)?[a-z]?)\s*(?:\*{0,2})[^\[]*?\[\s*\d+\s*marks?\s*\]\s*/i, "").trim();
+      const afterHeader = line.replace(
+        /^(?:\*{0,2})?(?:Question\s*)?(?:\d{1,2}(?:\([a-z]\))?(?:\.\d+)?[a-z]?|0\s?\d{1,2}(?:\.\d+)?[a-z]?)\s*(?:\*{0,2})[^\[]*?\[\s*\d+\s*marks?\s*\]\s*/i,
+        ""
+      ).trim();
       if (afterHeader) {
         doc.setFontSize(10);
         doc.setFont("helvetica", "normal");
@@ -993,10 +1304,15 @@ export function generatePaperPdf(
     timeAllowed: "2 hours",
     totalMarks: edexcel ? 100 : 80,
     paperRef,
+    isEdexcel: edexcel,
   };
 
-  // Page 1: Cover page
-  drawCoverPage(doc, fullMeta);
+  // Page 1: Cover page (Pearson layout for Edexcel A, AQA layout otherwise)
+  if (edexcel) {
+    drawEdexcelCoverPage(doc, fullMeta);
+  } else {
+    drawCoverPage(doc, fullMeta);
+  }
 
   // Page 2+: Content
   doc.addPage();
