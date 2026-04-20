@@ -653,6 +653,66 @@ export type Database = {
         }
         Relationships: []
       }
+      qa_tracker_issues: {
+        Row: {
+          board: string
+          category: string
+          created_at: string
+          description: string
+          id: string
+          metadata: Json
+          paper_code: string
+          paper_set: string | null
+          question_number: string | null
+          resolution_notes: string | null
+          resolved_at: string | null
+          resolved_by: string | null
+          severity: string
+          source: string
+          status: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          board?: string
+          category: string
+          created_at?: string
+          description: string
+          id?: string
+          metadata?: Json
+          paper_code: string
+          paper_set?: string | null
+          question_number?: string | null
+          resolution_notes?: string | null
+          resolved_at?: string | null
+          resolved_by?: string | null
+          severity?: string
+          source?: string
+          status?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          board?: string
+          category?: string
+          created_at?: string
+          description?: string
+          id?: string
+          metadata?: Json
+          paper_code?: string
+          paper_set?: string | null
+          question_number?: string | null
+          resolution_notes?: string | null
+          resolved_at?: string | null
+          resolved_by?: string | null
+          severity?: string
+          source?: string
+          status?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       question_embeddings: {
         Row: {
           bloom_level: string
@@ -891,6 +951,7 @@ export type Database = {
         }[]
       }
       is_own_profile: { Args: { profile_user_id: string }; Returns: boolean }
+      is_platform_admin: { Args: never; Returns: boolean }
       move_to_dlq: {
         Args: {
           dlq_name: string
