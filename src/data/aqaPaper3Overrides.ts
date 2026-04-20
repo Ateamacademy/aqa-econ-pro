@@ -345,8 +345,6 @@ function bank(setSeed: string): McqSpec[] {
     },
     {
       figure: "**Figure 11:** A negative production externality diagram for palm oil: MSC lies above MPC by the marginal external cost; demand is MPB=MSB. Free-market output is Qp where MPB=MPC; social optimum Qs where MPB=MSC. The welfare-loss triangle lies between MSC and MPB from Qs to Qp.",
-      figureKey: "externality.svg",
-      figureCaption: "Figure 11 — Negative production externality of palm oil",
       stem: "Based on Figure 11, the deadweight welfare loss from palm-oil production is represented by the triangular area between:",
       options: ["MPC and MPB from 0 to Qp", "MSC and MPB from Qs to Qp", "MSC and MPC from 0 to Qs", "MPB and MSC from 0 to Qp"],
       answer: "B",
