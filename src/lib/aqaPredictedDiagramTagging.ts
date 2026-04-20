@@ -264,9 +264,11 @@ export function tagAqaQuestion(q: TaggerInput): AqaDiagramTag | null {
 
   if (q.paper === 1 || q.paper === 2) {
     // Short explicit diagram questions (e.g. 4-mark "With the help of a fully labelled…")
-    if (q.marks === 4 && explicit) return attachReferenceFigure(base(false), q);
+    // Student-drawn only — pre-supplied reference figures would leak the answer.
+    if (q.marks === 4 && explicit) return studentDrawnOnly(false);
     // Section A 9-mark — only when stem explicitly asks for a diagram.
-    if (q.marks === 9 && explicit) return attachReferenceFigure(base(false), q);
+    // Student-drawn only — the whole point is for the student to construct it.
+    if (q.marks === 9 && explicit) return studentDrawnOnly(false);
     // Section A 15-mark data response — student-drawn, no pre-supplied figure.
     if (q.marks === 15) return studentDrawnOnly(true);
     // Section B 25-mark essays — student-drawn, no pre-supplied figure.
