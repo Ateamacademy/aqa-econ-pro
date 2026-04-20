@@ -750,8 +750,12 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
     }
 
     // ── MCQ options (A/B/C/D) ──
-    const mcqMatch = line.match(/^\s*[-•]?\s*([A-D])\s+(.+)/);
-    if (mcqMatch) {
+    // Must be a SHORT option (≤ 140 chars) — otherwise it's prose, not an option.
+    // Also requires either a leading bullet (-, •) or for the body to start
+    // with a non-digit (so paragraph leads like "A 2024 CBI survey…" don't
+    // get mis-detected as option A).
+    const mcqMatch = line.match(/^\s*([-•])?\s*([A-D])\s+(.+)/);
+    if (mcqMatch && mcqMatch[3].length <= 140 && (mcqMatch[1] || !/^\d/.test(mcqMatch[3]))) {
       y = ensureSpace(doc, y, 6, pageH);
       doc.setFontSize(10);
       doc.setFont("helvetica", "bold");
@@ -759,11 +763,11 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
       // Draw circle
       doc.circle(marginL + 3, y - 1.2, 2.2);
       doc.setFont("helvetica", "normal");
-      doc.text(mcqMatch[1], marginL + 1.5, y);
-      
+      doc.text(mcqMatch[2], marginL + 1.5, y);
+
       doc.setFont("helvetica", "normal");
       doc.setTextColor(30, 30, 30);
-      const optText = mcqMatch[2].replace(/\*\*/g, "");
+      const optText = mcqMatch[3].replace(/\*\*/g, "");
       const wrapped = doc.splitTextToSize(optText, maxW - 12);
       doc.text(wrapped, marginL + 10, y);
       y += wrapped.length * lineH + 1;
