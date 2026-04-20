@@ -5,6 +5,22 @@ import { flushSync } from "react-dom";
 import { renderPaperMarkdown } from "./generatePaperPdf";
 import { getCatalogEntry, AQA_DIAGRAM_CATALOG, pickReferenceFigure } from "./aqa-diagram-catalog";
 import type { DiagramType } from "./aqa-diagram-rubric";
+import { getEdexcelASkillSplit } from "./boards/edexcel-a-a-level";
+
+// Detect Edexcel A so we can render an authentic Pearson 9EC0 mark scheme
+// (per-skill K/Ap/An/Ev grid + indicative content, no AQA "levels" table).
+function isEdexcelA(meta: { examBoard?: string; level?: string } | undefined): boolean {
+  const b = (meta?.examBoard || "").toLowerCase();
+  const l = (meta?.level || "").toLowerCase();
+  if (!b) return false;
+  if (b.includes("aqa")) return false;
+  // Match "Edexcel A", "edexcel-a", "Edexcel (A)" but NOT "Edexcel B".
+  const isEdexcel = b.includes("edexcel");
+  const isB = /\bedexcel[\s\-(]*b\b/i.test(b);
+  if (!isEdexcel || isB) return false;
+  // Only A-Level (not AS) gets the 9EC0 treatment.
+  return l.includes("a-level") || l.includes("alevel") || l === "a level" || !l;
+}
 
 // ─── Diagram embedding ────────────────────────────────────────────────
 //
