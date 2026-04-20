@@ -1078,7 +1078,7 @@ export async function generateSolutionPdf(
   );
 
   for (let i = 0; i < entries.length; i++) {
-    y = drawQuestion(doc, entries[i], diagramsByEntry[i] ?? [], y, i === 0);
+    y = drawQuestion(doc, entries[i], diagramsByEntry[i] ?? [], y, i === 0, fullMeta);
   }
 
   drawFooters(doc, fullMeta);
