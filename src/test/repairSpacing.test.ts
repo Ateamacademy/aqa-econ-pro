@@ -27,8 +27,6 @@ describe("PDF extract typography", () => {
     const md =
       "A 2024 CBI survey reported that 41% of energy-intensive UK firms had postponed planned investment in low-carbon production because of allowance price uncertainty. Government modelling suggested t h a t , w i t h o u t t h e ETS, UK i n d u s t r i a l e m i s s i o n s would have been 9-14 M tonnes higher.";
     const tokens = renderToTokens(md);
-    // eslint-disable-next-line no-console
-    console.log("TOKENS:", tokens.length, tokens.slice(0, 80));
     expect(tokens.some((t) => t.includes("without"))).toBe(true);
     expect(tokens.some((t) => t.includes("industrial"))).toBe(true);
     expect(tokens.some((t) => t.includes("emissions"))).toBe(true);
