@@ -9,15 +9,17 @@ import { describe, it, expect } from "vitest";
 import jsPDF from "jspdf";
 import { renderPaperMarkdown } from "@/lib/generatePaperPdf";
 
-function renderToString(md: string): string {
+function renderToTokens(md: string): string[] {
   const doc = new jsPDF({ unit: "mm", format: "a4" });
   renderPaperMarkdown(doc, md);
-  // jsPDF stores text operators in its internal page stream; the easiest way
-  // to inspect what was written is to extract text from the raw output.
   const raw = doc.output();
-  // Decode the body: jsPDF writes "(text) Tj" operators in the content stream.
   const matches = raw.match(/\(([^()\\]*)\)\s*Tj/g) || [];
-  return matches.map((m) => m.replace(/^\((.*)\)\s*Tj$/, "$1")).join(" ");
+  // Each Tj is one drawn string. We split each into whitespace-separated
+  // tokens to inspect what jsPDF actually drew on the page.
+  return matches
+    .map((m) => m.replace(/^\((.*)\)\s*Tj$/, "$1"))
+    .flatMap((s) => s.split(/\s+/))
+    .filter(Boolean);
 }
 
 describe("PDF extract typography", () => {
