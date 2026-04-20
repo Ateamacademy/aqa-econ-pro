@@ -689,30 +689,102 @@ function drawCover(doc: jsPDF, meta: SolutionMeta) {
 
 // ─── Per-question block ─────────────────────────────────────────────
 
-function drawSectionHeader(doc: jsPDF, y: number, label: string, color: [number, number, number]) {
+function drawSectionHeader(doc: jsPDF, y: number, label: string) {
   const { pageW } = pageWH(doc);
   const x = MARGIN_L;
   const w = pageW - MARGIN_L - MARGIN_R;
-  y = ensureSpace(doc, y, 10);
-  doc.setFillColor(color[0], color[1], color[2]);
-  doc.rect(x, y - 4.5, 2.5, 6, "F");
+  y = ensureSpace(doc, y, 9);
+  // Subtle filled band
+  doc.setFillColor(...COLOR_BAND_BG);
+  doc.rect(x, y - 4.5, w, 6.5, "F");
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(9.5);
+  doc.setTextColor(...COLOR_BAND_INK);
+  doc.text(label.toUpperCase(), x + 2.5, y);
+  return y + 5;
+}
+
+/** AQA-style table header bar: Question | Answer | Marks | AO. */
+function drawQuestionHeaderBar(doc: jsPDF, y: number, entry: SolutionEntry, ao?: string): number {
+  const { pageW } = pageWH(doc);
+  const x = MARGIN_L;
+  const w = pageW - MARGIN_L - MARGIN_R;
+  const rowH = 7;
+  // Column widths
+  const cQ = 22;       // Question
+  const cM = 18;       // Marks
+  const cAO = 26;      // AO
+  const cA = w - cQ - cM - cAO; // Answer
+
+  y = ensureSpace(doc, y, rowH + 2);
+
+  // Border
+  doc.setDrawColor(...COLOR_RULE);
+  doc.setLineWidth(0.3);
+  doc.setFillColor(...COLOR_BAND_BG);
+  doc.rect(x, y, w, rowH, "FD");
+  // Column dividers
+  doc.line(x + cQ, y, x + cQ, y + rowH);
+  doc.line(x + cQ + cA, y, x + cQ + cA, y + rowH);
+  doc.line(x + cQ + cA + cM, y, x + cQ + cA + cM, y + rowH);
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(8.5);
+  doc.setTextColor(...COLOR_BAND_INK);
+  doc.text("Question", x + cQ / 2, y + 4.6, { align: "center" });
+  doc.text("Answer", x + cQ + cA / 2, y + 4.6, { align: "center" });
+  doc.text("Marks", x + cQ + cA + cM / 2, y + 4.6, { align: "center" });
+  doc.text("AO", x + cQ + cA + cM + cAO / 2, y + 4.6, { align: "center" });
+
+  y += rowH;
+
+  // Value row
+  const qNum = (entry.label.match(/(\d+)/) || ["", entry.label])[1];
+  const qPreview = clean(entry.questionText).split("\n")[0].slice(0, 110);
+  const valH = Math.max(rowH, 7);
+
+  doc.rect(x, y, w, valH, "D");
+  doc.line(x + cQ, y, x + cQ, y + valH);
+  doc.line(x + cQ + cA, y, x + cQ + cA, y + valH);
+  doc.line(x + cQ + cA + cM, y, x + cQ + cA + cM, y + valH);
+
   doc.setFont("helvetica", "bold");
   doc.setFontSize(10);
-  doc.setTextColor(15, 23, 42);
-  doc.text(label, x + 6, y);
-  return y + 5;
+  doc.setTextColor(...COLOR_INK);
+  doc.text(qNum || entry.label, x + cQ / 2, y + 4.8, { align: "center" });
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(8.5);
+  doc.setTextColor(...COLOR_INK);
+  const previewLines = doc.splitTextToSize(qPreview, cA - 4) as string[];
+  doc.text(previewLines[0] || "", x + cQ + 2, y + 4.8);
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(10);
+  doc.text(String(entry.marks), x + cQ + cA + cM / 2, y + 4.8, { align: "center" });
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(8.5);
+  doc.text(ao || aoForMarks(entry.marks), x + cQ + cA + cM + cAO / 2, y + 4.8, { align: "center" });
+
+  return y + valH + 4;
+}
+
+function aoForMarks(marks: number): string {
+  if (marks <= 1) return "AO1";
+  if (marks <= 4) return "AO1/AO2";
+  if (marks <= 9) return "AO2/AO3";
+  if (marks <= 15) return "AO2/AO3";
+  return "AO1–AO4";
 }
 
 function drawDiagramImage(doc: jsPDF, diagram: ResolvedDiagram, y: number): number {
   const { pageW } = pageWH(doc);
   const maxW = pageW - MARGIN_L - MARGIN_R;
-  // Convert px aspect ratio to mm. Cap width at 140mm so it sits nicely on A4.
-  const widthMm = Math.min(maxW, 140);
+  const widthMm = Math.min(maxW, 130);
   const aspect = diagram.heightPx / diagram.widthPx || 0.7;
-  const heightMm = Math.min(120, widthMm * aspect);
-  // Caption + image needs ~heightMm + 10
+  const heightMm = Math.min(110, widthMm * aspect);
   y = ensureSpace(doc, y, heightMm + 12);
-  // Centre horizontally
   const x = MARGIN_L + (maxW - widthMm) / 2;
   try {
     doc.addImage(diagram.pngDataUrl, "PNG", x, y, widthMm, heightMm, undefined, "FAST");
@@ -722,11 +794,90 @@ function drawDiagramImage(doc: jsPDF, diagram: ResolvedDiagram, y: number): numb
   }
   y += heightMm + 2;
   doc.setFont("helvetica", "italic");
-  doc.setFontSize(8.5);
-  doc.setTextColor(110, 110, 110);
+  doc.setFontSize(8);
+  doc.setTextColor(...COLOR_MUTED);
   doc.text(`Reference diagram: ${diagram.title}`, pageW / 2, y + 3, { align: "center" });
-  doc.setTextColor(30, 30, 30);
+  doc.setTextColor(...COLOR_INK);
   return y + 8;
+}
+
+/** Render levels-of-response banding for extended-response questions. */
+function drawLevelsTable(doc: jsPDF, y: number, marks: number): number {
+  const { pageW } = pageWH(doc);
+  const x = MARGIN_L;
+  const w = pageW - MARGIN_L - MARGIN_R;
+
+  let bands: { level: string; range: string; descriptor: string }[] = [];
+  if (marks >= 25) {
+    bands = [
+      { level: "Level 5", range: "21–25", descriptor: "Sophisticated analysis & evaluation; balanced judgement supported throughout; precise use of theory, diagrams and data; clear reasoned conclusion." },
+      { level: "Level 4", range: "16–20", descriptor: "Good analysis with some evaluation; mostly accurate theory and relevant application; conclusion present but reasoning may lack depth." },
+      { level: "Level 3", range: "11–15", descriptor: "Sound knowledge with developed analysis; limited evaluation; some application to context." },
+      { level: "Level 2", range: "6–10", descriptor: "Some relevant knowledge and basic analysis; evaluation absent or assertion-based." },
+      { level: "Level 1", range: "1–5", descriptor: "Limited knowledge; little or no analysis; weak or no application." },
+    ];
+  } else if (marks >= 15) {
+    bands = [
+      { level: "Level 4", range: "13–15", descriptor: "Sophisticated analysis & balanced evaluation; precise theory, accurate diagram(s), reasoned conclusion." },
+      { level: "Level 3", range: "9–12", descriptor: "Good analysis with some evaluation; mostly accurate theory and application; conclusion present." },
+      { level: "Level 2", range: "5–8", descriptor: "Sound knowledge; basic analysis; little evaluation; limited application." },
+      { level: "Level 1", range: "1–4", descriptor: "Limited knowledge; no real analysis; weak application." },
+    ];
+  } else if (marks >= 9) {
+    bands = [
+      { level: "Level 3", range: "7–9", descriptor: "Clear knowledge, accurate analysis with appropriate diagram, application to context." },
+      { level: "Level 2", range: "4–6", descriptor: "Sound knowledge with some analysis; partial application; diagram may have errors." },
+      { level: "Level 1", range: "1–3", descriptor: "Limited knowledge; descriptive only; no/weak diagram." },
+    ];
+  } else {
+    return y;
+  }
+
+  y = drawSectionHeader(doc, y, "Levels of response");
+
+  const cL = 22;
+  const cM = 18;
+  const cD = w - cL - cM;
+  const rowH = 5;
+  doc.setDrawColor(...COLOR_RULE);
+  doc.setLineWidth(0.25);
+
+  // Header row
+  y = ensureSpace(doc, y, rowH + 2);
+  doc.setFillColor(...COLOR_BAND_BG);
+  doc.rect(MARGIN_L, y, w, rowH, "FD");
+  doc.line(MARGIN_L + cL, y, MARGIN_L + cL, y + rowH);
+  doc.line(MARGIN_L + cL + cM, y, MARGIN_L + cL + cM, y + rowH);
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(8);
+  doc.setTextColor(...COLOR_BAND_INK);
+  doc.text("Level", MARGIN_L + 2, y + 3.5);
+  doc.text("Marks", MARGIN_L + cL + 2, y + 3.5);
+  doc.text("Descriptor", MARGIN_L + cL + cM + 2, y + 3.5);
+  y += rowH;
+
+  doc.setFont("helvetica", "normal");
+  doc.setTextColor(...COLOR_INK);
+  doc.setFontSize(8);
+  for (const b of bands) {
+    const lines = doc.splitTextToSize(b.descriptor, cD - 4) as string[];
+    const h = Math.max(rowH, lines.length * 3.6 + 2);
+    y = ensureSpace(doc, y, h);
+    doc.rect(MARGIN_L, y, w, h, "D");
+    doc.line(MARGIN_L + cL, y, MARGIN_L + cL, y + h);
+    doc.line(MARGIN_L + cL + cM, y, MARGIN_L + cL + cM, y + h);
+    doc.setFont("helvetica", "bold");
+    doc.text(b.level, MARGIN_L + 2, y + 3.6);
+    doc.setFont("helvetica", "normal");
+    doc.text(b.range, MARGIN_L + cL + 2, y + 3.6);
+    let ty = y + 3.6;
+    for (const ln of lines) {
+      doc.text(ln, MARGIN_L + cL + cM + 2, ty);
+      ty += 3.6;
+    }
+    y += h;
+  }
+  return y + 4;
 }
 
 function drawQuestion(
@@ -734,34 +885,29 @@ function drawQuestion(
   entry: SolutionEntry,
   diagrams: ResolvedDiagram[],
   y: number,
+  isFirst: boolean,
 ): number {
   const { pageW } = pageWH(doc);
   const maxW = pageW - MARGIN_L - MARGIN_R;
 
-  // Need at least ~30mm before starting
-  y = ensureSpace(doc, y, 30);
+  // Each question starts on its own page (except the first which follows the booklet title)
+  if (!isFirst) {
+    doc.addPage();
+    y = PAGE_TOP;
+  }
 
-  // Question header
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(13);
-  doc.setTextColor(15, 23, 42);
-  const header = `${entry.label}  [${entry.marks} marks]`;
-  doc.text(header, MARGIN_L, y);
-  y += 7;
+  // AQA-style header bar
+  y = drawQuestionHeaderBar(doc, y, entry);
 
-  // Underline
-  doc.setDrawColor(15, 23, 42);
-  doc.setLineWidth(0.4);
-  doc.line(MARGIN_L, y - 3, MARGIN_L + 40, y - 3);
+  // Full question stem
+  y = drawSectionHeader(doc, y, "Question");
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(9.5);
+  doc.setTextColor(...COLOR_INK);
+  y = writeWrapped(doc, clean(entry.questionText), MARGIN_L, y, maxW, 4.8);
+  y += 3;
 
-  // Question stem
-  doc.setFont("helvetica", "italic");
-  doc.setFontSize(10);
-  doc.setTextColor(70, 70, 70);
-  y = writeWrapped(doc, clean(entry.questionText), MARGIN_L, y, maxW, 5);
-  y += 4;
-
-  // Referenced figures / tables (rendered with the question-paper engine)
+  // Referenced figures / tables
   if (entry.figuresMarkdown && entry.figuresMarkdown.trim()) {
     y = ensureSpace(doc, y, 20);
     y = renderPaperMarkdown(doc, entry.figuresMarkdown, y);
@@ -769,58 +915,49 @@ function drawQuestion(
   }
 
   // Embedded reference diagram(s)
-  if (import.meta.env.DEV) {
-    console.info("[solution-pipeline] render:question", {
-      label: entry.label,
-      diagramCount: diagrams.length,
-      diagramIds: diagrams.map((diagram) => diagram.catalogId),
-    });
-  }
   for (const d of diagrams) {
     y = drawDiagramImage(doc, d, y);
   }
 
-  // Mark Scheme — strip placeholder lines so raw "Diagram: tax_incidence" never shows
-  y = drawSectionHeader(doc, y, "Mark Scheme", [37, 99, 235]);
+  // Indicative content (Mark Scheme)
+  y = drawSectionHeader(doc, y, "Indicative content");
   doc.setFont("helvetica", "normal");
-  doc.setFontSize(10);
-  doc.setTextColor(30, 30, 30);
+  doc.setFontSize(9.5);
+  doc.setTextColor(...COLOR_INK);
   y = writeWrapped(
     doc,
-    stripSolutionDiagramFallback(clean(entry.markScheme)) || "(no mark scheme generated)",
+    stripSolutionDiagramFallback(clean(entry.markScheme)) || "(no indicative content)",
     MARGIN_L,
     y,
     maxW,
-    5,
+    4.8,
   );
   y += 4;
 
-  // Model Answer
+  // Levels of response (only for extended-response questions)
+  if (entry.marks >= 9) {
+    y = drawLevelsTable(doc, y, entry.marks);
+  }
+
+  // Top-band model answer
   if (entry.modelAnswer && entry.modelAnswer.trim()) {
-    y = drawSectionHeader(doc, y, "Model Answer", [22, 163, 74]);
+    y = drawSectionHeader(doc, y, "Top-band model answer");
     doc.setFont("helvetica", "normal");
-    doc.setFontSize(10);
-    doc.setTextColor(30, 30, 30);
-    y = writeWrapped(doc, stripSolutionDiagramFallback(clean(entry.modelAnswer)), MARGIN_L, y, maxW, 5);
-    y += 4;
-  }
-
-  // Examiner Tip
-  if (entry.examinerTip && entry.examinerTip.trim()) {
-    y = drawSectionHeader(doc, y, "Examiner Tip", [217, 119, 6]);
-    doc.setFont("helvetica", "italic");
     doc.setFontSize(9.5);
-    doc.setTextColor(80, 60, 20);
-    y = writeWrapped(doc, clean(entry.examinerTip), MARGIN_L, y, maxW, 5);
-    y += 4;
+    doc.setTextColor(...COLOR_INK);
+    y = writeWrapped(doc, stripSolutionDiagramFallback(clean(entry.modelAnswer)), MARGIN_L, y, maxW, 4.8);
+    y += 3;
   }
 
-  // Divider
-  y = ensureSpace(doc, y, 8);
-  doc.setDrawColor(220, 220, 220);
-  doc.setLineWidth(0.3);
-  doc.line(MARGIN_L, y, pageW - MARGIN_R, y);
-  y += 8;
+  // Examiner tip
+  if (entry.examinerTip && entry.examinerTip.trim()) {
+    y = drawSectionHeader(doc, y, "Examiner tip");
+    doc.setFont("helvetica", "italic");
+    doc.setFontSize(9);
+    doc.setTextColor(...COLOR_MUTED);
+    y = writeWrapped(doc, clean(entry.examinerTip), MARGIN_L, y, maxW, 4.6);
+    y += 3;
+  }
 
   return y;
 }
