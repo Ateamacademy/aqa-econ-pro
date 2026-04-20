@@ -644,7 +644,7 @@ function drawCover(doc: jsPDF, meta: SolutionMeta) {
   doc.setFont("helvetica", "normal");
   doc.setFontSize(9);
   doc.text(`${meta.level || "A-level"} ${meta.subject || "Economics"}`, MARGIN_L, 24);
-  doc.text(meta.paperRef || `7136/${meta.paperNumber || "1"}`, pageW - MARGIN_R, 16, { align: "right" });
+  doc.text(meta.paperRef || (isEdexcelA(meta) ? `9EC0/0${meta.paperNumber || "1"}` : `7136/${meta.paperNumber || "1"}`), pageW - MARGIN_R, 16, { align: "right" });
   doc.text("Predicted Mark Scheme", pageW - MARGIN_R, 24, { align: "right" });
 
   // Centre block
