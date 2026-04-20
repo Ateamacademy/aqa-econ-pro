@@ -168,8 +168,16 @@ function drawCoverPage(doc: jsPDF, meta: PaperMeta) {
   doc.setFont("helvetica", "normal");
 
   const pNum = meta.paperNumber || "1";
+  const isEdex = (meta.examBoard || "").toLowerCase().includes("edexcel") && !/\bedexcel[\s\-(]*b\b/i.test(meta.examBoard || "");
   let instructions: string[];
-  if (pNum === "3") {
+  if (isEdex) {
+    instructions = [
+      "• Use black ink or black ball-point pen.",
+      `• The Paper Reference is 9EC0/0${pNum}.`,
+      "• Answer ALL questions in Section A and Section B.",
+      "• In Section C, answer EITHER question 7 OR question 8.",
+    ];
+  } else if (pNum === "3") {
     instructions = [
       "• Answer all questions.",
       "• Use black ink or black ball-point pen. Pencil should only be used for drawing.",
@@ -233,7 +241,7 @@ function drawCoverPage(doc: jsPDF, meta: PaperMeta) {
   doc.setFontSize(8);
   doc.setTextColor(100, 100, 100);
   doc.text("Predicted Paper — For revision purposes only", marginL, y);
-  doc.text(`7136/${pNum}`, pageW - marginR, y, { align: "right" });
+  doc.text(meta.paperRef || `7136/${pNum}`, pageW - marginR, y, { align: "right" });
 }
 
 // ─── Content Renderer ───────────────────────────────────────────────
@@ -941,6 +949,13 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
 
 // ─── Main Export ────────────────────────────────────────────────────
 
+function isEdexcelAMeta(meta?: { examBoard?: string; level?: string }): boolean {
+  const b = (meta?.examBoard || "").toLowerCase();
+  if (!b || b.includes("aqa")) return false;
+  if (/\bedexcel[\s\-(]*b\b/i.test(b)) return false;
+  return b.includes("edexcel");
+}
+
 export function generatePaperPdf(
   title: string,
   content: string,
@@ -952,11 +967,20 @@ export function generatePaperPdf(
   const paperNumMatch = title.match(/Paper\s*(\d)/i);
   const paperNumber = paperNumMatch ? paperNumMatch[1] : "1";
 
-  const paperTitles: Record<string, string> = {
+  const edexcel = isEdexcelAMeta(meta);
+
+  const aqaPaperTitles: Record<string, string> = {
     "1": "Paper 1 Markets and Market Failure",
     "2": "Paper 2 National and International Economy",
     "3": "Paper 3 Economic Principles and Issues",
   };
+  const edexcelPaperTitles: Record<string, string> = {
+    "1": "Paper 1 Markets and Business Behaviour",
+    "2": "Paper 2 The National and Global Economy",
+    "3": "Paper 3 Microeconomics and Macroeconomics",
+  };
+  const paperTitles = edexcel ? edexcelPaperTitles : aqaPaperTitles;
+  const paperRef = edexcel ? `9EC0/0${paperNumber}` : `7136/${paperNumber}`;
 
   const fullMeta: PaperMeta = {
     subject: meta?.subject || "Economics",
@@ -967,8 +991,8 @@ export function generatePaperPdf(
     paperTitle: paperTitles[paperNumber] || title,
     date: "Predicted Paper",
     timeAllowed: "2 hours",
-    totalMarks: 80,
-    paperRef: `7136/${paperNumber}`,
+    totalMarks: edexcel ? 100 : 80,
+    paperRef,
   };
 
   // Page 1: Cover page

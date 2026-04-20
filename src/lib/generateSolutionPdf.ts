@@ -5,6 +5,22 @@ import { flushSync } from "react-dom";
 import { renderPaperMarkdown } from "./generatePaperPdf";
 import { getCatalogEntry, AQA_DIAGRAM_CATALOG, pickReferenceFigure } from "./aqa-diagram-catalog";
 import type { DiagramType } from "./aqa-diagram-rubric";
+import { getEdexcelASkillSplit } from "./boards/edexcel-a-a-level";
+
+// Detect Edexcel A so we can render an authentic Pearson 9EC0 mark scheme
+// (per-skill K/Ap/An/Ev grid + indicative content, no AQA "levels" table).
+function isEdexcelA(meta: { examBoard?: string; level?: string } | undefined): boolean {
+  const b = (meta?.examBoard || "").toLowerCase();
+  const l = (meta?.level || "").toLowerCase();
+  if (!b) return false;
+  if (b.includes("aqa")) return false;
+  // Match "Edexcel A", "edexcel-a", "Edexcel (A)" but NOT "Edexcel B".
+  const isEdexcel = b.includes("edexcel");
+  const isB = /\bedexcel[\s\-(]*b\b/i.test(b);
+  if (!isEdexcel || isB) return false;
+  // Only A-Level (not AS) gets the 9EC0 treatment.
+  return l.includes("a-level") || l.includes("alevel") || l === "a level" || !l;
+}
 
 // ─── Diagram embedding ────────────────────────────────────────────────
 //
@@ -458,7 +474,7 @@ function drawFooters(doc: jsPDF, meta: SolutionMeta) {
     doc.setFontSize(7.5);
     doc.setFont("helvetica", "normal");
     doc.setTextColor(...COLOR_MUTED);
-    const ref = meta.paperRef || `7136/${meta.paperNumber || "1"}`;
+    const ref = meta.paperRef || (isEdexcelA(meta) ? `9EC0/0${meta.paperNumber || "1"}` : `7136/${meta.paperNumber || "1"}`);
     doc.text(`${ref} – Predicted Mark Scheme`, MARGIN_L, pageH - 10);
     doc.text(`${i} of ${totalPages}`, pageW / 2, pageH - 10, { align: "center" });
     doc.text(meta.examBoard || "AQA", pageW - MARGIN_R, pageH - 10, { align: "right" });
@@ -628,7 +644,7 @@ function drawCover(doc: jsPDF, meta: SolutionMeta) {
   doc.setFont("helvetica", "normal");
   doc.setFontSize(9);
   doc.text(`${meta.level || "A-level"} ${meta.subject || "Economics"}`, MARGIN_L, 24);
-  doc.text(meta.paperRef || `7136/${meta.paperNumber || "1"}`, pageW - MARGIN_R, 16, { align: "right" });
+  doc.text(meta.paperRef || (isEdexcelA(meta) ? `9EC0/0${meta.paperNumber || "1"}` : `7136/${meta.paperNumber || "1"}`), pageW - MARGIN_R, 16, { align: "right" });
   doc.text("Predicted Mark Scheme", pageW - MARGIN_R, 24, { align: "right" });
 
   // Centre block
@@ -704,16 +720,30 @@ function drawSectionHeader(doc: jsPDF, y: number, label: string) {
   return y + 5;
 }
 
-/** AQA-style table header bar: Question | Answer | Marks | AO. */
-function drawQuestionHeaderBar(doc: jsPDF, y: number, entry: SolutionEntry, ao?: string): number {
+/**
+ * Top-of-question header bar.
+ *
+ * AQA: Question | Answer | Marks | AO
+ * Edexcel A (9EC0): Question | Answer | Marks | K · Ap · An · Ev (per-skill split)
+ */
+function drawQuestionHeaderBar(
+  doc: jsPDF,
+  y: number,
+  entry: SolutionEntry,
+  meta: SolutionMeta,
+  ao?: string,
+): number {
   const { pageW } = pageWH(doc);
   const x = MARGIN_L;
   const w = pageW - MARGIN_L - MARGIN_R;
   const rowH = 7;
+  const edexcel = isEdexcelA(meta);
+
   // Column widths
   const cQ = 22;       // Question
   const cM = 18;       // Marks
-  const cAO = 26;      // AO
+  // Edexcel needs a wider rightmost column for "K2 · Ap2 · An4 · Ev2"
+  const cAO = edexcel ? 38 : 26;
   const cA = w - cQ - cM - cAO; // Answer
 
   y = ensureSpace(doc, y, rowH + 2);
@@ -734,7 +764,7 @@ function drawQuestionHeaderBar(doc: jsPDF, y: number, entry: SolutionEntry, ao?:
   doc.text("Question", x + cQ / 2, y + 4.6, { align: "center" });
   doc.text("Answer", x + cQ + cA / 2, y + 4.6, { align: "center" });
   doc.text("Marks", x + cQ + cA + cM / 2, y + 4.6, { align: "center" });
-  doc.text("AO", x + cQ + cA + cM + cAO / 2, y + 4.6, { align: "center" });
+  doc.text(edexcel ? "K · Ap · An · Ev" : "AO", x + cQ + cA + cM + cAO / 2, y + 4.6, { align: "center" });
 
   y += rowH;
 
@@ -765,7 +795,14 @@ function drawQuestionHeaderBar(doc: jsPDF, y: number, entry: SolutionEntry, ao?:
 
   doc.setFont("helvetica", "normal");
   doc.setFontSize(8.5);
-  doc.text(ao || aoForMarks(entry.marks), x + cQ + cA + cM + cAO / 2, y + 4.8, { align: "center" });
+  let rightLabel = ao || aoForMarks(entry.marks);
+  if (edexcel) {
+    const split = getEdexcelASkillSplit(entry.marks);
+    rightLabel = split
+      ? `K${split.K} · Ap${split.Ap} · An${split.An} · Ev${split.Ev}`
+      : "—";
+  }
+  doc.text(rightLabel, x + cQ + cA + cM + cAO / 2, y + 4.8, { align: "center" });
 
   return y + valH + 4;
 }
@@ -880,15 +917,85 @@ function drawLevelsTable(doc: jsPDF, y: number, marks: number): number {
   return y + 4;
 }
 
+/**
+ * Edexcel A (9EC0) per-skill mark allocation table.
+ * Replaces AQA's "Levels of response" descriptor grid.
+ */
+function drawEdexcelSkillTable(doc: jsPDF, y: number, marks: number): number {
+  const split = getEdexcelASkillSplit(marks);
+  if (!split) return y;
+  const { pageW } = pageWH(doc);
+  const x = MARGIN_L;
+  const w = pageW - MARGIN_L - MARGIN_R;
+  const rows: Array<{ k: string; name: string; max: number; descriptor: string }> = [
+    { k: "K",  name: "Knowledge",   max: split.K,
+      descriptor: "Define key terms accurately; identify relevant concepts, theories or models from the specification." },
+    { k: "Ap", name: "Application", max: split.Ap,
+      descriptor: "Apply theory to the context, extract and use figures from the data response, refer to named markets/firms." },
+    { k: "An", name: "Analysis",    max: split.An,
+      descriptor: "Develop multi-step chains of reasoning; use accurate diagrams; draw quantitative inferences from the data." },
+    { k: "Ev", name: "Evaluation",  max: split.Ev,
+      descriptor: "Weigh arguments (magnitude, time, stakeholders, assumptions); reach a prioritised, supported judgement." },
+  ].filter((r) => r.max > 0);
+
+  y = drawSectionHeader(doc, y, "Mark allocation (K · Ap · An · Ev)");
+
+  const cSkill = 28;
+  const cMarks = 16;
+  const cDesc = w - cSkill - cMarks;
+  doc.setDrawColor(...COLOR_RULE);
+  doc.setLineWidth(0.25);
+
+  // Header row
+  const headH = 5;
+  y = ensureSpace(doc, y, headH + 2);
+  doc.setFillColor(...COLOR_BAND_BG);
+  doc.rect(MARGIN_L, y, w, headH, "FD");
+  doc.line(MARGIN_L + cSkill, y, MARGIN_L + cSkill, y + headH);
+  doc.line(MARGIN_L + cSkill + cMarks, y, MARGIN_L + cSkill + cMarks, y + headH);
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(8);
+  doc.setTextColor(...COLOR_BAND_INK);
+  doc.text("Skill", MARGIN_L + 2, y + 3.5);
+  doc.text("Marks", MARGIN_L + cSkill + 2, y + 3.5);
+  doc.text("What earns the mark", MARGIN_L + cSkill + cMarks + 2, y + 3.5);
+  y += headH;
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(8);
+  doc.setTextColor(...COLOR_INK);
+  for (const r of rows) {
+    const lines = doc.splitTextToSize(r.descriptor, cDesc - 4) as string[];
+    const h = Math.max(headH, lines.length * 3.6 + 2);
+    y = ensureSpace(doc, y, h);
+    doc.rect(MARGIN_L, y, w, h, "D");
+    doc.line(MARGIN_L + cSkill, y, MARGIN_L + cSkill, y + h);
+    doc.line(MARGIN_L + cSkill + cMarks, y, MARGIN_L + cSkill + cMarks, y + h);
+    doc.setFont("helvetica", "bold");
+    doc.text(`${r.k} — ${r.name}`, MARGIN_L + 2, y + 3.6);
+    doc.setFont("helvetica", "normal");
+    doc.text(`${r.max}`, MARGIN_L + cSkill + 2, y + 3.6);
+    let ty = y + 3.6;
+    for (const ln of lines) {
+      doc.text(ln, MARGIN_L + cSkill + cMarks + 2, ty);
+      ty += 3.6;
+    }
+    y += h;
+  }
+  return y + 4;
+}
+
 function drawQuestion(
   doc: jsPDF,
   entry: SolutionEntry,
   diagrams: ResolvedDiagram[],
   y: number,
   isFirst: boolean,
+  meta: SolutionMeta,
 ): number {
   const { pageW } = pageWH(doc);
   const maxW = pageW - MARGIN_L - MARGIN_R;
+  const edexcel = isEdexcelA(meta);
 
   // Each question starts on its own page (except the first which follows the booklet title)
   if (!isFirst) {
@@ -896,8 +1003,8 @@ function drawQuestion(
     y = PAGE_TOP;
   }
 
-  // AQA-style header bar
-  y = drawQuestionHeaderBar(doc, y, entry);
+  // Header bar (AO column for AQA, K·Ap·An·Ev for Edexcel A)
+  y = drawQuestionHeaderBar(doc, y, entry, meta);
 
   // Full question stem
   y = drawSectionHeader(doc, y, "Question");
@@ -934,8 +1041,12 @@ function drawQuestion(
   );
   y += 4;
 
-  // Levels of response (only for extended-response questions)
-  if (entry.marks >= 9) {
+  // Marking grid:
+  //   • AQA → "Levels of response" descriptor table (≥9 marks)
+  //   • Edexcel A → per-skill K/Ap/An/Ev allocation table
+  if (edexcel) {
+    y = drawEdexcelSkillTable(doc, y, entry.marks);
+  } else if (entry.marks >= 9) {
     y = drawLevelsTable(doc, y, entry.marks);
   }
 
@@ -974,11 +1085,20 @@ export async function generateSolutionPdf(
   const paperNumMatch = title.match(/Paper\s*(\d)/i);
   const paperNumber = paperNumMatch ? paperNumMatch[1] : "1";
 
-  const paperTitles: Record<string, string> = {
+  const edexcel = isEdexcelA({ examBoard: meta?.examBoard, level: meta?.level });
+
+  const aqaPaperTitles: Record<string, string> = {
     "1": "Paper 1 Markets and Market Failure",
     "2": "Paper 2 National and International Economy",
     "3": "Paper 3 Economic Principles and Issues",
   };
+  const edexcelAPaperTitles: Record<string, string> = {
+    "1": "Paper 1 Markets and Business Behaviour",
+    "2": "Paper 2 The National and Global Economy",
+    "3": "Paper 3 Microeconomics and Macroeconomics",
+  };
+  const paperTitles = edexcel ? edexcelAPaperTitles : aqaPaperTitles;
+  const paperRef = edexcel ? `9EC0/0${paperNumber}` : `7136/${paperNumber}`;
 
   const fullMeta: SolutionMeta = {
     subject: meta?.subject || "Economics",
@@ -987,7 +1107,7 @@ export async function generateSolutionPdf(
     tier: meta?.tier,
     paperNumber,
     paperTitle: paperTitles[paperNumber] || title,
-    paperRef: `7136/${paperNumber}`,
+    paperRef,
     totalMarks: entries.reduce((s, e) => s + (e.marks || 0), 0),
   };
 
@@ -1035,7 +1155,7 @@ export async function generateSolutionPdf(
   );
 
   for (let i = 0; i < entries.length; i++) {
-    y = drawQuestion(doc, entries[i], diagramsByEntry[i] ?? [], y, i === 0);
+    y = drawQuestion(doc, entries[i], diagramsByEntry[i] ?? [], y, i === 0, fullMeta);
   }
 
   drawFooters(doc, fullMeta);
