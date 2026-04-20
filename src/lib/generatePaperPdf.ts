@@ -30,55 +30,46 @@ function ensureSpace(doc: jsPDF, y: number, needed: number, pageH: number): numb
 
 /**
  * Repair pathological text spacing from upstream sources where letters were
- * separated by spaces or em-spaces (e.g. "t h a t ,  w i t h o u t").
- * Collapses runs of 4+ single-character tokens into proper words while
- * preserving normal multi-letter words.
+ * separated by spaces or exotic whitespace (e.g. "t h a t ,  w i t h o u t the ETS").
+ *
+ * Strategy: detect any run of 3+ "tokens" where each token is 1–2 chars long
+ * and separated by spaces — that is the unmistakable signature of letter-
+ * spaced text — and rejoin those tokens into a single word. Tokens of 3+
+ * chars (real words like "the", "ETS", "9-14") are preserved as word
+ * boundaries. We then collapse any residual double-spacing.
  */
 function repairSpacing(text: string): string {
   if (!text) return text;
-  // Replace exotic whitespace with regular spaces
+  // Normalise exotic whitespace
   let s = text.replace(/[\u00A0\u2000-\u200B\u202F\u205F\u3000]/g, " ");
-  // Detect a sequence of >=4 single chars separated by spaces and rejoin them
-  s = s.replace(/(?:(?:^|\s)([\p{L}\p{N}\p{P}])(?=\s|$)){4,}/gu, (match) => {
-    return " " + match.trim().replace(/\s+/g, "");
-  });
-  // Collapse multiple spaces
-  s = s.replace(/[ \t]{2,}/g, " ").trim();
+
+  // Tokenise on whitespace, then walk the tokens and merge any consecutive
+  // run of 3+ short tokens (length 1–2) into a single word.
+  const tokens = s.split(/\s+/);
+  const out: string[] = [];
+  let i = 0;
+  while (i < tokens.length) {
+    const t = tokens[i];
+    if (t.length <= 2 && /^[\p{L}\p{N}\p{P}]+$/u.test(t)) {
+      // Look ahead for more short tokens
+      let j = i;
+      while (j < tokens.length && tokens[j].length <= 2 && /^[\p{L}\p{N}\p{P}]+$/u.test(tokens[j])) {
+        j++;
+      }
+      const runLen = j - i;
+      if (runLen >= 3) {
+        out.push(tokens.slice(i, j).join(""));
+        i = j;
+        continue;
+      }
+    }
+    out.push(t);
+    i++;
+  }
+  s = out.join(" ").replace(/[ \t]{2,}/g, " ").trim();
   return s;
 }
 
-/**
- * Draw a justified line of text by inserting extra word spacing so the line
- * reaches the right margin. Skips justification for the last line of a paragraph.
- */
-function drawJustifiedLine(
-  doc: jsPDF,
-  text: string,
-  x: number,
-  y: number,
-  maxW: number,
-  isLast: boolean
-) {
-  const trimmed = text.trim();
-  if (isLast || !trimmed.includes(" ")) {
-    doc.text(trimmed, x, y);
-    return;
-  }
-  const words = trimmed.split(/\s+/);
-  const wordsW = words.reduce((acc, w) => acc + doc.getTextWidth(w), 0);
-  const gaps = words.length - 1;
-  const extra = Math.max(0, (maxW - wordsW) / gaps);
-  // Cap gap stretch so we never produce the spaced-out artefact again
-  if (extra > 2.5) {
-    doc.text(trimmed, x, y);
-    return;
-  }
-  let cx = x;
-  for (let i = 0; i < words.length; i++) {
-    doc.text(words[i], cx, y);
-    cx += doc.getTextWidth(words[i]) + (i < gaps ? doc.getTextWidth(" ") + extra : 0);
-  }
-}
 
 function drawFooters(doc: jsPDF, meta: PaperMeta, marginL: number) {
   const totalPages = doc.getNumberOfPages();
@@ -759,8 +750,12 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
     }
 
     // ── MCQ options (A/B/C/D) ──
-    const mcqMatch = line.match(/^\s*[-•]?\s*([A-D])\s+(.+)/);
-    if (mcqMatch) {
+    // Must be a SHORT option (≤ 140 chars) — otherwise it's prose, not an option.
+    // Also requires either a leading bullet (-, •) or for the body to start
+    // with a non-digit (so paragraph leads like "A 2024 CBI survey…" don't
+    // get mis-detected as option A).
+    const mcqMatch = line.match(/^\s*([-•])?\s*([A-D])\s+(.+)/);
+    if (mcqMatch && mcqMatch[3].length <= 140 && (mcqMatch[1] || !/^\d/.test(mcqMatch[3]))) {
       y = ensureSpace(doc, y, 6, pageH);
       doc.setFontSize(10);
       doc.setFont("helvetica", "bold");
@@ -768,11 +763,11 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
       // Draw circle
       doc.circle(marginL + 3, y - 1.2, 2.2);
       doc.setFont("helvetica", "normal");
-      doc.text(mcqMatch[1], marginL + 1.5, y);
-      
+      doc.text(mcqMatch[2], marginL + 1.5, y);
+
       doc.setFont("helvetica", "normal");
       doc.setTextColor(30, 30, 30);
-      const optText = mcqMatch[2].replace(/\*\*/g, "");
+      const optText = mcqMatch[3].replace(/\*\*/g, "");
       const wrapped = doc.splitTextToSize(optText, maxW - 12);
       doc.text(wrapped, marginL + 10, y);
       y += wrapped.length * lineH + 1;
@@ -931,12 +926,14 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
       doc.setFontSize(10);
     }
 
+    // Exam papers use left-aligned body text — never justify (no letter-
+    // spaced "t h a t" artefacts, and final lines never get force-justified).
     const wrapped = doc.splitTextToSize(bodyText, bodyW);
-    for (let wi = 0; wi < wrapped.length; wi++) {
-      y = ensureSpace(doc, y, lineH, pageH);
-      const isLastLine = wi === wrapped.length - 1;
-      drawJustifiedLine(doc, wrapped[wi], marginL + indent, y, bodyW, isLastLine);
-      y += lineH;
+    const extractLineH = lineH + 0.6; // slightly looser leading for readability
+    for (const wl of wrapped) {
+      y = ensureSpace(doc, y, extractLineH, pageH);
+      doc.text(wl, marginL + indent, y);
+      y += extractLineH;
     }
   }
   return y;
