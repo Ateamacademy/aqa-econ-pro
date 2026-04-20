@@ -460,7 +460,7 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
       continue;
     }
 
-    // ── Section headers (Section A, Section B) ──
+    // ── Section headers (Section A, Section B, Section C) ──
     const sectionMatch = line.match(/^#{1,2}\s*(Section\s+[A-Z])/i);
     if (sectionMatch) {
       // New page for each section
@@ -468,16 +468,87 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
         doc.addPage();
         y = 25;
       }
-      doc.setFontSize(16);
-      doc.setFont("helvetica", "bold");
-      doc.setTextColor(0, 0, 0);
-      doc.text(sectionMatch[1], marginL, y);
-      y += 4;
-      doc.setDrawColor(0, 0, 0);
-      doc.setLineWidth(0.8);
-      doc.line(marginL, y, pageW - marginR, y);
-      y += 8;
+      const secLetter = sectionMatch[1].slice(-1).toUpperCase();
+      if (meta.isEdexcel) {
+        // Authentic Pearson banner: rounded grey-bordered box with section
+        // title, "Answer ALL questions" line and recommended timing.
+        const bannerH = secLetter === "B" ? 36 : 30;
+        doc.setDrawColor(170, 170, 170);
+        doc.setLineWidth(0.5);
+        doc.roundedRect(marginL, y, pageW - marginL - marginR, bannerH, 2.5, 2.5, "S");
+        let by = y + 8;
+        doc.setFontSize(13);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(0, 0, 0);
+        doc.text(`SECTION ${secLetter}`, pageW / 2, by, { align: "center" });
+        by += 7;
+        doc.setFontSize(9.5);
+        doc.setFont("helvetica", "bold");
+        const sub1 =
+          secLetter === "C"
+            ? "Answer ONE question. Write your answer in the space provided."
+            : "Answer ALL questions. Write your answers in the spaces provided.";
+        doc.text(sub1, pageW / 2, by, { align: "center" });
+        by += 6;
+        const minutes = secLetter === "B" ? "1 hour" : "30 minutes";
+        doc.text(`You are advised to spend ${minutes} on this section.`, pageW / 2, by, { align: "center" });
+        if (secLetter === "B") {
+          by += 6;
+          doc.setFont("helvetica", "italic");
+          doc.text("Read the figures and extracts before answering.", pageW / 2, by, { align: "center" });
+        }
+        y += bannerH + 8;
+      } else {
+        doc.setFontSize(16);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(0, 0, 0);
+        doc.text(sectionMatch[1], marginL, y);
+        y += 4;
+        doc.setDrawColor(0, 0, 0);
+        doc.setLineWidth(0.8);
+        doc.line(marginL, y, pageW - marginR, y);
+        y += 8;
+      }
       continue;
+    }
+
+    // ── Edexcel "Total for Question N = X marks" / "TOTAL FOR SECTION X = Y MARKS" ──
+    if (meta.isEdexcel) {
+      const totalQ = line.match(/^\s*\(?\s*Total for Question\s+(\d+(?:[a-z\(\)]*)?)\s*=\s*(\d+)\s*marks\s*\)?\s*$/i);
+      const totalSec = line.match(/^\s*TOTAL FOR (?:SECTION\s+([A-Z])|PAPER)\s*=\s*(\d+)\s*MARKS\s*$/i);
+      if (totalQ) {
+        y = ensureSpace(doc, y, 12, pageH);
+        y += 3;
+        doc.setDrawColor(160, 160, 160);
+        doc.setLineWidth(0.3);
+        doc.line(marginL, y - 2, pageW - marginR, y - 2);
+        doc.setFontSize(10);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(0, 0, 0);
+        doc.text(
+          `(Total for Question ${totalQ[1]} = ${totalQ[2]} marks)`,
+          pageW - marginR,
+          y + 3,
+          { align: "right" }
+        );
+        y += 8;
+        continue;
+      }
+      if (totalSec) {
+        y = ensureSpace(doc, y, 14, pageH);
+        y += 3;
+        const label = line.toUpperCase().includes("PAPER")
+          ? `TOTAL FOR PAPER = ${totalSec[2]} MARKS`
+          : `TOTAL FOR SECTION ${totalSec[1]} = ${totalSec[2]} MARKS`;
+        doc.setFillColor(235, 235, 235);
+        doc.rect(marginL, y - 1, pageW - marginL - marginR, 7, "F");
+        doc.setFontSize(10);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(0, 0, 0);
+        doc.text(label, pageW - marginR - 2, y + 4, { align: "right" });
+        y += 11;
+        continue;
+      }
     }
 
     // ── Context / EITHER / OR / Essay headers ──
