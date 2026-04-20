@@ -28,6 +28,58 @@ function ensureSpace(doc: jsPDF, y: number, needed: number, pageH: number): numb
   return y;
 }
 
+/**
+ * Repair pathological text spacing from upstream sources where letters were
+ * separated by spaces or em-spaces (e.g. "t h a t ,  w i t h o u t").
+ * Collapses runs of 4+ single-character tokens into proper words while
+ * preserving normal multi-letter words.
+ */
+function repairSpacing(text: string): string {
+  if (!text) return text;
+  // Replace exotic whitespace with regular spaces
+  let s = text.replace(/[\u00A0\u2000-\u200B\u202F\u205F\u3000]/g, " ");
+  // Detect a sequence of >=4 single chars separated by spaces and rejoin them
+  s = s.replace(/(?:(?:^|\s)([\p{L}\p{N}\p{P}])(?=\s|$)){4,}/gu, (match) => {
+    return " " + match.trim().replace(/\s+/g, "");
+  });
+  // Collapse multiple spaces
+  s = s.replace(/[ \t]{2,}/g, " ").trim();
+  return s;
+}
+
+/**
+ * Draw a justified line of text by inserting extra word spacing so the line
+ * reaches the right margin. Skips justification for the last line of a paragraph.
+ */
+function drawJustifiedLine(
+  doc: jsPDF,
+  text: string,
+  x: number,
+  y: number,
+  maxW: number,
+  isLast: boolean
+) {
+  const trimmed = text.trim();
+  if (isLast || !trimmed.includes(" ")) {
+    doc.text(trimmed, x, y);
+    return;
+  }
+  const words = trimmed.split(/\s+/);
+  const wordsW = words.reduce((acc, w) => acc + doc.getTextWidth(w), 0);
+  const gaps = words.length - 1;
+  const extra = Math.max(0, (maxW - wordsW) / gaps);
+  // Cap gap stretch so we never produce the spaced-out artefact again
+  if (extra > 2.5) {
+    doc.text(trimmed, x, y);
+    return;
+  }
+  let cx = x;
+  for (let i = 0; i < words.length; i++) {
+    doc.text(words[i], cx, y);
+    cx += doc.getTextWidth(words[i]) + (i < gaps ? doc.getTextWidth(" ") + extra : 0);
+  }
+}
+
 function drawFooters(doc: jsPDF, meta: PaperMeta, marginL: number) {
   const totalPages = doc.getNumberOfPages();
   const pageW = doc.internal.pageSize.getWidth();
