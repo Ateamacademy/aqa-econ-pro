@@ -720,16 +720,30 @@ function drawSectionHeader(doc: jsPDF, y: number, label: string) {
   return y + 5;
 }
 
-/** AQA-style table header bar: Question | Answer | Marks | AO. */
-function drawQuestionHeaderBar(doc: jsPDF, y: number, entry: SolutionEntry, ao?: string): number {
+/**
+ * Top-of-question header bar.
+ *
+ * AQA: Question | Answer | Marks | AO
+ * Edexcel A (9EC0): Question | Answer | Marks | K · Ap · An · Ev (per-skill split)
+ */
+function drawQuestionHeaderBar(
+  doc: jsPDF,
+  y: number,
+  entry: SolutionEntry,
+  meta: SolutionMeta,
+  ao?: string,
+): number {
   const { pageW } = pageWH(doc);
   const x = MARGIN_L;
   const w = pageW - MARGIN_L - MARGIN_R;
   const rowH = 7;
+  const edexcel = isEdexcelA(meta);
+
   // Column widths
   const cQ = 22;       // Question
   const cM = 18;       // Marks
-  const cAO = 26;      // AO
+  // Edexcel needs a wider rightmost column for "K2 · Ap2 · An4 · Ev2"
+  const cAO = edexcel ? 38 : 26;
   const cA = w - cQ - cM - cAO; // Answer
 
   y = ensureSpace(doc, y, rowH + 2);
@@ -750,7 +764,7 @@ function drawQuestionHeaderBar(doc: jsPDF, y: number, entry: SolutionEntry, ao?:
   doc.text("Question", x + cQ / 2, y + 4.6, { align: "center" });
   doc.text("Answer", x + cQ + cA / 2, y + 4.6, { align: "center" });
   doc.text("Marks", x + cQ + cA + cM / 2, y + 4.6, { align: "center" });
-  doc.text("AO", x + cQ + cA + cM + cAO / 2, y + 4.6, { align: "center" });
+  doc.text(edexcel ? "K · Ap · An · Ev" : "AO", x + cQ + cA + cM + cAO / 2, y + 4.6, { align: "center" });
 
   y += rowH;
 
@@ -781,7 +795,14 @@ function drawQuestionHeaderBar(doc: jsPDF, y: number, entry: SolutionEntry, ao?:
 
   doc.setFont("helvetica", "normal");
   doc.setFontSize(8.5);
-  doc.text(ao || aoForMarks(entry.marks), x + cQ + cA + cM + cAO / 2, y + 4.8, { align: "center" });
+  let rightLabel = ao || aoForMarks(entry.marks);
+  if (edexcel) {
+    const split = getEdexcelASkillSplit(entry.marks);
+    rightLabel = split
+      ? `K${split.K} · Ap${split.Ap} · An${split.An} · Ev${split.Ev}`
+      : "—";
+  }
+  doc.text(rightLabel, x + cQ + cA + cM + cAO / 2, y + 4.8, { align: "center" });
 
   return y + valH + 4;
 }
