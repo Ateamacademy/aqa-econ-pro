@@ -407,10 +407,18 @@ interface SolutionMeta {
 
 // ─── Helpers ────────────────────────────────────────────────────────
 
-const MARGIN_L = 20;
-const MARGIN_R = 20;
-const PAGE_TOP = 25;
-const PAGE_BOT = 25;
+const MARGIN_L = 18;
+const MARGIN_R = 18;
+const PAGE_TOP = 22;
+const PAGE_BOT = 22;
+
+// AQA mark scheme palette (muted, print-friendly)
+const COLOR_INK: [number, number, number] = [20, 24, 35];
+const COLOR_MUTED: [number, number, number] = [110, 116, 130];
+const COLOR_RULE: [number, number, number] = [205, 210, 220];
+const COLOR_BAND_BG: [number, number, number] = [241, 244, 249];
+const COLOR_BAND_INK: [number, number, number] = [33, 41, 60];
+const COLOR_ACCENT: [number, number, number] = [37, 99, 235];
 
 function pageWH(doc: jsPDF) {
   return {
@@ -428,18 +436,32 @@ function ensureSpace(doc: jsPDF, y: number, needed: number): number {
   return y;
 }
 
+function drawRunningHeader(doc: jsPDF, meta: SolutionMeta, pageIndex: number) {
+  if (pageIndex === 1) return; // skip cover
+  const { pageW } = pageWH(doc);
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(8);
+  doc.setTextColor(...COLOR_MUTED);
+  const left = `MARK SCHEME – ${(meta.level || "A-LEVEL").toUpperCase()} ${(meta.subject || "ECONOMICS").toUpperCase()} – ${meta.paperRef || ""}`;
+  doc.text(left, MARGIN_L, 12);
+  doc.setDrawColor(...COLOR_RULE);
+  doc.setLineWidth(0.2);
+  doc.line(MARGIN_L, 14, pageW - MARGIN_R, 14);
+}
+
 function drawFooters(doc: jsPDF, meta: SolutionMeta) {
   const totalPages = doc.getNumberOfPages();
   const { pageW, pageH } = pageWH(doc);
   for (let i = 1; i <= totalPages; i++) {
     doc.setPage(i);
+    drawRunningHeader(doc, meta, i);
     doc.setFontSize(7.5);
     doc.setFont("helvetica", "normal");
-    doc.setTextColor(140, 140, 140);
+    doc.setTextColor(...COLOR_MUTED);
     const ref = meta.paperRef || `7136/${meta.paperNumber || "1"}`;
-    doc.text(`${ref} — Mark Scheme`, MARGIN_L, pageH - 10);
-    doc.text(`Page ${i} of ${totalPages}`, pageW / 2, pageH - 10, { align: "center" });
-    doc.text("Predicted Solution", pageW - MARGIN_L, pageH - 10, { align: "right" });
+    doc.text(`${ref} – Predicted Mark Scheme`, MARGIN_L, pageH - 10);
+    doc.text(`${i} of ${totalPages}`, pageW / 2, pageH - 10, { align: "center" });
+    doc.text(meta.examBoard || "AQA", pageW - MARGIN_R, pageH - 10, { align: "right" });
   }
 }
 
