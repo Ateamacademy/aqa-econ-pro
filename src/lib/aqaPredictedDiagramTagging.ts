@@ -280,11 +280,10 @@ export function tagAqaQuestion(q: TaggerInput): AqaDiagramTag | null {
   }
 
   if (q.paper === 3 && (q.marks === 10 || q.marks === 15 || q.marks === 25)) {
-    // Paper 3 only gets a reference figure when the stem explicitly cites one
-    // (e.g. "Figure 1 shows…", "with the help of a diagram"). Otherwise the
-    // student draws their own — diagram-friendly topics make the canvas required.
-    if (explicit) return attachReferenceFigure(base(false), q);
-    const required = q.marks >= 15 && isDiagramFriendlyTopic(stem);
+    // Paper 3 written-response questions are student-drawn only — pre-supplied
+    // reference figures would leak the answer. The student must construct the
+    // diagram themselves. Diagram-friendly topics make the canvas required.
+    const required = explicit || (q.marks >= 15 && isDiagramFriendlyTopic(stem));
     return studentDrawnOnly(!required);
   }
 
