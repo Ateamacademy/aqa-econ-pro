@@ -165,6 +165,100 @@ export function hasForbiddenOpener(text: string): boolean {
   return FORBIDDEN_OPENERS.some((re) => re.test(trimmed));
 }
 
+// ── Reviewer-tracker validators (Paper 1 / Paper 2 wording rules) ──────────
+
+/**
+ * Rule (reviewer-flagged, P1 Q3 / P2 Q3): a 9-mark question that requires
+ * a diagram MUST start with an explicit diagram instruction. The phrase
+ * "your knowledge of economics" is reserved for 15 / 25-mark essays.
+ */
+const DIAGRAM_INSTRUCTION_RE =
+  /\b(with\s+the\s+(help|aid)\s+of\s+(an?\s+)?(appropriate\s+)?diagram|using\s+an?\s+[a-z\/\-\s]*diagram)\b/i;
+const KNOWLEDGE_OF_ECON_RE = /\byour\s+knowledge\s+of\s+economics\b/i;
+
+export interface NineMarkValidation {
+  ok: boolean;
+  reason?: string;
+}
+
+/** Validate a 9-mark diagram question stem against AQA conventions. */
+export function validateNineMarkDiagramStem(stem: string): NineMarkValidation {
+  const t = stem.trim();
+  if (!DIAGRAM_INSTRUCTION_RE.test(t)) {
+    return {
+      ok: false,
+      reason:
+        'A 9-mark diagram question must begin with "With the help of a diagram..." (or specify a named diagram type).',
+    };
+  }
+  if (KNOWLEDGE_OF_ECON_RE.test(t)) {
+    return {
+      ok: false,
+      reason:
+        'The phrase "your knowledge of economics" is reserved for 15- and 25-mark extended-response questions and must not appear on 9-mark diagram questions.',
+    };
+  }
+  return { ok: true };
+}
+
+/**
+ * Rule (reviewer-flagged, P1 Q1): a 2-mark percentage-change calculation
+ * must say "increase or decrease" (or "change in") so direction matters.
+ * Pure "percentage change" without direction is ambiguous and loses marks.
+ */
+const PERCENT_CHANGE_RE = /\bpercentage\s+change\b/i;
+const DIRECTION_EXPLICIT_RE =
+  /\b(increase\s+or\s+decrease|state\s+(?:clearly\s+)?whether|state\s+the\s+direction|indicate\s+whether)\b/i;
+
+export interface PercentChangeValidation {
+  ok: boolean;
+  reason?: string;
+}
+
+export function validatePercentageChangeStem(stem: string): PercentChangeValidation {
+  const t = stem.trim();
+  if (!PERCENT_CHANGE_RE.test(t)) return { ok: true };
+  if (DIRECTION_EXPLICIT_RE.test(t)) return { ok: true };
+  return {
+    ok: false,
+    reason:
+      'A percentage-change calculation must explicitly ask for direction — e.g. "Calculate the percentage increase or decrease..." or "...and state clearly whether the change is an increase or a decrease."',
+  };
+}
+
+/**
+ * Rule (reviewer-flagged, P1 Q6): every 25-mark "evaluate" model answer must
+ * contain a substantive evaluation/conclusion section.
+ */
+const CONCLUSION_HEADER_RE = /\b(conclusion|evaluation\s+and\s+conclusion|judgement|overall(\s+judgement)?)\b/i;
+
+export interface ModelAnswerValidation {
+  ok: boolean;
+  reason?: string;
+}
+
+export function validateEvaluateModelAnswer(modelAnswer: string): ModelAnswerValidation {
+  const text = modelAnswer || "";
+  if (!CONCLUSION_HEADER_RE.test(text)) {
+    return {
+      ok: false,
+      reason:
+        'A 25-mark "evaluate" model answer must end with a Conclusion / Evaluation and Conclusion section containing a supported judgement.',
+    };
+  }
+  // Crude check: at least 60 words after the conclusion marker.
+  const idx = text.search(CONCLUSION_HEADER_RE);
+  const tail = text.slice(idx).split(/\s+/).filter(Boolean);
+  if (tail.length < 60) {
+    return {
+      ok: false,
+      reason:
+        'The Conclusion section must contain at least 60 words of supported judgement (currently shorter).',
+    };
+  }
+  return { ok: true };
+}
+
 /**
  * Heuristic: a paragraph fails the "non-round-numbers" gate if every numeric
  * value in it is an exact multiple of 5 or 10.

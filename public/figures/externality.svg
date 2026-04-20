@@ -9,19 +9,23 @@
   <text x="60" y="55" font-size="12" fill="#0f172a">Costs /</text>
   <text x="60" y="70" font-size="12" fill="#0f172a">Benefits (£)</text>
 
-  <!-- MPB = MSB (downward) -->
+  <!-- Demand = MPB = MSB (downward) -->
+  <!-- From (130, 120) → (540, 380); slope = +0.634 (in svg-y) -->
   <line x1="130" y1="120" x2="540" y2="380" stroke="#15803d" stroke-width="2.5"/>
-  <text x="545" y="385" font-size="12" font-weight="600" fill="#15803d">MPB = MSB</text>
+  <text x="545" y="385" font-size="12" font-weight="600" fill="#15803d">D = MPB = MSB</text>
 
   <!-- MPC (upward) -->
+  <!-- From (130, 380) → (540, 120); slope = −0.634 -->
   <line x1="130" y1="380" x2="540" y2="120" stroke="#0284c7" stroke-width="2.5"/>
-  <text x="545" y="123" font-size="12" font-weight="600" fill="#0284c7">MPC</text>
+  <text x="545" y="125" font-size="12" font-weight="600" fill="#0284c7">MPC</text>
 
-  <!-- MSC (upward, parallel, above MPC) -->
-  <line x1="130" y1="320" x2="510" y2="80" stroke="#be123c" stroke-width="2.5"/>
-  <text x="510" y="73" font-size="12" font-weight="600" fill="#be123c">MSC</text>
+  <!-- MSC: PARALLEL to MPC, shifted UP by 60px (constant MEC). 
+       From (130, 320) → (540, 60); slope = −0.634 → identical to MPC.
+       Verified: at x=540, MPC y=120 and MSC y=60 → gap=60 throughout. -->
+  <line x1="130" y1="320" x2="540" y2="60" stroke="#be123c" stroke-width="2.5"/>
+  <text x="545" y="65" font-size="12" font-weight="600" fill="#be123c">MSC</text>
 
-  <!-- External cost arrow (vertical gap) -->
+  <!-- Constant MEC gap arrow at x=200 (illustrates parallel shift) -->
   <defs>
     <marker id="arrExt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#be123c"/>
@@ -30,11 +34,30 @@
       <path d="M10,0 L0,5 L10,10 z" fill="#be123c"/>
     </marker>
   </defs>
-  <line x1="200" y1="325" x2="200" y2="260" stroke="#be123c" stroke-width="1.3" marker-end="url(#arrExt)" marker-start="url(#arrExt2)"/>
-  <text x="130" y="290" font-size="10" fill="#be123c" font-style="italic">external</text>
-  <text x="130" y="303" font-size="10" fill="#be123c" font-style="italic">cost</text>
+  <!-- At x=200: MPC y = 380 - 0.634*70 = 335.6;  MSC y = 320 - 0.634*70 = 275.6; gap=60 -->
+  <line x1="200" y1="335" x2="200" y2="275" stroke="#be123c" stroke-width="1.4" marker-end="url(#arrExt)" marker-start="url(#arrExt2)"/>
+  <text x="206" y="312" font-size="11" font-weight="600" fill="#be123c">MEC</text>
 
-  <!-- Welfare loss triangle: (288, 220), (335, 250), (335, 190) -->
+  <!-- Equilibria (computed, not eyeballed):
+       MPB:  y = 120 + 0.634(x − 130)   (downward-sloping demand in svg coords)
+       MPC:  y = 380 − 0.634(x − 130)
+       MSC:  y = 320 − 0.634(x − 130)
+
+       Free-market Qm where MPB = MPC:
+         120 + 0.634(x−130) = 380 − 0.634(x−130)
+         1.268(x−130) = 260  →  x−130 = 205.05  →  x ≈ 335
+         y = 120 + 0.634(205.05) ≈ 250
+
+       Social optimum Q* where MPB = MSC:
+         120 + 0.634(x−130) = 320 − 0.634(x−130)
+         1.268(x−130) = 200  →  x−130 = 157.73  →  x ≈ 288
+         y = 120 + 0.634(157.73) ≈ 220
+
+       MSC at x = 335 (vertical above Qm): y = 320 − 0.634(205.05) ≈ 190
+       Welfare-loss triangle: Q* (288,220), Qm (335,250), MSC@Qm (335,190)
+  -->
+
+  <!-- Welfare loss triangle (between MSB and MSC from Q* to Qm) -->
   <polygon points="288,220 335,250 335,190" fill="#fecaca" stroke="#991b1b" stroke-width="1.5"/>
 
   <!-- Social optimum Q* at (288, 220) -->
@@ -44,12 +67,12 @@
   <text x="288" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Q*</text>
   <text x="68" y="224" font-size="11" font-weight="700" fill="#be123c">P*</text>
 
-  <!-- Free market Q1 at (335, 250) -->
+  <!-- Free market Qm at (335, 250) -->
   <circle cx="335" cy="250" r="5" fill="#0284c7"/>
   <line x1="335" y1="250" x2="335" y2="400" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1.2"/>
   <line x1="90" y1="250" x2="335" y2="250" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1.2"/>
-  <text x="335" y="430" text-anchor="middle" font-size="11" font-weight="700" fill="#0284c7">Q1</text>
-  <text x="68" y="254" font-size="11" font-weight="700" fill="#0284c7">P1</text>
+  <text x="335" y="430" text-anchor="middle" font-size="11" font-weight="700" fill="#0284c7">Qm</text>
+  <text x="68" y="254" font-size="11" font-weight="700" fill="#0284c7">Pm</text>
 
   <!-- Welfare loss label -->
   <line x1="400" y1="160" x2="340" y2="215" stroke="#991b1b" stroke-width="1.3"/>
@@ -57,5 +80,5 @@
   <text x="405" y="172" font-size="11" font-weight="700" fill="#991b1b">welfare loss</text>
 
   <!-- Conclusion -->
-  <text x="310" y="450" text-anchor="middle" font-size="11" fill="#334155">Free market over-produces: Q1 &gt; Q*. Shaded triangle = loss of social welfare from units where MSC &gt; MSB.</text>
+  <text x="310" y="450" text-anchor="middle" font-size="11" fill="#334155">MSC parallel to MPC (constant MEC). Free market over-produces: Qm &gt; Q*. Shaded triangle = welfare loss.</text>
 </svg>
