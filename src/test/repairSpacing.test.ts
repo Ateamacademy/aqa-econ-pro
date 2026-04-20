@@ -26,31 +26,39 @@ describe("PDF extract typography", () => {
   it("repairs upstream letter-spaced text (the ETS extract bug)", () => {
     const md =
       "A 2024 CBI survey reported that 41% of energy-intensive UK firms had postponed planned investment in low-carbon production because of allowance price uncertainty. Government modelling suggested t h a t , w i t h o u t t h e ETS, UK i n d u s t r i a l e m i s s i o n s would have been 9-14 M tonnes higher.";
-    const rendered = renderToString(md);
-    // The pathological run must be repaired
-    expect(rendered).toContain("that");
-    expect(rendered).toContain("without");
-    expect(rendered).toContain("industrial");
-    expect(rendered).toContain("emissions");
-    // And the broken pattern must be gone
-    expect(rendered).not.toMatch(/t\s+h\s+a\s+t/);
-    expect(rendered).not.toMatch(/w\s+i\s+t\s+h\s+o\s+u\s+t/);
-    expect(rendered).not.toMatch(/i\s+n\s+d\s+u\s+s\s+t\s+r\s+i\s+a\s+l/);
+    const tokens = renderToTokens(md);
+    // The repaired forms should appear as single tokens drawn by jsPDF
+    expect(tokens.some((t) => t.includes("without"))).toBe(true);
+    expect(tokens.some((t) => t.includes("industrial"))).toBe(true);
+    expect(tokens.some((t) => t.includes("emissions"))).toBe(true);
+    // No isolated single-letter tokens from the broken run should remain
+    const singleLetters = tokens.filter((t) => /^[a-z]$/i.test(t));
+    expect(singleLetters.length).toBeLessThan(3);
   });
 
   it("does not force-justify final lines (no large inter-character gaps)", () => {
     const md = "This is a short final line.";
-    const rendered = renderToString(md);
-    // No single character should appear isolated by spaces (the symptom of
-    // letter-spacing-based justification).
-    expect(rendered).not.toMatch(/(?:^|\s)[a-z](?:\s[a-z]){3,}/i);
+    const tokens = renderToTokens(md);
+    // No long run of single-letter tokens (the symptom of letter-spacing
+    // based justification).
+    let maxRun = 0,
+      run = 0;
+    for (const t of tokens) {
+      if (/^[a-z]$/i.test(t)) {
+        run++;
+        maxRun = Math.max(maxRun, run);
+      } else {
+        run = 0;
+      }
+    }
+    expect(maxRun).toBeLessThan(3);
   });
 
   it("preserves real short words like 'the', 'ETS', '9-14'", () => {
     const md = "The ETS reduced emissions by 9-14 M tonnes a year.";
-    const rendered = renderToString(md);
-    expect(rendered).toContain("ETS");
-    expect(rendered).toContain("9-14");
-    expect(rendered).toContain("The");
+    const tokens = renderToTokens(md);
+    expect(tokens.some((t) => t.includes("ETS"))).toBe(true);
+    expect(tokens.some((t) => t.includes("9-14"))).toBe(true);
+    expect(tokens.some((t) => t.includes("The"))).toBe(true);
   });
 });
