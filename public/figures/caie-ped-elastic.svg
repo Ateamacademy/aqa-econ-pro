@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 540" font-family="Arial, sans-serif">
+  <rect width="700" height="540" fill="#ffffff"/>
   <style>
     .axis { stroke:#111; stroke-width:2; fill:none; }
     .d  { stroke:#1976d2; stroke-width:2.5; fill:none; }
