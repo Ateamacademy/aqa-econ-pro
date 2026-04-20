@@ -270,6 +270,15 @@ function bank(setSeed: string): McqSpec[] {
       answer: "B",
       justification: "Between Qs and Qp every unit's marginal social cost (MSC) exceeds marginal social benefit (MPB); the area between those two curves over that range is the deadweight welfare loss.",
     },
+    {
+      figure: "**Figure 12b:** The Figure 12 palm-oil externality diagram with a Pigouvian tax of size MEC imposed on producers. The tax shifts MPC vertically up to coincide with MSC; the new market equilibrium is at Qs where MPB = MSC = (MPC + tax). The original deadweight-loss triangle is eliminated; tax revenue equals MEC × Qs.",
+      figureKey: "externality.svg",
+      figureCaption: "Figure 12b — Pigouvian tax on palm oil (Advanced)",
+      stem: "Based on Figure 12b, a Pigouvian tax set equal to the marginal external cost (MEC) at Qs achieves the socially optimal output because:",
+      options: ["It maximises producer revenue at every level of output", "It internalises the externality so that private marginal cost equals social marginal cost, aligning the free-market choice with MPB = MSC", "It transfers all consumer surplus to the government", "It eliminates the demand curve's slope so that quantity is set by supply alone"],
+      answer: "B",
+      justification: "Adding a tax = MEC raises MPC by the external cost, so producers now face MSC; the market equilibrium MPB = MPC + tax coincides with the social optimum MPB = MSC, eliminating the deadweight loss triangle.",
+    },
   ].map((m) => ({ ...m })) as McqSpec[];
   void setSeed;
 }
