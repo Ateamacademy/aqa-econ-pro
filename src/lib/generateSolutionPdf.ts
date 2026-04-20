@@ -272,6 +272,17 @@ async function resolveEntryDiagrams(entry: SolutionEntry): Promise<ResolvedDiagr
   for (const id of extractDiagramIds(entry.markScheme)) ids.add(id);
   for (const id of extractDiagramIds(entry.modelAnswer)) ids.add(id);
   for (const id of extractDiagramIds(entry.questionText)) ids.add(id);
+  if (ids.size === 0 && entry.requiresDiagram && entry.diagramType) {
+    const picked = pickReferenceFigure({
+      diagramType: entry.diagramType,
+      questionNumber: entry.label,
+      hint: [entry.questionText, entry.markScheme, entry.modelAnswer, entry.referenceFigureScenario].filter(Boolean).join("\n"),
+    });
+    if (picked) ids.add(picked.entry.id);
+  }
+  if (entry.requiresDiagram && ids.size === 0) {
+    throw new Error(`${entry.label}: required diagram could not be resolved from the catalog.`);
+  }
 
   const out: ResolvedDiagram[] = [];
   for (const id of ids) {
@@ -302,6 +313,20 @@ async function resolveEntryDiagrams(entry: SolutionEntry): Promise<ResolvedDiagr
       heightPx: dims.h,
     });
   }
+  if (entry.requiresDiagram && out.length === 0) {
+    throw new Error(`${entry.label}: required diagram was resolved but could not be rendered into the PDF.`);
+  }
+  if (entry.requiresDiagram && out[0]) {
+    const allowed = new Set((getCatalogEntry(out[0].catalogId)?.labels ?? []).map(normaliseLabelToken));
+    const referenced = extractReferencedDiagramLabels(`${entry.markScheme}\n${entry.modelAnswer}`);
+    const rogue = referenced.filter((token) => !allowed.has(token));
+    if (rogue.length > 0) {
+      throw new Error(`${entry.label}: prose references diagram labels not present on the attached figure (${rogue.join(", ")}).`);
+    }
+    if (/diagram description\s*:/i.test(`${entry.markScheme}\n${entry.modelAnswer}`)) {
+      throw new Error(`${entry.label}: text-based 'Diagram Description' fallback detected. Generation aborted.`);
+    }
+  }
   return out;
 }
 
@@ -329,8 +354,10 @@ export interface SolutionEntry {
   figuresMarkdown?: string; // markdown blocks for figures/tables this question references
   /** Catalog id (or legacy alias) for the reference diagram this question expects. */
   referenceFigureId?: string;
+  referenceFigureScenario?: string;
   /** True if AI marker tagged this question as requiring a diagram. */
   requiresDiagram?: boolean;
+  diagramType?: DiagramType;
 }
 
 interface SolutionMeta {
@@ -404,7 +431,7 @@ function writeWrapped(
   lineH: number,
 ): number {
   if (!text) return y;
-  const paragraphs = text.split(/\n/);
+  const paragraphs = repairSolutionSpacing(text).split(/\n/);
   for (const para of paragraphs) {
     if (!para.trim()) {
       y += lineH * 0.5;
@@ -588,7 +615,7 @@ function drawQuestion(
   doc.setTextColor(30, 30, 30);
   y = writeWrapped(
     doc,
-    stripDiagramPlaceholders(clean(entry.markScheme)) || "(no mark scheme generated)",
+    stripSolutionDiagramFallback(clean(entry.markScheme)) || "(no mark scheme generated)",
     MARGIN_L,
     y,
     maxW,
@@ -602,7 +629,7 @@ function drawQuestion(
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
     doc.setTextColor(30, 30, 30);
-    y = writeWrapped(doc, stripDiagramPlaceholders(clean(entry.modelAnswer)), MARGIN_L, y, maxW, 5);
+    y = writeWrapped(doc, stripSolutionDiagramFallback(clean(entry.modelAnswer)), MARGIN_L, y, maxW, 5);
     y += 4;
   }
 
