@@ -902,18 +902,40 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
     doc.setFontSize(10);
     doc.setTextColor(30, 30, 30);
 
-    const cleanLine = line
-      .replace(/\*\*(.+?)\*\*/g, "$1")
-      .replace(/\*(.+?)\*/g, "$1")
-      .replace(/`(.+?)`/g, "$1");
+    const cleanLine = repairSpacing(
+      line
+        .replace(/\*\*(.+?)\*\*/g, "$1")
+        .replace(/\*(.+?)\*/g, "$1")
+        .replace(/`(.+?)`/g, "$1")
+    );
 
     const isBold = /^\*\*/.test(line.trim());
     doc.setFont("helvetica", isBold ? "bold" : "normal");
 
-    const wrapped = doc.splitTextToSize(cleanLine, maxW);
-    for (const wl of wrapped) {
+    // Lettered extract paragraph: "A  Some text..." or "(A) Some text..."
+    const letteredMatch = cleanLine.match(/^\(?([A-Z])\)?\s{1,3}(.+)/);
+    const isLettered = !!letteredMatch && letteredMatch[2].length > 30;
+    const indent = isLettered ? 8 : 0;
+    const bodyText = isLettered ? letteredMatch![2] : cleanLine;
+    const bodyW = maxW - indent;
+
+    if (isLettered) {
+      // Circled letter marker
+      doc.setDrawColor(60, 60, 60);
+      doc.setLineWidth(0.4);
+      doc.circle(marginL + 2.5, y - 1.2, 2.6);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(8.5);
+      doc.text(letteredMatch![1], marginL + 2.5, y, { align: "center" });
+      doc.setFont("helvetica", isBold ? "bold" : "normal");
+      doc.setFontSize(10);
+    }
+
+    const wrapped = doc.splitTextToSize(bodyText, bodyW);
+    for (let wi = 0; wi < wrapped.length; wi++) {
       y = ensureSpace(doc, y, lineH, pageH);
-      doc.text(wl, marginL, y);
+      const isLastLine = wi === wrapped.length - 1;
+      drawJustifiedLine(doc, wrapped[wi], marginL + indent, y, bodyW, isLastLine);
       y += lineH;
     }
   }
