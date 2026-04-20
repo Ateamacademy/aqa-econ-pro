@@ -922,12 +922,14 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
       doc.setFontSize(10);
     }
 
+    // Exam papers use left-aligned body text — never justify (no letter-
+    // spaced "t h a t" artefacts, and final lines never get force-justified).
     const wrapped = doc.splitTextToSize(bodyText, bodyW);
-    for (let wi = 0; wi < wrapped.length; wi++) {
-      y = ensureSpace(doc, y, lineH, pageH);
-      const isLastLine = wi === wrapped.length - 1;
-      drawJustifiedLine(doc, wrapped[wi], marginL + indent, y, bodyW, isLastLine);
-      y += lineH;
+    const extractLineH = lineH + 0.6; // slightly looser leading for readability
+    for (const wl of wrapped) {
+      y = ensureSpace(doc, y, extractLineH, pageH);
+      doc.text(wl, marginL + indent, y);
+      y += extractLineH;
     }
   }
   return y;
