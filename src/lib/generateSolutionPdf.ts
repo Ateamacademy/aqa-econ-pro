@@ -1085,11 +1085,20 @@ export async function generateSolutionPdf(
   const paperNumMatch = title.match(/Paper\s*(\d)/i);
   const paperNumber = paperNumMatch ? paperNumMatch[1] : "1";
 
-  const paperTitles: Record<string, string> = {
+  const edexcel = isEdexcelA({ examBoard: meta?.examBoard, level: meta?.level });
+
+  const aqaPaperTitles: Record<string, string> = {
     "1": "Paper 1 Markets and Market Failure",
     "2": "Paper 2 National and International Economy",
     "3": "Paper 3 Economic Principles and Issues",
   };
+  const edexcelAPaperTitles: Record<string, string> = {
+    "1": "Paper 1 Markets and Business Behaviour",
+    "2": "Paper 2 The National and Global Economy",
+    "3": "Paper 3 Microeconomics and Macroeconomics",
+  };
+  const paperTitles = edexcel ? edexcelAPaperTitles : aqaPaperTitles;
+  const paperRef = edexcel ? `9EC0/0${paperNumber}` : `7136/${paperNumber}`;
 
   const fullMeta: SolutionMeta = {
     subject: meta?.subject || "Economics",
@@ -1098,7 +1107,7 @@ export async function generateSolutionPdf(
     tier: meta?.tier,
     paperNumber,
     paperTitle: paperTitles[paperNumber] || title,
-    paperRef: `7136/${paperNumber}`,
+    paperRef,
     totalMarks: entries.reduce((s, e) => s + (e.marks || 0), 0),
   };
 
