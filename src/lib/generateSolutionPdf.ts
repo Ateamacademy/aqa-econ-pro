@@ -3,7 +3,8 @@ import { createRoot } from "react-dom/client";
 import { createElement } from "react";
 import { flushSync } from "react-dom";
 import { renderPaperMarkdown } from "./generatePaperPdf";
-import { getCatalogEntry, AQA_DIAGRAM_CATALOG } from "./aqa-diagram-catalog";
+import { getCatalogEntry, AQA_DIAGRAM_CATALOG, pickReferenceFigure } from "./aqa-diagram-catalog";
+import type { DiagramType } from "./aqa-diagram-rubric";
 
 // ─── Diagram embedding ────────────────────────────────────────────────
 //
@@ -204,6 +205,64 @@ interface ResolvedDiagram {
   heightPx: number;
 }
 
+const SUBSCRIPT_DIGITS: Record<string, string> = {
+  "₀": "0",
+  "₁": "1",
+  "₂": "2",
+  "₃": "3",
+  "₄": "4",
+  "₅": "5",
+  "₆": "6",
+  "₇": "7",
+  "₈": "8",
+  "₉": "9",
+};
+
+const DIAGRAM_LABEL_TOKEN_RE = /\b(?:Pnet|Pp|Pe|Po|Qo|Qe|Q\*|P\*|DWL|MPC|MSC|MPB|MSB|SRAS\d?|LRAS|AD\d?|AR|MR|MC|AC|S\d?|D\d?|P\d?|Q\d?)\b/g;
+
+export function repairSolutionSpacing(text: string): string {
+  if (!text) return text;
+  const tokens = text.replace(/[\u00A0\u2000-\u200B\u202F\u205F\u3000]/g, " ").split(/\s+/);
+  const out: string[] = [];
+  let i = 0;
+  while (i < tokens.length) {
+    if (tokens[i].length <= 2 && /^[\p{L}\p{N}\p{P}]+$/u.test(tokens[i])) {
+      let j = i;
+      while (j < tokens.length && tokens[j].length <= 2 && /^[\p{L}\p{N}\p{P}]+$/u.test(tokens[j])) j++;
+      if (j - i >= 3) {
+        out.push(tokens.slice(i, j).join(""));
+        i = j;
+        continue;
+      }
+    }
+    out.push(tokens[i]);
+    i += 1;
+  }
+  return out.join(" ").replace(/[ \t]{2,}/g, " ").trim();
+}
+
+function stripDiagramDescriptionBlock(text: string): string {
+  return text
+    .replace(/(?:^|\n)Diagram Description:\s*(?:\n(?:[*-]\s.*|[A-Za-z][^\n]*))*?/gi, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+function normaliseLabelToken(token: string): string {
+  return token
+    .replace(/[₀-₉]/g, (digit) => SUBSCRIPT_DIGITS[digit] ?? digit)
+    .replace(/\s+/g, "")
+    .toUpperCase();
+}
+
+export function extractReferencedDiagramLabels(text: string): string[] {
+  return Array.from(new Set((text.match(DIAGRAM_LABEL_TOKEN_RE) ?? []).map(normaliseLabelToken)));
+}
+
+export function stripSolutionDiagramFallback(text: string): string {
+  return stripDiagramPlaceholders(stripDiagramDescriptionBlock(text));
+}
+
 async function resolveEntryDiagrams(entry: SolutionEntry): Promise<ResolvedDiagram[]> {
   const ids = new Set<string>();
   if (entry.referenceFigureId) {
@@ -213,6 +272,17 @@ async function resolveEntryDiagrams(entry: SolutionEntry): Promise<ResolvedDiagr
   for (const id of extractDiagramIds(entry.markScheme)) ids.add(id);
   for (const id of extractDiagramIds(entry.modelAnswer)) ids.add(id);
   for (const id of extractDiagramIds(entry.questionText)) ids.add(id);
+  if (ids.size === 0 && entry.requiresDiagram && entry.diagramType) {
+    const picked = pickReferenceFigure({
+      diagramType: entry.diagramType,
+      questionNumber: entry.label,
+      hint: [entry.questionText, entry.markScheme, entry.modelAnswer, entry.referenceFigureScenario].filter(Boolean).join("\n"),
+    });
+    if (picked) ids.add(picked.entry.id);
+  }
+  if (entry.requiresDiagram && ids.size === 0) {
+    throw new Error(`${entry.label}: required diagram could not be resolved from the catalog.`);
+  }
 
   const out: ResolvedDiagram[] = [];
   for (const id of ids) {
@@ -243,6 +313,20 @@ async function resolveEntryDiagrams(entry: SolutionEntry): Promise<ResolvedDiagr
       heightPx: dims.h,
     });
   }
+  if (entry.requiresDiagram && out.length === 0) {
+    throw new Error(`${entry.label}: required diagram was resolved but could not be rendered into the PDF.`);
+  }
+  if (entry.requiresDiagram && out[0]) {
+    const allowed = new Set((getCatalogEntry(out[0].catalogId)?.labels ?? []).map(normaliseLabelToken));
+    const referenced = extractReferencedDiagramLabels(`${entry.markScheme}\n${entry.modelAnswer}`);
+    const rogue = referenced.filter((token) => !allowed.has(token));
+    if (rogue.length > 0) {
+      throw new Error(`${entry.label}: prose references diagram labels not present on the attached figure (${rogue.join(", ")}).`);
+    }
+    if (/diagram description\s*:/i.test(`${entry.markScheme}\n${entry.modelAnswer}`)) {
+      throw new Error(`${entry.label}: text-based 'Diagram Description' fallback detected. Generation aborted.`);
+    }
+  }
   return out;
 }
 
@@ -270,8 +354,10 @@ export interface SolutionEntry {
   figuresMarkdown?: string; // markdown blocks for figures/tables this question references
   /** Catalog id (or legacy alias) for the reference diagram this question expects. */
   referenceFigureId?: string;
+  referenceFigureScenario?: string;
   /** True if AI marker tagged this question as requiring a diagram. */
   requiresDiagram?: boolean;
+  diagramType?: DiagramType;
 }
 
 interface SolutionMeta {
@@ -345,7 +431,7 @@ function writeWrapped(
   lineH: number,
 ): number {
   if (!text) return y;
-  const paragraphs = text.split(/\n/);
+  const paragraphs = repairSolutionSpacing(text).split(/\n/);
   for (const para of paragraphs) {
     if (!para.trim()) {
       y += lineH * 0.5;
@@ -529,7 +615,7 @@ function drawQuestion(
   doc.setTextColor(30, 30, 30);
   y = writeWrapped(
     doc,
-    stripDiagramPlaceholders(clean(entry.markScheme)) || "(no mark scheme generated)",
+    stripSolutionDiagramFallback(clean(entry.markScheme)) || "(no mark scheme generated)",
     MARGIN_L,
     y,
     maxW,
@@ -543,7 +629,7 @@ function drawQuestion(
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
     doc.setTextColor(30, 30, 30);
-    y = writeWrapped(doc, stripDiagramPlaceholders(clean(entry.modelAnswer)), MARGIN_L, y, maxW, 5);
+    y = writeWrapped(doc, stripSolutionDiagramFallback(clean(entry.modelAnswer)), MARGIN_L, y, maxW, 5);
     y += 4;
   }
 
