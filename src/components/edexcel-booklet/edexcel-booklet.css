@@ -1,0 +1,74 @@
+/**
+ * Print + booklet styles for the Edexcel Pearson-style booklet.
+ *
+ * On screen we render each "page" as a 210mm × 297mm white card so the user
+ * can see what they'll get when printed. On print we force A4 page size and
+ * insert page breaks between cards.
+ */
+
+.edx-page {
+  width: 210mm;
+  min-height: 297mm;
+  background: #fff;
+  page-break-after: always;
+  break-after: page;
+  position: relative;
+  overflow: hidden;
+}
+
+.edx-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+}
+
+.edx-dotted-line {
+  border-bottom: 1px dotted #777;
+  height: 28px;
+}
+
+/* Fake barcode strip — pure CSS stripes */
+.edx-barcode {
+  width: 110px;
+  height: 14px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #000 0,
+    #000 1px,
+    transparent 1px,
+    transparent 2px,
+    #000 2px,
+    #000 4px,
+    transparent 4px,
+    transparent 6px,
+    #000 6px,
+    #000 7px,
+    transparent 7px,
+    transparent 10px
+  );
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  html,
+  body {
+    background: #fff !important;
+    margin: 0;
+    padding: 0;
+  }
+  .edx-booklet {
+    margin: 0 !important;
+  }
+  .edx-page {
+    margin: 0 !important;
+    box-shadow: none !important;
+    page-break-after: always;
+    break-after: page;
+  }
+  .edx-no-print {
+    display: none !important;
+  }
+}
