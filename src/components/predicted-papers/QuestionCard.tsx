@@ -175,10 +175,13 @@ export function QuestionCard({
           <MathsMarkdown>{question.text}</MathsMarkdown>
         </div>
 
-        {/* AQA reference figure + drawing canvas — side-by-side on lg, stacked on mobile */}
-        {(aqaDiagramRequired || question.referenceFigureId) && !feedback && paperKey && (
-          <div className={`mt-3 grid grid-cols-1 gap-3 ${question.referenceFigureId && aqaDiagramRequired ? "lg:grid-cols-2" : ""}`}>
-            {question.referenceFigureId && (
+        {/* AQA reference figure + drawing canvas — side-by-side on lg, stacked on mobile.
+            MCQs already render their figure inline within the stem markdown, so we
+            suppress the separate Reference figure panel for MCQs to avoid showing
+            two copies of the same diagram. */}
+        {(aqaDiagramRequired || (question.referenceFigureId && !isMCQ)) && !feedback && paperKey && (
+          <div className={`mt-3 grid grid-cols-1 gap-3 ${question.referenceFigureId && !isMCQ && aqaDiagramRequired ? "lg:grid-cols-2" : ""}`}>
+            {question.referenceFigureId && !isMCQ && (
               <ReferenceFigurePanel
                 referenceFigureId={question.referenceFigureId}
                 scenario={question.referenceFigureScenario}
