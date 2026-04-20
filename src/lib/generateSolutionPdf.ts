@@ -923,9 +923,11 @@ function drawQuestion(
   diagrams: ResolvedDiagram[],
   y: number,
   isFirst: boolean,
+  meta: SolutionMeta,
 ): number {
   const { pageW } = pageWH(doc);
   const maxW = pageW - MARGIN_L - MARGIN_R;
+  const edexcel = isEdexcelA(meta);
 
   // Each question starts on its own page (except the first which follows the booklet title)
   if (!isFirst) {
@@ -933,8 +935,8 @@ function drawQuestion(
     y = PAGE_TOP;
   }
 
-  // AQA-style header bar
-  y = drawQuestionHeaderBar(doc, y, entry);
+  // Header bar (AO column for AQA, K·Ap·An·Ev for Edexcel A)
+  y = drawQuestionHeaderBar(doc, y, entry, meta);
 
   // Full question stem
   y = drawSectionHeader(doc, y, "Question");
@@ -971,8 +973,12 @@ function drawQuestion(
   );
   y += 4;
 
-  // Levels of response (only for extended-response questions)
-  if (entry.marks >= 9) {
+  // Marking grid:
+  //   • AQA → "Levels of response" descriptor table (≥9 marks)
+  //   • Edexcel A → per-skill K/Ap/An/Ev allocation table
+  if (edexcel) {
+    y = drawEdexcelSkillTable(doc, y, entry.marks);
+  } else if (entry.marks >= 9) {
     y = drawLevelsTable(doc, y, entry.marks);
   }
 
