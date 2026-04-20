@@ -17,6 +17,17 @@ import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import { PredictedPaperDiagramBlock } from "./PredictedPaperDiagramBlock";
 import { ReferenceFigurePanel } from "./ReferenceFigurePanel";
 import type { AqaDiagramRubric } from "@/lib/aqa-diagram-rubric";
+import { evaluateDiagramGate } from "@/lib/markGates";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 import type { ParsedQuestion, MCQOption } from "./parseQuestions";
 
@@ -73,6 +84,7 @@ export function QuestionCard({
   const [aqaDiagramDataUrl, setAqaDiagramDataUrl] = useState<string | null>(null);
   const [showExplain, setShowExplain] = useState(false);
   const [showImprove, setShowImprove] = useState(false);
+  const [gateWarning, setGateWarning] = useState<string | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const isMCQ = !!question.mcqOptions && question.mcqOptions.length >= 2;
@@ -347,13 +359,45 @@ export function QuestionCard({
         <div className="px-4 pt-4">
           <Button
             size="sm"
-            onClick={() => onMark(aqaDiagramDataUrl || canvasDataUrl || undefined)}
+            onClick={() => {
+              const img = aqaDiagramDataUrl || canvasDataUrl || undefined;
+              if (aqaDiagramRequired && !aqaDiagramOptional) {
+                const isMacro = /macro|inflation|gdp|monetary|fiscal|aggregate/i.test(
+                  `${question.label} ${question.text}`,
+                );
+                const gate = evaluateDiagramGate({ answer, diagramImage: img, isMacro });
+                if (!gate.ok) {
+                  setGateWarning(gate.message);
+                  return;
+                }
+              }
+              onMark(img);
+            }}
             disabled={isMarking || !answer.trim()}
             className="gap-1.5"
           >
             <Send className="h-3.5 w-3.5" />
             {isMarking ? "Marking..." : "Mark My Answer"}
           </Button>
+          <AlertDialog open={!!gateWarning} onOpenChange={(o) => !o && setGateWarning(null)}>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Diagram and explanation required</AlertDialogTitle>
+                <AlertDialogDescription>{gateWarning}</AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Go back and add</AlertDialogCancel>
+                <AlertDialogAction
+                  onClick={() => {
+                    setGateWarning(null);
+                    onMark(aqaDiagramDataUrl || canvasDataUrl || undefined);
+                  }}
+                >
+                  Submit anyway (will score 0)
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
         </div>
       )}
 
