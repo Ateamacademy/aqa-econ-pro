@@ -3,7 +3,8 @@ import { createRoot } from "react-dom/client";
 import { createElement } from "react";
 import { flushSync } from "react-dom";
 import { renderPaperMarkdown } from "./generatePaperPdf";
-import { getCatalogEntry, AQA_DIAGRAM_CATALOG } from "./aqa-diagram-catalog";
+import { getCatalogEntry, AQA_DIAGRAM_CATALOG, pickReferenceFigure } from "./aqa-diagram-catalog";
+import type { DiagramType } from "./aqa-diagram-rubric";
 
 // ─── Diagram embedding ────────────────────────────────────────────────
 //
@@ -202,6 +203,64 @@ interface ResolvedDiagram {
   pngDataUrl: string;
   widthPx: number;
   heightPx: number;
+}
+
+const SUBSCRIPT_DIGITS: Record<string, string> = {
+  "₀": "0",
+  "₁": "1",
+  "₂": "2",
+  "₃": "3",
+  "₄": "4",
+  "₅": "5",
+  "₆": "6",
+  "₇": "7",
+  "₈": "8",
+  "₉": "9",
+};
+
+const DIAGRAM_LABEL_TOKEN_RE = /\b(?:Pnet|Pp|Pe|Po|Qo|Qe|Q\*|P\*|DWL|MPC|MSC|MPB|MSB|SRAS\d?|LRAS|AD\d?|AR|MR|MC|AC|S\d?|D\d?|P\d?|Q\d?)\b/g;
+
+export function repairSolutionSpacing(text: string): string {
+  if (!text) return text;
+  const tokens = text.replace(/[\u00A0\u2000-\u200B\u202F\u205F\u3000]/g, " ").split(/\s+/);
+  const out: string[] = [];
+  let i = 0;
+  while (i < tokens.length) {
+    if (tokens[i].length <= 2 && /^[\p{L}\p{N}\p{P}]+$/u.test(tokens[i])) {
+      let j = i;
+      while (j < tokens.length && tokens[j].length <= 2 && /^[\p{L}\p{N}\p{P}]+$/u.test(tokens[j])) j++;
+      if (j - i >= 3) {
+        out.push(tokens.slice(i, j).join(""));
+        i = j;
+        continue;
+      }
+    }
+    out.push(tokens[i]);
+    i += 1;
+  }
+  return out.join(" ").replace(/[ \t]{2,}/g, " ").trim();
+}
+
+function stripDiagramDescriptionBlock(text: string): string {
+  return text
+    .replace(/(?:^|\n)Diagram Description:\s*(?:\n(?:[*-]\s.*|[A-Za-z][^\n]*))*?/gi, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+function normaliseLabelToken(token: string): string {
+  return token
+    .replace(/[₀-₉]/g, (digit) => SUBSCRIPT_DIGITS[digit] ?? digit)
+    .replace(/\s+/g, "")
+    .toUpperCase();
+}
+
+export function extractReferencedDiagramLabels(text: string): string[] {
+  return Array.from(new Set((text.match(DIAGRAM_LABEL_TOKEN_RE) ?? []).map(normaliseLabelToken)));
+}
+
+export function stripSolutionDiagramFallback(text: string): string {
+  return stripDiagramPlaceholders(stripDiagramDescriptionBlock(text));
 }
 
 async function resolveEntryDiagrams(entry: SolutionEntry): Promise<ResolvedDiagram[]> {
