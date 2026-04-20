@@ -973,22 +973,71 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
     }
 
     // ── Question line with marks badge ──
-    const questionMatch = line.match(/^(?:\*{0,2})?(?:Question\s*)?((?:\d{1,2}(?:\.\d+)?[a-z]?|0\s?\d{1,2}(?:\.\d+)?[a-z]?))\s*(?:\*{0,2})[^\[]*?\[\s*(\d+)\s*marks?\s*\]/i);
+    // Accepts: "1 [5 marks]", "1(a) [4 marks]", "6(b) [8 marks]", "1.a [4 marks]",
+    //          "Question 6(c) [10 marks]", "0 1 [4 marks]" (AQA two-digit prefix).
+    const questionMatch = line.match(
+      /^(?:\*{0,2})?(?:Question\s*)?((?:\d{1,2}(?:\([a-z]\))?(?:\.\d+)?[a-z]?|0\s?\d{1,2}(?:\.\d+)?[a-z]?))\s*(?:\*{0,2})[^\[]*?\[\s*(\d+)\s*marks?\s*\]/i
+    );
     if (questionMatch) {
       y = ensureSpace(doc, y, 12, pageH);
       y += 4;
 
-      const qNum = questionMatch[1].replace(/\s+/g, "");
+      const qNumRaw = questionMatch[1].replace(/\s+/g, "");
       const marks = questionMatch[2];
-      const qLabel = `Question ${qNum}`;
 
-      // Question number in bold
+      if (meta.isEdexcel) {
+        // Pearson layout: parent number "1" in left gutter (bold, large),
+        // sub-part "(a)" indented; mark indicator "(N)" flush right.
+        const subMatch = qNumRaw.match(/^(\d{1,2})(?:\(([a-z])\)|\.([a-z]))?$/i);
+        const parent = subMatch?.[1] ?? qNumRaw;
+        const sub = subMatch ? (subMatch[2] || subMatch[3] || "") : "";
+        const gutterX = marginL;
+        const bodyX = marginL + 8;
+        doc.setFontSize(11);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(0, 0, 0);
+        if (!sub) {
+          // Parent question line — show "1" in the gutter
+          doc.text(parent, gutterX, y);
+        } else {
+          // Sub-part — indent "(a)"
+          doc.setFontSize(10);
+          doc.text(`(${sub})`, bodyX - 2, y);
+        }
+        // Right-aligned mark indicator "(N)" in italics
+        doc.setFontSize(9.5);
+        doc.setFont("helvetica", "italic");
+        doc.setTextColor(0, 0, 0);
+        doc.text(`(${marks})`, pageW - marginR, y, { align: "right" });
+
+        // Question text on next line, indented to bodyX
+        const afterHeader = line.replace(
+          /^(?:\*{0,2})?(?:Question\s*)?(?:\d{1,2}(?:\([a-z]\))?(?:\.\d+)?[a-z]?|0\s?\d{1,2}(?:\.\d+)?[a-z]?)\s*(?:\*{0,2})[^\[]*?\[\s*\d+\s*marks?\s*\]\s*/i,
+          ""
+        ).trim();
+        if (afterHeader) {
+          y += 5;
+          doc.setFontSize(10);
+          doc.setFont("helvetica", "normal");
+          doc.setTextColor(20, 20, 20);
+          const wrapped = doc.splitTextToSize(afterHeader, maxW - 8);
+          for (const wl of wrapped) {
+            y = ensureSpace(doc, y, lineH, pageH);
+            doc.text(wl, bodyX, y);
+            y += lineH;
+          }
+        }
+        y += 4;
+        continue;
+      }
+
+      // AQA / default: "Question N" label + grey rounded marks badge
+      const qLabel = `Question ${qNumRaw}`;
       doc.setFontSize(11);
       doc.setFont("helvetica", "bold");
       doc.setTextColor(0, 0, 0);
       doc.text(qLabel, marginL, y);
 
-      // Marks badge (right-aligned, rounded rect)
       const badgeText = `${marks} marks`;
       doc.setFontSize(8.5);
       const badgeW = doc.getTextWidth(badgeText) + 8;
@@ -1001,8 +1050,10 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
 
       y += 7;
 
-      // Check if there's question text after the header on the same line
-      const afterHeader = line.replace(/^(?:\*{0,2})?(?:Question\s*)?(?:\d{1,2}(?:\.\d+)?[a-z]?|0\s?\d{1,2}(?:\.\d+)?[a-z]?)\s*(?:\*{0,2})[^\[]*?\[\s*\d+\s*marks?\s*\]\s*/i, "").trim();
+      const afterHeader = line.replace(
+        /^(?:\*{0,2})?(?:Question\s*)?(?:\d{1,2}(?:\([a-z]\))?(?:\.\d+)?[a-z]?|0\s?\d{1,2}(?:\.\d+)?[a-z]?)\s*(?:\*{0,2})[^\[]*?\[\s*\d+\s*marks?\s*\]\s*/i,
+        ""
+      ).trim();
       if (afterHeader) {
         doc.setFontSize(10);
         doc.setFont("helvetica", "normal");
