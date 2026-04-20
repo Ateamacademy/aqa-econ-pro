@@ -1304,10 +1304,15 @@ export function generatePaperPdf(
     timeAllowed: "2 hours",
     totalMarks: edexcel ? 100 : 80,
     paperRef,
+    isEdexcel: edexcel,
   };
 
-  // Page 1: Cover page
-  drawCoverPage(doc, fullMeta);
+  // Page 1: Cover page (Pearson layout for Edexcel A, AQA layout otherwise)
+  if (edexcel) {
+    drawEdexcelCoverPage(doc, fullMeta);
+  } else {
+    drawCoverPage(doc, fullMeta);
+  }
 
   // Page 2+: Content
   doc.addPage();
