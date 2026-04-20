@@ -16,6 +16,7 @@ interface PaperMeta {
   timeAllowed?: string;
   totalMarks?: number;
   paperRef?: string;
+  isEdexcel?: boolean;
 }
 
 // ─── Helpers ────────────────────────────────────────────────────────
