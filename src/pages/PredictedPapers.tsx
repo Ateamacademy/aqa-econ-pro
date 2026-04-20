@@ -41,6 +41,7 @@ import { ExamTimer } from "@/components/predicted-papers/ExamTimer";
 import { ExamResultsSummary } from "@/components/predicted-papers/ExamResultsSummary";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import { tagAqaQuestion, inferPaperFromContext } from "@/lib/aqaPredictedDiagramTagging";
+import { getAqaPaper3OverrideContent } from "@/data/aqaPaper3Overrides";
 
 // Exam durations in minutes per subject + paper.
 // AQA A-Level Economics (7136) — every paper is 2 hours. Source of truth: AQA_SPEC.durationMinutes.
@@ -1458,7 +1459,16 @@ export default function PredictedPapers() {
 
   function openLibraryPaper(lp: PredictedPaper) {
     const setLabel = (lp.id.match(/-([a-g])$/i)?.[1] ?? "A").toUpperCase();
-    const baseParsed = parseQuestions(lp.content);
+    // For AQA A-Level Paper 3, prefer the curated override that wires every
+    // diagram MCQ to a real /figures asset (Monopolistic Competition, J-Curve,
+    // Ad Valorem vs Specific Tax, Lorenz/Gini, PED Revenue Impact, Negative
+    // Externality — palm oil). Falls back to the library prose if no override.
+    const overrideContent =
+      subject === "economics" && lp.paper === "3"
+        ? getAqaPaper3OverrideContent(lp.id)
+        : null;
+    const sourceContent = overrideContent ?? lp.content;
+    const baseParsed = parseQuestions(sourceContent);
     if (subject === "economics" && !isValidAqaPaperStructure(baseParsed.questions, lp.paper)) {
       const expected = lp.paper === "3" ? "30 × 1-mark MCQs + 10/15/25" : "2/4/9/25 + 15/25";
       toast.error(`AQA Paper ${lp.paper} must follow the ${expected} marking pattern.`);
