@@ -470,13 +470,13 @@ The UK government announced in 2024 that it would extend the Soft Drinks Industr
 A 2024 IFS study found that households in the lowest income decile spent 0.7% of disposable income on SDIL-affected products, compared with 0.2% for the highest decile. Critics therefore describe the levy as regressive in incidence, although supporters argue the long-run health gains accrue disproportionately to lower-income groups, who suffer the highest rates of diet-related disease.
 
 Question 1 [2 marks]
-Using Extract B, calculate the percentage change in sugary drink consumption between 2018 and 2024.
+Using Extract B, calculate the percentage increase or decrease in sugary drink consumption between 2018 and 2024. Show your working and state clearly whether the change is an increase or a decrease.
 
 Question 2 [4 marks]
-Using a supply and demand diagram, explain how the introduction of the sugar tax affects the market for high-sugar soft drinks.
+With the help of a fully labelled supply and demand diagram, explain how the introduction of the sugar tax affects the market for high-sugar soft drinks. Your answer must include both a labelled diagram (or a clear description of one) AND a written explanation of the economic mechanism.
 
 Question 3 [9 marks]
-Using the extracts and your knowledge of economics, analyse why the sugar tax may be considered an example of government intervention to correct market failure.
+With the help of a diagram and using the extracts, analyse why the sugar tax may be considered an example of government intervention to correct market failure.
 
 Question 4 [25 marks]
 Using the extracts and your own knowledge, evaluate the view that indirect taxes are the most effective way to reduce consumption of demerit goods.
@@ -535,10 +535,10 @@ Question 1 [2 marks]
 Define the term 'real wages'.
 
 Question 2 [4 marks]
-Using an AD/AS diagram, explain the likely impact of higher interest rates on aggregate demand in the UK.
+With the help of a fully labelled AD/AS diagram, explain the likely impact of higher interest rates on aggregate demand in the UK. Your answer must include both a labelled diagram (or a clear description of one) AND a written explanation of the economic mechanism.
 
 Question 3 [9 marks]
-Using the extracts and your knowledge of economics, analyse the trade-off faced by the Bank of England between controlling inflation and maintaining economic growth.
+With the help of a diagram and using the extracts, analyse the trade-off faced by the Bank of England between controlling inflation and maintaining economic growth.
 
 Question 4 [25 marks]
 Using the extracts and your own knowledge, evaluate the effectiveness of monetary policy as a tool for managing the UK macroeconomy.
