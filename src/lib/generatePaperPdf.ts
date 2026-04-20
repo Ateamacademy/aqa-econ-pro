@@ -168,8 +168,16 @@ function drawCoverPage(doc: jsPDF, meta: PaperMeta) {
   doc.setFont("helvetica", "normal");
 
   const pNum = meta.paperNumber || "1";
+  const isEdex = (meta.examBoard || "").toLowerCase().includes("edexcel") && !/\bedexcel[\s\-(]*b\b/i.test(meta.examBoard || "");
   let instructions: string[];
-  if (pNum === "3") {
+  if (isEdex) {
+    instructions = [
+      "• Use black ink or black ball-point pen.",
+      `• The Paper Reference is 9EC0/0${pNum}.`,
+      "• Answer ALL questions in Section A and Section B.",
+      "• In Section C, answer EITHER question 7 OR question 8.",
+    ];
+  } else if (pNum === "3") {
     instructions = [
       "• Answer all questions.",
       "• Use black ink or black ball-point pen. Pencil should only be used for drawing.",
@@ -233,7 +241,7 @@ function drawCoverPage(doc: jsPDF, meta: PaperMeta) {
   doc.setFontSize(8);
   doc.setTextColor(100, 100, 100);
   doc.text("Predicted Paper — For revision purposes only", marginL, y);
-  doc.text(`7136/${pNum}`, pageW - marginR, y, { align: "right" });
+  doc.text(meta.paperRef || `7136/${pNum}`, pageW - marginR, y, { align: "right" });
 }
 
 // ─── Content Renderer ───────────────────────────────────────────────
