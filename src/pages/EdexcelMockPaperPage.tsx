@@ -1,4 +1,4 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useLocation, Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import EdexcelBooklet from "@/components/edexcel-booklet/EdexcelBooklet";
 import "@/components/edexcel-booklet/edexcel-booklet.css";
@@ -12,8 +12,10 @@ import { ArrowLeft, Printer } from "lucide-react";
  */
 export default function EdexcelMockPaperPage() {
   const { paperNum } = useParams<{ paperNum: string }>();
+  const location = useLocation();
   const navigate = useNavigate();
-  const n = Number(paperNum);
+  const fromShortcut = location.pathname.match(/^\/paper-([123])$/)?.[1];
+  const n = Number(paperNum ?? fromShortcut);
 
   useEffect(() => {
     document.title = `Edexcel A Paper ${n} (9EC0/0${n}) — Mock Exam`;
