@@ -79,6 +79,7 @@ const PAPER_1: Paper = {
       totalMarks: 25,
       timeAdvice: "You are advised to spend 30 minutes on this section.",
       instructions: ["Answer ALL questions. Write your answers in the spaces provided."],
+      mcqReminder: true,
       questions: [
         {
           number: "1",
@@ -111,30 +112,47 @@ const PAPER_1: Paper = {
             {
               label: "(b)",
               prompt:
-                "The cross elasticity of demand between reusable coffee cups and disposable cups is estimated to be +1.4. Calculate the percentage change in the quantity demanded of reusable coffee cups following a 10% rise in the price of disposable cups. Show your working.",
-              marks: 2,
-              showWorking: true,
+                "The cross elasticity of demand between reusable coffee cups and disposable cups is estimated to be +1.4. A 10% rise in the price of disposable cups will cause the quantity demanded of reusable coffee cups to:",
+              marks: 1,
+              mcq: [
+                { letter: "A", text: "−14%" },
+                { letter: "B", text: "−1.4%" },
+                { letter: "C", text: "+1.4%" },
+                { letter: "D", text: "+14%" },
+              ],
             },
           ],
-          totalMarks: 6,
+          totalMarks: 5,
         },
         {
           number: "2",
           intro:
-            "Between 2020 and 2024 the average price of streaming subscriptions in the UK rose from £8.99 to £12.99 per month, while the number of household subscriptions rose from 18 million to 22 million. Over the same period UK real household disposable income rose by 6%.",
+            "Between 2020 and 2024 the average price of streaming subscriptions in the UK rose from £8.99 to £12.99 per month, while the number of household subscriptions rose from 18 million to 22 million.",
           parts: [
             {
               label: "(a)",
               prompt:
-                "Assuming the change in quantity was caused only by the change in income, calculate the income elasticity of demand for streaming subscriptions. Show your working.",
-              marks: 3,
+                "Assuming the change in quantity was caused only by other factors, calculate the income elasticity of demand, given that UK real household disposable income rose by 6% over the period. Show your working.",
+              marks: 2,
               showWorking: true,
             },
             {
               label: "(b)",
               prompt:
-                "With reference to your answer to (a), explain what the value suggests about the nature of streaming subscriptions as a good.",
+                "Calculate the percentage change in total consumer expenditure on streaming subscriptions between 2020 and 2024. Show your working.",
               marks: 2,
+              showWorking: true,
+            },
+            {
+              label: "(c)",
+              prompt: "Streaming subscriptions are best described as a:",
+              marks: 1,
+              mcq: [
+                { letter: "A", text: "complement to broadband" },
+                { letter: "B", text: "demerit good" },
+                { letter: "C", text: "normal good" },
+                { letter: "D", text: "Giffen good" },
+              ],
             },
           ],
           totalMarks: 5,
@@ -158,14 +176,30 @@ const PAPER_1: Paper = {
               showWorking: true,
             },
             {
-              label: "(b)",
-              prompt:
-                "With reference to Figure 1, calculate the share of the tax burden paid by consumers. Show your working.",
-              marks: 2,
+              label: "(b)(i)",
+              prompt: "With reference to Figure 1, calculate the share of the tax paid by consumers.",
+              marks: 1,
               showWorking: true,
             },
+            {
+              label: "(b)(ii)",
+              prompt: "With reference to Figure 1, calculate the share of the tax paid by producers.",
+              marks: 1,
+              showWorking: true,
+            },
+            {
+              label: "(c)",
+              prompt: "One likely effect of this tax is to:",
+              marks: 1,
+              mcq: [
+                { letter: "A", text: "increase consumer surplus" },
+                { letter: "B", text: "reduce a negative externality" },
+                { letter: "C", text: "increase producer surplus" },
+                { letter: "D", text: "correct a positive externality" },
+              ],
+            },
           ],
-          totalMarks: 4,
+          totalMarks: 5,
         },
         {
           number: "4",
@@ -180,27 +214,37 @@ const PAPER_1: Paper = {
             },
             {
               label: "(b)",
-              prompt:
-                "With reference to your diagram, explain one likely barrier to entry that may protect Greggs' position in the UK bakery market.",
-              marks: 2,
+              prompt: "Which of the following is most likely to be a barrier to entry in the UK bakery market?",
+              marks: 1,
+              mcq: [
+                { letter: "A", text: "patents" },
+                { letter: "B", text: "vertical integration with suppliers" },
+                { letter: "C", text: "consumer inertia" },
+                { letter: "D", text: "brand loyalty" },
+              ],
             },
           ],
-          totalMarks: 6,
+          totalMarks: 5,
         },
         {
           number: "5",
           intro:
             "The Competition and Markets Authority (CMA) blocked a proposed merger between two UK veterinary chains in 2024, citing reduced competition.",
           parts: [
-            { label: "(a)", prompt: "Explain one reason why the CMA might block a horizontal merger.", marks: 2 },
+            { label: "(a)", prompt: "Explain one reason why the CMA might block a horizontal merger.", marks: 4 },
             {
               label: "(b)",
-              prompt:
-                "Examine one possible cost and one possible benefit to consumers of allowing the merger to proceed.",
-              marks: 2,
+              prompt: "Which is most likely to indicate a monopsony?",
+              marks: 1,
+              mcq: [
+                { letter: "A", text: "one large seller" },
+                { letter: "B", text: "many small buyers" },
+                { letter: "C", text: "one large buyer" },
+                { letter: "D", text: "few large sellers" },
+              ],
             },
           ],
-          totalMarks: 4,
+          totalMarks: 5,
         },
       ],
     },
@@ -350,6 +394,7 @@ const PAPER_2: Paper = {
       totalMarks: 25,
       timeAdvice: "You are advised to spend 30 minutes on this section.",
       instructions: ["Answer ALL questions. Write your answers in the spaces provided."],
+      mcqReminder: true,
       questions: [
         {
           number: "1",
@@ -378,12 +423,17 @@ const PAPER_2: Paper = {
             },
             {
               label: "(b)",
-              prompt:
-                "With reference to the data, explain what the combination of indicators in 2024 suggests about the UK's macroeconomic position.",
-              marks: 2,
+              prompt: "Which of the following best describes the UK's macroeconomic position in 2024?",
+              marks: 1,
+              mcq: [
+                { letter: "A", text: "stagflation" },
+                { letter: "B", text: "demand-pull inflation" },
+                { letter: "C", text: "disinflation with weak growth" },
+                { letter: "D", text: "hyperinflation" },
+              ],
             },
           ],
-          totalMarks: 6,
+          totalMarks: 5,
         },
         {
           number: "2",
@@ -397,11 +447,17 @@ const PAPER_2: Paper = {
             },
             {
               label: "(b)",
-              prompt: "Explain the likely effect of this cut in interest rates on the sterling exchange rate.",
-              marks: 2,
+              prompt: "A cut in interest rates is most likely to cause the pound sterling to:",
+              marks: 1,
+              mcq: [
+                { letter: "A", text: "appreciate against the euro" },
+                { letter: "B", text: "depreciate against the euro" },
+                { letter: "C", text: "have no effect on the exchange rate" },
+                { letter: "D", text: "revalue under a fixed regime" },
+              ],
             },
           ],
-          totalMarks: 6,
+          totalMarks: 5,
         },
         {
           number: "3",
@@ -412,8 +468,19 @@ const PAPER_2: Paper = {
               prompt: "Distinguish between the cyclical and structural components of a budget deficit.",
               marks: 4,
             },
+            {
+              label: "(b)",
+              prompt: "Which of the following would most clearly worsen the UK's structural deficit?",
+              marks: 1,
+              mcq: [
+                { letter: "A", text: "a recession-driven fall in tax receipts" },
+                { letter: "B", text: "a permanent increase in state pension entitlements" },
+                { letter: "C", text: "a temporary increase in VAT" },
+                { letter: "D", text: "a cyclical upswing in corporation tax" },
+              ],
+            },
           ],
-          totalMarks: 4,
+          totalMarks: 5,
         },
         {
           number: "4",
@@ -428,20 +495,37 @@ const PAPER_2: Paper = {
             },
             {
               label: "(b)",
-              prompt: "Explain one supply-side policy that could help correct a persistent current account deficit in the long run.",
-              marks: 2,
+              prompt: "Which is most likely to correct a persistent current account deficit in the long run?",
+              marks: 1,
+              mcq: [
+                { letter: "A", text: "fiscal expansion" },
+                { letter: "B", text: "currency depreciation and supply-side reform" },
+                { letter: "C", text: "tariffs on all imports" },
+                { letter: "D", text: "a freeze on foreign direct investment" },
+              ],
             },
           ],
-          totalMarks: 6,
+          totalMarks: 5,
         },
         {
           number: "5",
           intro:
             "The OECD estimates the UK's long-run trend growth rate has fallen from 2.5% in the 2000s to approximately 1.4% in the 2020s.",
           parts: [
-            { label: "(a)", prompt: "Explain one supply-side reason for the fall in the UK's trend growth rate.", marks: 3 },
+            { label: "(a)", prompt: "Explain one supply-side reason for the fall in the UK's trend growth rate.", marks: 4 },
+            {
+              label: "(b)",
+              prompt: "Which policy is most likely to raise long-run trend growth?",
+              marks: 1,
+              mcq: [
+                { letter: "A", text: "a temporary VAT cut" },
+                { letter: "B", text: "expansion of apprenticeships and skills funding" },
+                { letter: "C", text: "quantitative easing" },
+                { letter: "D", text: "a higher national insurance rate" },
+              ],
+            },
           ],
-          totalMarks: 3,
+          totalMarks: 5,
         },
       ],
     },
@@ -589,6 +673,7 @@ const PAPER_3: Paper = {
       totalMarks: 25,
       timeAdvice: "You are advised to spend 30 minutes on this section.",
       instructions: ["Answer ALL questions. Write your answers in the spaces provided."],
+      mcqReminder: true,
       preamble: "Case Study 1: UK housing market and monetary policy. Read Figure 1 and Extract A before answering Question 1.",
       figures: [
         {
@@ -625,9 +710,14 @@ const PAPER_3: Paper = {
             { label: "(b)", prompt: "Explain one likely reason why higher interest rates reduce housing demand.", marks: 5 },
             {
               label: "(c)",
-              prompt:
-                "Examine one likely microeconomic consequence of a sustained fall in UK house prices on household behaviour.",
+              prompt: "Which of the following is most likely to be a microeconomic consequence of a fall in house prices?",
               marks: 5,
+              mcq: [
+                { letter: "A", text: "reduced negative equity" },
+                { letter: "B", text: "higher consumer confidence" },
+                { letter: "C", text: "higher labour mobility" },
+                { letter: "D", text: "lower household savings ratio" },
+              ],
             },
             { label: "(d)", prompt: "Explain one supply-side barrier to higher UK housing completions.", marks: 10 },
           ],
