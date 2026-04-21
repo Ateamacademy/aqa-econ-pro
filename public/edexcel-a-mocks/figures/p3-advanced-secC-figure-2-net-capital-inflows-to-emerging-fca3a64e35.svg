@@ -4,8 +4,8 @@
   <line x1="50" y1="190" x2="440" y2="190" stroke="#000"/>
   <g font-size="9">
     <text x="15" y="25">600</text><text x="15" y="65">300</text>
-    <text x="25" y="110">0</text><text x="15" y="150">&minus;200</text>
-    <text x="15" y="188">&minus;400</text>
+    <text x="25" y="110">0</text><text x="15" y="150">−200</text>
+    <text x="15" y="188">−400</text>
   </g>
   <g fill="#555">
     <rect x="60" y="90" width="15" height="15"/><rect x="80" y="85" width="15" height="20"/>

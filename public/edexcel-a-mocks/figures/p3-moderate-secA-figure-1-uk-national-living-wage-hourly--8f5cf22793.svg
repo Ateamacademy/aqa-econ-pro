@@ -1,7 +1,7 @@
 <svg viewBox="0 0 460 200" xmlns="http://www.w3.org/2000/svg" style="max-width: 130mm;">
   <line x1="60" y1="20" x2="60" y2="160" stroke="#000"/>
   <line x1="60" y1="160" x2="440" y2="160" stroke="#000"/>
-  <g font-size="9"><text x="30" y="25">&pound;12</text><text x="30" y="60">&pound;10</text><text x="30" y="95">&pound;8</text><text x="30" y="130">&pound;6</text><text x="40" y="160">0</text></g>
+  <g font-size="9"><text x="30" y="25">£12</text><text x="30" y="60">£10</text><text x="30" y="95">£8</text><text x="30" y="130">£6</text><text x="40" y="160">0</text></g>
   <g fill="#444">
     <rect x="80"  y="100" width="30" height="60"/>
     <rect x="125" y="93"  width="30" height="67"/>

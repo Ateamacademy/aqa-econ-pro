@@ -7,8 +7,8 @@
     <path d="M 0 0 L -78 -17 A 80 80 0 0 1 0 -80 Z" fill="#666"/>
   </g>
   <g font-size="10">
-    <text x="270" y="35">Google (Search &amp; YouTube) 42%</text>
-    <text x="270" y="60">Meta (Facebook &amp; Instagram) 27%</text>
+    <text x="270" y="35">Google (Search & YouTube) 42%</text>
+    <text x="270" y="60">Meta (Facebook & Instagram) 27%</text>
     <text x="270" y="85">Amazon 18%</text>
     <text x="270" y="110">TikTok 7%</text>
     <text x="270" y="135">Others 6%</text>

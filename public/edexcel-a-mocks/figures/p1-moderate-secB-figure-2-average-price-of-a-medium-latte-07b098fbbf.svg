@@ -2,7 +2,7 @@
   <g font-size="10">
     <text x="10" y="35">Costa Coffee</text>
     <text x="10" y="65">Starbucks</text>
-    <text x="10" y="95">Caff&egrave; Nero</text>
+    <text x="10" y="95">Caffè Nero</text>
     <text x="10" y="125">Pret A Manger</text>
     <text x="10" y="155">Greggs Cafe</text>
   </g>
@@ -19,16 +19,16 @@
     <rect x="90" y="158" width="85"  height="8" fill="#444"/>
   </g>
   <g font-size="9">
-    <text x="180" y="32">&pound;2.85</text>
-    <text x="220" y="45">&pound;3.75</text>
-    <text x="190" y="62">&pound;2.95</text>
-    <text x="235" y="75">&pound;3.95</text>
-    <text x="175" y="92">&pound;2.80</text>
-    <text x="215" y="105">&pound;3.60</text>
-    <text x="200" y="122">&pound;3.20</text>
-    <text x="245" y="135">&pound;4.15</text>
-    <text x="155" y="152">&pound;2.20</text>
-    <text x="180" y="165">&pound;2.85</text>
+    <text x="180" y="32">£2.85</text>
+    <text x="220" y="45">£3.75</text>
+    <text x="190" y="62">£2.95</text>
+    <text x="235" y="75">£3.95</text>
+    <text x="175" y="92">£2.80</text>
+    <text x="215" y="105">£3.60</text>
+    <text x="200" y="122">£3.20</text>
+    <text x="245" y="135">£4.15</text>
+    <text x="155" y="152">£2.20</text>
+    <text x="180" y="165">£2.85</text>
   </g>
-  <g font-size="9"><text x="300" y="22">&#9632; 2020</text><text x="340" y="22" fill="#444">&#9632; 2025</text></g>
+  <g font-size="9"><text x="300" y="22">■ 2020</text><text x="340" y="22" fill="#444">■ 2025</text></g>
 </svg>
