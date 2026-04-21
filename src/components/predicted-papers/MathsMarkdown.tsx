@@ -412,22 +412,36 @@ const markdownComponents: Components = {
     <li className="text-sm text-foreground/85 leading-relaxed" {...props}>{children}</li>
   ),
   img: ({ src, alt, ...props }) => {
-    // Render reference figure SVGs from /public/figures with a caption.
+    // Render reference figure SVGs from /public on a WHITE card.
+    // The source SVGs are print-style black-ink artwork — they MUST sit on a
+    // white background or labels become invisible against the dark page.
+    // Inline styles back up the Tailwind classes so they survive any override.
     const caption = typeof alt === "string" ? alt : "";
     return (
-      <figure className="my-4 rounded-lg border border-border bg-card p-3">
-        <img
-          src={src as string}
-          alt={caption || "Reference diagram"}
-          loading="lazy"
-          className="w-full max-w-xl mx-auto h-auto block"
-          {...props}
-        />
+      <figure
+        className="my-4 overflow-hidden rounded-lg bg-white"
+        style={{ backgroundColor: "#ffffff", border: "1px solid rgba(255,255,255,0.1)" }}
+      >
         {caption && (
-          <figcaption className="mt-2 text-center text-[11px] italic text-muted-foreground">
+          <figcaption
+            className="border-b px-5 py-3 text-[14px] font-bold"
+            style={{ backgroundColor: "#f8fafc", borderBottomColor: "#e2e8f0", color: "#1e293b" }}
+          >
             {caption}
           </figcaption>
         )}
+        <div
+          className="flex justify-center p-5"
+          style={{ backgroundColor: "#ffffff", color: "#000000" }}
+        >
+          <img
+            src={src as string}
+            alt={caption || "Reference diagram"}
+            loading="lazy"
+            className="w-full max-w-xl h-auto block"
+            {...props}
+          />
+        </div>
       </figure>
     );
   },

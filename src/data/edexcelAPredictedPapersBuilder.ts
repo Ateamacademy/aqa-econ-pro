@@ -57,8 +57,10 @@ function tableToMarkdown(rows: string[][]): string {
 function renderFigure(f: FigureRef): string {
   if (typeof f === "string") return `*${f}*`;
   if (f.url) {
+    // Title is rendered inside the <figcaption> by MathsMarkdown's img renderer.
+    // Do NOT also emit a separate *title* line — that produces a duplicate caption.
     const title = f.title ?? "Figure";
-    return `![${title}](${f.url})\n\n*${title}*`;
+    return `![${title}](${f.url})`;
   }
   return f.title ? `*${f.title}*` : "";
 }
