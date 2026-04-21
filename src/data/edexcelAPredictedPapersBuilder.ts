@@ -65,14 +65,36 @@ function renderFigure(f: FigureRef): string {
   return f.title ? `*${f.title}*` : "";
 }
 
-function renderQuestion(q: Question, fallbackNum: number): string {
+/**
+ * Strip case-study / figure / extract prose from a Paper 3 question stem
+ * when the same content has already been emitted at the section level.
+ * Without this, Paper 3 questions render the case-study title, figure
+ * caption and Extract A/B paragraphs twice (once via the section renderer,
+ * once via the question stem).
+ */
+function cleanDuplicatedStem(stem: string): string {
+  if (!stem) return "";
+  // Remove a leading "Case Study N: ..." line through the end of the
+  // first inline Extract block (everything that the section renderer
+  // already produced). Keep anything that comes after — usually nothing,
+  // because the real question prompts live in `parts`.
+  const caseStudyRe = /^Case Study\s+\d+[\s\S]*?(?:\(Source:[^\)]*\)\s*)?(?=\n\nQuestion\s|\n\n\*\*Question|\n*$)/i;
+  const cleaned = stem.replace(caseStudyRe, "").trim();
+  // If the stem also starts with a bare "Figure N:" / "Extract X" header
+  // (no "Case Study" prefix), strip that pattern too.
+  const figureExtractRe = /^(?:Figure\s+\d+[^\n]*\n[\s\S]*?)?(?:Extract\s+[A-Z][\s\S]*?\(Source:[^\)]*\)\s*)?/i;
+  return cleaned.replace(figureExtractRe, "").trim();
+}
+
+function renderQuestion(q: Question, fallbackNum: number, opts?: { suppressStem?: boolean }): string {
   const num = q.number ?? fallbackNum;
   const blocks: string[] = [];
 
   // Stem block: include figure captions and tables, but no marks header
   // unless the question has no parts (essay-style Section C / Paper 3 essays).
   const stemBits: string[] = [];
-  if (q.stem) stemBits.push(q.stem);
+  const rawStem = opts?.suppressStem ? cleanDuplicatedStem(q.stem) : q.stem;
+  if (rawStem) stemBits.push(rawStem);
   q.figures.forEach((f) => stemBits.push(renderFigure(f)));
   q.tables.forEach((t) => stemBits.push(tableToMarkdown(t)));
   const stem = stemBits.filter(Boolean).join("\n\n");
@@ -126,8 +148,11 @@ function renderSection(s: Section, runningQNum: { n: number }): string {
   (s.tables ?? []).forEach((t) => blocks.push(tableToMarkdown(t)));
   const extractsMd = renderExtracts(s.extracts);
   if (extractsMd) blocks.push(extractsMd);
+  // If the section already rendered figures/extracts, the question stem
+  // (Paper 3 case studies) often repeats them — strip that duplication.
+  const sectionHasContext = (s.figures?.length ?? 0) > 0 || s.extracts.length > 0;
   s.questions.forEach((q) => {
-    blocks.push(renderQuestion(q, runningQNum.n));
+    blocks.push(renderQuestion(q, runningQNum.n, { suppressStem: sectionHasContext }));
     runningQNum.n = (q.number ?? runningQNum.n) + 1;
   });
   return blocks.join("\n\n");
