@@ -90,6 +90,9 @@ export default function EdexcelMockPaperViewer() {
             <span className="font-semibold">
               Paper {n}: {PAPER_TITLE[n!]}{" "}
               <span className="text-muted-foreground font-normal">(9EC0/0{n})</span>
+              {isMarkScheme && (
+                <span className="ml-2 text-primary">— Mark Scheme</span>
+              )}
             </span>
             <Badge variant="outline" className={`${DIFFICULTY_TONE[d]} font-semibold`}>
               {DIFFICULTY_LABEL[d]}
