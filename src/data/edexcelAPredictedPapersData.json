@@ -1223,38 +1223,32 @@
             "parts": [
               {
                 "label": "a",
-                "marks": 2,
-                "text": "Using the data, calculate the percentage change in the UK House Price Index (HPI) over the 2022–2024 period. You are advised to show your working.",
-                "options": null
-              },
-              {
-                "label": "b",
-                "marks": 2,
-                "text": "Explain one likely reason for the change in the UK House Price Index identified in part (a).",
-                "options": null
-              },
-              {
-                "label": "c",
                 "marks": 1,
-                "text": "Which of the following best describes the UK's economic performance in 2022?",
+                "text": "Which one of the following best describes the change in UK CPI inflation between 2022 and 2024 shown in the data?",
                 "options": [
                   {
                     "label": "A",
-                    "text": "recession with deflation"
+                    "text": "Disinflation"
                   },
                   {
                     "label": "B",
-                    "text": "high growth with rising unemployment"
+                    "text": "Deflation"
                   },
                   {
                     "label": "C",
-                    "text": "strong real growth with high inflation"
+                    "text": "Hyperinflation"
                   },
                   {
                     "label": "D",
-                    "text": "stagnation with falling prices"
+                    "text": "Stagflation"
                   }
                 ]
+              },
+              {
+                "label": "b",
+                "marks": 4,
+                "options": null,
+                "text": "Explain the likely effects on the UK housing market of the change in the Bank of England Bank Rate between 2022 and 2024."
               }
             ],
             "totalMarks": 5
@@ -1570,38 +1564,32 @@
             "parts": [
               {
                 "label": "a",
-                "marks": 2,
-                "text": "Using the 2021–2024 data, calculate the percentage depreciation of the Turkish lira against the US dollar over the period. You are advised to show your working.",
-                "options": null
-              },
-              {
-                "label": "b",
-                "marks": 2,
-                "text": "Explain one likely macroeconomic consequence of the lira depreciation calculated in part (a) for the Turkish economy.",
-                "options": null
-              },
-              {
-                "label": "c",
                 "marks": 1,
-                "text": "A fall in the estimated NAIRU between 1999–2007 and 2010–2019 is most consistent with:",
+                "text": "Which one of the following best describes the macroeconomic situation in Turkey in 2022, when CPI inflation reached 72.3%?",
                 "options": [
                   {
                     "label": "A",
-                    "text": "adverse supply-side shocks"
+                    "text": "Demand-pull inflation only"
                   },
                   {
                     "label": "B",
-                    "text": "improved labour-market flexibility"
+                    "text": "Cost-push inflation only"
                   },
                   {
                     "label": "C",
-                    "text": "a rise in trade-union density"
+                    "text": "Stagflation"
                   },
                   {
                     "label": "D",
-                    "text": "an increase in structural unemployment"
+                    "text": "Disinflation"
                   }
                 ]
+              },
+              {
+                "label": "b",
+                "marks": 4,
+                "options": null,
+                "text": "Explain the likely effects on the Turkish economy of the depreciation of the lira against the US dollar between 2021 and 2024."
               }
             ],
             "totalMarks": 5
@@ -1887,38 +1875,32 @@
             "parts": [
               {
                 "label": "a",
-                "marks": 2,
-                "text": "Using the data (current inflation π = 4.5%), calculate the real interest rate implied by the Taylor-rule recommended policy rate. Show your working.",
-                "options": null
-              },
-              {
-                "label": "b",
-                "marks": 2,
-                "text": "Explain one reason why the real interest rate calculated in part (a) might still be insufficient to bring inflation back to the 2% target.",
-                "options": null
-              },
-              {
-                "label": "c",
                 "marks": 1,
-                "text": "A Taylor-rule coefficient on inflation below 0.5 would generally be associated with:",
+                "text": "Which one of the following best describes the change in Argentina's CPI inflation between 2023 and 2025 shown in the data?",
                 "options": [
                   {
                     "label": "A",
-                    "text": "an inflation-averse central bank"
+                    "text": "Hyperinflation followed by disinflation"
                   },
                   {
                     "label": "B",
-                    "text": "indeterminacy and self-fulfilling inflation expectations"
+                    "text": "Deflation throughout"
                   },
                   {
                     "label": "C",
-                    "text": "automatic stabilisation of the price level"
+                    "text": "Stable inflation"
                   },
                   {
                     "label": "D",
-                    "text": "a higher long-run real interest rate"
+                    "text": "Stagflation throughout"
                   }
                 ]
+              },
+              {
+                "label": "b",
+                "marks": 4,
+                "options": null,
+                "text": "Explain the likely effects on Argentina's real economy of the sharp fiscal consolidation introduced under President Milei in 2024."
               }
             ],
             "totalMarks": 5
