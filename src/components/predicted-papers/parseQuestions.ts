@@ -94,14 +94,19 @@ export function parseQuestions(markdown: string): { context: string; questions: 
 
   const questions: ParsedQuestion[] = matches.map((match, i) => {
     const start = match.index!;
-    const end = i < matches.length - 1 ? matches[i + 1].index! : markdown.length;
+    const nextQuestionStart = i < matches.length - 1 ? matches[i + 1].index! : markdown.length;
+
+    // If a new section starts before the next parsed question, this question must end
+    // at that section boundary rather than absorbing the next section's instructions.
+    const nextSectionBoundary = sectionHeaders.find(
+      (sh) => sh.index > start && sh.index < nextQuestionStart,
+    )?.index;
+    const end = nextSectionBoundary ?? nextQuestionStart;
     const fullText = markdown.slice(start, end).trim();
 
     // Find the most recent section header before this question
     let sectionHeader: string | undefined;
-    const prevEnd = i > 0 ? matches[i - 1].index! : (matches[0].index! > 0 ? 0 : -1);
-    const textBetween = markdown.slice(prevEnd === -1 ? 0 : (i > 0 ? matches[i - 1].index! + matches[i - 1][0].length : 0), start);
-    
+
     // Check for section headers in the gap between this question and the previous one
     for (const sh of sectionHeaders) {
       if (sh.index >= (i > 0 ? matches[i - 1].index! : 0) && sh.index < start) {
