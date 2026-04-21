@@ -7,5 +7,5 @@
   <polyline fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="4,3"
     points="75,180 130,180 190,165 250,100 310,50 360,70 410,95"/>
   <g font-size="9"><text x="75" y="195">2020</text><text x="190" y="195">2022</text><text x="310" y="195">2024</text><text x="400" y="195">2025</text></g>
-  <g font-size="9"><text x="300" y="15">&mdash; HICP inflation</text><text x="300" y="28" style="font-style: italic">- - - ECB deposit rate</text></g>
+  <g font-size="9"><text x="300" y="15">— HICP inflation</text><text x="300" y="28" style="font-style: italic">- - - ECB deposit rate</text></g>
 </svg>
