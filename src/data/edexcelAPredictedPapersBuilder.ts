@@ -71,9 +71,9 @@ function renderQuestion(q: Question, fallbackNum: number): string {
   // unless the question has no parts (essay-style Section C / Paper 3 essays).
   const stemBits: string[] = [];
   if (q.stem) stemBits.push(q.stem);
-  q.figures.forEach((f) => stemBits.push(`*${f}*`));
+  q.figures.forEach((f) => stemBits.push(renderFigure(f)));
   q.tables.forEach((t) => stemBits.push(tableToMarkdown(t)));
-  const stem = stemBits.join("\n\n");
+  const stem = stemBits.filter(Boolean).join("\n\n");
 
   if (q.parts.length === 0) {
     // Essay-style: emit one question header with the total marks and the stem text
