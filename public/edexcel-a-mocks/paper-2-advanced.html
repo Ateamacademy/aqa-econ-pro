@@ -2,522 +2,143 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Pearson Edexcel A Level Economics A Paper 2 (9EC0/02) &mdash; Advanced (v4)</title>
+<title>Pearson Edexcel A Level Economics A Paper 2 (9EC0/02) — Advanced</title>
 <style>
-    /* ============================================================
-   Pearson Edexcel A Level Economics — shared exam-paper styles
-   ============================================================ */
-
-@page {
-  size: A4;
-  margin: 0;
-}
-
+@page { size: A4; margin: 0; }
 * { box-sizing: border-box; }
-
 html, body {
-  margin: 0;
-  padding: 0;
-  background: #d8d8d8;
+  margin: 0; padding: 0; background: #d8d8d8;
   font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
-  font-size: 10.5pt;
-  line-height: 1.35;
-  color: #000;
+  font-size: 10.5pt; line-height: 1.35; color: #000;
 }
-
-/* ---- A4 page wrapper ------------------------------------- */
 .page {
-  width: 210mm;
-  height: 297mm;
-  background: #fff;
-  margin: 10mm auto;
-  position: relative;
-  page-break-after: always;
-  overflow: hidden;
+  width: 210mm; height: 297mm; background: #fff;
+  margin: 10mm auto; position: relative;
+  page-break-after: always; overflow: hidden;
   box-shadow: 0 1px 6px rgba(0,0,0,0.25);
 }
-
 .page:last-child { page-break-after: auto; }
-
 @media print {
   html, body { background: #fff; }
   .page { margin: 0; box-shadow: none; }
   .no-print { display: none !important; }
 }
-
-/* ---- Diagonal hatched margins with vertical DO NOT WRITE text ---- */
-/* Bands on the OUTER side of the page (left of left-hand pages,
-   right of right-hand pages). Pearson alternates per page. */
 .hatch {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 11mm;
+  position: absolute; top: 0; bottom: 0; width: 11mm;
   background-image:
-    repeating-linear-gradient(135deg,
-      rgba(0,0,0,0.28) 0 0.4mm,
-      transparent 0.4mm 1.4mm),
-    repeating-linear-gradient(45deg,
-      rgba(0,0,0,0.28) 0 0.4mm,
-      transparent 0.4mm 1.4mm);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  pointer-events: none;
+    repeating-linear-gradient(135deg, rgba(0,0,0,0.28) 0 0.4mm, transparent 0.4mm 1.4mm),
+    repeating-linear-gradient(45deg, rgba(0,0,0,0.28) 0 0.4mm, transparent 0.4mm 1.4mm);
+  display: flex; flex-direction: column; justify-content: space-around;
+  align-items: center; pointer-events: none;
 }
-
 .hatch.left  { left: 0; }
 .hatch.right { right: 0; }
-
 .hatch .dnw {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-weight: 700;
-  font-size: 7pt;
-  letter-spacing: 0.4px;
-  color: #444;
-  background: #fff;
-  padding: 3mm 1px;
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  font-weight: 700; font-size: 7pt; letter-spacing: 0.4px;
+  color: #444; background: #fff; padding: 3mm 1px;
 }
-
-/* ---- Rounded content border ------------------------------ */
 .frame {
-  position: absolute;
-  top: 10mm;
-  left: 14mm;
-  right: 14mm;
-  bottom: 22mm;
-  border: 1px solid #000;
-  border-radius: 5mm;
-  padding: 7mm 9mm 8mm 9mm;
-  overflow: hidden;
+  position: absolute; top: 10mm; left: 14mm; right: 14mm; bottom: 22mm;
+  border: 1px solid #000; border-radius: 5mm;
+  padding: 7mm 9mm 8mm 9mm; overflow: hidden;
 }
-
-/* ---- Bottom-of-page furniture ---------------------------- */
-.page-number {
-  position: absolute;
-  bottom: 8mm;
-  font-weight: 700;
-  font-size: 10pt;
-}
+.page-number { position: absolute; bottom: 8mm; font-weight: 700; font-size: 10pt; }
 .page-number.left  { left: 14mm; }
 .page-number.right { right: 14mm; }
-
 .barcode {
-  position: absolute;
-  bottom: 8mm;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: "Libre Barcode 39", "Courier New", monospace;
-  font-size: 9pt;
-  letter-spacing: 0;
-  white-space: nowrap;
+  position: absolute; bottom: 8mm; left: 50%; transform: translateX(-50%);
 }
 .barcode .bars {
   display: inline-block;
   background-image: repeating-linear-gradient(90deg,
-    #000 0 0.4mm, transparent 0.4mm 0.8mm,
-    #000 0.8mm 1.6mm, transparent 1.6mm 2.0mm,
-    #000 2.0mm 2.2mm, transparent 2.2mm 3.2mm);
-  width: 50mm;
-  height: 6mm;
-  vertical-align: middle;
+    #000 0 0.4mm, transparent 0.4mm 0.8mm, #000 0.8mm 1.6mm,
+    transparent 1.6mm 2.0mm, #000 2.0mm 2.2mm, transparent 2.2mm 3.2mm);
+  width: 50mm; height: 6mm;
 }
-.barcode .code {
-  font-family: "Courier New", monospace;
-  font-size: 8.5pt;
-  letter-spacing: 2px;
-  margin-top: 1px;
-}
-
 .turn-over {
-  position: absolute;
-  bottom: 13mm;
-  right: 14mm;
-  font-style: italic;
-  font-weight: 700;
-  font-size: 10pt;
+  position: absolute; bottom: 13mm; right: 14mm;
+  font-style: italic; font-weight: 700; font-size: 10pt;
 }
-.turn-over::after {
-  content: " \25B6";
-  color: #000;
-}
-
-/* ---- Cover page -------------------------------------------- */
-.cover-box {
-  border: 1px solid #000;
-  border-radius: 4mm;
-  padding: 0;
-  margin: 0 0 10mm 0;
-  overflow: hidden;
-}
-
-.cover-row {
-  display: flex;
-  border-bottom: 1px solid #000;
-}
+.turn-over::after { content: " \25B6"; }
+.cover-box { border: 1px solid #000; border-radius: 4mm; margin: 0 0 10mm 0; overflow: hidden; }
+.cover-row { display: flex; border-bottom: 1px solid #000; }
 .cover-row:last-child { border-bottom: none; }
-
-.name-fields {
-  flex: 1;
-  padding: 4mm 5mm 3mm 5mm;
-  border-right: 1px solid #000;
-}
+.name-fields { flex: 1; padding: 4mm 5mm 3mm 5mm; border-right: 1px solid #000; }
 .name-fields .label { font-size: 9pt; }
-.name-fields .pair {
-  display: flex;
-  gap: 4mm;
-  margin-top: 1.5mm;
-}
+.name-fields .pair { display: flex; gap: 4mm; margin-top: 1.5mm; }
 .name-fields .pair > div { flex: 1; }
 .name-fields .pair .tag { font-size: 8.5pt; color: #222; margin-bottom: 1mm; }
 .name-fields .pair input {
-  width: 100%;
-  height: 7mm;
-  border: 0.5pt solid #000;
-  border-radius: 1mm;
-  background: #fff;
-  font-size: 11pt;
-  padding: 0 2mm;
+  width: 100%; height: 7mm; border: 0.5pt solid #000;
+  border-radius: 1mm; background: #fff; font-size: 11pt; padding: 0 2mm;
 }
-
-.centre-candidate {
-  padding: 3mm 5mm;
-  font-size: 8.5pt;
-  display: flex;
-  gap: 4mm;
-}
-.centre-candidate > div { flex: 1; }
-.centre-candidate .boxes {
-  display: flex;
-  gap: 1mm;
-  margin-top: 1mm;
-}
-.centre-candidate .boxes span {
-  width: 5.5mm;
-  height: 7mm;
-  border: 0.5pt solid #000;
-  border-radius: 1mm;
-  background: #fff;
-}
-
-.subject-block {
-  padding: 5mm 5mm 4mm 5mm;
-  background: #fff;
-}
-.subject-block .brand-line {
-  font-size: 11pt;
-  font-weight: 700;
-  margin-bottom: 2mm;
-}
-.subject-block .subject-name {
-  font-size: 24pt;
-  font-weight: 700;
-  color: #000;
-  line-height: 1.1;
-}
-.subject-block .sub-title {
-  font-size: 13pt;
-  font-weight: 700;
-  margin-top: 1.5mm;
-}
-.subject-block .paper-title {
-  font-size: 13pt;
-  font-weight: 700;
-  margin-top: 0.5mm;
-}
-
-.session-row {
-  display: flex;
-}
-.session-row .session {
-  flex: 1;
-  padding: 3mm 5mm;
-  border-right: 1px solid #000;
-  font-weight: 700;
-  font-size: 11pt;
-}
+.subject-block { padding: 5mm 5mm 4mm 5mm; }
+.subject-block .subject-name { font-size: 24pt; font-weight: 700; line-height: 1.1; }
+.subject-block .sub-title { font-size: 13pt; font-weight: 700; margin-top: 1.5mm; }
+.subject-block .paper-title { font-size: 13pt; font-weight: 700; margin-top: 0.5mm; }
+.session-row { display: flex; }
+.session-row .session { flex: 1; padding: 3mm 5mm; border-right: 1px solid #000; font-weight: 700; font-size: 11pt; }
 .session-row .session .time { margin-top: 1mm; }
-.session-row .reference {
-  width: 52mm;
-  padding: 3mm 5mm;
-  text-align: left;
-}
+.session-row .reference { width: 52mm; padding: 3mm 5mm; }
 .session-row .reference .tag { font-size: 9pt; }
-.session-row .reference .code {
-  font-size: 16pt;
-  font-weight: 700;
-  margin-top: 1mm;
-}
-
-.materials-row {
-  display: flex;
-}
-.materials-row .mat {
-  flex: 1;
-  padding: 3mm 5mm;
-  border-right: 1px solid #000;
-  font-size: 10pt;
-}
-.materials-row .marks {
-  width: 52mm;
-  padding: 3mm 5mm;
-  font-size: 9pt;
-}
-
-.pearson-brand {
-  font-family: "Trebuchet MS", sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.2px;
-}
+.session-row .reference .code { font-size: 16pt; font-weight: 700; margin-top: 1mm; }
+.materials-row { display: flex; }
+.materials-row .mat { flex: 1; padding: 3mm 5mm; border-right: 1px solid #000; font-size: 10pt; }
+.materials-row .marks-cell { width: 52mm; padding: 3mm 5mm; font-size: 9pt; }
+.pearson-brand { font-family: "Trebuchet MS", sans-serif; font-weight: 700; letter-spacing: -0.2px; }
 .pearson-brand .pearson { font-size: 15pt; }
-.pearson-brand .edexcel {
-  background: #000;
-  color: #fff;
-  padding: 1px 4px;
-  font-size: 13pt;
-}
-
-/* Instruction lists */
-.section-head {
-  font-weight: 700;
-  font-size: 11.5pt;
-  margin: 5mm 0 1.5mm 0;
-}
-.bullets {
-  margin: 0 0 4mm 0;
-  padding-left: 6mm;
-  list-style: none;
-}
-.bullets li {
-  position: relative;
-  padding-left: 4mm;
-  margin-bottom: 1mm;
-  font-size: 10.5pt;
-}
-.bullets li::before {
-  content: "\2022";
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-.bullets li em { color: #222; }
-.bullets li b { font-weight: 700; }
-
+.pearson-brand .edexcel { background: #000; color: #fff; padding: 1px 4px; font-size: 13pt; }
+.section-head { font-weight: 700; font-size: 11.5pt; margin: 5mm 0 1.5mm 0; }
+.bullets { margin: 0 0 4mm 0; padding-left: 6mm; list-style: none; }
+.bullets li { position: relative; padding-left: 4mm; margin-bottom: 1mm; font-size: 10.5pt; }
+.bullets li::before { content: "\2022"; position: absolute; left: 0; top: 0; }
 .cover-footer {
-  position: absolute;
-  bottom: 8mm;
-  left: 14mm;
-  right: 14mm;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  font-size: 8.5pt;
+  position: absolute; bottom: 8mm; left: 14mm; right: 14mm;
+  display: flex; justify-content: space-between; align-items: flex-end; font-size: 8.5pt;
 }
 .cover-footer .left { font-family: "Courier New", monospace; font-size: 10pt; letter-spacing: 1px; }
 .cover-footer .left small { font-size: 7pt; display: block; margin-top: 1mm; }
-.cover-footer .right {
-  font-family: "Trebuchet MS", sans-serif;
-  font-weight: 700;
-}
-.cover-footer .right .pearson { font-size: 14pt; }
-
-/* ---- Section header inside a frame ----------------------- */
-.section-title {
-  text-align: center;
-  font-weight: 700;
-  font-size: 13pt;
-  margin: 2mm 0 4mm 0;
-  letter-spacing: 0.5px;
-}
-.section-intro {
-  text-align: center;
-  font-size: 10.5pt;
-  margin-bottom: 2mm;
-}
-.section-intro b { font-weight: 700; }
-
-/* ---- Questions -------------------------------------------- */
-.question {
-  margin-top: 4mm;
-  position: relative;
-}
-.question .qnum {
-  position: absolute;
-  left: -6mm;
-  font-weight: 700;
-}
-.question .qbody { padding-left: 0; }
-
-.qpart {
-  margin: 3mm 0 1mm 0;
-}
-.qpart .plabel { font-weight: 400; }
-
-.marks {
-  display: block;
-  text-align: right;
-  font-weight: 700;
-  margin: 1mm 0;
-}
-
+.cover-footer .right .pearson { font-size: 14pt; font-family: "Trebuchet MS", sans-serif; font-weight: 700; }
+.section-title { text-align: center; font-weight: 700; font-size: 13pt; margin: 2mm 0 4mm 0; letter-spacing: 0.5px; }
+.section-intro { text-align: center; font-size: 10.5pt; margin-bottom: 2mm; }
+.question { margin-top: 4mm; position: relative; }
+.question .qnum { position: absolute; left: -6mm; font-weight: 700; }
+.qpart { margin: 3mm 0 1mm 0; }
+.marks { display: inline-block; float: right; text-align: right; font-weight: 700; margin: 0 0 0 2mm; }
+.qpart::after { content: ""; display: block; clear: both; }
 .mcq { margin: 2mm 0 2mm 5mm; }
-.mcq .opt {
-  display: flex;
-  align-items: center;
-  gap: 3mm;
-  margin: 1.2mm 0;
-}
-.mcq .tickbox {
-  width: 4.5mm;
-  height: 4.5mm;
-  border: 0.5pt solid #000;
-  display: inline-block;
-}
+.mcq .opt { display: flex; align-items: center; gap: 3mm; margin: 1.2mm 0; }
+.mcq .tickbox { width: 4.5mm; height: 4.5mm; border: 0.5pt solid #000; display: inline-block; }
 .mcq .optlabel { font-weight: 700; width: 4mm; }
-
-.total-line {
-  text-align: right;
-  font-weight: 700;
-  border-top: 0.5pt solid #000;
-  margin-top: 2mm;
-  padding-top: 1mm;
+.total-line { text-align: right; font-weight: 700; border-top: 0.5pt solid #000; margin-top: 2mm; padding-top: 1mm; }
+.section-total { text-align: center; font-weight: 700; margin-top: 6mm; letter-spacing: 0.5px; }
+.lines-auto {
+  margin-top: 2mm; width: 100%; height: 210mm;
+  background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, #777 7.2mm 7.3mm);
 }
-
-.section-total {
-  text-align: center;
-  font-weight: 700;
-  margin-top: 6mm;
-  letter-spacing: 0.5px;
-}
-
-/* ---- Dotted answer lines --------------------------------- */
-.lines {
-  margin-top: 2mm;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent 7.5mm,
-    #777 7.5mm,
-    #777 7.5mm
-  );
-  background-size: 100% 8mm;
-  background-repeat: repeat-y;
-  width: 100%;
-}
-/* Better approach: generated lines as flex rows */
-.lines-flex { display: flex; flex-direction: column; gap: 0; margin-top: 2mm; }
-.lines-flex .line {
-  height: 8mm;
-  border-bottom: 0.4pt dotted #777;
-}
-
-/* ---- Tables ------------------------------------------------ */
+.q-continued { font-weight: 700; margin-bottom: 2mm; }
+.figure-title, .extract-title { font-weight: 700; margin: 4mm 0 1mm 0; font-size: 10.5pt; }
+.extract-body { padding: 2mm 2mm; font-size: 10.5pt; line-height: 1.45; margin-bottom: 3mm; }
+.extract-body p { margin: 0 0 2mm 0; }
+.extract-body .source { font-style: italic; font-size: 9.5pt; margin-top: 2mm; color: #222; }
+.figure { margin: 3mm 0; text-align: center; }
+.figure svg { max-width: 100%; height: auto; }
+.figure .caption { font-size: 9.5pt; font-style: italic; margin-top: 2mm; }
 table.data {
-  border-collapse: collapse;
-  margin: 3mm auto;
-  font-size: 10pt;
-  width: 100%;
+  border-collapse: collapse; margin: 3mm auto; font-size: 10pt; width: 100%;
 }
-table.data th, table.data td {
-  border: 0.5pt solid #000;
-  padding: 2mm 3mm;
-  text-align: center;
-  vertical-align: middle;
-}
-table.data th {
-  font-weight: 700;
-  background: #f0f0f0;
-}
-
-/* ---- Extract boxes (Section B) --------------------------- */
-.figure-title, .extract-title {
-  font-weight: 700;
-  margin: 4mm 0 1mm 0;
-  font-size: 10.5pt;
-}
-.extract-body {
-  position: relative;
-  padding: 2mm 12mm 2mm 2mm;
-  font-size: 10.5pt;
-  line-height: 1.4;
-  margin-bottom: 3mm;
-  counter-reset: extract-line;
-}
-.extract-body p {
-  margin: 0 0 2mm 0;
-}
-.extract-body .lineno {
-  position: absolute;
-  right: 4mm;
-  font-size: 9pt;
-  color: #000;
-  font-weight: 400;
-}
-.extract-body .source {
-  font-style: italic;
-  font-size: 9.5pt;
-  margin-top: 2mm;
-  color: #222;
-}
-
-/* ---- SVG figures ----------------------------------------- */
-.figure {
-  margin: 3mm 0;
-  text-align: center;
-}
-.figure svg {
-  max-width: 100%;
-  height: auto;
-}
-.figure .caption {
-  font-size: 9.5pt;
-  font-style: italic;
-  margin-top: 2mm;
-  text-align: center;
-}
-
-/* ---- Nav + print button (screen only) -------------------- */
-.topnav {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  background: #fff;
-  border: 1px solid #999;
-  padding: 8px 14px;
-  border-radius: 4px;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-  z-index: 1000;
-}
-.topnav a, .topnav button {
-  margin: 0 6px;
-  color: #0b49a0;
-  text-decoration: none;
-  background: none;
-  border: none;
-  font: inherit;
-  cursor: pointer;
-}
-.topnav button { font-weight: 700; }
-
-/* Utility */
-.center { text-align: center; }
-.italic { font-style: italic; }
-.bold { font-weight: 700; }
-.small { font-size: 9pt; }
-.mt2 { margin-top: 2mm; }
-.mt4 { margin-top: 4mm; }
-.mt6 { margin-top: 6mm; }
-.mb2 { margin-bottom: 2mm; }
-
-.cell { display:inline-block; width: 6mm; height: 7mm; border: 0.5pt solid #000; border-radius: 1mm; background:#fff; }
-
+table.data th, table.data td { border: 0.5pt solid #000; padding: 2mm 3mm; text-align: center; vertical-align: middle; }
+table.data th { font-weight: 700; background: #f0f0f0; }
+.cell { display: inline-block; width: 6mm; height: 7mm; border: 0.5pt solid #000; border-radius: 1mm; background: #fff; }
+.centre-candidate { padding: 3mm 5mm; font-size: 8.5pt; display: flex; gap: 4mm; }
+.centre-candidate > div { flex: 1; }
+.centre-candidate .boxes { display: flex; gap: 1mm; margin-top: 1mm; }
 </style>
 </head>
 <body>
+
+<!-- ================ PAGE 1: COVER ================ -->
 <div class="page">
   <div class="frame" style="padding: 10mm 12mm;">
     <div class="cover-box">
@@ -532,10 +153,7 @@ table.data th {
         <div style="width: 52mm;">
           <div class="centre-candidate" style="padding: 4mm 5mm; flex-direction: column; gap: 2mm;">
             <div>
-              <div class="pearson-brand">
-                <span class="pearson">Pearson</span>
-                <span class="edexcel">Edexcel</span>
-              </div>
+              <div class="pearson-brand"><span class="pearson">Pearson</span> <span class="edexcel">Edexcel</span></div>
               <div style="font-size: 10pt; font-weight: 700; margin-top: 1mm;">Level 3 GCE</div>
             </div>
           </div>
@@ -544,20 +162,8 @@ table.data th {
       <div class="cover-row">
         <div class="name-fields" style="padding: 3mm 5mm;">
           <div class="pair">
-            <div>
-              <div class="tag">Centre Number</div>
-              <div class="boxes" style="display: flex; gap: 1mm;">
-                <span class="cell"></span><span class="cell"></span><span class="cell"></span>
-                <span class="cell"></span><span class="cell"></span><span class="cell"></span>
-              </div>
-            </div>
-            <div>
-              <div class="tag">Candidate Number</div>
-              <div class="boxes" style="display: flex; gap: 1mm;">
-                <span class="cell"></span><span class="cell"></span><span class="cell"></span>
-                <span class="cell"></span><span class="cell"></span><span class="cell"></span>
-              </div>
-            </div>
+            <div><div class="tag">Centre Number</div><div class="boxes"><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span></div></div>
+            <div><div class="tag">Candidate Number</div><div class="boxes"><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span></div></div>
           </div>
         </div>
         <div style="width: 52mm; padding: 3mm 5mm;"></div>
@@ -570,342 +176,321 @@ table.data th {
         </div>
       </div>
       <div class="session-row">
-        <div class="session">
-          Friday 26 June 2026 &ndash; Afternoon
-          <div class="time">Time: 2 hours</div>
-        </div>
-        <div class="reference">
-          <div class="tag">Paper Reference</div>
-          <div class="code">9EC0/02</div>
-        </div>
+        <div class="session">Wednesday 10 June 2026 &ndash; Afternoon<div class="time">Time: 2 hours</div></div>
+        <div class="reference"><div class="tag">Paper Reference</div><div class="code">9EC0/02</div></div>
       </div>
       <div class="materials-row">
         <div class="mat">You do not need any other materials.</div>
-        <div class="marks">Total Marks<br><br></div>
+        <div class="marks-cell">Total Marks<br><br></div>
       </div>
     </div>
-
     <div class="section-head">Instructions</div>
     <ul class="bullets">
       <li>Use <b>black</b> ink or ball-point pen.</li>
-      <li><b>Fill in the boxes</b> at the top of this page with your name,<br>centre number and candidate number.</li>
-      <li>There are three sections in this question paper. Answer <b>all</b> questions from Section A and Section B. Answer <b>one</b> question from Section C.</li>
-      <li>Answer the questions in the spaces provided<br><em>&ndash; there may be more space than you need.</em></li>
+      <li><b>Fill in the boxes</b> at the top of this page with your name, centre number and candidate number.</li>
+      <li>There are <b>three</b> sections in this question paper. Answer <b>ALL</b> questions from Section A and Section B. Answer <b>ONE</b> question from Section C.</li>
+      <li>Answer the questions in the spaces provided <em>&ndash; there may be more space than you need.</em></li>
     </ul>
-
     <div class="section-head">Information</div>
     <ul class="bullets">
-      <li>The total mark for this paper is 100.</li>
-      <li>The marks for <b>each</b> question are shown in brackets<br><em>&ndash; use this as a guide as to how much time to spend on each question.</em></li>
+      <li>The total mark for this paper is <b>100</b>.</li>
+      <li>The marks for each question are shown in brackets <em>&ndash; use this as a guide as to how much time to spend on each question.</em></li>
       <li>Calculators may be used.</li>
     </ul>
-
     <div class="section-head">Advice</div>
     <ul class="bullets">
       <li>Read each question carefully before you start to answer it.</li>
       <li>Check your answers if you have time at the end.</li>
     </ul>
   </div>
-
   <div class="hatch right" style="width: 8mm;"><span class="dnw">&nbsp;</span></div>
-
   <div class="turn-over">Turn over</div>
   <div class="cover-footer">
-    <div class="left">
-      P72345A<br>
-      <small>&copy;2026 Pearson Education Ltd.</small><br>
-      <small>1/1/1/1/1/1/1</small>
-    </div>
-    <div style="flex: 1; text-align: center;">
-      <span class="barcode"><span class="bars"></span></span>
-    </div>
-    <div class="right pearson-brand">
-      <span class="pearson">Pearson</span>
-    </div>
+    <div class="left">P72202A<br><small>&copy;2026 Pearson Education Ltd.</small><br><small>1/1/1/1/1/1/1</small></div>
+    <div style="flex: 1; text-align: center;"><span class="barcode"><span class="bars"></span></span></div>
+    <div class="right pearson-brand"><span class="pearson">Pearson</span></div>
   </div>
 </div>
 
-<style>
-.cell { display:inline-block; width: 6mm; height: 7mm; border: 0.5pt solid #000; border-radius: 1mm; background:#fff; }
-</style>
+<!-- ================ PAGE 2: SECTION A INTRO + Q1 ================ -->
 <div class="page">
   <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
   <div class="frame">
-<div style="text-align: center; padding: 3mm 0;">
-  <h2 style="margin: 0 0 3mm 0; font-size: 14pt;">SECTION A</h2>
-  <p style="font-weight: 700; margin: 2mm 0;">Answer ALL questions. Write your answers in the spaces provided.</p>
-  <p style="font-size: 9.5pt; margin: 2mm 0;">Some questions must be answered with a cross in a box &#9747;. If you change your mind about an answer, put a line through the box &#9747; and then mark your new answer with a cross &#9747;.</p>
-  <p style="font-style: italic; margin: 2mm 0;">You are advised to spend 30 minutes on this section.</p>
-  <p style="font-style: italic; margin: 2mm 0;">Use the data to support your answers where relevant. You may annotate and include diagrams in your answers.</p>
-</div>
-<div class="question"><span class="qnum">1</span><div class="qbody">The table shows key Argentine macroeconomic data 2022&ndash;2025.</div></div><table class="data"><tr><th>Year</th><th>CPI inflation (%)</th><th>Policy rate (%)</th><th>Fiscal balance (% GDP)</th><th>Central bank net FX reserves ($bn)</th></tr><tr><td>2022</td><td>94.8</td><td>75.0</td><td>-4.2</td><td>-3</td></tr><tr><td>2023</td><td>211.4</td><td>133.0</td><td>-5.8</td><td>-11</td></tr><tr><td>2024</td><td>118.0</td><td>32.5</td><td>+0.4</td><td>+5</td></tr><tr><td>2025</td><td>42.0</td><td>20.0</td><td>+1.1</td><td>+18</td></tr></table><div class="qpart">(a) Calculate the real policy rate in Argentina in 2023 using the Fisher approximation r &asymp; i &minus; &pi;. Show your working. <span class="marks">(2)</span></div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="qpart">(b) Explain one likely reason for the fiscal-balance turnaround between 2023 and 2024. <span class="marks">(2)</span></div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="qpart">(c) According to the fiscal theory of the price level, sustained high inflation is most fundamentally driven by: <span class="marks">(1)</span></div><div class="mcq"><div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>cost-push shocks from energy prices</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>expectations of permanent fiscal deficits and monetary financing</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>tight monetary policy</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>an appreciating currency</span></div></div><div class="total-line">(Total for Question 1 = 5 marks)</div>  </div>
+    <div style="text-align: center; padding: 3mm 0;">
+      <h2 style="margin: 0 0 3mm 0; font-size: 14pt;">SECTION A</h2>
+      <p style="font-weight: 700; margin: 2mm 0;">Answer ALL questions. Write your answers in the spaces provided.</p>
+      <p style="font-size: 9.5pt; margin: 2mm 0;">Some questions must be answered with a cross in a box &#9747;. If you change your mind about an answer, put a line through the box &#9747; and then mark your new answer with a cross &#9747;.</p>
+      <p style="font-style: italic; margin: 2mm 0;">You are advised to spend 30 minutes on this section.</p>
+      <p style="font-style: italic; margin: 2mm 0;">Use the data to support your answers where relevant. You may annotate and include diagrams in your answers.</p>
+    </div>
+    <div class="question"><span class="qnum">1</span><div style="padding-left: 2mm;">UK labour market data, Q2 2025.</div></div>
+    <table class="data">
+      <tr><th>Indicator</th><th>Value</th></tr>
+      <tr><td>Unemployment rate</td><td>4.4%</td></tr>
+      <tr><td>Inactivity rate (16&ndash;64)</td><td>21.8%</td></tr>
+      <tr><td>Vacancies</td><td>750,000</td></tr>
+      <tr><td>Real wage growth (YoY)</td><td>+1.7%</td></tr>
+    </table>
+    <div style="font-size: 9pt; font-style: italic; text-align: center; margin-top: 1mm;">Source: adapted from https://www.ons.gov.uk/employmentandlabourmarket</div>
+    <div class="qpart">(a) Which <b>one</b> of the following types of unemployment is most likely to be rising given the combination of high vacancies and high inactivity? <span class="marks">(1)</span></div>
+    <div class="mcq">
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>Cyclical</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>Structural</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>Seasonal</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>Classical</span></div>
+    </div>
+    <div class="qpart">(b) Explain the likely effects on the circular flow of income of a rise in real wage growth to +1.7%. <span class="marks">(4)</span></div>
+    <div style="height: 50mm; background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, #777 7.2mm 7.3mm);"></div>
+    <div class="total-line">(Total for Question 1 = 5 marks)</div>
+  </div>
   <div class="page-number left">2</div>
   <div class="barcode"><span class="bars"></span></div>
 </div>
+
+<!-- ================ PAGE 3: Q2 (savings ratio) ================ -->
 <div class="page">
   <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
   <div class="frame">
-<div class="question"><span class="qnum">2</span><div class="qbody">In December 2023 Argentine president Javier Milei implemented a 'shock therapy' economic programme including a 54% devaluation of the peso, elimination of capital controls, and a sharp cut in public expenditure.</div></div><div class="qpart">(a) Using an AD/AS diagram, show the likely short-run effects of Milei's fiscal consolidation on Argentine output and inflation. <span class="marks">(4)</span></div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="qpart">(b) Ricardian equivalence suggests that: <span class="marks">(1)</span></div><div class="mcq"><div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>tax cuts always raise consumption by their full amount</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>consumers reduce current spending in anticipation of future taxes needed to finance government borrowing</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>fiscal policy has no effect on the price level in the long run</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>monetary policy is neutral in the short run</span></div></div><div class="total-line">(Total for Question 2 = 5 marks)</div>  </div>
+    <div class="question"><span class="qnum">2</span><div style="padding-left: 2mm;">UK savings ratio (% of disposable income), 2020&ndash;2024.</div></div>
+    <table class="data">
+      <tr><th>Year</th><th>Savings ratio (%)</th></tr>
+      <tr><td>2020</td><td>17.8</td></tr>
+      <tr><td>2021</td><td>11.4</td></tr>
+      <tr><td>2022</td><td>7.3</td></tr>
+      <tr><td>2023</td><td>8.2</td></tr>
+      <tr><td>2024</td><td>9.5</td></tr>
+    </table>
+    <div style="font-size: 9pt; font-style: italic; text-align: center; margin-top: 1mm;">Source: adapted from https://www.ons.gov.uk/economy/grossdomesticproductgdp</div>
+    <div class="qpart">(a) Explain <b>one</b> possible reason for the fall in the savings ratio between 2020 and 2022. <span class="marks">(2)</span></div>
+    <div style="height: 22mm; background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, #777 7.2mm 7.3mm);"></div>
+    <div class="qpart">(b) Explain the likely effect of a rise in the savings ratio on the size of the multiplier. <span class="marks">(2)</span></div>
+    <div style="height: 22mm; background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, #777 7.2mm 7.3mm);"></div>
+    <div class="qpart">(c) An economy has MPC = 0.75, MPT = 0.25, MPM = 0.1. Which <b>one</b> of the following is the correct size of the multiplier? <span class="marks">(1)</span></div>
+    <div class="mcq">
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>0.4</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>1.0</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>1.67</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>2.5</span></div>
+    </div>
+    <div class="total-line">(Total for Question 2 = 5 marks)</div>
+  </div>
   <div class="page-number right">3</div>
   <div class="barcode"><span class="bars"></span></div>
 </div>
+
+<!-- ================ PAGE 4: Q3 (MPC vote) ================ -->
 <div class="page">
   <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
   <div class="frame">
-<div class="question"><span class="qnum">3</span><div class="qbody">Milei's original election manifesto proposed closing Argentina's central bank and dollarising the economy. The diagram below shows a simplified Mundell-Fleming analysis of the trilemma facing a small open economy.</div></div><div class="figure"><svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg" style="max-width: 105mm;">
-  <polygon points="210,30 50,220 370,220" fill="none" stroke="#000" stroke-width="1.5"/>
-  <text x="170" y="25" font-size="11" font-weight="bold">Free capital flows</text>
-  <text x="5" y="238" font-size="11" font-weight="bold">Fixed exchange rate</text>
-  <text x="280" y="238" font-size="11" font-weight="bold">Monetary autonomy</text>
-  <text x="150" y="130" font-size="10" font-style="italic">Only two of the</text>
-  <text x="150" y="145" font-size="10" font-style="italic">three can be</text>
-  <text x="150" y="160" font-size="10" font-style="italic">chosen.</text>
-</svg></div><div class="qpart">(a) Using the Mundell-Fleming trilemma, explain why full dollarisation would require Argentina to give up monetary autonomy. <span class="marks">(4)</span></div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="qpart">(b) A country that dollarises foregoes: <span class="marks">(1)</span></div><div class="mcq"><div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>the ability to impose tariffs on foreign goods</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>seigniorage revenue from creating its own currency</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>the ability to run a fiscal deficit</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>control over its own fiscal policy</span></div></div><div class="total-line">(Total for Question 3 = 5 marks)</div>  </div>
+    <div class="question"><span class="qnum">3</span><div style="padding-left: 2mm;">The Monetary Policy Committee voted 7&ndash;2 in August 2024 to cut the base rate from 5.25% to 5.00%. Two members preferred to hold rates, citing services inflation.</div></div>
+    <div style="font-size: 9pt; font-style: italic; margin-top: 1mm;">Source: adapted from https://www.bankofengland.co.uk/monetary-policy-summary</div>
+    <div class="qpart">(a) Which <b>one</b> of the following is most likely a reason why monetary policy operates with time lags? <span class="marks">(1)</span></div>
+    <div class="mcq">
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>The MPC meets monthly</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>Contracts with fixed prices take time to expire</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>Exchange rates adjust instantaneously</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>Households respond immediately to rate changes</span></div>
+    </div>
+    <div class="qpart">(b) With reference to the information, explain the likely effect of a base-rate cut on UK aggregate demand. Use a diagram if helpful. <span class="marks">(4)</span></div>
+    <div style="height: 55mm; background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, #777 7.2mm 7.3mm);"></div>
+    <div class="total-line">(Total for Question 3 = 5 marks)</div>
+  </div>
   <div class="page-number left">4</div>
   <div class="barcode"><span class="bars"></span></div>
 </div>
+
+<!-- ================ PAGE 5: Q4 (wealth distribution) ================ -->
 <div class="page">
   <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
   <div class="frame">
-<div class="question"><span class="qnum">4</span><div class="qbody">Between December 2023 and December 2024 the Milei government achieved a primary fiscal surplus for the first time in over a decade, largely by reducing public-sector employment and cutting energy and transport subsidies.</div></div><div class="qpart">(a) Explain one likely short-run cost and one likely long-run benefit of such a rapid fiscal consolidation. <span class="marks">(4)</span></div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="qpart">(b) Fiscal consolidation is most likely to have an 'expansionary' effect on output when: <span class="marks">(1)</span></div><div class="mcq"><div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>the central bank is unable to cut policy rates</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>confidence effects and lower risk premia dominate, and private borrowers benefit from lower long-term yields</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>the economy is deep in recession with high spare capacity</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>the marginal propensity to consume out of disposable income is very high</span></div></div><div class="total-line">(Total for Question 4 = 5 marks)</div>  </div>
+    <div class="question"><span class="qnum">4</span><div style="padding-left: 2mm;">UK wealth distribution by decile, 2024.</div></div>
+    <table class="data">
+      <tr><th>Decile</th><th>Share of total wealth (%)</th></tr>
+      <tr><td>Top 10%</td><td>43</td></tr>
+      <tr><td>Decile 2</td><td>19</td></tr>
+      <tr><td>Decile 3</td><td>13</td></tr>
+      <tr><td>Decile 4</td><td>9</td></tr>
+      <tr><td>Deciles 5&ndash;7</td><td>12</td></tr>
+      <tr><td>Bottom 30%</td><td>4</td></tr>
+    </table>
+    <div style="font-size: 9pt; font-style: italic; text-align: center; margin-top: 1mm;">Source: adapted from https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth</div>
+    <div class="qpart">(a) Explain <b>one</b> reason why wealth inequality in the UK is greater than income inequality. <span class="marks">(4)</span></div>
+    <div style="height: 45mm; background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, #777 7.2mm 7.3mm);"></div>
+    <div class="qpart">(b) Which <b>one</b> of the following statements correctly compares income and wealth Gini coefficients? <span class="marks">(1)</span></div>
+    <div class="mcq">
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>The wealth Gini is typically lower than the income Gini</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>The wealth Gini is typically similar to the income Gini</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>The wealth Gini is typically higher than the income Gini</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>The wealth Gini cannot be meaningfully compared</span></div>
+    </div>
+    <div class="total-line">(Total for Question 4 = 5 marks)</div>
+  </div>
   <div class="page-number right">5</div>
   <div class="barcode"><span class="bars"></span></div>
 </div>
+
+<!-- ================ PAGE 6: Q5 (comparative data) ================ -->
 <div class="page">
   <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
   <div class="frame">
-<div class="question"><span class="qnum">5</span><div class="qbody">In 2024 Argentina received a $20 billion IMF support package conditional on fiscal consolidation, liberalisation of the exchange rate, and reforms to the central bank.</div></div><div class="qpart">(a) Explain one potential benefit and one potential cost of IMF conditionality for a country like Argentina. <span class="marks">(4)</span></div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="qpart">(b) 'Moral hazard' in the context of IMF lending refers to: <span class="marks">(1)</span></div><div class="mcq"><div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>the risk that countries take on excessive debt believing they will be bailed out</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>the risk that the IMF imposes politically unpopular conditions</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>the risk that the IMF's resources are insufficient</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>the risk that lenders lose money on IMF debt</span></div></div><div class="total-line">(Total for Question 5 = 5 marks)</div><div class="section-total">TOTAL FOR SECTION A = 25 MARKS</div>  </div>
+    <div class="question"><span class="qnum">5</span><div style="padding-left: 2mm;">Comparative economic data, 2024.</div></div>
+    <table class="data">
+      <tr><th></th><th>GNI per capita (US$ PPP)</th><th>HDI</th><th>Gini coefficient</th></tr>
+      <tr><td>USA</td><td>76,400</td><td>0.927</td><td>0.41</td></tr>
+      <tr><td>Germany</td><td>60,800</td><td>0.950</td><td>0.31</td></tr>
+      <tr><td>Brazil</td><td>17,800</td><td>0.764</td><td>0.52</td></tr>
+    </table>
+    <div class="qpart">(a) Which <b>one</b> of the following statements is consistent with the data? <span class="marks">(1)</span></div>
+    <div class="mcq">
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>Germany has both higher income and higher HDI than the USA</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>Brazil's HDI exceeds its income rank</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>Germany has higher HDI than the USA despite lower GNI per capita, consistent with less inequality</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>The USA has the lowest Gini and highest HDI</span></div>
+    </div>
+    <div class="qpart">(b) With reference to the data, explain why the Inequality-adjusted HDI (IHDI) may give different country rankings than the HDI. <span class="marks">(4)</span></div>
+    <div style="height: 45mm; background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, #777 7.2mm 7.3mm);"></div>
+    <div class="total-line">(Total for Question 5 = 5 marks)</div>
+    <div class="section-total">TOTAL FOR SECTION A = 25 MARKS</div>
+  </div>
   <div class="page-number left">6</div>
   <div class="barcode"><span class="bars"></span></div>
 </div>
+
+<!-- ================ PAGE 7: SECTION B INTRO + FIGURES ================ -->
 <div class="page">
   <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
   <div class="frame">
-    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; text-align: center;">
-      <p style="font-weight: 700; margin-bottom: 10mm;">BLANK PAGE</p>
-      <p style="font-weight: 700;">QUESTION 6 BEGINS ON THE NEXT PAGE.</p>
+    <div style="text-align: center; padding: 3mm 0;">
+      <h2 style="margin: 0 0 3mm 0; font-size: 14pt;">SECTION B</h2>
+      <p style="font-weight: 700; margin: 2mm 0;">Read Figures 1 and 2 and Extract A before answering Question 6.</p>
+      <p style="font-size: 10pt;">Write your answers in the spaces provided.</p>
+      <p style="font-style: italic;">You are advised to spend 1 hour on this section.</p>
+    </div>
+    <div class="question"><span class="qnum">6</span><b>The US&ndash;China trade relationship and global spillovers</b></div>
+    <div class="figure-title">Figure 1: US effective tariff rate on Chinese imports (%)</div>
+    <div class="figure">
+      <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" style="max-width: 140mm;">
+        <line x1="60" y1="20" x2="60" y2="170" stroke="#000"/>
+        <line x1="60" y1="170" x2="470" y2="170" stroke="#000"/>
+        <text x="10" y="20" font-size="9">%</text>
+        <g font-size="9">
+          <text x="70" y="185">2017</text><text x="150" y="185">2019</text><text x="230" y="185">2023</text>
+          <text x="310" y="185">Q4 '24</text><text x="390" y="185">Q2 '25</text>
+        </g>
+        <g font-size="9">
+          <text x="35" y="173">0</text><text x="30" y="135">10</text><text x="30" y="95">20</text><text x="30" y="55">30</text>
+        </g>
+        <rect x="75" y="158" width="40" height="12" fill="#666"/>
+        <text x="95" y="155" font-size="9" text-anchor="middle">3.1</text>
+        <rect x="155" y="93" width="40" height="77" fill="#666"/>
+        <text x="175" y="90" font-size="9" text-anchor="middle">19.3</text>
+        <rect x="235" y="94" width="40" height="76" fill="#666"/>
+        <text x="255" y="91" font-size="9" text-anchor="middle">19.0</text>
+        <rect x="315" y="71" width="40" height="99" fill="#666"/>
+        <text x="335" y="68" font-size="9" text-anchor="middle">24.8</text>
+        <rect x="395" y="45" width="40" height="125" fill="#888"/>
+        <text x="415" y="42" font-size="9" text-anchor="middle">31.2</text>
+      </svg>
+      <div class="caption">Source: adapted from https://www.piie.com/research/piie-charts/us-china-trade-war-tariffs</div>
+    </div>
+    <div class="figure-title" style="margin-top: 4mm;">Figure 2: Chinese yuan / US dollar exchange rate (CNY per 1 USD)</div>
+    <div class="figure">
+      <svg viewBox="0 0 500 160" xmlns="http://www.w3.org/2000/svg" style="max-width: 140mm;">
+        <line x1="60" y1="15" x2="60" y2="130" stroke="#000"/>
+        <line x1="60" y1="130" x2="470" y2="130" stroke="#000"/>
+        <text x="10" y="15" font-size="9">CNY/USD</text>
+        <g font-size="9">
+          <text x="60" y="145">Jan '23</text><text x="200" y="145">Jan '24</text><text x="340" y="145">Jan '25</text><text x="420" y="145">Jul '25</text>
+        </g>
+        <g font-size="9">
+          <text x="30" y="133">6.7</text><text x="30" y="97">7.0</text><text x="30" y="58">7.3</text>
+        </g>
+        <!-- 6.78, 7.11, 7.26, 7.34 -->
+        <polyline fill="none" stroke="#000" stroke-width="2"
+          points="85,124 215,91 360,71 430,61"/>
+        <circle cx="85" cy="124" r="2.5" fill="#000"/>
+        <circle cx="215" cy="91" r="2.5" fill="#000"/>
+        <circle cx="360" cy="71" r="2.5" fill="#000"/>
+        <circle cx="430" cy="61" r="2.5" fill="#000"/>
+      </svg>
+      <div class="caption">Source: adapted from https://www.bis.org/statistics/eer.htm</div>
     </div>
   </div>
   <div class="page-number right">7</div>
   <div class="barcode"><span class="bars"></span></div>
 </div>
+
+<!-- ================ PAGE 8: EXTRACT A ================ -->
 <div class="page">
   <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
   <div class="frame">
-<div style="text-align: center; padding: 3mm 0;">
-  <h2 style="margin: 0 0 3mm 0; font-size: 14pt;">SECTION B</h2>
-  <p style="font-weight: 700; margin: 2mm 0;">Read Figures 1 and 2 and the following extracts (A to C) before answering Question 6.</p>
-  <p style="font-size: 10pt;">Write your answers in the spaces provided.</p>
-  <p style="font-style: italic;">You are advised to spend 1 hour on this section.</p>
-</div>
-<div class="question"><span class="qnum">6</span><div class="qbody"><b>Argentina's shock therapy under Milei</b></div></div><div class="figure-title">Figure 1: Argentine CPI inflation (monthly, annualised), 2022&ndash;2025</div><div class="figure"><svg viewBox="0 0 460 210" xmlns="http://www.w3.org/2000/svg" style="max-width: 130mm;">
-  <line x1="60" y1="20" x2="60" y2="180" stroke="#000"/>
-  <line x1="60" y1="180" x2="430" y2="180" stroke="#000"/>
-  <text x="10" y="20" font-size="9">% YoY</text>
-  <g font-size="9">
-    <text x="65" y="195">Jan-22</text><text x="150" y="195">Jan-23</text>
-    <text x="240" y="195">Jan-24</text><text x="330" y="195">Jan-25</text>
-  </g>
-  <g font-size="9">
-    <text x="35" y="183">0</text><text x="30" y="140">50</text><text x="30" y="100">100</text>
-    <text x="30" y="60">200</text><text x="30" y="20">300</text>
-  </g>
-  <polyline fill="none" stroke="#000" stroke-width="2"
-    points="70,160 120,150 175,115 225,40 275,55 325,100 380,135 430,150"/>
-  <line x1="225" y1="20" x2="225" y2="180" stroke="#888" stroke-dasharray="3 2"/>
-  <text x="228" y="32" font-size="9" font-style="italic">Milei inaugurated</text>
-  <text x="228" y="45" font-size="9" font-style="italic">Dec 2023</text>
-</svg><div class="caption">Source: adapted from INDEC &amp; BCRA, 2025</div></div><div class="figure-title" style="margin-top: 5mm;">Figure 2: Argentine primary fiscal balance, % of GDP, 2020&ndash;2025</div><div class="figure"><svg viewBox="0 0 460 200" xmlns="http://www.w3.org/2000/svg" style="max-width: 130mm;">
-  <line x1="60" y1="20" x2="60" y2="170" stroke="#000"/>
-  <line x1="60" y1="180" x2="430" y2="180" stroke="#000"/>
-  <line x1="60" y1="100" x2="430" y2="100" stroke="#555" stroke-dasharray="2 2"/>
-  <text x="10" y="20" font-size="9">% GDP</text>
-  <text x="20" y="104" font-size="9">0</text>
-  <g font-size="9">
-    <text x="35" y="175">-8</text><text x="35" y="140">-4</text>
-    <text x="35" y="65">+4</text><text x="35" y="30">+8</text>
-  </g>
-  <g font-size="9">
-    <text x="75" y="195">2020</text><text x="135" y="195">2021</text><text x="195" y="195">2022</text>
-    <text x="255" y="195">2023</text><text x="315" y="195">2024</text><text x="375" y="195">2025</text>
-  </g>
-  <rect x="85" y="100" width="30" height="55" fill="#666"/>
-  <rect x="145" y="100" width="30" height="40" fill="#666"/>
-  <rect x="205" y="100" width="30" height="35" fill="#666"/>
-  <rect x="265" y="100" width="30" height="50" fill="#666"/>
-  <rect x="325" y="97" width="30" height="3" fill="#333"/>
-  <rect x="385" y="91" width="30" height="9" fill="#333"/>
-  <g font-size="9">
-    <text x="85" y="165">-5.2</text><text x="145" y="150">-3.7</text><text x="205" y="145">-3.0</text>
-    <text x="265" y="160">-4.6</text><text x="325" y="95">+0.4</text><text x="385" y="85">+1.1</text>
-  </g>
-</svg><div class="caption">Source: adapted from Ministerio de Econom&iacute;a, 2025</div></div>  </div>
+    <div class="extract-title">Extract A</div>
+    <div class="extract-title" style="font-style: italic; font-weight: 600; margin-top: 1mm;">Trade tensions reshape global supply chains</div>
+    <div class="extract-body">
+      <p>The US&ndash;China trade relationship has deteriorated further in 2024&ndash;2025. The US has imposed new tariffs on Chinese EVs (100%), semiconductors (50%), solar cells (50%) and critical minerals. In response, China has imposed retaliatory tariffs on US agricultural products and restricted exports of rare earths essential to Western manufacturing. The average effective US tariff on Chinese imports has risen to over 31% in mid-2025.</p>
+      <p>Global firms have accelerated &ldquo;China + 1&rdquo; strategies, diversifying production to Vietnam, Mexico, and India. Vietnam&rsquo;s exports to the US grew 34% in 2024. Apple shifted 20% of iPhone assembly to India. Some analysts describe this as &ldquo;friend-shoring&rdquo; or &ldquo;near-shoring&rdquo;, but others argue that much production has merely re-routed through third countries while remaining dependent on Chinese inputs.</p>
+      <p>The effects are visible in inflation data. The IMF estimates that the 2024&ndash;25 tariff rounds added 0.4 percentage points to US CPI inflation, partially reversing progress on disinflation. The tariffs&rsquo; revenue has provided the US Treasury with approximately \$80 billion annually but is widely estimated to be paid primarily by US consumers and importers rather than Chinese exporters. The US Federal Reserve has warned that further tariff escalation could delay rate cuts.</p>
+      <p>The Chinese authorities have allowed the yuan to weaken from 6.78 to the dollar in early 2023 to over 7.30 by mid-2025 &mdash; partially offsetting the impact of US tariffs on Chinese exporters. However, this risks accusations of currency manipulation and complicates China&rsquo;s own efforts to support domestic consumer demand.</p>
+      <p class="source">(Source: adapted from https://www.imf.org/en/Publications/WEO/Issues/2025)</p>
+    </div>
+  </div>
   <div class="page-number left">8</div>
   <div class="barcode"><span class="bars"></span></div>
 </div>
+
+<!-- ================ PAGE 9: Q6 PARTS ================ -->
 <div class="page">
   <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
   <div class="frame">
-<div class="extract-title">Extract A</div><div class="extract-title" style="font-style: italic; font-weight: 600; margin-top: 1mm;">Milei's shock therapy</div><div class="extract-body"><p>Javier Milei took office on 10 December 2023 facing headline CPI inflation of 211%, a fiscal deficit above 5% of GDP, negative net foreign exchange reserves, and an estimated 40% of the population below the poverty line. His early policy steps included a 54% devaluation of the official peso rate, the removal of most export taxes, the cancellation of thousands of public-sector contracts, and the elimination of a range of energy and transport subsidies.</p><p>By late 2024 Argentina had achieved a primary fiscal surplus equivalent to around 0.4% of GDP. The monthly inflation rate fell from 25.5% in December 2023 to 2.4% in December 2024 as the government tightly controlled the monetary base and reduced fiscal dominance.</p><p style="font-style: italic; font-size: 9pt;">(Source: adapted from Financial Times, 2025)</p></div>  </div>
+    <div class="qpart">6 (a) With reference to Figure 2, calculate the percentage change in the yuan per US dollar exchange rate from January 2023 to July 2025. <span class="marks">(5)</span></div>
+    <div class="qpart">(b) With reference to the information provided and your knowledge of trade theory, examine <b>two</b> factors that may explain why the US imposed higher tariffs on Chinese imports. <span class="marks">(8)</span></div>
+    <div class="qpart">(c) Assess the likely impact of the US tariffs on US consumer welfare. <span class="marks">(10)</span></div>
+    <div class="qpart">(d) Discuss, using an AD/AS diagram, the likely impact of the depreciation of the yuan on the Chinese macroeconomy. <span class="marks">(12)</span></div>
+    <div class="qpart">(e) With reference to the information provided, discuss whether &ldquo;friend-shoring&rdquo; and supply-chain diversification are likely to benefit emerging economies such as Vietnam, Mexico, and India. <span class="marks">(15)</span></div>
+  </div>
   <div class="page-number right">9</div>
   <div class="barcode"><span class="bars"></span></div>
 </div>
+
+<!-- Q6 answer pages -->
+<div class="page"><div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question 6 continued</div><div class="lines-auto"></div></div><div class="page-number left">10</div><div class="barcode"><span class="bars"></span></div></div>
+<div class="page"><div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question 6 continued</div><div class="lines-auto"></div></div><div class="page-number right">11</div><div class="barcode"><span class="bars"></span></div></div>
+<div class="page"><div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question 6 continued</div><div class="lines-auto"></div></div><div class="page-number left">12</div><div class="barcode"><span class="bars"></span></div></div>
+<div class="page"><div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question 6 continued</div><div class="lines-auto"></div></div><div class="page-number right">13</div><div class="barcode"><span class="bars"></span></div></div>
+<div class="page"><div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question 6 continued</div><div class="lines-auto"></div></div><div class="page-number left">14</div><div class="barcode"><span class="bars"></span></div></div>
+<div class="page"><div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question 6 continued</div><div class="lines-auto"></div><div class="total-line">(Total for Question 6 = 50 marks)</div><div class="section-total">TOTAL FOR SECTION B = 50 MARKS</div></div><div class="page-number right">15</div><div class="barcode"><span class="bars"></span></div></div>
+
+<!-- ================ SECTION C ================ -->
 <div class="page">
   <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
   <div class="frame">
-<div class="extract-title">Extract B</div><div class="extract-title" style="font-style: italic; font-weight: 600; margin-top: 1mm;">The dollarisation debate</div><div class="extract-body"><p>Milei's original 2023 election manifesto proposed eliminating the central bank and replacing the peso with the US dollar as Argentina's official currency. Although the plan was shelved when it became clear that Argentina's foreign-exchange reserves were inadequate to finance a credible transition, dollarisation remains a topic of debate.</p><p>Supporters argue dollarisation would permanently end Argentina's inflation problem by removing the ability of the government to monetise deficits, lock in lower borrowing costs, and restore capital inflows. Critics including IMF staff argue that Argentina's economy is too subject to commodity-price and external shocks to give up an exchange-rate adjustment mechanism permanently, and that dollarisation without fiscal discipline would merely relocate the crisis.</p><p style="font-style: italic; font-size: 9pt;">(Source: adapted from IMF staff working paper, 2025)</p></div><div class="extract-title">Extract C</div><div class="extract-title" style="font-style: italic; font-weight: 600; margin-top: 1mm;">The social cost of adjustment</div><div class="extract-body"><p>The short-run cost of Milei's adjustment was severe. Argentine GDP contracted by 1.7% in 2024 as the price-level reset and fiscal consolidation squeezed real wages. Household poverty rose from 42% to a peak of 55% in the first half of 2024 before beginning to recede. Industrial production fell by 9.4% in the first half of 2024 before stabilising.</p><p>Supporters argue these costs are the price of ending a four-decade cycle of inflation and fiscal excess, and that by 2025 real wages had begun to recover as inflation slowed. Opponents argue the distributional impact has been regressive and that inequality, already high, has risen further in a pattern familiar from previous Latin American stabilisation programmes.</p><p style="font-style: italic; font-size: 9pt;">(Source: adapted from The Economist, 2025)</p></div>  </div>
-  <div class="page-number left">10</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="qpart">6 (a) With reference to Figure 1, identify and explain the turning point in Argentine inflation during 2023&ndash;24. <span class="marks">(5)</span></div><div class="qpart">(b) With reference to Figure 2 and Extract A, discuss the possible macroeconomic costs and benefits of Argentina's rapid fiscal consolidation. <span class="marks">(12)</span></div><div class="qpart">(c) Examine the concept of fiscal dominance and its relevance to Argentina's inflation experience. <span class="marks">(8)</span></div><div class="qpart">(d) Assess the likely distributional consequences of Milei's shock therapy. Refer to Extract C in your answer. <span class="marks">(10)</span></div><div class="qpart">(e) Discuss the likely economic consequences for Argentina of full dollarisation. Refer to your own knowledge and the extracts. <span class="marks">(15)</span></div>  </div>
-  <div class="page-number right">11</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number left">12</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number right">13</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number left">14</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number right">15</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
+    <div style="text-align: center; padding: 3mm 0;">
+      <h2 style="margin: 0 0 3mm 0; font-size: 14pt;">SECTION C</h2>
+      <p style="font-weight: 700; margin: 2mm 0;">Answer <b>ONE</b> question from this section.</p>
+      <p style="font-style: italic;">You are advised to spend 30 minutes on this section.</p>
+    </div>
+    <p style="font-weight: 700; margin-top: 3mm;">EITHER</p>
+    <div class="qpart"><b>7</b> In 2024, the IMF warned that global public debt had reached 93% of world GDP, with debt-servicing costs rising rapidly in emerging and developing economies.
+      <div style="font-size: 9pt; font-style: italic; margin: 2mm 0;">(Source: adapted from https://www.imf.org/en/Publications/FM/Issues/2024)</div>
+      Evaluate the likely macroeconomic consequences of rising public debt for a developed country of your choice. <span class="marks">(25)</span>
+    </div>
+    <p style="text-align: center; font-weight: 700; margin-top: 4mm;">OR</p>
+    <div class="qpart"><b>8</b> Since 2020, the US dollar has appreciated by more than 15% against a trade-weighted basket of currencies, reflecting higher US interest rates and global risk aversion.
+      <div style="font-size: 9pt; font-style: italic; margin: 2mm 0;">(Source: adapted from https://www.federalreserve.gov/releases/h10/summary)</div>
+      Evaluate the likely macroeconomic consequences of a significant appreciation of a country's currency. Refer to at least one country of your choice. <span class="marks">(25)</span>
+    </div>
+    <p style="margin-top: 5mm;"><b>Indicate which question you are answering by marking a cross in the box.</b></p>
+    <p>Chosen question number: &nbsp;&nbsp; Question 7 <span class="tickbox" style="display:inline-block; width:4.5mm; height:4.5mm; border:0.5pt solid #000;"></span> &nbsp;&nbsp; Question 8 <span class="tickbox" style="display:inline-block; width:4.5mm; height:4.5mm; border:0.5pt solid #000;"></span></p>
+  </div>
   <div class="page-number left">16</div>
   <div class="barcode"><span class="bars"></span></div>
 </div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number right">17</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number left">18</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number right">19</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="total-line">(Total for Question 6 = 50 marks)</div><div class="section-total">TOTAL FOR SECTION B = 50 MARKS</div>  </div>
-  <div class="page-number left">20</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; text-align: center;">
-      <p style="font-weight: 700; margin-bottom: 10mm;">BLANK PAGE</p>
-      <p style="font-weight: 700;">SECTION C BEGINS ON THE NEXT PAGE.</p>
-    </div>
-  </div>
-  <div class="page-number right">21</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div style="text-align: center; padding: 3mm 0;">
-  <h2 style="margin: 0 0 3mm 0; font-size: 14pt;">SECTION C</h2>
-  <p style="font-weight: 700;">Answer ONE question from this section.</p>
-  <p style="font-size: 10pt;">Write your answer in the space provided.</p>
-  <p style="font-style: italic;">You are advised to spend 30 minutes on this section.</p>
-</div>
-<p><b>EITHER</b></p>
-<div class="question"><span class="qnum">7</span><div class="qbody">Evaluate the view that countries with a recent history of hyperinflation should adopt a currency peg or dollarise in order to anchor price expectations.</div></div>
-<div class="total-line">(Total for Question 7 = 25 marks)</div>
-<p style="margin-top: 5mm;"><b>OR</b></p>
-<div class="question"><span class="qnum">8</span><div class="qbody">'Austerity is never expansionary.'<br><br><b>To what extent do you agree with this statement? Refer to recent international experience in your answer.</b></div></div>
-<div class="total-line">(Total for Question 8 = 25 marks)</div>
-  </div>
-  <div class="page-number left">22</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 7 / Question 8 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number right">23</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 7 / Question 8 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number left">24</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 7 / Question 8 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number right">25</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 7 / Question 8 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number left">26</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 7 / Question 8 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number right">27</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 7 / Question 8 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number left">28</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 7 / Question 8 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="total-line">(Total for Question = 25 marks)</div><div class="section-total">TOTAL FOR SECTION C = 25 MARKS</div><div style="text-align: center; font-weight: 700; margin-top: 3mm;">TOTAL FOR PAPER = 100 MARKS</div>  </div>
-  <div class="page-number right">29</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
+
+<!-- Section C answer pages -->
+<div class="page"><div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question continued</div><div class="lines-auto"></div></div><div class="page-number right">17</div><div class="barcode"><span class="bars"></span></div></div>
+<div class="page"><div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question continued</div><div class="lines-auto"></div></div><div class="page-number left">18</div><div class="barcode"><span class="bars"></span></div></div>
+<div class="page"><div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question continued</div><div class="lines-auto"></div></div><div class="page-number right">19</div><div class="barcode"><span class="bars"></span></div></div>
+<div class="page"><div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question continued</div><div class="lines-auto"></div><div class="total-line">(Total for this question = 25 marks)</div><div class="section-total">TOTAL FOR SECTION C = 25 MARKS</div><div style="text-align: center; font-weight: 700; margin-top: 3mm;">TOTAL FOR PAPER = 100 MARKS</div></div><div class="page-number left">20</div><div class="barcode"><span class="bars"></span></div></div>
 
 </body>
 </html>
