@@ -60,7 +60,7 @@ const AdminBoardCoverage = lazy(() => import("./pages/AdminBoardCoverage"));
 const AdminMarkingConventionVerification = lazy(() => import("./pages/AdminMarkingConventionVerification"));
 const AdminQaTracker = lazy(() => import("./pages/AdminQaTracker"));
 const EdexcelMockPapersIndex = lazy(() => import("./pages/EdexcelMockPapersIndex"));
-const EdexcelMockPaperPage = lazy(() => import("./pages/EdexcelMockPaperPage"));
+const EdexcelMockPaperViewer = lazy(() => import("./pages/EdexcelMockPaperViewer"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -128,10 +128,11 @@ const App = () => (
              <Route path="/admin/marking-convention-verification" element={<AdminMarkingConventionVerification />} />
              <Route path="/admin/qa-tracker" element={<AdminQaTracker />} />
               <Route path="/mock-papers" element={<EdexcelMockPapersIndex />} />
-              <Route path="/mock-papers/edexcel-a/:paperNum" element={<EdexcelMockPaperPage />} />
-              <Route path="/paper-1" element={<EdexcelMockPaperPage />} />
-              <Route path="/paper-2" element={<EdexcelMockPaperPage />} />
-              <Route path="/paper-3" element={<EdexcelMockPaperPage />} />
+              <Route path="/mock-papers/edexcel-a/:paperNum/:difficulty" element={<EdexcelMockPaperViewer />} />
+              <Route path="/mock-papers/edexcel-a/:paperNum" element={<EdexcelMockPaperViewer />} />
+              <Route path="/paper-1" element={<EdexcelMockPaperViewer />} />
+              <Route path="/paper-2" element={<EdexcelMockPaperViewer />} />
+              <Route path="/paper-3" element={<EdexcelMockPaperViewer />} />
               <Route path="/debug/marking-tests" element={<MarkingDebug />} />
               <Route path="/debug/integrity" element={<MarkingDebug />} />
               <Route path="*" element={<NotFound />} />

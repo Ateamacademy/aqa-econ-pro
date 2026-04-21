@@ -1,0 +1,1366 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>Pearson Edexcel A Level Economics A Paper 3 Hard (9EC0/03)</title>
+    <style>
+    /* ============================================================
+   Pearson Edexcel A Level Economics — shared exam-paper styles
+   ============================================================ */
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #d8d8d8;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+  color: #000;
+}
+
+/* ---- A4 page wrapper ------------------------------------- */
+.page {
+  width: 210mm;
+  height: 297mm;
+  background: #fff;
+  margin: 10mm auto;
+  position: relative;
+  page-break-after: always;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.25);
+}
+
+.page:last-child { page-break-after: auto; }
+
+@media print {
+  html, body { background: #fff; }
+  .page { margin: 0; box-shadow: none; }
+  .no-print { display: none !important; }
+}
+
+/* ---- Diagonal hatched margins with vertical DO NOT WRITE text ---- */
+/* Bands on the OUTER side of the page (left of left-hand pages,
+   right of right-hand pages). Pearson alternates per page. */
+.hatch {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 11mm;
+  background-image:
+    repeating-linear-gradient(135deg,
+      rgba(0,0,0,0.28) 0 0.4mm,
+      transparent 0.4mm 1.4mm),
+    repeating-linear-gradient(45deg,
+      rgba(0,0,0,0.28) 0 0.4mm,
+      transparent 0.4mm 1.4mm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  pointer-events: none;
+}
+
+.hatch.left  { left: 0; }
+.hatch.right { right: 0; }
+
+.hatch .dnw {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-weight: 700;
+  font-size: 7pt;
+  letter-spacing: 0.4px;
+  color: #444;
+  background: #fff;
+  padding: 3mm 1px;
+}
+
+/* ---- Rounded content border ------------------------------ */
+.frame {
+  position: absolute;
+  top: 10mm;
+  left: 14mm;
+  right: 14mm;
+  bottom: 22mm;
+  border: 1px solid #000;
+  border-radius: 5mm;
+  padding: 7mm 9mm 8mm 9mm;
+  overflow: hidden;
+}
+
+/* ---- Bottom-of-page furniture ---------------------------- */
+.page-number {
+  position: absolute;
+  bottom: 8mm;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.page-number.left  { left: 14mm; }
+.page-number.right { right: 14mm; }
+
+.barcode {
+  position: absolute;
+  bottom: 8mm;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Libre Barcode 39", "Courier New", monospace;
+  font-size: 9pt;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+.barcode .bars {
+  display: inline-block;
+  background-image: repeating-linear-gradient(90deg,
+    #000 0 0.4mm, transparent 0.4mm 0.8mm,
+    #000 0.8mm 1.6mm, transparent 1.6mm 2.0mm,
+    #000 2.0mm 2.2mm, transparent 2.2mm 3.2mm);
+  width: 50mm;
+  height: 6mm;
+  vertical-align: middle;
+}
+.barcode .code {
+  font-family: "Courier New", monospace;
+  font-size: 8.5pt;
+  letter-spacing: 2px;
+  margin-top: 1px;
+}
+
+.turn-over {
+  position: absolute;
+  bottom: 13mm;
+  right: 14mm;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.turn-over::after {
+  content: " \25B6";
+  color: #000;
+}
+
+/* ---- Cover page -------------------------------------------- */
+.cover-box {
+  border: 1px solid #000;
+  border-radius: 4mm;
+  padding: 0;
+  margin: 0 0 10mm 0;
+  overflow: hidden;
+}
+
+.cover-row {
+  display: flex;
+  border-bottom: 1px solid #000;
+}
+.cover-row:last-child { border-bottom: none; }
+
+.name-fields {
+  flex: 1;
+  padding: 4mm 5mm 3mm 5mm;
+  border-right: 1px solid #000;
+}
+.name-fields .label { font-size: 9pt; }
+.name-fields .pair {
+  display: flex;
+  gap: 4mm;
+  margin-top: 1.5mm;
+}
+.name-fields .pair > div { flex: 1; }
+.name-fields .pair .tag { font-size: 8.5pt; color: #222; margin-bottom: 1mm; }
+.name-fields .pair input {
+  width: 100%;
+  height: 7mm;
+  border: 0.5pt solid #000;
+  border-radius: 1mm;
+  background: #fff;
+  font-size: 11pt;
+  padding: 0 2mm;
+}
+
+.centre-candidate {
+  padding: 3mm 5mm;
+  font-size: 8.5pt;
+  display: flex;
+  gap: 4mm;
+}
+.centre-candidate > div { flex: 1; }
+.centre-candidate .boxes {
+  display: flex;
+  gap: 1mm;
+  margin-top: 1mm;
+}
+.centre-candidate .boxes span {
+  width: 5.5mm;
+  height: 7mm;
+  border: 0.5pt solid #000;
+  border-radius: 1mm;
+  background: #fff;
+}
+
+.subject-block {
+  padding: 5mm 5mm 4mm 5mm;
+  background: #fff;
+}
+.subject-block .brand-line {
+  font-size: 11pt;
+  font-weight: 700;
+  margin-bottom: 2mm;
+}
+.subject-block .subject-name {
+  font-size: 24pt;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.1;
+}
+.subject-block .sub-title {
+  font-size: 13pt;
+  font-weight: 700;
+  margin-top: 1.5mm;
+}
+.subject-block .paper-title {
+  font-size: 13pt;
+  font-weight: 700;
+  margin-top: 0.5mm;
+}
+
+.session-row {
+  display: flex;
+}
+.session-row .session {
+  flex: 1;
+  padding: 3mm 5mm;
+  border-right: 1px solid #000;
+  font-weight: 700;
+  font-size: 11pt;
+}
+.session-row .session .time { margin-top: 1mm; }
+.session-row .reference {
+  width: 52mm;
+  padding: 3mm 5mm;
+  text-align: left;
+}
+.session-row .reference .tag { font-size: 9pt; }
+.session-row .reference .code {
+  font-size: 16pt;
+  font-weight: 700;
+  margin-top: 1mm;
+}
+
+.materials-row {
+  display: flex;
+}
+.materials-row .mat {
+  flex: 1;
+  padding: 3mm 5mm;
+  border-right: 1px solid #000;
+  font-size: 10pt;
+}
+.materials-row .marks {
+  width: 52mm;
+  padding: 3mm 5mm;
+  font-size: 9pt;
+}
+
+.pearson-brand {
+  font-family: "Trebuchet MS", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+.pearson-brand .pearson { font-size: 15pt; }
+.pearson-brand .edexcel {
+  background: #000;
+  color: #fff;
+  padding: 1px 4px;
+  font-size: 13pt;
+}
+
+/* Instruction lists */
+.section-head {
+  font-weight: 700;
+  font-size: 11.5pt;
+  margin: 5mm 0 1.5mm 0;
+}
+.bullets {
+  margin: 0 0 4mm 0;
+  padding-left: 6mm;
+  list-style: none;
+}
+.bullets li {
+  position: relative;
+  padding-left: 4mm;
+  margin-bottom: 1mm;
+  font-size: 10.5pt;
+}
+.bullets li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.bullets li em { color: #222; }
+.bullets li b { font-weight: 700; }
+
+.cover-footer {
+  position: absolute;
+  bottom: 8mm;
+  left: 14mm;
+  right: 14mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 8.5pt;
+}
+.cover-footer .left { font-family: "Courier New", monospace; font-size: 10pt; letter-spacing: 1px; }
+.cover-footer .left small { font-size: 7pt; display: block; margin-top: 1mm; }
+.cover-footer .right {
+  font-family: "Trebuchet MS", sans-serif;
+  font-weight: 700;
+}
+.cover-footer .right .pearson { font-size: 14pt; }
+
+/* ---- Section header inside a frame ----------------------- */
+.section-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 13pt;
+  margin: 2mm 0 4mm 0;
+  letter-spacing: 0.5px;
+}
+.section-intro {
+  text-align: center;
+  font-size: 10.5pt;
+  margin-bottom: 2mm;
+}
+.section-intro b { font-weight: 700; }
+
+/* ---- Questions -------------------------------------------- */
+.question {
+  margin-top: 4mm;
+  position: relative;
+}
+.question .qnum {
+  position: absolute;
+  left: -6mm;
+  font-weight: 700;
+}
+.question .qbody { padding-left: 0; }
+
+.qpart {
+  margin: 3mm 0 1mm 0;
+}
+.qpart .plabel { font-weight: 400; }
+
+.marks {
+  display: block;
+  text-align: right;
+  font-weight: 700;
+  margin: 1mm 0;
+}
+
+.mcq { margin: 2mm 0 2mm 5mm; }
+.mcq .opt {
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  margin: 1.2mm 0;
+}
+.mcq .tickbox {
+  width: 4.5mm;
+  height: 4.5mm;
+  border: 0.5pt solid #000;
+  display: inline-block;
+}
+.mcq .optlabel { font-weight: 700; width: 4mm; }
+
+.total-line {
+  text-align: right;
+  font-weight: 700;
+  border-top: 0.5pt solid #000;
+  margin-top: 2mm;
+  padding-top: 1mm;
+}
+
+.section-total {
+  text-align: center;
+  font-weight: 700;
+  margin-top: 6mm;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Dotted answer lines --------------------------------- */
+.lines {
+  margin-top: 2mm;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 7.5mm,
+    #777 7.5mm,
+    #777 7.5mm
+  );
+  background-size: 100% 8mm;
+  background-repeat: repeat-y;
+  width: 100%;
+}
+/* Better approach: generated lines as flex rows */
+.lines-flex { display: flex; flex-direction: column; gap: 0; margin-top: 2mm; }
+.lines-flex .line {
+  height: 8mm;
+  border-bottom: 0.4pt dotted #777;
+}
+
+/* ---- Tables ------------------------------------------------ */
+table.data {
+  border-collapse: collapse;
+  margin: 3mm auto;
+  font-size: 10pt;
+  width: 100%;
+}
+table.data th, table.data td {
+  border: 0.5pt solid #000;
+  padding: 2mm 3mm;
+  text-align: center;
+  vertical-align: middle;
+}
+table.data th {
+  font-weight: 700;
+  background: #f0f0f0;
+}
+
+/* ---- Extract boxes (Section B) --------------------------- */
+.figure-title, .extract-title {
+  font-weight: 700;
+  margin: 4mm 0 1mm 0;
+  font-size: 10.5pt;
+}
+.extract-body {
+  position: relative;
+  padding: 2mm 12mm 2mm 2mm;
+  font-size: 10.5pt;
+  line-height: 1.4;
+  margin-bottom: 3mm;
+  counter-reset: extract-line;
+}
+.extract-body p {
+  margin: 0 0 2mm 0;
+}
+.extract-body .lineno {
+  position: absolute;
+  right: 4mm;
+  font-size: 9pt;
+  color: #000;
+  font-weight: 400;
+}
+.extract-body .source {
+  font-style: italic;
+  font-size: 9.5pt;
+  margin-top: 2mm;
+  color: #222;
+}
+
+/* ---- SVG figures ----------------------------------------- */
+.figure {
+  margin: 3mm 0;
+  text-align: center;
+}
+.figure svg {
+  max-width: 100%;
+  height: auto;
+}
+.figure .caption {
+  font-size: 9.5pt;
+  font-style: italic;
+  margin-top: 2mm;
+  text-align: center;
+}
+
+/* ---- Nav + print button (screen only) -------------------- */
+.topnav {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  border: 1px solid #999;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+.topnav a, .topnav button {
+  margin: 0 6px;
+  color: #0b49a0;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+.topnav button { font-weight: 700; }
+
+/* Utility */
+.center { text-align: center; }
+.italic { font-style: italic; }
+.bold { font-weight: 700; }
+.small { font-size: 9pt; }
+.mt2 { margin-top: 2mm; }
+.mt4 { margin-top: 4mm; }
+.mt6 { margin-top: 6mm; }
+.mb2 { margin-bottom: 2mm; }
+
+    </style>
+    </head>
+    <body>
+    <div class="topnav no-print">
+      <a href="index.html">&larr; Index</a>
+      <button onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+<div class="page">
+  <div class="frame" style="padding: 10mm 12mm;">
+    <div class="cover-box">
+      <div class="cover-row">
+        <div class="name-fields">
+          <div class="label">Write your name here</div>
+          <div class="pair">
+            <div><div class="tag">Surname</div><input type="text" /></div>
+            <div><div class="tag">Other names</div><input type="text" /></div>
+          </div>
+        </div>
+        <div style="width: 52mm;">
+          <div class="centre-candidate" style="padding: 4mm 5mm; flex-direction: column; gap: 2mm;">
+            <div>
+              <div class="pearson-brand">
+                <span class="pearson">Pearson</span>
+                <span class="edexcel">Edexcel</span>
+              </div>
+              <div style="font-size: 10pt; font-weight: 700; margin-top: 1mm;">Level 3 GCE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cover-row">
+        <div class="name-fields" style="padding: 3mm 5mm;">
+          <div class="pair">
+            <div>
+              <div class="tag">Centre Number</div>
+              <div class="boxes" style="display: flex; gap: 1mm;">
+                <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+                <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+              </div>
+            </div>
+            <div>
+              <div class="tag">Candidate Number</div>
+              <div class="boxes" style="display: flex; gap: 1mm;">
+                <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+                <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="width: 52mm; padding: 3mm 5mm;"></div>
+      </div>
+      <div class="cover-row">
+        <div class="subject-block" style="width: 100%;">
+          <div class="subject-name">Economics A</div>
+          <div class="sub-title">Advanced</div>
+          <div class="paper-title">Paper 3: Microeconomics and Macroeconomics</div>
+        </div>
+      </div>
+      <div class="session-row">
+        <div class="session">
+          Monday 22 June 2026 &ndash; Morning
+          <div class="time">Time: 2 hours</div>
+        </div>
+        <div class="reference">
+          <div class="tag">Paper Reference</div>
+          <div class="code">9EC0/03</div>
+        </div>
+      </div>
+      <div class="materials-row">
+        <div class="mat">You do not need any other materials.</div>
+        <div class="marks">Total Marks<br><br></div>
+      </div>
+    </div>
+
+    <div class="section-head">Instructions</div>
+    <ul class="bullets">
+      <li>Use <b>black</b> ink or ball-point pen.</li>
+      <li><b>Fill in the boxes</b> at the top of this page with your name,<br>centre number and candidate number.</li>
+      <li>There are three sections in this question paper. Answer <b>all</b> questions from Section A and Section B. Answer <b>one</b> question from Section C.</li>
+      <li>Answer the questions in the spaces provided<br><em>&ndash; there may be more space than you need.</em></li>
+    </ul>
+
+    <div class="section-head">Information</div>
+    <ul class="bullets">
+      <li>The total mark for this paper is 100.</li>
+      <li>The marks for <b>each</b> question are shown in brackets<br><em>&ndash; use this as a guide as to how much time to spend on each question.</em></li>
+      <li>Calculators may be used.</li>
+    </ul>
+
+    <div class="section-head">Advice</div>
+    <ul class="bullets">
+      <li>Read each question carefully before you start to answer it.</li>
+      <li>Check your answers if you have time at the end.</li>
+    </ul>
+  </div>
+
+  <div class="hatch right" style="width: 8mm;"><span class="dnw">&nbsp;</span></div>
+
+  <div class="turn-over">Turn over</div>
+  <div class="cover-footer">
+    <div class="left">
+      P72345A<br>
+      <small>&copy;2026 Pearson Education Ltd.</small><br>
+      <small>1/1/1/1/1/1/1</small>
+    </div>
+    <div style="flex: 1; text-align: center;">
+      <span class="barcode"><span class="bars"></span></span>
+    </div>
+    <div class="right pearson-brand">
+      <span class="pearson">Pearson</span>
+    </div>
+  </div>
+</div>
+
+<style>
+.cell { display:inline-block; width: 6mm; height: 7mm; border: 0.5pt solid #000; border-radius: 1mm; background:#fff; }
+</style>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="section-title">SECTION A</div>
+<div class="section-intro"><b>Answer ALL questions. Write your answers in the spaces provided.</b></div>
+<div class="section-intro">You are advised to spend 30 minutes on this section.</div>
+<div class="section-intro">Read the following extract and study the figure before answering Question 1.</div>
+
+<div class="question mt4"><span class="qnum">1</span><div class="qbody">
+<b>Case Study 1: UK labour shortages, migration and wage dynamics</b></div></div>
+
+<div class="figure-title" style="margin-top: 4mm;">Figure 1: UK vacancy rate, unemployment rate and
+nominal wage growth, 2019&ndash;2025 (%)</div>
+
+<div class="figure">
+<svg viewBox="0 0 460 240" xmlns="http://www.w3.org/2000/svg" style="max-width: 130mm;">
+  <line x1="50" y1="20" x2="50" y2="200" stroke="#000"/>
+  <line x1="50" y1="200" x2="440" y2="200" stroke="#000"/>
+  <g font-size="9">
+    <text x="30" y="25">8%</text><text x="30" y="65">6%</text>
+    <text x="30" y="105">4%</text><text x="30" y="145">2%</text>
+    <text x="35" y="205">0</text>
+  </g>
+  <polyline fill="none" stroke="#000" stroke-width="1.8"
+    points="60,120 110,165 165,70 220,45 275,55 330,80 385,95"/>
+  <text x="390" y="95" font-size="9">Wage gr.</text>
+  <polyline fill="none" stroke="#000" stroke-width="1.6" stroke-dasharray="4,3"
+    points="60,140 110,125 165,100 220,90 275,100 330,115 385,120"/>
+  <text x="390" y="115" font-size="9">U-rate</text>
+  <polyline fill="none" stroke="#000" stroke-width="1.4" stroke-dasharray="1,3"
+    points="60,160 110,175 165,75 220,60 275,75 330,100 385,115"/>
+  <text x="390" y="130" font-size="9">Vacancies</text>
+  <g font-size="9">
+    <text x="60" y="220">2019</text><text x="115" y="220">2020</text>
+    <text x="170" y="220">2021</text><text x="225" y="220">2022</text>
+    <text x="280" y="220">2023</text><text x="335" y="220">2024</text>
+    <text x="385" y="220">2025</text>
+  </g>
+</svg>
+<div class="caption">(Source: adapted from ONS Labour Force Survey and Vacancies Survey, 2025)</div>
+</div>
+
+  </div>
+  <div class="page-number left">2</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="extract-title">Extract A</div>
+<div class="extract-title" style="font-style: italic;">A tighter UK labour market</div>
+<div class="extract-body">
+  <p>By mid-2022, the UK labour market had reached the tightest conditions on record: the vacancy rate exceeded 4% while unemployment fell below 3.8%. Employers across hospitality, logistics, agriculture and social care reported severe recruitment difficulties. Nominal wages grew at over 6% year-on-year, but real wages stagnated as CPI inflation reached double digits.</p><p>Commentators attributed the tightness to a combination of factors: a significant reduction in post-Brexit EU migration into lower-wage sectors, an unexpected rise in economic inactivity driven by long-term ill health among workers aged 50&ndash;64, and a faster-than-expected recovery in aggregate demand.</p><p>By 2025, some of these pressures had eased. EU labour-market participation partially recovered in sectors where visa rules had been relaxed, and the vacancy rate declined. However, the Bank of England continued to warn of <b>second-round</b> wage-price spiral risks, and the Monetary Policy Committee was slow to cut the Bank Rate despite falling headline inflation.</p>
+  <p class="source">(Source: adapted from ONS and Bank of England MPC Minutes, 2025)</p>
+</div>
+
+  </div>
+  <div class="page-number right">3</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="qpart">1 (a) Using the 2022 data, explain what is meant by a <b>tight</b> labour market and calculate
+the approximate Beveridge-curve position (the vacancies-to-unemployment ratio) in 2022.
+<span class="marks">(5)</span></div>
+<div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+
+<div class="qpart">(b) Explain one likely microeconomic consequence of a sustained rise in the minimum wage in a
+labour market characterised by the conditions described in Extract A.
+<span class="marks">(5)</span></div>
+<div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+
+  </div>
+  <div class="page-number left">4</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="qpart">(c) Which of the following is most consistent with the Bank of England's warning about
+<b>second-round</b> effects?
+<span class="marks">(5)</span></div>
+<div class="mcq"><div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>rising energy prices pushing up the CPI directly</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>rising wage expectations feeding through to higher services-sector inflation</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>sterling depreciation feeding through to import prices</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>a one-off indirect-tax increase</span></div></div>
+<div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+
+<div class="qpart">(d) Explain one reason why rising economic inactivity among older workers may raise the UK's
+<b>equilibrium</b> unemployment rate (NAIRU).
+<span class="marks">(10)</span></div>
+<div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+
+<div class="total-line">(Total for Question 1 = 25 marks)</div>
+<div class="section-total">TOTAL FOR SECTION A = 25 MARKS</div>
+
+  </div>
+  <div class="page-number right">5</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="center" style="margin-top: 80mm;">
+  <div class="bold">BLANK PAGE</div>
+  <div class="bold" style="margin-top: 4mm;">SECTION B BEGINS ON THE NEXT PAGE.</div>
+</div>
+
+  </div>
+  <div class="page-number left">6</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="section-title">SECTION B</div>
+<div class="section-intro"><b>Answer the question in the space provided.</b></div>
+<div class="section-intro">You are advised to spend 30 minutes on this section.</div>
+
+<div class="question mt4"><span class="qnum">2</span><div class="qbody">
+Using Extract A and your knowledge of economics,
+<div class="mt4"><b>evaluate the likely microeconomic and macroeconomic effects of a substantial
+expansion of UK skilled-worker visa quotas, combined with a targeted programme of adult
+retraining for UK workers in lower-wage sectors.</b></div></div></div>
+<div class="total-line">(Total for Question 2 = 25 marks)</div>
+
+  </div>
+  <div class="page-number right">7</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 2</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number left">8</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 2 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number right">9</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 2 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number left">10</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 2 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number right">11</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 2 continued</div>
+<div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+<div class="total-line">(Total for Question 2 = 25 marks)</div>
+<div class="section-total">TOTAL FOR SECTION B = 25 MARKS</div>
+  </div>
+  <div class="page-number left">12</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="center" style="margin-top: 80mm;">
+  <div class="bold">BLANK PAGE</div>
+  <div class="bold" style="margin-top: 4mm;">SECTION C BEGINS ON THE NEXT PAGE.</div>
+</div>
+
+  </div>
+  <div class="page-number right">13</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="section-title">SECTION C</div>
+<div class="section-intro"><b>Answer ALL parts of Question 3. Write your answer in the space provided.</b></div>
+<div class="section-intro">You are advised to spend 1 hour on this section.</div>
+<div class="section-intro">Read the following extract and study the figure before answering Question 3.</div>
+
+<div class="question mt4"><span class="qnum">3</span><div class="qbody">
+<b>Case Study 2: The critical-minerals 'supercycle' and emerging-economy exposure</b></div></div>
+
+<div class="figure-title" style="margin-top: 4mm;">Figure 2: Price index of critical minerals
+(lithium, cobalt, nickel, copper), 2015&ndash;2024 (2015 = 100)</div>
+
+<div class="figure">
+<svg viewBox="0 0 460 210" xmlns="http://www.w3.org/2000/svg" style="max-width: 130mm;">
+  <line x1="50" y1="20" x2="50" y2="180" stroke="#000"/>
+  <line x1="50" y1="180" x2="440" y2="180" stroke="#000"/>
+  <g font-size="9">
+    <text x="20" y="25">600</text><text x="20" y="65">450</text>
+    <text x="20" y="105">300</text><text x="20" y="145">150</text>
+    <text x="25" y="185">0</text>
+  </g>
+  <polyline fill="none" stroke="#000" stroke-width="1.8"
+    points="55,145 100,148 145,145 190,140 235,110 280,60 325,35 370,85 410,115"/>
+  <text x="415" y="35" font-size="9">Lithium</text>
+  <polyline fill="none" stroke="#000" stroke-width="1.6" stroke-dasharray="4,3"
+    points="55,148 100,145 145,140 190,125 235,95 280,75 325,85 370,110 410,125"/>
+  <text x="415" y="85" font-size="9">Cobalt</text>
+  <polyline fill="none" stroke="#555" stroke-width="1.4" stroke-dasharray="1,3"
+    points="55,150 100,148 145,140 190,135 235,125 280,110 325,105 370,115 410,120"/>
+  <text x="415" y="115" font-size="9">Copper</text>
+  <g font-size="9">
+    <text x="55" y="200">'15</text><text x="145" y="200">'17</text>
+    <text x="235" y="200">'19</text><text x="325" y="200">'21</text>
+    <text x="410" y="200">'24</text>
+  </g>
+</svg>
+<div class="caption">(Source: adapted from World Bank Pink Sheet and IEA Critical Minerals Review, 2024)</div>
+</div>
+
+  </div>
+  <div class="page-number left">14</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="extract-title">Extract B</div>
+<div class="extract-title" style="font-style: italic;">Critical minerals, the energy transition and strategic concentration</div>
+<div class="extract-body">
+  <p>Global demand for critical minerals &mdash; lithium, cobalt, nickel, rare earths and copper &mdash; has surged as the energy transition drives the scale-up of EV production, battery-storage installation and electricity-grid upgrades. The IEA estimates that demand for lithium could grow by 8&ndash;13 times by 2040 relative to a 2020 baseline.</p><p>Supply of several critical minerals is geographically concentrated. The Democratic Republic of the Congo produces approximately 70% of global cobalt; Chile and Australia together account for over 75% of global lithium extraction; Indonesia dominates nickel; China is responsible for the majority of downstream refining and processing of rare earths and lithium chemicals.</p><p>This concentration creates both opportunities and risks. For producing countries, sustained strong prices can generate substantial export revenues and foreign-exchange inflows. However, recent commodity-price history suggests that <b>cycles are both pronounced and asymmetric</b>: prices can triple within two years and then collapse by 60% over the following twelve months, as happened to lithium between 2022 and 2024.</p><p>Advanced economies have responded by launching 'friend-shoring' and supply-diversification initiatives, including the EU Critical Raw Materials Act (2024), which establishes strategic stockpiles and sets target benchmarks for domestic extraction, processing and recycling of critical minerals by 2030.</p>
+  <p class="source">(Source: adapted from IEA Critical Minerals Outlook and World Bank commodity reviews, 2024)</p>
+</div>
+
+  </div>
+  <div class="page-number right">15</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="qpart">3 (a) Explain one likely microeconomic effect of a sustained tripling of critical-mineral prices
+on the cost structure of battery EV manufacturers.
+<span class="marks">(8)</span></div>
+
+<div class="qpart">(b) Discuss the possible microeconomic and macroeconomic consequences for a small,
+commodity-exporting emerging economy (such as the DRC or Chile) of a sharp fall in the world price
+of its dominant export.
+<span class="marks">(12)</span></div>
+
+<div class="qpart">(c) <b>Evaluate</b> the extent to which <b>strategic industrial policy</b> &mdash; including
+government-backed stockpiling, domestic-content requirements and targeted subsidies for local
+extraction and processing &mdash; is an effective response by advanced economies to the
+concentration of critical-mineral supply. Refer to Extract B and your own knowledge in your answer.
+<span class="marks">(30)</span></div>
+
+  </div>
+  <div class="page-number left">16</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 3 (a)</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number right">17</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 3 (a) continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number left">18</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 3 (b)</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number right">19</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 3 (b) continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number left">20</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 3 (b) continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number right">21</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 3 (c)</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number left">22</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 3 (c) continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number right">23</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 3 (c) continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number left">24</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 3 (c) continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number right">25</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 3 (c) continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number left">26</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 3 (c) continued</div>
+<div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+<div class="total-line">(Total for Question 3 = 50 marks)</div>
+<div class="section-total">TOTAL FOR SECTION C = 50 MARKS</div>
+<div class="section-total mt4">TOTAL FOR PAPER = 100 MARKS</div>
+  </div>
+  <div class="page-number right">27</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+    </body>
+    </html>

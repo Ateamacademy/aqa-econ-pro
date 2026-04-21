@@ -1,0 +1,1454 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>Pearson Edexcel A Level Economics A Paper 1 (9EC0/01) &mdash; Advanced</title>
+    <style>
+    /* ============================================================
+   Pearson Edexcel A Level Economics — shared exam-paper styles
+   ============================================================ */
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #d8d8d8;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+  color: #000;
+}
+
+/* ---- A4 page wrapper ------------------------------------- */
+.page {
+  width: 210mm;
+  height: 297mm;
+  background: #fff;
+  margin: 10mm auto;
+  position: relative;
+  page-break-after: always;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.25);
+}
+
+.page:last-child { page-break-after: auto; }
+
+@media print {
+  html, body { background: #fff; }
+  .page { margin: 0; box-shadow: none; }
+  .no-print { display: none !important; }
+}
+
+/* ---- Diagonal hatched margins with vertical DO NOT WRITE text ---- */
+/* Bands on the OUTER side of the page (left of left-hand pages,
+   right of right-hand pages). Pearson alternates per page. */
+.hatch {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 11mm;
+  background-image:
+    repeating-linear-gradient(135deg,
+      rgba(0,0,0,0.28) 0 0.4mm,
+      transparent 0.4mm 1.4mm),
+    repeating-linear-gradient(45deg,
+      rgba(0,0,0,0.28) 0 0.4mm,
+      transparent 0.4mm 1.4mm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  pointer-events: none;
+}
+
+.hatch.left  { left: 0; }
+.hatch.right { right: 0; }
+
+.hatch .dnw {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-weight: 700;
+  font-size: 7pt;
+  letter-spacing: 0.4px;
+  color: #444;
+  background: #fff;
+  padding: 3mm 1px;
+}
+
+/* ---- Rounded content border ------------------------------ */
+.frame {
+  position: absolute;
+  top: 10mm;
+  left: 14mm;
+  right: 14mm;
+  bottom: 22mm;
+  border: 1px solid #000;
+  border-radius: 5mm;
+  padding: 7mm 9mm 8mm 9mm;
+  overflow: hidden;
+}
+
+/* ---- Bottom-of-page furniture ---------------------------- */
+.page-number {
+  position: absolute;
+  bottom: 8mm;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.page-number.left  { left: 14mm; }
+.page-number.right { right: 14mm; }
+
+.barcode {
+  position: absolute;
+  bottom: 8mm;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Libre Barcode 39", "Courier New", monospace;
+  font-size: 9pt;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+.barcode .bars {
+  display: inline-block;
+  background-image: repeating-linear-gradient(90deg,
+    #000 0 0.4mm, transparent 0.4mm 0.8mm,
+    #000 0.8mm 1.6mm, transparent 1.6mm 2.0mm,
+    #000 2.0mm 2.2mm, transparent 2.2mm 3.2mm);
+  width: 50mm;
+  height: 6mm;
+  vertical-align: middle;
+}
+.barcode .code {
+  font-family: "Courier New", monospace;
+  font-size: 8.5pt;
+  letter-spacing: 2px;
+  margin-top: 1px;
+}
+
+.turn-over {
+  position: absolute;
+  bottom: 13mm;
+  right: 14mm;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.turn-over::after {
+  content: " \25B6";
+  color: #000;
+}
+
+/* ---- Cover page -------------------------------------------- */
+.cover-box {
+  border: 1px solid #000;
+  border-radius: 4mm;
+  padding: 0;
+  margin: 0 0 10mm 0;
+  overflow: hidden;
+}
+
+.cover-row {
+  display: flex;
+  border-bottom: 1px solid #000;
+}
+.cover-row:last-child { border-bottom: none; }
+
+.name-fields {
+  flex: 1;
+  padding: 4mm 5mm 3mm 5mm;
+  border-right: 1px solid #000;
+}
+.name-fields .label { font-size: 9pt; }
+.name-fields .pair {
+  display: flex;
+  gap: 4mm;
+  margin-top: 1.5mm;
+}
+.name-fields .pair > div { flex: 1; }
+.name-fields .pair .tag { font-size: 8.5pt; color: #222; margin-bottom: 1mm; }
+.name-fields .pair input {
+  width: 100%;
+  height: 7mm;
+  border: 0.5pt solid #000;
+  border-radius: 1mm;
+  background: #fff;
+  font-size: 11pt;
+  padding: 0 2mm;
+}
+
+.centre-candidate {
+  padding: 3mm 5mm;
+  font-size: 8.5pt;
+  display: flex;
+  gap: 4mm;
+}
+.centre-candidate > div { flex: 1; }
+.centre-candidate .boxes {
+  display: flex;
+  gap: 1mm;
+  margin-top: 1mm;
+}
+.centre-candidate .boxes span {
+  width: 5.5mm;
+  height: 7mm;
+  border: 0.5pt solid #000;
+  border-radius: 1mm;
+  background: #fff;
+}
+
+.subject-block {
+  padding: 5mm 5mm 4mm 5mm;
+  background: #fff;
+}
+.subject-block .brand-line {
+  font-size: 11pt;
+  font-weight: 700;
+  margin-bottom: 2mm;
+}
+.subject-block .subject-name {
+  font-size: 24pt;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.1;
+}
+.subject-block .sub-title {
+  font-size: 13pt;
+  font-weight: 700;
+  margin-top: 1.5mm;
+}
+.subject-block .paper-title {
+  font-size: 13pt;
+  font-weight: 700;
+  margin-top: 0.5mm;
+}
+
+.session-row {
+  display: flex;
+}
+.session-row .session {
+  flex: 1;
+  padding: 3mm 5mm;
+  border-right: 1px solid #000;
+  font-weight: 700;
+  font-size: 11pt;
+}
+.session-row .session .time { margin-top: 1mm; }
+.session-row .reference {
+  width: 52mm;
+  padding: 3mm 5mm;
+  text-align: left;
+}
+.session-row .reference .tag { font-size: 9pt; }
+.session-row .reference .code {
+  font-size: 16pt;
+  font-weight: 700;
+  margin-top: 1mm;
+}
+
+.materials-row {
+  display: flex;
+}
+.materials-row .mat {
+  flex: 1;
+  padding: 3mm 5mm;
+  border-right: 1px solid #000;
+  font-size: 10pt;
+}
+.materials-row .marks {
+  width: 52mm;
+  padding: 3mm 5mm;
+  font-size: 9pt;
+}
+
+.pearson-brand {
+  font-family: "Trebuchet MS", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+.pearson-brand .pearson { font-size: 15pt; }
+.pearson-brand .edexcel {
+  background: #000;
+  color: #fff;
+  padding: 1px 4px;
+  font-size: 13pt;
+}
+
+/* Instruction lists */
+.section-head {
+  font-weight: 700;
+  font-size: 11.5pt;
+  margin: 5mm 0 1.5mm 0;
+}
+.bullets {
+  margin: 0 0 4mm 0;
+  padding-left: 6mm;
+  list-style: none;
+}
+.bullets li {
+  position: relative;
+  padding-left: 4mm;
+  margin-bottom: 1mm;
+  font-size: 10.5pt;
+}
+.bullets li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.bullets li em { color: #222; }
+.bullets li b { font-weight: 700; }
+
+.cover-footer {
+  position: absolute;
+  bottom: 8mm;
+  left: 14mm;
+  right: 14mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 8.5pt;
+}
+.cover-footer .left { font-family: "Courier New", monospace; font-size: 10pt; letter-spacing: 1px; }
+.cover-footer .left small { font-size: 7pt; display: block; margin-top: 1mm; }
+.cover-footer .right {
+  font-family: "Trebuchet MS", sans-serif;
+  font-weight: 700;
+}
+.cover-footer .right .pearson { font-size: 14pt; }
+
+/* ---- Section header inside a frame ----------------------- */
+.section-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 13pt;
+  margin: 2mm 0 4mm 0;
+  letter-spacing: 0.5px;
+}
+.section-intro {
+  text-align: center;
+  font-size: 10.5pt;
+  margin-bottom: 2mm;
+}
+.section-intro b { font-weight: 700; }
+
+/* ---- Questions -------------------------------------------- */
+.question {
+  margin-top: 4mm;
+  position: relative;
+}
+.question .qnum {
+  position: absolute;
+  left: -6mm;
+  font-weight: 700;
+}
+.question .qbody { padding-left: 0; }
+
+.qpart {
+  margin: 3mm 0 1mm 0;
+}
+.qpart .plabel { font-weight: 400; }
+
+.marks {
+  display: block;
+  text-align: right;
+  font-weight: 700;
+  margin: 1mm 0;
+}
+
+.mcq { margin: 2mm 0 2mm 5mm; }
+.mcq .opt {
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  margin: 1.2mm 0;
+}
+.mcq .tickbox {
+  width: 4.5mm;
+  height: 4.5mm;
+  border: 0.5pt solid #000;
+  display: inline-block;
+}
+.mcq .optlabel { font-weight: 700; width: 4mm; }
+
+.total-line {
+  text-align: right;
+  font-weight: 700;
+  border-top: 0.5pt solid #000;
+  margin-top: 2mm;
+  padding-top: 1mm;
+}
+
+.section-total {
+  text-align: center;
+  font-weight: 700;
+  margin-top: 6mm;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Dotted answer lines --------------------------------- */
+.lines {
+  margin-top: 2mm;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 7.5mm,
+    #777 7.5mm,
+    #777 7.5mm
+  );
+  background-size: 100% 8mm;
+  background-repeat: repeat-y;
+  width: 100%;
+}
+/* Better approach: generated lines as flex rows */
+.lines-flex { display: flex; flex-direction: column; gap: 0; margin-top: 2mm; }
+.lines-flex .line {
+  height: 8mm;
+  border-bottom: 0.4pt dotted #777;
+}
+
+/* ---- Tables ------------------------------------------------ */
+table.data {
+  border-collapse: collapse;
+  margin: 3mm auto;
+  font-size: 10pt;
+  width: 100%;
+}
+table.data th, table.data td {
+  border: 0.5pt solid #000;
+  padding: 2mm 3mm;
+  text-align: center;
+  vertical-align: middle;
+}
+table.data th {
+  font-weight: 700;
+  background: #f0f0f0;
+}
+
+/* ---- Extract boxes (Section B) --------------------------- */
+.figure-title, .extract-title {
+  font-weight: 700;
+  margin: 4mm 0 1mm 0;
+  font-size: 10.5pt;
+}
+.extract-body {
+  position: relative;
+  padding: 2mm 12mm 2mm 2mm;
+  font-size: 10.5pt;
+  line-height: 1.4;
+  margin-bottom: 3mm;
+  counter-reset: extract-line;
+}
+.extract-body p {
+  margin: 0 0 2mm 0;
+}
+.extract-body .lineno {
+  position: absolute;
+  right: 4mm;
+  font-size: 9pt;
+  color: #000;
+  font-weight: 400;
+}
+.extract-body .source {
+  font-style: italic;
+  font-size: 9.5pt;
+  margin-top: 2mm;
+  color: #222;
+}
+
+/* ---- SVG figures ----------------------------------------- */
+.figure {
+  margin: 3mm 0;
+  text-align: center;
+}
+.figure svg {
+  max-width: 100%;
+  height: auto;
+}
+.figure .caption {
+  font-size: 9.5pt;
+  font-style: italic;
+  margin-top: 2mm;
+  text-align: center;
+}
+
+/* ---- Nav + print button (screen only) -------------------- */
+.topnav {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  border: 1px solid #999;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+.topnav a, .topnav button {
+  margin: 0 6px;
+  color: #0b49a0;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+.topnav button { font-weight: 700; }
+
+/* Utility */
+.center { text-align: center; }
+.italic { font-style: italic; }
+.bold { font-weight: 700; }
+.small { font-size: 9pt; }
+.mt2 { margin-top: 2mm; }
+.mt4 { margin-top: 4mm; }
+.mt6 { margin-top: 6mm; }
+.mb2 { margin-bottom: 2mm; }
+
+    </style>
+    </head>
+    <body>
+    <div class="topnav no-print">
+      <a href="index.html">&larr; Index</a>
+      <button onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+<div class="page">
+  <div class="frame" style="padding: 10mm 12mm;">
+    <div class="cover-box">
+      <div class="cover-row">
+        <div class="name-fields">
+          <div class="label">Write your name here</div>
+          <div class="pair">
+            <div><div class="tag">Surname</div><input type="text" /></div>
+            <div><div class="tag">Other names</div><input type="text" /></div>
+          </div>
+        </div>
+        <div style="width: 52mm;">
+          <div class="centre-candidate" style="padding: 4mm 5mm; flex-direction: column; gap: 2mm;">
+            <div>
+              <div class="pearson-brand">
+                <span class="pearson">Pearson</span>
+                <span class="edexcel">Edexcel</span>
+              </div>
+              <div style="font-size: 10pt; font-weight: 700; margin-top: 1mm;">Level 3 GCE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cover-row">
+        <div class="name-fields" style="padding: 3mm 5mm;">
+          <div class="pair">
+            <div>
+              <div class="tag">Centre Number</div>
+              <div class="boxes" style="display: flex; gap: 1mm;">
+                <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+                <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+              </div>
+            </div>
+            <div>
+              <div class="tag">Candidate Number</div>
+              <div class="boxes" style="display: flex; gap: 1mm;">
+                <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+                <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="width: 52mm; padding: 3mm 5mm;"></div>
+      </div>
+      <div class="cover-row">
+        <div class="subject-block" style="width: 100%;">
+          <div class="subject-name">Economics A</div>
+          <div class="sub-title">Advanced</div>
+          <div class="paper-title">Paper 1: Markets and Business Behaviour</div>
+        </div>
+      </div>
+      <div class="session-row">
+        <div class="session">
+          Wednesday 10 June 2026 &ndash; Morning
+          <div class="time">Time: 2 hours</div>
+        </div>
+        <div class="reference">
+          <div class="tag">Paper Reference</div>
+          <div class="code">9EC0/01</div>
+        </div>
+      </div>
+      <div class="materials-row">
+        <div class="mat">You do not need any other materials.</div>
+        <div class="marks">Total Marks<br><br></div>
+      </div>
+    </div>
+
+    <div class="section-head">Instructions</div>
+    <ul class="bullets">
+      <li>Use <b>black</b> ink or ball-point pen.</li>
+      <li><b>Fill in the boxes</b> at the top of this page with your name,<br>centre number and candidate number.</li>
+      <li>There are three sections in this question paper. Answer <b>all</b> questions from Section A and Section B. Answer <b>one</b> question from Section C.</li>
+      <li>Answer the questions in the spaces provided<br><em>&ndash; there may be more space than you need.</em></li>
+    </ul>
+
+    <div class="section-head">Information</div>
+    <ul class="bullets">
+      <li>The total mark for this paper is 100.</li>
+      <li>The marks for <b>each</b> question are shown in brackets<br><em>&ndash; use this as a guide as to how much time to spend on each question.</em></li>
+      <li>Calculators may be used.</li>
+    </ul>
+
+    <div class="section-head">Advice</div>
+    <ul class="bullets">
+      <li>Read each question carefully before you start to answer it.</li>
+      <li>Check your answers if you have time at the end.</li>
+    </ul>
+  </div>
+
+  <div class="hatch right" style="width: 8mm;"><span class="dnw">&nbsp;</span></div>
+
+  <div class="turn-over">Turn over</div>
+  <div class="cover-footer">
+    <div class="left">
+      P72345A<br>
+      <small>&copy;2026 Pearson Education Ltd.</small><br>
+      <small>1/1/1/1/1/1/1</small>
+    </div>
+    <div style="flex: 1; text-align: center;">
+      <span class="barcode"><span class="bars"></span></span>
+    </div>
+    <div class="right pearson-brand">
+      <span class="pearson">Pearson</span>
+    </div>
+  </div>
+</div>
+
+<style>
+.cell { display:inline-block; width: 6mm; height: 7mm; border: 0.5pt solid #000; border-radius: 1mm; background:#fff; }
+</style>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="section-title">SECTION A</div>
+<div class="section-intro"><b>Answer ALL questions. Write your answers in the spaces provided.</b></div>
+<div class="section-intro">Some questions must be answered with a cross in a box &#x2612;. If you change your mind about an
+answer, put a line through the box &#x2612; and then mark your new answer with a cross &#x2612;.</div>
+<div class="section-intro">You are advised to spend 30 minutes on this section.</div>
+<div class="section-intro">Use the data to support your answers where relevant. You may annotate and include diagrams in your answers.</div>
+
+<div class="question">
+  <span class="qnum">1</span>
+  <div class="qbody">The table shows the daily demand and supply for premium ride-hailing trips in central London. At the original equilibrium price of &pound;18, the quantity traded is 40,000 trips.</div>
+</div>
+<table class="data">
+<tr><th>Price (&pound;)</th><th>Quantity demanded<br>per day (000)</th><th>Quantity supplied<br>per day (000)</th><th>New quantity<br>demanded (000)</th><th>New quantity<br>supplied (000)</th></tr>
+<tr><td>24</td><td>28</td><td>52</td><td></td><td></td></tr>
+<tr><td>21</td><td>34</td><td>46</td><td></td><td></td></tr>
+<tr><td>18</td><td>40</td><td>40</td><td></td><td></td></tr>
+<tr><td>15</td><td>46</td><td>34</td><td></td><td></td></tr>
+<tr><td>12</td><td>52</td><td>28</td><td></td><td></td></tr>
+</table>
+
+  </div>
+  <div class="page-number left">2</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="qpart">(a) A sudden strike on the London Underground causes demand to rise by 9,000 trips at every price; at the same time, dynamic-surge algorithms raise the effective price at which any given quantity is supplied by &pound;3. Calculate the new equilibrium price and quantity. Use the last two columns for your working. <span class="marks">(4)</span></div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="qpart">(b) If price elasticity of demand in this market is estimated at &minus;0.67 and price elasticity of supply is +0.67, then following a 15% rise in the equilibrium price, total platform revenue is most likely to: <span class="marks">(1)</span></div><div class="mcq"><div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>fall by approximately 5%</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>rise by approximately 5%</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>rise by approximately 15%</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>remain unchanged</span></div></div><div class="total-line">(Total for Question 1 = 5 marks)</div>
+  </div>
+  <div class="page-number right">3</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="question">
+  <span class="qnum">2</span>
+  <div class="qbody">In 2024 UK consumer spending on online video-on-demand services rose 11% year-on-year. The cross elasticity of demand between subscription video-on-demand and cinema tickets is estimated at +0.3, and between subscription video-on-demand and broadband internet at &minus;0.6.</div>
+</div>
+
+<div class="qpart">(a) Using the cross-elasticity values, analyse the likely relationships between subscription video-on-demand and (i) cinema tickets and (ii) broadband internet. <span class="marks">(4)</span></div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="qpart">(b) A rise in the price of broadband of 5% would, other things equal, cause the quantity demanded of subscription video-on-demand to: <span class="marks">(1)</span></div><div class="mcq"><div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>rise by 3%</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>fall by 3%</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>rise by 0.6%</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>fall by 0.6%</span></div></div><div class="total-line">(Total for Question 2 = 5 marks)</div>
+  </div>
+  <div class="page-number left">4</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="question">
+  <span class="qnum">3</span>
+  <div class="qbody">The UK Digital Markets, Competition and Consumers Act (2024) gives the CMA powers to designate large platforms as having 'Strategic Market Status' and impose tailored conduct requirements.</div>
+</div>
+
+<div class="figure">
+<svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg" style="max-width: 105mm;">
+  <line x1="60" y1="20" x2="60" y2="230" stroke="#000"/>
+  <line x1="60" y1="230" x2="400" y2="230" stroke="#000"/>
+  <text x="15" y="25" font-size="11">Price (&pound;)</text>
+  <text x="280" y="250" font-size="11">Quantity (bn litres)</text>
+  <line x1="80" y1="50" x2="380" y2="210" stroke="#000" stroke-width="1.2"/>
+  <text x="385" y="215" font-size="12" font-weight="bold">D</text>
+  <line x1="80" y1="200" x2="380" y2="60" stroke="#000" stroke-width="1.2"/>
+  <text x="385" y="60" font-size="12" font-weight="bold">S</text>
+  <line x1="110" y1="180" x2="380" y2="40" stroke="#000" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <text x="385" y="40" font-size="12" font-weight="bold">S+tax</text>
+  <line x1="60" y1="120" x2="230" y2="120" stroke="#000" stroke-dasharray="2,2"/>
+  <line x1="230" y1="120" x2="230" y2="230" stroke="#000" stroke-dasharray="2,2"/>
+  <text x="30" y="124" font-size="10">&pound;1.20</text>
+  <line x1="60" y1="100" x2="210" y2="100" stroke="#000" stroke-dasharray="2,2"/>
+  <line x1="210" y1="100" x2="210" y2="230" stroke="#000" stroke-dasharray="2,2"/>
+  <text x="30" y="104" font-size="10">&pound;1.32</text>
+  <line x1="60" y1="140" x2="210" y2="140" stroke="#000" stroke-dasharray="2,2"/>
+  <text x="30" y="144" font-size="10">&pound;1.14</text>
+  <text x="225" y="245" font-size="10">3.6</text>
+  <text x="205" y="245" font-size="10">4.0</text>
+</svg>
+</div>
+
+<div class="qpart">(a) Using a cost and revenue diagram, show the effect on a dominant platform's supernormal profits of a CMA requirement that it caps the commission it charges merchants. <span class="marks">(4)</span></div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="qpart">(b) A price cap set below a monopolist's profit-maximising price is most likely to: <span class="marks">(1)</span></div><div class="mcq"><div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>raise producer surplus</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>reduce consumer surplus</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>reduce deadweight loss</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>raise the monopoly price</span></div></div><div class="total-line">(Total for Question 3 = 5 marks)</div>
+  </div>
+  <div class="page-number right">5</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="question">
+  <span class="qnum">4</span>
+  <div class="qbody">In 2025 two major UK delivery platforms, Deliveroo and Just Eat, faced accusations of engaging in tacit collusion on the commissions charged to restaurants.</div>
+</div>
+
+<div class="qpart">(a) With reference to the kinked demand curve model, explain why firms in an oligopoly might avoid open price competition. <span class="marks">(4)</span></div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="qpart">(b) Tacit collusion is most likely to be sustainable in a market with: <span class="marks">(1)</span></div><div class="mcq"><div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>many firms and transparent prices</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>few firms and repeated interactions</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>low barriers to entry</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>highly differentiated products</span></div></div><div class="total-line">(Total for Question 4 = 5 marks)</div>
+  </div>
+  <div class="page-number left">6</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="question">
+  <span class="qnum">5</span>
+  <div class="qbody">Amazon and Flipkart have been accused of using data collected from third-party sellers on their platforms to launch directly competing own-brand products.</div>
+</div>
+
+<div class="qpart">(a) Explain one way in which information asymmetry between a platform and its sellers may give rise to market failure. <span class="marks">(4)</span></div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="qpart">(b) Requiring a platform to separate its marketplace operations from its own-brand retailing is an example of: <span class="marks">(1)</span></div><div class="mcq"><div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>a Pigouvian tax</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>structural remedy in competition policy</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>price regulation</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>a minimum efficient scale requirement</span></div></div><div class="total-line">(Total for Question 5 = 5 marks)</div><div class="section-total">TOTAL FOR SECTION A = 25 MARKS</div>
+  </div>
+  <div class="page-number right">7</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="center" style="margin-top: 80mm;">
+  <div class="bold">BLANK PAGE</div>
+  <div class="bold" style="margin-top: 4mm;">QUESTION 6 BEGINS ON THE NEXT PAGE.</div>
+</div>
+
+  </div>
+  <div class="page-number left">8</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="section-title">SECTION B</div>
+<div class="section-intro"><b>Read Figures 1 and 2 and the following extracts (A to C) before answering Question 6.</b></div>
+<div class="section-intro">Write your answers in the spaces provided.</div>
+<div class="section-intro">You are advised to spend 1 hour on this section.</div>
+
+<div class="question">
+  <span class="qnum">6</span>
+  <div class="qbody"><b>The UK digital platform economy: market power, data and competition policy</b></div>
+</div>
+
+<div class="figure-title">Figure 1: Revenue and global market capitalisation of leading digital platforms, 2024 (US$ bn)</div>
+<div class="figure">
+<svg viewBox="0 0 460 220" xmlns="http://www.w3.org/2000/svg" style="max-width: 130mm;">
+  <line x1="90" y1="20" x2="90" y2="195" stroke="#000"/>
+  <line x1="90" y1="195" x2="440" y2="195" stroke="#000"/>
+  <g font-size="10"><text x="10" y="35">Apple</text><text x="10" y="65">Microsoft</text><text x="10" y="95">Alphabet</text><text x="10" y="125">Amazon</text><text x="10" y="155">Meta</text></g>
+  <g><rect x="90" y="25"  width="220" height="10" fill="#444"/><rect x="90" y="37" width="310" height="10" fill="#999"/>
+     <rect x="90" y="55"  width="190" height="10" fill="#444"/><rect x="90" y="67" width="300" height="10" fill="#999"/>
+     <rect x="90" y="85"  width="230" height="10" fill="#444"/><rect x="90" y="97" width="160" height="10" fill="#999"/>
+     <rect x="90" y="115" width="300" height="10" fill="#444"/><rect x="90" y="127" width="150" height="10" fill="#999"/>
+     <rect x="90" y="145" width="105" height="10" fill="#444"/><rect x="90" y="157" width="100" height="10" fill="#999"/></g>
+  <g font-size="9">
+    <text x="315" y="33">385</text><text x="405" y="45">3,400</text>
+    <text x="285" y="63">245</text><text x="395" y="75">3,200</text>
+    <text x="325" y="93">310</text><text x="255" y="105">1,700</text>
+    <text x="395" y="123">575</text><text x="245" y="135">1,600</text>
+    <text x="200" y="153">135</text><text x="195" y="165">1,150</text>
+  </g>
+  <g font-size="9"><text x="340" y="215">&#9632; Revenue</text><text x="400" y="215" fill="#777">&#9632; Mkt cap</text></g>
+</svg>
+<div class="caption">(Source: adapted from company financial filings and Bloomberg data, 2024)</div>
+</div>
+
+<div class="figure-title" style="margin-top: 5mm;">Figure 2: UK digital advertising spend by platform, 2024</div>
+<div class="figure">
+<svg viewBox="0 0 460 200" xmlns="http://www.w3.org/2000/svg" style="max-width: 130mm;">
+  <g transform="translate(140 95)">
+    <path d="M 0 0 L 0 -80 A 80 80 0 0 1 70 -38 Z" fill="#000"/>
+    <path d="M 0 0 L 70 -38 A 80 80 0 0 1 65 47 Z" fill="#555"/>
+    <path d="M 0 0 L 65 47 A 80 80 0 0 1 -45 66 Z" fill="#999"/>
+    <path d="M 0 0 L -45 66 A 80 80 0 0 1 -78 -17 Z" fill="#bbb"/>
+    <path d="M 0 0 L -78 -17 A 80 80 0 0 1 0 -80 Z" fill="#666"/>
+  </g>
+  <g font-size="10">
+    <text x="270" y="35">Google (Search &amp; YouTube) 42%</text>
+    <text x="270" y="60">Meta (Facebook &amp; Instagram) 27%</text>
+    <text x="270" y="85">Amazon 18%</text>
+    <text x="270" y="110">TikTok 7%</text>
+    <text x="270" y="135">Others 6%</text>
+  </g>
+</svg>
+<div class="caption">(Source: adapted from Advertising Association / WARC UK adspend report, 2024)</div>
+</div>
+
+
+  </div>
+  <div class="page-number right">9</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="extract-title">Extract A</div>
+<div class="extract-title" style="font-style: italic;">Network effects and the self-reinforcing nature of platform power</div>
+<div class="extract-body">
+  <p>Leading digital platforms benefit from powerful network effects: each additional user makes the platform more valuable to other users, drivers, merchants or advertisers. This creates positive feedback loops that can allow a dominant firm to entrench its position even in the absence of strong economies of scale. In several markets, two-sided network effects &mdash; between riders and drivers, buyers and sellers, or content creators and consumers &mdash; reinforce these dynamics.</p><p>Critics argue that such markets exhibit a 'winner-takes-most' tendency, and that traditional measures of market share based on revenue may understate the extent of market power. Defenders of large platforms counter that they remain contestable, citing the rapid rise of challengers such as TikTok and the disruption of legacy retailers.</p><p>Commentators have increasingly focused on non-price dimensions of competition: quality of recommendations, access to user data, and the design of interfaces that shape consumer choice.</p>
+  <p class="source">(Source: adapted from OECD Digital Economy Outlook, 2024)</p>
+</div>
+
+  </div>
+  <div class="page-number left">10</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="extract-title">Extract B</div>
+<div class="extract-title" style="font-style: italic;">Data as a barrier to entry</div>
+<div class="extract-body">
+  <p>A central feature of the modern platform economy is the role of consumer data. Large incumbents have access to vast troves of behavioural, location and transaction data that allow them to personalise recommendations and target advertising with unparalleled precision. New entrants face a classic chicken-and-egg problem: without scale they cannot train effective algorithms, but without effective algorithms they cannot achieve scale.</p><p>Data portability obligations &mdash; requirements that incumbents make it easier for users to export their data to rival services &mdash; are one proposed remedy. Others include mandated interoperability, so that users of one social network can interact with users of another. Critics warn that such remedies risk diluting the product improvements that user data makes possible, and may raise privacy risks if not carefully designed.</p>
+  <p class="source">(Source: adapted from the Stigler Center report on digital platforms, 2024)</p>
+</div>
+
+<div class="extract-title">Extract C</div>
+<div class="extract-title" style="font-style: italic;">The UK's Digital Markets, Competition and Consumers Act, 2024</div>
+<div class="extract-body">
+  <p>The UK's Digital Markets, Competition and Consumers Act, which came into force in late 2024, creates a new competition regime targeted at the largest digital platforms. The CMA can designate firms with 'Strategic Market Status' and impose tailored conduct requirements: non-discrimination rules, data-sharing obligations, or restrictions on self-preferencing.</p><p>Supporters argue the regime allows faster and more flexible intervention than traditional antitrust, which has often been criticised as too slow to keep up with fast-moving digital markets. Critics worry that conduct requirements may deter innovation, penalise success, and hand substantial discretionary power to a single regulator.</p>
+  <p class="source">(Source: adapted from CMA guidance and UK government consultation papers, 2024)</p>
+</div>
+
+  </div>
+  <div class="page-number right">11</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="qpart">6 (a) With reference to Figure 1 and Extract A, explain one likely reason why digital-platform markets tend towards a 'winner-takes-most' outcome. <span class="marks">(5)</span></div><div class="qpart">(b) With reference to Figure 2 and Extract A, discuss the potential consumer-welfare consequences of high concentration in the UK digital advertising market. <span class="marks">(12)</span></div><div class="qpart">(c) Examine the extent to which data-portability obligations (Extract B) are likely to reduce barriers to entry in digital markets. <span class="marks">(8)</span></div><div class="qpart">(d) Assess the case for designating a dominant digital platform as having 'Strategic Market Status' under the 2024 Act. Refer to Extract C in your answer. <span class="marks">(10)</span></div><div class="qpart">(e) Discuss whether traditional measures of market power, such as market share and the Herfindahl-Hirschman Index, are adequate for regulating competition in digital platform markets. Refer to the extracts and your own knowledge. <span class="marks">(15)</span></div>
+  </div>
+  <div class="page-number left">12</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number right">13</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="qpart" style="font-weight:700">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number left">14</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="qpart" style="font-weight:700">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number right">15</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="qpart" style="font-weight:700">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number left">16</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="qpart" style="font-weight:700">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number right">17</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="qpart" style="font-weight:700">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number left">18</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="qpart" style="font-weight:700">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number right">19</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="qpart" style="font-weight:700">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number left">20</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="qpart bold">Question 6 continued</div>
+<div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+<div class="total-line">(Total for Question 6 = 50 marks)</div>
+<div class="section-total">TOTAL FOR SECTION B = 50 MARKS</div>
+
+  </div>
+  <div class="page-number right">21</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="center" style="margin-top: 80mm;">
+  <div class="bold">BLANK PAGE</div>
+  <div class="bold" style="margin-top: 4mm;">SECTION C BEGINS ON THE NEXT PAGE.</div>
+</div>
+
+  </div>
+  <div class="page-number left">22</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="section-title">SECTION C</div>
+<div class="section-intro"><b>Answer ONE question from this section.</b></div>
+<div class="section-intro">Write your answer in the space provided.</div>
+<div class="section-intro">You are advised to spend 30 minutes on this section.</div>
+
+<div class="mt6 bold">EITHER</div>
+
+<div class="question mt2">
+  <span class="qnum">7</span>
+  <div class="qbody">Some economists argue that the rise of very large, data-rich firms has fundamentally changed the nature of competition in modern consumer markets.
+  <div class="mt4"><b>Evaluate the extent to which existing microeconomic theory adequately explains behaviour and outcomes in digital platform markets.</b></div>
+  </div>
+</div>
+<div class="total-line">(Total for Question 7 = 25 marks)</div>
+
+<div class="mt6 bold">OR</div>
+
+<div class="question mt2">
+  <span class="qnum">8</span>
+  <div class="qbody">'Behavioural economics has shown that consumers are systematically irrational. The pricing strategies of large firms in online markets exploit this irrationality, justifying extensive government intervention.'
+  <div class="mt4"><b>To what extent do you agree? Refer to specific examples in your answer.</b></div>
+  </div>
+</div>
+<div class="total-line">(Total for Question 8 = 25 marks)</div>
+
+  </div>
+  <div class="page-number right">23</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div>Indicate which question you are answering by marking a cross in the box &#x2612;. If you change your
+mind, put a line through the box &#x2612; and then indicate your new question with a cross &#x2612;.</div>
+
+<div class="mt4" style="display: flex; gap: 20mm;">
+  <div><span style="display: inline-block; width: 4.5mm; height: 4.5mm; border: 0.5pt solid #000; vertical-align: middle;"></span> <b>Chosen question number: Question 7</b></div>
+  <div><span style="display: inline-block; width: 4.5mm; height: 4.5mm; border: 0.5pt solid #000; vertical-align: middle;"></span> <b>Question 8</b></div>
+</div>
+
+<div class="mt4 bold">Write your answer here:</div>
+
+<div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+
+  </div>
+  <div class="page-number left">24</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 7 / Question 8 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number right">25</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 7 / Question 8 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number left">26</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 7 / Question 8 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number right">27</div>
+  <div class="barcode"><span class="bars"></span></div>
+  <div class="turn-over">Turn over</div>
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+    <div class="bold">Question 7 / Question 8 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="page-number left">28</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+
+<div class="page">
+  <div class="hatch left">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="hatch right">
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+    <span class="dnw">DO NOT WRITE IN THIS AREA</span>
+  </div>
+  <div class="frame">
+
+<div class="bold">Question 7 / Question 8 continued</div>
+<div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+<div class="total-line">(Total for Question = 25 marks)</div>
+<div class="section-total">TOTAL FOR SECTION C = 25 MARKS<br>TOTAL FOR PAPER = 100 MARKS</div>
+
+  </div>
+  <div class="page-number right">29</div>
+  <div class="barcode"><span class="bars"></span></div>
+
+</div>
+
+    </body>
+    </html>
