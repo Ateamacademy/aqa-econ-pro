@@ -79,7 +79,6 @@ const PAPER_1: Paper = {
       totalMarks: 25,
       timeAdvice: "You are advised to spend 30 minutes on this section.",
       instructions: ["Answer ALL questions. Write your answers in the spaces provided."],
-      mcqReminder: true,
       questions: [
         {
           number: "1",
@@ -112,47 +111,30 @@ const PAPER_1: Paper = {
             {
               label: "(b)",
               prompt:
-                "The cross elasticity of demand between reusable coffee cups and disposable cups is estimated to be +1.4. A 10% rise in the price of disposable cups will cause the quantity demanded of reusable cups to:",
-              marks: 1,
-              mcq: [
-                { letter: "A", text: "fall by 14%" },
-                { letter: "B", text: "fall by 1.4%" },
-                { letter: "C", text: "rise by 1.4%" },
-                { letter: "D", text: "rise by 14%" },
-              ],
+                "The cross elasticity of demand between reusable coffee cups and disposable cups is estimated to be +1.4. Calculate the percentage change in the quantity demanded of reusable coffee cups following a 10% rise in the price of disposable cups. Show your working.",
+              marks: 2,
+              showWorking: true,
             },
           ],
-          totalMarks: 5,
+          totalMarks: 6,
         },
         {
           number: "2",
           intro:
-            "Between 2020 and 2024 the average price of streaming subscriptions in the UK rose from £8.99 to £12.99 per month, while the number of household subscriptions rose from 18 million to 22 million.",
+            "Between 2020 and 2024 the average price of streaming subscriptions in the UK rose from £8.99 to £12.99 per month, while the number of household subscriptions rose from 18 million to 22 million. Over the same period UK real household disposable income rose by 6%.",
           parts: [
             {
               label: "(a)",
               prompt:
-                "Assuming the change in quantity was caused only by other factors, calculate the income elasticity of demand, given that UK real household disposable income rose by 6% over the period. Show your working.",
-              marks: 2,
+                "Assuming the change in quantity was caused only by the change in income, calculate the income elasticity of demand for streaming subscriptions. Show your working.",
+              marks: 3,
               showWorking: true,
             },
             {
               label: "(b)",
               prompt:
-                "Calculate the percentage change in total consumer expenditure on streaming subscriptions between 2020 and 2024. Show your working.",
+                "With reference to your answer to (a), explain what the value suggests about the nature of streaming subscriptions as a good.",
               marks: 2,
-              showWorking: true,
-            },
-            {
-              label: "(c)",
-              prompt: "Streaming subscriptions are best described as a:",
-              marks: 1,
-              mcq: [
-                { letter: "A", text: "complement to broadband" },
-                { letter: "B", text: "demerit good" },
-                { letter: "C", text: "normal good" },
-                { letter: "D", text: "Giffen good" },
-              ],
             },
           ],
           totalMarks: 5,
@@ -160,35 +142,30 @@ const PAPER_1: Paper = {
         {
           number: "3",
           intro:
-            "The UK government has introduced an indirect tax of £0.18 per litre on sugary soft drinks. The diagram shows the effect.",
+            "The UK government has introduced an indirect tax of £0.18 per litre on sugary soft drinks. The diagram shows the effect on the market.",
           diagram: {
             id: "fig-q3-tax",
-            caption: "Effect of an indirect tax on sugary soft drinks",
+            caption: "Figure 1 — Effect of an indirect tax on sugary soft drinks",
             kind: "svg-supply-demand",
             data: { tax: true, P0: 1.2, P1: 1.32, Q0: 4, Q1: 3.6 },
           },
           parts: [
             {
               label: "(a)",
-              prompt: "Calculate the total tax revenue raised per year. Show your working.",
+              prompt:
+                "With reference to Figure 1, calculate the total tax revenue raised by the government per year. Show your working.",
               marks: 2,
               showWorking: true,
             },
-            { label: "(b)(i)", prompt: "Calculate the share of the tax paid by consumers.", marks: 1, showWorking: true },
-            { label: "(b)(ii)", prompt: "Calculate the share of the tax paid by producers.", marks: 1, showWorking: true },
             {
-              label: "(c)",
-              prompt: "One likely effect of this tax is to:",
-              marks: 1,
-              mcq: [
-                { letter: "A", text: "increase consumer surplus" },
-                { letter: "B", text: "reduce a negative externality" },
-                { letter: "C", text: "increase producer surplus" },
-                { letter: "D", text: "correct a positive externality" },
-              ],
+              label: "(b)",
+              prompt:
+                "With reference to Figure 1, calculate the share of the tax burden paid by consumers. Show your working.",
+              marks: 2,
+              showWorking: true,
             },
           ],
-          totalMarks: 5,
+          totalMarks: 4,
         },
         {
           number: "4",
@@ -198,42 +175,32 @@ const PAPER_1: Paper = {
             {
               label: "(a)",
               prompt:
-                "Draw a cost-and-revenue diagram to show the likely short-run impact on Greggs' supernormal profit.",
+                "Draw a cost-and-revenue diagram to show the likely short-run impact of the fall in footfall on Greggs' supernormal profit. Label your diagram fully.",
               marks: 4,
             },
             {
               label: "(b)",
-              prompt: "Which of the following is most likely to be a barrier to entry in the UK bakery market?",
-              marks: 1,
-              mcq: [
-                { letter: "A", text: "patents" },
-                { letter: "B", text: "vertical integration with suppliers" },
-                { letter: "C", text: "consumer inertia" },
-                { letter: "D", text: "brand loyalty" },
-              ],
+              prompt:
+                "With reference to your diagram, explain one likely barrier to entry that may protect Greggs' position in the UK bakery market.",
+              marks: 2,
             },
           ],
-          totalMarks: 5,
+          totalMarks: 6,
         },
         {
           number: "5",
           intro:
-            "The Competition and Markets Authority blocked a proposed merger between two UK veterinary chains in 2024, citing reduced competition.",
+            "The Competition and Markets Authority (CMA) blocked a proposed merger between two UK veterinary chains in 2024, citing reduced competition.",
           parts: [
-            { label: "(a)", prompt: "Explain one reason the CMA might block a horizontal merger.", marks: 4 },
+            { label: "(a)", prompt: "Explain one reason why the CMA might block a horizontal merger.", marks: 2 },
             {
               label: "(b)",
-              prompt: "Which is most likely to indicate a monopsony?",
-              marks: 1,
-              mcq: [
-                { letter: "A", text: "one large seller" },
-                { letter: "B", text: "many small buyers" },
-                { letter: "C", text: "one large buyer" },
-                { letter: "D", text: "few large sellers" },
-              ],
+              prompt:
+                "Examine one possible cost and one possible benefit to consumers of allowing the merger to proceed.",
+              marks: 2,
             },
           ],
-          totalMarks: 5,
+          totalMarks: 4,
         },
       ],
     },
