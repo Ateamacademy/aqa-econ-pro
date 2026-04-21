@@ -155,20 +155,14 @@
             "parts": [
               {
                 "label": "a",
-                "text": "Calculate the total annual tax revenue from this tax. You are advised to show your working.",
-                "marks": 2,
+                "marks": 4,
+                "text": "Calculate (i) the total annual tax revenue from this tax, and (ii) the percentage of the tax burden that falls on consumers. You are advised to show your working.",
                 "options": null
               },
               {
                 "label": "b",
-                "text": "Calculate the percentage of the tax burden that falls on consumers.",
-                "marks": 2,
-                "options": null
-              },
-              {
-                "label": "c",
-                "text": "One intended benefit of this tax is to:",
                 "marks": 1,
+                "text": "One intended benefit of this tax is to:",
                 "options": [
                   {
                     "label": "A",
@@ -853,14 +847,20 @@
             "parts": [
               {
                 "label": "a",
-                "text": "Using the cross-elasticity values, analyse the likely relationships between subscription video-on-demand and (i) cinema tickets and (ii) broadband internet.",
-                "marks": 4,
+                "marks": 2,
+                "text": "Using the cross-elasticity value of +0.3 between subscription video-on-demand and cinema tickets, calculate the expected percentage change in demand for subscription video-on-demand if cinema ticket prices rise by 10%. Show your working.",
                 "options": null
               },
               {
                 "label": "b",
-                "text": "A rise in the price of broadband of 5% would, other things equal, cause the quantity demanded of subscription video-on-demand to:",
+                "marks": 2,
+                "text": "Explain what the cross-elasticity value of −0.6 between subscription video-on-demand and broadband internet suggests about the relationship between the two goods.",
+                "options": null
+              },
+              {
+                "label": "c",
                 "marks": 1,
+                "text": "A rise in the price of broadband of 5% would, other things equal, cause the quantity demanded of subscription video-on-demand to:",
                 "options": [
                   {
                     "label": "A",
@@ -1169,14 +1169,20 @@
             "parts": [
               {
                 "label": "a",
-                "text": "Using the data, calculate the rate of real GDP growth in the UK in 2022. You are advised to show your working.",
-                "marks": 4,
+                "marks": 2,
+                "text": "Using the data, calculate the percentage change in the UK House Price Index (HPI) over the 2022–2024 period. You are advised to show your working.",
                 "options": null
               },
               {
                 "label": "b",
-                "text": "Which of the following best describes the UK's economic performance in 2022?",
+                "marks": 2,
+                "text": "Explain one likely reason for the change in the UK House Price Index identified in part (a).",
+                "options": null
+              },
+              {
+                "label": "c",
                 "marks": 1,
+                "text": "Which of the following best describes the UK's economic performance in 2022?",
                 "options": [
                   {
                     "label": "A",
@@ -1510,14 +1516,20 @@
             "parts": [
               {
                 "label": "a",
-                "text": "Using the 2021–2024 data, calculate the unemployment gap and briefly explain what it\nsuggests about wage-price pressures over the period.",
-                "marks": 4,
+                "marks": 2,
+                "text": "Using the 2021–2024 data, calculate the percentage depreciation of the Turkish lira against the US dollar over the period. You are advised to show your working.",
                 "options": null
               },
               {
                 "label": "b",
-                "text": "A fall in the estimated NAIRU between 1999–2007 and 2010–2019 is most consistent with:",
+                "marks": 2,
+                "text": "Explain one likely macroeconomic consequence of the lira depreciation calculated in part (a) for the Turkish economy.",
+                "options": null
+              },
+              {
+                "label": "c",
                 "marks": 1,
+                "text": "A fall in the estimated NAIRU between 1999–2007 and 2010–2019 is most consistent with:",
                 "options": [
                   {
                     "label": "A",
@@ -1821,14 +1833,20 @@
             "parts": [
               {
                 "label": "a",
-                "text": "Calculate the Taylor-rule recommended policy rate and explain briefly how it differs from a\npurely inflation-targeting rule.",
-                "marks": 4,
+                "marks": 2,
+                "text": "Using the data (current inflation π = 4.5%), calculate the real interest rate implied by the Taylor-rule recommended policy rate. Show your working.",
                 "options": null
               },
               {
                 "label": "b",
-                "text": "A Taylor-rule coefficient on inflation below 0.5 would generally be associated with:",
+                "marks": 2,
+                "text": "Explain one reason why the real interest rate calculated in part (a) might still be insufficient to bring inflation back to the 2% target.",
+                "options": null
+              },
+              {
+                "label": "c",
                 "marks": 1,
+                "text": "A Taylor-rule coefficient on inflation below 0.5 would generally be associated with:",
                 "options": [
                   {
                     "label": "A",
