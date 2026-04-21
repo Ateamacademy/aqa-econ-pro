@@ -2480,16 +2480,24 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                 />
               </div>
             </div>
-            <div className="rounded-2xl border border-border/60 bg-white overflow-hidden" style={{ height: "calc(100vh - 220px)", minHeight: 600 }}>
-              <iframe
-                id="edxa-booklet-frame"
-                src={selectedLibraryPaper.bookletUrl}
-                title={displayPaperTitle(selectedLibraryPaper.title)}
-                className="w-full h-full border-0 bg-white"
-              />
-            </div>
+            {(() => {
+              const booklet = getEdexcelABookletByBookletUrl(selectedLibraryPaper.bookletUrl);
+              if (!booklet) {
+                return (
+                  <div className="rounded-2xl border border-border/60 bg-white overflow-hidden" style={{ height: "calc(100vh - 220px)", minHeight: 600 }}>
+                    <iframe
+                      id="edxa-booklet-frame"
+                      src={selectedLibraryPaper.bookletUrl}
+                      title={displayPaperTitle(selectedLibraryPaper.title)}
+                      className="w-full h-full border-0 bg-white"
+                    />
+                  </div>
+                );
+              }
+              return <EdexcelABookletView paper={booklet} />;
+            })()}
             <p className="text-xs text-muted-foreground">
-              This is the authentic Pearson-style printable booklet. Use the browser's print dialog to save as PDF for offline practice.
+              Native dark-themed view of the official Pearson-style booklet. Use "Open print booklet" above for the A4 print-ready version.
             </p>
           </motion.div>
         )}
