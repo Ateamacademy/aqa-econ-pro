@@ -116,6 +116,12 @@ function renderSection(s: Section, runningQNum: { n: number }): string {
   const blocks: string[] = [];
   blocks.push(`## Section ${s.label}${s.totalMarks ? ` (${s.totalMarks} marks)` : ""}`);
   if (s.intro.length) blocks.push(s.intro.join("\n\n"));
+  // Section-level figures (e.g. Section B pie/bar charts) shown before extracts
+  (s.figures ?? []).forEach((f) => {
+    const md = renderFigure(f);
+    if (md) blocks.push(md);
+  });
+  (s.tables ?? []).forEach((t) => blocks.push(tableToMarkdown(t)));
   const extractsMd = renderExtracts(s.extracts);
   if (extractsMd) blocks.push(extractsMd);
   s.questions.forEach((q) => {
