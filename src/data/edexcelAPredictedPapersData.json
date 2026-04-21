@@ -1262,11 +1262,17 @@
               {
                 "label": "a",
                 "text": "Explain one likely effect of this cut in the Bank Rate on UK aggregate demand.",
-                "marks": 4,
+                "marks": 2,
                 "options": null
               },
               {
                 "label": "b",
+                "marks": 2,
+                "options": null,
+                "text": "Explain one likely effect of this cut in the Bank Rate on UK business investment."
+              },
+              {
+                "label": "c",
                 "text": "A cut in UK interest rates is most likely to cause the pound sterling, other things equal, to:",
                 "marks": 1,
                 "options": [
@@ -1299,12 +1305,6 @@
             "parts": [
               {
                 "label": "a",
-                "text": "Using an AD/AS diagram, explain the likely short-run effect on UK real GDP of a rise in government borrowing used to fund higher public spending.",
-                "marks": 4,
-                "options": null
-              },
-              {
-                "label": "b",
                 "text": "Which of the following best describes government net borrowing?",
                 "marks": 1,
                 "options": [
@@ -1325,6 +1325,12 @@
                     "text": "total interest payments on outstanding debt"
                   }
                 ]
+              },
+              {
+                "label": "b",
+                "text": "Using an AD/AS diagram, explain the likely short-run effect on UK real GDP of a rise in government borrowing used to fund higher public spending.",
+                "marks": 4,
+                "options": null
               }
             ],
             "totalMarks": 5
@@ -1375,12 +1381,6 @@
             "parts": [
               {
                 "label": "a",
-                "text": "Explain one supply-side policy that the UK government could use to raise long-run trend growth.",
-                "marks": 4,
-                "options": null
-              },
-              {
-                "label": "b",
                 "text": "Which of the following policies is most likely to raise long-run trend growth?",
                 "marks": 1,
                 "options": [
@@ -1401,6 +1401,12 @@
                     "text": "a higher rate of income tax"
                   }
                 ]
+              },
+              {
+                "label": "b",
+                "text": "Explain one supply-side policy that the UK government could use to raise long-run trend growth.",
+                "marks": 4,
+                "options": null
               }
             ],
             "totalMarks": 5
@@ -1447,20 +1453,20 @@
               },
               {
                 "label": "b",
-                "text": "With reference to Figure 2 and Extract B, discuss the likely macroeconomic effects of the Bank of England's decision to raise the Bank Rate from 0.1% to 5.25% between 2021 and 2023.",
-                "marks": 12,
-                "options": null
-              },
-              {
-                "label": "c",
                 "text": "Examine the case for using supply-side policy rather than demand-side policy to raise the UK's long-run trend rate of growth.",
                 "marks": 8,
                 "options": null
               },
               {
-                "label": "d",
+                "label": "c",
                 "text": "Assess the extent to which high levels of long-term sickness (Extract C) have held back the UK's economic recovery.",
                 "marks": 10,
+                "options": null
+              },
+              {
+                "label": "d",
+                "text": "With reference to Figure 2 and Extract B, discuss the likely macroeconomic effects of the Bank of England's decision to raise the Bank Rate from 0.1% to 5.25% between 2021 and 2023.",
+                "marks": 12,
                 "options": null
               },
               {
@@ -1602,12 +1608,18 @@
             "parts": [
               {
                 "label": "a",
-                "text": "Using an AD/AS diagram, explain one reason why the economy may fail to return to\npotential output without policy intervention.",
-                "marks": 4,
+                "text": "Explain, using AD/AS analysis, one reason why an economy may fail to return to potential output without policy intervention.",
+                "marks": 2,
                 "options": null
               },
               {
                 "label": "b",
+                "marks": 2,
+                "options": null,
+                "text": "Explain one reason why the size of the negative output gap may be difficult to estimate accurately in real time."
+              },
+              {
+                "label": "c",
                 "text": "A supply-side shock that raises the long-run aggregate supply curve is most likely to:",
                 "marks": 1,
                 "options": [
@@ -1640,12 +1652,6 @@
             "parts": [
               {
                 "label": "a",
-                "text": "Calculate the approximate fiscal multiplier for each package, assuming a simple closed-economy\nKeynesian framework with a marginal tax rate of 30%. Show your working.",
-                "marks": 4,
-                "options": null
-              },
-              {
-                "label": "b",
                 "text": "The difference between the two multipliers most clearly illustrates:",
                 "marks": 1,
                 "options": [
@@ -1666,6 +1672,12 @@
                     "text": "currency debasement"
                   }
                 ]
+              },
+              {
+                "label": "b",
+                "text": "Calculate the approximate fiscal multiplier for each package, assuming a simple closed-economy\nKeynesian framework with a marginal tax rate of 30%. Show your working.",
+                "marks": 4,
+                "options": null
               }
             ],
             "totalMarks": 5
@@ -1716,12 +1728,6 @@
             "parts": [
               {
                 "label": "a",
-                "text": "Explain one reason why a savings glut in emerging economies could contribute to secular\nstagnation in advanced economies.",
-                "marks": 4,
-                "options": null
-              },
-              {
-                "label": "b",
                 "text": "A policy most likely to counteract secular stagnation is:",
                 "marks": 1,
                 "options": [
@@ -1742,6 +1748,12 @@
                     "text": "export tariffs on capital-intensive goods"
                   }
                 ]
+              },
+              {
+                "label": "b",
+                "text": "Explain one reason why a savings glut in emerging economies could contribute to secular\nstagnation in advanced economies.",
+                "marks": 4,
+                "options": null
               }
             ],
             "totalMarks": 5
@@ -1787,20 +1799,20 @@
               },
               {
                 "label": "b",
-                "text": "With reference to Figure 2 and Extract B, discuss the possible effects of quantitative easing\nand yield-curve control on the Japanese macroeconomy.",
-                "marks": 12,
-                "options": null
-              },
-              {
-                "label": "c",
                 "text": "Examine why conventional monetary policy may be ineffective in a liquidity trap.",
                 "marks": 8,
                 "options": null
               },
               {
-                "label": "d",
+                "label": "c",
                 "text": "Assess the extent to which Japan's prolonged stagnation was driven by\ndemand-side rather than supply-side factors.",
                 "marks": 10,
+                "options": null
+              },
+              {
+                "label": "d",
+                "text": "With reference to Figure 2 and Extract B, discuss the possible effects of quantitative easing\nand yield-curve control on the Japanese macroeconomy.",
+                "marks": 12,
                 "options": null
               },
               {
@@ -1913,12 +1925,18 @@
             "parts": [
               {
                 "label": "a",
-                "text": "Explain why the estimated transmission lag between monetary policy and output is a key\nchallenge for the Monetary Policy Committee in 'real time'.",
-                "marks": 4,
+                "text": "Explain why the estimated transmission lag between monetary policy and output is a key challenge for the Monetary Policy Committee in 'real time'.",
+                "marks": 2,
                 "options": null
               },
               {
                 "label": "b",
+                "marks": 2,
+                "options": null,
+                "text": "Explain one reason why the existence of long and variable transmission lags makes monetary policy more difficult to set than fiscal policy."
+              },
+              {
+                "label": "c",
                 "text": "The existence of long and variable lags most strongly supports:",
                 "marks": 1,
                 "options": [
@@ -1951,12 +1969,6 @@
             "parts": [
               {
                 "label": "a",
-                "text": "Explain two reasons why Ricardian equivalence is unlikely to hold exactly in practice.",
-                "marks": 4,
-                "options": null
-              },
-              {
-                "label": "b",
                 "text": "The assumption most critical to strict Ricardian equivalence is:",
                 "marks": 1,
                 "options": [
@@ -1977,6 +1989,12 @@
                     "text": "government spending is financed entirely by taxation"
                   }
                 ]
+              },
+              {
+                "label": "b",
+                "text": "Explain two reasons why Ricardian equivalence is unlikely to hold exactly in practice.",
+                "marks": 4,
+                "options": null
               }
             ],
             "totalMarks": 5
@@ -2027,12 +2045,6 @@
             "parts": [
               {
                 "label": "a",
-                "text": "Explain one reason why the euro area has been widely judged to fall short of OCA criteria.",
-                "marks": 4,
-                "options": null
-              },
-              {
-                "label": "b",
                 "text": "Which of the following is most likely to increase the costs of currency-union\nmembership for a small member state?",
                 "marks": 1,
                 "options": [
@@ -2053,6 +2065,12 @@
                     "text": "a common automatic-stabiliser fiscal mechanism"
                   }
                 ]
+              },
+              {
+                "label": "b",
+                "text": "Explain one reason why the euro area has been widely judged to fall short of OCA criteria.",
+                "marks": 4,
+                "options": null
               }
             ],
             "totalMarks": 5
@@ -2098,20 +2116,20 @@
               },
               {
                 "label": "b",
-                "text": "With reference to Figure 2 and Extract B, discuss the possible consequences of a\ndebt-deflation dynamic for Chinese macroeconomic performance.",
-                "marks": 12,
-                "options": null
-              },
-              {
-                "label": "c",
                 "text": "Examine two reasons why a rebalancing from investment-led to consumption-led growth\nmay be politically and institutionally difficult in China.",
                 "marks": 8,
                 "options": null
               },
               {
-                "label": "d",
+                "label": "c",
                 "text": "Assess the extent to which China's 2021–2024 slowdown reflects a structural\nrather than a cyclical problem.",
                 "marks": 10,
+                "options": null
+              },
+              {
+                "label": "d",
+                "text": "With reference to Figure 2 and Extract B, discuss the possible consequences of a\ndebt-deflation dynamic for Chinese macroeconomic performance.",
+                "marks": 12,
                 "options": null
               },
               {
