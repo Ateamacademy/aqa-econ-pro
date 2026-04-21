@@ -2,175 +2,435 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mark Scheme &mdash; Paper 3: Microeconomics and Macroeconomics (Moderate)</title>
+<title>Mark Scheme — Pearson Edexcel A Level Economics A Paper 3 (9EC0/03) — Moderate</title>
 <style>
-    /* Pearson Edexcel mark scheme style */
-@page { size: A4; margin: 15mm 14mm 18mm 14mm; }
-
+@page { size: A4; margin: 18mm 16mm 20mm 16mm; }
 * { box-sizing: border-box; }
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 10pt;
-  line-height: 1.35;
-  color: #111;
-  margin: 0;
+html, body {
+  margin: 0; padding: 0; background: #ededed;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  font-size: 10.5pt; line-height: 1.4; color: #111;
 }
-.topnav {
-  background: #0b49a0; color: #fff; padding: 10px 18px;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 14px;
+.doc {
+  width: 210mm; min-height: 297mm; background: #fff;
+  margin: 10mm auto; padding: 18mm 16mm; box-shadow: 0 1px 6px rgba(0,0,0,0.18);
 }
-.topnav a, .topnav a:visited { color: #fff; text-decoration: none; font-weight: 600; }
-.topnav a:hover { text-decoration: underline; }
-.topnav button {
-  background: #fff; color: #0b49a0; border: 0; padding: 6px 14px;
-  font-weight: 600; border-radius: 3px; cursor: pointer;
+@media print { html, body { background: #fff; } .doc { margin: 0; box-shadow: none; padding: 0; } }
+.pearson-brand { font-family: "Trebuchet MS", sans-serif; font-weight: 700; letter-spacing: -0.2px; }
+.pearson-brand .pearson { font-size: 15pt; }
+.pearson-brand .edexcel { background: #000; color: #fff; padding: 1px 5px; font-size: 13pt; }
+.title-block {
+  text-align: center; margin: 25mm 0 40mm 0;
+  border-top: 2px solid #000; border-bottom: 2px solid #000;
+  padding: 10mm 0;
 }
-@media print { .no-print { display: none !important; } }
-
-.sheet { max-width: 190mm; margin: 0 auto; padding: 10mm 6mm; }
-
-.header-block {
-  border-bottom: 3px solid #000;
-  padding-bottom: 6mm;
-  margin-bottom: 8mm;
+.title-block h1 { font-size: 24pt; margin: 0 0 3mm 0; font-weight: 700; letter-spacing: 0.5px; }
+.title-block h2 { font-size: 14pt; margin: 0 0 2mm 0; font-weight: 400; }
+.title-block .paper-ref { font-size: 13pt; font-weight: 700; margin-top: 4mm; }
+.title-block .session { font-size: 11pt; margin-top: 2mm; font-style: italic; }
+.title-footer { text-align: center; margin-top: 25mm; font-size: 9.5pt; color: #333; }
+.title-footer .brand-inline { margin-bottom: 3mm; }
+h3.section-heading {
+  font-size: 14pt; font-weight: 700; margin: 10mm 0 3mm 0;
+  padding-bottom: 1mm; border-bottom: 1.5px solid #000;
 }
-.header-block .brand {
-  font-family: "Trebuchet MS", sans-serif;
-  font-weight: 700;
-  font-size: 18pt;
-  margin-bottom: 2mm;
+h4.sub-heading {
+  font-size: 11.5pt; font-weight: 700; margin: 6mm 0 2mm 0;
+  color: #000;
 }
-.header-block .brand .edexcel {
-  background: #000; color: #fff; padding: 1mm 3mm; margin-left: 2mm;
-}
-.header-block h1 { font-size: 16pt; margin: 2mm 0; }
-.header-block .subtitle { color: #444; font-size: 11pt; }
-.header-block .tier {
-  display: inline-block;
-  padding: 1mm 4mm;
-  border-radius: 3mm;
-  font-size: 9pt;
-  font-weight: 700;
-  color: #fff;
-  margin-top: 2mm;
-}
-.tier.moderate { background: #2a8f3a; }
-.tier.hard { background: #d77b1a; }
-.tier.advanced { background: #b42a2a; }
-
-.gmg {
-  background: #f5f5f5;
-  border-left: 3px solid #666;
-  padding: 4mm 5mm;
-  margin-bottom: 6mm;
-  font-size: 9pt;
-}
-.gmg h3 { margin: 0 0 2mm 0; font-size: 10pt; }
-.gmg p { margin: 1mm 0; }
-
-h2.section {
-  background: #222;
-  color: #fff;
-  padding: 2mm 4mm;
-  font-size: 11pt;
-  margin: 6mm 0 3mm 0;
-  page-break-before: auto;
-}
-
-h3.qhead {
-  font-size: 10.5pt;
-  margin: 4mm 0 1mm 0;
-  padding: 1mm 0;
-  border-bottom: 1px solid #888;
-}
-
+p { margin: 2mm 0; }
+ul { margin: 2mm 0; padding-left: 6mm; }
+li { margin-bottom: 1mm; }
 table.ms {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 2mm 0 3mm 0;
-  font-size: 9.5pt;
-  table-layout: fixed;
-  word-wrap: break-word;
+  border-collapse: collapse; width: 100%; margin: 3mm 0 4mm 0;
+  font-size: 10pt;
 }
-table.ms th {
-  background: #e5e5e5;
-  border: 0.5pt solid #888;
-  padding: 1.5mm 2mm;
-  text-align: left;
-  font-size: 9pt;
+table.ms th, table.ms td {
+  border: 0.5pt solid #000; padding: 2mm 3mm; vertical-align: top; text-align: left;
 }
-table.ms td {
-  border: 0.5pt solid #bbb;
-  padding: 2mm 2.5mm;
-  vertical-align: top;
+table.ms th { font-weight: 700; background: #e8e8e8; }
+table.ms .qcol { width: 18mm; text-align: center; font-weight: 700; }
+table.ms .markscol { width: 16mm; text-align: center; font-weight: 700; }
+table.ms .contentcol { }
+table.level {
+  border-collapse: collapse; width: 100%; margin: 2mm 0 4mm 0;
+  font-size: 10pt;
 }
-table.ms .qcol { width: 10%; font-weight: 700; }
-table.ms .acol { width: 73%; }
-table.ms .mcol { width: 9%; text-align: center; font-weight: 700; }
-table.ms .aocol { width: 8%; text-align: center; font-size: 8.5pt; color: #555; }
-
-.ind { margin: 1mm 0 1mm 0; padding-left: 4mm; }
-.ind li { margin-bottom: 0.8mm; }
-
-.levels { margin: 2mm 0 2mm 0; }
-.levels table { width: 100%; border-collapse: collapse; font-size: 9pt; }
-.levels td { border: 0.5pt solid #bbb; padding: 1.5mm 2mm; vertical-align: top; }
-.levels .lvl { width: 14%; background: #f2f2f2; font-weight: 700; text-align: center; }
-.levels .range { width: 12%; background: #fafafa; text-align: center; font-weight: 600; }
-.levels .desc { width: 74%; }
-
-.correct { color: #164; font-weight: 700; }
-.note { font-size: 8.5pt; color: #666; font-style: italic; }
-.working { font-family: "Courier New", monospace; background: #f8f8f8; padding: 1mm 2mm; margin: 1mm 0; font-size: 9pt; }
-b.term { background: #fff3d6; padding: 0 2px; }
-.totals-row td { background: #f5f5f5; font-weight: 700; }
-
-
+table.level th, table.level td {
+  border: 0.5pt solid #000; padding: 2mm 3mm; vertical-align: top;
+}
+table.level th { font-weight: 700; background: #d9d9d9; text-align: center; }
+table.level .lvlcol { width: 18mm; font-weight: 700; text-align: center; }
+table.level .markcol { width: 18mm; text-align: center; }
+.boilerplate {
+  background: #f5f5f5; border-left: 3px solid #000; padding: 3mm 5mm;
+  font-size: 10pt; margin: 3mm 0; line-height: 1.45;
+}
+.kaa-split { display: flex; gap: 5mm; margin: 2mm 0; }
+.kaa-split > div { flex: 1; border: 0.5pt solid #666; padding: 3mm; background: #fafafa; }
+.kaa-split h5 { margin: 0 0 2mm 0; font-size: 10.5pt; font-weight: 700; }
+.indicative-heading { font-weight: 700; margin: 3mm 0 1mm 0; font-style: italic; }
+.synoptic-flag {
+  display: inline-block; background: #000; color: #fff;
+  padding: 1px 5px; font-size: 9pt; font-weight: 700; letter-spacing: 0.3px;
+  margin-left: 2mm;
+}
+.page-break { page-break-before: always; }
 </style>
 </head>
 <body>
-<div class="topnav no-print">
-  <div>&larr; <a href="paper-3-moderate.html">Back to paper</a></div>
-  <div>Mark scheme: Paper 3 (9EC0/03) &mdash; Moderate</div>
-  <button onclick="window.print()">Print</button>
-</div>
-<div class="sheet">
-  <div class="header-block">
-    <div class="brand">Pearson <span class="edexcel">Edexcel</span></div>
-    <h1>Mark Scheme &mdash; Paper 3: Microeconomics and Macroeconomics</h1>
-    <div class="subtitle">9EC0/03 &middot; Wednesday 24 June 2026 &ndash; Morning</div>
-    <div class="tier moderate">Moderate tier</div>
-  </div>
-  <div class="gmg">
-    <h3>General Marking Guidance</h3>
-    <p>All candidates must receive the same treatment. Examiners must mark the first candidate in exactly the same way as they mark the last. Mark schemes should be applied positively. Candidates must be rewarded for what they have shown they can do rather than penalised for omissions.</p>
-    <p>Crossed-out work should be marked unless the candidate has replaced it with an alternative response. All the marks on the mark scheme are designed to be awarded. Examiners should always award full marks if deserved, i.e. if the answer matches the mark scheme.</p>
-  </div>
+<div class="doc">
 
-<h2 class="section">Question 1 — Total 25 marks &mdash; Total 25 marks</h2><h3 style="margin-top: 6mm;">1(a) &mdash; 5 marks</h3><table class="ind-table">
-  <thead><tr><th>Indicative content</th><th class="marks-col">Mark</th><th class="ao">AO</th></tr></thead>
-  <tbody><tr><td>CPI inflation peaked at 11.1% in 2022. Real HDI growth &asymp; &minus;2.3% in 2022. Gap = 11.1 &minus; (&minus;2.3) = 13.4 percentage points (or interpretation of the real-income squeeze of around 11 pp).</td><td class="marks-col">5</td><td class="ao">AO2 / AO4</td></tr></tbody>
+<!-- ============ TITLE PAGE ============ -->
+<div class="title-block">
+  <div class="pearson-brand" style="margin-bottom: 8mm;"><span class="pearson">Pearson</span> <span class="edexcel">Edexcel</span></div>
+  <h1>Mark Scheme</h1>
+  <h2>Predicted Paper &ndash; For revision purposes only</h2>
+  <h2 style="margin-top: 8mm;">Level 3 GCE Economics A (9EC0)</h2>
+  <h2>Paper 3: Microeconomics and Macroeconomics</h2>
+  <div class="paper-ref">9EC0/03 &mdash; Moderate</div>
+  <div class="session">Summer 2026 series</div>
+</div>
+
+<div class="title-footer">
+  <div class="brand-inline pearson-brand"><span class="pearson">Pearson</span> <span class="edexcel">Edexcel</span></div>
+  <div>Level 3 GCE &mdash; Economics A</div>
+  <div>Pearson Education Ltd &copy;2026</div>
+</div>
+
+<!-- ============ GENERAL MARKING GUIDANCE ============ -->
+<div class="page-break"></div>
+
+<h3 class="section-heading">General Marking Guidance</h3>
+
+<div class="boilerplate">
+  <p>All candidates must receive the same treatment. Examiners must mark the last candidate in exactly the same way as they mark the first.</p>
+  <p>Mark schemes should be applied positively. Candidates must be rewarded for what they have shown they can do rather than penalised for omissions.</p>
+  <p>Examiners should mark according to the mark scheme &ndash; not according to their perception of where the grade boundaries may lie.</p>
+  <p>All marks on the mark scheme should be used appropriately.</p>
+  <p>All the marks on the mark scheme are designed to be awarded. Examiners should always award full marks if deserved; that is, if the answer matches the mark scheme.</p>
+  <p>Where some judgement is required, mark schemes will provide the principles by which marks will be awarded and exemplification may be limited.</p>
+  <p>When examiners are in doubt regarding the application of the mark scheme to a candidate's response, the team leader must be consulted.</p>
+  <p>Crossed-out work should be marked UNLESS the candidate has replaced it with an alternative response.</p>
+</div>
+
+<h4 class="sub-heading">Assessment Objectives (Pearson Edexcel Economics A)</h4>
+<table class="level">
+  <tr><th class="lvlcol">AO</th><th>Description</th></tr>
+  <tr><td class="lvlcol">AO1</td><td>Demonstrate knowledge of terms/concepts and theories/models to show an understanding of the behaviour of economic agents and how they are affected by and respond to economic issues</td></tr>
+  <tr><td class="lvlcol">AO2</td><td>Apply knowledge and understanding to various economic contexts to show how economic agents are affected by and respond to economic issues</td></tr>
+  <tr><td class="lvlcol">AO3</td><td>Analyse issues within economics, showing an understanding of their impact on economic agents</td></tr>
+  <tr><td class="lvlcol">AO4</td><td>Evaluate economic arguments and use qualitative and quantitative evidence to support informed judgements relating to economic issues</td></tr>
 </table>
-<h3 style="margin-top: 6mm;">1(b) &mdash; 5 marks</h3><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Energy-price shock raises cost of imported inputs &rarr; SRAS shifts leftward.</li><li>Cost-push inflation: higher price level, lower real output.</li><li>Household real incomes fall.</li><li>Second-round effects: wage-price spiral possible if inflation expectations rise.</li></ul></div><h3 style="margin-top: 6mm;">1(c) &mdash; 5 marks (MCQ)</h3><div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">Temporary import-price shock affects SRAS and short-run price level, not potential output (LRAS) or the natural rate.</div>
-</div><h3 style="margin-top: 6mm;">1(d) &mdash; 10 marks</h3><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-2</td><td>Isolated elements of knowledge and understanding. Brief and unsupported evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">3-5</td><td>Accurate knowledge, understanding and application to the context. Evaluation is generic rather than context-based.</td></tr><tr><td class="lv">Level 3</td><td class="range">6-8</td><td>Clear chains of analysis applied to the context. Evaluation is context-based with some supporting evidence.</td></tr><tr><td class="lv">Level 4</td><td class="range">9-10</td><td>Fully developed chains of analysis applied to the context. Evaluative judgement is fully supported by reasoned argument and evidence from the extracts.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>EBSS + cost-of-living payments mitigated the real-income squeeze; targeted support addressed distributional concerns.</li><li>Universal support (Energy Price Guarantee) simpler to administer but higher fiscal cost (~&pound;78bn).</li><li>Cushioning effect reduced 2022 real-HDI fall, but didn't prevent it entirely.</li><li>Crowding-out / borrowing cost of large fiscal intervention.</li><li>Evaluation: EPG universal nature meant it supported high-income households as well as low — regressive efficiency.</li></ul></div><p style="text-align: right; font-weight: 700; margin: 6mm 0;">TOTAL FOR SECTION A = 25 MARKS</p><h2 class="section">Question 2 — Total 25 marks &mdash; Total 25 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-5</td><td>Isolated knowledge; limited application, analysis or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">6-11</td><td>Accurate knowledge with some application. Evaluation is unbalanced or underdeveloped.</td></tr><tr><td class="lv">Level 3</td><td class="range">12-17</td><td>Developed chains of analysis applied to context. Balanced evaluation with reasoned judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">18-21</td><td>Sophisticated, fully developed analysis. Evaluation integrates micro and macro perspectives with supported conclusion.</td></tr><tr><td class="lv">Level 5</td><td class="range">22-25</td><td>Exceptional analysis drawing on synoptic links. Sustained, well-reasoned evaluation with decisive, defensible judgement.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Windfall taxes capture supernormal profits from exogenous price shocks; revenue funds targeted support.</li><li>Case for: fairness; fiscal feasibility; economic efficiency (supernormal profit has no allocative role).</li><li>Case against: risk of reducing investment incentive; capital-flight risk; double taxation if firms already pay corporation tax.</li><li>UK EPL (Energy Profits Levy) example: raised &asymp; &pound;26bn but with investment-allowance carve-outs.</li><li>International: Italian, Spanish, EU-level windfall-tax frameworks.</li><li>Evaluation: depends on design (one-off vs permanent), investment-allowance treatment, global coordination.</li></ul></div><p style="text-align: right; font-weight: 700; margin: 6mm 0;">TOTAL FOR SECTION B = 25 MARKS</p><h2 class="section">Question 3 — Total 50 marks &mdash; Total 50 marks</h2><h3 style="margin-top: 6mm;">3(a) &mdash; 8 marks</h3><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-2</td><td>Isolated elements of knowledge and understanding. Brief attempt at application or analysis.</td></tr><tr><td class="lv">Level 2</td><td class="range">3-5</td><td>Accurate knowledge and understanding with application to the context. Some reasoned chains of analysis.</td></tr><tr><td class="lv">Level 3</td><td class="range">6-8</td><td>Clear, accurate and developed knowledge, understanding, application and analysis of the context. Logical and well-reasoned chains.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Market failure sources: information asymmetry between suppliers and switching-inert customers.</li><li>Natural-monopoly elements in transmission (network unbundled but retail depends on wholesale gas).</li><li>Externalities: carbon from fossil generation; social cost of disconnection.</li><li>Behavioural: inertia in switching suppliers.</li></ul></div><h3 style="margin-top: 6mm;">3(b) &mdash; 12 marks</h3><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-3</td><td>Isolated elements of knowledge. Limited application and analysis.</td></tr><tr><td class="lv">Level 2</td><td class="range">4-6</td><td>Accurate knowledge with application to the context. Some reasoned analysis.</td></tr><tr><td class="lv">Level 3</td><td class="range">7-9</td><td>Clear, developed chains of analysis applied to the context with accurate use of data.</td></tr><tr><td class="lv">Level 4</td><td class="range">10-12</td><td>Fully developed, logically sound chains of analysis with integration of multiple data sources.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Consumer protection vs retail competition trade-off.</li><li>Narrower tariff differentials reduce switching incentives.</li><li>Supplier margins compressed &rarr; smaller entrants exit (Bulb, Avro failures 2021).</li><li>Price cap does not address underlying wholesale-price shocks.</li><li>Evaluation: cap reforms (e.g. dynamic tracking of wholesale costs, sociall tariffs for vulnerable) could improve effectiveness.</li></ul></div><h3 style="margin-top: 6mm;">3(c) &mdash; 30 marks (SYNOPTIC)</h3><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-6</td><td>Isolated knowledge; limited synoptic awareness.</td></tr><tr><td class="lv">Level 2</td><td class="range">7-13</td><td>Accurate knowledge with some synoptic links. Evaluation is limited.</td></tr><tr><td class="lv">Level 3</td><td class="range">14-20</td><td>Developed chains of analysis across micro and macro. Balanced evaluation with reasoned judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">21-26</td><td>Sophisticated, fully synoptic analysis. Evaluation integrates multiple perspectives with supported conclusion.</td></tr><tr><td class="lv">Level 5</td><td class="range">27-30</td><td>Exceptional synoptic analysis. Sustained, well-reasoned evaluation with decisive, defensible judgement on complex trade-offs.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li><b>Micro consequences:</b> price signals distorted &rarr; weaker incentive for energy efficiency investment; allocation of scarce energy impaired; consumer surplus temporarily supported at social expense.</li><li><b>Macro consequences:</b> fiscal cost (&pound;78bn) &rarr; higher debt/GDP; crowding-out of other public investment.</li><li>Inflation suppression: subsidy lowers headline CPI temporarily but transfers the cost to the public finances.</li><li>Distributional: universal schemes benefit the rich; targeted transfers are more efficient.</li><li>Strategic: energy subsidies reduce incentive to shift to low-carbon alternatives &rarr; long-run climate cost.</li><li>International examples: France TRVE, Spain Iberian exception, German gas-price brake.</li><li>Evaluation: one-off targeted support is more efficient than universal subsidies; lesson for future shocks.</li></ul></div><p style="text-align: right; font-weight: 700; margin: 6mm 0;">TOTAL FOR SECTION C = 50 MARKS</p>
-<p style="margin-top: 20mm; text-align: center; font-size: 9pt; color: #888;">&mdash; END OF MARK SCHEME &mdash;</p>
+
+<p style="margin-top: 4mm;"><b>Marking grids are organised as KAA (Knowledge, Application, Analysis &mdash; AO1+AO2+AO3) and Evaluation (AO4).</b></p>
+
+<!-- ============ LEVEL DESCRIPTORS ============ -->
+<h3 class="section-heading">Level Descriptors (applied to banded questions)</h3>
+
+<h4 class="sub-heading">8-mark "Examine" (KAA = 5, Evaluation = 3)</h4>
+<table class="level">
+  <tr><th class="lvlcol">Level</th><th class="markcol">KAA marks</th><th>Descriptor</th></tr>
+  <tr><td class="lvlcol">L1</td><td class="markcol">1&ndash;2</td><td>Isolated element of knowledge and understanding; limited application to data or context.</td></tr>
+  <tr><td class="lvlcol">L2</td><td class="markcol">3&ndash;4</td><td>Sound knowledge and understanding applied with some development; at least one chain of reasoning.</td></tr>
+  <tr><td class="lvlcol">L3</td><td class="markcol">5</td><td>Accurate, detailed knowledge fully applied; developed chains of reasoning.</td></tr>
+</table>
+<table class="level">
+  <tr><th class="lvlcol">Level</th><th class="markcol">Eval marks</th><th>Descriptor</th></tr>
+  <tr><td class="lvlcol">L1</td><td class="markcol">1</td><td>Limited evaluation; assertion without support.</td></tr>
+  <tr><td class="lvlcol">L2</td><td class="markcol">2</td><td>Evaluation supported by relevant reasoning.</td></tr>
+  <tr><td class="lvlcol">L3</td><td class="markcol">3</td><td>Detailed, balanced evaluation with judgement supported by evidence.</td></tr>
+</table>
+
+<h4 class="sub-heading">12-mark "Discuss with diagram" (KAA = 8, Evaluation = 4)</h4>
+<table class="level">
+  <tr><th class="lvlcol">Level</th><th class="markcol">KAA marks</th><th>Descriptor</th></tr>
+  <tr><td class="lvlcol">L1</td><td class="markcol">1&ndash;2</td><td>Limited knowledge; weak or missing diagram; little application.</td></tr>
+  <tr><td class="lvlcol">L2</td><td class="markcol">3&ndash;5</td><td>Sound knowledge; reasonable diagram; some application and reasoning.</td></tr>
+  <tr><td class="lvlcol">L3</td><td class="markcol">6&ndash;8</td><td>Accurate knowledge; correctly labelled diagram; detailed application and developed chains of reasoning.</td></tr>
+</table>
+<p class="indicative-heading">Evaluation band: L1 (1), L2 (2&ndash;3), L3 (4).</p>
+
+<h4 class="sub-heading">25-mark Essay "Evaluate" (KAA = 15, Evaluation = 10)</h4>
+<table class="level">
+  <tr><th class="lvlcol">Level</th><th class="markcol">KAA marks</th><th>Descriptor</th></tr>
+  <tr><td class="lvlcol">L1</td><td class="markcol">1&ndash;5</td><td>Limited knowledge; weak application; basic theory.</td></tr>
+  <tr><td class="lvlcol">L2</td><td class="markcol">6&ndash;9</td><td>Sound theory applied to context; some chains of reasoning.</td></tr>
+  <tr><td class="lvlcol">L3</td><td class="markcol">10&ndash;12</td><td>Accurate detailed theory, well applied; developed chains of reasoning; relevant diagrams.</td></tr>
+  <tr><td class="lvlcol">L4</td><td class="markcol">13&ndash;15</td><td>Comprehensive, sophisticated theory; full application; logical chains; diagrams used analytically.</td></tr>
+</table>
+<table class="level">
+  <tr><th class="lvlcol">Level</th><th class="markcol">Eval marks</th><th>Descriptor</th></tr>
+  <tr><td class="lvlcol">L1</td><td class="markcol">1&ndash;3</td><td>Assertion.</td></tr>
+  <tr><td class="lvlcol">L2</td><td class="markcol">4&ndash;6</td><td>Supported evaluation; some judgement.</td></tr>
+  <tr><td class="lvlcol">L3</td><td class="markcol">7&ndash;8</td><td>Developed evaluation; reasoned judgement.</td></tr>
+  <tr><td class="lvlcol">L4</td><td class="markcol">9&ndash;10</td><td>Sophisticated evaluation with prioritised judgement grounded in context.</td></tr>
+</table>
+
+<p class="indicative-heading">Paper 3 synoptic note: Both 25-mark questions (1(d)/(e) and 2(d)/(e)) AND 2(c) at 12 marks require <b>both microeconomic AND macroeconomic</b> analysis. Candidates who address only one side cannot access L3 or L4 on those questions regardless of quality.</p>
+
+<!-- ============ SECTION A: QUESTION 1 ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section A &mdash; Question 1: The UK electricity market</h3>
+
+<!-- 1(a) calculation -->
+<h4 class="sub-heading">Question 1(a) &ndash; Calculate the percentage point change in the share of UK electricity generated from natural gas between 2015 and 2024 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th class="contentcol">Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">1(a)</td>
+  <td>
+    Working: 28.1 &minus; 30.2 (method, 1)<br>
+    Answer: <b>&minus;2.1 percentage points</b> (2 marks for correct signed answer with the correct unit &ldquo;percentage points&rdquo;, not &ldquo;%&rdquo;).<br>
+    <b>Total KAA:</b> 4 marks.<br>
+    <b>Evaluation (1 mark):</b> Accept any contextual observation, e.g. &ldquo;small absolute decline despite the huge rise in renewables; gas has remained a flexible dispatchable source to balance intermittent renewables.&rdquo;
+  </td>
+  <td class="markscol">5</td></tr>
+</table>
+
+<!-- 1(b) 12-mark micro -->
+<h4 class="sub-heading">Question 1(b) &ndash; Using a cost and revenue diagram, discuss the likely microeconomic effects on Octopus Energy's growth in market share since 2016 (12 marks) <span class="synoptic-flag">MICRO ONLY</span></h4>
+<p class="indicative-heading">Indicative content (a diagram is required; candidates may choose a cost/revenue, market-share, or game-theory representation):</p>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 8)</h5>
+    <ul>
+      <li>Cost/revenue diagram: Octopus with lower AC curve than Big Six (reflecting technology-driven cost advantage); lower price consistent with supernormal profit.</li>
+      <li>Technology platform (&ldquo;Kraken&rdquo;) reduces servicing costs per customer; scale economies in software.</li>
+      <li>Brand trust built during 2021&ndash;22 crisis while 29 suppliers went bust.</li>
+      <li>Acquisition of failed Bulb (2022) added ~1.5m customers at low cost.</li>
+      <li>Renewable-only positioning differentiates the product (monopolistic-competition element).</li>
+      <li>Price cap limits incumbents' pricing power &ndash; entrants compete on service/brand.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 4)</h5>
+    <ul>
+      <li>Some growth came via acquisition, not pure organic growth.</li>
+      <li>Fixed-price tariffs carry hedging risk &ndash; several challengers failed doing the same.</li>
+      <li>Winner's curse if sector margins remain capped by Ofgem.</li>
+      <li>Long-run sustainability depends on whether the tech advantage is durable or copied.</li>
+      <li><b>Judgement:</b> gains reflect a genuine productivity edge plus acquisition opportunism; scale advantages may cap further growth unless adjacent markets (EVs, smart grids, home services) succeed.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 1(c) 8-mark -->
+<h4 class="sub-heading">Question 1(c) &ndash; Examine two reasons why coal has almost disappeared from UK electricity generation (8 marks)</h4>
+<p class="indicative-heading">Indicative content (at least two distinct factors developed):</p>
+<ul>
+  <li><b>Carbon pricing:</b> UK carbon price (UK ETS + Carbon Price Support) at ~&pound;42/t in 2024, peaked at &pound;98/t in 2022. Raises coal's marginal cost above gas's (gas emits ~40% less CO&#8322;/MWh). Shifts merit order &ndash; coal pushed off grid.</li>
+  <li><b>Relative fuel cost shift:</b> US shale-gas export growth from 2010s reduced global gas prices; for most of 2015&ndash;2021 gas was structurally cheaper per MWh than coal after carbon price.</li>
+  <li><b>Regulatory commitment:</b> UK announced closure of all coal plants by 2024 (Drax last unit closed Sep 2024); long-term certainty meant no further investment in coal maintenance.</li>
+  <li><b>Renewables displacement:</b> wind+solar share rose from ~15% (2015) to ~35% (2024). Near-zero marginal cost of renewables pushes coal off grid first during high renewables output.</li>
+  <li><b>Air-quality regulation:</b> EU Industrial Emissions Directive required costly SO&#8322;/NO&#8339; abatement, making old coal plants uneconomic to retrofit.</li>
+</ul>
+<p class="indicative-heading">Award 8-mark &ldquo;Examine&rdquo; band (KAA=5, Eval=3).</p>
+
+<!-- 1(d) 25-mark Option 1 -->
+<div class="page-break"></div>
+<h4 class="sub-heading">Question 1(d) &ndash; Evaluate the likely impact of the Ofgem price cap on consumer welfare and supplier behaviour (25 marks) <span class="synoptic-flag">MICRO + MACRO</span></h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 15) &mdash; MICRO</h5>
+    <ul>
+      <li>Price cap as maximum-price regulation: limits SVT price to regulator-set level.</li>
+      <li>Effect on consumer surplus: protects against monopolistic pricing; but limits cheap-deals segment that existed pre-cap.</li>
+      <li>Supplier exit: 29 suppliers failed 2021&ndash;22; implicit cross-subsidy via the &ldquo;failed supplier&rdquo; pot.</li>
+      <li>Competition: reduces incentive to offer tariffs much below cap; fewer cheap fixed tariffs.</li>
+      <li>Diagram: price ceiling showing shortage if binding below equilibrium; or cost/revenue showing constrained supernormal profit.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>KAA (out of 15) &mdash; MACRO</h5>
+    <ul>
+      <li>Effect on CPI: cap smooths energy CPI by delaying pass-through (both up and down).</li>
+      <li>Aggregate consumption: cap shield during 2022 limited real-income destruction vs. unregulated scenario.</li>
+      <li>Monetary policy: smoothed energy inflation affected the MPC's response pace.</li>
+      <li>Fiscal: government Energy Price Guarantee cost ~&pound;30bn alongside cap.</li>
+      <li>Inflation expectations: cap may have helped keep expectations anchored.</li>
+    </ul>
+  </div>
+</div>
+<p class="indicative-heading">Evaluation (out of 10):</p>
+<ul>
+  <li>Cap clearly benefited consumers during the 2022 crisis &ndash; hundreds of pounds per household avoided.</li>
+  <li>But cap contributed to supplier failures by not allowing fast cost pass-through.</li>
+  <li>Long run: reduces competitive dynamism; suppliers bunch at the cap.</li>
+  <li>Distributional: cap helps all consumers (not targeted); non-bill-paying vulnerable groups benefit less in relative terms.</li>
+  <li>Alternative tools: direct income support (more targeted), social tariff, carbon dividend.</li>
+  <li><b>Judgement:</b> price cap is a blunt instrument appropriate for crisis periods but corrosive of competition in normal times; best reformed into a &ldquo;backstop only&rdquo; cap with active competition policy restored.</li>
+</ul>
+
+<!-- 1(e) 25-mark Option 2 -->
+<h4 class="sub-heading">Question 1(e) &ndash; Evaluate the case for using a carbon price (rather than regulation) as the primary tool for reducing CO<sub>2</sub> emissions (25 marks) <span class="synoptic-flag">MICRO + MACRO</span></h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 15) &mdash; MICRO</h5>
+    <ul>
+      <li>Carbon price internalises externalities (Pigouvian tax logic).</li>
+      <li>Equates marginal abatement cost across sectors &rarr; productive efficiency in emissions cuts.</li>
+      <li>Diagram: externality diagram showing MPC &rarr; MPC+tax toward socially optimal Q*.</li>
+      <li>Regulation forces specific abatement regardless of cost.</li>
+      <li>Price discovery: market participants reveal true abatement costs.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>KAA (out of 15) &mdash; MACRO</h5>
+    <ul>
+      <li>Carbon revenue: UK raised ~&pound;6bn/year from UK ETS + CPS in 2024.</li>
+      <li>Inflation: carbon price raises energy prices &mdash; contributes to CPI.</li>
+      <li>Competitiveness: UK unilateral carbon price may disadvantage tradable sectors; CBAM partly addresses.</li>
+      <li>Green investment: carbon price signals renewables, storage, hydrogen investment.</li>
+      <li>Distribution: poorer households spend higher share of income on energy &rarr; regressive absent rebates.</li>
+    </ul>
+  </div>
+</div>
+<p class="indicative-heading">Evaluation (out of 10):</p>
+<ul>
+  <li>Coal elimination (22.5% &rarr; 0.4%) is clear supporting evidence that carbon price works in electricity.</li>
+  <li>But price alone insufficient for deeper decarbonisation: grid, planning, storage all need regulation/subsidy.</li>
+  <li>Regulation provides certainty that price signals cannot (investors need 20+ year horizons).</li>
+  <li>Mixed approach (price + regulation + subsidy) more effective than either alone.</li>
+  <li>Price volatility (&pound;42 &rarr; &pound;98 &rarr; &pound;42 per tonne) undermines investment planning.</li>
+  <li><b>Judgement:</b> carbon price is highly effective as a least-cost abatement instrument in competitive markets with many substitutes (as in UK electricity); less suitable where investment lumpiness and capital vintages matter. &ldquo;Essential tool among several&rdquo; is the defensible position.</li>
+</ul>
+
+<!-- ============ SECTION B: QUESTION 2 ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section B &mdash; Question 2: Inflation, monetary policy and supply-side reform</h3>
+
+<!-- 2(a) calculation -->
+<h4 class="sub-heading">Question 2(a) &ndash; Calculate the percentage change in the UK Bank Rate from Q1 2020 to Q1 2025 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th class="contentcol">Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">2(a)</td>
+  <td>
+    Working: (4.50 &minus; 0.10) / 0.10 &times; 100 (method, 1)<br>
+    = 4.40 / 0.10 &times; 100 (numerator, 1)<br>
+    = <b>+4,400%</b> (2 for correct numerical answer).<br>
+    <b>Evaluation (1):</b> &ldquo;The large percentage rise exaggerates the real policy change; in absolute terms the +4.40 percentage-point increase in Bank Rate is the more economically meaningful figure.&rdquo; Accept any reasonable contextual observation.
+  </td>
+  <td class="markscol">5</td></tr>
+</table>
+
+<!-- 2(b) 8-mark -->
+<h4 class="sub-heading">Question 2(b) &ndash; Examine two factors that may have slowed the transmission of the BoE's monetary tightening to the UK economy (8 marks)</h4>
+<p class="indicative-heading">Indicative content (at least two distinct factors developed):</p>
+<ul>
+  <li><b>Fixed-rate mortgages:</b> 85%+ of UK mortgages fixed 2&ndash;5 years; only ~1.5m re-fixed in 2024. Household cash-flow effect drawn out over several years.</li>
+  <li><b>Corporate debt structures:</b> larger firms largely fixed-rate or bond-financed; small firms on floating rates feel impact faster.</li>
+  <li><b>Wealth effects weaker:</b> fewer housing transactions due to higher rates &rarr; less mortgage equity withdrawal.</li>
+  <li><b>Expectations channel:</b> when inflation expectations un-anchor, the required central bank action is larger for a given disinflation.</li>
+  <li><b>Savings/deposit rates:</b> slow pass-through to savers &ndash; banks retained spread.</li>
+  <li><b>Fiscal offsetting:</b> 2022 Energy Price Guarantee and tax cuts offset part of the tightening.</li>
+</ul>
+<p class="indicative-heading">Award 8-mark &ldquo;Examine&rdquo; band (KAA=5, Eval=3).</p>
+
+<!-- 2(c) 12-mark micro+macro -->
+<h4 class="sub-heading">Question 2(c) &ndash; Discuss the likely microeconomic and macroeconomic effects on UK households and firms of the BoE's rate cuts from 5.25% to 4.50% (12 marks) <span class="synoptic-flag">MICRO + MACRO</span></h4>
+<p class="indicative-heading">Indicative content (a diagram is required; AD/AS, loanable funds, or labour/firm-level diagrams are all acceptable):</p>
+<div class="kaa-split">
+  <div>
+    <h5>Microeconomic</h5>
+    <ul>
+      <li>Household cost of borrowing: mortgage re-fixers gain; £240/month payments avoided (Extract D reference).</li>
+      <li>Savers' deposit rates: deposit-holder income reduced; distributional effect.</li>
+      <li>Firm investment: lower cost of capital &rarr; more positive-NPV projects.</li>
+      <li>Sector heterogeneity: capital-intensive sectors (housing, construction) gain more than services.</li>
+      <li>Housing market: mortgage affordability improves &rarr; transactions rise &rarr; estate agents, removals firms benefit.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Macroeconomic (AD/AS)</h5>
+    <ul>
+      <li>AD shifts right: lower rates &rarr; &uarr;C + &uarr;I + &uarr;X (sterling depreciation); new equilibrium at higher Y, higher P.</li>
+      <li>Multiplier effect: extra spending generates additional income through rounds.</li>
+      <li>Sterling effect: lower rates &rarr; capital outflow &rarr; depreciation &rarr; imported inflation + exporter boost.</li>
+      <li>Labour market: higher AD &rarr; reduced unemployment.</li>
+      <li>Transmission lag: fixed-rate mortgages delay effect; ~1.5m re-fix per year.</li>
+    </ul>
+  </div>
+</div>
+<p class="indicative-heading">Evaluation:</p>
+<ul>
+  <li>Magnitude: 75bp cut from 5.25% to 4.50% is modest; stance still restrictive.</li>
+  <li>Services inflation at 4&ndash;5% risks being reignited.</li>
+  <li>Business investment constrained by planning/Brexit more than by rates.</li>
+  <li>Micro distributional unevenness: savers lose, borrowers win.</li>
+  <li><b>Judgement:</b> micro gains concentrated among households with variable/re-fixing mortgages and capital-intensive firms; macro support for AD is modest and insufficient alone to restore trend growth without complementary supply-side action.</li>
+</ul>
+<p><b>Candidates must cover both micro AND macro to access L3 on KAA.</b></p>
+
+<!-- 2(d) 25-mark Option 1 -->
+<div class="page-break"></div>
+<h4 class="sub-heading">Question 2(d) &ndash; Evaluate the likely effectiveness of the supply-side reforms described in Extract E in raising UK long-run growth (25 marks) <span class="synoptic-flag">MICRO + MACRO</span></h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 15) &mdash; MICRO</h5>
+    <ul>
+      <li>Full expensing: reduces effective cost of capital &rarr; higher firm-level investment, especially capital-intensive firms.</li>
+      <li>Apprenticeship levy reform: addresses labour-market friction; aligns skills supply to employer demand.</li>
+      <li>Planning reform: reduces transaction costs for infrastructure, housing, energy; lowers sunk costs for large projects.</li>
+      <li>Investment zones: generate agglomeration economies locally.</li>
+      <li>Diagrams: supply-side shifts in specific markets; labour-market diagrams showing Ls shift.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>KAA (out of 15) &mdash; MACRO</h5>
+    <ul>
+      <li>LRAS shifts right &rarr; higher trend growth, lower equilibrium inflation for given AD.</li>
+      <li>Productivity channel: capital deepening + skills + infrastructure.</li>
+      <li>Target of 1.7% trend (from 1.3%) &mdash; 0.4pp uplift over a decade.</li>
+      <li>Fiscal feedback: higher growth &rarr; higher tax revenue &rarr; improved debt dynamics.</li>
+      <li>Supply-side expansion is disinflationary; compatible with more dovish monetary stance.</li>
+    </ul>
+  </div>
+</div>
+<p class="indicative-heading">Evaluation (out of 10):</p>
+<ul>
+  <li>IFS/OBR: &ldquo;plausible but ambitious&rdquo; &mdash; consistent with modest (0.1&ndash;0.3pp) rather than transformative effects.</li>
+  <li>Binding UK constraints (low R&amp;D, weak management, regional imbalance) not fully addressed.</li>
+  <li>Execution risk: apprenticeship levy has underperformed past reforms; planning reform faces political resistance.</li>
+  <li>Interaction with macro conditions: supply-side effective only if demand is adequate.</li>
+  <li>Long time horizon (10+ years) means risk of reversal by future governments.</li>
+  <li><b>Judgement:</b> package is directionally correct and, if fully implemented, could close roughly half the gap between current and pre-2008 trend growth. Planning reform is the single most significant measure. But deeper structural issues remain; package is a down-payment on trend-growth recovery, not a complete solution.</li>
+</ul>
+
+<!-- 2(e) 25-mark Option 2 -->
+<h4 class="sub-heading">Question 2(e) &ndash; Evaluate whether the BoE's primary mandate should remain the 2% CPI inflation target given the UK's weak growth performance since 2010 (25 marks) <span class="synoptic-flag">MICRO + MACRO</span></h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 15) &mdash; MICRO</h5>
+    <ul>
+      <li>Inflation distortion: menu costs, tax-bracket drift, wealth transfers between creditors/debtors.</li>
+      <li>Inflation expectations: anchoring role of a credible target.</li>
+      <li>Misallocation: high/volatile inflation distorts relative prices and long-term contracting.</li>
+      <li>Tinbergen rule: one instrument cannot credibly deliver both low inflation AND high employment.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>KAA (out of 15) &mdash; MACRO</h5>
+    <ul>
+      <li>Mandate options: (i) inflation target only (current UK); (ii) dual mandate (Fed); (iii) NGDP targeting; (iv) higher (e.g. 3%) inflation target.</li>
+      <li>Arguments for change: weak UK growth partly reflects over-tight policy; fixed target creates ZLB risk; services inflation has different dynamics from goods inflation.</li>
+      <li>Arguments against change: credibility built over 30 years; changing target signals institutional weakness; growth problem is supply-side not monetary.</li>
+    </ul>
+  </div>
+</div>
+<p class="indicative-heading">Evaluation (out of 10):</p>
+<ul>
+  <li>Mandate credibility critical &ndash; changing it during inflation return to target would be poor timing.</li>
+  <li>UK's weak growth is structural (productivity, investment) not cyclical &rarr; monetary policy can't fix it.</li>
+  <li>Counter: ZLB post-2009 meant monetary policy couldn't support recovery adequately; higher target gives more room.</li>
+  <li>Dual mandate risk: politicisation of central bank if employment target added.</li>
+  <li>NGDP targeting: theoretically attractive but measurement lags undermine real-time.</li>
+  <li><b>Judgement:</b> on balance, the 2% CPI target should be retained &ndash; evidence that weak UK growth reflects supply-side rather than demand-side problems means changing the monetary mandate is unlikely to address the problem and risks credibility. Reform of the mandate is a lower-priority policy lever than planning, productivity and investment reform.</li>
+</ul>
+
+<div style="margin-top: 10mm; border-top: 1.5px solid #000; padding-top: 3mm; text-align: center; font-weight: 700;">
+  TOTAL FOR PAPER = 100 MARKS
+</div>
+
 </div>
 </body>
 </html>
