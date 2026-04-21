@@ -17,43 +17,190 @@
         "questions": [
           {
             "number": null,
-            "stem": "1\nThe table shows market data for a popular UK high-street coffee chain. The original equilibrium price of a medium flat white is £3.00.",
-            "tables": [],
+            "stem": "1\nThe table shows market data for a popular UK high-street coffee chain. The original equilibrium price of a medium flat white is £3.00.\n\n2\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
+            "tables": [
+              [
+                [
+                  "Price (£)",
+                  "Quantity demanded\nper day (000)",
+                  "Quantity supplied\nper day (000)",
+                  "New quantity\ndemanded (000)",
+                  "New quantity\nsupplied (000)"
+                ],
+                [
+                  "4.00",
+                  "10",
+                  "30",
+                  "",
+                  ""
+                ],
+                [
+                  "3.50",
+                  "15",
+                  "25",
+                  "",
+                  ""
+                ],
+                [
+                  "3.00",
+                  "20",
+                  "20",
+                  "",
+                  ""
+                ],
+                [
+                  "2.50",
+                  "25",
+                  "15",
+                  "",
+                  ""
+                ],
+                [
+                  "2.00",
+                  "30",
+                  "10",
+                  "",
+                  ""
+                ]
+              ]
+            ],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Following a fall in the wholesale price of coffee beans, the quantity supplied rose by 5,000 cups at every price. Calculate the new equilibrium price and quantity. Use the last two columns for your working.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "The price elasticity of demand for a cup of coffee at this chain is most likely to be:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "perfectly inelastic"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "2\nIn 2024 the average UK consumer spent £1,100 per year on takeaway food and drink, up from £900 per year in 2020. Over the same period, average UK disposable income rose by 10%.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Calculate the income elasticity of demand for takeaway food and drink. You are advised to show your working.",
+                "marks": 2,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "Calculate the percentage change in total UK consumer spending on takeaway food and drink between 2020 and 2024 per person. You are advised to show your working.",
+                "marks": 2,
+                "options": null
+              },
+              {
+                "label": "c",
+                "text": "Based on your answer to part (a), takeaway food and drink is best described as:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "an inferior good"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "3\nIn 2025 the UK government introduced an indirect tax of £0.18 per litre on sugary soft drinks. The diagram below shows the short-run effect.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Calculate the total annual tax revenue from this tax. You are advised to show your working.",
+                "marks": 2,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "Calculate the percentage of the tax burden that falls on consumers.",
+                "marks": 2,
+                "options": null
+              },
+              {
+                "label": "c",
+                "text": "One intended benefit of this tax is to:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "increase producer surplus"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "4\nTesco, a large UK supermarket, cut the shelf price of its own-brand bread by 10% in early 2025.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Using a cost and revenue diagram, show the likely short-run impact of the price cut on Tesco's supernormal profit on own-brand bread.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "Which of the following is most likely to be a barrier to entry into the UK supermarket sector?",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "copyright protection"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "5\nIn 2024 the UK government announced a £50 million fund to support apprenticeships in small and medium-sized businesses.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Explain one likely effect on the UK labour market of a government subsidy for apprenticeships.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "A subsidy given directly to firms is most likely to shift the:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "demand curve to the left"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           }
         ],
         "totalMarks": 25
@@ -85,11 +232,84 @@
         "questions": [
           {
             "number": null,
-            "stem": "6\nThe UK high-street coffee-shop market",
+            "stem": "6\nThe UK high-street coffee-shop market\n\nFigure 1: UK high-street coffee-shop market share by revenue, 2024\n\n(Source: adapted from UK hospitality industry data, 2024)\n\nFigure 2: Average price of a medium latte, UK high-street chains, 2020 and 2025\n\n(Source: adapted from Retail Gazette, 2025)\n\n9\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nExtract A\nConsolidation in the UK coffee-shop market\n\nThe UK high-street coffee-shop market has consolidated sharply over the past decade. Costa Coffee, which became the largest player after being acquired by Coca-Cola in 2019, now accounts for roughly a third of industry revenue. The market is dominated by three national chains, with local independents finding it increasingly difficult to compete with the scale, brand recognition and sophisticated loyalty apps of the big operators.Prices across the main chains have risen by more than 25% since 2020, considerably faster than the rate of general consumer price inflation. Chains have cited higher wage bills, energy costs and the doubling of wholesale coffee-bean prices as the main drivers. Critics argue, however, that limited competition has allowed firms to pass costs through to consumers more fully than they might otherwise have done.\n(Source: adapted from The Grocer, 2025)\n\n10\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nExtract B\nThe rise of independent and local coffee shops\n\nAlongside the big chains, the number of independent UK coffee shops has grown by around 15% since 2020. Many emphasise ethically sourced beans, non-standard menus and stronger local community ties. Independents often compete on quality rather than price, and tend to concentrate in larger cities, university towns and suburbs with high footfall.Industry analysts suggest that consumer tastes are fragmenting. Younger customers in particular increasingly prefer speciality coffee, plant-based milks and locally owned outlets. Some commentators argue that this makes the high-street coffee market more competitive than market-share figures alone would suggest, because the big chains face pressure from fast-growing independents and at-home alternatives such as espresso pods.\n(Source: adapted from industry trade publications, 2025)\n\nExtract C\nA proposed merger between Caffè Nero and Pret A Manger\n\nIn 2025 the owners of Caffè Nero and Pret A Manger announced exploratory talks on a possible merger. The combined business would overtake Starbucks to become the UK's second-largest chain by revenue, with around 21% market share. Supporters argue that the merger would deliver economies of scale in supply, marketing and staff training, and help the combined group compete more effectively with Costa Coffee.Critics warn that the merger could reduce consumer choice in town centres where the two brands currently compete head-to-head, and that it may give the combined firm excessive bargaining power over dairy suppliers and coffee-bean farmers overseas. The Competition and Markets Authority has indicated it will scrutinise the proposal closely if it proceeds to a formal filing.\n(Source: adapted from The Times business pages, 2025)\n\n11\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "With reference to Figure 1 and Extract A, explain one likely feature of the market structure of the UK coffee-shop sector in 2024.",
+                "marks": 5,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "With reference to Figure 2 and Extract A, discuss the possible reasons for the rise in UK coffee-shop prices between 2020 and 2025.",
+                "marks": 12,
+                "options": null
+              },
+              {
+                "label": "c",
+                "text": "Examine one way in which independent coffee shops (Extract B) might compete successfully against the large national chains.",
+                "marks": 8,
+                "options": null
+              },
+              {
+                "label": "d",
+                "text": "Assess the likely effect on consumers of a proposed merger between Caffè Nero and Pret A Manger. Refer to Extract C in your answer.",
+                "marks": 10,
+                "options": null
+              },
+              {
+                "label": "e",
+                "text": "Discuss the likely economic consequences of a government decision to cap the price of a standard cup of coffee at high-street chains. Refer to your own knowledge and the extracts.",
+                "marks": 15,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              }
+            ],
+            "totalMarks": 50
           }
         ],
         "totalMarks": 50
@@ -102,7 +322,24 @@
           "You are advised to spend 30 minutes on this section."
         ],
         "extracts": [],
-        "questions": [],
+        "questions": [
+          {
+            "number": null,
+            "stem": "7\nIn 2025 the UK government announced a £5 per pack 'sin tax' on disposable vapes, intended to reduce consumption among young people.\nEvaluate the likely microeconomic effects of this tax.\n\n(Total for Question 7 = 25 marks)\n\nOR",
+            "tables": [],
+            "figures": [],
+            "parts": [],
+            "totalMarks": 25
+          },
+          {
+            "number": null,
+            "stem": "8\n'Small firms can never compete effectively against large, established brands in consumer markets.'\nTo what extent do you agree? Refer to an industry of your choice in your answer.\n\n(Total for Question 8 = 25 marks)\n\n23\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nIndicate which question you are answering by marking a cross in the box ☒. If you change your\nmind, put a line through the box ☒ and then indicate your new question with a cross ☒.\n\nChosen question number: Question 7\nQuestion 8\n\nWrite your answer here:\n\n24\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n25\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n26\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n27\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n28\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n(Total for Question = 25 marks)\nTOTAL FOR SECTION C = 25 MARKS\nTOTAL FOR PAPER = 100 MARKS\n\n29",
+            "tables": [],
+            "figures": [],
+            "parts": [],
+            "totalMarks": 25
+          }
+        ],
         "totalMarks": 25
       }
     ]
@@ -124,43 +361,151 @@
         "questions": [
           {
             "number": null,
-            "stem": "1\nThe UK Emissions Trading Scheme allocates carbon permits to industrial emitters. In 2024 the market\nprice of a 1-tonne CO₂ permit stood at £45; by 2025 the government tightened the cap,\nreducing the total number of permits issued by 12%, and the market price rose to £72.",
+            "stem": "1\nThe UK Emissions Trading Scheme allocates carbon permits to industrial emitters. In 2024 the market\nprice of a 1-tonne CO₂ permit stood at £45; by 2025 the government tightened the cap,\nreducing the total number of permits issued by 12%, and the market price rose to £72.\n\n2\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Assuming industrial demand for permits is broadly unchanged, calculate the approximate\nprice elasticity of supply of carbon permits between 2024 and 2025. Show your working.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "A rising carbon permit price most directly incentivises firms to:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "increase output in the short run"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "2\nA behavioural economics experiment tested the effect of 'default settings' on pension\nauto-enrolment. When workers had to actively opt in, participation was 38%. When enrolment was\nautomatic (with the option to opt out), participation rose to 91%.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Explain how this evidence is consistent with the existence of bounded rationality\nin pension decision-making.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "The gap between the two participation rates is best described as a:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "positive externality"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "3\nTwo supermarkets, A and B, must each decide whether to maintain or cut their petrol forecourt prices.\nThe payoff matrix below shows weekly profits (£ million) for each combination of strategies,\nwith A's profit listed first:",
-            "tables": [],
+            "tables": [
+              [
+                [
+                  "",
+                  "B: Maintain",
+                  "B: Cut"
+                ],
+                [
+                  "A: Maintain",
+                  "8, 8",
+                  "2, 11"
+                ],
+                [
+                  "A: Cut",
+                  "11, 2",
+                  "4, 4"
+                ]
+              ]
+            ],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Identify the Nash equilibrium in this one-shot game and explain why it is not\nthe jointly profit-maximising outcome.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "In a repeated version of this game, collusion is more likely when:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "the discount rate is high"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "4\nA rural county has a single food-processing factory that employs 80% of the local unskilled\nworkforce. Economists describe this as a local monopsony. The UK government is considering\nraising the National Living Wage by 9% in real terms.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Using a labour-market diagram, explain why a binding minimum wage could, in this case,\nincrease both wages and employment.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "The same policy in a competitive labour market would be most likely to cause:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "an increase in equilibrium employment"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "5\nIn 2024 the CMA launched a market investigation into a leading cloud-computing platform,\nalleging abuse of dominance through 'egress fees' charged to customers moving data to rival\nproviders.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Explain one way in which egress fees could act as a barrier to exit\nfor cloud-computing customers.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "In the UK framework, 'abuse of a dominant position' is assessed primarily under:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "the Groceries Code of Conduct"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           }
         ],
         "totalMarks": 25
@@ -192,11 +537,42 @@
         "questions": [
           {
             "number": null,
-            "stem": "6\nCompetition, concentration and open banking in the UK retail banking sector",
+            "stem": "6\nCompetition, concentration and open banking in the UK retail banking sector\n\nFigure 1: UK personal current account (PCA) market share, 2024\n\n(Source: adapted from CMA Retail Banking Market Study update, 2024)\n\nFigure 2: Active open-banking users in the UK (millions), 2018–2024\n\n(Source: adapted from Open Banking Implementation Entity annual report, 2024)\n\n9\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nExtract A\nConcentration and switching inertia in UK retail banking\n\nThe UK's retail banking market has long been characterised by a small number of incumbent firms controlling the majority of personal current accounts. Despite the launch of the Current Account Switch Service in 2013, annual switching rates have hovered around 1.5% — well below levels seen in comparable consumer markets.The Competition and Markets Authority (CMA) has argued that high search costs, consumer inertia and the complexity of banking products together reduce the competitive pressure that would otherwise discipline incumbent banks on price and service quality. Bank profit margins on personal accounts remained among the highest in the OECD through 2024.Behavioural economists point additionally to loss aversion: consumers disproportionately weight the perceived risk of switching errors (such as missed payments) against the potential gains from lower fees or better interest rates.\n(Source: adapted from the CMA Retail Banking Market Study update, 2024)\n\n10\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nExtract B\nChallenger banks and open banking\n\nA wave of 'challenger banks' — including Monzo, Starling and Revolut — has emerged over the past decade, reaching a combined 16% market share in personal current accounts by 2024. Their cost base is structurally lower than the incumbents, reflecting the absence of branch networks and legacy IT systems.Open banking, introduced under the CMA's 2017 retail-banking remedies, requires the largest banks to share customer data with authorised third parties via secure APIs. Proponents argue this dramatically reduces search costs and enables innovative products such as account-aggregation apps, smart-savings tools and instant affordability checks.Critics observe, however, that incumbents have responded by acquiring promising fintech entrants, raising concerns that initial competitive benefits could be eroded over time.\n(Source: adapted from Financial Times fintech coverage, 2024)\n\nExtract C\nA proposed tie-up of two challenger banks\n\nIn 2025 two leading challenger banks announced plans for an all-share merger. If approved, the combined entity would become the fifth-largest UK retail bank by deposits and the second-largest by active digital users.Supporters highlight economies of scope in technology investment and the ability to compete more effectively with the 'Big Four' on mortgages and business banking. Opponents argue the merger would reduce the number of serious rivals to the incumbents and note that both banks have relied heavily on aggressive introductory pricing to acquire customers.\n(Source: adapted from The Times business section, 2025)\n\n11\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "With reference to Figure 1 and Extract A, calculate the four-firm concentration ratio in UK\nretail banking in 2024 and explain one likely consequence of this market structure for consumers.",
+                "marks": 5,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "With reference to Figure 2 and Extract B, discuss the possible effects of open banking on the\ndegree of competition in UK retail banking.",
+                "marks": 12,
+                "options": null
+              },
+              {
+                "label": "c",
+                "text": "Examine two measures, other than open banking, that the UK government could use to\nstrengthen competition in retail banking.",
+                "marks": 8,
+                "options": null
+              },
+              {
+                "label": "d",
+                "text": "Assess the extent to which behavioural biases (Extract A, line 9), rather than structural\nmarket power, are the primary obstacle to effective competition in UK retail banking.",
+                "marks": 10,
+                "options": null
+              },
+              {
+                "label": "e",
+                "text": "Discuss the likely impact on consumers of the proposed merger between the two challenger banks.\nRefer to Extract C and your own knowledge in your answer.",
+                "marks": 15,
+                "options": null
+              }
+            ],
+            "totalMarks": 50
           }
         ],
         "totalMarks": 50
@@ -209,7 +585,24 @@
           "You are advised to spend 30 minutes on this section."
         ],
         "extracts": [],
-        "questions": [],
+        "questions": [
+          {
+            "number": null,
+            "stem": "7\nIn 2025 the UK government announced a trial of 'nudge' interventions in public health — including\ndefault restaurant menu sizing and simplified front-of-pack warning labels — to reduce obesity.\nEvaluate the likely microeconomic effects of using behavioural 'nudge' policies, rather\nthan Pigouvian taxation, to correct health-related market failures.\n(Total for Question 7 = 25 marks)\n\nOR",
+            "tables": [],
+            "figures": [],
+            "parts": [],
+            "totalMarks": 25
+          },
+          {
+            "number": null,
+            "stem": "8\n'Algorithmic pricing by online retailers inevitably leads to tacit collusion and should be regulated\nas a prohibited practice.'\nTo what extent do you agree? Refer to at least one industry in your answer.\n(Total for Question 8 = 25 marks)\n\n23\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nIndicate which question you are answering by marking a cross in the box ☒.\n\nChosen question number: Question 7\nQuestion 8\n\nWrite your answer here:\n\n24\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n25\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n26\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n27\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n28\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n(Total for Question = 25 marks)\nTOTAL FOR SECTION C = 25 MARKS\nTOTAL FOR PAPER = 100 MARKS\n\n29",
+            "tables": [],
+            "figures": [],
+            "parts": [],
+            "totalMarks": 25
+          }
+        ],
         "totalMarks": 25
       }
     ]
@@ -232,43 +625,178 @@
         "questions": [
           {
             "number": null,
-            "stem": "1\nThe table shows the daily demand and supply for premium ride-hailing trips in central London. At the original equilibrium price of £18, the quantity traded is 40,000 trips.",
-            "tables": [],
+            "stem": "1\nThe table shows the daily demand and supply for premium ride-hailing trips in central London. At the original equilibrium price of £18, the quantity traded is 40,000 trips.\n\n2\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
+            "tables": [
+              [
+                [
+                  "Price (£)",
+                  "Quantity demanded\nper day (000)",
+                  "Quantity supplied\nper day (000)",
+                  "New quantity\ndemanded (000)",
+                  "New quantity\nsupplied (000)"
+                ],
+                [
+                  "24",
+                  "28",
+                  "52",
+                  "",
+                  ""
+                ],
+                [
+                  "21",
+                  "34",
+                  "46",
+                  "",
+                  ""
+                ],
+                [
+                  "18",
+                  "40",
+                  "40",
+                  "",
+                  ""
+                ],
+                [
+                  "15",
+                  "46",
+                  "34",
+                  "",
+                  ""
+                ],
+                [
+                  "12",
+                  "52",
+                  "28",
+                  "",
+                  ""
+                ]
+              ]
+            ],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "A sudden strike on the London Underground causes demand to rise by 9,000 trips at every price; at the same time, dynamic-surge algorithms raise the effective price at which any given quantity is supplied by £3. Calculate the new equilibrium price and quantity. Use the last two columns for your working.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "If price elasticity of demand in this market is estimated at −0.67 and price elasticity of supply is +0.67, then following a 15% rise in the equilibrium price, total platform revenue is most likely to:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "fall by approximately 5%"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "2\nIn 2024 UK consumer spending on online video-on-demand services rose 11% year-on-year. The cross elasticity of demand between subscription video-on-demand and cinema tickets is estimated at +0.3, and between subscription video-on-demand and broadband internet at −0.6.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Using the cross-elasticity values, analyse the likely relationships between subscription video-on-demand and (i) cinema tickets and (ii) broadband internet.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "A rise in the price of broadband of 5% would, other things equal, cause the quantity demanded of subscription video-on-demand to:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "rise by 3%"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "3\nThe UK Digital Markets, Competition and Consumers Act (2024) gives the CMA powers to designate large platforms as having 'Strategic Market Status' and impose tailored conduct requirements.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Using a cost and revenue diagram, show the effect on a dominant platform's supernormal profits of a CMA requirement that it caps the commission it charges merchants.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "A price cap set below a monopolist's profit-maximising price is most likely to:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "raise producer surplus"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "4\nIn 2025 two major UK delivery platforms, Deliveroo and Just Eat, faced accusations of engaging in tacit collusion on the commissions charged to restaurants.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "With reference to the kinked demand curve model, explain why firms in an oligopoly might avoid open price competition.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "Tacit collusion is most likely to be sustainable in a market with:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "many firms and transparent prices"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "5\nAmazon and Flipkart have been accused of using data collected from third-party sellers on their platforms to launch directly competing own-brand products.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Explain one way in which information asymmetry between a platform and its sellers may give rise to market failure.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "Requiring a platform to separate its marketplace operations from its own-brand retailing is an example of:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "a Pigouvian tax"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           }
         ],
         "totalMarks": 25
@@ -300,11 +828,84 @@
         "questions": [
           {
             "number": null,
-            "stem": "6\nThe UK digital platform economy: market power, data and competition policy",
+            "stem": "6\nThe UK digital platform economy: market power, data and competition policy\n\nFigure 1: Revenue and global market capitalisation of leading digital platforms, 2024 (US$ bn)\n\n(Source: adapted from company financial filings and Bloomberg data, 2024)\n\nFigure 2: UK digital advertising spend by platform, 2024\n\n(Source: adapted from Advertising Association / WARC UK adspend report, 2024)\n\n9\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nExtract A\nNetwork effects and the self-reinforcing nature of platform power\n\nLeading digital platforms benefit from powerful network effects: each additional user makes the platform more valuable to other users, drivers, merchants or advertisers. This creates positive feedback loops that can allow a dominant firm to entrench its position even in the absence of strong economies of scale. In several markets, two-sided network effects — between riders and drivers, buyers and sellers, or content creators and consumers — reinforce these dynamics.Critics argue that such markets exhibit a 'winner-takes-most' tendency, and that traditional measures of market share based on revenue may understate the extent of market power. Defenders of large platforms counter that they remain contestable, citing the rapid rise of challengers such as TikTok and the disruption of legacy retailers.Commentators have increasingly focused on non-price dimensions of competition: quality of recommendations, access to user data, and the design of interfaces that shape consumer choice.\n(Source: adapted from OECD Digital Economy Outlook, 2024)\n\n10\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nExtract B\nData as a barrier to entry\n\nA central feature of the modern platform economy is the role of consumer data. Large incumbents have access to vast troves of behavioural, location and transaction data that allow them to personalise recommendations and target advertising with unparalleled precision. New entrants face a classic chicken-and-egg problem: without scale they cannot train effective algorithms, but without effective algorithms they cannot achieve scale.Data portability obligations — requirements that incumbents make it easier for users to export their data to rival services — are one proposed remedy. Others include mandated interoperability, so that users of one social network can interact with users of another. Critics warn that such remedies risk diluting the product improvements that user data makes possible, and may raise privacy risks if not carefully designed.\n(Source: adapted from the Stigler Center report on digital platforms, 2024)\n\nExtract C\nThe UK's Digital Markets, Competition and Consumers Act, 2024\n\nThe UK's Digital Markets, Competition and Consumers Act, which came into force in late 2024, creates a new competition regime targeted at the largest digital platforms. The CMA can designate firms with 'Strategic Market Status' and impose tailored conduct requirements: non-discrimination rules, data-sharing obligations, or restrictions on self-preferencing.Supporters argue the regime allows faster and more flexible intervention than traditional antitrust, which has often been criticised as too slow to keep up with fast-moving digital markets. Critics worry that conduct requirements may deter innovation, penalise success, and hand substantial discretionary power to a single regulator.\n(Source: adapted from CMA guidance and UK government consultation papers, 2024)\n\n11\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "With reference to Figure 1 and Extract A, explain one likely reason why digital-platform markets tend towards a 'winner-takes-most' outcome.",
+                "marks": 5,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "With reference to Figure 2 and Extract A, discuss the potential consumer-welfare consequences of high concentration in the UK digital advertising market.",
+                "marks": 12,
+                "options": null
+              },
+              {
+                "label": "c",
+                "text": "Examine the extent to which data-portability obligations (Extract B) are likely to reduce barriers to entry in digital markets.",
+                "marks": 8,
+                "options": null
+              },
+              {
+                "label": "d",
+                "text": "Assess the case for designating a dominant digital platform as having 'Strategic Market Status' under the 2024 Act. Refer to Extract C in your answer.",
+                "marks": 10,
+                "options": null
+              },
+              {
+                "label": "e",
+                "text": "Discuss whether traditional measures of market power, such as market share and the Herfindahl-Hirschman Index, are adequate for regulating competition in digital platform markets. Refer to the extracts and your own knowledge.",
+                "marks": 15,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              }
+            ],
+            "totalMarks": 50
           }
         ],
         "totalMarks": 50
@@ -317,7 +918,24 @@
           "You are advised to spend 30 minutes on this section."
         ],
         "extracts": [],
-        "questions": [],
+        "questions": [
+          {
+            "number": null,
+            "stem": "7\nSome economists argue that the rise of very large, data-rich firms has fundamentally changed the nature of competition in modern consumer markets.\nEvaluate the extent to which existing microeconomic theory adequately explains behaviour and outcomes in digital platform markets.\n\n(Total for Question 7 = 25 marks)\n\nOR",
+            "tables": [],
+            "figures": [],
+            "parts": [],
+            "totalMarks": 25
+          },
+          {
+            "number": null,
+            "stem": "8\n'Behavioural economics has shown that consumers are systematically irrational. The pricing strategies of large firms in online markets exploit this irrationality, justifying extensive government intervention.'\nTo what extent do you agree? Refer to specific examples in your answer.\n\n(Total for Question 8 = 25 marks)\n\n23\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nIndicate which question you are answering by marking a cross in the box ☒. If you change your\nmind, put a line through the box ☒ and then indicate your new question with a cross ☒.\n\nChosen question number: Question 7\nQuestion 8\n\nWrite your answer here:\n\n24\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n25\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n26\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n27\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n28\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n(Total for Question = 25 marks)\nTOTAL FOR SECTION C = 25 MARKS\nTOTAL FOR PAPER = 100 MARKS\n\n29",
+            "tables": [],
+            "figures": [],
+            "parts": [],
+            "totalMarks": 25
+          }
+        ],
         "totalMarks": 25
       }
     ]
@@ -340,43 +958,166 @@
         "questions": [
           {
             "number": null,
-            "stem": "1\nThe table shows selected macroeconomic data for the UK economy, 2021–2024.",
-            "tables": [],
+            "stem": "1\nThe table shows selected macroeconomic data for the UK economy, 2021–2024.\n\n2\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
+            "tables": [
+              [
+                [
+                  "Year",
+                  "Real GDP\n(£bn, 2019 prices)",
+                  "CPI inflation\n(%)",
+                  "Unemployment\nrate (%)"
+                ],
+                [
+                  "2021",
+                  "2,100",
+                  "2.6",
+                  "4.5"
+                ],
+                [
+                  "2022",
+                  "2,180",
+                  "9.1",
+                  "3.7"
+                ],
+                [
+                  "2023",
+                  "2,183",
+                  "7.3",
+                  "4.0"
+                ],
+                [
+                  "2024",
+                  "2,203",
+                  "2.6",
+                  "4.3"
+                ]
+              ]
+            ],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Using the data, calculate the rate of real GDP growth in the UK in 2022. You are advised to show your working.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "Which of the following best describes the UK's economic performance in 2022?",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "recession with deflation"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "2\nIn 2025 the Bank of England's Monetary Policy Committee (MPC) cut the Bank Rate from 5.25% to 4.50%.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Explain one likely effect of this cut in the Bank Rate on UK aggregate demand.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "A cut in UK interest rates is most likely to cause the pound sterling, other things equal, to:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "appreciate"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "3\nUK government net borrowing rose to 5.4% of GDP in 2024.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Using an AD/AS diagram, explain the likely short-run effect on UK real GDP of a rise in government borrowing used to fund higher public spending.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "Which of the following best describes government net borrowing?",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "total government debt"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "4\nIn 2024 the UK ran a current-account deficit of 2.4% of GDP.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Explain one policy measure the UK government could use to reduce the current-account deficit.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "A current account deficit is most likely to be reduced by:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "a rise in the real exchange rate"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "5\nThe UK government has set a long-term target of raising real GDP growth to 2.5% per year.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Explain one supply-side policy that the UK government could use to raise long-run trend growth.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "Which of the following policies is most likely to raise long-run trend growth?",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "a temporary VAT cut"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           }
         ],
         "totalMarks": 25
@@ -408,11 +1149,84 @@
         "questions": [
           {
             "number": null,
-            "stem": "6\nThe UK's post-COVID economic recovery",
+            "stem": "6\nThe UK's post-COVID economic recovery\n\nFigure 1: UK quarterly real GDP, 2019 Q4 – 2025 Q4 (index, 2019 Q4 = 100)\n\n(Source: adapted from Office for National Statistics quarterly GDP data)\n\nFigure 2: Bank of England Bank Rate, 2019–2025 (%)\n\n(Source: adapted from Bank of England data)\n\n9\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nExtract A\nThe shape of the UK recovery\n\nThe UK economy suffered a sharp contraction of almost 10% in real output during 2020 as a result of COVID-19 lockdowns — the largest annual fall in recorded modern history. Rapid vaccine roll-out and large-scale fiscal support (including the furlough scheme) enabled a strong initial rebound in 2021, but growth slowed again as supply-chain disruption and the energy-price shock of 2022 fed through into sharply higher consumer prices.By the end of 2025, UK real GDP remained only slightly above its pre-pandemic peak. Commentators have suggested that the UK recovery has been unusually weak compared with the United States and several major European economies. Low productivity growth, persistent labour-market disengagement and subdued business investment are commonly cited as constraints on the recovery.\n(Source: adapted from Office for National Statistics and Institute for Fiscal Studies analysis, 2025)\n\n10\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nExtract B\nMonetary and fiscal policy since the pandemic\n\nThe Bank of England responded to the pandemic by cutting the Bank Rate to a record low of 0.1% and launching a major round of quantitative easing. When inflation surged in 2022, the Monetary Policy Committee reversed course, raising the Bank Rate sharply to 5.25% by mid-2023. As inflation fell in 2024 and 2025, the Bank began cautiously lowering the Bank Rate again.Fiscal policy has been more constrained. High debt-to-GDP ratios, close to 100%, and elevated borrowing costs have limited the scope for tax cuts or major increases in public spending. The government has relied heavily on supply-side measures, including planning reforms, apprenticeship expansion and investment zones, to try to raise trend growth.\n(Source: adapted from Bank of England Monetary Policy Report and HM Treasury budget documents, 2025)\n\nExtract C\nLabour market and productivity puzzles\n\nDespite sluggish output growth, the UK unemployment rate has remained low by historical standards. Economists have focused on two features of the post-pandemic labour market: a significant rise in long-term sickness — an estimated 2.8 million working-age adults are inactive because of ill-health — and persistently weak productivity growth, with output per hour worked barely changing over the past decade.Some analysts argue that these two trends are linked: inactive workers reduce effective labour supply, which in turn raises wage pressure, discourages investment in labour-saving technology and dampens long-run productivity growth. Others emphasise factors such as under-investment in public capital and skills, weak competition in services, and uncertainty arising from Brexit.\n(Source: adapted from Bank of England and Resolution Foundation research, 2025)\n\n11\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "With reference to Figure 1 and Extract A, explain one likely cause of the weakness of the UK's post-pandemic recovery.",
+                "marks": 5,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "With reference to Figure 2 and Extract B, discuss the likely macroeconomic effects of the Bank of England's decision to raise the Bank Rate from 0.1% to 5.25% between 2021 and 2023.",
+                "marks": 12,
+                "options": null
+              },
+              {
+                "label": "c",
+                "text": "Examine the case for using supply-side policy rather than demand-side policy to raise the UK's long-run trend rate of growth.",
+                "marks": 8,
+                "options": null
+              },
+              {
+                "label": "d",
+                "text": "Assess the extent to which high levels of long-term sickness (Extract C) have held back the UK's economic recovery.",
+                "marks": 10,
+                "options": null
+              },
+              {
+                "label": "e",
+                "text": "Discuss the likely macroeconomic consequences of the UK government using additional public borrowing to fund a large one-off rise in public investment. Refer to Extract B and your own knowledge.",
+                "marks": 15,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              },
+              {
+                "label": null,
+                "text": "Question 6 continued",
+                "marks": null,
+                "options": null
+              }
+            ],
+            "totalMarks": 50
           }
         ],
         "totalMarks": 50
@@ -425,7 +1239,24 @@
           "You are advised to spend 30 minutes on this section."
         ],
         "extracts": [],
-        "questions": [],
+        "questions": [
+          {
+            "number": null,
+            "stem": "7\nIn 2025 the UK Chancellor of the Exchequer announced a multi-year freeze on the income tax personal allowance, bringing more workers into the tax system as wages rise.\nEvaluate the likely macroeconomic effects of this policy.\n\n(Total for Question 7 = 25 marks)\n\nOR",
+            "tables": [],
+            "figures": [],
+            "parts": [],
+            "totalMarks": 25
+          },
+          {
+            "number": null,
+            "stem": "8\n'The best way for the UK to achieve both low inflation and high employment is to give the Bank of England an even stronger mandate to target inflation.'\nTo what extent do you agree?\n\n(Total for Question 8 = 25 marks)\n\n23\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nIndicate which question you are answering by marking a cross in the box ☒. If you change your\nmind, put a line through the box ☒ and then indicate your new question with a cross ☒.\n\nChosen question number: Question 7\nQuestion 8\n\nWrite your answer here:\n\n24\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n25\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n26\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n27\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n28\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n(Total for Question = 25 marks)\nTOTAL FOR SECTION C = 25 MARKS\nTOTAL FOR PAPER = 100 MARKS\n\n29",
+            "tables": [],
+            "figures": [],
+            "parts": [],
+            "totalMarks": 25
+          }
+        ],
         "totalMarks": 25
       }
     ]
@@ -446,43 +1277,160 @@
         "questions": [
           {
             "number": null,
-            "stem": "1\nThe table shows estimates of the UK Phillips curve relationship across three sub-periods.",
-            "tables": [],
+            "stem": "1\nThe table shows estimates of the UK Phillips curve relationship across three sub-periods.\n\n2\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
+            "tables": [
+              [
+                [
+                  "Period",
+                  "Average\nunemployment (%)",
+                  "Average\ninflation (%)",
+                  "Estimated\nNAIRU (%)"
+                ],
+                [
+                  "1999–2007",
+                  "5.1",
+                  "1.7",
+                  "5.3"
+                ],
+                [
+                  "2010–2019",
+                  "5.8",
+                  "2.1",
+                  "4.6"
+                ],
+                [
+                  "2021–2024",
+                  "4.0",
+                  "5.4",
+                  "4.3"
+                ]
+              ]
+            ],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Using the 2021–2024 data, calculate the unemployment gap and briefly explain what it\nsuggests about wage-price pressures over the period.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "A fall in the estimated NAIRU between 1999–2007 and 2010–2019 is most consistent with:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "adverse supply-side shocks"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "2\nFollowing a global energy-price shock in 2022, the UK experienced a persistent negative output\ngap. The OBR estimated the gap at −1.6% of potential GDP in 2023.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Using an AD/AS diagram, explain one reason why the economy may fail to return to\npotential output without policy intervention.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "A supply-side shock that raises the long-run aggregate supply curve is most likely to:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "increase inflation and reduce growth"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "3\nThe UK economy's marginal propensity to consume (MPC) out of disposable income is estimated at\n0.65 for low-income households and 0.20 for high-income households. In 2025 the government is\nconsidering two equally-sized fiscal packages: (i) a targeted income-support programme for\nlow-income households, or (ii) an income-tax cut for high earners.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Calculate the approximate fiscal multiplier for each package, assuming a simple closed-economy\nKeynesian framework with a marginal tax rate of 30%. Show your working.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "The difference between the two multipliers most clearly illustrates:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "crowding out"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "4\nIn 2025 the pound sterling depreciated by 8% on a trade-weighted basis. UK imports are estimated to\nhave a pass-through coefficient of 0.55, meaning that 55% of the depreciation is passed through\nto domestic import prices within twelve months.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Calculate the likely first-year impact of the depreciation on the UK CPI, assuming imports\naccount for 28% of the CPI basket. Show your working.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "A higher pass-through coefficient is most likely associated with:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "invoicing in the domestic currency"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "5\nSome economists describe the advanced economies as being in a period of secular stagnation:\npersistently weak demand, low inflation and negative real interest rates even at full employment.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Explain one reason why a savings glut in emerging economies could contribute to secular\nstagnation in advanced economies.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "A policy most likely to counteract secular stagnation is:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "contractionary fiscal policy to rebuild headroom"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           }
         ],
         "totalMarks": 25
@@ -513,11 +1461,42 @@
         "questions": [
           {
             "number": null,
-            "stem": "6\nJapan's 'lost decades': liquidity traps, balance-sheet recessions and Abenomics",
+            "stem": "6\nJapan's 'lost decades': liquidity traps, balance-sheet recessions and Abenomics\n\nFigure 1: Japan real GDP growth and CPI inflation, 1992–2024 (annual %)\n\n(Source: adapted from Cabinet Office of Japan and IMF data)\n\nFigure 2: Japan general-government gross debt (% of GDP)\nand Bank of Japan policy rate (%), 1992–2024\n\n(Source: adapted from Bank of Japan and IMF Fiscal Monitor, 2024)\n\n9\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nExtract A\nThe bursting of the 1990 bubble\n\nBetween 1985 and 1990 Japanese equity and commercial real-estate prices rose by over 300%. When the asset bubble burst in 1990–91, both equity and property prices fell by more than 60% over the subsequent decade, wiping out approximately US$16 trillion of private-sector wealth.Japanese firms and households responded with sustained efforts to repay debt rather than take on new borrowing, even as the Bank of Japan reduced interest rates towards zero. The economist Richard Koo described this as a balance-sheet recession: an economy-wide prioritisation of debt reduction over new investment, which conventional monetary policy is poorly equipped to address.GDP growth averaged just 1.0% over 1992–2012 and CPI inflation averaged near zero, with multiple episodes of outright deflation.\n(Source: adapted from Koo, R. 'The Holy Grail of Macroeconomics', and IMF data)\n\n10\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nExtract B\nThe liquidity trap and unconventional monetary policy\n\nBy 1999 the Bank of Japan policy rate had reached effectively zero, yet inflation remained below target. Under these conditions, further conventional cuts become impossible, and the economy is said to be caught in a liquidity trap.The Bank of Japan responded with a series of unconventional measures: quantitative easing (QE) from 2001, forward guidance, negative interest rates on reserves from 2016, and yield-curve control from 2016 — under which the ten-year government bond yield was explicitly targeted at approximately zero percent.Critics argued these measures distorted the financial system, impaired the profitability of commercial banks, and made the eventual normalisation of policy extremely difficult. Supporters pointed to a return of positive inflation in 2023–2024 as evidence of the programme's success.\n(Source: adapted from Bank of Japan and Brookings Institution papers, 2024)\n\nExtract C\nAbenomics and structural reform\n\nIn 2012 Prime Minister Shinzo Abe launched 'Abenomics', consisting of three 'arrows': aggressive monetary easing, flexible fiscal policy, and supply-side structural reforms including greater female labour-force participation, corporate-governance reform and participation in international trade agreements.The third arrow — structural reform — remains the most contested. Critics argue insufficient progress has been made on labour-market reform, especially in breaking down the rigid distinction between permanent and non-permanent employment that constrains wage growth.\n(Source: adapted from OECD Japan Economic Survey, 2024)\n\n11\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "With reference to Figure 1 and Extract A, explain one likely reason why Japanese GDP growth\nand inflation remained close to zero for the two decades after 1992.",
+                "marks": 5,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "With reference to Figure 2 and Extract B, discuss the possible effects of quantitative easing\nand yield-curve control on the Japanese macroeconomy.",
+                "marks": 12,
+                "options": null
+              },
+              {
+                "label": "c",
+                "text": "Examine why conventional monetary policy may be ineffective in a liquidity trap.",
+                "marks": 8,
+                "options": null
+              },
+              {
+                "label": "d",
+                "text": "Assess the extent to which Japan's prolonged stagnation was driven by\ndemand-side rather than supply-side factors.",
+                "marks": 10,
+                "options": null
+              },
+              {
+                "label": "e",
+                "text": "Evaluate the likely effectiveness of Abenomics-style structural reforms in restoring\nlong-run growth in an advanced economy of your choice. Refer to Extract C and your own knowledge.",
+                "marks": 15,
+                "options": null
+              }
+            ],
+            "totalMarks": 50
           }
         ],
         "totalMarks": 50
@@ -528,7 +1507,24 @@
           "Answer ONE question from this section."
         ],
         "extracts": [],
-        "questions": [],
+        "questions": [
+          {
+            "number": null,
+            "stem": "7\nProponents of Modern Monetary Theory (MMT) argue that a government that issues debt in its\nown currency faces no hard financial constraint on deficit spending; the only binding constraint\nis inflation.\nEvaluate the MMT argument with reference to UK macroeconomic policy.\n(Total for Question 7 = 25 marks)\n\nOR",
+            "tables": [],
+            "figures": [],
+            "parts": [],
+            "totalMarks": 25
+          },
+          {
+            "number": null,
+            "stem": "8\n'Central bank independence has outlived its usefulness: in an era of large fiscal deficits and\nsupply-side shocks, monetary and fiscal policy should be formally coordinated.'\nTo what extent do you agree?\n(Total for Question 8 = 25 marks)\n\n23\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nIndicate which question you are answering by marking a cross in the box ☒.\n\nChosen question number: Question 7\nQuestion 8\n\nWrite your answer here:\n\n24\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n25\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n26\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n27\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n28\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n(Total for Question = 25 marks)\nTOTAL FOR SECTION C = 25 MARKS\nTOTAL FOR PAPER = 100 MARKS\n\n29",
+            "tables": [],
+            "figures": [],
+            "parts": [],
+            "totalMarks": 25
+          }
+        ],
         "totalMarks": 25
       }
     ]
@@ -549,43 +1545,133 @@
         "questions": [
           {
             "number": null,
-            "stem": "1\nA central bank applies a simple Taylor rule of the form:\n\ni = r* + π + 0.5(π − π*) + 0.5(y − y*)\n\nwhere i is the policy rate, r* the equilibrium real rate (2%), π the current inflation rate,\nπ* the target (2%), and (y − y*) the output gap as a % of potential GDP. Current data\nshows π = 4.5% and an output gap of +1.2%.",
+            "stem": "1\nA central bank applies a simple Taylor rule of the form:\n\ni = r* + π + 0.5(π − π*) + 0.5(y − y*)\n\nwhere i is the policy rate, r* the equilibrium real rate (2%), π the current inflation rate,\nπ* the target (2%), and (y − y*) the output gap as a % of potential GDP. Current data\nshows π = 4.5% and an output gap of +1.2%.\n\n2\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Calculate the Taylor-rule recommended policy rate and explain briefly how it differs from a\npurely inflation-targeting rule.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "A Taylor-rule coefficient on inflation below 0.5 would generally be associated with:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "an inflation-averse central bank"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "2\nEmpirical studies of the UK economy estimate that a 1 percentage-point increase in the Bank Rate\nreduces real GDP by approximately 0.5% after 18–24 months, with peak inflation effect at\naround 24 months.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Explain why the estimated transmission lag between monetary policy and output is a key\nchallenge for the Monetary Policy Committee in 'real time'.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "The existence of long and variable lags most strongly supports:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "discretionary monetary policy based on current data"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "3\nThe Ricardian equivalence hypothesis holds that, under certain assumptions, a tax cut\nfinanced by government borrowing has no effect on aggregate consumption because households anticipate\nhigher future taxes. Empirical evidence across OECD economies suggests that the equivalence\nhypothesis holds only partially: estimated offsetting saving coefficients range from 0.2 to 0.7.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Explain two reasons why Ricardian equivalence is unlikely to hold exactly in practice.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "The assumption most critical to strict Ricardian equivalence is:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "households are liquidity-constrained"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "4\nSome economists argue that prolonged cyclical unemployment following a large adverse shock can\nbecome structural — a process known as hysteresis. In the UK, long-term unemployment\nrates remain 40% above their pre-2008 average.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Explain one mechanism through which cyclical unemployment can generate hysteresis.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "A policy most directly targeting hysteresis would be:",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "a temporary fall in VAT"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           },
           {
             "number": null,
             "stem": "5\nThe theory of an Optimum Currency Area (OCA) identifies criteria under which countries\nbenefit from sharing a single currency: high labour mobility, high trade integration, fiscal\ntransfer mechanisms, and symmetric business cycles.",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "Explain one reason why the euro area has been widely judged to fall short of OCA criteria.",
+                "marks": 4,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "Which of the following is most likely to increase the costs of currency-union\nmembership for a small member state?",
+                "marks": 1,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "high labour mobility between member states"
+                  }
+                ]
+              }
+            ],
+            "totalMarks": 5
           }
         ],
         "totalMarks": 25
@@ -616,11 +1702,42 @@
         "questions": [
           {
             "number": null,
-            "stem": "6\nDebt, deflation and the Chinese growth model under stress",
+            "stem": "6\nDebt, deflation and the Chinese growth model under stress\n\nFigure 1: China property-sector investment (% of GDP) and new-home prices\n(YoY %), 2015–2024\n\n(Source: adapted from National Bureau of Statistics of China, 2024)\n\nFigure 2: China gross debt by sector (% of GDP), 2008 vs 2024\n\n(Source: adapted from BIS Credit to the Non-financial Sector statistics, 2024)\n\n9\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nExtract A\nThe end of the investment-led growth model\n\nFor three decades until around 2014, China's growth was sustained by very high rates of investment, much of it in infrastructure and residential property. By the peak of the investment cycle, real-estate investment alone exceeded 15% of GDP, financed through a combination of land sales by local governments, shadow-banking credit, and bank lending against rising property collateral.The unwinding of this model, which began in 2021 with the forced deleveraging of major property developers, has exposed the scale of embedded non-performing loans and local-government financing-vehicle debts. New-home starts in 2024 were approximately 60% below the 2019 peak.Economists including Michael Pettis have argued that the transition away from this model cannot avoid either a prolonged growth slowdown or a rise in the household consumption share of GDP that would require substantial political and institutional change.\n(Source: adapted from IMF Article IV Consultation and international research, 2024)\n\n10\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nExtract B\nDeflationary pressures and the 'debt deflation' risk\n\nCPI inflation in China fell to −0.3% by mid-2024, with producer prices falling for twenty consecutive months. Weak domestic demand, combined with rapid growth in manufacturing capacity, has generated significant excess supply in sectors from electric vehicles to solar panels, part of which has been exported aggressively to advanced and emerging economies.Economists have warned of the risk of Irving Fisher's debt deflation dynamic: falling prices raise the real value of existing nominal debts, generating further deleveraging, falling demand and additional price declines. This dynamic is particularly concerning given that non-financial corporate debt reached 136% of GDP by 2024.\n(Source: adapted from Peterson Institute for International Economics briefings, 2024)\n\nExtract C\nPolicy options and international spillovers\n\nChinese policymakers have so far resisted calls for a large-scale household stimulus, arguing that 'welfarism' would weaken work incentives. Instead, policy has focused on easing monetary conditions and supporting targeted sectors identified as strategic priorities, including EVs, batteries and semiconductors.Rising Chinese export volumes in these sectors have prompted both the US and EU to impose tariffs; China's trading partners have warned that persistent bilateral trade imbalances, if uncorrected, risk triggering a broader trade-policy backlash. Some commentators argue that China's deflationary pressures are effectively being exported to the rest of the world.\n(Source: adapted from The Economist and OECD Economic Outlook, 2024)\n\n11\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
             "tables": [],
             "figures": [],
-            "parts": [],
-            "totalMarks": null
+            "parts": [
+              {
+                "label": "a",
+                "text": "With reference to Figure 1 and Extract A, explain one likely cause of the sharp downturn in\nChinese property-sector investment between 2021 and 2024.",
+                "marks": 5,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "With reference to Figure 2 and Extract B, discuss the possible consequences of a\ndebt-deflation dynamic for Chinese macroeconomic performance.",
+                "marks": 12,
+                "options": null
+              },
+              {
+                "label": "c",
+                "text": "Examine two reasons why a rebalancing from investment-led to consumption-led growth\nmay be politically and institutionally difficult in China.",
+                "marks": 8,
+                "options": null
+              },
+              {
+                "label": "d",
+                "text": "Assess the extent to which China's 2021–2024 slowdown reflects a structural\nrather than a cyclical problem.",
+                "marks": 10,
+                "options": null
+              },
+              {
+                "label": "e",
+                "text": "Evaluate the likely international macroeconomic spillovers of persistent Chinese excess\ncapacity and deflation. Refer to Extract C and your own knowledge in your answer.",
+                "marks": 15,
+                "options": null
+              }
+            ],
+            "totalMarks": 50
           }
         ],
         "totalMarks": 50
@@ -631,7 +1748,24 @@
           "Answer ONE question from this section."
         ],
         "extracts": [],
-        "questions": [],
+        "questions": [
+          {
+            "number": null,
+            "stem": "7\nThe transition to net-zero emissions is likely to generate large adjustments in relative prices,\ncapital stocks and labour allocation. Some economists describe this as a greenflation or\nclimateflation challenge.\nEvaluate the likely macroeconomic consequences of an accelerated global net-zero\ntransition for inflation, output growth and financial stability.\n(Total for Question 7 = 25 marks)\n\nOR",
+            "tables": [],
+            "figures": [],
+            "parts": [],
+            "totalMarks": 25
+          },
+          {
+            "number": null,
+            "stem": "8\n'The US dollar's role as the dominant global reserve currency is the central source of instability\nin the international monetary system, but no credible alternative currently exists.'\nTo what extent do you agree? Refer to the Triffin dilemma and recent policy\ndevelopments in your answer.\n(Total for Question 8 = 25 marks)\n\n23\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nIndicate which question you are answering by marking a cross in the box ☒.\n\nChosen question number: Question 7\nQuestion 8\n\nWrite your answer here:\n\n24\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n25\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n26\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n27\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n28\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 7 / Question 8 continued\n\n(Total for Question = 25 marks)\nTOTAL FOR SECTION C = 25 MARKS\nTOTAL FOR PAPER = 100 MARKS\n\n29",
+            "tables": [],
+            "figures": [],
+            "parts": [],
+            "totalMarks": 25
+          }
+        ],
         "totalMarks": 25
       }
     ]
@@ -656,7 +1790,46 @@
             "body": "The UK National Living Wage has risen by more than 55% in nominal terms since 2018. The Low Pay Commission recommends the annual rate to government, taking into account the effect on employment, the cost of living and relative pay in the wider economy.Supporters argue that the policy has been successful in raising the real wages of low-paid workers without causing the large increase in unemployment that early critics feared. Employment among those most affected has held up well, and average weekly earnings at the bottom of the wage distribution have risen substantially faster than the median.Critics note, however, that sectors with a high concentration of low-paid jobs — particularly hospitality, retail and social care — have reported reductions in working hours and longer recruitment timescales. Some small businesses have raised prices to cover the increased wage bill, potentially feeding into higher inflation. Debate continues about how much further the minimum wage can rise without triggering job losses.\n(Source: adapted from Low Pay Commission and Resolution Foundation analysis, 2026)"
           }
         ],
-        "questions": [],
+        "questions": [
+          {
+            "number": null,
+            "stem": "1\nCase Study 1: the UK national minimum wage\n\nFigure 1: UK National Living Wage (hourly rate, £), 2018–2026\n\n(Source: adapted from UK Low Pay Commission reports, 2018–2026)\n\n2\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nExtract A\nThe UK National Living Wage in 2026\n\nThe UK National Living Wage has risen by more than 55% in nominal terms since 2018. The Low Pay Commission recommends the annual rate to government, taking into account the effect on employment, the cost of living and relative pay in the wider economy.Supporters argue that the policy has been successful in raising the real wages of low-paid workers without causing the large increase in unemployment that early critics feared. Employment among those most affected has held up well, and average weekly earnings at the bottom of the wage distribution have risen substantially faster than the median.Critics note, however, that sectors with a high concentration of low-paid jobs — particularly hospitality, retail and social care — have reported reductions in working hours and longer recruitment timescales. Some small businesses have raised prices to cover the increased wage bill, potentially feeding into higher inflation. Debate continues about how much further the minimum wage can rise without triggering job losses.\n(Source: adapted from Low Pay Commission and Resolution Foundation analysis, 2026)\n\n3\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
+            "tables": [],
+            "figures": [],
+            "parts": [
+              {
+                "label": "a",
+                "text": "With reference to the data, calculate the percentage increase in the UK National Living Wage between 2018 and 2026. Show your working.",
+                "marks": 5,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "Using a labour-market diagram, explain the likely effect of a minimum wage set above the equilibrium wage on employment in a competitive labour market.",
+                "marks": 5,
+                "options": null
+              },
+              {
+                "label": "c",
+                "text": "Which of the following is most likely to reduce the disemployment effect of a minimum wage?",
+                "marks": 5,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "highly price-elastic demand for labour"
+                  }
+                ]
+              },
+              {
+                "label": "d",
+                "text": "Explain one reason why the impact of the UK National Living Wage on total employment has been smaller than early critics predicted.",
+                "marks": 10,
+                "options": null
+              }
+            ],
+            "totalMarks": 25
+          }
+        ],
         "totalMarks": 25
       },
       {
@@ -666,7 +1839,16 @@
           "You are advised to spend 30 minutes on this section."
         ],
         "extracts": [],
-        "questions": [],
+        "questions": [
+          {
+            "number": null,
+            "stem": "2\nUsing Extract A and your knowledge of economics,\nevaluate the likely microeconomic and macroeconomic effects on the UK economy of a further 20% rise in the National Living Wage by 2030.\n\n(Total for Question 2 = 25 marks)\n\n7\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 2\n\n8\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 2 continued\n\n9\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 2 continued\n\n10\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 2 continued\n\n11\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 2 continued(Total for Question 2 = 25 marks)TOTAL FOR SECTION B = 25 MARKS\n\n12\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nBLANK PAGE\nSECTION C BEGINS ON THE NEXT PAGE.\n\n13\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
+            "tables": [],
+            "figures": [],
+            "parts": [],
+            "totalMarks": 25
+          }
+        ],
         "totalMarks": 25
       },
       {
@@ -683,7 +1865,35 @@
             "body": "Eurozone inflation rose to 10.6% in late 2022, its highest level since the introduction of the euro in 1999. The main drivers were wholesale energy and natural-gas prices following Russia's invasion of Ukraine, compounded by global supply-chain disruption after the pandemic.The European Central Bank responded by raising its deposit facility rate from −0.5% in mid-2022 to 4% by 2024 — the most aggressive tightening cycle in its history. Inflation has since fallen back close to the 2% target, but commentators point to sharp differences between member states: inflation in Slovakia and the Baltic countries has been stickier than in France and Italy, reflecting differences in wage dynamics, energy dependence and fiscal policy.The ECB began cutting rates in late 2024. Some economists argue that eurozone monetary policy is chronically constrained by the inability to tailor policy to individual member states. Others point out that fiscal policy and labour-market reforms at national level matter more for inflation differentials than monetary policy.\n(Source: adapted from European Central Bank Economic Bulletin, 2025)"
           }
         ],
-        "questions": [],
+        "questions": [
+          {
+            "number": null,
+            "stem": "3\nCase Study 2: inflation and monetary policy in the eurozone\n\nFigure 2: Eurozone HICP inflation and ECB deposit rate, 2020–2025 (%)\n\n(Source: adapted from Eurostat and European Central Bank data, 2025)\n\n14\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nExtract B\nThe eurozone's inflation cycle\n\nEurozone inflation rose to 10.6% in late 2022, its highest level since the introduction of the euro in 1999. The main drivers were wholesale energy and natural-gas prices following Russia's invasion of Ukraine, compounded by global supply-chain disruption after the pandemic.The European Central Bank responded by raising its deposit facility rate from −0.5% in mid-2022 to 4% by 2024 — the most aggressive tightening cycle in its history. Inflation has since fallen back close to the 2% target, but commentators point to sharp differences between member states: inflation in Slovakia and the Baltic countries has been stickier than in France and Italy, reflecting differences in wage dynamics, energy dependence and fiscal policy.The ECB began cutting rates in late 2024. Some economists argue that eurozone monetary policy is chronically constrained by the inability to tailor policy to individual member states. Others point out that fiscal policy and labour-market reforms at national level matter more for inflation differentials than monetary policy.\n(Source: adapted from European Central Bank Economic Bulletin, 2025)\n\n15\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
+            "tables": [],
+            "figures": [],
+            "parts": [
+              {
+                "label": "a",
+                "text": "Explain one likely cause of the sharp rise in eurozone inflation in 2022.",
+                "marks": 8,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "Discuss the possible microeconomic and macroeconomic effects of the ECB's decision to raise the deposit rate from −0.5% to 4% between 2022 and 2024.",
+                "marks": 12,
+                "options": null
+              },
+              {
+                "label": "c",
+                "text": "Evaluate the extent to which a single monetary policy for the eurozone can effectively control inflation across all member states. Refer to Extract B and your own knowledge.",
+                "marks": 30,
+                "options": null
+              }
+            ],
+            "totalMarks": 50
+          }
+        ],
         "totalMarks": 50
       }
     ]
@@ -708,7 +1918,46 @@
             "body": "By mid-2022, the UK labour market had reached the tightest conditions on record: the vacancy rate exceeded 4% while unemployment fell below 3.8%. Employers across hospitality, logistics, agriculture and social care reported severe recruitment difficulties. Nominal wages grew at over 6% year-on-year, but real wages stagnated as CPI inflation reached double digits.Commentators attributed the tightness to a combination of factors: a significant reduction in post-Brexit EU migration into lower-wage sectors, an unexpected rise in economic inactivity driven by long-term ill health among workers aged 50–64, and a faster-than-expected recovery in aggregate demand.By 2025, some of these pressures had eased. EU labour-market participation partially recovered in sectors where visa rules had been relaxed, and the vacancy rate declined. However, the Bank of England continued to warn of second-round wage-price spiral risks, and the Monetary Policy Committee was slow to cut the Bank Rate despite falling headline inflation.\n(Source: adapted from ONS and Bank of England MPC Minutes, 2025)"
           }
         ],
-        "questions": [],
+        "questions": [
+          {
+            "number": null,
+            "stem": "1\nCase Study 1: UK labour shortages, migration and wage dynamics\n\nFigure 1: UK vacancy rate, unemployment rate and\nnominal wage growth, 2019–2025 (%)\n\n(Source: adapted from ONS Labour Force Survey and Vacancies Survey, 2025)\n\n2\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nExtract A\nA tighter UK labour market\n\nBy mid-2022, the UK labour market had reached the tightest conditions on record: the vacancy rate exceeded 4% while unemployment fell below 3.8%. Employers across hospitality, logistics, agriculture and social care reported severe recruitment difficulties. Nominal wages grew at over 6% year-on-year, but real wages stagnated as CPI inflation reached double digits.Commentators attributed the tightness to a combination of factors: a significant reduction in post-Brexit EU migration into lower-wage sectors, an unexpected rise in economic inactivity driven by long-term ill health among workers aged 50–64, and a faster-than-expected recovery in aggregate demand.By 2025, some of these pressures had eased. EU labour-market participation partially recovered in sectors where visa rules had been relaxed, and the vacancy rate declined. However, the Bank of England continued to warn of second-round wage-price spiral risks, and the Monetary Policy Committee was slow to cut the Bank Rate despite falling headline inflation.\n(Source: adapted from ONS and Bank of England MPC Minutes, 2025)\n\n3\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
+            "tables": [],
+            "figures": [],
+            "parts": [
+              {
+                "label": "a",
+                "text": "Using the 2022 data, explain what is meant by a tight labour market and calculate\nthe approximate Beveridge-curve position (the vacancies-to-unemployment ratio) in 2022.",
+                "marks": 5,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "Explain one likely microeconomic consequence of a sustained rise in the minimum wage in a\nlabour market characterised by the conditions described in Extract A.",
+                "marks": 5,
+                "options": null
+              },
+              {
+                "label": "c",
+                "text": "Which of the following is most consistent with the Bank of England's warning about\nsecond-round effects?",
+                "marks": 5,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "rising energy prices pushing up the CPI directly"
+                  }
+                ]
+              },
+              {
+                "label": "d",
+                "text": "Explain one reason why rising economic inactivity among older workers may raise the UK's\nequilibrium unemployment rate (NAIRU).",
+                "marks": 10,
+                "options": null
+              }
+            ],
+            "totalMarks": 25
+          }
+        ],
         "totalMarks": 25
       },
       {
@@ -718,7 +1967,16 @@
           "You are advised to spend 30 minutes on this section."
         ],
         "extracts": [],
-        "questions": [],
+        "questions": [
+          {
+            "number": null,
+            "stem": "2\nUsing Extract A and your knowledge of economics,\nevaluate the likely microeconomic and macroeconomic effects of a substantial\nexpansion of UK skilled-worker visa quotas, combined with a targeted programme of adult\nretraining for UK workers in lower-wage sectors.\n(Total for Question 2 = 25 marks)\n\n7\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 2\n\n8\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 2 continued\n\n9\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 2 continued\n\n10\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 2 continued\n\n11\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 2 continued\n\n(Total for Question 2 = 25 marks)\nTOTAL FOR SECTION B = 25 MARKS\n\n12\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nBLANK PAGE\nSECTION C BEGINS ON THE NEXT PAGE.\n\n13\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
+            "tables": [],
+            "figures": [],
+            "parts": [],
+            "totalMarks": 25
+          }
+        ],
         "totalMarks": 25
       },
       {
@@ -735,7 +1993,35 @@
             "body": "Global demand for critical minerals — lithium, cobalt, nickel, rare earths and copper — has surged as the energy transition drives the scale-up of EV production, battery-storage installation and electricity-grid upgrades. The IEA estimates that demand for lithium could grow by 8–13 times by 2040 relative to a 2020 baseline.Supply of several critical minerals is geographically concentrated. The Democratic Republic of the Congo produces approximately 70% of global cobalt; Chile and Australia together account for over 75% of global lithium extraction; Indonesia dominates nickel; China is responsible for the majority of downstream refining and processing of rare earths and lithium chemicals.This concentration creates both opportunities and risks. For producing countries, sustained strong prices can generate substantial export revenues and foreign-exchange inflows. However, recent commodity-price history suggests that cycles are both pronounced and asymmetric: prices can triple within two years and then collapse by 60% over the following twelve months, as happened to lithium between 2022 and 2024.Advanced economies have responded by launching 'friend-shoring' and supply-diversification initiatives, including the EU Critical Raw Materials Act (2024), which establishes strategic stockpiles and sets target benchmarks for domestic extraction, processing and recycling of critical minerals by 2030.\n(Source: adapted from IEA Critical Minerals Outlook and World Bank commodity reviews, 2024)"
           }
         ],
-        "questions": [],
+        "questions": [
+          {
+            "number": null,
+            "stem": "3\nCase Study 2: The critical-minerals 'supercycle' and emerging-economy exposure\n\nFigure 2: Price index of critical minerals\n(lithium, cobalt, nickel, copper), 2015–2024 (2015 = 100)\n\n(Source: adapted from World Bank Pink Sheet and IEA Critical Minerals Review, 2024)\n\n14\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nExtract B\nCritical minerals, the energy transition and strategic concentration\n\nGlobal demand for critical minerals — lithium, cobalt, nickel, rare earths and copper — has surged as the energy transition drives the scale-up of EV production, battery-storage installation and electricity-grid upgrades. The IEA estimates that demand for lithium could grow by 8–13 times by 2040 relative to a 2020 baseline.Supply of several critical minerals is geographically concentrated. The Democratic Republic of the Congo produces approximately 70% of global cobalt; Chile and Australia together account for over 75% of global lithium extraction; Indonesia dominates nickel; China is responsible for the majority of downstream refining and processing of rare earths and lithium chemicals.This concentration creates both opportunities and risks. For producing countries, sustained strong prices can generate substantial export revenues and foreign-exchange inflows. However, recent commodity-price history suggests that cycles are both pronounced and asymmetric: prices can triple within two years and then collapse by 60% over the following twelve months, as happened to lithium between 2022 and 2024.Advanced economies have responded by launching 'friend-shoring' and supply-diversification initiatives, including the EU Critical Raw Materials Act (2024), which establishes strategic stockpiles and sets target benchmarks for domestic extraction, processing and recycling of critical minerals by 2030.\n(Source: adapted from IEA Critical Minerals Outlook and World Bank commodity reviews, 2024)\n\n15\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
+            "tables": [],
+            "figures": [],
+            "parts": [
+              {
+                "label": "a",
+                "text": "Explain one likely microeconomic effect of a sustained tripling of critical-mineral prices\non the cost structure of battery EV manufacturers.",
+                "marks": 8,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "Discuss the possible microeconomic and macroeconomic consequences for a small,\ncommodity-exporting emerging economy (such as the DRC or Chile) of a sharp fall in the world price\nof its dominant export.",
+                "marks": 12,
+                "options": null
+              },
+              {
+                "label": "c",
+                "text": "Evaluate the extent to which strategic industrial policy — including\ngovernment-backed stockpiling, domestic-content requirements and targeted subsidies for local\nextraction and processing — is an effective response by advanced economies to the\nconcentration of critical-mineral supply. Refer to Extract B and your own knowledge in your answer.",
+                "marks": 30,
+                "options": null
+              }
+            ],
+            "totalMarks": 50
+          }
+        ],
         "totalMarks": 50
       }
     ]
@@ -760,7 +2046,46 @@
             "body": "Economic research on the labour-market effects of information technology has increasingly adopted a task-based framework. Occupations are decomposed into bundles of tasks — routine cognitive, non-routine cognitive, routine manual, and non-routine manual — each of which differs in the ease with which it can be performed by machines.Earlier waves of digital technology automated routine tasks, generating the well-documented 'hollowing out' of the wage distribution: declining employment and wages for mid-skilled routine-task workers, combined with growing demand for both low-skilled non-routine service workers and high-skilled non-routine cognitive workers.Generative AI differs from earlier information technologies in important respects. Evidence suggests that it substitutes for some non-routine cognitive tasks previously thought to be the preserve of high-skilled professionals, particularly in writing, coding, analysis and design. Early productivity studies report gains ranging from 14% to 37% for workers performing these tasks with AI augmentation, with the largest gains concentrated among less-experienced workers.Economists disagree sharply about the aggregate implications. Optimists argue AI represents a general-purpose technology that will raise total-factor productivity across the economy once complementary organisational changes occur. Pessimists warn of a renewed productivity paradox in which visible adoption fails to translate into measured aggregate productivity growth, and of a concentration of gains in the hands of the firms that own proprietary models and compute infrastructure.\n(Source: adapted from OECD Employment Outlook and the Brookings Institution, 2025)"
           }
         ],
-        "questions": [],
+        "questions": [
+          {
+            "number": null,
+            "stem": "1\nCase Study 1: Generative AI, the productivity paradox and the task-based model of labour demand\n\nFigure 1: Estimated UK occupational exposure to generative\nAI by skill level and productivity change since 2022 (%)\n\n(Source: adapted from OECD Employment Outlook and ONS productivity statistics, 2025)\n\n2\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nExtract A\nGenerative AI and the task-based model of the labour market\n\nEconomic research on the labour-market effects of information technology has increasingly adopted a task-based framework. Occupations are decomposed into bundles of tasks — routine cognitive, non-routine cognitive, routine manual, and non-routine manual — each of which differs in the ease with which it can be performed by machines.Earlier waves of digital technology automated routine tasks, generating the well-documented 'hollowing out' of the wage distribution: declining employment and wages for mid-skilled routine-task workers, combined with growing demand for both low-skilled non-routine service workers and high-skilled non-routine cognitive workers.Generative AI differs from earlier information technologies in important respects. Evidence suggests that it substitutes for some non-routine cognitive tasks previously thought to be the preserve of high-skilled professionals, particularly in writing, coding, analysis and design. Early productivity studies report gains ranging from 14% to 37% for workers performing these tasks with AI augmentation, with the largest gains concentrated among less-experienced workers.Economists disagree sharply about the aggregate implications. Optimists argue AI represents a general-purpose technology that will raise total-factor productivity across the economy once complementary organisational changes occur. Pessimists warn of a renewed productivity paradox in which visible adoption fails to translate into measured aggregate productivity growth, and of a concentration of gains in the hands of the firms that own proprietary models and compute infrastructure.\n(Source: adapted from OECD Employment Outlook and the Brookings Institution, 2025)\n\n3\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
+            "tables": [],
+            "figures": [],
+            "parts": [
+              {
+                "label": "a",
+                "text": "Using Figure 1, calculate the ratio of estimated productivity gain to AI exposure for the\n'Professional' category and explain what this ratio suggests about how 'binding' the exposure measure\nhas been in practice.",
+                "marks": 5,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "Explain, using the task-based framework in Extract A, one reason why the wage effect\nof generative AI may differ markedly from the effect of earlier waves of digital automation.",
+                "marks": 5,
+                "options": null
+              },
+              {
+                "label": "c",
+                "text": "Which of the following best describes the condition under which generative AI would raise,\nrather than reduce, demand for labour in an exposed occupation?",
+                "marks": 5,
+                "options": [
+                  {
+                    "label": "A",
+                    "text": "when labour demand is derived from capital rather than output"
+                  }
+                ]
+              },
+              {
+                "label": "d",
+                "text": "Explain one reason why the productivity paradox (Extract A, line 18) may occur even\nin the presence of rapid micro-level productivity gains.",
+                "marks": 10,
+                "options": null
+              }
+            ],
+            "totalMarks": 25
+          }
+        ],
         "totalMarks": 25
       },
       {
@@ -770,7 +2095,16 @@
           "You are advised to spend 30 minutes on this section."
         ],
         "extracts": [],
-        "questions": [],
+        "questions": [
+          {
+            "number": null,
+            "stem": "2\nUsing Extract A and your knowledge of economics,\nevaluate the likely microeconomic and macroeconomic effects on an advanced\neconomy of rapid and widespread adoption of generative artificial intelligence over the next decade,\nwith particular reference to the distribution of income, aggregate productivity and the\nappropriate policy response.\n(Total for Question 2 = 25 marks)\n\n7\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 2\n\n8\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 2 continued\n\n9\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 2 continued\n\n10\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 2 continued\n\n11\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nQuestion 2 continued\n\n(Total for Question 2 = 25 marks)\nTOTAL FOR SECTION B = 25 MARKS\n\n12\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nBLANK PAGE\nSECTION C BEGINS ON THE NEXT PAGE.\n\n13\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
+            "tables": [],
+            "figures": [],
+            "parts": [],
+            "totalMarks": 25
+          }
+        ],
         "totalMarks": 25
       },
       {
@@ -787,7 +2121,35 @@
             "body": "The classic Mundell–Fleming trilemma (or 'impossible trinity') states that an open economy cannot simultaneously maintain a fixed exchange rate, free capital mobility and independent monetary policy: at most two of the three are achievable at any time.Recent empirical research, most associated with Hélène Rey of London Business School, has argued that the trilemma has in practice collapsed into a dilemma: even countries with floating exchange rates find their domestic financial conditions substantially driven by a global financial cycle in gross capital flows, credit growth and asset prices, the dynamics of which are closely linked to US monetary policy.The implication is that exchange-rate flexibility alone does not deliver full monetary-policy independence, particularly for small open economies with developed capital markets. Preserving independence, Rey argues, requires direct measures to dampen capital-flow volatility: targeted macroprudential regulation, and in some cases explicit capital controls — a position once regarded as professionally taboo, now increasingly accepted by the IMF itself through its Institutional View on capital-flow management.The 2008–09 global financial crisis, the 2013 'taper tantrum', and the 2022–23 US monetary tightening episode all generated substantial emerging-market capital-flow reversals, sharp exchange-rate depreciations, and macroeconomic stress disproportionate to the domestic fundamentals of the affected economies.\n(Source: adapted from Rey, H. 'Dilemma not Trilemma', IMF policy papers and BIS research, 2024)"
           }
         ],
-        "questions": [],
+        "questions": [
+          {
+            "number": null,
+            "stem": "3\nCase Study 2: Global financial architecture, capital flows and the 'impossible trinity'\n\nFigure 2: Net capital inflows to emerging-market economies\nand advanced-economy policy rate (US 10-year yield, %), 2000–2024\n\n(Source: adapted from IMF Balance of Payments Statistics and FRED, 2024)\n\n14\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nExtract B\nThe Mundell–Fleming trilemma and the global financial cycle\n\nThe classic Mundell–Fleming trilemma (or 'impossible trinity') states that an open economy cannot simultaneously maintain a fixed exchange rate, free capital mobility and independent monetary policy: at most two of the three are achievable at any time.Recent empirical research, most associated with Hélène Rey of London Business School, has argued that the trilemma has in practice collapsed into a dilemma: even countries with floating exchange rates find their domestic financial conditions substantially driven by a global financial cycle in gross capital flows, credit growth and asset prices, the dynamics of which are closely linked to US monetary policy.The implication is that exchange-rate flexibility alone does not deliver full monetary-policy independence, particularly for small open economies with developed capital markets. Preserving independence, Rey argues, requires direct measures to dampen capital-flow volatility: targeted macroprudential regulation, and in some cases explicit capital controls — a position once regarded as professionally taboo, now increasingly accepted by the IMF itself through its Institutional View on capital-flow management.The 2008–09 global financial crisis, the 2013 'taper tantrum', and the 2022–23 US monetary tightening episode all generated substantial emerging-market capital-flow reversals, sharp exchange-rate depreciations, and macroeconomic stress disproportionate to the domestic fundamentals of the affected economies.\n(Source: adapted from Rey, H. 'Dilemma not Trilemma', IMF policy papers and BIS research, 2024)\n\n15\n\nTurn over\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\n\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA\nDO NOT WRITE IN THIS AREA",
+            "tables": [],
+            "figures": [],
+            "parts": [
+              {
+                "label": "a",
+                "text": "Using the standard Mundell–Fleming framework, explain why a small open economy on\na fixed exchange rate with free capital mobility cannot independently set its domestic\nmonetary policy.",
+                "marks": 8,
+                "options": null
+              },
+              {
+                "label": "b",
+                "text": "Discuss the possible microeconomic and macroeconomic consequences for an emerging economy of\na sudden reversal of capital inflows triggered by tightening of US monetary policy.",
+                "marks": 12,
+                "options": null
+              },
+              {
+                "label": "c",
+                "text": "Evaluate the case for a co-ordinated reform of the global financial architecture\n— including an expanded role for the IMF as an international lender of last resort,\nthe use of capital-flow management measures, and a widened Special Drawing Rights\nallocation mechanism — as a response to the global financial cycle described in Extract B.\nRefer to the extract and your own knowledge in your answer.",
+                "marks": 30,
+                "options": null
+              }
+            ],
+            "totalMarks": 50
+          }
+        ],
         "totalMarks": 50
       }
     ]
