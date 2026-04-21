@@ -4,8 +4,8 @@
   <line x1="50" y1="200" x2="440" y2="200" stroke="#000"/>
   <g font-size="9">
     <text x="20" y="25">6</text><text x="25" y="65">3</text>
-    <text x="25" y="115">0</text><text x="20" y="155">&minus;3</text>
-    <text x="20" y="195">&minus;6</text>
+    <text x="25" y="115">0</text><text x="20" y="155">−3</text>
+    <text x="20" y="195">−6</text>
   </g>
   <polyline fill="none" stroke="#000" stroke-width="1.6"
     points="55,102 95,95 135,115 175,100 215,108 255,185 295,95 335,100 375,105 415,100"/>

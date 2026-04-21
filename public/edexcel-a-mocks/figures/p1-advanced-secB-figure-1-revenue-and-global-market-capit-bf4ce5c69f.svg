@@ -14,5 +14,5 @@
     <text x="395" y="123">575</text><text x="245" y="135">1,600</text>
     <text x="200" y="153">135</text><text x="195" y="165">1,150</text>
   </g>
-  <g font-size="9"><text x="340" y="215">&#9632; Revenue</text><text x="400" y="215" fill="#777">&#9632; Mkt cap</text></g>
+  <g font-size="9"><text x="340" y="215">■ Revenue</text><text x="400" y="215" fill="#777">■ Mkt cap</text></g>
 </svg>

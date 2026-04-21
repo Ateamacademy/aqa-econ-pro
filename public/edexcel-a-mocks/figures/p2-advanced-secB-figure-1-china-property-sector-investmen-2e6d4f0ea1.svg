@@ -4,7 +4,7 @@
   <line x1="50" y1="180" x2="440" y2="180" stroke="#000"/>
   <g font-size="9">
     <text x="20" y="25">20%</text><text x="20" y="65">12%</text>
-    <text x="25" y="105">0</text><text x="20" y="145">&minus;8%</text>
+    <text x="25" y="105">0</text><text x="20" y="145">−8%</text>
   </g>
   <polyline fill="none" stroke="#000" stroke-width="1.8"
     points="55,50 95,45 135,40 175,40 215,45 255,55 295,85 335,120 375,135 415,140"/>
