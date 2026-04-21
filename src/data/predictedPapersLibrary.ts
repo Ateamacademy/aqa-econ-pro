@@ -12,6 +12,12 @@ export interface PredictedPaper {
   description: string;
   totalMarks: number;
   content: string; // markdown with questions in "Question N [M marks]" format
+  /**
+   * Optional: if set, the predicted-paper renderer should display this static
+   * Pearson-style HTML booklet (in /public) inside an iframe instead of the
+   * interactive exam UI. Used by the 9 Edexcel A mock papers.
+   */
+  bookletUrl?: string;
 }
 
 export const predictedPapersLibrary: PredictedPaper[] = [
