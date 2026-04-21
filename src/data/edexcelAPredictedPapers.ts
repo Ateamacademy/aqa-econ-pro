@@ -1,18 +1,19 @@
 import type { PredictedPaper } from "./predictedPapersLibrary";
+import { buildEdexcelAPaperMarkdown } from "./edexcelAPredictedPapersBuilder";
 
 /**
  * Edexcel A A-Level Economics (9EC0) — predicted papers library.
  *
- * The 9 entries below (Paper 1/2/3 × Moderate/Hard/Advanced) are backed by
- * static, print-ready Pearson-style HTML booklets in /public/edexcel-a-mocks/.
- * The PredictedPapers UI detects the `bookletUrl` field and renders the
- * booklet in an iframe instead of the interactive exam-marking workflow.
+ * The 9 entries below (Paper 1/2/3 × Moderate/Hard/Advanced) are sourced
+ * from `edexcelAPredictedPapersData.json`, a structured extraction of the
+ * 9 Pearson-style HTML booklets in /public/edexcel-a-mocks/. Each entry
+ * exposes a markdown `content` field that the standard `parseQuestions`
+ * pipeline turns into individual answer cards in the marking UI (matching
+ * the AQA Predicted Papers flow).
  *
- * The legacy "Set A/B/C" id convention is preserved so existing routing,
- * sorting and library lookups (e.g. paper-sets coverage reports) continue
- * to resolve. The display layer maps Set A→Moderate, B→Hard, C→Advanced.
+ * `bookletUrl` still points to the original print HTML so users can open
+ * the authentic A4 Pearson booklet from the paper toolbar.
  */
-
 type Tier = { letter: "A" | "B" | "C"; label: "Moderate" | "Hard" | "Advanced"; slug: "moderate" | "hard" | "advanced" };
 
 const TIERS: Tier[] = [
@@ -60,20 +61,19 @@ const PAPERS: Array<{
 ];
 
 export const edexcelAPredictedPapers: PredictedPaper[] = PAPERS.flatMap((p) =>
-  TIERS.map<PredictedPaper>((t) => ({
-    id: `edxa-p${p.num}-${t.letter.toLowerCase()}`,
-    subject: "edexcel-a",
-    paper: p.num,
-    title: `Paper ${p.num} — Set ${t.letter}`, // displayed as "Paper N — Moderate/Hard/Advanced" via SET_LABEL_DISPLAY_MAP
-    description: p.descriptions[t.label],
-    totalMarks: 100,
-    bookletUrl: `/edexcel-a-mocks/paper-${p.num}-${t.slug}.html`,
-    // Minimal placeholder content — the renderer uses bookletUrl, not this.
-    content: `# Edexcel A-Level Economics A (${p.code}) — Paper ${p.num} — ${t.label}
-
-**Time: 2 hours | Total: 100 marks**
-
-This paper is presented as an authentic Pearson-style printable booklet. Click "Open Pearson Booklet" to view, print or save as PDF.
-`,
-  }))
+  TIERS.map<PredictedPaper>((t) => {
+    const dataId = `paper-${p.num}-${t.slug}`;
+    const content = buildEdexcelAPaperMarkdown(dataId)
+      ?? `# Edexcel A-Level Economics A (${p.code}) — Paper ${p.num} — ${t.label}\n\n_Booklet content unavailable._`;
+    return {
+      id: `edxa-p${p.num}-${t.letter.toLowerCase()}`,
+      subject: "edexcel-a",
+      paper: p.num,
+      title: `Paper ${p.num} — Set ${t.letter}`, // displayed via SET_LABEL_DISPLAY_MAP
+      description: p.descriptions[t.label],
+      totalMarks: 100,
+      bookletUrl: `/edexcel-a-mocks/paper-${p.num}-${t.slug}.html`,
+      content,
+    };
+  })
 );
