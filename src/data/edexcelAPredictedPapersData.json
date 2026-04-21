@@ -2191,9 +2191,10 @@
       {
         "label": "A",
         "intro": [
-          "Answer ALL questions. Write your answers in the spaces provided.",
-          "You are advised to spend 30 minutes on this section.",
-          "Read the following extract and study the figure before answering Question 1."
+          "Read the following extract and study the figure before answering Question 1.",
+          "Answer ALL Questions 1(a) to 1(c), and EITHER Question 1(d) OR Question 1(e).",
+          "Write your answers in the spaces provided.",
+          "You are advised to spend 1 hour on this section."
         ],
         "extracts": [
           {
@@ -2211,82 +2212,54 @@
             "parts": [
               {
                 "label": "a",
-                "text": "With reference to the data, calculate the percentage increase in the UK National Living Wage between 2018 and 2026. Show your working.",
+                "text": "With reference to Figure 1, calculate the percentage increase in the UK National Living Wage between 2018 and 2026. Show your working.",
                 "marks": 5,
                 "options": null
               },
               {
                 "label": "b",
-                "text": "Using a labour-market diagram, explain the likely effect of a minimum wage set above the equilibrium wage on employment in a competitive labour market.",
-                "marks": 5,
+                "text": "With reference to Extract A and a labour-market diagram, discuss the likely microeconomic effects of the rise in the National Living Wage on employment in low-paid sectors such as hospitality and retail.",
+                "marks": 12,
                 "options": null
               },
               {
                 "label": "c",
-                "text": "Which of the following is most likely to reduce the disemployment effect of a minimum wage?",
-                "marks": 5,
-                "options": [
-                  {
-                    "label": "A",
-                    "text": "highly price-elastic demand for labour"
-                  },
-                  {
-                    "label": "B",
-                    "text": "low pay concentrated in sectors facing strong product-market competition"
-                  },
-                  {
-                    "label": "C",
-                    "text": "employers having significant monopsony power in the local labour market"
-                  },
-                  {
-                    "label": "D",
-                    "text": "wage rises being fully passed through into consumer prices"
-                  }
-                ]
+                "text": "Examine the advantages of using the National Living Wage, rather than in-work benefits, as a means of raising the incomes of low-paid UK workers.",
+                "marks": 8,
+                "options": null
               },
               {
                 "label": "d",
-                "text": "Explain one reason why the impact of the UK National Living Wage on total employment has been smaller than early critics predicted.",
-                "marks": 10,
+                "text": "Evaluate the microeconomic and macroeconomic factors that the Low Pay Commission should consider when recommending a further substantial rise in the UK National Living Wage by 2030.",
+                "marks": 25,
+                "options": null
+              },
+              {
+                "label": "e",
+                "text": "With reference to the information provided and your own knowledge, evaluate the likely microeconomic and macroeconomic effects on the UK economy of a further 20% rise in the National Living Wage by 2030.",
+                "marks": 25,
                 "options": null
               }
             ],
-            "totalMarks": 25
+            "totalMarks": 50
           }
         ],
-        "totalMarks": 25,
+        "totalMarks": 50,
         "figures": [
           {
             "title": "Figure 1: UK National Living Wage (hourly rate, £), 2018–2026",
             "url": "/edexcel-a-mocks/figures/p3-moderate-secA-figure-1-uk-national-living-wage-hourly--8f5cf22793.svg"
           }
-        ]
+        ],
+        "tables": []
       },
       {
         "label": "B",
         "intro": [
-          "Answer the question in the space provided.",
-          "You are advised to spend 30 minutes on this section."
-        ],
-        "extracts": [],
-        "questions": [
-          {
-            "number": 2,
-            "stem": "Using Extract A and your knowledge of economics,\nevaluate the likely microeconomic and macroeconomic effects on the UK economy of a further 20% rise in the National Living Wage by 2030.",
-            "tables": [],
-            "figures": [],
-            "parts": [],
-            "totalMarks": 25
-          }
-        ],
-        "totalMarks": 25
-      },
-      {
-        "label": "C",
-        "intro": [
-          "Answer ALL parts of Question 3. Write your answer in the space provided.",
-          "You are advised to spend 1 hour on this section.",
-          "Read the following extract and study the figure before answering Question 3."
+          "Read the following extract and study the figure before answering Question 2.",
+          "Answer ALL Questions 2(a) to 2(c), and EITHER Question 2(d) OR Question 2(e).",
+          "Write your answers in the spaces provided.",
+          "You are advised to spend 1 hour on this section."
         ],
         "extracts": [
           {
@@ -2297,27 +2270,39 @@
         ],
         "questions": [
           {
-            "number": 3,
+            "number": 2,
             "stem": "Case Study 2: inflation and monetary policy in the eurozone\n\nFigure 2: Eurozone HICP inflation and ECB deposit rate, 2020–2025 (%)\n\n(Source: adapted from Eurostat and European Central Bank data, 2025)\n\nExtract B\nThe eurozone's inflation cycle\n\nEurozone inflation rose to 10.6% in late 2022, its highest level since the introduction of the euro in 1999. The main drivers were wholesale energy and natural-gas prices following Russia's invasion of Ukraine, compounded by global supply-chain disruption after the pandemic.The European Central Bank responded by raising its deposit facility rate from −0.5% in mid-2022 to 4% by 2024 — the most aggressive tightening cycle in its history. Inflation has since fallen back close to the 2% target, but commentators point to sharp differences between member states: inflation in Slovakia and the Baltic countries has been stickier than in France and Italy, reflecting differences in wage dynamics, energy dependence and fiscal policy.The ECB began cutting rates in late 2024. Some economists argue that eurozone monetary policy is chronically constrained by the inability to tailor policy to individual member states. Others point out that fiscal policy and labour-market reforms at national level matter more for inflation differentials than monetary policy.\n(Source: adapted from European Central Bank Economic Bulletin, 2025)",
             "tables": [],
             "figures": [],
             "parts": [
               {
                 "label": "a",
-                "text": "Explain one likely cause of the sharp rise in eurozone inflation in 2022.",
-                "marks": 8,
+                "text": "With reference to Figure 2, explain the relationship between eurozone HICP inflation and the ECB deposit rate between 2020 and 2025.",
+                "marks": 5,
                 "options": null
               },
               {
                 "label": "b",
-                "text": "Discuss the possible microeconomic and macroeconomic effects of the ECB's decision to raise the deposit rate from −0.5% to 4% between 2022 and 2024.",
+                "text": "With reference to Extract B, discuss the likely microeconomic and macroeconomic effects on eurozone households and firms of the ECB raising its deposit rate from −0.5% to 4% between 2022 and 2024.",
                 "marks": 12,
                 "options": null
               },
               {
                 "label": "c",
-                "text": "Evaluate the extent to which a single monetary policy for the eurozone can effectively control inflation across all member states. Refer to Extract B and your own knowledge.",
-                "marks": 30,
+                "text": "Examine the advantages of using monetary policy, rather than fiscal policy, as a means of bringing eurozone inflation back to its 2% target.",
+                "marks": 8,
+                "options": null
+              },
+              {
+                "label": "d",
+                "text": "Evaluate the microeconomic and macroeconomic effects on member states of operating under the ECB's single monetary policy when national inflation rates differ significantly.",
+                "marks": 25,
+                "options": null
+              },
+              {
+                "label": "e",
+                "text": "With reference to the information provided and your own knowledge, evaluate the extent to which national fiscal policy and labour-market reform — rather than ECB monetary policy — should be used to control inflation differentials within the eurozone.",
+                "marks": 25,
                 "options": null
               }
             ],
@@ -2330,7 +2315,8 @@
             "title": "Figure 2: Eurozone HICP inflation and ECB deposit rate, 2020–2025 (%)",
             "url": "/edexcel-a-mocks/figures/p3-moderate-secC-figure-2-eurozone-hicp-inflation-and-ecb-b89b408ea3.svg"
           }
-        ]
+        ],
+        "tables": []
       }
     ]
   },
@@ -2343,9 +2329,10 @@
       {
         "label": "A",
         "intro": [
-          "Answer ALL questions. Write your answers in the spaces provided.",
-          "You are advised to spend 30 minutes on this section.",
-          "Read the following extract and study the figure before answering Question 1."
+          "Read the following extract and study the figure before answering Question 1.",
+          "Answer ALL Questions 1(a) to 1(c), and EITHER Question 1(d) OR Question 1(e).",
+          "Write your answers in the spaces provided.",
+          "You are advised to spend 1 hour on this section."
         ],
         "extracts": [
           {
@@ -2363,82 +2350,54 @@
             "parts": [
               {
                 "label": "a",
-                "text": "Using the 2022 data, explain what is meant by a tight labour market and calculate\nthe approximate Beveridge-curve position (the vacancies-to-unemployment ratio) in 2022.",
+                "text": "With reference to Figure 1 and Extract A, calculate and briefly comment on the change in the UK vacancies-to-unemployment ratio over the period shown.",
                 "marks": 5,
                 "options": null
               },
               {
                 "label": "b",
-                "text": "Explain one likely microeconomic consequence of a sustained rise in the minimum wage in a\nlabour market characterised by the conditions described in Extract A.",
-                "marks": 5,
+                "text": "With reference to Extract A and an aggregate demand and aggregate supply diagram, discuss the likely macroeconomic effects of a sustained tightening of the UK labour market on wage growth and inflation.",
+                "marks": 12,
                 "options": null
               },
               {
                 "label": "c",
-                "text": "Which of the following is most consistent with the Bank of England's warning about\nsecond-round effects?",
-                "marks": 5,
-                "options": [
-                  {
-                    "label": "A",
-                    "text": "rising energy prices pushing up the CPI directly"
-                  },
-                  {
-                    "label": "B",
-                    "text": "workers successfully bargaining for higher nominal wages to protect real pay"
-                  },
-                  {
-                    "label": "C",
-                    "text": "a one-off VAT cut being reversed in the following year"
-                  },
-                  {
-                    "label": "D",
-                    "text": "sterling appreciating against the dollar and the euro"
-                  }
-                ]
+                "text": "Examine the advantages of using a higher minimum wage, rather than targeted income-tax cuts, as a means of supporting low-paid UK workers in a tight labour market.",
+                "marks": 8,
+                "options": null
               },
               {
                 "label": "d",
-                "text": "Explain one reason why rising economic inactivity among older workers may raise the UK's\nequilibrium unemployment rate (NAIRU).",
-                "marks": 10,
+                "text": "Evaluate the microeconomic and macroeconomic factors the Bank of England should consider when deciding how aggressively to raise interest rates in response to a tight labour market.",
+                "marks": 25,
+                "options": null
+              },
+              {
+                "label": "e",
+                "text": "With reference to the information provided and your own knowledge, evaluate the likely microeconomic and macroeconomic effects on the UK economy of a sustained rise in economic inactivity among workers aged over 50.",
+                "marks": 25,
                 "options": null
               }
             ],
-            "totalMarks": 25
+            "totalMarks": 50
           }
         ],
-        "totalMarks": 25,
+        "totalMarks": 50,
         "figures": [
           {
             "title": "Figure 1: UK vacancy rate, unemployment rate and nominal wage growth, 2019–2025 (%)",
             "url": "/edexcel-a-mocks/figures/p3-hard-secA-figure-1-uk-vacancy-rate-unemployment-ra-450154acf3.svg"
           }
-        ]
+        ],
+        "tables": []
       },
       {
         "label": "B",
         "intro": [
-          "Answer the question in the space provided.",
-          "You are advised to spend 30 minutes on this section."
-        ],
-        "extracts": [],
-        "questions": [
-          {
-            "number": 2,
-            "stem": "Using Extract A and your knowledge of economics,\nevaluate the likely microeconomic and macroeconomic effects of a substantial\nexpansion of UK skilled-worker visa quotas, combined with a targeted programme of adult\nretraining for UK workers in lower-wage sectors.",
-            "tables": [],
-            "figures": [],
-            "parts": [],
-            "totalMarks": 25
-          }
-        ],
-        "totalMarks": 25
-      },
-      {
-        "label": "C",
-        "intro": [
-          "Answer ALL parts of Question 3. Write your answer in the space provided.",
-          "You are advised to spend 1 hour on this section.",
-          "Read the following extract and study the figure before answering Question 3."
+          "Read the following extract and study the figure before answering Question 2.",
+          "Answer ALL Questions 2(a) to 2(c), and EITHER Question 2(d) OR Question 2(e).",
+          "Write your answers in the spaces provided.",
+          "You are advised to spend 1 hour on this section."
         ],
         "extracts": [
           {
@@ -2449,27 +2408,39 @@
         ],
         "questions": [
           {
-            "number": 3,
+            "number": 2,
             "stem": "Case Study 2: The critical-minerals 'supercycle' and emerging-economy exposure\n\nFigure 2: Price index of critical minerals\n(lithium, cobalt, nickel, copper), 2015–2024 (2015 = 100)\n\n(Source: adapted from World Bank Pink Sheet and IEA Critical Minerals Review, 2024)\n\nExtract B\nCritical minerals, the energy transition and strategic concentration\n\nGlobal demand for critical minerals — lithium, cobalt, nickel, rare earths and copper — has surged as the energy transition drives the scale-up of EV production, battery-storage installation and electricity-grid upgrades. The IEA estimates that demand for lithium could grow by 8–13 times by 2040 relative to a 2020 baseline.Supply of several critical minerals is geographically concentrated. The Democratic Republic of the Congo produces approximately 70% of global cobalt; Chile and Australia together account for over 75% of global lithium extraction; Indonesia dominates nickel; China is responsible for the majority of downstream refining and processing of rare earths and lithium chemicals.This concentration creates both opportunities and risks. For producing countries, sustained strong prices can generate substantial export revenues and foreign-exchange inflows. However, recent commodity-price history suggests that cycles are both pronounced and asymmetric: prices can triple within two years and then collapse by 60% over the following twelve months, as happened to lithium between 2022 and 2024.Advanced economies have responded by launching 'friend-shoring' and supply-diversification initiatives, including the EU Critical Raw Materials Act (2024), which establishes strategic stockpiles and sets target benchmarks for domestic extraction, processing and recycling of critical minerals by 2030.\n(Source: adapted from IEA Critical Minerals Outlook and World Bank commodity reviews, 2024)",
             "tables": [],
             "figures": [],
             "parts": [
               {
                 "label": "a",
-                "text": "Explain one likely microeconomic effect of a sustained tripling of critical-mineral prices\non the cost structure of battery EV manufacturers.",
-                "marks": 8,
+                "text": "With reference to Figure 2, explain what the data suggest about the price behaviour of critical minerals (such as lithium and cobalt) since 2018.",
+                "marks": 5,
                 "options": null
               },
               {
                 "label": "b",
-                "text": "Discuss the possible microeconomic and macroeconomic consequences for a small,\ncommodity-exporting emerging economy (such as the DRC or Chile) of a sharp fall in the world price\nof its dominant export.",
+                "text": "With reference to Extract B and a cost and revenue diagram, discuss the likely microeconomic effects on producers of electric vehicles of a sustained tripling of critical-mineral prices.",
                 "marks": 12,
                 "options": null
               },
               {
                 "label": "c",
-                "text": "Evaluate the extent to which strategic industrial policy — including\ngovernment-backed stockpiling, domestic-content requirements and targeted subsidies for local\nextraction and processing — is an effective response by advanced economies to the\nconcentration of critical-mineral supply. Refer to Extract B and your own knowledge in your answer.",
-                "marks": 30,
+                "text": "Examine the advantages of using government-backed strategic stockpiles, rather than long-term offtake contracts, as a means of securing critical-mineral supply.",
+                "marks": 8,
+                "options": null
+              },
+              {
+                "label": "d",
+                "text": "Evaluate the microeconomic and macroeconomic consequences for a small, commodity-exporting economy of high concentration in critical-mineral production.",
+                "marks": 25,
+                "options": null
+              },
+              {
+                "label": "e",
+                "text": "With reference to the information provided and your own knowledge, evaluate the case for an advanced economy using strategic industrial policy — including subsidies and friend-shoring — to reduce dependence on a dominant critical-mineral supplier.",
+                "marks": 25,
                 "options": null
               }
             ],
@@ -2482,7 +2453,8 @@
             "title": "Figure 2: Price index of critical minerals (lithium, cobalt, nickel, copper), 2015–2024 (2015 = 100)",
             "url": "/edexcel-a-mocks/figures/p3-hard-secC-figure-2-price-index-of-critical-mineral-fb23cb0f16.svg"
           }
-        ]
+        ],
+        "tables": []
       }
     ]
   },
@@ -2495,9 +2467,10 @@
       {
         "label": "A",
         "intro": [
-          "Answer ALL questions. Write your answers in the spaces provided.",
-          "You are advised to spend 30 minutes on this section.",
-          "Read the following extract and study the figure before answering Question 1."
+          "Read the following extract and study the figure before answering Question 1.",
+          "Answer ALL Questions 1(a) to 1(c), and EITHER Question 1(d) OR Question 1(e).",
+          "Write your answers in the spaces provided.",
+          "You are advised to spend 1 hour on this section."
         ],
         "extracts": [
           {
@@ -2515,82 +2488,54 @@
             "parts": [
               {
                 "label": "a",
-                "text": "Using Figure 1, calculate the ratio of estimated productivity gain to AI exposure for the\n'Professional' category and explain what this ratio suggests about how 'binding' the exposure measure\nhas been in practice.",
+                "text": "With reference to Figure 1, calculate the ratio of estimated productivity gain to AI exposure for the occupational group with the highest exposure. Show your working.",
                 "marks": 5,
                 "options": null
               },
               {
                 "label": "b",
-                "text": "Explain, using the task-based framework in Extract A, one reason why the wage effect\nof generative AI may differ markedly from the effect of earlier waves of digital automation.",
-                "marks": 5,
+                "text": "With reference to Extract A and the task-based model of the labour market, discuss the likely microeconomic effects of generative AI on the wages of high-exposure occupations.",
+                "marks": 12,
                 "options": null
               },
               {
                 "label": "c",
-                "text": "Which of the following best describes the condition under which generative AI would raise,\nrather than reduce, demand for labour in an exposed occupation?",
-                "marks": 5,
-                "options": [
-                  {
-                    "label": "A",
-                    "text": "when labour demand is derived from capital rather than output"
-                  },
-                  {
-                    "label": "B",
-                    "text": "when generative AI is a strong substitute for high-skilled tasks within the role"
-                  },
-                  {
-                    "label": "C",
-                    "text": "when AI raises productivity enough to lower output prices and expand demand for the good"
-                  },
-                  {
-                    "label": "D",
-                    "text": "when the elasticity of substitution between labour and capital is close to zero"
-                  }
-                ]
+                "text": "Examine the advantages of using targeted retraining subsidies, rather than a universal basic income, as a means of responding to AI-driven labour-market disruption.",
+                "marks": 8,
+                "options": null
               },
               {
                 "label": "d",
-                "text": "Explain one reason why the productivity paradox (Extract A, line 18) may occur even\nin the presence of rapid micro-level productivity gains.",
-                "marks": 10,
+                "text": "Evaluate the microeconomic and macroeconomic factors that an advanced economy should consider when designing policy to maximise the productivity gains from generative AI while limiting wage inequality.",
+                "marks": 25,
+                "options": null
+              },
+              {
+                "label": "e",
+                "text": "With reference to the information provided and your own knowledge, evaluate the likely microeconomic and macroeconomic effects on an advanced economy of widespread adoption of generative AI over the next decade.",
+                "marks": 25,
                 "options": null
               }
             ],
-            "totalMarks": 25
+            "totalMarks": 50
           }
         ],
-        "totalMarks": 25,
+        "totalMarks": 50,
         "figures": [
           {
             "title": "Figure 1: Estimated UK occupational exposure to generative AI by skill level and productivity change since 2022 (%)",
             "url": "/edexcel-a-mocks/figures/p3-advanced-secA-figure-1-estimated-uk-occupational-expos-afbdb6dd3d.svg"
           }
-        ]
+        ],
+        "tables": []
       },
       {
         "label": "B",
         "intro": [
-          "Answer the question in the space provided.",
-          "You are advised to spend 30 minutes on this section."
-        ],
-        "extracts": [],
-        "questions": [
-          {
-            "number": 2,
-            "stem": "Using Extract A and your knowledge of economics,\nevaluate the likely microeconomic and macroeconomic effects on an advanced\neconomy of rapid and widespread adoption of generative artificial intelligence over the next decade,\nwith particular reference to the distribution of income, aggregate productivity and the\nappropriate policy response.",
-            "tables": [],
-            "figures": [],
-            "parts": [],
-            "totalMarks": 25
-          }
-        ],
-        "totalMarks": 25
-      },
-      {
-        "label": "C",
-        "intro": [
-          "Answer ALL parts of Question 3. Write your answer in the space provided.",
-          "You are advised to spend 1 hour on this section.",
-          "Read the following extract and study the figure before answering Question 3."
+          "Read the following extract and study the figure before answering Question 2.",
+          "Answer ALL Questions 2(a) to 2(c), and EITHER Question 2(d) OR Question 2(e).",
+          "Write your answers in the spaces provided.",
+          "You are advised to spend 1 hour on this section."
         ],
         "extracts": [
           {
@@ -2601,27 +2546,39 @@
         ],
         "questions": [
           {
-            "number": 3,
+            "number": 2,
             "stem": "Case Study 2: Global financial architecture, capital flows and the 'impossible trinity'\n\nFigure 2: Net capital inflows to emerging-market economies\nand advanced-economy policy rate (US 10-year yield, %), 2000–2024\n\n(Source: adapted from IMF Balance of Payments Statistics and FRED, 2024)\n\nExtract B\nThe Mundell–Fleming trilemma and the global financial cycle\n\nThe classic Mundell–Fleming trilemma (or 'impossible trinity') states that an open economy cannot simultaneously maintain a fixed exchange rate, free capital mobility and independent monetary policy: at most two of the three are achievable at any time.Recent empirical research, most associated with Hélène Rey of London Business School, has argued that the trilemma has in practice collapsed into a dilemma: even countries with floating exchange rates find their domestic financial conditions substantially driven by a global financial cycle in gross capital flows, credit growth and asset prices, the dynamics of which are closely linked to US monetary policy.The implication is that exchange-rate flexibility alone does not deliver full monetary-policy independence, particularly for small open economies with developed capital markets. Preserving independence, Rey argues, requires direct measures to dampen capital-flow volatility: targeted macroprudential regulation, and in some cases explicit capital controls — a position once regarded as professionally taboo, now increasingly accepted by the IMF itself through its Institutional View on capital-flow management.The 2008–09 global financial crisis, the 2013 'taper tantrum', and the 2022–23 US monetary tightening episode all generated substantial emerging-market capital-flow reversals, sharp exchange-rate depreciations, and macroeconomic stress disproportionate to the domestic fundamentals of the affected economies.\n(Source: adapted from Rey, H. 'Dilemma not Trilemma', IMF policy papers and BIS research, 2024)",
             "tables": [],
             "figures": [],
             "parts": [
               {
                 "label": "a",
-                "text": "Using the standard Mundell–Fleming framework, explain why a small open economy on\na fixed exchange rate with free capital mobility cannot independently set its domestic\nmonetary policy.",
-                "marks": 8,
+                "text": "With reference to Figure 2, explain what the data suggest about the relationship between US monetary policy and capital flows to emerging economies since 2018.",
+                "marks": 5,
                 "options": null
               },
               {
                 "label": "b",
-                "text": "Discuss the possible microeconomic and macroeconomic consequences for an emerging economy of\na sudden reversal of capital inflows triggered by tightening of US monetary policy.",
+                "text": "With reference to Extract B and the Mundell–Fleming framework, discuss the likely macroeconomic effects on a small open economy with a fixed exchange rate of a sharp tightening of US monetary policy.",
                 "marks": 12,
                 "options": null
               },
               {
                 "label": "c",
-                "text": "Evaluate the case for a co-ordinated reform of the global financial architecture\n— including an expanded role for the IMF as an international lender of last resort,\nthe use of capital-flow management measures, and a widened Special Drawing Rights\nallocation mechanism — as a response to the global financial cycle described in Extract B.\nRefer to the extract and your own knowledge in your answer.",
-                "marks": 30,
+                "text": "Examine the advantages of using capital-flow management measures, rather than reserve accumulation, as a means of insulating an emerging economy from the global financial cycle.",
+                "marks": 8,
+                "options": null
+              },
+              {
+                "label": "d",
+                "text": "Evaluate the microeconomic and macroeconomic consequences for an emerging economy of pursuing financial-account openness in the presence of a strong global financial cycle.",
+                "marks": 25,
+                "options": null
+              },
+              {
+                "label": "e",
+                "text": "With reference to the information provided and your own knowledge, evaluate the case for co-ordinated reform of the global financial architecture — including expanded IMF lending and central-bank swap lines — to reduce financial fragility in emerging markets.",
+                "marks": 25,
                 "options": null
               }
             ],
@@ -2634,7 +2591,8 @@
             "title": "Figure 2: Net capital inflows to emerging-market economies and advanced-economy policy rate (US 10-year yield, %), 2000–2024",
             "url": "/edexcel-a-mocks/figures/p3-advanced-secC-figure-2-net-capital-inflows-to-emerging-fca3a64e35.svg"
           }
-        ]
+        ],
+        "tables": []
       }
     ]
   }
