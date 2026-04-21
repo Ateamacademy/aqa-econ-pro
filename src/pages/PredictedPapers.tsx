@@ -2439,73 +2439,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
           </motion.div>
         )}
 
-        {step === "paper" && !isGenerating && !examFinished && selectedLibraryPaper?.bookletUrl && (
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-            className="space-y-4 mt-8"
-          >
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-4 border-b border-border/40">
-              <div>
-                <h2 className="text-2xl font-bold tracking-tight">
-                  {displayPaperTitle(selectedLibraryPaper.title)}
-                </h2>
-                <p className="text-sm text-muted-foreground mt-1">
-                  {selectedLibraryPaper.description}
-                </p>
-              </div>
-              <div className="flex flex-wrap items-center gap-2">
-                <Button asChild size="lg" variant="outline" className="rounded-full gap-2">
-                  <a href={selectedLibraryPaper.bookletUrl} target="_blank" rel="noopener noreferrer">
-                    <FileText className="h-5 w-5" /> Open print booklet
-                  </a>
-                </Button>
-                <Button
-                  size="lg"
-                  className="rounded-full gap-2 shadow-lg shadow-primary/20"
-                  onClick={() => {
-                    const w = window.open(selectedLibraryPaper.bookletUrl, "_blank", "noopener,noreferrer");
-                    if (!w) return;
-                    const trigger = () => setTimeout(() => { try { w.focus(); w.print(); } catch {} }, 600);
-                    w.addEventListener?.("load", trigger);
-                    setTimeout(trigger, 1500);
-                  }}
-                >
-                  <Download className="h-5 w-5" /> Print / Save PDF
-                </Button>
-                <ReportButton
-                  context={{
-                    page: `Predicted Papers → ${displayPaperTitle(selectedLibraryPaper.title)}`,
-                    board: examBoard,
-                    paperCode: `${examBoard} Paper ${paper}`,
-                  }}
-                />
-              </div>
-            </div>
-            {(() => {
-              const booklet = getEdexcelABookletByBookletUrl(selectedLibraryPaper.bookletUrl);
-              if (!booklet) {
-                return (
-                  <div className="rounded-2xl border border-border/60 bg-white overflow-hidden" style={{ height: "calc(100vh - 220px)", minHeight: 600 }}>
-                    <iframe
-                      id="edxa-booklet-frame"
-                      src={selectedLibraryPaper.bookletUrl}
-                      title={displayPaperTitle(selectedLibraryPaper.title)}
-                      className="w-full h-full border-0 bg-white"
-                    />
-                  </div>
-                );
-              }
-              return <EdexcelABookletView paper={booklet} />;
-            })()}
-            <p className="text-xs text-muted-foreground">
-              Native dark-themed view of the official Pearson-style booklet. Use "Open print booklet" above for the A4 print-ready version.
-            </p>
-          </motion.div>
-        )}
-
-        {step === "paper" && !isGenerating && !examFinished && !selectedLibraryPaper?.bookletUrl && (
+        {step === "paper" && !isGenerating && !examFinished && (
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
