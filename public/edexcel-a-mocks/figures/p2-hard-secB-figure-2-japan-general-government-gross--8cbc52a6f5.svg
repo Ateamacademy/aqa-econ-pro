@@ -1,0 +1,14 @@
+<svg viewBox="0 0 460 180" xmlns="http://www.w3.org/2000/svg" style="max-width: 130mm;">
+  <line x1="50" y1="20" x2="50" y2="150" stroke="#000"/>
+  <line x1="50" y1="150" x2="440" y2="150" stroke="#000"/>
+  <g font-size="9">
+    <text x="10" y="25">260%</text><text x="10" y="65">180%</text>
+    <text x="15" y="105">100%</text><text x="25" y="145">20%</text>
+  </g>
+  <polyline fill="none" stroke="#000" stroke-width="1.8"
+    points="55,130 95,115 135,100 175,85 215,70 255,55 295,45 335,35 375,30 415,25"/>
+  <polyline fill="none" stroke="#000" stroke-width="1.6" stroke-dasharray="3,3"
+    points="55,110 95,135 135,148 175,148 215,148 255,148 295,148 335,148 375,148 415,140"/>
+  <text x="420" y="30" font-size="9">Debt</text>
+  <text x="420" y="140" font-size="9">Rate</text>
+</svg>

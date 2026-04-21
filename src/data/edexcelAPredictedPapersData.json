@@ -80,6 +80,18 @@
                   {
                     "label": "A",
                     "text": "perfectly inelastic"
+                  },
+                  {
+                    "label": "B",
+                    "text": "price-inelastic"
+                  },
+                  {
+                    "label": "C",
+                    "text": "unit-elastic"
+                  },
+                  {
+                    "label": "D",
+                    "text": "price-elastic"
                   }
                 ]
               }
@@ -112,6 +124,18 @@
                   {
                     "label": "A",
                     "text": "an inferior good"
+                  },
+                  {
+                    "label": "B",
+                    "text": "a luxury normal good"
+                  },
+                  {
+                    "label": "C",
+                    "text": "a necessity normal good"
+                  },
+                  {
+                    "label": "D",
+                    "text": "a Giffen good"
                   }
                 ]
               }
@@ -123,7 +147,10 @@
             "stem": "In 2025 the UK government introduced an indirect tax of £0.18 per litre on sugary soft drinks. The diagram below shows the short-run effect.",
             "tables": [],
             "figures": [
-              "Figure: Sugary soft drinks market — tax incidence. Vertical axis: Price (£). Horizontal axis: Quantity (bn litres). Demand curve D slopes down. Original supply S and post-tax supply S+tax (parallel, shifted up by £0.18). Pre-tax equilibrium: P=£1.20, Q=4.0. Post-tax equilibrium: consumer price P=£1.32, producer price P=£1.14, Q=3.6."
+              {
+                "url": "/edexcel-a-mocks/figures/p1-moderate-q3-0903ccb418.svg",
+                "title": "Question 3 — Figure"
+              }
             ],
             "parts": [
               {
@@ -146,6 +173,18 @@
                   {
                     "label": "A",
                     "text": "increase producer surplus"
+                  },
+                  {
+                    "label": "B",
+                    "text": "internalise a negative externality"
+                  },
+                  {
+                    "label": "C",
+                    "text": "raise consumer surplus"
+                  },
+                  {
+                    "label": "D",
+                    "text": "address a positive externality"
                   }
                 ]
               }
@@ -172,6 +211,18 @@
                   {
                     "label": "A",
                     "text": "copyright protection"
+                  },
+                  {
+                    "label": "B",
+                    "text": "large capital start-up costs"
+                  },
+                  {
+                    "label": "C",
+                    "text": "patent protection"
+                  },
+                  {
+                    "label": "D",
+                    "text": "statutory minimum wage legislation"
                   }
                 ]
               }
@@ -198,6 +249,18 @@
                   {
                     "label": "A",
                     "text": "demand curve to the left"
+                  },
+                  {
+                    "label": "B",
+                    "text": "demand curve to the right"
+                  },
+                  {
+                    "label": "C",
+                    "text": "supply curve to the left"
+                  },
+                  {
+                    "label": "D",
+                    "text": "supply curve to the right"
                   }
                 ]
               }
@@ -308,7 +371,17 @@
             "totalMarks": 50
           }
         ],
-        "totalMarks": 50
+        "totalMarks": 50,
+        "figures": [
+          {
+            "title": "Figure 1: UK high-street coffee-shop market share by revenue, 2024",
+            "url": "/edexcel-a-mocks/figures/p1-moderate-secB-figure-1-uk-high-street-coffee-shop-mark-7eef9ce53c.svg"
+          },
+          {
+            "title": "Figure 2: Average price of a medium latte, UK high-street chains, 2020 and 2025",
+            "url": "/edexcel-a-mocks/figures/p1-moderate-secB-figure-2-average-price-of-a-medium-latte-07b098fbbf.svg"
+          }
+        ]
       },
       {
         "label": "C",
@@ -375,6 +448,18 @@
                   {
                     "label": "A",
                     "text": "increase output in the short run"
+                  },
+                  {
+                    "label": "B",
+                    "text": "invest in lower-emission production technology"
+                  },
+                  {
+                    "label": "C",
+                    "text": "raise wages for low-skilled workers"
+                  },
+                  {
+                    "label": "D",
+                    "text": "demand a government subsidy on capital"
                   }
                 ]
               }
@@ -401,6 +486,18 @@
                   {
                     "label": "A",
                     "text": "positive externality"
+                  },
+                  {
+                    "label": "B",
+                    "text": "status-quo bias effect"
+                  },
+                  {
+                    "label": "C",
+                    "text": "moral hazard outcome"
+                  },
+                  {
+                    "label": "D",
+                    "text": "Giffen paradox"
                   }
                 ]
               }
@@ -445,6 +542,18 @@
                   {
                     "label": "A",
                     "text": "the discount rate is high"
+                  },
+                  {
+                    "label": "B",
+                    "text": "entry barriers are low"
+                  },
+                  {
+                    "label": "C",
+                    "text": "the game is played with a known, finite horizon"
+                  },
+                  {
+                    "label": "D",
+                    "text": "firms observe each other's pricing frequently"
                   }
                 ]
               }
@@ -471,6 +580,18 @@
                   {
                     "label": "A",
                     "text": "an increase in equilibrium employment"
+                  },
+                  {
+                    "label": "B",
+                    "text": "no change in employment or wages"
+                  },
+                  {
+                    "label": "C",
+                    "text": "classical (real-wage) unemployment"
+                  },
+                  {
+                    "label": "D",
+                    "text": "monopsonistic exploitation"
                   }
                 ]
               }
@@ -497,6 +618,18 @@
                   {
                     "label": "A",
                     "text": "the Groceries Code of Conduct"
+                  },
+                  {
+                    "label": "B",
+                    "text": "the Chapter II prohibition of the Competition Act 1998"
+                  },
+                  {
+                    "label": "C",
+                    "text": "the Bribery Act 2010"
+                  },
+                  {
+                    "label": "D",
+                    "text": "the Consumer Rights Act 2015"
                   }
                 ]
               }
@@ -571,7 +704,17 @@
             "totalMarks": 50
           }
         ],
-        "totalMarks": 50
+        "totalMarks": 50,
+        "figures": [
+          {
+            "title": "Figure 1: UK personal current account (PCA) market share, 2024",
+            "url": "/edexcel-a-mocks/figures/p1-hard-secB-figure-1-uk-personal-current-account-pca-da1e6a3e88.svg"
+          },
+          {
+            "title": "Figure 2: Active open-banking users in the UK (millions), 2018–2024",
+            "url": "/edexcel-a-mocks/figures/p1-hard-secB-figure-2-active-open-banking-users-in-th-61f33b9eab.svg"
+          }
+        ]
       },
       {
         "label": "C",
@@ -684,6 +827,18 @@
                   {
                     "label": "A",
                     "text": "fall by approximately 5%"
+                  },
+                  {
+                    "label": "B",
+                    "text": "rise by approximately 5%"
+                  },
+                  {
+                    "label": "C",
+                    "text": "rise by approximately 15%"
+                  },
+                  {
+                    "label": "D",
+                    "text": "remain unchanged"
                   }
                 ]
               }
@@ -710,6 +865,18 @@
                   {
                     "label": "A",
                     "text": "rise by 3%"
+                  },
+                  {
+                    "label": "B",
+                    "text": "fall by 3%"
+                  },
+                  {
+                    "label": "C",
+                    "text": "rise by 0.6%"
+                  },
+                  {
+                    "label": "D",
+                    "text": "fall by 0.6%"
                   }
                 ]
               }
@@ -720,7 +887,12 @@
             "number": 3,
             "stem": "The UK Digital Markets, Competition and Consumers Act (2024) gives the CMA powers to designate large platforms as having 'Strategic Market Status' and impose tailored conduct requirements.",
             "tables": [],
-            "figures": [],
+            "figures": [
+              {
+                "url": "/edexcel-a-mocks/figures/p1-advanced-q3-0903ccb418.svg",
+                "title": "Question 3 — Figure"
+              }
+            ],
             "parts": [
               {
                 "label": "a",
@@ -736,6 +908,18 @@
                   {
                     "label": "A",
                     "text": "raise producer surplus"
+                  },
+                  {
+                    "label": "B",
+                    "text": "reduce consumer surplus"
+                  },
+                  {
+                    "label": "C",
+                    "text": "reduce deadweight loss"
+                  },
+                  {
+                    "label": "D",
+                    "text": "raise the monopoly price"
                   }
                 ]
               }
@@ -762,6 +946,18 @@
                   {
                     "label": "A",
                     "text": "many firms and transparent prices"
+                  },
+                  {
+                    "label": "B",
+                    "text": "few firms and repeated interactions"
+                  },
+                  {
+                    "label": "C",
+                    "text": "low barriers to entry"
+                  },
+                  {
+                    "label": "D",
+                    "text": "highly differentiated products"
                   }
                 ]
               }
@@ -788,6 +984,18 @@
                   {
                     "label": "A",
                     "text": "a Pigouvian tax"
+                  },
+                  {
+                    "label": "B",
+                    "text": "structural remedy in competition policy"
+                  },
+                  {
+                    "label": "C",
+                    "text": "price regulation"
+                  },
+                  {
+                    "label": "D",
+                    "text": "a minimum efficient scale requirement"
                   }
                 ]
               }
@@ -862,7 +1070,17 @@
             "totalMarks": 50
           }
         ],
-        "totalMarks": 50
+        "totalMarks": 50,
+        "figures": [
+          {
+            "title": "Figure 1: Revenue and global market capitalisation of leading digital platforms, 2024 (US$ bn)",
+            "url": "/edexcel-a-mocks/figures/p1-advanced-secB-figure-1-revenue-and-global-market-capit-bf4ce5c69f.svg"
+          },
+          {
+            "title": "Figure 2: UK digital advertising spend by platform, 2024",
+            "url": "/edexcel-a-mocks/figures/p1-advanced-secB-figure-2-uk-digital-advertising-spend-by-8963f82cd4.svg"
+          }
+        ]
       },
       {
         "label": "C",
@@ -963,6 +1181,18 @@
                   {
                     "label": "A",
                     "text": "recession with deflation"
+                  },
+                  {
+                    "label": "B",
+                    "text": "high growth with rising unemployment"
+                  },
+                  {
+                    "label": "C",
+                    "text": "strong real growth with high inflation"
+                  },
+                  {
+                    "label": "D",
+                    "text": "stagnation with falling prices"
                   }
                 ]
               }
@@ -989,6 +1219,18 @@
                   {
                     "label": "A",
                     "text": "appreciate"
+                  },
+                  {
+                    "label": "B",
+                    "text": "depreciate"
+                  },
+                  {
+                    "label": "C",
+                    "text": "become fully convertible"
+                  },
+                  {
+                    "label": "D",
+                    "text": "leave the floating exchange-rate regime"
                   }
                 ]
               }
@@ -1015,6 +1257,18 @@
                   {
                     "label": "A",
                     "text": "total government debt"
+                  },
+                  {
+                    "label": "B",
+                    "text": "the difference between government revenue and spending in a period"
+                  },
+                  {
+                    "label": "C",
+                    "text": "spending on capital projects only"
+                  },
+                  {
+                    "label": "D",
+                    "text": "total interest payments on outstanding debt"
                   }
                 ]
               }
@@ -1041,6 +1295,18 @@
                   {
                     "label": "A",
                     "text": "a rise in the real exchange rate"
+                  },
+                  {
+                    "label": "B",
+                    "text": "a rise in export competitiveness"
+                  },
+                  {
+                    "label": "C",
+                    "text": "a rise in real household incomes"
+                  },
+                  {
+                    "label": "D",
+                    "text": "a rise in import tariffs by UK trading partners"
                   }
                 ]
               }
@@ -1067,6 +1333,18 @@
                   {
                     "label": "A",
                     "text": "a temporary VAT cut"
+                  },
+                  {
+                    "label": "B",
+                    "text": "expansion of apprenticeships and skills funding"
+                  },
+                  {
+                    "label": "C",
+                    "text": "quantitative easing"
+                  },
+                  {
+                    "label": "D",
+                    "text": "a higher rate of income tax"
                   }
                 ]
               }
@@ -1141,7 +1419,17 @@
             "totalMarks": 50
           }
         ],
-        "totalMarks": 50
+        "totalMarks": 50,
+        "figures": [
+          {
+            "title": "Figure 1: UK quarterly real GDP, 2019 Q4 – 2025 Q4 (index, 2019 Q4 = 100)",
+            "url": "/edexcel-a-mocks/figures/p2-moderate-secB-figure-1-uk-quarterly-real-gdp-2019-q4-2-8f7431a4bd.svg"
+          },
+          {
+            "title": "Figure 2: Bank of England Bank Rate, 2019–2025 (%)",
+            "url": "/edexcel-a-mocks/figures/p2-moderate-secB-figure-2-bank-of-england-bank-rate-2019--340668cff0.svg"
+          }
+        ]
       },
       {
         "label": "C",
@@ -1234,6 +1522,18 @@
                   {
                     "label": "A",
                     "text": "adverse supply-side shocks"
+                  },
+                  {
+                    "label": "B",
+                    "text": "improved labour-market flexibility"
+                  },
+                  {
+                    "label": "C",
+                    "text": "a rise in trade-union density"
+                  },
+                  {
+                    "label": "D",
+                    "text": "an increase in structural unemployment"
                   }
                 ]
               }
@@ -1260,6 +1560,18 @@
                   {
                     "label": "A",
                     "text": "increase inflation and reduce growth"
+                  },
+                  {
+                    "label": "B",
+                    "text": "reduce inflation and raise growth"
+                  },
+                  {
+                    "label": "C",
+                    "text": "reduce both inflation and growth"
+                  },
+                  {
+                    "label": "D",
+                    "text": "increase both inflation and growth"
                   }
                 ]
               }
@@ -1286,6 +1598,18 @@
                   {
                     "label": "A",
                     "text": "crowding out"
+                  },
+                  {
+                    "label": "B",
+                    "text": "Ricardian equivalence"
+                  },
+                  {
+                    "label": "C",
+                    "text": "the distributional channel of fiscal policy"
+                  },
+                  {
+                    "label": "D",
+                    "text": "currency debasement"
                   }
                 ]
               }
@@ -1312,6 +1636,18 @@
                   {
                     "label": "A",
                     "text": "invoicing in the domestic currency"
+                  },
+                  {
+                    "label": "B",
+                    "text": "a highly competitive and concentrated import market"
+                  },
+                  {
+                    "label": "C",
+                    "text": "a high degree of intermediate-goods importing"
+                  },
+                  {
+                    "label": "D",
+                    "text": "a country on a fixed exchange rate peg"
                   }
                 ]
               }
@@ -1338,6 +1674,18 @@
                   {
                     "label": "A",
                     "text": "contractionary fiscal policy to rebuild headroom"
+                  },
+                  {
+                    "label": "B",
+                    "text": "large-scale public investment financed by borrowing"
+                  },
+                  {
+                    "label": "C",
+                    "text": "raising the inflation target and tightening monetary policy"
+                  },
+                  {
+                    "label": "D",
+                    "text": "export tariffs on capital-intensive goods"
                   }
                 ]
               }
@@ -1411,7 +1759,17 @@
             "totalMarks": 50
           }
         ],
-        "totalMarks": 50
+        "totalMarks": 50,
+        "figures": [
+          {
+            "title": "Figure 1: Japan real GDP growth and CPI inflation, 1992–2024 (annual %)",
+            "url": "/edexcel-a-mocks/figures/p2-hard-secB-figure-1-japan-real-gdp-growth-and-cpi-i-0a71aa677a.svg"
+          },
+          {
+            "title": "Figure 2: Japan general-government gross debt (% of GDP) and Bank of Japan policy rate (%), 1992–2024",
+            "url": "/edexcel-a-mocks/figures/p2-hard-secB-figure-2-japan-general-government-gross--8cbc52a6f5.svg"
+          }
+        ]
       },
       {
         "label": "C",
@@ -1475,6 +1833,18 @@
                   {
                     "label": "A",
                     "text": "an inflation-averse central bank"
+                  },
+                  {
+                    "label": "B",
+                    "text": "indeterminacy and self-fulfilling inflation expectations"
+                  },
+                  {
+                    "label": "C",
+                    "text": "automatic stabilisation of the price level"
+                  },
+                  {
+                    "label": "D",
+                    "text": "a higher long-run real interest rate"
                   }
                 ]
               }
@@ -1501,6 +1871,18 @@
                   {
                     "label": "A",
                     "text": "discretionary monetary policy based on current data"
+                  },
+                  {
+                    "label": "B",
+                    "text": "policy rules that respond to forecasts rather than outcomes"
+                  },
+                  {
+                    "label": "C",
+                    "text": "fixed exchange-rate regimes"
+                  },
+                  {
+                    "label": "D",
+                    "text": "a higher inflation target"
                   }
                 ]
               }
@@ -1527,6 +1909,18 @@
                   {
                     "label": "A",
                     "text": "households are liquidity-constrained"
+                  },
+                  {
+                    "label": "B",
+                    "text": "households have infinite planning horizons and are unconstrained"
+                  },
+                  {
+                    "label": "C",
+                    "text": "taxes are lump-sum and non-distortionary — and raised again in finite time"
+                  },
+                  {
+                    "label": "D",
+                    "text": "government spending is financed entirely by taxation"
                   }
                 ]
               }
@@ -1553,6 +1947,18 @@
                   {
                     "label": "A",
                     "text": "a temporary fall in VAT"
+                  },
+                  {
+                    "label": "B",
+                    "text": "active labour-market programmes funding retraining for the long-term unemployed"
+                  },
+                  {
+                    "label": "C",
+                    "text": "a rise in the inflation target"
+                  },
+                  {
+                    "label": "D",
+                    "text": "a cut in corporate tax"
                   }
                 ]
               }
@@ -1579,6 +1985,18 @@
                   {
                     "label": "A",
                     "text": "high labour mobility between member states"
+                  },
+                  {
+                    "label": "B",
+                    "text": "a large, asymmetric external supply shock"
+                  },
+                  {
+                    "label": "C",
+                    "text": "deep trade integration with other members"
+                  },
+                  {
+                    "label": "D",
+                    "text": "a common automatic-stabiliser fiscal mechanism"
                   }
                 ]
               }
@@ -1652,7 +2070,17 @@
             "totalMarks": 50
           }
         ],
-        "totalMarks": 50
+        "totalMarks": 50,
+        "figures": [
+          {
+            "title": "Figure 1: China property-sector investment (% of GDP) and new-home prices (YoY %), 2015–2024",
+            "url": "/edexcel-a-mocks/figures/p2-advanced-secB-figure-1-china-property-sector-investmen-2e6d4f0ea1.svg"
+          },
+          {
+            "title": "Figure 2: China gross debt by sector (% of GDP), 2008 vs 2024",
+            "url": "/edexcel-a-mocks/figures/p2-advanced-secB-figure-2-china-gross-debt-by-sector-of-g-64a3d200fa.svg"
+          }
+        ]
       },
       {
         "label": "C",
@@ -1742,7 +2170,13 @@
             "totalMarks": 25
           }
         ],
-        "totalMarks": 25
+        "totalMarks": 25,
+        "figures": [
+          {
+            "title": "Figure 1: UK National Living Wage (hourly rate, £), 2018–2026",
+            "url": "/edexcel-a-mocks/figures/p3-moderate-secA-figure-1-uk-national-living-wage-hourly--8f5cf22793.svg"
+          }
+        ]
       },
       {
         "label": "B",
@@ -1806,7 +2240,13 @@
             "totalMarks": 50
           }
         ],
-        "totalMarks": 50
+        "totalMarks": 50,
+        "figures": [
+          {
+            "title": "Figure 2: Eurozone HICP inflation and ECB deposit rate, 2020–2025 (%)",
+            "url": "/edexcel-a-mocks/figures/p3-moderate-secC-figure-2-eurozone-hicp-inflation-and-ecb-b89b408ea3.svg"
+          }
+        ]
       }
     ]
   },
@@ -1870,7 +2310,13 @@
             "totalMarks": 25
           }
         ],
-        "totalMarks": 25
+        "totalMarks": 25,
+        "figures": [
+          {
+            "title": "Figure 1: UK vacancy rate, unemployment rate and nominal wage growth, 2019–2025 (%)",
+            "url": "/edexcel-a-mocks/figures/p3-hard-secA-figure-1-uk-vacancy-rate-unemployment-ra-450154acf3.svg"
+          }
+        ]
       },
       {
         "label": "B",
@@ -1934,7 +2380,13 @@
             "totalMarks": 50
           }
         ],
-        "totalMarks": 50
+        "totalMarks": 50,
+        "figures": [
+          {
+            "title": "Figure 2: Price index of critical minerals (lithium, cobalt, nickel, copper), 2015–2024 (2015 = 100)",
+            "url": "/edexcel-a-mocks/figures/p3-hard-secC-figure-2-price-index-of-critical-mineral-fb23cb0f16.svg"
+          }
+        ]
       }
     ]
   },
@@ -1998,7 +2450,13 @@
             "totalMarks": 25
           }
         ],
-        "totalMarks": 25
+        "totalMarks": 25,
+        "figures": [
+          {
+            "title": "Figure 1: Estimated UK occupational exposure to generative AI by skill level and productivity change since 2022 (%)",
+            "url": "/edexcel-a-mocks/figures/p3-advanced-secA-figure-1-estimated-uk-occupational-expos-afbdb6dd3d.svg"
+          }
+        ]
       },
       {
         "label": "B",
@@ -2062,7 +2520,13 @@
             "totalMarks": 50
           }
         ],
-        "totalMarks": 50
+        "totalMarks": 50,
+        "figures": [
+          {
+            "title": "Figure 2: Net capital inflows to emerging-market economies and advanced-economy policy rate (US 10-year yield, %), 2000–2024",
+            "url": "/edexcel-a-mocks/figures/p3-advanced-secC-figure-2-net-capital-inflows-to-emerging-fca3a64e35.svg"
+          }
+        ]
       }
     ]
   }

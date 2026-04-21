@@ -1,0 +1,23 @@
+<svg viewBox="0 0 460 240" xmlns="http://www.w3.org/2000/svg" style="max-width: 130mm;">
+  <line x1="50" y1="20" x2="50" y2="200" stroke="#000"/>
+  <line x1="50" y1="110" x2="440" y2="110" stroke="#000" stroke-width="0.5"/>
+  <line x1="50" y1="200" x2="440" y2="200" stroke="#000"/>
+  <g font-size="9">
+    <text x="20" y="25">6</text><text x="25" y="65">3</text>
+    <text x="25" y="115">0</text><text x="20" y="155">&minus;3</text>
+    <text x="20" y="195">&minus;6</text>
+  </g>
+  <polyline fill="none" stroke="#000" stroke-width="1.6"
+    points="55,102 95,95 135,115 175,100 215,108 255,185 295,95 335,100 375,105 415,100"/>
+  <polyline fill="none" stroke="#000" stroke-width="1.6" stroke-dasharray="4,3"
+    points="55,118 95,120 135,125 175,120 215,118 255,145 295,125 335,115 375,95 415,100"/>
+  <g font-size="9">
+    <text x="55" y="220">'92</text><text x="95" y="220">'96</text>
+    <text x="135" y="220">'00</text><text x="175" y="220">'04</text>
+    <text x="215" y="220">'08</text><text x="255" y="220">'09</text>
+    <text x="295" y="220">'12</text><text x="335" y="220">'16</text>
+    <text x="375" y="220">'20</text><text x="415" y="220">'24</text>
+  </g>
+  <text x="420" y="105" font-size="9">GDP</text>
+  <text x="420" y="120" font-size="9">CPI</text>
+</svg>
