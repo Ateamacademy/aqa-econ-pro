@@ -128,6 +128,7 @@ const App = () => (
              <Route path="/admin/marking-convention-verification" element={<AdminMarkingConventionVerification />} />
              <Route path="/admin/qa-tracker" element={<AdminQaTracker />} />
               <Route path="/mock-papers" element={<EdexcelMockPapersIndex />} />
+              <Route path="/mock-papers/edexcel-a/:paperNum/:difficulty/:view" element={<EdexcelMockPaperViewer />} />
               <Route path="/mock-papers/edexcel-a/:paperNum/:difficulty" element={<EdexcelMockPaperViewer />} />
               <Route path="/mock-papers/edexcel-a/:paperNum" element={<EdexcelMockPaperViewer />} />
               <Route path="/paper-1" element={<EdexcelMockPaperViewer />} />
