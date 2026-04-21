@@ -707,9 +707,14 @@ const PAPER_3: Paper = {
             { label: "(b)", prompt: "Explain one likely reason why higher interest rates reduce housing demand.", marks: 5 },
             {
               label: "(c)",
-              prompt:
-                "Examine one likely microeconomic consequence of a sustained fall in UK house prices on household behaviour.",
+              prompt: "Which of the following is most likely to be a microeconomic consequence of a fall in house prices?",
               marks: 5,
+              mcq: [
+                { letter: "A", text: "reduced negative equity" },
+                { letter: "B", text: "higher consumer confidence" },
+                { letter: "C", text: "higher labour mobility" },
+                { letter: "D", text: "lower household savings ratio" },
+              ],
             },
             { label: "(d)", prompt: "Explain one supply-side barrier to higher UK housing completions.", marks: 10 },
           ],
