@@ -18,6 +18,7 @@ import { PaperSelector } from "@/components/predicted-papers/PaperSelector";
 import { TierSelector } from "@/components/predicted-papers/TierSelector";
 import { QuestionCard } from "@/components/predicted-papers/QuestionCard";
 import { parseQuestions, type ParsedQuestion } from "@/components/predicted-papers/parseQuestions";
+import { EdexcelABookletView, getEdexcelABookletByBookletUrl } from "@/components/predicted-papers/EdexcelABookletView";
 import { paperOptionsBySubject, topicsBySubject } from "@/lib/subjectConfig";
 import { PeriodicTable } from "@/components/tools/PeriodicTable";
 import { ChemistryEquations } from "@/components/tools/ChemistryEquations";
