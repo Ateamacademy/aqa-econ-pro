@@ -2,175 +2,367 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mark Scheme &mdash; Paper 3: Microeconomics and Macroeconomics (Advanced)</title>
+<title>Mark Scheme — Pearson Edexcel A Level Economics A Paper 3 (9EC0/03) — Moderate</title>
 <style>
-    /* Pearson Edexcel mark scheme style */
-@page { size: A4; margin: 15mm 14mm 18mm 14mm; }
-
+@page { size: A4; margin: 18mm 16mm 20mm 16mm; }
 * { box-sizing: border-box; }
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 10pt;
-  line-height: 1.35;
-  color: #111;
-  margin: 0;
+html, body {
+  margin: 0; padding: 0; background: #ededed;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  font-size: 10.5pt; line-height: 1.4; color: #111;
 }
-.topnav {
-  background: #0b49a0; color: #fff; padding: 10px 18px;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 14px;
+.doc {
+  width: 210mm; min-height: 297mm; background: #fff;
+  margin: 10mm auto; padding: 18mm 16mm; box-shadow: 0 1px 6px rgba(0,0,0,0.18);
 }
-.topnav a, .topnav a:visited { color: #fff; text-decoration: none; font-weight: 600; }
-.topnav a:hover { text-decoration: underline; }
-.topnav button {
-  background: #fff; color: #0b49a0; border: 0; padding: 6px 14px;
-  font-weight: 600; border-radius: 3px; cursor: pointer;
+@media print { html, body { background: #fff; } .doc { margin: 0; box-shadow: none; padding: 0; } }
+.pearson-brand { font-family: "Trebuchet MS", sans-serif; font-weight: 700; letter-spacing: -0.2px; }
+.pearson-brand .pearson { font-size: 15pt; }
+.pearson-brand .edexcel { background: #000; color: #fff; padding: 1px 5px; font-size: 13pt; }
+.title-block {
+  text-align: center; margin: 25mm 0 40mm 0;
+  border-top: 2px solid #000; border-bottom: 2px solid #000;
+  padding: 10mm 0;
 }
-@media print { .no-print { display: none !important; } }
-
-.sheet { max-width: 190mm; margin: 0 auto; padding: 10mm 6mm; }
-
-.header-block {
-  border-bottom: 3px solid #000;
-  padding-bottom: 6mm;
-  margin-bottom: 8mm;
+.title-block h1 { font-size: 24pt; margin: 0 0 3mm 0; font-weight: 700; letter-spacing: 0.5px; }
+.title-block h2 { font-size: 14pt; margin: 0 0 2mm 0; font-weight: 400; }
+.title-block .paper-ref { font-size: 13pt; font-weight: 700; margin-top: 4mm; }
+.title-block .session { font-size: 11pt; margin-top: 2mm; font-style: italic; }
+.title-footer { text-align: center; margin-top: 25mm; font-size: 9.5pt; color: #333; }
+.title-footer .brand-inline { margin-bottom: 3mm; }
+h3.section-heading {
+  font-size: 14pt; font-weight: 700; margin: 10mm 0 3mm 0;
+  padding-bottom: 1mm; border-bottom: 1.5px solid #000;
 }
-.header-block .brand {
-  font-family: "Trebuchet MS", sans-serif;
-  font-weight: 700;
-  font-size: 18pt;
-  margin-bottom: 2mm;
+h4.sub-heading {
+  font-size: 11.5pt; font-weight: 700; margin: 6mm 0 2mm 0;
+  color: #000;
 }
-.header-block .brand .edexcel {
-  background: #000; color: #fff; padding: 1mm 3mm; margin-left: 2mm;
-}
-.header-block h1 { font-size: 16pt; margin: 2mm 0; }
-.header-block .subtitle { color: #444; font-size: 11pt; }
-.header-block .tier {
-  display: inline-block;
-  padding: 1mm 4mm;
-  border-radius: 3mm;
-  font-size: 9pt;
-  font-weight: 700;
-  color: #fff;
-  margin-top: 2mm;
-}
-.tier.moderate { background: #2a8f3a; }
-.tier.hard { background: #d77b1a; }
-.tier.advanced { background: #b42a2a; }
-
-.gmg {
-  background: #f5f5f5;
-  border-left: 3px solid #666;
-  padding: 4mm 5mm;
-  margin-bottom: 6mm;
-  font-size: 9pt;
-}
-.gmg h3 { margin: 0 0 2mm 0; font-size: 10pt; }
-.gmg p { margin: 1mm 0; }
-
-h2.section {
-  background: #222;
-  color: #fff;
-  padding: 2mm 4mm;
-  font-size: 11pt;
-  margin: 6mm 0 3mm 0;
-  page-break-before: auto;
-}
-
-h3.qhead {
-  font-size: 10.5pt;
-  margin: 4mm 0 1mm 0;
-  padding: 1mm 0;
-  border-bottom: 1px solid #888;
-}
-
+p { margin: 2mm 0; }
+ul { margin: 2mm 0; padding-left: 6mm; }
+li { margin-bottom: 1mm; }
 table.ms {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 2mm 0 3mm 0;
-  font-size: 9.5pt;
-  table-layout: fixed;
-  word-wrap: break-word;
+  border-collapse: collapse; width: 100%; margin: 3mm 0 4mm 0;
+  font-size: 10pt;
 }
-table.ms th {
-  background: #e5e5e5;
-  border: 0.5pt solid #888;
-  padding: 1.5mm 2mm;
-  text-align: left;
-  font-size: 9pt;
+table.ms th, table.ms td {
+  border: 0.5pt solid #000; padding: 2mm 3mm; vertical-align: top; text-align: left;
 }
-table.ms td {
-  border: 0.5pt solid #bbb;
-  padding: 2mm 2.5mm;
-  vertical-align: top;
+table.ms th { font-weight: 700; background: #e8e8e8; }
+table.ms .qcol { width: 18mm; text-align: center; font-weight: 700; }
+table.ms .markscol { width: 16mm; text-align: center; font-weight: 700; }
+table.ms .contentcol { }
+table.level {
+  border-collapse: collapse; width: 100%; margin: 2mm 0 4mm 0;
+  font-size: 10pt;
 }
-table.ms .qcol { width: 10%; font-weight: 700; }
-table.ms .acol { width: 73%; }
-table.ms .mcol { width: 9%; text-align: center; font-weight: 700; }
-table.ms .aocol { width: 8%; text-align: center; font-size: 8.5pt; color: #555; }
-
-.ind { margin: 1mm 0 1mm 0; padding-left: 4mm; }
-.ind li { margin-bottom: 0.8mm; }
-
-.levels { margin: 2mm 0 2mm 0; }
-.levels table { width: 100%; border-collapse: collapse; font-size: 9pt; }
-.levels td { border: 0.5pt solid #bbb; padding: 1.5mm 2mm; vertical-align: top; }
-.levels .lvl { width: 14%; background: #f2f2f2; font-weight: 700; text-align: center; }
-.levels .range { width: 12%; background: #fafafa; text-align: center; font-weight: 600; }
-.levels .desc { width: 74%; }
-
-.correct { color: #164; font-weight: 700; }
-.note { font-size: 8.5pt; color: #666; font-style: italic; }
-.working { font-family: "Courier New", monospace; background: #f8f8f8; padding: 1mm 2mm; margin: 1mm 0; font-size: 9pt; }
-b.term { background: #fff3d6; padding: 0 2px; }
-.totals-row td { background: #f5f5f5; font-weight: 700; }
-
-
+table.level th, table.level td {
+  border: 0.5pt solid #000; padding: 2mm 3mm; vertical-align: top;
+}
+table.level th { font-weight: 700; background: #d9d9d9; text-align: center; }
+table.level .lvlcol { width: 18mm; font-weight: 700; text-align: center; }
+table.level .markcol { width: 18mm; text-align: center; }
+.boilerplate {
+  background: #f5f5f5; border-left: 3px solid #000; padding: 3mm 5mm;
+  font-size: 10pt; margin: 3mm 0; line-height: 1.45;
+}
+.kaa-split { display: flex; gap: 5mm; margin: 2mm 0; }
+.kaa-split > div { flex: 1; border: 0.5pt solid #666; padding: 3mm; background: #fafafa; }
+.kaa-split h5 { margin: 0 0 2mm 0; font-size: 10.5pt; font-weight: 700; }
+.indicative-heading { font-weight: 700; margin: 3mm 0 1mm 0; font-style: italic; }
+.synoptic-flag {
+  display: inline-block; background: #000; color: #fff;
+  padding: 1px 5px; font-size: 9pt; font-weight: 700; letter-spacing: 0.3px;
+  margin-left: 2mm;
+}
+.page-break { page-break-before: always; }
 </style>
 </head>
 <body>
-<div class="topnav no-print">
-  <div>&larr; <a href="paper-3-advanced.html">Back to paper</a></div>
-  <div>Mark scheme: Paper 3 (9EC0/03) &mdash; Advanced</div>
-  <button onclick="window.print()">Print</button>
-</div>
-<div class="sheet">
-  <div class="header-block">
-    <div class="brand">Pearson <span class="edexcel">Edexcel</span></div>
-    <h1>Mark Scheme &mdash; Paper 3: Microeconomics and Macroeconomics</h1>
-    <div class="subtitle">9EC0/03 &middot; Thursday 2 July 2026 &ndash; Morning</div>
-    <div class="tier advanced">Advanced tier</div>
-  </div>
-  <div class="gmg">
-    <h3>General Marking Guidance</h3>
-    <p>All candidates must receive the same treatment. Examiners must mark the first candidate in exactly the same way as they mark the last. Mark schemes should be applied positively. Candidates must be rewarded for what they have shown they can do rather than penalised for omissions.</p>
-    <p>Crossed-out work should be marked unless the candidate has replaced it with an alternative response. All the marks on the mark scheme are designed to be awarded. Examiners should always award full marks if deserved, i.e. if the answer matches the mark scheme.</p>
-  </div>
+<div class="doc">
 
-<h2 class="section">Question 1 — Total 25 marks &mdash; Total 25 marks</h2><h3 style="margin-top: 6mm;">1(a) &mdash; 5 marks</h3><table class="ind-table">
-  <thead><tr><th>Indicative content</th><th class="marks-col">Mark</th><th class="ao">AO</th></tr></thead>
-  <tbody><tr><td>China's share rose from 3.9% (2000) to a peak of 14.1% (2015); subsequent plateau/slight decline after 2018 following US-China trade tensions. Turning point around 2015 coincides with "China shock" literature (Autor, Dorn, Hanson). Accept interpretation of structural break at ~2015.</td><td class="marks-col">5</td><td class="ao">AO2 / AO3</td></tr></tbody>
+<div class="title-block">
+  <div class="pearson-brand" style="margin-bottom: 8mm;"><span class="pearson">Pearson</span> <span class="edexcel">Edexcel</span></div>
+  <h1>Mark Scheme</h1>
+  <h2>Predicted Paper &ndash; For revision purposes only</h2>
+  <h2 style="margin-top: 8mm;">Level 3 GCE Economics A (9EC0)</h2>
+  <h2>Paper 3: Microeconomics and Macroeconomics</h2>
+  <div class="paper-ref">9EC0/03 &mdash; Advanced</div>
+  <div class="session">Summer 2026 series</div>
+</div>
+
+<div class="title-footer">
+  <div class="brand-inline pearson-brand"><span class="pearson">Pearson</span> <span class="edexcel">Edexcel</span></div>
+  <div>Level 3 GCE &mdash; Economics A</div>
+  <div>Pearson Education Ltd &copy;2026</div>
+</div>
+
+<div class="page-break"></div>
+
+<h3 class="section-heading">General Marking Guidance</h3>
+
+<div class="boilerplate">
+  <p>All candidates must receive the same treatment. Examiners must mark the last candidate in exactly the same way as they mark the first.</p>
+  <p>Mark schemes should be applied positively. Candidates must be rewarded for what they have shown they can do rather than penalised for omissions.</p>
+  <p>All marks on the mark scheme are designed to be awarded. Examiners should always award full marks if deserved.</p>
+  <p>Where some judgement is required, mark schemes will provide the principles by which marks will be awarded.</p>
+  <p>Crossed-out work should be marked UNLESS the candidate has replaced it with an alternative response.</p>
+</div>
+
+<h4 class="sub-heading">Marking grid convention</h4>
+<p>Each banded question is marked on two grids: <b>KAA</b> (Knowledge + Application + Analysis, covering AO1, AO2 and AO3) and <b>Evaluation</b> (AO4). Level descriptors for 8, 10, 12, 15 and 25-mark questions are common across all Paper 3 variants and are given in full in the Moderate mark scheme document; below, those standard descriptors are referenced rather than repeated.</p>
+
+<p class="indicative-heading">Paper 3 synoptic note: Question 1(d)/(e), Question 2(c), and Question 2(d)/(e) all require <b>both microeconomic AND macroeconomic</b> analysis. Candidates who address only one side cannot access L3/L4 on those questions regardless of quality.</p>
+
+<div class="page-break"></div>
+<h3 class="section-heading">Section A &mdash; Question 1: The global AI and cloud-computing industry</h3>
+
+<h4 class="sub-heading">Question 1(a) &ndash; Calculate the three-firm concentration ratio for the global cloud infrastructure market (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">1(a)</td>
+  <td>
+    Working: AWS 30 + Azure 23 + Google Cloud 12 (identifying top 3, 1 mark)<br>
+    Addition: 30 + 23 + 12 = 65 (1 mark)<br>
+    Answer: <b>CR3 = 65%</b> (2 marks for correct answer with correct unit)<br>
+    <b>Evaluation (1):</b> &ldquo;CR3 = 65% indicates a highly concentrated global oligopoly, with the top three hyperscalers controlling the majority of the market.&rdquo;
+  </td>
+  <td class="markscol">5</td></tr>
 </table>
-<h3 style="margin-top: 6mm;">1(b) &mdash; 5 marks</h3><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Tariff raises price of imports to consumers; deadweight loss on triangle.</li><li>Diagram: S, D, world price P*, tariff-inclusive price P*+t.</li><li>Consumer surplus falls; producer surplus rises; government tariff revenue.</li><li>Net welfare loss = two deadweight-loss triangles (import protection and revenue gap).</li></ul></div><h3 style="margin-top: 6mm;">1(c) &mdash; 5 marks (MCQ)</h3><div class="mcq-ans"><span class="ans">Answer: C</span>
-  <div class="rationale">New trade theory: trade between similar countries driven by scale economies + product variety; greatest gains when both can exploit scale and variety.</div>
-</div><h3 style="margin-top: 6mm;">1(d) &mdash; 10 marks</h3><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-2</td><td>Isolated elements of knowledge and understanding. Brief and unsupported evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">3-5</td><td>Accurate knowledge, understanding and application to the context. Evaluation is generic rather than context-based.</td></tr><tr><td class="lv">Level 3</td><td class="range">6-8</td><td>Clear chains of analysis applied to the context. Evaluation is context-based with some supporting evidence.</td></tr><tr><td class="lv">Level 4</td><td class="range">9-10</td><td>Fully developed chains of analysis applied to the context. Evaluative judgement is fully supported by reasoned argument and evidence from the extracts.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>US consumers: tariff pass-through ~90% &rarr; regressive welfare loss.</li><li>US producers: some benefit in protected sectors (steel, aluminium); offset by higher input costs.</li><li>US exporters: face retaliation &rarr; welfare loss.</li><li>Fiscal: ~$80bn tariff revenue per year (modest relative to US GDP).</li><li>Evaluation: net US welfare loss documented in academic literature (Amiti et al., Fajgelbaum et al.).</li></ul></div><p style="text-align: right; font-weight: 700; margin: 6mm 0;">TOTAL FOR SECTION A = 25 MARKS</p><h2 class="section">Question 2 — Total 25 marks &mdash; Total 25 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-5</td><td>Isolated knowledge; limited application, analysis or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">6-11</td><td>Accurate knowledge with some application. Evaluation is unbalanced or underdeveloped.</td></tr><tr><td class="lv">Level 3</td><td class="range">12-17</td><td>Developed chains of analysis applied to context. Balanced evaluation with reasoned judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">18-21</td><td>Sophisticated, fully developed analysis. Evaluation integrates micro and macro perspectives with supported conclusion.</td></tr><tr><td class="lv">Level 5</td><td class="range">22-25</td><td>Exceptional analysis drawing on synoptic links. Sustained, well-reasoned evaluation with decisive, defensible judgement.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>WTO advantages: rule-based, reciprocal, non-discriminatory; limits escalation.</li><li>WTO limits: slow dispute resolution; Appellate Body paralysis since 2019; doesn't address state-owned enterprise subsidies well.</li><li>Unilateral action: faster but triggers retaliation; undermines global rule-based order.</li><li>Examples: Section 301 (unilateral), WTO dispute cases (China IP theft).</li><li>Evaluation: WTO reform needed; unilateral tools justified as stopgap but risk systemic damage.</li></ul></div><p style="text-align: right; font-weight: 700; margin: 6mm 0;">TOTAL FOR SECTION B = 25 MARKS</p><h2 class="section">Question 3 — Total 50 marks &mdash; Total 50 marks</h2><h3 style="margin-top: 6mm;">3(a) &mdash; 8 marks</h3><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-2</td><td>Isolated elements of knowledge and understanding. Brief attempt at application or analysis.</td></tr><tr><td class="lv">Level 2</td><td class="range">3-5</td><td>Accurate knowledge and understanding with application to the context. Some reasoned chains of analysis.</td></tr><tr><td class="lv">Level 3</td><td class="range">6-8</td><td>Clear, accurate and developed knowledge, understanding, application and analysis of the context. Logical and well-reasoned chains.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Reserve currency status &rarr; strong demand for US dollars.</li><li>Mundell-Fleming: fixed demand for dollar assets keeps yields low.</li><li>Lower borrowing cost for US government and firms (~40-80bp).</li><li>Greater monetary autonomy despite free capital mobility.</li><li>Ability to run sustained current-account deficits without crisis.</li></ul></div><h3 style="margin-top: 6mm;">3(b) &mdash; 12 marks</h3><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-3</td><td>Isolated elements of knowledge. Limited application and analysis.</td></tr><tr><td class="lv">Level 2</td><td class="range">4-6</td><td>Accurate knowledge with application to the context. Some reasoned analysis.</td></tr><tr><td class="lv">Level 3</td><td class="range">7-9</td><td>Clear, developed chains of analysis applied to the context with accurate use of data.</td></tr><tr><td class="lv">Level 4</td><td class="range">10-12</td><td>Fully developed, logically sound chains of analysis with integration of multiple data sources.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Higher US borrowing costs &rarr; fiscal sustainability concerns.</li><li>Loss of sanctions-based geopolitical leverage.</li><li>Depreciation of dollar &rarr; narrower current-account deficit but higher import inflation.</li><li>Reserve asset diversification: gold, euro, RMB incremental rise.</li><li>Evaluation: erosion likely gradual rather than sudden; dollar still dominant in 2050 in most models.</li></ul></div><h3 style="margin-top: 6mm;">3(c) &mdash; 30 marks (SYNOPTIC)</h3><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-6</td><td>Isolated knowledge; limited synoptic awareness.</td></tr><tr><td class="lv">Level 2</td><td class="range">7-13</td><td>Accurate knowledge with some synoptic links. Evaluation is limited.</td></tr><tr><td class="lv">Level 3</td><td class="range">14-20</td><td>Developed chains of analysis across micro and macro. Balanced evaluation with reasoned judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">21-26</td><td>Sophisticated, fully synoptic analysis. Evaluation integrates multiple perspectives with supported conclusion.</td></tr><tr><td class="lv">Level 5</td><td class="range">27-30</td><td>Exceptional synoptic analysis. Sustained, well-reasoned evaluation with decisive, defensible judgement on complex trade-offs.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li><b>Trade dimension:</b> fragmentation reduces allocative efficiency; supply chains duplicated; higher costs passed to consumers; innovation gains from specialisation lost.</li><li>Gravity-model estimates: 1-2% global GDP loss from decoupling (IMF, McKinsey).</li><li><b>Finance dimension:</b> bifurcated payments systems (CIPS, SWIFT); lower liquidity; higher transaction costs.</li><li>Reserve-asset fragmentation raises volatility and reduces insurance function of reserves.</li><li>CBDC proliferation: potentially disintermediating traditional banks; privacy concerns; settlement-speed gains.</li><li>Geostrategic implications: smaller countries forced to pick sides; lost benefits from multilateral integration.</li><li>Historical parallel: 1930s bloc formation (sterling, franc, dollar) preceded WW2.</li><li>Evaluation: complete decoupling unlikely; strategic decoupling in narrow sectors (chips, biotech) is more plausible and less costly than broad fragmentation.</li></ul></div><p style="text-align: right; font-weight: 700; margin: 6mm 0;">TOTAL FOR SECTION C = 50 MARKS</p>
-<p style="margin-top: 20mm; text-align: center; font-size: 9pt; color: #888;">&mdash; END OF MARK SCHEME &mdash;</p>
+
+<h4 class="sub-heading">Question 1(b) &ndash; Using a cost and revenue diagram, discuss the likely microeconomic effects on NVIDIA of entry by new GPU competitors (12 marks) <span class="synoptic-flag">MICRO ONLY</span></h4>
+<p class="indicative-heading">Diagram required: NVIDIA as dominant supplier with significant supernormal profit area; entry makes firm AR more elastic, MR shifts, profit-max Q changes, supernormal profit shrinks.</p>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 8)</h5>
+    <ul>
+      <li>NVIDIA's 80% share and 60%+ gross margins consistent with dominant-firm pricing.</li>
+      <li>Barriers to entry: CUDA software moat (proprietary developer ecosystem); manufacturing partnerships (TSMC advanced nodes); network effects in developer tools.</li>
+      <li>New entry threats: AWS Trainium, Google TPU v5, AMD MI300X, Meta and Microsoft custom silicon.</li>
+      <li>Custom silicon from hyperscalers represents vertical integration reducing input dependence.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 4)</h5>
+    <ul>
+      <li>CUDA ecosystem durable: switching costs for AI labs substantial.</li>
+      <li>Hyperscalers' custom silicon targets internal workloads; external market still NVIDIA-dominated.</li>
+      <li>But cloud providers represent 50%+ of NVIDIA revenue; their silicon shift is structurally damaging.</li>
+      <li>Price erosion probable in commodity segment; high-end AI GPUs retain pricing power.</li>
+      <li><b>Judgement:</b> supernormal profit likely to compress over 3&ndash;5 years as hyperscalers internalise commoditised demand, but CUDA moat and tech lead keep margins elevated.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 1(c) &ndash; Examine two factors that may explain the &ldquo;AI wage premium&rdquo; for machine-learning engineers (8 marks)</h4>
+<p class="indicative-heading">Indicative content (at least two distinct factors developed):</p>
+<ul>
+  <li><b>Inelastic labour supply:</b> ML engineers require years of specialised training (PhDs, postgrads); supply near-vertical in short run.</li>
+  <li><b>High MRPL:</b> each additional ML engineer can contribute disproportionately to model quality; winner-takes-most dynamics.</li>
+  <li><b>Winner-takes-most competition:</b> hyperscalers and AI labs bid for the same small talent pool; bidding war pushes compensation above &ldquo;market wage&rdquo;.</li>
+  <li><b>Signing bonuses and equity:</b> deferred compensation raises effective wage further.</li>
+  <li><b>Monopsony breakdown:</b> employer pricing-power ineffective when well-funded firms bid for rare talent.</li>
+  <li><b>Application:</b> UK Information and Communication wages +7.4% vs. 4.9% whole economy; US AI-adjacent roles +18%.</li>
+</ul>
+
+<div class="page-break"></div>
+<h4 class="sub-heading">Question 1(d) &ndash; Evaluate the likely effects of the concentration of cloud infrastructure among three hyperscalers (25 marks) <span class="synoptic-flag">MICRO + MACRO</span></h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA &mdash; MICRO</h5>
+    <ul>
+      <li>Oligopoly features: interdependence, non-price competition on performance, features, regional availability.</li>
+      <li>Barriers to entry: capital (&gt;&dollar;1bn per data centre), software ecosystem, power/cooling expertise.</li>
+      <li>Economies of scale: natural-monopoly-like features in some sub-markets.</li>
+      <li>Allocative efficiency: P &gt; MC, consumer surplus reduced by egress fees and lock-in structures.</li>
+      <li>Productive efficiency: hyperscalers achieve this through scale &ndash; but at cost of competition.</li>
+      <li>Dynamic efficiency: hyperscalers fund R&amp;D (&dollar;100bn+ annual capex), drive frontier innovation.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>KAA &mdash; MACRO</h5>
+    <ul>
+      <li>Investment spillovers: AI data-centre capex contributes 0.3&ndash;0.5pp to US GDP growth.</li>
+      <li>Productivity transmission: concentration of AI compute may slow diffusion of gains to wider economy.</li>
+      <li>Employment: direct jobs at data centres modest; indirect jobs via AI deployment.</li>
+      <li>Trade: cloud services as large export sector &mdash; US dominance captures global rents.</li>
+      <li>Financial-system risk: concentrated capex creates Dot-com-style correction risk if AI monetisation disappoints.</li>
+    </ul>
+  </div>
+</div>
+<p class="indicative-heading">Evaluation:</p>
+<ul>
+  <li>Scale genuinely useful for performance &mdash; break-up may harm dynamic efficiency.</li>
+  <li>Concentration partly consequence of enormous R&amp;D and capex; a cost of innovation.</li>
+  <li>BUT egress fees, tying, interoperability barriers look anticompetitive without efficiency justification.</li>
+  <li>Policy tools: price-cap egress fees; mandate interoperability; prohibit exclusive AI-model deals.</li>
+  <li>UK benefits from hyperscaler investment even if competition is weak &mdash; fiscal/political tension.</li>
+  <li><b>Judgement:</b> hyperscaler concentration creates genuine consumer and competition harms warranting targeted regulatory intervention (egress fees, interoperability), but wholesale structural remedies would reduce dynamic efficiency and cause short-term macro damage via reduced capex. &ldquo;Conduct&rdquo; rather than &ldquo;structure&rdquo; remedies preferred.</li>
+</ul>
+
+<h4 class="sub-heading">Question 1(e) &ndash; Evaluate the likely consequences of rapid AI-driven automation for labour markets and income distribution (25 marks) <span class="synoptic-flag">MICRO + MACRO</span></h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA &mdash; MICRO</h5>
+    <ul>
+      <li>Labour market: rapid fall in demand for routine-cognitive labour; rising demand for AI-adjacent skills.</li>
+      <li>Real wages: bifurcation &mdash; premium for AI-skilled (7.4&ndash;18% gains), stagnation for displaced.</li>
+      <li>Income distribution: capital share rises; labour share may fall further.</li>
+      <li>Substitutability vs. complementarity: AI as substitute (displaces) vs. complement (augments); task-level analysis (Acemoglu-Restrepo).</li>
+      <li>Firm-level: 20&ndash;40% task-level gains for early adopters.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>KAA &mdash; MACRO</h5>
+    <ul>
+      <li>Productivity transmission: aggregate gains lag micro gains (Solow paradox recurrence).</li>
+      <li>AD composition: rising investment share, declining labour share &rarr; lower MPC, weaker multiplier.</li>
+      <li>Inflation: productivity gains disinflationary if passed through; concentrated rents may keep prices high.</li>
+      <li>Fiscal: displaced workers need retraining; tax base challenges.</li>
+      <li>Growth: potential step-change if transmission occurs; alternatively dot-com disappointment.</li>
+    </ul>
+  </div>
+</div>
+<p class="indicative-heading">Evaluation:</p>
+<ul>
+  <li>IMF&apos;s 40% exposed and 60% of exposed at substitution risk in developed economies is dramatic &mdash; but &ldquo;exposed&rdquo; &ne; &ldquo;displaced&rdquo;.</li>
+  <li>Historical analogy: previous automation waves (ATMs, computers) affected occupations but employment recovered via new task creation.</li>
+  <li>But AI reaches cognitive tasks previously insulated &mdash; unclear what &ldquo;new task creation&rdquo; looks like.</li>
+  <li>Short-run: concentrated gains among high-skilled and capital-owning; broad disruption in routine-cognitive occupations.</li>
+  <li>Policy needed: reskilling, active labour-market policy, taxation reform.</li>
+  <li><b>Judgement:</b> AI automation presents genuine risks of faster and broader disruption than previous waves; distribution of gains is the critical variable. Policy priority is managing transition via investment in retraining, not resisting the technology.</li>
+</ul>
+
+<div class="page-break"></div>
+<h3 class="section-heading">Section B &mdash; Question 2: UK productivity, investment and the growth challenge</h3>
+
+<h4 class="sub-heading">Question 2(a) &ndash; Calculate the percentage change in UK output per hour worked from 2019 to 2024 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">2(a)</td>
+  <td>
+    Working: (102.3 &minus; 100.0) / 100.0 &times; 100 (1)<br>
+    = 2.3 / 100 &times; 100 (1)<br>
+    Answer: <b>+2.3%</b> (2 marks).<br>
+    <b>Evaluation (1):</b> &ldquo;Cumulative productivity growth of just 2.3% across 5 years is very weak by historical and international standards &mdash; equivalent to ~0.45% per year, well below the pre-2008 trend of ~2% per year.&rdquo;
+  </td>
+  <td class="markscol">5</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 2(b) &ndash; Examine two factors that may explain the UK's persistently weak productivity growth since 2008 (8 marks)</h4>
+<ul>
+  <li><b>Weak capital deepening:</b> UK business investment consistently below G7 peers as share of GDP; insufficient investment per worker slows productivity growth.</li>
+  <li><b>Poor technology diffusion:</b> productivity gap between &ldquo;frontier&rdquo; firms and long tail of UK firms has widened since 2008.</li>
+  <li><b>Management quality:</b> international comparisons find UK firms lag US, Germany, Japan; UK &ldquo;tail&rdquo; particularly weak.</li>
+  <li><b>Brexit trade frictions:</b> goods exporters face new non-tariff barriers; affected firms invest less.</li>
+  <li><b>Planning-system constraints:</b> infrastructure delays &mdash; energy grid, transport, housing &mdash; reduce agglomeration benefits.</li>
+  <li><b>Skills:</b> digital skills gap; apprenticeship levy funds often go to management qualifications rather than technical skills.</li>
+  <li><b>Regional imbalance:</b> productivity gap between London/SE and the rest widened.</li>
+</ul>
+
+<h4 class="sub-heading">Question 2(c) &ndash; Discuss the likely microeconomic and macroeconomic effects on UK firms and the UK economy of a large rise in business investment driven by &ldquo;full expensing&rdquo; (12 marks) <span class="synoptic-flag">MICRO + MACRO</span></h4>
+<div class="kaa-split">
+  <div>
+    <h5>Microeconomic</h5>
+    <ul>
+      <li>Firm-level cost of capital: full expensing reduces effective tax-adjusted cost of a capital asset by up to 25%.</li>
+      <li>Firm-level NPV hurdle: more projects become positive-NPV.</li>
+      <li>Sector heterogeneity: capital-intensive sectors (manufacturing, infrastructure) benefit more than labour-intensive services.</li>
+      <li>Firm-size heterogeneity: larger firms with tax liabilities benefit; loss-making start-ups gain less.</li>
+      <li>Equipment suppliers benefit as secondary beneficiaries.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Macroeconomic (AD/AS)</h5>
+    <ul>
+      <li>AD shifts right: I is component of AD; multiplier through supplier incomes and consumption.</li>
+      <li>LRAS rightward in long run: higher capital stock &rarr; higher labour productivity &rarr; higher potential output.</li>
+      <li>OBR estimate: 3% steady-state lift to business investment.</li>
+      <li>Two-stage outcome: short run (&uarr;Y, &uarr;P) via AD; long run (&uarr;Y without P pressure) via LRAS.</li>
+      <li>Fiscal cost: ~&pound;10bn forgone CT revenue; crowding-out possible.</li>
+    </ul>
+  </div>
+</div>
+<p class="indicative-heading">Evaluation:</p>
+<ul>
+  <li>OBR 3% is modest &ndash; from ~&pound;203bn to ~&pound;209bn.</li>
+  <li>Micro deadweight: firms that would have invested anyway receive windfall.</li>
+  <li>Binding UK constraints (planning, demand, management) largely unaddressed.</li>
+  <li>Policy-horizon: 5&ndash;10 year capex requires durability, which is uncertain.</li>
+  <li><b>Judgement:</b> micro positive for capital-intensive firms; macro modest short-run and small long-run uplift. Policy works at the margin, not transformatively.</li>
+</ul>
+<p><b>Candidates must cover both micro AND macro for L3.</b></p>
+
+<div class="page-break"></div>
+<h4 class="sub-heading">Question 2(d) &ndash; Evaluate the likely effectiveness of the UK government's supply-side package in raising long-run trend growth (25 marks) <span class="synoptic-flag">MICRO + MACRO</span></h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA &mdash; MICRO</h5>
+    <ul>
+      <li>Full expensing: reduces cost of capital &rarr; higher firm-level investment.</li>
+      <li>Apprenticeship levy reform: addresses labour-market friction.</li>
+      <li>Planning reform: reduces transaction costs in infrastructure, housing, energy.</li>
+      <li>Skills bootcamps: targeted human capital investment in digital/AI.</li>
+      <li>Diagrams: supply-side shifts in specific markets; labour market.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>KAA &mdash; MACRO</h5>
+    <ul>
+      <li>LRAS shifts right &rarr; higher trend growth, lower equilibrium inflation.</li>
+      <li>Productivity channel: capital deepening + skills + infrastructure.</li>
+      <li>Trend target 1.7% (from 1.3%) &ndash; 0.4pp uplift over a decade.</li>
+      <li>Fiscal feedback: higher growth &rarr; higher tax revenue &rarr; improves debt dynamics.</li>
+      <li>Inflation: supply-side expansion is disinflationary.</li>
+    </ul>
+  </div>
+</div>
+<p class="indicative-heading">Evaluation:</p>
+<ul>
+  <li>IFS/OBR &ldquo;plausible but ambitious&rdquo; &mdash; consistent with modest (0.1&ndash;0.3pp) rather than transformative effects.</li>
+  <li>Binding UK constraints (R&amp;D intensity, regional imbalance, management quality) beyond scope of package.</li>
+  <li>Execution risk: apprenticeship levy underperformed in past; planning reform faces political resistance.</li>
+  <li>International comparison: US IRA and European equivalents are larger and more targeted.</li>
+  <li>Long lead time (10+ years) means risk of reversal.</li>
+  <li><b>Judgement:</b> package directionally correct; planning reform most significant element. Could close ~half the gap between current and pre-2008 trend growth if sustained. Deeper structural issues remain.</li>
+</ul>
+
+<h4 class="sub-heading">Question 2(e) &ndash; Evaluate the case for substantial further cuts in the BoE's Bank Rate to support UK economic growth (25 marks) <span class="synoptic-flag">MICRO + MACRO</span></h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA &mdash; MICRO</h5>
+    <ul>
+      <li>Consumer: lower borrowing costs &rarr; higher consumption (durables, housing).</li>
+      <li>Firms: lower cost of capital &rarr; higher investment.</li>
+      <li>Labour market: lower rates may sustain employment but also keep market tight.</li>
+      <li>Housing market: rate cuts relax mortgage affordability constraint.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>KAA &mdash; MACRO</h5>
+    <ul>
+      <li>AD/AS: cuts shift AD right; in tight labour market with sticky services inflation, risks domestic price pressure.</li>
+      <li>Exchange rate: cuts depreciate sterling &rarr; higher import prices.</li>
+      <li>Inflation expectations: cuts risk un-anchoring if wage-price dynamics embedded.</li>
+      <li>Growth-inflation trade-off: cuts support weak growth at cost of slower inflation return.</li>
+      <li>Monetary-fiscal: with debt 99%+ of GDP, higher rates costly; cuts support fiscal.</li>
+    </ul>
+  </div>
+</div>
+<p class="indicative-heading">Evaluation:</p>
+<ul>
+  <li>Services inflation 4.5% is serious constraint; labour market tight (4.5% unemployment, elevated vacancies).</li>
+  <li>Counter: transmission slow (fixed-rate mortgages), so effective tightening smaller than nominal suggests.</li>
+  <li>Supply-side package is appropriate growth lever; monetary policy should focus on inflation mandate.</li>
+  <li>International comparison: ECB and Fed cutting; BoE pressure to follow avoids unwanted sterling appreciation.</li>
+  <li>Distribution: cuts benefit borrowers over savers.</li>
+  <li><b>Judgement:</b> substantial cuts not clearly warranted. A gradual, cautious cutting cycle is preferable. Growth support should come from supply-side and fiscal policy, not aggressive monetary easing.</li>
+</ul>
+
+<div style="margin-top: 10mm; border-top: 1.5px solid #000; padding-top: 3mm; text-align: center; font-weight: 700;">
+  TOTAL FOR PAPER = 100 MARKS
+</div>
+
 </div>
 </body>
 </html>
