@@ -2157,6 +2157,18 @@
                   {
                     "label": "A",
                     "text": "highly price-elastic demand for labour"
+                  },
+                  {
+                    "label": "B",
+                    "text": "low pay concentrated in sectors facing strong product-market competition"
+                  },
+                  {
+                    "label": "C",
+                    "text": "employers having significant monopsony power in the local labour market"
+                  },
+                  {
+                    "label": "D",
+                    "text": "wage rises being fully passed through into consumer prices"
                   }
                 ]
               },
@@ -2297,6 +2309,18 @@
                   {
                     "label": "A",
                     "text": "rising energy prices pushing up the CPI directly"
+                  },
+                  {
+                    "label": "B",
+                    "text": "workers successfully bargaining for higher nominal wages to protect real pay"
+                  },
+                  {
+                    "label": "C",
+                    "text": "a one-off VAT cut being reversed in the following year"
+                  },
+                  {
+                    "label": "D",
+                    "text": "sterling appreciating against the dollar and the euro"
                   }
                 ]
               },
@@ -2437,6 +2461,18 @@
                   {
                     "label": "A",
                     "text": "when labour demand is derived from capital rather than output"
+                  },
+                  {
+                    "label": "B",
+                    "text": "when generative AI is a strong substitute for high-skilled tasks within the role"
+                  },
+                  {
+                    "label": "C",
+                    "text": "when AI raises productivity enough to lower output prices and expand demand for the good"
+                  },
+                  {
+                    "label": "D",
+                    "text": "when the elasticity of substitution between labour and capital is close to zero"
                   }
                 ]
               },
