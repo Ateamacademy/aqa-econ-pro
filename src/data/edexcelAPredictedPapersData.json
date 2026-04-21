@@ -237,38 +237,44 @@
           },
           {
             "number": 5,
-            "stem": "In 2024 the UK government announced a £50 million fund to support apprenticeships in small and medium-sized businesses.",
+            "stem": "In 2024 the UK government announced a £100 million fund to support UK-produced television and film content, paid as a production subsidy to qualifying streaming platforms and studios.",
             "tables": [],
             "figures": [],
             "parts": [
               {
                 "label": "a",
-                "text": "Explain one likely effect on the UK labour market of a government subsidy for apprenticeships.",
-                "marks": 4,
-                "options": null
-              },
-              {
-                "label": "b",
-                "text": "A subsidy given directly to firms is most likely to shift the:",
+                "text": "Which one of the following is most likely to be a fixed cost for a streaming platform?",
                 "marks": 1,
                 "options": [
                   {
                     "label": "A",
-                    "text": "demand curve to the left"
+                    "text": "Royalty payments per stream"
                   },
                   {
                     "label": "B",
-                    "text": "demand curve to the right"
+                    "text": "Bandwidth costs per user"
                   },
                   {
                     "label": "C",
-                    "text": "supply curve to the left"
+                    "text": "Annual studio rental"
                   },
                   {
                     "label": "D",
-                    "text": "supply curve to the right"
+                    "text": "Variable marketing spend per subscriber"
                   }
                 ]
+              },
+              {
+                "label": "b",
+                "text": "Explain the difference between fixed costs and variable costs.",
+                "marks": 2,
+                "options": null
+              },
+              {
+                "label": "c",
+                "text": "With reference to the £100 million content subsidy, calculate the per-hour subsidy received by a producer commissioned to deliver 250 hours of qualifying UK content. You are advised to show your working.",
+                "marks": 2,
+                "options": null
               }
             ],
             "totalMarks": 5
@@ -618,38 +624,44 @@
           },
           {
             "number": 5,
-            "stem": "In 2024 the CMA launched a market investigation into a leading cloud-computing platform,\nalleging abuse of dominance through 'egress fees' charged to customers moving data to rival\nproviders.",
+            "stem": "In April 2025 the UK National Living Wage (NLW) for workers aged 21 and over rose by 6.7% to £12.21 per hour. UK grocery retailers are among the largest private-sector employers of NLW workers.",
             "tables": [],
             "figures": [],
             "parts": [
               {
                 "label": "a",
-                "text": "Explain one way in which egress fees could act as a barrier to exit\nfor cloud-computing customers.",
-                "marks": 4,
-                "options": null
-              },
-              {
-                "label": "b",
-                "text": "In the UK framework, 'abuse of a dominant position' is assessed primarily under:",
+                "text": "A 6.7% rise in the NLW is most likely to reduce employment significantly when the elasticity of demand for labour is:",
                 "marks": 1,
                 "options": [
                   {
                     "label": "A",
-                    "text": "the Groceries Code of Conduct"
+                    "text": "perfectly inelastic"
                   },
                   {
                     "label": "B",
-                    "text": "the Chapter II prohibition of the Competition Act 1998"
+                    "text": "relatively inelastic"
                   },
                   {
                     "label": "C",
-                    "text": "the Bribery Act 2010"
+                    "text": "unit elastic"
                   },
                   {
                     "label": "D",
-                    "text": "the Consumer Rights Act 2015"
+                    "text": "relatively elastic"
                   }
                 ]
+              },
+              {
+                "label": "b",
+                "text": "Explain one reason why the demand for low-skilled labour in UK grocery retail may be relatively wage-inelastic.",
+                "marks": 2,
+                "options": null
+              },
+              {
+                "label": "c",
+                "text": "Calculate the increase in the weekly wage bill for a grocery retailer employing 400 NLW workers, each working 30 hours per week, following the 6.7% rise from £11.44 to £12.21 per hour. You are advised to show your working.",
+                "marks": 2,
+                "options": null
               }
             ],
             "totalMarks": 5
@@ -1002,38 +1014,44 @@
           },
           {
             "number": 5,
-            "stem": "Amazon and Flipkart have been accused of using data collected from third-party sellers on their platforms to launch directly competing own-brand products.",
+            "stem": "In 2025 the UK government launched a £1.5 billion AI Compute Fund, paid as a Pigouvian-style subsidy to data-centre operators investing in low-carbon GPU clusters that generate positive spillovers for UK research.",
             "tables": [],
             "figures": [],
             "parts": [
               {
                 "label": "a",
-                "text": "Explain one way in which information asymmetry between a platform and its sellers may give rise to market failure.",
-                "marks": 4,
-                "options": null
-              },
-              {
-                "label": "b",
-                "text": "Requiring a platform to separate its marketplace operations from its own-brand retailing is an example of:",
+                "text": "A Pigouvian subsidy is best justified when a good generates:",
                 "marks": 1,
                 "options": [
                   {
                     "label": "A",
-                    "text": "a Pigouvian tax"
+                    "text": "negative production externalities"
                   },
                   {
                     "label": "B",
-                    "text": "structural remedy in competition policy"
+                    "text": "positive consumption externalities only"
                   },
                   {
                     "label": "C",
-                    "text": "price regulation"
+                    "text": "positive external benefits in production or consumption"
                   },
                   {
                     "label": "D",
-                    "text": "a minimum efficient scale requirement"
+                    "text": "no external effects"
                   }
                 ]
+              },
+              {
+                "label": "b",
+                "text": "Explain one way in which a Pigouvian subsidy can move output closer to the socially optimal level.",
+                "marks": 2,
+                "options": null
+              },
+              {
+                "label": "c",
+                "text": "If the £1.5 billion AI Compute Fund is allocated to projects delivering 3 GW of additional low-carbon GPU capacity, calculate the subsidy per megawatt (£m/MW). You are advised to show your working.",
+                "marks": 2,
+                "options": null
               }
             ],
             "totalMarks": 5
