@@ -18,6 +18,7 @@ import { PaperSelector } from "@/components/predicted-papers/PaperSelector";
 import { TierSelector } from "@/components/predicted-papers/TierSelector";
 import { QuestionCard } from "@/components/predicted-papers/QuestionCard";
 import { parseQuestions, type ParsedQuestion } from "@/components/predicted-papers/parseQuestions";
+import { EdexcelABookletView, getEdexcelABookletByBookletUrl } from "@/components/predicted-papers/EdexcelABookletView";
 import { paperOptionsBySubject, topicsBySubject } from "@/lib/subjectConfig";
 import { PeriodicTable } from "@/components/tools/PeriodicTable";
 import { ChemistryEquations } from "@/components/tools/ChemistryEquations";
@@ -2457,16 +2458,18 @@ Do NOT include any other headings, preamble, or commentary outside these three s
               <div className="flex flex-wrap items-center gap-2">
                 <Button asChild size="lg" variant="outline" className="rounded-full gap-2">
                   <a href={selectedLibraryPaper.bookletUrl} target="_blank" rel="noopener noreferrer">
-                    <FileText className="h-5 w-5" /> Open in new tab
+                    <FileText className="h-5 w-5" /> Open print booklet
                   </a>
                 </Button>
                 <Button
                   size="lg"
                   className="rounded-full gap-2 shadow-lg shadow-primary/20"
                   onClick={() => {
-                    const f = document.getElementById("edxa-booklet-frame") as HTMLIFrameElement | null;
-                    f?.contentWindow?.focus();
-                    f?.contentWindow?.print();
+                    const w = window.open(selectedLibraryPaper.bookletUrl, "_blank", "noopener,noreferrer");
+                    if (!w) return;
+                    const trigger = () => setTimeout(() => { try { w.focus(); w.print(); } catch {} }, 600);
+                    w.addEventListener?.("load", trigger);
+                    setTimeout(trigger, 1500);
                   }}
                 >
                   <Download className="h-5 w-5" /> Print / Save PDF
@@ -2480,16 +2483,24 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                 />
               </div>
             </div>
-            <div className="rounded-2xl border border-border/60 bg-white overflow-hidden" style={{ height: "calc(100vh - 220px)", minHeight: 600 }}>
-              <iframe
-                id="edxa-booklet-frame"
-                src={selectedLibraryPaper.bookletUrl}
-                title={displayPaperTitle(selectedLibraryPaper.title)}
-                className="w-full h-full border-0 bg-white"
-              />
-            </div>
+            {(() => {
+              const booklet = getEdexcelABookletByBookletUrl(selectedLibraryPaper.bookletUrl);
+              if (!booklet) {
+                return (
+                  <div className="rounded-2xl border border-border/60 bg-white overflow-hidden" style={{ height: "calc(100vh - 220px)", minHeight: 600 }}>
+                    <iframe
+                      id="edxa-booklet-frame"
+                      src={selectedLibraryPaper.bookletUrl}
+                      title={displayPaperTitle(selectedLibraryPaper.title)}
+                      className="w-full h-full border-0 bg-white"
+                    />
+                  </div>
+                );
+              }
+              return <EdexcelABookletView paper={booklet} />;
+            })()}
             <p className="text-xs text-muted-foreground">
-              This is the authentic Pearson-style printable booklet. Use the browser's print dialog to save as PDF for offline practice.
+              Native dark-themed view of the official Pearson-style booklet. Use "Open print booklet" above for the A4 print-ready version.
             </p>
           </motion.div>
         )}
