@@ -155,12 +155,24 @@
             "parts": [
               {
                 "label": "a",
-                "marks": 4,
-                "text": "Calculate (i) the total annual tax revenue from this tax, and (ii) the percentage of the tax burden that falls on consumers. You are advised to show your working.",
+                "marks": 2,
+                "text": "Calculate the total annual tax revenue raised by this £0.18 per litre tax. You are advised to show your working.",
                 "options": null
               },
               {
-                "label": "b",
+                "label": "b(i)",
+                "marks": 1,
+                "text": "Calculate the percentage of the total tax burden borne by consumers.",
+                "options": null
+              },
+              {
+                "label": "b(ii)",
+                "marks": 1,
+                "text": "Calculate the percentage of the total tax burden borne by producers.",
+                "options": null
+              },
+              {
+                "label": "c",
                 "marks": 1,
                 "text": "One intended benefit of this tax is to:",
                 "options": [
@@ -524,14 +536,26 @@
             "parts": [
               {
                 "label": "a",
-                "text": "Identify the Nash equilibrium in this one-shot game and explain why it is not\nthe jointly profit-maximising outcome.",
-                "marks": 4,
+                "marks": 2,
+                "text": "Identify the Nash equilibrium of this one-shot game. You are advised to show your working.",
                 "options": null
               },
               {
-                "label": "b",
-                "text": "In a repeated version of this game, collusion is more likely when:",
+                "label": "b(i)",
                 "marks": 1,
+                "text": "Calculate the combined weekly profit (£ million) achieved at the Nash equilibrium.",
+                "options": null
+              },
+              {
+                "label": "b(ii)",
+                "marks": 1,
+                "text": "Calculate the combined weekly profit (£ million) that would be achieved if both firms maintained prices instead.",
+                "options": null
+              },
+              {
+                "label": "c",
+                "marks": 1,
+                "text": "In a repeated version of this game, collusion is more likely when:",
                 "options": [
                   {
                     "label": "A",
@@ -896,14 +920,26 @@
             "parts": [
               {
                 "label": "a",
-                "text": "Using a cost and revenue diagram, show the effect on a dominant platform's supernormal profits of a CMA requirement that it caps the commission it charges merchants.",
-                "marks": 4,
+                "marks": 2,
+                "text": "Using a cost and revenue diagram, show the effect on a dominant platform's supernormal profits of a CMA requirement that it caps the commission it charges merchants. You are advised to show your working.",
                 "options": null
               },
               {
-                "label": "b",
-                "text": "A price cap set below a monopolist's profit-maximising price is most likely to:",
+                "label": "b(i)",
                 "marks": 1,
+                "text": "Identify the change in the platform's profit-maximising price following the imposition of the cap.",
+                "options": null
+              },
+              {
+                "label": "b(ii)",
+                "marks": 1,
+                "text": "Identify the change in consumer surplus following the imposition of the cap.",
+                "options": null
+              },
+              {
+                "label": "c",
+                "marks": 1,
+                "text": "A price cap set below a monopolist's profit-maximising price is most likely to:",
                 "options": [
                   {
                     "label": "A",
