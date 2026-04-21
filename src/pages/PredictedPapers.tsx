@@ -2458,16 +2458,18 @@ Do NOT include any other headings, preamble, or commentary outside these three s
               <div className="flex flex-wrap items-center gap-2">
                 <Button asChild size="lg" variant="outline" className="rounded-full gap-2">
                   <a href={selectedLibraryPaper.bookletUrl} target="_blank" rel="noopener noreferrer">
-                    <FileText className="h-5 w-5" /> Open in new tab
+                    <FileText className="h-5 w-5" /> Open print booklet
                   </a>
                 </Button>
                 <Button
                   size="lg"
                   className="rounded-full gap-2 shadow-lg shadow-primary/20"
                   onClick={() => {
-                    const f = document.getElementById("edxa-booklet-frame") as HTMLIFrameElement | null;
-                    f?.contentWindow?.focus();
-                    f?.contentWindow?.print();
+                    const w = window.open(selectedLibraryPaper.bookletUrl, "_blank", "noopener,noreferrer");
+                    if (!w) return;
+                    const trigger = () => setTimeout(() => { try { w.focus(); w.print(); } catch {} }, 600);
+                    w.addEventListener?.("load", trigger);
+                    setTimeout(trigger, 1500);
                   }}
                 >
                   <Download className="h-5 w-5" /> Print / Save PDF
