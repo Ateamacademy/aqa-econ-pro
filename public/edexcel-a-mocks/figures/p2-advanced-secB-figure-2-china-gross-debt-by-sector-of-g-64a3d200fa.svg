@@ -1,0 +1,27 @@
+<svg viewBox="0 0 460 160" xmlns="http://www.w3.org/2000/svg" style="max-width: 130mm;">
+  <g font-size="10">
+    <text x="10" y="40">Households</text>
+    <text x="10" y="75">Non-financial<br>corporations</text>
+    <text x="10" y="115">Government</text>
+  </g>
+  <g fill="#222">
+    <rect x="130" y="25" width="44"  height="12"/>
+    <rect x="130" y="70" width="188" height="12"/>
+    <rect x="130" y="105" width="106" height="12"/>
+  </g>
+  <g fill="#bbb">
+    <rect x="130" y="40" width="128" height="12"/>
+    <rect x="130" y="85" width="272" height="12"/>
+    <rect x="130" y="120" width="188" height="12"/>
+  </g>
+  <g font-size="9">
+    <text x="180" y="35">22%</text><text x="330" y="80">94%</text>
+    <text x="245" y="115">53%</text>
+    <text x="265" y="50">64%</text><text x="410" y="95">136%</text>
+    <text x="325" y="130">94%</text>
+  </g>
+  <g font-size="8" transform="translate(340 15)">
+    <rect x="0" y="0" width="10" height="8" fill="#222"/><text x="14" y="8">2008</text>
+    <rect x="50" y="0" width="10" height="8" fill="#bbb"/><text x="64" y="8">2024</text>
+  </g>
+</svg>

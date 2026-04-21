@@ -1,0 +1,8 @@
+<svg viewBox="0 0 460 220" xmlns="http://www.w3.org/2000/svg" style="max-width: 130mm;">
+  <line x1="60" y1="20" x2="60" y2="180" stroke="#000"/>
+  <line x1="60" y1="180" x2="440" y2="180" stroke="#000"/>
+  <g font-size="9"><text x="30" y="25">110</text><text x="30" y="60">105</text><text x="30" y="95">100</text><text x="30" y="130">95</text><text x="30" y="165">85</text></g>
+  <polyline fill="none" stroke="#000" stroke-width="1.8"
+    points="75,95 100,170 140,140 180,115 220,110 260,108 300,105 340,100 380,90 420,85"/>
+  <g font-size="9"><text x="75" y="195">2019</text><text x="140" y="195">2020</text><text x="220" y="195">2022</text><text x="300" y="195">2024</text><text x="395" y="195">2025</text></g>
+</svg>

@@ -1,0 +1,17 @@
+<svg viewBox="0 0 460 200" xmlns="http://www.w3.org/2000/svg" style="max-width: 130mm;">
+  <line x1="60" y1="20" x2="60" y2="160" stroke="#000"/>
+  <line x1="60" y1="160" x2="440" y2="160" stroke="#000"/>
+  <g font-size="9"><text x="30" y="25">&pound;12</text><text x="30" y="60">&pound;10</text><text x="30" y="95">&pound;8</text><text x="30" y="130">&pound;6</text><text x="40" y="160">0</text></g>
+  <g fill="#444">
+    <rect x="80"  y="100" width="30" height="60"/>
+    <rect x="125" y="93"  width="30" height="67"/>
+    <rect x="170" y="85"  width="30" height="75"/>
+    <rect x="215" y="78"  width="30" height="82"/>
+    <rect x="260" y="65"  width="30" height="95"/>
+    <rect x="305" y="50"  width="30" height="110"/>
+    <rect x="350" y="42"  width="30" height="118"/>
+    <rect x="395" y="35"  width="30" height="125"/>
+  </g>
+  <g font-size="9"><text x="80" y="175">'18</text><text x="125" y="175">'19</text><text x="170" y="175">'20</text><text x="215" y="175">'21</text><text x="260" y="175">'22</text><text x="305" y="175">'23</text><text x="350" y="175">'24</text><text x="395" y="175">'26</text></g>
+  <g font-size="8"><text x="82" y="95">7.83</text><text x="127" y="88">8.21</text><text x="172" y="80">8.72</text><text x="217" y="73">8.91</text><text x="262" y="60">9.50</text><text x="305" y="45">10.42</text><text x="348" y="37">11.44</text><text x="393" y="30">12.21</text></g>
+</svg>

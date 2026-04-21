@@ -1,0 +1,11 @@
+<svg viewBox="0 0 460 220" xmlns="http://www.w3.org/2000/svg" style="max-width: 130mm;">
+  <line x1="60" y1="20" x2="60" y2="180" stroke="#000"/>
+  <line x1="60" y1="180" x2="440" y2="180" stroke="#000"/>
+  <g font-size="9"><text x="35" y="25">11%</text><text x="35" y="55">8%</text><text x="35" y="95">5%</text><text x="35" y="135">2%</text><text x="45" y="175">0</text></g>
+  <polyline fill="none" stroke="#000" stroke-width="1.8"
+    points="75,170 130,150 190,60 250,70 310,100 360,135 410,140"/>
+  <polyline fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="4,3"
+    points="75,180 130,180 190,165 250,100 310,50 360,70 410,95"/>
+  <g font-size="9"><text x="75" y="195">2020</text><text x="190" y="195">2022</text><text x="310" y="195">2024</text><text x="400" y="195">2025</text></g>
+  <g font-size="9"><text x="300" y="15">&mdash; HICP inflation</text><text x="300" y="28" style="font-style: italic">- - - ECB deposit rate</text></g>
+</svg>

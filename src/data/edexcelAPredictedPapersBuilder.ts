@@ -21,11 +21,12 @@ import data from "./edexcelAPredictedPapersData.json";
 
 type Option = { label: string; text: string };
 type Part = { label: string | null; text: string; marks: number | null; options: Option[] | null };
+type FigureRef = string | { url?: string; title?: string };
 type Question = {
   number: number | null;
   stem: string;
   tables: string[][][];
-  figures: string[];
+  figures: FigureRef[];
   parts: Part[];
   totalMarks: number | null;
 };
@@ -36,6 +37,8 @@ type Section = {
   extracts: Extract[];
   questions: Question[];
   totalMarks: number | null;
+  figures?: FigureRef[];
+  tables?: string[][][];
 };
 type Paper = { id: string; paper: number; tier: string; title: string; sections: Section[] };
 
@@ -43,10 +46,21 @@ const PAPERS = data as unknown as Paper[];
 
 function tableToMarkdown(rows: string[][]): string {
   if (!rows.length) return "";
+  // Sanitize cells: collapse newlines and escape pipes so GFM tables render correctly.
+  const clean = (c: string) => (c ?? "").replace(/\s*\n\s*/g, " ").replace(/\|/g, "\\|").trim() || "—";
   const [head, ...body] = rows;
   const sep = head.map(() => "---").join(" | ");
-  const fmt = (r: string[]) => "| " + r.join(" | ") + " |";
+  const fmt = (r: string[]) => "| " + r.map(clean).join(" | ") + " |";
   return [fmt(head), `| ${sep} |`, ...body.map(fmt)].join("\n");
+}
+
+function renderFigure(f: FigureRef): string {
+  if (typeof f === "string") return `*${f}*`;
+  if (f.url) {
+    const title = f.title ?? "Figure";
+    return `![${title}](${f.url})\n\n*${title}*`;
+  }
+  return f.title ? `*${f.title}*` : "";
 }
 
 function renderQuestion(q: Question, fallbackNum: number): string {
@@ -57,9 +71,9 @@ function renderQuestion(q: Question, fallbackNum: number): string {
   // unless the question has no parts (essay-style Section C / Paper 3 essays).
   const stemBits: string[] = [];
   if (q.stem) stemBits.push(q.stem);
-  q.figures.forEach((f) => stemBits.push(`*${f}*`));
+  q.figures.forEach((f) => stemBits.push(renderFigure(f)));
   q.tables.forEach((t) => stemBits.push(tableToMarkdown(t)));
-  const stem = stemBits.join("\n\n");
+  const stem = stemBits.filter(Boolean).join("\n\n");
 
   if (q.parts.length === 0) {
     // Essay-style: emit one question header with the total marks and the stem text
@@ -102,6 +116,12 @@ function renderSection(s: Section, runningQNum: { n: number }): string {
   const blocks: string[] = [];
   blocks.push(`## Section ${s.label}${s.totalMarks ? ` (${s.totalMarks} marks)` : ""}`);
   if (s.intro.length) blocks.push(s.intro.join("\n\n"));
+  // Section-level figures (e.g. Section B pie/bar charts) shown before extracts
+  (s.figures ?? []).forEach((f) => {
+    const md = renderFigure(f);
+    if (md) blocks.push(md);
+  });
+  (s.tables ?? []).forEach((t) => blocks.push(tableToMarkdown(t)));
   const extractsMd = renderExtracts(s.extracts);
   if (extractsMd) blocks.push(extractsMd);
   s.questions.forEach((q) => {

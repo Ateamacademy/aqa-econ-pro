@@ -1,0 +1,30 @@
+<svg viewBox="0 0 460 220" xmlns="http://www.w3.org/2000/svg" style="max-width: 130mm;">
+  <line x1="50" y1="20" x2="50" y2="190" stroke="#000"/>
+  <line x1="50" y1="105" x2="440" y2="105" stroke="#000" stroke-width="0.5"/>
+  <line x1="50" y1="190" x2="440" y2="190" stroke="#000"/>
+  <g font-size="9">
+    <text x="15" y="25">600</text><text x="15" y="65">300</text>
+    <text x="25" y="110">0</text><text x="15" y="150">&minus;200</text>
+    <text x="15" y="188">&minus;400</text>
+  </g>
+  <g fill="#555">
+    <rect x="60" y="90" width="15" height="15"/><rect x="80" y="85" width="15" height="20"/>
+    <rect x="100" y="75" width="15" height="30"/><rect x="120" y="60" width="15" height="45"/>
+    <rect x="140" y="55" width="15" height="50"/><rect x="160" y="45" width="15" height="60"/>
+    <rect x="180" y="105" width="15" height="45"/>
+    <rect x="200" y="70" width="15" height="35"/><rect x="220" y="75" width="15" height="30"/>
+    <rect x="240" y="80" width="15" height="25"/><rect x="260" y="85" width="15" height="20"/>
+    <rect x="280" y="90" width="15" height="15"/>
+    <rect x="300" y="105" width="15" height="10"/><rect x="320" y="105" width="15" height="20"/>
+    <rect x="340" y="105" width="15" height="25"/><rect x="360" y="90" width="15" height="15"/>
+    <rect x="380" y="95" width="15" height="10"/>
+  </g>
+  <polyline fill="none" stroke="#000" stroke-width="1.6"
+    points="67,80 87,75 107,90 127,95 147,95 167,90 187,95 207,100 227,105 247,110 267,110 287,90 307,75 327,60 347,45 367,50 387,60"/>
+  <text x="395" y="60" font-size="9">US 10y</text>
+  <g font-size="9">
+    <text x="55" y="210">'00</text><text x="155" y="210">'08</text>
+    <text x="255" y="210">'16</text><text x="355" y="210">'20</text>
+    <text x="395" y="210">'24</text>
+  </g>
+</svg>
