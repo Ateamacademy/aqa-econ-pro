@@ -79,6 +79,7 @@ const PAPER_1: Paper = {
       totalMarks: 25,
       timeAdvice: "You are advised to spend 30 minutes on this section.",
       instructions: ["Answer ALL questions. Write your answers in the spaces provided."],
+      mcqReminder: true,
       questions: [
         {
           number: "1",
@@ -393,6 +394,7 @@ const PAPER_2: Paper = {
       totalMarks: 25,
       timeAdvice: "You are advised to spend 30 minutes on this section.",
       instructions: ["Answer ALL questions. Write your answers in the spaces provided."],
+      mcqReminder: true,
       questions: [
         {
           number: "1",
@@ -671,6 +673,7 @@ const PAPER_3: Paper = {
       totalMarks: 25,
       timeAdvice: "You are advised to spend 30 minutes on this section.",
       instructions: ["Answer ALL questions. Write your answers in the spaces provided."],
+      mcqReminder: true,
       preamble: "Case Study 1: UK housing market and monetary policy. Read Figure 1 and Extract A before answering Question 1.",
       figures: [
         {
