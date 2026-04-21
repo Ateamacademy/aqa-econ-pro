@@ -421,12 +421,17 @@ const PAPER_2: Paper = {
             },
             {
               label: "(b)",
-              prompt:
-                "With reference to the data, explain what the combination of indicators in 2024 suggests about the UK's macroeconomic position.",
-              marks: 2,
+              prompt: "Which of the following best describes the UK's macroeconomic position in 2024?",
+              marks: 1,
+              mcq: [
+                { letter: "A", text: "stagflation" },
+                { letter: "B", text: "demand-pull inflation" },
+                { letter: "C", text: "disinflation with weak growth" },
+                { letter: "D", text: "hyperinflation" },
+              ],
             },
           ],
-          totalMarks: 6,
+          totalMarks: 5,
         },
         {
           number: "2",
@@ -440,11 +445,17 @@ const PAPER_2: Paper = {
             },
             {
               label: "(b)",
-              prompt: "Explain the likely effect of this cut in interest rates on the sterling exchange rate.",
-              marks: 2,
+              prompt: "A cut in interest rates is most likely to cause the pound sterling to:",
+              marks: 1,
+              mcq: [
+                { letter: "A", text: "appreciate against the euro" },
+                { letter: "B", text: "depreciate against the euro" },
+                { letter: "C", text: "have no effect on the exchange rate" },
+                { letter: "D", text: "revalue under a fixed regime" },
+              ],
             },
           ],
-          totalMarks: 6,
+          totalMarks: 5,
         },
         {
           number: "3",
@@ -455,8 +466,19 @@ const PAPER_2: Paper = {
               prompt: "Distinguish between the cyclical and structural components of a budget deficit.",
               marks: 4,
             },
+            {
+              label: "(b)",
+              prompt: "Which of the following would most clearly worsen the UK's structural deficit?",
+              marks: 1,
+              mcq: [
+                { letter: "A", text: "a recession-driven fall in tax receipts" },
+                { letter: "B", text: "a permanent increase in state pension entitlements" },
+                { letter: "C", text: "a temporary increase in VAT" },
+                { letter: "D", text: "a cyclical upswing in corporation tax" },
+              ],
+            },
           ],
-          totalMarks: 4,
+          totalMarks: 5,
         },
         {
           number: "4",
@@ -471,20 +493,37 @@ const PAPER_2: Paper = {
             },
             {
               label: "(b)",
-              prompt: "Explain one supply-side policy that could help correct a persistent current account deficit in the long run.",
-              marks: 2,
+              prompt: "Which is most likely to correct a persistent current account deficit in the long run?",
+              marks: 1,
+              mcq: [
+                { letter: "A", text: "fiscal expansion" },
+                { letter: "B", text: "currency depreciation and supply-side reform" },
+                { letter: "C", text: "tariffs on all imports" },
+                { letter: "D", text: "a freeze on foreign direct investment" },
+              ],
             },
           ],
-          totalMarks: 6,
+          totalMarks: 5,
         },
         {
           number: "5",
           intro:
             "The OECD estimates the UK's long-run trend growth rate has fallen from 2.5% in the 2000s to approximately 1.4% in the 2020s.",
           parts: [
-            { label: "(a)", prompt: "Explain one supply-side reason for the fall in the UK's trend growth rate.", marks: 3 },
+            { label: "(a)", prompt: "Explain one supply-side reason for the fall in the UK's trend growth rate.", marks: 4 },
+            {
+              label: "(b)",
+              prompt: "Which policy is most likely to raise long-run trend growth?",
+              marks: 1,
+              mcq: [
+                { letter: "A", text: "a temporary VAT cut" },
+                { letter: "B", text: "expansion of apprenticeships and skills funding" },
+                { letter: "C", text: "quantitative easing" },
+                { letter: "D", text: "a higher national insurance rate" },
+              ],
+            },
           ],
-          totalMarks: 3,
+          totalMarks: 5,
         },
       ],
     },
