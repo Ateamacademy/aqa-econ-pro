@@ -34,7 +34,7 @@ const PAPER_TITLE: Record<string, string> = {
 };
 
 export default function EdexcelMockPaperViewer() {
-  const { paperNum, difficulty } = useParams<{ paperNum: string; difficulty: string }>();
+  const { paperNum, difficulty, view } = useParams<{ paperNum: string; difficulty: string; view?: string }>();
   const location = useLocation();
   const navigate = useNavigate();
   const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -43,15 +43,17 @@ export default function EdexcelMockPaperViewer() {
   const fromShortcut = location.pathname.match(/^\/paper-([123])$/)?.[1];
   const n = paperNum ?? fromShortcut;
   const d = (difficulty ?? "moderate") as Difficulty;
+  const isMarkScheme = view === "mark-scheme" || location.pathname.endsWith("/mark-scheme");
 
   const validPaper = n === "1" || n === "2" || n === "3";
   const validDifficulty = d === "moderate" || d === "hard" || d === "advanced";
 
   useEffect(() => {
     if (validPaper && validDifficulty) {
-      document.title = `Edexcel A Paper ${n} (9EC0/0${n}) — ${DIFFICULTY_LABEL[d]} Mock`;
+      const suffix = isMarkScheme ? " — Mark Scheme" : " Mock";
+      document.title = `Edexcel A Paper ${n} (9EC0/0${n}) — ${DIFFICULTY_LABEL[d]}${suffix}`;
     }
-  }, [n, d, validPaper, validDifficulty]);
+  }, [n, d, validPaper, validDifficulty, isMarkScheme]);
 
   if (!validPaper || !validDifficulty) {
     if (fromShortcut && !difficulty) {
@@ -65,7 +67,9 @@ export default function EdexcelMockPaperViewer() {
     );
   }
 
-  const src = `/edexcel-a-mocks/paper-${n}-${d}.html`;
+  const src = isMarkScheme
+    ? `/edexcel-a-mocks/mark-scheme-paper-${n}-${d}.html`
+    : `/edexcel-a-mocks/paper-${n}-${d}.html`;
   const printIframe = () => {
     iframeRef.current?.contentWindow?.focus();
     iframeRef.current?.contentWindow?.print();
@@ -86,6 +90,9 @@ export default function EdexcelMockPaperViewer() {
             <span className="font-semibold">
               Paper {n}: {PAPER_TITLE[n!]}{" "}
               <span className="text-muted-foreground font-normal">(9EC0/0{n})</span>
+              {isMarkScheme && (
+                <span className="ml-2 text-primary">— Mark Scheme</span>
+              )}
             </span>
             <Badge variant="outline" className={`${DIFFICULTY_TONE[d]} font-semibold`}>
               {DIFFICULTY_LABEL[d]}
