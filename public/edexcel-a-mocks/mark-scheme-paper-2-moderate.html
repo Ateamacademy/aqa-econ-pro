@@ -2,186 +2,404 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mark Scheme &mdash; Paper 2: The National and Global Economy (Moderate)</title>
+<title>Mark Scheme — Pearson Edexcel A Level Economics A Paper 2 (9EC0/02) — Moderate</title>
 <style>
-    /* Pearson Edexcel mark scheme style */
-@page { size: A4; margin: 15mm 14mm 18mm 14mm; }
-
+@page { size: A4; margin: 18mm 16mm 20mm 16mm; }
 * { box-sizing: border-box; }
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 10pt;
-  line-height: 1.35;
-  color: #111;
-  margin: 0;
+html, body {
+  margin: 0; padding: 0; background: #ededed;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  font-size: 10.5pt; line-height: 1.4; color: #111;
 }
-.topnav {
-  background: #0b49a0; color: #fff; padding: 10px 18px;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 14px;
+.doc {
+  width: 210mm; min-height: 297mm; background: #fff;
+  margin: 10mm auto; padding: 18mm 16mm; box-shadow: 0 1px 6px rgba(0,0,0,0.18);
 }
-.topnav a, .topnav a:visited { color: #fff; text-decoration: none; font-weight: 600; }
-.topnav a:hover { text-decoration: underline; }
-.topnav button {
-  background: #fff; color: #0b49a0; border: 0; padding: 6px 14px;
-  font-weight: 600; border-radius: 3px; cursor: pointer;
+@media print { html, body { background: #fff; } .doc { margin: 0; box-shadow: none; padding: 0; } }
+.pearson-brand { font-family: "Trebuchet MS", sans-serif; font-weight: 700; letter-spacing: -0.2px; }
+.pearson-brand .pearson { font-size: 15pt; }
+.pearson-brand .edexcel { background: #000; color: #fff; padding: 1px 5px; font-size: 13pt; }
+.title-block {
+  text-align: center; margin: 25mm 0 40mm 0;
+  border-top: 2px solid #000; border-bottom: 2px solid #000;
+  padding: 10mm 0;
 }
-@media print { .no-print { display: none !important; } }
-
-.sheet { max-width: 190mm; margin: 0 auto; padding: 10mm 6mm; }
-
-.header-block {
-  border-bottom: 3px solid #000;
-  padding-bottom: 6mm;
-  margin-bottom: 8mm;
+.title-block h1 { font-size: 24pt; margin: 0 0 3mm 0; font-weight: 700; letter-spacing: 0.5px; }
+.title-block h2 { font-size: 14pt; margin: 0 0 2mm 0; font-weight: 400; }
+.title-block .paper-ref { font-size: 13pt; font-weight: 700; margin-top: 4mm; }
+.title-block .session { font-size: 11pt; margin-top: 2mm; font-style: italic; }
+.title-footer { text-align: center; margin-top: 25mm; font-size: 9.5pt; color: #333; }
+.title-footer .brand-inline { margin-bottom: 3mm; }
+h3.section-heading {
+  font-size: 14pt; font-weight: 700; margin: 10mm 0 3mm 0;
+  padding-bottom: 1mm; border-bottom: 1.5px solid #000;
 }
-.header-block .brand {
-  font-family: "Trebuchet MS", sans-serif;
-  font-weight: 700;
-  font-size: 18pt;
-  margin-bottom: 2mm;
+h4.sub-heading {
+  font-size: 11.5pt; font-weight: 700; margin: 6mm 0 2mm 0;
+  color: #000;
 }
-.header-block .brand .edexcel {
-  background: #000; color: #fff; padding: 1mm 3mm; margin-left: 2mm;
-}
-.header-block h1 { font-size: 16pt; margin: 2mm 0; }
-.header-block .subtitle { color: #444; font-size: 11pt; }
-.header-block .tier {
-  display: inline-block;
-  padding: 1mm 4mm;
-  border-radius: 3mm;
-  font-size: 9pt;
-  font-weight: 700;
-  color: #fff;
-  margin-top: 2mm;
-}
-.tier.moderate { background: #2a8f3a; }
-.tier.hard { background: #d77b1a; }
-.tier.advanced { background: #b42a2a; }
-
-.gmg {
-  background: #f5f5f5;
-  border-left: 3px solid #666;
-  padding: 4mm 5mm;
-  margin-bottom: 6mm;
-  font-size: 9pt;
-}
-.gmg h3 { margin: 0 0 2mm 0; font-size: 10pt; }
-.gmg p { margin: 1mm 0; }
-
-h2.section {
-  background: #222;
-  color: #fff;
-  padding: 2mm 4mm;
-  font-size: 11pt;
-  margin: 6mm 0 3mm 0;
-  page-break-before: auto;
-}
-
-h3.qhead {
-  font-size: 10.5pt;
-  margin: 4mm 0 1mm 0;
-  padding: 1mm 0;
-  border-bottom: 1px solid #888;
-}
-
+p { margin: 2mm 0; }
+ul { margin: 2mm 0; padding-left: 6mm; }
+li { margin-bottom: 1mm; }
 table.ms {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 2mm 0 3mm 0;
-  font-size: 9.5pt;
-  table-layout: fixed;
-  word-wrap: break-word;
+  border-collapse: collapse; width: 100%; margin: 3mm 0 4mm 0;
+  font-size: 10pt;
 }
-table.ms th {
-  background: #e5e5e5;
-  border: 0.5pt solid #888;
-  padding: 1.5mm 2mm;
-  text-align: left;
-  font-size: 9pt;
+table.ms th, table.ms td {
+  border: 0.5pt solid #000; padding: 2mm 3mm; vertical-align: top; text-align: left;
 }
-table.ms td {
-  border: 0.5pt solid #bbb;
-  padding: 2mm 2.5mm;
-  vertical-align: top;
+table.ms th { font-weight: 700; background: #e8e8e8; }
+table.ms .qcol { width: 18mm; text-align: center; font-weight: 700; }
+table.ms .markscol { width: 16mm; text-align: center; font-weight: 700; }
+table.ms .contentcol { }
+table.level {
+  border-collapse: collapse; width: 100%; margin: 2mm 0 4mm 0;
+  font-size: 10pt;
 }
-table.ms .qcol { width: 10%; font-weight: 700; }
-table.ms .acol { width: 73%; }
-table.ms .mcol { width: 9%; text-align: center; font-weight: 700; }
-table.ms .aocol { width: 8%; text-align: center; font-size: 8.5pt; color: #555; }
-
-.ind { margin: 1mm 0 1mm 0; padding-left: 4mm; }
-.ind li { margin-bottom: 0.8mm; }
-
-.levels { margin: 2mm 0 2mm 0; }
-.levels table { width: 100%; border-collapse: collapse; font-size: 9pt; }
-.levels td { border: 0.5pt solid #bbb; padding: 1.5mm 2mm; vertical-align: top; }
-.levels .lvl { width: 14%; background: #f2f2f2; font-weight: 700; text-align: center; }
-.levels .range { width: 12%; background: #fafafa; text-align: center; font-weight: 600; }
-.levels .desc { width: 74%; }
-
-.correct { color: #164; font-weight: 700; }
-.note { font-size: 8.5pt; color: #666; font-style: italic; }
-.working { font-family: "Courier New", monospace; background: #f8f8f8; padding: 1mm 2mm; margin: 1mm 0; font-size: 9pt; }
-b.term { background: #fff3d6; padding: 0 2px; }
-.totals-row td { background: #f5f5f5; font-weight: 700; }
-
-
+table.level th, table.level td {
+  border: 0.5pt solid #000; padding: 2mm 3mm; vertical-align: top;
+}
+table.level th { font-weight: 700; background: #d9d9d9; text-align: center; }
+table.level .lvlcol { width: 18mm; font-weight: 700; text-align: center; }
+table.level .markcol { width: 18mm; text-align: center; }
+.boilerplate {
+  background: #f5f5f5; border-left: 3px solid #000; padding: 3mm 5mm;
+  font-size: 10pt; margin: 3mm 0; line-height: 1.45;
+}
+.kaa-split { display: flex; gap: 5mm; margin: 2mm 0; }
+.kaa-split > div { flex: 1; border: 0.5pt solid #666; padding: 3mm; background: #fafafa; }
+.kaa-split h5 { margin: 0 0 2mm 0; font-size: 10.5pt; font-weight: 700; }
+.indicative-heading { font-weight: 700; margin: 3mm 0 1mm 0; font-style: italic; }
+.synoptic-flag {
+  display: inline-block; background: #000; color: #fff;
+  padding: 1px 5px; font-size: 9pt; font-weight: 700; letter-spacing: 0.3px;
+  margin-left: 2mm;
+}
+.page-break { page-break-before: always; }
 </style>
 </head>
 <body>
-<div class="topnav no-print">
-  <div>&larr; <a href="paper-2-moderate.html">Back to paper</a></div>
-  <div>Mark scheme: Paper 2 (9EC0/02) &mdash; Moderate</div>
-  <button onclick="window.print()">Print</button>
-</div>
-<div class="sheet">
-  <div class="header-block">
-    <div class="brand">Pearson <span class="edexcel">Edexcel</span></div>
-    <h1>Mark Scheme &mdash; Paper 2: The National and Global Economy</h1>
-    <div class="subtitle">9EC0/02 &middot; Wednesday 17 June 2026 &ndash; Morning</div>
-    <div class="tier moderate">Moderate tier</div>
-  </div>
-  <div class="gmg">
-    <h3>General Marking Guidance</h3>
-    <p>All candidates must receive the same treatment. Examiners must mark the first candidate in exactly the same way as they mark the last. Mark schemes should be applied positively. Candidates must be rewarded for what they have shown they can do rather than penalised for omissions.</p>
-    <p>Crossed-out work should be marked unless the candidate has replaced it with an alternative response. All the marks on the mark scheme are designed to be awarded. Examiners should always award full marks if deserved, i.e. if the answer matches the mark scheme.</p>
-  </div>
+<div class="doc">
 
-<h2 class="section">Question 1 &mdash; Total 5 marks</h2><table class="ind-table">
-  <thead><tr><th>Indicative content</th><th class="marks-col">Mark</th><th class="ao">AO</th></tr></thead>
-  <tbody><tr><td>(a) % change = (149 &minus; 155) / 155 = &minus;3.9%.</td><td class="marks-col">2</td><td class="ao">AO2</td></tr><tr><td>(b) Higher mortgage rates (2-year fixed 4.1% &rarr; 5.9%) raised borrowing costs; demand for mortgage-financed purchases fell; prices fell accordingly.</td><td class="marks-col">2</td><td class="ao">AO1 / AO2 / AO3</td></tr></tbody>
+<!-- ============ TITLE PAGE ============ -->
+<div class="title-block">
+  <div class="pearson-brand" style="margin-bottom: 8mm;"><span class="pearson">Pearson</span> <span class="edexcel">Edexcel</span></div>
+  <h1>Mark Scheme</h1>
+  <h2>Predicted Paper &ndash; For revision purposes only</h2>
+  <h2 style="margin-top: 8mm;">Level 3 GCE Economics A (9EC0)</h2>
+  <h2>Paper 2: The National and Global Economy</h2>
+  <div class="paper-ref">9EC0/02 &mdash; Moderate</div>
+  <div class="session">Summer 2026 series</div>
+</div>
+
+<div class="title-footer">
+  <div class="brand-inline pearson-brand"><span class="pearson">Pearson</span> <span class="edexcel">Edexcel</span></div>
+  <div>Level 3 GCE &mdash; Economics A</div>
+  <div>Pearson Education Ltd &copy;2026</div>
+</div>
+
+<!-- ============ GENERAL MARKING GUIDANCE ============ -->
+<div class="page-break"></div>
+
+<h3 class="section-heading">General Marking Guidance</h3>
+
+<div class="boilerplate">
+  <p>All candidates must receive the same treatment. Examiners must mark the last candidate in exactly the same way as they mark the first.</p>
+  <p>Mark schemes should be applied positively. Candidates must be rewarded for what they have shown they can do rather than penalised for omissions.</p>
+  <p>Examiners should mark according to the mark scheme &ndash; not according to their perception of where the grade boundaries may lie.</p>
+  <p>All the marks on the mark scheme are designed to be awarded. Examiners should always award full marks if deserved; that is, if the answer matches the mark scheme.</p>
+  <p>Where some judgement is required, mark schemes will provide the principles by which marks will be awarded and exemplification may be limited.</p>
+  <p>When examiners are in doubt regarding the application of the mark scheme to a candidate's response, the team leader must be consulted.</p>
+  <p>Crossed-out work should be marked UNLESS the candidate has replaced it with an alternative response.</p>
+</div>
+
+<h4 class="sub-heading">Assessment Objectives (Pearson Edexcel Economics A)</h4>
+<table class="level">
+  <tr><th class="lvlcol">AO</th><th>Description</th></tr>
+  <tr><td class="lvlcol">AO1</td><td>Demonstrate knowledge of terms/concepts and theories/models</td></tr>
+  <tr><td class="lvlcol">AO2</td><td>Apply knowledge and understanding to various economic contexts</td></tr>
+  <tr><td class="lvlcol">AO3</td><td>Analyse issues within economics, showing understanding of impact on agents</td></tr>
+  <tr><td class="lvlcol">AO4</td><td>Evaluate economic arguments and use evidence to support informed judgements</td></tr>
 </table>
-<div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">Monetary tightening operates primarily through the interest-rate channel; mortgage rates rise &rarr; demand falls &rarr; prices fall.</div>
-</div><h2 class="section">Question 2 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Higher Bank Rate &rarr; higher commercial interest rates &rarr; lower consumption and investment &rarr; AD shifts left.</li><li>Lower AD &rarr; lower equilibrium price level and output (below potential).</li><li>Exchange rate appreciates &rarr; net exports fall &rarr; further AD effect.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: D</span>
-  <div class="rationale">Fiscal multiplier is a fiscal-policy concept, not a monetary transmission mechanism.</div>
-</div><h2 class="section">Question 3 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Increased housing supply raises LRAS via improved factor mobility (labour can move to job-rich areas).</li><li>Infrastructure and construction investment adds to aggregate demand in short run.</li><li>Long-run: higher potential output; lower price level for housing; positive spillovers for productivity.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">LRAS shift right raises potential output and reduces price pressure.</div>
-</div><h2 class="section">Question 4 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Lower mortgage rates &rarr; higher household disposable income; increased housing demand.</li><li>Consumption rises as monthly repayments fall (income effect).</li><li>Wealth effect: higher house prices increase household net wealth, supporting consumption.</li><li>Output rises in short run via AD shift right.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: D</span>
-  <div class="rationale">Lower rates reduce the return on saving, raising the present consumption / future consumption ratio.</div>
-</div><h2 class="section">Question 5 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Migrants expand labour supply &rarr; LRAS shifts right; potential output rises.</li><li>Possible short-run wage pressure reduced in low-skilled sectors.</li><li>Demand effects: migrants spend income domestically &rarr; AD rises.</li><li>Pressure on housing, public services, transport.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">A larger workforce raises potential output &rarr; LRAS right.</div>
-</div><p style="text-align: right; font-weight: 700; margin: 6mm 0;">TOTAL FOR SECTION A = 25 MARKS</p><h2 class="section">Question 6(a) — 5 marks &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Demand factors: population growth; net migration; household formation; tax advantages of homeownership; low rates historically.</li><li>Supply factors: planning constraints; green-belt restrictions; slow build-out rates; small-builder decline.</li><li>Productivity in construction has stagnated.</li></ul></div><h2 class="section">Question 6(b) — 12 marks &mdash; Total 12 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-3</td><td>Isolated elements of knowledge. Limited application and analysis.</td></tr><tr><td class="lv">Level 2</td><td class="range">4-6</td><td>Accurate knowledge with application to the context. Some reasoned analysis.</td></tr><tr><td class="lv">Level 3</td><td class="range">7-9</td><td>Clear, developed chains of analysis applied to the context with accurate use of data.</td></tr><tr><td class="lv">Level 4</td><td class="range">10-12</td><td>Fully developed, logically sound chains of analysis with integration of multiple data sources.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Higher mortgage rates reduce effective demand &rarr; fewer pre-sales.</li><li>Rising construction costs (materials, labour).</li><li>Planning delays and regulatory complexity.</li><li>Developer concentration &rarr; build-out pace calibrated to maintain prices.</li><li>Evaluation: planning reform is a necessary but not sufficient condition.</li></ul></div><h2 class="section">Question 6(c) — 8 marks &mdash; Total 8 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-2</td><td>Isolated elements of knowledge and understanding. Brief attempt at application or analysis.</td></tr><tr><td class="lv">Level 2</td><td class="range">3-5</td><td>Accurate knowledge and understanding with application to the context. Some reasoned chains of analysis.</td></tr><tr><td class="lv">Level 3</td><td class="range">6-8</td><td>Clear, accurate and developed knowledge, understanding, application and analysis of the context. Logical and well-reasoned chains.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>High rents reduce disposable income for other spending &rarr; lower consumption elsewhere.</li><li>Labour mobility impaired &rarr; productivity costs.</li><li>Intergenerational inequality rises &rarr; social cost.</li><li>Evaluation: rental controls risk worsening supply; targeted supply policy is preferred.</li></ul></div><h2 class="section">Question 6(d) — 10 marks &mdash; Total 10 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-2</td><td>Isolated elements of knowledge and understanding. Brief and unsupported evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">3-5</td><td>Accurate knowledge, understanding and application to the context. Evaluation is generic rather than context-based.</td></tr><tr><td class="lv">Level 3</td><td class="range">6-8</td><td>Clear chains of analysis applied to the context. Evaluation is context-based with some supporting evidence.</td></tr><tr><td class="lv">Level 4</td><td class="range">9-10</td><td>Fully developed chains of analysis applied to the context. Evaluative judgement is fully supported by reasoned argument and evidence from the extracts.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Rate cuts stimulate housing demand via lower mortgage rates.</li><li>AD effect: higher consumption and investment.</li><li>Risk of reigniting house-price inflation &rarr; financial-stability concern (FPC tools).</li><li>Inflation impact: services inflation may prove sticky.</li><li>Evaluation: appropriate pace depends on inflation persistence and spare capacity.</li></ul></div><h2 class="section">Question 6(e) — 15 marks &mdash; Total 15 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-3</td><td>Isolated knowledge; limited application or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">4-7</td><td>Accurate knowledge and some application. Evaluation is generic or one-sided.</td></tr><tr><td class="lv">Level 3</td><td class="range">8-11</td><td>Developed chains of analysis applied to the context. Balanced evaluation with some judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">12-15</td><td>Sophisticated, fully developed analysis and evaluation. Clear, supported judgement drawing on extracts and own knowledge.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Planning liberalisation raises long-run housing supply &rarr; real prices fall; rents fall.</li><li>Short-run: construction investment rises &rarr; AD boost; employment in construction.</li><li>Sequencing issue: supply response may lag planning change by years.</li><li>Environmental concerns: green-belt loss; carbon emissions.</li><li>Evaluation: magnitude depends on local-authority implementation; international evidence (e.g. Tokyo) suggests potential is large.</li></ul></div><p style="text-align: right; font-weight: 700; margin: 6mm 0;">TOTAL FOR SECTION B = 50 MARKS</p><h2 class="section">Question 7 — 25 marks &mdash; Total 25 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-5</td><td>Isolated knowledge; limited application, analysis or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">6-11</td><td>Accurate knowledge with some application. Evaluation is unbalanced or underdeveloped.</td></tr><tr><td class="lv">Level 3</td><td class="range">12-17</td><td>Developed chains of analysis applied to context. Balanced evaluation with reasoned judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">18-21</td><td>Sophisticated, fully developed analysis. Evaluation integrates micro and macro perspectives with supported conclusion.</td></tr><tr><td class="lv">Level 5</td><td class="range">22-25</td><td>Exceptional analysis drawing on synoptic links. Sustained, well-reasoned evaluation with decisive, defensible judgement.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Stamp duty cut boosts housing demand (income effect + reduced transaction friction).</li><li>Short-run: prices rise, benefit partly captured by sellers.</li><li>Supply-side effect limited &rarr; most effect on prices, not quantity.</li><li>Fiscal cost: forgone revenue ~&pound;5bn/year.</li><li>Evaluation: targeting by first-time buyers only reduces but does not eliminate capitalisation.</li></ul></div><h2 class="section">Question 8 — 25 marks &mdash; Total 25 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-5</td><td>Isolated knowledge; limited application, analysis or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">6-11</td><td>Accurate knowledge with some application. Evaluation is unbalanced or underdeveloped.</td></tr><tr><td class="lv">Level 3</td><td class="range">12-17</td><td>Developed chains of analysis applied to context. Balanced evaluation with reasoned judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">18-21</td><td>Sophisticated, fully developed analysis. Evaluation integrates micro and macro perspectives with supported conclusion.</td></tr><tr><td class="lv">Level 5</td><td class="range">22-25</td><td>Exceptional analysis drawing on synoptic links. Sustained, well-reasoned evaluation with decisive, defensible judgement.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Supply-side policies raise potential output; necessary for sustained real growth.</li><li>Demand-side policies address cyclical output gaps; short-run stabilisation.</li><li>Need both in combination: post-2008 UK 'broken escalator' debate.</li><li>Evaluation: depends on nature of economic problem (output gap vs structural weakness).</li></ul></div>
-<p style="margin-top: 20mm; text-align: center; font-size: 9pt; color: #888;">&mdash; END OF MARK SCHEME &mdash;</p>
+<p style="margin-top: 4mm;"><b>Marking grids are organised as KAA (Knowledge, Application, Analysis &mdash; AO1+AO2+AO3) and Evaluation (AO4).</b></p>
+
+<!-- ============ LEVEL DESCRIPTORS ============ -->
+<h3 class="section-heading">Level Descriptors (applied to banded questions)</h3>
+
+<h4 class="sub-heading">8-mark "Examine" (KAA = 5, Evaluation = 3)</h4>
+<table class="level">
+  <tr><th class="lvlcol">Level</th><th class="markcol">KAA marks</th><th>Descriptor</th></tr>
+  <tr><td class="lvlcol">L1</td><td class="markcol">1&ndash;2</td><td>Isolated element of knowledge; limited application.</td></tr>
+  <tr><td class="lvlcol">L2</td><td class="markcol">3&ndash;4</td><td>Sound knowledge applied with some development; at least one chain of reasoning.</td></tr>
+  <tr><td class="lvlcol">L3</td><td class="markcol">5</td><td>Accurate detailed knowledge fully applied; developed chains.</td></tr>
+</table>
+
+<h4 class="sub-heading">10-mark "Assess" (KAA = 6, Evaluation = 4)</h4>
+<table class="level">
+  <tr><th class="lvlcol">Level</th><th class="markcol">KAA marks</th><th>Descriptor</th></tr>
+  <tr><td class="lvlcol">L1</td><td class="markcol">1&ndash;2</td><td>Limited knowledge; weak application.</td></tr>
+  <tr><td class="lvlcol">L2</td><td class="markcol">3&ndash;4</td><td>Sound theory applied to context.</td></tr>
+  <tr><td class="lvlcol">L3</td><td class="markcol">5&ndash;6</td><td>Accurate detailed theory, well applied; developed chains.</td></tr>
+</table>
+
+<h4 class="sub-heading">12-mark "Discuss with diagram" (KAA = 8, Evaluation = 4)</h4>
+<table class="level">
+  <tr><th class="lvlcol">Level</th><th class="markcol">KAA marks</th><th>Descriptor</th></tr>
+  <tr><td class="lvlcol">L1</td><td class="markcol">1&ndash;2</td><td>Limited knowledge; weak or missing diagram.</td></tr>
+  <tr><td class="lvlcol">L2</td><td class="markcol">3&ndash;5</td><td>Sound knowledge; reasonable diagram; some application.</td></tr>
+  <tr><td class="lvlcol">L3</td><td class="markcol">6&ndash;8</td><td>Accurate knowledge; correctly labelled diagram; developed chains.</td></tr>
+</table>
+
+<h4 class="sub-heading">15-mark "Discuss" (KAA = 9, Evaluation = 6)</h4>
+<table class="level">
+  <tr><th class="lvlcol">Level</th><th class="markcol">KAA marks</th><th>Descriptor</th></tr>
+  <tr><td class="lvlcol">L1</td><td class="markcol">1&ndash;3</td><td>Limited knowledge; weak application.</td></tr>
+  <tr><td class="lvlcol">L2</td><td class="markcol">4&ndash;6</td><td>Sound knowledge with application; some development.</td></tr>
+  <tr><td class="lvlcol">L3</td><td class="markcol">7&ndash;9</td><td>Accurate detailed knowledge; developed chains; relevant diagrams.</td></tr>
+</table>
+
+<h4 class="sub-heading">25-mark Essay "Evaluate" (KAA = 15, Evaluation = 10)</h4>
+<table class="level">
+  <tr><th class="lvlcol">Level</th><th class="markcol">KAA marks</th><th>Descriptor</th></tr>
+  <tr><td class="lvlcol">L1</td><td class="markcol">1&ndash;5</td><td>Limited knowledge; weak application; basic theory.</td></tr>
+  <tr><td class="lvlcol">L2</td><td class="markcol">6&ndash;9</td><td>Sound theory applied to context; some chains of reasoning.</td></tr>
+  <tr><td class="lvlcol">L3</td><td class="markcol">10&ndash;12</td><td>Accurate detailed theory, well applied; relevant diagrams.</td></tr>
+  <tr><td class="lvlcol">L4</td><td class="markcol">13&ndash;15</td><td>Comprehensive, sophisticated theory; logical chains; diagrams used analytically.</td></tr>
+</table>
+<table class="level">
+  <tr><th class="lvlcol">Level</th><th class="markcol">Eval marks</th><th>Descriptor</th></tr>
+  <tr><td class="lvlcol">L1</td><td class="markcol">1&ndash;3</td><td>Assertion without support.</td></tr>
+  <tr><td class="lvlcol">L2</td><td class="markcol">4&ndash;6</td><td>Supported evaluation; some judgement.</td></tr>
+  <tr><td class="lvlcol">L3</td><td class="markcol">7&ndash;8</td><td>Developed evaluation; reasoned judgement.</td></tr>
+  <tr><td class="lvlcol">L4</td><td class="markcol">9&ndash;10</td><td>Sophisticated evaluation with prioritised judgement grounded in context.</td></tr>
+</table>
+
+<!-- ============ SECTION A ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section A &mdash; Questions 1 to 5</h3>
+
+<h4 class="sub-heading">Question 1 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">1(a)</td>
+  <td><b>Answer: C &ndash; Disinflation</b> (1). Prices are still rising but at a slower rate. Reject A (deflation requires a negative rate).</td>
+  <td class="markscol">1</td></tr>
+  <tr><td class="qcol">1(b)</td>
+  <td>Falling inflation raises real incomes (1), which increases household consumption (1). Higher consumption raises injections in the circular flow (1); firms respond with higher output/employment, further expanding flow (1). Accept references to reduced import cost pass-through, restored consumer confidence, or real wage growth.</td>
+  <td class="markscol">4</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 2 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">2(a)</td>
+  <td>Linked 2-mark chain, e.g. Bank of England base rate at 5.25% through most of 2024 raised cost of borrowing (1), deterring firms from financing capital projects given uncertain demand outlook (1). Accept weak consumer demand, global trade uncertainty, UK planning constraints.</td>
+  <td class="markscol">2</td></tr>
+  <tr><td class="qcol">2(b)</td>
+  <td>Investment is a component of AD and an injection (1); a fall in I reduces the initial injection and through the multiplier reduces total income by more than the initial fall (1). <i>Note: the multiplier value is unchanged; what changes is the total impact on GDP. Credit candidates who clarify this distinction.</i></td>
+  <td class="markscol">2</td></tr>
+  <tr><td class="qcol">2(c)</td>
+  <td><b>Answer: D &ndash; 2.0</b> (1). Multiplier = 1/(MPS + MPT + MPM). Given MPC = 0.7 with MPT = 0.2 and MPM = 0.2 taken from income, MPS = 1 &minus; 0.7 &minus; 0.2 = 0.1. So k = 1/(0.1 + 0.2 + 0.2) = 1/0.5 = 2.0.</td>
+  <td class="markscol">1</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 3 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">3(a)</td>
+  <td><b>Answer: C &ndash; An increase in aggregate demand</b> (1).</td>
+  <td class="markscol">1</td></tr>
+  <tr><td class="qcol">3(b)</td>
+  <td>MPC sets rate to meet 2% CPI inflation target in the medium term (1); observes inflation, output gap, labour market and inflation expectations (1); when inflation was above target (9.4% in 2022) rates were raised, and as inflation returned to target in 2024 the restrictive stance could be eased (1); transmission works through borrowing costs, exchange rate and asset prices, feeding into AD and then inflation (1).</td>
+  <td class="markscol">4</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 4 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">4(a)</td>
+  <td>2022&ndash;23 cost-of-living crisis raised food and energy prices, which form a larger share of low-income household spending (1), squeezing real incomes at the bottom relative to the top (1); wages for high-skill / work-from-home roles held up better than for low-pay service work (1), widening the pre-tax pay gap (1). Accept interest rate rises benefiting savers (who skew high-income), housing wealth effects, or benefit freeze.</td>
+  <td class="markscol">4</td></tr>
+  <tr><td class="qcol">4(b)</td>
+  <td><b>Answer: C &ndash; 1</b> (1). Perfect inequality corresponds to Gini = 1; perfect equality to Gini = 0.</td>
+  <td class="markscol">1</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 5 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">5(a)</td>
+  <td><b>Answer: B &ndash; Vietnam's human development outcomes exceed its income level would suggest</b> (1). Vietnam has HDI 0.727 on GNI PPP 11,500 vs. Philippines HDI 0.710 on similar GNI &mdash; better outcomes per dollar.</td>
+  <td class="markscol">1</td></tr>
+  <tr><td class="qcol">5(b)</td>
+  <td>Two limitations at 2 marks each: HDI omits distribution/inequality (1), so two countries with the same HDI could have very different poverty rates (1); HDI excludes environmental sustainability (1), so a country depleting natural capital can appear to develop while underlying welfare is falling (1). Accept omission of political freedom, gender gaps (though IHDI/GII partially address this), or cultural factors.</td>
+  <td class="markscol">4</td></tr>
+</table>
+
+<!-- ============ SECTION B ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section B &mdash; Question 6: The UK economy in 2024&ndash;2025</h3>
+
+<h4 class="sub-heading">Question 6(a) &ndash; Calculate the percentage change in the sterling effective exchange rate index from January 2023 to January 2025 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">6(a)</td>
+  <td>
+    Working: (new &minus; old) / old &times; 100 (method, 1)<br>
+    Based on Figure 1 values (Jan 2023 &asymp; 78, Jan 2025 &asymp; 85): accept answers in the range +8% to +9% depending on read-off.<br>
+    Award 2 marks for correct method, 2 marks for numerical answer within band, 1 mark for contextual comment (e.g. &ldquo;sterling appreciated on a trade-weighted basis, which would tend to reduce net exports by making UK exports relatively more expensive&rdquo;).
+  </td>
+  <td class="markscol">5</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 6(b) &ndash; Examine two factors that may explain the slowdown in UK GDP growth shown in Figure 2 (8 marks)</h4>
+<p class="indicative-heading">Indicative content (at least two distinct factors developed):</p>
+<ul>
+  <li><b>Monetary tightening:</b> Bank Rate rose from 0.1% (Dec 2021) to 5.25% (Aug 2023), dampening consumption and investment through higher borrowing costs.</li>
+  <li><b>Cost-of-living crisis:</b> CPI peaked at 11.1% in Oct 2022, eroding real incomes and consumption.</li>
+  <li><b>Weak investment:</b> UK business investment has grown slower than peers since 2016; Brexit uncertainty and planning constraints restrict capacity.</li>
+  <li><b>External demand:</b> Eurozone growth weak in 2024; the UK's main trading partner.</li>
+  <li><b>Fiscal tightening:</b> debt interest absorbed &pound;105bn in 2024&ndash;25, crowding out discretionary spending.</li>
+  <li><b>Productivity:</b> UK productivity growth has lagged peers since 2008, constraining trend growth.</li>
+</ul>
+<p class="indicative-heading">Award 8-mark "Examine" band (KAA = 5, Eval = 3).</p>
+
+<h4 class="sub-heading">Question 6(c) &ndash; Assess the likely impact of a persistent current account deficit on the UK economy (10 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 6)</h5>
+    <ul>
+      <li>3.5% of GDP deficit is sizeable by OECD standards.</li>
+      <li>Current account = trade balance + income balance + transfers.</li>
+      <li>Sterling depreciation could narrow deficit via Marshall-Lerner (if PED sum &gt; 1).</li>
+      <li>Financing through capital account (FDI, portfolio inflows, reserves).</li>
+      <li>Services surplus (finance, education, digital) partially offsets goods deficit.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 4)</h5>
+    <ul>
+      <li>Deficit sustainable if financed by long-term FDI; unsustainable if dependent on short-term &ldquo;hot money&rdquo;.</li>
+      <li>Can indicate strong domestic demand (positive) or weak export competitiveness (negative).</li>
+      <li>Sterling is a reserve-status currency with deep markets &mdash; financing less of a constraint than for EM economies.</li>
+      <li>Persistent deficit requires persistent capital inflow; any sudden stop causes currency crisis.</li>
+      <li><b>Judgement:</b> manageable in short-run given sterling's status and services surplus; worrying if goods deficit reflects structural competitiveness decline.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 6(d) &ndash; Discuss the likely success of the Bank of England's interest rate cuts in raising UK aggregate demand (12 marks)</h4>
+<p class="indicative-heading">Diagram required (typically AD/AS showing AD shift right).</p>
+<div class="kaa-split">
+  <div>
+    <h5>KAA with diagram (out of 8)</h5>
+    <ul>
+      <li>AD/AS model: rate cut &rarr; lower cost of borrowing &rarr; &uarr;C and &uarr;I &rarr; AD shifts right &rarr; &uarr;real GDP, &uarr;price level.</li>
+      <li>Transmission channels: borrowing costs, exchange rate (depreciation boosts X), asset prices (wealth effect), consumer confidence.</li>
+      <li>Time lags: monetary policy effect takes 12&ndash;24 months.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 4)</h5>
+    <ul>
+      <li>Effectiveness depends on consumer and business confidence, not just rates.</li>
+      <li>High household debt means debt-servicing relief boosts spending immediately for some.</li>
+      <li>Services inflation sticky at 4&ndash;5% could anchor high inflation expectations, reducing real impact.</li>
+      <li>Liquidity trap not an issue (rates above zero lower bound).</li>
+      <li>Supply-side constraints limit how much extra AD becomes higher real output vs. higher prices.</li>
+      <li><b>Judgement:</b> rate cuts will boost AD somewhat but may be insufficient to return growth to trend without complementary fiscal or supply-side measures.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 6(e) &ndash; Discuss whether supply-side policies (Extract A) are likely to raise UK long-run growth (15 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 9)</h5>
+    <ul>
+      <li>Supply-side policies described: full-expensing investment allowance; planning reform; apprenticeship levy expansion.</li>
+      <li>LRAS framework: supply-side policies aim to shift LRAS right through capital deepening, skills, infrastructure.</li>
+      <li>Full expensing reduces effective cost of capital by up to 25% &rarr; higher firm-level investment.</li>
+      <li>Planning reform lowers transaction costs and time-to-build for infrastructure and housing.</li>
+      <li>Apprenticeship reform targets labour-market friction and skills mismatch.</li>
+      <li>Expected effect: 0.2&ndash;0.4 percentage points added to trend growth over a decade (IFS estimate).</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 6)</h5>
+    <ul>
+      <li>Supply-side effects take 5&ndash;10 years to materialise.</li>
+      <li>Full expensing: evidence mixed internationally; works when firms are capital-constrained AND demand is adequate.</li>
+      <li>Planning reform: politically fragile; change in government could reverse.</li>
+      <li>Deeper UK structural issues (R&amp;D &lt; 3% of GDP, weak management, regional imbalance) beyond scope of package.</li>
+      <li>Interaction with macro conditions: supply-side works only if demand is adequate.</li>
+      <li><b>Judgement:</b> package is directionally correct and, if sustained, could close ~half the gap between current trend growth and pre-2008 levels; execution risk is the binding constraint, not design.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ SECTION C ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section C &mdash; Question 7 OR Question 8 (25 marks)</h3>
+
+<h4 class="sub-heading">Question 7 &ndash; Evaluate the likely effects of an increase in protectionism on the macroeconomy of a developed country of your choice (25 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 15)</h5>
+    <ul>
+      <li>Tariff theory: increase in price of imports; domestic price rises; welfare analysis (tariff diagram: DWL areas, producer surplus gain, tariff revenue rectangle).</li>
+      <li>AD effect: protectionism raises X&minus;M in short run by reducing M, raising AD.</li>
+      <li>AS effect: higher input costs (if imports are intermediate goods) shift SRAS left.</li>
+      <li>Inflation: tariffs directly raise CPI via imported inflation.</li>
+      <li>Retaliation: exports from home country fall, reducing AD.</li>
+      <li>Global growth: WTO/IMF estimate tariff wars can reduce world GDP 0.5&ndash;1%.</li>
+      <li>Application to named country (e.g. USA): 2024&ndash;25 tariff rounds added 0.4pp to US CPI.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 10)</h5>
+    <ul>
+      <li>Depends on size of protectionism, targeted sector, and retaliation.</li>
+      <li>Short-term employment protection in declining sectors vs. long-term productivity cost.</li>
+      <li>Strategic argument: protection of critical supply chains (semiconductors, medicines) may be welfare-improving.</li>
+      <li>Exchange rate offset: sterling/dollar may appreciate, offsetting tariff benefits to exporters.</li>
+      <li>Consumer welfare costs typically outweigh producer gains (classical welfare analysis).</li>
+      <li><b>Judgement:</b> protectionism generally reduces aggregate welfare in a developed economy, though strategic exceptions exist; case-by-case policy design matters more than blanket protection.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 8 &ndash; Evaluate the likely macroeconomic consequences of a significant rise in global oil prices for an oil-importing developed country (25 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 15)</h5>
+    <ul>
+      <li>Cost-push inflation: oil is a key input; SRAS shifts left.</li>
+      <li>AD/AS diagram: SRAS leftward shift &rarr; higher P, lower real GDP (stagflation risk).</li>
+      <li>Balance of payments: import bill rises &rarr; wider current-account deficit.</li>
+      <li>Exchange rate: current-account deficit widening &rarr; potential depreciation &rarr; further imported inflation.</li>
+      <li>Consumer real income: higher fuel prices squeeze discretionary spending &rarr; AD falls.</li>
+      <li>Monetary policy: central bank faces dilemma &mdash; raise rates to fight inflation or cut to support growth.</li>
+      <li>Fiscal: government may subsidise fuel (costly) or accept distributional damage.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 10)</h5>
+    <ul>
+      <li>Magnitude depends on oil intensity of GDP &mdash; developed economies less exposed than in 1970s due to services shift.</li>
+      <li>UK North Sea production softens net impact &mdash; partially self-sufficient.</li>
+      <li>Transmission speed: petrol/diesel fastest; electricity depends on fuel mix.</li>
+      <li>Inflation expectations: anchored expectations reduce wage-price spiral risk.</li>
+      <li>Substitution: renewables investment may accelerate, reducing long-run dependence.</li>
+      <li><b>Judgement:</b> significant oil price rise causes short-run stagflation in oil-importing developed economies but magnitude is smaller than historical precedent. Monetary policy faces a difficult trade-off; supply-side response (accelerating renewables, energy efficiency) is the durable answer.</li>
+    </ul>
+  </div>
+</div>
+
+<div style="margin-top: 10mm; border-top: 1.5px solid #000; padding-top: 3mm; text-align: center; font-weight: 700;">
+  TOTAL FOR PAPER = 100 MARKS
+</div>
+
 </div>
 </body>
 </html>
