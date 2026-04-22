@@ -2,186 +2,347 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mark Scheme &mdash; Paper 2: The National and Global Economy (Advanced)</title>
+<title>Mark Scheme — Pearson Edexcel A Level Economics A Paper 2 (9EC0/02) — Advanced</title>
 <style>
-    /* Pearson Edexcel mark scheme style */
-@page { size: A4; margin: 15mm 14mm 18mm 14mm; }
-
+@page { size: A4; margin: 18mm 16mm 20mm 16mm; }
 * { box-sizing: border-box; }
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 10pt;
-  line-height: 1.35;
-  color: #111;
-  margin: 0;
+html, body {
+  margin: 0; padding: 0; background: #ededed;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  font-size: 10.5pt; line-height: 1.4; color: #111;
 }
-.topnav {
-  background: #0b49a0; color: #fff; padding: 10px 18px;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 14px;
+.doc {
+  width: 210mm; min-height: 297mm; background: #fff;
+  margin: 10mm auto; padding: 18mm 16mm; box-shadow: 0 1px 6px rgba(0,0,0,0.18);
 }
-.topnav a, .topnav a:visited { color: #fff; text-decoration: none; font-weight: 600; }
-.topnav a:hover { text-decoration: underline; }
-.topnav button {
-  background: #fff; color: #0b49a0; border: 0; padding: 6px 14px;
-  font-weight: 600; border-radius: 3px; cursor: pointer;
+@media print { html, body { background: #fff; } .doc { margin: 0; box-shadow: none; padding: 0; } }
+.pearson-brand { font-family: "Trebuchet MS", sans-serif; font-weight: 700; letter-spacing: -0.2px; }
+.pearson-brand .pearson { font-size: 15pt; }
+.pearson-brand .edexcel { background: #000; color: #fff; padding: 1px 5px; font-size: 13pt; }
+.title-block {
+  text-align: center; margin: 25mm 0 40mm 0;
+  border-top: 2px solid #000; border-bottom: 2px solid #000;
+  padding: 10mm 0;
 }
-@media print { .no-print { display: none !important; } }
-
-.sheet { max-width: 190mm; margin: 0 auto; padding: 10mm 6mm; }
-
-.header-block {
-  border-bottom: 3px solid #000;
-  padding-bottom: 6mm;
-  margin-bottom: 8mm;
+.title-block h1 { font-size: 24pt; margin: 0 0 3mm 0; font-weight: 700; letter-spacing: 0.5px; }
+.title-block h2 { font-size: 14pt; margin: 0 0 2mm 0; font-weight: 400; }
+.title-block .paper-ref { font-size: 13pt; font-weight: 700; margin-top: 4mm; }
+.title-block .session { font-size: 11pt; margin-top: 2mm; font-style: italic; }
+.title-footer { text-align: center; margin-top: 25mm; font-size: 9.5pt; color: #333; }
+.title-footer .brand-inline { margin-bottom: 3mm; }
+h3.section-heading {
+  font-size: 14pt; font-weight: 700; margin: 10mm 0 3mm 0;
+  padding-bottom: 1mm; border-bottom: 1.5px solid #000;
 }
-.header-block .brand {
-  font-family: "Trebuchet MS", sans-serif;
-  font-weight: 700;
-  font-size: 18pt;
-  margin-bottom: 2mm;
+h4.sub-heading {
+  font-size: 11.5pt; font-weight: 700; margin: 6mm 0 2mm 0;
+  color: #000;
 }
-.header-block .brand .edexcel {
-  background: #000; color: #fff; padding: 1mm 3mm; margin-left: 2mm;
-}
-.header-block h1 { font-size: 16pt; margin: 2mm 0; }
-.header-block .subtitle { color: #444; font-size: 11pt; }
-.header-block .tier {
-  display: inline-block;
-  padding: 1mm 4mm;
-  border-radius: 3mm;
-  font-size: 9pt;
-  font-weight: 700;
-  color: #fff;
-  margin-top: 2mm;
-}
-.tier.moderate { background: #2a8f3a; }
-.tier.hard { background: #d77b1a; }
-.tier.advanced { background: #b42a2a; }
-
-.gmg {
-  background: #f5f5f5;
-  border-left: 3px solid #666;
-  padding: 4mm 5mm;
-  margin-bottom: 6mm;
-  font-size: 9pt;
-}
-.gmg h3 { margin: 0 0 2mm 0; font-size: 10pt; }
-.gmg p { margin: 1mm 0; }
-
-h2.section {
-  background: #222;
-  color: #fff;
-  padding: 2mm 4mm;
-  font-size: 11pt;
-  margin: 6mm 0 3mm 0;
-  page-break-before: auto;
-}
-
-h3.qhead {
-  font-size: 10.5pt;
-  margin: 4mm 0 1mm 0;
-  padding: 1mm 0;
-  border-bottom: 1px solid #888;
-}
-
+p { margin: 2mm 0; }
+ul { margin: 2mm 0; padding-left: 6mm; }
+li { margin-bottom: 1mm; }
 table.ms {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 2mm 0 3mm 0;
-  font-size: 9.5pt;
-  table-layout: fixed;
-  word-wrap: break-word;
+  border-collapse: collapse; width: 100%; margin: 3mm 0 4mm 0;
+  font-size: 10pt;
 }
-table.ms th {
-  background: #e5e5e5;
-  border: 0.5pt solid #888;
-  padding: 1.5mm 2mm;
-  text-align: left;
-  font-size: 9pt;
+table.ms th, table.ms td {
+  border: 0.5pt solid #000; padding: 2mm 3mm; vertical-align: top; text-align: left;
 }
-table.ms td {
-  border: 0.5pt solid #bbb;
-  padding: 2mm 2.5mm;
-  vertical-align: top;
+table.ms th { font-weight: 700; background: #e8e8e8; }
+table.ms .qcol { width: 18mm; text-align: center; font-weight: 700; }
+table.ms .markscol { width: 16mm; text-align: center; font-weight: 700; }
+table.ms .contentcol { }
+table.level {
+  border-collapse: collapse; width: 100%; margin: 2mm 0 4mm 0;
+  font-size: 10pt;
 }
-table.ms .qcol { width: 10%; font-weight: 700; }
-table.ms .acol { width: 73%; }
-table.ms .mcol { width: 9%; text-align: center; font-weight: 700; }
-table.ms .aocol { width: 8%; text-align: center; font-size: 8.5pt; color: #555; }
-
-.ind { margin: 1mm 0 1mm 0; padding-left: 4mm; }
-.ind li { margin-bottom: 0.8mm; }
-
-.levels { margin: 2mm 0 2mm 0; }
-.levels table { width: 100%; border-collapse: collapse; font-size: 9pt; }
-.levels td { border: 0.5pt solid #bbb; padding: 1.5mm 2mm; vertical-align: top; }
-.levels .lvl { width: 14%; background: #f2f2f2; font-weight: 700; text-align: center; }
-.levels .range { width: 12%; background: #fafafa; text-align: center; font-weight: 600; }
-.levels .desc { width: 74%; }
-
-.correct { color: #164; font-weight: 700; }
-.note { font-size: 8.5pt; color: #666; font-style: italic; }
-.working { font-family: "Courier New", monospace; background: #f8f8f8; padding: 1mm 2mm; margin: 1mm 0; font-size: 9pt; }
-b.term { background: #fff3d6; padding: 0 2px; }
-.totals-row td { background: #f5f5f5; font-weight: 700; }
-
-
+table.level th, table.level td {
+  border: 0.5pt solid #000; padding: 2mm 3mm; vertical-align: top;
+}
+table.level th { font-weight: 700; background: #d9d9d9; text-align: center; }
+table.level .lvlcol { width: 18mm; font-weight: 700; text-align: center; }
+table.level .markcol { width: 18mm; text-align: center; }
+.boilerplate {
+  background: #f5f5f5; border-left: 3px solid #000; padding: 3mm 5mm;
+  font-size: 10pt; margin: 3mm 0; line-height: 1.45;
+}
+.kaa-split { display: flex; gap: 5mm; margin: 2mm 0; }
+.kaa-split > div { flex: 1; border: 0.5pt solid #666; padding: 3mm; background: #fafafa; }
+.kaa-split h5 { margin: 0 0 2mm 0; font-size: 10.5pt; font-weight: 700; }
+.indicative-heading { font-weight: 700; margin: 3mm 0 1mm 0; font-style: italic; }
+.synoptic-flag {
+  display: inline-block; background: #000; color: #fff;
+  padding: 1px 5px; font-size: 9pt; font-weight: 700; letter-spacing: 0.3px;
+  margin-left: 2mm;
+}
+.page-break { page-break-before: always; }
 </style>
 </head>
 <body>
-<div class="topnav no-print">
-  <div>&larr; <a href="paper-2-advanced.html">Back to paper</a></div>
-  <div>Mark scheme: Paper 2 (9EC0/02) &mdash; Advanced</div>
-  <button onclick="window.print()">Print</button>
-</div>
-<div class="sheet">
-  <div class="header-block">
-    <div class="brand">Pearson <span class="edexcel">Edexcel</span></div>
-    <h1>Mark Scheme &mdash; Paper 2: The National and Global Economy</h1>
-    <div class="subtitle">9EC0/02 &middot; Friday 26 June 2026 &ndash; Afternoon</div>
-    <div class="tier advanced">Advanced tier</div>
-  </div>
-  <div class="gmg">
-    <h3>General Marking Guidance</h3>
-    <p>All candidates must receive the same treatment. Examiners must mark the first candidate in exactly the same way as they mark the last. Mark schemes should be applied positively. Candidates must be rewarded for what they have shown they can do rather than penalised for omissions.</p>
-    <p>Crossed-out work should be marked unless the candidate has replaced it with an alternative response. All the marks on the mark scheme are designed to be awarded. Examiners should always award full marks if deserved, i.e. if the answer matches the mark scheme.</p>
-  </div>
+<div class="doc">
 
-<h2 class="section">Question 1 &mdash; Total 5 marks</h2><table class="ind-table">
-  <thead><tr><th>Indicative content</th><th class="marks-col">Mark</th><th class="ao">AO</th></tr></thead>
-  <tbody><tr><td>(a) Real rate &asymp; i &minus; &pi; = 133.0 &minus; 211.4 = &minus;78.4%. A deeply negative real rate.</td><td class="marks-col">2</td><td class="ao">AO2 / AO4</td></tr><tr><td>(b) Milei's December 2023 election and shock-therapy programme: sharp cuts to public-sector contracts, elimination of energy/transport subsidies, spending freeze. Combined effect: primary fiscal deficit became surplus within 12 months.</td><td class="marks-col">2</td><td class="ao">AO1 / AO3</td></tr></tbody>
+<div class="title-block">
+  <div class="pearson-brand" style="margin-bottom: 8mm;"><span class="pearson">Pearson</span> <span class="edexcel">Edexcel</span></div>
+  <h1>Mark Scheme</h1>
+  <h2>Predicted Paper &ndash; For revision purposes only</h2>
+  <h2 style="margin-top: 8mm;">Level 3 GCE Economics A (9EC0)</h2>
+  <h2>Paper 2: The National and Global Economy</h2>
+  <div class="paper-ref">9EC0/02 &mdash; Advanced</div>
+  <div class="session">Summer 2026 series</div>
+</div>
+
+<div class="title-footer">
+  <div class="brand-inline pearson-brand"><span class="pearson">Pearson</span> <span class="edexcel">Edexcel</span></div>
+  <div>Level 3 GCE &mdash; Economics A</div>
+  <div>Pearson Education Ltd &copy;2026</div>
+</div>
+
+<div class="page-break"></div>
+<h3 class="section-heading">General Marking Guidance</h3>
+<div class="boilerplate">
+  <p>All candidates must receive the same treatment. Mark schemes should be applied positively, rewarding candidates for what they have shown they can do.</p>
+  <p>All marks on the mark scheme are designed to be awarded. Examiners should always award full marks if deserved.</p>
+  <p>Crossed-out work should be marked UNLESS the candidate has replaced it with an alternative response.</p>
+</div>
+
+<h4 class="sub-heading">Marking grid convention</h4>
+<p>Each banded question is marked on two grids: <b>KAA</b> (Knowledge + Application + Analysis, covering AO1, AO2 and AO3) and <b>Evaluation</b> (AO4). Level descriptors for 8, 10, 12, 15 and 25-mark questions are common across all Paper 2 variants and are given in full in the Moderate mark scheme document.</p>
+
+<!-- ============ SECTION A ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section A &mdash; Questions 1 to 5</h3>
+
+<h4 class="sub-heading">Question 1 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">1(a)</td>
+  <td><b>Answer: B &ndash; Structural</b> (1). High vacancies plus high inactivity indicates a mismatch between available workers' skills/availability and the jobs firms are trying to fill.</td>
+  <td class="markscol">1</td></tr>
+  <tr><td class="qcol">1(b)</td>
+  <td>Real wage growth raises disposable incomes (1) &rarr; higher consumption, an injection into the circular flow (1); firms respond with higher output and employment (1), but also face rising unit labour costs which may feed into prices or profit compression (1).</td>
+  <td class="markscol">4</td></tr>
 </table>
-<div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">FTPL: persistent primary deficits require monetisation &rarr; inflation. The root cause is fiscal, not monetary.</div>
-</div><h2 class="section">Question 2 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Fiscal consolidation reduces G component of AD &rarr; AD shifts left.</li><li>Lower AD &rarr; lower output and lower price level in short run.</li><li>If coupled with credibility effect: inflation expectations fall; SRAS shifts right &rarr; mitigates output loss.</li><li>Argentina 2024: GDP fell 1.7%, inflation fell from 211% to 42%.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">Ricardian equivalence: consumers anticipate future tax rises needed to service government borrowing &rarr; save instead of spend.</div>
-</div><h2 class="section">Question 3 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Full dollarisation means Argentina loses ability to issue its own currency.</li><li>Trilemma: with free capital flows and fixed exchange rate (dollarisation is 'hardest peg'), monetary policy cannot adjust to domestic conditions.</li><li>Argentina inherits US monetary policy wholesale.</li><li>Diagram reasoning: two apices of triangle chosen &rarr; third must be sacrificed.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">Seigniorage = profit from issuing currency above production cost; dollarisation transfers this to the US Federal Reserve.</div>
-</div><h2 class="section">Question 4 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Short-run cost: output fall, unemployment rises; regressive distributional impact.</li><li>Long-run benefit: lower inflation; reduced risk premium; better investment climate.</li><li>Credibility gained cannot be easily recreated if lost.</li><li>Argentina 2024: poverty rose to 55% in H1 but inflation fell dramatically.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">Non-Keynesian effects: when fiscal consolidation improves credibility, lower risk premia and confidence effects can dominate contractionary effect.</div>
-</div><h2 class="section">Question 5 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Benefit: external commitment device; reduces time-inconsistency problem; unlocks capital inflows.</li><li>Cost: political sovereignty loss; conditions may be ill-suited to country context (one-size-fits-all critique).</li><li>Moral hazard: may encourage risky fiscal behaviour in expectation of bailout.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: A</span>
-  <div class="rationale">Moral hazard = insurance changing risk-taking behaviour; IMF lending can encourage excessive pre-crisis borrowing.</div>
-</div><p style="text-align: right; font-weight: 700; margin: 6mm 0;">TOTAL FOR SECTION A = 25 MARKS</p><h2 class="section">Question 6(a) — 5 marks &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Turning point: December 2023 (Milei inauguration).</li><li>Monthly inflation peaked at 25.5% (Dec 2023) and fell to 2.4% by Dec 2024.</li><li>Marker on Figure 1 highlights regime change.</li><li>Consistent with FTPL: fiscal consolidation reduced expected monetisation.</li></ul></div><h2 class="section">Question 6(b) — 12 marks &mdash; Total 12 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-3</td><td>Isolated elements of knowledge. Limited application and analysis.</td></tr><tr><td class="lv">Level 2</td><td class="range">4-6</td><td>Accurate knowledge with application to the context. Some reasoned analysis.</td></tr><tr><td class="lv">Level 3</td><td class="range">7-9</td><td>Clear, developed chains of analysis applied to the context with accurate use of data.</td></tr><tr><td class="lv">Level 4</td><td class="range">10-12</td><td>Fully developed, logically sound chains of analysis with integration of multiple data sources.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Costs: output contraction, unemployment rise, poverty rise to 55%.</li><li>Benefits: inflation from 211% to 42%; primary surplus achieved; reserves rebuilt.</li><li>Shock therapy vs gradualism debate: fast adjustment may have bigger short-run costs but faster confidence restoration.</li><li>Distributional: burden fell on public-sector workers and subsidy recipients.</li><li>Evaluation: economic vs political sustainability; confidence effects.</li></ul></div><h2 class="section">Question 6(c) — 8 marks &mdash; Total 8 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-2</td><td>Isolated elements of knowledge and understanding. Brief attempt at application or analysis.</td></tr><tr><td class="lv">Level 2</td><td class="range">3-5</td><td>Accurate knowledge and understanding with application to the context. Some reasoned chains of analysis.</td></tr><tr><td class="lv">Level 3</td><td class="range">6-8</td><td>Clear, accurate and developed knowledge, understanding, application and analysis of the context. Logical and well-reasoned chains.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Fiscal dominance: when central bank loses operational independence because government debt must be monetised.</li><li>Argentina historical case: persistent primary deficits financed by money creation &rarr; entrenched inflation.</li><li>Monetary tightening ineffective while fiscal deficits persist.</li><li>Evaluation: breaking fiscal dominance is necessary for disinflation.</li></ul></div><h2 class="section">Question 6(d) — 10 marks &mdash; Total 10 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-2</td><td>Isolated elements of knowledge and understanding. Brief and unsupported evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">3-5</td><td>Accurate knowledge, understanding and application to the context. Evaluation is generic rather than context-based.</td></tr><tr><td class="lv">Level 3</td><td class="range">6-8</td><td>Clear chains of analysis applied to the context. Evaluation is context-based with some supporting evidence.</td></tr><tr><td class="lv">Level 4</td><td class="range">9-10</td><td>Fully developed chains of analysis applied to the context. Evaluative judgement is fully supported by reasoned argument and evidence from the extracts.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Real wages fell sharply in 2024 &rarr; bottom-quintile hardest hit.</li><li>Subsidy cuts disproportionately affected low-income users (energy, transport).</li><li>Public-sector employment cuts concentrated in lower-to-middle deciles.</li><li>Evaluation: Bolsa Familia / equivalent cash transfers partially offset; distributional effect may reverse once growth resumes.</li></ul></div><h2 class="section">Question 6(e) — 15 marks &mdash; Total 15 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-3</td><td>Isolated knowledge; limited application or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">4-7</td><td>Accurate knowledge and some application. Evaluation is generic or one-sided.</td></tr><tr><td class="lv">Level 3</td><td class="range">8-11</td><td>Developed chains of analysis applied to the context. Balanced evaluation with some judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">12-15</td><td>Sophisticated, fully developed analysis and evaluation. Clear, supported judgement drawing on extracts and own knowledge.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Pro: permanent removal of inflation tail risk; lower borrowing costs; pro-investment.</li><li>Con: loss of monetary autonomy; procyclical with US policy.</li><li>Reserve adequacy: $30-40bn estimated needed; Argentina didn't have this in 2023.</li><li>Political economy: irreversibility seen as strength.</li><li>International precedent: Ecuador (2000), El Salvador (2001) mixed evidence.</li><li>Evaluation: dollarisation without fiscal discipline just relocates the crisis.</li></ul></div><p style="text-align: right; font-weight: 700; margin: 6mm 0;">TOTAL FOR SECTION B = 50 MARKS</p><h2 class="section">Question 7 — 25 marks &mdash; Total 25 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-5</td><td>Isolated knowledge; limited application, analysis or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">6-11</td><td>Accurate knowledge with some application. Evaluation is unbalanced or underdeveloped.</td></tr><tr><td class="lv">Level 3</td><td class="range">12-17</td><td>Developed chains of analysis applied to context. Balanced evaluation with reasoned judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">18-21</td><td>Sophisticated, fully developed analysis. Evaluation integrates micro and macro perspectives with supported conclusion.</td></tr><tr><td class="lv">Level 5</td><td class="range">22-25</td><td>Exceptional analysis drawing on synoptic links. Sustained, well-reasoned evaluation with decisive, defensible judgement.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Hyperinflation countries face severe credibility problem &rarr; conventional policy ineffective.</li><li>Peg/dollarisation imports credibility rapidly.</li><li>Costs: loss of monetary autonomy; vulnerability to asymmetric shocks.</li><li>Alternative: orthodox monetary-plus-fiscal reform (Brazil Plano Real) — can achieve same end without loss of autonomy.</li><li>Examples: Ecuador, El Salvador (dollarised), Bulgaria (currency board), Brazil (orthodox).</li><li>Evaluation: depends on institutional quality, reserve adequacy, structural shocks.</li></ul></div><h2 class="section">Question 8 — 25 marks &mdash; Total 25 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-5</td><td>Isolated knowledge; limited application, analysis or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">6-11</td><td>Accurate knowledge with some application. Evaluation is unbalanced or underdeveloped.</td></tr><tr><td class="lv">Level 3</td><td class="range">12-17</td><td>Developed chains of analysis applied to context. Balanced evaluation with reasoned judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">18-21</td><td>Sophisticated, fully developed analysis. Evaluation integrates micro and macro perspectives with supported conclusion.</td></tr><tr><td class="lv">Level 5</td><td class="range">22-25</td><td>Exceptional analysis drawing on synoptic links. Sustained, well-reasoned evaluation with decisive, defensible judgement.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Standard Keynesian view: austerity contracts AD &rarr; recession.</li><li>Expansionary fiscal contraction (Giavazzi &amp; Pagano 1990): credibility and confidence effects can dominate.</li><li>Conditions for success: sovereign risk premium high; fiscal framework credible; monetary policy can ease.</li><li>Examples: Ireland 1987-89 (successful), Greece 2010-15 (unsuccessful), Argentina 2024 (ambiguous).</li><li>Evaluation: austerity's output effect depends on starting conditions, not one-size rule.</li></ul></div>
-<p style="margin-top: 20mm; text-align: center; font-size: 9pt; color: #888;">&mdash; END OF MARK SCHEME &mdash;</p>
+
+<h4 class="sub-heading">Question 2 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">2(a)</td>
+  <td>Linked 2-mark chain: post-2020 lockdown restrictions ended, releasing pent-up demand (1); simultaneously rising inflation eroded real incomes, forcing households to dissave to maintain consumption (1).</td>
+  <td class="markscol">2</td></tr>
+  <tr><td class="qcol">2(b)</td>
+  <td>Higher savings ratio = higher MPS = larger leakage from circular flow (1); multiplier = 1/MPW, so if MPS rises the multiplier falls and a given change in injections has a smaller total effect on GDP (1).</td>
+  <td class="markscol">2</td></tr>
+  <tr><td class="qcol">2(c)</td>
+  <td><b>Answer: C &ndash; 1.67</b> (1). Multiplier = 1/(MPS + MPT + MPM) = 1/(0.25 + 0.25 + 0.1) = 1/0.6 &asymp; 1.67.</td>
+  <td class="markscol">1</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 3 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">3(a)</td>
+  <td><b>Answer: B &ndash; Contracts with fixed prices take time to expire</b> (1). This is part of the transmission lag: wages and prices in contracts don't adjust immediately to rate changes.</td>
+  <td class="markscol">1</td></tr>
+  <tr><td class="qcol">3(b)</td>
+  <td>Rate cut &rarr; lower cost of borrowing &rarr; higher consumption and investment (1); AD shifts right from AD<sub>1</sub> to AD<sub>2</sub> (1); diagram showing AD/AS with AD rightward shift, new equilibrium at higher Y and P (1); sterling depreciation effect on X&minus;M adds to AD (1).</td>
+  <td class="markscol">4</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 4 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">4(a)</td>
+  <td>Wealth accumulates over lifetime and across generations (1), so small differences in income compound into large differences in wealth (1); housing wealth is highly concentrated among older, higher-income households and has risen sharply since 1990s (1); pension wealth and financial assets are particularly unequal, while the bottom 30% has minimal savings (1).</td>
+  <td class="markscol">4</td></tr>
+  <tr><td class="qcol">4(b)</td>
+  <td><b>Answer: C &ndash; The wealth Gini is typically higher than the income Gini</b> (1). UK wealth Gini ~0.63 vs. income Gini ~0.35.</td>
+  <td class="markscol">1</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 5 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">5(a)</td>
+  <td><b>Answer: C &ndash; Germany has higher HDI than the USA despite lower GNI per capita, consistent with less inequality</b> (1). HDI 0.950 vs. 0.927; Gini 0.31 vs. 0.41.</td>
+  <td class="markscol">1</td></tr>
+  <tr><td class="qcol">5(b)</td>
+  <td>IHDI &ldquo;discounts&rdquo; the standard HDI by the level of inequality in each dimension (1); a country with unequally distributed education, life expectancy or income loses more HDI points under IHDI than a more equal country (1); Brazil's high Gini (0.52) means its IHDI falls substantially below its HDI &mdash; more than Germany's IHDI falls below its HDI (1); hence ranking can change and two countries with the same HDI can have very different IHDI (1).</td>
+  <td class="markscol">4</td></tr>
+</table>
+
+<!-- ============ SECTION B ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section B &mdash; Question 6: The US&ndash;China trade relationship and global spillovers</h3>
+
+<h4 class="sub-heading">Question 6(a) &ndash; Calculate the percentage change in the yuan per US dollar exchange rate from January 2023 to July 2025 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">6(a)</td>
+  <td>
+    Working: (7.34 &minus; 6.78) / 6.78 &times; 100 (method, 1)<br>
+    = 0.56 / 6.78 &times; 100 (1)<br>
+    Answer: <b>+8.3%</b> (accept 8.26&ndash;8.30%) (2)<br>
+    <b>Interpretation (1):</b> since this is yuan per dollar, a rise means it takes more yuan to buy 1 dollar &mdash; i.e. the yuan has depreciated against the dollar, which partially offsets US tariffs on Chinese exporters.
+  </td>
+  <td class="markscol">5</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 6(b) &ndash; Examine two factors that may explain why the US imposed higher tariffs on Chinese imports (8 marks)</h4>
+<p class="indicative-heading">Indicative content (at least two distinct factors developed):</p>
+<ul>
+  <li><b>Trade deficit concerns:</b> US has persistent bilateral goods deficit with China (~\$300bn); tariffs intended to narrow the deficit (though the economics literature disputes effectiveness).</li>
+  <li><b>Strategic / national security:</b> semiconductors, critical minerals, telecoms (Huawei/ZTE). Tariffs plus export controls used to slow Chinese technological catch-up.</li>
+  <li><b>Reciprocity argument:</b> Chinese IP protection, forced technology transfer and state subsidies for strategic industries distort competition; tariffs as retaliation for non-tariff barriers.</li>
+  <li><b>Political economy:</b> swing-state manufacturing jobs; &ldquo;China shock&rdquo; research suggests 2.0&ndash;2.4m US manufacturing jobs lost to Chinese competition 2000&ndash;2015.</li>
+  <li><b>Fiscal revenue:</b> \$80bn/year to Treasury &mdash; small in absolute terms but politically salient.</li>
+  <li><b>Green industrial policy:</b> EV and solar tariffs protect nascent US clean-tech industry.</li>
+</ul>
+<p class="indicative-heading">Award 8-mark "Examine" band (KAA = 5, Eval = 3).</p>
+
+<h4 class="sub-heading">Question 6(c) &ndash; Assess the likely impact of the US tariffs on US consumer welfare (10 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 6)</h5>
+    <ul>
+      <li>Tariff diagram: domestic price rises by tariff amount (if imported supply perfectly elastic); consumer surplus falls; producer surplus rises for domestic producers; government collects tariff revenue; deadweight loss (efficiency triangles).</li>
+      <li>IMF estimate: 0.4pp added to US CPI &mdash; higher prices borne by consumers.</li>
+      <li>Incidence: evidence suggests tariffs passed through to consumers rather than absorbed by Chinese exporters.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 4)</h5>
+    <ul>
+      <li>Short-run: clear consumer welfare loss via higher prices on affected goods.</li>
+      <li>Long-run: if tariffs succeed in reviving US manufacturing employment, affected workers gain &mdash; but small share of total consumers.</li>
+      <li>Distributional: low-income consumers spend more of income on tariffed goods (electronics, clothing, household items) &mdash; regressive.</li>
+      <li>Offsetting policies: Treasury tariff revenue could fund redistribution but typically has not.</li>
+      <li>Dynamic effects: protection may reduce innovation pressure on domestic producers.</li>
+      <li><b>Judgement:</b> on balance, net consumer welfare impact is negative in the short to medium term; some distributional offsets via higher manufacturing wages for a minority of workers, but broad-based consumer cost.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 6(d) &ndash; Discuss, using an AD/AS diagram, the likely impact of the depreciation of the yuan on the Chinese macroeconomy (12 marks)</h4>
+<p class="indicative-heading">Diagram required: AD shift right and potentially SRAS shift left on the same diagram.</p>
+<div class="kaa-split">
+  <div>
+    <h5>KAA with diagram (out of 8)</h5>
+    <ul>
+      <li>AD/AS: yuan depreciation makes Chinese exports cheaper in foreign currency &rarr; X rises; imports more expensive &rarr; M falls; net exports rise &rarr; AD shifts right.</li>
+      <li>However, depreciation also raises imported input costs (oil, semiconductors, food) &rarr; SRAS may shift left.</li>
+      <li>Application: ~8% depreciation partially offsets new US tariffs on Chinese exports.</li>
+      <li>Chinese exporters in tariff-exposed sectors benefit; Chinese consumers face higher prices for imports.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 4)</h5>
+    <ul>
+      <li>Effectiveness depends on Marshall-Lerner: sum of PEDs &gt; 1. For China, likely met given elastic export demand.</li>
+      <li>Risk of currency manipulation accusations and further tariff escalation.</li>
+      <li>Capital outflow pressure: depreciation can trigger speculative attacks (China learned from 2015 devaluation).</li>
+      <li>Imported inflation counteracts the PBoC's attempts to support demand.</li>
+      <li><b>Judgement:</b> depreciation provides short-term relief for exporters but creates inflationary pressure domestically and geopolitical friction; it is a partial, not complete, response to tariffs.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 6(e) &ndash; Discuss whether "friend-shoring" and supply-chain diversification are likely to benefit emerging economies such as Vietnam, Mexico and India (15 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 9)</h5>
+    <p><b>Benefits:</b></p>
+    <ul>
+      <li>Export growth (Vietnam to US +34% in 2024).</li>
+      <li>FDI inflows and technology transfer.</li>
+      <li>Manufacturing employment growth.</li>
+      <li>Integration into global value chains.</li>
+      <li>Diversification of trade partners.</li>
+    </ul>
+    <p><b>Costs / limitations:</b></p>
+    <ul>
+      <li>Much &ldquo;re-routing&rdquo; still uses Chinese inputs &mdash; limited genuine industrial upgrading.</li>
+      <li>Upward pressure on wages and currencies can erode competitiveness.</li>
+      <li>Infrastructure strain (ports, electricity).</li>
+      <li>Dependence on US demand &mdash; vulnerable to US recession or trade policy shifts.</li>
+      <li>Technology transfer often limited (Apple in India assembles but doesn't design).</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 6)</h5>
+    <ul>
+      <li>Short-run: clear growth boost for host economies; Vietnam GDP growth ~6%, India ~7% partly driven by this.</li>
+      <li>Long-run: benefits depend on whether hosts can move up value chain from assembly to design and IP-intensive activities.</li>
+      <li>Institutional quality matters: Vietnam and India face governance challenges that may limit gains.</li>
+      <li>Global trade fragmentation may reduce total trade volumes &mdash; relative winners in a shrinking pie.</li>
+      <li>China's retaliation (restricting rare-earth exports) affects friend-shore hosts indirectly.</li>
+      <li><b>Judgement:</b> friend-shoring offers genuine development opportunity for capable recipient economies but is not costless; long-run gains depend on recipient policy capacity to convert assembly into genuine industrial upgrading. Risk of &ldquo;middle-income trap&rdquo; if stuck at low-value assembly.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ SECTION C ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section C &mdash; Question 7 OR Question 8 (25 marks)</h3>
+
+<h4 class="sub-heading">Question 7 &ndash; Evaluate the likely macroeconomic consequences of rising public debt for a developed country of your choice (25 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 15)</h5>
+    <ul>
+      <li>Public debt definitions: gross vs. net; denominated in domestic or foreign currency.</li>
+      <li>Debt dynamics: d(Debt/GDP)/dt = primary deficit + (r &minus; g) &times; Debt/GDP.</li>
+      <li>Crowding-out: higher debt &rarr; higher interest rates &rarr; lower private investment.</li>
+      <li>Sovereign risk premium: higher debt &rarr; higher yields required.</li>
+      <li>Fiscal space: debt limits future countercyclical policy capacity.</li>
+      <li>Application (UK ~99% GDP, US ~122%, Italy ~140%, Japan ~250%): contrasts in market reactions.</li>
+      <li>Diagram: loanable funds model showing government borrowing shifting demand for funds &rarr; higher r.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 10)</h5>
+    <ul>
+      <li>Sustainability depends on r vs. g, not just the debt level.</li>
+      <li>Reserve-currency issuer (US) faces different constraints than peripheral eurozone members.</li>
+      <li>Short-run: countercyclical fiscal policy may be worth the debt cost during recession.</li>
+      <li>Long-run: debt service crowds out productive spending (UK &pound;105bn debt interest vs. &pound;80bn defence budget).</li>
+      <li>Intergenerational equity concerns.</li>
+      <li>Dependency on creditor confidence &mdash; can shift rapidly (Greece 2010, UK Sept 2022).</li>
+      <li><b>Judgement:</b> debt is not intrinsically bad but becomes so when r &gt; g persistently, when fiscal stance is pro-cyclical in booms, or when it erodes policy space needed for future shocks. For reserve-currency issuers the threshold is higher but not infinite.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 8 &ndash; Evaluate the likely macroeconomic consequences of a significant appreciation of a country's currency (25 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 15)</h5>
+    <ul>
+      <li>Effect on net exports: X falls (exports more expensive in foreign currency), M rises &rarr; AD falls.</li>
+      <li>Effect on inflation: imported goods cheaper &rarr; imported disinflation.</li>
+      <li>Effect on domestic competitiveness: exporters' profit margins squeezed.</li>
+      <li>Effect on capital flows: attracts capital seeking higher real returns.</li>
+      <li>Marshall-Lerner condition for effect on trade balance.</li>
+      <li>Application: US dollar +15% since 2020, driven by interest rate differentials and safe-haven flows.</li>
+      <li>Diagram: AD/AS with AD leftward; or exchange-rate diagram showing appreciation.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 10)</h5>
+    <ul>
+      <li>Short-run: damages export-reliant sectors (US manufacturing); benefits consumers via lower import prices.</li>
+      <li>Long-run: sustained appreciation may force restructuring toward services (Dutch disease possibility).</li>
+      <li>Monetary policy: appreciation acts like tighter policy; central bank may cut rates to offset.</li>
+      <li>Distributional: export workers lose, import-dependent industries and consumers gain.</li>
+      <li>International: dollar strength = stress for EM dollar-debtors.</li>
+      <li><b>Judgement:</b> impact depends heavily on cause of appreciation (fundamentals vs. speculation) and duration. Short-run appreciation driven by sound macro policy (like US 2022&ndash;24) is largely absorbed; prolonged overvaluation leads to structural damage. Policy response should focus on supply-side competitiveness rather than intervention.</li>
+    </ul>
+  </div>
+</div>
+
+<div style="margin-top: 10mm; border-top: 1.5px solid #000; padding-top: 3mm; text-align: center; font-weight: 700;">
+  TOTAL FOR PAPER = 100 MARKS
+</div>
+
 </div>
 </body>
 </html>

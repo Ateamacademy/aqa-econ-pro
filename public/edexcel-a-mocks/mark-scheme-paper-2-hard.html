@@ -2,190 +2,352 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mark Scheme &mdash; Paper 2: The National and Global Economy (Hard)</title>
+<title>Mark Scheme — Pearson Edexcel A Level Economics A Paper 2 (9EC0/02) — Hard</title>
 <style>
-    /* Pearson Edexcel mark scheme style */
-@page { size: A4; margin: 15mm 14mm 18mm 14mm; }
-
+@page { size: A4; margin: 18mm 16mm 20mm 16mm; }
 * { box-sizing: border-box; }
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 10pt;
-  line-height: 1.35;
-  color: #111;
-  margin: 0;
+html, body {
+  margin: 0; padding: 0; background: #ededed;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  font-size: 10.5pt; line-height: 1.4; color: #111;
 }
-.topnav {
-  background: #0b49a0; color: #fff; padding: 10px 18px;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 14px;
+.doc {
+  width: 210mm; min-height: 297mm; background: #fff;
+  margin: 10mm auto; padding: 18mm 16mm; box-shadow: 0 1px 6px rgba(0,0,0,0.18);
 }
-.topnav a, .topnav a:visited { color: #fff; text-decoration: none; font-weight: 600; }
-.topnav a:hover { text-decoration: underline; }
-.topnav button {
-  background: #fff; color: #0b49a0; border: 0; padding: 6px 14px;
-  font-weight: 600; border-radius: 3px; cursor: pointer;
+@media print { html, body { background: #fff; } .doc { margin: 0; box-shadow: none; padding: 0; } }
+.pearson-brand { font-family: "Trebuchet MS", sans-serif; font-weight: 700; letter-spacing: -0.2px; }
+.pearson-brand .pearson { font-size: 15pt; }
+.pearson-brand .edexcel { background: #000; color: #fff; padding: 1px 5px; font-size: 13pt; }
+.title-block {
+  text-align: center; margin: 25mm 0 40mm 0;
+  border-top: 2px solid #000; border-bottom: 2px solid #000;
+  padding: 10mm 0;
 }
-@media print { .no-print { display: none !important; } }
-
-.sheet { max-width: 190mm; margin: 0 auto; padding: 10mm 6mm; }
-
-.header-block {
-  border-bottom: 3px solid #000;
-  padding-bottom: 6mm;
-  margin-bottom: 8mm;
+.title-block h1 { font-size: 24pt; margin: 0 0 3mm 0; font-weight: 700; letter-spacing: 0.5px; }
+.title-block h2 { font-size: 14pt; margin: 0 0 2mm 0; font-weight: 400; }
+.title-block .paper-ref { font-size: 13pt; font-weight: 700; margin-top: 4mm; }
+.title-block .session { font-size: 11pt; margin-top: 2mm; font-style: italic; }
+.title-footer { text-align: center; margin-top: 25mm; font-size: 9.5pt; color: #333; }
+.title-footer .brand-inline { margin-bottom: 3mm; }
+h3.section-heading {
+  font-size: 14pt; font-weight: 700; margin: 10mm 0 3mm 0;
+  padding-bottom: 1mm; border-bottom: 1.5px solid #000;
 }
-.header-block .brand {
-  font-family: "Trebuchet MS", sans-serif;
-  font-weight: 700;
-  font-size: 18pt;
-  margin-bottom: 2mm;
+h4.sub-heading {
+  font-size: 11.5pt; font-weight: 700; margin: 6mm 0 2mm 0;
+  color: #000;
 }
-.header-block .brand .edexcel {
-  background: #000; color: #fff; padding: 1mm 3mm; margin-left: 2mm;
-}
-.header-block h1 { font-size: 16pt; margin: 2mm 0; }
-.header-block .subtitle { color: #444; font-size: 11pt; }
-.header-block .tier {
-  display: inline-block;
-  padding: 1mm 4mm;
-  border-radius: 3mm;
-  font-size: 9pt;
-  font-weight: 700;
-  color: #fff;
-  margin-top: 2mm;
-}
-.tier.moderate { background: #2a8f3a; }
-.tier.hard { background: #d77b1a; }
-.tier.advanced { background: #b42a2a; }
-
-.gmg {
-  background: #f5f5f5;
-  border-left: 3px solid #666;
-  padding: 4mm 5mm;
-  margin-bottom: 6mm;
-  font-size: 9pt;
-}
-.gmg h3 { margin: 0 0 2mm 0; font-size: 10pt; }
-.gmg p { margin: 1mm 0; }
-
-h2.section {
-  background: #222;
-  color: #fff;
-  padding: 2mm 4mm;
-  font-size: 11pt;
-  margin: 6mm 0 3mm 0;
-  page-break-before: auto;
-}
-
-h3.qhead {
-  font-size: 10.5pt;
-  margin: 4mm 0 1mm 0;
-  padding: 1mm 0;
-  border-bottom: 1px solid #888;
-}
-
+p { margin: 2mm 0; }
+ul { margin: 2mm 0; padding-left: 6mm; }
+li { margin-bottom: 1mm; }
 table.ms {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 2mm 0 3mm 0;
-  font-size: 9.5pt;
-  table-layout: fixed;
-  word-wrap: break-word;
+  border-collapse: collapse; width: 100%; margin: 3mm 0 4mm 0;
+  font-size: 10pt;
 }
-table.ms th {
-  background: #e5e5e5;
-  border: 0.5pt solid #888;
-  padding: 1.5mm 2mm;
-  text-align: left;
-  font-size: 9pt;
+table.ms th, table.ms td {
+  border: 0.5pt solid #000; padding: 2mm 3mm; vertical-align: top; text-align: left;
 }
-table.ms td {
-  border: 0.5pt solid #bbb;
-  padding: 2mm 2.5mm;
-  vertical-align: top;
+table.ms th { font-weight: 700; background: #e8e8e8; }
+table.ms .qcol { width: 18mm; text-align: center; font-weight: 700; }
+table.ms .markscol { width: 16mm; text-align: center; font-weight: 700; }
+table.ms .contentcol { }
+table.level {
+  border-collapse: collapse; width: 100%; margin: 2mm 0 4mm 0;
+  font-size: 10pt;
 }
-table.ms .qcol { width: 10%; font-weight: 700; }
-table.ms .acol { width: 73%; }
-table.ms .mcol { width: 9%; text-align: center; font-weight: 700; }
-table.ms .aocol { width: 8%; text-align: center; font-size: 8.5pt; color: #555; }
-
-.ind { margin: 1mm 0 1mm 0; padding-left: 4mm; }
-.ind li { margin-bottom: 0.8mm; }
-
-.levels { margin: 2mm 0 2mm 0; }
-.levels table { width: 100%; border-collapse: collapse; font-size: 9pt; }
-.levels td { border: 0.5pt solid #bbb; padding: 1.5mm 2mm; vertical-align: top; }
-.levels .lvl { width: 14%; background: #f2f2f2; font-weight: 700; text-align: center; }
-.levels .range { width: 12%; background: #fafafa; text-align: center; font-weight: 600; }
-.levels .desc { width: 74%; }
-
-.correct { color: #164; font-weight: 700; }
-.note { font-size: 8.5pt; color: #666; font-style: italic; }
-.working { font-family: "Courier New", monospace; background: #f8f8f8; padding: 1mm 2mm; margin: 1mm 0; font-size: 9pt; }
-b.term { background: #fff3d6; padding: 0 2px; }
-.totals-row td { background: #f5f5f5; font-weight: 700; }
-
-
+table.level th, table.level td {
+  border: 0.5pt solid #000; padding: 2mm 3mm; vertical-align: top;
+}
+table.level th { font-weight: 700; background: #d9d9d9; text-align: center; }
+table.level .lvlcol { width: 18mm; font-weight: 700; text-align: center; }
+table.level .markcol { width: 18mm; text-align: center; }
+.boilerplate {
+  background: #f5f5f5; border-left: 3px solid #000; padding: 3mm 5mm;
+  font-size: 10pt; margin: 3mm 0; line-height: 1.45;
+}
+.kaa-split { display: flex; gap: 5mm; margin: 2mm 0; }
+.kaa-split > div { flex: 1; border: 0.5pt solid #666; padding: 3mm; background: #fafafa; }
+.kaa-split h5 { margin: 0 0 2mm 0; font-size: 10.5pt; font-weight: 700; }
+.indicative-heading { font-weight: 700; margin: 3mm 0 1mm 0; font-style: italic; }
+.synoptic-flag {
+  display: inline-block; background: #000; color: #fff;
+  padding: 1px 5px; font-size: 9pt; font-weight: 700; letter-spacing: 0.3px;
+  margin-left: 2mm;
+}
+.page-break { page-break-before: always; }
 </style>
 </head>
 <body>
-<div class="topnav no-print">
-  <div>&larr; <a href="paper-2-hard.html">Back to paper</a></div>
-  <div>Mark scheme: Paper 2 (9EC0/02) &mdash; Hard</div>
-  <button onclick="window.print()">Print</button>
-</div>
-<div class="sheet">
-  <div class="header-block">
-    <div class="brand">Pearson <span class="edexcel">Edexcel</span></div>
-    <h1>Mark Scheme &mdash; Paper 2: The National and Global Economy</h1>
-    <div class="subtitle">9EC0/02 &middot; Tuesday 23 June 2026 &ndash; Morning</div>
-    <div class="tier hard">Hard tier</div>
-  </div>
-  <div class="gmg">
-    <h3>General Marking Guidance</h3>
-    <p>All candidates must receive the same treatment. Examiners must mark the first candidate in exactly the same way as they mark the last. Mark schemes should be applied positively. Candidates must be rewarded for what they have shown they can do rather than penalised for omissions.</p>
-    <p>Crossed-out work should be marked unless the candidate has replaced it with an alternative response. All the marks on the mark scheme are designed to be awarded. Examiners should always award full marks if deserved, i.e. if the answer matches the mark scheme.</p>
-  </div>
+<div class="doc">
 
-<h2 class="section">Question 1 &mdash; Total 5 marks</h2><table class="ind-table">
-  <thead><tr><th>Indicative content</th><th class="marks-col">Mark</th><th class="ao">AO</th></tr></thead>
-  <tbody><tr><td>(a) 2021 TRY/USD = 13.3; 2025 = 39.8. Cumulative depreciation = (13.3 &minus; 39.8) / 39.8 &times; 100 &asymp; &minus;66.6% (or equivalently, USD has appreciated 199% against TRY).</td><td class="marks-col">2</td><td class="ao">AO2 / AO4</td></tr><tr><td>(b) Orthodoxy predicts rising policy rate should dampen inflation; Turkey initially <i>cut</i> rates from 19% to 9% while inflation rose from 20% to 85% &rarr; clear breakdown of orthodox relationship. Evidence supports Phillips-curve-style trade-off only once the policy regime reversed in mid-2023.</td><td class="marks-col">2</td><td class="ao">AO3 / AO4</td></tr></tbody>
+<div class="title-block">
+  <div class="pearson-brand" style="margin-bottom: 8mm;"><span class="pearson">Pearson</span> <span class="edexcel">Edexcel</span></div>
+  <h1>Mark Scheme</h1>
+  <h2>Predicted Paper &ndash; For revision purposes only</h2>
+  <h2 style="margin-top: 8mm;">Level 3 GCE Economics A (9EC0)</h2>
+  <h2>Paper 2: The National and Global Economy</h2>
+  <div class="paper-ref">9EC0/02 &mdash; Hard</div>
+  <div class="session">Summer 2026 series</div>
+</div>
+
+<div class="title-footer">
+  <div class="brand-inline pearson-brand"><span class="pearson">Pearson</span> <span class="edexcel">Edexcel</span></div>
+  <div>Level 3 GCE &mdash; Economics A</div>
+  <div>Pearson Education Ltd &copy;2026</div>
+</div>
+
+<div class="page-break"></div>
+<h3 class="section-heading">General Marking Guidance</h3>
+<div class="boilerplate">
+  <p>All candidates must receive the same treatment. Mark schemes should be applied positively, rewarding candidates for what they have shown they can do.</p>
+  <p>All marks on the mark scheme are designed to be awarded. Examiners should always award full marks if deserved.</p>
+  <p>Crossed-out work should be marked UNLESS the candidate has replaced it with an alternative response.</p>
+</div>
+
+<h4 class="sub-heading">Marking grid convention</h4>
+<p>Each banded question is marked on two grids: <b>KAA</b> (Knowledge + Application + Analysis, covering AO1, AO2 and AO3) and <b>Evaluation</b> (AO4). Level descriptors for 8, 10, 12, 15 and 25-mark questions are common across all Paper 2 variants and are given in full in the Moderate mark scheme document.</p>
+
+<!-- ============ SECTION A ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section A &mdash; Questions 1 to 5</h3>
+
+<h4 class="sub-heading">Question 1 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">1(a)</td>
+  <td><b>Answer: B &ndash; Negative externality of production</b> (1). CO&#8322; emissions impose costs on third parties (climate change, health) not reflected in private production costs.</td>
+  <td class="markscol">1</td></tr>
+  <tr><td class="qcol">1(b)</td>
+  <td>Global recession reduces output and employment worldwide (1), reducing energy consumption and transport activity (1); industrial CO&#8322; emissions fall &mdash; 2020 data clearly shows this: 34.1 Gt in 2020 vs. 37.2 Gt in 2021 (1); in circular flow terms, lower injections (I falls, X falls) reduce aggregate demand and hence derived demand for energy-intensive goods (1).</td>
+  <td class="markscol">4</td></tr>
 </table>
-<div class="mcq-ans"><span class="ans">Answer: C</span>
-  <div class="rationale">Rate cuts in an overheating economy raise AD and worsen inflation — consistent with conventional monetary theory.</div>
-</div><h2 class="section">Question 2 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Negative real rates &rarr; incentive to borrow; AD rises; inflation worsens.</li><li>Lira weakens as capital exits &rarr; imported inflation compounds.</li><li>Inflation expectations become de-anchored &rarr; wage-price spiral.</li><li>Monetary policy loses effectiveness; second-round effects entrench high inflation.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">Credibility is measured by expectation anchoring; when expectations drift from target, credibility is lost.</div>
-</div><h2 class="section">Question 3 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Higher policy rate reduces borrowing demand &rarr; AD shifts left.</li><li>Lower AD &rarr; lower equilibrium price level and lower output in short run.</li><li>Credibility effect: if anchoring is restored, inflation expectations fall further &rarr; SRAS eventually shifts right.</li><li>Short-run cost: recession risk; unemployment rises.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">Taylor rule: policy rate responds to inflation deviation and output-gap deviation.</div>
-</div><h2 class="section">Question 4 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Currency depreciation raises imported input prices &rarr; SRAS shifts left.</li><li>Imported consumer goods more expensive &rarr; cost-push inflation.</li><li>In short run: higher price level and lower output.</li><li>Export-competitiveness gains partially offsetting (but slow).</li></ul></div><div class="mcq-ans"><span class="ans">Answer: A</span>
-  <div class="rationale">Small open economies importing priced-in-foreign-currency final goods see the fastest and most complete pass-through.</div>
-</div><h2 class="section">Question 5 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Hot-money inflows finance current-account deficit but are volatile.</li><li>Sudden stop &rarr; currency crisis, sharp real depreciation, import compression.</li><li>External borrowing often in foreign currency &rarr; balance-sheet effects.</li><li>Productivity gains only if inflows finance productive investment.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: C</span>
-  <div class="rationale">A sudden stop forces rapid external rebalancing via depreciation and contractionary domestic policy.</div>
-</div><p style="text-align: right; font-weight: 700; margin: 6mm 0;">TOTAL FOR SECTION A = 25 MARKS</p><h2 class="section">Question 6(a) — 5 marks &mdash; Total 5 marks</h2><table class="ind-table">
-  <thead><tr><th>Indicative content</th><th class="marks-col">Mark</th><th class="ao">AO</th></tr></thead>
-  <tbody><tr><td>Depreciation from 7.4 (2020) to 29.5 (2023): (7.4 &minus; 29.5) / 29.5 = &minus;74.9%. Accept calculation from 2020 or 2021 base; ~75% depreciation between 2020 and end-2023.</td><td class="marks-col">5</td><td class="ao">AO2 / AO4</td></tr></tbody>
+
+<h4 class="sub-heading">Question 2 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">2(a)</td>
+  <td>Linked 2-mark chain: Argentina's persistent fiscal deficits financed by money creation (1) raise aggregate demand beyond productive capacity, pulling prices up (1). Accept loose monetary policy, currency depreciation feeding demand, or indexed wages.</td>
+  <td class="markscol">2</td></tr>
+  <tr><td class="qcol">2(b)</td>
+  <td>Linked 2-mark chain: T&uuml;rkiye's currency depreciated sharply (1), raising imported input costs (energy, food, capital goods) and shifting SRAS leftward (1). Accept minimum-wage rises ahead of productivity or political pressure on the central bank.</td>
+  <td class="markscol">2</td></tr>
+  <tr><td class="qcol">2(c)</td>
+  <td><b>Answer: C &ndash; &ldquo;Menu costs&rdquo; rise and long-term contracts become rare</b> (1).</td>
+  <td class="markscol">1</td></tr>
 </table>
-<h2 class="section">Question 6(b) — 12 marks &mdash; Total 12 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-3</td><td>Isolated elements of knowledge. Limited application and analysis.</td></tr><tr><td class="lv">Level 2</td><td class="range">4-6</td><td>Accurate knowledge with application to the context. Some reasoned analysis.</td></tr><tr><td class="lv">Level 3</td><td class="range">7-9</td><td>Clear, developed chains of analysis applied to the context with accurate use of data.</td></tr><tr><td class="lv">Level 4</td><td class="range">10-12</td><td>Fully developed, logically sound chains of analysis with integration of multiple data sources.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Turkey-specific: unorthodox rate cuts into an inflation shock.</li><li>Lira collapse imported energy and food inflation.</li><li>Credibility loss de-anchored expectations.</li><li>Eurozone had credible ECB response (rate hikes to 4.5%).</li><li>Energy dependence difference: Turkey &gt; eurozone &rarr; greater pass-through.</li></ul></div><h2 class="section">Question 6(c) — 8 marks &mdash; Total 8 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-2</td><td>Isolated elements of knowledge and understanding. Brief attempt at application or analysis.</td></tr><tr><td class="lv">Level 2</td><td class="range">3-5</td><td>Accurate knowledge and understanding with application to the context. Some reasoned chains of analysis.</td></tr><tr><td class="lv">Level 3</td><td class="range">6-8</td><td>Clear, accurate and developed knowledge, understanding, application and analysis of the context. Logical and well-reasoned chains.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Mortgage and consumer credit more expensive &rarr; squeeze on consumption.</li><li>Savers benefit as deposit rates rise above inflation.</li><li>Higher interest burden on corporate debt &rarr; investment falls.</li><li>Evaluation: short-run pain intended to restore long-run price stability.</li></ul></div><h2 class="section">Question 6(d) — 10 marks &mdash; Total 10 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-2</td><td>Isolated elements of knowledge and understanding. Brief and unsupported evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">3-5</td><td>Accurate knowledge, understanding and application to the context. Evaluation is generic rather than context-based.</td></tr><tr><td class="lv">Level 3</td><td class="range">6-8</td><td>Clear chains of analysis applied to the context. Evaluation is context-based with some supporting evidence.</td></tr><tr><td class="lv">Level 4</td><td class="range">9-10</td><td>Fully developed chains of analysis applied to the context. Evaluative judgement is fully supported by reasoned argument and evidence from the extracts.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Loss of credibility &rarr; higher risk premium on Turkish debt; lira weakness; reduced FDI.</li><li>Restoration requires multi-year track record of orthodoxy; short-run pain.</li><li>Hysteresis: inflation expectations slow to adjust.</li><li>International-precedent parallels: Brazil 1994 Plano Real; Israel 1985.</li><li>Evaluation: full restoration may take a decade.</li></ul></div><h2 class="section">Question 6(e) — 15 marks &mdash; Total 15 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-3</td><td>Isolated knowledge; limited application or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">4-7</td><td>Accurate knowledge and some application. Evaluation is generic or one-sided.</td></tr><tr><td class="lv">Level 3</td><td class="range">8-11</td><td>Developed chains of analysis applied to the context. Balanced evaluation with some judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">12-15</td><td>Sophisticated, fully developed analysis and evaluation. Clear, supported judgement drawing on extracts and own knowledge.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Currency board pegs lira to euro &rarr; imports ECB credibility.</li><li>Inflation expectations anchored rapidly.</li><li>Costs: loss of independent monetary policy; procyclical with euro-area shocks.</li><li>Reserve adequacy: Turkey needs sufficient reserves to defend peg under attack.</li><li>Political economy: requires commitment to fiscal discipline.</li><li>Evaluation: Bulgaria (Bulgarian lev peg since 1997) is closest precedent; has delivered macro stability but at loss of policy autonomy.</li></ul></div><p style="text-align: right; font-weight: 700; margin: 6mm 0;">TOTAL FOR SECTION B = 50 MARKS</p><h2 class="section">Question 7 — 25 marks &mdash; Total 25 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-5</td><td>Isolated knowledge; limited application, analysis or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">6-11</td><td>Accurate knowledge with some application. Evaluation is unbalanced or underdeveloped.</td></tr><tr><td class="lv">Level 3</td><td class="range">12-17</td><td>Developed chains of analysis applied to context. Balanced evaluation with reasoned judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">18-21</td><td>Sophisticated, fully developed analysis. Evaluation integrates micro and macro perspectives with supported conclusion.</td></tr><tr><td class="lv">Level 5</td><td class="range">22-25</td><td>Exceptional analysis drawing on synoptic links. Sustained, well-reasoned evaluation with decisive, defensible judgement.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Empirical literature (Alesina &amp; Summers 1993; Cukierman et al.): CBI correlated with lower inflation.</li><li>Mechanism: removes political incentive to inflate surprises.</li><li>Counterarguments: fiscal dominance can override independence; UK experience 1992-97.</li><li>Examples: Bundesbank, ECB, Fed, BoE post-1997, vs Turkey (2021-23) and Argentina (pre-2024).</li><li>Evaluation: independence is helpful but needs fiscal backing and transparent accountability.</li></ul></div><h2 class="section">Question 8 — 25 marks &mdash; Total 25 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-5</td><td>Isolated knowledge; limited application, analysis or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">6-11</td><td>Accurate knowledge with some application. Evaluation is unbalanced or underdeveloped.</td></tr><tr><td class="lv">Level 3</td><td class="range">12-17</td><td>Developed chains of analysis applied to context. Balanced evaluation with reasoned judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">18-21</td><td>Sophisticated, fully developed analysis. Evaluation integrates micro and macro perspectives with supported conclusion.</td></tr><tr><td class="lv">Level 5</td><td class="range">22-25</td><td>Exceptional analysis drawing on synoptic links. Sustained, well-reasoned evaluation with decisive, defensible judgement.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>CAD can reflect weakness (excess consumption, lack of competitiveness) OR strength (investment-led growth, capital deepening).</li><li>Evaluate using examples: US CAD reflects reserve-currency role; Australia CAD historically driven by mining investment.</li><li>Sustainability: CAD fine if financed by FDI; problematic if by hot money.</li><li>Examples: Turkey 2013 taper tantrum; Greece pre-2010 crisis.</li><li>Evaluation: size, composition of financing, and persistence all matter.</li></ul></div>
-<p style="margin-top: 20mm; text-align: center; font-size: 9pt; color: #888;">&mdash; END OF MARK SCHEME &mdash;</p>
+
+<h4 class="sub-heading">Question 3 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">3(a)</td>
+  <td><b>Answer: C &ndash; Inflation in prices of domestically produced services, sensitive to domestic wage growth</b> (1).</td>
+  <td class="markscol">1</td></tr>
+  <tr><td class="qcol">3(b)</td>
+  <td>MPC's mandate is the 2% CPI target, with secondary objective to support employment and growth &ldquo;unless inconsistent with the inflation target&rdquo; (1); services inflation is strongly linked to domestic wage growth, which depends on labour market tightness (1); tightening to quash services inflation risks pushing unemployment up and causing household distress (1); holding or cutting may embed higher inflation expectations, requiring tighter policy later &mdash; MPC typically &ldquo;looks through&rdquo; temporary shocks and acts on medium-term expectations (1).</td>
+  <td class="markscol">4</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 4 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">4(a)</td>
+  <td>Cost-of-living crisis (2022&ndash;23) raised food and energy prices, a larger share of low-income household spending (1), squeezing real disposable income of families with children especially sharply (1); &ldquo;two-child limit&rdquo; on Universal Credit and frozen benefit thresholds reduced real transfer income (1); UK childcare costs among the highest in the OECD, constraining second-earner participation and household incomes (1). Accept housing costs, regional deindustrialisation, single-parent household dynamics.</td>
+  <td class="markscol">4</td></tr>
+  <tr><td class="qcol">4(b)</td>
+  <td><b>Answer: C &ndash; A rise in the bottom decile income while median income is unchanged</b> (1). Relative poverty is measured against the median, so raising low incomes while holding the median constant directly reduces the proportion below the 60% threshold.</td>
+  <td class="markscol">1</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 5 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">5(a)</td>
+  <td><b>Answer: B &ndash; Saudi Arabia's high income is associated with high CO&#8322; per capita but lower HDI than Norway</b> (1).</td>
+  <td class="markscol">1</td></tr>
+  <tr><td class="qcol">5(b)</td>
+  <td>Two limitations at 2 marks each: GNI per capita is an average and says nothing about distribution &mdash; Saudi Arabia's high GNI conceals large internal inequality (1); excludes welfare dimensions like life expectancy and education &mdash; Rwanda's low GNI hides relatively better child mortality than income alone would suggest (1); excludes environmental sustainability (Saudi Arabia's high GNI associated with high emissions) (1); ignores non-market activities (domestic work, subsistence) important for welfare in low-income economies (1).</td>
+  <td class="markscol">4</td></tr>
+</table>
+
+<!-- ============ SECTION B ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section B &mdash; Question 6: Climate transition and emerging economies</h3>
+
+<h4 class="sub-heading">Question 6(a) &ndash; Calculate the percentage change in total climate finance flows from 2018 to 2024 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">6(a)</td>
+  <td>
+    Working: (158.4 &minus; 90.4) / 90.4 &times; 100 (method, 1)<br>
+    = 68.0 / 90.4 &times; 100 (1)<br>
+    Answer: <b>+75.2%</b> (2 marks)<br>
+    <b>Evaluation (1):</b> &ldquo;Substantial growth but still well below the \$300bn COP29 target by 2035 and an order of magnitude below the \$1 trillion emerging-economy need estimate.&rdquo;
+  </td>
+  <td class="markscol">5</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 6(b) &ndash; Examine two factors that may explain why China has far higher installed renewable capacity than other economies (8 marks)</h4>
+<p class="indicative-heading">Indicative content (at least two distinct factors developed):</p>
+<ul>
+  <li><b>State-led industrial policy:</b> Chinese five-year plans directed capital and subsidies to solar and wind manufacturing since the 2000s; production scale drove down global panel prices by over 90% since 2010.</li>
+  <li><b>Domestic manufacturing dominance:</b> China produces 80% of global solar panels and 60% of wind components; vertical integration from polysilicon to panel assembly.</li>
+  <li><b>Grid investment:</b> ultra-high-voltage DC transmission lines move renewable generation from interior to coastal load centres &mdash; scale investment no other country has matched.</li>
+  <li><b>Land availability:</b> deserts in Xinjiang and Inner Mongolia for utility-scale solar and wind farms.</li>
+  <li><b>Energy security motive:</b> reducing dependence on imported oil and coal.</li>
+  <li><b>Financial model:</b> state-owned utilities buy at guaranteed tariffs; state banks provide cheap capital; risk transferred to state rather than private investors.</li>
+</ul>
+<p class="indicative-heading">Award 8-mark "Examine" band (KAA = 5, Eval = 3).</p>
+
+<h4 class="sub-heading">Question 6(c) &ndash; Assess the likely impact of rising global climate finance on economic development in a low-income country of your choice (10 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 6)</h5>
+    <ul>
+      <li>Climate finance channels: concessional loans, grants, blended finance, private capital.</li>
+      <li>Development impact: energy access (most LICs have low electrification), climate adaptation (floods, drought resilience), green jobs, transport infrastructure.</li>
+      <li>Multiplier effects through infrastructure investment.</li>
+      <li>Intersects with SDGs 1 (poverty), 7 (energy), 13 (climate).</li>
+      <li>Application (e.g. Kenya, Bangladesh, Senegal): specific projects and impacts.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 4)</h5>
+    <ul>
+      <li>Absorptive capacity: can the country effectively use large finance inflows? Institutional capacity matters.</li>
+      <li>Debt sustainability: concessional finance may still add to debt burden (over half of LICs near distress).</li>
+      <li>Dutch disease risk: large inflows can appreciate currency, hurt other exports.</li>
+      <li>&ldquo;Climate finance&rdquo; may be re-counted from existing aid budgets &mdash; not truly additional.</li>
+      <li>Conditionality: finance often tied to policy reforms not always development-aligned.</li>
+      <li>Local benefits depend on supplier policies &mdash; if foreign firms do all construction, local value-added is limited.</li>
+      <li><b>Judgement:</b> climate finance offers real development opportunities for capable LICs but requires substantial absorptive capacity and risks being a mixed blessing if it crowds out other aid or comes with costly conditions. Concessional public finance more likely to aid development than private finance, which targets middle-income bankable projects.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 6(d) &ndash; Discuss, using an AD/AS diagram, the likely short-run macroeconomic impact of a large-scale "green industrial" investment programme on a developing economy such as South Africa (12 marks)</h4>
+<p class="indicative-heading">Diagram required: AD/AS with AD shifting right; LRAS may shift right over time.</p>
+<div class="kaa-split">
+  <div>
+    <h5>KAA with diagram (out of 8)</h5>
+    <ul>
+      <li>AD/AS: large-scale investment (I&uarr;) and government spending (G&uarr;) raise AD.</li>
+      <li>If investment raises productive capacity over time, LRAS shifts right; in short run, supply constraints (skilled labour, equipment) may limit SRAS response.</li>
+      <li>Show new equilibrium: higher Y, higher P in short run; LRAS shift eventually allows growth without additional inflation.</li>
+      <li>Application: South Africa's \$8.5bn JETP commitment + broader green investment could add 2&ndash;3% to GDP annually.</li>
+      <li>Structural unemployment at 33% means significant slack &mdash; big output gains possible.</li>
+      <li>Coal sector employs ~90,000 directly in Mpumalanga &mdash; transition costs concentrated locally.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 4)</h5>
+    <ul>
+      <li>Short-run macro gain likely substantial given high unemployment and slack.</li>
+      <li>Long-run gain depends on successful grid reform (Eskom), labour retraining, institutional capacity.</li>
+      <li>Fiscal: South Africa's debt/GDP at 75%+ constrains government co-investment headroom.</li>
+      <li>Risks: project delays, capacity constraints, coal-sector political opposition.</li>
+      <li>Currency: large investment inflow could appreciate rand, hurting other exporters.</li>
+      <li><b>Judgement:</b> green investment is strongly positive for South Africa in aggregate terms but materially positive impact requires reforms to Eskom, grid investment, and social compact with coal communities; execution risk is the binding constraint, not financing.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 6(e) &ndash; Discuss whether the climate transition is likely to widen or narrow the gap between developed and developing economies (15 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 9)</h5>
+    <p><b>Arguments the transition WIDENS the gap:</b></p>
+    <ul>
+      <li>Physical climate impacts fall disproportionately on tropical and coastal developing economies.</li>
+      <li>Developed countries have fiscal headroom for mitigation investment; LICs don't.</li>
+      <li>Stranded-asset risk concentrated in fossil-fuel-dependent developing economies.</li>
+      <li>Technology leadership (EVs, batteries, solar) dominated by developed/China &mdash; rents flow there.</li>
+      <li>Carbon border adjustments (EU CBAM) penalise emissions-intensive developing country exports.</li>
+      <li>Climate finance falls far short of need (\$158bn actual vs. \$1tn estimated).</li>
+    </ul>
+    <p><b>Arguments the transition NARROWS the gap:</b></p>
+    <ul>
+      <li>Falling solar costs democratise energy access &mdash; LICs can leapfrog centralised grids.</li>
+      <li>Lower existing energy infrastructure reduces transition cost per capita.</li>
+      <li>Green industrial policy creates opportunities (Vietnam solar, India green hydrogen).</li>
+      <li>Labour cost advantages in green manufacturing.</li>
+      <li>Decentralised renewable power suited to dispersed rural populations.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 6)</h5>
+    <ul>
+      <li>Distinction between physical climate impacts (widening), mitigation costs (variable), and green growth opportunities (potentially narrowing).</li>
+      <li>Country-level variation: capable middle-income economies (India, Vietnam, Indonesia, Brazil) may benefit; low-income and climate-vulnerable countries (Bangladesh, Malawi, Haiti) suffer.</li>
+      <li>Institutional quality and absorptive capacity determine which side of the ledger countries end up on.</li>
+      <li>Role of multilateral finance and governance: WTO rules, climate finance architecture, COP negotiations.</li>
+      <li><b>Judgement:</b> the climate transition will likely WIDEN the gap on average, but with substantial heterogeneity &mdash; capable middle-income economies may benefit while poor and climate-vulnerable economies face a triple burden of physical damage, transition costs, and limited finance. Without substantial reform of climate finance architecture, the net effect is inequality-widening.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ SECTION C ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section C &mdash; Question 7 OR Question 8 (25 marks)</h3>
+
+<h4 class="sub-heading">Question 7 &ndash; Evaluate the factors that may cause an emerging economy to enter debt distress (25 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 15)</h5>
+    <ul>
+      <li>Definitions: debt distress, debt sustainability, debt restructuring.</li>
+      <li>Debt dynamics: d(Debt/GDP) = primary deficit + (r &minus; g) &times; Debt/GDP + exchange rate effect.</li>
+      <li>Drivers: fiscal (persistent primary deficits, pro-cyclical spending), monetary (high interest rates), external (commodity price shocks, global recession, sudden stops), structural (weak tax base, narrow export base).</li>
+      <li>International context: rising global rates post-2022, US dollar strength, capital outflows from EMs.</li>
+      <li>Application: Sri Lanka 2022 (tourism collapse + fertiliser policy + tax cuts &rarr; default); Zambia 2020 (copper price fall + Chinese debt); Ghana 2022 (fiscal deficit + commodity exposure).</li>
+      <li>Diagram: loanable funds showing sovereign spread widening; or AD/AS with negative output shock.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 10)</h5>
+    <ul>
+      <li>Distinguish solvency crisis (fundamentals) from liquidity crisis (temporary).</li>
+      <li>Role of creditors: Chinese lending vs. Paris Club vs. private bondholders creates coordination problems.</li>
+      <li>Domestic institutional factors: fiscal framework, independent central bank, currency regime.</li>
+      <li>Restructuring vs. austerity: social costs vs. credit-market re-access speed.</li>
+      <li>IMF role and conditionality.</li>
+      <li><b>Judgement:</b> debt distress typically emerges from a combination of domestic policy failures (fiscal, monetary) and external shocks (commodity prices, global rates); the specific mix varies. Good institutions (independent central bank, counter-cyclical fiscal framework) dramatically reduce distress probability. The current rise in distress reflects the compounding of tight global conditions with pre-existing domestic vulnerabilities exposed by COVID.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 8 &ndash; Evaluate the most effective strategies a developing country might adopt to promote economic development (25 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 15)</h5>
+    <ul>
+      <li>Growth vs. development distinction.</li>
+      <li>Strategies: export-led (East Asian model), import-substitution (Latin American model), structural adjustment, Washington Consensus, developmental state model.</li>
+      <li>Sector priorities: agriculture, industry, services.</li>
+      <li>Investment: physical capital (infrastructure), human capital (education, health), institutional capital.</li>
+      <li>Trade: openness benefits vs. industrial policy for infant industries.</li>
+      <li>Governance: rule of law, corruption, property rights (Acemoglu-Robinson).</li>
+      <li>Financial development, microfinance, mobile money (M-Pesa).</li>
+      <li>Application: Vietnam since 1986 Doi Moi, Rwanda since 1994, Bangladesh since 2000.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 10)</h5>
+    <ul>
+      <li>No single model: &ldquo;what works&rdquo; depends on initial conditions, geography, governance, external environment.</li>
+      <li>Export-led growth harder in fragmented world trade (post-2017 tariff rises).</li>
+      <li>Infrastructure investment effective only with institutional capacity.</li>
+      <li>Aid vs. trade vs. FDI debate &mdash; multiple channels, context-dependent.</li>
+      <li>Political economy: strategies must be politically sustainable.</li>
+      <li><b>Judgement:</b> effective development strategies typically combine (a) pragmatic openness to trade and FDI, (b) investment in human capital (especially female education), (c) stable macro policy, (d) institutional reform to enable property rights and contract enforcement, (e) targeted industrial policy in niches of comparative advantage. &ldquo;One-size-fits-all&rdquo; fails; context-specific strategy matters more than choosing between theoretical camps.</li>
+    </ul>
+  </div>
+</div>
+
+<div style="margin-top: 10mm; border-top: 1.5px solid #000; padding-top: 3mm; text-align: center; font-weight: 700;">
+  TOTAL FOR PAPER = 100 MARKS
+</div>
+
 </div>
 </body>
 </html>
