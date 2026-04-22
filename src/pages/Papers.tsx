@@ -44,8 +44,12 @@ function EdexcelAPapersList() {
 
             <div className="grid gap-3 md:grid-cols-3">
               {DIFFICULTIES.map((d) => {
-                const paperHref = `/edexcel-a-mocks/paper-${p.number}-${d.id}.html`;
-                const msHref = `/edexcel-a-mocks/mark-scheme-paper-${p.number}-${d.id}.html`;
+                // Paper 1 Moderate & Hard are now served as authentic Pearson PDFs
+                // (uploaded directly by the user). All other slots remain HTML booklets.
+                const isPdf = p.number === 1 && (d.id === "moderate" || d.id === "hard");
+                const ext = isPdf ? "pdf" : "html";
+                const paperHref = `/edexcel-a-mocks/paper-${p.number}-${d.id}.${ext}`;
+                const msHref = `/edexcel-a-mocks/mark-scheme-paper-${p.number}-${d.id}.${ext}`;
                 return (
                   <div
                     key={d.id}
@@ -73,9 +77,15 @@ function EdexcelAPapersList() {
                           </a>
                         </Button>
                         <Button asChild size="sm" className="h-7 gap-1 text-xs">
-                          <Link to={`/mock-papers/edexcel-a/${p.number}/${d.id}`}>
-                            View <ArrowRight className="h-3 w-3" />
-                          </Link>
+                          {isPdf ? (
+                            <a href={paperHref} target="_blank" rel="noopener noreferrer">
+                              View <ArrowRight className="h-3 w-3" />
+                            </a>
+                          ) : (
+                            <Link to={`/mock-papers/edexcel-a/${p.number}/${d.id}`}>
+                              View <ArrowRight className="h-3 w-3" />
+                            </Link>
+                          )}
                         </Button>
                       </div>
                     </div>
@@ -95,9 +105,15 @@ function EdexcelAPapersList() {
                           </a>
                         </Button>
                         <Button asChild size="sm" variant="outline" className="h-7 gap-1 text-xs">
-                          <Link to={`/mock-papers/edexcel-a/${p.number}/${d.id}/mark-scheme`}>
-                            View <ArrowRight className="h-3 w-3" />
-                          </Link>
+                          {isPdf ? (
+                            <a href={msHref} target="_blank" rel="noopener noreferrer">
+                              View <ArrowRight className="h-3 w-3" />
+                            </a>
+                          ) : (
+                            <Link to={`/mock-papers/edexcel-a/${p.number}/${d.id}/mark-scheme`}>
+                              View <ArrowRight className="h-3 w-3" />
+                            </Link>
+                          )}
                         </Button>
                       </div>
                     </div>
