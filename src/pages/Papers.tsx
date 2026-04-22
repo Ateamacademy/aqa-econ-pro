@@ -114,7 +114,7 @@ function EdexcelAPapersList() {
 
 const AQA_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; available: boolean }[] = [
   { number: 1, code: "7136/1", title: "Markets and Market Failure",          focus: "Microeconomics", available: true  },
-  { number: 2, code: "7136/2", title: "National and International Economy",  focus: "Macroeconomics", available: false },
+  { number: 2, code: "7136/2", title: "National and International Economy",  focus: "Macroeconomics", available: true  },
   { number: 3, code: "7136/3", title: "Economic Principles and Issues",      focus: "Synoptic",       available: false },
 ];
 
