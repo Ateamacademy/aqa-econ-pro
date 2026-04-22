@@ -2,190 +2,404 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mark Scheme &mdash; Paper 1: Markets and Business Behaviour (Moderate)</title>
+<title>Mark Scheme — Pearson Edexcel A Level Economics A Paper 1 (9EC0/01) — Advanced</title>
 <style>
-    /* Pearson Edexcel mark scheme style */
-@page { size: A4; margin: 15mm 14mm 18mm 14mm; }
-
+@page { size: A4; margin: 18mm 16mm 20mm 16mm; }
 * { box-sizing: border-box; }
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 10pt;
-  line-height: 1.35;
-  color: #111;
-  margin: 0;
+html, body {
+  margin: 0; padding: 0; background: #ededed;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  font-size: 10.5pt; line-height: 1.4; color: #111;
 }
-.topnav {
-  background: #0b49a0; color: #fff; padding: 10px 18px;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 14px;
+.doc {
+  width: 210mm; min-height: 297mm; background: #fff;
+  margin: 10mm auto; padding: 18mm 16mm; box-shadow: 0 1px 6px rgba(0,0,0,0.18);
 }
-.topnav a, .topnav a:visited { color: #fff; text-decoration: none; font-weight: 600; }
-.topnav a:hover { text-decoration: underline; }
-.topnav button {
-  background: #fff; color: #0b49a0; border: 0; padding: 6px 14px;
-  font-weight: 600; border-radius: 3px; cursor: pointer;
+@media print { html, body { background: #fff; } .doc { margin: 0; box-shadow: none; padding: 0; } }
+.pearson-brand { font-family: "Trebuchet MS", sans-serif; font-weight: 700; letter-spacing: -0.2px; }
+.pearson-brand .pearson { font-size: 15pt; }
+.pearson-brand .edexcel { background: #000; color: #fff; padding: 1px 5px; font-size: 13pt; }
+.title-block {
+  text-align: center; margin: 25mm 0 40mm 0;
+  border-top: 2px solid #000; border-bottom: 2px solid #000;
+  padding: 10mm 0;
 }
-@media print { .no-print { display: none !important; } }
-
-.sheet { max-width: 190mm; margin: 0 auto; padding: 10mm 6mm; }
-
-.header-block {
-  border-bottom: 3px solid #000;
-  padding-bottom: 6mm;
-  margin-bottom: 8mm;
+.title-block h1 { font-size: 24pt; margin: 0 0 3mm 0; font-weight: 700; letter-spacing: 0.5px; }
+.title-block h2 { font-size: 14pt; margin: 0 0 2mm 0; font-weight: 400; }
+.title-block .paper-ref { font-size: 13pt; font-weight: 700; margin-top: 4mm; }
+.title-block .session { font-size: 11pt; margin-top: 2mm; font-style: italic; }
+.title-footer { text-align: center; margin-top: 25mm; font-size: 9.5pt; color: #333; }
+.title-footer .brand-inline { margin-bottom: 3mm; }
+h3.section-heading {
+  font-size: 14pt; font-weight: 700; margin: 10mm 0 3mm 0;
+  padding-bottom: 1mm; border-bottom: 1.5px solid #000;
 }
-.header-block .brand {
-  font-family: "Trebuchet MS", sans-serif;
-  font-weight: 700;
-  font-size: 18pt;
-  margin-bottom: 2mm;
+h4.sub-heading {
+  font-size: 11.5pt; font-weight: 700; margin: 6mm 0 2mm 0;
+  color: #000;
 }
-.header-block .brand .edexcel {
-  background: #000; color: #fff; padding: 1mm 3mm; margin-left: 2mm;
-}
-.header-block h1 { font-size: 16pt; margin: 2mm 0; }
-.header-block .subtitle { color: #444; font-size: 11pt; }
-.header-block .tier {
-  display: inline-block;
-  padding: 1mm 4mm;
-  border-radius: 3mm;
-  font-size: 9pt;
-  font-weight: 700;
-  color: #fff;
-  margin-top: 2mm;
-}
-.tier.moderate { background: #2a8f3a; }
-.tier.hard { background: #d77b1a; }
-.tier.advanced { background: #b42a2a; }
-
-.gmg {
-  background: #f5f5f5;
-  border-left: 3px solid #666;
-  padding: 4mm 5mm;
-  margin-bottom: 6mm;
-  font-size: 9pt;
-}
-.gmg h3 { margin: 0 0 2mm 0; font-size: 10pt; }
-.gmg p { margin: 1mm 0; }
-
-h2.section {
-  background: #222;
-  color: #fff;
-  padding: 2mm 4mm;
-  font-size: 11pt;
-  margin: 6mm 0 3mm 0;
-  page-break-before: auto;
-}
-
-h3.qhead {
-  font-size: 10.5pt;
-  margin: 4mm 0 1mm 0;
-  padding: 1mm 0;
-  border-bottom: 1px solid #888;
-}
-
+p { margin: 2mm 0; }
+ul { margin: 2mm 0; padding-left: 6mm; }
+li { margin-bottom: 1mm; }
 table.ms {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 2mm 0 3mm 0;
-  font-size: 9.5pt;
-  table-layout: fixed;
-  word-wrap: break-word;
+  border-collapse: collapse; width: 100%; margin: 3mm 0 4mm 0;
+  font-size: 10pt;
 }
-table.ms th {
-  background: #e5e5e5;
-  border: 0.5pt solid #888;
-  padding: 1.5mm 2mm;
-  text-align: left;
-  font-size: 9pt;
+table.ms th, table.ms td {
+  border: 0.5pt solid #000; padding: 2mm 3mm; vertical-align: top; text-align: left;
 }
-table.ms td {
-  border: 0.5pt solid #bbb;
-  padding: 2mm 2.5mm;
-  vertical-align: top;
+table.ms th { font-weight: 700; background: #e8e8e8; }
+table.ms .qcol { width: 18mm; text-align: center; font-weight: 700; }
+table.ms .markscol { width: 16mm; text-align: center; font-weight: 700; }
+table.ms .contentcol { }
+table.level {
+  border-collapse: collapse; width: 100%; margin: 2mm 0 4mm 0;
+  font-size: 10pt;
 }
-table.ms .qcol { width: 10%; font-weight: 700; }
-table.ms .acol { width: 73%; }
-table.ms .mcol { width: 9%; text-align: center; font-weight: 700; }
-table.ms .aocol { width: 8%; text-align: center; font-size: 8.5pt; color: #555; }
-
-.ind { margin: 1mm 0 1mm 0; padding-left: 4mm; }
-.ind li { margin-bottom: 0.8mm; }
-
-.levels { margin: 2mm 0 2mm 0; }
-.levels table { width: 100%; border-collapse: collapse; font-size: 9pt; }
-.levels td { border: 0.5pt solid #bbb; padding: 1.5mm 2mm; vertical-align: top; }
-.levels .lvl { width: 14%; background: #f2f2f2; font-weight: 700; text-align: center; }
-.levels .range { width: 12%; background: #fafafa; text-align: center; font-weight: 600; }
-.levels .desc { width: 74%; }
-
-.correct { color: #164; font-weight: 700; }
-.note { font-size: 8.5pt; color: #666; font-style: italic; }
-.working { font-family: "Courier New", monospace; background: #f8f8f8; padding: 1mm 2mm; margin: 1mm 0; font-size: 9pt; }
-b.term { background: #fff3d6; padding: 0 2px; }
-.totals-row td { background: #f5f5f5; font-weight: 700; }
-
-
+table.level th, table.level td {
+  border: 0.5pt solid #000; padding: 2mm 3mm; vertical-align: top;
+}
+table.level th { font-weight: 700; background: #d9d9d9; text-align: center; }
+table.level .lvlcol { width: 18mm; font-weight: 700; text-align: center; }
+table.level .markcol { width: 18mm; text-align: center; }
+.boilerplate {
+  background: #f5f5f5; border-left: 3px solid #000; padding: 3mm 5mm;
+  font-size: 10pt; margin: 3mm 0; line-height: 1.45;
+}
+.kaa-split { display: flex; gap: 5mm; margin: 2mm 0; }
+.kaa-split > div { flex: 1; border: 0.5pt solid #666; padding: 3mm; background: #fafafa; }
+.kaa-split h5 { margin: 0 0 2mm 0; font-size: 10.5pt; font-weight: 700; }
+.indicative-heading { font-weight: 700; margin: 3mm 0 1mm 0; font-style: italic; }
+.synoptic-flag {
+  display: inline-block; background: #000; color: #fff;
+  padding: 1px 5px; font-size: 9pt; font-weight: 700; letter-spacing: 0.3px;
+  margin-left: 2mm;
+}
+.page-break { page-break-before: always; }
 </style>
 </head>
 <body>
-<div class="topnav no-print">
-  <div>&larr; <a href="paper-1-moderate.html">Back to paper</a></div>
-  <div>Mark scheme: Paper 1 (9EC0/01) &mdash; Moderate</div>
-  <button onclick="window.print()">Print</button>
-</div>
-<div class="sheet">
-  <div class="header-block">
-    <div class="brand">Pearson <span class="edexcel">Edexcel</span></div>
-    <h1>Mark Scheme &mdash; Paper 1: Markets and Business Behaviour</h1>
-    <div class="subtitle">9EC0/01 &middot; Wednesday 10 June 2026 &ndash; Morning</div>
-    <div class="tier moderate">Moderate tier</div>
-  </div>
-  <div class="gmg">
-    <h3>General Marking Guidance</h3>
-    <p>All candidates must receive the same treatment. Examiners must mark the first candidate in exactly the same way as they mark the last. Mark schemes should be applied positively. Candidates must be rewarded for what they have shown they can do rather than penalised for omissions.</p>
-    <p>Crossed-out work should be marked unless the candidate has replaced it with an alternative response. All the marks on the mark scheme are designed to be awarded. Examiners should always award full marks if deserved, i.e. if the answer matches the mark scheme.</p>
-  </div>
+<div class="doc">
 
-<h2 class="section">Question 1 &mdash; Total 5 marks</h2><table class="ind-table">
-  <thead><tr><th>Indicative content</th><th class="marks-col">Mark</th><th class="ao">AO</th></tr></thead>
-  <tbody><tr><td>(a) PED = % &Delta;Q / % &Delta;P. Between 2024 and 2025: % change in price = (14.99 &minus; 12.99) / 12.99 = +15.4%. % change in subscribers = (15.9 &minus; 16.8) / 16.8 = &minus;5.4%. PED = &minus;5.4 / 15.4 = &minus;0.35 (accept &minus;0.35 to &minus;0.36).</td><td class="marks-col">4</td><td class="ao">AO2 / AO4</td></tr></tbody>
+<div class="title-block">
+  <div class="pearson-brand" style="margin-bottom: 8mm;"><span class="pearson">Pearson</span> <span class="edexcel">Edexcel</span></div>
+  <h1>Mark Scheme</h1>
+  <h2>Predicted Paper &ndash; For revision purposes only</h2>
+  <h2 style="margin-top: 8mm;">Level 3 GCE Economics A (9EC0)</h2>
+  <h2>Paper 1: Markets and Business Behaviour</h2>
+  <div class="paper-ref">9EC0/01 &mdash; Moderate</div>
+  <div class="session">Summer 2026 series</div>
+</div>
+
+<div class="title-footer">
+  <div class="brand-inline pearson-brand"><span class="pearson">Pearson</span> <span class="edexcel">Edexcel</span></div>
+  <div>Level 3 GCE &mdash; Economics A</div>
+  <div>Pearson Education Ltd &copy;2026</div>
+</div>
+
+<div class="page-break"></div>
+<h3 class="section-heading">General Marking Guidance</h3>
+<div class="boilerplate">
+  <p>All candidates must receive the same treatment. Mark schemes should be applied positively, rewarding candidates for what they have shown they can do.</p>
+  <p>All marks on the mark scheme are designed to be awarded. Examiners should always award full marks if deserved.</p>
+  <p>Crossed-out work should be marked UNLESS the candidate has replaced it with an alternative response.</p>
+</div>
+
+<h4 class="sub-heading">Assessment Objectives (Pearson Edexcel Economics A)</h4>
+<table class="level">
+  <tr><th class="lvlcol">AO</th><th>Description</th></tr>
+  <tr><td class="lvlcol">AO1</td><td>Demonstrate knowledge of terms/concepts and theories/models</td></tr>
+  <tr><td class="lvlcol">AO2</td><td>Apply knowledge and understanding to various economic contexts</td></tr>
+  <tr><td class="lvlcol">AO3</td><td>Analyse issues within economics</td></tr>
+  <tr><td class="lvlcol">AO4</td><td>Evaluate economic arguments and use evidence to support informed judgements</td></tr>
 </table>
-<div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">PED magnitude 0.35 &lt; 1 &rarr; relatively (price) inelastic demand. Netflix's pricing power and subscriber lock-in support this interpretation.</div>
-</div><h2 class="section">Question 2 &mdash; Total 5 marks</h2><table class="ind-table">
-  <thead><tr><th>Indicative content</th><th class="marks-col">Mark</th><th class="ao">AO</th></tr></thead>
-  <tbody><tr><td>(a) XED = % &Delta;Qx / % &Delta;Py = +4 / +20 = +0.2.</td><td class="marks-col">2</td><td class="ao">AO2</td></tr><tr><td>(b) Positive XED &rarr; streaming and cinema are weak substitutes. A rise in streaming prices caused a small rise in cinema sales.</td><td class="marks-col">2</td><td class="ao">AO1 / AO3</td></tr></tbody>
+<p style="margin-top: 4mm;"><b>Marking grids are organised as KAA (Knowledge, Application, Analysis &mdash; AO1+AO2+AO3) and Evaluation (AO4).</b></p>
+
+<h3 class="section-heading">Level Descriptors</h3>
+
+<h4 class="sub-heading">8-mark "Examine" (KAA = 5, Evaluation = 3)</h4>
+<table class="level">
+  <tr><th class="lvlcol">Level</th><th class="markcol">KAA marks</th><th>Descriptor</th></tr>
+  <tr><td class="lvlcol">L1</td><td class="markcol">1&ndash;2</td><td>Isolated element of knowledge; limited application.</td></tr>
+  <tr><td class="lvlcol">L2</td><td class="markcol">3&ndash;4</td><td>Sound knowledge applied with some development; at least one chain of reasoning.</td></tr>
+  <tr><td class="lvlcol">L3</td><td class="markcol">5</td><td>Accurate detailed knowledge fully applied; developed chains.</td></tr>
 </table>
-<div class="mcq-ans"><span class="ans">Answer: C</span>
-  <div class="rationale">A positive XED indicates substitute goods; magnitude indicates strength of substitution.</div>
-</div><h2 class="section">Question 3 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Merger reduces number of sellers from 7 to 6 &rarr; inward shift of market supply (S&#8321; to S&#8322;).</li><li>Equilibrium price rises (&pound;12 to &pound;15 in the diagram); equilibrium quantity falls (Q&#8321; to Q&#8322;).</li><li>Fewer subscribers served as some are priced out at new equilibrium.</li><li>Remaining firms earn higher producer surplus; consumer surplus falls; deadweight loss if price exceeds MC.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">Fewer sellers in oligopoly &rarr; larger share for remaining firms and greater ability to price above marginal cost &rarr; higher producer surplus.</div>
-</div><h2 class="section">Question 4 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Amazon price cut shifts demand curve downward on the cost-revenue diagram.</li><li>Show AR and MR curves shifting; short-run supernormal profit reduced relative to initial equilibrium.</li><li>Possible gain in market share can offset fall in per-subscriber profit if demand is elastic.</li><li>Long-run: price cut may be matched by rivals (Bertrand-style), eroding the initial gain.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">Free entry and exit in monopolistic competition drives long-run profits to normal level.</div>
-</div><h2 class="section">Question 5 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Subsidy shifts supply curve for UK-commissioned content rightward &rarr; more production, lower price.</li><li>Benefits: employment in creative industries; external benefits from cultural production; reduced market failure if positive externalities exist.</li><li>Costs: opportunity cost of public funds; risk of subsidising projects that would have happened anyway (additionality concern).</li></ul></div><div class="mcq-ans"><span class="ans">Answer: C</span>
-  <div class="rationale">A subsidy to producers reduces production cost &rarr; supply shifts right.</div>
-</div><p style="text-align: right; font-weight: 700; margin: 6mm 0;">TOTAL FOR SECTION A = 25 MARKS</p><h2 class="section">Question 6(a) &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>CR4 approx 83% (Netflix 31 + Amazon 23 + Disney 18 + Apple 11) &rarr; tight oligopoly.</li><li>High brand loyalty and network/content effects as barriers to entry.</li><li>Product differentiation through original content.</li><li>Evidence of coordinated pricing moves consistent with oligopolistic interdependence.</li></ul></div><h2 class="section">Question 6(b) — 12 marks &mdash; Total 12 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-3</td><td>Isolated elements of knowledge. Limited application and analysis.</td></tr><tr><td class="lv">Level 2</td><td class="range">4-6</td><td>Accurate knowledge with application to the context. Some reasoned analysis.</td></tr><tr><td class="lv">Level 3</td><td class="range">7-9</td><td>Clear, developed chains of analysis applied to the context with accurate use of data.</td></tr><tr><td class="lv">Level 4</td><td class="range">10-12</td><td>Fully developed, logically sound chains of analysis with integration of multiple data sources.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Rising wholesale content costs (streaming wars, wage inflation in Hollywood).</li><li>Economies of scale in content now saturated &rarr; need higher subscription prices to service fixed costs.</li><li>Consolidation (Paramount/Peacock) &rarr; reduced competitive pressure allowing coordinated rises.</li><li>Subscriber lock-in / high switching costs from catalogue familiarity and embedded profiles.</li><li>Shift from pure-subscription to ad-supported tiers (price discrimination strategy) &rarr; higher headline prices on ad-free tier.</li><li>Demand remains relatively inelastic among core subscribers.</li></ul></div><h2 class="section">Question 6(c) — 8 marks &mdash; Total 8 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-2</td><td>Isolated elements of knowledge and understanding. Brief attempt at application or analysis.</td></tr><tr><td class="lv">Level 2</td><td class="range">3-5</td><td>Accurate knowledge and understanding with application to the context. Some reasoned chains of analysis.</td></tr><tr><td class="lv">Level 3</td><td class="range">6-8</td><td>Clear, accurate and developed knowledge, understanding, application and analysis of the context. Logical and well-reasoned chains.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Niche differentiation (e.g. BritBox British content, MUBI arthouse film) &rarr; attracts segments under-served by majors.</li><li>Lower pricing using licensed rather than original content lowers cost base.</li><li>Bundled distribution through broadband ISPs or mobile operators (e.g. Sky Stream, Vodafone).</li><li>Evaluation: smaller players still face cost disadvantage and limited marketing budget.</li></ul></div><h2 class="section">Question 6(d) — 10 marks &mdash; Total 10 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-2</td><td>Isolated elements of knowledge and understanding. Brief and unsupported evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">3-5</td><td>Accurate knowledge, understanding and application to the context. Evaluation is generic rather than context-based.</td></tr><tr><td class="lv">Level 3</td><td class="range">6-8</td><td>Clear chains of analysis applied to the context. Evaluation is context-based with some supporting evidence.</td></tr><tr><td class="lv">Level 4</td><td class="range">9-10</td><td>Fully developed chains of analysis applied to the context. Evaluative judgement is fully supported by reasoned argument and evidence from the extracts.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Acquisition reduces independent broadcasters &rarr; reduced plurality and content diversity.</li><li>Concentration of advertising revenue &rarr; possible rise in prices or reduced ad choice.</li><li>Scale could enable more investment in British drama &rarr; consumer benefits if content quality rises.</li><li>CMA scrutiny likely to impose behavioural or structural remedies &rarr; limits on consumer harm.</li><li>Evaluation: depends on size of acquirer, conditions imposed, and counterfactual (is C4 sustainable without the deal?).</li></ul></div><h2 class="section">Question 6(e) — 15 marks &mdash; Total 15 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-3</td><td>Isolated knowledge; limited application or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">4-7</td><td>Accurate knowledge and some application. Evaluation is generic or one-sided.</td></tr><tr><td class="lv">Level 3</td><td class="range">8-11</td><td>Developed chains of analysis applied to the context. Balanced evaluation with some judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">12-15</td><td>Sophisticated, fully developed analysis and evaluation. Clear, supported judgement drawing on extracts and own knowledge.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>A 30% UK-content quota raises costs for platforms &rarr; possible pass-through to consumers.</li><li>Supply-side effects: guaranteed market for UK producers, potential positive externalities for creative industries.</li><li>Demand-side: some foreign content substituted out &rarr; consumer welfare loss if quality/preference match falls.</li><li>Distortion of competition &rarr; smaller platforms may be disproportionately burdened.</li><li>International trade implications (WTO complaints; retaliation).</li><li>Evaluation: quota level and enforcement design crucial; tradable content credits could reduce distortion; evidence from French 40% rule is mixed.</li></ul></div><p style="text-align: right; font-weight: 700; margin: 6mm 0;">TOTAL FOR SECTION B = 50 MARKS</p><h2 class="section">Question 7 — 25 marks &mdash; Total 25 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-5</td><td>Isolated knowledge; limited application, analysis or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">6-11</td><td>Accurate knowledge with some application. Evaluation is unbalanced or underdeveloped.</td></tr><tr><td class="lv">Level 3</td><td class="range">12-17</td><td>Developed chains of analysis applied to context. Balanced evaluation with reasoned judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">18-21</td><td>Sophisticated, fully developed analysis. Evaluation integrates micro and macro perspectives with supported conclusion.</td></tr><tr><td class="lv">Level 5</td><td class="range">22-25</td><td>Exceptional analysis drawing on synoptic links. Sustained, well-reasoned evaluation with decisive, defensible judgement.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Digital Fair Trading Code addresses self-preferencing by dominant platforms (vertical restraints).</li><li>Benefits for small sellers: increased visibility, lower customer-acquisition cost, reduced entry barriers.</li><li>Costs: enforcement overhead; platforms may pass compliance costs to consumers; regulatory risk of 'cure worse than disease'.</li><li>Consumer welfare: more product variety but possibly less efficient algorithmic matching.</li><li>Evaluation: international precedent (EU Digital Markets Act); depends on design of code and remedies for non-compliance.</li></ul></div><h2 class="section">Question 8 — 25 marks &mdash; Total 25 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-5</td><td>Isolated knowledge; limited application, analysis or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">6-11</td><td>Accurate knowledge with some application. Evaluation is unbalanced or underdeveloped.</td></tr><tr><td class="lv">Level 3</td><td class="range">12-17</td><td>Developed chains of analysis applied to context. Balanced evaluation with reasoned judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">18-21</td><td>Sophisticated, fully developed analysis. Evaluation integrates micro and macro perspectives with supported conclusion.</td></tr><tr><td class="lv">Level 5</td><td class="range">22-25</td><td>Exceptional analysis drawing on synoptic links. Sustained, well-reasoned evaluation with decisive, defensible judgement.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Subscription model reallocates rent from producers to platforms via consumer lock-in.</li><li>Supports higher producer investment in quality (catalogue breadth) but may concentrate industry structure.</li><li>Examples: streaming (Netflix, Disney), software (Adobe Creative Cloud), gaming (Xbox Game Pass), media (subscriptions for FT, NYT).</li><li>Counter-examples: subscription models in fitness, meal kits (HelloFresh) face high churn &rarr; limited power shift.</li><li>Evaluation: power shift is real in some industries but contestable where switching costs are low; regulation (DMA) partially offsetting.</li></ul></div>
-<p style="margin-top: 20mm; text-align: center; font-size: 9pt; color: #888;">&mdash; END OF MARK SCHEME &mdash;</p>
+
+<h4 class="sub-heading">10-mark "Assess" (KAA = 6, Evaluation = 4)</h4>
+<table class="level">
+  <tr><th class="lvlcol">Level</th><th class="markcol">KAA marks</th><th>Descriptor</th></tr>
+  <tr><td class="lvlcol">L1</td><td class="markcol">1&ndash;2</td><td>Limited knowledge; weak application.</td></tr>
+  <tr><td class="lvlcol">L2</td><td class="markcol">3&ndash;4</td><td>Sound theory applied to context.</td></tr>
+  <tr><td class="lvlcol">L3</td><td class="markcol">5&ndash;6</td><td>Accurate detailed theory, well applied; developed chains.</td></tr>
+</table>
+
+<h4 class="sub-heading">12-mark "Discuss with diagram" (KAA = 8, Evaluation = 4)</h4>
+<table class="level">
+  <tr><th class="lvlcol">Level</th><th class="markcol">KAA marks</th><th>Descriptor</th></tr>
+  <tr><td class="lvlcol">L1</td><td class="markcol">1&ndash;2</td><td>Limited knowledge; weak or missing diagram.</td></tr>
+  <tr><td class="lvlcol">L2</td><td class="markcol">3&ndash;5</td><td>Sound knowledge; reasonable diagram; some application.</td></tr>
+  <tr><td class="lvlcol">L3</td><td class="markcol">6&ndash;8</td><td>Accurate knowledge; correctly labelled diagram; developed chains.</td></tr>
+</table>
+
+<h4 class="sub-heading">15-mark "Discuss" (KAA = 9, Evaluation = 6)</h4>
+<table class="level">
+  <tr><th class="lvlcol">Level</th><th class="markcol">KAA marks</th><th>Descriptor</th></tr>
+  <tr><td class="lvlcol">L1</td><td class="markcol">1&ndash;3</td><td>Limited knowledge; weak application.</td></tr>
+  <tr><td class="lvlcol">L2</td><td class="markcol">4&ndash;6</td><td>Sound knowledge with application; some development.</td></tr>
+  <tr><td class="lvlcol">L3</td><td class="markcol">7&ndash;9</td><td>Accurate detailed knowledge; developed chains; relevant diagrams.</td></tr>
+</table>
+
+<h4 class="sub-heading">25-mark Essay "Evaluate" (KAA = 15, Evaluation = 10)</h4>
+<table class="level">
+  <tr><th class="lvlcol">Level</th><th class="markcol">KAA marks</th><th>Descriptor</th></tr>
+  <tr><td class="lvlcol">L1</td><td class="markcol">1&ndash;5</td><td>Limited knowledge; basic theory.</td></tr>
+  <tr><td class="lvlcol">L2</td><td class="markcol">6&ndash;9</td><td>Sound theory applied to context.</td></tr>
+  <tr><td class="lvlcol">L3</td><td class="markcol">10&ndash;12</td><td>Accurate detailed theory, well applied; relevant diagrams.</td></tr>
+  <tr><td class="lvlcol">L4</td><td class="markcol">13&ndash;15</td><td>Comprehensive, sophisticated theory; diagrams used analytically.</td></tr>
+</table>
+<table class="level">
+  <tr><th class="lvlcol">Level</th><th class="markcol">Eval marks</th><th>Descriptor</th></tr>
+  <tr><td class="lvlcol">L1</td><td class="markcol">1&ndash;3</td><td>Assertion without support.</td></tr>
+  <tr><td class="lvlcol">L2</td><td class="markcol">4&ndash;6</td><td>Supported evaluation; some judgement.</td></tr>
+  <tr><td class="lvlcol">L3</td><td class="markcol">7&ndash;8</td><td>Developed evaluation; reasoned judgement.</td></tr>
+  <tr><td class="lvlcol">L4</td><td class="markcol">9&ndash;10</td><td>Sophisticated evaluation with prioritised judgement.</td></tr>
+</table>
+
+<!-- ============ SECTION A ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section A &mdash; Questions 1 to 5</h3>
+
+<h4 class="sub-heading">Question 1 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">1(a)</td>
+  <td><b>Answer: C &ndash; an increase in demand for food delivery services</b> (1). Rising total spend on a normal good with growing adoption is most consistent with a rightward shift in demand.</td>
+  <td class="markscol">1</td></tr>
+  <tr><td class="qcol">1(b)</td>
+  <td>Diagram (4): correctly labelled axes Price and Quantity (1); D<sub>1</sub> and D<sub>2</sub> shown with D<sub>2</sub> to the right of D<sub>1</sub> (1); upward-sloping supply curve (1); new equilibrium P<sub>2</sub>Q<sub>2</sub> above and to the right of P<sub>1</sub>Q<sub>1</sub> (1).</td>
+  <td class="markscol">4</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 2 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">2(a)</td>
+  <td>Substitution: PED &times; %&Delta;P = &minus;0.3 &times; 8% (method, 1); answer: <b>&minus;2.4%</b> (1). Accept correct answer without working.</td>
+  <td class="markscol">2</td></tr>
+  <tr><td class="qcol">2(b)</td>
+  <td>Petrol is a necessity for commuters (1); few short-run substitutes and inelastic derived demand from existing car ownership (1). Accept: addictive habits, fuel prices a small share of household budget.</td>
+  <td class="markscol">2</td></tr>
+  <tr><td class="qcol">2(c)</td>
+  <td><b>Answer: C &ndash; rise</b> (1). With inelastic PED the proportionate fall in Qd (2.4%) is smaller than the proportionate rise in P (8%), so TR rises.</td>
+  <td class="markscol">1</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 3 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">3(a)</td>
+  <td><b>Calculation:</b> 1,200,000 tonnes &times; &pound;210.82 = <b>&pound;252,984,000</b> (accept &pound;253m or &pound;252.98m). Award 1 mark for correct method (tonnes &times; rate), 1 mark for correct numerical answer.</td>
+  <td class="markscol">2</td></tr>
+  <tr><td class="qcol">3(b)(i)</td>
+  <td><b>Consumer burden:</b> price rose by &pound;850 &minus; &pound;700 = &pound;150 out of a &pound;210.82 tax, so consumer burden = 150 / 210.82 &times; 100 = <b>71.1%</b> (accept 71.0&ndash;71.2%).</td>
+  <td class="markscol">1</td></tr>
+  <tr><td class="qcol">3(b)(ii)</td>
+  <td><b>Producer burden:</b> 100 &minus; 71.1 = <b>28.9%</b> (accept 28.8&ndash;29.0%); or (&pound;210.82 &minus; &pound;150) / &pound;210.82 &times; 100 = 28.9%.</td>
+  <td class="markscol">1</td></tr>
+  <tr><td class="qcol">3(c)</td>
+  <td><b>Answer: C &ndash; A move closer to the socially optimal level of output</b> (1). The tax internalises part of the external cost, raising private marginal cost toward social marginal cost.</td>
+  <td class="markscol">1</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 4 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">4(a)</td>
+  <td>2&times;2 payoff matrix (4): two firms labelled (e.g. Firm A / Firm B) (1); strategies &ldquo;Share info&rdquo; / &ldquo;Don't share&rdquo; (1); four payoff cells with numeric values (1); dominant strategy of &ldquo;Share info&rdquo; / Nash equilibrium identified (1).</td>
+  <td class="markscol">4</td></tr>
+  <tr><td class="qcol">4(b)</td>
+  <td><b>Answer: B &ndash; Overt collusion</b> (1). Sharing commercially sensitive pricing information at meetings is explicit cooperation and therefore overt.</td>
+  <td class="markscol">1</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 5 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">5(a)</td>
+  <td><b>Answer: C &ndash; Backward vertical integration</b> (1). Tesco is acquiring a supplier upstream in its supply chain.</td>
+  <td class="markscol">1</td></tr>
+  <tr><td class="qcol">5(b)</td>
+  <td>Any one internal economy of scale with linked chain (2): e.g. purchasing economies (1) &mdash; Tesco can bulk-buy packaging inputs for frozen lines from the acquired wholesaler's supply base, lowering unit costs (1). Accept technical, managerial, financial or risk-bearing economies.</td>
+  <td class="markscol">2</td></tr>
+  <tr><td class="qcol">5(c)</td>
+  <td>Any one plausible CMA concern with chain (2): e.g. vertical foreclosure (1) &mdash; Tesco could restrict rival supermarkets' access to the wholesaler's distribution network, reducing competition in frozen retail (1). Accept: increased barriers to entry, concerns about data sharing with rivals.</td>
+  <td class="markscol">2</td></tr>
+</table>
+
+<!-- ============ SECTION B ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section B &mdash; Question 6: The UK supermarket sector</h3>
+
+<h4 class="sub-heading">Question 6(a) &ndash; Calculate the three-firm concentration ratio for the UK grocery market (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">6(a)</td>
+  <td>
+    Working: Tesco 27.9 + Sainsbury's 15.1 + Asda 12.6 (1 mark for identifying top three)<br>
+    = 55.6 (1 mark for addition)<br>
+    Answer: <b>three-firm concentration ratio = 55.6%</b> (2 marks for correct answer with unit)<br>
+    <b>Evaluation (1):</b> &ldquo;Indicates the top three firms hold 55.6% of the market, suggesting a moderately concentrated oligopoly rather than a highly concentrated market.&rdquo;
+  </td>
+  <td class="markscol">5</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 6(b) &ndash; Discuss the likely impact of rising input and staff costs on the profitability of UK supermarkets (12 marks)</h4>
+<p class="indicative-heading">Diagram required: cost and revenue diagram showing AC<sub>1</sub>, MC<sub>1</sub> shifting upwards to AC<sub>2</sub>, MC<sub>2</sub>.</p>
+<div class="kaa-split">
+  <div>
+    <h5>KAA with diagram (out of 8)</h5>
+    <ul>
+      <li>Cost/revenue diagram: AC and MC shift up due to rising input prices and wages; with AR/MR unchanged, profit-maximising output Q* falls and supernormal profit area (P&minus;AC)&times;Q shrinks.</li>
+      <li>Tesco margin fell 60bps (4.5% &rarr; 3.9%).</li>
+      <li>National Living Wage up 9.8% then 6.7% &mdash; labour is a major variable cost (typically 10&ndash;12% of revenue).</li>
+      <li>Wheat price up ~34% from April 2024 trough.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 4)</h5>
+    <ul>
+      <li>Supermarkets have some pricing power to pass costs on, especially on non-competitive SKUs.</li>
+      <li>Intense competition from discounters and price-matching schemes limits pass-through.</li>
+      <li>Large chains may respond via automation (self-checkout, robotics) or by squeezing suppliers.</li>
+      <li><b>Judgement:</b> rising costs are clearly margin-compressing but firms with scale and loyalty advantages (Tesco) can absorb more than weaker competitors. Mid-tier players (Morrisons, Asda) most at risk of structural damage.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 6(c) &ndash; Examine two factors that may cause significant changes in the global price of wheat (8 marks)</h4>
+<p class="indicative-heading">Indicative content (at least two distinct factors developed):</p>
+<ul>
+  <li><b>Supply-side shocks:</b> adverse weather, geopolitical conflict disrupting Black Sea exports, fertiliser price rises. Wheat supply is price-inelastic in the short run (planting-to-harvest lag), so supply shifts produce large price changes.</li>
+  <li><b>Demand-side factors:</b> rising global population, biofuel demand, speculative futures trading, income growth in emerging markets raising demand for meat (and hence feed wheat). Demand is income-inelastic in developed markets, more elastic in developing ones.</li>
+  <li><b>Speculation and storage:</b> wheat inventories held by traders; expectations of future shortages amplify price swings.</li>
+  <li><b>Application to Figure 2:</b> prices rose from US\$218 (Apr 2024) to US\$292 (Jan 2025), a ~34% rise &mdash; consistent with a supply-side shock hitting an inelastic market.</li>
+</ul>
+<p class="indicative-heading">Award 8-mark "Examine" band (KAA = 5, Eval = 3).</p>
+
+<h4 class="sub-heading">Question 6(d) &ndash; Assess the likely impact on Tesco of Aldi and Lidl's rising market share (10 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 6)</h5>
+    <ul>
+      <li>Tesco's operating margin falling from 4.5% to 3.9% shows clear margin compression.</li>
+      <li>Price-matching schemes (Aldi Price Match) reduce revenue per unit.</li>
+      <li>Narrow Aldi/Lidl range (1,800 SKUs) gives them lower unit costs Tesco can't match at scale.</li>
+      <li>Tesco's non-price differentiation (Clubcard, range, online) remains a defensive moat.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 4)</h5>
+    <ul>
+      <li>Short-run margin damage is real but long-run Tesco still leads market at 27.9%.</li>
+      <li>Loyalty-scheme data (Clubcard) is a competitive advantage discounters cannot easily replicate.</li>
+      <li>Sustained discounter growth (12% &rarr; 18% since 2019) points to structural shift in consumer preferences post-cost-of-living crisis.</li>
+      <li><b>Judgement:</b> impact is margin-compressing rather than share-destroying for Tesco; the firms most at risk from discounter expansion are mid-tier players, not the market leader.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 6(e) &ndash; Discuss whether the UK grocery market is contestable (15 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 9)</h5>
+    <p><b>Contestability framework:</b> low entry barriers, hit-and-run entry possible, low sunk costs, pool of potential entrants, no strategic barriers.</p>
+    <p><b>Evidence FOR contestability:</b></p>
+    <ul>
+      <li>Aldi and Lidl's successful entry and growth from &lt;6% combined (2010) to &gt;18% (2025).</li>
+      <li>Ocado Retail shows online-only model is viable.</li>
+      <li>Convenience segment sees entry by symbol groups (Nisa, Premier).</li>
+    </ul>
+    <p><b>Evidence AGAINST contestability:</b></p>
+    <ul>
+      <li>Top 4 control 64.3% of market.</li>
+      <li>Huge sunk costs (distribution centres, store freeholds) &mdash; not &ldquo;hit-and-run&rdquo; markets.</li>
+      <li>Brand loyalty (Clubcard data).</li>
+      <li>Land-banking and restrictive covenants on retail sites act as strategic entry barriers.</li>
+      <li>Procurement scale advantages make new entrants vulnerable.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 6)</h5>
+    <ul>
+      <li>Market shows SOME features of contestability at segment level (discounters at low-price end; Ocado in premium online) but the headline national market remains a tight oligopoly.</li>
+      <li>Contestability is partial and uneven &mdash; strong in some segments, weak in others.</li>
+      <li>Convenience and online are more contestable than big-box grocery.</li>
+      <li>Discounter success may overstate contestability &mdash; Aldi and Lidl entered over decades, not years.</li>
+      <li><b>Judgement:</b> the UK grocery market is imperfectly contestable &mdash; not a textbook contestable market, but sufficiently open at segment level that the dominant firms face meaningful competitive pressure. Regulatory vigilance (CMA) matters to preserve what contestability exists.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ SECTION C ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section C &mdash; Question 7 OR Question 8 (25 marks)</h3>
+
+<h4 class="sub-heading">Question 7 &ndash; Evaluate whether a fall in the number of firms in an oligopolistic market is likely to harm consumers (25 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 15)</h5>
+    <ul>
+      <li>Oligopoly theory: kinked demand curve, tacit and overt collusion, game theory.</li>
+      <li>Concentration ratio, barriers to entry, non-price competition.</li>
+      <li>Consumer surplus, allocative/productive efficiency, dynamic efficiency.</li>
+      <li>Regulatory framework (CMA, Ofcom).</li>
+      <li>Application to named industry (e.g. UK mobile networks post-Vodafone/Three merger): concentration rises from CR4 = 100% to CR3 = 100% but with fewer rivals; potential impact on prices, investment in 5G, innovation.</li>
+      <li>Diagram expected: oligopoly equilibrium vs. more-competitive counterfactual, showing P &gt; MC gap widening.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 10)</h5>
+    <ul>
+      <li>Fewer firms &ne; worse outcomes if dynamic efficiency gains (economies of scale in 5G rollout funded by stronger balance sheets) outweigh static losses.</li>
+      <li>Merger remedies (spectrum divestment) can mitigate harm.</li>
+      <li>Counter: collusion easier with fewer players; non-price competition may substitute.</li>
+      <li>Depends on market structure &mdash; if still contestable, harm limited.</li>
+      <li>Depends on regulatory strength.</li>
+      <li><b>Judgement:</b> on balance, in heavily regulated markets with effective competition authorities, harm is limited; in weakly regulated markets, real consumer detriment likely. Context-specific rather than universal.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 8 &ndash; Evaluate the factors that determine wage rates in an occupation of your choice (25 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 15)</h5>
+    <ul>
+      <li>Marginal revenue product of labour (MRPL) theory: wage = MRPL in competitive labour market.</li>
+      <li>Demand for labour: derived demand, MRPL = MPP &times; MR.</li>
+      <li>Supply of labour: working conditions, qualifications, migration, geographic mobility.</li>
+      <li>Trade-union / professional-body bargaining power; monopsony (e.g. NHS for nurses).</li>
+      <li>Government intervention: National Living Wage, public-sector pay review bodies.</li>
+      <li>Application to chosen occupation (e.g. nurses, HGV drivers, software engineers): specific supply constraints (training time ~4 years for nurses; Tier 2 visa caps for migrant labour); MRPL often hard to measure in public services.</li>
+      <li>Diagram expected: labour demand and supply with equilibrium wage; monopsony variant showing MC<sub>L</sub> &gt; wage.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 10)</h5>
+    <ul>
+      <li>MRPL model requires competitive market assumption &mdash; breaks down in monopsony.</li>
+      <li>Non-pecuniary factors (vocation, security) matter for nursing.</li>
+      <li>Short vs. long run: training lags mean shortages persist.</li>
+      <li>Public vs. private sector dynamics differ fundamentally.</li>
+      <li><b>Judgement:</b> for occupations with long training pipelines and monopsony employers (nursing), supply-side and institutional factors dominate; for high-skilled private-sector roles (software engineers), MRPL and global labour mobility dominate.</li>
+    </ul>
+  </div>
+</div>
+
+<div style="margin-top: 10mm; border-top: 1.5px solid #000; padding-top: 3mm; text-align: center; font-weight: 700;">
+  TOTAL FOR PAPER = 100 MARKS
+</div>
+
 </div>
 </body>
 </html>

@@ -2,522 +2,143 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Pearson Edexcel A Level Economics A Paper 1 (9EC0/01) &mdash; Advanced (v4)</title>
+<title>Pearson Edexcel A Level Economics A Paper 1 (9EC0/01) — Advanced</title>
 <style>
-    /* ============================================================
-   Pearson Edexcel A Level Economics — shared exam-paper styles
-   ============================================================ */
-
-@page {
-  size: A4;
-  margin: 0;
-}
-
+@page { size: A4; margin: 0; }
 * { box-sizing: border-box; }
-
 html, body {
-  margin: 0;
-  padding: 0;
-  background: #d8d8d8;
+  margin: 0; padding: 0; background: #d8d8d8;
   font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
-  font-size: 10.5pt;
-  line-height: 1.35;
-  color: #000;
+  font-size: 10.5pt; line-height: 1.35; color: #000;
 }
-
-/* ---- A4 page wrapper ------------------------------------- */
 .page {
-  width: 210mm;
-  height: 297mm;
-  background: #fff;
-  margin: 10mm auto;
-  position: relative;
-  page-break-after: always;
-  overflow: hidden;
+  width: 210mm; height: 297mm; background: #fff;
+  margin: 10mm auto; position: relative;
+  page-break-after: always; overflow: hidden;
   box-shadow: 0 1px 6px rgba(0,0,0,0.25);
 }
-
 .page:last-child { page-break-after: auto; }
-
 @media print {
   html, body { background: #fff; }
   .page { margin: 0; box-shadow: none; }
   .no-print { display: none !important; }
 }
-
-/* ---- Diagonal hatched margins with vertical DO NOT WRITE text ---- */
-/* Bands on the OUTER side of the page (left of left-hand pages,
-   right of right-hand pages). Pearson alternates per page. */
 .hatch {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 11mm;
+  position: absolute; top: 0; bottom: 0; width: 11mm;
   background-image:
-    repeating-linear-gradient(135deg,
-      rgba(0,0,0,0.28) 0 0.4mm,
-      transparent 0.4mm 1.4mm),
-    repeating-linear-gradient(45deg,
-      rgba(0,0,0,0.28) 0 0.4mm,
-      transparent 0.4mm 1.4mm);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  pointer-events: none;
+    repeating-linear-gradient(135deg, rgba(0,0,0,0.28) 0 0.4mm, transparent 0.4mm 1.4mm),
+    repeating-linear-gradient(45deg, rgba(0,0,0,0.28) 0 0.4mm, transparent 0.4mm 1.4mm);
+  display: flex; flex-direction: column; justify-content: space-around;
+  align-items: center; pointer-events: none;
 }
-
 .hatch.left  { left: 0; }
 .hatch.right { right: 0; }
-
 .hatch .dnw {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-weight: 700;
-  font-size: 7pt;
-  letter-spacing: 0.4px;
-  color: #444;
-  background: #fff;
-  padding: 3mm 1px;
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  font-weight: 700; font-size: 7pt; letter-spacing: 0.4px;
+  color: #444; background: #fff; padding: 3mm 1px;
 }
-
-/* ---- Rounded content border ------------------------------ */
 .frame {
-  position: absolute;
-  top: 10mm;
-  left: 14mm;
-  right: 14mm;
-  bottom: 22mm;
-  border: 1px solid #000;
-  border-radius: 5mm;
-  padding: 7mm 9mm 8mm 9mm;
-  overflow: hidden;
+  position: absolute; top: 10mm; left: 14mm; right: 14mm; bottom: 22mm;
+  border: 1px solid #000; border-radius: 5mm;
+  padding: 7mm 9mm 8mm 9mm; overflow: hidden;
 }
-
-/* ---- Bottom-of-page furniture ---------------------------- */
-.page-number {
-  position: absolute;
-  bottom: 8mm;
-  font-weight: 700;
-  font-size: 10pt;
-}
+.page-number { position: absolute; bottom: 8mm; font-weight: 700; font-size: 10pt; }
 .page-number.left  { left: 14mm; }
 .page-number.right { right: 14mm; }
-
 .barcode {
-  position: absolute;
-  bottom: 8mm;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: "Libre Barcode 39", "Courier New", monospace;
-  font-size: 9pt;
-  letter-spacing: 0;
-  white-space: nowrap;
+  position: absolute; bottom: 8mm; left: 50%; transform: translateX(-50%);
 }
 .barcode .bars {
   display: inline-block;
   background-image: repeating-linear-gradient(90deg,
-    #000 0 0.4mm, transparent 0.4mm 0.8mm,
-    #000 0.8mm 1.6mm, transparent 1.6mm 2.0mm,
-    #000 2.0mm 2.2mm, transparent 2.2mm 3.2mm);
-  width: 50mm;
-  height: 6mm;
-  vertical-align: middle;
+    #000 0 0.4mm, transparent 0.4mm 0.8mm, #000 0.8mm 1.6mm,
+    transparent 1.6mm 2.0mm, #000 2.0mm 2.2mm, transparent 2.2mm 3.2mm);
+  width: 50mm; height: 6mm;
 }
-.barcode .code {
-  font-family: "Courier New", monospace;
-  font-size: 8.5pt;
-  letter-spacing: 2px;
-  margin-top: 1px;
-}
-
 .turn-over {
-  position: absolute;
-  bottom: 13mm;
-  right: 14mm;
-  font-style: italic;
-  font-weight: 700;
-  font-size: 10pt;
+  position: absolute; bottom: 13mm; right: 14mm;
+  font-style: italic; font-weight: 700; font-size: 10pt;
 }
-.turn-over::after {
-  content: " \25B6";
-  color: #000;
-}
-
-/* ---- Cover page -------------------------------------------- */
-.cover-box {
-  border: 1px solid #000;
-  border-radius: 4mm;
-  padding: 0;
-  margin: 0 0 10mm 0;
-  overflow: hidden;
-}
-
-.cover-row {
-  display: flex;
-  border-bottom: 1px solid #000;
-}
+.turn-over::after { content: " \25B6"; }
+.cover-box { border: 1px solid #000; border-radius: 4mm; margin: 0 0 10mm 0; overflow: hidden; }
+.cover-row { display: flex; border-bottom: 1px solid #000; }
 .cover-row:last-child { border-bottom: none; }
-
-.name-fields {
-  flex: 1;
-  padding: 4mm 5mm 3mm 5mm;
-  border-right: 1px solid #000;
-}
+.name-fields { flex: 1; padding: 4mm 5mm 3mm 5mm; border-right: 1px solid #000; }
 .name-fields .label { font-size: 9pt; }
-.name-fields .pair {
-  display: flex;
-  gap: 4mm;
-  margin-top: 1.5mm;
-}
+.name-fields .pair { display: flex; gap: 4mm; margin-top: 1.5mm; }
 .name-fields .pair > div { flex: 1; }
 .name-fields .pair .tag { font-size: 8.5pt; color: #222; margin-bottom: 1mm; }
 .name-fields .pair input {
-  width: 100%;
-  height: 7mm;
-  border: 0.5pt solid #000;
-  border-radius: 1mm;
-  background: #fff;
-  font-size: 11pt;
-  padding: 0 2mm;
+  width: 100%; height: 7mm; border: 0.5pt solid #000;
+  border-radius: 1mm; background: #fff; font-size: 11pt; padding: 0 2mm;
 }
-
-.centre-candidate {
-  padding: 3mm 5mm;
-  font-size: 8.5pt;
-  display: flex;
-  gap: 4mm;
-}
-.centre-candidate > div { flex: 1; }
-.centre-candidate .boxes {
-  display: flex;
-  gap: 1mm;
-  margin-top: 1mm;
-}
-.centre-candidate .boxes span {
-  width: 5.5mm;
-  height: 7mm;
-  border: 0.5pt solid #000;
-  border-radius: 1mm;
-  background: #fff;
-}
-
-.subject-block {
-  padding: 5mm 5mm 4mm 5mm;
-  background: #fff;
-}
-.subject-block .brand-line {
-  font-size: 11pt;
-  font-weight: 700;
-  margin-bottom: 2mm;
-}
-.subject-block .subject-name {
-  font-size: 24pt;
-  font-weight: 700;
-  color: #000;
-  line-height: 1.1;
-}
-.subject-block .sub-title {
-  font-size: 13pt;
-  font-weight: 700;
-  margin-top: 1.5mm;
-}
-.subject-block .paper-title {
-  font-size: 13pt;
-  font-weight: 700;
-  margin-top: 0.5mm;
-}
-
-.session-row {
-  display: flex;
-}
-.session-row .session {
-  flex: 1;
-  padding: 3mm 5mm;
-  border-right: 1px solid #000;
-  font-weight: 700;
-  font-size: 11pt;
-}
+.subject-block { padding: 5mm 5mm 4mm 5mm; }
+.subject-block .subject-name { font-size: 24pt; font-weight: 700; line-height: 1.1; }
+.subject-block .sub-title { font-size: 13pt; font-weight: 700; margin-top: 1.5mm; }
+.subject-block .paper-title { font-size: 13pt; font-weight: 700; margin-top: 0.5mm; }
+.session-row { display: flex; }
+.session-row .session { flex: 1; padding: 3mm 5mm; border-right: 1px solid #000; font-weight: 700; font-size: 11pt; }
 .session-row .session .time { margin-top: 1mm; }
-.session-row .reference {
-  width: 52mm;
-  padding: 3mm 5mm;
-  text-align: left;
-}
+.session-row .reference { width: 52mm; padding: 3mm 5mm; }
 .session-row .reference .tag { font-size: 9pt; }
-.session-row .reference .code {
-  font-size: 16pt;
-  font-weight: 700;
-  margin-top: 1mm;
-}
-
-.materials-row {
-  display: flex;
-}
-.materials-row .mat {
-  flex: 1;
-  padding: 3mm 5mm;
-  border-right: 1px solid #000;
-  font-size: 10pt;
-}
-.materials-row .marks {
-  width: 52mm;
-  padding: 3mm 5mm;
-  font-size: 9pt;
-}
-
-.pearson-brand {
-  font-family: "Trebuchet MS", sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.2px;
-}
+.session-row .reference .code { font-size: 16pt; font-weight: 700; margin-top: 1mm; }
+.materials-row { display: flex; }
+.materials-row .mat { flex: 1; padding: 3mm 5mm; border-right: 1px solid #000; font-size: 10pt; }
+.materials-row .marks-cell { width: 52mm; padding: 3mm 5mm; font-size: 9pt; }
+.pearson-brand { font-family: "Trebuchet MS", sans-serif; font-weight: 700; letter-spacing: -0.2px; }
 .pearson-brand .pearson { font-size: 15pt; }
-.pearson-brand .edexcel {
-  background: #000;
-  color: #fff;
-  padding: 1px 4px;
-  font-size: 13pt;
-}
-
-/* Instruction lists */
-.section-head {
-  font-weight: 700;
-  font-size: 11.5pt;
-  margin: 5mm 0 1.5mm 0;
-}
-.bullets {
-  margin: 0 0 4mm 0;
-  padding-left: 6mm;
-  list-style: none;
-}
-.bullets li {
-  position: relative;
-  padding-left: 4mm;
-  margin-bottom: 1mm;
-  font-size: 10.5pt;
-}
-.bullets li::before {
-  content: "\2022";
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-.bullets li em { color: #222; }
-.bullets li b { font-weight: 700; }
-
+.pearson-brand .edexcel { background: #000; color: #fff; padding: 1px 4px; font-size: 13pt; }
+.section-head { font-weight: 700; font-size: 11.5pt; margin: 5mm 0 1.5mm 0; }
+.bullets { margin: 0 0 4mm 0; padding-left: 6mm; list-style: none; }
+.bullets li { position: relative; padding-left: 4mm; margin-bottom: 1mm; font-size: 10.5pt; }
+.bullets li::before { content: "\2022"; position: absolute; left: 0; top: 0; }
 .cover-footer {
-  position: absolute;
-  bottom: 8mm;
-  left: 14mm;
-  right: 14mm;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  font-size: 8.5pt;
+  position: absolute; bottom: 8mm; left: 14mm; right: 14mm;
+  display: flex; justify-content: space-between; align-items: flex-end; font-size: 8.5pt;
 }
 .cover-footer .left { font-family: "Courier New", monospace; font-size: 10pt; letter-spacing: 1px; }
 .cover-footer .left small { font-size: 7pt; display: block; margin-top: 1mm; }
-.cover-footer .right {
-  font-family: "Trebuchet MS", sans-serif;
-  font-weight: 700;
-}
-.cover-footer .right .pearson { font-size: 14pt; }
-
-/* ---- Section header inside a frame ----------------------- */
-.section-title {
-  text-align: center;
-  font-weight: 700;
-  font-size: 13pt;
-  margin: 2mm 0 4mm 0;
-  letter-spacing: 0.5px;
-}
-.section-intro {
-  text-align: center;
-  font-size: 10.5pt;
-  margin-bottom: 2mm;
-}
-.section-intro b { font-weight: 700; }
-
-/* ---- Questions -------------------------------------------- */
-.question {
-  margin-top: 4mm;
-  position: relative;
-}
-.question .qnum {
-  position: absolute;
-  left: -6mm;
-  font-weight: 700;
-}
-.question .qbody { padding-left: 0; }
-
-.qpart {
-  margin: 3mm 0 1mm 0;
-}
-.qpart .plabel { font-weight: 400; }
-
-.marks {
-  display: block;
-  text-align: right;
-  font-weight: 700;
-  margin: 1mm 0;
-}
-
+.cover-footer .right .pearson { font-size: 14pt; font-family: "Trebuchet MS", sans-serif; font-weight: 700; }
+.section-title { text-align: center; font-weight: 700; font-size: 13pt; margin: 2mm 0 4mm 0; letter-spacing: 0.5px; }
+.section-intro { text-align: center; font-size: 10.5pt; margin-bottom: 2mm; }
+.question { margin-top: 4mm; position: relative; }
+.question .qnum { position: absolute; left: -6mm; font-weight: 700; }
+.qpart { margin: 3mm 0 1mm 0; }
+.marks { display: inline-block; float: right; text-align: right; font-weight: 700; margin: 0 0 0 2mm; }
+.qpart::after { content: ""; display: block; clear: both; }
 .mcq { margin: 2mm 0 2mm 5mm; }
-.mcq .opt {
-  display: flex;
-  align-items: center;
-  gap: 3mm;
-  margin: 1.2mm 0;
-}
-.mcq .tickbox {
-  width: 4.5mm;
-  height: 4.5mm;
-  border: 0.5pt solid #000;
-  display: inline-block;
-}
+.mcq .opt { display: flex; align-items: center; gap: 3mm; margin: 1.2mm 0; }
+.mcq .tickbox { width: 4.5mm; height: 4.5mm; border: 0.5pt solid #000; display: inline-block; }
 .mcq .optlabel { font-weight: 700; width: 4mm; }
-
-.total-line {
-  text-align: right;
-  font-weight: 700;
-  border-top: 0.5pt solid #000;
-  margin-top: 2mm;
-  padding-top: 1mm;
+.total-line { text-align: right; font-weight: 700; border-top: 0.5pt solid #000; margin-top: 2mm; padding-top: 1mm; }
+.section-total { text-align: center; font-weight: 700; margin-top: 6mm; letter-spacing: 0.5px; }
+.lines-auto {
+  margin-top: 2mm; width: 100%; height: 210mm;
+  background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, #777 7.2mm 7.3mm);
 }
-
-.section-total {
-  text-align: center;
-  font-weight: 700;
-  margin-top: 6mm;
-  letter-spacing: 0.5px;
-}
-
-/* ---- Dotted answer lines --------------------------------- */
-.lines {
-  margin-top: 2mm;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent 7.5mm,
-    #777 7.5mm,
-    #777 7.5mm
-  );
-  background-size: 100% 8mm;
-  background-repeat: repeat-y;
-  width: 100%;
-}
-/* Better approach: generated lines as flex rows */
-.lines-flex { display: flex; flex-direction: column; gap: 0; margin-top: 2mm; }
-.lines-flex .line {
-  height: 8mm;
-  border-bottom: 0.4pt dotted #777;
-}
-
-/* ---- Tables ------------------------------------------------ */
+.q-continued { font-weight: 700; margin-bottom: 2mm; }
+.figure-title, .extract-title { font-weight: 700; margin: 4mm 0 1mm 0; font-size: 10.5pt; }
+.extract-body { padding: 2mm 2mm; font-size: 10.5pt; line-height: 1.45; margin-bottom: 3mm; }
+.extract-body p { margin: 0 0 2mm 0; }
+.extract-body .source { font-style: italic; font-size: 9.5pt; margin-top: 2mm; color: #222; }
+.figure { margin: 3mm 0; text-align: center; }
+.figure svg { max-width: 100%; height: auto; }
+.figure .caption { font-size: 9.5pt; font-style: italic; margin-top: 2mm; }
 table.data {
-  border-collapse: collapse;
-  margin: 3mm auto;
-  font-size: 10pt;
-  width: 100%;
+  border-collapse: collapse; margin: 3mm auto; font-size: 10pt; width: 100%;
 }
-table.data th, table.data td {
-  border: 0.5pt solid #000;
-  padding: 2mm 3mm;
-  text-align: center;
-  vertical-align: middle;
-}
-table.data th {
-  font-weight: 700;
-  background: #f0f0f0;
-}
-
-/* ---- Extract boxes (Section B) --------------------------- */
-.figure-title, .extract-title {
-  font-weight: 700;
-  margin: 4mm 0 1mm 0;
-  font-size: 10.5pt;
-}
-.extract-body {
-  position: relative;
-  padding: 2mm 12mm 2mm 2mm;
-  font-size: 10.5pt;
-  line-height: 1.4;
-  margin-bottom: 3mm;
-  counter-reset: extract-line;
-}
-.extract-body p {
-  margin: 0 0 2mm 0;
-}
-.extract-body .lineno {
-  position: absolute;
-  right: 4mm;
-  font-size: 9pt;
-  color: #000;
-  font-weight: 400;
-}
-.extract-body .source {
-  font-style: italic;
-  font-size: 9.5pt;
-  margin-top: 2mm;
-  color: #222;
-}
-
-/* ---- SVG figures ----------------------------------------- */
-.figure {
-  margin: 3mm 0;
-  text-align: center;
-}
-.figure svg {
-  max-width: 100%;
-  height: auto;
-}
-.figure .caption {
-  font-size: 9.5pt;
-  font-style: italic;
-  margin-top: 2mm;
-  text-align: center;
-}
-
-/* ---- Nav + print button (screen only) -------------------- */
-.topnav {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  background: #fff;
-  border: 1px solid #999;
-  padding: 8px 14px;
-  border-radius: 4px;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-  z-index: 1000;
-}
-.topnav a, .topnav button {
-  margin: 0 6px;
-  color: #0b49a0;
-  text-decoration: none;
-  background: none;
-  border: none;
-  font: inherit;
-  cursor: pointer;
-}
-.topnav button { font-weight: 700; }
-
-/* Utility */
-.center { text-align: center; }
-.italic { font-style: italic; }
-.bold { font-weight: 700; }
-.small { font-size: 9pt; }
-.mt2 { margin-top: 2mm; }
-.mt4 { margin-top: 4mm; }
-.mt6 { margin-top: 6mm; }
-.mb2 { margin-bottom: 2mm; }
-
-.cell { display:inline-block; width: 6mm; height: 7mm; border: 0.5pt solid #000; border-radius: 1mm; background:#fff; }
-
+table.data th, table.data td { border: 0.5pt solid #000; padding: 2mm 3mm; text-align: center; vertical-align: middle; }
+table.data th { font-weight: 700; background: #f0f0f0; }
+.cell { display: inline-block; width: 6mm; height: 7mm; border: 0.5pt solid #000; border-radius: 1mm; background: #fff; }
+.centre-candidate { padding: 3mm 5mm; font-size: 8.5pt; display: flex; gap: 4mm; }
+.centre-candidate > div { flex: 1; }
+.centre-candidate .boxes { display: flex; gap: 1mm; margin-top: 1mm; }
 </style>
 </head>
 <body>
+
+<!-- ================ PAGE 1: COVER ================ -->
 <div class="page">
   <div class="frame" style="padding: 10mm 12mm;">
     <div class="cover-box">
@@ -532,10 +153,7 @@ table.data th {
         <div style="width: 52mm;">
           <div class="centre-candidate" style="padding: 4mm 5mm; flex-direction: column; gap: 2mm;">
             <div>
-              <div class="pearson-brand">
-                <span class="pearson">Pearson</span>
-                <span class="edexcel">Edexcel</span>
-              </div>
+              <div class="pearson-brand"><span class="pearson">Pearson</span> <span class="edexcel">Edexcel</span></div>
               <div style="font-size: 10pt; font-weight: 700; margin-top: 1mm;">Level 3 GCE</div>
             </div>
           </div>
@@ -544,20 +162,8 @@ table.data th {
       <div class="cover-row">
         <div class="name-fields" style="padding: 3mm 5mm;">
           <div class="pair">
-            <div>
-              <div class="tag">Centre Number</div>
-              <div class="boxes" style="display: flex; gap: 1mm;">
-                <span class="cell"></span><span class="cell"></span><span class="cell"></span>
-                <span class="cell"></span><span class="cell"></span><span class="cell"></span>
-              </div>
-            </div>
-            <div>
-              <div class="tag">Candidate Number</div>
-              <div class="boxes" style="display: flex; gap: 1mm;">
-                <span class="cell"></span><span class="cell"></span><span class="cell"></span>
-                <span class="cell"></span><span class="cell"></span><span class="cell"></span>
-              </div>
-            </div>
+            <div><div class="tag">Centre Number</div><div class="boxes"><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span></div></div>
+            <div><div class="tag">Candidate Number</div><div class="boxes"><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span></div></div>
           </div>
         </div>
         <div style="width: 52mm; padding: 3mm 5mm;"></div>
@@ -570,355 +176,297 @@ table.data th {
         </div>
       </div>
       <div class="session-row">
-        <div class="session">
-          Friday 19 June 2026 &ndash; Morning
-          <div class="time">Time: 2 hours</div>
-        </div>
-        <div class="reference">
-          <div class="tag">Paper Reference</div>
-          <div class="code">9EC0/01</div>
-        </div>
+        <div class="session">Wednesday 3 June 2026 &ndash; Morning<div class="time">Time: 2 hours</div></div>
+        <div class="reference"><div class="tag">Paper Reference</div><div class="code">9EC0/01</div></div>
       </div>
       <div class="materials-row">
         <div class="mat">You do not need any other materials.</div>
-        <div class="marks">Total Marks<br><br></div>
+        <div class="marks-cell">Total Marks<br><br></div>
       </div>
     </div>
-
     <div class="section-head">Instructions</div>
     <ul class="bullets">
       <li>Use <b>black</b> ink or ball-point pen.</li>
-      <li><b>Fill in the boxes</b> at the top of this page with your name,<br>centre number and candidate number.</li>
-      <li>There are three sections in this question paper. Answer <b>all</b> questions from Section A and Section B. Answer <b>one</b> question from Section C.</li>
-      <li>Answer the questions in the spaces provided<br><em>&ndash; there may be more space than you need.</em></li>
+      <li><b>Fill in the boxes</b> at the top of this page with your name, centre number and candidate number.</li>
+      <li>There are <b>three</b> sections in this question paper. Answer <b>ALL</b> questions from Section A and Section B. Answer <b>ONE</b> question from Section C.</li>
+      <li>Answer the questions in the spaces provided <em>&ndash; there may be more space than you need.</em></li>
     </ul>
-
     <div class="section-head">Information</div>
     <ul class="bullets">
-      <li>The total mark for this paper is 100.</li>
-      <li>The marks for <b>each</b> question are shown in brackets<br><em>&ndash; use this as a guide as to how much time to spend on each question.</em></li>
+      <li>The total mark for this paper is <b>100</b>.</li>
+      <li>The marks for each question are shown in brackets <em>&ndash; use this as a guide as to how much time to spend on each question.</em></li>
       <li>Calculators may be used.</li>
     </ul>
-
     <div class="section-head">Advice</div>
     <ul class="bullets">
       <li>Read each question carefully before you start to answer it.</li>
       <li>Check your answers if you have time at the end.</li>
     </ul>
   </div>
-
   <div class="hatch right" style="width: 8mm;"><span class="dnw">&nbsp;</span></div>
-
   <div class="turn-over">Turn over</div>
   <div class="cover-footer">
-    <div class="left">
-      P72345A<br>
-      <small>&copy;2026 Pearson Education Ltd.</small><br>
-      <small>1/1/1/1/1/1/1</small>
-    </div>
-    <div style="flex: 1; text-align: center;">
-      <span class="barcode"><span class="bars"></span></span>
-    </div>
-    <div class="right pearson-brand">
-      <span class="pearson">Pearson</span>
-    </div>
+    <div class="left">P72102A<br><small>&copy;2026 Pearson Education Ltd.</small><br><small>1/1/1/1/1/1/1</small></div>
+    <div style="flex: 1; text-align: center;"><span class="barcode"><span class="bars"></span></span></div>
+    <div class="right pearson-brand"><span class="pearson">Pearson</span></div>
   </div>
 </div>
 
-<style>
-.cell { display:inline-block; width: 6mm; height: 7mm; border: 0.5pt solid #000; border-radius: 1mm; background:#fff; }
-</style>
+<!-- ================ PAGE 2: Q1 (Netflix subs) ================ -->
 <div class="page">
   <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
   <div class="frame">
-<div style="text-align: center; padding: 3mm 0;">
-  <h2 style="margin: 0 0 3mm 0; font-size: 14pt;">SECTION A</h2>
-  <p style="font-weight: 700; margin: 2mm 0;">Answer ALL questions. Write your answers in the spaces provided.</p>
-  <p style="font-size: 9.5pt; margin: 2mm 0;">Some questions must be answered with a cross in a box &#9747;. If you change your mind about an answer, put a line through the box &#9747; and then mark your new answer with a cross &#9747;.</p>
-  <p style="font-style: italic; margin: 2mm 0;">You are advised to spend 30 minutes on this section.</p>
-  <p style="font-style: italic; margin: 2mm 0;">Use the data to support your answers where relevant. You may annotate and include diagrams in your answers.</p>
-</div>
-<div class="question"><span class="qnum">1</span><div class="qbody">The table shows global data-centre GPU revenue by supplier, 2023 vs 2025.</div></div><table class="data"><tr><th>Supplier</th><th>2023 revenue ($bn)</th><th>2025 revenue ($bn)</th><th>Share 2025 (%)</th></tr><tr><td>Nvidia</td><td>47.5</td><td>128.0</td><td></td></tr><tr><td>AMD</td><td>3.8</td><td>12.5</td><td></td></tr><tr><td>Intel (Gaudi)</td><td>0.6</td><td>2.2</td><td></td></tr><tr><td>Others (Google TPU, custom silicon)</td><td>4.1</td><td>14.3</td><td></td></tr></table><div class="qpart">(a) Complete the last column and calculate Nvidia's 2025 market share to the nearest whole percent. Show your working. <span class="marks">(4)</span></div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="qpart">(b) On the basis of the data, the data-centre GPU market in 2025 is best described as: <span class="marks">(1)</span></div><div class="mcq"><div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>perfect competition</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>a near-monopoly</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>a tight oligopoly with equal market shares</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>a contestable monopolistically-competitive market</span></div></div><div class="total-line">(Total for Question 1 = 5 marks)</div>  </div>
+    <div style="text-align: center; padding: 3mm 0;">
+      <h2 style="margin: 0 0 3mm 0; font-size: 14pt;">SECTION A</h2>
+      <p style="font-weight: 700; margin: 2mm 0;">Answer ALL questions. Write your answers in the spaces provided.</p>
+      <p style="font-size: 9.5pt; margin: 2mm 0;">Some questions must be answered with a cross in a box &#9747;. If you change your mind about an answer, put a line through the box &#9747; and then mark your new answer with a cross &#9747;.</p>
+      <p style="font-style: italic; margin: 2mm 0;">You are advised to spend 30 minutes on this section.</p>
+    </div>
+    <div class="question"><span class="qnum">1</span><div style="padding-left: 2mm;">The table shows quarterly Netflix UK subscribers.</div></div>
+    <table class="data">
+      <tr><th>Quarter</th><th>Subscribers (millions)</th></tr>
+      <tr><td>Q1 2024</td><td>17.8</td></tr>
+      <tr><td>Q2 2024</td><td>17.9</td></tr>
+      <tr><td>Q3 2024</td><td>18.2</td></tr>
+      <tr><td>Q4 2024</td><td>18.9</td></tr>
+      <tr><td>Q1 2025</td><td>18.7</td></tr>
+    </table>
+    <div style="font-size: 9pt; font-style: italic; text-align: center; margin-top: 1mm;">Source: adapted from https://www.statista.com/statistics/netflix-uk-subscribers</div>
+    <div class="qpart">(a) The small Q1 2025 fall is most likely to reflect: <span class="marks">(1)</span></div>
+    <div class="mcq">
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>rising cross-price elasticity with rival services</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>a rise in Netflix's income elasticity of demand</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>an increase in demand from substitutes after Netflix's price rise</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>a shift along Netflix's supply curve</span></div>
+    </div>
+    <div class="qpart">(b) Draw a supply and demand diagram showing the likely effect of Netflix raising its subscription price on the market for its streaming service, assuming the firm has imperfectly elastic demand. <span class="marks">(4)</span></div>
+    <div style="height: 55mm; background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, #777 7.2mm 7.3mm);"></div>
+    <div class="total-line">(Total for Question 1 = 5 marks)</div>
+  </div>
   <div class="page-number left">2</div>
   <div class="barcode"><span class="bars"></span></div>
 </div>
+
+<!-- ================ PAGE 3: Q2 (YED and XED) ================ -->
 <div class="page">
   <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
   <div class="frame">
-<div class="question"><span class="qnum">2</span><div class="qbody">Nvidia's H100 chip was priced at around $30,000 per unit in 2024, with estimated marginal cost of around $3,500 per chip. Gross margins on data-centre GPUs exceeded 75%.</div></div><div class="qpart">(a) Calculate the Lerner Index (markup over marginal cost) for the Nvidia H100. Show your working. <span class="marks">(2)</span></div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="qpart">(b) Explain what this Lerner Index value implies about Nvidia's market power in 2024. <span class="marks">(2)</span></div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="qpart">(c) A Lerner Index of zero implies: <span class="marks">(1)</span></div><div class="mcq"><div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>a pure monopolist</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>perfect competition with price equal to marginal cost</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>a price-taking monopsonist</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>negative supernormal profits</span></div></div><div class="total-line">(Total for Question 2 = 5 marks)</div>  </div>
+    <div class="question"><span class="qnum">2</span><div style="padding-left: 2mm;">The income elasticity of demand (YED) for UK restaurant meals is estimated at +1.6. The cross-price elasticity of demand (XED) for meal-kit delivery services with respect to the price of restaurant meals is +0.9.</div></div>
+    <div class="qpart">(a) UK real disposable incomes rise by 4%. Ceteris paribus, calculate the percentage change in quantity demanded for restaurant meals. <span class="marks">(2)</span></div>
+    <div style="height: 22mm; background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, #777 7.2mm 7.3mm);"></div>
+    <div class="qpart">(b) The average price of restaurant meals falls by 5%. Ceteris paribus, calculate the percentage change in quantity demanded for meal-kit delivery services. <span class="marks">(2)</span></div>
+    <div style="height: 22mm; background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, #777 7.2mm 7.3mm);"></div>
+    <div class="qpart">(c) Based on the data, restaurant meals and meal-kit delivery services are: <span class="marks">(1)</span></div>
+    <div class="mcq">
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>complements and both normal goods</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>substitutes and both inferior goods</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>complements and both luxury goods</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>substitutes and both normal goods, with restaurant meals a luxury</span></div>
+    </div>
+    <div class="total-line">(Total for Question 2 = 5 marks)</div>
+  </div>
   <div class="page-number right">3</div>
   <div class="barcode"><span class="bars"></span></div>
 </div>
+
+<!-- ================ PAGE 4: Q3 (ULEZ) ================ -->
 <div class="page">
   <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
   <div class="frame">
-<div class="question"><span class="qnum">3</span><div class="qbody">In 2023 the US Department of Commerce imposed export controls restricting the sale of advanced AI chips to China. The diagram below shows the effect on the global AI-chip market.</div></div><div class="figure"><svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg" style="max-width: 105mm;">
-  <line x1="60" y1="20" x2="60" y2="230" stroke="#000"/>
-  <line x1="60" y1="230" x2="400" y2="230" stroke="#000"/>
-  <text x="10" y="20" font-size="10">Price</text>
-  <text x="290" y="250" font-size="10">Quantity</text>
-  <line x1="90" y1="220" x2="380" y2="60" stroke="#000"/>
-  <text x="385" y="65" font-size="11">S&#8321;</text>
-  <line x1="120" y1="220" x2="380" y2="40" stroke="#000" stroke-dasharray="4 3"/>
-  <text x="385" y="45" font-size="11">S&#8322;</text>
-  <line x1="90" y1="50" x2="380" y2="210" stroke="#000"/>
-  <text x="385" y="215" font-size="11">D</text>
-  <line x1="60" y1="135" x2="235" y2="135" stroke="#666" stroke-dasharray="2 2"/>
-  <text x="30" y="139" font-size="10">P&#8321;</text>
-  <line x1="235" y1="135" x2="235" y2="230" stroke="#666" stroke-dasharray="2 2"/>
-  <line x1="60" y1="100" x2="205" y2="100" stroke="#666" stroke-dasharray="2 2"/>
-  <text x="30" y="104" font-size="10">P&#8322;</text>
-  <line x1="205" y1="100" x2="205" y2="230" stroke="#666" stroke-dasharray="2 2"/>
-</svg></div><div class="qpart">(a) With reference to the diagram, explain the likely effects of the US export controls on the global AI-chip market. <span class="marks">(4)</span></div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="qpart">(b) Strategic trade theory suggests export controls on critical technologies are most justified when: <span class="marks">(1)</span></div><div class="mcq"><div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>the domestic industry has perfectly competitive firms</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>the target country has no domestic substitutes</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>there is positive strategic-industry spillover that the exporting country wishes to retain</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>the goods have perfectly elastic supply</span></div></div><div class="total-line">(Total for Question 3 = 5 marks)</div>  </div>
+    <div class="question"><span class="qnum">3</span><div style="padding-left: 2mm;">Air pollution in London's Ultra Low Emission Zone (ULEZ) is estimated to cause the early deaths of over 4,000 Londoners per year. Vehicles failing to meet emission standards pay a &pound;12.50 daily charge. Before ULEZ expansion, approximately 80,000 non-compliant vehicles entered the zone daily; after expansion this fell to 30,000 non-compliant vehicles (who pay the charge). TfL estimates the marginal external cost of each non-compliant journey at &pound;10.</div></div>
+    <div style="font-size: 9pt; font-style: italic; margin-top: 1mm;">Source: adapted from https://tfl.gov.uk/modes/driving/ultra-low-emission-zone</div>
+    <div class="qpart">(a) Calculate the annual revenue raised by the &pound;12.50 ULEZ daily charge. You are advised to show your working. <span class="marks">(2)</span></div>
+    <div style="height: 24mm; background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, #777 7.2mm 7.3mm);"></div>
+    <div class="qpart">(b) (i) Calculate the percentage reduction in non-compliant vehicles entering the ULEZ following expansion. You are advised to show your working. <span class="marks">(1)</span></div>
+    <div style="height: 16mm; background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, #777 7.2mm 7.3mm);"></div>
+    <div class="qpart">(b) (ii) Calculate the total daily external cost avoided as a result of fewer non-compliant vehicles entering the zone. You are advised to show your working. <span class="marks">(1)</span></div>
+    <div style="height: 16mm; background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, #777 7.2mm 7.3mm);"></div>
+    <div class="qpart">(c) Which <b>one</b> is most likely a limitation of the ULEZ charge as a response to negative externalities? <span class="marks">(1)</span></div>
+    <div class="mcq">
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>Information asymmetry leading to adverse selection</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>Demand for car journeys is price-inelastic in the short run</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>The charge increases the external cost of driving</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>The charge removes market failure completely</span></div>
+    </div>
+    <div class="total-line">(Total for Question 3 = 5 marks)</div>
+  </div>
   <div class="page-number left">4</div>
   <div class="barcode"><span class="bars"></span></div>
 </div>
+
+<!-- ================ PAGE 5: Q4 (Concrete collusion) ================ -->
 <div class="page">
   <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
   <div class="frame">
-<div class="question"><span class="qnum">4</span><div class="qbody">In 2024 OpenAI reportedly spent around $5 billion on compute costs, primarily to Microsoft Azure. These costs are expected to rise sharply with the next generation of frontier AI models.</div></div><div class="qpart">(a) Using a cost and revenue diagram, show how rising compute costs might affect the incentive for firms to enter the frontier AI model market. <span class="marks">(4)</span></div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="qpart">(b) A market in which the minimum efficient scale is large relative to total demand is most likely to exhibit: <span class="marks">(1)</span></div><div class="mcq"><div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>perfect competition with many small firms</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>a natural monopoly or tight oligopoly</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>zero barriers to entry</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>strong contestability with many potential entrants</span></div></div><div class="total-line">(Total for Question 4 = 5 marks)</div>  </div>
+    <div class="question"><span class="qnum">4</span><div style="padding-left: 2mm;">In 2025, the CMA fined three UK construction-supplies firms &pound;85 million for collusion on concrete prices. The firms attended meetings where they agreed to refuse to supply disfavoured customers.</div></div>
+    <div style="font-size: 9pt; font-style: italic; margin-top: 1mm;">Source: adapted from https://www.gov.uk/cma-concrete-suppliers-fine-2025</div>
+    <div class="qpart">(a) Draw a two-firm / two-strategy game theory matrix showing why concrete suppliers may prefer to collude. <span class="marks">(4)</span></div>
+    <div style="height: 65mm; background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, #777 7.2mm 7.3mm);"></div>
+    <div class="qpart">(b) Which <b>one</b> of the following best explains why the collusion broke down when investigated? <span class="marks">(1)</span></div>
+    <div class="mcq">
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>Tacit agreements are legally enforceable</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>Each firm has an individual incentive to deviate if undetected</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>Concrete is a differentiated product</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>The market is perfectly contestable</span></div>
+    </div>
+    <div class="total-line">(Total for Question 4 = 5 marks)</div>
+  </div>
   <div class="page-number right">5</div>
   <div class="barcode"><span class="bars"></span></div>
 </div>
+
+<!-- ================ PAGE 6: Q5 (Microsoft-Activision) ================ -->
 <div class="page">
   <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
   <div class="frame">
-<div class="question"><span class="qnum">5</span><div class="qbody">In 2025 the UK government announced an 'AI Compute Fund' of &pound;1.5 billion to subsidise public-sector and academic access to AI compute resources.</div></div><div class="qpart">(a) Explain one likely market-failure justification for this AI Compute Fund subsidy. <span class="marks">(4)</span></div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="qpart">(b) A subsidy that internalises a positive externality should be set equal to: <span class="marks">(1)</span></div><div class="mcq"><div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>the total private benefit</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>the marginal external benefit at the socially optimal quantity</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>the marginal private cost</span></div><div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>the total external cost</span></div></div><div class="total-line">(Total for Question 5 = 5 marks)</div><div class="section-total">TOTAL FOR SECTION A = 25 MARKS</div>  </div>
+    <div class="question"><span class="qnum">5</span><div style="padding-left: 2mm;">In 2024, Microsoft completed its \$69 billion acquisition of Activision Blizzard, the maker of <i>Call of Duty</i> and <i>World of Warcraft</i>, subject to CMA remedies requiring divestment of cloud-gaming rights.</div></div>
+    <div style="font-size: 9pt; font-style: italic; margin-top: 1mm;">Source: adapted from https://www.gov.uk/cma-microsoft-activision-decision</div>
+    <div class="qpart">(a) Microsoft's acquisition of Activision is an example of: <span class="marks">(1)</span></div>
+    <div class="mcq">
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">A</span><span>Forward vertical integration</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">B</span><span>Backward vertical integration</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">C</span><span>Horizontal integration</span></div>
+      <div class="opt"><span class="tickbox"></span><span class="optlabel">D</span><span>Conglomerate integration</span></div>
+    </div>
+    <div class="qpart">(b) Explain <b>one</b> type of internal economy of scale Microsoft may gain from this acquisition. <span class="marks">(2)</span></div>
+    <div style="height: 22mm; background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, #777 7.2mm 7.3mm);"></div>
+    <div class="qpart">(c) Explain <b>one</b> reason why the CMA required remedies despite approving the merger. <span class="marks">(2)</span></div>
+    <div style="height: 22mm; background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, #777 7.2mm 7.3mm);"></div>
+    <div class="total-line">(Total for Question 5 = 5 marks)</div>
+    <div class="section-total">TOTAL FOR SECTION A = 25 MARKS</div>
+  </div>
   <div class="page-number left">6</div>
   <div class="barcode"><span class="bars"></span></div>
 </div>
+
+<!-- ================ PAGE 7: SECTION B INTRO + FIGURES ================ -->
 <div class="page">
   <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
   <div class="frame">
-    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; text-align: center;">
-      <p style="font-weight: 700; margin-bottom: 10mm;">BLANK PAGE</p>
-      <p style="font-weight: 700;">QUESTION 6 BEGINS ON THE NEXT PAGE.</p>
+    <div style="text-align: center; padding: 3mm 0;">
+      <h2 style="margin: 0 0 3mm 0; font-size: 14pt;">SECTION B</h2>
+      <p style="font-weight: 700; margin: 2mm 0;">Read Figures 1 and 2 and Extracts A and B before answering Question 6.</p>
+      <p style="font-size: 10pt;">Write your answers in the spaces provided.</p>
+      <p style="font-style: italic;">You are advised to spend 1 hour on this section.</p>
+    </div>
+    <div class="question"><span class="qnum">6</span><b>UK streaming services market</b></div>
+    <div class="figure-title">Figure 1: UK video streaming market share (subscribers), 2024</div>
+    <table class="data">
+      <tr><th>Service</th><th>Share (%)</th></tr>
+      <tr><td>Netflix</td><td>34</td></tr>
+      <tr><td>Amazon Prime Video</td><td>24</td></tr>
+      <tr><td>Disney+</td><td>17</td></tr>
+      <tr><td>Now TV (Sky)</td><td>9</td></tr>
+      <tr><td>Apple TV+</td><td>6</td></tr>
+      <tr><td>Paramount+</td><td>5</td></tr>
+      <tr><td>Others</td><td>5</td></tr>
+    </table>
+    <div style="font-size: 9pt; font-style: italic; text-align: center; margin-top: 1mm;">Source: adapted from https://www.ofcom.org.uk/research-and-data/multi-sector-research/media-nations</div>
+    <div class="figure-title" style="margin-top: 4mm;">Figure 2: Average revenue per user (ARPU) for UK Netflix subscribers (&pound;/month)</div>
+    <div class="figure">
+      <svg viewBox="0 0 500 170" xmlns="http://www.w3.org/2000/svg" style="max-width: 135mm;">
+        <line x1="60" y1="15" x2="60" y2="140" stroke="#000"/>
+        <line x1="60" y1="140" x2="470" y2="140" stroke="#000"/>
+        <text x="10" y="15" font-size="9">&pound;/mo</text>
+        <g font-size="9">
+          <text x="75" y="155">2020</text><text x="155" y="155">2021</text><text x="235" y="155">2022</text>
+          <text x="315" y="155">2023</text><text x="395" y="155">2024</text>
+        </g>
+        <g font-size="9">
+          <text x="30" y="143">9.5</text><text x="25" y="108">10.5</text><text x="25" y="73">11.5</text><text x="25" y="38">12.5</text>
+        </g>
+        <!-- 9.89, 10.27, 10.93, 11.42, 12.04 -->
+        <polyline fill="none" stroke="#000" stroke-width="2"
+          points="90,127 170,113 250,90 330,73 410,52"/>
+        <circle cx="90" cy="127" r="2.5" fill="#000"/>
+        <circle cx="170" cy="113" r="2.5" fill="#000"/>
+        <circle cx="250" cy="90" r="2.5" fill="#000"/>
+        <circle cx="330" cy="73" r="2.5" fill="#000"/>
+        <circle cx="410" cy="52" r="2.5" fill="#000"/>
+      </svg>
+      <div class="caption">Source: adapted from https://www.statista.com/statistics/netflix-arpu-uk</div>
     </div>
   </div>
   <div class="page-number right">7</div>
   <div class="barcode"><span class="bars"></span></div>
 </div>
+
+<!-- ================ PAGE 8: EXTRACTS A & B ================ -->
 <div class="page">
   <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
   <div class="frame">
-<div style="text-align: center; padding: 3mm 0;">
-  <h2 style="margin: 0 0 3mm 0; font-size: 14pt;">SECTION B</h2>
-  <p style="font-weight: 700; margin: 2mm 0;">Read Figures 1 and 2 and the following extracts (A to C) before answering Question 6.</p>
-  <p style="font-size: 10pt;">Write your answers in the spaces provided.</p>
-  <p style="font-style: italic;">You are advised to spend 1 hour on this section.</p>
-</div>
-<div class="question"><span class="qnum">6</span><div class="qbody"><b>The global AI-compute market</b></div></div><div class="figure-title">Figure 1: Data-centre GPU market share by revenue, 2025</div><div class="figure"><svg viewBox="0 0 460 220" xmlns="http://www.w3.org/2000/svg" style="max-width: 130mm;">
-  <g transform="translate(110 110)">
-    <path d="M 0 0 L 0 -95 A 95 95 0 1 1 -92 -20 Z" fill="#000"/>
-    <path d="M 0 0 L -92 -20 A 95 95 0 0 1 -78 -55 Z" fill="#555"/>
-    <path d="M 0 0 L -78 -55 A 95 95 0 0 1 -42 -85 Z" fill="#888"/>
-    <path d="M 0 0 L -42 -85 A 95 95 0 0 1 0 -95 Z" fill="#bbb"/>
-  </g>
-  <g font-size="11" fill="#000">
-    <text x="225" y="70">Nvidia 82%</text>
-    <text x="225" y="93">AMD 8%</text>
-    <text x="225" y="116">Intel / Gaudi 1%</text>
-    <text x="225" y="139">Others (TPU, custom) 9%</text>
-  </g>
-</svg><div class="caption">Source: adapted from Omdia &amp; industry analyst reports, 2025</div></div><div class="figure-title" style="margin-top: 5mm;">Figure 2: Global AI compute capex by hyperscaler, 2021&ndash;2025 ($bn)</div><div class="figure"><svg viewBox="0 0 460 200" xmlns="http://www.w3.org/2000/svg" style="max-width: 130mm;">
-  <line x1="60" y1="20" x2="60" y2="170" stroke="#000"/>
-  <line x1="60" y1="170" x2="430" y2="170" stroke="#000"/>
-  <text x="10" y="20" font-size="9">$bn</text>
-  <g font-size="9">
-    <text x="65" y="185">2021</text><text x="140" y="185">2022</text><text x="215" y="185">2023</text>
-    <text x="290" y="185">2024</text><text x="365" y="185">2025</text>
-  </g>
-  <g font-size="9">
-    <text x="35" y="173">0</text><text x="35" y="135">50</text><text x="30" y="100">100</text>
-    <text x="30" y="65">150</text><text x="30" y="30">200</text>
-  </g>
-  <rect x="70" y="148" width="18" height="22" fill="#000"/>
-  <rect x="90" y="150" width="18" height="20" fill="#666"/>
-  <rect x="110" y="155" width="18" height="15" fill="#bbb"/>
-  <rect x="145" y="140" width="18" height="30" fill="#000"/>
-  <rect x="165" y="143" width="18" height="27" fill="#666"/>
-  <rect x="185" y="148" width="18" height="22" fill="#bbb"/>
-  <rect x="220" y="120" width="18" height="50" fill="#000"/>
-  <rect x="240" y="122" width="18" height="48" fill="#666"/>
-  <rect x="260" y="128" width="18" height="42" fill="#bbb"/>
-  <rect x="295" y="80" width="18" height="90" fill="#000"/>
-  <rect x="315" y="85" width="18" height="85" fill="#666"/>
-  <rect x="335" y="95" width="18" height="75" fill="#bbb"/>
-  <rect x="370" y="40" width="18" height="130" fill="#000"/>
-  <rect x="390" y="50" width="18" height="120" fill="#666"/>
-  <rect x="410" y="70" width="18" height="100" fill="#bbb"/>
-  <g font-size="9">
-    <rect x="275" y="10" width="10" height="10" fill="#000"/><text x="290" y="19">Microsoft</text>
-    <rect x="345" y="10" width="10" height="10" fill="#666"/><text x="360" y="19">Google</text>
-    <rect x="405" y="10" width="10" height="10" fill="#bbb"/><text x="420" y="19">Meta</text>
-  </g>
-</svg><div class="caption">Source: adapted from company filings &amp; industry reports, 2025</div></div>  </div>
+    <div class="extract-title">Extract A</div>
+    <div class="extract-title" style="font-style: italic; font-weight: 600; margin-top: 1mm;">Password-sharing crackdown tests customer loyalty</div>
+    <div class="extract-body">
+      <p>Netflix ended password-sharing across households in the UK in 2023, forcing users to either subscribe individually or pay an &ldquo;extra member&rdquo; fee of &pound;4.99 per month. Initial churn was higher than expected, but subscriber numbers recovered within two quarters. Netflix has since launched an ad-supported tier at &pound;4.99 per month, attracting price-sensitive consumers.</p>
+      <p>Content spending in the global streaming market reached \$140 billion in 2024, with Netflix alone spending \$17 billion on new content. Production costs for original content have risen sharply &mdash; the cost of producing a high-end drama series has roughly doubled since 2019, driven by a &ldquo;talent war&rdquo; between streamers. Some analysts argue the industry has entered a &ldquo;winner-takes-most&rdquo; phase where smaller platforms struggle to justify content investment.</p>
+      <p>Disney+ and Paramount+ have begun bundling their services. In the US, Disney+ and Hulu merged their content libraries in 2024. In the UK, Sky has responded by integrating streaming apps directly into its Sky Glass and Sky Stream hardware.</p>
+      <p class="source">(Source: adapted from https://www.ft.com/content/streaming-economics-2024)</p>
+    </div>
+    <div class="extract-title">Extract B</div>
+    <div class="extract-title" style="font-style: italic; font-weight: 600; margin-top: 1mm;">Content is king, but distribution is queen</div>
+    <div class="extract-body">
+      <p>The streaming market shows features of monopolistic competition (many differentiated products, low switching costs) but also of oligopoly (top 4 = 84% of subscribers). Consumer surveys show 62% of UK households now subscribe to two or more streaming services, up from 37% in 2020. However, 18% of subscribers in 2024 said they planned to cancel at least one service within 12 months, suggesting the market is reaching saturation.</p>
+      <p>The UK regulator Ofcom has expressed concern about the &ldquo;algorithmic recommendation&rdquo; systems used by streamers, which it argues may harm smaller UK production companies by favouring in-house originals. Ofcom is investigating whether prominence obligations should be placed on streamers similar to those required on traditional broadcasters.</p>
+      <p class="source">(Source: adapted from https://www.ofcom.org.uk/streaming-market-review-2024)</p>
+    </div>
+  </div>
   <div class="page-number left">8</div>
   <div class="barcode"><span class="bars"></span></div>
 </div>
+
+<!-- ================ PAGE 9: Q6 PARTS ================ -->
 <div class="page">
   <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
   <div class="frame">
-<div class="extract-title">Extract A</div><div class="extract-title" style="font-style: italic; font-weight: 600; margin-top: 1mm;">Nvidia's commanding lead</div><div class="extract-body"><p>Nvidia's dominance of the AI-chip market has become one of the defining economic stories of the 2020s. The company's data-centre revenue rose from $15 billion in 2022 to over $128 billion in 2025, giving it an estimated 82% share of AI accelerator sales. Its gross margins of around 75% are among the highest in any large industry.</p><p>This position rests on three pillars: a decade-old software ecosystem (CUDA) which represents very high switching costs for customers; unrivalled performance per watt on the most demanding AI workloads; and privileged access to the leading-edge manufacturing capacity at TSMC. Competitors including AMD and startups such as Cerebras have made technical progress but struggle to break the software moat.</p><p style="font-style: italic; font-size: 9pt;">(Source: adapted from The Economist, 2025)</p></div>  </div>
+    <div class="qpart">6 (a) With reference to Figure 1, calculate the four-firm concentration ratio for the UK streaming market. <span class="marks">(5)</span></div>
+    <div class="qpart">(b) Using a cost and revenue diagram, discuss the likely impact of rising content production costs on the profitability of UK streaming services (Extract A). <span class="marks">(12)</span></div>
+    <div class="qpart">(c) With reference to Figure 2 and your knowledge of pricing strategy, examine <b>two</b> factors that may explain the rise in Netflix's UK ARPU. <span class="marks">(8)</span></div>
+    <div class="qpart">(d) With reference to Extract A, assess whether Netflix is likely to be a profit maximiser. <span class="marks">(10)</span></div>
+    <div class="qpart">(e) With reference to the information provided, discuss whether the UK streaming market operates closer to monopolistic competition or oligopoly. <span class="marks">(15)</span></div>
+  </div>
   <div class="page-number right">9</div>
   <div class="barcode"><span class="bars"></span></div>
 </div>
+
+<!-- Q6 answer pages -->
+<div class="page"><div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question 6 continued</div><div class="lines-auto"></div></div><div class="page-number left">10</div><div class="barcode"><span class="bars"></span></div></div>
+<div class="page"><div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question 6 continued</div><div class="lines-auto"></div></div><div class="page-number right">11</div><div class="barcode"><span class="bars"></span></div></div>
+<div class="page"><div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question 6 continued</div><div class="lines-auto"></div></div><div class="page-number left">12</div><div class="barcode"><span class="bars"></span></div></div>
+<div class="page"><div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question 6 continued</div><div class="lines-auto"></div></div><div class="page-number right">13</div><div class="barcode"><span class="bars"></span></div></div>
+<div class="page"><div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question 6 continued</div><div class="lines-auto"></div></div><div class="page-number left">14</div><div class="barcode"><span class="bars"></span></div></div>
+<div class="page"><div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question 6 continued</div><div class="lines-auto"></div><div class="total-line">(Total for Question 6 = 50 marks)</div><div class="section-total">TOTAL FOR SECTION B = 50 MARKS</div></div><div class="page-number right">15</div><div class="barcode"><span class="bars"></span></div></div>
+
+<!-- ================ SECTION C ================ -->
 <div class="page">
   <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
   <div class="frame">
-<div class="extract-title">Extract B</div><div class="extract-title" style="font-style: italic; font-weight: 600; margin-top: 1mm;">Friend-shoring semiconductors</div><div class="extract-body"><p>Fearing over-concentration of cutting-edge chip manufacturing in Taiwan, the US and its allies have subsidised new fabs in Arizona, Japan and Germany under the CHIPS Act, the Japanese CHIPS plan and the European Chips Act. Together these programmes have committed more than $100 billion in public support since 2022.</p><p>Critics argue the subsidies tilt markets and risk corporate welfare without changing the underlying economics: a leading-edge fab requires capex of around $25 billion and a continuous flow of thousands of specialist engineers. Supporters counter that the strategic resilience gained &mdash; in the event of a Taiwan Strait crisis &mdash; justifies the cost.</p><p style="font-style: italic; font-size: 9pt;">(Source: adapted from Financial Times, 2025)</p></div><div class="extract-title">Extract C</div><div class="extract-title" style="font-style: italic; font-weight: 600; margin-top: 1mm;">Export controls &amp; innovation</div><div class="extract-body"><p>Since 2022 the US has progressively tightened export controls on advanced AI chips and semiconductor manufacturing equipment to China. The 2023 rules effectively cut off Chinese buyers from H100-class Nvidia chips and from the leading-edge ASML EUV lithography tools.</p><p>Chinese firms including Huawei have accelerated domestic alternatives, launching the Ascend 910B AI chip and investing heavily in SMIC's 7nm process. Western economists debate whether export controls will slow Chinese AI progress meaningfully, or merely accelerate the bifurcation of the global technology stack. Some argue the controls risk driving Chinese firms up the innovation curve faster than they would otherwise have climbed.</p><p style="font-style: italic; font-size: 9pt;">(Source: adapted from The Wall Street Journal, 2025)</p></div>  </div>
-  <div class="page-number left">10</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="qpart">6 (a) With reference to Figure 1 and Extract A, explain the market structure of the data-centre GPU market in 2025. <span class="marks">(5)</span></div><div class="qpart">(b) With reference to Figure 2 and Extract A, discuss the possible reasons for the sharp rise in hyperscaler AI capex between 2023 and 2025. <span class="marks">(12)</span></div><div class="qpart">(c) Examine one strategy through which AMD or a challenger firm might erode Nvidia's market share. <span class="marks">(8)</span></div><div class="qpart">(d) Assess the likely long-run economic effects of US export controls on advanced AI chips. Refer to Extract C in your answer. <span class="marks">(10)</span></div><div class="qpart">(e) Discuss the likely economic consequences of competition authorities forcing Nvidia to share its CUDA software stack with rival chipmakers. Refer to your own knowledge and the extracts. <span class="marks">(15)</span></div>  </div>
-  <div class="page-number right">11</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number left">12</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number right">13</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number left">14</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number right">15</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
+    <div style="text-align: center; padding: 3mm 0;">
+      <h2 style="margin: 0 0 3mm 0; font-size: 14pt;">SECTION C</h2>
+      <p style="font-weight: 700; margin: 2mm 0;">Answer <b>ONE</b> question from this section.</p>
+      <p style="font-style: italic;">You are advised to spend 30 minutes on this section.</p>
+    </div>
+    <p style="font-weight: 700; margin-top: 3mm;">EITHER</p>
+    <div class="qpart"><b>7</b> In the UK rail industry, private operators hold franchise monopolies on specific routes. Fares have risen faster than wages since 2010.
+      <div style="font-size: 9pt; font-style: italic; margin: 2mm 0;">(Source: adapted from https://www.orr.gov.uk/rail-fares-annual-data)</div>
+      Evaluate whether natural monopolies should be publicly or privately owned. Refer to at least one natural monopoly of your choice. <span class="marks">(25)</span>
+    </div>
+    <p style="text-align: center; font-weight: 700; margin-top: 4mm;">OR</p>
+    <div class="qpart"><b>8</b> In 2024, the UK had approximately 900,000 job vacancies across sectors, with acute shortages in healthcare, construction and hospitality.
+      <div style="font-size: 9pt; font-style: italic; margin: 2mm 0;">(Source: adapted from https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/jobsandvacanciesintheuk)</div>
+      Evaluate the likely effectiveness of government intervention in addressing labour shortages in an occupation of your choice. <span class="marks">(25)</span>
+    </div>
+    <p style="margin-top: 5mm;"><b>Indicate which question you are answering by marking a cross in the box.</b></p>
+    <p>Chosen question number: &nbsp;&nbsp; Question 7 <span class="tickbox" style="display:inline-block; width:4.5mm; height:4.5mm; border:0.5pt solid #000;"></span> &nbsp;&nbsp; Question 8 <span class="tickbox" style="display:inline-block; width:4.5mm; height:4.5mm; border:0.5pt solid #000;"></span></p>
+  </div>
   <div class="page-number left">16</div>
   <div class="barcode"><span class="bars"></span></div>
 </div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number right">17</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number left">18</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number right">19</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 6 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="total-line">(Total for Question 6 = 50 marks)</div><div class="section-total">TOTAL FOR SECTION B = 50 MARKS</div>  </div>
-  <div class="page-number left">20</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; text-align: center;">
-      <p style="font-weight: 700; margin-bottom: 10mm;">BLANK PAGE</p>
-      <p style="font-weight: 700;">SECTION C BEGINS ON THE NEXT PAGE.</p>
-    </div>
-  </div>
-  <div class="page-number right">21</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div style="text-align: center; padding: 3mm 0;">
-  <h2 style="margin: 0 0 3mm 0; font-size: 14pt;">SECTION C</h2>
-  <p style="font-weight: 700;">Answer ONE question from this section.</p>
-  <p style="font-size: 10pt;">Write your answer in the space provided.</p>
-  <p style="font-style: italic;">You are advised to spend 30 minutes on this section.</p>
-</div>
-<p><b>EITHER</b></p>
-<div class="question"><span class="qnum">7</span><div class="qbody">In 2025 the European Commission opened a formal investigation into Nvidia's bundling of GPU hardware with CUDA software.<br><br><b>Evaluate whether regulators should intervene in markets that have become highly concentrated around a dominant firm due to network effects and proprietary software ecosystems.</b></div></div>
-<div class="total-line">(Total for Question 7 = 25 marks)</div>
-<p style="margin-top: 5mm;"><b>OR</b></p>
-<div class="question"><span class="qnum">8</span><div class="qbody">'Industrial policy to build domestic semiconductor manufacturing capacity is a waste of public money.'<br><br><b>To what extent do you agree? Refer to the semiconductor industry in your answer.</b></div></div>
-<div class="total-line">(Total for Question 8 = 25 marks)</div>
-  </div>
-  <div class="page-number left">22</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 7 / Question 8 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number right">23</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 7 / Question 8 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number left">24</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 7 / Question 8 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number right">25</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 7 / Question 8 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number left">26</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 7 / Question 8 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number right">27</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 7 / Question 8 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>  </div>
-  <div class="page-number left">28</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
-<div class="page">
-  <div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div>
-  <div class="frame">
-<div class="q-continued">Question 7 / Question 8 continued</div><div class="lines-flex"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div><div class="total-line">(Total for Question = 25 marks)</div><div class="section-total">TOTAL FOR SECTION C = 25 MARKS</div><div style="text-align: center; font-weight: 700; margin-top: 3mm;">TOTAL FOR PAPER = 100 MARKS</div>  </div>
-  <div class="page-number right">29</div>
-  <div class="barcode"><span class="bars"></span></div>
-</div>
+
+<div class="page"><div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question continued</div><div class="lines-auto"></div></div><div class="page-number right">17</div><div class="barcode"><span class="bars"></span></div></div>
+<div class="page"><div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question continued</div><div class="lines-auto"></div></div><div class="page-number left">18</div><div class="barcode"><span class="bars"></span></div></div>
+<div class="page"><div class="hatch right"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question continued</div><div class="lines-auto"></div></div><div class="page-number right">19</div><div class="barcode"><span class="bars"></span></div></div>
+<div class="page"><div class="hatch left"><span class="dnw">DO NOT WRITE IN THIS AREA</span></div><div class="frame"><div class="q-continued">Question continued</div><div class="lines-auto"></div><div class="total-line">(Total for this question = 25 marks)</div><div class="section-total">TOTAL FOR SECTION C = 25 MARKS</div><div style="text-align: center; font-weight: 700; margin-top: 3mm;">TOTAL FOR PAPER = 100 MARKS</div></div><div class="page-number left">20</div><div class="barcode"><span class="bars"></span></div></div>
 
 </body>
 </html>

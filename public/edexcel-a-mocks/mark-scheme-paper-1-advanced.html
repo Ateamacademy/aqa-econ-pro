@@ -2,186 +2,353 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mark Scheme &mdash; Paper 1: Markets and Business Behaviour (Advanced)</title>
+<title>Mark Scheme — Pearson Edexcel A Level Economics A Paper 1 (9EC0/01) — Hard</title>
 <style>
-    /* Pearson Edexcel mark scheme style */
-@page { size: A4; margin: 15mm 14mm 18mm 14mm; }
-
+@page { size: A4; margin: 18mm 16mm 20mm 16mm; }
 * { box-sizing: border-box; }
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 10pt;
-  line-height: 1.35;
-  color: #111;
-  margin: 0;
+html, body {
+  margin: 0; padding: 0; background: #ededed;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  font-size: 10.5pt; line-height: 1.4; color: #111;
 }
-.topnav {
-  background: #0b49a0; color: #fff; padding: 10px 18px;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 14px;
+.doc {
+  width: 210mm; min-height: 297mm; background: #fff;
+  margin: 10mm auto; padding: 18mm 16mm; box-shadow: 0 1px 6px rgba(0,0,0,0.18);
 }
-.topnav a, .topnav a:visited { color: #fff; text-decoration: none; font-weight: 600; }
-.topnav a:hover { text-decoration: underline; }
-.topnav button {
-  background: #fff; color: #0b49a0; border: 0; padding: 6px 14px;
-  font-weight: 600; border-radius: 3px; cursor: pointer;
+@media print { html, body { background: #fff; } .doc { margin: 0; box-shadow: none; padding: 0; } }
+.pearson-brand { font-family: "Trebuchet MS", sans-serif; font-weight: 700; letter-spacing: -0.2px; }
+.pearson-brand .pearson { font-size: 15pt; }
+.pearson-brand .edexcel { background: #000; color: #fff; padding: 1px 5px; font-size: 13pt; }
+.title-block {
+  text-align: center; margin: 25mm 0 40mm 0;
+  border-top: 2px solid #000; border-bottom: 2px solid #000;
+  padding: 10mm 0;
 }
-@media print { .no-print { display: none !important; } }
-
-.sheet { max-width: 190mm; margin: 0 auto; padding: 10mm 6mm; }
-
-.header-block {
-  border-bottom: 3px solid #000;
-  padding-bottom: 6mm;
-  margin-bottom: 8mm;
+.title-block h1 { font-size: 24pt; margin: 0 0 3mm 0; font-weight: 700; letter-spacing: 0.5px; }
+.title-block h2 { font-size: 14pt; margin: 0 0 2mm 0; font-weight: 400; }
+.title-block .paper-ref { font-size: 13pt; font-weight: 700; margin-top: 4mm; }
+.title-block .session { font-size: 11pt; margin-top: 2mm; font-style: italic; }
+.title-footer { text-align: center; margin-top: 25mm; font-size: 9.5pt; color: #333; }
+.title-footer .brand-inline { margin-bottom: 3mm; }
+h3.section-heading {
+  font-size: 14pt; font-weight: 700; margin: 10mm 0 3mm 0;
+  padding-bottom: 1mm; border-bottom: 1.5px solid #000;
 }
-.header-block .brand {
-  font-family: "Trebuchet MS", sans-serif;
-  font-weight: 700;
-  font-size: 18pt;
-  margin-bottom: 2mm;
+h4.sub-heading {
+  font-size: 11.5pt; font-weight: 700; margin: 6mm 0 2mm 0;
+  color: #000;
 }
-.header-block .brand .edexcel {
-  background: #000; color: #fff; padding: 1mm 3mm; margin-left: 2mm;
-}
-.header-block h1 { font-size: 16pt; margin: 2mm 0; }
-.header-block .subtitle { color: #444; font-size: 11pt; }
-.header-block .tier {
-  display: inline-block;
-  padding: 1mm 4mm;
-  border-radius: 3mm;
-  font-size: 9pt;
-  font-weight: 700;
-  color: #fff;
-  margin-top: 2mm;
-}
-.tier.moderate { background: #2a8f3a; }
-.tier.hard { background: #d77b1a; }
-.tier.advanced { background: #b42a2a; }
-
-.gmg {
-  background: #f5f5f5;
-  border-left: 3px solid #666;
-  padding: 4mm 5mm;
-  margin-bottom: 6mm;
-  font-size: 9pt;
-}
-.gmg h3 { margin: 0 0 2mm 0; font-size: 10pt; }
-.gmg p { margin: 1mm 0; }
-
-h2.section {
-  background: #222;
-  color: #fff;
-  padding: 2mm 4mm;
-  font-size: 11pt;
-  margin: 6mm 0 3mm 0;
-  page-break-before: auto;
-}
-
-h3.qhead {
-  font-size: 10.5pt;
-  margin: 4mm 0 1mm 0;
-  padding: 1mm 0;
-  border-bottom: 1px solid #888;
-}
-
+p { margin: 2mm 0; }
+ul { margin: 2mm 0; padding-left: 6mm; }
+li { margin-bottom: 1mm; }
 table.ms {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 2mm 0 3mm 0;
-  font-size: 9.5pt;
-  table-layout: fixed;
-  word-wrap: break-word;
+  border-collapse: collapse; width: 100%; margin: 3mm 0 4mm 0;
+  font-size: 10pt;
 }
-table.ms th {
-  background: #e5e5e5;
-  border: 0.5pt solid #888;
-  padding: 1.5mm 2mm;
-  text-align: left;
-  font-size: 9pt;
+table.ms th, table.ms td {
+  border: 0.5pt solid #000; padding: 2mm 3mm; vertical-align: top; text-align: left;
 }
-table.ms td {
-  border: 0.5pt solid #bbb;
-  padding: 2mm 2.5mm;
-  vertical-align: top;
+table.ms th { font-weight: 700; background: #e8e8e8; }
+table.ms .qcol { width: 18mm; text-align: center; font-weight: 700; }
+table.ms .markscol { width: 16mm; text-align: center; font-weight: 700; }
+table.ms .contentcol { }
+table.level {
+  border-collapse: collapse; width: 100%; margin: 2mm 0 4mm 0;
+  font-size: 10pt;
 }
-table.ms .qcol { width: 10%; font-weight: 700; }
-table.ms .acol { width: 73%; }
-table.ms .mcol { width: 9%; text-align: center; font-weight: 700; }
-table.ms .aocol { width: 8%; text-align: center; font-size: 8.5pt; color: #555; }
-
-.ind { margin: 1mm 0 1mm 0; padding-left: 4mm; }
-.ind li { margin-bottom: 0.8mm; }
-
-.levels { margin: 2mm 0 2mm 0; }
-.levels table { width: 100%; border-collapse: collapse; font-size: 9pt; }
-.levels td { border: 0.5pt solid #bbb; padding: 1.5mm 2mm; vertical-align: top; }
-.levels .lvl { width: 14%; background: #f2f2f2; font-weight: 700; text-align: center; }
-.levels .range { width: 12%; background: #fafafa; text-align: center; font-weight: 600; }
-.levels .desc { width: 74%; }
-
-.correct { color: #164; font-weight: 700; }
-.note { font-size: 8.5pt; color: #666; font-style: italic; }
-.working { font-family: "Courier New", monospace; background: #f8f8f8; padding: 1mm 2mm; margin: 1mm 0; font-size: 9pt; }
-b.term { background: #fff3d6; padding: 0 2px; }
-.totals-row td { background: #f5f5f5; font-weight: 700; }
-
-
+table.level th, table.level td {
+  border: 0.5pt solid #000; padding: 2mm 3mm; vertical-align: top;
+}
+table.level th { font-weight: 700; background: #d9d9d9; text-align: center; }
+table.level .lvlcol { width: 18mm; font-weight: 700; text-align: center; }
+table.level .markcol { width: 18mm; text-align: center; }
+.boilerplate {
+  background: #f5f5f5; border-left: 3px solid #000; padding: 3mm 5mm;
+  font-size: 10pt; margin: 3mm 0; line-height: 1.45;
+}
+.kaa-split { display: flex; gap: 5mm; margin: 2mm 0; }
+.kaa-split > div { flex: 1; border: 0.5pt solid #666; padding: 3mm; background: #fafafa; }
+.kaa-split h5 { margin: 0 0 2mm 0; font-size: 10.5pt; font-weight: 700; }
+.indicative-heading { font-weight: 700; margin: 3mm 0 1mm 0; font-style: italic; }
+.synoptic-flag {
+  display: inline-block; background: #000; color: #fff;
+  padding: 1px 5px; font-size: 9pt; font-weight: 700; letter-spacing: 0.3px;
+  margin-left: 2mm;
+}
+.page-break { page-break-before: always; }
 </style>
 </head>
 <body>
-<div class="topnav no-print">
-  <div>&larr; <a href="paper-1-advanced.html">Back to paper</a></div>
-  <div>Mark scheme: Paper 1 (9EC0/01) &mdash; Advanced</div>
-  <button onclick="window.print()">Print</button>
-</div>
-<div class="sheet">
-  <div class="header-block">
-    <div class="brand">Pearson <span class="edexcel">Edexcel</span></div>
-    <h1>Mark Scheme &mdash; Paper 1: Markets and Business Behaviour</h1>
-    <div class="subtitle">9EC0/01 &middot; Friday 19 June 2026 &ndash; Morning</div>
-    <div class="tier advanced">Advanced tier</div>
-  </div>
-  <div class="gmg">
-    <h3>General Marking Guidance</h3>
-    <p>All candidates must receive the same treatment. Examiners must mark the first candidate in exactly the same way as they mark the last. Mark schemes should be applied positively. Candidates must be rewarded for what they have shown they can do rather than penalised for omissions.</p>
-    <p>Crossed-out work should be marked unless the candidate has replaced it with an alternative response. All the marks on the mark scheme are designed to be awarded. Examiners should always award full marks if deserved, i.e. if the answer matches the mark scheme.</p>
-  </div>
+<div class="doc">
 
-<h2 class="section">Question 1 &mdash; Total 5 marks</h2><table class="ind-table">
-  <thead><tr><th>Indicative content</th><th class="marks-col">Mark</th><th class="ao">AO</th></tr></thead>
-  <tbody><tr><td>(a) Total 2025 revenue = 128.0 + 12.5 + 2.2 + 14.3 = $157.0bn. Nvidia share = 128.0 / 157.0 = 81.5%, rounds to 82%.</td><td class="marks-col">4</td><td class="ao">AO2 / AO4</td></tr></tbody>
+<div class="title-block">
+  <div class="pearson-brand" style="margin-bottom: 8mm;"><span class="pearson">Pearson</span> <span class="edexcel">Edexcel</span></div>
+  <h1>Mark Scheme</h1>
+  <h2>Predicted Paper &ndash; For revision purposes only</h2>
+  <h2 style="margin-top: 8mm;">Level 3 GCE Economics A (9EC0)</h2>
+  <h2>Paper 1: Markets and Business Behaviour</h2>
+  <div class="paper-ref">9EC0/01 &mdash; Advanced</div>
+  <div class="session">Summer 2026 series</div>
+</div>
+
+<div class="title-footer">
+  <div class="brand-inline pearson-brand"><span class="pearson">Pearson</span> <span class="edexcel">Edexcel</span></div>
+  <div>Level 3 GCE &mdash; Economics A</div>
+  <div>Pearson Education Ltd &copy;2026</div>
+</div>
+
+<div class="page-break"></div>
+<h3 class="section-heading">General Marking Guidance</h3>
+<div class="boilerplate">
+  <p>All candidates must receive the same treatment. Mark schemes should be applied positively, rewarding candidates for what they have shown they can do.</p>
+  <p>All marks on the mark scheme are designed to be awarded. Examiners should always award full marks if deserved.</p>
+  <p>Crossed-out work should be marked UNLESS the candidate has replaced it with an alternative response.</p>
+</div>
+
+<h4 class="sub-heading">Marking grid convention</h4>
+<p>Each banded question is marked on two grids: <b>KAA</b> (Knowledge + Application + Analysis, AO1+AO2+AO3) and <b>Evaluation</b> (AO4). Level descriptors for 8, 10, 12, 15 and 25-mark questions are common across all Paper 1 variants and given in full in the Moderate mark scheme.</p>
+
+<!-- ============ SECTION A ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section A &mdash; Questions 1 to 5</h3>
+
+<h4 class="sub-heading">Question 1 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">1(a)</td>
+  <td><b>Answer: C &ndash; an increase in demand from substitutes after Netflix's price rise</b> (1). Some consumers shift to Disney+ / Prime when Netflix raises its price, reducing Netflix's Q.</td>
+  <td class="markscol">1</td></tr>
+  <tr><td class="qcol">1(b)</td>
+  <td>Diagram (4): P/Q axes labelled (1); downward-sloping demand (relatively inelastic given content lock-in) (1); upward supply, or flat supply for digital service given near-zero MC (1); new equilibrium showing higher P with small reduction in Q (1).</td>
+  <td class="markscol">4</td></tr>
 </table>
-<div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">Nvidia 82% share with no close rival &rarr; near-monopoly. Lerner Index &asymp; 0.88 confirms substantial market power.</div>
-</div><h2 class="section">Question 2 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>(a) Lerner Index = (P &minus; MC) / P = (30,000 &minus; 3,500) / 30,000 = 26,500 / 30,000 = 0.88.</li><li>(b) Lerner Index of 0.88 implies extremely high market power. Consistent with a near-monopoly; prices set well above competitive level.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">Lerner = 0 &rarr; P = MC, the hallmark of perfect competition.</div>
-</div><h2 class="section">Question 3 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Export controls restrict supply of advanced chips to China &rarr; inward supply shift.</li><li>Within restricted market: price rises; quantity falls.</li><li>Dynamic effects: Chinese firms invest in domestic alternatives (Huawei Ascend) &rarr; eventual outward supply shift in rival markets.</li><li>Welfare: static loss to Chinese consumers; ambiguous long-run effect on global innovation.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: C</span>
-  <div class="rationale">Strategic trade theory: export controls justified when positive spillovers (innovation, employment) from strategic industry accrue to exporting country.</div>
-</div><h2 class="section">Question 4 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Rising compute costs shift AC and MC curves upward on firm's cost-revenue diagram.</li><li>Break-even point rises &rarr; higher revenue threshold for new entrants.</li><li>Barrier to entry increases &rarr; concentration of frontier AI in a few well-capitalised firms.</li><li>Incumbency advantage rises; Nvidia's pricing power is partially a reflection of this.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">Large MES relative to demand &rarr; few firms can operate at efficient scale &rarr; natural monopoly or tight oligopoly.</div>
-</div><h2 class="section">Question 5 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>AI compute has positive externalities: basic research, workforce training, ecosystem effects.</li><li>Private compute investment under-provides public-good aspects &rarr; market failure.</li><li>Subsidy internalises externality and improves allocative efficiency.</li><li>Evaluation: risk of subsidy capture by incumbents; difficulty of targeting MEB.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">Pigouvian subsidy set equal to marginal external benefit at socially optimal quantity.</div>
-</div><p style="text-align: right; font-weight: 700; margin: 6mm 0;">TOTAL FOR SECTION A = 25 MARKS</p><h2 class="section">Question 6(a) — 5 marks &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Near-monopoly structure (Nvidia 82% share).</li><li>High barriers to entry: CUDA software ecosystem; TSMC leading-edge capacity; switching costs.</li><li>Durable market power; high Lerner Index.</li><li>Contestable only at the fringes (hyperscalers developing own silicon).</li></ul></div><h2 class="section">Question 6(b) — 12 marks &mdash; Total 12 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-3</td><td>Isolated elements of knowledge. Limited application and analysis.</td></tr><tr><td class="lv">Level 2</td><td class="range">4-6</td><td>Accurate knowledge with application to the context. Some reasoned analysis.</td></tr><tr><td class="lv">Level 3</td><td class="range">7-9</td><td>Clear, developed chains of analysis applied to the context with accurate use of data.</td></tr><tr><td class="lv">Level 4</td><td class="range">10-12</td><td>Fully developed, logically sound chains of analysis with integration of multiple data sources.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Frontier AI model scaling requires exponential compute &rarr; capex arms race.</li><li>Strategic considerations: competitive pressure between Microsoft/OpenAI, Google, Meta.</li><li>Generative AI commercialisation pulled demand forward.</li><li>Low capital cost in US environment pre-2023 rate hikes.</li><li>Evaluation: may overshoot if AI monetisation disappoints; risk of capex bubble.</li></ul></div><h2 class="section">Question 6(c) — 8 marks &mdash; Total 8 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-2</td><td>Isolated elements of knowledge and understanding. Brief attempt at application or analysis.</td></tr><tr><td class="lv">Level 2</td><td class="range">3-5</td><td>Accurate knowledge and understanding with application to the context. Some reasoned chains of analysis.</td></tr><tr><td class="lv">Level 3</td><td class="range">6-8</td><td>Clear, accurate and developed knowledge, understanding, application and analysis of the context. Logical and well-reasoned chains.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Open-source software stacks (ROCm) lower switching costs from CUDA.</li><li>Partnership with major cloud buyers (Meta, Microsoft) for preferential supply.</li><li>Differentiation: inference-optimised chips at lower total cost of ownership.</li><li>Evaluation: Nvidia's software lead is deep; any erosion likely slow.</li></ul></div><h2 class="section">Question 6(d) — 10 marks &mdash; Total 10 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-2</td><td>Isolated elements of knowledge and understanding. Brief and unsupported evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">3-5</td><td>Accurate knowledge, understanding and application to the context. Evaluation is generic rather than context-based.</td></tr><tr><td class="lv">Level 3</td><td class="range">6-8</td><td>Clear chains of analysis applied to the context. Evaluation is context-based with some supporting evidence.</td></tr><tr><td class="lv">Level 4</td><td class="range">9-10</td><td>Fully developed chains of analysis applied to the context. Evaluative judgement is fully supported by reasoned argument and evidence from the extracts.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Short-run: Chinese access to advanced AI restricted &rarr; technological slowdown.</li><li>Long-run: Chinese domestic silicon accelerates (Huawei, SMIC) &rarr; bifurcation.</li><li>US firms lose Chinese market share &rarr; lower R&amp;D returns.</li><li>Strategic benefit: US technology lead in defence-relevant AI preserved.</li><li>Evaluation: literature (Goldberg, Autor) suggests tariff-style controls often miss targets; actual Chinese AI progress under controls has been rapid.</li></ul></div><h2 class="section">Question 6(e) — 15 marks &mdash; Total 15 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-3</td><td>Isolated knowledge; limited application or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">4-7</td><td>Accurate knowledge and some application. Evaluation is generic or one-sided.</td></tr><tr><td class="lv">Level 3</td><td class="range">8-11</td><td>Developed chains of analysis applied to the context. Balanced evaluation with some judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">12-15</td><td>Sophisticated, fully developed analysis and evaluation. Clear, supported judgement drawing on extracts and own knowledge.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Forced software-sharing reduces Nvidia's entry barrier &rarr; more competitive GPU market.</li><li>Consumer (hyperscaler) gains: lower chip prices, broader supplier choice.</li><li>Dynamic loss: reduced incentive to invest in proprietary software ecosystems &rarr; less R&amp;D.</li><li>Compliance cost and enforcement complexity; technical feasibility questionable.</li><li>Evaluation: precedent is Microsoft API sharing remedy from 2001 (partial success); magnitude depends on scope of mandated access.</li></ul></div><p style="text-align: right; font-weight: 700; margin: 6mm 0;">TOTAL FOR SECTION B = 50 MARKS</p><h2 class="section">Question 7 — 25 marks &mdash; Total 25 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-5</td><td>Isolated knowledge; limited application, analysis or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">6-11</td><td>Accurate knowledge with some application. Evaluation is unbalanced or underdeveloped.</td></tr><tr><td class="lv">Level 3</td><td class="range">12-17</td><td>Developed chains of analysis applied to context. Balanced evaluation with reasoned judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">18-21</td><td>Sophisticated, fully developed analysis. Evaluation integrates micro and macro perspectives with supported conclusion.</td></tr><tr><td class="lv">Level 5</td><td class="range">22-25</td><td>Exceptional analysis drawing on synoptic links. Sustained, well-reasoned evaluation with decisive, defensible judgement.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Dominant firms in network-effect markets may be entrenched regardless of competitive conduct.</li><li>Traditional competition tools (price-fixing, merger control) are poorly fitted.</li><li>Structural remedies (mandatory sharing, divestiture) risk innovation losses.</li><li>Behavioural remedies (interoperability, data portability) have modest effects.</li><li>International examples: EU DMA, UK Digital Markets Competition and Consumer Act.</li><li>Evaluation: 'wait for creative destruction' (Schumpeter) vs preemptive intervention; depends on speed of technology change.</li></ul></div><h2 class="section">Question 8 — 25 marks &mdash; Total 25 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-5</td><td>Isolated knowledge; limited application, analysis or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">6-11</td><td>Accurate knowledge with some application. Evaluation is unbalanced or underdeveloped.</td></tr><tr><td class="lv">Level 3</td><td class="range">12-17</td><td>Developed chains of analysis applied to context. Balanced evaluation with reasoned judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">18-21</td><td>Sophisticated, fully developed analysis. Evaluation integrates micro and macro perspectives with supported conclusion.</td></tr><tr><td class="lv">Level 5</td><td class="range">22-25</td><td>Exceptional analysis drawing on synoptic links. Sustained, well-reasoned evaluation with decisive, defensible judgement.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Case against: subsidies distort global trade; existing WTO rules constrain; opportunity cost of fiscal resources.</li><li>Case for: semiconductors have strategic / national-security externalities; learning effects / infant-industry argument.</li><li>Examples: US CHIPS Act, EU Chips Act, Japanese rapidus, Korean K-CHIPS.</li><li>Evidence: Taiwan-US fab economics, fab cost, cluster effects.</li><li>Evaluation: cost-benefit depends on counterfactual (reliance on Taiwan) and probability of Taiwan Strait disruption.</li></ul></div>
-<p style="margin-top: 20mm; text-align: center; font-size: 9pt; color: #888;">&mdash; END OF MARK SCHEME &mdash;</p>
+
+<h4 class="sub-heading">Question 2 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">2(a)</td>
+  <td>YED &times; %&Delta;Y = 1.6 &times; 4% (method, 1); Answer: <b>+6.4%</b> (1).</td>
+  <td class="markscol">2</td></tr>
+  <tr><td class="qcol">2(b)</td>
+  <td>XED &times; %&Delta;P<sub>restaurant</sub> = +0.9 &times; (&minus;5%) (method, 1); Answer: <b>&minus;4.5%</b> (1). Sign matters &mdash; a fall in the price of restaurant meals (a substitute) reduces demand for meal-kits.</td>
+  <td class="markscol">2</td></tr>
+  <tr><td class="qcol">2(c)</td>
+  <td><b>Answer: D &ndash; substitutes and both normal goods, with restaurant meals a luxury</b> (1). XED positive &rarr; substitutes; YED &gt; 1 &rarr; restaurant meals a luxury normal good.</td>
+  <td class="markscol">1</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 3 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">3(a)</td>
+  <td><b>Calculation:</b> 30,000 &times; &pound;12.50 &times; 365 = <b>&pound;136,875,000</b> (accept &pound;137m). Award 1 mark for correct method (non-compliant vehicles &times; daily charge &times; 365), 1 mark for correct numerical answer.</td>
+  <td class="markscol">2</td></tr>
+  <tr><td class="qcol">3(b)(i)</td>
+  <td><b>% reduction:</b> (80,000 &minus; 30,000) / 80,000 &times; 100 = <b>62.5%</b>.</td>
+  <td class="markscol">1</td></tr>
+  <tr><td class="qcol">3(b)(ii)</td>
+  <td><b>Daily external cost avoided:</b> 50,000 fewer journeys &times; &pound;10 = <b>&pound;500,000 per day</b>.</td>
+  <td class="markscol">1</td></tr>
+  <tr><td class="qcol">3(c)</td>
+  <td><b>Answer: B &ndash; demand for car journeys is price-inelastic in the short run</b> (1). A &pound;12.50 daily charge may not significantly deter essential journeys in the short run, limiting the policy's effectiveness at reducing residual externalities.</td>
+  <td class="markscol">1</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 4 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">4(a)</td>
+  <td>2&times;2 matrix (4): firms labelled (1); strategies &ldquo;Collude&rdquo;/&ldquo;Compete&rdquo; or &ldquo;Raise price&rdquo;/&ldquo;Hold price&rdquo; (1); four payoff cells numeric (1); structure showing collude-collude gives highest joint payoff but individual deviation is rational if undetected &mdash; prisoner's dilemma identified (1).</td>
+  <td class="markscol">4</td></tr>
+  <tr><td class="qcol">4(b)</td>
+  <td><b>Answer: B &ndash; Each firm has an individual incentive to deviate if undetected</b> (1). This is the fundamental instability of cartels and why detection/investigation tends to break them.</td>
+  <td class="markscol">1</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 5 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">5(a)</td>
+  <td><b>Answer: A &ndash; Forward vertical integration</b> (1). Microsoft (a platform / distribution business) has acquired a content producer further down the value chain.</td>
+  <td class="markscol">1</td></tr>
+  <tr><td class="qcol">5(b)</td>
+  <td>One economy with linked chain (2): e.g. technical economies (1) &mdash; Microsoft's existing Azure cloud infrastructure can host Activision's game servers and distribution at marginal cost, reducing per-user infrastructure spend (1). Accept: marketing, financial, risk-bearing economies.</td>
+  <td class="markscol">2</td></tr>
+  <tr><td class="qcol">5(c)</td>
+  <td>One CMA concern with chain (2): e.g. Microsoft could make <i>Call of Duty</i> exclusive to Xbox and cloud-gaming (1), foreclosing rival platforms (PlayStation, cloud-gaming entrants) and harming downstream competition in gaming markets (1).</td>
+  <td class="markscol">2</td></tr>
+</table>
+
+<!-- ============ SECTION B ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section B &mdash; Question 6: UK streaming services market</h3>
+
+<h4 class="sub-heading">Question 6(a) &ndash; Calculate the four-firm concentration ratio for the UK streaming market (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">6(a)</td>
+  <td>
+    Working: 34 + 24 + 17 + 9 (identifying top 4, 1)<br>
+    Sum = 84 (1)<br>
+    Answer: <b>CR4 = 84%</b> (2)<br>
+    <b>Evaluation (1):</b> &ldquo;84% indicates a highly concentrated market consistent with oligopoly; the top firm Netflix alone holds 34%.&rdquo;
+  </td>
+  <td class="markscol">5</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 6(b) &ndash; Discuss the likely impact of rising content production costs on the profitability of UK streaming services (12 marks)</h4>
+<p class="indicative-heading">Diagram required: AC/MC curves shift upward due to content inflation; AR, MR unchanged; profit-maximising Q* falls, supernormal profit area shrinks.</p>
+<div class="kaa-split">
+  <div>
+    <h5>KAA with diagram (out of 8)</h5>
+    <ul>
+      <li>AC/MC curves shift upward due to content inflation. With broadly downward-sloping AR (market power in differentiated oligopoly), profit-maximising output (MR=MC) falls and supernormal profit (P&minus;AC)&times;Q shrinks.</li>
+      <li>Content costs have roughly doubled since 2019; Netflix alone spending \$17bn (Extract A).</li>
+      <li>Industry total \$140bn.</li>
+      <li>Smaller platforms (Paramount+, Apple TV+) face squeezed unit economics as fixed content costs amortised over fewer subscribers.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 4)</h5>
+    <ul>
+      <li>Largest players can spread costs over hundreds of millions of global subscribers (scale economies in content).</li>
+      <li>Password-sharing crackdowns and ad-tiers expand revenue to offset costs.</li>
+      <li>Industry bifurcates &mdash; top 3 viable, tail of 5&ndash;8 sub-scale.</li>
+      <li>Consolidation likely (Paramount/Skydance, Disney/Hulu).</li>
+      <li><b>Judgement:</b> rising content costs compress margins across the sector, but the effect is highly uneven &mdash; leaders absorb the shock via scale and tier-pricing while sub-scale rivals face existential pressure and likely consolidation.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 6(c) &ndash; Examine two factors that may explain the rise in Netflix's UK ARPU (8 marks)</h4>
+<p class="indicative-heading">Indicative content (at least two distinct factors developed):</p>
+<ul>
+  <li><b>Price rises:</b> Netflix raised standard-tier prices multiple times between 2020 and 2024; relatively inelastic demand due to habit formation and content lock-in means revenue per user rises.</li>
+  <li><b>Tier mix shift:</b> Netflix introduced an ad-supported tier (&pound;4.99) and premium tiers (&pound;17.99). Tier sorting captures consumer surplus via price discrimination.</li>
+  <li><b>Password-sharing crackdown:</b> forcing separate subscriptions or &pound;4.99 add-on fees converts previously free-riding viewers into paying customers &rarr; ARPU up.</li>
+  <li><b>Bundled add-ons:</b> mobile game access, gaming expansion may justify higher-tier pricing.</li>
+  <li><b>Application:</b> ARPU rose &pound;9.89 &rarr; &pound;12.04 = +21.7% over 4 years while core content library expanded.</li>
+</ul>
+<p class="indicative-heading">Award 8-mark "Examine" band (KAA = 5, Eval = 3).</p>
+
+<h4 class="sub-heading">Question 6(d) &ndash; Assess whether Netflix is likely to be a profit maximiser (10 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 6)</h5>
+    <p><b>For profit maximisation:</b></p>
+    <ul>
+      <li>Public company (NASDAQ: NFLX) with shareholder duty.</li>
+      <li>Price rises, password-sharing crackdown and ad-tier launch are all revenue- or profit-maximising moves.</li>
+      <li>MR = MC logic: tier pricing approximates third-degree price discrimination to maximise total profit.</li>
+    </ul>
+    <p><b>Against / alternative objectives:</b></p>
+    <ul>
+      <li>Content spend of \$17bn p.a. often outstrips operating cash flow &mdash; suggests sales or growth maximisation historically.</li>
+      <li>&ldquo;Revenue maximisation&rdquo; phase during subscriber-growth years; now shifting to profit maximisation as market matures.</li>
+      <li>Stakeholder theory: must balance talent/production partners vs. shareholders.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 4)</h5>
+    <ul>
+      <li>Firm behaviour changes over the business life-cycle &mdash; sales/growth in early stages, profit-max in maturity.</li>
+      <li>Public-company pressures make profit maximisation increasingly binding as analyst scrutiny rises.</li>
+      <li>&ldquo;Winner-takes-most&rdquo; phase (Extract A) increases urgency to extract profit before platform differentiation closes.</li>
+      <li><b>Judgement:</b> Netflix's behaviour is consistent with long-run profit maximisation, with short-run phases of sales/growth maximisation to build market share. The 2023 crackdown and ad-tier launch signal transition to more conventional profit maximisation.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 6(e) &ndash; Discuss whether the UK streaming market operates closer to monopolistic competition or oligopoly (15 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 9)</h5>
+    <p><b>Features of MONOPOLISTIC COMPETITION:</b></p>
+    <ul>
+      <li>Many differentiated products (genres, originals, libraries).</li>
+      <li>Low switching costs (cancel anytime); 62% of UK households subscribe to 2+.</li>
+      <li>Relatively low sunk costs for software platform (though content is enormous sunk cost).</li>
+      <li>Many consumers mix-and-match.</li>
+    </ul>
+    <p><b>Features of OLIGOPOLY:</b></p>
+    <ul>
+      <li>CR4 = 84% indicates high concentration.</li>
+      <li>Interdependence: competitive reaction to pricing (Netflix tier launch &rarr; Disney+ tier launch; Sky integration response).</li>
+      <li>High barriers to entry from content libraries (\$bn sunk costs).</li>
+      <li>Non-price competition: exclusive content, bundling, hardware integration (Sky Glass).</li>
+      <li>Ofcom concerned about algorithmic recommendation systems &mdash; structural feature of oligopoly.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 6)</h5>
+    <ul>
+      <li>Headline structure = concentrated oligopoly (CR4 = 84%).</li>
+      <li>Consumer experience has monopolistic-competition features (many branded services, differentiation, low switching costs).</li>
+      <li>Best described as a <b>differentiated oligopoly</b> &mdash; concentrated in supply but with meaningful product differentiation.</li>
+      <li>Pivot point: whether scale of content investment constitutes an insuperable entry barrier (supporting oligopoly classification) or whether low switching costs keep the market effectively competitive.</li>
+      <li><b>Judgement:</b> the UK streaming market displays features of both structures but is closer to a differentiated oligopoly than monopolistic competition. Consumer-side features mask supply-side concentration that Ofcom's investigation is seeking to address.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ SECTION C ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section C &mdash; Question 7 OR Question 8 (25 marks)</h3>
+
+<h4 class="sub-heading">Question 7 &ndash; Evaluate whether natural monopolies should be publicly or privately owned (25 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 15)</h5>
+    <ul>
+      <li>Natural monopoly theory: LRAC falling over relevant output range, so single producer = efficient scale.</li>
+      <li>Private ownership: profit incentive &rarr; productive/dynamic efficiency; but may price above MC (allocative inefficiency), under-invest in less profitable routes.</li>
+      <li>Public ownership: can price at MC or average cost (allocative efficiency); strategic investment; but X-inefficiency, political capture, fiscal burden.</li>
+      <li>Regulation as hybrid: RPI&minus;X price caps, ORR / Ofwat / Ofgem oversight.</li>
+      <li>Application (e.g. UK rail franchises, water, National Grid): specific evidence of fare rises &gt; wages, leakage rates in water, Thames Water debt crisis.</li>
+      <li>Diagrams expected: natural monopoly AC/MC with AR/MR showing profit-max, socially optimal (P=MC) and average-cost pricing points.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 10)</h5>
+    <ul>
+      <li>Evidence base: privatised rail fares rose faster than wages, but investment also rose.</li>
+      <li>Water sector: mixed &mdash; Welsh Water (not-for-profit) compared to Thames Water (private) as natural experiment.</li>
+      <li>Depends on regulator strength and political commitment.</li>
+      <li>Short vs. long run: renationalisation has transition costs and potential value destruction.</li>
+      <li><b>Judgement:</b> natural monopolies with strong network externalities and clear social obligations may be better under public ownership <i>provided</i> the government can credibly commit to investment and avoid short-termism. For others, well-regulated private ownership with transparent price caps can be superior. Regulatory capacity matters more than ownership form per se.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 8 &ndash; Evaluate the likely effectiveness of government intervention in addressing labour shortages (25 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 15)</h5>
+    <ul>
+      <li>Causes of shortages: demographic shifts, migration policy (post-Brexit), training pipeline lags, non-wage conditions.</li>
+      <li>Policy options: (i) raise wages in public sector; (ii) loosen migration visas; (iii) subsidise training; (iv) relax regulatory barriers; (v) improve working conditions.</li>
+      <li>Labour market theory: MRPL demand, supply elasticity, training lags, monopsony.</li>
+      <li>Application (e.g. NHS nurses, HGV drivers, construction trades): specific interventions &mdash; &pound;5k bursaries, expanded visa routes, apprenticeship levy.</li>
+      <li>Diagram: labour supply/demand with shortage at existing wage; shift in Ls from training/migration.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 10)</h5>
+    <ul>
+      <li>Short-run ineffectiveness of training policies (lags of 2&ndash;5 years).</li>
+      <li>Migration policy faces political constraints.</li>
+      <li>Wage rises in the public sector have fiscal costs and can cause wage compression.</li>
+      <li>Unintended consequences: raising nurse pay may attract labour from the care sector (displacement).</li>
+      <li>Interaction with broader cost-of-living crisis.</li>
+      <li><b>Judgement:</b> no single intervention resolves shortages; effective policy combines short-run migration/bursary mechanisms with long-run training and working-conditions reforms. Success depends on government's ability to commit across political cycles.</li>
+    </ul>
+  </div>
+</div>
+
+<div style="margin-top: 10mm; border-top: 1.5px solid #000; padding-top: 3mm; text-align: center; font-weight: 700;">
+  TOTAL FOR PAPER = 100 MARKS
+</div>
+
 </div>
 </body>
 </html>
