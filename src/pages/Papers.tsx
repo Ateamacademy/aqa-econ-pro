@@ -13,6 +13,12 @@ const EDEXCEL_A_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus:
   { number: 3, code: "9EC0/03", title: "Microeconomics and Macroeconomics", focus: "Synoptic" },
 ];
 
+const EDEXCEL_B_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; available: boolean }[] = [
+  { number: 1, code: "9EB0/01", title: "Markets, Consumers and Firms", focus: "Microeconomics", available: false },
+  { number: 2, code: "9EB0/02", title: "The Wider Economic Environment", focus: "Macroeconomics", available: false },
+  { number: 3, code: "9EB0/03", title: "The Global Economy", focus: "Synoptic", available: true },
+];
+
 const DIFFICULTIES: { id: Difficulty; label: string; tone: string }[] = [
   { id: "moderate", label: "Moderate", tone: "bg-emerald-500/15 text-emerald-400 border-emerald-500/30" },
   { id: "hard",     label: "Hard",     tone: "bg-amber-500/15 text-amber-400 border-amber-500/30" },
@@ -44,8 +50,6 @@ function EdexcelAPapersList() {
 
             <div className="grid gap-3 md:grid-cols-3">
               {DIFFICULTIES.map((d) => {
-                // Paper 1 Moderate, Hard & Advanced are now served as authentic Pearson PDFs
-                // (uploaded directly by the user). All other slots remain HTML booklets.
                 const isPdf =
                   (p.number === 1 && (d.id === "moderate" || d.id === "hard" || d.id === "advanced")) ||
                   (p.number === 2 && (d.id === "moderate" || d.id === "hard" || d.id === "advanced")) ||
@@ -67,7 +71,6 @@ function EdexcelAPapersList() {
                       </span>
                     </div>
 
-                    {/* Question paper */}
                     <div className="flex items-center justify-between gap-2 rounded-lg bg-muted/40 px-3 py-2">
                       <div className="flex items-center gap-2 text-sm">
                         <FileText className="h-4 w-4 text-primary" />
@@ -93,7 +96,6 @@ function EdexcelAPapersList() {
                       </div>
                     </div>
 
-                    {/* Mark scheme */}
                     <div className="flex items-center justify-between gap-2 rounded-lg bg-muted/40 px-3 py-2">
                       <div className="flex items-center gap-2 text-sm">
                         <ClipboardList className="h-4 w-4 text-primary" />
@@ -119,6 +121,106 @@ function EdexcelAPapersList() {
                           )}
                         </Button>
                       </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function EdexcelBPapersList() {
+  return (
+    <div className="max-w-5xl mx-auto px-5 py-12">
+      <div className="mb-8">
+        <h1 className="text-2xl font-bold text-foreground mb-2">Edexcel B A-Level — Papers</h1>
+        <p className="text-sm text-muted-foreground">
+          Paper 3 is now available in the Papers section in the same card format, paired with its full mark scheme across Moderate, Hard, and Advanced.
+        </p>
+      </div>
+
+      <div className="space-y-8">
+        {EDEXCEL_B_PAPERS.map((p) => (
+          <section key={p.code}>
+            <div className="mb-3 flex items-baseline justify-between gap-3">
+              <h2 className="text-lg font-semibold text-foreground">
+                Paper {p.number}: {p.title}
+              </h2>
+              <span className="text-xs font-mono text-muted-foreground">
+                {p.code} · {p.focus} · 2h · 100 marks
+              </span>
+            </div>
+
+            <div className="grid gap-3 md:grid-cols-3">
+              {DIFFICULTIES.map((d) => {
+                const paperHref = `/edexcel-b-mocks/paper-${p.number}-${d.id}.pdf`;
+                const msHref = `/edexcel-b-mocks/mark-scheme-paper-${p.number}-${d.id}.pdf`;
+                const disabled = !p.available;
+
+                return (
+                  <div
+                    key={d.id}
+                    className="rounded-xl border border-border bg-card p-4 flex flex-col gap-3"
+                  >
+                    <div className="flex items-center justify-between">
+                      <Badge variant="outline" className={`${d.tone} font-semibold`}>
+                        {d.label}
+                      </Badge>
+                      <span className="text-[11px] text-muted-foreground">
+                        Paper {p.number} {d.label}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center justify-between gap-2 rounded-lg bg-muted/40 px-3 py-2">
+                      <div className="flex items-center gap-2 text-sm">
+                        <FileText className="h-4 w-4 text-primary" />
+                        <span className="font-medium">Paper {p.number}</span>
+                      </div>
+                      {disabled ? (
+                        <span className="text-[11px] text-muted-foreground italic">Coming soon</span>
+                      ) : (
+                        <div className="flex gap-1">
+                          <Button asChild size="sm" variant="ghost" className="h-7 w-7 p-0">
+                            <a href={paperHref} target="_blank" rel="noopener noreferrer" title="Open in new tab">
+                              <ExternalLink className="h-3.5 w-3.5" />
+                            </a>
+                          </Button>
+                          <Button asChild size="sm" className="h-7 gap-1 text-xs">
+                            <a href={paperHref} target="_blank" rel="noopener noreferrer">
+                              View <ArrowRight className="h-3 w-3" />
+                            </a>
+                          </Button>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="flex items-center justify-between gap-2 rounded-lg bg-muted/40 px-3 py-2">
+                      <div className="flex items-center gap-2 text-sm">
+                        <ClipboardList className="h-4 w-4 text-primary" />
+                        <span className="font-medium">
+                          Paper {p.number} {d.label} Marking scheme
+                        </span>
+                      </div>
+                      {disabled ? (
+                        <span className="text-[11px] text-muted-foreground italic">Coming soon</span>
+                      ) : (
+                        <div className="flex gap-1">
+                          <Button asChild size="sm" variant="ghost" className="h-7 w-7 p-0">
+                            <a href={msHref} target="_blank" rel="noopener noreferrer" title="Open in new tab">
+                              <ExternalLink className="h-3.5 w-3.5" />
+                            </a>
+                          </Button>
+                          <Button asChild size="sm" variant="outline" className="h-7 gap-1 text-xs">
+                            <a href={msHref} target="_blank" rel="noopener noreferrer">
+                              View <ArrowRight className="h-3 w-3" />
+                            </a>
+                          </Button>
+                        </div>
+                      )}
                     </div>
                   </div>
                 );
@@ -244,6 +346,10 @@ export default function Papers() {
 
   if (subject === "edexcel-a") {
     return <EdexcelAPapersList />;
+  }
+
+  if (subject === "edexcel-b") {
+    return <EdexcelBPapersList />;
   }
 
   if (subject === "economics") {
