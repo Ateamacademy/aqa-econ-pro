@@ -44,9 +44,9 @@ function EdexcelAPapersList() {
 
             <div className="grid gap-3 md:grid-cols-3">
               {DIFFICULTIES.map((d) => {
-                // Paper 1 Moderate & Hard are now served as authentic Pearson PDFs
+                // Paper 1 Moderate, Hard & Advanced are now served as authentic Pearson PDFs
                 // (uploaded directly by the user). All other slots remain HTML booklets.
-                const isPdf = p.number === 1 && (d.id === "moderate" || d.id === "hard");
+                const isPdf = p.number === 1 && (d.id === "moderate" || d.id === "hard" || d.id === "advanced");
                 const ext = isPdf ? "pdf" : "html";
                 const paperHref = `/edexcel-a-mocks/paper-${p.number}-${d.id}.${ext}`;
                 const msHref = `/edexcel-a-mocks/mark-scheme-paper-${p.number}-${d.id}.${ext}`;
