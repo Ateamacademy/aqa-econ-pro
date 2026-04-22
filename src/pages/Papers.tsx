@@ -348,6 +348,10 @@ export default function Papers() {
     return <EdexcelAPapersList />;
   }
 
+  if (subject === "edexcel-b") {
+    return <EdexcelBPapersList />;
+  }
+
   if (subject === "economics") {
     return <AqaPapersList />;
   }
