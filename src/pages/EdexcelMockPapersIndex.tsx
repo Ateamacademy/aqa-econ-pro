@@ -68,7 +68,11 @@ export default function EdexcelMockPapersIndex() {
               </p>
             </CardHeader>
             <CardContent className="flex flex-col flex-1 gap-3">
-              {DIFFICULTIES.map((d) => (
+              {DIFFICULTIES.map((d) => {
+                const isPdf = p.number === 1 && (d.id === "moderate" || d.id === "hard");
+                const ext = isPdf ? "pdf" : "html";
+                const href = `/edexcel-a-mocks/paper-${p.number}-${d.id}.${ext}`;
+                return (
                 <div
                   key={d.id}
                   className="flex items-center justify-between gap-2 rounded-lg border p-3"
@@ -79,7 +83,7 @@ export default function EdexcelMockPapersIndex() {
                   <div className="flex gap-2">
                     <Button asChild size="sm" variant="outline">
                       <a
-                        href={`/edexcel-a-mocks/paper-${p.number}-${d.id}.html`}
+                        href={href}
                         target="_blank"
                         rel="noopener noreferrer"
                         title="Open in new tab"
@@ -88,13 +92,20 @@ export default function EdexcelMockPapersIndex() {
                       </a>
                     </Button>
                     <Button asChild size="sm" className="gap-1.5">
-                      <Link to={`/mock-papers/edexcel-a/${p.number}/${d.id}`}>
-                        View <ArrowRight className="h-3.5 w-3.5" />
-                      </Link>
+                      {isPdf ? (
+                        <a href={href} target="_blank" rel="noopener noreferrer">
+                          View <ArrowRight className="h-3.5 w-3.5" />
+                        </a>
+                      ) : (
+                        <Link to={`/mock-papers/edexcel-a/${p.number}/${d.id}`}>
+                          View <ArrowRight className="h-3.5 w-3.5" />
+                        </Link>
+                      )}
                     </Button>
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </CardContent>
           </Card>
         ))}
