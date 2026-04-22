@@ -71,7 +71,7 @@ export default function EdexcelMockPapersIndex() {
               {DIFFICULTIES.map((d) => {
                 const isPdf =
                   (p.number === 1 && (d.id === "moderate" || d.id === "hard" || d.id === "advanced")) ||
-                  (p.number === 2 && (d.id === "moderate" || d.id === "hard"));
+                  (p.number === 2 && (d.id === "moderate" || d.id === "hard" || d.id === "advanced"));
                 const ext = isPdf ? "pdf" : "html";
                 const href = `/edexcel-a-mocks/paper-${p.number}-${d.id}.${ext}`;
                 return (
