@@ -77,9 +77,15 @@ function EdexcelAPapersList() {
                           </a>
                         </Button>
                         <Button asChild size="sm" className="h-7 gap-1 text-xs">
-                          <Link to={`/mock-papers/edexcel-a/${p.number}/${d.id}`}>
-                            View <ArrowRight className="h-3 w-3" />
-                          </Link>
+                          {isPdf ? (
+                            <a href={paperHref} target="_blank" rel="noopener noreferrer">
+                              View <ArrowRight className="h-3 w-3" />
+                            </a>
+                          ) : (
+                            <Link to={`/mock-papers/edexcel-a/${p.number}/${d.id}`}>
+                              View <ArrowRight className="h-3 w-3" />
+                            </Link>
+                          )}
                         </Button>
                       </div>
                     </div>
