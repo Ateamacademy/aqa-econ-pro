@@ -1963,6 +1963,25 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
       toast.success("Mark scheme downloaded!");
       return;
     }
+    // Edexcel A A-Level: Paper 1 Moderate & Hard have curated static PDFs.
+    const edxaStaticMatch = selectedLibraryPaper?.id?.match(/^edxa-p([123])-([abc])$/i);
+    if (edxaStaticMatch) {
+      const tierMap: Record<string, string> = { a: "moderate", b: "hard", c: "advanced" };
+      const paperNum = edxaStaticMatch[1];
+      const tierSlug = tierMap[edxaStaticMatch[2].toLowerCase()];
+      const hasStaticPdf = paperNum === "1" && (tierSlug === "moderate" || tierSlug === "hard");
+      if (hasStaticPdf) {
+        const url = `/edexcel-a-mocks/mark-scheme-paper-${paperNum}-${tierSlug}.pdf`;
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `Edexcel-A-Level-Economics-Paper-${paperNum}-${tierSlug}-Mark-Scheme.pdf`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        toast.success("Mark scheme downloaded!");
+        return;
+      }
+    }
     if (parsedQuestions.length === 0) {
       toast.error("No questions to generate solutions for.");
       return;
@@ -2507,6 +2526,25 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                       document.body.removeChild(a);
                       toast.success("PDF downloaded!");
                       return;
+                    }
+                    // Edexcel A A-Level: Paper 1 Moderate & Hard have curated static PDFs.
+                    const edxaStaticMatch = selectedLibraryPaper?.id?.match(/^edxa-p([123])-([abc])$/i);
+                    if (edxaStaticMatch) {
+                      const tierMap: Record<string, string> = { a: "moderate", b: "hard", c: "advanced" };
+                      const paperNum = edxaStaticMatch[1];
+                      const tierSlug = tierMap[edxaStaticMatch[2].toLowerCase()];
+                      const hasStaticPdf = paperNum === "1" && (tierSlug === "moderate" || tierSlug === "hard");
+                      if (hasStaticPdf) {
+                        const url = `/edexcel-a-mocks/paper-${paperNum}-${tierSlug}.pdf`;
+                        const a = document.createElement("a");
+                        a.href = url;
+                        a.download = `Edexcel-A-Level-Economics-Paper-${paperNum}-${tierSlug}.pdf`;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        toast.success("PDF downloaded!");
+                        return;
+                      }
                     }
                     const paperTitle = displayPaperTitle(selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`);
                     const fullContent = paperContext + "\n\n" + parsedQuestions.map(q => `${q.label} [${q.marks} marks]\n${q.text}`).join("\n\n");
