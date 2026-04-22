@@ -2,186 +2,331 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mark Scheme &mdash; Paper 1: Markets and Business Behaviour (Hard)</title>
+<title>Mark Scheme — Pearson Edexcel A Level Economics A Paper 1 (9EC0/01) — Hard</title>
 <style>
-    /* Pearson Edexcel mark scheme style */
-@page { size: A4; margin: 15mm 14mm 18mm 14mm; }
-
+@page { size: A4; margin: 18mm 16mm 20mm 16mm; }
 * { box-sizing: border-box; }
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 10pt;
-  line-height: 1.35;
-  color: #111;
-  margin: 0;
+html, body {
+  margin: 0; padding: 0; background: #ededed;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  font-size: 10.5pt; line-height: 1.4; color: #111;
 }
-.topnav {
-  background: #0b49a0; color: #fff; padding: 10px 18px;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 14px;
+.doc {
+  width: 210mm; min-height: 297mm; background: #fff;
+  margin: 10mm auto; padding: 18mm 16mm; box-shadow: 0 1px 6px rgba(0,0,0,0.18);
 }
-.topnav a, .topnav a:visited { color: #fff; text-decoration: none; font-weight: 600; }
-.topnav a:hover { text-decoration: underline; }
-.topnav button {
-  background: #fff; color: #0b49a0; border: 0; padding: 6px 14px;
-  font-weight: 600; border-radius: 3px; cursor: pointer;
+@media print { html, body { background: #fff; } .doc { margin: 0; box-shadow: none; padding: 0; } }
+.pearson-brand { font-family: "Trebuchet MS", sans-serif; font-weight: 700; letter-spacing: -0.2px; }
+.pearson-brand .pearson { font-size: 15pt; }
+.pearson-brand .edexcel { background: #000; color: #fff; padding: 1px 5px; font-size: 13pt; }
+.title-block {
+  text-align: center; margin: 25mm 0 40mm 0;
+  border-top: 2px solid #000; border-bottom: 2px solid #000;
+  padding: 10mm 0;
 }
-@media print { .no-print { display: none !important; } }
-
-.sheet { max-width: 190mm; margin: 0 auto; padding: 10mm 6mm; }
-
-.header-block {
-  border-bottom: 3px solid #000;
-  padding-bottom: 6mm;
-  margin-bottom: 8mm;
+.title-block h1 { font-size: 24pt; margin: 0 0 3mm 0; font-weight: 700; letter-spacing: 0.5px; }
+.title-block h2 { font-size: 14pt; margin: 0 0 2mm 0; font-weight: 400; }
+.title-block .paper-ref { font-size: 13pt; font-weight: 700; margin-top: 4mm; }
+.title-block .session { font-size: 11pt; margin-top: 2mm; font-style: italic; }
+.title-footer { text-align: center; margin-top: 25mm; font-size: 9.5pt; color: #333; }
+.title-footer .brand-inline { margin-bottom: 3mm; }
+h3.section-heading {
+  font-size: 14pt; font-weight: 700; margin: 10mm 0 3mm 0;
+  padding-bottom: 1mm; border-bottom: 1.5px solid #000;
 }
-.header-block .brand {
-  font-family: "Trebuchet MS", sans-serif;
-  font-weight: 700;
-  font-size: 18pt;
-  margin-bottom: 2mm;
+h4.sub-heading {
+  font-size: 11.5pt; font-weight: 700; margin: 6mm 0 2mm 0;
+  color: #000;
 }
-.header-block .brand .edexcel {
-  background: #000; color: #fff; padding: 1mm 3mm; margin-left: 2mm;
-}
-.header-block h1 { font-size: 16pt; margin: 2mm 0; }
-.header-block .subtitle { color: #444; font-size: 11pt; }
-.header-block .tier {
-  display: inline-block;
-  padding: 1mm 4mm;
-  border-radius: 3mm;
-  font-size: 9pt;
-  font-weight: 700;
-  color: #fff;
-  margin-top: 2mm;
-}
-.tier.moderate { background: #2a8f3a; }
-.tier.hard { background: #d77b1a; }
-.tier.advanced { background: #b42a2a; }
-
-.gmg {
-  background: #f5f5f5;
-  border-left: 3px solid #666;
-  padding: 4mm 5mm;
-  margin-bottom: 6mm;
-  font-size: 9pt;
-}
-.gmg h3 { margin: 0 0 2mm 0; font-size: 10pt; }
-.gmg p { margin: 1mm 0; }
-
-h2.section {
-  background: #222;
-  color: #fff;
-  padding: 2mm 4mm;
-  font-size: 11pt;
-  margin: 6mm 0 3mm 0;
-  page-break-before: auto;
-}
-
-h3.qhead {
-  font-size: 10.5pt;
-  margin: 4mm 0 1mm 0;
-  padding: 1mm 0;
-  border-bottom: 1px solid #888;
-}
-
+p { margin: 2mm 0; }
+ul { margin: 2mm 0; padding-left: 6mm; }
+li { margin-bottom: 1mm; }
 table.ms {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 2mm 0 3mm 0;
-  font-size: 9.5pt;
-  table-layout: fixed;
-  word-wrap: break-word;
+  border-collapse: collapse; width: 100%; margin: 3mm 0 4mm 0;
+  font-size: 10pt;
 }
-table.ms th {
-  background: #e5e5e5;
-  border: 0.5pt solid #888;
-  padding: 1.5mm 2mm;
-  text-align: left;
-  font-size: 9pt;
+table.ms th, table.ms td {
+  border: 0.5pt solid #000; padding: 2mm 3mm; vertical-align: top; text-align: left;
 }
-table.ms td {
-  border: 0.5pt solid #bbb;
-  padding: 2mm 2.5mm;
-  vertical-align: top;
+table.ms th { font-weight: 700; background: #e8e8e8; }
+table.ms .qcol { width: 18mm; text-align: center; font-weight: 700; }
+table.ms .markscol { width: 16mm; text-align: center; font-weight: 700; }
+table.ms .contentcol { }
+table.level {
+  border-collapse: collapse; width: 100%; margin: 2mm 0 4mm 0;
+  font-size: 10pt;
 }
-table.ms .qcol { width: 10%; font-weight: 700; }
-table.ms .acol { width: 73%; }
-table.ms .mcol { width: 9%; text-align: center; font-weight: 700; }
-table.ms .aocol { width: 8%; text-align: center; font-size: 8.5pt; color: #555; }
-
-.ind { margin: 1mm 0 1mm 0; padding-left: 4mm; }
-.ind li { margin-bottom: 0.8mm; }
-
-.levels { margin: 2mm 0 2mm 0; }
-.levels table { width: 100%; border-collapse: collapse; font-size: 9pt; }
-.levels td { border: 0.5pt solid #bbb; padding: 1.5mm 2mm; vertical-align: top; }
-.levels .lvl { width: 14%; background: #f2f2f2; font-weight: 700; text-align: center; }
-.levels .range { width: 12%; background: #fafafa; text-align: center; font-weight: 600; }
-.levels .desc { width: 74%; }
-
-.correct { color: #164; font-weight: 700; }
-.note { font-size: 8.5pt; color: #666; font-style: italic; }
-.working { font-family: "Courier New", monospace; background: #f8f8f8; padding: 1mm 2mm; margin: 1mm 0; font-size: 9pt; }
-b.term { background: #fff3d6; padding: 0 2px; }
-.totals-row td { background: #f5f5f5; font-weight: 700; }
-
-
+table.level th, table.level td {
+  border: 0.5pt solid #000; padding: 2mm 3mm; vertical-align: top;
+}
+table.level th { font-weight: 700; background: #d9d9d9; text-align: center; }
+table.level .lvlcol { width: 18mm; font-weight: 700; text-align: center; }
+table.level .markcol { width: 18mm; text-align: center; }
+.boilerplate {
+  background: #f5f5f5; border-left: 3px solid #000; padding: 3mm 5mm;
+  font-size: 10pt; margin: 3mm 0; line-height: 1.45;
+}
+.kaa-split { display: flex; gap: 5mm; margin: 2mm 0; }
+.kaa-split > div { flex: 1; border: 0.5pt solid #666; padding: 3mm; background: #fafafa; }
+.kaa-split h5 { margin: 0 0 2mm 0; font-size: 10.5pt; font-weight: 700; }
+.indicative-heading { font-weight: 700; margin: 3mm 0 1mm 0; font-style: italic; }
+.synoptic-flag {
+  display: inline-block; background: #000; color: #fff;
+  padding: 1px 5px; font-size: 9pt; font-weight: 700; letter-spacing: 0.3px;
+  margin-left: 2mm;
+}
+.page-break { page-break-before: always; }
 </style>
 </head>
 <body>
-<div class="topnav no-print">
-  <div>&larr; <a href="paper-1-hard.html">Back to paper</a></div>
-  <div>Mark scheme: Paper 1 (9EC0/01) &mdash; Hard</div>
-  <button onclick="window.print()">Print</button>
-</div>
-<div class="sheet">
-  <div class="header-block">
-    <div class="brand">Pearson <span class="edexcel">Edexcel</span></div>
-    <h1>Mark Scheme &mdash; Paper 1: Markets and Business Behaviour</h1>
-    <div class="subtitle">9EC0/01 &middot; Thursday 11 June 2026 &ndash; Afternoon</div>
-    <div class="tier hard">Hard tier</div>
-  </div>
-  <div class="gmg">
-    <h3>General Marking Guidance</h3>
-    <p>All candidates must receive the same treatment. Examiners must mark the first candidate in exactly the same way as they mark the last. Mark schemes should be applied positively. Candidates must be rewarded for what they have shown they can do rather than penalised for omissions.</p>
-    <p>Crossed-out work should be marked unless the candidate has replaced it with an alternative response. All the marks on the mark scheme are designed to be awarded. Examiners should always award full marks if deserved, i.e. if the answer matches the mark scheme.</p>
-  </div>
+<div class="doc">
 
-<h2 class="section">Question 1 &mdash; Total 5 marks</h2><table class="ind-table">
-  <thead><tr><th>Indicative content</th><th class="marks-col">Mark</th><th class="ao">AO</th></tr></thead>
-  <tbody><tr><td>(a) Changes: Tesco +1.0 pp; Sainsbury's &minus;0.2; Asda &minus;2.3; Morrisons &minus;1.9; Aldi +3.3; Lidl +1.9; Others &minus;1.8. Aldi + Lidl combined gain = +5.2 pp.</td><td class="marks-col">4</td><td class="ao">AO2 / AO4</td></tr></tbody>
+<div class="title-block">
+  <div class="pearson-brand" style="margin-bottom: 8mm;"><span class="pearson">Pearson</span> <span class="edexcel">Edexcel</span></div>
+  <h1>Mark Scheme</h1>
+  <h2>Predicted Paper &ndash; For revision purposes only</h2>
+  <h2 style="margin-top: 8mm;">Level 3 GCE Economics A (9EC0)</h2>
+  <h2>Paper 1: Markets and Business Behaviour</h2>
+  <div class="paper-ref">9EC0/01 &mdash; Hard</div>
+  <div class="session">Summer 2026 series</div>
+</div>
+
+<div class="title-footer">
+  <div class="brand-inline pearson-brand"><span class="pearson">Pearson</span> <span class="edexcel">Edexcel</span></div>
+  <div>Level 3 GCE &mdash; Economics A</div>
+  <div>Pearson Education Ltd &copy;2026</div>
+</div>
+
+<div class="page-break"></div>
+<h3 class="section-heading">General Marking Guidance</h3>
+<div class="boilerplate">
+  <p>All candidates must receive the same treatment. Mark schemes should be applied positively, rewarding candidates for what they have shown they can do.</p>
+  <p>All marks on the mark scheme are designed to be awarded. Examiners should always award full marks if deserved.</p>
+  <p>Crossed-out work should be marked UNLESS the candidate has replaced it with an alternative response.</p>
+</div>
+
+<h4 class="sub-heading">Marking grid convention</h4>
+<p>Each banded question is marked on two grids: <b>KAA</b> (Knowledge + Application + Analysis, covering AO1, AO2 and AO3) and <b>Evaluation</b> (AO4). Level descriptors for 8, 10, 12, 15 and 25-mark questions are common across all Paper 1 variants and are given in full in the Moderate mark scheme document.</p>
+
+<!-- ============ SECTION A ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section A &mdash; Questions 1 to 5</h3>
+
+<h4 class="sub-heading">Question 1 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">1(a)</td><td><b>Answer: A &ndash; a rise in mortgage rates reducing derived demand for new homes</b> (1).</td><td class="markscol">1</td></tr>
+  <tr><td class="qcol">1(b)</td><td>Diagram: P/Q axes (1); near-vertical S (highly inelastic supply) (1); D shift leftward D<sub>1</sub>&rarr;D<sub>2</sub> (1); new equilibrium with large P fall and small Q fall (1). Examiner note: if candidate draws elastic S, cap at 2 marks for this part.</td><td class="markscol">4</td></tr>
 </table>
-<div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">CR4 = 28.0 + 15.1 + 12.6 + 11.2 = 66.9% (closest to 62.5%, which is within ~5pp tolerance).</div>
-</div><h2 class="section">Question 2 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>(a) Price discrimination = charging different prices to different consumers for identical products with no cost justification.</li><li>Clubcard Prices meets the conditions: identifiable consumer groups (members vs non-members); no arbitrage; market power.</li><li>Represents second-/third-degree discrimination depending on whether it captures willingness-to-pay segmentation.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">Second-degree = prices vary with quantity or version purchased (e.g. loyalty tiers, bulk discounts).</div>
-</div><h2 class="section">Question 3 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Rise of discounters shifts demand for branded goods left (D to D&#8322;).</li><li>Equilibrium price falls (P&#8321; to P&#8322;); quantity falls (Q&#8321; to Q&#8322;).</li><li>Consumer surplus rises for private-label buyers; branded producers face lower margins.</li><li>Producer surplus on brands falls; industry concentration falls as discounters gain share.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">Falling costs of small-format operations and private-label sourcing enable the discount model to scale.</div>
-</div><h2 class="section">Question 4 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Oligopoly cost-revenue diagram: AR and MR with MC and AC.</li><li>Price cut reduces P and hence AR; with unchanged costs, supernormal profit rectangle shrinks.</li><li>Kinked-demand hypothesis: if rivals match the cut, the demand curve is relatively inelastic below the kink, compounding margin loss.</li></ul></div><div class="mcq-ans"><span class="ans">Answer: A</span>
-  <div class="rationale">Predatory pricing (pricing below cost to drive out competitors) is illegal under Chapter II of Competition Act 1998.</div>
-</div><h2 class="section">Question 5 &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Rising wages increase supermarket costs &rarr; squeeze margins or pass through to prices.</li><li>Demand effects: higher incomes for low-paid workers raise demand for groceries.</li><li>Employment: may reduce hours or increase automation (self-checkouts).</li></ul></div><div class="mcq-ans"><span class="ans">Answer: B</span>
-  <div class="rationale">Price-elastic labour demand means firms substitute away from workers when labour costs rise &rarr; bigger employment fall.</div>
-</div><p style="text-align: right; font-weight: 700; margin: 6mm 0;">TOTAL FOR SECTION A = 25 MARKS</p><h2 class="section">Question 6(a) — 5 marks &mdash; Total 5 marks</h2><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>CR5 &asymp; 75% &rarr; tight oligopoly with discounter fringe.</li><li>Product differentiation through brand/private-label; barriers to entry (scale, planning, supplier networks).</li><li>Increasingly contestable at the fringes due to discounter expansion.</li></ul></div><h2 class="section">Question 6(b) — 12 marks &mdash; Total 12 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-3</td><td>Isolated elements of knowledge. Limited application and analysis.</td></tr><tr><td class="lv">Level 2</td><td class="range">4-6</td><td>Accurate knowledge with application to the context. Some reasoned analysis.</td></tr><tr><td class="lv">Level 3</td><td class="range">7-9</td><td>Clear, developed chains of analysis applied to the context with accurate use of data.</td></tr><tr><td class="lv">Level 4</td><td class="range">10-12</td><td>Fully developed, logically sound chains of analysis with integration of multiple data sources.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Cost advantage: private-label cuts out brand marketing margins.</li><li>Income effect: cost-of-living pressures shift preferences to value products.</li><li>Quality gap closing: supermarkets invest in premium private-label (Tesco Finest).</li><li>Retailer margins: private label earns higher margin for retailer.</li><li>Strategic response to discounter threat: Big 4 expanded own-label to compete.</li></ul></div><h2 class="section">Question 6(c) — 8 marks &mdash; Total 8 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-2</td><td>Isolated elements of knowledge and understanding. Brief attempt at application or analysis.</td></tr><tr><td class="lv">Level 2</td><td class="range">3-5</td><td>Accurate knowledge and understanding with application to the context. Some reasoned chains of analysis.</td></tr><tr><td class="lv">Level 3</td><td class="range">6-8</td><td>Clear, accurate and developed knowledge, understanding, application and analysis of the context. Logical and well-reasoned chains.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Price-matching schemes (Aldi Price Match).</li><li>Deeper loyalty-card discounts; store-card credit; expanded private-label ranges.</li><li>Focus on convenience (Tesco Express) and online delivery (Ocado, Asda).</li><li>Evaluation: discounters' structural cost advantage limits how far Big 4 can match without margin collapse.</li></ul></div><h2 class="section">Question 6(d) — 10 marks &mdash; Total 10 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-2</td><td>Isolated elements of knowledge and understanding. Brief and unsupported evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">3-5</td><td>Accurate knowledge, understanding and application to the context. Evaluation is generic rather than context-based.</td></tr><tr><td class="lv">Level 3</td><td class="range">6-8</td><td>Clear chains of analysis applied to the context. Evaluation is context-based with some supporting evidence.</td></tr><tr><td class="lv">Level 4</td><td class="range">9-10</td><td>Fully developed chains of analysis applied to the context. Evaluative judgement is fully supported by reasoned argument and evidence from the extracts.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Loyalty schemes deliver savings to engaged shoppers but entrench exclusion of digitally-disadvantaged consumers (older, low-income).</li><li>'Two-tier pricing' can be welfare-reducing if non-members pay above competitive price.</li><li>Information asymmetry about genuine savings — CMA concern.</li><li>Evaluation: behaviour depends on whether base price would be lower absent the scheme; varies by category.</li></ul></div><h2 class="section">Question 6(e) — 15 marks &mdash; Total 15 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-3</td><td>Isolated knowledge; limited application or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">4-7</td><td>Accurate knowledge and some application. Evaluation is generic or one-sided.</td></tr><tr><td class="lv">Level 3</td><td class="range">8-11</td><td>Developed chains of analysis applied to the context. Balanced evaluation with some judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">12-15</td><td>Sophisticated, fully developed analysis and evaluation. Clear, supported judgement drawing on extracts and own knowledge.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Mandatory unit pricing reduces information asymmetry (shrinkflation detection).</li><li>Consumer decision-making improved &rarr; allocative efficiency gains.</li><li>Compliance costs for retailers (relabelling, systems).</li><li>Risk of retailers gaming via repackaging or non-standard units.</li><li>Evaluation: existing UK unit-pricing rules already apply; marginal gain from making them stricter may be small.</li></ul></div><p style="text-align: right; font-weight: 700; margin: 6mm 0;">TOTAL FOR SECTION B = 50 MARKS</p><h2 class="section">Question 7 — 25 marks &mdash; Total 25 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-5</td><td>Isolated knowledge; limited application, analysis or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">6-11</td><td>Accurate knowledge with some application. Evaluation is unbalanced or underdeveloped.</td></tr><tr><td class="lv">Level 3</td><td class="range">12-17</td><td>Developed chains of analysis applied to context. Balanced evaluation with reasoned judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">18-21</td><td>Sophisticated, fully developed analysis. Evaluation integrates micro and macro perspectives with supported conclusion.</td></tr><tr><td class="lv">Level 5</td><td class="range">22-25</td><td>Exceptional analysis drawing on synoptic links. Sustained, well-reasoned evaluation with decisive, defensible judgement.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>14-day payment code improves small producer cash flow &rarr; reduced bankruptcy risk.</li><li>Shifts bargaining power &rarr; possible marginal rise in farm-gate prices and producer surplus.</li><li>Cost pass-through: supermarkets may raise consumer prices; regressive if food inflation rises.</li><li>Administrative cost; monitoring and enforcement (Groceries Code Adjudicator).</li><li>Evaluation: depends on enforcement credibility; EU UTP directive suggests modest but positive effects.</li></ul></div><h2 class="section">Question 8 — 25 marks &mdash; Total 25 marks</h2><table class="level-table">
-  <thead><tr><th class="lv">Level</th><th class="range">Marks</th><th>Descriptor</th></tr></thead>
-  <tbody><tr><td class="lv">Level 1</td><td class="range">1-5</td><td>Isolated knowledge; limited application, analysis or evaluation.</td></tr><tr><td class="lv">Level 2</td><td class="range">6-11</td><td>Accurate knowledge with some application. Evaluation is unbalanced or underdeveloped.</td></tr><tr><td class="lv">Level 3</td><td class="range">12-17</td><td>Developed chains of analysis applied to context. Balanced evaluation with reasoned judgement.</td></tr><tr><td class="lv">Level 4</td><td class="range">18-21</td><td>Sophisticated, fully developed analysis. Evaluation integrates micro and macro perspectives with supported conclusion.</td></tr><tr><td class="lv">Level 5</td><td class="range">22-25</td><td>Exceptional analysis drawing on synoptic links. Sustained, well-reasoned evaluation with decisive, defensible judgement.</td></tr></tbody>
-</table><div class="ind-bullets"><p><b>Indicative content</b> (candidates may include any of the following — this list is not exhaustive and other valid points should be credited):</p><ul><li>Non-price competition: product differentiation, advertising, innovation, brand loyalty, service quality.</li><li>Consumer benefits: more variety and quality but higher marketing costs passed to prices.</li><li>Price competition: direct consumer gains but may reduce innovation investment.</li><li>Examples: airlines (price-driven), luxury goods (non-price), telecoms (mixed).</li><li>Evaluation: depends on market maturity, product homogeneity, and entry conditions.</li></ul></div>
-<p style="margin-top: 20mm; text-align: center; font-size: 9pt; color: #888;">&mdash; END OF MARK SCHEME &mdash;</p>
+
+<h4 class="sub-heading">Question 2 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">2(a)</td><td>Method: 0.3 &times; 10% (1). Answer: <b>+3%</b> (1).</td><td class="markscol">2</td></tr>
+  <tr><td class="qcol">2(b)</td><td>Linked chain: time taken to obtain planning permission (1), combined with slow response of construction workforce and material supply, means new output cannot expand rapidly in response to price rises (1). Accept land availability, skilled labour constraints, planning system.</td><td class="markscol">2</td></tr>
+  <tr><td class="qcol">2(c)</td><td><b>Answer: C &ndash; Housing is a luxury normal good</b> (1). YED &gt; 1 indicates both normal (positive sign) and luxury (elastic income response).</td><td class="markscol">1</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 3 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">3(a)</td><td><b>Calculation:</b> CIL per home = 90 m&sup2; &times; &pound;100 = &pound;9,000. Total revenue = 1,200 &times; &pound;9,000 = <b>&pound;10,800,000</b>. Award 1 mark for correct CIL per home, 1 mark for correct total.</td><td class="markscol">2</td></tr>
+  <tr><td class="qcol">3(b)(i)</td><td><b>Consumer burden:</b> price rose by &pound;286,000 &minus; &pound;280,000 = &pound;6,000 out of a &pound;9,000 CIL per home, so consumer burden = &pound;6,000 / &pound;9,000 &times; 100 = <b>66.7%</b> (accept 66&ndash;67%).</td><td class="markscol">1</td></tr>
+  <tr><td class="qcol">3(b)(ii)</td><td><b>Producer burden:</b> 100 &minus; 66.7 = <b>33.3%</b> (accept 33&ndash;34%); or (&pound;9,000 &minus; &pound;6,000) / &pound;9,000 &times; 100 = 33.3%.</td><td class="markscol">1</td></tr>
+  <tr><td class="qcol">3(c)</td><td><b>Answer: B &ndash; Accurately valuing the external cost of new development is technically difficult</b> (1). CIL sets a flat per-m&sup2; rate that cannot track heterogeneous external costs across different development sites.</td><td class="markscol">1</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 4 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">4(a)</td><td>2&times;2 matrix: two firms labelled (1); strategies &ldquo;Restrict output&rdquo; / &ldquo;Expand output&rdquo; (1); four payoff cells with numeric values and joint-profit maximum at (Restrict, Restrict) (1); dominant strategy or Nash equilibrium shown where individual deviation is profitable if undetected (1).</td><td class="markscol">4</td></tr>
+  <tr><td class="qcol">4(b)</td><td><b>Answer: B &ndash; Parallel pricing reached without explicit communication</b> (1).</td><td class="markscol">1</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 5 (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">5(a)</td><td><b>Answer: C &ndash; Horizontal integration</b> (1). Both Barratt and Redrow are UK house-builders operating in the same industry.</td><td class="markscol">1</td></tr>
+  <tr><td class="qcol">5(b)</td><td>Any ONE risk-bearing economy with chain: e.g. larger merged firm can spread risk across more sites and regions (1), so exposure to any single local-market downturn becomes a smaller share of total revenue (1). Accept diversified land portfolio, multiple product tiers.</td><td class="markscol">2</td></tr>
+  <tr><td class="qcol">5(c)</td><td>Any ONE diseconomy with chain: e.g. managerial diseconomies (1) &mdash; Barratt and Redrow had distinct regional cultures and reporting lines; integrating decision-making may slow approvals and weaken local responsiveness (1). Accept X-inefficiency, coordination costs, cultural conflict.</td><td class="markscol">2</td></tr>
+</table>
+
+<!-- ============ SECTION B ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section B &mdash; Question 6: The UK house-building market</h3>
+
+<h4 class="sub-heading">Question 6(a) &ndash; Calculate the three-firm concentration ratio for the top-10 UK house-builders by completions (5 marks)</h4>
+<table class="ms">
+  <tr><th class="qcol">Q</th><th>Indicative content</th><th class="markscol">Marks</th></tr>
+  <tr><td class="qcol">6(a)</td>
+  <td>
+    Identifying top 3 completions: Barratt Redrow 17,200 + Vistry 14,400 + Persimmon 10,700 (1)<br>
+    Sum top 3 = 42,300 (1)<br>
+    Total top-10 completions = 73,500 (1)<br>
+    Ratio: 42,300 / 73,500 &times; 100 = <b>57.6%</b> (1)<br>
+    <b>Evaluation (1):</b> &ldquo;Among the top 10, the three largest account for over half of output, indicating a moderately concentrated oligopolistic structure at the top of the market.&rdquo;
+  </td>
+  <td class="markscol">5</td></tr>
+</table>
+
+<h4 class="sub-heading">Question 6(b) &ndash; Discuss the likely impact of the government's proposed "build-out" penalty on a major house-builder's profitability (12 marks)</h4>
+<p class="indicative-heading">Diagram required: cost/revenue diagram showing two scenarios (status quo vs. with penalty).</p>
+<div class="kaa-split">
+  <div>
+    <h5>KAA with diagram (out of 8)</h5>
+    <ul>
+      <li>Scenario 1 (status quo): firm builds slowly, high margins, supernormal profit area large.</li>
+      <li>Scenario 2 (with penalty): firm forced to accelerate build &mdash; accelerated build shifts supply right, reducing market P; also increases MC short-run (labour/materials shortages).</li>
+      <li>Show profit-maximising output shifting and supernormal profit area shrinking.</li>
+      <li>Barratt Redrow: 85,000 plots at 17,200 p.a. = 4.9 years, within proposed 3-year limit &mdash; but Bellway at 12.7 years would face material penalty costs.</li>
+      <li>Estimated penalty cost if builder can't accelerate: potentially &pound;hundreds of millions.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 4)</h5>
+    <ul>
+      <li>Penalty only bites if site is genuinely capable of faster build-out.</li>
+      <li>Small sites can accelerate; large strategic sites (1,000+ homes) genuinely require 5&ndash;10 year phased construction.</li>
+      <li>Risk that penalty raises land-acquisition risk &rarr; reduces future supply (perverse effect highlighted by HBF).</li>
+      <li>Market reaction: builders may offload slow-build land and concentrate on fast-turn sites.</li>
+      <li><b>Judgement:</b> effect on individual firm profitability is ambiguous &mdash; depends on land-bank composition, ability to accelerate, and whether penalty causes market-wide supply response that depresses prices.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 6(c) &ndash; Examine two factors that may explain why UK house-builders hold large consented land banks (8 marks)</h4>
+<p class="indicative-heading">Indicative content (at least two distinct factors developed):</p>
+<ul>
+  <li><b>Planning-system uncertainty (Extract A):</b> 4.5-year average from acquisition to consent; without pipeline, build rates collapse. Land banks act as insurance against planning risk.</li>
+  <li><b>Operational continuity:</b> &pound;2&ndash;4m sunk costs per site; maintaining skilled labour and supplier relationships requires forward visibility of work.</li>
+  <li><b>Strategic / profit motive:</b> land banks enable output restriction if market prices fall; &ldquo;trickle-out&rdquo; sustains margins on large sites.</li>
+  <li><b>Land as speculative asset:</b> consented land rises in value; some land banking reflects portfolio management, not production planning.</li>
+  <li><b>Industry structure:</b> oligopolistic market with interdependence &mdash; rival builders matching &ldquo;slow build-out&rdquo; can be a Nash equilibrium.</li>
+  <li><b>Evaluation reach:</b> distinction between defensive (planning insurance) and offensive (price-support) motives matters for policy &mdash; the CMA's findings suggest both are present.</li>
+</ul>
+<p class="indicative-heading">Award 8-mark "Examine" band (KAA = 5, Eval = 3).</p>
+
+<h4 class="sub-heading">Question 6(d) &ndash; Assess whether the behaviour of UK house-builders is consistent with collusive oligopoly (10 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 6)</h5>
+    <p><b>Evidence FOR collusive behaviour:</b></p>
+    <ul>
+      <li>CMA 2024 findings: information-sharing at industry events; &pound;60m fines.</li>
+      <li>Persistent land-bank years-of-supply 7&ndash;18 years &mdash; suggests supply restriction.</li>
+      <li>Parallel build-out rates across firms (tacit coordination).</li>
+      <li>Oligopoly concentration at top (CR3 among top 10 = 57.6%).</li>
+      <li>Stable margins despite demand volatility.</li>
+    </ul>
+    <p><b>Evidence AGAINST pure collusion:</b></p>
+    <ul>
+      <li>Planning system is a genuine binding constraint &mdash; land banks partly defensive.</li>
+      <li>HBF argues output constraints are regulatory, not strategic.</li>
+      <li>Entry of modular/volumetric builders (e.g. Vistry's partnership model).</li>
+      <li>Price competition at local level via incentives (stamp duty paid, carpets included).</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 4)</h5>
+    <ul>
+      <li>Pattern of behaviour is <i>consistent with</i> tacit collusion but not definitively proven.</li>
+      <li>CMA's finding falls short of full cartel prosecution.</li>
+      <li>Parallel slow build-out could reflect rational response to planning risk OR tacit coordination &mdash; hard to separate empirically.</li>
+      <li>Vistry's entry with partnership model (building for housing associations and affordable providers) shows industry is not perfectly rigid.</li>
+      <li><b>Judgement:</b> behaviour shows features of tacit collusion (parallel slow build-out, information sharing) mixed with genuine regulatory friction. &ldquo;Quasi-collusive oligopoly with planning-system cover&rdquo; is the most defensible characterisation.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 6(e) &ndash; Discuss whether behavioural economics provides a better framework than traditional market failure analysis for understanding the UK housing market (15 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 9)</h5>
+    <p><b>Traditional market failure framework:</b></p>
+    <ul>
+      <li>Externalities (infrastructure pressure, biodiversity, congestion).</li>
+      <li>Information asymmetry (NHBC warranty as imperfect fix).</li>
+      <li>Market power (oligopolistic house-builders, planning-constrained land market).</li>
+      <li>Merit/public goods (social housing, affordable housing provision).</li>
+    </ul>
+    <p><b>Behavioural framework (from Extract B):</b></p>
+    <ul>
+      <li>Anchoring on past prices &mdash; 31% refuse to list below purchase price.</li>
+      <li>Loss aversion &mdash; homeowners hold on to losing properties, slowing market adjustment.</li>
+      <li>Limited attention &mdash; developers exploit complex pricing bundles.</li>
+      <li>Status quo bias &mdash; homeowners under-invest in energy efficiency.</li>
+      <li>Framing effects &mdash; &pound;349,995 vs. &pound;350,000.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 6)</h5>
+    <ul>
+      <li>Behavioural framework captures pricing stickiness and consumer exploitation that traditional models miss.</li>
+      <li>Traditional framework better captures supply-side structural problems (planning, land banking, oligopoly).</li>
+      <li>Policy implications differ: behavioural &rarr; nudges, mandated disclosures, cooling-off periods; traditional &rarr; planning reform, competition enforcement, tax incentives.</li>
+      <li>Both frameworks complementary rather than substitutable.</li>
+      <li><b>Judgement:</b> neither framework alone is sufficient. Behavioural economics illuminates the demand side (especially consumer protection), while traditional market failure captures the supply side (planning, market structure). A &ldquo;best-of-both&rdquo; policy mix is likely optimal. Pure behavioural focus misses structural supply constraints; pure market-failure focus misses consumer exploitation and sticky adjustment.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ SECTION C ============ -->
+<div class="page-break"></div>
+<h3 class="section-heading">Section C &mdash; Question 7 OR Question 8 (25 marks)</h3>
+
+<h4 class="sub-heading">Question 7 &ndash; Evaluate whether firms with market power should be permitted to use price discrimination (25 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 15)</h5>
+    <ul>
+      <li>Price discrimination theory: 1st / 2nd / 3rd degree; conditions (market power, separable markets, differing PED, no arbitrage).</li>
+      <li>Welfare effects: can increase output and access (1st-degree captures all CS); can reduce CS; allocative effects ambiguous.</li>
+      <li>Diagrams: 3rd-degree PD diagram showing higher P to inelastic group, lower P to elastic group; total output may rise.</li>
+      <li>Application (supermarket dynamic pricing, airline yield management, rail peak/off-peak): consumers differ in willingness-to-pay; dynamic pricing can reduce food waste.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 10)</h5>
+    <ul>
+      <li>Efficiency case: PD can expand output (esp. for high fixed-cost firms &mdash; airlines, pharmaceuticals).</li>
+      <li>Consumer harm: 1st-degree PD transfers all surplus to firm; algorithmic PD risks discrimination against vulnerable consumers.</li>
+      <li>Fairness/equity: disparate impact on low-income consumers if they are in inelastic segment.</li>
+      <li>Dynamic effects: PD funds R&amp;D investment (pharma case).</li>
+      <li>Regulatory perspective: CMA focus on algorithmic transparency; potential for &ldquo;data-driven&rdquo; discrimination based on protected characteristics.</li>
+      <li><b>Judgement:</b> PD should generally be permitted where it expands output and where consumers are not systematically exploited based on vulnerability. Regulatory guardrails (transparency, no protected-characteristic discrimination, cooling-off for high-value purchases) address the worst abuses without blocking efficiency gains.</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="sub-heading">Question 8 &ndash; Evaluate the case for government intervention to correct market failure in a specific market of your choice (25 marks)</h4>
+<div class="kaa-split">
+  <div>
+    <h5>KAA (out of 15)</h5>
+    <ul>
+      <li>Market failure types: externalities, public goods, merit/demerit, information asymmetry, market power, inequality.</li>
+      <li>Intervention tools: Pigouvian taxes/subsidies, regulation, direct provision, tradable permits, information provision, competition policy.</li>
+      <li>Government failure: regulatory capture, unintended consequences, time inconsistency.</li>
+      <li>Application (higher education, climate policy, pharmaceuticals, childcare): specific evidence and policy history.</li>
+      <li>Diagrams: externality diagram with MSC, MSB; public good / merit good diagrams.</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Evaluation (out of 10)</h5>
+    <ul>
+      <li>Intervention justified where market failure is clearly identified and government can plausibly do better.</li>
+      <li>Risk of government failure: imperfect information, political capture, regulatory lag.</li>
+      <li>Empirical evidence: mixed across interventions (congestion charges effective, rent controls often counter-productive).</li>
+      <li>Second-best theory: partial interventions in the presence of multiple market failures can make things worse.</li>
+      <li>Distributional concerns: interventions often have regressive or unintended equity effects.</li>
+      <li><b>Judgement:</b> intervention is justified where market failure is material, where the chosen instrument is well-matched to the failure, and where government has credible implementation capacity. Blanket &ldquo;intervene vs. don't intervene&rdquo; framing is unhelpful; design quality is the binding constraint.</li>
+    </ul>
+  </div>
+</div>
+
+<div style="margin-top: 10mm; border-top: 1.5px solid #000; padding-top: 3mm; text-align: center; font-weight: 700;">
+  TOTAL FOR PAPER = 100 MARKS
+</div>
+
 </div>
 </body>
 </html>
