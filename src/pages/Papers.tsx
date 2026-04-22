@@ -48,7 +48,7 @@ function EdexcelAPapersList() {
                 // (uploaded directly by the user). All other slots remain HTML booklets.
                 const isPdf =
                   (p.number === 1 && (d.id === "moderate" || d.id === "hard" || d.id === "advanced")) ||
-                  (p.number === 2 && d.id === "moderate");
+                  (p.number === 2 && (d.id === "moderate" || d.id === "hard"));
                 const ext = isPdf ? "pdf" : "html";
                 const paperHref = `/edexcel-a-mocks/paper-${p.number}-${d.id}.${ext}`;
                 const msHref = `/edexcel-a-mocks/mark-scheme-paper-${p.number}-${d.id}.${ext}`;
