@@ -1946,6 +1946,23 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
   );
 
   const handleDownloadSolutions = useCallback(async () => {
+    // For AQA A-Level Economics library papers, serve the curated static mark
+    // scheme PDF (matches the official Papers section) instead of generating.
+    const aqaStaticMatch = selectedLibraryPaper?.id?.match(/^econ-p([123])-([abc])$/i);
+    if (aqaStaticMatch) {
+      const tierMap: Record<string, string> = { a: "moderate", b: "hard", c: "advanced" };
+      const paperNum = aqaStaticMatch[1];
+      const tierSlug = tierMap[aqaStaticMatch[2].toLowerCase()];
+      const url = `/aqa-mocks/mark-scheme-paper-${paperNum}-${tierSlug}.pdf`;
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `AQA-A-Level-Economics-Paper-${paperNum}-${tierSlug}-Mark-Scheme.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      toast.success("Mark scheme downloaded!");
+      return;
+    }
     if (parsedQuestions.length === 0) {
       toast.error("No questions to generate solutions for.");
       return;
