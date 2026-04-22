@@ -2473,6 +2473,24 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                   size="lg"
                   className="gap-2.5 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-shadow"
                   onClick={() => {
+                    // For AQA A-Level Economics library papers, serve the curated
+                    // static PDF (matches the official Papers section) instead of
+                    // regenerating from text content.
+                    const aqaStaticMatch = selectedLibraryPaper?.id?.match(/^econ-p([123])-([abc])$/i);
+                    if (aqaStaticMatch) {
+                      const tierMap: Record<string, string> = { a: "moderate", b: "hard", c: "advanced" };
+                      const paperNum = aqaStaticMatch[1];
+                      const tierSlug = tierMap[aqaStaticMatch[2].toLowerCase()];
+                      const url = `/aqa-mocks/paper-${paperNum}-${tierSlug}.pdf`;
+                      const a = document.createElement("a");
+                      a.href = url;
+                      a.download = `AQA-A-Level-Economics-Paper-${paperNum}-${tierSlug}.pdf`;
+                      document.body.appendChild(a);
+                      a.click();
+                      document.body.removeChild(a);
+                      toast.success("PDF downloaded!");
+                      return;
+                    }
                     const paperTitle = displayPaperTitle(selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`);
                     const fullContent = paperContext + "\n\n" + parsedQuestions.map(q => `${q.label} [${q.marks} marks]\n${q.text}`).join("\n\n");
                     generatePaperPdf(paperTitle, fullContent, {
