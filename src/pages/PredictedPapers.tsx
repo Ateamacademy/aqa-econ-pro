@@ -1971,7 +1971,8 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
       const tierSlug = tierMap[edxaStaticMatch[2].toLowerCase()];
       const hasStaticPdf =
         (paperNum === "1" && (tierSlug === "moderate" || tierSlug === "hard" || tierSlug === "advanced")) ||
-        (paperNum === "2" && (tierSlug === "moderate" || tierSlug === "hard"));
+        (paperNum === "2" && (tierSlug === "moderate" || tierSlug === "hard" || tierSlug === "advanced")) ||
+        (paperNum === "3" && (tierSlug === "moderate" || tierSlug === "hard" || tierSlug === "advanced"));
       if (hasStaticPdf) {
         const url = `/edexcel-a-mocks/mark-scheme-paper-${paperNum}-${tierSlug}.pdf`;
         const a = document.createElement("a");
@@ -2537,7 +2538,8 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                       const tierSlug = tierMap[edxaStaticMatch[2].toLowerCase()];
                       const hasStaticPdf =
                         (paperNum === "1" && (tierSlug === "moderate" || tierSlug === "hard" || tierSlug === "advanced")) ||
-                        (paperNum === "2" && (tierSlug === "moderate" || tierSlug === "hard"));
+                        (paperNum === "2" && (tierSlug === "moderate" || tierSlug === "hard" || tierSlug === "advanced")) ||
+                        (paperNum === "3" && (tierSlug === "moderate" || tierSlug === "hard" || tierSlug === "advanced"));
                       if (hasStaticPdf) {
                         const url = `/edexcel-a-mocks/paper-${paperNum}-${tierSlug}.pdf`;
                         const a = document.createElement("a");
