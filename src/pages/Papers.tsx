@@ -773,8 +773,8 @@ const AQA_GCSE_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: 
 ];
 
 const EDEXCEL_IGCSE_PAPERS: { number: 1 | 2; code: string; title: string; focus: string; available: boolean }[] = [
-  { number: 1, code: "4EC1/01", title: "Microeconomics & Business Economics", focus: "Microeconomics", available: true  },
-  { number: 2, code: "4EC1/02", title: "Macroeconomics & the Global Economy", focus: "Macroeconomics", available: false },
+  { number: 1, code: "4EC1/01", title: "Microeconomics & Business Economics", focus: "Microeconomics", available: true },
+  { number: 2, code: "4EC1/02", title: "Macroeconomics & the Global Economy", focus: "Macroeconomics", available: true },
 ];
 
 function EdexcelIgcsePapersList() {
