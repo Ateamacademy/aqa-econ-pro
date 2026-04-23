@@ -454,11 +454,10 @@ function OcrPapersList() {
   );
 }
 
-const WJEC_PAPERS: { number: 1 | 2 | 3 | 4; code: string; title: string; focus: string; available: boolean }[] = [
+const WJEC_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; available: boolean }[] = [
   { number: 1, code: "1090U10-1", title: "Introduction to Economics",                  focus: "AS Micro",       available: true  },
   { number: 2, code: "1090U20-1", title: "Economics in Action",                        focus: "AS Macro",       available: false },
   { number: 3, code: "A090U30-1", title: "Exploring Economic Behaviour",               focus: "A2 Micro/Macro", available: false },
-  { number: 4, code: "A090U40-1", title: "Evaluating Economic Models & Policies",      focus: "Synoptic",       available: false },
 ];
 
 function WjecPapersList() {
