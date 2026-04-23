@@ -873,6 +873,7 @@ function AqaGcsePapersList() {
 }
 
 
+export default function Papers() {
   const { subject } = useSubject();
 
   if (subject === "edexcel-a") {
