@@ -797,6 +797,10 @@ export default function Papers() {
     return <AqaPapersList />;
   }
 
+  if (subject === "aqa-gcse") {
+    return <AqaGcsePapersList />;
+  }
+
   return (
     <div className="max-w-4xl mx-auto px-5 py-12">
       <div className="mb-8">
