@@ -22,7 +22,7 @@ const EDEXCEL_B_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus:
 const OCR_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; available: boolean }[] = [
   { number: 1, code: "H460/01", title: "Microeconomics",                            focus: "Microeconomics", available: true  },
   { number: 2, code: "H460/02", title: "Macroeconomics",                            focus: "Macroeconomics", available: true  },
-  { number: 3, code: "H460/03", title: "Themes in Economics",                       focus: "Synoptic",       available: false },
+  { number: 3, code: "H460/03", title: "Themes in Economics",                       focus: "Synoptic",       available: true  },
 ];
 
 const CAIE_PAPERS: { number: 1 | 2 | 3 | 4; code: string; title: string; focus: string; duration: string; marks: number; available: boolean }[] = [
