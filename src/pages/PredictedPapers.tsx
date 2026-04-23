@@ -1758,6 +1758,99 @@ Then provide a model written explanation that would score full marks.
 Speak directly to the student using "you" and "your". Be encouraging but honest.`;
           }
 
+          // ─── Edexcel B (9EB0) — point-based for 4/6, level-based for 8/10/12/20 ───
+          if (isEdexcelB) {
+            const m = question.marks;
+            const isPointBased = m === 4 || m === 6;
+            const skillAlloc =
+              m === 4  ? "Knowledge/understanding 1, Application 2, Analysis 1, Evaluation 0" :
+              m === 6  ? "Knowledge/understanding 2, Application 2, Analysis 2, Evaluation 0" :
+              m === 8  ? "Knowledge/understanding 2, Application 2, Analysis 2, Evaluation 2" :
+              m === 10 ? "Knowledge/understanding 2, Application 2, Analysis 3, Evaluation 3" :
+              m === 12 ? "Knowledge/understanding 2, Application 2, Analysis 4, Evaluation 4" :
+              m === 20 ? "Knowledge/understanding 4, Application 4, Analysis 6, Evaluation 6" :
+              `Knowledge/understanding, Application, Analysis${m >= 8 ? ", Evaluation" : ""} (allocate proportionally to ${m} marks)`;
+
+            const levelTable8 = `Level 0 (0): completely inaccurate.
+Level 1 (1–2): isolated K&U; little/no relevant evidence; reasoning attempted; limited address of question.
+Level 2 (3–5): some K&U with limited evidence; chains of reasoning developed; judgements may be attempted.
+Level 3 (6–8): accurate K&U supported by well-chosen evidence; logical, coherent chains of reasoning; balanced awareness of competing arguments.`;
+
+            const levelTable10 = `Level 0 (0): completely inaccurate.
+Level 1 (1–2): isolated K&U; little/no evidence; reasoning attempted; limited address of question.
+Level 2 (3–4): some K&U with limited evidence; chains of reasoning presented but limited; comparisons/judgements attempted.
+Level 3 (5–7): accurate K&U with relevant evidence; clear chains of reasoning; awareness of competing arguments though may lack balance.
+Level 4 (8–10): accurate K&U fully supported by well-chosen evidence; logical, coherent reasoning; arguments developed AND evaluated; full balanced awareness of competing arguments.`;
+
+            const levelTable12 = `Level 0 (0): completely inaccurate.
+Level 1 (1–2): isolated K&U; little/no evidence; reasoning attempted; limited address of question.
+Level 2 (3–5): some K&U with limited evidence; reasoning presented but limited; comparisons/judgements attempted.
+Level 3 (6–9): accurate K&U with relevant evidence; clear chains of reasoning; awareness of competing arguments though may lack balance.
+Level 4 (10–12): accurate K&U fully supported by well-chosen evidence; logical reasoning; arguments developed AND evaluated; full balanced awareness of competing arguments.`;
+
+            const levelTable20 = `Level 0 (0): completely inaccurate.
+Level 1 (1–4): isolated K&U; little/no evidence; reasoning fails to connect cause and consequence; limited address of question.
+Level 2 (5–9): some K&U with limited evidence; reasoning presented but cause–consequence links incomplete; comparisons/judgements unsupported or generic.
+Level 3 (10–15): accurate K&U with relevant evidence; developed reasoning showing cause–consequence links; competing arguments present though may lack balance.
+Level 4 (16–20): accurate K&U fully integrated with well-chosen evidence; well-developed, logical, coherent reasoning; arguments fully developed AND evaluated; nuanced and balanced comparisons/judgements/conclusions.`;
+
+            const levelTable =
+              m === 8  ? levelTable8 :
+              m === 10 ? levelTable10 :
+              m === 12 ? levelTable12 :
+              m === 20 ? levelTable20 : "";
+
+            return `You are a senior Pearson Edexcel B A-Level Economics (9EB0) examiner marking a candidate's response strictly against the official Edexcel B mark scheme conventions.
+
+PAPER CONTEXT (extracts/figures the question may reference):
+${paperContext}
+
+QUESTION:
+${question.label} [${question.marks} marks]
+${question.text}
+
+STUDENT'S ANSWER:
+${answer}
+
+═══ EDEXCEL B MARKING RULES (DO NOT DEVIATE) ═══
+- This is a ${m}-mark question.
+- Skill allocation (must sum to ${m}): ${skillAlloc}.
+- Use the ${isPointBased ? "POINT-BASED rubric (no level table)" : "LEVEL-BASED rubric (use the verbatim Pearson level descriptors below)"}.
+- Edexcel B uses K (Knowledge/understanding), Ap (Application), An (Analysis), Ev (Evaluation). Evaluation is ONLY assessed from 8 marks upward.
+- Where the question references stimulus material (extracts/data), the candidate MUST directly reference, interpret or analyse it for AO2 (Application) credit. If they ignore the stimulus, deny Application marks.
+- Do NOT use AQA KAA banding. Do NOT invent custom marks/levels.
+
+${isPointBased ? `═══ POINT-BASED MARK SCHEME (${m} marks) ═══
+List the specific point(s) earning each mark, broken down by skill:
+- Knowledge/understanding (state the formula / definition / concept the student must show)
+- Application (state the contextual data point / scenario reference required from the extract)
+- Analysis (state the chain of reasoning required)
+${m === 4 ? "If this is a calculation question, include an NB note: e.g. award full marks for the correct numerical answer with units even if working is missing; deduct 1 mark for missing units; zero for wrong sign." : ""}` : `═══ LEVEL-BASED MARK SCHEME (${m} marks) ═══
+Apply the verbatim Pearson level descriptors:
+
+${levelTable}
+
+Then list 4–6 indicative content bullets (accepted analysis points). For 8+ mark questions, include at least 2 evaluation points prefixed with "Evaluation —".`}
+
+═══ AO2 APPLICATION NOTE (always include verbatim under the level table) ═══
+Demonstrating application (AO2): Where questions specifically stipulate the use of data or information provided in a stimulus, students must directly reference, interpret or analyse the information provided in the stimulus; in addition, they may select examples from their own knowledge but these must be relevant and directly connected to the context/issues set out in the stimulus. Where questions do not specifically stipulate the use of data or information provided in a stimulus, students must select relevant examples from their own knowledge, these must be directly connected to the context/issues set out in the question.
+
+You MUST respond in EXACTLY this structure (the app parses these headings):
+
+## Mark Scheme
+**Skill allocation:** ${skillAlloc}
+
+${isPointBased
+  ? `Then a per-skill breakdown showing exactly how each of the ${m} marks is awarded for THIS student's answer (mark awarded vs. mark lost, with the reason). Use "you" / "your".`
+  : `Then state the LEVEL awarded (Level 0–${m === 8 ? "3" : "4"}) and the specific mark within the band (e.g. "Level 2 — 4/${m}"). Justify by quoting the relevant descriptor language and pointing to evidence (or its absence) in the student's answer. Then list the indicative content points the student covered vs. missed. Then include the AO2 application note in italics. Use "you" / "your".`}
+
+## Model Answer
+A full top-band response that would score ${m}/${m}. Write in continuous prose as a candidate would, integrating the stimulus where the question requires it. ${m >= 8 ? "Include developed analysis chains AND balanced evaluation with a prioritised judgement." : "Show the formula/working or definition + applied context + clear analytical chain."} If a diagram is required (Q1(e) on Paper 2), describe axes, curves, shifts, equilibria and shaded areas in words.
+
+## Examiner Tip
+2–3 short, actionable tips that distinguish a top-band Edexcel B response from a mid-band one for THIS specific question (e.g. "anchor every analytical chain back to a figure from Extract X", "always finish with a prioritised judgement, not a summary"). Address the student directly.`;
+          }
+
           // Standard economics marking prompt
           return `You are marking an AQA A-Level Economics answer using the EXACT AQA mark scheme methodology.
 
