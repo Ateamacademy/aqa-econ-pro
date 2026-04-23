@@ -1,519 +1,744 @@
 import type { PredictedPaper } from "./predictedPapersLibrary";
 
 export const edexcelBPredictedPapers: PredictedPaper[] = [
-  // ── Paper 1: Markets, Consumers & Firms ──
+  // ── Paper 1: Markets and how they work (9EB0/01) ──
+  // Spec: 100 marks · 2 hours · Section A Q1(a–h) [4+4+4+6+8+10+12+12 = 60] · Section B Q2 [20] · Section C Q3 [20]
   {
     id: "edxb-p1-a",
     subject: "edexcel-b",
     paper: "1",
     title: "Paper 1 — Set A",
-    description: "Markets, Consumers & Firms. Data response on market structures and labour.",
-    totalMarks: 80,
-    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1 — Predicted Paper Set A
+    description: "Markets, Consumers & Firms. Coffee-shop oligopoly, minimum wage, sugar-tax regulation.",
+    totalMarks: 100,
+    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper Set A
 
-**Time: 2 hours | Total: 80 marks**
+**Time: 2 hours | Total: 100 marks**
 
-## Section A: Data Response (40 marks)
+---
 
-**Context: The UK Coffee Shop Market**
+## SECTION A (60 marks)
 
-Read the extracts below and answer all questions.
+Read the following extracts (A to D) before answering Question 1.
 
-**Extract A:** The UK coffee shop market is worth £4.4 billion, with 10,000+ branded outlets. Costa, Starbucks, and Caffè Nero control 52% of the market (CR3). However, independent coffee shops have grown by 14% since 2022, driven by consumer preference for "artisan" and locally sourced products. Average coffee prices rose 18% between 2022–2024.
+**Extract A — The UK coffee shop market**
 
-**Extract B:**
+The UK coffee shop market is worth £4.4 billion in 2024, served by more than 10,000 branded outlets. The three largest chains — Costa, Starbucks and Caffè Nero — together control 52% of the market (CR3). Independents have grown 14% since 2022, helped by consumer preference for "artisan" and locally sourced products. Average latte prices rose 18% between 2022 and 2024, partly reflecting higher wage costs as the National Living Wage increased to £11.44/hour.
 
-| UK Coffee Market Data | 2020 | 2022 | 2024 |
-|----------------------|------|------|------|
-| Market value (£bn) | 3.2 | 3.9 | 4.4 |
-| CR3 (%) | 57 | 54 | 52 |
-| Independent outlets (000s) | 6.8 | 7.4 | 8.4 |
-| Avg latte price (£) | 2.90 | 3.15 | 3.72 |
-| Barista avg wage (£/hr) | 8.72 | 9.50 | 11.44 |
+**Extract B — Branded chains by UK outlet count, 2024**
 
-Question 1 [4 marks]
-Using Extract B, explain two trends visible in the UK coffee shop market between 2020 and 2024.
+| Rank | Brand | Outlets | UK market share (%) |
+|------|-------|---------|----------------------|
+| 1 | Costa Coffee | 2,467 | 24.1 |
+| 2 | Starbucks | 1,180 | 17.6 |
+| 3 | Caffè Nero | 660 | 10.3 |
+| 4 | Pret A Manger | 470 | 7.8 |
+| 5 | Greggs (coffee) | 2,460 | 6.9 |
 
-Question 2 [4 marks]
-Using a diagram, explain how the growth of independent coffee shops affects market contestability.
+**Extract C — A specialist independent: "Origin Coffee Co."**
 
-Question 3 [8 marks]
-With reference to the data, explain why the UK coffee shop market might be classified as monopolistically competitive rather than oligopolistic.
+Origin Coffee Co. operates 12 specialty cafés across South-West England. The firm sources single-origin beans directly from co-operatives, charging a 30% price premium over branded chains. Operating profit in FY2024 was £1.92m on revenue of £16.0m. Origin invests heavily in barista training and store experience and competes mainly on quality, not price.
 
-Question 4 [8 marks]
-Using a diagram, analyse the impact of the increase in the National Living Wage on employment and costs in the coffee shop industry.
+**Extract D — Average UK latte price (£)**
 
-Question 5 [16 marks]
-"The UK coffee shop market demonstrates that consumers benefit from competition." Evaluate this statement using economic theory and the data provided.
+| Quarter | Price (£) | % change |
+|---------|-----------|----------|
+| Q1 2023 | 3.20 | — |
+| Q3 2023 | 3.38 | +5.6 |
+| Q1 2024 | 3.55 | +5.0 |
+| Q3 2024 | 3.72 | +4.8 |
+| Q4 2024 | 3.78 | +1.6 |
 
-## Section B: Data Response (40 marks)
+---
 
-**Context: UK Farming After Brexit**
+**Question 1**
 
-**Extract C:** UK farmers received £3.5 billion annually from the EU Common Agricultural Policy (CAP). Post-Brexit, the transition to the Environmental Land Management Scheme (ELMS) has seen direct payments reduce by 50% by 2024. Farm incomes have fallen 36% since 2019, and farm bankruptcies increased by 132%.
+(a) Using Extract C, calculate Origin Coffee Co.'s operating profit margin in FY2024. Give your answer to two decimal places. **(4)**
 
-**Extract D:**
+(b) Using Extract D, calculate the percentage change in the average UK latte price between Q1 2023 and Q4 2024. Give your answer to two decimal places. **(4)**
 
-| UK Agriculture | 2019 | 2022 | 2024 |
-|---------------|------|------|------|
-| Direct payments (£bn) | 3.5 | 2.8 | 1.8 |
-| Avg farm income (£000) | 35.2 | 28.1 | 22.6 |
-| Food self-sufficiency (%) | 61 | 58 | 55 |
-| Farm bankruptcies | 220 | 380 | 510 |
-| Food imports (£bn) | 46.8 | 52.3 | 58.1 |
+(c) With reference to Extract A, draw a supply-and-demand diagram to show the impact of the increase in the National Living Wage on the UK coffee shop market. **(4)**
 
-Question 6 [4 marks]
-Using Extract D, calculate the percentage increase in food imports between 2019 and 2024.
+(d) Using Extract B, analyse one likely impact of the market structure on the pricing strategy of Costa Coffee. **(6)**
 
-Question 7 [4 marks]
-Using a supply and demand diagram for UK agricultural products, explain how the reduction in subsidies affects market equilibrium.
+(e) Discuss whether **profit maximisation** is the most important objective for Origin Coffee Co. (Extract C). **(8)**
 
-Question 8 [8 marks]
-Analyse the market failures present in UK agriculture that justify government intervention. Consider externalities and information failure.
+(f) Assess the impact of the 18% rise in average latte prices on consumers and producers in the UK coffee shop market. **(10)**
 
-Question 9 [8 marks]
-Explain why agricultural prices tend to be volatile. Use cobweb theory in your answer.
+(g) Assess the importance of **non-price competition** in the UK coffee shop market. **(12)**
 
-Question 10 [16 marks]
-"The transition from direct payments to environmental payments represents a more efficient use of public funds." Evaluate this statement.`,
+(h) Assess whether the UK coffee shop market is best described as **monopolistically competitive** rather than oligopolistic. **(12)**
+
+*(Total for Section A = 60 marks)*
+
+---
+
+## SECTION B (20 marks)
+
+Read Extract E before answering Question 2.
+
+**Extract E — The UK National Living Wage and the labour market**
+
+The National Living Wage rose 9.8% in April 2024 to £11.44/hour, the largest cash uplift on record, benefiting around 2.7 million workers. Hospitality and retail — which together employ 4.6 million people — absorbed most of the cost. Average prices in hospitality rose 6.1% in the year to October 2024, while employment in the sector fell 1.4%. The Low Pay Commission projects the NLW will reach £12.20 by 2026.
+
+**Question 2**
+
+Evaluate the likely microeconomic effects of further increases in the National Living Wage on workers, firms and consumers in low-pay sectors such as hospitality. **(20)**
+
+*(Total for Section B = 20 marks)*
+
+---
+
+## SECTION C (20 marks)
+
+Read Extracts F and G before answering Question 3.
+
+**Extract F — The UK Soft Drinks Industry Levy (SDIL, "sugar tax")**
+
+Introduced in April 2018, the SDIL applies 18p/litre on drinks with 5–8g sugar/100ml and 24p/litre above 8g. Reformulation cut the sugar content of taxed drinks by 46% in three years and total sugar purchased from soft drinks fell 35%. Revenues raised £338 million in 2023/24, hypothecated to school sport and breakfast clubs.
+
+**Extract G — Extending the levy: HFSS regulation**
+
+From October 2025, restrictions on the in-store placement and "buy-one-get-one-free" promotion of foods high in fat, salt and sugar (HFSS) will apply to retailers with 50+ employees. The Institute for Fiscal Studies estimates HFSS purchases could fall 8–10%, but warns that price-elastic low-income households may face the biggest welfare loss in absolute terms.
+
+**Question 3**
+
+Evaluate the case for using **indirect taxes and behavioural regulation** (Extracts F and G) — rather than information campaigns — to reduce the consumption of demerit goods in the UK food and drink market. **(20)**
+
+*(Total for Section C = 20 marks)*
+
+**TOTAL FOR PAPER = 100 MARKS**`,
   },
   {
     id: "edxb-p1-b",
     subject: "edexcel-b",
     paper: "1",
     title: "Paper 1 — Set B",
-    description: "Markets, Consumers & Firms. Supermarkets and gig economy.",
-    totalMarks: 80,
-    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1 — Predicted Paper Set B
+    description: "Markets, Consumers & Firms. Supermarket oligopoly, monetary policy, gig-economy regulation.",
+    totalMarks: 100,
+    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper Set B
 
-**Time: 2 hours | Total: 80 marks**
+**Time: 2 hours | Total: 100 marks**
 
-## Section A: Data Response (40 marks)
+---
 
-**Context: UK Supermarket Price Wars**
+## SECTION A (60 marks)
 
-**Extract A:** UK supermarket revenues reached £220 billion in 2024. Discount chains Aldi and Lidl achieved a combined market share of 18.2%, up from 5% in 2012. The traditional "Big Four" — Tesco, Sainsbury's, Asda, and Morrisons — responded with price-matching schemes and expansion of budget ranges. Profit margins across the sector fell to 2.1%.
+Read the following extracts (A to D) before answering Question 1.
 
-**Extract B:**
+**Extract A — The UK supermarket price war**
 
-| UK Supermarket Industry | 2019 | 2022 | 2024 |
-|------------------------|------|------|------|
-| Tesco market share (%) | 27.4 | 27.1 | 27.1 |
-| Aldi + Lidl share (%) | 13.5 | 16.7 | 18.2 |
-| Avg profit margin (%) | 3.2 | 2.8 | 2.1 |
-| Online grocery share (%) | 7.4 | 13.0 | 11.8 |
-| Food inflation (%) | 1.2 | 12.4 | 3.8 |
+UK grocery sales reached £220 billion in 2024. Discounters Aldi and Lidl have lifted their combined share from 5% in 2012 to 18.2% in 2024, forcing the "Big Four" — Tesco, Sainsbury's, Asda and Morrisons — into price-matching schemes (e.g. Tesco's "Aldi Price Match") and the rapid expansion of own-label budget ranges. Average sector profit margins have fallen from 3.2% in 2019 to 2.1% in 2024.
 
-Question 1 [4 marks]
-Using Extract B, identify and explain two significant changes in the UK supermarket industry between 2019 and 2024.
+**Extract B — UK grocery market shares, 12 weeks to October 2024**
 
-Question 2 [4 marks]
-Using a game theory payoff matrix, explain why supermarkets may engage in price-matching rather than price wars.
+| Rank | Retailer | Market share (%) |
+|------|----------|------------------|
+| 1 | Tesco | 27.1 |
+| 2 | Sainsbury's | 15.3 |
+| 3 | Asda | 12.6 |
+| 4 | Aldi | 10.0 |
+| 5 | Morrisons | 8.6 |
+| 6 | Lidl | 8.2 |
 
-Question 3 [8 marks]
-Analyse whether the UK supermarket industry is best described as an oligopoly or a contestable market. Use appropriate diagrams.
+**Extract C — A specialist firm: "Booths"**
 
-Question 4 [8 marks]
-Explain how food inflation affects consumer surplus and real incomes differently for low and high income households.
+Booths operates 27 premium supermarkets across northern England, employing 3,000 staff. Revenue was £290m in FY2024 and operating profit was £8.7m. Booths competes on local sourcing and store experience rather than price, and offers a narrower SKU range than the Big Four.
 
-Question 5 [16 marks]
-"The growth of discount supermarkets proves that competition, not regulation, is the best way to protect consumers." Evaluate this statement.
+**Extract D — Tesco own-label "value" loaf, monthly retail price (£)**
 
-## Section B: Data Response (40 marks)
+| Month | Price (£) | % change |
+|-------|-----------|----------|
+| Jan 2023 | 0.55 | — |
+| Jul 2023 | 0.65 | +18.2 |
+| Jan 2024 | 0.75 | +15.4 |
+| Jul 2024 | 0.69 | −8.0 |
+| Dec 2024 | 0.65 | −5.8 |
 
-**Context: The UK Gig Economy**
+---
 
-**Extract C:** An estimated 4.4 million UK workers are classified as self-employed through gig platforms. The Supreme Court ruled Uber drivers are "workers," entitled to minimum wage and holiday pay. Deliveroo riders remain classified as independent contractors. Average gig worker hourly pay is £10.20, compared to £14.50 for employees.
+**Question 1**
 
-**Extract D:**
+(a) Using Extract C, calculate Booths' operating profit margin in FY2024. Give your answer to two decimal places. **(4)**
 
-| Gig Economy Indicators | 2019 | 2022 | 2024 |
-|-----------------------|------|------|------|
-| Gig workers (million) | 2.8 | 3.9 | 4.4 |
-| Avg hourly pay (£) | 8.72 | 9.50 | 10.20 |
-| % with no benefits | 78 | 71 | 63 |
-| Employment tribunal claims | 42,000 | 68,000 | 91,000 |
-| Platform revenue (£bn) | 8.5 | 14.2 | 19.8 |
+(b) Using Extract D, calculate the percentage change in the price of a Tesco own-label "value" loaf between January 2023 and December 2024. Give your answer to two decimal places. **(4)**
 
-Question 6 [4 marks]
-Using Extract D, calculate the percentage increase in gig economy workers between 2019 and 2024.
+(c) With reference to Extract A, draw a diagram to show the impact of the rapid growth of Aldi and Lidl on the UK grocery market. **(4)**
 
-Question 7 [4 marks]
-Using a monopsony labour market diagram, explain how gig platforms can pay wages below the competitive equilibrium.
+(d) Using Extract B, analyse one likely impact of the market structure on Tesco's pricing strategy. **(6)**
 
-Question 8 [8 marks]
-Analyse the labour market failures present in the gig economy. Consider information asymmetry and power imbalances.
+(e) Discuss whether **revenue (sales) maximisation** is the most important objective for Aldi UK. **(8)**
 
-Question 9 [8 marks]
-Using a minimum wage diagram, explain the potential impact of extending minimum wage rights to all gig workers.
+(f) Assess the impact of the fall in sector operating margins from 3.2% to 2.1% on UK supermarkets and their suppliers. **(10)**
 
-Question 10 [16 marks]
-"Government regulation of the gig economy always improves outcomes for workers." Evaluate this statement.`,
+(g) Assess the importance of **non-price competition** (loyalty schemes, own-label ranges, store environment) in the UK grocery market. **(12)**
+
+(h) Assess the extent to which the UK grocery market is **contestable**. **(12)**
+
+*(Total for Section A = 60 marks)*
+
+---
+
+## SECTION B (20 marks)
+
+Read Extract E before answering Question 2.
+
+**Extract E — Bank of England monetary policy and household spending**
+
+Bank Rate rose from 0.10% in December 2021 to a peak of 5.25% in August 2023 before three cuts in 2024 took it to 4.75%. CPI inflation fell from a peak of 11.1% to 2.3% over the same period. Household disposable income rose only 0.4% in real terms in 2024 and the household saving ratio reached 11.1%. UK retail sales volumes were 1.6% lower in 2024 than in 2023.
+
+**Question 2**
+
+Evaluate the likely microeconomic effects of cuts in Bank Rate during 2025 on UK consumer demand for normal goods and inferior goods. **(20)**
+
+*(Total for Section B = 20 marks)*
+
+---
+
+## SECTION C (20 marks)
+
+Read Extracts F and G before answering Question 3.
+
+**Extract F — The Supreme Court ruling on Uber drivers**
+
+The 2021 *Uber BV v Aslam* ruling held that Uber drivers are "workers" — entitled to the National Minimum Wage, paid holiday and pension auto-enrolment. Uber UK now reports c.70,000 drivers under "worker" status. Drivers' net hourly earnings rose 14% in the following 18 months but Uber's UK fares rose 10% and average wait times increased 22%.
+
+**Extract G — Deliveroo and the wider gig economy**
+
+Deliveroo riders remain classified as independent contractors after a 2023 Supreme Court ruling. The TUC estimates 4.4 million UK workers now use gig platforms. Average gig pay is £10.20/hour (vs £14.50 for employees) and 63% of gig workers receive no employer benefits. The Employment Rights Bill (2025) proposes a single "worker" status across the gig economy.
+
+**Question 3**
+
+Evaluate the case for **regulating** the gig economy by extending "worker" status to all platform workers (Extracts F and G), rather than relying on competition between platforms to improve pay and conditions. **(20)**
+
+*(Total for Section C = 20 marks)*
+
+**TOTAL FOR PAPER = 100 MARKS**`,
   },
   {
     id: "edxb-p1-c",
     subject: "edexcel-b",
     paper: "1",
     title: "Paper 1 — Set C",
-    description: "Markets, Consumers & Firms. Tech monopolies and housing.",
-    totalMarks: 80,
-    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1 — Predicted Paper Set C
+    description: "Markets, Consumers & Firms. Big Tech market power, fiscal policy, digital regulation.",
+    totalMarks: 100,
+    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper Set C
 
-**Time: 2 hours | Total: 80 marks**
+**Time: 2 hours | Total: 100 marks**
 
-## Section A: Data Response (40 marks)
+---
 
-**Context: Big Tech and Market Power**
+## SECTION A (60 marks)
 
-**Extract A:** The CMA launched 14 investigations into Big Tech firms in 2024, up from 3 in 2020. Google controls 92% of UK search, Meta dominates social media (72% market share), and Amazon accounts for 30% of online retail. These firms have a combined market capitalisation exceeding $10 trillion and spend $180 billion annually on R&D.
+Read the following extracts (A to D) before answering Question 1.
 
-**Extract B:**
+**Extract A — Big Tech and UK digital markets**
 
-| Big Tech Market Indicators | 2020 | 2022 | 2024 |
-|---------------------------|------|------|------|
-| Google search share (%) | 93 | 92 | 92 |
-| Amazon online retail (%) | 28 | 29 | 30 |
-| Digital ad revenue UK (£bn) | 15.7 | 21.4 | 26.8 |
-| CMA investigations | 3 | 8 | 14 |
-| Tech start-ups (000s) | 8.2 | 10.1 | 7.8 |
+Google holds 92% of UK search, Meta accounts for 72% of UK social-media time and Amazon takes 30% of UK online retail. The CMA opened 14 investigations into Big Tech firms in 2024, up from three in 2020. Combined US Big Tech R&D spending exceeded $180 billion in 2024 — more than the UK government's total day-to-day budget for the NHS.
 
-Question 1 [4 marks]
-Using Extract B, explain what happened to UK tech start-ups between 2020 and 2024 and suggest two possible reasons.
+**Extract B — UK digital advertising revenue share, 2024**
 
-Question 2 [4 marks]
-Using a barriers to entry diagram, explain how network effects create natural barriers in digital markets.
+| Rank | Firm | UK digital ad revenue share (%) |
+|------|------|----------------------------------|
+| 1 | Google (Alphabet) | 39.0 |
+| 2 | Meta (Facebook + Instagram) | 28.0 |
+| 3 | Amazon | 11.0 |
+| 4 | TikTok (ByteDance) | 6.5 |
+| 5 | Microsoft (Bing + LinkedIn) | 4.2 |
 
-Question 3 [8 marks]
-Analyse whether Big Tech firms are natural monopolies or whether their dominance stems from anti-competitive behaviour.
+**Extract C — A challenger search engine: "Mojeek"**
 
-Question 4 [8 marks]
-Using a monopoly diagram, explain the potential welfare loss from Google's dominance in the search market.
+Mojeek, a UK independent search engine, runs its own crawler (2.6bn pages indexed) and earns revenue from privacy-focused subscriptions and B2B API licensing. Revenue in FY2024 was £4.8m and operating profit was £0.62m. Mojeek competes on privacy and editorial neutrality rather than scale.
 
-Question 5 [16 marks]
-"Breaking up Big Tech firms would harm consumers more than it helps them." Evaluate this statement.
+**Extract D — Average UK monthly Google Ads CPC, premium retail keywords (£)**
 
-## Section B: Data Response (40 marks)
+| Month | CPC (£) | % change |
+|-------|---------|----------|
+| Jan 2023 | 1.84 | — |
+| Jul 2023 | 2.05 | +11.4 |
+| Jan 2024 | 2.31 | +12.7 |
+| Jul 2024 | 2.55 | +10.4 |
+| Dec 2024 | 2.71 | +6.3 |
 
-**Context: The UK Rental Market**
+---
 
-**Extract C:** UK private rents rose 9.2% in 2024, with average monthly rent reaching £1,290. In London, average rent reached £2,120. Homelessness rose to 165,000 households, and 1.2 million households are on social housing waiting lists. A 2024 Renters' Reform Act banned no-fault evictions and introduced a landlord register.
+**Question 1**
 
-**Extract D:**
+(a) Using Extract C, calculate Mojeek's operating profit margin in FY2024. Give your answer to two decimal places. **(4)**
 
-| UK Rental Market | 2019 | 2022 | 2024 |
-|-----------------|------|------|------|
-| Avg rent (£/month) | 980 | 1,080 | 1,290 |
-| London rent (£/month) | 1,580 | 1,750 | 2,120 |
-| Buy-to-let mortgages (000s) | 78 | 65 | 48 |
-| Homeless households (000s) | 136 | 152 | 165 |
-| Social housing built | 44,000 | 38,000 | 32,000 |
+(b) Using Extract D, calculate the percentage change in the average Google Ads CPC for premium retail keywords between January 2023 and December 2024. Give your answer to two decimal places. **(4)**
 
-Question 6 [4 marks]
-Using Extract D, calculate the percentage increase in average UK rents between 2019 and 2024.
+(c) With reference to Extract A, draw a diagram showing the impact of strong network effects on the UK search market. **(4)**
 
-Question 7 [4 marks]
-Using a supply and demand diagram, explain why rents have risen in the UK.
+(d) Using Extract B, analyse one likely impact of the market structure on Google's pricing of digital advertising. **(6)**
 
-Question 8 [8 marks]
-Analyse the market failures present in the UK rental market, considering information asymmetry, externalities, and inequality.
+(e) Discuss whether **growth (market-share maximisation)** is the most important objective for Meta in the UK. **(8)**
 
-Question 9 [8 marks]
-Using a maximum price diagram, explain the potential effects of introducing rent controls in the UK.
+(f) Assess the impact of the rising cost of digital advertising (Extract D) on small UK retailers. **(10)**
 
-Question 10 [16 marks]
-"Building more social housing is more effective than rent controls in solving the UK's rental crisis." Evaluate this statement.`,
+(g) Assess the importance of **non-price competition** (data, ecosystem lock-in, integrated services) in UK digital advertising. **(12)**
+
+(h) Assess whether the UK digital advertising market is best described as a **natural oligopoly** rather than a contestable market. **(12)**
+
+*(Total for Section A = 60 marks)*
+
+---
+
+## SECTION B (20 marks)
+
+Read Extract E before answering Question 2.
+
+**Extract E — UK fiscal policy and digital services taxation**
+
+The UK Digital Services Tax (DST) raises 2% on UK revenues of large search engines, social platforms and online marketplaces. Receipts grew from £29m in its first year to £678m in 2023/24. From 2026, the OECD "Pillar One" agreement is expected to replace the DST with a globally co-ordinated profit reallocation. UK corporate-tax revenue from technology firms remains around 1/10th of US-based digital firms' UK turnover.
+
+**Question 2**
+
+Evaluate the likely microeconomic effects of replacing the UK Digital Services Tax with the OECD Pillar One framework on UK consumers, advertisers and the technology sector. **(20)**
+
+*(Total for Section B = 20 marks)*
+
+---
+
+## SECTION C (20 marks)
+
+Read Extracts F and G before answering Question 3.
+
+**Extract F — The Digital Markets, Competition and Consumers Act (DMCC) 2024**
+
+The DMCC gives the CMA's Digital Markets Unit (DMU) the power to designate firms with "Strategic Market Status" (SMS) and impose conduct requirements — interoperability, data portability, fair-dealing rules — backed by fines of up to 10% of global turnover. Apple, Google and Amazon were the first three firms designated in 2025.
+
+**Extract G — The EU Digital Markets Act (DMA), 2024 evidence**
+
+The DMA, in force since 2023, has forced six "gatekeepers" to allow side-loading, third-party app stores and rival in-app payments. Early evidence shows app-store commission has fallen from 30% to 17% on average and developer revenue rose 12%, but consumer complaints about app security rose 28%.
+
+**Question 3**
+
+Evaluate the case for using **digital-market regulation** (DMCC and DMA, Extracts F and G), rather than allowing competition between platforms to discipline market power, to protect UK consumers and small businesses. **(20)**
+
+*(Total for Section C = 20 marks)*
+
+**TOTAL FOR PAPER = 100 MARKS**`,
   },
   {
     id: "edxb-p1-d",
     subject: "edexcel-b",
     paper: "1",
     title: "Paper 1 — Set D",
-    description: "Markets, Consumers & Firms. Energy and transport markets.",
-    totalMarks: 80,
-    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1 — Predicted Paper Set D
+    description: "Markets, Consumers & Firms. Energy oligopoly, exchange rates, price-cap regulation.",
+    totalMarks: 100,
+    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper Set D
 
-**Time: 2 hours | Total: 80 marks**
+**Time: 2 hours | Total: 100 marks**
 
-## Section A: Data Response (40 marks)
+---
 
-**Context: The UK Energy Market**
+## SECTION A (60 marks)
 
-**Extract A:** The UK energy market is supplied by 6 major firms with a CR6 of 70%. The energy price cap was introduced in January 2019 to protect consumers from excessive charges. Despite this, energy bills doubled between 2021 and 2022. Ofgem approved a rise to £2,500 per year before reducing it to £1,568 by late 2024.
+Read the following extracts (A to D) before answering Question 1.
 
-**Extract B:**
+**Extract A — The UK retail energy market**
 
-| UK Energy Market | 2019 | 2022 | 2024 |
-|-----------------|------|------|------|
-| CR6 (%) | 73 | 71 | 70 |
-| Avg dual fuel bill (£) | 1,254 | 2,500 | 1,568 |
-| Switching rate (%) | 18.3 | 9.8 | 6.2 |
-| Renewable share (%) | 37 | 40 | 43 |
-| Fuel poverty (m households) | 3.2 | 6.7 | 5.1 |
+Six firms — British Gas, EDF, E.ON Next, Octopus, Scottish Power and OVO — supply 70% of UK households (CR6 = 70%). After the 2021–22 wholesale gas spike pushed 31 small suppliers into administration, the market consolidated sharply. Ofgem's price cap was raised from £1,277 in October 2021 to a peak of £4,279 (subsidised down to £2,500 by the Energy Price Guarantee) before falling to £1,738 in October 2024.
 
-Question 1 [4 marks]
-Using Extract B, explain two significant trends in the UK energy market.
+**Extract B — UK domestic energy supplier shares, 2024**
 
-Question 2 [4 marks]
-Using an oligopoly diagram (e.g. kinked demand curve), explain why energy prices tend to be rigid.
+| Rank | Supplier | Domestic dual-fuel share (%) |
+|------|----------|-------------------------------|
+| 1 | British Gas (Centrica) | 21.0 |
+| 2 | Octopus Energy | 17.5 |
+| 3 | E.ON Next | 12.4 |
+| 4 | EDF Energy | 9.6 |
+| 5 | OVO Energy | 5.3 |
+| 6 | Scottish Power | 4.2 |
 
-Question 3 [8 marks]
-Analyse the effectiveness of the energy price cap as a form of government intervention. Use a maximum price diagram.
+**Extract C — A challenger supplier: "Good Energy"**
 
-Question 4 [8 marks]
-Explain why the UK energy market can be described as both an oligopoly and a regulated market. Use appropriate economic theory.
+Good Energy supplies 100% renewable electricity to 270,000 UK households and SMEs. Revenue in FY2024 was £128m and operating profit was £6.4m. The firm competes on green credentials and customer service rather than headline price, and pays a 10–15% premium for long-term renewable PPAs.
 
-Question 5 [16 marks]
-"Deregulation of the UK energy market has failed consumers." Evaluate this statement.
+**Extract D — Ofgem default tariff cap (annual £, dual-fuel, direct debit)**
 
-## Section B: Data Response (40 marks)
+| Cap window | £/year | % change |
+|------------|--------|----------|
+| Oct 2022 | 3,549 | — |
+| Apr 2023 | 3,280 | −7.6 |
+| Oct 2023 | 1,923 | −41.4 |
+| Apr 2024 | 1,690 | −12.1 |
+| Oct 2024 | 1,738 | +2.8 |
 
-**Context: UK Rail Privatisation**
+---
 
-**Extract C:** UK rail fares rose 49% in real terms since 2010, while punctuality fell to 83%. The creation of Great British Railways (GBR) in 2024 effectively renationalised the franchising system. Annual subsidies total £12 billion. Critics argue privatisation created fragmentation; supporters note passenger numbers doubled between 1994 and 2019.
+**Question 1**
 
-**Extract D:**
+(a) Using Extract C, calculate Good Energy's operating profit margin in FY2024. Give your answer to two decimal places. **(4)**
 
-| UK Rail Performance | 2010 | 2019 | 2024 |
-|--------------------|------|------|------|
-| Passenger journeys (bn) | 1.35 | 1.73 | 1.52 |
-| On-time (%) | 91 | 87 | 83 |
-| Avg season ticket (£) | 2,180 | 3,180 | 4,280 |
-| Subsidy (£bn) | 3.8 | 4.8 | 12.0 |
-| Satisfaction (%) | 83 | 81 | 75 |
+(b) Using Extract D, calculate the percentage change in the Ofgem default tariff cap between October 2022 and October 2024. Give your answer to two decimal places. **(4)**
 
-Question 6 [4 marks]
-Using Extract D, calculate the percentage increase in average season ticket costs between 2010 and 2024.
+(c) With reference to Extract A, draw a diagram showing the impact of the 2021–22 wholesale gas price shock on the UK retail energy market. **(4)**
 
-Question 7 [4 marks]
-Explain why rail travel exhibits characteristics of a natural monopoly. Use a diagram.
+(d) Using Extract B, analyse one likely impact of the market structure on the pricing strategy of British Gas. **(6)**
 
-Question 8 [8 marks]
-Analyse the costs and benefits of rail privatisation for consumers, using concepts of productive and allocative efficiency.
+(e) Discuss whether **profit satisficing** is the most important objective for Octopus Energy. **(8)**
 
-Question 9 [8 marks]
-Using a diagram, explain how the creation of GBR (renationalisation) might affect pricing and output decisions.
+(f) Assess the impact of the 2024 reduction in the Ofgem price cap on UK households and energy suppliers. **(10)**
 
-Question 10 [16 marks]
-"Natural monopolies should always be publicly owned." Evaluate this statement with reference to UK rail and one other industry.`,
+(g) Assess the importance of **non-price competition** (smart tariffs, customer service, green credentials) in the UK retail energy market. **(12)**
+
+(h) Assess whether the UK retail energy market is best described as a **collusive oligopoly** rather than a contestable market. **(12)**
+
+*(Total for Section A = 60 marks)*
+
+---
+
+## SECTION B (20 marks)
+
+Read Extract E before answering Question 2.
+
+**Extract E — Sterling, wholesale gas and UK firms**
+
+Sterling depreciated 8.4% against the US dollar between January and October 2022, raising the sterling cost of imported wholesale gas (priced in USD). Wholesale UK day-ahead gas prices rose from 60p/therm in 2020 to a peak of 540p/therm in August 2022 before falling to 95p/therm by late 2024. UK manufacturing energy bills remained 47% above their 2019 level.
+
+**Question 2**
+
+Evaluate the likely microeconomic effects of a sustained 10% depreciation of sterling against the US dollar in 2025 on UK energy-intensive manufacturers and UK consumers. **(20)**
+
+*(Total for Section B = 20 marks)*
+
+---
+
+## SECTION C (20 marks)
+
+Read Extracts F and G before answering Question 3.
+
+**Extract F — The Ofgem default tariff cap**
+
+The cap, in place since January 2019, sets the maximum dual-fuel bill for around 28m UK households on default tariffs. Ofgem updates the cap quarterly using a formula based on wholesale costs, network charges and an "EBIT allowance" of 1.9%. Critics argue the cap dampens switching incentives — switching rates fell from 18.3% in 2019 to 6.2% in 2024.
+
+**Extract G — The Energy Price Guarantee and windfall taxes**
+
+The 2022 Energy Price Guarantee subsidised consumer bills at £2,500/year, costing £40bn over two winters. To part-fund this, the Energy Profits Levy raised the headline tax on UK oil-and-gas profits from 40% to 75%, raising £14bn between 2022 and 2024. Investment in UK North Sea projects fell 23% in the same period.
+
+**Question 3**
+
+Evaluate the case for using **price caps and windfall taxes** (Extracts F and G), rather than allowing competition between energy suppliers to set bills, to protect UK households from energy market power. **(20)**
+
+*(Total for Section C = 20 marks)*
+
+**TOTAL FOR PAPER = 100 MARKS**`,
   },
   {
     id: "edxb-p1-e",
     subject: "edexcel-b",
     paper: "1",
     title: "Paper 1 — Set E",
-    description: "Markets, Consumers & Firms. Pharmaceuticals and behavioural economics.",
-    totalMarks: 80,
-    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1 — Predicted Paper Set E
+    description: "Markets, Consumers & Firms. Pharma patents, government spending, NHS price negotiation.",
+    totalMarks: 100,
+    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper Set E
 
-**Time: 2 hours | Total: 80 marks**
+**Time: 2 hours | Total: 100 marks**
 
-## Section A: Data Response (40 marks)
+---
 
-**Context: The UK Pharmaceutical Industry**
+## SECTION A (60 marks)
 
-**Extract A:** The UK pharmaceutical industry contributes £22 billion to GDP and employs 75,000 people. Patents grant 20-year monopoly rights, enabling firms to earn supernormal profits and fund R&D (£5.3bn in 2024). However, generic drug entry after patent expiry typically reduces prices by 80%. The NHS spends £18 billion annually on medicines.
+Read the following extracts (A to D) before answering Question 1.
 
-**Extract B:**
+**Extract A — The UK pharmaceutical industry**
 
-| UK Pharmaceutical Industry | 2019 | 2022 | 2024 |
-|---------------------------|------|------|------|
-| R&D spending (£bn) | 4.2 | 4.8 | 5.3 |
-| NHS medicines spend (£bn) | 14.2 | 16.1 | 18.0 |
-| Generic prescriptions (%) | 75 | 78 | 81 |
-| Avg branded drug cost (£) | 340 | 380 | 415 |
-| New drugs approved | 51 | 48 | 62 |
+The UK pharmaceutical industry contributes £22 billion to GDP and employs 75,000 people. A 20-year patent gives originators temporary monopoly pricing rights — supernormal profits fund R&D (£5.3bn in 2024). After patent expiry, generic entry typically reduces the price by 80% within two years. The NHS is the single largest UK buyer of medicines, spending £18 billion in 2024.
 
-Question 1 [4 marks]
-Using Extract B, describe two trends in the UK pharmaceutical industry between 2019 and 2024.
+**Extract B — UK branded prescription market shares, 2024**
 
-Question 2 [4 marks]
-Using a monopoly diagram, explain how patents allow pharmaceutical firms to earn supernormal profits.
+| Rank | Firm | UK branded share (%) |
+|------|------|-----------------------|
+| 1 | AstraZeneca | 12.4 |
+| 2 | Pfizer | 9.7 |
+| 3 | GSK | 9.0 |
+| 4 | Novartis | 7.6 |
+| 5 | Roche | 7.0 |
 
-Question 3 [8 marks]
-Analyse the case for and against patent protection in the pharmaceutical industry. Consider dynamic efficiency and consumer welfare.
+**Extract C — A challenger generics manufacturer: "Accord-UK"**
 
-Question 4 [8 marks]
-Using a diagram, explain how generic drug entry after patent expiry affects market price and consumer surplus.
+Accord-UK manufactures 350 generic medicines from a Devon plant, supplying 14% of NHS generic prescriptions. Revenue in FY2024 was £680m and operating profit was £61.2m. The firm competes purely on price within open NHS framework tenders, where contracts are typically awarded to the lowest two bidders.
 
-Question 5 [16 marks]
-"Patents in the pharmaceutical industry represent a justified form of monopoly power." Evaluate this statement.
+**Extract D — Average UK NHS list price for a 28-tablet pack of "Drug X" (£)**
 
-## Section B: Data Response (40 marks)
+| Period | Price (£) | % change |
+|--------|-----------|----------|
+| Pre-patent expiry, 2022 | 84.50 | — |
+| 6 months post-expiry, 2023 | 38.20 | −54.8 |
+| 12 months post-expiry, 2023 | 22.40 | −41.4 |
+| 18 months post-expiry, 2024 | 16.10 | −28.1 |
+| 24 months post-expiry, 2024 | 13.80 | −14.3 |
 
-**Context: Behavioural Economics and UK Policy**
+---
 
-**Extract C:** The UK's Behavioural Insights Team (BIT), known as the "Nudge Unit," has been used to improve pension auto-enrolment (increasing participation from 55% to 88%), organ donation (opt-out increased registration by 25%), and tax compliance (personalised letters recovered £210 million in unpaid taxes in 2024).
+**Question 1**
 
-**Extract D:**
+(a) Using Extract C, calculate Accord-UK's operating profit margin in FY2024. Give your answer to two decimal places. **(4)**
 
-| Behavioural Policy Outcomes | Before | After | Change |
-|----------------------------|--------|-------|--------|
-| Pension auto-enrolment (%) | 55 | 88 | +33 |
-| Organ donor registration (%) | 38 | 48 | +10 |
-| Tax compliance letters (£m) | 120 | 210 | +90 |
-| Healthy eating nudge uptake (%) | 22 | 34 | +12 |
-| Energy switching via default (%) | 6.2 | 15.8 | +9.6 |
+(b) Using Extract D, calculate the percentage change in the NHS list price of "Drug X" between pre-patent expiry (2022) and 24 months post-expiry (2024). Give your answer to two decimal places. **(4)**
 
-Question 6 [4 marks]
-Using Extract D, explain how auto-enrolment in pensions is an example of a "nudge."
+(c) With reference to Extract A, draw a diagram showing the impact of a patent expiry on the market for a previously patented medicine. **(4)**
 
-Question 7 [4 marks]
-Using concepts from behavioural economics, explain why consumers may fail to make rational choices in financial markets.
+(d) Using Extract B, analyse one likely impact of the market structure on AstraZeneca's pricing of newly-launched branded medicines. **(6)**
 
-Question 8 [8 marks]
-Analyse whether nudges or traditional economic policies (taxes, subsidies, regulation) are more effective in changing consumer behaviour. Use examples.
+(e) Discuss whether **profit maximisation** is the most important objective for AstraZeneca in its UK branded segment. **(8)**
 
-Question 9 [8 marks]
-Using a merit good diagram, explain how an opt-out organ donation system aims to correct market failure.
+(f) Assess the impact of the post-patent fall in the price of "Drug X" (Extract D) on UK consumers, the NHS and pharmaceutical producers. **(10)**
 
-Question 10 [16 marks]
-"Nudges are a more effective and less costly form of government intervention than traditional policies." Evaluate this statement.`,
+(g) Assess the importance of **non-price competition** (clinical evidence, prescriber relationships, supply reliability) in the UK branded pharmaceutical market. **(12)**
+
+(h) Assess whether the UK branded pharmaceutical market is best described as a **monopoly during patent** rather than a contestable market. **(12)**
+
+*(Total for Section A = 60 marks)*
+
+---
+
+## SECTION B (20 marks)
+
+Read Extract E before answering Question 2.
+
+**Extract E — Government health spending and innovation**
+
+UK government health spending reached £181bn in 2024/25 — 39% of day-to-day departmental spending. Real spending per person rose 1.4% per year over the past decade, well below the 3.6% historical trend. The Office for Life Sciences estimates each £1 of UK biomedical R&D grant generates £1.20–£1.60 of private R&D within five years (a positive externality).
+
+**Question 2**
+
+Evaluate the likely microeconomic effects of a 10% real-terms increase in UK government R&D subsidies for biomedical research on UK firms, consumers and government finances. **(20)**
+
+*(Total for Section B = 20 marks)*
+
+---
+
+## SECTION C (20 marks)
+
+Read Extracts F and G before answering Question 3.
+
+**Extract F — The Voluntary Scheme for Branded Medicines (VPAG)**
+
+VPAG (2024–28) caps the growth of NHS branded-medicine spending at 2% per year. Manufacturers above the cap pay rebates to the Department of Health — the rebate rate rose from 5.1% in 2021 to 26.5% in 2024. Industry groups warn the rebate is reducing UK clinical-trial investment.
+
+**Extract G — NICE cost-effectiveness thresholds**
+
+The National Institute for Health and Care Excellence (NICE) recommends NHS funding only for medicines costing less than £20,000–£30,000 per quality-adjusted life year (QALY). In 2023/24, 18% of NICE appraisals resulted in a "do not recommend," up from 9% a decade earlier — pushing manufacturers to negotiate confidential discounts.
+
+**Question 3**
+
+Evaluate the case for using **VPAG rebates and NICE cost-effectiveness rules** (Extracts F and G), rather than allowing competition between manufacturers, to control NHS spending on branded medicines. **(20)**
+
+*(Total for Section C = 20 marks)*
+
+**TOTAL FOR PAPER = 100 MARKS**`,
   },
   {
     id: "edxb-p1-f",
     subject: "edexcel-b",
     paper: "1",
     title: "Paper 1 — Set F",
-    description: "Markets, Consumers & Firms. Fast fashion and water markets.",
-    totalMarks: 80,
-    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1 — Predicted Paper Set F
+    description: "Markets, Consumers & Firms. Fast fashion, trade policy, environmental regulation.",
+    totalMarks: 100,
+    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper Set F
 
-**Time: 2 hours | Total: 80 marks**
+**Time: 2 hours | Total: 100 marks**
 
-## Section A: Data Response (40 marks)
+---
 
-**Context: The Fast Fashion Industry**
+## SECTION A (60 marks)
 
-**Extract A:** The global fast fashion market is worth $110 billion. Shein, the largest online-only fashion retailer, adds 6,000 new items daily and produces garments at an average cost of $3. The industry is responsible for 10% of global carbon emissions and 20% of industrial water pollution. The average garment is worn 7 times before being discarded.
+Read the following extracts (A to D) before answering Question 1.
 
-**Extract B:**
+**Extract A — The UK fast-fashion market**
 
-| Fast Fashion Indicators | 2019 | 2022 | 2024 |
-|------------------------|------|------|------|
-| Global market value ($bn) | 85 | 98 | 110 |
-| Shein revenue ($bn) | 10 | 23 | 35 |
-| Textile waste UK (million tonnes) | 0.9 | 1.1 | 1.3 |
-| Avg garment wears | 10 | 8 | 7 |
-| Carbon emissions (% global) | 8 | 9 | 10 |
+The global fast-fashion market is worth $110 billion. Online-only retailer Shein adds 6,000 new SKUs daily and produces garments at an average factory-gate cost of $3. The industry is responsible for around 10% of global carbon emissions and 20% of industrial water pollution. Fast fashion accounts for 1.3 million tonnes of UK textile waste in 2024; the average UK garment is now worn just 7 times before being discarded.
 
-Question 1 [4 marks]
-Using Extract B, explain two negative externalities associated with the fast fashion industry.
+**Extract B — UK clothing & footwear online market shares, 2024**
 
-Question 2 [4 marks]
-Using a negative externality of production diagram, explain how fast fashion leads to a welfare loss.
+| Rank | Retailer | UK online share (%) |
+|------|----------|----------------------|
+| 1 | Shein | 17.6 |
+| 2 | Amazon Fashion | 14.0 |
+| 3 | ASOS | 9.8 |
+| 4 | boohoo Group | 6.4 |
+| 5 | Next | 6.1 |
 
-Question 3 [8 marks]
-Analyse why consumers may over-consume fast fashion despite awareness of its environmental impact. Use behavioural economics concepts.
+**Extract C — A specialist sustainable retailer: "Finisterre"**
 
-Question 4 [8 marks]
-Using Extract A, explain how Shein's business model creates barriers to entry for competitors.
+Finisterre, a Cornish outdoor-clothing brand, sells 60% of its garments using recycled or natural fibres and offers a free repair service. Revenue in FY2024 was £42.0m and operating profit was £3.36m. Finisterre's prices are 3–5x typical fast-fashion alternatives; the firm competes on durability, ethics and brand identity.
 
-Question 5 [16 marks]
-"A tax on fast fashion would be more effective than an information campaign in reducing overconsumption." Evaluate this statement.
+**Extract D — Average price of a Shein UK basic T-shirt (£)**
 
-## Section B: Data Response (40 marks)
+| Quarter | Price (£) | % change |
+|---------|-----------|----------|
+| Q1 2023 | 4.50 | — |
+| Q3 2023 | 4.99 | +10.9 |
+| Q1 2024 | 5.30 | +6.2 |
+| Q3 2024 | 5.65 | +6.6 |
+| Q4 2024 | 5.80 | +2.7 |
 
-**Context: UK Water Industry**
+---
 
-**Extract C:** England's water companies are all private regional monopolies. In 2024, Thames Water faced potential nationalisation due to £18 billion in debt and chronic underinvestment. Water bills rose 40% above inflation since privatisation in 1989, while 2.4 billion litres per day were lost to leaks (24% of supply).
+**Question 1**
 
-**Extract D:**
+(a) Using Extract C, calculate Finisterre's operating profit margin in FY2024. Give your answer to two decimal places. **(4)**
 
-| UK Water Industry | 2019 | 2022 | 2024 |
-|------------------|------|------|------|
-| Avg annual bill (£) | 385 | 419 | 448 |
-| Leakage (billion litres/day) | 3.0 | 2.7 | 2.4 |
-| Sewage spills (000s) | 270 | 389 | 464 |
-| Dividends paid (£bn) | 1.6 | 1.4 | 0.8 |
-| Investment (£bn) | 5.2 | 5.8 | 7.1 |
+(b) Using Extract D, calculate the percentage change in the average UK price of a Shein basic T-shirt between Q1 2023 and Q4 2024. Give your answer to two decimal places. **(4)**
 
-Question 6 [4 marks]
-Using Extract D, identify two concerns about the performance of UK water companies.
+(c) With reference to Extract A, draw a diagram showing the **negative production externality** associated with fast fashion. **(4)**
 
-Question 7 [4 marks]
-Using a natural monopoly diagram, explain why water is typically provided by a single firm in each region.
+(d) Using Extract B, analyse one likely impact of the market structure on Shein's pricing strategy in the UK. **(6)**
 
-Question 8 [8 marks]
-Analyse the costs and benefits of water privatisation for consumers. Consider productive efficiency, investment, and equity.
+(e) Discuss whether **growth (market-share maximisation)** is the most important objective for Shein in the UK. **(8)**
 
-Question 9 [8 marks]
-Using a diagram, explain how Ofwat's price regulation aims to prevent the abuse of monopoly power.
+(f) Assess the impact of the rise in average Shein T-shirt prices (Extract D) on consumers and rival UK fashion retailers. **(10)**
 
-Question 10 [16 marks]
-"The failure of Thames Water proves that essential services should never be privatised." Evaluate this statement.`,
+(g) Assess the importance of **non-price competition** (delivery speed, app gamification, influencer marketing) in the UK fast-fashion market. **(12)**
+
+(h) Assess whether the UK fast-fashion market is best described as **monopolistically competitive** rather than oligopolistic. **(12)**
+
+*(Total for Section A = 60 marks)*
+
+---
+
+## SECTION B (20 marks)
+
+Read Extract E before answering Question 2.
+
+**Extract E — UK trade policy and the "de minimis" import threshold**
+
+UK consumers can import parcels valued under £135 free of customs duty (the "de minimis" threshold). Around 1.6 billion such low-value parcels arrived in 2024, three-quarters from Chinese fast-fashion platforms. UK textile producers — who pay 12% import duty plus 20% VAT on equivalent inputs — argue the regime distorts competition. The Treasury is consulting on lowering the threshold to £40 from 2026.
+
+**Question 2**
+
+Evaluate the likely microeconomic effects of lowering the UK "de minimis" import threshold from £135 to £40 on UK consumers, fast-fashion importers and domestic UK clothing producers. **(20)**
+
+*(Total for Section B = 20 marks)*
+
+---
+
+## SECTION C (20 marks)
+
+Read Extracts F and G before answering Question 3.
+
+**Extract F — Extended Producer Responsibility (EPR) for textiles**
+
+EPR rules, expected from 2026, will require UK clothing producers to pay a per-garment fee covering end-of-life collection, sorting and recycling. France's existing EPR scheme adds an average €0.06–€0.12 per garment. The UK consultation estimates fees of 4–7p per UK garment, rising to 25p for items below recyclability standards.
+
+**Extract G — A consumer information policy: digital "garment passports"**
+
+The EU's Digital Product Passport (DPP), in force from 2027, requires every garment sold in the EU to carry a QR-code disclosing fibre composition, country of manufacture, repairability score and a "circularity index." Early evidence from the French textile EPR suggests labelling alone has reduced low-end garment sales by 4–6%.
+
+**Question 3**
+
+Evaluate the case for using **EPR fees and product-information regulation** (Extracts F and G), rather than relying on consumer awareness alone, to reduce the environmental impact of fast fashion in the UK. **(20)**
+
+*(Total for Section C = 20 marks)*
+
+**TOTAL FOR PAPER = 100 MARKS**`,
   },
   {
     id: "edxb-p1-g",
     subject: "edexcel-b",
     paper: "1",
     title: "Paper 1 — Set G",
-    description: "Markets, Consumers & Firms. Streaming platforms and EV market.",
-    totalMarks: 80,
-    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1 — Predicted Paper Set G
+    description: "Markets, Consumers & Firms. Streaming platforms, EV transition policy mix, infrastructure regulation.",
+    totalMarks: 100,
+    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper Set G
 
-**Time: 2 hours | Total: 80 marks**
+**Time: 2 hours | Total: 100 marks**
 
-## Section A: Data Response (40 marks)
+---
 
-**Context: The Streaming Wars**
+## SECTION A (60 marks)
 
-**Extract A:** Netflix, Disney+, Amazon Prime, and Apple TV+ compete in the UK streaming market, with 21 million UK households subscribing to at least one service. Netflix leads with 15 million subscribers but faces intense competition. Subscription prices have risen 35% since 2020 as platforms invest heavily in original content. Customer churn rates average 6% per month.
+Read the following extracts (A to D) before answering Question 1.
 
-**Extract B:**
+**Extract A — The UK video-streaming market**
 
-| UK Streaming Market | 2020 | 2022 | 2024 |
-|--------------------|------|------|------|
-| Total subscribers (m) | 16 | 19 | 21 |
-| Netflix share (%) | 62 | 55 | 48 |
-| Avg monthly price (£) | 8.99 | 10.99 | 12.49 |
-| Content spending UK (£bn) | 2.1 | 3.4 | 4.8 |
-| Ad-supported tier users (m) | 0 | 0.5 | 3.2 |
+Netflix, Disney+, Amazon Prime Video and Apple TV+ compete in the UK video-streaming market — 21 million UK households now subscribe to at least one service. Netflix leads with 15 million subscribers but its share has fallen from 62% in 2020 to 48% in 2024. Average monthly prices have risen 35% since 2020 as platforms invest heavily in original content; monthly customer "churn" averages 6%.
 
-Question 1 [4 marks]
-Using Extract B, explain two changes in the UK streaming market between 2020 and 2024.
+**Extract B — UK SVOD subscriber base, 2024**
 
-Question 2 [4 marks]
-Using a monopolistic competition diagram, explain why streaming platforms invest heavily in content differentiation.
+| Rank | Platform | UK subscribers (millions) |
+|------|----------|----------------------------|
+| 1 | Netflix | 15.0 |
+| 2 | Amazon Prime Video | 11.8 |
+| 3 | Disney+ | 7.6 |
+| 4 | Apple TV+ | 2.9 |
+| 5 | Paramount+ | 2.2 |
 
-Question 3 [8 marks]
-Analyse whether the streaming market is better described as oligopolistic or monopolistically competitive. Use relevant theory.
+**Extract C — A challenger UK platform: "MUBI"**
 
-Question 4 [8 marks]
-Explain how the introduction of ad-supported tiers represents a form of price discrimination. Use a diagram.
+MUBI, a curator-led streaming platform, offers 30 hand-picked films per month. Revenue in FY2024 was £58.0m and operating profit was £6.96m. MUBI charges a 25% premium over Netflix's basic tier and competes on curation, exclusive arthouse releases and an integrated cinema-ticket discount.
 
-Question 5 [16 marks]
-"Competition in the streaming market has benefited consumers but may not be sustainable in the long run." Evaluate this statement.
+**Extract D — Netflix UK "Standard" tier monthly price (£)**
 
-## Section B: Data Response (40 marks)
+| Date | Price (£) | % change |
+|------|-----------|----------|
+| Jan 2020 | 8.99 | — |
+| Apr 2021 | 9.99 | +11.1 |
+| Mar 2022 | 10.99 | +10.0 |
+| Aug 2023 | 11.99 | +9.1 |
+| Oct 2024 | 12.99 | +8.3 |
 
-**Context: The Electric Vehicle Revolution**
+---
 
-**Extract C:** UK electric vehicle (EV) sales reached 370,000 in 2024, representing 22% of new car sales. The government banned new petrol and diesel car sales from 2035. However, EV prices average £44,000 compared to £28,000 for equivalent petrol cars. Public charging infrastructure remains inadequate, with 55,000 public chargers for 1 million EVs.
+**Question 1**
 
-**Extract D:**
+(a) Using Extract C, calculate MUBI's operating profit margin in FY2024. Give your answer to two decimal places. **(4)**
 
-| UK EV Market | 2019 | 2022 | 2024 |
-|-------------|------|------|------|
-| EV sales (000s) | 38 | 267 | 370 |
-| EV market share (%) | 2 | 16 | 22 |
-| Avg EV price (£000) | 48 | 46 | 44 |
-| Public chargers (000s) | 12 | 28 | 55 |
-| EV subsidy (£) | 3,500 | 1,500 | 0 |
+(b) Using Extract D, calculate the percentage change in the Netflix UK "Standard" tier monthly price between January 2020 and October 2024. Give your answer to two decimal places. **(4)**
 
-Question 6 [4 marks]
-Using Extract D, calculate the percentage increase in public charging points between 2019 and 2024.
+(c) With reference to Extract A, draw a diagram showing the impact of growing original-content investment on the costs of UK streaming platforms. **(4)**
 
-Question 7 [4 marks]
-Using a positive externality diagram, explain why the free market may under-provide electric vehicles.
+(d) Using Extract B, analyse one likely impact of the market structure on the pricing strategy of Netflix UK. **(6)**
 
-Question 8 [8 marks]
-Analyse the impact of removing the EV purchase subsidy on market equilibrium and EV adoption rates.
+(e) Discuss whether **growth (subscriber maximisation)** is the most important objective for Netflix UK. **(8)**
 
-Question 9 [8 marks]
-Explain, using relevant economic theory, why the charging infrastructure problem represents a coordination failure.
+(f) Assess the impact of the introduction of cheaper ad-supported tiers on streaming consumers and rival platforms. **(10)**
 
-Question 10 [16 marks]
-"Banning petrol and diesel cars by 2035 is a more effective policy than subsidies in achieving the transition to electric vehicles." Evaluate this statement.`,
+(g) Assess the importance of **non-price competition** (original content, recommendation algorithms, password-sharing rules) in the UK streaming market. **(12)**
+
+(h) Assess whether the UK streaming market is best described as a **differentiated oligopoly** rather than monopolistically competitive. **(12)**
+
+*(Total for Section A = 60 marks)*
+
+---
+
+## SECTION B (20 marks)
+
+Read Extract E before answering Question 2.
+
+**Extract E — UK fiscal incentives for the EV transition**
+
+UK new electric vehicle (EV) sales reached 370,000 in 2024 — 22% of new-car sales. The Plug-in Car Grant ended in 2022 (saving £1.5bn over five years) but Vehicle Excise Duty exemptions, the Workplace Charging Scheme and zero-emission Benefit-in-Kind tax (rising from 2% to 9% by 2029) remain. EV prices average £44,000 vs £28,000 for an equivalent petrol model.
+
+**Question 2**
+
+Evaluate the likely microeconomic effects of restoring a £3,500 purchase subsidy for new electric vehicles in 2025 on UK consumers, manufacturers and government finances. **(20)**
+
+*(Total for Section B = 20 marks)*
+
+---
+
+## SECTION C (20 marks)
+
+Read Extracts F and G before answering Question 3.
+
+**Extract F — The 2035 ZEV mandate**
+
+The Zero-Emission Vehicle (ZEV) mandate requires 22% of every UK manufacturer's new-car sales to be electric in 2024, rising to 80% by 2030 and 100% by 2035. Manufacturers below the threshold face a £15,000 fine per non-compliant vehicle. Stellantis temporarily paused UK production at Vauxhall's Luton van plant in 2024, citing the mandate.
+
+**Extract G — Public charging-infrastructure regulation**
+
+The UK has 55,000 public EV chargers for c.1 million EVs in 2024. New regulations from 2024 require contactless payment, 99% network uptime and price transparency. Ofgem now caps the price of "ultra-rapid" charger connections to the grid; investment in the public network rose 31% in the first nine months of 2024.
+
+**Question 3**
+
+Evaluate the case for using a **mandate plus infrastructure regulation** (Extracts F and G), rather than relying on subsidies and competition between manufacturers, to deliver the UK transition to electric vehicles. **(20)**
+
+*(Total for Section C = 20 marks)*
+
+**TOTAL FOR PAPER = 100 MARKS**`,
   },
   // ── Paper 2: The Wider Economic Environment ──
   {
