@@ -14,7 +14,7 @@ const EDEXCEL_A_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus:
 ];
 
 const EDEXCEL_B_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; available: boolean }[] = [
-  { number: 1, code: "9EB0/01", title: "Markets, Consumers and Firms", focus: "Microeconomics", available: false },
+  { number: 1, code: "9EB0/01", title: "Markets, Consumers and Firms", focus: "Microeconomics", available: true },
   { number: 2, code: "9EB0/02", title: "The Wider Economic Environment", focus: "Macroeconomics", available: true },
   { number: 3, code: "9EB0/03", title: "The Global Economy", focus: "Synoptic", available: true },
 ];
