@@ -768,225 +768,331 @@ Evaluate the case for using a **mandate plus infrastructure regulation** (Extrac
 
 **TOTAL FOR PAPER = 100 MARKS**`,
   },
-  // ── Paper 2: The Wider Economic Environment ──
+  // ── Paper 2: Competing in the global economy (9EB0/02) ──
+  // Spec: 100 marks · 2 hours · Section A Q1(a–h) [4+4+4+6+8+10+12+12 = 60] (Extracts A/B/C) · Section B Q2 evaluate [20] (Extract D) · Section C Q3 evaluate [20] (Extracts E+F)
   {
     id: "edxb-p2-a",
     subject: "edexcel-b",
     paper: "2",
     title: "Paper 2 — Set A",
-    description: "Wider Economic Environment. UK macroeconomic performance and policy.",
-    totalMarks: 80,
-    content: `# Edexcel A-Level Economics B (9EB0/02) — Paper 2 — Predicted Paper Set A
+    description: "Competing in the global economy. UK inflation, fiscal sustainability and global competitiveness.",
+    totalMarks: 100,
+    content: `# Edexcel A-Level Economics B (9EB0/02) — Paper 2: Competing in the global economy — Predicted Paper Set A
 
-**Time: 2 hours | Total: 80 marks**
+**Time: 2 hours | Total: 100 marks**
 
-## Section A: Data Response (40 marks)
+---
 
-**Context: UK Inflation and the Cost of Living**
+## SECTION A (60 marks)
 
-**Extract A:** UK CPI inflation peaked at 11.1% in October 2022, the highest in 41 years. The Bank of England raised the base rate from 0.1% to 5.25% across 14 consecutive increases. By mid-2024, headline inflation returned to 2.0%, but core inflation remained at 3.5% and services inflation at 5.7%.
+Read the following extracts (A to C) before answering Question 1.
 
-**Extract B:**
+**Extract A — UK inflation and the cost-of-living shock**
 
-| UK Macroeconomic Data | 2021 | 2022 | 2023 | 2024 |
-|----------------------|------|------|------|------|
+UK CPI inflation peaked at 11.1% in October 2022, the highest in 41 years. The Bank of England raised the base rate from 0.1% to 5.25% across 14 consecutive increases. By mid-2024 headline inflation returned to 2.0%, but core inflation remained at 3.5% and services inflation at 5.7%. Real wages contracted for 18 consecutive months between 2022 and 2023, driving a sharp fall in household real disposable income.
+
+**Extract B — UK macroeconomic indicators, 2021–2024**
+
+| Indicator | 2021 | 2022 | 2023 | 2024 |
+|-----------|------|------|------|------|
 | CPI inflation (%) | 2.6 | 9.1 | 7.3 | 2.0 |
 | Core inflation (%) | 2.0 | 5.5 | 6.2 | 3.5 |
-| Base rate (%) | 0.1 | 3.5 | 5.25 | 5.25 |
-| Real wage growth (%) | -0.4 | -2.8 | -0.5 | 1.2 |
-| GDP growth (%) | 7.6 | 4.3 | 0.1 | 0.6 |
+| Bank Rate (%) | 0.1 | 3.5 | 5.25 | 5.25 |
+| Real wage growth (%) | −0.4 | −2.8 | −0.5 | 1.2 |
+| Real GDP growth (%) | 7.6 | 4.3 | 0.1 | 0.6 |
+| Unemployment rate (%) | 4.5 | 3.7 | 4.0 | 4.4 |
 
-Question 1 [4 marks]
-Using Extract B, distinguish between headline CPI inflation and core inflation, explaining why they may diverge.
+**Extract C — UK current account and competitiveness**
 
-Question 2 [4 marks]
-Using an AD/AS diagram, explain how rising energy costs contributed to UK inflation in 2022.
+The UK current account deficit widened to 3.9% of GDP in 2024. Goods exports fell 4.1% in 2024 while imports of services grew 6.2%. Sterling appreciated 7% against the US dollar between January 2023 and December 2024, partly reflecting higher UK interest rates relative to the Federal Reserve. UK manufacturing unit labour costs rose 9% over 2022–2024 — faster than the OECD average of 5%.
 
-Question 3 [8 marks]
-Analyse the transmission mechanism through which raising the base rate from 0.1% to 5.25% was expected to reduce inflation.
+---
 
-Question 4 [8 marks]
-Explain the concept of a "wage-price spiral" and analyse whether the UK was at risk of one between 2022 and 2024.
+**Question 1a** [4 marks]
 
-Question 5 [16 marks]
-"Monetary policy alone cannot effectively manage inflation when it is driven by supply-side shocks." Evaluate this statement.
+Using Extract B, calculate the percentage point fall in CPI inflation between 2022 and 2024.
+**Question 1b** [4 marks]
 
-## Section B: Data Response (40 marks)
+With reference to Extract A, explain one reason why core inflation may remain above headline CPI inflation.
+**Question 1c** [4 marks]
 
-**Context: UK Government Debt and Fiscal Policy**
+With reference to Extract C, explain one factor that may have caused sterling to appreciate against the US dollar between 2023 and 2024.
+**Question 1d** [6 marks]
 
-**Extract C:** UK national debt exceeded 100% of GDP for the first time since the 1960s. The government borrowed £310 billion during Covid-19, and debt interest payments reached £111 billion in 2024. The OBR warned that without fiscal consolidation, debt could reach 300% of GDP by 2070 due to ageing demographics, climate change, and rising health costs.
+Using Extract A, analyse the transmission mechanism through which raising the Bank Rate from 0.1% to 5.25% was expected to reduce inflation.
+**Question 1e** [8 marks]
 
-**Extract D:**
+Using a suitable AD/AS diagram, discuss the likely impact of the cost-of-living shock (Extract A) on UK real GDP and the price level in 2022–2023.
+**Question 1f** [10 marks]
 
-| UK Public Finances | 2019 | 2022 | 2024 |
-|-------------------|------|------|------|
-| National debt (% GDP) | 83 | 97 | 102 |
-| Budget deficit (£bn) | 57 | 133 | 108 |
-| Debt interest (£bn) | 48 | 83 | 111 |
-| Tax revenue (% GDP) | 33.5 | 35.2 | 37.1 |
-| Public investment (% GDP) | 2.4 | 2.8 | 2.5 |
+Assess whether the rise in UK manufacturing unit labour costs (Extract C) is the most significant threat to UK international competitiveness.
+**Question 1g** [12 marks]
 
-Question 6 [4 marks]
-Using Extract D, calculate the increase in debt interest payments between 2019 and 2024.
+Assess the extent to which the appreciation of sterling between 2023 and 2024 (Extract C) is likely to worsen the UK current account deficit.
+**Question 1h** [12 marks]
 
-Question 7 [4 marks]
-Explain two factors that have caused UK national debt to exceed 100% of GDP.
+Assess whether contractionary monetary policy (Extract A) or supply-side reform is the more effective response to UK "sticky" core inflation.
+*(Total for Section A = 60 marks)*
 
-Question 8 [8 marks]
-Using the Keynesian vs classical perspective, analyse whether the government should reduce spending or increase borrowing to support growth.
+---
 
-Question 9 [8 marks]
-Explain the concept of fiscal sustainability and analyse whether current UK fiscal policy is sustainable.
+## SECTION B (20 marks)
 
-Question 10 [16 marks]
-"Austerity is a necessary response to high government debt." Evaluate this statement with reference to the UK economy.`,
+Read Extract D before answering Question 2.
+
+**Extract D — Comparative development indicators, 2024**
+
+| Country | GDP per capita (PPP, $) | HDI | GINI | Adult literacy (%) | Under-5 mortality (per 1,000) |
+|---------|-------------------------|-----|------|--------------------|------------------------------|
+| United Kingdom | 53,000 | 0.940 | 0.35 | 99 | 4 |
+| Vietnam | 13,500 | 0.703 | 0.36 | 95 | 19 |
+| Nigeria | 5,800 | 0.535 | 0.35 | 62 | 110 |
+| Brazil | 18,800 | 0.760 | 0.52 | 94 | 14 |
+| Bangladesh | 7,800 | 0.661 | 0.32 | 75 | 27 |
+
+Vietnam recorded average real GDP growth of 6.2% per year over 2010–2024, lifting more than 30 million people out of absolute poverty. FDI inflows reached 5.4% of GDP in 2024, concentrated in electronics, textiles and footwear.
+
+**Question 2** [20 marks]
+
+Evaluate the view that **export-led growth** is the most effective strategy for raising living standards in developing economies such as **Vietnam** (Extract D).
+*(Total for Section B = 20 marks)*
+
+---
+
+## SECTION C (20 marks)
+
+Read Extracts E and F before answering Question 3.
+
+**Extract E — Global protectionism and the new industrial policy**
+
+The WTO recorded an 11,100-line catalogue of trade-restrictive measures in force in 2024 — up 42% on 2019. The US Inflation Reduction Act (IRA) commits $369bn of subsidies and tax credits to domestic green manufacturing, prompting the EU to pass the Net-Zero Industry Act and the Critical Raw Materials Act. China retaliated with export controls on graphite and rare earths. The IMF warns that "geo-economic fragmentation" could permanently lower global output by up to 7% — equivalent to losing the combined GDP of France and Germany.
+
+**Extract F — A multinational firm: "Volta Batteries plc"**
+
+Volta Batteries plc is a UK-listed multinational producing lithium-ion battery cells for electric vehicles. In 2024 revenue was £4.8bn, of which 62% came from exports to the EU and 18% from the US. Following the IRA, Volta announced a $1.2bn investment in a new gigafactory in Georgia (USA) — partly funded by IRA subsidies — and froze a planned £600m UK investment, citing "uncompetitive" UK energy costs (currently 4× those in the US) and the absence of equivalent UK subsidies. Volta employs 8,400 workers in the UK and a further 2,100 across its EU operations.
+
+**Question 3** [20 marks]
+
+Evaluate the likely impact of the **rise in global protectionism and industrial policy** (Extract E) on a UK-based multinational firm such as **Volta Batteries plc** (Extract F) and on the wider UK economy.
+*(Total for Section C = 20 marks)*
+
+**TOTAL FOR PAPER = 100 MARKS**`,
   },
   {
     id: "edxb-p2-b",
     subject: "edexcel-b",
     paper: "2",
     title: "Paper 2 — Set B",
-    description: "Wider Economic Environment. Labour market and inequality.",
-    totalMarks: 80,
-    content: `# Edexcel A-Level Economics B (9EB0/02) — Paper 2 — Predicted Paper Set B
+    description: "Competing in the global economy. UK labour market, productivity puzzle and inequality.",
+    totalMarks: 100,
+    content: `# Edexcel A-Level Economics B (9EB0/02) — Paper 2: Competing in the global economy — Predicted Paper Set B
 
-**Time: 2 hours | Total: 80 marks**
+**Time: 2 hours | Total: 100 marks**
 
-## Section A: Data Response (40 marks)
+---
 
-**Context: UK Labour Market and Productivity**
+## SECTION A (60 marks)
 
-**Extract A:** UK labour productivity grew just 0.4% in 2024, continuing a "productivity puzzle" that has persisted since 2008. Output per hour worked is 16% below the G7 average. Business investment as a share of GDP (10%) is the lowest in the G7. Economic inactivity rose to 21.8%, with 2.8 million people out of work due to long-term sickness.
+Read the following extracts (A to C) before answering Question 1.
 
-**Extract B:**
+**Extract A — The UK productivity puzzle**
 
-| UK Labour Market | 2019 | 2022 | 2024 |
-|-----------------|------|------|------|
+UK labour productivity grew just 0.4% in 2024, continuing a "productivity puzzle" that has persisted since 2008. Output per hour worked is 16% below the G7 average. Business investment as a share of GDP (10%) is the lowest in the G7. Economic inactivity rose to 21.8% of the working-age population, with 2.8 million people out of work due to long-term sickness.
+
+**Extract B — UK labour market and productivity, 2019–2024**
+
+| Indicator | 2019 | 2022 | 2024 |
+|-----------|------|------|------|
 | Employment rate (%) | 76.2 | 75.5 | 75.0 |
 | Economic inactivity (%) | 20.8 | 21.3 | 21.8 |
-| Productivity (YoY %) | 0.3 | 0.2 | 0.4 |
+| Productivity (output per hour, YoY %) | 0.3 | 0.2 | 0.4 |
 | Vacancies (000s) | 810 | 1,300 | 880 |
 | Real wages (2019 = 100) | 100 | 96.4 | 99.2 |
+| Business investment (% of GDP) | 10.6 | 10.1 | 10.0 |
 
-Question 1 [4 marks]
-Using Extract B, explain what is meant by "economic inactivity" and identify the trend between 2019 and 2024.
+**Extract C — UK inequality and the National Living Wage**
 
-Question 2 [4 marks]
-Using an LRAS diagram, explain how low productivity growth limits UK economic growth.
+The UK Gini coefficient rose from 0.34 in 2019 to 0.37 in 2024. The top 1% hold 21% of total wealth; the bottom 50% hold just 9%. Child poverty reached 33% in 2024. The National Living Wage rose to £11.44/hour in April 2024 — a 9.8% uplift benefiting around 2.7 million workers — but the Resolution Foundation argues a further uplift to £12.20 by 2026 risks accelerating automation in low-pay sectors.
 
-Question 3 [8 marks]
-Analyse three possible causes of the UK's productivity puzzle. Consider investment, skills, and technology.
+---
 
-Question 4 [8 marks]
-Using a labour market diagram, explain the impact of rising economic inactivity on wages and employment.
+**Question 1a** [4 marks]
 
-Question 5 [16 marks]
-"Supply-side policies are the only effective solution to the UK's productivity problem." Evaluate this statement.
+Using Extract B, calculate the change in the UK economic inactivity rate between 2019 and 2024 in percentage points.
+**Question 1b** [4 marks]
 
-## Section B: Data Response (40 marks)
+With reference to Extract A, explain one reason why low business investment may reduce labour productivity.
+**Question 1c** [4 marks]
 
-**Context: UK Income Inequality**
+With reference to Extract C, explain one reason why a rising Gini coefficient indicates greater income inequality.
+**Question 1d** [6 marks]
 
-**Extract C:** The UK's Gini coefficient rose from 0.34 in 2019 to 0.37 in 2024. The top 1% hold 21% of total wealth, while the bottom 50% hold just 9%. Child poverty reached 33% in 2024. The National Living Wage rose to £11.44 but critics argue it is insufficient to close the gap.
+Using Extract A, analyse two possible causes of the UK's productivity puzzle.
+**Question 1e** [8 marks]
 
-**Extract D:**
+Using a suitable LRAS diagram, discuss the impact of persistently low productivity growth on the UK's long-run trend rate of economic growth.
+**Question 1f** [10 marks]
 
-| UK Inequality | 2015 | 2019 | 2024 |
-|--------------|------|------|------|
-| Gini coefficient | 0.33 | 0.34 | 0.37 |
-| Child poverty (%) | 27 | 30 | 33 |
-| Top 1% wealth share (%) | 19 | 20 | 21 |
-| NLW (£/hr) | 6.70 | 8.21 | 11.44 |
-| Benefits spending (£bn) | 196 | 222 | 268 |
+Assess whether rising economic inactivity (Extract A) is the most significant constraint on UK potential output.
+**Question 1g** [12 marks]
 
-Question 6 [4 marks]
-Using a Lorenz curve, explain the change in income distribution shown by the Gini coefficient rising from 0.33 to 0.37.
+Assess the likely impact of further increases in the National Living Wage (Extract C) on workers, firms and the UK labour market.
+**Question 1h** [12 marks]
 
-Question 7 [4 marks]
-Explain two reasons why child poverty may increase despite rising minimum wages.
+Assess the extent to which supply-side policies are likely to be more effective than redistributive fiscal policy in reducing UK income inequality.
+*(Total for Section A = 60 marks)*
 
-Question 8 [8 marks]
-Analyse whether progressive taxation or increased government spending is more effective in reducing inequality.
+---
 
-Question 9 [8 marks]
-Using a minimum wage diagram for a competitive labour market, explain the potential trade-offs of raising the NLW to £15/hr.
+## SECTION B (20 marks)
 
-Question 10 [16 marks]
-"Income inequality is a necessary consequence of a market economy and should not be a policy priority." Evaluate this statement.`,
+Read Extract D before answering Question 2.
+
+**Extract D — Comparative development indicators, 2024**
+
+| Country | GDP per capita (PPP, $) | HDI | GINI | Female labour-force participation (%) | Years of schooling (avg) |
+|---------|-------------------------|-----|------|----------------------------------------|--------------------------|
+| United Kingdom | 53,000 | 0.940 | 0.35 | 72 | 13.4 |
+| India | 9,200 | 0.644 | 0.37 | 24 | 6.7 |
+| Indonesia | 14,800 | 0.713 | 0.39 | 53 | 8.6 |
+| Kenya | 6,100 | 0.601 | 0.41 | 71 | 6.6 |
+| South Korea | 50,200 | 0.929 | 0.31 | 55 | 12.5 |
+
+India has set a goal of becoming a $5 trillion economy by 2027. Annual real GDP growth averaged 6.8% over 2014–2024, but female labour-force participation remains among the lowest in the G20.
+
+**Question 2** [20 marks]
+
+Evaluate the extent to which raising **female labour-force participation** is the single most effective strategy for accelerating economic development in **India** (Extract D).
+*(Total for Section B = 20 marks)*
+
+---
+
+## SECTION C (20 marks)
+
+Read Extracts E and F before answering Question 3.
+
+**Extract E — Globalisation, FDI and the multinational firm**
+
+Global FDI flows fell 8% to $1.3 trillion in 2024 — the lowest since 2010. Developing economies received 65% of inflows, but the share concentrated in just five countries (China, Brazil, India, Mexico, UAE) reached 58%. The OECD estimates that multinational enterprises (MNEs) account for one-third of global output and one-half of global exports, but only 20% of global employment. Critics argue MNEs depress wages in low-skill sectors and erode the corporate tax base in host countries via transfer pricing.
+
+**Extract F — A multinational firm: "Sundara Apparel plc"**
+
+Sundara Apparel plc is a UK-listed fast-fashion retailer. In 2024 revenue was £6.2bn. Sundara sources 78% of its garments from a network of 240 supplier factories in Bangladesh, Vietnam and Cambodia, employing approximately 180,000 workers indirectly. Average factory wages in Bangladesh are £85/month — below the UN's "living wage" benchmark of £150/month. Sundara recently committed £40m to upgrading factory safety and to a "living wage premium" on 25% of its garments by 2027. Critics argue this remains insufficient given Sundara's 2024 operating margin of 11.4%.
+
+**Question 3** [20 marks]
+
+Evaluate the **economic and ethical impact** of multinational firms such as **Sundara Apparel plc** (Extract F) on the developing economies in which they operate.
+*(Total for Section C = 20 marks)*
+
+**TOTAL FOR PAPER = 100 MARKS**`,
   },
   {
     id: "edxb-p2-c",
     subject: "edexcel-b",
     paper: "2",
     title: "Paper 2 — Set C",
-    description: "Wider Economic Environment. Financial sector and economic stability.",
-    totalMarks: 80,
-    content: `# Edexcel A-Level Economics B (9EB0/02) — Paper 2 — Predicted Paper Set C
+    description: "Competing in the global economy. UK fiscal sustainability, financial stability and the global economy.",
+    totalMarks: 100,
+    content: `# Edexcel A-Level Economics B (9EB0/02) — Paper 2: Competing in the global economy — Predicted Paper Set C
 
-**Time: 2 hours | Total: 80 marks**
+**Time: 2 hours | Total: 100 marks**
 
-## Section A: Data Response (40 marks)
+---
 
-**Context: UK Financial Sector**
+## SECTION A (60 marks)
 
-**Extract A:** The UK financial sector contributes £132 billion to GDP (8.3%). Following the 2008 crisis, Basel III regulations required banks to hold more capital reserves, and ring-fencing separated retail from investment banking. However, shadow banking assets grew 40% between 2019–2024, and fintech disruption means 15 million UK consumers now use digital-only banks.
+Read the following extracts (A to C) before answering Question 1.
 
-**Extract B:**
+**Extract A — UK fiscal sustainability**
 
-| UK Financial Sector | 2019 | 2022 | 2024 |
-|--------------------|------|------|------|
-| GDP contribution (£bn) | 115 | 124 | 132 |
-| Bank capital ratio (%) | 16.8 | 17.2 | 17.5 |
-| Shadow banking assets (£bn) | 680 | 850 | 950 |
-| Fintech users (m) | 8 | 12 | 15 |
-| Mortgage defaults (000s) | 42 | 38 | 52 |
+UK national debt exceeded 100% of GDP in 2024 for the first time since the early 1960s. The government borrowed £310bn during the Covid-19 pandemic and debt interest payments reached £111bn in 2024 — more than the combined budgets of defence and education. The OBR warned that without fiscal consolidation, debt could reach 300% of GDP by 2070, driven by ageing demographics, climate-transition costs and rising healthcare demand.
 
-Question 1 [4 marks]
-Using Extract B, explain two changes in the UK financial sector between 2019 and 2024.
+**Extract B — UK public finances, 2019–2024**
 
-Question 2 [4 marks]
-Explain how moral hazard contributed to the 2008 financial crisis and how Basel III addresses it.
+| Indicator | 2019 | 2022 | 2024 |
+|-----------|------|------|------|
+| National debt (% GDP) | 83 | 97 | 102 |
+| Budget deficit (£bn) | 57 | 133 | 108 |
+| Debt interest (£bn) | 48 | 83 | 111 |
+| Tax revenue (% GDP) | 33.5 | 35.2 | 37.1 |
+| Public investment (% GDP) | 2.4 | 2.8 | 2.5 |
+| 10-year gilt yield (%) | 0.8 | 3.3 | 4.1 |
 
-Question 3 [8 marks]
-Analyse the risks posed by shadow banking to UK financial stability. Why might it be harder to regulate than traditional banking?
+**Extract C — The UK financial sector**
 
-Question 4 [8 marks]
-Using AD/AS analysis, explain how a financial crisis can cause both a recession and deflation.
+The UK financial sector contributes £132bn to GDP (8.3%). After the 2008 crisis, Basel III regulations required banks to hold higher capital buffers, and ring-fencing separated retail from investment banking. However, shadow banking assets grew 40% between 2019 and 2024, and 15 million UK consumers now use digital-only banks. Mortgage defaults rose 24% in 2024 as the higher Bank Rate (5.25%) fed through to households on variable-rate mortgages.
 
-Question 5 [16 marks]
-"Financial regulation since 2008 has made the system safer but at the cost of growth and innovation." Evaluate this statement.
+---
 
-## Section B: Data Response (40 marks)
+**Question 1a** [4 marks]
 
-**Context: UK Housing and Wealth Inequality**
+Using Extract B, calculate the percentage increase in UK debt interest payments between 2019 and 2024.
+**Question 1b** [4 marks]
 
-**Extract C:** UK house prices rose 73% between 2014–2024 while wages grew 28%. The average first-time buyer is now 35 years old (up from 30 in 2014). Housing wealth is highly concentrated — the top 10% of property owners hold 45% of housing wealth. The "Bank of Mum and Dad" provided £10 billion in 2024 for deposits.
+With reference to Extract A, explain one reason why an ageing population may put pressure on UK fiscal sustainability.
+**Question 1c** [4 marks]
 
-**Extract D:**
+With reference to Extract C, explain one risk that the rapid growth of shadow banking poses to UK financial stability.
+**Question 1d** [6 marks]
 
-| UK Housing & Wealth | 2014 | 2019 | 2024 |
-|--------------------|------|------|------|
-| Avg house price (£000) | 188 | 234 | 325 |
-| Homeownership 25–34 (%) | 36 | 32 | 28 |
-| First-time buyer age | 30 | 33 | 35 |
-| Housing wealth Gini | 0.62 | 0.65 | 0.68 |
-| Avg deposit (£000) | 32 | 48 | 62 |
+Using Extract B, analyse the likely impact of rising 10-year gilt yields on UK fiscal sustainability.
+**Question 1e** [8 marks]
 
-Question 6 [4 marks]
-Using Extract D, calculate the percentage increase in average deposit required between 2014 and 2024.
+Using a suitable AD/AS diagram, discuss the likely macroeconomic impact of fiscal consolidation aimed at reducing the UK budget deficit.
+**Question 1f** [10 marks]
 
-Question 7 [4 marks]
-Explain how rising house prices contribute to wealth inequality between homeowners and renters.
+Assess whether tax rises or spending cuts are likely to be the more effective tool for restoring UK fiscal sustainability.
+**Question 1g** [12 marks]
 
-Question 8 [8 marks]
-Analyse whether quantitative easing contributed to rising house prices and wealth inequality. Use the monetary policy transmission mechanism.
+Assess the likely impact of the higher Bank Rate (Extract C) on UK households, firms and financial stability.
+**Question 1h** [12 marks]
 
-Question 9 [8 marks]
-Using a supply and demand diagram, explain why building 300,000 homes per year may not reduce house prices.
+Assess the extent to which a UK national debt above 100% of GDP (Extract A) should be a serious concern for policymakers.
+*(Total for Section A = 60 marks)*
 
-Question 10 [16 marks]
-"Housing wealth inequality is the most significant form of inequality in the UK and requires radical policy solutions." Evaluate this statement.`,
+---
+
+## SECTION B (20 marks)
+
+Read Extract D before answering Question 2.
+
+**Extract D — Comparative development indicators, 2024**
+
+| Country | GDP per capita (PPP, $) | HDI | GINI | Net oil exports (% GDP) | Government revenue (% GDP) |
+|---------|-------------------------|-----|------|--------------------------|----------------------------|
+| United Kingdom | 53,000 | 0.940 | 0.35 | −1.2 | 37 |
+| Saudi Arabia | 56,300 | 0.875 | 0.46 | 22.4 | 32 |
+| Nigeria | 5,800 | 0.535 | 0.35 | 6.1 | 9 |
+| Norway | 82,200 | 0.961 | 0.27 | 14.7 | 56 |
+| Angola | 7,300 | 0.586 | 0.51 | 18.3 | 14 |
+
+Nigeria — Africa's largest economy — depends on crude oil for 60% of government revenue and 80% of export earnings. Real GDP per capita has risen by just 0.5% per year over 2014–2024, while the population grew 2.5% annually.
+
+**Question 2** [20 marks]
+
+Evaluate the view that **dependence on primary commodity exports** (Extract D) is the single greatest barrier to long-run economic development in **Nigeria**.
+*(Total for Section B = 20 marks)*
+
+---
+
+## SECTION C (20 marks)
+
+Read Extracts E and F before answering Question 3.
+
+**Extract E — Global financial stability and capital flows**
+
+Cross-border bank lending to emerging markets fell 12% in 2024 as the US Federal Reserve held interest rates above 5%. The IMF warned of a "great divergence" — advanced economies with strong fiscal buffers can absorb tighter global financial conditions, but 60% of low-income countries are now in or near debt distress. Twelve sovereign defaults have occurred since 2020, including Sri Lanka, Zambia and Ghana. The IMF estimates that a sharp tightening of global financial conditions could shave 1.5 percentage points off emerging-market growth in 2025.
+
+**Extract F — A multinational firm: "Meridian Capital plc"**
+
+Meridian Capital plc is a UK-listed global investment bank with $2.4 trillion of assets under management. In 2024 it generated 48% of revenue from the US, 22% from the EU, 18% from the UK and 12% from emerging markets. Meridian holds $180bn of emerging-market sovereign and corporate debt — including $14bn of Nigerian, Egyptian and Pakistani exposure. A 100bp rise in emerging-market borrowing costs would reduce the mark-to-market value of Meridian's EM portfolio by approximately $9bn. Meridian employs 4,200 staff in London and lobbies the UK government for "lighter-touch" post-Brexit financial regulation.
+
+**Question 3** [20 marks]
+
+Evaluate the impact of **tighter global financial conditions** (Extract E) on the operations of UK-based multinational financial firms such as **Meridian Capital plc** (Extract F) and on UK financial stability.
+*(Total for Section C = 20 marks)*
+
+**TOTAL FOR PAPER = 100 MARKS**`,
   },
   // ── Paper 3: The Global Economy ──
   {
