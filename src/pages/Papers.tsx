@@ -456,7 +456,7 @@ function OcrPapersList() {
 
 const WJEC_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; available: boolean }[] = [
   { number: 1, code: "1090U10-1", title: "Introduction to Economics",                  focus: "AS Micro",       available: true  },
-  { number: 2, code: "1090U20-1", title: "Economics in Action",                        focus: "AS Macro",       available: false },
+  { number: 2, code: "1090U20-1", title: "Economics in Action",                        focus: "AS Macro",       available: true  },
   { number: 3, code: "A090U30-1", title: "Exploring Economic Behaviour",               focus: "A2 Micro/Macro", available: true  },
 ];
 
