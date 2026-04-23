@@ -1013,6 +1013,10 @@ export default function Papers() {
     return <AqaGcsePapersList />;
   }
 
+  if (subject === "edexcel-igcse") {
+    return <EdexcelIgcsePapersList />;
+  }
+
   return (
     <div className="max-w-4xl mx-auto px-5 py-12">
       <div className="mb-8">
