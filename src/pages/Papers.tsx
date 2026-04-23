@@ -455,7 +455,7 @@ function OcrPapersList() {
 }
 
 const EDUQAS_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; available: boolean }[] = [
-  { number: 1, code: "A510QS-1", title: "Introduction to Economics",   focus: "Micro",            available: false },
+  { number: 1, code: "A510QS-1", title: "Introduction to Economics",   focus: "Micro",            available: true  },
   { number: 2, code: "A510QS-2", title: "Exploring Economic Issues",   focus: "Macro",            available: false },
   { number: 3, code: "A510QS-3", title: "Economic Analysis & Policy",  focus: "Synoptic A2",      available: true  },
 ];
