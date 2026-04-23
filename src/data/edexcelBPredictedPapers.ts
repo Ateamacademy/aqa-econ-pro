@@ -1094,53 +1094,52 @@ Evaluate the impact of **tighter global financial conditions** (Extract E) on th
 
 **TOTAL FOR PAPER = 100 MARKS**`,
   },
-  // ── Paper 3: The Global Economy ──
+  // ── Paper 3: The Global Economy (9EB0/03) ──
+  // Spec: 100 marks · 2 hours · Two data-response questions, each with parts (a)–(d) [8+10+12+20 = 50]
   {
     id: "edxb-p3-a",
     subject: "edexcel-b",
     paper: "3",
     title: "Paper 3 — Set A",
-    description: "Global Economy. Trade, globalisation, and development (synoptic).",
-    totalMarks: 80,
+    description: "The Global Economy. Globalisation, trade protection, and development (synoptic).",
+    totalMarks: 100,
     content: `# Edexcel A-Level Economics B (9EB0/03) — Paper 3 — Predicted Paper Set A
 
-**Time: 2 hours | Total: 80 marks**
+**Time: 2 hours | Total: 100 marks**
 
-## Section A: Extended Open-Response (40 marks)
+Answer **both** questions. Each question is worth 50 marks and contains four parts (a)–(d).
 
-**Context: Globalisation Under Threat**
+---
 
-**Extract A:** Global trade growth slowed to 1.5% in 2024, down from 3.5% in 2019. The US-China trade war, Brexit, and the pandemic have accelerated "reshoring" and "friendshoring" trends. The WTO reported a 42% increase in trade-restrictive measures since 2019. Meanwhile, developing countries argue that the global trading system is biased against them.
+## Question 1 — Globalisation Under Threat (50 marks)
+
+**Extract A:** Global trade growth slowed to 1.5% in 2024, down from 3.5% in 2019. The US–China trade war, Brexit, and the pandemic have accelerated "reshoring" and "friendshoring" trends. The WTO reported a 42% increase in trade-restrictive measures since 2019. Developing countries argue that the global trading system is biased against them.
 
 **Extract B:**
 
 | Global Trade Indicators | 2019 | 2022 | 2024 |
 |------------------------|------|------|------|
-| Trade growth (%) | 3.5 | 3.2 | 1.5 |
+| World trade growth (%) | 3.5 | 3.2 | 1.5 |
 | Trade restrictions (000s) | 7.8 | 9.4 | 11.1 |
 | FDI flows ($tn) | 1.5 | 1.3 | 1.1 |
 | Developing country trade share (%) | 42 | 44 | 45 |
-| Supply chain disruption index | 100 | 180 | 125 |
+| Supply-chain disruption index | 100 | 180 | 125 |
 
-Question 1 [4 marks]
-Using Extract B, identify and explain two trends in global trade.
+Question 1(a) [8 marks]
+With reference to Extract A and using a suitable diagram, explain the theoretical basis of the gains from free trade.
 
-Question 2 [8 marks]
-Using comparative advantage theory and a diagram, explain why free trade is theoretically beneficial for all countries.
+Question 1(b) [10 marks]
+Using Extract B, analyse two reasons for the slowdown in global trade growth between 2019 and 2024.
 
-Question 3 [8 marks]
-Analyse the economic arguments for and against "reshoring" — bringing production back to developed countries.
+Question 1(c) [12 marks]
+Assess the economic effects on developing countries of "reshoring" production back to advanced economies.
 
-Question 4 [20 marks]
-"The era of globalisation is over, and this is harmful for developing countries." Evaluate this statement.
+Question 1(d) [20 marks]
+"The era of globalisation is over, and this is harmful for developing countries." Evaluate this statement, with reference to the extracts and your own knowledge.
 
-KAA (10 marks): Define globalisation and its drivers. Explain how globalisation benefited developing countries (trade, FDI, technology transfer, employment). Analyse how deglobalisation trends (reshoring, trade wars, regionalism) may reverse these gains. Use appropriate diagrams (comparative advantage, AD/AS).
+---
 
-Evaluation (10 marks): Consider whether developing countries can benefit from reduced dependency on global supply chains. Evaluate the role of regional trade agreements as alternatives. Assess whether globalisation's benefits were always equitably distributed. Consider specific country examples.
-
-## Section B: Extended Open-Response (40 marks)
-
-**Context: Climate Change and the Global Economy**
+## Question 2 — Climate Change and the Global Economy (50 marks)
 
 **Extract C:** The Paris Agreement targets limiting global warming to 1.5°C, requiring a 45% reduction in emissions by 2030. However, global emissions rose 1.1% in 2024 to 37.4 billion tonnes of CO₂. Developing countries contribute 63% of emissions but have the least capacity to adapt. The annual climate finance gap is estimated at $3 trillion.
 
@@ -1154,38 +1153,36 @@ Evaluation (10 marks): Consider whether developing countries can benefit from re
 | Climate-related losses ($bn) | 166 | 313 | 280 |
 | Carbon price avg ($/tonne) | 22 | 45 | 68 |
 
-Question 5 [4 marks]
-Using Extract D, explain the trend in global carbon prices and its significance.
+Question 2(a) [8 marks]
+Using a suitable negative externality diagram, explain why the market fails to address climate change.
 
-Question 6 [8 marks]
-Using a negative externality diagram, explain why the market fails to address climate change and why international cooperation is needed.
+Question 2(b) [10 marks]
+Using Extract D, analyse the significance of the rise in average carbon prices between 2019 and 2024.
 
-Question 7 [8 marks]
-Analyse whether market-based mechanisms (carbon pricing, cap and trade) or direct government regulation are more effective in reducing emissions.
+Question 2(c) [12 marks]
+Assess whether market-based mechanisms (carbon pricing, cap-and-trade) are more effective than direct regulation in reducing emissions in developing economies.
 
-Question 8 [20 marks]
-"Developing countries should not be expected to sacrifice economic growth for environmental sustainability." Evaluate this statement.
-
-KAA (10 marks): Define sustainable development. Explain why developing countries face a growth-environment trade-off. Analyse the concept of "common but differentiated responsibilities." Use appropriate diagrams (PPF, negative externality, LRAS).
-
-Evaluation (10 marks): Consider the environmental Kuznets curve. Evaluate the role of green technology transfer and climate finance. Assess whether green growth is possible. Consider specific country examples (China, India, Sub-Saharan Africa). Make a supported judgement.`,
+Question 2(d) [20 marks]
+"Developing countries should not be expected to sacrifice economic growth for environmental sustainability." Evaluate this statement, with reference to the extracts and your own knowledge.`,
   },
   {
     id: "edxb-p3-b",
     subject: "edexcel-b",
     paper: "3",
     title: "Paper 3 — Set B",
-    description: "Global Economy. Development, aid, and emerging economies.",
-    totalMarks: 80,
+    description: "The Global Economy. Emerging markets, FDI, aid, and the debt crisis.",
+    totalMarks: 100,
     content: `# Edexcel A-Level Economics B (9EB0/03) — Paper 3 — Predicted Paper Set B
 
-**Time: 2 hours | Total: 80 marks**
+**Time: 2 hours | Total: 100 marks**
 
-## Section A: Extended Open-Response (40 marks)
+Answer **both** questions. Each question is worth 50 marks and contains four parts (a)–(d).
 
-**Context: India — An Emerging Economic Superpower?**
+---
 
-**Extract A:** India's GDP grew 6.3% in 2024, making it the world's fastest-growing major economy. It overtook the UK to become the 5th largest economy in 2022. However, 228 million Indians live in poverty, the Gini coefficient is 0.35, and GDP per capita ($2,610) remains far below China ($12,720) and the UK ($46,370). India's IT services sector exports $200 billion annually.
+## Question 1 — India: An Emerging Economic Superpower? (50 marks)
+
+**Extract A:** India's GDP grew 6.3% in 2024, making it the world's fastest-growing major economy. It overtook the UK to become the 5th-largest economy in 2022. However, 228 million Indians live in poverty, the Gini coefficient is 0.35, and GDP per capita ($2,610) remains far below China ($12,720) and the UK ($46,370). India's IT services sector exports $200 billion annually.
 
 **Extract B:**
 
@@ -1197,27 +1194,23 @@ Evaluation (10 marks): Consider the environmental Kuznets curve. Evaluate the ro
 | HDI | 0.624 | 0.633 | 0.644 |
 | Manufacturing (% GDP) | 16 | 14 | 17 |
 
-Question 1 [4 marks]
-Using Extract B, explain why India's GDP growth may not fully reflect improvements in living standards.
+Question 1(a) [8 marks]
+Using a suitable AD/AS diagram, explain how rising FDI inflows contribute to India's economic growth.
 
-Question 2 [8 marks]
-Using AD/AS analysis, explain how FDI inflows contribute to India's economic growth.
+Question 1(b) [10 marks]
+Using Extract B, analyse why India's GDP growth may not fully reflect improvements in living standards.
 
-Question 3 [8 marks]
-Analyse the barriers to economic development that India faces despite rapid GDP growth. Consider institutional, social, and structural factors.
+Question 1(c) [12 marks]
+Assess the institutional and structural barriers to economic development that India continues to face despite rapid GDP growth.
 
-Question 4 [20 marks]
+Question 1(d) [20 marks]
 "FDI is more important than aid in promoting sustainable economic development." Evaluate this statement with reference to India and one other developing country.
 
-KAA (10 marks): Define economic development (vs growth). Explain the benefits of FDI (capital, technology, employment, tax revenue). Analyse the limitations of FDI (profit repatriation, exploitation, environmental damage). Compare with the role of aid (infrastructure, health, education). Use appropriate diagrams.
+---
 
-Evaluation (10 marks): Consider whether the benefits of FDI are equitably distributed. Evaluate the "dependency theory" critique. Assess the conditions under which aid is most effective. Consider institutional quality and governance. Use specific examples.
+## Question 2 — The Global Debt Crisis (50 marks)
 
-## Section B: Extended Open-Response (40 marks)
-
-**Context: The Global Debt Crisis**
-
-**Extract C:** Global public debt reached $97 trillion (93% of GDP) in 2024. Low-income countries face a severe debt crisis — 60% are in debt distress or at high risk. Zambia, Sri Lanka, and Ghana defaulted on sovereign debt since 2022. The IMF provides structural adjustment loans but critics argue these impose harmful conditions (austerity, privatisation).
+**Extract C:** Global public debt reached $97 trillion (93% of GDP) in 2024. Low-income countries face a severe debt crisis — 60% are in debt distress or at high risk. Zambia, Sri Lanka, and Ghana defaulted on sovereign debt since 2022. The IMF provides structural-adjustment loans, but critics argue these impose harmful conditions (austerity, privatisation).
 
 **Extract D:**
 
@@ -1227,38 +1220,36 @@ Evaluation (10 marks): Consider whether the benefits of FDI are equitably distri
 | Debt-to-GDP (%) | 84 | 92 | 93 |
 | Low-income debt distress (%) | 35 | 48 | 60 |
 | IMF programmes active | 44 | 52 | 63 |
-| Debt service costs LICs ($bn) | 38 | 52 | 68 |
+| Debt-service costs LICs ($bn) | 38 | 52 | 68 |
 
-Question 5 [4 marks]
-Using Extract D, explain the trend in low-income country debt distress between 2019 and 2024.
+Question 2(a) [8 marks]
+Using a suitable diagram, explain how rising debt-service costs can constrain government spending on health and education in a low-income country.
 
-Question 6 [8 marks]
-Explain the potential consequences of high debt-to-GDP ratios for developing countries. Consider crowding out, currency depreciation, and growth.
+Question 2(b) [10 marks]
+Using Extract D, analyse two consequences of the rising debt-distress rate among low-income countries.
 
-Question 7 [8 marks]
-Analyse whether IMF structural adjustment programmes help or hinder economic development. Consider both short-run and long-run impacts.
+Question 2(c) [12 marks]
+Assess whether IMF structural-adjustment programmes help or hinder long-run economic development.
 
-Question 8 [20 marks]
-"Debt relief is the most effective way to promote economic development in low-income countries." Evaluate this statement.
-
-KAA (10 marks): Define and measure development. Explain how debt constrains development (debt service diverts spending from health/education). Analyse how debt relief frees resources for investment. Consider alternative approaches (aid, trade liberalisation, FDI). Use appropriate diagrams.
-
-Evaluation (10 marks): Consider moral hazard from debt relief. Evaluate conditions for effectiveness (governance, institutions). Assess whether structural reforms are more important. Consider the HIPC initiative's track record. Compare with trade and FDI as development strategies. Make a supported judgement.`,
+Question 2(d) [20 marks]
+"Debt relief is the most effective way to promote economic development in low-income countries." Evaluate this statement.`,
   },
   {
     id: "edxb-p3-c",
     subject: "edexcel-b",
     paper: "3",
     title: "Paper 3 — Set C",
-    description: "Global Economy. Currency markets and regional integration.",
-    totalMarks: 80,
+    description: "The Global Economy. Currency markets and regional integration.",
+    totalMarks: 100,
     content: `# Edexcel A-Level Economics B (9EB0/03) — Paper 3 — Predicted Paper Set C
 
-**Time: 2 hours | Total: 80 marks**
+**Time: 2 hours | Total: 100 marks**
 
-## Section A: Extended Open-Response (40 marks)
+Answer **both** questions. Each question is worth 50 marks and contains four parts (a)–(d).
 
-**Context: Exchange Rate Instability and Developing Economies**
+---
+
+## Question 1 — Exchange-Rate Instability in Developing Economies (50 marks)
 
 **Extract A:** Several developing countries experienced severe currency crises in 2024. The Turkish lira lost 80% of its value against the dollar since 2020 as unorthodox monetary policy (cutting rates to fight inflation) failed. Argentina's peso fell 75%, and Egypt devalued by 50%. Capital flight from emerging markets totalled $260 billion in 2024.
 
@@ -1272,27 +1263,23 @@ Evaluation (10 marks): Consider moral hazard from debt relief. Evaluate conditio
 | US interest rate (%) | 0.25 | 4.50 | 5.50 |
 | Global food prices index | 98 | 144 | 118 |
 
-Question 1 [4 marks]
-Using Extract B, calculate the percentage depreciation of the Turkish lira against the dollar between 2020 and 2024.
+Question 1(a) [8 marks]
+Using a suitable forex diagram, explain how rising US interest rates have caused capital outflows from emerging markets.
 
-Question 2 [8 marks]
-Using a forex diagram, explain how rising US interest rates caused capital outflows from emerging markets.
+Question 1(b) [10 marks]
+Using Extract B, analyse the macroeconomic consequences of the lira's depreciation against the dollar between 2020 and 2024.
 
-Question 3 [8 marks]
-Analyse the advantages and disadvantages of a fixed versus floating exchange rate for a developing economy like Turkey.
+Question 1(c) [12 marks]
+Assess the advantages and disadvantages of a fixed versus a floating exchange rate for a developing economy such as Turkey.
 
-Question 4 [20 marks]
-"Exchange rate depreciation always harms developing economies." Evaluate this statement.
+Question 1(d) [20 marks]
+"Exchange-rate depreciation always harms developing economies." Evaluate this statement with reference to the J-curve, Marshall-Lerner condition, and the extracts.
 
-KAA (10 marks): Explain the J-curve effect and Marshall-Lerner condition. Analyse the impact of depreciation on imported inflation, debt burdens, and export competitiveness. Use appropriate forex and AD/AS diagrams.
+---
 
-Evaluation (10 marks): Consider whether the cause of depreciation matters (policy vs market confidence). Evaluate whether depreciation can improve the current account. Assess the role of institutional strength and credibility. Consider dollarisation as an alternative. Use specific country examples.
+## Question 2 — The Future of the European Union (50 marks)
 
-## Section B: Extended Open-Response (40 marks)
-
-**Context: The Future of the European Union**
-
-**Extract C:** The EU's single market of 450 million consumers remains the world's largest trading bloc. However, challenges include slow growth (GDP growth 0.9% in 2024, vs US 2.5%), an ageing population, and rising euroscepticism. The EU's Green Deal targets net zero by 2050 with €1 trillion in investment. Brexit demonstrated both the costs of leaving and the constraints of membership.
+**Extract C:** The EU's single market of 450 million consumers remains the world's largest trading bloc. However, challenges include slow growth (GDP growth 0.9% in 2024 vs US 2.5%), an ageing population, and rising euroscepticism. The EU's Green Deal targets net zero by 2050 with €1 trillion in investment. Brexit demonstrated both the costs of leaving and the constraints of membership.
 
 **Extract D:**
 
@@ -1304,36 +1291,34 @@ Evaluation (10 marks): Consider whether the cause of depreciation matters (polic
 | EU trade with UK (€bn) | 695 | 588 | 542 |
 | EU R&D spending (% GDP) | 2.2 | 2.3 | 2.3 |
 
-Question 5 [4 marks]
-Using Extract D, compare EU and US economic performance between 2019 and 2024.
+Question 2(a) [8 marks]
+Using a suitable trade-creation/trade-diversion diagram, explain the economic effects of EU membership on a country such as Poland.
 
-Question 6 [8 marks]
-Using trade creation and trade diversion analysis, explain the economic effects of EU membership on a country like Poland.
+Question 2(b) [10 marks]
+Using Extract D, analyse two reasons for the divergence in EU and US GDP growth between 2019 and 2024.
 
-Question 7 [8 marks]
-Analyse the economic costs and benefits of the UK's decision to leave the EU (Brexit). Use appropriate theory and data.
+Question 2(c) [12 marks]
+Assess the economic costs and benefits to the UK of leaving the EU (Brexit).
 
-Question 8 [20 marks]
-"Regional trading blocs like the EU promote economic growth and development for all members." Evaluate this statement.
-
-KAA (10 marks): Define economic integration and its stages (FTA, customs union, single market, economic union). Explain trade creation benefits. Analyse how the single market promotes factor mobility and competition. Use appropriate diagrams.
-
-Evaluation (10 marks): Consider trade diversion effects. Evaluate whether benefits are evenly distributed between large and small economies. Assess the impact of loss of policy sovereignty (monetary, fiscal, trade). Consider the evidence from Brexit and eurozone crises. Make a supported judgement.`,
+Question 2(d) [20 marks]
+"Regional trading blocs like the EU promote economic growth and development for all members." Evaluate this statement.`,
   },
   {
     id: "edxb-p3-d",
     subject: "edexcel-b",
     paper: "3",
     title: "Paper 3 — Set D",
-    description: "Global Economy. China's rise and financial globalisation.",
-    totalMarks: 80,
+    description: "The Global Economy. China's rise and financial globalisation.",
+    totalMarks: 100,
     content: `# Edexcel A-Level Economics B (9EB0/03) — Paper 3 — Predicted Paper Set D
 
-**Time: 2 hours | Total: 80 marks**
+**Time: 2 hours | Total: 100 marks**
 
-## Section A: Extended Open-Response (40 marks)
+Answer **both** questions. Each question is worth 50 marks and contains four parts (a)–(d).
 
-**Context: China's Economic Transformation**
+---
+
+## Question 1 — China's Economic Transformation (50 marks)
 
 **Extract A:** China's GDP reached $18.5 trillion in 2024, making it the world's second-largest economy. Growth slowed to 4.9% from double-digit rates in the 2000s. A property crisis (Evergrande's $300bn debt), ageing demographics, and trade tensions with the US pose challenges. China's Belt and Road Initiative has invested $1 trillion across 150 countries.
 
@@ -1347,27 +1332,23 @@ Evaluation (10 marks): Consider trade diversion effects. Evaluate whether benefi
 | Population growth (%) | 0.5 | 0.3 | -0.1 |
 | Poverty rate (%) | 26 | 0.6 | 0.0 |
 
-Question 1 [4 marks]
-Using Extract B, explain two significant changes in the Chinese economy between 2010 and 2024.
+Question 1(a) [8 marks]
+Using a suitable AD/AS diagram, explain two factors that have contributed to China's slowdown from 10.6% to 4.9% growth.
 
-Question 2 [8 marks]
-Using an AD/AS diagram, analyse the factors that have contributed to China's economic slowdown from 10.6% to 4.9% growth.
+Question 1(b) [10 marks]
+Using Extract B, analyse the implications of China's negative population growth for its long-run growth potential.
 
-Question 3 [8 marks]
-Analyse the economic benefits and risks of China's Belt and Road Initiative for recipient developing countries.
+Question 1(c) [12 marks]
+Assess the economic benefits and risks of China's Belt and Road Initiative for recipient developing countries.
 
-Question 4 [20 marks]
+Question 1(d) [20 marks]
 "China's model of state-directed capitalism has been more effective than free-market capitalism in achieving economic development." Evaluate this statement.
 
-KAA (10 marks): Define and compare economic systems. Explain how state intervention drove China's growth (infrastructure investment, SOEs, managed exchange rate). Analyse free-market mechanisms (price signals, entrepreneurship, competition). Use appropriate diagrams (PPF, LRAS).
+---
 
-Evaluation (10 marks): Consider the costs of state intervention (inefficiency, debt, environmental damage). Evaluate whether China's model is transferable. Assess the role of institutions, property rights, and rule of law. Compare with India's market-oriented approach. Make a supported judgement.
+## Question 2 — Financial Globalisation and Instability (50 marks)
 
-## Section B: Extended Open-Response (40 marks)
-
-**Context: Financial Globalisation and Instability**
-
-**Extract C:** Cross-border capital flows reached $11 trillion in 2024. While financial globalisation promotes growth through investment, it also transmits shocks — the 2008 crisis spread from US sub-prime to European banks within weeks. Cryptocurrency markets grew to $2.5 trillion, challenging central bank monetary sovereignty.
+**Extract C:** Cross-border capital flows reached $11 trillion in 2024. While financial globalisation promotes growth through investment, it also transmits shocks — the 2008 crisis spread from US sub-prime to European banks within weeks. Cryptocurrency markets grew to $2.5 trillion, challenging central-bank monetary sovereignty.
 
 **Extract D:**
 
@@ -1377,40 +1358,38 @@ Evaluation (10 marks): Consider the costs of state intervention (inefficiency, d
 | EM portfolio investment ($bn) | 420 | 680 | 540 |
 | Crypto market cap ($tn) | 0 | 0.2 | 2.5 |
 | Banking crises (countries) | 12 | 3 | 5 |
-| Central bank digital currencies | 0 | 5 | 42 |
+| Central-bank digital currencies | 0 | 5 | 42 |
 
-Question 5 [4 marks]
-Using Extract D, explain two trends in financial globalisation between 2010 and 2024.
+Question 2(a) [8 marks]
+Using a suitable diagram, explain how financial contagion spreads economic shocks across borders, with reference to the 2008 crisis.
 
-Question 6 [8 marks]
-Analyse how financial globalisation can both promote and threaten economic stability. Use the 2008 crisis as an example.
+Question 2(b) [10 marks]
+Using Extract D, analyse two consequences of the rapid growth of cryptocurrency markets for the effectiveness of monetary policy.
 
-Question 7 [8 marks]
-Explain why the growth of cryptocurrency markets may reduce the effectiveness of monetary policy. Use relevant theory.
+Question 2(c) [12 marks]
+Assess whether financial globalisation has benefited or harmed developing countries.
 
-Question 8 [20 marks]
-"Financial globalisation has created more instability than growth." Evaluate this statement.
-
-KAA (10 marks): Define financial globalisation and its drivers (technology, deregulation, capital account liberalisation). Explain benefits (efficient capital allocation, FDI, risk diversification). Analyse risks (contagion, capital flight, asset bubbles). Use appropriate diagrams.
-
-Evaluation (10 marks): Consider whether regulation can mitigate risks without losing benefits. Evaluate the role of international institutions (IMF, BIS). Assess whether developing countries benefit or lose from financial openness. Consider the impact of fintech and cryptocurrency. Make a supported judgement.`,
+Question 2(d) [20 marks]
+"Financial globalisation has created more instability than growth." Evaluate this statement.`,
   },
   {
     id: "edxb-p3-e",
     subject: "edexcel-b",
     paper: "3",
     title: "Paper 3 — Set E",
-    description: "Global Economy. Migration, remittances, and African development.",
-    totalMarks: 80,
+    description: "The Global Economy. Migration, remittances, and African development.",
+    totalMarks: 100,
     content: `# Edexcel A-Level Economics B (9EB0/03) — Paper 3 — Predicted Paper Set E
 
-**Time: 2 hours | Total: 80 marks**
+**Time: 2 hours | Total: 100 marks**
 
-## Section A: Extended Open-Response (40 marks)
+Answer **both** questions. Each question is worth 50 marks and contains four parts (a)–(d).
 
-**Context: International Migration and the Global Economy**
+---
 
-**Extract A:** International migrants numbered 281 million in 2024 (3.6% of world population). Remittances to developing countries reached $656 billion — exceeding FDI and aid combined. However, "brain drain" depletes skilled workers from developing countries. The UK's net migration reached 685,000 in 2023, the highest ever, driven by healthcare and tech sector demand.
+## Question 1 — International Migration and the Global Economy (50 marks)
+
+**Extract A:** International migrants numbered 281 million in 2024 (3.6% of world population). Remittances to developing countries reached $656 billion — exceeding FDI and aid combined. However, "brain drain" depletes skilled workers from developing countries. The UK's net migration reached 685,000 in 2023, the highest ever, driven by healthcare and tech-sector demand.
 
 **Extract B:**
 
@@ -1420,27 +1399,23 @@ Evaluation (10 marks): Consider whether regulation can mitigate risks without lo
 | Remittances to LDCs ($bn) | 548 | 605 | 656 |
 | UK net migration (000s) | 226 | 504 | 685 |
 | NHS staff from overseas (%) | 14 | 17 | 20 |
-| Brain drain index (avg) | 5.2 | 5.5 | 5.8 |
+| Brain-drain index (avg) | 5.2 | 5.5 | 5.8 |
 
-Question 1 [4 marks]
-Using Extract B, explain the significance of remittances exceeding FDI for developing countries.
+Question 1(a) [8 marks]
+Using a suitable labour-market diagram, explain the impact of immigration on wages and employment in the UK.
 
-Question 2 [8 marks]
-Using a labour market diagram, analyse the impact of immigration on wages and employment in the UK.
+Question 1(b) [10 marks]
+Using Extract B, analyse the significance for developing countries of remittances exceeding both FDI and aid.
 
-Question 3 [8 marks]
-Analyse the costs and benefits of emigration for the origin country. Consider brain drain vs brain gain, remittances, and social impacts.
+Question 1(c) [12 marks]
+Assess the costs and benefits of emigration for the country of origin, considering brain drain, brain gain, and remittances.
 
-Question 4 [20 marks]
+Question 1(d) [20 marks]
 "International migration benefits both sending and receiving countries." Evaluate this statement.
 
-KAA (10 marks): Define migration types (economic, forced). Explain benefits for receiving countries (filling skills gaps, fiscal contribution, AD boost). Analyse benefits for sending countries (remittances, skills transfer on return). Use labour market and AD/AS diagrams.
+---
 
-Evaluation (10 marks): Consider distributional effects (wage compression for low-skilled domestic workers). Evaluate brain drain vs brain gain debate. Assess the impact on public services and social cohesion. Consider whether migration policy matters more than migration levels. Use specific country examples.
-
-## Section B: Extended Open-Response (40 marks)
-
-**Context: Sub-Saharan Africa — Growth Without Development?**
+## Question 2 — Sub-Saharan Africa: Growth Without Development? (50 marks)
 
 **Extract C:** Sub-Saharan Africa grew at 3.8% in 2024 but GDP per capita growth was only 1.2% due to 2.6% population growth. The continent received $50 billion in remittances, $28 billion in FDI, and $35 billion in aid. Despite progress, 430 million people live in extreme poverty, and the average HDI is 0.563, the lowest of any region.
 
@@ -1454,36 +1429,34 @@ Evaluation (10 marks): Consider distributional effects (wage compression for low
 | Debt-to-GDP (%) | 51 | 58 | 63 |
 | HDI (average) | 0.547 | 0.556 | 0.563 |
 
-Question 5 [4 marks]
-Using Extract D, explain why GDP per capita growth is much lower than headline GDP growth in Sub-Saharan Africa.
+Question 2(a) [8 marks]
+Using a suitable PPF or AD/AS diagram, explain the Harrod-Domar model of economic growth.
 
-Question 6 [8 marks]
-Analyse the Harrod-Domar model of economic growth and its limitations when applied to Sub-Saharan Africa.
+Question 2(b) [10 marks]
+Using Extract D, analyse why GDP per capita growth is much lower than headline GDP growth in Sub-Saharan Africa.
 
-Question 7 [8 marks]
-Evaluate the relative effectiveness of foreign aid versus trade liberalisation in promoting development in Sub-Saharan Africa.
+Question 2(c) [12 marks]
+Assess the relative effectiveness of foreign aid versus trade liberalisation in promoting development in Sub-Saharan Africa.
 
-Question 8 [20 marks]
-"Economic growth is necessary but not sufficient for economic development." Evaluate this statement with reference to Sub-Saharan Africa.
-
-KAA (10 marks): Distinguish between growth and development. Explain how growth creates resources for development (tax revenue, investment, employment). Analyse why growth alone may not improve HDI (inequality, environmental degradation, institutional weakness). Use AD/AS and PPF diagrams.
-
-Evaluation (10 marks): Consider the importance of institutions and governance. Evaluate whether the type of growth matters (inclusive vs extractive). Assess the role of education, healthcare, and infrastructure. Consider the Millennium Development Goals progress. Compare with the experience of East Asian economies. Make a supported judgement.`,
+Question 2(d) [20 marks]
+"Economic growth is necessary but not sufficient for economic development." Evaluate this statement with reference to Sub-Saharan Africa.`,
   },
   {
     id: "edxb-p3-f",
     subject: "edexcel-b",
     paper: "3",
     title: "Paper 3 — Set F",
-    description: "Global Economy. Global inequality and trade agreements.",
-    totalMarks: 80,
+    description: "The Global Economy. Global inequality and trade agreements.",
+    totalMarks: 100,
     content: `# Edexcel A-Level Economics B (9EB0/03) — Paper 3 — Predicted Paper Set F
 
-**Time: 2 hours | Total: 80 marks**
+**Time: 2 hours | Total: 100 marks**
 
-## Section A: Extended Open-Response (40 marks)
+Answer **both** questions. Each question is worth 50 marks and contains four parts (a)–(d).
 
-**Context: Global Inequality — Winners and Losers of Globalisation**
+---
+
+## Question 1 — Global Inequality: Winners and Losers of Globalisation (50 marks)
 
 **Extract A:** Global inequality between countries has fallen as China and India grew rapidly, lifting 1 billion people from poverty. However, inequality within countries has risen. The global top 1% now own 46% of all wealth, while the bottom 50% own just 1%. Oxfam reports that the wealth of the world's 10 richest people doubled during the pandemic while 160 million fell into poverty.
 
@@ -1497,27 +1470,23 @@ Evaluation (10 marks): Consider the importance of institutions and governance. E
 | Extreme poverty (%) | 26 | 10 | 8.4 |
 | Billionaires (number) | 470 | 1,826 | 2,781 |
 
-Question 1 [4 marks]
-Using Extract B, distinguish between the trends in global inequality (between countries) and inequality (within countries).
+Question 1(a) [8 marks]
+Using a suitable Lorenz curve diagram, explain how globalisation can simultaneously reduce between-country inequality and increase within-country inequality.
 
-Question 2 [8 marks]
-Using Lorenz curves, explain how globalisation has reduced between-country inequality while increasing within-country inequality.
+Question 1(b) [10 marks]
+Using Extract B, analyse two consequences of the rising share of wealth held by the top 1%.
 
-Question 3 [8 marks]
-Analyse the Kuznets curve hypothesis and its relevance to the relationship between economic growth and inequality.
+Question 1(c) [12 marks]
+Assess the relevance of the Kuznets curve hypothesis to the relationship between economic growth and inequality in developing economies.
 
-Question 4 [20 marks]
+Question 1(d) [20 marks]
 "Globalisation has reduced poverty but increased inequality, and this trade-off is unacceptable." Evaluate this statement.
 
-KAA (10 marks): Define absolute and relative poverty. Explain how trade, FDI, and technology transfer reduced poverty in developing countries. Analyse how globalisation increased inequality through skills premiums, capital mobility, and tax competition. Use appropriate diagrams (Lorenz curve, labour market).
+---
 
-Evaluation (10 marks): Consider whether poverty reduction outweighs rising inequality. Evaluate the role of domestic policy in managing globalisation's effects. Assess whether global tax cooperation could address wealth concentration. Consider the Stolper-Samuelson theorem. Make a supported judgement.
+## Question 2 — The CPTPP and the New Trade Architecture (50 marks)
 
-## Section B: Extended Open-Response (40 marks)
-
-**Context: The CPTPP and New Trade Architecture**
-
-**Extract C:** The Comprehensive and Progressive Agreement for Trans-Pacific Partnership (CPTPP) covers 11 countries and 500 million people. The UK became the first European member in 2024. The agreement removes tariffs on 95% of goods, provides investment protections, and includes digital trade provisions. Critics argue it undermines national sovereignty and regulatory standards.
+**Extract C:** The Comprehensive and Progressive Agreement for Trans-Pacific Partnership (CPTPP) covers 11 countries and 500 million people. The UK became the first European member in 2024. The agreement removes tariffs on 95% of goods, provides investment protections, and includes digital-trade provisions. Critics argue it undermines national sovereignty and regulatory standards.
 
 **Extract D:**
 
@@ -1529,20 +1498,16 @@ Evaluation (10 marks): Consider whether poverty reduction outweighs rising inequ
 | Agriculture impact (£m) | 0 | -225 |
 | Services exports (£bn) | 32 | 41 |
 
-Question 5 [4 marks]
-Using Extract D, explain the projected impact of CPTPP membership on UK agriculture.
+Question 2(a) [8 marks]
+Using a suitable trade-creation/trade-diversion diagram, explain the potential effects of UK CPTPP membership.
 
-Question 6 [8 marks]
-Using trade creation and trade diversion analysis, explain the potential effects of UK CPTPP membership.
+Question 2(b) [10 marks]
+Using Extract D, analyse the projected impact of CPTPP membership on UK agriculture and services.
 
-Question 7 [8 marks]
-Analyse whether bilateral trade agreements or multilateral agreements through the WTO are more effective in promoting free trade.
+Question 2(c) [12 marks]
+Assess whether bilateral and regional trade agreements or multilateral agreements through the WTO are more effective in promoting free trade.
 
-Question 8 [20 marks]
-"The UK's accession to CPTPP demonstrates that trade agreements outside the EU can compensate for the costs of Brexit." Evaluate this statement.
-
-KAA (10 marks): Explain the structure of CPTPP (tariff elimination, services, digital trade). Analyse the projected GDP and trade gains. Consider the geographic distance challenge (gravity model). Compare with the EU single market's depth and proximity. Use appropriate diagrams.
-
-Evaluation (10 marks): Consider the relatively small GDP impact (+0.08%) vs EU exit cost (estimates of -4% to -5%). Evaluate whether services trade gains compensate for goods trade losses. Assess the strategic significance of CPTPP beyond economics (geopolitical alignment). Consider whether agriculture will gain or lose. Make a supported judgement.`,
+Question 2(d) [20 marks]
+"The UK's accession to CPTPP demonstrates that trade agreements outside the EU can compensate for the costs of Brexit." Evaluate this statement.`,
   },
 ];
