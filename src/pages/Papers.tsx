@@ -768,7 +768,7 @@ function CaiePapersList() {
 
 const AQA_GCSE_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; available: boolean }[] = [
   { number: 1, code: "8136/1", title: "How Markets Work",       focus: "Microeconomics", available: false },
-  { number: 2, code: "8136/2", title: "How the Economy Works",  focus: "Macroeconomics", available: false },
+  { number: 2, code: "8136/2", title: "How the Economy Works",  focus: "Macroeconomics", available: true  },
   { number: 3, code: "8136/3", title: "Economic Analysis & Policy", focus: "Synoptic",   available: true  },
 ];
 
