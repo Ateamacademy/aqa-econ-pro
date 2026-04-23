@@ -50,24 +50,30 @@ Origin Coffee Co. operates 12 specialty cafés across South-West England. The fi
 
 ---
 
-**Question 1**
+**Question 1a** [4 marks]
 
-(a) Using Extract C, calculate Origin Coffee Co.'s operating profit margin in FY2024. Give your answer to two decimal places. **(4)**
+Using Extract C, calculate Origin Coffee Co.'s operating profit margin in FY2024. Give your answer to two decimal places.
+**Question 1b** [4 marks]
 
-(b) Using Extract D, calculate the percentage change in the average UK latte price between Q1 2023 and Q4 2024. Give your answer to two decimal places. **(4)**
+Using Extract D, calculate the percentage change in the average UK latte price between Q1 2023 and Q4 2024. Give your answer to two decimal places.
+**Question 1c** [4 marks]
 
-(c) With reference to Extract A, draw a supply-and-demand diagram to show the impact of the increase in the National Living Wage on the UK coffee shop market. **(4)**
+With reference to Extract A, draw a supply-and-demand diagram to show the impact of the increase in the National Living Wage on the UK coffee shop market.
+**Question 1d** [6 marks]
 
-(d) Using Extract B, analyse one likely impact of the market structure on the pricing strategy of Costa Coffee. **(6)**
+Using Extract B, analyse one likely impact of the market structure on the pricing strategy of Costa Coffee.
+**Question 1e** [8 marks]
 
-(e) Discuss whether **profit maximisation** is the most important objective for Origin Coffee Co. (Extract C). **(8)**
+Discuss whether **profit maximisation** is the most important objective for Origin Coffee Co. (Extract C).
+**Question 1f** [10 marks]
 
-(f) Assess the impact of the 18% rise in average latte prices on consumers and producers in the UK coffee shop market. **(10)**
+Assess the impact of the 18% rise in average latte prices on consumers and producers in the UK coffee shop market.
+**Question 1g** [12 marks]
 
-(g) Assess the importance of **non-price competition** in the UK coffee shop market. **(12)**
+Assess the importance of **non-price competition** in the UK coffee shop market.
+**Question 1h** [12 marks]
 
-(h) Assess whether the UK coffee shop market is best described as **monopolistically competitive** rather than oligopolistic. **(12)**
-
+Assess whether the UK coffee shop market is best described as **monopolistically competitive** rather than oligopolistic.
 *(Total for Section A = 60 marks)*
 
 ---
@@ -80,10 +86,9 @@ Read Extract E before answering Question 2.
 
 The National Living Wage rose 9.8% in April 2024 to £11.44/hour, the largest cash uplift on record, benefiting around 2.7 million workers. Hospitality and retail — which together employ 4.6 million people — absorbed most of the cost. Average prices in hospitality rose 6.1% in the year to October 2024, while employment in the sector fell 1.4%. The Low Pay Commission projects the NLW will reach £12.20 by 2026.
 
-**Question 2**
+**Question 2** [20 marks]
 
-Evaluate the likely microeconomic effects of further increases in the National Living Wage on workers, firms and consumers in low-pay sectors such as hospitality. **(20)**
-
+Evaluate the likely microeconomic effects of further increases in the National Living Wage on workers, firms and consumers in low-pay sectors such as hospitality.
 *(Total for Section B = 20 marks)*
 
 ---
@@ -100,10 +105,9 @@ Introduced in April 2018, the SDIL applies 18p/litre on drinks with 5–8g sugar
 
 From October 2025, restrictions on the in-store placement and "buy-one-get-one-free" promotion of foods high in fat, salt and sugar (HFSS) will apply to retailers with 50+ employees. The Institute for Fiscal Studies estimates HFSS purchases could fall 8–10%, but warns that price-elastic low-income households may face the biggest welfare loss in absolute terms.
 
-**Question 3**
+**Question 3** [20 marks]
 
-Evaluate the case for using **indirect taxes and behavioural regulation** (Extracts F and G) — rather than information campaigns — to reduce the consumption of demerit goods in the UK food and drink market. **(20)**
-
+Evaluate the case for using **indirect taxes and behavioural regulation** (Extracts F and G) — rather than information campaigns — to reduce the consumption of demerit goods in the UK food and drink market.
 *(Total for Section C = 20 marks)*
 
 **TOTAL FOR PAPER = 100 MARKS**`,
@@ -156,24 +160,30 @@ Booths operates 27 premium supermarkets across northern England, employing 3,000
 
 ---
 
-**Question 1**
+**Question 1a** [4 marks]
 
-(a) Using Extract C, calculate Booths' operating profit margin in FY2024. Give your answer to two decimal places. **(4)**
+Using Extract C, calculate Booths' operating profit margin in FY2024. Give your answer to two decimal places.
+**Question 1b** [4 marks]
 
-(b) Using Extract D, calculate the percentage change in the price of a Tesco own-label "value" loaf between January 2023 and December 2024. Give your answer to two decimal places. **(4)**
+Using Extract D, calculate the percentage change in the price of a Tesco own-label "value" loaf between January 2023 and December 2024. Give your answer to two decimal places.
+**Question 1c** [4 marks]
 
-(c) With reference to Extract A, draw a diagram to show the impact of the rapid growth of Aldi and Lidl on the UK grocery market. **(4)**
+With reference to Extract A, draw a diagram to show the impact of the rapid growth of Aldi and Lidl on the UK grocery market.
+**Question 1d** [6 marks]
 
-(d) Using Extract B, analyse one likely impact of the market structure on Tesco's pricing strategy. **(6)**
+Using Extract B, analyse one likely impact of the market structure on Tesco's pricing strategy.
+**Question 1e** [8 marks]
 
-(e) Discuss whether **revenue (sales) maximisation** is the most important objective for Aldi UK. **(8)**
+Discuss whether **revenue (sales) maximisation** is the most important objective for Aldi UK.
+**Question 1f** [10 marks]
 
-(f) Assess the impact of the fall in sector operating margins from 3.2% to 2.1% on UK supermarkets and their suppliers. **(10)**
+Assess the impact of the fall in sector operating margins from 3.2% to 2.1% on UK supermarkets and their suppliers.
+**Question 1g** [12 marks]
 
-(g) Assess the importance of **non-price competition** (loyalty schemes, own-label ranges, store environment) in the UK grocery market. **(12)**
+Assess the importance of **non-price competition** (loyalty schemes, own-label ranges, store environment) in the UK grocery market.
+**Question 1h** [12 marks]
 
-(h) Assess the extent to which the UK grocery market is **contestable**. **(12)**
-
+Assess the extent to which the UK grocery market is **contestable**.
 *(Total for Section A = 60 marks)*
 
 ---
@@ -186,10 +196,9 @@ Read Extract E before answering Question 2.
 
 Bank Rate rose from 0.10% in December 2021 to a peak of 5.25% in August 2023 before three cuts in 2024 took it to 4.75%. CPI inflation fell from a peak of 11.1% to 2.3% over the same period. Household disposable income rose only 0.4% in real terms in 2024 and the household saving ratio reached 11.1%. UK retail sales volumes were 1.6% lower in 2024 than in 2023.
 
-**Question 2**
+**Question 2** [20 marks]
 
-Evaluate the likely microeconomic effects of cuts in Bank Rate during 2025 on UK consumer demand for normal goods and inferior goods. **(20)**
-
+Evaluate the likely microeconomic effects of cuts in Bank Rate during 2025 on UK consumer demand for normal goods and inferior goods.
 *(Total for Section B = 20 marks)*
 
 ---
@@ -206,10 +215,9 @@ The 2021 *Uber BV v Aslam* ruling held that Uber drivers are "workers" — entit
 
 Deliveroo riders remain classified as independent contractors after a 2023 Supreme Court ruling. The TUC estimates 4.4 million UK workers now use gig platforms. Average gig pay is £10.20/hour (vs £14.50 for employees) and 63% of gig workers receive no employer benefits. The Employment Rights Bill (2025) proposes a single "worker" status across the gig economy.
 
-**Question 3**
+**Question 3** [20 marks]
 
-Evaluate the case for **regulating** the gig economy by extending "worker" status to all platform workers (Extracts F and G), rather than relying on competition between platforms to improve pay and conditions. **(20)**
-
+Evaluate the case for **regulating** the gig economy by extending "worker" status to all platform workers (Extracts F and G), rather than relying on competition between platforms to improve pay and conditions.
 *(Total for Section C = 20 marks)*
 
 **TOTAL FOR PAPER = 100 MARKS**`,
@@ -261,24 +269,30 @@ Mojeek, a UK independent search engine, runs its own crawler (2.6bn pages indexe
 
 ---
 
-**Question 1**
+**Question 1a** [4 marks]
 
-(a) Using Extract C, calculate Mojeek's operating profit margin in FY2024. Give your answer to two decimal places. **(4)**
+Using Extract C, calculate Mojeek's operating profit margin in FY2024. Give your answer to two decimal places.
+**Question 1b** [4 marks]
 
-(b) Using Extract D, calculate the percentage change in the average Google Ads CPC for premium retail keywords between January 2023 and December 2024. Give your answer to two decimal places. **(4)**
+Using Extract D, calculate the percentage change in the average Google Ads CPC for premium retail keywords between January 2023 and December 2024. Give your answer to two decimal places.
+**Question 1c** [4 marks]
 
-(c) With reference to Extract A, draw a diagram showing the impact of strong network effects on the UK search market. **(4)**
+With reference to Extract A, draw a diagram showing the impact of strong network effects on the UK search market.
+**Question 1d** [6 marks]
 
-(d) Using Extract B, analyse one likely impact of the market structure on Google's pricing of digital advertising. **(6)**
+Using Extract B, analyse one likely impact of the market structure on Google's pricing of digital advertising.
+**Question 1e** [8 marks]
 
-(e) Discuss whether **growth (market-share maximisation)** is the most important objective for Meta in the UK. **(8)**
+Discuss whether **growth (market-share maximisation)** is the most important objective for Meta in the UK.
+**Question 1f** [10 marks]
 
-(f) Assess the impact of the rising cost of digital advertising (Extract D) on small UK retailers. **(10)**
+Assess the impact of the rising cost of digital advertising (Extract D) on small UK retailers.
+**Question 1g** [12 marks]
 
-(g) Assess the importance of **non-price competition** (data, ecosystem lock-in, integrated services) in UK digital advertising. **(12)**
+Assess the importance of **non-price competition** (data, ecosystem lock-in, integrated services) in UK digital advertising.
+**Question 1h** [12 marks]
 
-(h) Assess whether the UK digital advertising market is best described as a **natural oligopoly** rather than a contestable market. **(12)**
-
+Assess whether the UK digital advertising market is best described as a **natural oligopoly** rather than a contestable market.
 *(Total for Section A = 60 marks)*
 
 ---
@@ -291,10 +305,9 @@ Read Extract E before answering Question 2.
 
 The UK Digital Services Tax (DST) raises 2% on UK revenues of large search engines, social platforms and online marketplaces. Receipts grew from £29m in its first year to £678m in 2023/24. From 2026, the OECD "Pillar One" agreement is expected to replace the DST with a globally co-ordinated profit reallocation. UK corporate-tax revenue from technology firms remains around 1/10th of US-based digital firms' UK turnover.
 
-**Question 2**
+**Question 2** [20 marks]
 
-Evaluate the likely microeconomic effects of replacing the UK Digital Services Tax with the OECD Pillar One framework on UK consumers, advertisers and the technology sector. **(20)**
-
+Evaluate the likely microeconomic effects of replacing the UK Digital Services Tax with the OECD Pillar One framework on UK consumers, advertisers and the technology sector.
 *(Total for Section B = 20 marks)*
 
 ---
@@ -311,10 +324,9 @@ The DMCC gives the CMA's Digital Markets Unit (DMU) the power to designate firms
 
 The DMA, in force since 2023, has forced six "gatekeepers" to allow side-loading, third-party app stores and rival in-app payments. Early evidence shows app-store commission has fallen from 30% to 17% on average and developer revenue rose 12%, but consumer complaints about app security rose 28%.
 
-**Question 3**
+**Question 3** [20 marks]
 
-Evaluate the case for using **digital-market regulation** (DMCC and DMA, Extracts F and G), rather than allowing competition between platforms to discipline market power, to protect UK consumers and small businesses. **(20)**
-
+Evaluate the case for using **digital-market regulation** (DMCC and DMA, Extracts F and G), rather than allowing competition between platforms to discipline market power, to protect UK consumers and small businesses.
 *(Total for Section C = 20 marks)*
 
 **TOTAL FOR PAPER = 100 MARKS**`,
@@ -367,24 +379,30 @@ Good Energy supplies 100% renewable electricity to 270,000 UK households and SME
 
 ---
 
-**Question 1**
+**Question 1a** [4 marks]
 
-(a) Using Extract C, calculate Good Energy's operating profit margin in FY2024. Give your answer to two decimal places. **(4)**
+Using Extract C, calculate Good Energy's operating profit margin in FY2024. Give your answer to two decimal places.
+**Question 1b** [4 marks]
 
-(b) Using Extract D, calculate the percentage change in the Ofgem default tariff cap between October 2022 and October 2024. Give your answer to two decimal places. **(4)**
+Using Extract D, calculate the percentage change in the Ofgem default tariff cap between October 2022 and October 2024. Give your answer to two decimal places.
+**Question 1c** [4 marks]
 
-(c) With reference to Extract A, draw a diagram showing the impact of the 2021–22 wholesale gas price shock on the UK retail energy market. **(4)**
+With reference to Extract A, draw a diagram showing the impact of the 2021–22 wholesale gas price shock on the UK retail energy market.
+**Question 1d** [6 marks]
 
-(d) Using Extract B, analyse one likely impact of the market structure on the pricing strategy of British Gas. **(6)**
+Using Extract B, analyse one likely impact of the market structure on the pricing strategy of British Gas.
+**Question 1e** [8 marks]
 
-(e) Discuss whether **profit satisficing** is the most important objective for Octopus Energy. **(8)**
+Discuss whether **profit satisficing** is the most important objective for Octopus Energy.
+**Question 1f** [10 marks]
 
-(f) Assess the impact of the 2024 reduction in the Ofgem price cap on UK households and energy suppliers. **(10)**
+Assess the impact of the 2024 reduction in the Ofgem price cap on UK households and energy suppliers.
+**Question 1g** [12 marks]
 
-(g) Assess the importance of **non-price competition** (smart tariffs, customer service, green credentials) in the UK retail energy market. **(12)**
+Assess the importance of **non-price competition** (smart tariffs, customer service, green credentials) in the UK retail energy market.
+**Question 1h** [12 marks]
 
-(h) Assess whether the UK retail energy market is best described as a **collusive oligopoly** rather than a contestable market. **(12)**
-
+Assess whether the UK retail energy market is best described as a **collusive oligopoly** rather than a contestable market.
 *(Total for Section A = 60 marks)*
 
 ---
@@ -397,10 +415,9 @@ Read Extract E before answering Question 2.
 
 Sterling depreciated 8.4% against the US dollar between January and October 2022, raising the sterling cost of imported wholesale gas (priced in USD). Wholesale UK day-ahead gas prices rose from 60p/therm in 2020 to a peak of 540p/therm in August 2022 before falling to 95p/therm by late 2024. UK manufacturing energy bills remained 47% above their 2019 level.
 
-**Question 2**
+**Question 2** [20 marks]
 
-Evaluate the likely microeconomic effects of a sustained 10% depreciation of sterling against the US dollar in 2025 on UK energy-intensive manufacturers and UK consumers. **(20)**
-
+Evaluate the likely microeconomic effects of a sustained 10% depreciation of sterling against the US dollar in 2025 on UK energy-intensive manufacturers and UK consumers.
 *(Total for Section B = 20 marks)*
 
 ---
@@ -417,10 +434,9 @@ The cap, in place since January 2019, sets the maximum dual-fuel bill for around
 
 The 2022 Energy Price Guarantee subsidised consumer bills at £2,500/year, costing £40bn over two winters. To part-fund this, the Energy Profits Levy raised the headline tax on UK oil-and-gas profits from 40% to 75%, raising £14bn between 2022 and 2024. Investment in UK North Sea projects fell 23% in the same period.
 
-**Question 3**
+**Question 3** [20 marks]
 
-Evaluate the case for using **price caps and windfall taxes** (Extracts F and G), rather than allowing competition between energy suppliers to set bills, to protect UK households from energy market power. **(20)**
-
+Evaluate the case for using **price caps and windfall taxes** (Extracts F and G), rather than allowing competition between energy suppliers to set bills, to protect UK households from energy market power.
 *(Total for Section C = 20 marks)*
 
 **TOTAL FOR PAPER = 100 MARKS**`,
@@ -472,24 +488,30 @@ Accord-UK manufactures 350 generic medicines from a Devon plant, supplying 14% o
 
 ---
 
-**Question 1**
+**Question 1a** [4 marks]
 
-(a) Using Extract C, calculate Accord-UK's operating profit margin in FY2024. Give your answer to two decimal places. **(4)**
+Using Extract C, calculate Accord-UK's operating profit margin in FY2024. Give your answer to two decimal places.
+**Question 1b** [4 marks]
 
-(b) Using Extract D, calculate the percentage change in the NHS list price of "Drug X" between pre-patent expiry (2022) and 24 months post-expiry (2024). Give your answer to two decimal places. **(4)**
+Using Extract D, calculate the percentage change in the NHS list price of "Drug X" between pre-patent expiry (2022) and 24 months post-expiry (2024). Give your answer to two decimal places.
+**Question 1c** [4 marks]
 
-(c) With reference to Extract A, draw a diagram showing the impact of a patent expiry on the market for a previously patented medicine. **(4)**
+With reference to Extract A, draw a diagram showing the impact of a patent expiry on the market for a previously patented medicine.
+**Question 1d** [6 marks]
 
-(d) Using Extract B, analyse one likely impact of the market structure on AstraZeneca's pricing of newly-launched branded medicines. **(6)**
+Using Extract B, analyse one likely impact of the market structure on AstraZeneca's pricing of newly-launched branded medicines.
+**Question 1e** [8 marks]
 
-(e) Discuss whether **profit maximisation** is the most important objective for AstraZeneca in its UK branded segment. **(8)**
+Discuss whether **profit maximisation** is the most important objective for AstraZeneca in its UK branded segment.
+**Question 1f** [10 marks]
 
-(f) Assess the impact of the post-patent fall in the price of "Drug X" (Extract D) on UK consumers, the NHS and pharmaceutical producers. **(10)**
+Assess the impact of the post-patent fall in the price of "Drug X" (Extract D) on UK consumers, the NHS and pharmaceutical producers.
+**Question 1g** [12 marks]
 
-(g) Assess the importance of **non-price competition** (clinical evidence, prescriber relationships, supply reliability) in the UK branded pharmaceutical market. **(12)**
+Assess the importance of **non-price competition** (clinical evidence, prescriber relationships, supply reliability) in the UK branded pharmaceutical market.
+**Question 1h** [12 marks]
 
-(h) Assess whether the UK branded pharmaceutical market is best described as a **monopoly during patent** rather than a contestable market. **(12)**
-
+Assess whether the UK branded pharmaceutical market is best described as a **monopoly during patent** rather than a contestable market.
 *(Total for Section A = 60 marks)*
 
 ---
@@ -502,10 +524,9 @@ Read Extract E before answering Question 2.
 
 UK government health spending reached £181bn in 2024/25 — 39% of day-to-day departmental spending. Real spending per person rose 1.4% per year over the past decade, well below the 3.6% historical trend. The Office for Life Sciences estimates each £1 of UK biomedical R&D grant generates £1.20–£1.60 of private R&D within five years (a positive externality).
 
-**Question 2**
+**Question 2** [20 marks]
 
-Evaluate the likely microeconomic effects of a 10% real-terms increase in UK government R&D subsidies for biomedical research on UK firms, consumers and government finances. **(20)**
-
+Evaluate the likely microeconomic effects of a 10% real-terms increase in UK government R&D subsidies for biomedical research on UK firms, consumers and government finances.
 *(Total for Section B = 20 marks)*
 
 ---
@@ -522,10 +543,9 @@ VPAG (2024–28) caps the growth of NHS branded-medicine spending at 2% per year
 
 The National Institute for Health and Care Excellence (NICE) recommends NHS funding only for medicines costing less than £20,000–£30,000 per quality-adjusted life year (QALY). In 2023/24, 18% of NICE appraisals resulted in a "do not recommend," up from 9% a decade earlier — pushing manufacturers to negotiate confidential discounts.
 
-**Question 3**
+**Question 3** [20 marks]
 
-Evaluate the case for using **VPAG rebates and NICE cost-effectiveness rules** (Extracts F and G), rather than allowing competition between manufacturers, to control NHS spending on branded medicines. **(20)**
-
+Evaluate the case for using **VPAG rebates and NICE cost-effectiveness rules** (Extracts F and G), rather than allowing competition between manufacturers, to control NHS spending on branded medicines.
 *(Total for Section C = 20 marks)*
 
 **TOTAL FOR PAPER = 100 MARKS**`,
@@ -577,24 +597,30 @@ Finisterre, a Cornish outdoor-clothing brand, sells 60% of its garments using re
 
 ---
 
-**Question 1**
+**Question 1a** [4 marks]
 
-(a) Using Extract C, calculate Finisterre's operating profit margin in FY2024. Give your answer to two decimal places. **(4)**
+Using Extract C, calculate Finisterre's operating profit margin in FY2024. Give your answer to two decimal places.
+**Question 1b** [4 marks]
 
-(b) Using Extract D, calculate the percentage change in the average UK price of a Shein basic T-shirt between Q1 2023 and Q4 2024. Give your answer to two decimal places. **(4)**
+Using Extract D, calculate the percentage change in the average UK price of a Shein basic T-shirt between Q1 2023 and Q4 2024. Give your answer to two decimal places.
+**Question 1c** [4 marks]
 
-(c) With reference to Extract A, draw a diagram showing the **negative production externality** associated with fast fashion. **(4)**
+With reference to Extract A, draw a diagram showing the **negative production externality** associated with fast fashion.
+**Question 1d** [6 marks]
 
-(d) Using Extract B, analyse one likely impact of the market structure on Shein's pricing strategy in the UK. **(6)**
+Using Extract B, analyse one likely impact of the market structure on Shein's pricing strategy in the UK.
+**Question 1e** [8 marks]
 
-(e) Discuss whether **growth (market-share maximisation)** is the most important objective for Shein in the UK. **(8)**
+Discuss whether **growth (market-share maximisation)** is the most important objective for Shein in the UK.
+**Question 1f** [10 marks]
 
-(f) Assess the impact of the rise in average Shein T-shirt prices (Extract D) on consumers and rival UK fashion retailers. **(10)**
+Assess the impact of the rise in average Shein T-shirt prices (Extract D) on consumers and rival UK fashion retailers.
+**Question 1g** [12 marks]
 
-(g) Assess the importance of **non-price competition** (delivery speed, app gamification, influencer marketing) in the UK fast-fashion market. **(12)**
+Assess the importance of **non-price competition** (delivery speed, app gamification, influencer marketing) in the UK fast-fashion market.
+**Question 1h** [12 marks]
 
-(h) Assess whether the UK fast-fashion market is best described as **monopolistically competitive** rather than oligopolistic. **(12)**
-
+Assess whether the UK fast-fashion market is best described as **monopolistically competitive** rather than oligopolistic.
 *(Total for Section A = 60 marks)*
 
 ---
@@ -607,10 +633,9 @@ Read Extract E before answering Question 2.
 
 UK consumers can import parcels valued under £135 free of customs duty (the "de minimis" threshold). Around 1.6 billion such low-value parcels arrived in 2024, three-quarters from Chinese fast-fashion platforms. UK textile producers — who pay 12% import duty plus 20% VAT on equivalent inputs — argue the regime distorts competition. The Treasury is consulting on lowering the threshold to £40 from 2026.
 
-**Question 2**
+**Question 2** [20 marks]
 
-Evaluate the likely microeconomic effects of lowering the UK "de minimis" import threshold from £135 to £40 on UK consumers, fast-fashion importers and domestic UK clothing producers. **(20)**
-
+Evaluate the likely microeconomic effects of lowering the UK "de minimis" import threshold from £135 to £40 on UK consumers, fast-fashion importers and domestic UK clothing producers.
 *(Total for Section B = 20 marks)*
 
 ---
@@ -627,10 +652,9 @@ EPR rules, expected from 2026, will require UK clothing producers to pay a per-g
 
 The EU's Digital Product Passport (DPP), in force from 2027, requires every garment sold in the EU to carry a QR-code disclosing fibre composition, country of manufacture, repairability score and a "circularity index." Early evidence from the French textile EPR suggests labelling alone has reduced low-end garment sales by 4–6%.
 
-**Question 3**
+**Question 3** [20 marks]
 
-Evaluate the case for using **EPR fees and product-information regulation** (Extracts F and G), rather than relying on consumer awareness alone, to reduce the environmental impact of fast fashion in the UK. **(20)**
-
+Evaluate the case for using **EPR fees and product-information regulation** (Extracts F and G), rather than relying on consumer awareness alone, to reduce the environmental impact of fast fashion in the UK.
 *(Total for Section C = 20 marks)*
 
 **TOTAL FOR PAPER = 100 MARKS**`,
@@ -682,24 +706,30 @@ MUBI, a curator-led streaming platform, offers 30 hand-picked films per month. R
 
 ---
 
-**Question 1**
+**Question 1a** [4 marks]
 
-(a) Using Extract C, calculate MUBI's operating profit margin in FY2024. Give your answer to two decimal places. **(4)**
+Using Extract C, calculate MUBI's operating profit margin in FY2024. Give your answer to two decimal places.
+**Question 1b** [4 marks]
 
-(b) Using Extract D, calculate the percentage change in the Netflix UK "Standard" tier monthly price between January 2020 and October 2024. Give your answer to two decimal places. **(4)**
+Using Extract D, calculate the percentage change in the Netflix UK "Standard" tier monthly price between January 2020 and October 2024. Give your answer to two decimal places.
+**Question 1c** [4 marks]
 
-(c) With reference to Extract A, draw a diagram showing the impact of growing original-content investment on the costs of UK streaming platforms. **(4)**
+With reference to Extract A, draw a diagram showing the impact of growing original-content investment on the costs of UK streaming platforms.
+**Question 1d** [6 marks]
 
-(d) Using Extract B, analyse one likely impact of the market structure on the pricing strategy of Netflix UK. **(6)**
+Using Extract B, analyse one likely impact of the market structure on the pricing strategy of Netflix UK.
+**Question 1e** [8 marks]
 
-(e) Discuss whether **growth (subscriber maximisation)** is the most important objective for Netflix UK. **(8)**
+Discuss whether **growth (subscriber maximisation)** is the most important objective for Netflix UK.
+**Question 1f** [10 marks]
 
-(f) Assess the impact of the introduction of cheaper ad-supported tiers on streaming consumers and rival platforms. **(10)**
+Assess the impact of the introduction of cheaper ad-supported tiers on streaming consumers and rival platforms.
+**Question 1g** [12 marks]
 
-(g) Assess the importance of **non-price competition** (original content, recommendation algorithms, password-sharing rules) in the UK streaming market. **(12)**
+Assess the importance of **non-price competition** (original content, recommendation algorithms, password-sharing rules) in the UK streaming market.
+**Question 1h** [12 marks]
 
-(h) Assess whether the UK streaming market is best described as a **differentiated oligopoly** rather than monopolistically competitive. **(12)**
-
+Assess whether the UK streaming market is best described as a **differentiated oligopoly** rather than monopolistically competitive.
 *(Total for Section A = 60 marks)*
 
 ---
@@ -712,10 +742,9 @@ Read Extract E before answering Question 2.
 
 UK new electric vehicle (EV) sales reached 370,000 in 2024 — 22% of new-car sales. The Plug-in Car Grant ended in 2022 (saving £1.5bn over five years) but Vehicle Excise Duty exemptions, the Workplace Charging Scheme and zero-emission Benefit-in-Kind tax (rising from 2% to 9% by 2029) remain. EV prices average £44,000 vs £28,000 for an equivalent petrol model.
 
-**Question 2**
+**Question 2** [20 marks]
 
-Evaluate the likely microeconomic effects of restoring a £3,500 purchase subsidy for new electric vehicles in 2025 on UK consumers, manufacturers and government finances. **(20)**
-
+Evaluate the likely microeconomic effects of restoring a £3,500 purchase subsidy for new electric vehicles in 2025 on UK consumers, manufacturers and government finances.
 *(Total for Section B = 20 marks)*
 
 ---
@@ -732,10 +761,9 @@ The Zero-Emission Vehicle (ZEV) mandate requires 22% of every UK manufacturer's 
 
 The UK has 55,000 public EV chargers for c.1 million EVs in 2024. New regulations from 2024 require contactless payment, 99% network uptime and price transparency. Ofgem now caps the price of "ultra-rapid" charger connections to the grid; investment in the public network rose 31% in the first nine months of 2024.
 
-**Question 3**
+**Question 3** [20 marks]
 
-Evaluate the case for using a **mandate plus infrastructure regulation** (Extracts F and G), rather than relying on subsidies and competition between manufacturers, to deliver the UK transition to electric vehicles. **(20)**
-
+Evaluate the case for using a **mandate plus infrastructure regulation** (Extracts F and G), rather than relying on subsidies and competition between manufacturers, to deliver the UK transition to electric vehicles.
 *(Total for Section C = 20 marks)*
 
 **TOTAL FOR PAPER = 100 MARKS**`,
