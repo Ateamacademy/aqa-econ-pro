@@ -777,9 +777,10 @@ const EDEXCEL_IGCSE_PAPERS: { number: 1 | 2; code: string; title: string; focus:
   { number: 2, code: "4EC1/02", title: "Macroeconomics & the Global Economy", focus: "Macroeconomics", available: true },
 ];
 
-const OCR_GCSE_PAPERS: { number: 1 | 2; code: string; title: string; focus: string; available: boolean }[] = [
+const OCR_GCSE_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; available: boolean }[] = [
   { number: 1, code: "J205/01", title: "Introduction to Economics", focus: "Microeconomics", available: true },
   { number: 2, code: "J205/02", title: "National and International Economics", focus: "Macroeconomics", available: false },
+  { number: 3, code: "J205/03", title: "Themes in Economics", focus: "Synoptic", available: true },
 ];
 
 function OcrGcsePapersList() {
