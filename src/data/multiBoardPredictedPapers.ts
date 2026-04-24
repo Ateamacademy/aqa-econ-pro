@@ -2613,111 +2613,450 @@ Using real-world examples, evaluate the view that foreign direct investment (FDI
     id: "ib-p2-a",
     subject: "ib" as any,
     paper: "2",
-    title: "Paper 2 — Set A",
-    description: "Data Response. Set A — core practice.",
+    title: "Paper 2 — Set A (Moderate)",
+    description: "Data Response. Set A — Moderate. Verbatim from official-style mock.",
     totalMarks: 40,
-    content: `# IB Diploma Economics (IBDP) (IB/P2) — Data Response — Predicted Paper Set A
+    content: `# IB Diploma Economics (HL/SL) — Paper 2 — Predicted Paper Set A (Moderate)
 
-**Time: 105 minutes | Total: 40 marks**
+**Time: 1 hour 45 minutes | Total: 40 marks**
 
-Answer ALL parts. Refer to the data extract throughout.
+**Instructions to candidates**
+- You are permitted access to a calculator for this paper.
+- Unless otherwise stated, all numerical answers must be given exactly or correct to two decimal places.
+- You must show all your working.
+- Answer **one** question.
+- Use fully labelled diagrams and references to the text/data where appropriate.
 
-**Extract 1:** Recent data on price controls in the rental market: a case study shows price levels rising 4.2% year-on-year, while real wages have grown only 1.1%. Policy responses have included a 0.5 percentage-point base-rate rise and targeted subsidies worth £2.1 bn.
+**Answer one question.**
 
-Question 1 [2 marks]
-With reference to price controls in the rental market: a case study, explain two consequences of the issue.
+## Question 1 — Vietnam
 
-Question 2 [2 marks]
-With reference to monetary policy in a small open economy, explain one government response to the issue.
+**Text A — Overview of Vietnam**
 
-Question 3 [4 marks]
-With reference to price controls in the rental market: a case study, explain one factor that influences the issue.
+1. Vietnam is a Southeast Asian economy with a population of 98 million, considered one of the most dynamic emerging economies in the region. Its real GDP grew by an average of 6% annually between 2010 and 2019, reaching $409 billion in 2022, up from $116 billion in 2010.
 
-Question 4 [4 marks]
-With reference to monetary policy in a small open economy, explain one mechanism that determines the issue.
+2. Manufacturing and exports have driven much of Vietnam's economic success. The country is a global hub for textiles, footwear and electronics assembly, and hosts significant manufacturing operations from multinational corporations such as Samsung, Intel and Nike.
 
-Question 5 [4 marks]
-With reference to trade protection and the steel industry, explain two consequences of the issue.
+3. Agriculture still plays an important role, employing around 30% of the workforce and contributing 12% of GDP. Key agricultural products include rice, coffee, cashew nuts and seafood. Rice is a staple food for the population, and rice farmers have benefited from government programmes that provide low-interest loans and subsidised fertiliser.
 
-Question 6 [9 marks]
-With reference to price controls in the rental market: a case study, explain one government response to the issue.
+4. Inflation has remained moderate compared with regional peers, averaging 3.2% in 2022. However, global energy prices have put upward pressure on transport and electricity costs.
 
-Question 7 [15 marks]
-Evaluate the view that, in the context of price controls in the rental market: a case study, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+5. Vietnam has signed numerous free trade agreements, including CPTPP and EVFTA with the European Union. These agreements have reduced tariffs and boosted exports, though Vietnamese firms face competition from cheaper imports.
+
+6. Unemployment remains low at around 2.2%, although underemployment is much higher in rural areas. The government has invested heavily in vocational training and higher education to raise labour productivity.
+
+7. Environmental concerns have grown. Rapid industrialisation has contributed to urban air pollution, deforestation, and plastic waste in major rivers. The government is considering tighter regulation and the introduction of a carbon price.
+
+**Text B — Foreign Direct Investment in Vietnam**
+
+1. Vietnam has become a magnet for **foreign direct investment (FDI)**. Registered FDI inflows reached a record $22.4 billion in 2022. The country benefits from a young workforce, low wages, political stability and strategic trade agreements.
+
+2. Multinationals have relocated production from China to Vietnam as part of the 'China plus one' strategy, a trend accelerated by US–China trade tensions. Major beneficiaries include electronics assembly and apparel manufacturing.
+
+3. Critics of FDI argue that much of the value added remains in the hands of foreign firms rather than Vietnamese suppliers. Domestic firms often struggle to meet the quality standards required by MNCs. The government has launched programmes to support local suppliers and deepen participation in global value chains.
+
+4. There are also concerns about environmental damage. Some foreign firms have been accused of failing to meet environmental standards, releasing untreated wastewater into rivers and generating substantial plastic waste, a **negative externality** borne by local communities.
+
+5. Despite these concerns, Vietnam continues to position itself as an attractive destination for FDI, offering tax incentives in high-tech parks and streamlined approval procedures.
+
+**Table 1: Vietnam — selected indicators**
+
+| Year | Real GDP (US$ bn) | FDI inflows (US$ bn) | Inflation (%) | Unemployment (%) |
+|------|-------------------|----------------------|---------------|------------------|
+| 2018 | 310 | 19.1 | 3.5 | 2.0 |
+| 2019 | 334 | 20.3 | 2.8 | 2.2 |
+| 2020 | 346 | 19.0 | 3.2 | 2.7 |
+| 2021 | 366 | 19.7 | 1.8 | 3.1 |
+| 2022 | 409 | 22.4 | 3.2 | 2.2 |
+
+Question 1 (a) (i) [2 marks]
+Define the term **foreign direct investment (FDI)** indicated in bold in the text (Text B, Paragraph 1).
+
+Question 1 (a) (ii) [2 marks]
+Define the term **negative externality** indicated in bold in the text (Text B, Paragraph 4).
+
+Question 1 (b) (i) [2 marks]
+Using information from Text A, Paragraph 1, calculate the percentage change in Vietnam's real GDP between 2010 and 2022.
+
+Question 1 (b) (ii) [3 marks]
+Using Table 1, calculate the average annual FDI inflow into Vietnam from 2018 to 2022.
+
+Question 1 (c) [4 marks]
+Using an AD/AS diagram, explain how increased FDI inflows (Text B, Paragraph 1) could benefit economic growth in Vietnam.
+
+Question 1 (d) [4 marks]
+Using a negative externality diagram, explain how the pollution generated by foreign firms (Text B, Paragraph 4) represents market failure.
+
+Question 1 (e) [4 marks]
+Using a demand and supply diagram, explain how the government's provision of subsidised fertiliser (Text A, Paragraph 3) affects the market for rice.
+
+Question 1 (f) [4 marks]
+Using a diagram, explain how the reduction of tariffs under the EVFTA (Text A, Paragraph 5) may affect domestic Vietnamese producers of goods imported from the EU.
+
+Question 1 (g) [15 marks]
+Using information from the text/data and your knowledge of economics, evaluate the view that FDI is the most effective strategy for promoting economic development in Vietnam.
+
+## Question 2 — Kenya
+
+**Text A — Kenya's Economy**
+
+1. Kenya is the largest economy in East Africa, with nominal GDP of $113 billion in 2022. The economy is services-led, with a growing digital-financial-services sector built on the success of mobile-money platforms such as M-PESA.
+
+2. Agriculture remains important, contributing roughly 20% of GDP and employing more than 40% of workers. Major export crops include tea, coffee and cut flowers. Small-scale farmers are vulnerable to drought and volatile commodity prices.
+
+3. **Inflation** rose sharply to 9.1% in October 2022, driven by higher food and fuel prices. The Central Bank of Kenya raised its benchmark interest rate several times in an attempt to anchor inflation expectations.
+
+4. The Kenyan shilling has depreciated against the US dollar, raising the cost of imports including refined petroleum, machinery and pharmaceuticals. Policymakers are concerned about the impact on the current account and on living standards.
+
+5. Kenya has made substantial progress on poverty reduction, but income inequality remains high. The government uses progressive **income tax** and cash transfers to low-income households as redistributive tools.
+
+**Text B — Kenya and the East African Community (EAC)**
+
+1. Kenya is a founding member of the East African Community (EAC) **customs union**, which also includes Uganda, Tanzania, Rwanda, Burundi, South Sudan and the Democratic Republic of Congo. The EAC allows tariff-free trade in most goods between members.
+
+2. Kenyan manufacturers of cement, steel and processed foods benefit from access to the larger regional market. However, some local producers fear increased competition from Tanzanian and Ugandan firms, which may have lower production costs.
+
+3. The EAC also has a common external tariff against imports from outside the bloc. Kenyan consumers have complained that this raises the price of some imported goods.
+
+4. Critics argue that trade diversion can outweigh trade creation in some sectors, while supporters highlight job creation and economies of scale for regional producers.
+
+**Table 2: Kenya — selected macroeconomic data**
+
+| Year | Inflation (%) | Unemployment (%) | Exchange rate (KES per US$) | Current account (% of GDP) |
+|------|---------------|------------------|------------------------------|----------------------------|
+| 2018 | 4.7 | 5.2 | 101 | -5.4 |
+| 2019 | 5.2 | 5.0 | 101 | -5.2 |
+| 2020 | 5.3 | 5.4 | 106 | -4.7 |
+| 2021 | 6.1 | 5.7 | 110 | -5.1 |
+| 2022 | 7.6 | 5.5 | 118 | -5.5 |
+
+Question 2 (a) (i) [2 marks]
+Define the term **inflation** indicated in bold in the text (Text A, Paragraph 3).
+
+Question 2 (a) (ii) [2 marks]
+Define the term **customs union** indicated in bold in the text (Text B, Paragraph 1).
+
+Question 2 (b) (i) [3 marks]
+Using Table 2, calculate the percentage depreciation of the Kenyan shilling against the US dollar between 2018 and 2022.
+
+Question 2 (b) (ii) [2 marks]
+Using a supply and demand diagram, illustrate the likely effect on the foreign-exchange market for the Kenyan shilling of the current account deficits shown in Table 2.
+
+Question 2 (c) [4 marks]
+Using an AD/AS diagram, explain how higher global fuel prices (Text A, Paragraph 3) may cause cost-push inflation in Kenya.
+
+Question 2 (d) [4 marks]
+Using an appropriate diagram, explain how the Central Bank's interest rate rise (Text A, Paragraph 3) affects aggregate demand in Kenya.
+
+Question 2 (e) [4 marks]
+Using a tariff diagram, explain how the EAC's common external tariff (Text B, Paragraph 3) may affect Kenyan consumers of imported goods.
+
+Question 2 (f) [4 marks]
+Using an appropriate diagram, explain how a progressive income tax (Text A, Paragraph 5) can help reduce income inequality in Kenya.
+
+Question 2 (g) [15 marks]
+Using information from the text/data and your knowledge of economics, discuss the economic impact on Kenya of membership in the East African Community (EAC).
 `,
   },
   {
     id: "ib-p2-b",
     subject: "ib" as any,
     paper: "2",
-    title: "Paper 2 — Set B",
-    description: "Data Response. Set B — stretch — applied scenarios.",
+    title: "Paper 2 — Set B (Hard)",
+    description: "Data Response. Set B — Hard. Verbatim from official-style mock.",
     totalMarks: 40,
-    content: `# IB Diploma Economics (IBDP) (IB/P2) — Data Response — Predicted Paper Set B
+    content: `# IB Diploma Economics (HL/SL) — Paper 2 — Predicted Paper Set B (Hard)
 
-**Time: 105 minutes | Total: 40 marks**
+**Time: 1 hour 45 minutes | Total: 40 marks**
 
-Answer ALL parts. Refer to the data extract throughout.
+**Instructions to candidates**
+- You are permitted access to a calculator for this paper.
+- Unless otherwise stated, all numerical answers must be given exactly or correct to two decimal places.
+- You must show all your working.
+- Answer **one** question.
+- Use fully labelled diagrams and references to the text/data where appropriate.
 
-**Extract 1:** Recent data on monetary policy in a small open economy shows price levels rising 4.2% year-on-year, while real wages have grown only 1.1%. Policy responses have included a 0.5 percentage-point base-rate rise and targeted subsidies worth £2.1 bn.
+**Answer one question.**
 
-Question 1 [2 marks]
-With reference to monetary policy in a small open economy, explain one government response to the issue.
+## Question 1 — Argentina
 
-Question 2 [2 marks]
-With reference to monetary policy in a small open economy, explain one factor that influences the issue.
+**Text A — Argentina's Macroeconomic Crisis**
 
-Question 3 [4 marks]
-With reference to monetary policy in a small open economy, explain one mechanism that determines the issue.
+1. Argentina has experienced repeated macroeconomic crises over recent decades. In 2023 annual inflation exceeded 140%, one of the highest rates in the world. Real GDP has stagnated, and the country entered another recession.
 
-Question 4 [4 marks]
-With reference to monetary policy in a small open economy, explain two consequences of the issue.
+2. The Argentine peso has depreciated sharply, from 20 pesos per US dollar in 2018 to over 800 pesos per US dollar in late 2023 in the official market. Parallel exchange rates were even higher.
 
-Question 5 [4 marks]
-With reference to trade protection and the steel industry, explain one government response to the issue.
+3. The government has run persistent **budget deficits**, often financed by borrowing from the central bank. This has contributed to rapid growth in the money supply, driving demand-pull and cost-push inflation simultaneously.
 
-Question 6 [9 marks]
-With reference to monetary policy in a small open economy, explain one factor that influences the issue.
+4. Argentina is a major exporter of soybeans, beef and wheat. To raise revenue and protect domestic consumers from global food prices, the government has imposed export taxes on key agricultural commodities at rates up to 33%.
 
-Question 7 [15 marks]
-Evaluate the view that, in the context of monetary policy in a small open economy, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+5. High inflation has eroded living standards. Official poverty rates reached 40% in mid-2023. Workers are seeking larger wage increases to compensate, but nominal wages have failed to keep up with inflation.
+
+6. In late 2023 the new administration announced a shock-therapy stabilisation package: a large devaluation, deep cuts to public spending, removal of some price controls, and plans to dollarise the economy.
+
+**Text B — International Linkages and the IMF Programme**
+
+1. Argentina is the largest debtor of the International Monetary Fund (IMF), owing more than $45 billion under a multi-year stand-by arrangement. IMF programmes usually require fiscal consolidation, monetary tightening and structural reforms in exchange for financial support.
+
+2. Critics argue that IMF conditions worsen recession and hurt the poor. Supporters argue that without external financing Argentina would default, losing further access to international capital markets.
+
+3. Argentina has a persistent **current account** deficit. Despite strong agricultural exports, imports of energy, machinery and consumer goods exceed export receipts. Net primary income flows out of the country to service external debt.
+
+4. The central bank has imposed capital controls and multiple exchange rates. These distortions have encouraged smuggling, informal markets and a large black-market premium on US dollars.
+
+5. High inflation discourages long-term investment and complicates business planning. Foreign investors cite macroeconomic instability as the principal barrier to investing in Argentina.
+
+**Table 1: Argentina — selected indicators**
+
+| Year | CPI Inflation (%) | Real GDP growth (%) | Budget balance (% GDP) | Poverty rate (%) |
+|------|-------------------|---------------------|------------------------|------------------|
+| 2019 | 53.8 | -2.0 | -3.8 | 35.5 |
+| 2020 | 36.1 | -9.9 | -8.5 | 42.0 |
+| 2021 | 50.9 | 10.4 | -4.5 | 37.3 |
+| 2022 | 94.8 | 5.2 | -3.8 | 39.2 |
+| 2023 | 143.0 | -1.6 | -4.2 | 40.1 |
+
+Question 1 (a) (i) [2 marks]
+Define the term **inflation** indicated in bold in the text (Text A, Paragraph 1).
+
+Question 1 (a) (ii) [2 marks]
+Define the term **current account** indicated in bold in the text (Text B, Paragraph 3).
+
+Question 1 (b) (i) [2 marks]
+Using Table 1, calculate the change in Argentina's inflation rate in percentage points between 2019 and 2023.
+
+Question 1 (b) (ii) [3 marks]
+Using information from Text A, Paragraph 2, calculate the percentage depreciation of the Argentine peso against the US dollar between 2018 and late 2023.
+
+Question 1 (c) [4 marks]
+Using an AD/AS diagram, explain how persistent budget deficits financed by the central bank (Text A, Paragraph 3) can cause demand-pull inflation.
+
+Question 1 (d) [4 marks]
+Using an exchange rate diagram, explain how the sharp devaluation announced by the new administration (Text A, Paragraph 6) may affect the current account balance.
+
+Question 1 (e) [4 marks]
+Using a diagram, explain how export taxes on soybeans (Text A, Paragraph 4) may affect Argentine soybean producers.
+
+Question 1 (f) [4 marks]
+Using an AD/AS diagram, explain how the IMF-required fiscal consolidation (Text B, Paragraph 2) may affect output and employment in Argentina.
+
+Question 1 (g) [15 marks]
+Using information from the text/data and your knowledge of economics, evaluate the view that a shock-therapy stabilisation package is the most effective strategy to tackle Argentina's macroeconomic crisis.
+
+## Question 2 — India
+
+**Text A — India's Growth Story**
+
+1. India has become the world's fifth largest economy, with **nominal GDP** of about $3.7 trillion in 2023. Real GDP growth averaged 6.5% per year between 2015 and 2019 and is expected to continue at 6–7% over the medium term.
+
+2. Services account for more than 50% of GDP, led by IT, software and business process outsourcing. Manufacturing contributes around 17% of GDP. The government's 'Make in India' programme aims to raise this share to 25% through production-linked incentives, infrastructure investment and tariff protection.
+
+3. Roughly 250 million Indians live in multidimensional poverty, though this has declined rapidly since 2005. Public programmes deliver subsidised food grains, cooking gas, and sanitation to low-income households.
+
+4. India is energy-import-dependent: around 85% of its crude-oil needs are met by imports. The Russia–Ukraine war pushed up oil prices and widened the trade deficit.
+
+5. The Reserve Bank of India (RBI) operates an inflation targeting framework, aiming to keep CPI inflation within 4% ± 2%. Inflation exceeded 7% in 2022, prompting several policy rate rises.
+
+**Text B — India and Global Trade**
+
+1. India runs a large trade deficit of around $240 billion in 2022–23, partly offset by surpluses in services trade and inflows of remittances from Indians working abroad.
+
+2. India has been cautious about signing free-trade agreements. It withdrew from the Regional Comprehensive Economic Partnership (RCEP) in 2019, fearing the impact on domestic manufacturers, farmers and dairy producers. Critics argue this shuts India out of major regional value chains.
+
+3. India maintains tariffs on a range of imports, in some cases exceeding those of its trading partners. Supporters see this as **protectionism** to nurture infant industries, while critics warn it raises costs for consumers and domestic producers using imported inputs.
+
+4. India has become a preferred destination for firms diversifying away from China, particularly in smartphone assembly and pharmaceuticals. Apple now produces a rising share of iPhones in India.
+
+5. The rupee is allowed to float, although the RBI intervenes to smooth large fluctuations. The rupee depreciated by about 10% against the US dollar during 2022.
+
+**Table 2: India — selected indicators (2022–23)**
+
+| Indicator | Value |
+|-----------|-------|
+| Population | 1,420 million |
+| Nominal GDP | US$ 3,700 billion |
+| Real GDP growth | 7.2% |
+| CPI inflation | 6.7% |
+| Unemployment | 7.3% |
+| Current account deficit | -US$ 67 billion |
+| Remittances received | US$ 111 billion |
+| Exchange rate (INR/US$) | 82.7 |
+
+Question 2 (a) (i) [2 marks]
+Define the term **nominal GDP** indicated in bold in the text (Text A, Paragraph 1).
+
+Question 2 (a) (ii) [2 marks]
+Define the term **protectionism** indicated in bold in the text (Text B, Paragraph 3).
+
+Question 2 (b) (i) [3 marks]
+Using information from Table 2, calculate India's real GDP per capita in 2022–23 to the nearest US$.
+
+Question 2 (b) (ii) [2 marks]
+Using Table 2, calculate India's current account deficit as a percentage of nominal GDP.
+
+Question 2 (c) [4 marks]
+Using an AD/AS diagram, explain how higher global oil prices (Text A, Paragraph 4) could affect India's price level and output.
+
+Question 2 (d) [4 marks]
+Using a tariff diagram, explain how tariffs on imports (Text B, Paragraph 3) can protect India's infant industries.
+
+Question 2 (e) [4 marks]
+Using an exchange rate diagram, explain how remittance inflows of US$111 billion (Text B, Paragraph 1) may affect the value of the Indian rupee.
+
+Question 2 (f) [4 marks]
+Using a negative consumption externality diagram, explain why the Indian government subsidises cleaner cooking gas (Text A, Paragraph 3) to replace solid fuels used by poor households.
+
+Question 2 (g) [15 marks]
+Using information from the text/data and your knowledge of economics, discuss the view that India's cautious approach to free-trade agreements (Text B) is the most effective strategy to achieve long-term economic growth and development.
 `,
   },
   {
     id: "ib-p2-c",
     subject: "ib" as any,
     paper: "2",
-    title: "Paper 2 — Set C",
-    description: "Data Response. Set C — challenge — synoptic & evaluative.",
+    title: "Paper 2 — Set C (Advanced)",
+    description: "Data Response. Set C — Advanced. Verbatim from official-style mock.",
     totalMarks: 40,
-    content: `# IB Diploma Economics (IBDP) (IB/P2) — Data Response — Predicted Paper Set C
+    content: `# IB Diploma Economics (HL/SL) — Paper 2 — Predicted Paper Set C (Advanced)
 
-**Time: 105 minutes | Total: 40 marks**
+**Time: 1 hour 45 minutes | Total: 40 marks**
 
-Answer ALL parts. Refer to the data extract throughout.
+**Instructions to candidates**
+- You are permitted access to a calculator for this paper.
+- Unless otherwise stated, all numerical answers must be given exactly or correct to two decimal places.
+- You must show all your working.
+- Answer **one** question.
+- Use fully labelled diagrams and references to the text/data where appropriate.
 
-**Extract 1:** Recent data on trade protection and the steel industry shows price levels rising 4.2% year-on-year, while real wages have grown only 1.1%. Policy responses have included a 0.5 percentage-point base-rate rise and targeted subsidies worth £2.1 bn.
+**Answer one question.**
 
-Question 1 [2 marks]
-With reference to trade protection and the steel industry, explain one factor that influences the issue.
+## Question 1 — Nigeria
 
-Question 2 [2 marks]
-With reference to monetary policy in a small open economy, explain one mechanism that determines the issue.
+**Text A — Nigeria's Dual Economy**
 
-Question 3 [4 marks]
-With reference to trade protection and the steel industry, explain two consequences of the issue.
+1. Nigeria is Africa's largest economy by nominal GDP at $477 billion in 2022, and its most populous country with over 218 million inhabitants. Despite its size, Nigeria faces serious development challenges: nearly 40% of the population lives in extreme **poverty**, and the country is among the most unequal in the region.
 
-Question 4 [4 marks]
-With reference to monetary policy in a small open economy, explain one government response to the issue.
+2. The economy is heavily dependent on the oil sector. Crude oil accounts for around 80% of export earnings and over 50% of federal government revenue. However, oil contributes only 9% of GDP, since most of the workforce is in agriculture and informal services.
 
-Question 5 [4 marks]
-With reference to trade protection and the steel industry, explain one factor that influences the issue.
+3. Despite being an oil producer, Nigeria imports most of its refined petroleum because of underinvestment in domestic refining capacity. Until mid-2023, the government spent roughly $10 billion per year on a **subsidy** on refined petroleum that kept pump prices artificially low. This subsidy was withdrawn in 2023, prompting a sharp rise in fuel prices and transport costs.
 
-Question 6 [9 marks]
-With reference to trade protection and the steel industry, explain one mechanism that determines the issue.
+4. Nigeria maintained a complex multiple-exchange-rate regime until 2023. The official naira rate was well below the parallel market rate, creating rents, corruption and capital flight. In mid-2023 the Central Bank of Nigeria unified the official and parallel rates, effectively devaluing the naira by around 40%.
 
-Question 7 [15 marks]
-Evaluate the view that, in the context of trade protection and the steel industry, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+5. Non-oil export diversification remains a policy priority. The African Continental Free Trade Area (AfCFTA) offers Nigeria access to a market of more than 1.3 billion consumers. The government hopes AfCFTA will stimulate the manufacturing sector, textiles and agribusiness.
+
+**Text B — Development and Inequality in Nigeria**
+
+1. Nigeria scores 0.535 on the **Human Development Index (HDI)**, placing it 163rd out of 191 countries. Life expectancy at birth is 53 years and mean years of schooling are 7.6 years.
+
+2. Income and wealth inequality are very high. The top 10% of the population accounts for over 40% of total income. Critics argue that oil revenues have benefited a small elite while failing to reach ordinary Nigerians.
+
+3. Corruption ranks among the biggest obstacles to development, with Nigeria scoring 24/100 on Transparency International's Corruption Perceptions Index. Poor governance raises the cost of doing business, deters FDI, and diverts public resources.
+
+4. Infrastructure is weak: electricity supply is unreliable, road networks are deficient, and internet penetration is uneven across regions. Firms often rely on expensive diesel generators, raising production costs and reducing competitiveness.
+
+5. Youth unemployment stands above 40%. The large informal sector offers jobs but not social protection. Migration to the Gulf and Europe provides remittance inflows that contribute significantly to household incomes.
+
+6. The Nigerian government has committed to structural reforms including removing fuel subsidies, broadening the tax base, tackling corruption and investing in education, but implementation has been uneven.
+
+**Table 1: Nigeria — development indicators**
+
+| Year | HDI | Life expectancy (years) | GNI per capita (PPP US$) | CPI corruption rank (out of 180) |
+|------|-----|-------------------------|---------------------------|-----------------------------------|
+| 2010 | 0.487 | 51.3 | 4,560 | 134 |
+| 2015 | 0.510 | 52.4 | 4,960 | 136 |
+| 2020 | 0.538 | 52.7 | 4,910 | 149 |
+| 2022 | 0.535 | 52.9 | 4,830 | 150 |
+
+Question 1 (a) (i) [2 marks]
+Define the term **poverty** indicated in bold in the text (Text A, Paragraph 1).
+
+Question 1 (a) (ii) [2 marks]
+Define the term **Human Development Index (HDI)** indicated in bold in the text (Text B, Paragraph 1).
+
+Question 1 (b) (i) [3 marks]
+Using Table 1, calculate the percentage change in Nigeria's HDI between 2010 and 2022.
+
+Question 1 (b) (ii) [2 marks]
+Using information from Text A, Paragraph 1, calculate the nominal GDP per capita of Nigeria in 2022.
+
+Question 1 (c) [4 marks]
+Using a demand and supply diagram, explain how the removal of the fuel subsidy (Text A, Paragraph 3) affects the domestic market for refined petroleum in Nigeria.
+
+Question 1 (d) [4 marks]
+Using an exchange rate diagram, explain how the unification of the naira's exchange rates (Text A, Paragraph 4) may affect Nigerian exporters.
+
+Question 1 (e) [4 marks]
+Using an AD/AS diagram, explain how persistent electricity shortages and poor infrastructure (Text B, Paragraph 4) may affect Nigeria's long-run aggregate supply.
+
+Question 1 (f) [4 marks]
+Using a poverty-cycle or development diagram, explain how high corruption (Text B, Paragraph 3) can hinder economic development in Nigeria.
+
+Question 1 (g) [15 marks]
+Using information from the text/data and your knowledge of economics, evaluate the view that participation in the AfCFTA (Text A, Paragraph 5) is the most effective strategy for achieving long-term economic development in Nigeria.
+
+## Question 2 — Brazil
+
+**Text A — Brazil's Economic Transformation**
+
+1. Brazil is Latin America's largest economy with real GDP of approximately $1,920 billion in 2022. Once notorious for hyperinflation, Brazil has run an **inflation targeting** regime since 1999, with moderate success.
+
+2. Brazil's economic structure is highly diversified, including agribusiness (soybeans, beef, sugar, coffee), mining (iron ore, oil), advanced manufacturing (aircraft, automobiles) and a growing services sector.
+
+3. Brazil suffers from long-standing inequality, but has made significant progress through the **Bolsa Família** cash-transfer programme and minimum-wage increases. The Gini coefficient fell from 0.58 in 2001 to around 0.52 in 2019.
+
+4. Deforestation of the Amazon rainforest is an urgent environmental concern, linked to cattle ranching and soybean expansion. The Amazon is a critical **common access resource** providing global ecosystem services, but individual producers have no incentive to limit their use.
+
+5. Brazil's central bank raised the Selic policy rate to 13.75% in 2022 in response to global inflation pressures. This tight monetary stance slowed activity but helped bring inflation down to 4.6% by late 2023.
+
+**Text B — Brazil in the Global Economy**
+
+1. Brazil is a member of the Southern Common Market (Mercosur), a customs union with Argentina, Uruguay and Paraguay. Mercosur is negotiating a long-delayed trade agreement with the European Union.
+
+2. Brazil has a large trade surplus in agricultural commodities, particularly with China, but imports significant volumes of machinery, electronics and chemicals from advanced economies.
+
+3. Foreign direct investment in Brazil has historically been large, but flows slowed in the late 2010s due to political uncertainty. More recently, Brazil has benefited from supply-chain diversification and investment in renewable energy.
+
+4. Brazil's real (BRL) is a floating currency. Commodity price shocks and portfolio-investment flows cause significant volatility. The BRL has fluctuated between 3.7 and 5.8 per US dollar over the last five years.
+
+5. Brazil is positioning itself as a leader in green growth, with large hydro-power capacity, ethanol production from sugarcane, and new investments in wind and solar. However, illegal deforestation continues to damage the country's environmental credentials.
+
+**Table 2: Brazil — selected indicators**
+
+| Year | Real GDP growth (%) | Inflation (%) | Selic rate (%) | Exchange rate (BRL per US$) |
+|------|---------------------|---------------|----------------|------------------------------|
+| 2018 | 1.8 | 3.7 | 6.50 | 3.87 |
+| 2019 | 1.2 | 4.3 | 4.50 | 4.03 |
+| 2020 | -3.3 | 4.5 | 2.00 | 5.16 |
+| 2021 | 5.0 | 10.1 | 9.25 | 5.40 |
+| 2022 | 3.0 | 5.8 | 13.75 | 5.16 |
+| 2023 | 2.9 | 4.6 | 11.75 | 5.00 |
+
+Question 2 (a) (i) [2 marks]
+Define the term **inflation targeting** indicated in bold in the text (Text A, Paragraph 1).
+
+Question 2 (a) (ii) [2 marks]
+Define the term **common access resource** indicated in bold in the text (Text A, Paragraph 4).
+
+Question 2 (b) (i) [2 marks]
+Using Table 2, calculate the average rate of inflation in Brazil over the six years 2018–2023.
+
+Question 2 (b) (ii) [3 marks]
+Using Table 2, calculate the percentage depreciation of the Brazilian real against the US dollar between 2018 and 2022.
+
+Question 2 (c) [4 marks]
+Using an AD/AS diagram, explain how an increase in the Selic rate to 13.75% (Text A, Paragraph 5) was intended to reduce inflation in Brazil.
+
+Question 2 (d) [4 marks]
+Using a common access resource or negative externality diagram, explain why private incentives lead to excessive deforestation of the Amazon (Text A, Paragraph 4).
+
+Question 2 (e) [4 marks]
+Using an appropriate diagram, explain how the Bolsa Família cash-transfer programme (Text A, Paragraph 3) can reduce income inequality in Brazil.
+
+Question 2 (f) [4 marks]
+Using an exchange rate diagram, explain how a sharp fall in global commodity prices may affect the value of the Brazilian real (Text B, Paragraph 4).
+
+Question 2 (g) [15 marks]
+Using information from the text/data and your knowledge of economics, evaluate the extent to which Brazil's inflation-targeting regime has been effective in delivering macroeconomic stability and inclusive growth.
 `,
   },
   {
