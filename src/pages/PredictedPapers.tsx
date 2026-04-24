@@ -33,6 +33,7 @@ import {
 import { generateKnowledgeGraphPrompt } from "@/data/economicsKnowledgeGraph";
 import { generatePaperPdf } from "@/lib/generatePaperPdf";
 import { generateSolutionPdf, type SolutionEntry } from "@/lib/generateSolutionPdf";
+import { resolveStaticPaperPdf, triggerStaticPdfDownload } from "@/lib/staticPaperResolver";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { ReportButton } from "@/components/report/ReportButton";
 import { ComingSoonBoard } from "@/components/predicted-papers/ComingSoonBoard";
@@ -2039,59 +2040,12 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
   );
 
   const handleDownloadSolutions = useCallback(async () => {
-    // For AQA A-Level Economics library papers, serve the curated static mark
-    // scheme PDF (matches the official Papers section) instead of generating.
-    const aqaStaticMatch = selectedLibraryPaper?.id?.match(/^econ-p([123])-([abc])$/i);
-    if (aqaStaticMatch) {
-      const tierMap: Record<string, string> = { a: "moderate", b: "hard", c: "advanced" };
-      const paperNum = aqaStaticMatch[1];
-      const tierSlug = tierMap[aqaStaticMatch[2].toLowerCase()];
-      const url = `/aqa-mocks/mark-scheme-paper-${paperNum}-${tierSlug}.pdf`;
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `AQA-A-Level-Economics-Paper-${paperNum}-${tierSlug}-Mark-Scheme.pdf`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      toast.success("Mark scheme downloaded!");
-      return;
-    }
-    // Edexcel A A-Level: Paper 1 Moderate & Hard have curated static PDFs.
-    const edxaStaticMatch = selectedLibraryPaper?.id?.match(/^edxa-p([123])-([abc])$/i);
-    if (edxaStaticMatch) {
-      const tierMap: Record<string, string> = { a: "moderate", b: "hard", c: "advanced" };
-      const paperNum = edxaStaticMatch[1];
-      const tierSlug = tierMap[edxaStaticMatch[2].toLowerCase()];
-      const hasStaticPdf =
-        (paperNum === "1" && (tierSlug === "moderate" || tierSlug === "hard" || tierSlug === "advanced")) ||
-        (paperNum === "2" && (tierSlug === "moderate" || tierSlug === "hard" || tierSlug === "advanced")) ||
-        (paperNum === "3" && (tierSlug === "moderate" || tierSlug === "hard" || tierSlug === "advanced"));
-      if (hasStaticPdf) {
-        const url = `/edexcel-a-mocks/mark-scheme-paper-${paperNum}-${tierSlug}.pdf`;
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = `Edexcel-A-Level-Economics-Paper-${paperNum}-${tierSlug}-Mark-Scheme.pdf`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        toast.success("Mark scheme downloaded!");
-        return;
-      }
-    }
-    // Edexcel B A-Level: Sets A/B/C map to Moderate/Hard/Advanced curated static PDFs.
-    const edxbStaticMatch = selectedLibraryPaper?.id?.match(/^edxb-p([123])-([abc])$/i);
-    if (edxbStaticMatch) {
-      const tierMap: Record<string, string> = { a: "moderate", b: "hard", c: "advanced" };
-      const paperNum = edxbStaticMatch[1];
-      const tierSlug = tierMap[edxbStaticMatch[2].toLowerCase()];
-      const url = `/edexcel-b-mocks/mark-scheme-paper-${paperNum}-${tierSlug}.pdf`;
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `Edexcel-B-A-Level-Economics-Paper-${paperNum}-${tierSlug}-Mark-Scheme.pdf`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      toast.success("Mark scheme downloaded!");
+    // For library papers with curated static mark scheme PDFs (matches the
+    // official Papers section), serve them directly instead of generating.
+    const staticMs = resolveStaticPaperPdf(selectedLibraryPaper?.id, "mark-scheme");
+    if (staticMs) {
+      triggerStaticPdfDownload(staticMs);
+      toast.success(staticMs.label);
       return;
     }
     if (parsedQuestions.length === 0) {
@@ -2621,60 +2575,13 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                   size="lg"
                   className="gap-2.5 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-shadow"
                   onClick={() => {
-                    // For AQA A-Level Economics library papers, serve the curated
-                    // static PDF (matches the official Papers section) instead of
+                    // For library papers with curated static PDFs (matches the
+                    // official Papers section), serve them directly instead of
                     // regenerating from text content.
-                    const aqaStaticMatch = selectedLibraryPaper?.id?.match(/^econ-p([123])-([abc])$/i);
-                    if (aqaStaticMatch) {
-                      const tierMap: Record<string, string> = { a: "moderate", b: "hard", c: "advanced" };
-                      const paperNum = aqaStaticMatch[1];
-                      const tierSlug = tierMap[aqaStaticMatch[2].toLowerCase()];
-                      const url = `/aqa-mocks/paper-${paperNum}-${tierSlug}.pdf`;
-                      const a = document.createElement("a");
-                      a.href = url;
-                      a.download = `AQA-A-Level-Economics-Paper-${paperNum}-${tierSlug}.pdf`;
-                      document.body.appendChild(a);
-                      a.click();
-                      document.body.removeChild(a);
-                      toast.success("PDF downloaded!");
-                      return;
-                    }
-                    // Edexcel A A-Level: Paper 1 Moderate & Hard have curated static PDFs.
-                    const edxaStaticMatch = selectedLibraryPaper?.id?.match(/^edxa-p([123])-([abc])$/i);
-                    if (edxaStaticMatch) {
-                      const tierMap: Record<string, string> = { a: "moderate", b: "hard", c: "advanced" };
-                      const paperNum = edxaStaticMatch[1];
-                      const tierSlug = tierMap[edxaStaticMatch[2].toLowerCase()];
-                      const hasStaticPdf =
-                        (paperNum === "1" && (tierSlug === "moderate" || tierSlug === "hard" || tierSlug === "advanced")) ||
-                        (paperNum === "2" && (tierSlug === "moderate" || tierSlug === "hard" || tierSlug === "advanced")) ||
-                        (paperNum === "3" && (tierSlug === "moderate" || tierSlug === "hard" || tierSlug === "advanced"));
-                      if (hasStaticPdf) {
-                        const url = `/edexcel-a-mocks/paper-${paperNum}-${tierSlug}.pdf`;
-                        const a = document.createElement("a");
-                        a.href = url;
-                        a.download = `Edexcel-A-Level-Economics-Paper-${paperNum}-${tierSlug}.pdf`;
-                        document.body.appendChild(a);
-                        a.click();
-                        document.body.removeChild(a);
-                        toast.success("PDF downloaded!");
-                        return;
-                      }
-                    }
-                    // Edexcel B A-Level: Sets A/B/C map to Moderate/Hard/Advanced curated static PDFs.
-                    const edxbStaticMatch = selectedLibraryPaper?.id?.match(/^edxb-p([123])-([abc])$/i);
-                    if (edxbStaticMatch) {
-                      const tierMap: Record<string, string> = { a: "moderate", b: "hard", c: "advanced" };
-                      const paperNum = edxbStaticMatch[1];
-                      const tierSlug = tierMap[edxbStaticMatch[2].toLowerCase()];
-                      const url = `/edexcel-b-mocks/paper-${paperNum}-${tierSlug}.pdf`;
-                      const a = document.createElement("a");
-                      a.href = url;
-                      a.download = `Edexcel-B-A-Level-Economics-Paper-${paperNum}-${tierSlug}.pdf`;
-                      document.body.appendChild(a);
-                      a.click();
-                      document.body.removeChild(a);
-                      toast.success("PDF downloaded!");
+                    const staticQp = resolveStaticPaperPdf(selectedLibraryPaper?.id, "paper");
+                    if (staticQp) {
+                      triggerStaticPdfDownload(staticQp);
+                      toast.success(staticQp.label);
                       return;
                     }
                     const paperTitle = displayPaperTitle(selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`);
