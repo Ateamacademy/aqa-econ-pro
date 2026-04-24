@@ -372,288 +372,312 @@ Discuss whether or not a floating exchange rate system is better than a fixed sy
     id: "edxigcse-p1-a",
     subject: "edexcel-igcse" as any,
     paper: "1",
-    title: "Paper 1 — Set A",
-    description: "Microeconomics & Business Economics. Set A — core practice.",
+    title: "Paper 1 — Set A (Moderate)",
+    description: "Microeconomics & Business Economics (4EC1/01). Set A — Moderate.",
     totalMarks: 80,
-    content: `# Edexcel IGCSE Economics (4EC1) (4EC1/01) — Microeconomics & Business Economics — Predicted Paper Set A
+    content: `# Edexcel IGCSE Economics (4EC1/01) — Microeconomics & Business Economics — Predicted Paper Set A (Moderate)
 
-**Time: 90 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total: 80 marks**
 
 Answer ALL questions in Section A and ONE question from Section B.
 
-## Section A: Data Response
+## Section A: Data Response (55 marks)
 
-**Extract 1 — Consumer demand and elasticity in the smartphone market:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+**Extract 1 — The UK coffee shop market**
+The UK coffee shop industry has grown rapidly over the last decade. Independent cafés now compete alongside large chains such as Costa and Starbucks. Rising bean prices, higher minimum wages and growing demand for plant-based milks have all influenced the market. Some consumers are becoming more price-sensitive due to the cost-of-living squeeze, while others are willing to pay a premium for ethically sourced products.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+**Figure 1: UK coffee shop market data, 2020–2024**
+
+| Year | Average price (£) | Cups sold (millions) | Number of outlets |
+|------|-------------------|----------------------|-------------------|
+| 2020 | 2.80 | 2,100 | 25,400 |
+| 2021 | 2.95 | 2,250 | 26,100 |
+| 2022 | 3.20 | 2,310 | 26,800 |
+| 2023 | 3.55 | 2,290 | 27,200 |
+| 2024 | 3.80 | 2,260 | 27,500 |
 
 Question 1 [2 marks]
-With reference to consumer demand and elasticity in the smartphone market, explain two consequences of the issue.
+Define the term *price elasticity of demand*.
 
 Question 2 [4 marks]
-With reference to consumer demand and elasticity in the smartphone market, explain one government response to the issue.
+Using Figure 1, calculate the percentage change in average price between 2020 and 2024. Show your working.
 
 Question 3 [6 marks]
-With reference to business growth: organic vs takeover at Tesco, explain one factor that influences the issue.
+Explain **two** reasons why the supply of coffee in the UK might have decreased in 2024.
 
 Question 4 [9 marks]
-With reference to consumer demand and elasticity in the smartphone market, explain one mechanism that determines the issue.
+Analyse, with the use of a demand and supply diagram, the likely effect of rising bean prices on the equilibrium price and quantity in the UK coffee shop market.
 
 Question 5 [12 marks]
-With reference to competitive markets and contestability, explain two consequences of the issue.
+Discuss the likely impact on independent cafés of an increase in the national minimum wage.
 
-## Section B: Essay (choose ONE)
+## Section B: Essay (25 marks — choose ONE)
 
 Question 6 [25 marks]
-Evaluate the view that, in the context of consumer demand and elasticity in the smartphone market, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Evaluate the view that government intervention is the most effective way to correct market failure caused by the consumption of demerit goods such as sugary drinks.
 
 Question 7 [25 marks]
-Evaluate the view that, in the context of competitive markets and contestability, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Evaluate the view that large firms in oligopolistic markets always act against the interests of consumers.
 `,
   },
   {
     id: "edxigcse-p1-b",
     subject: "edexcel-igcse" as any,
     paper: "1",
-    title: "Paper 1 — Set B",
-    description: "Microeconomics & Business Economics. Set B — stretch — applied scenarios.",
+    title: "Paper 1 — Set B (Hard)",
+    description: "Microeconomics & Business Economics (4EC1/01). Set B — Hard.",
     totalMarks: 80,
-    content: `# Edexcel IGCSE Economics (4EC1) (4EC1/01) — Microeconomics & Business Economics — Predicted Paper Set B
+    content: `# Edexcel IGCSE Economics (4EC1/01) — Microeconomics & Business Economics — Predicted Paper Set B (Hard)
 
-**Time: 90 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total: 80 marks**
 
 Answer ALL questions in Section A and ONE question from Section B.
 
-## Section A: Data Response
+## Section A: Data Response (55 marks)
 
-**Extract 1 — Business growth: organic vs takeover at tesco:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+**Extract 1 — UK supermarket competition and own-brand growth**
+The UK grocery market is dominated by Tesco, Sainsbury's, Asda and Morrisons, but discounters Aldi and Lidl have rapidly increased market share. Own-brand products now account for over 50% of grocery spending. Suppliers complain about thin margins, while consumers benefit from lower prices and wider choice. Recent mergers and the threat of monopsony power have drawn regulatory attention from the Competition and Markets Authority (CMA).
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+**Figure 1: UK grocery market shares, 2024**
+
+| Retailer | Market share (%) | Number of stores |
+|----------|------------------|------------------|
+| Tesco | 27.6 | 4,200 |
+| Sainsbury's | 15.1 | 1,400 |
+| Asda | 13.8 | 1,000 |
+| Aldi | 10.2 | 1,020 |
+| Lidl | 8.0 | 960 |
+| Morrisons | 8.7 | 500 |
 
 Question 1 [2 marks]
-With reference to business growth: organic vs takeover at Tesco, explain one government response to the issue.
+Define the term *monopsony*.
 
 Question 2 [4 marks]
-With reference to business growth: organic vs takeover at Tesco, explain one factor that influences the issue.
+Using Figure 1, calculate the combined market share of Aldi and Lidl, and comment on what this suggests about the structure of the UK grocery market.
 
 Question 3 [6 marks]
-With reference to business growth: organic vs takeover at Tesco, explain one mechanism that determines the issue.
+Explain **two** barriers to entry that new supermarket chains might face when entering the UK grocery market.
 
 Question 4 [9 marks]
-With reference to business growth: organic vs takeover at Tesco, explain two consequences of the issue.
+Analyse, with the use of a diagram, how a successful price war between supermarkets could affect economic welfare in the short run.
 
 Question 5 [12 marks]
-With reference to competitive markets and contestability, explain one government response to the issue.
+Discuss whether the rapid growth of own-brand products is likely to benefit consumers in the long run.
 
-## Section B: Essay (choose ONE)
+## Section B: Essay (25 marks — choose ONE)
 
 Question 6 [25 marks]
-Evaluate the view that, in the context of consumer demand and elasticity in the smartphone market, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Evaluate the view that the merger of two large supermarkets should always be blocked by the Competition and Markets Authority.
 
 Question 7 [25 marks]
-Evaluate the view that, in the context of competitive markets and contestability, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Evaluate the extent to which producer monopoly power is a more serious problem for the UK economy than monopsony buyer power.
 `,
   },
   {
     id: "edxigcse-p1-c",
     subject: "edexcel-igcse" as any,
     paper: "1",
-    title: "Paper 1 — Set C",
-    description: "Microeconomics & Business Economics. Set C — challenge — synoptic & evaluative.",
+    title: "Paper 1 — Set C (Advanced)",
+    description: "Microeconomics & Business Economics (4EC1/01). Set C — Advanced.",
     totalMarks: 80,
-    content: `# Edexcel IGCSE Economics (4EC1) (4EC1/01) — Microeconomics & Business Economics — Predicted Paper Set C
+    content: `# Edexcel IGCSE Economics (4EC1/01) — Microeconomics & Business Economics — Predicted Paper Set C (Advanced)
 
-**Time: 90 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total: 80 marks**
 
 Answer ALL questions in Section A and ONE question from Section B.
 
-## Section A: Data Response
+## Section A: Data Response (55 marks)
 
-**Extract 1 — Competitive markets and contestability:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+**Extract 1 — The UK electric vehicle (EV) market**
+Sales of electric vehicles in the UK have grown sharply since 2020, supported by the government's plan to ban new petrol and diesel cars by 2035. Battery costs have fallen, but charging infrastructure remains uneven. The government offers grants for charging points and lower vehicle excise duty for EVs. Producers face external costs from battery manufacture, while EV use generates external benefits from cleaner urban air.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+**Figure 1: UK new car registrations, 2020–2024**
+
+| Year | Total cars (000s) | EVs (000s) | EV share (%) |
+|------|-------------------|------------|--------------|
+| 2020 | 1,631 | 108 | 6.6 |
+| 2021 | 1,648 | 191 | 11.6 |
+| 2022 | 1,614 | 267 | 16.6 |
+| 2023 | 1,903 | 314 | 16.5 |
+| 2024 | 1,953 | 382 | 19.6 |
 
 Question 1 [2 marks]
-With reference to competitive markets and contestability, explain one factor that influences the issue.
+Define the term *external benefit*.
 
 Question 2 [4 marks]
-With reference to competitive markets and contestability, explain one mechanism that determines the issue.
+Using Figure 1, calculate the percentage growth in EV registrations between 2020 and 2024. Show your working.
 
 Question 3 [6 marks]
-With reference to business growth: organic vs takeover at Tesco, explain two consequences of the issue.
+Explain **two** reasons why the marginal social benefit of EV use exceeds the marginal private benefit.
 
 Question 4 [9 marks]
-With reference to competitive markets and contestability, explain one government response to the issue.
+Analyse, using a marginal social/private benefit diagram, the welfare effect of a government subsidy on the purchase of new electric vehicles.
 
 Question 5 [12 marks]
-With reference to competitive markets and contestability, explain one factor that influences the issue.
+Discuss whether subsidies are the most effective method of correcting the market failure associated with petrol and diesel car use.
 
-## Section B: Essay (choose ONE)
+## Section B: Essay (25 marks — choose ONE)
 
 Question 6 [25 marks]
-Evaluate the view that, in the context of consumer demand and elasticity in the smartphone market, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Evaluate the view that, in markets with significant externalities, taxes are always preferable to regulation.
 
 Question 7 [25 marks]
-Evaluate the view that, in the context of competitive markets and contestability, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Evaluate the case for the UK government using public expenditure on charging infrastructure rather than direct subsidies to EV buyers as the main policy tool to grow the EV market.
 `,
   },
   {
     id: "edxigcse-p2-a",
     subject: "edexcel-igcse" as any,
     paper: "2",
-    title: "Paper 2 — Set A",
-    description: "Macroeconomics & the Global Economy. Set A — core practice.",
+    title: "Paper 2 — Set A (Moderate)",
+    description: "Macroeconomics & the Global Economy (4EC1/02). Set A — Moderate.",
     totalMarks: 80,
-    content: `# Edexcel IGCSE Economics (4EC1) (4EC1/02) — Macroeconomics & the Global Economy — Predicted Paper Set A
+    content: `# Edexcel IGCSE Economics (4EC1/02) — Macroeconomics & the Global Economy — Predicted Paper Set A (Moderate)
 
-**Time: 90 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total: 80 marks**
 
 Answer ALL questions in Section A and ONE question from Section B.
 
-## Section A: Data Response
+## Section A: Data Response (55 marks)
 
-**Extract 1 — Uk inflation, cpi and the bank of england's response:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+**Extract 1 — UK inflation and the cost-of-living squeeze**
+UK consumer price inflation (CPI) reached a 40-year high of 11.1% in October 2022 before falling back as energy prices stabilised. The Bank of England raised the base rate from 0.1% to 5.25% between December 2021 and August 2023 to bring inflation back to its 2% target. Real wages fell for many workers, and household spending on essentials such as food and energy crowded out spending on non-essentials.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+**Figure 1: UK macroeconomic indicators, 2020–2024**
+
+| Year | CPI inflation (%) | Bank rate (%) | Unemployment (%) | Real GDP growth (%) |
+|------|-------------------|---------------|------------------|---------------------|
+| 2020 | 0.9 | 0.1 | 4.6 | -10.4 |
+| 2021 | 2.6 | 0.25 | 4.5 | 8.7 |
+| 2022 | 9.1 | 3.5 | 3.7 | 4.3 |
+| 2023 | 7.3 | 5.25 | 4.0 | 0.1 |
+| 2024 | 2.5 | 5.0 | 4.3 | 0.9 |
 
 Question 1 [2 marks]
-With reference to UK inflation, CPI and the Bank of England's response, explain two consequences of the issue.
+Define the term *consumer price index (CPI)*.
 
 Question 2 [4 marks]
-With reference to UK inflation, CPI and the Bank of England's response, explain one government response to the issue.
+Using Figure 1, describe the relationship between the Bank rate and CPI inflation between 2021 and 2024.
 
 Question 3 [6 marks]
-With reference to balance of payments and the global manufacturing shift, explain one factor that influences the issue.
+Explain **two** ways in which a rise in the Bank of England base rate can reduce inflation.
 
 Question 4 [9 marks]
-With reference to UK inflation, CPI and the Bank of England's response, explain one mechanism that determines the issue.
+Analyse, using an AD/AS diagram, the impact of a sharp rise in global energy prices on the UK macroeconomy.
 
 Question 5 [12 marks]
-With reference to fiscal policy and the public finances, explain two consequences of the issue.
+Discuss the likely impact of high inflation on different groups in the UK economy.
 
-## Section B: Essay (choose ONE)
+## Section B: Essay (25 marks — choose ONE)
 
 Question 6 [25 marks]
-Evaluate the view that, in the context of UK inflation, CPI and the Bank of England's response, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Evaluate the view that monetary policy is the most effective tool for controlling inflation in the UK.
 
 Question 7 [25 marks]
-Evaluate the view that, in the context of fiscal policy and the public finances, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Evaluate the view that low unemployment is always a sign of a healthy economy.
 `,
   },
   {
     id: "edxigcse-p2-b",
     subject: "edexcel-igcse" as any,
     paper: "2",
-    title: "Paper 2 — Set B",
-    description: "Macroeconomics & the Global Economy. Set B — stretch — applied scenarios.",
+    title: "Paper 2 — Set B (Hard)",
+    description: "Macroeconomics & the Global Economy (4EC1/02). Set B — Hard.",
     totalMarks: 80,
-    content: `# Edexcel IGCSE Economics (4EC1) (4EC1/02) — Macroeconomics & the Global Economy — Predicted Paper Set B
+    content: `# Edexcel IGCSE Economics (4EC1/02) — Macroeconomics & the Global Economy — Predicted Paper Set B (Hard)
 
-**Time: 90 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total: 80 marks**
 
 Answer ALL questions in Section A and ONE question from Section B.
 
-## Section A: Data Response
+## Section A: Data Response (55 marks)
 
-**Extract 1 — Balance of payments and the global manufacturing shift:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+**Extract 1 — The UK current account deficit and global trade**
+The UK has run a persistent current account deficit for over two decades. In 2023 the deficit widened to 3.3% of GDP, driven by a fall in net trade in goods and a weakening primary income balance. Sterling depreciated by 8% against the US dollar in 2022, but exports failed to respond strongly because many UK exporters rely on imported inputs. Free trade agreements with Australia and Japan have opened new markets, while Brexit has added trade frictions with the EU.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+**Figure 1: UK balance of payments, 2020–2024 (% of GDP)**
+
+| Year | Trade in goods | Trade in services | Primary income | Current account |
+|------|----------------|-------------------|----------------|-----------------|
+| 2020 | -5.7 | +5.0 | -0.5 | -2.4 |
+| 2021 | -6.0 | +4.5 | -0.2 | -2.0 |
+| 2022 | -7.2 | +5.5 | -1.5 | -3.6 |
+| 2023 | -6.4 | +5.2 | -1.6 | -3.3 |
+| 2024 | -6.0 | +5.4 | -1.4 | -2.8 |
 
 Question 1 [2 marks]
-With reference to balance of payments and the global manufacturing shift, explain one government response to the issue.
+Define the term *current account of the balance of payments*.
 
 Question 2 [4 marks]
-With reference to balance of payments and the global manufacturing shift, explain one factor that influences the issue.
+Using Figure 1, calculate the change in the trade in services balance as a percentage of GDP between 2020 and 2024.
 
 Question 3 [6 marks]
-With reference to balance of payments and the global manufacturing shift, explain one mechanism that determines the issue.
+Explain **two** reasons why a depreciation of sterling may not improve the UK current account in the short run.
 
 Question 4 [9 marks]
-With reference to balance of payments and the global manufacturing shift, explain two consequences of the issue.
+Analyse, with reference to the data, the likely effect of new free trade agreements on UK economic growth.
 
 Question 5 [12 marks]
-With reference to fiscal policy and the public finances, explain one government response to the issue.
+Discuss whether a persistent current account deficit is necessarily harmful for the UK economy.
 
-## Section B: Essay (choose ONE)
+## Section B: Essay (25 marks — choose ONE)
 
 Question 6 [25 marks]
-Evaluate the view that, in the context of UK inflation, CPI and the Bank of England's response, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Evaluate the view that protectionism is justified for an advanced economy such as the UK.
 
 Question 7 [25 marks]
-Evaluate the view that, in the context of fiscal policy and the public finances, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Evaluate the view that exchange rate depreciation is the most effective way to correct a current account deficit.
 `,
   },
   {
     id: "edxigcse-p2-c",
     subject: "edexcel-igcse" as any,
     paper: "2",
-    title: "Paper 2 — Set C",
-    description: "Macroeconomics & the Global Economy. Set C — challenge — synoptic & evaluative.",
+    title: "Paper 2 — Set C (Advanced)",
+    description: "Macroeconomics & the Global Economy (4EC1/02). Set C — Advanced.",
     totalMarks: 80,
-    content: `# Edexcel IGCSE Economics (4EC1) (4EC1/02) — Macroeconomics & the Global Economy — Predicted Paper Set C
+    content: `# Edexcel IGCSE Economics (4EC1/02) — Macroeconomics & the Global Economy — Predicted Paper Set C (Advanced)
 
-**Time: 90 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total: 80 marks**
 
 Answer ALL questions in Section A and ONE question from Section B.
 
-## Section A: Data Response
+## Section A: Data Response (55 marks)
 
-**Extract 1 — Fiscal policy and the public finances:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+**Extract 1 — Economic development in Sub-Saharan Africa**
+Several Sub-Saharan economies have grown rapidly over the past decade, driven by commodity exports, mobile banking and Chinese infrastructure investment. However, GDP per capita remains low, income inequality is high and many countries depend on a narrow range of primary exports. The IMF has provided structural adjustment loans tied to fiscal reform, while NGOs argue that microfinance and investment in education and healthcare are more effective tools for development.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+**Figure 1: Selected development indicators, 2024**
+
+| Country | GDP per capita (US$) | HDI | Adult literacy (%) | Life expectancy (years) |
+|---------|----------------------|-----|--------------------|-------------------------|
+| Kenya | 2,250 | 0.601 | 82.6 | 67.5 |
+| Ghana | 2,350 | 0.632 | 79.0 | 64.3 |
+| Ethiopia | 1,030 | 0.498 | 51.8 | 67.8 |
+| UK | 49,000 | 0.940 | 99.0 | 81.7 |
 
 Question 1 [2 marks]
-With reference to fiscal policy and the public finances, explain one factor that influences the issue.
+Define the term *Human Development Index (HDI)*.
 
 Question 2 [4 marks]
-With reference to fiscal policy and the public finances, explain one mechanism that determines the issue.
+Using Figure 1, compare the level of economic development in Kenya and Ethiopia.
 
 Question 3 [6 marks]
-With reference to balance of payments and the global manufacturing shift, explain two consequences of the issue.
+Explain **two** limitations of using GDP per capita as a measure of economic development.
 
 Question 4 [9 marks]
-With reference to fiscal policy and the public finances, explain one government response to the issue.
+Analyse the impact of foreign direct investment from China on the economic development of a Sub-Saharan African economy.
 
 Question 5 [12 marks]
-With reference to fiscal policy and the public finances, explain one factor that influences the issue.
+Discuss whether dependence on primary commodity exports is the most significant barrier to economic development.
 
-## Section B: Essay (choose ONE)
+## Section B: Essay (25 marks — choose ONE)
 
 Question 6 [25 marks]
-Evaluate the view that, in the context of UK inflation, CPI and the Bank of England's response, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Evaluate the view that microfinance is the most effective strategy for promoting economic development in low-income countries.
 
 Question 7 [25 marks]
-Evaluate the view that, in the context of fiscal policy and the public finances, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Evaluate the view that, for low-income countries, free trade is more effective than aid in achieving long-term economic development.
 `,
   },
   // ── OCR GCSE Economics (J205) ──
