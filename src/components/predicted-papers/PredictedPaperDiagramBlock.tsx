@@ -99,11 +99,8 @@ export function PredictedPaperDiagramBlock({
 
   return (
     <div className="mt-3 mb-3 rounded-xl border border-primary/30 bg-primary/[0.04]">
-      <div className="flex items-center justify-between px-3 py-2 border-b border-primary/20">
-        <div className="flex items-center gap-2 min-w-0">
-          <Pencil className="h-3.5 w-3.5 text-primary shrink-0" />
-        </div>
-        <div className="flex items-center gap-2">
+      {(savedAt || optional) && (
+        <div className="flex items-center justify-end gap-2 px-3 py-2 border-b border-primary/20">
           {savedAt && (
             <span className="text-[10px] font-mono text-emerald-300 inline-flex items-center gap-1">
               <CheckCircle2 className="h-3 w-3" /> Saved
@@ -120,7 +117,7 @@ export function PredictedPaperDiagramBlock({
             </button>
           )}
         </div>
-      </div>
+      )}
 
       <div className="p-3">
         <DrawingCanvas
