@@ -1334,6 +1334,10 @@ export default function Papers() {
     return <EdexcelIgcsePapersList />;
   }
 
+  if (subject === "cambridge-igcse") {
+    return <CaieIgcsePapersList />;
+  }
+
   if (subject === "ocr-gcse") {
     return <OcrGcsePapersList />;
   }
