@@ -102,12 +102,6 @@ export function PredictedPaperDiagramBlock({
       <div className="flex items-center justify-between px-3 py-2 border-b border-primary/20">
         <div className="flex items-center gap-2 min-w-0">
           <Pencil className="h-3.5 w-3.5 text-primary shrink-0" />
-          <span className="text-[10px] font-bold uppercase tracking-wider text-primary">
-            {required && !optional ? "Diagram required" : "Diagram (optional)"}
-          </span>
-          <span className="text-[10px] font-mono text-muted-foreground border border-border rounded px-1.5 py-0.5">
-            {templateLabel}
-          </span>
         </div>
         <div className="flex items-center gap-2">
           {savedAt && (
