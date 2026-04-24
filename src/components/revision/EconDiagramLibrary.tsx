@@ -1545,17 +1545,17 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     },
   },
 
-  /* ── Tax Incidence (Ad Valorem / Specific) ── */
+  /* ── Tax Incidence (Indirect Tax on Supply & Demand) ── */
   tax_incidence: {
-    title: "Effect of an Indirect Tax (Ad Valorem)",
+    title: "Supply & Demand — Effect of an Indirect Tax",
     xAxis: "Quantity", yAxis: "Price",
-    legend: [{ label: "D1", color: COLORS.demand }, { label: "S1", color: COLORS.supply }, { label: "S1 + Ad valorem tax", color: COLORS.shifted }, { label: "Welfare loss", color: "#ef4444" }],
+    legend: [{ label: "D", color: COLORS.demand }, { label: "S", color: COLORS.supply }, { label: "S + tax", color: COLORS.shifted }, { label: "Welfare loss", color: "#ef4444" }],
     examTips: [
       "Supply shifts LEFT/UP by the amount of the tax per unit",
-      "Ad valorem tax = percentage of price → S+Tax diverges from S",
+      "Specific tax → parallel shift; ad valorem tax → pivoted (diverging) shift",
       "Welfare loss triangle between old and new equilibrium",
-      "Price rises from P1 to P2, quantity falls from Q1 to Q2",
-      "Label S1, S1 + Ad valorem tax and D1 clearly",
+      "Price rises from P to P₁, quantity falls from Q to Q₁",
+      "Label D, S and S + tax clearly; mark Pₚ on the original S at Q₁ for tax incidence",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
@@ -1599,20 +1599,20 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             labelSize={8}
           />
 
-          {/* D1 */}
+          {/* D */}
           <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D1" color={COLORS.demand} />
-          {/* S1 */}
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color={COLORS.demand} />
+          {/* S */}
           <GLine {...s1L} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={s1L.x2 + 4} y={s1L.y2 + 4} text="S1" color={COLORS.supply} />
-          {/* S1 + Ad valorem tax */}
+          <Label x={s1L.x2 + 4} y={s1L.y2 + 4} text="S" color={COLORS.supply} />
+          {/* S + tax */}
           <GLine {...s2L} color={COLORS.shifted} gradientId="grad-shifted" glow="glow-amber" />
-          <Label x={s2L.x2 + 4} y={s2L.y2 + 4} text="S1 + Ad valorem tax" color={COLORS.shifted} />
+          <Label x={s2L.x2 + 4} y={s2L.y2 + 4} text="S + tax" color={COLORS.shifted} />
 
-          {/* Tax - 20% annotation arrow between the two supply curves */}
+          {/* Tax-per-unit annotation arrow between the two supply curves */}
           <line x1={midX + 8} y1={s1AtMid} x2={midX + 8} y2={s2AtMid}
                 stroke="#1e293b" strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
-          <Label x={midX + 16} y={(s1AtMid + s2AtMid) / 2 + 3} text="Tax - 20%" color="#1e293b" size={9} />
+          <Label x={midX + 16} y={(s1AtMid + s2AtMid) / 2 + 3} text="Tax per unit" color="#1e293b" size={9} />
 
           {/* Original equilibrium P1 / Q1 */}
           <DashedToAxes x={eq1.x} y={eq1.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P1" qLabel="Q1" />
