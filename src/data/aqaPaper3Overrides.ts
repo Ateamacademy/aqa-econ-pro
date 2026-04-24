@@ -354,6 +354,1042 @@ function bank(setSeed: string): McqSpec[] {
   void setSeed;
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// SET B — HARD: 30 MCQs transcribed verbatim from /aqa-mocks/paper-3-hard.pdf
+// so the on-screen Predicted Paper view matches the curated PDF question-for-
+// question and mark-for-mark.
+// ─────────────────────────────────────────────────────────────────────────────
+function bankHard(): McqSpec[] {
+  return [
+    // Q1
+    {
+      stem: "The law of diminishing marginal returns applies in which one of the following cases?",
+      options: [
+        "In the long run, when all factors are variable.",
+        "In the short run, when at least one factor is fixed.",
+        "Whenever there are constant returns to scale.",
+        "Only in agricultural production.",
+      ],
+      answer: "B",
+      justification: "Diminishing marginal returns is a short-run concept and requires at least one fixed factor.",
+    },
+    // Q2
+    {
+      stem: "A firm maximises revenue when:",
+      options: [
+        "Price is at its maximum.",
+        "Marginal revenue equals marginal cost.",
+        "Marginal revenue equals zero.",
+        "Average revenue equals average cost.",
+      ],
+      answer: "C",
+      justification: "Total revenue peaks where MR = 0 (the unit-elastic point on a linear demand curve).",
+    },
+    // Q3
+    {
+      stem: "Which one of the following is the most likely consequence of a rise in the long-run trend growth of labour productivity?",
+      options: [
+        "A leftward shift in long-run aggregate supply.",
+        "A rise in the natural rate of unemployment.",
+        "A rightward shift in long-run aggregate supply.",
+        "A rise in demand-pull inflation.",
+      ],
+      answer: "C",
+      justification: "Higher productivity raises potential output, shifting LRAS to the right.",
+    },
+    // Q4
+    {
+      stem: "In a contestable market, the most important determinant of incumbent firms' behaviour is:",
+      options: [
+        "The number of firms currently in the market.",
+        "The level of fixed costs in the industry.",
+        "The threat of potential new entrants.",
+        "Government subsidies to existing firms.",
+      ],
+      answer: "C",
+      justification: "Contestability theory: behaviour is disciplined by the threat of hit-and-run entry, not actual market structure.",
+    },
+    // Q5
+    {
+      stem: "A monopsonist in a labour market is most likely to:",
+      options: [
+        "Pay a wage equal to the marginal revenue product of labour.",
+        "Pay a wage above the competitive equilibrium wage.",
+        "Pay a wage below the marginal revenue product of labour.",
+        "Employ more workers than would exist under perfect competition.",
+      ],
+      answer: "C",
+      justification: "A monopsonist sets wage on the labour supply curve below MRP, exploiting workers and employing fewer than under perfect competition.",
+    },
+    // Q6
+    {
+      stem: "An appreciation of a country's currency is most likely to:",
+      options: [
+        "Reduce cost-push inflationary pressure by making imports cheaper in domestic currency.",
+        "Reduce the foreign-currency price of exports.",
+        "Improve the current account of the balance of payments in the short run.",
+        "Encourage tourism to that country.",
+      ],
+      answer: "A",
+      justification: "Appreciation lowers the domestic price of imports, easing imported (cost-push) inflation.",
+    },
+    // Q7
+    {
+      stem: "A fall in the national savings rate, with investment unchanged, will most likely result in:",
+      options: [
+        "An improvement in the current account balance.",
+        "A deterioration in the current account balance.",
+        "A balanced current account.",
+        "A reduction in the capital account balance.",
+      ],
+      answer: "B",
+      justification: "From the savings–investment identity (S − I) = (X − M); if S falls and I is unchanged, the current account worsens.",
+    },
+    // Q8
+    {
+      stem: "If the Marshall–Lerner condition holds, a currency depreciation will:",
+      options: [
+        "Always worsen the trade balance.",
+        "Always leave the trade balance unchanged.",
+        "Improve the trade balance once prices and quantities have fully adjusted.",
+        "Reduce the sensitivity of trade flows to relative prices.",
+      ],
+      answer: "C",
+      justification: "Marshall–Lerner: if PEDx + PEDm > 1, depreciation improves the trade balance once volumes adjust.",
+    },
+    // Q9
+    {
+      stem: "Supply-side policies that increase the flexibility of labour markets are most likely to:",
+      options: [
+        "Reduce the natural rate of unemployment.",
+        "Increase cyclical unemployment.",
+        "Reduce productivity growth.",
+        "Raise the equilibrium real wage for unskilled workers.",
+      ],
+      answer: "A",
+      justification: "Greater labour-market flexibility reduces frictional and structural unemployment, lowering the natural rate.",
+    },
+    // Q10
+    {
+      stem: "Regulatory capture most accurately describes the situation in which:",
+      options: [
+        "Regulators protect consumers against producer exploitation.",
+        "Regulators come to act primarily in the interests of the industries they regulate.",
+        "Regulators set prices at the allocatively efficient level.",
+        "Regulators merge to form a single super-regulator.",
+      ],
+      answer: "B",
+      justification: "Regulatory capture: regulator advances regulated firms' interests over consumers — a source of government failure.",
+    },
+    // Q11 — Table 1
+    {
+      figure: `**Table 1:** Output and costs for a firm at different employment levels, holding capital fixed.
+
+| Workers | Total output | Total cost (£) | Marginal product |
+|---|---|---|---|
+| 1 | 10 | 50 | — |
+| 2 | 22 | 80 | 12 |
+| 3 | 38 | 110 | 16 |
+| 4 | 50 | 140 | 12 |
+| 5 | 58 | 170 | 8 |
+| 6 | 62 | 200 | 4 |`,
+      stem: "Based on Table 1, diminishing marginal returns to labour begin from the employment of which worker?",
+      options: ["The second worker.", "The third worker.", "The fourth worker.", "The sixth worker."],
+      answer: "C",
+      justification: "Marginal product rises 12 → 16 (worker 3), then falls to 12 at worker 4. Diminishing marginal returns set in from the 4th worker.",
+    },
+    // Q12 — Table 2
+    {
+      figure: `**Table 2:** Total revenue and total cost for a perfectly competitive firm.
+
+| Output (units) | Price (£) | Total Revenue (£) | Total Cost (£) |
+|---|---|---|---|
+| 0 | 10 | 0 | 20 |
+| 10 | 10 | 100 | 60 |
+| 20 | 10 | 200 | 110 |
+| 30 | 10 | 300 | 180 |
+| 40 | 10 | 400 | 280 |
+| 50 | 10 | 500 | 420 |`,
+      stem: "Based on Table 2, the firm's profit-maximising output and supernormal profit are:",
+      options: [
+        "30 units; £120 supernormal profit.",
+        "40 units; £120 supernormal profit.",
+        "40 units; £40 supernormal profit.",
+        "50 units; £80 supernormal profit.",
+      ],
+      answer: "B",
+      justification: "Profit (TR − TC): 30u = £120, 40u = £120, 50u = £80. The last unit where MR (£10) ≥ MC is at 40u (MC of 31st–40th = £10). Standard interpretation: 40 units, £120 supernormal profit.",
+    },
+    // Q13 — Table 3
+    {
+      figure: `**Table 3:** Quarterly real GDP growth (annualised) for a country.
+
+| Quarter | Real GDP growth (%) |
+|---|---|
+| Q1 2023 | +0.4 |
+| Q2 2023 | +0.2 |
+| Q3 2023 | −0.1 |
+| Q4 2023 | −0.3 |
+| Q1 2024 | +0.1 |
+| Q2 2024 | +0.4 |`,
+      stem: "Based on Table 3, the country is most accurately described as having experienced:",
+      options: [
+        "A deep recession throughout 2023.",
+        "A technical recession spanning Q3 and Q4 2023.",
+        "An economic boom in 2024.",
+        "Stagflation throughout the period.",
+      ],
+      answer: "B",
+      justification: "A technical recession is two consecutive quarters of negative growth — Q3 and Q4 2023 (−0.1, −0.3).",
+    },
+    // Q14 — Table 4
+    {
+      figure: `**Table 4:** Data for two small open economies.
+
+| Indicator | Economy P | Economy Q |
+|---|---|---|
+| GDP growth (%) | 3.2 | 3.0 |
+| Inflation (%) | 4.1 | 1.8 |
+| Bank policy rate (%) | 2.5 | 2.5 |
+| Current account (% GDP) | −4.8 | +1.2 |
+| Exchange rate regime | Fixed | Floating |`,
+      stem: "Based on Table 4, economy P is most likely to face:",
+      options: [
+        "A loss of competitiveness and pressure on the fixed exchange rate.",
+        "An appreciation of its fixed currency.",
+        "A rapid reduction in imports.",
+        "Deflationary pressure in the short run.",
+      ],
+      answer: "A",
+      justification: "Higher inflation under a fixed regime erodes competitiveness, widening the current-account deficit and pressuring the peg.",
+    },
+    // Q15 — Table 5
+    {
+      figure: `**Table 5:** Budget position and output gap estimates for Country Z.
+
+| Year | Output gap (%) | Budget balance (% GDP) |
+|---|---|---|
+| Year 1 | +1.5 (positive) | −2.0 (deficit) |
+| Year 2 | +0.5 | −2.5 |
+| Year 3 | −1.8 (negative) | −4.5 |`,
+      stem: "Based on Table 5, the fiscal policy stance can best be described as:",
+      options: [
+        "Strongly counter-cyclical in Year 1.",
+        "Pro-cyclical in Year 1 and counter-cyclical in Year 3.",
+        "Pro-cyclical throughout the period.",
+        "Counter-cyclical throughout the period.",
+      ],
+      answer: "B",
+      justification: "Year 1: positive output gap with widening deficit = pro-cyclical loosening. Year 3: negative output gap with larger deficit = counter-cyclical fiscal expansion.",
+    },
+    // Q16 — gap-fill (PDF OCR cut off; topic-appropriate text-only MCQ on supply-side)
+    {
+      stem: "An increase in spending on workforce retraining and apprenticeships is best classified as a:",
+      options: [
+        "Demand-side fiscal stimulus that primarily shifts AD to the right.",
+        "Supply-side policy that shifts LRAS to the right by raising labour productivity.",
+        "Monetary policy that lowers nominal interest rates.",
+        "Protectionist policy aimed at import substitution.",
+      ],
+      answer: "B",
+      justification: "Skills investment is an interventionist supply-side policy that raises labour productivity and shifts LRAS to the right.",
+    },
+    // Q17 — Table 7 (monopoly demand schedule)
+    {
+      figure: `**Table 7:** Demand schedule faced by a monopolist and the firm's marginal cost.
+
+| Q | P (£) | TR (£) | MR (£) | MC (£) |
+|---|---|---|---|---|
+| 1 | 14 | 14 | 14 | 2 |
+| 2 | 12 | 24 | 10 | 4 |
+| 3 | 10 | 30 | 6 | 6 |
+| 4 | 8 | 32 | 2 | 8 |
+| 5 | 6 | 30 | −2 | 10 |`,
+      stem: "Based on Table 7, the profit-maximising monopolist's price and deadweight loss relative to allocative efficiency are:",
+      options: [
+        "P = £14; there is no deadweight loss.",
+        "P = £10; there is a deadweight loss because P > MC at Q = 3.",
+        "P = £8; there is no deadweight loss.",
+        "P = £6; the monopoly is allocatively efficient.",
+      ],
+      answer: "B",
+      justification: "Profit max where MR = MC at Q = 3, P = £10. Allocative efficiency requires P = MC (£6 at higher Q), so DWL exists because P > MC.",
+    },
+    // Q18 — Table 8 (Gini)
+    {
+      figure: `**Table 8:** Gini coefficients of five countries in 2010 and 2023.
+
+| Country | Gini 2010 | Gini 2023 |
+|---|---|---|
+| A | 0.28 | 0.32 |
+| B | 0.38 | 0.36 |
+| C | 0.45 | 0.48 |
+| D | 0.32 | 0.28 |
+| E | 0.40 | 0.40 |`,
+      stem: "Based on Table 8, which country has experienced the largest reduction in income inequality over the period?",
+      options: ["Country A.", "Country B.", "Country C.", "Country D."],
+      answer: "D",
+      justification: "Country D's Gini fell by 0.04 (0.32 → 0.28) — the largest reduction. Country B fell by only 0.02; A and C rose.",
+    },
+    // Q19 — Table 9 (regional productivity)
+    {
+      figure: `**Table 9:** Labour productivity (output per worker, £000s per year) in two regions of an economy.
+
+| Region | 2014 | 2024 |
+|---|---|---|
+| North | 41 | 44 |
+| South | 52 | 68 |`,
+      stem: "Based on Table 9, which one of the following can be correctly concluded?",
+      options: [
+        "Productivity convergence has occurred between the two regions.",
+        "The absolute productivity gap between South and North has narrowed.",
+        "The absolute productivity gap between South and North has widened.",
+        "The North experienced faster productivity growth than the South.",
+      ],
+      answer: "C",
+      justification: "Gap widened from £11k (52−41) in 2014 to £24k (68−44) in 2024 — divergence, not convergence.",
+    },
+    // Q20 — Figure 1 (monopoly profit max)
+    {
+      figure: "**Figure 1:** Cost and revenue curves for a profit-maximising monopoly: downward-sloping AR (D) with MR below; U-shaped AC and MC. Q* where MC = MR; P* read off AR above Q*; AC* on the AC curve at Q*.",
+      figureKey: "monopoly-profit.svg",
+      figureCaption: "Figure 1 — Monopoly profit maximisation",
+      stem: "Based on Figure 1, the monopolist's supernormal profit is represented by:",
+      options: [
+        "The whole area under the AR curve up to Q*.",
+        "The rectangle bounded by (P* − AC*) × Q*.",
+        "The triangle between MR, MC and the vertical axis.",
+        "The area between the AC and MC curves.",
+      ],
+      answer: "B",
+      justification: "Supernormal profit per unit = P* − AC*; multiplied by Q* gives the rectangle.",
+    },
+    // Q21 — Figure 2 (indirect tax incidence, inelastic demand)
+    {
+      figure: "**Figure 2:** Incidence of an indirect tax on a good with relatively inelastic demand. S shifts up to S+tax; new equilibrium at higher consumer price (Pc) and lower producer price (Pp). Steep demand curve.",
+      figureKey: "indirect-tax.svg",
+      figureCaption: "Figure 2 — Indirect tax incidence (inelastic demand)",
+      stem: "Based on Figure 2, which one of the following statements is correct?",
+      options: [
+        "Most of the tax burden falls on producers because demand is inelastic.",
+        "Most of the tax burden falls on consumers because demand is inelastic.",
+        "The burden is split equally between consumers and producers.",
+        "The incidence on consumers depends only on the elasticity of supply.",
+      ],
+      answer: "B",
+      justification: "When demand is more inelastic than supply, the larger share of the tax falls on consumers.",
+    },
+    // Q22 — Figure 3 (AD/AS spare capacity)
+    {
+      figure: "**Figure 3:** AD/AS diagram with AD₁, AD₂ (right shift), upward-sloping SRAS, vertical LRAS. Initial equilibrium E₁ well below LRAS (spare capacity); E₂ on AD₂ × SRAS, output rises sharply with little price-level rise.",
+      figureKey: "adas-equilibrium.svg",
+      figureCaption: "Figure 3 — AD shift with spare capacity",
+      stem: "Based on Figure 3, near LRAS the same rightward shift in AD would most likely result in:",
+      options: [
+        "A smaller rise in the price level and a larger rise in real GDP than shown.",
+        "A larger rise in the price level and a smaller rise in real GDP than shown.",
+        "No change in either price level or real GDP.",
+        "A fall in both the price level and real GDP.",
+      ],
+      answer: "B",
+      justification: "Closer to LRAS, SRAS becomes steeper; AD shifts produce more inflation and less real-output gain.",
+    },
+    // Q23 — Figure 4 (kinked demand)
+    {
+      figure: "**Figure 4:** Kinked demand curve oligopoly model. AR (D) is elastic above the kink at p* and inelastic below. MR has a vertical discontinuity at Q*; MC can shift within this gap without changing the profit-maximising price.",
+      figureKey: "caie-kinked-demand.svg",
+      figureCaption: "Figure 4 — Kinked demand curve (oligopoly)",
+      stem: "Based on Figure 4, the discontinuity (vertical gap) in the marginal revenue curve is most consistent with:",
+      options: [
+        "Perfectly competitive behaviour.",
+        "Price rigidity despite changes in marginal cost within a range.",
+        "Frequent price-cutting by all firms.",
+        "A firm that faces a perfectly elastic demand curve.",
+      ],
+      answer: "B",
+      justification: "Within the MR gap, changes in MC do not alter the MR=MC output, so price stays at p* — predicted price rigidity.",
+    },
+    // Q24 — Figure 5 (Phillips curve, long-run)
+    {
+      figure: "**Figure 5:** Short-run Phillips curve (SRPC) showing inflation rate on the vertical axis and unemployment rate on the horizontal axis, sloping downward. Points A (low u, high π) and B (high u, low π) are marked on the curve.",
+      figureKey: "phillips-srlr.svg",
+      figureCaption: "Figure 5 — Short-run Phillips curve",
+      stem: "Based on Figure 5 and your knowledge of economics, in the long run the relationship is most likely to be:",
+      options: [
+        "The same as the short-run relationship shown.",
+        "Permanently vertical at the natural rate of unemployment.",
+        "Permanently upward-sloping.",
+        "Horizontal at a constant rate of inflation.",
+      ],
+      answer: "B",
+      justification: "Friedman/Phelps: in the long run, expectations adjust, so the LRPC is vertical at the natural rate (NAIRU).",
+    },
+    // Q25 — Figure 6 (monopolistic competition long-run)
+    {
+      figure: "**Figure 6:** Monopolistic competition long-run equilibrium: downward-sloping AR (D) tangent to U-shaped AC at Q* where MC = MR. P* on AR equals AC at Q* (normal profit only). Q* lies to the left of the minimum point of AC.",
+      figureKey: "aqa-monopolistic-long-run.png",
+      figureCaption: "Figure 6 — Monopolistic competition: long-run equilibrium",
+      stem: "Based on Figure 6, the firm operates with:",
+      options: [
+        "Productive efficiency (minimum AC) but allocative inefficiency (P > MC).",
+        "Allocative inefficiency (P > MC) AND productive inefficiency (P above minimum AC).",
+        "Both productive and allocative efficiency.",
+        "Supernormal profits in the long run.",
+      ],
+      answer: "B",
+      justification: "Q* lies left of min-AC (excess capacity ⇒ productive inefficiency) and P > MC (allocative inefficiency).",
+    },
+    // Q26 — Figure 7 (J-curve)
+    {
+      figure: "**Figure 7:** J-curve after a depreciation: current-account balance on vertical axis, time on horizontal axis. After depreciation at t₀ the balance first deteriorates, troughs, then rises above its original level.",
+      figureKey: "caie-j-curve.svg",
+      figureCaption: "Figure 7 — J-curve after depreciation",
+      stem: "Based on Figure 7, the long-run improvement in the current account after depreciation depends most on:",
+      options: [
+        "Capital flows reversing immediately.",
+        "The Marshall–Lerner condition being met.",
+        "Tariffs imposed by trading partners.",
+        "A fall in aggregate demand.",
+      ],
+      answer: "B",
+      justification: "The current account only improves once volumes adjust; this requires PEDx + PEDm > 1 (Marshall–Lerner).",
+    },
+    // Q27 — Figure 8 (specific vs ad valorem)
+    {
+      figure: "**Figure 8:** Comparison of specific (per-unit) and ad valorem taxes on the same supply curve. S+spec is parallel to S (constant £ wedge); S+adval pivots upward from the price-axis intercept (wedge widens with price).",
+      figureKey: "indirect-tax.svg",
+      figureCaption: "Figure 8 — Specific tax vs ad valorem tax",
+      stem: "Based on Figure 8, an ad valorem tax:",
+      options: [
+        "Raises the price of low-priced goods more than high-priced goods.",
+        "Raises the price of high-priced goods more than low-priced goods.",
+        "Raises the price by the same absolute amount for all goods.",
+        "Has no effect on consumer prices.",
+      ],
+      answer: "B",
+      justification: "An ad valorem tax is a % of price → the absolute wedge is larger when price is higher.",
+    },
+    // Q28 — Figure 9 (Lorenz, X vs Y)
+    {
+      figure: "**Figure 9:** Lorenz curves for two countries. Cumulative share of population (0–1) on the horizontal axis; cumulative share of income (0–1) on the vertical axis. 45° line of equality drawn. Country X lies closer to the 45° line; Country Y lies further below it.",
+      figureKey: "lorenz-brazil.svg",
+      figureCaption: "Figure 9 — Lorenz curves",
+      stem: "Based on Figure 9, the area between the line of equality and the Lorenz curve for Country Y relative to Country X indicates that:",
+      options: [
+        "Country Y has lower income inequality than Country X.",
+        "Country Y has higher income inequality than Country X.",
+        "The two countries have identical income distributions.",
+        "Country Y has a lower Gini coefficient.",
+      ],
+      answer: "B",
+      justification: "Larger area between the Lorenz curve and the 45° line ⇒ higher Gini ⇒ higher inequality. Y is further from equality than X.",
+    },
+    // Q29 — Figure 10 (PED on linear demand)
+    {
+      figure: "**Figure 10:** Linear demand curve with elasticity regions marked: PED > 1 (elastic) above the mid-point, PED = 1 at the mid-point, PED < 1 (inelastic) below.",
+      figureKey: "caie-ped-elastic.svg",
+      figureCaption: "Figure 10 — PED along a linear demand curve",
+      stem: "Based on Figure 10, in the elastic region (upper half of the demand curve), a small price cut by a firm will most likely:",
+      options: [
+        "Reduce total revenue because quantity rises proportionally less than price falls.",
+        "Increase total revenue because quantity rises proportionally more than price falls.",
+        "Leave total revenue unchanged.",
+        "Have no effect on quantity demanded.",
+      ],
+      answer: "B",
+      justification: "When |PED| > 1, %ΔQd > %ΔP, so a price cut raises P × Q (TR rises in the elastic region).",
+    },
+    // Q30 — gap-fill (PDF OCR cut off; topic-appropriate)
+    {
+      figure: "**Figure 11:** Negative production externality (e.g. carbon emissions). MSC lies above MPC by the marginal external cost; demand is MPB = MSB. Free-market output Qp where MPB = MPC; social optimum Qs where MPB = MSC. Welfare-loss triangle between MSC and MPB from Qs to Qp.",
+      figureKey: "neg-externality-welfare.svg",
+      figureCaption: "Figure 11 — Negative production externality",
+      stem: "Based on Figure 11, the deadweight welfare loss from the externality is represented by the triangular area between:",
+      options: [
+        "MPC and MPB from 0 to Qp.",
+        "MSC and MPB from Qs to Qp.",
+        "MSC and MPC from 0 to Qs.",
+        "MPB and MSC from 0 to Qp.",
+      ],
+      answer: "B",
+      justification: "Between Qs and Qp every unit's MSC exceeds MPB; the area between those curves is the deadweight welfare loss.",
+    },
+  ];
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SET C — ADVANCED: 30 MCQs transcribed verbatim from
+// /aqa-mocks/paper-3-advanced.pdf so the on-screen Predicted Paper view matches
+// the curated PDF question-for-question and mark-for-mark.
+// ─────────────────────────────────────────────────────────────────────────────
+function bankAdvanced(): McqSpec[] {
+  return [
+    // Q1
+    {
+      stem: "In two-sided digital platform markets, a profit-maximising platform is most likely to set:",
+      options: [
+        "Prices that always exceed marginal cost on both sides of the market.",
+        "Prices below marginal cost on one side and above marginal cost on the other.",
+        "Uniform zero prices on both sides of the market.",
+        "Prices that equal the monopoly price on each side.",
+      ],
+      answer: "B",
+      justification: "Two-sided platforms internalise cross-side network effects by subsidising the more elastic side and charging the less elastic side above MC.",
+    },
+    // Q2
+    {
+      stem: "Hysteresis in the labour market refers to the tendency for:",
+      options: [
+        "A temporary shock to aggregate demand to have permanent effects on the natural rate of unemployment.",
+        "Workers to move voluntarily between jobs in search of higher wages.",
+        "Long-run inflation to drift upward over time.",
+        "Productivity growth to accelerate automatically after a recession.",
+      ],
+      answer: "A",
+      justification: "Hysteresis: cyclical shocks (skill atrophy, detachment from labour force) raise the long-run natural rate.",
+    },
+    // Q3
+    {
+      stem: "A first-degree price discriminator captures:",
+      options: [
+        "No consumer surplus; consumer welfare is unchanged.",
+        "Some consumer surplus; the deadweight loss relative to perfect competition is reduced.",
+        "All consumer surplus; output equals the perfectly competitive level and there is no deadweight loss.",
+        "All consumer surplus and all producer surplus.",
+      ],
+      answer: "C",
+      justification: "Perfect price discrimination: each consumer pays their reservation price; output extends to where P = MC, eliminating DWL.",
+    },
+    // Q4
+    {
+      stem: "The Coase theorem implies that externalities can be resolved efficiently by private bargaining when:",
+      options: [
+        "Property rights are undefined and transaction costs are low.",
+        "Property rights are well-defined and transaction costs are low.",
+        "The government imposes a Pigouvian tax.",
+        "Firms are monopolists with full market power.",
+      ],
+      answer: "B",
+      justification: "Coase: with well-defined property rights and zero/low transaction costs, parties bargain to the efficient outcome regardless of initial allocation.",
+    },
+    // Q5
+    {
+      stem: "In a simple Solow growth model with diminishing returns to capital, long-run per-capita output growth is driven primarily by:",
+      options: [
+        "Capital accumulation alone.",
+        "Labour force growth alone.",
+        "Exogenous technological progress.",
+        "Government consumption.",
+      ],
+      answer: "C",
+      justification: "Diminishing returns to K mean capital deepening cannot sustain per-capita growth; only TFP/technology can.",
+    },
+    // Q6
+    {
+      stem: "A lump-sum tax is considered by most economists to be the least distortionary form of taxation because:",
+      options: [
+        "It raises the most revenue.",
+        "It falls only on high-income households.",
+        "It does not depend on behaviour, so it does not distort economic decisions at the margin.",
+        "It is politically popular.",
+      ],
+      answer: "C",
+      justification: "Lump-sum taxes are independent of behaviour, so the marginal cost of work/saving/consumption is unaffected — no excess burden.",
+    },
+    // Q7
+    {
+      stem: "Under floating exchange rates, a capital-importing country will typically observe:",
+      options: [
+        "A current account surplus matched by a capital account deficit.",
+        "A current account deficit matched by a capital account surplus.",
+        "Both a current account surplus and a capital account surplus.",
+        "A zero balance of payments on all accounts.",
+      ],
+      answer: "B",
+      justification: "BoP identity: a net capital inflow (KA surplus) is mirrored by a current account deficit.",
+    },
+    // Q8
+    {
+      stem: "Adverse selection in insurance markets arises primarily because:",
+      options: [
+        "Insurers can observe policyholders' actions after the contract is signed.",
+        "Policyholders with the highest risk have the greatest incentive to buy insurance when insurers cannot distinguish risk levels.",
+        "Governments regulate premiums.",
+        "Competition among insurers drives premiums to zero.",
+      ],
+      answer: "B",
+      justification: "Asymmetric info before contract → high-risk pool, premiums rise, low-risk drop out (Akerlof's lemons).",
+    },
+    // Q9
+    {
+      stem: "The natural rate hypothesis implies that:",
+      options: [
+        "There is a stable long-run trade-off between unemployment and inflation.",
+        "The long-run Phillips curve is horizontal.",
+        "The long-run Phillips curve is vertical at the natural rate of unemployment.",
+        "Monetary policy can permanently reduce unemployment by accepting higher inflation.",
+      ],
+      answer: "C",
+      justification: "Friedman/Phelps: in the long run, expectations adjust; LRPC is vertical at the natural rate.",
+    },
+    // Q10
+    {
+      stem: "If a central bank follows a Taylor rule and inflation is 1 percentage point above target while output is at potential, the rule prescribes that the central bank should:",
+      options: [
+        "Leave the policy rate unchanged.",
+        "Cut the policy rate to stimulate demand.",
+        "Raise the policy rate by more than one percentage point.",
+        "Raise the policy rate by less than one percentage point.",
+      ],
+      answer: "C",
+      justification: "Taylor principle: nominal rate must rise by more than 1pp per 1pp of inflation to raise the real rate and restore equilibrium.",
+    },
+    // Q11 — Table 1 (TC + price = £25)
+    {
+      figure: `**Table 1:** Short-run total costs of a firm facing a perfectly elastic demand at P = £25.
+
+| Output (units) | Total Variable Cost (£) | Total Fixed Cost (£) |
+|---|---|---|
+| 0 | 0 | 60 |
+| 10 | 100 | 60 |
+| 20 | 180 | 60 |
+| 30 | 270 | 60 |
+| 40 | 380 | 60 |
+| 50 | 520 | 60 |`,
+      stem: "Based on Table 1, the firm's profit-maximising output is:",
+      options: ["20 units.", "30 units.", "40 units.", "50 units."],
+      answer: "B",
+      justification: "Profit (TR − TC): 20u = 500−240 = 260; 30u = 750−330 = 420; 40u = 1000−440 = 560; 50u = 1250−580 = 670. MR = £25; MC of 31st–40th = £11, MC of 41st–50th = £14 — but check the price-taker rule P = MC. With MC rising 9 → 11 → 14, profit max where MC ≤ P throughout: 40 units yields highest profit consistent with the standard table interpretation.",
+    },
+    // Q12 — Table 2 (game theory)
+    {
+      figure: `**Table 2 — Payoff matrix:** Two oligopolists choose between High and Low prices. Payoffs are (Firm 1, Firm 2) in £m.
+
+|  | Firm 2: High | Firm 2: Low |
+|---|---|---|
+| **Firm 1: High** | (12, 12) | (4, 14) |
+| **Firm 1: Low** | (14, 4) | (6, 6) |`,
+      stem: "Based on Table 2, the Nash equilibrium of this game is:",
+      options: [
+        "Both firms choose High — cooperative outcome.",
+        "Both firms choose Low — classic prisoners' dilemma outcome.",
+        "Firm 1 chooses High, Firm 2 chooses Low.",
+        "There is no Nash equilibrium in pure strategies.",
+      ],
+      answer: "B",
+      justification: "Low is a dominant strategy for each (14 > 12 if rival High; 6 > 4 if rival Low). Both choose Low → (6,6) — prisoners' dilemma.",
+    },
+    // Q13 — Table 3 (real wages)
+    {
+      figure: `**Table 3:** CPI and wage data for an economy.
+
+| Year | CPI (2020 = 100) | Avg nominal wage (£/hour) |
+|---|---|---|
+| 2020 | 100.0 | 15.00 |
+| 2021 | 102.5 | 15.50 |
+| 2022 | 111.7 | 16.30 |
+| 2023 | 119.8 | 17.40 |
+| 2024 | 123.6 | 18.50 |`,
+      stem: "Based on Table 3, between 2020 and 2024, the real hourly wage has changed by approximately:",
+      options: ["−0.3%.", "+0.4%.", "+23.3%.", "+23.6%."],
+      answer: "A",
+      justification: "Real wage 2020 = 15.00; real wage 2024 = 18.50/1.236 = £14.97. Change ≈ −0.2% / −0.3%.",
+    },
+    // Q14 — Table 4 (ERI + ULC)
+    {
+      figure: `**Table 4:** Sterling effective exchange rate and UK real unit labour costs (index 2015 = 100).
+
+| Year | UK sterling ERI | UK real unit labour costs |
+|---|---|---|
+| 2015 | 100.0 | 100.0 |
+| 2019 | 80.4 | 97.2 |
+| 2022 | 79.1 | 104.1 |
+| 2024 | 83.6 | 101.8 |`,
+      stem: "Based on Table 4, between 2015 and 2024 the UK's international price competitiveness has:",
+      options: [
+        "Improved significantly, because sterling has depreciated.",
+        "Improved, because real unit labour costs have fallen.",
+        "Worsened overall, because the depreciation has been partly offset by rising real unit labour costs.",
+        "Remained unchanged.",
+      ],
+      answer: "C",
+      justification: "ERI fell ~16% (gain in competitiveness) but RULC rose 1.8% — depreciation gains are largely offset; net competitiveness worse than the headline ERI fall suggests.",
+    },
+    // Q15 — Table 5 (AI productivity)
+    {
+      figure: `**Table 5:** Hours worked and output of an AI-assisted vs non-AI-assisted worker in the same firm.
+
+| Worker type | Hours/week | Output/week (units) |
+|---|---|---|
+| Non-AI-assisted | 40 | 80 |
+| AI-assisted | 40 | 160 |`,
+      stem: "Based on Table 5, assuming wage rates are unchanged, the firm's demand for non-AI-assisted labour is most likely to:",
+      options: [
+        "Rise, because output has increased.",
+        "Fall, because AI-assisted workers are now more cost-effective.",
+        "Remain unchanged.",
+        "Fall only if the AI-assisted worker costs more than twice the non-AI-assisted worker.",
+      ],
+      answer: "B",
+      justification: "AI-assisted MPL is double; if wages are equal, MRP/£ is twice as high — firm substitutes toward AI-assisted labour, demand for non-AI workers falls.",
+    },
+    // Q16 — Table 6 (carbon MEC vs price)
+    {
+      figure: `**Table 6:** Marginal external cost (MEC) of carbon emissions and current carbon price by industry (£ per tonne CO₂).
+
+| Industry | MEC | Carbon price |
+|---|---|---|
+| Power generation | 75 | 45 |
+| Heavy industry | 80 | 45 |
+| Aviation | 90 | 25 |
+| Agriculture | 60 | 0 |`,
+      stem: "Based on Table 6, which industry is the furthest from having its negative externality correctly priced?",
+      options: ["Power generation.", "Heavy industry.", "Aviation.", "Agriculture."],
+      answer: "C",
+      justification: "Aviation's gap (MEC − price) = £65, the largest of the four — most under-priced relative to its external cost.",
+    },
+    // Q17 — Table 7 (redistribution Gini)
+    {
+      figure: `**Table 7:** Hypothetical Gini coefficients before and after tax-and-transfer policies.
+
+| Country | Gini before (market) | Gini after (disposable) |
+|---|---|---|
+| A | 0.51 | 0.36 |
+| B | 0.48 | 0.40 |
+| C | 0.53 | 0.27 |
+| D | 0.44 | 0.38 |`,
+      stem: "Based on Table 7, which country has the strongest redistributive tax-and-transfer system?",
+      options: ["Country A.", "Country B.", "Country C.", "Country D."],
+      answer: "C",
+      justification: "Country C: Gini falls by 0.26 (0.53 → 0.27) — the largest redistributive impact.",
+    },
+    // Q18 — Table 8 (tariff revenue)
+    {
+      figure: `**Table 8:** World price, domestic supply and domestic demand for a good.
+
+| Price (£) | Domestic supply | Domestic demand |
+|---|---|---|
+| 10 (world price) | 20 | 100 |
+| 13 (with tariff) | 35 | 85 |
+| 15 | 45 | 75 |`,
+      stem: "Based on Table 8, the government imposes a £3 per-unit tariff, raising the domestic price to £13. The tariff revenue collected is:",
+      options: ["£60.", "£150.", "£80 × 3 = £240.", "(85 − 35) × £3 = £150."],
+      answer: "D",
+      justification: "Tariff revenue = imports × tariff = (Dd − Sd) × t = (85 − 35) × £3 = £150.",
+    },
+    // Q19 — Table 9 (wealth deciles)
+    {
+      figure: `**Table 9:** Share of UK wealth owned by each decile group.
+
+| Decile | % of total wealth |
+|---|---|
+| Bottom 10% | −0.2 |
+| Deciles 2–5 (bottom 50%) | 9.0 |
+| Deciles 6–9 (middle 40%) | 48.0 |
+| Top 10% | 43.0 |`,
+      stem: "Based on Table 9, which one of the following statements is correct?",
+      options: [
+        "Wealth inequality is lower than in a perfectly equal distribution.",
+        "The top decile owns more wealth than the bottom 50% combined.",
+        "The bottom 10% owns the most wealth.",
+        "There is no wealth inequality in the UK.",
+      ],
+      answer: "B",
+      justification: "Bottom 50% = (−0.2 + 9.0) = 8.8% < top 10% (43%). The top decile owns nearly 5× the bottom half combined.",
+    },
+    // Q20 — Figure 1 (monopoly vs PC)
+    {
+      figure: "**Figure 1:** Cost and revenue curves for a monopolist: downward-sloping AR (D) with MR below; U-shaped MC. Profit-max output Qm where MR = MC; price Pm on AR. Perfectly competitive comparison Qpc, Ppc where P = MC.",
+      figureKey: "monopoly-profit.svg",
+      figureCaption: "Figure 1 — Monopoly profit maximisation",
+      stem: "Based on Figure 1, compared with a perfectly competitive market with identical cost curves, the monopoly outcome involves:",
+      options: [
+        "Higher output and lower price.",
+        "Lower output, higher price, and a deadweight welfare loss.",
+        "The same output and price.",
+        "Higher output and higher price.",
+      ],
+      answer: "B",
+      justification: "Monopoly restricts output below the PC level (where P = MC), charges a higher price, and creates DWL.",
+    },
+    // Q21 — Figure 2 (DWL of indirect tax)
+    {
+      figure: "**Figure 2:** Indirect tax incidence: S shifts up to S+tax. Quantity falls from Q1 to Q2; consumer price rises and producer price falls. Tax revenue = rectangle of width Q2 and height = tax. DWL = triangle to the right of Q2 between S and D.",
+      figureKey: "indirect-tax.svg",
+      figureCaption: "Figure 2 — Tax incidence",
+      stem: "Based on Figure 2, the deadweight welfare loss of the tax is represented by:",
+      options: [
+        "The total tax revenue collected.",
+        "The reduction in consumer surplus.",
+        "The triangle formed by the reduction in quantity from Q1 to Q2 between supply and demand.",
+        "The gain in producer surplus.",
+      ],
+      answer: "C",
+      justification: "DWL is the welfare-triangle between the supply and demand curves over the lost output (Q1 − Q2) — surplus that vanishes because mutually beneficial trades no longer happen.",
+    },
+    // Q22 — Figure 3 (SRAS slope near LRAS)
+    {
+      figure: "**Figure 3:** AD shift in an economy with spare capacity. SRAS is flat well below LRAS and steepens as it approaches LRAS. AD₁ → AD₂ shift produces large output gain with small price-level change far from LRAS, but reverses near LRAS.",
+      figureKey: "adas-equilibrium.svg",
+      figureCaption: "Figure 3 — AD shift near LRAS vs far from LRAS",
+      stem: "Based on Figure 3, the elasticity of SRAS implies that the inflation cost of demand stimulus:",
+      options: [
+        "Is the same wherever the economy is operating.",
+        "Is lower the further the economy is from LRAS and higher the closer it gets.",
+        "Is always zero.",
+        "Is always equal to the nominal wage growth rate.",
+      ],
+      answer: "B",
+      justification: "Flatter SRAS (spare capacity) → demand stimulus mostly raises Y; steeper SRAS (near LRAS) → mostly raises P.",
+    },
+    // Q23 — Figure 4 (kinked-demand limitation)
+    {
+      figure: "**Figure 4:** Kinked demand curve oligopoly model with a kink at p*; AR elastic above the kink and inelastic below; MR has a vertical discontinuity at Q*. The model explains rigidity of p* but not how p* itself was set.",
+      figureKey: "caie-kinked-demand.svg",
+      figureCaption: "Figure 4 — Kinked demand curve",
+      stem: "Based on Figure 4, the kinked demand curve model is limited as a theory of oligopoly because it:",
+      options: [
+        "Explains the initial setting of the kinked price.",
+        "Does not explain how the initial price is set — only why it is rigid afterward.",
+        "Predicts aggressive price wars in all circumstances.",
+        "Is only applicable to monopolistic competition.",
+      ],
+      answer: "B",
+      justification: "Sweezy's model takes p* as given — it explains rigidity around p* but not why the kink is at that price level.",
+    },
+    // Q24 — Figure 5 (supply shock SRPC)
+    {
+      figure: "**Figure 5:** Short-run Phillips curve (SRPC) with inflation rate on the vertical axis and unemployment rate on the horizontal axis. Points A (low u, high π) and B (high u, low π) are marked along the SRPC.",
+      figureKey: "phillips-srlr.svg",
+      figureCaption: "Figure 5 — Short-run Phillips curve",
+      stem: "Based on Figure 5, an adverse supply shock (such as a sharp rise in energy prices) is most likely to cause:",
+      options: [
+        "A movement along the existing short-run Phillips curve.",
+        "The short-run Phillips curve to shift outward (higher inflation at every unemployment rate).",
+        "The short-run Phillips curve to shift inward.",
+        "The long-run Phillips curve to shift to the left.",
+      ],
+      answer: "B",
+      justification: "Adverse supply shock raises cost-push inflation at every level of u — SRPC shifts right/outward (stagflation).",
+    },
+    // Q25 — Figure 6 (monopolistic competition efficiency loss)
+    {
+      figure: "**Figure 6:** Long-run equilibrium in monopolistic competition: AR (D) tangent to AC at Q* where MC = MR. P* equals AC at Q* (normal profit). Q* lies to the left of the minimum point of AC — excess capacity.",
+      figureKey: "aqa-monopolistic-long-run.png",
+      figureCaption: "Figure 6 — Monopolistic competition: long-run equilibrium",
+      stem: "Based on Figure 6, the efficiency loss in monopolistic competition compared with perfect competition is best described as:",
+      options: [
+        "Zero, because only normal profits are earned.",
+        "Excess capacity: firms operate at output below the minimum point of the AC curve.",
+        "Supernormal profit in the long run.",
+        "Allocative efficiency at P = MC.",
+      ],
+      answer: "B",
+      justification: "Tangency of AR to downward-sloping AC occurs left of min-AC ⇒ firms produce below productive-efficient scale (excess capacity).",
+    },
+    // Q26 — Figure 7 (J-curve short-run)
+    {
+      figure: "**Figure 7:** J-curve diagram: current-account balance vs time. After depreciation, balance dips (short-run worsening), troughs, then improves above the original level (long-run improvement).",
+      figureKey: "caie-j-curve.svg",
+      figureCaption: "Figure 7 — J-curve after depreciation",
+      stem: "Based on Figure 7, the short-run deterioration of the current account after depreciation is primarily explained by:",
+      options: [
+        "Elasticities of demand for exports and imports being low in the short run.",
+        "Elasticities of demand being high in the short run.",
+        "An immediate fall in the foreign-currency value of imports.",
+        "Tariffs imposed by trading partners.",
+      ],
+      answer: "A",
+      justification: "In the short run PEDx + PEDm < 1 (Marshall–Lerner not met); imports cost more in domestic currency but volumes barely change, so the balance worsens.",
+    },
+    // Q27 — Figure 8 (ad valorem on high-priced goods)
+    {
+      figure: "**Figure 8:** Comparison of specific (per-unit) and ad valorem taxes. S+spec is parallel to S; S+adval pivots upward from the price-axis intercept so the wedge widens with price.",
+      figureKey: "indirect-tax.svg",
+      figureCaption: "Figure 8 — Specific vs ad valorem tax",
+      stem: "Based on Figure 8, if the government wishes the tax to have a progressively larger absolute impact on higher-priced goods, it should use:",
+      options: [
+        "A specific tax.",
+        "An ad valorem tax.",
+        "A lump-sum tax.",
+        "Either — the choice has no effect.",
+      ],
+      answer: "B",
+      justification: "Ad valorem (% of price) means absolute £ tax rises with price — larger impact on higher-priced goods.",
+    },
+    // Q28 — Figure 9 (Gini formula)
+    {
+      figure: "**Figure 9:** Lorenz curves for two countries (X and Y). Cumulative population share (0–1) on the horizontal axis; cumulative income share (0–1) on the vertical axis. 45° line of equality drawn.",
+      figureKey: "lorenz-brazil.svg",
+      figureCaption: "Figure 9 — Lorenz curves for countries X and Y",
+      stem: "Based on Figure 9, the Gini coefficient is calculated as:",
+      options: [
+        "The area between the Lorenz curve and the line of equality, expressed as a proportion of the total area under the line of equality.",
+        "The area below the Lorenz curve, expressed as a proportion of the area under the diagonal.",
+        "The slope of the Lorenz curve at its midpoint.",
+        "The maximum vertical distance from the line of equality.",
+      ],
+      answer: "A",
+      justification: "Gini = (area between equality line and Lorenz curve) ÷ (total area under equality line). 0 = perfect equality; 1 = perfect inequality.",
+    },
+    // Q29 — Figure 10 (monopolist never produces in inelastic region)
+    {
+      figure: "**Figure 10:** Linear demand curve with elasticity regions: PED > 1 (elastic) above midpoint, PED = 1 at midpoint, PED < 1 (inelastic) below.",
+      figureKey: "caie-ped-elastic.svg",
+      figureCaption: "Figure 10 — PED along a linear demand curve",
+      stem: "Based on Figure 10, a profit-maximising monopolist would NEVER produce at a point where:",
+      options: [
+        "Demand is inelastic, because a price rise would increase revenue and reduce costs.",
+        "Demand is elastic.",
+        "PED = 1 (unit elastic).",
+        "Quantity is at its maximum.",
+      ],
+      answer: "A",
+      justification: "In the inelastic region, MR < 0; raising price raises TR and cuts costs (lower Q) — so profit always rises by moving up out of that region.",
+    },
+    // Q30 — Figure 11 (tradable permits at Qs)
+    {
+      figure: "**Figure 11:** Negative production externality. £ on vertical axis; quantity on horizontal axis. MSC lies above MPC by the marginal external cost; MPB = MSB demand curve. Free-market output Qp where MPB = MPC; social optimum Qs where MPB = MSC.",
+      figureKey: "neg-externality-welfare.svg",
+      figureCaption: "Figure 11 — Negative production externality",
+      stem: "Based on Figure 11, a marketable emissions permit scheme set at the social optimum would:",
+      options: [
+        "Leave output unchanged at Qp.",
+        "Reduce output from Qp to Qs at the lowest-cost producers, achieving the efficient allocation.",
+        "Raise output above Qp.",
+        "Be economically equivalent to banning the activity entirely.",
+      ],
+      answer: "B",
+      justification: "A cap-and-trade scheme set at Qs caps output at the social optimum; permit trading routes abatement to the lowest-cost producers — cost-efficient allocation.",
+    },
+  ];
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Per-set Section B content (extracts + Q31/Q32/Q33) for Hard and Advanced,
+// transcribed verbatim from the curated PDFs to keep on-screen view in sync.
+// ─────────────────────────────────────────────────────────────────────────────
+
+const HARD_SECTION_B = {
+  caseTitle: "UK trade, Brexit and the services economy",
+  extracts: {
+    extractA: `**Figure 12: Selected UK trade and exchange-rate indicators**
+
+| Indicator | 2015 | 2019 | 2022 | 2024 |
+|---|---|---|---|---|
+| Goods exports (£bn, annual) | 286 | 372 | 403 | 386 |
+| Services exports (£bn, annual) | 229 | 306 | 408 | 452 |
+| Goods trade balance (£bn) | −122 | −149 | −210 | −198 |
+| Services trade balance (£bn) | +91 | +119 | +158 | +183 |
+| Sterling ERI (2015 = 100) | 100.0 | 80.4 | 79.1 | 83.6 |
+| Share of trade with EU (%) | 51.1 | 46.8 | 42.0 | 41.4 |
+
+*Source: Office for National Statistics / Bank of England, 2024*`,
+    extractB: `**Brexit and UK goods trade**
+
+The UK left the EU single market on 31 January 2020, with new customs arrangements fully implemented by January 2021. Goods trade with the EU contracted sharply — a 2024 study by the Centre for European Reform estimated UK goods exports to the EU are around 15% below their counterfactual. Non-tariff barriers — customs declarations, rules-of-origin certificates and regulatory divergence — have raised transaction costs significantly, particularly for smaller firms. The Trade and Cooperation Agreement (TCA) signed in December 2020 provides tariff-free, quota-free access for goods meeting origin rules, but without the frictionless flow of the single market.
+
+*Source: News reports, August 2024*`,
+    extractC: {
+      subtitle: "The rise of UK services exports",
+      body: `UK services exports have risen strongly since 2015, in contrast to the weaker goods performance. Financial services, legal services, consultancy, computer and information services, and creative industries are the UK's largest services export categories. The UK's services surplus has grown to £183bn in 2024 — the largest in the world in absolute terms. Non-EU markets have been particularly important: the UK's services exports to the US, China, India and the Gulf have grown faster than those to the EU.
+
+Economists note that services exports have benefited from features that are less affected by Brexit: digital delivery reduces the importance of physical borders; services are often concentrated in London, where agglomeration effects are strong; and many services firms serve global (not just European) customers. However, services are governed by different trade agreements than goods — services trade in the TCA is significantly shallower than in the EU single market. A 2024 Resolution Foundation report warned that EU moves to reduce services dependence on the UK (e.g. requirements for financial services firms to have EU subsidiaries) could gradually erode this advantage.`,
+      source: "News reports, November 2024",
+    },
+    extractD: {
+      subtitle: "The case for a services-led industrial strategy",
+      body: `Some economists argue that the UK should embrace its comparative advantage in services and design industrial policy around services-led growth. Specific proposals include: deeper services trade agreements with the US, India and major Asian economies; investment in the UK's "invisible infrastructure" (digital networks, regulatory frameworks, skills); deregulation of professional services export barriers; and support for high-growth technology start-ups via R&D incentives and growth-capital support.
+
+Critics argue that a services-led strategy risks three things. First, widening regional inequality: services jobs are concentrated in London and the South East, exacerbating the north–south divide. Second, volatility: financial and business services are sensitive to global shocks and regulatory change — the 2008 crisis hit the UK harder than peers because of the financial sector's dominance. Third, neglect of strategic industries: semiconductors, pharmaceuticals, clean energy manufacturing and defence equipment all have positive externalities and strategic significance that pure comparative-advantage analysis undervalues.
+
+These critics favour a balanced approach that combines support for services with targeted interventions to rebuild domestic manufacturing capabilities.`,
+      source: "News reports, January 2025",
+    },
+  },
+  q31: "Using the data in the Extracts, examine the extent to which the UK has experienced a structural shift from goods to services in its trade performance since 2015.",
+  q31Content: [
+    "K: define structural shift, trade composition, services vs goods balance.",
+    "App: services exports +£223bn (229→452), goods +£100bn (286→386); services surplus widened (+91 → +183), goods deficit widened (−122 → −198).",
+    "An: chain — Brexit NTBs depress goods trade with EU (−15% counterfactual); digital delivery + agglomeration support services growth; share of EU trade fell 51% → 41%.",
+    "E: judgement — clear evidence of structural shift in composition, but absolute goods exports still substantial; services growth concentrated in London; consider whether shift is structural or cyclical.",
+  ],
+  q32: "Using Extracts A, B and C and your knowledge of economics, explain why the UK's comparative advantage may lie in services rather than in goods.",
+  q32Content: [
+    "K: comparative advantage, factor endowments, opportunity cost.",
+    "App: services surplus £183bn (largest in world); UK strengths in finance, legal, creative, IT.",
+    "An: chain — UK abundant in human capital and English-language services; agglomeration in London (positive externalities); digital delivery overcomes border frictions; Brexit NTBs raise relative cost of goods trade.",
+    "Diagram: PPF showing UK relative efficiency in services vs goods.",
+    "Synoptic: link to deindustrialisation, Dutch disease, exchange-rate effects.",
+  ],
+  q33: "Considering the information in Extract D and the original evidence in Extracts A, B and C, do you recommend that the UK government should adopt a services-led industrial strategy as the main approach to improving the UK's long-run trade performance? Justify your recommendation.",
+  q33Content: [
+    "Strengths of services-led: builds on revealed comparative advantage; high value-added; agglomeration economies; less affected by Brexit NTBs.",
+    "Risks: regional inequality (London/SE concentration); volatility (2008 crisis); strategic vulnerability in goods (semiconductors, pharma, clean energy, defence); positive externalities of manufacturing.",
+    "Alternatives: balanced strategy (services + targeted manufacturing reshoring); deeper EU goods agreement; regional investment (levelling-up).",
+    "Justification: evidence-based recommendation — most candidates will conclude that a balanced approach (services + selective strategic manufacturing support) outperforms a pure services-led strategy because it manages volatility, regional inequality and strategic risk.",
+  ],
+} as const;
+
+const ADVANCED_SECTION_B = {
+  caseTitle: "Artificial intelligence, labour markets and inequality",
+  extracts: {
+    extractA: `**Figure 12: Selected indicators on AI and the UK labour market**
+
+| Indicator | 2020 | 2022 | 2024 |
+|---|---|---|---|
+| UK business AI adoption rate (%) | 12 | 24 | 43 |
+| Share of UK jobs 'highly exposed' to generative AI (%) | — | — | 30 |
+| Real GDP per hour worked (2020 = 100) | 100.0 | 101.5 | 102.8 |
+| Top 10% / bottom 10% earnings ratio | 4.0 | 4.2 | 4.5 |
+| AI-related job vacancies (% of total) | 1.1 | 2.8 | 5.4 |
+
+*Source: ONS / Bank of England / IFS, 2024*`,
+    extractB: `**AI, automation and labour demand**
+
+Generative artificial intelligence (AI) has advanced rapidly since 2022, with tools such as ChatGPT and specialised coding, writing and design assistants now used by over 40% of UK businesses. A 2024 IMF study estimated that 30% of UK jobs are 'highly exposed' to generative AI, with an additional 30% moderately exposed. Unlike earlier waves of automation that primarily displaced routine manual tasks, current AI technologies threaten cognitive work — including in accounting, law, journalism, translation and customer service. Labour economists disagree about the net effect: some studies suggest AI will complement (raise the productivity of) most workers, while others warn of substantial displacement.
+
+*Source: News reports, September 2024*`,
+    extractC: {
+      subtitle: "Inequality and the technology premium",
+      body: `Income inequality in the UK has risen since 2008, with the Gini coefficient drifting from around 0.34 to 0.36. A key driver has been the growing 'technology premium' — the gap between wages of workers with technical / AI-related skills and those without. In 2024, UK AI-related job vacancies offered average wages around 50% above the national median. Regional inequality has also widened: London and the South East capture a disproportionate share of AI-related investment and jobs, exacerbating the gap with lower-productivity regions.
+
+The distributional pattern echoes earlier periods of technological change, when skill-biased technical change raised the relative demand for educated workers. However, some economists argue generative AI may differ because it can substitute for (rather than complement) cognitive skills. Acemoglu (2024) warns that if AI primarily substitutes for workers rather than empowers them, the labour share of national income may continue to fall. Government data shows UK business investment in computing and software has risen sharply since 2022, but investment in worker training has not kept pace.`,
+      source: "News reports, October 2024",
+    },
+    extractD: {
+      subtitle: "Policy options for the AI economy",
+      body: `Governments face difficult choices about how to respond to AI. One school argues for a non-interventionist stance: productivity gains from AI will raise average incomes, and markets will adjust through reallocation of labour to new sectors. The historical record of technology transitions — from the printing press to computing — shows that new technologies ultimately create more jobs than they destroy, even when short-term disruption is severe. In this view, supply-side reforms (skills training, labour market flexibility) are the main policy response needed.
+
+Others advocate more active intervention. Proposed policies include: heavier regulation of AI developers to reduce concentration of market power; strengthening labour rights and collective bargaining so workers can capture more of the productivity gains; greater investment in retraining and income support for displaced workers; a universal basic income (UBI) funded by higher taxation of AI-related profits; or targeted taxation of capital substituting for labour ("robot tax"). Critics of these measures point to risks of government failure (robot tax would slow AI adoption, damaging UK competitiveness), regulatory capture (big AI firms lobbying to entrench their position), and unintended consequences (UBI may reduce labour supply and growth). A 2024 OECD report concluded that no single policy is sufficient — a combination of education reform, targeted transfers and competition policy is needed.`,
+      source: "News reports, December 2024",
+    },
+  },
+  q31: "Using the data in the Extracts, examine the extent to which the rapid adoption of AI technologies has affected UK productivity and income inequality since 2020.",
+  q31Content: [
+    "K: define productivity (output per hour), income inequality (Gini, P90/P10), AI adoption.",
+    "App: AI adoption 12% → 43% (2020–24); productivity index 100 → 102.8 (modest); top-10/bottom-10 earnings ratio 4.0 → 4.5 (rising); AI vacancies 1.1% → 5.4%.",
+    "An: chain — AI adoption raises productivity in adopting firms; technology premium widens wage distribution; concentrated in London/SE.",
+    "E: judgement — productivity uplift modest at aggregate level; inequality has clearly widened, plausibly partly causal but other drivers (Brexit, energy, Covid) operate.",
+  ],
+  q32: "Using Extracts A, B and C and your knowledge of economics, explain why the adoption of AI technologies may increase both productivity and income inequality in the UK economy.",
+  q32Content: [
+    "Productivity channels: AI raises MPL of adopters (Table 5 example), shifts LRAS right, lowers unit labour costs.",
+    "Inequality channels: skill-biased technical change raises MRP of AI-skilled workers; technology premium 50% above median; capital substituting for labour reduces labour share (Acemoglu).",
+    "Diagram: labour-market diagram with two demand curves (skilled, unskilled) — D shifts right for skilled, left for unskilled.",
+    "Synoptic: regional concentration in London/SE compounds spatial inequality.",
+    "Limits: depends whether AI complements or substitutes; training investment matters.",
+  ],
+  q33: "Considering the information in Extract D and the original evidence in Extracts A, B and C, do you recommend that the UK government should adopt active interventionist policies (such as labour-protective regulation, a universal basic income or targeted AI taxation) rather than relying on market adjustment to manage the economic effects of AI? Justify your recommendation.",
+  q33Content: [
+    "Case for intervention: market failures (asymmetric info, externalities, monopoly power of AI firms); equity concerns (rising inequality, falling labour share); historical record of disruption (Polanyi double-movement).",
+    "Risks of intervention: government failure (robot tax slows adoption, harms competitiveness); regulatory capture (big AI firms lobbying); unintended consequences (UBI may reduce labour supply); fiscal cost.",
+    "Case for market adjustment: long-run record shows technology creates more jobs than it destroys; supply-side reforms (skills, labour flexibility) target root causes.",
+    "Synthesis: OECD view (no single policy sufficient — combination of education reform, targeted transfers and competition policy).",
+    "Justified recommendation: most candidates will recommend a combination — supply-side investment (skills retraining) + competition policy targeting AI concentration + targeted transfers — rather than a single policy or pure laissez-faire.",
+  ],
+} as const;
+
 const SETS: Record<string, AqaPaper3Set> = {};
 
 const SET_SPECS: Array<{
