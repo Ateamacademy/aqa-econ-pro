@@ -4580,288 +4580,676 @@ Evaluate the view that, in the context of behavioural economics and consumer nud
     id: "eduqas-p2-a",
     subject: "eduqas" as any,
     paper: "2",
-    title: "Paper 2 — Set A",
-    description: "Macroeconomic Performance & Policy. Set A — core practice.",
+    title: "Paper 2 — Set A (Moderate)",
+    description: "Component 2: Exploring Economic Behaviour. Set A — Moderate.",
     totalMarks: 80,
-    content: `# Eduqas A-Level Economics (A510QS/02) — Macroeconomic Performance & Policy — Predicted Paper Set A
+    content: `# Eduqas A-Level Economics (A520U20-1) — Component 2: Exploring Economic Behaviour — Predicted Paper Set A (Moderate)
 
-**Time: 120 minutes | Total: 80 marks**
+**Time: 2 hours 30 minutes | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer all questions.
 
-## Section A: Data Response
+## Question 1 — Things can only get better?
 
-**Extract 1 — The uk output gap and the recovery:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+In recent years, the UK housing market has come to symbolise some of the deepest tensions in the modern UK economy. Average house prices have risen faster than earnings for much of the past two decades, locking younger households out of ownership, widening regional wealth gaps, and reshaping patterns of consumption, saving and political debate.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+In 2023 the Government renewed its commitment to deliver 300,000 new homes per year across the UK, supported by infrastructure investment, planning reform and targeted subsidies for first-time buyers. Yet completions have repeatedly fallen short of that target.
 
-Question 1 [2 marks]
-With reference to the UK output gap and the recovery, explain two consequences of the issue.
+**Affordability and prices.** The ratio of average house prices to average earnings has roughly doubled since 2000 (Figure 1).
 
-Question 2 [4 marks]
-With reference to the UK output gap and the recovery, explain one government response to the issue.
+**Figure 1 — UK house price to earnings ratio, 2000–2023.**
 
-Question 3 [6 marks]
-With reference to supply-side policy and the productivity puzzle, explain one factor that influences the issue.
+Meanwhile housing completions have been well below the level the Government and most independent analysts agree is needed to bring prices into line with earnings (Figure 2).
 
-Question 4 [9 marks]
-With reference to the UK output gap and the recovery, explain one mechanism that determines the issue.
+**Figure 2 — UK housing completions vs the 300,000 target, 2010–2023.**
 
-Question 5 [12 marks]
-With reference to exchange rate regimes and the eurozone, explain two consequences of the issue.
+**Ownership, renting and generational divides.** Home-ownership rates among younger households have fallen sharply since the 1990s (Figure 3). At the same time, the share of households renting privately has risen (Figure 4).
 
-## Section B: Essay (choose ONE)
+**Figure 3 — Home-ownership rate by age group, 1991 vs 2023.**
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of the UK output gap and the recovery, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+**Figure 4 — Housing tenure in the UK, 1981 vs 2023.**
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of exchange rate regimes and the eurozone, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+**The role of mortgage rates.** Mortgage rates fell steadily from the late 2000s, supporting higher house prices by reducing the monthly cost of borrowing. That pattern reversed sharply in 2022–23 as the Bank of England raised Bank Rate to combat inflation (Figure 5).
+
+**Figure 5 — Average 2-year fixed-rate UK mortgage rate, 2005–2023.**
+
+**Regional patterns.** The UK's housing stock is not distributed evenly across regions. Some regions have a relatively low number of dwellings per head of population; London stands out as having the fewest (Figure 6). Prices vary even more dramatically (Figure 7): an average home in London is more than three times the price of one in the North East.
+
+**Figure 6 — Dwellings per 1,000 population by UK region, 2022.**
+
+**Figure 7 — Average house prices by UK region, 2023 (£000s).**
+
+**The Government's housing strategy.** The Government has set out a comprehensive housing strategy with the stated aim of improving both affordability and supply. The key elements of the plan are summarised in Figure 8.
+
+**Figure 8 — The UK Government's housing strategy**
+
+| Strand | Key measures |
+|---|---|
+| Supply | 300,000 new homes per year target, with a £11.5 billion Affordable Homes Programme (2021–26). Planning reform to speed up local-authority decisions and bring more land forward for development. |
+| Demand support | Stamp Duty nil-rate band raised to £250,000 (£425,000 for first-time buyers). Mortgage Guarantee Scheme providing lender guarantees on 95% mortgages. |
+| Regional rebalancing | Levelling-Up Fund and Towns Fund investing in brownfield sites outside London and the South East. Freeports and Investment Zones offering planning flexibility and tax incentives. |
+| Renters | Renters Reform Bill abolishing no-fault evictions and introducing a Decent Homes Standard for the private rented sector. |
+
+*Sources: ONS, Bank of England, MHCLG, HM Treasury.*
+
+Question 1.1 [5 marks]
+Using the data, explain why house prices have risen faster than earnings in the UK since 2000 (Figure 1).
+
+Question 1.2 [5 marks]
+Using the data, explain why the UK Government might want to increase the supply of housing in the UK.
+
+Question 1.3 [10 marks]
+How effective is the UK Government's housing strategy (Figure 8) likely to be in improving housing affordability?
+
+Question 1.4 [10 marks]
+Using the data, discuss the extent to which the rise in mortgage rates since 2022 (Figure 5) will affect the UK housing market.
+
+Question 1.5 [10 marks]
+Using the data, discuss whether falling home-ownership rates among younger households (Figure 3) are likely to widen UK regional inequalities.
+
+## Question 2 — Long live oligopolistic competition!
+
+The UK grocery market is worth around £220 billion a year and is dominated by four large supermarket chains: Tesco, Sainsbury's, Asda and Morrisons. Together they account for around two-thirds of all grocery sales. In recent years, German discount chains Aldi and Lidl have rapidly expanded their market share, while premium grocers Waitrose and Marks & Spencer occupy a smaller but distinctive niche. The market displays many of the classic features of an oligopoly.
+
+**Figure 1 — UK grocery market: market shares and key facts (2023)**
+
+| Firm (share) | Notes |
+|---|---|
+| Tesco: 27.5% | The market leader since the 1990s. Operates around 4,000 stores. Launched Clubcard Prices in 2020 — lower shelf prices for loyalty-card holders. |
+| Sainsbury's: 15.1% | Operates around 1,400 stores. Runs the Nectar loyalty programme. Owns Argos and the Habitat brand. Launched Nectar Prices in 2023. |
+| Asda: 13.6% | Acquired by the Issa Brothers and TDR Capital in 2021. Best known for "Every Day Low Pricing" strategy. |
+| Morrisons: 8.7% | Strong presence in Yorkshire and the North. Vertically integrated, with its own farms and manufacturing. |
+| Aldi: 10.4% | Discount chain with a limited-range, high-turnover model. Grew share from 3% in 2010. Price Match pressure on Big Four. |
+| Lidl: 7.9% | Second major discounter. Operates around 960 UK stores. Aggressive expansion plan announced in 2023. |
+| Others: 16.8% | Waitrose (4.5%), Co-op (5.7%), M&S Food (3.7%), Iceland and others. |
+
+Competition between these firms is intense but largely non-price in nature. The Big Four supermarkets respond quickly to each other's promotions, launch continuous range innovations, and increasingly compete on convenience (small-format stores, online delivery slots, rapid-delivery partnerships). Loyalty pricing schemes such as Clubcard Prices and Nectar Prices have, according to critics, introduced a form of two-tier pricing that may obscure underlying prices from non-members.
+
+The Competition and Markets Authority (CMA) has opened several investigations into the sector, including into loyalty pricing practices in 2023 and into supplier relations in 2024. Most recent mergers have been blocked or required significant divestments — for example, the 2019 Sainsbury's–Asda merger proposal was rejected on the grounds that it would harm consumers.
+
+The data below (Figure 2) shows the weekly demand at different prices for a ready-meal lasagne produced by FreshMart Ltd, an oligopolistic supermarket.
+
+**Figure 2 — FreshMart Ltd: Demand and cost schedule for lasagne (£)**
+
+| Price | Lasagne/week (000s) | Total Revenue | Marginal Revenue | Total Cost | Marginal Cost |
+|---|---|---|---|---|---|
+| £8 | 0 | | | £200 | |
+| £7 | 10 | | | £300 | |
+| £6 | 20 | | | £380 | |
+| £5 | 30 | | | £450 | |
+| £4 | 40 | | | £540 | |
+| £3 | 50 | | | £660 | |
+| £2 | 60 | | | £820 | |
+| £1 | 70 | | | £1,050 | |
+| £0.50 | 80 | | | £1,380 | |
+
+Many supermarkets also face significant upward pressure on their costs. Energy, labour and freight costs rose sharply between 2021 and 2023, squeezing operating margins. At the same time, the expansion of Aldi and Lidl has put downward pressure on prices. Supermarkets have responded with cost-cutting programmes, automation of checkouts and warehouses, and the rollout of private-label products which typically carry lower costs than branded alternatives.
+
+Is the UK grocery market serving consumers well? Supporters of the current structure argue that competition between a handful of large chains, supplemented by fast-growing discounters, is delivering choice and value. Critics point to the CMA's investigations, the high profits earned by leading firms at the peak of the 2022 cost-of-living crisis, and the long-standing concerns about pressure placed on suppliers — farmers in particular — as evidence that the market is not as competitive as it appears.
+
+*Sources: Kantar Worldpanel; CMA.*
+
+Question 2.1 [5 marks]
+Using the information provided on the UK grocery market, outline the characteristics of an oligopolistic industry.
+
+Question 2.2 [7 marks]
+Using Figure 2, calculate the marginal revenue (MR) and marginal cost (MC) for each of the output levels (lasagne/week) from 0 to 80,000. Record the answers in your pink answer booklet. Using your answers explain at what level of output FreshMart Ltd will, in theory, maximise profits.
+
+Question 2.3 [10 marks]
+Using a costs and revenue diagram, evaluate the effects on a supermarket's abnormal profits of the expansion of Aldi and Lidl.
+
+Question 2.4 [7 marks]
+Evaluate the view that loyalty-pricing schemes such as Clubcard Prices and Nectar Prices are harmful to consumers in the UK grocery market.
+
+Question 2.5 [11 marks]
+With reference to the data, discuss the extent to which the UK grocery market leads to a reduction of economic welfare.
+
+**END OF PAPER**
 `,
   },
   {
     id: "eduqas-p2-b",
     subject: "eduqas" as any,
     paper: "2",
-    title: "Paper 2 — Set B",
-    description: "Macroeconomic Performance & Policy. Set B — stretch — applied scenarios.",
+    title: "Paper 2 — Set B (Hard)",
+    description: "Component 2: Exploring Economic Behaviour. Set B — Hard.",
     totalMarks: 80,
-    content: `# Eduqas A-Level Economics (A510QS/02) — Macroeconomic Performance & Policy — Predicted Paper Set B
+    content: `# Eduqas A-Level Economics (A520U20-1) — Component 2: Exploring Economic Behaviour — Predicted Paper Set B (Hard)
 
-**Time: 120 minutes | Total: 80 marks**
+**Time: 2 hours 30 minutes | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer all questions.
 
-## Section A: Data Response
+## Question 1 — Things can only get better?
 
-**Extract 1 — Supply-side policy and the productivity puzzle:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+Between 2021 and 2023 the UK economy experienced its sharpest inflationary episode in more than forty years. Headline CPI inflation rose from under 1% in early 2021 to a peak of 11.1% in October 2022 — the highest reading since 1981. The policy response from the Bank of England and HM Treasury tested the theoretical frameworks that have dominated UK macroeconomic policy since 1997.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+**The inflation shock.** The inflationary surge had multiple drivers. Global demand rebounded rapidly following the easing of Covid-19 restrictions; supply chains were dislocated; energy markets were disrupted by Russia's invasion of Ukraine in February 2022; and UK labour supply was constrained by a rise in economic inactivity. Together these forces pushed inflation far above the Bank of England's 2% target (Figure 1).
 
-Question 1 [2 marks]
-With reference to supply-side policy and the productivity puzzle, explain one government response to the issue.
+**Figure 1 — UK CPI inflation, Jan 2018 – Dec 2023.**
 
-Question 2 [4 marks]
-With reference to supply-side policy and the productivity puzzle, explain one factor that influences the issue.
+**Monetary policy tightening.** The Monetary Policy Committee (MPC) kept Bank Rate at its historic low of 0.1% until December 2021. Once it began raising the rate, it did so repeatedly and aggressively, taking Bank Rate from 0.1% in late 2021 to 5.25% by August 2023 — the highest rate since 2008 (Figure 2).
 
-Question 3 [6 marks]
-With reference to supply-side policy and the productivity puzzle, explain one mechanism that determines the issue.
+**Figure 2 — UK Bank Rate and CPI inflation, 2020–2023.**
 
-Question 4 [9 marks]
-With reference to supply-side policy and the productivity puzzle, explain two consequences of the issue.
+**The cost of living and wage response.** With inflation far above nominal wage growth for most of the 2022–23 period, real wages fell sharply. Only in late 2023 did nominal wage growth catch up with price rises (Figure 3).
 
-Question 5 [12 marks]
-With reference to exchange rate regimes and the eurozone, explain one government response to the issue.
+**Figure 3 — Nominal wage growth vs CPI inflation, 2021–2023.**
 
-## Section B: Essay (choose ONE)
+**The monetary aggregates.** Critics of the Bank of England argue that the expansion of the broad money supply during the pandemic — partly a result of large-scale asset purchases (quantitative easing) — created the conditions for the subsequent inflation (Figure 4).
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of the UK output gap and the recovery, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+**Figure 4 — UK broad money (M4) annual growth, 2019–2023.**
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of exchange rate regimes and the eurozone, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+**Household confidence and output.** The cost-of-living shock weighed heavily on household confidence (Figure 5) and UK growth was either weak or negative through most of 2022–23 (Figure 7).
+
+**Figure 5 — GfK Consumer Confidence index, 2020–2023.**
+
+**Figure 6 — Contribution to annual CPI by component, late 2023.**
+
+**Figure 7 — UK quarterly GDP growth, 2021–2023.**
+
+**The fiscal-monetary mix.** The Bank of England's tightening was partly offset by fiscal measures designed to cushion households from rising costs. A summary of the main elements of the policy response is shown in Figure 8.
+
+**Figure 8 — UK macroeconomic policy response, 2022–2024**
+
+| Strand | Key measures |
+|---|---|
+| Monetary policy | Bank Rate raised from 0.1% (Dec 2021) to 5.25% (Aug 2023) — the steepest tightening cycle since 1989. Quantitative Tightening: the Bank of England began actively selling gilts from the asset purchase programme in late 2022. |
+| Fiscal support | Energy Price Guarantee (Oct 2022 – June 2023): typical bills capped at £2,500/year at a cost of around £40 billion. Cost-of-living payments totalling £900 to households on means-tested benefits. |
+| Supply-side | Increased childcare support (15 hours free childcare for 9-month-olds from April 2024) aimed at reducing economic inactivity. Reforms to Restart and Returnerships schemes to encourage over-50s back into the labour market. |
+| Wage policy | National Living Wage rose 9.7% in April 2023 (to £10.42) and 9.8% in April 2024 (to £11.44). Public sector pay awards of 5–7% for most occupations during 2023–24. |
+
+*Sources: ONS, Bank of England, HM Treasury, GfK.*
+
+Question 1.1 [5 marks]
+Using the data, explain the main causes of the rise in UK inflation between 2021 and 2022 (Figure 1).
+
+Question 1.2 [5 marks]
+Using the data, explain why the Bank of England raised Bank Rate so aggressively between December 2021 and August 2023 (Figure 2).
+
+Question 1.3 [10 marks]
+How effective is the UK's policy response (Figure 8) likely to be in returning inflation to the 2% target without causing a recession?
+
+Question 1.4 [10 marks]
+Using the data, discuss the extent to which the rise in Bank Rate is likely to reduce UK inflation (Figures 1 and 2).
+
+Question 1.5 [10 marks]
+Using the data, discuss whether the fall in real wages during 2022–23 (Figure 3) is likely to have a lasting effect on the UK economy.
+
+## Question 2 — The natural monopoly question
+
+The UK domestic energy market was transformed during the 2010s and 2020s. Liberalisation in the 1990s had ended the regional monopolies held by the privatised successors to British Gas and the old Electricity Boards; by 2018 more than 70 independent suppliers competed for residential customers. Then came the energy price shock of 2021–22: wholesale gas prices rose nine-fold, the Ofgem price cap jumped sharply, and 29 suppliers failed in 2021 alone. The market has since consolidated around a smaller number of large firms (Figure 1), many of which display classic natural-monopoly characteristics.
+
+**Figure 1 — GB domestic energy market shares, late 2023.**
+
+Some of the essential features of the market make it different from a typical competitive market. The electricity transmission and gas transmission networks are natural monopolies — it would be economically wasteful to duplicate the pylons, wires and pipes. Retail supply is nominally competitive, but customer acquisition is costly and the price cap introduced in 2019 sets an effective price ceiling for default-tariff customers. Economies of scale in procurement, hedging and operations strongly favour larger suppliers.
+
+The Ofgem price cap is reviewed every three months and is based on a formula that passes through wholesale costs with a limited retailer margin. During the 2022 price shock the cap rose sharply, leaving suppliers squeezed between high wholesale costs and a cap that lagged behind (Figure 2).
+
+**Figure 2 — Ofgem price cap, typical household (£/year), 2021–2023.**
+
+The data below (Figure 3) shows the cost and revenue schedule for Power-Up Ltd, a medium-sized energy supplier. Demand is measured in thousands of megawatt-hours (MWh) sold per month.
+
+**Figure 3 — Power-Up Ltd: Cost and revenue schedule**
+
+| Price (£/MWh) | MWh sold (000s) | Total Revenue | Marginal Revenue | Total Cost | Marginal Cost |
+|---|---|---|---|---|---|
+| £260 | 0 | | | £2,000 | |
+| £240 | 10 | | | £3,600 | |
+| £220 | 20 | | | £5,000 | |
+| £200 | 30 | | | £6,400 | |
+| £180 | 40 | | | £7,800 | |
+| £160 | 50 | | | £9,400 | |
+| £140 | 60 | | | £11,200 | |
+| £120 | 70 | | | £13,400 | |
+| £100 | 80 | | | £16,200 | |
+
+The market structure has important implications for consumers. First, the price cap protects most households from the worst of volatile wholesale prices — but it also limits the range of tariffs on offer, reducing the benefit of active switching. Second, the failure of 29 smaller suppliers in 2021 imposed large costs on remaining customers through the Supplier of Last Resort levy and the Energy Company Obligation, concentrating risk among the largest firms. Third, the natural-monopoly elements of the sector (networks, metering) are subject to price controls rather than market competition.
+
+Is the current market structure in consumers' interests? Supporters argue that a stable market of large, well-capitalised suppliers is more resilient and able to pass through efficiency gains. Critics point to the limited scope for genuine price competition, the high concentration after consolidation, and the opacity of how wholesale costs are passed through to the cap. The CMA completed a market investigation in 2016 and Ofgem is regularly consulted on reform — including proposals for social tariffs, dynamic pricing and expanded heat-pump tariffs as Net Zero approaches.
+
+*Sources: Ofgem; Cornwall Insight; ONS.*
+
+Question 2.1 [5 marks]
+Using the information provided on the UK energy market, outline the characteristics of a natural monopoly.
+
+Question 2.2 [7 marks]
+Using Figure 3, calculate the marginal revenue (MR) and marginal cost (MC) for each of the output levels (MWh sold) from 0 to 80,000. Record the answers in your pink answer booklet. Using your answers explain at what level of output Power-Up Ltd will, in theory, maximise profits.
+
+Question 2.3 [10 marks]
+Using a costs and revenue diagram, evaluate the effects on an energy supplier's abnormal profits of Ofgem tightening the price cap.
+
+Question 2.4 [7 marks]
+Evaluate the view that price regulation (such as the Ofgem price cap) is the best way to protect consumers in a natural-monopoly industry.
+
+Question 2.5 [11 marks]
+With reference to the data, discuss the extent to which the consolidation of the UK energy market since 2021 reduces economic welfare.
+
+**END OF PAPER**
 `,
   },
   {
     id: "eduqas-p2-c",
     subject: "eduqas" as any,
     paper: "2",
-    title: "Paper 2 — Set C",
-    description: "Macroeconomic Performance & Policy. Set C — challenge — synoptic & evaluative.",
+    title: "Paper 2 — Set C (Advanced)",
+    description: "Component 2: Exploring Economic Behaviour. Set C — Advanced.",
     totalMarks: 80,
-    content: `# Eduqas A-Level Economics (A510QS/02) — Macroeconomic Performance & Policy — Predicted Paper Set C
+    content: `# Eduqas A-Level Economics (A520U20-1) — Component 2: Exploring Economic Behaviour — Predicted Paper Set C (Advanced)
 
-**Time: 120 minutes | Total: 80 marks**
+**Time: 2 hours 30 minutes | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer all questions.
 
-## Section A: Data Response
+## Question 1 — Things can only get better?
 
-**Extract 1 — Exchange rate regimes and the eurozone:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+The UK has positioned itself at the forefront of the global transition to a low-carbon economy. The Climate Change Act 2008 committed the country to legally binding carbon budgets, and in June 2019 the UK became the first major economy to legislate for Net Zero by 2050. Since 1990, UK territorial greenhouse-gas emissions have fallen by around 52% — further than in any other G7 country (Figure 1).
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+**Figure 1 — UK territorial greenhouse-gas emissions, 1990–2022.**
 
-Question 1 [2 marks]
-With reference to exchange rate regimes and the eurozone, explain one factor that influences the issue.
+The bulk of the reduction so far has come from decarbonising electricity generation. Coal's share of UK electricity has fallen from 70% in 1990 to less than 2% in 2023. The next phase of the transition is harder: it requires decarbonising transport, heat in buildings, and the most energy-intensive parts of industry, sectors that still account for the majority of residual emissions (Figure 2).
 
-Question 2 [4 marks]
-With reference to exchange rate regimes and the eurozone, explain one mechanism that determines the issue.
+**Figure 2 — UK emissions by sector, 2022 (% of total).**
 
-Question 3 [6 marks]
-With reference to supply-side policy and the productivity puzzle, explain two consequences of the issue.
+**The investment gap.** The Climate Change Committee estimates that the UK needs £50–70 billion a year of low-carbon investment across the 2025–2030 period to meet the Sixth Carbon Budget. Actual investment is running well below that level (Figure 3).
 
-Question 4 [9 marks]
-With reference to exchange rate regimes and the eurozone, explain one government response to the issue.
+**Figure 3 — UK low-carbon investment vs CCC target, 2015–2023.**
 
-Question 5 [12 marks]
-With reference to exchange rate regimes and the eurozone, explain one factor that influences the issue.
+**International comparisons.** The UK's emissions per capita have fallen faster than those of most other advanced economies. But comparisons also highlight the scale of the challenge: some major trading partners emit three times more per person (Figure 4).
 
-## Section B: Essay (choose ONE)
+**Figure 4 — Emissions per capita, selected advanced economies, 2023.**
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of the UK output gap and the recovery, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+**The green economy.** Employment in the low-carbon and renewable-energy economy (LCREE) has risen rapidly, reaching 432,000 jobs in 2023. The sector is growing faster than the UK economy overall (Figure 5).
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of exchange rate regimes and the eurozone, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+**Figure 5 — LCREE employment, 2015–2023 (full-time equivalent, 000s).**
+
+**The cost of going green.** Low-carbon technologies typically cost more up-front than their fossil-fuel counterparts, even where running costs are lower (Figure 6). This creates a short-term affordability barrier for many households.
+
+**Figure 6 — Upfront cost of low-carbon vs fossil alternatives (£).**
+
+**Regional job creation.** Green-economy jobs are not evenly distributed across the UK. Regions historically dependent on fossil-fuel extraction (Scotland, North East, Yorkshire & Humber) are projected to capture a disproportionate share of the offshore-wind, carbon-capture and hydrogen jobs created by 2030 (Figure 7).
+
+**Figure 7 — Projected additional green jobs by region to 2030.**
+
+**The UK's net-zero policy framework.** The UK policy response combines carbon pricing, targeted subsidies, sectoral regulation and international measures (Figure 8).
+
+**Figure 8 — UK net-zero policy framework**
+
+| Strand | Key measures |
+|---|---|
+| Carbon pricing | UK Emissions Trading Scheme (UK ETS): cap-and-trade covering power, industry and aviation. Cap declines by 2.2% per year. Carbon Price Support tops up ETS prices for power generators to around £18/tonne. |
+| Low-carbon investment | £20 billion programme for CCUS (Carbon Capture, Utilisation and Storage) industrial clusters by 2030. Contracts for Difference auctions guaranteeing prices for offshore wind and other renewables. |
+| Demand-side subsidies | Boiler Upgrade Scheme: £7,500 grant for heat pumps in owner-occupied homes. Electric vehicle charging infrastructure investment (£1.6 billion by 2030). |
+| Regulation & standards | Phase-out of new petrol and diesel cars from 2035 (extended from 2030 in Sept 2023). New-build Future Homes Standard prohibits gas boilers in new homes from 2025. |
+| Border measures | UK Carbon Border Adjustment Mechanism (CBAM) from 2027, covering imports of iron, steel, aluminium, cement, fertiliser and hydrogen. |
+
+*Sources: DESNZ, CCC, ONS, IEA.*
+
+Question 1.1 [5 marks]
+Using the data, explain why UK greenhouse-gas emissions have fallen since 1990 (Figure 1).
+
+Question 1.2 [5 marks]
+Using the data, explain why the UK Government might want to accelerate investment in low-carbon technologies (Figure 3).
+
+Question 1.3 [10 marks]
+How effective is the UK's net-zero policy framework (Figure 8) likely to be in delivering the transition to a low-carbon economy?
+
+Question 1.4 [10 marks]
+Using the data, discuss the extent to which the distribution of green jobs across UK regions (Figure 7) is likely to reduce UK regional inequalities.
+
+Question 1.5 [10 marks]
+Using the data, discuss whether the higher upfront cost of low-carbon technologies (Figure 6) is likely to make the net-zero transition regressive.
+
+## Question 2 — The winner takes most
+
+A small number of digital platforms now dominate the world's most strategically important markets. Google accounts for around 92% of global search; the iOS and Android operating systems together hold 99% of the global smartphone market; Apple and Google's app stores together control around 95% of the mobile-app distribution market; Meta's apps (Facebook, Instagram, WhatsApp, Messenger) are used by over 3.5 billion people (Figure 1). These firms combine the classical economic features of natural monopoly — very high fixed costs and near-zero marginal costs — with powerful network effects and massive data advantages.
+
+**Figure 1 — Market shares in key digital markets, late 2023.**
+
+The business models of these firms depend on scale. Apple and Google charge a standard 30% commission on app-store transactions, a rate that has attracted sustained criticism from developers and, since 2021, several regulatory interventions including the EU Digital Markets Act (DMA). Google pays Apple an estimated $18 billion a year to be the default search engine on iOS devices — a practice under investigation in the US antitrust case against Google that concluded in August 2024 with a finding that Google had illegally maintained a monopoly in search.
+
+The top five firms (Alphabet, Apple, Meta, Amazon and Microsoft) spent around $225 billion on research and development in 2022 — roughly 14% of combined revenue, and more than the entire UK government R&D budget. They have also been the major force behind the commercialisation of generative AI from 2022 onwards.
+
+The UK's Competition and Markets Authority (CMA) gained new powers under the Digital Markets, Competition and Consumers Act 2024 to impose "conduct requirements" on firms with Strategic Market Status (SMS). The first SMS designations are expected in 2025, covering mobile ecosystems and search. Conduct requirements may include mandatory interoperability, data portability, non-discrimination and price transparency — each of which would affect the abnormal profits earned by designated firms.
+
+The data below (Figure 2) shows the cost and revenue schedule for PulseApp Ltd, a digital platform business. Demand is measured in thousands of monthly subscribers.
+
+**Figure 2 — PulseApp Ltd: Cost and revenue schedule (per month)**
+
+| Price (£/month) | Subscribers (000s) | Total Revenue | Marginal Revenue | Total Cost | Marginal Cost |
+|---|---|---|---|---|---|
+| £18 | 0 | | | £500 | |
+| £16 | 100 | | | £520 | |
+| £14 | 200 | | | £560 | |
+| £12 | 300 | | | £620 | |
+| £10 | 400 | | | £720 | |
+| £8 | 500 | | | £860 | |
+| £6 | 600 | | | £1,060 | |
+| £4 | 700 | | | £1,340 | |
+| £2 | 800 | | | £1,720 | |
+
+The table illustrates one of the most striking features of digital-platform economics: very high fixed costs (reflecting R&D, engineering and infrastructure spend) combined with very low marginal costs. Once the fixed cost of developing and running a platform has been sunk, the cost of serving an additional user is close to zero. This is a classic condition for natural monopoly, but unlike a traditional network utility, platform firms combine this cost structure with powerful demand-side network effects: each additional user makes the platform more valuable to every other user. The interaction of these two forces — supply-side economies of scale and demand-side network effects — is the core reason that digital markets tend towards winner-takes-most outcomes.
+
+How should competition authorities respond? Supporters of the current market structure argue that consumers receive enormous benefits at zero price — search, email, social networking, maps — and that the rents earned by platforms fund innovation (generative AI being the latest example). Critics argue that the concentration of market power has become unprecedented, that innovation by rivals is suppressed through strategic acquisitions and entry barriers, and that classical remedies (breakup, structural separation) may be needed. Between the two positions lies a growing body of targeted regulation — the EU's DMA, the UK's SMS regime, the US antitrust litigation — that attempts to restore contestability without dismantling the firms.
+
+*Sources: Statcounter, Bloomberg, CMA, European Commission.*
+
+Question 2.1 [5 marks]
+Using the information on digital platforms, outline the characteristics of a market with substantial network effects and high fixed costs.
+
+Question 2.2 [7 marks]
+Using Figure 2, calculate the marginal revenue (MR) and marginal cost (MC) for each of the subscriber levels (0 to 800,000). Record the answers in your pink answer booklet. Using your answers explain at what level of output PulseApp Ltd will, in theory, maximise profits.
+
+Question 2.3 [10 marks]
+Using a costs and revenue diagram, evaluate the effects on a dominant digital platform's abnormal profits of the imposition of regulation requiring it to offer interoperability with rival platforms.
+
+Question 2.4 [7 marks]
+Evaluate the view that competition authorities should break up dominant digital platforms in order to improve market outcomes.
+
+Question 2.5 [11 marks]
+With reference to the data, discuss the extent to which dominant digital platforms are harmful to economic welfare.
+
+**END OF PAPER**
 `,
   },
   {
     id: "eduqas-p3-a",
     subject: "eduqas" as any,
     paper: "3",
-    title: "Paper 3 — Set A",
-    description: "Themes in Applied Economics. Set A — core practice.",
-    totalMarks: 100,
-    content: `# Eduqas A-Level Economics (A510QS/03) — Themes in Applied Economics — Predicted Paper Set A
+    title: "Paper 3 — Set A (Moderate)",
+    description: "Component 3: Evaluating Economic Models and Policies. Set A — Moderate.",
+    totalMarks: 90,
+    content: `# Eduqas A-Level Economics (A520U30-1M) — Component 3: Evaluating Economic Models and Policies — Predicted Paper Set A (Moderate)
 
-**Time: 150 minutes | Total: 100 marks**
+**Time: 2 hours 30 minutes | Total: 90 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer both parts of one question from Section A.
+Answer both parts of one question from Section B.
+Answer both parts of one question from Section C.
 
-## Section A: Data Response
+## SECTION A
 
-**Extract 1 — Financial markets and the 2008 crisis revisited:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+Answer both parts of one question from this section.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+**Either,**
 
-Question 1 [2 marks]
-With reference to financial markets and the 2008 crisis revisited, explain two consequences of the issue.
+*Plastic bag charge leads to 98% drop in usage in UK supermarkets*
 
-Question 2 [4 marks]
-With reference to financial markets and the 2008 crisis revisited, explain one government response to the issue.
+Question 1.1 [10 marks]
+Explain what is meant by a negative externality and why it leads to market failure.
 
-Question 3 [6 marks]
-With reference to developing economies: poverty traps and aid, explain one factor that influences the issue.
+**and**
 
-Question 4 [9 marks]
-With reference to financial markets and the 2008 crisis revisited, explain one mechanism that determines the issue.
+Question 1.2 [20 marks]
+Discuss whether indirect taxation is the most effective government policy to correct negative externalities of consumption.
 
-Question 5 [12 marks]
-With reference to the future of work: AI and labour displacement, explain two consequences of the issue.
+**Or,**
 
-## Section B: Essay (choose ONE)
+*Energy regulator Ofgem caps household bills as "Big Six" profits soar*
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of financial markets and the 2008 crisis revisited, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 2.1 [10 marks]
+Outline what is meant by a monopoly and explain how it differs from a firm operating under perfect competition.
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of the future of work: AI and labour displacement, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+**and**
+
+Question 2.2 [20 marks]
+Discuss whether monopolies always act against the public interest.
+
+## SECTION B
+
+Answer both parts of one question from this section.
+
+**Either,**
+
+*UK inflation rate falls to the 2% Bank of England target for the first time in three years*
+
+Question 3.1 [10 marks]
+Using a diagram, explain what is meant by demand-pull inflation.
+
+**and**
+
+Question 3.2 [20 marks]
+Evaluate the effectiveness of monetary policy in controlling inflation.
+
+**Or,**
+
+*UK unemployment rises for the first time in 18 months as labour market cools*
+
+Question 4.1 [10 marks]
+Explain the different types of unemployment.
+
+**and**
+
+Question 4.2 [20 marks]
+Evaluate the likely effectiveness of supply-side policies in reducing unemployment.
+
+## SECTION C
+
+Answer both parts of one question from this section.
+
+**Either,**
+
+*UK joins CPTPP Pacific trade bloc in first major post-Brexit trade deal*
+
+Question 5.1 [10 marks]
+With the aid of a diagram, explain the theory of comparative advantage.
+
+**and**
+
+Question 5.2 [20 marks]
+Discuss the extent to which free trade agreements benefit the UK economy.
+
+**Or,**
+
+*Sub-Saharan Africa's GDP growth forecast at 3.8% amid calls for increased aid*
+
+Question 6.1 [10 marks]
+Explain the main characteristics of low-income countries.
+
+**and**
+
+Question 6.2 [20 marks]
+Discuss whether foreign aid is the most effective strategy for promoting economic development in low-income countries.
 `,
   },
   {
     id: "eduqas-p3-b",
     subject: "eduqas" as any,
     paper: "3",
-    title: "Paper 3 — Set B",
-    description: "Themes in Applied Economics. Set B — stretch — applied scenarios.",
-    totalMarks: 100,
-    content: `# Eduqas A-Level Economics (A510QS/03) — Themes in Applied Economics — Predicted Paper Set B
+    title: "Paper 3 — Set B (Hard)",
+    description: "Component 3: Evaluating Economic Models and Policies. Set B — Hard.",
+    totalMarks: 90,
+    content: `# Eduqas A-Level Economics (A520U30-1H) — Component 3: Evaluating Economic Models and Policies — Predicted Paper Set B (Hard)
 
-**Time: 150 minutes | Total: 100 marks**
+**Time: 2 hours 30 minutes | Total: 90 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer both parts of one question from Section A.
+Answer both parts of one question from Section B.
+Answer both parts of one question from Section C.
 
-## Section A: Data Response
+## SECTION A
 
-**Extract 1 — Developing economies: poverty traps and aid:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+Answer both parts of one question from this section.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+**Either,**
 
-Question 1 [2 marks]
-With reference to developing economies: poverty traps and aid, explain one government response to the issue.
+*Major supermarkets accused of "greedflation" during the cost-of-living crisis*
 
-Question 2 [4 marks]
-With reference to developing economies: poverty traps and aid, explain one factor that influences the issue.
+Question 1.1 [10 marks]
+Explain what is meant by price elasticity of demand and the main factors affecting it.
 
-Question 3 [6 marks]
-With reference to developing economies: poverty traps and aid, explain one mechanism that determines the issue.
+**and**
 
-Question 4 [9 marks]
-With reference to developing economies: poverty traps and aid, explain two consequences of the issue.
+Question 1.2 [20 marks]
+Discuss whether firms with significant pricing power always act to exploit consumers.
 
-Question 5 [12 marks]
-With reference to the future of work: AI and labour displacement, explain one government response to the issue.
+**Or,**
 
-## Section B: Essay (choose ONE)
+*Streaming wars intensify: Netflix loses subscribers as Disney+ and Apple TV+ expand*
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of financial markets and the 2008 crisis revisited, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 2.1 [10 marks]
+Outline what is meant by a contestable market and explain the conditions required for contestability.
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of the future of work: AI and labour displacement, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+**and**
+
+Question 2.2 [20 marks]
+Evaluate whether digital streaming services operate as genuinely contestable markets.
+
+## SECTION B
+
+Answer both parts of one question from this section.
+
+**Either,**
+
+*Pound sterling falls to 12-month low against the US dollar*
+
+Question 3.1 [10 marks]
+Using a diagram, explain the factors that determine the exchange rate of the pound in a floating exchange rate system.
+
+**and**
+
+Question 3.2 [20 marks]
+Evaluate the impact of a sustained depreciation of the pound on the UK economy.
+
+**Or,**
+
+*Chancellor announces £30bn increase in public spending despite rising national debt*
+
+Question 4.1 [10 marks]
+Explain the difference between discretionary fiscal policy and automatic stabilisers.
+
+**and**
+
+Question 4.2 [20 marks]
+Evaluate the extent to which expansionary fiscal policy is effective in stimulating economic growth.
+
+## SECTION C
+
+Answer both parts of one question from this section.
+
+**Either,**
+
+*UK current account deficit widens to a record £71bn*
+
+Question 5.1 [10 marks]
+With the aid of a diagram or balance, explain the main components of the balance of payments.
+
+**and**
+
+Question 5.2 [20 marks]
+Assess the extent to which a persistent current account deficit is a problem for the UK.
+
+**Or,**
+
+*FDI into Africa hits record $83bn as investors target energy transition projects*
+
+Question 6.1 [10 marks]
+Explain how foreign direct investment (FDI) can contribute to economic development in low-income countries.
+
+**and**
+
+Question 6.2 [20 marks]
+Evaluate whether FDI is always beneficial for host developing countries.
 `,
   },
   {
     id: "eduqas-p3-c",
     subject: "eduqas" as any,
     paper: "3",
-    title: "Paper 3 — Set C",
-    description: "Themes in Applied Economics. Set C — challenge — synoptic & evaluative.",
-    totalMarks: 100,
-    content: `# Eduqas A-Level Economics (A510QS/03) — Themes in Applied Economics — Predicted Paper Set C
+    title: "Paper 3 — Set C (Advanced)",
+    description: "Component 3: Evaluating Economic Models and Policies. Set C — Advanced.",
+    totalMarks: 90,
+    content: `# Eduqas A-Level Economics (A520U30-1A) — Component 3: Evaluating Economic Models and Policies — Predicted Paper Set C (Advanced)
 
-**Time: 150 minutes | Total: 100 marks**
+**Time: 2 hours 30 minutes | Total: 90 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer both parts of one question from Section A.
+Answer both parts of one question from Section B.
+Answer both parts of one question from Section C.
 
-## Section A: Data Response
+## SECTION A
 
-**Extract 1 — The future of work: ai and labour displacement:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+Answer both parts of one question from this section.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+**Either,**
 
-Question 1 [2 marks]
-With reference to the future of work: AI and labour displacement, explain one factor that influences the issue.
+*Tech giants accused of using "dark patterns" to manipulate consumer choices*
 
-Question 2 [4 marks]
-With reference to the future of work: AI and labour displacement, explain one mechanism that determines the issue.
+Question 1.1 [10 marks]
+Explain what is meant by information asymmetry and how it can lead to market failure.
 
-Question 3 [6 marks]
-With reference to developing economies: poverty traps and aid, explain two consequences of the issue.
+**and**
 
-Question 4 [9 marks]
-With reference to the future of work: AI and labour displacement, explain one government response to the issue.
+Question 1.2 [20 marks]
+Discuss the extent to which behavioural economics has challenged the assumptions of traditional neoclassical economics.
 
-Question 5 [12 marks]
-With reference to the future of work: AI and labour displacement, explain one factor that influences the issue.
+**Or,**
 
-## Section B: Essay (choose ONE)
+*Premier League clubs investigated by CMA over potential anti-competitive agreements*
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of financial markets and the 2008 crisis revisited, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 2.1 [10 marks]
+Outline what is meant by game theory and explain its application to oligopolistic markets.
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of the future of work: AI and labour displacement, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+**and**
+
+Question 2.2 [20 marks]
+Evaluate whether price discrimination is always against the consumer interest.
+
+## SECTION B
+
+Answer both parts of one question from this section.
+
+**Either,**
+
+*Bank of England independence under political scrutiny after rate hike controversy*
+
+Question 3.1 [10 marks]
+Using a diagram, explain the transmission mechanism of monetary policy.
+
+**and**
+
+Question 3.2 [20 marks]
+Evaluate whether central bank independence has been successful in achieving macroeconomic objectives.
+
+**Or,**
+
+*UK economy shows signs of a persistent negative output gap*
+
+Question 4.1 [10 marks]
+Explain what is meant by an output gap and how it might be identified.
+
+**and**
+
+Question 4.2 [20 marks]
+Evaluate the most appropriate policy response to a prolonged negative output gap.
+
+## SECTION C
+
+Answer both parts of one question from this section.
+
+**Either,**
+
+*US-China trade tensions trigger a new round of tariffs on electric vehicles and semiconductors*
+
+Question 5.1 [10 marks]
+With the aid of a diagram, explain the economic impact of a trade war on the global economy.
+
+**and**
+
+Question 5.2 [20 marks]
+Discuss whether protectionism can ever be economically justified in a modern interconnected economy.
+
+**Or,**
+
+*World Bank approves $50bn debt relief for Highly Indebted Poor Countries (HIPC)*
+
+Question 6.1 [10 marks]
+Explain the causes and consequences of unsustainable debt burdens in developing countries.
+
+**and**
+
+Question 6.2 [20 marks]
+Evaluate the extent to which debt relief is an effective strategy for promoting sustainable development.
 `,
   },
 ];
