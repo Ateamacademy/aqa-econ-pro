@@ -373,51 +373,126 @@ Discuss whether or not a floating exchange rate system is better than a fixed sy
     subject: "edexcel-igcse" as any,
     paper: "1",
     title: "Paper 1 — Set A (Moderate)",
-    description: "Microeconomics & Business Economics (4EC1/01). Set A — Moderate.",
+    description: "Microeconomics & Business Economics (4EC1/01). Verbatim from Predicted Paper — Moderate.",
     totalMarks: 80,
-    content: `# Edexcel IGCSE Economics (4EC1/01) — Microeconomics & Business Economics — Predicted Paper Set A (Moderate)
+    content: `# Pearson Edexcel International GCSE — Predicted Paper (Moderate)
+**4EC1/01 Economics — Paper 1: Microeconomics and Business Economics**
 
-**Time: 1 hour 30 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total Marks: 80**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer ALL questions. Write your answers in the spaces provided.
 
-## Section A: Data Response (55 marks)
+## Question 1 (Total 20 marks)
 
-**Extract 1 — The UK coffee shop market**
-The UK coffee shop industry has grown rapidly over the last decade. Independent cafés now compete alongside large chains such as Costa and Starbucks. Rising bean prices, higher minimum wages and growing demand for plant-based milks have all influenced the market. Some consumers are becoming more price-sensitive due to the cost-of-living squeeze, while others are willing to pay a premium for ethically sourced products.
+Question 1a [1 marks]
+Which one of the following values shows price inelastic demand?
+- A −0.3
+- B −1
+- C −1.5
+- D Infinity
 
-**Figure 1: UK coffee shop market data, 2020–2024**
+Question 1b [1 marks]
+A country has a minimum wage of $8.50 per hour. If a worker works 40 hours in a week, the lowest weekly wage the worker can earn is:
+- A $8.50
+- B $170.00
+- C $340.00
+- D $680.00
 
-| Year | Average price (£) | Cups sold (millions) | Number of outlets |
-|------|-------------------|----------------------|-------------------|
-| 2020 | 2.80 | 2,100 | 25,400 |
-| 2021 | 2.95 | 2,250 | 26,100 |
-| 2022 | 3.20 | 2,310 | 26,800 |
-| 2023 | 3.55 | 2,290 | 27,200 |
-| 2024 | 3.80 | 2,260 | 27,500 |
+Question 1c [2 marks]
+What is meant by the term *free market economy*?
 
-Question 1 [2 marks]
-Define the term *price elasticity of demand*.
+Question 1d [1 marks]
+State one example of an occupation that is in the primary sector of an economy.
 
-Question 2 [4 marks]
-Using Figure 1, calculate the percentage change in average price between 2020 and 2024. Show your working.
+Question 1e [1 marks]
+Define the term *consumer*.
 
-Question 3 [6 marks]
-Explain **two** reasons why the supply of coffee in the UK might have decreased in 2024.
+Question 1f [2 marks]
+Calculate, to two decimal places, the price elasticity of demand (PED) for a good if the price rises by 5% and the quantity demanded falls by 10%. You are advised to show your working.
 
-Question 4 [9 marks]
-Analyse, with the use of a demand and supply diagram, the likely effect of rising bean prices on the equilibrium price and quantity in the UK coffee shop market.
+Question 1g [3 marks]
+Figure 1 shows the market for coffee. Using the diagram below, draw the likely effects on the market for coffee if consumer incomes rise. Label the new curve, the new equilibrium price and the new equilibrium quantity.
 
-Question 5 [12 marks]
-Discuss the likely impact on independent cafés of an increase in the national minimum wage.
+Question 1h [3 marks]
+Ahmed has decided to purchase a new bicycle. Explain one possible opportunity cost for Ahmed of this decision.
 
-## Section B: Essay (25 marks — choose ONE)
+Question 1i [6 marks]
+Maria runs a small bakery in Lima, Peru. She currently employs two workers and is considering employing a third baker because demand has grown over the past year. With reference to the data above and your knowledge of economics, analyse two possible factors Maria should consider when deciding to employ a third baker.
 
-Question 6 [25 marks]
-Evaluate the view that government intervention is the most effective way to correct market failure caused by the consumption of demerit goods such as sugary drinks.
+## Question 2 (Total 20 marks)
 
-Question 7 [25 marks]
-Evaluate the view that large firms in oligopolistic markets always act against the interests of consumers.
+Question 2a [1 marks]
+Which one of the following diagrams shows excess demand?
+- A A diagram where price P1 is set below equilibrium Pe and quantity demanded Q2 exceeds quantity supplied Q1
+- B A diagram where price P1 is set above equilibrium Pe and quantity supplied exceeds quantity demanded
+- C A diagram showing a rightward shift of supply
+- D A diagram showing a movement along the demand curve
+
+Question 2b [1 marks]
+Which one of the following is a feature of perfect competition?
+- A A single firm dominates the market
+- B Firms sell differentiated products
+- C There are many small firms
+- D There are high barriers to entry
+
+Question 2c [2 marks]
+Calculate the percentage change in quantity demanded for a normal good if the income elasticity of demand (YED) is 0.8 and income rises by 15%. You are advised to show your working.
+
+Question 2d [2 marks]
+What is meant by the term *external costs*?
+
+Question 2e [2 marks]
+Describe one feature of monopolistic competition.
+
+Question 2f [3 marks]
+Kareem is the owner of a café and wants to maximise profits. However, Leila is the manager of the café and wants to increase the wages of the staff by 8%. Explain one reason why Leila may want to increase the wages rather than to maximise profits.
+
+Question 2g [9 marks]
+The government of Norway has offered subsidies to manufacturers and buyers of electric vehicles (EVs) for more than a decade. In 2023, around 82% of new cars sold in Norway were fully electric. However, the government spends significant sums each year on these subsidies, meaning less public money is available for other services. With reference to the data above and your knowledge of economics, assess the effectiveness of government subsidies when encouraging consumption of merit goods such as electric vehicles.
+
+## Question 3 (Total 20 marks)
+
+Question 3a [1 marks]
+An increase in which one of the following is most likely to cause an increase in the supply of labour?
+- A The school-leaving age
+- B Net inward migration of workers
+- C The income tax rate
+- D The retirement age being lowered
+
+Question 3b [1 marks]
+Which one of the following is the formula to calculate profit?
+- A Total revenue + total costs
+- B Total revenue − total costs
+- C Price × quantity sold
+- D Total revenue ÷ total costs
+
+Question 3c [3 marks]
+Using the diagram below, draw a price inelastic supply (PES) curve. Label the curve and show the impact on both axes from a change in price.
+
+Question 3d [6 marks]
+Café Primo operates over 200 coffee shops in Brazil. Each shop employs a team of baristas, cashiers and cleaners, with each worker focused on their specific task. The chain is expanding rapidly and plans to open 40 new branches in the next two years. With reference to the data above and your knowledge of economics, analyse the possible advantages for Café Primo of using specialisation at its coffee shops.
+
+Question 3e [9 marks]
+Cigarettes are addictive, with limited close substitutes available. Smartphones, by contrast, are sold by many competing brands such as Apple, Samsung and Xiaomi, and consumers often switch between them when prices change. Both products are sold globally. With reference to the data above and your knowledge of economics, assess whether demand is likely to be more price inelastic for cigarettes than for smartphones.
+
+## Question 4 (Total 20 marks)
+
+Figure 2 shows the monthly costs of running a small clothing factory:
+
+| Factory rent ($/month) | Raw material cost ($/unit) | Units produced | Other fixed costs ($/month) |
+|---|---|---|---|
+| 2,000 | 4.50 | 1,500 | 800 |
+
+Question 4a [2 marks]
+Calculate the monthly total costs of the clothing factory. You are advised to show your working.
+
+Question 4b [6 marks]
+Zara is one of the largest fast-fashion retailers in the world, with over 2,000 stores across 96 countries. It produces large quantities of clothing each season and uses centralised distribution centres in Spain. By operating at such a large scale, Zara has managed to keep average costs per garment relatively low. With reference to the data above and your knowledge of economics, analyse how internal economies of scale may lead to benefits for Zara.
+
+Question 4c [12 marks]
+The government of Bolivia is considering nationalising its largest private water supply company. Supporters argue that nationalisation would allow water to be supplied at lower prices to poorer households and would end recent complaints about supply interruptions. Critics argue that the government lacks the resources and expertise to run the company efficiently, and that quality may decline. With reference to the data above and your knowledge of economics, evaluate whether consumers are likely to benefit from the nationalisation of the water supply company.
+
+**TOTAL FOR PAPER = 80 MARKS**
 `,
   },
   {
@@ -425,52 +500,126 @@ Evaluate the view that large firms in oligopolistic markets always act against t
     subject: "edexcel-igcse" as any,
     paper: "1",
     title: "Paper 1 — Set B (Hard)",
-    description: "Microeconomics & Business Economics (4EC1/01). Set B — Hard.",
+    description: "Microeconomics & Business Economics (4EC1/01). Verbatim from Predicted Paper — Hard.",
     totalMarks: 80,
-    content: `# Edexcel IGCSE Economics (4EC1/01) — Microeconomics & Business Economics — Predicted Paper Set B (Hard)
+    content: `# Pearson Edexcel International GCSE — Predicted Paper (Hard)
+**4EC1/01 Economics — Paper 1: Microeconomics and Business Economics**
 
-**Time: 1 hour 30 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total Marks: 80**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer ALL questions. Write your answers in the spaces provided.
 
-## Section A: Data Response (55 marks)
+## Question 1 (Total 20 marks)
 
-**Extract 1 — UK supermarket competition and own-brand growth**
-The UK grocery market is dominated by Tesco, Sainsbury's, Asda and Morrisons, but discounters Aldi and Lidl have rapidly increased market share. Own-brand products now account for over 50% of grocery spending. Suppliers complain about thin margins, while consumers benefit from lower prices and wider choice. Recent mergers and the threat of monopsony power have drawn regulatory attention from the Competition and Markets Authority (CMA).
+Question 1a [1 marks]
+Which one of the following values shows price elastic supply?
+- A 0
+- B 0.4
+- C 1
+- D 2.5
 
-**Figure 1: UK grocery market shares, 2024**
+Question 1b [1 marks]
+A worker earns a minimum wage of €9.20 per hour for a standard week of 36 hours. For any additional hour worked, they are paid 1.5 times the standard rate. In a week where the worker completes 40 hours, the total wage earned is:
+- A €331.20
+- B €368.00
+- C €386.40
+- D €552.00
 
-| Retailer | Market share (%) | Number of stores |
-|----------|------------------|------------------|
-| Tesco | 27.6 | 4,200 |
-| Sainsbury's | 15.1 | 1,400 |
-| Asda | 13.8 | 1,000 |
-| Aldi | 10.2 | 1,020 |
-| Lidl | 8.0 | 960 |
-| Morrisons | 8.7 | 500 |
+Question 1c [2 marks]
+What is meant by the term *market economy*?
 
-Question 1 [2 marks]
-Define the term *monopsony*.
+Question 1d [1 marks]
+State one example of an occupation that is in the secondary sector of an economy.
 
-Question 2 [4 marks]
-Using Figure 1, calculate the combined market share of Aldi and Lidl, and comment on what this suggests about the structure of the UK grocery market.
+Question 1e [1 marks]
+Define the term *public sector*.
 
-Question 3 [6 marks]
-Explain **two** barriers to entry that new supermarket chains might face when entering the UK grocery market.
+Question 1f [2 marks]
+Calculate, to two decimal places, the cross elasticity of demand (XED) between butter and margarine if the price of butter rises by 8% and the quantity demanded of margarine rises by 14%. You are advised to show your working.
 
-Question 4 [9 marks]
-Analyse, with the use of a diagram, how a successful price war between supermarkets could affect economic welfare in the short run.
+Question 1g [3 marks]
+Figure 1 shows the market for wheat. Using the diagram below, draw the likely effects on the market for wheat if poor weather damages the harvest. Label the new curve, the new equilibrium price and the new equilibrium quantity.
 
-Question 5 [12 marks]
-Discuss whether the rapid growth of own-brand products is likely to benefit consumers in the long run.
+Question 1h [3 marks]
+Priya is a qualified accountant who currently earns $48,000 per year. She has decided to leave her job to study full-time for a Master's degree for two years. Explain one possible opportunity cost for Priya of this decision.
 
-## Section B: Essay (25 marks — choose ONE)
+Question 1i [6 marks]
+Nguyen Coffee is a medium-sized coffee exporter based in Vietnam. Rising demand from European retailers has led to record order volumes in 2024. The firm is now considering expanding its production capacity by leasing an additional processing plant and hiring more workers. With reference to the data above and your knowledge of economics, analyse two possible factors influencing Nguyen Coffee's decision to expand production.
 
-Question 6 [25 marks]
-Evaluate the view that the merger of two large supermarkets should always be blocked by the Competition and Markets Authority.
+## Question 2 (Total 20 marks)
 
-Question 7 [25 marks]
-Evaluate the extent to which producer monopoly power is a more serious problem for the UK economy than monopsony buyer power.
+Question 2a [1 marks]
+Which one of the following diagrams shows the effect of the government placing a specific indirect tax on a good?
+- A A leftward shift of the supply curve, with a higher equilibrium price and a lower equilibrium quantity
+- B A rightward shift of the supply curve, with a lower equilibrium price and a higher equilibrium quantity
+- C A leftward shift of the demand curve, with a lower equilibrium price and a lower equilibrium quantity
+- D A rightward shift of the demand curve, with a higher equilibrium price and a higher equilibrium quantity
+
+Question 2b [1 marks]
+Which one of the following is a feature of an oligopoly?
+- A A large number of small firms with no market power
+- B A few large firms dominate the market
+- C Firms sell identical products
+- D There are no barriers to entry
+
+Question 2c [2 marks]
+Calculate, to two decimal places, the price elasticity of supply (PES) for a good if the price rises by 12% and the quantity supplied rises by 9%. You are advised to show your working.
+
+Question 2d [2 marks]
+What is meant by the term *private costs*?
+
+Question 2e [2 marks]
+Describe one feature of perfect competition.
+
+Question 2f [3 marks]
+Nadia is the owner of a clothing retailer and wants to maximise profits. However, Samir is the store manager and wants to switch the firm's suppliers to locally sourced, ethical producers — even though these suppliers charge 15% more than the current ones. Explain one reason why Samir may want to make this switch rather than maximise profits.
+
+Question 2g [9 marks]
+Mexico has applied an indirect tax of 1 peso per litre on sugary drinks since 2014. Sales of taxed drinks fell by around 7.6% in the first two years, and fell by more among low-income households. However, critics argue that consumption has since rebounded and that the tax is regressive, hitting poorer households hardest. Some drink producers also reformulated their products to reduce sugar content and avoid the tax. With reference to the data above and your knowledge of economics, assess the effectiveness of an indirect tax in reducing the consumption of sugary drinks.
+
+## Question 3 (Total 20 marks)
+
+Question 3a [1 marks]
+An increase in which one of the following is most likely to cause an increase in the demand for labour by a firm?
+- A The wage rate paid to workers
+- B The demand for the firm's final product
+- C The cost of training new workers
+- D The school-leaving age
+
+Question 3b [1 marks]
+Which one of the following is the formula to calculate average cost?
+- A Total cost × quantity produced
+- B Total cost ÷ quantity produced
+- C Total revenue − total cost
+- D Quantity produced ÷ total cost
+
+Question 3c [3 marks]
+Using the diagram below, draw a price elastic supply (PES) curve. Label the curve and show the impact on both axes from a change in price.
+
+Question 3d [6 marks]
+BMW operates a large car factory in Regensburg, Germany, producing over 300,000 vehicles per year. Production is highly capital-intensive, with much of the assembly work carried out by specialised industrial robots. The factory also employs 9,000 skilled workers who operate and maintain the machinery. With reference to the data above and your knowledge of economics, analyse the possible advantages for BMW of using capital-intensive production at the Regensburg factory.
+
+Question 3e [9 marks]
+Luxury cars, such as Porsche and Ferrari models, are sold at high prices and are often bought by wealthier consumers who view them as a status symbol. Petrol is sold at many filling stations across most countries and is needed by anyone who drives an internal combustion engine car. There are few close substitutes for petrol in the short run. With reference to the data above and your knowledge of economics, assess whether demand is likely to be more price elastic for luxury cars than for petrol.
+
+## Question 4 (Total 20 marks)
+
+Figure 2 shows the weekly costs and revenues of a small furniture workshop:
+
+| Fixed costs ($/week) | Variable cost ($/unit) | Units produced and sold | Selling price ($/unit) |
+|---|---|---|---|
+| 1,200 | 35 | 80 | 95 |
+
+Question 4a [2 marks]
+Calculate the weekly profit of the furniture workshop. You are advised to show your working.
+
+Question 4b [6 marks]
+Tata Steel operates a large steelworks in Jamshedpur, India, producing around 10 million tonnes of steel per year. The steelworks is located in an industrial region that has a well-trained workforce, specialist component suppliers, and a network of research institutions focused on metals. Many other manufacturers have opened factories in the same region to benefit from these local conditions. With reference to the data above and your knowledge of economics, analyse how external economies of scale may lead to benefits for Tata Steel.
+
+Question 4c [12 marks]
+The government of South Africa has proposed raising the national minimum wage from R27.58 to R32.00 per hour. Supporters argue this will reduce in-work poverty and boost consumer spending in low-income communities. Critics warn that firms may respond by cutting jobs, increasing prices, or investing in automation to replace workers. Unemployment in South Africa already stands at over 30%. With reference to the data above and your knowledge of economics, evaluate whether workers in South Africa are likely to benefit from this increase in the national minimum wage.
+
+**TOTAL FOR PAPER = 80 MARKS**
 `,
   },
   {
@@ -478,51 +627,126 @@ Evaluate the extent to which producer monopoly power is a more serious problem f
     subject: "edexcel-igcse" as any,
     paper: "1",
     title: "Paper 1 — Set C (Advanced)",
-    description: "Microeconomics & Business Economics (4EC1/01). Set C — Advanced.",
+    description: "Microeconomics & Business Economics (4EC1/01). Verbatim from Predicted Paper — Advanced.",
     totalMarks: 80,
-    content: `# Edexcel IGCSE Economics (4EC1/01) — Microeconomics & Business Economics — Predicted Paper Set C (Advanced)
+    content: `# Pearson Edexcel International GCSE — Predicted Paper (Advanced)
+**4EC1/01 Economics — Paper 1: Microeconomics and Business Economics**
 
-**Time: 1 hour 30 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total Marks: 80**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer ALL questions. Write your answers in the spaces provided.
 
-## Section A: Data Response (55 marks)
+## Question 1 (Total 20 marks)
 
-**Extract 1 — The UK electric vehicle (EV) market**
-Sales of electric vehicles in the UK have grown sharply since 2020, supported by the government's plan to ban new petrol and diesel cars by 2035. Battery costs have fallen, but charging infrastructure remains uneven. The government offers grants for charging points and lower vehicle excise duty for EVs. Producers face external costs from battery manufacture, while EV use generates external benefits from cleaner urban air.
+Question 1a [1 marks]
+Which one of the following values shows unitary price elasticity of demand?
+- A 0
+- B −0.5
+- C −1
+- D −2
 
-**Figure 1: UK new car registrations, 2020–2024**
+Question 1b [1 marks]
+A worker earns €12.00 per hour for a 35-hour week. In a particular week they also complete 6 hours of overtime paid at a rate of 1.75 times their hourly rate. Their total gross weekly wage is:
+- A €420.00
+- B €492.00
+- C €546.00
+- D €585.00
 
-| Year | Total cars (000s) | EVs (000s) | EV share (%) |
-|------|-------------------|------------|--------------|
-| 2020 | 1,631 | 108 | 6.6 |
-| 2021 | 1,648 | 191 | 11.6 |
-| 2022 | 1,614 | 267 | 16.6 |
-| 2023 | 1,903 | 314 | 16.5 |
-| 2024 | 1,953 | 382 | 19.6 |
+Question 1c [2 marks]
+What is meant by the term *planned economy*?
 
-Question 1 [2 marks]
-Define the term *external benefit*.
+Question 1d [1 marks]
+State one example of an occupation that is in the tertiary sector of an economy.
 
-Question 2 [4 marks]
-Using Figure 1, calculate the percentage growth in EV registrations between 2020 and 2024. Show your working.
+Question 1e [1 marks]
+Define the term *factor of production*.
 
-Question 3 [6 marks]
-Explain **two** reasons why the marginal social benefit of EV use exceeds the marginal private benefit.
+Question 1f [2 marks]
+A firm increases the price of its product by 15% and, as a result, the quantity demanded falls by 24%. Calculate, to two decimal places, the price elasticity of demand (PED) for the product. You are advised to show your working.
 
-Question 4 [9 marks]
-Analyse, using a marginal social/private benefit diagram, the welfare effect of a government subsidy on the purchase of new electric vehicles.
+Question 1g [3 marks]
+Figure 1 shows the market for solar panels. Using the diagram below, draw the likely effects on the market for solar panels if the government introduces a subsidy for producers. Label the new curve, the new equilibrium price and the new equilibrium quantity.
 
-Question 5 [12 marks]
-Discuss whether subsidies are the most effective method of correcting the market failure associated with petrol and diesel car use.
+Question 1h [3 marks]
+MediCorp is a pharmaceutical firm. The company has reported record profits of $420 million this year and the board is deciding whether to pay these profits to shareholders as dividends, or to invest the funds in research and development (R&D) for a new cancer treatment. Explain one possible opportunity cost for MediCorp of choosing to invest in R&D rather than paying dividends.
 
-## Section B: Essay (25 marks — choose ONE)
+Question 1i [6 marks]
+Sony is a Japanese multinational producing consumer electronics. Rising production costs in Japan and a growing market in South-East Asia have led Sony to consider relocating a large part of its camera assembly operations from Japan to Vietnam. A new factory in Vietnam would cost significantly less to operate, but Sony would face set-up costs, training expenses, and potential quality-control challenges. With reference to the data above and your knowledge of economics, analyse two possible factors influencing Sony's decision to relocate its camera assembly to Vietnam.
 
-Question 6 [25 marks]
-Evaluate the view that, in markets with significant externalities, taxes are always preferable to regulation.
+## Question 2 (Total 20 marks)
 
-Question 7 [25 marks]
-Evaluate the case for the UK government using public expenditure on charging infrastructure rather than direct subsidies to EV buyers as the main policy tool to grow the EV market.
+Question 2a [1 marks]
+Which one of the following diagrams shows the effect of an increase in the cost of raw materials used to produce a good?
+- A A rightward shift of the supply curve, with a lower equilibrium price and a higher equilibrium quantity
+- B A leftward shift of the supply curve, with a higher equilibrium price and a lower equilibrium quantity
+- C A rightward shift of the demand curve, with a higher equilibrium price and a higher equilibrium quantity
+- D A leftward shift of the demand curve, with a lower equilibrium price and a lower equilibrium quantity
+
+Question 2b [1 marks]
+Which one of the following is a feature of monopolistic competition?
+- A A single dominant firm in the market
+- B Firms sell identical products
+- C Firms sell differentiated products and have some price-making ability
+- D Very high barriers to entry
+
+Question 2c [2 marks]
+A firm raises the price of its product from $40 to $44. As a result, weekly sales fall from 1,000 units to 900 units. Calculate, to two decimal places, the percentage change in the firm's total revenue. You are advised to show your working.
+
+Question 2d [2 marks]
+What is meant by the term *merit good*?
+
+Question 2e [2 marks]
+Describe one feature of a monopoly.
+
+Question 2f [3 marks]
+Olga owns an organic food retailer that has been highly profitable. However, Piotr, the manager, wants to donate 10% of the firm's quarterly profits to a local food bank, rather than pay this amount to Olga as an owner's return. Explain one reason why Piotr may want to donate to the food bank rather than maximise the profits received by the owner.
+
+Question 2g [9 marks]
+The European Union operates an Emissions Trading System (ETS) under which firms must buy permits to emit carbon dioxide, and can trade these permits in a market. Supporters argue that this approach is more efficient than simple regulation because it lets firms that can cut emissions cheaply do so and sell their spare permits to firms for which cuts would be more expensive. Critics argue that permit prices have been volatile, that some industries have received free permits, and that regulation provides more certainty on outcomes. With reference to the data above and your knowledge of economics, assess the effectiveness of tradable pollution permits when dealing with negative externalities such as carbon emissions.
+
+## Question 3 (Total 20 marks)
+
+Question 3a [1 marks]
+Which one of the following is most likely to cause a decrease in the demand for labour by a firm?
+- A An increase in consumer demand for the firm's product
+- B A rise in the productivity of labour
+- C The introduction of labour-saving automation
+- D A fall in the cost of training workers
+
+Question 3b [1 marks]
+Which one of the following is the correct formula to calculate total revenue?
+- A Price × quantity sold
+- B Total cost + profit
+- C Price ÷ quantity sold
+- D Quantity sold + profit
+
+Question 3c [3 marks]
+Using the diagram below, draw a perfectly price inelastic demand (PED) curve. Label the curve and show the effect on both axes from a change in price.
+
+Question 3d [6 marks]
+Rolex is a luxury Swiss watchmaker that has been producing high-end watches for over a century. Each watch goes through more than 100 production stages, with individual craftsmen specialising in a single element — such as movement assembly, engraving, or dial fitting. It can take up to a year for a single Rolex watch to be fully produced. With reference to the data above and your knowledge of economics, analyse the possible advantages for Rolex of using specialisation in its production process.
+
+Question 3e [9 marks]
+Bread is an inexpensive staple food in many countries, produced by large numbers of competing bakers and supermarkets. Consumers buy it regularly and there are many close substitutes, such as rice, pasta and breakfast cereals. Designer branded clothing (for example, from Gucci or Balenciaga) is typically expensive, positioned as a luxury, and often seen by consumers as a status symbol. With reference to the data above and your knowledge of economics, assess whether demand is likely to be more price elastic for designer branded clothing than for bread.
+
+## Question 4 (Total 20 marks)
+
+Figure 2 shows the daily operating data for a regional airline:
+
+| Number of flights/day | Average passengers/flight | Average ticket price ($) | Total daily operating cost ($) |
+|---|---|---|---|
+| 24 | 150 | 85 | 240,000 |
+
+Question 4a [2 marks]
+Calculate the daily total revenue earned by the airline. You are advised to show your working.
+
+Question 4b [6 marks]
+Samsung Electronics is one of the largest technology firms in the world. It produces smartphones, televisions, memory chips, and home appliances on a very large scale. Its semiconductor plant in Pyeongtaek, South Korea, is one of the most automated in the world, and the firm invests over $30 billion per year in research and development across its global business. With reference to the data above and your knowledge of economics, analyse how internal economies of scale may lead to benefits for Samsung.
+
+Question 4c [12 marks]
+In 1999, Kenya's telecommunications industry was dominated by a state-owned monopoly and mobile phone ownership was low. Since then, the government has deregulated the market, allowing new private firms such as Safaricom and Airtel to compete. Mobile phone ownership has risen to over 95% of adults, prices have fallen significantly, and innovations such as the mobile-money service M-PESA have transformed financial access. However, some critics argue that market power has now concentrated in a small number of firms, and that rural users still face limited coverage and higher prices. With reference to the data above and your knowledge of economics, evaluate whether consumers in Kenya are likely to have benefited from the deregulation of the telecommunications industry.
+
+**TOTAL FOR PAPER = 80 MARKS**
 `,
   },
   {
@@ -530,51 +754,134 @@ Evaluate the case for the UK government using public expenditure on charging inf
     subject: "edexcel-igcse" as any,
     paper: "2",
     title: "Paper 2 — Set A (Moderate)",
-    description: "Macroeconomics & the Global Economy (4EC1/02). Set A — Moderate.",
+    description: "Macroeconomics & the Global Economy (4EC1/02). Verbatim from Predicted Paper — Moderate.",
     totalMarks: 80,
-    content: `# Edexcel IGCSE Economics (4EC1/02) — Macroeconomics & the Global Economy — Predicted Paper Set A (Moderate)
+    content: `# Pearson Edexcel International GCSE — Predicted Paper (Moderate)
+**4EC1/02 Economics — Paper 2: Macroeconomics and the Global Economy**
 
-**Time: 1 hour 30 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total Marks: 80**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer ALL questions. Write your answers in the spaces provided.
 
-## Section A: Data Response (55 marks)
+## Question 1 (Total 20 marks)
 
-**Extract 1 — UK inflation and the cost-of-living squeeze**
-UK consumer price inflation (CPI) reached a 40-year high of 11.1% in October 2022 before falling back as energy prices stabilised. The Bank of England raised the base rate from 0.1% to 5.25% between December 2021 and August 2023 to bring inflation back to its 2% target. Real wages fell for many workers, and household spending on essentials such as food and energy crowded out spending on non-essentials.
+Question 1a [1 marks]
+Which one of the following is a benefit of economic growth?
+- A Higher levels of unemployment
+- B Higher living standards
+- C Lower tax revenue for the government
+- D Lower levels of exports
 
-**Figure 1: UK macroeconomic indicators, 2020–2024**
+Question 1b [1 marks]
+Which one of the following is an example of a leakage from the circular flow of income?
+- A Consumer spending
+- B Business investment
+- C Household savings
+- D Government spending
 
-| Year | CPI inflation (%) | Bank rate (%) | Unemployment (%) | Real GDP growth (%) |
-|------|-------------------|---------------|------------------|---------------------|
-| 2020 | 0.9 | 0.1 | 4.6 | -10.4 |
-| 2021 | 2.6 | 0.25 | 4.5 | 8.7 |
-| 2022 | 9.1 | 3.5 | 3.7 | 4.3 |
-| 2023 | 7.3 | 5.25 | 4.0 | 0.1 |
-| 2024 | 2.5 | 5.0 | 4.3 | 0.9 |
+Question 1c [2 marks]
+What is meant by the term *inflation*?
 
-Question 1 [2 marks]
-Define the term *consumer price index (CPI)*.
+Question 1d [2 marks]
+Describe one impact an ageing population may have on an economy.
 
-Question 2 [4 marks]
-Using Figure 1, describe the relationship between the Bank rate and CPI inflation between 2021 and 2024.
+Figure 1 shows the components of Vietnam's gross domestic product (GDP) in 2023:
 
-Question 3 [6 marks]
-Explain **two** ways in which a rise in the Bank of England base rate can reduce inflation.
+| Component | Value ($bn) |
+|---|---|
+| Consumption | 280 |
+| Investment | 85 |
+| Government spending | 55 |
+| Exports | 320 |
+| Imports | 300 |
 
-Question 4 [9 marks]
-Analyse, using an AD/AS diagram, the impact of a sharp rise in global energy prices on the UK macroeconomy.
+Question 1e [2 marks]
+Using the data in Figure 1, calculate the value of Vietnam's GDP in $bn in 2023. You are advised to show your working.
 
-Question 5 [12 marks]
-Discuss the likely impact of high inflation on different groups in the UK economy.
+Question 1f [3 marks]
+The Vietnamese Government introduced a subsidy on rice production in 2023. Using the diagram below, draw the effects of the introduction of the subsidy on the equilibrium price and quantity of rice in Vietnam. Label the new curve, the new equilibrium price and the new equilibrium quantity.
 
-## Section B: Essay (25 marks — choose ONE)
+Question 1g [3 marks]
+In 2023, Vietnam's economy grew by 5.1%. Unemployment fell to 2.3%, one of the lowest rates in Southeast Asia. Explain one reason why unemployment may fall during a period of economic growth.
 
-Question 6 [25 marks]
-Evaluate the view that monetary policy is the most effective tool for controlling inflation in the UK.
+Question 1h [6 marks]
+Vietnam is a member of the Association of Southeast Asian Nations (ASEAN), a trading bloc with 10 countries and a combined population of 680 million. ASEAN reduces trade barriers between member countries. With reference to the data above and your knowledge of economics, analyse the benefits to consumers in Vietnam of being a member of ASEAN.
 
-Question 7 [25 marks]
-Evaluate the view that low unemployment is always a sign of a healthy economy.
+## Question 2 (Total 20 marks)
+
+Question 2a [1 marks]
+Which one of the following is an example of a progressive tax?
+- A A flat rate sales tax of 10% on all goods
+- B A fixed excise duty on tobacco products
+- C Income tax rates that rise as income rises
+- D A fixed amount of tax for every household
+
+Question 2b [1 marks]
+Which one of the following is the best description of structural unemployment?
+- A Workers between jobs looking for a better position
+- B Workers whose skills no longer match available jobs
+- C Workers unemployed during a recession
+- D Workers in tourism during off-season months
+
+Question 2c [1 marks]
+State one possible impact of a high rate of inflation on consumers.
+
+Question 2d [2 marks]
+What is meant by the term *direct tax*?
+
+Question 2e [3 marks]
+In 2023, the Brazilian Government increased spending on infrastructure projects by 45%. These include building new roads, schools and hospitals across the country. Explain one way increased government spending can reduce unemployment in a country such as Brazil.
+
+Question 2f [3 marks]
+Using the diagram below, label the remaining three stages of the economic cycle in the boxes on the diagram.
+
+Question 2g [9 marks]
+Brazil's top income tax rate is 27.5%. Some economists argue the government should reduce income tax rates to stimulate economic activity. Others argue this would reduce government revenue and increase inequality. With reference to the data above and your knowledge of economics, assess the possible benefits for Brazil of reducing income tax rates.
+
+## Question 3 (Total 20 marks)
+
+Question 3a [1 marks]
+Which one of the following is an example of foreign direct investment (FDI)?
+- A An Indian family taking a holiday in Thailand
+- B A German car company building a factory in India
+- C An Indian student buying a British textbook online
+- D An Indian farmer exporting tea to the UK
+
+Question 3b [1 marks]
+The exchange rate between the Indian rupee (₹) and the US dollar ($) is $1 = ₹83. How many US dollars ($) would ₹8,300 be exchanged for?
+- A $10
+- B $100
+- C $1,000
+- D $83,000
+
+Question 3c [3 marks]
+The Kenyan shilling depreciated by 15% against the US dollar in 2023. Kenya exports tea, coffee and flowers to markets around the world. Using the diagram below, draw the effects of the depreciation of the Kenyan shilling on the equilibrium price and quantity of Kenyan tea sold abroad. Label the new curve, the new equilibrium price and the new equilibrium quantity.
+
+Question 3d [6 marks]
+Global trade in goods reached a record $33 trillion in 2022. Consumers in many countries such as India can now access products from around the world, often at lower prices than in the past. With reference to the data above and your knowledge of economics, analyse the possible benefits of globalisation for consumers in a country such as India.
+
+Question 3e [9 marks]
+In 2023, the Kenyan Government increased import tariffs on sugar from 35% to 50% to protect domestic sugar producers. Sugar is widely consumed in food and drinks across Kenya. With reference to the data above and your knowledge of economics, assess how an increase in import tariffs may affect consumers in a country such as Kenya.
+
+## Question 4 (Total 20 marks)
+
+Figure 5 shows Japan's Consumer Price Index (CPI) in 2022 and 2023:
+
+| Indicator | Value |
+|---|---|
+| Consumer Price Index 2022 | 100 |
+| Consumer Price Index 2023 | 104 |
+
+Question 4a [2 marks]
+Using the data in Figure 5, calculate Japan's rate of inflation between 2022 and 2023. You are advised to show your working.
+
+Question 4b [6 marks]
+In 2024, the Bank of Japan raised interest rates for the first time in 17 years, from −0.1% to 0.1%. The move was designed to return Japan to more normal monetary policy after years of very low interest rates. With reference to the data above and your knowledge of economics, analyse the possible effects on Japanese households of raising interest rates.
+
+Question 4c [12 marks]
+The Japanese Government is investing ¥20 trillion in renewable energy over 10 years. The money is used for subsidies to firms producing solar panels, wind turbines and electric vehicle (EV) batteries. Japan aims to become carbon-neutral by 2050. However, some critics argue that these subsidies are expensive for taxpayers and may not be the most efficient way to address climate change. With reference to the data above and your knowledge of economics, evaluate the use of government subsidies to support the renewable energy industry in a country such as Japan.
+
+**TOTAL FOR PAPER = 80 MARKS**
 `,
   },
   {
@@ -582,51 +889,134 @@ Evaluate the view that low unemployment is always a sign of a healthy economy.
     subject: "edexcel-igcse" as any,
     paper: "2",
     title: "Paper 2 — Set B (Hard)",
-    description: "Macroeconomics & the Global Economy (4EC1/02). Set B — Hard.",
+    description: "Macroeconomics & the Global Economy (4EC1/02). Verbatim from Predicted Paper — Hard.",
     totalMarks: 80,
-    content: `# Edexcel IGCSE Economics (4EC1/02) — Macroeconomics & the Global Economy — Predicted Paper Set B (Hard)
+    content: `# Pearson Edexcel International GCSE — Predicted Paper (Hard)
+**4EC1/02 Economics — Paper 2: Macroeconomics and the Global Economy**
 
-**Time: 1 hour 30 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total Marks: 80**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer ALL questions. Write your answers in the spaces provided.
 
-## Section A: Data Response (55 marks)
+## Question 1 (Total 20 marks)
 
-**Extract 1 — The UK current account deficit and global trade**
-The UK has run a persistent current account deficit for over two decades. In 2023 the deficit widened to 3.3% of GDP, driven by a fall in net trade in goods and a weakening primary income balance. Sterling depreciated by 8% against the US dollar in 2022, but exports failed to respond strongly because many UK exporters rely on imported inputs. Free trade agreements with Australia and Japan have opened new markets, while Brexit has added trade frictions with the EU.
+Question 1a [1 marks]
+Which one of the following is a possible disadvantage of multinational corporations (MNCs) for a host country?
+- A Transferring advanced technology
+- B Creating new jobs in the host country
+- C Moving profits back to the home country
+- D Paying taxes to the host government
 
-**Figure 1: UK balance of payments, 2020–2024 (% of GDP)**
+Question 1b [1 marks]
+Which one of the following is measured by the Human Development Index (HDI)?
+- A GNI per capita, education and life expectancy
+- B Unemployment, inflation and GDP growth
+- C Imports, exports and the balance of payments
+- D Crime rate, pollution and political freedom
 
-| Year | Trade in goods | Trade in services | Primary income | Current account |
-|------|----------------|-------------------|----------------|-----------------|
-| 2020 | -5.7 | +5.0 | -0.5 | -2.4 |
-| 2021 | -6.0 | +4.5 | -0.2 | -2.0 |
-| 2022 | -7.2 | +5.5 | -1.5 | -3.6 |
-| 2023 | -6.4 | +5.2 | -1.6 | -3.3 |
-| 2024 | -6.0 | +5.4 | -1.4 | -2.8 |
+Question 1c [2 marks]
+What is meant by the term *balance of trade*?
 
-Question 1 [2 marks]
-Define the term *current account of the balance of payments*.
+Question 1d [2 marks]
+Describe one way a multinational corporation (MNC) can create jobs in a host country.
 
-Question 2 [4 marks]
-Using Figure 1, calculate the change in the trade in services balance as a percentage of GDP between 2020 and 2024.
+Figure 1 shows selected economic indicators for Nigeria in 2023:
 
-Question 3 [6 marks]
-Explain **two** reasons why a depreciation of sterling may not improve the UK current account in the short run.
+| Indicator | Value (2023) |
+|---|---|
+| Nominal GDP (US$bn) | 477 |
+| Population (millions) | 220 |
+| Economic growth rate | 3.1% |
+| Inflation rate | 24.9% |
+| Unemployment rate | 33.3% |
 
-Question 4 [9 marks]
-Analyse, with reference to the data, the likely effect of new free trade agreements on UK economic growth.
+Question 1e [2 marks]
+Using the data in Figure 1, calculate Nigeria's nominal GDP per capita in US$ in 2023. You are advised to show your working.
 
-Question 5 [12 marks]
-Discuss whether a persistent current account deficit is necessarily harmful for the UK economy.
+Question 1f [3 marks]
+In 2023, the Nigerian Government removed a price ceiling on petrol. Before removal, the price ceiling was set below the market equilibrium price. Using the diagram below, draw the effects of the removal of the price ceiling on the equilibrium price and quantity of petrol in Nigeria. Label the new equilibrium price and the new equilibrium quantity.
 
-## Section B: Essay (25 marks — choose ONE)
+Question 1g [3 marks]
+Youth unemployment in Nigeria is particularly high. Over 40% of Nigerians aged 15–34 were unemployed in 2023. Explain one economic cost to a country such as Nigeria of having high youth unemployment.
 
-Question 6 [25 marks]
-Evaluate the view that protectionism is justified for an advanced economy such as the UK.
+Question 1h [6 marks]
+In 2022, Nigeria received over US$4.5bn in foreign direct investment (FDI). Oil companies, technology firms and telecommunications providers have all invested heavily in the country. With reference to the data above and your knowledge of economics, analyse the possible impact of foreign direct investment (FDI) on the Nigerian economy.
 
-Question 7 [25 marks]
-Evaluate the view that exchange rate depreciation is the most effective way to correct a current account deficit.
+## Question 2 (Total 20 marks)
+
+Question 2a [1 marks]
+Which one of the following is an example of an indirect tax?
+- A Corporation tax on business profits
+- B Income tax on wages
+- C Value Added Tax (VAT) on goods
+- D Inheritance tax on estates
+
+Question 2b [1 marks]
+Which one of the following is the best description of frictional unemployment?
+- A Unemployment caused by a fall in aggregate demand
+- B Unemployment between jobs while searching for a new role
+- C Unemployment due to a permanent decline in an industry
+- D Unemployment caused by changes in the seasons
+
+Question 2c [1 marks]
+State one cause of a government budget deficit.
+
+Question 2d [2 marks]
+What is meant by the term *regressive tax*?
+
+Question 2e [3 marks]
+In 2024, the UK Government raised the rate of Value Added Tax (VAT) on selected goods from 20% to 22%. Explain one way the increase in VAT is likely to affect UK consumers.
+
+Question 2f [3 marks]
+Using the diagram below, label the remaining three stages of the economic cycle in the boxes on the diagram.
+
+Question 2g [9 marks]
+In 2024, the UK Government increased excise duty on cigarettes by 10% above inflation. Around 13% of UK adults still smoke, despite long-running campaigns to reduce smoking rates. The higher duty aims both to raise tax revenue and to reduce the harm caused by smoking. With reference to the data above and your knowledge of economics, assess the possible benefits for the UK of increasing excise duty on cigarettes.
+
+## Question 3 (Total 20 marks)
+
+Question 3a [1 marks]
+Which one of the following is an example of a tariff?
+- A A ban on importing a good from a particular country
+- B A limit on the quantity of a good that can be imported
+- C A tax placed on goods as they enter a country
+- D A subsidy paid to domestic exporters
+
+Question 3b [1 marks]
+The US dollar appreciates by 10% against the Chinese yuan. Which one of the following is the most likely impact of the appreciation on US trade with China?
+- A US exports become cheaper for Chinese buyers
+- B US imports from China become more expensive
+- C US exports become more expensive for Chinese buyers
+- D China's trade surplus with the US falls
+
+Question 3c [3 marks]
+In 2024, the United States introduced a 25% import tariff on Chinese steel. Before the tariff, steel was imported freely from China. Using the diagram below, draw the effects of the introduction of the tariff on the equilibrium price and quantity of Chinese steel imported into the US. Label the new curve, the new equilibrium price and the new equilibrium quantity.
+
+Question 3d [6 marks]
+Since 2018, the US has imposed tariffs on more than $370bn worth of Chinese imports. US steel and aluminium producers have seen their output rise and some new factories have opened. With reference to the data above and your knowledge of economics, analyse the possible advantages of tariffs for domestic producers in the US.
+
+Question 3e [9 marks]
+The Chinese yuan has depreciated against the US dollar by more than 8% over the past two years. China is the world's largest exporter, selling $3.6 trillion worth of goods to the rest of the world in 2023. With reference to the data above and your knowledge of economics, assess the possible impact of a currency depreciation on an economy such as China's.
+
+## Question 4 (Total 20 marks)
+
+Figure 5 shows economic indicators for Turkey in 2024:
+
+| Economic Indicator | Value (2024) |
+|---|---|
+| Nominal interest rate | 45% |
+| Rate of inflation | 67% |
+
+Question 4a [2 marks]
+Using the data in Figure 5, calculate Turkey's real interest rate in 2024. You are advised to show your working.
+
+Question 4b [6 marks]
+In recent years, the Turkish central bank has repeatedly raised interest rates. These rises have not only aimed to bring inflation under control but have also affected the value of the Turkish lira against other currencies. With reference to the data above and your knowledge of economics, analyse the relationship between interest rates and the exchange rate for a country such as Turkey.
+
+Question 4c [12 marks]
+With inflation in Turkey reaching 67% in 2024, some economists argue that monetary policy alone is not enough. They suggest that supply-side policies — including investment in education and training, labour market reforms, and infrastructure projects — are needed to control inflation in the long term. However, supply-side policies take several years to have a full effect. With reference to the data above and your knowledge of economics, evaluate the possible effectiveness of using supply-side policies to control inflation in a country such as Turkey.
+
+**TOTAL FOR PAPER = 80 MARKS**
 `,
   },
   {
@@ -634,50 +1024,153 @@ Evaluate the view that exchange rate depreciation is the most effective way to c
     subject: "edexcel-igcse" as any,
     paper: "2",
     title: "Paper 2 — Set C (Advanced)",
-    description: "Macroeconomics & the Global Economy (4EC1/02). Set C — Advanced.",
+    description: "Macroeconomics & the Global Economy (4EC1/02). Verbatim from Predicted Paper — Advanced.",
     totalMarks: 80,
-    content: `# Edexcel IGCSE Economics (4EC1/02) — Macroeconomics & the Global Economy — Predicted Paper Set C (Advanced)
+    content: `# Pearson Edexcel International GCSE — Predicted Paper (Advanced)
+**4EC1/02 Economics — Paper 2: Macroeconomics and the Global Economy**
 
-**Time: 1 hour 30 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total Marks: 80**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer ALL questions. Write your answers in the spaces provided.
 
-## Section A: Data Response (55 marks)
+## Question 1 (Total 20 marks)
 
-**Extract 1 — Economic development in Sub-Saharan Africa**
-Several Sub-Saharan economies have grown rapidly over the past decade, driven by commodity exports, mobile banking and Chinese infrastructure investment. However, GDP per capita remains low, income inequality is high and many countries depend on a narrow range of primary exports. The IMF has provided structural adjustment loans tied to fiscal reform, while NGOs argue that microfinance and investment in education and healthcare are more effective tools for development.
+Question 1a [1 marks]
+Which one of the following best describes a negative externality of production?
+- A Jobs created by a new factory
+- B Pollution affecting nearby residents
+- C Tax revenue for the government
+- D Lower prices for consumers
 
-**Figure 1: Selected development indicators, 2024**
+Question 1b [1 marks]
+Which one of the following is most likely to reduce carbon emissions?
+- A A subsidy for coal-fired power stations
+- B Removal of a tax on petrol
+- C A carbon tax on fossil fuel producers
+- D Cutting the price of electricity from gas
 
-| Country | GDP per capita (US$) | HDI | Adult literacy (%) | Life expectancy (years) |
-|---------|----------------------|-----|--------------------|-------------------------|
-| Kenya | 2,250 | 0.601 | 82.6 | 67.5 |
-| Ghana | 2,350 | 0.632 | 79.0 | 64.3 |
-| Ethiopia | 1,030 | 0.498 | 51.8 | 67.8 |
-| UK | 49,000 | 0.940 | 99.0 | 81.7 |
+Question 1c [2 marks]
+What is meant by the term *market failure*?
 
-Question 1 [2 marks]
-Define the term *Human Development Index (HDI)*.
+Question 1d [2 marks]
+Describe one way deforestation can cause economic damage to a country such as Indonesia.
 
-Question 2 [4 marks]
-Using Figure 1, compare the level of economic development in Kenya and Ethiopia.
+Figure 1 shows selected environmental indicators for Indonesia in 2023:
 
-Question 3 [6 marks]
-Explain **two** limitations of using GDP per capita as a measure of economic development.
+| Indicator | Value (2023) |
+|---|---|
+| CO₂ emissions (million tonnes) | 692 |
+| Share of electricity from coal (%) | 61% |
+| Annual deforestation rate (hectares) | 115,000 |
+| Estimated external health cost (US$bn) | 28.5 |
 
-Question 4 [9 marks]
-Analyse the impact of foreign direct investment from China on the economic development of a Sub-Saharan African economy.
+Question 1e [2 marks]
+Using the data in Figure 1, calculate the estimated external health cost per tonne of CO₂ emitted in Indonesia, in US$. You are advised to show your working.
 
-Question 5 [12 marks]
-Discuss whether dependence on primary commodity exports is the most significant barrier to economic development.
+Question 1f [3 marks]
+In 2024, the Indonesian Government announced plans to introduce a carbon tax on coal-fired power generation to reduce harmful emissions. Using the diagram below, draw the effects of the introduction of the carbon tax on the equilibrium price and quantity of coal-fired electricity in Indonesia. Label the new curve, the new equilibrium price and the new equilibrium quantity.
 
-## Section B: Essay (25 marks — choose ONE)
+Question 1g [3 marks]
+Coal-fired power stations in Indonesia generate emissions that are estimated to cause thousands of premature deaths each year and damage agricultural yields through acid rain. Explain one reason why negative externalities cause market failure in a country such as Indonesia.
 
-Question 6 [25 marks]
-Evaluate the view that microfinance is the most effective strategy for promoting economic development in low-income countries.
+Question 1h [6 marks]
+Indonesia has pledged to reach net-zero emissions by 2060. Critics argue that a carbon tax alone will not achieve this goal and that additional regulation and investment in renewable energy are needed. With reference to the data above and your knowledge of economics, analyse the possible disadvantages of introducing a carbon tax in a country such as Indonesia.
 
-Question 7 [25 marks]
-Evaluate the view that, for low-income countries, free trade is more effective than aid in achieving long-term economic development.
+## Question 2 (Total 20 marks)
+
+Question 2a [1 marks]
+Which one of the following best describes hyperinflation?
+- A A steady rise in prices of around 2% per year
+- B A persistent fall in the general price level
+- C An extremely high and typically accelerating rate of inflation
+- D A temporary one-off rise caused by higher taxes
+
+Question 2b [1 marks]
+Which one of the following describes stagflation?
+- A High economic growth with low inflation
+- B High inflation combined with rising unemployment and stagnant growth
+- C Low inflation with rising real wages
+- D A falling price level combined with rising employment
+
+Question 2c [1 marks]
+State one impact of hyperinflation on savers in a country.
+
+Question 2d [2 marks]
+What is meant by the term *cost-push inflation*?
+
+Question 2e [3 marks]
+In December 2023, the Argentine Government devalued the peso by more than 50% against the US dollar and removed many price controls. Shop prices rose sharply in the following weeks. Explain one reason why the devaluation of the peso is likely to increase inflation in Argentina.
+
+Question 2f [3 marks]
+Using the diagram below, label the remaining three stages of the economic cycle in the boxes on the diagram.
+
+Figure 4 shows Argentina's annual inflation and real GDP growth between 2021 and 2023:
+
+| Year | Annual inflation | Real GDP growth |
+|---|---|---|
+| 2021 | 50.9% | +10.4% |
+| 2022 | 94.8% | +5.0% |
+| 2023 | 211.4% | −1.6% |
+
+Question 2g [9 marks]
+In response to stagflation, the Argentine central bank raised interest rates to over 100% in 2023, while the government cut subsidies on energy and transport and reduced public-sector employment. With reference to the data above and your knowledge of economics, assess the possible effects of using contractionary monetary policy to reduce inflation in a country such as Argentina.
+
+## Question 3 (Total 20 marks)
+
+Question 3a [1 marks]
+Which one of the following would most likely cause an appreciation of a country's currency?
+- A A fall in domestic interest rates
+- B A rise in imports of consumer goods
+- C An increase in foreign direct investment into the country
+- D Higher domestic inflation than in trading partners
+
+Question 3b [1 marks]
+The Saudi riyal is pegged at a rate of 1 US$ = 3.75 SAR. How many Saudi riyals would a firm receive for an export worth US$2,000?
+- A SAR 533
+- B SAR 1,875
+- C SAR 7,500
+- D SAR 75,000
+
+Question 3c [3 marks]
+In 2024, growing demand from foreign investors for Saudi bonds led to a sustained rise in demand for the riyal on foreign-exchange markets. Using the diagram below, draw the effects of the rise in demand for the riyal on the equilibrium exchange rate and quantity of riyals traded. Label the new curve, the new equilibrium exchange rate and the new equilibrium quantity.
+
+Figure 6 shows Saudi Arabia's current-account components for 2023 (US$bn):
+
+| Current-account component | Value (US$bn) |
+|---|---|
+| Oil exports | 326.5 |
+| Non-oil exports | 67.4 |
+| Total imports of goods | 208.7 |
+| Net services balance | −38.2 |
+| Net income balance | −22.0 |
+
+Question 3d [6 marks]
+Under its "Vision 2030" programme, Saudi Arabia is investing heavily in tourism, renewable energy and manufacturing to reduce its dependence on oil exports. With reference to the data above and your knowledge of economics, analyse the possible benefits to Saudi Arabia of diversifying away from oil.
+
+Question 3e [9 marks]
+In 2024, the Egyptian pound was devalued by almost 40% against the US dollar. The devaluation was part of a package agreed with the IMF to attract more foreign investment and support struggling Egyptian exporters. With reference to the data above and your knowledge of economics, assess the possible effects of a currency devaluation on an economy such as Egypt.
+
+## Question 4 (Total 20 marks)
+
+Figure 7 shows selected development indicators for India in 2023:
+
+| Development indicator | Value (2023) |
+|---|---|
+| Real GDP growth | 7.6% |
+| Inflation rate | 5.2% |
+| Population below poverty line | 12.9% |
+| Net ODA received (US$bn) | 3.1 |
+
+Question 4a [2 marks]
+In 2023, India's population reached 1.43 billion, overtaking China as the world's most populous country. The percentage of the population living below the national poverty line had fallen from 21.9% in 2011 to 12.9% in 2023. Using the data above, calculate the number of Indians still living below the poverty line in 2023, in millions. You are advised to show your working.
+
+Question 4b [6 marks]
+India's economic growth has been driven by strong demand for its services exports — particularly IT and business-process outsourcing — as well as significant government investment in roads, ports and digital infrastructure. With reference to the data above and your knowledge of economics, analyse the possible ways in which economic growth can raise living standards in a country such as India.
+
+Question 4c [12 marks]
+Ethiopia is one of the fastest-growing economies in Africa but remains heavily dependent on agriculture and receives significant amounts of foreign aid. In 2023 it received more than US$4bn in official development assistance (ODA), much of it tied to specific projects. At the same time, Ethiopia's membership of the African Continental Free Trade Area (AfCFTA) is opening up new markets for Ethiopian exports of coffee, leather goods and textiles. Some economists argue that trade, rather than aid, is the more effective long-term route to economic development for a country such as Ethiopia. With reference to the data above and your knowledge of economics, evaluate the view that trade is more effective than foreign aid in promoting economic development in a country such as Ethiopia.
+
+**TOTAL FOR PAPER = 80 MARKS**
 `,
   },
   // ── OCR GCSE Economics (J205) ──
