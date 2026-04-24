@@ -1235,12 +1235,19 @@ You MUST evaluate using ALL 5 diagram marking criteria:
 
     const rubric = isLorenzTopic ? lorenzRubric : standardRubric;
 
+    // Build the per-scenario rubric (board-aware) so the AI marks against the
+    // exact criteria for THIS scenario instead of a generic 5-point rubric.
+    const scenarioRubricObj = selectedScenario
+      ? buildScenarioRubric(selectedScenario, examBoard)
+      : null;
+    const scenarioRubricBlock = scenarioRubricObj ? renderRubricForPrompt(scenarioRubricObj) : "";
+
     await streamChat({
       messages: [
         { role: "user", content: diagramContent },
         { role: "user", content: `Mark this diagram submission using ${examBoard} ${level} ${subjectLabel} criteria.
 
-${rubric}
+${scenarioRubricBlock ? scenarioRubricBlock + "\n\n" : ""}${rubric}
 
 You MUST structure your response using EXACTLY these section headers (the app parses them):
 
