@@ -1178,7 +1178,7 @@ Ethiopia is one of the fastest-growing economies in Africa but remains heavily d
     id: "ocrgcse-p1-a",
     subject: "ocr-gcse" as any,
     paper: "1",
-    title: "Paper 1 — Moderate",
+    title: "Paper 1 — Set A (Moderate)",
     description: "Introduction to Economics (J205/01) — Moderate tier predicted paper.",
     totalMarks: 80,
     content: `# OCR GCSE (9–1) Economics — J205/01 Introduction to Economics — Predicted Paper (Moderate)
@@ -1398,7 +1398,7 @@ Evaluate the benefits to Ravi of specialising in one type of clothing, such as s
     id: "ocrgcse-p1-b",
     subject: "ocr-gcse" as any,
     paper: "1",
-    title: "Paper 1 — Hard",
+    title: "Paper 1 — Set B (Hard)",
     description: "Introduction to Economics (J205/01) — Hard tier predicted paper.",
     totalMarks: 80,
     content: `# OCR GCSE (9–1) Economics — J205/01 Introduction to Economics — Predicted Paper (Hard)
@@ -1618,7 +1618,7 @@ Evaluate the benefits to SkyRoute of specialising in business travel. Use the in
     id: "ocrgcse-p1-c",
     subject: "ocr-gcse" as any,
     paper: "1",
-    title: "Paper 1 — Advanced",
+    title: "Paper 1 — Set C (Advanced)",
     description: "Introduction to Economics (J205/01) — Advanced tier predicted paper.",
     totalMarks: 80,
     content: `# OCR GCSE (9–1) Economics — J205/01 Introduction to Economics — Predicted Paper (Advanced)
@@ -1838,7 +1838,7 @@ Evaluate whether Bearcup should focus on increased specialisation in premium cof
     id: "ocrgcse-p2-a",
     subject: "ocr-gcse" as any,
     paper: "2",
-    title: "Paper 2 — Moderate",
+    title: "Paper 2 — Set A (Moderate)",
     description: "National and International Economics (J205/02) — Moderate tier predicted paper.",
     totalMarks: 80,
     content: `# OCR GCSE (9–1) Economics — J205/02 National and International Economics — Predicted Paper (Moderate)
@@ -2058,7 +2058,7 @@ Evaluate the extent to which a sustained depreciation of sterling would be benef
     id: "ocrgcse-p2-b",
     subject: "ocr-gcse" as any,
     paper: "2",
-    title: "Paper 2 — Hard",
+    title: "Paper 2 — Set B (Hard)",
     description: "National and International Economics (J205/02) — Hard tier predicted paper.",
     totalMarks: 80,
     content: `# OCR GCSE (9–1) Economics — J205/02 National and International Economics — Predicted Paper (Hard)
@@ -2278,7 +2278,7 @@ Evaluate the extent to which a sustained appreciation of sterling would harm the
     id: "ocrgcse-p2-c",
     subject: "ocr-gcse" as any,
     paper: "2",
-    title: "Paper 2 — Advanced",
+    title: "Paper 2 — Set C (Advanced)",
     description: "National and International Economics (J205/02) — Advanced tier predicted paper.",
     totalMarks: 80,
     content: `# OCR GCSE (9–1) Economics — J205/02 National and International Economics — Predicted Paper (Advanced)
