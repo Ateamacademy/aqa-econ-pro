@@ -1131,275 +1131,262 @@ Externalities lead to market failure because:
     id: "caie-p2-set-a",
     subject: "cambridge" as any,
     paper: "2",
-    title: "Paper 2 Data Response (AS) — Set A",
-    description: "AS data response and essay on inflation, trade, and market failure.",
-    totalMarks: 40,
-    content: `# Cambridge International AS Economics (9708) — Paper 2 Data Response & Essay — Set A
+    title: "Paper 2 Data Response & Essays — Set A",
+    description: "AS Data Response and Essays. Set A — Moderate. Verbatim from official-style mock.",
+    totalMarks: 60,
+    content: `# Cambridge International AS & A Level Economics (9708) — Paper 2 AS Level Data Response and Essays — Predicted Paper Set A (Moderate)
 
-**Time: 1 hour 30 minutes | Total: 40 marks**
-
-Answer one question from Section A and one from Section B.
+**Time: 2 hours | Total: 60 marks**
+Answer three questions in total: Section A: answer Question 1. Section B: answer one question. Section C: answer one question.
 
 ## Section A
+Answer all parts of question 1.
 
-Answer either Question 1 or Question 2.
+**1 The United Kingdom and the cost-of-living crisis**
 
-### Question 1 — Rising Food Prices in Developing Countries
+Between 2021 and 2023, the United Kingdom experienced one of the sharpest rises in its consumer price index (CPI) in four decades. The CPI rate of inflation peaked at 11.1% in October 2022, well above the Bank of England's 2% target. Inflation was driven by a combination of rising global energy prices following geopolitical shocks, disruptions to global supply chains, and a weaker pound sterling, which raised the cost of imported goods. Households faced significant falls in real incomes, and many firms reported higher costs of production.
 
-**Table 1:** Consumer Price Index for Food in Selected Countries (2019 = 100)
+In response, the Bank of England raised its official Bank Rate from 0.1% in December 2021 to 5.25% by August 2023, the highest level since the 2008 financial crisis. The UK government also introduced an 'Energy Price Guarantee' to limit the average annual household energy bill, at a cost estimated at over £30 billion. Some commentators argued that further rises in the minimum wage, which increased by 9.7% in April 2023, would feed through into a wage–price spiral. Others suggested that supply-side measures would be more effective in reducing inflation over the medium term.
 
-| Country | 2020 | 2021 | 2022 | 2023 | 2024 |
-|---------|------|------|------|------|------|
-| Nigeria | 118 | 142 | 171 | 203 | 238 |
-| India | 109 | 114 | 121 | 128 | 134 |
-| Brazil | 112 | 119 | 130 | 135 | 139 |
-| UK | 103 | 106 | 119 | 131 | 136 |
+**Table 1.1 UK CPI annual inflation rate (%), selected months**
 
-Source: FAO Food Price Monitoring, 2024
+| Month/Year | CPI inflation rate (%) |
+| :--- | :--- |
+| December 2021 | 5.4 |
+| June 2022 | 9.4 |
+| October 2022 | 11.1 |
+| February 2023 | 10.4 |
+| June 2023 | 7.9 |
+| October 2023 | 4.6 |
+*Source: adapted from Office for National Statistics (ONS), 2023*
 
-**Extract 1:**
-Food prices in many developing countries have risen sharply since 2020. In Nigeria, the food consumer price index increased by 138% between 2019 and 2024. Several factors contributed including supply chain disruptions, rising energy costs, and the depreciation of the naira against the US dollar. The Nigerian government responded by increasing subsidies on staple foods and imposing price controls on essential items such as rice and cooking oil.
+Question 1a(i) [1 marks]
+Identify the change in the UK CPI annual inflation rate between December 2021 and October 2022.
 
-Economists have debated whether these interventions effectively addressed the problem or created further distortions in the market. Some argue that price controls led to shortages and the emergence of black markets, while subsidies placed a significant burden on the government's fiscal position.
-
-Source: World Bank Economic Outlook, 2024
-
-Question 1a [2 marks]
-Using Table 1, calculate the percentage increase in the food price index for Nigeria between 2020 and 2024.
+Question 1a(ii) [1 marks]
+Compare the trend in the UK CPI annual inflation rate between December 2021 and October 2022 with that between October 2022 and October 2023.
 
 Question 1b [2 marks]
-Using Table 1, identify which country experienced the smallest increase in food prices between 2019 and 2024.
+Identify one possible impact of a high rate of inflation on UK households and one possible impact on UK firms.
 
 Question 1c [4 marks]
-Using the data, explain two causes of rising food prices in developing countries.
+Consider whether a 9.7% rise in the UK minimum wage is likely to cause a wage–price spiral.
 
 Question 1d [6 marks]
-Using a demand and supply diagram, analyse the effect of a price ceiling on the market for rice in Nigeria.
+Assess the extent to which supply-side shocks, such as rising global energy prices and supply chain disruptions, can explain the increase in UK inflation between 2021 and 2022.
 
 Question 1e [6 marks]
-Discuss whether subsidies on staple foods are an effective policy to reduce the impact of rising food prices on consumers in developing countries.
-
-### Question 2 — The Growth of E-Commerce
-
-**Table 2:** Online Retail Sales as a Percentage of Total Retail Sales
-
-| Country | 2019 | 2021 | 2023 |
-|---------|------|------|------|
-| China | 24.9 | 29.1 | 31.7 |
-| UK | 19.2 | 27.8 | 26.2 |
-| USA | 11.0 | 14.2 | 15.6 |
-| India | 3.6 | 5.8 | 7.4 |
-
-Source: eMarketer Global E-Commerce Report, 2024
-
-**Extract 2:**
-The rapid growth of e-commerce has transformed retail markets globally. Traditional high-street retailers have faced increasing competition from online platforms, leading to shop closures and structural unemployment in the retail sector. In the UK, online retail sales peaked at 27.8% during the pandemic but have since stabilised around 26%.
-
-The shift to e-commerce has raised concerns about market dominance by large technology companies, tax avoidance through complex corporate structures, and the impact on workers in the gig economy who often lack employment protections.
-
-Source: OECD Digital Economy Report, 2024
-
-Question 2a [2 marks]
-Using Table 2, identify the country with the highest proportion of online retail sales in 2023.
-
-Question 2b [2 marks]
-Calculate the percentage point increase in online retail sales as a share of total retail in India between 2019 and 2023.
-
-Question 2c [4 marks]
-Using the data, explain how the growth of e-commerce might lead to structural unemployment.
-
-Question 2d [6 marks]
-Using an appropriate diagram, analyse the effect of a dominant online retailer on price and output in a market.
-
-Question 2e [6 marks]
-Discuss whether government regulation of large technology companies is likely to benefit consumers.
+Assess the extent to which raising the Bank Rate is likely to be effective in reducing the UK's rate of inflation.
 
 ## Section B
+Answer one question.
 
-Answer either Question 3 or Question 4.
+Question 2a [8 marks]
+Explain what is meant by price elasticity of demand (PED) and consider why PED varies between different goods.
 
-Question 3 [8 marks]
-Explain how the price mechanism allocates resources in a market economy.
+Question 2b [12 marks]
+Assess whether firms selling goods with a relatively price-inelastic demand always benefit more than firms selling goods with a relatively price-elastic demand.
 
-Question 4 [8 marks]
-Explain how a depreciation of a country's exchange rate might affect its current account balance.`,
+Question 3a [8 marks]
+Explain, with examples, how negative externalities of production can cause market failure in a free market economy such as the United States.
+
+Question 3b [12 marks]
+Assess whether indirect taxation is the most effective way for a government to reduce negative externalities of production.
+
+## Section C
+Answer one question.
+
+Question 4a [8 marks]
+Using an AD/AS diagram, explain how an increase in business confidence in the UK might affect the level of economic activity, and consider one factor that could limit this effect.
+
+Question 4b [12 marks]
+Assess whether fiscal policy is a more effective tool than monetary policy for reducing unemployment in a developed economy.
+
+Question 5a [8 marks]
+With the help of a diagram, explain how a depreciation of a floating exchange rate may improve the current account of a country's balance of payments, and consider one reason why it may not.
+
+Question 5b [12 marks]
+Assess the extent to which a persistent current account surplus is always beneficial for an economy.`,
   },
 
   {
     id: "caie-p2-set-b",
     subject: "cambridge" as any,
     paper: "2",
-    title: "Paper 2 Data Response (AS) — Set B",
-    description: "AS data response on healthcare, inequality, and the role of government.",
-    totalMarks: 40,
-    content: `# Cambridge International AS Economics (9708) — Paper 2 Data Response & Essay — Set B
+    title: "Paper 2 Data Response & Essays — Set B",
+    description: "AS Data Response and Essays. Set B — Hard. Verbatim from official-style mock.",
+    totalMarks: 60,
+    content: `# Cambridge International AS & A Level Economics (9708) — Paper 2 AS Level Data Response and Essays — Predicted Paper Set B (Hard)
 
-**Time: 1 hour 30 minutes | Total: 40 marks**
-
-Answer one question from Section A and one from Section B.
+**Time: 2 hours | Total: 60 marks**
+Answer three questions in total: Section A: answer Question 1. Section B: answer one question. Section C: answer one question.
 
 ## Section A
+Answer all parts of question 1.
 
-### Question 1 — Healthcare Spending and Market Failure
+**1 Germany's energy crisis and the green transition**
 
-**Table 1:** Healthcare Expenditure as % of GDP (Selected Countries, 2023)
+Germany, Europe's largest economy, has faced a severe energy crisis since 2022. Before the crisis, Germany imported around 55% of its natural gas from Russia, making it heavily dependent on a single supplier. Following the disruption of these supply chains, wholesale natural gas prices in Germany rose by more than 400% between January 2021 and August 2022, before easing in 2023. Several energy-intensive firms in sectors such as chemicals, steel and glass announced temporary plant closures or relocations abroad.
+In response, the German government introduced a €200 billion 'economic defence shield' including a gas price cap for households and industry, subsidies for energy-saving investment, and accelerated permits for renewable energy projects. The government also pursued a policy of diversifying gas supplies via new liquefied natural gas (LNG) terminals.
+At the same time, the European Central Bank (ECB) raised its main refinancing rate from 0.00% in July 2022 to 4.50% by September 2023, to combat inflation across the Eurozone, which had reached a peak of 10.6% in October 2022. Some commentators warned that high energy costs, combined with tighter monetary policy, risked tipping Germany into a prolonged recession and damaging its industrial base.
 
-| Country | Public (%) | Private (%) | Total (%) | Life Expectancy |
-|---------|-----------|------------|----------|----------------|
-| USA | 8.5 | 8.9 | 17.4 | 77.5 |
-| UK | 8.3 | 2.1 | 10.4 | 81.2 |
-| Singapore | 4.1 | 1.8 | 5.9 | 83.9 |
-| India | 1.3 | 2.6 | 3.9 | 70.8 |
+**Table 1.1 Germany — selected macroeconomic indicators**
 
-Source: WHO Global Health Expenditure Database, 2024
+| Indicator | 2021 | 2022 | 2023 |
+| :--- | :--- | :--- | :--- |
+| Real GDP growth (%) | 3.1 | 1.8 | –0.3 |
+| HICP inflation (%) | 3.2 | 8.7 | 6.0 |
+| Unemployment rate (%) | 3.6 | 3.1 | 3.1 |
+| Current account balance (% of GDP) | 7.6 | 4.2 | 6.2 |
+| Industrial production (index, 2015=100) | 100.5 | 97.3 | 94.1 |
+*Source: adapted from Eurostat, Bundesbank, 2024*
 
-**Extract 1:**
-Healthcare is widely considered a merit good because individuals often undervalue the benefits of preventive care and vaccinations. Information failure means that consumers may not fully appreciate the long-term health benefits of regular check-ups or immunisation programmes. Additionally, healthcare generates significant positive externalities — a vaccinated population reduces the spread of infectious diseases, benefiting the entire community.
+Question 1a(i) [1 marks]
+Using Table 1.1, calculate the percentage point change in Germany's real GDP growth between 2021 and 2023.
 
-However, the extent of government intervention in healthcare varies dramatically between countries. The United States relies heavily on private provision, spending 17.4% of GDP on healthcare in 2023, yet achieves a lower life expectancy than Singapore, which spends only 5.9% of GDP.
-
-Source: The Lancet, Global Health Report, 2024
-
-Question 1a [2 marks]
-Using Table 1, calculate how much more (in percentage points) the USA spends on private healthcare compared to the UK.
+Question 1a(ii) [1 marks]
+Compare the trend in Germany's unemployment rate with the trend in industrial production between 2021 and 2023.
 
 Question 1b [2 marks]
-Using the data, identify one anomaly in the relationship between total healthcare spending and life expectancy.
+Explain two likely impacts of a 400% rise in wholesale gas prices on energy-intensive German firms.
 
 Question 1c [4 marks]
-Explain why healthcare is considered a merit good.
+Consider whether a gas price cap is an effective microeconomic policy to protect German households and firms from high energy prices.
 
 Question 1d [6 marks]
-With the aid of a diagram, analyse how positive externalities from vaccination lead to market failure.
+Assess the extent to which a simultaneous rise in ECB interest rates and a fall in industrial production can be explained by a negative supply-side shock rather than tighter monetary policy.
 
 Question 1e [6 marks]
-Discuss whether government provision of healthcare is more effective than private provision in improving health outcomes.
-
-### Question 2 — Income Inequality in Developing Economies
-
-**Table 2:** Gini Coefficients and GDP per Capita (2023)
-
-| Country | Gini Coefficient | GDP per Capita ($) |
-|---------|-----------------|-------------------|
-| South Africa | 0.63 | 6,994 |
-| Brazil | 0.52 | 8,917 |
-| China | 0.38 | 12,720 |
-| Germany | 0.31 | 51,384 |
-
-Source: World Bank Development Indicators, 2024
-
-**Extract 2:**
-Income inequality remains a significant challenge in many developing and emerging economies. South Africa's Gini coefficient of 0.63 makes it one of the most unequal countries in the world. High inequality can reduce economic growth by limiting the purchasing power of the majority, reducing social mobility, and creating political instability.
-
-Governments have used various policies to address inequality, including progressive taxation, minimum wages, and direct transfer payments. However, the effectiveness of these policies depends on the strength of institutions, the size of the informal economy, and the ability of governments to collect taxes efficiently.
-
-Source: UNDP Inequality Report, 2024
-
-Question 2a [2 marks]
-Define the term 'Gini coefficient'.
-
-Question 2b [2 marks]
-Using Table 2, compare income inequality in China and South Africa.
-
-Question 2c [4 marks]
-Explain two reasons why income inequality might reduce economic growth.
-
-Question 2d [6 marks]
-Using a Lorenz curve diagram, analyse the effect of a progressive tax system on income distribution.
-
-Question 2e [6 marks]
-Discuss whether a minimum wage is an effective policy to reduce income inequality in developing countries.
+Assess whether subsidies for renewable energy are a more effective long-term response to energy insecurity than building new LNG import terminals.
 
 ## Section B
+Answer one question.
 
-Question 3 [8 marks]
-Explain the factors that determine the price elasticity of demand for a product.
+EITHER
 
-Question 4 [8 marks]
-Explain how fiscal policy can be used to manage aggregate demand.`,
+Question 2a [8 marks]
+Explain, with examples, how negative externalities of consumption and negative externalities of production differ, and consider why they can both lead to market failure in a free market economy.
+
+Question 2b [12 marks]
+The European Union's Emissions Trading System (EU ETS) allows firms to buy and sell permits to emit carbon dioxide. Assess whether a tradable permits scheme is a more effective policy than a carbon tax in reducing negative externalities.
+
+OR
+
+Question 3a [8 marks]
+With the help of a diagram, explain the difference between a shift in the supply curve for labour and a movement along the supply curve for labour, and consider the factors that may cause a shift in the supply of labour for a particular occupation.
+
+Question 3b [12 marks]
+Assess the extent to which a rise in the statutory minimum wage will always lead to a fall in employment in a developed economy such as the UK.
+
+## Section C
+Answer one question.
+
+EITHER
+
+Question 4a [8 marks]
+Using an AD/AS diagram, explain how a simultaneous rise in oil prices and a fall in consumer confidence in the EU might affect real GDP and the price level, and consider which effect is likely to be greater.
+
+Question 4b [12 marks]
+Assess the extent to which a central bank faces a trade-off between reducing inflation and avoiding a rise in unemployment.
+
+OR
+
+Question 5a [8 marks]
+Explain the difference between the current account and the financial account of the balance of payments, and consider how a persistent current account deficit might be financed.
+
+Question 5b [12 marks]
+In 2018 the United States imposed tariffs on imports from China to reduce its current account deficit. Assess the extent to which protectionist policies are an effective way to correct a persistent current account deficit.`,
   },
 
   {
     id: "caie-p2-set-c",
     subject: "cambridge" as any,
     paper: "2",
-    title: "Paper 2 Data Response (AS) — Set C",
-    description: "AS data response on climate policy, subsidies, and macroeconomic policy.",
-    totalMarks: 40,
-    content: `# Cambridge International AS Economics (9708) — Paper 2 Data Response & Essay — Set C
+    title: "Paper 2 Data Response & Essays — Set C",
+    description: "AS Data Response and Essays. Set C — Advanced. Verbatim from official-style mock.",
+    totalMarks: 60,
+    content: `# Cambridge International AS & A Level ECONOMICS 9708/02A Paper 2 AS Level Data Response and Essays Practice Series 2026
 
-**Time: 1 hour 30 minutes | Total: 40 marks**
+**Time: 2 hours | Total: 60 marks**
+Answer three questions in total: Section A: answer Question 1. Section B: answer one question. Section C: answer one question.
 
-Answer one question from Section A and one from Section B.
+## Section A (20 marks)
+Answer all parts of question 1.
 
-## Section A
+**1 The United States economy: a policy dilemma in 2023–2024**
 
-### Question 1 — Carbon Taxes and Climate Change
+The United States economy has faced an unusual combination of conditions since 2022. Headline CPI inflation peaked at 9.1% in June 2022 — a 40-year high — before declining to 3.2% by October 2023. Nevertheless, 'core' inflation (excluding food and energy) remained persistently above 4%, and the Federal Reserve raised its federal funds target range from 0.00–0.25% in March 2022 to 5.25–5.50% by July 2023. Unemployment remained near historic lows at 3.7%, whilst the labour force participation rate rose back to its pre-pandemic level. Wage growth averaged 4.5% annually, which some economists argued was sustaining inflationary pressure through a 'wage-driven' channel rather than a traditional wage–price spiral.
 
-**Table 1:** Carbon Tax Rates and CO₂ Emissions (Selected Countries, 2023)
+At the same time, the US dollar appreciated by over 15% against a basket of currencies between January 2022 and October 2023, raising concerns in emerging markets about capital outflows and higher dollar-denominated debt burdens. The Biden administration enacted the Inflation Reduction Act (2022), a $369 billion package of climate and clean-energy subsidies, and the CHIPS Act, which provided $52 billion in semiconductor manufacturing subsidies. Critics argued these fiscal measures worked against the Federal Reserve's tightening. Commentators disagreed on whether the US could achieve a 'soft landing' — bringing inflation to target without a recession — or whether a 'hard landing' with higher unemployment was unavoidable.
 
-| Country | Carbon Tax ($/tonne CO₂) | CO₂ Emissions per Capita (tonnes) | Emissions Change 2015-2023 |
-|---------|--------------------------|-----------------------------------|---------------------------|
-| Sweden | 130 | 3.4 | −28% |
-| France | 45 | 4.5 | −18% |
-| Canada | 50 | 14.2 | −8% |
-| USA | 0 | 13.0 | −12% |
+**Table 1.1 United States — key macroeconomic and labour market data**
 
-Source: World Bank Carbon Pricing Dashboard, 2024
+| Indicator | 2021 | 2022 | 2023 |
+| :--- | :--- | :--- | :--- |
+| Real GDP growth (%) | 5.8 | 1.9 | 2.5 |
+| Headline CPI inflation (%, annual avg) | 4.7 | 8.0 | 4.1 |
+| Core CPI inflation (%, annual avg) | 3.6 | 6.2 | 4.8 |
+| Unemployment rate (%) | 5.4 | 3.6 | 3.6 |
+| Nominal wage growth (%) | 4.9 | 5.2 | 4.5 |
+| Federal budget deficit (% of GDP) | –12.3 | –5.4 | –6.3 |
+| USD trade-weighted index (Jan 2020=100) | 105.3 | 118.7 | 121.5 |
+Source: adapted from Bureau of Economic Analysis, BLS, Federal Reserve, 2024
 
-**Extract 1:**
-Carbon taxes are increasingly used as a market-based instrument to reduce greenhouse gas emissions. Sweden, which introduced a carbon tax of approximately $130 per tonne in 2024, has seen its per capita emissions fall to 3.4 tonnes — well below the global average of 4.7 tonnes. Supporters argue that by internalising the negative externality of carbon emissions, a carbon tax encourages firms and consumers to switch to cleaner alternatives.
+Question 1a(i) [1 marks]
+Using Table 1.1, calculate the gap between headline and core CPI inflation in 2022.
 
-Critics, however, point to the regressive nature of carbon taxes — they disproportionately affect lower-income households who spend a larger proportion of their income on energy. Additionally, if only some countries impose carbon taxes, there is a risk of 'carbon leakage' where polluting industries relocate to countries without such taxes.
-
-Source: International Monetary Fund Climate Policy Report, 2024
-
-Question 1a [2 marks]
-Using Table 1, identify the country with the highest per capita CO₂ emissions in 2023.
+Question 1a(ii) [1 marks]
+Identify the trend in the US federal budget deficit between 2021 and 2023.
 
 Question 1b [2 marks]
-Calculate the difference in emissions reduction between Sweden and Canada over the period 2015-2023.
+Explain, using examples from the data, two reasons why real GDP growth may not be a reliable measure of changes in living standards in the US.
 
 Question 1c [4 marks]
-Using the data, explain how a carbon tax can be used to correct the market failure caused by negative externalities.
+Consider whether persistent core inflation of 4.8% alongside unemployment of 3.6% indicates that the US economy is operating above its potential output.
 
 Question 1d [6 marks]
-Using a diagram showing marginal social cost and marginal private cost, analyse how a carbon tax can achieve the socially optimal level of output.
+Assess the extent to which the appreciation of the US dollar between 2022 and 2023 would have helped the Federal Reserve reduce US inflation.
 
 Question 1e [6 marks]
-Discuss whether carbon taxes are the most effective policy to reduce carbon emissions.
+Assess the extent to which simultaneous expansionary fiscal policy (through the Inflation Reduction Act and CHIPS Act) and contractionary monetary policy would make it more difficult for the US to achieve a 'soft landing'.
 
-### Question 2 — Unemployment and Labour Market Policies
+## Section B (20 marks)
+Answer one question.
 
-**Extract 2:**
-Youth unemployment remains a pressing concern in many economies. In South Africa, the youth unemployment rate exceeded 60% in 2023, while in the EU it averaged 14.5%. Structural factors such as skills mismatches, geographical immobility, and technological change have contributed to persistent unemployment among young people.
+EITHER
 
-Governments have implemented various supply-side policies including apprenticeship schemes, wage subsidies for hiring young workers, and investments in vocational training. The effectiveness of these policies varies depending on the flexibility of the labour market and the quality of education systems.
+Question 2a [8 marks]
+With the help of diagrams, explain the concepts of consumer surplus and producer surplus, and consider the effect of a maximum price set below the market equilibrium on the distribution of economic welfare.
 
-Source: ILO Global Employment Trends for Youth, 2024
+Question 2b [12 marks]
+Assess the extent to which knowledge of both the price elasticity of demand and the price elasticity of supply is necessary for a government to predict the effects of an indirect tax on a particular market.
 
-Question 2a [2 marks]
-Define structural unemployment.
+OR
 
-Question 2b [2 marks]
-Using the extract, identify two causes of youth unemployment.
+Question 3a [8 marks]
+Explain the difference between a merit good and a public good, and consider why each type of good presents a different type of market failure that justifies government intervention.
 
-Question 2c [4 marks]
-Explain how supply-side policies can reduce structural unemployment.
+Question 3b [12 marks]
+Assess whether direct provision by the government is always the most efficient way to correct market failures associated with merit goods such as healthcare and education in a developed economy.
 
-Question 2d [6 marks]
-Using an aggregate demand and aggregate supply diagram, analyse the effect of supply-side policies on the economy.
+## Section C (20 marks)
+Answer one question.
 
-Question 2e [6 marks]
-Discuss whether government intervention in the labour market is always beneficial.
+EITHER
 
-## Section B
+Question 4a [8 marks]
+Using an AD/AS diagram, explain the difference between demand-side and supply-side causes of economic growth, and consider which is likely to be a more sustainable source of rising living standards.
 
-Question 3 [8 marks]
-Explain the costs and benefits of specialisation and trade according to the theory of comparative advantage.
+Question 4b [12 marks]
+Assess the extent to which supply-side policies aimed at raising productivity are the most effective way for a developed economy such as the UK to achieve stable, non-inflationary growth.
 
-Question 4 [8 marks]
-Explain how changes in the exchange rate can affect a country's inflation rate.`,
+OR
+
+Question 5a [8 marks]
+Explain the difference between a fixed exchange rate, a managed floating exchange rate and a freely floating exchange rate, and consider one advantage of each system for a developed economy.
+
+Question 5b [12 marks]
+The Eurozone uses a single currency whilst the UK maintains a floating pound sterling. Assess whether joining a single currency area is always beneficial for a developed economy's macroeconomic stability.`,
   },
 
   // ── PAPER 3: Multiple Choice (A2) ──
@@ -1407,448 +1394,453 @@ Explain how changes in the exchange rate can affect a country's inflation rate.`
     id: "caie-p3-set-a",
     subject: "cambridge" as any,
     paper: "3",
-    title: "Paper 3 MCQ (A2) — Set A",
-    description: "30 A2-level MCQs on market structures, labour markets, development, and policy evaluation.",
+    title: "Paper 3 Multiple Choice — Set A",
+    description: "30 A-Level MCQs. Set A — Moderate. Verbatim from official-style mock.",
     totalMarks: 30,
-    content: `# Cambridge International A-Level Economics (9708) — Paper 3 Multiple Choice — Set A
+    content: `# Cambridge International AS & A Level Economics (9708) — Paper 3 Multiple Choice — Predicted Paper Set A (Moderate)
 
 **Time: 1 hour 15 minutes | Total: 30 marks**
-
-Answer all 30 questions.
+Answer all questions.
 
 Question 1 [1 marks]
-A profit-maximising monopolist operates where:
-- A AR = AC
-- B MC = MR
-- C MC = AR
-- D AC = MR
+A consumer allocates their income between two goods to maximise total utility. The consumer is in equilibrium. What is the condition for this equilibrium?
+- A The marginal utility of both goods is zero.
+- B The marginal utility of both goods is equal.
+- C The marginal utility per dollar spent on each good is equal.
+- D The total utility of each good is equal.
 
 Question 2 [1 marks]
-In an oligopoly, the kinked demand curve model suggests that prices tend to be:
-- A Highly volatile
-- B Determined by government
-- C Sticky (resistant to change)
-- D Always at the competitive level
+Which statement best describes allocative efficiency?
+- A Price equals the lowest average cost.
+- B Price equals marginal cost.
+- C Average revenue equals average cost.
+- D Marginal revenue equals marginal cost.
 
 Question 3 [1 marks]
-A contestable market is characterised by:
-- A High barriers to entry and exit
-- B Freedom of entry and exit with low sunk costs
-- C A single dominant firm
-- D Government regulation of prices
+In the short run, a firm in perfect competition will continue to produce, despite making a loss, as long as:
+- A total revenue exceeds total cost.
+- B average revenue exceeds average total cost.
+- C average revenue exceeds average variable cost.
+- D marginal revenue exceeds average fixed cost.
 
 Question 4 [1 marks]
-Price discrimination is most profitable when:
-- A All consumers have the same PED
-- B Markets can be separated and consumers have different PEDs
-- C The firm has no market power
-- D Products are homogeneous
+Which of the following is a characteristic of a monopoly?
+- A A large number of firms.
+- B Freedom of entry to the market.
+- C Significant barriers to entry.
+- D Firms are price takers.
 
 Question 5 [1 marks]
-X-inefficiency occurs when:
-- A A firm produces at minimum average cost
-- B Costs are higher than necessary due to lack of competitive pressure
-- C A firm achieves allocative efficiency
-- D Output exceeds full capacity
+A firm doubles all its inputs and output more than doubles. This illustrates:
+- A diseconomies of scale.
+- B constant returns to scale.
+- C economies of scale.
+- D diminishing marginal returns.
 
 Question 6 [1 marks]
-A monopsonist employer will set wages:
-- A Above the competitive equilibrium
-- B At the marginal revenue product
-- C Below the competitive equilibrium where MCL = MRP
-- D Equal to average cost of labour
+Which of the following is most likely to be an example of price discrimination?
+- A A restaurant charging more for meals at weekends.
+- B A train company charging different fares at peak and off-peak times for the same journey.
+- C A supermarket charging a higher price for premium-brand products than for own-brand.
+- D A car manufacturer charging more for a car with a more powerful engine.
 
 Question 7 [1 marks]
-Under perfect competition in the long run:
-- A Firms earn supernormal profits
-- B P = MC = AC (minimum)
-- C Firms have pricing power
-- D There are barriers to entry
+An oligopolistic market is most likely to be characterised by:
+- A price-taking behaviour.
+- B perfect information.
+- C mutual interdependence between firms.
+- D homogeneous products.
 
 Question 8 [1 marks]
-Game theory in economics is most useful for analysing:
-- A Perfect competition
-- B Monopoly pricing
-- C Strategic interaction between oligopolistic firms
-- D Government fiscal policy
+A contestable market is one in which:
+- A firms make supernormal profit in the long run.
+- B entry and exit are costless.
+- C only one firm operates.
+- D government regulation prevents competition.
 
 Question 9 [1 marks]
-The marginal revenue product of labour (MRPL) is:
-- A Total revenue divided by number of workers
-- B The additional revenue from employing one more worker
-- C The wage rate multiplied by output
-- D Average revenue per worker
+The marginal revenue product (MRP) of labour is equal to:
+- A the marginal product of labour.
+- B the marginal cost of labour.
+- C the marginal product of labour multiplied by the marginal revenue of output.
+- D the wage rate.
 
 Question 10 [1 marks]
-A natural monopoly should ideally be regulated so that price equals:
-- A Marginal cost (for allocative efficiency)
-- B Average cost (for normal profit)
-- C Marginal revenue
-- D Average revenue
+A trade union successfully negotiates a wage rate above the equilibrium wage in a competitive labour market. The most likely consequence is:
+- A an increase in employment in that market.
+- B unemployment in that market.
+- C higher marginal productivity.
+- D an inward shift of the supply of labour.
 
 Question 11 [1 marks]
-In the Prisoner's Dilemma, the Nash equilibrium typically results in:
-- A Both firms cooperating
-- B Both firms choosing the dominant strategy (mutual defection)
-- C One firm cooperating and one defecting
-- D Maximum joint profit
+A negative externality of production exists when:
+- A marginal private cost exceeds marginal social cost.
+- B marginal social cost exceeds marginal private cost.
+- C marginal private benefit exceeds marginal social benefit.
+- D marginal social benefit exceeds marginal private benefit.
 
 Question 12 [1 marks]
-Limit pricing by an incumbent firm involves:
-- A Setting price equal to marginal cost
-- B Setting price low enough to deter new entrants
-- C Charging the highest possible price
-- D Engaging in predatory pricing
+The Coase theorem suggests that externalities can be internalised if:
+- A the government imposes a Pigouvian tax.
+- B the government issues tradable permits.
+- C property rights are clearly defined and transaction costs are low.
+- D firms are nationalised.
 
 Question 13 [1 marks]
-A trade union negotiating higher wages in a monopsonistic labour market could:
-- A Increase both wages and employment
-- B Always reduce employment
-- C Have no effect on wages
-- D Only affect non-union workers
+Which of the following is most likely to be classified as a public good?
+- A Basic healthcare provided by the state.
+- B State school education.
+- C A public park open to all.
+- D A lighthouse providing warning signals to ships.
 
 Question 14 [1 marks]
-The Heckscher-Ohlin theory of trade suggests countries export goods that:
-- A They can produce at the lowest absolute cost
-- B Use their abundant factor of production intensively
-- C Have the highest domestic demand
-- D Are produced by monopolies
+Government failure may arise when:
+- A markets fully internalise externalities.
+- B the cost of government intervention exceeds the benefits.
+- C property rights are clearly defined.
+- D firms earn normal profits.
 
 Question 15 [1 marks]
-Capital account liberalisation in developing countries may lead to:
-- A Guaranteed economic stability
-- B Increased foreign investment but also potential for capital flight
-- C Reduced access to global finance
-- D Lower exchange rate volatility
+Asymmetric information in an insurance market can lead to:
+- A perfect competition.
+- B economies of scale.
+- C adverse selection.
+- D allocative efficiency.
 
 Question 16 [1 marks]
-An economy experiencing stagflation has:
-- A High growth and low inflation
-- B High unemployment and high inflation simultaneously
-- C Low unemployment and falling prices
-- D Rapid GDP growth and falling unemployment
+The Gini coefficient is a measure of:
+- A the rate of economic growth.
+- B inflation.
+- C income inequality.
+- D unemployment.
 
 Question 17 [1 marks]
-Effective supply-side policies should:
-- A Shift the LRAS curve to the right
-- B Only affect aggregate demand
-- C Increase government spending
-- D Raise the natural rate of unemployment
+Which of the following is most likely to increase the long-run potential output of an economy?
+- A An increase in aggregate demand.
+- B A cut in interest rates.
+- C An increase in investment in education.
+- D A depreciation of the currency.
 
 Question 18 [1 marks]
-Third-degree price discrimination requires:
-- A Identical demand curves in each market
-- B The ability to separate markets and prevent resale
-- C Perfect information for all consumers
-- D Homogeneous products only
+The Human Development Index (HDI) includes all of the following EXCEPT:
+- A life expectancy at birth.
+- B years of schooling.
+- C gross national income per capita.
+- D the rate of inflation.
 
 Question 19 [1 marks]
-The Prebisch-Singer hypothesis suggests that:
-- A Terms of trade for primary commodity exporters improve over time
-- B Terms of trade for primary commodity exporters decline over time
-- C All countries benefit equally from trade
-- D Manufacturing exports have falling prices
+If the marginal propensity to consume is 0.8, the value of the simple spending multiplier is:
+- A 1.25
+- B 1.8
+- C 4
+- D 5
 
 Question 20 [1 marks]
-A negative externality in consumption means:
-- A MSB < MPB
-- B MSB > MPB
-- C MSC > MPC
-- D MPC > MSC
+Demand-pull inflation is most likely to be caused by:
+- A a fall in labour productivity.
+- B an increase in the price of imported raw materials.
+- C a rise in indirect taxes.
+- D a rise in consumer spending when the economy is near full employment.
 
 Question 21 [1 marks]
-Economies of scope occur when:
-- A Average costs fall as output of one product increases
-- B It is cheaper to produce two products together than separately
-- C Firms grow through horizontal integration
-- D Variable costs fall with output
+The short-run Phillips curve shows the relationship between:
+- A economic growth and inflation.
+- B unemployment and inflation.
+- C unemployment and economic growth.
+- D interest rates and inflation.
 
 Question 22 [1 marks]
-A Tobin tax is a tax on:
-- A Corporate profits
-- B Financial transactions (particularly foreign exchange)
-- C Carbon emissions
-- D Land values
+An increase in the Bank Rate is most likely to:
+- A increase consumer spending.
+- B increase aggregate demand.
+- C decrease the exchange rate.
+- D decrease investment.
 
 Question 23 [1 marks]
-The concept of 'creative destruction' was introduced by:
-- A Adam Smith
-- B John Maynard Keynes
-- C Joseph Schumpeter
-- D Milton Friedman
+A government pursuing expansionary fiscal policy is most likely to:
+- A raise income tax rates.
+- B reduce government spending.
+- C reduce direct taxes.
+- D increase the Bank Rate.
 
 Question 24 [1 marks]
-In a perfectly contestable market, incumbent firms will earn:
-- A Supernormal profits
-- B Normal profits only
-- C Losses
-- D Monopoly profits
+Which of the following is a supply-side policy?
+- A A rise in VAT.
+- B A reduction in the Bank Rate.
+- C Investment in training and education.
+- D An increase in unemployment benefits.
 
 Question 25 [1 marks]
-Which is a characteristic of monopolistic competition?
-- A Homogeneous products
-- B Many firms with differentiated products
-- C High barriers to entry
-- D Price-taking behaviour
+The Marshall–Lerner condition is satisfied when:
+- A PEDx + PEDm > 1
+- B PEDx + PEDm < 1
+- C PEDx = PEDm
+- D PEDx – PEDm = 1
 
 Question 26 [1 marks]
-The dependency ratio is significant for developing countries because:
-- A It measures trade dependency
-- B A high ratio means more dependents per working-age person, straining public services
-- C It determines the exchange rate
-- D It equals the Gini coefficient
+A country with a persistent current account deficit must necessarily have:
+- A a capital/financial account surplus.
+- B a capital/financial account deficit.
+- C a balanced capital/financial account.
+- D a floating exchange rate.
 
 Question 27 [1 marks]
-Predatory pricing involves:
-- A Setting price above competitors to signal quality
-- B Setting price below cost to drive out competitors
-- C Colluding with other firms
-- D Charging different prices in different markets
+Absolute advantage exists when a country can produce a good:
+- A with a lower opportunity cost than another country.
+- B with a higher opportunity cost than another country.
+- C using fewer resources than another country.
+- D using more resources than another country.
 
 Question 28 [1 marks]
-The Washington Consensus advocated:
-- A Import substitution industrialisation
-- B Free market policies, deregulation, and privatisation
-- C Protectionism for infant industries
-- D Central planning
+A tariff on imported steel in the US is most likely to:
+- A increase consumer surplus in the US.
+- B decrease producer surplus in the US.
+- C decrease the price paid by US consumers.
+- D decrease the quantity of steel imported.
 
 Question 29 [1 marks]
-A bilateral trade agreement between two countries will:
-- A Always improve global welfare
-- B Reduce tariffs between the two countries
-- C Eliminate all trade barriers globally
-- D Always cause trade diversion
+Which organisation aims to promote free international trade?
+- A International Monetary Fund (IMF)
+- B World Bank
+- C World Trade Organization (WTO)
+- D Organisation for Economic Co-operation and Development (OECD)
 
 Question 30 [1 marks]
-Asymmetric information in financial markets can lead to:
-- A Perfect competition
-- B Moral hazard and adverse selection
-- C Allocative efficiency
-- D Lower transaction costs`,
+A depreciation of the UK pound against the euro is likely to:
+- A make UK exports to the Eurozone more expensive.
+- B make UK imports from the Eurozone cheaper.
+- C improve the UK current account if the Marshall–Lerner condition holds.
+- D reduce UK inflation.`,
   },
 
   {
     id: "caie-p3-set-b",
     subject: "cambridge" as any,
     paper: "3",
-    title: "Paper 3 MCQ (A2) — Set B",
-    description: "30 A2-level MCQs on efficiency, international trade, development economics, and regulation.",
+    title: "Paper 3 Multiple Choice — Set B",
+    description: "30 A-Level MCQs. Set B — Hard. Verbatim from official-style mock.",
     totalMarks: 30,
-    content: `# Cambridge International A-Level Economics (9708) — Paper 3 Multiple Choice — Set B
+    content: `# CAIE A-Level 9708 Paper 3 Multiple Choice — Set B (Hard)
 
 **Time: 1 hour 15 minutes | Total: 30 marks**
-
-Answer all 30 questions.
+Answer all questions.
 
 Question 1 [1 marks]
-Allocative efficiency and productive efficiency are both achieved in:
-- A Monopoly
-- B Oligopoly
-- C Perfect competition in the long run
-- D Monopolistic competition
+A consumer buys two goods, X and Y. The marginal utility of X is 20 utils at the current consumption level and the marginal utility of Y is 30 utils. The price of X is $4 and the price of Y is $5. To maximise total utility, the consumer should:
+- A buy more X and less Y.
+- B buy more Y and less X.
+- C keep consumption unchanged.
+- D consume only Y.
 
 Question 2 [1 marks]
-A firm's short-run supply curve is its:
-- A MC curve above the minimum AVC
-- B AC curve
-- C MR curve
-- D AR curve
+The law of diminishing marginal utility implies that as consumption of a good rises:
+- A total utility becomes negative immediately.
+- B the marginal utility of each successive unit falls.
+- C the price the consumer is willing to pay rises.
+- D the demand curve slopes upward.
 
 Question 3 [1 marks]
-Revenue maximisation occurs where:
-- A MC = MR
-- B MR = 0
-- C AR = AC
-- D MC = AC
+A firm's total cost of producing 100 units is $500 and the total cost of producing 101 units is $508. The marginal cost of the 101st unit is:
+- A $5.00
+- B $5.08
+- C $8.00
+- D $503.00
 
 Question 4 [1 marks]
-Vertical integration involves:
-- A Merger of firms at the same stage of production
-- B Merger of firms at different stages of the supply chain
-- C A firm entering an unrelated market
-- D Government nationalisation
+In the long run, a firm in perfect competition makes:
+- A supernormal profit.
+- B subnormal profit.
+- C normal profit only.
+- D a loss equal to fixed costs.
 
 Question 5 [1 marks]
-The Lorenz curve shifts further from the 45° line when:
-- A Income becomes more equally distributed
-- B Progressive taxes are introduced
-- C Income inequality increases
-- D Transfer payments increase
+A monopolist faces a downward-sloping demand curve. At the profit-maximising output:
+- A price equals marginal cost.
+- B marginal revenue equals marginal cost, and price exceeds marginal cost.
+- C price equals average revenue equals marginal cost.
+- D marginal revenue is negative.
 
 Question 6 [1 marks]
-A regulatory capture occurs when:
-- A The regulator acts in the public interest
-- B The regulated industry influences the regulator to act in its favour
-- C Government fails to regulate monopolies
-- D Competition policy is effective
+A concentration ratio measures:
+- A the productivity of an industry.
+- B the share of total market output of the largest n firms.
+- C the number of firms in an industry.
+- D the profit of the largest firm.
 
 Question 7 [1 marks]
-Import substitution industrialisation (ISI) involves:
-- A Promoting exports as the main growth strategy
-- B Replacing imported goods with domestically produced goods using protectionism
-- C Removing all trade barriers
-- D Encouraging foreign direct investment
+Two firms in a duopoly face the following payoff matrix (own profits in $m shown first, as (Firm A, Firm B)):
+
+| | Firm B: Low Price | Firm B: High Price |
+|---|---|---|
+| **Firm A: Low Price** | 10, 10 | 40, 5 |
+| **Firm A: High Price** | 5, 40 | 25, 25 |
+
+What is the dominant strategy for Firm A?
+- A Charge a high price, regardless of B's choice.
+- B Charge a low price, regardless of B's choice.
+- C Match Firm B's price.
+- D There is no dominant strategy.
 
 Question 8 [1 marks]
-A positive production externality means:
-- A MSC > MPC
-- B MPC > MSC (i.e., MSC < MPC)
-- C MSB > MPB
-- D MPB > MSB
+Which of the following is most consistent with the existence of barriers to entry?
+- A Firms in the industry earn only normal profit in the long run.
+- B Firms in the industry earn supernormal profit in the long run.
+- C The price equals average cost at minimum.
+- D The long-run supply curve is horizontal.
 
 Question 9 [1 marks]
-The principal-agent problem arises because:
-- A Owners and managers always have aligned interests
-- B Managers (agents) may pursue their own interests rather than those of owners (principals)
-- C All firms maximise profits
-- D Shareholders control day-to-day operations
+A perfectly contestable market will, in equilibrium, display:
+- A price above marginal cost.
+- B persistent supernormal profit.
+- C price equal to average cost, even with only one firm.
+- D significant economies of scale for each firm.
 
 Question 10 [1 marks]
-Absolute advantage exists when:
-- A A country can produce a good using fewer resources than another country
-- B A country has a lower opportunity cost of production
-- C A country exports more than it imports
-- D Terms of trade favour the country
+The production possibility curve (PPC) of an economy becomes more bowed (concave to the origin) if:
+- A resources are equally suited to producing both goods.
+- B resources are specialised and not equally suited to producing both goods.
+- C the economy experiences constant opportunity costs.
+- D the economy is operating below full capacity.
 
 Question 11 [1 marks]
-A Pigouvian tax is designed to:
-- A Raise government revenue
-- B Correct a negative externality by taxing the activity
-- C Subsidise merit goods
-- D Reduce income inequality
+In a perfectly competitive labour market, the marginal cost of labour to the firm is equal to:
+- A the average revenue product of labour.
+- B the marginal revenue product of labour.
+- C the going wage rate.
+- D zero.
 
 Question 12 [1 marks]
-Under monopolistic competition in the long run:
-- A Firms earn supernormal profits
-- B P > MC but only normal profits are earned
-- C P = MC = AC (minimum)
-- D There are high barriers to entry
+A monopsonist in a labour market (single dominant employer) sets the wage rate and quantity of labour such that:
+- A the wage rate equals the marginal revenue product of labour.
+- B the marginal cost of labour equals the marginal revenue product of labour, and the wage rate is below the MRP.
+- C the wage is above the marginal revenue product of labour.
+- D the wage equals the average cost of labour.
 
 Question 13 [1 marks]
-Economic development differs from economic growth because development:
-- A Only measures GDP
-- B Includes improvements in living standards, health, education, and freedom
-- C Is measured solely by GDP per capita
-- D Always leads to higher GDP
+Which of the following is most likely to increase wage differentials between high-skilled and low-skilled workers in a developed economy?
+- A A legal minimum wage set above the equilibrium wage for low-skilled labour.
+- B An increase in the supply of high-skilled workers.
+- C Skill-biased technological change that raises the productivity of high-skilled workers.
+- D Trade union activity limited to the high-skilled sector only.
 
 Question 14 [1 marks]
-A cartel is most likely to break down when:
-- A All members have identical costs
-- B Individual firms have an incentive to cheat by increasing output
-- C Demand is perfectly inelastic
-- D There are only two firms
+A government introduces a per-unit tax on the production of a demerit good. The fall in consumption will be greater if:
+- A demand for the good is inelastic.
+- B supply for the good is inelastic.
+- C demand for the good is elastic.
+- D both demand and supply are inelastic.
 
 Question 15 [1 marks]
-The dependency theory argues that:
-- A All countries benefit equally from globalisation
-- B Developing countries are exploited by developed countries through unequal trade
-- C Free trade always promotes development
-- D FDI always benefits recipient countries
+The optimal level of pollution in an economy, from the perspective of economic efficiency, is where:
+- A pollution is zero.
+- B the marginal benefit of pollution abatement equals its marginal cost.
+- C the marginal cost of production is zero.
+- D the marginal private benefit of consumption equals the marginal social cost.
 
 Question 16 [1 marks]
-A minimum efficient scale (MES) is:
-- A The output at which MC is minimised
-- B The lowest output at which long-run average costs are minimised
-- C Maximum output of a firm
-- D The break-even point
+A country's nominal GDP is $500 billion and its real GDP in base-year prices is $400 billion. The GDP deflator is:
+- A 80.0
+- B 100.0
+- C 125.0
+- D 200.0
 
 Question 17 [1 marks]
-Export-oriented growth strategies differ from ISI because they:
-- A Focus on domestic consumption
-- B Promote competitiveness in global markets
-- C Impose high tariffs
-- D Restrict foreign investment
+In an economy with a marginal propensity to save of 0.25, a marginal rate of taxation of 0.15 and a marginal propensity to import of 0.1, the value of the multiplier is:
+- A 1.0
+- B 1.67
+- C 2.0
+- D 4.0
 
 Question 18 [1 marks]
-The theory of second best states that:
-- A Removing one market distortion always improves welfare
-- B If one condition for optimality cannot be met, meeting other conditions may not improve welfare
-- C Free markets always achieve the best outcome
-- D Government intervention is always harmful
+The natural rate of unemployment (NAIRU) is the rate at which:
+- A all unemployment is cyclical.
+- B cyclical unemployment is zero and inflation is stable.
+- C real wages are maximised.
+- D aggregate demand equals potential output at zero inflation.
 
 Question 19 [1 marks]
-Transfer pricing by multinational corporations:
-- A Always benefits host countries
-- B Can be used to shift profits to low-tax jurisdictions
-- C Is illegal in all countries
-- D Increases tax revenue for developing countries
+An increase in labour productivity would most likely:
+- A shift both AD and LRAS to the right.
+- B shift only AD to the right.
+- C shift LRAS to the right, putting downward pressure on the price level.
+- D have no effect on LRAS.
 
 Question 20 [1 marks]
-A binding price ceiling will create:
-- A Excess supply
-- B Excess demand
-- C Market equilibrium
-- D A surplus
+The quantity theory of money (MV = PY) predicts that, in the long run, if V and Y are constant, a 10% rise in the money supply will cause:
+- A a 10% rise in real output.
+- B a 10% rise in the price level.
+- C a 10% rise in nominal interest rates.
+- D a 10% fall in the velocity of money.
 
 Question 21 [1 marks]
-Microfinance institutions primarily aim to:
-- A Provide large loans to corporations
-- B Provide small loans to low-income individuals and entrepreneurs
-- C Replace central banks
-- D Fund government projects
+A central bank pursuing an inflation target will most likely respond to a rise in demand-pull inflation by:
+- A cutting the official interest rate.
+- B raising the official interest rate.
+- C selling government bonds in exchange for the domestic currency, only if the money supply is contracting.
+- D devaluing the currency.
 
 Question 22 [1 marks]
-Diseconomies of scale are caused by:
-- A Increasing returns to scale
-- B Management inefficiencies as a firm grows too large
-- C Falling average costs
-- D Improved coordination
+A government seeking to reduce structural unemployment would most likely:
+- A raise unemployment benefits substantially.
+- B reduce taxes on corporate profits.
+- C invest in retraining programmes targeted at displaced workers.
+- D restrict international trade.
 
 Question 23 [1 marks]
-The WTO's most-favoured-nation principle requires:
-- A Countries to give preferential treatment to developing nations
-- B Any trade advantage given to one member must be extended to all members
-- C Countries to eliminate all tariffs immediately
-- D Bilateral agreements to override multilateral rules
+The J-curve effect describes how, after a currency depreciation:
+- A the current account improves immediately.
+- B the current account worsens initially and then improves as quantities adjust.
+- C the current account worsens permanently.
+- D the financial account adjusts to offset the current account.
 
 Question 24 [1 marks]
-A merit good is under-consumed because:
-- A Consumers have full information
-- B Consumers undervalue the private and external benefits
-- C The government overproduces it
-- D It is excludable and rivalrous
+A country with a GDP per capita of $30,000, a life expectancy of 82 years and mean years of schooling of 13 will typically have:
+- A a low HDI value below 0.5.
+- B an HDI value indicating very high human development.
+- C a GDP per capita too low for classification.
+- D an HDI value below 0.7.
 
 Question 25 [1 marks]
-Human capital is best defined as:
-- A Physical machinery and equipment
-- B Financial capital held by individuals
-- C The skills, knowledge, and experience of the workforce
-- D Natural resources
+Comparative advantage exists when a country can produce a good:
+- A using fewer resources than another country.
+- B at a lower opportunity cost than another country.
+- C at a lower wage rate than another country.
+- D with a higher productivity level than another country.
 
 Question 26 [1 marks]
-In the absence of government intervention, a monopoly results in:
-- A Allocative efficiency
-- B Productive efficiency
-- C A deadweight welfare loss
-- D Consumer surplus maximisation
+An import quota differs from a tariff in that:
+- A a quota generates government revenue but a tariff does not.
+- B a tariff restricts quantity directly, while a quota raises price directly.
+- C a quota restricts quantity directly, while a tariff raises price directly.
+- D a quota is always more economically efficient.
 
 Question 27 [1 marks]
-The real exchange rate adjusts the nominal rate for:
-- A Interest rate differentials
-- B Differences in price levels between countries
-- C Capital flows
-- D Government intervention
+Which is the most likely consequence of a successful currency union between several small open economies?
+- A Loss of a common monetary policy.
+- B Reduction in intra-union trade.
+- C Elimination of exchange rate risk between members.
+- D An increase in transaction costs between members.
 
 Question 28 [1 marks]
-Satisficing behaviour by firms means:
-- A Maximising profit
-- B Achieving a satisfactory level of profit rather than the maximum
-- C Minimising costs
-- D Maximising revenue
+A country's central bank intervenes to prevent its currency from appreciating. The most likely action is:
+- A selling foreign currency reserves and buying its own currency.
+- B buying foreign currency reserves and selling its own currency.
+- C raising its official interest rate.
+- D imposing capital controls on outflows.
 
 Question 29 [1 marks]
-Foreign direct investment (FDI) differs from portfolio investment because FDI:
-- A Involves only short-term financial assets
-- B Involves ownership and control of a business in another country
-- C Is always more volatile
-- D Does not affect the host country's GDP
+The Lorenz curve for Country X lies further from the 45° line of perfect equality than the Lorenz curve for Country Y. This indicates that:
+- A Country X has a higher GDP per capita than Y.
+- B Country X has a higher HDI than Y.
+- C Country X has greater income inequality than Y.
+- D Country X has a lower Gini coefficient than Y.
 
 Question 30 [1 marks]
-The Harrod-Domar model emphasises that economic growth depends primarily on:
-- A Consumer spending
-- B The savings ratio and the capital-output ratio
-- C Government spending
-- D Exchange rate stability`,
+Which of the following would most effectively reduce absolute poverty in a developing country in the short run?
+- A Removing all agricultural subsidies.
+- B Direct cash transfers to poor households.
+- C Raising import tariffs on consumer goods.
+- D Increasing restrictions on foreign direct investment.`,
   },
 
   // ── PAPER 4: Data Response & Essay (A2) ──
@@ -2535,223 +2527,222 @@ Explain how supply-side policies can improve the long-run productive capacity of
     id: "caie-p3-set-c",
     subject: "cambridge" as any,
     paper: "3",
-    title: "Paper 3 MCQ (A2) — Set C",
-    description: "30 A2 MCQs on welfare economics, trade theory, and macroeconomic policy evaluation.",
+    title: "Paper 3 Multiple Choice — Set C",
+    description: "30 A-Level MCQs. Set C — Advanced. Verbatim from official-style mock.",
     totalMarks: 30,
-    content: `# Cambridge International A-Level Economics (9708) — Paper 3 Multiple Choice — Set C
+    content: `# Cambridge International AS & A Level Economics (9708) — Paper 3 A Level Multiple Choice — Predicted Paper Set C (Advanced)
 
 **Time: 1 hour 15 minutes | Total: 30 marks**
-
-Answer all 30 questions.
+Answer all questions.
 
 Question 1 [1 marks]
-A firm practising first-degree price discrimination will:
-- A Earn less revenue than a single-price monopolist
-- B Capture all consumer surplus
-- C Produce less output than a single-price monopolist
-- D Charge the same price to all consumers
+A consumer's indifference curve is convex to the origin. Which statement correctly describes the implied diminishing marginal rate of substitution (MRS)?
+- A The consumer is willing to give up less of good Y for each additional unit of good X as X becomes more abundant.
+- B The marginal utility of both goods is constant.
+- C The consumer is always willing to substitute X for Y at the same rate.
+- D The slope of the indifference curve is always equal to the price ratio.
 
 Question 2 [1 marks]
-The condition for profit maximisation is:
-- A MC = AC
-- B MC = MR
-- C AR = AC
-- D MR = AR
+A firm is a monopolist in its product market and a monopsonist in its labour market. Compared with perfect competition in both markets, the firm will most likely:
+- A produce less output and employ more labour, paying a higher wage.
+- B produce less output and employ less labour, paying a lower wage.
+- C produce more output and employ fewer workers, paying a higher wage.
+- D produce the same output but employ fewer workers.
 
 Question 3 [1 marks]
-A concentration ratio measures:
-- A The geographic distribution of firms
-- B The market share of the largest firms in an industry
-- C The number of employees per firm
-- D The profitability of an industry
+An industry is characterised by large economies of scale such that the long-run average cost curve continues to fall over the range of industry demand. The most appropriate description of this industry is:
+- A a perfectly competitive industry.
+- B a natural monopoly.
+- C monopolistic competition.
+- D an oligopoly with high barriers to entry.
 
 Question 4 [1 marks]
-Under monopolistic competition, the demand curve facing each firm is:
-- A Perfectly elastic
-- B Perfectly inelastic
-- C Downward sloping (relatively elastic)
-- D Horizontal
+A firm in monopolistic competition, in long-run equilibrium, will have all the following EXCEPT:
+- A price equal to average cost.
+- B marginal revenue equal to marginal cost.
+- C price equal to marginal cost.
+- D excess capacity (producing below minimum efficient scale).
 
 Question 5 [1 marks]
-The marginal rate of transformation (MRT) on a PPF represents:
-- A The maximum output of both goods
-- B The opportunity cost of producing one more unit of a good
-- C Average cost of production
-- D The rate of economic growth
+An industry's 4-firm concentration ratio is 85%. Which market structure is this most consistent with?
+- A Perfect competition.
+- B Monopolistic competition.
+- C Oligopoly.
+- D Natural monopoly.
 
 Question 6 [1 marks]
-In game theory, a dominant strategy is one that:
-- A Is best only when the opponent cooperates
-- B Is best regardless of the opponent's strategy
-- C Always leads to the best joint outcome
-- D Changes depending on market conditions
+A monopolist practising third-degree price discrimination will charge a higher price in the market with:
+- A the more price-elastic demand.
+- B the less price-elastic demand.
+- C the higher total revenue without discrimination.
+- D the lower marginal cost of supply.
 
 Question 7 [1 marks]
-A firm operating in a perfectly competitive market in the long run will produce at:
-- A The point where supernormal profits are maximised
-- B The minimum point of the LRAC curve
-- C Maximum revenue
-- D The point where MC > AC
+A firm faces a kinked demand curve at the current price. The most important prediction of this model is:
+- A the firm will engage in aggressive price competition.
+- B a small shift in marginal cost may leave the profit-maximising price unchanged.
+- C the firm will always earn supernormal profit.
+- D firms in the industry will always collude.
 
 Question 8 [1 marks]
-The terms of trade improve for a country when:
-- A Export prices rise relative to import prices
-- B Import prices rise relative to export prices
-- C The volume of trade increases
-- D The exchange rate depreciates
+Two firms play a repeated Prisoner's Dilemma game. Which of the following makes sustained cooperation more likely?
+- A A lower discount rate (firms value future payoffs more heavily).
+- B A higher discount rate.
+- C A shorter time horizon.
+- D Lower penalties for defection.
 
 Question 9 [1 marks]
-Supernormal profit in the short run under monopolistic competition will:
-- A Persist in the long run
-- B Be competed away as new firms enter
-- C Increase further
-- D Lead to higher barriers to entry
+A profit-maximising monopolist facing a linear demand curve will always set a price where demand is:
+- A perfectly inelastic.
+- B inelastic (|PED| < 1).
+- C unit elastic.
+- D elastic (|PED| > 1).
 
 Question 10 [1 marks]
-The infant industry argument for protection is a form of:
-- A Dynamic argument for trade restriction
-- B Static efficiency argument
-- C Argument for free trade
-- D Argument for permanent protection
+Consumer surplus in a perfectly competitive market is equal to:
+- A the area below the demand curve, above the equilibrium price, up to the equilibrium quantity.
+- B the area above the supply curve, below the equilibrium price.
+- C the total revenue of firms.
+- D the total cost of production.
 
 Question 11 [1 marks]
-Monopsony power in a labour market leads to:
-- A Wages above the competitive level
-- B Wages below marginal revenue product
-- C Excess demand for labour
-- D Higher employment than competition
+In a competitive labour market, the supply of labour to a particular industry is perfectly elastic. An increase in the demand for labour will:
+- A raise both employment and the wage rate.
+- B raise employment but leave the wage rate unchanged.
+- C raise the wage rate but leave employment unchanged.
+- D have no effect on employment or the wage rate.
 
 Question 12 [1 marks]
-A country that has a comparative disadvantage in all goods:
-- A Cannot benefit from trade
-- B Can still benefit from trade by specialising in the good with the lowest opportunity cost
-- C Should adopt autarky
-- D Will always have a trade deficit
+The efficient Pigouvian tax on a good with a negative production externality is equal to the marginal external cost at:
+- A the current market equilibrium output.
+- B the socially optimal output.
+- C the output where marginal private cost equals marginal private benefit.
+- D zero output.
 
 Question 13 [1 marks]
-Economic rent in a factor market is:
-- A The minimum payment to keep a factor in its current use
-- B The payment above the minimum needed to keep a factor in its current use
-- C The total cost of hiring a factor
-- D Always equal to zero in competitive markets
+If private bargaining according to the Coase theorem cannot resolve an externality, the most likely reason is:
+- A one party has a dominant strategy.
+- B transaction costs are prohibitively high.
+- C property rights are clearly defined.
+- D the externality is positive.
 
 Question 14 [1 marks]
-A public-private partnership (PPP) involves:
-- A Full privatisation
-- B Full nationalisation
-- C Collaboration between government and private sector to deliver services
-- D Tax breaks for private companies only
+Which is most likely to be a cause of government failure?
+- A Clearly defined property rights.
+- B Rational economic decisions by consumers.
+- C Information failure on the part of policymakers.
+- D The existence of merit goods.
 
 Question 15 [1 marks]
-The Lewis dual-sector model suggests development occurs through:
-- A Agricultural modernisation only
-- B Transfer of surplus labour from agriculture to industry
-- C Import substitution
-- D Foreign aid
+A closed economy has the following aggregate demand components: C = 0.7Y + 100, I = 200, G = 150. Assume no taxes. The equilibrium level of income is:
+- A 1,000
+- B 1,500
+- C 1,625
+- D 1,500 only if G = 100
 
 Question 16 [1 marks]
-A country with a large informal sector will likely:
-- A Have accurate GDP measurements
-- B Underestimate its actual economic activity in official statistics
-- C Have higher tax revenue
-- D Show lower poverty than actual
+Ricardian equivalence suggests that a tax-financed and a bond-financed increase in government spending have:
+- A the same effect on aggregate demand if consumers are forward-looking.
+- B a larger effect on AD if bond-financed because it crowds out investment.
+- C a larger effect on AD if tax-financed because households save less.
+- D no effect on aggregate demand in any case.
 
 Question 17 [1 marks]
-Anti-competitive behaviour includes all EXCEPT:
-- A Predatory pricing
-- B Price-fixing agreements
-- C Reducing costs through innovation
-- D Market allocation agreements
+If the short-run Phillips curve is vertical at the natural rate of unemployment:
+- A there is a permanent trade-off between inflation and unemployment.
+- B inflation can be reduced at no cost to unemployment.
+- C attempts to reduce unemployment below the natural rate will only cause rising inflation.
+- D monetary policy can permanently reduce unemployment.
 
 Question 18 [1 marks]
-The Stolper-Samuelson theorem predicts that trade liberalisation will:
-- A Benefit all factors of production equally
-- B Increase returns to the abundant factor and decrease returns to the scarce factor
-- C Always reduce inequality
-- D Have no distributional effects
+A central bank uses open market operations to increase the money supply. The immediate effect is most likely:
+- A the central bank sells government bonds, raising interest rates.
+- B the central bank buys government bonds, injecting reserves into the banking system.
+- C the central bank raises reserve requirements.
+- D a direct fall in the price level.
 
 Question 19 [1 marks]
-Capital flight from a developing country is likely to:
-- A Strengthen the exchange rate
-- B Reduce investment and economic growth
-- C Increase domestic savings
-- D Improve the current account balance
+An economy's real exchange rate is defined as the nominal exchange rate adjusted for:
+- A the current account balance.
+- B relative price levels between the two countries.
+- C interest rate differentials.
+- D GDP per capita differentials.
 
 Question 20 [1 marks]
-A deadweight loss from a monopoly is larger when:
-- A Demand is more elastic
-- B Demand is perfectly inelastic
-- C The monopolist earns normal profits
-- D There are no barriers to entry
+A country's balance of payments is in long-run disequilibrium if:
+- A it runs a persistent current account surplus requiring large reserve accumulation at a fixed exchange rate.
+- B it has a small current account deficit financed by sustainable FDI.
+- C it has a balanced trade account.
+- D its financial account is near zero.
 
 Question 21 [1 marks]
-Conditionality attached to IMF loans typically requires:
-- A Expansion of the public sector
-- B Austerity measures, structural reforms, and trade liberalisation
-- C Increased protectionism
-- D Higher government subsidies
+Interest rate parity predicts that, in equilibrium, a country with a higher nominal interest rate than another country will have a currency that is expected to:
+- A appreciate.
+- B depreciate.
+- C remain fixed.
+- D have no relationship to interest rate differentials.
 
 Question 22 [1 marks]
-Peak-load pricing is an example of:
-- A First-degree price discrimination
-- B Second-degree price discrimination
-- C Third-degree price discrimination
-- D Cost-plus pricing
+A Lorenz curve for Country X shows that the bottom 40% of households receive 10% of total income. A Gini coefficient calculated for Country X is likely to be:
+- A close to 0.
+- B close to 1.
+- C around 0.4–0.5.
+- D exactly 0.5.
 
 Question 23 [1 marks]
-The 'Dutch disease' describes:
-- A A pandemic's effect on GDP
-- B How resource wealth can harm other sectors through currency appreciation
-- C Trade diversion in the EU
-- D High unemployment in the Netherlands
+The Kuznets curve hypothesises that, as a country develops, income inequality:
+- A rises monotonically.
+- B falls monotonically.
+- C first rises, then falls.
+- D is unrelated to the level of development.
 
 Question 24 [1 marks]
-Productive efficiency requires:
-- A P = MC
-- B Production at minimum average cost
-- C MR = MC
-- D Maximum total revenue
+Which best describes 'import substitution' as a development strategy?
+- A Encouraging foreign direct investment in export sectors.
+- B Using tariffs and subsidies to develop domestic industries that replace imports.
+- C Joining a free trade area.
+- D Specialising in primary commodity exports.
 
 Question 25 [1 marks]
-The multiplier effect is larger in an economy with:
-- A A high marginal propensity to import
-- B A low marginal propensity to consume
-- C A high marginal propensity to consume and low withdrawals
-- D High tax rates
+A country has a savings rate of 20% of GDP and a capital-output ratio of 4. Using the Harrod–Domar growth model (ignoring depreciation), the implied rate of economic growth is:
+- A 4%
+- B 5%
+- C 16%
+- D 80%
 
 Question 26 [1 marks]
-A specific subsidy shifts the supply curve:
-- A Upward by a fixed amount
-- B Downward by a fixed amount
-- C It rotates the curve
-- D It does not shift the supply curve
+A key prediction of the Solow growth model is that, in the long run:
+- A all countries converge to the same level of income per capita.
+- B differences in income per capita are explained only by savings rates.
+- C long-run growth in per capita income is determined by exogenous technological progress.
+- D higher savings rates permanently raise the growth rate of per capita income.
 
 Question 27 [1 marks]
-The Kuznets curve hypothesis suggests that:
-- A Inequality always increases with growth
-- B Inequality first increases then decreases as economies develop
-- C Growth eliminates poverty automatically
-- D Government intervention is unnecessary
+A country running a persistent current account deficit financed by short-term capital inflows is most vulnerable to:
+- A excessive FDI.
+- B a sudden stop of capital inflows.
+- C appreciation of its currency.
+- D export-led growth.
 
 Question 28 [1 marks]
-A customs union differs from a free trade area because:
-- A There is no free trade between members
-- B Members adopt a common external tariff
-- C It includes free movement of labour
-- D It requires a common currency
+Two countries form a customs union. A consequence is:
+- A tariffs are abolished between members, with each maintaining its own external tariff.
+- B tariffs are abolished between members and a common external tariff is adopted.
+- C factor mobility is established.
+- D a single currency is adopted.
 
 Question 29 [1 marks]
-Forward vertical integration means:
-- A A firm merges with a competitor
-- B A firm merges with a supplier
-- C A firm merges with a distributor or retailer
-- D A firm diversifies into unrelated products
+A developing country adopts a 'big push' strategy of simultaneous investment across multiple sectors. The core justification is:
+- A to exploit comparative advantage in a single export crop.
+- B to internalise inter-industry demand complementarities.
+- C to reduce its saving rate.
+- D to raise tariffs on industrial imports.
 
 Question 30 [1 marks]
-The 'race to the bottom' in globalisation refers to:
-- A Countries competing to lower environmental and labour standards to attract FDI
-- B Currency wars between countries
-- C Falling commodity prices
-- D Increasing protectionism globally`,
+If a central bank credibly adopts an inflation target and is perceived as independent, the short-run Phillips curve is likely to:
+- A become steeper, raising the cost of disinflation.
+- B shift leftward, allowing lower inflation at the natural rate of unemployment.
+- C become horizontal.
+- D shift rightward permanently.`,
   },
 ];
