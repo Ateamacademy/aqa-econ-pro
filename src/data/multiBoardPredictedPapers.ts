@@ -4225,14 +4225,18 @@ With reference to the case study, discuss whether living standards in Argentina 
 `,
   },
   // ── Eduqas A-Level Economics ──
+  // Verbatim sync with /public/eduqas-mocks/paper-{1|2|3}-{moderate|hard|advanced}.pdf
+  // Paper 1 (A520U10-1) Component 1 Economic Principles: 60 marks (20 MCQ + Q21-26 = 4+7+4+8+8+9 = 40), 1h 30m
+  // Paper 2 (A520U20-1) Component 2 Exploring Economic Behaviour: 80 marks, 2h 30m
+  // Paper 3 (A520U30-1) Component 3 Evaluating Economic Models and Policies: 90 marks (3 sections × 30), 2h 30m
   {
     id: "eduqas-p1-a",
     subject: "eduqas" as any,
     paper: "1",
-    title: "Paper 1 — Set A",
-    description: "Markets & Market Failure. Set A — core practice.",
-    totalMarks: 80,
-    content: `# Eduqas A-Level Economics (A510QS/01) — Markets & Market Failure — Predicted Paper Set A
+    title: "Paper 1 — Set A (Moderate)",
+    description: "Component 1: Economic Principles (A520U10-1). Moderate — 20 MCQs + 6 structured.",
+    totalMarks: 60,
+    content: `# Eduqas A-Level Economics (A520U10-1) — Component 1: Economic Principles — Predicted Paper (Moderate)
 
 **Time: 120 minutes | Total: 80 marks**
 
