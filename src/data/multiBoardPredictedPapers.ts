@@ -2499,90 +2499,114 @@ Evaluate the extent to which free trade always benefits developing economies. Us
     id: "ib-p1-a",
     subject: "ib" as any,
     paper: "1",
-    title: "Paper 1 — Set A",
-    description: "Extended Response. Set A — core practice.",
+    title: "Paper 1 — Set A (Moderate)",
+    description: "Extended Response. Set A — Moderate. Verbatim from official-style mock.",
     totalMarks: 25,
-    content: `# IB Diploma Economics (IBDP) (IB/P1) — Extended Response — Predicted Paper Set A
+    content: `# IB Diploma Economics (HL/SL) — Paper 1 — Predicted Paper Set A (Moderate)
 
-**Time: 75 minutes | Total: 25 marks**
+**Time: 1 hour 15 minutes | Total: 25 marks**
 
-Answer ONE question from each section. Each question is worth 12 marks.
+**Instructions to candidates**
+- You are not permitted access to any calculator for this paper.
+- Answer **one** question.
+- Use fully labelled diagrams where appropriate.
+- The maximum mark for this examination paper is **[25 marks]**.
 
-## Section A — Microeconomics
+**Answer one question.**
 
-Question 1 [10 marks]
-Evaluate the view that, in the context of market failure and government intervention, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 1 (a) [10 marks]
+Using a demand and supply diagram, explain how the imposition of an indirect tax on cigarettes affects the equilibrium price and quantity in the market.
 
-Question 2 [15 marks]
-Evaluate the view that, in the context of macroeconomic objectives and trade-offs, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 1 (b) [15 marks]
+Using real-world examples, discuss the view that indirect taxes are the most effective way for governments to reduce the consumption of demerit goods.
 
-## Section B — Macroeconomics
+Question 2 (a) [10 marks]
+Explain, using a diagram, how an increase in aggregate demand can lead to economic growth in an economy operating with spare capacity.
 
-Question 3 [10 marks]
-Evaluate the view that, in the context of macroeconomic objectives and trade-offs, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 2 (b) [15 marks]
+Using real-world examples, evaluate the effectiveness of expansionary monetary policy in stimulating an economy during a recession.
 
-Question 4 [15 marks]
-Evaluate the view that, in the context of the global economy and economic development, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 3 (a) [10 marks]
+Explain two consequences of high unemployment for an economy.
+
+Question 3 (b) [15 marks]
+Using real-world examples, discuss the view that supply-side policies are the best way to reduce long-term unemployment.
 `,
   },
   {
     id: "ib-p1-b",
     subject: "ib" as any,
     paper: "1",
-    title: "Paper 1 — Set B",
-    description: "Extended Response. Set B — stretch — applied scenarios.",
+    title: "Paper 1 — Set B (Hard)",
+    description: "Extended Response. Set B — Hard. Verbatim from official-style mock.",
     totalMarks: 25,
-    content: `# IB Diploma Economics (IBDP) (IB/P1) — Extended Response — Predicted Paper Set B
+    content: `# IB Diploma Economics (HL/SL) — Paper 1 — Predicted Paper Set B (Hard)
 
-**Time: 75 minutes | Total: 25 marks**
+**Time: 1 hour 15 minutes | Total: 25 marks**
 
-Answer ONE question from each section. Each question is worth 12 marks.
+**Instructions to candidates**
+- You are not permitted access to any calculator for this paper.
+- Answer **one** question.
+- Use fully labelled diagrams where appropriate.
+- The maximum mark for this examination paper is **[25 marks]**.
 
-## Section A — Microeconomics
+**Answer one question.**
 
-Question 1 [10 marks]
-Evaluate the view that, in the context of market failure and government intervention, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 1 (a) [10 marks]
+Using appropriate diagrams, explain how negative production externalities lead to market failure and a welfare loss.
 
-Question 2 [15 marks]
-Evaluate the view that, in the context of macroeconomic objectives and trade-offs, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 1 (b) [15 marks]
+Using real-world examples, evaluate the view that carbon taxes are the most effective policy to correct market failure caused by pollution.
 
-## Section B — Macroeconomics
+Question 2 (a) [10 marks]
+Explain, using an AD/AS diagram, the difference between demand-pull inflation and cost-push inflation.
 
-Question 3 [10 marks]
-Evaluate the view that, in the context of macroeconomic objectives and trade-offs, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 2 (b) [15 marks]
+Using real-world examples, discuss the view that contractionary monetary policy is always more effective than contractionary fiscal policy in reducing a high rate of inflation.
 
-Question 4 [15 marks]
-Evaluate the view that, in the context of the global economy and economic development, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 3 (a) [10 marks]
+Using a diagram, explain how a tariff imposed on imported goods affects domestic producers, consumers and the government.
+
+Question 3 (b) [15 marks]
+Using real-world examples, evaluate the view that free trade always benefits developing economies more than it benefits developed economies.
 `,
   },
   {
     id: "ib-p1-c",
     subject: "ib" as any,
     paper: "1",
-    title: "Paper 1 — Set C",
-    description: "Extended Response. Set C — challenge — synoptic & evaluative.",
+    title: "Paper 1 — Set C (Advanced)",
+    description: "Extended Response. Set C — Advanced. Verbatim from official-style mock.",
     totalMarks: 25,
-    content: `# IB Diploma Economics (IBDP) (IB/P1) — Extended Response — Predicted Paper Set C
+    content: `# IB Diploma Economics (HL/SL) — Paper 1 — Predicted Paper Set C (Advanced)
 
-**Time: 75 minutes | Total: 25 marks**
+**Time: 1 hour 15 minutes | Total: 25 marks**
 
-Answer ONE question from each section. Each question is worth 12 marks.
+**Instructions to candidates**
+- You are not permitted access to any calculator for this paper.
+- Answer **one** question.
+- Use fully labelled diagrams where appropriate.
+- The maximum mark for this examination paper is **[25 marks]**.
 
-## Section A — Microeconomics
+**Answer one question.**
 
-Question 1 [10 marks]
-Evaluate the view that, in the context of market failure and government intervention, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 1 (a) [10 marks]
+Using appropriate diagrams, explain how a monopolist may engage in third-degree price discrimination to increase its total revenue.
 
-Question 2 [15 marks]
-Evaluate the view that, in the context of macroeconomic objectives and trade-offs, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 1 (b) [15 marks]
+Using real-world examples, evaluate the view that regulation rather than nationalisation is the most effective way for governments to address the inefficiencies of firms with significant monopoly power.
 
-## Section B — Macroeconomics
+Question 2 (a) [10 marks]
+Explain, using an AD/AS diagram, how a combination of demand-side and supply-side shocks can cause stagflation in an economy.
 
-Question 3 [10 marks]
-Evaluate the view that, in the context of macroeconomic objectives and trade-offs, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 2 (b) [15 marks]
+Using real-world examples, discuss the view that economic growth is incompatible with environmental sustainability.
 
-Question 4 [15 marks]
-Evaluate the view that, in the context of the global economy and economic development, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 3 (a) [10 marks]
+Explain two barriers to economic development commonly faced by low-income countries.
+
+Question 3 (b) [15 marks]
+Using real-world examples, evaluate the view that foreign direct investment (FDI) is a more effective strategy for promoting long-term economic development than foreign aid.
 `,
   },
   {
