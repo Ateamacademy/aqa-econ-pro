@@ -2649,148 +2649,743 @@ Question 2b [10 marks]
 Using the text/data provided and your knowledge of economics, recommend a policy mix that the Argentine government could use to simultaneously address high inflation and the current account deficit.`,
   },
   // ── WJEC A-Level Economics ──
+  // Paper 1 (A520U10-1) — Economic Principles. Verbatim sync with /wjec-mocks/paper-1-{moderate|hard|advanced}.pdf
+  // Format: 20 MCQs (1 mark each) + Section B Q21–Q27 (3+6+3+4+8+8+8 = 40) → 60 marks total, 1h 30m.
   {
     id: "wjec-p1-a",
     subject: "wjec" as any,
     paper: "1",
-    title: "Paper 1 — Set A",
-    description: "Markets, Business & the Allocation of Resources. Set A — core practice.",
-    totalMarks: 80,
-    content: `# WJEC A-Level Economics (1EC0/01) — Markets, Business & the Allocation of Resources — Predicted Paper Set A
+    title: "Paper 1 — Moderate",
+    description: "Economic Principles (A520U10-1). Moderate difficulty — 20 MCQs + 7 structured questions.",
+    totalMarks: 60,
+    content: `# WJEC GCE A-Level Economics (A520U10-1) — Component 1: Economic Principles — Predicted Paper (Moderate)
 
-**Time: 120 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total: 60 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer ALL questions. The number of marks is given in brackets at the end of each question.
 
-## Section A: Data Response
+## Section A — Multiple Choice (20 marks)
 
-**Extract 1 — Oligopoly and collusion in uk supermarkets:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+For each question in Section A, write the letter (A, B, C, D or E) that corresponds to your answer in the box provided. You are advised to spend approximately 30 minutes on this section.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+Question 1 [1 mark]
+Which one of the following would most likely increase an economy's long run potential economic growth?
+A. Higher rates of consumption spending by households
+B. An increase in net investment in capital goods
+C. A fall in the exchange rate
+D. A rise in transfer payments by the government
+E. An increase in imports of consumer goods
 
-Question 1 [2 marks]
-With reference to oligopoly and collusion in UK supermarkets, explain two consequences of the issue.
+Question 2 [1 mark]
+A good that is non-rival and non-excludable is best described as:
+A. A private good
+B. A merit good
+C. A demerit good
+D. A public good
+E. A quasi-public good
 
-Question 2 [4 marks]
-With reference to oligopoly and collusion in UK supermarkets, explain one government response to the issue.
+Question 3 [1 mark]
+A firm operating in perfect competition is currently producing at an output where AR = £10, MC = £12 and AC = £8. To maximise profits, the firm should:
+A. Increase output until MC = MR
+B. Decrease output until MC = MR
+C. Shut down immediately
+D. Maintain current output
+E. Raise its price
 
-Question 3 [6 marks]
-With reference to labour market failure and minimum wage, explain one factor that influences the issue.
+Question 4 [1 mark]
+In 2023, improved growing conditions in major coffee-producing countries led to a bumper harvest. At the same time, consumer preferences shifted towards tea. The most likely effect on the coffee market would be:
+A. A rise in price and a rise in quantity
+B. A fall in price and a fall in quantity
+C. A rise in price and an indeterminate change in quantity
+D. A fall in price and an indeterminate change in quantity
+E. No change in equilibrium
 
-Question 4 [9 marks]
-With reference to oligopoly and collusion in UK supermarkets, explain one mechanism that determines the issue.
+Question 5 [1 mark]
+A sustained appreciation of the pound sterling would most likely:
+A. Increase the price of UK imports
+B. Reduce the competitiveness of UK exports
+C. Increase the UK's rate of inflation
+D. Improve the UK's current account balance
+E. Increase UK real GDP in the short run
 
-Question 5 [12 marks]
-With reference to externalities in the energy sector, explain two consequences of the issue.
+Question 6 [1 mark]
+Which of the following would most likely cause demand-pull inflation in an economy?
+A. A rise in the price of imported raw materials
+B. A fall in labour productivity
+C. A sharp rise in consumer confidence and spending
+D. An increase in direct taxes
+E. An increase in the savings ratio
 
-## Section B: Essay (choose ONE)
+Question 7 [1 mark]
+The table below shows income distribution data for four economies:
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of oligopoly and collusion in UK supermarkets, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+| Country | Gini Coefficient | GDP per capita ($) | HDI |
+|---------|------------------|---------------------|------|
+| W | 0.25 | 45,000 | 0.92 |
+| X | 0.35 | 38,000 | 0.88 |
+| Y | 0.48 | 12,000 | 0.72 |
+| Z | 0.55 | 3,500 | 0.48 |
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of externalities in the energy sector, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+It can be concluded that:
+A. Country Z has the highest level of income inequality
+B. Country W has a higher GDP than Country X
+C. Country Y has a lower standard of living than Country Z
+D. Income inequality is positively correlated with HDI in all four countries
+E. Country X has the most equal income distribution
+
+Question 8 [1 mark]
+In a market, equilibrium price is £20 and equilibrium quantity is 500 units. The maximum price consumers are willing to pay is £50 (for the first unit), and the minimum price producers are willing to accept is £5 (for the first unit). Assume linear demand and supply. Consumer surplus at equilibrium is:
+A. £5,000
+B. £7,500
+C. £10,000
+D. £12,500
+E. £15,000
+
+Question 9 [1 mark]
+Compared to a perfectly competitive market, a pure monopoly is most likely to:
+A. Produce a higher output at a lower price
+B. Produce a lower output at a higher price
+C. Be both allocatively and productively efficient
+D. Earn only normal profits in the long run
+E. Face a perfectly elastic demand curve
+
+Question 10 [1 mark]
+In a city where the government has introduced strict rent controls (a maximum price below equilibrium), the most likely consequences include:
+A. Higher investment in new housing
+B. Shortages of rental accommodation
+C. Increased quality of rental properties
+D. A rise in equilibrium rent
+E. Surplus of available housing
+
+Question 11 [1 mark]
+The UK Government's national debt rose from £1,800bn in 2019 to £2,600bn in 2023. Over the same period, nominal GDP rose from £2,200bn to £2,700bn. It can be concluded that:
+A. Real GDP rose over the period
+B. The debt-to-GDP ratio fell over the period
+C. The debt-to-GDP ratio rose from approximately 82% to approximately 96%
+D. The budget deficit must have been falling
+E. Inflation averaged 5% per year
+
+Question 12 [1 mark]
+Which of the following best explains why CPI may overstate the true rise in the cost of living?
+A. It excludes housing costs
+B. It does not account for substitution effects as consumers move to cheaper alternatives
+C. It uses outdated weights
+D. It includes indirect taxes
+E. It excludes imported goods
+
+Question 13 [1 mark]
+A firm reduces the price of its product from £20 to £16. As a result, quantity demanded increases from 400 to 600 units. The price elasticity of demand (using the average/midpoint method) is approximately:
+A. -0.5
+B. -1.0
+C. -1.8
+D. -2.0
+E. -2.5
+
+Question 14 [1 mark]
+Country X can produce either 100 tonnes of wheat OR 50 cars with its resources. Country Y can produce either 80 tonnes of wheat OR 20 cars. Which of the following is true?
+A. Country X has a comparative advantage in both goods
+B. Country Y has a comparative advantage in wheat
+C. Country X has a comparative advantage in cars
+D. No mutually beneficial trade is possible
+E. Country Y has an absolute advantage in cars
+
+Question 15 [1 mark]
+According to the quantity theory of money (MV = PY), if the money supply rises by 8%, the velocity of circulation falls by 2%, and real GDP rises by 3%, inflation will be approximately:
+A. 3%
+B. 5%
+C. 6%
+D. 9%
+E. 13%
+
+Question 16 [1 mark]
+Country A's index of export prices rises from 100 to 120. Its index of import prices rises from 100 to 110. Which of the following is correct?
+A. The terms of trade have deteriorated
+B. The terms of trade index is 91.7
+C. The terms of trade index has risen to 109.1
+D. The current account will automatically improve
+E. Exports will become less competitive
+
+Question 17 [1 mark]
+A country's central bank raises interest rates significantly. In the short run, this would most likely cause:
+A. A depreciation of the currency
+B. A fall in hot money inflows
+C. An appreciation of the currency
+D. A rise in the rate of inflation
+E. A fall in the value of exports
+
+Question 18 [1 mark]
+The overuse of antibiotics leading to antimicrobial resistance is best described as an example of:
+A. A public good
+B. A positive externality of consumption
+C. A negative externality of consumption
+D. A merit good
+E. Asymmetric information
+
+Question 19 [1 mark]
+In a market with a negative externality of production, the socially optimal output is where:
+A. MPB = MPC
+B. MSB = MSC
+C. MPB = MSC
+D. MSB = MPC
+E. Price = MSC
+
+Question 20 [1 mark]
+The government imposes a specific tax of £2 per unit on sugary drinks. If demand is price inelastic and supply is price elastic, which of the following is most likely?
+A. The tax will be borne mainly by producers
+B. The tax will be borne equally by consumers and producers
+C. The tax will be borne mainly by consumers
+D. The tax will not affect price at all
+E. Quantity demanded will fall significantly
+
+## Section B — Structured Questions (40 marks)
+
+Answer all the questions in the spaces provided.
+
+Question 21 [3 marks]
+The diagram below shows a firm operating in perfect competition in the short run, producing at output Q₁ where it maximises profits.
+[Diagram: MC curve, AC curve, AR=MR=D horizontal line at P₁, output Q₁ at MC=MR intersection]
+Using the diagram, explain why the firm maximises profit at output Q₁.
+
+Question 22 [6 marks]
+The diagram below shows an economy initially in equilibrium at P₁Y₁, where real GDP is below the full employment level. The Bank of England then cuts the Bank Rate from 5% to 2%.
+[Diagram: AD/AS framework showing SRAS, LRAS, AD, initial equilibrium at P₁Y₁ below LRAS]
+Consider the extent to which this policy would be beneficial for the economy. Adapt the diagram as part of your answer.
+
+Question 23 [3 marks]
+Norway has large North Sea oil reserves. Extracting oil from offshore rigs is capital intensive and requires complex infrastructure. When new oil deposits are discovered, it typically takes 5–10 years before production can begin.
+With the aid of a diagram, comment on the likely price elasticity of supply of Norwegian oil in the short run.
+
+Question 24 [4 marks]
+A bakery has fixed costs of £500 per week (rent, equipment depreciation). The diagram below shows the bakery's short-run total cost curve as output of loaves increases from 0 to 1,000.
+[Diagram: TC curve starting at £500, rising gradually then more steeply as output increases]
+Explain the shape of this firm's short run total cost curve.
+
+Question 25 [8 marks]
+The pay-off matrix below shows the expected changes in employment (in thousands) for two neighbouring countries depending on whether they introduce a carbon tax.
+
+|  | Country B: Carbon Tax | Country B: No Carbon Tax |
+|---|---|---|
+| **Country A: Carbon Tax** | -10, -15 | -50, +30 |
+| **Country A: No Carbon Tax** | +40, -40 | +5, +10 |
+
+With reference to the matrix and economic theory, discuss whether or not governments should coordinate climate policy internationally.
+
+Question 26 [8 marks]
+The UK has one of the highest levels of obesity in Europe, with around 26% of adults classified as obese. In 2018, the government introduced the Soft Drinks Industry Levy ('sugar tax') on drinks with high sugar content. Since then, many manufacturers have reformulated their drinks to reduce sugar content.
+
+Additional data:
+- UK obesity rate (adults): 2010 — 22%; 2023 — 26%
+- NHS spending on obesity-related conditions: £6.5bn (2023)
+- Revenue from sugar tax: £300m (2023)
+- Reduction in sugar content in taxed drinks: 43% since 2018
+- Children from the most deprived areas are twice as likely to be obese as those from the least deprived areas
+
+With reference to the data above, consider how effective the UK Government's sugar tax has been in correcting market failure.
+
+Question 27 [8 marks]
+The table below gives information on selected African economies:
+
+| Country | GDP per capita ($, PPP) | Adult literacy rate (%) | Life expectancy (years) | HDI |
+|---------|--------------------------|--------------------------|--------------------------|------|
+| Botswana | 17,100 | 88 | 61 | 0.693 |
+| Ghana | 6,400 | 80 | 64 | 0.632 |
+| Kenya | 5,200 | 83 | 67 | 0.601 |
+| Rwanda | 2,800 | 73 | 70 | 0.550 |
+| Ethiopia | 2,800 | 52 | 66 | 0.498 |
+| DR Congo | 1,500 | 80 | 60 | 0.457 |
+
+Using the information above and relevant economic theory, discuss the extent to which investment in education is the most effective way to promote economic development.
 `,
   },
   {
     id: "wjec-p1-b",
     subject: "wjec" as any,
     paper: "1",
-    title: "Paper 1 — Set B",
-    description: "Markets, Business & the Allocation of Resources. Set B — stretch — applied scenarios.",
-    totalMarks: 80,
-    content: `# WJEC A-Level Economics (1EC0/01) — Markets, Business & the Allocation of Resources — Predicted Paper Set B
+    title: "Paper 1 — Hard",
+    description: "Economic Principles (A520U10-1). Hard difficulty — 20 MCQs + 7 structured questions.",
+    totalMarks: 60,
+    content: `# WJEC GCE A-Level Economics (A520U10-1) — Component 1: Economic Principles — Predicted Paper (Hard)
 
-**Time: 120 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total: 60 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer ALL questions. The number of marks is given in brackets at the end of each question.
 
-## Section A: Data Response
+## Section A — Multiple Choice (20 marks)
 
-**Extract 1 — Labour market failure and minimum wage:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+For each question in Section A, write the letter (A, B, C, D or E) that corresponds to your answer in the box provided.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+Question 1 [1 mark]
+An economy's labour force grows by 1.5% per year and its output per worker grows by 2.2% per year. However, the average number of hours worked per worker falls by 0.4% per year. The annual rate of actual economic growth is approximately:
+A. 2.3%
+B. 2.7%
+C. 3.3%
+D. 3.7%
+E. 4.1%
 
-Question 1 [2 marks]
-With reference to labour market failure and minimum wage, explain one government response to the issue.
+Question 2 [1 mark]
+According to the Coase theorem, in the presence of externalities, bargaining between the affected parties will lead to an efficient outcome provided that:
+A. Government sets a Pigouvian tax equal to the external cost
+B. Property rights are well-defined and transaction costs are low
+C. The externality is a public good
+D. There is perfect information in the market
+E. The market is perfectly competitive
 
-Question 2 [4 marks]
-With reference to labour market failure and minimum wage, explain one factor that influences the issue.
+Question 3 [1 mark]
+A firm's current price is £8 and quantity demanded is 1,000 units per week. The firm's accountants estimate that PED = −1.5 at this point. If the firm reduces price by 10%, total revenue will:
+A. Rise by approximately £1,200/week
+B. Rise by approximately £600/week
+C. Rise by approximately £300/week
+D. Fall by approximately £400/week
+E. Remain unchanged
 
-Question 3 [6 marks]
-With reference to labour market failure and minimum wage, explain one mechanism that determines the issue.
+Question 4 [1 mark]
+A drought in wheat-producing regions coincides with rising incomes in developing countries where wheat is a normal good. In the wheat market, the most likely outcome is:
+A. Price rises, quantity falls
+B. Price rises, quantity rises
+C. Price falls, quantity rises
+D. Price rises, quantity change indeterminate
+E. Price change indeterminate, quantity rises
 
-Question 4 [9 marks]
-With reference to labour market failure and minimum wage, explain two consequences of the issue.
+Question 5 [1 mark]
+Following a sharp depreciation of its currency, a country's trade balance initially worsens before improving. This pattern is most commonly referred to as:
+A. The Laffer curve
+B. The Phillips curve
+C. The J-curve effect
+D. The Kuznets curve
+E. The Okun curve
 
-Question 5 [12 marks]
-With reference to externalities in the energy sector, explain one government response to the issue.
+Question 6 [1 mark]
+The short-run Phillips curve shifts upwards. The most likely cause is:
+A. A rise in productivity
+B. An increase in labour force participation
+C. An increase in expected inflation
+D. A fall in commodity prices
+E. A cut in the Bank Rate
 
-## Section B: Essay (choose ONE)
+Question 7 [1 mark]
+A Lorenz curve that moves closer to the line of absolute equality indicates:
+A. A rise in income inequality
+B. A fall in income inequality
+C. An increase in GDP
+D. A rise in the Gini coefficient
+E. A fall in average incomes
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of oligopoly and collusion in UK supermarkets, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 8 [1 mark]
+In a market with linear supply and demand, the government imposes an indirect tax that reduces equilibrium quantity from 1,000 to 800 units. The tax per unit is £5. The deadweight (welfare) loss from the tax is:
+A. £250
+B. £500
+C. £750
+D. £1,000
+E. £2,000
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of externalities in the energy sector, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 9 [1 mark]
+For a price-discriminating monopolist to successfully charge different prices to different consumer groups, which of the following is NOT required?
+A. The ability to identify different consumer groups
+B. Different PEDs between groups
+C. The ability to prevent resale between groups
+D. Some degree of monopoly power
+E. Constant marginal costs across groups
+
+Question 10 [1 mark]
+'Adverse selection' in the market for used cars ('lemons' problem) arises primarily because:
+A. Buyers know more about car quality than sellers
+B. Sellers know more about car quality than buyers
+C. The market has too few sellers
+D. There is excessive government regulation
+E. Cars are a public good
+
+Question 11 [1 mark]
+In an economy, the marginal propensity to consume is 0.75, the marginal tax rate is 0.2, and the marginal propensity to import is 0.15. The government spending multiplier is approximately:
+A. 1.25
+B. 1.67
+C. 2.00
+D. 2.50
+E. 4.00
+
+Question 12 [1 mark]
+The nominal interest rate is 4% and the expected inflation rate is 6%. Using the Fisher equation, the real interest rate is approximately:
+A. +10%
+B. +2%
+C. 0%
+D. −2%
+E. −10%
+
+Question 13 [1 mark]
+The demand for a product has an income elasticity of demand of +2.5. This product is best classified as:
+A. An inferior good
+B. A necessity
+C. A Giffen good
+D. A luxury (income-elastic normal) good
+E. A demerit good
+
+Question 14 [1 mark]
+Country X can produce 1 unit of good A in 4 hours OR 1 unit of good B in 6 hours. Country Y can produce 1 unit of good A in 2 hours OR 1 unit of good B in 4 hours. Which of the following is true?
+A. Y has comparative advantage in A; X has comparative advantage in B
+B. X has comparative advantage in A; Y has comparative advantage in B
+C. Y has absolute advantage in both but no comparative advantage
+D. X has comparative advantage in both A and B
+E. No mutually beneficial trade is possible
+
+Question 15 [1 mark]
+An expansionary fiscal policy is most likely to cause significant 'crowding out' when:
+A. The economy is in a deep recession with much spare capacity
+B. The economy is operating close to full employment
+C. Interest rates are at the zero lower bound
+D. Private investment is highly interest-inelastic
+E. Exchange rates are fixed
+
+Question 16 [1 mark]
+A country has a current account deficit of £40bn. In the same period, its capital and financial account shows a net inflow of £35bn. Assuming no errors or omissions, the change in official reserves is most likely:
+A. A rise of £5bn
+B. A fall of £5bn
+C. A rise of £40bn
+D. A fall of £75bn
+E. Zero
+
+Question 17 [1 mark]
+The Marshall-Lerner condition states that a depreciation will improve the current account if:
+A. Sum of PEDs for exports and imports > 0
+B. Sum of PEDs for exports and imports > 1
+C. PED for exports > PED for imports
+D. Both PEDs are less than 1
+E. Both PEDs equal zero
+
+Question 18 [1 mark]
+In an oligopoly market, a Nash equilibrium occurs when:
+A. All firms earn zero economic profits
+B. Each firm's strategy is the best response given the strategies of rival firms
+C. Firms collude to maximise joint profits
+D. Firms produce where P = MC
+E. One firm dominates the market completely
+
+Question 19 [1 mark]
+The behavioural economics concept of 'loss aversion' suggests that:
+A. People value gains more than equivalent losses
+B. People value losses more than equivalent gains
+C. People are always rational utility maximisers
+D. People have stable preferences over time
+E. People always use full information when deciding
+
+Question 20 [1 mark]
+The demand function is Qd = 1000 − 20P and the supply function is Qs = 100 + 10P (where P is in £ and Q is in units/week). A specific tax of £6/unit is imposed on producers. The revenue raised by this tax is:
+A. £2,160
+B. £3,240
+C. £3,960
+D. £4,800
+E. £5,400
+
+## Section B — Structured Questions (40 marks)
+
+Answer all the questions in the spaces provided.
+
+Question 21 [3 marks]
+The diagram below shows a firm operating in monopolistic competition in long-run equilibrium.
+[Diagram: MC, AC, D=AR, MR curves. AC is tangent to AR at profit-maximising output Q₁, with P₁ = AC at Q₁]
+Using the diagram, explain why the firm earns only normal profit in the long run.
+
+Question 22 [6 marks]
+The diagram below shows an economy in equilibrium at P₁Y₁. A major global supply-side shock (a sharp rise in world oil prices) hits the economy.
+[Diagram: AD/AS framework — SRAS, LRAS, AD intersecting at P₁Y₁]
+Consider the extent to which monetary policy can restore the economy to its initial position. Adapt the diagram as part of your answer.
+
+Question 23 [3 marks]
+In central London, planning restrictions severely limit the construction of new residential buildings. The average time from planning application to occupancy of a new development is over 5 years. Meanwhile, demand for housing has risen sharply due to population growth and international migration.
+With the aid of a diagram, comment on the likely price elasticity of supply of housing in central London and its implications for house prices.
+
+Question 24 [4 marks]
+The diagram below shows the long-run average cost (LRAC) curve for an electricity generation firm. Output ranges from 100 MW to 5,000 MW.
+[Diagram: LRAC curve — falling sharply from 100 MW to 2,000 MW (minimum efficient scale), roughly flat from 2,000 to 4,000 MW, then rising after 4,000 MW]
+Explain the shape of this firm's long-run average cost curve, referring to the concepts of economies and diseconomies of scale.
+
+Question 25 [8 marks]
+Two large supermarket chains (Tesla-Mart and BigBasket) operate in a duopoly market. The pay-off matrix below shows weekly profits (in £m) depending on each firm's advertising strategy.
+
+|  | BigBasket: High Advertising | BigBasket: Low Advertising |
+|---|---|---|
+| **Tesla-Mart: High Advertising** | £12m, £10m | £25m, £4m |
+| **Tesla-Mart: Low Advertising** | £6m, £22m | £18m, £15m |
+
+With reference to the matrix and economic theory, discuss whether the firms would be better off forming a collusive agreement rather than competing on advertising.
+
+Question 26 [8 marks]
+Read the following information about healthcare in the UK:
+
+The NHS budget has risen from £123bn in 2013/14 to approximately £190bn in 2023/24. In real terms (adjusted for inflation), this represents an average annual real-terms increase of about 1.5%. However, the long-run historical average is 3.7% real growth per year.
+
+Key pressures on the NHS include:
+- Ageing population: 18% of UK population is now aged 65+ (vs 16% in 2011)
+- Median NHS waiting time for elective surgery has risen from 7 weeks (2010) to 14 weeks (2023)
+- Private healthcare spending in the UK has risen by 50% in real terms since 2015
+- Over 7 million people are currently on NHS waiting lists (vs 2.5m in 2012)
+- Obesity, mental health and long-Covid cases all rising sharply
+
+Critics argue the funding model is unsustainable; supporters argue that increasing investment would correct market failures in healthcare provision.
+
+With reference to the data above, consider the extent to which increased government spending on the NHS is the best way to correct market failure in healthcare.
+
+Question 27 [8 marks]
+The table below gives information on selected economies in the context of globalisation:
+
+| Country | Trade openness (X+M as % GDP) | FDI inflow (% GDP) | Average growth rate 2000–2020 (% p.a.) | Gini coefficient | HDI |
+|---------|--------------------------------|---------------------|-----------------------------------------|------------------|------|
+| Singapore | 320% | 20.1% | 4.7% | 0.46 | 0.938 |
+| South Korea | 85% | 1.2% | 4.0% | 0.35 | 0.925 |
+| Vietnam | 210% | 6.3% | 6.2% | 0.36 | 0.704 |
+| China | 38% | 1.8% | 8.9% | 0.47 | 0.764 |
+| Nigeria | 31% | 0.7% | 4.1% | 0.35 | 0.535 |
+| North Korea | ~5% | ~0% | est. 1–2% | n/a | est. <0.5 |
+
+Using the information above and relevant economic theory, discuss the extent to which openness to trade and foreign investment is the most effective driver of economic development.
 `,
   },
   {
     id: "wjec-p1-c",
     subject: "wjec" as any,
     paper: "1",
-    title: "Paper 1 — Set C",
-    description: "Markets, Business & the Allocation of Resources. Set C — challenge — synoptic & evaluative.",
-    totalMarks: 80,
-    content: `# WJEC A-Level Economics (1EC0/01) — Markets, Business & the Allocation of Resources — Predicted Paper Set C
+    title: "Paper 1 — Advanced",
+    description: "Economic Principles (A520U10-1). Advanced difficulty — 20 MCQs + 7 structured questions.",
+    totalMarks: 60,
+    content: `# WJEC GCE A-Level Economics (A520U10-1) — Component 1: Economic Principles — Predicted Paper (Advanced)
 
-**Time: 120 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total: 60 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer ALL questions. The number of marks is given in brackets at the end of each question.
 
-## Section A: Data Response
+## Section A — Multiple Choice (20 marks)
 
-**Extract 1 — Externalities in the energy sector:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+For each question in Section A, write the letter (A, B, C, D or E) that corresponds to your answer.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+Question 1 [1 mark]
+According to the Solow growth model, sustained long-run growth in GDP per capita ultimately depends on:
+A. Growth in the labour force
+B. Growth in the capital stock
+C. Exogenous technological progress (total factor productivity)
+D. Increases in the savings rate
+E. Higher rates of population growth
 
-Question 1 [2 marks]
-With reference to externalities in the energy sector, explain one factor that influences the issue.
+Question 2 [1 mark]
+In a market with a negative externality of production, if the government sets a per-unit tax exactly equal to the marginal external cost (a Pigouvian tax), the post-tax outcome will:
+A. Eliminate all pollution
+B. Internalise the externality and achieve the socially optimal output
+C. Create a deadweight loss equal to the original welfare loss
+D. Reduce output below the socially optimal level
+E. Increase welfare by the full amount of tax revenue
 
-Question 2 [4 marks]
-With reference to externalities in the energy sector, explain one mechanism that determines the issue.
+Question 3 [1 mark]
+A natural monopoly is characterised by an LRAC curve that falls continuously over the relevant range of output. If such a firm is regulated to price at marginal cost (P = MC), it will:
+A. Earn normal profits
+B. Earn supernormal profits
+C. Make a loss because MC is below AC
+D. Be productively efficient but not allocatively efficient
+E. Face zero deadweight loss and positive economic profit
 
-Question 3 [6 marks]
-With reference to labour market failure and minimum wage, explain two consequences of the issue.
+Question 4 [1 mark]
+In a market, Qd = 600 − 4P and Qs = -100 + 6P (both in units/day, P in £). If the government sets a maximum price of £50, the resulting market imbalance will be:
+A. An excess supply of 200 units
+B. An excess demand of 200 units
+C. An excess demand of 100 units
+D. An excess supply of 100 units
+E. Market equilibrium (no imbalance)
 
-Question 4 [9 marks]
-With reference to externalities in the energy sector, explain one government response to the issue.
+Question 5 [1 mark]
+The UK has an inflation rate of 6% while the Eurozone has an inflation rate of 2%. Over the same period, the nominal £/€ exchange rate appreciates by 1%. The change in the UK's real effective exchange rate (against the Euro) is approximately:
+A. Appreciation of 3%
+B. Appreciation of 5%
+C. Depreciation of 3%
+D. Depreciation of 5%
+E. No change
 
-Question 5 [12 marks]
-With reference to externalities in the energy sector, explain one factor that influences the issue.
+Question 6 [1 mark]
+The long-run Phillips curve is vertical at the Non-Accelerating Inflation Rate of Unemployment (NAIRU) because:
+A. All unemployment is voluntary
+B. Workers adjust their inflation expectations to actual inflation in the long run
+C. Money is neutral in both short and long run
+D. Monetary policy has no effect on inflation
+E. Supply shocks cancel out in the long run
 
-## Section B: Essay (choose ONE)
+Question 7 [1 mark]
+The poorest 20% of households in Country X receive 5% of total income; the richest 20% receive 50%. A progressive tax-and-benefit system raises the share of the poorest 20% to 8% and reduces the richest 20% to 42%. The Gini coefficient will:
+A. Rise
+B. Fall
+C. Remain unchanged
+D. Approach 1
+E. Become negative
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of oligopoly and collusion in UK supermarkets, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 8 [1 mark]
+Demand: P = 120 − 2Q. Supply: P = 20 + 3Q. The government imposes a specific tax of £10 per unit on producers. The loss in consumer surplus due to the tax is:
+A. £76
+B. £140
+C. £176
+D. £380
+E. £400
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of externalities in the energy sector, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 9 [1 mark]
+In a perfectly contestable market, which of the following outcomes is most likely?
+A. Firms will charge monopoly prices
+B. Firms will earn only normal profits in the long run, even with few competitors
+C. Firms will always operate below MES
+D. Firms will face inelastic demand
+E. Firms will engage in tacit collusion
+
+Question 10 [1 mark]
+The 'principal-agent problem' in the context of publicly listed companies refers to the conflict between:
+A. Buyers and sellers
+B. Shareholders (principals) and managers (agents) arising from information asymmetry
+C. Workers and trade unions
+D. Government regulators and firms
+E. Creditors and debtors
+
+Question 11 [1 mark]
+At the zero lower bound on nominal interest rates, conventional monetary policy becomes ineffective because:
+A. Fiscal policy always dominates
+B. Nominal rates cannot be cut further to stimulate demand
+C. Inflation is automatically zero
+D. Households save more when rates are low
+E. Banks hoard all reserves
+
+Question 12 [1 mark]
+In a closed economy, the theoretical multiplier is k = 1/(1−MPC). Empirical estimates of the multiplier in open economies with flexible exchange rates and partial crowding out are typically:
+A. Larger than the theoretical value
+B. About equal to the theoretical value
+C. Smaller than the theoretical value
+D. Negative
+E. Infinite
+
+Question 13 [1 mark]
+A government wishes to maximise tax revenue from a specific indirect tax. This is most likely to be achieved when demand for the taxed product is:
+A. Perfectly elastic
+B. Price elastic
+C. Perfectly inelastic
+D. Unit elastic
+E. Price inelastic with many complements
+
+Question 14 [1 mark]
+Country A experiences a 10% improvement in its terms of trade. Its trade volume (quantity of exports and imports) remains unchanged. The most likely effect on its current account balance is:
+A. The current account will deteriorate
+B. The current account will improve
+C. The current account will be unchanged
+D. The current account will shift to surplus only if PEDs are elastic
+E. Cannot be determined without more information
+
+Question 15 [1 mark]
+Quantitative easing (QE) is most likely to stimulate AD through all of the following channels EXCEPT:
+A. Lower long-term interest rates (portfolio rebalancing)
+B. Higher asset prices and wealth effects
+C. A weaker exchange rate
+D. Increased bank lending to SMEs in every case
+E. Signalling commitment to low rates for longer
+
+Question 16 [1 mark]
+The use of 'nudges' (e.g. default enrolment into pension schemes) in public policy is based on the behavioural insight that:
+A. Consumers always make fully rational choices
+B. Small changes in choice architecture can significantly alter behaviour
+C. Economic agents have identical preferences
+D. Market failures do not exist in practice
+E. Information provision alone solves all market failures
+
+Question 17 [1 mark]
+The 'tragedy of the commons' is most commonly associated with which pair of characteristics?
+A. Non-rival and excludable
+B. Rival and excludable
+C. Non-rival and non-excludable
+D. Rival and non-excludable
+E. Non-rival and non-diminishable
+
+Question 18 [1 mark]
+In year 1, nominal GDP is £2,000bn and the GDP deflator is 100. In year 2, nominal GDP rises to £2,184bn and the GDP deflator is 104. Real GDP growth (rounded) is:
+A. 2.0%
+B. 4.0%
+C. 5.0%
+D. 9.2%
+E. 13.2%
+
+Question 19 [1 mark]
+The Kuznets curve hypothesises that, as a country develops, income inequality:
+A. Continuously rises
+B. Continuously falls
+C. First rises, then falls (inverted-U shape)
+D. First falls, then rises
+E. Remains constant
+
+Question 20 [1 mark]
+The demand for a product is given by Q = 500 − 10P and supply by Q = 20P − 100. The government introduces a specific tax of £6/unit paid by producers. The new equilibrium quantity is:
+A. 220
+B. 240
+C. 260
+D. 280
+E. 300
+
+## Section B — Structured Questions (40 marks)
+
+Answer all the questions in the spaces provided.
+
+Question 21 [3 marks]
+The diagram below shows the kinked demand curve faced by an oligopoly firm, with the discontinuous 'gap' in the MR curve between points A and B.
+[Diagram: kinked demand curve with an elastic upper segment and inelastic lower segment, kink at the current price P*. MR curve has a vertical discontinuity at Q*]
+Using the diagram, explain why price stability is a common feature of oligopoly markets.
+
+Question 22 [6 marks]
+The diagram below shows an economy with a Keynesian AS curve (perfectly elastic at low output, becoming vertical at full employment). The economy is currently in a deep recession at Y₁.
+[Diagram: Keynesian AS curve (L-shaped / three-stage: flat, upward-sloping, vertical), with AD intersecting in the flat portion at Y₁]
+Consider the extent to which a £50bn expansionary fiscal stimulus would be an effective policy response. Adapt the diagram as part of your answer.
+
+Question 23 [3 marks]
+Lithium is a key input in electric vehicle batteries. Global demand is forecast to quadruple over the next decade. Lithium mines take 7–10 years to develop from initial exploration to full production. Existing mines are operating at near-full capacity.
+With the aid of a diagram, comment on the likely consequences for lithium prices over the next 5 years, referring to the price elasticity of supply.
+
+Question 24 [4 marks]
+A firm operates in two distinct stages of production: a small-scale 'artisan' stage (1–100 units) using skilled labour, and a large-scale 'factory' stage (100+ units) requiring substantial investment in machinery. The firm's short-run total cost curve has a distinctive kink at 100 units, with TC jumping from £5,000 at Q=99 to £25,000 at Q=100.
+Explain the shape of this firm's short-run total cost curve and the economic significance of the discontinuity.
+
+Question 25 [8 marks]
+The pay-off matrix below shows the expected changes in real GDP (%, annualised) for two economies depending on their trade policy stance. The economies are significant trading partners.
+
+|  | Economy Y: Free Trade | Economy Y: Retaliatory Tariffs |
+|---|---|---|
+| **Economy X: Free Trade** | +2.4%, +3.0% | -1.8%, +1.5% |
+| **Economy X: Tariffs on Y's exports** | +1.2%, -2.0% | -3.5%, -4.0% |
+
+Additional context:
+- Economy X is a large developed economy; Economy Y is a fast-growing emerging economy.
+- The WTO average 'bound' tariff for developed economies is approximately 3.5%; for developing economies, around 15%.
+- Recent empirical studies estimate trade wars reduce global GDP by 0.8–1.5%.
+
+With reference to the matrix and economic theory, discuss whether the optimal trade policy is unilateral free trade.
+
+Question 26 [8 marks]
+The UK has a legally binding target of reaching 'net zero' greenhouse gas emissions by 2050. Read the information below.
+
+The UK's current approach combines:
+- The UK Emissions Trading Scheme (ETS): a 'cap-and-trade' system covering ~30% of emissions, with the carbon price averaging £40/tonne in 2024 (down from £90/tonne in 2023).
+- Fuel duty on petrol and diesel (frozen in nominal terms since 2011).
+- Subsidies for renewables (via Contracts for Difference).
+- Various regulations and standards.
+
+Key data:
+- UK CO₂ emissions have fallen by 48% since 1990.
+- Renewable share of UK electricity: 43% (2023), up from 7% in 2010.
+- UK ETS revenue: £5.5bn (2023), £3.2bn (2024).
+- Climate Change Committee estimates the shadow cost of carbon for policy should be £240/tonne by 2030.
+- Global CO₂ emissions continue to rise; UK accounts for ~1% of world emissions.
+- Price Elasticity of Demand for petrol: ≈ −0.3 (short run), ≈ −0.7 (long run).
+
+With reference to the data above, consider the extent to which the UK's carbon pricing policies are effective at correcting the market failure of climate change.
+
+Question 27 [8 marks]
+The table below presents development indicators for selected economies, comparing 'extractive' vs 'inclusive' institutional frameworks (as theorised by Acemoglu and Robinson).
+
+| Country | GDP per capita ($, PPP) | Rule of Law Index (0–1, higher=better) | HDI | Corruption Perceptions rank /180 | Institutional classification |
+|---------|--------------------------|-----------------------------------------|------|-----------------------------------|-------------------------------|
+| South Korea | 52,000 | 0.81 | 0.925 | 32 | Inclusive |
+| North Korea | 1,700 | 0.14 | <0.5 (est.) | 172 | Extractive |
+| Chile | 28,000 | 0.67 | 0.855 | 29 | Mixed (largely inclusive) |
+| Argentina | 26,500 | 0.52 | 0.842 | 98 | Mixed/extractive |
+| Botswana | 17,100 | 0.65 | 0.693 | 45 | Inclusive (for region) |
+| Zimbabwe | 2,800 | 0.36 | 0.593 | 149 | Extractive |
+| Singapore | 116,000 | 0.80 | 0.938 | 5 | Inclusive |
+| Nigeria | 5,900 | 0.44 | 0.535 | 145 | Mixed/extractive |
+
+Using the information above and relevant economic theory, discuss the extent to which institutional quality is the most fundamental determinant of long-run economic development.
 `,
   },
   {
