@@ -1331,6 +1331,8 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             userId: user.id,
             imageBase64,
             imageSrc: inputMode === "draw" ? diagramImage ?? undefined : undefined,
+            scenarioRubric: scenarioRubricObj ? rubricToMarkSchemePayload(scenarioRubricObj) : undefined,
+            scenarioRubricPrompt: scenarioRubricBlock || undefined,
           });
         }
         await consumeAttempt();
