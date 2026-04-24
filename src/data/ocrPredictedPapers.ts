@@ -10,50 +10,92 @@ export const ocrPredictedPapers: PredictedPaper[] = [
     id: "ocr-c01-set-a",
     subject: "ocr",
     paper: "1",
-    title: "Component 01 Micro — Set A",
-    description: "Microeconomics: scarcity, markets, elasticity, market failure, market structures.",
+    title: "Component 01 Micro — Set A (Moderate)",
+    description: "H460/01 Microeconomics — Moderate predicted paper: UK coffee shop market, monopolistic competition, sugar tax, public transport subsidies, minimum wage.",
     totalMarks: 80,
-    content: `# OCR A-Level Economics (H460/01) — Component 01: Microeconomics — Set A
+    content: `# OCR A-Level Economics (H460/01) — Component 01: Microeconomics — Predicted Paper (Moderate)
 
 **Time: 2 hours | Total: 80 marks**
 
+Answer **all** the questions in Section A, **one** question in Section B and **one** question in Section C.
+
 ## Section A: Data Response
 
-Read the extract below and answer all questions.
+Read the stimulus material and answer all the parts of Question 1.
 
-**Extract: The UK Housing Market**
+**Is the UK coffee shop market becoming more competitive?**
 
-UK house prices rose by an average of 7.8% in 2024, with regional disparities widening. In London, the average property costs 12 times the median annual salary. First-time buyers face deposit requirements averaging £53,000. The government has introduced Help to Buy schemes and planning reforms, while critics argue that the fundamental issue is a shortage of supply relative to demand.
+The UK branded coffee shop market has grown rapidly over the past two decades. By the end of 2023, there were over 9,500 outlets, with total market turnover of approximately £4.9bn. The 'Big Three' chains – Costa Coffee, Starbucks and Caffè Nero – have traditionally dominated the market, although their combined share has fallen from around 53% in 2015 to 28% in 2023.
 
-Question 1 [2 marks]
-Define the term "market equilibrium".
+Independent coffee shops have grown rapidly since 2020. Research suggests independents now account for roughly half of UK coffee shop outlets. High-street bakery Greggs has also expanded aggressively into coffee, selling over 150 million cups in 2023, while Pret A Manger's subscription scheme signed up over 1.25 million members.
 
-Question 2 [4 marks]
-Using the extract, explain two factors that have contributed to rising UK house prices.
+**Fig. 1 — Selected UK coffee-market cost and wage indices (Jan 2020 = 100)**
 
-Question 3 [8 marks]
-With the aid of a supply and demand diagram, analyse the impact of an increase in the supply of new housing on the UK housing market.
+| Date | National Living Wage (£/hr) | Coffee-shop prices (index) | Coffee-bean price (index) |
+|---|---|---|---|
+| Jan 2020 | 8.72 | 100 | 100 |
+| Jan 2021 | 8.91 | 102 | 106 |
+| Jan 2022 | 9.50 | 109 | 148 |
+| Dec 2023 | 10.42 | 128 | 172 |
+| Apr 2024 | 11.44 | 132 | 161 |
 
-Question 4 [16 marks]
-Evaluate the effectiveness of government intervention in the UK housing market.
+Rising Arabica and Robusta bean prices – driven by drought in Brazil, supply disruption in Vietnam, and higher shipping costs – have raised input costs for all coffee shops. Energy bills for UK cafes rose by over 60% between 2021 and 2023, and staff costs have also risen sharply as the National Living Wage (NLW) has increased each year.
 
-## Section B: Extended Response
+Despite rising costs, entry to the coffee shop market remains relatively easy compared to other parts of the hospitality sector. Start-up costs for an independent cafe can be under £30,000, and consumers can readily switch between outlets. Product differentiation – through branding, décor, loyalty schemes, speciality drinks and quality of service – is therefore central to competition.
 
-Question 5 [8 marks]
-With the aid of a diagram, explain how negative externalities of production lead to market failure.
+Some economists argue the UK coffee market now closely resembles monopolistic competition. Others point to the continued strength of the largest chains, long-term lease agreements on prime locations, and the buying power of large chains over suppliers as evidence that the market is not fully competitive.
 
-Question 6 [16 marks]
-Evaluate the view that monopolies are always against the public interest.
+**Fig. 2 — Estimated UK coffee shop market shares by number of outlets (2023)**
 
-## Section C: Essay
+| Operator | Market share (%) |
+|---|---|
+| Costa Coffee | 12 |
+| Starbucks | 9 |
+| Caffè Nero | 7 |
+| Greggs | 5 |
+| Pret A Manger | 4 |
+| Independents | 50 |
+| Other chains | 13 |
 
-Answer ONE of the following:
+The UK Government has continued to raise the NLW to support low-paid workers, many of whom work in hospitality. Coffee shops have responded by raising drink prices, reducing staff hours, investing in self-order technology, and in some cases closing under-performing outlets.
 
-Question 7 [25 marks]
-"Labour markets work most efficiently when there is no government intervention." Evaluate this statement.
+Question 1a [2 marks]
+Explain what is meant by a 'concentration ratio'.
 
-Question 8 [25 marks]
-Evaluate the view that the theory of contestable markets is more useful than the theory of perfect competition in explaining firm behaviour in real-world markets.`,
+Question 1b [4 marks]
+Explain, using an appropriate diagram, the likely impact of rising coffee-bean prices on the market for branded coffee shop drinks.
+
+Question 1c(i) [2 marks]
+Refer to Fig. 1. Calculate, to one decimal place, the percentage change in the National Living Wage between January 2020 and December 2023.
+
+Question 1c(ii) [2 marks]
+Compare the trend in coffee-shop prices with the trend in coffee-bean prices over the period shown in Fig. 1.
+
+Question 1d [8 marks]
+"Rising Arabica and Robusta bean prices … have raised input costs." (Lines 15–18). Evaluate, using evidence from the stimulus material, the effectiveness of raising the National Living Wage in supporting the real incomes of coffee-shop workers.
+
+Question 1e [12 marks]
+Evaluate, using evidence from the stimulus material, the extent to which the UK coffee shop market can be considered to be an example of monopolistic competition.
+
+## Section B
+
+Answer **Question 2 OR Question 3**.
+
+Question 2 [25 marks]
+UK markets such as hairdressing, takeaway restaurants and independent coffee shops are often given as examples of monopolistic competition. Evaluate, using an appropriate diagram(s), whether firms in monopolistic competition are likely to be productively and allocatively efficient.
+
+Question 3 [25 marks]
+In April 2018 the UK Government introduced the Soft Drinks Industry Levy – a tax on manufacturers of sugary soft drinks. Similar sugar taxes are in place in over 50 countries worldwide. Evaluate, using an appropriate diagram(s), the likely microeconomic effects of a sugar tax on the market for sugary drinks.
+
+## Section C
+
+Answer **Question 4 OR Question 5**.
+
+Question 4 [25 marks]
+In 2023 public transport fares in England rose by 5.9%. Some economists argue that public transport should be more heavily subsidised by the government, both to reduce car use and to support lower-income commuters. Evaluate, using an appropriate diagram(s), whether the UK government should increase subsidies for public transport.
+
+Question 5 [25 marks]
+Between April 2020 and April 2024 the UK National Living Wage rose from £8.72 to £11.44 per hour – an increase of over 31%. Hospitality and retail, which employ large numbers of low-paid workers, have been particularly affected. Evaluate, using an appropriate diagram(s), the likely impact of rising minimum wages on the UK labour market.`,
   },
   {
     id: "ocr-c01-set-b",
