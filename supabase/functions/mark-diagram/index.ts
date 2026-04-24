@@ -154,6 +154,8 @@ serve(async (req) => {
       answerType = "text",
       scenarioId,
       userId,
+      scenarioRubric, // optional: per-scenario rubric components (preferred when provided)
+      scenarioRubricPrompt, // optional: pre-rendered prompt block from client
     } = body;
 
     if (!question || !studentAnswer) {
