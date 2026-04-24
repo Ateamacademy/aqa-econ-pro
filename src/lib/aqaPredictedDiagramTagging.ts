@@ -270,19 +270,7 @@ export function tagAqaQuestion(q: TaggerInput): AqaDiagramTag | null {
     // Student-drawn only — the whole point is for the student to construct it.
     if (q.marks === 9 && explicit) return studentDrawnOnly(false);
     // Section A 15-mark data response — student-drawn, no pre-supplied figure.
-    // EXCEPTION: explicit "Explain, using a diagram, how negative externalities of
-    // production lead to allocative inefficiency" — attach the canonical neg-ext
-    // reference figure as a stimulus (per editorial decision for Paper 1 Set B Q5).
-    if (q.marks === 15) {
-      const isNegExtProductionExplain =
-        explicit &&
-        /negative externalit(y|ies)\s+of\s+production/i.test(stem) &&
-        /allocative inefficiency|allocative efficiency|welfare loss|misallocation/i.test(stem);
-      if (isNegExtProductionExplain) {
-        return attachReferenceFigure(base(true), q);
-      }
-      return studentDrawnOnly(true);
-    }
+    if (q.marks === 15) return studentDrawnOnly(true);
     // Section B 25-mark essays — student-drawn, no pre-supplied figure.
     // Diagram-friendly topics still get a canvas (optional), but NEVER a reference figure.
     if (q.marks === 25 || q.marks === 20) {
