@@ -29,7 +29,7 @@ const CAIE_PAPERS: { number: 1 | 2 | 3 | 4; code: string; title: string; focus: 
   { number: 1, code: "9708/01", title: "Multiple Choice (AS)",          focus: "Microeconomics & Macroeconomics", duration: "1h",    marks: 30, available: true  },
   { number: 2, code: "9708/02", title: "Data Response and Essays (AS)", focus: "AS Core",                          duration: "1h 30", marks: 40, available: true  },
   { number: 3, code: "9708/03", title: "Multiple Choice (A2)",          focus: "Advanced Theory",                  duration: "1h 15", marks: 30, available: false },
-  { number: 4, code: "9708/04", title: "Data Response and Essays (A2)", focus: "Synoptic",                          duration: "2h 15", marks: 70, available: false },
+  
 ];
 
 const DIFFICULTIES: { id: Difficulty; label: string; tone: string }[] = [
