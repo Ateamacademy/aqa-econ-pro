@@ -553,7 +553,7 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
 
   /* ── Tax Incidence ── */
   tax_incidence: {
-    title: "Effect of an Indirect Tax (Ad Valorem)",
+    title: "Supply & Demand — Effect of an Indirect Tax",
     axisLabels: { x: "Quantity", y: "Price" },
     curves: [
       { id: "D1", label: "D1", params: { type: "linear", slope: -0.8, intercept: 9 }, color: C.supply },
