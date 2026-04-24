@@ -493,7 +493,7 @@ export function QuestionCard({
                 </button>
                 {showImprove && (
                   <CardContent className="pt-0 pb-5 px-5 border-t border-border/50">
-                    {renderDiagramContent(feedback.improveFeedback)}
+                    {renderDiagramContent(feedback.improveFeedback, { withCanonicalFigure: true })}
                   </CardContent>
                 )}
               </Card>
