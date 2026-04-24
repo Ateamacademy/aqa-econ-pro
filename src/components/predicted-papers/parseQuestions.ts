@@ -55,6 +55,11 @@ export function parseQuestions(markdown: string): { context: string; questions: 
     /(?:^|\n)\s*(?:#{1,4}\s+)?\**(?:Question\s+)((?:\d{1,2}(?:\.\d+)?[a-z]?(?:\s*\([a-z]\))?))\**[^\n]*?\[(\d+)\]/gi,
     // Pattern 6: "Question N (a)" sub-parts with marks e.g. "Question 5 (a) text [10]" or "Question 5 (a) text [10 marks]"
     /(?:^|\n)\s*(?:#{1,4}\s+)?\**(?:Question\s+)((?:\d{1,2})\s*\([a-z]\))\**[^\n]*?(?:\[|\()\s*(\d+)\s*(?:marks?)?\s*(?:\]|\))/gi,
+    // Pattern 7: AQA GCSE style "**01** <inline text> [N marks]" — bold-wrapped bare number followed by stem text and marks token on same line
+    /(?:^|\n)\s*\*{2}(\d{1,2}(?:\.\d+)?[a-z]?)\*{2}[^\n]*?(?:\[|\()\s*(\d+)\s*marks?\s*(?:\]|\))/gi,
+    // Pattern 8: AQA GCSE style with stimulus on subsequent lines — "**01** ...stem...\n\n<table/etc>\n\nmore text [N marks]"
+    // Matches the marks token anywhere within the next ~30 lines after the bold-wrapped number, stopping before the next "**NN**" header.
+    /(?:^|\n)\s*\*{2}(\d{1,2}(?:\.\d+)?[a-z]?)\*{2}(?:(?!\n\s*\*{2}\d{1,2}(?:\.\d+)?[a-z]?\*{2})[\s\S]){0,2000}?(?:\[|\()\s*(\d+)\s*marks?\s*(?:\]|\))/gi,
   ];
 
   let matches: RegExpMatchArray[] = [];
