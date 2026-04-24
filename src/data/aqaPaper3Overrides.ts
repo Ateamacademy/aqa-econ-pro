@@ -1543,6 +1543,39 @@ const SET_SPECS: Array<{
 ];
 
 SET_SPECS.forEach((spec) => {
+  // Hard (Set B) and Advanced (Set C) use curated Section B + curated MCQ banks
+  // transcribed verbatim from the downloadable PDFs so on-screen content
+  // matches the PDF download exactly.
+  if (spec.id === "econ-p3-b") {
+    SETS[spec.id] = {
+      setLabel: spec.setLabel,
+      caseTitle: HARD_SECTION_B.caseTitle,
+      extracts: HARD_SECTION_B.extracts as AqaPaper3Set["extracts"],
+      q31: HARD_SECTION_B.q31,
+      q31Content: [...HARD_SECTION_B.q31Content],
+      q32: HARD_SECTION_B.q32,
+      q32Content: [...HARD_SECTION_B.q32Content],
+      q33: HARD_SECTION_B.q33,
+      q33Content: [...HARD_SECTION_B.q33Content],
+      mcqs: bankHard(),
+    };
+    return;
+  }
+  if (spec.id === "econ-p3-c") {
+    SETS[spec.id] = {
+      setLabel: spec.setLabel,
+      caseTitle: ADVANCED_SECTION_B.caseTitle,
+      extracts: ADVANCED_SECTION_B.extracts as AqaPaper3Set["extracts"],
+      q31: ADVANCED_SECTION_B.q31,
+      q31Content: [...ADVANCED_SECTION_B.q31Content],
+      q32: ADVANCED_SECTION_B.q32,
+      q32Content: [...ADVANCED_SECTION_B.q32Content],
+      q33: ADVANCED_SECTION_B.q33,
+      q33Content: [...ADVANCED_SECTION_B.q33Content],
+      mcqs: bankAdvanced(),
+    };
+    return;
+  }
   SETS[spec.id] = {
     setLabel: spec.setLabel,
     caseTitle: spec.caseTitle,
