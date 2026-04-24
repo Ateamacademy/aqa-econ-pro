@@ -240,95 +240,133 @@ Which of the following best describes microeconomic foundations and market mecha
     id: "igcse-p2-c",
     subject: "cambridge-igcse",
     paper: "2",
-    title: "Paper 2 Data Response & Essays — Set C",
-    description: "Cambridge IGCSE Paper 2. Set C — Advanced. Verbatim from official-style mock.",
-    totalMarks: 60,
-    content: `# Cambridge International AS & A Level Economics (9708/02A) — Paper 2 AS Level Data Response and Essays — Predicted Paper 2026 Practice Series 2026
+    title: "Paper 2 Structured Questions — Set C (Advanced)",
+    description: "Cambridge IGCSE Paper 2 (0455/21). Set C — Advanced. Verbatim from official-style mock.",
+    totalMarks: 90,
+    content: `# Cambridge IGCSE Economics (0455/21) — Paper 2 Structured Questions — Predicted Paper Set C (Advanced)
 
-**Time: 2 hours | Total: 60 marks**
+**Time: 2 hours 15 minutes | Total: 90 marks**
 
-Answer three questions in total: Section A: answer Question 1. Section B: answer one question. Section C: answer one question.
+Answer four questions in total:
+- Section A: answer Question 1.
+- Section B: answer three questions.
 
-## Section A (20 marks)
+You may use a calculator. The number of marks for each question or part question is shown in brackets [ ].
 
-Answer all parts of question 1.
+## Section A
 
-**1 The United States economy: a policy dilemma in 2023–2024**
+**Source material: Germany: export powerhouse or economy in transition?**
 
-The United States economy has faced an unusual combination of conditions since 2022. Headline CPI inflation peaked at 9.1% in June 2022 — a 40-year high — before declining to 3.2% by October 2023. Nevertheless, 'core' inflation (excluding food and energy) remained persistently above 4%, and the Federal Reserve raised its federal funds target range from 0.00–0.25% in March 2022 to 5.25–5.50% by July 2023. Unemployment remained near historic lows at 3.7%, whilst the labour force participation rate rose back to its pre-pandemic level. Wage growth averaged 4.5% annually, which some economists argued was sustaining inflationary pressure through a 'wage-driven' channel rather than a traditional wage–price spiral.
+| Germany fact file | 2023 |
+| :--- | :--- |
+| Population | 84.4 m |
+| Labour force | 43.9 m |
+| Unemployment rate | 3.1 % |
+| Inflation rate | 5.9 % |
+| Current account surplus (% of GDP) | 6.2 % |
 
-At the same time, the US dollar appreciated by over 15% against a basket of currencies between January 2022 and October 2023, raising concerns in emerging markets about capital outflows and higher dollar-denominated debt burdens. The Biden administration enacted the Inflation Reduction Act (2022), a $369 billion package of climate and clean-energy subsidies, and the CHIPS Act, which provided $52 billion in semiconductor manufacturing subsidies. Critics argued these fiscal measures worked against the Federal Reserve's tightening. Commentators disagreed on whether the US could achieve a 'soft landing' — bringing inflation to target without a recession — or whether a 'hard landing' with higher unemployment was unavoidable.
+Germany is Europe's largest economy and a member of the European Union (EU). Exports account for approximately 47% of its GDP. The country's manufacturing sector, particularly cars and machinery, is the largest contributor to exports. A 5% appreciation of the euro against the US dollar in 2023 was estimated to reduce demand for German car exports to the USA by 8%.
 
-**Table 1.1 United States — key macroeconomic and labour market data**
+Germany faces structural challenges. Its population is ageing: 22% of people are over 65, and the labour force is projected to fall by 3 million by 2035 unless immigration rises. To attract skilled workers, the government has made it easier for non-EU nationals to obtain work visas. Germany is also transitioning towards a 'green' economy, aiming for carbon neutrality by 2045.
 
-| Indicator | 2021 | 2022 | 2023 |
-| --- | --- | --- | --- |
-| Real GDP growth (%) | 5.8 | 1.9 | 2.5 |
-| Headline CPI inflation (%, annual avg) | 4.7 | 8.0 | 4.1 |
-| Core CPI inflation (%, annual avg) | 3.6 | 6.2 | 4.8 |
-| Unemployment rate (%) | 5.4 | 3.6 | 3.6 |
-| Nominal wage growth (%) | 4.9 | 5.2 | 4.5 |
-| Federal budget deficit (% of GDP) | –12.3 | –5.4 | –6.3 |
-| USD trade-weighted index (Jan 2020=100) | 105.3 | 118.7 | 121.5 |
-*Source: adapted from Bureau of Economic Analysis, BLS, Federal Reserve, 2024*
+The European Central Bank (ECB) sets monetary policy for all euro-zone members. It raised interest rates from 0% to 4.5% during 2022–23 to combat inflation. This reduced consumer spending across the euro zone.
 
-Question 1a(i) [1 marks]
-Using Table 1.1, calculate the gap between headline and core CPI inflation in 2022.
+**Table 1.1 Selected indicators for four euro-zone economies in 2023**
 
-Question 1a(ii) [1 marks]
-Identify the trend in the US federal budget deficit between 2021 and 2023.
+| Country | Real GDP growth (%) | Unemployment (%) | Current account balance (% of GDP) | Government debt (% of GDP) |
+| :--- | :--- | :--- | :--- | :--- |
+| France | 0.9 | 7.4 | – 0.6 | 110 |
+| Germany | – 0.3 | 3.1 | + 6.2 | 64 |
+| Italy | 0.7 | 7.6 | + 1.3 | 138 |
+| Spain | 2.5 | 11.2 | + 2.7 | 107 |
+
+Germany's car industry is under pressure. Chinese car-makers, many of them state-supported, are exporting electric vehicles (EVs) to Europe at prices 20% below those of German-made EVs. The EU has started an investigation into possible dumping.
+
+Some German industries, including steel and chemicals, are subject to the EU's Emissions Trading Scheme, which attaches a price to carbon emissions. Large firms argue this raises their costs relative to non-EU competitors. Smaller firms, by contrast, receive partial exemptions.
+
+Question 1a [1 marks]
+Calculate, using the source material, the price elasticity of demand for German car exports to the USA.
 
 Question 1b [2 marks]
-Explain, using examples from the data, two reasons why real GDP growth may not be a reliable measure of changes in living standards in the US.
+Identify two methods, other than tariffs, that the EU may use to restrict imports of Chinese EVs.
 
-Question 1c [4 marks]
-Consider whether persistent core inflation of 4.8% alongside unemployment of 3.6% indicates that the US economy is operating above its potential output.
+Question 1c [2 marks]
+Explain what is meant by dumping.
 
-Question 1d [6 marks]
-Assess the extent to which the appreciation of the US dollar between 2022 and 2023 would have helped the Federal Reserve reduce US inflation.
+Question 1d [4 marks]
+Explain two ways in which carbon pricing can reduce the external costs of pollution.
 
-Question 1e [6 marks]
-Assess the extent to which simultaneous expansionary fiscal policy (through the Inflation Reduction Act and CHIPS Act) and contractionary monetary policy would make it more difficult for the US to achieve a 'soft landing'.
+Question 1e [4 marks]
+Analyse the data in Table 1.1 to compare Germany's economic performance with the other countries.
 
-## Section B (20 marks)
+Question 1f [5 marks]
+Analyse, using a diagram, the effect of an anti-dumping duty on imported Chinese EVs on the German car market.
 
-Answer one question.
+Question 1g [6 marks]
+Discuss whether or not a common monetary policy is suitable for all members of a monetary union.
 
-EITHER
+Question 1h [6 marks]
+Discuss whether or not an increase in immigration will benefit Germany.
 
-Question 2a [8 marks]
-With the help of diagrams, explain the concepts of consumer surplus and producer surplus, and consider the effect of a maximum price set below the market equilibrium on the distribution of economic welfare.
+## Section B
 
-Question 2b [12 marks]
-Assess the extent to which knowledge of both the price elasticity of demand and the price elasticity of supply is necessary for a government to predict the effects of an indirect tax on a particular market.
+Answer any three questions. Each question is introduced by stimulus material.
 
-OR
+**2** In 2023, two of the world's largest video-streaming firms merged, combining more than 40% of the market. Regulators are investigating whether the merger reduces competition. Concerns have been raised about prices and choice for consumers.
 
-Question 3a [8 marks]
-Explain the difference between a merit good and a public good, and consider why each type of good presents a different type of market failure that justifies government intervention.
+Question 2a [2 marks]
+Define monopoly.
 
-Question 3b [12 marks]
-Assess whether direct provision by the government is always the most efficient way to correct market failures associated with merit goods such as healthcare and education in a developed economy.
+Question 2b [4 marks]
+Explain two possible drawbacks of monopoly for consumers.
 
-## Section C (20 marks)
+Question 2c [6 marks]
+Analyse reasons why a merger may benefit consumers.
 
-Answer one question.
+Question 2d [8 marks]
+Discuss whether or not a government should prevent large mergers.
 
-EITHER
+**3** A government introduces a subsidy for the purchase of electric vehicles (EVs). The subsidy is $5 000 per vehicle and is paid to the consumer. Demand for EVs rises but the scheme is costly to the treasury and charging infrastructure fails to keep up.
 
-Question 4a [8 marks]
-Using an AD/AS diagram, explain the difference between demand-side and supply-side causes of economic growth, and consider which is likely to be a more sustainable source of rising living standards.
+Question 3a [2 marks]
+Identify two types of external benefit from the use of EVs.
 
-Question 4b [12 marks]
-Assess the extent to which supply-side policies aimed at raising productivity are the most effective way for a developed economy such as the UK to achieve stable, non-inflationary growth.
+Question 3b [4 marks]
+Explain two reasons why a government may subsidise merit goods.
 
-OR
+Question 3c [6 marks]
+Analyse, using an appropriate diagram, how a subsidy affects a market.
 
-Question 5a [8 marks]
-Explain the difference between a fixed exchange rate, a managed floating exchange rate and a freely floating exchange rate, and consider one advantage of each system for a developed economy.
+Question 3d [8 marks]
+Discuss whether or not subsidies are the best policy to promote the use of EVs.
 
-Question 5b [12 marks]
-The Eurozone uses a single currency whilst the UK maintains a floating pound sterling. Assess whether joining a single currency area is always beneficial for a developed economy's macroeconomic stability.`,
+**4** A country has had persistently low productivity for a decade. Its government is considering a range of supply-side policies to raise productivity, including spending on education, lowering corporation tax, and deregulating the labour market.
+
+Question 4a [2 marks]
+Define productivity.
+
+Question 4b [4 marks]
+Explain two reasons why productivity may be low in a country.
+
+Question 4c [6 marks]
+Analyse the effects of an increase in labour productivity on the economy.
+
+Question 4d [8 marks]
+Discuss whether or not supply-side policies are effective in raising long-run economic growth.
+
+**5** Country X operates a floating exchange rate. Its currency has depreciated by 15% over two years. Inflation has risen to 9%. The country is running a current account deficit of 4% of GDP.
+
+Question 5a [2 marks]
+Identify two components of the current account of the balance of payments.
+
+Question 5b [4 marks]
+Explain two reasons why a country may run a persistent current account deficit.
+
+Question 5c [6 marks]
+Analyse the likely effects of a 15% depreciation on the balance of payments.
+
+Question 5d [8 marks]
+Discuss whether or not a floating exchange rate system is better than a fixed system.`,
   },
   {
     id: "igcse-p3-a",
