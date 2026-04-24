@@ -781,10 +781,9 @@ const CAIE_IGCSE_PAPERS: { number: 1 | 2; code: string; title: string; focus: st
   { number: 2, code: "0455/02", title: "Structured Questions", focus: "Data response & essays", duration: "2h 15m", marks: 90, available: true },
 ];
 
-const OCR_GCSE_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; available: boolean }[] = [
+const OCR_GCSE_PAPERS: { number: 1 | 2; code: string; title: string; focus: string; available: boolean }[] = [
   { number: 1, code: "J205/01", title: "Introduction to Economics", focus: "Microeconomics", available: true },
   { number: 2, code: "J205/02", title: "National and International Economics", focus: "Macroeconomics", available: true },
-  { number: 3, code: "J205/03", title: "Themes in Economics", focus: "Synoptic", available: true },
 ];
 
 function OcrGcsePapersList() {
