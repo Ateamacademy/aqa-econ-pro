@@ -472,7 +472,7 @@ export function QuestionCard({
                 </button>
                 {showExplain && (
                   <CardContent className="pt-0 pb-5 px-5 border-t border-border/50">
-                    {renderDiagramContent(feedback.explainFeedback)}
+                    {renderDiagramContent(feedback.explainFeedback, { withCanonicalFigure: true })}
                   </CardContent>
                 )}
               </Card>
