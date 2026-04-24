@@ -32,6 +32,7 @@ import SpecificAdValoremDiagram from "@/components/SpecificAdValoremDiagram";
 import LorenzCurveDiagram from "@/components/diagrams/LorenzCurveDiagram";
 import PEDRevenueImpact from "@/components/PEDRevenueImpact";
 import NegativeExternalityPalmOil from "@/components/NegativeExternalityPalmOil";
+import EconNegExtUKEnergy from "@/components/EconNegExtUKEnergy";
 import type { DiagramType } from "./aqa-diagram-rubric";
 
 export type DiagramMarkingTier = "macro" | "micro";
@@ -132,6 +133,7 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
     id: "negative-externality",
     title: "Negative Externality — Welfare Loss",
     svgPath: "/figures/externality.svg",
+    Component: EconNegExtUKEnergy,
     markingTier: "micro",
     diagramTypes: ["externality"],
     suitableFor: ["4.1.7.1", "4.1.7.2"],
