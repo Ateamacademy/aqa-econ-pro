@@ -2481,7 +2481,16 @@
         "Labour-market effects: (i) substitution in cognitive routine tasks (customer service, basic coding, legal review, copywriting); (ii) complementarity — AI-augmented workers become more productive (a programmer with Copilot produces more per hour); (iii) creation of new roles (prompt engineering, AI safety, data curation, AI-ethics); (iv) frictional/structural unemployment during transition; (v) value of generic cognitive skill falls; value of directing AI rises.",
         "Income-distribution effects: (i) unlike previous waves, generative AI exposes higher-earning white-collar work — top-decile labour share may fall, but capital share rises — net effect on inequality ambiguous; (ii) gender dimension — IMF notes female-dominated roles have higher exposure; (iii) between-country inequality — advanced economies more exposed; (iv) factor shares — returns to AI capital (Nvidia gross margin 72%+) may shift factor income shares.",
         "Evaluation: depends on (i) pace of capability growth — fast diffusion amplifies displacement; (ii) complementarity vs substitution balance; (iii) policy response — reskilling investment, social safety net, capital taxation; (iv) competition in AI markets — more competitive supply passes more surplus to labour/consumers; (v) new-job creation rate — historically technology creates more jobs than it destroys, but transitions are painful.",
-        "Judgement: the short-run vs long-run asymmetry, distributional complexity, and policy-dependence are critical; a nuanced answer is rewarded at Level 4."
+        "Judgement: the short-run vs long-run asymmetry, distributional complexity, and policy-dependence are critical; a nuanced answer is rewarded at Level 4.",
+        "Knowledge: market failure — externalities (mis/disinformation, bias, safety), public goods (AI safety research), concentration/monopoly, asymmetric information. Government failure — regulatory capture, compliance cost, innovation chill, extraterritorial spillovers. Dynamic vs static efficiency; precautionary principle.",
+        "Application: Extract E — winner-take-all stack with hyperscaler–AI-firm partnerships; Extract F — training costs ($100m → potentially $10bn), energy demand; Extract G — EU AI Act with 7% turnover fines, US executive orders; Extract H — Microsoft–OpenAI $13bn, Amazon–Google–Anthropic up to $8bn; DeepSeek open-weight release ($600bn market-cap wipe); antitrust investigations.",
+        "Micro case FOR regulation: (i) externalities — misinformation, discriminatory outputs, cyber-offensive use, concentration in critical infrastructure; (ii) asymmetric information — users cannot evaluate model safety, so disclosure rules help; (iii) concentration — hyperscaler partnerships may foreclose competing developers from cloud distribution; (iv) public-goods case for government support of AI safety research; (v) consumer protection against misleading AI content.",
+        "Micro case AGAINST: (i) regulatory cost disadvantages smaller developers (Mistral, open-source) relative to hyperscaler-backed incumbents — entrenching concentration; (ii) prescriptive regulation stifles dynamic efficiency; (iii) hard to specify regulation for rapidly evolving technology; (iv) DeepSeek episode shows frontier capability may emerge at far lower cost than assumed — reason to hesitate before regulating on winner-take-all assumptions; (v) regulatory capture — major labs may shape rules to raise rivals' costs.",
+        "Macro case FOR: (i) mitigates labour-market disruption via impact assessments / phased deployment; (ii) redistributive measures (data-worker rights, training levies) moderate inequality growth; (iii) supports financial stability by constraining AI use in high-risk applications; (iv) reduces geopolitical instability (bioweapon assistance, disinformation).",
+        "Macro case AGAINST: (i) slower adoption reduces productivity dividend — if Goldman's 1.5pp TFP estimate is correct, a one-year delay costs trillions of dollars of global output; (ii) regulatory fragmentation — EU AI Act, US executive orders, China registration — shrinks global addressable market; (iii) innovation flight to lighter-touch jurisdictions; (iv) hyperscaler capex ($235bn in 2024) could be deterred if regulatory uncertainty raises required returns.",
+        "Synoptic integration: micro and macro considerations cut in different directions for different instruments. Antitrust (e.g. blocking Microsoft's equity link to OpenAI) addresses micro concentration, limited macro cost. Safety/disclosure obligations (EU AI Act) address micro externalities with macro productivity cost only if poorly calibrated. Ex-ante licensing of frontier training imposes large macro costs; ex-post liability imposes lower macro cost but may under-deter.",
+        "Evaluation: depends on (i) empirical magnitude of AI harms — uncertain, arguing for an adaptive framework; (ii) international coordination vs fragmentation; (iii) specific instrument — competition enforcement vs safety disclosure vs licensing; (iv) speed of adaptation; (v) allocation of cost (developers vs deployers); (vi) treatment of open-weight models.",
+        "A nuanced judgement — e.g. 'intervention appropriate for clearly-identified externalities (competition, safety disclosure, high-risk uses) but should avoid prescriptive ex-ante licensing, preserving the dynamic efficiency on which the macroeconomic productivity dividend depends' — required for Level 4."
       ],
       "level_descriptors": [
         {
@@ -2508,53 +2517,6 @@
           "level": 4,
           "marks": "10–12",
           "descriptor": "Accurate knowledge and understanding, supported throughout by use of relevant evidence which is well chosen, logical, coherent chains of reasoning, showing full understanding of the question. Arguments are developed and evaluated. A full and balanced awareness of the validity and significance of competing arguments. Question Evaluate the appropriate role for governments in regulating the market for Mark Number frontier AI foundation models, using evidence from Extracts E to H. Your answer should"
-        }
-      ]
-    },
-    "2d": {
-      "marks": 20,
-      "ao_split": {
-        "K": 4,
-        "Ap": 4,
-        "An": 6,
-        "Ev": 6
-      },
-      "indicative_content": [
-        "Knowledge: market failure — externalities (mis/disinformation, bias, safety), public goods (AI safety research), concentration/monopoly, asymmetric information. Government failure — regulatory capture, compliance cost, innovation chill, extraterritorial spillovers. Dynamic vs static efficiency; precautionary principle.",
-        "Application: Extract E — winner-take-all stack with hyperscaler–AI-firm partnerships; Extract F — training costs ($100m → potentially $10bn), energy demand; Extract G — EU AI Act with 7% turnover fines, US executive orders; Extract H — Microsoft–OpenAI $13bn, Amazon–Google–Anthropic up to $8bn; DeepSeek open-weight release ($600bn market-cap wipe); antitrust investigations.",
-        "Micro case FOR regulation: (i) externalities — misinformation, discriminatory outputs, cyber-offensive use, concentration in critical infrastructure; (ii) asymmetric information — users cannot evaluate model safety, so disclosure rules help; (iii) concentration — hyperscaler partnerships may foreclose competing developers from cloud distribution; (iv) public-goods case for government support of AI safety research; (v) consumer protection against misleading AI content.",
-        "Micro case AGAINST: (i) regulatory cost disadvantages smaller developers (Mistral, open-source) relative to hyperscaler-backed incumbents — entrenching concentration; (ii) prescriptive regulation stifles dynamic efficiency; (iii) hard to specify regulation for rapidly evolving technology; (iv) DeepSeek episode shows frontier capability may emerge at far lower cost than assumed — reason to hesitate before regulating on winner-take-all assumptions; (v) regulatory capture — major labs may shape rules to raise rivals' costs.",
-        "Macro case FOR: (i) mitigates labour-market disruption via impact assessments / phased deployment; (ii) redistributive measures (data-worker rights, training levies) moderate inequality growth; (iii) supports financial stability by constraining AI use in high-risk applications; (iv) reduces geopolitical instability (bioweapon assistance, disinformation).",
-        "Macro case AGAINST: (i) slower adoption reduces productivity dividend — if Goldman's 1.5pp TFP estimate is correct, a one-year delay costs trillions of dollars of global output; (ii) regulatory fragmentation — EU AI Act, US executive orders, China registration — shrinks global addressable market; (iii) innovation flight to lighter-touch jurisdictions; (iv) hyperscaler capex ($235bn in 2024) could be deterred if regulatory uncertainty raises required returns.",
-        "Synoptic integration: micro and macro considerations cut in different directions for different instruments. Antitrust (e.g. blocking Microsoft's equity link to OpenAI) addresses micro concentration, limited macro cost. Safety/disclosure obligations (EU AI Act) address micro externalities with macro productivity cost only if poorly calibrated. Ex-ante licensing of frontier training imposes large macro costs; ex-post liability imposes lower macro cost but may under-deter.",
-        "Evaluation: depends on (i) empirical magnitude of AI harms — uncertain, arguing for an adaptive framework; (ii) international coordination vs fragmentation; (iii) specific instrument — competition enforcement vs safety disclosure vs licensing; (iv) speed of adaptation; (v) allocation of cost (developers vs deployers); (vi) treatment of open-weight models.",
-        "A nuanced judgement — e.g. 'intervention appropriate for clearly-identified externalities (competition, safety disclosure, high-risk uses) but should avoid prescriptive ex-ante licensing, preserving the dynamic efficiency on which the macroeconomic productivity dividend depends' — required for Level 4."
-      ],
-      "level_descriptors": [
-        {
-          "level": 0,
-          "marks": "0",
-          "descriptor": "A completely inaccurate response."
-        },
-        {
-          "level": 1,
-          "marks": "1–4",
-          "descriptor": "Isolated elements of knowledge and understanding, using little or no relevant evidence. Arguments and chains of reasoning may be attempted, but fail to connect causes and consequences. Limited attempt to address the question."
-        },
-        {
-          "level": 2,
-          "marks": "5–9",
-          "descriptor": "Elements of knowledge and understanding, using limited relevant evidence. Arguments and chains of reasoning are presented, but connections between causes and consequences are incomplete. Limited attempt to address the question. Comparisons, judgements or conclusions may be attempted, but are unsupported or generic."
-        },
-        {
-          "level": 3,
-          "marks": "10–15",
-          "descriptor": "Accurate knowledge and understanding, supported by use of relevant evidence to support the argument, developed chains of reasoning, showing understanding of connections between causes and consequences. Arguments are well developed and competing arguments are present although this may lack balance. A conclusion may be attempted but may not show awareness of the significance of competing arguments."
-        },
-        {
-          "level": 4,
-          "marks": "16–20",
-          "descriptor": "Accurate knowledge and understanding, supported throughout by use of relevant evidence which is well chosen and fully integrated to support the argument, well developed and logical, coherent chains of reasoning, showing full understanding of the question. Arguments are fully developed and evaluated. A full awareness of the validity and significance of competing arguments, leading to nuanced and balanced comparisons, judgements or conclusions. Pearson Education Limited. Registered company number "
         }
       ]
     }
