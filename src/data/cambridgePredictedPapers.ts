@@ -16,7 +16,7 @@ export const cambridgePredictedPapers: PredictedPaper[] = [
     id: "caie-p1-set-a",
     subject: "cambridge" as any,
     paper: "1",
-    title: "Paper 1 MCQ (AS) — Moderate",
+    title: "Paper 1 MCQ (AS) — Set A (Moderate)",
     description: "30 multiple-choice questions covering AS microeconomics and macroeconomics.",
     totalMarks: 30,
     content: `# Cambridge International AS Economics (9708) — Paper 1 Multiple Choice — Set A
@@ -241,7 +241,7 @@ Which is an argument against the use of import tariffs?
     id: "caie-p1-set-b",
     subject: "cambridge" as any,
     paper: "1",
-    title: "Paper 1 MCQ (AS) — Hard",
+    title: "Paper 1 MCQ (AS) — Set B (Hard)",
     description: "30 MCQs with sharper data, calculation and discrimination across all AS topics.",
     totalMarks: 30,
     content: `# Cambridge International AS Economics (9708) — Paper 1 Multiple Choice — Set B
@@ -466,7 +466,7 @@ Which is most likely to be a consequence of an export subsidy?
     id: "caie-p1-set-c",
     subject: "cambridge" as any,
     paper: "1",
-    title: "Paper 1 MCQ (AS) — Advanced",
+    title: "Paper 1 MCQ (AS) — Set C (Advanced)",
     description: "30 MCQs at the highest difficulty: synoptic, evaluative, and calculation-led.",
     totalMarks: 30,
     content: `# Cambridge International AS Economics (9708) — Paper 1 Multiple Choice — Set C
@@ -695,7 +695,7 @@ A small open economy with a fixed exchange rate is experiencing both a current a
     id: "caie-p2-set-a",
     subject: "cambridge" as any,
     paper: "2",
-    title: "Paper 2 Data Response & Essays — Moderate",
+    title: "Paper 2 Data Response & Essays — Set A (Moderate)",
     description: "AS data-response on the UK cost-of-living crisis, plus structured essays.",
     totalMarks: 60,
     content: `# Cambridge International AS & A Level Economics (9708/02M) — Paper 2 AS Data Response and Essays — Predicted Paper 2026
@@ -777,7 +777,7 @@ Assess the extent to which a persistent current account surplus is always benefi
     id: "caie-p2-set-b",
     subject: "cambridge" as any,
     paper: "2",
-    title: "Paper 2 Data Response & Essays — Hard",
+    title: "Paper 2 Data Response & Essays — Set B (Hard)",
     description: "AS data-response on Germany's energy crisis, plus harder essay options.",
     totalMarks: 60,
     content: `# Cambridge International AS & A Level Economics (9708/02H) — Paper 2 AS Data Response and Essays — Predicted Paper 2026
@@ -858,7 +858,7 @@ In 2018 the United States imposed tariffs on imports from China to reduce its cu
     id: "caie-p2-set-c",
     subject: "cambridge" as any,
     paper: "2",
-    title: "Paper 2 Data Response & Essays — Advanced",
+    title: "Paper 2 Data Response & Essays — Set C (Advanced)",
     description: "AS data-response on the US 2023–24 policy dilemma, plus advanced essays.",
     totalMarks: 60,
     content: `# Cambridge International AS & A Level Economics (9708/02A) — Paper 2 AS Data Response and Essays — Predicted Paper 2026
@@ -944,7 +944,7 @@ The Eurozone uses a single currency whilst the UK maintains a floating pound ste
     id: "caie-p3-set-a",
     subject: "cambridge" as any,
     paper: "3",
-    title: "Paper 3 MCQ (A2) — Moderate",
+    title: "Paper 3 MCQ (A2) — Set A (Moderate)",
     description: "30 A2 multiple-choice questions covering microeconomics, macroeconomics, trade and development.",
     totalMarks: 30,
     content: `# Cambridge International A Level Economics (9708/03M) — Paper 3 A Level Multiple Choice — Predicted Paper Set A (Moderate)
@@ -1169,7 +1169,7 @@ A depreciation of the UK pound against the euro is likely to:
     id: "caie-p3-set-b",
     subject: "cambridge" as any,
     paper: "3",
-    title: "Paper 3 MCQ (A2) — Hard",
+    title: "Paper 3 MCQ (A2) — Set B (Hard)",
     description: "30 A2 MCQs with calculation and synoptic reasoning across all A Level topics.",
     totalMarks: 30,
     content: `# Cambridge International A Level Economics (9708/03H) — Paper 3 A Level Multiple Choice — Predicted Paper Set B (Hard)
@@ -1394,7 +1394,7 @@ Which of the following would most effectively reduce absolute poverty in a devel
     id: "caie-p3-set-c",
     subject: "cambridge" as any,
     paper: "3",
-    title: "Paper 3 MCQ (A2) — Advanced",
+    title: "Paper 3 MCQ (A2) — Set C (Advanced)",
     description: "30 A2 MCQs at the highest difficulty: synoptic, evaluative, and theory-led.",
     totalMarks: 30,
     content: `# Cambridge International A Level Economics (9708/03A) — Paper 3 A Level Multiple Choice — Predicted Paper Set C (Advanced)
