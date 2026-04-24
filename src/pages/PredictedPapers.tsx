@@ -2078,6 +2078,22 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
         return;
       }
     }
+    // Edexcel B A-Level: Sets A/B/C map to Moderate/Hard/Advanced curated static PDFs.
+    const edxbStaticMatch = selectedLibraryPaper?.id?.match(/^edxb-p([123])-([abc])$/i);
+    if (edxbStaticMatch) {
+      const tierMap: Record<string, string> = { a: "moderate", b: "hard", c: "advanced" };
+      const paperNum = edxbStaticMatch[1];
+      const tierSlug = tierMap[edxbStaticMatch[2].toLowerCase()];
+      const url = `/edexcel-b-mocks/mark-scheme-paper-${paperNum}-${tierSlug}.pdf`;
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `Edexcel-B-A-Level-Economics-Paper-${paperNum}-${tierSlug}-Mark-Scheme.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      toast.success("Mark scheme downloaded!");
+      return;
+    }
     if (parsedQuestions.length === 0) {
       toast.error("No questions to generate solutions for.");
       return;
@@ -2644,6 +2660,22 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                         toast.success("PDF downloaded!");
                         return;
                       }
+                    }
+                    // Edexcel B A-Level: Sets A/B/C map to Moderate/Hard/Advanced curated static PDFs.
+                    const edxbStaticMatch = selectedLibraryPaper?.id?.match(/^edxb-p([123])-([abc])$/i);
+                    if (edxbStaticMatch) {
+                      const tierMap: Record<string, string> = { a: "moderate", b: "hard", c: "advanced" };
+                      const paperNum = edxbStaticMatch[1];
+                      const tierSlug = tierMap[edxbStaticMatch[2].toLowerCase()];
+                      const url = `/edexcel-b-mocks/paper-${paperNum}-${tierSlug}.pdf`;
+                      const a = document.createElement("a");
+                      a.href = url;
+                      a.download = `Edexcel-B-A-Level-Economics-Paper-${paperNum}-${tierSlug}.pdf`;
+                      document.body.appendChild(a);
+                      a.click();
+                      document.body.removeChild(a);
+                      toast.success("PDF downloaded!");
+                      return;
                     }
                     const paperTitle = displayPaperTitle(selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} Predicted Paper ${paper}`);
                     const fullContent = paperContext + "\n\n" + parsedQuestions.map(q => `${q.label} [${q.marks} marks]\n${q.text}`).join("\n\n");
