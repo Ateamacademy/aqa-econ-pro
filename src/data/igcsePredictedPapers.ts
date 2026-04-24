@@ -226,130 +226,98 @@ Which is most likely to reduce income inequality?
   },
   {
     id: "igcse-p2-a",
-    subject: "cambridge-igcse" as any,
+    subject: "cambridge-igcse",
     paper: "2",
-    title: "Paper 2 Structured — Set A",
-    description: "Structured questions covering micro and macro IGCSE Economics topics.",
-    totalMarks: 90,
-    content: `# Cambridge IGCSE Economics (0455) — Paper 2 Structured Questions — Predicted Paper Set A
+    title: "Paper 2 Data Response & Essays — Set A",
+    description: "Cambridge IGCSE Paper 2. Set A — Moderate. Verbatim from official-style mock.",
+    totalMarks: 60,
+    content: `# Cambridge International AS & A Level Economics (9708/02) — Paper 2 Data Response and Essays — Predicted Paper (Moderate)
 
-**Time: 2 hours 15 minutes | Total: 90 marks**
+**Time: 2 hours | Total: 60 marks**
 
-Answer any FOUR questions from this paper.
+Answer three questions in total:
+Section A: answer Question 1.
+Section B: answer one question.
+Section C: answer one question.
 
-## Question 1: Markets and Prices
+## Section A (20 marks)
 
-**Extract:** The global smartphone market is worth $500 billion annually. Prices of smartphones have been falling while demand has continued to rise. New entrants from China have intensified competition, with average prices falling 15% since 2022.
+Answer all parts of question 1.
 
-Question 1a [2 marks]
-Define the term "market".
+**1 The United Kingdom and the cost-of-living crisis**
+
+Between 2021 and 2023, the United Kingdom experienced one of the sharpest rises in its consumer price index (CPI) in four decades. The CPI rate of inflation peaked at 11.1% in October 2022, well above the Bank of England's 2% target. Inflation was driven by a combination of rising global energy prices following geopolitical shocks, disruptions to global supply chains, and a weaker pound sterling, which raised the cost of imported goods. Households faced significant falls in real incomes, and many firms reported higher costs of production.
+In response, the Bank of England raised its official Bank Rate from 0.1% in December 2021 to 5.25% by August 2023, the highest level since the 2008 financial crisis. The UK government also introduced an 'Energy Price Guarantee' to limit the average annual household energy bill, at a cost estimated at over £30 billion. Some commentators argued that further rises in the minimum wage, which increased by 9.7% in April 2023, would feed through into a wage–price spiral. Others suggested that supply-side measures would be more effective in reducing inflation over the medium term.
+
+**Table 1.1 UK CPI annual inflation rate (%), selected months**
+
+| Month/Year | CPI inflation rate (%) |
+| :--- | :--- |
+| December 2021 | 5.4 |
+| June 2022 | 9.4 |
+| October 2022 | 11.1 |
+| February 2023 | 10.4 |
+| June 2023 | 7.9 |
+| October 2023 | 4.6 |
+*Source: adapted from Office for National Statistics (ONS), 2023*
+
+Question 1a(i) [1 marks]
+Identify the change in the UK CPI annual inflation rate between December 2021 and October 2022.
+
+Question 1a(ii) [1 marks]
+Compare the trend in the UK CPI annual inflation rate between December 2021 and October 2022 with that between October 2022 and October 2023.
 
 Question 1b [2 marks]
-Identify two factors that could cause the demand for smartphones to increase.
+Identify one possible impact of a high rate of inflation on UK households and one possible impact on UK firms.
 
 Question 1c [4 marks]
-Using a supply and demand diagram, explain how increased competition from Chinese manufacturers has affected smartphone prices.
+Consider whether a 9.7% rise in the UK minimum wage is likely to cause a wage–price spiral.
 
 Question 1d [6 marks]
-Analyse how price elasticity of demand affects the revenue of smartphone producers when prices fall.
+Assess the extent to which supply-side shocks, such as rising global energy prices and supply chain disruptions, can explain the increase in UK inflation between 2021 and 2022.
 
-Question 1e [8 marks]
-Discuss whether falling prices always benefit consumers.
+Question 1e [6 marks]
+Assess the extent to which raising the Bank Rate is likely to be effective in reducing the UK's rate of inflation.
 
-## Question 2: Market Failure and Government Intervention
+## Section B (20 marks)
 
-**Extract:** Air pollution causes an estimated 40,000 premature deaths per year in the UK. The government introduced a £12.50 daily charge for older vehicles entering London's Ultra Low Emission Zone (ULEZ). Since its expansion, nitrogen dioxide levels fell by 21%.
+Answer one question.
 
-Question 2a [2 marks]
-Define the term "negative externality".
+EITHER
 
-Question 2b [2 marks]
-Identify two examples of market failure mentioned in the extract.
+Question 2a [8 marks]
+Explain what is meant by price elasticity of demand (PED) and consider why PED varies between different goods.
 
-Question 2c [4 marks]
-Using a diagram, explain how air pollution leads to a welfare loss in the market for transport.
+Question 2b [12 marks]
+Assess whether firms selling goods with a relatively price-inelastic demand always benefit more than firms selling goods with a relatively price-elastic demand.
 
-Question 2d [6 marks]
-Analyse the advantages and disadvantages of using charges (like ULEZ) to reduce air pollution.
+OR
 
-Question 2e [8 marks]
-Discuss whether government intervention always improves the allocation of resources.
+Question 3a [8 marks]
+Explain, with examples, how negative externalities of production can cause market failure in a free market economy such as the United States.
 
-## Question 3: The Macroeconomy
+Question 3b [12 marks]
+Assess whether indirect taxation is the most effective way for a government to reduce negative externalities of production.
 
-**Extract:** Country X experienced GDP growth of 6.2% but inflation of 8.5%. Unemployment fell to 3.1% while the current account deficit widened to 5% of GDP. The central bank raised interest rates to 7%.
+## Section C (20 marks)
 
-Question 3a [2 marks]
-Define the term "economic growth".
+Answer one question.
 
-Question 3b [2 marks]
-Using the extract, identify two macroeconomic problems facing Country X.
+EITHER
 
-Question 3c [4 marks]
-Explain how raising interest rates could help reduce inflation in Country X.
+Question 4a [8 marks]
+Using an AD/AS diagram, explain how an increase in business confidence in the UK might affect the level of economic activity, and consider one factor that could limit this effect.
 
-Question 3d [6 marks]
-Analyse the possible conflicts between achieving low inflation and low unemployment.
+Question 4b [12 marks]
+Assess whether fiscal policy is a more effective tool than monetary policy for reducing unemployment in a developed economy.
 
-Question 3e [8 marks]
-Discuss whether economic growth always improves living standards.
+OR
 
-## Question 4: International Trade
+Question 5a [8 marks]
+With the help of a diagram, explain how a depreciation of a floating exchange rate may improve the current account of a country's balance of payments, and consider one reason why it may not.
 
-**Extract:** Bangladesh's garment industry employs 4 million workers and accounts for 84% of the country's export earnings. Average wages are $95 per month, among the lowest in the world. The industry has faced criticism over working conditions but has driven significant poverty reduction.
-
-Question 4a [2 marks]
-Define the term "specialisation".
-
-Question 4b [2 marks]
-Using the extract, identify two benefits of international trade for Bangladesh.
-
-Question 4c [4 marks]
-Explain how comparative advantage provides a basis for international trade.
-
-Question 4d [6 marks]
-Analyse the arguments for and against Bangladesh imposing a minimum wage in the garment industry.
-
-Question 4e [8 marks]
-Discuss whether free trade or protectionism is better for developing countries like Bangladesh.
-
-## Question 5: Money, Banking and Employment
-
-**Extract:** Youth unemployment in South Africa reached 46% in 2024. The government launched a public works programme employing 800,000 young people in infrastructure projects. Meanwhile, automation in manufacturing displaced 120,000 workers. The central bank maintained interest rates at 8.25%.
-
-Question 5a [2 marks]
-Define the term "unemployment".
-
-Question 5b [2 marks]
-Using the extract, identify two types of unemployment that may exist in South Africa.
-
-Question 5c [4 marks]
-Explain how a public works programme might reduce unemployment.
-
-Question 5d [6 marks]
-Analyse the costs of high unemployment to an economy.
-
-Question 5e [8 marks]
-Discuss whether demand-side or supply-side policies are more effective in reducing unemployment.
-
-## Question 6: Economic Development
-
-**Extract:** Ethiopia's GDP grew by 7.5% in 2024, but 24% of the population lived below the poverty line. Life expectancy improved to 67 years, and primary school enrolment reached 95%. However, only 52% of the population had access to clean water, and income inequality (Gini coefficient 0.35) remained a concern.
-
-Question 6a [2 marks]
-Define the term "economic development".
-
-Question 6b [2 marks]
-Using the extract, identify two indicators that suggest Ethiopia has experienced development.
-
-Question 6c [4 marks]
-Explain the difference between economic growth and economic development.
-
-Question 6d [6 marks]
-Analyse how investment in education and healthcare could promote economic development in Ethiopia.
-
-Question 6e [8 marks]
-Discuss whether foreign aid is the most effective way to promote development in low-income countries.`,
+Question 5b [12 marks]
+Assess the extent to which a persistent current account surplus is always beneficial for an economy.`,
   },
   {
     id: "igcse-p1-b",
@@ -576,129 +544,86 @@ Which is NOT a limitation of using GDP per capita to compare living standards?
   },
   {
     id: "igcse-p2-b",
-    subject: "cambridge-igcse" as any,
+    subject: "cambridge-igcse",
     paper: "2",
-    title: "Paper 2 Structured — Set B",
-    description: "Structured questions on market failure, trade, employment, and development.",
-    totalMarks: 90,
-    content: `# Cambridge IGCSE Economics (0455) — Paper 2 Structured Questions — Predicted Paper Set B
+    title: "Paper 2 Data Response & Essays — Set B",
+    description: "Cambridge IGCSE Paper 2. Set B — Hard. Verbatim from official-style mock.",
+    totalMarks: 60,
+    content: `# Cambridge International AS & A Level Economics (9708/02H) — Paper 2 AS Level Data Response and Essays — Predicted Paper Set B (Hard)
 
-**Time: 2 hours 15 minutes | Total: 90 marks**
+**Time: 2 hours | Total: 60 marks**
+Answer three questions in total:
+Section A: answer Question 1.
+Section B: answer one question.
+Section C: answer one question.
 
-Answer any FOUR questions from this paper.
+## Section A
+Answer all parts of question 1.
 
-## Question 1: The Price System
+**1 Germany's energy crisis and the green transition**
 
-**Extract:** Coffee prices rose by 40% in 2024 due to severe droughts in Brazil, the world's largest producer. Global demand continued to grow, particularly in China and India. Some coffee chains absorbed costs rather than raising consumer prices, while smaller cafés passed on the full increase.
+Germany, Europe's largest economy, has faced a severe energy crisis since 2022. Before the crisis, Germany imported around 55% of its natural gas from Russia, making it heavily dependent on a single supplier. Following the disruption of these supply chains, wholesale natural gas prices in Germany rose by more than 400% between January 2021 and August 2022, before easing in 2023. Several energy-intensive firms in sectors such as chemicals, steel and glass announced temporary plant closures or relocations abroad.
+In response, the German government introduced a €200 billion 'economic defence shield' including a gas price cap for households and industry, subsidies for energy-saving investment, and accelerated permits for renewable energy projects. The government also pursued a policy of diversifying gas supplies via new liquefied natural gas (LNG) terminals.
+At the same time, the European Central Bank (ECB) raised its main refinancing rate from 0.00% in July 2022 to 4.50% by September 2023, to combat inflation across the Eurozone, which had reached a peak of 10.6% in October 2022. Some commentators warned that high energy costs, combined with tighter monetary policy, risked tipping Germany into a prolonged recession and damaging its industrial base.
 
-Question 1a [2 marks]
-Define the term "supply".
+**Table 1.1 Germany — selected macroeconomic indicators**
+
+| Indicator | 2021 | 2022 | 2023 |
+| :--- | :--- | :--- | :--- |
+| Real GDP growth (%) | 3.1 | 1.8 | –0.3 |
+| HICP inflation (%) | 3.2 | 8.7 | 6.0 |
+| Unemployment rate (%) | 3.6 | 3.1 | 3.1 |
+| Current account balance (% of GDP) | 7.6 | 4.2 | 6.2 |
+| Industrial production (index, 2015=100) | 100.5| 97.3 | 94.1 |
+
+Source: adapted from Eurostat, Bundesbank, 2024
+
+Question 1a(i) [1 marks]
+Using Table 1.1, calculate the percentage point change in Germany's real GDP growth between 2021 and 2023.
+
+Question 1a(ii) [1 marks]
+Compare the trend in Germany's unemployment rate with the trend in industrial production between 2021 and 2023.
 
 Question 1b [2 marks]
-Using the extract, identify two factors that affected the coffee market in 2024.
+Explain two likely impacts of a 400% rise in wholesale gas prices on energy-intensive German firms.
 
 Question 1c [4 marks]
-Using a supply and demand diagram, explain how the drought in Brazil affected coffee prices.
+Consider whether a gas price cap is an effective microeconomic policy to protect German households and firms from high energy prices.
 
 Question 1d [6 marks]
-Analyse how price elasticity of supply affects the ability of coffee producers to respond to rising demand.
+Assess the extent to which a simultaneous rise in ECB interest rates and a fall in industrial production can be explained by a negative supply-side shock rather than tighter monetary policy.
 
-Question 1e [8 marks]
-Discuss whether consumers or producers bear more of the burden when commodity prices rise.
+Question 1e [6 marks]
+Assess whether subsidies for renewable energy are a more effective long-term response to energy insecurity than building new LNG import terminals.
 
-## Question 2: Government and the Economy
+## Section B
+Answer one question.
 
-**Extract:** Country Y introduced a carbon tax of $50 per tonne of CO₂ emissions. Manufacturing costs rose by 8%, leading to some firms relocating to countries without carbon taxes. However, renewable energy investment increased by 35%, and total carbon emissions fell by 12% in the first year.
+Question 2a [8 marks]
+Explain, with examples, how negative externalities of consumption and negative externalities of production differ, and consider why they can both lead to market failure in a free market economy.
 
-Question 2a [2 marks]
-Define the term "indirect tax".
+Question 2b [12 marks]
+The European Union's Emissions Trading System (EU ETS) allows firms to buy and sell permits to emit carbon dioxide. Assess whether a tradable permits scheme is a more effective policy than a carbon tax in reducing negative externalities.
 
-Question 2b [2 marks]
-Using the extract, identify two effects of the carbon tax.
+Question 3a [8 marks]
+With the help of a diagram, explain the difference between a shift in the supply curve for labour and a movement along the supply curve for labour, and consider the factors that may cause a shift in the supply of labour for a particular occupation.
 
-Question 2c [4 marks]
-Explain how a carbon tax could correct the market failure caused by pollution.
+Question 3b [12 marks]
+Assess the extent to which a rise in the statutory minimum wage will always lead to a fall in employment in a developed economy such as the UK.
 
-Question 2d [6 marks]
-Analyse the costs and benefits of the carbon tax for Country Y's economy.
+## Section C
+Answer one question.
 
-Question 2e [8 marks]
-Discuss whether taxation or regulation is more effective in reducing environmental damage.
+Question 4a [8 marks]
+Using an AD/AS diagram, explain how a simultaneous rise in oil prices and a fall in consumer confidence in the EU might affect real GDP and the price level, and consider which effect is likely to be greater.
 
-## Question 3: Employment and Wages
+Question 4b [12 marks]
+Assess the extent to which a central bank faces a trade-off between reducing inflation and avoiding a rise in unemployment.
 
-**Extract:** The gig economy in the UK employs 4.4 million workers in roles such as food delivery, ride-hailing, and freelance work. Average hourly earnings for gig workers are £8.97, below the national minimum wage. Gig workers receive no sick pay, holiday pay, or pension contributions.
+Question 5a [8 marks]
+Explain the difference between the current account and the financial account of the balance of payments, and consider how a persistent current account deficit might be financed.
 
-Question 3a [2 marks]
-Define the term "labour market".
-
-Question 3b [2 marks]
-Using the extract, identify two characteristics of gig economy employment.
-
-Question 3c [4 marks]
-Explain how the demand for and supply of gig workers determines their wages.
-
-Question 3d [6 marks]
-Analyse the advantages and disadvantages of the gig economy for workers.
-
-Question 3e [8 marks]
-Discuss whether the government should extend minimum wage and employment rights to all gig economy workers.
-
-## Question 4: International Trade and Globalisation
-
-**Extract:** Vietnam's exports grew by 12% in 2024, with electronics and textiles the largest sectors. Foreign companies including Samsung and Intel operate major factories in the country, employing 3.2 million workers. Critics argue that wages remain low and environmental standards are weak, while supporters point to rapid poverty reduction.
-
-Question 4a [2 marks]
-Define the term "globalisation".
-
-Question 4b [2 marks]
-Using the extract, identify two benefits of foreign investment for Vietnam.
-
-Question 4c [4 marks]
-Explain how specialisation and trade can increase economic welfare.
-
-Question 4d [6 marks]
-Analyse the costs of globalisation for a developing country like Vietnam.
-
-Question 4e [8 marks]
-Discuss whether developing countries benefit more from free trade or protectionism.
-
-## Question 5: Money and Inflation
-
-**Extract:** Argentina's inflation rate reached 211% in 2024, the highest in decades. The government's central bank raised interest rates to 118%, yet prices continued to rise rapidly. The currency lost 80% of its value against the US dollar, and real wages fell by 25%. Basic food items tripled in price within months.
-
-Question 5a [2 marks]
-Define the term "inflation".
-
-Question 5b [2 marks]
-Using the extract, identify two consequences of high inflation for Argentina.
-
-Question 5c [4 marks]
-Explain the difference between demand-pull and cost-push inflation.
-
-Question 5d [6 marks]
-Analyse why raising interest rates may not always be effective in reducing inflation.
-
-Question 5e [8 marks]
-Discuss the winners and losers from high rates of inflation.
-
-## Question 6: Inequality and Development
-
-**Extract:** India's GDP per capita (PPP) reached $9,200 in 2024, yet the country ranked 132nd on the Human Development Index. The wealthiest 10% owned 77% of total wealth, while 228 million people lived below the national poverty line. Government schemes provided free food to 800 million citizens.
-
-Question 6a [2 marks]
-Define the term "poverty".
-
-Question 6b [2 marks]
-Using the extract, explain why GDP per capita may not fully reflect living standards in India.
-
-Question 6c [4 marks]
-Explain two indicators, other than GDP, that could measure economic development.
-
-Question 6d [6 marks]
-Analyse the causes of income inequality in developing countries.
-
-Question 6e [8 marks]
-Discuss whether government redistribution of income is the most effective way to reduce poverty in developing countries.`,
+Question 5b [12 marks]
+In 2018 the United States imposed tariffs on imports from China to reduce its current account deficit. Assess the extent to which protectionist policies are an effective way to correct a persistent current account deficit.`,
   },
 ];
