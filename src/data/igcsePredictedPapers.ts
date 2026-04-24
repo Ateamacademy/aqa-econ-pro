@@ -228,96 +228,134 @@ Which is most likely to reduce income inequality?
     id: "igcse-p2-a",
     subject: "cambridge-igcse",
     paper: "2",
-    title: "Paper 2 Data Response & Essays — Set A",
-    description: "Cambridge IGCSE Paper 2. Set A — Moderate. Verbatim from official-style mock.",
-    totalMarks: 60,
-    content: `# Cambridge International AS & A Level Economics (9708/02) — Paper 2 Data Response and Essays — Predicted Paper (Moderate)
+    title: "Paper 2 Structured Questions — Set A (Moderate)",
+    description: "Cambridge IGCSE Paper 2 (0455/21). Set A — Moderate. Verbatim from official-style mock.",
+    totalMarks: 90,
+    content: `# Cambridge IGCSE Economics (0455/21) — Paper 2 Structured Questions — Predicted Paper (Moderate)
 
-**Time: 2 hours | Total: 60 marks**
+**Time: 2 hours 15 minutes | Total: 90 marks**
 
-Answer three questions in total:
-Section A: answer Question 1.
-Section B: answer one question.
-Section C: answer one question.
+Answer four questions in total:
+- Section A: answer Question 1.
+- Section B: answer three questions.
 
-## Section A (20 marks)
+You may use a calculator. The number of marks for each question or part question is shown in brackets [ ].
 
-Answer all parts of question 1.
+## Section A
 
-**1 The United Kingdom and the cost-of-living crisis**
+**Source material: What drives Thailand's economic success?**
 
-Between 2021 and 2023, the United Kingdom experienced one of the sharpest rises in its consumer price index (CPI) in four decades. The CPI rate of inflation peaked at 11.1% in October 2022, well above the Bank of England's 2% target. Inflation was driven by a combination of rising global energy prices following geopolitical shocks, disruptions to global supply chains, and a weaker pound sterling, which raised the cost of imported goods. Households faced significant falls in real incomes, and many firms reported higher costs of production.
-In response, the Bank of England raised its official Bank Rate from 0.1% in December 2021 to 5.25% by August 2023, the highest level since the 2008 financial crisis. The UK government also introduced an 'Energy Price Guarantee' to limit the average annual household energy bill, at a cost estimated at over £30 billion. Some commentators argued that further rises in the minimum wage, which increased by 9.7% in April 2023, would feed through into a wage–price spiral. Others suggested that supply-side measures would be more effective in reducing inflation over the medium term.
-
-**Table 1.1 UK CPI annual inflation rate (%), selected months**
-
-| Month/Year | CPI inflation rate (%) |
+| Thailand fact file | 2023 |
 | :--- | :--- |
-| December 2021 | 5.4 |
-| June 2022 | 9.4 |
-| October 2022 | 11.1 |
-| February 2023 | 10.4 |
-| June 2023 | 7.9 |
-| October 2023 | 4.6 |
-*Source: adapted from Office for National Statistics (ONS), 2023*
+| Population | 71.8 m |
+| Labour force | 40.3 m |
+| Unemployment rate | 1.1 % |
+| Economic growth rate | 2.5 % |
+| Tourism as a percentage of GDP | 12.0 % |
 
-Question 1a(i) [1 marks]
-Identify the change in the UK CPI annual inflation rate between December 2021 and October 2022.
+Thailand is a mixed economy in South-East Asia. Tourism is one of the country's largest industries. A 10% fall in the price of airline tickets to Thailand led to a 15% rise in the number of tourists visiting. The country's central bank, the Bank of Thailand, aims to keep the inflation rate within a target range of 1% to 3%.
 
-Question 1a(ii) [1 marks]
-Compare the trend in the UK CPI annual inflation rate between December 2021 and October 2022 with that between October 2022 and October 2023.
+In 2023, Thailand recorded a current account surplus of $6.3bn. Exports of goods and services rose by 4%. Although the Thai baht appreciated against the US dollar during the year, export industries continued to grow. Wages in the manufacturing sector rose faster than the general rate of inflation.
+
+The Thai government uses taxation to raise revenue and influence economic activity. It levies an indirect tax on most goods and services, a progressive income tax on households, and a corporation tax on firms. Government spending on education and healthcare has risen each year since 2018.
+
+**Table 1.1 Tax revenue as a percentage of GDP and GDP per head in selected countries in 2023**
+
+| Country | Tax revenue as % of GDP | GDP per head ($) |
+| :--- | :--- | :--- |
+| Singapore | 13 | 84 500 |
+| Malaysia | 12 | 13 300 |
+| Thailand | 17 | 7 500 |
+| Vietnam | 19 | 4 300 |
+| Philippines | 14 | 3 900 |
+
+Many Thai manufacturing firms are small, although a small number of large multinational companies (MNCs) operate in the car-assembly and electronics sectors. Small firms in Thailand find it harder to access bank credit than large firms.
+
+Thailand is the world's second largest producer of natural rubber. Global demand for natural rubber continues to grow as the demand for vehicles and medical equipment expands.
+
+Question 1a [1 marks]
+Calculate the price elasticity of demand for airline tickets to Thailand.
 
 Question 1b [2 marks]
-Identify one possible impact of a high rate of inflation on UK households and one possible impact on UK firms.
+Identify two objectives of the Bank of Thailand.
 
-Question 1c [4 marks]
-Consider whether a 9.7% rise in the UK minimum wage is likely to cause a wage–price spiral.
+Question 1c [2 marks]
+Explain one feature of a mixed economy.
 
-Question 1d [6 marks]
-Assess the extent to which supply-side shocks, such as rising global energy prices and supply chain disruptions, can explain the increase in UK inflation between 2021 and 2022.
+Question 1d [4 marks]
+Explain two reasons why a government may impose a progressive income tax.
 
-Question 1e [6 marks]
-Assess the extent to which raising the Bank Rate is likely to be effective in reducing the UK's rate of inflation.
+Question 1e [4 marks]
+Analyse the relationship between tax revenue as a percentage of GDP and GDP per head.
 
-## Section B (20 marks)
+Question 1f [5 marks]
+Analyse, using a demand and supply diagram, how an increase in global demand for natural rubber could affect the market for rubber in Thailand.
 
-Answer one question.
+Question 1g [6 marks]
+Discuss whether or not an appreciation of the Thai baht will harm the Thai economy.
 
-EITHER
+Question 1h [6 marks]
+Discuss whether or not small firms in Thailand should be given more support by the government.
 
-Question 2a [8 marks]
-Explain what is meant by price elasticity of demand (PED) and consider why PED varies between different goods.
+## Section B
 
-Question 2b [12 marks]
-Assess whether firms selling goods with a relatively price-inelastic demand always benefit more than firms selling goods with a relatively price-elastic demand.
+Answer any three questions. Each question is introduced by stimulus material.
 
-OR
+**2** In 2023, Vietnam's labour force grew and the number of women in paid employment rose. The country's central bank reduced the bank rate to support consumer spending. Vietnam is known for its large garment and footwear exports.
 
-Question 3a [8 marks]
-Explain, with examples, how negative externalities of production can cause market failure in a free market economy such as the United States.
+Question 2a [2 marks]
+Identify two causes of an increase in the size of a country's labour force.
 
-Question 3b [12 marks]
-Assess whether indirect taxation is the most effective way for a government to reduce negative externalities of production.
+Question 2b [4 marks]
+Explain two reasons why a central bank may reduce the bank rate.
 
-## Section C (20 marks)
+Question 2c [6 marks]
+Analyse how a rise in the participation of women in the labour force may benefit an economy.
 
-Answer one question.
+Question 2d [8 marks]
+Discuss whether or not a country should rely on garment and footwear exports.
 
-EITHER
+**3** The United Arab Emirates has a free-market approach but its government intervenes in some markets to correct externalities. Demand for education, a merit good, has grown rapidly as incomes have risen.
 
-Question 4a [8 marks]
-Using an AD/AS diagram, explain how an increase in business confidence in the UK might affect the level of economic activity, and consider one factor that could limit this effect.
+Question 3a [2 marks]
+Define merit good.
 
-Question 4b [12 marks]
-Assess whether fiscal policy is a more effective tool than monetary policy for reducing unemployment in a developed economy.
+Question 3b [4 marks]
+Explain two ways a government can encourage the consumption of a merit good.
 
-OR
+Question 3c [6 marks]
+Analyse why private and external benefits can differ.
 
-Question 5a [8 marks]
-With the help of a diagram, explain how a depreciation of a floating exchange rate may improve the current account of a country's balance of payments, and consider one reason why it may not.
+Question 3d [8 marks]
+Discuss whether or not government intervention always improves the allocation of resources.
 
-Question 5b [12 marks]
-Assess the extent to which a persistent current account surplus is always beneficial for an economy.`,
+**4** Mexico is a large producer of cars. In 2023, several multinational car companies (MNCs) increased production in Mexico after raising wages. Some production was transferred from the USA to Mexico.
+
+Question 4a [2 marks]
+Identify two characteristics of a multinational company (MNC).
+
+Question 4b [4 marks]
+Explain two benefits to a host country of an MNC operating within it.
+
+Question 4c [6 marks]
+Analyse why wages may rise in an expanding industry.
+
+Question 4d [8 marks]
+Discuss whether or not an MNC will remain in a host country if wages rise.
+
+**5** Japan's population is ageing rapidly. The proportion of people aged over 65 exceeds 29%. Consumer spending on healthcare has risen, while spending on education has fallen.
+
+Question 5a [2 marks]
+Define dependency ratio.
+
+Question 5b [4 marks]
+Explain two reasons why people are living longer in Japan.
+
+Question 5c [6 marks]
+Analyse the consequences of an ageing population for government spending.
+
+Question 5d [8 marks]
+Discuss whether or not a country will benefit from an increase in the retirement age.`,
   },
   {
     id: "igcse-p1-b",
@@ -546,84 +584,133 @@ Which is NOT a limitation of using GDP per capita to compare living standards?
     id: "igcse-p2-b",
     subject: "cambridge-igcse",
     paper: "2",
-    title: "Paper 2 Data Response & Essays — Set B",
-    description: "Cambridge IGCSE Paper 2. Set B — Hard. Verbatim from official-style mock.",
-    totalMarks: 60,
-    content: `# Cambridge International AS & A Level Economics (9708/02H) — Paper 2 AS Level Data Response and Essays — Predicted Paper Set B (Hard)
+    title: "Paper 2 Structured Questions — Set B (Hard)",
+    description: "Cambridge IGCSE Paper 2 (0455/21). Set B — Hard. Verbatim from official-style mock.",
+    totalMarks: 90,
+    content: `# Cambridge IGCSE Economics (0455/21) — Paper 2 Structured Questions — Predicted Paper Set B (Hard)
 
-**Time: 2 hours | Total: 60 marks**
-Answer three questions in total:
-Section A: answer Question 1.
-Section B: answer one question.
-Section C: answer one question.
+**Time: 2 hours 15 minutes | Total: 90 marks**
+
+Answer four questions in total:
+- Section A: answer Question 1.
+- Section B: answer three questions.
+
+You may use a calculator. The number of marks for each question or part question is shown in brackets [ ].
 
 ## Section A
-Answer all parts of question 1.
 
-**1 Germany's energy crisis and the green transition**
+**Source material: Kenya's coffee boom: opportunity or risk?**
 
-Germany, Europe's largest economy, has faced a severe energy crisis since 2022. Before the crisis, Germany imported around 55% of its natural gas from Russia, making it heavily dependent on a single supplier. Following the disruption of these supply chains, wholesale natural gas prices in Germany rose by more than 400% between January 2021 and August 2022, before easing in 2023. Several energy-intensive firms in sectors such as chemicals, steel and glass announced temporary plant closures or relocations abroad.
-In response, the German government introduced a €200 billion 'economic defence shield' including a gas price cap for households and industry, subsidies for energy-saving investment, and accelerated permits for renewable energy projects. The government also pursued a policy of diversifying gas supplies via new liquefied natural gas (LNG) terminals.
-At the same time, the European Central Bank (ECB) raised its main refinancing rate from 0.00% in July 2022 to 4.50% by September 2023, to combat inflation across the Eurozone, which had reached a peak of 10.6% in October 2022. Some commentators warned that high energy costs, combined with tighter monetary policy, risked tipping Germany into a prolonged recession and damaging its industrial base.
+| Kenya fact file | 2023 |
+| :--- | :--- |
+| Population | 55.1 m |
+| Labour force | 25.4 m |
+| Unemployment rate | 5.6 % |
+| Inflation rate | 7.9 % |
+| Current account balance (% of GDP) | – 5.1 % |
 
-**Table 1.1 Germany — selected macroeconomic indicators**
+Kenya is a developing country in East Africa. Agriculture employs over 40% of the labour force. Coffee is one of the country's leading agricultural exports. Between 2021 and 2023, global coffee prices rose by 32%. A study estimated that the price elasticity of supply of Kenyan coffee is 0.4.
 
-| Indicator | 2021 | 2022 | 2023 |
+The Central Bank of Kenya raised its bank rate from 8.75% to 13% during 2023 to help control inflation. The Kenyan shilling depreciated by approximately 20% against the US dollar over the year. Kenya borrows in US dollars from international lenders.
+
+Commercial banks in Kenya offer mobile banking services that allow low-income households to save and transfer money. The increasing availability of mobile banking has helped many households access finance for the first time.
+
+**Table 1.1 Selected development indicators for four East African countries in 2023**
+
+| Country | GDP per head ($) | Adult literacy (%) | Life expectancy (years) |
 | :--- | :--- | :--- | :--- |
-| Real GDP growth (%) | 3.1 | 1.8 | –0.3 |
-| HICP inflation (%) | 3.2 | 8.7 | 6.0 |
-| Unemployment rate (%) | 3.6 | 3.1 | 3.1 |
-| Current account balance (% of GDP) | 7.6 | 4.2 | 6.2 |
-| Industrial production (index, 2015=100) | 100.5| 97.3 | 94.1 |
+| Ethiopia | 1 020 | 52 | 67 |
+| Kenya | 2 180 | 82 | 66 |
+| Rwanda | 880 | 75 | 69 |
+| Tanzania | 1 220 | 81 | 67 |
+| Uganda | 960 | 76 | 64 |
 
-Source: adapted from Eurostat, Bundesbank, 2024
+Some Kenyan coffee is processed by a small number of very large firms, while many farmers operate on small plots of land. Small-scale producers often sell at prices set by middlemen. Large processors have economies of scale; small farmers do not.
 
-Question 1a(i) [1 marks]
-Using Table 1.1, calculate the percentage point change in Germany's real GDP growth between 2021 and 2023.
+Kenya's government is considering policies to encourage industrialisation. It is debating whether to subsidise local manufacturing or to protect infant industries with tariffs.
 
-Question 1a(ii) [1 marks]
-Compare the trend in Germany's unemployment rate with the trend in industrial production between 2021 and 2023.
+Question 1a [1 marks]
+Calculate, using the source material, the percentage change in the quantity of Kenyan coffee supplied between 2021 and 2023.
 
 Question 1b [2 marks]
-Explain two likely impacts of a 400% rise in wholesale gas prices on energy-intensive German firms.
+Identify two indicators, other than GDP per head, that can be used to measure living standards.
 
-Question 1c [4 marks]
-Consider whether a gas price cap is an effective microeconomic policy to protect German households and firms from high energy prices.
+Question 1c [2 marks]
+Explain what is meant by price elasticity of supply.
 
-Question 1d [6 marks]
-Assess the extent to which a simultaneous rise in ECB interest rates and a fall in industrial production can be explained by a negative supply-side shock rather than tighter monetary policy.
+Question 1d [4 marks]
+Explain two reasons why the price elasticity of supply of coffee may be low.
 
-Question 1e [6 marks]
-Assess whether subsidies for renewable energy are a more effective long-term response to energy insecurity than building new LNG import terminals.
+Question 1e [4 marks]
+Analyse the relationship between GDP per head and life expectancy shown in Table 1.1.
+
+Question 1f [5 marks]
+Analyse, using a demand and supply diagram, the effect of a rise in global coffee prices on the Kenyan coffee market.
+
+Question 1g [6 marks]
+Discuss whether or not raising the bank rate will reduce inflation in Kenya.
+
+Question 1h [6 marks]
+Discuss whether or not a depreciation of the shilling benefits the Kenyan economy.
 
 ## Section B
-Answer one question.
 
-Question 2a [8 marks]
-Explain, with examples, how negative externalities of consumption and negative externalities of production differ, and consider why they can both lead to market failure in a free market economy.
+Answer any three questions. Each question is introduced by stimulus material.
 
-Question 2b [12 marks]
-The European Union's Emissions Trading System (EU ETS) allows firms to buy and sell permits to emit carbon dioxide. Assess whether a tradable permits scheme is a more effective policy than a carbon tax in reducing negative externalities.
+**2** India's economy grew by 7.2% in 2023. It is one of the fastest-growing large economies in the world. Income inequality in India remains high — the Gini coefficient is 0.36. The government uses both progressive taxation and welfare programmes.
 
-Question 3a [8 marks]
-With the help of a diagram, explain the difference between a shift in the supply curve for labour and a movement along the supply curve for labour, and consider the factors that may cause a shift in the supply of labour for a particular occupation.
+Question 2a [2 marks]
+Define economic growth.
 
-Question 3b [12 marks]
-Assess the extent to which a rise in the statutory minimum wage will always lead to a fall in employment in a developed economy such as the UK.
+Question 2b [4 marks]
+Explain two causes of income inequality within a country.
 
-## Section C
-Answer one question.
+Question 2c [6 marks]
+Analyse how progressive taxation may reduce income inequality.
 
-Question 4a [8 marks]
-Using an AD/AS diagram, explain how a simultaneous rise in oil prices and a fall in consumer confidence in the EU might affect real GDP and the price level, and consider which effect is likely to be greater.
+Question 2d [8 marks]
+Discuss whether or not a high rate of economic growth is always desirable.
 
-Question 4b [12 marks]
-Assess the extent to which a central bank faces a trade-off between reducing inflation and avoiding a rise in unemployment.
+**3** Brazil's economy relies heavily on the export of soybeans and iron ore. These are primary commodities. World prices of primary commodities have been volatile. In 2023, Brazilian exports to China reached a record high.
 
-Question 5a [8 marks]
-Explain the difference between the current account and the financial account of the balance of payments, and consider how a persistent current account deficit might be financed.
+Question 3a [2 marks]
+Identify two examples of primary sector products.
 
-Question 5b [12 marks]
-In 2018 the United States imposed tariffs on imports from China to reduce its current account deficit. Assess the extent to which protectionist policies are an effective way to correct a persistent current account deficit.`,
+Question 3b [4 marks]
+Explain two disadvantages of relying on the export of primary commodities.
+
+Question 3c [6 marks]
+Analyse the reasons why the prices of primary commodities may be volatile.
+
+Question 3d [8 marks]
+Discuss whether or not a country should diversify its exports.
+
+**4** In 2024, Spain's unemployment rate was 11.2%. Some regions in Spain have much higher unemployment than others. The Spanish government spends on training programmes and offers tax incentives to firms.
+
+Question 4a [2 marks]
+Identify two types of unemployment.
+
+Question 4b [4 marks]
+Explain two supply-side policies a government may use to reduce unemployment.
+
+Question 4c [6 marks]
+Analyse the consequences of high regional unemployment.
+
+Question 4d [8 marks]
+Discuss whether or not fiscal policy is more effective than monetary policy in reducing unemployment.
+
+**5** The United Kingdom left the European Union in 2020. Since then, trade barriers between the UK and the EU have increased. In 2023, the UK signed new trade agreements with Australia and New Zealand.
+
+Question 5a [2 marks]
+Identify two benefits to a country of joining a free-trade area.
+
+Question 5b [4 marks]
+Explain two reasons why a country may introduce trade barriers.
+
+Question 5c [6 marks]
+Analyse how a customs union differs from a free-trade area.
+
+Question 5d [8 marks]
+Discuss whether or not leaving a trading bloc benefits a country.`,
   },
 ];
