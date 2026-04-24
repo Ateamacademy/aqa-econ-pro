@@ -28,18 +28,22 @@ function buildMarkingPrompt(params: {
   board: string;
   markScheme?: any[];
   answerType: string;
+  scenarioRubricPrompt?: string;
 }) {
-  const { question, studentAnswer, diagramType, difficulty, totalMarks, board, markScheme, answerType } = params;
+  const { question, studentAnswer, diagramType, difficulty, totalMarks, board, markScheme, answerType, scenarioRubricPrompt } = params;
   const tone = TONE_MAP[difficulty] || TONE_MAP.moderate;
 
-  const markSchemeSection = markScheme && markScheme.length > 0
-    ? `\n\n=== MARK SCHEME (use this for marking) ===\n${markScheme.map((ms: any) =>
-        `Component: "${ms.component_name}" (${ms.mark_value} mark${ms.mark_value > 1 ? "s" : ""})\n` +
-        `  Accepted labels/answers: ${ms.accepted_labels.join(", ")}\n` +
-        `  Positional accuracy required: ${ms.positional_required ? "YES" : "NO"}\n` +
-        `  Strict mode: ${ms.strict_mode ? "YES (exact match only)" : "NO (allow synonyms & minor spelling)"}`
-      ).join("\n")}\n`
-    : "";
+  // Prefer the rendered scenario rubric (highest fidelity) when provided.
+  const markSchemeSection = scenarioRubricPrompt
+    ? `\n\n${scenarioRubricPrompt}\n`
+    : (markScheme && markScheme.length > 0
+        ? `\n\n=== MARK SCHEME (use this for marking) ===\n${markScheme.map((ms: any) =>
+            `Component: "${ms.component_name}" (${ms.mark_value} mark${ms.mark_value > 1 ? "s" : ""})\n` +
+            `  Accepted labels/answers: ${(ms.accepted_labels || []).join(", ")}\n` +
+            `  Positional accuracy required: ${ms.positional_required ? "YES" : "NO"}\n` +
+            `  Strict mode: ${ms.strict_mode ? "YES (exact match only)" : "NO (allow synonyms & minor spelling)"}`,
+          ).join("\n")}\n`
+        : "");
 
   return `You are an expert ${board} Economics examiner marking a student's diagram submission.
 
