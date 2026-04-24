@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { extractDiagramBlocks, EconDiagramCanvas } from "./EconDiagramSVG";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
+import EconNegExtUKEnergy from "@/components/EconNegExtUKEnergy.jsx";
 import { PredictedPaperDiagramBlock } from "./PredictedPaperDiagramBlock";
 import { ReferenceFigurePanel } from "./ReferenceFigurePanel";
 import type { AqaDiagramRubric } from "@/lib/aqa-diagram-rubric";
@@ -133,7 +134,7 @@ export function QuestionCard({
     /question\s*0?5/i.test(question.label) &&
     /negative externalit(y|ies) of production/i.test(question.text);
 
-  const renderDiagramContent = (text: string) => {
+  const renderDiagramContent = (text: string, opts?: { withCanonicalFigure?: boolean }) => {
     if (suppressFeedbackDiagramPreview) {
       const strippedText = text
         .replace(/^\s*(?:#{2,4}\s*)?(?:\*\*)?Diagram\s*:[\s\S]*?(?=^\s*#{1,4}\s+\S|\Z)/gim, "")
@@ -142,6 +143,11 @@ export function QuestionCard({
 
       return (
         <div className="prose prose-sm max-w-none dark:prose-invert">
+          {opts?.withCanonicalFigure && (
+            <div className="not-prose mb-4 rounded-lg border border-border bg-card overflow-hidden">
+              <EconNegExtUKEnergy />
+            </div>
+          )}
           <Suspense fallback={<div className="text-sm text-muted-foreground">Loading...</div>}>
             <RevisionRenderer content={strippedText} />
           </Suspense>
@@ -466,7 +472,7 @@ export function QuestionCard({
                 </button>
                 {showExplain && (
                   <CardContent className="pt-0 pb-5 px-5 border-t border-border/50">
-                    {renderDiagramContent(feedback.explainFeedback)}
+                    {renderDiagramContent(feedback.explainFeedback, { withCanonicalFigure: true })}
                   </CardContent>
                 )}
               </Card>
@@ -487,7 +493,7 @@ export function QuestionCard({
                 </button>
                 {showImprove && (
                   <CardContent className="pt-0 pb-5 px-5 border-t border-border/50">
-                    {renderDiagramContent(feedback.improveFeedback)}
+                    {renderDiagramContent(feedback.improveFeedback, { withCanonicalFigure: true })}
                   </CardContent>
                 )}
               </Card>
