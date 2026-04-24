@@ -26,6 +26,15 @@ export interface DiagramMarkingInput {
   userId?: string;
   imageBase64?: string; // raw base64 (no data: prefix) for drawn diagrams
   imageSrc?: string;    // data URL for validation gates
+  scenarioRubric?: Array<{
+    component_name: string;
+    mark_value: number;
+    accepted_labels: string[];
+    positional_required: boolean;
+    strict_mode: boolean;
+    notes?: string;
+  }>;
+  scenarioRubricPrompt?: string;
 }
 
 export interface GateResult {
@@ -144,6 +153,8 @@ async function callMarker(
       answerType: input.answerType,
       scenarioId: input.scenarioId,
       userId: input.userId,
+      scenarioRubric: input.scenarioRubric,
+      scenarioRubricPrompt: input.scenarioRubricPrompt,
     }),
   });
 

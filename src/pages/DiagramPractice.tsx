@@ -84,6 +84,7 @@ import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
 import { getScenarioDiagramKeyword } from "@/lib/boardScenarioDiagramKeywords";
 import { normalizeDiagramKeyword } from "@/lib/diagramKeywordAliases";
+import { buildScenarioRubric, renderRubricForPrompt, rubricToMarkSchemePayload } from "@/lib/diagramScenarioRubrics";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
 import { useDiagramMarking } from "@/hooks/useDiagramMarking";
 import { AIMarkingPanel } from "@/components/diagram-marking/AIMarkingPanel";
@@ -1234,12 +1235,19 @@ You MUST evaluate using ALL 5 diagram marking criteria:
 
     const rubric = isLorenzTopic ? lorenzRubric : standardRubric;
 
+    // Build the per-scenario rubric (board-aware) so the AI marks against the
+    // exact criteria for THIS scenario instead of a generic 5-point rubric.
+    const scenarioRubricObj = selectedScenario
+      ? buildScenarioRubric(selectedScenario, examBoard)
+      : null;
+    const scenarioRubricBlock = scenarioRubricObj ? renderRubricForPrompt(scenarioRubricObj) : "";
+
     await streamChat({
       messages: [
         { role: "user", content: diagramContent },
         { role: "user", content: `Mark this diagram submission using ${examBoard} ${level} ${subjectLabel} criteria.
 
-${rubric}
+${scenarioRubricBlock ? scenarioRubricBlock + "\n\n" : ""}${rubric}
 
 You MUST structure your response using EXACTLY these section headers (the app parses them):
 
@@ -1323,6 +1331,8 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             userId: user.id,
             imageBase64,
             imageSrc: inputMode === "draw" ? diagramImage ?? undefined : undefined,
+            scenarioRubric: scenarioRubricObj ? rubricToMarkSchemePayload(scenarioRubricObj) : undefined,
+            scenarioRubricPrompt: scenarioRubricBlock || undefined,
           });
         }
         await consumeAttempt();

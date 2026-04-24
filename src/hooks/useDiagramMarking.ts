@@ -14,6 +14,8 @@ interface MarkDiagramParams {
   userId?: string;
   imageBase64?: string;
   imageSrc?: string;
+  scenarioRubric?: DiagramMarkingInput["scenarioRubric"];
+  scenarioRubricPrompt?: string;
 }
 
 export function useDiagramMarking() {
