@@ -134,7 +134,7 @@ export function QuestionCard({
     /question\s*0?5/i.test(question.label) &&
     /negative externalit(y|ies) of production/i.test(question.text);
 
-  const renderDiagramContent = (text: string) => {
+  const renderDiagramContent = (text: string, opts?: { withCanonicalFigure?: boolean }) => {
     if (suppressFeedbackDiagramPreview) {
       const strippedText = text
         .replace(/^\s*(?:#{2,4}\s*)?(?:\*\*)?Diagram\s*:[\s\S]*?(?=^\s*#{1,4}\s+\S|\Z)/gim, "")
@@ -143,6 +143,11 @@ export function QuestionCard({
 
       return (
         <div className="prose prose-sm max-w-none dark:prose-invert">
+          {opts?.withCanonicalFigure && (
+            <div className="not-prose mb-4 rounded-lg border border-border bg-card overflow-hidden">
+              <EconNegExtUKEnergy />
+            </div>
+          )}
           <Suspense fallback={<div className="text-sm text-muted-foreground">Loading...</div>}>
             <RevisionRenderer content={strippedText} />
           </Suspense>
