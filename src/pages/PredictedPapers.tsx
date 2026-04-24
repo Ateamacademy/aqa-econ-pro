@@ -43,6 +43,7 @@ import { ExamResultsSummary } from "@/components/predicted-papers/ExamResultsSum
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import { tagAqaQuestion, inferPaperFromContext } from "@/lib/aqaPredictedDiagramTagging";
 import { getAqaPaper3OverrideContent } from "@/data/aqaPaper3Overrides";
+import { getOcrPredictedMarkScheme } from "@/data/ocrPredictedMarkSchemes";
 
 // Exam durations in minutes per subject + paper.
 // AQA A-Level Economics (7136) — every paper is 2 hours. Source of truth: AQA_SPEC.durationMinutes.
