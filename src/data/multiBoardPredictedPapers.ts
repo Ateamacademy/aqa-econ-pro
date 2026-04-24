@@ -413,8 +413,6 @@ Calculate, to two decimal places, the price elasticity of demand (PED) for a goo
 Question 1g [3 marks]
 Figure 1 shows the market for coffee. Using the diagram below, draw the likely effects on the market for coffee if consumer incomes rise. Label the new curve, the new equilibrium price and the new equilibrium quantity.
 
-![Figure 1 — The market for coffee](/figures/sd-coffee-market.svg)
-
 Question 1h [3 marks]
 Ahmed has decided to purchase a new bicycle. Explain one possible opportunity cost for Ahmed of this decision.
 
@@ -542,8 +540,6 @@ Calculate, to two decimal places, the cross elasticity of demand (XED) between b
 Question 1g [3 marks]
 Figure 1 shows the market for wheat. Using the diagram below, draw the likely effects on the market for wheat if poor weather damages the harvest. Label the new curve, the new equilibrium price and the new equilibrium quantity.
 
-![Figure 1 — The market for wheat](/figures/sd-wheat-market.svg)
-
 Question 1h [3 marks]
 Priya is a qualified accountant who currently earns $48,000 per year. She has decided to leave her job to study full-time for a Master's degree for two years. Explain one possible opportunity cost for Priya of this decision.
 
@@ -670,8 +666,6 @@ A firm increases the price of its product by 15% and, as a result, the quantity 
 
 Question 1g [3 marks]
 Figure 1 shows the market for solar panels. Using the diagram below, draw the likely effects on the market for solar panels if the government introduces a subsidy for producers. Label the new curve, the new equilibrium price and the new equilibrium quantity.
-
-![Figure 1 — The market for solar panels](/figures/sd-solar-market.svg)
 
 Question 1h [3 marks]
 MediCorp is a pharmaceutical firm. The company has reported record profits of $420 million this year and the board is deciding whether to pay these profits to shareholders as dividends, or to invest the funds in research and development (R&D) for a new cancer treatment. Explain one possible opportunity cost for MediCorp of choosing to invest in R&D rather than paying dividends.
