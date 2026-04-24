@@ -1178,432 +1178,1320 @@ Ethiopia is one of the fastest-growing economies in Africa but remains heavily d
     id: "ocrgcse-p1-a",
     subject: "ocr-gcse" as any,
     paper: "1",
-    title: "Paper 1 — Set A",
-    description: "Introduction to Economics. Set A — core practice.",
+    title: "Paper 1 — Moderate",
+    description: "Introduction to Economics (J205/01) — Moderate tier predicted paper.",
     totalMarks: 80,
-    content: `# OCR GCSE Economics (J205) (J205/01) — Introduction to Economics — Predicted Paper Set A
+    content: `# OCR GCSE (9–1) Economics — J205/01 Introduction to Economics — Predicted Paper (Moderate)
 
-**Time: 90 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer all questions. The marks for each question are shown in brackets [ ]. Quality of extended response is assessed in questions marked with an asterisk (*).
 
-## Section A: Data Response
+## Section A — Multiple Choice
 
-**Extract 1 — Scarcity, choice and opportunity cost in households:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+Question 1 [1 marks]
+Which of the following is a factor of production?
+- A Consumer goods
+- B Labour
+- C Money
+- D Final services
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+Question 2 [1 marks]
+Opportunity cost is best described as
+- A the money cost of producing a good
+- B the amount of money paid for a product
+- C the next best alternative given up when a choice is made
+- D the total expenditure of a household
 
-Question 1 [2 marks]
-With reference to scarcity, choice and opportunity cost in households, explain two consequences of the issue.
+Question 3 [1 marks]
+Cinema visits and streaming services are substitute goods. If the price of streaming services falls, the demand for cinema tickets is most likely to
+- A decrease
+- B increase
+- C stay the same
+- D become perfectly elastic
 
-Question 2 [4 marks]
-With reference to scarcity, choice and opportunity cost in households, explain one government response to the issue.
+Question 4 [1 marks]
+A firm has total fixed costs of £500 and total variable costs of £700 when producing 100 units. What is the average total cost per unit?
+- A £5
+- B £7
+- C £12
+- D £120
 
-Question 3 [6 marks]
-With reference to price mechanism and market failure in housing, explain one factor that influences the issue.
+Question 5 [1 marks]
+The supply of seats at a concert already sold out is most likely to be
+- A price elastic
+- B unitary elastic
+- C price inelastic
+- D perfectly inelastic
 
-Question 4 [9 marks]
-With reference to scarcity, choice and opportunity cost in households, explain one mechanism that determines the issue.
+Question 6 [1 marks]
+Specialisation by workers occurs when
+- A firms produce a wide range of products
+- B workers focus on a single task or product
+- C consumers buy from only one shop
+- D producers agree to set the same price
 
-Question 5 [12 marks]
-With reference to the role of money and the financial sector, explain two consequences of the issue.
+Question 7 [1 marks]
+Which of these is an example of capital as a factor of production?
+- A A baker kneading dough
+- B A delivery van used by a bakery
+- C Wheat growing in a field
+- D An entrepreneur who starts a bakery
 
-## Section B: Essay (choose ONE)
+Question 8 [1 marks]
+Anna has the following monthly pay statement. Wage: £2000; Income tax: £300; National Insurance: £180; Pension: £120. What is Anna's monthly net pay?
+- A £1400
+- B £1520
+- C £1680
+- D £1820
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of scarcity, choice and opportunity cost in households, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 9 [1 marks]
+The Bank of England has decreased the rate of interest. What is the most likely effect on firms?
+- A A decrease in borrowing to invest
+- B An increase in borrowing to invest
+- C An increase in the rate of saving
+- D A decrease in the total demand for labour
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of the role of money and the financial sector, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 10 [1 marks]
+A market can be best described as
+- A a physical shop only
+- B a place where buyers and sellers interact to exchange goods and services
+- C a government-owned organisation
+- D a type of advertising
+
+Question 11 [1 marks]
+If the price of a good is set above the equilibrium, the market will experience
+- A excess demand
+- B excess supply
+- C equilibrium
+- D perfect competition
+
+Question 12 [1 marks]
+A new study shows that blueberries have significant health benefits. As a result, consumers demand more and prices rise. Which role of price is this an example of?
+- A Rationing
+- B Signalling
+- C Specialisation
+- D Substitution
+
+Question 13 [1 marks]
+Petrol is a complement to cars. An increase in the price of petrol is most likely to cause
+- A an increase in demand for cars
+- B a decrease in demand for cars
+- C an increase in supply of cars
+- D a decrease in supply of cars
+
+Question 14 [1 marks]
+Which of the following is most likely to be a substitute for tea?
+- A Milk
+- B Sugar
+- C Coffee
+- D Biscuits
+
+Question 15 [1 marks]
+A firm plants trees to offset its carbon emissions. This is an example of which type of sustainability?
+- A Economic
+- B Social
+- C Environmental
+- D Financial
+
+Question 16 [1 marks]
+A firm increases its output per worker per hour. This is an example of
+- A increased production
+- B increased productivity
+- C increased profit
+- D increased price
+
+Question 17 [1 marks]
+The price of a good increases by 20% and the quantity demanded falls by 10%. The price elasticity of demand is
+- A perfectly elastic
+- B price elastic
+- C price inelastic
+- D unitary elastic
+
+Question 18 [1 marks]
+Which of the following is an example of non-price competition?
+- A Firms lowering their prices
+- B Firms offering loyalty cards and better customer service
+- C Firms setting the same price as rivals
+- D Firms colluding to fix prices
+
+Question 19 [1 marks]
+As a firm expands, its long-run average costs fall. This is an example of
+- A diseconomies of scale
+- B economies of scale
+- C increasing marginal costs
+- D perfectly inelastic supply
+
+Question 20 [1 marks]
+A household wants to deposit its monthly savings into an account that can be easily accessed. Which financial institution is most likely to be used?
+- A A commercial bank
+- B The Bank of England
+- C The Treasury
+- D An insurance company
+
+## Section B — Data Response
+
+**Extract 1 — The coffee market:** Coffee is a widely consumed drink across the world. Over the last year the world price of coffee has risen sharply following poor harvests in Brazil, one of the largest producers. The weather damage meant that supply to the world market fell significantly. Demand for coffee is typically considered to be price inelastic. Consumers tend to view coffee as a daily necessity and are willing to pay higher prices, especially where they have a regular habit of buying it. The retail coffee market in the UK is dominated by a small number of large multinational chains. This is an example of an oligopoly.
+
+Question 21a [2 marks]
+Explain what is meant by demand.
+
+Question 21b [2 marks]
+Explain how an oligopoly, such as the UK retail coffee market, differs from a competitive market.
+
+Question 21c [6 marks]
+Using a diagram, analyse the effect of poor harvests in Brazil on the world market for coffee.
+
+Question 21di [2 marks]
+Using Extract 1, explain why demand for coffee is price inelastic.
+
+Question 21dii [2 marks]
+State two factors, other than habit, that influence the price elasticity of demand for a product.
+
+Question 21diii [6 marks]
+Evaluate the importance of price elasticity of demand for coffee for consumers. Use the information given in Extract 1 and your own knowledge.
+
+**Extract 2 — A local bakery:** Jamie runs a small bakery called Breadwinners. She has been asked by a local café chain to supply 200 loaves each week at £1.50 per loaf. Weekly costs: Flour and other ingredients £50; Wages for assistant £120; Utilities and other overheads £80. Jamie has hired an assistant and is using division of labour. She operates in the product market.
+
+Question 22a [2 marks]
+Explain what is meant by division of labour.
+
+Question 22b [2 marks]
+Calculate the weekly profit Jamie will make on the café-chain order. Show your working.
+
+Question 22c [6 marks]
+Analyse the advantages for Jamie of her business making a profit.
+
+Question 22di [2 marks]
+Explain why Jamie's bakery is part of the product market.
+
+Question 22dii [2 marks]
+State two examples of fixed costs Jamie's bakery is likely to face.
+
+Question 22diii [6 marks]
+Evaluate the benefits for Jamie of using division of labour in her bakery. Use the information given in Extract 2 and your own knowledge.
+
+**Extract 3 — A clothing retailer:** Ravi owns Threadworks in Millfield. Three years ago he borrowed £200,000 from a commercial bank to expand the shop. The interest rate was 4%, meaning monthly interest payments of £666.67. The Bank of England has recently raised the interest rate; Ravi will be charged 6.5% from next month. A new larger rival has opened nearby. Ravi is considering specialising in sportswear.
+
+Question 23a [2 marks]
+Explain, using an example, what is meant by the rate of interest.
+
+Question 23b [2 marks]
+Draw and label a diagram showing the likely effect on the demand curve for Ravi's shop of a new, larger rival opening nearby. (Quantity on the horizontal axis; Price on the vertical axis.)
+
+Question 23c [6 marks]
+Using a diagram, analyse the consequences for Ravi of a fall in the demand for his clothing.
+
+Question 23di [2 marks]
+Calculate Ravi's new monthly interest payment after the interest rate has increased to 6.5%. Show your working.
+
+Question 23dii [2 marks]
+Explain the opportunity cost to Ravi of repaying his loan early rather than using that money to refurbish his shop.
+
+Question 23diii [6 marks]
+Evaluate the benefits to Ravi of specialising in one type of clothing, such as sportswear. Use the information given in Extract 3 and your own knowledge.
+
+**TOTAL FOR PAPER = 80 MARKS**
 `,
   },
   {
     id: "ocrgcse-p1-b",
     subject: "ocr-gcse" as any,
     paper: "1",
-    title: "Paper 1 — Set B",
-    description: "Introduction to Economics. Set B — stretch — applied scenarios.",
+    title: "Paper 1 — Hard",
+    description: "Introduction to Economics (J205/01) — Hard tier predicted paper.",
     totalMarks: 80,
-    content: `# OCR GCSE Economics (J205) (J205/01) — Introduction to Economics — Predicted Paper Set B
+    content: `# OCR GCSE (9–1) Economics — J205/01 Introduction to Economics — Predicted Paper (Hard)
 
-**Time: 90 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer all questions. The marks for each question are shown in brackets [ ]. Quality of extended response is assessed in questions marked with an asterisk (*).
 
-## Section A: Data Response
+## Section A — Multiple Choice
 
-**Extract 1 — Price mechanism and market failure in housing:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+Question 1 [1 marks]
+Which of these is most likely to be classed as a free good?
+- A Fresh water from a mountain stream
+- B Bottled water from a shop
+- C Tap water supplied to a home
+- D Rainwater collected in a tank for later sale
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+Question 2 [1 marks]
+A bakery uses flour, an oven, a baker and an owner taking risks. Which list correctly identifies the factors of production in the order land, labour, capital, enterprise?
+- A Baker, oven, flour, owner
+- B Flour, baker, oven, owner
+- C Oven, flour, owner, baker
+- D Owner, baker, flour, oven
 
-Question 1 [2 marks]
-With reference to price mechanism and market failure in housing, explain one government response to the issue.
+Question 3 [1 marks]
+The table shows the output of a firm as it hires more workers. Workers: 1, 2, 3, 4. Total output: 10, 25, 36, 44. Which worker adds the most additional output?
+- A First
+- B Second
+- C Third
+- D Fourth
 
-Question 2 [4 marks]
-With reference to price mechanism and market failure in housing, explain one factor that influences the issue.
+Question 4 [1 marks]
+The price of houses has risen significantly while interest rates have also risen. The most likely effect on the labour market in the construction industry is
+- A an increase in demand for construction workers
+- B a decrease in the supply of construction workers
+- C an increase in wages regardless of demand
+- D no change, as these markets are unrelated
 
-Question 3 [6 marks]
-With reference to price mechanism and market failure in housing, explain one mechanism that determines the issue.
+Question 5 [1 marks]
+A train operator increases ticket prices by 10%. The number of passengers falls by 4%. The price elasticity of demand for the tickets is
+- A 0.4 – price inelastic
+- B 0.4 – price elastic
+- C 2.5 – price inelastic
+- D 2.5 – price elastic
 
-Question 4 [9 marks]
-With reference to price mechanism and market failure in housing, explain two consequences of the issue.
+Question 6 [1 marks]
+Which of the following is not a condition for a market to be perfectly competitive?
+- A Many buyers and sellers
+- B Products that are almost identical
+- C Easy entry and exit for firms
+- D A few very large firms setting the price
 
-Question 5 [12 marks]
-With reference to the role of money and the financial sector, explain one government response to the issue.
+Question 7 [1 marks]
+A supermarket chain has significant market power and can influence the price it pays its suppliers. This is an example of a
+- A monopoly in the product market
+- B monopoly in the labour market
+- C monopsony in the factor market
+- D perfectly competitive firm
 
-## Section B: Essay (choose ONE)
+Question 8 [1 marks]
+In the long run, as a firm grows beyond the optimum size, its average costs may start to rise. This is known as
+- A economies of scale
+- B diseconomies of scale
+- C perfect competition
+- D productive efficiency
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of scarcity, choice and opportunity cost in households, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 9 [1 marks]
+A firm has total revenue of £120,000 and total costs of £95,000. What is the firm's profit margin (profit as a percentage of total revenue)?
+- A 20.8%
+- B 26.3%
+- C 79.2%
+- D 126.3%
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of the role of money and the financial sector, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 10 [1 marks]
+A government imposes a tax on producers of a good with price inelastic demand. The most likely outcome is that
+- A consumers will bear most of the tax through higher prices
+- B producers will bear most of the tax with little price rise
+- C the good will no longer be produced
+- D the market will reach a new equilibrium with lower prices
+
+Question 11 [1 marks]
+In a labour market, an increase in the productivity of workers is most likely to
+- A shift the labour supply curve to the left
+- B shift the labour supply curve to the right
+- C shift the labour demand curve to the left
+- D shift the labour demand curve to the right
+
+Question 12 [1 marks]
+Which of the following statements about price signals is true?
+- A Rising prices signal producers to reduce output
+- B Falling prices signal consumers to demand less
+- C Rising prices signal that more resources should be used in that market
+- D Price signals only affect consumers, not producers
+
+Question 13 [1 marks]
+An economy moves workers from manufacturing into services. This is best described as
+- A a primary sector shift
+- B structural change
+- C perfect competition
+- D international trade
+
+Question 14 [1 marks]
+Two firms in an oligopoly agree to charge the same high price. This is best described as
+- A price competition
+- B productive efficiency
+- C collusion
+- D specialisation
+
+Question 15 [1 marks]
+The demand for a good is price elastic. A firm reduces the price of the good by 5%. The most likely effect on total revenue is that it will
+- A fall by more than 5%
+- B fall by 5%
+- C rise because quantity demanded rises by more than 5%
+- D stay the same because PED is greater than 1
+
+Question 16 [1 marks]
+Which of these is most likely to be a fixed cost for a hairdressing business?
+- A Payments for electricity used during cutting
+- B Wages of part-time staff paid by the hour
+- C Rent paid for the salon premises
+- D Shampoo used on customers
+
+Question 17 [1 marks]
+A central bank is best described as
+- A a commercial bank that is very large
+- B a bank that operates only for businesses
+- C a bank that manages the money supply and sets the base rate for the economy
+- D an insurance company regulated by the government
+
+Question 18 [1 marks]
+A government builds a new high-speed rail line linking two cities to stimulate business investment in a region. This is an example of
+- A a purely private good
+- B a merit good only
+- C a public sector project that aims to improve economic sustainability
+- D a good with perfectly inelastic supply
+
+Question 19 [1 marks]
+A rise in the national minimum wage is most likely to
+- A increase the quantity of labour demanded
+- B decrease the quantity of labour demanded in affected industries
+- C shift the demand curve for labour to the right
+- D have no impact on the labour market
+
+Question 20 [1 marks]
+The main difference between investment and saving for a household is that
+- A investment uses money to purchase assets expected to generate a return, while saving keeps money aside for future use
+- B saving always takes place in a bank, while investment always takes place in the stock market
+- C only firms can invest, while only households can save
+- D investment and saving mean the same thing
+
+## Section B — Data Response
+
+**Extract 1 — The electric vehicle (EV) market:** Demand for EVs has grown rapidly. Governments plan to ban new petrol and diesel cars within ten years. EVs use lithium batteries — global demand for lithium has pushed up its price, raising production costs. The market is becoming more competitive: new entrants from China are pressuring established brands on price and on non-price factors such as range, charging speed and in-car technology.
+
+Question 21a [2 marks]
+Explain what is meant by a scarce resource.
+
+Question 21b [2 marks]
+Explain one likely impact on consumers of EVs becoming a more competitive market.
+
+Question 21c [6 marks]
+Using a diagram, analyse the impact on the market for electric vehicles of a government announcement to ban the sale of new petrol and diesel cars.
+
+Question 21di [2 marks]
+Explain how rising lithium prices could affect the cost of producing EVs.
+
+Question 21dii [2 marks]
+State two examples of non-price competition between EV manufacturers.
+
+Question 21diii [6 marks]
+Evaluate the importance of non-price competition for an established EV manufacturer facing new competitors. Use the information given in Extract 1 and your own knowledge.
+
+**Extract 2 — A technology startup:** Priya and Marco run Cloudline, a startup producing accounting software for small businesses. They use division of labour: Priya writes the code and Marco handles sales and marketing. Cloudline has secured a contract to deliver software to 1,000 stores at £90 per store. Costs: Staff wages £35,000; Office rent and utilities £8,000; Software licenses £12,000; Marketing £6,000. They are deciding whether to hire two additional developers.
+
+Question 22a [2 marks]
+Explain what is meant by a startup.
+
+Question 22b [2 marks]
+Calculate the profit or loss Cloudline will make on the contract. Show your working.
+
+Question 22c [6 marks]
+Analyse, using a diagram, the effect on the labour market for software developers if Cloudline and similar firms decide to hire more developers.
+
+Question 22di [2 marks]
+Explain one advantage to Cloudline of division of labour.
+
+Question 22dii [2 marks]
+State two risks Priya and Marco face from expanding the business by hiring additional developers.
+
+Question 22diii [6 marks]
+Evaluate the benefits for Cloudline of expanding the business by hiring additional developers. Use the information given in Extract 2 and your own knowledge.
+
+**Extract 3 — A regional airline:** SkyRoute is a regional low-cost airline in Europe. Five years ago it borrowed £4 million at 3.5%, with monthly interest payments of £11,666.67. The Bank of England has raised the base rate; SkyRoute's rate will rise to 6% from next month. Owners Léa and Tomas are considering specialising in business travel (more price inelastic demand) and cutting low-profit routes.
+
+Question 23a [2 marks]
+Explain what is meant by price inelastic demand.
+
+Question 23b [2 marks]
+Draw and label a diagram showing the difference between a price elastic demand curve and a price inelastic demand curve for SkyRoute's flights. (Quantity on the horizontal axis; Price on the vertical axis.)
+
+Question 23c [6 marks]
+Using a diagram, analyse the impact on SkyRoute of an increase in demand for its flights following a successful marketing campaign.
+
+Question 23di [2 marks]
+Calculate SkyRoute's new monthly interest payment after the interest rate has risen to 6%. Show your working.
+
+Question 23dii [2 marks]
+Explain the opportunity cost to SkyRoute of cutting routes that are making low profits.
+
+Question 23diii [6 marks]
+Evaluate the benefits to SkyRoute of specialising in business travel. Use the information given in Extract 3 and your own knowledge.
+
+**TOTAL FOR PAPER = 80 MARKS**
 `,
   },
   {
     id: "ocrgcse-p1-c",
     subject: "ocr-gcse" as any,
     paper: "1",
-    title: "Paper 1 — Set C",
-    description: "Introduction to Economics. Set C — challenge — synoptic & evaluative.",
+    title: "Paper 1 — Advanced",
+    description: "Introduction to Economics (J205/01) — Advanced tier predicted paper.",
     totalMarks: 80,
-    content: `# OCR GCSE Economics (J205) (J205/01) — Introduction to Economics — Predicted Paper Set C
+    content: `# OCR GCSE (9–1) Economics — J205/01 Introduction to Economics — Predicted Paper (Advanced)
 
-**Time: 90 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer all questions. The marks for each question are shown in brackets [ ]. Quality of extended response is assessed in questions marked with an asterisk (*).
 
-## Section A: Data Response
+## Section A — Multiple Choice
 
-**Extract 1 — The role of money and the financial sector:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+Question 1 [1 marks]
+In economics, the basic economic problem is best described as
+- A the difficulty of making a profit
+- B unlimited wants exceeding scarce resources so choices must be made
+- C the problem of inflation rising faster than wages
+- D the difficulty of fair distribution of income
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+Question 2 [1 marks]
+A skilled pastry chef gives up running her own restaurant to take a salaried role in a hotel chain because she prefers stable hours. This decision is most clearly an example of
+- A a change in productivity
+- B specialisation of labour
+- C opportunity cost and non-monetary incentives
+- D an increase in the supply of labour across the economy
 
-Question 1 [2 marks]
-With reference to the role of money and the financial sector, explain one factor that influences the issue.
+Question 3 [1 marks]
+The table shows the output and total cost of a firm. Output: 10, 20, 30, 40. Total cost (£): 100, 180, 240, 320. Over which range of output does the firm experience economies of scale?
+- A 10 to 20
+- B 20 to 30
+- C 30 to 40
+- D Economies of scale do not occur at any output
 
-Question 2 [4 marks]
-With reference to the role of money and the financial sector, explain one mechanism that determines the issue.
+Question 4 [1 marks]
+In a labour market, the wage rate rises after the supply of labour falls. Which of the following is most likely to explain the fall in supply?
+- A An increase in the productivity of workers
+- B A reduction in migration into the industry
+- C An increase in demand for the firm's products
+- D An increase in the firm's total revenue
 
-Question 3 [6 marks]
-With reference to price mechanism and market failure in housing, explain two consequences of the issue.
+Question 5 [1 marks]
+A street-food vendor sells falafel wraps. The vendor raises the price from £5 to £6. Weekly sales fall from 400 to 360 wraps. The PED for the wraps is approximately
+- A 0.5 – price inelastic
+- B 0.5 – price elastic
+- C 2.0 – price inelastic
+- D 2.0 – price elastic
 
-Question 4 [9 marks]
-With reference to the role of money and the financial sector, explain one government response to the issue.
+Question 6 [1 marks]
+Which of the following markets is most likely to experience the greatest price fluctuation following a small change in supply?
+- A A market with price elastic demand
+- B A market with price inelastic demand
+- C A market with unitary elasticity of demand
+- D A market with perfectly elastic demand
 
-Question 5 [12 marks]
-With reference to the role of money and the financial sector, explain one factor that influences the issue.
+Question 7 [1 marks]
+A monopoly is most likely to charge higher prices than a firm in a competitive market because
+- A its costs of production are always higher
+- B it faces many close substitutes
+- C it has significant market power and few or no direct competitors
+- D government regulation forces it to do so
 
-## Section B: Essay (choose ONE)
+Question 8 [1 marks]
+Two goods, X and Y, are complements. The supply of Y falls following a poor harvest. The most likely effect on the market for X is
+- A demand for X falls and the price of X falls
+- B demand for X rises and the price of X rises
+- C supply of X falls and the price of X rises
+- D supply of X rises and the price of X falls
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of scarcity, choice and opportunity cost in households, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 9 [1 marks]
+A firm sells 500 units at a price of £20. Its total costs are £7,500. If it could increase its price to £22 without losing sales, by how much would its profits rise?
+- A £500
+- B £1,000
+- C £2,500
+- D £11,000
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of the role of money and the financial sector, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 10 [1 marks]
+Which of the following best explains why governments provide street lighting rather than the private sector?
+- A Street lighting is highly profitable for private firms
+- B Private firms cannot make a profit from providing street lighting because it is difficult to charge users for it
+- C Street lighting is always cheaper when provided by the public sector
+- D Street lighting creates negative externalities
+
+Question 11 [1 marks]
+A small, independent coffee shop tries to compete with a large chain by offering loyalty schemes, high-quality ingredients and a unique atmosphere. This strategy is best described as
+- A price competition only
+- B collusion with the chain
+- C non-price competition and product differentiation
+- D perfect competition
+
+Question 12 [1 marks]
+A fall in interest rates is most likely to
+- A reduce consumer spending and reduce business investment
+- B increase consumer spending and increase business investment
+- C increase the incentive to save
+- D have no effect on the labour market
+
+Question 13 [1 marks]
+A firm increases output from 100 to 150 units. Total cost rises from £2,000 to £2,500. The change in average cost per unit is
+- A a fall of £3.33
+- B a rise of £3.33
+- C a fall of £10
+- D a rise of £10
+
+Question 14 [1 marks]
+When signalling and incentive functions of price work effectively,
+- A consumers ignore price changes
+- B resources move towards markets where prices are rising and profits are higher
+- C governments must set prices for all goods
+- D producers always lose out to consumers
+
+Question 15 [1 marks]
+Which of the following is a correct statement about an insurance company?
+- A It sets the base rate of interest for the economy
+- B It pools risk by collecting premiums and paying out claims when insured events occur
+- C It is always owned by the government
+- D It only provides loans to households
+
+Question 16 [1 marks]
+A government wants to reduce carbon emissions from a heavily polluting industry. Which of the following is most likely to internalise the external cost of the pollution?
+- A A subsidy paid to producers of the polluting good
+- B A tax per unit placed on producers reflecting the cost of pollution
+- C A price ceiling set below the equilibrium price
+- D Removing all regulation of the industry
+
+Question 17 [1 marks]
+In a labour market with perfectly inelastic labour supply, an increase in demand for labour will cause
+- A wages to rise while the number employed stays the same
+- B wages to stay the same while the number employed rises
+- C both wages and employment to fall
+- D no change at all
+
+Question 18 [1 marks]
+An economy is described as having moved from the primary sector to the tertiary sector over the last fifty years. This means that a larger share of output now comes from
+- A farming, mining and fishing
+- B manufacturing and construction
+- C services such as finance and retail
+- D household consumption only
+
+Question 19 [1 marks]
+A firm's productivity rises faster than its wages. In the long run, this is most likely to
+- A reduce the firm's unit labour costs and improve its competitiveness
+- B increase the firm's unit labour costs and harm its competitiveness
+- C have no impact on the firm's costs
+- D always reduce the firm's profits
+
+Question 20 [1 marks]
+A small building firm decides to become a specialist fitter of solar panels rather than doing general building work. This is most likely to
+- A reduce the firm's ability to benefit from rising demand for green technology
+- B increase the firm's dependence on a single market, raising its exposure to changes in that market
+- C guarantee higher profits in all market conditions
+- D remove all risk from the business
+
+## Section B — Data Response
+
+**Extract 1 — The UK housing market:** UK house prices have risen sharply over the last decade. Demand has been strong (population growth, low interest rates, buy-to-let investors). Supply has lagged because of planning restrictions, shortages of skilled construction workers and rising material costs. Demand and short-run supply are both price inelastic. The Bank of England has recently raised interest rates, making mortgages more expensive.
+
+Question 21a [2 marks]
+Explain, using an example, what is meant by price inelastic supply.
+
+Question 21b [2 marks]
+Explain one factor, other than interest rates, that affects demand for UK housing.
+
+Question 21c [6 marks]
+Using a diagram, analyse the effect on the housing market of a rise in mortgage interest rates.
+
+Question 21di [2 marks]
+Using Extract 1, explain one reason why house prices have risen sharply over the last decade.
+
+Question 21dii [2 marks]
+State two factors that limit the supply of new homes in the UK.
+
+Question 21diii [6 marks]
+Evaluate the extent to which rising interest rates are likely to slow the rise in UK house prices. Use the information given in Extract 1 and your own knowledge.
+
+**Extract 2 — A car parts manufacturer:** Durrell Engineering supplies parts to three large car companies. Aisha has been offered a contract to supply 20,000 units of an electric-motor component at £45 per unit. Costs: Raw materials £360,000; Skilled labour £240,000; Machine running costs £120,000; Factory overheads (fixed) £150,000. Aisha is considering further investment but is concerned about taking on debt when interest rates are high.
+
+Question 22a [2 marks]
+Explain what is meant by the factor market.
+
+Question 22b [2 marks]
+Calculate the profit or loss Durrell Engineering will make on the contract. Show your working.
+
+Question 22c [6 marks]
+Analyse the advantages for Durrell Engineering of making a profit on this contract.
+
+Question 22di [2 marks]
+Explain what is meant by productivity.
+
+Question 22dii [2 marks]
+State two risks for Durrell Engineering of taking on more debt when interest rates are high.
+
+Question 22diii [6 marks]
+Evaluate the extent to which Durrell Engineering should take on further debt to invest in new capital equipment when interest rates are high. Use the information given in Extract 2 and your own knowledge.
+
+**Extract 3 — A multinational coffee chain:** Bearcup operates over 900 stores. A global shortage of coffee beans has pushed up its costs; demand for premium coffee remains price inelastic. Six years ago Bearcup borrowed £20 million at 2.5%, meaning monthly interest of £41,666.67. The rate will rise to 5.5% next month. CEO Harold wants to specialise further in premium coffee; other managers prefer non-price competition (loyalty schemes, in-store experience).
+
+Question 23a [2 marks]
+Explain what is meant by price elasticity of demand.
+
+Question 23b [2 marks]
+Explain one example of non-price competition Bearcup could use against independent coffee shops.
+
+Question 23c [6 marks]
+Using a diagram, analyse the likely impact on Bearcup of rising costs of coffee beans, given that demand for its premium coffee is price inelastic.
+
+Question 23di [2 marks]
+Calculate Bearcup's new monthly interest payment when the interest rate rises to 5.5%. Show your working.
+
+Question 23dii [2 marks]
+Explain the opportunity cost to Bearcup of using its profits to repay its loan early.
+
+Question 23diii [6 marks]
+Evaluate whether Bearcup should focus on increased specialisation in premium coffee rather than on non-price competition. Use the information given in Extract 3 and your own knowledge.
+
+**TOTAL FOR PAPER = 80 MARKS**
 `,
   },
   {
     id: "ocrgcse-p2-a",
     subject: "ocr-gcse" as any,
     paper: "2",
-    title: "Paper 2 — Set A",
-    description: "The National & International Economy. Set A — core practice.",
+    title: "Paper 2 — Moderate",
+    description: "National and International Economics (J205/02) — Moderate tier predicted paper.",
     totalMarks: 80,
-    content: `# OCR GCSE Economics (J205) (J205/02) — The National & International Economy — Predicted Paper Set A
+    content: `# OCR GCSE (9–1) Economics — J205/02 National and International Economics — Predicted Paper (Moderate)
 
-**Time: 90 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer all questions. The marks for each question are shown in brackets [ ]. Quality of extended response is assessed in questions marked with an asterisk (*).
 
-## Section A: Data Response
+## Section A — Multiple Choice
 
-**Extract 1 — Uk economic objectives and the policy mix:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+Question 1 [1 marks]
+Which of the following is the best definition of economic growth?
+- A A fall in the level of unemployment in a country
+- B A rise in the level of real GDP in a country
+- C An increase in the general price level in a country
+- D An increase in the value of a country's currency
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+Question 2 [1 marks]
+The UK inflation rate is measured using CPI. Which statement about CPI is correct?
+- A CPI includes the prices of UK exports of goods and services
+- B CPI measures the average change in prices of a basket of consumer goods and services
+- C CPI only measures the prices of food and energy
+- D CPI stands for Customer Price Indicator
 
-Question 1 [2 marks]
-With reference to UK economic objectives and the policy mix, explain two consequences of the issue.
+Question 3 [1 marks]
+Which of the following is most likely to be an example of a positive externality from education?
+- A A student paying fees to attend a university course
+- B A student receiving a qualification at the end of a course
+- C A well-educated workforce raising the productivity of the wider economy
+- D A university advertising its courses to potential students
 
-Question 2 [4 marks]
-With reference to UK economic objectives and the policy mix, explain one government response to the issue.
+Question 4 [1 marks]
+If a country removes a tariff on imported goods, the most likely short-term effect is
+- A a decrease in consumer choice
+- B a fall in the price of imported goods to consumers
+- C an increase in domestic producers' profits in that industry
+- D an increase in the country's tariff revenue
 
-Question 3 [6 marks]
-With reference to international trade and protectionism, explain one factor that influences the issue.
+Question 5 [1 marks]
+Inflation rates: J 6.2% → 2.1%; K 1.8% → −0.4%; L 4.0% → 4.0%; M 9.1% → 2.0%. In which country did the general price level fall between 2023 and 2024?
+- A Country J
+- B Country K
+- C Country L
+- D Country M
 
-Question 4 [9 marks]
-With reference to UK economic objectives and the policy mix, explain one mechanism that determines the issue.
+Question 6 [1 marks]
+A current account deficit is most likely to occur when
+- A a country's exports of goods and services are greater than its imports
+- B a country's imports of goods and services are greater than its exports
+- C a country's government spends less than it receives in taxes
+- D a country's population saves more than it invests
 
-Question 5 [12 marks]
-With reference to exchange rates and the UK's trade position, explain two consequences of the issue.
+Question 7 [1 marks]
+Which of the following is the most likely cause of demand-pull inflation in the UK?
+- A A fall in productivity in UK manufacturing firms
+- B A rise in consumer confidence leading to more consumer spending
+- C A rise in the global price of crude oil
+- D A rise in wage costs in UK services
 
-## Section B: Essay (choose ONE)
+Question 8 [1 marks]
+UK quarterly real GDP (index, 2019 Q1 = 100): 2019 Q1 100; 2019 Q4 100.7; 2020 Q2 78.3; 2020 Q4 91.5; 2021 Q4 99.2. The data show that real GDP in the UK
+- A had fully recovered to its 2019 Q1 level by the end of 2021
+- B fell sharply in 2020 Q2 before partially recovering
+- C grew steadily throughout the period shown
+- D was at its lowest level in 2019 Q4
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of UK economic objectives and the policy mix, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 9 [1 marks]
+The UK government funds the NHS from taxation. The opportunity cost of a £1 million increase in NHS spending is
+- A the £1 million of tax revenue raised from households and firms
+- B the alternative goods and services that £1 million could have been spent on
+- C the number of additional patients the NHS can treat with £1 million
+- D the wages paid to NHS staff employed with the £1 million
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of exchange rates and the UK's trade position, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 10 [1 marks]
+The Human Development Index (HDI) measures development using three indicators. Which of the following is not one of the three indicators?
+- A GDP per capita (gross national income per person)
+- B Life expectancy at birth
+- C Mean and expected years of schooling
+- D The rate of unemployment
+
+Question 11 [1 marks]
+Which of the following is most likely to cause long-run economic growth in the UK?
+- A A fall in the value of sterling against the US dollar
+- B A rise in consumer confidence in the short run
+- C Increased investment in infrastructure and skills training
+- D Increased government borrowing to fund current spending
+
+Question 12 [1 marks]
+Which of the following would be recorded on the UK's current account of the balance of payments?
+- A A French firm buying shares in a UK-listed company
+- B A UK consumer buying a car made in Germany
+- C A UK pension fund buying government bonds issued by Japan
+- D A US firm building a new factory in the UK
+
+Question 13 [1 marks]
+A UK tourist plans a holiday to the USA costing $2,100. When booking the rate is £1 = $1.25; by the time they pay it is £1 = $1.50. Compared with the price expected when booking, the final price in pounds will be
+- A £280 lower
+- B £280 higher
+- C £420 lower
+- D £420 higher
+
+Question 14 [1 marks]
+Globalisation is best described as
+- A a government policy to protect domestic producers from foreign competition
+- B the growing interdependence of countries through trade, investment and the movement of labour
+- C the process of a country moving to a floating exchange rate
+- D the process of removing all taxes on consumer spending
+
+Question 15 [1 marks]
+The UK government imposes an indirect tax on cigarettes to correct a negative externality. This policy works through
+- A the demand curve shifting to the right as consumer spending falls
+- B the demand curve shifting to the left as taxes raise the price of substitutes
+- C the supply curve shifting to the left leading to higher prices and lower quantity
+- D the supply curve shifting to the right as output expands
+
+Question 16 [1 marks]
+The UK government runs a public information campaign about the benefits of exercise. A reason this policy may fail to achieve its aim is that
+- A consumers may ignore or distrust the information provided
+- B public information campaigns are always free to run
+- C the supply of exercise services is perfectly inelastic
+- D there is no positive externality from exercise
+
+Question 17 [1 marks]
+Which of the following is a benefit of international trade for UK consumers?
+- A An improvement in the UK's current account surplus
+- B An increase in the corporation tax revenue collected by HMRC
+- C Greater variety and lower prices of goods and services available
+- D Increased economies of scale for UK producers
+
+Question 18 [1 marks]
+£1 in US dollars: Jan 2019 1.30; Jan 2020 1.31; Sep 2022 1.07; Jan 2024 1.27. Which statement best describes the change in sterling between January 2020 and September 2022?
+- A The pound appreciated sharply against the dollar
+- B The pound depreciated sharply against the dollar
+- C The dollar depreciated sharply against the pound
+- D The exchange rate was roughly unchanged
+
+Question 19 [1 marks]
+A trade union negotiates a 7% pay rise for its members, while their productivity rises by 2%. The most likely consequence is
+- A a fall in cost-push inflation
+- B a fall in imports
+- C a rise in cost-push inflation
+- D a rise in consumer confidence
+
+Question 20 [1 marks]
+A local council invests in a new public park in a deprived area. Which of the following is the clearest example of an environmental sustainability benefit?
+- A A fall in the council's tax revenue from the area
+- B An increase in the number of children attending local schools
+- C Improved local biodiversity and lower urban air pollution
+- D Lower house prices near the new park
+
+## Section B — Data Response
+
+**Extract 1 — UK inflation and the response of the Bank of England:** UK CPI inflation rose sharply from 2021, peaking in 2022. The Bank of England raised Bank Rate over the period. Year, CPI inflation (%), Bank Rate at year-end (%): 2021, 2.6, 0.25; 2022, 9.1, 3.50; 2023, 7.3, 5.25; 2024, 2.5, 4.75.
+
+Question 21a [2 marks]
+Using Extract 1, explain the trend in the UK CPI inflation rate between 2021 and 2023.
+
+Question 21b [2 marks]
+Using Extract 1, calculate the change in Bank Rate between the end of 2021 and the end of 2023. Show your working.
+
+Question 21c [6 marks]
+Using the information in Extract 1, analyse how rising interest rates between 2021 and 2023 might have affected UK consumer spending.
+
+Question 21di [2 marks]
+Explain what is meant by the term 'real wages'.
+
+Question 21dii [2 marks]
+Other than inflation, state two economic objectives of the UK government.
+
+Question 21diii [6 marks]
+Evaluate the consequences for low-income households of a period of high inflation. Use the information given in Extract 1 and your own knowledge.
+
+**Extract 2 — UK unemployment and regional labour markets:** Selected 2024 data — Region, Unemployment rate (%), Inactivity rate (%), Employment rate (%): UK average, 4.3, 21.8, 74.6; South East, 3.4, 18.9, 78.5; North East, 5.8, 25.6, 70.3; Wales, 4.2, 25.1, 71.8.
+
+Question 22a [2 marks]
+Using Extract 2, explain how the UK unemployment rate compares with the unemployment rate in the North East of England in 2024.
+
+Question 22b [2 marks]
+Using Extract 2, calculate the difference between the employment rate in the South East and the employment rate in the North East in 2024. Show your working.
+
+Question 22c [6 marks]
+Using the information in Extract 2, analyse how a fall in the UK unemployment rate might affect the UK government's budget.
+
+Question 22di [2 marks]
+Explain what is meant by 'structural unemployment'.
+
+Question 22dii [2 marks]
+State two types of unemployment other than structural unemployment.
+
+Question 22diii [6 marks]
+Evaluate the consequences of persistently high unemployment for workers in a region such as the North East of England. Use the information given in Extract 2 and your own knowledge.
+
+**Extract 3 — UK international trade and the value of the pound:** Year, Current account (% of GDP), £1 = $, £1 = €: 2021, −0.5, 1.38, 1.17; 2022, −2.6, 1.21, 1.17; 2023, −2.2, 1.24, 1.15; 2024, −2.0, 1.27, 1.17.
+
+Question 23a [2 marks]
+Using Extract 3, explain the change in the UK's current account balance between 2021 and 2024.
+
+Question 23b [2 marks]
+Using Extract 3, calculate the percentage change in the value of £1 in US dollars between 2022 and 2024. Show your working.
+
+Question 23c [6 marks]
+Using the information in Extract 3, analyse how a depreciation of sterling against the US dollar could affect UK exporters.
+
+Question 23di [2 marks]
+Explain what is meant by a 'depreciation' of a currency.
+
+Question 23dii [2 marks]
+Other than tariffs, state two policies a government could use to reduce a current account deficit.
+
+Question 23diii [6 marks]
+Evaluate the extent to which a sustained depreciation of sterling would be beneficial for the UK economy. Use the information given in Extract 3 and your own knowledge.
+
+**TOTAL FOR PAPER = 80 MARKS**
 `,
   },
   {
     id: "ocrgcse-p2-b",
     subject: "ocr-gcse" as any,
     paper: "2",
-    title: "Paper 2 — Set B",
-    description: "The National & International Economy. Set B — stretch — applied scenarios.",
+    title: "Paper 2 — Hard",
+    description: "National and International Economics (J205/02) — Hard tier predicted paper.",
     totalMarks: 80,
-    content: `# OCR GCSE Economics (J205) (J205/02) — The National & International Economy — Predicted Paper Set B
+    content: `# OCR GCSE (9–1) Economics — J205/02 National and International Economics — Predicted Paper (Hard)
 
-**Time: 90 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer all questions. The marks for each question are shown in brackets [ ]. Quality of extended response is assessed in questions marked with an asterisk (*).
 
-## Section A: Data Response
+## Section A — Multiple Choice
 
-**Extract 1 — International trade and protectionism:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+Question 1 [1 marks]
+Real GDP per capita is not a perfect measure of living standards because
+- A it does not measure the number of people in a country
+- B it does not take account of income distribution, unpaid work or environmental quality
+- C it does not use market prices to value output
+- D it includes the value of exports and imports
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+Question 2 [1 marks]
+Which of the following is most likely to cause cost-push inflation in the UK?
+- A A cut in income tax that raises households' disposable income
+- B A rise in consumer confidence following a fall in unemployment
+- C A sharp rise in global crude oil prices
+- D A rise in government spending on infrastructure
 
-Question 1 [2 marks]
-With reference to international trade and protectionism, explain one government response to the issue.
+Question 3 [1 marks]
+Private MC £45/MWh; External cost £30/MWh; Social MC £75/MWh. To internalise the negative externality fully, the UK government should impose a tax per MWh of
+- A £15
+- B £30
+- C £45
+- D £75
 
-Question 2 [4 marks]
-With reference to international trade and protectionism, explain one factor that influences the issue.
+Question 4 [1 marks]
+A country specialises in the production of wheat according to the theory of comparative advantage. This means the country
+- A can produce more wheat in total than any other country
+- B has the lowest absolute cost of producing wheat
+- C has the lowest opportunity cost of producing wheat
+- D imports more wheat than it exports
 
-Question 3 [6 marks]
-With reference to international trade and protectionism, explain one mechanism that determines the issue.
+Question 5 [1 marks]
+UK CPI weights / annual price change in 2023: Housing & utilities 29% / +12.6%; Food & drink 12% / +16.5%; Transport 14% / +1.1%; All other categories 45% / +3.2%. The weighted contribution of 'Food & drink' to the headline inflation rate was approximately
+- A 1.2 percentage points
+- B 2.0 percentage points
+- C 4.1 percentage points
+- D 16.5 percentage points
 
-Question 4 [9 marks]
-With reference to international trade and protectionism, explain two consequences of the issue.
+Question 6 [1 marks]
+A current account surplus is most likely to cause
+- A a depreciation of the country's exchange rate
+- B a fall in the country's foreign exchange reserves
+- C an appreciation of the country's exchange rate
+- D an increase in the country's debt to the rest of the world
 
-Question 5 [12 marks]
-With reference to exchange rates and the UK's trade position, explain one government response to the issue.
+Question 7 [1 marks]
+A small open economy is experiencing rising inflation and a worsening current-account deficit. Which combination of policies is most consistent with the economic theory taught in this specification to address both problems?
+- A A fall in interest rates and a cut in income tax
+- B A rise in interest rates and a cut in government spending
+- C A rise in interest rates and an expansionary fiscal policy
+- D A rise in tariffs on imports and a cut in interest rates
 
-## Section B: Essay (choose ONE)
+Question 8 [1 marks]
+UK exports / imports of goods (% of GDP): 2014 17.9 / 24.3; 2019 17.4 / 25.8; 2023 20.2 / 27.5. Between 2014 and 2023
+- A the UK had a trade surplus in goods throughout the period
+- B the UK's trade deficit in goods (as a % of GDP) widened
+- C UK exports of goods fell in every year shown
+- D UK imports of goods were smaller than UK exports of goods
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of UK economic objectives and the policy mix, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 9 [1 marks]
+Education is under-provided by the free market because it
+- A has a positive externality, so social benefit exceeds private benefit
+- B has a negative externality, so social cost exceeds private cost
+- C is a private good, so no one has an incentive to pay for it
+- D is a luxury good with low income elasticity of demand
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of exchange rates and the UK's trade position, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 10 [1 marks]
+The Human Development Index (HDI) is often preferred to GDP per capita as a measure of development because
+- A HDI is updated more frequently than GDP
+- B HDI captures health and education as well as income
+- C HDI ignores the distribution of income
+- D HDI is denominated in a single currency
+
+Question 11 [1 marks]
+Which of the following supply-side policies would most directly raise the long-run productive potential of the UK economy?
+- A A cut in interest rates by the Bank of England
+- B A temporary cut in VAT for six months
+- C An increase in the personal tax allowance
+- D An increase in funding for apprenticeships and skills training
+
+Question 12 [1 marks]
+Which of the following is recorded on the UK's financial account (not its current account) of the balance of payments?
+- A A UK consumer spending money on holiday in Spain
+- B A Japanese car firm opening a new factory in the UK
+- C Dividends received by a UK investor from shares held in a US company
+- D Remittances sent by overseas workers living in the UK to their home country
+
+Question 13 [1 marks]
+The Bank of England raises Bank Rate by 0.5 percentage points. The most likely effect is that
+- A the supply curve in the economy shifts right
+- B both consumer spending and business investment fall
+- C the exchange rate depreciates against major currencies
+- D unemployment falls in the short run
+
+Question 14 [1 marks]
+A government imposes a £2 per packet specific tax on cigarettes. Demand for cigarettes is price inelastic. The most likely incidence of the tax is that
+- A consumers bear most of the tax burden through higher prices
+- B producers absorb most of the tax burden in lower margins
+- C the tax is shared equally between consumers and producers
+- D the market for cigarettes shuts down
+
+Question 15 [1 marks]
+A country adopts a floating exchange rate. An increase in foreign demand for the country's exports will most likely cause
+- A the demand curve for the currency to shift left and the exchange rate to fall
+- B the demand curve for the currency to shift right and the exchange rate to rise
+- C the supply curve shifts right and the equilibrium quantity increases
+- D the supply curve shifts left and the equilibrium price rises
+
+Question 16 [1 marks]
+Information provision may fail to correct a market failure because
+- A consumers are always fully informed and respond rationally
+- B consumers may be unwilling to change behaviour even when fully informed
+- C providing information always raises the price of the good
+- D the market failure disappears as soon as information is available
+
+Question 17 [1 marks]
+The law of comparative advantage states that
+- A countries should produce only the goods they can produce with the lowest absolute cost
+- B countries should produce the goods in which they have the lowest opportunity cost and trade for the rest
+- C countries should produce all the goods they consume to protect domestic producers
+- D countries should always run a balance of trade surplus
+
+Question 18 [1 marks]
+£1 in euros: 2015 €1.38; 2017 €1.14; 2020 €1.13; 2023 €1.15. The sharp depreciation of sterling against the euro between 2015 and 2017 is most likely to be associated with
+- A the 2016 UK referendum on EU membership
+- B the COVID-19 pandemic in early 2020
+- C the Bank of England's quantitative easing programme
+- D the 2022 Russian invasion of Ukraine
+
+Question 19 [1 marks]
+In an economy close to full employment, an unexpected rise in consumer confidence is most likely to lead to
+- A a fall in GDP and a fall in inflation
+- B a rise in GDP and a rise in inflation
+- C a rise in unemployment and a fall in inflation
+- D no change in either GDP or inflation
+
+Question 20 [1 marks]
+Which of the following best illustrates the difference between social and environmental sustainability?
+- A A new motorway that reduces congestion but raises local air pollution
+- B A new motorway that creates jobs and improves local air quality
+- C A new park that improves biodiversity and local well-being
+- D A new tax on carbon emissions that raises government revenue
+
+## Section B — Data Response
+
+**Extract 1 — Productivity, real incomes and the cost of living in the UK:** UK labour productivity growth has been weak. Real wages stagnated through most of the 2010s and fell sharply when CPI inflation surged. Year, Nominal wage growth (%), CPI inflation (%), Real wage growth (%): 2021, +4.3, +2.6, +1.7; 2022, +6.3, +9.1, −2.8; 2023, +7.3, +7.3, 0.0; 2024, +5.5, +2.5, +2.9.
+
+Question 21a [2 marks]
+Using Extract 1, explain the change in UK real wages between 2021 and 2022.
+
+Question 21b [2 marks]
+Using Extract 1, calculate the approximate real wage growth in a year when nominal wages grow by 4.5% and inflation is 6.0%. Show your working.
+
+Question 21c [6 marks]
+Using the information in Extract 1, analyse how a period of stagnant real wages is likely to affect aggregate demand in the UK economy.
+
+Question 21di [2 marks]
+Explain what is meant by 'labour productivity'.
+
+Question 21dii [2 marks]
+State two supply-side policies that could raise UK labour productivity.
+
+Question 21diii [6 marks]
+Evaluate the extent to which lower-income households are more harmed than higher-income households by a period of high inflation. Use the information given in Extract 1 and your own knowledge.
+
+**Extract 2 — UK public finances and fiscal policy choices:** Selected data (£bn) — Government revenue 1,050; Government spending 1,180; Public sector net debt 2,600; Debt interest paid (annual) 105; Nominal GDP 2,600.
+
+Question 22a [2 marks]
+Using Extract 2, explain what the data show about the UK government's budget position.
+
+Question 22b [2 marks]
+Using Extract 2, calculate the UK's debt-to-GDP ratio. Show your working.
+
+Question 22c [6 marks]
+Using the information in Extract 2, analyse how higher debt interest payments could affect the UK government's ability to fund public services.
+
+Question 22di [2 marks]
+Explain what is meant by 'fiscal policy'.
+
+Question 22dii [2 marks]
+Other than infrastructure spending, state two fiscal policy measures a government could use to raise economic growth.
+
+Question 22diii [6 marks]
+Evaluate whether cutting UK government spending is the most appropriate way to reduce the national debt. Use the information given in Extract 2 and your own knowledge.
+
+**Extract 3 — Interest rates, the exchange rate and UK trade:** Year, Bank Rate (%), £1 = $, Current account (% of GDP): 2021, 0.25, 1.38, −0.5; 2022, 3.50, 1.21, −2.6; 2023, 5.25, 1.24, −3.5; 2024, 4.75, 1.27, −3.3.
+
+Question 23a [2 marks]
+Using Extract 3, explain the change in UK Bank Rate between 2021 and 2023.
+
+Question 23b [2 marks]
+Using Extract 3, calculate the percentage change in the dollar value of one pound between 2021 and 2024. Show your working.
+
+Question 23c [6 marks]
+Using the information in Extract 3, analyse how a rise in UK interest rates could lead to an appreciation of sterling.
+
+Question 23di [2 marks]
+Explain what is meant by an 'appreciation' of a currency.
+
+Question 23dii [2 marks]
+Other than controlling inflation, state two objectives of UK monetary policy.
+
+Question 23diii [6 marks]
+Evaluate the extent to which a sustained appreciation of sterling would harm the UK economy. Use the information given in Extract 3 and your own knowledge.
+
+**TOTAL FOR PAPER = 80 MARKS**
 `,
   },
   {
     id: "ocrgcse-p2-c",
     subject: "ocr-gcse" as any,
     paper: "2",
-    title: "Paper 2 — Set C",
-    description: "The National & International Economy. Set C — challenge — synoptic & evaluative.",
+    title: "Paper 2 — Advanced",
+    description: "National and International Economics (J205/02) — Advanced tier predicted paper.",
     totalMarks: 80,
-    content: `# OCR GCSE Economics (J205) (J205/02) — The National & International Economy — Predicted Paper Set C
+    content: `# OCR GCSE (9–1) Economics — J205/02 National and International Economics — Predicted Paper (Advanced)
 
-**Time: 90 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer all questions. The marks for each question are shown in brackets [ ]. Quality of extended response is assessed in questions marked with an asterisk (*).
 
-## Section A: Data Response
+## Section A — Multiple Choice
 
-**Extract 1 — Exchange rates and the uk's trade position:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+Question 1 [1 marks]
+A country experiences negative real GDP growth for two consecutive quarters, a rising unemployment rate and an inflation rate above target. The country is most accurately described as experiencing
+- A an inflationary boom
+- B a demand-side expansion
+- C a supply-side boom
+- D stagflation
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+Question 2 [1 marks]
+Which of the following statements about CPI and the real burden of inflation on low-income households is correct?
+- A CPI overstates the inflation rate experienced by low-income households because it excludes housing costs
+- B CPI understates the inflation rate experienced by low-income households because they spend a larger share of their income on essentials
+- C CPI weights are identical for every household so the effective inflation rate is the same across the income distribution
+- D CPI is calculated only from the spending patterns of the top 10% of the income distribution
 
-Question 1 [2 marks]
-With reference to exchange rates and the UK's trade position, explain one factor that influences the issue.
+Question 3 [1 marks]
+Marginal private cost £20; marginal external cost £8. Free-market quantity Q1; socially optimal quantity Q2. Which statement is correct?
+- A Q1 > Q2, and the free market over-produces the good
+- B Q1 < Q2, and the free market under-produces the good
+- C Q1 = Q2, because external costs do not affect output
+- D Q1 > Q2, only if demand is perfectly elastic
 
-Question 2 [4 marks]
-With reference to exchange rates and the UK's trade position, explain one mechanism that determines the issue.
+Question 4 [1 marks]
+A country with a comparative advantage in capital-intensive goods chooses to impose a tariff on imported consumer electronics. The most likely long-run consequence is
+- A a permanent increase in the country's real GDP
+- B a reallocation of resources away from the country's most efficient industries
+- C an improvement in the country's terms of trade
+- D an increase in total world output
 
-Question 3 [6 marks]
-With reference to international trade and protectionism, explain two consequences of the issue.
+Question 5 [1 marks]
+Quarterly real GDP / CPI inflation: Q1 +0.6 / +3.1; Q2 +0.1 / +6.5; Q3 −0.2 / +9.4; Q4 −0.4 / +8.7. The data are most consistent with the country experiencing
+- A a demand-pull boom caused by rising consumer confidence
+- B deflation caused by a fall in aggregate demand
+- C stagflation caused by a negative supply-side shock
+- D strong export-led growth
 
-Question 4 [9 marks]
-With reference to exchange rates and the UK's trade position, explain one government response to the issue.
+Question 6 [1 marks]
+A persistent current-account deficit financed by short-term capital inflows is risky because
+- A short-term capital can be withdrawn rapidly if investor sentiment changes, forcing a sharp depreciation
+- B the country's financial account must balance to zero by definition
+- C short-term capital inflows automatically eliminate the deficit
+- D the country will always run a matching surplus on its capital account
 
-Question 5 [12 marks]
-With reference to exchange rates and the UK's trade position, explain one factor that influences the issue.
+Question 7 [1 marks]
+Following a large negative supply-side shock such as a sharp rise in global energy prices, a central bank faces a difficult trade-off because
+- A raising interest rates deepens the fall in output but is needed to anchor inflation expectations
+- B raising interest rates lowers inflation and raises output at the same time
+- C cutting interest rates lowers inflation and lowers unemployment
+- D monetary policy always acts with no time lag
 
-## Section B: Essay (choose ONE)
+Question 8 [1 marks]
+UK effective exchange rate index (2010=100) / current-account deficit (% of GDP): 2014 102 / −5.1; 2016 90 / −5.4; 2019 83 / −3.6; 2024 80 / −2.0. Over 2014 to 2024 the data are most consistent with
+- A a sustained depreciation of sterling accompanying a gradual narrowing of the current-account deficit
+- B a sustained appreciation of sterling causing the current-account deficit to widen
+- C a fixed exchange rate regime throughout the period
+- D a J-curve effect that has not yet reversed
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of UK economic objectives and the policy mix, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 9 [1 marks]
+A negative externality arises from the consumption of a demerit good. A government that wants to internalise this externality should
+- A impose an indirect tax equal to the marginal external cost at the socially optimal quantity
+- B provide a subsidy equal to the marginal external benefit at the socially optimal quantity
+- C ban consumption of the good entirely regardless of the size of the external cost
+- D allow the free market to set the price, because the market always corrects external costs
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of exchange rates and the UK's trade position, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
-`,
-  },
-  {
-    id: "ocrgcse-p3-a",
-    subject: "ocr-gcse" as any,
-    paper: "3",
-    title: "Paper 3 — Set A",
-    description: "Synoptic Applied Economics. Set A — core practice.",
-    totalMarks: 60,
-    content: `# OCR GCSE Economics (J205) (J205/03) — Synoptic Applied Economics — Predicted Paper Set A
+Question 10 [1 marks]
+Which of the following best explains why GDP per capita may overstate the rise in living standards in a rapidly developing economy?
+- A GDP per capita excludes foreign direct investment
+- B Rapid growth may be accompanied by rising environmental costs and inequality that GDP per capita does not capture
+- C GDP per capita is a flow variable while living standards are a stock variable
+- D GDP per capita is measured in nominal rather than real terms
 
-**Time: 75 minutes | Total: 60 marks**
+Question 11 [1 marks]
+An economy's long-run aggregate supply (LRAS) curve is most likely to shift to the right following
+- A a fall in the rate of interest by the central bank
+- B a temporary cut in consumer taxes
+- C an increase in the country's labour force and capital stock
+- D a rise in the rate of CPI inflation
 
-Answer ALL questions in Section A and ONE question from Section B.
+Question 12 [1 marks]
+A UK resident receives £25,000 in dividends from shares in a US company and a UK company builds a new factory in Germany worth £150 million. In the UK balance of payments, these two transactions are recorded as
+- A the dividend in the current account; the factory in the financial account
+- B both transactions in the current account
+- C both transactions in the financial account
+- D the dividend in the capital account; the factory in the current account
 
-## Section A: Data Response
+Question 13 [1 marks]
+The Marshall–Lerner condition states that a depreciation of a country's currency will improve the current account only if
+- A the sum of the price elasticities of demand for exports and imports is greater than one
+- B the price elasticity of demand for imports is less than one
+- C domestic inflation exceeds foreign inflation
+- D the country has a floating exchange rate
 
-**Extract 1 — The labour market and the national living wage:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+Question 14 [1 marks]
+Which of the following best describes a criticism of globalisation from the perspective of workers in a developed economy?
+- A Globalisation always reduces consumer choice
+- B Globalisation creates no employment in services or finance
+- C Globalisation can accelerate the loss of jobs in import-competing industries
+- D Globalisation raises transport costs and lowers international trade
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+Question 15 [1 marks]
+A government imposes a tariff of 20% on imported steel to support domestic producers. The most likely effects on consumer and producer surplus in the domestic steel market are
+- A a rise in both consumer and producer surplus
+- B a fall in both consumer and producer surplus
+- C a rise in producer surplus, a fall in consumer surplus, and a deadweight welfare loss
+- D a fall in producer surplus and a rise in consumer surplus
 
-Question 1 [2 marks]
-With reference to the labour market and the National Living Wage, explain two consequences of the issue.
+Question 16 [1 marks]
+Behavioural economics suggests that information provision alone may fail to correct market failure because
+- A consumers are always perfectly rational and immediately update their choices
+- B consumers exhibit cognitive biases such as present bias and status-quo bias that reduce responsiveness to information
+- C firms have no incentive to provide accurate information
+- D the marginal cost of information provision is always greater than the marginal benefit
 
-Question 2 [4 marks]
-With reference to the labour market and the National Living Wage, explain one government response to the issue.
+Question 17 [1 marks]
+The 'terms of trade' of a country refers to
+- A the ratio of export prices to import prices
+- B the balance of payments on current account
+- C the balance of trade in goods only
+- D the exchange rate of the country's currency
 
-Question 3 [6 marks]
-With reference to environmental economics and the cost of net zero, explain one factor that influences the issue.
+Question 18 [1 marks]
+Sterling effective exchange rate index (Jan 2005 = 100): 2007 105; 2009 80; 2015 95; 2017 77; 2024 80. The two largest falls in the index between 2007 and 2017 are most plausibly explained by
+- A the 2008 global financial crisis and the 2016 EU referendum
+- B the 2008 global financial crisis and the 2020 COVID-19 pandemic
+- C the 2010s eurozone crisis and the 2022 energy shock
+- D the 2008 global financial crisis and the 2024 general election
 
-Question 4 [9 marks]
-With reference to the labour market and the National Living Wage, explain one mechanism that determines the issue.
+Question 19 [1 marks]
+A rise in wages that is not matched by a rise in productivity will most likely
+- A raise real GDP and lower the price level
+- B raise unit labour costs and contribute to cost-push inflation
+- C leave firms' profit margins unchanged
+- D cause the long-run aggregate supply curve to shift right
 
-Question 5 [12 marks]
-With reference to the global economy and emerging markets, explain two consequences of the issue.
+Question 20 [1 marks]
+The concept of 'sustainable development' is best described as
+- A development that meets the needs of the present without compromising the ability of future generations to meet their own needs
+- B any increase in real GDP per capita in the long run
+- C development in which only environmental indicators improve
+- D development funded entirely by government rather than the private sector
 
-## Section B: Essay (choose ONE)
+## Section B — Data Response
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of the labour market and the National Living Wage, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+**Extract 1 — Stagflation risk and the Bank of England's policy dilemma:** Year, CPI inflation (%), Real GDP growth (%), Unemployment rate (%): 2022, 9.1, 4.0, 3.7; 2023, 7.3, 0.3, 4.0; 2024, 2.5, 0.9, 4.3.
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of the global economy and emerging markets, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
-`,
-  },
-  {
-    id: "ocrgcse-p3-b",
-    subject: "ocr-gcse" as any,
-    paper: "3",
-    title: "Paper 3 — Set B",
-    description: "Synoptic Applied Economics. Set B — stretch — applied scenarios.",
-    totalMarks: 60,
-    content: `# OCR GCSE Economics (J205) (J205/03) — Synoptic Applied Economics — Predicted Paper Set B
+Question 21a [2 marks]
+Using Extract 1, explain what the data show about the UK economy between 2022 and 2023.
 
-**Time: 75 minutes | Total: 60 marks**
+Question 21b [2 marks]
+Using Extract 1, calculate the 'misery index' (inflation rate + unemployment rate) for 2023. Show your working.
 
-Answer ALL questions in Section A and ONE question from Section B.
+Question 21c [6 marks]
+Using the information in Extract 1, analyse how a wage-price spiral could prolong high inflation in the UK.
 
-## Section A: Data Response
+Question 21di [2 marks]
+Explain what is meant by 'stagflation'.
 
-**Extract 1 — Environmental economics and the cost of net zero:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+Question 21dii [2 marks]
+State two limitations of real GDP as a measure of living standards.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+Question 21diii [6 marks]
+Evaluate the extent to which the Bank of England should continue to prioritise its 2% inflation target following a severe external supply-side shock. Use the information given in Extract 1 and your own knowledge.
 
-Question 1 [2 marks]
-With reference to environmental economics and the cost of net zero, explain one government response to the issue.
+**Extract 2 — Development and inequality in an emerging economy:** Income group, Share of national income (%), Average annual income ($): Top 10%, 55, 30,000; Middle 40%, 30, 2,500; Bottom 50%, 15, 1,000; Gini coefficient (0–1): 0.53.
 
-Question 2 [4 marks]
-With reference to environmental economics and the cost of net zero, explain one factor that influences the issue.
+Question 22a [2 marks]
+Using Extract 2, explain what the data suggest about the distribution of income in this emerging economy.
 
-Question 3 [6 marks]
-With reference to environmental economics and the cost of net zero, explain one mechanism that determines the issue.
+Question 22b [2 marks]
+Using Extract 2, calculate the ratio of the average annual income of the top 10% to the average annual income of the bottom 50%. Show your working.
 
-Question 4 [9 marks]
-With reference to environmental economics and the cost of net zero, explain two consequences of the issue.
+Question 22c [6 marks]
+Using the information in Extract 2, analyse how high income inequality could limit the rise in living standards in this economy.
 
-Question 5 [12 marks]
-With reference to the global economy and emerging markets, explain one government response to the issue.
+Question 22di [2 marks]
+Explain what is meant by a 'progressive tax'.
 
-## Section B: Essay (choose ONE)
+Question 22dii [2 marks]
+Other than income tax, state two policies a government could use to reduce income inequality.
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of the labour market and the National Living Wage, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 22diii [6 marks]
+Evaluate the extent to which rapid economic growth is the most effective way to reduce poverty in an emerging economy. Use the information given in Extract 2 and your own knowledge.
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of the global economy and emerging markets, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
-`,
-  },
-  {
-    id: "ocrgcse-p3-c",
-    subject: "ocr-gcse" as any,
-    paper: "3",
-    title: "Paper 3 — Set C",
-    description: "Synoptic Applied Economics. Set C — challenge — synoptic & evaluative.",
-    totalMarks: 60,
-    content: `# OCR GCSE Economics (J205) (J205/03) — Synoptic Applied Economics — Predicted Paper Set C
+**Extract 3 — Protectionism, trade wars and the global economy:** Indicator, 2010, 2024: World exports of goods ($trn), 15.3, 24.0; Share of world goods trade, China (%), 10.4, 14.5; Share of world goods trade, United States (%), 11.4, 9.9; Average applied MFN tariff (%), 3.2, 4.8.
 
-**Time: 75 minutes | Total: 60 marks**
+Question 23a [2 marks]
+Using Extract 3, explain the change in China's share of world goods trade between 2010 and 2024.
 
-Answer ALL questions in Section A and ONE question from Section B.
+Question 23b [2 marks]
+Using Extract 3, calculate the percentage increase in world exports of goods between 2010 and 2024. Show your working.
 
-## Section A: Data Response
+Question 23c [6 marks]
+Using the information in Extract 3, analyse how a tariff imposed by one country on another country's goods can affect both countries.
 
-**Extract 1 — The global economy and emerging markets:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+Question 23di [2 marks]
+Explain what is meant by a 'tariff'.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+Question 23dii [2 marks]
+Other than tariffs, state two forms of protectionism.
 
-Question 1 [2 marks]
-With reference to the global economy and emerging markets, explain one factor that influences the issue.
+Question 23diii [6 marks]
+Evaluate the extent to which free trade always benefits developing economies. Use the information given in Extract 3 and your own knowledge.
 
-Question 2 [4 marks]
-With reference to the global economy and emerging markets, explain one mechanism that determines the issue.
-
-Question 3 [6 marks]
-With reference to environmental economics and the cost of net zero, explain two consequences of the issue.
-
-Question 4 [9 marks]
-With reference to the global economy and emerging markets, explain one government response to the issue.
-
-Question 5 [12 marks]
-With reference to the global economy and emerging markets, explain one factor that influences the issue.
-
-## Section B: Essay (choose ONE)
-
-Question 6 [25 marks]
-Evaluate the view that, in the context of the labour market and the National Living Wage, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
-
-Question 7 [25 marks]
-Evaluate the view that, in the context of the global economy and emerging markets, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+**TOTAL FOR PAPER = 80 MARKS**
 `,
   },
   // ── IB Diploma Economics (IBDP) ──
