@@ -16,225 +16,224 @@ export const multiBoardPredictedPapers: PredictedPaper[] = [
     id: "igcse-p1-c",
     subject: "cambridge-igcse" as any,
     paper: "1",
-    title: "Paper 1 — Set C",
-    description: "Multiple Choice. Set C — challenge — synoptic & evaluative.",
+    title: "Paper 1 Multiple Choice — Set C (Advanced)",
+    description: "Cambridge IGCSE Paper 1 (0455/11). 30 multiple-choice questions — Advanced. Verbatim from official-style mock.",
     totalMarks: 30,
-    content: `# Cambridge IGCSE Economics (0455) (0455/1) — Multiple Choice — Predicted Paper Set C
+    content: `# Cambridge IGCSE Economics (0455/11) — Paper 1 Multiple Choice — Predicted Paper Set C (Advanced)
 
 **Time: 45 minutes | Total: 30 marks**
 
-Answer all 30 questions. Each question carries 1 mark.
+There are thirty questions on this paper. Answer all questions. For each question there are four possible answers A, B, C and D. Choose the one you consider correct. Each correct answer scores one mark.
 
 Question 1 [1 marks]
-Which of the following best describes macroeconomic indicators?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+An economy is on its PPC producing capital goods and consumer goods. Which change in the PPC represents economic growth caused by a rise in labour productivity only?
+- A Inward shift of the whole curve
+- B Outward shift of the whole curve
+- C Outward rotation only of the capital-goods axis
+- D Outward rotation only of the consumer-goods axis
 
 Question 2 [1 marks]
-Which of the following best describes international trade fundamentals?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+A farmer can produce 80 tonnes of wheat OR 50 tonnes of barley on a fixed plot of land. If the farmer currently produces 60 tonnes of wheat, what is the maximum output of barley assuming a linear PPC?
+- A 12.5 tonnes
+- B 15 tonnes
+- C 20 tonnes
+- D 25 tonnes
 
 Question 3 [1 marks]
-Which of the following best describes microeconomic foundations and market mechanisms?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+The cross-price elasticity of demand between butter and margarine is +1.8. What does this indicate?
+- A Butter and margarine are complements
+- B Butter and margarine are close substitutes
+- C Butter and margarine are distant substitutes
+- D Butter and margarine are independent goods
 
 Question 4 [1 marks]
-Which of the following best describes macroeconomic indicators?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+A good has income elasticity of demand of –0.4. If consumers' real incomes rise by 10%, by how much does demand change?
+- A Falls by 0.04%
+- B Falls by 4%
+- C Rises by 4%
+- D Rises by 40%
 
 Question 5 [1 marks]
-Which of the following best describes international trade fundamentals?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+A tax is imposed on a good with perfectly inelastic demand. Who bears the entire tax burden?
+- A Consumers
+- B Government
+- C Producers
+- D Shared equally
 
 Question 6 [1 marks]
-Which of the following best describes microeconomic foundations and market mechanisms?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+In a market, a fall in the equilibrium price is accompanied by an increase in equilibrium quantity. Which single change is consistent with this?
+- A A leftward shift in demand
+- B A leftward shift in supply
+- C A rightward shift in demand
+- D A rightward shift in supply
 
 Question 7 [1 marks]
-Which of the following best describes macroeconomic indicators?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+A market produces a good with a positive externality of consumption. Which best describes the free-market outcome compared with the socially optimum outcome?
+- A Over-production and price too low
+- B Over-production and price too high
+- C Under-production and price too low
+- D Under-production and price too high
 
 Question 8 [1 marks]
-Which of the following best describes international trade fundamentals?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+Which action would most reduce information failure in a market for health insurance?
+- A Banning price comparison websites
+- B Removing consumer protection laws
+- C Requiring firms to publish standardised policy details
+- D Subsidising the sale of insurance products
 
 Question 9 [1 marks]
-Which of the following best describes microeconomic foundations and market mechanisms?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+A firm produces 1 000 units at average variable cost $6 and average fixed cost $4. Total revenue is $12 000. What is the firm's total profit?
+- A –$2 000
+- B $2 000
+- C $6 000
+- D $10 000
 
 Question 10 [1 marks]
-Which of the following best describes macroeconomic indicators?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+Which combination is most likely to cause an increase in labour productivity in a factory?
+- A Cutting workers' training budgets and reducing capital investment
+- B Extending the working day and cutting supervision
+- C Investing in new machinery and providing staff training
+- D Reducing wages and removing performance incentives
 
 Question 11 [1 marks]
-Which of the following best describes international trade fundamentals?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+A monopolist has barriers to entry. Which is least likely to act as a barrier to entry?
+- A Control of a raw material
+- B Economies of scale
+- C Patent rights
+- D Product differentiation through branding in a contestable market
 
 Question 12 [1 marks]
-Which of the following best describes microeconomic foundations and market mechanisms?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+A firm's marginal cost equals its marginal revenue. What does this indicate in the short run?
+- A It is breaking even
+- B It is loss-making
+- C It is profit-maximising
+- D It is revenue-maximising
 
 Question 13 [1 marks]
-Which of the following best describes macroeconomic indicators?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+Which of the following is most likely to lead to a trade union successfully negotiating a wage increase?
+- A A fall in the demand for the firm's product
+- B A high proportion of firm's costs being wages
+- C A highly competitive labour market with low union density
+- D Rising labour productivity and profitable firms
 
 Question 14 [1 marks]
-Which of the following best describes international trade fundamentals?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+A central bank cuts the bank rate. Which is the most likely sequence of effects on the economy?
+- A Loans cheaper → investment and consumption rise → AD rises
+- B Loans dearer → investment falls → AD rises
+- C Money supply falls → prices rise → AD falls
+- D Saving rises → consumption falls → AD falls
 
 Question 15 [1 marks]
-Which of the following best describes microeconomic foundations and market mechanisms?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+Suppose in a given year nominal GDP rises by 7% and inflation is 4%. By approximately how much has real GDP risen?
+- A About 3%
+- B About 4%
+- C About 7%
+- D About 11%
 
 Question 16 [1 marks]
-Which of the following best describes macroeconomic indicators?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+An economy experiences stagflation. Which policy combination is best suited to tackle it?
+- A Expansionary fiscal and expansionary monetary policy
+- B Expansionary fiscal and contractionary monetary policy
+- C Contractionary fiscal and contractionary monetary policy
+- D Supply-side policies to raise productivity and lower costs
 
 Question 17 [1 marks]
-Which of the following best describes international trade fundamentals?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+Higher interest rates are likely to cause which of the following, in the short run?
+- A A currency appreciation and a fall in net exports
+- B A currency depreciation and a rise in net exports
+- C A rise in consumption and investment
+- D An increase in the inflation rate
 
 Question 18 [1 marks]
-Which of the following best describes microeconomic foundations and market mechanisms?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+A progressive tax system helps to reduce income inequality. Which criticism is most commonly levelled against it?
+- A It collects the same percentage from all taxpayers
+- B It disproportionately burdens low-income households
+- C It may discourage work and enterprise at higher income bands
+- D It raises no revenue for the government
 
 Question 19 [1 marks]
-Which of the following best describes macroeconomic indicators?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+A country's government deficit increases sharply during a recession. Which is the most likely automatic cause?
+- A Cut in the rate of indirect taxes
+- B Fall in tax revenue and rise in unemployment benefits
+- C Rise in government capital investment
+- D Rise in interest payments on new debt
 
 Question 20 [1 marks]
-Which of the following best describes international trade fundamentals?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+A country has a high Gini coefficient. What does this indicate?
+- A A highly equal income distribution
+- B A high level of environmental pollution
+- C A highly unequal income distribution
+- D A low rate of economic growth
 
 Question 21 [1 marks]
-Which of the following best describes microeconomic foundations and market mechanisms?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+A country experiences rapid population growth without a matching rise in food production. Which is most likely to result?
+- A A fall in dependency ratio
+- B A rise in real incomes per head
+- C Greater food security
+- D Pressure on living standards and possible food imports
 
 Question 22 [1 marks]
-Which of the following best describes macroeconomic indicators?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+Which chain of events best describes the 'virtuous circle' of development?
+- A High investment → higher productivity → higher incomes → higher saving → more investment
+- B High population → low saving → low investment → low growth
+- C Low investment → low productivity → low incomes → low saving
+- D Rising exports → currency appreciation → falling exports
 
 Question 23 [1 marks]
-Which of the following best describes international trade fundamentals?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+A country is initially in current account balance. If it imposes import tariffs while trading partners retaliate with equal tariffs, what is the most likely result?
+- A An improvement in the current account
+- B Lower domestic prices
+- C No change in trade volumes
+- D A fall in world trade volumes and ambiguous effect on its current account
 
 Question 24 [1 marks]
-Which of the following best describes microeconomic foundations and market mechanisms?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+A country has a floating exchange rate. The central bank does not intervene. A sustained rise in demand for the country's exports will cause:
+- A A depreciation of the currency
+- B An appreciation of the currency
+- C No change in the exchange rate
+- D A fall in domestic prices
 
 Question 25 [1 marks]
-Which of the following best describes macroeconomic indicators?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+A developing country has primary product dependence. Which is the most likely long-term risk to its economy?
+- A Rising export revenues in line with global demand
+- B Stable terms of trade
+- C Volatility of export earnings due to commodity price fluctuations
+- D Rapid growth of the secondary sector
 
 Question 26 [1 marks]
-Which of the following best describes international trade fundamentals?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+A country deploys a J-curve effect after a currency depreciation. Which best describes the J-curve?
+- A An immediate improvement, then deterioration of trade balance
+- B An immediate deterioration, then improvement of trade balance
+- C A permanent improvement of trade balance
+- D No change in trade balance
 
 Question 27 [1 marks]
-Which of the following best describes microeconomic foundations and market mechanisms?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+A Marshall–Lerner condition is satisfied when:
+- A The sum of PED for exports and imports exceeds 1
+- B Export and import prices are equal
+- C A country has a current account surplus
+- D The exchange rate is fixed
 
 Question 28 [1 marks]
-Which of the following best describes macroeconomic indicators?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+In the short run, which is the least likely outcome of free trade for an economy moving from protection to free trade?
+- A Job losses in previously protected industries
+- B Lower prices for consumers
+- C Reallocation of resources toward areas of comparative advantage
+- D Immediate elimination of structural unemployment
 
 Question 29 [1 marks]
-Which of the following best describes international trade fundamentals?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
+A country joins a customs union. Which statement is correct?
+- A All member countries adopt a single currency
+- B Internal tariffs are removed and a common external tariff is applied
+- C Internal tariffs are retained but capital mobility is allowed
+- D Members must allow free movement of labour
 
 Question 30 [1 marks]
-Which of the following best describes microeconomic foundations and market mechanisms?
-- A A short-run price adjustment
-- B A long-run structural change in supply
-- C A demand-side shock with secondary effects
-- D An equilibrium outcome with no welfare loss
-`,
+Which combination of aims of government is most likely to conflict in the short run?
+- A Low unemployment and low inflation
+- B Price stability and economic growth
+- C Economic growth and environmental sustainability
+- D All of the above`,
   },
   {
     id: "igcse-p2-c",
