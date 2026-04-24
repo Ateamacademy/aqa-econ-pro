@@ -153,6 +153,8 @@ async function callMarker(
       answerType: input.answerType,
       scenarioId: input.scenarioId,
       userId: input.userId,
+      scenarioRubric: input.scenarioRubric,
+      scenarioRubricPrompt: input.scenarioRubricPrompt,
     }),
   });
 
