@@ -1,1513 +1,1390 @@
 import type { PredictedPaper } from "./predictedPapersLibrary";
 
+/**
+ * Edexcel B A-Level Economics (9EB0) — predicted papers library.
+ * Content is verbatim from the static QP PDFs in /public/edexcel-b-mocks/
+ * (paper-{1,2,3}-{moderate,hard,advanced}.pdf). Updating either side requires
+ * regenerating the other to keep on-screen and downloadable PDF in sync.
+ */
 export const edexcelBPredictedPapers: PredictedPaper[] = [
-  // ── Paper 1: Markets and how they work (9EB0/01) ──
-  // Spec: 100 marks · 2 hours · Section A Q1(a–h) [4+4+4+6+8+10+12+12 = 60] · Section B Q2 [20] · Section C Q3 [20]
   {
     id: "edxb-p1-a",
     subject: "edexcel-b",
     paper: "1",
-    title: "Paper 1 — Set A",
-    description: "Markets, Consumers & Firms. Coffee-shop oligopoly, minimum wage, sugar-tax regulation.",
+    title: "Paper 1 \u2014 Set A",
+    description: "Markets, Consumers & Firms. Set A \u2014 moderate difficulty.",
     totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper Set A
+    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper (Moderate)
 
 **Time: 2 hours | Total: 100 marks**
 
----
+Answer ALL questions.
 
 ## SECTION A (60 marks)
 
-Read the following extracts (A to D) before answering Question 1.
+**Extract A**
 
-**Extract A — The UK coffee shop market**
+The UK fast food market
 
-The UK coffee shop market is worth £4.4 billion in 2024, served by more than 10,000 branded outlets. The three largest chains — Costa, Starbucks and Caffè Nero — together control 52% of the market (CR3). Independents have grown 14% since 2022, helped by consumer preference for "artisan" and locally sourced products. Average latte prices rose 18% between 2022 and 2024, partly reflecting higher wage costs as the National Living Wage increased to £11.44/hour.
+The UK fast food and takeaway market reached a value of £19.8 billion in 2022, having grown by 7.2% year-on-year. The sector is dominated by major global brands, but independent operators continue to expand, particularly in urban areas.
 
-**Extract B — Branded chains by UK outlet count, 2024**
+McDonald's remains the UK market leader with 1,450 outlets. In 2022, McDonald's UK generated revenue of £1.88bn, up from £1.73bn in 2021. Operating profit rose by 15% from £240m in 2021.
 
-| Rank | Brand | Outlets | UK market share (%) |
-|------|-------|---------|----------------------|
-| 1 | Costa Coffee | 2,467 | 24.1 |
-| 2 | Starbucks | 1,180 | 17.6 |
-| 3 | Caffè Nero | 660 | 10.3 |
-| 4 | Pret A Manger | 470 | 7.8 |
-| 5 | Greggs (coffee) | 2,460 | 6.9 |
+The number of branded fast food outlets grew by 3.8% in 2022, with 312 new stores added. Growth has been particularly strong in suburban drive-thru locations and in delivery-focused 'dark kitchens'. Consumer choice is driven by speed of service, price, brand loyalty, quality of ingredients and increasingly by health and dietary considerations — including the rapid growth of plant-based options.
 
-**Extract C — A specialist independent: "Origin Coffee Co."**
+Independent fast food brands are also flourishing. Smaller UK-based chains such as Honest Burgers and Leon have expanded rapidly, driven by changing consumer tastes favouring ethical, healthier and locally-sourced options.
 
-Origin Coffee Co. operates 12 specialty cafés across South-West England. The firm sources single-origin beans directly from co-operatives, charging a 30% price premium over branded chains. Operating profit in FY2024 was £1.92m on revenue of £16.0m. Origin invests heavily in barista training and store experience and competes mainly on quality, not price.
+(Source: adapted from UK Fast Food Market Report 2023 © MCA Insight)
 
-**Extract D — Average UK latte price (£)**
+**Extract B**
 
-| Quarter | Price (£) | % change |
-|---------|-----------|----------|
-| Q1 2023 | 3.20 | — |
-| Q3 2023 | 3.38 | +5.6 |
-| Q1 2024 | 3.55 | +5.0 |
-| Q3 2024 | 3.72 | +4.8 |
-| Q4 2024 | 3.78 | +1.6 |
+Leading UK fast food chains ranked by number of outlets (2022)
 
----
+Fast food chain                     Number of outlets
+McDonald's                               1,450
+Subway                                  2,315
+KFC                                    980
+Burger King                               530
+Greggs                                 2,328
+Pret a Manger                              410
+Wagamama                                  165
+Honest Burgers
+Leon
+Five Guys                                 130
+(Source: adapted from Statista Food Service UK 2023)
+
+**Extract C**
+
+Honest Burgers – British, seasonal, small
+
+Honest Burgers is a UK-based independent restaurant chain founded in Brixton, London, in 2011. The chain now operates 45 sites across the UK. Its brand identity is built around locally-sourced British beef, seasonal menus and a focus on independence.
+
+In 2022, Honest Burgers reported revenue of £45.6m. Unlike large chains, it emphasises quality over scale. The company has been vocal in supporting smaller farms and says ingredient prices have risen sharply.
+
+'Our philosophy is to back British food producers and keep the brand distinctive. Even as costs rise, we are committed to quality,' said the founder.
+
+(Source: adapted from Honest Burgers Annual Review 2022)
+
+**Extract D**
+
+UK wholesale beef price (pence per kilogram), monthly 2022
+
+Month                 Price (p/kg)             Monthly change
+Jan 2022                  395.20                       —
+Feb 2022                  410.50                     3.87%
+Mar 2022                  428.75                     4.45%
+Apr 2022                  441.30                     2.93%
+May 2022                   452.80                     2.60%
+Jun 2022                  462.75                     2.20%
+Jul 2022                  470.10                     1.59%
+Aug 2022                  478.85                     1.86%
+Sep 2022                  484.20                     1.12%
+Oct 2022                  491.55                     1.52%
+Nov 2022                  497.80                     1.27%
+Dec 2022                  502.40                     0.92%
+(Source: adapted from AHDB Beef & Lamb wholesale price data)
 
 **Question 1a** [4 marks]
 
-Using Extract C, calculate Origin Coffee Co.'s operating profit margin in FY2024. Give your answer to two decimal places.
+Using Extract A, calculate to 2 decimal places the operating profit margin for McDonald's UK for 2022. You are advised to show your working.
+
 **Question 1b** [4 marks]
 
-Using Extract D, calculate the percentage change in the average UK latte price between Q1 2023 and Q4 2024. Give your answer to two decimal places.
+Using Extract D, calculate to 2 decimal places the percentage change in the wholesale beef price from January 2022 to December 2022. You are advised to show your working.
+
 **Question 1c** [4 marks]
 
-With reference to Extract A, draw a supply-and-demand diagram to show the impact of the increase in the National Living Wage on the UK coffee shop market.
+Using a supply and demand diagram, illustrate the impact on the UK fast food market of the change in consumer tastes toward healthier and plant-based options for established traditional fast food outlets. (Extracts A and C)
+
 **Question 1d** [6 marks]
 
-Using Extract B, analyse one likely impact of the market structure on the pricing strategy of Costa Coffee.
+McDonald's, KFC and Burger King are among the UK's leading fast food chains. (Extract B) Analyse one possible impact of the market structure on the pricing strategy of these firms.
+
 **Question 1e** [8 marks]
 
-Discuss whether **profit maximisation** is the most important objective for Origin Coffee Co. (Extract C).
+Discuss whether profit maximisation is the most important business objective to an independent fast food chain, such as Honest Burgers.
+
 **Question 1f** [10 marks]
 
-Assess the impact of the 18% rise in average latte prices on consumers and producers in the UK coffee shop market.
+Extract D shows a rise in the wholesale price of beef during 2022. Assess the impact this might have on prices charged in UK fast food restaurants.
+
 **Question 1g** [12 marks]
 
-Assess the importance of **non-price competition** in the UK coffee shop market.
+Assess the importance of non-price competition in the UK fast food market.
+
 **Question 1h** [12 marks]
 
-Assess whether the UK coffee shop market is best described as **monopolistically competitive** rather than oligopolistic.
-*(Total for Section A = 60 marks)*
-
----
+Assess whether the UK fast food market could be considered contestable.
 
 ## SECTION B (20 marks)
 
-Read Extract E before answering Question 2.
+**Extract E**
 
-**Extract E — The UK National Living Wage and the labour market**
+The UK minimum wage and its impact on business
 
-The National Living Wage rose 9.8% in April 2024 to £11.44/hour, the largest cash uplift on record, benefiting around 2.7 million workers. Hospitality and retail — which together employ 4.6 million people — absorbed most of the cost. Average prices in hospitality rose 6.1% in the year to October 2024, while employment in the sector fell 1.4%. The Low Pay Commission projects the NLW will reach £12.20 by 2026.
+In April 2023, the UK National Living Wage for those aged 23 and over rose by 9.7% to £10.42 per hour — the largest cash increase since its introduction. The Low Pay Commission projects further increases that could push the wage above £11 by 2024.
+
+The hospitality and retail sectors — which employ around 3.5 million workers, many on or close to minimum wage — have been particularly affected. Small businesses have warned that wage rises, combined with higher energy costs and food inflation, are squeezing already-thin profit margins.
+
+Supporters of the increase argue that higher wages put more spending power in the hands of lower-income households, who tend to spend a higher proportion of their income than wealthier groups. This could boost demand for goods and services across the economy.
+
+However, some economists warn that rapid wage increases could lead businesses to reduce hiring, increase automation, or pass higher costs on to consumers as higher prices — contributing to persistent inflation.
+
+The impact is not uniform across the UK. Regions with higher living costs, such as London, already had wages above the statutory minimum. In lower-wage regions such as the North East and Wales, the minimum wage rise directly increased pay for a much larger share of the workforce.
+
+(Source: adapted from Low Pay Commission Report 2023 and Financial Times, April 2023)
 
 **Question 2** [20 marks]
 
-Evaluate the likely microeconomic effects of further increases in the National Living Wage on workers, firms and consumers in low-pay sectors such as hospitality.
-*(Total for Section B = 20 marks)*
-
----
+Using Extract E, evaluate the likely impact of rising minimum wage rates on the UK economy.
 
 ## SECTION C (20 marks)
 
-Read Extracts F and G before answering Question 3.
+**Extract F**
 
-**Extract F — The UK Soft Drinks Industry Levy (SDIL, "sugar tax")**
+The UK sugar tax
 
-Introduced in April 2018, the SDIL applies 18p/litre on drinks with 5–8g sugar/100ml and 24p/litre above 8g. Reformulation cut the sugar content of taxed drinks by 46% in three years and total sugar purchased from soft drinks fell 35%. Revenues raised £338 million in 2023/24, hypothecated to school sport and breakfast clubs.
+The Soft Drinks Industry Levy (SDIL), commonly referred to as the 'sugar tax', was introduced in the UK in April 2018. It charges manufacturers 24p per litre for drinks with 8g or more of sugar per 100ml, and 18p per litre for drinks with 5-8g of sugar per 100ml.
 
-**Extract G — Extending the levy: HFSS regulation**
+The policy was designed to tackle childhood obesity by encouraging drinks manufacturers to reformulate products to contain less sugar. Within two years of introduction, the average sugar content of soft drinks had fallen by 43.7%, and the levy raised around £336 million in its first year.
 
-From October 2025, restrictions on the in-store placement and "buy-one-get-one-free" promotion of foods high in fat, salt and sugar (HFSS) will apply to retailers with 50+ employees. The Institute for Fiscal Studies estimates HFSS purchases could fall 8–10%, but warns that price-elastic low-income households may face the biggest welfare loss in absolute terms.
+Critics argue that the tax is regressive, disproportionately affecting lower-income households, and that producers can simply pass the cost onto consumers. Supporters highlight the measurable reduction in sugar consumption and the funding of school sports programmes through levy revenue.
+
+(Source: adapted from HM Treasury and Public Health England, 2020)
+
+**Extract G**
+
+Regulating the fast food industry
+
+In October 2022, the UK government introduced new rules restricting the placement of foods high in fat, salt or sugar (HFSS) at supermarket checkouts and entrances. From October 2025, HFSS foods will also face restrictions on multi-buy promotions and advertising before 9pm.
+
+The fast food industry has faced calls for tougher action. Over 70% of UK adults are classified as overweight or obese, with direct costs to the NHS estimated at £6.5 billion a year. Some councils have introduced restrictions on new fast food outlets opening near schools.
+
+Industry groups have pushed back, arguing that consumer education and voluntary reformulation are more effective than outright regulation. They also warn that stricter rules could damage small independent operators and reduce consumer choice.
+
+(Source: adapted from Department of Health and Social Care, 2022 and British Takeaway Campaign)
 
 **Question 3** [20 marks]
 
-Evaluate the case for using **indirect taxes and behavioural regulation** (Extracts F and G) — rather than information campaigns — to reduce the consumption of demerit goods in the UK food and drink market.
-*(Total for Section C = 20 marks)*
-
-**TOTAL FOR PAPER = 100 MARKS**`,
+Evaluate the likely impact on the UK of increased government regulation of the UK fast food and soft drinks industry.`,
   },
   {
     id: "edxb-p1-b",
     subject: "edexcel-b",
     paper: "1",
-    title: "Paper 1 — Set B",
-    description: "Markets, Consumers & Firms. Supermarket oligopoly, monetary policy, gig-economy regulation.",
+    title: "Paper 1 \u2014 Set B",
+    description: "Markets, Consumers & Firms. Set B \u2014 demanding analysis & evaluation.",
     totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper Set B
+    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper (Hard)
 
 **Time: 2 hours | Total: 100 marks**
 
----
+Answer ALL questions.
 
 ## SECTION A (60 marks)
 
-Read the following extracts (A to D) before answering Question 1.
+**Extract A**
 
-**Extract A — The UK supermarket price war**
+The UK streaming services market
 
-UK grocery sales reached £220 billion in 2024. Discounters Aldi and Lidl have lifted their combined share from 5% in 2012 to 18.2% in 2024, forcing the "Big Four" — Tesco, Sainsbury's, Asda and Morrisons — into price-matching schemes (e.g. Tesco's "Aldi Price Match") and the rapid expansion of own-label budget ranges. Average sector profit margins have fallen from 3.2% in 2019 to 2.1% in 2024.
+The UK subscription video-on-demand (SVOD) market reached £3.5 billion in 2023, having grown by 12.6% year-on-year despite rising household cost-of-living pressures. Around 19.2 million UK households hold at least one streaming subscription.
 
-**Extract B — UK grocery market shares, 12 weeks to October 2024**
+Netflix remains the largest streaming service in the UK by subscriber numbers. Netflix UK reported revenues of £1,450m for 2023 and an operating profit of £248m. By comparison, BritBox, Disney+ and Amazon Prime Video continue to invest heavily in content.
 
-| Rank | Retailer | Market share (%) |
-|------|----------|------------------|
-| 1 | Tesco | 27.1 |
-| 2 | Sainsbury's | 15.3 |
-| 3 | Asda | 12.6 |
-| 4 | Aldi | 10.0 |
-| 5 | Morrisons | 8.6 |
-| 6 | Lidl | 8.2 |
+Competition is intensifying. The launch of the ad-supported tier by Netflix in late 2022 reflects a shift toward hybrid business models. Many households are now engaging in 'subscription stacking' — holding multiple services — while others are 'churning' in and out based on specific content releases.
 
-**Extract C — A specialist firm: "Booths"**
+Smaller specialist services such as MUBI (curated independent cinema) and Shudder (horror) have also grown. Industry analysts note that the so-called 'streaming wars' have entered a new phase where content quality, user experience, and ad-tier monetisation matter more than pure subscriber growth.
 
-Booths operates 27 premium supermarkets across northern England, employing 3,000 staff. Revenue was £290m in FY2024 and operating profit was £8.7m. Booths competes on local sourcing and store experience rather than price, and offers a narrower SKU range than the Big Four.
+(Source: adapted from Ofcom Media Nations Report 2023 and Ampere Analysis)
 
-**Extract D — Tesco own-label "value" loaf, monthly retail price (£)**
+**Extract B**
 
-| Month | Price (£) | % change |
-|-------|-----------|----------|
-| Jan 2023 | 0.55 | — |
-| Jul 2023 | 0.65 | +18.2 |
-| Jan 2024 | 0.75 | +15.4 |
-| Jul 2024 | 0.69 | −8.0 |
-| Dec 2024 | 0.65 | −5.8 |
+UK SVOD market share by estimated subscriber numbers (2023)
 
----
+Streaming service          UK subscribers             Market share
+(millions)
+Netflix                   16.80                    35.0%
+Amazon Prime Video               13.90                    29.0%
+Disney+                     7.90                    16.5%
+NOW                       2.00                     4.2%
+Apple TV+                    1.70                     3.5%
+Paramount+                    1.40                     2.9%
+BritBox                    0.95                     2.0%
+MUBI                      0.20                     0.4%
+Other services                 2.15                     4.5%
+(Source: adapted from BARB Establishment Survey and Ofcom, 2023)
+
+**Extract C**
+
+MUBI – curation over scale
+
+MUBI is an independent streaming platform known for its curated selection of independent and world cinema. It operates globally but maintains a strong UK subscriber base focused on cinephiles and film students.
+
+MUBI differentiates itself through curation — showing 30 hand-picked films at any time. The platform's UK revenue in 2023 was estimated at £12m with an operating margin of around 4%.
+
+'We believe that in a world of abundance, curation is the most valuable service,' said MUBI's founder. The company has grown UK subscribers by 18% year-on-year but faces intense competition from rivals with far deeper pockets.
+
+(Source: adapted from MUBI Press Release 2023 and Screen Daily)
+
+**Extract D**
+
+Netflix UK standard-plan monthly price (£), January each year
+
+Year                   Price (£)            Year-on-year change
+Jan 2019                   8.99                        —
+Jan 2020                   8.99                      0.00%
+Jan 2021                   9.99                     11.12%
+Jan 2022                   10.99                    10.01%
+Jan 2023                   10.99                     0.00%
+Jan 2024                   11.99                     9.10%
+(Source: adapted from Netflix UK pricing history)
 
 **Question 1a** [4 marks]
 
-Using Extract C, calculate Booths' operating profit margin in FY2024. Give your answer to two decimal places.
+Using Extract A, calculate to 2 decimal places the operating profit margin for Netflix UK in 2023. You are advised to show your working.
+
 **Question 1b** [4 marks]
 
-Using Extract D, calculate the percentage change in the price of a Tesco own-label "value" loaf between January 2023 and December 2024. Give your answer to two decimal places.
+Using Extract D, calculate to 2 decimal places the percentage change in the Netflix UK standard- plan monthly price from January 2019 to January 2024. You are advised to show your working.
+
 **Question 1c** [4 marks]
 
-With reference to Extract A, draw a diagram to show the impact of the rapid growth of Aldi and Lidl on the UK grocery market.
+Using a supply and demand diagram, illustrate the impact of the launch of multiple new streaming services on the equilibrium price and quantity in the UK SVOD market. (Extracts A and B)
+
 **Question 1d** [6 marks]
 
-Using Extract B, analyse one likely impact of the market structure on Tesco's pricing strategy.
+Netflix, Amazon Prime Video and Disney+ account for most UK SVOD subscribers. (Extract B) Analyse one possible impact of the market structure on the pricing strategy of these firms.
+
 **Question 1e** [8 marks]
 
-Discuss whether **revenue (sales) maximisation** is the most important objective for Aldi UK.
+Discuss whether profit maximisation is the most important business objective to a specialist streaming service such as MUBI.
+
 **Question 1f** [10 marks]
 
-Assess the impact of the fall in sector operating margins from 3.2% to 2.1% on UK supermarkets and their suppliers.
+Extract D shows recent price increases by Netflix. Assess the likely impact of these rises on Netflix's UK subscriber base and revenue.
+
 **Question 1g** [12 marks]
 
-Assess the importance of **non-price competition** (loyalty schemes, own-label ranges, store environment) in the UK grocery market.
+Assess the importance of non-price competition in the UK SVOD market.
+
 **Question 1h** [12 marks]
 
-Assess the extent to which the UK grocery market is **contestable**.
-*(Total for Section A = 60 marks)*
-
----
+Assess whether the UK SVOD market is best described as an oligopoly or as monopolistically competitive.
 
 ## SECTION B (20 marks)
 
-Read Extract E before answering Question 2.
+**Extract E**
 
-**Extract E — Bank of England monetary policy and household spending**
+UK interest rates and the cost of living
 
-Bank Rate rose from 0.10% in December 2021 to a peak of 5.25% in August 2023 before three cuts in 2024 took it to 4.75%. CPI inflation fell from a peak of 11.1% to 2.3% over the same period. Household disposable income rose only 0.4% in real terms in 2024 and the household saving ratio reached 11.1%. UK retail sales volumes were 1.6% lower in 2024 than in 2023.
+Between December 2021 and August 2023, the Bank of England raised its base rate from 0.1% to 5.25% — the sharpest tightening cycle in over three decades. The Monetary Policy Committee cited persistent inflation, with CPI peaking at 11.1% in October 2022, as the main driver.
+
+Higher interest rates have transmitted rapidly to household finances. Around 1.4 million mortgage holders refinanced in 2023, many facing payment rises of £200–£400 a month. New mortgage rates averaged around 6% by late 2023, compared with under 2% in 2021.
+
+The housing market has cooled. UK house prices fell 1.2% year-on-year in 2023 — the first annual decline since 2012. New housebuilding starts have fallen sharply as developer confidence has weakened.
+
+Consumer spending on discretionary goods and services has softened. Retailers report consumers trading down to cheaper brands, subscription services reporting higher churn, and pubs and restaurants recording falling volumes.
+
+However, some savers and pensioners have benefited from higher deposit rates. Bank profits have risen as net interest margins have widened, though some economists warn this reflects slow pass-through to savers rather than efficient pricing.
+
+(Source: adapted from Bank of England Monetary Policy Report 2023 and ONS data)
 
 **Question 2** [20 marks]
 
-Evaluate the likely microeconomic effects of cuts in Bank Rate during 2025 on UK consumer demand for normal goods and inferior goods.
-*(Total for Section B = 20 marks)*
-
----
+Using Extract E, evaluate the likely macroeconomic impact of the sharp rise in UK interest rates between 2021 and 2023.
 
 ## SECTION C (20 marks)
 
-Read Extracts F and G before answering Question 3.
+**Extract F**
 
-**Extract F — The Supreme Court ruling on Uber drivers**
+The Digital Markets Act and streaming
 
-The 2021 *Uber BV v Aslam* ruling held that Uber drivers are "workers" — entitled to the National Minimum Wage, paid holiday and pension auto-enrolment. Uber UK now reports c.70,000 drivers under "worker" status. Drivers' net hourly earnings rose 14% in the following 18 months but Uber's UK fares rose 10% and average wait times increased 22%.
+The Digital Markets Act (DMA) came into force in the EU in 2023, with the UK's Digital Markets, Competition and Consumers Act following in 2024. Both aim to regulate 'gatekeeper' platforms by restricting self-preferencing, requiring interoperability, and preventing the bundling of services.
 
-**Extract G — Deliveroo and the wider gig economy**
+Streaming services are indirectly affected. Large platforms (Google, Apple, Amazon) control critical distribution channels — app stores, smart-TV operating systems, and advertising ecosystems. The Competition and Markets Authority (CMA) has identified strategic market status in mobile ecosystems.
 
-Deliveroo riders remain classified as independent contractors after a 2023 Supreme Court ruling. The TUC estimates 4.4 million UK workers now use gig platforms. Average gig pay is £10.20/hour (vs £14.50 for employees) and 63% of gig workers receive no employer benefits. The Employment Rights Bill (2025) proposes a single "worker" status across the gig economy.
+Supporters argue the rules level the playing field for smaller operators like MUBI, enabling them to reach consumers without paying 30% app-store commissions. Critics warn the rules add compliance costs and may deter investment in content by platforms.
+
+(Source: adapted from CMA and European Commission, 2023)
+
+**Extract G**
+
+Regulating content and pricing transparency
+
+The UK government has also announced plans to require price-transparency measures in streaming contracts. From 2025, providers will be required to give clear advance notice of price rises, an easier cancellation process, and to prevent the automatic rollover of subscriptions without explicit consent.
+
+Ofcom is consulting on 'content minimums' for UK productions on large streaming platforms, similar to the PSB quotas applied to broadcast television. Industry bodies have pushed back, arguing that over-regulation could cause streamers to divert UK investment elsewhere.
+
+Consumer groups point to the fact that several million UK households pay for streaming services they rarely use — a phenomenon economists call 'inertia pricing' — and argue that regulation would improve consumer welfare.
+
+(Source: adapted from DCMS consultation papers and Which? 2023)
 
 **Question 3** [20 marks]
 
-Evaluate the case for **regulating** the gig economy by extending "worker" status to all platform workers (Extracts F and G), rather than relying on competition between platforms to improve pay and conditions.
-*(Total for Section C = 20 marks)*
-
-**TOTAL FOR PAPER = 100 MARKS**`,
+Evaluate the likely impact on the UK streaming industry of increased government regulation of the UK digital markets.`,
   },
   {
     id: "edxb-p1-c",
     subject: "edexcel-b",
     paper: "1",
-    title: "Paper 1 — Set C",
-    description: "Markets, Consumers & Firms. Big Tech market power, fiscal policy, digital regulation.",
+    title: "Paper 1 \u2014 Set C",
+    description: "Markets, Consumers & Firms. Set C \u2014 A* level synoptic challenge.",
     totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper Set C
+    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper (Advanced)
 
 **Time: 2 hours | Total: 100 marks**
 
----
+Answer ALL questions.
 
 ## SECTION A (60 marks)
 
-Read the following extracts (A to D) before answering Question 1.
+**Extract A**
 
-**Extract A — Big Tech and UK digital markets**
+The UK electric vehicle market
 
-Google holds 92% of UK search, Meta accounts for 72% of UK social-media time and Amazon takes 30% of UK online retail. The CMA opened 14 investigations into Big Tech firms in 2024, up from three in 2020. Combined US Big Tech R&D spending exceeded $180 billion in 2024 — more than the UK government's total day-to-day budget for the NHS.
+The UK market for new battery-electric vehicles (BEVs) reached 314,687 units in 2023, accounting for 16.5% of all new car registrations. Sales grew 17.8% year-on-year despite the removal of the Plug-in Car Grant in 2022 and broader consumer cost-of- living pressures.
 
-**Extract B — UK digital advertising revenue share, 2024**
+Tesla remained the best-selling BEV brand in the UK with 49,890 Model Y and Model registrations. Tesla UK's 2023 revenue was reported at £2,420m, with an operating profit of £223m. Chinese manufacturers (BYD, MG, Ora) have entered the UK aggressively, exerting significant downward pressure on prices.
 
-| Rank | Firm | UK digital ad revenue share (%) |
-|------|------|----------------------------------|
-| 1 | Google (Alphabet) | 39.0 |
-| 2 | Meta (Facebook + Instagram) | 28.0 |
-| 3 | Amazon | 11.0 |
-| 4 | TikTok (ByteDance) | 6.5 |
-| 5 | Microsoft (Bing + LinkedIn) | 4.2 |
+However, the market is maturing. Weekly charging infrastructure growth has slowed, and several legacy manufacturers (Ford, Vauxhall) report declining BEV margins. Arrival, a UK-based commercial EV startup headquartered in London, filed for administration in 2024 following cost overruns.
 
-**Extract C — A challenger search engine: "Mojeek"**
+The ZEV mandate, which came into force on 1 January 2024, requires 22% of all new cars sold to be zero-emission, rising to 80% by 2030 and 100% by 2035. Non- compliant manufacturers face fines of £15,000 per vehicle.
 
-Mojeek, a UK independent search engine, runs its own crawler (2.6bn pages indexed) and earns revenue from privacy-focused subscriptions and B2B API licensing. Revenue in FY2024 was £4.8m and operating profit was £0.62m. Mojeek competes on privacy and editorial neutrality rather than scale.
+(Source: adapted from SMMT UK New Car Market 2023 and AutoTrader Research)
 
-**Extract D — Average UK monthly Google Ads CPC, premium retail keywords (£)**
+**Extract B**
 
-| Month | CPC (£) | % change |
-|-------|---------|----------|
-| Jan 2023 | 1.84 | — |
-| Jul 2023 | 2.05 | +11.4 |
-| Jan 2024 | 2.31 | +12.7 |
-| Jul 2024 | 2.55 | +10.4 |
-| Dec 2024 | 2.71 | +6.3 |
+Top UK BEV brands by 2023 registrations
 
----
+Brand                Registrations 2023          Market share
+Tesla                    49,890                     15.9%
+BMW                      29,400                     9.3%
+Audi                     25,620                     8.1%
+MG Motor                   25,080                     8.0%
+Volkswagen                  24,540                     7.8%
+Polestar                  18,900                     6.0%
+Kia                    16,500                     5.2%
+Hyundai                   15,750                     5.0%
+BYD                      12,300                     3.9%
+Other                    96,707                     30.7%
+(Source: adapted from SMMT Registration Data 2023)
 
-**Question 1a** [4 marks]
+**Extract C**
 
-Using Extract C, calculate Mojeek's operating profit margin in FY2024. Give your answer to two decimal places.
-**Question 1b** [4 marks]
+Arrival – the rise and fall of a UK EV start-up
 
-Using Extract D, calculate the percentage change in the average Google Ads CPC for premium retail keywords between January 2023 and December 2024. Give your answer to two decimal places.
-**Question 1c** [4 marks]
+Arrival, founded in 2015 in London, set out to disrupt the commercial vehicle market with modular, software-defined electric vans and buses. The firm floated on NASDAQ in 2021 at a valuation exceeding $13 billion, attracting significant UK investor interest.
 
-With reference to Extract A, draw a diagram showing the impact of strong network effects on the UK search market.
-**Question 1d** [6 marks]
+However, the company struggled to scale manufacturing. Arrival reported cumulative losses of £1.4bn before filing for administration in February 2024. Industry analysts cite high sunk costs, capital intensity, and competition from established manufacturers.
 
-Using Extract B, analyse one likely impact of the market structure on Google's pricing of digital advertising.
-**Question 1e** [8 marks]
+Arrival's case has been cited as illustrative of the barriers facing UK-based EV start- ups competing with established multinationals and low-cost Chinese entrants. 'The UK has the talent but not the capital or scale,' one analyst noted.
 
-Discuss whether **growth (market-share maximisation)** is the most important objective for Meta in the UK.
-**Question 1f** [10 marks]
+(Source: adapted from FT 2024 and SMMT analysis)
 
-Assess the impact of the rising cost of digital advertising (Extract D) on small UK retailers.
-**Question 1g** [12 marks]
+**Extract D**
 
-Assess the importance of **non-price competition** (data, ecosystem lock-in, integrated services) in UK digital advertising.
-**Question 1h** [12 marks]
+UK average new BEV list price (£), quarterly 2020–2023
 
-Assess whether the UK digital advertising market is best described as a **natural oligopoly** rather than a contestable market.
-*(Total for Section A = 60 marks)*
-
----
-
-## SECTION B (20 marks)
-
-Read Extract E before answering Question 2.
-
-**Extract E — UK fiscal policy and digital services taxation**
-
-The UK Digital Services Tax (DST) raises 2% on UK revenues of large search engines, social platforms and online marketplaces. Receipts grew from £29m in its first year to £678m in 2023/24. From 2026, the OECD "Pillar One" agreement is expected to replace the DST with a globally co-ordinated profit reallocation. UK corporate-tax revenue from technology firms remains around 1/10th of US-based digital firms' UK turnover.
-
-**Question 2** [20 marks]
-
-Evaluate the likely microeconomic effects of replacing the UK Digital Services Tax with the OECD Pillar One framework on UK consumers, advertisers and the technology sector.
-*(Total for Section B = 20 marks)*
-
----
-
-## SECTION C (20 marks)
-
-Read Extracts F and G before answering Question 3.
-
-**Extract F — The Digital Markets, Competition and Consumers Act (DMCC) 2024**
-
-The DMCC gives the CMA's Digital Markets Unit (DMU) the power to designate firms with "Strategic Market Status" (SMS) and impose conduct requirements — interoperability, data portability, fair-dealing rules — backed by fines of up to 10% of global turnover. Apple, Google and Amazon were the first three firms designated in 2025.
-
-**Extract G — The EU Digital Markets Act (DMA), 2024 evidence**
-
-The DMA, in force since 2023, has forced six "gatekeepers" to allow side-loading, third-party app stores and rival in-app payments. Early evidence shows app-store commission has fallen from 30% to 17% on average and developer revenue rose 12%, but consumer complaints about app security rose 28%.
-
-**Question 3** [20 marks]
-
-Evaluate the case for using **digital-market regulation** (DMCC and DMA, Extracts F and G), rather than allowing competition between platforms to discipline market power, to protect UK consumers and small businesses.
-*(Total for Section C = 20 marks)*
-
-**TOTAL FOR PAPER = 100 MARKS**`,
-  },
-  {
-    id: "edxb-p1-d",
-    subject: "edexcel-b",
-    paper: "1",
-    title: "Paper 1 — Set D",
-    description: "Markets, Consumers & Firms. Energy oligopoly, exchange rates, price-cap regulation.",
-    totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper Set D
-
-**Time: 2 hours | Total: 100 marks**
-
----
-
-## SECTION A (60 marks)
-
-Read the following extracts (A to D) before answering Question 1.
-
-**Extract A — The UK retail energy market**
-
-Six firms — British Gas, EDF, E.ON Next, Octopus, Scottish Power and OVO — supply 70% of UK households (CR6 = 70%). After the 2021–22 wholesale gas spike pushed 31 small suppliers into administration, the market consolidated sharply. Ofgem's price cap was raised from £1,277 in October 2021 to a peak of £4,279 (subsidised down to £2,500 by the Energy Price Guarantee) before falling to £1,738 in October 2024.
-
-**Extract B — UK domestic energy supplier shares, 2024**
-
-| Rank | Supplier | Domestic dual-fuel share (%) |
-|------|----------|-------------------------------|
-| 1 | British Gas (Centrica) | 21.0 |
-| 2 | Octopus Energy | 17.5 |
-| 3 | E.ON Next | 12.4 |
-| 4 | EDF Energy | 9.6 |
-| 5 | OVO Energy | 5.3 |
-| 6 | Scottish Power | 4.2 |
-
-**Extract C — A challenger supplier: "Good Energy"**
-
-Good Energy supplies 100% renewable electricity to 270,000 UK households and SMEs. Revenue in FY2024 was £128m and operating profit was £6.4m. The firm competes on green credentials and customer service rather than headline price, and pays a 10–15% premium for long-term renewable PPAs.
-
-**Extract D — Ofgem default tariff cap (annual £, dual-fuel, direct debit)**
-
-| Cap window | £/year | % change |
-|------------|--------|----------|
-| Oct 2022 | 3,549 | — |
-| Apr 2023 | 3,280 | −7.6 |
-| Oct 2023 | 1,923 | −41.4 |
-| Apr 2024 | 1,690 | −12.1 |
-| Oct 2024 | 1,738 | +2.8 |
-
----
+Quarter            Average list price (£)           QoQ change
+Q1 2020                    43,850                          —
+Q3 2020                    44,920                        2.44%
+Q1 2021                    46,150                        2.74%
+Q3 2021                    48,400                        4.88%
+Q1 2022                    50,610                        4.57%
+Q3 2022                    51,740                        2.23%
+Q1 2023                    50,980                       -1.47%
+Q3 2023                    49,320                       -3.26%
+Q4 2023                    47,920                       -2.84%
+(Source: adapted from AutoTrader Retail Price Index)
 
 **Question 1a** [4 marks]
 
-Using Extract C, calculate Good Energy's operating profit margin in FY2024. Give your answer to two decimal places.
+Using Extract A, calculate to 2 decimal places the operating profit margin for Tesla UK in 2023. You are advised to show your working.
+
 **Question 1b** [4 marks]
 
-Using Extract D, calculate the percentage change in the Ofgem default tariff cap between October 2022 and October 2024. Give your answer to two decimal places.
+Using Extract D, calculate to 2 decimal places the percentage change in the average UK new BEV list price between Q1 2020 and Q4 2023. You are advised to show your working.
+
 **Question 1c** [4 marks]
 
-With reference to Extract A, draw a diagram showing the impact of the 2021–22 wholesale gas price shock on the UK retail energy market.
+Using a supply and demand diagram, illustrate the impact of the entry of Chinese manufacturers on the UK BEV market. (Extracts A and B)
+
 **Question 1d** [6 marks]
 
-Using Extract B, analyse one likely impact of the market structure on the pricing strategy of British Gas.
+Tesla, BMW, Audi and Volkswagen are among the leading UK BEV brands. (Extract B) Analyse one possible impact of the market structure on the pricing strategy of these firms.
+
 **Question 1e** [8 marks]
 
-Discuss whether **profit satisficing** is the most important objective for Octopus Energy.
+Discuss whether profit maximisation is the most important business objective for a UK-based EV start-up such as Arrival. (Extract C)
+
 **Question 1f** [10 marks]
 
-Assess the impact of the 2024 reduction in the Ofgem price cap on UK households and energy suppliers.
+Extract D shows recent falls in average BEV list prices. Assess the likely impact of falling prices on UK BEV manufacturers and consumers.
+
 **Question 1g** [12 marks]
 
-Assess the importance of **non-price competition** (smart tariffs, customer service, green credentials) in the UK retail energy market.
+Assess the importance of non-price competition in the UK BEV market.
+
 **Question 1h** [12 marks]
 
-Assess whether the UK retail energy market is best described as a **collusive oligopoly** rather than a contestable market.
-*(Total for Section A = 60 marks)*
-
----
+Assess whether the UK BEV market is contestable.
 
 ## SECTION B (20 marks)
 
-Read Extract E before answering Question 2.
+**Extract E**
 
-**Extract E — Sterling, wholesale gas and UK firms**
+EV subsidies and the ZEV mandate
 
-Sterling depreciated 8.4% against the US dollar between January and October 2022, raising the sterling cost of imported wholesale gas (priced in USD). Wholesale UK day-ahead gas prices rose from 60p/therm in 2020 to a peak of 540p/therm in August 2022 before falling to 95p/therm by late 2024. UK manufacturing energy bills remained 47% above their 2019 level.
+The UK abolished the £1,500 Plug-in Car Grant in June 2022, saving an estimated £300 million per year in public spending. The policy had supported UK EV sales since 2011, totalling £1.4 billion in direct subsidies. The government argued that the market had matured and demand no longer required support.
 
-**Question 2** [20 marks]
+The ZEV mandate introduced in 2024 takes a different approach: imposing minimum zero-emission sales quotas on manufacturers rather than subsidising consumer purchases. The policy aims to accelerate the EV transition without direct fiscal cost.
 
-Evaluate the likely microeconomic effects of a sustained 10% depreciation of sterling against the US dollar in 2025 on UK energy-intensive manufacturers and UK consumers.
-*(Total for Section B = 20 marks)*
+Industry reaction has been mixed. Some manufacturers, particularly those with competitive EV line-ups (Tesla, BYD, MG), have welcomed the mandate. Others, including Ford and Stellantis, have warned that meeting the 22% quota in 2024 is challenging and could force them to discount EVs heavily, eroding profitability.
 
----
+Charging infrastructure remains a constraint. The UK had approximately 55,000 public charge points by end-2023, but coverage is uneven — weighted heavily to London and the South East. The Society of Motor Manufacturers and Traders (SMMT) has called for more targeted government investment in rural charging.
 
-## SECTION C (20 marks)
+The government has also introduced company car tax incentives favouring EVs (BIK at 2% for 2024/25) and continues to fund the Workplace Charging Scheme. Critics note that well-off households are disproportionately benefiting from these indirect subsidies.
 
-Read Extracts F and G before answering Question 3.
-
-**Extract F — The Ofgem default tariff cap**
-
-The cap, in place since January 2019, sets the maximum dual-fuel bill for around 28m UK households on default tariffs. Ofgem updates the cap quarterly using a formula based on wholesale costs, network charges and an "EBIT allowance" of 1.9%. Critics argue the cap dampens switching incentives — switching rates fell from 18.3% in 2019 to 6.2% in 2024.
-
-**Extract G — The Energy Price Guarantee and windfall taxes**
-
-The 2022 Energy Price Guarantee subsidised consumer bills at £2,500/year, costing £40bn over two winters. To part-fund this, the Energy Profits Levy raised the headline tax on UK oil-and-gas profits from 40% to 75%, raising £14bn between 2022 and 2024. Investment in UK North Sea projects fell 23% in the same period.
-
-**Question 3** [20 marks]
-
-Evaluate the case for using **price caps and windfall taxes** (Extracts F and G), rather than allowing competition between energy suppliers to set bills, to protect UK households from energy market power.
-*(Total for Section C = 20 marks)*
-
-**TOTAL FOR PAPER = 100 MARKS**`,
-  },
-  {
-    id: "edxb-p1-e",
-    subject: "edexcel-b",
-    paper: "1",
-    title: "Paper 1 — Set E",
-    description: "Markets, Consumers & Firms. Pharma patents, government spending, NHS price negotiation.",
-    totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper Set E
-
-**Time: 2 hours | Total: 100 marks**
-
----
-
-## SECTION A (60 marks)
-
-Read the following extracts (A to D) before answering Question 1.
-
-**Extract A — The UK pharmaceutical industry**
-
-The UK pharmaceutical industry contributes £22 billion to GDP and employs 75,000 people. A 20-year patent gives originators temporary monopoly pricing rights — supernormal profits fund R&D (£5.3bn in 2024). After patent expiry, generic entry typically reduces the price by 80% within two years. The NHS is the single largest UK buyer of medicines, spending £18 billion in 2024.
-
-**Extract B — UK branded prescription market shares, 2024**
-
-| Rank | Firm | UK branded share (%) |
-|------|------|-----------------------|
-| 1 | AstraZeneca | 12.4 |
-| 2 | Pfizer | 9.7 |
-| 3 | GSK | 9.0 |
-| 4 | Novartis | 7.6 |
-| 5 | Roche | 7.0 |
-
-**Extract C — A challenger generics manufacturer: "Accord-UK"**
-
-Accord-UK manufactures 350 generic medicines from a Devon plant, supplying 14% of NHS generic prescriptions. Revenue in FY2024 was £680m and operating profit was £61.2m. The firm competes purely on price within open NHS framework tenders, where contracts are typically awarded to the lowest two bidders.
-
-**Extract D — Average UK NHS list price for a 28-tablet pack of "Drug X" (£)**
-
-| Period | Price (£) | % change |
-|--------|-----------|----------|
-| Pre-patent expiry, 2022 | 84.50 | — |
-| 6 months post-expiry, 2023 | 38.20 | −54.8 |
-| 12 months post-expiry, 2023 | 22.40 | −41.4 |
-| 18 months post-expiry, 2024 | 16.10 | −28.1 |
-| 24 months post-expiry, 2024 | 13.80 | −14.3 |
-
----
-
-**Question 1a** [4 marks]
-
-Using Extract C, calculate Accord-UK's operating profit margin in FY2024. Give your answer to two decimal places.
-**Question 1b** [4 marks]
-
-Using Extract D, calculate the percentage change in the NHS list price of "Drug X" between pre-patent expiry (2022) and 24 months post-expiry (2024). Give your answer to two decimal places.
-**Question 1c** [4 marks]
-
-With reference to Extract A, draw a diagram showing the impact of a patent expiry on the market for a previously patented medicine.
-**Question 1d** [6 marks]
-
-Using Extract B, analyse one likely impact of the market structure on AstraZeneca's pricing of newly-launched branded medicines.
-**Question 1e** [8 marks]
-
-Discuss whether **profit maximisation** is the most important objective for AstraZeneca in its UK branded segment.
-**Question 1f** [10 marks]
-
-Assess the impact of the post-patent fall in the price of "Drug X" (Extract D) on UK consumers, the NHS and pharmaceutical producers.
-**Question 1g** [12 marks]
-
-Assess the importance of **non-price competition** (clinical evidence, prescriber relationships, supply reliability) in the UK branded pharmaceutical market.
-**Question 1h** [12 marks]
-
-Assess whether the UK branded pharmaceutical market is best described as a **monopoly during patent** rather than a contestable market.
-*(Total for Section A = 60 marks)*
-
----
-
-## SECTION B (20 marks)
-
-Read Extract E before answering Question 2.
-
-**Extract E — Government health spending and innovation**
-
-UK government health spending reached £181bn in 2024/25 — 39% of day-to-day departmental spending. Real spending per person rose 1.4% per year over the past decade, well below the 3.6% historical trend. The Office for Life Sciences estimates each £1 of UK biomedical R&D grant generates £1.20–£1.60 of private R&D within five years (a positive externality).
+(Source: adapted from HM Treasury, Department for Transport and SMMT 2023)
 
 **Question 2** [20 marks]
 
-Evaluate the likely microeconomic effects of a 10% real-terms increase in UK government R&D subsidies for biomedical research on UK firms, consumers and government finances.
-*(Total for Section B = 20 marks)*
-
----
+Using Extract E, evaluate the likely impact of UK government EV policy — including the abolition of the Plug-in Car Grant and the introduction of the ZEV mandate — on the UK economy.
 
 ## SECTION C (20 marks)
 
-Read Extracts F and G before answering Question 3.
+**Extract F**
 
-**Extract F — The Voluntary Scheme for Branded Medicines (VPAG)**
+Regulating EV charging
 
-VPAG (2024–28) caps the growth of NHS branded-medicine spending at 2% per year. Manufacturers above the cap pay rebates to the Department of Health — the rebate rate rose from 5.1% in 2021 to 26.5% in 2024. Industry groups warn the rebate is reducing UK clinical-trial investment.
+From November 2023, the UK government required that public rapid chargers (50 kW and above) deliver at least 99% reliability and offer contactless card payment — addressing complaints that many earlier chargers required downloading apps.
 
-**Extract G — NICE cost-effectiveness thresholds**
+Ofgem, the energy regulator, is consulting on price caps for public charging. Current rates vary between 44p/kWh for subscribers and over 80p/kWh at some motorway service area chargers — a stark contrast to home charging at around 10p/kWh (off- peak).
 
-The National Institute for Health and Care Excellence (NICE) recommends NHS funding only for medicines costing less than £20,000–£30,000 per quality-adjusted life year (QALY). In 2023/24, 18% of NICE appraisals resulted in a "do not recommend," up from 9% a decade earlier — pushing manufacturers to negotiate confidential discounts.
+Some critics argue price regulation could deter investment in charging infrastructure. Charging operators point out that building high-power chargers on motorways involves substantial fixed costs and long payback periods, which higher prices help to recover.
 
-**Question 3** [20 marks]
+(Source: adapted from Ofgem consultation papers, DfT 2023)
 
-Evaluate the case for using **VPAG rebates and NICE cost-effectiveness rules** (Extracts F and G), rather than allowing competition between manufacturers, to control NHS spending on branded medicines.
-*(Total for Section C = 20 marks)*
+**Extract G**
 
-**TOTAL FOR PAPER = 100 MARKS**`,
-  },
-  {
-    id: "edxb-p1-f",
-    subject: "edexcel-b",
-    paper: "1",
-    title: "Paper 1 — Set F",
-    description: "Markets, Consumers & Firms. Fast fashion, trade policy, environmental regulation.",
-    totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper Set F
+Environmental and consumer protection regulation
 
-**Time: 2 hours | Total: 100 marks**
+The EU's new Battery Regulation, which the UK is partially mirroring, requires manufacturers to disclose the carbon footprint of EV batteries, guarantee battery health over 8 years, and ensure recyclability quotas by 2030.
 
----
+The Advertising Standards Authority (ASA) has ruled against several manufacturers for exaggerated range claims. Consumer groups argue that standardised, comparable efficiency data should be mandated — similar to fuel economy figures for ICE vehicles.
 
-## SECTION A (60 marks)
+Some manufacturers have lobbied against further regulation, arguing that compliance costs raise final consumer prices and slow the energy transition. Others argue that strong rules build consumer confidence, which is essential for mass-market adoption.
 
-Read the following extracts (A to D) before answering Question 1.
-
-**Extract A — The UK fast-fashion market**
-
-The global fast-fashion market is worth $110 billion. Online-only retailer Shein adds 6,000 new SKUs daily and produces garments at an average factory-gate cost of $3. The industry is responsible for around 10% of global carbon emissions and 20% of industrial water pollution. Fast fashion accounts for 1.3 million tonnes of UK textile waste in 2024; the average UK garment is now worn just 7 times before being discarded.
-
-**Extract B — UK clothing & footwear online market shares, 2024**
-
-| Rank | Retailer | UK online share (%) |
-|------|----------|----------------------|
-| 1 | Shein | 17.6 |
-| 2 | Amazon Fashion | 14.0 |
-| 3 | ASOS | 9.8 |
-| 4 | boohoo Group | 6.4 |
-| 5 | Next | 6.1 |
-
-**Extract C — A specialist sustainable retailer: "Finisterre"**
-
-Finisterre, a Cornish outdoor-clothing brand, sells 60% of its garments using recycled or natural fibres and offers a free repair service. Revenue in FY2024 was £42.0m and operating profit was £3.36m. Finisterre's prices are 3–5x typical fast-fashion alternatives; the firm competes on durability, ethics and brand identity.
-
-**Extract D — Average price of a Shein UK basic T-shirt (£)**
-
-| Quarter | Price (£) | % change |
-|---------|-----------|----------|
-| Q1 2023 | 4.50 | — |
-| Q3 2023 | 4.99 | +10.9 |
-| Q1 2024 | 5.30 | +6.2 |
-| Q3 2024 | 5.65 | +6.6 |
-| Q4 2024 | 5.80 | +2.7 |
-
----
-
-**Question 1a** [4 marks]
-
-Using Extract C, calculate Finisterre's operating profit margin in FY2024. Give your answer to two decimal places.
-**Question 1b** [4 marks]
-
-Using Extract D, calculate the percentage change in the average UK price of a Shein basic T-shirt between Q1 2023 and Q4 2024. Give your answer to two decimal places.
-**Question 1c** [4 marks]
-
-With reference to Extract A, draw a diagram showing the **negative production externality** associated with fast fashion.
-**Question 1d** [6 marks]
-
-Using Extract B, analyse one likely impact of the market structure on Shein's pricing strategy in the UK.
-**Question 1e** [8 marks]
-
-Discuss whether **growth (market-share maximisation)** is the most important objective for Shein in the UK.
-**Question 1f** [10 marks]
-
-Assess the impact of the rise in average Shein T-shirt prices (Extract D) on consumers and rival UK fashion retailers.
-**Question 1g** [12 marks]
-
-Assess the importance of **non-price competition** (delivery speed, app gamification, influencer marketing) in the UK fast-fashion market.
-**Question 1h** [12 marks]
-
-Assess whether the UK fast-fashion market is best described as **monopolistically competitive** rather than oligopolistic.
-*(Total for Section A = 60 marks)*
-
----
-
-## SECTION B (20 marks)
-
-Read Extract E before answering Question 2.
-
-**Extract E — UK trade policy and the "de minimis" import threshold**
-
-UK consumers can import parcels valued under £135 free of customs duty (the "de minimis" threshold). Around 1.6 billion such low-value parcels arrived in 2024, three-quarters from Chinese fast-fashion platforms. UK textile producers — who pay 12% import duty plus 20% VAT on equivalent inputs — argue the regime distorts competition. The Treasury is consulting on lowering the threshold to £40 from 2026.
-
-**Question 2** [20 marks]
-
-Evaluate the likely microeconomic effects of lowering the UK "de minimis" import threshold from £135 to £40 on UK consumers, fast-fashion importers and domestic UK clothing producers.
-*(Total for Section B = 20 marks)*
-
----
-
-## SECTION C (20 marks)
-
-Read Extracts F and G before answering Question 3.
-
-**Extract F — Extended Producer Responsibility (EPR) for textiles**
-
-EPR rules, expected from 2026, will require UK clothing producers to pay a per-garment fee covering end-of-life collection, sorting and recycling. France's existing EPR scheme adds an average €0.06–€0.12 per garment. The UK consultation estimates fees of 4–7p per UK garment, rising to 25p for items below recyclability standards.
-
-**Extract G — A consumer information policy: digital "garment passports"**
-
-The EU's Digital Product Passport (DPP), in force from 2027, requires every garment sold in the EU to carry a QR-code disclosing fibre composition, country of manufacture, repairability score and a "circularity index." Early evidence from the French textile EPR suggests labelling alone has reduced low-end garment sales by 4–6%.
+(Source: adapted from ASA Rulings 2023, EU Battery Regulation and Which? 2023)
 
 **Question 3** [20 marks]
 
-Evaluate the case for using **EPR fees and product-information regulation** (Extracts F and G), rather than relying on consumer awareness alone, to reduce the environmental impact of fast fashion in the UK.
-*(Total for Section C = 20 marks)*
-
-**TOTAL FOR PAPER = 100 MARKS**`,
+Evaluate the likely impact on the UK of increased government regulation of the UK electric vehicle industry.`,
   },
-  {
-    id: "edxb-p1-g",
-    subject: "edexcel-b",
-    paper: "1",
-    title: "Paper 1 — Set G",
-    description: "Markets, Consumers & Firms. Streaming platforms, EV transition policy mix, infrastructure regulation.",
-    totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper Set G
-
-**Time: 2 hours | Total: 100 marks**
-
----
-
-## SECTION A (60 marks)
-
-Read the following extracts (A to D) before answering Question 1.
-
-**Extract A — The UK video-streaming market**
-
-Netflix, Disney+, Amazon Prime Video and Apple TV+ compete in the UK video-streaming market — 21 million UK households now subscribe to at least one service. Netflix leads with 15 million subscribers but its share has fallen from 62% in 2020 to 48% in 2024. Average monthly prices have risen 35% since 2020 as platforms invest heavily in original content; monthly customer "churn" averages 6%.
-
-**Extract B — UK SVOD subscriber base, 2024**
-
-| Rank | Platform | UK subscribers (millions) |
-|------|----------|----------------------------|
-| 1 | Netflix | 15.0 |
-| 2 | Amazon Prime Video | 11.8 |
-| 3 | Disney+ | 7.6 |
-| 4 | Apple TV+ | 2.9 |
-| 5 | Paramount+ | 2.2 |
-
-**Extract C — A challenger UK platform: "MUBI"**
-
-MUBI, a curator-led streaming platform, offers 30 hand-picked films per month. Revenue in FY2024 was £58.0m and operating profit was £6.96m. MUBI charges a 25% premium over Netflix's basic tier and competes on curation, exclusive arthouse releases and an integrated cinema-ticket discount.
-
-**Extract D — Netflix UK "Standard" tier monthly price (£)**
-
-| Date | Price (£) | % change |
-|------|-----------|----------|
-| Jan 2020 | 8.99 | — |
-| Apr 2021 | 9.99 | +11.1 |
-| Mar 2022 | 10.99 | +10.0 |
-| Aug 2023 | 11.99 | +9.1 |
-| Oct 2024 | 12.99 | +8.3 |
-
----
-
-**Question 1a** [4 marks]
-
-Using Extract C, calculate MUBI's operating profit margin in FY2024. Give your answer to two decimal places.
-**Question 1b** [4 marks]
-
-Using Extract D, calculate the percentage change in the Netflix UK "Standard" tier monthly price between January 2020 and October 2024. Give your answer to two decimal places.
-**Question 1c** [4 marks]
-
-With reference to Extract A, draw a diagram showing the impact of growing original-content investment on the costs of UK streaming platforms.
-**Question 1d** [6 marks]
-
-Using Extract B, analyse one likely impact of the market structure on the pricing strategy of Netflix UK.
-**Question 1e** [8 marks]
-
-Discuss whether **growth (subscriber maximisation)** is the most important objective for Netflix UK.
-**Question 1f** [10 marks]
-
-Assess the impact of the introduction of cheaper ad-supported tiers on streaming consumers and rival platforms.
-**Question 1g** [12 marks]
-
-Assess the importance of **non-price competition** (original content, recommendation algorithms, password-sharing rules) in the UK streaming market.
-**Question 1h** [12 marks]
-
-Assess whether the UK streaming market is best described as a **differentiated oligopoly** rather than monopolistically competitive.
-*(Total for Section A = 60 marks)*
-
----
-
-## SECTION B (20 marks)
-
-Read Extract E before answering Question 2.
-
-**Extract E — UK fiscal incentives for the EV transition**
-
-UK new electric vehicle (EV) sales reached 370,000 in 2024 — 22% of new-car sales. The Plug-in Car Grant ended in 2022 (saving £1.5bn over five years) but Vehicle Excise Duty exemptions, the Workplace Charging Scheme and zero-emission Benefit-in-Kind tax (rising from 2% to 9% by 2029) remain. EV prices average £44,000 vs £28,000 for an equivalent petrol model.
-
-**Question 2** [20 marks]
-
-Evaluate the likely microeconomic effects of restoring a £3,500 purchase subsidy for new electric vehicles in 2025 on UK consumers, manufacturers and government finances.
-*(Total for Section B = 20 marks)*
-
----
-
-## SECTION C (20 marks)
-
-Read Extracts F and G before answering Question 3.
-
-**Extract F — The 2035 ZEV mandate**
-
-The Zero-Emission Vehicle (ZEV) mandate requires 22% of every UK manufacturer's new-car sales to be electric in 2024, rising to 80% by 2030 and 100% by 2035. Manufacturers below the threshold face a £15,000 fine per non-compliant vehicle. Stellantis temporarily paused UK production at Vauxhall's Luton van plant in 2024, citing the mandate.
-
-**Extract G — Public charging-infrastructure regulation**
-
-The UK has 55,000 public EV chargers for c.1 million EVs in 2024. New regulations from 2024 require contactless payment, 99% network uptime and price transparency. Ofgem now caps the price of "ultra-rapid" charger connections to the grid; investment in the public network rose 31% in the first nine months of 2024.
-
-**Question 3** [20 marks]
-
-Evaluate the case for using a **mandate plus infrastructure regulation** (Extracts F and G), rather than relying on subsidies and competition between manufacturers, to deliver the UK transition to electric vehicles.
-*(Total for Section C = 20 marks)*
-
-**TOTAL FOR PAPER = 100 MARKS**`,
-  },
-  // ── Paper 2: Competing in the global economy (9EB0/02) ──
-  // Spec: 100 marks · 2 hours · Section A Q1(a–h) [4+4+4+6+8+10+12+12 = 60] (Extracts A/B/C) · Section B Q2 evaluate [20] (Extract D) · Section C Q3 evaluate [20] (Extracts E+F)
   {
     id: "edxb-p2-a",
     subject: "edexcel-b",
     paper: "2",
-    title: "Paper 2 — Set A",
-    description: "Competing in the global economy. UK inflation, fiscal sustainability and global competitiveness.",
+    title: "Paper 2 \u2014 Set A",
+    description: "Competing in the Global Economy. Set A \u2014 moderate difficulty.",
     totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/02) — Paper 2: Competing in the global economy — Predicted Paper Set A
+    content: `# Edexcel A-Level Economics B (9EB0/02) — Paper 2: Competing in the global economy — Predicted Paper (Moderate)
 
 **Time: 2 hours | Total: 100 marks**
 
----
+Answer ALL questions.
 
 ## SECTION A (60 marks)
 
-Read the following extracts (A to C) before answering Question 1.
+**Extract A**
 
-**Extract A — UK inflation and the cost-of-living shock**
+UK trade in goods with selected partners, 2022 (£ billions)
 
-UK CPI inflation peaked at 11.1% in October 2022, the highest in 41 years. The Bank of England raised the base rate from 0.1% to 5.25% across 14 consecutive increases. By mid-2024 headline inflation returned to 2.0%, but core inflation remained at 3.5% and services inflation at 5.7%. Real wages contracted for 18 consecutive months between 2022 and 2023, driving a sharp fall in household real disposable income.
+Partner UK exports of goods UK imports of goods
 
-**Extract B — UK macroeconomic indicators, 2021–2024**
+Germany 36.8 78.1
 
-| Indicator | 2021 | 2022 | 2023 | 2024 |
-|-----------|------|------|------|------|
-| CPI inflation (%) | 2.6 | 9.1 | 7.3 | 2.0 |
-| Core inflation (%) | 2.0 | 5.5 | 6.2 | 3.5 |
-| Bank Rate (%) | 0.1 | 3.5 | 5.25 | 5.25 |
-| Real wage growth (%) | −0.4 | −2.8 | −0.5 | 1.2 |
-| Real GDP growth (%) | 7.6 | 4.3 | 0.1 | 0.6 |
-| Unemployment rate (%) | 4.5 | 3.7 | 4.0 | 4.4 |
+United States 57.9 59.3
 
-**Extract C — UK current account and competitiveness**
+China 20.1 63.6
 
-The UK current account deficit widened to 3.9% of GDP in 2024. Goods exports fell 4.1% in 2024 while imports of services grew 6.2%. Sterling appreciated 7% against the US dollar between January 2023 and December 2024, partly reflecting higher UK interest rates relative to the Federal Reserve. UK manufacturing unit labour costs rose 9% over 2022–2024 — faster than the OECD average of 5%.
+India 8.2 11.4
 
----
+France 26.5 31.2
+
+(Source: adapted from © Office for National Statistics / Crown Copyright)
+
+**Extract B**
+
+Yorkshire Tea brews up Indian growth plans
+
+Taylors of Harrogate, the Yorkshire-based owner of Yorkshire Tea, announced plans in 2023 to expand into India — the world's second-largest tea market. The firm currently exports to more than 40 countries but has relied heavily on sales in the UK, Ireland, and Australia.
+
+"India is a huge opportunity, but it is also a tea-producing nation with strong local brands," said the firm's export director. "We spent two years studying local consumer preferences before committing. Indian consumers prefer stronger, spiced blends, so we have developed new recipes specifically for that market. Without that research, we would almost certainly have misjudged the market and wasted investment."
+
+The company will enter India through a joint venture with a local distributor, which brings knowledge of local supply chains and retail relationships. Rising disposable incomes in urban India have created a growing middle class willing to pay a premium for imported branded goods.
+
+(Source: adapted from Yorkshire Tea targets Indian market © businessdaily.co.uk 2023)
+
+2 Turn over ▶
+
+**Extract C**
+
+UK Export Finance helps SMEs compete overseas
+
+UK Export Finance (UKEF) — the UK government's export credit agency — provided £6.5 billion in support to UK exporters in 2022-23, helping over 500 small and medium-sized enterprises (SMEs) sell abroad. UKEF offers loan guarantees, insurance against non-payment, and direct lending for overseas buyers who purchase UK goods and services.
+
+A spokesperson commented: "Exporters face risks that domestic sellers do not — currency volatility, non-payment by overseas buyers, and political risk. Our support reduces these risks. In the past year we have enabled British firms to win contracts in more than 75 countries."
+
+Economists argue that supporting exports can generate positive multiplier effects in the UK economy, as additional revenues flow to workers and suppliers. However, critics argue that subsidising private firms distorts the market and that taxpayer money should be directed elsewhere, such as education or infrastructure.
+
+(Source: adapted from UKEF Annual Report 2022-23 © gov.uk)
+
+3 Turn over ▶
+
+(a) Using the data from Extract A, calculate the UK balance of trade in goods with China in 2022. You are advised to show your working. (4)
+
+(b) Explain one reason why a joint venture with a local distributor may help Taylors of Harrogate enter the Indian market. (Extract B) (4)
+
+4 Turn over ▶
+
+(c) Using data from Extract A, explain one reason why the UK may have a comparative disadvantage in the production of goods. (4)
+
+(d) Analyse why the owners of Taylors of Harrogate believe it is important to research consumer preferences before exporting. (6)
+
+5 Turn over ▶
+
+(e) Using a suitable diagram, discuss the likely impact of increased UK exports on the UK economy. (8)
+
+6 Turn over ▶
+
+(f) Assess the merits of Taylors of Harrogate's decision to enter the Indian market through a joint venture. (10)
+
+7 Turn over ▶
+
+(g) Assess the likely impact of UK Export Finance's support for SMEs on the UK economy. (Extract C) (12)
+
+8 Turn over ▶
+
+(h) Assess the likely effectiveness of using supply-side policies to improve the UK's international competitiveness. (12)
+
+9 Turn over ▶
 
 **Question 1a** [4 marks]
 
-Using Extract B, calculate the percentage point fall in CPI inflation between 2022 and 2024.
+Using the data from Extract A, calculate the UK balance of trade in goods with China in 2022. You are advised to show your working.
+
 **Question 1b** [4 marks]
 
-With reference to Extract A, explain one reason why core inflation may remain above headline CPI inflation.
+Explain one reason why a joint venture with a local distributor may help Taylors of Harrogate enter the Indian market. (Extract B)
+
 **Question 1c** [4 marks]
 
-With reference to Extract C, explain one factor that may have caused sterling to appreciate against the US dollar between 2023 and 2024.
+Using data from Extract A, explain one reason why the UK may have a comparative disadvantage in the production of goods.
+
 **Question 1d** [6 marks]
 
-Using Extract A, analyse the transmission mechanism through which raising the Bank Rate from 0.1% to 5.25% was expected to reduce inflation.
+Analyse why the owners of Taylors of Harrogate believe it is important to research consumer preferences before exporting.
+
 **Question 1e** [8 marks]
 
-Using a suitable AD/AS diagram, discuss the likely impact of the cost-of-living shock (Extract A) on UK real GDP and the price level in 2022–2023.
+Using a suitable diagram, discuss the likely impact of increased UK exports on the UK economy.
+
 **Question 1f** [10 marks]
 
-Assess whether the rise in UK manufacturing unit labour costs (Extract C) is the most significant threat to UK international competitiveness.
+Assess the merits of Taylors of Harrogate's decision to enter the Indian market through a joint venture.
+
 **Question 1g** [12 marks]
 
-Assess the extent to which the appreciation of sterling between 2023 and 2024 (Extract C) is likely to worsen the UK current account deficit.
+Assess the likely impact of UK Export Finance's support for SMEs on the UK economy. (Extract C)
+
 **Question 1h** [12 marks]
 
-Assess whether contractionary monetary policy (Extract A) or supply-side reform is the more effective response to UK "sticky" core inflation.
-*(Total for Section A = 60 marks)*
-
----
+Assess the likely effectiveness of using supply-side policies to improve the UK's international competitiveness.
 
 ## SECTION B (20 marks)
 
-Read Extract D before answering Question 2.
+**Extract D**
 
-**Extract D — Comparative development indicators, 2024**
+Selected economic indicators, 2022
 
-| Country | GDP per capita (PPP, $) | HDI | GINI | Adult literacy (%) | Under-5 mortality (per 1,000) |
-|---------|-------------------------|-----|------|--------------------|------------------------------|
-| United Kingdom | 53,000 | 0.940 | 0.35 | 99 | 4 |
-| Vietnam | 13,500 | 0.703 | 0.36 | 95 | 19 |
-| Nigeria | 5,800 | 0.535 | 0.35 | 62 | 110 |
-| Brazil | 18,800 | 0.760 | 0.52 | 94 | 14 |
-| Bangladesh | 7,800 | 0.661 | 0.32 | 75 | 27 |
+GDP per capita         Life expectancy at birth         Mean years of
+Country
+(US$ PPP)                     (years)                   schooling
 
-Vietnam recorded average real GDP growth of 6.2% per year over 2010–2024, lifting more than 30 million people out of absolute poverty. FDI inflows reached 5.4% of GDP in 2024, concentrated in electronics, textiles and footwear.
+UK 48,693 81.2 13.4
+
+Vietnam 11,489 73.7 8.4
+
+Nigeria 5,860 54.6 7.2
+
+Mexico 21,362 70.1 9.2
+
+South 46,918 83.6 12.5 Korea
+
+(Source: adapted from UNDP Human Development Report and World Bank data)
+
+10 Turn over ▶
 
 **Question 2** [20 marks]
 
-Evaluate the view that **export-led growth** is the most effective strategy for raising living standards in developing economies such as **Vietnam** (Extract D).
-*(Total for Section B = 20 marks)*
-
----
+Using Extract D, evaluate the usefulness of life expectancy as an indicator of economic development.
 
 ## SECTION C (20 marks)
 
-Read Extracts E and F before answering Question 3.
+**Extract E**
 
-**Extract E — Global protectionism and the new industrial policy**
+EU imposes tariffs on Chinese electric vehicles
 
-The WTO recorded an 11,100-line catalogue of trade-restrictive measures in force in 2024 — up 42% on 2019. The US Inflation Reduction Act (IRA) commits $369bn of subsidies and tax credits to domestic green manufacturing, prompting the EU to pass the Net-Zero Industry Act and the Critical Raw Materials Act. China retaliated with export controls on graphite and rare earths. The IMF warns that "geo-economic fragmentation" could permanently lower global output by up to 7% — equivalent to losing the combined GDP of France and Germany.
+In October 2024, the European Union imposed tariffs of up to 35% on electric vehicles (EVs) imported from China, in addition to the existing 10% import duty. The EU argued that Chinese EV manufacturers had benefitted from unfair state subsidies, allowing them to undercut European producers on price.
 
-**Extract F — A multinational firm: "Volta Batteries plc"**
+Chinese EV maker BYD, which saw its European sales grow rapidly in 2023, responded by announcing plans to build a new factory in Hungary, allowing it to produce cars inside the EU and bypass the tariffs. Other Chinese firms are considering similar investments. China has warned of retaliatory tariffs on European exports, including luxury cars and dairy products.
 
-Volta Batteries plc is a UK-listed multinational producing lithium-ion battery cells for electric vehicles. In 2024 revenue was £4.8bn, of which 62% came from exports to the EU and 18% from the US. Following the IRA, Volta announced a $1.2bn investment in a new gigafactory in Georgia (USA) — partly funded by IRA subsidies — and froze a planned £600m UK investment, citing "uncompetitive" UK energy costs (currently 4× those in the US) and the absence of equivalent UK subsidies. Volta employs 8,400 workers in the UK and a further 2,100 across its EU operations.
+European consumers are likely to face higher prices for electric vehicles in the short term, while European manufacturers such as Volkswagen and Renault may gain market share.
+
+(Source: adapted from EU hits Chinese EVs with tariffs, ft.com 2024)
+
+**Extract F**
+
+BYD — a rising Chinese multinational
+
+BYD, founded in Shenzhen in 1995 as a battery manufacturer, has become one of the world's largest producers of electric vehicles. In 2023, it overtook Tesla as the global leader in EV sales by volume, with more than 3 million vehicles sold across over 70 countries.
+
+BYD's strategy has emphasised vertical integration — the firm produces its own batteries, semiconductors, and electric motors, which has allowed it to control costs during global supply chain disruptions. Its average selling price is roughly 25% below that of its European competitors.
+
+The firm's international expansion has relied heavily on direct exports from its Chinese factories. However, with rising protectionism — including tariffs in the EU and potential restrictions in the US — BYD is accelerating investment in overseas production. New factories are planned in Hungary, Thailand, and Brazil.
+
+(Source: adapted from BYD drives global EV expansion © reuters.com 2024)
+
+13 Turn over ▶
 
 **Question 3** [20 marks]
 
-Evaluate the likely impact of the **rise in global protectionism and industrial policy** (Extract E) on a UK-based multinational firm such as **Volta Batteries plc** (Extract F) and on the wider UK economy.
-*(Total for Section C = 20 marks)*
-
-**TOTAL FOR PAPER = 100 MARKS**`,
+Evaluate the likely impact of tariffs on a multinational firm such as BYD.`,
   },
   {
     id: "edxb-p2-b",
     subject: "edexcel-b",
     paper: "2",
-    title: "Paper 2 — Set B",
-    description: "Competing in the global economy. UK labour market, productivity puzzle and inequality.",
+    title: "Paper 2 \u2014 Set B",
+    description: "Competing in the Global Economy. Set B \u2014 demanding analysis & evaluation.",
     totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/02) — Paper 2: Competing in the global economy — Predicted Paper Set B
+    content: `# Edexcel A-Level Economics B (9EB0/02) — Paper 2: Competing in the global economy — Predicted Paper (Hard)
 
 **Time: 2 hours | Total: 100 marks**
 
----
+Answer ALL questions.
 
 ## SECTION A (60 marks)
 
-Read the following extracts (A to C) before answering Question 1.
+**Extract A**
 
-**Extract A — The UK productivity puzzle**
+UK current account of the balance of payments, 2023 (£ millions)
 
-UK labour productivity grew just 0.4% in 2024, continuing a "productivity puzzle" that has persisted since 2008. Output per hour worked is 16% below the G7 average. Business investment as a share of GDP (10%) is the lowest in the G7. Economic inactivity rose to 21.8% of the working-age population, with 2.8 million people out of work due to long-term sickness.
+Component Credits Debits
 
-**Extract B — UK labour market and productivity, 2019–2024**
+Trade in goods 400,320 559,810
 
-| Indicator | 2019 | 2022 | 2024 |
-|-----------|------|------|------|
-| Employment rate (%) | 76.2 | 75.5 | 75.0 |
-| Economic inactivity (%) | 20.8 | 21.3 | 21.8 |
-| Productivity (output per hour, YoY %) | 0.3 | 0.2 | 0.4 |
-| Vacancies (000s) | 810 | 1,300 | 880 |
-| Real wages (2019 = 100) | 100 | 96.4 | 99.2 |
-| Business investment (% of GDP) | 10.6 | 10.1 | 10.0 |
+Trade in services 470,210 292,540
 
-**Extract C — UK inequality and the National Living Wage**
+Primary income 251,680 263,450
 
-The UK Gini coefficient rose from 0.34 in 2019 to 0.37 in 2024. The top 1% hold 21% of total wealth; the bottom 50% hold just 9%. Child poverty reached 33% in 2024. The National Living Wage rose to £11.44/hour in April 2024 — a 9.8% uplift benefiting around 2.7 million workers — but the Resolution Foundation argues a further uplift to £12.20 by 2026 risks accelerating automation in low-pay sectors.
+Secondary income 29,140 56,820
 
----
+(Source: adapted from © Office for National Statistics / Crown Copyright, 2024)
+
+**Extract B**
+
+JCB battles currency headwinds
+
+JCB, the Staffordshire-based family-owned manufacturer of construction equipment, reported in 2024 that a stronger pound had squeezed profit margins on exports. Around 75% of JCB's production is exported, with key markets in North America, Europe and India.
+
+"When sterling appreciated by around 8% against the US dollar in the first half of 2024, our dollar- denominated export revenues were worth significantly less when converted back into pounds," explained the firm's CEO. "We faced a choice: raise dollar prices and risk losing market share to Japanese and Korean competitors, or absorb the hit on our profit margins."
+
+JCB has responded by expanding production in its US plant near Savannah, Georgia, and by increasing manufacturing capacity in India. This strategy — known as 'natural hedging' — means costs and revenues are generated in the same currency, reducing exposure to exchange-rate movements. However, expanding overseas production raises questions about the long-term commitment to UK manufacturing jobs.
+
+(Source: adapted from JCB feels sterling pinch © ft.com 2024)
+
+2 Turn over ▶
+
+**Extract C**
+
+Freeport promises transformation for Teesside
+
+Teesside Freeport, launched in 2021, is the UK's largest freeport and covers 4,500 acres across the Tees Valley. Businesses operating within the designated tax sites benefit from full relief from business rates for five years, zero employer National Insurance contributions on new employees earning up to £25,000, and enhanced capital allowances.
+
+Local government claims the freeport will attract £1.4 billion of private-sector investment and create around 18,000 new jobs by 2030. Major investments announced include a £1 billion green hydrogen project and a new offshore-wind manufacturing facility.
+
+Critics argue that freeports do not create new economic activity but simply relocate it from elsewhere in the UK, producing a zero-sum outcome nationally. They also warn that the tax relief represents a significant opportunity cost for the Treasury — estimated at £50 million annually — and risks being captured by firms that would have invested in the region anyway.
+
+(Source: adapted from Teesside Freeport: promise and scepticism © bbc.co.uk 2024)
+
+3 Turn over ▶
+
+(a) Using the data from Extract A, calculate the UK balance on the current account of the balance of payments in 2023. You are advised to show your working. (4)
+
+(b) Explain one reason why an appreciation of the pound against the US dollar may reduce JCB's export revenues. (Extract B) (4)
+
+4 Turn over ▶
+
+(c) Using data from Extract A, explain one reason why the UK current account may be in deficit. (4)
+
+(d) Analyse why JCB has increased manufacturing capacity in both the US and India. (6)
+
+5 Turn over ▶
+
+(e) Using a suitable diagram, discuss the likely impact of a sustained appreciation of the pound on the UK macroeconomy. (8)
+
+6 Turn over ▶
+
+(f) Assess the merits of JCB's strategy of 'natural hedging' by expanding overseas production. (10)
+
+7 Turn over ▶
+
+(g) Assess the likely impact of the Teesside Freeport tax incentives on the local economy. (Extract C) (12)
+
+8 Turn over ▶
+
+(h) Assess the likely effectiveness of monetary policy in correcting a persistent UK current-account deficit. (12)
+
+9 Turn over ▶
 
 **Question 1a** [4 marks]
 
-Using Extract B, calculate the change in the UK economic inactivity rate between 2019 and 2024 in percentage points.
+Using the data from Extract A, calculate the UK balance on the current account of the balance of payments in 2023. You are advised to show your working.
+
 **Question 1b** [4 marks]
 
-With reference to Extract A, explain one reason why low business investment may reduce labour productivity.
+Explain one reason why an appreciation of the pound against the US dollar may reduce JCB's export revenues. (Extract B)
+
 **Question 1c** [4 marks]
 
-With reference to Extract C, explain one reason why a rising Gini coefficient indicates greater income inequality.
+Using data from Extract A, explain one reason why the UK current account may be in deficit.
+
 **Question 1d** [6 marks]
 
-Using Extract A, analyse two possible causes of the UK's productivity puzzle.
+Analyse why JCB has increased manufacturing capacity in both the US and India.
+
 **Question 1e** [8 marks]
 
-Using a suitable LRAS diagram, discuss the impact of persistently low productivity growth on the UK's long-run trend rate of economic growth.
+Using a suitable diagram, discuss the likely impact of a sustained appreciation of the pound on the UK macroeconomy.
+
 **Question 1f** [10 marks]
 
-Assess whether rising economic inactivity (Extract A) is the most significant constraint on UK potential output.
+Assess the merits of JCB's strategy of 'natural hedging' by expanding overseas production.
+
 **Question 1g** [12 marks]
 
-Assess the likely impact of further increases in the National Living Wage (Extract C) on workers, firms and the UK labour market.
+Assess the likely impact of the Teesside Freeport tax incentives on the local economy. (Extract C)
+
 **Question 1h** [12 marks]
 
-Assess the extent to which supply-side policies are likely to be more effective than redistributive fiscal policy in reducing UK income inequality.
-*(Total for Section A = 60 marks)*
-
----
+Assess the likely effectiveness of monetary policy in correcting a persistent UK current-account deficit.
 
 ## SECTION B (20 marks)
 
-Read Extract D before answering Question 2.
+**Extract D**
 
-**Extract D — Comparative development indicators, 2024**
+Human development and inequality indicators, 2023
 
-| Country | GDP per capita (PPP, $) | HDI | GINI | Female labour-force participation (%) | Years of schooling (avg) |
-|---------|-------------------------|-----|------|----------------------------------------|--------------------------|
-| United Kingdom | 53,000 | 0.940 | 0.35 | 72 | 13.4 |
-| India | 9,200 | 0.644 | 0.37 | 24 | 6.7 |
-| Indonesia | 14,800 | 0.713 | 0.39 | 53 | 8.6 |
-| Kenya | 6,100 | 0.601 | 0.41 | 71 | 6.6 |
-| South Korea | 50,200 | 0.929 | 0.31 | 55 | 12.5 |
+GINI          CO₂ per capita        Poverty ($2.15/day,
+Country      HDI (rank)
+coeff.              (t)                      %)
 
-India has set a goal of becoming a $5 trillion economy by 2027. Annual real GDP growth averaged 6.8% over 2014–2024, but female labour-force participation remains among the lowest in the G20.
+Norway 0.966 (2) 0.28 6.7 0.2
+
+United 0.927 (20) 0.41 14.4 1.2 States
+
+0.670 Bangladesh 0.32 0.5 13.5 (129)
+
+Botswana 0.708 (117) 0.53 3.1 14.9
+
+Saudi Arabia 0.875 (40) 0.45 17.9 n/a
+
+(Source: adapted from UNDP HDR 2023 and World Bank indicators)
+
+10 Turn over ▶
 
 **Question 2** [20 marks]
 
-Evaluate the extent to which raising **female labour-force participation** is the single most effective strategy for accelerating economic development in **India** (Extract D).
-*(Total for Section B = 20 marks)*
-
----
+Using Extract D, evaluate the view that inequality matters more than income growth for a country's economic development.
 
 ## SECTION C (20 marks)
 
-Read Extracts E and F before answering Question 3.
+**Extract E**
 
-**Extract E — Globalisation, FDI and the multinational firm**
+US-China trade tensions escalate
 
-Global FDI flows fell 8% to $1.3 trillion in 2024 — the lowest since 2010. Developing economies received 65% of inflows, but the share concentrated in just five countries (China, Brazil, India, Mexico, UAE) reached 58%. The OECD estimates that multinational enterprises (MNEs) account for one-third of global output and one-half of global exports, but only 20% of global employment. Critics argue MNEs depress wages in low-skill sectors and erode the corporate tax base in host countries via transfer pricing.
+In 2024, the United States raised tariffs on a range of Chinese goods, including a 100% tariff on Chinese electric vehicles, 50% on Chinese solar cells, and 25% on lithium-ion batteries. The stated rationale was to protect strategic domestic industries and respond to Chinese state subsidies. China retaliated with tariffs on US agricultural products, affecting soybean, pork and dairy exports.
 
-**Extract F — A multinational firm: "Sundara Apparel plc"**
+Multinational firms with global supply chains face complex choices. Apple, which assembles around 85% of iPhones in China, has accelerated the shift of production to India and Vietnam. Tesla, which operates a major Shanghai gigafactory, has delayed plans to increase exports from China to the US.
 
-Sundara Apparel plc is a UK-listed fast-fashion retailer. In 2024 revenue was £6.2bn. Sundara sources 78% of its garments from a network of 240 supplier factories in Bangladesh, Vietnam and Cambodia, employing approximately 180,000 workers indirectly. Average factory wages in Bangladesh are £85/month — below the UN's "living wage" benchmark of £150/month. Sundara recently committed £40m to upgrading factory safety and to a "living wage premium" on 25% of its garments by 2027. Critics argue this remains insufficient given Sundara's 2024 operating margin of 11.4%.
+Economists warn that ongoing 'decoupling' between the world's two largest economies could reduce global efficiency, raise consumer prices, and slow the diffusion of new technologies. However, supporters argue that reducing dependence on a single supplier country strengthens economic security.
+
+(Source: adapted from US-China tariffs widen © economist.com 2024)
+
+**Extract F**
+
+Apple's supply chain pivot
+
+Apple Inc., the world's most valuable company by market capitalisation, has built one of the most complex global supply chains in history. At its peak in 2019, around 98% of iPhones were assembled in China through contract manufacturers such as Foxconn. The firm benefited from Chinese economies of scale, skilled labour, and integrated component suppliers.
+
+Following the US-China trade war that began in 2018 and disruptions during the COVID-19 pandemic, Apple has accelerated diversification. By 2024, roughly 14% of iPhones were assembled in India, with plans to raise this to 25% by 2027. Foxconn has committed $1.5 billion to new Indian facilities and Apple has opened its first branded retail stores in Mumbai and Delhi.
+
+Despite the shift, India's share of Apple's high-end iPhone production remains limited, as component ecosystems and logistics networks are less developed than in China. Apple's senior executives have acknowledged that fully relocating iPhone production outside China is "not realistic" in the medium term.
+
+(Source: adapted from Apple's India pivot © bloomberg.com 2024)
+
+14 Turn over ▶
 
 **Question 3** [20 marks]
 
-Evaluate the **economic and ethical impact** of multinational firms such as **Sundara Apparel plc** (Extract F) on the developing economies in which they operate.
-*(Total for Section C = 20 marks)*
-
-**TOTAL FOR PAPER = 100 MARKS**`,
+Evaluate the likely impact of rising protectionism on the operations of multinational firms such as Apple.`,
   },
   {
     id: "edxb-p2-c",
     subject: "edexcel-b",
     paper: "2",
-    title: "Paper 2 — Set C",
-    description: "Competing in the global economy. UK fiscal sustainability, financial stability and the global economy.",
+    title: "Paper 2 \u2014 Set C",
+    description: "Competing in the Global Economy. Set C \u2014 A* level synoptic challenge.",
     totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/02) — Paper 2: Competing in the global economy — Predicted Paper Set C
+    content: `# Edexcel A-Level Economics B (9EB0/02) — Paper 2: Competing in the global economy — Predicted Paper (Advanced)
 
 **Time: 2 hours | Total: 100 marks**
 
----
+Answer ALL questions.
 
 ## SECTION A (60 marks)
 
-Read the following extracts (A to C) before answering Question 1.
+**Extract A**
 
-**Extract A — UK fiscal sustainability**
+Germany — selected macroeconomic indicators, 2023
 
-UK national debt exceeded 100% of GDP in 2024 for the first time since the early 1960s. The government borrowed £310bn during the Covid-19 pandemic and debt interest payments reached £111bn in 2024 — more than the combined budgets of defence and education. The OBR warned that without fiscal consolidation, debt could reach 300% of GDP by 2070, driven by ageing demographics, climate-transition costs and rising healthcare demand.
+Indicator Value
 
-**Extract B — UK public finances, 2019–2024**
+GDP (current prices, € trillion) 4.12
 
-| Indicator | 2019 | 2022 | 2024 |
-|-----------|------|------|------|
-| National debt (% GDP) | 83 | 97 | 102 |
-| Budget deficit (£bn) | 57 | 133 | 108 |
-| Debt interest (£bn) | 48 | 83 | 111 |
-| Tax revenue (% GDP) | 33.5 | 35.2 | 37.1 |
-| Public investment (% GDP) | 2.4 | 2.8 | 2.5 |
-| 10-year gilt yield (%) | 0.8 | 3.3 | 4.1 |
+Exports of goods and services (€ trillion) 1.93
 
-**Extract C — The UK financial sector**
+Imports of goods and services (€ trillion) 1.71
 
-The UK financial sector contributes £132bn to GDP (8.3%). After the 2008 crisis, Basel III regulations required banks to hold higher capital buffers, and ring-fencing separated retail from investment banking. However, shadow banking assets grew 40% between 2019 and 2024, and 15 million UK consumers now use digital-only banks. Mortgage defaults rose 24% in 2024 as the higher Bank Rate (5.25%) fed through to households on variable-rate mortgages.
+Current account balance (% of GDP) +5.9%
 
----
+Real GDP growth rate −0.3%
+
+Gross fixed capital formation (% of GDP) 20.8%
+
+Unemployment rate 3.0%
+
+Inflation (HICP, annual average) 5.9%
+
+(Source: adapted from Destatis, Deutsche Bundesbank, 2024)
+
+**Extract B**
+
+Volkswagen under pressure in a shifting global market
+
+Volkswagen (VW), Europe's largest car manufacturer and a flagship of German industry, reported a 2% fall in global deliveries in 2024, driven largely by weaker sales in China — its most profitable market for more than two decades. Once dominant, European brands now hold only 15% of the Chinese EV market, as domestic rivals such as BYD and NIO have captured share with cheaper, technologically advanced vehicles.
+
+The firm has announced a restructuring involving the closure of at least three German factories and the loss of up to 35,000 jobs. Unit labour costs in Germany are roughly 40% above those in Spain and more than double those in Central European EU countries. High energy prices, triggered by the 2022 energy shock, have worsened VW's cost disadvantage.
+
+The CEO has emphasised that the firm's future depends on accelerating the transition to electric vehicles, improving software capability, and deepening partnerships with Chinese technology firms. Critics argue that German carmakers have been slow to innovate and that the business model is structurally exposed.
+
+(Source: adapted from VW confronts existential reset © handelsblatt.com 2024)
+
+2 Turn over ▶
+
+**Extract C**
+
+Germany unveils €100bn infrastructure fund
+
+In March 2025, the German parliament approved a constitutional amendment loosening the country's strict 'debt brake' fiscal rule and creating a €100 billion special fund for infrastructure investment over ten years. Priorities include rail electrification, 5G rollout, green-hydrogen networks, and modernisation of Germany's ageing transport system.
+
+Supporters argue that Germany's public investment has been persistently weak — gross fixed capital formation as a share of GDP has lagged behind France, the US, and most Nordic economies for more than a decade. Chronic underinvestment in infrastructure is blamed for deteriorating transport reliability and, increasingly, the loss of competitiveness relative to rival manufacturing economies.
+
+Opponents warn that higher public borrowing will raise interest rates across the eurozone, crowd out private investment, and leave future taxpayers with a heavier debt burden. Independent economists estimate that the fiscal multiplier for infrastructure investment typically lies between 1.4 and 2.1 in the medium term, but that returns depend critically on the quality of project selection.
+
+(Source: adapted from Germany bets big on infrastructure © reuters.com 2025)
+
+3 Turn over ▶
+
+(a) Using the data from Extract A, calculate the value of Germany's trade balance in goods and services in 2023. You are advised to show your working. (4)
+
+(b) Explain one reason why Germany's high unit labour costs may reduce the international competitiveness of Volkswagen. (Extract B) (4)
+
+4 Turn over ▶
+
+(c) Using data from Extract A, explain one reason why Germany may be described as an export-led economy. (4)
+
+(d) Analyse why Volkswagen's loss of market share in China poses a significant risk to the German economy. (6)
+
+5 Turn over ▶
+
+(e) Using a suitable diagram, discuss the likely long-run impact of persistent underinvestment in infrastructure on a developed economy. (Extract C) (8)
+
+6 Turn over ▶
+
+(f) Assess the merits of Volkswagen deepening its partnerships with Chinese technology firms to accelerate its transition to electric vehicles. (10)
+
+7 Turn over ▶
+
+(g) Assess the likely macroeconomic impact of Germany's €100 billion infrastructure fund. (Extract C) (12)
+
+8 Turn over ▶
+
+(h) Discuss the view that the loss of competitiveness shown in Extract B can only be addressed by structural supply-side reform rather than by demand-side policy. (12)
+
+9 Turn over ▶
 
 **Question 1a** [4 marks]
 
-Using Extract B, calculate the percentage increase in UK debt interest payments between 2019 and 2024.
+Using the data from Extract A, calculate the value of Germany's trade balance in goods and services in 2023. You are advised to show your working.
+
 **Question 1b** [4 marks]
 
-With reference to Extract A, explain one reason why an ageing population may put pressure on UK fiscal sustainability.
+Explain one reason why Germany's high unit labour costs may reduce the international competitiveness of Volkswagen. (Extract B)
+
 **Question 1c** [4 marks]
 
-With reference to Extract C, explain one risk that the rapid growth of shadow banking poses to UK financial stability.
+Using data from Extract A, explain one reason why Germany may be described as an export-led economy.
+
 **Question 1d** [6 marks]
 
-Using Extract B, analyse the likely impact of rising 10-year gilt yields on UK fiscal sustainability.
+Analyse why Volkswagen's loss of market share in China poses a significant risk to the German economy.
+
 **Question 1e** [8 marks]
 
-Using a suitable AD/AS diagram, discuss the likely macroeconomic impact of fiscal consolidation aimed at reducing the UK budget deficit.
+Using a suitable diagram, discuss the likely long-run impact of persistent underinvestment in infrastructure on a developed economy. (Extract C)
+
 **Question 1f** [10 marks]
 
-Assess whether tax rises or spending cuts are likely to be the more effective tool for restoring UK fiscal sustainability.
+Assess the merits of Volkswagen deepening its partnerships with Chinese technology firms to accelerate its transition to electric vehicles.
+
 **Question 1g** [12 marks]
 
-Assess the likely impact of the higher Bank Rate (Extract C) on UK households, firms and financial stability.
+Assess the likely macroeconomic impact of Germany's €100 billion infrastructure fund. (Extract C)
+
 **Question 1h** [12 marks]
 
-Assess the extent to which a UK national debt above 100% of GDP (Extract A) should be a serious concern for policymakers.
-*(Total for Section A = 60 marks)*
-
----
+Discuss the view that the loss of competitiveness shown in Extract B can only be addressed by structural supply-side reform rather than by demand-side policy.
 
 ## SECTION B (20 marks)
 
-Read Extract D before answering Question 2.
+**Extract D**
 
-**Extract D — Comparative development indicators, 2024**
+Economic development and sustainability indicators, 2023
 
-| Country | GDP per capita (PPP, $) | HDI | GINI | Net oil exports (% GDP) | Government revenue (% GDP) |
-|---------|-------------------------|-----|------|--------------------------|----------------------------|
-| United Kingdom | 53,000 | 0.940 | 0.35 | −1.2 | 37 |
-| Saudi Arabia | 56,300 | 0.875 | 0.46 | 22.4 | 32 |
-| Nigeria | 5,800 | 0.535 | 0.35 | 6.1 | 9 |
-| Norway | 82,200 | 0.961 | 0.27 | 14.7 | 56 |
-| Angola | 7,300 | 0.586 | 0.51 | 18.3 | 14 |
+GDP per                                                          Gross nat.
+HDI        Ineq.-         Ecological
+Country     capita (US$                                                       savings (%
+(rank)      adj. HDI      footprint (gha)
+PPP)                                                             GDP)
 
-Nigeria — Africa's largest economy — depends on crude oil for 60% of government revenue and 80% of export earnings. Real GDP per capita has risen by just 0.5% per year over 2014–2024, while the population grew 2.5% annually.
+0.497 Ethiopia 2,812 0.372 1.1 33.1 (176)
+
+0.644 India 9,183 0.475 1.2 30.2 (134)
+
+0.713 Indonesia 14,687 0.584 1.7 36.5 (114)
+
+0.760 Brazil 17,827 0.581 2.8 17.4 (89)
+
+0.950 Germany 66,132 0.891 4.7 26.1 (7)
+
+(Source: adapted from UNDP HDR 2023/24, World Bank, Global Footprint Network)
+
+10 Turn over ▶
 
 **Question 2** [20 marks]
 
-Evaluate the view that **dependence on primary commodity exports** (Extract D) is the single greatest barrier to long-run economic development in **Nigeria**.
-*(Total for Section B = 20 marks)*
-
----
+Using Extract D, evaluate the view that rapid economic growth in developing economies is incompatible with genuine economic development.
 
 ## SECTION C (20 marks)
 
-Read Extracts E and F before answering Question 3.
+**Extract E**
 
-**Extract E — Global financial stability and capital flows**
+The age of industrial policy returns
 
-Cross-border bank lending to emerging markets fell 12% in 2024 as the US Federal Reserve held interest rates above 5%. The IMF warned of a "great divergence" — advanced economies with strong fiscal buffers can absorb tighter global financial conditions, but 60% of low-income countries are now in or near debt distress. Twelve sovereign defaults have occurred since 2020, including Sri Lanka, Zambia and Ghana. The IMF estimates that a sharp tightening of global financial conditions could shave 1.5 percentage points off emerging-market growth in 2025.
+For much of the 1990s and 2000s, industrial policy — where governments target specific sectors with subsidies, tax credits and procurement preferences — was dismissed by mainstream economists as politically captured and economically inefficient. Since 2020, it has returned with force. The US Inflation Reduction Act (IRA) of 2022 committed around $369 billion to clean-energy subsidies. The EU Green Deal Industrial Plan, the UK's Advanced Manufacturing Plan, India's Production Linked Incentive scheme, and Japan's semiconductor subsidies all reflect a similar turn.
 
-**Extract F — A multinational firm: "Meridian Capital plc"**
+The return of industrial policy is driven by climate-transition needs, concerns about supply-chain resilience exposed by the COVID-19 pandemic, and geopolitical rivalry with China. The World Trade Organization has recorded a sharp rise in trade-distorting measures: more than 3,000 new interventions per year since 2020, compared with around 600 annually in 2010.
 
-Meridian Capital plc is a UK-listed global investment bank with $2.4 trillion of assets under management. In 2024 it generated 48% of revenue from the US, 22% from the EU, 18% from the UK and 12% from emerging markets. Meridian holds $180bn of emerging-market sovereign and corporate debt — including $14bn of Nigerian, Egyptian and Pakistani exposure. A 100bp rise in emerging-market borrowing costs would reduce the mark-to-market value of Meridian's EM portfolio by approximately $9bn. Meridian employs 4,200 staff in London and lobbies the UK government for "lighter-touch" post-Brexit financial regulation.
+Critics warn that a global subsidy race risks misallocating capital, retaliation spirals, and the erosion of a rules-based trading system. Supporters argue that climate and security externalities justify correcting market failures and that 'picking winners' may be necessary when private finance alone cannot deliver transformative investment.
+
+(Source: adapted from The new industrial policy © economist.com 2024)
+
+**Extract F**
+
+TSMC's global manufacturing expansion
+
+Taiwan Semiconductor Manufacturing Company (TSMC) produces around 55% of all semiconductors globally and more than 90% of the most advanced chips (sub-5nm). The concentration of leading-edge production on a single island, 150 km from mainland China, has become a pressing concern for major economies reliant on semiconductors for defence, AI and consumer electronics.
+
+Under pressure from both geopolitical risk and generous subsidies, TSMC has committed to the largest overseas expansion in its history: a $65 billion investment in Arizona (supported by $6.6 billion of US CHIPS Act funding), a €10 billion fab in Dresden (with €5 billion of EU support), and a ¥1.4 trillion facility in Kumamoto, Japan (with around ¥900 billion of Japanese government subsidies).
+
+However, TSMC executives have publicly stated that overseas fabs cost 50% more to operate than the firm's Taiwanese operations, that leading-edge process development will remain in Taiwan, and that the global expansion is driven primarily by customer and government pressure rather than economic logic. TSMC has signalled that the subsidies are necessary, but not sufficient, to justify the investments.
+
+(Source: adapted from TSMC's trillion-dollar pivot © ft.com 2024)
+
+14 Turn over ▶
 
 **Question 3** [20 marks]
 
-Evaluate the impact of **tighter global financial conditions** (Extract E) on the operations of UK-based multinational financial firms such as **Meridian Capital plc** (Extract F) and on UK financial stability.
-*(Total for Section C = 20 marks)*
-
-**TOTAL FOR PAPER = 100 MARKS**`,
+Evaluate the view that the return of industrial policy will ultimately benefit multinational firms such as TSMC more than the economies providing the subsidies.`,
   },
-  // ── Paper 3: The Global Economy (9EB0/03) ──
-  // Spec: 100 marks · 2 hours · Two data-response questions, each with parts (a)–(d) [8+10+12+20 = 50]
   {
     id: "edxb-p3-a",
     subject: "edexcel-b",
     paper: "3",
-    title: "Paper 3 — Set A",
-    description: "The Global Economy. Globalisation, trade protection, and development (synoptic).",
+    title: "Paper 3 \u2014 Set A",
+    description: "The Economic Environment & Business. Set A \u2014 moderate difficulty.",
     totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/03) — Paper 3 — Predicted Paper Set A
+    content: `# Edexcel A-Level Economics B (9EB0/03) — Paper 3: The economic environment and business — Predicted Paper (Moderate)
 
 **Time: 2 hours | Total: 100 marks**
 
-Answer **both** questions. Each question is worth 50 marks and contains four parts (a)–(d).
+Answer ALL questions. Each question has parts (a)–(d) totalling 50 marks.
 
----
+## SECTION A — Question 1 (50 marks)
 
-## Question 1 — Globalisation Under Threat (50 marks)
+**Extract A**
 
-**Extract A:** Global trade growth slowed to 1.5% in 2024, down from 3.5% in 2019. The US–China trade war, Brexit, and the pandemic have accelerated "reshoring" and "friendshoring" trends. The WTO reported a 42% increase in trade-restrictive measures since 2019. Developing countries argue that the global trading system is biased against them.
+The UK coffee shop market The UK branded coffee shop market continued its long-term expansion through 2024, with industry estimates placing the number of outlets at just over 10,800. The sector is dominated by three main chains — Costa Coffee, Starbucks and Pret A Manger — which together account for more than half of branded outlets. A long tail of independent and regional coffee shops makes up the remainder and has grown steadily since the pandemic. Barriers to entry into the branded segment are substantial: a typical new Costa store costs over £250,000 to fit out, and lease commitments of 10–15 years are common on high-street premises. Chains compete on price, quality of coffee, speed of service, ambience, digital loyalty apps and plant-based milk options. (Source: adapted from industry press, 2024)
 
-**Extract B:**
+**Extract B**
 
-| Global Trade Indicators | 2019 | 2022 | 2024 |
-|------------------------|------|------|------|
-| World trade growth (%) | 3.5 | 3.2 | 1.5 |
-| Trade restrictions (000s) | 7.8 | 9.4 | 11.1 |
-| FDI flows ($tn) | 1.5 | 1.3 | 1.1 |
-| Developing country trade share (%) | 42 | 44 | 45 |
-| Supply-chain disruption index | 100 | 180 | 125 |
+Global coffee bean prices Global arabica and robusta prices reached multi-decade highs during 2024. A combination of drought in Brazil — which produces around 40% of the world's arabica — and poor harvests in Vietnam squeezed global supply. Industry analysts reported that the wholesale price of arabica roughly doubled during the 12 months to November 2024. While large buyers hedge exposure using futures markets, independent and smaller chain operators face the full impact of spot price movements within weeks. (Source: adapted from commodity market reports, 2024)
 
-Question 1(a) [8 marks]
-With reference to Extract A and using a suitable diagram, explain the theoretical basis of the gains from free trade.
+Month Jan-23 Jul-23 Jan-24 Jul-24 Nov-24
 
-Question 1(b) [10 marks]
-Using Extract B, analyse two reasons for the slowdown in global trade growth between 2019 and 2024.
+Price ($/lb) 1.68 1.58 1.82 2.36 3.12 Figure 1: Monthly arabica coffee futures price, $ per pound (indicative, 2023–2024)
 
-Question 1(c) [12 marks]
-Assess the economic effects on developing countries of "reshoring" production back to advanced economies.
+**Extract C**
 
-Question 1(d) [20 marks]
-"The era of globalisation is over, and this is harmful for developing countries." Evaluate this statement, with reference to the extracts and your own knowledge.
+Cost pressures and consumer spending UK CPI inflation fell to 2.3% in April 2024, close to the Bank of England's 2% target, before drifting back up to 2.6% by November 2024 as services inflation proved sticky. Real household disposable income rose modestly during 2024 after two years of decline, but consumer confidence remained cautious. A recent survey by a hospitality trade body reported that 38% of UK adults said they were buying coffee from cafés less often than a year earlier, with 'making coffee at home' the most-cited substitute. Sales of home coffee machines through UK retailers grew by an estimated 14% year-on-year. (Source: adapted from ONS / trade body data, 2024)
 
----
+**Extract D**
 
-## Question 2 — Climate Change and the Global Economy (50 marks)
+The external costs of disposable coffee cups Around 2.5 billion disposable coffee cups are used in the UK each year. The plastic polyethylene lining used to make paper cups waterproof means the vast majority cannot be recycled through standard paper facilities; fewer than 1 in 400 are actually recycled. Costa, Starbucks and Pret each offer a discount (typically 25p–50p) for customers who bring reusable cups, though uptake is generally estimated at under 5% of transactions. Critics of a proposed 25p 'latte levy' argue that it is regressive and that the main cost should fall on producers rather than consumers. Supporters argue the externality is under-priced and that a behavioural 'nudge' is required. (Source: adapted from Environmental Audit Committee submissions)
 
-**Extract C:** The Paris Agreement targets limiting global warming to 1.5°C, requiring a 45% reduction in emissions by 2030. However, global emissions rose 1.1% in 2024 to 37.4 billion tonnes of CO₂. Developing countries contribute 63% of emissions but have the least capacity to adapt. The annual climate finance gap is estimated at $3 trillion.
+Indicator 2020 2021 2022 2023 2024
 
-**Extract D:**
+Number of branded outlets 9.2 (000s) 9.4 9.8 10.4 10.8
 
-| Climate & Economy | 2019 | 2022 | 2024 |
-|------------------|------|------|------|
-| Global CO₂ (Gt) | 36.4 | 36.8 | 37.4 |
-| Climate finance ($bn) | 632 | 768 | 890 |
-| Renewable energy share (%) | 27 | 30 | 33 |
-| Climate-related losses ($bn) | 166 | 313 | 280 |
-| Carbon price avg ($/tonne) | 22 | 45 | 68 |
+Average cup price — latte 2.95(£) 3.10 3.35 3.65 3.95
 
-Question 2(a) [8 marks]
-Using a suitable negative externality diagram, explain why the market fails to address climate change.
+Sector revenue (£bn) 3.0 3.9 4.7 5.2 5.6
 
-Question 2(b) [10 marks]
-Using Extract D, analyse the significance of the rise in average carbon prices between 2019 and 2024.
+National Living Wage (£/hr, 8.72 23+) 8.91 9.50 10.42 11.44 Figure 2: Selected UK coffee shop indicators, 2020–2024
 
-Question 2(c) [12 marks]
-Assess whether market-based mechanisms (carbon pricing, cap-and-trade) are more effective than direct regulation in reducing emissions in developing economies.
+**Question 1a** [8 marks]
 
-Question 2(d) [20 marks]
-"Developing countries should not be expected to sacrifice economic growth for environmental sustainability." Evaluate this statement, with reference to the extracts and your own knowledge.`,
+Using Extract B and Figure 1 and an appropriate calculation, discuss the likely impact on UK coffee shops of the rise in global coffee bean prices.
+
+**Question 1b** [10 marks]
+
+Assess the likely effect of the changes in UK consumer incomes and confidence described in Extract C on the revenue of UK coffee shop chains.
+
+**Question 1c** [12 marks]
+
+Assess the extent to which the UK coffee shop market can be described as an oligopoly, using evidence from the extracts to support your answer.
+
+**Question 1d** [20 marks]
+
+With reference to Extract D and your own knowledge, evaluate the case for UK government intervention to reduce the external costs associated with disposable coffee cups.
+
+## SECTION B — Question 2 (50 marks)
+
+**Extract E**
+
+Tesco plc — business overview Tesco plc is the UK's largest grocery retailer, operating over 4,000 stores across the UK and Republic of Ireland. Its UK grocery market share stood at 27.9% in the 12 weeks to October 2024, its highest level for a decade. The group also operates the Booker wholesale business and a growing online grocery platform delivering to around 1.5 million households per week. Tesco's stated corporate purpose is to 'serve our customers, communities and planet a little better every day'. The firm has set a target of net-zero UK emissions by 2035 across its own operations. (Source: adapted from Tesco plc Annual Report 2023/24)
+
+**Extract F**
+
+Competition from discounters German discounters Aldi and Lidl together held approximately 18% of the UK grocery market in 2024, up from 12% in 2019. Their growth has been driven by a limited product range, low cost own-brand lines and highly efficient store layouts. In response, Tesco's 'Aldi Price Match' campaign — introduced in 2020 — now covers over 700 everyday lines whose price is guaranteed to match the discounters. Tesco has extended its 'Clubcard Prices' loyalty scheme, giving members access to prices up to a third below standard shelf prices on around 8,000 products. Critics argue this creates two-tier pricing; supporters point to retention benefits of over 20 million active Clubcard households. (Source: adapted from Kantar Worldpanel, 2024)
+
+**Extract G**
+
+Wage costs and the labour market The UK National Living Wage rose to £11.44 per hour for workers aged 21 and over from April 2024, a 9.8% increase on the previous year. UK unemployment stood at 4.3%, and vacancies in retail and hospitality remained elevated, forcing employers to raise pay above statutory minima to attract staff. In September 2024, Tesco increased the minimum hourly rate for UK store colleagues to £12.02 per hour. Including London weighting, pension contributions and a colleague discount, Tesco estimates that its total reward package for hourly-paid colleagues is worth in excess of £14 per hour. (Source: adapted from HM Treasury and Tesco plc, 2024)
+
+**Extract H**
+
+Selected Tesco financial data The table below reports selected financial data for Tesco plc's 52-week year ending February 2024.
+
+2021/22 2022/23 2023/24
+
+Group sales (excl. VAT) 54,768 57,656 61,475
+
+Adjusted operating profit 2,645 2,630 2,830
+
+Operating profit margin (%) 4.83 4.56 4.60
+
+2021/22 2022/23 2023/24
+
+UK like-for-like sales growth (%) 2.5 7.2 6.8
+
+UK grocery market share (%) 27.1 27.0 27.6
+
+Dividend per share (pence) 10.90 10.90 12.10 Figure 3: Tesco plc selected financial data (£m unless stated)
+
+**Question 2a** [8 marks]
+
+Using the data in Figure 3, calculate the percentage change in Tesco's group sales between 2021/22 and 2023/24. Discuss the implications of the change in operating profit margin over the same period for Tesco's shareholders.
+
+**Question 2b** [10 marks]
+
+With reference to Extract F, assess the strategies Tesco has used to compete with Aldi and Lidl.
+
+**Question 2c** [12 marks]
+
+Assess the likely impact on Tesco of the rise in the UK National Living Wage described in Extract G.
+
+**Question 2d** [20 marks]
+
+Evaluate the extent to which Tesco's future financial performance depends on macroeconomic conditions in the UK rather than on decisions taken by the firm's own management. END OF PAPER INSERT — Pre-release Context Do not return this Booklet with the question paper. Investigating the Economic Environment and Business Context This year the context is competitiveness, pricing and the consumer market. You should think about how firms compete on price and non-price strategies in crowded consumer markets, and how macroeconomic conditions (inflation, real wages, consumer confidence) shape the demand facing these firms. Research To prepare for this year's context, you should research: • how firms in competitive consumer markets differentiate themselves • the role of loyalty schemes and price-matching in retailing • how cost pressures (input prices, wages) affect firms' operating margins • the case for and against government intervention to correct externalities • how macroeconomic conditions influence the demand for consumer goods. You cannot take any of your research or investigation data carried out as part of the pre-release into the examination.`,
   },
   {
     id: "edxb-p3-b",
     subject: "edexcel-b",
     paper: "3",
-    title: "Paper 3 — Set B",
-    description: "The Global Economy. Emerging markets, FDI, aid, and the debt crisis.",
+    title: "Paper 3 \u2014 Set B",
+    description: "The Economic Environment & Business. Set B \u2014 demanding analysis & evaluation.",
     totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/03) — Paper 3 — Predicted Paper Set B
+    content: `# Edexcel A-Level Economics B (9EB0/03) — Paper 3: The economic environment and business — Predicted Paper (Hard)
 
 **Time: 2 hours | Total: 100 marks**
 
-Answer **both** questions. Each question is worth 50 marks and contains four parts (a)–(d).
+Answer ALL questions. Each question has parts (a)–(d) totalling 50 marks.
 
----
+## SECTION A — Question 1 (50 marks)
 
-## Question 1 — India: An Emerging Economic Superpower? (50 marks)
+**Extract A**
 
-**Extract A:** India's GDP grew 6.3% in 2024, making it the world's fastest-growing major economy. It overtook the UK to become the 5th-largest economy in 2022. However, 228 million Indians live in poverty, the Gini coefficient is 0.35, and GDP per capita ($2,610) remains far below China ($12,720) and the UK ($46,370). India's IT services sector exports $200 billion annually.
+Brazil's agricultural export economy Brazil is the world's largest exporter of soybeans, coffee, sugar and beef. Agriculture and agribusiness together account for around 25% of Brazilian GDP and close to half of total merchandise exports by value. The country benefits from large areas of fertile land in the Cerrado and Amazon regions and a modern, highly mechanised large-farm sector. Expansion of the agricultural frontier has been associated with deforestation, particularly in the Amazon. Between 2019 and 2022, Brazil lost an average of 11,500 km² of primary forest per year. Following a change of federal government in January 2023, deforestation rates declined by approximately 50% in 2023 as enforcement was stepped up. (Source: adapted from FAO and Brazilian government statistics, 2024)
 
-**Extract B:**
+**Extract B**
 
-| India's Economy | 2015 | 2020 | 2024 |
-|----------------|------|------|------|
-| GDP growth (%) | 8.0 | -6.6 | 6.3 |
-| GDP per capita ($) | 1,590 | 1,920 | 2,610 |
-| FDI inflows ($bn) | 44 | 64 | 85 |
-| HDI | 0.624 | 0.633 | 0.644 |
-| Manufacturing (% GDP) | 16 | 14 | 17 |
+The real and commodity prices The Brazilian real (BRL) has experienced significant volatility against the US dollar. Having traded at close to BRL 4.00 per USD in 2019, the real depreciated to over BRL 5.70 in late 2021, before partially recovering. It stood at approximately BRL 5.80 per USD in late 2024 as investors reacted to widening fiscal deficits and ongoing political uncertainty. Brazilian exporters invoice the great majority of commodity shipments in US dollars, while the bulk of their costs (labour, local inputs, land taxes, domestic transport) are denominated in reais. (Source: adapted from Bloomberg and Banco Central do Brasil, 2024)
 
-Question 1(a) [8 marks]
-Using a suitable AD/AS diagram, explain how rising FDI inflows contribute to India's economic growth.
+**Extract C**
 
-Question 1(b) [10 marks]
-Using Extract B, analyse why India's GDP growth may not fully reflect improvements in living standards.
+Monetary policy and capital flows Brazil's central bank (Banco Central do Brasil, BCB) raised the Selic policy rate from 2.00% in March 2021 to 13.75% by August 2022 to combat rising inflation, then cut gradually to 10.50% by mid-2024. Brazilian inflation (IPCA) fell from a peak of 12.1% in April 2022 to 4.5% by mid-2024 but has since shown signs of picking up again, driven by food prices and services. BCB's target is 3.0% with a ±1.5 percentage point tolerance band. (Source: adapted from Banco Central do Brasil, 2024)
 
-Question 1(c) [12 marks]
-Assess the institutional and structural barriers to economic development that India continues to face despite rapid GDP growth.
+**Extract D**
 
-Question 1(d) [20 marks]
-"FDI is more important than aid in promoting sustainable economic development." Evaluate this statement with reference to India and one other developing country.
+US–China trade tensions and Brazilian exports Since 2018, US tariffs on Chinese goods and Chinese retaliatory tariffs on US agricultural commodities have reshaped global trade flows. China redirected much of its soybean demand away from US suppliers and towards Brazil, pushing Brazil's share of Chinese soybean imports from 46% in 2017 to over 75% by 2023. The benefit to Brazil is not unambiguous. Over-reliance on a single buyer (China accounts for roughly one-third of Brazilian merchandise exports) creates concentration risk. Periods of US–China rapprochement have seen China pivot partially back to US suppliers, squeezing Brazilian margins. (Source: adapted from WTO and USDA trade data)
 
----
+Indicator 2019 2021 2023 2024
 
-## Question 2 — The Global Debt Crisis (50 marks)
+Real GDP growth (%) 1.2 5.0 2.9 2.4
 
-**Extract C:** Global public debt reached $97 trillion (93% of GDP) in 2024. Low-income countries face a severe debt crisis — 60% are in debt distress or at high risk. Zambia, Sri Lanka, and Ghana defaulted on sovereign debt since 2022. The IMF provides structural-adjustment loans, but critics argue these impose harmful conditions (austerity, privatisation).
+CPI inflation, avg (%) 3.7 8.3 4.6 4.8
 
-**Extract D:**
+Selic policy rate, year-end (%) 4.50 9.25 11.75 10.75
 
-| Global Debt Overview | 2019 | 2022 | 2024 |
-|---------------------|------|------|------|
-| Global public debt ($tn) | 70 | 85 | 97 |
-| Debt-to-GDP (%) | 84 | 92 | 93 |
-| Low-income debt distress (%) | 35 | 48 | 60 |
-| IMF programmes active | 44 | 52 | 63 |
-| Debt-service costs LICs ($bn) | 38 | 52 | 68 |
+Unemployment rate (%) 11.9 13.2 7.8 6.9
 
-Question 2(a) [8 marks]
-Using a suitable diagram, explain how rising debt-service costs can constrain government spending on health and education in a low-income country.
+Current account (% of GDP) −3.5 −1.7 −1.3 −1.7
 
-Question 2(b) [10 marks]
-Using Extract D, analyse two consequences of the rising debt-distress rate among low-income countries.
+BRL per USD, year-end 4.03 5.58 4.86 5.82 Figure 1: Brazil — selected macroeconomic indicators
 
-Question 2(c) [12 marks]
-Assess whether IMF structural-adjustment programmes help or hinder long-run economic development.
+Product 2019 2021 2023
 
-Question 2(d) [20 marks]
-"Debt relief is the most effective way to promote economic development in low-income countries." Evaluate this statement.`,
+Soybeans (whole + meal) 31.2 40.3 58.9
+
+Iron ore and concentrates 22.7 44.6 27.8
+
+Crude oil 24.2 30.6 42.8
+
+Beef and poultry 14.6 17.1 18.2
+
+Coffee 4.6 6.2 8.1
+
+Sugar 6.4 9.2 13.7 Figure 2: Brazil merchandise exports by major product (US$ bn)
+
+**Question 1a** [8 marks]
+
+With reference to Extract A and using a PPF diagram, analyse the opportunity cost associated with expanding Brazil's agricultural output.
+
+**Question 1b** [10 marks]
+
+With reference to Extract B and Figure 1, discuss the likely impact of the depreciation of the Brazilian real on Brazil's current account.
+
+**Question 1c** [12 marks]
+
+Discuss the effectiveness of monetary policy as a tool for controlling inflation in an emerging economy such as Brazil, using evidence from Extract C and Figure 1.
+
+**Question 1d** [20 marks]
+
+With reference to Extract D and Figure 2, evaluate the extent to which the escalation of US–China trade tensions since 2018 has been a net benefit to the Brazilian economy.
+
+## SECTION B — Question 2 (50 marks)
+
+**Extract E**
+
+Shopee — company background Shopee, the flagship e-commerce platform of Singapore-based SEA Limited, launched in 2015 and has grown to become the largest e-commerce marketplace in Southeast Asia by gross merchandise value (GMV). Shopee operates in Indonesia, Vietnam, Thailand, the Philippines, Malaysia, Singapore and Taiwan. Shopee's business model is a two-sided platform: it matches buyers with third-party sellers, monetising via transaction fees, commissions, paid advertising and its own logistics service (Shopee Xpress). Between 2019 and 2021 the company grew aggressively by subsidising shipping and promotional discounts, financed by profits of its gaming arm. (Source: adapted from SEA Limited Annual Report 2023)
+
+**Extract F**
+
+Competition, logistics and regulation Chinese-owned TikTok Shop entered Indonesia in 2022, gaining share quickly through short-form video commerce. Indonesian regulators briefly banned e-commerce functions on social media platforms in September 2023, citing predatory pricing. TikTok subsequently merged its Indonesian e-commerce operations with Tokopedia. Logistics is a critical source of competitive advantage. Shopee built its own last-mile network, Shopee Xpress, partly in response to patchy third-party coverage across Southeast Asia's 25,000 inhabited islands. Free-shipping subsidies were cut in 2022–23 as investors demanded a path to profitability. (Source: adapted from regional press reports, 2024)
+
+**Extract G**
+
+Macro context — Indonesia Indonesia is Shopee's single largest market by GMV. The country has a population of 283 million with a median age of 29, real GDP growth of around 5% per year, and an internet penetration rate of 77%. The Indonesian rupiah (IDR) depreciated by around 9% against the US dollar during 2024. In 2023, Indonesia introduced a minimum price of USD 100 for imported goods sold on cross-border e-commerce platforms, limiting direct shipping of low-value Chinese goods. The policy was intended to protect domestic MSMEs (micro, small and medium enterprises) which employ more than 60% of the Indonesian workforce. (Source: adapted from Bank Indonesia and Kementerian Perdagangan, 2024)
+
+**Extract H**
+
+Shopee's move to profitability In 2023 Shopee reported its first full year of positive adjusted EBITDA. Management raised commission rates paid by sellers (from 2% to over 6% on many categories), introduced additional paid advertising products, and redirected marketing spend from free shipping to more targeted loyalty rewards. In 2024 the firm launched 'Shopee Live' video-commerce to compete directly with TikTok Shop. Critics note that raising fees risks alienating sellers — particularly smaller MSMEs with few alternative platforms. Supporters argue the platform's dominant position (estimated 40–50% GMV share in several markets) makes modest fee increases sustainable. (Source: adapted from SEA Limited earnings call transcripts, 2024)
+
+Metric 2020 2021 2022 2023
+
+Shopee GMV 35.4 62.5 73.5 78.5
+
+Group revenue 4.4 10.0 12.4 13.0
+
+Marketing spend 1.2 2.8 2.1 1.4
+
+Adjusted EBITDA — group −1.3 −2.0 −0.9 +0.16
+
+Active users (monthly, m) 280 380 440 520 Figure 3: SEA Limited / Shopee — selected data (US$ bn unless stated)
+
+**Question 2a** [8 marks]
+
+Using Figure 3, calculate the compound annual growth rate (CAGR) of Shopee's GMV between 2020 and 2023. Discuss what the trend in group adjusted EBITDA over the same period suggests about the sustainability of Shopee's growth strategy.
+
+**Question 2b** [10 marks]
+
+Assess the likely impact on Shopee of the intensification of competition from TikTok Shop described in Extract F.
+
+**Question 2c** [12 marks]
+
+With reference to Extract G, discuss the likely effect of the depreciation of the Indonesian rupiah and the introduction of the USD 100 minimum price for cross-border e-commerce on Shopee's Indonesian business.
+
+**Question 2d** [20 marks]
+
+Evaluate the extent to which Shopee's dominant position in Southeast Asian e-commerce benefits consumers, small sellers (MSMEs) and the wider economies in which it operates. END OF PAPER INSERT — Pre-release Context Do not return this Booklet with the question paper. Investigating the Economic Environment and Business Context This year the context is globalisation, emerging markets and macroeconomic policy. You should think about how globalisation affects firms and national economies — through trade, capital flows, exchange rates and monetary policy — with a particular focus on emerging-market contexts. Research To prepare for this year's context, you should research: • how commodity exporters respond to changes in exchange rates and terms of trade • how central banks in emerging economies use monetary policy to respond to inflation shocks • the effect of trade tensions and tariffs on third-country exporters • how multinational digital platforms expand across markets • the trade-offs between free trade and protection of domestic small businesses. You cannot take any of your research or investigation data carried out as part of the pre-release into the examination.`,
   },
   {
     id: "edxb-p3-c",
     subject: "edexcel-b",
     paper: "3",
-    title: "Paper 3 — Set C",
-    description: "The Global Economy. Currency markets and regional integration.",
+    title: "Paper 3 \u2014 Set C",
+    description: "The Economic Environment & Business. Set C \u2014 A* level synoptic challenge.",
     totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/03) — Paper 3 — Predicted Paper Set C
+    content: `# Edexcel A-Level Economics B (9EB0/03) — Paper 3: The economic environment and business — Predicted Paper (Advanced)
 
 **Time: 2 hours | Total: 100 marks**
 
-Answer **both** questions. Each question is worth 50 marks and contains four parts (a)–(d).
+Answer ALL questions. Each question has parts (a)–(d) totalling 50 marks.
 
----
+## SECTION A — Question 1 (50 marks)
 
-## Question 1 — Exchange-Rate Instability in Developing Economies (50 marks)
+**Extract A**
 
-**Extract A:** Several developing countries experienced severe currency crises in 2024. The Turkish lira lost 80% of its value against the dollar since 2020 as unorthodox monetary policy (cutting rates to fight inflation) failed. Argentina's peso fell 75%, and Egypt devalued by 50%. Capital flight from emerging markets totalled $260 billion in 2024.
+The global semiconductor industry Semiconductors are essential inputs to virtually every modern manufactured good — from smartphones and cars to medical devices, defence equipment and the data centres that power artificial intelligence (AI). The global semiconductor market was estimated at around US$630 billion in 2024 and is forecast to exceed US$1 trillion by 2030. Semiconductor manufacturing is extraordinarily capital-intensive: a single leading-edge fabrication plant ('fab') costs US$15–30 billion to build and takes three to five years to bring on-line. TSMC (Taiwan) produces approximately 60% of the world's foundry output and over 90% of chips at the 5nm node or below. ASML (Netherlands) is the sole global producer of extreme-ultraviolet (EUV) lithography machines. Electronic design automation (EDA) software is dominated by three US firms; design IP is dominated by US and UK firms (including ARM). (Source: adapted from SIA and industry reports, 2024)
 
-**Extract B:**
+**Extract B**
 
-| Currency & Capital Flows | 2020 | 2022 | 2024 |
-|-------------------------|------|------|------|
-| Turkish lira vs USD | 7.4 | 18.7 | 32.5 |
-| Argentine peso vs USD | 78 | 144 | 920 |
-| EM capital outflows ($bn) | 80 | 190 | 260 |
-| US interest rate (%) | 0.25 | 4.50 | 5.50 |
-| Global food prices index | 98 | 144 | 118 |
+US export controls and the CHIPS Act In October 2022, the US Department of Commerce announced sweeping export controls restricting the sale of advanced chips, chip-making equipment and US citizens' services to China. The controls were expanded in October 2023 and again in December 2024. The US CHIPS and Science Act (2022) committed approximately US$52 billion of federal funding and US$24 billion of investment tax credits to rebuild domestic semiconductor manufacturing, precipitating announcements of over US$450 billion in private-sector investment commitments. The European Union passed a similar €43 billion EU Chips Act in 2023; China's Big Fund phase III mobilised a further US$47.5 billion in 2024. (Source: adapted from US Commerce Department and EU Commission, 2024)
 
-Question 1(a) [8 marks]
-Using a suitable forex diagram, explain how rising US interest rates have caused capital outflows from emerging markets.
+**Extract C**
 
-Question 1(b) [10 marks]
-Using Extract B, analyse the macroeconomic consequences of the lira's depreciation against the dollar between 2020 and 2024.
+Geopolitics and supply-chain concentration The concentration of leading-edge chip manufacturing in Taiwan — an island of 23 million people located less than 200 km from mainland China — is widely viewed as the most acute single point of failure in the global economy. A prolonged interruption to Taiwanese chip production would, according to a 2023 Rhodium Group estimate, reduce global GDP by several trillion US dollars within a year. Even absent geopolitical disruption, the industry has experienced marked cyclicality. A cycle of over-ordering followed the 2020–21 Covid-linked shortages, producing a memory-chip glut in 2023 during which prices of DRAM fell by over 60%. (Source: adapted from Rhodium Group and industry data, 2024)
 
-Question 1(c) [12 marks]
-Assess the advantages and disadvantages of a fixed versus a floating exchange rate for a developing economy such as Turkey.
+**Extract D**
 
-Question 1(d) [20 marks]
-"Exchange-rate depreciation always harms developing economies." Evaluate this statement with reference to the J-curve, Marshall-Lerner condition, and the extracts.
+AI demand and Nvidia In 2023–24, generative AI drove unprecedented demand for high-end graphics processing units (GPUs). Nvidia, the US designer of the dominant H100 and H200 data-centre GPUs, saw its annual revenue rise from US$27bn (FY23) to US$61bn (FY24) to an expected US$125bn+ (FY25). Its market capitalisation briefly exceeded US$3 trillion in 2024. Nvidia's chips are designed in the US, manufactured by TSMC in Taiwan, packaged in Taiwan and Korea, and deployed in data centres globally. US export controls restrict the sale of Nvidia's most advanced products to China; Nvidia designed 'compliant' variants (A800, H20) but these were subsequently restricted in later rounds of controls. (Source: adapted from Nvidia 10-K filings, 2024)
 
----
+Region 1990 2010 2020 2024
 
-## Question 2 — The Future of the European Union (50 marks)
+Taiwan ≈0 17 22
 
-**Extract C:** The EU's single market of 450 million consumers remains the world's largest trading bloc. However, challenges include slow growth (GDP growth 0.9% in 2024 vs US 2.5%), an ageing population, and rising euroscepticism. The EU's Green Deal targets net zero by 2050 with €1 trillion in investment. Brexit demonstrated both the costs of leaving and the constraints of membership.
+South Korea ≈0 17 18
 
-**Extract D:**
+Mainland China ≈0 9 15
 
-| EU vs Other Economies | 2019 | 2022 | 2024 |
-|----------------------|------|------|------|
-| EU GDP growth (%) | 1.6 | 3.4 | 0.9 |
-| US GDP growth (%) | 2.3 | 1.9 | 2.5 |
-| China GDP growth (%) | 6.0 | 3.0 | 4.9 |
-| EU trade with UK (€bn) | 695 | 588 | 542 |
-| EU R&D spending (% GDP) | 2.2 | 2.3 | 2.3 |
+Japan 49 20 14
 
-Question 2(a) [8 marks]
-Using a suitable trade-creation/trade-diversion diagram, explain the economic effects of EU membership on a country such as Poland.
+USA 37 13 12
 
-Question 2(b) [10 marks]
-Using Extract D, analyse two reasons for the divergence in EU and US GDP growth between 2019 and 2024.
+Europe (EU + UK) 14 10 9
 
-Question 2(c) [12 marks]
-Assess the economic costs and benefits to the UK of leaving the EU (Brexit).
+Rest of World ≈0 14 10 Figure 1: Global semiconductor market — share of global production by region (%)
 
-Question 2(d) [20 marks]
-"Regional trading blocs like the EU promote economic growth and development for all members." Evaluate this statement.`,
-  },
-  {
-    id: "edxb-p3-d",
-    subject: "edexcel-b",
-    paper: "3",
-    title: "Paper 3 — Set D",
-    description: "The Global Economy. China's rise and financial globalisation.",
-    totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/03) — Paper 3 — Predicted Paper Set D
+Region USA Taiwan S.Korea Japan EU China
 
-**Time: 2 hours | Total: 100 marks**
+Announced capex 223 148 138 63 51 142 Figure 2: Announced capital expenditure (US$ bn) — new semiconductor fabs, 2022–2027
 
-Answer **both** questions. Each question is worth 50 marks and contains four parts (a)–(d).
+Metric FY22 FY23 FY24 FY25 (est.)
 
----
+Revenue 26.9 27.0 60.9 125.0
 
-## Question 1 — China's Economic Transformation (50 marks)
+Gross margin (%) 64.9 56.9 72.7 75.0
 
-**Extract A:** China's GDP reached $18.5 trillion in 2024, making it the world's second-largest economy. Growth slowed to 4.9% from double-digit rates in the 2000s. A property crisis (Evergrande's $300bn debt), ageing demographics, and trade tensions with the US pose challenges. China's Belt and Road Initiative has invested $1 trillion across 150 countries.
+Operating profit 10.0 4.2 32.0 82.0
 
-**Extract B:**
+R&D expenditure 5.3 7.3 8.7 12.0
 
-| China's Economy | 2010 | 2019 | 2024 |
-|----------------|------|------|------|
-| GDP growth (%) | 10.6 | 6.0 | 4.9 |
-| GDP per capita ($) | 4,500 | 10,260 | 12,720 |
-| Debt-to-GDP (%) | 33 | 53 | 83 |
-| Population growth (%) | 0.5 | 0.3 | -0.1 |
-| Poverty rate (%) | 26 | 0.6 | 0.0 |
+Year-end market cap ($tr) 0.60 0.37 1.22 3.30 Figure 3: Nvidia selected financials (US$ bn, fiscal years ending Jan)
 
-Question 1(a) [8 marks]
-Using a suitable AD/AS diagram, explain two factors that have contributed to China's slowdown from 10.6% to 4.9% growth.
+**Question 1a** [8 marks]
 
-Question 1(b) [10 marks]
-Using Extract B, analyse the implications of China's negative population growth for its long-run growth potential.
+With reference to Extract A and using a suitable market diagram, analyse why the global market for leading-edge semiconductor manufacturing is dominated by such a small number of firms.
 
-Question 1(c) [12 marks]
-Assess the economic benefits and risks of China's Belt and Road Initiative for recipient developing countries.
+**Question 1b** [10 marks]
 
-Question 1(d) [20 marks]
-"China's model of state-directed capitalism has been more effective than free-market capitalism in achieving economic development." Evaluate this statement.
+With reference to Extracts B and C and Figures 1 and 2, discuss the macroeconomic consequences for the United States of the concentration of semiconductor production in East Asia.
 
----
+**Question 1c** [12 marks]
 
-## Question 2 — Financial Globalisation and Instability (50 marks)
+Discuss the extent to which the US CHIPS Act and the EU Chips Act can be justified on grounds of economic efficiency, with reference to Extracts A and B.
 
-**Extract C:** Cross-border capital flows reached $11 trillion in 2024. While financial globalisation promotes growth through investment, it also transmits shocks — the 2008 crisis spread from US sub-prime to European banks within weeks. Cryptocurrency markets grew to $2.5 trillion, challenging central-bank monetary sovereignty.
+**Question 1d** [20 marks]
 
-**Extract D:**
+Using Extracts B, C and D and your own knowledge, evaluate whether the ongoing 'technology decoupling' between the United States and China is likely to accelerate or hinder global economic growth over the next decade.
 
-| Financial Globalisation | 2010 | 2019 | 2024 |
-|------------------------|------|------|------|
-| Cross-border flows ($tn) | 5.2 | 8.7 | 11.0 |
-| EM portfolio investment ($bn) | 420 | 680 | 540 |
-| Crypto market cap ($tn) | 0 | 0.2 | 2.5 |
-| Banking crises (countries) | 12 | 3 | 5 |
-| Central-bank digital currencies | 0 | 5 | 42 |
+## SECTION B — Question 2 (50 marks)
 
-Question 2(a) [8 marks]
-Using a suitable diagram, explain how financial contagion spreads economic shocks across borders, with reference to the 2008 crisis.
+**Extract E**
 
-Question 2(b) [10 marks]
-Using Extract D, analyse two consequences of the rapid growth of cryptocurrency markets for the effectiveness of monetary policy.
+The rise of generative AI and a dominant stack Since the public release of ChatGPT in November 2022, generative AI has become the most rapidly adopted consumer technology in history. ChatGPT reached 100 million weekly active users within two months. Three broad layers have emerged in the generative-AI stack: at the bottom, specialised hardware — primarily Nvidia GPUs; in the middle, 'foundation models' trained at vast cost by a small group of developers including OpenAI (partnered with Microsoft), Anthropic (partnered with Amazon and Google), Google DeepMind, Meta and Mistral; at the top, a rapidly expanding applications layer. (Source: adapted from Stanford AI Index 2024)
 
-Question 2(c) [12 marks]
-Assess whether financial globalisation has benefited or harmed developing countries.
+**Extract F**
 
-Question 2(d) [20 marks]
-"Financial globalisation has created more instability than growth." Evaluate this statement.`,
-  },
-  {
-    id: "edxb-p3-e",
-    subject: "edexcel-b",
-    paper: "3",
-    title: "Paper 3 — Set E",
-    description: "The Global Economy. Migration, remittances, and African development.",
-    totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/03) — Paper 3 — Predicted Paper Set E
+Scaling costs and energy demand Foundation-model training costs have risen exponentially. GPT-4 is estimated to have cost approximately US$100 million to train; analysts estimate that frontier models released in 2027 may cost over US$10 billion. Inference (running the model) has become the dominant cost for widely-deployed models. The International Energy Agency estimates that global data-centre electricity consumption could roughly double by 2026, with AI inference accounting for a rapidly growing share. Hyperscalers — Microsoft, Amazon, Google and Meta — have collectively signed long-term contracts for over 30 GW of low-carbon power, including new nuclear, solar and geothermal projects. (Source: adapted from Epoch AI and IEA reports, 2024)
 
-**Time: 2 hours | Total: 100 marks**
+**Extract G**
 
-Answer **both** questions. Each question is worth 50 marks and contains four parts (a)–(d).
+Labour market and productivity effects Goldman Sachs estimated in 2023 that generative AI could raise global labour productivity by 1.5 percentage points per year for a decade; MIT and Princeton studies of specific tasks have shown productivity gains of 14–56%. The IMF has warned that around 40% of global jobs are 'exposed' to AI, with higher exposure in advanced economies (60%) and in jobs held by women and higher earners. In early 2024, the EU AI Act was adopted — the world's first comprehensive AI regulation, imposing transparency and risk-management obligations on 'general purpose AI systems', with fines of up to 7% of global turnover for breaches. (Source: adapted from Goldman Sachs, IMF and European Commission, 2024)
 
----
+**Extract H**
 
-## Question 1 — International Migration and the Global Economy (50 marks)
+Competition and concentration in foundation models Microsoft has invested over US$13 billion in OpenAI; Amazon and Google have committed up to US$8 billion in Anthropic. Critics argue these partnerships represent a new form of concentration: the hyperscaler supplies the compute, the AI firm supplies the model, and the hyperscaler's cloud becomes the primary distribution channel. The EU antitrust regulator (DG COMP), UK's CMA and US FTC have all launched investigations. In early 2025, DeepSeek — a Chinese AI developer — released an open-weight model that achieved frontier-level performance at a reportedly far lower training cost, briefly wiping US$600bn from the market capitalisation of US AI-related firms and reopening the question of whether frontier AI is a winner-take-all market. (Source: adapted from company disclosures and press reports, 2024–25)
 
-**Extract A:** International migrants numbered 281 million in 2024 (3.6% of world population). Remittances to developing countries reached $656 billion — exceeding FDI and aid combined. However, "brain drain" depletes skilled workers from developing countries. The UK's net migration reached 685,000 in 2023, the highest ever, driven by healthcare and tech-sector demand.
+Indicator 2022 2023 2024
 
-**Extract B:**
+Global AI private investment (US$ bn) 91.9 95.8 151.0
 
-| Migration & Remittances | 2019 | 2022 | 2024 |
-|------------------------|------|------|------|
-| International migrants (m) | 272 | 280 | 281 |
-| Remittances to LDCs ($bn) | 548 | 605 | 656 |
-| UK net migration (000s) | 226 | 504 | 685 |
-| NHS staff from overseas (%) | 14 | 17 | 20 |
-| Brain-drain index (avg) | 5.2 | 5.5 | 5.8 |
+Est. training compute, frontier model (×10²³ FLOPs) 2.1 25.0 320
 
-Question 1(a) [8 marks]
-Using a suitable labour-market diagram, explain the impact of immigration on wages and employment in the UK.
+Est. training cost, frontier model (US$ m) 20 100 500
 
-Question 1(b) [10 marks]
-Using Extract B, analyse the significance for developing countries of remittances exceeding both FDI and aid.
+Hyperscaler capex, combined (US$ bn) 128 147 235
 
-Question 1(c) [12 marks]
-Assess the costs and benefits of emigration for the country of origin, considering brain drain, brain gain, and remittances.
+AI chip sales revenue, all vendors (US$ bn) 25 52 145 Figure 4: Selected generative-AI economic indicators
 
-Question 1(d) [20 marks]
-"International migration benefits both sending and receiving countries." Evaluate this statement.
+**Question 2a** [8 marks]
 
----
+Using Figure 3 (Extract D) and Figure 4, calculate the percentage-point change in Nvidia's gross margin between FY23 and FY24, and Nvidia's estimated share of 2024 AI chip sales. Discuss what these data suggest about Nvidia's degree of market power.
 
-## Question 2 — Sub-Saharan Africa: Growth Without Development? (50 marks)
+**Question 2b** [10 marks]
 
-**Extract C:** Sub-Saharan Africa grew at 3.8% in 2024 but GDP per capita growth was only 1.2% due to 2.6% population growth. The continent received $50 billion in remittances, $28 billion in FDI, and $35 billion in aid. Despite progress, 430 million people live in extreme poverty, and the average HDI is 0.563, the lowest of any region.
+With reference to Extract F, assess the likely macroeconomic consequences of the rise in AI-related data-centre electricity demand for the economies that host major data centres.
 
-**Extract D:**
+**Question 2c** [12 marks]
 
-| Sub-Saharan Africa | 2019 | 2022 | 2024 |
-|--------------------|------|------|------|
-| GDP growth (%) | 3.2 | 3.6 | 3.8 |
-| GDP per capita ($) | 1,585 | 1,670 | 1,780 |
-| FDI ($bn) | 32 | 25 | 28 |
-| Debt-to-GDP (%) | 51 | 58 | 63 |
-| HDI (average) | 0.547 | 0.556 | 0.563 |
+With reference to Extract G, discuss the likely impact of widespread adoption of generative AI on the labour market and income distribution in advanced economies.
 
-Question 2(a) [8 marks]
-Using a suitable PPF or AD/AS diagram, explain the Harrod-Domar model of economic growth.
+**Question 2d** [20 marks]
 
-Question 2(b) [10 marks]
-Using Extract D, analyse why GDP per capita growth is much lower than headline GDP growth in Sub-Saharan Africa.
-
-Question 2(c) [12 marks]
-Assess the relative effectiveness of foreign aid versus trade liberalisation in promoting development in Sub-Saharan Africa.
-
-Question 2(d) [20 marks]
-"Economic growth is necessary but not sufficient for economic development." Evaluate this statement with reference to Sub-Saharan Africa.`,
-  },
-  {
-    id: "edxb-p3-f",
-    subject: "edexcel-b",
-    paper: "3",
-    title: "Paper 3 — Set F",
-    description: "The Global Economy. Global inequality and trade agreements.",
-    totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/03) — Paper 3 — Predicted Paper Set F
-
-**Time: 2 hours | Total: 100 marks**
-
-Answer **both** questions. Each question is worth 50 marks and contains four parts (a)–(d).
-
----
-
-## Question 1 — Global Inequality: Winners and Losers of Globalisation (50 marks)
-
-**Extract A:** Global inequality between countries has fallen as China and India grew rapidly, lifting 1 billion people from poverty. However, inequality within countries has risen. The global top 1% now own 46% of all wealth, while the bottom 50% own just 1%. Oxfam reports that the wealth of the world's 10 richest people doubled during the pandemic while 160 million fell into poverty.
-
-**Extract B:**
-
-| Global Inequality | 2000 | 2015 | 2024 |
-|------------------|------|------|------|
-| Global Gini (between countries) | 0.74 | 0.67 | 0.62 |
-| Within-country Gini (avg) | 0.38 | 0.40 | 0.42 |
-| Top 1% wealth share (%) | 40 | 43 | 46 |
-| Extreme poverty (%) | 26 | 10 | 8.4 |
-| Billionaires (number) | 470 | 1,826 | 2,781 |
-
-Question 1(a) [8 marks]
-Using a suitable Lorenz curve diagram, explain how globalisation can simultaneously reduce between-country inequality and increase within-country inequality.
-
-Question 1(b) [10 marks]
-Using Extract B, analyse two consequences of the rising share of wealth held by the top 1%.
-
-Question 1(c) [12 marks]
-Assess the relevance of the Kuznets curve hypothesis to the relationship between economic growth and inequality in developing economies.
-
-Question 1(d) [20 marks]
-"Globalisation has reduced poverty but increased inequality, and this trade-off is unacceptable." Evaluate this statement.
-
----
-
-## Question 2 — The CPTPP and the New Trade Architecture (50 marks)
-
-**Extract C:** The Comprehensive and Progressive Agreement for Trans-Pacific Partnership (CPTPP) covers 11 countries and 500 million people. The UK became the first European member in 2024. The agreement removes tariffs on 95% of goods, provides investment protections, and includes digital-trade provisions. Critics argue it undermines national sovereignty and regulatory standards.
-
-**Extract D:**
-
-| CPTPP Impact | Pre-Accession | Projected 2030 |
-|-------------|---------------|-----------------|
-| UK GDP impact (%) | 0 | +0.08 |
-| UK exports to CPTPP (£bn) | 59 | 72 |
-| UK imports from CPTPP (£bn) | 52 | 68 |
-| Agriculture impact (£m) | 0 | -225 |
-| Services exports (£bn) | 32 | 41 |
-
-Question 2(a) [8 marks]
-Using a suitable trade-creation/trade-diversion diagram, explain the potential effects of UK CPTPP membership.
-
-Question 2(b) [10 marks]
-Using Extract D, analyse the projected impact of CPTPP membership on UK agriculture and services.
-
-Question 2(c) [12 marks]
-Assess whether bilateral and regional trade agreements or multilateral agreements through the WTO are more effective in promoting free trade.
-
-Question 2(d) [20 marks]
-"The UK's accession to CPTPP demonstrates that trade agreements outside the EU can compensate for the costs of Brexit." Evaluate this statement.`,
+Evaluate the appropriate role for governments in regulating the market for frontier AI foundation models, using evidence from Extracts E to H. Your answer should consider both microeconomic efficiency and wider macroeconomic consequences. END OF PAPER INSERT — Pre-release Context Do not return this Booklet with the question paper. Investigating the Economic Environment and Business Context This year the context is innovation, technology and the distribution of economic power. You should think about how new technologies — particularly in semiconductors and generative AI — reshape market structures, national economies, labour markets and the distribution of economic power between firms and between states. Research To prepare for this year's context, you should research: • why certain technology markets exhibit extreme concentration (scale economies, network effects, sunk costs) • the economic rationale for industrial policy (CHIPS Act, EU Chips Act, China Big Fund) • how trade and export controls affect global technology supply chains • the microeconomic and macroeconomic effects of transformative new technologies • the case for and against government regulation of powerful new technologies. You cannot take any of your research or investigation data carried out as part of the pre-release into the examination.`,
   },
 ];
