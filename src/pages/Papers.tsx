@@ -25,7 +25,7 @@ const OCR_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: strin
   { number: 3, code: "H460/03", title: "Themes in Economics",                       focus: "Synoptic",       available: true  },
 ];
 
-const CAIE_PAPERS: { number: 1 | 2 | 3 | 4; code: string; title: string; focus: string; duration: string; marks: number; available: boolean }[] = [
+const CAIE_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; duration: string; marks: number; available: boolean }[] = [
   { number: 1, code: "9708/01", title: "Multiple Choice (AS)",          focus: "Microeconomics & Macroeconomics", duration: "1h",    marks: 30, available: true  },
   { number: 2, code: "9708/02", title: "Data Response and Essays (AS)", focus: "AS Core",                          duration: "1h 30", marks: 40, available: true  },
   { number: 3, code: "9708/03", title: "Multiple Choice (A2)",          focus: "Advanced Theory",                  duration: "1h 15", marks: 30, available: false },
