@@ -2247,7 +2247,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
               Predicted Papers
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              {libraryPapers.length} expertly crafted papers ready to practice, or generate a fresh one instantly.
+              {libraryPapers.length} expertly crafted papers ready to practice.
             </p>
           </motion.div>
         </div>
@@ -2272,35 +2272,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15, ease: [0.25, 0.4, 0.25, 1] }}
           >
-            {/* Mode toggle */}
-            <div className="flex justify-center mb-12">
-              <div className="inline-flex items-center bg-card/80 backdrop-blur-lg rounded-full p-1 border border-border/60 shadow-lg shadow-black/10">
-                <button
-                  onClick={() => setMode("library")}
-                  className={cn(
-                    "flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300",
-                    mode === "library"
-                      ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30"
-                      : "text-muted-foreground hover:text-foreground"
-                  )}
-                >
-                  <Library className="h-4 w-4" /> Paper Library
-                </button>
-                {canGenerate && (
-                  <button
-                    onClick={() => setMode("generate")}
-                    className={cn(
-                      "flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300",
-                      mode === "generate"
-                        ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30"
-                        : "text-muted-foreground hover:text-foreground"
-                    )}
-                  >
-                    <Wand2 className="h-4 w-4" /> Generate New
-                  </button>
-                )}
-              </div>
-            </div>
+            {/* Generate New mode removed — Paper Library only */}
 
             {mode === "library" ? (
               <div className="space-y-4">
