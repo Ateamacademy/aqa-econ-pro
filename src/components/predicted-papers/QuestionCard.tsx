@@ -131,7 +131,8 @@ export function QuestionCard({
   const expectedDiagramType = resolveDiagramType(`${question.label}\n${question.text}\n${answer}`) ?? undefined;
   const suppressFeedbackDiagramPreview =
     (paperKey === "econ-p1-b" && /question\s*0?[25]/i.test(question.label)) ||
-    (paperKey === "econ-p1-a" && /question\s*0?3/i.test(question.label));
+    (paperKey === "econ-p1-a" && /question\s*0?3/i.test(question.label)) ||
+    (paperKey === "econ-p1-c" && /question\s*0?5/i.test(question.label));
 
   const renderDiagramContent = (text: string, opts?: { withCanonicalFigure?: boolean }) => {
     if (suppressFeedbackDiagramPreview) {
