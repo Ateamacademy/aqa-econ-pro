@@ -1192,7 +1192,7 @@ function CaieIgcsePapersList() {
 const IB_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; duration: string; marks: number; available: boolean }[] = [
   { number: 1, code: "IBDP P1", title: "Extended Response (HL & SL)", focus: "Microeconomics & Macroeconomics", duration: "1h 15m", marks: 25, available: true  },
   { number: 2, code: "IBDP P2", title: "Data Response (HL & SL)",     focus: "Stimulus-based",                  duration: "1h 45m", marks: 40, available: true  },
-  { number: 3, code: "IBDP P3", title: "Policy Paper (HL only)",      focus: "Quantitative & Policy",           duration: "1h 45m", marks: 60, available: false },
+  { number: 3, code: "IBDP P3", title: "Policy Paper (HL only)",      focus: "Quantitative & Policy",           duration: "1h 45m", marks: 60, available: true  },
 ];
 
 function IbPapersList() {
