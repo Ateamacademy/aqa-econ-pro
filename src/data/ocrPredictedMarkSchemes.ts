@@ -815,9 +815,7 @@ June 2026
       <td>80</td>
     </tr>
   </tbody>
-</table>
-
-### Extracted images (41):`,
+</table>`,
   "ocr-c01-set-b": `## Page 1
 
 # OCR
@@ -1656,9 +1654,7 @@ June 2026
       <td>80</td>
     </tr>
   </tbody>
-</table>
-
-### Extracted images (41):`,
+</table>`,
   "ocr-c01-set-c": `## Page 1
 
 # OCR
@@ -2503,9 +2499,7 @@ June 2026
       <td>80</td>
     </tr>
   </tbody>
-</table>
-
-### Extracted images (41):`,
+</table>`,
   "ocr-c02-set-a": `## Page 1
 
 *H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme*
@@ -3108,9 +3102,7 @@ Page 12
 
 ## END OF MARK SCHEME
 
-Page 13
-
-### Extracted images (22):`,
+Page 13`,
   "ocr-c02-set-b": `## Page 1
 
 H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
@@ -3726,9 +3718,7 @@ Page 11
     </tr>
 </table>## END OF MARK SCHEME
 
-Page 12
-
-### Extracted images (21):`,
+Page 12`,
   "ocr-c02-set-c": `## Page 1
 
 *H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme*
@@ -4413,9 +4403,7 @@ Page 16
     </tr>
 </table>END OF MARK SCHEME
 
-Page 17
-
-### Extracted images (25):`,
+Page 17`,
   "ocr-c03-set-a": `## Page 1
 
 Oxford Cambridge and RSA Examinations
@@ -5398,9 +5386,7 @@ Evaluate, using the information in Extract 3, whether teachers' pay is likely to
       <td>(30)</td>
     </tr>
   </tbody>
-</table>
-
-### Extracted images (35):`,
+</table>`,
   "ocr-c03-set-b": `## Page 1
 
 Oxford Cambridge and RSA Examinations
@@ -6473,9 +6459,7 @@ Evaluate, using the information in Extract 3, whether government intervention is
       <td>(30)</td>
     </tr>
   </tbody>
-</table>
-
-### Extracted images (34):`,
+</table>`,
   "ocr-c03-set-c": `## Page 1
 
 Oxford Cambridge and RSA Examinations
@@ -7602,9 +7586,7 @@ Evaluate, using the information in Extract 3, the most effective strategies for 
       <td>(30)</td>
     </tr>
   </tbody>
-</table>
-
-### Extracted images (37):`,
+</table>`,
 };
 
 /** Returns the verbatim OCR mark scheme for a given predicted-paper id, or null. */
