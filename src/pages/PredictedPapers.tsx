@@ -1406,6 +1406,8 @@ export default function PredictedPapers() {
     setLabel?: string,
   ): ParsedQuestion[] {
     if (subject !== "economics") return questions;
+    // AQA-specific diagram tagger — do not apply to other boards (OCR, Edexcel, WJEC, etc.)
+    if (!/aqa/i.test(examBoard || "")) return questions;
     const paperNum = inferPaperFromContext(paperNumber ?? paper);
     return questions.map((q) => {
       const isMcq = !!q.mcqOptions && q.mcqOptions.length >= 2;
