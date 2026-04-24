@@ -1616,6 +1616,118 @@ CRITICAL: Do NOT place economics diagram Figure blocks (supply & demand, AD/AS, 
       if (!answer?.trim()) { toast.error("Please write your answer first."); return; }
       setMarkingId(question.id);
 
+      // ─── MCQ DETERMINISTIC PATH ────────────────────────────────────────
+      // For ALL boards: MCQs are scored by scoreMcq (pure function), never
+      // by the LLM. The LLM is allowed to elaborate ONLY within strict
+      // correct/incorrect branches. This eliminates Bugs #1, #2, #3 from
+      // the QA tracker (wrong-mark-correct, correct-mark-wrong, AI prose
+      // justifying whatever was submitted).
+      const isMcqQuestion = !!question.mcqOptions && question.mcqOptions.length >= 2;
+      if (isMcqQuestion) {
+        try {
+          const { scoreMcq, checkMcqDefects } = await import("@/marking/scoreMcq");
+          const { buildMcqFeedbackPrompt, validateMcqExplanation, fallbackMcqExplanation } =
+            await import("@/marking/mcqFeedbackTemplate");
+
+          const defect = checkMcqDefects({
+            questionId: question.id,
+            stem: question.text,
+            options: question.mcqOptions ?? [],
+          });
+          if (defect) {
+            toast.error("Question temporarily unavailable — skipped.");
+            console.warn("[mcq_defect]", { questionId: question.id, reason: defect });
+            setMarkingId(null);
+            return;
+          }
+
+          // Extract correct answer key from the verbatim mark scheme by
+          // scanning for the question label followed by an A/B/C/D answer.
+          const verbatimMs =
+            (isOCR ? getOcrPredictedMarkScheme(selectedLibraryPaper?.id) : null) ??
+            (await loadPredictedMarkScheme(selectedLibraryPaper?.id)) ??
+            "";
+          const labelEsc = question.label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+          const keyRe = new RegExp(
+            `(?:^|\\n)[^\\n]*\\b${labelEsc}\\b[^\\n]*?\\b(?:answer|key)?[^A-D\\n]{0,12}\\b([A-D])\\b`,
+            "i",
+          );
+          const match = verbatimMs.match(keyRe);
+          const answerKey = (match?.[1] ?? "").toUpperCase();
+          if (!answerKey) {
+            toast.error("Mark scheme answer key not found — please report this question.");
+            setMarkingId(null);
+            return;
+          }
+
+          const result = scoreMcq(answer.trim(), answerKey);
+          const tpl = buildMcqFeedbackPrompt(
+            {
+              questionId: question.id,
+              questionStem: question.text,
+              options: question.mcqOptions ?? [],
+              submittedOptionId: answer.trim(),
+              markSchemeAnswerId: answerKey,
+            },
+            result,
+          );
+
+          // LLM elaboration is optional — if it fails or trips the validator,
+          // fall back to the deterministic explanation.
+          let explanation = "";
+          try {
+            await streamChat({
+              messages: [
+                { role: "system", content: tpl.systemPrompt } as any,
+                { role: "user", content: tpl.userPrompt },
+              ],
+              mode: "grade",
+              subject,
+              onDelta: (chunk) => { explanation += chunk; },
+              onDone: () => {},
+              onError: () => {},
+            });
+          } catch { /* fall through to fallback */ }
+
+          const validation = validateMcqExplanation(explanation, result);
+          if (!explanation.trim() || validation) {
+            if (validation) console.warn("[mcq_feedback_validator]", validation);
+            explanation = fallbackMcqExplanation(
+              {
+                questionId: question.id,
+                questionStem: question.text,
+                options: question.mcqOptions ?? [],
+                submittedOptionId: answer.trim(),
+                markSchemeAnswerId: answerKey,
+              },
+              result,
+            );
+          }
+
+          setFeedbacks((prev) => ({
+            ...prev,
+            [question.id]: {
+              markScheme: tpl.markSchemeBanner,
+              modelAnswer: tpl.modelAnswer,
+              examinerTip: explanation,
+            },
+          }));
+          setMarkingId(null);
+          if (!subscribed && Object.keys(feedbacks).length === 0) {
+            await supabase
+              .from("profiles")
+              .update({ free_predicted_papers_used: used + 1 } as any)
+              .eq("user_id", user!.id);
+            refreshProfile();
+          }
+          return;
+        } catch (err: any) {
+          toast.error("MCQ marking failed: " + (err?.message ?? "unknown"));
+          setMarkingId(null);
+          return;
+        }
+      }
+
       const expectedDiagramType = resolveDiagramType(`${question.text}\n${paperContext}\n${answer}`) ?? "supply_demand";
 
       // Predicted papers — load the verbatim board mark scheme parsed from
