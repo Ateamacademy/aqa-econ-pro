@@ -1617,6 +1617,14 @@ CRITICAL: Do NOT place economics diagram Figure blocks (supply & demand, AD/AS, 
 
       const expectedDiagramType = resolveDiagramType(`${question.text}\n${paperContext}\n${answer}`) ?? "supply_demand";
 
+      // OCR predicted papers — load the verbatim H460 mark scheme parsed from
+      // the Download Solution PDF so the AI grades against the official answers.
+      const ocrMarkScheme = isOCR ? getOcrPredictedMarkScheme(selectedLibraryPaper?.id) : null;
+      const ocrMarkSchemeBlock = ocrMarkScheme
+        ? `\n\n═══ OFFICIAL OCR H460 MARK SCHEME (verbatim from the Download Solution PDF) ═══\nYou MUST mark this answer strictly against the OCR mark scheme below. Locate the entry that matches the question label "${question.label}" (e.g. "1 (a)", "Question 33", "Section B Question 2*") and apply its indicative content, accepted answers, level descriptors and guidance EXACTLY. For level-of-response questions use OCR's Level 1/Level 2 / Strong-Good-Reasonable-Limited bands verbatim. Do NOT invent your own marks; reward only points listed (or clearly equivalent valid alternatives) in the mark scheme. For numerical questions, the correct answer and accepted-tolerance are stated — apply them strictly. For diagram questions, use the "Relevant diagrams" / diagram requirements from the mark scheme to award diagram marks.\n\n--- BEGIN MARK SCHEME ---\n${ocrMarkScheme}\n--- END MARK SCHEME ---\n`
+        : "";
+
+
       const markingPrompt = isMaths
         ? `You are marking an Edexcel GCSE Maths (${tier} tier) answer.
 
