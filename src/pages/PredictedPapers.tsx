@@ -1990,13 +1990,13 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
               text:
                 markingPrompt +
                 aqaRubricBlock +
-                ocrMarkSchemeBlock +
+                boardMarkSchemeBlock +
                 "\n\n[The student has drawn a diagram — see the attached image. Apply the DIAGRAM MARKING CHECKLIST: (1) Are axes labelled Price and Quantity (or Price level / Real output for macro)? (2) Is demand downward sloping? (3) Is supply upward sloping? (4) Is the shift in the correct direction for the scenario? (5) Is the new equilibrium correctly identified? Check if the written explanation logically matches what the diagram shows. Award/deny marks accordingly.]" +
-                (ocrMarkSchemeBlock ? "\n\n[OCR diagram marking — also award diagram marks strictly per the 'Relevant diagrams' / diagram requirements stated in the official OCR mark scheme above.]" : ""),
+                (boardMarkSchemeBlock ? "\n\n[OCR diagram marking — also award diagram marks strictly per the 'Relevant diagrams' / diagram requirements stated in the official OCR mark scheme above.]" : ""),
             },
             { type: "image_url", image_url: { url: diagramImage } },
           ]
-        : markingPrompt + aqaRubricBlock + ocrMarkSchemeBlock;
+        : markingPrompt + aqaRubricBlock + boardMarkSchemeBlock;
 
       await streamChat({
         messages: [{ role: "user", content: messageContent }],
