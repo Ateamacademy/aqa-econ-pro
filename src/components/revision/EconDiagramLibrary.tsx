@@ -1599,20 +1599,20 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             labelSize={8}
           />
 
-          {/* D1 */}
+          {/* D */}
           <GLine {...dL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
-          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D1" color={COLORS.demand} />
-          {/* S1 */}
+          <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color={COLORS.demand} />
+          {/* S */}
           <GLine {...s1L} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
-          <Label x={s1L.x2 + 4} y={s1L.y2 + 4} text="S1" color={COLORS.supply} />
-          {/* S1 + Ad valorem tax */}
+          <Label x={s1L.x2 + 4} y={s1L.y2 + 4} text="S" color={COLORS.supply} />
+          {/* S + tax */}
           <GLine {...s2L} color={COLORS.shifted} gradientId="grad-shifted" glow="glow-amber" />
-          <Label x={s2L.x2 + 4} y={s2L.y2 + 4} text="S1 + Ad valorem tax" color={COLORS.shifted} />
+          <Label x={s2L.x2 + 4} y={s2L.y2 + 4} text="S + tax" color={COLORS.shifted} />
 
-          {/* Tax - 20% annotation arrow between the two supply curves */}
+          {/* Tax-per-unit annotation arrow between the two supply curves */}
           <line x1={midX + 8} y1={s1AtMid} x2={midX + 8} y2={s2AtMid}
                 stroke="#1e293b" strokeWidth={2} markerEnd="url(#arrow-shifted)" markerStart="url(#arrow-shifted)" />
-          <Label x={midX + 16} y={(s1AtMid + s2AtMid) / 2 + 3} text="Tax - 20%" color="#1e293b" size={9} />
+          <Label x={midX + 16} y={(s1AtMid + s2AtMid) / 2 + 3} text="Tax per unit" color="#1e293b" size={9} />
 
           {/* Original equilibrium P1 / Q1 */}
           <DashedToAxes x={eq1.x} y={eq1.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P1" qLabel="Q1" />
