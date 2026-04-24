@@ -254,6 +254,21 @@ function ShiftArrow({ x, y, offset, color, delay }: { x: number; y: number; offs
 }
 
 function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
+  // Try to resolve to a predefined template for exam-accurate rendering
+  const resolvedType = resolveDiagramType(diagram.type, diagram.shift);
+
+  const [animated, setAnimated] = useState(false);
+  const [activePage, setActivePage] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setAnimated(true); obs.disconnect(); } }, { threshold: 0.3 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   // High-fidelity override: negative externality of production → render the
   // canonical UK Energy Sector SVG (used as the AI-marking reference diagram).
   const _typeText = `${diagram.type ?? ""} ${diagram.family ?? ""} ${diagram.shadedArea ?? ""} ${diagram.conclusion ?? ""}`.toLowerCase();
@@ -267,21 +282,6 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
       </div>
     );
   }
-
-  // Try to resolve to a predefined template for exam-accurate rendering
-  const resolvedType = resolveDiagramType(diagram.type, diagram.shift);
-  
-  const [animated, setAnimated] = useState(false);
-  const [activePage, setActivePage] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setAnimated(true); obs.disconnect(); } }, { threshold: 0.3 });
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
 
   // If we have a predefined template, use it — it has proper welfare loss/gain
   // triangles, colored boundaries, correct curve labels (MSC, MPC, MSB, MPB), etc.
