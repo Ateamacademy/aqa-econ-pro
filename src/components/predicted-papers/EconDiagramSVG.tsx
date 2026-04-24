@@ -10,6 +10,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { resolveDiagramType, EconDiagramTemplate } from "@/components/revision/EconDiagramLibrary";
+import EconNegExtUKEnergy from "@/components/EconNegExtUKEnergy";
 
 interface DiagramProps {
   type: string;
@@ -253,6 +254,20 @@ function ShiftArrow({ x, y, offset, color, delay }: { x: number; y: number; offs
 }
 
 function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
+  // High-fidelity override: negative externality of production → render the
+  // canonical UK Energy Sector SVG (used as the AI-marking reference diagram).
+  const _typeText = `${diagram.type ?? ""} ${diagram.family ?? ""} ${diagram.shadedArea ?? ""} ${diagram.conclusion ?? ""}`.toLowerCase();
+  const isNegExtProduction =
+    /negative\s+externalit(y|ies)\s+of\s+production/.test(_typeText) ||
+    (/(msc).*(mpc)|(mpc).*(msc)/.test(_typeText) && /external\s+cost|welfare\s+loss/.test(_typeText));
+  if (isNegExtProduction) {
+    return (
+      <div className="my-6">
+        <EconNegExtUKEnergy />
+      </div>
+    );
+  }
+
   // Try to resolve to a predefined template for exam-accurate rendering
   const resolvedType = resolveDiagramType(diagram.type, diagram.shift);
   
