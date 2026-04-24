@@ -135,10 +135,15 @@ export function QuestionCard({
 
   const renderDiagramContent = (text: string) => {
     if (suppressFeedbackDiagramPreview) {
+      const strippedText = text
+        .replace(/^\s*(?:#{2,4}\s*)?(?:\*\*)?Diagram\s*:[\s\S]*?(?=^\s*#{1,4}\s+\S|\Z)/gim, "")
+        .replace(/^\s*\[DIAGRAM:[^\]]+\]\s*$/gim, "")
+        .trim();
+
       return (
         <div className="prose prose-sm max-w-none dark:prose-invert">
           <Suspense fallback={<div className="text-sm text-muted-foreground">Loading...</div>}>
-            <RevisionRenderer content={text} />
+            <RevisionRenderer content={strippedText} />
           </Suspense>
         </div>
       );
