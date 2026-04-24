@@ -44,6 +44,7 @@ import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import { tagAqaQuestion, inferPaperFromContext } from "@/lib/aqaPredictedDiagramTagging";
 import { getAqaPaper3OverrideContent } from "@/data/aqaPaper3Overrides";
 import { getOcrPredictedMarkScheme } from "@/data/ocrPredictedMarkSchemes";
+import { loadPredictedMarkScheme } from "@/lib/predictedMarkSchemeLoader";
 
 // Exam durations in minutes per subject + paper.
 // AQA A-Level Economics (7136) — every paper is 2 hours. Source of truth: AQA_SPEC.durationMinutes.
@@ -1617,11 +1618,15 @@ CRITICAL: Do NOT place economics diagram Figure blocks (supply & demand, AD/AS, 
 
       const expectedDiagramType = resolveDiagramType(`${question.text}\n${paperContext}\n${answer}`) ?? "supply_demand";
 
-      // OCR predicted papers — load the verbatim H460 mark scheme parsed from
-      // the Download Solution PDF so the AI grades against the official answers.
-      const ocrMarkScheme = isOCR ? getOcrPredictedMarkScheme(selectedLibraryPaper?.id) : null;
-      const ocrMarkSchemeBlock = ocrMarkScheme
-        ? `\n\n═══ OFFICIAL OCR H460 MARK SCHEME (verbatim from the Download Solution PDF) ═══\nYou MUST mark this answer strictly against the OCR mark scheme below. Locate the entry that matches the question label "${question.label}" (e.g. "1 (a)", "Question 33", "Section B Question 2*") and apply its indicative content, accepted answers, level descriptors and guidance EXACTLY. For level-of-response questions use OCR's Level 1/Level 2 / Strong-Good-Reasonable-Limited bands verbatim. Do NOT invent your own marks; reward only points listed (or clearly equivalent valid alternatives) in the mark scheme. For numerical questions, the correct answer and accepted-tolerance are stated — apply them strictly. For diagram questions, use the "Relevant diagrams" / diagram requirements from the mark scheme to award diagram marks.\n\n--- BEGIN MARK SCHEME ---\n${ocrMarkScheme}\n--- END MARK SCHEME ---\n`
+      // Predicted papers — load the verbatim board mark scheme parsed from
+      // the official Download Solution PDF so the AI grades against the
+      // exact answer key for every supported board (AQA, Edexcel A/B, OCR,
+      // IB, CIE, WJEC, Eduqas + GCSE/IGCSE variants).
+      const verbatimMarkScheme =
+        (isOCR ? getOcrPredictedMarkScheme(selectedLibraryPaper?.id) : null) ??
+        (await loadPredictedMarkScheme(selectedLibraryPaper?.id));
+      const boardMarkSchemeBlock = verbatimMarkScheme
+        ? `\n\n═══ OFFICIAL ${examBoard.toUpperCase()} ${level.toUpperCase()} MARK SCHEME (verbatim from the Download Solution PDF) ═══\nYou MUST mark this answer strictly against the official mark scheme below. Locate the entry that matches the question label "${question.label}" (e.g. "1 (a)", "Question 33", "Section B Question 2*") and apply its indicative content, accepted answers, level descriptors and guidance EXACTLY. For level-of-response questions use the board's verbatim Level/band descriptors. Do NOT invent your own marks; reward only points listed (or clearly equivalent valid alternatives) in the mark scheme. For numerical questions, the correct answer and accepted tolerance are stated — apply them strictly. For diagram questions, use the diagram requirements stated in the mark scheme to award diagram marks. If the mark scheme is silent on this exact sub-question, fall back to the board's standard rubric.\n\n--- BEGIN MARK SCHEME ---\n${verbatimMarkScheme}\n--- END MARK SCHEME ---\n`
         : "";
 
 
@@ -1985,13 +1990,13 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
               text:
                 markingPrompt +
                 aqaRubricBlock +
-                ocrMarkSchemeBlock +
+                boardMarkSchemeBlock +
                 "\n\n[The student has drawn a diagram — see the attached image. Apply the DIAGRAM MARKING CHECKLIST: (1) Are axes labelled Price and Quantity (or Price level / Real output for macro)? (2) Is demand downward sloping? (3) Is supply upward sloping? (4) Is the shift in the correct direction for the scenario? (5) Is the new equilibrium correctly identified? Check if the written explanation logically matches what the diagram shows. Award/deny marks accordingly.]" +
-                (ocrMarkSchemeBlock ? "\n\n[OCR diagram marking — also award diagram marks strictly per the 'Relevant diagrams' / diagram requirements stated in the official OCR mark scheme above.]" : ""),
+                (boardMarkSchemeBlock ? "\n\n[Diagram marking — also award diagram marks strictly per the diagram requirements (axes, curves, equilibria, shifts, shaded areas) stated in the official mark scheme above.]" : ""),
             },
             { type: "image_url", image_url: { url: diagramImage } },
           ]
-        : markingPrompt + aqaRubricBlock + ocrMarkSchemeBlock;
+        : markingPrompt + aqaRubricBlock + boardMarkSchemeBlock;
 
       await streamChat({
         messages: [{ role: "user", content: messageContent }],
