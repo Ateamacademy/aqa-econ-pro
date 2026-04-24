@@ -177,8 +177,8 @@ serve(async (req) => {
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    let markScheme: any[] = [];
-    if (diagramType) {
+    let markScheme: any[] = Array.isArray(scenarioRubric) ? scenarioRubric : [];
+    if (markScheme.length === 0 && diagramType) {
       const { data } = await supabase
         .from("diagram_mark_schemes")
         .select("*")
@@ -196,6 +196,7 @@ serve(async (req) => {
       board,
       markScheme,
       answerType,
+      scenarioRubricPrompt,
     });
 
     // Use tool calling for structured output
