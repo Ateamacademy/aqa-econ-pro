@@ -2247,7 +2247,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
               Predicted Papers
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              {libraryPapers.length} expertly crafted papers ready to practice, or generate a fresh one instantly.
+              {libraryPapers.length} expertly crafted papers ready to practice.
             </p>
           </motion.div>
         </div>
