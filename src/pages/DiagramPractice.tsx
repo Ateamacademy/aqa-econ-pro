@@ -84,6 +84,7 @@ import { UpgradeModal } from "@/components/UpgradeModal";
 import { diagramScenarios, DIAGRAM_SECTIONS, type DiagramSection, type DiagramScenario, getRandomScenario } from "@/data/diagramScenarios";
 import { getScenarioDiagramKeyword } from "@/lib/boardScenarioDiagramKeywords";
 import { normalizeDiagramKeyword } from "@/lib/diagramKeywordAliases";
+import { buildScenarioRubric, renderRubricForPrompt, rubricToMarkSchemePayload } from "@/lib/diagramScenarioRubrics";
 import { useDiagramAccess } from "@/hooks/useDiagramAccess";
 import { useDiagramMarking } from "@/hooks/useDiagramMarking";
 import { AIMarkingPanel } from "@/components/diagram-marking/AIMarkingPanel";
