@@ -2655,7 +2655,7 @@ Using the text/data provided and your knowledge of economics, recommend a policy
     id: "wjec-p1-a",
     subject: "wjec" as any,
     paper: "1",
-    title: "Paper 1 — Moderate",
+    title: "Paper 1 — Set A (Moderate)",
     description: "Economic Principles (A520U10-1). Moderate difficulty — 20 MCQs + 7 structured questions.",
     totalMarks: 60,
     content: `# WJEC GCE A-Level Economics (A520U10-1) — Component 1: Economic Principles — Predicted Paper (Moderate)
@@ -2901,7 +2901,7 @@ Using the information above and relevant economic theory, discuss the extent to 
     id: "wjec-p1-b",
     subject: "wjec" as any,
     paper: "1",
-    title: "Paper 1 — Hard",
+    title: "Paper 1 — Set B (Hard)",
     description: "Economic Principles (A520U10-1). Hard difficulty — 20 MCQs + 7 structured questions.",
     totalMarks: 60,
     content: `# WJEC GCE A-Level Economics (A520U10-1) — Component 1: Economic Principles — Predicted Paper (Hard)
@@ -3142,7 +3142,7 @@ Using the information above and relevant economic theory, discuss the extent to 
     id: "wjec-p1-c",
     subject: "wjec" as any,
     paper: "1",
-    title: "Paper 1 — Advanced",
+    title: "Paper 1 — Set C (Advanced)",
     description: "Economic Principles (A520U10-1). Advanced difficulty — 20 MCQs + 7 structured questions.",
     totalMarks: 60,
     content: `# WJEC GCE A-Level Economics (A520U10-1) — Component 1: Economic Principles — Predicted Paper (Advanced)
