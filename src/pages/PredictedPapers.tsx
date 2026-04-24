@@ -1730,6 +1730,11 @@ You MUST evaluate using ALL 5 diagram marking criteria:
 4. **EQUILIBRIUM** — Is original equilibrium (P1,Q1) marked? Is new equilibrium (P2,Q2) identified with dotted lines?
 5. **EXPLANATION ↔ DIAGRAM CONSISTENCY** — Does the written answer match what the diagram shows?
 
+DIAGRAM-TYPE EQUIVALENCE (do NOT penalise for terminology):
+- A "supply and demand diagram showing an indirect tax / sugar tax / SDIL / VAT" is the SAME diagram as an "indirect tax", "tax incidence" or "tax on a demerit good" diagram. All require: D, S, S+tax (shifted up by the per-unit tax), original eq (P,Q), new eq (P₁,Q₁), producer price Pₚ on the original S, and (where marks allow) tax-revenue rectangle and welfare-loss triangle.
+- Do NOT mark down a student for calling it a "supply and demand diagram" when the question asks for one — that is the correct generic name. Reward whichever of the components above are present and accurately drawn.
+- Specific (per-unit) tax → parallel upward shift of S. Ad valorem (% of price) tax → pivoted shift from price-axis intercept. Either is acceptable for a generic "indirect tax" question unless the question explicitly specifies one.
+
 Use any "[DIAGRAM:" notes or "[DIAGRAM NOTES]" blocks in the student's answer as evidence of their diagram work.
 
 You MUST structure your response using EXACTLY these section headers (the app parses them):
