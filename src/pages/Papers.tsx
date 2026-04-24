@@ -779,7 +779,7 @@ const EDEXCEL_IGCSE_PAPERS: { number: 1 | 2; code: string; title: string; focus:
 
 const CAIE_IGCSE_PAPERS: { number: 1 | 2; code: string; title: string; focus: string; duration: string; marks: number; available: boolean }[] = [
   { number: 1, code: "0455/01", title: "Multiple Choice", focus: "All topics", duration: "45m", marks: 30, available: true },
-  { number: 2, code: "0455/02", title: "Structured Questions", focus: "Data response & essays", duration: "2h 15m", marks: 90, available: false },
+  { number: 2, code: "0455/02", title: "Structured Questions", focus: "Data response & essays", duration: "2h 15m", marks: 90, available: true },
 ];
 
 const OCR_GCSE_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; available: boolean }[] = [
