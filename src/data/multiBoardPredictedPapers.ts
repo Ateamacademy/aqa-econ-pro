@@ -3063,340 +3063,342 @@ Using information from the text/data and your knowledge of economics, evaluate t
     id: "ib-p3-a",
     subject: "ib",
     paper: "3",
-    title: "Paper 3 — Predicted Set A",
+    title: "Paper 3 — Set A (Moderate)",
     description: "IB HL Paper 3 (policy paper). Set A — Moderate. Verbatim from official-style mock.",
     totalMarks: 60,
     content: `# IB Higher Level Economics — Paper 3 — Predicted Paper Set A (Moderate)
 
 **Time: 1 hour | Total: 60 marks**
-Answer all questions.
 
-Coffee is one of the most widely traded agricultural commodities in the world.
-Brazil is the largest producer and exporter of coffee, accounting for around 35% of
-global output.
-The global coffee market operates under conditions close to perfect competition at the farm level,
-with many small producers and a homogeneous product. Figure 1 below shows the cost curves of
-Firm A, a typical Brazilian coffee farmer. The current world market price of coffee is $4.50 per kg.
+**Instructions to candidates**
+- You are permitted access to a calculator for this paper.
+- Answer **all** questions.
+- Unless otherwise stated, all numerical answers must be given exactly or correct to two decimal places.
+- You must show all your working.
+- Use fully labelled diagrams where appropriate.
 
-[Figure 1 — refer to printed paper]
+## Question 1 — Palm oil in Indonesia
 
-Question 1a(i) [2 marks]
-Define the term price taker.
+Palm oil is the most widely consumed vegetable oil in the world, used in foods, cosmetics and biofuels. Indonesia is the largest producer, accounting for roughly 59% of global supply in 2022. Large-scale palm oil cultivation has been linked to deforestation, biodiversity loss and greenhouse-gas emissions, generating **negative externalities of production**.
 
-Question 1a(ii) [1 marks]
-Using Figure 1, identify Firm A's short-run profit maximising level of output.
+Figure 1 shows the market for palm oil in Indonesia. The marginal private cost (MPC) lies below the marginal social cost (MSC). The market equilibrium price is $900 per tonne at a quantity of 60 million tonnes. The socially optimal price is $1,200 per tonne at 45 million tonnes. Demand represents both MPB and MSB.
 
-Question 1a(iii) [2 marks]
-Using Figure 1, calculate Firm A's short-run economic profit/loss at the level of output identified in part (a)(ii).
+| Variable | Value |
+|----------|-------|
+| Private market price (P_e) | $900 per tonne |
+| Private market quantity (Q_e) | 60 million tonnes |
+| Socially optimal price (P_o) | $1,200 per tonne |
+| Socially optimal quantity (Q_o) | 45 million tonnes |
+| Vertical gap between MSC and MPC at Q_e | $500 per tonne |
 
-Question 1a(iv) [2 marks]
-With reference to Figure 1, identify the long-run equilibrium price and level of output for Firm A.
+Question 1 (a) (i) [2 marks]
+Define the term **externality**.
 
-Question 1a(v) [4 marks]
-Explain, using Figure 1, how Firm A will move from short-run equilibrium to long-run equilibrium.
+Question 1 (a) (ii) [1 marks]
+Using Figure 1, identify the value of the external cost per tonne of palm oil at the free-market equilibrium.
 
-Coffee is a water-intensive crop. According to the WWF it takes approximately 140 litres of water to produce the coffee beans for a single cup. The rapid expansion of coffee production in Brazil contributes to the strain on water resources and is thus responsible for a negative impact on watersheds and local ecosystems.
+Question 1 (a) (iii) [2 marks]
+Using Figure 1, calculate the welfare loss arising from the overproduction of palm oil.
 
-Question 1a(vi) [1 marks]
-State one of the characteristics of common access resources.
+Question 1 (a) (iv) [4 marks]
+Explain, using a marginal-cost/marginal-benefit diagram, why negative externalities of production lead to an allocatively inefficient outcome.
 
-Still, there are countries that heavily subsidise their coffee farmers so that they are able to meet high global demand. Brazil operates a price-support scheme that guarantees a minimum price of $4.00 per kg. Assume the Brazilian government had to purchase 400 million kg at $4.00 per kg in 2023 to maintain the price floor.
+Question 1 (a) (v) [1 marks]
+State **one** characteristic of a common-pool resource.
 
-Question 1a(vii) [2 marks]
-Using the information above, calculate the total cost of the price-support scheme to the Brazilian government in 2023.
+Question 1 (a) (vi) [2 marks]
+Outline the meaning of the term **tragedy of the commons**.
 
-Overall, the coffee industry faces sustainability challenges:
-- Coffee production is associated with significant deforestation in tropical regions, reducing forest cover and biodiversity.
-- The use of fertilisers and pesticides can contaminate water sources, harm ecosystems and pose risks to human health.
-- Coffee processing and transport generate greenhouse gas emissions; reliance on long supply chains contributes to climate change.
+The Indonesian government is considering imposing a **Pigouvian tax** of $500 per tonne on palm-oil producers.
 
-Question 1a(viii) [4 marks]
-Using an externalities diagram and the information provided, explain how coffee production is responsible for the generation of negative externalities.
+Question 1 (a) (vii) [2 marks]
+Calculate the expected tax revenue if, after the tax is imposed, 45 million tonnes of palm oil are produced.
 
-Currently, indirect taxes targeted specifically at coffee-related environmental harms do not exist in Brazil. Standard value-added and consumption taxes (PIS/COFINS, ICMS) do apply. For instance, the average monthly spending per household on coffee in Brazil is R$52.00 while the combined indirect-tax rate on packaged coffee is 25%.
+Question 1 (a) (viii) [4 marks]
+Explain, using a diagram, how a Pigouvian tax can internalise the negative externality associated with palm-oil production.
 
-Question 1a(ix) [2 marks]
-Using the information above, calculate the indirect tax paid per household each month on coffee in Brazil.
+Research suggests the price elasticity of demand (PED) for palm oil from EU buyers is −0.45.
 
-Question 1b [10 marks]
-Using the text/data provided and your knowledge of economics, recommend a policy that could be introduced to promote sustainability in the Brazilian coffee industry.
+Question 1 (a) (ix) [2 marks]
+Using the information above, state whether palm oil is price elastic or price inelastic and give one reason for your answer.
 
-Ethiopia is a low-income country in East Africa with a population of around 123 million. Table 1 below provides selected data for Ethiopia.
+Question 1 (b) [10 marks]
+Using the text/data provided and your knowledge of economics, **recommend** a policy that the Indonesian government could introduce to reduce the environmental damage caused by palm-oil production.
 
-**Table 1: Selected macroeconomic data for Ethiopia, 2020–2021**
-| | Nominal GDP (billion $) | GDP Deflator | Real GDP (billion $) | Population (million) |
-| :--- | :--- | :--- | :--- | :--- |
-| **2020** | 107.50 | 100.00 | 107.50 | 117.2 |
-| **2021** | 111.30 | 105.30 | | 120.0 |
+## Question 2 — Ethiopia
 
-Question 2a(i) [2 marks]
-Using the information in Table 1, calculate the real GDP for Ethiopia in 2021.
+Ethiopia is one of the fastest-growing economies in sub-Saharan Africa. Despite strong growth, the country continues to face **high inflation**, a widening **current account deficit** and rising **unemployment** among youth. Table 1 below provides selected economic data for Ethiopia.
 
-Question 2a(ii) [2 marks]
-Using the information in Table 1, calculate the real GDP per capita for Ethiopia in 2021.
+| Year | Nominal GDP (billion USD) | GDP deflator (base = 100) | Population (million) |
+|------|---------------------------|----------------------------|----------------------|
+| 2022 | 126.80 | 115.0 | 123.4 |
+| 2023 | 155.80 | 140.3 | 126.5 |
 
-In 2021 Ethiopia held a low position by nominal GDP while its Human Development Index (HDI) ranking placed Ethiopia at 175th out of 191 countries published.
+Question 2 (a) (i) [2 marks]
+Define the term **real GDP**.
 
-Question 2a(iii) [2 marks]
-State two indicators that are used to construct the Human Development Index (HDI).
+Question 2 (a) (ii) [2 marks]
+Using Table 1, calculate Ethiopia's real GDP in 2023.
 
-Question 2a(iv) [2 marks]
-Outline one disadvantage of using the Human Development Index as a measure of economic development.
+Question 2 (a) (iii) [2 marks]
+Using Table 1 and your answer to (a)(ii), calculate Ethiopia's real GDP per capita in 2023.
 
-Ethiopia belongs to the low-income transition economies. Over the past two decades the country has seen rapid growth driven by market-oriented reforms, agricultural-sector expansion and significant foreign direct investment (FDI), particularly into industrial parks that produce textiles and apparel.
+Question 2 (a) (iv) [2 marks]
+State **two** limitations of using real GDP per capita as a measure of living standards.
 
-Question 2a(v) [4 marks]
-Explain two possible consequences of economic growth for Ethiopia.
+Question 2 (a) (v) [2 marks]
+Using the information in Table 1, calculate the rate of inflation in Ethiopia between 2022 and 2023.
 
-Table 2 below provides selected data from Ethiopia's balance of payments for 2021 (US$ million).
+Question 2 (a) (vi) [2 marks]
+Outline **one** cost of high inflation to an economy.
 
-**Table 2: Balance-of-payments data for Ethiopia, 2021**
-| Item | $ million |
-| :--- | :--- |
-| Exports of goods | 3,625 |
-| Imports of goods | 14,198 |
-| Exports of services | 4,350 |
-| Imports of services | 5,700 |
-| Net primary income | -652 |
-| Net secondary income | 5,860 |
+Question 2 (a) (vii) [4 marks]
+Explain, using an AD/AS diagram, how a rise in the world price of oil could lead to cost-push inflation in Ethiopia.
 
-Question 2a(vi) [2 marks]
-Using Table 2, calculate the current account balance for Ethiopia in 2021.
+In 2023 Ethiopia had a labour force of 54 million workers and 4.86 million were unemployed.
 
-Question 2a(vii) [4 marks]
-Explain two implications of a rising current account deficit.
+Question 2 (a) (viii) [2 marks]
+Calculate the unemployment rate in Ethiopia in 2023.
 
-Ethiopia's export base is narrow. Coffee alone accounts for around 30% of goods exports, followed by oil seeds (10%) and cut flowers (9%). Over the last five years, GDP growth has slowed from around 10% in the 2010s to below 6%, highlighting the vulnerabilities of an economy dependent on primary commodities and with stagnant productivity growth.
+Question 2 (a) (ix) [2 marks]
+Distinguish between **cyclical** and **structural** unemployment.
 
-Question 2a(viii) [2 marks]
-Outline why dependence on primary sector products can pose a barrier to economic growth and/or economic development.
-
-Question 2b [10 marks]
-Using the text/data provided and your knowledge of economics, recommend a policy that could be introduced to revitalize economic growth in Ethiopia.`,
+Question 2 (b) [10 marks]
+Using the text/data provided and your knowledge of economics, **recommend** a policy that the Ethiopian government could introduce to reduce unemployment.
+`,
   },
   {
     id: "ib-p3-b",
     subject: "ib",
     paper: "3",
-    title: "Paper 3 — Predicted Set B",
+    title: "Paper 3 — Set B (Hard)",
     description: "IB HL Paper 3 (policy paper). Set B — Hard. Verbatim from official-style mock.",
     totalMarks: 60,
     content: `# IB Higher Level Economics — Paper 3 — Predicted Paper Set B (Hard)
 
 **Time: 1 hour | Total: 60 marks**
 
-Answer all questions.
+**Instructions to candidates**
+- You are permitted access to a calculator for this paper.
+- Answer **all** questions.
+- Unless otherwise stated, all numerical answers must be given exactly or correct to two decimal places.
+- You must show all your working.
+- Use fully labelled diagrams where appropriate.
 
-The global smartphone market is dominated by a small number of firms, including Apple, Samsung, Xiaomi and Huawei. In 2022, the top five firms controlled approximately 72% of global smartphone sales.
-Firm B is a typical firm operating in this market. Figure 1 shows Firm B's demand (AR), marginal revenue (MR), average cost (AC) and marginal cost (MC) curves.
+## Question 1 — Vietnamese coffee
 
-[Figure 1 — refer to printed paper]
+Coffee is one of the most widely traded commodities in the world. Vietnam is the second-largest coffee producer globally, with approximately 600,000 smallholder farmers operating in what can be modelled as a **perfectly competitive** industry. Figure 1 illustrates the average cost (AC) and marginal cost (MC) of Firm X, a representative Vietnamese coffee farmer. The prevailing world price for robusta coffee is $4.00 per kg.
 
-Question 1a(i) [2 marks]
-Define the term concentration ratio.
+| Output (000 kg / month) | AC ($/kg) | MC ($/kg) |
+|--------------------------|-----------|-----------|
+| 20 | 5.60 | 2.40 |
+| 30 | 4.00 | 2.70 |
+| 40 | 3.20 | 3.20 |
+| 50 | 2.90 | 4.00 |
+| 60 | 3.00 | 5.00 |
+| 70 | 3.30 | 6.30 |
+| 80 | 3.80 | 7.80 |
 
-Question 1a(ii) [1 marks]
-Using Figure 1, identify Firm B's profit maximising level of output.
+Question 1 (a) (i) [2 marks]
+Outline **two** assumptions underlying the model of perfect competition.
 
-Question 1a(iii) [2 marks]
-Using Figure 1, calculate Firm B's short-run economic profit/loss at the level of output identified in part (a)(ii).
+Question 1 (a) (ii) [1 marks]
+Using Figure 1, identify Firm X's short-run profit-maximising output.
 
-Question 1a(iv) [2 marks]
-With reference to Figure 1, identify the price charged by Firm B and explain why this firm is able to earn abnormal profit in the long run.
+Question 1 (a) (iii) [2 marks]
+Using Figure 1, calculate Firm X's short-run economic profit at the level of output identified in (a)(ii).
 
-Question 1a(v) [4 marks]
-Using a kinked demand curve diagram, explain why prices may remain rigid in a non-collusive oligopoly.
+Question 1 (a) (iv) [2 marks]
+Identify the long-run equilibrium price and output for Firm X.
 
-Smartphones rely on rare earth minerals extracted under conditions often associated with significant environmental damage. Many of these minerals are sourced from common pool resources such as shared watersheds and forested land. It is estimated that producing one smartphone generates around 55 kg of CO2e emissions.
+Question 1 (a) (v) [4 marks]
+Explain, using a diagram, how Firm X will move from short-run equilibrium to long-run equilibrium.
 
-Question 1a(vi) [1 marks]
-State one of the characteristics of common pool (common-access) resources.
+Intensive coffee cultivation depletes soil nutrients and generates negative externalities estimated at **$0.80 per kg** produced. Vietnam's total robusta coffee output in 2023 was 1.8 billion kg.
 
-Still, the smartphone industry continues to expand to meet the high global demand. If Firm B produces 66 million units in a year:
+Question 1 (a) (vi) [2 marks]
+Calculate the total external cost generated by Vietnamese coffee production in 2023.
 
-Question 1a(vii) [2 marks]
-Using the information above, calculate the total CO2e emissions (in million tonnes) associated with Firm B's output.
+Question 1 (a) (vii) [2 marks]
+Define the term **productive efficiency**.
 
-Overall, the smartphone industry faces sustainability challenges:
-*   Rapid product cycles and planned obsolescence promote overconsumption and generate large quantities of electronic waste.
-*   Mining of rare earth elements can contaminate water sources, harm local ecosystems and pose health risks to communities.
-*   The industry has a significant carbon footprint; energy-intensive manufacturing and long global supply chains drive greenhouse-gas emissions.
+Research indicates that at a world price of $4.00/kg, a 10% rise in price leads to a 4% fall in quantity demanded for Vietnamese coffee.
 
-Question 1a(viii) [4 marks]
-Using an externalities diagram and the information provided, explain how smartphone production is responsible for the generation of negative externalities.
+Question 1 (a) (viii) [2 marks]
+Calculate the price elasticity of demand (PED) for Vietnamese coffee and interpret your result.
 
-In response to environmental concerns, the government of a major economy introduces a specific tax of $40 per smartphone. Assume that Firm B continues to produce 66 million units in a year.
+Question 1 (a) (ix) [2 marks]
+Distinguish between **allocative efficiency** and **productive efficiency**.
 
-Question 1a(ix) [2 marks]
-Using the information above, calculate the total indirect tax revenue collected from Firm B's output in a year.
+Question 1 (b) [10 marks]
+Using the text/data provided and your knowledge of economics, **recommend** a policy that the Vietnamese government could introduce to address the negative externalities associated with coffee production while supporting smallholder incomes.
 
-Question 1b [10 marks]
-Using the text/data provided and your knowledge of economics, recommend a policy that could be introduced to correct the market failures associated with smartphone production.
+## Question 2 — Turkey
 
-2. South Africa is an upper-middle-income country and the second-largest economy in sub-Saharan Africa. Table 1 below provides selected macroeconomic data for South Africa.
+Turkey is an emerging-market economy straddling Europe and Asia. In recent years it has experienced persistent inflation, a volatile exchange rate, and an enduring **current account deficit**. Table 1 contains selected data from Turkey's balance of payments for 2023.
 
-| | Nominal GDP (bn R) | GDP Deflator | Real GDP (bn R) | CPI | Unemployment (%) |
-|---|---|---|---|---|---|
-| **2021** | 6,589 | 110.4 | 5,969 | 108.0 | 34.3 |
-| **2022** | 7,245 | 118.5 | | 116.4 | 32.7 |
-*Table 1: Selected macroeconomic data for South Africa, 2021–2022*
+| Item | Value (US$ billion) |
+|------|---------------------|
+| Exports of goods | 256.0 |
+| Imports of goods | −362.0 |
+| Exports of services | 105.0 |
+| Imports of services | −46.0 |
+| Net primary income | −14.0 |
+| Net secondary income | +5.0 |
+| Net capital account | +1.0 |
+| Net financial account | +51.0 |
 
-Question 2a(i) [2 marks]
-Using the information in Table 1, calculate the real GDP for South Africa in 2022 (to 2 dp).
+Question 2 (a) (i) [2 marks]
+Define the term **current account deficit**.
 
-Question 2a(ii) [2 marks]
-Using the information in Table 1, calculate the rate of inflation in South Africa between 2021 and 2022 (to 2 dp).
+Question 2 (a) (ii) [2 marks]
+Using the data in Table 1, calculate Turkey's **balance of trade in goods** for 2023.
 
-In 2022, South Africa's unemployment rate stood at 32.7%, among the highest in the world. Youth unemployment exceeded 60%.
+Question 2 (a) (iii) [2 marks]
+Using the data in Table 1, calculate Turkey's **current account balance** for 2023.
 
-Question 2a(iii) [2 marks]
-Define the term cyclical unemployment.
+Question 2 (a) (iv) [1 marks]
+State **one** component of the financial account of the balance of payments.
 
-Question 2a(iv) [2 marks]
-Outline one limitation of the official unemployment rate as a measure of labour underutilisation.
+Question 2 (a) (v) [4 marks]
+Explain **two** consequences of a persistent current account deficit for an economy.
 
-South Africa's central bank (SARB) responded to inflation above its 3–6% target band by raising the policy (repo) rate from 3.5% at the start of 2022 to 7.0% by early 2023, with further hikes expected.
+In January 2023 the exchange rate was 18.80 TRY / USD. By December 2023 it had reached 29.50 TRY / USD.
 
-Question 2a(v) [4 marks]
-Using an AD/AS diagram, explain how a rise in interest rates is expected to affect real GDP and the price level in South Africa.
+Question 2 (a) (vi) [2 marks]
+Calculate the percentage change in the value of the Turkish lira against the US dollar during 2023.
 
-Table 2 below provides selected balance-of-payments data for South Africa in 2022 (US$ billion).
+Question 2 (a) (vii) [2 marks]
+Outline the meaning of the term **depreciation**.
 
-| Item | $ billion |
-|---|---|
-| Exports of goods | 123.4 |
-| Imports of goods | 117.8 |
-| Exports of services | 14.1 |
-| Imports of services | 16.2 |
-| Net primary income | -12.8 |
-| Net secondary income | -2.3 |
-*Table 2: Balance-of-payments data for South Africa, 2022*
+Question 2 (a) (viii) [4 marks]
+Explain, using a diagram, how a depreciation of the Turkish lira may affect Turkey's current account balance in the long run.
 
-Question 2a(vi) [2 marks]
-Using Table 2, calculate the current account balance for South Africa in 2022.
+PED of Turkish exports = −0.8. PED of Turkish imports = −0.5.
 
-Question 2a(vii) [4 marks]
-Explain two implications of a rising current account deficit.
+Question 2 (a) (ix) [2 marks]
+State whether the Marshall-Lerner condition is satisfied and give a brief explanation.
 
-Power outages ('load-shedding') cost the South African economy an estimated R560 billion in 2022, reducing business productivity and export competitiveness. Investment in electricity generation has been insufficient, and growth has slowed from around 3% in the early 2010s to below 1% in recent years, highlighting the vulnerabilities of an economy with persistent infrastructure bottlenecks.
-
-Question 2a(viii) [2 marks]
-Outline why weak infrastructure can pose a barrier to economic growth and/or economic development.
-
-Question 2b [10 marks]
-Using the text/data provided and your knowledge of economics, recommend a policy that could be introduced to revitalize economic growth in South Africa.`,
+Question 2 (b) [10 marks]
+Using the text/data provided and your knowledge of economics, **recommend** a policy that the Turkish government could introduce to reduce the current account deficit.
+`,
   },
   {
     id: "ib-p3-c",
     subject: "ib",
     paper: "3",
-    title: "Paper 3 — Predicted Set C",
+    title: "Paper 3 — Set C (Advanced)",
     description: "IB HL Paper 3 (policy paper). Set C — Advanced. Verbatim from official-style mock.",
     totalMarks: 60,
     content: `# IB Higher Level Economics — Paper 3 — Predicted Paper Set C (Advanced)
 
 **Time: 1 hour | Total: 60 marks**
-Answer all questions.
 
-1. Pharmaceutical markets for patented drugs often exhibit monopoly characteristics. Firm C holds a 20-year patent on a branded medicine used to treat a chronic disease.
-Figure 1 shows Firm C's cost and revenue curves in the market for this drug. Firm C faces constant marginal cost of production.
+**Instructions to candidates**
+- You are permitted access to a calculator for this paper.
+- Answer **all** questions.
+- Unless otherwise stated, all numerical answers must be given exactly or correct to two decimal places.
+- You must show all your working.
+- Use fully labelled diagrams where appropriate.
 
-[Figure 1 — refer to printed paper]
+## Question 1 — UK grocery oligopoly
 
-Question 1a(i) [2 marks]
-Define the term monopoly.
+The United Kingdom grocery market is an **oligopoly**: in 2023 the four largest supermarkets — Tesco, Sainsbury's, Asda and Morrisons — held a combined market share of 65%. The industry features high concentration, product differentiation and significant barriers to entry. Firms rely heavily on non-price competition and **behavioural-economic** strategies such as loss-leader pricing, loyalty schemes and default meal deals.
 
-Question 1a(ii) [1 marks]
-Using Figure 1, identify Firm C's profit maximising level of output.
+| Firm | Market share (%) |
+|------|------------------|
+| Tesco | 27.5 |
+| Sainsbury's | 15.8 |
+| Asda | 13.7 |
+| Morrisons | 8.0 |
+| Aldi | 10.2 |
+| Lidl | 7.8 |
+| Other | 17.0 |
 
-Question 1a(iii) [2 marks]
-Using Figure 1, calculate Firm C's abnormal profit at the level of output identified in part (a)(ii).
+Question 1 (a) (i) [2 marks]
+Define the term **oligopoly**.
 
-Question 1a(iv) [2 marks]
-With reference to Figure 1, identify the allocatively efficient level of output for this market.
+Question 1 (a) (ii) [2 marks]
+Using the data above, calculate the **four-firm concentration ratio (CR4)**.
 
-Question 1a(v) [4 marks]
-Using a price-discrimination diagram, explain how Firm C can increase total revenue by charging different prices in markets with different price elasticities of demand.
+Question 1 (a) (iii) [4 marks]
+Explain, using a kinked-demand-curve diagram, why firms in an oligopoly may exhibit **price rigidity**.
 
-Many pharmaceutical inputs (such as plant-derived active ingredients) are drawn from common pool resources. Access to these resources is not easily excludable but their use reduces availability for others.
+Tesco and Sainsbury's must simultaneously choose between setting a **high** or **low** price for milk. Table 1 shows monthly profit (£ millions) under each combination.
 
-Question 1a(vi) [1 marks]
-State one of the characteristics of common pool (common-access) resources.
+| | Sainsbury's: High | Sainsbury's: Low |
+|--|-------------------|-------------------|
+| Tesco: High | (40 , 30) | (10 , 35) |
+| Tesco: Low | (45 , 8) | (20 , 15) |
 
-Firm C engages in international third-degree price discrimination. In 2023 it sold 22 million doses in high-income markets at $120 per dose and 45 million doses in low-income markets at $18 per dose.
+*(Tesco, Sainsbury's) payoffs in £ million.*
 
-Question 1a(vii) [2 marks]
-Using the information above, calculate Firm C's total revenue from the two markets combined in 2023.
+Question 1 (a) (iv) [4 marks]
+Using Table 1, identify the Nash equilibrium and explain your reasoning.
 
-Overall, the patented-pharmaceuticals market faces well-documented welfare and sustainability challenges:
+Question 1 (a) (v) [2 marks]
+Distinguish between **collusive** and **non-collusive** oligopoly.
 
-- Monopoly pricing reduces allocative efficiency and restricts access to essential medicines, particularly in low-income countries.
-- High prices can deter adherence to treatment, leading to poorer public-health outcomes and higher long-term healthcare costs.
-- Concentration of R&D in high-margin diseases leaves neglected tropical diseases under-researched.
+Supermarkets use **choice architecture** — placing sugary snacks at child eye-level at checkouts — raising consumption of demerit goods. In 2022 the UK government banned such displays as a **nudge** to healthier eating.
 
-Question 1a(viii) [4 marks]
-Using Figure 1 and a welfare-analysis diagram, explain how monopoly pricing generates a welfare loss (deadweight loss) compared to the allocatively efficient outcome.
+Question 1 (a) (vi) [2 marks]
+Define the term **nudge**.
 
-The US government imposes a per-unit excise tax of $5 per dose on Firm C's domestic sales in 2023 as part of a price-regulation initiative. Assume Firm C sold 22 million doses in the US high-income market in 2023.
+Question 1 (a) (vii) [4 marks]
+Explain **two** reasons why consumer decisions in supermarkets may not be perfectly rational.
 
-Question 1a(ix) [2 marks]
-Using the information above, calculate the total indirect tax revenue collected by the US government in 2023.
+Question 1 (a) (viii) [1 marks]
+State **one** firm objective alternative to profit maximisation.
 
-Question 1b [10 marks]
-Using the text/data provided and your knowledge of economics, recommend a policy that could be introduced to improve access to essential medicines while preserving incentives to innovate.
+Question 1 (b) [10 marks]
+Using the text/data provided and your knowledge of economics, **recommend** a policy that the UK government could introduce to protect consumers in the oligopolistic UK grocery market.
 
-2. Argentina is a large upper-middle-income Latin American economy that has experienced repeated episodes of high inflation, currency crises and sovereign debt problems. Table 1 below provides selected macroeconomic data.
+## Question 2 — Bangladesh
 
-| | Nominal GDP (tn ARS) | GDP Deflator | Real GDP (tn ARS) | CPI (YoY %) | Policy rate (%) |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **2022** | 72.0 | 100.0 | 72.0 | 94.8 | 75.0 |
-| **2023** | 165.0 | 210.0 | | 211.4 | 133.0 |
-*Table 1: Selected macroeconomic data for Argentina, 2022–2023*
+Bangladesh has experienced strong economic growth since 2000, driven by its ready-made garment exports and remittances. Despite reaching **lower-middle-income** status, the country continues to face high levels of income inequality and rural poverty. Table 1 below shows the distribution of Bangladeshi household income by quintiles in 2022.
 
-Question 2a(i) [2 marks]
-Using the information in Table 1, calculate Argentina's real GDP in 2023 (to 2 dp).
+| Income quintile | Share of national income (%) |
+|-----------------|-------------------------------|
+| Poorest 20% | 4.0 |
+| Second 20% | 8.0 |
+| Third 20% | 13.0 |
+| Fourth 20% | 20.0 |
+| Richest 20% | 55.0 |
 
-Question 2a(ii) [2 marks]
-Using the information in Table 1, calculate the percentage change in real GDP between 2022 and 2023 (to 2 dp).
+Question 2 (a) (i) [2 marks]
+Define the term **Gini coefficient**.
 
-Inflation in Argentina accelerated sharply during 2022 and 2023, reaching triple digits and threatening to tip into hyperinflation.
+Question 2 (a) (ii) [2 marks]
+Using the data in Table 1, calculate the cumulative share of income received by the poorest 60% of households.
 
-Question 2a(iii) [2 marks]
-Define the term hyperinflation.
+Question 2 (a) (iii) [3 marks]
+Draw and label a **Lorenz curve** showing the distribution of income in Bangladesh.
 
-Question 2a(iv) [2 marks]
-Outline one cause of the very high inflation rate observed in Argentina.
+Question 2 (a) (iv) [2 marks]
+Outline **one** cause of income inequality in a developing country.
 
-The Argentine peso (ARS) depreciated sharply against the US dollar over 2022–2023, from around ARS 130/US$ to ARS 800/US$ (official rate). A parallel 'blue-dollar' rate traded even weaker.
+Bangladesh's HDI rose from 0.500 in 2010 to 0.670 in 2022. Over the same period its GNI per capita (PPP$) rose from $3,800 to $6,200.
 
-Question 2a(v) [4 marks]
-Using an exchange-rate diagram, explain two possible reasons for the depreciation of the peso.
+Question 2 (a) (v) [2 marks]
+State **two** dimensions/indicators used to construct the HDI.
 
-Table 2 below provides selected balance-of-payments data for Argentina in 2023 (US$ billion).
+Question 2 (a) (vi) [2 marks]
+Calculate the percentage change in Bangladesh's HDI between 2010 and 2022.
 
-| Item | $ billion |
-| :--- | :--- |
-| Exports of goods | 66.8 |
-| Imports of goods | 73.7 |
-| Exports of services | 14.2 |
-| Imports of services | 20.6 |
-| Net primary income | -17.2 |
-| Net secondary income | 0.9 |
-*Table 2: Balance-of-payments data for Argentina, 2023*
+Question 2 (a) (vii) [4 marks]
+Explain, using a PPC or LRAS diagram, how investment in education can generate long-run economic growth.
 
-Question 2a(vi) [2 marks]
-Using Table 2, calculate the current account balance for Argentina in 2023.
+Bangladesh is home to the Grameen Bank, the pioneer of **microfinance**. In 2022, Grameen disbursed $3.2 billion in loans, with repayment rates of 98%.
 
-Question 2a(vii) [4 marks]
-Using an AD/AS diagram, explain two implications of a sharp currency depreciation for Argentina's price level and real output.
+Question 2 (a) (viii) [2 marks]
+Outline the meaning of the term **microfinance**.
 
-In late 2023 Argentina announced plans including drastic fiscal spending cuts, removal of price controls, and discussions around full dollarisation of the economy. Over the last decade, Argentina's real GDP growth has averaged below 1%, highlighting the vulnerabilities of an economy with persistent macroeconomic instability.
+Question 2 (a) (ix) [2 marks]
+Distinguish between **absolute poverty** and **relative poverty**.
 
-Question 2a(viii) [2 marks]
-Outline why persistent macroeconomic instability can pose a barrier to economic growth and/or economic development.
-
-Question 2b [10 marks]
-Using the text/data provided and your knowledge of economics, recommend a policy mix that the Argentine government could use to simultaneously address high inflation and the current account deficit.`,
+Question 2 (b) [10 marks]
+Using the text/data provided and your knowledge of economics, **recommend** a policy that the Bangladeshi government could introduce to reduce income inequality.
+`,
   },
   // ── WJEC A-Level Economics ──
   // Paper 1 (A520U10-1) — Economic Principles. Verbatim sync with /wjec-mocks/paper-1-{moderate|hard|advanced}.pdf
