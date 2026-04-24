@@ -4225,52 +4225,259 @@ With reference to the case study, discuss whether living standards in Argentina 
 `,
   },
   // ── Eduqas A-Level Economics ──
+  // Verbatim sync with /public/eduqas-mocks/paper-{1|2|3}-{moderate|hard|advanced}.pdf
+  // Paper 1 (A520U10-1) Component 1 Economic Principles: 60 marks (20 MCQ + Q21-26 = 4+7+4+8+8+9 = 40), 1h 30m
+  // Paper 2 (A520U20-1) Component 2 Exploring Economic Behaviour: 80 marks, 2h 30m
+  // Paper 3 (A520U30-1) Component 3 Evaluating Economic Models and Policies: 90 marks (3 sections × 30), 2h 30m
   {
     id: "eduqas-p1-a",
     subject: "eduqas" as any,
     paper: "1",
-    title: "Paper 1 — Set A",
-    description: "Markets & Market Failure. Set A — core practice.",
-    totalMarks: 80,
-    content: `# Eduqas A-Level Economics (A510QS/01) — Markets & Market Failure — Predicted Paper Set A
+    title: "Paper 1 — Set A (Moderate)",
+    description: "Component 1: Economic Principles (A520U10-1). Moderate — 20 MCQs + 6 structured.",
+    totalMarks: 60,
+    content: `# Eduqas A-Level Economics (A520U10-1) — Component 1: Economic Principles — Predicted Paper (Moderate)
 
-**Time: 120 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total: 60 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer ALL questions. The number of marks is given in brackets at the end of each question or part-question.
 
-## Section A: Data Response
+## Section A — Multiple Choice (20 marks)
 
-**Extract 1 — Price discrimination in the airline industry:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+For each question in Section A, write the letter (A, B, C, D or E) that corresponds to your answer in the box provided. You are advised to spend approximately 30 minutes on this section.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+Question 1 [1 mark]
+Which of the following is NOT considered a factor of production?
+A. Land
+B. Labour
+C. Capital
+D. Enterprise
+E. Money
 
-Question 1 [2 marks]
-With reference to price discrimination in the airline industry, explain two consequences of the issue.
+Question 2 [1 mark]
+If the demand for a good increases and supply simultaneously falls, the effect on equilibrium price and quantity will be:
+A. Price rises; quantity rises
+B. Price rises; quantity uncertain
+C. Price uncertain; quantity rises
+D. Price falls; quantity falls
+E. Price uncertain; quantity uncertain
 
-Question 2 [4 marks]
-With reference to price discrimination in the airline industry, explain one government response to the issue.
+Question 3 [1 mark]
+The price of a good rises from £10 to £12. As a result, quantity demanded falls from 200 units to 170 units. The price elasticity of demand is approximately:
+A. −0.15
+B. −0.75
+C. −1.00
+D. −1.33
+E. −1.75
 
-Question 3 [6 marks]
-With reference to monopoly power in tech: investigating Google, explain one factor that influences the issue.
+Question 4 [1 mark]
+Which of the following is a feature of monopolistic competition?
+A. A single seller dominates the market
+B. Products are identical between firms
+C. There are significant barriers to entry and exit
+D. Firms sell differentiated products in a market with many sellers
+E. Firms have no control over the price they charge
 
-Question 4 [9 marks]
-With reference to price discrimination in the airline industry, explain one mechanism that determines the issue.
+Question 5 [1 mark]
+Economic profit differs from accounting profit because economic profit:
+A. Excludes explicit costs
+B. Includes the opportunity cost of resources used by the owner
+C. Is always greater than accounting profit
+D. Ignores variable costs
+E. Is calculated only in the long run
 
-Question 5 [12 marks]
-With reference to behavioural economics and consumer nudges, explain two consequences of the issue.
+Question 6 [1 mark]
+A country runs a budget deficit for five consecutive years. All other things remaining equal, what will happen to the national debt?
+A. It will rise
+B. It will fall
+C. It will remain constant
+D. It will rise only if interest rates fall
+E. It cannot be determined
 
-## Section B: Essay (choose ONE)
+Question 7 [1 mark]
+The multiplier effect refers to:
+A. The process by which tax cuts increase government revenue
+B. The ratio of consumer spending to disposable income
+C. The proportional increase in national income arising from an initial injection of spending
+D. The increase in exports resulting from a currency depreciation
+E. The increase in money supply caused by central bank bond purchases
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of price discrimination in the airline industry, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 8 [1 mark]
+A shop sells a product for £72 including 20% VAT. How much of this price is VAT?
+A. £6.00
+B. £12.00
+C. £14.40
+D. £15.00
+E. £18.00
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of behavioural economics and consumer nudges, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 9 [1 mark]
+The Consumer Prices Index (CPI) in an economy was 110 in May 2023 and 115.5 in May 2024. What is the annual rate of inflation over this period?
+A. 0.5%
+B. 4.76%
+C. 5.00%
+D. 5.5%
+E. 11.0%
+
+Question 10 [1 mark]
+The law of diminishing marginal returns states that:
+A. Total output always falls as more variable factors are added
+B. Average cost rises as more workers are employed
+C. Beyond a certain point, adding more of a variable factor to a fixed factor will reduce the marginal product
+D. Profits fall as firms grow larger in the long run
+E. Output rises proportionately as all factors increase
+
+Question 11 [1 mark]
+The cross elasticity of demand between two goods is calculated as +2.5. This means the goods are:
+A. Strong complements
+B. Weak complements
+C. Unrelated
+D. Weak substitutes
+E. Strong substitutes
+
+Question 12 [1 mark]
+In the calculation of the UK CPI, new items are added to the basket of goods primarily because:
+A. They have become cheaper
+B. They are taxed more heavily
+C. Government wants to raise inflation estimates
+D. Spending patterns have changed
+E. Older items have become illegal
+
+Question 13 [1 mark]
+The chart below shows the share of household income spent on food and non-alcoholic drink in five countries:
+
+| Country | % of household income on food |
+|---|---|
+| Nigeria | 56% |
+| Pakistan | 42% |
+| Mexico | 22% |
+| UK | 10% |
+| USA | 7% |
+
+Which of the following best explains this pattern?
+A. Food has a negative income elasticity in richer countries
+B. As incomes rise, a smaller proportion of income is spent on necessities
+C. Food is cheaper in richer countries
+D. Poorer countries consume larger total quantities of food
+E. Richer countries spend less in total on food
+
+Question 14 [1 mark]
+A current account deficit indicates that:
+A. The country is spending more on imports of goods, services, income and transfers than it earns from exports of these
+B. The government is running a budget deficit
+C. The central bank is selling foreign exchange
+D. Net foreign investment into the country is negative
+E. The country's exchange rate must be falling
+
+Question 15 [1 mark]
+Country X can produce either 80 units of wheat or 40 units of cloth. Country Y can produce either 60 units of wheat or 20 units of cloth. The theory of comparative advantage suggests that:
+A. Country X should specialise in cloth, Country Y in wheat
+B. Country X should specialise in wheat, Country Y in cloth
+C. No trade is possible because Country X has an absolute advantage in both goods
+D. Both countries should remain self-sufficient
+E. Trade is only possible if the two countries have the same technology
+
+Question 16 [1 mark]
+A government imposes a specific tax of £2 per unit on a demerit good. If demand is relatively price inelastic, the result will be:
+A. A small fall in quantity consumed and most of the tax falling on producers
+B. A large fall in quantity consumed and most of the tax falling on consumers
+C. A small fall in quantity consumed and most of the tax falling on consumers
+D. No change in quantity consumed and all of the tax falling on consumers
+E. A rise in quantity consumed and the tax being absorbed by producers
+
+Question 17 [1 mark]
+A UK supermarket chain purchases one of its milk suppliers. This is best described as:
+A. Horizontal integration
+B. Forward vertical integration
+C. Backward vertical integration
+D. Conglomerate integration
+E. A hostile takeover
+
+Question 18 [1 mark]
+In an economy suffering from demand-pull inflation, which combination of policies would be most consistent with reducing inflation?
+A. Cut interest rates, raise taxes, raise government spending
+B. Raise interest rates, raise taxes, cut government spending
+C. Cut interest rates, cut taxes, raise government spending
+D. Raise interest rates, cut taxes, raise government spending
+E. Leave interest rates unchanged, cut taxes, cut government spending
+
+Question 19 [1 mark]
+A firm raises its price by 5% and its total revenue rises by 3%. The price elasticity of demand for its product is:
+A. Perfectly elastic
+B. Elastic
+C. Unit elastic
+D. Inelastic
+E. Perfectly inelastic
+
+Question 20 [1 mark]
+A market has the following equilibrium: price £10, quantity 200. The maximum price anyone would pay is £30 and producers would be willing to supply at a minimum price of £2. Consumer surplus is:
+A. £1,000
+B. £1,600
+C. £2,000
+D. £2,800
+E. £3,200
+
+## Section B — Structured Questions (40 marks)
+
+Question 21 [4 marks]
+The charts below show (1) the Sterling exchange rate index (2015 = 100) and (2) the UK's current account balance (% of GDP) between 2016 and 2023.
+
+Chart 1 — Sterling effective exchange rate index (2015 = 100):
+2016: 100 | 2017: 90 | 2018: 92 | 2019: 89 | 2020: 86 | 2021: 92 | 2022: 83 | 2023: 88
+
+Chart 2 — UK current account balance (% of GDP):
+2016: −5.4% | 2017: −3.8% | 2018: −3.9% | 2019: −2.7% | 2020: −2.7% | 2021: −1.5% | 2022: −3.1% | 2023: −2.0%
+
+Using the data, explain the possible link between the two charts.
+
+Question 22 [7 marks]
+The diagram below illustrates the market for public transport services, which has positive consumption externalities.
+[Diagram: a supply curve MPC = MSC, a private demand curve D = MPB, and a marginal social benefit curve MSB to the right of D = MPB. Free market equilibrium is at Q1, with social optimum at Q2 where MSC = MSB.]
+Using the diagram, discuss whether the government should subsidise public transport services.
+
+Question 23 [4 marks]
+Two rival firms, Alpha and Beta, are deciding whether to launch a major advertising campaign. The matrix below shows the resulting annual profits (£m) for each firm depending on the combination of decisions. Neither firm knows in advance what the other will choose.
+
+|  | Beta: Advertise | Beta: Don't advertise |
+|---|---|---|
+| **Alpha: Advertise** | £30m, £30m | £60m, £20m |
+| **Alpha: Don't advertise** | £20m, £60m | £45m, £45m |
+
+Use the data to explain where the Nash equilibrium lies in this matrix.
+
+Question 24 [8 marks]
+The UK economy is operating with a negative output gap of approximately 2% of GDP. The government proposes a £30 billion fiscal stimulus package involving increased spending on public infrastructure.
+
+Diagram 1: UK real GDP growth (%), 2019–2024
+2019: 1.6% | 2020: −10.4% | 2021: 8.7% | 2022: 4.3% | 2023: 0.1% | 2024: 0.4%
+
+Diagram 2: UK unemployment rate (%)
+2019: 3.8% | 2020: 4.6% | 2021: 4.6% | 2022: 3.7% | 2023: 4.0% | 2024: 4.4%
+
+Using the data, discuss whether such a fiscal stimulus will raise the UK's rate of economic growth.
+
+Question 25 [8 marks]
+The table below provides 2022 Human Development Index (HDI) data for two countries, Botswana and Vietnam.
+
+| | Classification | HDI | Life expectancy | Mean years schooling | Expected years schooling | GNI/capita (PPP $) |
+|---|---|---|---|---|---|---|
+| **Botswana** | High | 0.708 | 61.1 | 9.9 | 12.2 | 16,780 |
+| **Vietnam** | High | 0.726 | 73.7 | 8.4 | 13.1 | 11,397 |
+
+Botswana is located in Southern Africa. Vietnam is in South East Asia.
+
+Discuss whether it is reasonable to conclude that Vietnam has a higher level of human development than Botswana.
+
+Question 26 [9 marks]
+The extract and chart below relate to global coffee prices.
+
+Chart: Arabica coffee price (US cents per pound)
+Jan 2022: 240 | Jun 2022: 225 | Dec 2022: 165 | Jun 2023: 175 | Dec 2023: 195 | Jun 2024: 225
+
+**Extract:** Global coffee prices remain volatile. Brazil, the world's largest producer, has experienced severe droughts in recent years, with some plantations losing up to 30% of their crop. Meanwhile, demand for coffee continues to grow strongly in emerging market economies such as China and India as incomes rise and Western-style coffee shop culture spreads.
+
+However, there are also downward pressures on price. Vietnamese production of the cheaper robusta variety is expanding rapidly, and many consumers are willing to substitute robusta for arabica coffee. A possible slowdown in the global economy may also reduce demand from cafés and restaurants.
+
+Using supply and demand diagram(s), discuss whether the data suggests that coffee prices are more likely to rise or fall in the future.
 `,
   },
   {
