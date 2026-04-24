@@ -1545,17 +1545,17 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     },
   },
 
-  /* ── Tax Incidence (Ad Valorem / Specific) ── */
+  /* ── Tax Incidence (Indirect Tax on Supply & Demand) ── */
   tax_incidence: {
-    title: "Effect of an Indirect Tax (Ad Valorem)",
+    title: "Supply & Demand — Effect of an Indirect Tax",
     xAxis: "Quantity", yAxis: "Price",
-    legend: [{ label: "D1", color: COLORS.demand }, { label: "S1", color: COLORS.supply }, { label: "S1 + Ad valorem tax", color: COLORS.shifted }, { label: "Welfare loss", color: "#ef4444" }],
+    legend: [{ label: "D", color: COLORS.demand }, { label: "S", color: COLORS.supply }, { label: "S + tax", color: COLORS.shifted }, { label: "Welfare loss", color: "#ef4444" }],
     examTips: [
       "Supply shifts LEFT/UP by the amount of the tax per unit",
-      "Ad valorem tax = percentage of price → S+Tax diverges from S",
+      "Specific tax → parallel shift; ad valorem tax → pivoted (diverging) shift",
       "Welfare loss triangle between old and new equilibrium",
-      "Price rises from P1 to P2, quantity falls from Q1 to Q2",
-      "Label S1, S1 + Ad valorem tax and D1 clearly",
+      "Price rises from P to P₁, quantity falls from Q to Q₁",
+      "Label D, S and S + tax clearly; mark Pₚ on the original S at Q₁ for tax incidence",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
