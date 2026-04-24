@@ -3388,292 +3388,840 @@ The table below presents development indicators for selected economies, comparin
 Using the information above and relevant economic theory, discuss the extent to which institutional quality is the most fundamental determinant of long-run economic development.
 `,
   },
+  // ─────────────────────────────────────────────────────────────────
+  // WJEC A-Level Economics — Component 2 (A520U20-1) — verbatim from
+  // /public/wjec-mocks/paper-2-{moderate|hard|advanced}.pdf.
+  // Each paper = 80 marks (Section A 5+5+10+10+10=40, Section B 5+7+10+7+11=40).
+  // ─────────────────────────────────────────────────────────────────
   {
     id: "wjec-p2-a",
     subject: "wjec" as any,
     paper: "2",
-    title: "Paper 2 — Set A",
-    description: "Macroeconomics & Public Policy. Set A — core practice.",
+    title: "Paper 2 — Set A (Moderate)",
+    description: "Component 2: Exploring Economic Behaviour — Moderate tier (verbatim from PDF).",
     totalMarks: 80,
-    content: `# WJEC A-Level Economics (1EC0/02) — Macroeconomics & Public Policy — Predicted Paper Set A
+    content: `# WJEC GCE A LEVEL Economics — A520U10-1 — Component 2: Exploring Economic Behaviour — Predicted Paper (Moderate)
 
-**Time: 120 minutes | Total: 80 marks**
+**Time: 2 hours 30 minutes | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer **all** questions.
 
-## Section A: Data Response
+## SECTION A — The cost of going green
 
-**Extract 1 — Uk fiscal policy and the budget deficit:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+In 2019 the UK became the first major economy to pass a law committing it to net-zero greenhouse gas emissions by 2050. Reaching that target will require major structural change in the way the economy produces energy, transports people and goods, and heats homes.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+**The scale of the challenge.** Over the past decade the UK has made real progress in decarbonising its electricity supply. The share of electricity generated from renewable sources has risen sharply as old coal-fired power stations have been closed and replaced with wind and solar capacity (Figure 1).
 
-Question 1 [2 marks]
-With reference to UK fiscal policy and the budget deficit, explain two consequences of the issue.
+**Figure 1 — UK electricity generated from renewables (%)**
 
-Question 2 [4 marks]
-With reference to UK fiscal policy and the budget deficit, explain one government response to the issue.
+| Year | % |
+|---|---|
+| 2010 | ~7 | 2011 | ~9 | 2012 | ~11 | 2013 | ~15 | 2014 | ~19 | 2015 | ~25 | 2016 | ~25 | 2017 | ~29 | 2018 | ~33 | 2019 | ~37 | 2020 | ~43 | 2021 | ~40 | 2022 | ~42 | 2023 | ~47 |
 
-Question 3 [6 marks]
-With reference to supply-side reform and productivity, explain one factor that influences the issue.
+This shift has been supported by a combination of carbon pricing, subsidies for renewable developers (Contracts for Difference) and planning reform. However, electricity prices paid by UK households remain among the highest in Europe (Figure 2), partly because gas still sets the wholesale price during most hours of the year, and partly because green levies and network costs add around 25% to the typical bill.
 
-Question 4 [9 marks]
-With reference to UK fiscal policy and the budget deficit, explain one mechanism that determines the issue.
+**Figure 2 — Domestic electricity prices in selected European countries (pence per kWh)**
 
-Question 5 [12 marks]
-With reference to monetary policy and inflation expectations, explain two consequences of the issue.
+| Country | Price | Country | Price |
+|---|---|---|---|
+| Germany | ~40 | UK | ~38 | Belgium | ~32 | Italy | ~29 |
+| France | ~25 | Spain | ~24 | Poland | ~19 | | |
 
-## Section B: Essay (choose ONE)
+**Winners and losers.** Supporters of the transition argue that it will create hundreds of thousands of new 'green' jobs in sectors such as offshore wind, heat-pump installation, electric-vehicle manufacturing and grid upgrades. Some of these jobs will be concentrated in regions with existing heavy-industry expertise, including the North East, Humberside and South Wales.
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of UK fiscal policy and the budget deficit, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Critics point out that the transition also creates losers. Workers in carbon-intensive industries face the risk of job displacement, and low-income households spend a larger share of their income on energy, transport and food, all of which are affected by the rising price of carbon. Because the poorest 10% of UK households spend around 12% of their income on domestic energy, compared with just 3% for the richest 10%, carbon taxes risk being regressive unless the revenue is recycled back to households (Figure 3).
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of monetary policy and inflation expectations, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+**Figure 3 — Share of household income spent on domestic energy, by decile (D1 = poorest)**
+
+| Decile | D1 | D2 | D3 | D4 | D5 | D6 | D7 | D8 | D9 | D10 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| % of disposable income | 12 | 10 | 8 | 7 | 6 | 5 | 4.5 | 4 | 3.5 | 3 |
+
+**Policy options.** The government faces a choice between several policy instruments to drive the transition further. A higher carbon price would internalise the negative externality of emissions but risks accelerating cost-push inflation and damaging the competitiveness of energy-intensive manufacturing. Larger direct subsidies for heat pumps, insulation and electric vehicles would be more politically popular but require significant public spending at a time when the debt-to-GDP ratio is close to 100%. Tighter regulation — for example banning the sale of new gas boilers from 2035 — is cheaper for the Treasury but shifts the cost directly onto households.
+
+At the same time, unilateral UK action can only deliver limited global impact. UK emissions account for less than 1% of the world total, so without broadly aligned action from large emitters such as China, the United States and India, the UK risks incurring the transition costs while capturing only a small share of the benefits.
+
+Question 1.1 [5 marks]
+Using the data, explain why the share of UK electricity generated from renewable sources has increased in recent years.
+
+Question 1.2 [5 marks]
+Using the data, explain why carbon taxes may have a regressive effect on low-income households.
+
+Question 1.3 [10 marks]
+Evaluate the likely effectiveness of carbon taxes as a way of reducing UK greenhouse gas emissions.
+
+Question 1.4 [10 marks]
+Using the data, discuss whether government subsidies are the most effective way to accelerate the adoption of renewable energy.
+
+Question 1.5 [10 marks]
+Using the data, discuss the extent to which the UK's transition to net zero will benefit low-income households.
+
+## SECTION B — Who wins at the checkout?
+
+The UK grocery market is one of the most visible examples of oligopoly in the British economy. A small number of large supermarket chains account for the vast majority of grocery sales, with Tesco alone holding around 27% of the market. The market has changed significantly over the past decade as the German discounters Aldi and Lidl have expanded rapidly, forcing the established 'big four' (Tesco, Sainsbury's, Asda and Morrisons) to respond (Figure 1).
+
+**Figure 1 — Market shares of UK supermarkets (approximate, 2024, % of UK grocery sales)**
+
+| Tesco | Sainsbury's | Asda | Aldi | Morrisons | Lidl | Co-op | Waitrose | Iceland | Other |
+|---|---|---|---|---|---|---|---|---|---|
+| ~27 | ~16 | ~13 | ~10 | ~8.5 | ~7.5 | ~5.5 | ~4.5 | ~2.5 | ~5 |
+
+As the discounters have grown, competition on price has intensified. Tesco launched its 'Aldi Price Match' scheme in 2020, which guarantees that the price of hundreds of everyday products is no higher than at Aldi. Sainsbury's and Morrisons have launched similar programmes. At the same time the supermarkets continue to compete heavily on non-price dimensions: expanded loyalty schemes (Clubcard, Nectar), same-day delivery, larger own-brand ranges, in-store cafés and self-service checkouts.
+
+**Bob's Supermarket.** The data in Figure 2 show a simplified weekly cost and revenue schedule for a mid-sized supermarket, 'Bob's Supermarket', operating in a competitive town-centre location. Prices are shown per basket of goods.
+
+**Figure 2 — Bob's Supermarket: weekly price-quantity and cost schedule**
+
+| Price/basket | Baskets/week | Total Cost |
+|---|---|---|
+| £24 | 0 | £250 |
+| £22 | 100 | £340 |
+| £20 | 200 | £400 |
+| £18 | 300 | £480 |
+| £16 | 400 | £580 |
+| £14 | 500 | £700 |
+| £12 | 600 | £840 |
+| £10 | 700 | £1020 |
+| £8 | 800 | £1280 |
+
+**A game of strategy.** Oligopoly markets are characterised by strong interdependence between firms, which means each firm has to think carefully about how its rivals will react before changing price. The 'big four' have, on several occasions, been investigated by the Competition and Markets Authority (CMA) for behaviour that raised concerns about implicit coordination, including a £50 million fine imposed in 2011 for exchanging price information on dairy products.
+
+Although explicit price-fixing cartels are illegal, economists argue that tacit collusion can be difficult to prevent in a market where firms are so visible to each other and to the consumer. The kinked demand curve theory suggests that prices in oligopoly markets can be unusually stable, even when costs change, because each firm fears that a price rise will be unmatched by rivals while a price cut will be matched immediately, triggering a price war.
+
+Despite these concerns, grocery price inflation has been a major political issue. In 2022-23 UK food prices rose by around 19% at their peak, and the CMA launched a review of whether the big supermarkets were using the cost-of-living crisis to protect or expand their profit margins. Consumer groups argued that shoppers in rural areas, where there is often only one supermarket within easy reach, had no ability to shop around.
+
+Question 2.1 [5 marks]
+Using the data, outline the characteristics of oligopoly shown in the UK supermarket market.
+
+Question 2.2 [7 marks]
+Using Figure 2, calculate the marginal revenue (MR) and marginal cost (MC) for each of the output levels (baskets/week) from 0 to 800. Record the answers in your pink answer booklet. Using your answers, explain at what level of output Bob's Supermarket will, in theory, maximise profits.
+
+Question 2.3 [10 marks]
+Using a costs and revenue diagram, evaluate the effects on a supermarket's abnormal profits of participating in an 'Aldi Price Match' scheme.
+
+Question 2.4 [7 marks]
+Evaluate the view that tacit collusion is inevitable in oligopoly markets.
+
+Question 2.5 [11 marks]
+With reference to the data, discuss the extent to which oligopoly in the UK supermarket industry leads to a reduction in economic welfare.
+
+**END OF PAPER**
 `,
   },
   {
     id: "wjec-p2-b",
     subject: "wjec" as any,
     paper: "2",
-    title: "Paper 2 — Set B",
-    description: "Macroeconomics & Public Policy. Set B — stretch — applied scenarios.",
+    title: "Paper 2 — Set B (Hard)",
+    description: "Component 2: Exploring Economic Behaviour — Hard tier (verbatim from PDF).",
     totalMarks: 80,
-    content: `# WJEC A-Level Economics (1EC0/02) — Macroeconomics & Public Policy — Predicted Paper Set B
+    content: `# WJEC GCE A LEVEL Economics — A520U20-1 — Component 2: Exploring Economic Behaviour — Predicted Paper (Hard)
 
-**Time: 120 minutes | Total: 80 marks**
+**Time: 2 hours 30 minutes | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer **all** questions.
 
-## Section A: Data Response
+## SECTION A — A roof over your head
 
-**Extract 1 — Supply-side reform and productivity:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+Few economic issues generate as much political heat in the UK as the price of housing. Over the last forty years, the average UK house price has risen much faster than average earnings, so that the ratio of house prices to incomes has roughly doubled (Figure 1). The gap is most extreme in London and the South East, where median house prices now stand at more than 12 times median earnings — well above the long-run average of around four times.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+**Figure 1 — UK house price to earnings ratio, 1985-2024 (long-run average ≈ 4)**
 
-Question 1 [2 marks]
-With reference to supply-side reform and productivity, explain one government response to the issue.
+| Year | Ratio | Year | Ratio | Year | Ratio | Year | Ratio |
+|---|---|---|---|---|---|---|---|
+| 1985 | 3.2 | 1995 | 3.4 | 2005 | 6.7 | 2015 | 7.0 |
+| 1987 | 3.5 | 1997 | 3.7 | 2007 | 7.3 | 2017 | 7.7 |
+| 1989 | 3.9 | 1999 | 4.2 | 2009 | 7.1 | 2019 | 8.4 |
+| 1991 | 3.3 | 2001 | 5.0 | 2011 | 6.9 | 2021 | 8.8 |
+| 1993 | 3.1 | 2003 | 5.8 | 2013 | 6.6 | 2023 | 8.3 |
 
-Question 2 [4 marks]
-With reference to supply-side reform and productivity, explain one factor that influences the issue.
+**Supply and demand.** Commentators disagree on the causes. On the demand side, real incomes, population growth, smaller household sizes and — until recently — historically low interest rates have all pushed demand upwards. Between 2009 and 2021 the Bank Rate averaged below 1%, making mortgages cheaper and encouraging purchasers to bid more. The Help to Buy scheme, which provided government-backed equity loans for buyers of new-build homes, is estimated by the NAO to have raised prices by around £16,000 for eligible homes.
 
-Question 3 [6 marks]
-With reference to supply-side reform and productivity, explain one mechanism that determines the issue.
+On the supply side, UK housebuilding has consistently fallen short of government targets. Against an official target of 300,000 new homes per year, completions have averaged around 220,000 over the last decade (Figure 2).
 
-Question 4 [9 marks]
-With reference to supply-side reform and productivity, explain two consequences of the issue.
+**Figure 2 — UK annual housing completions vs government target (target = 300k)**
 
-Question 5 [12 marks]
-With reference to monetary policy and inflation expectations, explain one government response to the issue.
+| Year | Homes built (thousands) |
+|---|---|
+| 2014 | ~145 | 2015 | ~160 | 2016 | ~175 | 2017 | ~195 | 2018 | ~215 |
+| 2019 | ~220 | 2020 | ~185 | 2021 | ~210 | 2022 | ~235 | 2023 | ~230 |
 
-## Section B: Essay (choose ONE)
+**The affordability squeeze.** Since 2022 the picture has changed. The Bank of England has raised interest rates sharply to fight inflation, pushing the average two-year fixed mortgage rate above 5%. For a typical first-time buyer, this has added several hundred pounds per month to their mortgage payments. At the same time, private rents have risen by around 9% a year, because landlords face higher mortgage costs of their own and some have left the market. The English Housing Survey estimates that 4.2 million households now spend more than 30% of their disposable income on housing — the accepted threshold for housing stress.
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of UK fiscal policy and the budget deficit, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+**Figure 3 — UK nominal wage growth vs private rent growth (% per year)**
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of monetary policy and inflation expectations, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+| Year | Nominal wage growth | Private rent growth |
+|---|---|---|
+| 2015 | ~2.0 | ~1.8 | 2016 | ~2.2 | ~1.9 | 2017 | ~2.5 | ~1.7 |
+| 2018 | ~2.8 | ~1.3 | 2019 | ~3.2 | ~1.4 | 2020 | ~1.8 | ~1.5 |
+| 2021 | ~4.0 | ~2.4 | 2022 | ~5.6 | ~5.5 | 2023 | ~6.7 | ~9.2 |
+| 2024 | ~5.3 | ~8.5 | | | | |
+
+**What the government could do.** Policy proposals fall into three broad groups. First, some argue for more aggressive supply-side action: planning reform, compulsory purchase of under-used urban land, and large-scale social housebuilding directly by local authorities. Second, others advocate demand-side measures such as stricter rules on mortgage lending or stamp duty reform. Third, rent controls have been proposed for the private rented sector, arguing that regulation is needed because tenants cannot easily relocate and face significant search and moving costs when choosing between landlords.
+
+Each approach has strengths and weaknesses. Supply-side reforms face significant political opposition from existing homeowners. Demand-side restrictions can lock first-time buyers out of the market altogether. And the economic evidence on rent controls is heavily contested: some studies suggest that controls reduce the quality and quantity of rental supply, while others find that moderate 'second-generation' controls — which cap increases rather than absolute rents — can protect existing tenants without greatly reducing supply.
+
+Question 1.1 [5 marks]
+Using the data, explain why UK house prices have risen more quickly than average incomes over the past forty years.
+
+Question 1.2 [5 marks]
+Using the data, explain why higher interest rates have reduced housing affordability for first-time buyers.
+
+Question 1.3 [10 marks]
+Evaluate the effectiveness of government policies aimed at improving the affordability of owner-occupied housing in the UK.
+
+Question 1.4 [10 marks]
+Using the data, discuss the extent to which rent controls would be beneficial for low-income tenants.
+
+Question 1.5 [10 marks]
+Using the data, discuss whether increasing housing supply is the best way to solve the UK housing crisis.
+
+## SECTION B — Working in the gig economy
+
+Over the past decade the UK labour market has been transformed by the rise of the 'gig economy'. The Office for National Statistics estimates that around 4.4 million people now do some paid work through digital platforms such as Uber, Deliveroo, Amazon Flex and TaskRabbit — up from fewer than 400,000 in 2016. For many of these workers, platform work is a second job that provides additional income; for others, it is their main source of earnings.
+
+**Why workers and firms use platforms.** Workers report that the main advantages of gig work are flexibility and the ability to fit earning around caring responsibilities or studies. Firms, for their part, benefit from a large on-demand workforce without the fixed costs of employing staff directly, and without paying employer National Insurance, holiday pay or sick pay, because most gig workers are classified as self-employed rather than employees.
+
+**The other side of the coin.** Critics point out that the same features that make gig work attractive to firms can be damaging for workers. Platforms typically set the price of each ride or delivery unilaterally, and individual workers have no realistic ability to negotiate. Because switching between platforms is costly (each requires vehicle checks, training and a period of building up a reputation score), many workers effectively face a small number of dominant buyers for their labour — a situation sometimes described as 'platform monopsony'.
+
+**Figure 1 — Hourly labour supply schedule for a delivery platform**
+
+| Hourly wage offered | Workers willing to supply labour | MRP of the last worker | Total wage bill |
+|---|---|---|---|
+| £8 | 0 | — | £0 |
+| £9 | 10 | £18 | £90 |
+| £10 | 20 | £16 | £200 |
+| £11 | 30 | £14 | £330 |
+| £12 | 40 | £12 | £480 |
+| £13 | 50 | £10 | £650 |
+| £14 | 60 | £8 | £840 |
+| £15 | 70 | £6 | £1050 |
+
+**The minimum wage debate.** The National Living Wage, which applies to workers aged 21 and over, rose to £11.44 per hour in April 2024, with the Low Pay Commission aiming to reach two-thirds of median hourly earnings. Supporters argue that the minimum wage has raised the incomes of the lowest-paid workers without causing significant unemployment — exactly what standard theory predicts when employers have monopsony power. Critics respond that a rising minimum wage squeezes small businesses in low-wage sectors and that, in the longer term, firms respond by automating tasks previously done by low-paid workers.
+
+Gig workers, however, are excluded from much of this protection because they are not technically employees. A series of high-profile legal cases, including the Supreme Court's 2021 ruling against Uber, have begun to narrow this gap. The Court ruled that Uber drivers were 'workers' under UK employment law and were entitled to the minimum wage, paid leave and whistleblowing protection. Similar challenges are continuing against other platforms.
+
+**Figure 2 — UK real wages and labour productivity, 1990-2023 (Index, 1990 = 100)**
+
+| Year | Real labour productivity | Real wages |
+|---|---|---|
+| 1990 | 100 | 100 | 1995 | ~118 | ~114 | 2000 | ~139 | ~130 |
+| 2005 | ~151 | ~134 | 2010 | ~156 | ~125 | 2015 | ~163 | ~126 |
+| 2020 | ~171 | ~126 | | | | | | |
+
+Over the long run UK real wages have grown much more slowly than labour productivity (Figure 2). Economists are divided on how much of this 'wage squeeze' reflects the decline of collective bargaining, how much reflects structural changes in the labour market including the growth of platform work, and how much reflects slower productivity growth of its own accord.
+
+Question 2.1 [5 marks]
+Using the data, outline the characteristics of monopsony power shown in the UK labour market for gig workers.
+
+Question 2.2 [7 marks]
+Using Figure 1, calculate the marginal cost of labour (MCL) at each level of employment. Record the answers in your pink answer booklet. Using your answers, explain at what level of employment a monopsonistic platform would maximise profits.
+
+Question 2.3 [10 marks]
+Using a labour market diagram, evaluate the effects on employment and wages of imposing a binding minimum wage in a monopsonistic labour market.
+
+Question 2.4 [7 marks]
+Evaluate the view that trade unions always cause unemployment.
+
+Question 2.5 [11 marks]
+With reference to the data, discuss the extent to which the growth of the gig economy has reduced economic welfare in the UK.
+
+**END OF PAPER**
 `,
   },
   {
     id: "wjec-p2-c",
     subject: "wjec" as any,
     paper: "2",
-    title: "Paper 2 — Set C",
-    description: "Macroeconomics & Public Policy. Set C — challenge — synoptic & evaluative.",
+    title: "Paper 2 — Set C (Advanced)",
+    description: "Component 2: Exploring Economic Behaviour — Advanced tier (verbatim from PDF).",
     totalMarks: 80,
-    content: `# WJEC A-Level Economics (1EC0/02) — Macroeconomics & Public Policy — Predicted Paper Set C
+    content: `# WJEC GCE A LEVEL Economics — A520U20-1 — Component 2: Exploring Economic Behaviour — Predicted Paper (Advanced)
 
-**Time: 120 minutes | Total: 80 marks**
+**Time: 2 hours 30 minutes | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer **all** questions.
 
-## Section A: Data Response
+## SECTION A — The productivity puzzle
 
-**Extract 1 — Monetary policy and inflation expectations:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+For most of the post-war period, UK output per hour worked rose steadily at around 2-2.5% per year. Since the 2008 financial crisis, however, productivity growth has almost ground to a halt, averaging around 0.5% per year. This slowdown has become so persistent that economists refer to it as the 'UK productivity puzzle' (Figure 1). If productivity had continued to grow at the pre-crisis trend, UK GDP per capita would be around 25% higher today.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+**Figure 1 — UK labour productivity vs pre-crisis trend (Index, 1998 = 100)**
 
-Question 1 [2 marks]
-With reference to monetary policy and inflation expectations, explain one factor that influences the issue.
+| Year | Actual productivity | Pre-2008 trend |
+|---|---|---|
+| 2000 | ~103 | ~101 | 2005 | ~120 | ~116 | 2007 | ~124 | ~122 |
+| 2010 | ~121 | ~130 | 2015 | ~124 | ~144 | 2020 | ~127 | ~160 |
+| 2023 | ~129 | ~173 | | | | | | |
 
-Question 2 [4 marks]
-With reference to monetary policy and inflation expectations, explain one mechanism that determines the issue.
+**Possible explanations.** There is no consensus on the cause. One school of thought emphasises weak investment: UK business investment as a share of GDP has been below the G7 average for most of the past forty years (Figure 2). Low investment means a smaller capital stock per worker, and hence lower potential output per worker.
 
-Question 3 [6 marks]
-With reference to supply-side reform and productivity, explain two consequences of the issue.
+**Figure 2 — Business investment as share of GDP, G7 comparison (Gross fixed capital formation, % of GDP, avg 2010-2022)**
 
-Question 4 [9 marks]
-With reference to monetary policy and inflation expectations, explain one government response to the issue.
+| Country | Japan | Germany | France | Canada | US | Italy | UK |
+|---|---|---|---|---|---|---|---|
+| % of GDP | ~25.5 | ~23.0 | ~23.0 | ~23.5 | ~21.5 | ~20.5 | ~18.0 |
 
-Question 5 [12 marks]
-With reference to monetary policy and inflation expectations, explain one factor that influences the issue.
+A second school stresses structural change. Productivity growth in the finance and ICT sectors — which drove much of the pre-crisis acceleration — has slowed dramatically, while the rapidly growing service sectors such as hospitality and social care typically have lower productivity than manufacturing.
 
-## Section B: Essay (choose ONE)
+A third argues that mismeasurement plays a role: digital goods and services often have very low marginal cost and are available free to consumers, so the value they generate may not be fully captured by GDP. If true, this implies that measured productivity understates actual welfare gains.
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of UK fiscal policy and the budget deficit, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+**Demographic and fiscal pressures.** At the same time, the UK's population is ageing. The Office for Budget Responsibility projects that the old-age dependency ratio — the ratio of over-65s to people of working age — will rise from around 31% today to 47% by 2070. This has two major consequences. First, the potential growth rate of the economy falls, because a smaller share of the population is in work. Second, public spending on pensions, healthcare and long-term care rises faster than the tax base, putting pressure on the public finances (Figure 3).
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of monetary policy and inflation expectations, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+**Figure 3 — Old-age dependency and projected debt interest, UK**
+
+| Year | Old-age dependency ratio (%) | Debt interest (% of GDP) |
+|---|---|---|
+| ~1995 | ~24 | ~3.2 | 2000 | ~27 | ~2.2 | ~2005 | ~26 | ~2.5 |
+| 2010 | ~30 | ~2.8 | ~2015 | ~34 | ~3.1 | 2020 | ~40 | ~3.5 |
+| ~2025 | ~43 | ~4.2 | ~2030 | ~45 | ~5.0 | ~2035 | ~47 | ~5.8 |
+| ~2040 | ~49 | ~6.5 | | | | | | |
+
+UK public sector net debt has risen from around 35% of GDP in 2007 to close to 100% today. With interest rates higher than in the 2010s, debt interest now absorbs around 8% of total government spending — more than is spent on defence or transport. Economists disagree about the significance. Some argue that fiscal space is genuinely constrained and that any new spending must be funded by tax rises or spending cuts elsewhere. Others argue that well-targeted public investment — particularly in research and development, infrastructure and skills — can pay for itself over time by raising the growth rate.
+
+**Policy responses.** The UK government has proposed a range of supply-side policies including 'full expensing' of business investment in plant and machinery, reforms to the R&D tax credits system, planning reforms to accelerate infrastructure delivery, and changes to the apprenticeship levy. The Bank of England, meanwhile, has highlighted long-run risks to potential output from the post-pandemic rise in long-term sickness, which has pushed several hundred thousand people out of the labour force.
+
+Question 1.1 [5 marks]
+Using the data, explain why UK productivity growth has slowed since 2008.
+
+Question 1.2 [5 marks]
+Using the data, explain why an ageing population creates challenges for the sustainability of the UK public finances.
+
+Question 1.3 [10 marks]
+Evaluate the effectiveness of supply-side policies in raising UK productivity.
+
+Question 1.4 [10 marks]
+Using the data, discuss the extent to which rising public debt limits the UK government's ability to boost long-run economic growth.
+
+Question 1.5 [10 marks]
+Using the data, discuss whether the UK's productivity problems are primarily structural or cyclical.
+
+## SECTION B — Too big to compete?
+
+Over the past two decades a small number of digital platforms — Alphabet (Google), Amazon, Apple, Meta (Facebook) and Microsoft — have come to dominate major segments of the global economy. Between them they account for well over half of global digital advertising, more than 80% of mobile operating systems and a rising share of cloud computing and AI infrastructure. Their revenues and, in particular, their operating margins, far exceed those of traditional firms (Figure 1).
+
+**Figure 1 — Operating margins and R&D intensity, large US tech firms (2023)**
+
+| Firm | Operating margin (%) | R&D as % of revenue |
+|---|---|---|
+| Alphabet | 26 | 14 | Amazon | 6 | 12 | Apple | 30 | 8 |
+| Meta | 35 | 29 | Microsoft | 42 | 13 | S&P 500 avg | 11 | 3 |
+
+**Sources of market power.** These firms enjoy market power for reasons that are distinctive to digital markets. First, network effects: a social network, search engine or marketplace becomes more valuable to each user as more users join, creating a strong tendency towards 'winner-takes-most' outcomes. Second, economies of scale: the marginal cost of serving an additional user is often close to zero, meaning a larger firm can set prices below the average cost of smaller rivals. Third, control over data: dominant platforms accumulate data on user behaviour that can be used to refine products and target advertising in ways that new entrants cannot easily match.
+
+Figure 2 shows a stylised monthly cost and revenue schedule for 'PlatformCo', a dominant digital platform. All values are in millions of pounds.
+
+**Figure 2 — PlatformCo: monthly price, quantity and cost schedule**
+
+| Price (£/user) | Users (m) | Total Cost (£m) |
+|---|---|---|
+| £100 | 0 | £20 |
+| £90 | 1 | £35 |
+| £80 | 2 | £60 |
+| £70 | 3 | £95 |
+| £60 | 4 | £140 |
+| £50 | 5 | £195 |
+| £40 | 6 | £260 |
+| £30 | 7 | £335 |
+| £20 | 8 | £420 |
+
+**Innovation and consumer welfare.** Defenders of big tech argue that high monopoly profits have funded unprecedented levels of investment in research and development. Alphabet and Microsoft each spend more on R&D each year than the entire UK government, and much of this spending has translated into products that consumers use for free. On this view, the large producer surplus earned by dominant platforms is a reward for innovation, and attempts to constrain it — whether through structural break-up, price regulation or mandatory interoperability — risk reducing the incentive to innovate.
+
+**The case for regulation.** Critics reply that the welfare effects of platform dominance are more complex. When consumers pay nothing for a service such as search or social networking, traditional measures of consumer surplus based on price do not capture the cost to users. Instead, users pay with attention and personal data, and they may be exposed to lower-quality services, weaker privacy protection or higher advertising loads than would prevail in a competitive market. There is also growing evidence that dominant platforms use their position in one market to foreclose competition in adjacent markets — for example by favouring their own products in search results or app stores.
+
+The UK Digital Markets, Competition and Consumers Act 2024 gives the CMA new powers to designate firms with 'strategic market status' and to impose bespoke conduct requirements on them. The EU's Digital Markets Act (2022) takes a similar ex-ante approach in Europe, while the United States has so far relied on case-by-case antitrust litigation. Each of these frameworks faces difficult trade-offs between deterring harmful conduct, preserving incentives to innovate, and keeping up with fast-moving technological change.
+
+Question 2.1 [5 marks]
+Using the data, outline the characteristics of monopoly shown by dominant digital platforms.
+
+Question 2.2 [7 marks]
+Using Figure 2, calculate the total revenue, total cost and abnormal profit at each output level for PlatformCo. Record the answers in your pink answer booklet. Using your answers, identify the profit-maximising output and the revenue-maximising output, and explain why they differ.
+
+Question 2.3 [10 marks]
+Using a monopoly diagram, evaluate the welfare effects of breaking up a dominant digital platform into smaller competing firms.
+
+Question 2.4 [7 marks]
+Evaluate the view that sustained innovation requires firms to enjoy significant monopoly power.
+
+Question 2.5 [11 marks]
+With reference to the data, discuss the extent to which ex-ante regulation (such as the UK's Digital Markets, Competition and Consumers Act 2024) can effectively constrain the market power of dominant digital platforms.
+
+**END OF PAPER**
 `,
   },
+  // ─────────────────────────────────────────────────────────────────
+  // WJEC A-Level Economics — A2 Unit 3 (1520U30-1) — verbatim from
+  // /public/wjec-mocks/paper-3-{moderate|hard|advanced}.pdf.
+  // Each paper = 80 marks (Section A 8+7+8+6+11=40, Section B 10+8+10+12=40).
+  // ─────────────────────────────────────────────────────────────────
   {
     id: "wjec-p3-a",
     subject: "wjec" as any,
     paper: "3",
-    title: "Paper 3 — Set A",
-    description: "Applied Economics & Synoptic. Set A — core practice.",
-    totalMarks: 100,
-    content: `# WJEC A-Level Economics (1EC0/03) — Applied Economics & Synoptic — Predicted Paper Set A
+    title: "Paper 3 — Set A (Moderate)",
+    description: "A2 Unit 3: Exploring Economic Behaviour — Moderate tier (verbatim from PDF).",
+    totalMarks: 80,
+    content: `# WJEC GCE A LEVEL Economics — 1520U30-1 — A2 Unit 3: Exploring Economic Behaviour — Predicted Paper (Moderate)
 
-**Time: 150 minutes | Total: 100 marks**
+**Time: 2 hours | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer **all** questions.
 
-## Section A: Data Response
+## SECTION A
 
-**Extract 1 — Welsh economic development and devolution:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+**Question 1.** In 2022, Amazon opened its largest UK fulfilment centre in Swindon, covering an area the size of 28 football pitches. Amazon has aggressively expanded its UK warehouse network to benefit from economies of scale, bulk-buying from suppliers and using sophisticated robotic technology. Amazon's investment has encouraged component suppliers, logistics firms and packaging companies to open facilities nearby, and the local council has improved road links to the site.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+However, some commentators have raised concerns about Amazon's expansion. Reports suggest that as sites have grown larger, managers have struggled to supervise workers effectively, communication between warehouse floors has broken down, and staff turnover has risen sharply as worker morale declines.
 
-Question 1 [2 marks]
-With reference to welsh economic development and devolution, explain two consequences of the issue.
+Question 1 (a) [4 marks]
+Using a diagram and with reference to the data, outline the difference between internal economies of scale and internal diseconomies of scale.
 
-Question 2 [4 marks]
-With reference to welsh economic development and devolution, explain one government response to the issue.
+Question 1 (b) [4 marks]
+Using a diagram, outline how Amazon might benefit from external economies of scale in Swindon.
 
-Question 3 [6 marks]
-With reference to global trade imbalances and the WTO, explain one factor that influences the issue.
+**Question 2.** The diagram below represents a short-run profit-maximising firm operating in a monopolistically competitive market. (Standard monopolistically competitive firm diagram showing downward-sloping AR and MR curves, with U-shaped AC and MC curves. AR is above AC at the profit-maximising output. Key curves shown: MC, AC, AR (D), MR.)
 
-Question 4 [9 marks]
-With reference to welsh economic development and devolution, explain one mechanism that determines the issue.
+Question 2 (a) [1 marks]
+On the diagram, indicate the profit-maximising level of output produced by this firm.
 
-Question 5 [12 marks]
-With reference to the green transition and just-transition policy, explain two consequences of the issue.
+Question 2 (b) [2 marks]
+Shade the area that represents the firm's short-run supernormal (abnormal) profit.
 
-## Section B: Essay (choose ONE)
+Question 2 (c) [4 marks]
+Explain what will happen to this firm's level of supernormal profit in the long run.
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of welsh economic development and devolution, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+**Question 3.** Royal Mail is the UK's universal postal service, established in 1516 and nationalised in 1969. In 2013, the UK government partially privatised Royal Mail, selling 60% of its shares to private investors and employees through a stock market flotation. By 2015, Royal Mail had been fully privatised.
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of the green transition and just-transition policy, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Supporters of privatisation argued that Royal Mail needed private investment to modernise, respond to declining letter volumes, and compete with parcel rivals such as DPD and Amazon Logistics. Critics argued that the shares were sold at too low a price, meaning taxpayers lost out, and that a privatised Royal Mail would prioritise shareholder returns over service quality.
+
+Since privatisation, Royal Mail has invested heavily in parcel automation, but has also faced strikes by Communication Workers' Union (CWU) members, a fall in share price below the 2013 flotation level, and fines from Ofcom for missing delivery targets. In 2024, Royal Mail's parent company agreed to a £3.5bn takeover by a Czech billionaire.
+
+Question 3 [8 marks]
+Evaluate the view that the privatisation of Royal Mail has been successful.
+
+**Question 4.** In 2022 and 2023, the Bank of England raised its Bank Rate from 0.25% to 5.25% in response to rising inflation.
+
+**Figure 1: Bank of England Bank Rate 2021–2024**
+
+| Date | Bank Rate (%) |
+|---|---|
+| Dec 2021 | 0.25 |
+| June 2022 | 1.25 |
+| Dec 2022 | 3.50 |
+| June 2023 | 5.00 |
+| Aug 2023 | 5.25 |
+| Aug 2024 | 5.00 |
+
+Question 4 [6 marks]
+Analyse the likely impact of higher interest rates on aggregate demand in the UK.
+
+**Question 5.** The Bank of England has a symmetric CPI inflation target of 2%.
+
+**Figure 1: UK CPI inflation rate 2019–2024 (annual % change)**
+
+| Year | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 |
+|---|---|---|---|---|---|---|
+| CPI inflation (%) | 1.8 | 0.9 | 2.6 | 9.1 | 7.3 | 2.8 |
+
+**Figure 2: UK annual inflation rate for selected product categories, March 2022 to March 2023**
+
+| Category | Food | Household energy | Clothing & footwear | Housing rent | Transport services | Motor fuel |
+|---|---|---|---|---|---|---|
+| Annual inflation rate | 19.1% | 26.1% | 7.2% | 4.9% | 6.3% | -5.9% |
+| Weighting (% of spending) | 11 | 27 | 7 | 31 | 18 | 6 |
+
+Question 5 (a) [3 marks]
+Using the data in Figure 2, calculate a price index for the UK in March 2023, taking March 2022 as the base period. You are advised to show your working.
+
+**Figure 3: Index of real and nominal average weekly earnings in the UK, 2019–2023 (2023 = 100)**
+
+| Year | Nominal wage index | Real wage index |
+|---|---|---|
+| 2019 | 84 | 104 |
+| 2020 | 87 | 105 |
+| 2021 | 91 | 104 |
+| 2022 | 95 | 101 |
+| 2023 | 100 | 100 |
+
+Question 5 (b) [8 marks]
+Assess whether the UK is likely to experience a wage-price spiral.
+
+## SECTION B — The UK Cost of Living Crisis
+
+Between 2021 and 2024, UK households experienced the most severe squeeze on living standards since the 1950s. Consumer prices rose by over 20% cumulatively, while average real wages fell for much of the period. Low-income households were hit hardest, as essentials such as food and energy make up a larger share of their spending.
+
+**Figure 1: UK household disposable income per capita (2019 = 100, real terms)**
+
+| Year | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 |
+|---|---|---|---|---|---|---|
+| Real disposable income per capita | 100 | 101 | 102 | 98 | 97 | 99 |
+
+The energy price shock was driven partly by the war in Ukraine, which pushed European wholesale gas prices to record highs. The UK is particularly vulnerable because around 40% of homes rely on gas-fired heating and the UK imports roughly half of its natural gas.
+
+**Table 1: UK imported commodity prices 2020–2023**
+
+| Commodity | 2020 price | 2023 price |
+|---|---|---|
+| Natural gas (£/therm) | 0.25 | 1.10 |
+| Wheat (£/tonne) | 155 | 230 |
+| Crude oil (£/barrel) | 34 | 65 |
+| Fertiliser (£/tonne) | 180 | 560 |
+
+UK firms that import raw materials, components or energy passed rising costs through to final consumers. This was particularly evident in food manufacturing and hospitality. Many small and medium-sized enterprises (SMEs) reported falling profit margins and, in some sectors, a wave of business closures. Pub closures reached their highest level in over a decade in 2023.
+
+**Figure 2: UK Bank Rate and CPI inflation, 2021–2024**
+
+| Year | Bank Rate (%) end-year | CPI inflation (%) |
+|---|---|---|
+| 2021 | 0.25 | 5.4 |
+| 2022 | 3.50 | 10.5 |
+| 2023 | 5.25 | 4.0 |
+| 2024 | 5.00 | 2.8 |
+
+The UK government faced policy difficulties. Running a large fiscal deficit could fuel inflation further, while austerity would damage public services already struggling after more than a decade of restraint. The government ultimately chose a mixed approach: an Energy Price Guarantee subsidy that cost an estimated £40bn, one-off cost-of-living payments to low-income households, and an increase in the windfall tax on North Sea oil and gas producers. UK public sector debt rose above 100% of GDP for the first time since the 1960s.
+
+The Bank of England could have intervened more aggressively. Some commentators argued that the Bank should have raised interest rates earlier and more sharply to contain inflation. Others argued this would have pushed the UK into a deep recession, with millions of mortgage holders facing unaffordable repayments. Alternatively, the Bank could have used quantitative tightening (selling government bonds) more rapidly to reduce the money supply.
+
+In the long run, some have argued that the UK needs a coherent industrial strategy to reduce dependence on imported energy and food. Proposals include investment in nuclear power, offshore wind, domestic food production, and retraining to support the green transition. Critics argue that such strategies have been tried before and that the UK's problems are more deep-seated, including chronically low productivity growth (under 1% per year since 2008), skills shortages, and regional inequality.
+
+**Table 2: Selected UK socio-economic indicators**
+
+| Indicator | UK | G7 average | OECD average |
+|---|---|---|---|
+| Life expectancy at birth (years) | 80.4 | 82.1 | 80.3 |
+| Labour productivity (GDP per hour, US$) | 62.5 | 71.8 | 57.2 |
+| Adult literacy (%) | 99.0 | 99.1 | 98.1 |
+| Gini coefficient (income inequality) | 0.355 | 0.330 | 0.316 |
+| Public debt (% of GDP) | 101.3 | 121.8 | 90.4 |
+| Renewable electricity generation (%) | 43.1 | 32.0 | 31.7 |
+
+By late 2024, UK inflation had fallen back close to the 2% target, and the Bank of England began to cut interest rates. However, many households reported that their standard of living had not yet recovered to pre-2022 levels. The new government promised a 'decade of national renewal' based on investment, reform of planning rules, and closer trading relations with the EU.
+
+Question 6 (a) (i) [2 marks]
+Using the data in Table 1, calculate the percentage change in the price of natural gas between 2020 and 2023. You are advised to show your working.
+
+Question 6 (a) (ii) [2 marks]
+A UK food manufacturer uses 500 tonnes of wheat and 100 tonnes of fertiliser per year. Using the data in Table 1, calculate the percentage increase in its total annual commodity cost between 2020 and 2023. You are advised to show your working.
+
+Question 6 (b) [6 marks]
+With reference to the data and using a cost and revenue diagram, show how higher commodity and energy prices have resulted in higher prices, fewer sales and falling profits for UK firms.
+
+Question 7 [8 marks]
+Evaluate the extent to which the UK's cost of living crisis was the result of external rather than internal factors.
+
+Question 8 [10 marks]
+Discuss whether the Bank of England should have intervened more aggressively through monetary policy, as suggested in the case, to control inflation in the UK.
+
+Question 9 [12 marks]
+With reference to the case study, discuss whether living standards in the UK are likely to be improved by the government's proposed industrial strategy.
+
+**END OF PAPER**
 `,
   },
   {
     id: "wjec-p3-b",
     subject: "wjec" as any,
     paper: "3",
-    title: "Paper 3 — Set B",
-    description: "Applied Economics & Synoptic. Set B — stretch — applied scenarios.",
-    totalMarks: 100,
-    content: `# WJEC A-Level Economics (1EC0/03) — Applied Economics & Synoptic — Predicted Paper Set B
+    title: "Paper 3 — Set B (Hard)",
+    description: "A2 Unit 3: Exploring Economic Behaviour — Hard tier (verbatim from PDF).",
+    totalMarks: 80,
+    content: `# WJEC GCE A LEVEL Economics — 1520U30-1 — A2 Unit 3: Exploring Economic Behaviour — Predicted Paper (Hard)
 
-**Time: 150 minutes | Total: 100 marks**
+**Time: 2 hours | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer **all** questions.
 
-## Section A: Data Response
+## SECTION A
 
-**Extract 1 — Global trade imbalances and the wto:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+**Question 1.** Toyota is the world's largest carmaker by volume, producing over 10 million vehicles per year. Toyota's Tsutsumi plant in Japan produces more than 500,000 vehicles annually using specialised robotic assembly lines and the Toyota Production System (TPS), which is widely studied as a model of efficient manufacturing. Specialisation within the plant and long production runs help keep the unit cost of each vehicle low.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+Toyota's presence in Aichi Prefecture has drawn in hundreds of component suppliers (known as 'keiretsu' firms), a dense network of local engineering schools, and transport infrastructure subsidised by the regional government. However, Toyota's global expansion has led to well-publicised difficulties: a 2010 recall of over 9 million vehicles was partly blamed on communication failures between distant divisions; middle-management layers expanded rapidly; and production mistakes at overseas plants have at times caused costly delays.
 
-Question 1 [2 marks]
-With reference to global trade imbalances and the WTO, explain one government response to the issue.
+Question 1 (a) [4 marks]
+Using a diagram and with reference to the data, outline the difference between internal economies of scale and internal diseconomies of scale.
 
-Question 2 [4 marks]
-With reference to global trade imbalances and the WTO, explain one factor that influences the issue.
+Question 1 (b) [4 marks]
+Using a diagram, outline how Toyota might benefit from external economies of scale in Aichi Prefecture.
 
-Question 3 [6 marks]
-With reference to global trade imbalances and the WTO, explain one mechanism that determines the issue.
+**Question 2.** The diagram below represents a profit-maximising firm operating in an oligopolistic market with a kinked demand curve. (Kinked demand curve with price P* on the y-axis. AR (demand) is elastic above the kink and inelastic below. MR has a vertical discontinuity at the kink. MC and AC curves shown, with MC passing through the vertical section of MR. Key curves shown: MC, AC, AR (kinked demand), MR (with discontinuity at the kink).)
 
-Question 4 [9 marks]
-With reference to global trade imbalances and the WTO, explain two consequences of the issue.
+Question 2 (a) [1 marks]
+On the diagram, indicate the profit-maximising level of output produced by this firm.
 
-Question 5 [12 marks]
-With reference to the green transition and just-transition policy, explain one government response to the issue.
+Question 2 (b) [2 marks]
+Shade the area that represents the firm's total fixed costs of production.
 
-## Section B: Essay (choose ONE)
+Question 2 (c) [4 marks]
+Explain why the firm's price is likely to remain stable even if its marginal cost changes slightly.
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of welsh economic development and devolution, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+**Question 3.** Japan Post (Nippon Yūsei) is the giant state-owned postal, banking and life insurance conglomerate. At the time of its partial privatisation in 2015, it held over ¥200 trillion (US$1.8tn) in deposits and insurance funds, making it one of the largest financial institutions in the world. Japan Post was privatised in stages, with the government initially selling around 11% of shares and continuing to hold a majority stake.
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of the green transition and just-transition policy, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+The reform aimed to improve efficiency, release capital for investment, and allow Japan Post to compete with private banks and insurers on equal terms. Supporters argued Japan Post's deposits were being inefficiently recycled into low-return Japanese Government Bonds, crowding out private investment. Critics countered that Japan Post's network of 24,000 post offices served an ageing rural population who depend on its savings and insurance products; privatisation might lead to branch closures and loss of universal service.
+
+Post-privatisation, Japan Post's acquisition of Australia's Toll Holdings in 2015 resulted in a ¥400bn write-down. The company's share price has underperformed the Nikkei. Rural branch closures have been limited by regulation, but critics say service quality has declined. In 2021, mis-selling scandals at Japan Post Insurance prompted further reform pressure.
+
+Question 3 [8 marks]
+Evaluate the view that Japan's partial privatisation of Japan Post has been successful.
+
+**Question 4.** The Bank of Japan (BoJ) ran negative interest rates from 2016 to 2024. Figure 1 shows the BoJ policy rate over this period.
+
+**Figure 1: Bank of Japan short-term policy rate, 2015–2024 (%)**
+
+| Year | 2015 | 2016 | 2018 | 2020 | 2022 | 2024 (Mar) | 2024 (Jul) |
+|---|---|---|---|---|---|---|---|
+| Policy rate (%) | 0.10 | -0.10 | -0.10 | -0.10 | -0.10 | 0.10 | 0.25 |
+
+Question 4 [6 marks]
+Analyse the likely impact of negative interest rates on aggregate demand in Japan.
+
+**Question 5.** For over two decades, Japan experienced near-zero or negative inflation. In 2022–2023 Japanese inflation rose sharply due to a weak yen and rising global commodity prices. The BoJ has a 2% CPI inflation target.
+
+**Figure 1: Japan core CPI inflation rate 2018–2024 (annual % change)**
+
+| Year | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 |
+|---|---|---|---|---|---|---|---|
+| Core CPI (%) | 0.3 | 0.5 | -0.4 | -0.2 | 2.3 | 3.1 | 2.5 |
+
+**Figure 2: Japan annual inflation rate for selected product categories, April 2022 to April 2023**
+
+| Category | Energy | Food (excl. fresh) | Durable goods | Services | Rent | Recreation |
+|---|---|---|---|---|---|---|
+| Annual inflation rate | 14.6% | 9.0% | 7.4% | 1.8% | 0.4% | 3.7% |
+| Weighting (% of spending) | 7 | 22 | 12 | 50 | 7 | 2 |
+
+Question 5 (a) [3 marks]
+Using the data in Figure 2, calculate a price index for Japan in April 2023, taking April 2022 as the base period. You are advised to show your working.
+
+**Figure 3: Index of real and nominal average wages in Japan, 2019–2023 (2023 = 100)**
+
+| Year | Nominal wage index | Real wage index |
+|---|---|---|
+| 2019 | 98 | 104 |
+| 2020 | 96 | 103 |
+| 2021 | 97 | 103 |
+| 2022 | 99 | 102 |
+| 2023 | 100 | 100 |
+
+In Japan's 'shuntō' (spring wage negotiations), 2023 delivered average wage rises of 3.6% — the largest in thirty years — and 2024 produced 5.1% rises. However, real wages remained negative for 21 consecutive months through 2024.
+
+Question 5 (b) [8 marks]
+Assess whether Japan is likely to experience a wage-price spiral.
+
+## SECTION B — Japan's yen crisis and 'Abenomics' reckoning
+
+In 2022 the Japanese yen (¥) collapsed to a 32-year low against the US dollar, depreciating from ¥115/US$ at the start of the year to over ¥150/US$ by October. Although the yen recovered partially by 2024, it remained historically weak, touching ¥161/US$ in July 2024 before the Bank of Japan finally ended its negative-interest-rate policy. Japan is the world's third-largest economy and its currency moves have global financial market implications.
+
+**Figure 1: USD/JPY exchange rate, 2021–2024 (yen per US dollar)** *(A higher number means a weaker yen.)*
+
+| Date | Jan 2021 | Jan 2022 | Oct 2022 | Jan 2023 | Jul 2024 | Oct 2024 |
+|---|---|---|---|---|---|---|
+| ¥ per US$ | 103 | 115 | 150 | 131 | 161 | 152 |
+
+Japan is highly dependent on imports of energy and food. The country imports around 90% of its oil and over 60% of its food. Combined with rising global commodity prices from 2021 onwards, yen weakness created severe inflationary pressure for Japanese consumers and firms for the first time in a generation.
+
+**Table 1: Prices of selected Japanese imports 2020–2023 (¥/tonne or ¥/barrel)**
+
+| Commodity | 2020 price (¥) | 2023 price (¥) |
+|---|---|---|
+| Crude oil (¥/barrel) | 4,400 | 11,800 |
+| LNG (¥/tonne) | 47,000 | 143,000 |
+| Wheat (¥/tonne) | 27,000 | 54,000 |
+| Beef (¥/kg import) | 760 | 1,320 |
+
+Japanese firms have absorbed much of these cost increases, with profit margins squeezed. However, from 2023 onward, companies began passing costs through to consumers: in a society where price rises were long considered taboo, firms such as Yamazaki Baking and Kewpie mayonnaise increased prices repeatedly, to consumer outcry. Small businesses have been particularly vulnerable — Teikoku Databank recorded a 30% year-on-year rise in corporate bankruptcies in 2023, with yen weakness cited as a primary factor for import-dependent firms.
+
+Japan's central bank faced a policy dilemma. Raising interest rates would support the yen and tame imported inflation, but risked triggering a 'carry-trade unwind' — global investors have borrowed yen cheaply for decades to invest in higher-yielding assets abroad, and a Japanese rate rise could cause sharp global market volatility (as was briefly seen in August 2024). Higher rates would also raise debt-service costs on Japan's government debt, which at 263% of GDP is the highest of any developed economy. Alternatively, the BoJ could intervene directly in currency markets by selling US dollars and buying yen.
+
+**Figure 2: Japan's foreign exchange reserves (US$ billion, month-end)**
+
+| Month | Jan 2022 | Jul 2022 | Oct 2022 | Jan 2023 | Jul 2023 | Jul 2024 |
+|---|---|---|---|---|---|---|
+| Forex reserves (US$bn) | 1,386 | 1,323 | 1,194 | 1,228 | 1,253 | 1,219 |
+
+In September and October 2022, Japan spent over ¥9 trillion (US$65bn) of its reserves intervening to support the yen — the largest yen-buying intervention in history. A further ¥9.8 trillion was spent in April and May 2024. While these interventions temporarily slowed the yen's slide, they did not reverse the trend until the BoJ finally raised rates in July 2024.
+
+The weak yen has had mixed effects on Japan's current account. Japan's famed exporters — Toyota, Sony, Nintendo — have benefited from more competitive prices abroad and a translation boost when foreign earnings are converted to yen. Japan's tourism sector has boomed, with inbound visitor numbers exceeding pre-COVID levels in 2024. However, Japan's energy and food import bill has ballooned, and many of Japan's export 'champions' now produce much of their output overseas, reducing the boost to the trade balance from a weak yen.
+
+Some economists argue Japan's problems are structural rather than cyclical. Japan's population is ageing rapidly — the working-age population has shrunk by over 12 million since 1995. Productivity growth has been sluggish (around 0.5% per year since 2000). Labour market rigidities mean wages adjust slowly, and 'lifetime employment' norms can discourage labour mobility. Critics of 'Abenomics' — the reform programme launched by the late PM Shinzo Abe in 2013 — argue that while the first two 'arrows' (loose monetary policy, fiscal expansion) were fired, the crucial 'third arrow' of structural reform was never delivered.
+
+**Table 2: Japan — selected indicators**
+
+| Indicator | Japan | OECD average | G7 average |
+|---|---|---|---|
+| GDP growth (2015–2023, annual avg) | 0.7% | 1.9% | 1.6% |
+| Productivity (GDP per hour, US$) | 53.4 | 57.2 | 71.8 |
+| Old-age dependency ratio (65+ / working age, %) | 50.3 | 31.7 | 37.4 |
+| Female labour force participation (%) | 73.6 | 65.1 | 66.7 |
+| Public debt (% of GDP) | 263.0 | 90.4 | 121.8 |
+| Corporate R&D (% of GDP) | 2.6 | 1.8 | 2.2 |
+
+In October 2024, a new Japanese government announced a ¥13 trillion fiscal support package to ease cost-of-living pressures and support small businesses. The BoJ signalled further gradual rate rises through 2025. But some commentators argue that after three decades of unconventional monetary policy, Japan needs deeper reform: immigration, greater female workforce participation, corporate governance reform, and a rethink of the energy mix to reduce import dependence. Whether the new administration can deliver where previous ones have failed remains to be seen.
+
+Question 6 (a) (i) [2 marks]
+Using the data in Table 1, calculate the percentage change in the yen price of LNG (liquefied natural gas) between 2020 and 2023. You are advised to show your working.
+
+Question 6 (a) (ii) [2 marks]
+'The yen weakened from ¥103/US$ in Jan 2021 to ¥150/US$ in Oct 2022' (Figure 1). Using this information and the fact that crude oil is priced in US dollars on world markets, show how the yen depreciation affected the yen price of imported crude oil over this period, assuming the US dollar price of oil was constant. You are advised to show your working.
+
+Question 6 (b) [6 marks]
+With reference to the data and using a cost and revenue diagram, show how the weak yen has resulted in higher prices, fewer sales and falling profits for Japanese firms that import commodities.
+
+Question 7 [8 marks]
+Evaluate the extent to which Japan's economic difficulties in 2022–2024 were the result of external rather than internal factors.
+
+Question 8 [10 marks]
+Discuss whether the Bank of Japan should have intervened in the ways described in the case (raising interest rates and/or direct currency market intervention) to strengthen the yen.
+
+Question 9 [12 marks]
+With reference to the case study, discuss whether living standards in Japan are likely to be improved by a programme of deeper structural reform, including greater immigration, female workforce participation and corporate governance reform.
+
+**END OF PAPER**
 `,
   },
   {
     id: "wjec-p3-c",
     subject: "wjec" as any,
     paper: "3",
-    title: "Paper 3 — Set C",
-    description: "Applied Economics & Synoptic. Set C — challenge — synoptic & evaluative.",
-    totalMarks: 100,
-    content: `# WJEC A-Level Economics (1EC0/03) — Applied Economics & Synoptic — Predicted Paper Set C
+    title: "Paper 3 — Set C (Advanced)",
+    description: "A2 Unit 3: Exploring Economic Behaviour — Advanced tier (verbatim from PDF).",
+    totalMarks: 80,
+    content: `# WJEC GCE A LEVEL Economics — 1520U30-1 — A2 Unit 3: Exploring Economic Behaviour — Predicted Paper (Advanced)
 
-**Time: 150 minutes | Total: 100 marks**
+**Time: 2 hours | Total: 80 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer **all** questions.
 
-## Section A: Data Response
+## SECTION A
 
-**Extract 1 — The green transition and just-transition policy:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+**Question 1.** Taiwan Semiconductor Manufacturing Company (TSMC) is the world's largest contract chipmaker, producing more than 90% of the world's most advanced semiconductors. TSMC's huge 'gigafabs' cost over US$20 billion each to build and operate on production runs measured in billions of chips, exploiting substantial internal economies of scale. Its newest 3-nanometre fab in Hsinchu uses extreme ultraviolet lithography machines costing up to US$380m each; spreading this capital cost over massive output volumes dramatically lowers unit cost.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+TSMC's presence has made Taiwan's 'Silicon Shield' region the densest semiconductor cluster in the world. Hundreds of specialist equipment suppliers, materials firms and IP-design houses are co-located nearby. The Taiwanese government has funded the Industrial Technology Research Institute, upgraded the Hsinchu Science Park's transport and power infrastructure, and supported dedicated Masters and PhD programmes at National Taiwan University.
 
-Question 1 [2 marks]
-With reference to the green transition and just-transition policy, explain one factor that influences the issue.
+However, TSMC's rapid expansion has created managerial strains. Building new fabs abroad (in Arizona and Kumamoto) has revealed problems transferring the TSMC culture: 30-year engineers have reported burnout, managers struggle to coordinate across global sites, and TSMC's Arizona fab was delayed by 18 months partly due to labour disputes and poor communication between Taiwanese and American staff. Chip yields have occasionally been affected by communication breakdowns inside the firm.
 
-Question 2 [4 marks]
-With reference to the green transition and just-transition policy, explain one mechanism that determines the issue.
+Question 1 (a) [4 marks]
+Using a diagram and with reference to the data, outline the difference between internal economies of scale and internal diseconomies of scale.
 
-Question 3 [6 marks]
-With reference to global trade imbalances and the WTO, explain two consequences of the issue.
+Question 1 (b) [4 marks]
+Using a diagram, outline how TSMC might benefit from external economies of scale in Hsinchu.
 
-Question 4 [9 marks]
-With reference to the green transition and just-transition policy, explain one government response to the issue.
+**Question 2.** The diagram below represents a natural monopoly, such as a national water utility, subject to regulation. (Classic natural monopoly diagram with continuously falling AC and MC curves (LRAC declining over the relevant range). Market demand (AR) curve is downward-sloping. MR is below AR. Three possible regulated price points are typically considered: (i) unregulated profit-maximising output at MC = MR; (ii) allocative efficiency at AR = MC; (iii) average-cost pricing at AR = AC. Key curves shown: MC, AC (both falling), AR (demand), MR.)
 
-Question 5 [12 marks]
-With reference to the green transition and just-transition policy, explain one factor that influences the issue.
+Question 2 (a) [1 marks]
+On the diagram, indicate the level of output that an unregulated profit-maximising natural monopoly would produce.
 
-## Section B: Essay (choose ONE)
+Question 2 (c) [4 marks]
+Explain why regulators often set a price equal to average cost (AC) rather than equal to marginal cost (MC) for a natural monopoly.
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of welsh economic development and devolution, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+**Question 3.** YPF (Yacimientos Petrolíferos Fiscales) is Argentina's largest oil and gas producer. Founded as a state enterprise in 1922, YPF was privatised in 1993 and sold to Spain's Repsol, becoming one of Latin America's largest-ever privatisations. In 2012, President Cristina Fernández de Kirchner re-nationalised 51% of YPF, citing underinvestment by Repsol and declining production. Argentina paid US$5 billion in compensation after prolonged legal disputes.
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of the green transition and just-transition policy, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+In 2023–2024, Argentina's new President Javier Milei — a self-described libertarian — announced plans to re-privatise YPF again, along with the national airline Aerolíneas Argentinas, the state media holding, and a number of other state-owned enterprises. Milei argues that state ownership has distorted incentives, accumulated losses (Aerolíneas has required repeated government bailouts), and diverted scarce fiscal resources from public services. Critics argue that previous Argentine privatisations (including YPF itself in 1993) produced uneven results, and that under Milei's 'shock therapy' approach, assets may be sold quickly and below fair value.
+
+Argentina faces particular challenges with privatisation: the peso has lost over 90% of its value since 2018; inflation ran above 200% in 2023; investors face currency controls and risk premiums are high; and Argentina has restructured its sovereign debt nine times since independence. The Vaca Muerta shale formation, in which YPF has major holdings, is one of the world's largest unconventional oil and gas resources — but developing it requires substantial foreign investment.
+
+Question 3 [8 marks]
+Evaluate the view that Argentina's planned privatisation programme is likely to be successful.
+
+**Question 4.** In 2023–24, the US Federal Reserve held its federal funds rate at a 23-year high of 5.25–5.50%. Figure 1 shows the impact on a selection of emerging market central bank policy rates.
+
+**Figure 1: Central bank policy rates, selected countries, end-2021 to end-2023 (%)**
+
+| Country | End-2021 | End-2022 | End-2023 |
+|---|---|---|---|
+| United States (Fed funds) | 0.25 | 4.50 | 5.50 |
+| Argentina | 38.00 | 75.00 | 133.00 |
+| Turkey | 14.00 | 9.00 | 42.50 |
+| Brazil | 9.25 | 13.75 | 11.75 |
+| Mexico | 5.50 | 10.50 | 11.25 |
+| Egypt | 8.25 | 16.25 | 19.25 |
+
+Question 4 [6 marks]
+Analyse the likely impact of aggressive interest rate rises on aggregate demand in an emerging-market economy such as Argentina.
+
+**Question 5.** Argentina has suffered chronic inflation for much of its history. In December 2023, monthly inflation reached 25.5% (an annualised rate of over 1500%) following President Milei's initial 54% devaluation of the peso.
+
+**Figure 1: Argentina annual CPI inflation rate, 2017–2024 (%)**
+
+| Year | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 (est.) |
+|---|---|---|---|---|---|---|---|---|
+| Annual CPI (%) | 24 | 48 | 54 | 42 | 51 | 95 | 211 | 118 |
+
+**Figure 2: Argentina monthly inflation rate by selected categories, December 2023**
+
+| Category | Food & bev. | Health | Transport | Housing & utilities | Clothing | Education |
+|---|---|---|---|---|---|---|
+| Monthly inflation rate | 29.7% | 32.6% | 31.7% | 13.8% | 18.9% | 8.7% |
+| Weighting (% of spending) | 27 | 10 | 14 | 28 | 8 | 13 |
+
+Question 5 (a) [3 marks]
+Using the data in Figure 2, calculate a monthly price index for Argentina in December 2023, taking November 2023 as the base period. You are advised to show your working.
+
+**Figure 3: Argentina index of real and nominal wages, 2019–2024 (Dec 2023 = 100)**
+
+| Year (Dec) | Nominal wage index | Real wage index |
+|---|---|---|
+| 2019 | 8 | 148 |
+| 2020 | 13 | 140 |
+| 2021 | 22 | 138 |
+| 2022 | 45 | 130 |
+| 2023 | 100 | 100 |
+| 2024 | 210 | 96 |
+
+Argentine trade unions have historically indexed wages formally to past inflation through 'paritarias' (collective bargaining agreements). In 2024, some leading unions negotiated wage adjustments of 15–25% per month, matching recent monthly inflation.
+
+Question 5 (b) [8 marks]
+Assess whether Argentina is likely to experience a continued wage-price spiral in 2024–2025.
+
+## SECTION B — Argentina's peso crisis, Milei's 'chainsaw' and the IMF
+
+In December 2023, libertarian economist Javier Milei was inaugurated as Argentina's President after a remarkable electoral victory. Brandishing a chainsaw during campaign rallies to symbolise his plans to cut the state, Milei promised 'shock therapy' to rescue an economy facing collapse. On his first full day in office, Milei's Economy Minister devalued the official peso by 54% and announced sweeping spending cuts.
+
+**Figure 1: Argentine peso (ARS) per US dollar, 2019–2024 (official exchange rate)** *(A higher number means a weaker peso — the peso has lost more than 96% of its official US dollar value since 2019.)*
+
+| Date | Jan 2019 | Jan 2021 | Jan 2023 | Dec 2023 | Jun 2024 | Nov 2024 |
+|---|---|---|---|---|---|---|
+| ARS per US$ | 38 | 85 | 185 | 800 | 900 | 1,025 |
+
+Argentina's economic troubles are long-standing but acute. In 2022, public debt stood at 85% of GDP. Around 40% of this debt was denominated in US dollars. By late 2023, 70% of Argentine federal tax revenue was being spent on debt-service costs alone. The Central Bank of Argentina had almost no net foreign reserves — when Milei took office, net reserves were estimated at minus US$11 billion.
+
+Argentina's parallel exchange rate (the 'blue dollar' rate available on informal markets) diverged wildly from the official rate during periods of capital controls. In mid-2023, the blue dollar rate was more than double the official rate, reflecting severe lack of confidence in the peso.
+
+Argentine firms have been hammered by peso weakness and global supply shocks. Imports priced in dollars — machinery, fuels, fertilisers, pharmaceuticals — have risen sharply in peso terms (Table 1). Argentine manufacturers have laid off workers, reduced output, or exited the market.
+
+**Table 1: Prices of selected Argentine imports (US$ and implied peso terms — peso changes reflect both US$ price changes and the peso's depreciation from ~85 to ~1,000 per US$)**
+
+| Commodity | 2020 US$ price | 2024 US$ price | % change in peso terms |
+|---|---|---|---|
+| Pharmaceuticals (index, US$) | 100 | 128 | +2,978% |
+| Diesel fuel (US$/litre) | 0.42 | 0.88 | +4,500% |
+| Natural gas (US$/mmbtu) | 2.60 | 3.20 | +3,000% |
+| Fertiliser (US$/tonne) | 280 | 380 | +3,150% |
+
+The sustained depreciation of the peso has caused severe policy challenges. Investors have repeatedly fled the peso, worsening the currency's decline. Between 2021 and 2023, Argentina experienced capital outflows of over US$15 billion per year, draining reserves and raising country risk premiums. Sovereign bond yields exceeded 30% at times — making new borrowing effectively impossible.
+
+**Figure 2: Argentina Central Bank net international reserves, 2019–2024 (US$ billion)**
+
+| Year | 2019 | 2020 | 2021 | 2022 | 2023 (Nov) | 2024 (Oct) |
+|---|---|---|---|---|---|---|
+
+Regardless of the path chosen, the short-term human cost of adjustment has been severe. Food banks report unprecedented demand. Whether Argentina can sustain the reform momentum, rebuild its real economy, and deliver genuine improvements in living standards — rather than just stabilising prices — is the question that will shape South America's second-largest economy for years to come.
+
+Question 6 (a) (i) [2 marks]
+Using the data in Table 1, calculate the percentage change in the US dollar price of diesel fuel between 2020 and 2024. You are advised to show your working.
+
+Question 6 (b) [6 marks]
+With reference to the data and using a cost and revenue diagram, show how the weak peso has resulted in higher prices, fewer sales and falling profits for Argentine firms that import inputs.
+
+Question 7 [8 marks]
+Evaluate the extent to which Argentina's economic difficulties in 2023–2024 were the result of external rather than internal factors.
+
+Question 8 [10 marks]
+Discuss whether the Argentine authorities should have intervened in the ways described in the case to strengthen the peso, rather than pursuing devaluation and fiscal adjustment.
+
+Question 9 [12 marks]
+With reference to the case study, discuss whether living standards in Argentina are likely to be improved by President Milei's 'shock therapy' approach combined with continuing IMF support.
+
+**END OF PAPER**
 `,
   },
   // ── Eduqas A-Level Economics ──
