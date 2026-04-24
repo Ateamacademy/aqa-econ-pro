@@ -33,6 +33,7 @@ import {
 import { generateKnowledgeGraphPrompt } from "@/data/economicsKnowledgeGraph";
 import { generatePaperPdf } from "@/lib/generatePaperPdf";
 import { generateSolutionPdf, type SolutionEntry } from "@/lib/generateSolutionPdf";
+import { resolveStaticPaperPdf, triggerStaticPdfDownload } from "@/lib/staticPaperResolver";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { ReportButton } from "@/components/report/ReportButton";
 import { ComingSoonBoard } from "@/components/predicted-papers/ComingSoonBoard";
