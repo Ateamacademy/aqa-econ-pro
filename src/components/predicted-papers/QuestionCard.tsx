@@ -128,23 +128,44 @@ export function QuestionCard({
   };
 
   const expectedDiagramType = resolveDiagramType(`${question.label}\n${question.text}\n${answer}`) ?? undefined;
+  const suppressFeedbackDiagramPreview =
+    paperKey === "econ-p1-b" &&
+    /question\s*0?5/i.test(question.label) &&
+    /negative externalit(y|ies) of production/i.test(question.text);
 
-  const renderDiagramContent = (text: string) => (
-    <div className="prose prose-sm max-w-none dark:prose-invert">
-      {extractDiagramBlocks(text, {
-        contextText: `${question.label}\n${question.text}`,
-        fallbackType: expectedDiagramType,
-      }).map((seg, i) =>
-        seg.type === "diagram" ? (
-          <EconDiagramCanvas key={i} diagram={seg.diagram} />
-        ) : (
-          <Suspense key={i} fallback={<div className="text-sm text-muted-foreground">Loading...</div>}>
-            <RevisionRenderer content={seg.content} />
+  const renderDiagramContent = (text: string) => {
+    if (suppressFeedbackDiagramPreview) {
+      const strippedText = text
+        .replace(/^\s*(?:#{2,4}\s*)?(?:\*\*)?Diagram\s*:[\s\S]*?(?=^\s*#{1,4}\s+\S|\Z)/gim, "")
+        .replace(/^\s*\[DIAGRAM:[^\]]+\]\s*$/gim, "")
+        .trim();
+
+      return (
+        <div className="prose prose-sm max-w-none dark:prose-invert">
+          <Suspense fallback={<div className="text-sm text-muted-foreground">Loading...</div>}>
+            <RevisionRenderer content={strippedText} />
           </Suspense>
-        )
-      )}
-    </div>
-  );
+        </div>
+      );
+    }
+
+    return (
+      <div className="prose prose-sm max-w-none dark:prose-invert">
+        {extractDiagramBlocks(text, {
+          contextText: `${question.label}\n${question.text}`,
+          fallbackType: expectedDiagramType,
+        }).map((seg, i) =>
+          seg.type === "diagram" ? (
+            <EconDiagramCanvas key={i} diagram={seg.diagram} />
+          ) : (
+            <Suspense key={i} fallback={<div className="text-sm text-muted-foreground">Loading...</div>}>
+              <RevisionRenderer content={seg.content} />
+            </Suspense>
+          )
+        )}
+      </div>
+    );
+  };
 
   const feedbackSections = [
     { key: "markScheme", label: "Mark Scheme", icon: Clock, content: feedback?.markScheme || "" },
