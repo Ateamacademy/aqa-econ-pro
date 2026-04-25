@@ -1,70 +1,65 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 480" font-family="Inter, Arial, sans-serif">
-  <rect width="620" height="480" fill="#ffffff"/>
-  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Negative Consumption Externality — High-Sugar Soft Drinks</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 600" font-family="Inter, system-ui, Arial, sans-serif" role="img" aria-labelledby="ibNegExtTitle ibNegExtDesc">
+  <title id="ibNegExtTitle">Negative externality of consumption — high-sugar soft drinks</title>
+  <desc id="ibNegExtDesc">MPC equals MSC slopes upward in red; MPB slopes downward in solid blue; MSB is parallel to MPB but lower and dashed. Market equilibrium Qm exceeds social optimum Qopt. The welfare-loss triangle between Qopt and Qm is shaded.</desc>
 
-  <line x1="90" y1="410" x2="600" y2="410" stroke="#0f172a" stroke-width="2"/>
-  <line x1="90" y1="60" x2="90" y2="410" stroke="#0f172a" stroke-width="2"/>
-  <text x="555" y="430" font-size="12" fill="#0f172a">Output (Q)</text>
-  <text x="60" y="55" font-size="12" fill="#0f172a">Costs /</text>
-  <text x="60" y="70" font-size="12" fill="#0f172a">Benefits</text>
-
-  <!-- MPC = MSC (upward, yellow/gold like reference image) -->
-  <line x1="130" y1="390" x2="540" y2="120" stroke="#ca8a04" stroke-width="2.6"/>
-  <text x="545" y="125" font-size="11" font-weight="600" fill="#ca8a04">MPC = MSC</text>
-
-  <!-- MPB (downward, green, original) -->
-  <line x1="130" y1="130" x2="500" y2="390" stroke="#15803d" stroke-width="2.6"/>
-  <text x="505" y="395" font-size="11" font-weight="600" fill="#15803d">MPB</text>
-
-  <!-- MSB (downward, BELOW MPB by MEC, red) -->
-  <line x1="130" y1="200" x2="460" y2="390" stroke="#be123c" stroke-width="2.6"/>
-  <text x="465" y="395" font-size="11" font-weight="600" fill="#be123c">MSB</text>
-
-  <!-- MEB/MEC gap (from MSB up to MPB) -->
   <defs>
-    <marker id="arrMEBn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker>
-    <marker id="arrMEBn2" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#7c3aed"/></marker>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="7" stroke="#5F5E5A" stroke-width="1.2" opacity="0.55"/>
+    </pattern>
   </defs>
-  <line x1="420" y1="323" x2="420" y2="358" stroke="#7c3aed" stroke-width="1.5" marker-start="url(#arrMEBn2)" marker-end="url(#arrMEBn)"/>
-  <text x="428" y="345" font-size="10" font-weight="700" fill="#7c3aed">MEC</text>
 
-  <!-- Equilibria -->
-  <!-- MPC: (130,390)→(540,120) slope -0.659, y=390-0.659(x-130)
-       MPB: (130,130)→(500,390) slope 0.703, y=130+0.703(x-130)
-       Qe (MPC=MPB): 390-0.659(x-130) = 130+0.703(x-130) -> 1.362(x-130)=260 -> x=320.9, y=264.5
-  -->
-  <circle cx="321" cy="264" r="5" fill="#15803d"/>
-  <line x1="90" y1="264" x2="321" y2="264" stroke="#15803d" stroke-dasharray="3,3" stroke-width="1.2"/>
-  <line x1="321" y1="264" x2="321" y2="410" stroke="#15803d" stroke-dasharray="3,3" stroke-width="1.2"/>
-  <text x="68" y="268" font-size="11" font-weight="700" fill="#15803d">Pe</text>
-  <text x="321" y="425" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d">Qe</text>
+  <text x="380" y="36" text-anchor="middle" font-size="20" font-weight="500" fill="#1F1F1C">Negative externality of consumption — high-sugar soft drinks</text>
+  <text x="380" y="58" text-anchor="middle" font-size="13" fill="#5F5E5A">Free market overconsumes; welfare loss is the shaded triangle</text>
 
-  <!-- Qo: MSC=MSB
-       MSB: (130,200)→(460,390) slope 190/330=0.576, y=200+0.576(x-130)
-       390-0.659(x-130) = 200+0.576(x-130) -> 1.235(x-130)=190 -> x=283.8, y=289.4
-  -->
-  <circle cx="284" cy="289" r="5" fill="#be123c"/>
-  <line x1="90" y1="289" x2="284" y2="289" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
-  <line x1="284" y1="289" x2="284" y2="410" stroke="#be123c" stroke-dasharray="3,3" stroke-width="1.2"/>
-  <text x="68" y="293" font-size="11" font-weight="700" fill="#be123c">Po</text>
-  <text x="284" y="440" text-anchor="middle" font-size="11" font-weight="700" fill="#be123c">Qo</text>
+  <!-- Axes -->
+  <line x1="140" y1="540" x2="140" y2="90" stroke="#1F1F1C" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="100" y1="500" x2="700" y2="500" stroke="#1F1F1C" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="140" y="80" text-anchor="middle" font-size="13" fill="#1F1F1C">Price, costs, benefits</text>
+  <text x="700" y="528" text-anchor="end" font-size="13" fill="#1F1F1C">Quantity of soft drinks</text>
 
-  <!-- Welfare loss triangle between Qo and Qe:
-       B: on MPC at Qe (321, 264) — no, Qe already on MPC
-       Actually the welfare-loss triangle is bounded by MPC above, MSB below, between Qo and Qe.
-       Vertices: Qo on MSC=MPC at (284, 202)? Let me compute: MPC at x=284: y=390-0.659*(284-130)=390-101.5=288.5. So Qo-optimum is where MPC meets MSB — that's the point (284, 288.5) wait MSC=MPC so this IS at y=289.
-       
-       Qe on MPB at (321, 264)
-       Point on MPC at Qe (321, 264) — this is the same point (since MPC=MPB at Qe on diagram)
-       Point on MSB at Qe: y = 200 + 0.576*(321-130) = 200+110 = 310
-       
-       So welfare loss triangle: (284, 289) socialopt, (321, 264) marketeq, (321, 310) on MSB at Qe -->
-  <polygon points="284,289 321,264 321,310" fill="#fecaca" fill-opacity="0.75" stroke="#991b1b" stroke-width="1.5"/>
+  <!-- Welfare-loss triangle (drawn first so curves overlay) -->
+  <polygon points="340,360 405,304 405,407" fill="url(#hatch)" stroke="#5F5E5A" stroke-width="0.8" stroke-opacity="0.65"/>
 
-  <!-- Welfare loss label -->
-  <line x1="370" y1="300" x2="325" y2="288" stroke="#991b1b" stroke-width="1.3"/>
-  <text x="375" y="298" font-size="11" font-weight="700" fill="#991b1b">Welfare Loss</text>
-  <text x="375" y="312" font-size="10" fill="#991b1b">(ABC triangle)</text>
+  <!-- MPC = MSC (red, upward) -->
+  <line x1="190" y1="480" x2="630" y2="120" stroke="#A32D2D" stroke-width="2.6" stroke-linecap="round"/>
+  <text x="636" y="116" font-size="12" font-weight="500" fill="#A32D2D">MPC = MSC = S</text>
 
-  <text x="310" y="465" text-anchor="middle" font-size="11" fill="#334155">MSB &lt; MPB (MEC). Market over-consumes (Qe &gt; Qo). Sugar tax can shift consumption toward social optimum Qo.</text>
+  <!-- MSB (dashed blue, downward, below MPB) -->
+  <line x1="150" y1="220" x2="490" y2="470" stroke="#185FA5" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="7 5"/>
+  <text x="496" y="464" font-size="12" font-weight="500" fill="#185FA5">MSB</text>
+
+  <!-- MPB (solid blue, downward) -->
+  <line x1="150" y1="120" x2="640" y2="480" stroke="#185FA5" stroke-width="2.6" stroke-linecap="round"/>
+  <text x="648" y="488" font-size="12" font-weight="500" fill="#185FA5">MPB = D</text>
+
+  <!-- Italic caption near top of MPB -->
+  <text x="158" y="138" font-size="11" font-style="italic" fill="#185FA5">Private benefit overstates social benefit</text>
+
+  <!-- External cost (MEC) bracket: vertical double-headed arrow at x=220, y=186→286 -->
+  <line x1="220" y1="186" x2="220" y2="286" stroke="#5F5E5A" stroke-width="1.1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="228" y="240" font-size="12" fill="#5F5E5A">External cost (MEC)</text>
+
+  <!-- Market equilibrium (405, 304): MPB ∩ MPC -->
+  <line x1="405" y1="500" x2="405" y2="304" stroke="#9A9A95" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="140" y1="304" x2="405" y2="304" stroke="#9A9A95" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="405" cy="304" r="4" fill="#1F1F1C"/>
+  <text x="132" y="300" text-anchor="end" font-size="12" fill="#1F1F1C">P<tspan dy="3" font-size="10">m</tspan></text>
+  <text x="405" y="520" text-anchor="middle" font-size="12" fill="#1F1F1C">Q<tspan dy="3" font-size="10">m</tspan></text>
+
+  <!-- Social optimum (340, 360): MSB ∩ MSC -->
+  <line x1="340" y1="500" x2="340" y2="360" stroke="#9A9A95" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="140" y1="360" x2="340" y2="360" stroke="#9A9A95" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="340" cy="360" r="4" fill="#1F1F1C"/>
+  <text x="132" y="356" text-anchor="end" font-size="12" fill="#1F1F1C">P<tspan dy="3" font-size="10">opt</tspan></text>
+  <text x="340" y="520" text-anchor="middle" font-size="12" fill="#1F1F1C">Q<tspan dy="3" font-size="10">opt</tspan></text>
+
+  <!-- Welfare-loss callout -->
+  <line x1="528" y1="272" x2="396" y2="346" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow)"/>
+  <text x="532" y="266" font-size="12" font-weight="500" fill="#1F1F1C">Welfare loss</text>
+  <text x="532" y="280" font-size="11" fill="#5F5E5A">(deadweight loss)</text>
+
+  <text x="380" y="578" text-anchor="middle" font-size="11" fill="#5F5E5A">IB Economics HL/SL — market failure from negative externality of consumption</text>
 </svg>
