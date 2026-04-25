@@ -19,6 +19,7 @@ import EconMaxPriceCeiling from "@/components/EconMaxPriceCeiling.jsx";
 import EconNegExtConsumptionSoda from "@/components/EconNegExtConsumptionSoda.jsx";
 import EconAllocativeInefficiencyMCMB from "@/components/EconAllocativeInefficiencyMCMB.jsx";
 import EconMonopolyDWL from "@/components/EconMonopolyDWL.jsx";
+import EconPerfectCompetition from "@/components/EconPerfectCompetition.jsx";
 import { PredictedPaperDiagramBlock } from "./PredictedPaperDiagramBlock";
 import { ReferenceFigurePanel } from "./ReferenceFigurePanel";
 import type { AqaDiagramRubric } from "@/lib/aqa-diagram-rubric";
