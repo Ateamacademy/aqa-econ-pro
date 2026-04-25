@@ -16,6 +16,7 @@ import { extractDiagramBlocks, EconDiagramCanvas } from "./EconDiagramSVG";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import EconNegExtUKEnergy from "@/components/EconNegExtUKEnergy.jsx";
 import EconMaxPriceCeiling from "@/components/EconMaxPriceCeiling.jsx";
+import EconNegExtConsumptionSoda from "@/components/EconNegExtConsumptionSoda.jsx";
 import { PredictedPaperDiagramBlock } from "./PredictedPaperDiagramBlock";
 import { ReferenceFigurePanel } from "./ReferenceFigurePanel";
 import type { AqaDiagramRubric } from "@/lib/aqa-diagram-rubric";
@@ -132,15 +133,28 @@ export function QuestionCard({
   const expectedDiagramType = resolveDiagramType(`${question.label}\n${question.text}\n${answer}`) ?? undefined;
   const isMaxPriceOverride =
     paperKey === "econ-p2-c" && /question\s*0?1\s*\(?\s*b\s*\)?|^q?\s*0?1\s*b\b|\b1b\b/i.test(question.label);
+  // IB Paper 2 Moderate (ib-p2-a) Q1 (a)(ii) — negative externality definition: show consumption externality canonical figure
+  const isIbSodaOverride =
+    paperKey === "ib-p2-a" && /question\s*0?1\s*\(?\s*a\s*\)?\s*\(?\s*ii\s*\)?/i.test(question.label);
+  // IB Paper 2 Moderate (ib-p2-a) Q1 (a)(i) — FDI definition: suppress diagram, no canonical figure
+  const isIbFdiSuppressOnly =
+    paperKey === "ib-p2-a" && /question\s*0?1\s*\(?\s*a\s*\)?\s*\(?\s*i\s*\)?(?!\s*i)/i.test(question.label);
   const suppressFeedbackDiagramPreview =
     (paperKey === "econ-p1-b" && /question\s*0?[25]/i.test(question.label)) ||
     (paperKey === "econ-p1-a" && /question\s*0?3/i.test(question.label)) ||
     (paperKey === "econ-p1-c" && /question\s*0?5/i.test(question.label)) ||
     (paperKey === "econ-p2-a" && /question\s*0?2/i.test(question.label)) ||
     (paperKey === "econ-p2-c" && /question\s*0?2/i.test(question.label)) ||
-    isMaxPriceOverride;
+    isMaxPriceOverride ||
+    isIbSodaOverride ||
+    isIbFdiSuppressOnly;
 
-  const CanonicalFigure = isMaxPriceOverride ? EconMaxPriceCeiling : EconNegExtUKEnergy;
+  const CanonicalFigure = isIbSodaOverride
+    ? EconNegExtConsumptionSoda
+    : isMaxPriceOverride
+      ? EconMaxPriceCeiling
+      : EconNegExtUKEnergy;
+  const showCanonicalFigure = !isIbFdiSuppressOnly;
 
   const renderDiagramContent = (text: string, opts?: { withCanonicalFigure?: boolean }) => {
     if (suppressFeedbackDiagramPreview) {
@@ -151,7 +165,7 @@ export function QuestionCard({
 
       return (
         <div className="prose prose-sm max-w-none dark:prose-invert">
-          {opts?.withCanonicalFigure && (
+          {opts?.withCanonicalFigure && showCanonicalFigure && (
             <div className="not-prose mb-4 rounded-lg border border-border bg-card overflow-hidden">
               <CanonicalFigure />
             </div>
