@@ -19,6 +19,7 @@ import EconMaxPriceCeiling from "@/components/EconMaxPriceCeiling.jsx";
 import EconNegExtConsumptionSoda from "@/components/EconNegExtConsumptionSoda.jsx";
 import EconAllocativeInefficiencyMCMB from "@/components/EconAllocativeInefficiencyMCMB.jsx";
 import EconMonopolyDWL from "@/components/EconMonopolyDWL.jsx";
+import EconPerfectCompetition from "@/components/EconPerfectCompetition.jsx";
 import { PredictedPaperDiagramBlock } from "./PredictedPaperDiagramBlock";
 import { ReferenceFigurePanel } from "./ReferenceFigurePanel";
 import type { AqaDiagramRubric } from "@/lib/aqa-diagram-rubric";
@@ -149,9 +150,15 @@ export function QuestionCard({
     paperKey === "ib-p3-a" &&
     /marginal-?cost\s*\/\s*marginal-?benefit\s+diagram/i.test(ibQuestionBody) &&
     /allocativ\w*\s+inefficien/i.test(ibQuestionBody);
-  // IB Paper 3 Moderate/Hard (ib-p3-a, ib-p3-b) — Firm X short-run to long-run equilibrium (monopoly DWL diagram)
+  // IB Paper 3 Moderate (ib-p3-a) Q1 (v) — monopoly DWL diagram.
   const isIbMonopolyDwlOverride =
-    (paperKey === "ib-p3-a" || paperKey === "ib-p3-b") &&
+    paperKey === "ib-p3-a" &&
+    /firm\s*x/i.test(ibQuestionBody) &&
+    /short-?run\s+equilibrium/i.test(ibQuestionBody) &&
+    /long-?run\s+equilibrium/i.test(ibQuestionBody);
+  // IB Paper 3 Hard (ib-p3-b) Q1 (a)(v) — Firm X is perfectly competitive, so use two-panel market/firm LR adjustment.
+  const isIbPerfectCompetitionFirmXOverride =
+    paperKey === "ib-p3-b" &&
     /firm\s*x/i.test(ibQuestionBody) &&
     /short-?run\s+equilibrium/i.test(ibQuestionBody) &&
     /long-?run\s+equilibrium/i.test(ibQuestionBody);
@@ -165,17 +172,20 @@ export function QuestionCard({
     isIbSodaOverride ||
     isIbFdiSuppressOnly ||
     isIbMcMbAllocOverride ||
-    isIbMonopolyDwlOverride;
+    isIbMonopolyDwlOverride ||
+    isIbPerfectCompetitionFirmXOverride;
 
-  const CanonicalFigure = isIbMonopolyDwlOverride
-    ? EconMonopolyDWL
-    : isIbMcMbAllocOverride
-      ? EconAllocativeInefficiencyMCMB
-      : isIbSodaOverride
-        ? EconNegExtConsumptionSoda
-        : isMaxPriceOverride
-          ? EconMaxPriceCeiling
-          : EconNegExtUKEnergy;
+  const CanonicalFigure = isIbPerfectCompetitionFirmXOverride
+    ? EconPerfectCompetition
+    : isIbMonopolyDwlOverride
+      ? EconMonopolyDWL
+      : isIbMcMbAllocOverride
+        ? EconAllocativeInefficiencyMCMB
+        : isIbSodaOverride
+          ? EconNegExtConsumptionSoda
+          : isMaxPriceOverride
+            ? EconMaxPriceCeiling
+            : EconNegExtUKEnergy;
   const showCanonicalFigure = !isIbFdiSuppressOnly;
 
   const renderDiagramContent = (text: string, opts?: { withCanonicalFigure?: boolean }) => {
