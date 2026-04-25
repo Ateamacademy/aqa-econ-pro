@@ -18,6 +18,7 @@ import EconNegExtUKEnergy from "@/components/EconNegExtUKEnergy.jsx";
 import EconMaxPriceCeiling from "@/components/EconMaxPriceCeiling.jsx";
 import EconNegExtConsumptionSoda from "@/components/EconNegExtConsumptionSoda.jsx";
 import EconAllocativeInefficiencyMCMB from "@/components/EconAllocativeInefficiencyMCMB.jsx";
+import EconMonopolyDWL from "@/components/EconMonopolyDWL.jsx";
 import { PredictedPaperDiagramBlock } from "./PredictedPaperDiagramBlock";
 import { ReferenceFigurePanel } from "./ReferenceFigurePanel";
 import type { AqaDiagramRubric } from "@/lib/aqa-diagram-rubric";
@@ -148,6 +149,12 @@ export function QuestionCard({
     paperKey === "ib-p3-a" &&
     /marginal-?cost\s*\/\s*marginal-?benefit\s+diagram/i.test(ibQuestionBody) &&
     /allocativ\w*\s+inefficien/i.test(ibQuestionBody);
+  // IB Paper 3 Moderate (ib-p3-a) Q1 (v) — Firm X short-run to long-run equilibrium (monopoly DWL diagram)
+  const isIbMonopolyDwlOverride =
+    paperKey === "ib-p3-a" &&
+    /firm\s*x/i.test(ibQuestionBody) &&
+    /short-?run\s+equilibrium/i.test(ibQuestionBody) &&
+    /long-?run\s+equilibrium/i.test(ibQuestionBody);
   const suppressFeedbackDiagramPreview =
     (paperKey === "econ-p1-b" && /question\s*0?[25]/i.test(question.label)) ||
     (paperKey === "econ-p1-a" && /question\s*0?3/i.test(question.label)) ||
@@ -157,15 +164,18 @@ export function QuestionCard({
     isMaxPriceOverride ||
     isIbSodaOverride ||
     isIbFdiSuppressOnly ||
-    isIbMcMbAllocOverride;
+    isIbMcMbAllocOverride ||
+    isIbMonopolyDwlOverride;
 
-  const CanonicalFigure = isIbMcMbAllocOverride
-    ? EconAllocativeInefficiencyMCMB
-    : isIbSodaOverride
-      ? EconNegExtConsumptionSoda
-      : isMaxPriceOverride
-        ? EconMaxPriceCeiling
-        : EconNegExtUKEnergy;
+  const CanonicalFigure = isIbMonopolyDwlOverride
+    ? EconMonopolyDWL
+    : isIbMcMbAllocOverride
+      ? EconAllocativeInefficiencyMCMB
+      : isIbSodaOverride
+        ? EconNegExtConsumptionSoda
+        : isMaxPriceOverride
+          ? EconMaxPriceCeiling
+          : EconNegExtUKEnergy;
   const showCanonicalFigure = !isIbFdiSuppressOnly;
 
   const renderDiagramContent = (text: string, opts?: { withCanonicalFigure?: boolean }) => {
