@@ -17,6 +17,7 @@ import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import EconNegExtUKEnergy from "@/components/EconNegExtUKEnergy.jsx";
 import EconMaxPriceCeiling from "@/components/EconMaxPriceCeiling.jsx";
 import EconNegExtConsumptionSoda from "@/components/EconNegExtConsumptionSoda.jsx";
+import EconAllocativeInefficiencyMCMB from "@/components/EconAllocativeInefficiencyMCMB.jsx";
 import { PredictedPaperDiagramBlock } from "./PredictedPaperDiagramBlock";
 import { ReferenceFigurePanel } from "./ReferenceFigurePanel";
 import type { AqaDiagramRubric } from "@/lib/aqa-diagram-rubric";
