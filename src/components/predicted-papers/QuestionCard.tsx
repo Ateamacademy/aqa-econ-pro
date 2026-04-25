@@ -149,9 +149,9 @@ export function QuestionCard({
     paperKey === "ib-p3-a" &&
     /marginal-?cost\s*\/\s*marginal-?benefit\s+diagram/i.test(ibQuestionBody) &&
     /allocativ\w*\s+inefficien/i.test(ibQuestionBody);
-  // IB Paper 3 Moderate (ib-p3-a) Q1 (v) — Firm X short-run to long-run equilibrium (monopoly DWL diagram)
+  // IB Paper 3 Moderate/Hard (ib-p3-a, ib-p3-b) — Firm X short-run to long-run equilibrium (monopoly DWL diagram)
   const isIbMonopolyDwlOverride =
-    paperKey === "ib-p3-a" &&
+    (paperKey === "ib-p3-a" || paperKey === "ib-p3-b") &&
     /firm\s*x/i.test(ibQuestionBody) &&
     /short-?run\s+equilibrium/i.test(ibQuestionBody) &&
     /long-?run\s+equilibrium/i.test(ibQuestionBody);
