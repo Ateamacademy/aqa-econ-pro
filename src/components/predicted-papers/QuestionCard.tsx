@@ -133,12 +133,15 @@ export function QuestionCard({
   const expectedDiagramType = resolveDiagramType(`${question.label}\n${question.text}\n${answer}`) ?? undefined;
   const isMaxPriceOverride =
     paperKey === "econ-p2-c" && /question\s*0?1\s*\(?\s*b\s*\)?|^q?\s*0?1\s*b\b|\b1b\b/i.test(question.label);
-  // IB Paper 2 Moderate (ib-p2-a) Q1 (a)(ii) — negative externality definition: show consumption externality canonical figure
+  // IB Paper 2 Moderate (ib-p2-a) Q1 (a)(ii) — "Define the term negative externality" (Text B, Paragraph 4)
+  const ibQuestionBody = `${question.label}\n${question.text}`;
   const isIbSodaOverride =
-    paperKey === "ib-p2-a" && /question\s*0?1\s*\(?\s*a\s*\)?\s*\(?\s*ii\s*\)?/i.test(question.label);
-  // IB Paper 2 Moderate (ib-p2-a) Q1 (a)(i) — FDI definition: suppress diagram, no canonical figure
+    paperKey === "ib-p2-a" &&
+    /define\s+the\s+term\s+\**negative\s+externality/i.test(ibQuestionBody);
+  // IB Paper 2 Moderate (ib-p2-a) Q1 (a)(i) — "Define the term foreign direct investment (FDI)" (Text B, Paragraph 1)
   const isIbFdiSuppressOnly =
-    paperKey === "ib-p2-a" && /question\s*0?1\s*\(?\s*a\s*\)?\s*\(?\s*i\s*\)?(?!\s*i)/i.test(question.label);
+    paperKey === "ib-p2-a" &&
+    /define\s+the\s+term\s+\**foreign\s+direct\s+investment/i.test(ibQuestionBody);
   const suppressFeedbackDiagramPreview =
     (paperKey === "econ-p1-b" && /question\s*0?[25]/i.test(question.label)) ||
     (paperKey === "econ-p1-a" && /question\s*0?3/i.test(question.label)) ||
