@@ -143,6 +143,11 @@ export function QuestionCard({
   const isIbFdiSuppressOnly =
     paperKey === "ib-p2-a" &&
     /define\s+the\s+term\s+\**foreign\s+direct\s+investment/i.test(ibQuestionBody);
+  // IB Paper 3 Moderate (ib-p3-a) Q1 (a)(iv) — MC/MB allocative inefficiency from negative externality of production
+  const isIbMcMbAllocOverride =
+    paperKey === "ib-p3-a" &&
+    /marginal-?cost\s*\/\s*marginal-?benefit\s+diagram/i.test(ibQuestionBody) &&
+    /allocativ\w*\s+inefficien/i.test(ibQuestionBody);
   const suppressFeedbackDiagramPreview =
     (paperKey === "econ-p1-b" && /question\s*0?[25]/i.test(question.label)) ||
     (paperKey === "econ-p1-a" && /question\s*0?3/i.test(question.label)) ||
@@ -151,13 +156,16 @@ export function QuestionCard({
     (paperKey === "econ-p2-c" && /question\s*0?2/i.test(question.label)) ||
     isMaxPriceOverride ||
     isIbSodaOverride ||
-    isIbFdiSuppressOnly;
+    isIbFdiSuppressOnly ||
+    isIbMcMbAllocOverride;
 
-  const CanonicalFigure = isIbSodaOverride
-    ? EconNegExtConsumptionSoda
-    : isMaxPriceOverride
-      ? EconMaxPriceCeiling
-      : EconNegExtUKEnergy;
+  const CanonicalFigure = isIbMcMbAllocOverride
+    ? EconAllocativeInefficiencyMCMB
+    : isIbSodaOverride
+      ? EconNegExtConsumptionSoda
+      : isMaxPriceOverride
+        ? EconMaxPriceCeiling
+        : EconNegExtUKEnergy;
   const showCanonicalFigure = !isIbFdiSuppressOnly;
 
   const renderDiagramContent = (text: string, opts?: { withCanonicalFigure?: boolean }) => {
