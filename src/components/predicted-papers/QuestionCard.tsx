@@ -165,7 +165,7 @@ export function QuestionCard({
 
       return (
         <div className="prose prose-sm max-w-none dark:prose-invert">
-          {opts?.withCanonicalFigure && (
+          {opts?.withCanonicalFigure && showCanonicalFigure && (
             <div className="not-prose mb-4 rounded-lg border border-border bg-card overflow-hidden">
               <CanonicalFigure />
             </div>
