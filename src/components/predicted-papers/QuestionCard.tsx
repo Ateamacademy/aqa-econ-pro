@@ -156,12 +156,20 @@ export function QuestionCard({
     /firm\s*x/i.test(ibQuestionBody) &&
     /short-?run\s+equilibrium/i.test(ibQuestionBody) &&
     /long-?run\s+equilibrium/i.test(ibQuestionBody);
-  // IB Paper 3 Hard (ib-p3-b) Q1 (a)(v) — Firm X is perfectly competitive, so use two-panel market/firm LR adjustment.
+  // IB Paper 3 Hard (ib-p3-b) Q1 (a) — Firm X is perfectly competitive. Use the two-panel
+  // industry/firm perfect-competition diagram across all Figure 1 sub-parts (profit-max output,
+  // supernormal profit, SR→LR adjustment, etc.).
   const isIbPerfectCompetitionFirmXOverride =
     paperKey === "ib-p3-b" &&
     /firm\s*x/i.test(ibQuestionBody) &&
-    /short-?run\s+equilibrium/i.test(ibQuestionBody) &&
-    /long-?run\s+equilibrium/i.test(ibQuestionBody);
+    (
+      /short-?run\s+equilibrium/i.test(ibQuestionBody) &&
+      /long-?run\s+equilibrium/i.test(ibQuestionBody)
+      || /figure\s*1/i.test(ibQuestionBody)
+      || /profit-?maximi[sz]ing\s+output/i.test(ibQuestionBody)
+      || /supernormal\s+profit/i.test(ibQuestionBody)
+      || /perfect(ly)?\s+competit/i.test(ibQuestionBody)
+    );
   const suppressFeedbackDiagramPreview =
     (paperKey === "econ-p1-b" && /question\s*0?[25]/i.test(question.label)) ||
     (paperKey === "econ-p1-a" && /question\s*0?3/i.test(question.label)) ||
