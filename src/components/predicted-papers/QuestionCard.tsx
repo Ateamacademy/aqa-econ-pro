@@ -20,6 +20,18 @@ import EconNegExtConsumptionSoda from "@/components/EconNegExtConsumptionSoda.js
 import EconAllocativeInefficiencyMCMB from "@/components/EconAllocativeInefficiencyMCMB.jsx";
 import EconMonopolyDWL from "@/components/EconMonopolyDWL.jsx";
 import EconPerfectCompetition from "@/components/EconPerfectCompetition.jsx";
+import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram.jsx";
+
+// Wrapper for the interactive Short-run/Long-run toggle perfect-competition
+// diagram so it sits inside a card without forcing 100vh height (which would
+// crop the toggle pill on narrow containers like the Smart Mark feedback panel).
+const PerfectCompetitionToggleFigure = () => (
+  <div style={{ width: "100%", overflow: "hidden", borderRadius: 8 }}>
+    <div style={{ width: "100%", minHeight: "auto" }}>
+      <PerfectCompetitionDiagram />
+    </div>
+  </div>
+);
 import { PredictedPaperDiagramBlock } from "./PredictedPaperDiagramBlock";
 import { ReferenceFigurePanel } from "./ReferenceFigurePanel";
 import type { AqaDiagramRubric } from "@/lib/aqa-diagram-rubric";
