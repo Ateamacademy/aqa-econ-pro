@@ -45,11 +45,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (subscriptionRefreshInFlight.current) return subscriptionRefreshInFlight.current;
 
     const invokeWithRetry = async (attempt = 0): Promise<{ data: any; error: any }> => {
-      const result = await supabase.functions.invoke("check-subscription");
-      const status = (result.error as any)?.context?.status ?? (result.error as any)?.status;
-      const isTransient = status === 503 || status === 502 || status === 504;
-      if (result.error && isTransient && attempt < 2) {
-        await new Promise((r) => setTimeout(r, 500 * (attempt + 1)));
+      let result: { data: any; error: any };
+      try {
+        result = await supabase.functions.invoke("check-subscription");
+      } catch (e) {
+        result = { data: null, error: e };
+      }
+      if (result.error && attempt < 3) {
+        // Retry on any error — most often a transient 5xx from edge runtime cold-start.
+        await new Promise((r) => setTimeout(r, 600 * (attempt + 1)));
         return invokeWithRetry(attempt + 1);
       }
       return result;
