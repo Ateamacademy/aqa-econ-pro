@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import Stripe from "https://esm.sh/stripe@18.5.0";
-import { createClient } from "npm:@supabase/supabase-js@2.57.2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -62,7 +62,7 @@ serve(async (req) => {
 
     const user = userData.user;
 
-    email = user.email.toLowerCase();
+    email = user.email!.toLowerCase();
 
     if (TESTER_EMAILS.includes(email)) {
       return respond({ subscribed: true, subscription_end: ACCESS_EXPIRES, tester: true });
@@ -95,7 +95,7 @@ serve(async (req) => {
       limit: 10,
     });
 
-    const hasPurchased = sessions.data.some((s) => s.payment_status === "paid");
+    const hasPurchased = sessions.data.some((s: { payment_status: string }) => s.payment_status === "paid");
 
     const result = {
       subscribed: hasPurchased,
