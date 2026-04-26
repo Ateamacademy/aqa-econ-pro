@@ -1,6 +1,41 @@
 type MessageContent = string | Array<{ type: "text"; text: string } | { type: "image_url"; image_url: { url: string } }>;
 type Msg = { role: "user" | "assistant"; content: MessageContent };
 
+const RETRY_DELAYS_MS = [700, 1400, 2500];
+const TRANSIENT_STATUSES = new Set([502, 503, 504]);
+
+const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+async function fetchWithRetry(url: string, init: RequestInit, attempt = 0): Promise<Response> {
+  try {
+    const response = await fetch(url, init);
+    if (TRANSIENT_STATUSES.has(response.status) && attempt < RETRY_DELAYS_MS.length) {
+      await wait(RETRY_DELAYS_MS[attempt]);
+      return fetchWithRetry(url, init, attempt + 1);
+    }
+    return response;
+  } catch (error) {
+    if (attempt < RETRY_DELAYS_MS.length) {
+      await wait(RETRY_DELAYS_MS[attempt]);
+      return fetchWithRetry(url, init, attempt + 1);
+    }
+    throw error;
+  }
+}
+
+async function readErrorMessage(response: Response) {
+  const fallback = TRANSIENT_STATUSES.has(response.status)
+    ? "Tutor service is temporarily unavailable. Please try again in a moment."
+    : "Tutor request failed.";
+
+  try {
+    const err = await response.json();
+    return err.error || err.message || fallback;
+  } catch {
+    return fallback;
+  }
+}
+
 export async function streamChat({
   messages,
   mode,
@@ -17,51 +52,63 @@ export async function streamChat({
   onError?: (error: string) => void;
 }) {
   const url = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/ai-tutor`;
+  let completed = false;
+  const finish = () => {
+    if (!completed) {
+      completed = true;
+      onDone();
+    }
+  };
 
-  const resp = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
-    },
-    body: JSON.stringify({ messages, mode, subject: subject || "economics" }),
-  });
+  try {
+    const resp = await fetchWithRetry(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+      },
+      body: JSON.stringify({ messages, mode, subject: subject || "economics" }),
+    });
 
-  if (!resp.ok) {
-    const err = await resp.json().catch(() => ({ error: "Request failed" }));
-    onError?.(err.error || "AI request failed");
-    onDone();
-    return;
-  }
+    if (!resp.ok) {
+      onError?.(await readErrorMessage(resp));
+      finish();
+      return;
+    }
 
-  if (!resp.body) { onDone(); return; }
+    if (!resp.body) { finish(); return; }
 
-  const reader = resp.body.getReader();
-  const decoder = new TextDecoder();
-  let buffer = "";
+    const reader = resp.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = "";
 
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    buffer += decoder.decode(value, { stream: true });
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
 
-    let idx: number;
-    while ((idx = buffer.indexOf("\n")) !== -1) {
-      let line = buffer.slice(0, idx);
-      buffer = buffer.slice(idx + 1);
-      if (line.endsWith("\r")) line = line.slice(0, -1);
-      if (!line.startsWith("data: ")) continue;
-      const json = line.slice(6).trim();
-      if (json === "[DONE]") { onDone(); return; }
-      try {
-        const parsed = JSON.parse(json);
-        const content = parsed.choices?.[0]?.delta?.content;
-        if (content) onDelta(content);
-      } catch {
-        buffer = line + "\n" + buffer;
-        break;
+      let idx: number;
+      while ((idx = buffer.indexOf("\n")) !== -1) {
+        let line = buffer.slice(0, idx);
+        buffer = buffer.slice(idx + 1);
+        if (line.endsWith("\r")) line = line.slice(0, -1);
+        if (!line.startsWith("data: ")) continue;
+        const json = line.slice(6).trim();
+        if (json === "[DONE]") { finish(); return; }
+        try {
+          const parsed = JSON.parse(json);
+          const content = parsed.choices?.[0]?.delta?.content;
+          if (content) onDelta(content);
+        } catch {
+          buffer = line + "\n" + buffer;
+          break;
+        }
       }
     }
+    finish();
+  } catch (error) {
+    console.warn("Tutor request unavailable (degraded):", error);
+    onError?.("Tutor service is temporarily unavailable. Please try again in a moment.");
+    finish();
   }
-  onDone();
 }
