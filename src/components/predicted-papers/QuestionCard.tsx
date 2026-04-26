@@ -216,10 +216,10 @@ export function QuestionCard({
   // profits / expansion of Aldi & Lidl. Use the Monopoly Business Objectives
   // (cost & revenue) reference diagram across Smart Mark / Explain feedback.
   const isEduqasMonopolyBusinessObjectivesOverride =
-    paperKey === "eduqas-p2-a" &&
+    (paperKey === "eduqas-p2-a" || paperKey === "eduqas-p2-b") &&
     /costs?\s+and\s+revenue\s+diagram/i.test(ibQuestionBody) &&
     /abnormal\s+profits?/i.test(ibQuestionBody) &&
-    /(aldi|lidl|supermarket)/i.test(ibQuestionBody);
+    /(aldi|lidl|supermarket|ofgem|price\s*cap|energy\s+suppl)/i.test(ibQuestionBody);
   const suppressFeedbackDiagramPreview =
     (paperKey === "econ-p1-b" && /question\s*0?[25]/i.test(question.label)) ||
     (paperKey === "econ-p1-a" && /question\s*0?3/i.test(question.label)) ||
