@@ -210,6 +210,7 @@ export function QuestionCard({
     (paperKey === "econ-p2-c" && /question\s*0?2/i.test(question.label)) ||
     isMaxPriceOverride ||
     isIbSodaOverride ||
+    isIbProductionExternalityOverride ||
     isIbFdiSuppressOnly ||
     isIbMcMbAllocOverride ||
     isIbMonopolyDwlOverride ||
@@ -224,11 +225,13 @@ export function QuestionCard({
         ? EconMonopolyDWL
         : isIbMcMbAllocOverride
           ? EconAllocativeInefficiencyMCMB
-          : isIbSodaOverride
-            ? EconNegExtConsumptionSoda
-            : isMaxPriceOverride
-              ? EconMaxPriceCeiling
-              : EconNegExtUKEnergy;
+          : isIbProductionExternalityOverride
+            ? EconNegExtUKEnergy
+            : isIbSodaOverride
+              ? EconNegExtConsumptionSoda
+              : isMaxPriceOverride
+                ? EconMaxPriceCeiling
+                : EconNegExtUKEnergy;
   const showCanonicalFigure = !isIbFdiSuppressOnly;
 
   const renderDiagramContent = (text: string, opts?: { withCanonicalFigure?: boolean }) => {
