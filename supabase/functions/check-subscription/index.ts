@@ -1,5 +1,4 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import Stripe from "https://esm.sh/stripe@18.5.0";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
@@ -79,7 +78,17 @@ serve(async (req) => {
       return respond(cached.result);
     }
 
-    const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
+    const stripeSecretKey = Deno.env.get("STRIPE_SECRET_KEY");
+    if (!stripeSecretKey) {
+      const result = { subscribed: false, subscription_end: null, degraded: true, fallback: true };
+      cache.set(email, { result, ts: Date.now() });
+      return respond(result);
+    }
+
+    // Load Stripe only for non-tester users. This keeps cold starts for whitelisted
+    // users independent from third-party module loading and prevents transient boot 503s.
+    const { default: Stripe } = await import("https://esm.sh/stripe@18.5.0");
+    const stripe = new Stripe(stripeSecretKey, {
       apiVersion: "2025-08-27.basil",
     });
 
