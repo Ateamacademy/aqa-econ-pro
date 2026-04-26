@@ -119,6 +119,15 @@ serve(async (req) => {
       return respond({ subscribed: false, subscription_end: null, degraded: true }, 200);
     }
 
-    return respond({ error: message }, 500);
+    console.error("check-subscription unexpected error:", message);
+    // Fail-open to prevent frontend blank-screen loops on transient runtime errors.
+    if (email) {
+      const cached = cache.get(email);
+      if (cached) return respond({ ...cached.result, degraded: true, fallback: true });
+    }
+    return respond(
+      { subscribed: false, subscription_end: null, degraded: true, fallback: true, error: "SERVICE_UNAVAILABLE" },
+      200,
+    );
   }
 });
