@@ -218,7 +218,10 @@ export function QuestionCard({
   const isEduqasMonopolyBusinessObjectivesOverride =
     (paperKey === "eduqas-p2-a" ||
       paperKey === "eduqas-p2-b" ||
-      paperKey === "eduqas-p2-c") &&
+      paperKey === "eduqas-p2-c" ||
+      paperKey === "wjec-p2-a" ||
+      paperKey === "wjec-p2-b" ||
+      paperKey === "wjec-p2-c") &&
     /costs?\s+and\s+revenue\s+diagram/i.test(ibQuestionBody) &&
     /abnormal\s+profits?/i.test(ibQuestionBody) &&
     /(aldi|lidl|supermarket|ofgem|price\s*cap|energy\s+suppl|digital\s+platform|interoperab|dominant)/i.test(
