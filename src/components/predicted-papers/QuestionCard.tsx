@@ -583,7 +583,7 @@ export function QuestionCard({
                   <CardTitle className="font-serif text-lg">Smart Mark feedback</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  {renderDiagramContent(feedback.smartFeedback)}
+                  {renderDiagramContent(feedback.smartFeedback, { withCanonicalFigure: true })}
                 </CardContent>
               </Card>
             )}
