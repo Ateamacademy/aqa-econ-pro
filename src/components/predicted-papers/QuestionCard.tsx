@@ -154,8 +154,13 @@ export function QuestionCard({
   // consumption-externality diagram (MSB dashed below MPB, MPC=MSC=S, DWL).
   const ibQuestionBody = `${question.label}\n${question.text}`;
   const isIbPaper = typeof paperKey === "string" && /^ib-p[123]-/.test(paperKey);
+  // Production externality (MSC > MPC, MPB=MSB) — use UK Energy diagram.
+  const isIbProductionExternalityOverride =
+    isIbPaper &&
+    /negative\s+production\s+externalit/i.test(ibQuestionBody);
   const isIbSodaOverride =
     isIbPaper &&
+    !isIbProductionExternalityOverride &&
     (
       /negative\s+externality/i.test(ibQuestionBody) ||
       /common\s+access\s+resource/i.test(ibQuestionBody) ||
