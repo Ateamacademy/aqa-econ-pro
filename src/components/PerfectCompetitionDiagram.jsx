@@ -435,11 +435,13 @@ export default function PerfectCompetitionDiagram() {
   return (
     <div style={{
       background: C.bg,
-      minHeight: "100vh",
+      width: "100%",
       display: "flex",
       flexDirection: "column",
       fontFamily: MONO,
       color: C.text,
+      borderRadius: 8,
+      overflow: "hidden",
     }}>
       {/* Header */}
       <div style={{
