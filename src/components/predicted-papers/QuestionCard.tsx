@@ -21,6 +21,7 @@ import EconAllocativeInefficiencyMCMB from "@/components/EconAllocativeInefficie
 import EconMonopolyDWL from "@/components/EconMonopolyDWL.jsx";
 import EconPerfectCompetition from "@/components/EconPerfectCompetition.jsx";
 import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram.jsx";
+import EconExchangeRateNaira from "@/components/EconExchangeRateNaira.jsx";
 
 // Wrapper for the interactive Short-run/Long-run toggle perfect-competition
 // diagram so it sits inside a card without forcing 100vh height (which would
