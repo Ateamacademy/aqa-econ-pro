@@ -24,6 +24,7 @@ import EconPerfectCompetition from "@/components/EconPerfectCompetition.jsx";
 import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram.jsx";
 import EconExchangeRateNaira from "@/components/EconExchangeRateNaira.jsx";
 import EconPosExtEduqasTransport from "@/components/EconPosExtEduqasTransport.jsx";
+import EconMonopolyBusinessObjectivesEduqas from "@/components/EconMonopolyBusinessObjectivesEduqas.jsx";
 
 // Wrapper for the interactive Short-run/Long-run toggle perfect-competition
 // diagram so it sits inside a card without forcing 100vh height (which would
@@ -211,6 +212,14 @@ export function QuestionCard({
     paperKey === "eduqas-p1-a" &&
     /positive\s+consumption\s+externalit/i.test(ibQuestionBody) &&
     /public\s+transport/i.test(ibQuestionBody);
+  // Eduqas Paper 2 — Moderate (eduqas-p2-a) Q2.3 — supermarket abnormal
+  // profits / expansion of Aldi & Lidl. Use the Monopoly Business Objectives
+  // (cost & revenue) reference diagram across Smart Mark / Explain feedback.
+  const isEduqasMonopolyBusinessObjectivesOverride =
+    paperKey === "eduqas-p2-a" &&
+    /costs?\s+and\s+revenue\s+diagram/i.test(ibQuestionBody) &&
+    /abnormal\s+profits?/i.test(ibQuestionBody) &&
+    /(aldi|lidl|supermarket)/i.test(ibQuestionBody);
   const suppressFeedbackDiagramPreview =
     (paperKey === "econ-p1-b" && /question\s*0?[25]/i.test(question.label)) ||
     (paperKey === "econ-p1-a" && /question\s*0?3/i.test(question.label)) ||
@@ -225,25 +234,28 @@ export function QuestionCard({
     isIbMonopolyDwlOverride ||
     isIbPerfectCompetitionFirmXOverride ||
     isIbNairaExchangeRateOverride ||
-    isEduqasPosConsExtTransportOverride;
+    isEduqasPosConsExtTransportOverride ||
+    isEduqasMonopolyBusinessObjectivesOverride;
 
   const CanonicalFigure = isIbNairaExchangeRateOverride
     ? EconExchangeRateNaira
-    : isEduqasPosConsExtTransportOverride
-      ? EconPosExtEduqasTransport
-      : isIbPerfectCompetitionFirmXOverride
-        ? PerfectCompetitionToggleFigure
-        : isIbMonopolyDwlOverride
-          ? EconMonopolyDWL
-          : isIbMcMbAllocOverride
-            ? EconAllocativeInefficiencyMCMB
-            : isIbProductionExternalityOverride
-              ? EconNegExtIBSoftDrinks
-              : isIbSodaOverride
+    : isEduqasMonopolyBusinessObjectivesOverride
+      ? EconMonopolyBusinessObjectivesEduqas
+      : isEduqasPosConsExtTransportOverride
+        ? EconPosExtEduqasTransport
+        : isIbPerfectCompetitionFirmXOverride
+          ? PerfectCompetitionToggleFigure
+          : isIbMonopolyDwlOverride
+            ? EconMonopolyDWL
+            : isIbMcMbAllocOverride
+              ? EconAllocativeInefficiencyMCMB
+              : isIbProductionExternalityOverride
                 ? EconNegExtIBSoftDrinks
-                : isMaxPriceOverride
-                  ? EconMaxPriceCeiling
-                  : EconNegExtUKEnergy;
+                : isIbSodaOverride
+                  ? EconNegExtIBSoftDrinks
+                  : isMaxPriceOverride
+                    ? EconMaxPriceCeiling
+                    : EconNegExtUKEnergy;
   const showCanonicalFigure = !isIbFdiSuppressOnly;
 
   const renderDiagramContent = (text: string, opts?: { withCanonicalFigure?: boolean }) => {
