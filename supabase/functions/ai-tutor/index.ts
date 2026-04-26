@@ -595,8 +595,12 @@ serve(async (req) => {
     });
   } catch (e) {
     console.error("chat error:", e);
-    return new Response(JSON.stringify({ error: e instanceof Error ? e.message : "Unknown error" }), {
-      status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
-    });
+    const message = e instanceof Error ? e.message : "Unknown error";
+    // Fail-open with 200 + fallback flag so the client can show a friendly
+    // message instead of crashing the UI on transient runtime errors.
+    return new Response(
+      JSON.stringify({ error: "SERVICE_UNAVAILABLE", message, fallback: true }),
+      { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+    );
   }
 });
