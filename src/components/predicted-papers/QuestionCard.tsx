@@ -227,9 +227,9 @@ export function QuestionCard({
         : isIbMcMbAllocOverride
           ? EconAllocativeInefficiencyMCMB
           : isIbProductionExternalityOverride
-            ? EconNegExtUKEnergy
+            ? EconNegExtIBSoftDrinks
             : isIbSodaOverride
-              ? EconNegExtConsumptionSoda
+              ? EconNegExtIBSoftDrinks
               : isMaxPriceOverride
                 ? EconMaxPriceCeiling
                 : EconNegExtUKEnergy;
