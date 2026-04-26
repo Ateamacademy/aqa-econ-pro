@@ -212,6 +212,14 @@ export function QuestionCard({
     paperKey === "eduqas-p1-a" &&
     /positive\s+consumption\s+externalit/i.test(ibQuestionBody) &&
     /public\s+transport/i.test(ibQuestionBody);
+  // Eduqas Paper 2 — Moderate (eduqas-p2-a) Q2.3 — supermarket abnormal
+  // profits / expansion of Aldi & Lidl. Use the Monopoly Business Objectives
+  // (cost & revenue) reference diagram across Smart Mark / Explain feedback.
+  const isEduqasMonopolyBusinessObjectivesOverride =
+    paperKey === "eduqas-p2-a" &&
+    /costs?\s+and\s+revenue\s+diagram/i.test(ibQuestionBody) &&
+    /abnormal\s+profits?/i.test(ibQuestionBody) &&
+    /(aldi|lidl|supermarket)/i.test(ibQuestionBody);
   const suppressFeedbackDiagramPreview =
     (paperKey === "econ-p1-b" && /question\s*0?[25]/i.test(question.label)) ||
     (paperKey === "econ-p1-a" && /question\s*0?3/i.test(question.label)) ||
