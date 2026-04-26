@@ -25,6 +25,7 @@ import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram.js
 import EconExchangeRateNaira from "@/components/EconExchangeRateNaira.jsx";
 import EconExchangeRatePound from "@/components/EconExchangeRatePound.jsx";
 import EconMultiplierEffect from "@/components/EconMultiplierEffect.jsx";
+import EconADASCostPush from "@/components/EconADASCostPush.jsx";
 import EconPosExtEduqasTransport from "@/components/EconPosExtEduqasTransport.jsx";
 import EconMonopolyBusinessObjectivesEduqas from "@/components/EconMonopolyBusinessObjectivesEduqas.jsx";
 
@@ -263,7 +264,7 @@ export function QuestionCard({
     isWjecP3LngAdAsOverride;
 
   const CanonicalFigure = isWjecP3LngAdAsOverride
-    ? EconMultiplierEffect
+    ? EconADASCostPush
     : isEduqasPoundExchangeRateOverride
     ? EconExchangeRatePound
     : isIbNairaExchangeRateOverride
