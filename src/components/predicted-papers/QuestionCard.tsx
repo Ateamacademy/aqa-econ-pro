@@ -196,7 +196,7 @@ export function QuestionCard({
     isIbPerfectCompetitionFirmXOverride;
 
   const CanonicalFigure = isIbPerfectCompetitionFirmXOverride
-    ? EconPerfectCompetition
+    ? PerfectCompetitionToggleFigure
     : isIbMonopolyDwlOverride
       ? EconMonopolyDWL
       : isIbMcMbAllocOverride
