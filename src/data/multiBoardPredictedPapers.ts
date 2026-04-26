@@ -5250,220 +5250,243 @@ Answer ALL questions. The number of marks is given in brackets at the end of eac
 For each question in Section A, write the letter (A, B, C, D or E) that corresponds to your answer in the box provided. You are advised to spend approximately 30 minutes on this section.
 
 Question 1 [1 mark]
-A firm's average total cost is £8 when output is 200 units, and £7 when output is 250 units. The marginal cost of the additional 50 units is:
-A. £1
-B. £2
-C. £3
-D. £5
-E. £7
+In a perfectly competitive market, a firm is currently earning supernormal profit. According to theory, in the long run:
+A. New firms will enter, supply will rise and the firm's profits will fall to zero economic profit
+B. The firm will cut output to raise price and maintain its supernormal profit
+C. The firm will raise price to maintain profits as new entrants join
+D. Existing firms will collude to block new entrants
+E. The firm will make a loss as cost curves shift upwards
 
 Question 2 [1 mark]
-The price of good X rises by 10% and the quantity demanded of good Y falls by 4%. Goods X and Y are best described as:
-A. Strong substitutes
-B. Weak substitutes
-C. Independent
-D. Weak complements
-E. Strong complements
+A firm's total cost function is TC = 100 + 20Q + 0.5Q². At output level Q = 20, the marginal cost is:
+A. £20
+B. £30
+C. £40
+D. £50
+E. £60
 
 Question 3 [1 mark]
-A monopolist faces a downward-sloping demand curve. At its current output, marginal revenue is £6 and marginal cost is £10. To maximise profit the firm should:
-A. Raise price and reduce output
-B. Lower price and raise output
-C. Keep price and output unchanged
-D. Lower price and reduce output
-E. Raise price and raise output
+Which of the following is most likely to cause a movement along the Phillips curve (rather than a shift of it)?
+A. A fall in the natural rate of unemployment due to improved labour market flexibility
+B. A rise in inflation expectations following a permanent supply shock
+C. A short-term expansionary monetary policy
+D. Stricter trade union legislation
+E. Lower structural unemployment from improved training
 
 Question 4 [1 mark]
-A government runs a primary surplus of 1% of GDP, real GDP grows at 2%, and the average interest rate on debt is 4%. All other things equal, the debt-to-GDP ratio will:
-A. Fall
-B. Rise
-C. Remain constant
-D. Fall only if inflation is negative
-E. It cannot be determined
+A monopsony employer sets wages below the competitive market equilibrium. If a minimum wage is imposed above the monopsony's current wage but below the competitive equilibrium wage, the effect will be:
+A. Unemployment rises, wages rise
+B. Employment rises, wages rise
+C. Employment falls, wages fall
+D. Employment is unchanged, wages rise
+E. Employment rises, wages are unchanged
 
 Question 5 [1 mark]
-The marginal propensity to consume is 0.6 and the marginal tax rate is 0.25. Ignoring imports, the value of the multiplier is approximately:
-A. 1.25
-B. 1.67
-C. 1.82
-D. 2.00
-E. 2.50
+The Gini coefficient for country X falls from 0.45 to 0.38. This indicates that:
+A. Average incomes have risen
+B. The Lorenz curve has moved further from the line of equality
+C. Income inequality has decreased
+D. GDP has grown
+E. The wealthiest 10% now hold a larger share of total income
 
 Question 6 [1 mark]
-A perfectly competitive firm is in long-run equilibrium. Which of the following must be true?
-A. Price is greater than marginal cost
-B. The firm earns supernormal profit
-C. Price equals minimum average total cost
-D. Marginal revenue exceeds average revenue
-E. Output is below the productively efficient level
+The chart shows an economy's M4 money supply (£tn) and the Bank Rate (%):
+
+| Year | M4 (£tn) | Bank Rate (%) |
+|------|----------|----------------|
+| 2020 | 2.60 | 0.10 |
+| 2021 | 2.80 | 0.10 |
+| 2022 | 2.90 | 1.00 |
+| 2023 | 2.95 | 4.25 |
+| 2024 | 2.92 | 5.00 |
+
+Which of the following provides the best explanation for the pattern shown?
+A. Higher interest rates have increased the money multiplier
+B. Higher interest rates have reduced the demand for loans, slowing broad money growth
+C. The central bank has engaged in quantitative easing
+D. The government has cut taxes
+E. The central bank has cut reserve requirements
 
 Question 7 [1 mark]
-A central bank raises its policy interest rate by 0.5 percentage points. In the short run, the most likely effects are:
-A. The exchange rate appreciates and AD falls
-B. The exchange rate depreciates and AD rises
-C. The exchange rate appreciates and AD rises
-D. The exchange rate depreciates and AD falls
-E. No change in either the exchange rate or AD
+Sticky wages in the short run would be most consistent with which of the following?
+A. A perfectly elastic short-run aggregate supply curve
+B. A vertical long-run aggregate supply curve
+C. A vertical short-run aggregate supply curve
+D. An upward-sloping short-run aggregate supply curve
+E. A downward-sloping short-run aggregate supply curve
 
 Question 8 [1 mark]
-A natural monopoly is best described as a market in which:
-A. The government grants exclusive production rights
-B. Long-run average cost falls continuously over the relevant range of output
-C. There are no fixed costs
-D. The product is essential to consumers
-E. Demand is perfectly inelastic
+A good has PED = −0.3 and YED = +0.2. If prices rise by 10% and incomes rise by 5% simultaneously, the total effect on quantity demanded will be approximately:
+A. +4% increase
+B. −2% decrease
+C. +1% increase
+D. −4% decrease
+E. −5% decrease
 
 Question 9 [1 mark]
-The Gini coefficient for a country falls from 0.42 to 0.36. This indicates:
-A. A rise in absolute poverty
-B. A more equal distribution of income
-C. A more unequal distribution of income
-D. A fall in average incomes
-E. No change in income distribution
+An economy has nominal GDP of £2,000bn in year 1 and £2,080bn in year 2. Inflation over the period is 5%. Real GDP has:
+A. Risen by 4%
+B. Risen by 1%
+C. Fallen by 1%
+D. Remained unchanged
+E. Fallen by 4%
 
 Question 10 [1 mark]
-A specific (unit) tax of £1.50 is imposed on a good. The supply curve is perfectly elastic and demand is downward sloping. The full incidence of the tax falls on:
-A. Producers
-B. Consumers
-C. Government
-D. Foreign suppliers
-E. Equally on producers and consumers
+Natural monopolies are typically characterised by:
+A. High marginal costs and low fixed costs
+B. Constant returns to scale across all output levels
+C. A long-run average cost curve that is still falling at the output level required to satisfy market demand
+D. Perfectly elastic supply curves
+E. High cross-price elasticity with substitutes
 
 Question 11 [1 mark]
-The Lorenz curve for an economy moves further away from the line of equality. This indicates:
-A. A fall in the Gini coefficient
-B. A more equal distribution of income
-C. A more unequal distribution of income
-D. A rise in average incomes
-E. A fall in absolute poverty
+The 'paradox of thrift' refers to the idea that:
+A. Individual saving always increases national wealth
+B. High savings cause high inflation
+C. If all households try to save more, aggregate saving may actually fall due to lower aggregate demand
+D. Saving and investment must always be equal
+E. Thrift reduces long-run growth by lowering capital accumulation
 
 Question 12 [1 mark]
-A negative production externality, in the absence of intervention, leads to a level of output where:
-A. Marginal social cost equals marginal social benefit
-B. Marginal private cost exceeds marginal social cost
-C. Output is below the socially optimal level
-D. Output is above the socially optimal level
-E. Marginal external cost is zero
+A price-discriminating monopolist separates the market into two sub-markets. For profit maximisation, the firm should set prices such that:
+A. Marginal revenue is equal in both markets and equal to marginal cost
+B. Price is the same in both markets
+C. Price elasticity of demand is identical in both markets
+D. Total revenue is maximised in each market
+E. The firm sells the same quantity in both markets
 
 Question 13 [1 mark]
-A country's nominal GDP rises by 6% in a year while its GDP deflator rises by 4%. The growth rate of real GDP is approximately:
-A. 1.9%
-B. 2.0%
-C. 2.5%
-D. 4.0%
-E. 10.0%
+The diagram shows a Lorenz curve for two economies, X and Y:
+
+| | Share of income held by bottom 50% | Share held by top 10% |
+|---|---|---|
+| Economy X | 18% | 39% |
+| Economy Y | 25% | 28% |
+
+Which of the following statements is correct?
+A. Economy X is more equal than Economy Y
+B. The Gini coefficient of Economy Y is higher than that of Economy X
+C. The Lorenz curve of Economy X lies closer to the line of perfect equality
+D. Economy Y has a lower Gini coefficient than Economy X
+E. Income inequality is identical in the two economies
 
 Question 14 [1 mark]
-Which of the following is most likely to shift the long-run aggregate supply (LRAS) curve to the right?
-A. A rise in the price level
-B. A cut in the policy interest rate
-C. A discovery of new oil reserves
-D. An increase in government spending
-E. A depreciation of the exchange rate
+Crowding out is most likely to occur when:
+A. The economy has substantial spare capacity and interest rates are at the zero lower bound
+B. The economy is near full employment and government borrowing drives up interest rates
+C. The central bank engages in aggressive quantitative easing
+D. The marginal propensity to consume is very high
+E. Taxes are cut in a deep recession
 
 Question 15 [1 mark]
-A firm's average fixed cost is £4 at 100 units of output. At 200 units of output, average fixed cost is:
-A. £1
-B. £2
-C. £4
-D. £8
-E. £16
+If the Marshall–Lerner condition holds, a depreciation of a country's currency will, in the long run:
+A. Worsen the current account
+B. Leave the current account unchanged
+C. Improve the current account
+D. Cause a surplus on the capital account
+E. Reduce import prices in domestic currency
 
 Question 16 [1 mark]
-A consumer maximises utility when:
-A. Total utility is maximised across all goods
-B. Marginal utility per pound spent is equal across all goods
-C. Marginal utility is zero for all goods
-D. Average utility per pound spent is equalised
-E. Total spending is minimised
+Which of the following is a valid criticism of using GDP per capita to compare living standards between countries?
+A. It ignores the black / informal economy, environmental degradation and income distribution
+B. It adjusts for differences in price levels between countries
+C. It weights output by its contribution to welfare
+D. It includes household production and volunteer work
+E. It includes negative externalities as a deduction from output
 
 Question 17 [1 mark]
-A monopsony employer in the labour market, compared to a competitive labour market, will most likely:
-A. Pay a higher wage and employ more workers
-B. Pay a lower wage and employ fewer workers
-C. Pay a lower wage and employ more workers
-D. Pay a higher wage and employ fewer workers
-E. Pay the same wage and employ the same number of workers
+A kinked demand curve in oligopoly predicts that:
+A. Firms will frequently change their prices
+B. Firms will always engage in price wars
+C. Prices will tend to be rigid because firms fear that price increases will not be matched while price cuts will be
+D. Non-price competition is ineffective
+E. Firms colluding openly can always achieve the monopoly outcome
 
 Question 18 [1 mark]
-The Phillips curve in the short run shows:
-A. A positive relationship between inflation and unemployment
-B. A negative relationship between inflation and unemployment
-C. No relationship between inflation and unemployment
-D. A vertical line at the natural rate of unemployment
-E. A horizontal line at the inflation target
+Liquidity trap conditions exist when:
+A. Interest rates are very low and further monetary easing fails to stimulate aggregate demand
+B. Bond yields exceed the rate of inflation
+C. Households hold too little cash
+D. Reserve requirements are binding
+E. Banks run out of liquid assets to sell
 
 Question 19 [1 mark]
-A country has a J-curve effect following a currency depreciation. In the short run, the current account balance:
-A. Improves immediately
-B. Worsens before improving
-C. Improves before worsening
-D. Remains unchanged
-E. Worsens permanently
+A country maintains a fixed exchange rate above the market-clearing rate. Which of the following is most likely to result?
+A. A rise in foreign reserves as the central bank buys up excess foreign currency
+B. An excess supply of the domestic currency that must be absorbed using foreign reserves
+C. A spontaneous market correction towards equilibrium
+D. An automatic surplus on the current account
+E. A reduction in domestic inflation
 
 Question 20 [1 mark]
-A merger between two firms producing the same product at the same stage of production is best described as:
-A. Horizontal integration
-B. Forward vertical integration
-C. Backward vertical integration
-D. Conglomerate integration
-E. A management buyout
+The Laffer curve implies that:
+A. Tax revenue always rises as tax rates rise
+B. Tax cuts always pay for themselves by boosting revenues
+C. There is a rate of taxation that maximises tax revenue, beyond which further rate rises reduce revenue
+D. All governments should cut taxes
+E. Income taxes should always be lower than corporate taxes
 
 ## Section B — Structured Questions (40 marks)
 
 Question 21 [4 marks]
-The chart below shows UK CPI inflation (annual %) and Bank Rate (%) between 2020 and 2024.
+The charts below show (1) the US Federal Reserve's policy interest rate and (2) the USD/EUR exchange rate over the same period.
 
-CPI inflation (%): 2020: 0.9 | 2021: 2.6 | 2022: 9.1 | 2023: 7.3 | 2024: 2.5
-Bank Rate (%):    2020: 0.10 | 2021: 0.25 | 2022: 3.50 | 2023: 5.25 | 2024: 4.75
+Chart 1 — Federal Reserve policy rate (%):
+Jan 2022: 0.25 | Jun 2022: 1.75 | Dec 2022: 4.50 | Jun 2023: 5.25 | Dec 2023: 5.50 | Jun 2024: 5.50
 
-Using the data, explain the relationship between the two series.
+Chart 2 — USD/EUR exchange rate (USD per 1 EUR):
+Jan 2022: 1.13 | Jun 2022: 1.05 | Dec 2022: 1.07 | Jun 2023: 1.09 | Dec 2023: 1.10 | Jun 2024: 1.07
+
+Using the data, explain the likely link between the two charts.
 
 Question 22 [7 marks]
-The diagram below illustrates the market for cigarettes, which generates negative consumption externalities.
-[Diagram: a supply curve MPC = MSC, a private demand curve D = MPB, and a marginal social benefit curve MSB to the LEFT of and below D = MPB. Free market equilibrium is at Q1, with social optimum at Q2 where MSC = MSB and Q2 < Q1.]
-Using the diagram, discuss whether the government should impose a higher specific tax on cigarettes.
+The diagram below illustrates the effect of negative production externalities in a market for industrial goods, where MSC > MPC.
+[Diagram: Demand curve D = MSB, Marginal Private Cost curve MPC, and Marginal Social Cost curve MSC above MPC. Market equilibrium Qm (where MPC = MSB) exceeds social optimum Qs (where MSC = MSB). A welfare loss triangle exists between MSC and MSB for output Qs to Qm.]
+Using the diagram, discuss whether a carbon tax is the best policy response to industrial pollution.
 
 Question 23 [4 marks]
-Two airlines, AirX and AirY, are deciding whether to enter a new transatlantic route. The matrix below shows the resulting annual profits (£m) for each firm depending on the combination of decisions.
+Two rival airlines, NorthAir and SouthFly, are deciding whether to set a High or Low price on a competitive route. Neither knows the other's decision and their products are close substitutes. The payoff matrix (annual profits, £m) is:
 
-|  | AirY: Enter | AirY: Stay out |
+|  | SouthFly: High price | SouthFly: Low price |
 |---|---|---|
-| **AirX: Enter** | −£10m, −£10m | £80m, £0 |
-| **AirX: Stay out** | £0, £80m | £0, £0 |
+| **NorthAir: High price** | £80m, £80m | £30m, £110m |
+| **NorthAir: Low price** | £110m, £30m | £50m, £50m |
 
-Use the data to explain whether this game has a dominant strategy equilibrium.
+Use the data to explain where the Nash equilibrium lies in this matrix and why collusion between the firms might be difficult to sustain.
 
 Question 24 [8 marks]
-The UK economy is operating close to full capacity with CPI inflation above target. The Bank of England is considering a further increase in Bank Rate.
+The chart and extract below describe UK economic conditions.
 
-Diagram 1: UK CPI inflation (%, annual)
-2022 Q1: 6.2 | 2022 Q3: 9.6 | 2023 Q1: 10.1 | 2023 Q3: 6.7 | 2024 Q1: 3.8 | 2024 Q3: 2.5
+Chart 1 — UK CPI inflation (%) and unemployment rate (%):
+2020: CPI 0.9%, Unemployment 4.6% | 2021: CPI 2.6%, Unemployment 4.6% | 2022: CPI 9.1%, Unemployment 3.7% | 2023: CPI 7.3%, Unemployment 4.0% | 2024: CPI 2.5%, Unemployment 4.4%
 
-Diagram 2: UK real GDP growth (%, annual)
-2022 Q1: 8.7 | 2022 Q3: 2.0 | 2023 Q1: 0.4 | 2023 Q3: 0.6 | 2024 Q1: 0.7 | 2024 Q3: 1.0
+**Extract:** UK inflation reached a 40-year high of 11.1% in October 2022, driven by soaring energy and food prices following the Russia–Ukraine conflict, and by post-pandemic supply bottlenecks. The Bank of England raised Bank Rate from 0.1% in late 2021 to 5.25% by August 2023 to bring inflation back to its 2% target. However, unemployment has remained historically low, and real wages have fallen for many workers.
 
-Using the data, discuss whether a further rise in Bank Rate is likely to be effective in returning CPI inflation to the 2% target.
+Using the data, discuss whether the Phillips curve remains a useful framework for understanding the inflation–unemployment relationship in the UK.
 
 Question 25 [8 marks]
-The table below provides selected 2022 Sustainable Development Goal indicators for two countries, Bangladesh and Kenya.
+The table below provides 2022 HDI data for two countries, Saudi Arabia and Costa Rica.
 
-| | GNI/capita (PPP $) | Life expectancy (years) | Adult literacy (%) | Access to electricity (%) | Gini coefficient |
-|---|---|---|---|---|---|
-| **Bangladesh** | 6,510 | 72.4 | 75.6 | 99.4 | 0.32 |
-| **Kenya** | 5,030 | 61.4 | 82.6 | 76.5 | 0.40 |
+| | Classification | HDI | Life expectancy | Mean years schooling | Expected years schooling | GNI/capita (PPP $) |
+|---|---|---|---|---|---|---|
+| **Saudi Arabia** | Very High | 0.875 | 78.8 | 11.3 | 16.1 | 54,992 |
+| **Costa Rica** | Very High | 0.806 | 77.3 | 8.8 | 16.2 | 23,909 |
 
-Discuss whether it is reasonable to conclude that Bangladesh has achieved a higher level of economic development than Kenya.
+Additional data: Gini coefficient — Saudi Arabia 0.459, Costa Rica 0.487. Gender Inequality Index (GII) — Saudi Arabia 0.569, Costa Rica 0.256.
+
+Discuss whether the HDI alone is sufficient to conclude that Saudi Arabia has a higher level of development than Costa Rica.
 
 Question 26 [9 marks]
-The extract and chart below relate to the UK housing market.
+The chart and extract below provide information on global oil (Brent crude) prices.
 
-Chart: UK average house price (£000s)
-2019: 232 | 2020: 246 | 2021: 268 | 2022: 290 | 2023: 285 | 2024: 292
+Chart: Brent crude oil price (US$ per barrel)
+Jan 2022: 86 | Jun 2022: 123 | Dec 2022: 81 | Jun 2023: 75 | Dec 2023: 77 | Jun 2024: 82
 
-**Extract:** UK house prices have risen sharply since 2020, partly driven by ultra-low interest rates and a structural shortage of new housing supply. Planning restrictions limit the speed at which new homes can be built, while population growth and changing household composition continue to add to demand. Higher mortgage rates since 2022 have cooled the market, but prices remain well above pre-pandemic levels. Some commentators argue that housing has become unaffordable for younger households, with the average first-time buyer now needing a deposit of more than 20% of the property value.
+**Extract:** OPEC+ continues to restrict output in an attempt to stabilise prices, with Saudi Arabia announcing further voluntary cuts of 1 million barrels per day. Meanwhile, US shale oil producers have increased output significantly, reaching record levels of 13.2 million barrels per day.
 
-Using supply and demand diagram(s), discuss the main causes of the long-run rise in UK house prices and evaluate the case for government intervention to improve affordability.
+On the demand side, the International Energy Agency forecasts that global demand for oil will peak by 2030 as electric vehicle adoption accelerates — over 17% of new car sales globally are now electric. However, demand from developing economies (particularly India and Southeast Asia) continues to grow strongly. Geopolitical tensions in the Middle East have added a risk premium to prices. A possible recession in major advanced economies may reduce industrial oil demand.
+
+Using supply and demand diagram(s), discuss whether the data suggests that oil prices are more likely to rise or fall in the future.
 `,
   },
   {
@@ -5484,220 +5507,251 @@ Answer ALL questions. The number of marks is given in brackets at the end of eac
 For each question in Section A, write the letter (A, B, C, D or E) that corresponds to your answer in the box provided. You are advised to spend approximately 30 minutes on this section.
 
 Question 1 [1 mark]
-A consumer's income rises by 8% and quantity demanded of good Z falls by 2%. The income elasticity of demand for good Z is:
-A. +4.00
-B. +0.25
-C. −0.25
-D. −0.40
-E. −4.00
+A firm's total cost function is TC = 200 + 30Q − 2Q² + 0.2Q³. At output Q = 10, the average fixed cost and marginal cost are:
+A. AFC = £20, MC = £20
+B. AFC = £20, MC = £50
+C. AFC = £30, MC = £50
+D. AFC = £30, MC = £20
+E. AFC = £50, MC = £30
 
 Question 2 [1 mark]
-A firm operating in a contestable market will, in long-run equilibrium, most likely:
-A. Earn supernormal profit indefinitely
-B. Charge a price equal to marginal cost
-C. Earn only normal profit, even with a small number of incumbents
-D. Restrict output below the productively efficient level
-E. Behave like a pure monopolist
+In a Cournot duopoly with homogeneous products, linear inverse demand P = 120 − Q, and each firm facing a constant marginal cost of £30, the symmetric Nash equilibrium output for each firm is:
+A. 22.5
+B. 30
+C. 45
+D. 60
+E. 90
 
 Question 3 [1 mark]
-The Lerner index for a firm equals (P − MC) / P. A profit-maximising monopolist faces a constant elasticity demand curve with elasticity = −2. The Lerner index is:
-A. 0.25
-B. 0.33
-C. 0.50
-D. 0.67
-E. 1.00
+An economy has a marginal propensity to consume of 0.8, a marginal tax rate of 0.25, and a marginal propensity to import of 0.15. The Keynesian multiplier is approximately:
+A. 1.67
+B. 1.82
+C. 2.00
+D. 2.86
+E. 5.00
 
 Question 4 [1 mark]
-A government cuts the basic rate of income tax. According to the Laffer curve, government tax revenue will rise if the economy is currently:
-A. On the upward-sloping part of the curve
-B. On the downward-sloping part of the curve
-C. At the revenue-maximising point
-D. At zero tax rate
-E. At 100% tax rate
+The yield curve inverts (short-term interest rates exceed long-term rates). Which of the following is the most common interpretation by financial markets?
+A. Investors expect short-term interest rates to rise further
+B. Investors expect a recession, during which the central bank will cut rates
+C. Inflation expectations have risen sharply
+D. The government plans to issue more long-dated debt
+E. Investors have become more risk-averse on short-duration bonds
 
 Question 5 [1 mark]
-A central bank conducts quantitative easing by purchasing £100 billion of government bonds. The most likely short-run effects are:
-A. Bond prices fall and bond yields rise
-B. Bond prices rise and bond yields fall
-C. Bond prices and bond yields both rise
-D. Bond prices and bond yields both fall
-E. No change in bond prices or yields
+A price-discriminating monopolist faces two separated markets with demand P₁ = 100 − Q₁ in market 1 and P₂ = 80 − 2Q₂ in market 2. MC is constant at £20. The profit-maximising prices are:
+A. P₁ = £40, P₂ = £30
+B. P₁ = £50, P₂ = £40
+C. P₁ = £60, P₂ = £50
+D. P₁ = £40, P₂ = £50
+E. P₁ = £70, P₂ = £60
 
 Question 6 [1 mark]
-The Solow growth model predicts that, in the long run, sustained per-capita income growth requires:
-A. A higher savings rate
-B. A higher rate of capital accumulation
-C. Technological progress
-D. A higher rate of population growth
-E. A larger labour force
+A contestable market is characterised by:
+A. Many firms producing homogeneous products with perfect information
+B. Low barriers to entry and exit, meaning that the threat of entry disciplines incumbent behaviour even if the actual number of firms is small
+C. A single firm earning supernormal profit protected by regulation
+D. Firms that collude using tacit agreements to fix prices
+E. Firms that engage in both first- and third-degree price discrimination
 
 Question 7 [1 mark]
-A country has a fixed exchange rate against the US dollar and is experiencing persistent capital outflows. To defend the peg, the central bank should:
-A. Buy domestic currency and sell foreign reserves
-B. Sell domestic currency and buy foreign reserves
-C. Cut interest rates
-D. Print more domestic currency
-E. Devalue the currency immediately
+The chart shows US Treasury yield data:
+
+| Bond maturity | 2022 yield (%) | 2024 yield (%) |
+|---|---|---|
+| 3-month | 0.08 | 5.35 |
+| 2-year | 0.73 | 4.85 |
+| 10-year | 1.52 | 4.30 |
+| 30-year | 1.90 | 4.50 |
+
+Which of the following conclusions is best supported by the data?
+A. The yield curve was inverted in 2022 and upward-sloping in 2024
+B. The yield curve was upward-sloping in 2022 and has partially inverted in 2024
+C. Inflation expectations were higher in 2022 than in 2024
+D. Long-term bond prices have risen between 2022 and 2024
+E. Risk premiums have fallen for all maturities
 
 Question 8 [1 mark]
-A firm price-discriminates between two markets with elasticities of demand of −1.5 (market A) and −3 (market B). To maximise profit it should charge:
-A. A higher price in market A
-B. A higher price in market B
-C. The same price in both markets
-D. The price equal to marginal cost in both markets
-E. A price below marginal cost in market B
+Okun's law, in its typical formulation, implies that:
+A. A 1% rise in inflation is associated with a 1% fall in unemployment
+B. A 1 percentage point rise in unemployment is associated with roughly a 2% fall in real GDP relative to trend
+C. Unemployment and inflation always move in the same direction
+D. Productivity growth determines the unemployment rate in the long run
+E. Labour force participation is unrelated to the business cycle
 
 Question 9 [1 mark]
-A negative demand-side shock in a closed economy will, in the short run, most likely cause:
-A. A rise in real GDP and a fall in the price level
-B. A fall in real GDP and a rise in the price level
-C. A fall in both real GDP and the price level
-D. A rise in both real GDP and the price level
-E. No change in either real GDP or the price level
+A government imposes a tradable pollution permit scheme with a fixed number of permits. Compared to a Pigouvian (emissions) tax at the same initial marginal abatement cost, the permit system:
+A. Guarantees a particular emissions quantity but allows the price of permits to vary with demand
+B. Guarantees a particular permit price but allows emissions quantity to vary
+C. Always raises more government revenue
+D. Is equivalent under all conditions
+E. Cannot lead to the social optimum
 
 Question 10 [1 mark]
-The natural rate of unemployment in an economy rises. All other things equal, this most likely reflects:
-A. A fall in cyclical unemployment
-B. A rise in structural and frictional unemployment
-C. A fall in the participation rate
-D. A rise in real wages
-E. A fall in the price level
+The 'Dutch disease' hypothesis describes a situation in which:
+A. Currency depreciation damages exporters
+B. A boom in one tradable sector (often resource extraction) causes real exchange rate appreciation that damages other tradable sectors
+C. Manufacturing declines due to automation
+D. Tulip markets overheat and collapse
+E. Rising productivity always causes unemployment
 
 Question 11 [1 mark]
-A perfectly price-discriminating monopolist, compared to a single-price monopolist:
-A. Produces the same output at a higher price
-B. Produces less output at a higher average price
-C. Produces the allocatively efficient output but extracts all consumer surplus
-D. Earns lower profits
-E. Faces a higher marginal cost curve
+In a Solow growth model, a country in steady state with technology growth rate g, population growth rate n, and depreciation rate δ will have real output per worker growing at a rate of:
+A. 0
+B. n
+C. g
+D. n + g
+E. n + g + δ
 
 Question 12 [1 mark]
-A government introduces a tradable pollution permit scheme with a fixed cap. If demand for permits rises, the most likely outcome is:
-A. The price of permits falls and total emissions rise
-B. The price of permits rises and total emissions are unchanged
-C. The price of permits is unchanged and total emissions rise
-D. The price of permits rises and total emissions fall
-E. The scheme has no effect on emissions
+Quantitative easing (QE) by the central bank would, in theory, most directly:
+A. Increase the monetary base by creating central bank reserves to purchase long-dated assets
+B. Reduce the money multiplier by raising reserve requirements
+C. Raise the policy interest rate
+D. Reduce the stock of government debt outstanding in private hands and cannot affect long bond yields
+E. Increase the fiscal deficit
 
 Question 13 [1 mark]
-A small open economy adopts a flexible exchange rate. According to the Mundell–Fleming model, monetary policy is:
-A. Completely ineffective in influencing real GDP
-B. Highly effective in influencing real GDP
-C. Effective only if combined with fiscal policy
-D. Effective only at full employment
-E. Effective only in the long run
+A monopsonist in a labour market has marginal cost of labour MCL that lies above the labour supply (wage) curve because:
+A. Trade unions impose a wage floor
+B. Monopsonists are forced to pay all existing workers the higher wage required to attract an additional worker
+C. Workers have monopoly power
+D. The supply curve of labour is perfectly elastic
+E. Marginal product of labour diminishes
 
 Question 14 [1 mark]
-A firm has a price-cost margin (P − MC)/P of 0.40. The implied price elasticity of demand for its product is:
-A. −0.40
-B. −1.40
-C. −1.67
-D. −2.50
-E. −4.00
+The chart shows UK labour productivity (output per hour, 2015 = 100):
+
+| Year | Output per hour |
+|---|---|
+| 2015 | 100.0 |
+| 2018 | 102.3 |
+| 2021 | 103.1 |
+| 2022 | 101.8 |
+| 2023 | 102.0 |
+| 2024 | 101.5 |
+
+Which of the following is the most appropriate description of UK productivity over this period?
+A. Productivity has grown at approximately the long-term trend rate of 2% per year
+B. Productivity has stagnated at far below the historical trend rate
+C. Productivity growth has accelerated sharply
+D. Productivity has fallen every year since 2015
+E. Productivity has matched the G7 average
 
 Question 15 [1 mark]
-A country's terms of trade improve by 5%. All other things equal, this is most likely to:
-A. Worsen the current account balance in the short run
-B. Improve real living standards
-C. Reduce real GDP
-D. Cause higher unemployment
-E. Have no effect on national welfare
+An economy with a rigid real wage above the equilibrium level will experience:
+A. Frictional unemployment only
+B. Cyclical unemployment
+C. Classical (real-wage) unemployment, because labour supply exceeds labour demand at the prevailing wage
+D. Disguised unemployment
+E. No unemployment if productivity is high enough
 
 Question 16 [1 mark]
-A government raises the minimum wage above the existing market-clearing wage in a competitive labour market. The most likely short-run effect is:
-A. A fall in employment and a rise in unemployment
-B. A rise in employment and a fall in unemployment
-C. No change in employment or unemployment
-D. A fall in both employment and unemployment
-E. A rise in both employment and unemployment
+The Heckscher–Ohlin theorem predicts that a country will export:
+A. Goods in which it has the highest labour productivity
+B. Goods that intensively use its relatively abundant factor of production
+C. Goods that have the highest value-added
+D. Goods it produces using the most advanced technology
+E. Goods protected by tariffs abroad
 
 Question 17 [1 mark]
-The Coase theorem suggests that, in the absence of transaction costs and with well-defined property rights, externalities can be resolved by:
-A. Government taxation
-B. Direct regulation
-C. Private bargaining between affected parties
-D. Tradable permits issued by government
-E. A subsidy financed by general taxation
+The Lucas critique argues that:
+A. Macroeconomic data are too noisy to be useful
+B. Estimated parameters from historical data may not be valid when policy changes, because economic agents will adjust their expectations and behaviour
+C. Fiscal policy is always ineffective
+D. Rational expectations cannot be formed
+E. Governments should target money supply instead of inflation
 
 Question 18 [1 mark]
-A country's central bank adopts inflation targeting. In the long run, the most likely outcome is:
-A. Lower average unemployment
-B. Higher average unemployment
-C. More stable inflation expectations
-D. A permanently higher growth rate
-E. A permanently lower exchange rate
+A country runs a persistent current account deficit equal to 5% of GDP financed mainly by portfolio inflows. Which of the following would represent the greatest macroeconomic risk?
+A. A rise in domestic saving
+B. A sudden stop — foreign investors lose confidence and rapidly withdraw capital
+C. An improvement in the terms of trade
+D. A rise in domestic export productivity
+E. A depreciation of the currency
 
 Question 19 [1 mark]
-A profit-maximising firm operates in two countries with corporate tax rates of 19% (country A) and 30% (country B). To minimise its global tax bill via transfer pricing it should:
-A. Set a high transfer price on goods sold from A to B
-B. Set a low transfer price on goods sold from A to B
-C. Set the same transfer price in both directions
-D. Avoid intra-firm trade altogether
-E. Move all production to country B
+A monopolist with demand P = 200 − 2Q and cost function TC = 50 + 20Q + Q² will earn economic profit of:
+A. £2,000
+B. £2,350
+C. £2,650
+D. £2,900
+E. £3,200
 
 Question 20 [1 mark]
-A country abolishes a tariff on imported steel. In the short run, the most likely effects on the domestic steel market are:
-A. Domestic price rises, domestic output rises, imports fall
-B. Domestic price falls, domestic output falls, imports rise
-C. Domestic price falls, domestic output rises, imports fall
-D. Domestic price rises, domestic output falls, imports rise
-E. No change in domestic price, output or imports
+Which of the following is most consistent with 'secular stagnation' as articulated by Larry Summers?
+A. Temporarily weak demand during a recession
+B. A sustained imbalance in which desired saving exceeds desired investment at a zero real interest rate, producing chronically weak demand and low growth
+C. High inflation caused by monetary loosening
+D. A one-off productivity slowdown after a financial crisis
+E. A rise in the natural rate of unemployment
 
 ## Section B — Structured Questions (40 marks)
 
 Question 21 [4 marks]
-The chart below shows UK real wages index (2015 = 100) and UK labour productivity index (2015 = 100) between 2018 and 2024.
+The charts below show (1) the US 10-year minus 2-year Treasury yield spread (%) and (2) the year-on-year change in US real GDP (%).
 
-Real wages index: 2018: 102 | 2019: 104 | 2020: 105 | 2021: 106 | 2022: 102 | 2023: 100 | 2024: 102
-Productivity index: 2018: 101 | 2019: 102 | 2020: 104 | 2021: 105 | 2022: 105 | 2023: 105 | 2024: 106
+Chart 1 — US 10Y–2Y yield spread (%):
+2019: +0.21 | 2020: +0.54 | 2021: +1.12 | 2022: −0.48 | 2023: −0.42 | 2024: −0.28
 
-Using the data, explain the relationship between the two series.
+Chart 2 — US real GDP year-on-year growth (%):
+2019: +2.3 | 2020: −2.2 | 2021: +5.8 | 2022: +2.1 | 2023: +2.5 | 2024: +2.8
+
+Using the data, explain the relationship between the two charts and comment on its reliability as a recession indicator.
 
 Question 22 [7 marks]
-The diagram below illustrates the market for higher education, which has positive consumption externalities.
-[Diagram: a supply curve MPC = MSC, a private demand curve D = MPB, and a marginal social benefit curve MSB to the right of D = MPB. Free market equilibrium is at Q1, with social optimum at Q2 where MSC = MSB and Q2 > Q1.]
-Using the diagram, discuss whether the UK government should increase the per-student teaching grant to universities.
+The diagram below illustrates the market for a good with negative production externalities, alongside a marginal abatement cost (MAC) curve for pollution associated with production.
+[Diagram 1: a standard market diagram with MPC below MSC, D = MSB, free-market equilibrium Qm at MPC = MSB above social optimum Qs at MSC = MSB. Welfare loss triangle shown between MSC and MSB from Qs to Qm.]
+[Diagram 2: a MAC curve (downward sloping in emissions reduced) showing that the first units of abatement are cheap but marginal abatement cost rises rapidly at high abatement levels. The social optimum is where MAC = marginal external damage.]
+Using the diagrams, discuss whether a tradable pollution permit system is superior to a Pigouvian (emissions) tax when there is uncertainty about the slope of the marginal abatement cost curve.
 
 Question 23 [4 marks]
-Two supermarket chains, BigMart and ValueCo, are deciding whether to launch a price-cutting campaign. The matrix below shows the resulting annual profits (£m) for each firm depending on the combination of decisions.
+An incumbent monopolist (Firm I) has invested in excess production capacity. A potential entrant (Firm E) is deciding whether to enter the market. If Firm E enters, Firm I chooses whether to Fight (use its excess capacity to flood the market) or Accommodate (share the market). The payoff matrix (Firm E's profit, Firm I's profit, £m) is:
 
-|  | ValueCo: Cut prices | ValueCo: Hold prices |
+|  | Firm I: Fight | Firm I: Accommodate |
 |---|---|---|
-| **BigMart: Cut prices** | £20m, £20m | £55m, £15m |
-| **BigMart: Hold prices** | £15m, £55m | £40m, £40m |
+| **Firm E: Enter** | −£20m, £30m | £25m, £60m |
+| **Firm E: Stay out** | £0, £120m | £0, £120m |
 
-Use the data to explain whether the Nash equilibrium of this game is also Pareto efficient.
+Use the data to explain the Nash equilibrium and whether Firm I's threat to fight would be credible.
 
 Question 24 [8 marks]
-The UK economy is experiencing slow real GDP growth, productivity stagnation and rising public debt. The Chancellor proposes a £20 billion supply-side package focused on R&D tax credits and skills funding.
+The chart and extract below describe UK productivity.
 
-Diagram 1: UK labour productivity (output per hour, % annual change)
-2019: 0.4 | 2020: 0.6 | 2021: 1.7 | 2022: −0.5 | 2023: 0.1 | 2024: 0.3
+Chart: UK output per hour (index, 2015 = 100)
+2015: 100.0 | 2017: 100.9 | 2019: 101.8 | 2020: 103.4 | 2021: 103.1 | 2022: 101.8 | 2023: 102.0 | 2024: 101.5
 
-Diagram 2: UK public sector net debt (% of GDP)
-2019: 82 | 2020: 95 | 2021: 96 | 2022: 97 | 2023: 98 | 2024: 99
+*Comparison: G7 average output per hour grew by approximately 8% over the 2015–2024 period.*
 
-Using the data, discuss whether such a supply-side package is likely to raise the UK's long-run trend rate of growth.
+**Extract:** The government is considering a package of supply-side reforms including: (i) permanent full expensing of capital investment; (ii) expanded technical training and apprenticeships; (iii) planning reform to accelerate infrastructure delivery; (iv) enhanced R&D tax credits; and (v) measures to increase labour force participation.
+
+Using the data, discuss whether such supply-side policies are likely to raise the UK's long-run growth rate significantly.
 
 Question 25 [8 marks]
-The table below provides selected 2022 development indicators for two countries, India and Indonesia.
+The table below provides data on four countries.
 
-| | GNI/capita (PPP $) | HDI | Life expectancy | Mean years schooling | Gini coefficient |
+| | HDI | GNI/capita (PPP $) | Gini coefficient | IHDI (inequality-adjusted) | MPI (multidimensional poverty) |
 |---|---|---|---|---|---|
-| **India** | 8,930 | 0.644 | 67.7 | 6.6 | 0.36 |
-| **Indonesia** | 13,250 | 0.713 | 71.9 | 8.8 | 0.39 |
+| **South Africa** | 0.717 | 13,468 | 0.630 | 0.478 | 0.025 |
+| **Sri Lanka** | 0.782 | 13,086 | 0.377 | 0.697 | 0.011 |
 
-Discuss whether it is reasonable to conclude that Indonesia has achieved a higher level of human development than India.
+Note: The Gini coefficient ranges from 0 (perfect equality) to 1 (perfect inequality). The MPI (multidimensional poverty index) measures acute poverty across health, education and living standards; lower values are better.
+
+Discuss whether, on the basis of the data provided, Sri Lanka can be considered more developed than South Africa.
 
 Question 26 [9 marks]
-The extract and chart below relate to the UK net-zero transition.
+The chart and extract below give information on the UK housing market.
 
-Chart: UK greenhouse gas emissions (Mt CO₂e)
-2010: 626 | 2015: 514 | 2018: 470 | 2020: 412 | 2022: 417 | 2024: 384
+Chart: UK average house price (£000) and 2-year fixed mortgage rate (%)
+2020 Q1: £235k, 1.8% | 2021 Q1: £251k, 1.6% | 2022 Q1: £277k, 1.6% | 2023 Q1: £290k, 4.4% | 2024 Q1: £282k, 5.8%
 
-**Extract:** The UK has set a legally binding target of net-zero greenhouse gas emissions by 2050. Achieving this target will require very large public and private investment in renewable energy, electric vehicles, building retrofits and new low-carbon industries. The Climate Change Committee estimates that the UK will need to invest the equivalent of around 1% of GDP per year through to 2050. Critics argue that the cost will weigh on growth and competitiveness, while supporters argue that early action will produce long-term benefits and create new export industries. Government policy combines carbon pricing (the UK Emissions Trading Scheme), targeted subsidies for clean technology, and tightening regulation on fossil-fuel use.
+**Extract:** UK house prices surged during the pandemic, rising by nearly 25% between 2020 and 2022, driven by ultra-low interest rates, stamp duty holidays, and demand for larger homes following the shift to remote working. Prices have since softened as Bank Rate rose from 0.1% to 5.25% and mortgage rates reached 15-year highs.
 
-Using supply and demand diagram(s), discuss the case for further government intervention to accelerate the UK's transition to net-zero by 2050.
+On the supply side, the UK has consistently built fewer homes than its estimated housing need of 300,000 per year — only around 235,000 were built in 2023. Restrictive planning rules, a shortage of construction workers, and high material costs constrain new supply. Meanwhile, strong net migration and the formation of smaller household units (e.g. more single-person households) continues to support underlying demand.
+
+Looking forward, the Bank of England has signalled that interest rates may have peaked, and the government is exploring further planning reforms to boost supply.
+
+Using supply and demand diagram(s), discuss whether UK house prices are more likely to rise or fall over the next few years.
 `,
   },
 
