@@ -585,8 +585,14 @@ serve(async (req) => {
       }
       const t = await response.text();
       console.error("AI gateway error:", response.status, t);
-      return new Response(JSON.stringify({ error: "AI service error" }), {
-        status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      const isTransient = response.status >= 500 || response.status === 408;
+      return new Response(JSON.stringify({
+        error: isTransient ? "SERVICE_UNAVAILABLE" : "AI service error",
+        message: isTransient ? "Tutor service is temporarily unavailable. Please try again in a moment." : "AI service error",
+        fallback: isTransient,
+      }), {
+        status: isTransient ? 200 : response.status,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 

@@ -2155,7 +2155,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
           subject,
           onDelta: (chunk) => { raw += chunk; },
           onDone: () => {},
-          onError: (err) => { throw new Error(err); },
+          onError: (err) => { toast.error(err); },
         });
 
         const msMatch = raw.match(/##\s*Mark Scheme\s*([\s\S]*?)(?=##\s*Model Answer|$)/i);

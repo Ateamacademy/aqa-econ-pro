@@ -30,7 +30,9 @@ async function readErrorMessage(response: Response) {
 
   try {
     const err = await response.json();
-    return err.error || err.message || fallback;
+    if (typeof err?.message === "string") return err.message;
+    if (typeof err?.error === "string") return err.error;
+    return fallback;
   } catch {
     return fallback;
   }
@@ -72,6 +74,16 @@ export async function streamChat({
 
     if (!resp.ok) {
       onError?.(await readErrorMessage(resp));
+      finish();
+      return;
+    }
+
+    const contentType = resp.headers.get("Content-Type") || "";
+    if (contentType.includes("application/json")) {
+      const data = await resp.json().catch(() => null);
+      if (data?.fallback || data?.error || data?.message) {
+        onError?.(data?.message || data?.error || "Tutor service is temporarily unavailable. Please try again in a moment.");
+      }
       finish();
       return;
     }
