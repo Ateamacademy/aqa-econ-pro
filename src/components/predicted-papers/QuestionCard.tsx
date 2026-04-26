@@ -183,10 +183,11 @@ export function QuestionCard({
       || /supernormal\s+profit/i.test(ibQuestionBody)
       || /perfect(ly)?\s+competit/i.test(ibQuestionBody)
     );
-  // IB Paper 3 Hard (ib-p3-b) — naira exchange-rate unification question.
-  // Uses the dedicated NGN currency-market diagram (depreciation: S shifts right).
+  // IB naira exchange-rate unification question (Paper 3 Hard ib-p3-b and
+  // Paper 2 Advanced ib-p2-c). Uses the dedicated NGN currency-market diagram
+  // (depreciation: S shifts right).
   const isIbNairaExchangeRateOverride =
-    paperKey === "ib-p3-b" &&
+    (paperKey === "ib-p3-b" || paperKey === "ib-p2-c") &&
     /naira/i.test(ibQuestionBody) &&
     (/exchange\s*rate/i.test(ibQuestionBody) || /unification/i.test(ibQuestionBody));
   const suppressFeedbackDiagramPreview =
