@@ -44,19 +44,34 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (now - lastSubscriptionRefreshAt.current < 60_000) return;
     if (subscriptionRefreshInFlight.current) return subscriptionRefreshInFlight.current;
 
+    const invokeWithRetry = async (attempt = 0): Promise<{ data: any; error: any }> => {
+      const result = await supabase.functions.invoke("check-subscription");
+      const status = (result.error as any)?.context?.status ?? (result.error as any)?.status;
+      const isTransient = status === 503 || status === 502 || status === 504;
+      if (result.error && isTransient && attempt < 2) {
+        await new Promise((r) => setTimeout(r, 500 * (attempt + 1)));
+        return invokeWithRetry(attempt + 1);
+      }
+      return result;
+    };
+
     const request = (async () => {
+      let succeeded = false;
       try {
-        const { data, error } = await supabase.functions.invoke("check-subscription");
+        const { data, error } = await invokeWithRetry();
         if (error) {
-          console.error("Sub check error:", error);
+          console.warn("Sub check unavailable (degraded):", error);
+          // Fail-open: keep prior values; do not block the UI.
           return;
         }
         setSubscribed(data?.subscribed ?? false);
         setSubscriptionEnd(data?.subscription_end ?? null);
+        succeeded = true;
       } catch (e) {
-        console.error("Sub check failed:", e);
+        console.warn("Sub check failed (degraded):", e);
       } finally {
-        lastSubscriptionRefreshAt.current = Date.now();
+        // Only throttle on success; allow quick retry after transient failures.
+        lastSubscriptionRefreshAt.current = succeeded ? Date.now() : 0;
         subscriptionRefreshInFlight.current = null;
       }
     })();
