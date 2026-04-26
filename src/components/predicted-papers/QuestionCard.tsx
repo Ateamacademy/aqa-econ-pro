@@ -24,6 +24,7 @@ import EconPerfectCompetition from "@/components/EconPerfectCompetition.jsx";
 import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram.jsx";
 import EconExchangeRateNaira from "@/components/EconExchangeRateNaira.jsx";
 import EconExchangeRatePound from "@/components/EconExchangeRatePound.jsx";
+import EconMultiplierEffect from "@/components/EconMultiplierEffect.jsx";
 import EconPosExtEduqasTransport from "@/components/EconPosExtEduqasTransport.jsx";
 import EconMonopolyBusinessObjectivesEduqas from "@/components/EconMonopolyBusinessObjectivesEduqas.jsx";
 
