@@ -228,6 +228,14 @@ export function QuestionCard({
     /(aldi|lidl|supermarket|ofgem|price\s*cap|energy\s+suppl|digital\s+platform|interoperab|dominant)/i.test(
       ibQuestionBody,
     );
+  // Eduqas Paper 3 — Hard (eduqas-p3-b) Q3.1 — "Using a diagram, explain the
+  // factors that determine the exchange rate of the pound in a floating
+  // exchange rate system." Use the dedicated GBP currency-market diagram
+  // across Smart Mark / Explain feedback / Improve my answer.
+  const isEduqasPoundExchangeRateOverride =
+    paperKey === "eduqas-p3-b" &&
+    /pound/i.test(ibQuestionBody) &&
+    /floating\s+exchange\s+rate/i.test(ibQuestionBody);
   const suppressFeedbackDiagramPreview =
     (paperKey === "econ-p1-b" && /question\s*0?[25]/i.test(question.label)) ||
     (paperKey === "econ-p1-a" && /question\s*0?3/i.test(question.label)) ||
