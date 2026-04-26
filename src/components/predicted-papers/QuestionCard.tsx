@@ -234,25 +234,28 @@ export function QuestionCard({
     isIbMonopolyDwlOverride ||
     isIbPerfectCompetitionFirmXOverride ||
     isIbNairaExchangeRateOverride ||
-    isEduqasPosConsExtTransportOverride;
+    isEduqasPosConsExtTransportOverride ||
+    isEduqasMonopolyBusinessObjectivesOverride;
 
   const CanonicalFigure = isIbNairaExchangeRateOverride
     ? EconExchangeRateNaira
-    : isEduqasPosConsExtTransportOverride
-      ? EconPosExtEduqasTransport
-      : isIbPerfectCompetitionFirmXOverride
-        ? PerfectCompetitionToggleFigure
-        : isIbMonopolyDwlOverride
-          ? EconMonopolyDWL
-          : isIbMcMbAllocOverride
-            ? EconAllocativeInefficiencyMCMB
-            : isIbProductionExternalityOverride
-              ? EconNegExtIBSoftDrinks
-              : isIbSodaOverride
+    : isEduqasMonopolyBusinessObjectivesOverride
+      ? EconMonopolyBusinessObjectivesEduqas
+      : isEduqasPosConsExtTransportOverride
+        ? EconPosExtEduqasTransport
+        : isIbPerfectCompetitionFirmXOverride
+          ? PerfectCompetitionToggleFigure
+          : isIbMonopolyDwlOverride
+            ? EconMonopolyDWL
+            : isIbMcMbAllocOverride
+              ? EconAllocativeInefficiencyMCMB
+              : isIbProductionExternalityOverride
                 ? EconNegExtIBSoftDrinks
-                : isMaxPriceOverride
-                  ? EconMaxPriceCeiling
-                  : EconNegExtUKEnergy;
+                : isIbSodaOverride
+                  ? EconNegExtIBSoftDrinks
+                  : isMaxPriceOverride
+                    ? EconMaxPriceCeiling
+                    : EconNegExtUKEnergy;
   const showCanonicalFigure = !isIbFdiSuppressOnly;
 
   const renderDiagramContent = (text: string, opts?: { withCanonicalFigure?: boolean }) => {
