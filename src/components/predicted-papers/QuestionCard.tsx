@@ -17,6 +17,7 @@ import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import EconNegExtUKEnergy from "@/components/EconNegExtUKEnergy.jsx";
 import EconMaxPriceCeiling from "@/components/EconMaxPriceCeiling.jsx";
 import EconNegExtConsumptionSoda from "@/components/EconNegExtConsumptionSoda.jsx";
+import EconNegExtIBSoftDrinks from "@/components/EconNegExtIBSoftDrinks.jsx";
 import EconAllocativeInefficiencyMCMB from "@/components/EconAllocativeInefficiencyMCMB.jsx";
 import EconMonopolyDWL from "@/components/EconMonopolyDWL.jsx";
 import EconPerfectCompetition from "@/components/EconPerfectCompetition.jsx";
@@ -226,9 +227,9 @@ export function QuestionCard({
         : isIbMcMbAllocOverride
           ? EconAllocativeInefficiencyMCMB
           : isIbProductionExternalityOverride
-            ? EconNegExtUKEnergy
+            ? EconNegExtIBSoftDrinks
             : isIbSodaOverride
-              ? EconNegExtConsumptionSoda
+              ? EconNegExtIBSoftDrinks
               : isMaxPriceOverride
                 ? EconMaxPriceCeiling
                 : EconNegExtUKEnergy;
