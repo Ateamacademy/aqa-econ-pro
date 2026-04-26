@@ -21,6 +21,7 @@ import EconAllocativeInefficiencyMCMB from "@/components/EconAllocativeInefficie
 import EconMonopolyDWL from "@/components/EconMonopolyDWL.jsx";
 import EconPerfectCompetition from "@/components/EconPerfectCompetition.jsx";
 import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram.jsx";
+import EconExchangeRateNaira from "@/components/EconExchangeRateNaira.jsx";
 
 // Wrapper for the interactive Short-run/Long-run toggle perfect-competition
 // diagram so it sits inside a card without forcing 100vh height (which would
@@ -182,6 +183,12 @@ export function QuestionCard({
       || /supernormal\s+profit/i.test(ibQuestionBody)
       || /perfect(ly)?\s+competit/i.test(ibQuestionBody)
     );
+  // IB Paper 3 Hard (ib-p3-b) — naira exchange-rate unification question.
+  // Uses the dedicated NGN currency-market diagram (depreciation: S shifts right).
+  const isIbNairaExchangeRateOverride =
+    paperKey === "ib-p3-b" &&
+    /naira/i.test(ibQuestionBody) &&
+    (/exchange\s*rate/i.test(ibQuestionBody) || /unification/i.test(ibQuestionBody));
   const suppressFeedbackDiagramPreview =
     (paperKey === "econ-p1-b" && /question\s*0?[25]/i.test(question.label)) ||
     (paperKey === "econ-p1-a" && /question\s*0?3/i.test(question.label)) ||
@@ -193,19 +200,22 @@ export function QuestionCard({
     isIbFdiSuppressOnly ||
     isIbMcMbAllocOverride ||
     isIbMonopolyDwlOverride ||
-    isIbPerfectCompetitionFirmXOverride;
+    isIbPerfectCompetitionFirmXOverride ||
+    isIbNairaExchangeRateOverride;
 
-  const CanonicalFigure = isIbPerfectCompetitionFirmXOverride
-    ? PerfectCompetitionToggleFigure
-    : isIbMonopolyDwlOverride
-      ? EconMonopolyDWL
-      : isIbMcMbAllocOverride
-        ? EconAllocativeInefficiencyMCMB
-        : isIbSodaOverride
-          ? EconNegExtConsumptionSoda
-          : isMaxPriceOverride
-            ? EconMaxPriceCeiling
-            : EconNegExtUKEnergy;
+  const CanonicalFigure = isIbNairaExchangeRateOverride
+    ? EconExchangeRateNaira
+    : isIbPerfectCompetitionFirmXOverride
+      ? PerfectCompetitionToggleFigure
+      : isIbMonopolyDwlOverride
+        ? EconMonopolyDWL
+        : isIbMcMbAllocOverride
+          ? EconAllocativeInefficiencyMCMB
+          : isIbSodaOverride
+            ? EconNegExtConsumptionSoda
+            : isMaxPriceOverride
+              ? EconMaxPriceCeiling
+              : EconNegExtUKEnergy;
   const showCanonicalFigure = !isIbFdiSuppressOnly;
 
   const renderDiagramContent = (text: string, opts?: { withCanonicalFigure?: boolean }) => {
