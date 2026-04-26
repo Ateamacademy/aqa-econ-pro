@@ -204,6 +204,13 @@ export function QuestionCard({
     (paperKey === "ib-p3-b" || paperKey === "ib-p2-c") &&
     /naira/i.test(ibQuestionBody) &&
     (/exchange\s*rate/i.test(ibQuestionBody) || /unification/i.test(ibQuestionBody));
+  // Eduqas Paper 1 — Moderate (eduqas-p1-a) Q22 — public transport positive
+  // consumption externality. Use the dedicated Eduqas positive-consumption
+  // externality figure across Smart Mark feedback, Explain my feedback, etc.
+  const isEduqasPosConsExtTransportOverride =
+    paperKey === "eduqas-p1-a" &&
+    /positive\s+consumption\s+externalit/i.test(ibQuestionBody) &&
+    /public\s+transport/i.test(ibQuestionBody);
   const suppressFeedbackDiagramPreview =
     (paperKey === "econ-p1-b" && /question\s*0?[25]/i.test(question.label)) ||
     (paperKey === "econ-p1-a" && /question\s*0?3/i.test(question.label)) ||
@@ -217,23 +224,26 @@ export function QuestionCard({
     isIbMcMbAllocOverride ||
     isIbMonopolyDwlOverride ||
     isIbPerfectCompetitionFirmXOverride ||
-    isIbNairaExchangeRateOverride;
+    isIbNairaExchangeRateOverride ||
+    isEduqasPosConsExtTransportOverride;
 
   const CanonicalFigure = isIbNairaExchangeRateOverride
     ? EconExchangeRateNaira
-    : isIbPerfectCompetitionFirmXOverride
-      ? PerfectCompetitionToggleFigure
-      : isIbMonopolyDwlOverride
-        ? EconMonopolyDWL
-        : isIbMcMbAllocOverride
-          ? EconAllocativeInefficiencyMCMB
-          : isIbProductionExternalityOverride
-            ? EconNegExtIBSoftDrinks
-            : isIbSodaOverride
+    : isEduqasPosConsExtTransportOverride
+      ? EconPosExtEduqasTransport
+      : isIbPerfectCompetitionFirmXOverride
+        ? PerfectCompetitionToggleFigure
+        : isIbMonopolyDwlOverride
+          ? EconMonopolyDWL
+          : isIbMcMbAllocOverride
+            ? EconAllocativeInefficiencyMCMB
+            : isIbProductionExternalityOverride
               ? EconNegExtIBSoftDrinks
-              : isMaxPriceOverride
-                ? EconMaxPriceCeiling
-                : EconNegExtUKEnergy;
+              : isIbSodaOverride
+                ? EconNegExtIBSoftDrinks
+                : isMaxPriceOverride
+                  ? EconMaxPriceCeiling
+                  : EconNegExtUKEnergy;
   const showCanonicalFigure = !isIbFdiSuppressOnly;
 
   const renderDiagramContent = (text: string, opts?: { withCanonicalFigure?: boolean }) => {
