@@ -5236,98 +5236,471 @@ Using supply and demand diagram(s), discuss whether the data suggests that coffe
     id: "eduqas-p1-b",
     subject: "eduqas" as any,
     paper: "1",
-    title: "Paper 1 — Set B",
-    description: "Markets & Market Failure. Set B — stretch — applied scenarios.",
-    totalMarks: 80,
-    content: `# Eduqas A-Level Economics (A510QS/01) — Markets & Market Failure — Predicted Paper Set B
+    title: "Paper 1 — Set B (Hard)",
+    description: "Component 1: Economic Principles (A520U10-1). Hard — 20 MCQs + 6 structured.",
+    totalMarks: 60,
+    content: `# Eduqas A-Level Economics (A520U10-1) — Component 1: Economic Principles — Predicted Paper (Hard)
 
-**Time: 120 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total: 60 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer ALL questions. The number of marks is given in brackets at the end of each question or part-question.
 
-## Section A: Data Response
+## Section A — Multiple Choice (20 marks)
 
-**Extract 1 — Monopoly power in tech: investigating google:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+For each question in Section A, write the letter (A, B, C, D or E) that corresponds to your answer in the box provided. You are advised to spend approximately 30 minutes on this section.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+Question 1 [1 mark]
+A firm's average total cost is £8 when output is 200 units, and £7 when output is 250 units. The marginal cost of the additional 50 units is:
+A. £1
+B. £2
+C. £3
+D. £5
+E. £7
 
-Question 1 [2 marks]
-With reference to monopoly power in tech: investigating Google, explain one government response to the issue.
+Question 2 [1 mark]
+The price of good X rises by 10% and the quantity demanded of good Y falls by 4%. Goods X and Y are best described as:
+A. Strong substitutes
+B. Weak substitutes
+C. Independent
+D. Weak complements
+E. Strong complements
 
-Question 2 [4 marks]
-With reference to monopoly power in tech: investigating Google, explain one factor that influences the issue.
+Question 3 [1 mark]
+A monopolist faces a downward-sloping demand curve. At its current output, marginal revenue is £6 and marginal cost is £10. To maximise profit the firm should:
+A. Raise price and reduce output
+B. Lower price and raise output
+C. Keep price and output unchanged
+D. Lower price and reduce output
+E. Raise price and raise output
 
-Question 3 [6 marks]
-With reference to monopoly power in tech: investigating Google, explain one mechanism that determines the issue.
+Question 4 [1 mark]
+A government runs a primary surplus of 1% of GDP, real GDP grows at 2%, and the average interest rate on debt is 4%. All other things equal, the debt-to-GDP ratio will:
+A. Fall
+B. Rise
+C. Remain constant
+D. Fall only if inflation is negative
+E. It cannot be determined
 
-Question 4 [9 marks]
-With reference to monopoly power in tech: investigating Google, explain two consequences of the issue.
+Question 5 [1 mark]
+The marginal propensity to consume is 0.6 and the marginal tax rate is 0.25. Ignoring imports, the value of the multiplier is approximately:
+A. 1.25
+B. 1.67
+C. 1.82
+D. 2.00
+E. 2.50
 
-Question 5 [12 marks]
-With reference to behavioural economics and consumer nudges, explain one government response to the issue.
+Question 6 [1 mark]
+A perfectly competitive firm is in long-run equilibrium. Which of the following must be true?
+A. Price is greater than marginal cost
+B. The firm earns supernormal profit
+C. Price equals minimum average total cost
+D. Marginal revenue exceeds average revenue
+E. Output is below the productively efficient level
 
-## Section B: Essay (choose ONE)
+Question 7 [1 mark]
+A central bank raises its policy interest rate by 0.5 percentage points. In the short run, the most likely effects are:
+A. The exchange rate appreciates and AD falls
+B. The exchange rate depreciates and AD rises
+C. The exchange rate appreciates and AD rises
+D. The exchange rate depreciates and AD falls
+E. No change in either the exchange rate or AD
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of price discrimination in the airline industry, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 8 [1 mark]
+A natural monopoly is best described as a market in which:
+A. The government grants exclusive production rights
+B. Long-run average cost falls continuously over the relevant range of output
+C. There are no fixed costs
+D. The product is essential to consumers
+E. Demand is perfectly inelastic
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of behavioural economics and consumer nudges, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 9 [1 mark]
+The Gini coefficient for a country falls from 0.42 to 0.36. This indicates:
+A. A rise in absolute poverty
+B. A more equal distribution of income
+C. A more unequal distribution of income
+D. A fall in average incomes
+E. No change in income distribution
+
+Question 10 [1 mark]
+A specific (unit) tax of £1.50 is imposed on a good. The supply curve is perfectly elastic and demand is downward sloping. The full incidence of the tax falls on:
+A. Producers
+B. Consumers
+C. Government
+D. Foreign suppliers
+E. Equally on producers and consumers
+
+Question 11 [1 mark]
+The Lorenz curve for an economy moves further away from the line of equality. This indicates:
+A. A fall in the Gini coefficient
+B. A more equal distribution of income
+C. A more unequal distribution of income
+D. A rise in average incomes
+E. A fall in absolute poverty
+
+Question 12 [1 mark]
+A negative production externality, in the absence of intervention, leads to a level of output where:
+A. Marginal social cost equals marginal social benefit
+B. Marginal private cost exceeds marginal social cost
+C. Output is below the socially optimal level
+D. Output is above the socially optimal level
+E. Marginal external cost is zero
+
+Question 13 [1 mark]
+A country's nominal GDP rises by 6% in a year while its GDP deflator rises by 4%. The growth rate of real GDP is approximately:
+A. 1.9%
+B. 2.0%
+C. 2.5%
+D. 4.0%
+E. 10.0%
+
+Question 14 [1 mark]
+Which of the following is most likely to shift the long-run aggregate supply (LRAS) curve to the right?
+A. A rise in the price level
+B. A cut in the policy interest rate
+C. A discovery of new oil reserves
+D. An increase in government spending
+E. A depreciation of the exchange rate
+
+Question 15 [1 mark]
+A firm's average fixed cost is £4 at 100 units of output. At 200 units of output, average fixed cost is:
+A. £1
+B. £2
+C. £4
+D. £8
+E. £16
+
+Question 16 [1 mark]
+A consumer maximises utility when:
+A. Total utility is maximised across all goods
+B. Marginal utility per pound spent is equal across all goods
+C. Marginal utility is zero for all goods
+D. Average utility per pound spent is equalised
+E. Total spending is minimised
+
+Question 17 [1 mark]
+A monopsony employer in the labour market, compared to a competitive labour market, will most likely:
+A. Pay a higher wage and employ more workers
+B. Pay a lower wage and employ fewer workers
+C. Pay a lower wage and employ more workers
+D. Pay a higher wage and employ fewer workers
+E. Pay the same wage and employ the same number of workers
+
+Question 18 [1 mark]
+The Phillips curve in the short run shows:
+A. A positive relationship between inflation and unemployment
+B. A negative relationship between inflation and unemployment
+C. No relationship between inflation and unemployment
+D. A vertical line at the natural rate of unemployment
+E. A horizontal line at the inflation target
+
+Question 19 [1 mark]
+A country has a J-curve effect following a currency depreciation. In the short run, the current account balance:
+A. Improves immediately
+B. Worsens before improving
+C. Improves before worsening
+D. Remains unchanged
+E. Worsens permanently
+
+Question 20 [1 mark]
+A merger between two firms producing the same product at the same stage of production is best described as:
+A. Horizontal integration
+B. Forward vertical integration
+C. Backward vertical integration
+D. Conglomerate integration
+E. A management buyout
+
+## Section B — Structured Questions (40 marks)
+
+Question 21 [4 marks]
+The chart below shows UK CPI inflation (annual %) and Bank Rate (%) between 2020 and 2024.
+
+CPI inflation (%): 2020: 0.9 | 2021: 2.6 | 2022: 9.1 | 2023: 7.3 | 2024: 2.5
+Bank Rate (%):    2020: 0.10 | 2021: 0.25 | 2022: 3.50 | 2023: 5.25 | 2024: 4.75
+
+Using the data, explain the relationship between the two series.
+
+Question 22 [7 marks]
+The diagram below illustrates the market for cigarettes, which generates negative consumption externalities.
+[Diagram: a supply curve MPC = MSC, a private demand curve D = MPB, and a marginal social benefit curve MSB to the LEFT of and below D = MPB. Free market equilibrium is at Q1, with social optimum at Q2 where MSC = MSB and Q2 < Q1.]
+Using the diagram, discuss whether the government should impose a higher specific tax on cigarettes.
+
+Question 23 [4 marks]
+Two airlines, AirX and AirY, are deciding whether to enter a new transatlantic route. The matrix below shows the resulting annual profits (£m) for each firm depending on the combination of decisions.
+
+|  | AirY: Enter | AirY: Stay out |
+|---|---|---|
+| **AirX: Enter** | −£10m, −£10m | £80m, £0 |
+| **AirX: Stay out** | £0, £80m | £0, £0 |
+
+Use the data to explain whether this game has a dominant strategy equilibrium.
+
+Question 24 [8 marks]
+The UK economy is operating close to full capacity with CPI inflation above target. The Bank of England is considering a further increase in Bank Rate.
+
+Diagram 1: UK CPI inflation (%, annual)
+2022 Q1: 6.2 | 2022 Q3: 9.6 | 2023 Q1: 10.1 | 2023 Q3: 6.7 | 2024 Q1: 3.8 | 2024 Q3: 2.5
+
+Diagram 2: UK real GDP growth (%, annual)
+2022 Q1: 8.7 | 2022 Q3: 2.0 | 2023 Q1: 0.4 | 2023 Q3: 0.6 | 2024 Q1: 0.7 | 2024 Q3: 1.0
+
+Using the data, discuss whether a further rise in Bank Rate is likely to be effective in returning CPI inflation to the 2% target.
+
+Question 25 [8 marks]
+The table below provides selected 2022 Sustainable Development Goal indicators for two countries, Bangladesh and Kenya.
+
+| | GNI/capita (PPP $) | Life expectancy (years) | Adult literacy (%) | Access to electricity (%) | Gini coefficient |
+|---|---|---|---|---|---|
+| **Bangladesh** | 6,510 | 72.4 | 75.6 | 99.4 | 0.32 |
+| **Kenya** | 5,030 | 61.4 | 82.6 | 76.5 | 0.40 |
+
+Discuss whether it is reasonable to conclude that Bangladesh has achieved a higher level of economic development than Kenya.
+
+Question 26 [9 marks]
+The extract and chart below relate to the UK housing market.
+
+Chart: UK average house price (£000s)
+2019: 232 | 2020: 246 | 2021: 268 | 2022: 290 | 2023: 285 | 2024: 292
+
+**Extract:** UK house prices have risen sharply since 2020, partly driven by ultra-low interest rates and a structural shortage of new housing supply. Planning restrictions limit the speed at which new homes can be built, while population growth and changing household composition continue to add to demand. Higher mortgage rates since 2022 have cooled the market, but prices remain well above pre-pandemic levels. Some commentators argue that housing has become unaffordable for younger households, with the average first-time buyer now needing a deposit of more than 20% of the property value.
+
+Using supply and demand diagram(s), discuss the main causes of the long-run rise in UK house prices and evaluate the case for government intervention to improve affordability.
 `,
   },
   {
     id: "eduqas-p1-c",
     subject: "eduqas" as any,
     paper: "1",
-    title: "Paper 1 — Set C",
-    description: "Markets & Market Failure. Set C — challenge — synoptic & evaluative.",
-    totalMarks: 80,
-    content: `# Eduqas A-Level Economics (A510QS/01) — Markets & Market Failure — Predicted Paper Set C
+    title: "Paper 1 — Set C (Advanced)",
+    description: "Component 1: Economic Principles (A520U10-1). Advanced — 20 MCQs + 6 structured (synoptic).",
+    totalMarks: 60,
+    content: `# Eduqas A-Level Economics (A520U10-1) — Component 1: Economic Principles — Predicted Paper (Advanced)
 
-**Time: 120 minutes | Total: 80 marks**
+**Time: 1 hour 30 minutes | Total: 60 marks**
 
-Answer ALL questions in Section A and ONE question from Section B.
+Answer ALL questions. The number of marks is given in brackets at the end of each question or part-question.
 
-## Section A: Data Response
+## Section A — Multiple Choice (20 marks)
 
-**Extract 1 — Behavioural economics and consumer nudges:** Industry data shows demand has shifted by 8% in the past year while supply-side conditions have tightened. Average prices rose by 6.4%, output fell 2.1%, and consumer real incomes declined by 1.9%. Policymakers have responded with a mix of subsidies, regulation and monetary tightening.
+For each question in Section A, write the letter (A, B, C, D or E) that corresponds to your answer in the box provided. You are advised to spend approximately 30 minutes on this section.
 
-**Figure 1:** | Year | Price Index | Output (000 units) | Real Wages Index |
-|------|-------------|---------------------|------------------|
-| 2021 | 100 | 540 | 100 |
-| 2022 | 104 | 528 | 99 |
-| 2023 | 108 | 522 | 98 |
-| 2024 | 115 | 510 | 96 |
+Question 1 [1 mark]
+A consumer's income rises by 8% and quantity demanded of good Z falls by 2%. The income elasticity of demand for good Z is:
+A. +4.00
+B. +0.25
+C. −0.25
+D. −0.40
+E. −4.00
 
-Question 1 [2 marks]
-With reference to behavioural economics and consumer nudges, explain one factor that influences the issue.
+Question 2 [1 mark]
+A firm operating in a contestable market will, in long-run equilibrium, most likely:
+A. Earn supernormal profit indefinitely
+B. Charge a price equal to marginal cost
+C. Earn only normal profit, even with a small number of incumbents
+D. Restrict output below the productively efficient level
+E. Behave like a pure monopolist
 
-Question 2 [4 marks]
-With reference to behavioural economics and consumer nudges, explain one mechanism that determines the issue.
+Question 3 [1 mark]
+The Lerner index for a firm equals (P − MC) / P. A profit-maximising monopolist faces a constant elasticity demand curve with elasticity = −2. The Lerner index is:
+A. 0.25
+B. 0.33
+C. 0.50
+D. 0.67
+E. 1.00
 
-Question 3 [6 marks]
-With reference to monopoly power in tech: investigating Google, explain two consequences of the issue.
+Question 4 [1 mark]
+A government cuts the basic rate of income tax. According to the Laffer curve, government tax revenue will rise if the economy is currently:
+A. On the upward-sloping part of the curve
+B. On the downward-sloping part of the curve
+C. At the revenue-maximising point
+D. At zero tax rate
+E. At 100% tax rate
 
-Question 4 [9 marks]
-With reference to behavioural economics and consumer nudges, explain one government response to the issue.
+Question 5 [1 mark]
+A central bank conducts quantitative easing by purchasing £100 billion of government bonds. The most likely short-run effects are:
+A. Bond prices fall and bond yields rise
+B. Bond prices rise and bond yields fall
+C. Bond prices and bond yields both rise
+D. Bond prices and bond yields both fall
+E. No change in bond prices or yields
 
-Question 5 [12 marks]
-With reference to behavioural economics and consumer nudges, explain one factor that influences the issue.
+Question 6 [1 mark]
+The Solow growth model predicts that, in the long run, sustained per-capita income growth requires:
+A. A higher savings rate
+B. A higher rate of capital accumulation
+C. Technological progress
+D. A higher rate of population growth
+E. A larger labour force
 
-## Section B: Essay (choose ONE)
+Question 7 [1 mark]
+A country has a fixed exchange rate against the US dollar and is experiencing persistent capital outflows. To defend the peg, the central bank should:
+A. Buy domestic currency and sell foreign reserves
+B. Sell domestic currency and buy foreign reserves
+C. Cut interest rates
+D. Print more domestic currency
+E. Devalue the currency immediately
 
-Question 6 [25 marks]
-Evaluate the view that, in the context of price discrimination in the airline industry, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 8 [1 mark]
+A firm price-discriminates between two markets with elasticities of demand of −1.5 (market A) and −3 (market B). To maximise profit it should charge:
+A. A higher price in market A
+B. A higher price in market B
+C. The same price in both markets
+D. The price equal to marginal cost in both markets
+E. A price below marginal cost in market B
 
-Question 7 [25 marks]
-Evaluate the view that, in the context of behavioural economics and consumer nudges, government intervention is more effective than market forces in achieving an efficient and equitable outcome.
+Question 9 [1 mark]
+A negative demand-side shock in a closed economy will, in the short run, most likely cause:
+A. A rise in real GDP and a fall in the price level
+B. A fall in real GDP and a rise in the price level
+C. A fall in both real GDP and the price level
+D. A rise in both real GDP and the price level
+E. No change in either real GDP or the price level
+
+Question 10 [1 mark]
+The natural rate of unemployment in an economy rises. All other things equal, this most likely reflects:
+A. A fall in cyclical unemployment
+B. A rise in structural and frictional unemployment
+C. A fall in the participation rate
+D. A rise in real wages
+E. A fall in the price level
+
+Question 11 [1 mark]
+A perfectly price-discriminating monopolist, compared to a single-price monopolist:
+A. Produces the same output at a higher price
+B. Produces less output at a higher average price
+C. Produces the allocatively efficient output but extracts all consumer surplus
+D. Earns lower profits
+E. Faces a higher marginal cost curve
+
+Question 12 [1 mark]
+A government introduces a tradable pollution permit scheme with a fixed cap. If demand for permits rises, the most likely outcome is:
+A. The price of permits falls and total emissions rise
+B. The price of permits rises and total emissions are unchanged
+C. The price of permits is unchanged and total emissions rise
+D. The price of permits rises and total emissions fall
+E. The scheme has no effect on emissions
+
+Question 13 [1 mark]
+A small open economy adopts a flexible exchange rate. According to the Mundell–Fleming model, monetary policy is:
+A. Completely ineffective in influencing real GDP
+B. Highly effective in influencing real GDP
+C. Effective only if combined with fiscal policy
+D. Effective only at full employment
+E. Effective only in the long run
+
+Question 14 [1 mark]
+A firm has a price-cost margin (P − MC)/P of 0.40. The implied price elasticity of demand for its product is:
+A. −0.40
+B. −1.40
+C. −1.67
+D. −2.50
+E. −4.00
+
+Question 15 [1 mark]
+A country's terms of trade improve by 5%. All other things equal, this is most likely to:
+A. Worsen the current account balance in the short run
+B. Improve real living standards
+C. Reduce real GDP
+D. Cause higher unemployment
+E. Have no effect on national welfare
+
+Question 16 [1 mark]
+A government raises the minimum wage above the existing market-clearing wage in a competitive labour market. The most likely short-run effect is:
+A. A fall in employment and a rise in unemployment
+B. A rise in employment and a fall in unemployment
+C. No change in employment or unemployment
+D. A fall in both employment and unemployment
+E. A rise in both employment and unemployment
+
+Question 17 [1 mark]
+The Coase theorem suggests that, in the absence of transaction costs and with well-defined property rights, externalities can be resolved by:
+A. Government taxation
+B. Direct regulation
+C. Private bargaining between affected parties
+D. Tradable permits issued by government
+E. A subsidy financed by general taxation
+
+Question 18 [1 mark]
+A country's central bank adopts inflation targeting. In the long run, the most likely outcome is:
+A. Lower average unemployment
+B. Higher average unemployment
+C. More stable inflation expectations
+D. A permanently higher growth rate
+E. A permanently lower exchange rate
+
+Question 19 [1 mark]
+A profit-maximising firm operates in two countries with corporate tax rates of 19% (country A) and 30% (country B). To minimise its global tax bill via transfer pricing it should:
+A. Set a high transfer price on goods sold from A to B
+B. Set a low transfer price on goods sold from A to B
+C. Set the same transfer price in both directions
+D. Avoid intra-firm trade altogether
+E. Move all production to country B
+
+Question 20 [1 mark]
+A country abolishes a tariff on imported steel. In the short run, the most likely effects on the domestic steel market are:
+A. Domestic price rises, domestic output rises, imports fall
+B. Domestic price falls, domestic output falls, imports rise
+C. Domestic price falls, domestic output rises, imports fall
+D. Domestic price rises, domestic output falls, imports rise
+E. No change in domestic price, output or imports
+
+## Section B — Structured Questions (40 marks)
+
+Question 21 [4 marks]
+The chart below shows UK real wages index (2015 = 100) and UK labour productivity index (2015 = 100) between 2018 and 2024.
+
+Real wages index: 2018: 102 | 2019: 104 | 2020: 105 | 2021: 106 | 2022: 102 | 2023: 100 | 2024: 102
+Productivity index: 2018: 101 | 2019: 102 | 2020: 104 | 2021: 105 | 2022: 105 | 2023: 105 | 2024: 106
+
+Using the data, explain the relationship between the two series.
+
+Question 22 [7 marks]
+The diagram below illustrates the market for higher education, which has positive consumption externalities.
+[Diagram: a supply curve MPC = MSC, a private demand curve D = MPB, and a marginal social benefit curve MSB to the right of D = MPB. Free market equilibrium is at Q1, with social optimum at Q2 where MSC = MSB and Q2 > Q1.]
+Using the diagram, discuss whether the UK government should increase the per-student teaching grant to universities.
+
+Question 23 [4 marks]
+Two supermarket chains, BigMart and ValueCo, are deciding whether to launch a price-cutting campaign. The matrix below shows the resulting annual profits (£m) for each firm depending on the combination of decisions.
+
+|  | ValueCo: Cut prices | ValueCo: Hold prices |
+|---|---|---|
+| **BigMart: Cut prices** | £20m, £20m | £55m, £15m |
+| **BigMart: Hold prices** | £15m, £55m | £40m, £40m |
+
+Use the data to explain whether the Nash equilibrium of this game is also Pareto efficient.
+
+Question 24 [8 marks]
+The UK economy is experiencing slow real GDP growth, productivity stagnation and rising public debt. The Chancellor proposes a £20 billion supply-side package focused on R&D tax credits and skills funding.
+
+Diagram 1: UK labour productivity (output per hour, % annual change)
+2019: 0.4 | 2020: 0.6 | 2021: 1.7 | 2022: −0.5 | 2023: 0.1 | 2024: 0.3
+
+Diagram 2: UK public sector net debt (% of GDP)
+2019: 82 | 2020: 95 | 2021: 96 | 2022: 97 | 2023: 98 | 2024: 99
+
+Using the data, discuss whether such a supply-side package is likely to raise the UK's long-run trend rate of growth.
+
+Question 25 [8 marks]
+The table below provides selected 2022 development indicators for two countries, India and Indonesia.
+
+| | GNI/capita (PPP $) | HDI | Life expectancy | Mean years schooling | Gini coefficient |
+|---|---|---|---|---|---|
+| **India** | 8,930 | 0.644 | 67.7 | 6.6 | 0.36 |
+| **Indonesia** | 13,250 | 0.713 | 71.9 | 8.8 | 0.39 |
+
+Discuss whether it is reasonable to conclude that Indonesia has achieved a higher level of human development than India.
+
+Question 26 [9 marks]
+The extract and chart below relate to the UK net-zero transition.
+
+Chart: UK greenhouse gas emissions (Mt CO₂e)
+2010: 626 | 2015: 514 | 2018: 470 | 2020: 412 | 2022: 417 | 2024: 384
+
+**Extract:** The UK has set a legally binding target of net-zero greenhouse gas emissions by 2050. Achieving this target will require very large public and private investment in renewable energy, electric vehicles, building retrofits and new low-carbon industries. The Climate Change Committee estimates that the UK will need to invest the equivalent of around 1% of GDP per year through to 2050. Critics argue that the cost will weigh on growth and competitiveness, while supporters argue that early action will produce long-term benefits and create new export industries. Government policy combines carbon pricing (the UK Emissions Trading Scheme), targeted subsidies for clean technology, and tightening regulation on fossil-fuel use.
+
+Using supply and demand diagram(s), discuss the case for further government intervention to accelerate the UK's transition to net-zero by 2050.
 `,
   },
+
   {
     id: "eduqas-p2-a",
     subject: "eduqas" as any,
