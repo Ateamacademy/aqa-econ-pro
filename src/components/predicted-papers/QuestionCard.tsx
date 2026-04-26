@@ -149,11 +149,18 @@ export function QuestionCard({
   const expectedDiagramType = resolveDiagramType(`${question.label}\n${question.text}\n${answer}`) ?? undefined;
   const isMaxPriceOverride =
     paperKey === "econ-p2-c" && /question\s*0?1\s*\(?\s*b\s*\)?|^q?\s*0?1\s*b\b|\b1b\b/i.test(question.label);
-  // IB Paper 2 Moderate (ib-p2-a) Q1 (a)(ii) — "Define the term negative externality" (Text B, Paragraph 4)
+  // IB negative-externality / common-access-resource questions across all IB
+  // predicted papers (ib-p1-*, ib-p2-*, ib-p3-*). Uses the canonical IB
+  // consumption-externality diagram (MSB dashed below MPB, MPC=MSC=S, DWL).
   const ibQuestionBody = `${question.label}\n${question.text}`;
+  const isIbPaper = typeof paperKey === "string" && /^ib-p[123]-/.test(paperKey);
   const isIbSodaOverride =
-    paperKey === "ib-p2-a" &&
-    /define\s+the\s+term\s+\**negative\s+externality/i.test(ibQuestionBody);
+    isIbPaper &&
+    (
+      /negative\s+externality/i.test(ibQuestionBody) ||
+      /common\s+access\s+resource/i.test(ibQuestionBody) ||
+      /demerit\s+good/i.test(ibQuestionBody)
+    );
   // IB Paper 2 Moderate (ib-p2-a) Q1 (a)(i) — "Define the term foreign direct investment (FDI)" (Text B, Paragraph 1)
   const isIbFdiSuppressOnly =
     paperKey === "ib-p2-a" &&
