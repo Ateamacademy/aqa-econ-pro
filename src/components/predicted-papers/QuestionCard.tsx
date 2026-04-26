@@ -24,6 +24,7 @@ import EconPerfectCompetition from "@/components/EconPerfectCompetition.jsx";
 import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram.jsx";
 import EconExchangeRateNaira from "@/components/EconExchangeRateNaira.jsx";
 import EconPosExtEduqasTransport from "@/components/EconPosExtEduqasTransport.jsx";
+import EconMonopolyBusinessObjectivesEduqas from "@/components/EconMonopolyBusinessObjectivesEduqas.jsx";
 
 // Wrapper for the interactive Short-run/Long-run toggle perfect-competition
 // diagram so it sits inside a card without forcing 100vh height (which would
