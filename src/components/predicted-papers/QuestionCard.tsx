@@ -236,6 +236,12 @@ export function QuestionCard({
     paperKey === "eduqas-p3-b" &&
     /pound/i.test(ibQuestionBody) &&
     /floating\s+exchange\s+rate/i.test(ibQuestionBody);
+  // WJEC Paper 3 — Hard (wjec-p3-b) Q6 — LNG yen price / Japan macro shock.
+  // Use the canonical AD–AS "Increase in Aggregate Demand / Multiplier Effect"
+  // diagram across Smart Mark / Explain feedback / Improve my answer.
+  const isWjecP3LngAdAsOverride =
+    paperKey === "wjec-p3-b" &&
+    /(lng|liquefied\s+natural\s+gas|yen|japan)/i.test(ibQuestionBody);
   const suppressFeedbackDiagramPreview =
     (paperKey === "econ-p1-b" && /question\s*0?[25]/i.test(question.label)) ||
     (paperKey === "econ-p1-a" && /question\s*0?3/i.test(question.label)) ||
