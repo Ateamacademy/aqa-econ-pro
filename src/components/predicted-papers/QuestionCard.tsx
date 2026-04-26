@@ -26,8 +26,8 @@ import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram.js
 // diagram so it sits inside a card without forcing 100vh height (which would
 // crop the toggle pill on narrow containers like the Smart Mark feedback panel).
 const PerfectCompetitionToggleFigure = () => (
-  <div style={{ width: "100%", overflow: "hidden", borderRadius: 8 }}>
-    <div style={{ width: "100%", minHeight: "auto" }}>
+  <div style={{ width: "100%", overflowX: "auto", borderRadius: 8 }}>
+    <div style={{ minWidth: 640, width: "100%" }}>
       <PerfectCompetitionDiagram />
     </div>
   </div>
