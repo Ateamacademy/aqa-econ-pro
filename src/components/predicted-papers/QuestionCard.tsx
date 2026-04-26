@@ -251,9 +251,12 @@ export function QuestionCard({
     isIbPerfectCompetitionFirmXOverride ||
     isIbNairaExchangeRateOverride ||
     isEduqasPosConsExtTransportOverride ||
-    isEduqasMonopolyBusinessObjectivesOverride;
+    isEduqasMonopolyBusinessObjectivesOverride ||
+    isEduqasPoundExchangeRateOverride;
 
-  const CanonicalFigure = isIbNairaExchangeRateOverride
+  const CanonicalFigure = isEduqasPoundExchangeRateOverride
+    ? EconExchangeRatePound
+    : isIbNairaExchangeRateOverride
     ? EconExchangeRateNaira
     : isEduqasMonopolyBusinessObjectivesOverride
       ? EconMonopolyBusinessObjectivesEduqas
