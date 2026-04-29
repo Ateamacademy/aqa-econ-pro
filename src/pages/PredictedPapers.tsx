@@ -1241,6 +1241,7 @@ DIFFICULTY LEVEL: LIMITED EDITION (ELITE CHALLENGE)
 export default function PredictedPapers() {
   const { user, subscribed, profile, refreshProfile } = useAuth();
   const canGenerate = canGeneratePapers(user?.email);
+  const isPremium = hasPremiumAccess({ subscribed, email: user?.email });
   const { subject, subjectLabel, examBoard, level } = useSubject();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -1464,6 +1465,10 @@ export default function PredictedPapers() {
   }
 
   function openLibraryPaper(lp: PredictedPaper) {
+    if (isPremiumDifficulty(lp.tier) && !isPremium) {
+      setShowUpgrade(true);
+      return;
+    }
     const setLabel = (lp.id.match(/-([a-g])$/i)?.[1] ?? "A").toUpperCase();
     // For AQA A-Level Paper 3, prefer the curated override that wires every
     // diagram MCQ to a real /figures asset (Monopolistic Competition, J-Curve,
