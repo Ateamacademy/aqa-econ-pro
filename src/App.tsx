@@ -116,9 +116,9 @@ const App = () => (
               <Route path="/paper-library" element={<PaperLibrary />} />
               <Route path="/diagram-library" element={<EconDiagramShowcase />} />
               <Route path="/papers" element={<Papers />} />
-              <Route path="/papers/:paperId" element={<PaperOverview />} />
-              <Route path="/papers/:paperId/attempt" element={<PaperAttempt />} />
-              <Route path="/papers/:paperId/results" element={<PaperResults />} />
+              <Route path="/papers/:paperId" element={<PremiumGate feature="Papers"><PaperOverview /></PremiumGate>} />
+              <Route path="/papers/:paperId/attempt" element={<PremiumGate feature="Papers"><PaperAttempt /></PremiumGate>} />
+              <Route path="/papers/:paperId/results" element={<PremiumGate feature="Papers"><PaperResults /></PremiumGate>} />
               <Route path="/history" element={<HistoryPage />} />
               <Route path="/predicted/aqa/mark/:setId" element={<AqaMarking />} />
               <Route path="/admin/deduplication-report" element={<AdminDeduplicationReport />} />
