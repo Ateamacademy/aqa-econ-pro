@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { canGeneratePapers } from "@/lib/paperGenAccess";
+import { hasPremiumAccess, isPremiumDifficulty } from "@/lib/premiumAccess";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { streamChat } from "@/lib/streamChat";
