@@ -2225,7 +2225,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
       setSolutionLoading(false);
       setSolutionProgress({ done: 0, total: 0 });
     }
-  }, [parsedQuestions, paperContext, examBoard, level, subjectLabel, paper, selectedLibraryPaper, subject, tier, isMaths, isChemistry, solutionLoading]);
+  }, [parsedQuestions, paperContext, examBoard, level, subjectLabel, paper, selectedLibraryPaper, subject, tier, isMaths, isChemistry, solutionLoading, isPremium]);
 
   const reset = () => {
     setStep("select");
