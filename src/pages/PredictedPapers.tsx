@@ -2069,7 +2069,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
         onError: (err) => { toast.error(err); setMarkingId(null); },
       });
     },
-    [answers, paperContext, feedbacks, subscribed, used, user?.id, refreshProfile, subject, tier, isMaths]
+    [answers, paperContext, feedbacks, subscribed, used, user?.id, refreshProfile, subject, tier, isMaths, isPremium]
   );
 
   const handleDownloadSolutions = useCallback(async () => {
