@@ -61,7 +61,7 @@ const buildSnapshot = ({
     isPremium: false,
     message:
       remaining > 0
-        ? `${remaining} free attempt(s) remaining`
+        ? `${remaining} free question(s) remaining in the Diagrams Practice section.`
         : `You’ve used all ${FREE_LIMITS.diagrams} free diagram attempts.`,
     error: null,
   };
