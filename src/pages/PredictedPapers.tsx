@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { canGeneratePapers } from "@/lib/paperGenAccess";
+import { hasPremiumAccess, isPremiumDifficulty } from "@/lib/premiumAccess";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { streamChat } from "@/lib/streamChat";
@@ -1240,6 +1241,7 @@ DIFFICULTY LEVEL: LIMITED EDITION (ELITE CHALLENGE)
 export default function PredictedPapers() {
   const { user, subscribed, profile, refreshProfile } = useAuth();
   const canGenerate = canGeneratePapers(user?.email);
+  const isPremium = hasPremiumAccess({ subscribed, email: user?.email });
   const { subject, subjectLabel, examBoard, level } = useSubject();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -1463,6 +1465,10 @@ export default function PredictedPapers() {
   }
 
   function openLibraryPaper(lp: PredictedPaper) {
+    if (isPremiumDifficulty(lp.tier) && !isPremium) {
+      setShowUpgrade(true);
+      return;
+    }
     const setLabel = (lp.id.match(/-([a-g])$/i)?.[1] ?? "A").toUpperCase();
     // For AQA A-Level Paper 3, prefer the curated override that wires every
     // diagram MCQ to a real /figures asset (Monopolistic Competition, J-Curve,
@@ -2334,6 +2340,11 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                             {lp.tier && (
                               <span className="text-[11px] bg-muted text-muted-foreground px-2.5 py-1 rounded-full font-medium">
                                 {lp.tier}
+                              </span>
+                            )}
+                            {isPremiumDifficulty(lp.tier) && !isPremium && (
+                              <span className="text-[11px] bg-amber-500/15 text-amber-400 border border-amber-500/30 px-2.5 py-1 rounded-full font-semibold inline-flex items-center gap-1">
+                                <Lock className="h-3 w-3" /> Pro
                               </span>
                             )}
                           </div>

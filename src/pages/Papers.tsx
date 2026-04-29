@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Clock, FileText, ArrowRight, ExternalLink, ClipboardList } from "lucide-react";
 import { useSubject } from "@/contexts/SubjectContext";
+import { PremiumGate } from "@/components/PremiumGate";
 
 type Difficulty = "moderate" | "hard" | "advanced";
 
@@ -1293,7 +1294,7 @@ function IbPapersList() {
   );
 }
 
-export default function Papers() {
+function PapersInner() {
   const { subject } = useSubject();
 
   if (subject === "edexcel-a") {
@@ -1377,5 +1378,16 @@ export default function Papers() {
         ))}
       </div>
     </div>
+  );
+}
+
+export default function Papers() {
+  return (
+    <PremiumGate
+      feature="Papers"
+      description="The full mock-paper library — Moderate, Hard and Advanced — across every supported board. Includes mark schemes and AI marking."
+    >
+      <PapersInner />
+    </PremiumGate>
   );
 }
