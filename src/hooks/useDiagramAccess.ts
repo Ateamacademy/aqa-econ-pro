@@ -12,7 +12,7 @@ type DiagramAccessSnapshot = {
   error: string | null;
 };
 
-const CHECKING_MESSAGE = "We’re checking your available attempts...";
+const CHECKING_MESSAGE = `${FREE_LIMITS.diagrams} free question(s) remaining in the Diagrams Practice section.`;
 
 const normaliseUsed = (value: number | null | undefined) => {
   if (typeof value !== "number" || Number.isNaN(value)) return 0;
@@ -49,7 +49,7 @@ const buildSnapshot = ({
       isAllowed: true,
       remainingAttempts: remaining,
       isPremium: false,
-      message: CHECKING_MESSAGE,
+      message: `${remaining} free question(s) remaining in the Diagrams Practice section.`,
       error,
     };
   }
@@ -61,7 +61,7 @@ const buildSnapshot = ({
     isPremium: false,
     message:
       remaining > 0
-        ? `${remaining} free attempt(s) remaining`
+        ? `${remaining} free question(s) remaining in the Diagrams Practice section.`
         : `You’ve used all ${FREE_LIMITS.diagrams} free diagram attempts.`,
     error: null,
   };
