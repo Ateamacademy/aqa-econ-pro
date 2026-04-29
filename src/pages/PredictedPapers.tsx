@@ -2637,11 +2637,17 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                   className="gap-2.5 rounded-full"
                   onClick={handleDownloadSolutions}
                   disabled={solutionLoading || parsedQuestions.length === 0}
+                  title={!isPremium ? "Upgrade to Pro to download solutions" : undefined}
                 >
                   {solutionLoading ? (
                     <>
                       <Loader2 className="h-5 w-5 animate-spin" />
                       Building solutions… {solutionProgress.done}/{solutionProgress.total}
+                    </>
+                  ) : !isPremium ? (
+                    <>
+                      <Lock className="h-5 w-5" /> Download Solution PDF
+                      <span className="ml-1 text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-primary/15 text-primary">Pro</span>
                     </>
                   ) : (
                     <>
