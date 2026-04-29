@@ -1620,6 +1620,10 @@ CRITICAL: Do NOT place economics diagram Figure blocks (supply & demand, AD/AS, 
 
   const markQuestion = useCallback(
     async (question: ParsedQuestion, diagramImage?: string) => {
+      if (!isPremium) {
+        setShowUpgrade(true);
+        return;
+      }
       const answer = answers[question.id];
       if (!answer?.trim()) { toast.error("Please write your answer first."); return; }
       setMarkingId(question.id);
