@@ -1620,6 +1620,10 @@ CRITICAL: Do NOT place economics diagram Figure blocks (supply & demand, AD/AS, 
 
   const markQuestion = useCallback(
     async (question: ParsedQuestion, diagramImage?: string) => {
+      if (!isPremium) {
+        setShowUpgrade(true);
+        return;
+      }
       const answer = answers[question.id];
       if (!answer?.trim()) { toast.error("Please write your answer first."); return; }
       setMarkingId(question.id);
@@ -2065,10 +2069,14 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
         onError: (err) => { toast.error(err); setMarkingId(null); },
       });
     },
-    [answers, paperContext, feedbacks, subscribed, used, user?.id, refreshProfile, subject, tier, isMaths]
+    [answers, paperContext, feedbacks, subscribed, used, user?.id, refreshProfile, subject, tier, isMaths, isPremium]
   );
 
   const handleDownloadSolutions = useCallback(async () => {
+    if (!isPremium) {
+      setShowUpgrade(true);
+      return;
+    }
     // For library papers with curated static mark scheme PDFs (matches the
     // official Papers section), serve them directly instead of generating.
     const staticMs = resolveStaticPaperPdf(selectedLibraryPaper?.id, "mark-scheme");
@@ -2217,7 +2225,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
       setSolutionLoading(false);
       setSolutionProgress({ done: 0, total: 0 });
     }
-  }, [parsedQuestions, paperContext, examBoard, level, subjectLabel, paper, selectedLibraryPaper, subject, tier, isMaths, isChemistry, solutionLoading]);
+  }, [parsedQuestions, paperContext, examBoard, level, subjectLabel, paper, selectedLibraryPaper, subject, tier, isMaths, isChemistry, solutionLoading, isPremium]);
 
   const reset = () => {
     setStep("select");
@@ -2629,11 +2637,17 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                   className="gap-2.5 rounded-full"
                   onClick={handleDownloadSolutions}
                   disabled={solutionLoading || parsedQuestions.length === 0}
+                  title={!isPremium ? "Upgrade to Pro to download solutions" : undefined}
                 >
                   {solutionLoading ? (
                     <>
                       <Loader2 className="h-5 w-5 animate-spin" />
                       Building solutions… {solutionProgress.done}/{solutionProgress.total}
+                    </>
+                  ) : !isPremium ? (
+                    <>
+                      <Lock className="h-5 w-5" /> Download Solution PDF
+                      <span className="ml-1 text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-primary/15 text-primary">Pro</span>
                     </>
                   ) : (
                     <>
