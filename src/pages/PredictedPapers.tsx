@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { canGeneratePapers } from "@/lib/paperGenAccess";
-import { hasPremiumAccess, isPremiumDifficulty } from "@/lib/premiumAccess";
+import { getPredictedPaperDifficulty, hasPremiumAccess, isPremiumPredictedPaper } from "@/lib/premiumAccess";
 import { useSubject } from "@/contexts/SubjectContext";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { streamChat } from "@/lib/streamChat";
@@ -1465,7 +1465,7 @@ export default function PredictedPapers() {
   }
 
   function openLibraryPaper(lp: PredictedPaper) {
-    if (isPremiumDifficulty(lp.tier) && !isPremium) {
+    if (isPremiumPredictedPaper(lp) && !isPremium) {
       setShowUpgrade(true);
       return;
     }
@@ -2236,6 +2236,21 @@ Do NOT include any other headings, preamble, or commentary outside these three s
     autoGenTriggered.current = false;
   };
 
+  useEffect(() => {
+    if (!selectedLibraryPaper || isPremium || !isPremiumPredictedPaper(selectedLibraryPaper)) return;
+    setStep("select");
+    setSelectedLibraryPaper(null);
+    setParsedQuestions([]);
+    setPaperContext("");
+    setAnswers({});
+    setFeedbacks({});
+    setMarkingId(null);
+    setExamActive(false);
+    setExamFinished(false);
+    setTimeExpired(false);
+    setShowUpgrade(true);
+  }, [selectedLibraryPaper, isPremium]);
+
   const handleSubmitExam = useCallback(() => {
     setExamActive(false);
     setExamFinished(true);
@@ -2314,7 +2329,11 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                   </div>
                 ) : (
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {libraryPapers.map((lp, i) => (
+                    {libraryPapers.map((lp, i) => {
+                      const difficulty = getPredictedPaperDifficulty(lp);
+                      const isLocked = isPremiumPredictedPaper(lp) && !isPremium;
+
+                      return (
                       <motion.div
                         key={lp.id}
                         initial={{ opacity: 0, y: 16 }}
@@ -2337,12 +2356,12 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                             <span className="text-[11px] bg-primary/10 text-primary px-2.5 py-1 rounded-full font-semibold">
                               {lp.totalMarks} marks
                             </span>
-                            {lp.tier && (
+                            {difficulty && (
                               <span className="text-[11px] bg-muted text-muted-foreground px-2.5 py-1 rounded-full font-medium">
-                                {lp.tier}
+                                {difficulty}
                               </span>
                             )}
-                            {isPremiumDifficulty(lp.tier) && !isPremium && (
+                            {isLocked && (
                               <span className="text-[11px] bg-amber-500/15 text-amber-400 border border-amber-500/30 px-2.5 py-1 rounded-full font-semibold inline-flex items-center gap-1">
                                 <Lock className="h-3 w-3" /> Pro
                               </span>
@@ -2350,7 +2369,8 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                           </div>
                         </button>
                       </motion.div>
-                    ))}
+                    );
+                    })}
                   </div>
                 )}
               </div>
