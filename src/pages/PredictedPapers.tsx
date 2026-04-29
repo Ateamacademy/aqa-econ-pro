@@ -2236,6 +2236,21 @@ Do NOT include any other headings, preamble, or commentary outside these three s
     autoGenTriggered.current = false;
   };
 
+  useEffect(() => {
+    if (!selectedLibraryPaper || isPremium || !isPremiumPredictedPaper(selectedLibraryPaper)) return;
+    setStep("select");
+    setSelectedLibraryPaper(null);
+    setParsedQuestions([]);
+    setPaperContext("");
+    setAnswers({});
+    setFeedbacks({});
+    setMarkingId(null);
+    setExamActive(false);
+    setExamFinished(false);
+    setTimeExpired(false);
+    setShowUpgrade(true);
+  }, [selectedLibraryPaper, isPremium]);
+
   const handleSubmitExam = useCallback(() => {
     setExamActive(false);
     setExamFinished(true);
