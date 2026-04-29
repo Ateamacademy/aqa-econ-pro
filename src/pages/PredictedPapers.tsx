@@ -2342,6 +2342,11 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                                 {lp.tier}
                               </span>
                             )}
+                            {isPremiumDifficulty(lp.tier) && !isPremium && (
+                              <span className="text-[11px] bg-amber-500/15 text-amber-400 border border-amber-500/30 px-2.5 py-1 rounded-full font-semibold inline-flex items-center gap-1">
+                                <Lock className="h-3 w-3" /> Pro
+                              </span>
+                            )}
                           </div>
                         </button>
                       </motion.div>
