@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { SubjectProvider } from "@/contexts/SubjectContext";
 import Layout from "@/components/Layout";
+import { PremiumGate } from "@/components/PremiumGate";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 
