@@ -2073,6 +2073,10 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
   );
 
   const handleDownloadSolutions = useCallback(async () => {
+    if (!isPremium) {
+      setShowUpgrade(true);
+      return;
+    }
     // For library papers with curated static mark scheme PDFs (matches the
     // official Papers section), serve them directly instead of generating.
     const staticMs = resolveStaticPaperPdf(selectedLibraryPaper?.id, "mark-scheme");
