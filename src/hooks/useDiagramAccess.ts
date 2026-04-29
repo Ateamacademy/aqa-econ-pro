@@ -49,7 +49,7 @@ const buildSnapshot = ({
       isAllowed: true,
       remainingAttempts: remaining,
       isPremium: false,
-      message: CHECKING_MESSAGE,
+      message: `${remaining} free question(s) remaining in the Diagrams Practice section.`,
       error,
     };
   }
