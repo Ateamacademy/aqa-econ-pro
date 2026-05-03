@@ -275,6 +275,13 @@ export default function Auth() {
                   >
                     Forgot password?
                   </button>
+                  <button
+                    type="button"
+                    onClick={() => handleResendConfirmation()}
+                    className="text-xs text-muted-foreground hover:text-primary w-full text-center transition-colors"
+                  >
+                    Didn't get the confirmation email? Resend it
+                  </button>
                 </form>
               </TabsContent>
 
