@@ -47,6 +47,28 @@ export default function Auth() {
     }
   }, []);
 
+  const handleResendConfirmation = useCallback(async (targetEmail?: string) => {
+    const trimmedEmail = (targetEmail ?? email).trim();
+    if (!trimmedEmail) {
+      toast.error("Enter your email address first.");
+      return;
+    }
+    try {
+      const { error } = await supabase.auth.resend({
+        type: "signup",
+        email: trimmedEmail,
+        options: { emailRedirectTo: window.location.origin },
+      });
+      if (error) {
+        toast.error(error.message);
+        return;
+      }
+      toast.success("Confirmation email re-sent. Check your inbox (and spam folder).");
+    } catch {
+      toast.error("Network error. Please try again.");
+    }
+  }, [email]);
+
   const handleLogin = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     if (loading) return;
@@ -56,8 +78,15 @@ export default function Auth() {
       if (error) {
         if (error.message.includes("Invalid login")) {
           toast.error("Incorrect email or password. Please try again.");
-        } else if (error.message.includes("Email not confirmed")) {
-          toast.error("Please verify your email before signing in. Check your inbox.");
+        } else if (error.message.toLowerCase().includes("email not confirmed")) {
+          toast.error("Email not confirmed yet.", {
+            description: "Click below to resend the confirmation link.",
+            action: {
+              label: "Resend email",
+              onClick: () => handleResendConfirmation(email),
+            },
+            duration: 10000,
+          });
         } else {
           toast.error(error.message);
         }
@@ -70,7 +99,7 @@ export default function Auth() {
     } finally {
       setLoading(false);
     }
-  }, [email, password, loading, navigate]);
+  }, [email, password, loading, navigate, handleResendConfirmation]);
 
   const handleSignup = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
@@ -245,6 +274,13 @@ export default function Auth() {
                     className="text-sm text-muted-foreground hover:text-primary w-full text-center transition-colors pt-1"
                   >
                     Forgot password?
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleResendConfirmation()}
+                    className="text-xs text-muted-foreground hover:text-primary w-full text-center transition-colors"
+                  >
+                    Didn't get the confirmation email? Resend it
                   </button>
                 </form>
               </TabsContent>
