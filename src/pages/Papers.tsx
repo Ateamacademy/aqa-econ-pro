@@ -300,20 +300,21 @@ function BoardList({
 
       <div className="space-y-8">
         {papers.map((p) => {
-          const locked = isLocked(p.number);
+          const paperFullyLocked = isLocked(p.number); // any difficulty unlocked?
+          const hasFreeTier = p.number === 1 && !premium;
           return (
             <section key={p.code}>
               <div className="mb-3 flex items-baseline justify-between gap-3">
                 <h2 className="text-lg font-semibold text-foreground flex items-center gap-2">
                   Paper {p.number}: {p.title}
-                  {locked && (
+                  {paperFullyLocked && !hasFreeTier && (
                     <span className="text-[11px] font-normal text-muted-foreground inline-flex items-center gap-1">
                       <Lock className="h-3 w-3" /> Pro
                     </span>
                   )}
-                  {!locked && p.number === 1 && !premium && (
+                  {hasFreeTier && (
                     <span className="text-[11px] font-normal text-emerald-400 inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30">
-                      Free
+                      Moderate Free
                     </span>
                   )}
                 </h2>
@@ -328,6 +329,7 @@ function BoardList({
                   const useMsInternal = msInternalIf?.(p, d.id) ?? false;
                   const ph = usePaperInternal && internalPaperHref ? internalPaperHref(p, d.id) : paperHref(p, d.id);
                   const mh = useMsInternal && internalMsHref ? internalMsHref(p, d.id) : msHref(p, d.id);
+                  const locked = isLocked(p.number, d.id);
                   return (
                     <DifficultyCard
                       key={d.id}
