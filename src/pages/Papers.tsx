@@ -169,11 +169,11 @@ function FreeTierBanner({ premium }: { premium: boolean }) {
       <Sparkles className="h-4 w-4 text-primary mt-0.5 shrink-0" />
       <div className="flex-1">
         <p className="text-sm font-medium text-foreground">
-          Paper 1 is free — Papers 2 & 3 are Pro
+          Paper 1 (Moderate) is free — everything else is Pro
         </p>
         <p className="text-xs text-muted-foreground mt-1">
-          You can open every Paper 1 question paper and mark scheme. Upgrade to unlock the full
-          mock library across all difficulty tiers and boards.
+          You can open the Paper 1 Moderate question paper and mark scheme on every board.
+          Upgrade to unlock Hard, Advanced, and Papers 2 & 3 across all boards.
         </p>
       </div>
       <Button asChild size="sm" className="gap-1 shrink-0">
