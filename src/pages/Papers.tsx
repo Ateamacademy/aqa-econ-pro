@@ -24,8 +24,9 @@ function usePaperAccess() {
   const premium = hasPremiumAccess({ subscribed, email: user?.email });
   return {
     premium,
-    /** Free tier: only Paper 1 (QP + MS) is unlocked across all boards. */
-    isLocked: (paperNumber: number) => !premium && paperNumber !== 1,
+    /** Free tier: only Paper 1 — Moderate (QP + MS) is unlocked across all boards. */
+    isLocked: (paperNumber: number, difficulty?: Difficulty) =>
+      !premium && !(paperNumber === 1 && difficulty === "moderate"),
   };
 }
 
