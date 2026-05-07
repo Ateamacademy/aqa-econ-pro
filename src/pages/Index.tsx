@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import GradeStepLadder from "@/components/homepage/GradeStepLadder";
+import DiagnosticCalculator from "@/components/homepage/DiagnosticCalculator";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -272,6 +273,30 @@ export default function Index() {
         </div>
       </section>
 
+
+      {/* ═══════ DIAGNOSTIC GRADE CALCULATOR ═══════ */}
+      <section id="diagnostic" className="py-16 lg:py-24">
+        <div className="max-w-[880px] mx-auto px-5 lg:px-6">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+            className="text-center mb-10"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] mb-4">
+              What Grade Are You{" "}
+              <span className="text-primary">Right Now?</span>
+            </h2>
+            <p className="text-base text-muted-foreground max-w-xl mx-auto">
+              Take our 5-question diagnostic — calculation, MCQs, short answer and a 15-mark essay with diagram. Get an instant predicted grade in under 5 minutes.
+            </p>
+          </motion.div>
+          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }}>
+            <DiagnosticCalculator />
+          </motion.div>
+        </div>
+      </section>
 
       <div className="relative overflow-hidden border-y border-border py-4" style={{ maskImage: "linear-gradient(90deg, transparent, black 10%, black 90%, transparent)" }}>
         <div className="flex animate-marquee whitespace-nowrap">
