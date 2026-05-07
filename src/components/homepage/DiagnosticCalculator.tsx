@@ -8,6 +8,25 @@ import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
+type Board =
+  | "aqa" | "edexcel-a" | "edexcel-b" | "ocr" | "cambridge" | "ib"
+  | "wjec" | "eduqas" | "aqa-gcse" | "cambridge-igcse" | "edexcel-igcse" | "ocr-gcse";
+
+const BOARD_OPTIONS: { value: Board; label: string }[] = [
+  { value: "aqa", label: "AQA A-Level (7136)" },
+  { value: "edexcel-a", label: "Edexcel A A-Level (9EC0)" },
+  { value: "edexcel-b", label: "Edexcel B A-Level (9EB0)" },
+  { value: "ocr", label: "OCR A-Level (H460)" },
+  { value: "cambridge", label: "CAIE A-Level (9708)" },
+  { value: "ib", label: "IB Diploma (HL/SL)" },
+  { value: "wjec", label: "WJEC A-Level" },
+  { value: "eduqas", label: "Eduqas A-Level" },
+  { value: "aqa-gcse", label: "AQA GCSE (8136)" },
+  { value: "cambridge-igcse", label: "CAIE IGCSE (0455)" },
+  { value: "edexcel-igcse", label: "Edexcel IGCSE (4EC1)" },
+  { value: "ocr-gcse", label: "OCR GCSE (J205)" },
+];
+
 /**
  * Diagnostic Grade Calculator — proper AQA marking.
  *  Q1 — Calculation (2)        : automatic numeric + formatting check
