@@ -8,6 +8,8 @@ import {
   ArrowRight, ChevronDown, Check, Star, ArrowUpRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/contexts/AuthContext";
+import { toast } from "sonner";
 import {
   Accordion,
   AccordionContent,
