@@ -8,6 +8,25 @@ import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
+type Board =
+  | "aqa" | "edexcel-a" | "edexcel-b" | "ocr" | "cambridge" | "ib"
+  | "wjec" | "eduqas" | "aqa-gcse" | "cambridge-igcse" | "edexcel-igcse" | "ocr-gcse";
+
+const BOARD_OPTIONS: { value: Board; label: string }[] = [
+  { value: "aqa", label: "AQA A-Level (7136)" },
+  { value: "edexcel-a", label: "Edexcel A A-Level (9EC0)" },
+  { value: "edexcel-b", label: "Edexcel B A-Level (9EB0)" },
+  { value: "ocr", label: "OCR A-Level (H460)" },
+  { value: "cambridge", label: "CAIE A-Level (9708)" },
+  { value: "ib", label: "IB Diploma (HL/SL)" },
+  { value: "wjec", label: "WJEC A-Level" },
+  { value: "eduqas", label: "Eduqas A-Level" },
+  { value: "aqa-gcse", label: "AQA GCSE (8136)" },
+  { value: "cambridge-igcse", label: "CAIE IGCSE (0455)" },
+  { value: "edexcel-igcse", label: "Edexcel IGCSE (4EC1)" },
+  { value: "ocr-gcse", label: "OCR GCSE (J205)" },
+];
+
 /**
  * Diagnostic Grade Calculator — proper AQA marking.
  *  Q1 — Calculation (2)        : automatic numeric + formatting check
@@ -104,6 +123,7 @@ const gradeFor = (m: number) => BANDS.find((b) => (m / TOTAL) * 100 >= b.min) ??
 
 export default function DiagnosticCalculator() {
   const [step, setStep] = useState<Step>(0);
+  const [board, setBoard] = useState<Board>("aqa");
   const [a1, setA1] = useState("");
   const [a2, setA2] = useState<number | null>(null);
   const [a3, setA3] = useState<number | null>(null);
@@ -149,6 +169,7 @@ export default function DiagnosticCalculator() {
     try {
       const { data, error } = await supabase.functions.invoke("mark-diagnostic", {
         body: {
+          board,
           items: [
             { id: "q4", prompt: Q4.prompt, totalMarks: Q4.totalMarks, rubric: Q4.rubric, answer: a4Text },
             { id: "q5", prompt: Q5.prompt, totalMarks: Q5.totalMarks, rubric: Q5.rubric, answer: a5Text, hasDiagram: a5HasDiagram === true },
@@ -197,8 +218,24 @@ export default function DiagnosticCalculator() {
               Diagnostic Grade Calculator
             </h3>
             <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">
-              Five questions across the full skill range. Your written answers are marked using AQA examiner standards. We'll predict your current grade based on your total marks (out of {TOTAL}).
+              Five questions across the full skill range. Your written answers are marked using your exam board's official mark scheme. We'll predict your current grade based on your total marks (out of {TOTAL}).
             </p>
+
+            <div className="mt-4">
+              <label className="text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground block mb-1.5">
+                Exam board (mark scheme used)
+              </label>
+              <select
+                value={board}
+                onChange={(e) => setBoard(e.target.value as Board)}
+                disabled={step > 0 && step < 5}
+                className="w-full sm:w-auto h-10 rounded-md border border-border bg-background px-3 text-sm font-medium text-foreground disabled:opacity-60"
+              >
+                {BOARD_OPTIONS.map((o) => (
+                  <option key={o.value} value={o.value}>{o.label}</option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
 
