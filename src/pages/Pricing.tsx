@@ -28,8 +28,18 @@ const proFeatures = [
 ];
 
 export default function Pricing() {
-  const { user, subscribed } = useAuth();
+  const { user, subscribed, refreshSubscription } = useAuth();
   const navigate = useNavigate();
+
+  const handleRefresh = async () => {
+    const t = toast.loading("Checking your payment…");
+    try {
+      await refreshSubscription(true);
+      toast.success("Subscription refreshed", { id: t });
+    } catch {
+      toast.error("Could not refresh — please try again in a moment", { id: t });
+    }
+  };
 
   const handleCheckout = async () => {
     if (!user) { navigate("/auth"); return; }
