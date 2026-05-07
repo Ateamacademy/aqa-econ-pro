@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import GradeStepLadder from "@/components/homepage/GradeStepLadder";
+import DiagnosticCalculator from "@/components/homepage/DiagnosticCalculator";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
