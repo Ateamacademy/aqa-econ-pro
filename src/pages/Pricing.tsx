@@ -139,9 +139,19 @@ export default function Pricing() {
       )}
 
       {!subscribed && (
-        <p className="text-center text-sm text-muted-foreground mt-6">
-          One payment. No subscription. Access ends 29 June 2026.
-        </p>
+        <div className="text-center mt-6 space-y-3">
+          <p className="text-sm text-muted-foreground">
+            One payment. No subscription. Access ends 29 June 2026.
+          </p>
+          {user && (
+            <p className="text-xs text-muted-foreground">
+              Already paid?{" "}
+              <button onClick={handleRefresh} className="underline text-primary hover:text-primary/80">
+                Refresh my access
+              </button>
+            </p>
+          )}
+        </div>
       )}
     </div>
   );
