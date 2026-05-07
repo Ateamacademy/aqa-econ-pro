@@ -10,7 +10,7 @@ interface AuthContextType {
   subscriptionEnd: string | null;
   profile: { free_papers_used: number; free_questions_used: number; free_predicted_papers_used: number; free_tutor_used: number; free_diagrams_used: number; exam_board: string | null; target_grade: string | null; onboarding_completed: boolean } | null;
   signOut: () => Promise<void>;
-  refreshSubscription: () => Promise<void>;
+  refreshSubscription: (force?: boolean) => Promise<void>;
   refreshProfile: () => Promise<void>;
 }
 
