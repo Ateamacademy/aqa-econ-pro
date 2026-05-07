@@ -123,6 +123,7 @@ const gradeFor = (m: number) => BANDS.find((b) => (m / TOTAL) * 100 >= b.min) ??
 
 export default function DiagnosticCalculator() {
   const [step, setStep] = useState<Step>(0);
+  const [board, setBoard] = useState<Board>("aqa");
   const [a1, setA1] = useState("");
   const [a2, setA2] = useState<number | null>(null);
   const [a3, setA3] = useState<number | null>(null);
