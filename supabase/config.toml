@@ -13,3 +13,5 @@ project_id = "yjgohrvcpkmlpuzwnuml"
     verify_jwt = false
   [functions.process-email-queue]
     verify_jwt = true
+  [functions.mark-diagnostic]
+    verify_jwt = false
