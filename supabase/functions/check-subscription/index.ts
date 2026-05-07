@@ -66,6 +66,17 @@ serve(async (req) => {
 
     email = user.email!.toLowerCase();
 
+    // Allow callers (e.g. post-checkout) to bypass the cache.
+    let force = false;
+    try {
+      const url = new URL(req.url);
+      if (url.searchParams.get("force") === "1") force = true;
+      if (req.method === "POST") {
+        const body = await req.clone().json().catch(() => null);
+        if (body && body.force) force = true;
+      }
+    } catch (_) { /* ignore */ }
+
     if (TESTER_EMAILS.includes(email)) {
       return respond({ subscribed: true, subscription_end: ACCESS_EXPIRES, tester: true });
     }
@@ -74,9 +85,13 @@ serve(async (req) => {
       return respond({ subscribed: false, expired: true });
     }
 
-    const cached = cache.get(email);
-    if (cached && Date.now() - cached.ts < CACHE_TTL_MS) {
-      return respond(cached.result);
+    if (!force) {
+      const cached = cache.get(email);
+      if (cached && Date.now() - cached.ts < CACHE_TTL_MS) {
+        return respond(cached.result);
+      }
+    } else {
+      cache.delete(email);
     }
 
     const stripeSecretKey = Deno.env.get("STRIPE_SECRET_KEY");
