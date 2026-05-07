@@ -8,6 +8,8 @@ import {
   ArrowRight, ChevronDown, Check, Star, ArrowUpRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/contexts/AuthContext";
+import { toast } from "sonner";
 import {
   Accordion,
   AccordionContent,
@@ -92,6 +94,8 @@ export default function Index() {
   const blob2Ref = useRef<HTMLDivElement>(null);
   const ctaPulseRef = useRef<HTMLDivElement>(null);
 
+  const { refreshSubscription } = useAuth();
+
   // Scroll to hash on mount (for links like /#pricing from other pages)
   useEffect(() => {
     const hash = window.location.hash.replace("#", "");
@@ -101,6 +105,26 @@ export default function Index() {
       }, 300);
     }
   }, []);
+
+  // Handle post-checkout return: force a fresh subscription check (bypasses cache).
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("checkout") !== "success") return;
+
+    let attempts = 0;
+    const tick = async () => {
+      attempts += 1;
+      try { await refreshSubscription(true); } catch (_) {}
+      if (attempts < 4) setTimeout(tick, 3000);
+    };
+    tick();
+    toast.success("Payment received! Activating your Pro access…");
+
+    // Clean the URL so refreshes don't re-trigger.
+    const url = new URL(window.location.href);
+    url.searchParams.delete("checkout");
+    window.history.replaceState({}, "", url.toString());
+  }, [refreshSubscription]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {

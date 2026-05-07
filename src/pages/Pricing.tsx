@@ -28,8 +28,18 @@ const proFeatures = [
 ];
 
 export default function Pricing() {
-  const { user, subscribed } = useAuth();
+  const { user, subscribed, refreshSubscription } = useAuth();
   const navigate = useNavigate();
+
+  const handleRefresh = async () => {
+    const t = toast.loading("Checking your payment…");
+    try {
+      await refreshSubscription(true);
+      toast.success("Subscription refreshed", { id: t });
+    } catch {
+      toast.error("Could not refresh — please try again in a moment", { id: t });
+    }
+  };
 
   const handleCheckout = async () => {
     if (!user) { navigate("/auth"); return; }
@@ -129,9 +139,19 @@ export default function Pricing() {
       )}
 
       {!subscribed && (
-        <p className="text-center text-sm text-muted-foreground mt-6">
-          One payment. No subscription. Access ends 29 June 2026.
-        </p>
+        <div className="text-center mt-6 space-y-3">
+          <p className="text-sm text-muted-foreground">
+            One payment. No subscription. Access ends 29 June 2026.
+          </p>
+          {user && (
+            <p className="text-xs text-muted-foreground">
+              Already paid?{" "}
+              <button onClick={handleRefresh} className="underline text-primary hover:text-primary/80">
+                Refresh my access
+              </button>
+            </p>
+          )}
+        </div>
       )}
     </div>
   );
