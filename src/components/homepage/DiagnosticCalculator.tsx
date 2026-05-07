@@ -1,54 +1,36 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowLeft, Check, RotateCcw, Sparkles, Target } from "lucide-react";
+import { ArrowRight, ArrowLeft, Check, RotateCcw, Sparkles, Target, Loader2, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 /**
- * Diagnostic Grade Calculator
- * 5 questions, 23 marks total:
- *   Q1 — Calculation (2)
- *   Q2 — MCQ (1)
- *   Q3 — MCQ (1)
- *   Q4 — Short answer 4-mark (self-checklist of mark-scheme points)
- *   Q5 — 15-mark essay with diagram (self-checklist)
+ * Diagnostic Grade Calculator — proper AQA marking.
+ *  Q1 — Calculation (2)        : automatic numeric + formatting check
+ *  Q2 — MCQ (1)                : automatic
+ *  Q3 — MCQ (1)                : automatic
+ *  Q4 — 4-mark explain         : marked by examiner edge function
+ *  Q5 — 15-mark essay+diagram  : marked by examiner edge function (50% cap if no diagram)
+ *  Total: 23 marks
  */
 
-type Step = number; // 0..5 (5 = results)
+type Step = number;
 
-interface CalcQ {
-  prompt: string;
-  hint: string;
-  correct: number;
-  tolerance: number;
-  marks: 2;
-}
-interface McqQ {
-  prompt: string;
-  options: string[];
-  correctIndex: number;
-  marks: 1;
-}
-interface ChecklistQ {
-  prompt: string;
-  guidance: string;
-  points: { label: string; marks: number }[];
-  totalMarks: number;
-  requireDiagram?: boolean;
-}
+const TOTAL = 23;
 
-const Q1: CalcQ = {
+const Q1 = {
   prompt:
     "A country's nominal GDP rose from £500bn to £540bn. Inflation over the same period was 3%. Calculate the real GDP growth rate (to 1 decimal place, as a %).",
-  hint: "Use: real growth ≈ nominal growth − inflation. Give your answer to 1 d.p. with a % sign.",
+  hint: "Real growth ≈ nominal growth − inflation. Give your answer to 1 d.p. with a % sign.",
   correct: 5.0,
   tolerance: 0.2,
-  marks: 2,
+  marks: 2 as const,
 };
-
-const Q2: McqQ = {
+const Q2 = {
   prompt: "Which of the following would most likely cause a rightward shift of the aggregate demand curve?",
   options: [
     "A rise in income tax rates",
@@ -57,10 +39,8 @@ const Q2: McqQ = {
     "An appreciation of the domestic currency",
   ],
   correctIndex: 2,
-  marks: 1,
 };
-
-const Q3: McqQ = {
+const Q3 = {
   prompt: "A monopolist maximises profit where:",
   options: [
     "Price equals average cost",
@@ -69,107 +49,124 @@ const Q3: McqQ = {
     "Price equals marginal cost",
   ],
   correctIndex: 1,
-  marks: 1,
 };
-
-const Q4: ChecklistQ = {
-  prompt: "Explain two reasons why a government might impose an indirect tax on a demerit good such as cigarettes. (4 marks)",
-  guidance: "Tick each mark-scheme point your answer clearly makes.",
+const Q4 = {
+  prompt:
+    "Explain two reasons why a government might impose an indirect tax on a demerit good such as cigarettes. (4 marks)",
   totalMarks: 4,
-  points: [
-    { label: "Identifies a valid reason (e.g. internalise negative externality / reduce overconsumption / raise revenue)", marks: 1 },
-    { label: "Develops that reason with economic theory (e.g. MPC > MSC, market failure)", marks: 1 },
-    { label: "Identifies a second valid reason", marks: 1 },
-    { label: "Develops the second reason with theory or example", marks: 1 },
-  ],
+  rubric: [
+    "Award 1 mark per valid reason identified (max 2 reasons).",
+    "Award 1 further mark per reason for development with economic theory or example.",
+    "Valid reasons include: internalising negative externalities (MPC < MSC), reducing overconsumption, raising government revenue, correcting information failure, discouraging consumption due to inelastic PED.",
+    "Mere assertion without economic mechanism scores 1 mark per reason.",
+  ].join(" "),
 };
-
-const Q5: ChecklistQ = {
+const Q5 = {
   prompt:
     "Evaluate the likely impact of a significant increase in the national minimum wage on the level of unemployment in the UK. (15 marks)",
-  guidance:
-    "Tick each criterion your answer + diagram meets. Be honest — examiners only credit what is clearly written.",
   totalMarks: 15,
-  requireDiagram: true,
-  points: [
-    { label: "Clear definition of national minimum wage / unemployment", marks: 1 },
-    { label: "Correctly drawn labour market diagram (axes: W & QL; D_L, S_L; NMW above equilibrium)", marks: 2 },
-    { label: "Diagram shows excess supply of labour (classical unemployment) clearly labelled", marks: 1 },
-    { label: "Knowledge: explains theoretical link between NMW and unemployment", marks: 2 },
-    { label: "Application: uses UK context / data / specific industry", marks: 2 },
-    { label: "Analysis: developed chains of reasoning (cost of labour → demand for labour → unemployment)", marks: 3 },
-    { label: "Evaluation: counter-argument (e.g. monopsony, efficiency wages, demand-side effects)", marks: 2 },
-    { label: "Evaluation: judgement with justification (depends on size, elasticity, industry)", marks: 2 },
-  ],
+  rubric: [
+    "AQA 15-mark levels-of-response. KAA = 9 marks, Evaluation = 6 marks.",
+    "Required: definitions of NMW & unemployment; correct labour-market diagram (W on Y, QL on X) showing NMW above equilibrium creating excess supply; chains of reasoning linking higher labour cost → lower demand for labour → unemployment; UK context/data; counter-arguments (monopsony case, efficiency wages, demand-side multiplier effects); supported judgement (depends on size of rise, elasticity, sector).",
+    "Level descriptors: L1 (1-3) isolated, no diagram. L2 (4-6) some knowledge, weak diagram. L3 (7-9) sound chains, attempted evaluation. L4 (10-12) developed analysis + reasoned evaluation. L5 (13-15) sustained analysis + supported prioritised judgement.",
+    "If no diagram, cap at 7/15 (50%).",
+    "If no evaluation at all, cap at 7/15.",
+    "If no supported judgement, cap at 10/15.",
+  ].join(" "),
 };
 
-const TOTAL = 23;
+interface AiItemResult {
+  id: "q4" | "q5";
+  marks: number;
+  totalMarks: number;
+  rationale: string;
+  strengths: string[];
+  improvements: string[];
+}
 
 interface GradeBand {
   grade: string;
-  min: number; // % of total
+  min: number;
   label: string;
   color: string;
   blurb: string;
 }
-
 const BANDS: GradeBand[] = [
-  { grade: "A*", min: 85, label: "Exceptional", color: "text-success", blurb: "You're operating at the top of the cohort. Focus on consistency under timed conditions." },
-  { grade: "A",  min: 73, label: "Strong",      color: "text-success", blurb: "Excellent foundations. Sharpen evaluation and diagram precision to push into A*." },
-  { grade: "B",  min: 60, label: "Solid",       color: "text-primary", blurb: "Good knowledge base. The next jump comes from deeper analysis chains and clearer judgement." },
-  { grade: "C",  min: 48, label: "Developing",  color: "text-warning", blurb: "Knowledge is forming but application and analysis need more practice." },
-  { grade: "D",  min: 36, label: "Emerging",    color: "text-warning", blurb: "Build core definitions and diagram accuracy first — that unlocks the higher marks." },
+  { grade: "A*", min: 85, label: "Exceptional",  color: "text-success",     blurb: "Top of the cohort. Focus on consistency under timed conditions." },
+  { grade: "A",  min: 73, label: "Strong",       color: "text-success",     blurb: "Excellent foundations. Sharpen evaluation and diagram precision to push into A*." },
+  { grade: "B",  min: 60, label: "Solid",        color: "text-primary",     blurb: "Good base. The next jump comes from deeper analysis chains and clearer judgement." },
+  { grade: "C",  min: 48, label: "Developing",   color: "text-warning",     blurb: "Knowledge is forming but application and analysis need more practice." },
+  { grade: "D",  min: 36, label: "Emerging",     color: "text-warning",     blurb: "Build core definitions and diagram accuracy first — that unlocks the higher marks." },
   { grade: "E",  min: 22, label: "Foundational", color: "text-destructive", blurb: "Start with structured notes and topic-by-topic practice to lock in the basics." },
-  { grade: "U",  min: 0,  label: "Below E",     color: "text-destructive", blurb: "We'll start from first principles — predicted papers + study notes daily." },
+  { grade: "U",  min: 0,  label: "Below E",      color: "text-destructive", blurb: "We'll start from first principles — predicted papers + study notes daily." },
 ];
-
-function gradeFor(marks: number): GradeBand {
-  const pct = (marks / TOTAL) * 100;
-  return BANDS.find((b) => pct >= b.min) ?? BANDS[BANDS.length - 1];
-}
+const gradeFor = (m: number) => BANDS.find((b) => (m / TOTAL) * 100 >= b.min) ?? BANDS[BANDS.length - 1];
 
 export default function DiagnosticCalculator() {
   const [step, setStep] = useState<Step>(0);
-
-  // answers
   const [a1, setA1] = useState("");
   const [a2, setA2] = useState<number | null>(null);
   const [a3, setA3] = useState<number | null>(null);
-  const [a4, setA4] = useState<boolean[]>(Q4.points.map(() => false));
-  const [a5, setA5] = useState<boolean[]>(Q5.points.map(() => false));
-  const [a5HasDiagram, setA5HasDiagram] = useState<boolean | null>(null);
   const [a4Text, setA4Text] = useState("");
   const [a5Text, setA5Text] = useState("");
+  const [a5HasDiagram, setA5HasDiagram] = useState<boolean | null>(null);
 
-  /* ── scoring ── */
+  const [marking, setMarking] = useState(false);
+  const [aiResults, setAiResults] = useState<AiItemResult[] | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  /* Auto marks */
   const m1 = useMemo(() => {
-    const n = parseFloat(a1.replace(/[^0-9.\-]/g, ""));
+    const trimmed = a1.trim();
+    if (!trimmed) return 0;
+    // Parse the number, ignoring %, spaces, etc.
+    const cleaned = trimmed.replace(/[%\s,]/g, "");
+    const n = parseFloat(cleaned);
     if (!Number.isFinite(n)) return 0;
-    if (Math.abs(n - Q1.correct) <= Q1.tolerance) {
-      // 2 marks if formatted (% sign or 1dp), else 1
-      const formatted = /%/.test(a1) || /\.\d/.test(a1);
-      return formatted ? 2 : 1;
-    }
-    return 0;
+    if (Math.abs(n - Q1.correct) > Q1.tolerance) return 0;
+    // Need correct value AND formatting (% sign OR 1+ decimal place)
+    const hasPct = /%/.test(trimmed);
+    const hasDecimal = /\.\d/.test(trimmed);
+    return hasPct && hasDecimal ? 2 : 1;
   }, [a1]);
   const m2 = a2 === Q2.correctIndex ? 1 : 0;
   const m3 = a3 === Q3.correctIndex ? 1 : 0;
-  const m4 = a4.reduce((s, v, i) => s + (v ? Q4.points[i].marks : 0), 0);
-  const rawM5 = a5.reduce((s, v, i) => s + (v ? Q5.points[i].marks : 0), 0);
-  // ghost-mark prevention: cap written marks at 50% if no diagram
-  const m5 = a5HasDiagram === false ? Math.min(rawM5, Math.floor(Q5.totalMarks * 0.5)) : rawM5;
-
+  const m4 = aiResults?.find((r) => r.id === "q4")?.marks ?? 0;
+  const m5 = aiResults?.find((r) => r.id === "q5")?.marks ?? 0;
   const total = m1 + m2 + m3 + m4 + m5;
   const band = gradeFor(total);
 
-  /* ── nav ── */
   const next = () => setStep((s) => Math.min(5, s + 1) as Step);
   const back = () => setStep((s) => Math.max(0, s - 1) as Step);
   const reset = () => {
     setStep(0); setA1(""); setA2(null); setA3(null);
-    setA4(Q4.points.map(() => false)); setA5(Q5.points.map(() => false));
-    setA5HasDiagram(null); setA4Text(""); setA5Text("");
+    setA4Text(""); setA5Text(""); setA5HasDiagram(null);
+    setAiResults(null); setError(null);
   };
+
+  async function submitForMarking() {
+    setMarking(true); setError(null);
+    try {
+      const { data, error } = await supabase.functions.invoke("mark-diagnostic", {
+        body: {
+          items: [
+            { id: "q4", prompt: Q4.prompt, totalMarks: Q4.totalMarks, rubric: Q4.rubric, answer: a4Text },
+            { id: "q5", prompt: Q5.prompt, totalMarks: Q5.totalMarks, rubric: Q5.rubric, answer: a5Text, hasDiagram: a5HasDiagram === true },
+          ],
+        },
+      });
+      if (error) throw new Error(error.message);
+      if (!data?.results) throw new Error("Marking service returned no results");
+      setAiResults(data.results);
+      setStep(5);
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : "Marking failed";
+      setError(msg);
+      toast.error(msg);
+    } finally {
+      setMarking(false);
+    }
+  }
 
   const canAdvance = (() => {
     switch (step) {
@@ -194,33 +191,28 @@ export default function DiagnosticCalculator() {
           </div>
           <div className="min-w-0">
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary mb-2">
-              <Sparkles className="h-3 w-3" /> Free · 5 minutes
+              <Sparkles className="h-3 w-3" /> Free · Examiner-marked
             </div>
             <h3 className="text-xl lg:text-2xl font-extrabold tracking-tight text-foreground">
               Diagnostic Grade Calculator
             </h3>
             <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">
-              Five questions across the full skill range — calculation, MCQ, short answer and a 15-mark essay with a diagram. We'll predict your current grade based on the marks you score (out of {TOTAL}).
+              Five questions across the full skill range. Your written answers are marked using AQA examiner standards. We'll predict your current grade based on your total marks (out of {TOTAL}).
             </p>
           </div>
         </div>
 
-        {/* Progress */}
         <div className="mt-6 flex items-center gap-1.5">
           {stepLabels.map((label, i) => (
             <div key={label} className="flex-1">
-              <div
-                className={cn(
-                  "h-1.5 rounded-full transition-colors",
-                  step > i ? "bg-primary" : step === i ? "bg-primary/60" : "bg-popover",
-                )}
-              />
+              <div className={cn(
+                "h-1.5 rounded-full transition-colors",
+                step > i ? "bg-primary" : step === i ? "bg-primary/60" : "bg-popover",
+              )} />
               <p className={cn(
                 "text-[10px] font-mono mt-1.5 text-center hidden sm:block",
                 step >= i ? "text-foreground" : "text-muted-foreground/50",
-              )}>
-                Q{i + 1}
-              </p>
+              )}>Q{i + 1}</p>
             </div>
           ))}
         </div>
@@ -234,15 +226,9 @@ export default function DiagnosticCalculator() {
               <QHeader num={1} marks={2} type="Calculation" />
               <p className="text-base text-foreground leading-relaxed mb-4">{Q1.prompt}</p>
               <p className="text-xs text-muted-foreground italic mb-4">{Q1.hint}</p>
-              <Input
-                value={a1}
-                onChange={(e) => setA1(e.target.value)}
-                placeholder="e.g. 5.0%"
-                className="h-12 text-base font-mono"
-              />
+              <Input value={a1} onChange={(e) => setA1(e.target.value)} placeholder="e.g. 5.0%" className="h-12 text-base font-mono" />
             </motion.div>
           )}
-
           {step === 1 && <McqStep n={2} q={Q2} value={a2} onChange={setA2} />}
           {step === 2 && <McqStep n={3} q={Q3} value={a3} onChange={setA3} />}
 
@@ -250,20 +236,10 @@ export default function DiagnosticCalculator() {
             <motion.div key="q4" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
               <QHeader num={4} marks={4} type="Short answer" />
               <p className="text-base text-foreground leading-relaxed mb-4">{Q4.prompt}</p>
-              <Textarea
-                value={a4Text}
-                onChange={(e) => setA4Text(e.target.value)}
-                placeholder="Write your answer here…"
-                className="min-h-[140px] text-sm leading-relaxed"
-              />
-              {a4Text.trim().length > 20 && (
-                <ChecklistGrader
-                  guidance={Q4.guidance}
-                  points={Q4.points}
-                  values={a4}
-                  onChange={setA4}
-                />
-              )}
+              <Textarea value={a4Text} onChange={(e) => setA4Text(e.target.value)} placeholder="Write your answer here…" className="min-h-[160px] text-sm leading-relaxed" />
+              <p className="text-[11px] text-muted-foreground mt-2 text-right font-mono">
+                {a4Text.trim().split(/\s+/).filter(Boolean).length} words
+              </p>
             </motion.div>
           )}
 
@@ -271,90 +247,86 @@ export default function DiagnosticCalculator() {
             <motion.div key="q5" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
               <QHeader num={5} marks={15} type="Essay + diagram" />
               <p className="text-base text-foreground leading-relaxed mb-4">{Q5.prompt}</p>
-              <Textarea
-                value={a5Text}
-                onChange={(e) => setA5Text(e.target.value)}
-                placeholder="Write your evaluation answer here. Describe the diagram you would draw…"
-                className="min-h-[180px] text-sm leading-relaxed"
-              />
+              <Textarea value={a5Text} onChange={(e) => setA5Text(e.target.value)} placeholder="Write your evaluation. Describe the labour-market diagram you would draw…" className="min-h-[200px] text-sm leading-relaxed" />
+              <p className="text-[11px] text-muted-foreground mt-2 text-right font-mono">
+                {a5Text.trim().split(/\s+/).filter(Boolean).length} words
+              </p>
 
               <div className="mt-4 rounded-xl border border-border bg-popover/40 p-4">
                 <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">
                   Did you draw a labour-market diagram on paper alongside this answer?
                 </p>
                 <div className="flex gap-2">
-                  {[
-                    { label: "Yes — drawn & labelled", val: true },
-                    { label: "No diagram drawn", val: false },
-                  ].map((opt) => (
+                  {[{ label: "Yes — drawn & labelled", val: true }, { label: "No diagram drawn", val: false }].map((opt) => (
                     <button
                       key={opt.label}
                       onClick={() => setA5HasDiagram(opt.val)}
                       className={cn(
                         "flex-1 rounded-lg border px-3 py-2.5 text-xs font-semibold transition-all",
-                        a5HasDiagram === opt.val
-                          ? "border-primary bg-primary/10 text-foreground"
-                          : "border-border text-muted-foreground hover:border-primary/40",
+                        a5HasDiagram === opt.val ? "border-primary bg-primary/10 text-foreground" : "border-border text-muted-foreground hover:border-primary/40",
                       )}
-                    >
-                      {opt.label}
-                    </button>
+                    >{opt.label}</button>
                   ))}
                 </div>
                 {a5HasDiagram === false && (
                   <p className="text-[11px] text-warning mt-2 leading-relaxed">
-                    No diagram → written marks will be capped at 50% (examiner convention).
+                    No diagram → marks for this question will be capped at 50% (AQA examiner convention).
                   </p>
                 )}
               </div>
 
-              {a5Text.trim().length > 50 && a5HasDiagram !== null && (
-                <ChecklistGrader
-                  guidance={Q5.guidance}
-                  points={Q5.points}
-                  values={a5}
-                  onChange={setA5}
-                />
+              {error && (
+                <div className="mt-4 rounded-lg border border-destructive/40 bg-destructive/10 p-3 text-xs text-destructive flex items-start gap-2">
+                  <X className="h-3.5 w-3.5 shrink-0 mt-0.5" />
+                  <span>{error}</span>
+                </div>
               )}
             </motion.div>
           )}
 
-          {step === 5 && (
+          {step === 5 && aiResults && (
             <motion.div key="results" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-              <Results total={total} band={band} breakdown={[
-                { label: "Q1 · Calculation", got: m1, of: 2 },
-                { label: "Q2 · MCQ", got: m2, of: 1 },
-                { label: "Q3 · MCQ", got: m3, of: 1 },
-                { label: "Q4 · 4-mark explain", got: m4, of: 4 },
-                { label: "Q5 · 15-mark essay", got: m5, of: 15 },
-              ]} />
+              <Results
+                total={total}
+                band={band}
+                breakdown={[
+                  { label: "Q1 · Calculation",    got: m1, of: 2 },
+                  { label: "Q2 · MCQ",            got: m2, of: 1 },
+                  { label: "Q3 · MCQ",            got: m3, of: 1 },
+                  { label: "Q4 · 4-mark explain", got: m4, of: 4 },
+                  { label: "Q5 · 15-mark essay",  got: m5, of: 15 },
+                ]}
+                aiResults={aiResults}
+              />
             </motion.div>
           )}
         </AnimatePresence>
       </div>
 
-      {/* Footer nav */}
+      {/* Footer */}
       <div className="px-6 lg:px-8 py-4 border-t border-border bg-popover/30 flex items-center justify-between gap-3">
         {step < 5 ? (
           <>
-            <Button variant="ghost" onClick={back} disabled={step === 0} className="gap-1.5 text-xs">
+            <Button variant="ghost" onClick={back} disabled={step === 0 || marking} className="gap-1.5 text-xs">
               <ArrowLeft className="h-3.5 w-3.5" /> Back
             </Button>
-            <p className="text-[11px] text-muted-foreground font-mono hidden sm:block">
-              Question {step + 1} of 5
-            </p>
-            <Button onClick={next} disabled={!canAdvance} className="gap-1.5 text-xs">
-              {step === 4 ? "See My Predicted Grade" : "Next"} <ArrowRight className="h-3.5 w-3.5" />
-            </Button>
+            <p className="text-[11px] text-muted-foreground font-mono hidden sm:block">Question {step + 1} of 5</p>
+            {step < 4 ? (
+              <Button onClick={next} disabled={!canAdvance} className="gap-1.5 text-xs">
+                Next <ArrowRight className="h-3.5 w-3.5" />
+              </Button>
+            ) : (
+              <Button onClick={submitForMarking} disabled={!canAdvance || marking} className="gap-1.5 text-xs">
+                {marking ? (<><Loader2 className="h-3.5 w-3.5 animate-spin" /> Marking…</>) : (<>Mark My Answers <ArrowRight className="h-3.5 w-3.5" /></>)}
+              </Button>
+            )}
           </>
         ) : (
           <>
             <Button variant="ghost" onClick={reset} className="gap-1.5 text-xs">
               <RotateCcw className="h-3.5 w-3.5" /> Try again
             </Button>
-            <p className="text-[11px] text-muted-foreground font-mono">
-              {total} / {TOTAL} marks
-            </p>
+            <p className="text-[11px] text-muted-foreground font-mono">{total} / {TOTAL} marks</p>
             <Button asChild className="gap-1.5 text-xs">
               <a href="/auth">Start Practising Free <ArrowRight className="h-3.5 w-3.5" /></a>
             </Button>
@@ -365,7 +337,7 @@ export default function DiagnosticCalculator() {
   );
 }
 
-/* ───────────── helpers ───────────── */
+/* ───── helpers ───── */
 
 function QHeader({ num, marks, type }: { num: number; marks: number; type: string }) {
   return (
@@ -380,29 +352,21 @@ function QHeader({ num, marks, type }: { num: number; marks: number; type: strin
   );
 }
 
-function McqStep({ n, q, value, onChange }: { n: number; q: McqQ; value: number | null; onChange: (i: number) => void }) {
+function McqStep({ n, q, value, onChange }: { n: number; q: { prompt: string; options: string[] }; value: number | null; onChange: (i: number) => void }) {
   return (
     <motion.div key={`mcq-${n}`} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
       <QHeader num={n} marks={1} type="Multiple choice" />
       <p className="text-base text-foreground leading-relaxed mb-5">{q.prompt}</p>
       <div className="space-y-2">
         {q.options.map((opt, i) => (
-          <button
-            key={i}
-            onClick={() => onChange(i)}
-            className={cn(
-              "w-full text-left rounded-xl border px-4 py-3.5 transition-all flex items-center gap-3",
-              value === i
-                ? "border-primary bg-primary/10"
-                : "border-border bg-popover/40 hover:border-primary/40",
-            )}
-          >
+          <button key={i} onClick={() => onChange(i)} className={cn(
+            "w-full text-left rounded-xl border px-4 py-3.5 transition-all flex items-center gap-3",
+            value === i ? "border-primary bg-primary/10" : "border-border bg-popover/40 hover:border-primary/40",
+          )}>
             <div className={cn(
               "h-6 w-6 rounded-full border flex items-center justify-center text-[10px] font-mono font-bold shrink-0",
               value === i ? "border-primary bg-primary text-primary-foreground" : "border-border text-muted-foreground",
-            )}>
-              {String.fromCharCode(65 + i)}
-            </div>
+            )}>{String.fromCharCode(65 + i)}</div>
             <span className="text-sm text-foreground">{opt}</span>
           </button>
         ))}
@@ -411,51 +375,13 @@ function McqStep({ n, q, value, onChange }: { n: number; q: McqQ; value: number 
   );
 }
 
-function ChecklistGrader({
-  guidance, points, values, onChange,
-}: {
-  guidance: string;
-  points: { label: string; marks: number }[];
-  values: boolean[];
-  onChange: (next: boolean[]) => void;
-}) {
-  return (
-    <div className="mt-5 rounded-xl border border-border bg-popover/40 p-4">
-      <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">
-        Self-mark · {guidance}
-      </p>
-      <div className="space-y-2">
-        {points.map((p, i) => (
-          <label key={i} className="flex items-start gap-3 cursor-pointer group">
-            <button
-              type="button"
-              onClick={() => {
-                const copy = [...values]; copy[i] = !copy[i]; onChange(copy);
-              }}
-              className={cn(
-                "h-5 w-5 rounded border flex items-center justify-center shrink-0 mt-0.5 transition-colors",
-                values[i] ? "border-primary bg-primary" : "border-border group-hover:border-primary/50",
-              )}
-            >
-              {values[i] && <Check className="h-3 w-3 text-primary-foreground" />}
-            </button>
-            <span className="text-xs text-foreground leading-relaxed flex-1">
-              {p.label}
-              <span className="ml-1.5 text-[10px] font-mono text-muted-foreground">[{p.marks}]</span>
-            </span>
-          </label>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 function Results({
-  total, band, breakdown,
+  total, band, breakdown, aiResults,
 }: {
   total: number;
   band: GradeBand;
   breakdown: { label: string; got: number; of: number }[];
+  aiResults: AiItemResult[];
 }) {
   const pct = Math.round((total / TOTAL) * 100);
   return (
@@ -469,9 +395,7 @@ function Results({
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
           className={cn("text-7xl lg:text-8xl font-extrabold font-mono tracking-tighter", band.color)}
-        >
-          {band.grade}
-        </motion.div>
+        >{band.grade}</motion.div>
         <p className="text-sm font-semibold text-foreground mt-2">{band.label}</p>
         <p className="text-xs text-muted-foreground mt-1 font-mono">
           {total} / {TOTAL} marks · {pct}%
@@ -487,20 +411,39 @@ function Results({
               <div key={b.label} className="flex items-center gap-3">
                 <span className="text-xs text-muted-foreground flex-1 truncate">{b.label}</span>
                 <div className="h-1.5 w-24 rounded-full bg-popover overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${p}%` }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="h-full bg-primary rounded-full"
-                  />
+                  <motion.div initial={{ width: 0 }} animate={{ width: `${p}%` }} transition={{ duration: 0.6, ease: "easeOut" }} className="h-full bg-primary rounded-full" />
                 </div>
-                <span className="text-[11px] font-mono font-bold text-foreground w-10 text-right">
-                  {b.got}/{b.of}
-                </span>
+                <span className="text-[11px] font-mono font-bold text-foreground w-10 text-right">{b.got}/{b.of}</span>
               </div>
             );
           })}
         </div>
+      </div>
+
+      {/* Examiner feedback per long-form question */}
+      <div className="space-y-3 mb-5">
+        {aiResults.map((r) => (
+          <div key={r.id} className="rounded-xl border border-border bg-popover/40 p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-foreground">
+                {r.id === "q4" ? "Q4 Examiner Feedback" : "Q5 Examiner Feedback"}
+              </span>
+              <span className="text-xs font-mono font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">
+                {r.marks}/{r.totalMarks}
+              </span>
+            </div>
+            {r.rationale && <p className="text-xs text-foreground leading-relaxed mb-2">{r.rationale}</p>}
+            {r.improvements.length > 0 && (
+              <ul className="space-y-1 mt-2">
+                {r.improvements.map((s, i) => (
+                  <li key={i} className="text-[11px] text-muted-foreground leading-relaxed flex gap-1.5">
+                    <span className="text-primary">→</span>{s}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
       </div>
 
       <div className="rounded-xl border border-primary/30 bg-primary/5 p-4">
