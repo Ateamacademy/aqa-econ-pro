@@ -169,6 +169,7 @@ export default function DiagnosticCalculator() {
     try {
       const { data, error } = await supabase.functions.invoke("mark-diagnostic", {
         body: {
+          board,
           items: [
             { id: "q4", prompt: Q4.prompt, totalMarks: Q4.totalMarks, rubric: Q4.rubric, answer: a4Text },
             { id: "q5", prompt: Q5.prompt, totalMarks: Q5.totalMarks, rubric: Q5.rubric, answer: a5Text, hasDiagram: a5HasDiagram === true },
