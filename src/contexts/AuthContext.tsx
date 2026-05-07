@@ -39,20 +39,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (data) setProfile(data);
   };
 
-  const refreshSubscription = async () => {
+  const refreshSubscription = async (force = false) => {
     const now = Date.now();
-    if (now - lastSubscriptionRefreshAt.current < 60_000) return;
+    if (!force && now - lastSubscriptionRefreshAt.current < 60_000) return;
     if (subscriptionRefreshInFlight.current) return subscriptionRefreshInFlight.current;
 
     const invokeWithRetry = async (attempt = 0): Promise<{ data: any; error: any }> => {
       let result: { data: any; error: any };
       try {
-        result = await supabase.functions.invoke("check-subscription");
+        result = await supabase.functions.invoke("check-subscription", force ? { body: { force: true } } : undefined);
       } catch (e) {
         result = { data: null, error: e };
       }
       if (result.error && attempt < 3) {
-        // Retry on any error — most often a transient 5xx from edge runtime cold-start.
         await new Promise((r) => setTimeout(r, 600 * (attempt + 1)));
         return invokeWithRetry(attempt + 1);
       }
