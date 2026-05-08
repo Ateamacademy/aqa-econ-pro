@@ -223,7 +223,7 @@ export default function DiagnosticCalculator() {
 
             <div className="mt-4">
               <label className="text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground block mb-1.5">
-                Exam board (mark scheme used)
+                Select Exam board (mark scheme used)
               </label>
               <select
                 value={board}
