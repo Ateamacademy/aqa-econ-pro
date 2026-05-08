@@ -212,9 +212,6 @@ export default function Index() {
                 Right Now?
               </span>
             </h1>
-            <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Take our 5-question diagnostic — calculation, MCQs, short answer and a 15-mark essay with diagram. Get your predicted grade, marked against your real exam board's mark scheme, then challenge a friend.
-            </p>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground font-mono">
               <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-success" /> 12 boards supported</span>
               <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-accent" /> Real mark-scheme grading</span>
