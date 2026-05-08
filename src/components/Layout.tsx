@@ -90,15 +90,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 className="h-full w-full rounded-full object-cover"
               />
             </div>
-<span
-              className="text-2xl font-bold tracking-tight text-primary"
-              style={{
-                textShadow:
-                  "0 0 6px hsl(var(--primary) / 0.9), 0 0 14px hsl(var(--primary) / 0.7), 0 0 28px hsl(var(--primary) / 0.5), 0 0 48px hsl(var(--primary) / 0.35)",
-              }}
-            >
-              The GDP of Your Grades
-            </span>
+            <span className="text-2xl font-bold text-foreground tracking-tight">The GDP of Your Grades</span>
           </Link>
 
           {/* Centre nav */}
