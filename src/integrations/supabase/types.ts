@@ -245,6 +245,36 @@ export type Database = {
         }
         Relationships: []
       }
+      director_dashboard_access_log: {
+        Row: {
+          created_at: string
+          id: string
+          ip_address: string | null
+          time_range: string | null
+          user_agent: string | null
+          viewer_email: string
+          viewer_user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          ip_address?: string | null
+          time_range?: string | null
+          user_agent?: string | null
+          viewer_email: string
+          viewer_user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          ip_address?: string | null
+          time_range?: string | null
+          user_agent?: string | null
+          viewer_email?: string
+          viewer_user_id?: string | null
+        }
+        Relationships: []
+      }
       econ_knowledge_nodes: {
         Row: {
           bloom_level: string
