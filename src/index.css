@@ -88,6 +88,11 @@
     font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 15% 0%, hsl(var(--violet-pop) / 0.10), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 85% 10%, hsl(var(--cyan-pop) / 0.08), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 50% 100%, hsl(var(--magenta-pop) / 0.06), transparent 60%);
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4 {
