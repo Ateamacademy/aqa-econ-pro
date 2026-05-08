@@ -210,32 +210,33 @@ export default function DiagnosticCalculator() {
           <div className="h-11 w-11 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center shrink-0">
             <Target className="h-5 w-5 text-primary" />
           </div>
-          <div className="min-w-0">
+          <div className="min-w-0 flex-1">
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary mb-2">
               <Sparkles className="h-3 w-3" /> Instant Examiner Feedback
             </div>
-            <h3 className="text-xl lg:text-2xl font-extrabold tracking-tight text-foreground">
-              Diagnostic Grade Calculator
-            </h3>
-            <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+              <h3 className="text-xl lg:text-2xl font-extrabold tracking-tight text-foreground">
+                Diagnostic Grade Calculator
+              </h3>
+              <div className="sm:shrink-0 sm:text-right">
+                <label className="text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground block mb-1.5">
+                  Select Exam board (mark scheme used)
+                </label>
+                <select
+                  value={board}
+                  onChange={(e) => setBoard(e.target.value as Board)}
+                  disabled={step > 0 && step < 5}
+                  className="w-full sm:w-auto h-10 rounded-md border border-border bg-background px-3 text-sm font-medium text-foreground disabled:opacity-60"
+                >
+                  {BOARD_OPTIONS.map((o) => (
+                    <option key={o.value} value={o.value}>{o.label}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+            <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
               Five questions across the full skill range. Your written answers are marked using your exam board's official mark scheme. We'll predict your current grade based on your total marks (out of {TOTAL}).
             </p>
-
-            <div className="mt-4">
-              <label className="text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground block mb-1.5">
-                Select Exam board (mark scheme used)
-              </label>
-              <select
-                value={board}
-                onChange={(e) => setBoard(e.target.value as Board)}
-                disabled={step > 0 && step < 5}
-                className="w-full sm:w-auto h-10 rounded-md border border-border bg-background px-3 text-sm font-medium text-foreground disabled:opacity-60"
-              >
-                {BOARD_OPTIONS.map((o) => (
-                  <option key={o.value} value={o.value}>{o.label}</option>
-                ))}
-              </select>
-            </div>
           </div>
         </div>
 
