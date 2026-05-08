@@ -113,6 +113,7 @@ const App = () => (
               <Route path="/help" element={<HelpCentre />} />
               <Route path="/founder" element={<FounderDashboard />} />
               <Route path="/director" element={<DirectorDashboard />} />
+              <Route path="/directorsdashboard" element={<DirectorDashboard />} />
               <Route path="/onboarding" element={<Onboarding />} />
               <Route path="/diagram-testing" element={<DiagramTesting />} />
               <Route path="/paper-library" element={<PaperLibrary />} />
