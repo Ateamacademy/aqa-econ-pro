@@ -83,11 +83,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="max-w-[1280px] mx-auto flex h-16 items-center justify-between px-5 lg:px-6">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 shrink-0 mr-8">
-            <img
-              src={econRevLogo}
-              alt="Econ Rev logo"
-              className="h-9 w-9 rounded-full object-cover ring-1 ring-primary/40"
-            />
+            <div className="h-9 w-9 rounded-full bg-white p-0.5 ring-2 ring-primary/60 shadow-[0_0_18px_rgba(99,102,241,0.45)]">
+              <img
+                src={econRevLogo}
+                alt="Econ Rev logo"
+                className="h-full w-full rounded-full object-cover"
+              />
+            </div>
             <span className="text-base font-bold text-foreground tracking-tight">Econ Rev</span>
           </Link>
 
