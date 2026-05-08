@@ -215,7 +215,7 @@ export default function DiagnosticCalculator() {
               <Sparkles className="h-3 w-3" /> Instant Examiner Feedback
             </div>
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-              <h3 className="text-xl lg:text-2xl font-extrabold tracking-tight text-foreground">
+              <h3 className="font-serif text-xl lg:text-2xl font-semibold tracking-tight text-foreground/95 uppercase">
                 Diagnostic Grade Calculator
               </h3>
               <div className="sm:shrink-0 sm:text-right">
