@@ -72,6 +72,10 @@ export default {
         "indigo-bright": "hsl(var(--indigo-bright))",
         "indigo-glow": "hsl(var(--indigo-glow))",
         "border-glow": "hsl(var(--border-glow))",
+        "magenta-pop": "hsl(var(--magenta-pop))",
+        "violet-pop": "hsl(var(--violet-pop))",
+        "amber-pop": "hsl(var(--amber-pop))",
+        "green-pop": "hsl(var(--green-pop))",
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -6,71 +6,75 @@
 
 @layer base {
   :root {
-    /* Softer slate-blue palette — airier, less pitch-black */
-    --background: 222 32% 12%;       /* #161B2A */
-    --foreground: 210 40% 97%;       /* #F4F7FB */
+    /* Vibrant deep-violet navy palette — dark but rich, slide-deck inspired */
+    --background: 240 30% 11%;       /* #14152A — deep indigo-navy */
+    --foreground: 210 40% 98%;       /* #F4F7FB */
 
-    --card: 222 28% 16%;             /* #1E2436 */
-    --card-foreground: 210 40% 97%;
+    --card: 240 26% 15%;             /* #1C1E36 */
+    --card-foreground: 210 40% 98%;
 
-    --popover: 222 26% 20%;          /* #262D43 */
-    --popover-foreground: 210 40% 97%;
+    --popover: 240 22% 19%;          /* #262844 */
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 236 100% 68%;         /* #5C63FF */
+    --primary: 236 100% 70%;         /* #6168FF */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 222 26% 20%;
-    --secondary-foreground: 210 40% 97%;
+    --secondary: 240 22% 19%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 222 24% 22%;
-    --muted-foreground: 215 20% 75%; /* lighter muted text */
+    --muted: 240 20% 22%;
+    --muted-foreground: 220 18% 78%;
 
-    --accent: 239 84% 72%;           /* #7E83F3 */
+    --accent: 252 92% 75%;           /* #A78BFA — violet pop */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 65%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 222 24% 28%;           /* lifted border */
-    --input: 222 24% 28%;
-    --ring: 236 100% 68%;
+    --border: 240 22% 28%;
+    --input: 240 22% 28%;
+    --ring: 236 100% 70%;
 
     --radius: 0.625rem;
 
-    /* Extended palette */
+    /* Bright accent palette — slide-deck colors */
     --indigo-bright: 239 84% 72%;
     --indigo-glow: 235 90% 78%;
-    --electric-blue: 217 91% 65%;
-    --cyan-pop: 188 90% 52%;
-    --success: 160 70% 48%;
-    --warning: 38 92% 58%;
-    --border-glow: 233 66% 60%;
-    --surface-elevated: 222 26% 20%;
-    --text-secondary: 215 20% 75%;
-    --text-muted: 215 16% 55%;
+    --electric-blue: 199 95% 64%;    /* #38BDF8 — sky cyan */
+    --cyan-pop: 188 92% 56%;         /* #22D3EE */
+    --success: 152 76% 54%;          /* #34D399 — green pop */
+    --warning: 43 96% 56%;           /* #FBBF24 — amber pop */
+    --magenta-pop: 330 85% 64%;      /* #EC4899 — hot pink */
+    --violet-pop: 252 92% 75%;       /* #A78BFA */
+    --amber-pop: 43 96% 56%;         /* #FBBF24 */
+    --green-pop: 152 76% 54%;        /* #34D399 */
+    --border-glow: 252 70% 65%;
+    --surface-elevated: 240 22% 19%;
+    --text-secondary: 220 18% 78%;
+    --text-muted: 220 14% 58%;
 
-    /* Chart colors */
-    --chart-1: 236 100% 68%;
-    --chart-2: 239 84% 72%;
-    --chart-3: 188 90% 52%;
-    --chart-4: 217 91% 65%;
-    --chart-5: 0 84% 65%;
+    /* Chart colors — full rainbow */
+    --chart-1: 236 100% 70%;
+    --chart-2: 252 92% 75%;
+    --chart-3: 188 92% 56%;
+    --chart-4: 152 76% 54%;
+    --chart-5: 330 85% 64%;
 
     /* Sidebar */
-    --sidebar-background: 222 32% 12%;
-    --sidebar-foreground: 210 40% 97%;
-    --sidebar-primary: 236 100% 68%;
+    --sidebar-background: 240 30% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 236 100% 70%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 222 26% 20%;
-    --sidebar-accent-foreground: 210 40% 97%;
-    --sidebar-border: 222 24% 28%;
-    --sidebar-ring: 236 100% 68%;
+    --sidebar-accent: 240 22% 19%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 240 22% 28%;
+    --sidebar-ring: 236 100% 70%;
 
-    --highlight: 236 100% 68%;
-    --highlight-foreground: 0 0% 100%;
+    --highlight: 43 96% 56%;
+    --highlight-foreground: 240 30% 11%;
 
-    --surface-dark: 222 32% 12%;
-    --surface-dark-foreground: 210 40% 97%;
+    --surface-dark: 240 30% 11%;
+    --surface-dark-foreground: 210 40% 98%;
   }
 }
 
@@ -84,6 +88,11 @@
     font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 15% 0%, hsl(var(--violet-pop) / 0.10), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 85% 10%, hsl(var(--cyan-pop) / 0.08), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 50% 100%, hsl(var(--magenta-pop) / 0.06), transparent 60%);
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4 {
