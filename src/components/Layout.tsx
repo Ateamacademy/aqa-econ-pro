@@ -80,17 +80,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             : "bg-transparent"
         )}
       >
-        <div className="max-w-[1280px] mx-auto flex h-20 items-center justify-between px-5 lg:px-6">
+        <div className="max-w-[1280px] mx-auto flex h-24 items-center justify-between px-5 lg:px-6">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 shrink-0 mr-8">
-            <div className="h-16 w-16 rounded-full bg-white p-0.5 ring-2 ring-primary/60 shadow-[0_0_28px_rgba(99,102,241,0.55)]">
+          <Link to="/" className="flex items-center gap-3 shrink-0 mr-8">
+            <div className="h-20 w-20 rounded-full bg-white p-0.5 ring-2 ring-primary/60 shadow-[0_0_32px_rgba(99,102,241,0.6)]">
               <img
                 src={econRevLogo}
                 alt="Econ Rev logo"
                 className="h-full w-full rounded-full object-cover"
               />
             </div>
-            <span className="text-xl font-bold text-foreground tracking-tight">Econ Rev</span>
+            <span className="text-2xl font-bold text-foreground tracking-tight">Econ Rev</span>
           </Link>
 
           {/* Centre nav */}
