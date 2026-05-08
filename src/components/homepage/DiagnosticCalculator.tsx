@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowLeft, Check, RotateCcw, Sparkles, Target, Loader2, X } from "lucide-react";
+import { ArrowRight, ArrowLeft, Check, RotateCcw, Sparkles, Target, Loader2, X, Share2, Twitter, MessageCircle, Link as LinkIcon, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -483,9 +483,67 @@ function Results({
         ))}
       </div>
 
-      <div className="rounded-xl border border-primary/30 bg-primary/5 p-4">
+      <ShareBar grade={band.grade} total={total} totalMax={TOTAL} />
+
+      <div className="rounded-xl border border-primary/30 bg-primary/5 p-4 mt-5">
         <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">What this means</p>
         <p className="text-sm text-foreground leading-relaxed">{band.blurb}</p>
+      </div>
+    </div>
+  );
+}
+
+function ShareBar({ grade, total, totalMax }: { grade: string; total: number; totalMax: number }) {
+  const url = typeof window !== "undefined" ? `${window.location.origin}/#diagnostic` : "https://econrev.co/#diagnostic";
+  const text = `I just scored ${total}/${totalMax} on the Econ Rev diagnostic — predicted grade ${grade}. Think you can beat me?`;
+  const enc = encodeURIComponent;
+
+  const nativeShare = async () => {
+    if (typeof navigator !== "undefined" && (navigator as any).share) {
+      try { await (navigator as any).share({ title: "Econ Rev diagnostic", text, url }); return; }
+      catch { /* fall through */ }
+    }
+    copyLink();
+  };
+  const copyLink = async () => {
+    try { await navigator.clipboard.writeText(`${text} ${url}`); toast.success("Link copied — share it with a friend!"); }
+    catch { toast.error("Couldn't copy. Long-press the link instead."); }
+  };
+
+  const buttons = [
+    { label: "Share", onClick: nativeShare, icon: Share2, className: "bg-primary text-primary-foreground hover:bg-primary/90 border-primary" },
+    { label: "WhatsApp", href: `https://wa.me/?text=${enc(`${text} ${url}`)}`, icon: MessageCircle, className: "" },
+    { label: "Twitter", href: `https://twitter.com/intent/tweet?text=${enc(text)}&url=${enc(url)}`, icon: Twitter, className: "" },
+    { label: "Email", href: `mailto:?subject=${enc("Try this Economics diagnostic")}&body=${enc(`${text}\n\n${url}`)}`, icon: Mail, className: "" },
+    { label: "Copy link", onClick: copyLink, icon: LinkIcon, className: "" },
+  ];
+
+  return (
+    <div className="rounded-xl border border-border bg-gradient-to-br from-primary/5 via-card to-card p-4">
+      <div className="flex items-center gap-2 mb-3">
+        <Share2 className="h-3.5 w-3.5 text-primary" />
+        <p className="text-xs font-bold uppercase tracking-wider text-foreground">Challenge a friend</p>
+      </div>
+      <p className="text-xs text-muted-foreground leading-relaxed mb-3">
+        Share your grade and see if your friends can beat you. Every share helps another student find honest, examiner-style marking.
+      </p>
+      <div className="flex flex-wrap gap-2">
+        {buttons.map((b) => {
+          const Icon = b.icon;
+          const cls = cn(
+            "inline-flex items-center gap-1.5 rounded-lg border border-border bg-popover/60 px-3 py-2 text-xs font-semibold text-foreground hover:border-primary/50 hover:bg-primary/5 transition-colors",
+            b.className,
+          );
+          return b.href ? (
+            <a key={b.label} href={b.href} target="_blank" rel="noreferrer" className={cls}>
+              <Icon className="h-3.5 w-3.5" /> {b.label}
+            </a>
+          ) : (
+            <button key={b.label} onClick={b.onClick} className={cls}>
+              <Icon className="h-3.5 w-3.5" /> {b.label}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

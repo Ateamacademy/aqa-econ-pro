@@ -189,6 +189,44 @@ export default function Index() {
 
   return (
     <div className="overflow-hidden">
+      {/* ═══════ DIAGNOSTIC GRADE CALCULATOR (above the fold) ═══════ */}
+      <section id="diagnostic" className="relative pt-28 pb-16 lg:pt-32 lg:pb-20">
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(60% 50% at 50% 0%, rgba(79,86,255,0.10), transparent 70%)" }} />
+        <div className="max-w-[920px] mx-auto px-5 lg:px-6 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
+            className="text-center mb-8"
+          >
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1 text-xs font-semibold text-primary mb-5">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-ping" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+              </span>
+              Free · 5 minutes · Examiner-marked
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.03em] leading-[1.05] mb-4">
+              What Grade Are You{" "}
+              <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--cyan-pop)))" }}>
+                Right Now?
+              </span>
+            </h1>
+            <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Take our 5-question diagnostic — calculation, MCQs, short answer and a 15-mark essay with diagram. Get your predicted grade, marked against your real exam board's mark scheme, then challenge a friend.
+            </p>
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground font-mono">
+              <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-success" /> 12 boards supported</span>
+              <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-accent" /> Real mark-scheme grading</span>
+              <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-cyan-pop" /> Shareable result</span>
+            </div>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.4, 0.25, 1] }}>
+            <DiagnosticCalculator />
+          </motion.div>
+        </div>
+      </section>
+
       {/* ═══════ HERO ═══════ */}
       <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
         {/* Blobs */}
@@ -274,30 +312,7 @@ export default function Index() {
       </section>
 
 
-      {/* ═══════ DIAGNOSTIC GRADE CALCULATOR ═══════ */}
-      <section id="diagnostic" className="py-16 lg:py-24">
-        <div className="max-w-[880px] mx-auto px-5 lg:px-6">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-10"
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] mb-4">
-              What Grade Are You{" "}
-              <span className="text-primary">Right Now?</span>
-            </h2>
-            <p className="text-base text-muted-foreground max-w-xl mx-auto">
-              Take our 5-question diagnostic — calculation, MCQs, short answer and a 15-mark essay with diagram. Get an instant predicted grade in under 5 minutes.
-            </p>
-          </motion.div>
-          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }}>
-            <DiagnosticCalculator />
-          </motion.div>
-        </div>
-      </section>
-
+      {/* moved: diagnostic section now appears before hero */}
       <div className="relative overflow-hidden border-y border-border py-4" style={{ maskImage: "linear-gradient(90deg, transparent, black 10%, black 90%, transparent)" }}>
         <div className="flex animate-marquee whitespace-nowrap">
           {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, i) => (
