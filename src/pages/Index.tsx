@@ -237,7 +237,7 @@ export default function Index() {
               <span className="text-xs">✦</span> Built for AQA · Edexcel · OCR · All Boards
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-[-0.03em] leading-[1.05] mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-[-0.03em] leading-[1.05] mb-6 text-foreground">
               The Smartest Way to{" "}
               <br className="hidden md:block" />
               Revise{" "}
@@ -245,7 +245,8 @@ export default function Index() {
                 ref={shimmerRef}
                 className="inline-block bg-clip-text text-transparent"
                 style={{
-                  backgroundImage: "linear-gradient(90deg, hsl(var(--accent)), hsl(var(--cyan-pop)), hsl(var(--accent)))",
+                  backgroundImage:
+                    "linear-gradient(90deg, hsl(var(--magenta-pop)), hsl(var(--violet-pop)), hsl(var(--amber-pop)), hsl(var(--magenta-pop)))",
                   backgroundSize: "200% auto",
                 }}
               >
@@ -253,13 +254,14 @@ export default function Index() {
               </span>
             </h1>
 
-            <p className="text-base lg:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
+            <p className="text-base lg:text-lg text-foreground/80 leading-relaxed max-w-2xl mx-auto mb-8">
               Predicted papers, instant marking, diagram practice &amp; expert support; like having a{" "}
               <span
                 ref={subtitleShimmerRef}
                 className="inline-block bg-clip-text text-transparent font-semibold"
                 style={{
-                  backgroundImage: "linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--cyan-pop)), hsl(var(--primary)))",
+                  backgroundImage:
+                    "linear-gradient(90deg, hsl(var(--violet-pop)), hsl(var(--cyan-pop)), hsl(var(--green-pop)), hsl(var(--violet-pop)))",
                   backgroundSize: "200% auto",
                 }}
               >
@@ -269,12 +271,29 @@ export default function Index() {
 
             {/* CTAs */}
             <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
-              <Button asChild size="lg" className="rounded-lg px-7 h-12 text-sm font-semibold gap-2 animate-glow-pulse">
+              <Button
+                asChild
+                size="lg"
+                className="rounded-lg px-7 h-12 text-sm font-semibold gap-2 animate-glow-pulse text-white border-0 shadow-lg"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(90deg, hsl(var(--magenta-pop)), hsl(var(--violet-pop)), hsl(var(--primary)))",
+                }}
+              >
                 <Link to="/predicted">
                   Generate My First Paper <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-lg px-7 h-12 text-sm font-semibold border-border gap-2">
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="rounded-lg px-7 h-12 text-sm font-semibold gap-2 bg-transparent border-2"
+                style={{
+                  borderColor: "hsl(var(--cyan-pop) / 0.6)",
+                  color: "hsl(var(--cyan-pop))",
+                }}
+              >
                 <a href="#how-it-works">
                   See How It Works <ChevronDown className="h-4 w-4" />
                 </a>
