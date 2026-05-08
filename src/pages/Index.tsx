@@ -204,7 +204,7 @@ export default function Index() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-ping" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
               </span>
-              Free · 5 minutes · Examiner-marked
+              10 mins to predict your current grade
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.03em] leading-[1.05] mb-4">
               What Grade Are You{" "}
