@@ -208,7 +208,13 @@ export default function Index() {
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.03em] leading-[1.05] mb-4">
               What Grade Are You{" "}
-              <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--cyan-pop)))" }}>
+              <span
+                className="inline-block bg-clip-text text-transparent animate-shimmer"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(90deg, hsl(var(--magenta-pop)), hsl(var(--violet-pop)), hsl(var(--cyan-pop)), hsl(var(--amber-pop)), hsl(var(--magenta-pop)))",
+                }}
+              >
                 Right Now?
               </span>
             </h1>
