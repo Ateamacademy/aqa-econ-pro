@@ -212,7 +212,7 @@ export default function DiagnosticCalculator() {
           </div>
           <div className="min-w-0">
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary mb-2">
-              <Sparkles className="h-3 w-3" /> Free · Examiner-marked
+              <Sparkles className="h-3 w-3" /> Instant Examiner Feedback
             </div>
             <h3 className="text-xl lg:text-2xl font-extrabold tracking-tight text-foreground">
               Diagnostic Grade Calculator
