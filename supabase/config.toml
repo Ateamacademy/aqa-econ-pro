@@ -15,3 +15,9 @@ project_id = "yjgohrvcpkmlpuzwnuml"
     verify_jwt = true
   [functions.mark-diagnostic]
     verify_jwt = false
+  [functions.director-platform-stats]
+    verify_jwt = true
+  [functions.director-revenue]
+    verify_jwt = true
+  [functions.director-user-directory]
+    verify_jwt = true
