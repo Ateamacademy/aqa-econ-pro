@@ -193,6 +193,35 @@ export default function Index() {
       {/* ═══════ HERO FEATURE: INSTANT MARKING DEMO ═══════ */}
       <section className="relative pt-28 lg:pt-32">
         <div className="mx-auto max-w-6xl px-4 py-12">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
+            className="text-center mb-10 md:mb-12"
+          >
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1 text-xs font-semibold text-primary mb-5">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-ping" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+              </span>
+              Live demo · no sign-up needed
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.03em] leading-[1.05] mb-4">
+              Watch a 25-mark essay get{" "}
+              <span
+                className="inline-block bg-clip-text text-transparent animate-shimmer pb-2 leading-[1.15]"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(90deg, hsl(var(--magenta-pop)), hsl(var(--violet-pop)), hsl(var(--cyan-pop)), hsl(var(--amber-pop)), hsl(var(--magenta-pop)))",
+                }}
+              >
+                marked instantly.
+              </span>
+            </h1>
+            <p className="mx-auto max-w-2xl text-base md:text-lg text-muted-foreground">
+              Based on real exam-board mark schemes, examiner notes with personalised feedback.
+            </p>
+          </motion.div>
           <InstantMarkingDemo />
         </div>
       </section>
