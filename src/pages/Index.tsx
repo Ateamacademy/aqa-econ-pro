@@ -420,20 +420,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ═══════ HOW IT WORKS ═══════ */}
-      <section id="how-it-works" className="py-24 lg:py-32 bg-card/50">
-        <div className="max-w-[1280px] mx-auto px-5 lg:px-6">
-          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] mb-4">
-              From Zero to Exam Ready{" "}<br className="hidden md:block" />
-              in Four Steps.
-            </h2>
-          </motion.div>
-
-          <HowItWorksTimeline steps={steps} />
-        </div>
-      </section>
-
       {/* ═══════ PREDICTED PAPERS SPOTLIGHT ═══════ */}
       <section className="py-24 lg:py-32">
         <div className="max-w-[1280px] mx-auto px-5 lg:px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
