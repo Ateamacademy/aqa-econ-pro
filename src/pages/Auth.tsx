@@ -288,7 +288,7 @@ export default function Auth() {
 
             <Card className="border-border/50 bg-card/60 backdrop-blur-2xl shadow-2xl shadow-primary/10 rounded-2xl">
               <CardHeader className="text-center pb-2 pt-8">
-                <CardTitle className="font-serif text-3xl text-foreground">
+                <CardTitle className="text-2xl font-extrabold tracking-tight text-foreground">
                   {activeTab === "login" ? "Welcome back" : "Create your account"}
                 </CardTitle>
                 <CardDescription className="text-muted-foreground mt-2">
