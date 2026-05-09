@@ -507,16 +507,44 @@ export default function Index() {
           <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} className="grid md:grid-cols-3 gap-4">
             {testimonials.map((t) => (
               <motion.div key={t.name} variants={cardVariant}>
-                <div className="rounded-2xl border border-border bg-card p-6 h-full border-l-2 border-l-primary">
-                  <div className="flex gap-0.5 mb-4">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-warning text-warning" />
-                    ))}
+                <div className="rounded-2xl border border-border bg-card p-6 h-full border-l-2 border-l-primary flex flex-col">
+                  <div className="flex items-center gap-1 mb-4">
+                    {Array.from({ length: 5 }).map((_, i) => {
+                      const filled = i + 1 <= Math.floor(t.rating);
+                      const half = !filled && i + 0.5 < t.rating;
+                      return (
+                        <div key={i} className="relative h-4 w-4">
+                          <Star className="absolute inset-0 h-4 w-4 text-warning/30" />
+                          {filled && <Star className="absolute inset-0 h-4 w-4 fill-warning text-warning" />}
+                          {half && (
+                            <div className="absolute inset-0 overflow-hidden" style={{ width: "50%" }}>
+                              <Star className="h-4 w-4 fill-warning text-warning" />
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                    <span className="ml-1.5 text-xs font-mono font-bold text-muted-foreground">
+                      {t.rating.toFixed(1)}
+                    </span>
                   </div>
-                  <p className="text-sm text-foreground leading-relaxed mb-5 italic">"{t.quote}"</p>
-                  <div>
-                    <p className="text-sm font-bold text-foreground">{t.name}</p>
-                    <p className="text-xs text-muted-foreground">{t.detail}</p>
+                  <p className="text-sm text-foreground leading-relaxed mb-5 italic flex-1">"{t.quote}"</p>
+                  <div className="flex items-center gap-3 pt-4 border-t border-border">
+                    <img
+                      src={t.avatar}
+                      alt={`${t.name}, ${t.detail}`}
+                      loading="lazy"
+                      width={48}
+                      height={48}
+                      className="h-12 w-12 rounded-full object-cover border-2 border-primary/30 shrink-0"
+                    />
+                    <div className="min-w-0">
+                      <p className="text-sm font-bold text-foreground flex items-center gap-1.5">
+                        {t.name}
+                        <span className="inline-flex items-center justify-center h-3.5 w-3.5 rounded-full bg-primary text-[8px] font-bold text-white" title="Verified student">✓</span>
+                      </p>
+                      <p className="text-xs text-muted-foreground truncate">{t.detail}</p>
+                    </div>
                   </div>
                 </div>
               </motion.div>
