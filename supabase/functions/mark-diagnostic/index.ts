@@ -200,9 +200,21 @@ function buildUser(item: DiagnosticItem, board: Board): string {
     item.answer || "(empty)",
   ];
   if (item.id === "q5") {
+    const imageProvided = !!item.diagramImage;
     lines.push("", `STUDENT REPORTS DIAGRAM DRAWN: ${item.hasDiagram ? "YES" : "NO"}`);
-    if (!item.hasDiagram) {
+    if (imageProvided) {
+      lines.push(
+        `A DIAGRAM IMAGE HAS BEEN ATTACHED. Use vision to verify it is a correct labour-market diagram:`,
+        `  • Y-axis labelled Wage rate (W); X-axis labelled Quantity of Labour (QL).`,
+        `  • Downward-sloping demand for labour (D=MRP) and upward-sloping supply (S).`,
+        `  • Equilibrium W*, Q*; horizontal NMW line clearly ABOVE W*.`,
+        `  • Excess supply (unemployment) gap shown between QD and QS at the NMW.`,
+        `If diagram is missing/incorrect components, deduct accordingly and DO NOT award the diagram-dependent marks.`,
+      );
+    } else if (!item.hasDiagram) {
       lines.push(`→ Apply this board's no-diagram cap (see HARD CAPS).`);
+    } else {
+      lines.push(`→ Student claims diagram was drawn but no image was uploaded — apply the no-diagram cap.`);
     }
     if (wc < 200) {
       lines.push(`⚠ Under 200 words for a 15-mark question — almost certainly cannot reach the top level/skill bands.`);
