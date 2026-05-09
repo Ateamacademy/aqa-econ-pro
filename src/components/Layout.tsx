@@ -106,10 +106,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* Right side */}
           <div className="hidden lg:flex items-center gap-3">
             {!isHomepage && (
-              <div className="relative" ref={boardRef}>
+              <div className="relative mr-2" ref={boardRef}>
+                <div className="neon-shimmer-ring inline-block">
                 <button
                   onClick={() => setBoardOpen(!boardOpen)}
-                  className="flex items-center gap-2 bg-card border border-border rounded-lg px-3 py-1.5 text-xs font-semibold text-foreground hover:border-primary/40 transition-colors mr-2"
+                  className="flex items-center gap-2 bg-card border border-border rounded-lg px-3 py-1.5 text-xs font-semibold text-foreground hover:border-primary/40 transition-colors"
                 >
                   <span className="h-2 w-2 rounded-full bg-primary" />
                   {currentBoard?.label}
