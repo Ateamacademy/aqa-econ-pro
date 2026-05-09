@@ -647,28 +647,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ═══════ FINAL CTA ═══════ */}
-      <section className="py-24 lg:py-32 relative overflow-hidden">
-        <div ref={ctaPulseRef} className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[600px] h-[600px] rounded-full" style={{ background: "radial-gradient(circle, rgba(79,86,255,0.12), transparent 70%)" }} />
-        </div>
-
-        <div className="max-w-[720px] mx-auto px-5 lg:px-6 text-center relative z-10">
-          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] mb-6">
-              Your Exam Is Coming.<br />Start Preparing Today.
-            </h2>
-            <Button asChild size="lg" className="rounded-lg px-8 h-13 text-base font-semibold gap-2 animate-glow-pulse">
-              <Link to="/predicted">
-                Generate My First Predicted Paper <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-            <p className="text-sm text-muted-foreground mt-5">
-              Free to start. No credit card required.
-            </p>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 }
