@@ -29,18 +29,19 @@ const BOARD_OPTIONS: { value: Board; label: string }[] = [
 ];
 
 /**
- * Diagnostic Grade Calculator — proper AQA marking.
+ * Diagnostic Grade Calculator — proper board-aligned marking.
  *  Q1 — Calculation (2)        : automatic numeric + formatting check
  *  Q2 — MCQ (1)                : automatic
  *  Q3 — MCQ (1)                : automatic
  *  Q4 — 4-mark explain         : marked by examiner edge function
- *  Q5 — 15-mark essay+diagram  : marked by examiner edge function (50% cap if no diagram)
- *  Total: 23 marks
+ *  Q5 — 15-mark essay+diagram  : examiner edge function (vision verifies diagram)
+ *  Q6 — 6-mark diagram-only    : pure diagram, vision-marked
+ *  Total: 29 marks
  */
 
 type Step = number;
 
-const TOTAL = 23;
+const TOTAL = 29;
 
 const Q1 = {
   prompt:
