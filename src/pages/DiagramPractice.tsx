@@ -1412,7 +1412,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                 practiceMode === "ai" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
               )}
             >
-              <Sparkles className="h-3.5 w-3.5" /> Generated
+              <Sparkles className="h-3.5 w-3.5" /> Randomly Generated
             </button>
           </div>
 
