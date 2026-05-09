@@ -28,7 +28,7 @@ export default function KinkedDemandCurve() {
       <svg viewBox="0 0 440 420" width="100%" height="auto" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
         {/* Title */}
         <text x="220" y="20" textAnchor="middle" fontSize="14" fontWeight="700" fill="#1e293b">
-          OLIGOPOLY — KINKED DEMAND CURVE
+          OLIGOPOLY · KINKED DEMAND CURVE
         </text>
 
         {/* Axes */}
@@ -50,7 +50,7 @@ export default function KinkedDemandCurve() {
         <text x={axisL - 12} y={kink.y + 4} textAnchor="end" fontSize="11" fontWeight="600" fill="#f97316">P1</text>
         <text x={kink.x} y={axisB + 14} textAnchor="middle" fontSize="11" fontWeight="600" fill="#f97316">Q1</text>
 
-        {/* AR (Kinked demand curve) — two segments */}
+        {/* AR (Kinked demand curve) · two segments */}
         {/* Upper elastic segment */}
         <line x1={arStart.x} y1={arStart.y} x2={kink.x} y2={kink.y}
           stroke="#1e293b" strokeWidth="2.5" />
@@ -61,7 +61,7 @@ export default function KinkedDemandCurve() {
         {/* AR label */}
         <text x={arEnd.x + 5} y={arEnd.y - 10} fontSize="11" fontWeight="700" fill="#1e293b">AR</text>
 
-        {/* MR curve — two segments with gap */}
+        {/* MR curve · two segments with gap */}
         {/* Upper MR (steeper) */}
         <line x1={mrUpperStart.x} y1={mrUpperStart.y + 30} x2={mrUpperEnd.x} y2={mrUpperEnd.y}
           stroke="#1e293b" strokeWidth="2" strokeDasharray="6,3" />
@@ -87,13 +87,13 @@ export default function KinkedDemandCurve() {
         {/* Annotation: elastic segment */}
         <text x="110" y="55" fontSize="9" fill="#475569" fontStyle="italic">
           <tspan x="105" dy="0">Relatively elastic demand</tspan>
-          <tspan x="105" dy="12">curve — P↑ TR↓</tspan>
+          <tspan x="105" dy="12">curve · P↑ TR↓</tspan>
         </text>
 
         {/* Annotation: inelastic segment */}
         <text x="240" y="250" fontSize="9" fill="#475569" fontStyle="italic">
           <tspan x="240" dy="0">Relatively inelastic demand</tspan>
-          <tspan x="240" dy="12">curve — P↓ TR↓</tspan>
+          <tspan x="240" dy="12">curve · P↓ TR↓</tspan>
         </text>
 
         {/* Annotation: MR discontinuity */}

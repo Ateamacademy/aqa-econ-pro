@@ -94,7 +94,7 @@ function extractDiagramIds(text: string): string[] {
     const resolved = resolveDiagramReference(m[1]);
     if (resolved) ids.add(resolved);
   }
-  // "**Figure N:** Title — Diagram family: foo"
+  // "**Figure N:** Title · Diagram family: foo"
   const reB = /diagram\s+family\s*[:\-–]\s*([a-z0-9_\- ]{3,60})/gi;
   while ((m = reB.exec(text))) {
     const resolved = resolveDiagramReference(m[1]);
@@ -483,7 +483,7 @@ function drawFooters(doc: jsPDF, meta: SolutionMeta) {
 
 // ─── Markdown / LaTeX → plain-text normalisation ──────────────────────
 //
-// jsPDF's Helvetica font is WinAnsi only — it cannot render most emoji or
+// jsPDF's Helvetica font is WinAnsi only · it cannot render most emoji or
 // extended Unicode (e.g. 🔑, Ø=ÜÝ artefacts, fullwidth math). It also has
 // no markdown awareness, so any *, |, $...$, ~~, > characters reach the
 // page verbatim. `clean()` is the single sanitiser that:
@@ -700,7 +700,7 @@ function drawCover(doc: jsPDF, meta: SolutionMeta) {
   doc.rect(0, pageH - 16, pageW, 16, "F");
   doc.setTextColor(255, 255, 255);
   doc.setFontSize(8);
-  doc.text("Predicted Mark Scheme — for revision use only", pageW / 2, pageH - 6, { align: "center" });
+  doc.text("Predicted Mark Scheme · for revision use only", pageW / 2, pageH - 6, { align: "center" });
 }
 
 // ─── Per-question block ─────────────────────────────────────────────
@@ -800,7 +800,7 @@ function drawQuestionHeaderBar(
     const split = getEdexcelASkillSplit(entry.marks);
     rightLabel = split
       ? `K${split.K} · Ap${split.Ap} · An${split.An} · Ev${split.Ev}`
-      : "—";
+      : "·";
   }
   doc.text(rightLabel, x + cQ + cA + cM + cAO / 2, y + 4.8, { align: "center" });
 
@@ -972,7 +972,7 @@ function drawEdexcelSkillTable(doc: jsPDF, y: number, marks: number): number {
     doc.line(MARGIN_L + cSkill, y, MARGIN_L + cSkill, y + h);
     doc.line(MARGIN_L + cSkill + cMarks, y, MARGIN_L + cSkill + cMarks, y + h);
     doc.setFont("helvetica", "bold");
-    doc.text(`${r.k} — ${r.name}`, MARGIN_L + 2, y + 3.6);
+    doc.text(`${r.k} · ${r.name}`, MARGIN_L + 2, y + 3.6);
     doc.setFont("helvetica", "normal");
     doc.text(`${r.max}`, MARGIN_L + cSkill + 2, y + 3.6);
     let ty = y + 3.6;

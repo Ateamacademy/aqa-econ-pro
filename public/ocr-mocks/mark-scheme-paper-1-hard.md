@@ -39,7 +39,7 @@ H460/01                                                                    Mark 
               consumption'.
               A cost imposed on a third party / to society (1) arising from the         2
               consumption of a good by individuals where social costs exceed
-              private costs (1) so the good is overconsumed in a free market (1 —
+              private costs (1) so the good is overconsumed in a free market (1 ·
               max 2).
 
 
@@ -127,7 +127,7 @@ material, the effectiveness of subsidies such as Contracts for Difference in red
   • CfD: government guarantees a 'strike price' per MWh; pays the difference if wholesale price is lower; receives the difference if higher
   • negative externalities of production: social costs (CO₂, air pollution) > private costs
  Application
-  • UK net-zero target by 2050 — context for renewable support
+  • UK net-zero target by 2050 · context for renewable support
   • Climate Change Levy taxes business energy use (complementary policy)
   • Fig. 2 shows market still dominated by firms selling both gas and renewable-generated electricity
  Analysis
@@ -139,10 +139,10 @@ H460/01                                                                         
  • increased renewable capacity displaces gas-fired generation → lower CO₂ emissions → reduced negative externality
  • market-based mechanism: competitive auctions drive down strike prices over time (£92/MWh in 2012 to below £45/MWh in 2022)
  Evaluation
-  • opportunity cost of subsidies — funded via consumer bills or taxation
+  • opportunity cost of subsidies · funded via consumer bills or taxation
   • government failure: strike prices may be set too high or too low; political pressure affects auction design
-  • intermittency — renewables require gas backup, reducing the externality gain
-  • doesn't address emissions from existing gas plants directly — carbon tax may be more targeted
+  • intermittency · renewables require gas backup, reducing the externality gain
+  • doesn't address emissions from existing gas plants directly · carbon tax may be more targeted
   • effectiveness depends on the elasticity of investment supply; regulatory uncertainty has limited rounds
   • crowding out other policies (e.g. nuclear, hydrogen, demand-side measures)
  Possible judgements
@@ -171,13 +171,13 @@ H460/01                                                                    Mark 
                               good use of data where appropriate.
                               Reasonable analysis characterised by developing chains of reasoning that explain most of the links; diagram(s) may be predominantly correct
                               but not fully integrated into the response.
-                              Reasonable evaluation — counter argument(s) are considered but not fully developed; some attempt to conclude but without fully weighing
+                              Reasonable evaluation · counter argument(s) are considered but not fully developed; some attempt to conclude but without fully weighing
                               up both sides. QER: the candidate expresses ideas with reasonable clarity and accuracy.
 
  Level 1                      Reasonable knowledge and understanding of relevant economic ideas, principles or models.
  (1–4 marks)                  Reasonable application of economic concepts to some elements of the given context; may be inconsistent or not always relevant.
                               Limited analysis in the form of single links; diagram(s) may contain errors or be loosely integrated into the response.
-                              Limited evaluation — simple statements of counter argument(s); stated or absent judgement. QER: the candidate expresses simple ideas
+                              Limited evaluation · simple statements of counter argument(s); stated or absent judgement. QER: the candidate expresses simple ideas
                               clearly but is likely to be imprecise.
 
  0 marks                      Response is not worthy of credit.
@@ -192,25 +192,25 @@ H460/01                                                                    Mark 
                                                                                         7
 H460/01                                                                           Mark Scheme                                          June 2026
  • concentration ratio: share of market held by the largest N firms
- Application — evidence that the market IS an oligopoly
+ Application · evidence that the market IS an oligopoly
   • Fig. 2: top five firms hold 85% of the market (CR5 = 85%); British Gas, Octopus, E.ON Next, EDF and OVO dominate
-  • high barriers to entry — tightened Ofgem financial resilience rules, large capital requirements, network access
+  • high barriers to entry · tightened Ofgem financial resilience rules, large capital requirements, network access
   • consolidation from Big Six to Big Five through M&A (SSE → OVO, npower → E.ON Next)
-  • 29 supplier failures during 2021–22 crisis — evidence that small entrants cannot survive shocks
-  • switching has collapsed (18% in 2018 → 5% in 2024) — consumers largely inert
- Application — evidence AGAINST pure oligopoly
-  • Octopus Energy grew rapidly — suggests the market is not entirely closed to new challengers
+  • 29 supplier failures during 2021–22 crisis · evidence that small entrants cannot survive shocks
+  • switching has collapsed (18% in 2018 → 5% in 2024) · consumers largely inert
+ Application · evidence AGAINST pure oligopoly
+  • Octopus Energy grew rapidly · suggests the market is not entirely closed to new challengers
   • Default Tariff Cap limits the extent to which firms can coordinate on high prices
-  • suppliers differentiate on service ratings, smart-meter rollout, green tariffs — consistent with non-collusive competition
-  • Ofgem actively monitors the market — limits anti-competitive behaviour
+  • suppliers differentiate on service ratings, smart-meter rollout, green tariffs · consistent with non-collusive competition
+  • Ofgem actively monitors the market · limits anti-competitive behaviour
  Analysis
-  • apply kinked demand curve / game theory to explain pricing behaviour — firms reluctant to undercut; sticky prices under cap
+  • apply kinked demand curve / game theory to explain pricing behaviour · firms reluctant to undercut; sticky prices under cap
   • interdependence: firms respond to each other's marketing, smart-meter rollouts, tariff structures
   • limit pricing / predatory pricing not evident due to cap
  Evaluation
   • market has clear oligopolistic features but falls short of tight collusion due to regulation
-  • distinction between structure (CR5 = 85% — oligopolistic) and conduct (somewhat competitive due to cap and entrants)
-  • market structure evolving — renewable generators increasingly vertically integrated into supply
+  • distinction between structure (CR5 = 85% · oligopolistic) and conduct (somewhat competitive due to cap and entrants)
+  • market structure evolving · renewable generators increasingly vertically integrated into supply
  Judgement
   • structurally the UK domestic energy market is a tight oligopoly
   • but conduct is constrained by regulation (Ofgem, price cap), so pricing and profits are less than pure oligopoly theory predicts
@@ -230,7 +230,7 @@ H460/01                                                                   Mark S
                            (AO2).
                            Strong analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Strong evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                           Strong evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
                            to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 4                   Good knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -238,7 +238,7 @@ H460/01                                                                   Mark S
                            (AO2).
                            Good analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                            accuracy reflects this level (AO3).
-                           Good evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                           Good evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                            a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 3                   Reasonable knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -246,7 +246,7 @@ H460/01                                                                   Mark S
                            appropriate (AO2).
                            Reasonable analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Reasonable evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations —
+                           Reasonable evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations ·
                            leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 2                   Limited knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -254,7 +254,7 @@ H460/01                                                                   Mark S
                            appropriate (AO2).
                            Limited analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Limited evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                           Limited evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
 
                                                                                    9
 H460/01                                                                          Mark Scheme                                                                     June 2026
@@ -267,7 +267,7 @@ H460/01                                                                         
                               (AO2).
                               Weak analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                               accuracy reflects this level (AO3).
-                              Weak evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                              Weak evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                               a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  0 marks                      Response is not worthy of credit.
@@ -277,21 +277,21 @@ H460/01                                                                         
 
 
  Knowledge and understanding
-  • maximum (ceiling) price: legally set price that suppliers cannot exceed — binding if below equilibrium
+  • maximum (ceiling) price: legally set price that suppliers cannot exceed · binding if below equilibrium
  Analysis (with diagram)
   • S/D diagram: Pmax below equilibrium → QD > QS → excess demand / shortage
   • at the capped price, consumer surplus increases for those still able to buy; producer surplus falls
   • welfare loss triangle shown; some consumers displaced
   • firms may exit / reduce supply long-run → supply shifts left → worsened shortage
  Applied examples
-  • Ofgem Default Tariff Cap in UK energy — contributed to 29 supplier failures in 2021–22
-  • rent controls (Berlin, parts of US) — create shortages of rental housing
+  • Ofgem Default Tariff Cap in UK energy · contributed to 29 supplier failures in 2021–22
+  • rent controls (Berlin, parts of US) · create shortages of rental housing
   • pharmaceutical price ceilings in EU markets
  Evaluation
-  • depends on price elasticity of supply and demand — inelastic markets show smaller shortages
+  • depends on price elasticity of supply and demand · inelastic markets show smaller shortages
   • equity argument: protects vulnerable consumers from monopoly pricing
   • black markets / informal markets may emerge to bypass cap
-  • reduced investment — long-run supply falls, shortages worsen
+  • reduced investment · long-run supply falls, shortages worsen
 
 
                                                                                        10
@@ -315,7 +315,7 @@ H460/01                                                                    Mark 
                            (AO2).
                            Strong analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Strong evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                           Strong evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
                            to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 4                   Good knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -323,7 +323,7 @@ H460/01                                                                    Mark 
                            (AO2).
                            Good analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                            accuracy reflects this level (AO3).
-                           Good evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                           Good evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                            a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 3                   Reasonable knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -331,7 +331,7 @@ H460/01                                                                    Mark 
                            appropriate (AO2).
                            Reasonable analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Reasonable evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations —
+                           Reasonable evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations ·
                            leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 2                   Limited knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -339,7 +339,7 @@ H460/01                                                                    Mark 
                            appropriate (AO2).
                            Limited analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Limited evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                           Limited evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
 
                                                                                   12
 H460/01                                                                        Mark Scheme                                                                      June 2026
@@ -352,7 +352,7 @@ H460/01                                                                        M
                              (AO2).
                              Weak analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                              accuracy reflects this level (AO3).
-                             Weak evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                             Weak evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                              a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  0 marks                     Response is not worthy of credit.
@@ -367,12 +367,12 @@ H460/01                                                                        M
  Analysis (with diagram)
   • show MPC, MSC and divergence creating welfare loss in free market
   • a tax equal to the marginal external cost shifts MPC up to MSC, restoring social optimum
-  • raises revenue — can be hypothecated to fund mitigation or compensate victims
- Evaluation — advantages of indirect taxes
-  • flexible and market-based — allows consumers and firms to choose how to respond
+  • raises revenue · can be hypothecated to fund mitigation or compensate victims
+ Evaluation · advantages of indirect taxes
+  • flexible and market-based · allows consumers and firms to choose how to respond
   • raises revenue that can fund public goods
   • targets externality at source
- Evaluation — limitations
+ Evaluation · limitations
   • information problem: MEC often hard to quantify; wrong tax rate leads to misallocation
   • regressive impact (e.g. sugar tax, fuel duty)
   • PED may be inelastic → small reduction in quantity, large burden on consumers
@@ -383,14 +383,14 @@ H460/01                                                                        M
 H460/01                                                                               Mark Scheme              June 2026
 
  Comparison with alternatives
-  • tradable permits — efficient price discovery, target certainty, but political difficulty in setting caps
-  • regulation / bans — simple and certain but inflexible and costly
-  • subsidies for substitutes (e.g. EV subsidies) — addresses externality indirectly
-  • information campaigns / nudges — cheap, but limited impact
+  • tradable permits · efficient price discovery, target certainty, but political difficulty in setting caps
+  • regulation / bans · simple and certain but inflexible and costly
+  • subsidies for substitutes (e.g. EV subsidies) · addresses externality indirectly
+  • information campaigns / nudges · cheap, but limited impact
  Possible judgements
   • indirect taxes effective when externality is easily quantified and demand is elastic
   • most effective when combined with regulation and information
-  • no single instrument is always most effective — depends on context, elasticity, equity concerns
+  • no single instrument is always most effective · depends on context, elasticity, equity concerns
 
 
                                                                                             14
@@ -404,7 +404,7 @@ H460/01                                                                Mark Sche
                           (AO2).
                           Strong analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                           whose accuracy reflects this level (AO3).
-                          Strong evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                          Strong evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
                           to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 4                  Good knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -412,7 +412,7 @@ H460/01                                                                Mark Sche
                           (AO2).
                           Good analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                           accuracy reflects this level (AO3).
-                          Good evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                          Good evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                           a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 3                  Reasonable knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -420,7 +420,7 @@ H460/01                                                                Mark Sche
                           appropriate (AO2).
                           Reasonable analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                           whose accuracy reflects this level (AO3).
-                          Reasonable evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations —
+                          Reasonable evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations ·
                           leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 2                  Limited knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -428,7 +428,7 @@ H460/01                                                                Mark Sche
                           appropriate (AO2).
                           Limited analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                           whose accuracy reflects this level (AO3).
-                          Limited evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                          Limited evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
 
                                                                                  15
 H460/01                                                                              Mark Scheme                                                                  June 2026
@@ -441,7 +441,7 @@ H460/01                                                                         
                                (AO2).
                                Weak analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                                accuracy reflects this level (AO3).
-                               Weak evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                               Weak evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                                a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  0 marks                       Response is not worthy of credit.
@@ -459,12 +459,12 @@ H460/01                                                                         
   • lower prices for consumers, higher quantity supplied
   • may spur innovation as firms compete for share
  Applied examples
-  • British Gas, British Telecom, electricity boards — UK privatisation and breakup of public monopolies
+  • British Gas, British Telecom, electricity boards · UK privatisation and breakup of public monopolies
   • AT&T US breakup (1984)
   • ongoing debate around tech (Google, Amazon, Meta) and supermarket mergers
  Evaluation
-  • large firms benefit from economies of scale — breakup may raise average costs
-  • loss of dynamic efficiency — reduced R&D / innovation investment
+  • large firms benefit from economies of scale · breakup may raise average costs
+  • loss of dynamic efficiency · reduced R&D / innovation investment
   • costly to implement and enforce; legal uncertainty
 
 
@@ -490,7 +490,7 @@ H460/01                                                                     Mark
                            (AO2).
                            Strong analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Strong evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                           Strong evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
                            to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 4                   Good knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -498,7 +498,7 @@ H460/01                                                                     Mark
                            (AO2).
                            Good analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                            accuracy reflects this level (AO3).
-                           Good evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                           Good evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                            a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 3                   Reasonable knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -506,7 +506,7 @@ H460/01                                                                     Mark
                            appropriate (AO2).
                            Reasonable analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Reasonable evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations —
+                           Reasonable evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations ·
                            leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 2                   Limited knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -514,7 +514,7 @@ H460/01                                                                     Mark
                            appropriate (AO2).
                            Limited analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Limited evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                           Limited evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
 
                                                                                   18
 H460/01                                                                             Mark Scheme                                                                  June 2026
@@ -527,7 +527,7 @@ H460/01                                                                         
                               (AO2).
                               Weak analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                               accuracy reflects this level (AO3).
-                              Weak evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                              Weak evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                               a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  0 marks                      Response is not worthy of credit.
@@ -551,7 +551,7 @@ H460/01                                                                         
  Evaluation
   • empirical evidence: union wage premium around 5–10% in UK (Bryson et al.)
   • better non-wage conditions: health and safety, training, hours
-  • can raise productivity via voice mechanism — better worker engagement
+  • can raise productivity via voice mechanism · better worker engagement
 
 
                                                                                           19

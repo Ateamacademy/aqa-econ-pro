@@ -1,9 +1,9 @@
 <!-- Auto-generated from /public/edexcel-a-mocks/mark-scheme-paper-1-hard.pdf -->
 Pearson Edexcel
                                            Mark Scheme
-                               Predicted Paper — For revision purposes only
+                               Predicted Paper · For revision purposes only
                                 Level 3 GCE Economics A (9EC0)
-                   Paper 1: Markets and Business Behaviour — 9EC0/01 — Hard
+                   Paper 1: Markets and Business Behaviour · 9EC0/01 · Hard
                                          Total: 100 marks
 
 General Marking Guidance
@@ -47,7 +47,7 @@ Level Descriptors
   L1          1–2        Limited knowledge; weak or missing diagram.
   L2          3–5        Sound knowledge; reasonable diagram; some application.
 
-9EC0/01 — Hard — Mark Scheme                                                            Page 1 of 10
+9EC0/01 · Hard · Mark Scheme                                                            Page 1 of 10
  Leve    KAA marks                                     Descriptor
    l
   L3          6–8        Accurate knowledge; correctly labelled diagram; developed chains.
@@ -79,9 +79,9 @@ Level Descriptors
   L4         9–10        Sophisticated evaluation with prioritised judgement.
 
 
-9EC0/01 — Hard — Mark Scheme                                                          Page 2 of 10
-                               Section A — Questions 1 to 5
-Question 1 (5 marks) — UK ETS carbon permits
+9EC0/01 · Hard · Mark Scheme                                                          Page 2 of 10
+                               Section A · Questions 1 to 5
+Question 1 (5 marks) · UK ETS carbon permits
    Q                                     Indicative content                                      Mark
                                                                                                   s
  1(a)    Method: PES = %ΔQs ÷ %ΔP (1).                                                            4
@@ -95,18 +95,18 @@ Question 1 (5 marks) — UK ETS carbon permits
          this range. Award full credit for any internally-consistent calculation of the ratio
          of %ΔQ to %ΔP with supporting working, even if the sign interpretation differs.
 
- 1(b)    Answer: B — invest in lower-emission production technology. A higher permit              1
+ 1(b)    Answer: B · invest in lower-emission production technology. A higher permit              1
          price raises the marginal cost of polluting; firms have a direct incentive to
          substitute toward cleaner production methods whose return now exceeds the
          cost of permits avoided.
-         Distractors: A incentive runs the other way — higher permit costs discourage
+         Distractors: A incentive runs the other way · higher permit costs discourage
          expansion of output that generates emissions; C wages for low-skilled workers
          are not directly linked to permit pricing; D firms would prefer subsidies, but the
-         permit-price signal itself does not generate one — it incentivises internal
+         permit-price signal itself does not generate one · it incentivises internal
          abatement.
 
 
-Question 2 (5 marks) — Pension auto-enrolment and bounded rationality
+Question 2 (5 marks) · Pension auto-enrolment and bounded rationality
    Q                                     Indicative content                                      Mark
                                                                                                   s
  2(a)    Bounded rationality: workers have limited cognitive capacity, time and                   4
@@ -116,11 +116,11 @@ Question 2 (5 marks) — Pension auto-enrolment and bounded rationality
          condition, the same inertia produces the opposite outcome and 91% remain
          enrolled (1).
          Evidence that workers do not optimise over lifetime utility independently of the
-         framing — consistent with bounded rationality (1).
+         framing · consistent with bounded rationality (1).
          Present bias may also contribute: workers systematically under-weight future
          benefits of pension saving (1).
 
- 2(b)    Answer: B — status-quo bias effect. The same set of workers reaches opposite             1
+ 2(b)    Answer: B · status-quo bias effect. The same set of workers reaches opposite             1
          outcomes purely because the default option has changed; this is the defining
          pattern of status-quo bias, where individuals disproportionately stick with
          whatever option has been set as the default.
@@ -131,13 +131,13 @@ Question 2 (5 marks) — Pension auto-enrolment and bounded rationality
          curve for a specific category of inferior good and is not relevant here.
 
 
-9EC0/01 — Hard — Mark Scheme                                                               Page 3 of 10
-Question 3 (5 marks) — Supermarket petrol game theory
+9EC0/01 · Hard · Mark Scheme                                                               Page 3 of 10
+Question 3 (5 marks) · Supermarket petrol game theory
    Q                                    Indicative content                                      Mark
                                                                                                  s
  3(a)    Nash equilibrium: (Cut, Cut) with payoffs (4, 4). At this strategy pair, neither         2
          firm can improve its payoff unilaterally.
-         Working: if A: Cut, B: Maintain → B gets 2, better to Cut (11→4? No — 4>2, so
+         Working: if A: Cut, B: Maintain → B gets 2, better to Cut (11→4? No · 4>2, so
          Cut). If A: Maintain, B: Cut → B gets 11 > 8 → Cut. So B's dominant strategy is
          Cut. Symmetric for A. Unique NE: (Cut, Cut).
          Award 1 mark for identifying dominant strategies / best responses; 1 mark for
@@ -146,15 +146,15 @@ Question 3 (5 marks) — Supermarket petrol game theory
  3(b)    Combined weekly profit at NE = 4 + 4 = £8 million.                                       1
   (i)
  3(b)    Combined profit if both Maintain = 8 + 8 = £16 million. Illustrates prisoner's-          1
-  (ii)   dilemma structure — cooperation Pareto-dominates the NE.
+  (ii)   dilemma structure · cooperation Pareto-dominates the NE.
 
- 3(c)    Answer: C — interactions are frequent, credible punishments exist, and firms             1
+ 3(c)    Answer: C · interactions are frequent, credible punishments exist, and firms             1
          value future profits highly. Folk theorem of repeated games: collusion
          sustained when discount factor sufficient to make defection's short-term gains
          smaller than long-term losses from trigger strategies.
 
 
-Question 4 (5 marks) — Monopsony and the minimum wage
+Question 4 (5 marks) · Monopsony and the minimum wage
    Q                                    Indicative content                                      Mark
                                                                                                  s
  4(a)    Diagram: upward-sloping labour supply (S_L = ACL); MCL curve steeper                     4
@@ -165,19 +165,19 @@ Question 4 (5 marks) — Monopsony and the minimum wage
          Impose minimum wage W_min where W_m < W_min ≤ competitive wage:
          horizontal MCL up to the labour supply curve at W_min. Firm now hires up to
          where W_min = MRPL, giving Q_min > Q_m (1).
-         Therefore both the wage and employment rise — opposite to the competitive
+         Therefore both the wage and employment rise · opposite to the competitive
          case. Explain intuition: minimum wage removes the monopsonist's ability to set
          wage below MRPL (1).
 
- 4(b)    Answer: B — a rise in wages and a fall in employment, creating excess labour             1
+ 4(b)    Answer: B · a rise in wages and a fall in employment, creating excess labour             1
          supply. Standard competitive-market outcome: binding minimum wage raises
          quantity supplied above quantity demanded.
 
 
-Question 5 (5 marks) — NLW and grocery retail wage bill
+Question 5 (5 marks) · NLW and grocery retail wage bill
    Q                                    Indicative content                                      Mark
                                                                                                  s
- 5(a)    Answer: C — relatively elastic (greater than one in absolute value). When                1
+ 5(a)    Answer: C · relatively elastic (greater than one in absolute value). When                1
          demand for labour is elastic, a wage rise produces a proportionately larger fall
          in employment.
 
@@ -185,10 +185,10 @@ Question 5 (5 marks) — NLW and grocery retail wage bill
          • Few close substitutes for low-skilled shop-floor labour in the short run
 
 
-9EC0/01 — Hard — Mark Scheme                                                               Page 4 of 10
+9EC0/01 · Hard · Mark Scheme                                                               Page 4 of 10
    Q                                   Indicative content                                  Mark
                                                                                             s
-         (checkout staff, shelf-stackers) — automation capital-intensive, limited (1+1).
+         (checkout staff, shelf-stackers) · automation capital-intensive, limited (1+1).
          • Labour costs a small share of total costs for large chains → wage rise causes
          only modest increase in unit costs → limited output/employment effects (1+1).
          • Derived-demand: demand for groceries price-inelastic, so retailers pass cost
@@ -202,18 +202,18 @@ Question 5 (5 marks) — NLW and grocery retail wage bill
          1 mark method; 1 mark correct numerical answer with unit.
 
 
-9EC0/01 — Hard — Mark Scheme                                                         Page 5 of 10
-                      Section B — Question 6: UK retail banking
-6(a) — Four-firm concentration ratio and consequences (5 marks)
+9EC0/01 · Hard · Mark Scheme                                                         Page 5 of 10
+                      Section B · Question 6: UK retail banking
+6(a) · Four-firm concentration ratio and consequences (5 marks)
 Indicative content (KAA 3 / Eval 2):
-Top four = Lloyds 25.4 + NatWest 17.2 + Barclays 14.1 + HSBC 10.8 = 67.5% — highly
+Top four = Lloyds 25.4 + NatWest 17.2 + Barclays 14.1 + HSBC 10.8 = 67.5% · highly
 concentrated tight oligopoly (2). Consequences may include: reduced price competition (e.g. low
 interest on current-account balances), weakened incentive to invest in customer service, possible
 implicit price coordination (2).
 Evaluation (1): challenger-bank growth from <2% (2019) to 8.6% (2024) suggests CR4
 concentration overstates the lack of competitive pressure at the margin.
 
-6(b) — Effects of Open Banking on competition (12 marks)
+6(b) · Effects of Open Banking on competition (12 marks)
 Diagram required: labour market or cost/revenue diagram showing how reduced barriers to entry
 raise number of firms/output and reduce mark-ups. A kinked-demand or oligopoly-with-reduced-
 MC diagram is acceptable.
@@ -221,18 +221,18 @@ MC diagram is acceptable.
             KAA (AO1 + AO2 + AO3)                               Evaluation (AO4)
 
  • Open Banking enables third-party access        • Growth is real but concentrated at the
-   to transaction data with consent — 11.8m         margin — Big 4 still hold ~67.5% of PCAs
+   to transaction data with consent · 11.8m         margin · Big 4 still hold ~67.5% of PCAs
    users by 2024 (Fig 2).                           (Fig 1).
  • Reduces consumer switching costs and           • Network effects and brand trust favour
    search costs.                                    incumbents (particularly older
  • Lowers fixed-cost barriers to entry for          demographics).
    fintech challengers (no need to build full     • Take-up of Open Banking required years to
-   banking stack).                                  reach scale — not a quick fix.
+   banking stack).                                  reach scale · not a quick fix.
  • Enables product innovation: budgeting          • Consumer inertia and status-quo bias
-   tools, affordability checks, FX services —       (Extract A) limit actual switching even
+   tools, affordability checks, FX services ·       (Extract A) limit actual switching even
    raises non-price competition.                    when costs are zero.
  • Challenger share rose from <2% (2019) to       • Judgement: Open Banking has increased
-   8.6% (2024) — Fig 1 and Extract B.               competition at the margin, particularly in
+   8.6% (2024) · Fig 1 and Extract B.               competition at the margin, particularly in
  • Diagram: new entrants shift industry supply      digital-native and fee-free segments. But
    curve right → lower equilibrium                  structural dominance of incumbents in
    price/commission.                                deposits, mortgages, and cross-selling
@@ -241,43 +241,43 @@ MC diagram is acceptable.
                                                     measures.
 
 
-6(c) — Two measures other than Open Banking to strengthen competition (8
+6(c) · Two measures other than Open Banking to strengthen competition (8
 marks)
 Indicative content (KAA 5 / Eval 3). Accept any two, fully developed:
-1. Structural remedies (divestiture / forced break-up) — CMA can order incumbents to sell branch
+1. Structural remedies (divestiture / forced break-up) · CMA can order incumbents to sell branch
 networks or customer portfolios. Chain: directly reduces concentration; precedent exists (Lloyds
 forced to divest TSB in 2013) (2–3).
-2. Account number portability (like mobile number portability) — removes friction entirely. Chain:
+2. Account number portability (like mobile number portability) · removes friction entirely. Chain:
 eliminates technical switching costs, making switching as easy as changing mobile provider (2–3).
-3. Cap on overdraft fees or other behavioural-pricing products — reduces rent extraction (2).
+3. Cap on overdraft fees or other behavioural-pricing products · reduces rent extraction (2).
 4. Promoting mutual/co-operative banks and credit unions via tax reliefs and simplified regulation
 (2).
 
 
-9EC0/01 — Hard — Mark Scheme                                                          Page 6 of 10
-Evaluation (3): risks — structural remedies may reduce economies of scale; portability extremely
+9EC0/01 · Hard · Mark Scheme                                                          Page 6 of 10
+Evaluation (3): risks · structural remedies may reduce economies of scale; portability extremely
 expensive to build; caps may cause product withdrawal. Best option depends on empirical
 elasticities and cost-benefit analysis. Judgement: account portability likely the highest-impact
 intervention, combining direct removal of friction with preservation of scale efficiencies.
 
-6(d) — Behavioural biases vs. structural market power (10 marks)
+6(d) · Behavioural biases vs. structural market power (10 marks)
             KAA (AO1 + AO2 + AO3)                                   Evaluation (AO4)
 
  • Behavioural case (Extract A): status-quo           • Structural case: concentration (CR4 =
    bias, hassle costs, limited engagement               67.5%) and brand incumbency reflect
-   keep switching <2%.                                  genuine market power — not purely
+   keep switching <2%.                                  genuine market power · not purely
  • If inertia is the primary constraint, structural     behavioural.
-    remedies may not raise competition —              • Scale economies, cross-selling and branch
+    remedies may not raise competition ·              • Scale economies, cross-selling and branch
     consumers won't use the alternatives.               networks create real barriers.
  • Nudges (default switching, simplified              • Removing biases doesn't help if there's no
-   comparison) may be more effective than               meaningful choice — need both sides of
+   comparison) may be more effective than               meaningful choice · need both sides of
    structural reform.                                   the reform.
  • Evidence: Open Banking has raised tools            • Recent challenger-bank growth shows
    available but not dramatically raised                structural change IS driving shift (8.6%
    switching rates.                                     share in 2024).
  • CASS (Current Account Switch Service)              • Judgement: behavioural biases amplify
    makes switching technically easy but has             market power but do not cause it. Primary
-   not shifted behaviour.                               obstacle is structural — without credible
+   not shifted behaviour.                               obstacle is structural · without credible
                                                         challengers, behavioural nudges have
                                                         nothing to nudge towards. Competition
                                                         policy needs both pillars: structural reform
@@ -286,22 +286,22 @@ intervention, combining direct removal of friction with preservation of scale ef
                                                         alone is sufficient.
 
 
-6(e) — Impact of Starling/Monzo merger on consumers (15 marks)
+6(e) · Impact of Starling/Monzo merger on consumers (15 marks)
             KAA (AO1 + AO2 + AO3)                                   Evaluation (AO4)
 
  • Merger raises combined challenger share            • Effect on consumers depends on CMA
-   to 6.1% — becomes the largest digital-only           remedies: divestiture of overlapping
+   to 6.1% · becomes the largest digital-only           remedies: divestiture of overlapping
    bank but still below each Big-4 incumbent.           products may mitigate concern.
  • Horizontal integration reduces direct              • Competition between Big 4 and challengers
    competition between the two leading                  may matter more than between Starling
    digital-natives.                                     and Monzo.
- • Potential increase in fees/decreased non-          • Dynamic efficiency gains likely — both
+ • Potential increase in fees/decreased non-          • Dynamic efficiency gains likely · both
    price competition in fee-free segment.               firms are unprofitable individually; merger
  • Combined scale may enable investment in              may reach sustainable scale.
-   machine-learning credit assessment, better         • Risk of duopoly in digital-native segment —
+   machine-learning credit assessment, better         • Risk of duopoly in digital-native segment ·
    risk management (Extract C).                         remaining digital challengers (Revolut,
  • Could create a credible fifth force to rival         Chase UK) may fill the gap.
-   the Big 4 — raising overall competition at         • Long-term consumer surplus likely
+   the Big 4 · raising overall competition at         • Long-term consumer surplus likely
    sector level.                                        improved if merger accelerates
  • Possible reduction in choice among digital-          displacement of incumbents.
    native propositions (Extract C).                   • Judgement: merger creates short-run
@@ -309,7 +309,7 @@ intervention, combining direct removal of friction with preservation of scale ef
                                                         challengers but long-run gain if combined
                                                         entity can meaningfully contest the Big 4.
 
-9EC0/01 — Hard — Mark Scheme                                                               Page 7 of 10
+9EC0/01 · Hard · Mark Scheme                                                               Page 7 of 10
             KAA (AO1 + AO2 + AO3)               Evaluation (AO4)
 
                                     CMA should clear subject to conduct
@@ -319,9 +319,9 @@ intervention, combining direct removal of friction with preservation of scale ef
                                     regulated carefully.
 
 
-9EC0/01 — Hard — Mark Scheme                                          Page 8 of 10
-                Section C — Question 7 OR Question 8 (25 marks)
-Question 7 — Nudges vs Pigouvian taxation for health market failures (25
+9EC0/01 · Hard · Mark Scheme                                          Page 8 of 10
+                Section C · Question 7 OR Question 8 (25 marks)
+Question 7 · Nudges vs Pigouvian taxation for health market failures (25
 marks)
             KAA (AO1 + AO2 + AO3)                                 Evaluation (AO4)
 
@@ -329,7 +329,7 @@ marks)
    externalities by raising private marginal          choice, address information failures
    cost to social marginal cost.                      directly, no regressive impact.
  • Applied to obesity: Soft Drinks Industry         • Pigouvian advantages: raise revenue,
-   Levy (2018) — £0.18 per litre on high-             provide continuous incentive, transmit
+   Levy (2018) · £0.18 per litre on high-             provide continuous incentive, transmit
    sugar drinks.                                      through price system.
  • Nudges: choice architecture to harness           • Nudges disadvantages: modest effect
    behavioural biases. Default menu sizing            sizes, may not overcome deeply addictive
@@ -347,15 +347,15 @@ marks)
                                                       clear (sugar, tobacco); nudges better
                                                       where information failures and present bias
                                                       are primary causes. Best policy mix
-                                                      combines both — SDIL + menu labelling +
+                                                      combines both · SDIL + menu labelling +
                                                       default portion sizing. Pure reliance on
                                                       either alone is suboptimal.
 
 
-Question 8 — Algorithmic pricing and tacit collusion (25 marks)
+Question 8 · Algorithmic pricing and tacit collusion (25 marks)
             KAA (AO1 + AO2 + AO3)                                 Evaluation (AO4)
 
- • Concept: algorithmic pricing — automated         • Counter: algorithms also enhance
+ • Concept: algorithmic pricing · automated         • Counter: algorithms also enhance
    adjustment of prices based on competitor           competition via faster price adjustments,
    data, demand signals, and machine                  better price discovery, lower search costs.
    learning.                                        • Empirical evidence mixed: Assad et al.
@@ -373,11 +373,11 @@ Question 8 — Algorithmic pricing and tacit collusion (25 marks)
  • Possible regulatory responses: per-se              ineffective.
 
 
-9EC0/01 — Hard — Mark Scheme                                                             Page 9 of 10
+9EC0/01 · Hard · Mark Scheme                                                             Page 9 of 10
             KAA (AO1 + AO2 + AO3)                              Evaluation (AO4)
 
    prohibition of certain algorithm types;        • Judgement: absolute prohibition is too
-   algorithmic transparency; periodic auditing;     broad — it would capture pro-competitive
+   algorithmic transparency; periodic auditing;     broad · it would capture pro-competitive
    outcome-based tests (e.g. prices                 algorithms alongside collusive ones.
    consistently above Bertrand-Nash                 Smarter regulation: targeted scrutiny in
    predictions).                                    concentrated markets where collusion is
@@ -393,4 +393,4 @@ Question 8 — Algorithmic pricing and tacit collusion (25 marks)
                                TOTAL FOR PAPER = 100 MARKS
 
 
-9EC0/01 — Hard — Mark Scheme                                                        Page 10 of 10
+9EC0/01 · Hard · Mark Scheme                                                        Page 10 of 10

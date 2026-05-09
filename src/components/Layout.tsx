@@ -101,7 +101,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <span className="text-base md:text-2xl font-bold text-foreground tracking-tight truncate">The GDP of Grades</span>
           </Link>
 
-          {/* Centre nav removed — unified sub-row menu below renders on all pages */}
+          {/* Centre nav removed · unified sub-row menu below renders on all pages */}
 
           {/* Right side */}
           <div className="hidden lg:flex items-center gap-3">

@@ -14,7 +14,7 @@
  *   B) ...
  *
  * Each part is emitted as its own question so the marking UI gives the
- * student a separate answer box per part — matching the AQA flow shown in
+ * student a separate answer box per part · matching the AQA flow shown in
  * the design reference.
  */
 import data from "./edexcelAPredictedPapersData.json";
@@ -47,7 +47,7 @@ const PAPERS = data as unknown as Paper[];
 function tableToMarkdown(rows: string[][]): string {
   if (!rows.length) return "";
   // Sanitize cells: collapse newlines and escape pipes so GFM tables render correctly.
-  const clean = (c: string) => (c ?? "").replace(/\s*\n\s*/g, " ").replace(/\|/g, "\\|").trim() || "—";
+  const clean = (c: string) => (c ?? "").replace(/\s*\n\s*/g, " ").replace(/\|/g, "\\|").trim() || "·";
   const [head, ...body] = rows;
   const sep = head.map(() => "---").join(" | ");
   const fmt = (r: string[]) => "| " + r.map(clean).join(" | ") + " |";
@@ -58,7 +58,7 @@ function renderFigure(f: FigureRef): string {
   if (typeof f === "string") return `*${f}*`;
   if (f.url) {
     // Title is rendered inside the <figcaption> by MathsMarkdown's img renderer.
-    // Do NOT also emit a separate *title* line — that produces a duplicate caption.
+    // Do NOT also emit a separate *title* line · that produces a duplicate caption.
     const title = f.title ?? "Figure";
     return `![${title}](${f.url})`;
   }
@@ -76,7 +76,7 @@ function cleanDuplicatedStem(stem: string): string {
   if (!stem) return "";
   // Remove a leading "Case Study N: ..." line through the end of the
   // first inline Extract block (everything that the section renderer
-  // already produced). Keep anything that comes after — usually nothing,
+  // already produced). Keep anything that comes after · usually nothing,
   // because the real question prompts live in `parts`.
   const caseStudyRe = /^Case Study\s+\d+[\s\S]*?(?:\(Source:[^\)]*\)\s*)?(?=\n\nQuestion\s|\n\n\*\*Question|\n*$)/i;
   const cleaned = stem.replace(caseStudyRe, "").trim();
@@ -108,7 +108,7 @@ function renderQuestion(q: Question, fallbackNum: number, opts?: { suppressStem?
 
   // Multi-part: emit a context block first (no marks header), then each part
   if (stem) {
-    blocks.push(`**Question ${num} — context**\n${stem}`);
+    blocks.push(`**Question ${num} · context**\n${stem}`);
   }
   q.parts.forEach((p, i) => {
     const lbl = p.label ?? String.fromCharCode(97 + i);
@@ -129,7 +129,7 @@ function renderExtracts(extracts: Extract[]): string {
   return extracts
     .map((e) => {
       const head = e.subtitle
-        ? `**${e.title} — ${e.subtitle}**`
+        ? `**${e.title} · ${e.subtitle}**`
         : `**${e.title}**`;
       return `${head}\n\n${e.body}`;
     })
@@ -149,7 +149,7 @@ function renderSection(s: Section, runningQNum: { n: number }): string {
   const extractsMd = renderExtracts(s.extracts);
   if (extractsMd) blocks.push(extractsMd);
   // If the section already rendered figures/extracts, the question stem
-  // (Paper 3 case studies) often repeats them — strip that duplication.
+  // (Paper 3 case studies) often repeats them · strip that duplication.
   const sectionHasContext = (s.figures?.length ?? 0) > 0 || s.extracts.length > 0;
   s.questions.forEach((q) => {
     blocks.push(renderQuestion(q, runningQNum.n, { suppressStem: sectionHasContext }));

@@ -1,11 +1,11 @@
 /**
- * CAIE A-Level Economics (9708) — marking convention.
+ * CAIE A-Level Economics (9708) · marking convention.
  *
  * CAIE A-Level has FOUR papers:
- *   • Paper 1 (AS, MCQ, 30 marks)            — point-marking
- *   • Paper 2 (AS, data + essay, 40 marks)   — point-marking with mark points
- *   • Paper 3 (A2, MCQ, 30 marks)            — point-marking
- *   • Paper 4 (A2, data + essay, 70 marks)   — CAIE level descriptors on the
+ *   • Paper 1 (AS, MCQ, 30 marks)            · point-marking
+ *   • Paper 2 (AS, data + essay, 40 marks)   · point-marking with mark points
+ *   • Paper 3 (A2, MCQ, 30 marks)            · point-marking
+ *   • Paper 4 (A2, data + essay, 70 marks)   · CAIE level descriptors on the
  *                                              25-mark essay; point-marking
  *                                              for shorter parts.
  *
@@ -58,12 +58,12 @@ const bands: Record<number, MarkBand[]> = {
 };
 
 const point: Record<number, PointMarkingRubric> = {
-  // Paper 1 / Paper 3 MCQ — 1 mark per correct answer; total controlled per paper.
+  // Paper 1 / Paper 3 MCQ · 1 mark per correct answer; total controlled per paper.
   1: {
     totalMarks: 1,
     acceptedPoints: ["Correct single best answer A/B/C/D"],
   },
-  // Generic 2-mark "define" — 1 mark for partial, 2 for full.
+  // Generic 2-mark "define" · 1 mark for partial, 2 for full.
   2: {
     totalMarks: 2,
     acceptedPoints: [

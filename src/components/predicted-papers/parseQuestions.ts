@@ -13,9 +13,9 @@ export interface ParsedQuestion {
   sectionHeader?: string;
   /** Raw question number as parsed (e.g. "03", "31", "5"). Useful for diagram tagging. */
   number?: string;
-  /** Set by AQA tagger (`tagAqaQuestion`) — true when student should draw a diagram. */
+  /** Set by AQA tagger (`tagAqaQuestion`) · true when student should draw a diagram. */
   requiresDiagram?: boolean;
-  /** Set by AQA tagger — true when the diagram is supported but not strictly required. */
+  /** Set by AQA tagger · true when the diagram is supported but not strictly required. */
   diagramOptional?: boolean;
   /** Diagram template to preselect (e.g. "adAs", "supplyDemand"). */
   diagramType?: string;
@@ -36,17 +36,17 @@ export interface ParsedQuestion {
  *   Question 01 [2 marks]
  *   Question 01 (2 marks)
  *   **Question 1a** [4 marks]
- *   Question 1a [4 marks] — text on same line
+ *   Question 1a [4 marks] · text on same line
  *   01 [2 marks]
  *   Question 01: [2 marks]
  */
 export function parseQuestions(markdown: string): { context: string; questions: ParsedQuestion[] } {
   // Try multiple regex patterns to maximize matching
   const patterns = [
-    // Pattern 1: "Question XX [Y marks]" or "Question XX (Y marks)" — most common, handles bold and markdown headers
+    // Pattern 1: "Question XX [Y marks]" or "Question XX (Y marks)" · most common, handles bold and markdown headers
     /(?:^|\n)\s*(?:#{1,4}\s+)?\**(?:Question\s+)((?:\d{1,2}(?:\.\d+)?[a-z]?(?:\s*\([a-z]\))?|0\s?\d{1,2}(?:\.\d+)?[a-z]?))\**[^\n\[\(]*?(?:\[|\()\s*(\d+)\s*marks?\s*(?:\]|\))/gi,
     // Pattern 2: bare number + marks e.g. "01 [2 marks]"
-    /(?:^|\n)\s*(?:#{1,4}\s+)?\**(?:Q(?:uestion)?\s*)?((?:\d{1,2}(?:\.\d+)?[a-z]?))\**\s*[:\-—–]?\s*(?:\[|\()\s*(\d+)\s*marks?\s*(?:\]|\))/gi,
+    /(?:^|\n)\s*(?:#{1,4}\s+)?\**(?:Q(?:uestion)?\s*)?((?:\d{1,2}(?:\.\d+)?[a-z]?))\**\s*[:\-·–]?\s*(?:\[|\()\s*(\d+)\s*marks?\s*(?:\]|\))/gi,
     // Pattern 3: marks at end of line e.g. "Question 01: What is... [2 marks]"  
     /(?:^|\n)\s*(?:#{1,4}\s+)?\**(?:Question\s+)((?:\d{1,2}(?:\.\d+)?[a-z]?))\**[^\n]*?(?:\[|\()\s*(\d+)\s*marks?\s*(?:\]|\))/gi,
     // Pattern 4: "Question XX (Y)" with just a number in parens (some AI outputs)
@@ -55,9 +55,9 @@ export function parseQuestions(markdown: string): { context: string; questions: 
     /(?:^|\n)\s*(?:#{1,4}\s+)?\**(?:Question\s+)((?:\d{1,2}(?:\.\d+)?[a-z]?(?:\s*\([a-z]\))?))\**[^\n]*?\[(\d+)\]/gi,
     // Pattern 6: "Question N (a)" sub-parts with marks e.g. "Question 5 (a) text [10]" or "Question 5 (a) text [10 marks]"
     /(?:^|\n)\s*(?:#{1,4}\s+)?\**(?:Question\s+)((?:\d{1,2})\s*\([a-z]\))\**[^\n]*?(?:\[|\()\s*(\d+)\s*(?:marks?)?\s*(?:\]|\))/gi,
-    // Pattern 7: AQA GCSE style "**01** <inline text> [N marks]" — bold-wrapped bare number followed by stem text and marks token on same line
+    // Pattern 7: AQA GCSE style "**01** <inline text> [N marks]" · bold-wrapped bare number followed by stem text and marks token on same line
     /(?:^|\n)\s*\*{2}(\d{1,2}(?:\.\d+)?[a-z]?)\*{2}[^\n]*?(?:\[|\()\s*(\d+)\s*marks?\s*(?:\]|\))/gi,
-    // Pattern 8: AQA GCSE style with stimulus on subsequent lines — "**01** ...stem...\n\n<table/etc>\n\nmore text [N marks]"
+    // Pattern 8: AQA GCSE style with stimulus on subsequent lines · "**01** ...stem...\n\n<table/etc>\n\nmore text [N marks]"
     // Matches the marks token anywhere within the next ~30 lines after the bold-wrapped number, stopping before the next "**NN**" header.
     /(?:^|\n)\s*\*{2}(\d{1,2}(?:\.\d+)?[a-z]?)\*{2}(?:(?!\n\s*\*{2}\d{1,2}(?:\.\d+)?[a-z]?\*{2})[\s\S]){0,2000}?(?:\[|\()\s*(\d+)\s*marks?\s*(?:\]|\))/gi,
   ];
@@ -130,7 +130,7 @@ export function parseQuestions(markdown: string): { context: string; questions: 
     // Match marks token: [2 marks], (4 marks), or bare [16] at end of content
     const marksToken = headerLine.match(/(?:\[|\()\s*\d+\s*marks?\s*(?:\]|\))/i)
       || headerLine.match(/\[\d+\]\s*$/);
-    const headerPrefixRe = /^(?:#{1,4}\s+)?\**\s*(?:Q(?:uestion)?\s*)?\d{1,2}(?:\.\d+)?[a-z]?(?:\s*\([a-z]\))?\**\s*[:\-—–]?\s*/i;
+    const headerPrefixRe = /^(?:#{1,4}\s+)?\**\s*(?:Q(?:uestion)?\s*)?\d{1,2}(?:\.\d+)?[a-z]?(?:\s*\([a-z]\))?\**\s*[:\-·–]?\s*/i;
 
     let bodyText = "";
 
@@ -153,13 +153,13 @@ export function parseQuestions(markdown: string): { context: string; questions: 
     }
 
     // Strip leading dash/em-dash/colon separators
-    bodyText = bodyText.replace(/^[-—–:]+\s*/, "");
+    bodyText = bodyText.replace(/^[-·–:]+\s*/, "");
 
     // Strip section headers that got absorbed into this question's body text
     // (they belong to the NEXT question's section, not this question's content)
     bodyText = bodyText.replace(/^(?:#{1,4})\s+(?:Section\s+[A-Z]|EITHER|OR|Essay\s+\d|Context\s+\d|INVESTIGATION|Scenario|Component\s+\d)[^\n]*\n?/gmi, "").trim();
 
-    // Extract MCQ options — require either a leading dash/bullet OR a dot/paren after the letter
+    // Extract MCQ options · require either a leading dash/bullet OR a dot/paren after the letter
     // to avoid matching sentences like "A consumer might..." as option A
     const mcqWithDash = /^[-•]\s*\**([A-D])\**[.\s)]+(.+)$/gm;
     const mcqWithDotParen = /^\**([A-D])\**[.)]\s+(.+)$/gm;
@@ -175,7 +175,7 @@ export function parseQuestions(markdown: string): { context: string; questions: 
     let mcqOptions: MCQOption[] | undefined;
     
     if (mcqMatches.length >= 2) {
-      // Deduplicate by letter — keep last occurrence of each letter
+      // Deduplicate by letter · keep last occurrence of each letter
       const seen = new Map<string, string>();
       mcqMatches.forEach(m => seen.set(m[1], m[2].trim().replace(/\*+$/g, '')));
       mcqOptions = [...seen.entries()].map(([letter, optText]) => ({ letter, text: optText }));

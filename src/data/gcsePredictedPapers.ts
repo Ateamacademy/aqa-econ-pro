@@ -1,7 +1,7 @@
 import type { PredictedPaper } from "./predictedPapersLibrary";
 
 /**
- * AQA GCSE Economics (8136) — predicted papers, synced verbatim from the
+ * AQA GCSE Economics (8136) · predicted papers, synced verbatim from the
  * official-style mock PDFs in /public/aqa-gcse-mocks/.
  *
  * Set mapping (display label is applied by PredictedPapers.tsx):
@@ -10,21 +10,21 @@ import type { PredictedPaper } from "./predictedPapersLibrary";
  *   - Set C  =  Advanced   (paper-1-advanced.pdf  / paper-2-advanced.pdf)
  *
  * AQA GCSE Economics 8136 has TWO papers only (8136/1 and 8136/2). There is
- * no Paper 3 — do NOT add one.
+ * no Paper 3 · do NOT add one.
  */
 export const gcsePredictedPapers: PredictedPaper[] = [
   /* ──────────────────────────────────────────────────────────────────────
-   * Paper 1 — How Markets Work (8136/1) — 80 marks · 1h 45m
+   * Paper 1 · How Markets Work (8136/1) · 80 marks · 1h 45m
    * ────────────────────────────────────────────────────────────────────── */
 
   {
     id: "gcse-p1-a",
     subject: "aqa-gcse" as any,
     paper: "1",
-    title: "Paper 1 — Set A",
-    description: "How Markets Work. Moderate difficulty — synced verbatim from the official-style mock (8136/1-M).",
+    title: "Paper 1 · Set A",
+    description: "How Markets Work. Moderate difficulty · synced verbatim from the official-style mock (8136/1-M).",
     totalMarks: 80,
-    content: `# AQA GCSE Economics (8136/1) — Paper 1: How Markets Work — Predicted Paper Set A (Moderate)
+    content: `# AQA GCSE Economics (8136/1) · Paper 1: How Markets Work · Predicted Paper Set A (Moderate)
 
 **Time allowed: 1 hour 45 minutes | Total: 80 marks**
 
@@ -126,7 +126,7 @@ Calculate the ratio of a solicitor's weekly pay to a cleaner's weekly pay from *
 
 **14.2** Explain **one** way the bakery could increase its profit. [2 marks]
 
-**15 Figure 1 — Rising wages in the UK hospitality sector**
+**15 Figure 1 · Rising wages in the UK hospitality sector**
 
 In 2024, many UK hospitality businesses such as pubs, cafés and restaurants were affected by a significant rise in the legal minimum wage. This increase led to concerns among employers about the impact upon prices, employment and the survival of smaller businesses.
 
@@ -166,11 +166,11 @@ Loaves per day = ____
 | 6 | 8 | 12 |
 | 8 | 4 | 16 |
 
-**21 Figure 2 — Harry's Honey**
+**21 Figure 2 · Harry's Honey**
 
 Harry's Honey is a small business that produces and sells jars of honey. Since Harry started the business, it has increased in size. He has employed more labour, bought more hives and acquired specialist bottling machinery. This has helped the business to become more efficient. However, Harry has noticed that as output has risen, it has become harder to keep track of what each employee is doing and some mistakes have appeared. Harry has worked out his total costs of production at different levels of output, as shown in **Table 4**.
 
-**Table 4 — Output and cost data for Harry's Honey**
+**Table 4 · Output and cost data for Harry's Honey**
 | Output of honey (jars) | Total costs (£) |
 |-----------------------|-----------------|
 | 500 | 4 000 |
@@ -184,7 +184,7 @@ Using **Figure 2** and **Table 4**, assess whether the benefits of growth for a 
 
 Answer **all** questions in the spaces provided.
 
-### Item A — The UK coffee shop market
+### Item A · The UK coffee shop market
 
 The UK coffee shop market has grown rapidly over the past two decades. There are now more than 27 000 coffee shops in the UK, employing around 210 000 workers. A small number of large chains, including Costa Coffee, Starbucks and Caffè Nero, together account for more than half of all branded outlets.
 
@@ -192,7 +192,7 @@ Independent coffee shops (those that are not part of a large chain) compete with
 
 Economists say that the UK coffee shop market is an example of an imperfectly competitive market, where the actions of a few large firms can affect prices. Rising prices have led consumers to switch to cheaper alternatives such as making coffee at home.
 
-**Figure 3 — UK coffee shop price index 2015 to 2023 (2015 = 100)**
+**Figure 3 · UK coffee shop price index 2015 to 2023 (2015 = 100)**
 | Year | Price Index |
 |------|-------------|
 | 2015 | 100 |
@@ -205,7 +205,7 @@ Economists say that the UK coffee shop market is an example of an imperfectly co
 | 2022 | 128 |
 | 2023 | 134 |
 
-### Item B — Possible government actions in the coffee shop market
+### Item B · Possible government actions in the coffee shop market
 
 The UK government has considered ways to promote more competition in the coffee shop market and to reduce the cost of coffee to consumers. One option would be to impose a tax on the largest coffee chains, using the revenue to support independent shops. This could make independent shops more competitive.
 
@@ -232,10 +232,10 @@ END OF QUESTIONS`,
     id: "gcse-p1-b",
     subject: "aqa-gcse" as any,
     paper: "1",
-    title: "Paper 1 — Set B",
-    description: "How Markets Work. Hard difficulty — synced verbatim from the official-style mock (8136/1-H).",
+    title: "Paper 1 · Set B",
+    description: "How Markets Work. Hard difficulty · synced verbatim from the official-style mock (8136/1-H).",
     totalMarks: 80,
-    content: `# AQA GCSE Economics (8136/1) — Paper 1: How Markets Work — Predicted Paper Set B (Hard)
+    content: `# AQA GCSE Economics (8136/1) · Paper 1: How Markets Work · Predicted Paper Set B (Hard)
 
 **Time allowed: 1 hour 45 minutes | Total: 80 marks**
 
@@ -332,7 +332,7 @@ Calculate the total profit earned by the firm from selling 4 200 T-shirts. [2 ma
 
 **14.2** Explain **one** way the clothing firm could try to increase its profit **without** increasing the selling price. [2 marks]
 
-**15 Figure 1 — Global oil prices**
+**15 Figure 1 · Global oil prices**
 
 In 2023, global oil prices began to fall significantly after a period of high prices caused by international conflict and supply disruption. This led to concern about the impact of these price falls upon a wide range of markets, including airlines, road haulage and plastics manufacturing.
 
@@ -373,11 +373,11 @@ Vases per worker per week = ____
 | 40 | 12 | 24 |
 | 50 | 6 | 30 |
 
-**21 Figure 2 — Mia's Mechanics**
+**21 Figure 2 · Mia's Mechanics**
 
 Mia's Mechanics is a car repair and servicing firm. Since Mia opened her first garage in 2012, the business has grown rapidly. She now employs 44 mechanics across three sites, has purchased specialist diagnostic equipment and has negotiated bulk discounts with parts suppliers. However, Mia has noticed that communication between sites has become slower and more expensive, and some mechanics report that decisions now take weeks rather than days. Mia has worked out her total costs of production at different levels of output, as shown in **Table 4**.
 
-**Table 4 — Output and cost data for Mia's Mechanics**
+**Table 4 · Output and cost data for Mia's Mechanics**
 | Cars serviced per month | Total costs (£) |
 |------------------------|-----------------|
 | 200 | 30 000 |
@@ -391,7 +391,7 @@ Using **Figure 2** and **Table 4**, assess whether the benefits of growth for a 
 
 Answer **all** questions in the spaces provided.
 
-### Item A — The UK electric vehicle market
+### Item A · The UK electric vehicle market
 
 In 2023, just under 315 000 new fully electric vehicles (EVs) were registered in the UK, accounting for around 16.5% of all new cars sold. This was a rapid increase on the 1.6% share that EVs had in 2018. However, critics argue that UK EV adoption still lags behind many European neighbours, partly because the price of a new EV remains significantly higher than the price of an equivalent petrol vehicle.
 
@@ -399,7 +399,7 @@ The UK government has set a target to ban the sale of new petrol and diesel cars
 
 The price elasticity of demand for new EVs in the UK is estimated at –1.8, indicating that demand is highly sensitive to changes in price. **Figure 3** shows the UK EV market share of new car sales from 2018 to 2023. Economists argue that the transition away from petrol cars involves significant positive externalities but also significant costs that are not always covered by the private market.
 
-**Figure 3 — UK electric vehicle share of new car sales, 2018–2023 (%)**
+**Figure 3 · UK electric vehicle share of new car sales, 2018–2023 (%)**
 | Year | EV Share (%) |
 |------|--------------|
 | 2018 | ~2 |
@@ -409,7 +409,7 @@ The price elasticity of demand for new EVs in the UK is estimated at –1.8, ind
 | 2022 | ~17 |
 | 2023 | ~17 |
 
-### Item B — Possible methods to support the EV market in the UK
+### Item B · Possible methods to support the EV market in the UK
 
 The UK government is considering several ways to accelerate the switch to electric vehicles. These include offering financial subsidies to consumers who buy a new EV, subsidising the installation of public and home charging points, and imposing higher taxes on new petrol and diesel vehicles.
 
@@ -436,10 +436,10 @@ END OF QUESTIONS`,
     id: "gcse-p1-c",
     subject: "aqa-gcse" as any,
     paper: "1",
-    title: "Paper 1 — Set C",
-    description: "How Markets Work. Advanced difficulty — synced verbatim from the official-style mock (8136/1-A).",
+    title: "Paper 1 · Set C",
+    description: "How Markets Work. Advanced difficulty · synced verbatim from the official-style mock (8136/1-A).",
     totalMarks: 80,
-    content: `# AQA GCSE Economics (8136/1) — Paper 1: How Markets Work — Predicted Paper Set C (Advanced)
+    content: `# AQA GCSE Economics (8136/1) · Paper 1: How Markets Work · Predicted Paper Set C (Advanced)
 
 **Time allowed: 1 hour 45 minutes | Total: 80 marks**
 
@@ -541,7 +541,7 @@ Profit margin = ____
 
 **14.2** Explain **one** way the software firm could increase its **profit margin**. [2 marks]
 
-**15 Figure 1 — Rising input costs in UK manufacturing**
+**15 Figure 1 · Rising input costs in UK manufacturing**
 
 UK manufacturing firms have faced significant rises in input costs in recent years, including raw materials and industrial energy. These cost pressures have raised concerns about competitiveness and the viability of energy-intensive industries.
 
@@ -581,11 +581,11 @@ Reports per analyst per month = ____
 | 40 | 20 | 40 |
 | 50 | 10 | 50 |
 
-**21 Figure 2 — TechCo Solutions**
+**21 Figure 2 · TechCo Solutions**
 
 TechCo Solutions is a UK-based cloud software business founded in 2015. The business has grown rapidly, expanding from 8 engineers at a single office to 260 staff across four international offices. TechCo has invested heavily in specialist servers, automated testing systems and a dedicated research-and-development team. Senior managers now report, however, that meetings have become longer and less productive, decision-making has slowed, and it is increasingly difficult to maintain a consistent company culture across the four sites. TechCo's total costs at different levels of output are shown in **Table 4**.
 
-**Table 4 — Output and cost data for TechCo Solutions**
+**Table 4 · Output and cost data for TechCo Solutions**
 | Software licences sold per year | Total costs (£ 000s) |
 |--------------------------------|---------------------|
 | 5 000 | 1 250 |
@@ -600,15 +600,15 @@ Using **Figure 2** and **Table 4**, assess whether the benefits of growth for a 
 
 Answer **all** questions in the spaces provided.
 
-### Item A — The UK video streaming market
+### Item A · The UK video streaming market
 
-The UK video streaming market has been transformed over the past decade. In 2013, only around 4% of UK households subscribed to a video streaming service. By 2023, that figure had risen to more than 68% of UK households. A small number of large global firms — including Netflix, Amazon Prime Video and Disney+ — now account for a large majority of all paid subscriptions. Smaller providers struggle to compete against the budgets of these large firms for original content.
+The UK video streaming market has been transformed over the past decade. In 2013, only around 4% of UK households subscribed to a video streaming service. By 2023, that figure had risen to more than 68% of UK households. A small number of large global firms · including Netflix, Amazon Prime Video and Disney+ · now account for a large majority of all paid subscriptions. Smaller providers struggle to compete against the budgets of these large firms for original content.
 
 Between 2020 and 2023, the major streaming platforms increased their monthly subscription prices several times. The average price of a standard Netflix subscription in the UK rose from £8.99 to £10.99 over this period. In 2023, Netflix, Disney+ and Amazon all began introducing new "ad-supported" tiers and restrictions on password sharing. **Figure 3** shows UK household streaming subscription penetration from 2015 to 2023.
 
 Economists argue that this market displays the classic features of an oligopoly: a small number of large firms, high barriers to entry (particularly the cost of producing original content), high levels of non-price competition through branding and exclusive shows, and the ability of firms to raise prices without losing many customers. Some economists argue that this market represents a case of market failure, because the dominant firms can earn significant producer surplus at the expense of consumers.
 
-**Figure 3 — UK household video-streaming subscription rate, 2015–2023 (%)**
+**Figure 3 · UK household video-streaming subscription rate, 2015–2023 (%)**
 | Year | Subscription Rate (%) |
 |------|----------------------|
 | 2015 | ~13 |
@@ -621,7 +621,7 @@ Economists argue that this market displays the classic features of an oligopoly:
 | 2022 | ~67 |
 | 2023 | ~69 |
 
-### Item B — Possible methods of regulating the UK streaming market
+### Item B · Possible methods of regulating the UK streaming market
 
 Concerns about the market power of the major streaming firms have led to a debate about whether the UK government should intervene. Options under discussion include: capping annual price increases; breaking up the largest firms; imposing quotas to ensure a minimum percentage of British-made content; supporting new UK-based streaming platforms through subsidies or tax breaks; and requiring streaming firms to contribute directly to the financing of UK public-service broadcasters such as the BBC and Channel 4.
 
@@ -639,23 +639,23 @@ Answer = ____
 
 **25** Explain **two** possible disadvantages, for consumers, of the UK video-streaming market being dominated by a small number of large firms. [6 marks]
 
-**26** The UK government may use several methods to reduce the market power of large streaming firms. Do you think the UK government should actively regulate the UK streaming market — for example, by capping prices, imposing UK content quotas and subsidising smaller UK-based platforms? Use **Items A** and **B** and your own economic knowledge to justify your view. [15 marks]
+**26** The UK government may use several methods to reduce the market power of large streaming firms. Do you think the UK government should actively regulate the UK streaming market · for example, by capping prices, imposing UK content quotas and subsidising smaller UK-based platforms? Use **Items A** and **B** and your own economic knowledge to justify your view. [15 marks]
 
 END OF QUESTIONS`,
   },
 
   /* ──────────────────────────────────────────────────────────────────────
-   * Paper 2 — How the Economy Works (8136/2) — 80 marks · 1h 45m
+   * Paper 2 · How the Economy Works (8136/2) · 80 marks · 1h 45m
    * ────────────────────────────────────────────────────────────────────── */
 
   {
     id: "gcse-p2-a",
     subject: "aqa-gcse" as any,
     paper: "2",
-    title: "Paper 2 — Set A",
-    description: "How the Economy Works. Moderate difficulty — synced verbatim from the official-style mock (8136/2-M).",
+    title: "Paper 2 · Set A",
+    description: "How the Economy Works. Moderate difficulty · synced verbatim from the official-style mock (8136/2-M).",
     totalMarks: 80,
-    content: `# AQA GCSE Economics (8136/2) — Paper 2: How the Economy Works — Predicted Paper Set A (Moderate)
+    content: `# AQA GCSE Economics (8136/2) · Paper 2: How the Economy Works · Predicted Paper Set A (Moderate)
 
 **Time allowed: 1 hour 45 minutes | Total: 80 marks**
 
@@ -748,7 +748,7 @@ Answer ____ %
 
 **14.2** Explain **one** problem caused by high inflation for consumers. [2 marks]
 
-**15 Figure 1 — The Bank of England and interest rates**
+**15 Figure 1 · The Bank of England and interest rates**
 
 The Bank of England is responsible for setting interest rates in the UK through its Monetary Policy Committee (MPC). The MPC meets regularly to decide the Bank Rate, which influences the cost of borrowing and the reward for saving in the UK economy.
 
@@ -778,13 +778,13 @@ Answer ____ %
 
 **20 Figure 2** shows the US dollar (\\$)/British pound (£) exchange rate.
 
-**Figure 2 — US dollar (\\$)/British pound (£) exchange rate**
+**Figure 2 · US dollar (\\$)/British pound (£) exchange rate**
 
 (Vertical axis: Dollars (\\$) per pound (£); Horizontal axis: Quantity of pounds (£))
 
 On **Figure 2**, draw and label the effects on the exchange rate of increased UK exports to the United States. [3 marks]
 
-**21 Figure 3 — UK unemployment**
+**21 Figure 3 · UK unemployment**
 
 Keeping unemployment low is one of the main objectives of the UK government. Unemployment has varied considerably over recent decades, reaching highs of over 10% in the 1980s and 1990s, and falling to around 4% in recent years before the COVID-19 pandemic.
 
@@ -796,13 +796,13 @@ Using **Figure 3**, assess whether the UK government should always aim for the l
 
 Answer **all** questions in the spaces provided.
 
-### Item A — UK government taxation and spending
+### Item A · UK government taxation and spending
 
 Taxation is an important source of revenue for the UK government. The UK government uses taxes to fund public services such as the NHS, education and defence. There are different types of taxes, including direct taxes like income tax and indirect taxes like VAT.
 
 Data for UK government tax revenues in 2022–23 is shown in **Table 3**.
 
-**Table 3 — UK tax revenues 2022–23**
+**Table 3 · UK tax revenues 2022–23**
 | | £ billion |
 |---|-----------|
 | Income tax | 249 |
@@ -814,7 +814,7 @@ Source: HMRC
 
 Some economists argue that the UK government should rely more heavily on direct taxes, as these can be made progressive to reduce inequality. Other economists believe that indirect taxes are better, as they can influence consumer behaviour and discourage harmful consumption. Government spending is also used to achieve economic objectives such as low unemployment and economic growth.
 
-### Item B — Globalisation and UK trade
+### Item B · Globalisation and UK trade
 
 Globalisation has led to increased trade between countries around the world. The UK is an open economy, meaning it trades extensively with other countries. UK consumers benefit from a wider range of goods at lower prices, while UK producers gain access to larger export markets.
 
@@ -839,10 +839,10 @@ END OF QUESTIONS`,
     id: "gcse-p2-b",
     subject: "aqa-gcse" as any,
     paper: "2",
-    title: "Paper 2 — Set B",
-    description: "How the Economy Works. Hard difficulty — synced verbatim from the official-style mock (8136/2-H).",
+    title: "Paper 2 · Set B",
+    description: "How the Economy Works. Hard difficulty · synced verbatim from the official-style mock (8136/2-H).",
     totalMarks: 80,
-    content: `# AQA GCSE Economics (8136/2) — Paper 2: How the Economy Works — Predicted Paper Set B (Hard)
+    content: `# AQA GCSE Economics (8136/2) · Paper 2: How the Economy Works · Predicted Paper Set B (Hard)
 
 **Time allowed: 1 hour 45 minutes | Total: 80 marks**
 
@@ -935,7 +935,7 @@ Answer ____ %
 
 **14.2** Explain **one** possible cause of economic growth. [2 marks]
 
-**15 Figure 1 — Fiscal policy and inflation**
+**15 Figure 1 · Fiscal policy and inflation**
 
 Fiscal policy involves changes in government spending and taxation. The UK government can use fiscal policy to influence aggregate demand in the economy. During periods of high inflation, the government may choose to reduce aggregate demand by cutting spending or raising taxes. This is known as contractionary fiscal policy.
 
@@ -963,13 +963,13 @@ Using **Figure 1**, analyse how contractionary fiscal policy could be used to re
 
 **20 Figure 2** shows the US dollar (\\$)/British pound (£) exchange rate.
 
-**Figure 2 — US dollar (\\$)/British pound (£) exchange rate**
+**Figure 2 · US dollar (\\$)/British pound (£) exchange rate**
 
 (Vertical axis: Dollars (\\$) per pound (£); Horizontal axis: Quantity of pounds (£))
 
 On **Figure 2**, draw and label the effects on the exchange rate of a significant rise in UK interest rates relative to US interest rates. [3 marks]
 
-**21 Figure 3 — UK economic growth**
+**21 Figure 3 · UK economic growth**
 
 Economic growth is one of the key objectives of the UK government. Sustained economic growth can lead to higher living standards, improved public services, and lower unemployment. UK growth has been relatively modest in recent years, averaging around 1.5% since the 2008 financial crisis, well below the long-run average of around 2.5%.
 
@@ -981,13 +981,13 @@ Using **Figure 3**, assess whether the UK government should prioritise economic 
 
 Answer **all** questions in the spaces provided.
 
-### Item A — UK monetary policy and inflation
+### Item A · UK monetary policy and inflation
 
 Controlling inflation is a key objective of UK monetary policy. The Bank of England's Monetary Policy Committee (MPC) is tasked with keeping inflation at 2% as measured by the Consumer Price Index (CPI). When inflation rises significantly above target, the Bank of England typically raises interest rates.
 
 Data on UK interest rates and inflation is shown in **Table 3**.
 
-**Table 3 — UK Bank Rate and CPI inflation 2020–2023**
+**Table 3 · UK Bank Rate and CPI inflation 2020–2023**
 | Year | Bank Rate (%) | CPI inflation (%) |
 |------|--------------|-------------------|
 | 2020 | 0.1 | 0.9 |
@@ -999,9 +999,9 @@ Source: Bank of England / ONS
 
 Higher interest rates are designed to reduce aggregate demand by discouraging borrowing and encouraging saving. However, higher rates can also harm economic growth and increase unemployment. Some economists argue that cost-push inflation, caused by rising energy and food prices, cannot be effectively controlled by raising interest rates.
 
-Quantitative tightening — the reverse of quantitative easing — is another tool that the Bank of England can use to reduce the money supply and bring down inflation.
+Quantitative tightening · the reverse of quantitative easing · is another tool that the Bank of England can use to reduce the money supply and bring down inflation.
 
-### Item B — Multinational companies in developing economies
+### Item B · Multinational companies in developing economies
 
 Multinational companies (MNCs) play a major role in the global economy. Many MNCs based in developed countries have set up operations in developing economies, where labour costs are lower and regulation is often less strict. This has brought both benefits and drawbacks to these developing economies.
 
@@ -1026,10 +1026,10 @@ END OF QUESTIONS`,
     id: "gcse-p2-c",
     subject: "aqa-gcse" as any,
     paper: "2",
-    title: "Paper 2 — Set C",
-    description: "How the Economy Works. Advanced difficulty — synced verbatim from the official-style mock (8136/2-A).",
+    title: "Paper 2 · Set C",
+    description: "How the Economy Works. Advanced difficulty · synced verbatim from the official-style mock (8136/2-A).",
     totalMarks: 80,
-    content: `# AQA GCSE Economics (8136/2) — Paper 2: How the Economy Works — Predicted Paper Set C (Advanced)
+    content: `# AQA GCSE Economics (8136/2) · Paper 2: How the Economy Works · Predicted Paper Set C (Advanced)
 
 **Time allowed: 1 hour 45 minutes | Total: 80 marks**
 
@@ -1125,7 +1125,7 @@ Answer ____ %
 
 **14.2** Explain **one** limitation of CPI as a measure of inflation. [2 marks]
 
-**15 Figure 1 — Trade-offs between government objectives**
+**15 Figure 1 · Trade-offs between government objectives**
 
 The UK government has several macroeconomic objectives, including low and stable inflation, low unemployment, steady economic growth, and a satisfactory balance of payments. However, achieving all of these simultaneously is difficult because policies used to achieve one objective can often conflict with another.
 
@@ -1155,13 +1155,13 @@ Answer ____ %
 
 **20 Figure 2** shows the Euro (€)/British pound (£) exchange rate.
 
-**Figure 2 — Euro (€)/British pound (£) exchange rate**
+**Figure 2 · Euro (€)/British pound (£) exchange rate**
 
 (Vertical axis: Euros (€) per pound (£); Horizontal axis: Quantity of pounds (£))
 
 On **Figure 2**, draw and label the effects on the exchange rate of a significant fall in UK interest rates relative to Eurozone interest rates. [3 marks]
 
-**21 Figure 3 — UK government debt as % of GDP**
+**21 Figure 3 · UK government debt as % of GDP**
 
 The UK's national debt has risen substantially since the 2008 financial crisis and has been further increased by the COVID-19 pandemic. By 2023, UK government debt had reached approximately 100% of GDP, its highest level since the 1960s.
 
@@ -1173,13 +1173,13 @@ Using **Figure 3**, assess whether reducing the national debt should be a priori
 
 Answer **all** questions in the spaces provided.
 
-### Item A — UK balance of payments and exchange rates
+### Item A · UK balance of payments and exchange rates
 
 The UK has run a persistent current account deficit for many decades. This deficit is financed by capital inflows from abroad, including foreign investment into UK businesses, property, and government bonds. Some economists argue that a large and persistent current account deficit is unsustainable and poses risks to the UK economy.
 
 Data for the UK current account in 2022 is shown in **Table 3**.
 
-**Table 3 — UK current account 2022**
+**Table 3 · UK current account 2022**
 | | £ billions |
 |---|-----------|
 | Exports of goods and services | 825.6 |
@@ -1193,9 +1193,9 @@ The exchange rate plays a significant role in determining the balance of payment
 
 Beyond the exchange rate, the UK government can try to address the current account deficit through supply-side reforms, competitiveness policies, or demand-reduction measures.
 
-### Item B — Globalisation, winners and losers in the UK
+### Item B · Globalisation, winners and losers in the UK
 
-Globalisation has transformed the UK economy over the past four decades. The share of UK employment in manufacturing has fallen sharply as production has shifted to lower-cost economies, particularly in Asia. At the same time, UK services — including finance, insurance, consulting, and higher education — have become major exports and employ millions of workers.
+Globalisation has transformed the UK economy over the past four decades. The share of UK employment in manufacturing has fallen sharply as production has shifted to lower-cost economies, particularly in Asia. At the same time, UK services · including finance, insurance, consulting, and higher education · have become major exports and employ millions of workers.
 
 The benefits and costs of globalisation have not been shared equally. Higher-skilled workers in services have generally gained from globalisation, while lower-skilled manufacturing workers have often seen stagnant or falling real wages. Regional inequality has widened, with London and the South East benefitting more than traditional industrial areas in the Midlands and North.
 

@@ -139,7 +139,7 @@ export function GraphPaper({
 
   return (
     <div className="space-y-2">
-      <p className="text-xs font-medium text-muted-foreground">Graph Paper — Plot your answer</p>
+      <p className="text-xs font-medium text-muted-foreground">Graph Paper · Plot your answer</p>
       
       <div className="flex flex-wrap items-center gap-1 p-1.5 bg-muted rounded-lg">
         <Button type="button" variant={tool === "plot" ? "default" : "ghost"} size="sm" className="h-7 gap-1 text-xs" onClick={() => setTool("plot")}>

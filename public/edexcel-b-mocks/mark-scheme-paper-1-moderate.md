@@ -80,7 +80,7 @@ Number
 
             Application: 1 mark for correctly interpreting the shift in the demand curve to
             the LEFT for traditional fast food (reflecting the change in tastes toward
-            healthier / plant-based options — Extracts A and C).
+            healthier / plant-based options · Extracts A and C).
 
 
             Analysis: 1 mark is available for showing new equilibrium and consequences
@@ -102,7 +102,7 @@ Number
 
 1 (d)                Knowledge/Understanding 2, Application 2, Analysis 2
            Knowledge/Understanding: up to 2 marks for
-               •   Identification of market structure — Oligopoly (1)
+               •   Identification of market structure · Oligopoly (1)
                •   Identification of a valid pricing strategy (1), e.g. price leadership, limit
                    pricing, price matching
 
@@ -117,7 +117,7 @@ Number
            Analysis: up to 2 marks for
                •   Oligopolies tend not to compete on price due to the kinked demand
                    curve / fear of price wars (1)
-               •   Pricing strategy is therefore likely to be similar across rivals — e.g.
+               •   Pricing strategy is therefore likely to be similar across rivals · e.g.
                    prices of standard meal deals tend to cluster within a narrow range (1)          (6)
 
 
@@ -128,18 +128,18 @@ Number
            Indicative content
            Candidates do not need to include all of these:
                •   Profit maximisation (MC=MR) maximises short-run returns to owners
-                   — important for a growing independent chain needing reinvestment.
-               •   Profit is essential for Honest Burgers to fund expansion — the chain
+                   · important for a growing independent chain needing reinvestment.
+               •   Profit is essential for Honest Burgers to fund expansion · the chain
                    is still small (45 sites) vs. McDonald's 1,450 and needs retained profit.
                •   Profit signals success to banks and investors, easing access to
                    finance for further sites.
-               •   However, profit maximisation may conflict with the brand identity —
+               •   However, profit maximisation may conflict with the brand identity ·
                    Honest Burgers' values (locally-sourced British beef, seasonal
                    menus) depend on higher-cost suppliers.
-               •   Sales revenue maximisation or sales volume may be preferred —
+               •   Sales revenue maximisation or sales volume may be preferred ·
                    growing the customer base in a crowded market is critical for long-
                    term survival.
-               •   Social/ethical objectives — the founder's statement about supporting
+               •   Social/ethical objectives · the founder's statement about supporting
                    local producers suggests a stakeholder approach rather than pure
                    profit focus.
 
@@ -148,11 +148,11 @@ Number
  Question                                                                                        Mark
  Number
 
-                    •   Satisficing may be more realistic — achieving acceptable profit while
+                    •   Satisficing may be more realistic · achieving acceptable profit while
                         pursuing other goals (reputation, quality, staff pay).
                     •   Survival may matter most in the short term given rising input costs
                         (Extract D: beef +27% in 2022) and higher wage costs.
-                    •   Brand building / differentiation may be the dominant objective — in
+                    •   Brand building / differentiation may be the dominant objective · in
                         monopolistic competition it is essential to maintain a distinctive
                         position.
 
@@ -179,7 +179,7 @@ directly connected to the context/issues set out in the stimulus.
 
  1 (f)           Knowledge/Understanding 2, Application 2, Analysis 3, Evaluation 3               (10)
               Indicative content
-                    •   Higher input costs — beef rose 27.13% over 2022 — shift the firm's
+                    •   Higher input costs · beef rose 27.13% over 2022 · shift the firm's
                         cost curves (AC, MC) upward, putting pressure on margins.
                     •   If costs are passed on, menu prices rise. In a competitive oligopoly,
                         firms may follow each other to avoid being undercut (price
@@ -187,7 +187,7 @@ directly connected to the context/issues set out in the stimulus.
                     •   Firms facing price-inelastic demand (strong brand loyalty e.g.
                         McDonald's) can pass cost rises through with smaller loss of sales.
                     •   Price-elastic demand in competitive segments (e.g. budget burger
-                        offers) limits ability to raise prices — firms may absorb cost rises,
+                        offers) limits ability to raise prices · firms may absorb cost rises,
                         reducing profit margins.
                     •   Firms may reformulate products (smaller portions, shrinkflation,
                         cheaper ingredients) rather than raise headline prices.
@@ -197,7 +197,7 @@ directly connected to the context/issues set out in the stimulus.
                     •   Independent operators like Honest Burgers who insist on British beef
                         are more exposed to domestic price rises and may raise prices further
                         than mainstream chains who can substitute toward cheaper supply.
-                    •   Long-term supply contracts / hedging may delay the impact — short-
+                    •   Long-term supply contracts / hedging may delay the impact · short-
                         term prices may not reflect wholesale price changes for several
                         months.
 
@@ -206,7 +206,7 @@ directly connected to the context/issues set out in the stimulus.
  Number
 
                     •   Consumer cost-of-living pressures may constrain pricing power even
-                        where costs rise — firms that raise prices too much may lose market
+                        where costs rise · firms that raise prices too much may lose market
                         share.
 
  Level          Mark           Descriptor
@@ -250,10 +250,10 @@ directly connected to the context/issues set out in the stimulus.
                         Subscription) build switching costs and repeat visits.
                     •   Drive-thru expansion and delivery partnerships (Deliveroo, Uber Eats)
                         are forms of service-based differentiation.
-                    •   Store design and ambience — Pret, Leon and Honest Burgers use
+                    •   Store design and ambience · Pret, Leon and Honest Burgers use
                         distinctive interiors to attract target customers.
                     •   Ethical and sourcing claims (British beef, locally sourced) are
-                        differentiators used by smaller chains — a key form of non-price
+                        differentiators used by smaller chains · a key form of non-price
                         competition in a crowded segment.
                     •   Evaluation: the importance of non-price competition varies by
                         segment. Budget takeaway is more price-competitive; premium
@@ -265,10 +265,10 @@ directly connected to the context/issues set out in the stimulus.
 
                         casual (Five Guys, Honest Burgers) is dominated by non-price
                         factors.
-                    •   Non-price competition can be expensive — heavy advertising budgets
+                    •   Non-price competition can be expensive · heavy advertising budgets
                         are a significant barrier to entry for smaller firms.
                     •   Short-term price promotions (McDonald's value menu, KFC £1.99
-                        offers) still play a role — non-price competition does not eliminate
+                        offers) still play a role · non-price competition does not eliminate
                         price competition altogether.
                     •   Overall: non-price competition is very important in UK fast food
                         because of oligopolistic price stickiness and rising consumer concern
@@ -305,35 +305,35 @@ directly connected to the context/issues set out in the stimulus.
               Indicative content
                     •   A contestable market has freedom of entry and exit and low sunk
                         costs; the threat of entry disciplines incumbents.
-                    •   Evidence of contestability — 312 new outlets in 2022; independents
+                    •   Evidence of contestability · 312 new outlets in 2022; independents
                         like Honest Burgers and Leon expanding successfully.
-                    •   Growth of dark kitchens lowers entry costs — no need for a prominent
+                    •   Growth of dark kitchens lowers entry costs · no need for a prominent
                         high-street site.
                     •   Delivery platforms (Deliveroo, Uber Eats) reduce the need for large
-                        marketing budgets — new entrants reach customers easily.
-                    •   Low technology requirements for a single-site operator — equipment
+                        marketing budgets · new entrants reach customers easily.
+                    •   Low technology requirements for a single-site operator · equipment
                         is standard and readily available.
                     •   However, brand loyalty to McDonald's, KFC and others is a significant
-                        barrier — 1,450 McDonald's outlets create very strong presence and
+                        barrier · 1,450 McDonald's outlets create very strong presence and
 
                                                         7
  Question                                                                                         Mark
  Number
 
                         customer habit.
-                    •   Economies of scale — large chains can purchase ingredients,
+                    •   Economies of scale · large chains can purchase ingredients,
                         advertising and property on better terms than new entrants (natural
                         barrier).
-                    •   High rent in prime urban locations creates substantial sunk costs —
+                    •   High rent in prime urban locations creates substantial sunk costs ·
                         fit-out, equipment and branding cannot be easily recovered on exit.
-                    •   Regulatory barriers — new HFSS rules, planning restrictions near
-                        schools, food hygiene regulation — increase costs of entry.
-                    •   Franchising limits true contestability — many 'new' McDonald's sites
+                    •   Regulatory barriers · new HFSS rules, planning restrictions near
+                        schools, food hygiene regulation · increase costs of entry.
+                    •   Franchising limits true contestability · many 'new' McDonald's sites
                         are existing franchisees expanding, not genuine new entrants.
                     •   Evaluation: the market is more contestable at the low-cost /
                         independent end (single sites, delivery-only) than at the large-chain
                         level where scale advantages dominate.
-                    •   Overall the UK fast food market shows partial contestability — easier
+                    •   Overall the UK fast food market shows partial contestability · easier
                         than most oligopoly markets to enter, but very difficult to scale up to
                         compete with incumbents.
 
@@ -369,13 +369,13 @@ Number
 
 2             Knowledge/Understanding 4, Application 4, Analysis 6, Evaluation 6
             Indicative content
-                 •   Rising minimum wages increase household disposable income —
+                 •   Rising minimum wages increase household disposable income ·
                      with a high marginal propensity to consume among low-income
                      workers, this raises AD and supports growth in retail, hospitality and
                      other sectors.
                  •   Increased consumer spending may boost firms' revenues and profits,
                      enabling reinvestment and job creation in the medium term.
-                 •   Reduced income inequality — narrower wage distribution and lower
+                 •   Reduced income inequality · narrower wage distribution and lower
                      in-work poverty, reducing reliance on in-work benefits (Universal
                      Credit).
                  •   Higher wages can improve worker productivity through greater
@@ -384,28 +384,28 @@ Number
                  •   Tax revenues rise as more earnings enter the income tax and NI
                      base, supporting government finances.
                  •   However, 9.7% is a large one-off rise and pushes firms' wage bills up
-                     sharply — some may respond by reducing hours, freezing recruitment
+                     sharply · some may respond by reducing hours, freezing recruitment
                      or automating tasks.
-                 •   Cost-push inflation — labour is a major input, especially in hospitality;
+                 •   Cost-push inflation · labour is a major input, especially in hospitality;
                      higher wages may be passed on as higher prices, offsetting real wage
                      gains.
                  •   Small businesses already squeezed by energy costs and food
                      inflation (as noted in the extract) may be unable to absorb the rise,
                      risking closures.
-                 •   Regional impact — in lower-wage regions (North East, Wales) more
+                 •   Regional impact · in lower-wage regions (North East, Wales) more
                      workers are affected, so both benefits (spending) and costs (firm
                      closures) are concentrated there.
-                 •   Potential substitution effect — rising labour costs accelerate
+                 •   Potential substitution effect · rising labour costs accelerate
                      investment in self-service kiosks, AI-powered ordering systems, and
                      automated warehouses, displacing low-skilled workers.
-                 •   Evaluation — impact depends on elasticity of demand for labour in
+                 •   Evaluation · impact depends on elasticity of demand for labour in
                      affected sectors; in hospitality (labour-intensive, limited
                      substitutability) the cost pass-through to prices is likely larger than in
                      retail.
-                 •   Time lag — firms may absorb costs in the short run, adjust in the
+                 •   Time lag · firms may absorb costs in the short run, adjust in the
                      medium run, and only fully react (through pricing / hiring / automation
                      decisions) in the long run.
-                 •   Monopsony argument — in labour markets with few employers (e.g.
+                 •   Monopsony argument · in labour markets with few employers (e.g.
                      care homes in small towns), minimum wages can raise employment
                      by moving pay from the monopsony level toward the competitive
                      level.
@@ -457,11 +457,11 @@ Number
 3             Knowledge/Understanding 4, Application 4, Analysis 6, Evaluation 6
             Indicative content
                  •   Regulation and taxation on HFSS and sugary products aim to correct
-                     a market failure — overconsumption generates negative externalities
+                     a market failure · overconsumption generates negative externalities
                      (NHS costs of £6.5bn p.a. due to obesity-related illness).
                  •   The SDIL has already reduced the average sugar content of soft
                      drinks by 43.7%, showing regulation can drive product reformulation
-                     — a welfare gain through lower consumption of demerit goods.
+                     · a welfare gain through lower consumption of demerit goods.
                  •   Revenue from the levy (£336m in year one) funds school sports and
                      public health programmes, a double dividend.
                  •   Placement and advertising restrictions reduce exposure of children to
@@ -469,28 +469,28 @@ Number
                      reducing future NHS costs.
                  •   Consumer welfare can improve where imperfect information is
                      corrected (nutrition labels, calorie displays).
-                 •   However, sugar and fat taxes are regressive — lower-income
+                 •   However, sugar and fat taxes are regressive · lower-income
                      households spend a higher proportion of income on affected goods,
                      so the policy may widen inequality.
                  •   Producers may absorb costs or reformulate, so the consumer impact
                      and effectiveness of the policy is uncertain.
-                 •   Regulation imposes compliance costs on firms — small independent
+                 •   Regulation imposes compliance costs on firms · small independent
                      operators (as noted by the British Takeaway Campaign) may be
                      disproportionately affected, reducing consumer choice and
                      competition.
-                 •   Risk of unintended consequences — consumers may switch to
+                 •   Risk of unintended consequences · consumers may switch to
                      alternative unhealthy foods not covered by the rules; firms may shrink
                      pack sizes but maintain calorie content.
-                 •   Government failure risks — regulations may be poorly designed,
+                 •   Government failure risks · regulations may be poorly designed,
                      enforcement may be inconsistent, and lobbying by industry may
                      weaken policy.
-                 •   Evaluation — effectiveness depends on the price elasticity of demand
+                 •   Evaluation · effectiveness depends on the price elasticity of demand
                      for targeted products (short-run inelastic; long-run more elastic as
                      habits change).
-                 •   Evaluation — voluntary reformulation (the Sugar Reduction
+                 •   Evaluation · voluntary reformulation (the Sugar Reduction
                      Programme) has been less successful than the tax-based SDIL,
                      suggesting mandatory measures are more effective.
-                 •   Alternative policies — subsidies on fruit and vegetables, education,
+                 •   Alternative policies · subsidies on fruit and vegetables, education,
                      and investment in NHS preventive services may be more progressive
                      and have fewer compliance costs.
                  •   Overall, regulation likely produces a net welfare gain in a market

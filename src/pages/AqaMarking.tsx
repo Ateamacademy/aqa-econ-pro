@@ -77,7 +77,7 @@ export default function AqaMarking() {
     );
   }
 
-  // Tier 1 — auto-marking results
+  // Tier 1 · auto-marking results
   const mcqs = paper.questions.filter((q) => q.mcqOptions);
   const calcQs = paper.questions.filter((q) => q.marks === 2 && !q.mcqOptions);
   const extendedQs = paper.questions.filter((q) => q.marks >= 9);
@@ -204,13 +204,13 @@ export default function AqaMarking() {
       return sa && sa.markAwarded / q.marks < 0.5;
     })
     .map((q) => ({
-      topic: `Question ${q.number} — ${q.prompt.slice(0, 70)}…`,
-      specRef: paper.paperNumber === 1 ? "4.1 — Markets" : paper.paperNumber === 2 ? "4.2 — Macro" : "4.1 / 4.2 synoptic",
+      topic: `Question ${q.number} · ${q.prompt.slice(0, 70)}…`,
+      specRef: paper.paperNumber === 1 ? "4.1 · Markets" : paper.paperNumber === 2 ? "4.2 · Macro" : "4.1 / 4.2 synoptic",
       suggestion: !selfAssess[q.number]?.kaae.Eval
-        ? "Practise supported conclusions — Evaluation is the most common B→A discriminator."
+        ? "Practise supported conclusions · Evaluation is the most common B→A discriminator."
         : !selfAssess[q.number]?.kaae.An
         ? "Build longer chains of reasoning (X → Y → Z) before evaluating."
-        : "Tighten Application — link every theory point to the specific extract / context.",
+        : "Tighten Application · link every theory point to the specific extract / context.",
     }));
 
   return (
@@ -229,7 +229,7 @@ export default function AqaMarking() {
             <div className="min-w-0">
               <div className="text-[10px] font-mono text-muted-foreground">{paper.paperCode}</div>
               <div className="text-sm font-semibold text-foreground truncate">
-                Marking — Paper {paper.paperNumber}: {paper.title}
+                Marking · Paper {paper.paperNumber}: {paper.title}
               </div>
             </div>
           </div>
@@ -269,7 +269,7 @@ export default function AqaMarking() {
         {step === "auto" && (
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-bold text-foreground">Tier 1 — Automatic marking</h2>
+              <h2 className="text-lg font-bold text-foreground">Tier 1 · Automatic marking</h2>
               <AqaTierBadge tier="auto" />
             </div>
             <p className="text-xs text-muted-foreground">
@@ -291,7 +291,7 @@ export default function AqaMarking() {
                           : "bg-red-500/10 border-red-500/40 text-red-200",
                       )}
                     >
-                      Q{r.questionNumber}: {r.studentChoice ?? "—"}/{r.correctAnswer}
+                      Q{r.questionNumber}: {r.studentChoice ?? "·"}/{r.correctAnswer}
                     </div>
                   ))}
                 </div>
@@ -310,7 +310,7 @@ export default function AqaMarking() {
                       </span>
                     </div>
                     <p className="text-xs text-foreground/80">
-                      Your answer: <span className="font-mono">{r.studentAnswer || "—"}</span>
+                      Your answer: <span className="font-mono">{r.studentAnswer || "·"}</span>
                     </p>
                     <p className="text-xs text-muted-foreground mt-1">{r.feedback}</p>
                   </div>
@@ -322,7 +322,7 @@ export default function AqaMarking() {
               <section className="rounded-2xl border border-border bg-card p-4 space-y-3">
                 <h3 className="text-sm font-bold">Diagram marking ({diagramQs.length})</h3>
                 <p className="text-[11px] text-muted-foreground">
-                  Structural checks run automatically. Optional contextual analysis recommends an AQA level — never a mark.
+                  Structural checks run automatically. Optional contextual analysis recommends an AQA level · never a mark.
                 </p>
                 {diagramQs.map((q) => (
                   <AqaDiagramMarkPanel
@@ -349,7 +349,7 @@ export default function AqaMarking() {
         {step === "self" && (
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-bold text-foreground">Tier 2 — Guided self-assessment</h2>
+              <h2 className="text-lg font-bold text-foreground">Tier 2 · Guided self-assessment</h2>
               <AqaTierBadge tier="self" />
             </div>
             <p className="text-xs text-muted-foreground">

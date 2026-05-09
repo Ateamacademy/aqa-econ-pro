@@ -10,7 +10,7 @@ export default function EconExchangeRateNaira() {
           <marker id="ngnRedD" markerWidth="7" markerHeight="9" refX="3.5" refY="8" orient="auto-start-reverse"><polygon points="0 9,3.5 0,7 9" fill="#cc2222"/></marker>
         </defs>
         <rect width="680" height="560" fill="#fff"/>
-        <text x="340" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Currency Market — Nigerian Naira (NGN)</text>
+        <text x="340" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Currency Market · Nigerian Naira (NGN)</text>
         <text x="340" y="48" textAnchor="middle" fontSize="12" fill="#555">Unification of FX rates → official supply of naira rises → naira depreciates → exports cheaper abroad</text>
         <line x1="90" y1="460" x2="90" y2="48" stroke="#111" strokeWidth="2.2" markerEnd="url(#ngnU)"/>
         <line x1="90" y1="460" x2="602" y2="460" stroke="#111" strokeWidth="2.2" markerEnd="url(#ngnR)"/>
@@ -26,13 +26,13 @@ export default function EconExchangeRateNaira() {
         <polyline points="90.0,411.0 121.0,388.5 152.0,366.0 183.0,343.5 214.0,321.0 245.0,298.5 276.0,276.0 307.0,253.5 338.0,231.0 369.0,208.5 400.0,186.0 431.0,163.5 462.0,141.0 493.0,118.5 524.0,96.0 555.5,73.5" fill="none" stroke="#2255cc" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
         <text x="561.5" y="68.5" fontSize="13" fontWeight="bold" fill="#2255cc">S1</text>
         <text x="577.5" y="72.5" fontSize="10" fill="#555">(original)</text>
-        {/* New Supply S2 — shifted right (more naira supplied at every rate) */}
+        {/* New Supply S2 · shifted right (more naira supplied at every rate) */}
         <polyline points="180.0,411.0 211.0,388.5 242.0,366.0 273.0,343.5 304.0,321.0 335.0,298.5 366.0,276.0 397.0,253.5 428.0,231.0 459.0,208.5 490.0,186.0 521.0,163.5 552.0,141.0 583.0,118.5" fill="none" stroke="#cc6600" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="9,5"/>
         <text x="589.0" y="113.5" fontSize="13" fontWeight="bold" fill="#cc6600">S2</text>
         <text x="589.0" y="128.5" fontSize="10" fill="#cc6600">(unified FX)</text>
         {/* Shift arrow */}
         <line x1="276.0" y1="276.0" x2="335.0" y2="298.5" stroke="#cc6600" strokeWidth="2.2" markerEnd="url(#ngnArrow)"/>
-        {/* E1 — original equilibrium: S1 ∩ D
+        {/* E1 · original equilibrium: S1 ∩ D
             S1: y = 411 - (x-90)*22.5/31  -> slope -0.7258
             D:  y = 97.4 + (x-114.5)*0.6754
             Solve: 411 - 0.7258(x-90) = 97.4 + 0.6754(x-114.5)
@@ -44,7 +44,7 @@ export default function EconExchangeRateNaira() {
         <line x1="325.6" y1="240.0" x2="325.6" y2="460" stroke="#888" strokeWidth="1.4" strokeDasharray="7,5"/>
         <circle cx="325.6" cy="240.0" r="7" fill="#fff" stroke="#555" strokeWidth="2"/>
         <text x="335.6" y="244.0" fontSize="13" fontWeight="bold" fill="#555">E1</text>
-        {/* E2 — new equilibrium: S2 ∩ D
+        {/* E2 · new equilibrium: S2 ∩ D
             S2 starts at x=180 same slope -0.7258 from y=411 ; y = 411 - 0.7258(x-180)
             Solve: 411 - 0.7258(x-180) = 97.4 + 0.6754(x-114.5)
                    411 - 0.7258x + 130.65 = 97.4 + 0.6754x - 77.34

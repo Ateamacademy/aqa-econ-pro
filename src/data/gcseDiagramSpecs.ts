@@ -1,6 +1,6 @@
 /**
  * AQA GCSE Economics & Cambridge International IGCSE Economics
- * Diagram specifications — simplified diagrams for GCSE/IGCSE level.
+ * Diagram specifications · simplified diagrams for GCSE/IGCSE level.
  */
 
 import type { DiagramSpec } from "@/components/diagrams/diagramSpecs";
@@ -47,7 +47,7 @@ export const GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   gcse_ppf_outward_shift: {
-    title: "PPF Outward Shift — Economic Growth",
+    title: "PPF Outward Shift · Economic Growth",
     axisLabels: { x: "Consumer Goods", y: "Capital Goods" },
     curves: [
       { id: "PPF1", label: "PPF₁", params: { type: "quadratic", a: -0.12, b: -0.1, c: 8.5 }, color: C.supply },
@@ -57,7 +57,7 @@ export const GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     annotations: [
       { text: "Economic growth", position: { x: 5, y: 3 }, color: C.shifted, size: 12 },
     ],
-    notes: "An outward shift of the PPF represents economic growth — more of both goods can be produced. Caused by better technology, more resources, or improved education.",
+    notes: "An outward shift of the PPF represents economic growth · more of both goods can be produced. Caused by better technology, more resources, or improved education.",
     examTips: [
       "Show PPF₁ (original) and PPF₂ (shifted out)",
       "Explain the cause: new technology, discovery of resources, better education",
@@ -123,8 +123,8 @@ export const GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     notes: "Equilibrium is where demand equals supply. Above P*, there is excess supply (surplus). Below P*, there is excess demand (shortage).",
     examTips: [
       "Label equilibrium price P* and quantity Q*",
-      "If price is above P*, there is a surplus — price falls",
-      "If price is below P*, there is a shortage — price rises",
+      "If price is above P*, there is a surplus · price falls",
+      "If price is below P*, there is a shortage · price rises",
     ],
   },
 
@@ -142,7 +142,7 @@ export const GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     annotations: [
       { text: "Shortage", position: { x: 5, y: 2.8 }, color: C.demand, size: 12 },
     ],
-    notes: "At P₁ (below equilibrium), quantity demanded exceeds quantity supplied — there is a shortage. Price will rise towards P*.",
+    notes: "At P₁ (below equilibrium), quantity demanded exceeds quantity supplied · there is a shortage. Price will rise towards P*.",
     examTips: [
       "Show horizontal line at P₁ below equilibrium",
       "Mark Qd and Qs at that price level",
@@ -164,7 +164,7 @@ export const GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     annotations: [
       { text: "Surplus", position: { x: 5, y: 7.5 }, color: C.supply, size: 12 },
     ],
-    notes: "At P₂ (above equilibrium), quantity supplied exceeds quantity demanded — there is a surplus. Price will fall towards P*.",
+    notes: "At P₂ (above equilibrium), quantity supplied exceeds quantity demanded · there is a surplus. Price will fall towards P*.",
     examTips: [
       "Show horizontal line at P₂ above equilibrium",
       "Mark Qd and Qs at that price level",
@@ -186,7 +186,7 @@ export const GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     ],
     equilibria: [
       { id: "E1", label: "E₁", curve1: "D1", curve2: "S1", color: C.eq, pLabel: "P₁", qLabel: "Q₁", tooltip: "Before tax" },
-      { id: "E2", label: "E₂", curve1: "D1", curve2: "S2", color: C.shifted, pLabel: "P₂", qLabel: "Q₂", tooltip: "After tax — price rises, quantity falls" },
+      { id: "E2", label: "E₂", curve1: "D1", curve2: "S2", color: C.shifted, pLabel: "P₂", qLabel: "Q₂", tooltip: "After tax · price rises, quantity falls" },
     ],
     annotations: [
       { text: "Tax", position: { eq: "E2", dx: 1.5, dy: -0.8 }, color: C.orange, size: 11 },
@@ -194,7 +194,7 @@ export const GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     notes: "An indirect tax shifts supply left (S + tax). Consumers pay a higher price, producers receive less. Output falls. The tax reduces consumption of demerit goods.",
     examTips: [
       "Tax shifts supply UP/LEFT by the tax amount",
-      "Price rises but usually by less than the full tax — consumers and producers share the burden",
+      "Price rises but usually by less than the full tax · consumers and producers share the burden",
       "Quantity traded falls from Q₁ to Q₂",
     ],
   },
@@ -209,13 +209,13 @@ export const GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     ],
     equilibria: [
       { id: "E1", label: "E₁", curve1: "D1", curve2: "S1", color: C.eq, pLabel: "P₁", qLabel: "Q₁", tooltip: "Before subsidy" },
-      { id: "E2", label: "E₂", curve1: "D1", curve2: "S2", color: C.shifted, pLabel: "P₂", qLabel: "Q₂", tooltip: "After subsidy — price falls, quantity rises" },
+      { id: "E2", label: "E₂", curve1: "D1", curve2: "S2", color: C.shifted, pLabel: "P₂", qLabel: "Q₂", tooltip: "After subsidy · price falls, quantity rises" },
     ],
     notes: "A subsidy shifts supply right (lower cost to produce). Consumers pay less, output increases. Used to encourage merit good consumption.",
     examTips: [
       "Subsidy shifts supply DOWN/RIGHT",
       "Price falls, quantity rises",
-      "Government pays the subsidy — has an opportunity cost",
+      "Government pays the subsidy · has an opportunity cost",
     ],
   },
 
@@ -234,10 +234,10 @@ export const GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       { text: "Shortage", position: { x: 5, y: 2.8 }, color: C.demand, size: 12 },
       { text: "Maximum price", position: { x: 8, y: 3.8 }, color: C.orange, size: 11 },
     ],
-    notes: "A maximum price (price ceiling) is set below equilibrium to make goods affordable. It causes a shortage — quantity demanded exceeds quantity supplied.",
+    notes: "A maximum price (price ceiling) is set below equilibrium to make goods affordable. It causes a shortage · quantity demanded exceeds quantity supplied.",
     examTips: [
       "Pmax must be BELOW equilibrium to have an effect",
-      "Creates a shortage — Qd > Qs at Pmax",
+      "Creates a shortage · Qd > Qs at Pmax",
       "May lead to rationing, black markets, or queues",
     ],
   },
@@ -257,10 +257,10 @@ export const GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       { text: "Surplus", position: { x: 5, y: 7 }, color: C.supply, size: 12 },
       { text: "Minimum price", position: { x: 8, y: 6.8 }, color: C.orange, size: 11 },
     ],
-    notes: "A minimum price (price floor) is set above equilibrium. It causes a surplus — quantity supplied exceeds quantity demanded. Example: minimum wage, agricultural price support.",
+    notes: "A minimum price (price floor) is set above equilibrium. It causes a surplus · quantity supplied exceeds quantity demanded. Example: minimum wage, agricultural price support.",
     examTips: [
       "Pmin must be ABOVE equilibrium to have an effect",
-      "Creates a surplus — Qs > Qd at Pmin",
+      "Creates a surplus · Qs > Qd at Pmin",
       "Minimum wage: surplus of labour = unemployment",
     ],
   },
@@ -292,7 +292,7 @@ export const GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     ],
     notes: "Social cost > Private cost due to external costs (e.g. pollution). The free market overproduces. The shaded triangle is the welfare loss from overproduction.",
     examTips: [
-      "Social cost is ABOVE private cost — the gap is the external cost",
+      "Social cost is ABOVE private cost · the gap is the external cost",
       "Free market produces too much (Qm > Qs)",
       "Government can use a tax to reduce output towards the socially optimal level",
     ],
@@ -328,7 +328,7 @@ export const GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     ],
     notes: "Social benefit > Private benefit due to external benefits (e.g. education, healthcare). The free market underconsumes. Subsidy can correct this.",
     examTips: [
-      "Social benefit is ABOVE private benefit — the gap is the external benefit",
+      "Social benefit is ABOVE private benefit · the gap is the external benefit",
       "Free market produces too little (Qm < Qs)",
       "Government can use a subsidy to increase output towards the social optimum",
     ],
@@ -338,7 +338,7 @@ export const GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   gcse_merit_good: {
-    title: "Merit Good — Information Failure (GCSE/IGCSE)",
+    title: "Merit Good · Information Failure (GCSE/IGCSE)",
     axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
     curves: [
       { id: "S", label: "S", params: { type: "linear", slope: 0.7, intercept: 1 }, color: C.supply },
@@ -358,7 +358,7 @@ export const GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   gcse_demerit_good: {
-    title: "Demerit Good — Information Failure (GCSE/IGCSE)",
+    title: "Demerit Good · Information Failure (GCSE/IGCSE)",
     axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
     curves: [
       { id: "S", label: "S", params: { type: "linear", slope: 0.7, intercept: 1 }, color: C.supply },
@@ -369,7 +369,7 @@ export const GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       { id: "Emarket", label: "Market", curve1: "S", curve2: "D1", color: C.eq, pLabel: "P₁", qLabel: "Q₁", tooltip: "Overconsumption due to information failure" },
       { id: "Eopt", label: "Optimal", curve1: "S", curve2: "D2", color: C.shifted, pLabel: "P₂", qLabel: "Q₂", tooltip: "Socially desirable level" },
     ],
-    notes: "Consumers overvalue demerit goods (e.g. cigarettes, alcohol) — perceived benefit (D₁) exceeds actual benefit (D₂). Overconsumption results.",
+    notes: "Consumers overvalue demerit goods (e.g. cigarettes, alcohol) · perceived benefit (D₁) exceeds actual benefit (D₂). Overconsumption results.",
     examTips: [
       "D₁ (perceived) is above D₂ (actual benefit)",
       "Overconsumption: Q₁ > Q₂",
@@ -461,11 +461,11 @@ export const GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     equilibria: [
       { id: "E1", label: "E", curve1: "DL", curve2: "SL", color: C.eq, pLabel: "W*", qLabel: "L*", tooltip: "Equilibrium wage and employment" },
     ],
-    notes: "Wage is determined by the demand for and supply of labour. Demand for labour is derived demand — it depends on the demand for the product the labour makes.",
+    notes: "Wage is determined by the demand for and supply of labour. Demand for labour is derived demand · it depends on the demand for the product the labour makes.",
     examTips: [
       "X-axis: Quantity of Labour, Y-axis: Wage Rate",
-      "Demand for labour slopes down — firms hire less at higher wages",
-      "Supply of labour slopes up — more workers willing to work at higher wages",
+      "Demand for labour slopes down · firms hire less at higher wages",
+      "Supply of labour slopes up · more workers willing to work at higher wages",
     ],
   },
 
@@ -484,7 +484,7 @@ export const GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       { text: "Unemployment", position: { x: 5, y: 7 }, color: C.demand, size: 12 },
       { text: "NMW above W*", position: { x: 8, y: 6.8 }, color: C.orange, size: 10 },
     ],
-    notes: "A minimum wage set above the equilibrium wage creates unemployment — the quantity of labour supplied exceeds the quantity demanded.",
+    notes: "A minimum wage set above the equilibrium wage creates unemployment · the quantity of labour supplied exceeds the quantity demanded.",
     examTips: [
       "NMW must be ABOVE W* to have an effect",
       "Creates surplus of labour = unemployment",
@@ -559,7 +559,7 @@ export const GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       { id: "E1", label: "E₁", curve1: "D1", curve2: "S", color: C.eq, pLabel: "ER₁", qLabel: "Q₁" },
       { id: "E2", label: "E₂", curve1: "D2", curve2: "S", color: C.shifted, pLabel: "ER₂", qLabel: "Q₂" },
     ],
-    notes: "Appreciation: the exchange rate rises (£ buys more $). Caused by increased demand for the currency — e.g. higher interest rates attracting hot money, or strong exports.",
+    notes: "Appreciation: the exchange rate rises (£ buys more $). Caused by increased demand for the currency · e.g. higher interest rates attracting hot money, or strong exports.",
     examTips: [
       "Demand for £ shifts right → exchange rate rises (appreciation)",
       "Makes exports more expensive, imports cheaper",

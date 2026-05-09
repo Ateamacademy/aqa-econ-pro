@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Printer } from "lucide-react";
 
 /**
- * EdexcelMockPaperPage — renders one of the three hardcoded Edexcel A mock
+ * EdexcelMockPaperPage · renders one of the three hardcoded Edexcel A mock
  * exam papers (Paper 1, 2 or 3) as a Pearson-style A4 booklet.
  */
 export default function EdexcelMockPaperPage() {
@@ -18,7 +18,7 @@ export default function EdexcelMockPaperPage() {
   const n = Number(paperNum ?? fromShortcut);
 
   useEffect(() => {
-    document.title = `Edexcel A Paper ${n} (9EC0/0${n}) — Mock Exam`;
+    document.title = `Edexcel A Paper ${n} (9EC0/0${n}) · Mock Exam`;
   }, [n]);
 
   if (n !== 1 && n !== 2 && n !== 3) {
@@ -34,7 +34,7 @@ export default function EdexcelMockPaperPage() {
 
   return (
     <div className="min-h-screen bg-muted/40">
-      {/* Toolbar — hidden on print */}
+      {/* Toolbar · hidden on print */}
       <div className="edx-no-print sticky top-0 z-30 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex items-center justify-between py-3 px-4">
           <Link to="/mock-papers" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">

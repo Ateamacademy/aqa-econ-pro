@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 470" font-family="Inter, Arial, sans-serif">
   <rect width="620" height="470" fill="#ffffff"/>
-  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Specific Indirect Tax — Inelastic Demand (UK Sugar Levy)</text>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Specific Indirect Tax · Inelastic Demand (UK Sugar Levy)</text>
 
   <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
   <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
@@ -26,22 +26,22 @@
          4.267(x-275) + 0.585(x-130) = 300
          4.267x - 1173.4 + 0.585x - 76.05 = 300
          4.852x = 1549.45 -> x ≈ 319.3, y ≈ 80 + 4.267*44.3 ≈ 269
-       So E1 at (319, 269) — P1 ≈ 269
+       So E1 at (319, 269) · P1 ≈ 269
        
        S2: y = 320 - 0.585(x-130)
        E2: 80 + 4.267(x-275) = 320 - 0.585(x-130)
          4.852x - 1249.45 = 240
          4.852x = 1489.45 -> x ≈ 307, y ≈ 80 + 4.267*32 ≈ 217
-       E2 at (307, 217) — P2 ≈ 217 (remember higher on screen = lower y)
+       E2 at (307, 217) · P2 ≈ 217 (remember higher on screen = lower y)
        
        Tax per unit = P2 - Pnet. Pnet = price producer receives at Q2 = S1(Q2) = 380 - 0.585*(307-130) = 380 - 103.5 ≈ 277
-       But wait — on a graph, upper y = higher on the axis = LOWER pixel y. So:
+       But wait · on a graph, upper y = higher on the axis = LOWER pixel y. So:
        P2 (higher price paid by consumer) = pixel y 217 (smaller number = higher on screen)
        P1 (original equilibrium) = pixel y 269
        Pnet (producer receives) = pixel y 277 ... but Pnet should be BELOW P1.
        
        In pixel terms: smaller y = higher on graph = higher price.
-       P2 (y=217) > P1 (y=269) > Pnet (y=277): correct — P2 highest, Pnet lowest.
+       P2 (y=217) > P1 (y=269) > Pnet (y=277): correct · P2 highest, Pnet lowest.
   -->
 
   <!-- E1 at (319, 269) -->

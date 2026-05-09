@@ -1,5 +1,5 @@
 /**
- * Edexcel A A-Level Economics (9EC0) — board definition.
+ * Edexcel A A-Level Economics (9EC0) · board definition.
  *
  * This folder is the canonical home of all Edexcel A board metadata. Existing
  * files in `src/data/edexcelA*.ts` and `src/data/edexcelBoardProfiles.ts` hold
@@ -7,7 +7,7 @@
  * they remain in their current location to keep the ~15 dependent pages
  * working unchanged.
  *
- * Cross-board imports are forbidden — this folder must not import from
+ * Cross-board imports are forbidden · this folder must not import from
  * `src/lib/boards/aqa-a-level/` or any other board folder.
  */
 import type { BoardDefinition } from "../board-definition";
@@ -29,10 +29,10 @@ export const EDEXCEL_A_A_LEVEL_DEFINITION: BoardDefinition = {
   topicSpec: {
     numberingScheme: "1.x.x / 2.x.x / 3.x.x / 4.x.x (Themes 1–4)",
     themes: [
-      { code: "1", name: "Theme 1 — Introduction to markets and market failure", paper: 1 },
-      { code: "2", name: "Theme 2 — The UK economy: performance and policies", paper: 2 },
-      { code: "3", name: "Theme 3 — Business behaviour and the labour market", paper: 1 },
-      { code: "4", name: "Theme 4 — A global perspective", paper: 2 },
+      { code: "1", name: "Theme 1 · Introduction to markets and market failure", paper: 1 },
+      { code: "2", name: "Theme 2 · The UK economy: performance and policies", paper: 2 },
+      { code: "3", name: "Theme 3 · Business behaviour and the labour market", paper: 1 },
+      { code: "4", name: "Theme 4 · A global perspective", paper: 2 },
     ],
   },
   refinementStatus: "refined",

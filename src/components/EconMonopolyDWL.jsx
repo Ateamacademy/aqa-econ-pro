@@ -22,7 +22,7 @@ export default function EconMonopolyDWL() {
           <marker id="mdU2" markerWidth="7" markerHeight="9" refX="3.5" refY="1" orient="auto"><polygon points="0 9,3.5 0,7 9" fill="#111"/></marker>
         </defs>
         <rect width="820" height="620" fill="#fff"/>
-        <text x="410" y="24" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Firm X — Monopoly Long-Run Equilibrium (Supernormal Profit & DWL)</text>
+        <text x="410" y="24" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Firm X · Monopoly Long-Run Equilibrium (Supernormal Profit & DWL)</text>
 
         {/* Axes */}
         <line x1="60" y1="560" x2="60" y2="40" stroke="#111" strokeWidth="2.4" markerEnd="url(#mdU2)"/>
@@ -33,7 +33,7 @@ export default function EconMonopolyDWL() {
         {/* Supernormal profit rectangle: y from Pm(238) to AC(Qm)≈322, x from 60 to Qm(300) */}
         <rect x="60" y="238" width="240" height="84" fill="#f4b89a" fillOpacity="0.6" stroke="#c97a55" strokeWidth="1" strokeDasharray="3,3"/>
 
-        {/* DWL triangle: M (300,238) — C (470,349) — point on vertical at Qm where MC sits ≈ (300,425) */}
+        {/* DWL triangle: M (300,238) · C (470,349) · point on vertical at Qm where MC sits ≈ (300,425) */}
         <polygon points="300,238 470,349 300,425" fill="#7ec8f0" fillOpacity="0.6" stroke="#3b86b8" strokeWidth="1"/>
 
         {/* AR = D */}

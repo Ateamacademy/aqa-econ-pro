@@ -1,6 +1,6 @@
 export default function EconMaxPriceCeiling() {
   // Geometry: S rises from (140, 540) to (760, 100); D falls from (140, 100) to (760, 540).
-  // They intersect at the midpoint (450, 320) — equilibrium (Pe, Qe).
+  // They intersect at the midpoint (450, 320) · equilibrium (Pe, Qe).
   // Price ceiling drawn at y=420 (below Pe).
   //   On S: y=420 → x = 140 + (760-140) * (540-420)/(540-100) = 140 + 620*120/440 ≈ 309 → Qs
   //   On D: y=420 → x = 140 + (760-140) * (420-100)/(540-100) = 140 + 620*320/440 ≈ 591 → Qd

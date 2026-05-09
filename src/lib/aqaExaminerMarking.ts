@@ -1,5 +1,5 @@
 /**
- * AQA Examiner Marking — client wrapper.
+ * AQA Examiner Marking · client wrapper.
  *
  * IMPORTANT: This module is OPT-IN and PARALLEL to the existing AQA marking
  * pipeline. It does NOT modify or replace `src/lib/aiMarking.ts`,

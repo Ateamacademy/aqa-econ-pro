@@ -11,16 +11,16 @@ export default function EconPEDRevenueElastic() {
         <rect width="680" height="580" fill="#fff"/>
 
         {/* Title */}
-        <text x="340" y="30" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">PED Revenue Impact — Price Elastic Demand</text>
+        <text x="340" y="30" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">PED Revenue Impact · Price Elastic Demand</text>
         <text x="340" y="52" textAnchor="middle" fontSize="12" fill="#555">TfL London Underground: Price rise when PED &gt; 1</text>
 
-        {/* Revenue LOST (red) — drawn first */}
+        {/* Revenue LOST (red) · drawn first */}
         <polygon points="242.4,255.4 300.9,255.4 300.9,460 242.4,460" fill="rgba(220,40,40,0.50)"/>
 
         {/* Revenue GAINED (green) */}
         <polygon points="92,214.5 242.4,214.5 242.4,255.4 92,255.4" fill="rgba(34,197,94,0.48)"/>
 
-        {/* Demand curve — flat/elastic */}
+        {/* Demand curve · flat/elastic */}
         <polyline points="92.0,109.2 97.4,113.0 102.9,116.8 108.3,120.6 113.7,124.4 119.2,128.2 124.6,132.0 130.0,135.8 135.5,139.6 140.9,143.4 146.3,147.2 151.8,151.0 157.2,154.8 162.6,158.6 168.1,162.4 173.5,166.2 178.9,170.0 184.3,173.8 189.8,177.6 195.2,181.4 200.6,185.2 206.1,189.0 211.5,192.8 216.9,196.6 222.4,200.4 227.8,204.2 233.2,208.0 238.7,211.8 244.1,215.6 249.5,219.4 255.0,223.2 260.4,227.0 265.8,230.8 271.3,234.6 276.7,238.4 282.1,242.2 287.6,246.0 293.0,249.8 298.4,253.6 303.9,257.4 309.3,261.2 314.7,265.0 320.1,268.8 325.6,272.6 331.0,276.4 336.4,280.2 341.9,284.0 347.3,287.8 352.7,291.6 358.2,295.4 363.6,299.2 369.0,303.0 374.5,306.8 379.9,310.6 385.3,314.4 390.8,318.2 396.2,322.0 401.6,325.8 407.1,329.6 412.5,333.4 417.9,337.2 423.4,341.0 428.8,344.8 434.2,348.6 439.7,352.4 445.1,356.2 450.5,360.0 456.0,363.8 461.4,367.6 466.8,371.4 472.3,375.2 477.7,379.0 483.1,382.8 488.5,386.6 494.0,390.4 499.4,394.2 504.8,398.0 510.3,401.8 515.7,405.6 521.1,409.4 526.6,413.2" fill="none" stroke="#111" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
         <text x="519.9" y="426.6" fontSize="14" fontWeight="bold" fill="#111">D</text>
         <text x="535.9" y="430.6" fontSize="11" fill="#111">(PED &gt; 1)</text>

@@ -1,22 +1,22 @@
 <!-- Auto-generated from /public/ib-mocks/mark-scheme-paper-2-hard.pdf -->
-SME Mark Scheme P2 — Hard
+SME Mark Scheme P2 · Hard
 
 
-SavePredictedExams — SME
+SavePredictedExams · SME
 
 Economics
 Higher level / Standard level
 Paper 2
 
 
-SME Mark Scheme — Paper 2 Hard
+SME Mark Scheme · Paper 2 Hard
 
 
 1. Use the question-specific mark scheme together with the mark bands.
 2. Whenever relevant, carry-over (OFR) marks must be awarded.
 3. A candidate may be penalised once for rounding/unit errors across (b) subparts.
 
-Question 1 — Argentina
+Question 1 · Argentina
 1. (a) (i) Define inflation. [2]
 
   Level                                                                                   Marks
@@ -47,7 +47,7 @@ Question 1 — Argentina
 
 
                                                      1                                 SME Predicted Paper
-                                                                               SME Mark Scheme P2 — Hard
+                                                                               SME Mark Scheme P2 · Hard
 
 
 1. (b) (i) Change in Argentina’s inflation rate between 2019 and 2023 (percentage points). [2]
@@ -63,7 +63,7 @@ Answer = 97.50% depreciation of the peso (correct units required for [1]).
 Alternative accepted working: the US dollar appreciated from 20 to 800 ARS, a 3,900% appreciation
 (i.e. peso lost 97.5% of its value).
 
-1. (c) AD/AS diagram — deficit financing causes demand-pull inflation. [4]
+1. (c) AD/AS diagram · deficit financing causes demand-pull inflation. [4]
 
  Level                                                                                     Marks
 
@@ -81,10 +81,10 @@ Alternative accepted working: the US dollar appreciated from 20 to 800 ARS, a 3,
 
 
                                                    2                                    SME Predicted Paper
-                                                                             SME Mark Scheme P2 — Hard
+                                                                             SME Mark Scheme P2 · Hard
 
 
-1. (d) Exchange rate diagram — devaluation effect on current account. [4]
+1. (d) Exchange rate diagram · devaluation effect on current account. [4]
 
  Level                                                                                   Marks
 
@@ -100,7 +100,7 @@ Alternative accepted working: the US dollar appreciated from 20 to 800 ARS, a 3,
           raises export competitiveness and reduces imports [1], improving the current
           account if the Marshall–Lerner condition is satisfied [1].
 
-1. (e) Export tax on soybeans — effect on producers. [4]
+1. (e) Export tax on soybeans · effect on producers. [4]
 
  Level                                                                                   Marks
 
@@ -119,10 +119,10 @@ Alternative accepted working: the US dollar appreciated from 20 to 800 ARS, a 3,
 
 
                                                  3                                   SME Predicted Paper
-                                                                                        SME Mark Scheme P2 — Hard
+                                                                                        SME Mark Scheme P2 · Hard
 
 
-1. (f) AD/AS diagram — IMF fiscal consolidation. [4]
+1. (f) AD/AS diagram · IMF fiscal consolidation. [4]
 
  Level                                                                                               Marks
 
@@ -151,7 +151,7 @@ Answers may include:
       under dollarisation.
       • Alternatives: gradual orthodox adjustment; heterodox stabilisation (wage/price pacts); currency
       board; targeted income support during adjustment.
-      • Synthesis / conclusion: a reasoned conclusion — often that shock therapy may be necessary
+      • Synthesis / conclusion: a reasoned conclusion · often that shock therapy may be necessary
       given severity of crisis but must be accompanied by social safety nets and credible institutional
       reforms.
 
@@ -174,7 +174,7 @@ Answers may include:
 
 
                                                         4                                        SME Predicted Paper
-                                                                        SME Mark Scheme P2 — Hard
+                                                                        SME Mark Scheme P2 · Hard
 
 
 7–9     The response indicates understanding of the specific demands of the question, but
@@ -205,10 +205,10 @@ Answers may include:
 
 
                                            5                                    SME Predicted Paper
-                                                                             SME Mark Scheme P2 — Hard
+                                                                             SME Mark Scheme P2 · Hard
 
 
-Question 2 — India
+Question 2 · India
 2. (a) (i) Define nominal GDP. [2]
 
   Level                                                                                  Marks
@@ -239,7 +239,7 @@ Question 2 — India
 
 
                                                    6                                 SME Predicted Paper
-                                                                                   SME Mark Scheme P2 — Hard
+                                                                                   SME Mark Scheme P2 · Hard
 
 
 2. (b) (i) India’s real GDP per capita 2022–23 (to nearest US$). [3]
@@ -253,7 +253,7 @@ Answer = US$2,606 (accept US$2,605–2,606 depending on rounding; correct units 
 = (−67 / 3,700) × 100 [1]
 Answer = −1.81% of GDP [1]
 
-2. (c) AD/AS — higher global oil prices. [4]
+2. (c) AD/AS · higher global oil prices. [4]
 
  Level                                                                                         Marks
 
@@ -271,10 +271,10 @@ Answer = −1.81% of GDP [1]
 
 
                                                     7                                       SME Predicted Paper
-                                                                                 SME Mark Scheme P2 — Hard
+                                                                                 SME Mark Scheme P2 · Hard
 
 
-2. (d) Tariff diagram — infant industry protection. [4]
+2. (d) Tariff diagram · infant industry protection. [4]
 
   Level                                                                                         Marks
 
@@ -291,7 +291,7 @@ Answer = −1.81% of GDP [1]
            welfare loss clearly labelled AND an explanation that tariffs protect infant
            industries while they build competitiveness [1], with welfare cost [1].
 
-2. (e) Exchange rate diagram — remittance inflows. [4]
+2. (e) Exchange rate diagram · remittance inflows. [4]
 
   Level                                                                                         Marks
 
@@ -309,10 +309,10 @@ Answer = −1.81% of GDP [1]
 
 
                                                     8                                        SME Predicted Paper
-                                                                                      SME Mark Scheme P2 — Hard
+                                                                                      SME Mark Scheme P2 · Hard
 
 
-2. (f) Negative consumption externality — solid-fuel cooking. [4]
+2. (f) Negative consumption externality · solid-fuel cooking. [4]
 
  Level                                                                                                Marks
 
@@ -366,7 +366,7 @@ Answers may include:
 
 
                                                        9                                       SME Predicted Paper
-                                                                        SME Mark Scheme P2 — Hard
+                                                                        SME Mark Scheme P2 · Hard
 
 
 7–9     The response indicates understanding of the specific demands of the question, but

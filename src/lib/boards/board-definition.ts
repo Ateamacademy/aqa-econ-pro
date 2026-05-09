@@ -1,5 +1,5 @@
 /**
- * Multi-board infrastructure — canonical types.
+ * Multi-board infrastructure · canonical types.
  *
  * Every supported exam board is described as DATA via a `BoardDefinition`,
  * not as scattered code. Each board's content lives in its own folder under
@@ -32,7 +32,7 @@ export type RefinementStatus = "refined" | "blueprint-pending" | "not-started";
 /** Skill frameworks used by different boards' mark schemes. */
 export type SkillFramework =
   | "KAA+E"          // AQA A-Level (Knowledge, Application, Analysis + Evaluation)
-  | "K/Ap/An/Ev"     // Edexcel A — explicit per-skill mark splits
+  | "K/Ap/An/Ev"     // Edexcel A · explicit per-skill mark splits
   | "AO1-AO4"        // AOs (CAIE / WJEC variants)
   | "Custom";
 
@@ -85,7 +85,7 @@ export type SectionBlueprint = {
   name: string;
   marks: number;
   questions: Array<{
-    number: string;       // "1", "1(a)", "6(b)", etc. — string to support sub-parts
+    number: string;       // "1", "1(a)", "6(b)", etc. · string to support sub-parts
     marks: number;
     skill?: string;
     format?: "MCQ" | "WRITTEN";
@@ -93,7 +93,7 @@ export type SectionBlueprint = {
   }>;
   /** Free-text required components, e.g. "Extract 1", "Figure 1", "Table 1". */
   requires?: string[];
-  /** For "choice" sections — the student answers N of M questions. */
+  /** For "choice" sections · the student answers N of M questions. */
   chooseN?: { answer: number; from: number };
 };
 

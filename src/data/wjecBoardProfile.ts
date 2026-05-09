@@ -441,7 +441,7 @@ export const EDUQAS_PROFILE: BoardProfile = {
     },
     {
       paper: "Component 3: Synoptic Assessment",
-      themes: ["All topics — micro, macro, international"],
+      themes: ["All topics · micro, macro, international"],
       marks: 80,
       duration: "2 hours 15 minutes",
       sections: ["Section A: Data response", "Section B: Extended essay"],

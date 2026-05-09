@@ -1,5 +1,5 @@
 /**
- * AQA Tier 1 — automatic marking engine.
+ * AQA Tier 1 · automatic marking engine.
  *
  * Handles: MCQs (Paper 3 Q1–30), 2-mark calculation questions (Q01/02/05/06).
  * AQA's 2-mark calc convention: 2 marks for correct value WITH formatting,
@@ -71,7 +71,7 @@ export interface CalcMarkResult {
 /** Pull the first numeric value from a string (handles £, $, €, %, commas). */
 export function parseNumeric(input: string): number | null {
   if (!input) return null;
-  // Remove currency symbols, %, commas — but keep . and -.
+  // Remove currency symbols, %, commas · but keep . and -.
   const cleaned = input.replace(/[£$€,%\s]/g, "");
   const match = cleaned.match(/-?\d+(\.\d+)?/);
   if (!match) return null;
@@ -124,9 +124,9 @@ export function markCalculation(
     feedback = `Correct value but missing formatting: ${spec.formattingHint}.`;
   } else if (!within && fmt && parsed !== null) {
     // AQA awards 1 for "correct method, wrong answer, with correct formatting"
-    // — we approximate this by checking formatting compliance even when value is wrong.
+    // · we approximate this by checking formatting compliance even when value is wrong.
     marks = 1;
-    feedback = `Wrong final value but formatting (${spec.formattingHint}) is correct — examiner may award 1 for correct method.`;
+    feedback = `Wrong final value but formatting (${spec.formattingHint}) is correct · examiner may award 1 for correct method.`;
   } else {
     marks = 0;
     feedback = parsed === null

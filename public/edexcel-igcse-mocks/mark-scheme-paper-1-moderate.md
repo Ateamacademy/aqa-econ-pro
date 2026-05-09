@@ -1,5 +1,5 @@
 <!-- Auto-generated from /public/edexcel-igcse-mocks/mark-scheme-paper-1-moderate.pdf -->
-Mark Scheme — Predicted Paper 1 (Moderate) | 4EC1/01
+Mark Scheme · Predicted Paper 1 (Moderate) | 4EC1/01
 
 
                                 Mark Scheme (Predicted)
@@ -20,7 +20,7 @@ mark scheme; award zero if the response is not worthy of credit.
 
 
                                                     Page 1
-                                                         Mark Scheme — Predicted Paper 1 (Moderate) | 4EC1/01
+                                                         Mark Scheme · Predicted Paper 1 (Moderate) | 4EC1/01
 
 
 Question   Which one of the following values shows price inelastic demand?               Mark
@@ -69,7 +69,7 @@ number     Answer
 
 
                                                 Page 2
-                                                       Mark Scheme — Predicted Paper 1 (Moderate) | 4EC1/01
+                                                       Mark Scheme · Predicted Paper 1 (Moderate) | 4EC1/01
 
            Award 1 mark for a correct definition
            A person/household that buys and uses goods and/or services
@@ -108,7 +108,7 @@ number     Answer
 
 
                                               Page 3
-                                                            Mark Scheme — Predicted Paper 1 (Moderate) | 4EC1/01
+                                                            Mark Scheme · Predicted Paper 1 (Moderate) | 4EC1/01
 
 1(h)           AO2 3 marks                                                                       (3)
                Award 1 mark for identifying a relevant opportunity cost
@@ -160,7 +160,7 @@ Level 3    5–6           • Demonstrates clear knowledge and understanding by
                            points. Appropriate application of economic terms, concepts, theories
 
                                                    Page 4
-                                                 Mark Scheme — Predicted Paper 1 (Moderate) | 4EC1/01
+                                                 Mark Scheme · Predicted Paper 1 (Moderate) | 4EC1/01
 
 Level   Mark   Descriptor
                   and calculations (AO2).
@@ -170,7 +170,7 @@ Level   Mark   Descriptor
 
 
                                         Page 5
-                                                         Mark Scheme — Predicted Paper 1 (Moderate) | 4EC1/01
+                                                         Mark Scheme · Predicted Paper 1 (Moderate) | 4EC1/01
 
 
 Question   Which one of the following diagrams shows excess demand?                      Mark
@@ -219,7 +219,7 @@ number     Answer
 
 
                                                 Page 6
-                                                       Mark Scheme — Predicted Paper 1 (Moderate) | 4EC1/01
+                                                       Mark Scheme · Predicted Paper 1 (Moderate) | 4EC1/01
 
            Accept any other appropriate response
 
@@ -265,19 +265,19 @@ number     merit goods such as electric vehicles.
             • A subsidy is a grant from the government that reduces the cost of production
               and/or the price paid by consumers.
             • Norway's EV subsidies have lowered the effective price of electric cars, increasing
-              demand — 82% of new car sales in 2023 were fully electric, showing the policy
+              demand · 82% of new car sales in 2023 were fully electric, showing the policy
               has changed consumer behaviour.
 
 
                                               Page 7
-                                                         Mark Scheme — Predicted Paper 1 (Moderate) | 4EC1/01
+                                                         Mark Scheme · Predicted Paper 1 (Moderate) | 4EC1/01
 
               • Higher EV use reduces air pollution and CO₂ emissions, correcting under-
                 consumption of the positive externality.
               • Therefore, subsidies have been effective in encouraging consumption of this
                 merit good.
               • AO4
-              • However, subsidies are expensive and create an opportunity cost — money spent
+              • However, subsidies are expensive and create an opportunity cost · money spent
                 on EV subsidies could have been used for healthcare or education.
               • Subsidies can be captured by higher-income consumers who would have bought
                 an EV anyway, reducing value for money.
@@ -321,7 +321,7 @@ Level 3   7–9          • Demonstrates clear knowledge and understanding by d
 
 
                                                 Page 8
-                                                        Mark Scheme — Predicted Paper 1 (Moderate) | 4EC1/01
+                                                        Mark Scheme · Predicted Paper 1 (Moderate) | 4EC1/01
 
 
 Question   An increase in which one of the following is most likely to cause an         Mark
@@ -358,7 +358,7 @@ number     axes from a change in price.
 
 
                                                Page 9
-                                                              Mark Scheme — Predicted Paper 1 (Moderate) | 4EC1/01
+                                                              Mark Scheme · Predicted Paper 1 (Moderate) | 4EC1/01
 
                (e.g. S)
                Award 1 mark for showing a larger change in price on the price axis
@@ -407,7 +407,7 @@ Level 3    5–6             • Demonstrates clear knowledge and understanding 
 
 
                                                     Page 10
-                                                            Mark Scheme — Predicted Paper 1 (Moderate) | 4EC1/01
+                                                            Mark Scheme · Predicted Paper 1 (Moderate) | 4EC1/01
 
 
 Question       Assess whether demand is likely to be more price inelastic for cigarettes than for
@@ -421,7 +421,7 @@ number         smartphones.
                 • Cigarettes are addictive, meaning that consumers will continue to buy them even
                   if the price rises, making demand price inelastic.
                 • Cigarettes have few close substitutes, strengthening the inelasticity.
-                • Smartphones, by contrast, have many competing brands — consumers can easily
+                • Smartphones, by contrast, have many competing brands · consumers can easily
                   switch from Apple to Samsung or Xiaomi if one brand raises its price, making
                   demand more price elastic.
                 • Smartphones also take up a larger share of income than a single pack of
@@ -457,7 +457,7 @@ Level 2    4–6           • Demonstrates partial knowledge and understanding 
 
 
                                                   Page 11
-                                                    Mark Scheme — Predicted Paper 1 (Moderate) | 4EC1/01
+                                                    Mark Scheme · Predicted Paper 1 (Moderate) | 4EC1/01
 
 Level     Mark   Descriptor
                     relevant points. Partial application of economic terms, concepts, theories
@@ -481,7 +481,7 @@ Level 3   7–9     • Demonstrates clear knowledge and understanding by develo
 
 
                                           Page 12
-                                                            Mark Scheme — Predicted Paper 1 (Moderate) | 4EC1/01
+                                                            Mark Scheme · Predicted Paper 1 (Moderate) | 4EC1/01
 
 
 Question       Calculate the monthly total costs of the clothing factory.                   Mark
@@ -505,7 +505,7 @@ number         Indicative content
                   as purchasing, marketing, technical, financial, managerial and risk-bearing
                   economies.
                 • Zara has over 2,000 stores and produces large volumes of clothing, allowing it to
-                  buy raw materials (e.g. fabric) in bulk at discounted prices — purchasing
+                  buy raw materials (e.g. fabric) in bulk at discounted prices · purchasing
                   economies.
                 • Marketing costs (e.g. global campaigns) can be spread over many stores and
                   millions of garments, lowering the average marketing cost per item.
@@ -514,7 +514,7 @@ number         Indicative content
                   supply chain.
                 • Lower average costs allow Zara to offer lower prices, maintain competitiveness
                   with rivals and earn higher profit margins.
-                • Risk-bearing economies arise from operating in 96 countries — a poor season in
+                • Risk-bearing economies arise from operating in 96 countries · a poor season in
                   one market can be offset by strong sales elsewhere.
 
 
@@ -530,7 +530,7 @@ Level 1    1–2           • Demonstrates basic knowledge and understanding by
 Level 2    3–4           • Demonstrates partial knowledge and understanding by developing
 
                                                   Page 13
-                                                    Mark Scheme — Predicted Paper 1 (Moderate) | 4EC1/01
+                                                    Mark Scheme · Predicted Paper 1 (Moderate) | 4EC1/01
 
 Level     Mark   Descriptor
                     relevant points. Partial application of economic terms, concepts, theories
@@ -548,7 +548,7 @@ Level 3   5–6     • Demonstrates clear knowledge and understanding by develo
 
 
                                           Page 14
-                                                            Mark Scheme — Predicted Paper 1 (Moderate) | 4EC1/01
+                                                            Mark Scheme · Predicted Paper 1 (Moderate) | 4EC1/01
 
 
 Question       Evaluate whether consumers are likely to benefit from the nationalisation of the
@@ -575,7 +575,7 @@ number         water supply company.
                   which creates an opportunity cost for other government spending (e.g. schools,
                   hospitals).
                 • If the water company runs at a loss, taxpayers ultimately pay through higher taxes
-                  — consumers as taxpayers may be worse off overall.
+                  · consumers as taxpayers may be worse off overall.
                 • The outcome depends on the quality of government management, the size of any
                   price cuts, and whether investment in maintenance is sustained.
                 • On balance, consumers may benefit from lower prices and more reliable supply in
@@ -597,7 +597,7 @@ Level 1    1–4           • Demonstrates isolated elements of relevant knowle
 
 
                                                   Page 15
-                                                   Mark Scheme — Predicted Paper 1 (Moderate) | 4EC1/01
+                                                   Mark Scheme · Predicted Paper 1 (Moderate) | 4EC1/01
 
 Level     Mark   Descriptor
 Level 2   5–8     • Demonstrates partial selectivity and some accurate knowledge and

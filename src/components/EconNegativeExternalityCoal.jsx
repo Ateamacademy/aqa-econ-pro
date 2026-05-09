@@ -8,8 +8,8 @@ export default function EconNegativeExternalityCoal() {
           <marker id="ne2Lft" markerWidth="9" markerHeight="7" refX="1" refY="3.5" orient="auto-start-reverse"><polygon points="0 0,9 3.5,0 7" fill="#111"/></marker>
         </defs>
         <rect width="680" height="560" fill="#fff"/>
-        <text x="340" y="26" textAnchor="middle" fontSize="15" fontWeight="bold" fill="#111">Negative Production Externality — Coal Electricity</text>
-        <text x="340" y="44" textAnchor="middle" fontSize="11" fill="#555">MSC &gt; MPC: market overproduces at Q1 — social optimum at Qsop (MSC = MSB)</text>
+        <text x="340" y="26" textAnchor="middle" fontSize="15" fontWeight="bold" fill="#111">Negative Production Externality · Coal Electricity</text>
+        <text x="340" y="44" textAnchor="middle" fontSize="11" fill="#555">MSC &gt; MPC: market overproduces at Q1 · social optimum at Qsop (MSC = MSB)</text>
         <line x1="88" y1="460" x2="88" y2="50" stroke="#111" strokeWidth="2.2" markerEnd="url(#ne2U)"/>
         <line x1="88" y1="460" x2="592" y2="460" stroke="#111" strokeWidth="2.2" markerEnd="url(#ne2R)"/>
         <text x="82" y="44" textAnchor="start" fontSize="12" fontWeight="bold" fill="#111">Costs/Benefits</text>
@@ -33,7 +33,7 @@ export default function EconNegativeExternalityCoal() {
         <text x="485.4" y="242.1" fontSize="12" fontWeight="bold" fill="#111">Welfare loss</text>
         <rect x="88" y="496" width="504" height="50" rx="5" fill="#fef9f0" stroke="#e5c97a" strokeWidth="1.2"/>
         <text x="100" y="514" fontSize="11" fontWeight="bold" fill="#111">Market failure:</text>
-        <text x="100" y="530" fontSize="11" fill="#555">Coal firms only consider MPC — overproduction at Q1. Social optimum is Qsop (MSC=MSB).</text>
+        <text x="100" y="530" fontSize="11" fill="#555">Coal firms only consider MPC · overproduction at Q1. Social optimum is Qsop (MSC=MSB).</text>
         <text x="100" y="543" fontSize="11" fill="#555">Red triangle = deadweight welfare loss. Corrective carbon tax shifts MPC up to MSC.</text>
       </svg>
     </div>

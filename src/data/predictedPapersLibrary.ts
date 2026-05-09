@@ -27,10 +27,10 @@ export const predictedPapersLibrary: PredictedPaper[] = [
     subject: "maths",
     paper: "1",
     tier: "Higher",
-    title: "Paper 1 Higher — Set A",
+    title: "Paper 1 Higher · Set A",
     description: "Non-Calculator. Covers algebra, fractions, geometry, proof, and surds.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 1 Higher (Non-Calculator) — Predicted Paper Set A
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 1 Higher (Non-Calculator) · Predicted Paper Set A
 
 **Time: 1 hour 30 minutes | Total: 80 marks**
 
@@ -114,10 +114,10 @@ Solve the inequality $3x^2 - 12 < 0$. Show your solution on a number line.`,
     subject: "maths",
     paper: "1",
     tier: "Foundation",
-    title: "Paper 1 Foundation — Set A",
+    title: "Paper 1 Foundation · Set A",
     description: "Non-Calculator. Covers core number, basic algebra, geometry, and data handling.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 1 Foundation (Non-Calculator) — Predicted Paper Set A
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 1 Foundation (Non-Calculator) · Predicted Paper Set A
 
 **Time: 1 hour 30 minutes | Total: 80 marks**
 
@@ -202,10 +202,10 @@ Jess buys a sofa for £800. She pays a deposit of 30% and then 10 equal monthly 
     subject: "maths",
     paper: "2",
     tier: "Higher",
-    title: "Paper 2 Higher — Set A",
+    title: "Paper 2 Higher · Set A",
     description: "Calculator allowed. Covers trigonometry, statistics, compound interest, and circle theorems.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 2 Higher (Calculator) — Predicted Paper Set A
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 2 Higher (Calculator) · Predicted Paper Set A
 
 **Time: 1 hour 30 minutes | Total: 80 marks | Calculator ALLOWED**
 
@@ -277,10 +277,10 @@ Show that $\\dfrac{1}{\\sqrt{3} - 1} = \\dfrac{\\sqrt{3} + 1}{2}$ by rationalisi
     subject: "maths",
     paper: "3",
     tier: "Higher",
-    title: "Paper 3 Higher — Set A",
+    title: "Paper 3 Higher · Set A",
     description: "Calculator allowed. Mixed topics with problem-solving and reasoning.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 3 Higher (Calculator) — Predicted Paper Set A
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 3 Higher (Calculator) · Predicted Paper Set A
 
 **Time: 1 hour 30 minutes | Total: 80 marks | Calculator ALLOWED**
 
@@ -353,10 +353,10 @@ Given that $f(x) = \\dfrac{1}{x}$, find $f^{-1}(x)$ and state the value of $x$ f
     subject: "maths",
     paper: "2",
     tier: "Foundation",
-    title: "Paper 2 Foundation — Set A",
+    title: "Paper 2 Foundation · Set A",
     description: "Calculator allowed. Covers percentages, area, data handling, and basic trig.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 2 Foundation (Calculator) — Predicted Paper Set A
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 2 Foundation (Calculator) · Predicted Paper Set A
 
 **Time: 1 hour 30 minutes | Total: 80 marks | Calculator ALLOWED**
 
@@ -445,10 +445,10 @@ A shop buys a phone for £120 and sells it for £156. Calculate the percentage p
     id: "econ-p1-a",
     subject: "economics",
     paper: "1",
-    title: "Paper 1 — Set A",
+    title: "Paper 1 · Set A",
     description: "Markets and Market Failure. Data response and essay questions.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/1) — Paper 1: Markets and Market Failure — Predicted Paper Set A
+    content: `# AQA A-Level Economics (7136/1) · Paper 1: Markets and Market Failure · Predicted Paper Set A
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -458,11 +458,11 @@ Answer ALL questions in both Section A and Section B.
 
 ## Section A: Data Response (40 marks)
 
-**Extract A — The UK sugar tax debate**
+**Extract A · The UK sugar tax debate**
 
 The UK government announced in 2024 that it would extend the Soft Drinks Industry Levy (SDIL) to milkshakes and other previously exempt high-sugar drinks. Public Health England estimates that excess sugar consumption costs the NHS approximately £6 billion per year. Reformulated drinks that reduced sugar content below the levy thresholds accounted for over 50% of soft drink sales by volume in 2023. Industry groups argue the tax is regressive and disproportionately affects lower-income households, while public-health campaigners describe the levy as one of the most successful examples of behavioural government intervention.
 
-**Extract B — Sugar consumption and SDIL revenue, 2018–2024**
+**Extract B · Sugar consumption and SDIL revenue, 2018–2024**
 
 | Year | Sugary drink consumption (litres per capita) | Adult obesity rate (%) | SDIL revenue (£m) |
 |------|----------------------------------------------|------------------------|--------------------|
@@ -471,7 +471,7 @@ The UK government announced in 2024 that it would extend the Soft Drinks Industr
 | 2022 | 58.3 | 28.5 | 380 |
 | 2024 | 52.7 | 27.8 | 415 |
 
-**Extract C — Distributional impact**
+**Extract C · Distributional impact**
 
 A 2024 IFS study found that households in the lowest income decile spent 0.7% of disposable income on SDIL-affected products, compared with 0.2% for the highest decile. Critics therefore describe the levy as regressive in incidence, although supporters argue the long-run health gains accrue disproportionately to lower-income groups, who suffer the highest rates of diet-related disease.
 
@@ -507,10 +507,10 @@ Question 6 [25 marks]
     id: "econ-p2-a",
     subject: "economics",
     paper: "2",
-    title: "Paper 2 — Set A",
+    title: "Paper 2 · Set A",
     description: "National and International Economy. Macro data response and essays.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/2) — Paper 2: National and International Economy — Predicted Paper Set A
+    content: `# AQA A-Level Economics (7136/2) · Paper 2: National and International Economy · Predicted Paper Set A
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -520,11 +520,11 @@ Answer ALL questions in both Section A and Section B.
 
 ## Section A: Data Response (40 marks)
 
-**Extract A — UK monetary tightening, 2021–2024**
+**Extract A · UK monetary tightening, 2021–2024**
 
 The Bank of England raised Bank Rate from 0.1% in December 2021 to 5.25% by August 2023 in response to surging inflation. CPI peaked at 11.1% in October 2022 before falling back to 4.0% by December 2023. GDP growth slowed sharply, the UK narrowly avoided a technical recession in late 2023, and real wages fell for the longest sustained period since records began. Unemployment remained low at 4.2%, suggesting a degree of labour-market resilience despite the tightening cycle.
 
-**Extract B — Key UK macroeconomic indicators**
+**Extract B · Key UK macroeconomic indicators**
 
 | Indicator | 2021 | 2022 | 2023 | 2024 (est.) |
 |-----------|------|------|------|-------------|
@@ -533,7 +533,7 @@ The Bank of England raised Bank Rate from 0.1% in December 2021 to 5.25% by Augu
 | Unemployment (%) | 4.5 | 3.7 | 4.2 | 4.4 |
 | Bank Rate (%) | 0.1 | 3.5 | 5.25 | 5.0 |
 
-**Extract C — Transmission lags and household debt**
+**Extract C · Transmission lags and household debt**
 
 The MPC has repeatedly noted that monetary policy operates with "long and variable lags." UK household debt-to-income remains above 130%, meaning small changes in interest rates have a disproportionately large effect on disposable incomes. Approximately 1.6 million fixed-rate mortgages were due to refinance during 2024, creating a delayed cost-push shock to consumer spending.
 
@@ -569,10 +569,10 @@ Question 6 [25 marks]
     id: "econ-p3-a",
     subject: "economics",
     paper: "3",
-    title: "Paper 3 — Set A",
+    title: "Paper 3 · Set A",
     description: "Economic Principles and Issues. 30 multiple choice questions plus a synoptic case study.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/3) — Paper 3: Economic Principles and Issues — Predicted Paper Set A
+    content: `# AQA A-Level Economics (7136/3) · Paper 3: Economic Principles and Issues · Predicted Paper Set A
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -796,11 +796,11 @@ D. Profit equal to marginal cost
 
 ## Section B: Case Study (50 marks)
 
-**Case Study — The UK Housing Market**
+**Case Study · The UK Housing Market**
 
-The UK housing market has experienced significant price growth over the past decade. Average house prices rose from £195,000 in 2014 to £290,000 in 2024 — an increase of approximately 49%. First-time buyers now need an average deposit of £62,000, equivalent to 2.5 years of pre-tax earnings for an average worker.
+The UK housing market has experienced significant price growth over the past decade. Average house prices rose from £195,000 in 2014 to £290,000 in 2024 · an increase of approximately 49%. First-time buyers now need an average deposit of £62,000, equivalent to 2.5 years of pre-tax earnings for an average worker.
 
-The government introduced the Help to Buy scheme to support first-time buyers with equity loans of up to 20% (40% in London). Economists have debated whether this demand-side intervention simply pushed prices higher. Housebuilding completions averaged 180,000 per year — well below the government target of 340,000. Planning restrictions, land banking by developers and skilled labour shortages in construction have been cited as major supply-side barriers.
+The government introduced the Help to Buy scheme to support first-time buyers with equity loans of up to 20% (40% in London). Economists have debated whether this demand-side intervention simply pushed prices higher. Housebuilding completions averaged 180,000 per year · well below the government target of 340,000. Planning restrictions, land banking by developers and skilled labour shortages in construction have been cited as major supply-side barriers.
 
 Question 31 [10 marks]
 Using a supply and demand diagram, explain why UK house prices have risen significantly between 2014 and 2024.
@@ -817,10 +817,10 @@ Question 33 [25 marks]
     id: "econ-p1-b",
     subject: "economics",
     paper: "1",
-    title: "Paper 1 — Set B",
+    title: "Paper 1 · Set B",
     description: "Markets and Market Failure. Environmental economics focus.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/1) — Paper 1: Markets and Market Failure — Predicted Paper Set B
+    content: `# AQA A-Level Economics (7136/1) · Paper 1: Markets and Market Failure · Predicted Paper Set B
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -830,11 +830,11 @@ Answer ALL questions in both Section A and Section B.
 
 ## Section A: Data Response (40 marks)
 
-**Extract A — Carbon trading and UK industrial emissions**
+**Extract A · Carbon trading and UK industrial emissions**
 
 The UK Emissions Trading Scheme (UK ETS) launched in 2021 after Brexit, replacing UK participation in the EU ETS. Large industrial emitters must surrender allowances for every tonne of CO₂ released. The carbon allowance price climbed from £50/tonne in early 2021 to £78/tonne in mid-2024. Environmental groups argue the cap is too generous, while energy-intensive manufacturers warn that high carbon prices encourage carbon leakage as production relocates to jurisdictions with weaker regulation.
 
-**Extract B — UK industrial emissions and carbon allowance prices, 2019–2024**
+**Extract B · UK industrial emissions and carbon allowance prices, 2019–2024**
 
 | Year | Carbon price (£/tonne) | UK industrial emissions (MtCO₂) | Renewable share of generation (%) |
 |------|------------------------|----------------------------------|------------------------------------|
@@ -843,7 +843,7 @@ The UK Emissions Trading Scheme (UK ETS) launched in 2021 after Brexit, replacin
 | 2022 | 68                     | 85                               | 42                                 |
 | 2024 | 78                     | 79                               | 47                                 |
 
-**Extract C — Further commentary**
+**Extract C · Further commentary**
 
 A 2024 CBI survey reported that 41% of energy-intensive UK firms had postponed planned investment in low-carbon production because of allowance price uncertainty. Government modelling suggested that, without the ETS, UK industrial emissions would have been 9–14 MtCO₂ higher in 2024.
 
@@ -879,10 +879,10 @@ Question 6 [25 marks]
     id: "econ-p2-b",
     subject: "economics",
     paper: "2",
-    title: "Paper 2 — Set B",
+    title: "Paper 2 · Set B",
     description: "National and International Economy. Trade and globalisation focus.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/2) — Paper 2: National and International Economy — Predicted Paper Set B
+    content: `# AQA A-Level Economics (7136/2) · Paper 2: National and International Economy · Predicted Paper Set B
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -892,11 +892,11 @@ Answer ALL questions in both Section A and Section B.
 
 ## Section A: Data Response (40 marks)
 
-**Extract A — UK trade and CPTPP membership**
+**Extract A · UK trade and CPTPP membership**
 
 Since Brexit, the UK has signed independent trade deals with Australia, New Zealand and Japan and joined the CPTPP in 2023. UK goods exports to the EU fell 15% between 2019 and 2023; small businesses cite paperwork and rules-of-origin as the main barriers. The current account deficit widened to 3.1% of GDP in 2023. Inward FDI remained one of the highest in Europe at £29.5bn.
 
-**Extract B — UK trade and FDI, 2019–2023**
+**Extract B · UK trade and FDI, 2019–2023**
 
 | Indicator                          | 2019 | 2021 | 2023 |
 |------------------------------------|------|------|------|
@@ -906,9 +906,9 @@ Since Brexit, the UK has signed independent trade deals with Australia, New Zeal
 | Inward FDI (£bn)                   | 36.2 | 24.1 | 29.5 |
 | £/€ exchange rate                  | 1.14 | 1.16 | 1.15 |
 
-**Extract C — Further commentary**
+**Extract C · Further commentary**
 
-OBR analysis estimates that CPTPP membership will raise UK GDP by 0.08% over 15 years — small relative to the 4% long-run hit estimated from leaving the EU single market. Supporters argue the deal hedges against rising protectionism and unlocks future Asian growth.
+OBR analysis estimates that CPTPP membership will raise UK GDP by 0.08% over 15 years · small relative to the 4% long-run hit estimated from leaving the EU single market. Supporters argue the deal hedges against rising protectionism and unlocks future Asian growth.
 
 Question 1 [2 marks]
 Using Extract B, calculate the UK's trade deficit in goods with the EU in 2023.
@@ -943,10 +943,10 @@ Question 6 [25 marks]
     subject: "chemistry",
     paper: "1",
     tier: "Higher",
-    title: "Chem Paper 1 Higher — Set A",
+    title: "Chem Paper 1 Higher · Set A",
     description: "Topics 1–5: Atomic structure, bonding, quantitative chemistry, chemical changes, energy.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462) — Paper 1 Higher — Set A\n\n**Time: 1 hour 45 minutes | Total: 100 marks**\n\nQuestion 1 [1 marks]\nWhat is the atomic number of an element?\n\nQuestion 2 [2 marks]\nDraw the electronic structure of a sodium atom (atomic number 11).\n\nQuestion 3 [2 marks]\nExplain why elements in the same group have similar chemical properties.\n\nQuestion 4 [3 marks]\nDescribe the bonding in sodium chloride.\n\nQuestion 5 [2 marks]\nState two properties of ionic compounds.\n\nQuestion 6a [1 marks]\nDefine relative formula mass.\n\nQuestion 6b [2 marks]\nCalculate the relative formula mass of CaCO₃. (Ar: Ca=40, C=12, O=16)\n\nQuestion 7 [3 marks]\nBalance: Fe₂O₃ + C → Fe + CO₂\n\nQuestion 8 [4 marks]\nCalculate the number of moles in 5.6 g of iron. (Ar: Fe=56)\n\nQuestion 9 [3 marks]\nDescribe the test for hydrogen gas.\n\nQuestion 10 [4 marks]\nCalculate the mass of NaCl produced when 25.0 cm³ of 0.1 mol/dm³ HCl reacts with excess NaOH. (Mr NaCl=58.5)\n\nQuestion 11 [3 marks]\nOrder by reactivity (most first): copper, magnesium, zinc, iron.\n\nQuestion 12 [4 marks]\nDescribe how copper is purified by electrolysis.\n\nQuestion 13 [3 marks]\nExplain why HCl + NaOH is exothermic.\n\nQuestion 14 [6 marks]\nCompare ionic and covalent bonding. Describe how each forms, give examples, and explain how bonding affects properties.\n\nQuestion 15 [4 marks]\n25.0 cm³ of NaOH is neutralised by 20.0 cm³ of 0.5 mol/dm³ H₂SO₄. Calculate the concentration of NaOH. (2NaOH + H₂SO₄ → Na₂SO₄ + 2H₂O)\n\nQuestion 16 [3 marks]\nExplain why graphite conducts electricity but diamond does not.\n\nQuestion 17 [4 marks]\nCalculate atom economy for: 2Fe₂O₃ + 3C → 4Fe + 3CO₂\n\nQuestion 18 [3 marks]\nName the flame test colours for lithium, sodium, and potassium.\n\nQuestion 19 [4 marks]\nTheoretical yield is 15.0 g, actual yield is 12.3 g. Calculate percentage yield.\n\nQuestion 20 [3 marks]\nExplain oxidation and reduction in terms of electrons.`,
+    content: `# AQA GCSE Chemistry (8462) · Paper 1 Higher · Set A\n\n**Time: 1 hour 45 minutes | Total: 100 marks**\n\nQuestion 1 [1 marks]\nWhat is the atomic number of an element?\n\nQuestion 2 [2 marks]\nDraw the electronic structure of a sodium atom (atomic number 11).\n\nQuestion 3 [2 marks]\nExplain why elements in the same group have similar chemical properties.\n\nQuestion 4 [3 marks]\nDescribe the bonding in sodium chloride.\n\nQuestion 5 [2 marks]\nState two properties of ionic compounds.\n\nQuestion 6a [1 marks]\nDefine relative formula mass.\n\nQuestion 6b [2 marks]\nCalculate the relative formula mass of CaCO₃. (Ar: Ca=40, C=12, O=16)\n\nQuestion 7 [3 marks]\nBalance: Fe₂O₃ + C → Fe + CO₂\n\nQuestion 8 [4 marks]\nCalculate the number of moles in 5.6 g of iron. (Ar: Fe=56)\n\nQuestion 9 [3 marks]\nDescribe the test for hydrogen gas.\n\nQuestion 10 [4 marks]\nCalculate the mass of NaCl produced when 25.0 cm³ of 0.1 mol/dm³ HCl reacts with excess NaOH. (Mr NaCl=58.5)\n\nQuestion 11 [3 marks]\nOrder by reactivity (most first): copper, magnesium, zinc, iron.\n\nQuestion 12 [4 marks]\nDescribe how copper is purified by electrolysis.\n\nQuestion 13 [3 marks]\nExplain why HCl + NaOH is exothermic.\n\nQuestion 14 [6 marks]\nCompare ionic and covalent bonding. Describe how each forms, give examples, and explain how bonding affects properties.\n\nQuestion 15 [4 marks]\n25.0 cm³ of NaOH is neutralised by 20.0 cm³ of 0.5 mol/dm³ H₂SO₄. Calculate the concentration of NaOH. (2NaOH + H₂SO₄ → Na₂SO₄ + 2H₂O)\n\nQuestion 16 [3 marks]\nExplain why graphite conducts electricity but diamond does not.\n\nQuestion 17 [4 marks]\nCalculate atom economy for: 2Fe₂O₃ + 3C → 4Fe + 3CO₂\n\nQuestion 18 [3 marks]\nName the flame test colours for lithium, sodium, and potassium.\n\nQuestion 19 [4 marks]\nTheoretical yield is 15.0 g, actual yield is 12.3 g. Calculate percentage yield.\n\nQuestion 20 [3 marks]\nExplain oxidation and reduction in terms of electrons.`,
   },
 
   // ── CHEMISTRY PAPER 2: Higher ──
@@ -955,22 +955,22 @@ Question 6 [25 marks]
     subject: "chemistry",
     paper: "2",
     tier: "Higher",
-    title: "Chem Paper 2 Higher — Set A",
+    title: "Chem Paper 2 Higher · Set A",
     description: "Topics 6–10: Rates, organic chemistry, analysis, atmosphere, resources.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462) — Paper 2 Higher — Set A\n\n**Time: 1 hour 45 minutes | Total: 100 marks**\n\nQuestion 1 [2 marks]\nState two ways to increase the rate of a chemical reaction.\n\nQuestion 2 [3 marks]\nUsing collision theory, explain why increasing temperature increases rate.\n\nQuestion 3 [3 marks]\nDescribe how to measure the volume of gas produced over time.\n\nQuestion 4 [4 marks]\nSketch a graph of volume of gas vs time. Add a second line for higher temperature.\n\nQuestion 5 [2 marks]\nWhat is a catalyst? Give one industrial example.\n\nQuestion 6 [3 marks]\nDescribe how fractional distillation separates crude oil.\n\nQuestion 7 [2 marks]\nWrite the general formula for alkanes. Draw the displayed formula of propane.\n\nQuestion 8 [3 marks]\nWrite a balanced equation for complete combustion of methane.\n\nQuestion 9 [4 marks]\nExplain what cracking is and why it is carried out.\n\nQuestion 10 [3 marks]\nDescribe the test for an alkene. State the reagent and colour change.\n\nQuestion 11 [4 marks]\nAn Rf value is 0.65. The solvent front is 12.0 cm. Calculate the distance the spot travelled.\n\nQuestion 12 [3 marks]\nDescribe flame emission spectroscopy and state one advantage over flame tests.\n\nQuestion 13 [4 marks]\nDescribe how Earth's atmosphere has changed since formation.\n\nQuestion 14 [3 marks]\nExplain how human activities increase CO₂ levels.\n\nQuestion 15 [6 marks]\nEvaluate hydrogen as a fuel compared to petrol.\n\nQuestion 16 [4 marks]\nDescribe how potable water is produced from fresh water in the UK.\n\nQuestion 17 [3 marks]\nWhat is a life cycle assessment? State three factors it considers.\n\nQuestion 18 [3 marks]\nExplain what a reversible reaction is.\n\nQuestion 19 [4 marks]\nN₂(g) + 3H₂(g) ⇌ 2NH₃(g) (exothermic). Explain the effect of increasing pressure on yield.\n\nQuestion 20 [3 marks]\nDescribe the test for sulfate ions.`,
+    content: `# AQA GCSE Chemistry (8462) · Paper 2 Higher · Set A\n\n**Time: 1 hour 45 minutes | Total: 100 marks**\n\nQuestion 1 [2 marks]\nState two ways to increase the rate of a chemical reaction.\n\nQuestion 2 [3 marks]\nUsing collision theory, explain why increasing temperature increases rate.\n\nQuestion 3 [3 marks]\nDescribe how to measure the volume of gas produced over time.\n\nQuestion 4 [4 marks]\nSketch a graph of volume of gas vs time. Add a second line for higher temperature.\n\nQuestion 5 [2 marks]\nWhat is a catalyst? Give one industrial example.\n\nQuestion 6 [3 marks]\nDescribe how fractional distillation separates crude oil.\n\nQuestion 7 [2 marks]\nWrite the general formula for alkanes. Draw the displayed formula of propane.\n\nQuestion 8 [3 marks]\nWrite a balanced equation for complete combustion of methane.\n\nQuestion 9 [4 marks]\nExplain what cracking is and why it is carried out.\n\nQuestion 10 [3 marks]\nDescribe the test for an alkene. State the reagent and colour change.\n\nQuestion 11 [4 marks]\nAn Rf value is 0.65. The solvent front is 12.0 cm. Calculate the distance the spot travelled.\n\nQuestion 12 [3 marks]\nDescribe flame emission spectroscopy and state one advantage over flame tests.\n\nQuestion 13 [4 marks]\nDescribe how Earth's atmosphere has changed since formation.\n\nQuestion 14 [3 marks]\nExplain how human activities increase CO₂ levels.\n\nQuestion 15 [6 marks]\nEvaluate hydrogen as a fuel compared to petrol.\n\nQuestion 16 [4 marks]\nDescribe how potable water is produced from fresh water in the UK.\n\nQuestion 17 [3 marks]\nWhat is a life cycle assessment? State three factors it considers.\n\nQuestion 18 [3 marks]\nExplain what a reversible reaction is.\n\nQuestion 19 [4 marks]\nN₂(g) + 3H₂(g) ⇌ 2NH₃(g) (exothermic). Explain the effect of increasing pressure on yield.\n\nQuestion 20 [3 marks]\nDescribe the test for sulfate ions.`,
   },
 
-  // ── CHEMISTRY PAPER 1: Higher — Set B (Graph/Diagram Focus) ──
+  // ── CHEMISTRY PAPER 1: Higher · Set B (Graph/Diagram Focus) ──
   {
     id: "chem-p1-higher-b",
     subject: "chemistry",
     paper: "1",
     tier: "Higher",
-    title: "Chem Paper 1 Higher — Set B",
+    title: "Chem Paper 1 Higher · Set B",
     description: "Graph & diagram focus: reaction profiles, energy diagrams, bonding dot-and-cross, titration curves.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462) — Paper 1 Higher — Set B (Graph & Diagram Focus)
+    content: `# AQA GCSE Chemistry (8462) · Paper 1 Higher · Set B (Graph & Diagram Focus)
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -1077,8 +1077,8 @@ Draw a diagram to show the arrangement of ions in a sodium chloride crystal latt
 
 Question 16 [4 marks]
 A student investigates rates of reaction by measuring gas volume. Their graph shows:
-- Experiment A: marble chips (large) + 1M HCl — slow start, levels off at 45 cm³
-- Experiment B: marble powder + 1M HCl — fast start, levels off at 45 cm³
+- Experiment A: marble chips (large) + 1M HCl · slow start, levels off at 45 cm³
+- Experiment B: marble powder + 1M HCl · fast start, levels off at 45 cm³
 
 Explain why both experiments produce the same final volume but at different rates.
 
@@ -1098,16 +1098,16 @@ Question 20 [4 marks]
 Explain, using a diagram, why metals are good conductors of electricity. Reference the structure and bonding in your answer.`,
   },
 
-  // ── CHEMISTRY PAPER 2: Higher — Set B (Graph/Diagram Focus) ──
+  // ── CHEMISTRY PAPER 2: Higher · Set B (Graph/Diagram Focus) ──
   {
     id: "chem-p2-higher-b",
     subject: "chemistry",
     paper: "2",
     tier: "Higher",
-    title: "Chem Paper 2 Higher — Set B",
+    title: "Chem Paper 2 Higher · Set B",
     description: "Graph & diagram focus: rate graphs, tangent method, chromatography, atmospheric data.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462) — Paper 2 Higher — Set B (Graph & Diagram Focus)
+    content: `# AQA GCSE Chemistry (8462) · Paper 2 Higher · Set B (Graph & Diagram Focus)
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -1272,16 +1272,16 @@ Question 20 [3 marks]
 Describe how to carry out a flame test. State the safety precautions you would take.`,
   },
 
-  // ── MATHS PAPER 2: Higher — Set B (Graph/Diagram Focus) ──
+  // ── MATHS PAPER 2: Higher · Set B (Graph/Diagram Focus) ──
   {
     id: "maths-p2-higher-b",
     subject: "maths",
     paper: "2",
     tier: "Higher",
-    title: "Paper 2 Higher — Set B",
+    title: "Paper 2 Higher · Set B",
     description: "Calculator. Graph & diagram focus: coordinate geometry, transformations, data charts, real-life graphs.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 2 Higher (Calculator) — Set B (Graph & Diagram Focus)
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 2 Higher (Calculator) · Set B (Graph & Diagram Focus)
 
 **Time: 1 hour 30 minutes | Total: 80 marks | Calculator ALLOWED**
 
@@ -1467,23 +1467,23 @@ The distance-time graph shows two runners in a race:
 
 **Graph description:**
 - Runner A: starts at $t = 0$, reaches 100m at $t = 12$ seconds (constant speed)
-- Runner B: starts at $t = 0$, accelerates — reaches 100m at $t = 11$ seconds (curve)
+- Runner B: starts at $t = 0$, accelerates · reaches 100m at $t = 11$ seconds (curve)
 
 (a) What was Runner A's speed?
 (b) Who was ahead at $t = 6$ seconds? Explain.
 (c) At what time did Runner B overtake Runner A?`,
   },
 
-  // ── MATHS PAPER 1: Foundation — Set B (Graph/Diagram Focus) ──
+  // ── MATHS PAPER 1: Foundation · Set B (Graph/Diagram Focus) ──
   {
     id: "maths-p1-foundation-b",
     subject: "maths",
     paper: "1",
     tier: "Foundation",
-    title: "Paper 1 Foundation — Set B",
+    title: "Paper 1 Foundation · Set B",
     description: "Non-Calculator. Graph & diagram focus: bar charts, pictograms, reading scales, basic coordinates.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 1 Foundation (Non-Calculator) — Set B (Graph & Diagram Focus)
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 1 Foundation (Non-Calculator) · Set B (Graph & Diagram Focus)
 
 **Time: 1 hour 30 minutes | Total: 80 marks**
 
@@ -1635,10 +1635,10 @@ The line graph shows the cost of electricity over 5 years:
     id: "econ-p2-c",
     subject: "economics",
     paper: "2",
-    title: "Paper 2 — Set C",
+    title: "Paper 2 · Set C",
     description: "Macroeconomic analysis focus: AD/AS diagrams, Phillips curve, multiplier, fiscal/monetary policy evaluation.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/2) — Paper 2: National and International Economy — Predicted Paper Set C
+    content: `# AQA A-Level Economics (7136/2) · Paper 2: National and International Economy · Predicted Paper Set C
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -1648,11 +1648,11 @@ Answer ALL questions in both Section A and Section B.
 
 ## Section A: Data Response (40 marks)
 
-**Extract A — UK fiscal stance and the inflation cycle**
+**Extract A · UK fiscal stance and the inflation cycle**
 
 In 2024 UK national debt exceeded 100% of GDP for the first time since the 1960s, at £2.7 trillion. Despite this, real public spending rose 3.5%. The OBR forecast GDP growth of 0.6% in 2024 rising to 1.4% in 2025. The Bank of England began cutting Bank Rate from 5.25% in late 2024 as headline CPI fell to 2.3%, although core inflation remained sticky at 3.6%. The pound depreciated 5% against the dollar.
 
-**Extract B — UK macroeconomic indicators, 2022–2025**
+**Extract B · UK macroeconomic indicators, 2022–2025**
 
 | Indicator                  | 2022 | 2023 | 2024 | 2025 (f) |
 |----------------------------|------|------|------|----------|
@@ -1663,7 +1663,7 @@ In 2024 UK national debt exceeded 100% of GDP for the first time since the 1960s
 | National debt (% GDP)      | 85   | 93   | 101  | 103      |
 | Bank Rate (%)              | 3.5  | 5.25 | 4.75 | 4.0      |
 
-**Extract C — Further commentary**
+**Extract C · Further commentary**
 
 Economists disagree on whether 2022–24 inflation was demand-pull (excess household savings of c. £200bn after the pandemic) or cost-push (gas prices, supply-chain disruption). By 2024 the supply-side pressures had eased, but demand remained weak owing to the lagged effect of monetary tightening.
 
@@ -1699,10 +1699,10 @@ Question 6 [25 marks]
     id: "econ-p1-c",
     subject: "economics",
     paper: "1",
-    title: "Paper 1 — Set C",
+    title: "Paper 1 · Set C",
     description: "Diagram & graph focus: supply/demand shifts, welfare analysis, elasticity diagrams, market structures.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/1) — Paper 1: Markets and Market Failure — Predicted Paper Set C
+    content: `# AQA A-Level Economics (7136/1) · Paper 1: Markets and Market Failure · Predicted Paper Set C
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -1712,11 +1712,11 @@ Answer ALL questions in both Section A and Section B.
 
 ## Section A: Data Response (40 marks)
 
-**Extract A — UK energy price cap and the household energy market**
+**Extract A · UK energy price cap and the household energy market**
 
 Following the 2022 wholesale gas price spike, the UK government introduced the Energy Price Guarantee, capping the average dual-fuel household bill at £2,500. From 2024 the cap is reset quarterly by Ofgem and fell to £1,568. Critics argue the cap dampens price signals to invest in efficiency; supporters say it shielded vulnerable households at a critical moment. Renewables generated 47% of UK electricity in 2024, up from 37% in 2019, but gas remains essential for baseload supply.
 
-**Extract B — UK energy market data, 2019–2024**
+**Extract B · UK energy market data, 2019–2024**
 
 | Year | Average annual bill (£) | Wholesale gas (p/therm) | Renewables share (%) | Fuel poverty (% of households) |
 |------|-------------------------|-------------------------|----------------------|--------------------------------|
@@ -1725,7 +1725,7 @@ Following the 2022 wholesale gas price spike, the UK government introduced the E
 | 2022 | 2,500 (capped)          | 200                     | 42                   | 19.8                           |
 | 2024 | 1,568 (capped)          | 68                      | 47                   | 14.5                           |
 
-**Extract C — Further commentary**
+**Extract C · Further commentary**
 
 Ofgem estimates that the price cap created an effective shortage at the peak of the crisis: at the capped price, quantity demanded exceeded the quantity suppliers were willing to supply at unsubsidised cost, requiring £40bn of taxpayer support to retailers. Income-based studies show the lowest decile spent 11% of disposable income on energy in 2022 versus 4% for the top decile.
 
@@ -1756,16 +1756,16 @@ Question 6 [25 marks]
 "Government failure is often worse than the market failure it tries to correct." Evaluate this statement with reference to UK price controls or subsidies.`,
   },
 
-  // ── MATHS PAPER 3: Foundation — Set A ──
+  // ── MATHS PAPER 3: Foundation · Set A ──
   {
     id: "maths-p3-foundation-a",
     subject: "maths",
     paper: "3",
     tier: "Foundation",
-    title: "Paper 3 Foundation — Set A",
+    title: "Paper 3 Foundation · Set A",
     description: "Calculator allowed. Real-life graphs, data handling, ratio, and basic geometry.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 3 Foundation (Calculator) — Predicted Paper Set A
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 3 Foundation (Calculator) · Predicted Paper Set A
 
 **Time: 1 hour 30 minutes | Total: 80 marks | Calculator ALLOWED**
 
@@ -1901,16 +1901,16 @@ Question 23 [4 marks]
 The diagram shows an L-shaped room. The main section is 8m × 5m. A smaller section of 3m × 2m extends from one corner. Calculate the total area of the room. Carpet costs £12.50 per m². Calculate the cost to carpet the room.`,
   },
 
-  // ── MATHS PAPER 1: Higher — Set C ──
+  // ── MATHS PAPER 1: Higher · Set C ──
   {
     id: "maths-p1-higher-c",
     subject: "maths",
     paper: "1",
     tier: "Higher",
-    title: "Paper 1 Higher — Set C",
+    title: "Paper 1 Higher · Set C",
     description: "Non-Calculator. Graph transformations, quadratic sketching, probability trees, algebraic proof.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 1 Higher (Non-Calculator) — Predicted Paper Set C
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 1 Higher (Non-Calculator) · Predicted Paper Set C
 
 **Time: 1 hour 30 minutes | Total: 80 marks**
 
@@ -2030,16 +2030,16 @@ $$\\text{pressure} = \\dfrac{\\text{force}}{\\text{area}}$$
 Work out the pressure on the floor due to the cylinder. Give your answer in newtons per cm². Show all your working.`,
   },
 
-  // ── MATHS PAPER 3: Higher — Set B ──
+  // ── MATHS PAPER 3: Higher · Set B ──
   {
     id: "maths-p3-higher-b",
     subject: "maths",
     paper: "3",
     tier: "Higher",
-    title: "Paper 3 Higher — Set B",
+    title: "Paper 3 Higher · Set B",
     description: "Calculator. Histograms, box plots, trigonometry, iteration, and real-life problem-solving.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 3 Higher (Calculator) — Predicted Paper Set B
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 3 Higher (Calculator) · Predicted Paper Set B
 
 **Time: 1 hour 30 minutes | Total: 80 marks | Calculator ALLOWED**
 
@@ -2119,7 +2119,7 @@ The real-life graph shows the depth of water in a swimming pool as it is being f
 - x-axis: Time (hours), 0 to 6
 - y-axis: Depth (m), 0 to 2.0
 - 0 to 2 hours: depth increases from 0 to 0.8 m (steep, linear)
-- 2 to 3 hours: depth stays at 0.8 m (horizontal — pump stopped)
+- 2 to 3 hours: depth stays at 0.8 m (horizontal · pump stopped)
 - 3 to 6 hours: depth increases from 0.8 to 2.0 m (linear, less steep than before)
 
 (a) Calculate the rate of filling in the first 2 hours.
@@ -2162,16 +2162,16 @@ Question 18 [4 marks]
 A geometric sequence has first term 5 and common ratio $\\dfrac{2}{3}$. Find the sum of the first 4 terms. Give your answer as a fraction.`,
   },
 
-  // ── MATHS PAPER 2: Foundation — Set B ──
+  // ── MATHS PAPER 2: Foundation · Set B ──
   {
     id: "maths-p2-foundation-b",
     subject: "maths",
     paper: "2",
     tier: "Foundation",
-    title: "Paper 2 Foundation — Set B",
+    title: "Paper 2 Foundation · Set B",
     description: "Calculator. Scatter graphs, pie charts, real-life problems, and basic statistics.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 2 Foundation (Calculator) — Set B
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 2 Foundation (Calculator) · Set B
 
 **Time: 1 hour 30 minutes | Total: 80 marks | Calculator ALLOWED**
 
@@ -2308,16 +2308,16 @@ Question 22 [4 marks]
 £5000 is invested in a savings account paying 1.8% compound interest per year. Calculate the total amount after 4 years. Give your answer to the nearest penny.`,
   },
 
-  // ── CHEMISTRY PAPER 1: Foundation — Set A ──
+  // ── CHEMISTRY PAPER 1: Foundation · Set A ──
   {
     id: "chem-p1-foundation-a",
     subject: "chemistry",
     paper: "1",
     tier: "Foundation",
-    title: "Chem Paper 1 Foundation — Set A",
+    title: "Chem Paper 1 Foundation · Set A",
     description: "Foundation tier. Atomic structure, bonding basics, simple calculations, chemical changes, energy.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462/F) — Paper 1 Foundation — Set A
+    content: `# AQA GCSE Chemistry (8462/F) · Paper 1 Foundation · Set A
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -2463,16 +2463,16 @@ Question 24 [3 marks]
 Explain why graphite can conduct electricity but diamond cannot. Both are forms of carbon.`,
   },
 
-  // ── CHEMISTRY PAPER 2: Foundation — Set A ──
+  // ── CHEMISTRY PAPER 2: Foundation · Set A ──
   {
     id: "chem-p2-foundation-a",
     subject: "chemistry",
     paper: "2",
     tier: "Foundation",
-    title: "Chem Paper 2 Foundation — Set A",
+    title: "Chem Paper 2 Foundation · Set A",
     description: "Foundation tier. Rates, organic basics, analysis, atmosphere, and resources.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462/F) — Paper 2 Foundation — Set A
+    content: `# AQA GCSE Chemistry (8462/F) · Paper 2 Foundation · Set A
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -2575,7 +2575,7 @@ What is a life cycle assessment (LCA)? Name three stages it considers.
 Question 18 [4 marks]
 The graph shows how the rate of reaction changes when a catalyst is added:
 
-**Graph description — mass of product vs time:**
+**Graph description · mass of product vs time:**
 - Without catalyst: curve rises slowly, reaches 3.5 g at 200 seconds
 - With catalyst: curve rises steeply, reaches 3.5 g at 80 seconds
 - Both curves level off at the same final mass of 3.5 g
@@ -2623,16 +2623,16 @@ Question 24 [3 marks]
 Describe two ways to reduce the use of resources. Explain why reducing waste is important.`,
   },
 
-  // ── CHEMISTRY PAPER 1: Higher — Set C ──
+  // ── CHEMISTRY PAPER 1: Higher · Set C ──
   {
     id: "chem-p1-higher-c",
     subject: "chemistry",
     paper: "1",
     tier: "Higher",
-    title: "Chem Paper 1 Higher — Set C",
+    title: "Chem Paper 1 Higher · Set C",
     description: "Higher tier. Moles, titrations, reaction profiles with catalysts, empirical formulae, and energy calculations.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462) — Paper 1 Higher — Set C (Calculations & Graph Focus)
+    content: `# AQA GCSE Chemistry (8462) · Paper 1 Higher · Set C (Calculations & Graph Focus)
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -2669,8 +2669,8 @@ The reaction profile below shows an endothermic reaction:
 
 Question 5 [4 marks]
 Draw dot-and-cross diagrams for:
-(a) Sodium chloride (NaCl) — show the electron transfer and charges on ions
-(b) Carbon dioxide (CO₂) — show only the outer shell electrons and shared pairs
+(a) Sodium chloride (NaCl) · show the electron transfer and charges on ions
+(b) Carbon dioxide (CO₂) · show only the outer shell electrons and shared pairs
 
 Question 6 [4 marks]
 A compound contains 40.0% calcium, 12.0% carbon, and 48.0% oxygen by mass. Calculate the empirical formula. (Ar: Ca = 40, C = 12, O = 16)
@@ -2682,7 +2682,7 @@ The graph shows how the rate of reaction changes with concentration:
 - x-axis: Concentration of acid (mol/dm³), 0 to 2.0
 - y-axis: Initial rate (cm³/s)
 - Data points: (0.2, 0.5), (0.5, 1.2), (0.8, 2.0), (1.0, 2.5), (1.5, 3.7), (2.0, 5.0)
-- The relationship appears directly proportional — a straight line through the origin
+- The relationship appears directly proportional · a straight line through the origin
 
 (a) Describe the relationship between concentration and rate.
 (b) Predict the initial rate at a concentration of 1.2 mol/dm³.
@@ -2806,16 +2806,16 @@ Question 20 [3 marks]
 Explain the trend in reactivity of Group 1 metals as you go down the group. Reference atomic structure in your answer.`,
   },
 
-  // ── CHEMISTRY PAPER 2: Higher — Set C ──
+  // ── CHEMISTRY PAPER 2: Higher · Set C ──
   {
     id: "chem-p2-higher-c",
     subject: "chemistry",
     paper: "2",
     tier: "Higher",
-    title: "Chem Paper 2 Higher — Set C",
+    title: "Chem Paper 2 Higher · Set C",
     description: "Higher tier. Organic chemistry, equilibrium, atmospheric data, rate calculations, and resource management.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462) — Paper 2 Higher — Set C (Organic & Environmental Focus)
+    content: `# AQA GCSE Chemistry (8462) · Paper 2 Higher · Set C (Organic & Environmental Focus)
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -2976,10 +2976,10 @@ Describe how metals can be extracted using phytomining or bioleaching. State one
     id: "econ-p3-b",
     subject: "economics",
     paper: "3",
-    title: "Paper 3 — Set B",
+    title: "Paper 3 · Set B",
     description: "Synoptic. MCQ + Case study on UK labour market with diagram-based analysis.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/3) — Paper 3: Economic Principles and Issues — Predicted Paper Set B
+    content: `# AQA A-Level Economics (7136/3) · Paper 3: Economic Principles and Issues · Predicted Paper Set B
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -3203,7 +3203,7 @@ D. Profit equal to marginal cost
 
 ## Section B: Case Study (50 marks)
 
-**Case Study — The UK labour market**
+**Case Study · The UK labour market**
 
 Net migration from the EU fell from +250,000 per year before Brexit to +50,000 by 2023, contributing to vacancies in hospitality, agriculture and social care. Non-EU net migration rose to 600,000 in 2023 under an expanded Skilled Worker visa. The National Living Wage rose 20% to £11.44 by April 2024. Labour-force participation among 50–64 year-olds fell from 73% to 68% between 2019 and 2023, partly because of long-term sickness. The Treasury estimates this added inactivity costs the economy around £16bn per year in lost output.
 
@@ -3226,17 +3226,17 @@ Question 33 [25 marks]
 "A higher National Living Wage does more harm than good for the UK economy." Evaluate this statement using the case study and your own economic knowledge.`,
   },
 
-  // (Removed Set D entries — AQA Economics library is locked to Sets A/B/C per paper.)
+  // (Removed Set D entries · AQA Economics library is locked to Sets A/B/C per paper.)
 
   // ── ECONOMICS PAPER 3: Set C ──
   {
     id: "econ-p3-c",
     subject: "economics",
     paper: "3",
-    title: "Paper 3 — Set C",
+    title: "Paper 3 · Set C",
     description: "Synoptic. MCQ + Case study on inequality, housing, and progressive taxation.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/3) — Paper 3: Economic Principles and Issues — Predicted Paper Set C
+    content: `# AQA A-Level Economics (7136/3) · Paper 3: Economic Principles and Issues · Predicted Paper Set C
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -3460,7 +3460,7 @@ D. A fall in interest rates
 
 ## Section B: Case Study (50 marks)
 
-**Case Study — Income inequality and the UK tax system**
+**Case Study · Income inequality and the UK tax system**
 
 The UK Gini coefficient rose from 0.25 in 1979 to 0.36 in 2024. The top decile of earners take 28% of post-tax income; the bottom decile take 3%. Wealth inequality is sharper: the top 10% hold 43% of total wealth. Direct income tax bands are progressive, but indirect taxes (VAT, fuel and alcohol duty) are regressive, taking 27% of disposable income from the bottom quintile against 14% from the top. Universal Credit's 55p taper is criticised for creating a poverty trap.
 
@@ -3493,6 +3493,6 @@ import { ocrPredictedPapers } from "./ocrPredictedPapers";
 import { gcsePredictedPapers } from "./gcsePredictedPapers";
 import { igcsePredictedPapers } from "./igcsePredictedPapers";
 import { multiBoardPredictedPapers } from "./multiBoardPredictedPapers";
-// economicsPredictedPapersExtra intentionally not spread — AQA Economics
+// economicsPredictedPapersExtra intentionally not spread · AQA Economics
 // predicted-paper library is locked to 9 papers (Paper 1/2/3 × Sets A/B/C).
 predictedPapersLibrary.push(...chemistryPredictedPapers, ...mathsPredictedPapersExtra, ...chemistryPredictedPapersExtra, ...edexcelAPredictedPapers, ...edexcelBPredictedPapers, ...cambridgePredictedPapers, ...ocrPredictedPapers, ...gcsePredictedPapers, ...igcsePredictedPapers, ...multiBoardPredictedPapers);

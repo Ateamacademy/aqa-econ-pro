@@ -102,7 +102,7 @@ Fiscal policy has remained restrictive, with HM Treasury maintaining tight depar
         /growth|lras|productivity/i.test(focus) ? "adas-equilibrium.svg" :
         /trade|export|exchange|globalisation/i.test(focus) ? "caie-j-curve.svg" :
         "ad-as-g.svg",
-      figureCaption: `Figure — AD/AS analysis of ${focus}`,
+      figureCaption: `Figure · AD/AS analysis of ${focus}`,
     },
     q4: `Extract ${labels[2]} (lines 1–3) states: "${focus} cannot be effectively controlled by interest rates alone". Using the data in the extracts and your knowledge of economics, evaluate the view that monetary policy is the most effective tool for managing ${focus} in the UK.`,
   };
@@ -138,7 +138,7 @@ function buildSet(v: VariantSpec): AqaPaper2Set {
           /supply.?side|productivity|skills|growth|lras|carbon|green/i.test(topic) ? "adas-equilibrium.svg" :
           /protectionism|trade|tariff|liberalisation/i.test(topic) ? "quota.svg" :
           "ad-as-g.svg",
-        figureCaption: `Figure — Reference diagram for ${topic}`,
+        figureCaption: `Figure · Reference diagram for ${topic}`,
       },
     })),
   };
@@ -208,13 +208,13 @@ ${lineNumber(ext.body)}
 function buildPaper(set: AqaPaper2Set): string {
   const c1 = set.c1;
   const [e1] = set.essays;
-  return `# AQA A-Level Economics (7136) — Paper 2: National and International Economy — ${set.setLabel}
+  return `# AQA A-Level Economics (7136) · Paper 2: National and International Economy · ${set.setLabel}
 
 **Time: 2 hours | Total: 80 marks**
 
 ---
 
-## Section A — Data response (40 marks)
+## Section A · Data response (40 marks)
 
 ### ${c1.title}
 
@@ -239,7 +239,7 @@ ${c1.q4}
 
 ---
 
-## Section B — Essay (40 marks)
+## Section B · Essay (40 marks)
 
 You are advised to spend 1 hour on this section. Answer BOTH parts.
 
@@ -256,10 +256,10 @@ function buildMarkScheme(set: AqaPaper2Set): string {
   const c1 = set.c1;
   const [e1] = set.essays;
   const sections: string[] = [
-    `# AQA A-Level Economics (7136/2) — Mark Scheme — ${set.setLabel}`,
+    `# AQA A-Level Economics (7136/2) · Mark Scheme · ${set.setLabel}`,
     `**Total: 80 marks** | Section A: data response (40 marks, Q01–Q04). Section B: essay (40 marks, Q05–Q06).`,
     `---`,
-    `## Section A — Data response (Q01–Q04)`,
+    `## Section A · Data response (Q01–Q04)`,
     renderPointMark({
       questionLabel: "0\u20091",
       totalMarks: 2,
@@ -302,7 +302,7 @@ function buildMarkScheme(set: AqaPaper2Set): string {
       ],
     }),
     `---`,
-    `## Section B — Essay (Q05–Q06)`,
+    `## Section B · Essay (Q05–Q06)`,
     renderLevelMark({
       questionLabel: "0\u20095",
       totalMarks: 15,

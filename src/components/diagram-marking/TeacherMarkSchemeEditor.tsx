@@ -97,7 +97,7 @@ export function TeacherMarkSchemeEditor() {
       };
 
       if (entry.id) {
-        // Existing entry — handled by admin function
+        // Existing entry · handled by admin function
         toast.info(`Update for "${entry.component_name}" queued`);
       } else {
         toast.info(`Insert for "${entry.component_name}" queued`);

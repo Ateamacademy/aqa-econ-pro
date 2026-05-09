@@ -19,7 +19,7 @@
     </marker>
   </defs>
 
-  <text x="350" y="30" text-anchor="middle" class="ttl">UK Bread Market — Decrease in Supply</text>
+  <text x="350" y="30" text-anchor="middle" class="ttl">UK Bread Market · Decrease in Supply</text>
   <text x="350" y="50" text-anchor="middle" class="sub">Rising electricity and gas prices raise bakers' costs of production: Supply shifts left (S → S1)</text>
 
   <!-- Axes -->
@@ -61,6 +61,6 @@
   <text x="290" y="378" class="lbl" fill="#7f0000">S shifts left</text>
 
   <!-- Caption -->
-  <text x="90"  y="495" class="sub">Higher energy bills raise bakers' marginal costs — at every price, less bread is profitable to produce.</text>
+  <text x="90"  y="495" class="sub">Higher energy bills raise bakers' marginal costs · at every price, less bread is profitable to produce.</text>
   <text x="90"  y="512" class="sub">Equilibrium moves from (P1, Q1) to (P2, Q2): the loaf price rises and the quantity traded falls.</text>
 </svg>

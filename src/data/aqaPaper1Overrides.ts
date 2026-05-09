@@ -22,7 +22,7 @@ function figureMd(diagram?: DiagramSpec): string {
 export interface AqaPaper1OverrideSet {
   setLabel: string;
 
-  /** Section A — Context 1 */
+  /** Section A · Context 1 */
   c1: {
     title: string;
     extractA: string; // Table/Figure with source
@@ -34,7 +34,7 @@ export interface AqaPaper1OverrideSet {
     q04: string;
   };
 
-  /** Section A — Context 2 */
+  /** Section A · Context 2 */
   c2: {
     title: string;
     extractD: string;
@@ -46,7 +46,7 @@ export interface AqaPaper1OverrideSet {
     q08: string;
   };
 
-  /** Section B — three essays, each with 15-mark + 25-mark parts */
+  /** Section B · three essays, each with 15-mark + 25-mark parts */
   essays: Array<{
     stimulus: string; // 40-70 word current event hook
     explain: string;
@@ -99,7 +99,7 @@ Critics argue that the deeper cause is rapid expansion of student numbers withou
         alternatives: ["A diagram showing inelastic supply with a price rise after a demand shift"],
         requiredLabels: ["Price (rent)", "Quantity of bed spaces", "D₁", "D₂", "S (inelastic)", "P₁", "P₂", "Q₁", "Q₂"],
         figureKey: "sd-housing.svg",
-        figureCaption: "Figure 2 — Demand shift against inelastic short-run supply (PBSA market)",
+        figureCaption: "Figure 2 · Demand shift against inelastic short-run supply (PBSA market)",
       },
       q04: "Extract C (lines 1–3) states that 'A maximum rent can help keep the cost of student accommodation lower than it would otherwise be, but risks some landlords withdrawing from the market'. Using the data in the extracts and your knowledge of economics, discuss the advantages and disadvantages of policies the government might introduce to improve the market for student accommodation.",
     },
@@ -129,7 +129,7 @@ Citizens Advice highlighted that 13.3% of low-income households reported missing
 
 Critics question whether subsidies are value for money. Resolution Foundation analysis warned that broad fare caps can be poorly targeted and may benefit higher-income commuters as well as the low-paid. Government failure may also arise if subsidies entrench inefficient operators and discourage innovation.
 
-Alternative policies — such as targeted concessionary fares, road pricing, or capital investment in segregated bus lanes — may achieve similar objectives with smaller fiscal cost.`,
+Alternative policies · such as targeted concessionary fares, road pricing, or capital investment in segregated bus lanes · may achieve similar objectives with smaller fiscal cost.`,
         source: "Resolution Foundation, 2024",
       },
       q05: "Using the data in Extract D, calculate the percentage increase or decrease in bus passenger journeys in Greater Manchester between 2019 and 2024. Give your answer to one decimal place and state clearly whether the change is an increase or a decrease.",
@@ -142,7 +142,7 @@ Alternative policies — such as targeted concessionary fares, road pricing, or 
         alternatives: ["A market diagram with a subsidy lowering price and increasing quantity"],
         requiredLabels: ["Price/Cost/Benefit", "Quantity of bus journeys", "MPC=MSC", "MPB", "MSB", "Q₁", "Q*", "Welfare gain"],
         figureKey: "pos-externality-welfare.svg",
-        figureCaption: "Figure 3 — Positive consumption externality with corrective subsidy",
+        figureCaption: "Figure 3 · Positive consumption externality with corrective subsidy",
       },
       q08: "Extract F (lines 4–6) states: 'broad fare caps can be poorly targeted and may benefit higher-income commuters as well as the low-paid'. Using the data in the extracts and your knowledge of economics, evaluate the view that subsidies for public transport are the most effective way to tackle urban congestion.",
     },
@@ -166,7 +166,7 @@ Alternative policies — such as targeted concessionary fares, road pricing, or 
           primary: "A competitive labour market with W_min above the equilibrium wage W*, showing excess supply of labour (unemployment) between the quantity demanded and supplied at the minimum wage.",
           requiredLabels: ["Wage (W)", "Quantity of labour (L)", "S_L", "D_L", "W_min", "W*", "Excess supply (unemployment)"],
           figureKey: "labour-union.svg",
-          figureCaption: "Figure 4 — Minimum wage above competitive equilibrium",
+          figureCaption: "Figure 4 · Minimum wage above competitive equilibrium",
         },
       },
       {
@@ -188,7 +188,7 @@ Alternative policies — such as targeted concessionary fares, road pricing, or 
           primary: "A negative consumption externality / demerit good diagram with MPB above MSB and over-consumption at the free-market equilibrium; an indirect tax shifts S to S+tax to reduce quantity to the socially optimal level.",
           requiredLabels: ["Price", "Quantity", "S=MPC", "S+tax", "MPB=D", "MSB", "Q₁", "Q*", "Welfare loss"],
           figureKey: "indirect-tax.svg",
-          figureCaption: "Figure 5 — Indirect tax on a demerit good (SDIL)",
+          figureCaption: "Figure 5 · Indirect tax on a demerit good (SDIL)",
         },
       },
       {
@@ -210,7 +210,7 @@ Alternative policies — such as targeted concessionary fares, road pricing, or 
           primary: "A negative production externality diagram with MSC above MPC; the welfare loss triangle exists at the free-market equilibrium where Q₁ > Q*. Permits / tax internalise the externality, shifting MPC up to MSC.",
           requiredLabels: ["Price", "Quantity", "MPC", "MSC", "D=MPB=MSB", "Q₁", "Q*", "Welfare loss"],
           figureKey: "neg-externality-welfare.svg",
-          figureCaption: "Figure 6 — Negative production externality and welfare loss",
+          figureCaption: "Figure 6 · Negative production externality and welfare loss",
         },
       },
     ],
@@ -267,7 +267,7 @@ interface VariantSpec {
 }
 
 /**
- * Variant builder — creates structurally complete sets with topic-flavoured
+ * Variant builder · creates structurally complete sets with topic-flavoured
  * extracts. Keeps individual override files small while preserving authentic
  * AQA structure (two contexts, three essays, level-based MS).
  */
@@ -298,7 +298,7 @@ Smaller firms reported that 13.3% of new entrants exited within two years, citin
         subtitle: `Policy options for ${v.micro1.topic}`,
         body: `Policymakers face a difficult balance. Direct regulation through the CMA could limit ${v.micro1.focus}, but risks deterring investment. Some economists argue that price caps would protect consumers in the short run but blunt incentives to innovate.
 
-The Institute for Fiscal Studies has suggested that competition could be improved through structural remedies — splitting up dominant firms, mandating data sharing, or lowering switching costs. The Bank of England has warned that excessive intervention could reduce dynamic efficiency in the long run.
+The Institute for Fiscal Studies has suggested that competition could be improved through structural remedies · splitting up dominant firms, mandating data sharing, or lowering switching costs. The Bank of England has warned that excessive intervention could reduce dynamic efficiency in the long run.
 
 Alternative approaches include encouraging market entry through subsidies for new entrants, public procurement rules, and stronger consumer protection standards.`,
         source: "Institute for Fiscal Studies, 2024",
@@ -312,7 +312,7 @@ Alternative approaches include encouraging market entry through subsidies for ne
         primary: `A diagram appropriate to ${v.micro1.focus} (e.g. monopoly diagram showing P>MC welfare loss, or oligopoly kinked demand) with clearly labelled equilibrium and welfare loss triangle.`,
         requiredLabels: ["Price/Cost", "Quantity", "AC", "MC", "AR (D)", "MR", "Pₘ", "Qₘ", "Welfare loss"],
         figureKey: /oligopoly|kinked/i.test(v.micro1.focus) ? "caie-kinked-demand.svg" : "monopoly-profit.svg",
-        figureCaption: `Figure — ${v.micro1.focus} (welfare analysis)`,
+        figureCaption: `Figure · ${v.micro1.focus} (welfare analysis)`,
       },
       q04: `Extract C (lines 1–3) discusses regulation, price caps, and structural remedies. Using the data in the extracts and your knowledge of economics, evaluate the view that government intervention is the most effective way to address ${v.micro1.focus} in ${v.micro1.topic}.`,
     },
@@ -354,7 +354,7 @@ Internationally, the OECD has highlighted that countries with stronger competiti
         primary: `A diagram illustrating ${v.micro2.focus} (e.g. natural monopoly LRAC falling through MES, or contestability with hit-and-run entry).`,
         requiredLabels: ["Price/Cost", "Quantity", "LRAC", "MC", "AR", "MR", "Equilibrium points"],
         figureKey: /contestab/i.test(v.micro2.focus) ? "contestable.svg" : "natural-monopoly.svg",
-        figureCaption: `Figure — ${v.micro2.focus}`,
+        figureCaption: `Figure · ${v.micro2.focus}`,
       },
       q08: `Extract F (lines 1–3) presents arguments for and against intervention. Using the data in the extracts and your knowledge of economics, assess the view that government regulation always improves outcomes in markets characterised by ${v.micro2.focus}.`,
     },
@@ -384,7 +384,7 @@ Internationally, the OECD has highlighted that countries with stronger competiti
           /rent|max(imum)?\s*price|ceiling/i.test(topic) ? "sd-housing.svg" :
           /min(imum)?\s*price|alcohol/i.test(topic) ? "indirect-tax.svg" :
           "indirect-tax.svg",
-        figureCaption: `Figure — Reference diagram for ${topic}`,
+        figureCaption: `Figure · Reference diagram for ${topic}`,
       },
     })) as AqaPaper1OverrideSet["essays"],
   };
@@ -420,13 +420,13 @@ function buildPaper(set: AqaPaper1OverrideSet): string {
   const c1 = set.c1;
   const [e1] = set.essays;
 
-  return `# AQA A-Level Economics (7136) — Paper 1: Markets and Market Failure — ${set.setLabel}
+  return `# AQA A-Level Economics (7136) · Paper 1: Markets and Market Failure · ${set.setLabel}
 
 **Time: 2 hours | Total: 80 marks**
 
 ---
 
-## Section A — Data response (40 marks)
+## Section A · Data response (40 marks)
 
 ### ${c1.title}
 
@@ -453,7 +453,7 @@ ${c1.q04}
 
 ---
 
-## Section B — Essay (40 marks)
+## Section B · Essay (40 marks)
 
 You are advised to spend 1 hour on this section. Answer BOTH parts.
 
@@ -470,10 +470,10 @@ function buildMarkScheme(set: AqaPaper1OverrideSet): string {
   const c1 = set.c1;
   const [e1] = set.essays;
   const sections: string[] = [
-    `# AQA A-Level Economics (7136/1) — Mark Scheme — ${set.setLabel}`,
+    `# AQA A-Level Economics (7136/1) · Mark Scheme · ${set.setLabel}`,
     `**Total: 80 marks** | Section A: data response (40 marks, Q01–Q04). Section B: essay (40 marks, Q05–Q06).`,
     `---`,
-    `## Section A — Data response (Q01–Q04)`,
+    `## Section A · Data response (Q01–Q04)`,
     renderPointMark({
       questionLabel: "0\u20091",
       totalMarks: 2,
@@ -516,7 +516,7 @@ function buildMarkScheme(set: AqaPaper1OverrideSet): string {
       ],
     }),
     `---`,
-    `## Section B — Essay (Q05–Q06)`,
+    `## Section B · Essay (Q05–Q06)`,
     renderLevelMark({
       questionLabel: "0\u20095",
       totalMarks: 15,

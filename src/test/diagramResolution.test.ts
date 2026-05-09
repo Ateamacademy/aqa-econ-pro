@@ -23,11 +23,11 @@ interface TopicTestSpec {
 
 const AQA_ALEVEL_SPECS: TopicTestSpec[] = [
   {
-    topicName: "Supply & Demand — Shift in Demand",
+    topicName: "Supply & Demand · Shift in Demand",
     primaryFigure: "demand_shift_dual",
     allowedFigures: ["demand_shift_dual", "demand_increase", "demand_decrease"],
     testInputs: [
-      { input: "Supply & Demand — Shift in Demand", expectedFigure: "demand_shift_dual" },
+      { input: "Supply & Demand · Shift in Demand", expectedFigure: "demand_shift_dual" },
       { input: "shift in demand", expectedFigure: "demand_shift_dual" },
       { input: "demand shift", expectedFigure: "demand_shift_dual" },
       { input: "Demand shifts right", shiftHint: "Demand shifts right", expectedFigure: "demand_shift_dual" },
@@ -37,11 +37,11 @@ const AQA_ALEVEL_SPECS: TopicTestSpec[] = [
     ],
   },
   {
-    topicName: "Supply & Demand — Shift in Supply",
+    topicName: "Supply & Demand · Shift in Supply",
     primaryFigure: "supply_shift_dual",
     allowedFigures: ["supply_shift_dual", "supply_increase", "supply_decrease"],
     testInputs: [
-      { input: "Supply & Demand — Shift in Supply", expectedFigure: "supply_shift_dual" },
+      { input: "Supply & Demand · Shift in Supply", expectedFigure: "supply_shift_dual" },
       { input: "shift in supply", expectedFigure: "supply_shift_dual" },
       { input: "supply shift", expectedFigure: "supply_shift_dual" },
       { input: "Supply shifts right", shiftHint: "Supply shifts right", expectedFigure: "supply_shift_dual" },
@@ -128,11 +128,11 @@ const AQA_ALEVEL_SPECS: TopicTestSpec[] = [
     ],
   },
   {
-    topicName: "AD/AS — Demand-Side Shock",
+    topicName: "AD/AS · Demand-Side Shock",
     primaryFigure: "demand_side_shock",
     allowedFigures: ["demand_side_shock", "ad_increase", "ad_decrease"],
     testInputs: [
-      { input: "AD/AS — Demand-Side Shock", expectedFigure: "demand_side_shock" },
+      { input: "AD/AS · Demand-Side Shock", expectedFigure: "demand_side_shock" },
       { input: "demand side shock", expectedFigure: "demand_side_shock" },
       { input: "demand pull inflation", expectedFigure: "ad_increase" },
       { input: "aggregate demand increase", expectedFigure: "ad_increase" },
@@ -140,11 +140,11 @@ const AQA_ALEVEL_SPECS: TopicTestSpec[] = [
     ],
   },
   {
-    topicName: "AD/AS — Supply-Side Shock",
+    topicName: "AD/AS · Supply-Side Shock",
     primaryFigure: "sras_decrease",
     allowedFigures: ["sras_decrease", "sras_increase"],
     testInputs: [
-      { input: "AD/AS — Supply-Side Shock", expectedFigure: "sras_decrease" },
+      { input: "AD/AS · Supply-Side Shock", expectedFigure: "sras_decrease" },
       { input: "cost push inflation", expectedFigure: "sras_decrease" },
       { input: "supply side shock", expectedFigure: "sras_decrease" },
       { input: "aggregate supply decrease", expectedFigure: "sras_decrease" },
@@ -153,11 +153,11 @@ const AQA_ALEVEL_SPECS: TopicTestSpec[] = [
     ],
   },
   {
-    topicName: "AD/AS — Economic Growth (LRAS Shift)",
+    topicName: "AD/AS · Economic Growth (LRAS Shift)",
     primaryFigure: "lras_shift",
     allowedFigures: ["lras_shift", "ppf_growth"],
     testInputs: [
-      { input: "AD/AS — Economic Growth (LRAS Shift)", expectedFigure: "lras_shift" },
+      { input: "AD/AS · Economic Growth (LRAS Shift)", expectedFigure: "lras_shift" },
       { input: "LRAS shift", expectedFigure: "lras_shift" },
       { input: "long run growth", expectedFigure: "lras_shift" },
       { input: "productive capacity", expectedFigure: "lras_shift" },
@@ -165,11 +165,11 @@ const AQA_ALEVEL_SPECS: TopicTestSpec[] = [
     ],
   },
   {
-    topicName: "Keynesian AS — Spare Capacity vs Full Employment",
+    topicName: "Keynesian AS · Spare Capacity vs Full Employment",
     primaryFigure: "keynesian_as",
     allowedFigures: ["keynesian_as"],
     testInputs: [
-      { input: "Keynesian AS — Spare Capacity vs Full Employment", expectedFigure: "keynesian_as" },
+      { input: "Keynesian AS · Spare Capacity vs Full Employment", expectedFigure: "keynesian_as" },
       { input: "keynesian", expectedFigure: "keynesian_as" },
       { input: "spare capacity", expectedFigure: "keynesian_as" },
       { input: "keynesian aggregate supply", expectedFigure: "keynesian_as" },
@@ -177,11 +177,11 @@ const AQA_ALEVEL_SPECS: TopicTestSpec[] = [
     ],
   },
   {
-    topicName: "Labour Market — Wage Determination",
+    topicName: "Labour Market · Wage Determination",
     primaryFigure: "labour_market",
     allowedFigures: ["labour_market"],
     testInputs: [
-      { input: "Labour Market — Wage Determination", expectedFigure: "labour_market" },
+      { input: "Labour Market · Wage Determination", expectedFigure: "labour_market" },
       { input: "labour market", expectedFigure: "labour_market" },
       { input: "wage determination", expectedFigure: "labour_market" },
       { input: "labour-market", expectedFigure: "labour_market" },
@@ -191,11 +191,11 @@ const AQA_ALEVEL_SPECS: TopicTestSpec[] = [
     ],
   },
   {
-    topicName: "Monopoly — Profit Maximisation (MC=MR)",
+    topicName: "Monopoly · Profit Maximisation (MC=MR)",
     primaryFigure: "monopoly",
     allowedFigures: ["monopoly"],
     testInputs: [
-      { input: "Monopoly — Profit Maximisation (MC=MR)", expectedFigure: "monopoly" },
+      { input: "Monopoly · Profit Maximisation (MC=MR)", expectedFigure: "monopoly" },
       { input: "monopoly", expectedFigure: "monopoly" },
       { input: "profit maximisation", expectedFigure: "monopoly" },
       { input: "monopoly profit", expectedFigure: "monopoly" },
@@ -203,11 +203,11 @@ const AQA_ALEVEL_SPECS: TopicTestSpec[] = [
     ],
   },
   {
-    topicName: "Perfect Competition — Short Run & Long Run",
+    topicName: "Perfect Competition · Short Run & Long Run",
     primaryFigure: "perfect_competition",
     allowedFigures: ["perfect_competition"],
     testInputs: [
-      { input: "Perfect Competition — Short Run & Long Run", expectedFigure: "perfect_competition" },
+      { input: "Perfect Competition · Short Run & Long Run", expectedFigure: "perfect_competition" },
       { input: "perfect competition", expectedFigure: "perfect_competition" },
       { input: "perfectly competitive", expectedFigure: "perfect_competition" },
       { input: "perfect-competition", expectedFigure: "perfect_competition" },
@@ -217,7 +217,7 @@ const AQA_ALEVEL_SPECS: TopicTestSpec[] = [
 
 // ─── Individual-level topic-by-topic testing ───
 
-describe("AQA A-Level Diagram Resolution — Individual Topic Testing", () => {
+describe("AQA A-Level Diagram Resolution · Individual Topic Testing", () => {
   for (const spec of AQA_ALEVEL_SPECS) {
     describe(`Topic: ${spec.topicName}`, () => {
       it(`primary resolution: "${spec.topicName}" → ${spec.primaryFigure}`, () => {
@@ -250,7 +250,7 @@ describe("AQA A-Level Diagram Resolution — Individual Topic Testing", () => {
 });
 
 // ─── Deterministic consistency test ───
-describe("Deterministic consistency — repeated runs produce identical results", () => {
+describe("Deterministic consistency · repeated runs produce identical results", () => {
   for (const spec of AQA_ALEVEL_SPECS) {
     it(`${spec.topicName} produces consistent results across 3 runs`, () => {
       for (const testCase of spec.testInputs) {
@@ -265,7 +265,7 @@ describe("Deterministic consistency — repeated runs produce identical results"
 });
 
 // ─── Cross-topic isolation test ───
-describe("Cross-topic isolation — no figure leaks between topics", () => {
+describe("Cross-topic isolation · no figure leaks between topics", () => {
   // Build a map of topic → exclusive figures (figures only valid for that topic)
   const topicFigureBank = new Map<string, Set<DiagramType>>();
   for (const spec of AQA_ALEVEL_SPECS) {

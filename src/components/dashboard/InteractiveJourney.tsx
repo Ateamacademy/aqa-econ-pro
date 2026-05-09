@@ -45,7 +45,7 @@ const STAGE_DESCRIPTIONS: Record<JourneyStage, string> = {
   1: "Foundations are forming. Start tackling longer-form questions and submit your first complete paper to calibrate where you stand.",
   2: "You're in the productive zone. Layer in predicted papers and structured mark-scheme review to convert effort into measurable score gains.",
   3: "Within striking distance of the top grades. Focus on evaluation depth, supported conclusions, and timed practice under exam conditions.",
-  4: "You're operating at A*-grade. The job now is consistency — maintain practice volume and refine the weakest 10%.",
+  4: "You're operating at A*-grade. The job now is consistency · maintain practice volume and refine the weakest 10%.",
 };
 
 export default function InteractiveJourney({ state }: Props) {
@@ -69,7 +69,7 @@ export default function InteractiveJourney({ state }: Props) {
   const range = STAGE_RANGES[openStage];
 
   const projectionLine = useMemo(() => {
-    if (state.readinessScore.stage >= 4) return "You've reached Peak Mastery — keep practising to consolidate.";
+    if (state.readinessScore.stage >= 4) return "You've reached Peak Mastery · keep practising to consolidate.";
     if (state.weeklyReadinessGain <= 0 && state.weeksAtCurrentStage >= 2) {
       return `You've been steady at ${state.readinessScore.stageName} for ${state.weeksAtCurrentStage} week${state.weeksAtCurrentStage === 1 ? "" : "s"}. Try a fresh predicted paper to start moving.`;
     }
@@ -87,7 +87,7 @@ export default function InteractiveJourney({ state }: Props) {
           <p className="text-[11px] text-muted-foreground mt-0.5">Tap a camp to see what unlocks the next stage.</p>
         </div>
         <span className="text-[10px] font-mono text-primary bg-primary/10 px-2 py-1 rounded-full whitespace-nowrap">
-          {state.readinessScore.value}% — {state.readinessScore.stageName}
+          {state.readinessScore.value}% · {state.readinessScore.stageName}
         </span>
       </div>
 

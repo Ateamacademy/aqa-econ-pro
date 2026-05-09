@@ -1,7 +1,7 @@
 /**
- * AQA A-Level Economics (7136) — published grade boundaries.
+ * AQA A-Level Economics (7136) · published grade boundaries.
  *
- * Only verified years are populated. Unverified years are `null` —
+ * Only verified years are populated. Unverified years are `null` ·
  * NEVER estimate. The marking report falls back to the most recent
  * verified series when displaying pro-rata guidance.
  */
@@ -23,7 +23,7 @@ export const AQA_GRADE_BOUNDARIES: Record<
   Record<AqaSeries, AqaBoundarySet | null>
 > = {
   "7136": {
-    // Verified from AQA Grade Boundary Report — A-Level June 2024 (full qualification, /240).
+    // Verified from AQA Grade Boundary Report · A-Level June 2024 (full qualification, /240).
     "summer-2024": {
       "A*": 189,
       A: 161,

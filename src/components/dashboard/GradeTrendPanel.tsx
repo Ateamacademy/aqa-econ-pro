@@ -95,7 +95,7 @@ export default function GradeTrendPanel({ state }: Props) {
 
       <p className="text-[10px] text-muted-foreground mt-3 italic leading-relaxed">
         Boundaries shown are per-paper pro-rata from Summer 2024 full-qualification boundaries (A* 189, A 161, B 134,
-        C 107, D 81, E 55 — out of 240). Indicative only.
+        C 107, D 81, E 55 · out of 240). Indicative only.
       </p>
     </div>
   );

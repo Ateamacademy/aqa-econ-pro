@@ -46,8 +46,8 @@ export default function MonopolisticCompetitionDiagram() {
 
   const caption =
     mode === "short-run"
-      ? "Short run: the firm sets MC = MR at Q₁, charges P₁ from AR. Because P₁ > AC₁, the firm earns supernormal profit (shaded rectangle). This attracts entrants — switch to Long run."
-      : "Long run: entry shifts AR leftward until AR is tangent to AC at Q₂. P₂ = AC(Q₂), so the firm earns only normal profit. Because Q₂ sits left of AC min, the firm produces below efficient scale — this gap is excess capacity.";
+      ? "Short run: the firm sets MC = MR at Q₁, charges P₁ from AR. Because P₁ > AC₁, the firm earns supernormal profit (shaded rectangle). This attracts entrants · switch to Long run."
+      : "Long run: entry shifts AR leftward until AR is tangent to AC at Q₂. P₂ = AC(Q₂), so the firm earns only normal profit. Because Q₂ sits left of AC min, the firm produces below efficient scale · this gap is excess capacity.";
 
   useEffect(() => {
     if (!isClickDebugEnabled) return;

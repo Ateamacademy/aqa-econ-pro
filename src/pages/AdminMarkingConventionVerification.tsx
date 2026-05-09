@@ -1,10 +1,10 @@
 /**
  * Admin: Non-AQA marking convention verification.
  *
- * Lists the 11 non-AQA boards (AQA A-Level is intentionally absent — it was
+ * Lists the 11 non-AQA boards (AQA A-Level is intentionally absent · it was
  * verified previously and is excluded from this refinement). Per board:
  *   • Source spec reference
- *   • verifiedByAdmin status (display only — toggling persists in
+ *   • verifiedByAdmin status (display only · toggling persists in
  *     localStorage as a quick admin override; production changes are made
  *     by editing the board's marking-convention.ts file)
  *   • Mark-band / per-skill summary

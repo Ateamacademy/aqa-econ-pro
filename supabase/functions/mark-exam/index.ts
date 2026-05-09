@@ -30,7 +30,7 @@ serve(async (req) => {
     if (!response.ok) {
       const status = response.status;
       if (status === 429) {
-        return new Response(JSON.stringify({ error: "Rate limited — please try again in a moment." }), {
+        return new Response(JSON.stringify({ error: "Rate limited · please try again in a moment." }), {
           status: 429,
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         });

@@ -1,5 +1,5 @@
 /**
- * Predefined SVG Economics Diagram Templates — Premium Polished Edition
+ * Predefined SVG Economics Diagram Templates · Premium Polished Edition
  * 
  * All curves are clipped to the plot area so nothing extends beyond axes.
  * Equilibrium points are computed from actual line intersections (not hardcoded).
@@ -210,7 +210,7 @@ function CurvePath({ d, color, dashed, width = 2.5, glow, gradientId }: {
   );
 }
 
-/** SVG layout constants — single source of truth */
+/** SVG layout constants · single source of truth */
 const SVG_W = 700;
 const SVG_H = 500;
 const SVG_PAD = 60; // minimum padding on all sides
@@ -395,7 +395,7 @@ function ShiftArrow({ x1, y1, x2, y2, color }: { x1: number; y1: number; x2: num
 /* ══════════════════════ DIAGRAM CONFIGS ══════════════════════ */
 
 /**
- * Supply/Demand base — equilibrium computed from actual line intersections.
+ * Supply/Demand base · equilibrium computed from actual line intersections.
  * 
  * Demand: top-left → bottom-right (downward sloping)
  * Supply: bottom-left → top-right (upward sloping)
@@ -407,7 +407,7 @@ const supplyDemandBase = (p: DrawParams, shiftCurve?: "demand" | "supply", shift
   const pad = 10;
   const offset = shiftDir === "right" ? 50 : shiftDir === "left" ? -50 : 0;
 
-  // Line endpoints — demand: top-left to bottom-right; supply: bottom-left to top-right
+  // Line endpoints · demand: top-left to bottom-right; supply: bottom-left to top-right
   const dL = { x1: mx + pad, y1: my + pad, x2: mx + pw - pad, y2: my + ph - pad };
   const sL = { x1: mx + pad, y1: my + ph - pad, x2: mx + pw - pad, y2: my + pad };
 
@@ -524,7 +524,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
     legend: [{ label: "Demand", color: "#ef4444" }, { label: "Supply", color: "#3b82f6" }, { label: "Shift ←", color: COLORS.shifted }],
     examTips: [
-      "D₂ shifts LEFT — closer to origin",
+      "D₂ shifts LEFT · closer to origin",
       "Price falls from P₁ to P₂, quantity falls from Q₁ to Q₂",
       "Always draw dashed projection lines to both axes",
     ],
@@ -551,8 +551,8 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
     legend: [{ label: "Demand", color: "#ef4444" }, { label: "Supply", color: "#3b82f6" }, { label: "Shift →", color: COLORS.shifted }],
     examTips: [
-      "Supply shifts RIGHT — more supplied at every price",
-      "Price falls, quantity rises — show both changes clearly",
+      "Supply shifts RIGHT · more supplied at every price",
+      "Price falls, quantity rises · show both changes clearly",
       "Common causes: technology improvement, lower input costs",
     ],
     render: (p) => <>{supplyDemandBase(p, "supply", "right")}</>,
@@ -578,7 +578,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     xAxis: "Quantity (Q)", yAxis: "Price (P)",
     legend: [{ label: "Demand", color: "#ef4444" }, { label: "Supply", color: "#3b82f6" }, { label: "Shift ←", color: COLORS.shifted }],
     examTips: [
-      "Supply shifts LEFT — less supplied at every price",
+      "Supply shifts LEFT · less supplied at every price",
       "Price rises, quantity falls",
       "Common causes: higher costs of production, indirect taxes",
     ],
@@ -607,8 +607,8 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     xAxis: "Quantity", yAxis: "Benefit /\ncost / price",
     legend: [{ label: "MSC = MPC", color: "#3b82f6" }, { label: "MSB", color: "#ef4444" }, { label: "MPB", color: "#ef4444" }, { label: "Welfare Loss ABE", color: "#ef4444" }],
     examTips: [
-      "MSC = MPC — no external costs in production",
-      "MSB is above MPB — consumption generates external benefits to third parties",
+      "MSC = MPC · no external costs in production",
+      "MSB is above MPB · consumption generates external benefits to third parties",
       "Free market outcome where MPB = MPC: point E at (q, p)",
       "Socially optimal outcome where MSB = MSC: point B at (q₁, p₁)",
       "Underconsumption of q₁ − q. Welfare loss ABE",
@@ -621,11 +621,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       const axBot = my + ph - pad;
       const axTop = my + pad;
 
-      // MSC = MPC: upward sloping (BLUE — cost/supply side)
+      // MSC = MPC: upward sloping (BLUE · cost/supply side)
       const mscL = { x1: axL + pw * 0.08, y1: axBot, x2: mx + pw - pad, y2: axTop };
-      // MSB: downward sloping (RED) — above MPB, true social benefit
+      // MSB: downward sloping (RED) · above MPB, true social benefit
       const msbL = { x1: axL, y1: axTop + 5, x2: mx + pw * 0.75, y2: axBot };
-      // MPB: downward sloping (RED) — what consumers perceive, below MSB
+      // MPB: downward sloping (RED) · what consumers perceive, below MSB
       const mpbL = { x1: axL + pw * 0.05, y1: my + ph * 0.45, x2: mx + pw * 0.58, y2: axBot };
 
       // E = free market: MPB ∩ MSC
@@ -651,13 +651,13 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             label="Welfare Loss"
             labelSize={7}
           />
-          {/* MSC = MPC (BLUE — cost curve) */}
+          {/* MSC = MPC (BLUE · cost curve) */}
           <GLine {...mscL} color="#3b82f6" gradientId="grad-demand" glow="glow-blue" width={2.5} />
           <Label x={mscL.x2 - 4} y={mscL.y2 - 8} text="MSC = MPC" color="#3b82f6" size={8} />
-          {/* MSB (RED — benefit curve, above MPB) */}
+          {/* MSB (RED · benefit curve, above MPB) */}
           <GLine {...msbL} color="#ef4444" gradientId="grad-supply" glow="glow-red" width={2.5} />
           <Label x={msbL.x2 + 4} y={msbL.y2 - 8} text="MSB" color="#ef4444" />
-          {/* MPB (RED — benefit curve, below MSB) */}
+          {/* MPB (RED · benefit curve, below MSB) */}
           <GLine {...mpbL} color="#ef4444" width={2.5} />
           <Label x={mpbL.x2 + 4} y={mpbL.y2 - 6} text="MPB" color="#ef4444" />
           {/* Dashed projections for E (q, p) */}
@@ -683,8 +683,8 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     xAxis: "Quantity", yAxis: "Benefit /\ncost / price",
     legend: [{ label: "MSC = MPC", color: "#3b82f6" }, { label: "MPB", color: "#ef4444" }, { label: "MSB", color: "#ef4444" }, { label: "Welfare Loss ABE", color: "#ef4444" }],
     examTips: [
-      "MSC = MPC — no external costs in production",
-      "MSB is below MPB — consumers ignore harm to third parties (e.g. demerit goods)",
+      "MSC = MPC · no external costs in production",
+      "MSB is below MPB · consumers ignore harm to third parties (e.g. demerit goods)",
       "Free market outcome where MPB = MPC: point B at (q, p)",
       "Socially optimal outcome where MSB = MSC: point E at (q₁, p₁)",
       "Overconsumption of q − q₁. Welfare loss ABE",
@@ -697,11 +697,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       const axBot = my + ph - pad;
       const axTop = my + pad;
 
-      // MSC = MPC: upward sloping (BLUE — cost/supply side)
+      // MSC = MPC: upward sloping (BLUE · cost/supply side)
       const mscL = { x1: axL + pw * 0.08, y1: axBot, x2: mx + pw - pad, y2: axTop };
-      // MPB: downward sloping (RED) — what consumers perceive (above MSB)
+      // MPB: downward sloping (RED) · what consumers perceive (above MSB)
       const mpbL = { x1: axL, y1: axTop + 5, x2: mx + pw * 0.75, y2: axBot };
-      // MSB: downward sloping, below MPB (RED) — true social benefit
+      // MSB: downward sloping, below MPB (RED) · true social benefit
       const msbL = { x1: axL + pw * 0.05, y1: my + ph * 0.45, x2: mx + pw * 0.58, y2: axBot };
 
       // B = free market: MPB ∩ MSC
@@ -727,13 +727,13 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             label="Welfare Loss"
             labelSize={7}
           />
-          {/* MSC = MPC (BLUE — cost curve) */}
+          {/* MSC = MPC (BLUE · cost curve) */}
           <GLine {...mscL} color="#3b82f6" gradientId="grad-demand" glow="glow-blue" width={2.5} />
           <Label x={mscL.x2 - 4} y={mscL.y2 - 8} text="MSC = MPC" color="#3b82f6" size={8} />
-          {/* MPB (RED — benefit curve, above MSB) */}
+          {/* MPB (RED · benefit curve, above MSB) */}
           <GLine {...mpbL} color="#ef4444" gradientId="grad-supply" glow="glow-red" width={2.5} />
           <Label x={mpbL.x2 + 4} y={mpbL.y2 - 8} text="MPB" color="#ef4444" />
-          {/* MSB (RED — benefit curve, below MPB) */}
+          {/* MSB (RED · benefit curve, below MPB) */}
           <GLine {...msbL} color="#ef4444" width={2.5} />
           <Label x={msbL.x2 + 4} y={msbL.y2 - 6} text="MSB" color="#ef4444" />
           {/* Dashed projections for B (q, p) */}
@@ -759,7 +759,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     xAxis: "Quantity", yAxis: "Benefit /\ncost / price",
     legend: [{ label: "MSC", color: "#3b82f6" }, { label: "MPC", color: "#ef4444" }, { label: "MPB = MSB", color: "#ef4444" }, { label: "Welfare Loss ABE", color: "#ef4444" }],
     examTips: [
-      "MSC is above MPC — producers ignore external costs (e.g. pollution)",
+      "MSC is above MPC · producers ignore external costs (e.g. pollution)",
       "Free market produces where MPB = MPC: point E at (q, p)",
       "Socially optimal outcome where MSC = MSB: point B at (q₁, p₁)",
       "Overproduction of q − q₁. Welfare loss ABE",
@@ -772,9 +772,9 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       const axBot = my + ph - pad;
       const axTop = my + pad;
 
-      // MPC: upward sloping (RED) — private cost, lower
+      // MPC: upward sloping (RED) · private cost, lower
       const mpcL = { x1: axL + pw * 0.05, y1: axBot, x2: mx + pw * 0.7, y2: axTop + ph * 0.1 };
-      // MSC: upward sloping, above MPC (BLUE) — social cost higher, steeper
+      // MSC: upward sloping, above MPC (BLUE) · social cost higher, steeper
       const mscL = { x1: axL + pw * 0.2, y1: axBot, x2: mx + pw * 0.55, y2: axTop };
       // MPB = MSB: downward sloping (RED)
       const dL = { x1: axL, y1: axTop + 5, x2: mx + pw - pad, y2: axBot };
@@ -802,13 +802,13 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             label="Welfare Loss"
             labelSize={7}
           />
-          {/* MSC (BLUE — social cost, above MPC) */}
+          {/* MSC (BLUE · social cost, above MPC) */}
           <GLine {...mscL} color="#3b82f6" gradientId="grad-demand" glow="glow-blue" width={2.5} />
           <Label x={mscL.x2 - 4} y={mscL.y2 - 8} text="MSC" color="#3b82f6" size={9} />
-          {/* MPC (RED — private cost, lower) */}
+          {/* MPC (RED · private cost, lower) */}
           <GLine {...mpcL} color="#ef4444" width={2.5} />
           <Label x={mpcL.x2 + 4} y={mpcL.y2 - 4} text="MPC" color="#ef4444" />
-          {/* MPB = MSB (RED — benefit/demand) */}
+          {/* MPB = MSB (RED · benefit/demand) */}
           <GLine {...dL} color="#ef4444" gradientId="grad-supply" glow="glow-red" width={2.5} />
           <Label x={dL.x2 + 4} y={dL.y2 - 8} text="MPB = MSB" color="#ef4444" />
           {/* Dashed projections for E (q, p) */}
@@ -839,7 +839,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       { label: "Welfare Loss", color: "#fb923c" },
     ],
     examTips: [
-      "MSC is BELOW MPC — production generates external benefits (e.g. job training, R&D spillovers)",
+      "MSC is BELOW MPC · production generates external benefits (e.g. job training, R&D spillovers)",
       "Free market: MPB ∩ MPC → Qm (under-produces relative to social optimum)",
       "Social optimum: MPB ∩ MSC → Qopt (more output is desirable)",
       "Welfare loss triangle between market eq, social optimum, and MPC at Qopt",
@@ -897,11 +897,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             anchor="middle"
           />
 
-          {/* S = MPC (Red — private cost, ABOVE MSC) */}
+          {/* S = MPC (Red · private cost, ABOVE MSC) */}
           <GLine {...mpcLine} color="#ef4444" gradientId="grad-supply" glow="glow-red" width={2.5} />
           <Label x={mpcLine.x2 - 8} y={mpcLine.y2 - 10} text="S = MPC" color="#ef4444" size={10} anchor="end" />
 
-          {/* MSC (Orange — social cost, BELOW MPC) */}
+          {/* MSC (Orange · social cost, BELOW MPC) */}
           <GLine {...mscLine} color="#f97316" width={2.5} />
           <Label x={mscLine.x2 - 8} y={mscLine.y2 + 14} text="MSC" color="#f97316" size={10} anchor="end" />
 
@@ -909,13 +909,13 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <GLine {...mpbLine} color="#3b82f6" gradientId="grad-demand" glow="glow-blue" width={2.5} />
           <Label x={mpbLine.x2 - 8} y={mpbLine.y2 + 14} text="MPB = MSB = D" color="#3b82f6" size={9} anchor="end" />
 
-          {/* Dashed projections — Market equilibrium (Qm, Pm) */}
+          {/* Dashed projections · Market equilibrium (Qm, Pm) */}
           <line x1={eqMarket.x} y1={eqMarket.y} x2={mx} y2={eqMarket.y} stroke="#16a34a" strokeWidth={0.8} strokeDasharray="4,3" opacity={0.5} />
           <line x1={eqMarket.x} y1={eqMarket.y} x2={eqMarket.x} y2={my + ph} stroke="#16a34a" strokeWidth={0.8} strokeDasharray="4,3" opacity={0.5} />
           <Label x={mx - 4} y={eqMarket.y + 3} text="Pm" color="#16a34a" size={9} anchor="end" />
           <Label x={eqMarket.x} y={my + ph + 14} text="Qm" color="#16a34a" size={9} anchor="middle" />
 
-          {/* Dashed projections — Social optimum (Qopt, Popt) */}
+          {/* Dashed projections · Social optimum (Qopt, Popt) */}
           <line x1={eqSocial.x} y1={eqSocial.y} x2={mx} y2={eqSocial.y} stroke="#eab308" strokeWidth={0.8} strokeDasharray="4,3" opacity={0.5} />
           <line x1={eqSocial.x} y1={eqSocial.y} x2={eqSocial.x} y2={my + ph} stroke="#eab308" strokeWidth={0.8} strokeDasharray="4,3" opacity={0.5} />
           <Label x={mx - 4} y={eqSocial.y + 3} text="Popt" color="#eab308" size={9} anchor="end" />
@@ -938,7 +938,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     legend: [{ label: "AD", color: COLORS.demand }, { label: "SRAS", color: COLORS.supply }, { label: "LRAS", color: COLORS.lras }],
     examTips: [
       "LRAS is vertical at Yf (full employment output)",
-      "AD shifts RIGHT — demand-pull inflation if near Yf",
+      "AD shifts RIGHT · demand-pull inflation if near Yf",
       "Show both equilibria E₁ and E₂ with PL and Y values",
       "Explain the multiplier effect in your written answer",
     ],
@@ -985,7 +985,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     xAxis: "Real GDP (Y)", yAxis: "Price Level (PL)",
     legend: [{ label: "AD", color: COLORS.demand }, { label: "SRAS", color: COLORS.supply }, { label: "LRAS", color: COLORS.lras }],
     examTips: [
-      "AD shifts LEFT — deflationary pressure",
+      "AD shifts LEFT · deflationary pressure",
       "Real GDP falls, price level falls",
       "Risk of demand-deficient (cyclical) unemployment",
     ],
@@ -1026,9 +1026,9 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     },
   },
 
-  /* ── Demand-Side Shock — Positive vs Negative (2 panels) ── */
+  /* ── Demand-Side Shock · Positive vs Negative (2 panels) ── */
   demand_side_shock: {
-    title: "Aggregate Demand Shocks — Positive vs Negative",
+    title: "Aggregate Demand Shocks · Positive vs Negative",
     xAxis: "", yAxis: "",
     legend: [
       { label: "AD", color: COLORS.demand },
@@ -1068,7 +1068,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       );
 
       // ══════════════════════════════
-      // LEFT PANEL — Positive AD Shock
+      // LEFT PANEL · Positive AD Shock
       // ══════════════════════════════
       const L = p1x + pad;
       const R1 = p1x + panelW - pad;
@@ -1093,7 +1093,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       const srasXatPLe = sras1.x1 + (eq1a.y - sras1.y1) / srasSlope;
 
       // ══════════════════════════════
-      // RIGHT PANEL — Negative AD Shock
+      // RIGHT PANEL · Negative AD Shock
       // ══════════════════════════════
       const L2 = p2x + pad;
       const R2 = p2x + panelW - pad;
@@ -1101,7 +1101,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
       // SRAS
       const sras2 = { x1: L2 + 5, y1: axBot - 4, x2: R2 - 5, y2: axTop + 4 };
-      // AD (original — further right)
+      // AD (original · further right)
       const ad2 = { x1: L2 + (R2 - L2) * 0.25, y1: axTop + axH * 0.05, x2: R2 - 5, y2: axBot - 4 };
       // AD₁ (shifted left)
       const shift2 = -(R2 - L2) * 0.22;
@@ -1240,7 +1240,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
   /* ── Demand Shift Right (single panel, textbook style) ── */
   demand_shift_dual: {
-    title: "Supply & Demand — Shift in Demand",
+    title: "Supply & Demand · Shift in Demand",
     xAxis: "Quantity", yAxis: "Price",
     legend: [
       { label: "Supply (S)", color: "#3b82f6" },
@@ -1249,7 +1249,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     ],
     examTips: [
       "Demand shift right: caused by ↑ incomes (normal good), ↑ advertising, ↑ price of substitute, ↓ price of complement",
-      "NOT a fall in the price of the good itself — that is a movement along the curve",
+      "NOT a fall in the price of the good itself · that is a movement along the curve",
       "Right shift → higher price (p → p₁) and higher quantity (q → q₁)",
       "Always label both equilibria and show dashed projections to axes",
     ],
@@ -1307,11 +1307,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <GLine {...s} color="#3b82f6" width={2.5} />
           <Label x={s.x2 + 3} y={s.y2 + 10} text="S" color="#3b82f6" size={10} />
 
-          {/* D (original demand — RED) */}
+          {/* D (original demand · RED) */}
           <GLine {...d} color="#ef4444" width={2.5} />
           <Label x={d.x2 + 3} y={d.y2 - 4} text="D" color="#ef4444" size={10} />
 
-          {/* D₁ (shifted right — RED) */}
+          {/* D₁ (shifted right · RED) */}
           <GLine {...d1} color="#ef4444" width={2.5} />
           <Label x={d1.x2 + 3} y={d1.y2 - 4} text="D₁" color="#ef4444" size={10} />
 
@@ -1331,9 +1331,9 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     },
   },
 
-  /* ── Supply & Demand — Shift in Supply (Right) ── */
+  /* ── Supply & Demand · Shift in Supply (Right) ── */
   supply_shift_dual: {
-    title: "Supply & Demand — Shift in Supply",
+    title: "Supply & Demand · Shift in Supply",
     xAxis: "Quantity", yAxis: "Price",
     legend: [
       { label: "Demand (D)", color: "#ef4444" },
@@ -1341,7 +1341,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       { label: "Shifted (S₁)", color: "#3b82f6" },
     ],
     examTips: [
-      "Right shift: S → S₁ — price falls from p to p₁, quantity rises from q to q₁",
+      "Right shift: S → S₁ · price falls from p to p₁, quantity rises from q to q₁",
       "Causes: reduced labour/capital costs, technological improvements, higher productivity",
       "Always show both equilibria with dashed projections to axes",
       "State the cause of the shift clearly in your written answer",
@@ -1358,7 +1358,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       // Demand: downward sloping (red)
       const d = { x1: axL + pw * 0.08, y1: axTop + 5, x2: axL + pw * 0.75, y2: axBot - 5 };
 
-      // S (original): upward sloping (red) — positioned left
+      // S (original): upward sloping (red) · positioned left
       const s = { x1: axL + pw * 0.05, y1: axBot - 5, x2: axL + pw * 0.55, y2: axTop + 5 };
 
       // S₁ (shifted right): upward sloping (blue)
@@ -1391,11 +1391,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <GLine {...d} color="#ef4444" width={2.5} />
           <Label x={d.x2 + 4} y={d.y2 - 4} text="D" color="#ef4444" size={10} />
 
-          {/* S — original supply (BLUE) */}
+          {/* S · original supply (BLUE) */}
           <GLine {...s} color="#3b82f6" width={2.5} />
           <Label x={s.x2 + 4} y={s.y2 + 4} text="S" color="#3b82f6" size={10} />
 
-          {/* S₁ — shifted right (BLUE) */}
+          {/* S₁ · shifted right (BLUE) */}
           <GLine {...s1} color="#3b82f6" width={2.5} />
           <Label x={s1.x2 + 4} y={s1.y2 + 4} text="S₁" color="#3b82f6" size={10} />
 
@@ -1425,9 +1425,9 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     xAxis: "Real Output", yAxis: "Price Level",
     legend: [{ label: "SRAS", color: COLORS.supply }, { label: "AD", color: COLORS.demand }, { label: "LRAS", color: COLORS.lras }],
     examTips: [
-      "NEGATIVE SHIFT from SRAS₁ to SRAS₂ — higher costs of production",
+      "NEGATIVE SHIFT from SRAS₁ to SRAS₂ · higher costs of production",
       "Movement UP the SRAS curve",
-      "Price level rises AND real output falls — stagflation",
+      "Price level rises AND real output falls · stagflation",
       "Key causes: oil price shocks, rising wages, supply chain disruption",
     ],
     render: (p) => {
@@ -1437,15 +1437,15 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
       // SRAS₁ (original): upward sloping, intersects AD near LRAS
       const sras1L = { x1: mx + pad + 15, y1: my + ph - pad, x2: mx + pw - pad - 10, y2: my + pad + 10 };
-      // SRAS₂ (shifted left — negative supply shock)
+      // SRAS₂ (shifted left · negative supply shock)
       const shift = -58;
       const sras2L = { x1: sras1L.x1 + shift, y1: sras1L.y1, x2: sras1L.x2 + shift, y2: sras1L.y2 };
       // AD: downward sloping (blue)
       const adL = { x1: mx + pw * 0.15, y1: my + pad + 5, x2: mx + pw * 0.78, y2: my + ph - pad };
 
-      // E₁ = AD ∩ SRAS₁ (original — at Yfe)
+      // E₁ = AD ∩ SRAS₁ (original · at Yfe)
       const eq1 = lineIntersect(sras1L.x1, sras1L.y1, sras1L.x2, sras1L.y2, adL.x1, adL.y1, adL.x2, adL.y2);
-      // E₂ = AD ∩ SRAS₂ (shifted — at Y₂)
+      // E₂ = AD ∩ SRAS₂ (shifted · at Y₂)
       const eq2 = lineIntersect(sras2L.x1, sras2L.y1, sras2L.x2, sras2L.y2, adL.x1, adL.y1, adL.x2, adL.y2);
 
       return (
@@ -1462,7 +1462,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <GLine {...sras2L} color={COLORS.supply} gradientId="grad-supply" />
           <Label x={sras2L.x2 + 4} y={sras2L.y2 + 4} text="SRAS₂" color={COLORS.supply} />
 
-          {/* Shift arrow — bold leftward */}
+          {/* Shift arrow · bold leftward */}
           <ShiftArrow
             x1={(sras1L.x1 + sras1L.x2) / 2 + 5}
             y1={(sras1L.y1 + sras1L.y2) / 2}
@@ -1475,7 +1475,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <GLine {...adL} color={COLORS.demand} gradientId="grad-demand" glow="glow-blue" />
           <Label x={adL.x2 + 4} y={adL.y2 - 6} text="AD" color={COLORS.demand} />
 
-          {/* Price projections — P₁ at original, P₂ at new higher */}
+          {/* Price projections · P₁ at original, P₂ at new higher */}
           <DashedToAxes x={eq1.x} y={eq1.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="P₁" qLabel="" />
           <DashedToAxes x={eq2.x} y={eq2.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="P₂" qLabel="Y₂" />
 
@@ -1498,8 +1498,8 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     xAxis: "Real GDP (Y)", yAxis: "Price Level (PL)",
     legend: [{ label: "SRAS", color: COLORS.supply }, { label: "AD", color: COLORS.demand }, { label: "LRAS", color: COLORS.lras }],
     examTips: [
-      "SRAS shifts RIGHT — lower costs of production",
-      "Price level falls AND real GDP rises — non-inflationary growth",
+      "SRAS shifts RIGHT · lower costs of production",
+      "Price level falls AND real GDP rises · non-inflationary growth",
       "Key causes: lower oil prices, better technology, deregulation",
     ],
     render: (p) => {
@@ -1547,7 +1547,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
   /* ── Tax Incidence (Indirect Tax on Supply & Demand) ── */
   tax_incidence: {
-    title: "Supply & Demand — Effect of an Indirect Tax",
+    title: "Supply & Demand · Effect of an Indirect Tax",
     xAxis: "Quantity", yAxis: "Price",
     legend: [{ label: "D", color: COLORS.demand }, { label: "S", color: COLORS.supply }, { label: "S + tax", color: COLORS.shifted }, { label: "Welfare loss", color: "#ef4444" }],
     examTips: [
@@ -1585,7 +1585,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
       return (
         <>
-          {/* Welfare loss triangle — red filled */}
+          {/* Welfare loss triangle · red filled */}
           <WelfareRegion
             points={[
               { x: eq2.x, y: eq2.y },
@@ -1734,7 +1734,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       const endX = mx + pw - pad - 5, endY = my + ph - pad;
       const cpX = mx + pw * 0.78, cpY = my + ph * 0.10;
 
-      // Point on curve (efficient) — roughly at parameter t≈0.4
+      // Point on curve (efficient) · roughly at parameter t≈0.4
       const t = 0.4;
       const effX = (1 - t) * (1 - t) * startX + 2 * (1 - t) * t * cpX + t * t * endX;
       const effY = (1 - t) * (1 - t) * startY + 2 * (1 - t) * t * cpY + t * t * endY;
@@ -1816,7 +1816,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     examTips: [
       "Shallow/flat curve = elastic demand",
       "Small price change → large quantity change",
-      "Many substitutes, luxuries, long run — all increase elasticity",
+      "Many substitutes, luxuries, long run · all increase elasticity",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
@@ -1841,7 +1841,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     examTips: [
       "Steep curve = inelastic demand",
       "Large price change → small quantity change",
-      "Necessities, few substitutes, short run — all decrease elasticity",
+      "Necessities, few substitutes, short run · all decrease elasticity",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
@@ -1892,7 +1892,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       // Free-market equilibrium
       const eq = lineIntersect(sL.x1, sL.y1, sL.x2, sL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
 
-      // Max price line at p₁ — below equilibrium
+      // Max price line at p₁ · below equilibrium
       const pmaxY = eq.y + (axBot - eq.y) * 0.55;
 
       // Where Pmax intersects S (q₁) and D (q₂)
@@ -1929,13 +1929,13 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             labelSize={7}
           />
 
-          {/* S (BLUE — supply) and D (RED — demand) */}
+          {/* S (BLUE · supply) and D (RED · demand) */}
           <line x1={sL.x1} y1={sL.y1} x2={sL.x2} y2={sL.y2} stroke="#3b82f6" strokeWidth={3} strokeLinecap="round" />
           <Label x={sL.x2 + 4} y={sL.y2 + 12} text="S" color="#3b82f6" />
           <line x1={dL.x1} y1={dL.y1} x2={dL.x2} y2={dL.y2} stroke="#ef4444" strokeWidth={3} strokeLinecap="round" />
           <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color="#ef4444" />
 
-          {/* Max price horizontal line — bold black */}
+          {/* Max price horizontal line · bold black */}
           <line
             x1={mx}
             y1={pmaxY}
@@ -2000,21 +2000,21 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       const axL = mx;
       const axR = mx + pw;
 
-      // D (downward — red) and S (upward — blue)
+      // D (downward · red) and S (upward · blue)
       const dL = { x1: mx + pad, y1: my + pad + 10, x2: mx + pw - pad, y2: my + ph - pad };
       const sL = { x1: mx + pad, y1: my + ph - pad, x2: mx + pw - pad, y2: my + pad + 10 };
 
       // Equilibrium
       const eq = lineIntersect(dL.x1, dL.y1, dL.x2, dL.y2, sL.x1, sL.y1, sL.x2, sL.y2);
 
-      // Min price line — above equilibrium
+      // Min price line · above equilibrium
       const pminY = eq.y - (eq.y - my - pad) * 0.45;
 
       // Where Pmin intersects S and D
       const sSlope = (sL.y2 - sL.y1) / (sL.x2 - sL.x1);
       const dSlope = (dL.y2 - dL.y1) / (dL.x2 - dL.x1);
-      const q1X = sL.x1 + (pminY - sL.y1) / sSlope; // supply at Pmin (right — q₁)
-      const q2X = dL.x1 + (pminY - dL.y1) / dSlope; // demand at Pmin (left — q₂)
+      const q1X = sL.x1 + (pminY - sL.y1) / sSlope; // supply at Pmin (right · q₁)
+      const q2X = dL.x1 + (pminY - dL.y1) / dSlope; // demand at Pmin (left · q₂)
 
       // Welfare loss triangle: vertices at D∩Pmin, equilibrium, S∩Pmin
       const welfarePoints = [
@@ -2028,15 +2028,15 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           {/* Welfare loss triangle (behind curves) */}
           <WelfareRegion points={welfarePoints} fill="#16a34a" fillOpacity={0.55} label="Welfare Loss" labelSize={7} />
 
-          {/* S curve (BLUE — supply, upward) */}
+          {/* S curve (BLUE · supply, upward) */}
           <GLine {...sL} color="#3b82f6" gradientId="grad-demand" glow="glow-blue" />
           <Label x={sL.x2 + 4} y={sL.y2 - 6} text="S" color="#3b82f6" />
 
-          {/* D curve (RED — demand, downward) */}
+          {/* D curve (RED · demand, downward) */}
           <GLine {...dL} color="#ef4444" gradientId="grad-supply" glow="glow-red" />
           <Label x={dL.x2 + 4} y={dL.y2 - 6} text="D" color="#ef4444" />
 
-          {/* Min price line — bold black */}
+          {/* Min price line · bold black */}
           <line
             x1={axL}
             y1={pminY}
@@ -2056,7 +2056,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <line x1={axL} y1={eq.y} x2={axL - 5} y2={eq.y} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
           <text x={axL - 8} y={eq.y + 4} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="end" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>p</text>
 
-          {/* q₂ projection (demand at Pmin — left) */}
+          {/* q₂ projection (demand at Pmin · left) */}
           <line x1={q2X} y1={pminY} x2={q2X} y2={my + ph} stroke="hsl(var(--foreground))" strokeWidth={1.2} strokeDasharray="5,3" opacity={0.5} />
           <text x={q2X} y={my + ph + 14} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q₂</text>
 
@@ -2064,7 +2064,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <line x1={eq.x} y1={eq.y} x2={eq.x} y2={my + ph} stroke="hsl(var(--foreground))" strokeWidth={1.2} strokeDasharray="5,3" opacity={0.5} />
           <text x={eq.x} y={my + ph + 14} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q</text>
 
-          {/* q₁ projection (supply at Pmin — right) */}
+          {/* q₁ projection (supply at Pmin · right) */}
           <line x1={q1X} y1={pminY} x2={q1X} y2={my + ph} stroke="hsl(var(--foreground))" strokeWidth={1.2} strokeDasharray="5,3" opacity={0.5} />
           <text x={q1X} y={my + ph + 14} fill="hsl(var(--foreground))" fontSize={11} fontWeight={700} textAnchor="middle" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q₁</text>
 
@@ -2082,7 +2082,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
   /* ── Monopoly ── */
   monopoly: {
-    title: "Monopoly — Business Objectives",
+    title: "Monopoly · Business Objectives",
     xAxis: "Output", yAxis: "Revenue / Cost",
     legend: [
       { label: "MC", color: COLORS.demand },
@@ -2133,7 +2133,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       const revMaxX = mrL.x2;
       const revMaxPriceY = arL.y1 + arSlope * (revMaxX - arL.x1);
 
-      // Sales max: AR = ATC intersection (approximate — use right portion of ATC)
+      // Sales max: AR = ATC intersection (approximate · use right portion of ATC)
       const salesMaxInt = lineIntersect(
         atcMidX, atcMidY, atcEndX, atcEndY,
         arL.x1, arL.y1, arL.x2, arL.y2
@@ -2179,19 +2179,19 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             Supernormal Profit
           </text>
 
-          {/* AR (Demand) — red */}
+          {/* AR (Demand) · red */}
           <GLine {...arL} color={COLORS.supply} width={2.5} />
           <Label x={arL.x2 + 2} y={arL.y2 - 6} text="A" color={COLORS.supply} size={10} />
 
-          {/* MR — red */}
+          {/* MR · red */}
           <GLine {...mrL} color={COLORS.supply} width={2.5} />
           <Label x={mrL.x2 - 4} y={mrL.y2 + 14} text="MR" color={COLORS.supply} size={10} />
 
-          {/* MC — blue curve */}
+          {/* MC · blue curve */}
           <CurvePath d={mcPath} color={COLORS.demand} width={2.5} />
           <Label x={mcX3 - 8} y={mcY3 - 6} text="MC" color={COLORS.demand} size={10} />
 
-          {/* ATC — blue curve */}
+          {/* ATC · blue curve */}
           <CurvePath d={atcPath} color={COLORS.demand} width={2.5} />
           <Label x={atcEndX + 4} y={atcEndY + 4} text="ATC" color={COLORS.demand} size={10} />
 
@@ -2214,7 +2214,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
   /* ── Lorenz Curve (Income Inequality) ── */
   lorenz_curve: {
-    title: "Lorenz Curve — Income Distribution",
+    title: "Lorenz Curve · Income Distribution",
     xAxis: "Cumulative % of Population", yAxis: "Cumulative % of Income",
     legend: [{ label: "Line of Equality", color: COLORS.lras }, { label: "Lorenz Curve", color: COLORS.demand }, { label: "Gini Area", color: COLORS.area }],
     examTips: [
@@ -2264,12 +2264,12 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
   /* ── Oligopoly Payoff Matrix (Game Theory) ── */
   oligopoly_payoff: {
-    title: "Prisoner's Dilemma — Oligopoly Payoff Matrix",
+    title: "Prisoner's Dilemma · Oligopoly Payoff Matrix",
     xAxis: "", yAxis: "",
     legend: [{ label: "Firm A", color: COLORS.demand }, { label: "Firm B", color: COLORS.supply }],
     examTips: [
       "Dominant strategy: both firms have incentive to cheat (lower price)",
-      "Nash equilibrium: both cheat — worst combined outcome",
+      "Nash equilibrium: both cheat · worst combined outcome",
       "Collusion (both high price) is Pareto optimal but unstable",
       "Key evaluation: repeated games, regulation, and trust can sustain collusion",
     ],
@@ -2345,7 +2345,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     legend: [{ label: "MC", color: COLORS.supply }, { label: "ATC", color: COLORS.demand }, { label: "AVC", color: COLORS.shifted }],
     examTips: [
       "MC crosses ATC and AVC at their minimum points",
-      "ATC = AVC + AFC — the gap is AFC which falls as output rises",
+      "ATC = AVC + AFC · the gap is AFC which falls as output rises",
       "When MC < ATC, ATC is falling; when MC > ATC, ATC is rising",
       "Shutdown point: P = min AVC (short run)",
     ],
@@ -2385,12 +2385,12 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       "Economies of scale: LRAC falls as output increases (Section A)",
       "Constant returns: flat section = minimum efficient scale (Section B)",
       "Diseconomies of scale: LRAC rises as firm becomes too large (Section C)",
-      "MES = minimum efficient scale — output where LRAC first reaches minimum",
+      "MES = minimum efficient scale · output where LRAC first reaches minimum",
     ],
     render: (p) => {
       const { mx, my, pw, ph } = p;
       const pad = 10;
-      // U-shaped LRAC — wide bottom for constant returns section
+      // U-shaped LRAC · wide bottom for constant returns section
       const lracPath = `M ${mx + pad + 10} ${my + pad + 10} Q ${mx + pw * 0.22} ${my + ph * 0.75} ${mx + pw * 0.38} ${my + ph * 0.68} L ${mx + pw * 0.58} ${my + ph * 0.68} Q ${mx + pw * 0.78} ${my + ph * 0.68} ${mx + pw - pad - 10} ${my + pad + 20}`;
 
       // Section labels with brackets
@@ -2422,11 +2422,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
   /* ── Monopolistic Competition (Long-Run Normal Profit) ── */
   monopolistic_competition: {
-    title: "Monopolistic Competition — Long-Run Equilibrium",
+    title: "Monopolistic Competition · Long-Run Equilibrium",
     xAxis: "Quantity (Q)", yAxis: "Price / Cost / Revenue",
     legend: [{ label: "MC", color: COLORS.supply }, { label: "AR = D", color: COLORS.demand }, { label: "MR", color: COLORS.mpb }, { label: "AC tangent", color: COLORS.lras }],
     examTips: [
-      "Long-run: AR tangent to AC — normal profit only",
+      "Long-run: AR tangent to AC · normal profit only",
       "Excess capacity: firm produces LEFT of min AC (not productively efficient)",
       "P > MC so NOT allocatively efficient either",
       "Short-run supernormal profit attracts entry → demand curve shifts left",
@@ -2434,9 +2434,9 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     render: () => <></>,  // Rendering handled by MonopolisticCompetitionDiagram via customComponent
   },
 
-  /* ── Keynesian AS — Spare Capacity vs Full Capacity (2 panels) ── */
+  /* ── Keynesian AS · Spare Capacity vs Full Capacity (2 panels) ── */
   keynesian_as: {
-    title: "Keynesian AS — Spare Capacity vs Full Employment",
+    title: "Keynesian AS · Spare Capacity vs Full Employment",
     xAxis: "", yAxis: "",
     legend: [
       { label: "AS", color: COLORS.supply },
@@ -2478,7 +2478,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       );
 
       // ══════════════════════════════════════
-      // LEFT PANEL — Spare Capacity (Growth)
+      // LEFT PANEL · Spare Capacity (Growth)
       // ══════════════════════════════════════
       const L = p1x + pad;
       const R1 = p1x + panelW - pad;
@@ -2488,12 +2488,12 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       // Keynesian AS: horizontal → curve up → vertical at Yfe
       const kasPath1 = `M ${L + 5} ${flatY} L ${L + (R1 - L) * 0.38} ${flatY} Q ${L + (R1 - L) * 0.55} ${flatY - 8} ${yfe1} ${axTop + axH * 0.2} L ${yfe1} ${axTop + 4}`;
 
-      // AD₁ (original — intersects in flat region)
+      // AD₁ (original · intersects in flat region)
       const ad1_x1 = L + 8;
       const ad1_y1 = axTop + axH * 0.12;
       const ad1_x2 = L + (R1 - L) * 0.32;
       const ad1_y2 = axBot - 4;
-      // AD₂ (shifted right — still in spare capacity but further)
+      // AD₂ (shifted right · still in spare capacity but further)
       const ad2_x1 = L + (R1 - L) * 0.12;
       const ad2_y1 = axTop + axH * 0.08;
       const ad2_x2 = L + (R1 - L) * 0.48;
@@ -2507,7 +2507,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       const arrowMidY = axTop + axH * 0.45;
 
       // ══════════════════════════════════════
-      // RIGHT PANEL — Full Capacity (Inflation)
+      // RIGHT PANEL · Full Capacity (Inflation)
       // ══════════════════════════════════════
       const L2 = p2x + pad;
       const R2 = p2x + panelW - pad;
@@ -2671,7 +2671,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           {/* World supply */}
           <GLine x1={mx + pad} y1={pwY} x2={mx + pw - pad} y2={pwY} color={COLORS.eq} width={2} />
           <Label x={mx + pw - pad + 2} y={pwY - 4} text="Sw" color={COLORS.eq} size={9} />
-          {/* Quota supply — kinked: horizontal at Pq from dsAtPq to a quota limit, then follows */}
+          {/* Quota supply · kinked: horizontal at Pq from dsAtPq to a quota limit, then follows */}
           <GLine x1={mx + pad} y1={pqY} x2={dAtPq} y2={pqY} color={COLORS.shifted} dashed width={2} />
           <Label x={dAtPq + 4} y={pqY - 4} text="Sw+Quota" color={COLORS.shifted} size={9} />
           {/* Demand */}
@@ -2697,7 +2697,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     legend: [{ label: "MC", color: COLORS.supply }, { label: "ATC", color: COLORS.demand }, { label: "AVC", color: COLORS.shifted }, { label: "AR = MR", color: COLORS.eq }],
     examTips: [
       "Shutdown condition: AR < AVC (price below min AVC)",
-      "At shutdown point: P = min AVC — firm just covers variable costs",
+      "At shutdown point: P = min AVC · firm just covers variable costs",
       "Below this price, losses exceed total fixed costs",
       "Different from long-run shutdown: AR < AC",
     ],
@@ -2726,16 +2726,16 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={mx + pw - pad + 2} y={avcMinY - 4} text="AR = MR" color={COLORS.eq} size={9} />
           {/* Shutdown point */}
           <PremiumDot x={avcMinX} y={avcMinY} color={COLORS.supply} label="Shutdown Point" gradientId="dot-green"
-            tooltipText="✓ P = min AVC — firm just covers variable costs" />
+            tooltipText="✓ P = min AVC · firm just covers variable costs" />
           <DashedToAxes x={avcMinX} y={avcMinY} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="Ps" qLabel="Qs" />
         </>
       );
     },
   },
 
-  /* ── Perfect Competition — Short-Run & Long-Run ── */
+  /* ── Perfect Competition · Short-Run & Long-Run ── */
   perfect_competition: {
-    title: "Perfect Competition — Industry & Firm",
+    title: "Perfect Competition · Industry & Firm",
     xAxis: "Quantity", yAxis: "Price / Cost",
     legend: [
       { label: "D (Demand)", color: "#3b82f6" },
@@ -2753,9 +2753,9 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     render: () => <></>,  // Rendering handled by PerfectCompDiagram via customComponent
   },
 
-  /* ── Labour Market — Wage Determination (Industry + Firm) ── */
+  /* ── Labour Market · Wage Determination (Industry + Firm) ── */
   labour_market: {
-    title: "Labour Market — Wage Determination (Competitive)",
+    title: "Labour Market · Wage Determination (Competitive)",
     xAxis: "Quantity of Workers", yAxis: "Wage Rate",
     legend: [
       { label: "S (Industry)", color: COLORS.supply },
@@ -2766,7 +2766,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       "Industry: wage set where D(MRP) = S of labour → W₁",
       "Firm is a wage-taker: SL = ACL = MCL is perfectly elastic at W₁",
       "Firm hires where D(MRP) = MCL to maximise profit",
-      "MRP = MPP × MR — demand for labour is a derived demand",
+      "MRP = MPP × MR · demand for labour is a derived demand",
       "Draw BOTH industry and firm diagrams side by side for full marks",
     ],
     render: (p) => {
@@ -2797,13 +2797,13 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
         </>
       );
 
-      // ═══ PANEL 1: Industry — S & D=MRP ═══
+      // ═══ PANEL 1: Industry · S & D=MRP ═══
       const sL = { x1: p1x + pad, y1: p1y + fullH - pad, x2: p1x + halfW - pad, y2: p1y + pad };
       const dL = { x1: p1x + pad, y1: p1y + pad, x2: p1x + halfW - pad, y2: p1y + fullH - pad };
       const eq = lineIntersect(sL.x1, sL.y1, sL.x2, sL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
       const wageY = eq.y;
 
-      // ═══ PANEL 2: Firm — D=MRP curve (hill shape) + SL=ACL=MCL horizontal ═══
+      // ═══ PANEL 2: Firm · D=MRP curve (hill shape) + SL=ACL=MCL horizontal ═══
       const mrpPeakX = p2x + halfW * 0.35;
       const mrpPeakY = p2y + fullH * 0.15;
       const mrpEndX = p2x + halfW - pad - 5;
@@ -2824,7 +2824,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <Label x={dL.x2 + 2} y={dL.y2 - 6} text="D=MRP" color={COLORS.demand} size={9} />
           <PremiumDot x={eq.x} y={eq.y} color={COLORS.eq} label="E" gradientId="dot-green"
             tooltipText="✓ Wage W₁ set by D=S" />
-          {/* W₁ and Q₁ projections — red dashed like reference */}
+          {/* W₁ and Q₁ projections · red dashed like reference */}
           <line x1={p1x} y1={wageY} x2={eq.x} y2={wageY} stroke="#ef4444" strokeWidth={0.8} strokeDasharray="2,1.5" opacity={0.7} />
           <line x1={eq.x} y1={wageY} x2={eq.x} y2={p1y + fullH} stroke="#ef4444" strokeWidth={0.8} strokeDasharray="2,1.5" opacity={0.7} />
           <text x={p1x - 3} y={wageY + 3} textAnchor="end" fontSize={8} fontWeight={700} fill="currentColor" opacity={0.7}
@@ -2856,15 +2856,15 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
   /* ── LRAS Shift Right ── */
   lras_shift: {
-    title: "LRAS Shift Right — Long-Run Growth", xAxis: "Real GDP", yAxis: "Price Level",
+    title: "LRAS Shift Right · Long-Run Growth", xAxis: "Real GDP", yAxis: "Price Level",
     legend: [{ label: "LRAS", color: COLORS.lras }, { label: "LRAS₁", color: COLORS.eq }, { label: "AD", color: COLORS.demand }],
-    examTips: ["LRAS shifts right due to productivity/technology improvements", "Higher real GDP and lower price level", "Distinguish from SRAS shift — LRAS = full capacity"],
+    examTips: ["LRAS shifts right due to productivity/technology improvements", "Higher real GDP and lower price level", "Distinguish from SRAS shift · LRAS = full capacity"],
     render: (p) => { const { mx, my, pw, ph } = p; const axBot = my + ph; const lrasX = mx + pw * 0.4; const lras1X = mx + pw * 0.65; const ad = { x1: mx + 10, y1: my + 15, x2: mx + pw - 10, y2: axBot - 15 }; const s = (ad.y2 - ad.y1) / (ad.x2 - ad.x1); const eq1Y = ad.y1 + s * (lrasX - ad.x1); const eq2Y = ad.y1 + s * (lras1X - ad.x1); return (<><GLine x1={lrasX} y1={my + 5} x2={lrasX} y2={axBot - 5} color={COLORS.lras} width={2.5} /><Label x={lrasX + 4} y={my + 14} text="LRAS" color={COLORS.lras} size={10} /><GLine x1={lras1X} y1={my + 5} x2={lras1X} y2={axBot - 5} color={COLORS.eq} width={2.5} /><Label x={lras1X + 4} y={my + 14} text="LRAS₁" color={COLORS.eq} size={10} /><GLine {...ad} color={COLORS.demand} width={2.5} /><Label x={ad.x2 + 2} y={ad.y2 - 4} text="AD" color={COLORS.demand} size={10} /><ShiftArrow x1={lrasX + 8} y1={my + ph * 0.5} x2={lras1X - 8} y2={my + ph * 0.5} color={COLORS.shifted} /><DashedToAxes x={lrasX} y={eq1Y} mx={mx} ph={ph} my={my} color={COLORS.lras} pLabel="PL" qLabel="Y" /><DashedToAxes x={lras1X} y={eq2Y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="PL₁" qLabel="Y₁" /><PremiumDot x={lrasX} y={eq1Y} color={COLORS.lras} label="E" labelPos="tl" /><PremiumDot x={lras1X} y={eq2Y} color={COLORS.eq} label="E₁" labelPos="tr" /></>); },
   },
 
   /* ── Tariff ── */
   tariff: {
-    title: "Tariff — Impact on Imports & Welfare", xAxis: "Quantity", yAxis: "Price",
+    title: "Tariff · Impact on Imports & Welfare", xAxis: "Quantity", yAxis: "Price",
     legend: [{ label: "Domestic S", color: COLORS.supply }, { label: "World Supply", color: COLORS.eq }, { label: "World S + Tariff", color: COLORS.shifted }, { label: "DWL", color: COLORS.area }],
     examTips: ["World supply is perfectly elastic", "Tariff shifts world supply upward", "Two DWL triangles + tariff revenue rectangle", "Imports fall from (Q₃−Q₁) to (Q₄−Q₂)"],
     render: (p) => { const { mx, my, pw, ph } = p; const axBot = my + ph; const ds = { x1: mx + 10, y1: axBot - 15, x2: mx + pw * 0.75, y2: my + 15 }; const dd = { x1: mx + pw * 0.25, y1: my + 15, x2: mx + pw - 10, y2: axBot - 15 }; const wsY = my + ph * 0.65; const wtY = my + ph * 0.45; const q1X = ds.x1 + ((wsY - ds.y1) / (ds.y2 - ds.y1)) * (ds.x2 - ds.x1); const q2X = ds.x1 + ((wtY - ds.y1) / (ds.y2 - ds.y1)) * (ds.x2 - ds.x1); const q3X = dd.x1 + ((wsY - dd.y1) / (dd.y2 - dd.y1)) * (dd.x2 - dd.x1); const q4X = dd.x1 + ((wtY - dd.y1) / (dd.y2 - dd.y1)) * (dd.x2 - dd.x1); return (<><GLine {...ds} color={COLORS.supply} width={2.5} /><Label x={ds.x2 + 2} y={ds.y2 + 12} text="S (Domestic)" color={COLORS.supply} size={9} /><GLine {...dd} color={COLORS.demand} width={2.5} /><Label x={dd.x2 + 2} y={dd.y2 - 4} text="D" color={COLORS.demand} size={9} /><GLine x1={mx + 5} y1={wsY} x2={mx + pw - 5} y2={wsY} color={COLORS.eq} width={2} /><Label x={mx + pw - 5} y={wsY - 6} text="World Supply" color={COLORS.eq} size={8} anchor="end" /><GLine x1={mx + 5} y1={wtY} x2={mx + pw - 5} y2={wtY} color={COLORS.shifted} width={2} /><Label x={mx + pw - 5} y={wtY - 6} text="World S+Tariff" color={COLORS.shifted} size={8} anchor="end" /><WelfareRegion points={[{ x: q1X, y: wsY }, { x: q2X, y: wtY }, { x: q2X, y: wsY }]} fill={COLORS.area} fillOpacity={0.3} strokeWidth={1.5} label="DWL" /><WelfareRegion points={[{ x: q4X, y: wtY }, { x: q3X, y: wsY }, { x: q4X, y: wsY }]} fill={COLORS.area} fillOpacity={0.3} strokeWidth={1.5} label="DWL" /><rect x={q2X} y={wtY} width={q4X - q2X} height={wsY - wtY} fill={COLORS.shifted} fillOpacity={0.15} stroke={COLORS.shifted} strokeWidth={1} /><text x={(q2X + q4X) / 2} y={(wtY + wsY) / 2 + 3} textAnchor="middle" fontSize={7} fontWeight={700} fill={COLORS.shifted} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Tariff Rev.</text>{[{ x: q1X, l: "Q₁" }, { x: q2X, l: "Q₂" }, { x: q3X, l: "Q₃" }, { x: q4X, l: "Q₄" }].map((q, i) => (<g key={i}><line x1={q.x} y1={wsY} x2={q.x} y2={axBot} stroke="currentColor" strokeWidth={0.6} strokeDasharray="2,2" opacity={0.3} /><text x={q.x} y={axBot + 12} textAnchor="middle" fontSize={8} fontWeight={700} fill="currentColor" opacity={0.7} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{q.l}</text></g>))}<text x={mx - 3} y={wsY + 3} textAnchor="end" fontSize={8} fontWeight={600} fill={COLORS.eq} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Pw</text><text x={mx - 3} y={wtY + 3} textAnchor="end" fontSize={8} fontWeight={600} fill={COLORS.shifted} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Pw+T</text></>); },
@@ -2872,7 +2872,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
   /* ── Laffer Curve ── */
   laffer_curve: {
-    title: "Laffer Curve — Tax Rate vs Tax Revenue", xAxis: "Tax Rate (%)", yAxis: "Tax Revenue",
+    title: "Laffer Curve · Tax Rate vs Tax Revenue", xAxis: "Tax Rate (%)", yAxis: "Tax Revenue",
     legend: [{ label: "Laffer Curve", color: COLORS.demand }, { label: "t*", color: COLORS.eq }],
     examTips: ["At 0% and 100% tax rates, revenue is zero", "Peak = revenue-maximising rate (t*)", "Beyond t*, higher rates reduce revenue", "Justifies supply-side tax cuts"],
     render: (p) => { const { mx, my, pw, ph } = p; const axBot = my + ph; const peakX = mx + pw * 0.5; const peakY = my + ph * 0.15; const d = `M ${mx + 5} ${axBot - 5} Q ${mx + pw * 0.25} ${my + ph * 0.1} ${peakX} ${peakY} Q ${mx + pw * 0.75} ${my + ph * 0.1} ${mx + pw - 5} ${axBot - 5}`; return (<><CurvePath d={d} color={COLORS.demand} width={3} /><PremiumDot x={peakX} y={peakY} color={COLORS.eq} label="t*" labelPos="tr" tooltipText="Revenue-maximising rate" /><line x1={peakX} y1={peakY} x2={peakX} y2={axBot} stroke={COLORS.eq} strokeWidth={1} strokeDasharray="3,3" opacity={0.5} /><line x1={mx} y1={peakY} x2={peakX} y2={peakY} stroke={COLORS.eq} strokeWidth={1} strokeDasharray="3,3" opacity={0.5} /><text x={peakX} y={axBot + 12} textAnchor="middle" fontSize={9} fontWeight={700} fill={COLORS.eq} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>t*</text><text x={mx + 8} y={axBot + 12} textAnchor="middle" fontSize={8} fontWeight={600} fill="currentColor" opacity={0.5} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>0%</text><text x={mx + pw - 8} y={axBot + 12} textAnchor="middle" fontSize={8} fontWeight={600} fill="currentColor" opacity={0.5} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>100%</text><text x={mx + pw * 0.25} y={my + ph * 0.55} textAnchor="middle" fontSize={7} fontWeight={600} fill={COLORS.eq} opacity={0.7} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>↑ Revenue</text><text x={mx + pw * 0.75} y={my + ph * 0.55} textAnchor="middle" fontSize={7} fontWeight={600} fill={COLORS.supply} opacity={0.7} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>↓ Revenue</text></>); },
@@ -2888,7 +2888,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
   /* ── Exchange Rate ── */
   exchange_rate: {
-    title: "Currency Market — Exchange Rate", xAxis: "Quantity of £", yAxis: "Exchange Rate ($/£)",
+    title: "Currency Market · Exchange Rate", xAxis: "Quantity of £", yAxis: "Exchange Rate ($/£)",
     legend: [{ label: "S£", color: COLORS.supply }, { label: "D£", color: COLORS.demand }, { label: "S£₁", color: COLORS.shifted }],
     examTips: ["D for £ = foreigners buying UK exports", "S of £ = UK residents buying imports", "S shifts right → £ depreciates", "D shifts right → £ appreciates"],
     render: (p) => { const { mx, my, pw, ph } = p; const axBot = my + ph; const s1 = { x1: mx + 10, y1: axBot - 15, x2: mx + pw - 10, y2: my + 15 }; const d1 = { x1: mx + 10, y1: my + 15, x2: mx + pw - 10, y2: axBot - 15 }; const eq = lineIntersect(s1.x1, s1.y1, s1.x2, s1.y2, d1.x1, d1.y1, d1.x2, d1.y2); const shift = pw * 0.18; const s2 = { x1: s1.x1 + shift, y1: s1.y1, x2: s1.x2 + shift, y2: s1.y2 }; const eq2 = lineIntersect(s2.x1, s2.y1, s2.x2, s2.y2, d1.x1, d1.y1, d1.x2, d1.y2); return (<><GLine {...s1} color={COLORS.supply} width={2.5} /><Label x={s1.x2 + 2} y={s1.y2 + 12} text="S£" color={COLORS.supply} size={10} /><GLine {...s2} color={COLORS.shifted} width={2} dashed /><Label x={s2.x2 + 2} y={s2.y2 + 12} text="S£₁" color={COLORS.shifted} size={10} /><GLine {...d1} color={COLORS.demand} width={2.5} /><Label x={d1.x2 + 2} y={d1.y2 - 4} text="D£" color={COLORS.demand} size={10} /><ShiftArrow x1={eq.x + 6} y1={eq.y + 3} x2={eq2.x - 6} y2={eq2.y + 3} color={COLORS.shifted} /><DashedToAxes x={eq.x} y={eq.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="e₁" qLabel="Q₁" /><DashedToAxes x={eq2.x} y={eq2.y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="e₂" qLabel="Q₂" /><PremiumDot x={eq.x} y={eq.y} color={COLORS.eq} label="E" labelPos="tl" /><PremiumDot x={eq2.x} y={eq2.y} color={COLORS.shifted} label="E₁" labelPos="tr" tooltipText="£ depreciates" /></>); },
@@ -2896,7 +2896,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
   /* ── J-Curve ── */
   j_curve: {
-    title: "J-Curve — Net Exports after Depreciation", xAxis: "Time", yAxis: "Net Exports (X−M)",
+    title: "J-Curve · Net Exports after Depreciation", xAxis: "Time", yAxis: "Net Exports (X−M)",
     legend: [{ label: "J-Curve", color: COLORS.demand }, { label: "Depreciation", color: COLORS.supply }],
     examTips: ["Initially worsens trade balance", "Short run: inelastic demand", "Long run: Marshall-Lerner holds → improvement", "|PEDx| + |PEDm| > 1"],
     render: (p) => { const { mx, my, pw, ph } = p; const axBot = my + ph; const zeroY = my + ph * 0.45; const depX = mx + pw * 0.2; const troughX = mx + pw * 0.45; const troughY = my + ph * 0.78; const endX = mx + pw - 10; const endY = my + ph * 0.15; const d = `M ${mx + 10} ${zeroY} L ${depX} ${zeroY} Q ${depX + 15} ${zeroY + 5} ${mx + pw * 0.32} ${troughY - 10} Q ${troughX - 5} ${troughY + 5} ${troughX} ${troughY} Q ${troughX + 20} ${troughY - 5} ${mx + pw * 0.65} ${zeroY} Q ${mx + pw * 0.8} ${my + ph * 0.25} ${endX} ${endY}`; return (<><line x1={mx} y1={zeroY} x2={mx + pw} y2={zeroY} stroke="currentColor" strokeWidth={0.8} strokeDasharray="4,3" opacity={0.3} /><text x={mx + pw + 2} y={zeroY + 3} fontSize={7} fontWeight={600} fill="currentColor" opacity={0.4} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>0</text><CurvePath d={d} color={COLORS.demand} width={3} /><line x1={depX} y1={my} x2={depX} y2={axBot} stroke={COLORS.supply} strokeWidth={1} strokeDasharray="3,3" opacity={0.5} /><PremiumDot x={depX} y={zeroY} color={COLORS.supply} label="" labelPos="tl" /><text x={depX} y={axBot + 12} textAnchor="middle" fontSize={8} fontWeight={700} fill={COLORS.supply} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Depreciation</text><PremiumDot x={troughX} y={troughY} color={COLORS.demand} label="Trough" labelPos="br" /><text x={(depX + troughX) / 2} y={my + 16} textAnchor="middle" fontSize={7} fontWeight={700} fill={COLORS.supply} opacity={0.7} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Short Run</text><text x={(mx + pw * 0.65 + endX) / 2} y={my + 16} textAnchor="middle" fontSize={7} fontWeight={700} fill={COLORS.eq} opacity={0.7} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Long Run</text></>); },
@@ -2912,15 +2912,15 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
   /* ── Kinked Demand ── */
   kinked_demand: {
-    title: "Oligopoly — Kinked Demand Curve", xAxis: "Output", yAxis: "Price / Revenue / Cost",
+    title: "Oligopoly · Kinked Demand Curve", xAxis: "Output", yAxis: "Price / Revenue / Cost",
     legend: [{ label: "AR (kinked)", color: COLORS.demand }, { label: "MR", color: COLORS.area }, { label: "MC", color: COLORS.supply }],
-    examTips: ["Above p*: elastic — rivals don't follow rises", "Below p*: inelastic — rivals match cuts", "MR gap at kink → price rigidity", "MC can shift within gap without changing price"],
+    examTips: ["Above p*: elastic · rivals don't follow rises", "Below p*: inelastic · rivals match cuts", "MR gap at kink → price rigidity", "MC can shift within gap without changing price"],
     render: (p) => { const { mx, my, pw, ph } = p; const axBot = my + ph; const kX = mx + pw * 0.45; const kY = my + ph * 0.4; return (<><CurvePath d={`M ${mx + 15} ${my + 15} L ${kX} ${kY}`} color={COLORS.demand} width={2.5} /><CurvePath d={`M ${kX} ${kY} L ${mx + pw - 15} ${axBot - 30}`} color={COLORS.demand} width={2.5} /><Label x={mx + pw - 12} y={axBot - 26} text="AR=D" color={COLORS.demand} size={9} /><CurvePath d={`M ${mx + 15} ${my + 40} L ${kX - 3} ${kY + 5}`} color={COLORS.area} width={2} /><CurvePath d={`M ${kX + 3} ${my + ph * 0.7} L ${mx + pw * 0.6} ${axBot - 15}`} color={COLORS.area} width={2} /><Label x={mx + pw * 0.62} y={axBot - 12} text="MR" color={COLORS.area} size={9} /><line x1={kX} y1={kY + 5} x2={kX} y2={my + ph * 0.7} stroke={COLORS.area} strokeWidth={1.5} strokeDasharray="3,2" opacity={0.6} /><CurvePath d={`M ${mx + pw * 0.15} ${axBot - 20} Q ${mx + pw * 0.3} ${my + ph * 0.45} ${mx + pw * 0.55} ${my + 15}`} color={COLORS.supply} width={2.5} /><Label x={mx + pw * 0.57} y={my + 12} text="MC" color={COLORS.supply} size={9} /><PremiumDot x={kX} y={kY} color={COLORS.eq} label="Kink" labelPos="tr" tooltipText="Price rigidity at p*" /><DashedToAxes x={kX} y={kY} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="p*" qLabel="q*" /><text x={mx + pw * 0.18} y={my + ph * 0.2} fontSize={7} fontWeight={600} fill={COLORS.demand} opacity={0.7} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Elastic</text><text x={mx + pw * 0.7} y={my + ph * 0.7} fontSize={7} fontWeight={600} fill={COLORS.demand} opacity={0.7} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Inelastic</text></>); },
   },
 
   /* ── Natural Monopoly ── */
   natural_monopoly: {
-    title: "Natural Monopoly — Significant EoS", xAxis: "Output", yAxis: "Revenue / Cost",
+    title: "Natural Monopoly · Significant EoS", xAxis: "Output", yAxis: "Revenue / Cost",
     legend: [{ label: "LRATC", color: COLORS.supply }, { label: "LRMC", color: COLORS.shifted }, { label: "AR / MR", color: COLORS.demand }],
     examTips: ["LRATC continuously falling", "MR=LRMC → output q, price p", "SNP = (p−c)×q", "Splitting would raise prices"],
     render: (p) => { const { mx, my, pw, ph } = p; const axBot = my + ph; const qX = mx + pw * 0.38; const priceY = my + ph * 0.32; const costY = my + ph * 0.52; return (<><CurvePath d={`M ${mx + 20} ${my + 15} Q ${mx + pw * 0.3} ${my + ph * 0.45} ${mx + pw * 0.55} ${my + ph * 0.6} Q ${mx + pw * 0.75} ${my + ph * 0.7} ${mx + pw - 10} ${my + ph * 0.72}`} color={COLORS.supply} width={2.5} /><Label x={mx + pw - 8} y={my + ph * 0.69} text="LRATC" color={COLORS.supply} size={9} /><CurvePath d={`M ${mx + 20} ${my + 30} Q ${mx + pw * 0.3} ${my + ph * 0.55} ${mx + pw * 0.55} ${my + ph * 0.7} Q ${mx + pw * 0.75} ${my + ph * 0.78} ${mx + pw - 10} ${my + ph * 0.8}`} color={COLORS.shifted} width={2} /><Label x={mx + pw - 8} y={my + ph * 0.78} text="LRMC" color={COLORS.shifted} size={9} /><GLine x1={mx + 10} y1={my + 15} x2={mx + pw - 10} y2={axBot - 15} color={COLORS.demand} width={2.5} /><Label x={mx + pw - 8} y={axBot - 12} text="AR" color={COLORS.demand} size={10} /><GLine x1={mx + 10} y1={my + 15} x2={mx + pw * 0.55} y2={axBot - 15} color={COLORS.area} width={2} /><Label x={mx + pw * 0.57} y={axBot - 12} text="MR" color={COLORS.area} size={10} /><WelfareRegion points={[{ x: mx, y: priceY }, { x: qX, y: priceY }, { x: qX, y: costY }, { x: mx, y: costY }]} fill={COLORS.eq} fillOpacity={0.2} strokeWidth={1.5} label="SNP" /><DashedToAxes x={qX} y={priceY} mx={mx} ph={ph} my={my} color={COLORS.demand} pLabel="p" qLabel="q" /><line x1={mx} y1={costY} x2={qX} y2={costY} stroke={COLORS.supply} strokeWidth={0.8} strokeDasharray="2,2" opacity={0.5} /><text x={mx - 3} y={costY + 3} textAnchor="end" fontSize={8} fontWeight={600} fill={COLORS.supply} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>c</text><PremiumDot x={qX} y={priceY} color={COLORS.demand} label="A" labelPos="tr" /></>); },
@@ -2928,7 +2928,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
   /* ── Monopsony ── */
   monopsony: {
-    title: "Monopsony — Dominant Employer", xAxis: "Quantity of Labour", yAxis: "Wage / Costs",
+    title: "Monopsony · Dominant Employer", xAxis: "Quantity of Labour", yAxis: "Wage / Costs",
     legend: [{ label: "S=ACL", color: COLORS.supply }, { label: "MCL", color: COLORS.shifted }, { label: "D=MRPL", color: COLORS.demand }, { label: "WL", color: COLORS.eq }],
     examTips: ["Hires where MCL=MRPL → Q₁", "Wage on ACL at W₁ < competitive W", "Min wage can increase employment", "MCL steeper than ACL"],
     render: (p) => { const { mx, my, pw, ph } = p; const axBot = my + ph; const acl = { x1: mx + 10, y1: axBot - 15, x2: mx + pw - 10, y2: my + ph * 0.25 }; const mcl = { x1: mx + 10, y1: axBot - 15, x2: mx + pw * 0.65, y2: my + 10 }; const mrpl = { x1: mx + 10, y1: my + 15, x2: mx + pw - 10, y2: axBot - 15 }; const eqMon = lineIntersect(mcl.x1, mcl.y1, mcl.x2, mcl.y2, mrpl.x1, mrpl.y1, mrpl.x2, mrpl.y2); const eqComp = lineIntersect(acl.x1, acl.y1, acl.x2, acl.y2, mrpl.x1, mrpl.y1, mrpl.x2, mrpl.y2); const t = (eqMon.x - acl.x1) / (acl.x2 - acl.x1); const monWY = acl.y1 + t * (acl.y2 - acl.y1); return (<><GLine {...acl} color={COLORS.supply} width={2.5} /><Label x={acl.x2 + 2} y={acl.y2 + 2} text="S=ACL" color={COLORS.supply} size={9} /><GLine {...mcl} color={COLORS.shifted} width={2.5} /><Label x={mcl.x2 + 2} y={mcl.y2 + 2} text="MCL" color={COLORS.shifted} size={9} /><GLine {...mrpl} color={COLORS.demand} width={2.5} /><Label x={mrpl.x2 + 2} y={mrpl.y2 - 4} text="D=MRPL" color={COLORS.demand} size={9} /><WelfareRegion points={[{ x: eqMon.x, y: monWY }, { x: eqComp.x, y: eqComp.y }, { x: eqMon.x, y: eqMon.y }]} fill={COLORS.eq} fillOpacity={0.25} strokeWidth={2} label="WL" /><PremiumDot x={eqComp.x} y={eqComp.y} color={COLORS.eq} label="Competitive" labelPos="tr" /><DashedToAxes x={eqComp.x} y={eqComp.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="W" qLabel="Q" /><PremiumDot x={eqMon.x} y={monWY} color={COLORS.shifted} label="Monopsony" labelPos="bl" /><DashedToAxes x={eqMon.x} y={monWY} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="W₁" qLabel="Q₁" /></>); },
@@ -2936,9 +2936,9 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
   /* ── Pollution Permits ── */
   pollution_permits: {
-    title: "Pollution Permits — Tradeable Emissions", xAxis: "Quantity of Permits", yAxis: "Price of Permits",
+    title: "Pollution Permits · Tradeable Emissions", xAxis: "Quantity of Permits", yAxis: "Price of Permits",
     legend: [{ label: "S (fixed)", color: COLORS.supply }, { label: "S₁ (reduced)", color: COLORS.shifted }, { label: "D", color: COLORS.demand }],
-    examTips: ["Supply perfectly inelastic — set by govt", "Reducing permits → S left → higher price", "Market-based incentive to cut emissions", "Firms trade permits — low-cost sell to high-cost"],
+    examTips: ["Supply perfectly inelastic · set by govt", "Reducing permits → S left → higher price", "Market-based incentive to cut emissions", "Firms trade permits · low-cost sell to high-cost"],
     render: (p) => { const { mx, my, pw, ph } = p; const axBot = my + ph; const s1X = mx + pw * 0.55; const s2X = mx + pw * 0.35; const d1 = { x1: mx + 10, y1: my + 15, x2: mx + pw - 10, y2: axBot - 15 }; const sl = (d1.y2 - d1.y1) / (d1.x2 - d1.x1); const eq1Y = d1.y1 + sl * (s1X - d1.x1); const eq2Y = d1.y1 + sl * (s2X - d1.x1); return (<><GLine x1={s1X} y1={my + 5} x2={s1X} y2={axBot - 5} color={COLORS.supply} width={2.5} /><Label x={s1X + 4} y={my + 14} text="S" color={COLORS.supply} size={10} /><GLine x1={s2X} y1={my + 5} x2={s2X} y2={axBot - 5} color={COLORS.shifted} width={2.5} /><Label x={s2X + 4} y={my + 14} text="S₁" color={COLORS.shifted} size={10} /><GLine {...d1} color={COLORS.demand} width={2.5} /><Label x={d1.x2 + 2} y={d1.y2 - 4} text="D" color={COLORS.demand} size={10} /><ShiftArrow x1={s1X - 5} y1={my + ph * 0.5} x2={s2X + 8} y2={my + ph * 0.5} color={COLORS.shifted} /><DashedToAxes x={s1X} y={eq1Y} mx={mx} ph={ph} my={my} color={COLORS.supply} pLabel="p" qLabel="q" /><DashedToAxes x={s2X} y={eq2Y} mx={mx} ph={ph} my={my} color={COLORS.shifted} pLabel="p₁" qLabel="q₁" /><PremiumDot x={s1X} y={eq1Y} color={COLORS.supply} label="E" labelPos="tr" /><PremiumDot x={s2X} y={eq2Y} color={COLORS.shifted} label="E₁" labelPos="tl" /></>); },
   },
 
@@ -2960,7 +2960,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
   /* ── Comparative Advantage ── */
   comparative_advantage: {
-    title: "Comparative Advantage — PPFs & Gains from Trade", xAxis: "Good X", yAxis: "Good Y",
+    title: "Comparative Advantage · PPFs & Gains from Trade", xAxis: "Good X", yAxis: "Good Y",
     legend: [{ label: "Country A", color: COLORS.demand }, { label: "Country B", color: COLORS.supply }, { label: "After trade", color: COLORS.eq }],
     examTips: ["Compare opportunity costs for CPA", "Each specialises in lower OC good", "Both consume beyond domestic PPF after trade", "Show points A, B (specialisation) and C (consumption)"],
     render: (p) => { const { mx, my, pw, ph } = p; const axBot = my + ph; const gap = 16; const hW = (pw - gap) / 2; const p1x = mx; const p2x = mx + hW + gap; return (<><line x1={p1x} y1={my} x2={p1x} y2={axBot} stroke="currentColor" strokeWidth={1.5} opacity={0.6} /><line x1={p1x} y1={axBot} x2={p1x + hW} y2={axBot} stroke="currentColor" strokeWidth={1.5} opacity={0.6} /><line x1={p2x} y1={my} x2={p2x} y2={axBot} stroke="currentColor" strokeWidth={1.5} opacity={0.6} /><line x1={p2x} y1={axBot} x2={p2x + hW} y2={axBot} stroke="currentColor" strokeWidth={1.5} opacity={0.6} /><text x={p1x + hW / 2} y={my - 5} textAnchor="middle" fontSize={9} fontWeight={800} fill="currentColor" opacity={0.7} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Country A</text><text x={p2x + hW / 2} y={my - 5} textAnchor="middle" fontSize={9} fontWeight={800} fill="currentColor" opacity={0.7} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Country B</text><CurvePath d={`M ${p1x + 5} ${my + 10} Q ${p1x + hW * 0.2} ${my + ph * 0.35} ${p1x + hW * 0.45} ${my + ph * 0.6} Q ${p1x + hW * 0.7} ${my + ph * 0.82} ${p1x + hW - 5} ${axBot - 5}`} color={COLORS.demand} width={2.5} /><CurvePath d={`M ${p2x + 5} ${my + ph * 0.35} Q ${p2x + hW * 0.3} ${my + ph * 0.55} ${p2x + hW * 0.55} ${my + ph * 0.75} Q ${p2x + hW * 0.8} ${my + ph * 0.9} ${p2x + hW - 5} ${axBot - 5}`} color={COLORS.supply} width={2.5} /><PremiumDot x={p1x + hW * 0.15} y={my + ph * 0.15} color={COLORS.demand} label="A" labelPos="tr" tooltipText="Specialise in Good Y" /><PremiumDot x={p2x + hW * 0.8} y={axBot - ph * 0.12} color={COLORS.supply} label="B" labelPos="tl" tooltipText="Specialise in Good X" /><PremiumDot x={p1x + hW * 0.5} y={my + ph * 0.35} color={COLORS.eq} label="C" labelPos="tr" tooltipText="After trade" /><PremiumDot x={p2x + hW * 0.45} y={my + ph * 0.45} color={COLORS.eq} label="C" labelPos="tr" tooltipText="After trade" /><text x={p1x + hW / 2} y={axBot + 14} textAnchor="middle" fontSize={7} fontWeight={600} fill="currentColor" opacity={0.5} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Good X</text><text x={p2x + hW / 2} y={axBot + 14} textAnchor="middle" fontSize={7} fontWeight={600} fill="currentColor" opacity={0.5} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Good X</text></>); },
@@ -2968,7 +2968,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
   /* ── Business Objectives ── */
   business_objectives: {
-    title: "Business Objectives — Profit/Rev/Sales Max", xAxis: "Output", yAxis: "Revenue / Cost",
+    title: "Business Objectives · Profit/Rev/Sales Max", xAxis: "Output", yAxis: "Revenue / Cost",
     legend: [{ label: "MC", color: COLORS.supply }, { label: "ATC", color: COLORS.shifted }, { label: "AR", color: COLORS.demand }, { label: "MR", color: COLORS.area }],
     examTips: ["Profit max: MC=MR → (q₁,p₁)", "Revenue max: MR=0 → (q₂,p₂)", "Sales max: AR=ATC → (q₃,p₃)", "Different objectives → different outcomes"],
     render: (p) => { const { mx, my, pw, ph } = p; const axBot = my + ph; const ar = { x1: mx + 10, y1: my + 10, x2: mx + pw - 10, y2: axBot - 15 }; const mr = { x1: mx + 10, y1: my + 10, x2: mx + pw * 0.55, y2: axBot - 15 }; const q1X = mx + pw * 0.3; const q2X = mx + pw * 0.45; const q3X = mx + pw * 0.55; const sl = (ar.y2 - ar.y1) / (ar.x2 - ar.x1); const p1Y = ar.y1 + sl * (q1X - ar.x1); const p2Y = ar.y1 + sl * (q2X - ar.x1); const p3Y = ar.y1 + sl * (q3X - ar.x1); return (<><CurvePath d={`M ${mx + pw * 0.1} ${my + ph * 0.5} Q ${mx + pw * 0.25} ${my + ph * 0.7} ${mx + pw * 0.35} ${my + ph * 0.65} Q ${mx + pw * 0.45} ${my + ph * 0.55} ${mx + pw * 0.65} ${my + 10}`} color={COLORS.supply} width={2.5} /><Label x={mx + pw * 0.67} y={my + 8} text="MC" color={COLORS.supply} size={9} /><CurvePath d={`M ${mx + pw * 0.08} ${my + 15} Q ${mx + pw * 0.25} ${my + ph * 0.55} ${mx + pw * 0.4} ${my + ph * 0.55} Q ${mx + pw * 0.6} ${my + ph * 0.52} ${mx + pw * 0.8} ${my + ph * 0.35}`} color={COLORS.shifted} width={2} /><Label x={mx + pw * 0.82} y={my + ph * 0.33} text="ATC" color={COLORS.shifted} size={9} /><GLine {...ar} color={COLORS.demand} width={2.5} /><Label x={ar.x2 + 2} y={ar.y2 - 4} text="AR" color={COLORS.demand} size={10} /><GLine {...mr} color={COLORS.area} width={2} /><Label x={mr.x2 + 2} y={mr.y2 - 4} text="MR" color={COLORS.area} size={10} /><DashedToAxes x={q1X} y={p1Y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="p₁" qLabel="q₁" /><PremiumDot x={q1X} y={p1Y} color={COLORS.eq} label="Profit Max" labelPos="tr" /><line x1={q2X} y1={p2Y} x2={q2X} y2={axBot} stroke={COLORS.area} strokeWidth={0.8} strokeDasharray="2,2" opacity={0.5} /><text x={q2X} y={axBot + 12} textAnchor="middle" fontSize={7} fontWeight={700} fill={COLORS.area} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q₂</text><PremiumDot x={q2X} y={p2Y} color={COLORS.area} label="Rev Max" labelPos="tr" /><line x1={q3X} y1={p3Y} x2={q3X} y2={axBot} stroke={COLORS.demand} strokeWidth={0.8} strokeDasharray="2,2" opacity={0.5} /><text x={q3X} y={axBot + 12} textAnchor="middle" fontSize={7} fontWeight={700} fill={COLORS.demand} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>q₃</text><PremiumDot x={q3X} y={p3Y} color={COLORS.demand} label="Sales Max" labelPos="br" /></>); },
@@ -2996,9 +2996,9 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     render: () => <SpecificAdValoremDiagram />,
   },
 
-  /* ── Information Failure — Demerit Good (locked component) ── */
+  /* ── Information Failure · Demerit Good (locked component) ── */
   information_failure_demerit: {
-    title: "Information Failure — Demerit Good",
+    title: "Information Failure · Demerit Good",
     xAxis: "Quantity", yAxis: "Costs & Benefits £s",
     legend: [{ label: "S = MPC = MSC", color: COLORS.supply }, { label: "D = MPB (over-valuation)", color: COLORS.demand }, { label: "MSB (correct valuation)", color: "#16a34a" }],
     examTips: [
@@ -3077,7 +3077,7 @@ const FAMILY_ALIASES: Record<string, string> = {
   "business-objectives": "business_objectives",
 };
 
-// Alias mappings — comprehensive to catch AI-generated diagram titles
+// Alias mappings · comprehensive to catch AI-generated diagram titles
 const ALIASES: Record<string, string> = {
   // Externality aliases
   "positive_consumption_externality": "positive_externality",
@@ -3367,7 +3367,7 @@ export function resolveDiagramType(raw: string, shiftHint?: string): DiagramType
     [["maximum", "price"], "price_ceiling"],
     [["rent", "control"], "price_ceiling"],
     [["price", "cap"], "price_ceiling"],
-    // Macro — specific before generic
+    // Macro · specific before generic
     [["supply", "side", "shock"], "sras_decrease"],
     [["demand", "side", "shock"], "demand_side_shock"],
     [["economic", "growth", "lras"], "lras_shift"],

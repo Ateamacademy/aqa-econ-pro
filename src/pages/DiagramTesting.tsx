@@ -1,5 +1,5 @@
 /**
- * Diagram Testing Pipeline — AQA A-Level Individual-Level Testing
+ * Diagram Testing Pipeline · AQA A-Level Individual-Level Testing
  * Tests each topic independently against its trained figure mapping.
  */
 import { useState, useMemo } from "react";
@@ -39,11 +39,11 @@ interface TestResult {
 
 const AQA_SPECS: TopicSpec[] = [
   {
-    topicName: "Supply & Demand — Shift in Demand",
+    topicName: "Supply & Demand · Shift in Demand",
     primaryFigure: "demand_shift_dual",
     allowedFigures: ["demand_shift_dual", "demand_increase", "demand_decrease"],
     testInputs: [
-      { id: "sd-d-1", input: "Supply & Demand — Shift in Demand", expectedFigure: "demand_shift_dual" },
+      { id: "sd-d-1", input: "Supply & Demand · Shift in Demand", expectedFigure: "demand_shift_dual" },
       { id: "sd-d-2", input: "shift in demand", expectedFigure: "demand_shift_dual" },
       { id: "sd-d-3", input: "demand shift", expectedFigure: "demand_shift_dual" },
       { id: "sd-d-4", input: "Demand shifts right", shiftHint: "Demand shifts right", expectedFigure: "demand_shift_dual" },
@@ -53,11 +53,11 @@ const AQA_SPECS: TopicSpec[] = [
     ],
   },
   {
-    topicName: "Supply & Demand — Shift in Supply",
+    topicName: "Supply & Demand · Shift in Supply",
     primaryFigure: "supply_shift_dual",
     allowedFigures: ["supply_shift_dual", "supply_increase", "supply_decrease"],
     testInputs: [
-      { id: "sd-s-1", input: "Supply & Demand — Shift in Supply", expectedFigure: "supply_shift_dual" },
+      { id: "sd-s-1", input: "Supply & Demand · Shift in Supply", expectedFigure: "supply_shift_dual" },
       { id: "sd-s-2", input: "shift in supply", expectedFigure: "supply_shift_dual" },
       { id: "sd-s-3", input: "supply shift", expectedFigure: "supply_shift_dual" },
       { id: "sd-s-4", input: "Supply shifts right", shiftHint: "Supply shifts right", expectedFigure: "supply_shift_dual" },
@@ -142,11 +142,11 @@ const AQA_SPECS: TopicSpec[] = [
     ],
   },
   {
-    topicName: "AD/AS — Demand-Side Shock",
+    topicName: "AD/AS · Demand-Side Shock",
     primaryFigure: "demand_side_shock",
     allowedFigures: ["demand_side_shock", "ad_increase", "ad_decrease"],
     testInputs: [
-      { id: "ad-d-1", input: "AD/AS — Demand-Side Shock", expectedFigure: "demand_side_shock" },
+      { id: "ad-d-1", input: "AD/AS · Demand-Side Shock", expectedFigure: "demand_side_shock" },
       { id: "ad-d-2", input: "demand side shock", expectedFigure: "demand_side_shock" },
       { id: "ad-d-3", input: "demand pull inflation", expectedFigure: "ad_increase" },
       { id: "ad-d-4", input: "aggregate demand increase", expectedFigure: "ad_increase" },
@@ -154,11 +154,11 @@ const AQA_SPECS: TopicSpec[] = [
     ],
   },
   {
-    topicName: "AD/AS — Supply-Side Shock",
+    topicName: "AD/AS · Supply-Side Shock",
     primaryFigure: "sras_decrease",
     allowedFigures: ["sras_decrease", "sras_increase"],
     testInputs: [
-      { id: "as-s-1", input: "AD/AS — Supply-Side Shock", expectedFigure: "sras_decrease" },
+      { id: "as-s-1", input: "AD/AS · Supply-Side Shock", expectedFigure: "sras_decrease" },
       { id: "as-s-2", input: "cost push inflation", expectedFigure: "sras_decrease" },
       { id: "as-s-3", input: "supply side shock", expectedFigure: "sras_decrease" },
       { id: "as-s-4", input: "aggregate supply decrease", expectedFigure: "sras_decrease" },
@@ -167,33 +167,33 @@ const AQA_SPECS: TopicSpec[] = [
     ],
   },
   {
-    topicName: "AD/AS — Economic Growth (LRAS Shift)",
+    topicName: "AD/AS · Economic Growth (LRAS Shift)",
     primaryFigure: "lras_shift",
     allowedFigures: ["lras_shift", "ppf_growth"],
     testInputs: [
-      { id: "lras-1", input: "AD/AS — Economic Growth (LRAS Shift)", expectedFigure: "lras_shift" },
+      { id: "lras-1", input: "AD/AS · Economic Growth (LRAS Shift)", expectedFigure: "lras_shift" },
       { id: "lras-2", input: "LRAS shift", expectedFigure: "lras_shift" },
       { id: "lras-3", input: "long run growth", expectedFigure: "lras_shift" },
       { id: "lras-4", input: "productive capacity", expectedFigure: "lras_shift" },
     ],
   },
   {
-    topicName: "Keynesian AS — Spare Capacity vs Full Employment",
+    topicName: "Keynesian AS · Spare Capacity vs Full Employment",
     primaryFigure: "keynesian_as",
     allowedFigures: ["keynesian_as"],
     testInputs: [
-      { id: "key-1", input: "Keynesian AS — Spare Capacity vs Full Employment", expectedFigure: "keynesian_as" },
+      { id: "key-1", input: "Keynesian AS · Spare Capacity vs Full Employment", expectedFigure: "keynesian_as" },
       { id: "key-2", input: "keynesian", expectedFigure: "keynesian_as" },
       { id: "key-3", input: "spare capacity", expectedFigure: "keynesian_as" },
       { id: "key-4", input: "keynesian aggregate supply", expectedFigure: "keynesian_as" },
     ],
   },
   {
-    topicName: "Labour Market — Wage Determination",
+    topicName: "Labour Market · Wage Determination",
     primaryFigure: "labour_market",
     allowedFigures: ["labour_market"],
     testInputs: [
-      { id: "lab-1", input: "Labour Market — Wage Determination", expectedFigure: "labour_market" },
+      { id: "lab-1", input: "Labour Market · Wage Determination", expectedFigure: "labour_market" },
       { id: "lab-2", input: "labour market", expectedFigure: "labour_market" },
       { id: "lab-3", input: "wage determination", expectedFigure: "labour_market" },
       { id: "lab-4", input: "marginal revenue product", expectedFigure: "labour_market" },
@@ -201,22 +201,22 @@ const AQA_SPECS: TopicSpec[] = [
     ],
   },
   {
-    topicName: "Monopoly — Profit Maximisation (MC=MR)",
+    topicName: "Monopoly · Profit Maximisation (MC=MR)",
     primaryFigure: "monopoly",
     allowedFigures: ["monopoly"],
     testInputs: [
-      { id: "mon-1", input: "Monopoly — Profit Maximisation (MC=MR)", expectedFigure: "monopoly" },
+      { id: "mon-1", input: "Monopoly · Profit Maximisation (MC=MR)", expectedFigure: "monopoly" },
       { id: "mon-2", input: "monopoly", expectedFigure: "monopoly" },
       { id: "mon-3", input: "profit maximisation", expectedFigure: "monopoly" },
       { id: "mon-4", input: "monopoly profit", expectedFigure: "monopoly" },
     ],
   },
   {
-    topicName: "Perfect Competition — Short Run & Long Run",
+    topicName: "Perfect Competition · Short Run & Long Run",
     primaryFigure: "perfect_competition",
     allowedFigures: ["perfect_competition"],
     testInputs: [
-      { id: "pc-1", input: "Perfect Competition — Short Run & Long Run", expectedFigure: "perfect_competition" },
+      { id: "pc-1", input: "Perfect Competition · Short Run & Long Run", expectedFigure: "perfect_competition" },
       { id: "pc-2", input: "perfect competition", expectedFigure: "perfect_competition" },
       { id: "pc-3", input: "perfectly competitive", expectedFigure: "perfect_competition" },
     ],
@@ -233,7 +233,7 @@ function computeConfidence(predicted: DiagramType | null, expected: DiagramType,
 }
 
 function classifyError(predicted: DiagramType | null, expected: DiagramType, allowedFigures: DiagramType[]): { errorType: string; explanation: string } {
-  if (!predicted) return { errorType: "missing figure", explanation: "resolveDiagramType returned null — no match found in alias/keyword bank" };
+  if (!predicted) return { errorType: "missing figure", explanation: "resolveDiagramType returned null · no match found in alias/keyword bank" };
   if (predicted === expected) return { errorType: "none", explanation: "Exact match with expected figure" };
   if (allowedFigures.includes(predicted)) return { errorType: "label mismatch", explanation: `Resolved to ${predicted} (acceptable alternative) instead of ${expected}` };
   return { errorType: "cross-topic leakage", explanation: `Resolved to ${predicted} which is outside the allowed figure bank [${allowedFigures.join(", ")}]` };
@@ -408,7 +408,7 @@ export default function DiagramTesting() {
         ))}
         {filterTopic !== "all" && (
           <Badge variant="secondary" className="cursor-pointer" onClick={() => setFilterTopic("all")}>
-            Topic: {filterTopic.split("—")[0].trim()} ✕
+            Topic: {filterTopic.split("·")[0].trim()} ✕
           </Badge>
         )}
       </div>
@@ -437,7 +437,7 @@ export default function DiagramTesting() {
                     <tr key={r.testItemId} className={cn("border-b border-border/20 hover:bg-muted/20 transition-colors",
                       r.matchStatus === "Incorrect" && "bg-red-500/5",
                       r.matchStatus === "Needs Review" && "bg-amber-500/5")}>
-                      <td className="px-4 py-2.5 text-xs max-w-[160px] truncate">{r.topicName.split("—")[0].trim()}</td>
+                      <td className="px-4 py-2.5 text-xs max-w-[160px] truncate">{r.topicName.split("·")[0].trim()}</td>
                       <td className="px-4 py-2.5 text-xs font-mono max-w-[180px] truncate">{r.input}</td>
                       <td className="px-4 py-2.5"><Badge variant="outline" className="text-[10px] font-mono">{r.expectedFigure}</Badge></td>
                       <td className="px-4 py-2.5">
@@ -497,7 +497,7 @@ export default function DiagramTesting() {
                           {r.predictedFigure === r.expectedFigure && (
                             <div className="flex items-center justify-center text-green-600">
                               <CheckCircle2 className="h-8 w-8 mr-2" />
-                              <span className="font-semibold">Exact match — no comparison needed</span>
+                              <span className="font-semibold">Exact match · no comparison needed</span>
                             </div>
                           )}
                         </div>
@@ -539,7 +539,7 @@ export default function DiagramTesting() {
               {results.filter(r => r.confidence < CONFIDENCE_THRESHOLD).map(r => (
                 <li key={r.testItemId} className="flex items-start gap-2 text-xs">
                   <AlertTriangle className="h-3.5 w-3.5 text-amber-500 mt-0.5 shrink-0" />
-                  <span><strong>{r.topicName}</strong> → "{r.input}" — confidence {(r.confidence * 100).toFixed(0)}% — {r.explanation}</span>
+                  <span><strong>{r.topicName}</strong> → "{r.input}" · confidence {(r.confidence * 100).toFixed(0)}% · {r.explanation}</span>
                 </li>
               ))}
             </ul>
@@ -553,7 +553,7 @@ export default function DiagramTesting() {
         <CardContent>
           <ul className="space-y-2 text-sm text-muted-foreground">
             {results.filter(r => r.matchStatus !== "Correct").length === 0 ? (
-              <li className="flex items-center gap-2 text-green-600"><CheckCircle2 className="h-4 w-4" /> All tests passing — no recommendations needed</li>
+              <li className="flex items-center gap-2 text-green-600"><CheckCircle2 className="h-4 w-4" /> All tests passing · no recommendations needed</li>
             ) : (
               <>
                 {results.some(r => r.errorType === "cross-topic leakage") && (

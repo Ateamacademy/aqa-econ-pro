@@ -1,4 +1,4 @@
-// Diagnostic Calculator — strict marking via Lovable AI Gateway.
+// Diagnostic Calculator · strict marking via Lovable AI Gateway.
 // Board-aware: applies the correct mark scheme convention for the chosen exam board.
 
 const corsHeaders = {
@@ -18,7 +18,7 @@ interface DiagnosticItem {
   totalMarks: number;
   answer: string;
   hasDiagram?: boolean; // q5, q6
-  diagramImage?: string; // q5, q6 — base64 data URL
+  diagramImage?: string; // q5, q6 · base64 data URL
   rubric: string;
 }
 
@@ -169,7 +169,7 @@ ${c.caps}
 
 UNIVERSAL RULES (apply to every board):
 - Apply the board's mark scheme with full rigor. Default LOWER on borderlines.
-- Mark only what is actually written — never infer intent.
+- Mark only what is actually written · never infer intent.
 - Empty / off-topic / < 15 words → 0 marks.
 - Inaccurate economic theory (wrong direction of shift, wrong definition) → cap at 30%.
 - Length is NOT quality. Never round up for effort.
@@ -214,14 +214,14 @@ function buildUser(item: DiagnosticItem, board: Board): string {
     } else if (!item.hasDiagram) {
       lines.push(`→ Apply this board's no-diagram cap (see HARD CAPS).`);
     } else {
-      lines.push(`→ Student claims diagram was drawn but no image was uploaded — apply the no-diagram cap.`);
+      lines.push(`→ Student claims diagram was drawn but no image was uploaded · apply the no-diagram cap.`);
     }
     if (wc < 200) {
-      lines.push(`⚠ Under 200 words for a 15-mark question — almost certainly cannot reach the top level/skill bands.`);
+      lines.push(`⚠ Under 200 words for a 15-mark question · almost certainly cannot reach the top level/skill bands.`);
     }
   }
   if (item.id === "q4" && wc < 30) {
-    lines.push(`⚠ Under 30 words for a 4-mark explain question — almost certainly cannot exceed 2/4.`);
+    lines.push(`⚠ Under 30 words for a 4-mark explain question · almost certainly cannot exceed 2/4.`);
   }
   if (item.id === "q6") {
     // Diagram-only question: no written answer expected.
@@ -240,12 +240,12 @@ function buildUser(item: DiagnosticItem, board: Board): string {
 }
 
 async function markItem(apiKey: string, item: DiagnosticItem, board: Board): Promise<ItemResult> {
-  // Q6 is diagram-only — empty written answer is expected. No-image → 0.
+  // Q6 is diagram-only · empty written answer is expected. No-image → 0.
   if (item.id === "q6") {
     if (!item.diagramImage) {
       return {
         id: item.id, marks: 0, totalMarks: item.totalMarks,
-        rationale: "No diagram submitted — diagram-only question requires an image.",
+        rationale: "No diagram submitted · diagram-only question requires an image.",
         strengths: [], improvements: ["Draw or upload a fully labelled diagram next time."],
       };
     }

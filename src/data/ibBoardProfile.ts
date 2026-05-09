@@ -22,7 +22,7 @@ const IB_INTRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "ppc",
     name: "Production Possibility Curve / Frontier",
-    theme: "Unit 1 — Introduction to Economics",
+    theme: "Unit 1 · Introduction to Economics",
     axes: { x: "Good X / Consumer Goods", y: "Good Y / Capital Goods" },
     curveNames: ["PPC", "PPC₁", "PPC₂"],
     requiredLabels: ["Efficient point (on PPC)", "Inefficient (inside)", "Unattainable (outside)", "Shift arrows"],
@@ -45,7 +45,7 @@ const IB_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "demand",
     name: "Demand",
-    theme: "Unit 2 — Microeconomics",
+    theme: "Unit 2 · Microeconomics",
     axes: { x: "Quantity", y: "Price" },
     curveNames: ["D", "D₁", "D₂"],
     requiredLabels: ["P", "Q", "D"],
@@ -60,7 +60,7 @@ const IB_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "supply",
     name: "Supply",
-    theme: "Unit 2 — Microeconomics",
+    theme: "Unit 2 · Microeconomics",
     axes: { x: "Quantity", y: "Price" },
     curveNames: ["S", "S₁", "S₂"],
     requiredLabels: ["P", "Q", "S"],
@@ -75,7 +75,7 @@ const IB_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "equilibrium",
     name: "Competitive Market Equilibrium",
-    theme: "Unit 2 — Microeconomics",
+    theme: "Unit 2 · Microeconomics",
     axes: { x: "Quantity", y: "Price" },
     curveNames: ["D", "S"],
     requiredLabels: ["P*", "Q*", "E", "Excess demand", "Excess supply"],
@@ -91,7 +91,7 @@ const IB_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "consumer_producer_surplus",
     name: "Consumer & Producer Surplus",
-    theme: "Unit 2 — Microeconomics",
+    theme: "Unit 2 · Microeconomics",
     axes: { x: "Quantity", y: "Price" },
     curveNames: ["D", "S"],
     requiredLabels: ["CS", "PS", "P*", "Q*"],
@@ -106,7 +106,7 @@ const IB_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "elasticity",
     name: "Elasticity",
-    theme: "Unit 2 — Microeconomics",
+    theme: "Unit 2 · Microeconomics",
     axes: { x: "Quantity", y: "Price" },
     curveNames: ["D (elastic)", "D (inelastic)", "S"],
     requiredLabels: ["P", "Q", "Revenue area"],
@@ -122,7 +122,7 @@ const IB_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "indirect_tax",
     name: "Indirect Tax",
-    theme: "Unit 2 — Government Intervention",
+    theme: "Unit 2 · Government Intervention",
     axes: { x: "Quantity", y: "Price" },
     curveNames: ["D", "S", "S + tax"],
     requiredLabels: ["P₁", "P₂", "Q₁", "Q₂", "Tax per unit", "Tax incidence"],
@@ -137,7 +137,7 @@ const IB_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "subsidy",
     name: "Subsidy",
-    theme: "Unit 2 — Government Intervention",
+    theme: "Unit 2 · Government Intervention",
     axes: { x: "Quantity", y: "Price" },
     curveNames: ["D", "S", "S + subsidy"],
     requiredLabels: ["P₁", "P₂", "Q₁", "Q₂", "Government expenditure"],
@@ -151,7 +151,7 @@ const IB_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "price_controls",
     name: "Price Controls (Ceiling & Floor)",
-    theme: "Unit 2 — Government Intervention",
+    theme: "Unit 2 · Government Intervention",
     axes: { x: "Quantity", y: "Price" },
     curveNames: ["D", "S", "Pmax / Pmin"],
     requiredLabels: ["P*", "Pmax/Pmin", "Shortage/Surplus"],
@@ -166,7 +166,7 @@ const IB_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "externalities",
     name: "Externalities",
-    theme: "Unit 2 — Market Failure",
+    theme: "Unit 2 · Market Failure",
     axes: { x: "Quantity", y: "Cost / Benefit" },
     curveNames: ["MPB", "MSB", "MPC", "MSC"],
     requiredLabels: ["Qm", "Qopt", "Welfare loss", "MSC/MPC/MSB/MPB"],
@@ -190,7 +190,7 @@ const IB_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "market_power",
     name: "Market Power / Structures (HL)",
-    theme: "Unit 2 — HL Extension",
+    theme: "Unit 2 · HL Extension",
     axes: { x: "Quantity", y: "Cost / Revenue" },
     curveNames: ["AR", "MR", "MC", "ATC"],
     requiredLabels: ["Profit max (MC=MR)", "Supernormal profit", "DWL"],
@@ -216,7 +216,7 @@ const IB_MACRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "ad_as",
     name: "AD/AS Model",
-    theme: "Unit 3 — Macroeconomics",
+    theme: "Unit 3 · Macroeconomics",
     axes: { x: "Real GDP (Y)", y: "Price Level (PL)" },
     curveNames: ["AD", "AD₁", "AD₂", "SRAS", "LRAS"],
     requiredLabels: ["PL", "Y", "Yf", "E"],
@@ -238,7 +238,7 @@ const IB_MACRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "phillips_curve",
     name: "Phillips Curve",
-    theme: "Unit 3 — Macroeconomics",
+    theme: "Unit 3 · Macroeconomics",
     axes: { x: "Unemployment Rate", y: "Inflation Rate" },
     curveNames: ["SRPC", "LRPC"],
     requiredLabels: ["NRU", "SRPC", "LRPC"],
@@ -253,8 +253,8 @@ const IB_MACRO_FAMILIES: DiagramFamilyProfile[] = [
   },
   {
     id: "inequality",
-    name: "Inequality — Lorenz & Gini",
-    theme: "Unit 3 — Macroeconomics",
+    name: "Inequality · Lorenz & Gini",
+    theme: "Unit 3 · Macroeconomics",
     axes: { x: "Cumulative % Population", y: "Cumulative % Income" },
     curveNames: ["Line of equality", "Lorenz curve"],
     requiredLabels: ["Gini coefficient", "Area A", "Area B"],
@@ -276,7 +276,7 @@ const IB_GLOBAL_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "comparative_advantage",
     name: "Comparative Advantage",
-    theme: "Unit 4 — Global Economy",
+    theme: "Unit 4 · Global Economy",
     axes: { x: "Good X", y: "Good Y" },
     curveNames: ["Country A PPC", "Country B PPC"],
     requiredLabels: ["Opportunity costs", "Specialisation"],
@@ -292,7 +292,7 @@ const IB_GLOBAL_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "tariff",
     name: "Tariff",
-    theme: "Unit 4 — Global Economy",
+    theme: "Unit 4 · Global Economy",
     axes: { x: "Quantity", y: "Price" },
     curveNames: ["D", "Sd", "Pw", "Pw + tariff"],
     requiredLabels: ["Tariff revenue", "DWL", "Imports before/after"],
@@ -307,7 +307,7 @@ const IB_GLOBAL_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "quota",
     name: "Quota",
-    theme: "Unit 4 — Global Economy",
+    theme: "Unit 4 · Global Economy",
     axes: { x: "Quantity", y: "Price" },
     curveNames: ["D", "Sd", "Pw", "Sd + quota"],
     requiredLabels: ["Quota rent", "DWL", "Restricted imports"],
@@ -322,7 +322,7 @@ const IB_GLOBAL_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "trade_subsidy",
     name: "Production/Export Subsidy in Trade",
-    theme: "Unit 4 — Global Economy",
+    theme: "Unit 4 · Global Economy",
     axes: { x: "Quantity", y: "Price" },
     curveNames: ["D", "Sd", "Sd + subsidy", "Pw"],
     requiredLabels: ["Government cost", "Domestic production change"],
@@ -337,7 +337,7 @@ const IB_GLOBAL_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "exchange_rate",
     name: "Exchange Rate",
-    theme: "Unit 4 — Global Economy",
+    theme: "Unit 4 · Global Economy",
     axes: { x: "Quantity of Currency", y: "Exchange Rate" },
     curveNames: ["D", "S", "D₂", "S₂"],
     requiredLabels: ["ER₁", "ER₂", "Appreciation/Depreciation"],
@@ -353,7 +353,7 @@ const IB_GLOBAL_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "j_curve",
     name: "J-Curve (HL)",
-    theme: "Unit 4 — HL Extension",
+    theme: "Unit 4 · HL Extension",
     axes: { x: "Time", y: "Current Account Balance" },
     curveNames: ["CA balance"],
     requiredLabels: ["Depreciation point", "Initial worsening", "LR improvement"],
@@ -368,7 +368,7 @@ const IB_GLOBAL_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "development",
     name: "Development & Poverty",
-    theme: "Unit 4 — Global Economy",
+    theme: "Unit 4 · Global Economy",
     axes: { x: "", y: "" },
     curveNames: [],
     requiredLabels: ["Poverty cycle stages", "Breaking points"],
@@ -427,10 +427,10 @@ export const IB_SL_PROFILE: BoardProfile = {
   ],
   diagramFamilies: [
     ...IB_INTRO_FAMILIES,
-    // SL micro — exclude market_power
+    // SL micro · exclude market_power
     ...IB_MICRO_FAMILIES.filter(f => f.id !== "market_power"),
     ...IB_MACRO_FAMILIES,
-    // SL global — exclude j_curve
+    // SL global · exclude j_curve
     ...IB_GLOBAL_FAMILIES.filter(f => f.id !== "j_curve"),
   ],
   terminology: {

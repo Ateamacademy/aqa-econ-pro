@@ -1,5 +1,5 @@
 /**
- * Non-AQA Tier-3 AI marking — parallel implementation to `src/lib/aiMarking.ts`.
+ * Non-AQA Tier-3 AI marking · parallel implementation to `src/lib/aiMarking.ts`.
  *
  * AQA continues to use the legacy `markWithAi` in `src/lib/aiMarking.ts`
  * (which is a thin wrapper around `callAiMarking`). This file is the
@@ -44,7 +44,7 @@ export interface NonAqaAiAnalysis {
   gaps: string[];
   /** Level/band recommendation, encoded by the board's framework. */
   recommendation: { label: string; rationale: string };
-  /** Skill-by-skill notes — keys depend on framework. */
+  /** Skill-by-skill notes · keys depend on framework. */
   skillNotes: Record<string, { present: boolean; evidence: string }>;
 }
 
@@ -68,7 +68,7 @@ function buildSystemPrompt(convention: NonAqaMarkingConvention, marks: number): 
     `Descriptor style: ${convention.descriptorStyle}.`,
     bandText ? `Mark bands for ${marks}-mark question:\n${bandText}` : "",
     splitText,
-    "Provide an advisory analysis only — never assign marks. Tier 1 (auto) and Tier 2 (self-assessment) are the source of truth.",
+    "Provide an advisory analysis only · never assign marks. Tier 1 (auto) and Tier 2 (self-assessment) are the source of truth.",
   ].filter(Boolean).join("\n\n");
 }
 
@@ -89,7 +89,7 @@ export async function markWithAiNonAqa(payload: NonAqaAiPayload): Promise<NonAqa
           descriptorStyle: convention.descriptorStyle,
           systemPrompt,
         },
-        // The same edge function serves both AQA and non-AQA — the request
+        // The same edge function serves both AQA and non-AQA · the request
         // shape is backwards-compatible (boardContext is additive).
         question: {
           ...payload.question,

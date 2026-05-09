@@ -21,7 +21,7 @@ export function MarkScheme({ rubric }: { rubric: Rubric }) {
     <Collapsible open={open} onOpenChange={setOpen}>
       <CollapsibleTrigger className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors w-full py-2">
         <ChevronDown className={cn("h-4 w-4 transition-transform", open && "rotate-180")} />
-        Mark Scheme — {rubric.totalMarks} marks
+        Mark Scheme · {rubric.totalMarks} marks
         <Badge variant="outline" className="ml-auto text-[10px]">{rubric.command}</Badge>
       </CollapsibleTrigger>
       <CollapsibleContent className="space-y-4 pt-2 pb-4">
@@ -103,7 +103,7 @@ export function HowMarkingWorksModal() {
         <div className="space-y-3 text-sm text-muted-foreground">
           <p>Your answers are marked using a <strong className="text-foreground">rubric-driven AI examiner</strong> that mirrors Edexcel's official mark scheme methodology.</p>
           <ul className="space-y-2 list-disc list-inside">
-            <li><strong className="text-foreground">Pre-flight checks:</strong> Your diagram is checked for content before marking — empty or near-empty submissions automatically score 0.</li>
+            <li><strong className="text-foreground">Pre-flight checks:</strong> Your diagram is checked for content before marking · empty or near-empty submissions automatically score 0.</li>
             <li><strong className="text-foreground">Evidence-based:</strong> Marks are only awarded for features we can verify in your work. Every mark is tied to a specific rubric criterion and quoted evidence.</li>
             <li><strong className="text-foreground">Level-based:</strong> Your response is placed into Edexcel's 4-level framework (L1–L4).</li>
             <li><strong className="text-foreground">AO-weighted:</strong> Marks are allocated across AO1 (Knowledge), AO2 (Application), AO3 (Analysis), and AO4 (Evaluation).</li>
@@ -111,7 +111,7 @@ export function HowMarkingWorksModal() {
             <li><strong className="text-foreground">Constructive:</strong> You receive specific strengths, improvements, and a model answer improvement.</li>
           </ul>
           <p className="text-xs text-muted-foreground/70 italic pt-2 border-t border-border">
-            This is practice marking — not an official Edexcel result. Use it to identify gaps and improve your exam technique.
+            This is practice marking · not an official Edexcel result. Use it to identify gaps and improve your exam technique.
           </p>
         </div>
       </DialogContent>

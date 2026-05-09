@@ -1,5 +1,5 @@
 /**
- * AQA A-Level Economics (7136) — verbatim question stem templates.
+ * AQA A-Level Economics (7136) · verbatim question stem templates.
  * Drawn from real past papers (June 2017 – June 2024).
  *
  * The generator selects from this library and fills placeholders.
@@ -63,7 +63,7 @@ export const AQA_QUESTION_STEMS = {
 } as const;
 
 /**
- * Forbidden generic openers — flagged as "AI-tells".
+ * Forbidden generic openers · flagged as "AI-tells".
  * Real AQA papers never start an essay stimulus this way.
  */
 export const FORBIDDEN_OPENERS = [
@@ -155,7 +155,7 @@ export function isValidStemForMarks(stem: string, marks: number): boolean {
   if (marks === 9) return kind === "diagramExplain";
   if (marks === 15) return kind === "essayExplain";
   if (marks === 25) return kind === "dataEvaluate" || kind === "essayEvaluate";
-  if (marks === 10) return true; // Paper 3 Q31 — bespoke "to what extent" stem
+  if (marks === 10) return true; // Paper 3 Q31 · bespoke "to what extent" stem
   return true;
 }
 
@@ -222,7 +222,7 @@ export function validatePercentageChangeStem(stem: string): PercentChangeValidat
   return {
     ok: false,
     reason:
-      'A percentage-change calculation must explicitly ask for direction — e.g. "Calculate the percentage increase or decrease..." or "...and state clearly whether the change is an increase or a decrease."',
+      'A percentage-change calculation must explicitly ask for direction · e.g. "Calculate the percentage increase or decrease..." or "...and state clearly whether the change is an increase or a decrease."',
   };
 }
 

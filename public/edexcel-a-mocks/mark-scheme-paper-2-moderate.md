@@ -1,9 +1,9 @@
 <!-- Auto-generated from /public/edexcel-a-mocks/mark-scheme-paper-2-moderate.pdf -->
 Pearson Edexcel
                                            Mark Scheme
-                               Predicted Paper — For revision purposes only
+                               Predicted Paper · For revision purposes only
                               Level 3 GCE Economics A (9EC0)
-         Paper 1: Markets and Business Behaviour — 9EC0/01 — Paper 2 — Moderate
+         Paper 1: Markets and Business Behaviour · 9EC0/01 · Paper 2 · Moderate
                                        Total: 100 marks
 
 General Marking Guidance
@@ -47,7 +47,7 @@ Level Descriptors
   L1          1–2         Limited knowledge; weak or missing diagram.
   L2          3–5         Sound knowledge; reasonable diagram; some application.
 
-9EC0/02 — Moderate — Mark Scheme                                                         Page 1 of 10
+9EC0/02 · Moderate · Mark Scheme                                                         Page 1 of 10
  Leve    KAA marks                                      Descriptor
    l
   L3          6–8         Accurate knowledge; correctly labelled diagram; developed chains.
@@ -79,25 +79,25 @@ Level Descriptors
   L4         9–10         Sophisticated evaluation with prioritised judgement.
 
 
-9EC0/02 — Moderate — Mark Scheme                                                       Page 2 of 10
-                                   Section A — Questions 1 to 5
-Question 1 (5 marks) — UK macroeconomic data 2021–2024
+9EC0/02 · Moderate · Mark Scheme                                                       Page 2 of 10
+                                   Section A · Questions 1 to 5
+Question 1 (5 marks) · UK macroeconomic data 2021–2024
    Q                                     Indicative content                                      Mark
                                                                                                   s
- 1(a)    Answer: A — Disinflation. CPI inflation fell from 9.1% in 2022 to 2.6% in 2024           1
-         — a slowing of the inflation rate while prices continued to rise. 'Disinflation' is
+ 1(a)    Answer: A · Disinflation. CPI inflation fell from 9.1% in 2022 to 2.6% in 2024           1
+         · a slowing of the inflation rate while prices continued to rise. 'Disinflation' is
          the technical term for a falling rate of inflation that remains positive.
          Distractors: B Deflation requires a negative inflation rate (prices actually falling)
-         — not what the data show; C Hyperinflation refers to extremely high and
-         accelerating inflation (typically >50% per month) — far from the UK situation; D
+         · not what the data show; C Hyperinflation refers to extremely high and
+         accelerating inflation (typically >50% per month) · far from the UK situation; D
          Stagflation combines high inflation with stagnant growth and rising
-         unemployment — 2022 had high inflation but real GDP still grew; by 2024
+         unemployment · 2022 had high inflation but real GDP still grew; by 2024
          inflation had fallen, so the pattern is disinflation not stagflation.
 
  1(b)    Context for markers: between 2022 and 2024 the Bank of England raised the                4
          Bank Rate from around 0.75% to a peak of 5.25% (Aug 2023), with modest
          cuts starting in 2024. Candidates are expected to apply the theory of monetary
-         transmission to the housing market — full marks for correct analysis even if
+         transmission to the housing market · full marks for correct analysis even if
          they do not recite precise Bank Rate values.
          Accept up to TWO linked points on the housing market, each worth two marks
          (definition/application + chain):
@@ -114,46 +114,46 @@ Question 1 (5 marks) — UK macroeconomic data 2021–2024
          because most mortgages had already re-fixed at higher rates.
 
 
-Question 2 (5 marks) — Bank Rate cut in 2025
+Question 2 (5 marks) · Bank Rate cut in 2025
    Q                                     Indicative content                                      Mark
                                                                                                   s
  2(a)    Lower Bank Rate reduces the cost of consumer borrowing and lowers returns                2
          on saving (1); this stimulates consumption and investment via the interest-rate
          channel, shifting AD to the right (1).
-         Accept: exchange-rate channel — lower rate weakens sterling, raises net
-         exports; wealth channel — lower rates raise asset prices; expectations channel
-         — if viewed as dovish, raises inflation expectations.
+         Accept: exchange-rate channel · lower rate weakens sterling, raises net
+         exports; wealth channel · lower rates raise asset prices; expectations channel
+         · if viewed as dovish, raises inflation expectations.
 
  2(b)    Lower rates reduce firms' cost of capital (1); more investment projects meet the         2
          required hurdle rate of return, so planned business investment rises (1).
          Accept: improved business confidence; lower cost of corporate borrowing;
          cheaper financing of inventories and working capital.
 
- 2(c)    Answer: B — depreciate. Lower UK interest rates reduce the attractiveness of             1
+ 2(c)    Answer: B · depreciate. Lower UK interest rates reduce the attractiveness of             1
          holding sterling assets relative to foreign assets, reducing net portfolio inflows
 
 
-9EC0/02 — Moderate — Mark Scheme                                                           Page 3 of 10
+9EC0/02 · Moderate · Mark Scheme                                                           Page 3 of 10
    Q                                    Indicative content                                    Mark
                                                                                                s
          and weakening sterling (uncovered interest parity).
          Distractors: A reverses the direction (a rate rise would tend to appreciate
-         sterling, not a cut); C 'become fully convertible' is unrelated — sterling is
+         sterling, not a cut); C 'become fully convertible' is unrelated · sterling is
          already fully convertible on the current and capital account; D 'leave the
          floating exchange-rate regime' would require a policy decision to peg or fix
          sterling, which a rate change alone cannot cause.
 
 
-Question 3 (5 marks) — UK government net borrowing
+Question 3 (5 marks) · UK government net borrowing
    Q                                    Indicative content                                    Mark
                                                                                                s
- 3(a)    Answer: B — the difference between government revenue and spending in a                1
+ 3(a)    Answer: B · the difference between government revenue and spending in a                1
          period. Net borrowing is the annual flow that measures the shortfall of receipts
          against total spending over the period (typically a fiscal year).
          Distractors: A total government debt is the accumulated stock resulting from
          past borrowing, not a single-period flow; C net borrowing funds all spending
          (current and capital), not capital projects only; D interest payments are a
-         component of total spending — a line item — not the definition of net
+         component of total spending · a line item · not the definition of net
          borrowing.
 
  3(b)    Diagram (2): upward-sloping SRAS, downward-sloping AD; show AD shifting                4
@@ -166,7 +166,7 @@ Question 3 (5 marks) — UK government net borrowing
          out of private investment, and import leakages.
 
 
-Question 4 (5 marks) — UK current-account deficit
+Question 4 (5 marks) · UK current-account deficit
    Q                                    Indicative content                                    Mark
                                                                                                s
  4(a)    Accept ONE developed policy. Award 2 marks for policy identification and 2             4
@@ -183,28 +183,28 @@ Question 4 (5 marks) — UK current-account deficit
          Accept: targeted export-promotion policy, import tariffs (with evaluation of WTO
          / retaliation risk).
 
- 4(b)    Answer: B — a rise in export competitiveness. Improved competitiveness (via            1
+ 4(b)    Answer: B · a rise in export competitiveness. Improved competitiveness (via            1
          productivity growth, lower unit labour costs, or favourable exchange-rate
          movement) raises export volumes and the share of domestic demand met by
 
 
-9EC0/02 — Moderate — Mark Scheme                                                         Page 4 of 10
+9EC0/02 · Moderate · Mark Scheme                                                         Page 4 of 10
    Q                                    Indicative content                                    Mark
                                                                                                s
          home-produced goods, directly narrowing the trade component of the current
          account.
          Distractors: A a rise in the real exchange rate makes UK goods dearer abroad
-         and foreign goods cheaper in the UK — widens, not reduces, the deficit; C
+         and foreign goods cheaper in the UK · widens, not reduces, the deficit; C
          higher real household incomes raise import demand (income effect), widening
          the deficit; D import tariffs imposed by trading partners make UK exports more
          expensive in those markets, reducing UK export volumes and worsening the
          deficit.
 
 
-Question 5 (5 marks) — Raising UK long-run trend growth
+Question 5 (5 marks) · Raising UK long-run trend growth
    Q                                    Indicative content                                    Mark
                                                                                                s
- 5(a)    Answer: C — Increased investment in education and research & development.             1
+ 5(a)    Answer: C · Increased investment in education and research & development.             1
          These raise human capital and productivity, shifting the LRAS curve rightward
          and raising potential output.
          Distractors: A affects AD in the short run but does not directly raise LRAS; B
@@ -226,21 +226,21 @@ Question 5 (5 marks) — Raising UK long-run trend growth
          provision to raise participation.
 
 
-9EC0/02 — Moderate — Mark Scheme                                                        Page 5 of 10
-          Section B — Question 6: The UK's post-pandemic recovery
-6(a) — Cause of weakness in UK post-pandemic recovery (5 marks)
+9EC0/02 · Moderate · Mark Scheme                                                        Page 5 of 10
+          Section B · Question 6: The UK's post-pandemic recovery
+6(a) · Cause of weakness in UK post-pandemic recovery (5 marks)
 Indicative content (KAA 4 / Eval 1). Accept ONE fully developed cause, supported by evidence
 from Figure 1 and Extract A.
-Acceptable causes include: (i) weak business investment — lag behind G7, reflecting Brexit-
+Acceptable causes include: (i) weak business investment · lag behind G7, reflecting Brexit-
 related uncertainty and rising input costs; (ii) energy-price shock after Russia's 2022 invasion of
 Ukraine, compressing real incomes; (iii) 700,000-person rise in long-term sickness reducing labour
 supply; (iv) monetary tightening reducing AD (Figure 2, Bank Rate rising from 0.1% to 5.25%); (v)
 Brexit reducing openness to trade and investment.
-Evaluation: weight of each factor is contested — demand- and supply-side factors interact; UK
+Evaluation: weight of each factor is contested · demand- and supply-side factors interact; UK
 recovery is slow relative to the US but less weak than Germany's.
 
-6(b) — Supply-side vs demand-side policy for trend growth (8 marks)
-Indicative content (KAA 5 / Eval 3). Treat as 'examine' — structured argument with at least one
+6(b) · Supply-side vs demand-side policy for trend growth (8 marks)
+Indicative content (KAA 5 / Eval 3). Treat as 'examine' · structured argument with at least one
 supporting chain and one counter.
 Case for supply-side: only supply-side policy raises LRAS and potential output (trend growth).
 Education, R&D, infrastructure, planning reform, skills training. Demand-side policy only closes
@@ -253,12 +253,12 @@ Judgement: supply-side is necessary but not sufficient for trend growth; best de
 combination with stable demand management. Current UK diagnosis (low productivity, low
 investment) points to supply-side emphasis.
 
-6(c) — Impact of long-term sickness on UK recovery (10 marks)
+6(c) · Impact of long-term sickness on UK recovery (10 marks)
             KAA (AO1 + AO2 + AO3)                               Evaluation (AO4)
 
  • Extract C: 1.2 pp rise in economic inactivity   • Hard to separate sickness effect from
    since 2019; over half from long-term              broader demographic and cultural trends.
-   sickness.                                       • Some of the inactivity may be temporary —
+   sickness.                                       • Some of the inactivity may be temporary ·
  • Direct effect on labour supply: 700,000           cyclical rather than structural.
    fewer workers → lower potential output →        • Other factors matter more: Brexit trade
    lower LRAS.                                       effects; weak business investment; energy
@@ -266,17 +266,17 @@ investment) points to supply-side emphasis.
    contributed to persistent pay growth even       • International comparisons: other advanced
    with weak AD.                                      economies saw similar post-pandemic
  • Fiscal channel: higher welfare spending,           trends.
-   lower tax receipts — worsens deficit.           • Judgement: long-term sickness is a
+   lower tax receipts · worsens deficit.           • Judgement: long-term sickness is a
  • NHS waiting lists (7.4m) link backlog to          material but not exclusive driver of weak
-   labour-supply problem — policy                    recovery; addressing it is necessary but
+   labour-supply problem · policy                    recovery; addressing it is necessary but
    complementarity.                                  insufficient. Supply-side health spending
  • Productivity: workers on reduced hours or         (NHS capacity, mental-health services,
    suboptimal roles reduce measured output           Access to Work) would have clear growth
    per worker.                                       dividends.
 
 
-9EC0/02 — Moderate — Mark Scheme                                                       Page 6 of 10
-6(d) — Macroeconomic effects of Bank Rate rising 0.1% → 5.25% (12 marks)
+9EC0/02 · Moderate · Mark Scheme                                                       Page 6 of 10
+6(d) · Macroeconomic effects of Bank Rate rising 0.1% → 5.25% (12 marks)
 Diagram required: AD/AS showing contractionary AD shift; OR interest-rate monetary-transmission
 channels.
 
@@ -291,7 +291,7 @@ channels.
    service effect; lower housing-market              holders bore a disproportionate share of
    activity; lower investment.                       the adjustment.
  • Inflation response: CPI fell from 11.1% (Oct    • Alternative causes of disinflation: falling
-    2022) peak to 2.6% by 2024 — policy              energy prices; supply-chain normalisation.
+    2022) peak to 2.6% by 2024 · policy              energy prices; supply-chain normalisation.
     'worked' in returning inflation to target.     • Judgement: tightening was a necessary
  • Exchange-rate channel: supported sterling         response to a 9.1% inflation reading, but
    relative to a no-hike counterfactual, helping     the combined monetary-fiscal stance was
@@ -302,21 +302,21 @@ channels.
    level).
 
 
-6(e) — Public borrowing to fund a one-off rise in public investment (15 marks)
+6(e) · Public borrowing to fund a one-off rise in public investment (15 marks)
             KAA (AO1 + AO2 + AO3)                                Evaluation (AO4)
 
  • Case FOR: public investment raises both         • Case AGAINST: crowding-out of private
    AD in the short run (Keynesian multiplier         investment if the economy is near capacity;
    effect) and LRAS in the long run (if              rising gilt yields raise the cost of private
    infrastructure/skills raise productivity).        borrowing.
- • Multiplier typically larger for public          • Bank Rate is high (Figure 2) — not a low-
+ • Multiplier typically larger for public          • Bank Rate is high (Figure 2) · not a low-
    investment than for current spending or tax       rate environment; financing costs matter.
    cuts.                                           • Risk of inflationary pressure returning at a
  • Low real interest rates (in the post-GFC          time when inflation has only just been
    period and parts of 2020–21) meant                returned to target.
    financing was cheap.                            • Implementation risk: UK record of capital-
  • UK stock of public investment has lagged           project delivery (HS2, Hinkley Point C) is
-   G7 peers — diminishing returns suggest             poor.
+   G7 peers · diminishing returns suggest             poor.
    marginal project returns are high.              • Debt sustainability: UK net debt already
  • Crowding-in possible if private firms see a       ~95% of GDP; bond vigilantes may raise
    more productive economy.                          risk premium.
@@ -330,32 +330,32 @@ channels.
                                                      for projects with robust BCRs and credible
 
 
-9EC0/02 — Moderate — Mark Scheme                                                        Page 7 of 10
+9EC0/02 · Moderate · Mark Scheme                                                        Page 7 of 10
             KAA (AO1 + AO2 + AO3)               Evaluation (AO4)
 
                                     fiscal framing.
 
 
-9EC0/02 — Moderate — Mark Scheme                                   Page 8 of 10
-                 Section C — Question 7 OR Question 8 (25 marks)
-Question 7 — Multi-year freeze on the income-tax personal allowance (25
+9EC0/02 · Moderate · Mark Scheme                                   Page 8 of 10
+                 Section C · Question 7 OR Question 8 (25 marks)
+Question 7 · Multi-year freeze on the income-tax personal allowance (25
 marks)
             KAA (AO1 + AO2 + AO3)                              Evaluation (AO4)
 
- • Definition: 'fiscal drag' — frozen nominal    • Revenue helps reduce borrowing —
+ • Definition: 'fiscal drag' · frozen nominal    • Revenue helps reduce borrowing ·
    thresholds with rising nominal wages pull       supports fiscal sustainability.
    more workers into the tax net and push        • Less distortionary than raising marginal tax
-   others into higher bands.                       rates directly — 'stealth' element may
+   others into higher bands.                       rates directly · 'stealth' element may
  • Effects on AD: higher average tax burden        reduce behavioural response.
    → lower disposable income → lower             • Counter: creates fiscal illusion; erodes
    consumption → AD shifts left.                   progressivity unintentionally.
  • Effects on labour supply: raises effective    • Effect magnitude depends on nominal
-   marginal tax rates at the personal-             wage growth — front-loaded if wages rise
+   marginal tax rates at the personal-             wage growth · front-loaded if wages rise
    allowance threshold, reduces incentive to       quickly.
    work or take additional hours.
                                                  • Interaction with inflation: real value of the
- • Fiscal impact: substantial revenue-raising       personal allowance erodes — a de facto
-   — OBR estimates in tens of billions of           tax rise without legislation.
+ • Fiscal impact: substantial revenue-raising       personal allowance erodes · a de facto
+   · OBR estimates in tens of billions of           tax rise without legislation.
    pounds per year depending on horizon.
                                                  • Judgement: effective in raising revenue and
  • Distributional: hits lower earners as a         reducing borrowing; macroeconomic effect
@@ -367,7 +367,7 @@ marks)
                                                    effects.
 
 
-Question 8 — Stronger inflation-targeting mandate for the Bank of England
+Question 8 · Stronger inflation-targeting mandate for the Bank of England
 (25 marks)
             KAA (AO1 + AO2 + AO3)                              Evaluation (AO4)
 
@@ -377,10 +377,10 @@ Question 8 — Stronger inflation-targeting mandate for the Bank of England
  • Case FOR stronger mandate: lower and          • Dual/hierarchical mandates (Fed, RBA)
    more stable inflation expectations; lower       have delivered similarly good outcomes.
    risk premium on government debt; more         • 2021–2023 inflation episode primarily
-   credible policy commitment (time-               supply-driven — hard for any central bank
+   credible policy commitment (time-               supply-driven · hard for any central bank
    inconsistency resolved, Kydland-Prescott).      to respond without imposing high output
  • Theoretical foundation: expectations-           costs.
-   augmented Phillips curve — credible           • Tighter mandate cannot address structural
+   augmented Phillips curve · credible           • Tighter mandate cannot address structural
    central bank lowers inflation without large     causes of persistent inflation: energy
    output sacrifice.                               dependence, labour-supply constraints.
  • International evidence: countries with        • Risk of 'monetary-policy dominance' and
@@ -392,7 +392,7 @@ Question 8 — Stronger inflation-targeting mandate for the Bank of England
    Taylor-rule framework.                          flexible inflation-targeting regime. Higher
                                                    returns to complementary reforms: better
 
-9EC0/02 — Moderate — Mark Scheme                                                        Page 9 of 10
+9EC0/02 · Moderate · Mark Scheme                                                        Page 9 of 10
             KAA (AO1 + AO2 + AO3)                           Evaluation (AO4)
 
                                                  data, better communication, greater
@@ -403,4 +403,4 @@ Question 8 — Stronger inflation-targeting mandate for the Bank of England
                                    TOTAL FOR PAPER = 100 MARKS
 
 
-9EC0/02 — Moderate — Mark Scheme                                                 Page 10 of 10
+9EC0/02 · Moderate · Mark Scheme                                                 Page 10 of 10

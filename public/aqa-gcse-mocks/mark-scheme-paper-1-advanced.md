@@ -7,7 +7,7 @@ Paper 1 How Markets Work
 
 Mark scheme
 
-Predicted Paper — Advanced
+Predicted Paper · Advanced
 Version: 1.0 Final
 
 
@@ -205,7 +205,7 @@ IB/H/Pred/8136/1                                                                
                     • consumers may switch to substitutes or imports → reduced UK market share
                     • firms may respond by investing in efficiency / alternative inputs / automation in the
                       longer run
-                    • reference to data: gas prices rose 141%, electricity 86% — extreme increases
+                    • reference to data: gas prices rose 141%, electricity 86% · extreme increases
                       concentrated in energy-intensive sectors (steel, chemicals)
                    Note: This indicative content is not exhaustive, other creditworthy responses should be awarded
                    marks as appropriate.
@@ -285,7 +285,7 @@ IB/H/Pred/8136/1                                                                
                                 0      Nothing written worthy of credit.
 
                    Possible answers:
-                    • insulin is a necessity — patients cannot survive long without it, so they will pay
+                    • insulin is a necessity · patients cannot survive long without it, so they will pay
                       almost any price
                     • there are no or very few close substitutes for the specific drug
                     • the decision to use insulin is driven by medical need, not price
@@ -397,11 +397,11 @@ IB/H/Pred/8136/1                                                  10
                    Indicative content:
                     • Benefits (economies of scale): very substantial reduction in average cost per
                       licence at first
-                    • technical economies — servers and automated testing have high fixed cost but low
+                    • technical economies · servers and automated testing have high fixed cost but low
                       marginal cost
                     • research-and-development is affordable at scale only (mentioned in Figure 2)
-                    • financial economies — lower borrowing costs for larger firms
-                    • risk-bearing economies — diversification across four markets
+                    • financial economies · lower borrowing costs for larger firms
+                    • risk-bearing economies · diversification across four markets
                     • Data: AC at 5k = £250; AC at 10k = £210; AC at 20k = £180 → clear fall (economies
                       of scale)
                     • Costs (diseconomies of scale): communication and coordination problems
@@ -416,7 +416,7 @@ IB/H/Pred/8136/1                                                  10
 
 IB/H/Pred/8136/1                                                                                                 11
                     • evaluation of relevance to a knowledge-based tech business (vs. a manufacturing
-                      business) — scaling brings both strong technical gains and serious managerial
+                      business) · scaling brings both strong technical gains and serious managerial
                       challenges
                    Note: This indicative content is not exhaustive, other creditworthy responses should be awarded
                    marks as appropriate.
@@ -501,7 +501,7 @@ IB/H/Pred/8136/1                                                                
                                 0      Nothing written worthy of credit.
 
                    Possible answers:
-                    • educational benefits — documentaries and programmes improving knowledge and
+                    • educational benefits · documentaries and programmes improving knowledge and
                       cultural literacy
                     • investment in UK creative industries (e.g. Netflix's UK productions) → jobs and skills
                       spillovers
@@ -510,7 +510,7 @@ IB/H/Pred/8136/1                                                                
                     • less travel for entertainment (cinema trips replaced) → reduced transport emissions
                     • wider accessibility of international cultural content → soft-power benefits and
                       diversity of viewpoints
-                    • social benefit — shared cultural experience / shared conversations
+                    • social benefit · shared cultural experience / shared conversations
                    Note: This indicative content is not exhaustive, other creditworthy responses should be awarded
                    marks as appropriate.
 
@@ -541,9 +541,9 @@ IB/H/Pred/8136/1                                                                
                                 0      Nothing written worthy of credit.
 
                    Possible answers:
-                    • rising subscription prices and repeated price hikes (Netflix £8.99 → £10.99) —
+                    • rising subscription prices and repeated price hikes (Netflix £8.99 → £10.99) ·
                       consumers capture less consumer surplus
-                    • reduced choice — large firms set the menu of available content; less niche content
+                    • reduced choice · large firms set the menu of available content; less niche content
                       likely to be commissioned
                     • restrictive practices (password-sharing crackdowns, ad-supported tiers) reduce
                       perceived value for money
@@ -565,7 +565,7 @@ IB/H/Pred/8136/1                                                  16
                                                                                                            marks
 
   26               Do you think the UK government should actively regulate the UK streaming                  15
-                   market — for example, by capping prices, imposing UK content quotas and
+                   market · for example, by capping prices, imposing UK content quotas and
                    subsidising smaller UK-based platforms? Use Items A and B and your own
                    economic knowledge to justify your view.
 
@@ -614,9 +614,9 @@ IB/H/Pred/8136/1                                                  16
 
                    Yes (in favour of regulation):
 
-                    • classic oligopoly features (Item A) — few firms, high barriers to entry, price rises
+                    • classic oligopoly features (Item A) · few firms, high barriers to entry, price rises
                       without losing customers → case for intervention
-                    • market failure — dominant firms capture large producer surplus at the expense of
+                    • market failure · dominant firms capture large producer surplus at the expense of
                       consumer surplus
 
 
@@ -630,11 +630,11 @@ IB/H/Pred/8136/1                                                                
                    No (against regulation):
 
                     • price caps may reduce investment in new content (Item B)
-                    • the market is highly dynamic and cancellation is easy — consumer power may
+                    • the market is highly dynamic and cancellation is easy · consumer power may
                       already be strong
                     • regulation creates compliance costs and may deter new foreign investment into UK
                       production
-                    • subsidies have an opportunity cost — funds taken from the NHS, schools or
+                    • subsidies have an opportunity cost · funds taken from the NHS, schools or
                       defence
                     • quotas risk reducing the quality of content if firms must meet arbitrary UK-production
                       targets

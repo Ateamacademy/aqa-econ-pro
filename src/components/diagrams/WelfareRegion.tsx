@@ -1,5 +1,5 @@
 /**
- * WelfareRegion — Reusable closed SVG polygon for welfare loss/gain areas.
+ * WelfareRegion · Reusable closed SVG polygon for welfare loss/gain areas.
  * Renders a mathematically precise closed boundary from intersection points.
  * Used across both Diagram and Predicted Paper sections for consistency.
  */
@@ -7,13 +7,13 @@
 interface WelfareRegionProps {
   /** Ordered list of {x, y} points forming the closed boundary */
   points: { x: number; y: number }[];
-  /** Fill color — use standard exam colors: red=#ef4444, blue=#3b82f6, green=#16a34a */
+  /** Fill color · use standard exam colors: red=#ef4444, blue=#3b82f6, green=#16a34a */
   fill: string;
   /** Fill opacity (0-1). Default 0.35 for high visibility */
   fillOpacity?: number;
-  /** Stroke color — defaults to fill color */
+  /** Stroke color · defaults to fill color */
   stroke?: string;
-  /** Stroke width — defaults to 2.5 for bold closed boundary */
+  /** Stroke width · defaults to 2.5 for bold closed boundary */
   strokeWidth?: number;
   /** Optional label text rendered at centroid */
   label?: string;

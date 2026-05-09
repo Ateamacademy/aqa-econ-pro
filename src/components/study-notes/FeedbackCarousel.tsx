@@ -1,5 +1,5 @@
 /**
- * FeedbackCarousel — 3-slide carousel for subtopic practice feedback.
+ * FeedbackCarousel · 3-slide carousel for subtopic practice feedback.
  * Slide 1: Your Mark (score overview)
  * Slide 2: Detailed Feedback (strengths & improvements)
  * Slide 3: Model Answer + relevant diagrams

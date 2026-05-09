@@ -14,7 +14,7 @@
     .pt    { fill:#111; }
   </style>
 
-  <text x="350" y="28" text-anchor="middle" class="ttl">Minimum Price (National Living Wage) — Low-Skilled Labour Market</text>
+  <text x="350" y="28" text-anchor="middle" class="ttl">Minimum Price (National Living Wage) · Low-Skilled Labour Market</text>
   <text x="350" y="48" text-anchor="middle" class="sub">A wage floor Pmin set above equilibrium creates excess supply of labour (classical unemployment)</text>
 
   <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
@@ -63,6 +63,6 @@
   <text x="290" y="155" class="lblB" fill="#1b5e20">Excess supply of labour (unemployment)</text>
 
   <text x="90"  y="495" class="sub">At wage P1 firms hire fewer workers (contraction of labour demand to Q1) while more workers want jobs (extension of supply to Q2).</text>
-  <text x="90"  y="512" class="sub">The gap Q2 − Q1 is classical unemployment — a surplus of labour created by the binding wage floor.</text>
+  <text x="90"  y="512" class="sub">The gap Q2 − Q1 is classical unemployment · a surplus of labour created by the binding wage floor.</text>
   <text x="90"  y="529" class="sub">A minimum price below the equilibrium would not bind; the floor only "bites" when set above the market-clearing wage.</text>
 </svg>

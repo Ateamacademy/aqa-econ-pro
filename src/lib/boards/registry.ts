@@ -1,5 +1,5 @@
 /**
- * Multi-board registry — single lookup for every supported exam board.
+ * Multi-board registry · single lookup for every supported exam board.
  *
  * Boards with `refinementStatus === "refined"` have a full
  * `BoardDefinition`. Boards with `"blueprint-pending"` are stubs that the

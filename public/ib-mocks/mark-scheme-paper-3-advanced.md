@@ -1,15 +1,15 @@
 <!-- Auto-generated from /public/ib-mocks/mark-scheme-paper-3-advanced.pdf -->
-SME Mark Scheme Paper 3 — Advanced
+SME Mark Scheme Paper 3 · Advanced
 
 
-SavePredictedExams — SME
+SavePredictedExams · SME
 
 Economics
 Higher level
 Paper 3
 
 
-SME Mark Scheme — Paper 3 Advanced
+SME Mark Scheme · Paper 3 Advanced
 
 
 1. Use the question-specific mark scheme together with the mark bands. Award up to the maximum
@@ -18,7 +18,7 @@ marks as indicated.
 3. Candidates may be penalised once for rounding errors, missing units or failure to give answers to 2
 d.p.
 
-Question 1 — UK grocery oligopoly & behavioural economics
+Question 1 · UK grocery oligopoly & behavioural economics
 1. (a) (i) Define the term oligopoly. [2]
   Level                                                                                       Marks
 
@@ -47,12 +47,12 @@ rigidity. [4]
   1        There is a correct diagram OR an accurate written response.                        1-2
            For a diagram showing a demand curve with a kink at the prevailing price
            with a discontinuity in MR OR an explanation of the asymmetric assumption
-           — rivals match price cuts but not price rises [1], so a firm has no incentive to
+           · rivals match price cuts but not price rises [1], so a firm has no incentive to
            change price [1].
 
 
                                                      1                                     SME Predicted Paper
-                                                                         SME Mark Scheme Paper 3 — Advanced
+                                                                         SME Mark Scheme Paper 3 · Advanced
 
 
   2        There is a correct diagram AND an accurate written response.                     3-4
@@ -61,7 +61,7 @@ rigidity. [4]
            portion (price cuts), and the discontinuity in MR AND a clear explanation that
            rivals match price decreases but ignore price increases, so raising price loses
            sales sharply and cutting price gains few sales, producing price rigidity within
-           the MR discontinuity [1] — changes in MC within this range leave profit-max
+           the MR discontinuity [1] · changes in MC within this range leave profit-max
            P and Q unchanged [1].
 
 (iv) Identify the Nash equilibrium. [4]
@@ -72,8 +72,8 @@ Check best responses:
 • If Tesco chooses Low, Sainsbury's best response: Low (15 > 8).
 
 Low is the dominant strategy for both firms. The unique Nash equilibrium is (Low, Low) with
-payoffs (£20 m, £15 m). This is a prisoner's-dilemma outcome — both firms would be better off
-choosing (High, High) giving (£40 m, £30 m) — but each has an incentive to deviate.
+payoffs (£20 m, £15 m). This is a prisoner's-dilemma outcome · both firms would be better off
+choosing (High, High) giving (£40 m, £30 m) · but each has an incentive to deviate.
 Identifying (Low, Low) as equilibrium [1]. Recognising dominant strategy reasoning [1]. Correct
 best-response analysis [1]. Identifying the prisoner's-dilemma property [1].
 
@@ -86,7 +86,7 @@ best-response analysis [1]. Identifying the prisoner's-dilemma property [1].
 
   2             In collusive oligopoly firms cooperate formally (cartels) or tacitly (price-leadership)
                 to set prices/output jointly, acting like a monopoly. In non-collusive oligopoly firms
-                act strategically but independently — each firm’s decisions depend on anticipated
+                act strategically but independently · each firm’s decisions depend on anticipated
                 reactions of rivals (e.g. kinked demand, price wars, non-price competition).
 
 (vi) Define the term nudge. [2]
@@ -110,7 +110,7 @@ best-response analysis [1]. Identifying the prisoner's-dilemma property [1].
 
 
                                                     2                                       SME Predicted Paper
-                                                                           SME Mark Scheme Paper 3 — Advanced
+                                                                           SME Mark Scheme Paper 3 · Advanced
 
 
   0               Does not meet standard.
@@ -133,11 +133,11 @@ satisficing, corporate social responsibility (CSR).
 Possible policies:
       • Strengthening competition law / merger control by CMA
       • Price controls on essential staples (food inflation cap)
-      • Behavioural regulation — restrictions on checkout placement, BOGOF offers on HFSS foods
+      • Behavioural regulation · restrictions on checkout placement, BOGOF offers on HFSS foods
       • Mandatory unit pricing / clearer labelling
       • Supporting the growth of discounters (Aldi/Lidl) to reduce CR4
       • Investigating collusive behaviour and imposing fines on cartels
-      • Nudges — default healthier options, warning labels
+      • Nudges · default healthier options, warning labels
 
 Assessment Criteria
   Marks           Level descriptor
@@ -165,10 +165,10 @@ package of behavioural regulation and antitrust enforcement is likely most effec
 
 
                                                       3                                      SME Predicted Paper
-                                                                          SME Mark Scheme Paper 3 — Advanced
+                                                                          SME Mark Scheme Paper 3 · Advanced
 
 
-Question 2 — Bangladesh development & inequality
+Question 2 · Bangladesh development & inequality
 2. (a) (i) Define the term Gini coefficient. [2]
 
   Level                                                                                          Marks
@@ -221,7 +221,7 @@ Any two (1 mark each):
 
 
                                                      4                                       SME Predicted Paper
-                                                                           SME Mark Scheme Paper 3 — Advanced
+                                                                           SME Mark Scheme Paper 3 · Advanced
 
 
 Valid working [1]. Correct answer to 2 d.p. with % sign [1].
@@ -240,7 +240,7 @@ Valid working [1]. Correct answer to 2 d.p. with % sign [1].
 
  2           There is a correct diagram AND an accurate written response.                        3-4
              For a correctly labelled diagram (PPC shifting out OR LRAS shifting right)
-             AND an explanation that investing in education improves human capital —
+             AND an explanation that investing in education improves human capital ·
              the skills, knowledge and productivity of the workforce [1]; higher labour
              productivity and innovation raise the economy’s potential output, shifting the
              PPC outward / LRAS to the right, enabling long-run growth [1].
@@ -253,8 +253,8 @@ Valid working [1]. Correct answer to 2 d.p. with % sign [1].
 
   1              Vague outline. The idea that microfinance involves small loans to poor people.
 
-  2              Accurate outline. Microfinance is the provision of small-scale financial services —
-                 loans, savings, insurance, money transfers — to low-income individuals or groups
+  2              Accurate outline. Microfinance is the provision of small-scale financial services ·
+                 loans, savings, insurance, money transfers · to low-income individuals or groups
                  who are typically excluded from the formal banking sector, intended to support
                  entrepreneurship, smooth consumption and help escape poverty.
 
@@ -276,13 +276,13 @@ Valid working [1]. Correct answer to 2 d.p. with % sign [1].
 Possible policies:
       • Progressive direct taxation (e.g. a more progressive income tax)
       • Expansion of transfer payments / cash-transfer programmes
-      • Provision of merit goods — public education and healthcare
+      • Provision of merit goods · public education and healthcare
       • Minimum-wage legislation
       • Land reform
 
 
                                                      5                                        SME Predicted Paper
-                                                                           SME Mark Scheme Paper 3 — Advanced
+                                                                           SME Mark Scheme Paper 3 · Advanced
 
 
       • Expanding microfinance / access to credit
@@ -306,7 +306,7 @@ Assessment Criteria
 
 Sample response (abridged): With the richest 20% receiving 55% of income and the poorest 60%
 only 25%, Bangladesh displays substantial inequality. I recommend expanding public provision of
-primary and secondary education — a policy that addresses both equity and long-run growth (as
+primary and secondary education · a policy that addresses both equity and long-run growth (as
 (a)(vii) showed, it shifts the LRAS outward). Targeted cash transfers conditional on school attendance
 would further reduce short-term poverty while breaking inter-generational inequality. Complementary
 microfinance could reach 98%-repayment borrowers underserved by banks. Trade-offs include fiscal

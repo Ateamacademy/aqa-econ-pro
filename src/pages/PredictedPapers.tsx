@@ -48,7 +48,7 @@ import { getOcrPredictedMarkScheme } from "@/data/ocrPredictedMarkSchemes";
 import { loadPredictedMarkScheme } from "@/lib/predictedMarkSchemeLoader";
 
 // Exam durations in minutes per subject + paper.
-// AQA A-Level Economics (7136) — every paper is 2 hours. Source of truth: AQA_SPEC.durationMinutes.
+// AQA A-Level Economics (7136) · every paper is 2 hours. Source of truth: AQA_SPEC.durationMinutes.
 const EXAM_DURATIONS: Record<string, Record<string, number>> = {
   economics:        { "1": 120, "2": 120, full: 120 },
   "edexcel-a":      { "1": 120, "2": 120, full: 120 },
@@ -103,7 +103,7 @@ ${MATHS_PAST_PAPER_KNOWLEDGE}
 
 TIER: ${tierDesc}
 
-CALCULATOR: ${isCalc ? "YES — this is a CALCULATOR paper. Questions can involve complex arithmetic, trigonometry with decimals, statistical calculations, and iterative methods." : "NO — this is a NON-CALCULATOR paper. All arithmetic must be manageable by hand. Focus on fractions, mental methods, estimation, exact values, and algebraic manipulation."}
+CALCULATOR: ${isCalc ? "YES · this is a CALCULATOR paper. Questions can involve complex arithmetic, trigonometry with decimals, statistical calculations, and iterative methods." : "NO · this is a NON-CALCULATOR paper. All arithmetic must be manageable by hand. Focus on fractions, mental methods, estimation, exact values, and algebraic manipulation."}
 
 STRUCTURE (match real Edexcel papers EXACTLY):
 - 20–25 questions, numbered sequentially
@@ -113,11 +113,11 @@ STRUCTURE (match real Edexcel papers EXACTLY):
 - Include a variety of command words: "Work out", "Calculate", "Show that", "Prove", "Explain why", "Give a reason"
 - Start with 3–4 short 1–2 mark "warm-up" questions, then build complexity
 
-USE THE PAST-PAPER PATTERNS ABOVE to create NEW questions that feel like they belong in a real Edexcel paper. Do NOT copy questions verbatim — create original questions in the SAME STYLE and DIFFICULTY.
+USE THE PAST-PAPER PATTERNS ABOVE to create NEW questions that feel like they belong in a real Edexcel paper. Do NOT copy questions verbatim · create original questions in the SAME STYLE and DIFFICULTY.
 
 Ensure EVERY topic area from the past-paper patterns is represented. Include at least 6 graph/diagram/figure/table questions.
 
-IMPORTANT FORMATTING — FOLLOW EXACTLY:
+IMPORTANT FORMATTING · FOLLOW EXACTLY:
 Question 1 [2 marks]
 Question 2 [3 marks]
 Question 3a [1 marks]
@@ -127,7 +127,7 @@ Do NOT wrap question headers in bold/asterisks. Write them exactly as shown abov
 Use realistic Figure/Table blocks where appropriate, but always include all required data in text so the question is fully answerable.
 Make questions topical, varied, and exam-authentic. Avoid repeating similar question types.
 
-FIGURE/CHART/GRAPH FORMAT (CRITICAL — DO NOT USE ASCII ART):
+FIGURE/CHART/GRAPH FORMAT (CRITICAL · DO NOT USE ASCII ART):
 - NEVER draw charts, graphs, or diagrams using ASCII characters (|, /, \\, -, +, ^, X, etc.)
 - For DATA figures (bar charts, line graphs, scatter plots): present the data in a **markdown table** with clear column headers, then add a brief description like "Figure 1: Average Purchase Price of New BEVs in the UK (constant 2023 prices, £000s)" above the table
 - For DIAGRAMS (supply & demand, cost curves, reaction profiles): describe them in structured text using a "**Figure N:**" heading followed by bullet points listing axes, curves, key points, equilibrium positions, and shifts
@@ -157,7 +157,7 @@ const EDEXCEL_ECON_PAPER_PROMPT = (paperLabel: string, spec: "edexcel-a" | "edex
   const paperNum = paperValue === "full" ? "3" : paperValue.includes("1") ? "1" : "2";
 
   const specATemplates: Record<string, string> = {
-    "1": `PAPER 1: Markets and Business Behaviour (9EC0/01) — 2 hours, 100 marks
+    "1": `PAPER 1: Markets and Business Behaviour (9EC0/01) · 2 hours, 100 marks
 STRUCTURE:
 ## Section A: Supported Multiple Choice (5 questions × 4 marks = 20 marks)
 Each question has a stimulus (short extract/data), a 1-mark MCQ (A/B/C/D), then a 3-mark "Explain your answer" follow-up.
@@ -170,27 +170,27 @@ Question 02b [3 marks] Explain your answer
 ## Section B: Data Response (one from two options, 40 marks)
 ### EITHER Option 1 OR Option 2
 Each option has 2-3 Extracts (data + text) followed by:
-Question 06 [5 marks] — Short data interpretation
-Question 07 [8 marks] — "Explain, using a diagram..."
-Question 08 [12 marks] — "Evaluate..." / "Assess..."
-Question 09 [15 marks] — Extended evaluation (KAA + Evaluation)
+Question 06 [5 marks] · Short data interpretation
+Question 07 [8 marks] · "Explain, using a diagram..."
+Question 08 [12 marks] · "Evaluate..." / "Assess..."
+Question 09 [15 marks] · Extended evaluation (KAA + Evaluation)
 
 ## Section C: Extended Open-Response (one from two, 40 marks)
 ### EITHER Essay 1 OR Essay 2
 Each has a brief context then two parts:
-Question 10a [5 marks] — Define/explain a concept
-Question 10b [15 marks] — "Evaluate the view that..." / "Assess whether..."
-Question 10c [20 marks] — Extended evaluation essay`,
+Question 10a [5 marks] · Define/explain a concept
+Question 10b [15 marks] · "Evaluate the view that..." / "Assess whether..."
+Question 10c [20 marks] · Extended evaluation essay`,
 
-    "2": `PAPER 2: The National and Global Economy (9EC0/02) — 2 hours, 100 marks
+    "2": `PAPER 2: The National and Global Economy (9EC0/02) · 2 hours, 100 marks
 Same structure as Paper 1 but MACROECONOMIC topics:
 Section A: 5 supported MCQs (20 marks)
 Section B: Data response with macro data (GDP, inflation, trade, etc.) (40 marks)
 Section C: Extended open-response macro essay (40 marks)
 Topics: AD/AS, economic growth, unemployment, inflation, fiscal/monetary policy, financial markets, exchange rates, globalisation, development.`,
 
-    "3": `PAPER 3: Microeconomics and Macroeconomics (9EC0/03) — 2 hours, 100 marks
-SYNOPTIC PAPER — tests BOTH micro AND macro.
+    "3": `PAPER 3: Microeconomics and Macroeconomics (9EC0/03) · 2 hours, 100 marks
+SYNOPTIC PAPER · tests BOTH micro AND macro.
 ## Section A: Data Response (one from two, 50 marks)
 Extended case study with 4-5 Extracts covering both micro and macro themes.
 Questions range from 2-mark define to 25-mark evaluate.
@@ -200,26 +200,26 @@ Question a [25 marks] and Question b [25 marks].`,
   };
 
   const specBTemplates: Record<string, string> = {
-    "1": `PAPER 1: Markets, Consumers and Firms (9EB0/01) — 2 hours, 80 marks
+    "1": `PAPER 1: Markets, Consumers and Firms (9EB0/01) · 2 hours, 80 marks
 STRUCTURE:
 ## Section A: Data Response (compulsory, 40 marks)
 Case study with 3-4 Extracts + Figures
-Question 01 [4 marks] — Knowledge/application
-Question 02 [8 marks] — "Explain, using a diagram..."
-Question 03 [10 marks] — "Assess..."
-Question 04 [18 marks] — "Evaluate..." (extended)
+Question 01 [4 marks] · Knowledge/application
+Question 02 [8 marks] · "Explain, using a diagram..."
+Question 03 [10 marks] · "Assess..."
+Question 04 [18 marks] · "Evaluate..." (extended)
 
 ## Section B: Essay (one from three, 40 marks)
-Question 05/06/07 [40 marks] — Full essay with KAA + Evaluation
+Question 05/06/07 [40 marks] · Full essay with KAA + Evaluation
 Topics: demand/supply, elasticity, market failure, business behaviour, costs/revenue, market structures, labour market.`,
 
-    "2": `PAPER 2: The Wider Economic Environment (9EB0/02) — 2 hours, 80 marks
+    "2": `PAPER 2: The Wider Economic Environment (9EB0/02) · 2 hours, 80 marks
 Same structure as Paper 1 but MACRO topics:
 Section A: compulsory data response (40 marks)
 Section B: essay choice (40 marks)
 Topics: economic indicators, AD/AS, macro policy, inequality, financial sector, role of state.`,
 
-    "3": `PAPER 3: The Global Economy (9EB0/03) — 2 hours, 80 marks
+    "3": `PAPER 3: The Global Economy (9EB0/03) · 2 hours, 80 marks
 SYNOPTIC PAPER:
 ## Section A: Data Response (compulsory, 40 marks)
 Global case study with extracts on trade, development, globalisation.
@@ -249,7 +249,7 @@ CRITICAL RULES:
 6. 15+ mark questions MUST require chains of reasoning, counter-arguments, and justified judgement
 7. Use precise command words: "Evaluate", "Assess", "To what extent", "Discuss"
 
-OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+OUTPUT FORMAT (CRITICAL · the parser depends on this exact format):
 - EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
   Examples: Question 01a [1 marks], Question 01b [3 marks], Question 06 [5 marks]
 - Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks. Do NOT put marks at the end of the line after question text.
@@ -270,29 +270,29 @@ const OCR_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum, "ocr");
 
   const templates: Record<string, string> = {
-    "1": `COMPONENT 01: Microeconomics (H460/01) — 2 hours, 80 marks
+    "1": `COMPONENT 01: Microeconomics (H460/01) · 2 hours, 80 marks
 ## Section A: Data Response (compulsory, 30 marks)
 Case study with 2-3 Extracts (text + data tables/figures)
-Question 01 [2 marks] — calculation/define
-Question 02 [4 marks] — explain with reasoning
-Question 03 [8 marks] — "Explain, with the aid of a diagram..."
-Question 04 [16 marks] — "Evaluate..."
+Question 01 [2 marks] · calculation/define
+Question 02 [4 marks] · explain with reasoning
+Question 03 [8 marks] · "Explain, with the aid of a diagram..."
+Question 04 [16 marks] · "Evaluate..."
 
 ## Section B: Essay (choose TWO from THREE, 50 marks)
-Question 05 [25 marks] — Extended evaluation essay (micro)
-Question 06 [25 marks] — Extended evaluation essay (micro)
-Question 07 [25 marks] — Extended evaluation essay (micro)`,
+Question 05 [25 marks] · Extended evaluation essay (micro)
+Question 06 [25 marks] · Extended evaluation essay (micro)
+Question 07 [25 marks] · Extended evaluation essay (micro)`,
 
-    "2": `COMPONENT 02: Macroeconomics (H460/02) — 2 hours, 80 marks
+    "2": `COMPONENT 02: Macroeconomics (H460/02) · 2 hours, 80 marks
 Same structure as Component 01 but MACRO topics:
-Section A: Data response (30 marks) — 2m, 4m, 8m, 16m
-Section B: Two essays from three (50 marks) — each 25 marks
+Section A: Data response (30 marks) · 2m, 4m, 8m, 16m
+Section B: Two essays from three (50 marks) · each 25 marks
 Topics: AD/AS, growth, inflation, unemployment, fiscal/monetary/supply-side policy, trade, financial sector.`,
 
-    "3": `COMPONENT 03: Themes in Economics (H460/03) — 2 hours, 80 marks
-SYNOPTIC — tests BOTH micro AND macro.
-Section A: Data response (30 marks) — synoptic case study requiring micro+macro links
-Section B: Two essays from three (50 marks) — synoptic evaluation essays
+    "3": `COMPONENT 03: Themes in Economics (H460/03) · 2 hours, 80 marks
+SYNOPTIC · tests BOTH micro AND macro.
+Section A: Data response (30 marks) · synoptic case study requiring micro+macro links
+Section B: Two essays from three (50 marks) · synoptic evaluation essays
 Each essay MUST require students to draw on knowledge from BOTH Components 01 and 02.`,
   };
 
@@ -314,7 +314,7 @@ CRITICAL RULES:
 5. At least 40% of marks must target Analyse/Evaluate (AO3+AO4)
 6. Use OCR command words precisely: "Explain", "Evaluate", "Calculate"
 
-OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+OUTPUT FORMAT (CRITICAL · the parser depends on this exact format):
 - EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
   Examples: Question 01 [2 marks], Question 02 [4 marks], Question 03 [8 marks]
 - Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks. Do NOT put marks at the end of the line after question text.
@@ -334,21 +334,21 @@ const CAIE_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum, "cambridge");
 
   const templates: Record<string, string> = {
-    "1": `PAPER 1: Multiple Choice (AS) — 1 hour, 30 marks
+    "1": `PAPER 1: Multiple Choice (AS) · 1 hour, 30 marks
 30 MCQs covering both AS micro and macro. Each worth 1 mark.
 Mix of: recall, calculation, diagram interpretation, and application.
 Topics: scarcity, PPC, demand/supply, elasticity, market failure, externalities, AD/AS, inflation, unemployment, fiscal/monetary policy, trade.`,
-    "2": `PAPER 2: Data Response and Essay (AS) — 1h30, 40 marks
+    "2": `PAPER 2: Data Response and Essay (AS) · 1h30, 40 marks
 ## Section A (choose ONE from TWO data response questions, 20 marks each)
 Each has a Table/Figure + Extract (150-250 words)
 Question pattern: 2m calculate → 2m identify → 4m explain → 6m analyse with diagram → 6m discuss/evaluate
 
 ## Section B (choose ONE from TWO essays, 8 marks each)
 Short structured essay requiring explanation with economic reasoning.`,
-    "3": `PAPER 3: Multiple Choice (A2) — 1h15, 30 marks
+    "3": `PAPER 3: Multiple Choice (A2) · 1h15, 30 marks
 30 MCQs on A2 content. More analytical than Paper 1.
 Topics: market structures, costs/revenue, labour markets, price discrimination, game theory, development, trade theory, welfare economics, policy evaluation.`,
-    "4": `PAPER 4: Data Response and Essay (A2) — 2h15, 70 marks
+    "4": `PAPER 4: Data Response and Essay (A2) · 2h15, 70 marks
 ## Section A (choose ONE from TWO data response questions, 20 marks each)
 Each has Table + 2 Extracts (200-300 words each)
 Question pattern: 2m → 2m → 4m → 4m explain with diagram → 8m evaluate
@@ -375,7 +375,7 @@ CRITICAL RULES:
 6. 25-mark essays require KAA + Evaluation + justified judgement
 7. Use CAIE command words: "Explain", "Analyse", "Evaluate", "Discuss", "Calculate"
 
-OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+OUTPUT FORMAT (CRITICAL · the parser depends on this exact format):
 - EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
   Examples: Question 01 [1 marks], Question 02 [2 marks], Question 03 [4 marks]
 - Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks. Do NOT put marks at the end of the line after question text.
@@ -395,7 +395,7 @@ const GCSE_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
   const paperNum = paperValue === "full" ? "full" : paperValue.includes("1") ? "1" : "2";
 
   const templates: Record<string, string> = {
-    "1": `PAPER 1: How Markets Work (8136/1) — 1 hour 45 minutes, 80 marks
+    "1": `PAPER 1: How Markets Work (8136/1) · 1 hour 45 minutes, 80 marks
 ## Section A: Short Answer and Data Response (60 marks)
 Mix of 1-mark definitions, 2-mark state/explain, 4-mark explain, and 6-mark evaluate questions.
 Include 2-3 data extracts with tables/figures and Source lines.
@@ -404,14 +404,14 @@ Question pattern builds from simple recall to extended response.
 ## Section B: Extended Response (choose ONE from TWO, 20 marks each)
 Extended writing question requiring analysis and evaluation.
 Topics: economic foundations, resource allocation, supply & demand, elasticity, market failure, government intervention.`,
-    "2": `PAPER 2: How the Economy Works (8136/2) — 1 hour 45 minutes, 80 marks
+    "2": `PAPER 2: How the Economy Works (8136/2) · 1 hour 45 minutes, 80 marks
 ## Section A: Short Answer and Data Response (60 marks)
 Same structure as Paper 1 but MACRO topics.
 Include data on GDP, unemployment, inflation, trade balance.
 
 ## Section B: Extended Response (choose ONE from TWO, 20 marks each)
 Topics: role of money, income & expenditure, AD/AS, economic growth, unemployment, inflation, international trade, government role.`,
-    "full": `FULL GCSE PAPER covering BOTH micro and macro GCSE topics — 80 marks total.
+    "full": `FULL GCSE PAPER covering BOTH micro and macro GCSE topics · 80 marks total.
 This is a GCSE-level paper for 15-16 year old students. It must NOT include A-Level content.
 
 ## Section A: Short Answer and Data Response (60 marks)
@@ -421,20 +421,20 @@ Include 2-3 data extracts with tables/figures and Source lines.
 
 ## Section B: Extended Response (choose ONE from TWO, 20 marks each)
 Synoptic question requiring both micro and macro knowledge.
-Maximum question mark allocation is 20 marks (NOT 25 marks — that is A-Level).`,
+Maximum question mark allocation is 20 marks (NOT 25 marks · that is A-Level).`,
   };
 
   return `You are an expert AQA GCSE Economics (8136) chief examiner. This is a GCSE qualification for students aged 15-16. You are NOT an A-Level examiner.
 
-CRITICAL — THIS IS A GCSE PAPER (8136), NOT A-LEVEL (7136):
+CRITICAL · THIS IS A GCSE PAPER (8136), NOT A-LEVEL (7136):
 - Qualification: AQA GCSE Economics (8136) for 15-16 year olds
-- Maximum marks per question: 20 marks (A-Level uses 25 — DO NOT use 25)
+- Maximum marks per question: 20 marks (A-Level uses 25 · DO NOT use 25)
 - Total paper marks: 80 (NOT 100)
 - Duration: 1 hour 45 minutes (NOT 2 hours)
-- Use GCSE-appropriate language — simpler, more accessible than A-Level
+- Use GCSE-appropriate language · simpler, more accessible than A-Level
 - Section B extended responses are worth exactly 20 marks each
 
-BANNED A-LEVEL TOPICS — DO NOT include any of these:
+BANNED A-LEVEL TOPICS · DO NOT include any of these:
 oligopoly, monopolistic competition, contestable markets, game theory, kinked demand curve, price discrimination (1st/2nd/3rd degree), natural monopoly theory, X-inefficiency, productive vs allocative efficiency diagrams, labour market wage determination theory, marginal revenue product, monopsony, bilateral monopoly, Phillips curve, NAIRU, Keynesian vs Classical/Monetarist debate, multiplier calculations, accelerator theory, Laffer curve, comparative advantage (Ricardian model), terms of trade, J-curve, Marshall-Lerner condition, balance of payments components, exchange rate systems theory, Lorenz curve, Gini coefficient calculations, cost-benefit analysis (NPV)
 
 ALLOWED GCSE TOPICS ONLY (AQA 8136 specification):
@@ -447,14 +447,14 @@ Generate a COMPLETE predicted exam paper for \${paperLabel}.
 
 CRITICAL FORMATTING RULES:
 1. Follow the template structure EXACTLY
-2. Questions MUST be GCSE level — accessible and age-appropriate
+2. Questions MUST be GCSE level · accessible and age-appropriate
 3. Include at least 2 data extracts with markdown tables and Source lines
 4. 6-mark questions require analysis + evaluation
 5. Use AQA GCSE command words: "Define", "State", "Explain", "Analyse", "Evaluate"
 6. Include at least 2 MCQs (1 mark each with A/B/C/D options)
 7. Extended response questions are worth 20 marks maximum
 
-OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+OUTPUT FORMAT (CRITICAL · the parser depends on this exact format):
 - EVERY question MUST start on its own line with: Question XX [Y marks]
   Examples: Question 01 [1 marks], Question 02 [2 marks], Question 03 [4 marks]
 - Do NOT use bold/asterisks around question headers
@@ -472,11 +472,11 @@ const IGCSE_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
   const paperNum = paperValue === "full" ? "full" : paperValue.includes("1") ? "1" : "2";
 
   const templates: Record<string, string> = {
-    "1": `PAPER 1: Multiple Choice (0455/1) — 45 minutes, 30 marks
+    "1": `PAPER 1: Multiple Choice (0455/1) · 45 minutes, 30 marks
 30 MCQs covering all IGCSE Economics topics. Each worth 1 mark.
 Mix of: recall, application, data interpretation, and diagram analysis.
 Topics: basic economic problem, allocation of resources, microeconomic decision makers, government & macroeconomy, economic development, international trade.`,
-    "2": `PAPER 2: Structured Questions (0455/2) — 2 hours 15 minutes, 90 marks
+    "2": `PAPER 2: Structured Questions (0455/2) · 2 hours 15 minutes, 90 marks
 ## Section A (compulsory, 20 marks)
 Data response with 1-2 extracts + figures.
 Questions: 2m define → 2m state → 4m explain → 6m analyse → 6m discuss
@@ -484,7 +484,7 @@ Questions: 2m define → 2m state → 4m explain → 6m analyse → 6m discuss
 ## Section B (choose THREE from FOUR structured questions, ~23 marks each)
 Each question has sub-parts from 2-mark definitions to 8-mark evaluate.
 Topics must span the full IGCSE specification.`,
-    "full": `FULL PAPER covering all IGCSE Economics topics — 90 marks total.
+    "full": `FULL PAPER covering all IGCSE Economics topics · 90 marks total.
 ## Section A: Data Response (20 marks)
 Compulsory data response with extracts and figures.
 ## Section B: Structured Questions (70 marks)
@@ -501,12 +501,12 @@ CRITICAL RULES:
 1. Follow the template structure EXACTLY
 2. Paper 1: exactly 30 MCQs with A/B/C/D options
 3. Paper 2: use realistic global data in extracts
-4. Questions must be IGCSE level — international context where possible
+4. Questions must be IGCSE level · international context where possible
 5. Diagram questions must specify "Using a diagram" or "With the aid of a diagram"
 6. 8-mark questions require balanced analysis with evaluation
 7. Use Cambridge IGCSE command words: "Define", "Identify", "Explain", "Analyse", "Discuss", "Evaluate"
 
-OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+OUTPUT FORMAT (CRITICAL · the parser depends on this exact format):
 - EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
   Examples: Question 01 [1 marks], Question 02 [2 marks], Question 03 [4 marks]
 - Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks. Do NOT put marks at the end of the line after question text.
@@ -526,7 +526,7 @@ const EDEXCEL_IGCSE_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string)
   const paperNum = paperValue === "full" ? "full" : paperValue.includes("1") ? "1" : "2";
 
   const templates: Record<string, string> = {
-    "1": `PAPER 1: Microeconomics and Business Economics (4EC1/01) — 1 hour 15 minutes, 80 marks
+    "1": `PAPER 1: Microeconomics and Business Economics (4EC1/01) · 1 hour 15 minutes, 80 marks
 ## Section A: Multiple Choice (20 marks)
 20 MCQs covering microeconomics and business economics. Each worth 1 mark.
 Topics: scarcity, opportunity cost, PPC, demand & supply, elasticity, market failure, government intervention, costs & revenue, market structures, labour market.
@@ -539,7 +539,7 @@ Questions: 2m define → 2m explain → 4m analyse → 6m explain with data → 
 Choose ONE from TWO extended writing questions.
 Each worth 30 marks total with sub-parts building from 4m explain to 12m evaluate.
 Topics must be within Edexcel IGCSE Paper 1 specification: the market system, demand & supply, elasticity, business costs/revenue/profit, market structures, labour market.`,
-    "2": `PAPER 2: Macroeconomics and the Global Economy (4EC1/02) — 1 hour 25 minutes, 80 marks
+    "2": `PAPER 2: Macroeconomics and the Global Economy (4EC1/02) · 1 hour 25 minutes, 80 marks
 ## Section A: Multiple Choice (20 marks)
 20 MCQs covering macroeconomics and global economy. Each worth 1 mark.
 Topics: government objectives, GDP, inflation, unemployment, balance of payments, fiscal policy, monetary policy, supply-side policies, international trade, exchange rates, globalisation, development.
@@ -551,7 +551,7 @@ Questions build from 2m definitions to 8m evaluate.
 ## Section C: Extended Writing (30 marks)
 Choose ONE from TWO extended writing questions.
 Topics must be within Edexcel IGCSE Paper 2 specification: government objectives & indicators, fiscal & monetary policy, supply-side policies, international trade, exchange rates, globalisation.`,
-    "full": `FULL PAPER covering BOTH Paper 1 and Paper 2 Edexcel IGCSE Economics topics — 80 marks total.
+    "full": `FULL PAPER covering BOTH Paper 1 and Paper 2 Edexcel IGCSE Economics topics · 80 marks total.
 ## Section A: Multiple Choice (20 marks)
 20 MCQs spanning both micro and macro IGCSE Economics topics.
 
@@ -570,18 +570,18 @@ ${templates[paperNum]}
 
 CRITICAL RULES:
 1. Follow the template structure EXACTLY
-2. This is an IGCSE (International GCSE) paper — use international examples and contexts where appropriate
-3. Questions must be IGCSE level — accessible but rigorous, NOT A-Level difficulty
+2. This is an IGCSE (International GCSE) paper · use international examples and contexts where appropriate
+3. Questions must be IGCSE level · accessible but rigorous, NOT A-Level difficulty
 4. Include at least 2 data extracts with tables/figures containing specific numerical data
 5. 8-mark questions require balanced analysis with evaluation
 6. Use Edexcel IGCSE command words: "Define", "State", "Explain", "Analyse", "Discuss", "Evaluate"
-7. All content must be within the Edexcel IGCSE Economics (4EC1) specification — do NOT include A-Level content
+7. All content must be within the Edexcel IGCSE Economics (4EC1) specification · do NOT include A-Level content
 
 SPECIFICATION SCOPE (4EC1):
 Paper 1 topics: The economic problem, demand & supply, price determination, elasticity (PED, PES), market failure, government intervention, business costs/revenue/profit, economies of scale, market structures (competitive vs monopoly), labour market, wage determination, minimum wage, trade unions.
 Paper 2 topics: Government objectives (growth, employment, inflation, balance of payments), GDP measurement, fiscal policy, monetary policy, supply-side policies, international trade, comparative advantage, protectionism (tariffs, quotas), exchange rates (floating, fixed, appreciation, depreciation), globalisation, economic development.
 
-OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+OUTPUT FORMAT (CRITICAL · the parser depends on this exact format):
 - EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
   Examples: Question 01 [1 marks], Question 02 [2 marks], Question 03 [4 marks]
 - Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks.
@@ -600,50 +600,50 @@ const IB_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
   const paperNum = paperValue === "full" ? "3" : paperValue.includes("1") ? "1" : "2";
 
   const templates: Record<string, string> = {
-    "1": `PAPER 1: Extended Response — SL: 1h15m, HL: 1h30m, 25 marks (SL) / 40 marks (HL)
-## Part (a) [10 marks] — Explain
+    "1": `PAPER 1: Extended Response · SL: 1h15m, HL: 1h30m, 25 marks (SL) / 40 marks (HL)
+## Part (a) [10 marks] · Explain
 Using economic theory and real-world examples, explain [microeconomic/macroeconomic concept].
 Requires definitions, diagrams, and chains of reasoning.
 
-## Part (b) [15 marks] — Evaluate (SL: 15m, HL: 15m)
+## Part (b) [15 marks] · Evaluate (SL: 15m, HL: 15m)
 "Evaluate the view that..." / "Discuss whether..." / "To what extent..."
 Requires: definitions (2), diagrams (1-2), real-world examples (2+), evaluation with counter-arguments, and a reasoned conclusion.
 
 STRUCTURE:
 - Choose ONE question from a choice of THREE. Each question is from a DIFFERENT syllabus unit.
 - Each question has Part (a) and Part (b).
-- HL candidates also answer a THIRD part: Part (c) [10 marks] — deeper analysis with HL extension content.
+- HL candidates also answer a THIRD part: Part (c) [10 marks] · deeper analysis with HL extension content.
 - Syllabus units: Unit 1 (Intro to Economics), Unit 2 (Microeconomics), Unit 3 (Macroeconomics), Unit 4 (The Global Economy).`,
-    "2": `PAPER 2: Data Response — SL: 1h45m, HL: 1h45m, 40 marks
+    "2": `PAPER 2: Data Response · SL: 1h45m, HL: 1h45m, 40 marks
 ## Question structure (choose ONE from TWO):
 Each question provides:
 - A real-world text extract (200-400 words) with economic data
 - Supporting data (table/chart with specific figures)
 
 Sub-questions:
-Question 01a [2 marks] — Define a key term from the text
-Question 01b [2 marks] — Define another key term from the text  
-Question 01c [4 marks] — Using an economic diagram, explain...
-Question 01d [4 marks] — Using the text/data, explain...
-Question 01e [4 marks] — Using an economic diagram, explain...
-Question 01f [8 marks] — Using information from the text/data AND your knowledge of economics, discuss/evaluate...
+Question 01a [2 marks] · Define a key term from the text
+Question 01b [2 marks] · Define another key term from the text  
+Question 01c [4 marks] · Using an economic diagram, explain...
+Question 01d [4 marks] · Using the text/data, explain...
+Question 01e [4 marks] · Using an economic diagram, explain...
+Question 01f [8 marks] · Using information from the text/data AND your knowledge of economics, discuss/evaluate...
 
 HL ADDITIONAL (if HL):
-Question 01g [4 marks] — Calculate/analyse using quantitative data
-Question 01h [6 marks] — Evaluate with HL extension theory
+Question 01g [4 marks] · Calculate/analyse using quantitative data
+Question 01h [6 marks] · Evaluate with HL extension theory
 
 Topics span: micro, macro, international trade, development.`,
-    "3": `PAPER 3: HL Extension Paper — 1h45m, 60 marks (HL ONLY)
+    "3": `PAPER 3: HL Extension Paper · 1h45m, 60 marks (HL ONLY)
 ## Question structure (answer TWO from THREE):
 Each question provides a brief scenario/context (2-3 sentences).
 
 Sub-questions per question:
-Question 01a [2 marks] — Define a key economic term
-Question 01b [4 marks] — Using a diagram, explain...
-Question 01c [4 marks] — Calculate (using given data: elasticity, multiplier, tariff effects, etc.)
-Question 01d [4 marks] — Using a diagram, explain a policy/theory
-Question 01e [6 marks] — Using your knowledge of economics, explain the likely consequences...
-Question 01f [10 marks] — "Evaluate..." / "Discuss..." / "To what extent..."
+Question 01a [2 marks] · Define a key economic term
+Question 01b [4 marks] · Using a diagram, explain...
+Question 01c [4 marks] · Calculate (using given data: elasticity, multiplier, tariff effects, etc.)
+Question 01d [4 marks] · Using a diagram, explain a policy/theory
+Question 01e [6 marks] · Using your knowledge of economics, explain the likely consequences...
+Question 01f [10 marks] · "Evaluate..." / "Discuss..." / "To what extent..."
 
 HL-ONLY TOPICS to include: theory of the firm (revenue/cost curves), market power, asymmetric information, terms of trade, economic integration, fiscal/monetary effectiveness, Keynesian vs monetarist, market-based vs interventionist strategies for development.`,
   };
@@ -655,7 +655,7 @@ Generate a COMPLETE predicted exam paper for ${paperLabel}.
 ${templates[paperNum]}
 
 CRITICAL RULES:
-1. Follow the IB Economics template structure EXACTLY — NOT AQA or any other board
+1. Follow the IB Economics template structure EXACTLY · NOT AQA or any other board
 2. Use real-world examples and data from 2023-2025
 3. Paper 1: Essay-based, Part (a) = explain, Part (b) = evaluate with criteria
 4. Paper 2: Data response with extracts containing specific numerical data
@@ -664,7 +664,7 @@ CRITICAL RULES:
 7. Use IB command words: "Define", "Explain", "Analyse", "Evaluate", "Discuss", "To what extent", "Compare and contrast"
 8. 10+ mark questions require: definitions, diagrams, real-world examples, stakeholder perspectives, and a reasoned conclusion
 
-OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+OUTPUT FORMAT (CRITICAL · the parser depends on this exact format):
 - EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
   Examples: Question 01a [10 marks], Question 01b [15 marks], Question 02a [2 marks]
 - Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks.
@@ -683,38 +683,38 @@ const WJEC_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
   const paperNum = paperValue === "full" ? "full" : paperValue.includes("1") ? "1" : "2";
 
   const templates: Record<string, string> = {
-    "1": `UNIT 1: Introduction to Economics (AS) — 1h30m, 60 marks
+    "1": `UNIT 1: Introduction to Economics (AS) · 1h30m, 60 marks
 ## Section A: Data Response (compulsory, 30 marks)
 Data stimulus with 1-2 extracts + data table.
-Question 01 [2 marks] — Define a key term
-Question 02 [2 marks] — State/identify from data
-Question 03 [4 marks] — Explain with reference to data
-Question 04 [6 marks] — Explain, using a diagram
-Question 05 [8 marks] — Analyse with data application
-Question 06 [8 marks] — Evaluate/Discuss
+Question 01 [2 marks] · Define a key term
+Question 02 [2 marks] · State/identify from data
+Question 03 [4 marks] · Explain with reference to data
+Question 04 [6 marks] · Explain, using a diagram
+Question 05 [8 marks] · Analyse with data application
+Question 06 [8 marks] · Evaluate/Discuss
 
 ## Section B: Essay (choose ONE from TWO, 30 marks)
-Question 07 [12 marks] — "Explain..." / "Analyse..."
-Question 08 [18 marks] — "Evaluate..." / "Discuss..." / "To what extent..."
+Question 07 [12 marks] · "Explain..." / "Analyse..."
+Question 08 [18 marks] · "Evaluate..." / "Discuss..." / "To what extent..."
 
 Topics: market mechanisms, demand & supply, elasticity, market failure, externalities, public goods, government intervention.`,
-    "2": `UNIT 2: Economics in Action (AS) — 1h30m, 60 marks
+    "2": `UNIT 2: Economics in Action (AS) · 1h30m, 60 marks
 Same structure as Unit 1 but MACRO topics:
 Section A: Data response (30 marks) with macroeconomic data
-Section B: Essay choice (30 marks) — 12m + 18m
+Section B: Essay choice (30 marks) · 12m + 18m
 
 Topics: economic indicators, AD/AS, economic growth, unemployment, inflation, fiscal policy, monetary policy, supply-side policies, balance of payments.`,
-    "full": `UNITS 3 & 4: A2 Applied Economics — 2 hours, 80 marks
+    "full": `UNITS 3 & 4: A2 Applied Economics · 2 hours, 80 marks
 ## Section A: Data Response (compulsory, 40 marks)
 Extended case study with 3-4 extracts covering both micro and macro themes.
-Question 01 [2 marks] — Define
-Question 02 [4 marks] — Explain
-Question 03 [6 marks] — Analyse with diagram
-Question 04 [8 marks] — Assess/Evaluate
-Question 05 [20 marks] — Extended evaluation essay
+Question 01 [2 marks] · Define
+Question 02 [4 marks] · Explain
+Question 03 [6 marks] · Analyse with diagram
+Question 04 [8 marks] · Assess/Evaluate
+Question 05 [20 marks] · Extended evaluation essay
 
 ## Section B: Essay (choose ONE from THREE, 40 marks)
-Question 06/07/08 [40 marks] — Full essay with analysis and evaluation, requiring synoptic micro+macro links.
+Question 06/07/08 [40 marks] · Full essay with analysis and evaluation, requiring synoptic micro+macro links.
 Two-part structure: Part (a) [16 marks] explain/analyse + Part (b) [24 marks] evaluate.
 
 Topics: market structures, labour markets, income distribution, trade, globalisation, development, macro policy effectiveness.`,
@@ -727,7 +727,7 @@ Generate a COMPLETE predicted exam paper for ${paperLabel}.
 ${templates[paperNum]}
 
 CRITICAL RULES:
-1. Follow the WJEC template structure EXACTLY — NOT AQA format
+1. Follow the WJEC template structure EXACTLY · NOT AQA format
 2. WJEC uses Units (not Papers): Unit 1 = AS micro, Unit 2 = AS macro, Units 3/4 = A2
 3. Section A data response is compulsory; Section B is essay choice
 4. Use realistic Welsh/UK economic data and examples where appropriate
@@ -735,7 +735,7 @@ CRITICAL RULES:
 6. 18+ mark questions require evaluation with counter-arguments and reasoned judgement
 7. Use WJEC command words: "Define", "Explain", "Analyse", "Evaluate", "Discuss", "To what extent"
 
-OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+OUTPUT FORMAT (CRITICAL · the parser depends on this exact format):
 - EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
 - Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks.
 - The question text MUST appear AFTER the [Y marks] tag
@@ -752,40 +752,40 @@ const EDUQAS_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
   const paperNum = paperValue === "full" ? "3" : paperValue.includes("1") ? "1" : "2";
 
   const templates: Record<string, string> = {
-    "1": `COMPONENT 1: Markets and Market Failure — 2 hours, 80 marks
+    "1": `COMPONENT 1: Markets and Market Failure · 2 hours, 80 marks
 ## Section A: Data Response (compulsory, 40 marks)
 Case study with 2-3 extracts + data figures.
-Question 01 [2 marks] — Define
-Question 02 [4 marks] — Explain with reference to data
-Question 03 [6 marks] — Explain using a diagram
-Question 04 [8 marks] — Analyse
-Question 05 [20 marks] — "Evaluate..." / "To what extent..."
+Question 01 [2 marks] · Define
+Question 02 [4 marks] · Explain with reference to data
+Question 03 [6 marks] · Explain using a diagram
+Question 04 [8 marks] · Analyse
+Question 05 [20 marks] · "Evaluate..." / "To what extent..."
 
 ## Section B: Essay (choose ONE from THREE, 40 marks)
 Each essay has two parts:
-Part (a) [16 marks] — Explain/Analyse
-Part (b) [24 marks] — Evaluate with counter-arguments and judgement
+Part (a) [16 marks] · Explain/Analyse
+Part (b) [24 marks] · Evaluate with counter-arguments and judgement
 
 Topics: demand & supply, elasticity, market failure, externalities, public goods, merit goods, government intervention, market structures.`,
-    "2": `COMPONENT 2: National and International Economy — 2 hours, 80 marks
+    "2": `COMPONENT 2: National and International Economy · 2 hours, 80 marks
 Same structure as Component 1 but MACRO topics:
 Section A: Data response (40 marks) with macro data (GDP, inflation, trade)
-Section B: Essay choice (40 marks) — two-part essay
+Section B: Essay choice (40 marks) · two-part essay
 
 Topics: economic growth, unemployment, inflation, AD/AS, fiscal policy, monetary policy, supply-side policies, international trade, exchange rates, balance of payments, globalisation, development.`,
-    "3": `COMPONENT 3: Synoptic Data Response — 2h15m, 80 marks
-SYNOPTIC PAPER — draws on BOTH micro AND macro content.
+    "3": `COMPONENT 3: Synoptic Data Response · 2h15m, 80 marks
+SYNOPTIC PAPER · draws on BOTH micro AND macro content.
 ## Section A: Data Response (compulsory, 40 marks)
 Extended case study with 3-4 extracts combining micro and macro themes.
-Question 01 [2 marks] — Define
-Question 02 [4 marks] — Explain
-Question 03 [8 marks] — Analyse with diagram
-Question 04 [26 marks] — Extended evaluation requiring synoptic links
+Question 01 [2 marks] · Define
+Question 02 [4 marks] · Explain
+Question 03 [8 marks] · Analyse with diagram
+Question 04 [26 marks] · Extended evaluation requiring synoptic links
 
 ## Section B: Essay (choose ONE from TWO, 40 marks)
-Question 05/06 [40 marks] — Synoptic essay with two parts:
-Part (a) [16 marks] — Analyse
-Part (b) [24 marks] — Evaluate
+Question 05/06 [40 marks] · Synoptic essay with two parts:
+Part (a) [16 marks] · Analyse
+Part (b) [24 marks] · Evaluate
 
 Each essay MUST require links between micro and macro concepts.`,
   };
@@ -797,7 +797,7 @@ Generate a COMPLETE predicted exam paper for ${paperLabel}.
 ${templates[paperNum]}
 
 CRITICAL RULES:
-1. Follow the Eduqas template structure EXACTLY — NOT AQA or WJEC format
+1. Follow the Eduqas template structure EXACTLY · NOT AQA or WJEC format
 2. Eduqas uses Components (not Papers): Component 1 = micro, Component 2 = macro, Component 3 = synoptic
 3. Section A is compulsory data response; Section B is essay choice
 4. Use realistic UK/Welsh economic data and examples
@@ -806,7 +806,7 @@ CRITICAL RULES:
 7. Use Eduqas command words: "Define", "Explain", "Analyse", "Evaluate", "Discuss", "To what extent"
 8. Component 3 questions MUST explicitly link micro and macro concepts
 
-OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+OUTPUT FORMAT (CRITICAL · the parser depends on this exact format):
 - EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
 - Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks.
 - The question text MUST appear AFTER the [Y marks] tag
@@ -823,7 +823,7 @@ const OCR_GCSE_ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
   const paperNum = paperValue === "full" ? "full" : paperValue.includes("1") ? "1" : "2";
 
   const templates: Record<string, string> = {
-    "1": `COMPONENT 1: Introduction to Economics (J205/01) — 1h15m, 60 marks
+    "1": `COMPONENT 1: Introduction to Economics (J205/01) · 1h15m, 60 marks
 ## Section A: Multiple Choice (15 marks)
 15 MCQs (1 mark each, A/B/C/D). Mix of recall, application, and data interpretation.
 Topics: scarcity, opportunity cost, specialisation, demand & supply, PED, market failure, government intervention.
@@ -835,18 +835,18 @@ Questions: 1m state → 2m explain → 4m analyse → 6m explain with diagram
 ## Section C: Extended Response (20 marks)
 Choose ONE from TWO extended writing questions.
 Question has two parts:
-Part (a) [8 marks] — Explain/Analyse
-Part (b) [12 marks] — "Evaluate..." / "Discuss..."
+Part (a) [8 marks] · Explain/Analyse
+Part (b) [12 marks] · "Evaluate..." / "Discuss..."
 
 Topics: the role of markets, demand & supply, elasticity, market failure, externalities, government intervention.`,
-    "2": `COMPONENT 2: National and International Economics (J205/02) — 1h15m, 60 marks
+    "2": `COMPONENT 2: National and International Economics (J205/02) · 1h15m, 60 marks
 Same structure as Component 1 but MACRO topics:
 Section A: 15 MCQs (15 marks)
 Section B: Short answer and data response (25 marks) with macro data
 Section C: Extended response choice (20 marks)
 
 Topics: economic growth, unemployment, inflation, fiscal policy, monetary policy, international trade, globalisation, exchange rates.`,
-    "full": `FULL PAPER covering BOTH Components — 60 marks total.
+    "full": `FULL PAPER covering BOTH Components · 60 marks total.
 Section A: 15 MCQs spanning micro and macro (15 marks)
 Section B: Structured questions with data (25 marks)
 Section C: Extended response (20 marks)`,
@@ -859,8 +859,8 @@ Generate a COMPLETE predicted exam paper for ${paperLabel}.
 ${templates[paperNum]}
 
 CRITICAL RULES:
-1. Follow the OCR GCSE template structure EXACTLY — this is GCSE level, NOT A-Level
-2. This is OCR J205, NOT OCR H460 (A-Level) — keep difficulty appropriate for GCSE students
+1. Follow the OCR GCSE template structure EXACTLY · this is GCSE level, NOT A-Level
+2. This is OCR J205, NOT OCR H460 (A-Level) · keep difficulty appropriate for GCSE students
 3. Total marks: 60 per component (NOT 80)
 4. Duration: 1h15m per component (NOT 2 hours)
 5. Questions must be accessible for GCSE students aged 15-16
@@ -870,7 +870,7 @@ CRITICAL RULES:
 9. Use OCR GCSE command words: "Define", "State", "Describe", "Explain", "Analyse", "Evaluate", "Discuss"
 10. MCQ options must have plausible distractors
 
-OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+OUTPUT FORMAT (CRITICAL · the parser depends on this exact format):
 - EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
 - Do NOT use bold/asterisks around question headers. Do NOT use parentheses for marks.
 - The question text MUST appear AFTER the [Y marks] tag
@@ -889,7 +889,7 @@ const ECON_PAPER_PROMPT = (paperLabel: string, paperValue: string) => {
   const knowledgeGraphSection = generateKnowledgeGraphPrompt(paperNum);
   const isSynopticPaper = paperNum === "3";
 
-  const paper1Template = `PAPER 1 TEMPLATE — Markets and Market Failure (7136/1):
+  const paper1Template = `PAPER 1 TEMPLATE · Markets and Market Failure (7136/1):
 EXACT STRUCTURE (copy this layout precisely):
 
 ## Section A
@@ -902,15 +902,15 @@ Total for this context: 40 marks
 
 Study Extracts A, B and C and then answer all parts of Context 1 which follow.
 
-#### Extract A: [A data table with real-world statistics — 3-6 rows, 4-6 columns, with a Source line]
+#### Extract A: [A data table with real-world statistics · 3-6 rows, 4-6 columns, with a Source line]
 #### Figure 1: [A chart/graph described with specific data points so questions can reference it]
 #### Extract B: [2-3 paragraphs of real-world context, 150-200 words, with Source line. Do NOT include line numbers or line references.]
 #### Extract C: [2-3 paragraphs discussing policies/solutions, 150-200 words, with Source line. Do NOT include line numbers or line references.]
 
-Question 01 [2 marks] — a calculation using data from Extract A
-Question 02 [4 marks] — "Explain how the data in Extract A show that..." (data interpretation)
-Question 03 [9 marks] — "With the help of a diagram, explain..." (reference Extract B/C content directly, require a labelled diagram + applied analysis)
-Question 04 [25 marks] — "Using the data in the extracts and your knowledge of economics, discuss/evaluate..." (reference Extract C content directly, deep evaluation with counter-arguments)
+Question 01 [2 marks] · a calculation using data from Extract A
+Question 02 [4 marks] · "Explain how the data in Extract A show that..." (data interpretation)
+Question 03 [9 marks] · "With the help of a diagram, explain..." (reference Extract B/C content directly, require a labelled diagram + applied analysis)
+Question 04 [25 marks] · "Using the data in the extracts and your knowledge of economics, discuss/evaluate..." (reference Extract C content directly, deep evaluation with counter-arguments)
 
 ### OR
 ### Context 2
@@ -924,29 +924,29 @@ Question 07 [9 marks]
 Question 08 [25 marks]
 
 ## Section B
-Answer ONE essay from this section. Each essay carries 40 marks TOTAL, split into TWO compulsory parts: a 15-mark "Explain/Analyse" part FOLLOWED BY a 25-mark "Evaluate" part. You MUST output BOTH parts for every essay choice. NEVER collapse the essay into a single 25-mark or 40-mark question — that is incorrect AQA format.
+Answer ONE essay from this section. Each essay carries 40 marks TOTAL, split into TWO compulsory parts: a 15-mark "Explain/Analyse" part FOLLOWED BY a 25-mark "Evaluate" part. You MUST output BOTH parts for every essay choice. NEVER collapse the essay into a single 25-mark or 40-mark question · that is incorrect AQA format.
 
 ### EITHER
 ### Essay 1
 [Context paragraph: 3-4 sentences of real-world background]
-Question 09 [15 marks] — "Explain..." (analyse/apply)
-Question 10 [25 marks] — "Evaluate the view that..." / "Assess whether..."
+Question 09 [15 marks] · "Explain..." (analyse/apply)
+Question 10 [25 marks] · "Evaluate the view that..." / "Assess whether..."
 
 ### OR
 ### Essay 2
 [Context paragraph]
-Question 11 [15 marks] — "Explain..."
-Question 12 [25 marks] — "Evaluate..."
+Question 11 [15 marks] · "Explain..."
+Question 12 [25 marks] · "Evaluate..."
 
 ### OR
 ### Essay 3
 [Context paragraph]
-Question 13 [15 marks] — "Explain..."
-Question 14 [25 marks] — "Evaluate..."
+Question 13 [15 marks] · "Explain..."
+Question 14 [25 marks] · "Evaluate..."
 
-CRITICAL: Section B MUST contain exactly SIX questions (09, 10, 11, 12, 13, 14) — three essay choices, each with a 15-mark part AND a 25-mark part. Total Section B = 40 marks (student answers ONE pair: 15 + 25).`;
+CRITICAL: Section B MUST contain exactly SIX questions (09, 10, 11, 12, 13, 14) · three essay choices, each with a 15-mark part AND a 25-mark part. Total Section B = 40 marks (student answers ONE pair: 15 + 25).`;
 
-  const paper2Template = `PAPER 2 TEMPLATE — National and International Economy (7136/2):
+  const paper2Template = `PAPER 2 TEMPLATE · National and International Economy (7136/2):
 EXACT STRUCTURE (identical to Paper 1 but with MACRO topics):
 
 ## Section A
@@ -959,14 +959,14 @@ Total for this context: 40 marks
 
 Study Extracts A, B and C and then answer all parts of Context 1 which follow.
 
-#### Extract A: [A data table comparing countries/years — GDP, inflation, trade, etc.]
+#### Extract A: [A data table comparing countries/years · GDP, inflation, trade, etc.]
 #### Extract B: [2-3 paragraphs of macroeconomic context, with Source]
 #### Extract C: [2-3 paragraphs discussing macro policies, with Source]
 
-Question 01 [2 marks] — calculation from Extract A
-Question 02 [4 marks] — "Explain how the data in Extract A show that..."
-Question 03 [9 marks] — "With the help of a diagram, explain..." (AD/AS, Phillips curve, etc.)
-Question 04 [25 marks] — "Using the data... assess/discuss/evaluate..."
+Question 01 [2 marks] · calculation from Extract A
+Question 02 [4 marks] · "Explain how the data in Extract A show that..."
+Question 03 [9 marks] · "With the help of a diagram, explain..." (AD/AS, Phillips curve, etc.)
+Question 04 [25 marks] · "Using the data... assess/discuss/evaluate..."
 
 ### OR
 ### Context 2
@@ -975,23 +975,23 @@ Total for this context: 40 marks
 [Same structure with Extracts D, E, F + Questions 05-08]
 
 ## Section B
-Answer ONE essay from this section. Each essay carries 40 marks TOTAL, split into TWO compulsory parts: a 15-mark "Explain/Analyse" part FOLLOWED BY a 25-mark "Evaluate" part. You MUST output BOTH parts for every essay choice. NEVER collapse the essay into a single 25-mark or 40-mark question — that is incorrect AQA format.
+Answer ONE essay from this section. Each essay carries 40 marks TOTAL, split into TWO compulsory parts: a 15-mark "Explain/Analyse" part FOLLOWED BY a 25-mark "Evaluate" part. You MUST output BOTH parts for every essay choice. NEVER collapse the essay into a single 25-mark or 40-mark question · that is incorrect AQA format.
 
 ### Essay 1
-Question 09 [15 marks] — Explain (macro analysis)
-Question 10 [25 marks] — Evaluate/Assess/Discuss
+Question 09 [15 marks] · Explain (macro analysis)
+Question 10 [25 marks] · Evaluate/Assess/Discuss
 
 ### Essay 2
-Question 11 [15 marks] — Explain
-Question 12 [25 marks] — Evaluate
+Question 11 [15 marks] · Explain
+Question 12 [25 marks] · Evaluate
 
 ### Essay 3
-Question 13 [15 marks] — Explain
-Question 14 [25 marks] — Evaluate
+Question 13 [15 marks] · Explain
+Question 14 [25 marks] · Evaluate
 
-CRITICAL: Section B MUST contain exactly SIX questions (09, 10, 11, 12, 13, 14) — three essay choices, each with a 15-mark part AND a 25-mark part. Total Section B = 40 marks (student answers ONE pair: 15 + 25).`;
+CRITICAL: Section B MUST contain exactly SIX questions (09, 10, 11, 12, 13, 14) · three essay choices, each with a 15-mark part AND a 25-mark part. Total Section B = 40 marks (student answers ONE pair: 15 + 25).`;
 
-  const paper3Template = `PAPER 3 TEMPLATE — Economic Principles and Issues (7136/3):
+  const paper3Template = `PAPER 3 TEMPLATE · Economic Principles and Issues (7136/3):
 EXACT STRUCTURE:
 
 ## Section A
@@ -1007,9 +1007,9 @@ MCQ REQUIREMENTS:
 - At least 8 MCQs must require calculation or data interpretation (tables, figures, index numbers)
 - At least 5 MCQs must include a table or figure with specific numerical data
 - Include MCQs on: market structures, elasticity, costs/revenue, labour markets, AD/AS, fiscal/monetary policy, trade, exchange rates, development
-- Difficulty must match June 2024 Paper 3 — NOT easy recall questions
+- Difficulty must match June 2024 Paper 3 · NOT easy recall questions
 
-DIAGRAM-BASED MCQ REQUIREMENTS (CRITICAL — match AQA June 2024 Paper 3 Q10, Q11 style):
+DIAGRAM-BASED MCQ REQUIREMENTS (CRITICAL · match AQA June 2024 Paper 3 Q10, Q11 style):
 - At least 6 MCQs MUST include a "Figure X" diagram described in detail
 - Diagram MCQ examples to follow:
   1. Joint supply / competitive demand: "Figure X shows how the markets for Good X and Good Y are affected by [change]. It can be concluded that Good X and Good Y are in: A competitive demand, B composite demand, C derived demand, D joint supply." Include TWO side-by-side S&D diagrams showing shifts with labelled P₁, P₂, Q₁, Q₂ and equilibrium points.
@@ -1036,9 +1036,9 @@ Referring to the Insert, study Extracts A, B and C, then use these and your know
 #### Extract C: [2-3 paragraphs of context, with Source]
 #### Extract D: [News report, 2-3 paragraphs, with Source]
 
-Question 31 [10 marks] — "To what extent, if at all, do the data suggest that..." (data analysis + evaluation)
-Question 32 [15 marks] — "Explain why/how..." (applied analysis using extracts)
-Question 33 [25 marks] — "After considering Extract D, and the original evidence... would you recommend that... Justify your recommendation." (full evaluation + justified recommendation)`;
+Question 31 [10 marks] · "To what extent, if at all, do the data suggest that..." (data analysis + evaluation)
+Question 32 [15 marks] · "Explain why/how..." (applied analysis using extracts)
+Question 33 [25 marks] · "After considering Extract D, and the original evidence... would you recommend that... Justify your recommendation." (full evaluation + justified recommendation)`;
 
   const structureTemplate = paperValue === "full"
     ? paper3Template
@@ -1055,20 +1055,20 @@ ${knowledgeGraphSection}
 ${structureTemplate}
 
 CRITICAL RULES:
-1. Follow the template EXACTLY — same section structure, same question numbering, same mark allocations
+1. Follow the template EXACTLY · same section structure, same question numbering, same mark allocations
 2. Extracts must be 150-250 words each, written in formal news/academic register with realistic 2023-2025 UK/global data
 3. Tables must contain specific numerical data (GDP figures, percentages, prices, indices) so calculation questions are answerable
 4. Every "line X" reference in a question must match an actual quote in the extract
 
 DIAGRAM QUESTION REQUIREMENTS (NON-NEGOTIABLE):
-1. EVERY 9-mark question MUST begin with "Using a diagram" or "With the help of a diagram" — this is mandatory per AQA specification
+1. EVERY 9-mark question MUST begin with "Using a diagram" or "With the help of a diagram" · this is mandatory per AQA specification
 2. 9-mark diagram questions follow the KAA marking pattern: Knowledge 1-2, Application 1-2, Analysis 3-5
 3. MANDATORY 5-MARK BOTH-CURVES-SHIFT QUESTION (AQA June 2024 Q6a pattern):
    - You MUST include at least ONE question in this EXACT format:
    "Use a demand and supply diagram to explain the impact on price and quantity, of the changes in demand and supply of [specific market from Extract/Figure]. (Figure X and Extract Y)."
    - Mark scheme for this 5-mark pattern:
-     Knowledge/understanding: 1 mark — accurate supply and demand diagram with labels and original equilibrium (E₁). (1)
-     Application: 1 mark — for identifying that demand and supply in the [specific market] have both [increased/decreased/one each]. (1)
+     Knowledge/understanding: 1 mark · accurate supply and demand diagram with labels and original equilibrium (E₁). (1)
+     Application: 1 mark · for identifying that demand and supply in the [specific market] have both [increased/decreased/one each]. (1)
      Analysis: Up to 3 marks, 1 for each of the following:
      • Supply curve shifts rightwards S₁ to S₂. (1)
      • Demand curve shifts rightwards D₁ to D₂. (1)
@@ -1083,8 +1083,8 @@ DIAGRAM QUESTION REQUIREMENTS (NON-NEGOTIABLE):
 8. Diagram questions must specify which Figure/Extract to reference
 
 DIFFICULTY GUARDRAILS (MATCH JUNE 2024 STANDARD):
-1. 2-mark questions: precise calculation or definition — NOT easy recall
-2. 4-mark questions: "Explain how the data show..." — requires data interpretation + economic reasoning
+1. 2-mark questions: precise calculation or definition · NOT easy recall
+2. 4-mark questions: "Explain how the data show..." · requires data interpretation + economic reasoning
 3. 9-mark questions: MUST require a labelled diagram + contextual chain of reasoning + application to the extract
 4. 15-mark questions: sustained explanation with at least 2 developed chains of analysis
 5. 25-mark questions: MUST include counter-arguments, "it depends on" factors, conditional judgement, synoptic links
@@ -1094,7 +1094,7 @@ HOTS REQUIREMENTS (NON-NEGOTIABLE):
 - Every 25-mark essay requires genuine evaluation, not description
 - Use precise command words: "Evaluate the view that", "Assess whether", "Discuss", "To what extent"
 
-OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
+OUTPUT FORMAT (CRITICAL · the parser depends on this exact format):
 - Use markdown headings (## for sections, ### for contexts/essays, #### for extracts)
 - EVERY question MUST start on its own line with this EXACT format: Question XX [Y marks]
   Examples: Question 01 [2 marks], Question 02 [4 marks], Question 03 [9 marks], Question 09 [15 marks], Question 10 [25 marks]
@@ -1105,7 +1105,7 @@ OUTPUT FORMAT (CRITICAL — the parser depends on this exact format):
 - WRONG: **Question 1** (2 marks), 01. Calculate... [2 marks], Q1 [2 marks]
 - CORRECT: Question 01 [2 marks] Calculate the percentage change...
 
-FIGURE/CHART/GRAPH FORMAT (CRITICAL — DO NOT USE ASCII ART):
+FIGURE/CHART/GRAPH FORMAT (CRITICAL · DO NOT USE ASCII ART):
 - NEVER draw charts, graphs, or diagrams using ASCII characters (|, /, \\, -, +, ^, X, etc.)
 - For DATA figures (Extract A tables, bar charts, line graphs, scatter plots): present data in a **markdown table** with clear column headers. Add a "**Figure N:**" or "**Extract A:**" title above.
 - For DIAGRAM figures (S&D, AD/AS, PPF, cost curves, Lorenz curves, labour markets): describe them in structured text using a "**Figure N:**" heading followed by bullet points listing axes, curves, key points, equilibrium positions, and shifts.
@@ -1133,7 +1133,7 @@ const CHEM_PAPER_PROMPT = (paperLabel: string, tier: "Foundation" | "Higher") =>
   const paperTopics = paperLabel.includes("1")
     ? `Paper 1 covers Topics 1–5:
 - Topic 1: Atomic structure, isotopes, RAM calculation, electronic configuration, periodic table development (Dalton→Thomson→Rutherford→Bohr→Chadwick), Group 1 trends, Group 7 trends, Group 0 properties
-- Topic 2: Ionic bonding (dot-and-cross for MgO, NaCl, MgCl₂), covalent bonding (H₂O, NH₃, CH₄, HCl), metallic bonding, giant covalent structures (diamond vs graphite — 6-mark comparison), graphene, fullerenes, nanoparticles, simple molecular substances, polymers
+- Topic 2: Ionic bonding (dot-and-cross for MgO, NaCl, MgCl₂), covalent bonding (H₂O, NH₃, CH₄, HCl), metallic bonding, giant covalent structures (diamond vs graphite · 6-mark comparison), graphene, fullerenes, nanoparticles, simple molecular substances, polymers
 - Topic 3 (Higher): Moles = mass÷Mr, concentration = moles÷volume, titration calculations with Table data, atom economy, percentage yield, empirical formula from % composition, volume of gas at RTP (moles × 24 dm³)
 - Topic 4: Reactivity series with bar chart data, displacement reactions, ionic equations, electrolysis (half equations for molten PbBr₂, brine, CuSO₄), metal extraction, acids + metals/bases/carbonates, strong vs weak acids, Required Practical: electrolysis
 - Topic 5: Reaction profiles with numerical values (Ea, ΔH), bond energy calculations with Figure/Table (MUST include one with unknown bond energy to back-calculate), Q=mcΔT calculations, exo vs endothermic, hydrogen fuel cells, Required Practical: temperature changes`
@@ -1157,13 +1157,13 @@ ${paperTopics}
 
 STRUCTURE (match real AQA papers EXACTLY):
 - Total: 100 marks
-- Section A: 15 multiple-choice questions (1 mark each, A/B/C/D options). MCQs must test recall AND application — not just definitions. Include at least 3 MCQs that require calculation or interpretation.
+- Section A: 15 multiple-choice questions (1 mark each, A/B/C/D options). MCQs must test recall AND application · not just definitions. Include at least 3 MCQs that require calculation or interpretation.
 - Section B: Structured questions (~85 marks), numbered sequentially after MCQs
 - Multi-part questions use (a), (b), (c) labelling
 - Include AT LEAST ONE 6-mark extended response question using Level of Response marking
 - Include AT LEAST ONE Required Practical context question
 
-GRAPH/DIAGRAM/FIGURE/TABLE REQUIREMENTS (MANDATORY — at least 8 per paper):
+GRAPH/DIAGRAM/FIGURE/TABLE REQUIREMENTS (MANDATORY · at least 8 per paper):
 1. At least ONE reaction profile with specific numerical energy values
 2. At least ONE data Table (titration results OR experimental data OR bond energies)
 3. At least ONE rate graph with specific (time, volume) coordinate pairs
@@ -1175,7 +1175,7 @@ GRAPH/DIAGRAM/FIGURE/TABLE REQUIREMENTS (MANDATORY — at least 8 per paper):
 
 ALL graphs/figures MUST include specific numerical data points so the question is fully answerable from text.
 
-IMPORTANT FORMATTING — FOLLOW EXACTLY:
+IMPORTANT FORMATTING · FOLLOW EXACTLY:
 Question 1 [1 marks]
 Question 2 [2 marks]
 Question 3a [1 marks]
@@ -1183,7 +1183,7 @@ Question 3b [3 marks]
 
 Do NOT wrap question headers in bold/asterisks. Include balanced equations with state symbols throughout. Use correct IUPAC naming. Use **Figure N** and **Table N** headings for all visual data.
 
-FIGURE/CHART/GRAPH FORMAT (CRITICAL — DO NOT USE ASCII ART):
+FIGURE/CHART/GRAPH FORMAT (CRITICAL · DO NOT USE ASCII ART):
 - NEVER draw charts, graphs, or diagrams using ASCII characters (|, /, \\, -, +, ^, X, etc.)
 - For DATA (tables, bar charts, rate graphs, titration results): use **markdown tables** with clear column headers
 - For DIAGRAMS (reaction profiles, dot-and-cross, rate curves): describe in structured text with bullet points for axes, curves, energy values, and key points
@@ -1229,13 +1229,13 @@ DIFFICULTY LEVEL: VERY HARD
   "limited-edition": `
 DIFFICULTY LEVEL: LIMITED EDITION (ELITE CHALLENGE)
 - This is the most original, demanding, and high-value predicted paper available.
-- Questions must go BEYOND typical exam difficulty — designed to stretch even the strongest students.
+- Questions must go BEYOND typical exam difficulty · designed to stretch even the strongest students.
 - Use novel, topical, and unexpected real-world scenarios (2024-2025 cutting-edge issues).
 - Evaluation questions must demand sophisticated analysis with multiple competing perspectives.
 - At least 70% of marks must target Analyse/Evaluate (Bloom's 5-6).
 - Include at least one question that combines concepts from 3+ topic areas.
 - Data should be complex, requiring students to identify trends, anomalies, and draw nuanced conclusions.
-- This paper should feel exclusive and premium — the hardest paper a student has ever attempted.`,
+- This paper should feel exclusive and premium · the hardest paper a student has ever attempted.`,
 };
 
 export default function PredictedPapers() {
@@ -1317,7 +1317,7 @@ export default function PredictedPapers() {
         return m ? m[1].toUpperCase() : "Z";
       };
       // Product rule: every board exposes exactly Sets A/B/C × Papers 1/2/3 = 9 papers.
-      // AQA A-Level is exempt — it ships with 7 sets per paper (A–G) and that
+      // AQA A-Level is exempt · it ships with 7 sets per paper (A–G) and that
       // extended library must NOT be reduced.
       const isAqa = subject === "economics";
       const allowedSets = new Set(["A", "B", "C"]);
@@ -1388,7 +1388,7 @@ export default function PredictedPapers() {
   const isValidAqaPaperStructure = (questions: ParsedQuestion[], paperNumber?: string) => {
     if (subject !== "economics") return true;
     if (paperNumber === "1" || paperNumber === "2") {
-      // AQA A-Level Paper 1 & 2 (7136/1, 7136/2) — exact official shape:
+      // AQA A-Level Paper 1 & 2 (7136/1, 7136/2) · exact official shape:
       // Section A: 2 + 4 + 9 + 25 (40 marks). Section B: choose ONE of two essays (15 + 25 = 40 marks).
       const required = [2, 4, 9, 25, 15, 25];
       return questions.length === required.length && questions.every((q, i) => q.marks === required[i]);
@@ -1408,7 +1408,7 @@ export default function PredictedPapers() {
     setLabel?: string,
   ): ParsedQuestion[] {
     if (subject !== "economics") return questions;
-    // AQA-specific diagram tagger — do not apply to other boards (OCR, Edexcel, WJEC, etc.)
+    // AQA-specific diagram tagger · do not apply to other boards (OCR, Edexcel, WJEC, etc.)
     if (!/aqa/i.test(examBoard || "")) return questions;
     const paperNum = inferPaperFromContext(paperNumber ?? paper);
     return questions.map((q) => {
@@ -1473,7 +1473,7 @@ export default function PredictedPapers() {
     // For AQA A-Level Paper 3, prefer the curated override that wires every
     // diagram MCQ to a real /figures asset (Monopolistic Competition, J-Curve,
     // Ad Valorem vs Specific Tax, Lorenz/Gini, PED Revenue Impact, Negative
-    // Externality — palm oil). Falls back to the library prose if no override.
+    // Externality · palm oil). Falls back to the library prose if no override.
     const overrideContent =
       subject === "economics" && lp.paper === "3"
         ? getAqaPaper3OverrideContent(lp.id)
@@ -1552,14 +1552,14 @@ export default function PredictedPapers() {
     const scopeInstruction = topicScope === "year1"
       ? "\n\nIMPORTANT: Only use Year 1 (AS) topics. For AQA: microeconomics topics only (markets, market failure, government intervention). Do NOT include macroeconomics, trade, or Year 2 content."
       : topicScope === "year1+2"
-      ? "\n\nUse the FULL specification — both Year 1 and Year 2 topics (micro + macro, including trade, development, and synoptic links)."
+      ? "\n\nUse the FULL specification · both Year 1 and Year 2 topics (micro + macro, including trade, development, and synoptic links)."
       : topicScope === "custom" && selectedTopics.length > 0
       ? `\n\nCUSTOM TOPIC SELECTION: The student has specifically chosen these topics. ONLY generate questions on these topics: ${selectedTopics.join(", ")}. Do NOT include questions on any other topics. Distribute marks evenly across the selected topics. Maintain the same exam structure and question types, but restrict content to the chosen topics only.`
       : "";
 
     const ECON_DIAGRAM_FAMILY_RULES = `
 
-DIAGRAM FAMILY RULES (CRITICAL — include in every diagram block):
+DIAGRAM FAMILY RULES (CRITICAL · include in every diagram block):
 When describing a diagram in a Figure block or in a model answer, you MUST include a "Diagram family" field that maps to a canonical diagram type. This ensures the app renders the correct interactive template.
 
 Use EXACTLY one of these canonical family IDs:
@@ -1588,14 +1588,14 @@ Source: Hypothetical, 2024
 
 Every diagram block MUST include "Diagram family: <family-id>" on its own line.
 
-CRITICAL: Do NOT place economics diagram Figure blocks (supply & demand, AD/AS, externality, etc.) inside Extract or context sections. Diagram Figures belong ONLY inside or after questions that explicitly ask students to "draw", "sketch", or "use a diagram". Extract sections should contain ONLY text passages, data tables, and statistical charts — never theoretical economics diagrams.`;
+CRITICAL: Do NOT place economics diagram Figure blocks (supply & demand, AD/AS, externality, etc.) inside Extract or context sections. Diagram Figures belong ONLY inside or after questions that explicitly ask students to "draw", "sketch", or "use a diagram". Extract sections should contain ONLY text passages, data tables, and statistical charts · never theoretical economics diagrams.`;
 
     const econDiagramAppendix = isAnyEcon ? ECON_DIAGRAM_FAMILY_RULES : "";
     const difficultyModifier = libraryDifficulty && DIFFICULTY_PROMPT_MODIFIERS[libraryDifficulty]
       ? DIFFICULTY_PROMPT_MODIFIERS[libraryDifficulty]
       : "";
 
-    const setLabel = librarySet ? `\n\nPAPER SET: Set ${String.fromCharCode(64 + Number(librarySet))}. Generate a UNIQUE paper — do not repeat questions from other sets. Use a different theme/context for each set.` : "";
+    const setLabel = librarySet ? `\n\nPAPER SET: Set ${String.fromCharCode(64 + Number(librarySet))}. Generate a UNIQUE paper · do not repeat questions from other sets. Use a different theme/context for each set.` : "";
 
     const prompt = dbContextPrompt
       ? `${basePrompt}\n\n${dbContextPrompt}${scopeInstruction}${econDiagramAppendix}${difficultyModifier}${setLabel}\n\nMANDATORY QUALITY CHECK BEFORE FINAL OUTPUT: ensure the paper is full-length, exam-authentic, and matches the exact format, mark allocations, and difficulty level of recent ${examBoard} ${level} papers. If any question feels too easy or uses the wrong structure, rewrite it before finishing.`
@@ -1630,7 +1630,7 @@ CRITICAL: Do NOT place economics diagram Figure blocks (supply & demand, AD/AS, 
 
       const expectedDiagramType = resolveDiagramType(`${question.text}\n${paperContext}\n${answer}`) ?? "supply_demand";
 
-      // Predicted papers — load the verbatim board mark scheme parsed from
+      // Predicted papers · load the verbatim board mark scheme parsed from
       // the official Download Solution PDF so the AI grades against the
       // exact answer key for every supported board (AQA, Edexcel A/B, OCR,
       // IB, CIE, WJEC, Eduqas + GCSE/IGCSE variants).
@@ -1638,7 +1638,7 @@ CRITICAL: Do NOT place economics diagram Figure blocks (supply & demand, AD/AS, 
         (isOCR ? getOcrPredictedMarkScheme(selectedLibraryPaper?.id) : null) ??
         (await loadPredictedMarkScheme(selectedLibraryPaper?.id));
       const boardMarkSchemeBlock = verbatimMarkScheme
-        ? `\n\n═══ OFFICIAL ${examBoard.toUpperCase()} ${level.toUpperCase()} MARK SCHEME (verbatim from the Download Solution PDF) ═══\nYou MUST mark this answer strictly against the official mark scheme below. Locate the entry that matches the question label "${question.label}" (e.g. "1 (a)", "Question 33", "Section B Question 2*") and apply its indicative content, accepted answers, level descriptors and guidance EXACTLY. For level-of-response questions use the board's verbatim Level/band descriptors. Do NOT invent your own marks; reward only points listed (or clearly equivalent valid alternatives) in the mark scheme. For numerical questions, the correct answer and accepted tolerance are stated — apply them strictly. For diagram questions, use the diagram requirements stated in the mark scheme to award diagram marks. If the mark scheme is silent on this exact sub-question, fall back to the board's standard rubric.\n\n--- BEGIN MARK SCHEME ---\n${verbatimMarkScheme}\n--- END MARK SCHEME ---\n`
+        ? `\n\n═══ OFFICIAL ${examBoard.toUpperCase()} ${level.toUpperCase()} MARK SCHEME (verbatim from the Download Solution PDF) ═══\nYou MUST mark this answer strictly against the official mark scheme below. Locate the entry that matches the question label "${question.label}" (e.g. "1 (a)", "Question 33", "Section B Question 2*") and apply its indicative content, accepted answers, level descriptors and guidance EXACTLY. For level-of-response questions use the board's verbatim Level/band descriptors. Do NOT invent your own marks; reward only points listed (or clearly equivalent valid alternatives) in the mark scheme. For numerical questions, the correct answer and accepted tolerance are stated · apply them strictly. For diagram questions, use the diagram requirements stated in the mark scheme to award diagram marks. If the mark scheme is silent on this exact sub-question, fall back to the board's standard rubric.\n\n--- BEGIN MARK SCHEME ---\n${verbatimMarkScheme}\n--- END MARK SCHEME ---\n`
         : "";
 
 
@@ -1656,9 +1656,9 @@ Here is the student's answer:
 ${answer}
 
 Mark this answer using Edexcel mark scheme criteria. Award marks using:
-- **M marks** (method) — for correct approach/strategy
-- **A marks** (accuracy) — for correct answers following correct method
-- **B marks** (independent) — for correct results independent of method
+- **M marks** (method) · for correct approach/strategy
+- **A marks** (accuracy) · for correct answers following correct method
+- **B marks** (independent) · for correct results independent of method
 
 If this is a graph/diagram question, explicitly mark:
 - axis labels + units
@@ -1670,7 +1670,7 @@ Use any student graph notes/diagram notes in their answer as marking evidence.
 You MUST respond in this EXACT structure:
 
 ## Mark Scheme
-Give a mark out of ${question.marks}. List each M/A/B mark and whether it was awarded. If a mark was lost, explain exactly why. Use "you" and "your" — speak directly to the student.
+Give a mark out of ${question.marks}. List each M/A/B mark and whether it was awarded. If a mark was lost, explain exactly why. Use "you" and "your" · speak directly to the student.
 
 ## Model Answer
 Write a full model answer that would score ${question.marks}/${question.marks}. Show ALL working step by step. For graph/diagram questions, include a concise Figure-style description of what should be drawn.
@@ -1691,9 +1691,9 @@ Here is the student's answer:
 ${answer}
 
 Mark this answer using AQA GCSE Chemistry mark scheme criteria. Award marks using:
-- **AO1** (Knowledge and understanding) — recall of facts, formulae, definitions
-- **AO2** (Application) — applying knowledge to familiar and unfamiliar contexts
-- **AO3** (Analysis and evaluation) — interpreting data, drawing conclusions
+- **AO1** (Knowledge and understanding) · recall of facts, formulae, definitions
+- **AO2** (Application) · applying knowledge to familiar and unfamiliar contexts
+- **AO3** (Analysis and evaluation) · interpreting data, drawing conclusions
 
 For 6-mark questions, use Level of Response marking (Level 1: 1-2, Level 2: 3-4, Level 3: 5-6).
 Check: balanced equations, state symbols, correct formulae, units, significant figures.
@@ -1708,7 +1708,7 @@ Use any student diagram notes or graph notes in their answer as valid evidence.
 You MUST respond in this EXACT structure:
 
 ## Mark Scheme
-Give a mark out of ${question.marks}. List each mark point and whether it was awarded. If a mark was lost, explain exactly why. Check for correct chemical notation, balanced equations, state symbols, and figure/table interpretation. Use "you" and "your" — speak directly to the student.
+Give a mark out of ${question.marks}. List each mark point and whether it was awarded. If a mark was lost, explain exactly why. Check for correct chemical notation, balanced equations, state symbols, and figure/table interpretation. Use "you" and "your" · speak directly to the student.
 
 ## Model Answer
 Write a full model answer that would score ${question.marks}/${question.marks}. Include balanced equations with state symbols, correct units, and full working for any calculations. For graph/diagram/image questions, include a clear Figure/Table-style description of the expected labels and values.
@@ -1736,15 +1736,15 @@ ${answer}
 
 You MUST evaluate using ALL 5 diagram marking criteria:
 
-1. **AXES** — Are axes labelled correctly? (e.g., Price/P on Y-axis, Quantity/Q on X-axis; for macro: Price Level & Real GDP)
-2. **CURVE DIRECTION** — Are curves sloping the correct way? (Demand downward, Supply upward, LRAS vertical, etc.)
-3. **SHIFT DIRECTION** — Does the described shift match the scenario? (Right = increase, Left = decrease)
-4. **EQUILIBRIUM** — Is original equilibrium (P1,Q1) marked? Is new equilibrium (P2,Q2) identified with dotted lines?
-5. **EXPLANATION ↔ DIAGRAM CONSISTENCY** — Does the written answer match what the diagram shows?
+1. **AXES** · Are axes labelled correctly? (e.g., Price/P on Y-axis, Quantity/Q on X-axis; for macro: Price Level & Real GDP)
+2. **CURVE DIRECTION** · Are curves sloping the correct way? (Demand downward, Supply upward, LRAS vertical, etc.)
+3. **SHIFT DIRECTION** · Does the described shift match the scenario? (Right = increase, Left = decrease)
+4. **EQUILIBRIUM** · Is original equilibrium (P1,Q1) marked? Is new equilibrium (P2,Q2) identified with dotted lines?
+5. **EXPLANATION ↔ DIAGRAM CONSISTENCY** · Does the written answer match what the diagram shows?
 
 DIAGRAM-TYPE EQUIVALENCE (do NOT penalise for terminology):
 - A "supply and demand diagram showing an indirect tax / sugar tax / SDIL / VAT" is the SAME diagram as an "indirect tax", "tax incidence" or "tax on a demerit good" diagram. All require: D, S, S+tax (shifted up by the per-unit tax), original eq (P,Q), new eq (P₁,Q₁), producer price Pₚ on the original S, and (where marks allow) tax-revenue rectangle and welfare-loss triangle.
-- Do NOT mark down a student for calling it a "supply and demand diagram" when the question asks for one — that is the correct generic name. Reward whichever of the components above are present and accurately drawn.
+- Do NOT mark down a student for calling it a "supply and demand diagram" when the question asks for one · that is the correct generic name. Reward whichever of the components above are present and accurately drawn.
 - Specific (per-unit) tax → parallel upward shift of S. Ad valorem (% of price) tax → pivoted shift from price-axis intercept. Either is acceptable for a generic "indirect tax" question unless the question explicitly specifies one.
 
 Use any "[DIAGRAM:" notes or "[DIAGRAM NOTES]" blocks in the student's answer as evidence of their diagram work.
@@ -1762,11 +1762,11 @@ Give the main feedback summary in 2-3 sentences. Be direct and specific about wh
 ## Explain my feedback
 
 Provide a detailed breakdown of each of the 5 marking criteria. Use tick ✓ or cross ✗ for each:
-- **Axes**: ✓/✗ — detail
-- **Curve direction**: ✓/✗ — detail
-- **Shift direction**: ✓/✗ — detail
-- **Equilibrium**: ✓/✗ — detail
-- **Explanation-diagram consistency**: ✓/✗ — detail
+- **Axes**: ✓/✗ · detail
+- **Curve direction**: ✓/✗ · detail
+- **Shift direction**: ✓/✗ · detail
+- **Equilibrium**: ✓/✗ · detail
+- **Explanation-diagram consistency**: ✓/✗ · detail
 
 ## Improve my answer
 
@@ -1790,7 +1790,7 @@ Then provide a model written explanation that would score full marks.
 Speak directly to the student using "you" and "your". Be encouraging but honest.`;
           }
 
-          // ─── Edexcel B (9EB0) — point-based for 4/6, level-based for 8/10/12/20 ───
+          // ─── Edexcel B (9EB0) · point-based for 4/6, level-based for 8/10/12/20 ───
           if (isEdexcelB) {
             const m = question.marks;
             const isPointBased = m === 4 || m === 6;
@@ -1862,7 +1862,7 @@ Apply the verbatim Pearson level descriptors:
 
 ${levelTable}
 
-Then list 4–6 indicative content bullets (accepted analysis points). For 8+ mark questions, include at least 2 evaluation points prefixed with "Evaluation —".`}
+Then list 4–6 indicative content bullets (accepted analysis points). For 8+ mark questions, include at least 2 evaluation points prefixed with "Evaluation ·".`}
 
 ═══ AO2 APPLICATION NOTE (always include verbatim under the level table) ═══
 Demonstrating application (AO2): Where questions specifically stipulate the use of data or information provided in a stimulus, students must directly reference, interpret or analyse the information provided in the stimulus; in addition, they may select examples from their own knowledge but these must be relevant and directly connected to the context/issues set out in the stimulus. Where questions do not specifically stipulate the use of data or information provided in a stimulus, students must select relevant examples from their own knowledge, these must be directly connected to the context/issues set out in the question.
@@ -1874,7 +1874,7 @@ You MUST respond in EXACTLY this structure (the app parses these headings):
 
 ${isPointBased
   ? `Then a per-skill breakdown showing exactly how each of the ${m} marks is awarded for THIS student's answer (mark awarded vs. mark lost, with the reason). Use "you" / "your".`
-  : `Then state the LEVEL awarded (Level 0–${m === 8 ? "3" : "4"}) and the specific mark within the band (e.g. "Level 2 — 4/${m}"). Justify by quoting the relevant descriptor language and pointing to evidence (or its absence) in the student's answer. Then list the indicative content points the student covered vs. missed. Then include the AO2 application note in italics. Use "you" / "your".`}
+  : `Then state the LEVEL awarded (Level 0–${m === 8 ? "3" : "4"}) and the specific mark within the band (e.g. "Level 2 · 4/${m}"). Justify by quoting the relevant descriptor language and pointing to evidence (or its absence) in the student's answer. Then list the indicative content points the student covered vs. missed. Then include the AO2 application note in italics. Use "you" / "your".`}
 
 ## Model Answer
 A full top-band response that would score ${m}/${m}. Write in continuous prose as a candidate would, integrating the stimulus where the question requires it. ${m >= 8 ? "Include developed analysis chains AND balanced evaluation with a prioritised judgement." : "Show the formula/working or definition + applied context + clear analytical chain."} If a diagram is required (Q1(e) on Paper 2), describe axes, curves, shifts, equilibria and shaded areas in words.
@@ -1916,11 +1916,11 @@ question.marks === 9 ? `**For this 9-mark question, use this breakdown:**
 
 **DIAGRAM ASSESSMENT (if required by the question):**
 Award diagram marks as follows:
-- Correctly labelled axes (e.g. Price/Quantity, Price Level/Real GDP) — 1 mark
-- Original curves correctly drawn and labelled — 1 mark
-- Correct shift direction with new curve labelled — 1 mark
-- New equilibrium clearly marked with dashed lines to axes — 1 mark
-- Relevant shaded areas correctly identified (welfare loss, surplus, etc.) — 1 mark` :
+- Correctly labelled axes (e.g. Price/Quantity, Price Level/Real GDP) · 1 mark
+- Original curves correctly drawn and labelled · 1 mark
+- Correct shift direction with new curve labelled · 1 mark
+- New equilibrium clearly marked with dashed lines to axes · 1 mark
+- Relevant shaded areas correctly identified (welfare loss, surplus, etc.) · 1 mark` :
 question.marks === 15 ? `**For this 15-mark question:**
 - **KAA (Knowledge, Application, Analysis):** Up to 8 marks
   - Define key terms (1-2 marks)
@@ -1953,11 +1953,11 @@ Use any "[DIAGRAM:" notes or "[DIAGRAM NOTES]" blocks in the student's answer as
 List each mark point and whether it was awarded. If a mark was lost, explain exactly why.
 
 For diagram questions, include a **Diagram Assessment** section:
-- **Axes**: ✓/✗ — [detail]
-- **Curve direction**: ✓/✗ — [detail]
-- **Shift direction**: ✓/✗ — [detail]
-- **Equilibrium**: ✓/✗ — [detail]
-- **Explanation consistency**: ✓/✗ — [detail]
+- **Axes**: ✓/✗ · [detail]
+- **Curve direction**: ✓/✗ · [detail]
+- **Shift direction**: ✓/✗ · [detail]
+- **Equilibrium**: ✓/✗ · [detail]
+- **Explanation consistency**: ✓/✗ · [detail]
 - **Diagram mark**: [X/Y]
 
 Speak DIRECTLY to me using "you" and "your".
@@ -1977,9 +1977,9 @@ Write a full top-band model answer that would score full marks. For diagram ques
 
 ## Examiner Tip
 Give 2-3 specific, actionable tips. For diagram questions:
-- Always label BOTH axes correctly — examiners deny the axes mark if even one is missing
-- Show BOTH original and new equilibrium with dashed lines to axes — this shows the examiner you understand the price/quantity effects
-- Ensure your written explanation MATCHES your diagram — if you draw supply shifting left, your text must say "price rises and quantity falls"
+- Always label BOTH axes correctly · examiners deny the axes mark if even one is missing
+- Show BOTH original and new equilibrium with dashed lines to axes · this shows the examiner you understand the price/quantity effects
+- Ensure your written explanation MATCHES your diagram · if you draw supply shifting left, your text must say "price rises and quantity falls"
 - A rough but correctly labelled diagram scores higher than a neat but incorrectly shifted one
 Address me directly. Be encouraging but honest about where I lost marks.`;
         })();
@@ -1997,7 +1997,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
       // verbatim so the marker grades against AQA's mark-scheme convention.
       const rubric = question.diagramRubric as { primaryExpected?: string; requiredLabels?: string[] } | undefined;
       const aqaRubricBlock = rubric
-        ? `\n\n[AQA EXPECTED DIAGRAM]\nPrimary expected: ${rubric.primaryExpected ?? "(none)"}\nRequired labels on canvas: ${(rubric.requiredLabels ?? []).join(", ") || "(none specified)"}\nMark holistically against AQA's level-of-response framework. Recommend a Level (L1–L4) — do NOT output 'X/Y' style numerical fractions.`
+        ? `\n\n[AQA EXPECTED DIAGRAM]\nPrimary expected: ${rubric.primaryExpected ?? "(none)"}\nRequired labels on canvas: ${(rubric.requiredLabels ?? []).join(", ") || "(none specified)"}\nMark holistically against AQA's level-of-response framework. Recommend a Level (L1–L4) · do NOT output 'X/Y' style numerical fractions.`
         : "";
 
       const messageContent: any = diagramImage
@@ -2008,8 +2008,8 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
                 markingPrompt +
                 aqaRubricBlock +
                 boardMarkSchemeBlock +
-                "\n\n[The student has drawn a diagram — see the attached image. Apply the DIAGRAM MARKING CHECKLIST: (1) Are axes labelled Price and Quantity (or Price level / Real output for macro)? (2) Is demand downward sloping? (3) Is supply upward sloping? (4) Is the shift in the correct direction for the scenario? (5) Is the new equilibrium correctly identified? Check if the written explanation logically matches what the diagram shows. Award/deny marks accordingly.]" +
-                (boardMarkSchemeBlock ? "\n\n[Diagram marking — also award diagram marks strictly per the diagram requirements (axes, curves, equilibria, shifts, shaded areas) stated in the official mark scheme above.]" : ""),
+                "\n\n[The student has drawn a diagram · see the attached image. Apply the DIAGRAM MARKING CHECKLIST: (1) Are axes labelled Price and Quantity (or Price level / Real output for macro)? (2) Is demand downward sloping? (3) Is supply upward sloping? (4) Is the shift in the correct direction for the scenario? (5) Is the new equilibrium correctly identified? Check if the written explanation logically matches what the diagram shows. Award/deny marks accordingly.]" +
+                (boardMarkSchemeBlock ? "\n\n[Diagram marking · also award diagram marks strictly per the diagram requirements (axes, curves, equilibria, shifts, shaded areas) stated in the official mark scheme above.]" : ""),
             },
             { type: "image_url", image_url: { url: diagramImage } },
           ]
@@ -2332,7 +2332,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15, ease: [0.25, 0.4, 0.25, 1] }}
           >
-            {/* Generate New mode removed — Paper Library only */}
+            {/* Generate New mode removed · Paper Library only */}
 
             {mode === "library" ? (
               <div className="space-y-4">
@@ -2427,8 +2427,8 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {[
                       ...(!isAnyIGCSEorGCSE ? [
-                        { value: "year1" as const, label: "Year 1 Only", desc: "AS / Year 12 topics only — perfect if you haven't covered Year 2 yet" },
-                        { value: "year1+2" as const, label: "Year 1 + Year 2", desc: "Full A-Level specification — all micro and macro topics" },
+                        { value: "year1" as const, label: "Year 1 Only", desc: "AS / Year 12 topics only · perfect if you haven't covered Year 2 yet" },
+                        { value: "year1+2" as const, label: "Year 1 + Year 2", desc: "Full A-Level specification · all micro and macro topics" },
                       ] : []),
                       { value: "full" as const, label: "Full Predicted Paper", desc: "Complete exam paper matching the official structure and difficulty" },
                       { value: "custom" as const, label: "Custom Topics", desc: "Choose exactly which topics to include in your paper" },
@@ -2607,7 +2607,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                   </>
                 ) : (
                   <>
-                    <h2 className="text-2xl font-bold tracking-tight">{examBoard} {level} {subjectLabel} — Paper {paper}</h2>
+                    <h2 className="text-2xl font-bold tracking-tight">{examBoard} {level} {subjectLabel} · Paper {paper}</h2>
                     <p className="text-sm text-muted-foreground mt-1">Predicted Paper</p>
                   </>
                 )}
@@ -2701,12 +2701,12 @@ Do NOT include any other headings, preamble, or commentary outside these three s
               </div>
             )}
 
-            {/* Figure relevance analysis — works across all 12 exam boards */}
+            {/* Figure relevance analysis · works across all 12 exam boards */}
             {generatedPaper && (
               <FigureAnalysisPanel
                 paperContent={generatedPaper}
                 examBoard={`${examBoard} ${level}`}
-                paperTitle={displayPaperTitle(selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} — Paper ${paper}`)}
+                paperTitle={displayPaperTitle(selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} · Paper ${paper}`)}
                 onCleanedContent={(cleaned) => {
                   const { context, questions } = parseQuestions(cleaned);
                   setPaperContext(context);
@@ -2802,7 +2802,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
               feedbacks={feedbacks}
               answers={answers}
               onBackToPapers={reset}
-              paperTitle={displayPaperTitle(selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} — Paper ${paper}`)}
+              paperTitle={displayPaperTitle(selectedLibraryPaper?.title || `${examBoard} ${level} ${subjectLabel} · Paper ${paper}`)}
               timeExpired={timeExpired}
             />
           </div>

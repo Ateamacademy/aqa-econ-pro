@@ -84,7 +84,7 @@ export default function AdminMissingFigures() {
   return (
     <div className="container max-w-5xl py-10 space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">AQA — Reference figure coverage</h1>
+        <h1 className="text-2xl font-bold">AQA · Reference figure coverage</h1>
         <p className="text-sm text-muted-foreground mt-1">
           Diagram-required questions across the AQA predicted-paper library and
           whether each has a catalogued reference figure.

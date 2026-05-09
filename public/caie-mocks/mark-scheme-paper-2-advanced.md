@@ -12,14 +12,14 @@ MARK SCHEME
 Maximum Mark: 60
 Difficulty: Advanced
 
-★ PREDICTED PAPER — FOR REVISION USE ★
+★ PREDICTED PAPER · FOR REVISION USE ★
 
 This mark scheme is a predicted paper mark scheme produced for student revision purposes. It
 mirrors the structure and generic marking principles of the Cambridge International AS & A Level
 9708 Economics Paper 2 mark scheme. It is not an official Cambridge International document.
 
 
-                                 © Predicted Paper 2026 — 9708/02A/MS
+                                 © Predicted Paper 2026 · 9708/02A/MS
                                                                9708/02A Mark Scheme Practice Series 2026
 
 Generic Marking Principles
@@ -71,7 +71,7 @@ AO2 Analysis
 AO3 Evaluation
  • Recognise assumptions and limitations of economic information and models.
 
-                               © Predicted Paper 2026 — 9708/02A/MS
+                               © Predicted Paper 2026 · 9708/02A/MS
                                                            9708/02A Mark Scheme Practice Series 2026
 
 • Assess economic information and the strengths and weaknesses of arguments.
@@ -79,7 +79,7 @@ AO3 Evaluation
   arguments.
 
 
-                           © Predicted Paper 2026 — 9708/02A/MS
+                           © Predicted Paper 2026 · 9708/02A/MS
                                                                 9708/02A Mark Scheme Practice Series 2026
 
 Table A: AO1 Knowledge and understanding and AO2 Analysis
@@ -136,7 +136,7 @@ Use this table for the (b) parts of Questions 2, 3, 4 and 5.
     0      No creditable response.                                                                   0
 
 
-                                © Predicted Paper 2026 — 9708/02A/MS
+                                © Predicted Paper 2026 · 9708/02A/MS
                                                               9708/02A Mark Scheme Practice Series 2026
 
 Section A
@@ -166,13 +166,13 @@ Follow the point-based marking guidance at the top of this mark scheme.
                real GDP growth may not be a reliable measure of changes
                in living standards in the US.
 
-                • Does not account for distribution of income — 2.5% growth
+                • Does not account for distribution of income · 2.5% growth
                   in 2023 may mask widening inequality (1).
                 • Does not capture non-market activity, leisure, or quality
                   changes / environmental degradation (1).
                 • Does not adjust for population growth (GDP per capita
                   better) (1).
-                • Affected by changes in the price level — nominal vs real
+                • Affected by changes in the price level · nominal vs real
                   matters; confounded by inflation (1).
 
                1 mark max per reason. Must reference a specific limitation.
@@ -192,7 +192,7 @@ Follow the point-based marking guidance at the top of this mark scheme.
 
                Reserve 1 mark for a valid conclusion. Max 3 for analysis
 
-                              © Predicted Paper 2026 — 9708/02A/MS
+                              © Predicted Paper 2026 · 9708/02A/MS
                                                           9708/02A Mark Scheme Practice Series 2026
 
 
@@ -203,7 +203,7 @@ Question                                 Answer                                 
            between 2022 and 2023 would have helped the Federal
            Reserve reduce US inflation.
 
-           Up to 3 marks — analysis of how a stronger dollar reduces
+           Up to 3 marks · analysis of how a stronger dollar reduces
            inflation:
             • Stronger dollar makes imports cheaper in USD terms (1).
             • Imported intermediate and consumer goods fall in price,
@@ -212,7 +212,7 @@ Question                                 Answer                                 
                tightening for the US (1).
             • Reduces net exports (lower X, higher M), reducing AD and
                demand-pull inflation (1).
-           Up to 3 marks — limitations:
+           Up to 3 marks · limitations:
             • The US is a relatively closed economy; imports ≈ 15% of
                GDP, limiting pass-through (1).
             • Most US inflation in 2022–23 was services-driven (rents,
@@ -229,7 +229,7 @@ Question                                 Answer                                 
            Act) and contractionary monetary policy would make it
            more difficult for the US to achieve a 'soft landing'.
 
-           Up to 3 marks — arguments that fiscal expansion offsets
+           Up to 3 marks · arguments that fiscal expansion offsets
            monetary tightening:
             • Fiscal expansion (IRA $369bn, CHIPS $52bn) shifts AD
               right, counteracting the Fed's leftward AD shift (1).
@@ -239,9 +239,9 @@ Question                                 Answer                                 
               and hard landing (1).
             • Crowding-out: fiscal pushes up real rates and the dollar,
               harming exports (1).
-           Up to 3 marks — arguments that fiscal expansion does not
+           Up to 3 marks · arguments that fiscal expansion does not
            prevent a soft landing:
-            • IRA and CHIPS are supply-side investments — raise
+            • IRA and CHIPS are supply-side investments · raise
               potential output over time, easing supply constraints (1).
             • Much of the spending is back-loaded / stretched over a
               decade, so near-term AD impact is small (1).
@@ -249,7 +249,7 @@ Question                                 Answer                                 
               stimulate AD (1).
             • By expanding supply (green energy, semiconductors), fiscal
 
-                          © Predicted Paper 2026 — 9708/02A/MS
+                          © Predicted Paper 2026 · 9708/02A/MS
                                                           9708/02A Mark Scheme Practice Series 2026
 
 
@@ -262,7 +262,7 @@ Question                                 Answer                                 
            policy is demand- or supply-focused and its timing).
 
 
-                          © Predicted Paper 2026 — 9708/02A/MS
+                          © Predicted Paper 2026 · 9708/02A/MS
                                                                9708/02A Mark Scheme Practice Series 2026
 
 Section B
@@ -280,9 +280,9 @@ Use Tables A and B for (b) parts. Follow point-based marking for (a) parts.
 
                AO1 (max 3):
                 • Consumer surplus = willingness to pay minus actual price
-                  paid — area under demand curve above the price (1).
+                  paid · area under demand curve above the price (1).
                 • Producer surplus = revenue received minus minimum willing
-                  to accept — area above supply curve below the price (1).
+                  to accept · area above supply curve below the price (1).
                 • Correctly labelled supply-demand diagram with CS
                   (consumer surplus) and PS (producer surplus) areas shaded
                   (1).
@@ -311,14 +311,14 @@ Use Tables A and B for (b) parts. Follow point-based marking for (a) parts.
                Indicative content:
                AO1 / AO2:
                 • Tax incidence depends on the RELATIVE elasticity of
-                   demand and supply — the more inelastic side bears more of
+                   demand and supply · the more inelastic side bears more of
                    the tax.
                 • PED alone: helps predict change in quantity and consumer
                    burden.
                 • PES alone: helps predict producer response and producer
 
 
-                               © Predicted Paper 2026 — 9708/02A/MS
+                               © Predicted Paper 2026 · 9708/02A/MS
                                                           9708/02A Mark Scheme Practice Series 2026
 
 
@@ -362,7 +362,7 @@ Question                                 Answer                                 
             • Merit goods: market fails because MSB > MPB; private
               demand reflects only private benefit (1).
             • Public goods: market fails because private firms cannot
-              profitably supply — non-excludability means no way to
+              profitably supply · non-excludability means no way to
               charge (1).
             • Merit goods intervention justified by correcting under-
               consumption (subsidies, info, free provision); public goods by
@@ -370,13 +370,13 @@ Question                                 Answer                                 
            AO3 (max 2):
             • Merit good failure is about valuation/information; public good
               failure is about production/exclusion (1); as a result,
-              intervention tools differ — provision vs subsidies (1).
+              intervention tools differ · provision vs subsidies (1).
 
   3(b)     Assess whether direct provision by the government is                              12
            always the most efficient way to correct market failures
            associated with merit goods such as healthcare and
 
-                          © Predicted Paper 2026 — 9708/02A/MS
+                          © Predicted Paper 2026 · 9708/02A/MS
                                                            9708/02A Mark Scheme Practice Series 2026
 
 
@@ -411,7 +411,7 @@ Question                                  Answer                                
            A one-sided response cannot gain any marks for evaluation.
 
 
-                           © Predicted Paper 2026 — 9708/02A/MS
+                           © Predicted Paper 2026 · 9708/02A/MS
                                                                9708/02A Mark Scheme Practice Series 2026
 
 Section C
@@ -430,12 +430,12 @@ Use Tables A and B for (b) parts. Follow point-based marking for (a) parts.
                AO1 (max 3):
                 • Demand-side growth: rightward shift of AD; short-run, may
                   be inflationary if near full employment (1).
-                • Supply-side growth: rightward shift of LRAS (long-run AS) —
+                • Supply-side growth: rightward shift of LRAS (long-run AS) ·
                   increase in productive capacity (1).
                 • Correctly drawn AD/AS diagram distinguishing the two (1).
                AO2 (max 3):
                 • Demand-side: quick to materialise but unsustainable if not
-                  matched by supply — leads to inflation (1).
+                  matched by supply · leads to inflation (1).
                 • Supply-side: raises potential output → higher real income
                   without inflation (1).
                 • Supply-side sources: investment, human capital,
@@ -467,7 +467,7 @@ Use Tables A and B for (b) parts. Follow point-based marking for (a) parts.
                    taxes) may worsen inequality without raising productivity.
 
 
-                               © Predicted Paper 2026 — 9708/02A/MS
+                               © Predicted Paper 2026 · 9708/02A/MS
                                                           9708/02A Mark Scheme Practice Series 2026
 
 
@@ -476,7 +476,7 @@ Question                                 Answer                                 
               (fiscal/monetary) to smooth cycles; industrial policy for
               strategic sectors; international trade policy (free trade
               agreements).
-            • Supply-side and demand-side are complementary — neither
+            • Supply-side and demand-side are complementary · neither
               alone is sufficient.
            AO3:
             • Conclusion: supply-side productivity policies are likely the
@@ -512,7 +512,7 @@ Question                                 Answer                                 
             • Floating: automatic BoP adjustment, independent monetary
               policy, no need to hold large reserves (1).
            AO3 (max 2):
-            • Each suits different circumstances — fixed for small open
+            • Each suits different circumstances · fixed for small open
               economies, floating for large ones wanting monetary
               sovereignty (1); managed float is a pragmatic middle ground
               but risks being arbitrary and attracting speculation (1).
@@ -524,7 +524,7 @@ Question                                 Answer                                 
            Use Table A and Table B.
 
 
-                          © Predicted Paper 2026 — 9708/02A/MS
+                          © Predicted Paper 2026 · 9708/02A/MS
                                                           9708/02A Mark Scheme Practice Series 2026
 
 
@@ -541,7 +541,7 @@ Question                                 Answer                                 
             • Optimum Currency Area (OCA) theory: benefits > costs only
                if members have similar business cycles, labour mobility,
                fiscal transfers, trade integration.
-            • UK chose to remain outside — Brexit partly motivated by
+            • UK chose to remain outside · Brexit partly motivated by
                preserving independent policy; Sweden, Denmark similar.
             • Germany benefits from undervalued euro; peripheral
                economies struggle with overvalued euro.
@@ -555,4 +555,4 @@ Question                                 Answer                                 
            A one-sided response cannot gain any marks for evaluation.
 
 
-                          © Predicted Paper 2026 — 9708/02A/MS
+                          © Predicted Paper 2026 · 9708/02A/MS

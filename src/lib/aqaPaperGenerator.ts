@@ -14,9 +14,9 @@ export interface GenerateOptions {
   practiceSetLabel: string;
   focus: string[];
   difficulty: "as" | "a2" | "mixed";
-  /** Paper 1/2 only — link the three Section B essay choices around one theme. */
+  /** Paper 1/2 only · link the three Section B essay choices around one theme. */
   thematicEssays?: boolean;
-  /** Paper 3 only — synoptic across all 3 papers vs themed. */
+  /** Paper 3 only · synoptic across all 3 papers vs themed. */
   synopticMcq?: boolean;
 }
 
@@ -47,7 +47,7 @@ export function generateAqaPaper(opts: GenerateOptions): GeneratedPaper {
       extracts: [
         {
           id: "CASE",
-          title: `Case Study — ${focusBlurb}`,
+          title: `Case Study · ${focusBlurb}`,
           body:
             `This generated case study (${difficultyTag}) explores the focus area of ${focusBlurb}. ` +
             `Candidates should integrate micro and macro reasoning${opts.synopticMcq ? " across all three Paper 3 themes" : ""}.`,
@@ -58,7 +58,7 @@ export function generateAqaPaper(opts: GenerateOptions): GeneratedPaper {
           number: i + 1,
           marks: 1,
           section: "A",
-          prompt: `MCQ ${i + 1} — ${focusBlurb} (${difficultyTag}).`,
+          prompt: `MCQ ${i + 1} · ${focusBlurb} (${difficultyTag}).`,
           mcqOptions: ["Option A", "Option B", "Option C", "Option D"],
           mcqAnswer: (["A", "B", "C", "D"] as const)[i % 4],
         })),
@@ -91,15 +91,15 @@ export function generateAqaPaper(opts: GenerateOptions): GeneratedPaper {
     status: "generated",
     totalMarks: 80,
     extracts: [
-      { id: "A", title: `Extract A — ${focusBlurb}`, body: `Extract A on ${focusBlurb} (${difficultyTag}).` },
+      { id: "A", title: `Extract A · ${focusBlurb}`, body: `Extract A on ${focusBlurb} (${difficultyTag}).` },
       {
         id: "B",
-        title: `Extract B — supporting data on ${focusBlurb}`,
+        title: `Extract B · supporting data on ${focusBlurb}`,
         body: `Extract B with figures on ${focusBlurb}.`,
         figures: [
           {
             id: "fig1",
-            title: "Figure 1 — Generated trend data",
+            title: "Figure 1 · Generated trend data",
             xKey: "year",
             yKeys: ["value"],
             data: [
@@ -113,7 +113,7 @@ export function generateAqaPaper(opts: GenerateOptions): GeneratedPaper {
           },
         ],
       },
-      { id: "C", title: `Extract C — policy commentary on ${focusBlurb}`, body: `Extract C — policy debate on ${focusBlurb}.` },
+      { id: "C", title: `Extract C · policy commentary on ${focusBlurb}`, body: `Extract C · policy debate on ${focusBlurb}.` },
     ],
     questions: [
       { number: 1, marks: 2, section: "A", prompt: `Define a key term from the focus area: ${opts.focus[0] ?? "given"}.` },
@@ -124,14 +124,14 @@ export function generateAqaPaper(opts: GenerateOptions): GeneratedPaper {
         number: 5,
         marks: 15,
         section: "B",
-        contextLabel: opts.thematicEssays ? `Context (linked) — ${opts.focus[0] ?? "selected"}` : "Context 1",
+        contextLabel: opts.thematicEssays ? `Context (linked) · ${opts.focus[0] ?? "selected"}` : "Context 1",
         prompt: `Explain how the key mechanism applies to ${opts.focus[0] ?? "the selected context"}.`,
       },
       {
         number: 6,
         marks: 25,
         section: "B",
-        contextLabel: opts.thematicEssays ? `Context (linked) — ${opts.focus[0] ?? "selected"}` : "Context 1",
+        contextLabel: opts.thematicEssays ? `Context (linked) · ${opts.focus[0] ?? "selected"}` : "Context 1",
         prompt: `Evaluate the most effective policy in this context.`,
       },
     ],
@@ -158,7 +158,7 @@ function assembleAndValidate(paper: GeneratedPaper): GeneratedPaper {
   const result = validateGeneratedPaper(paper);
   if (!result.valid) {
     const detail = result.issues.map((i) => `${i.code}: ${i.message}`).join("; ");
-    throw new Error(`Generated paper failed AQA blueprint validation — ${detail}`);
+    throw new Error(`Generated paper failed AQA blueprint validation · ${detail}`);
   }
   return paper;
 }

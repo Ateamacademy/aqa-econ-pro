@@ -75,14 +75,14 @@ export default function AqaGenerateNewPanel({ initialPaper = 1, onGenerated }: P
       );
       saveGeneratedPaper(paper);
       toast.success(
-        `Generated ${paper.title} — ${paper.practiceSetLabel}` +
+        `Generated ${paper.title} · ${paper.practiceSetLabel}` +
           (fingerprintsSaved > 0 ? ` · ${fingerprintsSaved} fingerprints saved` : ""),
       );
       onGenerated?.();
     } catch (e) {
       const msg = e instanceof Error ? e.message : String(e);
       setError(msg);
-      toast.error("Generation failed — uniqueness check rejected paper");
+      toast.error("Generation failed · uniqueness check rejected paper");
     } finally {
       setBusy(false);
     }
@@ -96,7 +96,7 @@ export default function AqaGenerateNewPanel({ initialPaper = 1, onGenerated }: P
         </div>
         <h2 className="text-xl sm:text-2xl font-bold text-foreground">Build a paper to the AQA blueprint</h2>
         <p className="text-sm text-muted-foreground mt-1">
-          Structure is locked to the official spec — you choose the topic focus and difficulty.
+          Structure is locked to the official spec · you choose the topic focus and difficulty.
         </p>
       </div>
 
@@ -136,7 +136,7 @@ export default function AqaGenerateNewPanel({ initialPaper = 1, onGenerated }: P
               <Input
                 value={practiceSetLabel}
                 onChange={(e) => setPracticeSetLabel(e.target.value)}
-                placeholder="e.g. Practice Set A — Microeconomics focus"
+                placeholder="e.g. Practice Set A · Microeconomics focus"
                 className="mt-2 bg-card border-border"
               />
             </div>
@@ -196,7 +196,7 @@ export default function AqaGenerateNewPanel({ initialPaper = 1, onGenerated }: P
                   onChange={(e) => setThematicEssays(e.target.checked)}
                   className="accent-indigo-500"
                 />
-                Section B — link the three essay choices around one theme
+                Section B · link the three essay choices around one theme
               </label>
             )}
             {paperNumber === 3 && (

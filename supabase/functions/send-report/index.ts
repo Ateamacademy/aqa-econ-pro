@@ -93,7 +93,7 @@ Deno.serve(async (req) => {
       .gte("created_at", since);
     if (countErr) console.error("rate-limit count error", countErr);
     if ((count ?? 0) >= 5) {
-      return json({ error: "Too many reports — please wait a bit", code: "rate_limited" }, 429);
+      return json({ error: "Too many reports · please wait a bit", code: "rate_limited" }, 429);
     }
   } catch (e) {
     console.error("rate-limit check failed", e);
@@ -129,13 +129,13 @@ Deno.serve(async (req) => {
   const fromEmail = "Econ Rev Reports <onboarding@resend.dev>";
 
   if (!resendApiKey || !adminEmail) {
-    // Saved but not emailed — still success from user POV
-    console.warn("RESEND_API_KEY or ADMIN_EMAIL not set — report saved but no email sent", insertedRow?.id);
+    // Saved but not emailed · still success from user POV
+    console.warn("RESEND_API_KEY or ADMIN_EMAIL not set · report saved but no email sent", insertedRow?.id);
     return json({ success: true, saved: true, emailed: false });
   }
 
   const categoryLabel = CATEGORY_LABELS[category];
-  const subject = `[Econ Rev Report] ${categoryLabel} — ${ctx.page}`;
+  const subject = `[Econ Rev Report] ${categoryLabel} · ${ctx.page}`;
   const html = `
     <h2>New report from Econ Rev</h2>
     <p><strong>Category:</strong> ${escapeHtml(categoryLabel)}</p>

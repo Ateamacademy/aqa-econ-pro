@@ -12,14 +12,14 @@ Oxford Cambridge and RSA
                        (evaluation). Six-mark questions are marked using three levels.
 
 How to use levels of response
-a. To determine the level — start at the highest level and work down until you reach the level that
+a. To determine the level · start at the highest level and work down until you reach the level that
 matches the answer.
 b. To determine the mark within the level:
-   • On the borderline of this level and the one below — at the bottom of the level
-   • Just enough achievement for this level — above the bottom of the level
-   • Meets the criteria with slight inconsistency — middle/above middle of the level
-   • Consistently meets the criteria for this level — at the top of the level
-                               SECTION A — Multiple Choice
+   • On the borderline of this level and the one below · at the bottom of the level
+   • Just enough achievement for this level · above the bottom of the level
+   • Meets the criteria with slight inconsistency · middle/above middle of the level
+   • Consistently meets the criteria for this level · at the top of the level
+                               SECTION A · Multiple Choice
            1 mark per question. No mark is awarded for contradictory or multiple answers.
 
 Question          Key             AO           Quantitative skills
@@ -63,8 +63,8 @@ Question          Key             AO           Quantitative skills
   19               B              AO2
 
   20               A             AO1a
-SECTION B — Extended Response
-Question 21 — The electric vehicle (EV) market
+SECTION B · Extended Response
+Question 21 · The electric vehicle (EV) market
 
  Questio   Answer                                           Mar   Guidance
  n                                                          k
@@ -207,7 +207,7 @@ n                                                          k
                                                                  unsupported statements.
                                                                  0 marks
                                                                  No work worthy of credit.
-Question 22 — A technology startup
+Question 22 · A technology startup
 
 Questio   Answer                                         Mar   Guidance
 n                                                        k
@@ -341,7 +341,7 @@ n                                                        k
                                                                unsupported statements.
                                                                0 marks
                                                                No work worthy of credit.
-Question 23 — A regional airline
+Question 23 · A regional airline
 
  Questio   Answer                                            Mar   Guidance
  n                                                           k
@@ -372,7 +372,7 @@ Question 23 — A regional airline
            from P to P1 and quantity from Q to Q1.           a     Good knowledge and
            SkyRoute's revenue rises because both                   understanding. Good
            price and quantity rise. The size of the price          application of knowledge to
-           rise depends on the PES of seats — in the               the given scenario with
+           rise depends on the PES of seats · in the               the given scenario with
            short run, aircraft capacity is fixed so PES is         reference to the context.
            inelastic, so the price effect will be greater.         Good analysis with
            Higher revenue could raise profit provided              developed links and chain
@@ -443,7 +443,7 @@ n                                                            k
                                                                    Good analysis with
                                                                    developed links and chain
              Against: business travel demand is cyclical           of reasoning that addresses
-             — it falls sharply in recessions and during           the question. For evaluation
+             · it falls sharply in recessions and during           the question. For evaluation
              events that reduce business travel.                   questions, a fully supported
              Specialising increases SkyRoute's exposure
 Questio   Answer                                       Mar   Guidance

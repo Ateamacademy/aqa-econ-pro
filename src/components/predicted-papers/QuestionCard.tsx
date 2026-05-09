@@ -78,7 +78,7 @@ interface QuestionCardProps {
   showGraphPaper?: boolean;
   showGeometryTools?: boolean;
   subject?: string;
-  /** Stable key per loaded paper — used to namespace localStorage drawings. */
+  /** Stable key per loaded paper · used to namespace localStorage drawings. */
   paperKey?: string;
   /** Called when student finishes a stroke on the inline AQA canvas. */
   onDiagramImageChange?: (questionId: string, dataUrl: string) => void;
@@ -160,7 +160,7 @@ export function QuestionCard({
   // consumption-externality diagram (MSB dashed below MPB, MPC=MSC=S, DWL).
   const ibQuestionBody = `${question.label}\n${question.text}`;
   const isIbPaper = typeof paperKey === "string" && /^ib-p[123]-/.test(paperKey);
-  // Production externality (MSC > MPC, MPB=MSB) — use UK Energy diagram.
+  // Production externality (MSC > MPC, MPB=MSB) · use UK Energy diagram.
   const isIbProductionExternalityOverride =
     isIbPaper &&
     /negative\s+production\s+externalit/i.test(ibQuestionBody);
@@ -172,22 +172,22 @@ export function QuestionCard({
       /common\s+access\s+resource/i.test(ibQuestionBody) ||
       /demerit\s+good/i.test(ibQuestionBody)
     );
-  // IB Paper 2 Moderate (ib-p2-a) Q1 (a)(i) — "Define the term foreign direct investment (FDI)" (Text B, Paragraph 1)
+  // IB Paper 2 Moderate (ib-p2-a) Q1 (a)(i) · "Define the term foreign direct investment (FDI)" (Text B, Paragraph 1)
   const isIbFdiSuppressOnly =
     paperKey === "ib-p2-a" &&
     /define\s+the\s+term\s+\**foreign\s+direct\s+investment/i.test(ibQuestionBody);
-  // IB Paper 3 Moderate (ib-p3-a) Q1 (a)(iv) — MC/MB allocative inefficiency from negative externality of production
+  // IB Paper 3 Moderate (ib-p3-a) Q1 (a)(iv) · MC/MB allocative inefficiency from negative externality of production
   const isIbMcMbAllocOverride =
     paperKey === "ib-p3-a" &&
     /marginal-?cost\s*\/\s*marginal-?benefit\s+diagram/i.test(ibQuestionBody) &&
     /allocativ\w*\s+inefficien/i.test(ibQuestionBody);
-  // IB Paper 3 Moderate (ib-p3-a) Q1 (v) — monopoly DWL diagram.
+  // IB Paper 3 Moderate (ib-p3-a) Q1 (v) · monopoly DWL diagram.
   const isIbMonopolyDwlOverride =
     paperKey === "ib-p3-a" &&
     /firm\s*x/i.test(ibQuestionBody) &&
     /short-?run\s+equilibrium/i.test(ibQuestionBody) &&
     /long-?run\s+equilibrium/i.test(ibQuestionBody);
-  // IB Paper 3 Hard (ib-p3-b) Q1 (a) — Firm X is perfectly competitive. Use the two-panel
+  // IB Paper 3 Hard (ib-p3-b) Q1 (a) · Firm X is perfectly competitive. Use the two-panel
   // industry/firm perfect-competition diagram across all Figure 1 sub-parts (profit-max output,
   // supernormal profit, SR→LR adjustment, etc.).
   const isIbPerfectCompetitionFirmXOverride =
@@ -208,14 +208,14 @@ export function QuestionCard({
     (paperKey === "ib-p3-b" || paperKey === "ib-p2-c") &&
     /naira/i.test(ibQuestionBody) &&
     (/exchange\s*rate/i.test(ibQuestionBody) || /unification/i.test(ibQuestionBody));
-  // Eduqas Paper 1 — Moderate (eduqas-p1-a) Q22 — public transport positive
+  // Eduqas Paper 1 · Moderate (eduqas-p1-a) Q22 · public transport positive
   // consumption externality. Use the dedicated Eduqas positive-consumption
   // externality figure across Smart Mark feedback, Explain my feedback, etc.
   const isEduqasPosConsExtTransportOverride =
     paperKey === "eduqas-p1-a" &&
     /positive\s+consumption\s+externalit/i.test(ibQuestionBody) &&
     /public\s+transport/i.test(ibQuestionBody);
-  // Eduqas Paper 2 — Moderate (eduqas-p2-a) Q2.3 — supermarket abnormal
+  // Eduqas Paper 2 · Moderate (eduqas-p2-a) Q2.3 · supermarket abnormal
   // profits / expansion of Aldi & Lidl. Use the Monopoly Business Objectives
   // (cost & revenue) reference diagram across Smart Mark / Explain feedback.
   const isEduqasMonopolyBusinessObjectivesOverride =
@@ -230,7 +230,7 @@ export function QuestionCard({
     /(aldi|lidl|supermarket|ofgem|price\s*cap|energy\s+suppl|digital\s+platform|interoperab|dominant)/i.test(
       ibQuestionBody,
     );
-  // Eduqas Paper 3 — Hard (eduqas-p3-b) Q3.1 — "Using a diagram, explain the
+  // Eduqas Paper 3 · Hard (eduqas-p3-b) Q3.1 · "Using a diagram, explain the
   // factors that determine the exchange rate of the pound in a floating
   // exchange rate system." Use the dedicated GBP currency-market diagram
   // across Smart Mark / Explain feedback / Improve my answer.
@@ -238,7 +238,7 @@ export function QuestionCard({
     paperKey === "eduqas-p3-b" &&
     /pound/i.test(ibQuestionBody) &&
     /floating\s+exchange\s+rate/i.test(ibQuestionBody);
-  // WJEC Paper 3 — Hard (wjec-p3-b) Q6 — LNG yen price / Japan macro shock.
+  // WJEC Paper 3 · Hard (wjec-p3-b) Q6 · LNG yen price / Japan macro shock.
   // Use the canonical AD–AS "Increase in Aggregate Demand / Multiplier Effect"
   // diagram across Smart Mark / Explain feedback / Improve my answer.
   const isWjecP3LngAdAsOverride =
@@ -356,7 +356,7 @@ export function QuestionCard({
           <MathsMarkdown>{question.text}</MathsMarkdown>
         </div>
 
-        {/* AQA reference figure + drawing canvas — side-by-side on lg, stacked on mobile.
+        {/* AQA reference figure + drawing canvas · side-by-side on lg, stacked on mobile.
             MCQs already render their figure inline within the stem markdown, so we
             suppress the separate Reference figure panel for MCQs to avoid showing
             two copies of the same diagram. */}
@@ -588,7 +588,7 @@ export function QuestionCard({
       {/* Feedback sections */}
       <div className="p-4 flex flex-col gap-2">
         {feedback?.isDiagramFeedback ? (
-          /* Smart Mark format — matching Diagram Practice section */
+          /* Smart Mark format · matching Diagram Practice section */
           <div className="space-y-3">
             {/* Mark display */}
             {feedback.mark && (
@@ -611,7 +611,7 @@ export function QuestionCard({
               </Card>
             )}
 
-            {/* Explain my feedback — collapsible */}
+            {/* Explain my feedback · collapsible */}
             {feedback.explainFeedback && (
               <Card className="overflow-hidden">
                 <button
@@ -632,7 +632,7 @@ export function QuestionCard({
               </Card>
             )}
 
-            {/* Improve my answer — collapsible */}
+            {/* Improve my answer · collapsible */}
             {feedback.improveFeedback && (
               <Card className="overflow-hidden">
                 <button

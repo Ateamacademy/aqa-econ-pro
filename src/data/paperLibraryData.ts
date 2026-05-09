@@ -143,7 +143,7 @@ const DIFFICULTY_DESC: Record<Difficulty, string> = {
   moderate: "Exam-realistic difficulty. Great for building confidence and consolidating knowledge.",
   hard: "Application-heavy questions requiring deeper analysis and evaluation skills.",
   "very-hard": "Top-grade difficulty with extended reasoning, counter-arguments, and judgement.",
-  "limited-edition": "Elite challenge paper — the most original, demanding, and high-value questions.",
+  "limited-edition": "Elite challenge paper · the most original, demanding, and high-value questions.",
 };
 
 function buildLibrary(): LibraryPaper[] {

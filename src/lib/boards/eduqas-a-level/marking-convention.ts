@@ -1,5 +1,5 @@
 /**
- * Eduqas A-Level Economics (A520QS) — marking convention.
+ * Eduqas A-Level Economics (A520QS) · marking convention.
  *
  * Eduqas (WJEC's England-facing brand) uses AO1–AO4 with a slightly different
  * descriptor style than WJEC. Mark bands and descriptors below are taken

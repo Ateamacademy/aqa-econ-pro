@@ -23,7 +23,7 @@ export default function AdminBoardStatus() {
           Board refinement status
         </h1>
         <p className="text-sm text-muted-foreground mb-8">
-          Multi-board registry — {refined.length} refined, {pending.length} pending.
+          Multi-board registry · {refined.length} refined, {pending.length} pending.
         </p>
 
         <section className="mb-10">

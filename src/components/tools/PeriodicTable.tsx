@@ -108,7 +108,7 @@ export function PeriodicTable() {
       {/* Selected element detail */}
       {selected && (
         <div className="bg-muted rounded-lg p-3 text-sm">
-          <span className="font-bold">{selected.symbol}</span> — {selected.name} | 
+          <span className="font-bold">{selected.symbol}</span> · {selected.name} | 
           Atomic number: {selected.number} | Relative atomic mass: {selected.mass}
         </div>
       )}

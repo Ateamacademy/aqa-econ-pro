@@ -1,5 +1,5 @@
 /**
- * Edexcel A A-Level Economics (9EC0) — non-AQA marking convention adapter.
+ * Edexcel A A-Level Economics (9EC0) · non-AQA marking convention adapter.
  *
  * Edexcel A's per-skill (K/Ap/An/Ev) splits already live in
  * `src/lib/boards/edexcel-a-a-level/mark-scheme.ts`. This file mirrors them

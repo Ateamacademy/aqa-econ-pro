@@ -50,19 +50,19 @@ export default function DebugAssetPanel({
         </div>
         <div>
           <dt className="text-muted-foreground">Matched figure</dt>
-          <dd className="font-medium text-foreground">{matchedDiagramType || "—"}</dd>
+          <dd className="font-medium text-foreground">{matchedDiagramType || "·"}</dd>
         </div>
         <div>
           <dt className="text-muted-foreground">Uploaded asset</dt>
-          <dd className="font-medium text-foreground break-all">{assetName || "—"}</dd>
+          <dd className="font-medium text-foreground break-all">{assetName || "·"}</dd>
         </div>
         <div className="sm:col-span-2">
           <dt className="text-muted-foreground">Stored path</dt>
-          <dd className="font-medium text-foreground break-all">{rawPath || "—"}</dd>
+          <dd className="font-medium text-foreground break-all">{rawPath || "·"}</dd>
         </div>
         <div className="sm:col-span-2">
           <dt className="text-muted-foreground">Resolved URL</dt>
-          <dd className="font-medium text-foreground break-all">{resolvedUrl || "—"}</dd>
+          <dd className="font-medium text-foreground break-all">{resolvedUrl || "·"}</dd>
         </div>
       </dl>
 

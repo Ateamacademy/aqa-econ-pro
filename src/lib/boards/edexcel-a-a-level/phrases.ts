@@ -1,5 +1,5 @@
 /**
- * Edexcel A A-Level Economics (9EC0) — verbatim question stem templates.
+ * Edexcel A A-Level Economics (9EC0) · verbatim question stem templates.
  *
  * Drawn from real 9EC0 past papers (June 2017–June 2024). The paper generator
  * picks from these and fills placeholders. It does NOT invent new phrasings.

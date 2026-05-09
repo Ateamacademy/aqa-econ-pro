@@ -1,7 +1,7 @@
 import type { PredictedPaper } from "./predictedPapersLibrary";
 
 /**
- * Edexcel B A-Level Economics (9EB0) — predicted papers library.
+ * Edexcel B A-Level Economics (9EB0) · predicted papers library.
  * Content is verbatim from the static QP PDFs in /public/edexcel-b-mocks/
  * (paper-{1,2,3}-{moderate,hard,advanced}.pdf). Updating either side requires
  * regenerating the other to keep on-screen and downloadable PDF in sync.
@@ -14,7 +14,7 @@ export const edexcelBPredictedPapers: PredictedPaper[] = [
     title: "Paper 1 \u2014 Set A",
     description: "Markets, Consumers & Firms. Set A \u2014 moderate difficulty.",
     totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper (Moderate)
+    content: `# Edexcel A-Level Economics B (9EB0/01) · Paper 1: Markets and how they work · Predicted Paper (Moderate)
 
 **Time: 2 hours | Total: 100 marks**
 
@@ -30,7 +30,7 @@ The UK fast food and takeaway market reached a value of £19.8 billion in 2022, 
 
 McDonald's remains the UK market leader with 1,450 outlets. In 2022, McDonald's UK generated revenue of £1.88bn, up from £1.73bn in 2021. Operating profit rose by 15% from £240m in 2021.
 
-The number of branded fast food outlets grew by 3.8% in 2022, with 312 new stores added. Growth has been particularly strong in suburban drive-thru locations and in delivery-focused 'dark kitchens'. Consumer choice is driven by speed of service, price, brand loyalty, quality of ingredients and increasingly by health and dietary considerations — including the rapid growth of plant-based options.
+The number of branded fast food outlets grew by 3.8% in 2022, with 312 new stores added. Growth has been particularly strong in suburban drive-thru locations and in delivery-focused 'dark kitchens'. Consumer choice is driven by speed of service, price, brand loyalty, quality of ingredients and increasingly by health and dietary considerations · including the rapid growth of plant-based options.
 
 Independent fast food brands are also flourishing. Smaller UK-based chains such as Honest Burgers and Leon have expanded rapidly, driven by changing consumer tastes favouring ethical, healthier and locally-sourced options.
 
@@ -70,7 +70,7 @@ In 2022, Honest Burgers reported revenue of £45.6m. Unlike large chains, it emp
 UK wholesale beef price (pence per kilogram), monthly 2022
 
 Month                 Price (p/kg)             Monthly change
-Jan 2022                  395.20                       —
+Jan 2022                  395.20                       ·
 Feb 2022                  410.50                     3.87%
 Mar 2022                  428.75                     4.45%
 Apr 2022                  441.30                     2.93%
@@ -122,13 +122,13 @@ Assess whether the UK fast food market could be considered contestable.
 
 The UK minimum wage and its impact on business
 
-In April 2023, the UK National Living Wage for those aged 23 and over rose by 9.7% to £10.42 per hour — the largest cash increase since its introduction. The Low Pay Commission projects further increases that could push the wage above £11 by 2024.
+In April 2023, the UK National Living Wage for those aged 23 and over rose by 9.7% to £10.42 per hour · the largest cash increase since its introduction. The Low Pay Commission projects further increases that could push the wage above £11 by 2024.
 
-The hospitality and retail sectors — which employ around 3.5 million workers, many on or close to minimum wage — have been particularly affected. Small businesses have warned that wage rises, combined with higher energy costs and food inflation, are squeezing already-thin profit margins.
+The hospitality and retail sectors · which employ around 3.5 million workers, many on or close to minimum wage · have been particularly affected. Small businesses have warned that wage rises, combined with higher energy costs and food inflation, are squeezing already-thin profit margins.
 
 Supporters of the increase argue that higher wages put more spending power in the hands of lower-income households, who tend to spend a higher proportion of their income than wealthier groups. This could boost demand for goods and services across the economy.
 
-However, some economists warn that rapid wage increases could lead businesses to reduce hiring, increase automation, or pass higher costs on to consumers as higher prices — contributing to persistent inflation.
+However, some economists warn that rapid wage increases could lead businesses to reduce hiring, increase automation, or pass higher costs on to consumers as higher prices · contributing to persistent inflation.
 
 The impact is not uniform across the UK. Regions with higher living costs, such as London, already had wages above the statutory minimum. In lower-wage regions such as the North East and Wales, the minimum wage rise directly increased pay for a much larger share of the workforce.
 
@@ -175,7 +175,7 @@ Evaluate the likely impact on the UK of increased government regulation of the U
     title: "Paper 1 \u2014 Set B",
     description: "Markets, Consumers & Firms. Set B \u2014 demanding analysis & evaluation.",
     totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper (Hard)
+    content: `# Edexcel A-Level Economics B (9EB0/01) · Paper 1: Markets and how they work · Predicted Paper (Hard)
 
 **Time: 2 hours | Total: 100 marks**
 
@@ -191,7 +191,7 @@ The UK subscription video-on-demand (SVOD) market reached £3.5 billion in 2023,
 
 Netflix remains the largest streaming service in the UK by subscriber numbers. Netflix UK reported revenues of £1,450m for 2023 and an operating profit of £248m. By comparison, BritBox, Disney+ and Amazon Prime Video continue to invest heavily in content.
 
-Competition is intensifying. The launch of the ad-supported tier by Netflix in late 2022 reflects a shift toward hybrid business models. Many households are now engaging in 'subscription stacking' — holding multiple services — while others are 'churning' in and out based on specific content releases.
+Competition is intensifying. The launch of the ad-supported tier by Netflix in late 2022 reflects a shift toward hybrid business models. Many households are now engaging in 'subscription stacking' · holding multiple services · while others are 'churning' in and out based on specific content releases.
 
 Smaller specialist services such as MUBI (curated independent cinema) and Shudder (horror) have also grown. Industry analysts note that the so-called 'streaming wars' have entered a new phase where content quality, user experience, and ad-tier monetisation matter more than pure subscriber growth.
 
@@ -220,7 +220,7 @@ MUBI – curation over scale
 
 MUBI is an independent streaming platform known for its curated selection of independent and world cinema. It operates globally but maintains a strong UK subscriber base focused on cinephiles and film students.
 
-MUBI differentiates itself through curation — showing 30 hand-picked films at any time. The platform's UK revenue in 2023 was estimated at £12m with an operating margin of around 4%.
+MUBI differentiates itself through curation · showing 30 hand-picked films at any time. The platform's UK revenue in 2023 was estimated at £12m with an operating margin of around 4%.
 
 'We believe that in a world of abundance, curation is the most valuable service,' said MUBI's founder. The company has grown UK subscribers by 18% year-on-year but faces intense competition from rivals with far deeper pockets.
 
@@ -231,7 +231,7 @@ MUBI differentiates itself through curation — showing 30 hand-picked films at 
 Netflix UK standard-plan monthly price (£), January each year
 
 Year                   Price (£)            Year-on-year change
-Jan 2019                   8.99                        —
+Jan 2019                   8.99                        ·
 Jan 2020                   8.99                      0.00%
 Jan 2021                   9.99                     11.12%
 Jan 2022                   10.99                    10.01%
@@ -277,11 +277,11 @@ Assess whether the UK SVOD market is best described as an oligopoly or as monopo
 
 UK interest rates and the cost of living
 
-Between December 2021 and August 2023, the Bank of England raised its base rate from 0.1% to 5.25% — the sharpest tightening cycle in over three decades. The Monetary Policy Committee cited persistent inflation, with CPI peaking at 11.1% in October 2022, as the main driver.
+Between December 2021 and August 2023, the Bank of England raised its base rate from 0.1% to 5.25% · the sharpest tightening cycle in over three decades. The Monetary Policy Committee cited persistent inflation, with CPI peaking at 11.1% in October 2022, as the main driver.
 
 Higher interest rates have transmitted rapidly to household finances. Around 1.4 million mortgage holders refinanced in 2023, many facing payment rises of £200–£400 a month. New mortgage rates averaged around 6% by late 2023, compared with under 2% in 2021.
 
-The housing market has cooled. UK house prices fell 1.2% year-on-year in 2023 — the first annual decline since 2012. New housebuilding starts have fallen sharply as developer confidence has weakened.
+The housing market has cooled. UK house prices fell 1.2% year-on-year in 2023 · the first annual decline since 2012. New housebuilding starts have fallen sharply as developer confidence has weakened.
 
 Consumer spending on discretionary goods and services has softened. Retailers report consumers trading down to cheaper brands, subscription services reporting higher churn, and pubs and restaurants recording falling volumes.
 
@@ -301,7 +301,7 @@ The Digital Markets Act and streaming
 
 The Digital Markets Act (DMA) came into force in the EU in 2023, with the UK's Digital Markets, Competition and Consumers Act following in 2024. Both aim to regulate 'gatekeeper' platforms by restricting self-preferencing, requiring interoperability, and preventing the bundling of services.
 
-Streaming services are indirectly affected. Large platforms (Google, Apple, Amazon) control critical distribution channels — app stores, smart-TV operating systems, and advertising ecosystems. The Competition and Markets Authority (CMA) has identified strategic market status in mobile ecosystems.
+Streaming services are indirectly affected. Large platforms (Google, Apple, Amazon) control critical distribution channels · app stores, smart-TV operating systems, and advertising ecosystems. The Competition and Markets Authority (CMA) has identified strategic market status in mobile ecosystems.
 
 Supporters argue the rules level the playing field for smaller operators like MUBI, enabling them to reach consumers without paying 30% app-store commissions. Critics warn the rules add compliance costs and may deter investment in content by platforms.
 
@@ -315,7 +315,7 @@ The UK government has also announced plans to require price-transparency measure
 
 Ofcom is consulting on 'content minimums' for UK productions on large streaming platforms, similar to the PSB quotas applied to broadcast television. Industry bodies have pushed back, arguing that over-regulation could cause streamers to divert UK investment elsewhere.
 
-Consumer groups point to the fact that several million UK households pay for streaming services they rarely use — a phenomenon economists call 'inertia pricing' — and argue that regulation would improve consumer welfare.
+Consumer groups point to the fact that several million UK households pay for streaming services they rarely use · a phenomenon economists call 'inertia pricing' · and argue that regulation would improve consumer welfare.
 
 (Source: adapted from DCMS consultation papers and Which? 2023)
 
@@ -330,7 +330,7 @@ Evaluate the likely impact on the UK streaming industry of increased government 
     title: "Paper 1 \u2014 Set C",
     description: "Markets, Consumers & Firms. Set C \u2014 A* level synoptic challenge.",
     totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/01) — Paper 1: Markets and how they work — Predicted Paper (Advanced)
+    content: `# Edexcel A-Level Economics B (9EB0/01) · Paper 1: Markets and how they work · Predicted Paper (Advanced)
 
 **Time: 2 hours | Total: 100 marks**
 
@@ -386,7 +386,7 @@ Arrival's case has been cited as illustrative of the barriers facing UK-based EV
 UK average new BEV list price (£), quarterly 2020–2023
 
 Quarter            Average list price (£)           QoQ change
-Q1 2020                    43,850                          —
+Q1 2020                    43,850                          ·
 Q3 2020                    44,920                        2.44%
 Q1 2021                    46,150                        2.74%
 Q3 2021                    48,400                        4.88%
@@ -441,7 +441,7 @@ The ZEV mandate introduced in 2024 takes a different approach: imposing minimum 
 
 Industry reaction has been mixed. Some manufacturers, particularly those with competitive EV line-ups (Tesla, BYD, MG), have welcomed the mandate. Others, including Ford and Stellantis, have warned that meeting the 22% quota in 2024 is challenging and could force them to discount EVs heavily, eroding profitability.
 
-Charging infrastructure remains a constraint. The UK had approximately 55,000 public charge points by end-2023, but coverage is uneven — weighted heavily to London and the South East. The Society of Motor Manufacturers and Traders (SMMT) has called for more targeted government investment in rural charging.
+Charging infrastructure remains a constraint. The UK had approximately 55,000 public charge points by end-2023, but coverage is uneven · weighted heavily to London and the South East. The Society of Motor Manufacturers and Traders (SMMT) has called for more targeted government investment in rural charging.
 
 The government has also introduced company car tax incentives favouring EVs (BIK at 2% for 2024/25) and continues to fund the Workplace Charging Scheme. Critics note that well-off households are disproportionately benefiting from these indirect subsidies.
 
@@ -449,7 +449,7 @@ The government has also introduced company car tax incentives favouring EVs (BIK
 
 **Question 2** [20 marks]
 
-Using Extract E, evaluate the likely impact of UK government EV policy — including the abolition of the Plug-in Car Grant and the introduction of the ZEV mandate — on the UK economy.
+Using Extract E, evaluate the likely impact of UK government EV policy · including the abolition of the Plug-in Car Grant and the introduction of the ZEV mandate · on the UK economy.
 
 ## SECTION C (20 marks)
 
@@ -457,9 +457,9 @@ Using Extract E, evaluate the likely impact of UK government EV policy — inclu
 
 Regulating EV charging
 
-From November 2023, the UK government required that public rapid chargers (50 kW and above) deliver at least 99% reliability and offer contactless card payment — addressing complaints that many earlier chargers required downloading apps.
+From November 2023, the UK government required that public rapid chargers (50 kW and above) deliver at least 99% reliability and offer contactless card payment · addressing complaints that many earlier chargers required downloading apps.
 
-Ofgem, the energy regulator, is consulting on price caps for public charging. Current rates vary between 44p/kWh for subscribers and over 80p/kWh at some motorway service area chargers — a stark contrast to home charging at around 10p/kWh (off- peak).
+Ofgem, the energy regulator, is consulting on price caps for public charging. Current rates vary between 44p/kWh for subscribers and over 80p/kWh at some motorway service area chargers · a stark contrast to home charging at around 10p/kWh (off- peak).
 
 Some critics argue price regulation could deter investment in charging infrastructure. Charging operators point out that building high-power chargers on motorways involves substantial fixed costs and long payback periods, which higher prices help to recover.
 
@@ -471,7 +471,7 @@ Environmental and consumer protection regulation
 
 The EU's new Battery Regulation, which the UK is partially mirroring, requires manufacturers to disclose the carbon footprint of EV batteries, guarantee battery health over 8 years, and ensure recyclability quotas by 2030.
 
-The Advertising Standards Authority (ASA) has ruled against several manufacturers for exaggerated range claims. Consumer groups argue that standardised, comparable efficiency data should be mandated — similar to fuel economy figures for ICE vehicles.
+The Advertising Standards Authority (ASA) has ruled against several manufacturers for exaggerated range claims. Consumer groups argue that standardised, comparable efficiency data should be mandated · similar to fuel economy figures for ICE vehicles.
 
 Some manufacturers have lobbied against further regulation, arguing that compliance costs raise final consumer prices and slow the energy transition. Others argue that strong rules build consumer confidence, which is essential for mass-market adoption.
 
@@ -488,7 +488,7 @@ Evaluate the likely impact on the UK of increased government regulation of the U
     title: "Paper 2 \u2014 Set A",
     description: "Competing in the Global Economy. Set A \u2014 moderate difficulty.",
     totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/02) — Paper 2: Competing in the global economy — Predicted Paper (Moderate)
+    content: `# Edexcel A-Level Economics B (9EB0/02) · Paper 2: Competing in the global economy · Predicted Paper (Moderate)
 
 **Time: 2 hours | Total: 100 marks**
 
@@ -518,7 +518,7 @@ France 26.5 31.2
 
 Yorkshire Tea brews up Indian growth plans
 
-Taylors of Harrogate, the Yorkshire-based owner of Yorkshire Tea, announced plans in 2023 to expand into India — the world's second-largest tea market. The firm currently exports to more than 40 countries but has relied heavily on sales in the UK, Ireland, and Australia.
+Taylors of Harrogate, the Yorkshire-based owner of Yorkshire Tea, announced plans in 2023 to expand into India · the world's second-largest tea market. The firm currently exports to more than 40 countries but has relied heavily on sales in the UK, Ireland, and Australia.
 
 "India is a huge opportunity, but it is also a tea-producing nation with strong local brands," said the firm's export director. "We spent two years studying local consumer preferences before committing. Indian consumers prefer stronger, spiced blends, so we have developed new recipes specifically for that market. Without that research, we would almost certainly have misjudged the market and wasted investment."
 
@@ -532,9 +532,9 @@ The company will enter India through a joint venture with a local distributor, w
 
 UK Export Finance helps SMEs compete overseas
 
-UK Export Finance (UKEF) — the UK government's export credit agency — provided £6.5 billion in support to UK exporters in 2022-23, helping over 500 small and medium-sized enterprises (SMEs) sell abroad. UKEF offers loan guarantees, insurance against non-payment, and direct lending for overseas buyers who purchase UK goods and services.
+UK Export Finance (UKEF) · the UK government's export credit agency · provided £6.5 billion in support to UK exporters in 2022-23, helping over 500 small and medium-sized enterprises (SMEs) sell abroad. UKEF offers loan guarantees, insurance against non-payment, and direct lending for overseas buyers who purchase UK goods and services.
 
-A spokesperson commented: "Exporters face risks that domestic sellers do not — currency volatility, non-payment by overseas buyers, and political risk. Our support reduces these risks. In the past year we have enabled British firms to win contracts in more than 75 countries."
+A spokesperson commented: "Exporters face risks that domestic sellers do not · currency volatility, non-payment by overseas buyers, and political risk. Our support reduces these risks. In the past year we have enabled British firms to win contracts in more than 75 countries."
 
 Economists argue that supporting exports can generate positive multiplier effects in the UK economy, as additional revenues flow to workers and suppliers. However, critics argue that subsidising private firms distorts the market and that taxpayer money should be directed elsewhere, such as education or infrastructure.
 
@@ -646,13 +646,13 @@ European consumers are likely to face higher prices for electric vehicles in the
 
 **Extract F**
 
-BYD — a rising Chinese multinational
+BYD · a rising Chinese multinational
 
 BYD, founded in Shenzhen in 1995 as a battery manufacturer, has become one of the world's largest producers of electric vehicles. In 2023, it overtook Tesla as the global leader in EV sales by volume, with more than 3 million vehicles sold across over 70 countries.
 
-BYD's strategy has emphasised vertical integration — the firm produces its own batteries, semiconductors, and electric motors, which has allowed it to control costs during global supply chain disruptions. Its average selling price is roughly 25% below that of its European competitors.
+BYD's strategy has emphasised vertical integration · the firm produces its own batteries, semiconductors, and electric motors, which has allowed it to control costs during global supply chain disruptions. Its average selling price is roughly 25% below that of its European competitors.
 
-The firm's international expansion has relied heavily on direct exports from its Chinese factories. However, with rising protectionism — including tariffs in the EU and potential restrictions in the US — BYD is accelerating investment in overseas production. New factories are planned in Hungary, Thailand, and Brazil.
+The firm's international expansion has relied heavily on direct exports from its Chinese factories. However, with rising protectionism · including tariffs in the EU and potential restrictions in the US · BYD is accelerating investment in overseas production. New factories are planned in Hungary, Thailand, and Brazil.
 
 (Source: adapted from BYD drives global EV expansion © reuters.com 2024)
 
@@ -669,7 +669,7 @@ Evaluate the likely impact of tariffs on a multinational firm such as BYD.`,
     title: "Paper 2 \u2014 Set B",
     description: "Competing in the Global Economy. Set B \u2014 demanding analysis & evaluation.",
     totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/02) — Paper 2: Competing in the global economy — Predicted Paper (Hard)
+    content: `# Edexcel A-Level Economics B (9EB0/02) · Paper 2: Competing in the global economy · Predicted Paper (Hard)
 
 **Time: 2 hours | Total: 100 marks**
 
@@ -701,7 +701,7 @@ JCB, the Staffordshire-based family-owned manufacturer of construction equipment
 
 "When sterling appreciated by around 8% against the US dollar in the first half of 2024, our dollar- denominated export revenues were worth significantly less when converted back into pounds," explained the firm's CEO. "We faced a choice: raise dollar prices and risk losing market share to Japanese and Korean competitors, or absorb the hit on our profit margins."
 
-JCB has responded by expanding production in its US plant near Savannah, Georgia, and by increasing manufacturing capacity in India. This strategy — known as 'natural hedging' — means costs and revenues are generated in the same currency, reducing exposure to exchange-rate movements. However, expanding overseas production raises questions about the long-term commitment to UK manufacturing jobs.
+JCB has responded by expanding production in its US plant near Savannah, Georgia, and by increasing manufacturing capacity in India. This strategy · known as 'natural hedging' · means costs and revenues are generated in the same currency, reducing exposure to exchange-rate movements. However, expanding overseas production raises questions about the long-term commitment to UK manufacturing jobs.
 
 (Source: adapted from JCB feels sterling pinch © ft.com 2024)
 
@@ -715,7 +715,7 @@ Teesside Freeport, launched in 2021, is the UK's largest freeport and covers 4,5
 
 Local government claims the freeport will attract £1.4 billion of private-sector investment and create around 18,000 new jobs by 2030. Major investments announced include a £1 billion green hydrogen project and a new offshore-wind manufacturing facility.
 
-Critics argue that freeports do not create new economic activity but simply relocate it from elsewhere in the UK, producing a zero-sum outcome nationally. They also warn that the tax relief represents a significant opportunity cost for the Treasury — estimated at £50 million annually — and risks being captured by firms that would have invested in the region anyway.
+Critics argue that freeports do not create new economic activity but simply relocate it from elsewhere in the UK, producing a zero-sum outcome nationally. They also warn that the tax relief represents a significant opportunity cost for the Treasury · estimated at £50 million annually · and risks being captured by firms that would have invested in the region anyway.
 
 (Source: adapted from Teesside Freeport: promise and scepticism © bbc.co.uk 2024)
 
@@ -848,7 +848,7 @@ Evaluate the likely impact of rising protectionism on the operations of multinat
     title: "Paper 2 \u2014 Set C",
     description: "Competing in the Global Economy. Set C \u2014 A* level synoptic challenge.",
     totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/02) — Paper 2: Competing in the global economy — Predicted Paper (Advanced)
+    content: `# Edexcel A-Level Economics B (9EB0/02) · Paper 2: Competing in the global economy · Predicted Paper (Advanced)
 
 **Time: 2 hours | Total: 100 marks**
 
@@ -858,7 +858,7 @@ Answer ALL questions.
 
 **Extract A**
 
-Germany — selected macroeconomic indicators, 2023
+Germany · selected macroeconomic indicators, 2023
 
 Indicator Value
 
@@ -884,7 +884,7 @@ Inflation (HICP, annual average) 5.9%
 
 Volkswagen under pressure in a shifting global market
 
-Volkswagen (VW), Europe's largest car manufacturer and a flagship of German industry, reported a 2% fall in global deliveries in 2024, driven largely by weaker sales in China — its most profitable market for more than two decades. Once dominant, European brands now hold only 15% of the Chinese EV market, as domestic rivals such as BYD and NIO have captured share with cheaper, technologically advanced vehicles.
+Volkswagen (VW), Europe's largest car manufacturer and a flagship of German industry, reported a 2% fall in global deliveries in 2024, driven largely by weaker sales in China · its most profitable market for more than two decades. Once dominant, European brands now hold only 15% of the Chinese EV market, as domestic rivals such as BYD and NIO have captured share with cheaper, technologically advanced vehicles.
 
 The firm has announced a restructuring involving the closure of at least three German factories and the loss of up to 35,000 jobs. Unit labour costs in Germany are roughly 40% above those in Spain and more than double those in Central European EU countries. High energy prices, triggered by the 2022 energy shock, have worsened VW's cost disadvantage.
 
@@ -900,7 +900,7 @@ Germany unveils €100bn infrastructure fund
 
 In March 2025, the German parliament approved a constitutional amendment loosening the country's strict 'debt brake' fiscal rule and creating a €100 billion special fund for infrastructure investment over ten years. Priorities include rail electrification, 5G rollout, green-hydrogen networks, and modernisation of Germany's ageing transport system.
 
-Supporters argue that Germany's public investment has been persistently weak — gross fixed capital formation as a share of GDP has lagged behind France, the US, and most Nordic economies for more than a decade. Chronic underinvestment in infrastructure is blamed for deteriorating transport reliability and, increasingly, the loss of competitiveness relative to rival manufacturing economies.
+Supporters argue that Germany's public investment has been persistently weak · gross fixed capital formation as a share of GDP has lagged behind France, the US, and most Nordic economies for more than a decade. Chronic underinvestment in infrastructure is blamed for deteriorating transport reliability and, increasingly, the loss of competitiveness relative to rival manufacturing economies.
 
 Opponents warn that higher public borrowing will raise interest rates across the eurozone, crowd out private investment, and leave future taxpayers with a heavier debt burden. Independent economists estimate that the fiscal multiplier for infrastructure investment typically lies between 1.4 and 2.1 in the medium term, but that returns depend critically on the quality of project selection.
 
@@ -1004,7 +1004,7 @@ Using Extract D, evaluate the view that rapid economic growth in developing econ
 
 The age of industrial policy returns
 
-For much of the 1990s and 2000s, industrial policy — where governments target specific sectors with subsidies, tax credits and procurement preferences — was dismissed by mainstream economists as politically captured and economically inefficient. Since 2020, it has returned with force. The US Inflation Reduction Act (IRA) of 2022 committed around $369 billion to clean-energy subsidies. The EU Green Deal Industrial Plan, the UK's Advanced Manufacturing Plan, India's Production Linked Incentive scheme, and Japan's semiconductor subsidies all reflect a similar turn.
+For much of the 1990s and 2000s, industrial policy · where governments target specific sectors with subsidies, tax credits and procurement preferences · was dismissed by mainstream economists as politically captured and economically inefficient. Since 2020, it has returned with force. The US Inflation Reduction Act (IRA) of 2022 committed around $369 billion to clean-energy subsidies. The EU Green Deal Industrial Plan, the UK's Advanced Manufacturing Plan, India's Production Linked Incentive scheme, and Japan's semiconductor subsidies all reflect a similar turn.
 
 The return of industrial policy is driven by climate-transition needs, concerns about supply-chain resilience exposed by the COVID-19 pandemic, and geopolitical rivalry with China. The World Trade Organization has recorded a sharp rise in trade-distorting measures: more than 3,000 new interventions per year since 2020, compared with around 600 annually in 2010.
 
@@ -1037,21 +1037,21 @@ Evaluate the view that the return of industrial policy will ultimately benefit m
     title: "Paper 3 \u2014 Set A",
     description: "The Economic Environment & Business. Set A \u2014 moderate difficulty.",
     totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/03) — Paper 3: The economic environment and business — Predicted Paper (Moderate)
+    content: `# Edexcel A-Level Economics B (9EB0/03) · Paper 3: The economic environment and business · Predicted Paper (Moderate)
 
 **Time: 2 hours | Total: 100 marks**
 
 Answer ALL questions. Each question has parts (a)–(d) totalling 50 marks.
 
-## SECTION A — Question 1 (50 marks)
+## SECTION A · Question 1 (50 marks)
 
 **Extract A**
 
-The UK coffee shop market The UK branded coffee shop market continued its long-term expansion through 2024, with industry estimates placing the number of outlets at just over 10,800. The sector is dominated by three main chains — Costa Coffee, Starbucks and Pret A Manger — which together account for more than half of branded outlets. A long tail of independent and regional coffee shops makes up the remainder and has grown steadily since the pandemic. Barriers to entry into the branded segment are substantial: a typical new Costa store costs over £250,000 to fit out, and lease commitments of 10–15 years are common on high-street premises. Chains compete on price, quality of coffee, speed of service, ambience, digital loyalty apps and plant-based milk options. (Source: adapted from industry press, 2024)
+The UK coffee shop market The UK branded coffee shop market continued its long-term expansion through 2024, with industry estimates placing the number of outlets at just over 10,800. The sector is dominated by three main chains · Costa Coffee, Starbucks and Pret A Manger · which together account for more than half of branded outlets. A long tail of independent and regional coffee shops makes up the remainder and has grown steadily since the pandemic. Barriers to entry into the branded segment are substantial: a typical new Costa store costs over £250,000 to fit out, and lease commitments of 10–15 years are common on high-street premises. Chains compete on price, quality of coffee, speed of service, ambience, digital loyalty apps and plant-based milk options. (Source: adapted from industry press, 2024)
 
 **Extract B**
 
-Global coffee bean prices Global arabica and robusta prices reached multi-decade highs during 2024. A combination of drought in Brazil — which produces around 40% of the world's arabica — and poor harvests in Vietnam squeezed global supply. Industry analysts reported that the wholesale price of arabica roughly doubled during the 12 months to November 2024. While large buyers hedge exposure using futures markets, independent and smaller chain operators face the full impact of spot price movements within weeks. (Source: adapted from commodity market reports, 2024)
+Global coffee bean prices Global arabica and robusta prices reached multi-decade highs during 2024. A combination of drought in Brazil · which produces around 40% of the world's arabica · and poor harvests in Vietnam squeezed global supply. Industry analysts reported that the wholesale price of arabica roughly doubled during the 12 months to November 2024. While large buyers hedge exposure using futures markets, independent and smaller chain operators face the full impact of spot price movements within weeks. (Source: adapted from commodity market reports, 2024)
 
 Month Jan-23 Jul-23 Jan-24 Jul-24 Nov-24
 
@@ -1069,7 +1069,7 @@ Indicator 2020 2021 2022 2023 2024
 
 Number of branded outlets 9.2 (000s) 9.4 9.8 10.4 10.8
 
-Average cup price — latte 2.95(£) 3.10 3.35 3.65 3.95
+Average cup price · latte 2.95(£) 3.10 3.35 3.65 3.95
 
 Sector revenue (£bn) 3.0 3.9 4.7 5.2 5.6
 
@@ -1091,15 +1091,15 @@ Assess the extent to which the UK coffee shop market can be described as an olig
 
 With reference to Extract D and your own knowledge, evaluate the case for UK government intervention to reduce the external costs associated with disposable coffee cups.
 
-## SECTION B — Question 2 (50 marks)
+## SECTION B · Question 2 (50 marks)
 
 **Extract E**
 
-Tesco plc — business overview Tesco plc is the UK's largest grocery retailer, operating over 4,000 stores across the UK and Republic of Ireland. Its UK grocery market share stood at 27.9% in the 12 weeks to October 2024, its highest level for a decade. The group also operates the Booker wholesale business and a growing online grocery platform delivering to around 1.5 million households per week. Tesco's stated corporate purpose is to 'serve our customers, communities and planet a little better every day'. The firm has set a target of net-zero UK emissions by 2035 across its own operations. (Source: adapted from Tesco plc Annual Report 2023/24)
+Tesco plc · business overview Tesco plc is the UK's largest grocery retailer, operating over 4,000 stores across the UK and Republic of Ireland. Its UK grocery market share stood at 27.9% in the 12 weeks to October 2024, its highest level for a decade. The group also operates the Booker wholesale business and a growing online grocery platform delivering to around 1.5 million households per week. Tesco's stated corporate purpose is to 'serve our customers, communities and planet a little better every day'. The firm has set a target of net-zero UK emissions by 2035 across its own operations. (Source: adapted from Tesco plc Annual Report 2023/24)
 
 **Extract F**
 
-Competition from discounters German discounters Aldi and Lidl together held approximately 18% of the UK grocery market in 2024, up from 12% in 2019. Their growth has been driven by a limited product range, low cost own-brand lines and highly efficient store layouts. In response, Tesco's 'Aldi Price Match' campaign — introduced in 2020 — now covers over 700 everyday lines whose price is guaranteed to match the discounters. Tesco has extended its 'Clubcard Prices' loyalty scheme, giving members access to prices up to a third below standard shelf prices on around 8,000 products. Critics argue this creates two-tier pricing; supporters point to retention benefits of over 20 million active Clubcard households. (Source: adapted from Kantar Worldpanel, 2024)
+Competition from discounters German discounters Aldi and Lidl together held approximately 18% of the UK grocery market in 2024, up from 12% in 2019. Their growth has been driven by a limited product range, low cost own-brand lines and highly efficient store layouts. In response, Tesco's 'Aldi Price Match' campaign · introduced in 2020 · now covers over 700 everyday lines whose price is guaranteed to match the discounters. Tesco has extended its 'Clubcard Prices' loyalty scheme, giving members access to prices up to a third below standard shelf prices on around 8,000 products. Critics argue this creates two-tier pricing; supporters point to retention benefits of over 20 million active Clubcard households. (Source: adapted from Kantar Worldpanel, 2024)
 
 **Extract G**
 
@@ -1139,7 +1139,7 @@ Assess the likely impact on Tesco of the rise in the UK National Living Wage des
 
 **Question 2d** [20 marks]
 
-Evaluate the extent to which Tesco's future financial performance depends on macroeconomic conditions in the UK rather than on decisions taken by the firm's own management. END OF PAPER INSERT — Pre-release Context Do not return this Booklet with the question paper. Investigating the Economic Environment and Business Context This year the context is competitiveness, pricing and the consumer market. You should think about how firms compete on price and non-price strategies in crowded consumer markets, and how macroeconomic conditions (inflation, real wages, consumer confidence) shape the demand facing these firms. Research To prepare for this year's context, you should research: • how firms in competitive consumer markets differentiate themselves • the role of loyalty schemes and price-matching in retailing • how cost pressures (input prices, wages) affect firms' operating margins • the case for and against government intervention to correct externalities • how macroeconomic conditions influence the demand for consumer goods. You cannot take any of your research or investigation data carried out as part of the pre-release into the examination.`,
+Evaluate the extent to which Tesco's future financial performance depends on macroeconomic conditions in the UK rather than on decisions taken by the firm's own management. END OF PAPER INSERT · Pre-release Context Do not return this Booklet with the question paper. Investigating the Economic Environment and Business Context This year the context is competitiveness, pricing and the consumer market. You should think about how firms compete on price and non-price strategies in crowded consumer markets, and how macroeconomic conditions (inflation, real wages, consumer confidence) shape the demand facing these firms. Research To prepare for this year's context, you should research: • how firms in competitive consumer markets differentiate themselves • the role of loyalty schemes and price-matching in retailing • how cost pressures (input prices, wages) affect firms' operating margins • the case for and against government intervention to correct externalities • how macroeconomic conditions influence the demand for consumer goods. You cannot take any of your research or investigation data carried out as part of the pre-release into the examination.`,
   },
   {
     id: "edxb-p3-b",
@@ -1148,13 +1148,13 @@ Evaluate the extent to which Tesco's future financial performance depends on mac
     title: "Paper 3 \u2014 Set B",
     description: "The Economic Environment & Business. Set B \u2014 demanding analysis & evaluation.",
     totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/03) — Paper 3: The economic environment and business — Predicted Paper (Hard)
+    content: `# Edexcel A-Level Economics B (9EB0/03) · Paper 3: The economic environment and business · Predicted Paper (Hard)
 
 **Time: 2 hours | Total: 100 marks**
 
 Answer ALL questions. Each question has parts (a)–(d) totalling 50 marks.
 
-## SECTION A — Question 1 (50 marks)
+## SECTION A · Question 1 (50 marks)
 
 **Extract A**
 
@@ -1184,7 +1184,7 @@ Unemployment rate (%) 11.9 13.2 7.8 6.9
 
 Current account (% of GDP) −3.5 −1.7 −1.3 −1.7
 
-BRL per USD, year-end 4.03 5.58 4.86 5.82 Figure 1: Brazil — selected macroeconomic indicators
+BRL per USD, year-end 4.03 5.58 4.86 5.82 Figure 1: Brazil · selected macroeconomic indicators
 
 Product 2019 2021 2023
 
@@ -1216,11 +1216,11 @@ Discuss the effectiveness of monetary policy as a tool for controlling inflation
 
 With reference to Extract D and Figure 2, evaluate the extent to which the escalation of US–China trade tensions since 2018 has been a net benefit to the Brazilian economy.
 
-## SECTION B — Question 2 (50 marks)
+## SECTION B · Question 2 (50 marks)
 
 **Extract E**
 
-Shopee — company background Shopee, the flagship e-commerce platform of Singapore-based SEA Limited, launched in 2015 and has grown to become the largest e-commerce marketplace in Southeast Asia by gross merchandise value (GMV). Shopee operates in Indonesia, Vietnam, Thailand, the Philippines, Malaysia, Singapore and Taiwan. Shopee's business model is a two-sided platform: it matches buyers with third-party sellers, monetising via transaction fees, commissions, paid advertising and its own logistics service (Shopee Xpress). Between 2019 and 2021 the company grew aggressively by subsidising shipping and promotional discounts, financed by profits of its gaming arm. (Source: adapted from SEA Limited Annual Report 2023)
+Shopee · company background Shopee, the flagship e-commerce platform of Singapore-based SEA Limited, launched in 2015 and has grown to become the largest e-commerce marketplace in Southeast Asia by gross merchandise value (GMV). Shopee operates in Indonesia, Vietnam, Thailand, the Philippines, Malaysia, Singapore and Taiwan. Shopee's business model is a two-sided platform: it matches buyers with third-party sellers, monetising via transaction fees, commissions, paid advertising and its own logistics service (Shopee Xpress). Between 2019 and 2021 the company grew aggressively by subsidising shipping and promotional discounts, financed by profits of its gaming arm. (Source: adapted from SEA Limited Annual Report 2023)
 
 **Extract F**
 
@@ -1228,11 +1228,11 @@ Competition, logistics and regulation Chinese-owned TikTok Shop entered Indonesi
 
 **Extract G**
 
-Macro context — Indonesia Indonesia is Shopee's single largest market by GMV. The country has a population of 283 million with a median age of 29, real GDP growth of around 5% per year, and an internet penetration rate of 77%. The Indonesian rupiah (IDR) depreciated by around 9% against the US dollar during 2024. In 2023, Indonesia introduced a minimum price of USD 100 for imported goods sold on cross-border e-commerce platforms, limiting direct shipping of low-value Chinese goods. The policy was intended to protect domestic MSMEs (micro, small and medium enterprises) which employ more than 60% of the Indonesian workforce. (Source: adapted from Bank Indonesia and Kementerian Perdagangan, 2024)
+Macro context · Indonesia Indonesia is Shopee's single largest market by GMV. The country has a population of 283 million with a median age of 29, real GDP growth of around 5% per year, and an internet penetration rate of 77%. The Indonesian rupiah (IDR) depreciated by around 9% against the US dollar during 2024. In 2023, Indonesia introduced a minimum price of USD 100 for imported goods sold on cross-border e-commerce platforms, limiting direct shipping of low-value Chinese goods. The policy was intended to protect domestic MSMEs (micro, small and medium enterprises) which employ more than 60% of the Indonesian workforce. (Source: adapted from Bank Indonesia and Kementerian Perdagangan, 2024)
 
 **Extract H**
 
-Shopee's move to profitability In 2023 Shopee reported its first full year of positive adjusted EBITDA. Management raised commission rates paid by sellers (from 2% to over 6% on many categories), introduced additional paid advertising products, and redirected marketing spend from free shipping to more targeted loyalty rewards. In 2024 the firm launched 'Shopee Live' video-commerce to compete directly with TikTok Shop. Critics note that raising fees risks alienating sellers — particularly smaller MSMEs with few alternative platforms. Supporters argue the platform's dominant position (estimated 40–50% GMV share in several markets) makes modest fee increases sustainable. (Source: adapted from SEA Limited earnings call transcripts, 2024)
+Shopee's move to profitability In 2023 Shopee reported its first full year of positive adjusted EBITDA. Management raised commission rates paid by sellers (from 2% to over 6% on many categories), introduced additional paid advertising products, and redirected marketing spend from free shipping to more targeted loyalty rewards. In 2024 the firm launched 'Shopee Live' video-commerce to compete directly with TikTok Shop. Critics note that raising fees risks alienating sellers · particularly smaller MSMEs with few alternative platforms. Supporters argue the platform's dominant position (estimated 40–50% GMV share in several markets) makes modest fee increases sustainable. (Source: adapted from SEA Limited earnings call transcripts, 2024)
 
 Metric 2020 2021 2022 2023
 
@@ -1242,9 +1242,9 @@ Group revenue 4.4 10.0 12.4 13.0
 
 Marketing spend 1.2 2.8 2.1 1.4
 
-Adjusted EBITDA — group −1.3 −2.0 −0.9 +0.16
+Adjusted EBITDA · group −1.3 −2.0 −0.9 +0.16
 
-Active users (monthly, m) 280 380 440 520 Figure 3: SEA Limited / Shopee — selected data (US$ bn unless stated)
+Active users (monthly, m) 280 380 440 520 Figure 3: SEA Limited / Shopee · selected data (US$ bn unless stated)
 
 **Question 2a** [8 marks]
 
@@ -1260,7 +1260,7 @@ With reference to Extract G, discuss the likely effect of the depreciation of th
 
 **Question 2d** [20 marks]
 
-Evaluate the extent to which Shopee's dominant position in Southeast Asian e-commerce benefits consumers, small sellers (MSMEs) and the wider economies in which it operates. END OF PAPER INSERT — Pre-release Context Do not return this Booklet with the question paper. Investigating the Economic Environment and Business Context This year the context is globalisation, emerging markets and macroeconomic policy. You should think about how globalisation affects firms and national economies — through trade, capital flows, exchange rates and monetary policy — with a particular focus on emerging-market contexts. Research To prepare for this year's context, you should research: • how commodity exporters respond to changes in exchange rates and terms of trade • how central banks in emerging economies use monetary policy to respond to inflation shocks • the effect of trade tensions and tariffs on third-country exporters • how multinational digital platforms expand across markets • the trade-offs between free trade and protection of domestic small businesses. You cannot take any of your research or investigation data carried out as part of the pre-release into the examination.`,
+Evaluate the extent to which Shopee's dominant position in Southeast Asian e-commerce benefits consumers, small sellers (MSMEs) and the wider economies in which it operates. END OF PAPER INSERT · Pre-release Context Do not return this Booklet with the question paper. Investigating the Economic Environment and Business Context This year the context is globalisation, emerging markets and macroeconomic policy. You should think about how globalisation affects firms and national economies · through trade, capital flows, exchange rates and monetary policy · with a particular focus on emerging-market contexts. Research To prepare for this year's context, you should research: • how commodity exporters respond to changes in exchange rates and terms of trade • how central banks in emerging economies use monetary policy to respond to inflation shocks • the effect of trade tensions and tariffs on third-country exporters • how multinational digital platforms expand across markets • the trade-offs between free trade and protection of domestic small businesses. You cannot take any of your research or investigation data carried out as part of the pre-release into the examination.`,
   },
   {
     id: "edxb-p3-c",
@@ -1269,17 +1269,17 @@ Evaluate the extent to which Shopee's dominant position in Southeast Asian e-com
     title: "Paper 3 \u2014 Set C",
     description: "The Economic Environment & Business. Set C \u2014 A* level synoptic challenge.",
     totalMarks: 100,
-    content: `# Edexcel A-Level Economics B (9EB0/03) — Paper 3: The economic environment and business — Predicted Paper (Advanced)
+    content: `# Edexcel A-Level Economics B (9EB0/03) · Paper 3: The economic environment and business · Predicted Paper (Advanced)
 
 **Time: 2 hours | Total: 100 marks**
 
 Answer ALL questions. Each question has parts (a)–(d) totalling 50 marks.
 
-## SECTION A — Question 1 (50 marks)
+## SECTION A · Question 1 (50 marks)
 
 **Extract A**
 
-The global semiconductor industry Semiconductors are essential inputs to virtually every modern manufactured good — from smartphones and cars to medical devices, defence equipment and the data centres that power artificial intelligence (AI). The global semiconductor market was estimated at around US$630 billion in 2024 and is forecast to exceed US$1 trillion by 2030. Semiconductor manufacturing is extraordinarily capital-intensive: a single leading-edge fabrication plant ('fab') costs US$15–30 billion to build and takes three to five years to bring on-line. TSMC (Taiwan) produces approximately 60% of the world's foundry output and over 90% of chips at the 5nm node or below. ASML (Netherlands) is the sole global producer of extreme-ultraviolet (EUV) lithography machines. Electronic design automation (EDA) software is dominated by three US firms; design IP is dominated by US and UK firms (including ARM). (Source: adapted from SIA and industry reports, 2024)
+The global semiconductor industry Semiconductors are essential inputs to virtually every modern manufactured good · from smartphones and cars to medical devices, defence equipment and the data centres that power artificial intelligence (AI). The global semiconductor market was estimated at around US$630 billion in 2024 and is forecast to exceed US$1 trillion by 2030. Semiconductor manufacturing is extraordinarily capital-intensive: a single leading-edge fabrication plant ('fab') costs US$15–30 billion to build and takes three to five years to bring on-line. TSMC (Taiwan) produces approximately 60% of the world's foundry output and over 90% of chips at the 5nm node or below. ASML (Netherlands) is the sole global producer of extreme-ultraviolet (EUV) lithography machines. Electronic design automation (EDA) software is dominated by three US firms; design IP is dominated by US and UK firms (including ARM). (Source: adapted from SIA and industry reports, 2024)
 
 **Extract B**
 
@@ -1287,7 +1287,7 @@ US export controls and the CHIPS Act In October 2022, the US Department of Comme
 
 **Extract C**
 
-Geopolitics and supply-chain concentration The concentration of leading-edge chip manufacturing in Taiwan — an island of 23 million people located less than 200 km from mainland China — is widely viewed as the most acute single point of failure in the global economy. A prolonged interruption to Taiwanese chip production would, according to a 2023 Rhodium Group estimate, reduce global GDP by several trillion US dollars within a year. Even absent geopolitical disruption, the industry has experienced marked cyclicality. A cycle of over-ordering followed the 2020–21 Covid-linked shortages, producing a memory-chip glut in 2023 during which prices of DRAM fell by over 60%. (Source: adapted from Rhodium Group and industry data, 2024)
+Geopolitics and supply-chain concentration The concentration of leading-edge chip manufacturing in Taiwan · an island of 23 million people located less than 200 km from mainland China · is widely viewed as the most acute single point of failure in the global economy. A prolonged interruption to Taiwanese chip production would, according to a 2023 Rhodium Group estimate, reduce global GDP by several trillion US dollars within a year. Even absent geopolitical disruption, the industry has experienced marked cyclicality. A cycle of over-ordering followed the 2020–21 Covid-linked shortages, producing a memory-chip glut in 2023 during which prices of DRAM fell by over 60%. (Source: adapted from Rhodium Group and industry data, 2024)
 
 **Extract D**
 
@@ -1307,11 +1307,11 @@ USA 37 13 12
 
 Europe (EU + UK) 14 10 9
 
-Rest of World ≈0 14 10 Figure 1: Global semiconductor market — share of global production by region (%)
+Rest of World ≈0 14 10 Figure 1: Global semiconductor market · share of global production by region (%)
 
 Region USA Taiwan S.Korea Japan EU China
 
-Announced capex 223 148 138 63 51 142 Figure 2: Announced capital expenditure (US$ bn) — new semiconductor fabs, 2022–2027
+Announced capex 223 148 138 63 51 142 Figure 2: Announced capital expenditure (US$ bn) · new semiconductor fabs, 2022–2027
 
 Metric FY22 FY23 FY24 FY25 (est.)
 
@@ -1341,23 +1341,23 @@ Discuss the extent to which the US CHIPS Act and the EU Chips Act can be justifi
 
 Using Extracts B, C and D and your own knowledge, evaluate whether the ongoing 'technology decoupling' between the United States and China is likely to accelerate or hinder global economic growth over the next decade.
 
-## SECTION B — Question 2 (50 marks)
+## SECTION B · Question 2 (50 marks)
 
 **Extract E**
 
-The rise of generative AI and a dominant stack Since the public release of ChatGPT in November 2022, generative AI has become the most rapidly adopted consumer technology in history. ChatGPT reached 100 million weekly active users within two months. Three broad layers have emerged in the generative-AI stack: at the bottom, specialised hardware — primarily Nvidia GPUs; in the middle, 'foundation models' trained at vast cost by a small group of developers including OpenAI (partnered with Microsoft), Anthropic (partnered with Amazon and Google), Google DeepMind, Meta and Mistral; at the top, a rapidly expanding applications layer. (Source: adapted from Stanford AI Index 2024)
+The rise of generative AI and a dominant stack Since the public release of ChatGPT in November 2022, generative AI has become the most rapidly adopted consumer technology in history. ChatGPT reached 100 million weekly active users within two months. Three broad layers have emerged in the generative-AI stack: at the bottom, specialised hardware · primarily Nvidia GPUs; in the middle, 'foundation models' trained at vast cost by a small group of developers including OpenAI (partnered with Microsoft), Anthropic (partnered with Amazon and Google), Google DeepMind, Meta and Mistral; at the top, a rapidly expanding applications layer. (Source: adapted from Stanford AI Index 2024)
 
 **Extract F**
 
-Scaling costs and energy demand Foundation-model training costs have risen exponentially. GPT-4 is estimated to have cost approximately US$100 million to train; analysts estimate that frontier models released in 2027 may cost over US$10 billion. Inference (running the model) has become the dominant cost for widely-deployed models. The International Energy Agency estimates that global data-centre electricity consumption could roughly double by 2026, with AI inference accounting for a rapidly growing share. Hyperscalers — Microsoft, Amazon, Google and Meta — have collectively signed long-term contracts for over 30 GW of low-carbon power, including new nuclear, solar and geothermal projects. (Source: adapted from Epoch AI and IEA reports, 2024)
+Scaling costs and energy demand Foundation-model training costs have risen exponentially. GPT-4 is estimated to have cost approximately US$100 million to train; analysts estimate that frontier models released in 2027 may cost over US$10 billion. Inference (running the model) has become the dominant cost for widely-deployed models. The International Energy Agency estimates that global data-centre electricity consumption could roughly double by 2026, with AI inference accounting for a rapidly growing share. Hyperscalers · Microsoft, Amazon, Google and Meta · have collectively signed long-term contracts for over 30 GW of low-carbon power, including new nuclear, solar and geothermal projects. (Source: adapted from Epoch AI and IEA reports, 2024)
 
 **Extract G**
 
-Labour market and productivity effects Goldman Sachs estimated in 2023 that generative AI could raise global labour productivity by 1.5 percentage points per year for a decade; MIT and Princeton studies of specific tasks have shown productivity gains of 14–56%. The IMF has warned that around 40% of global jobs are 'exposed' to AI, with higher exposure in advanced economies (60%) and in jobs held by women and higher earners. In early 2024, the EU AI Act was adopted — the world's first comprehensive AI regulation, imposing transparency and risk-management obligations on 'general purpose AI systems', with fines of up to 7% of global turnover for breaches. (Source: adapted from Goldman Sachs, IMF and European Commission, 2024)
+Labour market and productivity effects Goldman Sachs estimated in 2023 that generative AI could raise global labour productivity by 1.5 percentage points per year for a decade; MIT and Princeton studies of specific tasks have shown productivity gains of 14–56%. The IMF has warned that around 40% of global jobs are 'exposed' to AI, with higher exposure in advanced economies (60%) and in jobs held by women and higher earners. In early 2024, the EU AI Act was adopted · the world's first comprehensive AI regulation, imposing transparency and risk-management obligations on 'general purpose AI systems', with fines of up to 7% of global turnover for breaches. (Source: adapted from Goldman Sachs, IMF and European Commission, 2024)
 
 **Extract H**
 
-Competition and concentration in foundation models Microsoft has invested over US$13 billion in OpenAI; Amazon and Google have committed up to US$8 billion in Anthropic. Critics argue these partnerships represent a new form of concentration: the hyperscaler supplies the compute, the AI firm supplies the model, and the hyperscaler's cloud becomes the primary distribution channel. The EU antitrust regulator (DG COMP), UK's CMA and US FTC have all launched investigations. In early 2025, DeepSeek — a Chinese AI developer — released an open-weight model that achieved frontier-level performance at a reportedly far lower training cost, briefly wiping US$600bn from the market capitalisation of US AI-related firms and reopening the question of whether frontier AI is a winner-take-all market. (Source: adapted from company disclosures and press reports, 2024–25)
+Competition and concentration in foundation models Microsoft has invested over US$13 billion in OpenAI; Amazon and Google have committed up to US$8 billion in Anthropic. Critics argue these partnerships represent a new form of concentration: the hyperscaler supplies the compute, the AI firm supplies the model, and the hyperscaler's cloud becomes the primary distribution channel. The EU antitrust regulator (DG COMP), UK's CMA and US FTC have all launched investigations. In early 2025, DeepSeek · a Chinese AI developer · released an open-weight model that achieved frontier-level performance at a reportedly far lower training cost, briefly wiping US$600bn from the market capitalisation of US AI-related firms and reopening the question of whether frontier AI is a winner-take-all market. (Source: adapted from company disclosures and press reports, 2024–25)
 
 Indicator 2022 2023 2024
 
@@ -1385,6 +1385,6 @@ With reference to Extract G, discuss the likely impact of widespread adoption of
 
 **Question 2d** [20 marks]
 
-Evaluate the appropriate role for governments in regulating the market for frontier AI foundation models, using evidence from Extracts E to H. Your answer should consider both microeconomic efficiency and wider macroeconomic consequences. END OF PAPER INSERT — Pre-release Context Do not return this Booklet with the question paper. Investigating the Economic Environment and Business Context This year the context is innovation, technology and the distribution of economic power. You should think about how new technologies — particularly in semiconductors and generative AI — reshape market structures, national economies, labour markets and the distribution of economic power between firms and between states. Research To prepare for this year's context, you should research: • why certain technology markets exhibit extreme concentration (scale economies, network effects, sunk costs) • the economic rationale for industrial policy (CHIPS Act, EU Chips Act, China Big Fund) • how trade and export controls affect global technology supply chains • the microeconomic and macroeconomic effects of transformative new technologies • the case for and against government regulation of powerful new technologies. You cannot take any of your research or investigation data carried out as part of the pre-release into the examination.`,
+Evaluate the appropriate role for governments in regulating the market for frontier AI foundation models, using evidence from Extracts E to H. Your answer should consider both microeconomic efficiency and wider macroeconomic consequences. END OF PAPER INSERT · Pre-release Context Do not return this Booklet with the question paper. Investigating the Economic Environment and Business Context This year the context is innovation, technology and the distribution of economic power. You should think about how new technologies · particularly in semiconductors and generative AI · reshape market structures, national economies, labour markets and the distribution of economic power between firms and between states. Research To prepare for this year's context, you should research: • why certain technology markets exhibit extreme concentration (scale economies, network effects, sunk costs) • the economic rationale for industrial policy (CHIPS Act, EU Chips Act, China Big Fund) • how trade and export controls affect global technology supply chains • the microeconomic and macroeconomic effects of transformative new technologies • the case for and against government regulation of powerful new technologies. You cannot take any of your research or investigation data carried out as part of the pre-release into the examination.`,
   },
 ];

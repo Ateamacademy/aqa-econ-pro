@@ -16,10 +16,10 @@ export const multiBoardPredictedPapers: PredictedPaper[] = [
     id: "igcse-p1-c",
     subject: "cambridge-igcse" as any,
     paper: "1",
-    title: "Paper 1 Multiple Choice — Set C (Advanced)",
-    description: "Cambridge IGCSE Paper 1 (0455/11). 30 multiple-choice questions — Advanced. Verbatim from official-style mock.",
+    title: "Paper 1 Multiple Choice · Set C (Advanced)",
+    description: "Cambridge IGCSE Paper 1 (0455/11). 30 multiple-choice questions · Advanced. Verbatim from official-style mock.",
     totalMarks: 30,
-    content: `# Cambridge IGCSE Economics (0455/11) — Paper 1 Multiple Choice — Predicted Paper Set C (Advanced)
+    content: `# Cambridge IGCSE Economics (0455/11) · Paper 1 Multiple Choice · Predicted Paper Set C (Advanced)
 
 **Time: 45 minutes | Total: 30 marks**
 
@@ -239,10 +239,10 @@ Which combination of aims of government is most likely to conflict in the short 
     id: "igcse-p2-c",
     subject: "cambridge-igcse",
     paper: "2",
-    title: "Paper 2 Structured Questions — Set C (Advanced)",
-    description: "Cambridge IGCSE Paper 2 (0455/21). Set C — Advanced. Verbatim from official-style mock.",
+    title: "Paper 2 Structured Questions · Set C (Advanced)",
+    description: "Cambridge IGCSE Paper 2 (0455/21). Set C · Advanced. Verbatim from official-style mock.",
     totalMarks: 90,
-    content: `# Cambridge IGCSE Economics (0455/21) — Paper 2 Structured Questions — Predicted Paper Set C (Advanced)
+    content: `# Cambridge IGCSE Economics (0455/21) · Paper 2 Structured Questions · Predicted Paper Set C (Advanced)
 
 **Time: 2 hours 15 minutes | Total: 90 marks**
 
@@ -372,11 +372,11 @@ Discuss whether or not a floating exchange rate system is better than a fixed sy
     id: "edxigcse-p1-a",
     subject: "edexcel-igcse" as any,
     paper: "1",
-    title: "Paper 1 — Set A (Moderate)",
-    description: "Microeconomics & Business Economics (4EC1/01). Verbatim from Predicted Paper — Moderate.",
+    title: "Paper 1 · Set A (Moderate)",
+    description: "Microeconomics & Business Economics (4EC1/01). Verbatim from Predicted Paper · Moderate.",
     totalMarks: 80,
-    content: `# Pearson Edexcel International GCSE — Predicted Paper (Moderate)
-**4EC1/01 Economics — Paper 1: Microeconomics and Business Economics**
+    content: `# Pearson Edexcel International GCSE · Predicted Paper (Moderate)
+**4EC1/01 Economics · Paper 1: Microeconomics and Business Economics**
 
 **Time: 1 hour 30 minutes | Total Marks: 80**
 
@@ -499,11 +499,11 @@ The government of Bolivia is considering nationalising its largest private water
     id: "edxigcse-p1-b",
     subject: "edexcel-igcse" as any,
     paper: "1",
-    title: "Paper 1 — Set B (Hard)",
-    description: "Microeconomics & Business Economics (4EC1/01). Verbatim from Predicted Paper — Hard.",
+    title: "Paper 1 · Set B (Hard)",
+    description: "Microeconomics & Business Economics (4EC1/01). Verbatim from Predicted Paper · Hard.",
     totalMarks: 80,
-    content: `# Pearson Edexcel International GCSE — Predicted Paper (Hard)
-**4EC1/01 Economics — Paper 1: Microeconomics and Business Economics**
+    content: `# Pearson Edexcel International GCSE · Predicted Paper (Hard)
+**4EC1/01 Economics · Paper 1: Microeconomics and Business Economics**
 
 **Time: 1 hour 30 minutes | Total Marks: 80**
 
@@ -572,7 +572,7 @@ Question 2e [2 marks]
 Describe one feature of perfect competition.
 
 Question 2f [3 marks]
-Nadia is the owner of a clothing retailer and wants to maximise profits. However, Samir is the store manager and wants to switch the firm's suppliers to locally sourced, ethical producers — even though these suppliers charge 15% more than the current ones. Explain one reason why Samir may want to make this switch rather than maximise profits.
+Nadia is the owner of a clothing retailer and wants to maximise profits. However, Samir is the store manager and wants to switch the firm's suppliers to locally sourced, ethical producers · even though these suppliers charge 15% more than the current ones. Explain one reason why Samir may want to make this switch rather than maximise profits.
 
 Question 2g [9 marks]
 Mexico has applied an indirect tax of 1 peso per litre on sugary drinks since 2014. Sales of taxed drinks fell by around 7.6% in the first two years, and fell by more among low-income households. However, critics argue that consumption has since rebounded and that the tax is regressive, hitting poorer households hardest. Some drink producers also reformulated their products to reduce sugar content and avoid the tax. With reference to the data above and your knowledge of economics, assess the effectiveness of an indirect tax in reducing the consumption of sugary drinks.
@@ -626,11 +626,11 @@ The government of South Africa has proposed raising the national minimum wage fr
     id: "edxigcse-p1-c",
     subject: "edexcel-igcse" as any,
     paper: "1",
-    title: "Paper 1 — Set C (Advanced)",
-    description: "Microeconomics & Business Economics (4EC1/01). Verbatim from Predicted Paper — Advanced.",
+    title: "Paper 1 · Set C (Advanced)",
+    description: "Microeconomics & Business Economics (4EC1/01). Verbatim from Predicted Paper · Advanced.",
     totalMarks: 80,
-    content: `# Pearson Edexcel International GCSE — Predicted Paper (Advanced)
-**4EC1/01 Economics — Paper 1: Microeconomics and Business Economics**
+    content: `# Pearson Edexcel International GCSE · Predicted Paper (Advanced)
+**4EC1/01 Economics · Paper 1: Microeconomics and Business Economics**
 
 **Time: 1 hour 30 minutes | Total Marks: 80**
 
@@ -724,7 +724,7 @@ Question 3c [3 marks]
 Using the diagram below, draw a perfectly price inelastic demand (PED) curve. Label the curve and show the effect on both axes from a change in price.
 
 Question 3d [6 marks]
-Rolex is a luxury Swiss watchmaker that has been producing high-end watches for over a century. Each watch goes through more than 100 production stages, with individual craftsmen specialising in a single element — such as movement assembly, engraving, or dial fitting. It can take up to a year for a single Rolex watch to be fully produced. With reference to the data above and your knowledge of economics, analyse the possible advantages for Rolex of using specialisation in its production process.
+Rolex is a luxury Swiss watchmaker that has been producing high-end watches for over a century. Each watch goes through more than 100 production stages, with individual craftsmen specialising in a single element · such as movement assembly, engraving, or dial fitting. It can take up to a year for a single Rolex watch to be fully produced. With reference to the data above and your knowledge of economics, analyse the possible advantages for Rolex of using specialisation in its production process.
 
 Question 3e [9 marks]
 Bread is an inexpensive staple food in many countries, produced by large numbers of competing bakers and supermarkets. Consumers buy it regularly and there are many close substitutes, such as rice, pasta and breakfast cereals. Designer branded clothing (for example, from Gucci or Balenciaga) is typically expensive, positioned as a luxury, and often seen by consumers as a status symbol. With reference to the data above and your knowledge of economics, assess whether demand is likely to be more price elastic for designer branded clothing than for bread.
@@ -753,11 +753,11 @@ In 1999, Kenya's telecommunications industry was dominated by a state-owned mono
     id: "edxigcse-p2-a",
     subject: "edexcel-igcse" as any,
     paper: "2",
-    title: "Paper 2 — Set A (Moderate)",
-    description: "Macroeconomics & the Global Economy (4EC1/02). Verbatim from Predicted Paper — Moderate.",
+    title: "Paper 2 · Set A (Moderate)",
+    description: "Macroeconomics & the Global Economy (4EC1/02). Verbatim from Predicted Paper · Moderate.",
     totalMarks: 80,
-    content: `# Pearson Edexcel International GCSE — Predicted Paper (Moderate)
-**4EC1/02 Economics — Paper 2: Macroeconomics and the Global Economy**
+    content: `# Pearson Edexcel International GCSE · Predicted Paper (Moderate)
+**4EC1/02 Economics · Paper 2: Macroeconomics and the Global Economy**
 
 **Time: 1 hour 30 minutes | Total Marks: 80**
 
@@ -888,11 +888,11 @@ The Japanese Government is investing ¥20 trillion in renewable energy over 10 y
     id: "edxigcse-p2-b",
     subject: "edexcel-igcse" as any,
     paper: "2",
-    title: "Paper 2 — Set B (Hard)",
-    description: "Macroeconomics & the Global Economy (4EC1/02). Verbatim from Predicted Paper — Hard.",
+    title: "Paper 2 · Set B (Hard)",
+    description: "Macroeconomics & the Global Economy (4EC1/02). Verbatim from Predicted Paper · Hard.",
     totalMarks: 80,
-    content: `# Pearson Edexcel International GCSE — Predicted Paper (Hard)
-**4EC1/02 Economics — Paper 2: Macroeconomics and the Global Economy**
+    content: `# Pearson Edexcel International GCSE · Predicted Paper (Hard)
+**4EC1/02 Economics · Paper 2: Macroeconomics and the Global Economy**
 
 **Time: 1 hour 30 minutes | Total Marks: 80**
 
@@ -1014,7 +1014,7 @@ Question 4b [6 marks]
 In recent years, the Turkish central bank has repeatedly raised interest rates. These rises have not only aimed to bring inflation under control but have also affected the value of the Turkish lira against other currencies. With reference to the data above and your knowledge of economics, analyse the relationship between interest rates and the exchange rate for a country such as Turkey.
 
 Question 4c [12 marks]
-With inflation in Turkey reaching 67% in 2024, some economists argue that monetary policy alone is not enough. They suggest that supply-side policies — including investment in education and training, labour market reforms, and infrastructure projects — are needed to control inflation in the long term. However, supply-side policies take several years to have a full effect. With reference to the data above and your knowledge of economics, evaluate the possible effectiveness of using supply-side policies to control inflation in a country such as Turkey.
+With inflation in Turkey reaching 67% in 2024, some economists argue that monetary policy alone is not enough. They suggest that supply-side policies · including investment in education and training, labour market reforms, and infrastructure projects · are needed to control inflation in the long term. However, supply-side policies take several years to have a full effect. With reference to the data above and your knowledge of economics, evaluate the possible effectiveness of using supply-side policies to control inflation in a country such as Turkey.
 
 **TOTAL FOR PAPER = 80 MARKS**
 `,
@@ -1023,11 +1023,11 @@ With inflation in Turkey reaching 67% in 2024, some economists argue that moneta
     id: "edxigcse-p2-c",
     subject: "edexcel-igcse" as any,
     paper: "2",
-    title: "Paper 2 — Set C (Advanced)",
-    description: "Macroeconomics & the Global Economy (4EC1/02). Verbatim from Predicted Paper — Advanced.",
+    title: "Paper 2 · Set C (Advanced)",
+    description: "Macroeconomics & the Global Economy (4EC1/02). Verbatim from Predicted Paper · Advanced.",
     totalMarks: 80,
-    content: `# Pearson Edexcel International GCSE — Predicted Paper (Advanced)
-**4EC1/02 Economics — Paper 2: Macroeconomics and the Global Economy**
+    content: `# Pearson Edexcel International GCSE · Predicted Paper (Advanced)
+**4EC1/02 Economics · Paper 2: Macroeconomics and the Global Economy**
 
 **Time: 1 hour 30 minutes | Total Marks: 80**
 
@@ -1165,7 +1165,7 @@ Question 4a [2 marks]
 In 2023, India's population reached 1.43 billion, overtaking China as the world's most populous country. The percentage of the population living below the national poverty line had fallen from 21.9% in 2011 to 12.9% in 2023. Using the data above, calculate the number of Indians still living below the poverty line in 2023, in millions. You are advised to show your working.
 
 Question 4b [6 marks]
-India's economic growth has been driven by strong demand for its services exports — particularly IT and business-process outsourcing — as well as significant government investment in roads, ports and digital infrastructure. With reference to the data above and your knowledge of economics, analyse the possible ways in which economic growth can raise living standards in a country such as India.
+India's economic growth has been driven by strong demand for its services exports · particularly IT and business-process outsourcing · as well as significant government investment in roads, ports and digital infrastructure. With reference to the data above and your knowledge of economics, analyse the possible ways in which economic growth can raise living standards in a country such as India.
 
 Question 4c [12 marks]
 Ethiopia is one of the fastest-growing economies in Africa but remains heavily dependent on agriculture and receives significant amounts of foreign aid. In 2023 it received more than US$4bn in official development assistance (ODA), much of it tied to specific projects. At the same time, Ethiopia's membership of the African Continental Free Trade Area (AfCFTA) is opening up new markets for Ethiopian exports of coffee, leather goods and textiles. Some economists argue that trade, rather than aid, is the more effective long-term route to economic development for a country such as Ethiopia. With reference to the data above and your knowledge of economics, evaluate the view that trade is more effective than foreign aid in promoting economic development in a country such as Ethiopia.
@@ -1178,16 +1178,16 @@ Ethiopia is one of the fastest-growing economies in Africa but remains heavily d
     id: "ocrgcse-p1-a",
     subject: "ocr-gcse" as any,
     paper: "1",
-    title: "Paper 1 — Set A (Moderate)",
-    description: "Introduction to Economics (J205/01) — Moderate tier predicted paper.",
+    title: "Paper 1 · Set A (Moderate)",
+    description: "Introduction to Economics (J205/01) · Moderate tier predicted paper.",
     totalMarks: 80,
-    content: `# OCR GCSE (9–1) Economics — J205/01 Introduction to Economics — Predicted Paper (Moderate)
+    content: `# OCR GCSE (9–1) Economics · J205/01 Introduction to Economics · Predicted Paper (Moderate)
 
 **Time: 1 hour 30 minutes | Total: 80 marks**
 
 Answer all questions. The marks for each question are shown in brackets [ ]. Quality of extended response is assessed in questions marked with an asterisk (*).
 
-## Section A — Multiple Choice
+## Section A · Multiple Choice
 
 Question 1 [1 marks]
 Which of the following is a factor of production?
@@ -1329,9 +1329,9 @@ A household wants to deposit its monthly savings into an account that can be eas
 - C The Treasury
 - D An insurance company
 
-## Section B — Data Response
+## Section B · Data Response
 
-**Extract 1 — The coffee market:** Coffee is a widely consumed drink across the world. Over the last year the world price of coffee has risen sharply following poor harvests in Brazil, one of the largest producers. The weather damage meant that supply to the world market fell significantly. Demand for coffee is typically considered to be price inelastic. Consumers tend to view coffee as a daily necessity and are willing to pay higher prices, especially where they have a regular habit of buying it. The retail coffee market in the UK is dominated by a small number of large multinational chains. This is an example of an oligopoly.
+**Extract 1 · The coffee market:** Coffee is a widely consumed drink across the world. Over the last year the world price of coffee has risen sharply following poor harvests in Brazil, one of the largest producers. The weather damage meant that supply to the world market fell significantly. Demand for coffee is typically considered to be price inelastic. Consumers tend to view coffee as a daily necessity and are willing to pay higher prices, especially where they have a regular habit of buying it. The retail coffee market in the UK is dominated by a small number of large multinational chains. This is an example of an oligopoly.
 
 Question 21a [2 marks]
 Explain what is meant by demand.
@@ -1351,7 +1351,7 @@ State two factors, other than habit, that influence the price elasticity of dema
 Question 21diii [6 marks]
 Evaluate the importance of price elasticity of demand for coffee for consumers. Use the information given in Extract 1 and your own knowledge.
 
-**Extract 2 — A local bakery:** Jamie runs a small bakery called Breadwinners. She has been asked by a local café chain to supply 200 loaves each week at £1.50 per loaf. Weekly costs: Flour and other ingredients £50; Wages for assistant £120; Utilities and other overheads £80. Jamie has hired an assistant and is using division of labour. She operates in the product market.
+**Extract 2 · A local bakery:** Jamie runs a small bakery called Breadwinners. She has been asked by a local café chain to supply 200 loaves each week at £1.50 per loaf. Weekly costs: Flour and other ingredients £50; Wages for assistant £120; Utilities and other overheads £80. Jamie has hired an assistant and is using division of labour. She operates in the product market.
 
 Question 22a [2 marks]
 Explain what is meant by division of labour.
@@ -1371,7 +1371,7 @@ State two examples of fixed costs Jamie's bakery is likely to face.
 Question 22diii [6 marks]
 Evaluate the benefits for Jamie of using division of labour in her bakery. Use the information given in Extract 2 and your own knowledge.
 
-**Extract 3 — A clothing retailer:** Ravi owns Threadworks in Millfield. Three years ago he borrowed £200,000 from a commercial bank to expand the shop. The interest rate was 4%, meaning monthly interest payments of £666.67. The Bank of England has recently raised the interest rate; Ravi will be charged 6.5% from next month. A new larger rival has opened nearby. Ravi is considering specialising in sportswear.
+**Extract 3 · A clothing retailer:** Ravi owns Threadworks in Millfield. Three years ago he borrowed £200,000 from a commercial bank to expand the shop. The interest rate was 4%, meaning monthly interest payments of £666.67. The Bank of England has recently raised the interest rate; Ravi will be charged 6.5% from next month. A new larger rival has opened nearby. Ravi is considering specialising in sportswear.
 
 Question 23a [2 marks]
 Explain, using an example, what is meant by the rate of interest.
@@ -1398,16 +1398,16 @@ Evaluate the benefits to Ravi of specialising in one type of clothing, such as s
     id: "ocrgcse-p1-b",
     subject: "ocr-gcse" as any,
     paper: "1",
-    title: "Paper 1 — Set B (Hard)",
-    description: "Introduction to Economics (J205/01) — Hard tier predicted paper.",
+    title: "Paper 1 · Set B (Hard)",
+    description: "Introduction to Economics (J205/01) · Hard tier predicted paper.",
     totalMarks: 80,
-    content: `# OCR GCSE (9–1) Economics — J205/01 Introduction to Economics — Predicted Paper (Hard)
+    content: `# OCR GCSE (9–1) Economics · J205/01 Introduction to Economics · Predicted Paper (Hard)
 
 **Time: 1 hour 30 minutes | Total: 80 marks**
 
 Answer all questions. The marks for each question are shown in brackets [ ]. Quality of extended response is assessed in questions marked with an asterisk (*).
 
-## Section A — Multiple Choice
+## Section A · Multiple Choice
 
 Question 1 [1 marks]
 Which of these is most likely to be classed as a free good?
@@ -1549,9 +1549,9 @@ The main difference between investment and saving for a household is that
 - C only firms can invest, while only households can save
 - D investment and saving mean the same thing
 
-## Section B — Data Response
+## Section B · Data Response
 
-**Extract 1 — The electric vehicle (EV) market:** Demand for EVs has grown rapidly. Governments plan to ban new petrol and diesel cars within ten years. EVs use lithium batteries — global demand for lithium has pushed up its price, raising production costs. The market is becoming more competitive: new entrants from China are pressuring established brands on price and on non-price factors such as range, charging speed and in-car technology.
+**Extract 1 · The electric vehicle (EV) market:** Demand for EVs has grown rapidly. Governments plan to ban new petrol and diesel cars within ten years. EVs use lithium batteries · global demand for lithium has pushed up its price, raising production costs. The market is becoming more competitive: new entrants from China are pressuring established brands on price and on non-price factors such as range, charging speed and in-car technology.
 
 Question 21a [2 marks]
 Explain what is meant by a scarce resource.
@@ -1571,7 +1571,7 @@ State two examples of non-price competition between EV manufacturers.
 Question 21diii [6 marks]
 Evaluate the importance of non-price competition for an established EV manufacturer facing new competitors. Use the information given in Extract 1 and your own knowledge.
 
-**Extract 2 — A technology startup:** Priya and Marco run Cloudline, a startup producing accounting software for small businesses. They use division of labour: Priya writes the code and Marco handles sales and marketing. Cloudline has secured a contract to deliver software to 1,000 stores at £90 per store. Costs: Staff wages £35,000; Office rent and utilities £8,000; Software licenses £12,000; Marketing £6,000. They are deciding whether to hire two additional developers.
+**Extract 2 · A technology startup:** Priya and Marco run Cloudline, a startup producing accounting software for small businesses. They use division of labour: Priya writes the code and Marco handles sales and marketing. Cloudline has secured a contract to deliver software to 1,000 stores at £90 per store. Costs: Staff wages £35,000; Office rent and utilities £8,000; Software licenses £12,000; Marketing £6,000. They are deciding whether to hire two additional developers.
 
 Question 22a [2 marks]
 Explain what is meant by a startup.
@@ -1591,7 +1591,7 @@ State two risks Priya and Marco face from expanding the business by hiring addit
 Question 22diii [6 marks]
 Evaluate the benefits for Cloudline of expanding the business by hiring additional developers. Use the information given in Extract 2 and your own knowledge.
 
-**Extract 3 — A regional airline:** SkyRoute is a regional low-cost airline in Europe. Five years ago it borrowed £4 million at 3.5%, with monthly interest payments of £11,666.67. The Bank of England has raised the base rate; SkyRoute's rate will rise to 6% from next month. Owners Léa and Tomas are considering specialising in business travel (more price inelastic demand) and cutting low-profit routes.
+**Extract 3 · A regional airline:** SkyRoute is a regional low-cost airline in Europe. Five years ago it borrowed £4 million at 3.5%, with monthly interest payments of £11,666.67. The Bank of England has raised the base rate; SkyRoute's rate will rise to 6% from next month. Owners Léa and Tomas are considering specialising in business travel (more price inelastic demand) and cutting low-profit routes.
 
 Question 23a [2 marks]
 Explain what is meant by price inelastic demand.
@@ -1618,16 +1618,16 @@ Evaluate the benefits to SkyRoute of specialising in business travel. Use the in
     id: "ocrgcse-p1-c",
     subject: "ocr-gcse" as any,
     paper: "1",
-    title: "Paper 1 — Set C (Advanced)",
-    description: "Introduction to Economics (J205/01) — Advanced tier predicted paper.",
+    title: "Paper 1 · Set C (Advanced)",
+    description: "Introduction to Economics (J205/01) · Advanced tier predicted paper.",
     totalMarks: 80,
-    content: `# OCR GCSE (9–1) Economics — J205/01 Introduction to Economics — Predicted Paper (Advanced)
+    content: `# OCR GCSE (9–1) Economics · J205/01 Introduction to Economics · Predicted Paper (Advanced)
 
 **Time: 1 hour 30 minutes | Total: 80 marks**
 
 Answer all questions. The marks for each question are shown in brackets [ ]. Quality of extended response is assessed in questions marked with an asterisk (*).
 
-## Section A — Multiple Choice
+## Section A · Multiple Choice
 
 Question 1 [1 marks]
 In economics, the basic economic problem is best described as
@@ -1769,9 +1769,9 @@ A small building firm decides to become a specialist fitter of solar panels rath
 - C guarantee higher profits in all market conditions
 - D remove all risk from the business
 
-## Section B — Data Response
+## Section B · Data Response
 
-**Extract 1 — The UK housing market:** UK house prices have risen sharply over the last decade. Demand has been strong (population growth, low interest rates, buy-to-let investors). Supply has lagged because of planning restrictions, shortages of skilled construction workers and rising material costs. Demand and short-run supply are both price inelastic. The Bank of England has recently raised interest rates, making mortgages more expensive.
+**Extract 1 · The UK housing market:** UK house prices have risen sharply over the last decade. Demand has been strong (population growth, low interest rates, buy-to-let investors). Supply has lagged because of planning restrictions, shortages of skilled construction workers and rising material costs. Demand and short-run supply are both price inelastic. The Bank of England has recently raised interest rates, making mortgages more expensive.
 
 Question 21a [2 marks]
 Explain, using an example, what is meant by price inelastic supply.
@@ -1791,7 +1791,7 @@ State two factors that limit the supply of new homes in the UK.
 Question 21diii [6 marks]
 Evaluate the extent to which rising interest rates are likely to slow the rise in UK house prices. Use the information given in Extract 1 and your own knowledge.
 
-**Extract 2 — A car parts manufacturer:** Durrell Engineering supplies parts to three large car companies. Aisha has been offered a contract to supply 20,000 units of an electric-motor component at £45 per unit. Costs: Raw materials £360,000; Skilled labour £240,000; Machine running costs £120,000; Factory overheads (fixed) £150,000. Aisha is considering further investment but is concerned about taking on debt when interest rates are high.
+**Extract 2 · A car parts manufacturer:** Durrell Engineering supplies parts to three large car companies. Aisha has been offered a contract to supply 20,000 units of an electric-motor component at £45 per unit. Costs: Raw materials £360,000; Skilled labour £240,000; Machine running costs £120,000; Factory overheads (fixed) £150,000. Aisha is considering further investment but is concerned about taking on debt when interest rates are high.
 
 Question 22a [2 marks]
 Explain what is meant by the factor market.
@@ -1811,7 +1811,7 @@ State two risks for Durrell Engineering of taking on more debt when interest rat
 Question 22diii [6 marks]
 Evaluate the extent to which Durrell Engineering should take on further debt to invest in new capital equipment when interest rates are high. Use the information given in Extract 2 and your own knowledge.
 
-**Extract 3 — A multinational coffee chain:** Bearcup operates over 900 stores. A global shortage of coffee beans has pushed up its costs; demand for premium coffee remains price inelastic. Six years ago Bearcup borrowed £20 million at 2.5%, meaning monthly interest of £41,666.67. The rate will rise to 5.5% next month. CEO Harold wants to specialise further in premium coffee; other managers prefer non-price competition (loyalty schemes, in-store experience).
+**Extract 3 · A multinational coffee chain:** Bearcup operates over 900 stores. A global shortage of coffee beans has pushed up its costs; demand for premium coffee remains price inelastic. Six years ago Bearcup borrowed £20 million at 2.5%, meaning monthly interest of £41,666.67. The rate will rise to 5.5% next month. CEO Harold wants to specialise further in premium coffee; other managers prefer non-price competition (loyalty schemes, in-store experience).
 
 Question 23a [2 marks]
 Explain what is meant by price elasticity of demand.
@@ -1838,16 +1838,16 @@ Evaluate whether Bearcup should focus on increased specialisation in premium cof
     id: "ocrgcse-p2-a",
     subject: "ocr-gcse" as any,
     paper: "2",
-    title: "Paper 2 — Set A (Moderate)",
-    description: "National and International Economics (J205/02) — Moderate tier predicted paper.",
+    title: "Paper 2 · Set A (Moderate)",
+    description: "National and International Economics (J205/02) · Moderate tier predicted paper.",
     totalMarks: 80,
-    content: `# OCR GCSE (9–1) Economics — J205/02 National and International Economics — Predicted Paper (Moderate)
+    content: `# OCR GCSE (9–1) Economics · J205/02 National and International Economics · Predicted Paper (Moderate)
 
 **Time: 1 hour 30 minutes | Total: 80 marks**
 
 Answer all questions. The marks for each question are shown in brackets [ ]. Quality of extended response is assessed in questions marked with an asterisk (*).
 
-## Section A — Multiple Choice
+## Section A · Multiple Choice
 
 Question 1 [1 marks]
 Which of the following is the best definition of economic growth?
@@ -1989,9 +1989,9 @@ A local council invests in a new public park in a deprived area. Which of the fo
 - C Improved local biodiversity and lower urban air pollution
 - D Lower house prices near the new park
 
-## Section B — Data Response
+## Section B · Data Response
 
-**Extract 1 — UK inflation and the response of the Bank of England:** UK CPI inflation rose sharply from 2021, peaking in 2022. The Bank of England raised Bank Rate over the period. Year, CPI inflation (%), Bank Rate at year-end (%): 2021, 2.6, 0.25; 2022, 9.1, 3.50; 2023, 7.3, 5.25; 2024, 2.5, 4.75.
+**Extract 1 · UK inflation and the response of the Bank of England:** UK CPI inflation rose sharply from 2021, peaking in 2022. The Bank of England raised Bank Rate over the period. Year, CPI inflation (%), Bank Rate at year-end (%): 2021, 2.6, 0.25; 2022, 9.1, 3.50; 2023, 7.3, 5.25; 2024, 2.5, 4.75.
 
 Question 21a [2 marks]
 Using Extract 1, explain the trend in the UK CPI inflation rate between 2021 and 2023.
@@ -2011,7 +2011,7 @@ Other than inflation, state two economic objectives of the UK government.
 Question 21diii [6 marks]
 Evaluate the consequences for low-income households of a period of high inflation. Use the information given in Extract 1 and your own knowledge.
 
-**Extract 2 — UK unemployment and regional labour markets:** Selected 2024 data — Region, Unemployment rate (%), Inactivity rate (%), Employment rate (%): UK average, 4.3, 21.8, 74.6; South East, 3.4, 18.9, 78.5; North East, 5.8, 25.6, 70.3; Wales, 4.2, 25.1, 71.8.
+**Extract 2 · UK unemployment and regional labour markets:** Selected 2024 data · Region, Unemployment rate (%), Inactivity rate (%), Employment rate (%): UK average, 4.3, 21.8, 74.6; South East, 3.4, 18.9, 78.5; North East, 5.8, 25.6, 70.3; Wales, 4.2, 25.1, 71.8.
 
 Question 22a [2 marks]
 Using Extract 2, explain how the UK unemployment rate compares with the unemployment rate in the North East of England in 2024.
@@ -2031,7 +2031,7 @@ State two types of unemployment other than structural unemployment.
 Question 22diii [6 marks]
 Evaluate the consequences of persistently high unemployment for workers in a region such as the North East of England. Use the information given in Extract 2 and your own knowledge.
 
-**Extract 3 — UK international trade and the value of the pound:** Year, Current account (% of GDP), £1 = $, £1 = €: 2021, −0.5, 1.38, 1.17; 2022, −2.6, 1.21, 1.17; 2023, −2.2, 1.24, 1.15; 2024, −2.0, 1.27, 1.17.
+**Extract 3 · UK international trade and the value of the pound:** Year, Current account (% of GDP), £1 = $, £1 = €: 2021, −0.5, 1.38, 1.17; 2022, −2.6, 1.21, 1.17; 2023, −2.2, 1.24, 1.15; 2024, −2.0, 1.27, 1.17.
 
 Question 23a [2 marks]
 Using Extract 3, explain the change in the UK's current account balance between 2021 and 2024.
@@ -2058,16 +2058,16 @@ Evaluate the extent to which a sustained depreciation of sterling would be benef
     id: "ocrgcse-p2-b",
     subject: "ocr-gcse" as any,
     paper: "2",
-    title: "Paper 2 — Set B (Hard)",
-    description: "National and International Economics (J205/02) — Hard tier predicted paper.",
+    title: "Paper 2 · Set B (Hard)",
+    description: "National and International Economics (J205/02) · Hard tier predicted paper.",
     totalMarks: 80,
-    content: `# OCR GCSE (9–1) Economics — J205/02 National and International Economics — Predicted Paper (Hard)
+    content: `# OCR GCSE (9–1) Economics · J205/02 National and International Economics · Predicted Paper (Hard)
 
 **Time: 1 hour 30 minutes | Total: 80 marks**
 
 Answer all questions. The marks for each question are shown in brackets [ ]. Quality of extended response is assessed in questions marked with an asterisk (*).
 
-## Section A — Multiple Choice
+## Section A · Multiple Choice
 
 Question 1 [1 marks]
 Real GDP per capita is not a perfect measure of living standards because
@@ -2209,9 +2209,9 @@ Which of the following best illustrates the difference between social and enviro
 - C A new park that improves biodiversity and local well-being
 - D A new tax on carbon emissions that raises government revenue
 
-## Section B — Data Response
+## Section B · Data Response
 
-**Extract 1 — Productivity, real incomes and the cost of living in the UK:** UK labour productivity growth has been weak. Real wages stagnated through most of the 2010s and fell sharply when CPI inflation surged. Year, Nominal wage growth (%), CPI inflation (%), Real wage growth (%): 2021, +4.3, +2.6, +1.7; 2022, +6.3, +9.1, −2.8; 2023, +7.3, +7.3, 0.0; 2024, +5.5, +2.5, +2.9.
+**Extract 1 · Productivity, real incomes and the cost of living in the UK:** UK labour productivity growth has been weak. Real wages stagnated through most of the 2010s and fell sharply when CPI inflation surged. Year, Nominal wage growth (%), CPI inflation (%), Real wage growth (%): 2021, +4.3, +2.6, +1.7; 2022, +6.3, +9.1, −2.8; 2023, +7.3, +7.3, 0.0; 2024, +5.5, +2.5, +2.9.
 
 Question 21a [2 marks]
 Using Extract 1, explain the change in UK real wages between 2021 and 2022.
@@ -2231,7 +2231,7 @@ State two supply-side policies that could raise UK labour productivity.
 Question 21diii [6 marks]
 Evaluate the extent to which lower-income households are more harmed than higher-income households by a period of high inflation. Use the information given in Extract 1 and your own knowledge.
 
-**Extract 2 — UK public finances and fiscal policy choices:** Selected data (£bn) — Government revenue 1,050; Government spending 1,180; Public sector net debt 2,600; Debt interest paid (annual) 105; Nominal GDP 2,600.
+**Extract 2 · UK public finances and fiscal policy choices:** Selected data (£bn) · Government revenue 1,050; Government spending 1,180; Public sector net debt 2,600; Debt interest paid (annual) 105; Nominal GDP 2,600.
 
 Question 22a [2 marks]
 Using Extract 2, explain what the data show about the UK government's budget position.
@@ -2251,7 +2251,7 @@ Other than infrastructure spending, state two fiscal policy measures a governmen
 Question 22diii [6 marks]
 Evaluate whether cutting UK government spending is the most appropriate way to reduce the national debt. Use the information given in Extract 2 and your own knowledge.
 
-**Extract 3 — Interest rates, the exchange rate and UK trade:** Year, Bank Rate (%), £1 = $, Current account (% of GDP): 2021, 0.25, 1.38, −0.5; 2022, 3.50, 1.21, −2.6; 2023, 5.25, 1.24, −3.5; 2024, 4.75, 1.27, −3.3.
+**Extract 3 · Interest rates, the exchange rate and UK trade:** Year, Bank Rate (%), £1 = $, Current account (% of GDP): 2021, 0.25, 1.38, −0.5; 2022, 3.50, 1.21, −2.6; 2023, 5.25, 1.24, −3.5; 2024, 4.75, 1.27, −3.3.
 
 Question 23a [2 marks]
 Using Extract 3, explain the change in UK Bank Rate between 2021 and 2023.
@@ -2278,16 +2278,16 @@ Evaluate the extent to which a sustained appreciation of sterling would harm the
     id: "ocrgcse-p2-c",
     subject: "ocr-gcse" as any,
     paper: "2",
-    title: "Paper 2 — Set C (Advanced)",
-    description: "National and International Economics (J205/02) — Advanced tier predicted paper.",
+    title: "Paper 2 · Set C (Advanced)",
+    description: "National and International Economics (J205/02) · Advanced tier predicted paper.",
     totalMarks: 80,
-    content: `# OCR GCSE (9–1) Economics — J205/02 National and International Economics — Predicted Paper (Advanced)
+    content: `# OCR GCSE (9–1) Economics · J205/02 National and International Economics · Predicted Paper (Advanced)
 
 **Time: 1 hour 30 minutes | Total: 80 marks**
 
 Answer all questions. The marks for each question are shown in brackets [ ]. Quality of extended response is assessed in questions marked with an asterisk (*).
 
-## Section A — Multiple Choice
+## Section A · Multiple Choice
 
 Question 1 [1 marks]
 A country experiences negative real GDP growth for two consecutive quarters, a rising unemployment rate and an inflation rate above target. The country is most accurately described as experiencing
@@ -2429,9 +2429,9 @@ The concept of 'sustainable development' is best described as
 - C development in which only environmental indicators improve
 - D development funded entirely by government rather than the private sector
 
-## Section B — Data Response
+## Section B · Data Response
 
-**Extract 1 — Stagflation risk and the Bank of England's policy dilemma:** Year, CPI inflation (%), Real GDP growth (%), Unemployment rate (%): 2022, 9.1, 4.0, 3.7; 2023, 7.3, 0.3, 4.0; 2024, 2.5, 0.9, 4.3.
+**Extract 1 · Stagflation risk and the Bank of England's policy dilemma:** Year, CPI inflation (%), Real GDP growth (%), Unemployment rate (%): 2022, 9.1, 4.0, 3.7; 2023, 7.3, 0.3, 4.0; 2024, 2.5, 0.9, 4.3.
 
 Question 21a [2 marks]
 Using Extract 1, explain what the data show about the UK economy between 2022 and 2023.
@@ -2451,7 +2451,7 @@ State two limitations of real GDP as a measure of living standards.
 Question 21diii [6 marks]
 Evaluate the extent to which the Bank of England should continue to prioritise its 2% inflation target following a severe external supply-side shock. Use the information given in Extract 1 and your own knowledge.
 
-**Extract 2 — Development and inequality in an emerging economy:** Income group, Share of national income (%), Average annual income ($): Top 10%, 55, 30,000; Middle 40%, 30, 2,500; Bottom 50%, 15, 1,000; Gini coefficient (0–1): 0.53.
+**Extract 2 · Development and inequality in an emerging economy:** Income group, Share of national income (%), Average annual income ($): Top 10%, 55, 30,000; Middle 40%, 30, 2,500; Bottom 50%, 15, 1,000; Gini coefficient (0–1): 0.53.
 
 Question 22a [2 marks]
 Using Extract 2, explain what the data suggest about the distribution of income in this emerging economy.
@@ -2471,7 +2471,7 @@ Other than income tax, state two policies a government could use to reduce incom
 Question 22diii [6 marks]
 Evaluate the extent to which rapid economic growth is the most effective way to reduce poverty in an emerging economy. Use the information given in Extract 2 and your own knowledge.
 
-**Extract 3 — Protectionism, trade wars and the global economy:** Indicator, 2010, 2024: World exports of goods ($trn), 15.3, 24.0; Share of world goods trade, China (%), 10.4, 14.5; Share of world goods trade, United States (%), 11.4, 9.9; Average applied MFN tariff (%), 3.2, 4.8.
+**Extract 3 · Protectionism, trade wars and the global economy:** Indicator, 2010, 2024: World exports of goods ($trn), 15.3, 24.0; Share of world goods trade, China (%), 10.4, 14.5; Share of world goods trade, United States (%), 11.4, 9.9; Average applied MFN tariff (%), 3.2, 4.8.
 
 Question 23a [2 marks]
 Using Extract 3, explain the change in China's share of world goods trade between 2010 and 2024.
@@ -2499,10 +2499,10 @@ Evaluate the extent to which free trade always benefits developing economies. Us
     id: "ib-p1-a",
     subject: "ib" as any,
     paper: "1",
-    title: "Paper 1 — Set A (Moderate)",
-    description: "Extended Response. Set A — Moderate. Verbatim from official-style mock.",
+    title: "Paper 1 · Set A (Moderate)",
+    description: "Extended Response. Set A · Moderate. Verbatim from official-style mock.",
     totalMarks: 25,
-    content: `# IB Diploma Economics (HL/SL) — Paper 1 — Predicted Paper Set A (Moderate)
+    content: `# IB Diploma Economics (HL/SL) · Paper 1 · Predicted Paper Set A (Moderate)
 
 **Time: 1 hour 15 minutes | Total: 25 marks**
 
@@ -2537,10 +2537,10 @@ Using real-world examples, discuss the view that supply-side policies are the be
     id: "ib-p1-b",
     subject: "ib" as any,
     paper: "1",
-    title: "Paper 1 — Set B (Hard)",
-    description: "Extended Response. Set B — Hard. Verbatim from official-style mock.",
+    title: "Paper 1 · Set B (Hard)",
+    description: "Extended Response. Set B · Hard. Verbatim from official-style mock.",
     totalMarks: 25,
-    content: `# IB Diploma Economics (HL/SL) — Paper 1 — Predicted Paper Set B (Hard)
+    content: `# IB Diploma Economics (HL/SL) · Paper 1 · Predicted Paper Set B (Hard)
 
 **Time: 1 hour 15 minutes | Total: 25 marks**
 
@@ -2575,10 +2575,10 @@ Using real-world examples, evaluate the view that free trade always benefits dev
     id: "ib-p1-c",
     subject: "ib" as any,
     paper: "1",
-    title: "Paper 1 — Set C (Advanced)",
-    description: "Extended Response. Set C — Advanced. Verbatim from official-style mock.",
+    title: "Paper 1 · Set C (Advanced)",
+    description: "Extended Response. Set C · Advanced. Verbatim from official-style mock.",
     totalMarks: 25,
-    content: `# IB Diploma Economics (HL/SL) — Paper 1 — Predicted Paper Set C (Advanced)
+    content: `# IB Diploma Economics (HL/SL) · Paper 1 · Predicted Paper Set C (Advanced)
 
 **Time: 1 hour 15 minutes | Total: 25 marks**
 
@@ -2613,10 +2613,10 @@ Using real-world examples, evaluate the view that foreign direct investment (FDI
     id: "ib-p2-a",
     subject: "ib" as any,
     paper: "2",
-    title: "Paper 2 — Set A (Moderate)",
-    description: "Data Response. Set A — Moderate. Verbatim from official-style mock.",
+    title: "Paper 2 · Set A (Moderate)",
+    description: "Data Response. Set A · Moderate. Verbatim from official-style mock.",
     totalMarks: 40,
-    content: `# IB Diploma Economics (HL/SL) — Paper 2 — Predicted Paper Set A (Moderate)
+    content: `# IB Diploma Economics (HL/SL) · Paper 2 · Predicted Paper Set A (Moderate)
 
 **Time: 1 hour 45 minutes | Total: 40 marks**
 
@@ -2629,9 +2629,9 @@ Using real-world examples, evaluate the view that foreign direct investment (FDI
 
 **Answer one question.**
 
-## Question 1 — Vietnam
+## Question 1 · Vietnam
 
-**Text A — Overview of Vietnam**
+**Text A · Overview of Vietnam**
 
 1. Vietnam is a Southeast Asian economy with a population of 98 million, considered one of the most dynamic emerging economies in the region. Its real GDP grew by an average of 6% annually between 2010 and 2019, reaching $409 billion in 2022, up from $116 billion in 2010.
 
@@ -2647,7 +2647,7 @@ Using real-world examples, evaluate the view that foreign direct investment (FDI
 
 7. Environmental concerns have grown. Rapid industrialisation has contributed to urban air pollution, deforestation, and plastic waste in major rivers. The government is considering tighter regulation and the introduction of a carbon price.
 
-**Text B — Foreign Direct Investment in Vietnam**
+**Text B · Foreign Direct Investment in Vietnam**
 
 1. Vietnam has become a magnet for **foreign direct investment (FDI)**. Registered FDI inflows reached a record $22.4 billion in 2022. The country benefits from a young workforce, low wages, political stability and strategic trade agreements.
 
@@ -2659,7 +2659,7 @@ Using real-world examples, evaluate the view that foreign direct investment (FDI
 
 5. Despite these concerns, Vietnam continues to position itself as an attractive destination for FDI, offering tax incentives in high-tech parks and streamlined approval procedures.
 
-**Table 1: Vietnam — selected indicators**
+**Table 1: Vietnam · selected indicators**
 
 | Year | Real GDP (US$ bn) | FDI inflows (US$ bn) | Inflation (%) | Unemployment (%) |
 |------|-------------------|----------------------|---------------|------------------|
@@ -2696,9 +2696,9 @@ Using a diagram, explain how the reduction of tariffs under the EVFTA (Text A, P
 Question 1 (g) [15 marks]
 Using information from the text/data and your knowledge of economics, evaluate the view that FDI is the most effective strategy for promoting economic development in Vietnam.
 
-## Question 2 — Kenya
+## Question 2 · Kenya
 
-**Text A — Kenya's Economy**
+**Text A · Kenya's Economy**
 
 1. Kenya is the largest economy in East Africa, with nominal GDP of $113 billion in 2022. The economy is services-led, with a growing digital-financial-services sector built on the success of mobile-money platforms such as M-PESA.
 
@@ -2710,7 +2710,7 @@ Using information from the text/data and your knowledge of economics, evaluate t
 
 5. Kenya has made substantial progress on poverty reduction, but income inequality remains high. The government uses progressive **income tax** and cash transfers to low-income households as redistributive tools.
 
-**Text B — Kenya and the East African Community (EAC)**
+**Text B · Kenya and the East African Community (EAC)**
 
 1. Kenya is a founding member of the East African Community (EAC) **customs union**, which also includes Uganda, Tanzania, Rwanda, Burundi, South Sudan and the Democratic Republic of Congo. The EAC allows tariff-free trade in most goods between members.
 
@@ -2720,7 +2720,7 @@ Using information from the text/data and your knowledge of economics, evaluate t
 
 4. Critics argue that trade diversion can outweigh trade creation in some sectors, while supporters highlight job creation and economies of scale for regional producers.
 
-**Table 2: Kenya — selected macroeconomic data**
+**Table 2: Kenya · selected macroeconomic data**
 
 | Year | Inflation (%) | Unemployment (%) | Exchange rate (KES per US$) | Current account (% of GDP) |
 |------|---------------|------------------|------------------------------|----------------------------|
@@ -2762,10 +2762,10 @@ Using information from the text/data and your knowledge of economics, discuss th
     id: "ib-p2-b",
     subject: "ib" as any,
     paper: "2",
-    title: "Paper 2 — Set B (Hard)",
-    description: "Data Response. Set B — Hard. Verbatim from official-style mock.",
+    title: "Paper 2 · Set B (Hard)",
+    description: "Data Response. Set B · Hard. Verbatim from official-style mock.",
     totalMarks: 40,
-    content: `# IB Diploma Economics (HL/SL) — Paper 2 — Predicted Paper Set B (Hard)
+    content: `# IB Diploma Economics (HL/SL) · Paper 2 · Predicted Paper Set B (Hard)
 
 **Time: 1 hour 45 minutes | Total: 40 marks**
 
@@ -2778,9 +2778,9 @@ Using information from the text/data and your knowledge of economics, discuss th
 
 **Answer one question.**
 
-## Question 1 — Argentina
+## Question 1 · Argentina
 
-**Text A — Argentina's Macroeconomic Crisis**
+**Text A · Argentina's Macroeconomic Crisis**
 
 1. Argentina has experienced repeated macroeconomic crises over recent decades. In 2023 annual inflation exceeded 140%, one of the highest rates in the world. Real GDP has stagnated, and the country entered another recession.
 
@@ -2794,7 +2794,7 @@ Using information from the text/data and your knowledge of economics, discuss th
 
 6. In late 2023 the new administration announced a shock-therapy stabilisation package: a large devaluation, deep cuts to public spending, removal of some price controls, and plans to dollarise the economy.
 
-**Text B — International Linkages and the IMF Programme**
+**Text B · International Linkages and the IMF Programme**
 
 1. Argentina is the largest debtor of the International Monetary Fund (IMF), owing more than $45 billion under a multi-year stand-by arrangement. IMF programmes usually require fiscal consolidation, monetary tightening and structural reforms in exchange for financial support.
 
@@ -2806,7 +2806,7 @@ Using information from the text/data and your knowledge of economics, discuss th
 
 5. High inflation discourages long-term investment and complicates business planning. Foreign investors cite macroeconomic instability as the principal barrier to investing in Argentina.
 
-**Table 1: Argentina — selected indicators**
+**Table 1: Argentina · selected indicators**
 
 | Year | CPI Inflation (%) | Real GDP growth (%) | Budget balance (% GDP) | Poverty rate (%) |
 |------|-------------------|---------------------|------------------------|------------------|
@@ -2843,9 +2843,9 @@ Using an AD/AS diagram, explain how the IMF-required fiscal consolidation (Text 
 Question 1 (g) [15 marks]
 Using information from the text/data and your knowledge of economics, evaluate the view that a shock-therapy stabilisation package is the most effective strategy to tackle Argentina's macroeconomic crisis.
 
-## Question 2 — India
+## Question 2 · India
 
-**Text A — India's Growth Story**
+**Text A · India's Growth Story**
 
 1. India has become the world's fifth largest economy, with **nominal GDP** of about $3.7 trillion in 2023. Real GDP growth averaged 6.5% per year between 2015 and 2019 and is expected to continue at 6–7% over the medium term.
 
@@ -2857,7 +2857,7 @@ Using information from the text/data and your knowledge of economics, evaluate t
 
 5. The Reserve Bank of India (RBI) operates an inflation targeting framework, aiming to keep CPI inflation within 4% ± 2%. Inflation exceeded 7% in 2022, prompting several policy rate rises.
 
-**Text B — India and Global Trade**
+**Text B · India and Global Trade**
 
 1. India runs a large trade deficit of around $240 billion in 2022–23, partly offset by surpluses in services trade and inflows of remittances from Indians working abroad.
 
@@ -2869,7 +2869,7 @@ Using information from the text/data and your knowledge of economics, evaluate t
 
 5. The rupee is allowed to float, although the RBI intervenes to smooth large fluctuations. The rupee depreciated by about 10% against the US dollar during 2022.
 
-**Table 2: India — selected indicators (2022–23)**
+**Table 2: India · selected indicators (2022–23)**
 
 | Indicator | Value |
 |-----------|-------|
@@ -2914,10 +2914,10 @@ Using information from the text/data and your knowledge of economics, discuss th
     id: "ib-p2-c",
     subject: "ib" as any,
     paper: "2",
-    title: "Paper 2 — Set C (Advanced)",
-    description: "Data Response. Set C — Advanced. Verbatim from official-style mock.",
+    title: "Paper 2 · Set C (Advanced)",
+    description: "Data Response. Set C · Advanced. Verbatim from official-style mock.",
     totalMarks: 40,
-    content: `# IB Diploma Economics (HL/SL) — Paper 2 — Predicted Paper Set C (Advanced)
+    content: `# IB Diploma Economics (HL/SL) · Paper 2 · Predicted Paper Set C (Advanced)
 
 **Time: 1 hour 45 minutes | Total: 40 marks**
 
@@ -2930,9 +2930,9 @@ Using information from the text/data and your knowledge of economics, discuss th
 
 **Answer one question.**
 
-## Question 1 — Nigeria
+## Question 1 · Nigeria
 
-**Text A — Nigeria's Dual Economy**
+**Text A · Nigeria's Dual Economy**
 
 1. Nigeria is Africa's largest economy by nominal GDP at $477 billion in 2022, and its most populous country with over 218 million inhabitants. Despite its size, Nigeria faces serious development challenges: nearly 40% of the population lives in extreme **poverty**, and the country is among the most unequal in the region.
 
@@ -2944,7 +2944,7 @@ Using information from the text/data and your knowledge of economics, discuss th
 
 5. Non-oil export diversification remains a policy priority. The African Continental Free Trade Area (AfCFTA) offers Nigeria access to a market of more than 1.3 billion consumers. The government hopes AfCFTA will stimulate the manufacturing sector, textiles and agribusiness.
 
-**Text B — Development and Inequality in Nigeria**
+**Text B · Development and Inequality in Nigeria**
 
 1. Nigeria scores 0.535 on the **Human Development Index (HDI)**, placing it 163rd out of 191 countries. Life expectancy at birth is 53 years and mean years of schooling are 7.6 years.
 
@@ -2958,7 +2958,7 @@ Using information from the text/data and your knowledge of economics, discuss th
 
 6. The Nigerian government has committed to structural reforms including removing fuel subsidies, broadening the tax base, tackling corruption and investing in education, but implementation has been uneven.
 
-**Table 1: Nigeria — development indicators**
+**Table 1: Nigeria · development indicators**
 
 | Year | HDI | Life expectancy (years) | GNI per capita (PPP US$) | CPI corruption rank (out of 180) |
 |------|-----|-------------------------|---------------------------|-----------------------------------|
@@ -2994,9 +2994,9 @@ Using a poverty-cycle or development diagram, explain how high corruption (Text 
 Question 1 (g) [15 marks]
 Using information from the text/data and your knowledge of economics, evaluate the view that participation in the AfCFTA (Text A, Paragraph 5) is the most effective strategy for achieving long-term economic development in Nigeria.
 
-## Question 2 — Brazil
+## Question 2 · Brazil
 
-**Text A — Brazil's Economic Transformation**
+**Text A · Brazil's Economic Transformation**
 
 1. Brazil is Latin America's largest economy with real GDP of approximately $1,920 billion in 2022. Once notorious for hyperinflation, Brazil has run an **inflation targeting** regime since 1999, with moderate success.
 
@@ -3008,7 +3008,7 @@ Using information from the text/data and your knowledge of economics, evaluate t
 
 5. Brazil's central bank raised the Selic policy rate to 13.75% in 2022 in response to global inflation pressures. This tight monetary stance slowed activity but helped bring inflation down to 4.6% by late 2023.
 
-**Text B — Brazil in the Global Economy**
+**Text B · Brazil in the Global Economy**
 
 1. Brazil is a member of the Southern Common Market (Mercosur), a customs union with Argentina, Uruguay and Paraguay. Mercosur is negotiating a long-delayed trade agreement with the European Union.
 
@@ -3020,7 +3020,7 @@ Using information from the text/data and your knowledge of economics, evaluate t
 
 5. Brazil is positioning itself as a leader in green growth, with large hydro-power capacity, ethanol production from sugarcane, and new investments in wind and solar. However, illegal deforestation continues to damage the country's environmental credentials.
 
-**Table 2: Brazil — selected indicators**
+**Table 2: Brazil · selected indicators**
 
 | Year | Real GDP growth (%) | Inflation (%) | Selic rate (%) | Exchange rate (BRL per US$) |
 |------|---------------------|---------------|----------------|------------------------------|
@@ -3063,10 +3063,10 @@ Using information from the text/data and your knowledge of economics, evaluate t
     id: "ib-p3-a",
     subject: "ib",
     paper: "3",
-    title: "Paper 3 — Set A (Moderate)",
-    description: "IB HL Paper 3 (policy paper). Set A — Moderate. Verbatim from official-style mock.",
+    title: "Paper 3 · Set A (Moderate)",
+    description: "IB HL Paper 3 (policy paper). Set A · Moderate. Verbatim from official-style mock.",
     totalMarks: 60,
-    content: `# IB Higher Level Economics — Paper 3 — Predicted Paper Set A (Moderate)
+    content: `# IB Higher Level Economics · Paper 3 · Predicted Paper Set A (Moderate)
 
 **Time: 1 hour | Total: 60 marks**
 
@@ -3077,7 +3077,7 @@ Using information from the text/data and your knowledge of economics, evaluate t
 - You must show all your working.
 - Use fully labelled diagrams where appropriate.
 
-## Question 1 — Palm oil in Indonesia
+## Question 1 · Palm oil in Indonesia
 
 Palm oil is the most widely consumed vegetable oil in the world, used in foods, cosmetics and biofuels. Indonesia is the largest producer, accounting for roughly 59% of global supply in 2022. Large-scale palm oil cultivation has been linked to deforestation, biodiversity loss and greenhouse-gas emissions, generating **negative externalities of production**.
 
@@ -3125,7 +3125,7 @@ Using the information above, state whether palm oil is price elastic or price in
 Question 1 (b) [10 marks]
 Using the text/data provided and your knowledge of economics, **recommend** a policy that the Indonesian government could introduce to reduce the environmental damage caused by palm-oil production.
 
-## Question 2 — Ethiopia
+## Question 2 · Ethiopia
 
 Ethiopia is one of the fastest-growing economies in sub-Saharan Africa. Despite strong growth, the country continues to face **high inflation**, a widening **current account deficit** and rising **unemployment** among youth. Table 1 below provides selected economic data for Ethiopia.
 
@@ -3171,10 +3171,10 @@ Using the text/data provided and your knowledge of economics, **recommend** a po
     id: "ib-p3-b",
     subject: "ib",
     paper: "3",
-    title: "Paper 3 — Set B (Hard)",
-    description: "IB HL Paper 3 (policy paper). Set B — Hard. Verbatim from official-style mock.",
+    title: "Paper 3 · Set B (Hard)",
+    description: "IB HL Paper 3 (policy paper). Set B · Hard. Verbatim from official-style mock.",
     totalMarks: 60,
-    content: `# IB Higher Level Economics — Paper 3 — Predicted Paper Set B (Hard)
+    content: `# IB Higher Level Economics · Paper 3 · Predicted Paper Set B (Hard)
 
 **Time: 1 hour | Total: 60 marks**
 
@@ -3185,7 +3185,7 @@ Using the text/data provided and your knowledge of economics, **recommend** a po
 - You must show all your working.
 - Use fully labelled diagrams where appropriate.
 
-## Question 1 — Vietnamese coffee
+## Question 1 · Vietnamese coffee
 
 Coffee is one of the most widely traded commodities in the world. Vietnam is the second-largest coffee producer globally, with approximately 600,000 smallholder farmers operating in what can be modelled as a **perfectly competitive** industry. Figure 1 illustrates the average cost (AC) and marginal cost (MC) of Firm X, a representative Vietnamese coffee farmer. The prevailing world price for robusta coffee is $4.00 per kg.
 
@@ -3233,7 +3233,7 @@ Distinguish between **allocative efficiency** and **productive efficiency**.
 Question 1 (b) [10 marks]
 Using the text/data provided and your knowledge of economics, **recommend** a policy that the Vietnamese government could introduce to address the negative externalities associated with coffee production while supporting smallholder incomes.
 
-## Question 2 — Turkey
+## Question 2 · Turkey
 
 Turkey is an emerging-market economy straddling Europe and Asia. In recent years it has experienced persistent inflation, a volatile exchange rate, and an enduring **current account deficit**. Table 1 contains selected data from Turkey's balance of payments for 2023.
 
@@ -3287,10 +3287,10 @@ Using the text/data provided and your knowledge of economics, **recommend** a po
     id: "ib-p3-c",
     subject: "ib",
     paper: "3",
-    title: "Paper 3 — Set C (Advanced)",
-    description: "IB HL Paper 3 (policy paper). Set C — Advanced. Verbatim from official-style mock.",
+    title: "Paper 3 · Set C (Advanced)",
+    description: "IB HL Paper 3 (policy paper). Set C · Advanced. Verbatim from official-style mock.",
     totalMarks: 60,
-    content: `# IB Higher Level Economics — Paper 3 — Predicted Paper Set C (Advanced)
+    content: `# IB Higher Level Economics · Paper 3 · Predicted Paper Set C (Advanced)
 
 **Time: 1 hour | Total: 60 marks**
 
@@ -3301,9 +3301,9 @@ Using the text/data provided and your knowledge of economics, **recommend** a po
 - You must show all your working.
 - Use fully labelled diagrams where appropriate.
 
-## Question 1 — UK grocery oligopoly
+## Question 1 · UK grocery oligopoly
 
-The United Kingdom grocery market is an **oligopoly**: in 2023 the four largest supermarkets — Tesco, Sainsbury's, Asda and Morrisons — held a combined market share of 65%. The industry features high concentration, product differentiation and significant barriers to entry. Firms rely heavily on non-price competition and **behavioural-economic** strategies such as loss-leader pricing, loyalty schemes and default meal deals.
+The United Kingdom grocery market is an **oligopoly**: in 2023 the four largest supermarkets · Tesco, Sainsbury's, Asda and Morrisons · held a combined market share of 65%. The industry features high concentration, product differentiation and significant barriers to entry. Firms rely heavily on non-price competition and **behavioural-economic** strategies such as loss-leader pricing, loyalty schemes and default meal deals.
 
 | Firm | Market share (%) |
 |------|------------------|
@@ -3339,7 +3339,7 @@ Using Table 1, identify the Nash equilibrium and explain your reasoning.
 Question 1 (a) (v) [2 marks]
 Distinguish between **collusive** and **non-collusive** oligopoly.
 
-Supermarkets use **choice architecture** — placing sugary snacks at child eye-level at checkouts — raising consumption of demerit goods. In 2022 the UK government banned such displays as a **nudge** to healthier eating.
+Supermarkets use **choice architecture** · placing sugary snacks at child eye-level at checkouts · raising consumption of demerit goods. In 2022 the UK government banned such displays as a **nudge** to healthier eating.
 
 Question 1 (a) (vi) [2 marks]
 Define the term **nudge**.
@@ -3353,7 +3353,7 @@ State **one** firm objective alternative to profit maximisation.
 Question 1 (b) [10 marks]
 Using the text/data provided and your knowledge of economics, **recommend** a policy that the UK government could introduce to protect consumers in the oligopolistic UK grocery market.
 
-## Question 2 — Bangladesh
+## Question 2 · Bangladesh
 
 Bangladesh has experienced strong economic growth since 2000, driven by its ready-made garment exports and remittances. Despite reaching **lower-middle-income** status, the country continues to face high levels of income inequality and rural poverty. Table 1 below shows the distribution of Bangladeshi household income by quintiles in 2022.
 
@@ -3401,22 +3401,22 @@ Using the text/data provided and your knowledge of economics, **recommend** a po
 `,
   },
   // ── WJEC A-Level Economics ──
-  // Paper 1 (A520U10-1) — Economic Principles. Verbatim sync with /wjec-mocks/paper-1-{moderate|hard|advanced}.pdf
+  // Paper 1 (A520U10-1) · Economic Principles. Verbatim sync with /wjec-mocks/paper-1-{moderate|hard|advanced}.pdf
   // Format: 20 MCQs (1 mark each) + Section B Q21–Q27 (3+6+3+4+8+8+8 = 40) → 60 marks total, 1h 30m.
   {
     id: "wjec-p1-a",
     subject: "wjec" as any,
     paper: "1",
-    title: "Paper 1 — Set A (Moderate)",
-    description: "Economic Principles (A520U10-1). Moderate difficulty — 20 MCQs + 7 structured questions.",
+    title: "Paper 1 · Set A (Moderate)",
+    description: "Economic Principles (A520U10-1). Moderate difficulty · 20 MCQs + 7 structured questions.",
     totalMarks: 60,
-    content: `# WJEC GCE A-Level Economics (A520U10-1) — Component 1: Economic Principles — Predicted Paper (Moderate)
+    content: `# WJEC GCE A-Level Economics (A520U10-1) · Component 1: Economic Principles · Predicted Paper (Moderate)
 
 **Time: 1 hour 30 minutes | Total: 60 marks**
 
 Answer ALL questions. The number of marks is given in brackets at the end of each question.
 
-## Section A — Multiple Choice (20 marks)
+## Section A · Multiple Choice (20 marks)
 
 For each question in Section A, write the letter (A, B, C, D or E) that corresponds to your answer in the box provided. You are advised to spend approximately 30 minutes on this section.
 
@@ -3589,7 +3589,7 @@ C. The tax will be borne mainly by consumers
 D. The tax will not affect price at all
 E. Quantity demanded will fall significantly
 
-## Section B — Structured Questions (40 marks)
+## Section B · Structured Questions (40 marks)
 
 Answer all the questions in the spaces provided.
 
@@ -3626,7 +3626,7 @@ Question 26 [8 marks]
 The UK has one of the highest levels of obesity in Europe, with around 26% of adults classified as obese. In 2018, the government introduced the Soft Drinks Industry Levy ('sugar tax') on drinks with high sugar content. Since then, many manufacturers have reformulated their drinks to reduce sugar content.
 
 Additional data:
-- UK obesity rate (adults): 2010 — 22%; 2023 — 26%
+- UK obesity rate (adults): 2010 · 22%; 2023 · 26%
 - NHS spending on obesity-related conditions: £6.5bn (2023)
 - Revenue from sugar tax: £300m (2023)
 - Reduction in sugar content in taxed drinks: 43% since 2018
@@ -3653,16 +3653,16 @@ Using the information above and relevant economic theory, discuss the extent to 
     id: "wjec-p1-b",
     subject: "wjec" as any,
     paper: "1",
-    title: "Paper 1 — Set B (Hard)",
-    description: "Economic Principles (A520U10-1). Hard difficulty — 20 MCQs + 7 structured questions.",
+    title: "Paper 1 · Set B (Hard)",
+    description: "Economic Principles (A520U10-1). Hard difficulty · 20 MCQs + 7 structured questions.",
     totalMarks: 60,
-    content: `# WJEC GCE A-Level Economics (A520U10-1) — Component 1: Economic Principles — Predicted Paper (Hard)
+    content: `# WJEC GCE A-Level Economics (A520U10-1) · Component 1: Economic Principles · Predicted Paper (Hard)
 
 **Time: 1 hour 30 minutes | Total: 60 marks**
 
 Answer ALL questions. The number of marks is given in brackets at the end of each question.
 
-## Section A — Multiple Choice (20 marks)
+## Section A · Multiple Choice (20 marks)
 
 For each question in Section A, write the letter (A, B, C, D or E) that corresponds to your answer in the box provided.
 
@@ -3826,7 +3826,7 @@ C. £3,960
 D. £4,800
 E. £5,400
 
-## Section B — Structured Questions (40 marks)
+## Section B · Structured Questions (40 marks)
 
 Answer all the questions in the spaces provided.
 
@@ -3837,7 +3837,7 @@ Using the diagram, explain why the firm earns only normal profit in the long run
 
 Question 22 [6 marks]
 The diagram below shows an economy in equilibrium at P₁Y₁. A major global supply-side shock (a sharp rise in world oil prices) hits the economy.
-[Diagram: AD/AS framework — SRAS, LRAS, AD intersecting at P₁Y₁]
+[Diagram: AD/AS framework · SRAS, LRAS, AD intersecting at P₁Y₁]
 Consider the extent to which monetary policy can restore the economy to its initial position. Adapt the diagram as part of your answer.
 
 Question 23 [3 marks]
@@ -3846,7 +3846,7 @@ With the aid of a diagram, comment on the likely price elasticity of supply of h
 
 Question 24 [4 marks]
 The diagram below shows the long-run average cost (LRAC) curve for an electricity generation firm. Output ranges from 100 MW to 5,000 MW.
-[Diagram: LRAC curve — falling sharply from 100 MW to 2,000 MW (minimum efficient scale), roughly flat from 2,000 to 4,000 MW, then rising after 4,000 MW]
+[Diagram: LRAC curve · falling sharply from 100 MW to 2,000 MW (minimum efficient scale), roughly flat from 2,000 to 4,000 MW, then rising after 4,000 MW]
 Explain the shape of this firm's long-run average cost curve, referring to the concepts of economies and diseconomies of scale.
 
 Question 25 [8 marks]
@@ -3894,16 +3894,16 @@ Using the information above and relevant economic theory, discuss the extent to 
     id: "wjec-p1-c",
     subject: "wjec" as any,
     paper: "1",
-    title: "Paper 1 — Set C (Advanced)",
-    description: "Economic Principles (A520U10-1). Advanced difficulty — 20 MCQs + 7 structured questions.",
+    title: "Paper 1 · Set C (Advanced)",
+    description: "Economic Principles (A520U10-1). Advanced difficulty · 20 MCQs + 7 structured questions.",
     totalMarks: 60,
-    content: `# WJEC GCE A-Level Economics (A520U10-1) — Component 1: Economic Principles — Predicted Paper (Advanced)
+    content: `# WJEC GCE A-Level Economics (A520U10-1) · Component 1: Economic Principles · Predicted Paper (Advanced)
 
 **Time: 1 hour 30 minutes | Total: 60 marks**
 
 Answer ALL questions. The number of marks is given in brackets at the end of each question.
 
-## Section A — Multiple Choice (20 marks)
+## Section A · Multiple Choice (20 marks)
 
 For each question in Section A, write the letter (A, B, C, D or E) that corresponds to your answer.
 
@@ -4067,7 +4067,7 @@ C. 260
 D. 280
 E. 300
 
-## Section B — Structured Questions (40 marks)
+## Section B · Structured Questions (40 marks)
 
 Answer all the questions in the spaces provided.
 
@@ -4141,7 +4141,7 @@ Using the information above and relevant economic theory, discuss the extent to 
 `,
   },
   // ─────────────────────────────────────────────────────────────────
-  // WJEC A-Level Economics — Component 2 (A520U20-1) — verbatim from
+  // WJEC A-Level Economics · Component 2 (A520U20-1) · verbatim from
   // /public/wjec-mocks/paper-2-{moderate|hard|advanced}.pdf.
   // Each paper = 80 marks (Section A 5+5+10+10+10=40, Section B 5+7+10+7+11=40).
   // ─────────────────────────────────────────────────────────────────
@@ -4149,22 +4149,22 @@ Using the information above and relevant economic theory, discuss the extent to 
     id: "wjec-p2-a",
     subject: "wjec" as any,
     paper: "2",
-    title: "Paper 2 — Set A (Moderate)",
-    description: "Component 2: Exploring Economic Behaviour — Moderate tier (verbatim from PDF).",
+    title: "Paper 2 · Set A (Moderate)",
+    description: "Component 2: Exploring Economic Behaviour · Moderate tier (verbatim from PDF).",
     totalMarks: 80,
-    content: `# WJEC GCE A LEVEL Economics — A520U10-1 — Component 2: Exploring Economic Behaviour — Predicted Paper (Moderate)
+    content: `# WJEC GCE A LEVEL Economics · A520U10-1 · Component 2: Exploring Economic Behaviour · Predicted Paper (Moderate)
 
 **Time: 2 hours 30 minutes | Total: 80 marks**
 
 Answer **all** questions.
 
-## SECTION A — The cost of going green
+## SECTION A · The cost of going green
 
 In 2019 the UK became the first major economy to pass a law committing it to net-zero greenhouse gas emissions by 2050. Reaching that target will require major structural change in the way the economy produces energy, transports people and goods, and heats homes.
 
 **The scale of the challenge.** Over the past decade the UK has made real progress in decarbonising its electricity supply. The share of electricity generated from renewable sources has risen sharply as old coal-fired power stations have been closed and replaced with wind and solar capacity (Figure 1).
 
-**Figure 1 — UK electricity generated from renewables (%)**
+**Figure 1 · UK electricity generated from renewables (%)**
 
 | Year | % |
 |---|---|
@@ -4172,7 +4172,7 @@ In 2019 the UK became the first major economy to pass a law committing it to net
 
 This shift has been supported by a combination of carbon pricing, subsidies for renewable developers (Contracts for Difference) and planning reform. However, electricity prices paid by UK households remain among the highest in Europe (Figure 2), partly because gas still sets the wholesale price during most hours of the year, and partly because green levies and network costs add around 25% to the typical bill.
 
-**Figure 2 — Domestic electricity prices in selected European countries (pence per kWh)**
+**Figure 2 · Domestic electricity prices in selected European countries (pence per kWh)**
 
 | Country | Price | Country | Price |
 |---|---|---|---|
@@ -4183,13 +4183,13 @@ This shift has been supported by a combination of carbon pricing, subsidies for 
 
 Critics point out that the transition also creates losers. Workers in carbon-intensive industries face the risk of job displacement, and low-income households spend a larger share of their income on energy, transport and food, all of which are affected by the rising price of carbon. Because the poorest 10% of UK households spend around 12% of their income on domestic energy, compared with just 3% for the richest 10%, carbon taxes risk being regressive unless the revenue is recycled back to households (Figure 3).
 
-**Figure 3 — Share of household income spent on domestic energy, by decile (D1 = poorest)**
+**Figure 3 · Share of household income spent on domestic energy, by decile (D1 = poorest)**
 
 | Decile | D1 | D2 | D3 | D4 | D5 | D6 | D7 | D8 | D9 | D10 |
 |---|---|---|---|---|---|---|---|---|---|---|
 | % of disposable income | 12 | 10 | 8 | 7 | 6 | 5 | 4.5 | 4 | 3.5 | 3 |
 
-**Policy options.** The government faces a choice between several policy instruments to drive the transition further. A higher carbon price would internalise the negative externality of emissions but risks accelerating cost-push inflation and damaging the competitiveness of energy-intensive manufacturing. Larger direct subsidies for heat pumps, insulation and electric vehicles would be more politically popular but require significant public spending at a time when the debt-to-GDP ratio is close to 100%. Tighter regulation — for example banning the sale of new gas boilers from 2035 — is cheaper for the Treasury but shifts the cost directly onto households.
+**Policy options.** The government faces a choice between several policy instruments to drive the transition further. A higher carbon price would internalise the negative externality of emissions but risks accelerating cost-push inflation and damaging the competitiveness of energy-intensive manufacturing. Larger direct subsidies for heat pumps, insulation and electric vehicles would be more politically popular but require significant public spending at a time when the debt-to-GDP ratio is close to 100%. Tighter regulation · for example banning the sale of new gas boilers from 2035 · is cheaper for the Treasury but shifts the cost directly onto households.
 
 At the same time, unilateral UK action can only deliver limited global impact. UK emissions account for less than 1% of the world total, so without broadly aligned action from large emitters such as China, the United States and India, the UK risks incurring the transition costs while capturing only a small share of the benefits.
 
@@ -4208,11 +4208,11 @@ Using the data, discuss whether government subsidies are the most effective way 
 Question 1.5 [10 marks]
 Using the data, discuss the extent to which the UK's transition to net zero will benefit low-income households.
 
-## SECTION B — Who wins at the checkout?
+## SECTION B · Who wins at the checkout?
 
 The UK grocery market is one of the most visible examples of oligopoly in the British economy. A small number of large supermarket chains account for the vast majority of grocery sales, with Tesco alone holding around 27% of the market. The market has changed significantly over the past decade as the German discounters Aldi and Lidl have expanded rapidly, forcing the established 'big four' (Tesco, Sainsbury's, Asda and Morrisons) to respond (Figure 1).
 
-**Figure 1 — Market shares of UK supermarkets (approximate, 2024, % of UK grocery sales)**
+**Figure 1 · Market shares of UK supermarkets (approximate, 2024, % of UK grocery sales)**
 
 | Tesco | Sainsbury's | Asda | Aldi | Morrisons | Lidl | Co-op | Waitrose | Iceland | Other |
 |---|---|---|---|---|---|---|---|---|---|
@@ -4222,7 +4222,7 @@ As the discounters have grown, competition on price has intensified. Tesco launc
 
 **Bob's Supermarket.** The data in Figure 2 show a simplified weekly cost and revenue schedule for a mid-sized supermarket, 'Bob's Supermarket', operating in a competitive town-centre location. Prices are shown per basket of goods.
 
-**Figure 2 — Bob's Supermarket: weekly price-quantity and cost schedule**
+**Figure 2 · Bob's Supermarket: weekly price-quantity and cost schedule**
 
 | Price/basket | Baskets/week | Total Cost |
 |---|---|---|
@@ -4264,20 +4264,20 @@ With reference to the data, discuss the extent to which oligopoly in the UK supe
     id: "wjec-p2-b",
     subject: "wjec" as any,
     paper: "2",
-    title: "Paper 2 — Set B (Hard)",
-    description: "Component 2: Exploring Economic Behaviour — Hard tier (verbatim from PDF).",
+    title: "Paper 2 · Set B (Hard)",
+    description: "Component 2: Exploring Economic Behaviour · Hard tier (verbatim from PDF).",
     totalMarks: 80,
-    content: `# WJEC GCE A LEVEL Economics — A520U20-1 — Component 2: Exploring Economic Behaviour — Predicted Paper (Hard)
+    content: `# WJEC GCE A LEVEL Economics · A520U20-1 · Component 2: Exploring Economic Behaviour · Predicted Paper (Hard)
 
 **Time: 2 hours 30 minutes | Total: 80 marks**
 
 Answer **all** questions.
 
-## SECTION A — A roof over your head
+## SECTION A · A roof over your head
 
-Few economic issues generate as much political heat in the UK as the price of housing. Over the last forty years, the average UK house price has risen much faster than average earnings, so that the ratio of house prices to incomes has roughly doubled (Figure 1). The gap is most extreme in London and the South East, where median house prices now stand at more than 12 times median earnings — well above the long-run average of around four times.
+Few economic issues generate as much political heat in the UK as the price of housing. Over the last forty years, the average UK house price has risen much faster than average earnings, so that the ratio of house prices to incomes has roughly doubled (Figure 1). The gap is most extreme in London and the South East, where median house prices now stand at more than 12 times median earnings · well above the long-run average of around four times.
 
-**Figure 1 — UK house price to earnings ratio, 1985-2024 (long-run average ≈ 4)**
+**Figure 1 · UK house price to earnings ratio, 1985-2024 (long-run average ≈ 4)**
 
 | Year | Ratio | Year | Ratio | Year | Ratio | Year | Ratio |
 |---|---|---|---|---|---|---|---|
@@ -4287,20 +4287,20 @@ Few economic issues generate as much political heat in the UK as the price of ho
 | 1991 | 3.3 | 2001 | 5.0 | 2011 | 6.9 | 2021 | 8.8 |
 | 1993 | 3.1 | 2003 | 5.8 | 2013 | 6.6 | 2023 | 8.3 |
 
-**Supply and demand.** Commentators disagree on the causes. On the demand side, real incomes, population growth, smaller household sizes and — until recently — historically low interest rates have all pushed demand upwards. Between 2009 and 2021 the Bank Rate averaged below 1%, making mortgages cheaper and encouraging purchasers to bid more. The Help to Buy scheme, which provided government-backed equity loans for buyers of new-build homes, is estimated by the NAO to have raised prices by around £16,000 for eligible homes.
+**Supply and demand.** Commentators disagree on the causes. On the demand side, real incomes, population growth, smaller household sizes and · until recently · historically low interest rates have all pushed demand upwards. Between 2009 and 2021 the Bank Rate averaged below 1%, making mortgages cheaper and encouraging purchasers to bid more. The Help to Buy scheme, which provided government-backed equity loans for buyers of new-build homes, is estimated by the NAO to have raised prices by around £16,000 for eligible homes.
 
 On the supply side, UK housebuilding has consistently fallen short of government targets. Against an official target of 300,000 new homes per year, completions have averaged around 220,000 over the last decade (Figure 2).
 
-**Figure 2 — UK annual housing completions vs government target (target = 300k)**
+**Figure 2 · UK annual housing completions vs government target (target = 300k)**
 
 | Year | Homes built (thousands) |
 |---|---|
 | 2014 | ~145 | 2015 | ~160 | 2016 | ~175 | 2017 | ~195 | 2018 | ~215 |
 | 2019 | ~220 | 2020 | ~185 | 2021 | ~210 | 2022 | ~235 | 2023 | ~230 |
 
-**The affordability squeeze.** Since 2022 the picture has changed. The Bank of England has raised interest rates sharply to fight inflation, pushing the average two-year fixed mortgage rate above 5%. For a typical first-time buyer, this has added several hundred pounds per month to their mortgage payments. At the same time, private rents have risen by around 9% a year, because landlords face higher mortgage costs of their own and some have left the market. The English Housing Survey estimates that 4.2 million households now spend more than 30% of their disposable income on housing — the accepted threshold for housing stress.
+**The affordability squeeze.** Since 2022 the picture has changed. The Bank of England has raised interest rates sharply to fight inflation, pushing the average two-year fixed mortgage rate above 5%. For a typical first-time buyer, this has added several hundred pounds per month to their mortgage payments. At the same time, private rents have risen by around 9% a year, because landlords face higher mortgage costs of their own and some have left the market. The English Housing Survey estimates that 4.2 million households now spend more than 30% of their disposable income on housing · the accepted threshold for housing stress.
 
-**Figure 3 — UK nominal wage growth vs private rent growth (% per year)**
+**Figure 3 · UK nominal wage growth vs private rent growth (% per year)**
 
 | Year | Nominal wage growth | Private rent growth |
 |---|---|---|
@@ -4311,7 +4311,7 @@ On the supply side, UK housebuilding has consistently fallen short of government
 
 **What the government could do.** Policy proposals fall into three broad groups. First, some argue for more aggressive supply-side action: planning reform, compulsory purchase of under-used urban land, and large-scale social housebuilding directly by local authorities. Second, others advocate demand-side measures such as stricter rules on mortgage lending or stamp duty reform. Third, rent controls have been proposed for the private rented sector, arguing that regulation is needed because tenants cannot easily relocate and face significant search and moving costs when choosing between landlords.
 
-Each approach has strengths and weaknesses. Supply-side reforms face significant political opposition from existing homeowners. Demand-side restrictions can lock first-time buyers out of the market altogether. And the economic evidence on rent controls is heavily contested: some studies suggest that controls reduce the quality and quantity of rental supply, while others find that moderate 'second-generation' controls — which cap increases rather than absolute rents — can protect existing tenants without greatly reducing supply.
+Each approach has strengths and weaknesses. Supply-side reforms face significant political opposition from existing homeowners. Demand-side restrictions can lock first-time buyers out of the market altogether. And the economic evidence on rent controls is heavily contested: some studies suggest that controls reduce the quality and quantity of rental supply, while others find that moderate 'second-generation' controls · which cap increases rather than absolute rents · can protect existing tenants without greatly reducing supply.
 
 Question 1.1 [5 marks]
 Using the data, explain why UK house prices have risen more quickly than average incomes over the past forty years.
@@ -4328,19 +4328,19 @@ Using the data, discuss the extent to which rent controls would be beneficial fo
 Question 1.5 [10 marks]
 Using the data, discuss whether increasing housing supply is the best way to solve the UK housing crisis.
 
-## SECTION B — Working in the gig economy
+## SECTION B · Working in the gig economy
 
-Over the past decade the UK labour market has been transformed by the rise of the 'gig economy'. The Office for National Statistics estimates that around 4.4 million people now do some paid work through digital platforms such as Uber, Deliveroo, Amazon Flex and TaskRabbit — up from fewer than 400,000 in 2016. For many of these workers, platform work is a second job that provides additional income; for others, it is their main source of earnings.
+Over the past decade the UK labour market has been transformed by the rise of the 'gig economy'. The Office for National Statistics estimates that around 4.4 million people now do some paid work through digital platforms such as Uber, Deliveroo, Amazon Flex and TaskRabbit · up from fewer than 400,000 in 2016. For many of these workers, platform work is a second job that provides additional income; for others, it is their main source of earnings.
 
 **Why workers and firms use platforms.** Workers report that the main advantages of gig work are flexibility and the ability to fit earning around caring responsibilities or studies. Firms, for their part, benefit from a large on-demand workforce without the fixed costs of employing staff directly, and without paying employer National Insurance, holiday pay or sick pay, because most gig workers are classified as self-employed rather than employees.
 
-**The other side of the coin.** Critics point out that the same features that make gig work attractive to firms can be damaging for workers. Platforms typically set the price of each ride or delivery unilaterally, and individual workers have no realistic ability to negotiate. Because switching between platforms is costly (each requires vehicle checks, training and a period of building up a reputation score), many workers effectively face a small number of dominant buyers for their labour — a situation sometimes described as 'platform monopsony'.
+**The other side of the coin.** Critics point out that the same features that make gig work attractive to firms can be damaging for workers. Platforms typically set the price of each ride or delivery unilaterally, and individual workers have no realistic ability to negotiate. Because switching between platforms is costly (each requires vehicle checks, training and a period of building up a reputation score), many workers effectively face a small number of dominant buyers for their labour · a situation sometimes described as 'platform monopsony'.
 
-**Figure 1 — Hourly labour supply schedule for a delivery platform**
+**Figure 1 · Hourly labour supply schedule for a delivery platform**
 
 | Hourly wage offered | Workers willing to supply labour | MRP of the last worker | Total wage bill |
 |---|---|---|---|
-| £8 | 0 | — | £0 |
+| £8 | 0 | · | £0 |
 | £9 | 10 | £18 | £90 |
 | £10 | 20 | £16 | £200 |
 | £11 | 30 | £14 | £330 |
@@ -4349,11 +4349,11 @@ Over the past decade the UK labour market has been transformed by the rise of th
 | £14 | 60 | £8 | £840 |
 | £15 | 70 | £6 | £1050 |
 
-**The minimum wage debate.** The National Living Wage, which applies to workers aged 21 and over, rose to £11.44 per hour in April 2024, with the Low Pay Commission aiming to reach two-thirds of median hourly earnings. Supporters argue that the minimum wage has raised the incomes of the lowest-paid workers without causing significant unemployment — exactly what standard theory predicts when employers have monopsony power. Critics respond that a rising minimum wage squeezes small businesses in low-wage sectors and that, in the longer term, firms respond by automating tasks previously done by low-paid workers.
+**The minimum wage debate.** The National Living Wage, which applies to workers aged 21 and over, rose to £11.44 per hour in April 2024, with the Low Pay Commission aiming to reach two-thirds of median hourly earnings. Supporters argue that the minimum wage has raised the incomes of the lowest-paid workers without causing significant unemployment · exactly what standard theory predicts when employers have monopsony power. Critics respond that a rising minimum wage squeezes small businesses in low-wage sectors and that, in the longer term, firms respond by automating tasks previously done by low-paid workers.
 
 Gig workers, however, are excluded from much of this protection because they are not technically employees. A series of high-profile legal cases, including the Supreme Court's 2021 ruling against Uber, have begun to narrow this gap. The Court ruled that Uber drivers were 'workers' under UK employment law and were entitled to the minimum wage, paid leave and whistleblowing protection. Similar challenges are continuing against other platforms.
 
-**Figure 2 — UK real wages and labour productivity, 1990-2023 (Index, 1990 = 100)**
+**Figure 2 · UK real wages and labour productivity, 1990-2023 (Index, 1990 = 100)**
 
 | Year | Real labour productivity | Real wages |
 |---|---|---|
@@ -4385,20 +4385,20 @@ With reference to the data, discuss the extent to which the growth of the gig ec
     id: "wjec-p2-c",
     subject: "wjec" as any,
     paper: "2",
-    title: "Paper 2 — Set C (Advanced)",
-    description: "Component 2: Exploring Economic Behaviour — Advanced tier (verbatim from PDF).",
+    title: "Paper 2 · Set C (Advanced)",
+    description: "Component 2: Exploring Economic Behaviour · Advanced tier (verbatim from PDF).",
     totalMarks: 80,
-    content: `# WJEC GCE A LEVEL Economics — A520U20-1 — Component 2: Exploring Economic Behaviour — Predicted Paper (Advanced)
+    content: `# WJEC GCE A LEVEL Economics · A520U20-1 · Component 2: Exploring Economic Behaviour · Predicted Paper (Advanced)
 
 **Time: 2 hours 30 minutes | Total: 80 marks**
 
 Answer **all** questions.
 
-## SECTION A — The productivity puzzle
+## SECTION A · The productivity puzzle
 
 For most of the post-war period, UK output per hour worked rose steadily at around 2-2.5% per year. Since the 2008 financial crisis, however, productivity growth has almost ground to a halt, averaging around 0.5% per year. This slowdown has become so persistent that economists refer to it as the 'UK productivity puzzle' (Figure 1). If productivity had continued to grow at the pre-crisis trend, UK GDP per capita would be around 25% higher today.
 
-**Figure 1 — UK labour productivity vs pre-crisis trend (Index, 1998 = 100)**
+**Figure 1 · UK labour productivity vs pre-crisis trend (Index, 1998 = 100)**
 
 | Year | Actual productivity | Pre-2008 trend |
 |---|---|---|
@@ -4408,19 +4408,19 @@ For most of the post-war period, UK output per hour worked rose steadily at arou
 
 **Possible explanations.** There is no consensus on the cause. One school of thought emphasises weak investment: UK business investment as a share of GDP has been below the G7 average for most of the past forty years (Figure 2). Low investment means a smaller capital stock per worker, and hence lower potential output per worker.
 
-**Figure 2 — Business investment as share of GDP, G7 comparison (Gross fixed capital formation, % of GDP, avg 2010-2022)**
+**Figure 2 · Business investment as share of GDP, G7 comparison (Gross fixed capital formation, % of GDP, avg 2010-2022)**
 
 | Country | Japan | Germany | France | Canada | US | Italy | UK |
 |---|---|---|---|---|---|---|---|
 | % of GDP | ~25.5 | ~23.0 | ~23.0 | ~23.5 | ~21.5 | ~20.5 | ~18.0 |
 
-A second school stresses structural change. Productivity growth in the finance and ICT sectors — which drove much of the pre-crisis acceleration — has slowed dramatically, while the rapidly growing service sectors such as hospitality and social care typically have lower productivity than manufacturing.
+A second school stresses structural change. Productivity growth in the finance and ICT sectors · which drove much of the pre-crisis acceleration · has slowed dramatically, while the rapidly growing service sectors such as hospitality and social care typically have lower productivity than manufacturing.
 
 A third argues that mismeasurement plays a role: digital goods and services often have very low marginal cost and are available free to consumers, so the value they generate may not be fully captured by GDP. If true, this implies that measured productivity understates actual welfare gains.
 
-**Demographic and fiscal pressures.** At the same time, the UK's population is ageing. The Office for Budget Responsibility projects that the old-age dependency ratio — the ratio of over-65s to people of working age — will rise from around 31% today to 47% by 2070. This has two major consequences. First, the potential growth rate of the economy falls, because a smaller share of the population is in work. Second, public spending on pensions, healthcare and long-term care rises faster than the tax base, putting pressure on the public finances (Figure 3).
+**Demographic and fiscal pressures.** At the same time, the UK's population is ageing. The Office for Budget Responsibility projects that the old-age dependency ratio · the ratio of over-65s to people of working age · will rise from around 31% today to 47% by 2070. This has two major consequences. First, the potential growth rate of the economy falls, because a smaller share of the population is in work. Second, public spending on pensions, healthcare and long-term care rises faster than the tax base, putting pressure on the public finances (Figure 3).
 
-**Figure 3 — Old-age dependency and projected debt interest, UK**
+**Figure 3 · Old-age dependency and projected debt interest, UK**
 
 | Year | Old-age dependency ratio (%) | Debt interest (% of GDP) |
 |---|---|---|
@@ -4429,7 +4429,7 @@ A third argues that mismeasurement plays a role: digital goods and services ofte
 | ~2025 | ~43 | ~4.2 | ~2030 | ~45 | ~5.0 | ~2035 | ~47 | ~5.8 |
 | ~2040 | ~49 | ~6.5 | | | | | | |
 
-UK public sector net debt has risen from around 35% of GDP in 2007 to close to 100% today. With interest rates higher than in the 2010s, debt interest now absorbs around 8% of total government spending — more than is spent on defence or transport. Economists disagree about the significance. Some argue that fiscal space is genuinely constrained and that any new spending must be funded by tax rises or spending cuts elsewhere. Others argue that well-targeted public investment — particularly in research and development, infrastructure and skills — can pay for itself over time by raising the growth rate.
+UK public sector net debt has risen from around 35% of GDP in 2007 to close to 100% today. With interest rates higher than in the 2010s, debt interest now absorbs around 8% of total government spending · more than is spent on defence or transport. Economists disagree about the significance. Some argue that fiscal space is genuinely constrained and that any new spending must be funded by tax rises or spending cuts elsewhere. Others argue that well-targeted public investment · particularly in research and development, infrastructure and skills · can pay for itself over time by raising the growth rate.
 
 **Policy responses.** The UK government has proposed a range of supply-side policies including 'full expensing' of business investment in plant and machinery, reforms to the R&D tax credits system, planning reforms to accelerate infrastructure delivery, and changes to the apprenticeship levy. The Bank of England, meanwhile, has highlighted long-run risks to potential output from the post-pandemic rise in long-term sickness, which has pushed several hundred thousand people out of the labour force.
 
@@ -4448,11 +4448,11 @@ Using the data, discuss the extent to which rising public debt limits the UK gov
 Question 1.5 [10 marks]
 Using the data, discuss whether the UK's productivity problems are primarily structural or cyclical.
 
-## SECTION B — Too big to compete?
+## SECTION B · Too big to compete?
 
-Over the past two decades a small number of digital platforms — Alphabet (Google), Amazon, Apple, Meta (Facebook) and Microsoft — have come to dominate major segments of the global economy. Between them they account for well over half of global digital advertising, more than 80% of mobile operating systems and a rising share of cloud computing and AI infrastructure. Their revenues and, in particular, their operating margins, far exceed those of traditional firms (Figure 1).
+Over the past two decades a small number of digital platforms · Alphabet (Google), Amazon, Apple, Meta (Facebook) and Microsoft · have come to dominate major segments of the global economy. Between them they account for well over half of global digital advertising, more than 80% of mobile operating systems and a rising share of cloud computing and AI infrastructure. Their revenues and, in particular, their operating margins, far exceed those of traditional firms (Figure 1).
 
-**Figure 1 — Operating margins and R&D intensity, large US tech firms (2023)**
+**Figure 1 · Operating margins and R&D intensity, large US tech firms (2023)**
 
 | Firm | Operating margin (%) | R&D as % of revenue |
 |---|---|---|
@@ -4463,7 +4463,7 @@ Over the past two decades a small number of digital platforms — Alphabet (Goog
 
 Figure 2 shows a stylised monthly cost and revenue schedule for 'PlatformCo', a dominant digital platform. All values are in millions of pounds.
 
-**Figure 2 — PlatformCo: monthly price, quantity and cost schedule**
+**Figure 2 · PlatformCo: monthly price, quantity and cost schedule**
 
 | Price (£/user) | Users (m) | Total Cost (£m) |
 |---|---|---|
@@ -4477,9 +4477,9 @@ Figure 2 shows a stylised monthly cost and revenue schedule for 'PlatformCo', a 
 | £30 | 7 | £335 |
 | £20 | 8 | £420 |
 
-**Innovation and consumer welfare.** Defenders of big tech argue that high monopoly profits have funded unprecedented levels of investment in research and development. Alphabet and Microsoft each spend more on R&D each year than the entire UK government, and much of this spending has translated into products that consumers use for free. On this view, the large producer surplus earned by dominant platforms is a reward for innovation, and attempts to constrain it — whether through structural break-up, price regulation or mandatory interoperability — risk reducing the incentive to innovate.
+**Innovation and consumer welfare.** Defenders of big tech argue that high monopoly profits have funded unprecedented levels of investment in research and development. Alphabet and Microsoft each spend more on R&D each year than the entire UK government, and much of this spending has translated into products that consumers use for free. On this view, the large producer surplus earned by dominant platforms is a reward for innovation, and attempts to constrain it · whether through structural break-up, price regulation or mandatory interoperability · risk reducing the incentive to innovate.
 
-**The case for regulation.** Critics reply that the welfare effects of platform dominance are more complex. When consumers pay nothing for a service such as search or social networking, traditional measures of consumer surplus based on price do not capture the cost to users. Instead, users pay with attention and personal data, and they may be exposed to lower-quality services, weaker privacy protection or higher advertising loads than would prevail in a competitive market. There is also growing evidence that dominant platforms use their position in one market to foreclose competition in adjacent markets — for example by favouring their own products in search results or app stores.
+**The case for regulation.** Critics reply that the welfare effects of platform dominance are more complex. When consumers pay nothing for a service such as search or social networking, traditional measures of consumer surplus based on price do not capture the cost to users. Instead, users pay with attention and personal data, and they may be exposed to lower-quality services, weaker privacy protection or higher advertising loads than would prevail in a competitive market. There is also growing evidence that dominant platforms use their position in one market to foreclose competition in adjacent markets · for example by favouring their own products in search results or app stores.
 
 The UK Digital Markets, Competition and Consumers Act 2024 gives the CMA new powers to designate firms with 'strategic market status' and to impose bespoke conduct requirements on them. The EU's Digital Markets Act (2022) takes a similar ex-ante approach in Europe, while the United States has so far relied on case-by-case antitrust litigation. Each of these frameworks faces difficult trade-offs between deterring harmful conduct, preserving incentives to innovate, and keeping up with fast-moving technological change.
 
@@ -4502,7 +4502,7 @@ With reference to the data, discuss the extent to which ex-ante regulation (such
 `,
   },
   // ─────────────────────────────────────────────────────────────────
-  // WJEC A-Level Economics — A2 Unit 3 (1520U30-1) — verbatim from
+  // WJEC A-Level Economics · A2 Unit 3 (1520U30-1) · verbatim from
   // /public/wjec-mocks/paper-3-{moderate|hard|advanced}.pdf.
   // Each paper = 80 marks (Section A 8+7+8+6+11=40, Section B 10+8+10+12=40).
   // ─────────────────────────────────────────────────────────────────
@@ -4510,10 +4510,10 @@ With reference to the data, discuss the extent to which ex-ante regulation (such
     id: "wjec-p3-a",
     subject: "wjec" as any,
     paper: "3",
-    title: "Paper 3 — Set A (Moderate)",
-    description: "A2 Unit 3: Exploring Economic Behaviour — Moderate tier (verbatim from PDF).",
+    title: "Paper 3 · Set A (Moderate)",
+    description: "A2 Unit 3: Exploring Economic Behaviour · Moderate tier (verbatim from PDF).",
     totalMarks: 80,
-    content: `# WJEC GCE A LEVEL Economics — 1520U30-1 — A2 Unit 3: Exploring Economic Behaviour — Predicted Paper (Moderate)
+    content: `# WJEC GCE A LEVEL Economics · 1520U30-1 · A2 Unit 3: Exploring Economic Behaviour · Predicted Paper (Moderate)
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -4598,7 +4598,7 @@ Using the data in Figure 2, calculate a price index for the UK in March 2023, ta
 Question 5 (b) [8 marks]
 Assess whether the UK is likely to experience a wage-price spiral.
 
-## SECTION B — The UK Cost of Living Crisis
+## SECTION B · The UK Cost of Living Crisis
 
 Between 2021 and 2024, UK households experienced the most severe squeeze on living standards since the 1950s. Consumer prices rose by over 20% cumulatively, while average real wages fell for much of the period. Low-income households were hit hardest, as essentials such as food and energy make up a larger share of their spending.
 
@@ -4674,10 +4674,10 @@ With reference to the case study, discuss whether living standards in the UK are
     id: "wjec-p3-b",
     subject: "wjec" as any,
     paper: "3",
-    title: "Paper 3 — Set B (Hard)",
-    description: "A2 Unit 3: Exploring Economic Behaviour — Hard tier (verbatim from PDF).",
+    title: "Paper 3 · Set B (Hard)",
+    description: "A2 Unit 3: Exploring Economic Behaviour · Hard tier (verbatim from PDF).",
     totalMarks: 80,
-    content: `# WJEC GCE A LEVEL Economics — 1520U30-1 — A2 Unit 3: Exploring Economic Behaviour — Predicted Paper (Hard)
+    content: `# WJEC GCE A LEVEL Economics · 1520U30-1 · A2 Unit 3: Exploring Economic Behaviour · Predicted Paper (Hard)
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -4754,12 +4754,12 @@ Using the data in Figure 2, calculate a price index for Japan in April 2023, tak
 | 2022 | 99 | 102 |
 | 2023 | 100 | 100 |
 
-In Japan's 'shuntō' (spring wage negotiations), 2023 delivered average wage rises of 3.6% — the largest in thirty years — and 2024 produced 5.1% rises. However, real wages remained negative for 21 consecutive months through 2024.
+In Japan's 'shuntō' (spring wage negotiations), 2023 delivered average wage rises of 3.6% · the largest in thirty years · and 2024 produced 5.1% rises. However, real wages remained negative for 21 consecutive months through 2024.
 
 Question 5 (b) [8 marks]
 Assess whether Japan is likely to experience a wage-price spiral.
 
-## SECTION B — Japan's yen crisis and 'Abenomics' reckoning
+## SECTION B · Japan's yen crisis and 'Abenomics' reckoning
 
 In 2022 the Japanese yen (¥) collapsed to a 32-year low against the US dollar, depreciating from ¥115/US$ at the start of the year to over ¥150/US$ by October. Although the yen recovered partially by 2024, it remained historically weak, touching ¥161/US$ in July 2024 before the Bank of Japan finally ended its negative-interest-rate policy. Japan is the world's third-largest economy and its currency moves have global financial market implications.
 
@@ -4780,9 +4780,9 @@ Japan is highly dependent on imports of energy and food. The country imports aro
 | Wheat (¥/tonne) | 27,000 | 54,000 |
 | Beef (¥/kg import) | 760 | 1,320 |
 
-Japanese firms have absorbed much of these cost increases, with profit margins squeezed. However, from 2023 onward, companies began passing costs through to consumers: in a society where price rises were long considered taboo, firms such as Yamazaki Baking and Kewpie mayonnaise increased prices repeatedly, to consumer outcry. Small businesses have been particularly vulnerable — Teikoku Databank recorded a 30% year-on-year rise in corporate bankruptcies in 2023, with yen weakness cited as a primary factor for import-dependent firms.
+Japanese firms have absorbed much of these cost increases, with profit margins squeezed. However, from 2023 onward, companies began passing costs through to consumers: in a society where price rises were long considered taboo, firms such as Yamazaki Baking and Kewpie mayonnaise increased prices repeatedly, to consumer outcry. Small businesses have been particularly vulnerable · Teikoku Databank recorded a 30% year-on-year rise in corporate bankruptcies in 2023, with yen weakness cited as a primary factor for import-dependent firms.
 
-Japan's central bank faced a policy dilemma. Raising interest rates would support the yen and tame imported inflation, but risked triggering a 'carry-trade unwind' — global investors have borrowed yen cheaply for decades to invest in higher-yielding assets abroad, and a Japanese rate rise could cause sharp global market volatility (as was briefly seen in August 2024). Higher rates would also raise debt-service costs on Japan's government debt, which at 263% of GDP is the highest of any developed economy. Alternatively, the BoJ could intervene directly in currency markets by selling US dollars and buying yen.
+Japan's central bank faced a policy dilemma. Raising interest rates would support the yen and tame imported inflation, but risked triggering a 'carry-trade unwind' · global investors have borrowed yen cheaply for decades to invest in higher-yielding assets abroad, and a Japanese rate rise could cause sharp global market volatility (as was briefly seen in August 2024). Higher rates would also raise debt-service costs on Japan's government debt, which at 263% of GDP is the highest of any developed economy. Alternatively, the BoJ could intervene directly in currency markets by selling US dollars and buying yen.
 
 **Figure 2: Japan's foreign exchange reserves (US$ billion, month-end)**
 
@@ -4790,13 +4790,13 @@ Japan's central bank faced a policy dilemma. Raising interest rates would suppor
 |---|---|---|---|---|---|---|
 | Forex reserves (US$bn) | 1,386 | 1,323 | 1,194 | 1,228 | 1,253 | 1,219 |
 
-In September and October 2022, Japan spent over ¥9 trillion (US$65bn) of its reserves intervening to support the yen — the largest yen-buying intervention in history. A further ¥9.8 trillion was spent in April and May 2024. While these interventions temporarily slowed the yen's slide, they did not reverse the trend until the BoJ finally raised rates in July 2024.
+In September and October 2022, Japan spent over ¥9 trillion (US$65bn) of its reserves intervening to support the yen · the largest yen-buying intervention in history. A further ¥9.8 trillion was spent in April and May 2024. While these interventions temporarily slowed the yen's slide, they did not reverse the trend until the BoJ finally raised rates in July 2024.
 
-The weak yen has had mixed effects on Japan's current account. Japan's famed exporters — Toyota, Sony, Nintendo — have benefited from more competitive prices abroad and a translation boost when foreign earnings are converted to yen. Japan's tourism sector has boomed, with inbound visitor numbers exceeding pre-COVID levels in 2024. However, Japan's energy and food import bill has ballooned, and many of Japan's export 'champions' now produce much of their output overseas, reducing the boost to the trade balance from a weak yen.
+The weak yen has had mixed effects on Japan's current account. Japan's famed exporters · Toyota, Sony, Nintendo · have benefited from more competitive prices abroad and a translation boost when foreign earnings are converted to yen. Japan's tourism sector has boomed, with inbound visitor numbers exceeding pre-COVID levels in 2024. However, Japan's energy and food import bill has ballooned, and many of Japan's export 'champions' now produce much of their output overseas, reducing the boost to the trade balance from a weak yen.
 
-Some economists argue Japan's problems are structural rather than cyclical. Japan's population is ageing rapidly — the working-age population has shrunk by over 12 million since 1995. Productivity growth has been sluggish (around 0.5% per year since 2000). Labour market rigidities mean wages adjust slowly, and 'lifetime employment' norms can discourage labour mobility. Critics of 'Abenomics' — the reform programme launched by the late PM Shinzo Abe in 2013 — argue that while the first two 'arrows' (loose monetary policy, fiscal expansion) were fired, the crucial 'third arrow' of structural reform was never delivered.
+Some economists argue Japan's problems are structural rather than cyclical. Japan's population is ageing rapidly · the working-age population has shrunk by over 12 million since 1995. Productivity growth has been sluggish (around 0.5% per year since 2000). Labour market rigidities mean wages adjust slowly, and 'lifetime employment' norms can discourage labour mobility. Critics of 'Abenomics' · the reform programme launched by the late PM Shinzo Abe in 2013 · argue that while the first two 'arrows' (loose monetary policy, fiscal expansion) were fired, the crucial 'third arrow' of structural reform was never delivered.
 
-**Table 2: Japan — selected indicators**
+**Table 2: Japan · selected indicators**
 
 | Indicator | Japan | OECD average | G7 average |
 |---|---|---|---|
@@ -4834,10 +4834,10 @@ With reference to the case study, discuss whether living standards in Japan are 
     id: "wjec-p3-c",
     subject: "wjec" as any,
     paper: "3",
-    title: "Paper 3 — Set C (Advanced)",
-    description: "A2 Unit 3: Exploring Economic Behaviour — Advanced tier (verbatim from PDF).",
+    title: "Paper 3 · Set C (Advanced)",
+    description: "A2 Unit 3: Exploring Economic Behaviour · Advanced tier (verbatim from PDF).",
     totalMarks: 80,
-    content: `# WJEC GCE A LEVEL Economics — 1520U30-1 — A2 Unit 3: Exploring Economic Behaviour — Predicted Paper (Advanced)
+    content: `# WJEC GCE A LEVEL Economics · 1520U30-1 · A2 Unit 3: Exploring Economic Behaviour · Predicted Paper (Advanced)
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -4867,9 +4867,9 @@ Explain why regulators often set a price equal to average cost (AC) rather than 
 
 **Question 3.** YPF (Yacimientos Petrolíferos Fiscales) is Argentina's largest oil and gas producer. Founded as a state enterprise in 1922, YPF was privatised in 1993 and sold to Spain's Repsol, becoming one of Latin America's largest-ever privatisations. In 2012, President Cristina Fernández de Kirchner re-nationalised 51% of YPF, citing underinvestment by Repsol and declining production. Argentina paid US$5 billion in compensation after prolonged legal disputes.
 
-In 2023–2024, Argentina's new President Javier Milei — a self-described libertarian — announced plans to re-privatise YPF again, along with the national airline Aerolíneas Argentinas, the state media holding, and a number of other state-owned enterprises. Milei argues that state ownership has distorted incentives, accumulated losses (Aerolíneas has required repeated government bailouts), and diverted scarce fiscal resources from public services. Critics argue that previous Argentine privatisations (including YPF itself in 1993) produced uneven results, and that under Milei's 'shock therapy' approach, assets may be sold quickly and below fair value.
+In 2023–2024, Argentina's new President Javier Milei · a self-described libertarian · announced plans to re-privatise YPF again, along with the national airline Aerolíneas Argentinas, the state media holding, and a number of other state-owned enterprises. Milei argues that state ownership has distorted incentives, accumulated losses (Aerolíneas has required repeated government bailouts), and diverted scarce fiscal resources from public services. Critics argue that previous Argentine privatisations (including YPF itself in 1993) produced uneven results, and that under Milei's 'shock therapy' approach, assets may be sold quickly and below fair value.
 
-Argentina faces particular challenges with privatisation: the peso has lost over 90% of its value since 2018; inflation ran above 200% in 2023; investors face currency controls and risk premiums are high; and Argentina has restructured its sovereign debt nine times since independence. The Vaca Muerta shale formation, in which YPF has major holdings, is one of the world's largest unconventional oil and gas resources — but developing it requires substantial foreign investment.
+Argentina faces particular challenges with privatisation: the peso has lost over 90% of its value since 2018; inflation ran above 200% in 2023; investors face currency controls and risk premiums are high; and Argentina has restructured its sovereign debt nine times since independence. The Vaca Muerta shale formation, in which YPF has major holdings, is one of the world's largest unconventional oil and gas resources · but developing it requires substantial foreign investment.
 
 Question 3 [8 marks]
 Evaluate the view that Argentina's planned privatisation programme is likely to be successful.
@@ -4924,23 +4924,23 @@ Argentine trade unions have historically indexed wages formally to past inflatio
 Question 5 (b) [8 marks]
 Assess whether Argentina is likely to experience a continued wage-price spiral in 2024–2025.
 
-## SECTION B — Argentina's peso crisis, Milei's 'chainsaw' and the IMF
+## SECTION B · Argentina's peso crisis, Milei's 'chainsaw' and the IMF
 
 In December 2023, libertarian economist Javier Milei was inaugurated as Argentina's President after a remarkable electoral victory. Brandishing a chainsaw during campaign rallies to symbolise his plans to cut the state, Milei promised 'shock therapy' to rescue an economy facing collapse. On his first full day in office, Milei's Economy Minister devalued the official peso by 54% and announced sweeping spending cuts.
 
-**Figure 1: Argentine peso (ARS) per US dollar, 2019–2024 (official exchange rate)** *(A higher number means a weaker peso — the peso has lost more than 96% of its official US dollar value since 2019.)*
+**Figure 1: Argentine peso (ARS) per US dollar, 2019–2024 (official exchange rate)** *(A higher number means a weaker peso · the peso has lost more than 96% of its official US dollar value since 2019.)*
 
 | Date | Jan 2019 | Jan 2021 | Jan 2023 | Dec 2023 | Jun 2024 | Nov 2024 |
 |---|---|---|---|---|---|---|
 | ARS per US$ | 38 | 85 | 185 | 800 | 900 | 1,025 |
 
-Argentina's economic troubles are long-standing but acute. In 2022, public debt stood at 85% of GDP. Around 40% of this debt was denominated in US dollars. By late 2023, 70% of Argentine federal tax revenue was being spent on debt-service costs alone. The Central Bank of Argentina had almost no net foreign reserves — when Milei took office, net reserves were estimated at minus US$11 billion.
+Argentina's economic troubles are long-standing but acute. In 2022, public debt stood at 85% of GDP. Around 40% of this debt was denominated in US dollars. By late 2023, 70% of Argentine federal tax revenue was being spent on debt-service costs alone. The Central Bank of Argentina had almost no net foreign reserves · when Milei took office, net reserves were estimated at minus US$11 billion.
 
 Argentina's parallel exchange rate (the 'blue dollar' rate available on informal markets) diverged wildly from the official rate during periods of capital controls. In mid-2023, the blue dollar rate was more than double the official rate, reflecting severe lack of confidence in the peso.
 
-Argentine firms have been hammered by peso weakness and global supply shocks. Imports priced in dollars — machinery, fuels, fertilisers, pharmaceuticals — have risen sharply in peso terms (Table 1). Argentine manufacturers have laid off workers, reduced output, or exited the market.
+Argentine firms have been hammered by peso weakness and global supply shocks. Imports priced in dollars · machinery, fuels, fertilisers, pharmaceuticals · have risen sharply in peso terms (Table 1). Argentine manufacturers have laid off workers, reduced output, or exited the market.
 
-**Table 1: Prices of selected Argentine imports (US$ and implied peso terms — peso changes reflect both US$ price changes and the peso's depreciation from ~85 to ~1,000 per US$)**
+**Table 1: Prices of selected Argentine imports (US$ and implied peso terms · peso changes reflect both US$ price changes and the peso's depreciation from ~85 to ~1,000 per US$)**
 
 | Commodity | 2020 US$ price | 2024 US$ price | % change in peso terms |
 |---|---|---|---|
@@ -4949,14 +4949,14 @@ Argentine firms have been hammered by peso weakness and global supply shocks. Im
 | Natural gas (US$/mmbtu) | 2.60 | 3.20 | +3,000% |
 | Fertiliser (US$/tonne) | 280 | 380 | +3,150% |
 
-The sustained depreciation of the peso has caused severe policy challenges. Investors have repeatedly fled the peso, worsening the currency's decline. Between 2021 and 2023, Argentina experienced capital outflows of over US$15 billion per year, draining reserves and raising country risk premiums. Sovereign bond yields exceeded 30% at times — making new borrowing effectively impossible.
+The sustained depreciation of the peso has caused severe policy challenges. Investors have repeatedly fled the peso, worsening the currency's decline. Between 2021 and 2023, Argentina experienced capital outflows of over US$15 billion per year, draining reserves and raising country risk premiums. Sovereign bond yields exceeded 30% at times · making new borrowing effectively impossible.
 
 **Figure 2: Argentina Central Bank net international reserves, 2019–2024 (US$ billion)**
 
 | Year | 2019 | 2020 | 2021 | 2022 | 2023 (Nov) | 2024 (Oct) |
 |---|---|---|---|---|---|---|
 
-Regardless of the path chosen, the short-term human cost of adjustment has been severe. Food banks report unprecedented demand. Whether Argentina can sustain the reform momentum, rebuild its real economy, and deliver genuine improvements in living standards — rather than just stabilising prices — is the question that will shape South America's second-largest economy for years to come.
+Regardless of the path chosen, the short-term human cost of adjustment has been severe. Food banks report unprecedented demand. Whether Argentina can sustain the reform momentum, rebuild its real economy, and deliver genuine improvements in living standards · rather than just stabilising prices · is the question that will shape South America's second-largest economy for years to come.
 
 Question 6 (a) (i) [2 marks]
 Using the data in Table 1, calculate the percentage change in the US dollar price of diesel fuel between 2020 and 2024. You are advised to show your working.
@@ -4985,16 +4985,16 @@ With reference to the case study, discuss whether living standards in Argentina 
     id: "eduqas-p1-a",
     subject: "eduqas" as any,
     paper: "1",
-    title: "Paper 1 — Set A (Moderate)",
-    description: "Component 1: Economic Principles (A520U10-1). Moderate — 20 MCQs + 6 structured.",
+    title: "Paper 1 · Set A (Moderate)",
+    description: "Component 1: Economic Principles (A520U10-1). Moderate · 20 MCQs + 6 structured.",
     totalMarks: 60,
-    content: `# Eduqas A-Level Economics (A520U10-1) — Component 1: Economic Principles — Predicted Paper (Moderate)
+    content: `# Eduqas A-Level Economics (A520U10-1) · Component 1: Economic Principles · Predicted Paper (Moderate)
 
 **Time: 1 hour 30 minutes | Total: 60 marks**
 
 Answer ALL questions. The number of marks is given in brackets at the end of each question or part-question.
 
-## Section A — Multiple Choice (20 marks)
+## Section A · Multiple Choice (20 marks)
 
 For each question in Section A, write the letter (A, B, C, D or E) that corresponds to your answer in the box provided. You are advised to spend approximately 30 minutes on this section.
 
@@ -5168,15 +5168,15 @@ C. £2,000
 D. £2,800
 E. £3,200
 
-## Section B — Structured Questions (40 marks)
+## Section B · Structured Questions (40 marks)
 
 Question 21 [4 marks]
 The charts below show (1) the Sterling exchange rate index (2015 = 100) and (2) the UK's current account balance (% of GDP) between 2016 and 2023.
 
-Chart 1 — Sterling effective exchange rate index (2015 = 100):
+Chart 1 · Sterling effective exchange rate index (2015 = 100):
 2016: 100 | 2017: 90 | 2018: 92 | 2019: 89 | 2020: 86 | 2021: 92 | 2022: 83 | 2023: 88
 
-Chart 2 — UK current account balance (% of GDP):
+Chart 2 · UK current account balance (% of GDP):
 2016: −5.4% | 2017: −3.8% | 2018: −3.9% | 2019: −2.7% | 2020: −2.7% | 2021: −1.5% | 2022: −3.1% | 2023: −2.0%
 
 Using the data, explain the possible link between the two charts.
@@ -5236,16 +5236,16 @@ Using supply and demand diagram(s), discuss whether the data suggests that coffe
     id: "eduqas-p1-b",
     subject: "eduqas" as any,
     paper: "1",
-    title: "Paper 1 — Set B (Hard)",
-    description: "Component 1: Economic Principles (A520U10-1). Hard — 20 MCQs + 6 structured.",
+    title: "Paper 1 · Set B (Hard)",
+    description: "Component 1: Economic Principles (A520U10-1). Hard · 20 MCQs + 6 structured.",
     totalMarks: 60,
-    content: `# Eduqas A-Level Economics (A520U10-1) — Component 1: Economic Principles — Predicted Paper (Hard)
+    content: `# Eduqas A-Level Economics (A520U10-1) · Component 1: Economic Principles · Predicted Paper (Hard)
 
 **Time: 1 hour 30 minutes | Total: 60 marks**
 
 Answer ALL questions. The number of marks is given in brackets at the end of each question or part-question.
 
-## Section A — Multiple Choice (20 marks)
+## Section A · Multiple Choice (20 marks)
 
 For each question in Section A, write the letter (A, B, C, D or E) that corresponds to your answer in the box provided. You are advised to spend approximately 30 minutes on this section.
 
@@ -5426,15 +5426,15 @@ C. There is a rate of taxation that maximises tax revenue, beyond which further 
 D. All governments should cut taxes
 E. Income taxes should always be lower than corporate taxes
 
-## Section B — Structured Questions (40 marks)
+## Section B · Structured Questions (40 marks)
 
 Question 21 [4 marks]
 The charts below show (1) the US Federal Reserve's policy interest rate and (2) the USD/EUR exchange rate over the same period.
 
-Chart 1 — Federal Reserve policy rate (%):
+Chart 1 · Federal Reserve policy rate (%):
 Jan 2022: 0.25 | Jun 2022: 1.75 | Dec 2022: 4.50 | Jun 2023: 5.25 | Dec 2023: 5.50 | Jun 2024: 5.50
 
-Chart 2 — USD/EUR exchange rate (USD per 1 EUR):
+Chart 2 · USD/EUR exchange rate (USD per 1 EUR):
 Jan 2022: 1.13 | Jun 2022: 1.05 | Dec 2022: 1.07 | Jun 2023: 1.09 | Dec 2023: 1.10 | Jun 2024: 1.07
 
 Using the data, explain the likely link between the two charts.
@@ -5457,7 +5457,7 @@ Use the data to explain where the Nash equilibrium lies in this matrix and why c
 Question 24 [8 marks]
 The chart and extract below describe UK economic conditions.
 
-Chart 1 — UK CPI inflation (%) and unemployment rate (%):
+Chart 1 · UK CPI inflation (%) and unemployment rate (%):
 2020: CPI 0.9%, Unemployment 4.6% | 2021: CPI 2.6%, Unemployment 4.6% | 2022: CPI 9.1%, Unemployment 3.7% | 2023: CPI 7.3%, Unemployment 4.0% | 2024: CPI 2.5%, Unemployment 4.4%
 
 **Extract:** UK inflation reached a 40-year high of 11.1% in October 2022, driven by soaring energy and food prices following the Russia–Ukraine conflict, and by post-pandemic supply bottlenecks. The Bank of England raised Bank Rate from 0.1% in late 2021 to 5.25% by August 2023 to bring inflation back to its 2% target. However, unemployment has remained historically low, and real wages have fallen for many workers.
@@ -5472,7 +5472,7 @@ The table below provides 2022 HDI data for two countries, Saudi Arabia and Costa
 | **Saudi Arabia** | Very High | 0.875 | 78.8 | 11.3 | 16.1 | 54,992 |
 | **Costa Rica** | Very High | 0.806 | 77.3 | 8.8 | 16.2 | 23,909 |
 
-Additional data: Gini coefficient — Saudi Arabia 0.459, Costa Rica 0.487. Gender Inequality Index (GII) — Saudi Arabia 0.569, Costa Rica 0.256.
+Additional data: Gini coefficient · Saudi Arabia 0.459, Costa Rica 0.487. Gender Inequality Index (GII) · Saudi Arabia 0.569, Costa Rica 0.256.
 
 Discuss whether the HDI alone is sufficient to conclude that Saudi Arabia has a higher level of development than Costa Rica.
 
@@ -5484,7 +5484,7 @@ Jan 2022: 86 | Jun 2022: 123 | Dec 2022: 81 | Jun 2023: 75 | Dec 2023: 77 | Jun 
 
 **Extract:** OPEC+ continues to restrict output in an attempt to stabilise prices, with Saudi Arabia announcing further voluntary cuts of 1 million barrels per day. Meanwhile, US shale oil producers have increased output significantly, reaching record levels of 13.2 million barrels per day.
 
-On the demand side, the International Energy Agency forecasts that global demand for oil will peak by 2030 as electric vehicle adoption accelerates — over 17% of new car sales globally are now electric. However, demand from developing economies (particularly India and Southeast Asia) continues to grow strongly. Geopolitical tensions in the Middle East have added a risk premium to prices. A possible recession in major advanced economies may reduce industrial oil demand.
+On the demand side, the International Energy Agency forecasts that global demand for oil will peak by 2030 as electric vehicle adoption accelerates · over 17% of new car sales globally are now electric. However, demand from developing economies (particularly India and Southeast Asia) continues to grow strongly. Geopolitical tensions in the Middle East have added a risk premium to prices. A possible recession in major advanced economies may reduce industrial oil demand.
 
 Using supply and demand diagram(s), discuss whether the data suggests that oil prices are more likely to rise or fall in the future.
 `,
@@ -5493,16 +5493,16 @@ Using supply and demand diagram(s), discuss whether the data suggests that oil p
     id: "eduqas-p1-c",
     subject: "eduqas" as any,
     paper: "1",
-    title: "Paper 1 — Set C (Advanced)",
-    description: "Component 1: Economic Principles (A520U10-1). Advanced — 20 MCQs + 6 structured (synoptic).",
+    title: "Paper 1 · Set C (Advanced)",
+    description: "Component 1: Economic Principles (A520U10-1). Advanced · 20 MCQs + 6 structured (synoptic).",
     totalMarks: 60,
-    content: `# Eduqas A-Level Economics (A520U10-1) — Component 1: Economic Principles — Predicted Paper (Advanced)
+    content: `# Eduqas A-Level Economics (A520U10-1) · Component 1: Economic Principles · Predicted Paper (Advanced)
 
 **Time: 1 hour 30 minutes | Total: 60 marks**
 
 Answer ALL questions. The number of marks is given in brackets at the end of each question or part-question.
 
-## Section A — Multiple Choice (20 marks)
+## Section A · Multiple Choice (20 marks)
 
 For each question in Section A, write the letter (A, B, C, D or E) that corresponds to your answer in the box provided. You are advised to spend approximately 30 minutes on this section.
 
@@ -5665,7 +5665,7 @@ E. Governments should target money supply instead of inflation
 Question 18 [1 mark]
 A country runs a persistent current account deficit equal to 5% of GDP financed mainly by portfolio inflows. Which of the following would represent the greatest macroeconomic risk?
 A. A rise in domestic saving
-B. A sudden stop — foreign investors lose confidence and rapidly withdraw capital
+B. A sudden stop · foreign investors lose confidence and rapidly withdraw capital
 C. An improvement in the terms of trade
 D. A rise in domestic export productivity
 E. A depreciation of the currency
@@ -5686,15 +5686,15 @@ C. High inflation caused by monetary loosening
 D. A one-off productivity slowdown after a financial crisis
 E. A rise in the natural rate of unemployment
 
-## Section B — Structured Questions (40 marks)
+## Section B · Structured Questions (40 marks)
 
 Question 21 [4 marks]
 The charts below show (1) the US 10-year minus 2-year Treasury yield spread (%) and (2) the year-on-year change in US real GDP (%).
 
-Chart 1 — US 10Y–2Y yield spread (%):
+Chart 1 · US 10Y–2Y yield spread (%):
 2019: +0.21 | 2020: +0.54 | 2021: +1.12 | 2022: −0.48 | 2023: −0.42 | 2024: −0.28
 
-Chart 2 — US real GDP year-on-year growth (%):
+Chart 2 · US real GDP year-on-year growth (%):
 2019: +2.3 | 2020: −2.2 | 2021: +5.8 | 2022: +2.1 | 2023: +2.5 | 2024: +2.8
 
 Using the data, explain the relationship between the two charts and comment on its reliability as a recession indicator.
@@ -5747,7 +5747,7 @@ Chart: UK average house price (£000) and 2-year fixed mortgage rate (%)
 
 **Extract:** UK house prices surged during the pandemic, rising by nearly 25% between 2020 and 2022, driven by ultra-low interest rates, stamp duty holidays, and demand for larger homes following the shift to remote working. Prices have since softened as Bank Rate rose from 0.1% to 5.25% and mortgage rates reached 15-year highs.
 
-On the supply side, the UK has consistently built fewer homes than its estimated housing need of 300,000 per year — only around 235,000 were built in 2023. Restrictive planning rules, a shortage of construction workers, and high material costs constrain new supply. Meanwhile, strong net migration and the formation of smaller household units (e.g. more single-person households) continues to support underlying demand.
+On the supply side, the UK has consistently built fewer homes than its estimated housing need of 300,000 per year · only around 235,000 were built in 2023. Restrictive planning rules, a shortage of construction workers, and high material costs constrain new supply. Meanwhile, strong net migration and the formation of smaller household units (e.g. more single-person households) continues to support underlying demand.
 
 Looking forward, the Bank of England has signalled that interest rates may have peaked, and the government is exploring further planning reforms to boost supply.
 
@@ -5759,16 +5759,16 @@ Using supply and demand diagram(s), discuss whether UK house prices are more lik
     id: "eduqas-p2-a",
     subject: "eduqas" as any,
     paper: "2",
-    title: "Paper 2 — Set A (Moderate)",
-    description: "Component 2: Exploring Economic Behaviour. Set A — Moderate.",
+    title: "Paper 2 · Set A (Moderate)",
+    description: "Component 2: Exploring Economic Behaviour. Set A · Moderate.",
     totalMarks: 80,
-    content: `# Eduqas A-Level Economics (A520U20-1) — Component 2: Exploring Economic Behaviour — Predicted Paper Set A (Moderate)
+    content: `# Eduqas A-Level Economics (A520U20-1) · Component 2: Exploring Economic Behaviour · Predicted Paper Set A (Moderate)
 
 **Time: 2 hours 30 minutes | Total: 80 marks**
 
 Answer all questions.
 
-## Question 1 — Things can only get better?
+## Question 1 · Things can only get better?
 
 In recent years, the UK housing market has come to symbolise some of the deepest tensions in the modern UK economy. Average house prices have risen faster than earnings for much of the past two decades, locking younger households out of ownership, widening regional wealth gaps, and reshaping patterns of consumption, saving and political debate.
 
@@ -5776,31 +5776,31 @@ In 2023 the Government renewed its commitment to deliver 300,000 new homes per y
 
 **Affordability and prices.** The ratio of average house prices to average earnings has roughly doubled since 2000 (Figure 1).
 
-**Figure 1 — UK house price to earnings ratio, 2000–2023.**
+**Figure 1 · UK house price to earnings ratio, 2000–2023.**
 
 Meanwhile housing completions have been well below the level the Government and most independent analysts agree is needed to bring prices into line with earnings (Figure 2).
 
-**Figure 2 — UK housing completions vs the 300,000 target, 2010–2023.**
+**Figure 2 · UK housing completions vs the 300,000 target, 2010–2023.**
 
 **Ownership, renting and generational divides.** Home-ownership rates among younger households have fallen sharply since the 1990s (Figure 3). At the same time, the share of households renting privately has risen (Figure 4).
 
-**Figure 3 — Home-ownership rate by age group, 1991 vs 2023.**
+**Figure 3 · Home-ownership rate by age group, 1991 vs 2023.**
 
-**Figure 4 — Housing tenure in the UK, 1981 vs 2023.**
+**Figure 4 · Housing tenure in the UK, 1981 vs 2023.**
 
 **The role of mortgage rates.** Mortgage rates fell steadily from the late 2000s, supporting higher house prices by reducing the monthly cost of borrowing. That pattern reversed sharply in 2022–23 as the Bank of England raised Bank Rate to combat inflation (Figure 5).
 
-**Figure 5 — Average 2-year fixed-rate UK mortgage rate, 2005–2023.**
+**Figure 5 · Average 2-year fixed-rate UK mortgage rate, 2005–2023.**
 
 **Regional patterns.** The UK's housing stock is not distributed evenly across regions. Some regions have a relatively low number of dwellings per head of population; London stands out as having the fewest (Figure 6). Prices vary even more dramatically (Figure 7): an average home in London is more than three times the price of one in the North East.
 
-**Figure 6 — Dwellings per 1,000 population by UK region, 2022.**
+**Figure 6 · Dwellings per 1,000 population by UK region, 2022.**
 
-**Figure 7 — Average house prices by UK region, 2023 (£000s).**
+**Figure 7 · Average house prices by UK region, 2023 (£000s).**
 
 **The Government's housing strategy.** The Government has set out a comprehensive housing strategy with the stated aim of improving both affordability and supply. The key elements of the plan are summarised in Figure 8.
 
-**Figure 8 — The UK Government's housing strategy**
+**Figure 8 · The UK Government's housing strategy**
 
 | Strand | Key measures |
 |---|---|
@@ -5826,15 +5826,15 @@ Using the data, discuss the extent to which the rise in mortgage rates since 202
 Question 1.5 [10 marks]
 Using the data, discuss whether falling home-ownership rates among younger households (Figure 3) are likely to widen UK regional inequalities.
 
-## Question 2 — Long live oligopolistic competition!
+## Question 2 · Long live oligopolistic competition!
 
 The UK grocery market is worth around £220 billion a year and is dominated by four large supermarket chains: Tesco, Sainsbury's, Asda and Morrisons. Together they account for around two-thirds of all grocery sales. In recent years, German discount chains Aldi and Lidl have rapidly expanded their market share, while premium grocers Waitrose and Marks & Spencer occupy a smaller but distinctive niche. The market displays many of the classic features of an oligopoly.
 
-**Figure 1 — UK grocery market: market shares and key facts (2023)**
+**Figure 1 · UK grocery market: market shares and key facts (2023)**
 
 | Firm (share) | Notes |
 |---|---|
-| Tesco: 27.5% | The market leader since the 1990s. Operates around 4,000 stores. Launched Clubcard Prices in 2020 — lower shelf prices for loyalty-card holders. |
+| Tesco: 27.5% | The market leader since the 1990s. Operates around 4,000 stores. Launched Clubcard Prices in 2020 · lower shelf prices for loyalty-card holders. |
 | Sainsbury's: 15.1% | Operates around 1,400 stores. Runs the Nectar loyalty programme. Owns Argos and the Habitat brand. Launched Nectar Prices in 2023. |
 | Asda: 13.6% | Acquired by the Issa Brothers and TDR Capital in 2021. Best known for "Every Day Low Pricing" strategy. |
 | Morrisons: 8.7% | Strong presence in Yorkshire and the North. Vertically integrated, with its own farms and manufacturing. |
@@ -5844,11 +5844,11 @@ The UK grocery market is worth around £220 billion a year and is dominated by f
 
 Competition between these firms is intense but largely non-price in nature. The Big Four supermarkets respond quickly to each other's promotions, launch continuous range innovations, and increasingly compete on convenience (small-format stores, online delivery slots, rapid-delivery partnerships). Loyalty pricing schemes such as Clubcard Prices and Nectar Prices have, according to critics, introduced a form of two-tier pricing that may obscure underlying prices from non-members.
 
-The Competition and Markets Authority (CMA) has opened several investigations into the sector, including into loyalty pricing practices in 2023 and into supplier relations in 2024. Most recent mergers have been blocked or required significant divestments — for example, the 2019 Sainsbury's–Asda merger proposal was rejected on the grounds that it would harm consumers.
+The Competition and Markets Authority (CMA) has opened several investigations into the sector, including into loyalty pricing practices in 2023 and into supplier relations in 2024. Most recent mergers have been blocked or required significant divestments · for example, the 2019 Sainsbury's–Asda merger proposal was rejected on the grounds that it would harm consumers.
 
 The data below (Figure 2) shows the weekly demand at different prices for a ready-meal lasagne produced by FreshMart Ltd, an oligopolistic supermarket.
 
-**Figure 2 — FreshMart Ltd: Demand and cost schedule for lasagne (£)**
+**Figure 2 · FreshMart Ltd: Demand and cost schedule for lasagne (£)**
 
 | Price | Lasagne/week (000s) | Total Revenue | Marginal Revenue | Total Cost | Marginal Cost |
 |---|---|---|---|---|---|
@@ -5864,7 +5864,7 @@ The data below (Figure 2) shows the weekly demand at different prices for a read
 
 Many supermarkets also face significant upward pressure on their costs. Energy, labour and freight costs rose sharply between 2021 and 2023, squeezing operating margins. At the same time, the expansion of Aldi and Lidl has put downward pressure on prices. Supermarkets have responded with cost-cutting programmes, automation of checkouts and warehouses, and the rollout of private-label products which typically carry lower costs than branded alternatives.
 
-Is the UK grocery market serving consumers well? Supporters of the current structure argue that competition between a handful of large chains, supplemented by fast-growing discounters, is delivering choice and value. Critics point to the CMA's investigations, the high profits earned by leading firms at the peak of the 2022 cost-of-living crisis, and the long-standing concerns about pressure placed on suppliers — farmers in particular — as evidence that the market is not as competitive as it appears.
+Is the UK grocery market serving consumers well? Supporters of the current structure argue that competition between a handful of large chains, supplemented by fast-growing discounters, is delivering choice and value. Critics point to the CMA's investigations, the high profits earned by leading firms at the peak of the 2022 cost-of-living crisis, and the long-standing concerns about pressure placed on suppliers · farmers in particular · as evidence that the market is not as competitive as it appears.
 
 *Sources: Kantar Worldpanel; CMA.*
 
@@ -5890,50 +5890,50 @@ With reference to the data, discuss the extent to which the UK grocery market le
     id: "eduqas-p2-b",
     subject: "eduqas" as any,
     paper: "2",
-    title: "Paper 2 — Set B (Hard)",
-    description: "Component 2: Exploring Economic Behaviour. Set B — Hard.",
+    title: "Paper 2 · Set B (Hard)",
+    description: "Component 2: Exploring Economic Behaviour. Set B · Hard.",
     totalMarks: 80,
-    content: `# Eduqas A-Level Economics (A520U20-1) — Component 2: Exploring Economic Behaviour — Predicted Paper Set B (Hard)
+    content: `# Eduqas A-Level Economics (A520U20-1) · Component 2: Exploring Economic Behaviour · Predicted Paper Set B (Hard)
 
 **Time: 2 hours 30 minutes | Total: 80 marks**
 
 Answer all questions.
 
-## Question 1 — Things can only get better?
+## Question 1 · Things can only get better?
 
-Between 2021 and 2023 the UK economy experienced its sharpest inflationary episode in more than forty years. Headline CPI inflation rose from under 1% in early 2021 to a peak of 11.1% in October 2022 — the highest reading since 1981. The policy response from the Bank of England and HM Treasury tested the theoretical frameworks that have dominated UK macroeconomic policy since 1997.
+Between 2021 and 2023 the UK economy experienced its sharpest inflationary episode in more than forty years. Headline CPI inflation rose from under 1% in early 2021 to a peak of 11.1% in October 2022 · the highest reading since 1981. The policy response from the Bank of England and HM Treasury tested the theoretical frameworks that have dominated UK macroeconomic policy since 1997.
 
 **The inflation shock.** The inflationary surge had multiple drivers. Global demand rebounded rapidly following the easing of Covid-19 restrictions; supply chains were dislocated; energy markets were disrupted by Russia's invasion of Ukraine in February 2022; and UK labour supply was constrained by a rise in economic inactivity. Together these forces pushed inflation far above the Bank of England's 2% target (Figure 1).
 
-**Figure 1 — UK CPI inflation, Jan 2018 – Dec 2023.**
+**Figure 1 · UK CPI inflation, Jan 2018 – Dec 2023.**
 
-**Monetary policy tightening.** The Monetary Policy Committee (MPC) kept Bank Rate at its historic low of 0.1% until December 2021. Once it began raising the rate, it did so repeatedly and aggressively, taking Bank Rate from 0.1% in late 2021 to 5.25% by August 2023 — the highest rate since 2008 (Figure 2).
+**Monetary policy tightening.** The Monetary Policy Committee (MPC) kept Bank Rate at its historic low of 0.1% until December 2021. Once it began raising the rate, it did so repeatedly and aggressively, taking Bank Rate from 0.1% in late 2021 to 5.25% by August 2023 · the highest rate since 2008 (Figure 2).
 
-**Figure 2 — UK Bank Rate and CPI inflation, 2020–2023.**
+**Figure 2 · UK Bank Rate and CPI inflation, 2020–2023.**
 
 **The cost of living and wage response.** With inflation far above nominal wage growth for most of the 2022–23 period, real wages fell sharply. Only in late 2023 did nominal wage growth catch up with price rises (Figure 3).
 
-**Figure 3 — Nominal wage growth vs CPI inflation, 2021–2023.**
+**Figure 3 · Nominal wage growth vs CPI inflation, 2021–2023.**
 
-**The monetary aggregates.** Critics of the Bank of England argue that the expansion of the broad money supply during the pandemic — partly a result of large-scale asset purchases (quantitative easing) — created the conditions for the subsequent inflation (Figure 4).
+**The monetary aggregates.** Critics of the Bank of England argue that the expansion of the broad money supply during the pandemic · partly a result of large-scale asset purchases (quantitative easing) · created the conditions for the subsequent inflation (Figure 4).
 
-**Figure 4 — UK broad money (M4) annual growth, 2019–2023.**
+**Figure 4 · UK broad money (M4) annual growth, 2019–2023.**
 
 **Household confidence and output.** The cost-of-living shock weighed heavily on household confidence (Figure 5) and UK growth was either weak or negative through most of 2022–23 (Figure 7).
 
-**Figure 5 — GfK Consumer Confidence index, 2020–2023.**
+**Figure 5 · GfK Consumer Confidence index, 2020–2023.**
 
-**Figure 6 — Contribution to annual CPI by component, late 2023.**
+**Figure 6 · Contribution to annual CPI by component, late 2023.**
 
-**Figure 7 — UK quarterly GDP growth, 2021–2023.**
+**Figure 7 · UK quarterly GDP growth, 2021–2023.**
 
 **The fiscal-monetary mix.** The Bank of England's tightening was partly offset by fiscal measures designed to cushion households from rising costs. A summary of the main elements of the policy response is shown in Figure 8.
 
-**Figure 8 — UK macroeconomic policy response, 2022–2024**
+**Figure 8 · UK macroeconomic policy response, 2022–2024**
 
 | Strand | Key measures |
 |---|---|
-| Monetary policy | Bank Rate raised from 0.1% (Dec 2021) to 5.25% (Aug 2023) — the steepest tightening cycle since 1989. Quantitative Tightening: the Bank of England began actively selling gilts from the asset purchase programme in late 2022. |
+| Monetary policy | Bank Rate raised from 0.1% (Dec 2021) to 5.25% (Aug 2023) · the steepest tightening cycle since 1989. Quantitative Tightening: the Bank of England began actively selling gilts from the asset purchase programme in late 2022. |
 | Fiscal support | Energy Price Guarantee (Oct 2022 – June 2023): typical bills capped at £2,500/year at a cost of around £40 billion. Cost-of-living payments totalling £900 to households on means-tested benefits. |
 | Supply-side | Increased childcare support (15 hours free childcare for 9-month-olds from April 2024) aimed at reducing economic inactivity. Reforms to Restart and Returnerships schemes to encourage over-50s back into the labour market. |
 | Wage policy | National Living Wage rose 9.7% in April 2023 (to £10.42) and 9.8% in April 2024 (to £11.44). Public sector pay awards of 5–7% for most occupations during 2023–24. |
@@ -5955,21 +5955,21 @@ Using the data, discuss the extent to which the rise in Bank Rate is likely to r
 Question 1.5 [10 marks]
 Using the data, discuss whether the fall in real wages during 2022–23 (Figure 3) is likely to have a lasting effect on the UK economy.
 
-## Question 2 — The natural monopoly question
+## Question 2 · The natural monopoly question
 
 The UK domestic energy market was transformed during the 2010s and 2020s. Liberalisation in the 1990s had ended the regional monopolies held by the privatised successors to British Gas and the old Electricity Boards; by 2018 more than 70 independent suppliers competed for residential customers. Then came the energy price shock of 2021–22: wholesale gas prices rose nine-fold, the Ofgem price cap jumped sharply, and 29 suppliers failed in 2021 alone. The market has since consolidated around a smaller number of large firms (Figure 1), many of which display classic natural-monopoly characteristics.
 
-**Figure 1 — GB domestic energy market shares, late 2023.**
+**Figure 1 · GB domestic energy market shares, late 2023.**
 
-Some of the essential features of the market make it different from a typical competitive market. The electricity transmission and gas transmission networks are natural monopolies — it would be economically wasteful to duplicate the pylons, wires and pipes. Retail supply is nominally competitive, but customer acquisition is costly and the price cap introduced in 2019 sets an effective price ceiling for default-tariff customers. Economies of scale in procurement, hedging and operations strongly favour larger suppliers.
+Some of the essential features of the market make it different from a typical competitive market. The electricity transmission and gas transmission networks are natural monopolies · it would be economically wasteful to duplicate the pylons, wires and pipes. Retail supply is nominally competitive, but customer acquisition is costly and the price cap introduced in 2019 sets an effective price ceiling for default-tariff customers. Economies of scale in procurement, hedging and operations strongly favour larger suppliers.
 
 The Ofgem price cap is reviewed every three months and is based on a formula that passes through wholesale costs with a limited retailer margin. During the 2022 price shock the cap rose sharply, leaving suppliers squeezed between high wholesale costs and a cap that lagged behind (Figure 2).
 
-**Figure 2 — Ofgem price cap, typical household (£/year), 2021–2023.**
+**Figure 2 · Ofgem price cap, typical household (£/year), 2021–2023.**
 
 The data below (Figure 3) shows the cost and revenue schedule for Power-Up Ltd, a medium-sized energy supplier. Demand is measured in thousands of megawatt-hours (MWh) sold per month.
 
-**Figure 3 — Power-Up Ltd: Cost and revenue schedule**
+**Figure 3 · Power-Up Ltd: Cost and revenue schedule**
 
 | Price (£/MWh) | MWh sold (000s) | Total Revenue | Marginal Revenue | Total Cost | Marginal Cost |
 |---|---|---|---|---|---|
@@ -5983,9 +5983,9 @@ The data below (Figure 3) shows the cost and revenue schedule for Power-Up Ltd, 
 | £120 | 70 | | | £13,400 | |
 | £100 | 80 | | | £16,200 | |
 
-The market structure has important implications for consumers. First, the price cap protects most households from the worst of volatile wholesale prices — but it also limits the range of tariffs on offer, reducing the benefit of active switching. Second, the failure of 29 smaller suppliers in 2021 imposed large costs on remaining customers through the Supplier of Last Resort levy and the Energy Company Obligation, concentrating risk among the largest firms. Third, the natural-monopoly elements of the sector (networks, metering) are subject to price controls rather than market competition.
+The market structure has important implications for consumers. First, the price cap protects most households from the worst of volatile wholesale prices · but it also limits the range of tariffs on offer, reducing the benefit of active switching. Second, the failure of 29 smaller suppliers in 2021 imposed large costs on remaining customers through the Supplier of Last Resort levy and the Energy Company Obligation, concentrating risk among the largest firms. Third, the natural-monopoly elements of the sector (networks, metering) are subject to price controls rather than market competition.
 
-Is the current market structure in consumers' interests? Supporters argue that a stable market of large, well-capitalised suppliers is more resilient and able to pass through efficiency gains. Critics point to the limited scope for genuine price competition, the high concentration after consolidation, and the opacity of how wholesale costs are passed through to the cap. The CMA completed a market investigation in 2016 and Ofgem is regularly consulted on reform — including proposals for social tariffs, dynamic pricing and expanded heat-pump tariffs as Net Zero approaches.
+Is the current market structure in consumers' interests? Supporters argue that a stable market of large, well-capitalised suppliers is more resilient and able to pass through efficiency gains. Critics point to the limited scope for genuine price competition, the high concentration after consolidation, and the opacity of how wholesale costs are passed through to the cap. The CMA completed a market investigation in 2016 and Ofgem is regularly consulted on reform · including proposals for social tariffs, dynamic pricing and expanded heat-pump tariffs as Net Zero approaches.
 
 *Sources: Ofgem; Cornwall Insight; ONS.*
 
@@ -6011,48 +6011,48 @@ With reference to the data, discuss the extent to which the consolidation of the
     id: "eduqas-p2-c",
     subject: "eduqas" as any,
     paper: "2",
-    title: "Paper 2 — Set C (Advanced)",
-    description: "Component 2: Exploring Economic Behaviour. Set C — Advanced.",
+    title: "Paper 2 · Set C (Advanced)",
+    description: "Component 2: Exploring Economic Behaviour. Set C · Advanced.",
     totalMarks: 80,
-    content: `# Eduqas A-Level Economics (A520U20-1) — Component 2: Exploring Economic Behaviour — Predicted Paper Set C (Advanced)
+    content: `# Eduqas A-Level Economics (A520U20-1) · Component 2: Exploring Economic Behaviour · Predicted Paper Set C (Advanced)
 
 **Time: 2 hours 30 minutes | Total: 80 marks**
 
 Answer all questions.
 
-## Question 1 — Things can only get better?
+## Question 1 · Things can only get better?
 
-The UK has positioned itself at the forefront of the global transition to a low-carbon economy. The Climate Change Act 2008 committed the country to legally binding carbon budgets, and in June 2019 the UK became the first major economy to legislate for Net Zero by 2050. Since 1990, UK territorial greenhouse-gas emissions have fallen by around 52% — further than in any other G7 country (Figure 1).
+The UK has positioned itself at the forefront of the global transition to a low-carbon economy. The Climate Change Act 2008 committed the country to legally binding carbon budgets, and in June 2019 the UK became the first major economy to legislate for Net Zero by 2050. Since 1990, UK territorial greenhouse-gas emissions have fallen by around 52% · further than in any other G7 country (Figure 1).
 
-**Figure 1 — UK territorial greenhouse-gas emissions, 1990–2022.**
+**Figure 1 · UK territorial greenhouse-gas emissions, 1990–2022.**
 
 The bulk of the reduction so far has come from decarbonising electricity generation. Coal's share of UK electricity has fallen from 70% in 1990 to less than 2% in 2023. The next phase of the transition is harder: it requires decarbonising transport, heat in buildings, and the most energy-intensive parts of industry, sectors that still account for the majority of residual emissions (Figure 2).
 
-**Figure 2 — UK emissions by sector, 2022 (% of total).**
+**Figure 2 · UK emissions by sector, 2022 (% of total).**
 
 **The investment gap.** The Climate Change Committee estimates that the UK needs £50–70 billion a year of low-carbon investment across the 2025–2030 period to meet the Sixth Carbon Budget. Actual investment is running well below that level (Figure 3).
 
-**Figure 3 — UK low-carbon investment vs CCC target, 2015–2023.**
+**Figure 3 · UK low-carbon investment vs CCC target, 2015–2023.**
 
 **International comparisons.** The UK's emissions per capita have fallen faster than those of most other advanced economies. But comparisons also highlight the scale of the challenge: some major trading partners emit three times more per person (Figure 4).
 
-**Figure 4 — Emissions per capita, selected advanced economies, 2023.**
+**Figure 4 · Emissions per capita, selected advanced economies, 2023.**
 
 **The green economy.** Employment in the low-carbon and renewable-energy economy (LCREE) has risen rapidly, reaching 432,000 jobs in 2023. The sector is growing faster than the UK economy overall (Figure 5).
 
-**Figure 5 — LCREE employment, 2015–2023 (full-time equivalent, 000s).**
+**Figure 5 · LCREE employment, 2015–2023 (full-time equivalent, 000s).**
 
 **The cost of going green.** Low-carbon technologies typically cost more up-front than their fossil-fuel counterparts, even where running costs are lower (Figure 6). This creates a short-term affordability barrier for many households.
 
-**Figure 6 — Upfront cost of low-carbon vs fossil alternatives (£).**
+**Figure 6 · Upfront cost of low-carbon vs fossil alternatives (£).**
 
 **Regional job creation.** Green-economy jobs are not evenly distributed across the UK. Regions historically dependent on fossil-fuel extraction (Scotland, North East, Yorkshire & Humber) are projected to capture a disproportionate share of the offshore-wind, carbon-capture and hydrogen jobs created by 2030 (Figure 7).
 
-**Figure 7 — Projected additional green jobs by region to 2030.**
+**Figure 7 · Projected additional green jobs by region to 2030.**
 
 **The UK's net-zero policy framework.** The UK policy response combines carbon pricing, targeted subsidies, sectoral regulation and international measures (Figure 8).
 
-**Figure 8 — UK net-zero policy framework**
+**Figure 8 · UK net-zero policy framework**
 
 | Strand | Key measures |
 |---|---|
@@ -6079,21 +6079,21 @@ Using the data, discuss the extent to which the distribution of green jobs acros
 Question 1.5 [10 marks]
 Using the data, discuss whether the higher upfront cost of low-carbon technologies (Figure 6) is likely to make the net-zero transition regressive.
 
-## Question 2 — The winner takes most
+## Question 2 · The winner takes most
 
-A small number of digital platforms now dominate the world's most strategically important markets. Google accounts for around 92% of global search; the iOS and Android operating systems together hold 99% of the global smartphone market; Apple and Google's app stores together control around 95% of the mobile-app distribution market; Meta's apps (Facebook, Instagram, WhatsApp, Messenger) are used by over 3.5 billion people (Figure 1). These firms combine the classical economic features of natural monopoly — very high fixed costs and near-zero marginal costs — with powerful network effects and massive data advantages.
+A small number of digital platforms now dominate the world's most strategically important markets. Google accounts for around 92% of global search; the iOS and Android operating systems together hold 99% of the global smartphone market; Apple and Google's app stores together control around 95% of the mobile-app distribution market; Meta's apps (Facebook, Instagram, WhatsApp, Messenger) are used by over 3.5 billion people (Figure 1). These firms combine the classical economic features of natural monopoly · very high fixed costs and near-zero marginal costs · with powerful network effects and massive data advantages.
 
-**Figure 1 — Market shares in key digital markets, late 2023.**
+**Figure 1 · Market shares in key digital markets, late 2023.**
 
-The business models of these firms depend on scale. Apple and Google charge a standard 30% commission on app-store transactions, a rate that has attracted sustained criticism from developers and, since 2021, several regulatory interventions including the EU Digital Markets Act (DMA). Google pays Apple an estimated $18 billion a year to be the default search engine on iOS devices — a practice under investigation in the US antitrust case against Google that concluded in August 2024 with a finding that Google had illegally maintained a monopoly in search.
+The business models of these firms depend on scale. Apple and Google charge a standard 30% commission on app-store transactions, a rate that has attracted sustained criticism from developers and, since 2021, several regulatory interventions including the EU Digital Markets Act (DMA). Google pays Apple an estimated $18 billion a year to be the default search engine on iOS devices · a practice under investigation in the US antitrust case against Google that concluded in August 2024 with a finding that Google had illegally maintained a monopoly in search.
 
-The top five firms (Alphabet, Apple, Meta, Amazon and Microsoft) spent around $225 billion on research and development in 2022 — roughly 14% of combined revenue, and more than the entire UK government R&D budget. They have also been the major force behind the commercialisation of generative AI from 2022 onwards.
+The top five firms (Alphabet, Apple, Meta, Amazon and Microsoft) spent around $225 billion on research and development in 2022 · roughly 14% of combined revenue, and more than the entire UK government R&D budget. They have also been the major force behind the commercialisation of generative AI from 2022 onwards.
 
-The UK's Competition and Markets Authority (CMA) gained new powers under the Digital Markets, Competition and Consumers Act 2024 to impose "conduct requirements" on firms with Strategic Market Status (SMS). The first SMS designations are expected in 2025, covering mobile ecosystems and search. Conduct requirements may include mandatory interoperability, data portability, non-discrimination and price transparency — each of which would affect the abnormal profits earned by designated firms.
+The UK's Competition and Markets Authority (CMA) gained new powers under the Digital Markets, Competition and Consumers Act 2024 to impose "conduct requirements" on firms with Strategic Market Status (SMS). The first SMS designations are expected in 2025, covering mobile ecosystems and search. Conduct requirements may include mandatory interoperability, data portability, non-discrimination and price transparency · each of which would affect the abnormal profits earned by designated firms.
 
 The data below (Figure 2) shows the cost and revenue schedule for PulseApp Ltd, a digital platform business. Demand is measured in thousands of monthly subscribers.
 
-**Figure 2 — PulseApp Ltd: Cost and revenue schedule (per month)**
+**Figure 2 · PulseApp Ltd: Cost and revenue schedule (per month)**
 
 | Price (£/month) | Subscribers (000s) | Total Revenue | Marginal Revenue | Total Cost | Marginal Cost |
 |---|---|---|---|---|---|
@@ -6107,9 +6107,9 @@ The data below (Figure 2) shows the cost and revenue schedule for PulseApp Ltd, 
 | £4 | 700 | | | £1,340 | |
 | £2 | 800 | | | £1,720 | |
 
-The table illustrates one of the most striking features of digital-platform economics: very high fixed costs (reflecting R&D, engineering and infrastructure spend) combined with very low marginal costs. Once the fixed cost of developing and running a platform has been sunk, the cost of serving an additional user is close to zero. This is a classic condition for natural monopoly, but unlike a traditional network utility, platform firms combine this cost structure with powerful demand-side network effects: each additional user makes the platform more valuable to every other user. The interaction of these two forces — supply-side economies of scale and demand-side network effects — is the core reason that digital markets tend towards winner-takes-most outcomes.
+The table illustrates one of the most striking features of digital-platform economics: very high fixed costs (reflecting R&D, engineering and infrastructure spend) combined with very low marginal costs. Once the fixed cost of developing and running a platform has been sunk, the cost of serving an additional user is close to zero. This is a classic condition for natural monopoly, but unlike a traditional network utility, platform firms combine this cost structure with powerful demand-side network effects: each additional user makes the platform more valuable to every other user. The interaction of these two forces · supply-side economies of scale and demand-side network effects · is the core reason that digital markets tend towards winner-takes-most outcomes.
 
-How should competition authorities respond? Supporters of the current market structure argue that consumers receive enormous benefits at zero price — search, email, social networking, maps — and that the rents earned by platforms fund innovation (generative AI being the latest example). Critics argue that the concentration of market power has become unprecedented, that innovation by rivals is suppressed through strategic acquisitions and entry barriers, and that classical remedies (breakup, structural separation) may be needed. Between the two positions lies a growing body of targeted regulation — the EU's DMA, the UK's SMS regime, the US antitrust litigation — that attempts to restore contestability without dismantling the firms.
+How should competition authorities respond? Supporters of the current market structure argue that consumers receive enormous benefits at zero price · search, email, social networking, maps · and that the rents earned by platforms fund innovation (generative AI being the latest example). Critics argue that the concentration of market power has become unprecedented, that innovation by rivals is suppressed through strategic acquisitions and entry barriers, and that classical remedies (breakup, structural separation) may be needed. Between the two positions lies a growing body of targeted regulation · the EU's DMA, the UK's SMS regime, the US antitrust litigation · that attempts to restore contestability without dismantling the firms.
 
 *Sources: Statcounter, Bloomberg, CMA, European Commission.*
 
@@ -6135,10 +6135,10 @@ With reference to the data, discuss the extent to which dominant digital platfor
     id: "eduqas-p3-a",
     subject: "eduqas" as any,
     paper: "3",
-    title: "Paper 3 — Set A (Moderate)",
-    description: "Component 3: Evaluating Economic Models and Policies. Set A — Moderate.",
+    title: "Paper 3 · Set A (Moderate)",
+    description: "Component 3: Evaluating Economic Models and Policies. Set A · Moderate.",
     totalMarks: 90,
-    content: `# Eduqas A-Level Economics (A520U30-1M) — Component 3: Evaluating Economic Models and Policies — Predicted Paper Set A (Moderate)
+    content: `# Eduqas A-Level Economics (A520U30-1M) · Component 3: Evaluating Economic Models and Policies · Predicted Paper Set A (Moderate)
 
 **Time: 2 hours 30 minutes | Total: 90 marks**
 
@@ -6235,10 +6235,10 @@ Discuss whether foreign aid is the most effective strategy for promoting economi
     id: "eduqas-p3-b",
     subject: "eduqas" as any,
     paper: "3",
-    title: "Paper 3 — Set B (Hard)",
-    description: "Component 3: Evaluating Economic Models and Policies. Set B — Hard.",
+    title: "Paper 3 · Set B (Hard)",
+    description: "Component 3: Evaluating Economic Models and Policies. Set B · Hard.",
     totalMarks: 90,
-    content: `# Eduqas A-Level Economics (A520U30-1H) — Component 3: Evaluating Economic Models and Policies — Predicted Paper Set B (Hard)
+    content: `# Eduqas A-Level Economics (A520U30-1H) · Component 3: Evaluating Economic Models and Policies · Predicted Paper Set B (Hard)
 
 **Time: 2 hours 30 minutes | Total: 90 marks**
 
@@ -6335,10 +6335,10 @@ Evaluate whether FDI is always beneficial for host developing countries.
     id: "eduqas-p3-c",
     subject: "eduqas" as any,
     paper: "3",
-    title: "Paper 3 — Set C (Advanced)",
-    description: "Component 3: Evaluating Economic Models and Policies. Set C — Advanced.",
+    title: "Paper 3 · Set C (Advanced)",
+    description: "Component 3: Evaluating Economic Models and Policies. Set C · Advanced.",
     totalMarks: 90,
-    content: `# Eduqas A-Level Economics (A520U30-1A) — Component 3: Evaluating Economic Models and Policies — Predicted Paper Set C (Advanced)
+    content: `# Eduqas A-Level Economics (A520U30-1A) · Component 3: Evaluating Economic Models and Policies · Predicted Paper Set C (Advanced)
 
 **Time: 2 hours 30 minutes | Total: 90 marks**
 

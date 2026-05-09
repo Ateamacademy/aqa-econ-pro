@@ -20,7 +20,7 @@
     </marker>
   </defs>
 
-  <text x="350" y="30" text-anchor="middle" class="ttl">UK 2024 — Falling Consumer Confidence (Demand-Side Shock)</text>
+  <text x="350" y="30" text-anchor="middle" class="ttl">UK 2024 · Falling Consumer Confidence (Demand-Side Shock)</text>
   <text x="350" y="50" text-anchor="middle" class="sub">Lower household spending on luxuries reduces consumption (C) → AD shifts left (AD1 → AD2)</text>
 
   <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
@@ -58,5 +58,5 @@
   <text x="318" y="398" class="lbl" fill="#0d47a1">AD shifts left</text>
 
   <text x="90"  y="495" class="sub">Rising energy bills hit confidence; households cut discretionary spending (luxuries, eating out, holidays).</text>
-  <text x="90"  y="512" class="sub">Real GDP falls (Y2 &lt; Y1) and the price level falls (P2 &lt; P1) — slower growth, possible recession risk.</text>
+  <text x="90"  y="512" class="sub">Real GDP falls (Y2 &lt; Y1) and the price level falls (P2 &lt; P1) · slower growth, possible recession risk.</text>
 </svg>

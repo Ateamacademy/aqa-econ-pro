@@ -48,7 +48,7 @@ export function AiAnalysisTrigger({
           <p className="text-xs text-muted-foreground mt-1 leading-snug">
             Tier 3 gives you specific strengths and gaps analysis for {totalQuestions}{" "}
             extended-response question{totalQuestions === 1 ? "" : "s"}. The AI won't assign
-            marks — your self-assessment stays the source of truth. About 30 seconds per paper.
+            marks · your self-assessment stays the source of truth. About 30 seconds per paper.
           </p>
         </div>
       </div>

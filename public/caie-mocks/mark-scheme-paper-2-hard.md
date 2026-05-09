@@ -12,14 +12,14 @@ MARK SCHEME
 Maximum Mark: 60
 Difficulty: Hard
 
-★ PREDICTED PAPER — FOR REVISION USE ★
+★ PREDICTED PAPER · FOR REVISION USE ★
 
 This mark scheme is a predicted paper mark scheme produced for student revision purposes. It
 mirrors the structure and generic marking principles of the Cambridge International AS & A Level
 9708 Economics Paper 2 mark scheme. It is not an official Cambridge International document.
 
 
-                                 © Predicted Paper 2026 — 9708/02H/MS
+                                 © Predicted Paper 2026 · 9708/02H/MS
                                                                9708/02H Mark Scheme Practice Series 2026
 
 Generic Marking Principles
@@ -71,7 +71,7 @@ AO2 Analysis
 AO3 Evaluation
  • Recognise assumptions and limitations of economic information and models.
 
-                               © Predicted Paper 2026 — 9708/02H/MS
+                               © Predicted Paper 2026 · 9708/02H/MS
                                                            9708/02H Mark Scheme Practice Series 2026
 
 • Assess economic information and the strengths and weaknesses of arguments.
@@ -79,7 +79,7 @@ AO3 Evaluation
   arguments.
 
 
-                           © Predicted Paper 2026 — 9708/02H/MS
+                           © Predicted Paper 2026 · 9708/02H/MS
                                                                 9708/02H Mark Scheme Practice Series 2026
 
 Table A: AO1 Knowledge and understanding and AO2 Analysis
@@ -136,7 +136,7 @@ Use this table for the (b) parts of Questions 2, 3, 4 and 5.
     0      No creditable response.                                                                   0
 
 
-                                © Predicted Paper 2026 — 9708/02H/MS
+                                © Predicted Paper 2026 · 9708/02H/MS
                                                               9708/02H Mark Scheme Practice Series 2026
 
 Section A
@@ -192,7 +192,7 @@ Follow the point-based marking guidance at the top of this mark scheme.
 
      1(d)      Assess the extent to which a simultaneous rise in ECB                             6
 
-                              © Predicted Paper 2026 — 9708/02H/MS
+                              © Predicted Paper 2026 · 9708/02H/MS
                                                           9708/02H Mark Scheme Practice Series 2026
 
 
@@ -244,7 +244,7 @@ Question                                 Answer                                 
            balanced evaluation; 1 for justified conclusion.
 
 
-                          © Predicted Paper 2026 — 9708/02H/MS
+                          © Predicted Paper 2026 · 9708/02H/MS
                                                               9708/02H Mark Scheme Practice Series 2026
 
 Section B
@@ -278,7 +278,7 @@ Use Tables A and B for (b) parts. Follow the point-based marking guidance for (a
                   shown on a diagram (1).
                AO3 (max 2):
                 • Both types cause allocative inefficiency (1); the extent and
-                  correction differ — consumption externalities often
+                  correction differ · consumption externalities often
                   addressed by demand-side tools (taxes/info), production
                   externalities by supply-side tools (regulation/permits) (1).
 
@@ -291,7 +291,7 @@ Use Tables A and B for (b) parts. Follow the point-based marking guidance for (a
                Indicative content:
                AO1 / AO2:
                 • Tradable permits: regulator sets a cap on total emissions;
-                   firms trade permits — cost-effective allocation to firms with
+                   firms trade permits · cost-effective allocation to firms with
                    lowest abatement cost.
                 • Carbon tax: raises the private cost of emissions, internalising
                    the externality; certainty on price but uncertain quantity
@@ -300,7 +300,7 @@ Use Tables A and B for (b) parts. Follow the point-based marking guidance for (a
                    market-based flexibility, revenue from auctioning.
 
 
-                              © Predicted Paper 2026 — 9708/02H/MS
+                              © Predicted Paper 2026 · 9708/02H/MS
                                                           9708/02H Mark Scheme Practice Series 2026
 
 
@@ -356,7 +356,7 @@ Question                                 Answer                                 
            Use Table A (8 marks) and Table B (4 marks).
 
 
-                          © Predicted Paper 2026 — 9708/02H/MS
+                          © Predicted Paper 2026 · 9708/02H/MS
                                                           9708/02H Mark Scheme Practice Series 2026
 
 
@@ -387,7 +387,7 @@ Question                                 Answer                                 
            A one-sided response cannot gain any marks for evaluation.
 
 
-                          © Predicted Paper 2026 — 9708/02H/MS
+                          © Predicted Paper 2026 · 9708/02H/MS
                                                               9708/02H Mark Scheme Practice Series 2026
 
 Section C
@@ -410,7 +410,7 @@ Use Tables A and B for (b) parts. Follow the point-based marking guidance for (a
                 • Diagram showing both shifts with axes labelled (real GDP
                   and price level) (1).
                AO2 (max 3):
-                • Both shifts reduce real GDP — compounding recessionary
+                • Both shifts reduce real GDP · compounding recessionary
                   effect (1).
                 • The price-level effect is ambiguous: SRAS shift raises it, AD
                   shift lowers it (1).
@@ -436,14 +436,14 @@ Use Tables A and B for (b) parts. Follow the point-based marking guidance for (a
                    → lower price level growth but higher cyclical unemployment.
                 • Trade-off depends on source of inflation: demand-pull (trade-
                    off exists) vs cost-push (worse trade-off).
-                • Long-run: expectations-augmented Phillips curve (NAIRU) —
+                • Long-run: expectations-augmented Phillips curve (NAIRU) ·
                    no permanent trade-off.
                 • Credibility and expectations: credible inflation-targeting
                    central banks can reduce inflation with smaller
                    unemployment cost.
 
 
-                              © Predicted Paper 2026 — 9708/02H/MS
+                              © Predicted Paper 2026 · 9708/02H/MS
                                                            9708/02H Mark Scheme Practice Series 2026
 
 
@@ -500,14 +500,14 @@ Question                                  Answer                                
                imported intermediates; loss of consumer surplus; breach of
 
 
-                           © Predicted Paper 2026 — 9708/02H/MS
+                           © Predicted Paper 2026 · 9708/02H/MS
                                                           9708/02H Mark Scheme Practice Series 2026
 
 
 Question                                 Answer                                           Marks
               WTO rules.
             • Ineffective if deficit is caused by domestic over-consumption
-              or savings–investment imbalance — addressing only imports
+              or savings–investment imbalance · addressing only imports
               treats symptom, not cause.
             • Alternative policies: exchange rate depreciation, supply-side
               reforms, fiscal tightening, export promotion.
@@ -516,9 +516,9 @@ Question                                 Answer                                 
               competitiveness or savings-investment gap; retaliation; size
               of the trade partners; global integration; and WTO/FTA
               constraints. US 2018 tariffs did not meaningfully reduce the
-              overall US deficit — it widened by 2019.
+              overall US deficit · it widened by 2019.
 
            A one-sided response cannot gain any marks for evaluation.
 
 
-                          © Predicted Paper 2026 — 9708/02H/MS
+                          © Predicted Paper 2026 · 9708/02H/MS

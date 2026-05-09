@@ -14,7 +14,7 @@
     .pt    { fill:#111; }
   </style>
 
-  <text x="350" y="28" text-anchor="middle" class="ttl">Monopoly — Profit Maximisation (MC = MR)</text>
+  <text x="350" y="28" text-anchor="middle" class="ttl">Monopoly · Profit Maximisation (MC = MR)</text>
   <text x="350" y="48" text-anchor="middle" class="sub">UK regional water provider chooses output where MC = MR; price set off AR; supernormal profit when AR &gt; ATC</text>
 
   <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>

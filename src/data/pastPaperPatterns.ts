@@ -43,7 +43,7 @@ YOU MUST USE THE FOLLOWING REAL PAST-PAPER PATTERNS FROM EDEXCEL GCSE MATHS (201
 - June 2022 P3H: "A recipe for 6 people uses 450g flour. How much for 15 people?" [2 marks]
 - Common patterns: best value for money (comparing unit prices), recipe scaling, speed/distance/time, direct and inverse proportion, compound measures (pressure, density), percentage change
 
-### Geometry & Measures (15–25 marks per paper — CRITICAL)
+### Geometry & Measures (15–25 marks per paper · CRITICAL)
 - June 2024 P2H: "The diagram shows a frustum formed by removing a small cone of height 4cm from a cone of height 12cm and base radius 9cm. Calculate the volume." [5 marks]
 - June 2023 P1H: "Prove that triangle ABC is congruent to triangle DEF. AB=DE=7cm, angle BAC=angle EDF=40°, AC=DF=5cm." [3 marks]
 - June 2023 P3H: "A, B, C, D are points on a circle. Angle ABD=38°, angle BDC=52°. Find angle BAC. Give reasons." [4 marks]
@@ -91,7 +91,7 @@ export const CHEMISTRY_PAST_PAPER_KNOWLEDGE = `
 YOU MUST USE THE FOLLOWING REAL PAST-PAPER PATTERNS FROM AQA GCSE CHEMISTRY (2018–2024) TO GENERATE AUTHENTIC QUESTIONS.
 THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2020 (teacher-assessed), 2021 (mini-paper), 2022, 2023, 2024, AND the Specimen paper.
 
-## PAPER STRUCTURE (observed across ALL years — MUST replicate exactly)
+## PAPER STRUCTURE (observed across ALL years · MUST replicate exactly)
 - Paper 1 (8462/1): Topics 1–5, 100 marks, 1h 45m
 - Paper 2 (8462/2): Topics 6–10, 100 marks, 1h 45m
 - Each paper has Section A (15 multiple-choice, 15 marks) and Section B (structured, ~85 marks)
@@ -103,7 +103,7 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 
 ## COMPREHENSIVE QUESTION PATTERNS BY TOPIC AND YEAR
 
-### Paper 1 — Topic 1: Atomic Structure & Periodic Table
+### Paper 1 · Topic 1: Atomic Structure & Periodic Table
 
 **June 2024 P1H:**
 - MCQ: "Which is the correct electronic structure of oxygen? A. 2,4  B. 2,6  C. 2,8  D. 6,2" [1 mark]
@@ -122,12 +122,12 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 - "An atom of element X has 11 protons, 12 neutrons, and 11 electrons. (a) Give the mass number. (b) Name element X. (c) Explain what happens to the electrons when element X reacts with chlorine." [4 marks]
 
 **June 2018 P1H:**
-- "Lithium, sodium, and potassium are in Group 1. Describe the trend in reactivity going down Group 1 and explain it in terms of atomic structure." [6 marks — Level of Response]
+- "Lithium, sodium, and potassium are in Group 1. Describe the trend in reactivity going down Group 1 and explain it in terms of atomic structure." [6 marks · Level of Response]
 
 **Specimen P1H:**
 - "Explain, in terms of electronic structure, why sodium and lithium are in the same group of the periodic table." [2 marks]
 
-**COMMON PATTERNS — Topic 1:**
+**COMMON PATTERNS · Topic 1:**
 - RAM calculation from isotope abundances (appears almost every year)
 - Electronic configuration diagrams (2,8,1 format)
 - Development of atomic model timeline with Figure
@@ -135,7 +135,7 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 - Period trends: metallic character, atomic radius
 - Ion formation: electron transfer explanations
 
-### Paper 1 — Topic 2: Bonding, Structure & Properties
+### Paper 1 · Topic 2: Bonding, Structure & Properties
 
 **June 2024 P1H:**
 - "Draw a dot-and-cross diagram for MgCl₂. Show outer electrons only." [2 marks]
@@ -146,7 +146,7 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 - "Explain why sodium chloride conducts electricity when molten but not when solid." [2 marks]
 
 **June 2022 P1H:**
-- "Compare the structures and properties of diamond and graphite." [6 marks — Level of Response]
+- "Compare the structures and properties of diamond and graphite." [6 marks · Level of Response]
 - "Draw a dot-and-cross diagram for HCl. Show outer shell electrons only." [2 marks]
 
 **June 2019 P1H:**
@@ -157,15 +157,15 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 - "Figure shows the structure of graphene. Explain why graphene can conduct electricity." [2 marks]
 - "Explain why poly(ethene) has a low melting point compared to diamond." [3 marks]
 
-**COMMON PATTERNS — Topic 2:**
+**COMMON PATTERNS · Topic 2:**
 - Dot-and-cross diagrams: ionic (MgO, NaCl, MgCl₂) and covalent (H₂O, NH₃, CH₄, HCl, O₂, N₂)
-- Giant covalent vs simple molecular vs ionic vs metallic — compare properties
+- Giant covalent vs simple molecular vs ionic vs metallic · compare properties
 - 6-mark comparison: diamond vs graphite (appears 2018, 2022, 2024)
 - Graphene and fullerenes: properties and applications
 - Nanoparticles: surface area to volume ratio, uses (drug delivery, catalysis, sunscreen)
-- Must explain properties FROM structure — never just state facts
+- Must explain properties FROM structure · never just state facts
 
-### Paper 1 — Topic 3: Quantitative Chemistry (Higher only for moles)
+### Paper 1 · Topic 3: Quantitative Chemistry (Higher only for moles)
 
 **June 2024 P1H:**
 - "Calculate the mass of CO₂ produced when 10.0 g of CaCO₃ reacts with excess HCl. CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. (Ar: Ca=40, C=12, O=16)" [4 marks]
@@ -186,7 +186,7 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 - "Calculate the atom economy for: 2Fe₂O₃ + 3C → 4Fe + 3CO₂" [2 marks]
 - "25.0 cm³ of 0.200 mol/dm³ NaOH was titrated with H₂SO₄. The mean titre was 12.5 cm³. Calculate the concentration of H₂SO₄." [4 marks]
 
-**COMMON PATTERNS — Topic 3:**
+**COMMON PATTERNS · Topic 3:**
 - Moles = mass ÷ Mr (almost every Higher paper)
 - Titration with Table of results (rough + 3 concordant, identify anomalous)
 - Concentration = moles ÷ volume (dm³)
@@ -195,14 +195,14 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 - Balanced equation → mole ratio → mass calculation chain
 - Volume of gas: moles × 24 dm³ at RTP
 
-### Paper 1 — Topic 4: Chemical Changes
+### Paper 1 · Topic 4: Chemical Changes
 
 **June 2024 P1H:**
 - "Figure shows a bar chart of gas production rates for Mg, Zn, Fe, Cu with dilute HCl. Put the metals in order of reactivity." [3 marks]
 - "Write the half equations for the electrolysis of molten lead bromide." [2 marks]
 
 **June 2023 P1H:**
-- "Describe how copper is purified by electrolysis. Include half equations for the reactions at each electrode." [6 marks — Level of Response]
+- "Describe how copper is purified by electrolysis. Include half equations for the reactions at each electrode." [6 marks · Level of Response]
 
 **June 2022 P1H:**
 - "Write the ionic equation for the reaction of zinc with copper sulfate solution. Include state symbols." [2 marks]
@@ -216,7 +216,7 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 - "Explain the difference between a strong acid and a weak acid in terms of ionisation." [2 marks]
 - "Calculate the pH of 0.01 mol/dm³ HCl." [1 mark]
 
-**COMMON PATTERNS — Topic 4:**
+**COMMON PATTERNS · Topic 4:**
 - Reactivity series with bar chart/table data
 - Electrolysis: half equations at anode and cathode (including brine for Higher)
 - Displacement reactions with ionic equations
@@ -225,12 +225,12 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 - Strong vs weak acid (Higher): degree of ionisation
 - Metal extraction: carbon reduction vs electrolysis based on reactivity
 
-### Paper 1 — Topic 5: Energy Changes
+### Paper 1 · Topic 5: Energy Changes
 
 **June 2024 P1H:**
 - "Figure shows a reaction profile. Reactants: 150 kJ, Peak: 350 kJ, Products: 250 kJ. (a) Calculate activation energy [1]. (b) Calculate overall energy change [1]. (c) Exothermic or endothermic? [1]" [3 marks]
 
-**June 2023 P1H (KEY QUESTION — bond energy with unknown):**
+**June 2023 P1H (KEY QUESTION · bond energy with unknown):**
 - "Figure 9 shows the displayed formula for: C₃H₈ + 5O₂ → 3CO₂ + 4H₂O
   Table 4 shows bond energies: C-C = 347, O=O = 498, C=O = 805, O-H = 464, C-H = X.
   Overall energy change = −2219 kJ/mol.
@@ -247,16 +247,16 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 **June 2018 P1H:**
 - "A student measures the temperature change when acid reacts with alkali. Table shows T vs volume of acid added. Plot a graph and determine the maximum temperature change." [5 marks]
 
-**COMMON PATTERNS — Topic 5:**
+**COMMON PATTERNS · Topic 5:**
 - Reaction profiles with numerical values (label Ea, ΔH, catalyst effect)
 - Bond energy calculation with Figure showing displayed formula + Table of bond energies
-- Bond energy with ONE UNKNOWN value (reverse calculation) — appears 2023
+- Bond energy with ONE UNKNOWN value (reverse calculation) · appears 2023
 - Q = mcΔT calculation from experimental data
 - Required Practical: measuring temperature changes (RP5)
 - Hydrogen fuel cells: advantages/disadvantages
 - Drawing/labelling reaction profiles with and without catalyst
 
-### Paper 2 — Topic 6: Rate & Extent of Chemical Change
+### Paper 2 · Topic 6: Rate & Extent of Chemical Change
 
 **June 2024 P2H:**
 - "Figure 1 shows volume of gas vs time for marble chips + acid. (a) When does reaction stop? (b) Draw a tangent at 30s. Calculate rate of reaction at that point." [5 marks]
@@ -275,16 +275,16 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 **June 2018 P2H:**
 - "The Haber process uses 450°C, 200 atm, iron catalyst. Figure shows % yield vs pressure at different temperatures. (a) What yield at 450°C, 200 atm? (b) Explain why higher pressure = higher yield. (c) Why not use lower temperature?" [6 marks]
 
-**COMMON PATTERNS — Topic 6:**
+**COMMON PATTERNS · Topic 6:**
 - Rate graphs: volume vs time OR mass vs time (EVERY paper)
 - Tangent method to calculate rate at a specific time (Higher)
 - Collision theory explanations for T, concentration, surface area, catalyst
 - Haber process graph: yield vs pressure at different temperatures
 - Le Chatelier's principle applied to industrial processes
-- Required Practical: rate of reaction (RP6) — marble chips + HCl (mass loss or gas syringe)
+- Required Practical: rate of reaction (RP6) · marble chips + HCl (mass loss or gas syringe)
 - Comparing two rate curves on same axes
 
-### Paper 2 — Topic 7: Organic Chemistry
+### Paper 2 · Topic 7: Organic Chemistry
 
 **June 2024 P2H:**
 - "Draw the displayed formula of propene. Explain why alkenes are more reactive than alkanes." [3 marks]
@@ -298,7 +298,7 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 - "Compare addition polymerisation and condensation polymerisation." [4 marks]
 - "Draw a section of the polymer formed from propene." [2 marks]
 
-**COMMON PATTERNS — Topic 7:**
+**COMMON PATTERNS · Topic 7:**
 - Displayed formulae of first 4 alkanes and first 3 alkenes
 - General formulae: alkanes CₙH₂ₙ₊₂, alkenes CₙH₂ₙ
 - Complete and incomplete combustion equations
@@ -307,7 +307,7 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 - Polymerisation: addition (from alkenes) and condensation (Higher)
 - Alcohols: fermentation vs hydration (Higher)
 
-### Paper 2 — Topic 8: Chemical Analysis
+### Paper 2 · Topic 8: Chemical Analysis
 
 **June 2024 P2H:**
 - "Figure shows chromatogram. Solvent front 8.0 cm, spot at 5.6 cm. Calculate Rf." [2 marks]
@@ -317,7 +317,7 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 - "Table shows flame test results for 4 solutions. Identify metal ions." [2 marks]
 - "Describe how to test an unknown gas that turns damp litmus paper white then red." [2 marks]
 
-**COMMON PATTERNS — Topic 8:**
+**COMMON PATTERNS · Topic 8:**
 - Chromatography with Rf calculation (EVERY Paper 2)
 - Flame tests: Li=crimson, Na=yellow, K=lilac, Ca=orange-red, Cu=green
 - NaOH precipitate tests: Cu²⁺=blue, Fe²⁺=green, Fe³⁺=brown, Al³⁺/Ca²⁺/Mg²⁺=white
@@ -325,7 +325,7 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 - Gas tests: H₂=squeaky pop, O₂=relights splint, CO₂=limewater milky, Cl₂=bleaches damp litmus
 - Required Practical: chromatography (RP8), identify ions (RP7)
 
-### Paper 2 — Topics 9 & 10: Atmosphere & Using Resources
+### Paper 2 · Topics 9 & 10: Atmosphere & Using Resources
 
 **June 2024 P2H:**
 - "Describe how Earth's atmosphere has changed over 4.6 billion years." [4 marks]
@@ -339,7 +339,7 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 - "Compare the advantages and disadvantages of recycling aluminium vs extracting new aluminium from bauxite." [4 marks]
 - "Life cycle assessment table: compare carbon footprint of paper vs plastic bags." [3 marks]
 
-**COMMON PATTERNS — Topics 9 & 10:**
+**COMMON PATTERNS · Topics 9 & 10:**
 - Evolution of atmosphere (stacked area graph or timeline)
 - Greenhouse effect and enhanced greenhouse effect
 - Carbon footprint and ways to reduce it
@@ -348,7 +348,7 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 - Life cycle assessment with Table/Figure comparing materials
 - Required Practical: water treatment methods
 
-## FIGURE/TABLE/GRAPH FORMATTING (CRITICAL — appears in EVERY real paper)
+## FIGURE/TABLE/GRAPH FORMATTING (CRITICAL · appears in EVERY real paper)
 
 ### Figure Patterns (always use these exact formats):
 - "Figure 3 shows the reaction profile for..." → labelled axes, numerical values
@@ -370,7 +370,7 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 - Titration tables must include rough + 3 readings with one anomalous
 - Chromatograms must include solvent front distance and spot distances
 
-## MARK DISTRIBUTION (typical Higher paper — 100 marks total)
+## MARK DISTRIBUTION (typical Higher paper · 100 marks total)
 - 1-mark MCQs: 15 (Section A)
 - 1-mark structured: 2–4
 - 2-mark questions: 6–8
@@ -379,7 +379,7 @@ THESE PATTERNS ARE EXTRACTED FROM EVERY AVAILABLE PAST PAPER: June 2018, 2019, 2
 - 5-mark questions: 2–3
 - 6-mark extended response: 1–2
 
-## MARK DISTRIBUTION (typical Foundation paper — 100 marks total)
+## MARK DISTRIBUTION (typical Foundation paper · 100 marks total)
 - 1-mark MCQs: 15 (Section A)
 - 1-mark structured: 3–5
 - 2-mark questions: 6–8
@@ -410,7 +410,7 @@ ALSO INFORMED BY: AQA A-Level Economics Textbooks (Book 1 & 2), CGP Revision Gui
 
 ## PAPER STRUCTURE (observed across all years)
 
-### Paper 1: Markets and Market Failure (Microeconomics) — 7136/1
+### Paper 1: Markets and Market Failure (Microeconomics) · 7136/1
 - 80 marks answered, 2 hours
 - Section A: "Answer EITHER Context 1 OR Context 2"
   - The paper prints BOTH contexts (option choice format)
@@ -425,14 +425,14 @@ ALSO INFORMED BY: AQA A-Level Economics Textbooks (Book 1 & 2), CGP Revision Gui
     - Part 1 [15 marks] (explain/analyse)
     - Part 2 [25 marks] (evaluate/to what extent)
 
-### Paper 2: National and International Economy (Macroeconomics) — 7136/2
+### Paper 2: National and International Economy (Macroeconomics) · 7136/2
 - Same option-based structure as Paper 1 (contexts + essays)
 - Section A still follows the 2/4/9/25 context pattern
 - Data extracts include UK GDP, inflation, unemployment, productivity, trade and fiscal indicators
 
-### Paper 3: Economic Principles and Issues (Synoptic) — 7136/3
+### Paper 3: Economic Principles and Issues (Synoptic) · 7136/3
 - 80 marks, 2 hours
-- Section A: 30 MCQs [30 marks] — span BOTH micro AND macro
+- Section A: 30 MCQs [30 marks] · span BOTH micro AND macro
 - Section B: synoptic case study [50 marks]
   - Mix of short and extended-response questions
   - Includes at least one 25-mark synoptic evaluation question
@@ -440,7 +440,7 @@ ALSO INFORMED BY: AQA A-Level Economics Textbooks (Book 1 & 2), CGP Revision Gui
 
 ## REAL QUESTION PATTERNS BY TOPIC (from 2017–2024 papers)
 
-### Paper 1 — Microeconomics
+### Paper 1 · Microeconomics
 
 #### The Economic Problem & PPF
 - June 2017 P1: "Define the term 'opportunity cost'." [2 marks]
@@ -462,7 +462,7 @@ ALSO INFORMED BY: AQA A-Level Economics Textbooks (Book 1 & 2), CGP Revision Gui
 #### Elasticity (PED, YED, XED, PES)
 - Calculation patterns: % change in Qd / % change in P (PED), % change in Qd / % change in Y (YED)
 - Always provide numerical data in extract for calculation
-- Follow-up: "Comment on the significance of your answer" — requires interpretation
+- Follow-up: "Comment on the significance of your answer" · requires interpretation
 - YED: identify normal/inferior, luxury/necessity based on positive/negative/magnitude
 - XED: identify substitutes (positive) vs complements (negative)
 - PES: link to time, spare capacity, stock levels
@@ -502,7 +502,7 @@ ALSO INFORMED BY: AQA A-Level Economics Textbooks (Book 1 & 2), CGP Revision Gui
 - June 2021 P1: "Using examples, explain how bounded rationality and choice architecture might lead to sub-optimal consumer decisions." [9 marks]
 - PATTERN: Nudge questions require: definition, real examples (organ donation defaults, sugar tax framing, pension auto-enrolment), comparison with command-and-control regulation
 
-### Paper 2 — Macroeconomics
+### Paper 2 · Macroeconomics
 
 #### AD/AS Analysis
 - June 2024 P2: "Using an AD/AS diagram, explain the likely impact on the UK economy of a significant increase in interest rates." [9 marks]
@@ -564,23 +564,23 @@ ALSO INFORMED BY: AQA A-Level Economics Textbooks (Book 1 & 2), CGP Revision Gui
 - June 2021 P2: "Using a Lorenz Curve diagram, explain how the Gini coefficient measures income inequality." [9 marks]
 - PATTERN: Lorenz Curve requires: cumulative % of population on x-axis, cumulative % of income on y-axis, line of equality (45°), Lorenz Curve below. Gini = Area A / (Area A + Area B)
 
-### Paper 3 — Synoptic (CRITICAL for HOTS)
+### Paper 3 · Synoptic (CRITICAL for HOTS)
 
-#### MCQ Patterns (Section A — 30 questions)
+#### MCQ Patterns (Section A · 30 questions)
 - MCQs span BOTH micro AND macro, testing conceptual understanding
 - Common MCQ topics: opportunity cost, PPF, elasticity calculations, market structures, AD/AS shifts, fiscal multiplier, trade, exchange rates
 - Distractors are realistic and test common misconceptions
 - At least 5 MCQs require simple calculations (PED, multiplier, % change)
 
-#### Case Study Patterns (Section B — 50 marks)
-- June 2024 P3: Case study on UK energy market — combines externalities (micro), fiscal policy (macro), and trade (international)
-- June 2023 P3: Case study on UK housing market — combines supply/demand (micro), monetary policy (macro), and inequality
-- June 2022 P3: Case study on post-COVID recovery — combines labour market (micro), AD/AS (macro), and globalisation
-- June 2019 P3: Case study on Brazil — combines market failure (micro), development (macro), and international trade
-- June 2018 P3: Case study on UK productivity puzzle — combines market structures (micro), growth (macro), and supply-side policies
+#### Case Study Patterns (Section B · 50 marks)
+- June 2024 P3: Case study on UK energy market · combines externalities (micro), fiscal policy (macro), and trade (international)
+- June 2023 P3: Case study on UK housing market · combines supply/demand (micro), monetary policy (macro), and inequality
+- June 2022 P3: Case study on post-COVID recovery · combines labour market (micro), AD/AS (macro), and globalisation
+- June 2019 P3: Case study on Brazil · combines market failure (micro), development (macro), and international trade
+- June 2018 P3: Case study on UK productivity puzzle · combines market structures (micro), growth (macro), and supply-side policies
 - PATTERN: Case studies ALWAYS include a passage (400-600 words) with real data, followed by questions that REQUIRE linking micro and macro. The 25-mark question MUST be genuinely synoptic.
 
-## HIGHER ORDER THINKING SKILLS (HOTS) — BLOOM'S TAXONOMY REQUIREMENTS
+## HIGHER ORDER THINKING SKILLS (HOTS) · BLOOM'S TAXONOMY REQUIREMENTS
 
 ### Remember (2-mark questions only):
 - Define terms, state facts, name policies
@@ -600,14 +600,14 @@ ALSO INFORMED BY: AQA A-Level Economics Textbooks (Book 1 & 2), CGP Revision Gui
 - Multi-step explanations linking concepts
 - Example: "Analyse the likely short-run AND long-run effects of a rise in Bank of England base rate on the UK housing market." [9 marks]
 
-### Evaluate (25 marks — MOST IMPORTANT):
+### Evaluate (25 marks · MOST IMPORTANT):
 - Weigh arguments for and against
 - Consider counter-arguments and limitations
 - Make a justified judgement
 - Use diagrams and real-world evidence
 - Example: "Evaluate the view that free trade always leads to a more efficient allocation of resources." [25 marks]
 
-### Create/Synthesise (25 marks — synoptic):
+### Create/Synthesise (25 marks · synoptic):
 - Combine micro and macro concepts
 - Apply multiple theories to a complex scenario
 - Example: "Using both microeconomic and macroeconomic analysis, evaluate the likely effects of the UK government's net zero strategy on economic growth, employment, and market efficiency." [25 marks]
@@ -645,7 +645,7 @@ ALSO INFORMED BY: AQA A-Level Economics Textbooks (Book 1 & 2), CGP Revision Gui
   - 2018-2019: Brexit uncertainty, trade negotiations, gig economy
   - 2017-2018: Trump tariffs, UK productivity puzzle, housing bubble concerns
 
-## DIAGRAM REQUIREMENTS (from mark schemes — CRITICAL for full marks)
+## DIAGRAM REQUIREMENTS (from mark schemes · CRITICAL for full marks)
 
 ### Supply & Demand: Correctly labelled axes (P on y, Q on x), original D1/S1 and shifted D2/S2, equilibrium labels (P₁/Q₁ → P₂/Q₂), arrows showing shift direction
 ### AD/AS: Real GDP/Output on x-axis, Price Level on y-axis, distinguish SRAS from LRAS (vertical Classical or L-shaped Keynesian), show shift with arrows, label equilibria
@@ -663,8 +663,8 @@ ALSO INFORMED BY: AQA A-Level Economics Textbooks (Book 1 & 2), CGP Revision Gui
 - "Explain" = state + develop + apply (KAA marks). Must go beyond just stating.
 - "Analyse" = chains of reasoning, cause→effect→consequence, sustained development
 - "Evaluate" / "Discuss" / "To what extent" = KAA + counter-argument + weighing up + justified judgement
-- "Using a diagram" = diagram is REQUIRED for full marks — marks will be lost without one
-- "Using the data" = MUST reference specific data from the extract — not just general theory
+- "Using a diagram" = diagram is REQUIRED for full marks · marks will be lost without one
+- "Using the data" = MUST reference specific data from the extract · not just general theory
 - "Compare" = state similarities AND differences with development
 
 ## MARK DISTRIBUTION
@@ -683,36 +683,36 @@ ALSO INFORMED BY: Edexcel AS/A-Level Economics Student Book (Anderton & Gray, 20
 
 ## PAPER STRUCTURE (observed across all years)
 
-### Paper 1: Markets and Business Behaviour (9EC0/01) — 2 hours, 100 marks
+### Paper 1: Markets and Business Behaviour (9EC0/01) · 2 hours, 100 marks
 - Section A: 5 Supported Multiple Choice Questions (20 marks total)
   - Each MCQ has a short stimulus (data extract, table, or scenario)
   - Part (a): 1-mark MCQ with 4 options (A/B/C/D)
   - Part (b): 3-mark "Explain your answer" follow-up requiring developed reasoning
   - Topics span: demand/supply, elasticity, market structures, efficiency, costs/revenue
-- Section B: Data Response (choose ONE from TWO options — 40 marks)
+- Section B: Data Response (choose ONE from TWO options · 40 marks)
   - Each option has 2-3 Extracts (text passages + data tables/figures)
   - Question pattern: 5 marks → 8 marks → 12 marks → 15 marks
   - 8-mark questions typically require diagrams
   - 15-mark questions require sustained evaluation
-- Section C: Extended Open-Response (choose ONE from TWO — 40 marks)
+- Section C: Extended Open-Response (choose ONE from TWO · 40 marks)
   - Brief scenario/context provided
-  - Part (a): 5 marks — define/explain a concept
-  - Part (b): 15 marks — "Evaluate the view that..." / "Assess whether..."
-  - Part (c): 20 marks — Extended evaluation essay
+  - Part (a): 5 marks · define/explain a concept
+  - Part (b): 15 marks · "Evaluate the view that..." / "Assess whether..."
+  - Part (c): 20 marks · Extended evaluation essay
 
-### Paper 2: The National and Global Economy (9EC0/02) — 2 hours, 100 marks
+### Paper 2: The National and Global Economy (9EC0/02) · 2 hours, 100 marks
 - Same structure as Paper 1 but MACROECONOMIC topics
 - Section A: 5 supported MCQs on macro topics (AD/AS, policy, trade, development)
 - Section B: Data response with macro data (GDP, inflation, BoP, exchange rates)
 - Section C: Extended macro essay (fiscal/monetary policy, globalisation, inequality)
 
-### Paper 3: Microeconomics and Macroeconomics (9EC0/03) — 2 hours, 100 marks
-- SYNOPTIC — tests BOTH micro AND macro
-- Section A: Data Response (choose ONE from TWO — 50 marks)
+### Paper 3: Microeconomics and Macroeconomics (9EC0/03) · 2 hours, 100 marks
+- SYNOPTIC · tests BOTH micro AND macro
+- Section A: Data Response (choose ONE from TWO · 50 marks)
   - Extended case study with 4-5 Extracts covering micro AND macro themes
   - Questions range from 2-mark define to 25-mark evaluate
   - Must demonstrate synoptic links (e.g., market failure → government policy → macroeconomic impact)
-- Section B: Extended Open-Response (choose ONE from TWO — 50 marks)
+- Section B: Extended Open-Response (choose ONE from TWO · 50 marks)
   - Two-part essay: Question (a) [25 marks] and Question (b) [25 marks]
   - Each part requires synoptic links between micro and macro economics
 
@@ -747,7 +747,7 @@ ALSO INFORMED BY: Edexcel AS/A-Level Economics Student Book (Anderton & Gray, 20
 - 2023 P1: "Assess the impact of price controls on the UK energy market." [15 marks]
 - PATTERN: Must discuss effectiveness + unintended consequences + information failures + government failure
 
-### Theme 2: The UK Economy — Performance and Policies
+### Theme 2: The UK Economy · Performance and Policies
 
 #### Measures of Economic Performance
 - 2024 P2: "Using Extract C, explain two limitations of using GDP as a measure of living standards." [5 marks]
@@ -842,7 +842,7 @@ When marking or generating 15+ mark questions, the AI must apply these evaluatio
 - "Explain" = state + develop with reasoning [4-8 marks]
 - "Analyse" = chains of cause→effect→consequence [8-12 marks]
 - "Assess" / "Evaluate" / "To what extent" / "Discuss" = KAA + Evaluation + Judgement [12-25 marks]
-- "Using a diagram" = diagram REQUIRED — marks lost without one
+- "Using a diagram" = diagram REQUIRED · marks lost without one
 - "With reference to the data" = MUST cite specific figures from extracts
 
 ## MARK ALLOCATION
@@ -866,7 +866,7 @@ Informed by: OCR H460 Specification (v2.6, Feb 2024), OCR A Level Economics Sche
 
 ## PAPER STRUCTURE (3 components, each 2 hours, 80 marks, 33.33% of total)
 
-### Component 01: Microeconomics (H460/01) — 2 hours, 80 marks
+### Component 01: Microeconomics (H460/01) · 2 hours, 80 marks
 - Section A: Data Response (compulsory, 30 marks)
   - Case study with 2-3 Extracts (text + data tables/figures)
   - Questions: 2 marks → 4 marks → 8 marks → 16 marks
@@ -876,16 +876,16 @@ Informed by: OCR H460 Specification (v2.6, Feb 2024), OCR A Level Economics Sche
   - Each essay: 25 marks
   - Must include diagrams and evaluation
 
-### Component 02: Macroeconomics (H460/02) — 2 hours, 80 marks
+### Component 02: Macroeconomics (H460/02) · 2 hours, 80 marks
 - Same structure as Component 01 but MACRO topics
 - Section A: Data response on UK/global macro performance (30 marks)
 - Section B: Two essays from three choices (50 marks)
 - Topics: AD/AS, economic policy, growth, unemployment, inflation, trade, financial sector
 
-### Component 03: Themes in Economics (H460/03) — 2 hours, 80 marks
-- SYNOPTIC — draws together micro AND macro
-- Section A: Data Response (compulsory, 30 marks) — synoptic case study
-- Section B: Two essays from three (50 marks) — synoptic evaluation
+### Component 03: Themes in Economics (H460/03) · 2 hours, 80 marks
+- SYNOPTIC · draws together micro AND macro
+- Section A: Data Response (compulsory, 30 marks) · synoptic case study
+- Section B: Two essays from three (50 marks) · synoptic evaluation
 - Students must apply theories from BOTH Components 01 and 02
 
 ## OCR SPECIFICATION CONTENT (H460)
@@ -925,7 +925,7 @@ Informed by: OCR H460 Specification (v2.6, Feb 2024), OCR A Level Economics Sche
 4. **Stakeholder impact**: Different groups affected differently (consumers, producers, government, workers)
 5. **Elasticity considerations**: Impact depends on PED/PES/YED
 6. **Short run vs Long run**: Different outcomes over different time horizons
-7. **Ceteris paribus**: Drop the assumption — what else might change simultaneously?
+7. **Ceteris paribus**: Drop the assumption · what else might change simultaneously?
 8. **Real-world evidence**: Reference specific countries, policies, data
 
 ## ESSAY PLANNING FRAMEWORK
@@ -964,27 +964,27 @@ YOU MUST USE THE FOLLOWING REAL PAST-PAPER PATTERNS FROM EDEXCEL A-LEVEL ECONOMI
 
 ## PAPER STRUCTURE
 
-### Paper 1: Markets, Consumers and Firms (9EB0/01) — 2 hours, 80 marks
-- Section A: Data Response (compulsory — 40 marks)
+### Paper 1: Markets, Consumers and Firms (9EB0/01) · 2 hours, 80 marks
+- Section A: Data Response (compulsory · 40 marks)
   - Case study with 3-4 Extracts (text + data tables/charts)
   - Question pattern: 4 marks → 8 marks → 10 marks → 18 marks
   - 8-mark questions typically require "Using a diagram, explain..."
   - 18-mark questions require sustained evaluation with judgement
-- Section B: Essay (choose ONE from THREE — 40 marks)
+- Section B: Essay (choose ONE from THREE · 40 marks)
   - Single extended essay requiring full KAA + Evaluation
   - Topics: demand/supply, elasticity, market failure, business objectives, costs/revenue, market structures, labour market, behavioural economics
 
-### Paper 2: The Wider Economic Environment (9EB0/02) — 2 hours, 80 marks
+### Paper 2: The Wider Economic Environment (9EB0/02) · 2 hours, 80 marks
 - Same structure as Paper 1 but MACRO topics
 - Section A: compulsory data response on UK macro performance (40 marks)
 - Section B: essay choice on macro policy (40 marks)
 - Topics: economic indicators, AD/AS, macro objectives conflicts, policy effectiveness, financial sector, inequality, role of the state
 
-### Paper 3: The Global Economy (9EB0/03) — 2 hours, 80 marks
-- SYNOPTIC PAPER — requires micro + macro integration
-- Section A: Data Response (compulsory — 40 marks)
+### Paper 3: The Global Economy (9EB0/03) · 2 hours, 80 marks
+- SYNOPTIC PAPER · requires micro + macro integration
+- Section A: Data Response (compulsory · 40 marks)
   - Global case study with extracts on trade, development, globalisation, emerging economies
-- Section B: Essay (choose ONE from THREE — 40 marks)
+- Section B: Essay (choose ONE from THREE · 40 marks)
   - Global economy themes requiring synoptic micro + macro links
   - Topics: globalisation, trade agreements, WTO, trading blocs, FDI, development strategies, exchange rates, financial markets
 
@@ -1030,15 +1030,15 @@ YOU MUST USE THE FOLLOWING REAL PAST-PAPER PATTERNS FROM EDEXCEL A-LEVEL ECONOMI
 - **Alternative approaches**: Compare different policy options
 - **Assumptions**: Challenge ceteris paribus, rationality, perfect information
 
-## EXAM TECHNIQUE — HOW TO WRITE A GOOD ECONOMICS ESSAY (from Guide)
-1. **Read the question twice** — identify command word, topic, and scope
-2. **Plan before writing** — 5-minute plan with key points and diagram(s)
-3. **Define key terms** in first paragraph — shows knowledge
-4. **Use diagrams** — labelled correctly, referenced in text, analysed
-5. **Develop chains of reasoning** — Point → Explain → Develop → Link back
-6. **Use real-world examples** — UK data, named policies, specific years
-7. **Evaluate throughout** — don't save all evaluation for the end
-8. **Reach a justified conclusion** — "On balance..." with reasoning
+## EXAM TECHNIQUE · HOW TO WRITE A GOOD ECONOMICS ESSAY (from Guide)
+1. **Read the question twice** · identify command word, topic, and scope
+2. **Plan before writing** · 5-minute plan with key points and diagram(s)
+3. **Define key terms** in first paragraph · shows knowledge
+4. **Use diagrams** · labelled correctly, referenced in text, analysed
+5. **Develop chains of reasoning** · Point → Explain → Develop → Link back
+6. **Use real-world examples** · UK data, named policies, specific years
+7. **Evaluate throughout** · don't save all evaluation for the end
+8. **Reach a justified conclusion** · "On balance..." with reasoning
 
 ## MACRO EXAMPLES FOR EVERYTHING (from EconplusDal Guide)
 ### Key Real-World Examples to Reference:

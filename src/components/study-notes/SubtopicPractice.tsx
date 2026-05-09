@@ -75,7 +75,7 @@ Output ONLY the question text and mark allocation. Nothing else.` }],
             user_id: user.id,
             subject,
             session_type: "question",
-            topic: `${topicName} — ${subtopicTitle}`,
+            topic: `${topicName} · ${subtopicTitle}`,
           });
         }
         if (!subscribed && profile) {

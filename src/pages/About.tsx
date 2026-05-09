@@ -9,8 +9,8 @@ export default function About() {
           the tools they need to walk into their exam confident.
         </p>
         <p>
-          Our platform supports all major UK exam boards — AQA, Edexcel (A &amp; B), OCR,
-          Cambridge (CAIE), WJEC, Eduqas, and IB Economics — across both GCSE and A-Level.
+          Our platform supports all major UK exam boards · AQA, Edexcel (A &amp; B), OCR,
+          Cambridge (CAIE), WJEC, Eduqas, and IB Economics · across both GCSE and A-Level.
         </p>
         <p>
           From predicted papers and instant marking to structured revision notes and a 24/7

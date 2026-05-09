@@ -1,5 +1,5 @@
 /**
- * LorenzCurveDiagram — Exam-accurate Lorenz Curve with optional Country A/B comparison.
+ * LorenzCurveDiagram · Exam-accurate Lorenz Curve with optional Country A/B comparison.
  *
  * Axes: X = Cumulative % of Population, Y = Cumulative % of Income
  * Always shows: 45° Line of Perfect Equality
@@ -53,8 +53,8 @@ interface LorenzCurveDiagramProps {
 export default function LorenzCurveDiagram({ className }: LorenzCurveDiagramProps) {
   const [showComparison, setShowComparison] = useState(true);
 
-  const bowA = 0.8;  // Country A — more equal (closer to line)
-  const bowB = 1.8;  // Country B — less equal (further from line)
+  const bowA = 0.8;  // Country A · more equal (closer to line)
+  const bowB = 1.8;  // Country B · less equal (further from line)
   const bowSingle = 1.2;
 
   // Annotation points at 20% of population

@@ -1,16 +1,16 @@
 import type { PredictedPaper } from "./predictedPapersLibrary";
 
 export const chemistryPredictedPapersExtra: PredictedPaper[] = [
-  // ── CHEMISTRY PAPER 1: Higher — Set D ──
+  // ── CHEMISTRY PAPER 1: Higher · Set D ──
   {
     id: "chem-p1-higher-d",
     subject: "chemistry",
     paper: "1",
     tier: "Higher",
-    title: "Chem Paper 1 Higher — Set D",
+    title: "Chem Paper 1 Higher · Set D",
     description: "Higher tier. Atomic structure, bonding, quantitative chemistry, and energy changes.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462) — Paper 1 Higher — Predicted Paper Set D
+    content: `# AQA GCSE Chemistry (8462) · Paper 1 Higher · Predicted Paper Set D
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -124,16 +124,16 @@ Question 19 [6 marks]
 **Extended Response:** Compare the properties and uses of graphite and graphene. Explain how their structures account for the differences in their properties.`,
   },
 
-  // ── CHEMISTRY PAPER 2: Higher — Set D ──
+  // ── CHEMISTRY PAPER 2: Higher · Set D ──
   {
     id: "chem-p2-higher-d",
     subject: "chemistry",
     paper: "2",
     tier: "Higher",
-    title: "Chem Paper 2 Higher — Set D",
+    title: "Chem Paper 2 Higher · Set D",
     description: "Higher tier. Rates, organic chemistry, atmosphere, and chemical analysis.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462) — Paper 2 Higher — Predicted Paper Set D
+    content: `# AQA GCSE Chemistry (8462) · Paper 2 Higher · Predicted Paper Set D
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -240,16 +240,16 @@ Question 18 [6 marks]
 **Extended Response:** "Using more renewable resources and recycling metals is essential for sustainable development." Evaluate this statement, considering the advantages and disadvantages of recycling and using renewable resources.`,
   },
 
-  // ── CHEMISTRY PAPER 1: Foundation — Set C ──
+  // ── CHEMISTRY PAPER 1: Foundation · Set C ──
   {
     id: "chem-p1-foundation-c",
     subject: "chemistry",
     paper: "1",
     tier: "Foundation",
-    title: "Chem Paper 1 Foundation — Set C",
+    title: "Chem Paper 1 Foundation · Set C",
     description: "Foundation tier. Atoms, bonding, moles (simple), and energy basics.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462) — Paper 1 Foundation — Predicted Paper Set C
+    content: `# AQA GCSE Chemistry (8462) · Paper 1 Foundation · Predicted Paper Set C
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -347,16 +347,16 @@ Question 19 [6 marks]
 **Extended Response:** The development of the atomic model over time. Describe how the atomic model has changed from Dalton to Bohr, including the contributions of Thomson and Rutherford.`,
   },
 
-  // ── CHEMISTRY PAPER 2: Foundation — Set C ──
+  // ── CHEMISTRY PAPER 2: Foundation · Set C ──
   {
     id: "chem-p2-foundation-c",
     subject: "chemistry",
     paper: "2",
     tier: "Foundation",
-    title: "Chem Paper 2 Foundation — Set C",
+    title: "Chem Paper 2 Foundation · Set C",
     description: "Foundation tier. Rates, organic basics, atmosphere, and resources.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462) — Paper 2 Foundation — Predicted Paper Set C
+    content: `# AQA GCSE Chemistry (8462) · Paper 2 Foundation · Predicted Paper Set C
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -461,16 +461,16 @@ Question 19 [6 marks]
 **Extended Response:** "Phytomining and bioleaching are better methods of extracting copper than traditional mining." Evaluate this statement, considering environmental, economic, and sustainability factors.`,
   },
 
-  // ── CHEMISTRY PAPER 1: Higher — Set E ──
+  // ── CHEMISTRY PAPER 1: Higher · Set E ──
   {
     id: "chem-p1-higher-e",
     subject: "chemistry",
     paper: "1",
     tier: "Higher",
-    title: "Chem Paper 1 Higher — Set E",
+    title: "Chem Paper 1 Higher · Set E",
     description: "Higher tier. Nanoparticles, titrations, and advanced bonding.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462) — Paper 1 Higher — Predicted Paper Set E
+    content: `# AQA GCSE Chemistry (8462) · Paper 1 Higher · Predicted Paper Set E
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -565,16 +565,16 @@ Question 18 [3 marks]
 An acid has a pH of 2. (a) What is the concentration of H⁺ ions? (b) If the acid is diluted and the pH changes to 4, by what factor has the H⁺ concentration changed?`,
   },
 
-  // ── CHEMISTRY PAPER 2: Higher — Set E ──
+  // ── CHEMISTRY PAPER 2: Higher · Set E ──
   {
     id: "chem-p2-higher-e",
     subject: "chemistry",
     paper: "2",
     tier: "Higher",
-    title: "Chem Paper 2 Higher — Set E",
+    title: "Chem Paper 2 Higher · Set E",
     description: "Higher tier. Equilibrium, polymers, water treatment, and instrumental analysis.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462) — Paper 2 Higher — Predicted Paper Set E
+    content: `# AQA GCSE Chemistry (8462) · Paper 2 Higher · Predicted Paper Set E
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -622,9 +622,9 @@ A student tests four solutions to identify the metal ions present using flame te
 | Solution | Flame colour | NaOH precipitate |
 |----------|-------------|------------------|
 | A | Yellow | White |
-| B | Lilac | — |
-| C | — | Brown |
-| D | — | Blue |
+| B | Lilac | · |
+| C | · | Brown |
+| D | · | Blue |
 Identify the metal ion in each solution.
 
 Question 7 [6 marks]
@@ -672,16 +672,16 @@ Question 18 [4 marks]
 Explain the greenhouse effect. Why is it essential for life on Earth, and how has human activity enhanced it?`,
   },
 
-  // ── CHEMISTRY PAPER 1: Foundation — Set D ──
+  // ── CHEMISTRY PAPER 1: Foundation · Set D ──
   {
     id: "chem-p1-foundation-d",
     subject: "chemistry",
     paper: "1",
     tier: "Foundation",
-    title: "Chem Paper 1 Foundation — Set D",
+    title: "Chem Paper 1 Foundation · Set D",
     description: "Foundation tier. Periodic table trends, simple calculations, and practical skills.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462) — Paper 1 Foundation — Predicted Paper Set D
+    content: `# AQA GCSE Chemistry (8462) · Paper 1 Foundation · Predicted Paper Set D
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -771,16 +771,16 @@ Question 18 [6 marks]
 **Extended Response:** Metals are used for a wide range of purposes. Using your knowledge of metallic bonding and the properties of metals, explain why metals are suitable for use as (a) electrical wiring, (b) saucepans, and (c) structural materials in buildings.`,
   },
 
-  // ── CHEMISTRY PAPER 2: Foundation — Set D ──
+  // ── CHEMISTRY PAPER 2: Foundation · Set D ──
   {
     id: "chem-p2-foundation-d",
     subject: "chemistry",
     paper: "2",
     tier: "Foundation",
-    title: "Chem Paper 2 Foundation — Set D",
+    title: "Chem Paper 2 Foundation · Set D",
     description: "Foundation tier. Greenhouse effect, fuels, and testing for gases.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462) — Paper 2 Foundation — Predicted Paper Set D
+    content: `# AQA GCSE Chemistry (8462) · Paper 2 Foundation · Predicted Paper Set D
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -816,8 +816,8 @@ D. Always increases the temperature
 
 Question 5 [1 marks]
 The chemical test for water is:
-A. Add cobalt chloride paper — turns from blue to pink
-B. Add litmus paper — turns red
+A. Add cobalt chloride paper · turns from blue to pink
+B. Add litmus paper · turns red
 C. Heat and collect steam
 D. Add universal indicator
 

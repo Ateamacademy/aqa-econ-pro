@@ -1,15 +1,15 @@
 <!-- Auto-generated from /public/ib-mocks/mark-scheme-paper-1-hard.pdf -->
-SME Mark Scheme P1 — Hard
+SME Mark Scheme P1 · Hard
 
 
-SavePredictedExams — SME
+SavePredictedExams · SME
 
 Economics
 Higher level / Standard level
 Paper 1
 
 
-SME Mark Scheme — Paper 1 Hard
+SME Mark Scheme · Paper 1 Hard
 
 
 Use the question-specific mark scheme together with the mark bands. Award up to the maximum
@@ -27,7 +27,7 @@ Answers may include:
       over-produces, allocating too many resources to the good. The welfare loss measures the lost
       benefit to society from the over-consumed units.
 
-Assessment Criteria — Part (a) 10 marks
+Assessment Criteria · Part (a) 10 marks
 
   Marks          Level descriptor
 
@@ -55,7 +55,7 @@ Assessment Criteria — Part (a) 10 marks
 
 
                                                    1                                    SME Predicted Paper
-                                                                    SME Mark Scheme P1 — Hard
+                                                                    SME Mark Scheme P1 · Hard
 
 
 9–10   The specific demands of the question are understood and addressed.
@@ -65,7 +65,7 @@ Assessment Criteria — Part (a) 10 marks
 
 
                                         2                                  SME Predicted Paper
-                                                                                  SME Mark Scheme P1 — Hard
+                                                                                  SME Mark Scheme P1 · Hard
 
 
 1. (b) Using real-world examples, evaluate the view that carbon taxes are the most effective policy to
@@ -85,7 +85,7 @@ Answers may include:
       • Example(s): Sweden’s carbon tax, EU ETS, British Columbia’s revenue-neutral carbon tax, the
       US Inflation Reduction Act’s subsidies.
 
-Assessment Criteria — Part (b) 15 marks
+Assessment Criteria · Part (b) 15 marks
 
   Marks           Level descriptor
 
@@ -116,7 +116,7 @@ Assessment Criteria — Part (b) 15 marks
 
 
                                                      3                                     SME Predicted Paper
-                                                                        SME Mark Scheme P1 — Hard
+                                                                        SME Mark Scheme P1 · Hard
 
 
 10–12   The specific demands of the question are understood and addressed.
@@ -138,7 +138,7 @@ Assessment Criteria — Part (b) 15 marks
 
 
                                            4                                    SME Predicted Paper
-                                                                                SME Mark Scheme P1 — Hard
+                                                                                SME Mark Scheme P1 · Hard
 
 
 2. (a) Explain, using an AD/AS diagram, the difference between demand-pull inflation and cost-push
@@ -147,13 +147,13 @@ inflation. [10]
 Answers may include:
       • Terminology: Demand-pull inflation, cost-push inflation, aggregate demand, aggregate supply,
       SRAS, LRAS, average price level.
-      • Diagrams: Two AD/AS diagrams — one with AD shifting right (demand-pull), another with
+      • Diagrams: Two AD/AS diagrams · one with AD shifting right (demand-pull), another with
       SRAS shifting left (cost-push). Labels must be complete.
       • Theory: Demand-pull arises from excess AD (e.g. consumer boom, fiscal/monetary stimulus).
       Cost-push arises from rising production costs (oil shocks, wage push, weaker currency raising
       import prices).
 
-Assessment Criteria — Part (a) 10 marks
+Assessment Criteria · Part (a) 10 marks
 
   Marks          Level descriptor
 
@@ -186,7 +186,7 @@ Assessment Criteria — Part (a) 10 marks
 
 
                                                    5                                    SME Predicted Paper
-                                                                                     SME Mark Scheme P1 — Hard
+                                                                                     SME Mark Scheme P1 · Hard
 
 
 2. (b) Using real-world examples, discuss the view that contractionary monetary policy is always
@@ -205,7 +205,7 @@ Answers may include:
       • Example(s): Fed rate hikes 2022–23, ECB tightening, UK fiscal energy subsidies 2022–23,
       Turkey’s unconventional rate cuts and resulting inflation.
 
-Assessment Criteria — Part (b) 15 marks
+Assessment Criteria · Part (b) 15 marks
 
   Marks           Level descriptor
 
@@ -245,7 +245,7 @@ Assessment Criteria — Part (b) 15 marks
 
 
                                                       6                                      SME Predicted Paper
-                                                                     SME Mark Scheme P1 — Hard
+                                                                     SME Mark Scheme P1 · Hard
 
 
 13–15   The specific demands of the question are understood and addressed.
@@ -258,7 +258,7 @@ Assessment Criteria — Part (b) 15 marks
 
 
                                          7                                   SME Predicted Paper
-                                                                                   SME Mark Scheme P1 — Hard
+                                                                                   SME Mark Scheme P1 · Hard
 
 
 3. (a) Using a diagram, explain how a tariff imposed on imported goods affects domestic producers,
@@ -272,7 +272,7 @@ Answers may include:
       • Theory: Consumers lose surplus, domestic producers gain surplus, government gains revenue,
       but the two welfare-loss triangles mean society is worse off overall.
 
-Assessment Criteria — Part (a) 10 marks
+Assessment Criteria · Part (a) 10 marks
 
   Marks           Level descriptor
 
@@ -305,7 +305,7 @@ Assessment Criteria — Part (a) 10 marks
 
 
                                                      8                                     SME Predicted Paper
-                                                                                 SME Mark Scheme P1 — Hard
+                                                                                 SME Mark Scheme P1 · Hard
 
 
 3. (b) Using real-world examples, evaluate the view that free trade always benefits developing
@@ -325,7 +325,7 @@ Answers may include:
       • Example(s): China’s post-WTO growth (developing), US/EU bargaining power in trade deals,
       Vietnam’s CPTPP benefits, sub-Saharan African commodity exporters.
 
-Assessment Criteria — Part (b) 15 marks
+Assessment Criteria · Part (b) 15 marks
 
   Marks          Level descriptor
 
@@ -356,7 +356,7 @@ Assessment Criteria — Part (b) 15 marks
 
 
                                                     9                                     SME Predicted Paper
-                                                                        SME Mark Scheme P1 — Hard
+                                                                        SME Mark Scheme P1 · Hard
 
 
 10–12   The specific demands of the question are understood and addressed.

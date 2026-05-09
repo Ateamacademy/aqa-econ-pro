@@ -17,7 +17,7 @@
     </marker>
   </defs>
 
-  <text x="350" y="30" text-anchor="middle" class="ttl">Welsh Economy — Long-Run Growth via R&amp;D and Skills</text>
+  <text x="350" y="30" text-anchor="middle" class="ttl">Welsh Economy · Long-Run Growth via R&amp;D and Skills</text>
   <text x="350" y="50" text-anchor="middle" class="sub">Investment in capital and human capital shifts the PPF outward (PPF1 → PPF2)</text>
 
   <line class="axis" x1="100" y1="80"  x2="100" y2="450"/>
@@ -53,5 +53,5 @@
 
   <!-- Caption -->
   <text x="100" y="495" class="sub">More/better capital goods + higher labour productivity raise the maximum sustainable output of both goods.</text>
-  <text x="100" y="512" class="sub">The economy can now produce combinations previously unattainable — long-run economic growth.</text>
+  <text x="100" y="512" class="sub">The economy can now produce combinations previously unattainable · long-run economic growth.</text>
 </svg>

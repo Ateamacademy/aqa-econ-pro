@@ -86,8 +86,8 @@ export function getASPapers(board: "aqa" | "edexcel-a" | "edexcel-b" | "ocr") {
 }
 
 export const asPaperTitles: Record<string, Record<number, string>> = {
-  aqa: { 1: "AS Paper 1 — The Operation of Markets & Market Failure (7135/1)", 2: "AS Paper 2 — The National Economy in a Global Context (7135/2)" },
-  "edexcel-a": { 1: "AS Paper 1 — Introduction to Markets and Market Failure", 2: "AS Paper 2 — The UK Economy" },
-  "edexcel-b": { 1: "AS Paper 1 — Markets, Consumers and Firms", 2: "AS Paper 2 — The Wider Economic Environment" },
-  ocr: { 1: "AS Paper 1 — Microeconomics (H060/01)", 2: "AS Paper 2 — Macroeconomics (H060/02)" },
+  aqa: { 1: "AS Paper 1 · The Operation of Markets & Market Failure (7135/1)", 2: "AS Paper 2 · The National Economy in a Global Context (7135/2)" },
+  "edexcel-a": { 1: "AS Paper 1 · Introduction to Markets and Market Failure", 2: "AS Paper 2 · The UK Economy" },
+  "edexcel-b": { 1: "AS Paper 1 · Markets, Consumers and Firms", 2: "AS Paper 2 · The Wider Economic Environment" },
+  ocr: { 1: "AS Paper 1 · Microeconomics (H060/01)", 2: "AS Paper 2 · Macroeconomics (H060/02)" },
 };

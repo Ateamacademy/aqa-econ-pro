@@ -1,5 +1,5 @@
 <!-- Auto-generated from /public/ocr-gcse-mocks/mark-scheme-paper-3-advanced.pdf -->
-H460/03 Mark Scheme — Predicted Paper (Advanced)
+H460/03 Mark Scheme · Predicted Paper (Advanced)
 
 
 Oxford Cambridge and RSA Examinations
@@ -10,16 +10,16 @@ Economics
 H460/03: Themes in economics
 A Level
 
-Predicted Paper — ADVANCED
+Predicted Paper · ADVANCED
 
 Mark Scheme
 
 
                                    Page 1
-                                 H460/03 Mark Scheme — Predicted Paper (Advanced)
+                                 H460/03 Mark Scheme · Predicted Paper (Advanced)
 
 
-           SECTION A — Multiple Choice Answers
+           SECTION A · Multiple Choice Answers
 
 Question   Answer     Question             Answer
 
@@ -55,14 +55,14 @@ Question   Answer     Question             Answer
 
 
                            Page 2
-                                                    H460/03 Mark Scheme — Predicted Paper (Advanced)
+                                                    H460/03 Mark Scheme · Predicted Paper (Advanced)
 
 
-Section A — Full Rationales
+Section A · Full Rationales
 
 Q      Key    Rationale                                                                           AO
 1      C      Wages paid for labour are a factor reward. Unemployment benefit is a                AO1
-              transfer payment — the recipient is not providing a factor service in
+              transfer payment · the recipient is not providing a factor service in
               exchange.
 
 2      B      With MPC = 0.75 out of disposable income and tax rate t = 20%: effective            AO2
@@ -79,7 +79,7 @@ Q      Key    Rationale                                                         
               expansionary policy (the opposite).
 
 5      A      Joint supply (complements in PRODUCTION): rising demand for Y raises                AO3
-              its price, incentivising producers to produce more Y — and automatically
+              its price, incentivising producers to produce more Y · and automatically
               more X as a by-product. Supply of X shifts right → price of X falls.
 
 6      C      Cournot duopoly with P = 100 − Q and MC = 10: q_i* = (a − c)/((n+1)b) =             AO3
@@ -110,7 +110,7 @@ Q      Key    Rationale                                                         
 
 13     C      Set MCL = MRP: 10 + L = 70 − L → 2L = 60 → L = 30. Wage from the                    AO3
               supply curve at L = 30: W = 10 + 0.5(30) = £25. Monopsony wage (£25) <
-              MRP at L=30 (£40) — the classic monopsonistic 'wage gap'.
+              MRP at L=30 (£40) · the classic monopsonistic 'wage gap'.
 
 14     C      MV = PY → %ΔM + %ΔV = %ΔP + %ΔY. With stable V (%ΔV = 0): 8% +                      AO2
               0% = %ΔP + 3% → inflation = 5%.
@@ -129,13 +129,13 @@ Q      Key    Rationale                                                         
 
 
                                               Page 3
-                                              H460/03 Mark Scheme — Predicted Paper (Advanced)
+                                              H460/03 Mark Scheme · Predicted Paper (Advanced)
 
 
-         distribution and further over another — making Gini rankings ambiguous.
+         distribution and further over another · making Gini rankings ambiguous.
 
 18   B   Incidence falls on the side of the market that is LESS elastic. Here               AO3
-         demand is highly inelastic — consumers bear most of the burden.
+         demand is highly inelastic · consumers bear most of the burden.
          Because Q falls little, government revenue (t × Q) is large.
 
 19   C   Injections = I + G + X = 180 + 220 + 400 = 800. Leakages = S + T + M =             AO2
@@ -144,7 +144,7 @@ Q      Key    Rationale                                                         
 
 20   B   Akerlof's 'lemons' model: asymmetric information causes buyers to offer            AO1
          average-quality prices. Sellers of high-quality cars withdraw; only low-
-         quality 'lemons' remain. The market unravels — classic adverse selection.
+         quality 'lemons' remain. The market unravels · classic adverse selection.
 
 21   A   A lump-sum tax doesn't affect MC, so short-run output is unchanged. But            AO3
          AC rises → firms below normal profit exit in the long run → industry supply
@@ -153,10 +153,10 @@ Q      Key    Rationale                                                         
 
 22   C   Self-preferencing leverages dominance from the upstream market (the                AO3
          platform/infrastructure) into a downstream market (the products sold via
-         the platform). This is vertical foreclosure — the competition-law concept
+         the platform). This is vertical foreclosure · the competition-law concept
          directly applied in DMA/CMA enforcement.
 
-23   D   A SMALL open economy cannot affect world prices — so it cannot                     AO3
+23   D   A SMALL open economy cannot affect world prices · so it cannot                     AO3
          improve its terms of trade via a tariff. (This is the crucial qualification
          distinguishing small vs large open economies in trade theory.) The other
          three effects are all present.
@@ -170,7 +170,7 @@ Q      Key    Rationale                                                         
          rises, quantity sold falls; with costly unsold output, PS can fall. Hence
          'unambiguously rises' is NOT a consequence.
 
-26   A   Perfect contestability + zero sunk costs force prices to AC — because any          AO1
+26   A   Perfect contestability + zero sunk costs force prices to AC · because any          AO1
          supernormal profit would invite hit-and-run entry. With economies of scale,
          the firm operates at minimum AC (= normal profit). This is the key result of
          contestability theory.
@@ -181,7 +181,7 @@ Q      Key    Rationale                                                         
 
 28   A   HDI_W = (0.90 × 0.85 × 0.95)^(1/3) = (0.72675)^(1/3) ≈ 0.8992. HDI_V =             AO2
          (0.95 × 0.95 × 0.75)^(1/3) = (0.676875)^(1/3) ≈ 0.8775. W is higher despite
-         lower average, because geometric mean penalises imbalance — V's weak
+         lower average, because geometric mean penalises imbalance · V's weak
          income pillar drags it down.
 
 29   B   Lewis two-sector model: unlimited supply of surplus labour from traditional        AO1
@@ -196,10 +196,10 @@ Q      Key    Rationale                                                         
 
 
                                          Page 4
-                                                     H460/03 Mark Scheme — Predicted Paper (Advanced)
+                                                     H460/03 Mark Scheme · Predicted Paper (Advanced)
 
 
-                                 SECTION B — Guidance
+                                 SECTION B · Guidance
 
 Question 31 (2 marks)
 Using the data in Fig. 1.1, calculate the percentage increase in the combined market
@@ -215,10 +215,10 @@ Question 32 (3 marks)
 Explain, using examples from Extract 1, two reasons why digital markets tend towards
 'winner-takes-most' outcomes.
 Award 1 mark per identified reason (max 2); 1 mark for application to Extract 1.
-   • Network effects: the more users a platform has, the more valuable it is — e.g. Meta's
+   • Network effects: the more users a platform has, the more valuable it is · e.g. Meta's
    80%+ weekly UK reach is self-reinforcing.
    • Economies of scale / high fixed costs of software development: large firms spread R&D
-   costs over huge user bases — e.g. Google's 91% search share reflects scale
+   costs over huge user bases · e.g. Google's 91% search share reflects scale
    advantages.
    • Economies of scope from data: data gathered from one service improves others (e.g.
    Alphabet leveraging search data into ads, maps, YouTube).
@@ -249,7 +249,7 @@ regulation of Big Tech firms is likely to improve economic welfare.
 
 
                                                 Page 5
-                                                     H460/03 Mark Scheme — Predicted Paper (Advanced)
+                                                     H460/03 Mark Scheme · Predicted Paper (Advanced)
 
 
                         Limited application; data use may be generic or irrelevant.
@@ -266,7 +266,7 @@ Knowledge:
 effects; dynamic efficiency; regulatory failure; vertical foreclosure; price discrimination.
 Application:
 • Google 91% UK search share; 99% app-store concentration; Meta 80%+ weekly UK reach.
-• UK Digital Markets Act 2024 — SMS designations; fines up to 10% of global turnover.
+• UK Digital Markets Act 2024 · SMS designations; fines up to 10% of global turnover.
 • Big Tech R&D ratios vastly exceed market averages (Meta 27%, Alphabet 14% vs S&P
 average 4%).
 • App-store fees of 15–30% on developers.
@@ -275,7 +275,7 @@ Analysis (regulation improves welfare):
 > MC) → deadweight welfare loss. Shade triangle between AR and MC curves from Q_mon
 to Q_comp.
 • Requiring Apple to open payment systems or Google to de-bias search rankings directly
-addresses vertical foreclosure — restoring competition in downstream markets (app
+addresses vertical foreclosure · restoring competition in downstream markets (app
 payments, shopping comparison).
 • Reducing platform fees (currently 15–30%) passes through to smaller app developers and
 to consumers.
@@ -290,10 +290,10 @@ ecosystems. Breaking them up can destroy value.
 • Regulatory failure: the CMA may have information asymmetries with tech firms; definitions
 like 'Strategic Market Status' risk being arbitrary; regulatory capture possible.
 • Digital markets are still contestable at the frontier: entry by new AI-native firms (OpenAI,
-Anthropic, Mistral) has rapidly challenged incumbents — suggests the 'monopoly' is
+Anthropic, Mistral) has rapidly challenged incumbents · suggests the 'monopoly' is
 temporary.
 • Extra-territorial effects: UK/EU regulation of global firms may cause service withdrawal (as
-when Meta threatened to exit EU over data rules) — welfare loss for consumers.
+when Meta threatened to exit EU over data rules) · welfare loss for consumers.
 Judgements might include:
 • Depends on the type of regulation: ex-ante conduct rules (transparency, interoperability)
 may be lower-cost than ex-post break-up.
@@ -302,7 +302,7 @@ suggest high contestability at the frontier).
 
 
                                                 Page 6
-                                                H460/03 Mark Scheme — Predicted Paper (Advanced)
+                                                H460/03 Mark Scheme · Predicted Paper (Advanced)
 
 
 • Depends on whether regulators can credibly commit to targeted, proportionate action
@@ -311,7 +311,7 @@ rather than capture.
 
 
                                             Page 7
-                                                      H460/03 Mark Scheme — Predicted Paper (Advanced)
+                                                      H460/03 Mark Scheme · Predicted Paper (Advanced)
 
 
 Question 34 (3 marks)
@@ -322,14 +322,14 @@ both with % sign.
    • (a) HDI change: (0.644 − 0.434) / 0.434 × 100 = 48.4%.
    • (b) GDP per capita change: (8,790 − 1,180) / 1,180 × 100 = 645%.
 Accept answers rounded to the nearest whole percent (48%, 645%).
-   • Answer highlights that GDP per capita grew much faster than HDI — the development
+   • Answer highlights that GDP per capita grew much faster than HDI · the development
    gap is bigger in money terms than in human welfare terms.
 
 Question 35 (2 marks)
 Using Fig. 2.1, identify TWO limitations of using HDI alone to compare living standards
 across the three countries.
 Award 1 mark per valid limitation (max 2).
-   • HDI does not capture income inequality — India's Gini is 0.65 while Vietnam's is 0.36,
+   • HDI does not capture income inequality · India's Gini is 0.65 while Vietnam's is 0.36,
    yet HDI averages hide this.
    • HDI ignores environmental sustainability / pollution.
    • HDI omits political freedoms, gender equality, and human rights.
@@ -364,7 +364,7 @@ effective route to raising living standards in emerging economies such as India 
 
 
                                                  Page 8
-                                                   H460/03 Mark Scheme — Predicted Paper (Advanced)
+                                                   H460/03 Mark Scheme · Predicted Paper (Advanced)
 
 
  0 marks               Response is not worthy of credit
@@ -378,7 +378,7 @@ Application:
 • India's real GDP growth ≈6.2%; Vietnam ≈6.5% over three decades.
 • India HDI from 0.434 to 0.644; Vietnam from 0.482 to 0.726 (now 'high').
 • Structural shift: India's agricultural employment share from 60% to 44%; Vietnam 70% to
-27% — Lewis-style labour reallocation.
+27% · Lewis-style labour reallocation.
 • India's wealth Gini rose from 0.54 to 0.65; top 1% captures 22% of income.
 • 230 million Indians below national poverty line; Vietnam 8% of GDP in FDI inflows.
 Analysis (growth raises living standards):
@@ -386,37 +386,37 @@ Analysis (growth raises living standards):
 gains as workers move from agriculture to higher-productivity sectors (Lewis model in
 action).
 • Higher tax revenue from growth funds public provision of healthcare, education and
-infrastructure — directly raising HDI components.
+infrastructure · directly raising HDI components.
 • Growth attracts FDI (Vietnam's 8%-of-GDP inflow) which transfers technology and raises
-productivity — positive feedback loop.
+productivity · positive feedback loop.
 • Growth reduces absolute poverty: Vietnam's HDI rise from 0.482 to 0.726 correlates with
 growth-driven gains in life expectancy and schooling.
 Evaluation (growth alone is insufficient or harmful):
-• Distributional failure: India's wealth Gini ROSE to 0.65 — rapid growth has been highly
+• Distributional failure: India's wealth Gini ROSE to 0.65 · rapid growth has been highly
 unequal, with 230m still in poverty. HDI gains 0.434→0.644 much smaller proportionally than
 GDP per capita's 5-fold rise.
-• Environmental degradation and pollution impose welfare losses not captured in GDP —
+• Environmental degradation and pollution impose welfare losses not captured in GDP ·
 urban air quality in India; deforestation in Vietnam.
-• Middle-income trap: cheap-labour advantage erodes before innovation capacity is built —
+• Middle-income trap: cheap-labour advantage erodes before innovation capacity is built ·
 growth can stall at middle-income levels.
 • Targeted social policy (Kerala model, Vietnam's universal primary education) can raise HDI
-even at modest growth rates — direct public spending on health/education more efficient per
+even at modest growth rates · direct public spending on health/education more efficient per
 $ than market-led growth.
 • Quality of jobs matters: informal/gig employment may increase alongside GDP but offers
 no security, raising inequality and insecurity.
 Judgements might include:
-• Depends on whether growth is inclusive — Vietnam (low Gini) shows broader HDI gains;
+• Depends on whether growth is inclusive · Vietnam (low Gini) shows broader HDI gains;
 India (high Gini) shows weaker HDI gains despite similar growth rates.
 • Depends on complementary policies: progressive taxation, public education, labour
 protections.
-• Depends on time horizon — in the short run, growth may hurt the poor (displacement,
+• Depends on time horizon · in the short run, growth may hurt the poor (displacement,
 pollution); in the long run, it may lift them.
-• Growth is necessary but not sufficient — development economics increasingly favours
+• Growth is necessary but not sufficient · development economics increasingly favours
 broader metrics (HDI, multidimensional poverty index).
 
 
                                               Page 9
-                                                    H460/03 Mark Scheme — Predicted Paper (Advanced)
+                                                    H460/03 Mark Scheme · Predicted Paper (Advanced)
 
 
 Question 37 (2 marks)
@@ -464,16 +464,16 @@ Analysis (for reclassification):
 closer to competitive level AND may raise employment (classic monopsony response to
 minimum wages).
 • Equity: £6.20/hr is below NLW and below poverty wage. Treating gig workers differently
-creates a parallel, underpaid labour force — violates horizontal equity.
+creates a parallel, underpaid labour force · violates horizontal equity.
 • Reduces moral hazard for platforms: current classification externalises costs (illness, old
 age) onto the state (NHS, UC benefits).
 
 
                                               Page 10
-                                                  H460/03 Mark Scheme — Predicted Paper (Advanced)
+                                                  H460/03 Mark Scheme · Predicted Paper (Advanced)
 
 
-• Supports the 2021 Supreme Court's reasoning: substance over form — drivers ARE
+• Supports the 2021 Supreme Court's reasoning: substance over form · drivers ARE
 dependent on Uber.
 Evaluation (against reclassification):
 • Incidence: 15% cost rise may be passed through in higher fares → consumers bear the
@@ -485,7 +485,7 @@ informal workers pushed out.
 • Alternative tools: sectoral minimum hourly rates, pension auto-enrolment, or a new
 'dependent contractor' category may capture benefits without eliminating flexibility.
 Judgements might include:
-• Depends on the strength of algorithmic monopsony power and the wage gap vs NLW —
+• Depends on the strength of algorithmic monopsony power and the wage gap vs NLW ·
 evidence of a £5+ gap in 2024 is substantial.
 • Depends on design: full employee status vs narrower 'worker' rights (as in the UK 2021
 ruling).
@@ -496,27 +496,27 @@ balance.
 
 
                                              Page 11
-                                         H460/03 Mark Scheme — Predicted Paper (Advanced)
+                                         H460/03 Mark Scheme · Predicted Paper (Advanced)
 
 
                         Assessment Objectives Grid
 
   Question        AO1       AO2    AO3          AO4          Total            QS
-Section A Total   13         9      8            —            30              (15)
+Section A Total   13         9      8            ·            30              (15)
 
-      31          —          2      —            —             2              (2)
+      31          ·          2      ·            ·             2              (2)
 
-      32           1         2      —            —             3
+      32           1         2      ·            ·             3
 
      33*           2         3      4             6           15
 
-      34          —          2      1            —             3              (3)
+      34          ·          2      1            ·             3              (3)
 
-      35           1         1      —            —             2
+      35           1         1      ·            ·             2
 
      36*           2         3      4             6           15
 
-      37          —          2      —            —             2              (2)
+      37          ·          2      ·            ·             2              (2)
 
       38           1         1      2             4            8
 

@@ -1,5 +1,5 @@
 /**
- * AQA GCSE Economics (8136) — marking convention.
+ * AQA GCSE Economics (8136) · marking convention.
  *
  * IMPORTANT: This board is `aqa-gcse` and is NOT covered by the AQA A-Level
  * (7136) zero-touch protection. AQA GCSE has a separate, simpler 3-level

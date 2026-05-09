@@ -154,25 +154,25 @@ export default function NegativeExternalityDiagram() {
 
         {/* ══ CURVE LABELS ══ */}
 
-        {/* S — private supply, at top of blue supply curve */}
+        {/* S · private supply, at top of blue supply curve */}
         <text
           x={X(7.6) + 4} y={Y(15.2) + 4}
           fill={BLUE} fontSize="20" fontWeight="bold"
           fontFamily="Arial, sans-serif">S</text>
 
-        {/* S — social cost curve label (top of red curve) */}
+        {/* S · social cost curve label (top of red curve) */}
         <text
           x={X(6.5) + 4} y={Y(19.5) + 4}
           fill={RED} fontSize="20" fontWeight="bold"
           fontFamily="Arial, sans-serif">S</text>
 
-        {/* Social Cost label — red italic near MSC curve */}
+        {/* Social Cost label · red italic near MSC curve */}
         <text
           x={X(4.6)} y={Y(17.5)}
           fill={RED} fontSize="11" fontStyle="italic"
           fontFamily="Arial, sans-serif">Social Cost</text>
 
-        {/* Social Benefit label — red italic at bottom right */}
+        {/* Social Benefit label · red italic at bottom right */}
         <text
           x={X(6.4)} y={Y(5.5)}
           fill={RED} fontSize="11" fontStyle="italic"

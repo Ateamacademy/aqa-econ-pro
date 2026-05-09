@@ -1,5 +1,5 @@
 /**
- * Marking test harness — defines test scenarios for validation.
+ * Marking test harness · defines test scenarios for validation.
  * Surface via /debug/marking-tests?debug=1
  *
  * These scenarios define ACCEPTANCE CRITERIA for the ghost-mark fix.

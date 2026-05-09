@@ -26,9 +26,9 @@ interface Props {
 }
 
 const PAPER_TABS: { value: PaperNumber; label: string; sub: string }[] = [
-  { value: 1, label: "Paper 1", sub: "7136/1 — Markets" },
-  { value: 2, label: "Paper 2", sub: "7136/2 — Macro" },
-  { value: 3, label: "Paper 3", sub: "7136/3 — Synoptic" },
+  { value: 1, label: "Paper 1", sub: "7136/1 · Markets" },
+  { value: 2, label: "Paper 2", sub: "7136/2 · Macro" },
+  { value: 3, label: "Paper 3", sub: "7136/3 · Synoptic" },
 ];
 
 export default function AqaPaperLibrarySection({ refreshKey = 0, onGenerateClick }: Props) {
@@ -145,7 +145,7 @@ function PaperRow({ paper, pinned = false }: { paper: GeneratedPaper; pinned?: b
                 </div>
 
                 <h3 className="font-bold text-sm sm:text-base text-foreground leading-tight">
-                  Paper {paper.paperNumber} — {paper.title}
+                  Paper {paper.paperNumber} · {paper.title}
                 </h3>
                 <p className="text-[11px] text-muted-foreground mt-0.5">
                   {paper.practiceSetLabel} · {paper.status === "specimen" ? "Specimen" : `Generated ${formatDate(paper.createdAt)}`}
@@ -172,7 +172,7 @@ function PaperRow({ paper, pinned = false }: { paper: GeneratedPaper; pinned?: b
                   ))}
                 </div>
 
-                {/* per-question chips — format matches validator: Q1·2, Q31·10 etc. */}
+                {/* per-question chips · format matches validator: Q1·2, Q31·10 etc. */}
                 <div className="flex flex-wrap items-center gap-1 mt-2" data-testid="mark-chips">
                   {questionMarkChips(paper.paperNumber).map((c, i) => {
                     const compact = `${c.label}·${c.sub.replace(/\s*\(.*\)\s*/g, "").trim()}`;
@@ -217,19 +217,19 @@ function PaperRow({ paper, pinned = false }: { paper: GeneratedPaper; pinned?: b
             <div className="grid sm:grid-cols-3 gap-2">
               <ResourceButton
                 icon={FileText}
-                label="QP — Question Paper"
+                label="QP · Question Paper"
                 onClick={() => navigate(`/papers/${paper.id}/attempt`)}
                 disabled={!validation.valid}
               />
               <ResourceButton
                 icon={BookOpen}
-                label={paper.paperNumber === 3 ? "Case study booklet" : "IN — Insert (extracts)"}
+                label={paper.paperNumber === 3 ? "Case study booklet" : "IN · Insert (extracts)"}
                 onClick={() => navigate(`/papers/${paper.id}/attempt?view=insert`)}
                 disabled={!validation.valid}
               />
               <ResourceButton
                 icon={ClipboardList}
-                label="MS — Mark Scheme"
+                label="MS · Mark Scheme"
                 onClick={() => navigate(`/papers/${paper.id}/attempt?view=markscheme`)}
                 disabled={!validation.valid}
               />

@@ -38,7 +38,7 @@ function buildDiagramPrompt(
 
   let verificationSection = "";
   if (verification) {
-    verificationSection = `\n\nVERIFICATION REPORT (authoritative — you cannot override this):
+    verificationSection = `\n\nVERIFICATION REPORT (authoritative · you cannot override this):
 ${JSON.stringify(verification, null, 2)}
 
 Remember: if verification says a feature is absent, marks for that feature = 0. Do not be generous. Do not assume. The student earns marks by showing the work, not by potentially knowing it.`;
@@ -50,10 +50,10 @@ COMMAND WORD: ${rubric.command} (weight AO1/AO2/AO3/AO4 accordingly)
 
 TOTAL MARKS: ${rubric.totalMarks}
 
-RUBRIC — DIAGRAM REQUIREMENTS (each with its own marks):
+RUBRIC · DIAGRAM REQUIREMENTS (each with its own marks):
 ${reqList}
 
-RUBRIC — LEVEL DESCRIPTORS:
+RUBRIC · LEVEL DESCRIPTORS:
 ${levelList}
 
 INDICATIVE CONTENT (not exhaustive, credit valid alternatives):
@@ -74,7 +74,7 @@ MARKING INSTRUCTIONS:
 1. For EACH diagramRequirement, decide: fully met / partially met / not met. Award the stated marks accordingly.
 2. For written explanation, judge against level descriptors using AO1 (knowledge), AO2 (application), AO3 (analysis), AO4 (evaluation, only if command word requires it).
 3. A diagram with missing axes labels cannot score above Level 2 regardless of prose quality.
-4. Application marks REQUIRE direct engagement with the scenario's contextHooks — generic textbook answers cap at mid-Level 2.
+4. Application marks REQUIRE direct engagement with the scenario's contextHooks · generic textbook answers cap at mid-Level 2.
 5. If the student's diagram contains a factual error, deduct the relevant requirement marks AND flag it in errors.
 6. For every mark you award, cite a specific feature from the verification report or a direct quote from the written explanation. Citations like 'shows understanding' or 'attempts to draw' are FORBIDDEN.
 7. If the written explanation is empty or under 20 words, the writtenExplanation AO scores are all 0.
@@ -83,9 +83,9 @@ MARKING INSTRUCTIONS:
 
 const STRICT_SYSTEM_PROMPT = `You are a senior Edexcel A-Level Economics examiner. You mark to the official mark scheme with ZERO generosity bias. You DO NOT award marks for effort, attempt, or potential. You award marks ONLY for features that are demonstrably present in the student's submission.
 
-HARD RULES — VIOLATION OF ANY OF THESE INVALIDATES YOUR MARKING:
+HARD RULES · VIOLATION OF ANY OF THESE INVALIDATES YOUR MARKING:
 
-1. You will receive a verification report describing what is literally in the diagram. You may NOT award marks for any feature flagged as absent in that report. If the verification says 'no axes', you award 0 for the axes requirement — no exceptions, no benefit of the doubt.
+1. You will receive a verification report describing what is literally in the diagram. You may NOT award marks for any feature flagged as absent in that report. If the verification says 'no axes', you award 0 for the axes requirement · no exceptions, no benefit of the doubt.
 
 2. If verification.completeness == 'empty': total score MUST be 0. Output only zeros.
 
@@ -95,7 +95,7 @@ HARD RULES — VIOLATION OF ANY OF THESE INVALIDATES YOUR MARKING:
 
 5. You may not award 'half marks for trying'. A requirement is either met (full marks), partially met (clearly defined fraction stated in rubric), or not met (zero).
 
-6. For every mark you award, you MUST cite a specific feature from the verification report or a direct quote from the written explanation. Citations like 'shows understanding' or 'attempts to draw' are FORBIDDEN — only concrete evidence counts.
+6. For every mark you award, you MUST cite a specific feature from the verification report or a direct quote from the written explanation. Citations like 'shows understanding' or 'attempts to draw' are FORBIDDEN · only concrete evidence counts.
 
 7. If the written explanation is empty or under 20 words, the writtenExplanation AO scores are all 0.
 
@@ -307,7 +307,7 @@ export async function markSubQuestion(
       result.writtenExplanation.ao2 = {
         ...result.writtenExplanation.ao2,
         score: 0,
-        comment: `${result.writtenExplanation.ao2.comment} [Capped at 0: no context hooks referenced — this is a textbook answer, not a contextualised one]`,
+        comment: `${result.writtenExplanation.ao2.comment} [Capped at 0: no context hooks referenced · this is a textbook answer, not a contextualised one]`,
       };
     }
   }

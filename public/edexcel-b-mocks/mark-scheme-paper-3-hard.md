@@ -8,12 +8,12 @@ Mark Scheme (Results)
  In Economics B (9EB0)
  Paper 03: The Economic Environment and Business
 
- PREDICTED PRACTICE PAPER — HARD
+ PREDICTED PRACTICE PAPER · HARD
 
 
-9EB0/03 — Predicted MS (Hard)                                                                                           Page 1
+9EB0/03 · Predicted MS (Hard)                                                                                           Page 1
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
  Edexcel and BTEC Qualifications
  Edexcel and BTEC qualifications are awarded by Pearson, the UK's largest awarding body. We
  provide a wide range of qualifications including academic, vocational, occupational and specific
@@ -32,14 +32,14 @@ Mark Scheme (Results)
 
 
  Summer 2026 (Predicted)
- Predicted Paper Practice — Publications Code: PRED_9EB0_03_MS
+ Predicted Paper Practice · Publications Code: PRED_9EB0_03_MS
  All the material in this publication is an original derivative work.
- © Predicted Practice Paper 2026 — styled on Pearson Edexcel format.
+ © Predicted Practice Paper 2026 · styled on Pearson Edexcel format.
 
 
-9EB0/03 — Predicted MS (Hard)                                                                                           Page 2
+9EB0/03 · Predicted MS (Hard)                                                                                           Page 2
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
  General Marking Guidance
     • All candidates must receive the same treatment. Examiners must mark the first candidate in
     exactly the same way as they mark the last.
@@ -60,11 +60,11 @@ Mark Scheme (Results)
     response.
 
 
-9EB0/03 — Predicted MS (Hard)                                                                                           Page 3
+9EB0/03 · Predicted MS (Hard)                                                                                           Page 3
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
- Section A — Question 1
- Case-study context: Brazil — commodity exporter navigating currency volatility, monetary tightening
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
+ Section A · Question 1
+ Case-study context: Brazil · commodity exporter navigating currency volatility, monetary tightening
  and US–China trade tensions.
 
       Question       With reference to Extract A and using a PPF diagram, analyse the                                   Mark
@@ -88,9 +88,9 @@ Mark Scheme (Results)
                           • Mechanisation (Extract A) can shift the PPF outward, partially offsetting
                           the trade-off by raising yield per hectare.
                           • Evaluation: opportunity cost depends on (i) productivity of converted land;
-                          (ii) whether lost ecosystem services are priced; (iii) enforcement — the
+                          (ii) whether lost ecosystem services are priced; (iii) enforcement · the
                           2023 fall in deforestation shows the trade-off is not fixed; (iv) short-run vs
-                          long-run — mechanisation can shift PPF out over time.
+                          long-run · mechanisation can shift PPF out over time.
 
      Level        Mark          Descriptor
 
@@ -118,9 +118,9 @@ Mark Scheme (Results)
     • may directly reference, interpret or analyse the information provided in any relevant stimulus.
 
 
-9EB0/03 — Predicted MS (Hard)                                                                                                  Page 4
+9EB0/03 · Predicted MS (Hard)                                                                                                  Page 4
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
       Question       With reference to Extract B and Figure 1, discuss the likely impact of the                         Mark
       Number         depreciation of the Brazilian real on Brazil's current account.
 
@@ -131,26 +131,26 @@ Mark Scheme (Results)
                           • Current account = trade in goods + services + primary income +
                           secondary income. Depreciation raises import prices in local currency and
                           lowers export prices in foreign currency.
-                          • Extract B: BRL moved from 4.00 (2019) to 5.82 (2024) vs USD —
+                          • Extract B: BRL moved from 4.00 (2019) to 5.82 (2024) vs USD ·
                           approximately 31% depreciation. Figure 1: current account narrowed from
                           −3.5% of GDP (2019) to −1.3% (2023), widened slightly to −1.7% (2024).
-                          • Improvement channel: commodity exports invoiced in USD — depreciation
+                          • Improvement channel: commodity exports invoiced in USD · depreciation
                           raises BRL revenue per tonne, incentivising supply; lower USD prices raise
                           foreign demand; import compression as BRL-denominated import prices
                           rise.
-                          • Offsetting channel: import content of exports — soy/beef production uses
+                          • Offsetting channel: import content of exports · soy/beef production uses
                           imported fertiliser, fuel and machinery, so costs rise. J-curve: short-run
                           worsening as import values rise faster than export quantities adjust. Primary
                           income deteriorates if USD-denominated external debt rises in BRL terms.
                           • Marshall–Lerner condition: current account improves if |PEDx + PEDm| >
                           1. Brazil's commodity exports face moderate global PED but Brazil has
-                          market power in soy — volume gains may depress world prices, dampening
+                          market power in soy · volume gains may depress world prices, dampening
                           dollar revenue gains.
                           • Evaluation: depends on (i) elasticity of exports and imports; (ii) origin of
-                          depreciation — if driven by fiscal concerns, confidence effects may
+                          depreciation · if driven by fiscal concerns, confidence effects may
                           dominate; (iii) time horizon (J-curve); (iv) behaviour of trading partners.
                           • Judgement: the recent data in Figure 1 show the current account has not
-                          consistently improved despite substantial depreciation — suggesting other
+                          consistently improved despite substantial depreciation · suggesting other
                           factors (commodity cycle, capital flows, import cost pass-through) are
                           dominant.
 
@@ -184,17 +184,17 @@ Mark Scheme (Results)
  Where questions do not specifically stipulate the use of data or information provided in a stimulus, students:
 
 
-9EB0/03 — Predicted MS (Hard)                                                                                                  Page 5
+9EB0/03 · Predicted MS (Hard)                                                                                                  Page 5
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
     • must select relevant examples from their own knowledge, these must be directly connected to
     the context/issues set out in the question, and
     • may directly reference, interpret or analyse the information provided in any relevant stimulus.
 
 
-9EB0/03 — Predicted MS (Hard)                                                                                           Page 6
+9EB0/03 · Predicted MS (Hard)                                                                                           Page 6
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
       Question       Discuss the effectiveness of monetary policy as a tool for controlling                             Mark
       Number         inflation in an emerging economy such as Brazil, using evidence from
                      Extract C and Figure 1.
@@ -208,15 +208,15 @@ Mark Scheme (Results)
                           currency, lower import-price inflation. Expectations channel: credible CBs
                           anchor expectations.
                           • Extract C and Figure 1: Selic raised from 2.00% (Mar-21) to 13.75%
-                          (Aug-22) — a 1,175-basis-point tightening. Inflation peaked at 12.1%
+                          (Aug-22) · a 1,175-basis-point tightening. Inflation peaked at 12.1%
                           (Apr-22), fell to 4.5% by mid-2024. BCB target 3% ±1.5pp.
                           • Evidence for effectiveness: clear correlation between aggressive
                           tightening and inflation fall; early move ahead of the Fed enhanced
                           credibility; BCB is legally independent.
                           • Limitations in emerging-economy context: (i) exchange rate channel
-                          undermined by capital-flight risk — BRL depreciated 4.03 → 5.82 despite
+                          undermined by capital-flight risk · BRL depreciated 4.03 → 5.82 despite
                           high rates; (ii) food and energy shocks are exogenous and not responsive
-                          to rates (2024 pickup driven by food); (iii) tightening constrains growth —
+                          to rates (2024 pickup driven by food); (iii) tightening constrains growth ·
                           contributed to 13.2% unemployment in 2021; (iv) fiscal dominance
                           undermines monetary tightening if deficits widen; (v) exchange-rate
                           pass-through is high in commodity exporters.
@@ -257,17 +257,17 @@ Mark Scheme (Results)
  Where questions do not specifically stipulate the use of data or information provided in a stimulus, students:
 
 
-9EB0/03 — Predicted MS (Hard)                                                                                                  Page 7
+9EB0/03 · Predicted MS (Hard)                                                                                                  Page 7
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
     • must select relevant examples from their own knowledge, these must be directly connected to
     the context/issues set out in the question, and
     • may directly reference, interpret or analyse the information provided in any relevant stimulus.
 
 
-9EB0/03 — Predicted MS (Hard)                                                                                           Page 8
+9EB0/03 · Predicted MS (Hard)                                                                                           Page 8
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
       Question       With reference to Extract D and Figure 2, evaluate the extent to which the                         Mark
       Number         escalation of US–China trade tensions since 2018 has been a net benefit to
                      the Brazilian economy.
@@ -279,7 +279,7 @@ Mark Scheme (Results)
                           • Knowledge: trade diversion vs trade creation; comparative advantage;
                           concentration risk; terms of trade; Dutch disease; multiplier;
                           forward/backward linkages.
-                          • Application: Extract D — China's share of Brazilian soybean imports rose
+                          • Application: Extract D · China's share of Brazilian soybean imports rose
                           from 46% (2017) to 75%+ (2023). Figure 2: soy exports rose from $31.2bn
                           to $58.9bn (+89% in four years). China ≈ ■ of Brazilian merchandise
                           exports.
@@ -291,24 +291,24 @@ Mark Scheme (Results)
                           infrastructure; higher rural employment; improved current account
                           supporting currency; positive terms-of-trade effect during commodity
                           upswing.
-                          • Costs/risks: concentration risk — China's ■ share means US–China
+                          • Costs/risks: concentration risk · China's ■ share means US–China
                           rapprochement could squeeze Brazilian margins. Dutch-disease pressure
-                          on manufacturing. Environmental cost — frontier expansion linked to
-                          11,000+ km²/yr deforestation. Political exposure — risk of future tariffs or
+                          on manufacturing. Environmental cost · frontier expansion linked to
+                          11,000+ km²/yr deforestation. Political exposure · risk of future tariffs or
                           sanctions. Underinvestment in human capital and industrial diversification
-                          — GDP growth remains modest (2.4% in 2024).
+                          · GDP growth remains modest (2.4% in 2024).
                           • Micro effects: large agribusiness firms have gained materially (margins
                           rose in BRL terms due to depreciation); small farmers face rising land
                           prices; consumers face higher domestic food prices (contributing to the
                           2024 inflation pickup).
-                          • Evaluation: depends on (i) time horizon — short-run benefits clearly
+                          • Evaluation: depends on (i) time horizon · short-run benefits clearly
                           positive, long-run concerns about concentration and Dutch disease; (ii)
                           probability and severity of US–China resolution; (iii) Brazil's own industrial
-                          and environmental policy — whether rents are reinvested in diversification
-                          or consumed; (iv) counterfactual — Brazilian GDP without the trade-tension
+                          and environmental policy · whether rents are reinvested in diversification
+                          or consumed; (iv) counterfactual · Brazilian GDP without the trade-tension
                           windfall.
-                          • A nuanced judgement — e.g. 'short-run benefits clearly positive but carry
-                          structural risks requiring active policy response' — is required for Level 4.
+                          • A nuanced judgement · e.g. 'short-run benefits clearly positive but carry
+                          structural risks requiring active policy response' · is required for Level 4.
 
      Level        Mark          Descriptor
 
@@ -325,9 +325,9 @@ Mark Scheme (Results)
                                 generic.
 
 
-9EB0/03 — Predicted MS (Hard)                                                                                                  Page 9
+9EB0/03 · Predicted MS (Hard)                                                                                                  Page 9
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
      Level 3      10–15         Accurate knowledge and understanding, supported by use of relevant evidence to
                                 support the argument, developed chains of reasoning, showing understanding of
                                 connections between causes and consequences. Arguments are well developed and
@@ -353,11 +353,11 @@ Mark Scheme (Results)
     • may directly reference, interpret or analyse the information provided in any relevant stimulus.
 
 
-9EB0/03 — Predicted MS (Hard)                                                                                           Page 10
+9EB0/03 · Predicted MS (Hard)                                                                                           Page 10
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
- Section B — Question 2
- Case-study context: Shopee (SEA Limited) — dominant Southeast Asian e-commerce platform.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
+ Section B · Question 2
+ Case-study context: Shopee (SEA Limited) · dominant Southeast Asian e-commerce platform.
 
       Question       Using Figure 3, calculate the compound annual growth rate (CAGR) of                                Mark
       Number         Shopee's GMV between 2020 and 2023. Discuss what the trend in group
@@ -379,7 +379,7 @@ Mark Scheme (Results)
                           • Positive EBITDA in 2023 suggests the platform can be profitable once
                           subsidies are reined in.
                           • Evaluation: sustainability depends on (i) whether GMV growth persists
-                          without the subsidy tailwind — 2023 GMV growth of 7% is a marked
+                          without the subsidy tailwind · 2023 GMV growth of 7% is a marked
                           slowdown vs 76% in 2021; (ii) whether TikTok Shop forces Shopee back
                           into a subsidy war; (iii) whether fee increases (Extract H) are absorbed by
                           sellers or passed to consumers.
@@ -413,9 +413,9 @@ Mark Scheme (Results)
     • may directly reference, interpret or analyse the information provided in any relevant stimulus.
 
 
-9EB0/03 — Predicted MS (Hard)                                                                                                  Page 11
+9EB0/03 · Predicted MS (Hard)                                                                                                  Page 11
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
       Question       Assess the likely impact on Shopee of the intensification of competition                           Mark
       Number         from TikTok Shop described in Extract F.
 
@@ -430,7 +430,7 @@ Mark Scheme (Results)
                           2022; briefly banned Sep-2023; merged with Tokopedia. Extract H: Shopee
                           launched 'Shopee Live' in 2024 to compete directly.
                           • Negative effects: TikTok Shop's social-commerce model is differentiated
-                          — entertainment-driven discovery undermines Shopee's search-led model;
+                          · entertainment-driven discovery undermines Shopee's search-led model;
                           TikTok–Tokopedia merger combines content advantage with Tokopedia's
                           seller base; risk of market-share erosion and renewed need for promotional
                           spend.
@@ -441,7 +441,7 @@ Mark Scheme (Results)
                           responds in-product.
                           • Evaluation depends on: (i) strength of network effects on each platform
                           side; (ii) regulatory trajectory; (iii) consumer preference for discovery-led vs
-                          intent-led buying; (iv) financial staying power — SEA has turned
+                          intent-led buying; (iv) financial staying power · SEA has turned
                           EBITDA-positive but ByteDance can sustain losses indefinitely.
                           • Judgement: TikTok Shop is a serious threat requiring ongoing
                           counter-investment but unlikely to displace Shopee from its leadership
@@ -479,15 +479,15 @@ Mark Scheme (Results)
     the context/issues set out in the question, and
 
 
-9EB0/03 — Predicted MS (Hard)                                                                                                  Page 12
+9EB0/03 · Predicted MS (Hard)                                                                                                  Page 12
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
     • may directly reference, interpret or analyse the information provided in any relevant stimulus.
 
 
-9EB0/03 — Predicted MS (Hard)                                                                                           Page 13
+9EB0/03 · Predicted MS (Hard)                                                                                           Page 13
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
       Question       With reference to Extract G, discuss the likely effect of the depreciation of                      Mark
       Number         the Indonesian rupiah and the introduction of the USD 100 minimum price
                      for cross-border e-commerce on Shopee's Indonesian business.
@@ -497,19 +497,19 @@ Mark Scheme (Results)
       2(c)              Knowledge/understanding 2, Application 2, Analysis 4, Evaluation 4                              (12)
 
                           • Exchange-rate depreciation raises IDR cost of imports and passes
-                          through to inflation. A minimum price is a non-tariff barrier — a protectionist
+                          through to inflation. A minimum price is a non-tariff barrier · a protectionist
                           measure.
                           • Extract G: IDR depreciated ~9% vs USD in 2024; USD 100 minimum
                           cross-border price threshold introduced 2023; MSMEs employ >60% of
                           workforce.
                           • Rupiah depreciation effects: raises IDR cost of imported goods sold on the
-                          platform; if passed through, IDR prices rise — quantity demanded falls
+                          platform; if passed through, IDR prices rise · quantity demanded falls
                           (depending on PED); for cross-border USD-priced listings, consumers face
                           a direct ~9% price shock; Shopee earns revenue in IDR but reports in USD
-                          — translation drag on reported dollar figures; IDR depreciation raises
+                          · translation drag on reported dollar figures; IDR depreciation raises
                           USD-denominated cost of cloud and logistics capex.
                           • USD 100 minimum price effects: shifts demand toward domestic
-                          (IDR-priced) sellers; MSMEs benefit — protected from direct cross-border
+                          (IDR-priced) sellers; MSMEs benefit · protected from direct cross-border
                           shipment of low-value Chinese goods; Shopee may gain commission on
                           higher-value baskets; raises prices for consumers relative to free trade
                           (welfare loss); strengthens Shopee's relationship with policymakers and
@@ -517,7 +517,7 @@ Mark Scheme (Results)
                           • Evaluation: depends on (i) depth of Shopee's domestic seller pool
                           (40–50% GMV share implies a deep MSME ecosystem); (ii) whether IDR
                           depreciation reverses; (iii) ability of Indonesian MSMEs to fill substituted
-                          SKUs competitively; (iv) counterfactual — without the minimum price,
+                          SKUs competitively; (iv) counterfactual · without the minimum price,
                           TikTok Shop's cross-border volume would have grown fastest, so the policy
                           disadvantages Shopee's rivals more than Shopee itself.
                           • Judgement: the minimum price may modestly benefit Shopee
@@ -551,9 +551,9 @@ Mark Scheme (Results)
     • must directly reference, interpret or analyse the information provided in the stimulus
 
 
-9EB0/03 — Predicted MS (Hard)                                                                                                  Page 14
+9EB0/03 · Predicted MS (Hard)                                                                                                  Page 14
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
     • in addition, may select examples from their own knowledge but these must be relevant and
     directly connected to the context/issues set out in the stimulus.
  Where questions do not specifically stipulate the use of data or information provided in a stimulus, students:
@@ -562,9 +562,9 @@ Mark Scheme (Results)
     • may directly reference, interpret or analyse the information provided in any relevant stimulus.
 
 
-9EB0/03 — Predicted MS (Hard)                                                                                           Page 15
+9EB0/03 · Predicted MS (Hard)                                                                                           Page 15
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
       Question       Evaluate the extent to which Shopee's dominant position in Southeast Asian                         Mark
       Number         e-commerce benefits consumers, small sellers (MSMEs) and the wider
                      economies in which it operates.
@@ -577,9 +577,9 @@ Mark Scheme (Results)
                           platforms; two-sided markets; monopsony power over sellers; productive,
                           allocative and dynamic efficiency; tax revenue; financial inclusion;
                           data/privacy externalities.
-                          • Application: Extract E — 7-market Southeast Asian reach; Extract F —
-                          estimated 40–50% GMV share; Extract H — commission rates raised from
-                          2% to 6%+; Figure 3 — 520m MAUs in 2023. Indonesia: 283m population,
+                          • Application: Extract E · 7-market Southeast Asian reach; Extract F ·
+                          estimated 40–50% GMV share; Extract H · commission rates raised from
+                          2% to 6%+; Figure 3 · 520m MAUs in 2023. Indonesia: 283m population,
                           77% internet penetration.
                           • Consumer benefits: vast product range not available in physical retail
                           (especially rural/island); lower prices from seller competition; logistics reach
@@ -591,7 +591,7 @@ Mark Scheme (Results)
                           • MSME benefits: access to national/regional market without
                           own-infrastructure investment; digital payment rails; analytics and paid ads
                           to find customers; expansion beyond local markets.
-                          • MSME costs: platform monopsony power — commissions raised 2% →
+                          • MSME costs: platform monopsony power · commissions raised 2% →
                           6%+, small sellers absorb most of the increase; algorithmic dependence;
                           Shopee's own-label products compete with MSME listings;
                           race-to-the-bottom on pricing.
@@ -603,11 +603,11 @@ Mark Scheme (Results)
                           TikTok Shop in constraining market power; (ii) effectiveness of regulation
                           (antitrust, consumer protection, MSME protection) to limit abuse of
                           dominance; (iii) whether positive productivity and inclusion effects outweigh
-                          distributional costs; (iv) time horizon — growth-phase incentives are aligned
+                          distributional costs; (iv) time horizon · growth-phase incentives are aligned
                           with users; mature-phase incentives shift toward rent extraction.
-                          • A supported judgement — e.g. 'a contested platform ecosystem produces
+                          • A supported judgement · e.g. 'a contested platform ecosystem produces
                           net gains; an unchecked dominant platform risks capturing most of the
-                          surplus' — is rewarded at Level 4.
+                          surplus' · is rewarded at Level 4.
 
      Level        Mark          Descriptor
 
@@ -624,9 +624,9 @@ Mark Scheme (Results)
                                 generic.
 
 
-9EB0/03 — Predicted MS (Hard)                                                                                                  Page 16
+9EB0/03 · Predicted MS (Hard)                                                                                                  Page 16
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
      Level 3      10–15         Accurate knowledge and understanding, supported by use of relevant evidence to
                                 support the argument, developed chains of reasoning, showing understanding of
                                 connections between causes and consequences. Arguments are well developed and
@@ -652,14 +652,14 @@ Mark Scheme (Results)
     • may directly reference, interpret or analyse the information provided in any relevant stimulus.
 
 
-9EB0/03 — Predicted MS (Hard)                                                                                           Page 17
+9EB0/03 · Predicted MS (Hard)                                                                                           Page 17
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
                                Pearson Education Limited. Registered company number 872828
                          with its registered office at 80 Strand, London, WC2R 0RL, United Kingdom.
-                   Predicted Practice Paper styled on the Edexcel format — not an official Pearson document.
+                   Predicted Practice Paper styled on the Edexcel format · not an official Pearson document.
 
 
-9EB0/03 — Predicted MS (Hard)                                                                                           Page 18
+9EB0/03 · Predicted MS (Hard)                                                                                           Page 18
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.

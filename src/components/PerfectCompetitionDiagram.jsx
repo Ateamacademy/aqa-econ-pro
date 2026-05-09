@@ -5,8 +5,8 @@
  * verified. Edit only the ECONOMICS CONSTANTS section if you need to adjust values.
  *
  * WHAT THIS SHOWS:
- *  LEFT PANEL  — Industry: D, S₀ (original supply), S₁ (post-entry supply)
- *  RIGHT PANEL — Firm: MC, AC, AR=MR line (horizontal, set by market)
+ *  LEFT PANEL  · Industry: D, S₀ (original supply), S₁ (post-entry supply)
+ *  RIGHT PANEL · Firm: MC, AC, AR=MR line (horizontal, set by market)
  *
  *  Short run: high price P → AR=MR=P above min AC → supernormal profit (shaded)
  *  Long run:  new firms enter → S shifts right → price falls to P₁ = min AC
@@ -26,7 +26,7 @@
 import { useState } from "react";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// ECONOMICS CONSTANTS — edit only here if adjusting values
+// ECONOMICS CONSTANTS · edit only here if adjusting values
 // ─────────────────────────────────────────────────────────────────────────────
 
 const P_SR = 6.5;    // short-run market price (firm's AR=MR in SR)
@@ -39,7 +39,7 @@ const MCfn  = x => 0.5 * x * x - 3.5 * x + 10;   // U-shaped, min at x=3.5
 const ACfn  = x => 0.3 * x * x - 2.4 * x + 8.8;  // U-shaped, min at x=4 (=P_LR)
 // Verify: MCfn(4)=0.5*16-14+10=4 ✓, ACfn(4)=0.3*16-9.6+8.8=4 ✓
 
-const AC_at_qSR = ACfn(q_SR);  // ≈ 4.972 — bottom of profit rectangle
+const AC_at_qSR = ACfn(q_SR);  // ≈ 4.972 · bottom of profit rectangle
 
 // INDUSTRY curves (x = market quantity, domain 0–10)
 // D passes through (5, P_SR=6.5) and (8, P_LR=4.0)
@@ -51,20 +51,20 @@ const S0fn  = x => x + 1.5;                        // Verify: S0(5)=6.5 ✓
 const S1fn  = x => x - 4.0;                        // Verify: S1(8)=4.0 ✓
 
 // Industry quantities at each equilibrium
-const Q_SR = 5;    // D(5)=6.5 ✓, S0(5)=6.5 ✓ — market output in SR
-const Q_LR = 8;    // D(8)=4.0 ✓, S1(8)=4.0 ✓ — market output in LR (more firms)
+const Q_SR = 5;    // D(5)=6.5 ✓, S0(5)=6.5 ✓ · market output in SR
+const Q_LR = 8;    // D(8)=4.0 ✓, S1(8)=4.0 ✓ · market output in LR (more firms)
 
 // ─────────────────────────────────────────────────────────────────────────────
-// SVG LAYOUT — two panels sharing the same y-scale for price alignment
+// SVG LAYOUT · two panels sharing the same y-scale for price alignment
 // ─────────────────────────────────────────────────────────────────────────────
 
 const SVG_W = 900, SVG_H = 510;
 const MONO = "'Courier New', 'Lucida Console', monospace";
 
-// Plot areas — BOTH must have same y0, y1 so prices align horizontally
+// Plot areas · BOTH must have same y0, y1 so prices align horizontally
 const L = { x0: 58, x1: 400, y0: 38, y1: 440 };  // Industry (left)
 const R = { x0: 500, x1: 855, y0: 38, y1: 440 };  // Firm (right)
-const PH = L.y1 - L.y0;  // 402 — shared vertical scale
+const PH = L.y1 - L.y0;  // 402 · shared vertical scale
 
 // Data → SVG pixel
 const toL = (dx, dy) => [
@@ -323,14 +323,14 @@ function FirmPanel({ showLR }) {
   });
 
   // MC: draw only upward-sloping portion (x=1 to x=7, where MC≤10)
-  // MC(7) = 0.5*49-24.5+10 = 10 exactly — convenient clip point
+  // MC(7) = 0.5*49-24.5+10 = 10 exactly · convenient clip point
   const mcPts = sampleR(MCfn, 0.9, 7.0);
 
   // AC: draw from x=0.7 to x=8 (AC stays below 10 in this range)
   // AC(0.7) = 0.3*0.49-1.68+8.8 ≈ 7.267  AC(8) = 19.2-19.2+8.8=8.8
   const acPts = sampleR(ACfn, 0.6, 8.5);
 
-  // AR=MR line (horizontal, price-taker — stretches full plot width)
+  // AR=MR line (horizontal, price-taker · stretches full plot width)
   const mrPrice = showLR ? P_LR : P_SR;
   const mrColor = showLR ? C.mr_lr : C.mr_sr;
   const [, mrSy] = toR(0, mrPrice);
@@ -404,7 +404,7 @@ function FirmPanel({ showLR }) {
         {mrLabel}
       </text>
 
-      {/* Equilibrium dot — single source of truth */}
+      {/* Equilibrium dot · single source of truth */}
       <EqDot toPixel={toR} dx={eqX} dy={eqY} color={eqColor}
         pLabel={showLR ? "P₁" : "P"} qLabel={eqLabel} panel={R} />
 
@@ -466,8 +466,8 @@ export default function PerfectCompetitionDiagram() {
             </div>
             <div style={{ fontSize: 9, color: C.muted, marginTop: 2 }}>
               {showLR
-                ? "Long run — new firms enter → supply shifts right → P falls to min AC"
-                : "Short run — price set by market → supernormal profit attracts entrants"}
+                ? "Long run · new firms enter → supply shifts right → P falls to min AC"
+                : "Short run · price set by market → supernormal profit attracts entrants"}
             </div>
           </div>
         </div>
@@ -546,11 +546,11 @@ export default function PerfectCompetitionDiagram() {
           marginTop: 12, paddingLeft: 6,
         }}>
           {[
-            { color: C.demand, label: "D — demand" },
-            { color: C.s0,     label: "S — original supply" },
-            ...(showLR ? [{ color: C.s1, label: "S₁ — new supply (entry)", dash: true }] : []),
-            { color: C.mc,     label: "MC — marginal cost" },
-            { color: C.ac,     label: "AC — average cost" },
+            { color: C.demand, label: "D · demand" },
+            { color: C.s0,     label: "S · original supply" },
+            ...(showLR ? [{ color: C.s1, label: "S₁ · new supply (entry)", dash: true }] : []),
+            { color: C.mc,     label: "MC · marginal cost" },
+            { color: C.ac,     label: "AC · average cost" },
             { color: showLR ? C.mr_lr : C.mr_sr,
               label: showLR ? "AR = MR = P₁ (long run)" : "AR = MR = P (short run)" },
             { color: C.eq_sr,  label: "Short-run equilibrium", dot: true },
@@ -584,7 +584,7 @@ export default function PerfectCompetitionDiagram() {
           {showLR
             ? "Long run: supernormal profit → new firms enter → S shifts right → price falls to P₁ = min AC. " +
               "Firm produces at Q₁ where MC = AC = AR = MR = P₁. Zero supernormal profit. Allocative (P=MC) and productive (P=min AC) efficiency achieved."
-            : "Short run: market sets price P. Firm is a price-taker — AR = MR = P (horizontal). " +
+            : "Short run: market sets price P. Firm is a price-taker · AR = MR = P (horizontal). " +
               "Profit max where MC = MR. Since P > AC, supernormal profit exists (shaded). " +
               "This attracts new entrants → shifts supply right in the long run."
           }

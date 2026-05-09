@@ -6,7 +6,7 @@ export default function EconEdexcelLorenzCurve() {
           <marker id="aLz" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker>
         </defs>
         <rect width="620" height="500" fill="#ffffff"/>
-        <text x="310" y="28" textAnchor="middle" fontSize="17" fontWeight="700" fill="#0f172a">Lorenz Curve — UK Income Inequality (2020 vs 2024)</text>
+        <text x="310" y="28" textAnchor="middle" fontSize="17" fontWeight="700" fill="#0f172a">Lorenz Curve · UK Income Inequality (2020 vs 2024)</text>
         <line x1="100" y1="420" x2="500" y2="420" stroke="#0f172a" strokeWidth="2"/>
         <line x1="100" y1="60" x2="100" y2="420" stroke="#0f172a" strokeWidth="2"/>
         <text x="300" y="460" textAnchor="middle" fontSize="12" fill="#0f172a">Cumulative % of population</text>
@@ -38,7 +38,7 @@ export default function EconEdexcelLorenzCurve() {
         <rect x="130" y="80" width="170" height="60" fill="#f1f5f9" stroke="#cbd5e1"/>
         <text x="215" y="100" textAnchor="middle" fontSize="12" fontWeight="700" fill="#0f172a">Gini coefficient</text>
         <text x="215" y="122" textAnchor="middle" fontSize="14" fontWeight="700" fill="#0f172a">G = A / (A + B)</text>
-        <text x="310" y="485" textAnchor="middle" fontSize="11" fill="#334155">As area A grows (2020 → 2024), G rises — worsening UK income inequality.</text>
+        <text x="310" y="485" textAnchor="middle" fontSize="11" fill="#334155">As area A grows (2020 → 2024), G rises · worsening UK income inequality.</text>
       </svg>
     </div>
   );

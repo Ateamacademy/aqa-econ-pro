@@ -3,10 +3,10 @@ export default function EconNegExtConsumptionSoda() {
     <div style={{background:'#0d1b2e',borderRadius:'10px',padding:'4px',maxWidth:'760px',margin:'0 auto',fontFamily:"'Segoe UI',Arial,sans-serif",border:'1px solid rgba(255,255,255,0.10)'}}>
       <div style={{padding:'10px 14px 4px'}}>
         <div style={{fontSize:'11px',fontWeight:700,letterSpacing:'1.5px',color:'#818cf8'}}>NEGATIVE EXTERNALITY OF CONSUMPTION</div>
-        <div style={{fontSize:'12px',color:'#c8d6e8',marginTop:2}}>IB HL/SL — High-sugar soft drinks; MSB lies below MPB by the marginal external cost</div>
+        <div style={{fontSize:'12px',color:'#c8d6e8',marginTop:2}}>IB HL/SL · High-sugar soft drinks; MSB lies below MPB by the marginal external cost</div>
       </div>
       <svg viewBox="0 0 760 600" width="100%" role="img" style={{display:'block', background:'transparent'}}>
-        <title>Negative externality of consumption — high-sugar soft drinks</title>
+        <title>Negative externality of consumption · high-sugar soft drinks</title>
         <desc>MPC equals MSC slopes upward; MPB slopes downward; MSB lies parallel below MPB by the marginal external cost. Market equilibrium Qm exceeds social optimum Qopt, creating a deadweight welfare loss triangle.</desc>
         <defs>
           <pattern id="ibSodaHatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">

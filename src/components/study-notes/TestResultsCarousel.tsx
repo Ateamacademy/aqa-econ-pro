@@ -1,5 +1,5 @@
 /**
- * TestResultsCarousel — 3-slide carousel for End of Chapter Test results.
+ * TestResultsCarousel · 3-slide carousel for End of Chapter Test results.
  * Slide 1: Score Overview
  * Slide 2: Answer Review (correct/incorrect)
  * Slide 3: Areas to Improve with relevant diagrams
@@ -149,7 +149,7 @@ export function TestResultsCarousel({ questions, selected, onRetake, onClose }: 
                 transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
                 className="space-y-4"
               >
-                {/* Score banner — notebook style */}
+                {/* Score banner · notebook style */}
                 <div className={cn(
                   "text-center py-6 rounded-xl border",
                   scorePercent >= 80
@@ -166,7 +166,7 @@ export function TestResultsCarousel({ questions, selected, onRetake, onClose }: 
                   )} />
                   <p className="font-handwriting text-5xl font-bold">{score}/{questions.length}</p>
                   <p className="font-handwriting-alt text-lg mt-2 text-muted-foreground">
-                    {scorePercent}% — {
+                    {scorePercent}% · {
                       scorePercent >= 80 ? "Excellent! 🎉" :
                       scorePercent >= 60 ? "Good effort! Keep practising 💪" :
                       "Review this chapter and try again 📖"

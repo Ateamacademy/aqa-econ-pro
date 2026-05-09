@@ -12,14 +12,14 @@ MARK SCHEME
 Maximum Mark: 30
 Difficulty: Moderate
 
-★ PREDICTED PAPER — FOR REVISION USE ★
+★ PREDICTED PAPER · FOR REVISION USE ★
 
 This mark scheme is a predicted paper mark scheme produced for student revision purposes. It
 mirrors the structure of the Cambridge International AS & A Level 9708 Economics Paper 3 mark
 scheme. It is not an official Cambridge International document.
 
 
-                                © Predicted Paper 2026 — 9708/03M/MS
+                                © Predicted Paper 2026 · 9708/03M/MS
                                                            9708/03M Mark Scheme Practice Series 2026
 
 Answer Key
@@ -58,4 +58,4 @@ Award 1 mark for each correct answer. Maximum mark: 30.
            30                               C                                        1
 
 
-                            © Predicted Paper 2026 — 9708/03M/MS
+                            © Predicted Paper 2026 · 9708/03M/MS

@@ -92,7 +92,7 @@ export default function MathsPastPapers() {
                       <FileText className="h-5 w-5 text-muted-foreground shrink-0" />
                       <div>
                         <p className="font-medium text-sm">
-                          {p.session} — {p.type}
+                          {p.session} · {p.type}
                         </p>
                         <p className="text-xs text-muted-foreground">
                           Paper {p.paper} · {p.tier}

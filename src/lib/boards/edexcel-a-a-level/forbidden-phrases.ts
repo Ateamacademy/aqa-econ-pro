@@ -1,8 +1,8 @@
 /**
- * Edexcel A A-Level (9EC0) — boilerplate phrases that must NEVER appear in
+ * Edexcel A A-Level (9EC0) · boilerplate phrases that must NEVER appear in
  * generated papers. Picked up by `src/lib/boards/blueprint-validator.ts`.
  *
- * Distinct from AQA's forbidden phrases — AQA uses "Source: News reports,
+ * Distinct from AQA's forbidden phrases · AQA uses "Source: News reports,
  * {year}" and the "0 1 / 0 2" question prefix; Edexcel uses full-URL sources
  * and "1(a) / 6(b)" numbering.
  */

@@ -159,7 +159,7 @@ export default function PaperLibrary() {
               {stats.total} Pre-Made Predicted Papers
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg">
-              Exam-realistic papers for every board — ranked by difficulty so you can train at your level and push beyond.
+              Exam-realistic papers for every board · ranked by difficulty so you can train at your level and push beyond.
             </p>
 
             {/* Quick stats */}

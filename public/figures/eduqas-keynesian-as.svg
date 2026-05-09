@@ -20,7 +20,7 @@
     </marker>
   </defs>
 
-  <text x="350" y="28" text-anchor="middle" class="ttl">Keynesian AS — Spare Capacity vs Full Employment</text>
+  <text x="350" y="28" text-anchor="middle" class="ttl">Keynesian AS · Spare Capacity vs Full Employment</text>
   <text x="350" y="48" text-anchor="middle" class="sub">Same +ΔAD has very different effects depending on where the economy is on the Keynesian AS curve</text>
 
   <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
@@ -83,7 +83,7 @@
   <path class="arrow" d="M 410 200 q 30 -5 55 0" stroke="#5e35b1"/>
   <text x="415" y="190" class="lbl" fill="#5e35b1">AD shifts right</text>
 
-  <text x="90"  y="495" class="sub">LEFT (spare capacity): AD1 → AD2 raises Real Output (Y → Y1) with no rise in the price level — pure growth.</text>
-  <text x="90"  y="512" class="sub">RIGHT (full employment): AD3 → AD4 leaves Y unchanged at YFE but raises the price level (P3 → P4) — pure inflation.</text>
+  <text x="90"  y="495" class="sub">LEFT (spare capacity): AD1 → AD2 raises Real Output (Y → Y1) with no rise in the price level · pure growth.</text>
+  <text x="90"  y="512" class="sub">RIGHT (full employment): AD3 → AD4 leaves Y unchanged at YFE but raises the price level (P3 → P4) · pure inflation.</text>
   <text x="90"  y="529" class="sub">In the curved "bottleneck" middle region, an AD rise generates a mix of extra output and rising prices.</text>
 </svg>

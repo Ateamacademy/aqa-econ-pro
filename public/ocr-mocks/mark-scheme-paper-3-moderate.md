@@ -7,7 +7,7 @@ Economics
 H460/03: Themes in economics
 A Level
 
-Mark Scheme — Predicted Paper (Moderate)
+Mark Scheme · Predicted Paper (Moderate)
 MARKING INSTRUCTIONS
 These are the marking instructions for the predicted paper. Use them in conjunction with the question paper.
 Alternative correct answers and unexpected approaches should be given marks that fairly reflect the relevant
@@ -125,7 +125,7 @@ Question            Answer     Question   Answer
 14                  C          29         A
 
 15                  C          30         A
-Section A — Rationale
+Section A · Rationale
 
 Q     Key   Rationale                                                                     AO
 
@@ -147,7 +147,7 @@ Q     Key   Rationale                                                           
 3     B     A Cigarettes are a demerit good due to overconsumption and negative          AO1
             externalities.
             B Correct: Education generates positive externalities and consumers
-            tend to under-value its long-term benefits — the definition of a merit good.
+            tend to under-value its long-term benefits · the definition of a merit good.
             C National defence is a public good (non-excludable and non-rival), not a
             merit good.
             D Street lighting is a public good (non-excludable and non-rival), not a
@@ -157,10 +157,10 @@ Q     Key   Rationale                                                           
             B Raising interest rates is contractionary monetary policy, not fiscal
             policy.
             C Correct: Reducing corporation tax boosts firms' post-tax profits and
-            incentive to invest, shifting AD to the right — expansionary fiscal policy.
+            incentive to invest, shifting AD to the right · expansionary fiscal policy.
             D Reducing the money supply is contractionary monetary policy.
 
-5     B     A Sign is correct but the magnitude is wrong — this would imply a 25%         AO2
+5     B     A Sign is correct but the magnitude is wrong · this would imply a 25%         AO2
             fall in QD.
             B Correct: PED = %ΔQD / %ΔP = −4% / +10% = −0.4. Demand is price
             inelastic.
@@ -179,7 +179,7 @@ Q     Key   Rationale                                                           
             producing multiple related products together is lower than producing them
             separately, e.g. a supermarket selling both food and household goods.
             C Diseconomies relate to rising costs, not joint production.
-            D The MES is a related but distinct concept — the lowest output at which
+            D The MES is a related but distinct concept · the lowest output at which
             LRAC is minimised.
 
 8     B     A Many small firms is a feature of perfect or monopolistic competition.       AO1
@@ -212,7 +212,7 @@ Q     Key   Rationale                                                           
 12   A   A Correct: Unit labour cost = wage / productivity = £15 / 40 = £0.375.         AO2
          B This is the original unit labour cost (£15 / 30).
          C Incorrect calculation.
-         D Incorrect — higher productivity lowers unit labour cost.
+         D Incorrect · higher productivity lowers unit labour cost.
 
 13   A   A Correct: A lower school leaving age expands the pool of working-age          AO3
          people, shifting labour supply outwards.
@@ -238,7 +238,7 @@ Q     Key   Rationale                                                           
 
 16   B   A A proportional tax takes the same percentage from all incomes.               AO1
          B Correct: A progressive tax takes a higher percentage of income as
-         income rises — the marginal tax rate rises with income here.
+         income rises · the marginal tax rate rises with income here.
          C A regressive tax takes a higher percentage of low incomes.
          D This is a direct income tax, not an indirect tax.
 
@@ -303,7 +303,7 @@ Q     Key   Rationale                                                           
          D Time deposits require notice, reducing their liquidity.
 
 25   A   A Correct: A minimum price above equilibrium leads quantity supplied to AO3
-         exceed quantity demanded — an excess supply.
+         exceed quantity demanded · an excess supply.
          B Producer surplus on units actually sold rises, though some firms may
          produce more than they can sell.
          C Shortages arise from price ceilings, not floors.
@@ -333,7 +333,7 @@ Q     Key   Rationale                                                           
          equality, the more equal the distribution of income.
          B A curve closer to the line of equality indicates less inequality, not more.
          C The Lorenz curve shows income distribution, not total GDP.
-         D Same as C — no direct implication for GDP level.
+         D Same as C · no direct implication for GDP level.
 
 30   A   A Correct: Primary income records investment income, including              AO1
          interest, profits and dividends earned on assets held abroad.
@@ -463,7 +463,7 @@ Analysis
     •   Analysis for public ownership: Public sector can produce at the allocatively efficient level (P = MC)
         with government covering any losses, raising consumer surplus.
     •   Analysis for public ownership: Removes duplication and incentivises full exploitation of economies of
-        scale — potentially producing at lower average cost than multiple franchises.
+        scale · potentially producing at lower average cost than multiple franchises.
     •   Analysis for public ownership: Avoids profit extraction as dividends (as seen in other utilities);
         revenues can be reinvested.
     •   Analysis for private ownership: Profit motive incentivises x-efficiency, cost cutting and dynamic
@@ -475,11 +475,11 @@ Analysis
 Evaluation
     •   Private firms may still under-produce and over-price (MC = MR) compared with the socially optimal
         level (MC = AR).
-    •   Supernormal profits may be paid as dividends to shareholders rather than reinvested — a problem
+    •   Supernormal profits may be paid as dividends to shareholders rather than reinvested · a problem
         highlighted in extracts on other utilities.
     •   Public sector production risks x-inefficiency due to lack of profit motive and weaker incentives to
         innovate.
-    •   Public sector firms may be subject to political interference — short-term pricing decisions may
+    •   Public sector firms may be subject to political interference · short-term pricing decisions may
         dominate long-term investment planning.
     •   Effective regulation (e.g. by the ORR and GCA) may allow a privately-run natural monopoly to
         achieve outcomes close to those of public ownership at lower risk of government failure.
@@ -504,7 +504,7 @@ on
        2021 = 0.25%, December 2023 = 5.25%                                    Do NOT accept
                                                                               percentage change
        Award 1 mark for correct calculation: 5.25 − 0.25 = 5.00
-                                                                              (2000%) — the
+                                                                              (2000%) · the
        percentage points
                                                                               question specifies
        Award 1 mark for correctly identifying as a rise/increase of           percentage points.
@@ -607,24 +607,24 @@ Analysis
    •   Higher rates raise mortgage repayments, reducing discretionary income and consumption.
    •   Higher rates increase the cost of borrowing for firms, reducing investment.
    •   Higher rates attract hot money inflows, appreciating sterling, lowering import prices and reducing AD
-       — particularly important for imported-cost inflation.
+       · particularly important for imported-cost inflation.
    •   Evidence suggests transmission is working: inflation fell from 11.1% to 4.0%, mortgage approvals
        down 33%, house prices down 4.8%.
 Evaluation
-   •   Much of the inflation was cost-push (energy, supply-chain shocks) — raising interest rates does not
+   •   Much of the inflation was cost-push (energy, supply-chain shocks) · raising interest rates does not
        directly address supply-side inflation and risks damaging output and employment (stagflation risk).
-   •   With ~75% of mortgages on fixed rates, the monetary transmission mechanism has long lags — the
+   •   With ~75% of mortgages on fixed rates, the monetary transmission mechanism has long lags · the
        full effect takes years to feed through.
    •   Blunt instrument: hurts borrowers and the 1.6 million households remortgaging disproportionately
        while asset-owning wealthy households benefit less.
    •   Could have used alternative instruments: targeted fiscal measures, supply-side policies (e.g. housing
        supply), or a more gradual tightening path.
    •   Risk of over-tightening tipping the economy into recession (housebuilding starts fell 44%).
-   •   Delayed action: the MPC was slow to raise rates — had it acted earlier, smaller rises might have been
+   •   Delayed action: the MPC was slow to raise rates · had it acted earlier, smaller rises might have been
        sufficient.
 Judgements might include:
    •   Depends on the cause of inflation (demand-pull vs cost-push).
-   •   Depends on expectations management — a credible commitment to the 2% target matters.
+   •   Depends on expectations management · a credible commitment to the 2% target matters.
    •   Depends on what fiscal and supply-side policies are used alongside.
    •   Depends on whether gradual or sharp adjustment leads to better outcomes.
    •   Depends on what other central banks are doing globally (exchange rate effects).
@@ -644,8 +644,8 @@ on
          Examples:                                                                description of pattern
          - Both recruitment (% of target) and real-terms pay fell                 is clear.
          between 2010 and 2023 (1).
-         - Recruitment fell much more sharply (108% to 50% — a
-         fall of 58 percentage points) than pay (index 100 to 87 — a
+         - Recruitment fell much more sharply (108% to 50% · a
+         fall of 58 percentage points) than pay (index 100 to 87 · a
          fall of 13 points) (1).
          - The fall in both is consistent with reduced supply of
          teachers.
@@ -706,17 +706,17 @@ Analysis
    •   Trade union activity (NEU strikes, large membership) may push wages up through collective
        bargaining.
    •   The graduate pay gap with private sector (£41,500 vs £47,200) creates pressure on government to
-       raise wages to retain staff — MRP argument.
+       raise wages to retain staff · MRP argument.
    •   Teacher training is long (undergraduate degree + 1-year PGCE + induction) creating a barrier to entry
        → supply is inelastic and real wages need to rise to attract entrants.
 Evaluation
-   •   Government is a monopsony employer — it can resist wage pressure and set wages below the
+   •   Government is a monopsony employer · it can resist wage pressure and set wages below the
        competitive equilibrium.
    •   Fiscal constraints: the 2023 6.5% pay rise had to come from existing school budgets, suggesting
        limited government willingness to fund further rises.
    •   No formal qualification barrier to become a teacher (beyond degree) means supply could recover in
        the future.
-   •   Other public sector pay deals create precedent — if other groups accept lower deals, teachers may
+   •   Other public sector pay deals create precedent · if other groups accept lower deals, teachers may
        too.
    •   Inflation falling could reduce nominal pay pressure.
    •   Success of union activity depends on political and public response to strikes.

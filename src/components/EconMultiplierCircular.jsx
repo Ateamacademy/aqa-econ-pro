@@ -49,7 +49,7 @@ export default function EconMultiplierCircular() {
         <rect x="50" y="530" width="580" height="72" rx="6" fill="#f0f4fb" stroke="#c8d4e8" strokeWidth="1.2"/>
         <text x="62" y="548" fontSize="11" fontWeight="bold" fill="#111">Example: If MPC = 0.8, MPS = 0.2 → Multiplier k = 1/0.2 = 5</text>
         <text x="62" y="564" fontSize="11" fill="#333">£1bn injection → £5bn total rise in National Income. Higher MPC = larger multiplier.</text>
-        <text x="62" y="580" fontSize="11" fill="#555">Withdrawals (S+T+M) reduce each successive round — the more open the economy, the</text>
+        <text x="62" y="580" fontSize="11" fill="#555">Withdrawals (S+T+M) reduce each successive round · the more open the economy, the</text>
         <text x="62" y="596" fontSize="11" fill="#555">smaller the multiplier, as income leaks abroad through imports.</text>
       </svg>
     </div>

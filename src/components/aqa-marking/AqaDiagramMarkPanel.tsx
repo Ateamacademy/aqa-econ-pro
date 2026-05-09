@@ -19,7 +19,7 @@ interface Props {
 }
 
 /**
- * Diagram marking panel — runs structural checks against AQA's rubric in pure
+ * Diagram marking panel · runs structural checks against AQA's rubric in pure
  * browser JavaScript. No external API calls. Phrases output as level
  * contribution, never direct marks.
  */
@@ -98,7 +98,7 @@ export function AqaDiagramMarkPanel({
       {topLevel > 0 && (
         <p className="mt-3 text-[11px] text-muted-foreground border-t border-border pt-2">
           This diagram supports a <span className="font-mono text-foreground">Level {topLevel}</span>{" "}
-          contribution. Use this as evidence when self-assessing your overall level below — AQA marks
+          contribution. Use this as evidence when self-assessing your overall level below · AQA marks
           holistically across diagram and writing.
         </p>
       )}

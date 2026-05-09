@@ -47,7 +47,7 @@ export const oligopolyRubric: Rubric = {
   indicativeContent: [
     "Game theory / prisoner's dilemma applied to oligopoly pricing",
     "Dominant strategy exists for both firms",
-    "Nash equilibrium at (Low, Low) — both worse off than collusion",
+    "Nash equilibrium at (Low, Low) · both worse off than collusion",
     "Collusion is jointly optimal but individually unstable",
     "Interdependence: each firm's payoff depends on rival's choice",
   ],
@@ -108,7 +108,7 @@ export const phillipsCurveRubric: Rubric = {
   levels: diagramLevels8,
   indicativeContent: [
     "Short-run trade-off between inflation and unemployment",
-    "Long-run Phillips Curve vertical at NRU — no trade-off",
+    "Long-run Phillips Curve vertical at NRU · no trade-off",
     "Adaptive expectations shift SRPC upward",
     "Monetarist/New Classical conclusion: only supply-side can reduce NRU",
   ],
@@ -118,7 +118,7 @@ export const phillipsCurveRubric: Rubric = {
     { id: "PC-3", requirement: "LRPC vertical at NRU, labelled", marks: 2, critical: true },
     { id: "PC-4", requirement: "Movement A→B along SRPC1 (AD rises, inflation up, unemployment down)", marks: 1, critical: false },
     { id: "PC-5", requirement: "Expectations shift SRPC1→SRPC2 upward", marks: 2, critical: false },
-    { id: "PC-6", requirement: "Return to NRU at C with higher inflation — vertical LRPC conclusion", marks: 1, critical: false },
+    { id: "PC-6", requirement: "Return to NRU at C with higher inflation · vertical LRPC conclusion", marks: 1, critical: false },
   ],
   keyTerms: ["SRPC", "LRPC", "NRU", "adaptive expectations", "inflation", "unemployment"],
   commonErrors: [
@@ -239,7 +239,7 @@ export interface Paper {
 export const samplePapers: Paper[] = [
   {
     id: "paper-1-micro",
-    title: "Paper 1 — Markets & Business Behaviour",
+    title: "Paper 1 · Markets & Business Behaviour",
     board: "Edexcel A",
     timeMinutes: 120,
     totalMarks: 80,
@@ -276,7 +276,7 @@ export const samplePapers: Paper[] = [
             "Oligopoly characteristics: interdependence, barriers to entry",
             "Potential for tacit collusion → higher prices → consumer welfare loss",
             "Counter: Aldi/Lidl entry has increased competition → lower prices",
-            "Monopsony power over suppliers — could reduce quality/variety",
+            "Monopsony power over suppliers · could reduce quality/variety",
             "Consumer welfare = consumer surplus + quality + choice",
           ],
           keyTerms: ["market concentration", "oligopoly", "consumer welfare", "monopsony power", "barriers to entry"],
@@ -297,11 +297,11 @@ export const samplePapers: Paper[] = [
           indicativeContent: [
             "Monopoly: supernormal profit, DWL, allocative inefficiency (P > MC)",
             "X-inefficiency due to lack of competitive pressure",
-            "Counter: natural monopoly — lower AC than competition",
-            "Dynamic efficiency — supernormal profits fund R&D (Schumpeter)",
+            "Counter: natural monopoly · lower AC than competition",
+            "Dynamic efficiency · supernormal profits fund R&D (Schumpeter)",
             "Economies of scale → lower prices potentially",
             "Regulation as alternative (price caps, RPI-X)",
-            "Contestable markets theory — potential competition disciplines",
+            "Contestable markets theory · potential competition disciplines",
           ],
           keyTerms: ["monopoly", "public interest", "allocative efficiency", "dynamic efficiency", "natural monopoly", "X-inefficiency", "deadweight loss"],
           commonErrors: ["One-sided argument (only costs OR only benefits)", "No diagram", "No evaluation/judgement"],
@@ -312,7 +312,7 @@ export const samplePapers: Paper[] = [
   },
   {
     id: "paper-2-macro",
-    title: "Paper 2 — The National & Global Economy",
+    title: "Paper 2 · The National & Global Economy",
     board: "Edexcel A",
     timeMinutes: 120,
     totalMarks: 80,
@@ -374,7 +374,7 @@ export const samplePapers: Paper[] = [
           indicativeContent: [
             "Supply-side: market-based (deregulation, tax cuts, privatisation) vs interventionist (education, infrastructure, R&D)",
             "Shift LRAS right → increase productive capacity → sustainable growth without inflation",
-            "Time lags — education/infrastructure take years",
+            "Time lags · education/infrastructure take years",
             "Inequality trade-off with market-based approaches",
             "Counter: demand-side may be needed first in recession",
             "Evaluation: depends on type, time horizon, starting position of economy",
@@ -388,7 +388,7 @@ export const samplePapers: Paper[] = [
   },
   {
     id: "paper-3-synoptic",
-    title: "Paper 3 — Microeconomics & Macroeconomics",
+    title: "Paper 3 · Microeconomics & Macroeconomics",
     board: "Edexcel A",
     timeMinutes: 120,
     totalMarks: 70,

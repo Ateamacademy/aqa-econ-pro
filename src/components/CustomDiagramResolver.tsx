@@ -1,5 +1,5 @@
 /**
- * CustomDiagramResolver — Maps diagram keywords to custom SVG diagram components.
+ * CustomDiagramResolver · Maps diagram keywords to custom SVG diagram components.
  * Used in both DiagramPractice (reference diagrams) and StudyNotes (model diagrams).
  * Board-aware: some keywords resolve to different components per exam board.
  */

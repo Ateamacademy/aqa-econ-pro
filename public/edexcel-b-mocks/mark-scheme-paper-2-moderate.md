@@ -46,13 +46,13 @@ positive.
 
 Knowledge/understanding 1, Application 2, Analysis 1
 
-Knowledge/understanding: 1 mark for identifying a benefit of joint ventures — e.g. sharing risk, gaining local
+Knowledge/understanding: 1 mark for identifying a benefit of joint ventures · e.g. sharing risk, gaining local
 market knowledge, access to distribution networks (1).
 
-Application: up to 2 marks — e.g. India is a tea-producing country with strong local brands (1); the local
+Application: up to 2 marks · e.g. India is a tea-producing country with strong local brands (1); the local
 distributor brings knowledge of Indian supply chains and retail relationships (1).
 
-Analysis: 1 mark for developing explanation — e.g. reduces risk of market-entry failure, meaning Taylors
+Analysis: 1 mark for developing explanation · e.g. reduces risk of market-entry failure, meaning Taylors
 avoids costly mistakes and is more likely to achieve profitable sales (1).
 
 (4 marks)
@@ -62,13 +62,13 @@ avoids costly mistakes and is more likely to achieve profitable sales (1).
 
 Knowledge/understanding 1, Application 2, Analysis 1
 
-Knowledge/understanding: 1 mark for a reason indicating UK comparative disadvantage in goods — e.g. UK
+Knowledge/understanding: 1 mark for a reason indicating UK comparative disadvantage in goods · e.g. UK
 imports of goods exceed UK exports of goods with most major partners shown (1).
 
-Application: up to 2 marks using Extract A — e.g. UK imports from Germany (£78.1bn) far exceed UK exports
+Application: up to 2 marks using Extract A · e.g. UK imports from Germany (£78.1bn) far exceed UK exports
 to Germany (£36.8bn) (1); UK runs a deficit in goods with 4 of the 5 countries shown (1).
 
-Analysis: 1 mark for developing the reasoning — e.g. suggests the UK has higher relative opportunity costs in
+Analysis: 1 mark for developing the reasoning · e.g. suggests the UK has higher relative opportunity costs in
 producing many manufactured goods, consistent with a mature developed economy focused on services (1).
 
 (4 marks)
@@ -78,15 +78,15 @@ producing many manufactured goods, consistent with a mature developed economy fo
 
 Knowledge/understanding 2, Application 2, Analysis 2
 
-Knowledge/understanding: up to 2 marks — e.g. consumer tastes and preferences vary between countries
+Knowledge/understanding: up to 2 marks · e.g. consumer tastes and preferences vary between countries
 (1); cultural, religious or dietary differences affect product acceptability (1).
 
-Application: up to 2 marks — e.g. Indian consumers prefer stronger, spiced tea blends (1); Taylors has
+Application: up to 2 marks · e.g. Indian consumers prefer stronger, spiced tea blends (1); Taylors has
 developed new recipes specifically for the Indian market (1).
 
 
                                                        3                                             Turn over ▶
-Analysis: up to 2 marks — e.g. tailoring products to local tastes maximises potential sales revenue and builds
+Analysis: up to 2 marks · e.g. tailoring products to local tastes maximises potential sales revenue and builds
 brand loyalty (1); reduces risk of costly product failure and wasted marketing spend (1).
 
 (6 marks)
@@ -102,12 +102,12 @@ real output and the average price level.
  • AD = C + I + G + (X − M); an increase in exports (X) raises AD.
  • AD shifts right from AD to AD₁, real output rises from Y to Y₁ and the average price level rises from P to P₁.
  • Higher real GDP contributes to economic growth and may reduce demand-deficient unemployment.
- • Improvement in the current account of the balance of payments — potentially reducing any trade deficit.
+ • Improvement in the current account of the balance of payments · potentially reducing any trade deficit.
  • Multiplier effect: additional export revenues create further induced consumption by workers and suppliers.
- • Evaluation — inflationary pressure if the economy is close to full capacity (where AS is steep).
- • Evaluation — higher demand for sterling could appreciate the exchange rate, making exports less competitive
+ • Evaluation · inflationary pressure if the economy is close to full capacity (where AS is steep).
+ • Evaluation · higher demand for sterling could appreciate the exchange rate, making exports less competitive
    and partially offsetting the original gain.
- • Evaluation — depends on the size of the multiplier, spare capacity in the economy, and whether export growth is
+ • Evaluation · depends on the size of the multiplier, spare capacity in the economy, and whether export growth is
    sustained.
 
   Level       Mark                                                      Descriptor
@@ -143,14 +143,14 @@ Knowledge/understanding 2, Application 2, Analysis 3, Evaluation 3
 
 
                                                                  4                                                     Turn over ▶
- • Rising urban incomes in India support a growing middle class willing to buy imported branded goods — YED may
+ • Rising urban incomes in India support a growing middle class willing to buy imported branded goods · YED may
    be elastic for premium tea.
  • Shared cultural understanding reduces risk of brand-positioning mistakes.
- • India is a tea-producing nation with strong domestic brands — intense competition.
- • Evaluation — loss of full control: profits must be shared and strategic decisions negotiated.
- • Evaluation — risk of the partner becoming a future competitor once it has learned Taylors' techniques.
- • Evaluation — exchange-rate risk on rupee-denominated earnings.
- • Evaluation — depends on the length of the JV agreement, the reliability of the partner, and whether Taylors
+ • India is a tea-producing nation with strong domestic brands · intense competition.
+ • Evaluation · loss of full control: profits must be shared and strategic decisions negotiated.
+ • Evaluation · risk of the partner becoming a future competitor once it has learned Taylors' techniques.
+ • Evaluation · exchange-rate risk on rupee-denominated earnings.
+ • Evaluation · depends on the length of the JV agreement, the reliability of the partner, and whether Taylors
    retains control of the brand.
 
  Level        Mark                                                      Descriptor
@@ -194,14 +194,14 @@ Knowledge/understanding 2, Application 2, Analysis 4, Evaluation 4
  • Employment created in exporting firms and their supply chains reduces unemployment.
  • Improvement in the current-account balance on the balance of payments.
  • Tax revenues from successful exporters may offset UKEF's cost to the taxpayer.
- • Evaluation — opportunity cost of £6.5 billion: the money could have been spent on education, the NHS or
+ • Evaluation · opportunity cost of £6.5 billion: the money could have been spent on education, the NHS or
    infrastructure.
- • Evaluation — moral hazard: firms may take on riskier contracts knowing they are insured.
+ • Evaluation · moral hazard: firms may take on riskier contracts knowing they are insured.
 
 
                                                                  5                                                     Turn over ▶
- • Evaluation — market distortion: large firms with political connections may benefit disproportionately.
- • Evaluation — effectiveness depends on whether the support is additional (funding exports that would not
+ • Evaluation · market distortion: large firms with political connections may benefit disproportionately.
+ • Evaluation · effectiveness depends on whether the support is additional (funding exports that would not
    otherwise happen) or merely subsidises exports that would have happened anyway.
 
  Level        Mark                                                      Descriptor
@@ -245,12 +245,12 @@ Knowledge/understanding 2, Application 2, Analysis 4, Evaluation 4
  • Deregulation of labour markets can reduce unit labour costs.
  • Higher productivity lowers average costs, making UK exports more price-competitive internationally (Extract A
    shows the UK runs a goods deficit with most major partners).
- • Evaluation — supply-side policies have long time lags; benefits may take years to materialise.
- • Evaluation — high opportunity cost (e.g. £6.5bn UKEF funding, Extract C) and fiscal constraints limit scope.
- • Evaluation — deregulation may harm workers' rights and increase inequality.
- • Evaluation — effectiveness depends on relative productivity growth abroad; if competitor countries also invest,
+ • Evaluation · supply-side policies have long time lags; benefits may take years to materialise.
+ • Evaluation · high opportunity cost (e.g. £6.5bn UKEF funding, Extract C) and fiscal constraints limit scope.
+ • Evaluation · deregulation may harm workers' rights and increase inequality.
+ • Evaluation · effectiveness depends on relative productivity growth abroad; if competitor countries also invest,
    UK firms may not gain a relative advantage.
- • Evaluation — demand-side factors (exchange rate, global growth) also affect competitiveness and are outside
+ • Evaluation · demand-side factors (exchange rate, global growth) also affect competitiveness and are outside
    government's direct control.
 
 
@@ -293,23 +293,23 @@ the question.
 
 Knowledge/understanding 4, Application 4, Analysis 6, Evaluation 6
  • Life expectancy at birth measures the average number of years a newborn is expected to live.
- • It captures access to healthcare, nutrition, sanitation and safety — aspects GDP per capita does not directly
+ • It captures access to healthcare, nutrition, sanitation and safety · aspects GDP per capita does not directly
    measure.
- • Useful for comparing broad development levels: UK life expectancy 81.2 vs Nigeria 54.6 — a striking 26-year gap
+ • Useful for comparing broad development levels: UK life expectancy 81.2 vs Nigeria 54.6 · a striking 26-year gap
    consistent with development differences.
- • South Korea (83.6 years) exceeds the UK (81.2) despite slightly lower GDP per capita — suggests non-income
+ • South Korea (83.6 years) exceeds the UK (81.2) despite slightly lower GDP per capita · suggests non-income
    factors matter.
- • Mean years of schooling complements life expectancy: UK 13.4 vs Nigeria 7.2 years — reflecting investment in
+ • Mean years of schooling complements life expectancy: UK 13.4 vs Nigeria 7.2 years · reflecting investment in
    human capital.
  • Life expectancy is comparatively easy to measure and widely available.
- • Evaluation — does not measure quality of life, only quantity of years.
- • Evaluation — national averages mask inequality (e.g. large regional or gender gaps within countries).
- • Evaluation — slow to change; improvements in healthcare may take decades to show up.
- • Evaluation — does not capture political freedoms, environmental quality or cultural factors.
- • Evaluation — HDI combines life expectancy, education and GNI per capita, offering a more rounded picture.
- • Evaluation — other useful indicators: infant mortality, GINI coefficient, access to clean water, literacy rates.
- • Evaluation — no single indicator is sufficient; a basket of indicators should be used for meaningful comparisons.
- • Evaluation — data quality may be weaker in developing economies, limiting reliability of comparisons.
+ • Evaluation · does not measure quality of life, only quantity of years.
+ • Evaluation · national averages mask inequality (e.g. large regional or gender gaps within countries).
+ • Evaluation · slow to change; improvements in healthcare may take decades to show up.
+ • Evaluation · does not capture political freedoms, environmental quality or cultural factors.
+ • Evaluation · HDI combines life expectancy, education and GNI per capita, offering a more rounded picture.
+ • Evaluation · other useful indicators: infant mortality, GINI coefficient, access to clean water, literacy rates.
+ • Evaluation · no single indicator is sufficient; a basket of indicators should be used for meaningful comparisons.
+ • Evaluation · data quality may be weaker in developing economies, limiting reliability of comparisons.
 
  Level        Mark                                                      Descriptor
 
@@ -357,24 +357,24 @@ the question.
 Knowledge/understanding 4, Application 4, Analysis 6, Evaluation 6
  • A tariff is a tax on imports, raising the price of imported goods in the importing country.
  • EU tariffs of up to 35% (on top of 10% duty) substantially raise the price BYD can charge European consumers.
- • Higher prices reduce quantity demanded — extent depends on PED.
+ • Higher prices reduce quantity demanded · extent depends on PED.
  • BYD's cost advantage (selling prices ~25% below European competitors) is partly eroded by tariffs.
  • Tariffs reduce BYD's sales volume, revenues and potentially profit in the EU market.
  • Vertical integration (batteries, semiconductors, motors) helps BYD absorb some cost pressure.
- • BYD's response: relocating production to Hungary (inside the EU) to bypass tariffs — reduces tariff impact long-
+ • BYD's response: relocating production to Hungary (inside the EU) to bypass tariffs · reduces tariff impact long-
    term.
  • New plants in Thailand and Brazil diversify BYD's production geographically, reducing reliance on Chinese
    exports.
- • Evaluation — EV demand may be price-inelastic for premium buyers but elastic for budget-conscious consumers;
+ • Evaluation · EV demand may be price-inelastic for premium buyers but elastic for budget-conscious consumers;
    impact varies by segment.
- • Evaluation — tariffs may prompt retaliation (China has threatened retaliatory tariffs on EU exports), which could
+ • Evaluation · tariffs may prompt retaliation (China has threatened retaliatory tariffs on EU exports), which could
    affect BYD's European business indirectly or help European rivals.
- • Evaluation — scale of BYD (3m vehicles in 70+ countries) means it can absorb losses in one market while
+ • Evaluation · scale of BYD (3m vehicles in 70+ countries) means it can absorb losses in one market while
    growing others.
- • Evaluation — setting up EU factories requires large capital investment and time; short-term impact of tariffs is
+ • Evaluation · setting up EU factories requires large capital investment and time; short-term impact of tariffs is
    more damaging than long-term.
- • Evaluation — possibility of non-tariff barriers (safety regulations, data rules) adds uncertainty.
- • Evaluation — overall, large MNCs like BYD are better placed than smaller rivals to adapt to tariffs through FDI,
+ • Evaluation · possibility of non-tariff barriers (safety regulations, data rules) adds uncertainty.
+ • Evaluation · overall, large MNCs like BYD are better placed than smaller rivals to adapt to tariffs through FDI,
    but short-term profitability is clearly reduced.
 
  Level       Mark                                                  Descriptor

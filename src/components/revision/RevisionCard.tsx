@@ -1,5 +1,5 @@
 /**
- * Revision Card System — Notebook-style handwritten aesthetic
+ * Revision Card System · Notebook-style handwritten aesthetic
  * with dynamic writing animations for a live-lesson experience.
  */
 
@@ -8,7 +8,7 @@ import { BookOpen, Lightbulb, AlertTriangle, Calculator, Tag, TrendingUp, Pen } 
 import { cn } from "@/lib/utils";
 import { motion, useInView } from "framer-motion";
 
-/* ── Animated writing wrapper — reveals children as if being written ── */
+/* ── Animated writing wrapper · reveals children as if being written ── */
 function WritingReveal({ children, delay = 0, className }: { children: ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-40px" });
@@ -61,7 +61,7 @@ function HandwrittenHeader({
   );
 }
 
-/* ── Definition Box (Blue) — notebook style ── */
+/* ── Definition Box (Blue) · notebook style ── */
 export function DefinitionBox({ term, children }: { term?: string; children: ReactNode }) {
   return (
     <WritingReveal>
@@ -79,7 +79,7 @@ export function DefinitionBox({ term, children }: { term?: string; children: Rea
   );
 }
 
-/* ── Example Box (Amber) — sticky note style ── */
+/* ── Example Box (Amber) · sticky note style ── */
 export function ExampleBox({ children }: { children: ReactNode }) {
   return (
     <WritingReveal delay={0.05}>
@@ -99,7 +99,7 @@ export function ExampleBox({ children }: { children: ReactNode }) {
   );
 }
 
-/* ── Exam Tip Box (Red) — urgent callout style ── */
+/* ── Exam Tip Box (Red) · urgent callout style ── */
 export function ExamTipBox({ children }: { children: ReactNode }) {
   return (
     <WritingReveal delay={0.1}>
@@ -120,7 +120,7 @@ export function ExamTipBox({ children }: { children: ReactNode }) {
   );
 }
 
-/* ── Formula Box (Purple) — chalkboard style ── */
+/* ── Formula Box (Purple) · chalkboard style ── */
 export function FormulaBox({ children }: { children: ReactNode }) {
   return (
     <WritingReveal delay={0.08}>
@@ -140,7 +140,7 @@ export function FormulaBox({ children }: { children: ReactNode }) {
   );
 }
 
-/* ── Key Terms List (Teal) — index card style ── */
+/* ── Key Terms List (Teal) · index card style ── */
 export function KeyTermsList({ terms }: { terms: { term: string; definition: string }[] }) {
   if (!terms.length) return null;
   return (
@@ -176,7 +176,7 @@ export function KeyTermsList({ terms }: { terms: { term: string; definition: str
   );
 }
 
-/* ── Diagram Box (Green) — wraps any diagram component ── */
+/* ── Diagram Box (Green) · wraps any diagram component ── */
 export function DiagramBox({ title, children }: { title?: string; children: ReactNode }) {
   return (
     <WritingReveal delay={0.1}>
@@ -224,7 +224,7 @@ export function AnalysisChain({ steps }: { steps: string[] }) {
   );
 }
 
-/* ── Full Revision Topic Card — notebook page ── */
+/* ── Full Revision Topic Card · notebook page ── */
 export function RevisionTopicCard({
   title,
   children,

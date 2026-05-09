@@ -1,5 +1,5 @@
 /**
- * AQA A-Level — diagram-tagging rules.
+ * AQA A-Level · diagram-tagging rules.
  *
  * Given a generated paper, set `requiresDiagram` / `diagramOptional` on every
  * question where AQA conventions expect (or strongly support) a student-drawn
@@ -61,7 +61,7 @@ function buildRubric(type: DiagramType, prompt: string): AqaDiagramRubric {
     return defaultAdAsRubric(scenario || "the macro shock described");
   }
 
-  // Indirect tax — supply-and-demand with a tax-wedge L4 component.
+  // Indirect tax · supply-and-demand with a tax-wedge L4 component.
   if (type === "indirectTax" || type === "subsidy" || type === "externality") {
     const base = defaultSdRubric(scenario || "the intervention described");
     return {
@@ -113,9 +113,9 @@ function tagsForQuestion(
   }
 
   if (paperNumber === 1 || paperNumber === 2) {
-    // Q3 / Q7 — 9-mark Section A analyse-with-diagram.
+    // Q3 / Q7 · 9-mark Section A analyse-with-diagram.
     if (q.section === "A" && q.marks === 9) return { requiresDiagram: true, diagramOptional: false };
-    // Q4 / Q8 — 25-mark Section A: required only if topic is diagram-friendly.
+    // Q4 / Q8 · 25-mark Section A: required only if topic is diagram-friendly.
     if (q.section === "A" && q.marks === 25) {
       return {
         requiresDiagram: detectDiagramType(q.prompt) !== SD_FALLBACK || /market|tax|subsid|price|supply|demand/i.test(q.prompt),
@@ -129,7 +129,7 @@ function tagsForQuestion(
   }
 
   if (paperNumber === 3) {
-    // Q32 (15) — required when diagram-friendly; Q33 (25) — optional; Q31 (10) — optional.
+    // Q32 (15) · required when diagram-friendly; Q33 (25) · optional; Q31 (10) · optional.
     if (q.marks === 15) {
       return { requiresDiagram: detectDiagramType(q.prompt) !== SD_FALLBACK, diagramOptional: false };
     }

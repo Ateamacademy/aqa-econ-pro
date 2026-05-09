@@ -5,10 +5,10 @@ export const igcsePredictedPapers: PredictedPaper[] = [
     id: "igcse-p1-a",
     subject: "cambridge-igcse" as any,
     paper: "1",
-    title: "Paper 1 Multiple Choice — Set A (Moderate)",
-    description: "Cambridge IGCSE Paper 1 (0455/11). 30 multiple-choice questions — Moderate. Verbatim from official-style mock.",
+    title: "Paper 1 Multiple Choice · Set A (Moderate)",
+    description: "Cambridge IGCSE Paper 1 (0455/11). 30 multiple-choice questions · Moderate. Verbatim from official-style mock.",
     totalMarks: 30,
-    content: `# Cambridge IGCSE Economics (0455/11) — Paper 1 Multiple Choice — Predicted Paper (Moderate)
+    content: `# Cambridge IGCSE Economics (0455/11) · Paper 1 Multiple Choice · Predicted Paper (Moderate)
 
 **Time: 45 minutes | Total: 30 marks**
 
@@ -228,10 +228,10 @@ Why might a government impose a tariff on imported steel?
     id: "igcse-p2-a",
     subject: "cambridge-igcse",
     paper: "2",
-    title: "Paper 2 Structured Questions — Set A (Moderate)",
-    description: "Cambridge IGCSE Paper 2 (0455/21). Set A — Moderate. Verbatim from official-style mock.",
+    title: "Paper 2 Structured Questions · Set A (Moderate)",
+    description: "Cambridge IGCSE Paper 2 (0455/21). Set A · Moderate. Verbatim from official-style mock.",
     totalMarks: 90,
-    content: `# Cambridge IGCSE Economics (0455/21) — Paper 2 Structured Questions — Predicted Paper (Moderate)
+    content: `# Cambridge IGCSE Economics (0455/21) · Paper 2 Structured Questions · Predicted Paper (Moderate)
 
 **Time: 2 hours 15 minutes | Total: 90 marks**
 
@@ -361,10 +361,10 @@ Discuss whether or not a country will benefit from an increase in the retirement
     id: "igcse-p1-b",
     subject: "cambridge-igcse" as any,
     paper: "1",
-    title: "Paper 1 Multiple Choice — Set B (Hard)",
-    description: "Cambridge IGCSE Paper 1 (0455/11). 30 multiple-choice questions — Hard. Verbatim from official-style mock.",
+    title: "Paper 1 Multiple Choice · Set B (Hard)",
+    description: "Cambridge IGCSE Paper 1 (0455/11). 30 multiple-choice questions · Hard. Verbatim from official-style mock.",
     totalMarks: 30,
-    content: `# Cambridge IGCSE Economics (0455/11) — Paper 1 Multiple Choice — Predicted Paper Set B (Hard)
+    content: `# Cambridge IGCSE Economics (0455/11) · Paper 1 Multiple Choice · Predicted Paper Set B (Hard)
 
 **Time: 45 minutes | Total: 30 marks**
 
@@ -584,10 +584,10 @@ An economy joins a free trade area. What is a likely benefit for consumers?
     id: "igcse-p2-b",
     subject: "cambridge-igcse",
     paper: "2",
-    title: "Paper 2 Structured Questions — Set B (Hard)",
-    description: "Cambridge IGCSE Paper 2 (0455/21). Set B — Hard. Verbatim from official-style mock.",
+    title: "Paper 2 Structured Questions · Set B (Hard)",
+    description: "Cambridge IGCSE Paper 2 (0455/21). Set B · Hard. Verbatim from official-style mock.",
     totalMarks: 90,
-    content: `# Cambridge IGCSE Economics (0455/21) — Paper 2 Structured Questions — Predicted Paper Set B (Hard)
+    content: `# Cambridge IGCSE Economics (0455/21) · Paper 2 Structured Questions · Predicted Paper Set B (Hard)
 
 **Time: 2 hours 15 minutes | Total: 90 marks**
 
@@ -657,7 +657,7 @@ Discuss whether or not a depreciation of the shilling benefits the Kenyan econom
 
 Answer any three questions. Each question is introduced by stimulus material.
 
-**2** India's economy grew by 7.2% in 2023. It is one of the fastest-growing large economies in the world. Income inequality in India remains high — the Gini coefficient is 0.36. The government uses both progressive taxation and welfare programmes.
+**2** India's economy grew by 7.2% in 2023. It is one of the fastest-growing large economies in the world. Income inequality in India remains high · the Gini coefficient is 0.36. The government uses both progressive taxation and welfare programmes.
 
 Question 2a [2 marks]
 Define economic growth.

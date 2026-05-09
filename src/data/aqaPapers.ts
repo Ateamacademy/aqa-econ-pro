@@ -42,7 +42,7 @@ const p1Questions: AqaQuestion[] = [
     number: 5,
     marks: 15,
     section: "B",
-    contextLabel: "Context 1 — Housing market",
+    contextLabel: "Context 1 · Housing market",
     prompt:
       "Explain how a positive externality in consumption can lead to market failure in the UK housing market.",
   },
@@ -50,7 +50,7 @@ const p1Questions: AqaQuestion[] = [
     number: 6,
     marks: 25,
     section: "B",
-    contextLabel: "Context 1 — Housing market",
+    contextLabel: "Context 1 · Housing market",
     prompt:
       "Evaluate the view that government regulation is the most effective policy to correct market failure in housing.",
   },
@@ -60,7 +60,7 @@ const p1MarkScheme: AqaMarkSchemeEntry[] = [
   {
     questionNumber: 1,
     pointMarks: [
-      "1 mark: identification — responsiveness of quantity demanded to a change in price.",
+      "1 mark: identification · responsiveness of quantity demanded to a change in price.",
       "1 mark: explicit formula or %ΔQd / %ΔP reference.",
     ],
   },
@@ -92,21 +92,21 @@ export const AQA_SPECIMEN_PAPER_1: GeneratedPaper = {
   extracts: [
     {
       id: "A",
-      title: "Extract A — UK wheat and the cost of fertiliser",
+      title: "Extract A · UK wheat and the cost of fertiliser",
       body:
         "UK wheat farmers entered the 2024 growing season facing the highest input costs in a generation. Ammonium-nitrate fertiliser, which had averaged £280/tonne for most of the 2010s, was quoted at over £700/tonne in early 2023 before easing to £430/tonne by autumn 2024. Industry analysts estimate that price elasticity of demand for fertiliser among arable farmers is roughly −0.3 in the short run.",
       source: "Adapted from AHDB Cereals & Oilseeds Market Update, October 2024.",
     },
     {
       id: "B",
-      title: "Extract B — Why fertiliser prices spiked",
+      title: "Extract B · Why fertiliser prices spiked",
       body:
         "Most of the world's nitrogen fertiliser is made using natural gas as a feedstock. When European wholesale gas prices peaked at over €300/MWh in summer 2022 following the invasion of Ukraine, several major European fertiliser plants idled production. Sanctions on Russian and Belarusian potash compounded the squeeze on global supply.",
       source: "Adapted from the Financial Times, 14 March 2024.",
       figures: [
         {
           id: "fig1",
-          title: "Figure 1 — UK ammonium-nitrate fertiliser price (£/tonne)",
+          title: "Figure 1 · UK ammonium-nitrate fertiliser price (£/tonne)",
           xKey: "year",
           yKeys: ["price"],
           data: [
@@ -123,7 +123,7 @@ export const AQA_SPECIMEN_PAPER_1: GeneratedPaper = {
     },
     {
       id: "C",
-      title: "Extract C — A subsidy for British farmers?",
+      title: "Extract C · A subsidy for British farmers?",
       body:
         "The National Farmers' Union has called on the government to introduce a temporary input subsidy for fertiliser, arguing that food security is a public good. Critics counter that subsidising fertiliser would lock in over-application of nitrogen, worsening run-off into waterways, and that the funds would be better spent on R&D into precision agriculture.",
       source: "Adapted from The Guardian, 2 February 2025.",
@@ -165,7 +165,7 @@ const p2Questions: AqaQuestion[] = [
     number: 5,
     marks: 15,
     section: "B",
-    contextLabel: "Context 1 — Developing economy growth",
+    contextLabel: "Context 1 · Developing economy growth",
     prompt:
       "Explain how export-led growth can raise living standards in a developing economy.",
   },
@@ -173,7 +173,7 @@ const p2Questions: AqaQuestion[] = [
     number: 6,
     marks: 25,
     section: "B",
-    contextLabel: "Context 1 — Developing economy growth",
+    contextLabel: "Context 1 · Developing economy growth",
     prompt:
       "Evaluate the view that trade liberalisation is the most effective strategy for promoting economic development.",
   },
@@ -183,7 +183,7 @@ const p2MarkScheme: AqaMarkSchemeEntry[] = [
   {
     questionNumber: 1,
     pointMarks: [
-      "1 mark: identification — difference between actual and potential output.",
+      "1 mark: identification · difference between actual and potential output.",
       "1 mark: positive vs negative output gap reference.",
     ],
   },
@@ -215,21 +215,21 @@ export const AQA_SPECIMEN_PAPER_2: GeneratedPaper = {
   extracts: [
     {
       id: "A",
-      title: "Extract A — UK macro performance, 2022–2024",
+      title: "Extract A · UK macro performance, 2022–2024",
       body:
         "UK real GDP grew by just 0.1% in 2023, narrowly avoiding a technical recession. Unemployment edged up from 3.7% to 4.4% over the same period. The Office for Budget Responsibility estimated that the UK was operating at a slightly negative output gap of around −0.5% of potential GDP at the end of 2024.",
       source: "Adapted from ONS Labour Market & GDP releases, 2024.",
     },
     {
       id: "B",
-      title: "Extract B — The 2022 inflation shock",
+      title: "Extract B · The 2022 inflation shock",
       body:
         "UK CPI inflation peaked at 11.1% in October 2022, the highest reading in four decades. Roughly 60% of that headline figure was driven by surging wholesale gas, electricity, and food prices following Russia's invasion of Ukraine. The Bank of England raised Bank Rate from 0.1% in December 2021 to 5.25% by August 2023.",
       source: "Adapted from Bank of England Monetary Policy Report, November 2024.",
       figures: [
         {
           id: "fig1",
-          title: "Figure 1 — UK CPI inflation and Bank Rate (%)",
+          title: "Figure 1 · UK CPI inflation and Bank Rate (%)",
           xKey: "month",
           yKeys: ["cpi", "bankRate"],
           data: [
@@ -246,9 +246,9 @@ export const AQA_SPECIMEN_PAPER_2: GeneratedPaper = {
     },
     {
       id: "C",
-      title: "Extract C — Has monetary policy run out of road?",
+      title: "Extract C · Has monetary policy run out of road?",
       body:
-        "Several economists have argued that, with public-sector debt above 100% of GDP and the Bank of England close to its effective lower bound on rates, fine-tuning UK demand should now fall to fiscal policy. Others warn that loose fiscal policy in a high-debt economy risks bond-market volatility — as the September 2022 mini-budget demonstrated.",
+        "Several economists have argued that, with public-sector debt above 100% of GDP and the Bank of England close to its effective lower bound on rates, fine-tuning UK demand should now fall to fiscal policy. Others warn that loose fiscal policy in a high-debt economy risks bond-market volatility · as the September 2022 mini-budget demonstrated.",
       source: "Adapted from The Economist, 24 May 2025.",
     },
   ],
@@ -266,10 +266,10 @@ const p3Questions: AqaQuestion[] = [
       section: "A",
       prompt: `Specimen MCQ ${n}: which of the following best describes the economic concept under review in scenario ${n}?`,
       mcqOptions: [
-        `Option A — explanation ${n}.A`,
-        `Option B — explanation ${n}.B`,
-        `Option C — explanation ${n}.C`,
-        `Option D — explanation ${n}.D`,
+        `Option A · explanation ${n}.A`,
+        `Option B · explanation ${n}.B`,
+        `Option C · explanation ${n}.C`,
+        `Option D · explanation ${n}.D`,
       ],
       mcqAnswer: (["A", "B", "C", "D"] as const)[n % 4],
     };
@@ -291,7 +291,7 @@ const p3Questions: AqaQuestion[] = [
     marks: 25,
     section: "B",
     prompt:
-      "Evaluate the case for further government intervention — beyond auto-enrolment — to raise UK retirement saving rates. Refer to the case study throughout.",
+      "Evaluate the case for further government intervention · beyond auto-enrolment · to raise UK retirement saving rates. Refer to the case study throughout.",
   },
 ];
 
@@ -323,10 +323,10 @@ export const AQA_SPECIMEN_PAPER_3: GeneratedPaper = {
   extracts: [
     {
       id: "CASE",
-      title: "Case Study — UK retirement saving and the auto-enrolment reform",
+      title: "Case Study · UK retirement saving and the auto-enrolment reform",
       body:
         "Auto-enrolment was rolled out from 2012, requiring all UK employers to automatically enrol eligible workers into a workplace pension. The default minimum contribution is 8% of qualifying earnings (3% employer, 5% employee). Pensions Policy Institute research shows participation rose from 55% of eligible employees in 2012 to over 88% by 2023. Yet the same research warns that under-saving remains widespread: around 12.5 million UK workers are projected to receive a retirement income below the Pensions and Lifetime Savings Association's 'Minimum' standard. Behavioural economists attribute much of the gap to present bias, status-quo bias, and information overload around pension choices. Critics of further intervention argue that mandatory contributions reduce take-home pay for low earners and that paternalism risks crowding out private saving via ISAs.",
-      source: "Adapted from Pensions Policy Institute, 'The UK Pensions Framework — 2024 Update', and HMT.",
+      source: "Adapted from Pensions Policy Institute, 'The UK Pensions Framework · 2024 Update', and HMT.",
     },
   ],
   questions: p3Questions,
@@ -358,15 +358,15 @@ function makeSession(base: GeneratedPaper, set: "A" | "B" | "C", focus: string[]
 }
 
 export const AQA_SEEDED_SESSIONS: GeneratedPaper[] = [
-  // Paper 1 — micro
+  // Paper 1 · micro
   makeSession(AQA_SPECIMEN_PAPER_1, "A", ["Price determination", "Elasticity", "Agricultural markets"], "2024-10-12T00:00:00.000Z"),
   makeSession(AQA_SPECIMEN_PAPER_1, "B", ["Externalities", "Government intervention", "Environmental policy"], "2024-11-08T00:00:00.000Z"),
   makeSession(AQA_SPECIMEN_PAPER_1, "C", ["Market structures", "Monopoly & competition policy"], "2025-01-15T00:00:00.000Z"),
-  // Paper 2 — macro
+  // Paper 2 · macro
   makeSession(AQA_SPECIMEN_PAPER_2, "A", ["Inflation", "Monetary policy"], "2024-10-12T00:00:00.000Z"),
   makeSession(AQA_SPECIMEN_PAPER_2, "B", ["Fiscal policy", "Public-sector debt"], "2024-11-08T00:00:00.000Z"),
   makeSession(AQA_SPECIMEN_PAPER_2, "C", ["International trade", "Exchange rates", "Globalisation"], "2025-01-15T00:00:00.000Z"),
-  // Paper 3 — synoptic
+  // Paper 3 · synoptic
   makeSession(AQA_SPECIMEN_PAPER_3, "A", ["Behavioural economics", "Public sector economics"], "2024-10-12T00:00:00.000Z"),
   makeSession(AQA_SPECIMEN_PAPER_3, "B", ["Synoptic micro & macro", "Financial markets"], "2024-11-08T00:00:00.000Z"),
   makeSession(AQA_SPECIMEN_PAPER_3, "C", ["Public sector economics", "Synoptic micro & macro"], "2025-01-15T00:00:00.000Z"),

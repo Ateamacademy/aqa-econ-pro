@@ -10,10 +10,10 @@ AQA
   7136
   Predicted Paper
 
-  Version/Stage: v1.0    [Set C — Advanced]
+  Version/Stage: v1.0    [Set C · Advanced]
 
 
-7136/3 [Mark Scheme — Set C — Advanced]
+7136/3 [Mark Scheme · Set C · Advanced]
   Mark schemes are prepared by the Lead Assessment Writer and considered, together with the relevant
   questions, by a panel of subject teachers. This mark scheme includes any amendments made at the
   standardisation events which all associates participate in and is the scheme which was used by them in
@@ -37,7 +37,7 @@ AQA
   mark scheme follows the style and structure of AQA published materials to support realistic practice.
 
 
-7136/3 [Mark Scheme — Set C — Advanced]
+7136/3 [Mark Scheme · Set C · Advanced]
   Annotations
    Annotation              Description
    ?                       Unclear
@@ -55,7 +55,7 @@ AQA
    Cross                   Incorrect point
 
 
-7136/3 [Mark Scheme — Set C — Advanced]
+7136/3 [Mark Scheme · Set C · Advanced]
   Level of response marking instructions
   Level of response mark schemes are broken down into levels, each of which has a descriptor. The
   descriptor for the level shows the average performance for the level. There are marks in each level.
@@ -63,7 +63,7 @@ AQA
   instructed) to show the qualities that are being looked for. You can then apply the mark scheme.
 
 
-  Step 1 — Determine a level
+  Step 1 · Determine a level
   Start at the lowest level of the mark scheme and use it as a ladder to see whether the answer meets the
   descriptor for that level. The descriptor for the level indicates the different qualities that might be seen in
   the student's answer for that level. If it meets the lowest level then go to the next one and decide if it meets
@@ -75,7 +75,7 @@ AQA
   answer covers different aspects of different levels of the mark scheme you should use a best-fit approach
   for defining the level and then use the variability of the response to help decide the mark within the level.
 
-  Step 2 — Determine a mark
+  Step 2 · Determine a mark
   Once you have assigned a level you need to decide on the mark. The descriptors on how to allocate marks
   can help with this. You may well need to read back through the answer as you apply the mark scheme to
   clarify points and assure yourself that the level and the mark are appropriate.
@@ -85,8 +85,8 @@ AQA
   An answer which contains nothing of relevance to the question must be awarded no marks.
 
 
-7136/3 [Mark Scheme — Set C — Advanced]
-                            Section A — Multiple Choice Answers
+7136/3 [Mark Scheme · Set C · Advanced]
+                            Section A · Multiple Choice Answers
   Each question is worth 1 mark. The correct answers and brief justifications are shown in the grid below.
 
     Question     Answer                                       Brief explanation
@@ -114,11 +114,11 @@ AQA
                            profit = £670 (the highest in the table). Firm produces Q = 50.
        12          B       Classic prisoners' dilemma. Each firm's dominant strategy is Low price (14 > 12 if
                            opponent High; 6 > 4 if opponent Low). Nash equilibrium: (Low, Low) with payoff (6, 6)
-                           — both worse off than (High, High).
+                           · both worse off than (High, High).
        13          A       Nominal wage rose 23.3% (18.50/15.00). CPI rose 23.6% (123.6/100). Real wage
                            change = +23.3% − 23.6% ≈ −0.3%. Narrow but real wage fell.
        14          C       Sterling depreciated 16% (ERI 100 → 83.6), which would normally boost
-                           competitiveness. But real unit labour costs rose by 1.8% — eroding the
+                           competitiveness. But real unit labour costs rose by 1.8% · eroding the
                            competitiveness gain. Net: improvement but less than the nominal depreciation
                            suggests.
        15          B       AI-assisted worker produces 2x output at the same hours. Firms will substitute toward
@@ -140,13 +140,13 @@ AQA
                            output response. Inflation cost of stimulus rises as the output gap closes.
 
 
-7136/3 [Mark Scheme — Set C — Advanced]
+7136/3 [Mark Scheme · Set C · Advanced]
     Question    Answer                                       Brief explanation
        23         B      Classic weakness of the kinked demand curve: it explains price stability AT a given
                          price, but not how that price was initially set.
-       24         B      Adverse supply shock (e.g. higher energy prices) shifts the SRPC outward — higher
+       24         B      Adverse supply shock (e.g. higher energy prices) shifts the SRPC outward · higher
                          inflation at every unemployment rate (stagflation).
-       25         B      Excess capacity — the classic efficiency loss of monopolistic competition. Firms
+       25         B      Excess capacity · the classic efficiency loss of monopolistic competition. Firms
                          operate at output below the minimum of AC (productive inefficiency) and P > MC
                          (allocative inefficiency).
        26         A      J-curve short-run worsening: elasticities are low in the short run (contracts fixed, habits
@@ -157,12 +157,12 @@ AQA
        28         A      Gini = (area between Lorenz and equality) / (total area under equality diagonal).
                          Standard definition.
        29         A      In the inelastic region, TR rises with P. A profit-max monopolist would continue to raise
-                         price until reaching the elastic region — NEVER operates in the inelastic region.
+                         price until reaching the elastic region · NEVER operates in the inelastic region.
        30         B      Emissions permits set at social optimum quantity → market trading reallocates
                          abatement to lowest-cost firms → efficient outcome at Qs.
 
 
-7136/3 [Mark Scheme — Set C — Advanced]
+7136/3 [Mark Scheme · Set C · Advanced]
                                                      Section B
   Case study: Artificial intelligence, labour markets and inequality
   Generic marking grid for the 10-mark data-response question
@@ -190,16 +190,16 @@ AQA
 
   Relevant issues include:
        • Evidence of rapid AI adoption (Extract A):
-       • • UK business AI adoption: 12% (2020) → 43% (2024) — more than tripled
+       • • UK business AI adoption: 12% (2020) → 43% (2024) · more than tripled
        • • AI-related job vacancies: 1.1% → 5.4% of total (nearly 5x increase)
        • Evidence on productivity (Extract A):
-       • • Real GDP per hour worked rose from 100.0 (2020) to 102.8 (2024) — just +2.8% over four years, or
+       • • Real GDP per hour worked rose from 100.0 (2020) to 102.8 (2024) · just +2.8% over four years, or
        roughly 0.7% per year
        • • This is faster than the post-2008 average (0.4% p.a.) but not transformational
-       • • Link to AI is plausible but not yet firmly established — productivity boost could also reflect other
+       • • Link to AI is plausible but not yet firmly established · productivity boost could also reflect other
        factors
        • Evidence on inequality (Extract A, C):
-       • • Top/bottom earnings ratio rose from 4.0 (2020) to 4.5 (2024) — an increase of 12.5%
+       • • Top/bottom earnings ratio rose from 4.0 (2020) to 4.5 (2024) · an increase of 12.5%
        • • AI vacancies command 50% wage premium over median (Extract C)
        • • Regional inequality widening as AI jobs cluster in London/SE
        • Caveats:
@@ -213,8 +213,8 @@ AQA
        • • The full impact is likely to unfold over a longer time horizon
 
 
-7136/3 [Mark Scheme — Set C — Advanced]
-  Levels of response marking grid — 15-mark questions
+7136/3 [Mark Scheme · Set C · Advanced]
+  Levels of response marking grid · 15-mark questions
   The following generic grid should be used when marking all 15-mark questions in Section B (questions 0 9,
   1 1 and 1 3).
 
@@ -253,7 +253,7 @@ AQA
 
   Relevant issues include:
        • Productivity channel (AI RAISING productivity):
-       • • AI acts as capital-deepening — complements human labour, raising output per hour
+       • • AI acts as capital-deepening · complements human labour, raising output per hour
        • • R&D; and technology spillovers: AI developed in one firm diffuses across the economy
        • • Reallocation effects: AI adoption encourages reallocation of labour from lower-productivity to
        higher-productivity firms
@@ -265,7 +265,7 @@ AQA
        • • 'Technology premium': AI-related vacancies pay 50% above median (Extract C)
        • • Capital vs labour share: if AI substitutes for labour, capital owners capture more of the productivity
        gains (Acemoglu 2024)
-       • • Distribution of AI adoption: concentrated in larger firms, urban areas, educated workers —
+       • • Distribution of AI adoption: concentrated in larger firms, urban areas, educated workers ·
        exacerbating existing gaps
        • • Regional inequality: London/SE captures most AI jobs; northern regions benefit less (Extract C)
        • • Labour share of national income may fall if AI is strongly substituting
@@ -274,8 +274,8 @@ AQA
        inequality (displaced workers, capital gains)
 
 
-7136/3 [Mark Scheme — Set C — Advanced]
-     • • In theory, productivity gains could fund redistribution — whether this happens is a policy choice
+7136/3 [Mark Scheme · Set C · Advanced]
+     • • In theory, productivity gains could fund redistribution · whether this happens is a policy choice
      • • Historical parallel: industrial revolution raised both productivity and inequality for decades before
      distribution improved
      • Key economic concepts: skill-biased technical change; elasticity of substitution between capital and
@@ -283,8 +283,8 @@ AQA
   Use the levels mark scheme for 15-mark questions to award candidates marks.
 
 
-7136/3 [Mark Scheme — Set C — Advanced]
-  Generic marking grid — 25-mark recommendation question
+7136/3 [Mark Scheme · Set C · Advanced]
+  Generic marking grid · 25-mark recommendation question
       Level of                                        Response                                          Max 25 marks
      response
 
@@ -330,7 +330,7 @@ AQA
                  • includes attempted analysis which is weak and unsupported.
 
 
-7136/3 [Mark Scheme — Set C — Advanced]
+7136/3 [Mark Scheme · Set C · Advanced]
   33        Considering the information in Extract D and the original evidence in Extracts         [25 marks]
             A, B and C, do you recommend that the UK government should adopt active
             interventionist policies (such as labour-protective regulation, a universal basic
@@ -374,16 +374,16 @@ AQA
        • • The rapid pace of change argues for adaptive, not fixed, policy design
        • • Distributional concerns are strongest when labour share is shrinking
        • • Historical parallels: post-war welfare state + education expansion handled earlier technology
-       transitions — the question is whether today's transition is qualitatively different
+       transitions · the question is whether today's transition is qualitatively different
   Indicative judgement:
-       • A reasoned recommendation — YES, NO, or HYBRID — can reach Level 5 if well-supported
+       • A reasoned recommendation · YES, NO, or HYBRID · can reach Level 5 if well-supported
        • Strongest candidates will distinguish between different types of intervention: some (retraining,
        competition policy) are clearly justified by market failures, while others (robot tax, blanket UBI) are
        more controversial
        • Candidates who recognise the distributional vs allocative trade-offs in AI policy deserve reward
 
 
-7136/3 [Mark Scheme — Set C — Advanced]
+7136/3 [Mark Scheme · Set C · Advanced]
      • Those who simply summarise both cases without clear judgement should be placed in Level 3
      • Candidates who engage critically with Acemoglu's argument about labour share (Extract C) and with
      historical parallels to previous technology transitions should be rewarded highly
@@ -394,4 +394,4 @@ AQA
                                        END OF MARK SCHEME
 
 
-7136/3 [Mark Scheme — Set C — Advanced]
+7136/3 [Mark Scheme · Set C · Advanced]

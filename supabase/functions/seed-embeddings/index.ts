@@ -88,7 +88,7 @@ const CAMBRIDGE_PATTERNS: Pattern[] = [
 
 // ── IB Economics (HL & SL) question patterns ──
 const IB_PATTERNS: Pattern[] = [
-  // Paper 1 — Extended Response
+  // Paper 1 · Extended Response
   { text: "Using a diagram, explain how a negative externality of production leads to market failure.", marks: 10, topic: "Market Failure", paper: "1", year: "2017-2025", bloom: "analyse", tags: ["externality", "diagram", "MSC-MPC", "IB-P1", "HL-SL"] },
   { text: "Evaluate the use of indirect taxes as a means of correcting market failure from negative externalities of consumption.", marks: 15, topic: "Government Intervention", paper: "1", year: "2017-2025", bloom: "evaluate", tags: ["evaluation", "indirect-tax", "demerit-goods", "IB-P1", "HL-SL"] },
   { text: "Using a diagram, explain how a subsidy on a merit good can lead to an increase in allocative efficiency.", marks: 10, topic: "Government Intervention", paper: "1", year: "2017-2025", bloom: "analyse", tags: ["subsidy", "merit-good", "allocative-efficiency", "diagram", "IB-P1"] },
@@ -100,7 +100,7 @@ const IB_PATTERNS: Pattern[] = [
   { text: "Explain, using a diagram, how a price ceiling set below the equilibrium price affects the market.", marks: 10, topic: "Price Controls", paper: "1", year: "2017-2025", bloom: "analyse", tags: ["price-ceiling", "shortage", "diagram", "IB-P1", "HL-SL"] },
   { text: "Evaluate government policies to reduce income inequality.", marks: 15, topic: "Equity", paper: "1", year: "2017-2025", bloom: "evaluate", tags: ["evaluation", "inequality", "progressive-tax", "transfers", "IB-P1"] },
 
-  // Paper 2 — Data Response
+  // Paper 2 · Data Response
   { text: "Define the term 'price elasticity of demand'.", marks: 2, topic: "Elasticity", paper: "2", year: "2017-2025", bloom: "remember", tags: ["definition", "PED", "IB-P2", "HL-SL"] },
   { text: "Using the data, calculate the price elasticity of supply and comment on its value.", marks: 4, topic: "Elasticity", paper: "2", year: "2017-2025", bloom: "apply", tags: ["PES", "calculation", "data-response", "IB-P2"] },
   { text: "Using an appropriate diagram, explain how a depreciation of the exchange rate is likely to affect the current account.", marks: 4, topic: "Exchange Rates", paper: "2", year: "2017-2025", bloom: "analyse", tags: ["exchange-rate", "depreciation", "current-account", "diagram", "IB-P2"] },
@@ -108,7 +108,7 @@ const IB_PATTERNS: Pattern[] = [
   { text: "Define the term 'comparative advantage'.", marks: 2, topic: "International Trade", paper: "2", year: "2017-2025", bloom: "remember", tags: ["definition", "comparative-advantage", "IB-P2"] },
   { text: "Using a tariff diagram, explain the effects of a tariff on imported goods.", marks: 4, topic: "Trade Protection", paper: "2", year: "2017-2025", bloom: "analyse", tags: ["tariff", "diagram", "protectionism", "IB-P2", "HL-SL"] },
 
-  // Paper 3 — HL only
+  // Paper 3 · HL only
   { text: "Calculate from the data the consumer surplus before and after the imposition of the tax.", marks: 4, topic: "Welfare Analysis", paper: "3", year: "2017-2025", bloom: "apply", tags: ["consumer-surplus", "calculation", "tax", "IB-P3", "HL"] },
   { text: "Using the data provided, calculate the profit-maximising level of output for the firm.", marks: 4, topic: "Theory of the Firm", paper: "3", year: "2017-2025", bloom: "apply", tags: ["profit-maximisation", "MC=MR", "calculation", "IB-P3", "HL"] },
   { text: "Using the data, calculate the Gini coefficient and explain what it shows about income distribution.", marks: 4, topic: "Inequality", paper: "3", year: "2017-2025", bloom: "apply", tags: ["Gini", "calculation", "inequality", "Lorenz-curve", "IB-P3", "HL"] },
@@ -117,7 +117,7 @@ const IB_PATTERNS: Pattern[] = [
 
 // ── CAIE IGCSE Economics (0455) question patterns ──
 const CAIE_IGCSE_PATTERNS: Pattern[] = [
-  // Paper 1 — Multiple Choice
+  // Paper 1 · Multiple Choice
   { text: "What is the basic economic problem?", marks: 1, topic: "Basic Economic Problem", paper: "1", year: "2017-2025", bloom: "remember", tags: ["MCQ", "scarcity", "wants", "needs", "CAIE-0455-P1"] },
   { text: "A country produces only two goods. What does a movement along the PPC show?", marks: 1, topic: "Economic Problem", paper: "1", year: "2017-2025", bloom: "understand", tags: ["MCQ", "PPC", "opportunity-cost", "CAIE-0455-P1"] },
   { text: "What is most likely to cause a shift to the right in the demand curve for a normal good?", marks: 1, topic: "Demand", paper: "1", year: "2017-2025", bloom: "apply", tags: ["MCQ", "demand", "shift", "normal-good", "CAIE-0455-P1"] },
@@ -125,7 +125,7 @@ const CAIE_IGCSE_PATTERNS: Pattern[] = [
   { text: "Which is an example of a negative externality of production?", marks: 1, topic: "Market Failure", paper: "1", year: "2017-2025", bloom: "understand", tags: ["MCQ", "negative-externality", "production", "CAIE-0455-P1"] },
   { text: "What is the main function of a central bank?", marks: 1, topic: "Money & Banking", paper: "1", year: "2017-2025", bloom: "remember", tags: ["MCQ", "central-bank", "monetary-policy", "CAIE-0455-P1"] },
 
-  // Paper 2 — Structured Questions
+  // Paper 2 · Structured Questions
   { text: "Define what is meant by 'demand'.", marks: 2, topic: "Demand", paper: "2", year: "2017-2025", bloom: "remember", tags: ["definition", "demand", "CAIE-0455-P2"] },
   { text: "Using a demand and supply diagram, explain how equilibrium price is determined in a market.", marks: 4, topic: "Price Determination", paper: "2", year: "2017-2025", bloom: "analyse", tags: ["supply-demand", "diagram", "equilibrium", "CAIE-0455-P2"] },
   { text: "Explain two reasons why a government might impose an indirect tax on cigarettes.", marks: 4, topic: "Government Intervention", paper: "2", year: "2017-2025", bloom: "understand", tags: ["indirect-tax", "demerit-goods", "cigarettes", "CAIE-0455-P2"] },
@@ -140,7 +140,7 @@ const CAIE_IGCSE_PATTERNS: Pattern[] = [
 
 // ── Edexcel IGCSE Economics (4EC1) question patterns ──
 const EDEXCEL_IGCSE_PATTERNS: Pattern[] = [
-  // Paper 1 — Microeconomics & Business Economics
+  // Paper 1 · Microeconomics & Business Economics
   { text: "Define the term 'opportunity cost'.", marks: 2, topic: "Economic Problem", paper: "1", year: "2017-2025", bloom: "remember", tags: ["definition", "opportunity-cost", "Edexcel-4EC1-P1"] },
   { text: "Using a demand and supply diagram, explain the effect of an increase in the minimum wage on the labour market.", marks: 6, topic: "Labour Market", paper: "1", year: "2017-2025", bloom: "analyse", tags: ["supply-demand", "diagram", "minimum-wage", "labour", "Edexcel-4EC1-P1"] },
   { text: "Explain two factors that could cause an increase in demand for electric vehicles.", marks: 4, topic: "Demand", paper: "1", year: "2017-2025", bloom: "understand", tags: ["demand", "factors", "electric-vehicles", "Edexcel-4EC1-P1"] },
@@ -150,7 +150,7 @@ const EDEXCEL_IGCSE_PATTERNS: Pattern[] = [
   { text: "Discuss whether monopolies are always harmful to consumers.", marks: 8, topic: "Market Structures", paper: "1", year: "2017-2025", bloom: "evaluate", tags: ["discussion", "monopoly", "consumers", "efficiency", "Edexcel-4EC1-P1"] },
   { text: "Using a PPC diagram, explain how economic growth can be illustrated.", marks: 4, topic: "Economic Growth", paper: "1", year: "2017-2025", bloom: "apply", tags: ["PPC", "diagram", "growth", "Edexcel-4EC1-P1"] },
 
-  // Paper 2 — Macroeconomics & the Global Economy
+  // Paper 2 · Macroeconomics & the Global Economy
   { text: "Define the term 'Gross Domestic Product (GDP)'.", marks: 2, topic: "National Income", paper: "2", year: "2017-2025", bloom: "remember", tags: ["definition", "GDP", "Edexcel-4EC1-P2"] },
   { text: "Using an AD/AS diagram, explain the effect of an increase in government spending on the economy.", marks: 6, topic: "Fiscal Policy", paper: "2", year: "2017-2025", bloom: "analyse", tags: ["AD/AS", "diagram", "fiscal-policy", "government-spending", "Edexcel-4EC1-P2"] },
   { text: "Discuss whether a current account deficit is always a problem for an economy.", marks: 8, topic: "Balance of Payments", paper: "2", year: "2017-2025", bloom: "evaluate", tags: ["discussion", "current-account", "deficit", "Edexcel-4EC1-P2"] },
@@ -163,7 +163,7 @@ const EDEXCEL_IGCSE_PATTERNS: Pattern[] = [
 
 // ── OCR GCSE Economics (J205) question patterns ──
 const OCR_GCSE_PATTERNS: Pattern[] = [
-  // Component 01 — Introduction to Economics
+  // Component 01 · Introduction to Economics
   { text: "Define the term 'scarcity'.", marks: 1, topic: "Economic Problem", paper: "1", year: "2017-2025", bloom: "remember", tags: ["definition", "scarcity", "OCR-J205-01"] },
   { text: "State two factors of production.", marks: 2, topic: "Economic Problem", paper: "1", year: "2017-2025", bloom: "remember", tags: ["factors-of-production", "OCR-J205-01"] },
   { text: "Using a demand and supply diagram, explain the likely effect of a poor harvest on the market for wheat.", marks: 6, topic: "Price Determination", paper: "1", year: "2017-2025", bloom: "analyse", tags: ["supply-demand", "diagram", "supply-shift", "wheat", "OCR-J205-01"] },
@@ -173,7 +173,7 @@ const OCR_GCSE_PATTERNS: Pattern[] = [
   { text: "Explain how an indirect tax on sugary drinks can reduce consumption.", marks: 4, topic: "Government Intervention", paper: "1", year: "2017-2025", bloom: "analyse", tags: ["indirect-tax", "sugary-drinks", "demerit-good", "OCR-J205-01"] },
   { text: "Discuss whether competition is always good for consumers.", marks: 6, topic: "Competition", paper: "1", year: "2017-2025", bloom: "evaluate", tags: ["discussion", "competition", "consumers", "monopoly", "OCR-J205-01"] },
 
-  // Component 02 — National and International Economics
+  // Component 02 · National and International Economics
   { text: "Define the term 'inflation'.", marks: 1, topic: "Inflation", paper: "2", year: "2017-2025", bloom: "remember", tags: ["definition", "inflation", "OCR-J205-02"] },
   { text: "Explain two causes of unemployment.", marks: 4, topic: "Unemployment", paper: "2", year: "2017-2025", bloom: "understand", tags: ["unemployment", "causes", "OCR-J205-02"] },
   { text: "Using an AD/AS diagram, explain how an increase in consumer spending might affect the economy.", marks: 6, topic: "Aggregate Demand", paper: "2", year: "2017-2025", bloom: "analyse", tags: ["AD/AS", "diagram", "consumer-spending", "OCR-J205-02"] },

@@ -7,16 +7,16 @@
 import type { PredictedPaper } from "./predictedPapersLibrary";
 
 export const chemistryPredictedPapers: PredictedPaper[] = [
-  // ── CHEMISTRY PAPER 1: Higher — Set A ──
+  // ── CHEMISTRY PAPER 1: Higher · Set A ──
   {
     id: "chem-p1-higher-a",
     subject: "chemistry",
     paper: "1",
     tier: "Higher",
-    title: "Chem Paper 1 Higher — Set A",
+    title: "Chem Paper 1 Higher · Set A",
     description: "Higher tier. Isotopes, bonding diagrams, moles, electrolysis half-equations, reaction profiles, and bond energy calculations.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462) — Paper 1 Higher — Predicted Paper Set A
+    content: `# AQA GCSE Chemistry (8462) · Paper 1 Higher · Predicted Paper Set A
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -59,10 +59,10 @@ D. Aluminium
 
 Question 6 [1 marks]
 Hydrogen gas can be tested using:
-A. A glowing splint — it relights
-B. A burning splint — it burns with a squeaky pop
-C. Limewater — it turns milky
-D. Litmus paper — it turns red
+A. A glowing splint · it relights
+B. A burning splint · it burns with a squeaky pop
+C. Limewater · it turns milky
+D. Litmus paper · it turns red
 
 Question 7 [1 marks]
 What is the charge on a sulfate ion?
@@ -237,7 +237,7 @@ CH₄ + 2O₂ → CO₂ + 2H₂O
 Bonds broken: 4 × C−H, 2 × O=O
 Bonds formed: 2 × C=O, 4 × O−H
 
-**Table 2 — Bond energies:**
+**Table 2 · Bond energies:**
 | Bond | C−H | O=O | C=O | O−H |
 |------|-----|-----|-----|-----|
 | Bond energy (kJ/mol) | 413 | 498 | 805 | 464 |
@@ -286,16 +286,16 @@ Zn(s) + H₂SO₄(aq) → ZnSO₄(aq) + H₂(g)
 (Ar: Zn = 65, H = 1, S = 32, O = 16)`,
   },
 
-  // ── CHEMISTRY PAPER 2: Higher — Set A ──
+  // ── CHEMISTRY PAPER 2: Higher · Set A ──
   {
     id: "chem-p2-higher-a",
     subject: "chemistry",
     paper: "2",
     tier: "Higher",
-    title: "Chem Paper 2 Higher — Set A",
+    title: "Chem Paper 2 Higher · Set A",
     description: "Higher tier. Rate graphs with tangent method, equilibrium, organic chemistry, chromatography, atmospheric data, and water treatment.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462) — Paper 2 Higher — Predicted Paper Set A
+    content: `# AQA GCSE Chemistry (8462) · Paper 2 Higher · Predicted Paper Set A
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -338,10 +338,10 @@ D. Distance moved by substance × distance moved by solvent front
 
 Question 6 [1 marks]
 Which test identifies carbon dioxide gas?
-A. A burning splint — burns with a squeaky pop
-B. A glowing splint — relights
-C. Limewater — turns milky/cloudy
-D. Damp litmus paper — bleaches
+A. A burning splint · burns with a squeaky pop
+B. A glowing splint · relights
+C. Limewater · turns milky/cloudy
+D. Damp litmus paper · bleaches
 
 Question 7 [1 marks]
 Poly(ethene) is formed by:
@@ -439,7 +439,7 @@ Write a balanced symbol equation, including state symbols, for the complete comb
 
 Using the bond energies below, calculate the overall energy change for this reaction.
 
-**Table 1 — Bond energies:**
+**Table 1 · Bond energies:**
 | Bond | C−C | C−H | O=O | C=O | O−H |
 |------|-----|-----|-----|-----|-----|
 | Bond energy (kJ/mol) | 347 | 413 | 498 | 805 | 464 |
@@ -547,7 +547,7 @@ Evaluate the advantages and disadvantages of using hydrogen fuel cells compared 
 Question 27 [3 marks]
 Figure 7 shows a life cycle assessment comparing plastic bags and cotton bags.
 
-**Figure 7 (Bar chart — carbon footprint in kg CO₂):**
+**Figure 7 (Bar chart · carbon footprint in kg CO₂):**
 | Stage | Plastic bag | Cotton bag |
 |-------|-------------|------------|
 | Raw materials | 0.04 | 3.50 |
@@ -568,16 +568,16 @@ The water treatment process for producing potable water from waste water involve
 (b) Why is chlorine added during water treatment? [1 mark]`,
   },
 
-  // ── CHEMISTRY PAPER 1: Foundation — Set B ──
+  // ── CHEMISTRY PAPER 1: Foundation · Set B ──
   {
     id: "chem-p1-foundation-b",
     subject: "chemistry",
     paper: "1",
     tier: "Foundation",
-    title: "Chem Paper 1 Foundation — Set B",
+    title: "Chem Paper 1 Foundation · Set B",
     description: "Foundation tier. Atomic models, bonding diagrams, reactivity bar charts, energy diagrams, and acid reactions.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462/F) — Paper 1 Foundation — Predicted Paper Set B
+    content: `# AQA GCSE Chemistry (8462/F) · Paper 1 Foundation · Predicted Paper Set B
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -696,10 +696,10 @@ Question 16 [2 marks]
 Figure 1 shows the development of the atomic model.
 
 **Figure 1 (Timeline diagram):**
-- Dalton (1803): Solid sphere model — atoms are tiny solid balls
-- Thomson (1897): Plum pudding model — positive sphere with electrons embedded
-- Rutherford (1911): Nuclear model — small positive nucleus, electrons orbit around
-- Bohr (1913): Electron shells — electrons in fixed energy levels
+- Dalton (1803): Solid sphere model · atoms are tiny solid balls
+- Thomson (1897): Plum pudding model · positive sphere with electrons embedded
+- Rutherford (1911): Nuclear model · small positive nucleus, electrons orbit around
+- Bohr (1913): Electron shells · electrons in fixed energy levels
 
 (a) Name the scientist who discovered that atoms have a small, dense, positive nucleus. [1 mark]
 (b) How did the Bohr model improve on Rutherford's model? [1 mark]
@@ -724,14 +724,14 @@ Figure 2 shows the energy level diagram for a chemical reaction.
 Question 19 [4 marks]
 Figure 3 is a bar chart showing the results of reacting different metals with water.
 
-**Figure 3 (Bar chart — reaction rate with water):**
+**Figure 3 (Bar chart · reaction rate with water):**
 | Metal | Observation rating (1=none, 5=very vigorous) |
 |-------|----------------------------------------------|
-| Potassium | 5 — catches fire, lilac flame, fizzes violently |
-| Sodium | 4 — fizzes vigorously, moves on surface |
-| Calcium | 3 — steady bubbling |
-| Magnesium | 1 — very slow, almost no reaction with cold water |
-| Copper | 1 — no reaction |
+| Potassium | 5 · catches fire, lilac flame, fizzes violently |
+| Sodium | 4 · fizzes vigorously, moves on surface |
+| Calcium | 3 · steady bubbling |
+| Magnesium | 1 · very slow, almost no reaction with cold water |
+| Copper | 1 · no reaction |
 
 (a) Which metal reacts most vigorously with water? [1 mark]
 (b) Put the metals in order of reactivity. Most reactive first. [1 mark]
@@ -811,16 +811,16 @@ The pie chart shows the composition of Earth's atmosphere today.
 Name the two most abundant gases in the atmosphere. State one human activity that is increasing the percentage of carbon dioxide.`,
   },
 
-  // ── CHEMISTRY PAPER 2: Foundation — Set B ──
+  // ── CHEMISTRY PAPER 2: Foundation · Set B ──
   {
     id: "chem-p2-foundation-b",
     subject: "chemistry",
     paper: "2",
     tier: "Foundation",
-    title: "Chem Paper 2 Foundation — Set B",
+    title: "Chem Paper 2 Foundation · Set B",
     description: "Foundation tier. Rate graphs, organic molecules, chromatography, atmospheric changes, and recycling data.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462/F) — Paper 2 Foundation — Predicted Paper Set B
+    content: `# AQA GCSE Chemistry (8462/F) · Paper 2 Foundation · Predicted Paper Set B
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -1005,7 +1005,7 @@ Figure 4 shows how Earth's atmosphere has changed over time.
 Question 23 [4 marks]
 Figure 5 shows how the rate of a reaction changes when a catalyst is added.
 
-**Figure 5 (Two rate curves — mass of product vs time):**
+**Figure 5 (Two rate curves · mass of product vs time):**
 - Without catalyst: slow curve reaching 2.5 g at 150 seconds
 - With catalyst: faster curve reaching 2.5 g at 60 seconds
 - Both level off at the same mass (2.5 g)
@@ -1055,16 +1055,16 @@ Question 28 [3 marks]
 Explain why adding salt to icy roads makes them safer. Use the term "melting point" in your answer.`,
   },
 
-  // ── CHEMISTRY PAPER 1: Higher — Set C ──
+  // ── CHEMISTRY PAPER 1: Higher · Set C ──
   {
     id: "chem-p1-higher-c",
     subject: "chemistry",
     paper: "1",
     tier: "Higher",
-    title: "Chem Paper 1 Higher — Set C",
+    title: "Chem Paper 1 Higher · Set C",
     description: "Higher tier. RAM isotope calc, dot-and-cross, titration data table, bond energy with unknown, electrolysis half equations, Group 1 trends (6-mark).",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462) — Paper 1 Higher — Predicted Paper Set C
+    content: `# AQA GCSE Chemistry (8462) · Paper 1 Higher · Predicted Paper Set C
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -1189,11 +1189,11 @@ Question 17 [4 marks]
 Figure 1 shows the timeline of atomic model development.
 
 **Figure 1 (Timeline):**
-- 1803 — Dalton: Tiny solid spheres, all atoms of same element identical
-- 1897 — Thomson: Plum pudding model. Sphere of positive charge with electrons embedded
-- 1911 — Rutherford: Alpha particle scattering. Most passed through, some deflected, very few bounced back
-- 1913 — Bohr: Electrons orbit in specific energy levels (shells)
-- 1932 — Chadwick: Discovered neutrons in the nucleus
+- 1803 · Dalton: Tiny solid spheres, all atoms of same element identical
+- 1897 · Thomson: Plum pudding model. Sphere of positive charge with electrons embedded
+- 1911 · Rutherford: Alpha particle scattering. Most passed through, some deflected, very few bounced back
+- 1913 · Bohr: Electrons orbit in specific energy levels (shells)
+- 1932 · Chadwick: Discovered neutrons in the nucleus
 
 (a) What did Rutherford's alpha particle scattering experiment show about the atom? [2 marks]
 (b) How did Bohr's model improve on Rutherford's model? [1 mark]
@@ -1202,8 +1202,8 @@ Figure 1 shows the timeline of atomic model development.
 Question 18 [4 marks]
 Draw dot-and-cross diagrams for the following. Show outer shell electrons only.
 
-(a) Sodium chloride (NaCl) — show the charges on the ions. [2 marks]
-(b) A molecule of water (H₂O) — show the shared and lone pairs. [2 marks]
+(a) Sodium chloride (NaCl) · show the charges on the ions. [2 marks]
+(b) A molecule of water (H₂O) · show the shared and lone pairs. [2 marks]
 
 Question 19 [6 marks]
 Compare the structure, bonding, and properties of sodium chloride and diamond.
@@ -1253,7 +1253,7 @@ Figure 3 shows the displayed formula equation for the complete combustion of eth
 Bonds broken: 2 × (1 C−C + 6 C−H) + 7 × O=O = 2 C−C + 12 C−H + 7 O=O
 Bonds formed: 8 × C=O + 12 × O−H
 
-**Table 2 — Bond energies:**
+**Table 2 · Bond energies:**
 | Bond | C−C | C−H | O=O | C=O | O−H |
 |------|-----|-----|-----|-----|-----|
 | Energy (kJ/mol) | 347 | X | 498 | 805 | 464 |
@@ -1324,16 +1324,16 @@ A compound has the empirical formula CH₂O and a relative formula mass of 180.
 (c) Name a substance with this molecular formula. [1 mark]`,
   },
 
-  // ── CHEMISTRY PAPER 2: Higher — Set C ──
+  // ── CHEMISTRY PAPER 2: Higher · Set C ──
   {
     id: "chem-p2-higher-c",
     subject: "chemistry",
     paper: "2",
     tier: "Higher",
-    title: "Chem Paper 2 Higher — Set C",
+    title: "Chem Paper 2 Higher · Set C",
     description: "Higher tier. Rate tangent method, Haber process yield graph, cracking, chromatography Rf, atmospheric evolution, life cycle assessment table.",
     totalMarks: 100,
-    content: `# AQA GCSE Chemistry (8462) — Paper 2 Higher — Predicted Paper Set C
+    content: `# AQA GCSE Chemistry (8462) · Paper 2 Higher · Predicted Paper Set C
 
 **Time: 1 hour 45 minutes | Total: 100 marks**
 
@@ -1432,10 +1432,10 @@ D. The polymer has C=C double bonds
 
 Question 14 [1 marks]
 The test for oxygen gas is:
-A. A burning splint — burns with a squeaky pop
-B. A glowing splint — relights
-C. Limewater — turns milky
-D. Damp litmus — bleaches
+A. A burning splint · burns with a squeaky pop
+B. A glowing splint · relights
+C. Limewater · turns milky
+D. Damp litmus · bleaches
 
 Question 15 [1 marks]
 A life cycle assessment considers:
@@ -1554,7 +1554,7 @@ Using Figure 4 and your knowledge, answer the following:
 Question 24 [4 marks]
 Figure 5 compares the environmental impact of using aluminium cans vs glass bottles using a life cycle assessment.
 
-**Figure 5 (Table — Life cycle assessment):**
+**Figure 5 (Table · Life cycle assessment):**
 | Stage | Aluminium can (kg CO₂) | Glass bottle (kg CO₂) |
 |-------|----------------------|---------------------|
 | Raw material extraction | 8.2 | 1.5 |

@@ -100,7 +100,7 @@ export default function ChemistryPastPapers() {
                       <FileText className="h-5 w-5 text-muted-foreground shrink-0" />
                       <div>
                         <p className="font-medium text-sm">
-                          {p.year === "Specimen" ? "Specimen" : p.year} —{" "}
+                          {p.year === "Specimen" ? "Specimen" : p.year} ·{" "}
                           {p.type}
                         </p>
                         <p className="text-xs text-muted-foreground">

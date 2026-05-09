@@ -1,15 +1,15 @@
 <!-- Auto-generated from /public/ib-mocks/mark-scheme-paper-1-moderate.pdf -->
-SME Mark Scheme P1 — Moderate
+SME Mark Scheme P1 · Moderate
 
 
-SavePredictedExams — SME
+SavePredictedExams · SME
 
 Economics
 Higher level / Standard level
 Paper 1
 
 
-SME Mark Scheme — Paper 1 Moderate
+SME Mark Scheme · Paper 1 Moderate
 
 
 Use the question-specific mark scheme together with the mark bands. Award up to the maximum
@@ -29,7 +29,7 @@ Answers may include:
       consumers (rise in price > fall in quantity). The government generates tax revenue and there is a
       welfare loss.
 
-Assessment Criteria — Part (a) 10 marks
+Assessment Criteria · Part (a) 10 marks
 
   Marks          Level descriptor
 
@@ -57,7 +57,7 @@ Assessment Criteria — Part (a) 10 marks
 
 
                                                     1                                      SME Predicted Paper
-                                                                SME Mark Scheme P1 — Moderate
+                                                                SME Mark Scheme P1 · Moderate
 
 
 9–10   The specific demands of the question are understood and addressed.
@@ -67,7 +67,7 @@ Assessment Criteria — Part (a) 10 marks
 
 
                                         2                                  SME Predicted Paper
-                                                                             SME Mark Scheme P1 — Moderate
+                                                                             SME Mark Scheme P1 · Moderate
 
 
 1. (b) Using real-world examples, discuss the view that indirect taxes are the most effective way for
@@ -88,7 +88,7 @@ Answers may include:
       • Example(s): UK tobacco duties, Mexico’s sugar tax, France’s soda tax, Australia’s
       plain-packaging rules alongside excise.
 
-Assessment Criteria — Part (b) 15 marks
+Assessment Criteria · Part (b) 15 marks
 
   Marks          Level descriptor
 
@@ -119,7 +119,7 @@ Assessment Criteria — Part (b) 15 marks
 
 
                                                     3                                     SME Predicted Paper
-                                                                    SME Mark Scheme P1 — Moderate
+                                                                    SME Mark Scheme P1 · Moderate
 
 
 10–12   The specific demands of the question are understood and addressed.
@@ -141,7 +141,7 @@ Assessment Criteria — Part (b) 15 marks
 
 
                                            4                                    SME Predicted Paper
-                                                                               SME Mark Scheme P1 — Moderate
+                                                                               SME Mark Scheme P1 · Moderate
 
 
 2. (a) Explain, using a diagram, how an increase in aggregate demand can lead to economic growth
@@ -157,7 +157,7 @@ Answers may include:
       or (X − M) increase real output without inflationary pressure. Multiplier effects may amplify the
       initial change.
 
-Assessment Criteria — Part (a) 10 marks
+Assessment Criteria · Part (a) 10 marks
 
   Marks           Level descriptor
 
@@ -190,7 +190,7 @@ Assessment Criteria — Part (a) 10 marks
 
 
                                                      5                                     SME Predicted Paper
-                                                                              SME Mark Scheme P1 — Moderate
+                                                                              SME Mark Scheme P1 · Moderate
 
 
 2. (b) Using real-world examples, evaluate the effectiveness of expansionary monetary policy in
@@ -208,7 +208,7 @@ Answers may include:
       • Example(s): US Fed response 2008 and 2020, ECB QE programmes, Bank of Japan’s
       long-running zero-rate policy.
 
-Assessment Criteria — Part (b) 15 marks
+Assessment Criteria · Part (b) 15 marks
 
   Marks          Level descriptor
 
@@ -248,7 +248,7 @@ Assessment Criteria — Part (b) 15 marks
 
 
                                                     6                                     SME Predicted Paper
-                                                                 SME Mark Scheme P1 — Moderate
+                                                                 SME Mark Scheme P1 · Moderate
 
 
 13–15   The specific demands of the question are understood and addressed.
@@ -261,7 +261,7 @@ Assessment Criteria — Part (b) 15 marks
 
 
                                          7                                   SME Predicted Paper
-                                                                             SME Mark Scheme P1 — Moderate
+                                                                             SME Mark Scheme P1 · Moderate
 
 
 3. (a) Explain two consequences of high unemployment for an economy. [10]
@@ -274,7 +274,7 @@ Answers may include:
       • Theory: Two consequences from lost output, lost tax revenue and higher benefit spending, loss
       of skills (hysteresis), social costs (crime, ill-health), inequality, reduced consumer confidence.
 
-Assessment Criteria — Part (a) 10 marks
+Assessment Criteria · Part (a) 10 marks
 
   Marks          Level descriptor
 
@@ -307,7 +307,7 @@ Assessment Criteria — Part (a) 10 marks
 
 
                                                     8                                    SME Predicted Paper
-                                                                             SME Mark Scheme P1 — Moderate
+                                                                             SME Mark Scheme P1 · Moderate
 
 
 3. (b) Using real-world examples, discuss the view that supply-side policies are the best way to
@@ -325,7 +325,7 @@ Answers may include:
       • Example(s): Germany’s Hartz reforms, Nordic flexicurity, UK apprenticeship levy, Singapore’s
       SkillsFuture programme.
 
-Assessment Criteria — Part (b) 15 marks
+Assessment Criteria · Part (b) 15 marks
 
   Marks          Level descriptor
 
@@ -365,7 +365,7 @@ Assessment Criteria — Part (b) 15 marks
 
 
                                                     9                                     SME Predicted Paper
-                                                                 SME Mark Scheme P1 — Moderate
+                                                                 SME Mark Scheme P1 · Moderate
 
 
 13–15   The specific demands of the question are understood and addressed.

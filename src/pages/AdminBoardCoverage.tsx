@@ -100,12 +100,12 @@ export default function AdminBoardCoverage() {
                         <span className="text-foreground">
                           {p.paper.code}{" "}
                           <span className="text-muted-foreground font-sans">
-                            — {p.paper.title}
+                            · {p.paper.title}
                           </span>
                         </span>
                         <span className="flex items-center gap-2">
                           <span className={p.meetsMinimum ? "text-success" : "text-destructive"}>
-                            Sets: {p.existingSets.length > 0 ? p.existingSets.join(", ") : "—"}{" "}
+                            Sets: {p.existingSets.length > 0 ? p.existingSets.join(", ") : "·"}{" "}
                             ({p.existingSets.length}/{REQUIRED_SET_LABELS.length} min)
                           </span>
                           <Button
@@ -125,7 +125,7 @@ export default function AdminBoardCoverage() {
                   <p className="text-xs text-muted-foreground italic">
                     {c.refinementStatus === "refined"
                       ? "No papers configured."
-                      : "Awaiting refinement — no set slots generated."}
+                      : "Awaiting refinement · no set slots generated."}
                   </p>
                 )}
               </CardContent>

@@ -7,7 +7,7 @@ export default function EconPerfectCompetition() {
           <marker id="pcU" markerWidth="7" markerHeight="9" refX="3.5" refY="1" orient="auto"><polygon points="0 9,3.5 0,7 9" fill="#111"/></marker>
         </defs>
         <rect width="720" height="540" fill="#fff"/>
-        <text x="360" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Perfect Competition — Short Run &amp; Long Run</text>
+        <text x="360" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Perfect Competition · Short Run &amp; Long Run</text>
         <text x="175" y="56" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#555">Short Run (Supernormal Profit)</text>
         <text x="540" y="56" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#555">Long Run (Normal Profit)</text>
         <line x1="355" y1="70" x2="355" y2="510" stroke="#ddd" strokeWidth="1.5"/>

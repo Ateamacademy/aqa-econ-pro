@@ -59,7 +59,7 @@ serve(async (req) => {
     const token = authHeader.replace("Bearer ", "");
     const { data: userData, error: userError } = await supabaseClient.auth.getUser(token);
     if (userError || !userData?.user?.email) {
-      // Token missing sub claim, expired, or anon key — treat as unauthenticated, don't 500
+      // Token missing sub claim, expired, or anon key · treat as unauthenticated, don't 500
       return respond({ subscribed: false, subscription_end: null, unauthenticated: true });
     }
 

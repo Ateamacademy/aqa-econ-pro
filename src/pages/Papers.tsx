@@ -24,7 +24,7 @@ function usePaperAccess() {
   const premium = hasPremiumAccess({ subscribed, email: user?.email });
   return {
     premium,
-    /** Free tier: only Paper 1 — Moderate (QP + MS) is unlocked across all boards. */
+    /** Free tier: only Paper 1 · Moderate (QP + MS) is unlocked across all boards. */
     isLocked: (paperNumber: number, difficulty?: Difficulty) =>
       !premium && !(paperNumber === 1 && difficulty === "moderate"),
   };
@@ -169,7 +169,7 @@ function FreeTierBanner({ premium }: { premium: boolean }) {
       <Sparkles className="h-4 w-4 text-primary mt-0.5 shrink-0" />
       <div className="flex-1">
         <p className="text-sm font-medium text-foreground">
-          Paper 1 (Moderate) is free — everything else is Pro
+          Paper 1 (Moderate) is free · everything else is Pro
         </p>
         <p className="text-xs text-muted-foreground mt-1">
           You can open the Paper 1 Moderate question paper and mark scheme on every board.
@@ -360,7 +360,7 @@ function BoardList({
 function EdexcelAPapersList() {
   return (
     <BoardList
-      title="Edexcel A A-Level — Papers"
+      title="Edexcel A A-Level · Papers"
       description="Nine full mock papers (Paper 1, 2 & 3 × Moderate, Hard, Advanced) in the authentic Pearson Edexcel format, each paired with its full mark scheme."
       papers={EDEXCEL_A_PAPERS.map((p) => ({ ...p, available: true }))}
       meta={(p) => `${p.code} · ${p.focus} · 2h · 100 marks`}
@@ -373,7 +373,7 @@ function EdexcelAPapersList() {
 function EdexcelBPapersList() {
   return (
     <BoardList
-      title="Edexcel B A-Level — Papers"
+      title="Edexcel B A-Level · Papers"
       description="Paper 3 is now available in the Papers section in the same card format, paired with its full mark scheme across Moderate, Hard, and Advanced."
       papers={EDEXCEL_B_PAPERS}
       meta={(p) => `${p.code} · ${p.focus} · 2h · 100 marks`}
@@ -386,7 +386,7 @@ function EdexcelBPapersList() {
 function AqaPapersList() {
   return (
     <BoardList
-      title="AQA A-Level — Papers"
+      title="AQA A-Level · Papers"
       description="Full mock papers (Paper 1, 2 & 3 × Moderate, Hard, Advanced) in the authentic AQA format, each paired with its full mark scheme."
       papers={AQA_PAPERS}
       meta={(p) => `${p.code} · ${p.focus} · 2h · 80 marks`}
@@ -399,7 +399,7 @@ function AqaPapersList() {
 function OcrPapersList() {
   return (
     <BoardList
-      title="OCR A-Level — Papers"
+      title="OCR A-Level · Papers"
       description="Paper 1 is now available in the Papers section in the same card format, paired with its full mark scheme across Moderate, Hard, and Advanced."
       papers={OCR_PAPERS}
       meta={(p) => `${p.code} · ${p.focus} · 2h · 80 marks`}
@@ -412,7 +412,7 @@ function OcrPapersList() {
 function EduqasPapersList() {
   return (
     <BoardList
-      title="Eduqas A-Level — Papers"
+      title="Eduqas A-Level · Papers"
       description="Full timed papers paired with mark schemes across Moderate, Hard, and Advanced difficulty tiers."
       papers={EDUQAS_PAPERS}
       meta={(p) => `${p.code} · ${p.focus} · 2h · 80 marks`}
@@ -425,7 +425,7 @@ function EduqasPapersList() {
 function WjecPapersList() {
   return (
     <BoardList
-      title="WJEC A-Level — Papers"
+      title="WJEC A-Level · Papers"
       description="Paper 1 is now available in the Papers section in the same card format, paired with its full mark scheme across Moderate, Hard, and Advanced."
       papers={WJEC_PAPERS}
       meta={(p) => `${p.code} · ${p.focus} · 2h · 80 marks`}
@@ -438,7 +438,7 @@ function WjecPapersList() {
 function CaiePapersList() {
   return (
     <BoardList
-      title="CAIE A-Level — Papers"
+      title="CAIE A-Level · Papers"
       description="Paper 1 is now available in the Papers section in the same card format, paired with its full mark scheme across Moderate, Hard, and Advanced."
       papers={CAIE_PAPERS}
       meta={(p) => {
@@ -454,7 +454,7 @@ function CaiePapersList() {
 function AqaGcsePapersList() {
   return (
     <BoardList
-      title="AQA GCSE — Papers"
+      title="AQA GCSE · Papers"
       description="Full mock papers (Moderate, Hard, Advanced) in the authentic AQA GCSE format, each paired with its full mark scheme."
       papers={AQA_GCSE_PAPERS}
       meta={(p) => `${p.code} · ${p.focus} · 1h 45m · 80 marks`}
@@ -467,7 +467,7 @@ function AqaGcsePapersList() {
 function EdexcelIgcsePapersList() {
   return (
     <BoardList
-      title="Edexcel IGCSE — Papers"
+      title="Edexcel IGCSE · Papers"
       description="Full mock papers (Moderate, Hard, Advanced) in the authentic Edexcel IGCSE (4EC1) format, each paired with its full mark scheme."
       papers={EDEXCEL_IGCSE_PAPERS}
       meta={(p) => `${p.code} · ${p.focus} · 1h 30m · 80 marks`}
@@ -480,7 +480,7 @@ function EdexcelIgcsePapersList() {
 function CaieIgcsePapersList() {
   return (
     <BoardList
-      title="Cambridge IGCSE — Papers"
+      title="Cambridge IGCSE · Papers"
       description="Full mock papers (Moderate, Hard, Advanced) in the authentic Cambridge IGCSE Economics (0455) format, each paired with its full mark scheme."
       papers={CAIE_IGCSE_PAPERS}
       meta={(p) => {
@@ -496,7 +496,7 @@ function CaieIgcsePapersList() {
 function OcrGcsePapersList() {
   return (
     <BoardList
-      title="OCR GCSE — Papers"
+      title="OCR GCSE · Papers"
       description="Full mock papers (Moderate, Hard, Advanced) in the authentic OCR GCSE (J205) format, each paired with its full mark scheme."
       papers={OCR_GCSE_PAPERS}
       meta={(p) => `${p.code} · ${p.focus} · 1h 30m · 80 marks`}
@@ -509,7 +509,7 @@ function OcrGcsePapersList() {
 function IbPapersList() {
   return (
     <BoardList
-      title="IB HL/SL — Papers"
+      title="IB HL/SL · Papers"
       description="Paper 1 is now available in the Papers section in the same card format, paired with its full mark scheme across Moderate, Hard, and Advanced."
       papers={IB_PAPERS}
       meta={(p) => {
@@ -568,7 +568,7 @@ function PapersInner() {
                   <Badge variant="outline" className="text-[10px]">{paper.board}</Badge>
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  {paper.questions.length} questions — includes {paper.questions.filter((q) => q.rubric.questionType === "essay").length} essay(s)
+                  {paper.questions.length} questions · includes {paper.questions.filter((q) => q.rubric.questionType === "essay").length} essay(s)
                 </p>
               </div>
               <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors mt-1" />

@@ -258,8 +258,8 @@ export const AQA_GCSE_PROFILE: BoardProfile = {
     "equilibrium": "E, P*, Q*",
     "welfare loss": "Welfare loss triangle",
     "externality": "External cost / External benefit",
-    "merit good": "Merit good — underconsumption",
-    "demerit good": "Demerit good — overconsumption",
+    "merit good": "Merit good · underconsumption",
+    "demerit good": "Demerit good · overconsumption",
   },
   paperFormatting: {
     extractLabel: "Extract",
@@ -296,7 +296,7 @@ export const CAIE_IGCSE_PROFILE: BoardProfile = {
     "equilibrium": "E, Pe, Qe",
     "disequilibrium": "Excess demand / Excess supply",
     "externality": "External costs / External benefits",
-    "market failure": "Market failure — resource misallocation",
+    "market failure": "Market failure · resource misallocation",
   },
   paperFormatting: {
     extractLabel: "Extract",

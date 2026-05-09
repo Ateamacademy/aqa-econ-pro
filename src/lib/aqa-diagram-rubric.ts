@@ -1,5 +1,5 @@
 /**
- * AQA A-Level Economics — diagram rubric model + structural checker.
+ * AQA A-Level Economics · diagram rubric model + structural checker.
  *
  * Generated at paper-generation time per diagram-required question.
  * The structural checker auto-validates label presence + curve orientation
@@ -39,7 +39,7 @@ export interface AqaDiagramComponent {
   levelCategory: "L1" | "L2" | "L3" | "L4";
   /** Optional: required label strings the canvas must contain (case-insensitive). */
   requiredLabels?: string[];
-  /** structural — can be auto-checked from canvas elements; contextual — needs student confirmation. */
+  /** structural · can be auto-checked from canvas elements; contextual · needs student confirmation. */
   checkable: "structural" | "contextual";
   /** Optional KAA+E skill this component primarily supports. */
   skill?: KaaeSkill;
@@ -57,7 +57,7 @@ export interface AqaDiagramRubric {
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
-   Canvas element shape — kept minimal so the checker doesn't depend on the
+   Canvas element shape · kept minimal so the checker doesn't depend on the
    drawing tool's internal types. Anything with a `text` (label) or `points`
    (line) field can be inspected.
 ────────────────────────────────────────────────────────────────────────── */
@@ -109,7 +109,7 @@ export function priceLevelAxisCheck(
     return {
       applies: true,
       passed: true,
-      message: "Vertical axis labelled 'Price level' — Level 1 macro convention met.",
+      message: "Vertical axis labelled 'Price level' · Level 1 macro convention met.",
     };
   }
   const hasBarePrice = labels.some((l) => BARE_PRICE_PATTERNS.some((re) => re.test(l)));
@@ -138,7 +138,7 @@ export interface ComponentCheckResult {
   description: string;
   levelCategory: "L1" | "L2" | "L3" | "L4";
   checkable: "structural" | "contextual";
-  /** "auto" — checked here. "self" — needs student confirmation. */
+  /** "auto" · checked here. "self" · needs student confirmation. */
   source: "auto" | "self";
   /** undefined when source === "self" and not yet confirmed. */
   passed?: boolean;
@@ -198,7 +198,7 @@ export function checkDiagramRubric(
           : `Missing label${missing.length === 1 ? "" : "s"}: ${missing.join(", ")}.`,
       };
     }
-    // No specific labels — treat as a "must have at least one labelled element" check.
+    // No specific labels · treat as a "must have at least one labelled element" check.
     const someLabel = elements.some((e) => e.type === "text" && (e as CanvasLabelEl).text);
     return {
       componentId: c.id,
@@ -233,7 +233,7 @@ export function checkDiagramRubric(
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
-   Sample rubric factory — used by paper-generation code to attach a rubric
+   Sample rubric factory · used by paper-generation code to attach a rubric
    to a diagram-required question. Specific questions can override.
 ────────────────────────────────────────────────────────────────────────── */
 

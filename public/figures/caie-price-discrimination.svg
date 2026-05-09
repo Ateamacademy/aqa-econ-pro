@@ -13,7 +13,7 @@
     .pt    { fill:#111; }
   </style>
 
-  <text x="550" y="28" text-anchor="middle" class="ttl">Third-Degree Price Discrimination — Airline Pricing</text>
+  <text x="550" y="28" text-anchor="middle" class="ttl">Third-Degree Price Discrimination · Airline Pricing</text>
   <text x="550" y="48" text-anchor="middle" class="sub">Same MC; charge higher price to inelastic market (business), lower price to elastic market (leisure)</text>
 
   <text x="195" y="78" text-anchor="middle" class="pnl">Business Travellers</text>
@@ -91,6 +91,6 @@
   <line class="dotted" x1="857" y1="263" x2="750" y2="263"/>
   <text x="725" y="268" class="lblB">P3</text>
 
-  <text x="80"  y="510" class="sub">Inelastic market (business): firm sets MR=MC and charges high P1 — passengers must travel for work and won't change behaviour much.</text>
-  <text x="80"  y="528" class="sub">Elastic market (leisure): firm sets MR=MC and charges lower P2 — sensitive buyers respond strongly to price. Higher total profit than uniform pricing P3.</text>
+  <text x="80"  y="510" class="sub">Inelastic market (business): firm sets MR=MC and charges high P1 · passengers must travel for work and won't change behaviour much.</text>
+  <text x="80"  y="528" class="sub">Elastic market (leisure): firm sets MR=MC and charges lower P2 · sensitive buyers respond strongly to price. Higher total profit than uniform pricing P3.</text>
 </svg>

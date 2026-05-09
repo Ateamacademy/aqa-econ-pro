@@ -1,6 +1,6 @@
 export default function SupplyDemandMultipleShifts() {
   /**
-   * Supply & Demand — Multiple Shifts (both D and S shift left).
+   * Supply & Demand · Multiple Shifts (both D and S shift left).
    * White background, textbook black-line style.
    *
    * CURVES
@@ -11,7 +11,7 @@ export default function SupplyDemandMultipleShifts() {
    *
    * EQUILIBRIA
    *   E  = D ∩ S  → Q=4, P=6  (original)
-   *   E1 = D1∩ S1 → Q=2, P=6  (new — same price, lower quantity)
+   *   E1 = D1∩ S1 → Q=2, P=6  (new · same price, lower quantity)
    *
    * Horizontal line at P=6 shows price unchanged after both shifts.
    */
@@ -79,22 +79,22 @@ export default function SupplyDemandMultipleShifts() {
         <line x1={cL} y1={pY} x2={cR + 14} y2={pY}
           stroke={STROKE} strokeWidth="1.8"/>
 
-        {/* ══ D1 — dashed demand (shifted left): P=8-Q ══ */}
+        {/* ══ D1 · dashed demand (shifted left): P=8-Q ══ */}
         {/* from (0,8) to (8,0) */}
         <line x1={X(0)} y1={Y(D1(0))} x2={X(8)} y2={Y(D1(8))}
           stroke={STROKE} strokeWidth="2.2" strokeDasharray={DASH} strokeLinecap="round"/>
 
-        {/* ══ S1 — dashed supply (shifted left): P=4+Q ══ */}
+        {/* ══ S1 · dashed supply (shifted left): P=4+Q ══ */}
         {/* from (0,4) to (6,10) */}
         <line x1={X(0)} y1={Y(S1(0))} x2={X(6)} y2={Y(S1(6))}
           stroke={STROKE} strokeWidth="2.2" strokeDasharray={DASH} strokeLinecap="round"/>
 
-        {/* ══ D — solid demand: P=10-Q ══ */}
+        {/* ══ D · solid demand: P=10-Q ══ */}
         {/* from (0,10) to (8,2) */}
         <line x1={X(0)} y1={Y(D(0))} x2={X(8)} y2={Y(D(8))}
           stroke={STROKE} strokeWidth="2.8" strokeLinecap="round"/>
 
-        {/* ══ S — solid supply: P=2+Q ══ */}
+        {/* ══ S · solid supply: P=2+Q ══ */}
         {/* from (0,2) to (7,9) */}
         <line x1={X(0)} y1={Y(S(0))} x2={X(7)} y2={Y(S(7))}
           stroke={STROKE} strokeWidth="2.8" strokeLinecap="round"/>
@@ -153,20 +153,20 @@ export default function SupplyDemandMultipleShifts() {
         <text x={eX + 8}  y={eY - 10}  fontSize="15" fill={STROKE}>E</text>
 
         {/* ══ CURVE LABELS ══ */}
-        {/* D — solid demand (upper-left of curve) */}
+        {/* D · solid demand (upper-left of curve) */}
         <text x={X(1.2)} y={Y(D(1.2)) - 10}
           fontSize="16" fontWeight="bold" fill={STROKE}>D</text>
-        {/* D1 — dashed demand */}
+        {/* D1 · dashed demand */}
         <text x={X(0.5)} y={Y(D1(0.5)) - 10}
           fontSize="15" fill={STROKE}>D</text>
         <text x={X(0.5) + 13} y={Y(D1(0.5)) - 4}
           fontSize="11" fill={STROKE}>1</text>
-        {/* S1 — dashed supply (upper right, above S) */}
+        {/* S1 · dashed supply (upper right, above S) */}
         <text x={X(5.7)} y={Y(S1(5.7)) - 12}
           fontSize="15" fill={STROKE}>S</text>
         <text x={X(5.7) + 11} y={Y(S1(5.7)) - 6}
           fontSize="11" fill={STROKE}>1</text>
-        {/* S — solid supply */}
+        {/* S · solid supply */}
         <text x={X(6.8)} y={Y(S(6.8)) - 12}
           fontSize="16" fontWeight="bold" fill={STROKE}>S</text>
 

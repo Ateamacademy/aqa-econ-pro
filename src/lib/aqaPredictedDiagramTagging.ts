@@ -1,7 +1,7 @@
 /**
- * AQA A-Level Economics — runtime tagger for predicted-paper questions.
+ * AQA A-Level Economics · runtime tagger for predicted-paper questions.
  *
- * Decides — from the parsed question stem alone — whether a question
+ * Decides · from the parsed question stem alone · whether a question
  * requires (or optionally supports) a student-drawn diagram, what
  * template to preselect, and what AQA-style rubric the marker should
  * use for structural + AI checks.
@@ -31,7 +31,7 @@ import { pickReferenceFigure } from "./aqa-diagram-catalog";
 /**
  * Real AQA 7136/3 MCQ stems only carry a stimulus figure when the question
  * itself names one ("Figure 1 shows…", "The diagram shows…", "The table shows…").
- * Most MCQs are pure prose. We mirror that — no blanket figure rotation.
+ * Most MCQs are pure prose. We mirror that · no blanket figure rotation.
  */
 const MCQ_EXPLICIT_STIMULUS_RE =
   /\b(figure\s*\d+|the (diagram|figure|graph|chart|table) (shows|above|below)|shown (in|on) the (diagram|figure|graph|chart|table)|refer to (the|figure))\b/i;
@@ -44,7 +44,7 @@ export interface AqaDiagramTag {
   rubric: AqaDiagramRubric;
   /** Catalog id of the read-only reference figure (if available). */
   referenceFigureId?: string;
-  /** Per-question scenario override (e.g. "UK NHS Nursing — RCN"). */
+  /** Per-question scenario override (e.g. "UK NHS Nursing · RCN"). */
   referenceFigureScenario?: string;
   /** True when no catalog entry covered this diagram type. */
   referenceFigureMissing?: boolean;
@@ -175,7 +175,7 @@ export interface TaggerInput {
   text: string;
   /** True when the parser found ≥ 2 MCQ options for this question. */
   isMcq: boolean;
-  /** AQA paper number — 1, 2, or 3. */
+  /** AQA paper number · 1, 2, or 3. */
   paper: 1 | 2 | 3;
   /** Set letter A..G (used to rotate scenarios across the library). */
   setLabel?: string;
@@ -207,7 +207,7 @@ function attachReferenceFigure(
  * Reference figures are PRE-SUPPLIED, read-only diagrams that frame the
  * question (the student reasons FROM them). They must NEVER be attached to
  * essays where the student is expected to choose and draw their own diagram
- * — doing so leaks the answer.
+ * · doing so leaks the answer.
  *
  * AQA convention used here:
  *  - Paper 1/2 Section A 9-mark "with the help of a diagram" → reference figure.
@@ -232,7 +232,7 @@ export function tagAqaQuestion(q: TaggerInput): AqaDiagramTag | null {
     referenceFigureMissing: false,
   });
 
-  // Paper 3 MCQs (Section A, Q1–30): mirror real AQA 7136/3 — most MCQs are
+  // Paper 3 MCQs (Section A, Q1–30): mirror real AQA 7136/3 · most MCQs are
   // pure prose. A figure is only attached when (a) the stem explicitly names
   // one ("Figure 1 shows…", "the table shows…") AND (b) the classifier
   // resolved a concrete diagram family that we can supply a matching figure
@@ -247,7 +247,7 @@ export function tagAqaQuestion(q: TaggerInput): AqaDiagramTag | null {
     };
     const stemReferencesFigure = MCQ_EXPLICIT_STIMULUS_RE.test(stem);
     if (!stemReferencesFigure) return mcqBase;
-    // Stem cites a figure — try to pick one that matches the classified type.
+    // Stem cites a figure · try to pick one that matches the classified type.
     const pick = pickReferenceFigure({
       diagramType,
       paperSetLabel: q.setLabel,
@@ -264,14 +264,14 @@ export function tagAqaQuestion(q: TaggerInput): AqaDiagramTag | null {
 
   if (q.paper === 1 || q.paper === 2) {
     // Short explicit diagram questions (e.g. 4-mark "With the help of a fully labelled…")
-    // Student-drawn only — pre-supplied reference figures would leak the answer.
+    // Student-drawn only · pre-supplied reference figures would leak the answer.
     if (q.marks === 4 && explicit) return studentDrawnOnly(false);
-    // Section A 9-mark — only when stem explicitly asks for a diagram.
-    // Student-drawn only — the whole point is for the student to construct it.
+    // Section A 9-mark · only when stem explicitly asks for a diagram.
+    // Student-drawn only · the whole point is for the student to construct it.
     if (q.marks === 9 && explicit) return studentDrawnOnly(false);
-    // Section A 15-mark data response — student-drawn, no pre-supplied figure.
+    // Section A 15-mark data response · student-drawn, no pre-supplied figure.
     if (q.marks === 15) return studentDrawnOnly(true);
-    // Section B 25-mark essays — student-drawn, no pre-supplied figure.
+    // Section B 25-mark essays · student-drawn, no pre-supplied figure.
     // Diagram-friendly topics still get a canvas (optional), but NEVER a reference figure.
     if (q.marks === 25 || q.marks === 20) {
       const optional = !isDiagramFriendlyTopic(stem);
@@ -280,7 +280,7 @@ export function tagAqaQuestion(q: TaggerInput): AqaDiagramTag | null {
   }
 
   if (q.paper === 3 && (q.marks === 10 || q.marks === 15 || q.marks === 25)) {
-    // Paper 3 written-response questions are student-drawn only — pre-supplied
+    // Paper 3 written-response questions are student-drawn only · pre-supplied
     // reference figures would leak the answer. The student must construct the
     // diagram themselves. Diagram-friendly topics make the canvas required.
     const required = explicit || (q.marks >= 15 && isDiagramFriendlyTopic(stem));
@@ -293,7 +293,7 @@ export function tagAqaQuestion(q: TaggerInput): AqaDiagramTag | null {
 /**
  * Infer the paper number from the parsed question label/number.
  * Predicted papers are loaded one at a time, so the surrounding flow
- * already knows the paper number — pass it in directly. This helper is
+ * already knows the paper number · pass it in directly. This helper is
  * a small fallback when only a number string is available.
  */
 export function inferPaperFromContext(paperValue: string | undefined): 1 | 2 | 3 {

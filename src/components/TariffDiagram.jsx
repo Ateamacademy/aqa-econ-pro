@@ -75,44 +75,44 @@ export default function TariffDiagram() {
 
         {/* ══ SHADED REGIONS (back to front) ══ */}
 
-        {/* Wide peach background — below Pw, 0 → Q2 */}
+        {/* Wide peach background · below Pw, 0 → Q2 */}
         <polygon
           points={`${xO},${yPw} ${xQ2},${yPw} ${xQ2},${yO} ${xO},${yO}`}
           fill="#fde8c0"/>
 
-        {/* Consumer Surplus — lavender triangle below DD above PwT */}
+        {/* Consumer Surplus · lavender triangle below DD above PwT */}
         <polygon
           points={`${xO},${yTop} ${xO},${yPwT} ${xQ4},${yPwT}`}
           fill="#b0a0f0" opacity="0.65"/>
 
-        {/* Producer Surplus — orange triangle above DS below PwT */}
+        {/* Producer Surplus · orange triangle above DS below PwT */}
         <polygon
           points={`${xO},${yO} ${xO},${yPwT} ${xQ3},${yPwT}`}
           fill="#f0872a" opacity="0.65"/>
 
-        {/* Left Dead-Weight-Loss — yellow triangle */}
+        {/* Left Dead-Weight-Loss · yellow triangle */}
         <polygon
           points={`${xQ1},${yPw} ${xQ3},${yPwT} ${xQ3},${yPw}`}
           fill="#ffe033" opacity="0.9"/>
 
-        {/* Tax Revenue — bright green rectangle */}
+        {/* Tax Revenue · bright green rectangle */}
         <rect
           x={xQ3} y={yPwT}
           width={xQ4 - xQ3} height={yPw - yPwT}
           fill="#22c55e" opacity="0.85"/>
 
-        {/* Right Dead-Weight-Loss — yellow triangle */}
+        {/* Right Dead-Weight-Loss · yellow triangle */}
         <polygon
           points={`${xQ4},${yPwT} ${xQ2},${yPw} ${xQ4},${yPw}`}
           fill="#ffe033" opacity="0.9"/>
 
         {/* ══ PRICE LINES (Pw and Pw+T horizontal) ══ */}
 
-        {/* Pw (world price) — amber */}
+        {/* Pw (world price) · amber */}
         <line x1={xO} y1={yPw} x2={xMax + 45} y2={yPw}
           stroke="#d97706" strokeWidth="2.8"/>
 
-        {/* Pw + Tariff — dark green */}
+        {/* Pw + Tariff · dark green */}
         <line x1={xO} y1={yPwT} x2={xMax + 45} y2={yPwT}
           stroke="#15803d" strokeWidth="2.8"/>
 
@@ -193,7 +193,7 @@ export default function TariffDiagram() {
 
         {/* ══ INTERIOR LABELS WITH ARROWS ══ */}
 
-        {/* Consumer Surplus — with two downward arrows */}
+        {/* Consumer Surplus · with two downward arrows */}
         <text x={cxCS - 10} y={cyCS}
           textAnchor="middle" {...boldG}>Consumer</text>
         <text x={cxCS - 10} y={cyCS + 16}
@@ -207,7 +207,7 @@ export default function TariffDiagram() {
               x2={cxCS + 50} y2={cyCS + 52}
           {...arrowG} markerEnd="url(#arrGrn)"/>
 
-        {/* Tax Revenue — white text inside green rect */}
+        {/* Tax Revenue · white text inside green rect */}
         <text x={cxTax} y={cyTax - 4}
           textAnchor="middle" fontSize="12" fontWeight="bold"
           fill="#fff" fontFamily="Arial">Tax</text>
@@ -223,7 +223,7 @@ export default function TariffDiagram() {
           stroke="#fff" strokeWidth="1.4"
           markerEnd="url(#arrWht)" style={{ transform: "scaleX(-1)", transformOrigin: `${cxTax}px ${cyTax}px` }}/>
 
-        {/* Dead Weight Loss — label below with arrows up to yellow triangles */}
+        {/* Dead Weight Loss · label below with arrows up to yellow triangles */}
         <text x={cxDWL} y={yPw + 48}
           textAnchor="middle" {...boldG}>Dead</text>
         <text x={cxDWL} y={yPw + 63}
@@ -239,7 +239,7 @@ export default function TariffDiagram() {
               x2={(xQ4 + xQ2) / 2} y2={yPw + 14}
           {...arrowG} markerEnd="url(#arrGrn)"/>
 
-        {/* Producer Surplus — label lower-left with rightward arrow */}
+        {/* Producer Surplus · label lower-left with rightward arrow */}
         <text x={xO - 8} y={yO - 72}
           textAnchor="end" {...boldG}>Producer</text>
         <text x={xO - 8} y={yO - 57}

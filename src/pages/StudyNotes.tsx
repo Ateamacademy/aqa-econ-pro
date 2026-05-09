@@ -50,54 +50,54 @@ type Subject = import("@/contexts/SubjectContext").Subject;
 
 const paperSections: Record<Subject, PaperSection[]> = {
   economics: [
-    { heading: "Year 1 — Microeconomics", topics: aqaBook1MicroTopics, prefix: "y1m", icon: "📗", color: "var(--revision-green)" },
-    { heading: "Year 1 — Macroeconomics", topics: aqaBook1MacroTopics, prefix: "y1M", icon: "📗", color: "var(--revision-blue)" },
-    { heading: "Year 2 — Microeconomics", topics: aqaBook2MicroTopics, prefix: "y2m", icon: "📘", color: "var(--revision-purple)" },
-    { heading: "Year 2 — Macroeconomics", topics: aqaBook2MacroTopics, prefix: "y2M", icon: "📘", color: "var(--revision-amber)" },
+    { heading: "Year 1 · Microeconomics", topics: aqaBook1MicroTopics, prefix: "y1m", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Year 1 · Macroeconomics", topics: aqaBook1MacroTopics, prefix: "y1M", icon: "📗", color: "var(--revision-blue)" },
+    { heading: "Year 2 · Microeconomics", topics: aqaBook2MicroTopics, prefix: "y2m", icon: "📘", color: "var(--revision-purple)" },
+    { heading: "Year 2 · Macroeconomics", topics: aqaBook2MacroTopics, prefix: "y2M", icon: "📘", color: "var(--revision-amber)" },
   ],
   "edexcel-a": [
-    { heading: "Paper 1 — Markets & Business Behaviour", topics: edexcelAPaper1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
-    { heading: "Paper 2 — The National & Global Economy", topics: edexcelAPaper2Topics, prefix: "p2", icon: "📘", color: "var(--revision-blue)" },
+    { heading: "Paper 1 · Markets & Business Behaviour", topics: edexcelAPaper1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Paper 2 · The National & Global Economy", topics: edexcelAPaper2Topics, prefix: "p2", icon: "📘", color: "var(--revision-blue)" },
   ],
   "edexcel-b": [
-    { heading: "Paper 1 — Markets, Consumers & Firms", topics: edexcelBPaper1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
-    { heading: "Paper 2 — The Wider Economic Environment", topics: edexcelBPaper2Topics, prefix: "p2", icon: "📘", color: "var(--revision-blue)" },
+    { heading: "Paper 1 · Markets, Consumers & Firms", topics: edexcelBPaper1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Paper 2 · The Wider Economic Environment", topics: edexcelBPaper2Topics, prefix: "p2", icon: "📘", color: "var(--revision-blue)" },
   ],
   "ocr": [
-    { heading: "Component 01 — Microeconomics", topics: ocrComponent1Topics, prefix: "c1", icon: "📗", color: "var(--revision-green)" },
-    { heading: "Component 02 — Macroeconomics", topics: ocrComponent2Topics, prefix: "c2", icon: "📘", color: "var(--revision-blue)" },
+    { heading: "Component 01 · Microeconomics", topics: ocrComponent1Topics, prefix: "c1", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Component 02 · Macroeconomics", topics: ocrComponent2Topics, prefix: "c2", icon: "📘", color: "var(--revision-blue)" },
   ],
   "cambridge": [
-    { heading: "Paper 1 & 2 — AS Level (Micro & Macro)", topics: caiePaper1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
-    { heading: "Paper 3 & 4 — A2 Level (Advanced)", topics: caiePaper2Topics, prefix: "p2", icon: "📘", color: "var(--revision-blue)" },
+    { heading: "Paper 1 & 2 · AS Level (Micro & Macro)", topics: caiePaper1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Paper 3 & 4 · A2 Level (Advanced)", topics: caiePaper2Topics, prefix: "p2", icon: "📘", color: "var(--revision-blue)" },
   ],
   "ib": [
-    { heading: "Units 1 & 2 — Intro, Micro & Elasticities", topics: ibUnit1And2Topics, prefix: "u12", icon: "📗", color: "var(--revision-green)" },
-    { heading: "Units 3 & 4 — Macro & Global Economy", topics: ibUnit3And4Topics, prefix: "u34", icon: "📘", color: "var(--revision-blue)" },
+    { heading: "Units 1 & 2 · Intro, Micro & Elasticities", topics: ibUnit1And2Topics, prefix: "u12", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Units 3 & 4 · Macro & Global Economy", topics: ibUnit3And4Topics, prefix: "u34", icon: "📘", color: "var(--revision-blue)" },
   ],
   "wjec": [
-    { heading: "Unit 1 — Introduction to Economics", topics: wjecUnit1Topics, prefix: "u1", icon: "📗", color: "var(--revision-green)" },
-    { heading: "Unit 2 — Economics in Action", topics: wjecUnit2Topics, prefix: "u2", icon: "📘", color: "var(--revision-blue)" },
+    { heading: "Unit 1 · Introduction to Economics", topics: wjecUnit1Topics, prefix: "u1", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Unit 2 · Economics in Action", topics: wjecUnit2Topics, prefix: "u2", icon: "📘", color: "var(--revision-blue)" },
   ],
   "eduqas": [
-    { heading: "Component 1 — Markets & Market Failure", topics: eduqasComponent1Topics, prefix: "c1", icon: "📗", color: "var(--revision-green)" },
-    { heading: "Component 2 — National & International Economy", topics: eduqasComponent2Topics, prefix: "c2", icon: "📘", color: "var(--revision-blue)" },
+    { heading: "Component 1 · Markets & Market Failure", topics: eduqasComponent1Topics, prefix: "c1", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Component 2 · National & International Economy", topics: eduqasComponent2Topics, prefix: "c2", icon: "📘", color: "var(--revision-blue)" },
   ],
   "aqa-gcse": [
-    { heading: "Paper 1 — How Markets Work", topics: gcsePaper1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
-    { heading: "Paper 2 — How the Economy Works", topics: gcsePaper2Topics, prefix: "p2", icon: "📘", color: "var(--revision-blue)" },
+    { heading: "Paper 1 · How Markets Work", topics: gcsePaper1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Paper 2 · How the Economy Works", topics: gcsePaper2Topics, prefix: "p2", icon: "📘", color: "var(--revision-blue)" },
   ],
   "cambridge-igcse": [
-    { heading: "Paper 1 — Multiple Choice & Core Topics", topics: igcsePart1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
-    { heading: "Paper 2 — Structured Questions & Extended Topics", topics: igcsePart2Topics, prefix: "p2", icon: "📘", color: "var(--revision-blue)" },
+    { heading: "Paper 1 · Multiple Choice & Core Topics", topics: igcsePart1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Paper 2 · Structured Questions & Extended Topics", topics: igcsePart2Topics, prefix: "p2", icon: "📘", color: "var(--revision-blue)" },
   ],
   "edexcel-igcse": [
-    { heading: "Paper 1 — Microeconomics & Business Economics", topics: edexcelIgcsePaper1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
-    { heading: "Paper 2 — Macroeconomics & the Global Economy", topics: edexcelIgcsePaper2Topics, prefix: "p2", icon: "📘", color: "var(--revision-blue)" },
+    { heading: "Paper 1 · Microeconomics & Business Economics", topics: edexcelIgcsePaper1Topics, prefix: "p1", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Paper 2 · Macroeconomics & the Global Economy", topics: edexcelIgcsePaper2Topics, prefix: "p2", icon: "📘", color: "var(--revision-blue)" },
   ],
   "ocr-gcse": [
-    { heading: "Component 1 — Introduction to Economics", topics: ocrGcseComponent1Topics, prefix: "c1", icon: "📗", color: "var(--revision-green)" },
-    { heading: "Component 2 — National & International Economics", topics: ocrGcseComponent2Topics, prefix: "c2", icon: "📘", color: "var(--revision-blue)" },
+    { heading: "Component 1 · Introduction to Economics", topics: ocrGcseComponent1Topics, prefix: "c1", icon: "📗", color: "var(--revision-green)" },
+    { heading: "Component 2 · National & International Economics", topics: ocrGcseComponent2Topics, prefix: "c2", icon: "📘", color: "var(--revision-blue)" },
   ],
 };
 
@@ -139,7 +139,7 @@ function SectionHeader({ section, index }: { section: PaperSection; index: numbe
       <div className="flex items-end gap-0 mb-0">
         <div className="notebook-tab">
           <span className="text-2xl mr-2">{section.icon}</span>
-          {section.heading.split("—")[0]?.trim()}
+          {section.heading.split("·")[0]?.trim()}
         </div>
       </div>
       {/* Section body */}
@@ -226,7 +226,7 @@ export default function StudyNotes() {
   }, [user, subject]);
 
   const markViewed = useCallback(async (subtopicTitle: string, topicName: string) => {
-    const key = `${topicName} — ${subtopicTitle}`;
+    const key = `${topicName} · ${subtopicTitle}`;
     if (viewedSubtopics.has(key) || !user) return;
     setViewedSubtopics(prev => new Set(prev).add(key));
     await supabase.from("practice_sessions").insert({
@@ -388,7 +388,7 @@ export default function StudyNotes() {
               >
                 <div className="mt-3 ml-4 space-y-6">
                   {filteredSubs.map((sub, idx) => {
-                    const viewKey = `${topic.name} — ${sub.title}`;
+                    const viewKey = `${topic.name} · ${sub.title}`;
                     // Mark as viewed when expanded
                     if (user) markViewed(sub.title, topic.name);
                     return (
@@ -414,7 +414,7 @@ export default function StudyNotes() {
 
   return (
     <div className="container py-10 max-w-4xl">
-      {/* ── Hero header — notebook cover ── */}
+      {/* ── Hero header · notebook cover ── */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
@@ -433,7 +433,7 @@ export default function StudyNotes() {
           </div>
         </div>
         <p className="text-base text-muted-foreground font-handwriting-alt mt-3 max-w-xl leading-relaxed">
-          ✨ Handcrafted revision notes with interactive diagrams, key terms & exam tips — presented like a live lesson for efficient A* revision.
+          ✨ Handcrafted revision notes with interactive diagrams, key terms & exam tips · presented like a live lesson for efficient A* revision.
         </p>
       </motion.div>
 

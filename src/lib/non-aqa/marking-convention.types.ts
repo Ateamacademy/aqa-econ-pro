@@ -1,7 +1,7 @@
 /**
  * Non-AQA marking convention types.
  *
- * Strictly excludes AQA's KAA+E framework — AQA uses its own legacy types in
+ * Strictly excludes AQA's KAA+E framework · AQA uses its own legacy types in
  * `src/lib/aqa-levels.ts` and friends. This file MUST NEVER be imported by
  * any AQA file, and AQA marking code MUST NEVER be imported here.
  */

@@ -1,12 +1,12 @@
 <!-- Auto-generated from /public/aqa-mocks/mark-scheme-paper-1-moderate.pdf -->
-MARK SCHEME — 7136/1 [Set A — Moderate]
+MARK SCHEME · 7136/1 [Set A · Moderate]
 
 
                                         A-level
 
                                 ECONOMICS
                      Paper 1 Markets and market failure
-                         Predicted Paper Set A — Moderate
+                         Predicted Paper Set A · Moderate
 
 
                MARK SCHEME and MODEL ANSWERS
@@ -24,7 +24,7 @@ General marking guidance
    described clearly in words may earn partial credit.
  • Indicative content is not exhaustive. Candidates may offer alternative relevant arguments
    and examples which should be credited on merit.
- • For evaluation questions, credit the quality of judgement — a clear, reasoned conclusion
+ • For evaluation questions, credit the quality of judgement · a clear, reasoned conclusion
    supported by analysis is essential for the top level.
 
 
@@ -38,10 +38,10 @@ support informed judgements.
 
 
                                         Page 1 of 11
-                                                  MARK SCHEME — 7136/1 [Set A — Moderate]
+                                                  MARK SCHEME · 7136/1 [Set A · Moderate]
 
 
-                         Section A — Data Response
+                         Section A · Data Response
                              The UK Soft Drinks Industry Levy
 
 
@@ -56,8 +56,8 @@ Working: ((52.7 − 78.4) / 78.4) × 100 = (−25.7 / 78.4) × 100 = −32.78% �
 Answer: A decrease of 32.8% (accept 32.7% or 32.8% to 1 d.p.).
 
 Mark allocation
- • 1 mark — correct numerical answer of 32.8% (accept 32.7%).
- • 1 mark — correctly identifying the change as a decrease (or negative value correctly
+ • 1 mark · correct numerical answer of 32.8% (accept 32.7%).
+ • 1 mark · correctly identifying the change as a decrease (or negative value correctly
    signed).
 Award 2 marks for a fully correct answer of − 32.8% (a decrease) with or without working
 shown. Award 1 mark for correct working but wrong final figure, or for the correct figure
@@ -89,15 +89,15 @@ demand and supply.
 
 
                                          Page 2 of 11
-                                                  MARK SCHEME — 7136/1 [Set A — Moderate]
+                                                  MARK SCHEME · 7136/1 [Set A · Moderate]
 
 
 Mark allocation (4 marks)
- • 1 mark — correctly labelled axes (Price and Quantity).
- • 1 mark — correctly drawn initial S and D curves showing equilibrium P₁Q₁.
- • 1 mark — correct upward/leftward shift of the supply curve showing new equilibrium
+ • 1 mark · correctly labelled axes (Price and Quantity).
+ • 1 mark · correctly drawn initial S and D curves showing equilibrium P₁Q₁.
+ • 1 mark · correct upward/leftward shift of the supply curve showing new equilibrium
    P₂Q₂.
- • 1 mark — written explanation of the mechanism (tax → higher production cost →
+ • 1 mark · written explanation of the mechanism (tax → higher production cost →
    reduced supply → higher price and lower quantity).
 A clear verbal description of the diagram may earn up to 3 marks where a visual diagram is
 absent but the mechanism is fully explained.
@@ -109,9 +109,9 @@ absent but the mechanism is fully explained.
 
 
 Required economic content
- • Definition of market failure — the free market fails to allocate resources efficiently,
+ • Definition of market failure · the free market fails to allocate resources efficiently,
    producing too much or too little of certain goods relative to the socially optimal level.
- • Negative externality of consumption — private consumers of sugary drinks do not bear
+ • Negative externality of consumption · private consumers of sugary drinks do not bear
    the full social cost of their decision (NHS costs, productivity losses, external third-party
    costs).
  • At the free-market equilibrium, marginal private benefit (MPB) exceeds marginal social
@@ -131,17 +131,17 @@ Negative-consumption-externality diagram showing:
 
 Application using the extracts
  • Extract A: The NHS incurs approximately £6 billion per year from excess sugar
-   consumption — direct evidence of the external cost.
+   consumption · direct evidence of the external cost.
  • Extract B: SDIL revenue rose from £240m (2018) to £415m (2024) while consumption
-   fell from 78.4 to 52.7 litres per capita — shows the tax has reduced consumption towards
+   fell from 78.4 to 52.7 litres per capita · shows the tax has reduced consumption towards
    the social optimum.
- • Extract A: Reformulated drinks accounted for over 50% of sales by volume in 2023 —
+ • Extract A: Reformulated drinks accounted for over 50% of sales by volume in 2023 ·
    producer behaviour has also shifted, reducing sugar content without needing to pass the
    full tax onto consumers.
 
 
                                           Page 3 of 11
-                                                MARK SCHEME — 7136/1 [Set A — Moderate]
+                                                MARK SCHEME · 7136/1 [Set A · Moderate]
 
 
 Chain of reasoning expected
@@ -151,7 +151,7 @@ optimal level Q* → reduces the external costs imposed on the NHS and wider soc
 improves allocative efficiency and social welfare. The tax also generates revenue that can
 be hypothecated to health initiatives, reinforcing the corrective effect.
 
-Mark scheme — levels
+Mark scheme · levels
     Level         Marks                                 Descriptor
    Level 3         7–9       Analysis is detailed and logical, with a fully labelled and
                              accurate externality diagram. The response makes clear use
@@ -166,7 +166,7 @@ Mark scheme — levels
 
 
                                         Page 4 of 11
-                                                 MARK SCHEME — 7136/1 [Set A — Moderate]
+                                                 MARK SCHEME · 7136/1 [Set A · Moderate]
 
 
            Evaluate the view that indirect taxes are the most effective way to          25
@@ -180,10 +180,10 @@ Arguments supporting indirect taxation (FOR)
  • Internalises the externality: taxes bring the marginal private cost closer to the marginal
    social cost, improving allocative efficiency.
  • Revenue generation: SDIL raised £415m in 2024 which can be hypothecated to fund
-   health campaigns, school food programmes or the NHS — partially offsetting the £6
+   health campaigns, school food programmes or the NHS · partially offsetting the £6
    billion annual cost.
  • Drives reformulation: Extract A notes that reformulated drinks accounted for over 50%
-   of sales by volume in 2023. Producers reduce harmful content to avoid the tax — a
+   of sales by volume in 2023. Producers reduce harmful content to avoid the tax · a
    supply-side benefit that persists regardless of elasticity of demand.
  • Institutional endorsement: the IFS described the SDIL as 'one of the most successful
    examples of behavioural government intervention'.
@@ -194,7 +194,7 @@ Arguments against / evaluation (AGAINST)
    taxes disproportionately affect lower-income households, worsening inequality.
  • Inelastic demand for addictive/habitual goods: where demand is price inelastic (e.g.
    tobacco, alcohol for heavy users), taxes have a small effect on consumption but a large
-   effect on revenue and welfare — a weak corrective but strong fiscal tool.
+   effect on revenue and welfare · a weak corrective but strong fiscal tool.
  • Substitution effects: consumers may switch to untaxed or less visible substitutes. The
    SDIL does not (yet) cover milkshakes or sugary coffees, potentially displacing rather
    than reducing sugar intake.
@@ -204,34 +204,34 @@ Arguments against / evaluation (AGAINST)
    health consequences; behavioural change may be temporary.
 
 Alternative policies (for comparative evaluation)
- • Advertising restrictions — particularly effective for children where bounded rationality is
+ • Advertising restrictions · particularly effective for children where bounded rationality is
    severe.
- • Mandatory front-of-pack labelling and reformulation targets — tackle information failure
+ • Mandatory front-of-pack labelling and reformulation targets · tackle information failure
    directly.
- • Education and public-health campaigns — long-run behavioural change, but slow and
+ • Education and public-health campaigns · long-run behavioural change, but slow and
    often fail to reach at-risk groups.
- • Minimum unit pricing — prevents retailers absorbing the tax, and directly targets the
+ • Minimum unit pricing · prevents retailers absorbing the tax, and directly targets the
    cheapest, highest-strength products (used in Scotland for alcohol).
- • Subsidies for healthy alternatives — shift relative prices without regressive impact.
- • Nudge interventions (default options, social-norm messaging) — low cost, non-coercive,
+ • Subsidies for healthy alternatives · shift relative prices without regressive impact.
+ • Nudge interventions (default options, social-norm messaging) · low cost, non-coercive,
    but often weak in isolation.
 
 
                                          Page 5 of 11
-                                                   MARK SCHEME — 7136/1 [Set A — Moderate]
+                                                   MARK SCHEME · 7136/1 [Set A · Moderate]
 
 
 Expected judgement and conclusion
 A top-band answer should reach a reasoned judgement. The SDIL case study suggests
 indirect taxation is highly effective but works most powerfully alongside complementary
-interventions — particularly reformulation targets and advertising restrictions. The WHO
+interventions · particularly reformulation targets and advertising restrictions. The WHO
 (2023) and LSE evidence cited in the extracts supports a 'policy mix' conclusion: taxation is
 a necessary but rarely sufficient instrument. Therefore the claim that indirect taxes are the
-single 'most effective' tool is only partly justified — effectiveness depends critically on
+single 'most effective' tool is only partly justified · effectiveness depends critically on
 elasticity, substitutability, complementary policy, and the distributional design of the tax (e.g.
 tiered thresholds that encourage reformulation).
 
-Mark scheme — levels
+Mark scheme · levels
     Level          Marks                                  Descriptor
    Level 5         21–25        Sophisticated analysis and evaluation. Sustained chains of
                                 reasoning; accurate diagram(s); substantial use of both
@@ -250,10 +250,10 @@ Mark scheme — levels
 
 
                                            Page 6 of 11
-                                                  MARK SCHEME — 7136/1 [Set A — Moderate]
+                                                  MARK SCHEME · 7136/1 [Set A · Moderate]
 
 
-                                Section B — Essay
+                                Section B · Essay
                      Public goods, externalities and the free market
 
 
@@ -263,7 +263,7 @@ Mark scheme — levels
 
 Required definitions
  • Market failure: a situation in which the free market fails to allocate scarce resources to
-   their most valued use — the socially optimal quantity is not produced or consumed.
+   their most valued use · the socially optimal quantity is not produced or consumed.
  • Negative externality: a spillover cost imposed on a third party not involved in the
    economic transaction. The marginal social cost (MSC) exceeds the marginal private cost
    (MPC), or marginal social benefit is below marginal private benefit.
@@ -271,7 +271,7 @@ Required definitions
    availability to others) and non-excludable (consumers cannot be prevented from
    benefiting).
 
-Part A — Negative externalities
+Part A · Negative externalities
 In the presence of a negative externality in production (e.g. pollution from a factory), MSC
 exceeds MPC. The free market equates supply (based on MPC) with demand, yielding
 equilibrium quantity Q₁ at price P₁. The socially optimal level, where MSC intersects demand,
@@ -282,27 +282,27 @@ In the presence of a negative externality in consumption (e.g. passive smoking, 
 related NHS costs), MSB lies below MPB. The free market at Q₁ overconsumes relative to
 Q*, again generating a welfare loss. Because individual producers and consumers do not
 pay for or receive the external effects, they have no incentive to reduce output or
-consumption to the socially optimal level — the price mechanism fails to transmit the full
+consumption to the socially optimal level · the price mechanism fails to transmit the full
 social cost or benefit.
 
-Required diagram — negative externality
+Required diagram · negative externality
  • Axes: Price/Cost on y-axis, Quantity on x-axis.
  • MPC (upward-sloping), MSC (above and parallel to or diverging from MPC).
  • Demand = MPB curve (downward-sloping).
  • Free-market equilibrium Q₁ at MPC = D; social optimum Q* at MSC = D.
  • Welfare loss triangle shaded between Q* and Q₁.
 
-Part B — Public goods
+Part B · Public goods
 Public goods suffer from the free-rider problem: because consumers cannot be excluded
 from benefiting (non-excludability), they have no incentive to pay voluntarily. If private firms
 attempt to supply the good, they cannot recover their costs because non-payers cannot be
 denied the benefit. Additionally, non-rivalry means the marginal cost of an extra user is zero,
-so efficient pricing would mean a zero price — but at zero revenue no private firm will supply
+so efficient pricing would mean a zero price · but at zero revenue no private firm will supply
 the good. The result is a missing market: the good is either not supplied at all or is
 
 
                                           Page 7 of 11
-                                                 MARK SCHEME — 7136/1 [Set A — Moderate]
+                                                 MARK SCHEME · 7136/1 [Set A · Moderate]
 
 
 chronically under-supplied. Classic examples include national defence, street lighting, flood
@@ -312,11 +312,11 @@ without state intervention.
 Expected content for top-band responses
  • Clear definitions and correct use of MPC, MSC, MPB, MSB terminology.
  • At least one fully labelled diagram (externality, and optionally demand for a public good).
- • Distinct mechanism for each form of failure — under-provision (public goods) versus
+ • Distinct mechanism for each form of failure · under-provision (public goods) versus
    overproduction/overconsumption (negative externalities).
  • At least one real-world example for each (e.g. CO₂ pollution; national defence).
 
-Mark scheme — levels
+Mark scheme · levels
     Level         Marks                                 Descriptor
    Level 4        13–15       Both concepts fully explained with accurate, well-labelled
                               diagrams and clear chains of reasoning. Appropriate real-
@@ -332,7 +332,7 @@ Mark scheme — levels
 
 
                                          Page 8 of 11
-                                                 MARK SCHEME — 7136/1 [Set A — Moderate]
+                                                 MARK SCHEME · 7136/1 [Set A · Moderate]
 
 
            Evaluate: “Free markets always lead to an efficient allocation of           25
@@ -370,44 +370,44 @@ Arguments against the statement (AGAINST)
  • Asymmetric information: Akerlof's 'market for lemons' shows how information
    asymmetries can cause adverse selection (used cars, insurance, healthcare).
  • Inequity in distribution: free markets are silent on fairness. An 'efficient' allocation may
-   also be highly unequal — factor markets reward only those with marketable skills or
+   also be highly unequal · factor markets reward only those with marketable skills or
    inherited capital.
  • Factor immobility: structural unemployment in declining regions (e.g. post-industrial
    UK) persists despite labour market flexibility because of geographical and occupational
    immobility.
 
 Real-world examples for top-band responses
- • 2008 Global Financial Crisis — information asymmetry and moral hazard in mortgage-
+ • 2008 Global Financial Crisis · information asymmetry and moral hazard in mortgage-
    backed securities; systemic failure requiring massive state intervention.
- • UK housing market — planning constraints, inelastic supply and externalities have
+ • UK housing market · planning constraints, inelastic supply and externalities have
    produced chronic affordability problems.
 
 
                                          Page 9 of 11
-                                                 MARK SCHEME — 7136/1 [Set A — Moderate]
+                                                 MARK SCHEME · 7136/1 [Set A · Moderate]
 
 
- • Climate change and carbon emissions — price of fossil fuels ignores global externalities;
+ • Climate change and carbon emissions · price of fossil fuels ignores global externalities;
    requires carbon pricing or cap-and-trade intervention.
- • Pharmaceutical markets — patent monopolies create access problems (insulin, cancer
+ • Pharmaceutical markets · patent monopolies create access problems (insulin, cancer
    drugs).
- • UK energy crisis of 2022 — retail price cap intervention needed to protect households
+ • UK energy crisis of 2022 · retail price cap intervention needed to protect households
    from extreme global price shocks.
 
 Evaluation and judgement
 A developed answer should recognise that efficiency is a conditional concept: free markets
 are efficient only under restrictive assumptions (perfect competition, perfect information, no
 externalities, well-defined property rights). Where these assumptions fail, as they frequently
-do, market failure emerges. However, government intervention also incurs costs —
+do, market failure emerges. However, government intervention also incurs costs ·
 regulatory capture, unintended consequences and information problems can produce
 government failure. The strongest conclusion is therefore nuanced: free markets are often
 efficient at the micro level, but systematic failures are widespread at the macro level and in
 specific sectors. A mixed economy, where markets operate within a well-designed regulatory
 and institutional framework, is empirically the most successful arrangement. The word
-'always' in the statement is the crucial failure point — the claim is too strong: efficiency in
+'always' in the statement is the crucial failure point · the claim is too strong: efficiency in
 free markets is common but far from universal.
 
-Mark scheme — levels
+Mark scheme · levels
     Level         Marks                                 Descriptor
    Level 5        21–25       Sophisticated, balanced analysis and evaluation. Uses
                               multiple forms of market failure with accurate diagrams.
@@ -425,15 +425,15 @@ Mark scheme — levels
 
 
                                         Page 10 of 11
-                                             MARK SCHEME — 7136/1 [Set A — Moderate]
+                                             MARK SCHEME · 7136/1 [Set A · Moderate]
 
 
                            Summary of Marks
 
 Question                     Topic                       AO focus         Marks
 
-  01       Quantitative skill — percentage change           AO2              2
-           Indirect tax — supply and demand
+  01       Quantitative skill · percentage change           AO2              2
+           Indirect tax · supply and demand
   02                                                     AO1, AO2            4
            diagram
   03       Sugar tax correcting market failure         AO1, AO2, AO3         9
@@ -441,8 +441,8 @@ Question                     Topic                       AO focus         Marks
   04                                                     AO1–AO4            25
            demerit goods
   05       Negative externalities and public goods       AO1, AO3           15
-  06       Free-market efficiency — evaluation           AO1–AO4            25
-TOTAL      Paper 1: Markets and Market Failure               —              80
+  06       Free-market efficiency · evaluation           AO1–AO4            25
+TOTAL      Paper 1: Markets and Market Failure               ·              80
 
 
                             END OF MARK SCHEME

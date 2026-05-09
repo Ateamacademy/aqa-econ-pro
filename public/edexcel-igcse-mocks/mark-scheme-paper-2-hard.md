@@ -1,7 +1,7 @@
 <!-- Auto-generated from /public/edexcel-igcse-mocks/mark-scheme-paper-2-hard.pdf -->
 Pearson Edexcel International GCSE
 Mark Scheme
-Summer 2026 — Predicted Paper (Hard)
+Summer 2026 · Predicted Paper (Hard)
 In Economics (4EC1)
 Paper 2: Macroeconomics and the Global Economy
 
@@ -23,7 +23,7 @@ General Marking Guidance
        response, the team leader must be consulted.
    •   Crossed out work should be marked UNLESS the candidate has replaced it with an
        alternative response.
-Mark Scheme: Paper 2 — Macroeconomics and the Global Economy (4EC1/02) — Predicted
+Mark Scheme: Paper 2 · Macroeconomics and the Global Economy (4EC1/02) · Predicted
 (Hard)
 
  1(a)      Question                                                              (1)
@@ -135,16 +135,16 @@ Mark Scheme: Paper 2 — Macroeconomics and the Global Economy (4EC1/02) — Pre
           operates below its production possibility frontier and loses billions in
           national output (1).
 
-          Accept any other appropriate response — e.g. higher welfare
+          Accept any other appropriate response · e.g. higher welfare
           spending, lower tax revenue, social unrest, loss of human capital,
           increased brain drain.
 
 
 1(h)      Question                                                                       (6)
           Analyse the possible impact of FDI on the Nigerian economy.
-          Indicative Content — AO2 (3 marks) / AO3 (3 marks)
+          Indicative Content · AO2 (3 marks) / AO3 (3 marks)
 
-          AO2 and AO3 — accept positive or negative impacts
+          AO2 and AO3 · accept positive or negative impacts
             • FDI is when a foreign firm invests directly in productive
                 assets in another country, such as building factories or
                 acquiring firms.
@@ -274,17 +274,17 @@ Level 3   5–6       •   Demonstrates clear knowledge and understanding by
 2(g)   Question                                                               (9)
        Assess the possible benefits for the UK of increasing excise duty on
        cigarettes.
-       Indicative Content — AO2 (3 marks) / AO3 (3 marks) / AO4 (3
+       Indicative Content · AO2 (3 marks) / AO3 (3 marks) / AO4 (3
        marks)
 
-       AO2 and AO3 — benefits
+       AO2 and AO3 · benefits
          • Excise duty is a specific tax on certain goods; increasing it
              raises the price of cigarettes.
           •   Higher prices reduce demand for cigarettes, particularly from
               younger and price-sensitive smokers, reducing smoking rates
               below 13%.
           •   Lower smoking rates reduce negative externalities of
-              consumption — second-hand smoke, NHS treatment costs.
+              consumption · second-hand smoke, NHS treatment costs.
           •   Cigarettes have price-inelastic demand in the short run, so
               the government can raise significant tax revenue from
               existing smokers.
@@ -294,8 +294,8 @@ Level 3   5–6       •   Demonstrates clear knowledge and understanding by
                   higher productivity in the UK economy.
 
 
-          AO4 — drawbacks / evaluation
-            • Excise duty is a regressive tax — it takes a larger share of
+          AO4 · drawbacks / evaluation
+            • Excise duty is a regressive tax · it takes a larger share of
                income from lower-income smokers, worsening inequality.
               •   Higher prices may encourage black market / smuggled
                   cigarettes, reducing government revenue and creating
@@ -304,7 +304,7 @@ Level 3   5–6       •   Demonstrates clear knowledge and understanding by
                   benefits will be limited.
               •   Tobacco farmers and shops lose revenue; related industries
                   may see job losses.
-              •   Effectiveness depends on the price elasticity of demand —
+              •   Effectiveness depends on the price elasticity of demand ·
                   typically quite low in the short run but higher in the long run.
               •   Overall judgement: the benefits are real but partly offset by
                   the regressive nature and black-market risk; complementary
@@ -391,7 +391,7 @@ Level   Mark   Descriptor
 3(d)   Question                                                                      (6)
        Analyse the possible advantages of tariffs for domestic producers in
        the US.
-       Indicative Content — AO2 (3 marks) / AO3 (3 marks)
+       Indicative Content · AO2 (3 marks) / AO3 (3 marks)
 
        AO2 and AO3
          • A tariff is a tax on imports, raising the domestic price of
@@ -407,7 +407,7 @@ Level   Mark   Descriptor
               •   With $370bn of imports facing tariffs, the scale of protection
                   is significant and can secure long-term market share.
               •   Increased production creates jobs in steel, aluminium and
-                  related supply chains — boosting local economies in steel-
+                  related supply chains · boosting local economies in steel-
                   producing regions.
               •   Tariffs may reduce US reliance on Chinese supply, improving
                   national security in strategic industries.
@@ -442,14 +442,14 @@ Level 3   5–6                •   Demonstrates clear knowledge and understand
 3(e)      Question                                                                         (9)
           Assess the possible impact of a currency depreciation on an
           economy such as China's.
-          Indicative Content — AO2 (3 marks) / AO3 (3 marks) / AO4 (3
+          Indicative Content · AO2 (3 marks) / AO3 (3 marks) / AO4 (3
           marks)
 
-          AO2 and AO3 — benefits of depreciation
+          AO2 and AO3 · benefits of depreciation
             • A depreciation means the yuan loses value against other
                 currencies (here, 8% against the US$).
               •   Chinese exports become cheaper in foreign markets,
-                  boosting demand for Chinese goods — helpful as China
+                  boosting demand for Chinese goods · helpful as China
                   exported $3.6 trillion in 2023.
               •   Rising exports contribute to higher GDP and economic
                   growth, and support employment in export industries.
@@ -459,16 +459,16 @@ Level 3   5–6                •   Demonstrates clear knowledge and understand
                   cheaper to visit.
 
 
-          AO4 — drawbacks / evaluation
+          AO4 · drawbacks / evaluation
             • Imports become more expensive, including oil, commodities
-               and high-tech components — this can cause imported/cost-
+               and high-tech components · this can cause imported/cost-
                push inflation.
               •   Chinese firms reliant on imported inputs see higher costs,
                   reducing profits and potentially employment.
               •   Depreciation can trigger currency wars and retaliation from
                   trading partners (e.g. further US tariffs).
               •   The effect on the current account depends on the Marshall–
-                  Lerner condition — whether PEDx + PEDm > 1.
+                  Lerner condition · whether PEDx + PEDm > 1.
               •   If the depreciation is seen as a deliberate policy, it may
                   worsen trade tensions with the US and EU.
               •   Overall judgement: short-term export gains are real, but long-
@@ -529,7 +529,7 @@ Level   Mark   Descriptor
 4(b)      Question                                                                      (6)
           Analyse the relationship between interest rates and the exchange
           rate for a country such as Turkey.
-          Indicative Content — AO2 (3 marks) / AO3 (3 marks)
+          Indicative Content · AO2 (3 marks) / AO3 (3 marks)
 
           AO2 and AO3
             • Interest rates are the cost of borrowing / return on saving; the
@@ -542,7 +542,7 @@ Level   Mark   Descriptor
               •   Increased demand for lira causes the exchange rate to
                   appreciate against other currencies.
               •   A stronger lira makes Turkish imports cheaper, which helps
-                  to reduce imported/cost-push inflation — particularly
+                  to reduce imported/cost-push inflation · particularly
                   important given 67% inflation.
               •   Conversely, cutting interest rates reduces returns to
                   investors, causing capital outflows and lira depreciation,
@@ -582,10 +582,10 @@ Level 3   5–6             •   Demonstrates clear knowledge and understanding
 4(c)      Question                                                                   (12)
           Evaluate the effectiveness of using supply-side policies to control
           inflation in a country such as Turkey.
-          Indicative Content — AO2 (4 marks) / AO3 (4 marks) / AO4 (4
+          Indicative Content · AO2 (4 marks) / AO3 (4 marks) / AO4 (4
           marks)
 
-          AO2 and AO3 — advantages
+          AO2 and AO3 · advantages
             • Supply-side policies are measures designed to increase the
                 productive capacity of the economy (e.g. education and
                 training, infrastructure, labour-market reform).
@@ -600,20 +600,20 @@ Level 3   5–6             •   Demonstrates clear knowledge and understanding
              •   Labour market reforms (e.g. reducing hiring restrictions) can
                  lower unemployment and reduce wage-push inflation.
              •   Unlike raising interest rates (which slows growth), supply-side
-                 policies support growth while controlling inflation — a better
+                 policies support growth while controlling inflation · a better
                  long-term solution for Turkey.
              •   Can address cost-push inflation directly, which may be a root
                  cause of Turkey's 67% inflation.
 
 
-          AO4 — disadvantages / evaluation
-            • Supply-side policies take many years to work — education
-               reforms may take a decade to fully affect productivity — while
+          AO4 · disadvantages / evaluation
+            • Supply-side policies take many years to work · education
+               reforms may take a decade to fully affect productivity · while
                Turkey faces inflation now.
              •   They are often expensive (e.g. infrastructure investment),
                  adding to government spending and possibly worsening the
                  budget deficit.
-             •   Effectiveness depends on the type of inflation — if Turkey's
+             •   Effectiveness depends on the type of inflation · if Turkey's
                  inflation is mainly demand-pull or imported, supply-side
                   policies alone will not solve it.
               •   Supply-side reforms (e.g. labour market flexibility) can be

@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import type { SessionRow } from "./useReadinessScore";
 
 /**
- * StudentDashboardState — single source of truth for every number the
+ * StudentDashboardState · single source of truth for every number the
  * Dashboard renders. If a number isn't here, it doesn't appear on the page.
  */
 
@@ -26,7 +26,7 @@ export const STAGE_RANGES: Array<{ min: number; max: number }> = [
 ];
 
 /** Pro-rata June 2024 AQA A-Level Economics boundaries divided by 3
- *  (full-qualification boundaries: A* 189, A 161, B 134, C 107, D 81, E 55 — out of 240) */
+ *  (full-qualification boundaries: A* 189, A 161, B 134, C 107, D 81, E 55 · out of 240) */
 export const PRO_RATA_BOUNDARIES_PER_PAPER = {
   "A*": 63,
   A: 54,
@@ -93,7 +93,7 @@ export interface StudentDashboardState {
   // Core scoring
   readinessScore: { value: number; max: number; weeklyChange: number; stage: JourneyStage; stageName: string };
 
-  // Paper counters — distinct, never contradictory
+  // Paper counters · distinct, never contradictory
   papersAttempted: number; // started at all
   papersCompleted: number; // submitted with a score
   totalGeneratedPapers: number; // estimate of available papers in library (for "out of N")
@@ -245,8 +245,8 @@ function pickDailyAction(args: {
   // 3. Remediate recent weak performance
   if (weakestKAAE && weakestKAAE !== "Knowledge") {
     const map: Record<string, string> = {
-      Application: "Practice anchoring every paragraph in the extract — quote a line, then explain.",
-      Analysis: "Practice longer chains of reasoning — 'X causes Y, which leads to Z because…'.",
+      Application: "Practice anchoring every paragraph in the extract · quote a line, then explain.",
+      Analysis: "Practice longer chains of reasoning · 'X causes Y, which leads to Z because…'.",
       Evaluation: "Your recent papers scored lowest on Evaluation. Practice writing supported conclusions that weigh strengths against limitations.",
     };
     return {
@@ -284,7 +284,7 @@ function pickDailyAction(args: {
     return {
       kind: "first_paper",
       headline: "Try your first predicted paper",
-      body: "Paper 1 Set A — Markets and Market Failure. 2 hours, 80 marks. You can pause and resume any time.",
+      body: "Paper 1 Set A · Markets and Market Failure. 2 hours, 80 marks. You can pause and resume any time.",
       ctaLabel: "Start Paper 1 Set A",
       ctaHref: "/predicted",
     };

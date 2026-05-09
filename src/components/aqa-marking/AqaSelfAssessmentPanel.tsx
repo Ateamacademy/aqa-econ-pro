@@ -26,7 +26,7 @@ interface Props {
 }
 
 /**
- * Tier 2 — Guided self-assessment for 9/15/25-mark questions.
+ * Tier 2 · Guided self-assessment for 9/15/25-mark questions.
  * Two-column: student answer (left) | level descriptors + mark + KAA+E (right).
  */
 export function AqaSelfAssessmentPanel({
@@ -89,7 +89,7 @@ export function AqaSelfAssessmentPanel({
         <div className="p-4 space-y-4">
           <div>
             <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-2">
-              AQA level descriptors — pick the one your answer matches
+              AQA level descriptors · pick the one your answer matches
             </div>
             <div className="space-y-1.5">
               {levels.map((lv) => (
@@ -152,7 +152,7 @@ export function AqaSelfAssessmentPanel({
                   />
                   <span>
                     <span className="font-semibold text-foreground">{s.label}</span>
-                    <span className="text-muted-foreground"> — {s.question}</span>
+                    <span className="text-muted-foreground"> · {s.question}</span>
                   </span>
                 </label>
               ))}

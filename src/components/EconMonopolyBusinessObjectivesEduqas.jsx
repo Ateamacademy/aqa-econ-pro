@@ -1,11 +1,11 @@
 import React from "react";
 
 /**
- * Eduqas A-Level — Monopoly: Business Objectives (cost & revenue diagram).
- * Used by Paper 2 — Moderate (eduqas-p2-a) Q2.3: effects on a supermarket's
+ * Eduqas A-Level · Monopoly: Business Objectives (cost & revenue diagram).
+ * Used by Paper 2 · Moderate (eduqas-p2-a) Q2.3: effects on a supermarket's
  * abnormal profits of the expansion of Aldi and Lidl.
  *
- * Geometry (literal coordinates — DO NOT prettify):
+ * Geometry (literal coordinates · DO NOT prettify):
  *   - AR = D   : red, downward (110,150) → (610,460)
  *   - MR       : red, steeper, same intercept ~150, hits axis at x≈360
  *                from (110,150) → (360,470)
@@ -22,7 +22,7 @@ export default function EconMonopolyBusinessObjectivesEduqas() {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 720 560"
       role="img"
-      aria-label="Eduqas A-Level Economics — Monopoly business objectives: MC and ATC blue U-shape curves, AR and MR red downward, supernormal profit rectangle, Profit Max at MC=MR, Rev Max at MR=0, Sales Max at AR=ATC"
+      aria-label="Eduqas A-Level Economics · Monopoly business objectives: MC and ATC blue U-shape curves, AR and MR red downward, supernormal profit rectangle, Profit Max at MC=MR, Rev Max at MR=0, Sales Max at AR=ATC"
       style={{ width: "100%", height: "auto", background: "#0b1020" }}
       fontFamily="Inter, Arial, sans-serif"
     >
@@ -30,7 +30,7 @@ export default function EconMonopolyBusinessObjectivesEduqas() {
       <g>
         <rect x="24" y="20" width="22" height="22" rx="4" fill="#1e293b" stroke="#334155" />
         <text x="58" y="36" fill="#a78bfa" fontSize="13" fontWeight="700" letterSpacing="1.5">
-          MONOPOLY — BUSINESS OBJECTIVES
+          MONOPOLY · BUSINESS OBJECTIVES
         </text>
       </g>
 
@@ -58,7 +58,7 @@ export default function EconMonopolyBusinessObjectivesEduqas() {
       <line x1="110" y1="150" x2="430" y2="490" stroke="#ef4444" strokeWidth="2.3" />
       <text x="430" y="505" fill="#ef4444" fontSize="12" fontWeight="700">MR</text>
 
-      {/* ATC (blue U-shape) — min near (370, 310) */}
+      {/* ATC (blue U-shape) · min near (370, 310) */}
       <path
         d="M 130 200 C 220 410 320 350 370 310 C 460 250 540 230 600 200"
         fill="none"
@@ -67,7 +67,7 @@ export default function EconMonopolyBusinessObjectivesEduqas() {
       />
       <text x="608" y="200" fill="#60a5fa" fontSize="12" fontWeight="700">ATC</text>
 
-      {/* MC (blue U-shape) — passes through ATC min and rises sharply */}
+      {/* MC (blue U-shape) · passes through ATC min and rises sharply */}
       <path
         d="M 140 360 C 200 430 250 410 270 339 C 320 280 360 220 410 110"
         fill="none"

@@ -1,5 +1,5 @@
 /**
- * Marking telemetry — logs every marking event to localStorage.
+ * Marking telemetry · logs every marking event to localStorage.
  * Includes ghost-mark detection.
  */
 

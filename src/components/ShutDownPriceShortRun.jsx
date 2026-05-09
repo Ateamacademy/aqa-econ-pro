@@ -53,18 +53,18 @@ export default function ShutDownPriceShortRun() {
         <path d="M 82,122 C 130,148 200,170 290,176 C 340,179 380,184 425,196"
           fill="none" stroke="#1a56db" strokeWidth="2.6" strokeLinecap="round" />
 
-        {/* AVC curve — min exactly at (210,220) */}
+        {/* AVC curve · min exactly at (210,220) */}
         <path d="M 82,192 C 118,214 158,222 210,220 C 252,218 285,220 348,230"
           fill="none" stroke="#1a56db" strokeWidth="2.6" strokeLinecap="round" />
 
-        {/* MC curve — dips to ~(155,220) then rises through C1=(210,100) */}
+        {/* MC curve · dips to ~(155,220) then rises through C1=(210,100) */}
         <path d="M 82,148 C 100,188 122,212 155,220 C 178,222 192,168 210,100 C 220,60 228,50 236,46"
           fill="none" stroke="#1a56db" strokeWidth="2.6" strokeLinecap="round" />
 
-        {/* AR line — gentle red downward */}
+        {/* AR line · gentle red downward */}
         <line x1="82" y1="262" x2="425" y2="218" stroke="#c0392b" strokeWidth="2.4" />
 
-        {/* MR line — steeper red, passes through (210,220) */}
+        {/* MR line · steeper red, passes through (210,220) */}
         <line x1="82" y1="262" x2="310" y2="187" stroke="#c0392b" strokeWidth="2.4" />
 
         {/* Curve label boxes */}

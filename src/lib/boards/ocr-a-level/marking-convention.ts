@@ -1,5 +1,5 @@
 /**
- * OCR A-Level Economics (H460) — marking convention.
+ * OCR A-Level Economics (H460) · marking convention.
  *
  * OCR uses AO1–AO4 level-of-response descriptors. Bands and descriptors below
  * are taken verbatim (with minor formatting) from the OCR H460 mark schemes

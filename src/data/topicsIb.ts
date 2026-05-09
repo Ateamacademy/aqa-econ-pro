@@ -22,7 +22,7 @@ export const ibTopics: IbTopic[] = [
     tier: "Foundation",
     section: "Microeconomics",
     marks: 4,
-    title: "Supply & Demand — Shift in Demand",
+    title: "Supply & Demand · Shift in Demand",
     scenario:
       "In 2023 Norway raised annual road tax on petrol and diesel cars while keeping EVs tax-exempt. New lower-priced EV models also entered the market, making EVs more accessible to the average consumer.",
     question:
@@ -44,7 +44,7 @@ export const ibTopics: IbTopic[] = [
     tier: "Foundation",
     section: "Microeconomics",
     marks: 4,
-    title: "Supply & Demand — Shift in Supply",
+    title: "Supply & Demand · Shift in Supply",
     scenario:
       "Automated manufacturing and new Australian lithium reserves have lowered unit production costs for lithium-ion batteries. Global electricity prices are stable and demand for batteries in energy storage and transport remains robust.",
     question:
@@ -66,7 +66,7 @@ export const ibTopics: IbTopic[] = [
     tier: "Foundation",
     section: "Macroeconomics",
     marks: 4,
-    title: "AD/AS — Demand-Side Shock",
+    title: "AD/AS · Demand-Side Shock",
     scenario:
       "In 2024 Germany's consumer confidence fell sharply after rising interest rates and economic uncertainty. Household consumption dropped substantially across the eurozone's largest economy.",
     question:
@@ -88,9 +88,9 @@ export const ibTopics: IbTopic[] = [
     tier: "Foundation",
     section: "Macroeconomics",
     marks: 4,
-    title: "AD/AS — Supply-Side Shock",
+    title: "AD/AS · Supply-Side Shock",
     scenario:
-      "Islandia is in long-run equilibrium. Geopolitical tensions push the global price of crude oil — a critical imported input for manufacturing and transport — up by 40%.",
+      "Islandia is in long-run equilibrium. Geopolitical tensions push the global price of crude oil · a critical imported input for manufacturing and transport · up by 40%.",
     question:
       "Using an AD/AS diagram, show the impact of the oil-price increase on Islandia's macroeconomic equilibrium. You must annotate the changes in price level and real GDP. Briefly explain the reasoning and the resulting impact on the economy.",
     figureFile: "/figures/ib-supply-shock.svg",
@@ -110,7 +110,7 @@ export const ibTopics: IbTopic[] = [
     tier: "Foundation",
     section: "Macroeconomics",
     marks: 4,
-    title: "AD/AS — Economic Growth (LRAS Shift)",
+    title: "AD/AS · Economic Growth (LRAS Shift)",
     scenario:
       "In 2023 a developing nation's government launched a major human-capital initiative providing universal access to specialised vocational training and technical education. Diagram requirement: use the Monetarist/New Classical model (VERTICAL LRAS).",
     question:
@@ -132,7 +132,7 @@ export const ibTopics: IbTopic[] = [
     tier: "Foundation",
     section: "Labour Market",
     marks: 4,
-    title: "Labour Market — Wage Determination",
+    title: "Labour Market · Wage Determination",
     scenario:
       "The UK hospitality industry faces a significant shortage of chefs and servers following migration-policy changes and shifting domestic career preferences. Fewer people are willing and able to work at any given wage rate.",
     question:
@@ -187,11 +187,11 @@ export const ibTopics: IbTopic[] = [
       "Using a negative externality diagram, explain why overconsumption of high-sugar soft drinks leads to market failure. You must: 1) draw MPB, MSB, MSC; 2) identify market equilibrium and social optimum; 3) shade the welfare loss; 4) explain why the market fails to allocate efficiently.",
     figureFile: "/figures/ib-neg-ext-soda.svg",
     explanation:
-      "Soft drinks generate NEGATIVE CONSUMPTION EXTERNALITIES: third parties bear costs not reflected in market transactions. MSB = MPB − MEC, so MSB lies BELOW MPB. Free market equilibrium at (Pe, Qe) where MPC (=MSC) meets MPB. Social optimum at (Po, Qo) where MSC meets MSB — Qo < Qe. Between Qo and Qe, MSC > MSB — the WELFARE-LOSS TRIANGLE. Correction: sin tax raises private price toward MSC, reducing consumption toward Qo.",
+      "Soft drinks generate NEGATIVE CONSUMPTION EXTERNALITIES: third parties bear costs not reflected in market transactions. MSB = MPB − MEC, so MSB lies BELOW MPB. Free market equilibrium at (Pe, Qe) where MPC (=MSC) meets MPB. Social optimum at (Po, Qo) where MSC meets MSB · Qo < Qe. Between Qo and Qe, MSC > MSB · the WELFARE-LOSS TRIANGLE. Correction: sin tax raises private price toward MSC, reducing consumption toward Qo.",
     keyTerms: ["negative externality of consumption", "MPB", "MSB", "MSC", "MEC", "over-consumption", "welfare loss", "sugar tax", "market failure"],
     diagramRequirements: [
       { requirement: "Axes labelled Costs/Benefits and Output", marks: 1 },
-      { requirement: "MPC = MSC (upward), MPB (downward), MSB (downward, BELOW MPB by MEC) — all three labelled", marks: 2 },
+      { requirement: "MPC = MSC (upward), MPB (downward), MSB (downward, BELOW MPB by MEC) · all three labelled", marks: 2 },
       { requirement: "Market equilibrium (Qe, Pe) at MPC=MPB and social optimum (Qo, Po) at MSC=MSB; Qo < Qe", marks: 1 },
       { requirement: "Welfare-loss triangle shaded between Qo and Qe", marks: 1 },
       { requirement: "Written explanation links over-consumption to failure to internalise external cost", marks: 1 },
@@ -210,11 +210,11 @@ export const ibTopics: IbTopic[] = [
       "Using a positive externalities diagram, explain why the free market under-provides preventive healthcare services and identify the welfare loss. Your answer must: define positive externalities of consumption; draw MPB, MSB, MSC; annotate market equilibrium and social optimum; shade welfare loss; explain using the relationship between curves.",
     figureFile: "/figures/ib-pos-ext-healthcare.svg",
     explanation:
-      "Preventive healthcare generates POSITIVE CONSUMPTION EXTERNALITIES: MSB = MPB + MEB, so MSB lies ABOVE MPB. Free market equilibrium at (Pm, Qm) where MPC (=MSC) meets MPB. Social optimum at (Ps, Qs) where MSC meets MSB; Qs > Qm. Between Qm and Qs MSB > MSC — the WELFARE-LOSS TRIANGLE of under-consumption. Correction: subsidy equal to MEB shifts MPB up to MSB, moving output to Qs.",
+      "Preventive healthcare generates POSITIVE CONSUMPTION EXTERNALITIES: MSB = MPB + MEB, so MSB lies ABOVE MPB. Free market equilibrium at (Pm, Qm) where MPC (=MSC) meets MPB. Social optimum at (Ps, Qs) where MSC meets MSB; Qs > Qm. Between Qm and Qs MSB > MSC · the WELFARE-LOSS TRIANGLE of under-consumption. Correction: subsidy equal to MEB shifts MPB up to MSB, moving output to Qs.",
     keyTerms: ["positive externality of consumption", "MPB", "MSB", "MEB", "MPC = MSC", "under-consumption", "welfare loss", "subsidy", "market failure"],
     diagramRequirements: [
       { requirement: "Axes labelled Price/Costs/Benefits and Output", marks: 1 },
-      { requirement: "MPC = MSC (upward), MPB (downward), MSB (downward, ABOVE MPB by MEB) — all three labelled", marks: 2 },
+      { requirement: "MPC = MSC (upward), MPB (downward), MSB (downward, ABOVE MPB by MEB) · all three labelled", marks: 2 },
       { requirement: "MEB gap annotated between MPB and MSB", marks: 1 },
       { requirement: "Market equilibrium (Qm) and social optimum (Qs) with Qs > Qm; welfare-loss triangle shaded", marks: 1 },
       { requirement: "Written explanation covers under-consumption logic + subsidy correction", marks: 1 },
@@ -251,7 +251,7 @@ export const ibTopics: IbTopic[] = [
     marks: 6,
     title: "Minimum Price (Price Floor)",
     scenario:
-      "In 2023 a developing nation considers a MINIMUM PRICE on raw sugar cane — ABOVE equilibrium — to protect small-scale farmers from volatile global prices and rising production costs.",
+      "In 2023 a developing nation considers a MINIMUM PRICE on raw sugar cane · ABOVE equilibrium · to protect small-scale farmers from volatile global prices and rising production costs.",
     question:
       "Using a price floor diagram, explain how imposing a minimum price ABOVE equilibrium affects the sugar-cane market and the impacts on consumer and producer surplus.",
     figureFile: "/figures/ib-min-price.svg",
@@ -272,19 +272,19 @@ export const ibTopics: IbTopic[] = [
     tier: "Intermediate",
     section: "Macroeconomics",
     marks: 6,
-    title: "Keynesian AS — Spare Capacity vs Full Employment",
+    title: "Keynesian AS · Spare Capacity vs Full Employment",
     scenario:
       "Spain is currently experiencing significant spare capacity: 11.5% unemployment and low consumer confidence. The government plans a large fiscal stimulus to raise AD.",
     question:
       "Using a Keynesian AS diagram, explain how an increase in AD affects Spain's Real GDP and Average Price Level when operating at a LOW level of output, compared to when approaching Full Employment (Yfe).",
     figureFile: "/figures/ib-keynesian-spare-full.svg",
     explanation:
-      "The Keynesian AS has THREE sections: HORIZONTAL (spare capacity) — AD shift → output rises, price unchanged; INTERMEDIATE (bottlenecks) — both Y and P rise; VERTICAL (full employment Yfe) — AD shift → ALL effect on price, no output response. In Spain's current position: fiscal stimulus shifts AD right along horizontal section, Real GDP rises, price unchanged. At Yfe: AD shift raises price but leaves output stuck — pure inflation.",
+      "The Keynesian AS has THREE sections: HORIZONTAL (spare capacity) · AD shift → output rises, price unchanged; INTERMEDIATE (bottlenecks) · both Y and P rise; VERTICAL (full employment Yfe) · AD shift → ALL effect on price, no output response. In Spain's current position: fiscal stimulus shifts AD right along horizontal section, Real GDP rises, price unchanged. At Yfe: AD shift raises price but leaves output stuck · pure inflation.",
     keyTerms: ["Keynesian AS", "spare capacity", "full employment", "horizontal section", "vertical section", "bottlenecks", "Yfe", "fiscal stimulus"],
     diagramRequirements: [
       { requirement: "TWO side-by-side panels (Spare Capacity | Full Capacity)", marks: 1 },
       { requirement: "Each panel labels Price Level and Real Output axes", marks: 1 },
-      { requirement: "Spare Capacity panel: AD shifts right along horizontal AS — Y↑ with P unchanged", marks: 2 },
+      { requirement: "Spare Capacity panel: AD shifts right along horizontal AS · Y↑ with P unchanged", marks: 2 },
       { requirement: "Full Capacity panel: vertical AS at Yfe; AD shifts right → P↑ with Y unchanged", marks: 1 },
       { requirement: "Written explanation contrasts the two cases", marks: 1 },
     ],
@@ -295,14 +295,14 @@ export const ibTopics: IbTopic[] = [
     tier: "Intermediate",
     section: "Market Structures",
     marks: 6,
-    title: "Monopoly — Profit Maximisation (MC=MR)",
+    title: "Monopoly · Profit Maximisation (MC=MR)",
     scenario:
-      "Pharmaceutical firm HealthGen has a 20-year patent on a new life-saving drug — sole provider. Objective: maximise abnormal profit.",
+      "Pharmaceutical firm HealthGen has a 20-year patent on a new life-saving drug · sole provider. Objective: maximise abnormal profit.",
     question:
       "Using a monopoly diagram, explain how HealthGen determines its profit-maximising output and price. You must: draw and label a monopoly diagram; identify Q1 and P1; shade abnormal profit; explain why the firm chooses MC = MR output.",
     figureFile: "/figures/ib-monopoly-profitmax.svg",
     explanation:
-      "A monopolist faces the entire market demand curve (D = AR, downward-sloping). MR lies BELOW AR. Profit max rule: produce where MC = MR. At Q1, the firm reads price up to AR at P1. AC at Q1 is below P1. ABNORMAL PROFIT = (P1 − AC) × Q1 — the shaded rectangle. Patent protection is a barrier to entry, so abnormal profit persists in the long run.",
+      "A monopolist faces the entire market demand curve (D = AR, downward-sloping). MR lies BELOW AR. Profit max rule: produce where MC = MR. At Q1, the firm reads price up to AR at P1. AC at Q1 is below P1. ABNORMAL PROFIT = (P1 − AC) × Q1 · the shaded rectangle. Patent protection is a barrier to entry, so abnormal profit persists in the long run.",
     keyTerms: ["monopoly", "profit maximisation", "MC = MR", "AR", "MR", "AC", "abnormal profit", "barriers to entry", "patent"],
     diagramRequirements: [
       { requirement: "Axes labelled Price/Cost and Output", marks: 1 },
@@ -318,7 +318,7 @@ export const ibTopics: IbTopic[] = [
     tier: "Intermediate",
     section: "Market Structures",
     marks: 6,
-    title: "Perfect Competition — Short Run & Long Run",
+    title: "Perfect Competition · Short Run & Long Run",
     scenario:
       "UK organic kale market is near-perfectly competitive: many small producers, homogeneous product. 2021–23 health-food demand surge produced abnormal profits for existing farmers in the short run.",
     question:
@@ -350,7 +350,7 @@ export const ibTopics: IbTopic[] = [
       "Using an appropriate diagram, explain how the imposition of a specific indirect tax on high-sugar soda producers affects market price, quantity traded, and tax incidence for consumers and producers. In your response you must:\n1. Draw and properly label a tax_incidence diagram.\n2. Show the shift in the supply curve and the vertical distance representing the tax.\n3. Identify areas representing consumer burden, producer burden, and government revenue.\n4. Explain the transition from initial to new equilibrium, referencing PED and PES in determining incidence.",
     figureFile: "/figures/ib-indirect-tax-soda.svg",
     explanation:
-      "A specific indirect tax shifts the supply curve VERTICALLY UP by the tax amount (S → S1 = S + Tax). Initial equilibrium: (PE, QE) where S meets D. New equilibrium: (P1, Q1) where S1 meets D, with P1 > PE and Q1 < QE. Critical reference points: P1 = consumer price paid (at point W on D), A = price producer receives NET of tax (read off original S at Q1), vertical distance P1 − A = tax per unit. CONSUMER BURDEN (upper rectangle W-Y) = (P1 − PE) × Q1. PRODUCER BURDEN (lower rectangle Y-Z) = (PE − A) × Q1. GOVERNMENT REVENUE = consumer burden + producer burden = tax × Q1. The SPLIT depends on ELASTICITIES: the more INELASTIC side bears the GREATER burden. If PED < PES: consumer burden > producer burden — classic sin-tax result for soft drinks. Welfare implications: DEADWEIGHT LOSS triangle to the right of Q1. Policy justification rests on whether health gains from reduced soda consumption outweigh this deadweight loss — plausible given the negative consumption externality.",
+      "A specific indirect tax shifts the supply curve VERTICALLY UP by the tax amount (S → S1 = S + Tax). Initial equilibrium: (PE, QE) where S meets D. New equilibrium: (P1, Q1) where S1 meets D, with P1 > PE and Q1 < QE. Critical reference points: P1 = consumer price paid (at point W on D), A = price producer receives NET of tax (read off original S at Q1), vertical distance P1 − A = tax per unit. CONSUMER BURDEN (upper rectangle W-Y) = (P1 − PE) × Q1. PRODUCER BURDEN (lower rectangle Y-Z) = (PE − A) × Q1. GOVERNMENT REVENUE = consumer burden + producer burden = tax × Q1. The SPLIT depends on ELASTICITIES: the more INELASTIC side bears the GREATER burden. If PED < PES: consumer burden > producer burden · classic sin-tax result for soft drinks. Welfare implications: DEADWEIGHT LOSS triangle to the right of Q1. Policy justification rests on whether health gains from reduced soda consumption outweigh this deadweight loss · plausible given the negative consumption externality.",
     keyTerms: [
       "specific tax",
       "ad valorem",

@@ -3,7 +3,7 @@ export default function EconNegExtUKEnergy() {
     <div style={{background:'#0d1b2e',borderRadius:'10px',padding:'4px',maxWidth:'720px',margin:'0 auto',fontFamily:"'Segoe UI',Arial,sans-serif",border:'1px solid rgba(255,255,255,0.10)'}}>
       <div style={{padding:'10px 14px 4px'}}>
         <div style={{fontSize:'11px',fontWeight:700,letterSpacing:'1.5px',color:'#818cf8'}}>NEGATIVE EXTERNALITY OF PRODUCTION</div>
-        <div style={{fontSize:'12px',color:'#c8d6e8',marginTop:2}}>UK Energy Sector — MSC parallel to MPC; constant marginal external cost</div>
+        <div style={{fontSize:'12px',color:'#c8d6e8',marginTop:2}}>UK Energy Sector · MSC parallel to MPC; constant marginal external cost</div>
       </div>
       <svg viewBox="0 0 900 650" width="100%" style={{display:'block', background:'transparent', fontFamily:'sans-serif'}}>
         <defs>

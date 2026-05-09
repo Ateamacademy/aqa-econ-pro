@@ -8,7 +8,7 @@ export default function EconImportQuotaTariff() {
           <marker id="iqBi" markerWidth="9" markerHeight="7" refX="1" refY="3.5" orient="auto-start-reverse"><polygon points="0 0,9 3.5,0 7" fill="#111"/></marker>
         </defs>
         <rect width="700" height="580" fill="#fff"/>
-        <text x="350" y="26" textAnchor="middle" fontSize="15" fontWeight="bold" fill="#111">Trade Diagram — Effect of Import Quota</text>
+        <text x="350" y="26" textAnchor="middle" fontSize="15" fontWeight="bold" fill="#111">Trade Diagram · Effect of Import Quota</text>
         <text x="350" y="44" textAnchor="middle" fontSize="11" fill="#555">Quota raises domestic price above world price → welfare loss (hatched region)</text>
         <line x1="80" y1="470" x2="80" y2="40" stroke="#111" strokeWidth="2.2" markerEnd="url(#iqU)"/>
         <line x1="80" y1="470" x2="622" y2="470" stroke="#111" strokeWidth="2.2" markerEnd="url(#iqR)"/>

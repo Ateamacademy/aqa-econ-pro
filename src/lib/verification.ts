@@ -1,5 +1,5 @@
 /**
- * Vision verification call — describes what is literally in a diagram image.
+ * Vision verification call · describes what is literally in a diagram image.
  * Runs BEFORE the marking call. Has no rubric or question context.
  */
 
@@ -59,7 +59,7 @@ export async function verifyDiagramImage(imageBase64: string): Promise<Verificat
 
   if (!resp.ok) {
     console.error("Verification call failed:", resp.status);
-    // Return a conservative default — treat as empty to prevent false positives
+    // Return a conservative default · treat as empty to prevent false positives
     return {
       isBlank: true,
       hasAxes: { horizontal: false, vertical: false },
@@ -68,7 +68,7 @@ export async function verifyDiagramImage(imageBase64: string): Promise<Verificat
       textElements: [],
       pointsLabelled: [],
       completeness: "empty",
-      rawDescription: "Verification call failed — treating as empty for safety.",
+      rawDescription: "Verification call failed · treating as empty for safety.",
     };
   }
 

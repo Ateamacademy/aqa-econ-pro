@@ -46,7 +46,7 @@ H460/01                                                                       Ma
 
    Question                                  Answer                                         Mark                                  Guidance
 
- 1 (b)        Explain, using an appropriate diagram, the likely effect of the                      Reward alternative diagrams — kinked demand, AR/MR, or market S/D.
+ 1 (b)        Explain, using an appropriate diagram, the likely effect of the                      Reward alternative diagrams · kinked demand, AR/MR, or market S/D.
               expansion of Aldi and Lidl on the pricing behaviour of the Big                       Diagram must be accurately labelled and linked to analysis.
               Four supermarkets.
               Up to 2 marks for diagram showing:
@@ -65,7 +65,7 @@ H460/01                                                                       Ma
    Question                                  Answer                                         Mark                                  Guidance
 
  1 (c)(i)     Calculate the combined percentage-point change in the market                   2     Accept +8.6pp, 8.6 percentage points.
-              share of Aldi and Lidl between 2015 and 2024.                                        Do not accept '8.6%' without 'percentage points' — this is a common
+              share of Aldi and Lidl between 2015 and 2024.                                        Do not accept '8.6%' without 'percentage points' · this is a common
               Correct answer: +8.6 percentage points                                               error.
 
 
@@ -127,7 +127,7 @@ stimulus material, the effectiveness of CMA investigations in reducing anti-comp
   • anti-competitive behaviour: collusion, price-fixing, abuse of dominance, anti-competitive mergers
  Application
   • 2023 CMA update: competition 'broadly working' but flagged branded-goods pricing and loyalty-scheme complexity
-  • Big Four operating margins fell during the 2022–23 cost-of-living crisis (Fig. 2) — 3.4% (2020) to 2.6% (2022)
+  • Big Four operating margins fell during the 2022–23 cost-of-living crisis (Fig. 2) · 3.4% (2020) to 2.6% (2022)
   • grocery inflation peaked at 17.5% (March 2023); margins remained compressed
   • historical examples: CMA banned Sainsbury's–Asda merger (2019), fined Pfizer / Flynn for epilepsy drug pricing
  Analysis
@@ -138,11 +138,11 @@ H460/01                                                                      Mar
  • public scrutiny causes firms to change conduct (e.g. unit pricing transparency after CMA recommendations)
  • preserves consumer welfare by maintaining competitive pricing and choice
  Evaluation
-  • investigations are slow — CMA grocery update took over 18 months; market dynamics may shift by conclusion
-  • information asymmetry — CMA relies on firm-supplied data
-  • resource constraints — CMA has limited budget relative to market scale
+  • investigations are slow · CMA grocery update took over 18 months; market dynamics may shift by conclusion
+  • information asymmetry · CMA relies on firm-supplied data
+  • resource constraints · CMA has limited budget relative to market scale
   • global firms may circumvent UK decisions; EU/US competition authorities matter too
-  • regulatory capture risk — long-term concerns about industry influence on policy
+  • regulatory capture risk · long-term concerns about industry influence on policy
   • fines may simply be passed on to consumers in higher prices
  Possible judgements
   • CMA effective as a deterrent but less so at fast-moving markets and complex pricing practices
@@ -170,13 +170,13 @@ H460/01                                                                    Mark 
                               good use of data where appropriate.
                               Reasonable analysis characterised by developing chains of reasoning that explain most of the links; diagram(s) may be predominantly correct
                               but not fully integrated into the response.
-                              Reasonable evaluation — counter argument(s) are considered but not fully developed; some attempt to conclude but without fully weighing
+                              Reasonable evaluation · counter argument(s) are considered but not fully developed; some attempt to conclude but without fully weighing
                               up both sides. QER: the candidate expresses ideas with reasonable clarity and accuracy.
 
  Level 1                      Reasonable knowledge and understanding of relevant economic ideas, principles or models.
  (1–4 marks)                  Reasonable application of economic concepts to some elements of the given context; may be inconsistent or not always relevant.
                               Limited analysis in the form of single links; diagram(s) may contain errors or be loosely integrated into the response.
-                              Limited evaluation — simple statements of counter argument(s); stated or absent judgement. QER: the candidate expresses simple ideas
+                              Limited evaluation · simple statements of counter argument(s); stated or absent judgement. QER: the candidate expresses simple ideas
                               clearly but is likely to be imprecise.
 
  0 marks                      Response is not worthy of credit.
@@ -191,16 +191,16 @@ H460/01                                                                    Mark 
                                                                                            7
 H460/01                                                                            Mark Scheme                                   June 2026
  • sunk costs as a key barrier to entry and exit
- Application — evidence market IS contestable
-  • Aldi and Lidl's market share rose from 9.7% (2015) to 18.3% (2024) — successful entry and expansion
-  • their growth coincided with falling Big Four margins (3.4% to 2.6–3.1%) — evidence competitive discipline
-  • Big Four matched Aldi prices and launched loyalty-scheme pricing — defensive response to entry threat
+ Application · evidence market IS contestable
+  • Aldi and Lidl's market share rose from 9.7% (2015) to 18.3% (2024) · successful entry and expansion
+  • their growth coincided with falling Big Four margins (3.4% to 2.6–3.1%) · evidence competitive discipline
+  • Big Four matched Aldi prices and launched loyalty-scheme pricing · defensive response to entry threat
   • online grocers (Ocado, Amazon Fresh, Gorillas) entered the market, showing technological contestability
- Application — evidence market is NOT fully contestable
+ Application · evidence market is NOT fully contestable
   • access to prime real estate, economies of scale and sophisticated supply chains are significant sunk costs
-  • Ocado lost over £500m cumulatively 2020–23 — new entrants struggle to reach profitability
-  • Morrisons was taken private for £7bn (2021) — exit costly; few firms able to 'hit and run'
-  • stable concentration — Tesco and Sainsbury's together held 42.8% in 2024 (vs 43.4% in 2015)
+  • Ocado lost over £500m cumulatively 2020–23 · new entrants struggle to reach profitability
+  • Morrisons was taken private for £7bn (2021) · exit costly; few firms able to 'hit and run'
+  • stable concentration · Tesco and Sainsbury's together held 42.8% in 2024 (vs 43.4% in 2015)
   • complex loyalty-scheme pricing reduces price transparency
  Analysis
   • classical contestability theory: entry/exit barriers, not number of firms, determine outcomes
@@ -209,9 +209,9 @@ H460/01                                                                         
  Evaluation
   • market is contestable at the segment level (discount, online, convenience) but not for national full-line grocery
   • contestability has increased over past 10 years but remains constrained by capital requirements
-  • CMA's view (2023): competition 'broadly working' — consistent with a somewhat contestable market
+  • CMA's view (2023): competition 'broadly working' · consistent with a somewhat contestable market
  Judgement
-  • the UK grocery market is moderately contestable — not perfectly contestable but more contestable than a tight oligopoly
+  • the UK grocery market is moderately contestable · not perfectly contestable but more contestable than a tight oligopoly
   • Aldi/Lidl expansion provides the strongest evidence of contestability; full-line national grocery remains less contestable
  QER
   • use precise contestability terminology: sunk costs, hit-and-run entry, normal profit, entry threat
@@ -229,7 +229,7 @@ H460/01                                                                   Mark S
                            (AO2).
                            Strong analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Strong evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                           Strong evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
                            to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 4                   Good knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -237,7 +237,7 @@ H460/01                                                                   Mark S
                            (AO2).
                            Good analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                            accuracy reflects this level (AO3).
-                           Good evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                           Good evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                            a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 3                   Reasonable knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -245,7 +245,7 @@ H460/01                                                                   Mark S
                            appropriate (AO2).
                            Reasonable analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Reasonable evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations —
+                           Reasonable evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations ·
                            leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 2                   Limited knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -253,7 +253,7 @@ H460/01                                                                   Mark S
                            appropriate (AO2).
                            Limited analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Limited evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                           Limited evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
 
                                                                                    9
 H460/01                                                                           Mark Scheme                                                                    June 2026
@@ -266,7 +266,7 @@ H460/01                                                                         
                               (AO2).
                               Weak analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                               accuracy reflects this level (AO3).
-                              Weak evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                              Weak evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                               a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  0 marks                      Response is not worthy of credit.
@@ -284,26 +284,26 @@ H460/01                                                                         
   • firm captures more consumer surplus; higher profit; lower consumer surplus in some segments
   • may expand output overall, bringing supply to consumers previously priced out
  Application
-  • Tesco Clubcard Prices, Sainsbury's Nectar Prices — loyalty-based discrimination
+  • Tesco Clubcard Prices, Sainsbury's Nectar Prices · loyalty-based discrimination
   • rail peak/off-peak, airline yield management, cinema concessions
   • utilities, student discounts, off-peak gym memberships
- Evaluation — benefits
+ Evaluation · benefits
   • low-income/occasional consumers benefit from lower prices in some segments
   • higher revenue may fund investment → dynamic efficiency
-  • output may expand — previously marginal consumers served
+  • output may expand · previously marginal consumers served
 
 
                                                                                         10
 H460/01                                                                        Mark Scheme                          June 2026
  • enables firms to stay open / cover fixed costs (airlines, railways)
- Evaluation — costs
+ Evaluation · costs
   • inelastic-demand consumers pay more; loss of consumer surplus
-  • information asymmetry — complex pricing (loyalty schemes, dynamic pricing) disadvantages less savvy consumers
+  • information asymmetry · complex pricing (loyalty schemes, dynamic pricing) disadvantages less savvy consumers
   • potentially exploitative (predatory pricing)
-  • creates barriers to entry — undermines contestability
-  • equity concerns — may reinforce inequality
+  • creates barriers to entry · undermines contestability
+  • equity concerns · may reinforce inequality
  Possible judgements
-  • net welfare effect ambiguous — depends on type of discrimination, elasticity, and market structure
+  • net welfare effect ambiguous · depends on type of discrimination, elasticity, and market structure
   • benefits to consumers most visible where output expands and cross-subsidy is transparent
   • CMA monitoring important to prevent abuse of pricing power
 
@@ -319,7 +319,7 @@ H460/01                                                                 Mark Sch
                           (AO2).
                           Strong analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                           whose accuracy reflects this level (AO3).
-                          Strong evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                          Strong evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
                           to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 4                  Good knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -327,7 +327,7 @@ H460/01                                                                 Mark Sch
                           (AO2).
                           Good analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                           accuracy reflects this level (AO3).
-                          Good evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                          Good evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                           a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 3                  Reasonable knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -335,7 +335,7 @@ H460/01                                                                 Mark Sch
                           appropriate (AO2).
                           Reasonable analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                           whose accuracy reflects this level (AO3).
-                          Reasonable evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations —
+                          Reasonable evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations ·
                           leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 2                  Limited knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -343,7 +343,7 @@ H460/01                                                                 Mark Sch
                           appropriate (AO2).
                           Limited analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                           whose accuracy reflects this level (AO3).
-                          Limited evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                          Limited evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
 
                                                                                  12
 H460/01                                                                           Mark Scheme                                                                    June 2026
@@ -356,7 +356,7 @@ H460/01                                                                         
                               (AO2).
                               Weak analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                               accuracy reflects this level (AO3).
-                              Weak evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                              Weak evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                               a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  0 marks                      Response is not worthy of credit.
@@ -371,28 +371,28 @@ H460/01                                                                         
  Analysis (with diagram)
   • contestable market diagram: firms priced near normal profit (P = AC), output at allocative optimum
   • oligopoly diagram: kinked demand → price rigidity; supernormal profit; P > MC → allocative inefficiency
-  • contestable firms cannot sustain supernormal profits — attract entry
- Evaluation — contestable advantages
+  • contestable firms cannot sustain supernormal profits · attract entry
+ Evaluation · contestable advantages
   • lower prices, higher output, more consumer surplus
   • dynamic efficiency through entry-driven innovation
   • fewer regulatory requirements if competition is self-sustaining
- Evaluation — oligopoly concerns
+ Evaluation · oligopoly concerns
   • risk of tacit or explicit collusion → higher prices, restricted output
   • non-price competition may still benefit consumers (quality, branding, choice)
-  • economies of scale — oligopolies may achieve lower unit costs than contestable small firms
-  • oligopolies fund significant R&D (pharma, tech, aerospace) — dynamic efficiency
+  • economies of scale · oligopolies may achieve lower unit costs than contestable small firms
+  • oligopolies fund significant R&D (pharma, tech, aerospace) · dynamic efficiency
 
 
                                                                                        13
 H460/01                                                                          Mark Scheme               June 2026
 
  Applied examples
-  • UK grocery — Aldi/Lidl entry has made the market more contestable, lowering prices
+  • UK grocery · Aldi/Lidl entry has made the market more contestable, lowering prices
   • contestability in airlines (low-cost entrants) vs oligopoly in telecoms
-  • tech platforms — high barriers, but digital innovation can enable 'hit-and-run' threats
+  • tech platforms · high barriers, but digital innovation can enable 'hit-and-run' threats
  Possible judgements
   • contestability generally leads to better consumer outcomes but may sacrifice scale economies and R&D
-  • optimal structure depends on industry — fixed costs, scale, innovation
+  • optimal structure depends on industry · fixed costs, scale, innovation
   • well-regulated oligopolies can deliver similar consumer outcomes to contestable markets
 
 
@@ -407,7 +407,7 @@ H460/01                                                                   Mark S
                            (AO2).
                            Strong analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Strong evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                           Strong evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
                            to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 4                   Good knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -415,7 +415,7 @@ H460/01                                                                   Mark S
                            (AO2).
                            Good analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                            accuracy reflects this level (AO3).
-                           Good evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                           Good evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                            a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 3                   Reasonable knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -423,7 +423,7 @@ H460/01                                                                   Mark S
                            appropriate (AO2).
                            Reasonable analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Reasonable evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations —
+                           Reasonable evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations ·
                            leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 2                   Limited knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -431,7 +431,7 @@ H460/01                                                                   Mark S
                            appropriate (AO2).
                            Limited analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Limited evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                           Limited evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
 
                                                                                   15
 H460/01                                                                           Mark Scheme                                                                    June 2026
@@ -444,7 +444,7 @@ H460/01                                                                         
                               (AO2).
                               Weak analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                               accuracy reflects this level (AO3).
-                              Weak evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                              Weak evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                               a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  0 marks                      Response is not worthy of credit.
@@ -463,18 +463,18 @@ H460/01                                                                         
   • innovation incentives stronger in private sector → dynamic efficiency
  Applied examples
   • UK privatisations since 1980s: British Gas, British Telecom, British Rail, Royal Mail, water authorities
-  • Morrisons taken private by CD&R (2021) — private equity ownership and efficiency pressure
+  • Morrisons taken private by CD&R (2021) · private equity ownership and efficiency pressure
   • BT and mobile telecoms have shown strong productivity gains post-privatisation
  Evaluation
-  • natural monopolies (water, rail infrastructure) — privatisation does not create competition without regulation
+  • natural monopolies (water, rail infrastructure) · privatisation does not create competition without regulation
   • underinvestment where short-term profit motives dominate (water company leaks, sewage scandals)
-  • distributional effects — privatisation may raise prices for vulnerable consumers
+  • distributional effects · privatisation may raise prices for vulnerable consumers
 
 
                                                                                         16
 H460/01                                                                        Mark Scheme    June 2026
- • regulatory capture — Ofwat, Ofgem, Ofcom oversight may be insufficient
- • quality concerns — privatised rail fragmentation, NHS contracting-out controversies
+ • regulatory capture · Ofwat, Ofgem, Ofcom oversight may be insufficient
+ • quality concerns · privatised rail fragmentation, NHS contracting-out controversies
  • windfall gains to early investors
  Possible judgements
   • privatisation has generally improved productive and X-efficiency in competitive sectors
@@ -493,7 +493,7 @@ H460/01                                                                    Mark 
                            (AO2).
                            Strong analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Strong evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                           Strong evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
                            to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 4                   Good knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -501,7 +501,7 @@ H460/01                                                                    Mark 
                            (AO2).
                            Good analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                            accuracy reflects this level (AO3).
-                           Good evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                           Good evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                            a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 3                   Reasonable knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -509,7 +509,7 @@ H460/01                                                                    Mark 
                            appropriate (AO2).
                            Reasonable analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Reasonable evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations —
+                           Reasonable evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations ·
                            leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 2                   Limited knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -517,7 +517,7 @@ H460/01                                                                    Mark 
                            appropriate (AO2).
                            Limited analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Limited evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                           Limited evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
 
                                                                                   18
 H460/01                                                                        Mark Scheme                                                                      June 2026
@@ -530,7 +530,7 @@ H460/01                                                                        M
                              (AO2).
                              Weak analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                              accuracy reflects this level (AO3).
-                             Weak evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                             Weak evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                              a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  0 marks                     Response is not worthy of credit.
@@ -561,13 +561,13 @@ H460/01                                                                        M
 H460/01                                                                          Mark Scheme       June 2026
  • productivity improvements via automation may offset labour shortages
  • immigration policy is a potential but politically constrained solution
- • skills mismatch — older workers leaving may not match skills demanded
- • pension costs — government spending pressure requires tax rises or benefit cuts
- • regional variation — coastal and rural areas ageing faster than London/SE
+ • skills mismatch · older workers leaving may not match skills demanded
+ • pension costs · government spending pressure requires tax rises or benefit cuts
+ • regional variation · coastal and rural areas ageing faster than London/SE
  • dynamic efficiency gains possible through capital deepening
  Possible judgements
   • ageing will tighten labour markets and raise wages, particularly in care and service sectors
-  • policy response matters — retirement age, migration, training, automation investment
+  • policy response matters · retirement age, migration, training, automation investment
   • impact depends on pace of productivity growth and labour force participation trends
 
 

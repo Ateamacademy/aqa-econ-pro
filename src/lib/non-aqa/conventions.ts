@@ -1,7 +1,7 @@
 /**
  * Non-AQA marking convention registry.
  *
- * Lookup by board id. AQA A-Level is intentionally absent — AQA continues to
+ * Lookup by board id. AQA A-Level is intentionally absent · AQA continues to
  * use its existing legacy marking files. This registry is the only place the
  * 11 non-AQA conventions are aggregated.
  */

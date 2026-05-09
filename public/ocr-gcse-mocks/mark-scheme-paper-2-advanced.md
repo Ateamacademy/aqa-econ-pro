@@ -1,5 +1,5 @@
 <!-- Auto-generated from /public/ocr-gcse-mocks/mark-scheme-paper-2-advanced.pdf -->
-J205/02 Mark Scheme | Predicted Paper — Advanced
+J205/02 Mark Scheme | Predicted Paper · Advanced
 
 
 OCR
@@ -11,12 +11,12 @@ Economics
 J205/02: National and international economics
 General Certificate of Secondary Education
 
-Mark Scheme — Predicted Paper (Advanced)
+Mark Scheme · Predicted Paper (Advanced)
 Total marks: 80
 
 
-                              Mark Scheme — Advanced | Page 1 of 14
-                                                           J205/02 Mark Scheme | Predicted Paper — Advanced
+                              Mark Scheme · Advanced | Page 1 of 14
+                                                           J205/02 Mark Scheme | Predicted Paper · Advanced
 
                                      MARKING INSTRUCTIONS
 Preparation for marking
@@ -38,8 +38,8 @@ Levels of response (Section B extended items)
 • For questions marked with an asterisk (*) Quality of Extended Response is assessed: credit is given for
   coherent, well-structured and logically sequenced reasoning.
 Annotations
-✓     Tick — point worthy of credit
-✗     Cross — incorrect / not creditworthy
+✓     Tick · point worthy of credit
+✗     Cross · incorrect / not creditworthy
 BOD Benefit of the doubt
 IR    Irrelevant
 L1 / L2 / L3     Level one / two / three
@@ -50,8 +50,8 @@ OFR Own figure rule applied
 BP Blank page
 
 
-                                  Mark Scheme — Advanced | Page 2 of 14
-                                                                   J205/02 Mark Scheme | Predicted Paper — Advanced
+                                  Mark Scheme · Advanced | Page 2 of 14
+                                                                   J205/02 Mark Scheme | Predicted Paper · Advanced
 
 Subject-specific level descriptors
 The following descriptors are applied to all level-marked questions in Section B in the Question | Answer |
@@ -86,8 +86,8 @@ Mark | Guidance tables that follow.
                                                                                                 statements.
 
 
-                                      Mark Scheme — Advanced | Page 3 of 14
-                                       J205/02 Mark Scheme | Predicted Paper — Advanced
+                                      Mark Scheme · Advanced | Page 3 of 14
+                                       J205/02 Mark Scheme | Predicted Paper · Advanced
 
                            SECTION A
 Question   Key       AO                           Quantitative skills
@@ -113,8 +113,8 @@ Question   Key       AO                           Quantitative skills
   20       A       AO1a
 
 
-                 Mark Scheme — Advanced | Page 4 of 14
-                                                          J205/02 Mark Scheme | Predicted Paper — Advanced
+                 Mark Scheme · Advanced | Page 4 of 14
+                                                          J205/02 Mark Scheme | Predicted Paper · Advanced
 
                                              SECTION B
 Question                           Answer                               Mark           Guidance
@@ -179,8 +179,8 @@ Question                           Answer                               Mark    
                                                                               form of single effects
 
 
-                                 Mark Scheme — Advanced | Page 5 of 14
-                                                             J205/02 Mark Scheme | Predicted Paper — Advanced
+                                 Mark Scheme · Advanced | Page 5 of 14
+                                                             J205/02 Mark Scheme | Predicted Paper · Advanced
 
 Question                             Answer                                Mark           Guidance
                                                                                    that address the
@@ -198,7 +198,7 @@ Question                             Answer                                Mark 
                                                                                    at a single effect that
                                                                                    has some link to the
                                                                                    question.
-                                                                                   0 marks — no work
+                                                                                   0 marks · no work
                                                                                    worthy of credit.
 
 
@@ -246,8 +246,8 @@ Question                             Answer                                Mark 
               • credibility of the independent central bank is built on          that address the
                 commitment to the target
 
-                                   Mark Scheme — Advanced | Page 6 of 14
-                                                          J205/02 Mark Scheme | Predicted Paper — Advanced
+                                   Mark Scheme · Advanced | Page 6 of 14
+                                                          J205/02 Mark Scheme | Predicted Paper · Advanced
 
 Question                           Answer                              Mark          Guidance
             • anchors inflation expectations → prevents wage-                 question. Good
@@ -296,12 +296,12 @@ Question                           Answer                              Mark     
                                                                               statements. Information
                                                                               may be ambiguous or
                                                                               unstructured.
-                                                                              0 marks — no work
+                                                                              0 marks · no work
                                                                               worthy of credit.
 
 
-                                 Mark Scheme — Advanced | Page 7 of 14
-                                                        J205/02 Mark Scheme | Predicted Paper — Advanced
+                                 Mark Scheme · Advanced | Page 7 of 14
+                                                        J205/02 Mark Scheme | Predicted Paper · Advanced
 
 Question                          Answer                             Mark           Guidance
  22 (a)    Using Extract 2, explain what the data suggest             2      1 mark for identifying
@@ -366,8 +366,8 @@ Question                          Answer                             Mark       
                                                                            that address the
                                                                            question but are not
 
-                                Mark Scheme — Advanced | Page 8 of 14
-                                                           J205/02 Mark Scheme | Predicted Paper — Advanced
+                                Mark Scheme · Advanced | Page 8 of 14
+                                                           J205/02 Mark Scheme | Predicted Paper · Advanced
 
 Question                            Answer                              Mark           Guidance
                                                                                 developed into a clear
@@ -383,7 +383,7 @@ Question                            Answer                              Mark    
                                                                                 at a single effect that
                                                                                 has some link to the
                                                                                 question.
-                                                                                0 marks — no work
+                                                                                0 marks · no work
                                                                                 worthy of credit.
 
 
@@ -433,8 +433,8 @@ Question                            Answer                              Mark    
                 creation                                                      that address the
               • expanding tax base → more revenue for public
 
-                                  Mark Scheme — Advanced | Page 9 of 14
-                                                          J205/02 Mark Scheme | Predicted Paper — Advanced
+                                  Mark Scheme · Advanced | Page 9 of 14
+                                                          J205/02 Mark Scheme | Predicted Paper · Advanced
 
 Question                           Answer                             Mark           Guidance
               services                                                        question. Good
@@ -482,12 +482,12 @@ Question                           Answer                             Mark      
                                                                               statements. Information
                                                                               may be ambiguous or
                                                                               unstructured.
-                                                                              0 marks — no work
+                                                                              0 marks · no work
                                                                               worthy of credit.
 
 
-                                Mark Scheme — Advanced | Page 10 of 14
-                                                        J205/02 Mark Scheme | Predicted Paper — Advanced
+                                Mark Scheme · Advanced | Page 10 of 14
+                                                        J205/02 Mark Scheme | Predicted Paper · Advanced
 
 Question                          Answer                             Mark           Guidance
  23 (a)    Using Extract 3, explain the change in China's             2      1 mark for identifying the
@@ -555,8 +555,8 @@ Question                          Answer                             Mark       
                                                                            developed into a clear
                                                                            chain of reasoning.
 
-                               Mark Scheme — Advanced | Page 11 of 14
-                                                           J205/02 Mark Scheme | Predicted Paper — Advanced
+                               Mark Scheme · Advanced | Page 11 of 14
+                                                           J205/02 Mark Scheme | Predicted Paper · Advanced
 
 Question                            Answer                              Mark           Guidance
                                                                                 Level 1 (1–2 marks).
@@ -570,7 +570,7 @@ Question                            Answer                              Mark    
                                                                                 at a single effect that
                                                                                 has some link to the
                                                                                 question.
-                                                                                0 marks — no work
+                                                                                0 marks · no work
                                                                                 worthy of credit.
 
 
@@ -622,8 +622,8 @@ Question                            Answer                              Mark    
               • lower consumer prices for imports                             logically structured line
                                                                               of reasoning;
 
-                                  Mark Scheme — Advanced | Page 12 of 14
-                                                        J205/02 Mark Scheme | Predicted Paper — Advanced
+                                  Mark Scheme · Advanced | Page 12 of 14
+                                                        J205/02 Mark Scheme | Predicted Paper · Advanced
 
 Question                          Answer                            Mark           Guidance
            • historical examples: East Asian 'tigers' and China's           information is entirely
@@ -664,12 +664,12 @@ Question                          Answer                            Mark        
                                                                             statements. Information
                                                                             may be ambiguous or
                                                                             unstructured.
-                                                                            0 marks — no work
+                                                                            0 marks · no work
                                                                             worthy of credit.
 
 
-                               Mark Scheme — Advanced | Page 13 of 14
-                                                  J205/02 Mark Scheme | Predicted Paper — Advanced
+                               Mark Scheme · Advanced | Page 13 of 14
+                                                  J205/02 Mark Scheme | Predicted Paper · Advanced
 
                      ASSESSMENT OBJECTIVE GRID (AO)
               AO1a   AO1b        AO2       AO3a      AO3b           Total   Quantitative skills
@@ -694,4 +694,4 @@ Paper total    14     16          26        15          9            80         
                                END OF MARK SCHEME
 
 
-                           Mark Scheme — Advanced | Page 14 of 14
+                           Mark Scheme · Advanced | Page 14 of 14

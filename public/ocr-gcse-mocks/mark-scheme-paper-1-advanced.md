@@ -12,14 +12,14 @@ Oxford Cambridge and RSA
                        (evaluation). Six-mark questions are marked using three levels.
 
 How to use levels of response
-a. To determine the level — start at the highest level and work down until you reach the level that
+a. To determine the level · start at the highest level and work down until you reach the level that
 matches the answer.
 b. To determine the mark within the level:
-   • On the borderline of this level and the one below — at the bottom of the level
-   • Just enough achievement for this level — above the bottom of the level
-   • Meets the criteria with slight inconsistency — middle/above middle of the level
-   • Consistently meets the criteria for this level — at the top of the level
-                               SECTION A — Multiple Choice
+   • On the borderline of this level and the one below · at the bottom of the level
+   • Just enough achievement for this level · above the bottom of the level
+   • Meets the criteria with slight inconsistency · middle/above middle of the level
+   • Consistently meets the criteria for this level · at the top of the level
+                               SECTION A · Multiple Choice
            1 mark per question. No mark is awarded for contradictory or multiple answers.
 
 Question          Key             AO           Quantitative skills
@@ -63,8 +63,8 @@ Question          Key             AO           Quantitative skills
   19               A             AO1b
 
   20               B              AO2
-SECTION B — Extended Response
-Question 21 — The UK housing market
+SECTION B · Extended Response
+Question 21 · The UK housing market
 
 Questio   Answer                                            Mar   Guidance
 n                                                           k
@@ -224,7 +224,7 @@ n                                                          k
                                                                  unsupported statements.
                                                                  0 marks
                                                                  No work worthy of credit.
-Question 22 — A car parts manufacturer
+Question 22 · A car parts manufacturer
 
  Questio   Answer                                          Mar   Guidance
  n                                                         k
@@ -356,7 +356,7 @@ n                                                         k
                                                                 unsupported statements.
                                                                 0 marks
                                                                 No work worthy of credit.
-Question 23 — A multinational coffee chain
+Question 23 · A multinational coffee chain
 
  Questio   Answer                                             Mar   Guidance
  n                                                            k
