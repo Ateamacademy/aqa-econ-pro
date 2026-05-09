@@ -38,7 +38,7 @@ export function PremiumGate({ feature, description, children }: PremiumGateProps
         <div className="mx-auto h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
           <Lock className="h-6 w-6 text-primary" />
         </div>
-        <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+        <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-3 tracking-tight">
           {feature} is a Pro feature
         </h1>
         <p className="text-sm text-muted-foreground mb-8 max-w-md mx-auto leading-relaxed">

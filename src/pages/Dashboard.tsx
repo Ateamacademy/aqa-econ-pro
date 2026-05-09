@@ -83,7 +83,7 @@ export default function Dashboard() {
     return (
       <div className="min-h-[70vh] flex flex-col items-center justify-center gap-4 px-4 bg-background">
         <Lock className="h-12 w-12 text-muted-foreground" />
-        <h1 className="text-2xl font-bold text-foreground">Sign in to view your dashboard</h1>
+        <h1 className="text-2xl font-bold text-foreground tracking-tight">Sign in to view your dashboard</h1>
         <Button onClick={() => navigate("/auth")}>Sign In</Button>
       </div>
     );
@@ -151,7 +151,7 @@ export default function Dashboard() {
       <div className="flex-1 min-w-0">
         {/* Top bar */}
         <div className="sticky top-16 z-30 bg-background/80 backdrop-blur-xl border-b border-border px-6 py-3 flex items-center justify-between gap-4">
-          <h1 className="text-lg font-bold text-foreground">Dashboard</h1>
+          <h1 className="text-lg font-bold text-foreground tracking-tight">Dashboard</h1>
           <div className="flex-1" />
           <div className="flex items-center gap-3 shrink-0">
             <button className="text-muted-foreground hover:text-foreground transition-colors">

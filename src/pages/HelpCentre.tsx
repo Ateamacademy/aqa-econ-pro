@@ -15,7 +15,7 @@ const faqs = [
 export default function HelpCentre() {
   return (
     <div className="container max-w-3xl py-16 px-4">
-      <h1 className="text-3xl font-bold mb-2">Help Centre</h1>
+      <h1 className="text-3xl font-bold mb-2 tracking-tight">Help Centre</h1>
       <p className="text-muted-foreground mb-10">Find answers to common questions below.</p>
       <Accordion type="single" collapsible className="mb-10">
         {faqs.map((f, i) => (

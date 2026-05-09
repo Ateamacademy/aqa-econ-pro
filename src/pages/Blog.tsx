@@ -14,7 +14,7 @@ const posts = [
 export default function Blog() {
   return (
     <div className="container max-w-4xl py-16 px-4">
-      <h1 className="text-3xl font-bold mb-2">Blog</h1>
+      <h1 className="text-3xl font-bold mb-2 tracking-tight">Blog</h1>
       <p className="text-muted-foreground mb-10">Revision tips, exam strategies & Economics insights.</p>
       <div className="grid gap-5">
         {posts.map((p) => (

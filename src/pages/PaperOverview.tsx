@@ -26,7 +26,7 @@ export default function PaperOverview() {
       </Button>
 
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-foreground mb-2">{paper.title}</h1>
+        <h1 className="text-2xl font-bold text-foreground mb-2 tracking-tight">{paper.title}</h1>
         <div className="flex items-center gap-3 text-sm text-muted-foreground">
           <span className="flex items-center gap-1"><Clock className="h-4 w-4" /> {paper.timeMinutes} minutes</span>
           <span className="flex items-center gap-1"><FileText className="h-4 w-4" /> {paper.totalMarks} marks</span>
