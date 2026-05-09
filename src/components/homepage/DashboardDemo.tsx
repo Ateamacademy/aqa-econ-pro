@@ -214,26 +214,48 @@ function GrowthChart() {
           d={path}
           fill="none"
           stroke="url(#trajGrad)"
-          strokeWidth="2"
+          strokeWidth="2.2"
           strokeLinecap="round"
           strokeLinejoin="round"
           vectorEffect="non-scaling-stroke"
           style={{ filter: "drop-shadow(0 0 6px hsl(var(--magenta-pop) / 0.6))" }}
           initial={{ pathLength: 0 }}
           animate={inView ? { pathLength: 1 } : {}}
-          transition={{ duration: 1.6, delay: 0.4, ease }}
-        />
-        <motion.circle
-          cx={last.x}
-          cy={last.y}
-          r="2.4"
-          fill="hsl(var(--magenta-pop))"
-          style={{ filter: "drop-shadow(0 0 6px hsl(var(--magenta-pop)))" }}
-          initial={{ scale: 0, opacity: 0 }}
-          animate={inView ? { scale: [0, 1.5, 1], opacity: 1 } : {}}
-          transition={{ duration: 0.7, delay: 1.9, ease }}
+          transition={{ duration: 3.2, delay: 0.4, ease: "easeInOut" }}
         />
       </svg>
+
+      {/* Animated arrowhead riding to A* */}
+      <motion.div
+        className="absolute pointer-events-none"
+        style={{
+          left: `${last.x}%`,
+          bottom: `${data[data.length - 1].v}%`,
+          translateX: "-50%",
+          translateY: "-50%",
+        }}
+        initial={{ opacity: 0, scale: 0.4 }}
+        animate={inView ? { opacity: 1, scale: 1 } : {}}
+        transition={{ duration: 0.6, delay: 3.4, ease }}
+      >
+        <motion.div
+          animate={{ y: [0, -3, 0] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          style={{
+            filter: "drop-shadow(0 0 8px hsl(var(--magenta-pop) / 0.9))",
+          }}
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style={{ transform: "rotate(-35deg)" }}>
+            <path
+              d="M5 19 L19 5 M19 5 H10 M19 5 V14"
+              stroke="hsl(var(--magenta-pop))"
+              strokeWidth="2.6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
