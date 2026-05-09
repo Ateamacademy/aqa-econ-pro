@@ -259,7 +259,7 @@ export default function Index() {
               <span
                 className="inline-block text-5xl md:text-6xl lg:text-7xl text-amber-300 animate-pulse"
                 style={{
-                  fontFamily: "'Permanent Marker','Patrick Hand','Marker Felt','Bradley Hand',cursive",
+                  fontFamily: "'Caveat','Patrick Hand','Bradley Hand',cursive",
                   transform: "rotate(-7deg)",
                   textShadow: "0 3px 18px rgba(251,191,36,0.55)",
                   letterSpacing: "0.02em",
