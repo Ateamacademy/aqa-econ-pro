@@ -1,5 +1,5 @@
-import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { motion, useInView, useMotionValue, useTransform, animate, useScroll, useSpring } from "framer-motion";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { Flame, Trophy, TrendingUp, Target, Sparkles, Zap, CheckCircle2 } from "lucide-react";
 
 const ease = [0.25, 0.4, 0.25, 1] as [number, number, number, number];
