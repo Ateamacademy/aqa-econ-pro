@@ -145,7 +145,8 @@ export default function Auth() {
         }
         return;
       }
-      toast.success("Account created! Check your email to verify your account.");
+      toast.success("Account created · welcome!");
+      navigate("/");
     } catch {
       toast.error("Network error. Please check your connection.");
     } finally {
