@@ -24,13 +24,13 @@ export const MagicLinkEmail = ({
 }: MagicLinkEmailProps) => (
   <Html lang="en" dir="ltr">
     <Head />
-    <Preview>Your EconAce login link</Preview>
+    <Preview>Your Econ Rev login link</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Text style={logo}>📊 EconAce</Text>
+        <Text style={logo}>📊 Econ Rev</Text>
         <Heading style={h1}>Your login link</Heading>
         <Text style={text}>
-          Click below to log in to EconAce. This link will expire shortly.
+          Click below to log in to Econ Rev. This link will expire shortly.
         </Text>
         <Button style={button} href={confirmationUrl}>
           Log In

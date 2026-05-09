@@ -19,10 +19,10 @@ interface ReauthenticationEmailProps {
 export const ReauthenticationEmail = ({ token }: ReauthenticationEmailProps) => (
   <Html lang="en" dir="ltr">
     <Head />
-    <Preview>Your EconAce verification code</Preview>
+    <Preview>Your Econ Rev verification code</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Text style={logo}>📊 EconAce</Text>
+        <Text style={logo}>📊 Econ Rev</Text>
         <Heading style={h1}>Verification code</Heading>
         <Text style={text}>Use the code below to confirm your identity:</Text>
         <Text style={codeStyle}>{token}</Text>
