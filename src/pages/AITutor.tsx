@@ -342,7 +342,7 @@ export default function AITutor() {
           </p>
         </div>
       </div>
-      <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="AI Tutor questions" />
+      <UpgradeModal open={showUpgrade} onOpenChange={setShowUpgrade} feature="24/7 Tutor questions" />
     </div>
   );
 }

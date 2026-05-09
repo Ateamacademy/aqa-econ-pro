@@ -29,13 +29,13 @@ const BOARD_OPTIONS: { value: Board; label: string }[] = [
 ];
 
 /**
- * Diagnostic Grade Calculator — proper board-aligned marking.
- *  Q1 — Calculation (2)        : automatic numeric + formatting check
- *  Q2 — MCQ (1)                : automatic
- *  Q3 — MCQ (1)                : automatic
- *  Q4 — 4-mark explain         : marked by examiner edge function
- *  Q5 — 15-mark essay+diagram  : examiner edge function (vision verifies diagram)
- *  Q6 — 6-mark diagram-only    : pure diagram, vision-marked
+ * Diagnostic Grade Calculator, proper board-aligned marking.
+ *  Q1, Calculation (2)        : automatic numeric + formatting check
+ *  Q2, MCQ (1)                : automatic
+ *  Q3, MCQ (1)                : automatic
+ *  Q4, 4-mark explain         : marked by examiner edge function
+ *  Q5, 15-mark essay+diagram  : examiner edge function (vision verifies diagram)
+ *  Q6, 6-mark diagram-only    : pure diagram, vision-marked
  *  Total: 29 marks
  */
 
@@ -102,12 +102,12 @@ const Q6 = {
   totalMarks: 6,
   rubric: [
     "Diagram-only marking (vision). Award marks against components actually drawn:",
-    "1 mark — Both axes labelled correctly (Price on Y, Quantity on X).",
-    "1 mark — Upward-sloping supply (S) and downward-sloping demand (D) curves.",
-    "1 mark — A second supply curve (S+tax) clearly parallel & shifted left/up of S.",
-    "1 mark — Original equilibrium (P₁, Q₁) and new equilibrium (P₂, Q₂) both labelled.",
-    "1 mark — Vertical tax wedge shown between S+tax and S at Q₂ (or labelled 'tax').",
-    "1 mark — Consumer incidence and producer incidence regions clearly indicated.",
+    "1 mark, Both axes labelled correctly (Price on Y, Quantity on X).",
+    "1 mark, Upward-sloping supply (S) and downward-sloping demand (D) curves.",
+    "1 mark, A second supply curve (S+tax) clearly parallel & shifted left/up of S.",
+    "1 mark, Original equilibrium (P₁, Q₁) and new equilibrium (P₂, Q₂) both labelled.",
+    "1 mark, Vertical tax wedge shown between S+tax and S at Q₂ (or labelled 'tax').",
+    "1 mark, Consumer incidence and producer incidence regions clearly indicated.",
     "If no image is uploaded → 0 marks. If image is blank or off-topic → 0 marks.",
   ].join(" "),
 };
@@ -133,9 +133,9 @@ const BANDS: GradeBand[] = [
   { grade: "A",  min: 73, label: "Strong",       color: "text-success",     blurb: "Excellent foundations. Sharpen evaluation and diagram precision to push into A*." },
   { grade: "B",  min: 60, label: "Solid",        color: "text-primary",     blurb: "Good base. The next jump comes from deeper analysis chains and clearer judgement." },
   { grade: "C",  min: 48, label: "Developing",   color: "text-warning",     blurb: "Knowledge is forming but application and analysis need more practice." },
-  { grade: "D",  min: 36, label: "Emerging",     color: "text-warning",     blurb: "Build core definitions and diagram accuracy first — that unlocks the higher marks." },
+  { grade: "D",  min: 36, label: "Emerging",     color: "text-warning",     blurb: "Build core definitions and diagram accuracy first, that unlocks the higher marks." },
   { grade: "E",  min: 22, label: "Foundational", color: "text-destructive", blurb: "Start with structured notes and topic-by-topic practice to lock in the basics." },
-  { grade: "U",  min: 0,  label: "Below E",      color: "text-destructive", blurb: "We'll start from first principles — predicted papers + study notes daily." },
+  { grade: "U",  min: 0,  label: "Below E",      color: "text-destructive", blurb: "We'll start from first principles, predicted papers + study notes daily." },
 ];
 const gradeFor = (m: number) => BANDS.find((b) => (m / TOTAL) * 100 >= b.min) ?? BANDS[BANDS.length - 1];
 
@@ -197,7 +197,7 @@ export default function DiagnosticCalculator() {
         return;
       }
       if (file.size > 6 * 1024 * 1024) {
-        toast.error("Image too large — please keep it under 6 MB.");
+        toast.error("Image too large, please keep it under 6 MB.");
         return;
       }
       const reader = new FileReader();
@@ -206,7 +206,7 @@ export default function DiagnosticCalculator() {
         setName(file.name);
         onLoaded?.();
       };
-      reader.onerror = () => toast.error("Couldn't read that image — try another file.");
+      reader.onerror = () => toast.error("Couldn't read that image, try another file.");
       reader.readAsDataURL(file);
     };
   }
@@ -271,7 +271,7 @@ export default function DiagnosticCalculator() {
 
   return (
     <>
-      {/* Exam board picker — sits above the calculator card */}
+      {/* Exam board picker, sits above the calculator card */}
       <div className="mb-5 flex flex-col items-center text-center">
         <label className="text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground block mb-2">
           Pick your exam board
@@ -305,7 +305,7 @@ export default function DiagnosticCalculator() {
               Diagnostic Grade Calculator
             </h3>
             <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-              Six questions across the full skill range — including a written essay with diagram, and a separate diagram-only task. Your answers and diagrams are marked using your exam board's official mark scheme. We'll predict your current grade based on your total marks (out of {TOTAL}).
+              Six questions across the full skill range, including a written essay with diagram, and a separate diagram-only task. Your answers and diagrams are marked using your exam board's official mark scheme. We'll predict your current grade based on your total marks (out of {TOTAL}).
             </p>
           </div>
         </div>
@@ -362,10 +362,10 @@ export default function DiagnosticCalculator() {
 
               <div className="mt-4 rounded-xl border border-border bg-popover/40 p-4">
                 <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">
-                  Diagram — labour-market diagram for your essay
+                  Diagram, labour-market diagram for your essay
                 </p>
                 <div className="flex gap-2 mb-3">
-                  {[{ label: "Yes — I'll add one", val: true }, { label: "No diagram", val: false }].map((opt) => (
+                  {[{ label: "Yes, I'll add one", val: true }, { label: "No diagram", val: false }].map((opt) => (
                     <button
                       key={opt.label}
                       onClick={() => {
@@ -420,7 +420,7 @@ export default function DiagnosticCalculator() {
               <p className="text-base text-foreground leading-relaxed mb-4">{Q6.prompt}</p>
               <div className="rounded-xl border border-border bg-popover/40 p-4">
                 <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">
-                  Draw or upload — examiner marks the diagram itself
+                  Draw or upload, examiner marks the diagram itself
                 </p>
                 <DiagramInput
                   mode={a6DiagramMode}
@@ -624,7 +624,7 @@ function Results({
 
 function ShareBar({ grade, total, totalMax }: { grade: string; total: number; totalMax: number }) {
   const url = typeof window !== "undefined" ? `${window.location.origin}/#diagnostic` : "https://econrev.co/#diagnostic";
-  const text = `I just scored ${total}/${totalMax} on the Econ Rev diagnostic — predicted grade ${grade}. Think you can beat me?`;
+  const text = `I just scored ${total}/${totalMax} on the Econ Rev diagnostic, predicted grade ${grade}. Think you can beat me?`;
   const enc = encodeURIComponent;
 
   const nativeShare = async () => {
@@ -635,7 +635,7 @@ function ShareBar({ grade, total, totalMax }: { grade: string; total: number; to
     copyLink();
   };
   const copyLink = async () => {
-    try { await navigator.clipboard.writeText(`${text} ${url}`); toast.success("Link copied — share it with a friend!"); }
+    try { await navigator.clipboard.writeText(`${text} ${url}`); toast.success("Link copied, share it with a friend!"); }
     catch { toast.error("Couldn't copy. Long-press the link instead."); }
   };
 
@@ -678,7 +678,7 @@ function ShareBar({ grade, total, totalMax }: { grade: string; total: number; to
   );
 }
 
-/* ───── Diagram input — draw or upload ───── */
+/* ───── Diagram input, draw or upload ───── */
 
 function DiagramInput({
   mode, onModeChange, image, fileName,
@@ -741,7 +741,7 @@ function DiagramInput({
             <>
               <Upload className="h-5 w-5 text-muted-foreground" />
               <p className="text-xs font-semibold text-foreground">Upload diagram (PNG / JPG)</p>
-              <p className="text-[10px] text-muted-foreground">Hand-drawn or digital — vision will verify it</p>
+              <p className="text-[10px] text-muted-foreground">Hand-drawn or digital, vision will verify it</p>
             </>
           )}
           <input

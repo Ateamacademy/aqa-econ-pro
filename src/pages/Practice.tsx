@@ -56,7 +56,7 @@ export default function Practice() {
           <Lock className="h-7 w-7 text-primary" />
         </div>
         <h1 className="text-3xl font-bold tracking-tight mb-3">Sign in to practice</h1>
-        <p className="text-muted-foreground mb-8 max-w-md mx-auto">Generate exam-style questions and get instant AI marking.</p>
+        <p className="text-muted-foreground mb-8 max-w-md mx-auto">Generate exam-style questions and get instant marking.</p>
         <Button onClick={() => navigate("/auth")} size="lg" className="rounded-full px-10 shadow-lg shadow-primary/20">Sign In</Button>
       </div>
     );
