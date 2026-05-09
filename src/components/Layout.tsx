@@ -67,6 +67,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Reveal homepage app menu 5s after page load
+  useEffect(() => {
+    if (!isHomepage) { setMenuRevealed(false); return; }
+    const t = setTimeout(() => setMenuRevealed(true), 5000);
+    return () => clearTimeout(t);
+  }, [isHomepage]);
+
   const currentNavLinks = isHomepage ? homepageNavLinks : navLinks;
 
   return (
