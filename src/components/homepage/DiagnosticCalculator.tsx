@@ -150,6 +150,10 @@ export default function DiagnosticCalculator() {
   const [a5HasDiagram, setA5HasDiagram] = useState<boolean | null>(null);
   const [a5DiagramImage, setA5DiagramImage] = useState<string | null>(null); // base64 data URL
   const [a5DiagramFileName, setA5DiagramFileName] = useState<string | null>(null);
+  const [a5DiagramMode, setA5DiagramMode] = useState<"draw" | "upload">("draw");
+  const [a6DiagramImage, setA6DiagramImage] = useState<string | null>(null);
+  const [a6DiagramFileName, setA6DiagramFileName] = useState<string | null>(null);
+  const [a6DiagramMode, setA6DiagramMode] = useState<"draw" | "upload">("draw");
 
   const [marking, setMarking] = useState(false);
   const [aiResults, setAiResults] = useState<AiItemResult[] | null>(null);
@@ -159,12 +163,10 @@ export default function DiagnosticCalculator() {
   const m1 = useMemo(() => {
     const trimmed = a1.trim();
     if (!trimmed) return 0;
-    // Parse the number, ignoring %, spaces, etc.
     const cleaned = trimmed.replace(/[%\s,]/g, "");
     const n = parseFloat(cleaned);
     if (!Number.isFinite(n)) return 0;
     if (Math.abs(n - Q1.correct) > Q1.tolerance) return 0;
-    // Need correct value AND formatting (% sign OR 1+ decimal place)
     const hasPct = /%/.test(trimmed);
     const hasDecimal = /\.\d/.test(trimmed);
     return hasPct && hasDecimal ? 2 : 1;
@@ -173,37 +175,43 @@ export default function DiagnosticCalculator() {
   const m3 = a3 === Q3.correctIndex ? 1 : 0;
   const m4 = aiResults?.find((r) => r.id === "q4")?.marks ?? 0;
   const m5 = aiResults?.find((r) => r.id === "q5")?.marks ?? 0;
-  const total = m1 + m2 + m3 + m4 + m5;
+  const m6 = aiResults?.find((r) => r.id === "q6")?.marks ?? 0;
+  const total = m1 + m2 + m3 + m4 + m5 + m6;
   const band = gradeFor(total);
 
-  const next = () => setStep((s) => Math.min(5, s + 1) as Step);
+  const next = () => setStep((s) => Math.min(6, s + 1) as Step);
   const back = () => setStep((s) => Math.max(0, s - 1) as Step);
   const reset = () => {
     setStep(0); setA1(""); setA2(null); setA3(null);
     setA4Text(""); setA5Text(""); setA5HasDiagram(null);
     setA5DiagramImage(null); setA5DiagramFileName(null);
+    setA6DiagramImage(null); setA6DiagramFileName(null);
     setAiResults(null); setError(null);
   };
 
-  async function handleDiagramFile(file: File | null) {
-    if (!file) return;
-    if (!file.type.startsWith("image/")) {
-      toast.error("Please upload an image file (PNG / JPG).");
-      return;
-    }
-    if (file.size > 6 * 1024 * 1024) {
-      toast.error("Image too large — please keep it under 6 MB.");
-      return;
-    }
-    const reader = new FileReader();
-    reader.onload = () => {
-      setA5DiagramImage(typeof reader.result === "string" ? reader.result : null);
-      setA5DiagramFileName(file.name);
-      setA5HasDiagram(true);
+  function makeFileHandler(setImg: (s: string | null) => void, setName: (s: string | null) => void, onLoaded?: () => void) {
+    return async (file: File | null) => {
+      if (!file) return;
+      if (!file.type.startsWith("image/")) {
+        toast.error("Please upload an image file (PNG / JPG).");
+        return;
+      }
+      if (file.size > 6 * 1024 * 1024) {
+        toast.error("Image too large — please keep it under 6 MB.");
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImg(typeof reader.result === "string" ? reader.result : null);
+        setName(file.name);
+        onLoaded?.();
+      };
+      reader.onerror = () => toast.error("Couldn't read that image — try another file.");
+      reader.readAsDataURL(file);
     };
-    reader.onerror = () => toast.error("Couldn't read that image — try another file.");
-    reader.readAsDataURL(file);
   }
+  const handleQ5File = makeFileHandler(setA5DiagramImage, setA5DiagramFileName, () => setA5HasDiagram(true));
+  const handleQ6File = makeFileHandler(setA6DiagramImage, setA6DiagramFileName);
 
   async function submitForMarking() {
     setMarking(true); setError(null);
@@ -222,13 +230,22 @@ export default function DiagnosticCalculator() {
               hasDiagram: a5HasDiagram === true && !!a5DiagramImage,
               diagramImage: a5DiagramImage ?? undefined,
             },
+            {
+              id: "q6",
+              prompt: Q6.prompt,
+              totalMarks: Q6.totalMarks,
+              rubric: Q6.rubric,
+              answer: "",
+              hasDiagram: !!a6DiagramImage,
+              diagramImage: a6DiagramImage ?? undefined,
+            },
           ],
         },
       });
       if (error) throw new Error(error.message);
       if (!data?.results) throw new Error("Marking service returned no results");
       setAiResults(data.results);
-      setStep(5);
+      setStep(6);
     } catch (e) {
       const msg = e instanceof Error ? e.message : "Marking failed";
       setError(msg);
@@ -245,11 +262,12 @@ export default function DiagnosticCalculator() {
       case 2: return a3 !== null;
       case 3: return a4Text.trim().length > 20;
       case 4: return a5Text.trim().length > 50 && a5HasDiagram !== null;
+      case 5: return !!a6DiagramImage;
       default: return true;
     }
   })();
 
-  const stepLabels = ["Calculation", "MCQ 1", "MCQ 2", "Short answer", "Essay + diagram"];
+  const stepLabels = ["Calculation", "MCQ 1", "MCQ 2", "Short answer", "Essay + diagram", "Diagram only"];
 
   return (
     <>
