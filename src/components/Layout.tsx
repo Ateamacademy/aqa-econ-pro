@@ -67,9 +67,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Reveal homepage app menu 5s after page load
+  // Reveal app menu: instantly on inner pages, 5s delay on homepage
   useEffect(() => {
-    if (!isHomepage) { setMenuRevealed(false); return; }
+    if (!isHomepage) { setMenuRevealed(true); return; }
+    setMenuRevealed(false);
     const t = setTimeout(() => setMenuRevealed(true), 5000);
     return () => clearTimeout(t);
   }, [isHomepage]);
