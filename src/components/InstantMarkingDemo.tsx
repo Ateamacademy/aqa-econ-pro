@@ -237,7 +237,7 @@ export const InstantMarkingDemo = () => {
       />
 
       {/* Header */}
-      <div className="relative z-10 flex items-center justify-between px-8 pt-7">
+      <div className="relative z-10 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 px-5 md:px-8 pt-5 md:pt-7">
         <div className="flex items-center gap-3">
           <span
             className="inline-flex h-2.5 w-2.5 rounded-full"
@@ -247,7 +247,7 @@ export const InstantMarkingDemo = () => {
             Live
           </span>
         </div>
-        <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/50">
+        <div className="font-mono text-[10px] md:text-[11px] uppercase tracking-[0.18em] md:tracking-[0.2em] text-white/50">
           AQA · Paper 2 · Q4 · 25 marks
         </div>
       </div>
