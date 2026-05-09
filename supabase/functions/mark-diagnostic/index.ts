@@ -13,12 +13,12 @@ type Board =
   | "wjec" | "eduqas" | "aqa-gcse" | "cambridge-igcse" | "edexcel-igcse" | "ocr-gcse";
 
 interface DiagnosticItem {
-  id: "q4" | "q5";
+  id: "q4" | "q5" | "q6";
   prompt: string;
   totalMarks: number;
   answer: string;
-  hasDiagram?: boolean; // q5 only
-  diagramImage?: string; // q5 only — base64 data URL
+  hasDiagram?: boolean; // q5, q6
+  diagramImage?: string; // q5, q6 — base64 data URL
   rubric: string;
 }
 
