@@ -17,7 +17,6 @@ const navLinks = [
   { to: "/predicted", label: "Predicted Papers" },
   { to: "/papers", label: "Papers" },
   { to: "/dashboard", label: "Dashboard" },
-  { to: "/dashboard", label: "Dashboard" },
 ];
 
 const homepageNavLinks = [
