@@ -24,10 +24,10 @@ export const RecoveryEmail = ({
 }: RecoveryEmailProps) => (
   <Html lang="en" dir="ltr">
     <Head />
-    <Preview>Reset your EconAce password</Preview>
+    <Preview>Reset your Econ Rev password</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Text style={logo}>📊 EconAce</Text>
+        <Text style={logo}>📊 Econ Rev</Text>
         <Heading style={h1}>Reset your password</Heading>
         <Text style={text}>
           We received a request to reset your password. Click below to choose a new one.

@@ -29,14 +29,14 @@ export const SignupEmail = ({
 }: SignupEmailProps) => (
   <Html lang="en" dir="ltr">
     <Head />
-    <Preview>Welcome to EconAce – confirm your email</Preview>
+    <Preview>Welcome to Econ Rev – confirm your email</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Text style={logo}>📊 EconAce</Text>
+        <Text style={logo}>📊 Econ Rev</Text>
         <Heading style={h1}>Welcome aboard!</Heading>
         <Text style={text}>
           Thanks for signing up for{' '}
-          <Link href={siteUrl} style={link}><strong>EconAce</strong></Link>!
+          <Link href={siteUrl} style={link}><strong>Econ Rev</strong></Link>!
           You're one step away from smashing your economics exams.
         </Text>
         <Text style={text}>

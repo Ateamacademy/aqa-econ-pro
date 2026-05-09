@@ -27,14 +27,14 @@ export const InviteEmail = ({
 }: InviteEmailProps) => (
   <Html lang="en" dir="ltr">
     <Head />
-    <Preview>You've been invited to join EconAce</Preview>
+    <Preview>You've been invited to join Econ Rev</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Text style={logo}>📊 EconAce</Text>
+        <Text style={logo}>📊 Econ Rev</Text>
         <Heading style={h1}>You've been invited</Heading>
         <Text style={text}>
           You've been invited to join{' '}
-          <Link href={siteUrl} style={link}><strong>EconAce</strong></Link>.
+          <Link href={siteUrl} style={link}><strong>Econ Rev</strong></Link>.
           Click below to accept and create your account.
         </Text>
         <Button style={button} href={confirmationUrl}>

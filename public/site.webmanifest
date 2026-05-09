@@ -1,0 +1,14 @@
+{
+  "name": "Econ Rev",
+  "short_name": "Econ Rev",
+  "description": "Past papers, predicted papers, instant marking and a 24/7 tutor for A-Level and GCSE Economics.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#080B14",
+  "theme_color": "#080B14",
+  "icons": [
+    { "src": "/econ-rev-logo.jpg", "sizes": "192x192", "type": "image/jpeg" },
+    { "src": "/econ-rev-logo.jpg", "sizes": "512x512", "type": "image/jpeg" }
+  ]
+}
