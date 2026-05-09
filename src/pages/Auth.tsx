@@ -10,7 +10,8 @@ import { toast } from "sonner";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 import { motion } from "framer-motion";
-import { Eye, EyeOff, Mail, Lock, Loader2, Sparkles, TrendingUp, BookOpen, Award, CheckCircle2, BarChart3 } from "lucide-react";
+import { Eye, EyeOff, Mail, Lock, Loader2, Sparkles, TrendingUp, BookOpen, Award, CheckCircle2 } from "lucide-react";
+import econRevLogo from "@/assets/econ-rev-logo.jpg";
 
 export default function Auth() {
   const { user, profile } = useAuth();
