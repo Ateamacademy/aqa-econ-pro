@@ -139,12 +139,12 @@ function GrowthChart() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
   const data = [
-    { v: 42, g: "E" },
-    { v: 50, g: "D" },
-    { v: 58, g: "C" },
-    { v: 66, g: "B" },
-    { v: 74, g: "A" },
-    { v: 86, g: "A*" },
+    { v: 22, g: "E" },
+    { v: 32, g: "D" },
+    { v: 46, g: "C" },
+    { v: 62, g: "B" },
+    { v: 78, g: "A" },
+    { v: 92, g: "A*" },
   ];
 
   const pts = data.map((d, i) => ({
