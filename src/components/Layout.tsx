@@ -94,17 +94,24 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Link>
 
           {/* Centre nav */}
-          <nav className="hidden lg:flex items-center gap-7 mx-auto">
+          <nav className="hidden lg:flex items-center gap-6 mx-auto">
             {isHomepage
-              ? homepageNavLinks.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+              ? navLinks.map((item, i) => (
+                  <motion.div
+                    key={item.to}
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 0.55, y: 0 }}
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.6 + i * 0.05, ease: [0.25, 0.4, 0.25, 1] }}
                   >
-                    {item.label}
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-                  </a>
+                    <Link
+                      to={item.to}
+                      className="text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+                    >
+                      {item.label}
+                      <span className="absolute -bottom-1 left-0 w-full h-px bg-primary/70 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                    </Link>
+                  </motion.div>
                 ))
               : navLinks.map((item) => {
                   const isActive = location.pathname === item.to;
