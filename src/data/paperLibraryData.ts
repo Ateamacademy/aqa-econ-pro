@@ -165,7 +165,7 @@ function buildLibrary(): LibraryPaper[] {
           paperTitle: p.title,
           difficulty: diff,
           set: setNum,
-          title: `${board.boardLabel} ${board.level} ${p.label} — Set ${setLetter}`,
+          title: `${board.boardLabel} ${board.level} ${p.label} · Set ${setLetter}`,
           description: `${diffLabel} difficulty. ${p.title}. ${DIFFICULTY_DESC[diff]}`,
           totalMarks: p.marks,
           duration: p.duration,
