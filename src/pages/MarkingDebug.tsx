@@ -16,7 +16,7 @@ export default function MarkingDebug() {
 
   return (
     <div className="max-w-4xl mx-auto px-5 py-12 space-y-8">
-      <h1 className="text-2xl font-bold text-foreground">Marking Debug & Integrity</h1>
+      <h1 className="text-2xl font-bold text-foreground tracking-tight">Marking Debug & Integrity</h1>
 
       {/* Cap rate monitor */}
       <Card>

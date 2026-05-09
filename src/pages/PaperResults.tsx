@@ -34,7 +34,7 @@ export default function PaperResults() {
         <Link to="/papers"><ArrowLeft className="h-3.5 w-3.5" /> Back to Papers</Link>
       </Button>
 
-      <h1 className="text-2xl font-bold text-foreground mb-2">{paper.title} · Results</h1>
+      <h1 className="text-2xl font-bold text-foreground mb-2 tracking-tight">{paper.title} · Results</h1>
       <p className="text-sm text-muted-foreground mb-8">
         Completed {new Date(resultData.timestamp).toLocaleDateString()}
       </p>

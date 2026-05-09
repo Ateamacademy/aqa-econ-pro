@@ -110,7 +110,7 @@ export default function AdminAiUsage() {
           <div className="flex items-center gap-2 text-purple-300 text-xs font-bold uppercase tracking-wider">
             <Sparkles className="h-3.5 w-3.5" /> Admin
           </div>
-          <h1 className="text-2xl font-bold text-foreground mt-1">AI marking usage</h1>
+          <h1 className="text-2xl font-bold text-foreground mt-1 tracking-tight">AI marking usage</h1>
           <p className="text-sm text-muted-foreground mt-1">
             Last 30 days of Tier 3 AI marking calls. Cache hits don't cost API quota.
           </p>

@@ -99,7 +99,7 @@ export function AqaMarkingReport({
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div>
             <div className="text-xs font-mono text-muted-foreground">{paperCode}</div>
-            <h1 className="text-2xl font-bold text-foreground mt-0.5">{paperTitle}</h1>
+            <h1 className="text-2xl font-bold text-foreground mt-0.5 tracking-tight">{paperTitle}</h1>
             <div className="text-xs text-muted-foreground mt-1.5 flex flex-wrap gap-3">
               {studentName && <span>Student: <span className="text-foreground/80">{studentName}</span></span>}
               <span>Attempted: <span className="text-foreground/80">{new Date(attemptedAt).toLocaleString()}</span></span>

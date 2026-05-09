@@ -110,7 +110,7 @@ export default function ParentDashboard() {
     return (
       <div className="min-h-[70vh] flex flex-col items-center justify-center gap-4 px-4">
         <Lock className="h-12 w-12 text-muted-foreground" />
-        <h1 className="text-2xl font-bold text-foreground">Sign in to view the Parent Dashboard</h1>
+        <h1 className="text-2xl font-bold text-foreground tracking-tight">Sign in to view the Parent Dashboard</h1>
         <p className="text-muted-foreground text-sm">Use the login credentials from your invite email.</p>
         <Button onClick={() => navigate("/auth")}>Sign In</Button>
       </div>
@@ -129,7 +129,7 @@ export default function ParentDashboard() {
     return (
       <div className="min-h-[70vh] flex flex-col items-center justify-center gap-4 px-4 text-center">
         <Users className="h-12 w-12 text-muted-foreground" />
-        <h1 className="text-2xl font-bold text-foreground">No Students Linked</h1>
+        <h1 className="text-2xl font-bold text-foreground tracking-tight">No Students Linked</h1>
         <p className="text-muted-foreground text-sm max-w-md">
           You haven't been linked to any student accounts yet. Ask your child to send you an invite from their dashboard.
         </p>
@@ -142,7 +142,7 @@ export default function ParentDashboard() {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-foreground flex items-center gap-2">
+          <h1 className="text-2xl font-bold text-foreground flex items-center gap-2 tracking-tight">
             <Users className="h-6 w-6 text-primary" />
             Parent Dashboard
           </h1>

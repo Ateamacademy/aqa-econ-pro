@@ -111,7 +111,7 @@ export default function AdminDeduplicationReport() {
     return (
       <div className="max-w-2xl mx-auto px-4 py-16 text-center">
         <ShieldCheck className="h-10 w-10 text-muted-foreground mx-auto mb-3" />
-        <h1 className="text-xl font-bold text-foreground">Admin only</h1>
+        <h1 className="text-xl font-bold text-foreground tracking-tight">Admin only</h1>
         <p className="text-sm text-muted-foreground mt-1">
           The deduplication report is restricted to platform admins.
         </p>
@@ -125,7 +125,7 @@ export default function AdminDeduplicationReport() {
         <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-[11px] font-semibold mb-2">
           <ShieldCheck className="h-3 w-3" /> Admin
         </div>
-        <h1 className="text-2xl font-bold text-foreground">Deduplication report</h1>
+        <h1 className="text-2xl font-bold text-foreground tracking-tight">Deduplication report</h1>
         <p className="text-sm text-muted-foreground mt-1">
           Cross-set similarity audit for predicted papers. Pairs above the threshold are listed below.
         </p>

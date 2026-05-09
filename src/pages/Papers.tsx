@@ -292,7 +292,7 @@ function BoardList({
   return (
     <div className="max-w-5xl mx-auto px-5 py-12">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-foreground mb-2">{title}</h1>
+        <h1 className="text-2xl font-bold text-foreground mb-2 tracking-tight">{title}</h1>
         <p className="text-sm text-muted-foreground">{description}</p>
       </div>
 
@@ -546,7 +546,7 @@ function PapersInner() {
   return (
     <div className="max-w-4xl mx-auto px-5 py-12">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-foreground mb-2">Predicted Papers</h1>
+        <h1 className="text-2xl font-bold text-foreground mb-2 tracking-tight">Predicted Papers</h1>
         <p className="text-sm text-muted-foreground">Full timed papers with rubric-driven instant marking. See exactly how an examiner would grade your work.</p>
       </div>
       <FreeTierBanner premium={premium} />

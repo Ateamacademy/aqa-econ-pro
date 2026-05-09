@@ -370,7 +370,7 @@ export default function DirectorDashboard() {
     return (
       <div className="container py-20 text-center">
         <ShieldCheck className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-        <h1 className="text-xl font-bold mb-2">Sign in required</h1>
+        <h1 className="text-xl font-bold mb-2 tracking-tight">Sign in required</h1>
         <p className="text-sm text-muted-foreground">Please sign in to access the Director Dashboard.</p>
       </div>
     );
@@ -379,7 +379,7 @@ export default function DirectorDashboard() {
     return (
       <div className="container py-20 text-center">
         <AlertCircle className="h-12 w-12 text-destructive mx-auto mb-4" />
-        <h1 className="text-xl font-bold mb-2">Access Denied</h1>
+        <h1 className="text-xl font-bold mb-2 tracking-tight">Access Denied</h1>
         <p className="text-sm text-muted-foreground">Restricted to authorised team members.</p>
         <p className="text-xs text-muted-foreground/60 mt-2">Signed in as: {user.email}</p>
       </div>
@@ -396,7 +396,7 @@ export default function DirectorDashboard() {
     return (
       <div className="container py-20 text-center">
         <AlertCircle className="h-12 w-12 text-destructive mx-auto mb-4" />
-        <h1 className="text-xl font-bold mb-2">Error Loading Dashboard</h1>
+        <h1 className="text-xl font-bold mb-2 tracking-tight">Error Loading Dashboard</h1>
         <p className="text-sm text-muted-foreground mb-4">{error}</p>
         <Button onClick={fetchAll} variant="outline" size="sm">
           <RefreshCw className="h-4 w-4 mr-2" />Retry
