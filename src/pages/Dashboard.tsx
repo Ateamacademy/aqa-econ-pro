@@ -17,6 +17,7 @@ import Leaderboard from "@/components/dashboard/Leaderboard";
 import ActionCards from "@/components/dashboard/ActionCards";
 import ScoreDelta from "@/components/dashboard/ScoreDelta";
 import RecentPapersTable from "@/components/dashboard/RecentPapersTable";
+import AttemptHistoryPanel from "@/components/dashboard/AttemptHistoryPanel";
 import PerformanceOverTime from "@/components/dashboard/PerformanceOverTime";
 import StrengthWeakness from "@/components/dashboard/StrengthWeakness";
 import { motion } from "framer-motion";
@@ -225,6 +226,9 @@ export default function Dashboard() {
             <div className="space-y-6">
               <motion.div variants={fadeUp}>
                 <RecentPapersTable sessions={sessions} subject={subject} />
+              </motion.div>
+              <motion.div variants={fadeUp}>
+                <AttemptHistoryPanel />
               </motion.div>
               <motion.div variants={fadeUp}>
                 <StrengthWeakness sessions={sessions} subject={subject} />
