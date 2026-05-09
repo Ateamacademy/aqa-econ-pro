@@ -18,6 +18,7 @@ interface DiagnosticItem {
   totalMarks: number;
   answer: string;
   hasDiagram?: boolean; // q5 only
+  diagramImage?: string; // q5 only — base64 data URL
   rubric: string;
 }
 
@@ -199,9 +200,21 @@ function buildUser(item: DiagnosticItem, board: Board): string {
     item.answer || "(empty)",
   ];
   if (item.id === "q5") {
+    const imageProvided = !!item.diagramImage;
     lines.push("", `STUDENT REPORTS DIAGRAM DRAWN: ${item.hasDiagram ? "YES" : "NO"}`);
-    if (!item.hasDiagram) {
+    if (imageProvided) {
+      lines.push(
+        `A DIAGRAM IMAGE HAS BEEN ATTACHED. Use vision to verify it is a correct labour-market diagram:`,
+        `  • Y-axis labelled Wage rate (W); X-axis labelled Quantity of Labour (QL).`,
+        `  • Downward-sloping demand for labour (D=MRP) and upward-sloping supply (S).`,
+        `  • Equilibrium W*, Q*; horizontal NMW line clearly ABOVE W*.`,
+        `  • Excess supply (unemployment) gap shown between QD and QS at the NMW.`,
+        `If diagram is missing/incorrect components, deduct accordingly and DO NOT award the diagram-dependent marks.`,
+      );
+    } else if (!item.hasDiagram) {
       lines.push(`→ Apply this board's no-diagram cap (see HARD CAPS).`);
+    } else {
+      lines.push(`→ Student claims diagram was drawn but no image was uploaded — apply the no-diagram cap.`);
     }
     if (wc < 200) {
       lines.push(`⚠ Under 200 words for a 15-mark question — almost certainly cannot reach the top level/skill bands.`);
@@ -223,6 +236,14 @@ async function markItem(apiKey: string, item: DiagnosticItem, board: Board): Pro
     };
   }
 
+  const userText = buildUser(item, board);
+  const userContent: unknown = item.id === "q5" && item.diagramImage
+    ? [
+        { type: "text", text: userText },
+        { type: "image_url", image_url: { url: item.diagramImage } },
+      ]
+    : userText;
+
   const resp = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
     method: "POST",
     headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
@@ -230,7 +251,7 @@ async function markItem(apiKey: string, item: DiagnosticItem, board: Board): Pro
       model: "google/gemini-2.5-flash",
       messages: [
         { role: "system", content: buildSystem(board) },
-        { role: "user", content: buildUser(item, board) },
+        { role: "user", content: userContent },
       ],
       temperature: 0.1,
       response_format: { type: "json_object" },
@@ -247,10 +268,9 @@ async function markItem(apiKey: string, item: DiagnosticItem, board: Board): Pro
   const parsed = JSON.parse(text);
   let marks = Math.max(0, Math.min(item.totalMarks, Math.round(Number(parsed.marks) || 0)));
 
-  // Universal server-side enforcement: no-diagram cap on Q5 (board-specific cap %)
-  if (item.id === "q5" && item.hasDiagram === false) {
-    // Most boards cap at ~50%-67% with no diagram. Use 50% as floor (toughest cap)
-    // for boards where diagram is required (AQA, Edexcel, IB).
+  // Universal server-side enforcement: no-diagram cap on Q5 (only when no image was supplied).
+  // If an image is present we trust the vision model's judgement (already reflected in `marks`).
+  if (item.id === "q5" && !item.diagramImage && item.hasDiagram === false) {
     const noDiagramCaps: Partial<Record<Board, number>> = {
       "aqa": 7, "edexcel-a": 12, "edexcel-b": 8, "ocr": 7,
       "cambridge": 8, "ib": 9, "wjec": 9, "eduqas": 10,

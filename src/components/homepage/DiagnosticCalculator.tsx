@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowLeft, Check, RotateCcw, Sparkles, Target, Loader2, X, Share2, Twitter, MessageCircle, Link as LinkIcon, Mail } from "lucide-react";
+import { ArrowRight, ArrowLeft, Check, RotateCcw, Sparkles, Target, Loader2, X, Share2, Twitter, MessageCircle, Link as LinkIcon, Mail, Upload, Image as ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -130,6 +130,8 @@ export default function DiagnosticCalculator() {
   const [a4Text, setA4Text] = useState("");
   const [a5Text, setA5Text] = useState("");
   const [a5HasDiagram, setA5HasDiagram] = useState<boolean | null>(null);
+  const [a5DiagramImage, setA5DiagramImage] = useState<string | null>(null); // base64 data URL
+  const [a5DiagramFileName, setA5DiagramFileName] = useState<string | null>(null);
 
   const [marking, setMarking] = useState(false);
   const [aiResults, setAiResults] = useState<AiItemResult[] | null>(null);
@@ -161,8 +163,29 @@ export default function DiagnosticCalculator() {
   const reset = () => {
     setStep(0); setA1(""); setA2(null); setA3(null);
     setA4Text(""); setA5Text(""); setA5HasDiagram(null);
+    setA5DiagramImage(null); setA5DiagramFileName(null);
     setAiResults(null); setError(null);
   };
+
+  async function handleDiagramFile(file: File | null) {
+    if (!file) return;
+    if (!file.type.startsWith("image/")) {
+      toast.error("Please upload an image file (PNG / JPG).");
+      return;
+    }
+    if (file.size > 6 * 1024 * 1024) {
+      toast.error("Image too large — please keep it under 6 MB.");
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = () => {
+      setA5DiagramImage(typeof reader.result === "string" ? reader.result : null);
+      setA5DiagramFileName(file.name);
+      setA5HasDiagram(true);
+    };
+    reader.onerror = () => toast.error("Couldn't read that image — try another file.");
+    reader.readAsDataURL(file);
+  }
 
   async function submitForMarking() {
     setMarking(true); setError(null);
@@ -172,7 +195,15 @@ export default function DiagnosticCalculator() {
           board,
           items: [
             { id: "q4", prompt: Q4.prompt, totalMarks: Q4.totalMarks, rubric: Q4.rubric, answer: a4Text },
-            { id: "q5", prompt: Q5.prompt, totalMarks: Q5.totalMarks, rubric: Q5.rubric, answer: a5Text, hasDiagram: a5HasDiagram === true },
+            {
+              id: "q5",
+              prompt: Q5.prompt,
+              totalMarks: Q5.totalMarks,
+              rubric: Q5.rubric,
+              answer: a5Text,
+              hasDiagram: a5HasDiagram === true && !!a5DiagramImage,
+              diagramImage: a5DiagramImage ?? undefined,
+            },
           ],
         },
       });
@@ -293,13 +324,16 @@ export default function DiagnosticCalculator() {
 
               <div className="mt-4 rounded-xl border border-border bg-popover/40 p-4">
                 <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">
-                  Did you draw a labour-market diagram on paper alongside this answer?
+                  Diagram — upload your labour-market diagram
                 </p>
                 <div className="flex gap-2">
-                  {[{ label: "Yes — drawn & labelled", val: true }, { label: "No diagram drawn", val: false }].map((opt) => (
+                  {[{ label: "Yes — I'll upload it", val: true }, { label: "No diagram drawn", val: false }].map((opt) => (
                     <button
                       key={opt.label}
-                      onClick={() => setA5HasDiagram(opt.val)}
+                      onClick={() => {
+                        setA5HasDiagram(opt.val);
+                        if (!opt.val) { setA5DiagramImage(null); setA5DiagramFileName(null); }
+                      }}
                       className={cn(
                         "flex-1 rounded-lg border px-3 py-2.5 text-xs font-semibold transition-all",
                         a5HasDiagram === opt.val ? "border-primary bg-primary/10 text-foreground" : "border-border text-muted-foreground hover:border-primary/40",
@@ -307,9 +341,51 @@ export default function DiagnosticCalculator() {
                     >{opt.label}</button>
                   ))}
                 </div>
+
+                {a5HasDiagram === true && (
+                  <div className="mt-3">
+                    <label
+                      htmlFor="diagnostic-diagram-upload"
+                      className={cn(
+                        "flex flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed px-4 py-5 cursor-pointer transition-all",
+                        a5DiagramImage ? "border-primary/50 bg-primary/5" : "border-border hover:border-primary/40 bg-popover/40",
+                      )}
+                    >
+                      {a5DiagramImage ? (
+                        <>
+                          <img src={a5DiagramImage} alt="Your diagram" className="max-h-40 rounded-md border border-border object-contain" />
+                          <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
+                            <ImageIcon className="h-3.5 w-3.5" />
+                            <span className="truncate max-w-[200px]">{a5DiagramFileName}</span>
+                            <span className="text-primary underline">Replace</span>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <Upload className="h-5 w-5 text-muted-foreground" />
+                          <p className="text-xs font-semibold text-foreground">Upload diagram (PNG / JPG)</p>
+                          <p className="text-[10px] text-muted-foreground">Hand-drawn or digital — the examiner will verify it</p>
+                        </>
+                      )}
+                      <input
+                        id="diagnostic-diagram-upload"
+                        type="file"
+                        accept="image/*"
+                        className="hidden"
+                        onChange={(e) => handleDiagramFile(e.target.files?.[0] ?? null)}
+                      />
+                    </label>
+                  </div>
+                )}
+
+                {a5HasDiagram === true && !a5DiagramImage && (
+                  <p className="text-[11px] text-warning mt-2 leading-relaxed">
+                    Upload an image of your diagram to unlock the full 15 marks.
+                  </p>
+                )}
                 {a5HasDiagram === false && (
                   <p className="text-[11px] text-warning mt-2 leading-relaxed">
-                    No diagram → marks for this question will be capped at 50% (AQA examiner convention).
+                    No diagram → marks for this question will be capped at ~50% (board examiner convention).
                   </p>
                 )}
               </div>
