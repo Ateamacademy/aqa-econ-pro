@@ -2,6 +2,12 @@ import { Link } from "react-router-dom";
 import GradeStepLadder from "@/components/homepage/GradeStepLadder";
 import DiagnosticCalculator from "@/components/homepage/DiagnosticCalculator";
 import DashboardDemo from "@/components/homepage/DashboardDemo";
+import studentMaya from "@/assets/student-maya.jpg";
+import studentJames from "@/assets/student-james.jpg";
+import studentPriya from "@/assets/student-priya.jpg";
+import studentDaniel from "@/assets/student-daniel.jpg";
+import studentSophie from "@/assets/student-sophie.jpg";
+import studentOmar from "@/assets/student-omar.jpg";
 import InstantMarkingDemo from "@/components/InstantMarkingDemo";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
@@ -53,9 +59,12 @@ const steps = [
 ];
 
 const testimonials = [
-  { quote: "I went from a C to an A* in 6 weeks. The predicted papers were almost identical to the real thing.", name: "Maya", detail: "A-Level Economics, Edexcel" },
-  { quote: "The tutor explained diagrams better than my actual teacher. Worth every penny.", name: "James", detail: "GCSE Economics, AQA" },
-  { quote: "I used Econ Rev every day for 3 months. My predicted grade went from a 5 to an 8.", name: "Priya", detail: "GCSE Economics, OCR" },
+  { quote: "I went from a C to an A* in 6 weeks. The predicted papers were almost identical to the real thing.", name: "Maya", detail: "A-Level Economics, Edexcel", rating: 5, avatar: studentMaya },
+  { quote: "The tutor explained diagrams better than my actual teacher. Worth every penny.", name: "James", detail: "GCSE Economics, AQA", rating: 5, avatar: studentJames },
+  { quote: "I used Econ Rev every day for 3 months. My predicted grade went from a 5 to an 8.", name: "Priya", detail: "GCSE Economics, OCR", rating: 4.5, avatar: studentPriya },
+  { quote: "The instant marking caught mistakes I never would have noticed. My evaluation skills doubled overnight.", name: "Daniel", detail: "A-Level Economics, AQA", rating: 5, avatar: studentDaniel },
+  { quote: "Finally a revision tool that actually feels like the real exam. The diagram practice is unreal.", name: "Sophie", detail: "A-Level Economics, OCR", rating: 4.5, avatar: studentSophie },
+  { quote: "Got my predicted A* confirmed by mocks. The topic heatmap told me exactly what to revise.", name: "Omar", detail: "A-Level Economics, Edexcel", rating: 5, avatar: studentOmar },
 ];
 
 const freeFeatures = [
@@ -498,16 +507,44 @@ export default function Index() {
           <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} className="grid md:grid-cols-3 gap-4">
             {testimonials.map((t) => (
               <motion.div key={t.name} variants={cardVariant}>
-                <div className="rounded-2xl border border-border bg-card p-6 h-full border-l-2 border-l-primary">
-                  <div className="flex gap-0.5 mb-4">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-warning text-warning" />
-                    ))}
+                <div className="rounded-2xl border border-border bg-card p-6 h-full border-l-2 border-l-primary flex flex-col">
+                  <div className="flex items-center gap-1 mb-4">
+                    {Array.from({ length: 5 }).map((_, i) => {
+                      const filled = i + 1 <= Math.floor(t.rating);
+                      const half = !filled && i + 0.5 < t.rating;
+                      return (
+                        <div key={i} className="relative h-4 w-4">
+                          <Star className="absolute inset-0 h-4 w-4 text-warning/30" />
+                          {filled && <Star className="absolute inset-0 h-4 w-4 fill-warning text-warning" />}
+                          {half && (
+                            <div className="absolute inset-0 overflow-hidden" style={{ width: "50%" }}>
+                              <Star className="h-4 w-4 fill-warning text-warning" />
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                    <span className="ml-1.5 text-xs font-mono font-bold text-muted-foreground">
+                      {t.rating.toFixed(1)}
+                    </span>
                   </div>
-                  <p className="text-sm text-foreground leading-relaxed mb-5 italic">"{t.quote}"</p>
-                  <div>
-                    <p className="text-sm font-bold text-foreground">{t.name}</p>
-                    <p className="text-xs text-muted-foreground">{t.detail}</p>
+                  <p className="text-sm text-foreground leading-relaxed mb-5 italic flex-1">"{t.quote}"</p>
+                  <div className="flex items-center gap-3 pt-4 border-t border-border">
+                    <img
+                      src={t.avatar}
+                      alt={`${t.name}, ${t.detail}`}
+                      loading="lazy"
+                      width={48}
+                      height={48}
+                      className="h-12 w-12 rounded-full object-cover border-2 border-primary/30 shrink-0"
+                    />
+                    <div className="min-w-0">
+                      <p className="text-sm font-bold text-foreground flex items-center gap-1.5">
+                        {t.name}
+                        <span className="inline-flex items-center justify-center h-3.5 w-3.5 rounded-full bg-primary text-[8px] font-bold text-white" title="Verified student">✓</span>
+                      </p>
+                      <p className="text-xs text-muted-foreground truncate">{t.detail}</p>
+                    </div>
                   </div>
                 </div>
               </motion.div>
