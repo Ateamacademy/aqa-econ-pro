@@ -216,7 +216,7 @@ export default function Auth() {
                 <Sparkles className="h-3.5 w-3.5 text-primary" />
                 <span className="text-xs font-medium text-primary uppercase tracking-wider">Trusted by 50,000+ students</span>
               </div>
-              <h1 className="font-serif text-4xl xl:text-5xl font-bold leading-[1.1] text-foreground">
+              <h1 className="text-4xl xl:text-5xl font-extrabold tracking-[-0.03em] leading-[1.05] text-foreground">
                 Master economics.
                 <br />
                 <span className="bg-gradient-to-r from-indigo-bright via-primary to-accent bg-clip-text text-transparent">
