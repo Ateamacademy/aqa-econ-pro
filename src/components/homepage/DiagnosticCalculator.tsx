@@ -1,12 +1,13 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowLeft, Check, RotateCcw, Sparkles, Target, Loader2, X, Share2, Twitter, MessageCircle, Link as LinkIcon, Mail, Upload, Image as ImageIcon } from "lucide-react";
+import { ArrowRight, ArrowLeft, Check, RotateCcw, Sparkles, Target, Loader2, X, Share2, Twitter, MessageCircle, Link as LinkIcon, Mail, Upload, Image as ImageIcon, Pencil } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import DrawingCanvas from "./DrawingCanvas";
 
 type Board =
   | "aqa" | "edexcel-a" | "edexcel-b" | "ocr" | "cambridge" | "ib"
@@ -28,18 +29,19 @@ const BOARD_OPTIONS: { value: Board; label: string }[] = [
 ];
 
 /**
- * Diagnostic Grade Calculator — proper AQA marking.
+ * Diagnostic Grade Calculator — proper board-aligned marking.
  *  Q1 — Calculation (2)        : automatic numeric + formatting check
  *  Q2 — MCQ (1)                : automatic
  *  Q3 — MCQ (1)                : automatic
  *  Q4 — 4-mark explain         : marked by examiner edge function
- *  Q5 — 15-mark essay+diagram  : marked by examiner edge function (50% cap if no diagram)
- *  Total: 23 marks
+ *  Q5 — 15-mark essay+diagram  : examiner edge function (vision verifies diagram)
+ *  Q6 — 6-mark diagram-only    : pure diagram, vision-marked
+ *  Total: 29 marks
  */
 
 type Step = number;
 
-const TOTAL = 23;
+const TOTAL = 29;
 
 const Q1 = {
   prompt:
@@ -94,8 +96,24 @@ const Q5 = {
   ].join(" "),
 };
 
+const Q6 = {
+  prompt:
+    "Draw a fully labelled supply-and-demand diagram for the market for petrol, showing the impact of an indirect tax (specific tax) imposed on producers. Label clearly: P, Q axes; original S and D curves; new S+tax curve; original equilibrium (P₁, Q₁); new equilibrium (P₂, Q₂); the tax wedge; and the consumer/producer tax incidence regions.",
+  totalMarks: 6,
+  rubric: [
+    "Diagram-only marking (vision). Award marks against components actually drawn:",
+    "1 mark — Both axes labelled correctly (Price on Y, Quantity on X).",
+    "1 mark — Upward-sloping supply (S) and downward-sloping demand (D) curves.",
+    "1 mark — A second supply curve (S+tax) clearly parallel & shifted left/up of S.",
+    "1 mark — Original equilibrium (P₁, Q₁) and new equilibrium (P₂, Q₂) both labelled.",
+    "1 mark — Vertical tax wedge shown between S+tax and S at Q₂ (or labelled 'tax').",
+    "1 mark — Consumer incidence and producer incidence regions clearly indicated.",
+    "If no image is uploaded → 0 marks. If image is blank or off-topic → 0 marks.",
+  ].join(" "),
+};
+
 interface AiItemResult {
-  id: "q4" | "q5";
+  id: "q4" | "q5" | "q6";
   marks: number;
   totalMarks: number;
   rationale: string;
@@ -132,6 +150,10 @@ export default function DiagnosticCalculator() {
   const [a5HasDiagram, setA5HasDiagram] = useState<boolean | null>(null);
   const [a5DiagramImage, setA5DiagramImage] = useState<string | null>(null); // base64 data URL
   const [a5DiagramFileName, setA5DiagramFileName] = useState<string | null>(null);
+  const [a5DiagramMode, setA5DiagramMode] = useState<"draw" | "upload">("draw");
+  const [a6DiagramImage, setA6DiagramImage] = useState<string | null>(null);
+  const [a6DiagramFileName, setA6DiagramFileName] = useState<string | null>(null);
+  const [a6DiagramMode, setA6DiagramMode] = useState<"draw" | "upload">("draw");
 
   const [marking, setMarking] = useState(false);
   const [aiResults, setAiResults] = useState<AiItemResult[] | null>(null);
@@ -141,12 +163,10 @@ export default function DiagnosticCalculator() {
   const m1 = useMemo(() => {
     const trimmed = a1.trim();
     if (!trimmed) return 0;
-    // Parse the number, ignoring %, spaces, etc.
     const cleaned = trimmed.replace(/[%\s,]/g, "");
     const n = parseFloat(cleaned);
     if (!Number.isFinite(n)) return 0;
     if (Math.abs(n - Q1.correct) > Q1.tolerance) return 0;
-    // Need correct value AND formatting (% sign OR 1+ decimal place)
     const hasPct = /%/.test(trimmed);
     const hasDecimal = /\.\d/.test(trimmed);
     return hasPct && hasDecimal ? 2 : 1;
@@ -155,37 +175,43 @@ export default function DiagnosticCalculator() {
   const m3 = a3 === Q3.correctIndex ? 1 : 0;
   const m4 = aiResults?.find((r) => r.id === "q4")?.marks ?? 0;
   const m5 = aiResults?.find((r) => r.id === "q5")?.marks ?? 0;
-  const total = m1 + m2 + m3 + m4 + m5;
+  const m6 = aiResults?.find((r) => r.id === "q6")?.marks ?? 0;
+  const total = m1 + m2 + m3 + m4 + m5 + m6;
   const band = gradeFor(total);
 
-  const next = () => setStep((s) => Math.min(5, s + 1) as Step);
+  const next = () => setStep((s) => Math.min(6, s + 1) as Step);
   const back = () => setStep((s) => Math.max(0, s - 1) as Step);
   const reset = () => {
     setStep(0); setA1(""); setA2(null); setA3(null);
     setA4Text(""); setA5Text(""); setA5HasDiagram(null);
     setA5DiagramImage(null); setA5DiagramFileName(null);
+    setA6DiagramImage(null); setA6DiagramFileName(null);
     setAiResults(null); setError(null);
   };
 
-  async function handleDiagramFile(file: File | null) {
-    if (!file) return;
-    if (!file.type.startsWith("image/")) {
-      toast.error("Please upload an image file (PNG / JPG).");
-      return;
-    }
-    if (file.size > 6 * 1024 * 1024) {
-      toast.error("Image too large — please keep it under 6 MB.");
-      return;
-    }
-    const reader = new FileReader();
-    reader.onload = () => {
-      setA5DiagramImage(typeof reader.result === "string" ? reader.result : null);
-      setA5DiagramFileName(file.name);
-      setA5HasDiagram(true);
+  function makeFileHandler(setImg: (s: string | null) => void, setName: (s: string | null) => void, onLoaded?: () => void) {
+    return async (file: File | null) => {
+      if (!file) return;
+      if (!file.type.startsWith("image/")) {
+        toast.error("Please upload an image file (PNG / JPG).");
+        return;
+      }
+      if (file.size > 6 * 1024 * 1024) {
+        toast.error("Image too large — please keep it under 6 MB.");
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImg(typeof reader.result === "string" ? reader.result : null);
+        setName(file.name);
+        onLoaded?.();
+      };
+      reader.onerror = () => toast.error("Couldn't read that image — try another file.");
+      reader.readAsDataURL(file);
     };
-    reader.onerror = () => toast.error("Couldn't read that image — try another file.");
-    reader.readAsDataURL(file);
   }
+  const handleQ5File = makeFileHandler(setA5DiagramImage, setA5DiagramFileName, () => setA5HasDiagram(true));
+  const handleQ6File = makeFileHandler(setA6DiagramImage, setA6DiagramFileName);
 
   async function submitForMarking() {
     setMarking(true); setError(null);
@@ -204,13 +230,22 @@ export default function DiagnosticCalculator() {
               hasDiagram: a5HasDiagram === true && !!a5DiagramImage,
               diagramImage: a5DiagramImage ?? undefined,
             },
+            {
+              id: "q6",
+              prompt: Q6.prompt,
+              totalMarks: Q6.totalMarks,
+              rubric: Q6.rubric,
+              answer: "",
+              hasDiagram: !!a6DiagramImage,
+              diagramImage: a6DiagramImage ?? undefined,
+            },
           ],
         },
       });
       if (error) throw new Error(error.message);
       if (!data?.results) throw new Error("Marking service returned no results");
       setAiResults(data.results);
-      setStep(5);
+      setStep(6);
     } catch (e) {
       const msg = e instanceof Error ? e.message : "Marking failed";
       setError(msg);
@@ -227,11 +262,12 @@ export default function DiagnosticCalculator() {
       case 2: return a3 !== null;
       case 3: return a4Text.trim().length > 20;
       case 4: return a5Text.trim().length > 50 && a5HasDiagram !== null;
+      case 5: return !!a6DiagramImage;
       default: return true;
     }
   })();
 
-  const stepLabels = ["Calculation", "MCQ 1", "MCQ 2", "Short answer", "Essay + diagram"];
+  const stepLabels = ["Calculation", "MCQ 1", "MCQ 2", "Short answer", "Essay + diagram", "Diagram only"];
 
   return (
     <>
@@ -267,7 +303,7 @@ export default function DiagnosticCalculator() {
               Diagnostic Grade Calculator
             </h3>
             <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-              Five questions across the full skill range. Your written answers are marked using your exam board's official mark scheme. We'll predict your current grade based on your total marks (out of {TOTAL}).
+              Six questions across the full skill range — including a written essay with diagram, and a separate diagram-only task. Your answers and diagrams are marked using your exam board's official mark scheme. We'll predict your current grade based on your total marks (out of {TOTAL}).
             </p>
           </div>
         </div>
@@ -324,10 +360,10 @@ export default function DiagnosticCalculator() {
 
               <div className="mt-4 rounded-xl border border-border bg-popover/40 p-4">
                 <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">
-                  Diagram — upload your labour-market diagram
+                  Diagram — labour-market diagram for your essay
                 </p>
-                <div className="flex gap-2">
-                  {[{ label: "Yes — I'll upload it", val: true }, { label: "No diagram drawn", val: false }].map((opt) => (
+                <div className="flex gap-2 mb-3">
+                  {[{ label: "Yes — I'll add one", val: true }, { label: "No diagram", val: false }].map((opt) => (
                     <button
                       key={opt.label}
                       onClick={() => {
@@ -343,44 +379,21 @@ export default function DiagnosticCalculator() {
                 </div>
 
                 {a5HasDiagram === true && (
-                  <div className="mt-3">
-                    <label
-                      htmlFor="diagnostic-diagram-upload"
-                      className={cn(
-                        "flex flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed px-4 py-5 cursor-pointer transition-all",
-                        a5DiagramImage ? "border-primary/50 bg-primary/5" : "border-border hover:border-primary/40 bg-popover/40",
-                      )}
-                    >
-                      {a5DiagramImage ? (
-                        <>
-                          <img src={a5DiagramImage} alt="Your diagram" className="max-h-40 rounded-md border border-border object-contain" />
-                          <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
-                            <ImageIcon className="h-3.5 w-3.5" />
-                            <span className="truncate max-w-[200px]">{a5DiagramFileName}</span>
-                            <span className="text-primary underline">Replace</span>
-                          </div>
-                        </>
-                      ) : (
-                        <>
-                          <Upload className="h-5 w-5 text-muted-foreground" />
-                          <p className="text-xs font-semibold text-foreground">Upload diagram (PNG / JPG)</p>
-                          <p className="text-[10px] text-muted-foreground">Hand-drawn or digital — the examiner will verify it</p>
-                        </>
-                      )}
-                      <input
-                        id="diagnostic-diagram-upload"
-                        type="file"
-                        accept="image/*"
-                        className="hidden"
-                        onChange={(e) => handleDiagramFile(e.target.files?.[0] ?? null)}
-                      />
-                    </label>
-                  </div>
+                  <DiagramInput
+                    mode={a5DiagramMode}
+                    onModeChange={setA5DiagramMode}
+                    image={a5DiagramImage}
+                    fileName={a5DiagramFileName}
+                    onCanvasChange={(d) => { setA5DiagramImage(d); if (!d) setA5DiagramFileName(null); else setA5DiagramFileName("Drawn in browser"); }}
+                    onFile={handleQ5File}
+                    onClearImage={() => { setA5DiagramImage(null); setA5DiagramFileName(null); }}
+                    inputId="diagnostic-q5-diagram-upload"
+                  />
                 )}
 
                 {a5HasDiagram === true && !a5DiagramImage && (
                   <p className="text-[11px] text-warning mt-2 leading-relaxed">
-                    Upload an image of your diagram to unlock the full 15 marks.
+                    Add a diagram (draw or upload) to unlock the full 15 marks.
                   </p>
                 )}
                 {a5HasDiagram === false && (
@@ -399,7 +412,41 @@ export default function DiagnosticCalculator() {
             </motion.div>
           )}
 
-          {step === 5 && aiResults && (
+          {step === 5 && (
+            <motion.div key="q6" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
+              <QHeader num={6} marks={6} type="Diagram only" />
+              <p className="text-base text-foreground leading-relaxed mb-4">{Q6.prompt}</p>
+              <div className="rounded-xl border border-border bg-popover/40 p-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">
+                  Draw or upload — examiner marks the diagram itself
+                </p>
+                <DiagramInput
+                  mode={a6DiagramMode}
+                  onModeChange={setA6DiagramMode}
+                  image={a6DiagramImage}
+                  fileName={a6DiagramFileName}
+                  onCanvasChange={(d) => { setA6DiagramImage(d); if (!d) setA6DiagramFileName(null); else setA6DiagramFileName("Drawn in browser"); }}
+                  onFile={handleQ6File}
+                  onClearImage={() => { setA6DiagramImage(null); setA6DiagramFileName(null); }}
+                  inputId="diagnostic-q6-diagram-upload"
+                />
+                {!a6DiagramImage && (
+                  <p className="text-[11px] text-warning mt-2 leading-relaxed">
+                    No diagram submitted → 0 / 6 marks for this question.
+                  </p>
+                )}
+              </div>
+
+              {error && (
+                <div className="mt-4 rounded-lg border border-destructive/40 bg-destructive/10 p-3 text-xs text-destructive flex items-start gap-2">
+                  <X className="h-3.5 w-3.5 shrink-0 mt-0.5" />
+                  <span>{error}</span>
+                </div>
+              )}
+            </motion.div>
+          )}
+
+          {step === 6 && aiResults && (
             <motion.div key="results" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
               <Results
                 total={total}
@@ -410,6 +457,7 @@ export default function DiagnosticCalculator() {
                   { label: "Q3 · MCQ",            got: m3, of: 1 },
                   { label: "Q4 · 4-mark explain", got: m4, of: 4 },
                   { label: "Q5 · 15-mark essay",  got: m5, of: 15 },
+                  { label: "Q6 · Diagram only",   got: m6, of: 6 },
                 ]}
                 aiResults={aiResults}
               />
@@ -420,13 +468,13 @@ export default function DiagnosticCalculator() {
 
       {/* Footer */}
       <div className="px-6 lg:px-8 py-4 border-t border-border bg-popover/30 flex items-center justify-between gap-3">
-        {step < 5 ? (
+        {step < 6 ? (
           <>
             <Button variant="ghost" onClick={back} disabled={step === 0 || marking} className="gap-1.5 text-xs">
               <ArrowLeft className="h-3.5 w-3.5" /> Back
             </Button>
-            <p className="text-[11px] text-muted-foreground font-mono hidden sm:block">Question {step + 1} of 5</p>
-            {step < 4 ? (
+            <p className="text-[11px] text-muted-foreground font-mono hidden sm:block">Question {step + 1} of 6</p>
+            {step < 5 ? (
               <Button onClick={next} disabled={!canAdvance} className="gap-1.5 text-xs">
                 Next <ArrowRight className="h-3.5 w-3.5" />
               </Button>
@@ -542,7 +590,7 @@ function Results({
           <div key={r.id} className="rounded-xl border border-border bg-popover/40 p-4">
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-bold uppercase tracking-wider text-foreground">
-                {r.id === "q4" ? "Q4 Examiner Feedback" : "Q5 Examiner Feedback"}
+                {r.id === "q4" ? "Q4 Examiner Feedback" : r.id === "q5" ? "Q5 Examiner Feedback" : "Q6 Diagram Feedback"}
               </span>
               <span className="text-xs font-mono font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">
                 {r.marks}/{r.totalMarks}
@@ -624,6 +672,85 @@ function ShareBar({ grade, total, totalMax }: { grade: string; total: number; to
           );
         })}
       </div>
+    </div>
+  );
+}
+
+/* ───── Diagram input — draw or upload ───── */
+
+function DiagramInput({
+  mode, onModeChange, image, fileName,
+  onCanvasChange, onFile, onClearImage, inputId,
+}: {
+  mode: "draw" | "upload";
+  onModeChange: (m: "draw" | "upload") => void;
+  image: string | null;
+  fileName: string | null;
+  onCanvasChange: (dataUrl: string | null) => void;
+  onFile: (file: File | null) => void;
+  onClearImage: () => void;
+  inputId: string;
+}) {
+  return (
+    <div>
+      <div className="flex gap-2 mb-3">
+        <button
+          type="button"
+          onClick={() => { onModeChange("draw"); onClearImage(); }}
+          className={cn(
+            "flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg border px-3 py-2 text-[11px] font-semibold transition-all",
+            mode === "draw" ? "border-primary bg-primary/10 text-foreground" : "border-border text-muted-foreground hover:border-primary/40",
+          )}
+        >
+          <Pencil className="h-3.5 w-3.5" /> Draw inline
+        </button>
+        <button
+          type="button"
+          onClick={() => { onModeChange("upload"); onClearImage(); }}
+          className={cn(
+            "flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg border px-3 py-2 text-[11px] font-semibold transition-all",
+            mode === "upload" ? "border-primary bg-primary/10 text-foreground" : "border-border text-muted-foreground hover:border-primary/40",
+          )}
+        >
+          <Upload className="h-3.5 w-3.5" /> Upload image
+        </button>
+      </div>
+
+      {mode === "draw" ? (
+        <DrawingCanvas onChange={onCanvasChange} height={260} />
+      ) : (
+        <label
+          htmlFor={inputId}
+          className={cn(
+            "flex flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed px-4 py-5 cursor-pointer transition-all",
+            image ? "border-primary/50 bg-primary/5" : "border-border hover:border-primary/40 bg-popover/40",
+          )}
+        >
+          {image ? (
+            <>
+              <img src={image} alt="Your diagram" className="max-h-40 rounded-md border border-border object-contain bg-white" />
+              <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
+                <ImageIcon className="h-3.5 w-3.5" />
+                <span className="truncate max-w-[200px]">{fileName}</span>
+                <span className="text-primary underline">Replace</span>
+              </div>
+            </>
+          ) : (
+            <>
+              <Upload className="h-5 w-5 text-muted-foreground" />
+              <p className="text-xs font-semibold text-foreground">Upload diagram (PNG / JPG)</p>
+              <p className="text-[10px] text-muted-foreground">Hand-drawn or digital — vision will verify it</p>
+            </>
+          )}
+          <input
+            id={inputId}
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={(e) => onFile(e.target.files?.[0] ?? null)}
+          />
+        </label>
+      )}
     </div>
   );
 }

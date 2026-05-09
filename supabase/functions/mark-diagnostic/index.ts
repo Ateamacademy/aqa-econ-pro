@@ -13,12 +13,12 @@ type Board =
   | "wjec" | "eduqas" | "aqa-gcse" | "cambridge-igcse" | "edexcel-igcse" | "ocr-gcse";
 
 interface DiagnosticItem {
-  id: "q4" | "q5";
+  id: "q4" | "q5" | "q6";
   prompt: string;
   totalMarks: number;
   answer: string;
-  hasDiagram?: boolean; // q5 only
-  diagramImage?: string; // q5 only — base64 data URL
+  hasDiagram?: boolean; // q5, q6
+  diagramImage?: string; // q5, q6 — base64 data URL
   rubric: string;
 }
 
@@ -223,12 +223,33 @@ function buildUser(item: DiagnosticItem, board: Board): string {
   if (item.id === "q4" && wc < 30) {
     lines.push(`⚠ Under 30 words for a 4-mark explain question — almost certainly cannot exceed 2/4.`);
   }
+  if (item.id === "q6") {
+    // Diagram-only question: no written answer expected.
+    if (item.diagramImage) {
+      lines.push(
+        "",
+        `THIS IS A DIAGRAM-ONLY QUESTION. Score the attached image strictly against the rubric components.`,
+        `Award 0 marks for any component not visibly present and labelled. Do NOT infer intent.`,
+      );
+    } else {
+      lines.push("", `NO IMAGE WAS UPLOADED FOR THIS DIAGRAM-ONLY QUESTION → 0 marks.`);
+    }
+  }
   lines.push("", "Return JSON only.");
   return lines.join("\n");
 }
 
 async function markItem(apiKey: string, item: DiagnosticItem, board: Board): Promise<ItemResult> {
-  if (!item.answer || item.answer.trim().length < 5) {
+  // Q6 is diagram-only — empty written answer is expected. No-image → 0.
+  if (item.id === "q6") {
+    if (!item.diagramImage) {
+      return {
+        id: item.id, marks: 0, totalMarks: item.totalMarks,
+        rationale: "No diagram submitted — diagram-only question requires an image.",
+        strengths: [], improvements: ["Draw or upload a fully labelled diagram next time."],
+      };
+    }
+  } else if (!item.answer || item.answer.trim().length < 5) {
     return {
       id: item.id, marks: 0, totalMarks: item.totalMarks,
       rationale: "No answer provided.",
@@ -237,7 +258,7 @@ async function markItem(apiKey: string, item: DiagnosticItem, board: Board): Pro
   }
 
   const userText = buildUser(item, board);
-  const userContent: unknown = item.id === "q5" && item.diagramImage
+  const userContent: unknown = (item.id === "q5" || item.id === "q6") && item.diagramImage
     ? [
         { type: "text", text: userText },
         { type: "image_url", image_url: { url: item.diagramImage } },
