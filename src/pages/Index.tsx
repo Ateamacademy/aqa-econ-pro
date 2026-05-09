@@ -277,12 +277,12 @@ export default function Index() {
       </section>
 
       {/* ═══════ HERO ═══════ */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
+      <section ref={heroRef} className="relative flex items-center overflow-hidden">
         {/* Blobs */}
         <div ref={blob1Ref} className="absolute top-1/4 right-0 w-[60vw] h-[60vw] max-w-[900px] max-h-[900px] rounded-full pointer-events-none" style={{ background: "rgba(79,86,255,0.12)", filter: "blur(120px)" }} />
         <div ref={blob2Ref} className="absolute bottom-0 left-0 w-[40vw] h-[40vw] max-w-[600px] max-h-[600px] rounded-full pointer-events-none" style={{ background: "rgba(6,182,212,0.06)", filter: "blur(100px)" }} />
 
-        <div className="max-w-[1280px] mx-auto px-5 lg:px-6 w-full flex flex-col items-center text-center py-20 lg:py-0">
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-6 w-full flex flex-col items-center text-center py-12 lg:py-16">
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }} className="max-w-3xl">
             {/* Eyebrow pill */}
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-8 glow-indigo-sm">
