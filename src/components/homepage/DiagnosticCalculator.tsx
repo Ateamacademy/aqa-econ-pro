@@ -468,13 +468,13 @@ export default function DiagnosticCalculator() {
 
       {/* Footer */}
       <div className="px-6 lg:px-8 py-4 border-t border-border bg-popover/30 flex items-center justify-between gap-3">
-        {step < 5 ? (
+        {step < 6 ? (
           <>
             <Button variant="ghost" onClick={back} disabled={step === 0 || marking} className="gap-1.5 text-xs">
               <ArrowLeft className="h-3.5 w-3.5" /> Back
             </Button>
-            <p className="text-[11px] text-muted-foreground font-mono hidden sm:block">Question {step + 1} of 5</p>
-            {step < 4 ? (
+            <p className="text-[11px] text-muted-foreground font-mono hidden sm:block">Question {step + 1} of 6</p>
+            {step < 5 ? (
               <Button onClick={next} disabled={!canAdvance} className="gap-1.5 text-xs">
                 Next <ArrowRight className="h-3.5 w-3.5" />
               </Button>
