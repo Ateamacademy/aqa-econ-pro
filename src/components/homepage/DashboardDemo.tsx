@@ -193,14 +193,9 @@ function GrowthChart() {
         className="absolute inset-x-0 top-0 h-[calc(100%-1.25rem)] w-full pointer-events-none overflow-visible"
       >
         <defs>
-          <linearGradient id="trajGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="hsl(var(--cyan-pop))" stopOpacity="0.6" />
-            <stop offset="60%" stopColor="hsl(var(--violet-pop))" />
-            <stop offset="100%" stopColor="hsl(var(--magenta-pop))" />
-          </linearGradient>
           <linearGradient id="trajFill" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="hsl(var(--magenta-pop) / 0.22)" />
-            <stop offset="100%" stopColor="hsl(var(--magenta-pop) / 0)" />
+            <stop offset="0%" stopColor="hsl(0 0% 100% / 0.18)" />
+            <stop offset="100%" stopColor="hsl(0 0% 100% / 0)" />
           </linearGradient>
         </defs>
         <motion.path
@@ -210,28 +205,44 @@ function GrowthChart() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.9, ease }}
         />
+        {/* Outer neon halo */}
         <motion.path
           d={path}
           fill="none"
-          stroke="url(#trajGrad)"
-          strokeWidth="2"
+          stroke="#ffffff"
+          strokeOpacity="0.35"
+          strokeWidth="9"
           strokeLinecap="round"
           strokeLinejoin="round"
           vectorEffect="non-scaling-stroke"
-          style={{ filter: "drop-shadow(0 0 6px hsl(var(--magenta-pop) / 0.6))" }}
+          style={{ filter: "blur(3px) drop-shadow(0 0 14px rgba(255,255,255,0.7))" }}
           initial={{ pathLength: 0 }}
           animate={inView ? { pathLength: 1 } : {}}
-          transition={{ duration: 1.6, delay: 0.4, ease }}
+          transition={{ duration: 1.8, delay: 0.4, ease }}
+        />
+        {/* Core white neon line */}
+        <motion.path
+          d={path}
+          fill="none"
+          stroke="#ffffff"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          vectorEffect="non-scaling-stroke"
+          style={{ filter: "drop-shadow(0 0 6px rgba(255,255,255,0.95)) drop-shadow(0 0 12px rgba(255,255,255,0.6))" }}
+          initial={{ pathLength: 0 }}
+          animate={inView ? { pathLength: 1 } : {}}
+          transition={{ duration: 1.8, delay: 0.4, ease }}
         />
         <motion.circle
           cx={last.x}
           cy={last.y}
-          r="2.4"
-          fill="hsl(var(--magenta-pop))"
-          style={{ filter: "drop-shadow(0 0 6px hsl(var(--magenta-pop)))" }}
+          r="2.6"
+          fill="#ffffff"
+          style={{ filter: "drop-shadow(0 0 8px rgba(255,255,255,1)) drop-shadow(0 0 16px hsl(var(--magenta-pop)))" }}
           initial={{ scale: 0, opacity: 0 }}
-          animate={inView ? { scale: [0, 1.5, 1], opacity: 1 } : {}}
-          transition={{ duration: 0.7, delay: 1.9, ease }}
+          animate={inView ? { scale: [0, 1.6, 1], opacity: 1 } : {}}
+          transition={{ duration: 0.7, delay: 2.1, ease }}
         />
       </svg>
     </div>
