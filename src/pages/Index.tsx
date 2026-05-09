@@ -557,8 +557,21 @@ export default function Index() {
       <section id="pricing" className="py-24 lg:py-32 bg-card/50">
         <div className="max-w-[800px] mx-auto px-5 lg:px-6">
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] mb-4">
-              Simple Pricing.<br />No Surprises.
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.03em] leading-[1.05] mb-4 text-foreground">
+              Transparent Pricing{" "}
+              <br className="hidden md:block" />
+              to{" "}
+              <span
+                className="inline-block bg-clip-text text-transparent"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(90deg, hsl(var(--magenta-pop)), hsl(var(--violet-pop)), hsl(var(--amber-pop)), hsl(var(--magenta-pop)))",
+                  backgroundSize: "200% auto",
+                  animation: "shimmer 6s linear infinite",
+                }}
+              >
+                Maximise Results.
+              </span>
             </h2>
           </motion.div>
 
