@@ -214,7 +214,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {/* Homepage hover-revealed app menu (sub-row) */}
         {isHomepage && (
           <div
-            className="hidden md:block max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-out group-hover:max-h-16 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto"
+            className={cn(
+              "hidden md:block overflow-hidden transition-all duration-700 ease-out",
+              menuRevealed
+                ? "max-h-16 opacity-100 pointer-events-auto"
+                : "max-h-0 opacity-0 pointer-events-none"
+            )}
           >
             <nav className="max-w-[1280px] mx-auto flex items-center justify-center gap-8 lg:gap-10 px-5 lg:px-6 pb-3">
               {navLinks.map((item) => (
