@@ -1412,7 +1412,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                 practiceMode === "ai" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
               )}
             >
-              <Sparkles className="h-3.5 w-3.5" /> AI Generated
+              <Sparkles className="h-3.5 w-3.5" /> Generated
             </button>
           </div>
 
@@ -1596,7 +1596,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
 
               {inputMode === "draw" ? (
                 <div>
-                  <p className="text-xs text-muted-foreground mb-2">Draw your diagram below. Use different colours for curves, shifts, and labels. The AI will analyse your drawing.</p>
+                  <p className="text-xs text-muted-foreground mb-2">Draw your diagram below. Use different colours for curves, shifts, and labels. The examiner will analyse your drawing.</p>
                   <DrawingCanvas
                     width={700}
                     height={500}

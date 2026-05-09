@@ -547,7 +547,7 @@ function PapersInner() {
     <div className="max-w-4xl mx-auto px-5 py-12">
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-foreground mb-2">Predicted Papers</h1>
-        <p className="text-sm text-muted-foreground">Full timed papers with rubric-driven AI marking. See exactly how an examiner would grade your work.</p>
+        <p className="text-sm text-muted-foreground">Full timed papers with rubric-driven instant marking. See exactly how an examiner would grade your work.</p>
       </div>
       <FreeTierBanner premium={premium} />
       <div className="grid gap-4">
