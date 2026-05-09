@@ -101,32 +101,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <span className="text-base md:text-2xl font-bold text-foreground tracking-tight truncate">The GDP of Grades</span>
           </Link>
 
-          {/* Centre nav (non-homepage) */}
-          {!isHomepage && (
-            <nav className="hidden md:flex items-center gap-4 lg:gap-6 mx-auto">
-              {navLinks.map((item) => {
-                const isActive = location.pathname === item.to;
-                return (
-                  <Link
-                    key={item.to}
-                    to={item.to}
-                    className={cn(
-                      "text-sm font-medium transition-colors relative",
-                      isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                    )}
-                  >
-                    {item.label}
-                    {isActive && (
-                      <motion.span
-                        layoutId="nav-underline"
-                        className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full"
-                      />
-                    )}
-                  </Link>
-                );
-              })}
-            </nav>
-          )}
+          {/* Centre nav removed — unified sub-row menu below renders on all pages */}
 
           {/* Right side */}
           <div className="hidden lg:flex items-center gap-3">
