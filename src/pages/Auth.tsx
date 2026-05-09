@@ -152,7 +152,7 @@ export default function Auth() {
     } finally {
       setLoading(false);
     }
-  }, [email, password, loading]);
+  }, [email, password, loading, navigate]);
 
   const handleForgotPassword = useCallback(async () => {
     const trimmedEmail = email.trim();
