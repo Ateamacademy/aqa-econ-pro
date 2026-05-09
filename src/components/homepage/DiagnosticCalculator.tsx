@@ -1,12 +1,13 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowLeft, Check, RotateCcw, Sparkles, Target, Loader2, X, Share2, Twitter, MessageCircle, Link as LinkIcon, Mail, Upload, Image as ImageIcon } from "lucide-react";
+import { ArrowRight, ArrowLeft, Check, RotateCcw, Sparkles, Target, Loader2, X, Share2, Twitter, MessageCircle, Link as LinkIcon, Mail, Upload, Image as ImageIcon, Pencil } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import DrawingCanvas from "./DrawingCanvas";
 
 type Board =
   | "aqa" | "edexcel-a" | "edexcel-b" | "ocr" | "cambridge" | "ib"
