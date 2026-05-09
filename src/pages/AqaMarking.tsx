@@ -258,7 +258,7 @@ export default function AqaMarking() {
                 : s === "self"
                 ? "Tier 2 · Self-assess"
                 : s === "ai"
-                ? "Tier 3 · AI analysis"
+                ? "Tier 3 · Examiner analysis"
                 : "Report"}
             </button>
           ))}
@@ -383,14 +383,14 @@ export default function AqaMarking() {
         {step === "ai" && (
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-bold text-foreground">Tier 3 — AI analysis (optional)</h2>
+              <h2 className="text-lg font-bold text-foreground">Tier 3 · Examiner analysis (optional)</h2>
               <span className="text-[10px] font-bold uppercase tracking-wider rounded border border-purple-500/40 text-purple-200 px-2 py-0.5">
-                AI · advisory
+                Advisory
               </span>
             </div>
             <p className="text-xs text-muted-foreground">
-              Optional analytical feedback on your extended-response answers and diagrams. The AI
-              never assigns a numerical mark — your self-assessment from Tier 2 stays the source of
+              Optional analytical feedback on your extended-response answers and diagrams. The examiner
+              never assigns a numerical mark. Your self-assessment from Tier 2 stays the source of
               truth.
             </p>
 
@@ -440,8 +440,8 @@ export default function AqaMarking() {
 
                   {ai.globallyUnavailable && (
                     <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-3 text-xs text-amber-200">
-                      AI analysis isn't configured for this project yet. Tiers 1 and 2 still work —
-                      proceed to the report.
+                      Examiner analysis isn't configured for this project yet. Tiers 1 and 2 still work.
+                      Proceed to the report.
                     </div>
                   )}
 
