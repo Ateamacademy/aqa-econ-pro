@@ -282,8 +282,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             {/* Col 1 */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="h-7 w-7 rounded-lg bg-primary/20 border border-primary/30 flex items-center justify-center">
-                  <div className="h-3.5 w-3.5 rounded-sm bg-primary" />
+                <div className="h-10 w-10 rounded-full bg-white p-0.5 ring-2 ring-primary/60 shadow-[0_0_18px_rgba(99,102,241,0.5)]">
+                  <img src={econRevLogo} alt="Econ Rev logo" className="h-full w-full rounded-full object-cover" />
                 </div>
                 <span className="text-sm font-bold text-foreground">Econ Rev</span>
               </div>
