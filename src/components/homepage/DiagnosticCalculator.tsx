@@ -675,3 +675,82 @@ function ShareBar({ grade, total, totalMax }: { grade: string; total: number; to
     </div>
   );
 }
+
+/* ───── Diagram input — draw or upload ───── */
+
+function DiagramInput({
+  mode, onModeChange, image, fileName,
+  onCanvasChange, onFile, onClearImage, inputId,
+}: {
+  mode: "draw" | "upload";
+  onModeChange: (m: "draw" | "upload") => void;
+  image: string | null;
+  fileName: string | null;
+  onCanvasChange: (dataUrl: string | null) => void;
+  onFile: (file: File | null) => void;
+  onClearImage: () => void;
+  inputId: string;
+}) {
+  return (
+    <div>
+      <div className="flex gap-2 mb-3">
+        <button
+          type="button"
+          onClick={() => { onModeChange("draw"); onClearImage(); }}
+          className={cn(
+            "flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg border px-3 py-2 text-[11px] font-semibold transition-all",
+            mode === "draw" ? "border-primary bg-primary/10 text-foreground" : "border-border text-muted-foreground hover:border-primary/40",
+          )}
+        >
+          <Pencil className="h-3.5 w-3.5" /> Draw inline
+        </button>
+        <button
+          type="button"
+          onClick={() => { onModeChange("upload"); onClearImage(); }}
+          className={cn(
+            "flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg border px-3 py-2 text-[11px] font-semibold transition-all",
+            mode === "upload" ? "border-primary bg-primary/10 text-foreground" : "border-border text-muted-foreground hover:border-primary/40",
+          )}
+        >
+          <Upload className="h-3.5 w-3.5" /> Upload image
+        </button>
+      </div>
+
+      {mode === "draw" ? (
+        <DrawingCanvas onChange={onCanvasChange} height={260} />
+      ) : (
+        <label
+          htmlFor={inputId}
+          className={cn(
+            "flex flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed px-4 py-5 cursor-pointer transition-all",
+            image ? "border-primary/50 bg-primary/5" : "border-border hover:border-primary/40 bg-popover/40",
+          )}
+        >
+          {image ? (
+            <>
+              <img src={image} alt="Your diagram" className="max-h-40 rounded-md border border-border object-contain bg-white" />
+              <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
+                <ImageIcon className="h-3.5 w-3.5" />
+                <span className="truncate max-w-[200px]">{fileName}</span>
+                <span className="text-primary underline">Replace</span>
+              </div>
+            </>
+          ) : (
+            <>
+              <Upload className="h-5 w-5 text-muted-foreground" />
+              <p className="text-xs font-semibold text-foreground">Upload diagram (PNG / JPG)</p>
+              <p className="text-[10px] text-muted-foreground">Hand-drawn or digital — vision will verify it</p>
+            </>
+          )}
+          <input
+            id={inputId}
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={(e) => onFile(e.target.files?.[0] ?? null)}
+          />
+        </label>
+      )}
+    </div>
+  );
+}
