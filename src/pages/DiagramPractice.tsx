@@ -1364,7 +1364,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
     <div className="container py-10 max-w-4xl">
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-serif mb-1">Diagram Practice</h1>
+          <h1 className="text-2xl font-bold text-foreground mb-2 tracking-tight">Diagram Practice</h1>
           <p className="text-sm text-muted-foreground">
             {examBoard} {level} {subjectLabel} · {accessMessage}
           </p>
