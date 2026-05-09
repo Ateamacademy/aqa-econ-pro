@@ -25,7 +25,7 @@ export default function ResetPassword() {
     <div className="container py-16 max-w-md">
       <Card>
         <CardHeader>
-          <CardTitle className="font-serif text-2xl">Reset Password</CardTitle>
+          <CardTitle className="text-2xl font-bold tracking-tight">Reset Password</CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleReset} className="space-y-4">

@@ -49,7 +49,7 @@ export default function EdexcelBPastPapers() {
   return (
     <div className="container py-10">
       <div className="mb-8">
-        <h1 className="text-4xl font-serif mb-2">Edexcel A-Level Economics B Past Papers</h1>
+        <h1 className="text-3xl font-bold tracking-tight text-foreground mb-2">Edexcel A-Level Economics B Past Papers</h1>
         <p className="text-muted-foreground">Browse Edexcel Economics B (9EB0) past papers and mark schemes.</p>
       </div>
 

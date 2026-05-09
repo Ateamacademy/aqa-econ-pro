@@ -66,7 +66,7 @@ export default function PastPapers() {
   return (
     <div className="container py-10">
       <div className="mb-8">
-        <h1 className="text-4xl font-serif mb-2">AQA Economics Past Papers</h1>
+        <h1 className="text-3xl font-bold tracking-tight text-foreground mb-2">AQA Economics Past Papers</h1>
         <p className="text-muted-foreground">Browse AQA A-Level & AS Economics past papers and mark schemes.</p>
       </div>
 

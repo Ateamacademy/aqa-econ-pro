@@ -40,7 +40,7 @@ export default function CambridgePastPapers() {
   return (
     <div className="container py-10">
       <div className="mb-8">
-        <h1 className="text-4xl font-serif mb-2">Cambridge International A-Level Economics Past Papers</h1>
+        <h1 className="text-3xl font-bold tracking-tight text-foreground mb-2">Cambridge International A-Level Economics Past Papers</h1>
         <p className="text-muted-foreground">
           Browse CAIE 9708 AS & A-Level Economics past papers, mark schemes, and inserts from PapaCambridge.
         </p>

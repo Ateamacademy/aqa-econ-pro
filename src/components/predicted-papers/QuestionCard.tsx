@@ -603,7 +603,7 @@ export function QuestionCard({
             {feedback.smartFeedback && (
               <Card>
                 <CardHeader>
-                  <CardTitle className="font-serif text-lg">Smart Mark feedback</CardTitle>
+                  <CardTitle className="text-base font-bold tracking-tight">Smart Mark feedback</CardTitle>
                 </CardHeader>
                 <CardContent>
                   {renderDiagramContent(feedback.smartFeedback, { withCanonicalFigure: true })}

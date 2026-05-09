@@ -34,7 +34,7 @@ export default function IbPastPapers() {
   return (
     <div className="container py-10">
       <div className="mb-8">
-        <h1 className="text-4xl font-serif mb-2">IB Economics HL Past Papers</h1>
+        <h1 className="text-3xl font-bold tracking-tight text-foreground mb-2">IB Economics HL Past Papers</h1>
         <p className="text-muted-foreground">
           Browse IB Economics Higher Level past papers and mark schemes. Papers cover the new syllabus (2022+) and legacy curriculum.
         </p>
