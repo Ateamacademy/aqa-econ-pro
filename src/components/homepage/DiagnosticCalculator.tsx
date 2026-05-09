@@ -590,7 +590,7 @@ function Results({
           <div key={r.id} className="rounded-xl border border-border bg-popover/40 p-4">
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-bold uppercase tracking-wider text-foreground">
-                {r.id === "q4" ? "Q4 Examiner Feedback" : "Q5 Examiner Feedback"}
+                {r.id === "q4" ? "Q4 Examiner Feedback" : r.id === "q5" ? "Q5 Examiner Feedback" : "Q6 Diagram Feedback"}
               </span>
               <span className="text-xs font-mono font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">
                 {r.marks}/{r.totalMarks}
