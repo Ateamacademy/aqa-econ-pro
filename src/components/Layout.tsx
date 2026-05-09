@@ -73,7 +73,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Frosted glass navbar */}
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          "group fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           scrolled
             ? "border-b border-border bg-background/85 backdrop-blur-xl"
             : "bg-transparent"
