@@ -94,7 +94,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Link>
 
           {/* Centre nav */}
-          <nav className="hidden lg:flex items-center gap-6 mx-auto">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-6 mx-auto">
             {isHomepage
               ? navLinks.map((item, i) => (
                   <motion.div
