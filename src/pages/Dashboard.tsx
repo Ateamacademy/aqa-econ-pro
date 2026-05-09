@@ -228,6 +228,9 @@ export default function Dashboard() {
                 <RecentPapersTable sessions={sessions} subject={subject} />
               </motion.div>
               <motion.div variants={fadeUp}>
+                <AttemptHistoryPanel />
+              </motion.div>
+              <motion.div variants={fadeUp}>
                 <StrengthWeakness sessions={sessions} subject={subject} />
               </motion.div>
               <motion.div variants={fadeUp}>
