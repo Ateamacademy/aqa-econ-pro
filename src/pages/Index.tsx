@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import GradeStepLadder from "@/components/homepage/GradeStepLadder";
 import DiagnosticCalculator from "@/components/homepage/DiagnosticCalculator";
+import DashboardDemo from "@/components/homepage/DashboardDemo";
 import InstantMarkingDemo from "@/components/InstantMarkingDemo";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
@@ -421,62 +422,67 @@ export default function Index() {
       </section>
 
       {/* ═══════ PROGRESS TRACKING SPOTLIGHT ═══════ */}
-      <section className="py-24 lg:py-32 bg-card/50">
-        <div className="max-w-[1280px] mx-auto px-5 lg:px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <section className="py-24 lg:py-32 bg-card/50 relative overflow-hidden">
+        <div className="absolute top-1/3 right-0 w-[40vw] h-[40vw] max-w-[700px] max-h-[700px] rounded-full pointer-events-none" style={{ background: "hsl(var(--violet-pop) / 0.08)", filter: "blur(120px)" }} />
+        <div className="absolute bottom-0 left-0 w-[30vw] h-[30vw] max-w-[500px] max-h-[500px] rounded-full pointer-events-none" style={{ background: "hsl(var(--cyan-pop) / 0.06)", filter: "blur(100px)" }} />
+
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center relative">
           {/* Left — copy */}
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] mb-6">
-              Know Exactly Where<br />You Stand, Every Day.
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6 glow-indigo-sm">
+              <span className="text-xs">✦</span> Live progress dashboard
+            </div>
+
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-[1.05] mb-6">
+              Know Exactly Where<br />You Stand,{" "}
+              <span
+                className="inline-block bg-clip-text text-transparent"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(90deg, hsl(var(--magenta-pop)), hsl(var(--violet-pop)), hsl(var(--amber-pop)), hsl(var(--magenta-pop)))",
+                  backgroundSize: "200% auto",
+                  animation: "shimmer 6s linear infinite",
+                }}
+              >
+                Every Day.
+              </span>
             </h2>
-            <p className="text-base text-muted-foreground leading-relaxed mb-6">
-              Your readiness score tracks every question answered, paper completed, and concept mastered.
-              Watch your mountain climb progress from Base Camp to Peak Mastery as exam day approaches.
+            <p className="text-base lg:text-lg text-foreground/80 leading-relaxed mb-6">
+              Every question, every paper, every diagram feeds your{" "}
+              <span className="font-semibold text-foreground">readiness score</span>. Climb from
+              Base Camp to <span className="font-semibold text-foreground">Peak Mastery</span> and
+              watch your predicted grade rise in real time.
             </p>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Set daily goals, maintain your study streak, and see exactly which topics need attention
-              with our intelligent heatmap system.
+            <p className="text-sm text-muted-foreground leading-relaxed mb-8">
+              Streaks keep you consistent, achievements reward your wins, and the heatmap shows
+              exactly which topics need attention next.
             </p>
+
+            {/* Reward chips */}
+            <div className="flex flex-wrap gap-2">
+              {[
+                { label: "🔥 Daily streaks", color: "var(--amber-pop)" },
+                { label: "🏆 Achievements", color: "var(--magenta-pop)" },
+                { label: "📈 Grade trajectory", color: "var(--violet-pop)" },
+                { label: "🎯 Smart goals", color: "var(--cyan-pop)" },
+              ].map((c) => (
+                <span
+                  key={c.label}
+                  className="text-xs font-medium px-3 py-1.5 rounded-full border"
+                  style={{
+                    borderColor: `hsl(${c.color} / 0.4)`,
+                    color: `hsl(${c.color})`,
+                    background: `hsl(${c.color} / 0.08)`,
+                  }}
+                >
+                  {c.label}
+                </span>
+              ))}
+            </div>
           </motion.div>
 
-          {/* Right — mini dashboard */}
-          <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} className="space-y-4">
-            {/* Readiness ring */}
-            <motion.div variants={cardVariant} className="rounded-2xl border border-border bg-card p-6 flex items-center gap-6">
-              <div className="relative w-20 h-20 shrink-0">
-                <svg viewBox="0 0 80 80" className="w-full h-full -rotate-90">
-                  <circle cx="40" cy="40" r="32" fill="none" stroke="hsl(var(--border))" strokeWidth="6" />
-                  <circle cx="40" cy="40" r="32" fill="none" stroke="hsl(var(--accent))" strokeWidth="6" strokeLinecap="round" strokeDasharray={`${0.74 * 201} ${201}`} style={{ filter: "drop-shadow(0 0 8px rgba(99,102,241,0.5))" }} />
-                </svg>
-                <span className="absolute inset-0 flex items-center justify-center text-lg font-bold font-mono text-foreground">74%</span>
-              </div>
-              <div>
-                <p className="text-sm font-bold text-foreground">Summit Approach</p>
-                <p className="text-xs text-success font-medium">↑ +5 this week</p>
-              </div>
-            </motion.div>
-
-            {/* Heatmap */}
-            <motion.div variants={cardVariant} className="rounded-2xl border border-border bg-card p-5">
-              <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">Topic Mastery</p>
-              <div className="grid grid-cols-4 gap-1.5">
-                {[85, 72, 45, 90, 60, 38, 78, 55].map((v, i) => (
-                  <div key={i} className="h-8 rounded-md flex items-center justify-center text-[9px] font-mono font-bold" style={{ background: `hsl(var(--accent) / ${v / 100 * 0.7 + 0.1})`, color: v > 50 ? "white" : "hsl(var(--muted-foreground))" }}>
-                    {v}%
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Grade trend */}
-            <motion.div variants={cardVariant} className="rounded-2xl border border-border bg-card p-5">
-              <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">Grade Trend</p>
-              <div className="h-12 flex items-end gap-1">
-                {[55, 58, 62, 65, 70, 74].map((v, i) => (
-                  <div key={i} className="flex-1 rounded-sm bg-primary" style={{ height: `${v}%`, opacity: 0.4 + (i / 6) * 0.6 }} />
-                ))}
-              </div>
-            </motion.div>
-          </motion.div>
+          {/* Right — live dashboard demo */}
+          <DashboardDemo />
         </div>
       </section>
 
