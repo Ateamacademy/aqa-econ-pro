@@ -90,7 +90,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 className="h-full w-full rounded-full object-cover"
               />
             </div>
-            <span className="text-2xl font-bold text-foreground tracking-tight">The GDP of Your Grades</span>
+            <span className="text-2xl font-bold text-foreground tracking-tight">The GDP of Grades</span>
           </Link>
 
           {/* Centre nav */}
