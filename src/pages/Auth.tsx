@@ -214,7 +214,7 @@ export default function Auth() {
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20">
                 <Sparkles className="h-3.5 w-3.5 text-primary" />
-                <span className="text-xs font-medium text-primary uppercase tracking-wider">Trusted by 50,000+ students</span>
+                <span className="text-xs font-medium text-primary uppercase tracking-wider">Trusted by 12,000+ students</span>
               </div>
               <h1 className="text-4xl xl:text-5xl font-extrabold tracking-[-0.03em] leading-[1.05] text-foreground">
                 Master economics.
