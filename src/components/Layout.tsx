@@ -203,6 +203,27 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </button>
         </div>
 
+        {/* Homepage hover-revealed app menu (sub-row) */}
+        {isHomepage && (
+          <div
+            className="hidden md:block max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-out group-hover:max-h-16 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto"
+          >
+            <nav className="max-w-[1280px] mx-auto flex items-center justify-center gap-8 lg:gap-10 px-5 lg:px-6 pb-3">
+              {navLinks.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className="text-[11px] uppercase tracking-[0.18em] font-medium text-muted-foreground/50 hover:text-foreground transition-colors relative group/link"
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-px bg-primary/70 group-hover/link:w-full transition-all duration-300" />
+                </Link>
+              ))}
+            </nav>
+          </div>
+        )}
+
+
         {/* Mobile menu */}
         {mobileOpen && (
           <nav className="lg:hidden bg-background/95 backdrop-blur-xl border-t border-border px-4 pb-4">
