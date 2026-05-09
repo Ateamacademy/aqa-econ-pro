@@ -87,47 +87,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             : "bg-transparent"
         )}
       >
-        <div className="max-w-[1280px] mx-auto flex h-24 items-center justify-between px-5 lg:px-6">
+        <div className="max-w-[1280px] mx-auto flex h-16 md:h-24 items-center justify-between px-4 md:px-5 lg:px-6">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 shrink-0 mr-8">
-            <div className="relative h-20 w-20 rounded-full bg-white p-0.5 ring-2 ring-primary/60 shadow-[0_0_32px_rgba(99,102,241,0.6)]">
+          <Link to="/" className="flex items-center gap-2 md:gap-3 shrink-0 md:mr-8 min-w-0">
+            <div className="h-10 w-10 md:h-20 md:w-20 rounded-full bg-white p-0.5 ring-2 ring-primary/60 shadow-[0_0_32px_rgba(99,102,241,0.6)] shrink-0">
               <img
                 src={econRevLogo}
                 alt="Econ Rev logo"
                 className="h-full w-full rounded-full object-cover"
               />
-              {/* Electric neon glow on the arrow tip */}
-              <span
-                aria-hidden
-                className="pointer-events-none absolute rounded-full animate-neon-flicker"
-                style={{
-                  top: "38%",
-                  left: "70%",
-                  width: "14px",
-                  height: "14px",
-                  transform: "translate(-50%, -50%)",
-                  background:
-                    "radial-gradient(circle, rgba(125,211,252,0.95) 0%, rgba(56,189,248,0.55) 40%, rgba(56,189,248,0) 70%)",
-                  filter: "blur(0.5px)",
-                  mixBlendMode: "screen",
-                }}
-              />
-              <span
-                aria-hidden
-                className="pointer-events-none absolute rounded-full animate-neon-flicker"
-                style={{
-                  top: "38%",
-                  left: "70%",
-                  width: "4px",
-                  height: "4px",
-                  transform: "translate(-50%, -50%)",
-                  background: "#ffffff",
-                  boxShadow:
-                    "0 0 6px #ffffff, 0 0 12px #38bdf8, 0 0 22px #38bdf8, 0 0 36px #0ea5e9",
-                }}
-              />
             </div>
-            <span className="text-2xl font-bold text-foreground tracking-tight">The GDP of Grades</span>
+            <span className="text-base md:text-2xl font-bold text-foreground tracking-tight truncate">The GDP of Grades</span>
           </Link>
 
           {/* Centre nav (non-homepage) */}
@@ -327,7 +297,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         )}
       </header>
 
-      <main className="flex-1 pt-16">{children}</main>
+      <main className="flex-1 pt-16 md:pt-24">{children}</main>
 
       {/* Footer */}
       <footer className="bg-background border-t border-border">
