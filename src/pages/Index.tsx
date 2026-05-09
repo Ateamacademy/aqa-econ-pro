@@ -599,7 +599,7 @@ export default function Index() {
               <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
                 Popular
               </div>
-              <p className="text-sm font-bold text-primary mb-1">Exam Window Pass</p>
+              <p className="text-sm font-bold text-primary mb-1">Pro Pass</p>
               <div className="flex items-baseline gap-1.5 mb-1">
               <span className="text-4xl font-extrabold font-mono">£29</span>
                 <span className="text-sm text-muted-foreground">/one-off</span>
