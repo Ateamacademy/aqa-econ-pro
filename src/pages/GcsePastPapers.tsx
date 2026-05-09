@@ -17,7 +17,7 @@ export default function GcsePastPapers() {
   return (
     <div className="container py-10">
       <div className="mb-8">
-        <h1 className="text-4xl font-serif mb-2">AQA GCSE Economics Past Papers</h1>
+        <h1 className="text-3xl font-bold tracking-tight text-foreground mb-2">AQA GCSE Economics Past Papers</h1>
         <p className="text-muted-foreground">Browse AQA GCSE Economics (8136) past papers, mark schemes, and exam resources.</p>
       </div>
 

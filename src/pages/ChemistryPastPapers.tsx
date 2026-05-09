@@ -40,7 +40,7 @@ export default function ChemistryPastPapers() {
   return (
     <div className="container py-10">
       <div className="mb-8">
-        <h1 className="text-4xl font-serif mb-2 flex items-center gap-2">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground mb-2 flex items-center gap-2">
           <FlaskConical className="h-8 w-8 text-accent" />
           AQA GCSE Chemistry Past Papers
         </h1>

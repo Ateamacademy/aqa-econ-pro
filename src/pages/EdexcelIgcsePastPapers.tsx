@@ -44,7 +44,7 @@ export default function EdexcelIgcsePastPapers() {
   return (
     <div className="container py-10">
       <div className="mb-8">
-        <h1 className="text-4xl font-serif mb-2">Edexcel IGCSE Economics Past Papers</h1>
+        <h1 className="text-3xl font-bold tracking-tight text-foreground mb-2">Edexcel IGCSE Economics Past Papers</h1>
         <p className="text-muted-foreground">
           Browse Pearson Edexcel International GCSE Economics (4EC1) past papers and mark schemes from Physics & Maths Tutor.
         </p>

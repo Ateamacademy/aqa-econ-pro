@@ -1552,7 +1552,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
       {step === "answer" && (
         <div className="space-y-4">
           <Card>
-            <CardHeader><CardTitle className="font-serif text-lg">Question</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-base font-bold tracking-tight">Question</CardTitle></CardHeader>
             <CardContent>
               <MathsMarkdown className="prose prose-sm max-w-none dark:prose-invert">{generatedQ}</MathsMarkdown>
               {selectedScenario?.hints && selectedScenario.hints.length > 0 && (
@@ -1969,14 +1969,14 @@ function DiagramFeedbackView({
   return (
     <div className="space-y-4">
       <Card>
-        <CardHeader><CardTitle className="font-serif text-lg">Question</CardTitle></CardHeader>
+        <CardHeader><CardTitle className="text-base font-bold tracking-tight">Question</CardTitle></CardHeader>
         <CardContent>
           <MathsMarkdown className="prose prose-sm max-w-none dark:prose-invert">{generatedQ}</MathsMarkdown>
         </CardContent>
       </Card>
 
       <Card>
-        <CardHeader><CardTitle className="font-serif text-lg">Your Diagram</CardTitle></CardHeader>
+        <CardHeader><CardTitle className="text-base font-bold tracking-tight">Your Diagram</CardTitle></CardHeader>
         <CardContent>
           {diagramImage && inputMode === "draw" ? (
             <img src={diagramImage} alt="Your drawn diagram" className="rounded-lg border max-w-full" />
@@ -2004,7 +2004,7 @@ function DiagramFeedbackView({
       {/* Smart Mark feedback */}
       <Card>
         <CardHeader>
-          <CardTitle className="font-serif text-lg">Smart Mark feedback</CardTitle>
+          <CardTitle className="text-base font-bold tracking-tight">Smart Mark feedback</CardTitle>
         </CardHeader>
         <CardContent>
           {isLorenzTopic && <LorenzCurveChart showRegionsToggle showRefToggle height={420} />}

@@ -23,7 +23,7 @@ export default function IgcsePastPapers() {
   return (
     <div className="container py-10">
       <div className="mb-8">
-        <h1 className="text-4xl font-serif mb-2">Cambridge IGCSE Economics Past Papers</h1>
+        <h1 className="text-3xl font-bold tracking-tight text-foreground mb-2">Cambridge IGCSE Economics Past Papers</h1>
         <p className="text-muted-foreground">Browse Cambridge International IGCSE Economics (0455) past papers and resources.</p>
       </div>
 

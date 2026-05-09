@@ -38,7 +38,7 @@ export default function MathsPastPapers() {
   return (
     <div className="container py-10">
       <div className="mb-8">
-        <h1 className="text-4xl font-serif mb-2">Maths Past Papers</h1>
+        <h1 className="text-3xl font-bold tracking-tight text-foreground mb-2">Maths Past Papers</h1>
         <p className="text-muted-foreground">
           Browse Edexcel GCSE Maths (1MA1) past papers, mark schemes and model answers.
         </p>

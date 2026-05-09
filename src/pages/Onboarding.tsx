@@ -88,7 +88,7 @@ export default function Onboarding() {
                 Econ Rev
               </span>
             </div>
-            <CardTitle className="font-serif text-2xl">
+            <CardTitle className="text-2xl font-bold tracking-tight">
               {step === 1 ? "What's your exam board?" : "What grade are you aiming for?"}
             </CardTitle>
             <CardDescription className="mt-1">
