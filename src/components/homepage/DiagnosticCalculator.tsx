@@ -96,8 +96,24 @@ const Q5 = {
   ].join(" "),
 };
 
+const Q6 = {
+  prompt:
+    "Draw a fully labelled supply-and-demand diagram for the market for petrol, showing the impact of an indirect tax (specific tax) imposed on producers. Label clearly: P, Q axes; original S and D curves; new S+tax curve; original equilibrium (P₁, Q₁); new equilibrium (P₂, Q₂); the tax wedge; and the consumer/producer tax incidence regions.",
+  totalMarks: 6,
+  rubric: [
+    "Diagram-only marking (vision). Award marks against components actually drawn:",
+    "1 mark — Both axes labelled correctly (Price on Y, Quantity on X).",
+    "1 mark — Upward-sloping supply (S) and downward-sloping demand (D) curves.",
+    "1 mark — A second supply curve (S+tax) clearly parallel & shifted left/up of S.",
+    "1 mark — Original equilibrium (P₁, Q₁) and new equilibrium (P₂, Q₂) both labelled.",
+    "1 mark — Vertical tax wedge shown between S+tax and S at Q₂ (or labelled 'tax').",
+    "1 mark — Consumer incidence and producer incidence regions clearly indicated.",
+    "If no image is uploaded → 0 marks. If image is blank or off-topic → 0 marks.",
+  ].join(" "),
+};
+
 interface AiItemResult {
-  id: "q4" | "q5";
+  id: "q4" | "q5" | "q6";
   marks: number;
   totalMarks: number;
   rationale: string;
