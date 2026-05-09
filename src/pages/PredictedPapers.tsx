@@ -2372,11 +2372,19 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                             <span className="text-[11px] bg-primary/10 text-primary px-2.5 py-1 rounded-full font-semibold">
                               {lp.totalMarks} marks
                             </span>
-                            {difficulty && (
-                              <span className="text-[11px] bg-muted text-muted-foreground px-2.5 py-1 rounded-full font-medium">
-                                {difficulty}
-                              </span>
-                            )}
+                            {difficulty && (() => {
+                              const diffStyles: Record<string, string> = {
+                                Moderate: "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30",
+                                Hard: "bg-amber-500/15 text-amber-400 border border-amber-500/30",
+                                Advanced: "bg-rose-500/15 text-rose-400 border border-rose-500/30",
+                              };
+                              const cls = diffStyles[difficulty] ?? "bg-muted text-muted-foreground";
+                              return (
+                                <span className={`text-[11px] ${cls} px-2.5 py-1 rounded-full font-semibold`}>
+                                  {difficulty}
+                                </span>
+                              );
+                            })()}
                             {isLocked && (
                               <span className="text-[11px] bg-amber-500/15 text-amber-400 border border-amber-500/30 px-2.5 py-1 rounded-full font-semibold inline-flex items-center gap-1">
                                 <Lock className="h-3 w-3" /> Pro
