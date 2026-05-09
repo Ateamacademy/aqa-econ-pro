@@ -255,7 +255,20 @@ export default function Index() {
                 Right Now?
               </span>
             </h1>
+            <div className="flex items-center justify-center gap-2 mt-2">
+              <span
+                className="inline-block text-3xl md:text-4xl text-amber-300 animate-pulse"
+                style={{
+                  fontFamily: "'Caveat','Comic Sans MS',cursive",
+                  transform: "rotate(-6deg)",
+                  textShadow: "0 2px 12px rgba(251,191,36,0.45)",
+                }}
+              >
+                Try it ↓
+              </span>
+            </div>
           </motion.div>
+
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.4, 0.25, 1] }}>
             <DiagnosticCalculator />
           </motion.div>
