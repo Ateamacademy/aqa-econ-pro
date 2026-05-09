@@ -340,7 +340,7 @@ export default function DashboardDemo() {
           </p>
           <div className="grid grid-cols-4 gap-1.5">
             {topics.map((t, i) => (
-              <HeatCell key={i} value={t.v} label={t.l} delay={0.05 * i} />
+              <HeatCell key={i} value={t.v} label={t.l} delay={0.05 * i} seed={i + 1} />
             ))}
           </div>
         </div>
