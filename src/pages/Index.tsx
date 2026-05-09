@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import GradeStepLadder from "@/components/homepage/GradeStepLadder";
 import DiagnosticCalculator from "@/components/homepage/DiagnosticCalculator";
+import InstantMarkingDemo from "@/components/InstantMarkingDemo";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -189,6 +190,13 @@ export default function Index() {
 
   return (
     <div className="overflow-hidden">
+      {/* ═══════ HERO FEATURE: INSTANT MARKING DEMO ═══════ */}
+      <section className="relative pt-28 lg:pt-32">
+        <div className="mx-auto max-w-6xl px-4 py-12">
+          <InstantMarkingDemo />
+        </div>
+      </section>
+
       {/* ═══════ DIAGNOSTIC GRADE CALCULATOR (above the fold) ═══════ */}
       <section id="diagnostic" className="relative pt-28 pb-16 lg:pt-32 lg:pb-20">
         <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(60% 50% at 50% 0%, rgba(79,86,255,0.10), transparent 70%)" }} />
