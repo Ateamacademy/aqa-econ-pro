@@ -87,17 +87,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             : "bg-transparent"
         )}
       >
-        <div className="max-w-[1280px] mx-auto flex h-24 items-center justify-between px-5 lg:px-6">
+        <div className="max-w-[1280px] mx-auto flex h-16 md:h-24 items-center justify-between px-4 md:px-5 lg:px-6">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 shrink-0 mr-8">
-            <div className="h-20 w-20 rounded-full bg-white p-0.5 ring-2 ring-primary/60 shadow-[0_0_32px_rgba(99,102,241,0.6)]">
+          <Link to="/" className="flex items-center gap-2 md:gap-3 shrink-0 md:mr-8 min-w-0">
+            <div className="h-10 w-10 md:h-20 md:w-20 rounded-full bg-white p-0.5 ring-2 ring-primary/60 shadow-[0_0_32px_rgba(99,102,241,0.6)] shrink-0">
               <img
                 src={econRevLogo}
                 alt="Econ Rev logo"
                 className="h-full w-full rounded-full object-cover"
               />
             </div>
-            <span className="text-2xl font-bold text-foreground tracking-tight">The GDP of Grades</span>
+            <span className="text-base md:text-2xl font-bold text-foreground tracking-tight truncate">The GDP of Grades</span>
           </Link>
 
           {/* Centre nav (non-homepage) */}
