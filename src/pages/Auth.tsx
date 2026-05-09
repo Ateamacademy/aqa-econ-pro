@@ -10,7 +10,8 @@ import { toast } from "sonner";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 import { motion } from "framer-motion";
-import { Eye, EyeOff, Mail, Lock, Loader2, Sparkles, TrendingUp, BookOpen, Award, CheckCircle2, BarChart3 } from "lucide-react";
+import { Eye, EyeOff, Mail, Lock, Loader2, Sparkles, TrendingUp, BookOpen, Award, CheckCircle2 } from "lucide-react";
+import econRevLogo from "@/assets/econ-rev-logo.jpg";
 
 export default function Auth() {
   const { user, profile } = useAuth();
@@ -25,6 +26,7 @@ export default function Auth() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [appleLoading, setAppleLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [activeTab, setActiveTab] = useState("login");
@@ -44,6 +46,23 @@ export default function Auth() {
       console.error("Google OAuth exception:", e);
     } finally {
       setGoogleLoading(false);
+    }
+  }, []);
+
+  const handleAppleLogin = useCallback(async () => {
+    setAppleLoading(true);
+    try {
+      const { error } = await lovable.auth.signInWithOAuth("apple", {
+        redirect_uri: window.location.origin,
+      });
+      if (error) {
+        toast.error("Apple sign-in failed. Please try again.");
+        console.error("Apple OAuth error:", error);
+      }
+    } catch (e) {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setAppleLoading(false);
     }
   }, []);
 
@@ -126,13 +145,14 @@ export default function Auth() {
         }
         return;
       }
-      toast.success("Account created! Check your email to verify your account.");
+      toast.success("Account created · welcome!");
+      navigate("/");
     } catch {
       toast.error("Network error. Please check your connection.");
     } finally {
       setLoading(false);
     }
-  }, [email, password, loading]);
+  }, [email, password, loading, navigate]);
 
   const handleForgotPassword = useCallback(async () => {
     const trimmedEmail = email.trim();
@@ -177,11 +197,11 @@ export default function Auth() {
             transition={{ duration: 0.6 }}
             className="flex items-center gap-2.5"
           >
-            <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-indigo-bright to-primary flex items-center justify-center shadow-lg shadow-primary/30">
-              <BarChart3 className="h-5 w-5 text-white" />
+            <div className="h-12 w-12 rounded-full bg-white p-0.5 ring-2 ring-primary/60 shadow-[0_0_24px_rgba(99,102,241,0.55)]">
+              <img src={econRevLogo} alt="Econ Rev logo" className="h-full w-full rounded-full object-cover" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-indigo-bright to-primary bg-clip-text text-transparent">
-              Econ Rev
+            <span className="text-xl font-bold text-foreground tracking-tight">
+              Econ Rev · The GDP of Grades
             </span>
           </motion.div>
 
@@ -258,10 +278,10 @@ export default function Auth() {
           >
             {/* Mobile logo */}
             <div className="lg:hidden flex items-center justify-center gap-2.5 mb-8">
-              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-indigo-bright to-primary flex items-center justify-center shadow-lg shadow-primary/30">
-                <BarChart3 className="h-5 w-5 text-white" />
+              <div className="h-12 w-12 rounded-full bg-white p-0.5 ring-2 ring-primary/60 shadow-[0_0_24px_rgba(99,102,241,0.55)]">
+                <img src={econRevLogo} alt="Econ Rev logo" className="h-full w-full rounded-full object-cover" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-indigo-bright to-primary bg-clip-text text-transparent">
+              <span className="text-xl font-bold text-foreground tracking-tight">
                 Econ Rev
               </span>
             </div>
@@ -285,7 +305,7 @@ export default function Auth() {
                   variant="outline"
                   className="w-full h-12 text-sm font-medium border-border/70 hover:bg-secondary/80 hover:border-primary/40 transition-all group"
                   onClick={handleGoogleLogin}
-                  disabled={googleLoading || loading}
+                  disabled={googleLoading || appleLoading || loading}
                 >
                   {googleLoading ? (
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -298,6 +318,24 @@ export default function Auth() {
                     </svg>
                   )}
                   Continue with Google
+                </Button>
+
+                {/* Apple OAuth */}
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="w-full h-12 text-sm font-medium border-border/70 hover:bg-secondary/80 hover:border-primary/40 transition-all group"
+                  onClick={handleAppleLogin}
+                  disabled={appleLoading || googleLoading || loading}
+                >
+                  {appleLoading ? (
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  ) : (
+                    <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                    </svg>
+                  )}
+                  Continue with Apple
                 </Button>
 
                 {/* Divider */}
