@@ -276,16 +276,18 @@ export default function DiagnosticCalculator() {
         <label className="text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground block mb-2">
           Pick your exam board
         </label>
-        <select
-          value={board}
-          onChange={(e) => setBoard(e.target.value as Board)}
-          disabled={step > 0 && step < 5}
-          className="h-11 rounded-md border border-border bg-background px-4 text-sm font-medium text-foreground disabled:opacity-60 min-w-[260px]"
-        >
-          {BOARD_OPTIONS.map((o) => (
-            <option key={o.value} value={o.value}>{o.label}</option>
-          ))}
-        </select>
+        <div className="neon-shimmer-ring inline-block">
+          <select
+            value={board}
+            onChange={(e) => setBoard(e.target.value as Board)}
+            disabled={step > 0 && step < 5}
+            className="h-11 rounded-md border-0 bg-background px-4 text-sm font-medium text-foreground disabled:opacity-60 min-w-[260px] focus:outline-none"
+          >
+            {BOARD_OPTIONS.map((o) => (
+              <option key={o.value} value={o.value}>{o.label}</option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <div className="rounded-2xl border border-border bg-card overflow-hidden">
