@@ -46,6 +46,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [boardOpen, setBoardOpen] = useState(false);
+  const [menuRevealed, setMenuRevealed] = useState(false);
   const boardRef = useRef<HTMLDivElement>(null);
   const { user, subscribed, signOut } = useAuth();
   const { subject, setSubject } = useSubject();
@@ -65,6 +66,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Reveal homepage app menu 5s after page load
+  useEffect(() => {
+    if (!isHomepage) { setMenuRevealed(false); return; }
+    const t = setTimeout(() => setMenuRevealed(true), 5000);
+    return () => clearTimeout(t);
+  }, [isHomepage]);
 
   const currentNavLinks = isHomepage ? homepageNavLinks : navLinks;
 
@@ -206,7 +214,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {/* Homepage hover-revealed app menu (sub-row) */}
         {isHomepage && (
           <div
-            className="hidden md:block max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-out group-hover:max-h-16 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto"
+            className={cn(
+              "hidden md:block overflow-hidden transition-all duration-700 ease-out",
+              menuRevealed
+                ? "max-h-16 opacity-100 pointer-events-auto"
+                : "max-h-0 opacity-0 pointer-events-none"
+            )}
           >
             <nav className="max-w-[1280px] mx-auto flex items-center justify-center gap-8 lg:gap-10 px-5 lg:px-6 pb-3">
               {navLinks.map((item) => (
