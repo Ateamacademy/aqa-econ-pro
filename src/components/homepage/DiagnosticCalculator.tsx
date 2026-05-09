@@ -303,7 +303,7 @@ export default function DiagnosticCalculator() {
               Diagnostic Grade Calculator
             </h3>
             <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-              Five questions across the full skill range. Your written answers are marked using your exam board's official mark scheme. We'll predict your current grade based on your total marks (out of {TOTAL}).
+              Six questions across the full skill range — including a written essay with diagram, and a separate diagram-only task. Your answers and diagrams are marked using your exam board's official mark scheme. We'll predict your current grade based on your total marks (out of {TOTAL}).
             </p>
           </div>
         </div>
