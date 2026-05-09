@@ -1,5 +1,5 @@
 /**
- * DIAGRAM_SPECS — Declarative config objects for all economics diagrams.
+ * DIAGRAM_SPECS · Declarative config objects for all economics diagrams.
  *
  * Each diagram is described as a pure data object:
  *   - curves: what lines to draw (linear, vertical, horizontal, quadratic, piecewise)
@@ -13,7 +13,7 @@
  */
 
 /* ══════════════════════════════════════════════
-   Curve types — all operate in DATA SPACE (0–10)
+   Curve types · all operate in DATA SPACE (0–10)
    ══════════════════════════════════════════════ */
 
 export interface LinearCurve {
@@ -68,7 +68,7 @@ export interface CurveSpec {
 }
 
 /* ══════════════════════════════════════════════
-   Equilibrium — always computed via intersection
+   Equilibrium · always computed via intersection
    ══════════════════════════════════════════════ */
 
 export interface EquilibriumSpec {
@@ -88,7 +88,7 @@ export interface EquilibriumSpec {
 }
 
 /* ══════════════════════════════════════════════
-   Shading regions — vertices from curve intersections
+   Shading regions · vertices from curve intersections
    ══════════════════════════════════════════════ */
 
 /**
@@ -116,7 +116,7 @@ export interface ShadingSpec {
 }
 
 /* ══════════════════════════════════════════════
-   Annotation — free text at computed positions
+   Annotation · free text at computed positions
    ══════════════════════════════════════════════ */
 
 export interface AnnotationSpec {
@@ -183,7 +183,7 @@ import { EDEXCEL_IGCSE_DIAGRAM_SPECS } from "@/data/edexcelIgcseDiagramSpecs";
 import { OCR_GCSE_DIAGRAM_SPECS } from "@/data/ocrGcseDiagramSpecs";
 
 /* ══════════════════════════════════════════════
-   DIAGRAM_SPECS — the canonical registry
+   DIAGRAM_SPECS · the canonical registry
    ══════════════════════════════════════════════ */
 
 export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
@@ -260,7 +260,7 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     legend: [{ label: "Demand", color: C.demand }, { label: "Supply", color: C.supply }, { label: "Shift ←", color: C.shifted }],
     notes: "Demand shifts left due to falling incomes, change in preferences, or fall in price of substitutes.",
     examTips: [
-      "D₂ shifts LEFT — closer to origin",
+      "D₂ shifts LEFT · closer to origin",
       "Price falls from P₁ to P₂, quantity falls from Q₁ to Q₂",
       "Always draw dashed projection lines to both axes",
     ],
@@ -281,8 +281,8 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     legend: [{ label: "Demand", color: C.demand }, { label: "Supply", color: C.supply }, { label: "Shift →", color: C.shifted }],
     notes: "Supply shifts right due to lower costs, better technology, or more suppliers entering the market.",
     examTips: [
-      "Supply shifts RIGHT — more supplied at every price",
-      "Price falls, quantity rises — show both changes clearly",
+      "Supply shifts RIGHT · more supplied at every price",
+      "Price falls, quantity rises · show both changes clearly",
       "Common causes: technology improvement, lower input costs",
     ],
   },
@@ -302,7 +302,7 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     legend: [{ label: "Demand", color: C.demand }, { label: "Supply", color: C.supply }, { label: "Shift ←", color: C.shifted }],
     notes: "Supply shifts left due to higher input costs, taxes, or supply chain disruption.",
     examTips: [
-      "Supply shifts LEFT — less supplied at every price",
+      "Supply shifts LEFT · less supplied at every price",
       "Price rises, quantity falls",
       "Common causes: higher costs of production, indirect taxes",
     ],
@@ -335,10 +335,10 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       },
     ],
     legend: [{ label: "MSC = MPC", color: C.supply }, { label: "MSB", color: C.demand }, { label: "MPB", color: C.demand }, { label: "Welfare Loss", color: C.demand }],
-    notes: "MSC = MPC — no external costs. MSB > MPB — consumption generates external benefits. Underconsumption at free market outcome.",
+    notes: "MSC = MPC · no external costs. MSB > MPB · consumption generates external benefits. Underconsumption at free market outcome.",
     examTips: [
-      "MSC = MPC — no external costs in production",
-      "MSB is above MPB — consumption generates external benefits to third parties",
+      "MSC = MPC · no external costs in production",
+      "MSB is above MPB · consumption generates external benefits to third parties",
       "Free market outcome where MPB = MPC: point E at (q, p)",
       "Socially optimal outcome where MSB = MSC: point B at (q₁, p₁)",
       "Underconsumption of q₁ − q. Welfare loss ABE",
@@ -371,10 +371,10 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       },
     ],
     legend: [{ label: "MSC = MPC", color: C.supply }, { label: "MPB", color: C.demand }, { label: "MSB", color: C.demand }, { label: "Welfare Loss", color: C.demand }],
-    notes: "MSC = MPC — no external costs in production. MSB < MPB — consumers ignore harm to third parties. Overconsumption at free market.",
+    notes: "MSC = MPC · no external costs in production. MSB < MPB · consumers ignore harm to third parties. Overconsumption at free market.",
     examTips: [
-      "MSC = MPC — no external costs in production",
-      "MSB is below MPB — consumers ignore harm to third parties (demerit goods)",
+      "MSC = MPC · no external costs in production",
+      "MSB is below MPB · consumers ignore harm to third parties (demerit goods)",
       "Free market outcome where MPB = MPC: overconsumption",
       "Socially optimal outcome where MSB = MSC: point E",
       "Overconsumption of q − q₁. Welfare loss ABE",
@@ -407,9 +407,9 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       },
     ],
     legend: [{ label: "MSC", color: C.supply }, { label: "MPC", color: C.demand }, { label: "MPB = MSB", color: C.demand }, { label: "Welfare Loss", color: C.demand }],
-    notes: "MSC > MPC — producers ignore external costs (e.g. pollution). Overproduction at free market.",
+    notes: "MSC > MPC · producers ignore external costs (e.g. pollution). Overproduction at free market.",
     examTips: [
-      "MSC is above MPC — producers ignore external costs",
+      "MSC is above MPC · producers ignore external costs",
       "Free market produces where MPB = MPC: overproduction",
       "Socially optimal outcome where MSC = MSB",
       "Overproduction of q − q₁. Welfare loss ABE",
@@ -453,9 +453,9 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       { label: "MPB = MSB = Demand", color: C.supply },
       { label: "Welfare Loss", color: C.orange },
     ],
-    notes: "MSC < MPC — production generates external benefits. Free market under-produces relative to social optimum.",
+    notes: "MSC < MPC · production generates external benefits. Free market under-produces relative to social optimum.",
     examTips: [
-      "MSC is BELOW MPC — production generates external benefits",
+      "MSC is BELOW MPC · production generates external benefits",
       "Free market: MPB ∩ MPC → Qm (under-produces)",
       "Social optimum: MPB ∩ MSC → Qopt (more output is desirable)",
       "Welfare loss triangle between market eq, social optimum, and MPC at Qopt",
@@ -480,7 +480,7 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     notes: "AD shifts right due to increased C, I, G, or X-M. Price level rises and real GDP increases.",
     examTips: [
       "LRAS is vertical at Yf (full employment output)",
-      "AD shifts RIGHT — demand-pull inflation if near Yf",
+      "AD shifts RIGHT · demand-pull inflation if near Yf",
       "Show both equilibria E₁ and E₂ with PL and Y values",
     ],
   },
@@ -499,9 +499,9 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       { id: "E2", label: "E₂", curve1: "SRAS", curve2: "AD2", color: C.shifted, pLabel: "PL₂", qLabel: "Y₂", tooltip: "✓ AD↓ → lower PL & GDP (recession)" },
     ],
     legend: [{ label: "AD", color: C.supply }, { label: "SRAS", color: C.demand }, { label: "LRAS", color: C.lras }],
-    notes: "AD shifts left — deflationary pressure. Real GDP falls, risk of demand-deficient unemployment.",
+    notes: "AD shifts left · deflationary pressure. Real GDP falls, risk of demand-deficient unemployment.",
     examTips: [
-      "AD shifts LEFT — deflationary pressure",
+      "AD shifts LEFT · deflationary pressure",
       "Real GDP falls, price level falls",
       "Risk of demand-deficient (cyclical) unemployment",
     ],
@@ -521,10 +521,10 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       { id: "E2", label: "E₂", curve1: "SRAS2", curve2: "AD", color: C.shifted, pLabel: "PL₂", qLabel: "Y₂", tooltip: "✓ SRAS↑ → lower PL & higher GDP" },
     ],
     legend: [{ label: "SRAS", color: C.demand }, { label: "AD", color: C.supply }, { label: "LRAS", color: C.lras }],
-    notes: "SRAS shifts right due to lower costs. Price level falls, real GDP rises — non-inflationary growth.",
+    notes: "SRAS shifts right due to lower costs. Price level falls, real GDP rises · non-inflationary growth.",
     examTips: [
-      "SRAS shifts RIGHT — lower costs of production",
-      "Price level falls AND real GDP rises — non-inflationary growth",
+      "SRAS shifts RIGHT · lower costs of production",
+      "Price level falls AND real GDP rises · non-inflationary growth",
       "Key causes: lower oil prices, better technology, deregulation",
     ],
   },
@@ -543,17 +543,17 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       { id: "E2", label: "E₂", curve1: "SRAS2", curve2: "AD", color: C.shifted, pLabel: "P₂", qLabel: "Y₂", tooltip: "✓ Stagflation: higher PL, lower Y" },
     ],
     legend: [{ label: "SRAS", color: C.demand }, { label: "AD", color: C.supply }, { label: "LRAS", color: C.lras }],
-    notes: "SRAS shifts left — higher costs. Stagflation: price level rises AND real output falls.",
+    notes: "SRAS shifts left · higher costs. Stagflation: price level rises AND real output falls.",
     examTips: [
-      "NEGATIVE SHIFT from SRAS₁ to SRAS₂ — higher costs of production",
-      "Price level rises AND real output falls — stagflation",
+      "NEGATIVE SHIFT from SRAS₁ to SRAS₂ · higher costs of production",
+      "Price level rises AND real output falls · stagflation",
       "Key causes: oil price shocks, rising wages, supply chain disruption",
     ],
   },
 
   /* ── Tax Incidence ── */
   tax_incidence: {
-    title: "Supply & Demand — Effect of an Indirect Tax",
+    title: "Supply & Demand · Effect of an Indirect Tax",
     axisLabels: { x: "Quantity", y: "Price" },
     curves: [
       { id: "D1", label: "D1", params: { type: "linear", slope: -0.8, intercept: 9 }, color: C.supply },
@@ -588,7 +588,7 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
 
   /* ── LRAS Shift ── */
   lras_shift: {
-    title: "LRAS Shift Right — Long-Run Growth",
+    title: "LRAS Shift Right · Long-Run Growth",
     axisLabels: { x: "Real GDP", y: "Price Level" },
     curves: [
       { id: "LRAS", label: "LRAS", params: { type: "vertical", x: 4 }, color: C.lras },
@@ -606,7 +606,7 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
 
   /* ── Exchange Rate ── */
   exchange_rate: {
-    title: "Currency Market — Exchange Rate",
+    title: "Currency Market · Exchange Rate",
     axisLabels: { x: "Quantity of £", y: "Exchange Rate ($/£)" },
     curves: [
       { id: "S1", label: "S£", params: { type: "linear", slope: 0.8, intercept: 1 }, color: C.demand },
@@ -668,7 +668,7 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
 
   /* ── Pollution Permits ── */
   pollution_permits: {
-    title: "Pollution Permits — Tradeable Emissions",
+    title: "Pollution Permits · Tradeable Emissions",
     axisLabels: { x: "Quantity of Permits", y: "Price of Permits" },
     curves: [
       { id: "S1", label: "S", params: { type: "vertical", x: 5.5 }, color: C.demand },
@@ -680,9 +680,9 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       { id: "E1", label: "E₁", curve1: "S2", curve2: "D", color: C.shifted, pLabel: "p₁", qLabel: "q₁", labelPos: "tl" },
     ],
     legend: [{ label: "S (fixed)", color: C.demand }, { label: "S₁ (reduced)", color: C.shifted }, { label: "D", color: C.supply }],
-    notes: "Supply perfectly inelastic — set by govt. Reducing permits → S left → higher price. Market-based incentive to cut emissions.",
+    notes: "Supply perfectly inelastic · set by govt. Reducing permits → S left → higher price. Market-based incentive to cut emissions.",
     examTips: [
-      "Supply perfectly inelastic — set by govt",
+      "Supply perfectly inelastic · set by govt",
       "Reducing permits → S left → higher price",
       "Market-based incentive to cut emissions",
     ],
@@ -690,7 +690,7 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
 
   /* ── Monopsony ── */
   monopsony: {
-    title: "Monopsony — Dominant Employer",
+    title: "Monopsony · Dominant Employer",
     axisLabels: { x: "Quantity of Labour", y: "Wage / Costs" },
     curves: [
       { id: "ACL", label: "S=ACL", params: { type: "linear", slope: 0.6, intercept: 1.5 }, color: C.demand },
@@ -725,11 +725,11 @@ export const DIAGRAM_SPECS: Record<string, DiagramSpec> = {
 
   /* ── Perfect Competition (two-panel) ──
    * This is a MULTI-PANEL diagram rendered by PerfectCompDiagram.tsx
-   * The spec here is for registry/reference only — the actual rendering
+   * The spec here is for registry/reference only · the actual rendering
    * is handled by the dedicated component, not DiagramSpecRenderer.
    */
   perfectComp: {
-    title: "Perfect Competition — Industry & Firm",
+    title: "Perfect Competition · Industry & Firm",
     axisLabels: { x: "Quantity", y: "Price / Cost" },
     curves: [
       // Panel (a) Industry

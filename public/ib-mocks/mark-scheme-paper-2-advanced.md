@@ -1,22 +1,22 @@
 <!-- Auto-generated from /public/ib-mocks/mark-scheme-paper-2-advanced.pdf -->
-SME Mark Scheme P2 — Advanced
+SME Mark Scheme P2 · Advanced
 
 
-SavePredictedExams — SME
+SavePredictedExams · SME
 
 Economics
 Higher level / Standard level
 Paper 2
 
 
-SME Mark Scheme — Paper 2 Advanced
+SME Mark Scheme · Paper 2 Advanced
 
 
 1. Use the question-specific mark scheme together with the mark bands.
 2. Whenever relevant, carry-over (OFR) marks must be awarded.
 3. A candidate may be penalised once for rounding/unit errors across (b) subparts.
 
-Question 1 — Nigeria
+Question 1 · Nigeria
 1. (a) (i) Define poverty. [2]
 
   Level                                                                                      Marks
@@ -48,7 +48,7 @@ Question 1 — Nigeria
 
 
                                                    1                                    SME Predicted Paper
-                                                                           SME Mark Scheme P2 — Advanced
+                                                                           SME Mark Scheme P2 · Advanced
 
 
 1. (b) (i) Percentage change in Nigeria’s HDI between 2010 and 2022. [3]
@@ -62,7 +62,7 @@ Nominal GDP = $477 bn; population ≈ 218 million.
 GDP per capita = 477,000,000,000 / 218,000,000 [1]
 Answer = US$2,188.07 per person [1]
 
-1. (c) Demand and supply — removal of fuel subsidy. [4]
+1. (c) Demand and supply · removal of fuel subsidy. [4]
 
  Level                                                                                        Marks
 
@@ -80,10 +80,10 @@ Answer = US$2,188.07 per person [1]
 
 
                                                    2                                       SME Predicted Paper
-                                                                          SME Mark Scheme P2 — Advanced
+                                                                          SME Mark Scheme P2 · Advanced
 
 
-1. (d) Exchange rate — naira unification and exporters. [4]
+1. (d) Exchange rate · naira unification and exporters. [4]
 
  Level                                                                                     Marks
 
@@ -100,7 +100,7 @@ Answer = US$2,188.07 per person [1]
            domestic-currency prices to foreign buyers [1], raising export volumes and
            revenues (Marshall–Lerner permitting) [1].
 
-1. (e) AD/AS — infrastructure deficiencies and LRAS. [4]
+1. (e) AD/AS · infrastructure deficiencies and LRAS. [4]
 
  Level                                                                                     Marks
 
@@ -118,7 +118,7 @@ Answer = US$2,188.07 per person [1]
 
 
                                                   3                                     SME Predicted Paper
-                                                                             SME Mark Scheme P2 — Advanced
+                                                                             SME Mark Scheme P2 · Advanced
 
 
 1. (f) Corruption and poverty cycle. [4]
@@ -149,7 +149,7 @@ Answers may include:
       • Alternatives: continued structural reform, removal of fuel subsidy (already done), broader tax
       base, investment in human capital and infrastructure, anti-corruption measures, exchange-rate
       unification (Text A, 4).
-      • Synthesis / conclusion: a reasoned judgement — typically that AfCFTA can complement but
+      • Synthesis / conclusion: a reasoned judgement · typically that AfCFTA can complement but
       not substitute for fundamental governance and supply-side reform; effectiveness depends on
       Nigeria’s ability to compete.
 
@@ -172,7 +172,7 @@ Answers may include:
 
 
                                                     4                                      SME Predicted Paper
-                                                                   SME Mark Scheme P2 — Advanced
+                                                                   SME Mark Scheme P2 · Advanced
 
 
 7–9     The response indicates understanding of the specific demands of the question, but
@@ -203,10 +203,10 @@ Answers may include:
 
 
                                            5                                    SME Predicted Paper
-                                                                           SME Mark Scheme P2 — Advanced
+                                                                           SME Mark Scheme P2 · Advanced
 
 
-Question 2 — Brazil
+Question 2 · Brazil
 2. (a) (i) Define inflation targeting. [2]
 
   Level                                                                                     Marks
@@ -236,11 +236,11 @@ Question 2 — Brazil
            An understanding that a common access resource is one that is
            non-excludable (no one can be prevented from using it) but rivalrous (one
            person’s use reduces availability for others), such as ocean fisheries or the
-           Amazon rainforest — often leading to over-use (the tragedy of the commons).
+           Amazon rainforest · often leading to over-use (the tragedy of the commons).
 
 
                                                     6                                   SME Predicted Paper
-                                                                             SME Mark Scheme P2 — Advanced
+                                                                             SME Mark Scheme P2 · Advanced
 
 
 2. (b) (i) Average rate of inflation in Brazil, 2018–2023. [2]
@@ -255,7 +255,7 @@ BRL per US$: 2018 = 3.87; 2022 = 5.16.
 Answer = 25.00% depreciation of the real [1]
 Alternative (appreciation of the dollar): (1.29 / 3.87) × 100 = 33.33% appreciation of the US dollar.
 
-2. (c) AD/AS — higher Selic rate to reduce inflation. [4]
+2. (c) AD/AS · higher Selic rate to reduce inflation. [4]
 
   Level                                                                                       Marks
 
@@ -273,10 +273,10 @@ Alternative (appreciation of the dollar): (1.29 / 3.87) × 100 = 33.33% apprecia
 
 
                                                      7                                     SME Predicted Paper
-                                                                           SME Mark Scheme P2 — Advanced
+                                                                           SME Mark Scheme P2 · Advanced
 
 
-2. (d) Common access / externality — Amazon deforestation. [4]
+2. (d) Common access / externality · Amazon deforestation. [4]
 
   Level                                                                                       Marks
 
@@ -311,10 +311,10 @@ Alternative (appreciation of the dollar): (1.29 / 3.87) × 100 = 33.33% apprecia
 
 
                                                   8                                        SME Predicted Paper
-                                                                                SME Mark Scheme P2 — Advanced
+                                                                                SME Mark Scheme P2 · Advanced
 
 
-2. (f) Exchange rate — fall in commodity prices and the real. [4]
+2. (f) Exchange rate · fall in commodity prices and the real. [4]
 
  Level                                                                                            Marks
 
@@ -341,10 +341,10 @@ Answers may include:
       • Limitations: high volatility (inflation 10.1% in 2021, Table 2); tight policy slows growth and can
       worsen unemployment; blunt tool against supply-side shocks (commodity prices, exchange rate);
       may deepen inequality by raising borrowing costs for poorer households.
-      • Inclusive growth: Bolsa Família + minimum wage reduced Gini from 0.58 to 0.52 (Text A, 3) —
+      • Inclusive growth: Bolsa Família + minimum wage reduced Gini from 0.58 to 0.52 (Text A, 3) ·
       but this is fiscal policy, not monetary; deforestation and environmental damage (Text A, 4);
       green-growth potential (Text B, 5).
-      • Synthesis / conclusion: a reasoned judgement — inflation targeting has delivered greater
+      • Synthesis / conclusion: a reasoned judgement · inflation targeting has delivered greater
       price stability but cannot on its own deliver inclusive or green growth; needs to be combined with
       fiscal redistribution and environmental policy.
 
@@ -367,7 +367,7 @@ Answers may include:
 
 
                                                        9                                      SME Predicted Paper
-                                                                   SME Mark Scheme P2 — Advanced
+                                                                   SME Mark Scheme P2 · Advanced
 
 
 7–9     The response indicates understanding of the specific demands of the question, but

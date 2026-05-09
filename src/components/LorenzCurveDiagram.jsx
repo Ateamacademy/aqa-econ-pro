@@ -29,7 +29,7 @@
  *   Country A curve is always above Country B curve ✓ (for all x ∈ (0,1))
  *
  * CRITICAL SHAPE RULE:
- *   Lorenz curves are CONVEX to the origin — they sag BELOW the 45° line.
+ *   Lorenz curves are CONVEX to the origin · they sag BELOW the 45° line.
  *   They must NOT be concave (hump-shaped). This is enforced by n > 1.
  *
  * AXES (AQA A-Level standard):
@@ -46,11 +46,11 @@ import { useState } from "react";
 // ECONOMICS CONSTANTS
 // ─────────────────────────────────────────────────────────────────────────────
 
-// Lorenz curve functions — input/output in [0,1], multiply by 100 for display
+// Lorenz curve functions · input/output in [0,1], multiply by 100 for display
 const lorenzA = x => Math.pow(x, 1.8);   // Country A (more equal)
 const lorenzB = x => Math.pow(x, 3.5);   // Country B (more unequal)
 
-// Gini coefficients — exact formula for y = x^n: Gini = (n-1)/(n+1)
+// Gini coefficients · exact formula for y = x^n: Gini = (n-1)/(n+1)
 const GINI_A = (1.8 - 1) / (1.8 + 1);   // ≈ 0.286
 const GINI_B = (3.5 - 1) / (3.5 + 1);   // ≈ 0.556
 
@@ -80,8 +80,8 @@ const C = {
   border:   "#1d2c40",
   grid:     "#111925",
   equality: "#dde4ef",   // 45° line of perfect equality (white/light)
-  countryA: "#4ade80",   // Country A curve (green — more equal)
-  countryB: "#f5a623",   // Country B curve (orange — more unequal)
+  countryA: "#4ade80",   // Country A curve (green · more equal)
+  countryB: "#f5a623",   // Country B curve (orange · more unequal)
   giniA:    "rgba(74,222,128,0.12)",   // Gini A shading
   giniB:    "rgba(245,166,35,0.10)",   // Gini B shading
   ref:      "#8292a4",   // reference lines
@@ -429,10 +429,10 @@ export default function LorenzCurveDiagram() {
         }}>
           {[
             { color: C.equality, label: "45° Line of Perfect Equality", dash: false },
-            { color: C.countryA, label: `Country A — Gini ≈ ${GINI_A.toFixed(2)} (more equal)`, dash: false },
-            { color: C.countryB, label: `Country B — Gini ≈ ${GINI_B.toFixed(2)} (more unequal)`, dash: false },
-            { color: C.countryA, label: "Area A — between equality line and Lorenz curve", filled: true },
-            { color: C.countryB, label: "Area B — between curve and x-axis", filled: true },
+            { color: C.countryA, label: `Country A · Gini ≈ ${GINI_A.toFixed(2)} (more equal)`, dash: false },
+            { color: C.countryB, label: `Country B · Gini ≈ ${GINI_B.toFixed(2)} (more unequal)`, dash: false },
+            { color: C.countryA, label: "Area A · between equality line and Lorenz curve", filled: true },
+            { color: C.countryB, label: "Area B · between curve and x-axis", filled: true },
           ].map((item, i) => (
             <div key={i} style={{ display: "flex", alignItems: "center", gap: 7 }}>
               {item.filled ? (
@@ -465,7 +465,7 @@ export default function LorenzCurveDiagram() {
           lineHeight: 1.75, fontFamily: MONO,
         }}>
           <strong style={{ color: C.text }}>Gini coefficient = A ÷ (A + B)</strong>
-          {" — "}
+          {" · "}
           where A is the area between the 45° equality line and the Lorenz curve,
           and (A+B) is the total area of the triangle below the equality line.
           {" "}
@@ -473,7 +473,7 @@ export default function LorenzCurveDiagram() {
           Country B (Gini ≈ {GINI_B.toFixed(2)}) has a HIGHER Gini → less equal distribution.
           A Gini of 0 = perfect equality (curve IS the 45° line).
           A Gini of 1 = perfect inequality (one person owns everything).
-          Lorenz curves are always CONVEX to the origin — they must sag BELOW
+          Lorenz curves are always CONVEX to the origin · they must sag BELOW
           the 45° line, never above it and never hump-shaped.
         </div>
       </div>

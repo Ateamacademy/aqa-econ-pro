@@ -1,5 +1,5 @@
 /**
- * Edexcel IGCSE Economics (4EC1) — marking convention.
+ * Edexcel IGCSE Economics (4EC1) · marking convention.
  *
  * Same K/Ap/An/Ev framework as Edexcel A-Level but with reduced evaluation
  * weighting at IGCSE level. Mark splits below are derived from published

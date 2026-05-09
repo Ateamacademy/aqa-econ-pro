@@ -8,7 +8,7 @@ export default function EconLabourMinWage() {
           <marker id="lmDn" markerWidth="8" markerHeight="8" refX="4" refY="7" orient="auto"><polygon points="0 0,8 0,4 8" fill="#cc0000"/></marker>
         </defs>
         <rect width="600" height="490" fill="#fff"/>
-        <text x="300" y="26" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Labour Market — Minimum Wage</text>
+        <text x="300" y="26" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Labour Market · Minimum Wage</text>
         <line x1="85" y1="440" x2="85" y2="36" stroke="#111" strokeWidth="2.5" markerEnd="url(#lmU)"/>
         <line x1="85" y1="440" x2="520" y2="440" stroke="#111" strokeWidth="2.5" markerEnd="url(#lmR)"/>
         <text x="85" y="26" fontSize="13" fontWeight="bold" fill="#111">Wage rate</text>

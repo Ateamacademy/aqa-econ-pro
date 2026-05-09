@@ -97,7 +97,7 @@ PREDICTED PAPER 2 (MODERATE)
  • Renewable energy: energy generated from sources that are naturally replenished such as wind, solar
  and hydro.
  AO2
- • Figure 1 shows a rise in the renewable share from around 7% in 2010 to around 47% in 2023 — roughly
+ • Figure 1 shows a rise in the renewable share from around 7% in 2010 to around 47% in 2023 · roughly
  a six-fold increase.
  • The text notes that coal-fired capacity has been closed and replaced with wind and solar.
  • Text references Contracts for Difference, carbon pricing and planning reform as policy drivers.
@@ -202,7 +202,7 @@ PREDICTED PAPER 2 (MODERATE)
  AO2
  • The UK already has a carbon price through the UK ETS and recent policy has pushed renewables to
  47% of generation.
- • UK emissions are less than 1% of the world total — scale limits the global impact of unilateral action.
+ • UK emissions are less than 1% of the world total · scale limits the global impact of unilateral action.
  • The debt-to-GDP ratio is close to 100%, constraining Treasury revenue options that could substitute for a
  higher carbon tax.
  AO3
@@ -216,11 +216,11 @@ PREDICTED PAPER 2 (MODERATE)
  is productively efficient.
  • Over time the incentive to invest in cleaner capital shifts the long-run abatement cost curve downwards.
  AO4
- • Effectiveness depends on price elasticity of demand for fossil fuels — in the short run demand for petrol
+ • Effectiveness depends on price elasticity of demand for fossil fuels · in the short run demand for petrol
  and domestic gas is highly inelastic, so a given tax delivers only a small fall in quantity.
  • Risk of carbon leakage: UK producers may lose competitiveness to unregulated overseas rivals,
  relocating emissions rather than eliminating them.
- • Regressive impact on low-income households can undermine political sustainability — the French gilets
+ • Regressive impact on low-income households can undermine political sustainability · the French gilets
  jaunes protests are a well-known example.
 
 
@@ -235,7 +235,7 @@ PREDICTED PAPER 2 (MODERATE)
  • At a macroeconomic level, sharply rising carbon prices could trigger cost-push inflation and reduce
  competitiveness of energy-intensive industry.
  • Overall judgement expected at the top of the band: carbon taxes can make an important contribution if
- well-designed, but are unlikely to be sufficient on their own — they require complementary investment,
+ well-designed, but are unlikely to be sufficient on their own · they require complementary investment,
  revenue recycling and international coordination.
  Allow any other valid points.
 
@@ -274,10 +274,10 @@ PREDICTED PAPER 2 (MODERATE)
 
  Indicative content
  AO2
- • Figure 1 shows renewables have risen from 7% to 47% — the existing policy mix (CfDs, carbon pricing,
+ • Figure 1 shows renewables have risen from 7% to 47% · the existing policy mix (CfDs, carbon pricing,
  planning) has already delivered substantial progress.
  • Figure 2 shows UK household electricity prices remain among the highest in Europe despite renewable
- growth — subsidies have not translated into cheaper bills.
+ growth · subsidies have not translated into cheaper bills.
  • Text notes large subsidies require significant public spending at a time when debt-to-GDP is close to
  100%.
  AO3
@@ -290,7 +290,7 @@ PREDICTED PAPER 2 (MODERATE)
  • Provide certainty and a long-run price signal that supports economies of scale and learning effects in
  nascent technologies.
  AO4
- • Subsidies are expensive and raise the opportunity cost of other public spending — at current debt levels
+ • Subsidies are expensive and raise the opportunity cost of other public spending · at current debt levels
  they may not be sustainable.
  • Risk of government failure: picking winners means subsidising technologies that turn out to be inferior
  (e.g. early diesel subsidies).
@@ -306,8 +306,8 @@ PREDICTED PAPER 2 (MODERATE)
 
  • Effectiveness depends on complementary grid and planning reform: subsidies for offshore wind are
  wasted if there is no grid capacity to bring power onshore.
- • A balanced policy mix — combining a carbon price, targeted subsidies for nascent technologies, and
- regulation of standards — is generally more effective than any one instrument alone.
+ • A balanced policy mix · combining a carbon price, targeted subsidies for nascent technologies, and
+ regulation of standards · is generally more effective than any one instrument alone.
  • Overall judgement at the top of the band: subsidies are an important tool but not the single most effective
  one.
  Allow any other valid points.
@@ -347,9 +347,9 @@ PREDICTED PAPER 2 (MODERATE)
 
  Indicative content
  AO2
- • Figure 3: poorest decile spends 12% of income on energy vs 3% for richest — exposure to energy price
+ • Figure 3: poorest decile spends 12% of income on energy vs 3% for richest · exposure to energy price
  changes is regressive.
- • Text: green jobs may be concentrated in North East, Humberside and South Wales — regions which also
+ • Text: green jobs may be concentrated in North East, Humberside and South Wales · regions which also
  have lower average incomes.
  • Text: risk of job displacement in carbon-intensive industries, which in the UK are disproportionately
  located outside London and the South East.
@@ -369,7 +369,7 @@ PREDICTED PAPER 2 (MODERATE)
  without being able to switch to cleaner alternatives (regressive effect).
  • Stranded workers in oil and gas, high-carbon manufacturing and car parts face real risks of displacement,
  especially without effective retraining and regional policy.
- • Benefits are long run while costs are short run — low-income households have higher discount rates and
+ • Benefits are long run while costs are short run · low-income households have higher discount rates and
  are less able to wait.
 
 
@@ -423,11 +423,11 @@ PREDICTED PAPER 2 (MODERATE)
  • Characteristics: high concentration ratio, interdependence between firms, price stickiness, non-price
  competition, product differentiation, high entry barriers.
  AO2
- • Figure 1: the top four firms (Tesco, Sainsbury's, Asda, Aldi) account for around 66% of the market — high
+ • Figure 1: the top four firms (Tesco, Sainsbury's, Asda, Aldi) account for around 66% of the market · high
  4-firm concentration ratio is evidence of oligopoly.
  • 'Aldi Price Match' illustrates strategic interdependence: Tesco explicitly sets its prices in response to a
  rival.
- • Extensive non-price competition — Clubcard, Nectar, same-day delivery, own brands — rather than pure
+ • Extensive non-price competition · Clubcard, Nectar, same-day delivery, own brands · rather than pure
  price competition.
  • Text references previous CMA investigations (£50m fine for exchanging price information), consistent
  with oligopolistic behaviour.
@@ -476,12 +476,12 @@ PREDICTED PAPER 2 (MODERATE)
  • Profits are maximised at the output at which MR = MC.
  AO2
  • TR schedule (£): 0, 2200, 4000, 5400, 6400, 7000, 7200, 7000, 6400.
- • MR per 100 baskets (£): —, 2200, 1800, 1400, 1000, 600, 200, −200, −600.
- • MC per 100 baskets (£): —, 90, 60, 80, 100, 120, 140, 180, 260.
+ • MR per 100 baskets (£): ·, 2200, 1800, 1400, 1000, 600, 200, −200, −600.
+ • MC per 100 baskets (£): ·, 90, 60, 80, 100, 120, 140, 180, 260.
  • On a per-basket basis: MR starts at £22 and falls by £2 each 100 baskets; MC moves from £0.90 to
  £2.60 per basket.
  • MR and MC per 100 baskets intersect between Q=400 (MR=1000, MC=100) and Q=500 (MR=600,
- MC=120) — profit-max at Q=400 where MR>MC is just exhausted.
+ MC=120) · profit-max at Q=400 where MR>MC is just exhausted.
  • For MR and MC correctly calculated in units of 100: AO2: 2
  • For one of MR and MC correctly calculated: AO2: 1
  AO3
@@ -491,7 +491,7 @@ PREDICTED PAPER 2 (MODERATE)
  • If output were raised to Q=500, MR falls to £600 per 100 baskets while MC rises to £120, so the extra
  100 baskets still add profit but by less.
  • Beyond Q=500 any further increase would see MC overtake MR and therefore reduce profit.
- • Total profit is highest at Q=400 (TR £6400 − TC £580 = £5820) — this is the profit-maximising output
+ • Total profit is highest at Q=400 (TR £6400 − TC £580 = £5820) · this is the profit-maximising output
  because all units where MR>MC have been produced and no units where MC>MR have been.
 
 
@@ -549,14 +549,14 @@ PREDICTED PAPER 2 (MODERATE)
  AO2
  • The text notes the match shifts consumer perception: the scheme 'guarantees that the price is no higher
  than Aldi'.
- • Schemes can widen the customer base but at lower margin per unit — classic price-quantity trade-off.
+ • Schemes can widen the customer base but at lower margin per unit · classic price-quantity trade-off.
  • CMA review of 2023 highlighted that perceived price competitiveness matters to consumers in a
  cost-of-living crisis.
  AO3
  • Participating limits the firm's ability to price above Aldi on matched lines, so AR and MR shift down on
  those lines.
  • Quantity rises because the firm becomes a closer substitute for Aldi (XED increases), but price per unit
- falls — net effect on TR ambiguous.
+ falls · net effect on TR ambiguous.
  • If MR falls more than MC, the distance AR−AC narrows and abnormal profit falls.
  • Alternatively, if the scheme raises footfall and customers buy higher-margin unmatched lines as well,
  AR/MR could shift right enough to raise total abnormal profit.
@@ -567,10 +567,10 @@ PREDICTED PAPER 2 (MODERATE)
                                                                                                                PMT
 
 
- • Effectiveness depends on what share of the basket is matched — if only 300 lines out of 25,000 are
+ • Effectiveness depends on what share of the basket is matched · if only 300 lines out of 25,000 are
  matched, the profit impact is small.
  • Rival reactions matter (kinked demand): if Sainsbury's and Morrisons also match, the scheme cancels
- out and Tesco's market share does not rise — only margins fall.
+ out and Tesco's market share does not rise · only margins fall.
  • Loyalty-scheme tie-ins (Clubcard Prices) can offset the margin loss by locking in customers.
  • In the long run, consumers adjust beliefs about relative prices; initial boost to footfall may decay.
  • Overall judgement: likely modest negative effect on per-unit margin offset by positive volume effect; the
@@ -612,26 +612,26 @@ PREDICTED PAPER 2 (MODERATE)
  behaviour, price leadership, or conscious focal points.
  • Contrasts with explicit (illegal) cartels and with competitive outcomes.
  AO3
- • Oligopoly markets feature high interdependence — each firm's pricing affects rivals' profits — which
+ • Oligopoly markets feature high interdependence · each firm's pricing affects rivals' profits · which
  creates an incentive to avoid price wars.
  • Few firms make it relatively easy to monitor each other's prices (price transparency) so deviations are
  spotted and punished quickly.
- • Repeated interaction supports cooperative equilibria under game-theoretic logic — grim-trigger strategies
+ • Repeated interaction supports cooperative equilibria under game-theoretic logic · grim-trigger strategies
  sustain tacit collusion even without communication.
  • Product homogeneity and stable demand conditions (as in many supermarket categories) make tacit
  coordination easier.
  AO4
- • Tacit collusion is not inevitable — it breaks down when firms have asymmetric costs or demands, or
+ • Tacit collusion is not inevitable · it breaks down when firms have asymmetric costs or demands, or
  when a new entrant disrupts the market (Aldi/Lidl).
  • Regulatory oversight reduces the incentive to collude: CMA fines and reputational damage from
  investigations raise the expected cost of coordination.
  • Innovation and product differentiation can create competitive dynamics that override tacit coordination
  (e.g. online delivery disrupting groceries).
- • Tacit collusion is most likely in mature, concentrated markets with stable demand — many oligopolies do
+ • Tacit collusion is most likely in mature, concentrated markets with stable demand · many oligopolies do
  not fit this profile.
  • The UK supermarket market itself shows that tacit collusion has broken down under competitive pressure
  from discounters, with the 'big four' losing margin to Aldi/Lidl over the last decade.
- • Overall judgement: tacit collusion is a strong tendency in some oligopolies but not inevitable —
+ • Overall judgement: tacit collusion is a strong tendency in some oligopolies but not inevitable ·
  regulation, entry, and product heterogeneity can all prevent it.
  Allow any other valid points.
 
@@ -678,15 +678,15 @@ PREDICTED PAPER 2 (MODERATE)
  • Economic welfare: difference between social benefit and social cost of an economic activity; micro level =
  allocative efficiency / consumer+producer surplus; macro level = living standards.
  AO2
- • Figure 1: top four firms control ~66% of the market — high concentration.
+ • Figure 1: top four firms control ~66% of the market · high concentration.
  • £50m fine for exchanging price data suggests historical welfare-harming behaviour.
- • CMA 2023 review focused on margins during the cost-of-living crisis — consumer welfare concern.
+ • CMA 2023 review focused on margins during the cost-of-living crisis · consumer welfare concern.
  • Rural consumers with only one supermarket within easy reach face geographic monopoly power.
  • But: the growth of Aldi and Lidl has expanded consumer choice and put downward pressure on prices.
  AO3
  • Oligopoly reduces allocative efficiency because P > MC: consumers pay more than the marginal cost of
  production, creating a deadweight welfare loss.
- • Productive inefficiency may arise if firms do not face pure price competition — costs are not minimised
+ • Productive inefficiency may arise if firms do not face pure price competition · costs are not minimised
  and non-price competition wastes resources on marketing and packaging.
  • Abnormal profits are transferred from consumers to producers, reducing consumer surplus and raising
  producer surplus.
@@ -699,13 +699,13 @@ PREDICTED PAPER 2 (MODERATE)
                                                                                                                PMT
 
 
- • Large firms benefit from economies of scale — lower average cost than many small firms would achieve,
+ • Large firms benefit from economies of scale · lower average cost than many small firms would achieve,
  which keeps prices lower than under perfect competition.
- • Non-price competition delivers consumer benefits — convenience of delivery, product range, quality
+ • Non-price competition delivers consumer benefits · convenience of delivery, product range, quality
  assurance, recipes, own-brand value ranges.
  • Entry by Aldi and Lidl shows the market is contestable: abnormal profits attract new entrants, which
  constrains incumbent firms' pricing power.
- • Strong supermarkets have bargaining power over suppliers which can lower prices to consumers —
+ • Strong supermarkets have bargaining power over suppliers which can lower prices to consumers ·
  though this may harm producer welfare upstream (supplier squeeze).
  • R&D and innovation spending (online platforms, logistics, loyalty schemes) may be higher under
  oligopoly than in perfect competition.

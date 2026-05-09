@@ -1,5 +1,5 @@
 <!-- Auto-generated from /public/aqa-mocks/mark-scheme-paper-3-moderate.pdf -->
-MARK SCHEME — A-LEVEL ECONOMICS — 7136/3 — PREDICTED SET A
+MARK SCHEME · A-LEVEL ECONOMICS · 7136/3 · PREDICTED SET A
 
 
 AQA▎
@@ -11,14 +11,14 @@ Final Mark scheme
 
 
 7136/3
-Predicted Paper — Set A
+Predicted Paper · Set A
 
 
 Version 1.0
 
 
                                                  1 of 10
-MARK SCHEME — A-LEVEL ECONOMICS — 7136/3 — PREDICTED SET A
+MARK SCHEME · A-LEVEL ECONOMICS · 7136/3 · PREDICTED SET A
 
 About this mark scheme
 Mark schemes of this kind are working documents. They are designed to reflect the range of candidate
@@ -32,7 +32,7 @@ An answer that contains nothing of relevance to the question must be awarded no 
 
 
                                                       2 of 10
-MARK SCHEME — A-LEVEL ECONOMICS — 7136/3 — PREDICTED SET A
+MARK SCHEME · A-LEVEL ECONOMICS · 7136/3 · PREDICTED SET A
 
                                                      SECTION A
              The list below indicates the correct answers for use in marking candidates’ responses.
@@ -73,9 +73,9 @@ letters should be rotated so that the correct-answer distribution is approximate
 
 
                                                             3 of 10
-MARK SCHEME — A-LEVEL ECONOMICS — 7136/3 — PREDICTED SET A
+MARK SCHEME · A-LEVEL ECONOMICS · 7136/3 · PREDICTED SET A
 
-Section A — brief worked explanations
+Section A · brief worked explanations
 1. Answer: C
 A rise in consumer income shifts the demand curve for a normal good right (YED > 0). A and B shift it left; D is a
 movement along the curve.
@@ -85,7 +85,7 @@ movement along the curve.
 Depreciation makes exports cheaper and imports dearer (SPICED); trade balance improves over time if PEDx + PEDm
 > 1 (Marshall–Lerner).
 4. Answer: B
-Quantitative easing (QE) is asset purchases by the central bank — typically long-dated gilts — to raise the money
+Quantitative easing (QE) is asset purchases by the central bank · typically long-dated gilts · to raise the money
 supply. A, C, D are contractionary.
 5. Answer: A
 Price discrimination requires different prices to different consumers for the same good with no corresponding cost
@@ -102,7 +102,7 @@ Skills mismatches → structural unemployment → higher NRU. B and C affect cyc
 10. Answer: B
 A higher National Living Wage compresses the wage distribution. A, C and D tend to widen inequality.
 11. Answer: B
-From 1000 → 2000 units output doubles (×2.0) while inputs rise by ×1.75 each — output increases more than
+From 1000 → 2000 units output doubles (×2.0) while inputs rise by ×1.75 each · output increases more than
 proportionately = increasing returns to scale. (The other intervals show factor inputs scaling unevenly, so no valid
 returns-to-scale test can be made.)
 12. Answer: C
@@ -120,11 +120,11 @@ Socially optimal output: MSB = MSC. At 200 tonnes, both equal £70.
 
 
                                                        4 of 10
-MARK SCHEME — A-LEVEL ECONOMICS — 7136/3 — PREDICTED SET A
+MARK SCHEME · A-LEVEL ECONOMICS · 7136/3 · PREDICTED SET A
 
 17. Answer: B
 Good A: YED +2.1 > 1 → luxury; XED +0.8 > 0 → substitute for B; |PED| = 0.3 < 1 → price-inelastic. So ‘price-inelastic
-luxury and a substitute for B’. (Option A mis-labels the PED as elastic — a common trap.)
+luxury and a substitute for B’. (Option A mis-labels the PED as elastic · a common trap.)
 18. Answer: C
 Profit-maximising output: MR = MC. MR > MC at 30 units, MR < MC at 40 units → MR = MC lies between 30 and 40.
 19. Answer: B
@@ -159,16 +159,16 @@ Qp.
 
 
                                                         5 of 10
-MARK SCHEME — A-LEVEL ECONOMICS — 7136/3 — PREDICTED SET A
+MARK SCHEME · A-LEVEL ECONOMICS · 7136/3 · PREDICTED SET A
 
                                                     SECTION B
-                           INVESTIGATION — Total for this Investigation: 50 marks
+                           INVESTIGATION · Total for this Investigation: 50 marks
 
 
 Level-of-response marking: how to apply the table
 Level-of-response mark schemes describe the average quality expected at each level. Begin at the lowest level and
 work upwards, using each descriptor as a ladder to locate the best-fitting level for the response being marked.
-Once a level has been chosen, the exact mark within that level should reflect the overall quality of the answer —
+Once a level has been chosen, the exact mark within that level should reflect the overall quality of the answer ·
 higher within the band when the response partly reaches the next level, lower when it only just meets the current
 one.
 The indicative content below is illustrative. Candidates do not have to cover all listed points to reach the highest
@@ -206,7 +206,7 @@ growth is the most important constraint on UK living standards? [10 marks]
 Indicative content
    • Define productivity (output per hour/worker) and living standards (commonly measured by real GDP per head;
    broader: real median wages, life expectancy, inequality).
-   • Extract A figures: output per hour rose only from 95.2 to 101.6 (2010–2024) — about 0.5% per year. Real GDP
+   • Extract A figures: output per hour rose only from 95.2 to 101.6 (2010–2024) · about 0.5% per year. Real GDP
    per head rose from £28,900 to £32,050 (+10.9%). Real median wages essentially stagnated (£14.80 → £14.95).
    • Chain of reasoning: weak productivity growth → weak LRAS growth → slow real-wage growth → constraint on
    household living standards.
@@ -214,11 +214,11 @@ Indicative content
    movement.
 
                                                         6 of 10
-MARK SCHEME — A-LEVEL ECONOMICS — 7136/3 — PREDICTED SET A
+MARK SCHEME · A-LEVEL ECONOMICS · 7136/3 · PREDICTED SET A
 
-   • Alternative constraints discussion: rising Gini (0.34 → 0.37) means gains have been unevenly distributed —
+   • Alternative constraints discussion: rising Gini (0.34 → 0.37) means gains have been unevenly distributed ·
    households at the median may have seen little improvement; regional divergence (Extract B); cost-of-living
-   shocks (£14.70 real median wage in 2022); under-investment as the underlying cause of weak productivity —
+   shocks (£14.70 real median wage in 2022); under-investment as the underlying cause of weak productivity ·
    productivity may itself be a symptom.
    • Limitations of the data: indices may mask distribution; real-wage figures do not capture non-wage benefits;
    short series may not support long-run claims.
@@ -267,12 +267,12 @@ Indicative content
    • Define regional inequality: persistent differences in output, income, employment and living standards across
    geographic regions.
    • Macroeconomic policy levers: fiscal policy (targeted capital spending on transport, energy and housing in
-   lagging regions shifts AD right — large multiplier when spare capacity exists); limited regional differentiation of
+   lagging regions shifts AD right · large multiplier when spare capacity exists); limited regional differentiation of
    monetary policy (Bank Rate applies nationally); exchange-rate effects (sterling strength disproportionately
    affects manufacturing exporters concentrated outside London).
 
                                                          7 of 10
-MARK SCHEME — A-LEVEL ECONOMICS — 7136/3 — PREDICTED SET A
+MARK SCHEME · A-LEVEL ECONOMICS · 7136/3 · PREDICTED SET A
 
    • Microeconomic policy levers: education and skills (raising human capital in lagging regions); physical and
    digital infrastructure (agglomeration, network economies); housing and planning reform (enabling labour
@@ -329,7 +329,7 @@ the central pillar of its growth strategy? Justify your recommendation. [25 mark
 
 
                                                         8 of 10
-MARK SCHEME — A-LEVEL ECONOMICS — 7136/3 — PREDICTED SET A
+MARK SCHEME · A-LEVEL ECONOMICS · 7136/3 · PREDICTED SET A
 
    Level     Response                                                                      Max
 
@@ -371,9 +371,9 @@ Indicative content: relevant issues and areas for discussion
    • Complementary policies: carbon pricing, regulatory standards, loan guarantees, subsidies conditional on
    regional locations.
    • Evaluative judgement (required for Level 5): the question asks for a REASONED RECOMMENDATION, not a
-   neutral survey. Candidates should commit. Likely Level-5 judgements include: conditional YES — prioritise green
-   infrastructure IF accompanied by parallel skills reform and distributional protections; NO — green investment
-   should be ONE pillar among several because the return profile is uncertain and opportunity costs are high; YES —
+   neutral survey. Candidates should commit. Likely Level-5 judgements include: conditional YES · prioritise green
+   infrastructure IF accompanied by parallel skills reform and distributional protections; NO · green investment
+   should be ONE pillar among several because the return profile is uncertain and opportunity costs are high; YES ·
    because the intertemporal case trumps short-run uncertainties. All should be defended with specific extract
    evidence and clear economic reasoning.
    • Appropriate diagrams: AD/AS with simultaneous AD and LRAS shifts; loanable-funds market with potential
@@ -384,7 +384,7 @@ Indicative content: relevant issues and areas for discussion
 
 
                                                       9 of 10
-MARK SCHEME — A-LEVEL ECONOMICS — 7136/3 — PREDICTED SET A
+MARK SCHEME · A-LEVEL ECONOMICS · 7136/3 · PREDICTED SET A
 
                                           End of Mark scheme
 

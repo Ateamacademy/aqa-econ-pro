@@ -6,13 +6,13 @@ export const ocrGcseComponent1Topics: Topic[] = [
     subtopics: [
       {
         title: "The Economic Problem",
-        content: "Economics studies how scarce resources are allocated to satisfy unlimited wants. The basic economic problem is **scarcity** — there are not enough resources to produce everything people want.\n\n**Factors of production**: Land, Labour, Capital, Enterprise.\n\n**Opportunity cost** is the next best alternative foregone when a choice is made.",
+        content: "Economics studies how scarce resources are allocated to satisfy unlimited wants. The basic economic problem is **scarcity** · there are not enough resources to produce everything people want.\n\n**Factors of production**: Land, Labour, Capital, Enterprise.\n\n**Opportunity cost** is the next best alternative foregone when a choice is made.",
         keyTerms: [
           { term: "Scarcity", definition: "The excess of wants over available resources" },
           { term: "Opportunity cost", definition: "The next best alternative foregone when a choice is made" },
           { term: "Factors of production", definition: "Land, labour, capital, and enterprise used to produce goods" },
         ],
-        examTip: "Always define opportunity cost with a real-world example — e.g. 'If a government spends £10bn on defence, the opportunity cost might be £10bn less spent on the NHS.'",
+        examTip: "Always define opportunity cost with a real-world example · e.g. 'If a government spends £10bn on defence, the opportunity cost might be £10bn less spent on the NHS.'",
       },
       {
         title: "Demand",
@@ -83,7 +83,7 @@ export const ocrGcseComponent1Topics: Topic[] = [
           { term: "Minimum price", definition: "A floor price set above equilibrium" },
           { term: "Maximum price", definition: "A ceiling price set below equilibrium" },
         ],
-        examTip: "Evaluate interventions — consider unintended consequences, government failure, and whether the policy addresses the root cause.",
+        examTip: "Evaluate interventions · consider unintended consequences, government failure, and whether the policy addresses the root cause.",
       },
     ],
   },
@@ -131,7 +131,7 @@ export const ocrGcseComponent2Topics: Topic[] = [
         content: "**Inflation** is a sustained rise in the general price level.\n\n**Demand-pull inflation**: caused by excess demand (AD shifts right).\n**Cost-push inflation**: caused by rising costs of production (AS shifts left).\n\nMeasured by **CPI** (Consumer Price Index).\n\nConsequences: reduced purchasing power, uncertainty, menu costs.",
         keyTerms: [
           { term: "Inflation", definition: "A sustained rise in the general price level" },
-          { term: "CPI", definition: "Consumer Price Index — a measure of inflation" },
+          { term: "CPI", definition: "Consumer Price Index · a measure of inflation" },
           { term: "Demand-pull", definition: "Inflation caused by excess aggregate demand" },
           { term: "Cost-push", definition: "Inflation caused by rising costs of production" },
         ],
@@ -165,7 +165,7 @@ export const ocrGcseComponent2Topics: Topic[] = [
         content: "**Supply-side policies** aim to increase the productive capacity of the economy (shift LRAS right).\n\nExamples: education & training, deregulation, infrastructure investment, tax cuts to incentivise work.\n\nAdvantages: sustainable growth without inflation.\nDisadvantages: time lag, costly, may increase inequality.",
         keyTerms: [
           { term: "Supply-side policies", definition: "Policies aimed at increasing productive capacity" },
-          { term: "LRAS", definition: "Long-run aggregate supply — the economy's productive potential" },
+          { term: "LRAS", definition: "Long-run aggregate supply · the economy's productive potential" },
           { term: "Productivity", definition: "Output per worker per unit of time" },
           { term: "Deregulation", definition: "Removing government rules and regulations" },
         ],
@@ -177,7 +177,7 @@ export const ocrGcseComponent2Topics: Topic[] = [
     subtopics: [
       {
         title: "International Trade",
-        content: "Countries trade because of **specialisation** and **comparative advantage** — producing goods at a lower opportunity cost.\n\nBenefits: lower prices, greater choice, economies of scale.\nRisks: job losses in uncompetitive industries, over-dependence on imports.",
+        content: "Countries trade because of **specialisation** and **comparative advantage** · producing goods at a lower opportunity cost.\n\nBenefits: lower prices, greater choice, economies of scale.\nRisks: job losses in uncompetitive industries, over-dependence on imports.",
         keyTerms: [
           { term: "Specialisation", definition: "Focusing on producing goods where you have lowest opportunity cost" },
           { term: "Comparative advantage", definition: "Ability to produce a good at a lower opportunity cost" },
@@ -192,7 +192,7 @@ export const ocrGcseComponent2Topics: Topic[] = [
           { term: "MNCs", definition: "Multinational corporations operating in multiple countries" },
           { term: "Trade liberalisation", definition: "Reducing barriers to international trade" },
         ],
-        examTip: "In discuss questions, weigh up both sides and consider who benefits — developed vs developing countries.",
+        examTip: "In discuss questions, weigh up both sides and consider who benefits · developed vs developing countries.",
       },
     ],
   },

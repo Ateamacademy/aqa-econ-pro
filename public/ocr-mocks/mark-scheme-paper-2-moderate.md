@@ -1,5 +1,5 @@
 <!-- Auto-generated from /public/ocr-mocks/mark-scheme-paper-2-moderate.pdf -->
-H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
 
 Oxford Cambridge and RSA Examinations
@@ -10,11 +10,11 @@ Economics
 H460/02: Macroeconomics
 A Level
 
-Mark Scheme — Predicted Paper 2 (Moderate)
+Mark Scheme · Predicted Paper 2 (Moderate)
 
 
                                         Page 1
-                                                   H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+                                                   H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
 MARKING INSTRUCTIONS
 Marks awarded must relate directly to the marking criteria. Mark schemes should be read in
@@ -22,7 +22,7 @@ conjunction with the published question paper.
 Alternative correct answers and unexpected approaches in candidates' scripts must be given marks
 that fairly reflect the relevant knowledge and skills demonstrated.
 For answers marked by levels of response:
-   • To determine the level — start at the highest level and work down until you reach the level that
+   • To determine the level · start at the highest level and work down until you reach the level that
       matches the answer.
    • To determine the mark within the level, consider whether the answer is at the borderline
       (bottom), just enough (above bottom/middle), meets criteria with slight inconsistency (above
@@ -30,7 +30,7 @@ For answers marked by levels of response:
 
 
                                                Page 2
-                                                        H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+                                                        H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
 Question 1 (a)
 
@@ -72,12 +72,12 @@ Question 1 (c)
  Explain whether the relationship in Fig. 1 between FDI
  inflows and the real GDP growth rate is the expected
                                                                3           Annotate with   ✔
-                                                                           Relationship — 1 mark
- one.                                                                      Why it is expected — 1
+                                                                           Relationship · 1 mark
+ one.                                                                      Why it is expected · 1
  • Yes, broadly the expected relationship / partial positive               mark
- relationship (1)                                                          Supporting evidence — 1
+ relationship (1)                                                          Supporting evidence · 1
  • FDI is expected to raise real GDP growth because it adds                mark
- to the capital stock, boosts AD and raises productive                     Exception — 1 mark
+ to the capital stock, boosts AD and raises productive                     Exception · 1 mark
  capacity (1)                                                              Evidence must explain why
  • Supporting evidence e.g. Vietnam (US$17.9bn FDI, 8.0%                   the data shows (or does
  growth) and Malaysia (US$16.9bn, 8.7% growth) both                        not show) the expected
@@ -99,15 +99,15 @@ Question 1 (d)
  unemployment rate and the labour productivity index.
                                                                4           Annotate with   ✔
                                                                            Relationship (type/strength)
- • There is no clear/strong relationship between                           — 1 mark
- unemployment and labour productivity (1)                                  Evidence — 1 mark
+ • There is no clear/strong relationship between                           · 1 mark
+ unemployment and labour productivity (1)                                  Evidence · 1 mark
 
 
                                                    Page 3
-                                                          H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+                                                          H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
-• Evidence e.g. Vietnam has a low unemployment rate of                       Explanation — 1 mark
-2.3% and the highest productivity index of 139.2, while                      Exception / limitation — 1
+• Evidence e.g. Vietnam has a low unemployment rate of                       Explanation · 1 mark
+2.3% and the highest productivity index of 139.2, while                      Exception / limitation · 1
 Cambodia also has low unemployment (0.6%) but the                            mark
 lowest productivity index of 108.9 / Indonesia has the
 highest unemployment rate (5.3%) and a productivity index
@@ -119,13 +119,13 @@ may use capital-intensive production, which reduces the
 demand for labour (1)
 • Exception / limitation: Thailand has very low
 unemployment (1.0%) but below-average productivity
-(112.4), suggesting that other factors — such as labour
+(112.4), suggesting that other factors · such as labour
 market flexibility, informal employment or demographic
-structure — also influence the relationship (1)
+structure · also influence the relationship (1)
 
 
                                                     Page 4
-                                                              H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+                                                              H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
 Question 1 (e)* Using information from the stimulus material, evaluate whether the rise in
 inflation is likely to harm Vietnam's economic growth. [8]
@@ -147,7 +147,7 @@ inflation is likely to harm Vietnam's economic growth. [8]
  0 marks               Response is not worthy of credit
 
 
-Indicative content — Question 1(e)*
+Indicative content · Question 1(e)*
 The side of the argument presented first should be credited as Analysis; the other side as
 Evaluation.
 
@@ -155,7 +155,7 @@ Knowledge and understanding
 ● Inflation is a sustained rise in the general price level.
 ● Economic growth is a rise in real GDP / productive capacity.
 
-Application — context
+Application · context
 ● Vietnam's inflation rose from 3.2% to 4.6% between 2022 and 2023.
 ● The rise was driven by higher global commodity prices and depreciation of the dong.
 ● Vietnam is a rapidly growing emerging economy averaging 6.3% real GDP growth in the 2010s and 8.0% in
@@ -172,7 +172,7 @@ Analysis (inflation may harm growth)
 ● Uncertainty created by inflation may deter long-term FDI, which has been crucial to Vietnam's growth.
 
 Evaluation (inflation may not harm growth)
-● At 4.6%, inflation is still moderate — much lower than in some emerging economies — and may simply
+● At 4.6%, inflation is still moderate · much lower than in some emerging economies · and may simply
    reflect rapid growth.
 ● A mild amount of inflation can encourage spending now rather than later, supporting AD.
 ● If inflation is driven by imported commodity prices rather than demand-pull pressure, growth may not slow
@@ -182,11 +182,11 @@ Evaluation (inflation may not harm growth)
 ● FDI is attracted by long-term factors (labour costs, market access) rather than short-term inflation changes.
 
 Judgement may include
-● The impact depends on how persistent inflation is — short-lived imported inflation is less harmful than
+● The impact depends on how persistent inflation is · short-lived imported inflation is less harmful than
    sustained demand-pull inflation.
 
                                                        Page 5
-                                                      H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+                                                      H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
 ● The impact depends on the policy response: aggressive interest-rate rises could harm growth more than
    the inflation itself.
@@ -195,7 +195,7 @@ Judgement may include
 
 
                                                  Page 6
-                                                        H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+                                                        H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
 Question 1 (f)* Using information from the stimulus material, evaluate whether Vietnamese
 workers are likely to benefit from the increase in foreign direct investment in the country.
@@ -205,8 +205,8 @@ workers are likely to benefit from the increase in foreign direct investment in 
 
  Level 3 (9–12       Good knowledge and understanding of relevant economic idea(s).
  marks)              Good application of concepts; some good use of data.
-                     Strong analysis — consistently well-developed chains of reasoning.
-                     Strong evaluation — well-developed counter-arguments, extent, a logical and well
+                     Strong analysis · consistently well-developed chains of reasoning.
+                     Strong evaluation · well-developed counter-arguments, extent, a logical and well
                      supported judgement.
 
  Level 2 (5–8        Good knowledge and understanding.
@@ -218,26 +218,26 @@ workers are likely to benefit from the increase in foreign direct investment in 
 
  Level 1 (1–4        Reasonable knowledge and understanding.
  marks)              Reasonable application, possibly inconsistent.
-                     Limited analysis — simple statements of cause and consequence.
-                     Limited evaluation — stated or absent judgement.
+                     Limited analysis · simple statements of cause and consequence.
+                     Limited evaluation · stated or absent judgement.
 
  0 marks             Response is not worthy of credit
 
 
-Indicative content — Question 1(f)*
+Indicative content · Question 1(f)*
 
 Knowledge and understanding
 ● FDI is long-term cross-border investment by firms, usually by MNCs establishing or expanding productive
    capacity in another country.
 ● Workers' benefits can include wages, employment, training, working conditions and job security.
 
-Application — context
+Application · context
 ● Vietnam has received substantial FDI, particularly in manufacturing (US$17.9bn in 2022).
 ● Unemployment is very low (2.3%) and productivity has risen significantly (index of 139.2).
 ● The gap between wages in foreign MNCs and domestic firms has widened; environmental and rural-urban
    inequality concerns exist.
 
-Analysis — workers benefit
+Analysis · workers benefit
 ● FDI creates jobs, reducing unemployment. Vietnam's unemployment rate of 2.3% is among the lowest in
    the region.
 ● MNCs typically pay higher wages than domestic firms to attract the best workers, so workers who secure
@@ -249,7 +249,7 @@ Analysis — workers benefit
 ● Higher tax revenue from rising employment and FDI-related profits can be used for public services
    benefiting workers.
 
-Evaluation — workers may not fully benefit
+Evaluation · workers may not fully benefit
 ● Benefits are unevenly distributed: the stimulus notes the widening wage gap between MNC and domestic
    firm workers, meaning some groups lose relative to others.
 ● Workers in rural areas see limited benefit if FDI is concentrated in urban manufacturing hubs.
@@ -258,9 +258,9 @@ Evaluation — workers may not fully benefit
    quality of life.
 
                                                    Page 7
-                                                         H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+                                                         H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
-● FDI can be footloose — firms may relocate if wages rise or incentives are offered elsewhere, creating job
+● FDI can be footloose · firms may relocate if wages rise or incentives are offered elsewhere, creating job
    insecurity.
 ● Skill transfer is limited if MNCs use imported managerial and technical staff rather than training Vietnamese
    workers for senior roles.
@@ -276,9 +276,9 @@ Judgement may include
 
 
                                                     Page 8
-                                                           H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+                                                           H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
-Section B — Question 2*
+Section B · Question 2*
 Evaluate, with the use of an appropriate diagram(s), whether a cut in income tax will help a
 government to achieve its macroeconomic policy objectives. [25]
 
@@ -300,7 +300,7 @@ government to achieve its macroeconomic policy objectives. [25]
  0 marks              Response is not worthy of credit.
 
 
-Indicative content — Question 2*
+Indicative content · Question 2*
 
 Knowledge and understanding
 ● Income tax is a direct tax on earnings.
@@ -308,56 +308,56 @@ Knowledge and understanding
    balance of payments.
 ● A cut in income tax is expansionary fiscal policy.
 
-Analysis — cut in income tax helps achieve objectives
+Analysis · cut in income tax helps achieve objectives
 ● Higher disposable incomes raise consumer expenditure, shifting AD rightward and raising real GDP
    (growth) and lowering unemployment (shown in AD/AS diagram with SRAS).
 ● Higher incomes may raise consumer spending on normal goods, increasing demand for labour and
    reducing cyclical unemployment.
-● Lower marginal tax rates may improve incentives to work, raising labour supply (rightward shift in LRAS) —
+● Lower marginal tax rates may improve incentives to work, raising labour supply (rightward shift in LRAS) ·
    helping both growth and price stability.
 ● Lower income taxes may attract skilled workers from abroad, raising labour quality and productive capacity.
 ● A multiplier effect may amplify the effects on AD and growth.
 
-Evaluation — a cut may NOT help achieve objectives
-● If AD rises faster than LRAS, the price level rises — demand-pull inflation may exceed the target.
+Evaluation · a cut may NOT help achieve objectives
+● If AD rises faster than LRAS, the price level rises · demand-pull inflation may exceed the target.
 ● Higher consumption may include imports, worsening the current account deficit.
 ● A fall in tax revenue may increase the government's budget deficit.
 ● If marginal propensity to save is high, the effect on AD may be small.
 ● In an economy near full employment, extra AD mainly raises prices, not output.
-● The size of the multiplier depends on leakages — high import or savings ratios dampen the effect.
+● The size of the multiplier depends on leakages · high import or savings ratios dampen the effect.
 
 Possible judgement
-● Effectiveness depends on the initial state of the economy — a tax cut is more useful in a recession with
+● Effectiveness depends on the initial state of the economy · a tax cut is more useful in a recession with
    spare capacity than when at full employment.
-● There may be trade-offs between objectives — growth and employment rise but inflation and the current
+● There may be trade-offs between objectives · growth and employment rise but inflation and the current
    account deficit worsen.
 ● The long-run supply-side effects depend on whether households increase labour supply significantly.
 ● Distributional effects: progressive vs. regressive cuts affect different parts of the population.
 
 
                                                        Page 9
-                                                           H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+                                                           H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
-Section B — Question 3*
+Section B · Question 3*
 Evaluate, with the use of an appropriate diagram(s), whether an increase in labour productivity will
 benefit an economy. [25]
 Level descriptors as for Q2*.
-Indicative content — Question 3*
+Indicative content · Question 3*
 
 Knowledge and understanding
 ● Labour productivity is output per worker (or per hour worked).
 ● An increase in productivity shifts LRAS rightward.
 
-Analysis — productivity benefits an economy
+Analysis · productivity benefits an economy
 ● A rightward shift in LRAS raises potential output (economic growth) without causing demand-pull inflation
-   — shown on AD/AS diagram.
+   · shown on AD/AS diagram.
 ● Lower unit costs make firms more price-competitive internationally, improving net exports and the current
    account.
 ● Higher productivity justifies higher real wages without raising inflation, improving living standards.
 ● Higher profit margins may encourage investment, further raising productive capacity.
 ● Lower production costs reduce cost-push inflationary pressure.
 
-Evaluation — productivity may not fully benefit the economy
+Evaluation · productivity may not fully benefit the economy
 ● Higher productivity achieved through automation may create structural/technological unemployment.
 ● Gains from productivity may accrue disproportionately to capital owners, worsening income inequality.
 ● If the productivity rise requires heavy investment, there may be short-run costs and opportunity costs.
@@ -366,18 +366,18 @@ Evaluation — productivity may not fully benefit the economy
 
 Possible judgement
 ● In the long run, productivity growth is the most important source of sustainable prosperity.
-● Distribution of gains matters — without policy intervention, some groups may lose in the short run.
+● Distribution of gains matters · without policy intervention, some groups may lose in the short run.
 ● The effect depends on the speed and cause of the productivity gain.
 ● Trade-offs between growth and employment are possible in the short run.
 
 
                                                      Page 10
-                                                              H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+                                                              H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
-Section C — Question 4*
+Section C · Question 4*
 Evaluate whether supply-side policies are the most effective way to reduce unemployment. [25]
 Level descriptors as for Q2*.
-Indicative content — Question 4*
+Indicative content · Question 4*
 
 Knowledge and understanding
 ● Supply-side policies aim to increase the productive capacity of the economy (shift LRAS rightward).
@@ -385,15 +385,15 @@ Knowledge and understanding
    generosity.
 ● Unemployment types: cyclical, structural, frictional, seasonal, classical.
 
-Analysis — supply-side policies can reduce unemployment
+Analysis · supply-side policies can reduce unemployment
 ● Education and training raise the skills of the labour force, reducing structural unemployment.
 ● Improved job-search information reduces frictional unemployment.
 ● Reducing income tax raises returns to work, incentivising labour force participation.
 ● Welfare reform reduces the replacement ratio, encouraging job search.
 ● Deregulation of product and labour markets encourages new firm entry and hiring.
 
-Evaluation — supply-side policies may not be most effective
-● Supply-side policies operate over the long run — slow to reduce cyclical unemployment.
+Evaluation · supply-side policies may not be most effective
+● Supply-side policies operate over the long run · slow to reduce cyclical unemployment.
 ● For cyclical unemployment, expansionary fiscal/monetary policy (increasing AD) is more effective.
 ● Education and training are costly and their benefits are uncertain.
 ● Reducing benefits may push people into poverty without guaranteeing jobs exist.
@@ -404,32 +404,32 @@ Possible judgement
 ● The most effective policy depends on the type of unemployment present.
 ● Cyclical unemployment → demand-side policies; structural unemployment → supply-side.
 ● A combination of policies is likely to be most effective.
-● Time horizons matter — supply-side in long run, demand-side in short run.
+● Time horizons matter · supply-side in long run, demand-side in short run.
 
 
                                                      Page 11
-                                                           H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+                                                           H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
-Section C — Question 5*
+Section C · Question 5*
 Evaluate whether low interest rates are an effective way to stimulate economic growth. [25]
 Level descriptors as for Q2*.
-Indicative content — Question 5*
+Indicative content · Question 5*
 
 Knowledge and understanding
 ● Interest rates are the cost of borrowing / reward for saving.
 ● Low interest rates are expansionary monetary policy.
 ● Economic growth is an increase in real GDP.
 
-Analysis — low interest rates stimulate growth
+Analysis · low interest rates stimulate growth
 ● Cheaper borrowing encourages consumer spending on durable goods and housing.
 ● Lower financing costs encourage firm investment, shifting AD rightward.
 ● Lower returns on saving reduce the incentive to save, increasing consumption.
 ● Asset prices (shares, housing) rise, creating a wealth effect that raises consumption.
 ● Lower interest rates cause the exchange rate to depreciate, boosting net exports.
 
-Evaluation — may not be effective
+Evaluation · may not be effective
 ● If confidence is low (e.g. after a financial crisis), consumers and firms may not borrow more despite low
-    rates — liquidity trap.
+    rates · liquidity trap.
 ● At already very low interest rates, further cuts have little effect (zero lower bound).
 ● Low rates may encourage excessive risk-taking and asset bubbles.
 ● Savers (especially retirees on fixed incomes) lose purchasing power, which may reduce aggregate
@@ -439,13 +439,13 @@ Evaluation — may not be effective
 
 Possible judgement
 ● Effectiveness depends on the starting rate, inflation expectations, and confidence.
-● Low rates alone may be insufficient — combined with fiscal policy may be more effective.
+● Low rates alone may be insufficient · combined with fiscal policy may be more effective.
 ● If the economy is supply-constrained, low rates cause inflation rather than growth.
 ● Long-term reliance on low rates may store up financial stability risks.
 
 
                                                      Page 12
-                                      H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+                                      H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
                    ASSESSMENT OBJECTIVES GRID
 

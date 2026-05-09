@@ -29,7 +29,7 @@ export function RemarkDialog({ onRemark, isReMarking }: RemarkDialogProps) {
         <Textarea
           value={justification}
           onChange={(e) => setJustification(e.target.value)}
-          placeholder="e.g. I believe I correctly labelled the MC_L curve above AC_L — see the top-right of my diagram…"
+          placeholder="e.g. I believe I correctly labelled the MC_L curve above AC_L · see the top-right of my diagram…"
           className="min-h-[100px]"
         />
         <div className="flex justify-end gap-2">

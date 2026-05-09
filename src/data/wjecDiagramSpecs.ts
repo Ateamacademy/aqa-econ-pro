@@ -35,7 +35,7 @@ const C = {
 export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
 
   /* ══════════════════════════════════════════
-     1. PPF — BASIC
+     1. PPF · BASIC
      ══════════════════════════════════════════ */
   wjec_ppf_basic: {
     title: "Production Possibility Frontier",
@@ -58,10 +58,10 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     2. PPF — OUTWARD SHIFT (Economic Growth)
+     2. PPF · OUTWARD SHIFT (Economic Growth)
      ══════════════════════════════════════════ */
   wjec_ppf_growth: {
-    title: "PPF Outward Shift — Economic Growth",
+    title: "PPF Outward Shift · Economic Growth",
     axisLabels: { x: "Consumer Goods", y: "Capital Goods" },
     curves: [
       { id: "PPF1", label: "PPF₁", params: { type: "quadratic", a: -0.12, b: -0.1, c: 7 }, color: C.supply },
@@ -79,10 +79,10 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     3. PPF — BIASED SHIFT
+     3. PPF · BIASED SHIFT
      ══════════════════════════════════════════ */
   wjec_ppf_biased: {
-    title: "PPF Biased Shift — Sector-Specific Growth",
+    title: "PPF Biased Shift · Sector-Specific Growth",
     axisLabels: { x: "Consumer Goods", y: "Capital Goods" },
     curves: [
       { id: "PPF1", label: "PPF₁", params: { type: "quadratic", a: -0.12, b: -0.1, c: 7 }, color: C.supply },
@@ -100,7 +100,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     annotations: [
       { text: "Capital-biased growth", position: { x: 2, y: 9 }, color: C.eq, size: 11 },
     ],
-    notes: "Technology improvement in one sector shifts PPF asymmetrically — more capital goods possible without proportional consumer goods gain.",
+    notes: "Technology improvement in one sector shifts PPF asymmetrically · more capital goods possible without proportional consumer goods gain.",
     examTips: [
       "WJEC may ask about sector-specific productivity improvements",
       "Explain why the shift is uneven using specific causes",
@@ -108,10 +108,10 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     4. SUPPLY & DEMAND — Market Equilibrium
+     4. SUPPLY & DEMAND · Market Equilibrium
      ══════════════════════════════════════════ */
   wjec_market_equilibrium: {
-    title: "Market Equilibrium — Price Determination",
+    title: "Market Equilibrium · Price Determination",
     axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
     curves: [
       { id: "D", label: "D", params: { type: "linear", slope: -0.8, intercept: 9 }, color: C.demand },
@@ -122,7 +122,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     ],
     notes: "Equilibrium where quantity demanded equals quantity supplied. Price mechanism adjusts via signalling, incentive, and rationing functions.",
     examTips: [
-      "WJEC/Eduqas: explain the adjustment mechanism — excess demand → price rises → Qd falls, Qs rises",
+      "WJEC/Eduqas: explain the adjustment mechanism · excess demand → price rises → Qd falls, Qs rises",
       "Always reference the three functions of the price mechanism",
     ],
   },
@@ -131,7 +131,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      5. INDIRECT TAX
      ══════════════════════════════════════════ */
   wjec_indirect_tax: {
-    title: "Indirect Tax — Specific Tax",
+    title: "Indirect Tax · Specific Tax",
     axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
     curves: [
       { id: "D", label: "D", params: { type: "linear", slope: -0.8, intercept: 9 }, color: C.demand },
@@ -168,7 +168,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      6. SUBSIDY
      ══════════════════════════════════════════ */
   wjec_subsidy: {
-    title: "Subsidy — Effect on Market",
+    title: "Subsidy · Effect on Market",
     axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
     curves: [
       { id: "D", label: "D", params: { type: "linear", slope: -0.8, intercept: 9 }, color: C.demand },
@@ -225,7 +225,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       },
     ],
     sanityChecks: [{ description: "Qm > Qs (overproduction)", check: { eq1: "Mkt", eq2: "Soc", axis: "x", relation: ">" } }],
-    notes: "MSC > MPC — external costs (pollution, congestion). Free market overproduces. Welfare loss = triangle between MSC, MPC, and D.",
+    notes: "MSC > MPC · external costs (pollution, congestion). Free market overproduces. Welfare loss = triangle between MSC, MPC, and D.",
     examTips: [
       "WJEC: always label the welfare loss triangle explicitly",
       "Explain external costs with real examples (e.g. carbon emissions, noise)",
@@ -258,7 +258,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       },
     ],
     sanityChecks: [{ description: "Qm < Qs (underconsumption)", check: { eq1: "Mkt", eq2: "Soc", axis: "x", relation: "<" } }],
-    notes: "MSB > MPB — consumption creates external benefits (e.g. education, vaccination). Free market underconsumes.",
+    notes: "MSB > MPB · consumption creates external benefits (e.g. education, vaccination). Free market underconsumes.",
     examTips: [
       "Label MPB (private demand) and MSB (social demand) clearly",
       "Show welfare loss from underconsumption",
@@ -291,7 +291,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       },
     ],
     sanityChecks: [{ description: "Qm > Qs (overconsumption)", check: { eq1: "Mkt", eq2: "Soc", axis: "x", relation: ">" } }],
-    notes: "MSB < MPB — consumers ignore external costs (e.g. alcohol, tobacco). Free market overconsumes.",
+    notes: "MSB < MPB · consumers ignore external costs (e.g. alcohol, tobacco). Free market overconsumes.",
     examTips: [
       "Explain demerit good context: consumers ignore harm to third parties",
       "Corrective tools: indirect tax, regulation, information provision",
@@ -323,9 +323,9 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       },
     ],
     sanityChecks: [{ description: "Qm < Qs (underproduction)", check: { eq1: "Mkt", eq2: "Soc", axis: "x", relation: "<" } }],
-    notes: "MSC < MPC — production generates external benefits (e.g. R&D spillovers, training). Free market underproduces.",
+    notes: "MSC < MPC · production generates external benefits (e.g. R&D spillovers, training). Free market underproduces.",
     examTips: [
-      "MSC is BELOW MPC — external benefit in production",
+      "MSC is BELOW MPC · external benefit in production",
       "Subsidy can close the gap between Qm and Qs",
     ],
   },
@@ -420,10 +420,10 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     14. LABOUR MARKET — Wage Determination
+     14. LABOUR MARKET · Wage Determination
      ══════════════════════════════════════════ */
   wjec_labour_market: {
-    title: "Labour Market — Wage Determination",
+    title: "Labour Market · Wage Determination",
     axisLabels: { x: "Quantity of Labour (Q)", y: "Wage Rate (W)" },
     curves: [
       { id: "DL", label: "D_L (MRP)", params: { type: "linear", slope: -0.8, intercept: 9 }, color: C.demand },
@@ -460,7 +460,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     notes: "NMW above equilibrium wage creates excess supply of labour = unemployment. Those employed benefit; some lose jobs.",
     examTips: [
       "Show Ld < Ls at NMW clearly",
-      "Evaluate: depends on elasticity of D_L — inelastic demand → less unemployment",
+      "Evaluate: depends on elasticity of D_L · inelastic demand → less unemployment",
       "Real-world: monopsony may mean NMW increases employment",
     ],
   },
@@ -489,10 +489,10 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     17. MONOPOLY — Profit Maximisation
+     17. MONOPOLY · Profit Maximisation
      ══════════════════════════════════════════ */
   wjec_monopoly: {
-    title: "Monopoly — Supernormal Profit",
+    title: "Monopoly · Supernormal Profit",
     axisLabels: { x: "Output (Q)", y: "Cost / Revenue (£)" },
     curves: [
       { id: "AR", label: "AR (D)", params: { type: "linear", slope: -0.7, intercept: 9 }, color: C.demand },
@@ -510,13 +510,13 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     notes: "Monopoly: price-maker, P > MC → allocative inefficiency. Supernormal profit sustained by barriers to entry.",
     examTips: [
       "Find output where MC = MR, then price from AR curve at that Q",
-      "Supernormal profit = (AR − ATC) × Q — shade the rectangle",
+      "Supernormal profit = (AR − ATC) × Q · shade the rectangle",
       "Evaluate: economies of scale, dynamic efficiency, X-inefficiency",
     ],
   },
 
   /* ══════════════════════════════════════════
-     18. AD/AS — Macroeconomic Equilibrium
+     18. AD/AS · Macroeconomic Equilibrium
      ══════════════════════════════════════════ */
   wjec_ad_as: {
     title: "AD/AS Macroeconomic Equilibrium",
@@ -538,10 +538,10 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     19. AD INCREASE — Demand-Pull Inflation
+     19. AD INCREASE · Demand-Pull Inflation
      ══════════════════════════════════════════ */
   wjec_ad_increase: {
-    title: "Increase in AD — Demand-Pull Inflation",
+    title: "Increase in AD · Demand-Pull Inflation",
     axisLabels: { x: "Real GDP (Y)", y: "Price Level (PL)" },
     curves: [
       { id: "AD1", label: "AD₁", params: { type: "linear", slope: -0.7, intercept: 8 }, color: C.demand },
@@ -562,10 +562,10 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     20. SRAS DECREASE — Cost-Push Inflation
+     20. SRAS DECREASE · Cost-Push Inflation
      ══════════════════════════════════════════ */
   wjec_cost_push: {
-    title: "SRAS Decrease — Cost-Push Inflation",
+    title: "SRAS Decrease · Cost-Push Inflation",
     axisLabels: { x: "Real GDP (Y)", y: "Price Level (PL)" },
     curves: [
       { id: "AD", label: "AD", params: { type: "linear", slope: -0.7, intercept: 9 }, color: C.demand },
@@ -586,10 +586,10 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     21. LRAS SHIFT — Supply-Side Growth
+     21. LRAS SHIFT · Supply-Side Growth
      ══════════════════════════════════════════ */
   wjec_lras_shift: {
-    title: "LRAS Shift — Supply-Side Improvement",
+    title: "LRAS Shift · Supply-Side Improvement",
     axisLabels: { x: "Real GDP (Y)", y: "Price Level (PL)" },
     curves: [
       { id: "AD", label: "AD", params: { type: "linear", slope: -0.7, intercept: 9 }, color: C.demand },
@@ -649,7 +649,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      23. PHILLIPS CURVE
      ══════════════════════════════════════════ */
   wjec_phillips_curve: {
-    title: "Phillips Curve — Short-Run Trade-Off",
+    title: "Phillips Curve · Short-Run Trade-Off",
     axisLabels: { x: "Unemployment Rate (%)", y: "Inflation Rate (%)" },
     curves: [
       { id: "SRPC", label: "SRPC", params: { type: "quadratic", a: 0.15, b: -2.2, c: 9 }, color: C.demand },
@@ -660,10 +660,10 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       { text: "NRU", position: { x: 5, y: 0.5 }, color: C.lras, size: 11 },
       { text: "Trade-off zone", position: { x: 3, y: 5 }, color: C.demand, size: 11 },
     ],
-    notes: "Short-run trade-off between inflation and unemployment. LRPC vertical at NRU — no long-run trade-off (expectations-augmented).",
+    notes: "Short-run trade-off between inflation and unemployment. LRPC vertical at NRU · no long-run trade-off (expectations-augmented).",
     examTips: [
       "Short run: lower unemployment → higher inflation",
-      "Long run: LRPC vertical at NRU — supply-side policies shift NRU left",
+      "Long run: LRPC vertical at NRU · supply-side policies shift NRU left",
       "Evaluate: breakdown of relationship (stagflation of 1970s)",
     ],
   },
@@ -712,14 +712,14 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     ],
     notes: "Quota restricts import volume. Domestic price rises above world price. Domestic producers gain, consumers lose. Quota rent to licence holders.",
     examTips: [
-      "Unlike tariff, no government revenue — quota rent goes to import licence holders",
+      "Unlike tariff, no government revenue · quota rent goes to import licence holders",
       "Show reduced imports and higher domestic price",
       "Evaluate: less transparent than tariff, harder to remove, potential corruption",
     ],
   },
 
   /* ══════════════════════════════════════════
-     26. EXCHANGE RATE — Floating
+     26. EXCHANGE RATE · Floating
      ══════════════════════════════════════════ */
   wjec_exchange_rate: {
     title: "Floating Exchange Rate",
@@ -740,10 +740,10 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     27. LORENZ CURVE — Inequality
+     27. LORENZ CURVE · Inequality
      ══════════════════════════════════════════ */
   wjec_lorenz: {
-    title: "Lorenz Curve — Income Inequality",
+    title: "Lorenz Curve · Income Inequality",
     axisLabels: { x: "Cumulative % of Population", y: "Cumulative % of Income" },
     curves: [
       { id: "equality", label: "Line of Equality", params: { type: "linear", slope: 1, intercept: 0 }, color: C.lras, dash: true },
@@ -767,7 +767,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      28. MONOPOLISTIC COMPETITION
      ══════════════════════════════════════════ */
   wjec_mon_comp: {
-    title: "Monopolistic Competition — Long-Run Equilibrium",
+    title: "Monopolistic Competition · Long-Run Equilibrium",
     axisLabels: { x: "Output (Q)", y: "Cost / Revenue (£)" },
     curves: [
       { id: "AR", label: "AR (D)", params: { type: "linear", slope: -0.5, intercept: 8 }, color: C.demand },
@@ -784,7 +784,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     notes: "Long run: entry of new firms shifts AR left until AR is tangent to ATC. Normal profit, allocatively and productively inefficient.",
     examTips: [
       "AR tangent to ATC at profit-max output (MC = MR)",
-      "No supernormal profit in LR — free entry eliminates it",
+      "No supernormal profit in LR · free entry eliminates it",
       "Evaluate: product differentiation, non-price competition, excess capacity",
     ],
   },
@@ -829,7 +829,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     ],
     notes: "Demand shifts left: falling incomes, substitute price falls, adverse publicity. Both P and Q fall.",
     examTips: [
-      "D₂ shifts LEFT — closer to origin",
+      "D₂ shifts LEFT · closer to origin",
       "Price and quantity both fall",
     ],
   },
@@ -851,7 +851,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     ],
     notes: "Supply shifts right: lower costs, technology improvement, more suppliers. Price falls, quantity rises.",
     examTips: [
-      "Supply shifts RIGHT — more supplied at every price",
+      "Supply shifts RIGHT · more supplied at every price",
       "Common causes: technology, lower input costs, entry of new firms",
     ],
   },
@@ -873,16 +873,16 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     ],
     notes: "Supply shifts left: higher costs, supply chain disruption, indirect taxes. Price rises, quantity falls.",
     examTips: [
-      "Supply shifts LEFT — less supplied at every price",
+      "Supply shifts LEFT · less supplied at every price",
       "Causes: higher raw material costs, increased indirect taxes",
     ],
   },
 
   /* ══════════════════════════════════════════
-     33. ELASTICITY — Elastic vs Inelastic Demand
+     33. ELASTICITY · Elastic vs Inelastic Demand
      ══════════════════════════════════════════ */
   wjec_elasticity_ped: {
-    title: "Price Elasticity of Demand — Elastic vs Inelastic",
+    title: "Price Elasticity of Demand · Elastic vs Inelastic",
     axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
     curves: [
       { id: "D_el", label: "D (elastic)", params: { type: "linear", slope: -0.3, intercept: 8 }, color: C.demand },
@@ -904,10 +904,10 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     34. ELASTICITY — PES
+     34. ELASTICITY · PES
      ══════════════════════════════════════════ */
   wjec_elasticity_pes: {
-    title: "Price Elasticity of Supply — Elastic vs Inelastic",
+    title: "Price Elasticity of Supply · Elastic vs Inelastic",
     axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
     curves: [
       { id: "S_el", label: "S (elastic)", params: { type: "linear", slope: 0.3, intercept: 1 }, color: C.supply },
@@ -929,7 +929,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      35. MERIT GOOD (Information Failure)
      ══════════════════════════════════════════ */
   wjec_merit_good: {
-    title: "Merit Good — Under-Consumption",
+    title: "Merit Good · Under-Consumption",
     axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
     curves: [
       { id: "S", label: "S (MPC)", params: { type: "linear", slope: 0.7, intercept: 1 }, color: C.supply },
@@ -962,7 +962,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      36. DEMERIT GOOD (Information Failure)
      ══════════════════════════════════════════ */
   wjec_demerit_good: {
-    title: "Demerit Good — Over-Consumption",
+    title: "Demerit Good · Over-Consumption",
     axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
     curves: [
       { id: "S", label: "S (MPC)", params: { type: "linear", slope: 0.7, intercept: 1 }, color: C.supply },
@@ -985,16 +985,16 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     sanityChecks: [{ description: "Qm > Qopt (overconsumption)", check: { eq1: "Mkt", eq2: "Opt", axis: "x", relation: ">" } }],
     notes: "Demerit good: consumers overvalue benefits (alcohol, tobacco, gambling). Government corrects via tax, regulation, or information.",
     examTips: [
-      "D (perceived) is ABOVE D (actual) — consumers think benefit is higher",
+      "D (perceived) is ABOVE D (actual) · consumers think benefit is higher",
       "Correction: indirect tax, minimum age, advertising bans, health warnings",
     ],
   },
 
   /* ══════════════════════════════════════════
-     37. LRAC — Economies of Scale
+     37. LRAC · Economies of Scale
      ══════════════════════════════════════════ */
   wjec_lrac: {
-    title: "Long-Run Average Cost — Economies & Diseconomies",
+    title: "Long-Run Average Cost · Economies & Diseconomies",
     axisLabels: { x: "Output (Q)", y: "Cost (£)" },
     curves: [
       {
@@ -1018,16 +1018,16 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     notes: "LRAC falls with economies of scale (technical, managerial, financial, purchasing). MES = minimum efficient scale. Beyond optimal, diseconomies from coordination/communication failures.",
     examTips: [
       "Types of EoS: technical, managerial, financial, purchasing, risk-bearing",
-      "MES is where LRAC first reaches minimum — important for market structure analysis",
+      "MES is where LRAC first reaches minimum · important for market structure analysis",
       "Diseconomies: coordination failures, communication breakdowns, X-inefficiency",
     ],
   },
 
   /* ══════════════════════════════════════════
-     38. PERFECT COMPETITION — Short Run
+     38. PERFECT COMPETITION · Short Run
      ══════════════════════════════════════════ */
   wjec_perfect_comp: {
-    title: "Perfect Competition — Short-Run Supernormal Profit",
+    title: "Perfect Competition · Short-Run Supernormal Profit",
     axisLabels: { x: "Output (Q)", y: "Cost / Revenue (£)" },
     curves: [
       { id: "AR", label: "AR = MR = D", params: { type: "horizontal", y: 6 }, color: C.demand, width: 2 },
@@ -1050,10 +1050,10 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     39. OLIGOPOLY — Kinked Demand Curve
+     39. OLIGOPOLY · Kinked Demand Curve
      ══════════════════════════════════════════ */
   wjec_kinked_demand: {
-    title: "Oligopoly — Kinked Demand Curve",
+    title: "Oligopoly · Kinked Demand Curve",
     axisLabels: { x: "Output (Q)", y: "Price / Cost (£)" },
     curves: [
       {
@@ -1112,7 +1112,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     ],
     notes: "Monopsony: single buyer of labour. MCL > ACL (S_L). Employs where MCL = MRP but pays wage from S_L at that quantity. Lower wage and employment than competitive market.",
     examTips: [
-      "MCL is steeper than S_L (ACL) — gradient is double",
+      "MCL is steeper than S_L (ACL) · gradient is double",
       "Monopsonist pays Wm from S_L curve, NOT from MCL",
       "NMW above Wm but below Wc can increase BOTH employment and wage",
     ],
@@ -1122,7 +1122,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      41. COMPARATIVE ADVANTAGE
      ══════════════════════════════════════════ */
   wjec_comparative_advantage: {
-    title: "Comparative Advantage — PPF Basis",
+    title: "Comparative Advantage · PPF Basis",
     axisLabels: { x: "Good X", y: "Good Y" },
     curves: [
       { id: "PPF_A", label: "Country A", params: { type: "linear", slope: -0.5, intercept: 8 }, color: C.supply },
@@ -1174,7 +1174,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      43. INTERRELATED MARKETS
      ══════════════════════════════════════════ */
   wjec_interrelated_markets: {
-    title: "Interrelated Markets — Substitutes",
+    title: "Interrelated Markets · Substitutes",
     axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
     curves: [
       { id: "D1", label: "D₁ (Mkt B)", params: { type: "linear", slope: -0.8, intercept: 8 }, color: C.demand },
@@ -1197,7 +1197,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     44. FISCAL POLICY — Expansionary
+     44. FISCAL POLICY · Expansionary
      ══════════════════════════════════════════ */
   wjec_fiscal_expansion: {
     title: "Expansionary Fiscal Policy",
@@ -1224,7 +1224,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     45. MONETARY POLICY — Interest Rate Cut
+     45. MONETARY POLICY · Interest Rate Cut
      ══════════════════════════════════════════ */
   wjec_monetary_expansion: {
     title: "Expansionary Monetary Policy",
@@ -1254,7 +1254,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      46. SUPPLY-SIDE POLICY
      ══════════════════════════════════════════ */
   wjec_supply_side: {
-    title: "Supply-Side Policy — LRAS Shift",
+    title: "Supply-Side Policy · LRAS Shift",
     axisLabels: { x: "Real GDP (Y)", y: "Price Level (PL)" },
     curves: [
       { id: "AD", label: "AD", params: { type: "linear", slope: -0.7, intercept: 9 }, color: C.demand },
@@ -1279,7 +1279,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     47. EXCHANGE RATE — Appreciation
+     47. EXCHANGE RATE · Appreciation
      ══════════════════════════════════════════ */
   wjec_appreciation: {
     title: "Exchange Rate Appreciation",
@@ -1302,7 +1302,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     48. EXCHANGE RATE — Depreciation
+     48. EXCHANGE RATE · Depreciation
      ══════════════════════════════════════════ */
   wjec_depreciation: {
     title: "Exchange Rate Depreciation",
@@ -1328,7 +1328,7 @@ export const WJEC_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      49. POVERTY TRAP / CYCLE
      ══════════════════════════════════════════ */
   wjec_poverty_trap: {
-    title: "Poverty Trap — Low Income Cycle",
+    title: "Poverty Trap · Low Income Cycle",
     axisLabels: { x: "Income (Y)", y: "Effective Marginal Tax Rate (%)" },
     curves: [
       {

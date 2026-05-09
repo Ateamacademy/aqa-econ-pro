@@ -2,7 +2,7 @@
  * diagramScenarioRubrics.ts
  *
  * Builds a deterministic, scenario-specific marking rubric for every Diagram
- * Practice — Exam Scenario across ALL exam boards. The rubric is derived from
+ * Practice · Exam Scenario across ALL exam boards. The rubric is derived from
  * the scenario's `expectedDiagramKeyword`, `question`, `topic`, `hints`, and
  * `marks`, then injected into both the streaming examiner prompt and the
  * structured `mark-diagram` edge function payload.
@@ -111,7 +111,7 @@ const TEMPLATES: Record<string, Template> = {
         requirement: "Both price levels marked with dashed lines projecting to corresponding quantities." },
       { component: "Revenue gained vs revenue lost areas shaded", marks: d,
         acceptedLabels: ["Revenue gained", "Revenue lost"],
-        requirement: "Two distinct rectangles shaded — area gained from price rise and area lost from quantity fall." },
+        requirement: "Two distinct rectangles shaded · area gained from price rise and area lost from quantity fall." },
       { component: "Conclusion: net revenue effect explained", marks: e,
         acceptedLabels: ["Revenue rises", "Net revenue", "Total revenue"],
         requirement: "Written conclusion that for inelastic demand, revenue gained > revenue lost ⇒ total revenue rises." },
@@ -125,7 +125,7 @@ const TEMPLATES: Record<string, Template> = {
         requirement: "Y-axis = Income (or Average Income), X-axis = Quantity demanded." },
       { component: "Two upward-sloping demand-against-income curves", marks: b,
         acceptedLabels: ["Normal good", "Luxury good", "YED > 1"],
-        requirement: "Two curves drawn — a steeper one for normal good (0 < YED < 1) and a flatter one for luxury (YED > 1)." },
+        requirement: "Two curves drawn · a steeper one for normal good (0 < YED < 1) and a flatter one for luxury (YED > 1)." },
       { component: "Income & quantity levels with dashed projections", marks: c,
         acceptedLabels: ["Y1", "Y2", "Q1", "Q2"],
         requirement: "Two income levels and corresponding quantities marked with dashed projections." },
@@ -356,7 +356,7 @@ const TEMPLATES: Record<string, Template> = {
         requirement: "Output Qm marked where MC intersects MR, projected up to AR for the price." },
       { component: "Price set on AR curve at Qm (NOT on MR)", marks: c,
         acceptedLabels: ["Pm"],
-        requirement: "Price Pm read from AR curve directly above Qm — not from the MR curve." },
+        requirement: "Price Pm read from AR curve directly above Qm · not from the MR curve." },
       { component: "Supernormal profit rectangle shaded (Pm − ATC) × Qm", marks: d,
         acceptedLabels: ["Supernormal profit", "AC at Qm"],
         requirement: "Profit rectangle correctly bounded by Pm, ATC at Qm, the Y-axis and Qm." },
@@ -407,7 +407,7 @@ const TEMPLATES: Record<string, Template> = {
         requirement: "Q* identified where MC = MR." },
       { component: "AR tangent to ATC at Q* (normal profit only)", marks: c,
         acceptedLabels: ["Tangency", "Normal profit"],
-        requirement: "AR (= P) just touches ATC at Q* — normal profit, not above ATC." },
+        requirement: "AR (= P) just touches ATC at Q* · normal profit, not above ATC." },
       { component: "Excess capacity gap (Q* < Q at min ATC) labelled", marks: d,
         acceptedLabels: ["Excess capacity"],
         requirement: "Horizontal gap between Q* and the output at min ATC clearly labelled as excess capacity." },
@@ -443,7 +443,7 @@ const TEMPLATES: Record<string, Template> = {
         requirement: "Quantity Qm marked where MC_L cuts MRP_L." },
       { component: "Monopsony wage read from AC_L (BELOW MRP_L)", marks: c,
         acceptedLabels: ["Wm"],
-        requirement: "Wage Wm read off AC_L at Qm — strictly below the competitive wage." },
+        requirement: "Wage Wm read off AC_L at Qm · strictly below the competitive wage." },
       { component: "Comparison with competitive outcome + welfare loss", marks: d,
         acceptedLabels: ["Wc", "Qc", "Welfare loss"],
         requirement: "Competitive wage Wc and employment Qc identified; welfare-loss triangle bounded by MC_L, MRP_L between Qm and Qc shaded." },
@@ -479,7 +479,7 @@ const TEMPLATES: Record<string, Template> = {
         requirement: "Three distinct sections drawn and labelled." },
       { component: "AD shifts right in spare-capacity (horizontal) region", marks: c,
         acceptedLabels: ["AD1", "AD2"],
-        requirement: "Initial AD intersects in horizontal region; AD2 still in horizontal region — large ΔY, ~no ΔPL." },
+        requirement: "Initial AD intersects in horizontal region; AD2 still in horizontal region · large ΔY, ~no ΔPL." },
       { component: "Conclusion: large output gain, minimal inflation", marks: d,
         acceptedLabels: ["Output gain", "No inflation"],
         requirement: "Written conclusion linking spare capacity to fiscal stimulus producing big GDP rise without inflation." },
@@ -602,7 +602,7 @@ export function renderRubricForPrompt(rubric: ScenarioRubric): string {
   lines.push(`=== SCENARIO-SPECIFIC MARK SCHEME (${rubric.totalMarks} marks total) ===`);
   rubric.criteria.forEach((c, i) => {
     lines.push(
-      `${i + 1}. **${c.component}** — ${c.marks} mark${c.marks > 1 ? "s" : ""}${c.mandatory ? " *(mandatory — zero overall if missing)*" : ""}`,
+      `${i + 1}. **${c.component}** · ${c.marks} mark${c.marks > 1 ? "s" : ""}${c.mandatory ? " *(mandatory · zero overall if missing)*" : ""}`,
     );
     lines.push(`   Requirement: ${c.requirement}`);
     if (c.acceptedLabels.length > 0) {
@@ -614,7 +614,7 @@ export function renderRubricForPrompt(rubric: ScenarioRubric): string {
     lines.push(`Board note: ${rubric.boardNote}`);
   }
   lines.push("");
-  lines.push("Award marks ONLY against these named criteria. Sum the criterion marks to produce the total — do not award marks for anything outside this rubric.");
+  lines.push("Award marks ONLY against these named criteria. Sum the criterion marks to produce the total · do not award marks for anything outside this rubric.");
   return lines.join("\n");
 }
 

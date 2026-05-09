@@ -41,7 +41,7 @@ export function validatePercentChangeStem(stem: string): string | null {
 }
 
 export function validateTwentyFiveMarkScheme(markScheme: string): string | null {
-  // AQA 5-level banding — must mention all five level ranges.
+  // AQA 5-level banding · must mention all five level ranges.
   const bands = ["1–5", "6–10", "11–15", "16–20", "21–25"];
   const missing = bands.filter((b) => !markScheme.includes(b));
   if (missing.length > 0) {

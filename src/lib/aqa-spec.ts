@@ -1,5 +1,5 @@
 /**
- * AQA A-Level Economics (7136) — paper blueprint.
+ * AQA A-Level Economics (7136) · paper blueprint.
  * Single source of truth for every generated paper, preview, and mark scheme.
  */
 
@@ -43,19 +43,19 @@ export const AQA_SPEC: Record<PaperCode, AqaPaperSpec> = {
     sections: [
       {
         id: "A",
-        name: "Section A — Data response",
+        name: "Section A · Data response",
         marks: 40,
         requires: ["Extract A", "Extract B", "Extract C", "At least one figure/graph/table"],
         questions: [
           { number: 1, marks: 2, skill: "Definition / calculation", format: "WRITTEN" },
           { number: 2, marks: 4, skill: "Explain using extract", format: "WRITTEN" },
           { number: 3, marks: 9, skill: "Analyse with diagram", format: "WRITTEN" },
-          { number: 4, marks: 25, skill: "Evaluate — extended response", format: "WRITTEN" },
+          { number: 4, marks: 25, skill: "Evaluate · extended response", format: "WRITTEN" },
         ],
       },
       {
         id: "B",
-        name: "Section B — Essay",
+        name: "Section B · Essay",
         marks: 40,
         questions: [
           { number: 5, marks: 15, skill: "Explain / analyse", format: "WRITTEN" },
@@ -73,19 +73,19 @@ export const AQA_SPEC: Record<PaperCode, AqaPaperSpec> = {
     sections: [
       {
         id: "A",
-        name: "Section A — Data response",
+        name: "Section A · Data response",
         marks: 40,
         requires: ["Extract A", "Extract B", "Extract C", "At least one figure/graph/table"],
         questions: [
           { number: 1, marks: 2, skill: "Definition / calculation", format: "WRITTEN" },
           { number: 2, marks: 4, skill: "Explain using extract", format: "WRITTEN" },
           { number: 3, marks: 9, skill: "Analyse with diagram", format: "WRITTEN" },
-          { number: 4, marks: 25, skill: "Evaluate — extended response", format: "WRITTEN" },
+          { number: 4, marks: 25, skill: "Evaluate · extended response", format: "WRITTEN" },
         ],
       },
       {
         id: "B",
-        name: "Section B — Essay",
+        name: "Section B · Essay",
         marks: 40,
         questions: [
           { number: 5, marks: 15, skill: "Explain / analyse", format: "WRITTEN" },
@@ -103,7 +103,7 @@ export const AQA_SPEC: Record<PaperCode, AqaPaperSpec> = {
     sections: [
       {
         id: "A",
-        name: "Section A — Multiple choice",
+        name: "Section A · Multiple choice",
         marks: 30,
         questions: Array.from({ length: 30 }, (_, i) => ({
           number: i + 1,
@@ -114,13 +114,13 @@ export const AQA_SPEC: Record<PaperCode, AqaPaperSpec> = {
       },
       {
         id: "B",
-        name: "Section B — Case study",
+        name: "Section B · Case study",
         marks: 50,
         requires: ["Long case study / extract"],
         questions: [
           { number: 31, marks: 10, skill: "Apply to context", format: "WRITTEN" },
           { number: 32, marks: 15, skill: "Analyse", format: "WRITTEN" },
-          { number: 33, marks: 25, skill: "Evaluate — extended response", format: "WRITTEN" },
+          { number: 33, marks: 25, skill: "Evaluate · extended response", format: "WRITTEN" },
         ],
       },
     ],
@@ -275,7 +275,7 @@ export function defaultLevelsFor(totalMarks: number): AqaLevelDescriptor[] {
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
-   VALIDATION — papers must conform to the spec or they're rejected.
+   VALIDATION · papers must conform to the spec or they're rejected.
 ────────────────────────────────────────────────────────────────────────── */
 
 export interface ValidationIssue {

@@ -7,7 +7,7 @@ Economics
 H460/03: Themes in economics
 A Level
 
-Mark Scheme — Predicted Paper (Advanced)
+Mark Scheme · Predicted Paper (Advanced)
 MARKING INSTRUCTIONS
 These are the marking instructions for the predicted paper. Use them in conjunction with the question paper.
 Alternative correct answers and unexpected approaches should be given marks that fairly reflect the relevant
@@ -125,12 +125,12 @@ Question            Answer     Question   Answer
 14                  C          29         A
 
 15                  B          30         D
-Section A — Rationale
+Section A · Rationale
 
 Q     Key   Rationale                                                                      AO
 
 1     A     A Correct: Under rational expectations with flexible prices, agents              AO1
-            anticipate the policy's inflationary effect, so the Phillips curve is vertical —
+            anticipate the policy's inflationary effect, so the Phillips curve is vertical ·
             only the price level rises while output is unchanged (policy ineffectiveness
             proposition).
             B The natural rate hypothesis implies monetary policy cannot
@@ -143,7 +143,7 @@ Q     Key   Rationale                                                           
             identity is S = I.
             B Consumption and investment are separate components of AD.
             C Correct: In a closed economy with no government, leakages (savings)
-            must equal injections (investment) at equilibrium — S = I.
+            must equal injections (investment) at equilibrium · S = I.
             D MPC = 1 is a limiting assumption, not the equilibrium condition.
 
 3     C     A Baumol's model assumes managers maximise sales revenue subject               AO1
@@ -154,14 +154,14 @@ Q     Key   Rationale                                                           
             subject to a minimum profit constraint set by shareholders.
             D Neoclassical theory assumes profit maximisation, not manager utility.
 
-4     B     A £4 is the difference between MPB and MPC — not the optimal tax.              AO2
+4     B     A £4 is the difference between MPB and MPC · not the optimal tax.              AO2
             B Correct: Optimal Pigouvian tax = marginal external cost at the socially
             optimal output = £6 per unit. This internalises the externality.
             C £10 is MPC, not the externality.
             D £14 is the price, not the externality.
 
 5     A     A Correct: XED = −1.8 is a large magnitude negative value, indicating          AO2
-            the two goods are strong complements — a rise in the price of one
+            the two goods are strong complements · a rise in the price of one
             sharply reduces demand for the other. Consumers typically buy them
             together (e.g. cars and fuel).
             B Close substitutes have a large POSITIVE cross-elasticity of demand,
@@ -184,7 +184,7 @@ Q     Key   Rationale                                                           
             not long-run scale.
             C Diseconomies give a rising LRAC.
             D Correct: A falling LRAC curve indicates falling long-run average costs
-            as output rises — economies of scale.
+            as output rises · economies of scale.
 8    A   A Correct: In a perfectly contestable market, incumbents must price at      AO1
          minimum AC and earn only normal profit, because supernormal profit
          would attract hit-and-run entry.
@@ -206,8 +206,8 @@ Q     Key   Rationale                                                           
          Domestic inflation was 2 percentage points higher than foreign, partially
          eroding the nominal appreciation in real terms.
          B If domestic inflation were lower, the real appreciation would exceed the
-         nominal — the opposite pattern to what is observed.
-         C Magnitude is too large — the gap is 2pp, not 10pp.
+         nominal · the opposite pattern to what is observed.
+         C Magnitude is too large · the gap is 2pp, not 10pp.
          D Identical inflation would give real appreciation equal to nominal
          appreciation (both 6%).
 
@@ -216,7 +216,7 @@ Q     Key   Rationale                                                           
          B At P = MC for a natural monopoly, supernormal profit is impossible
          without a subsidy.
          C Correct: Natural monopolies have P = MC < AC at the socially optimal
-         level — so firms make a loss and require a subsidy to remain in business.
+         level · so firms make a loss and require a subsidy to remain in business.
          D Minimum AC occurs at a much larger output than the social optimum
          for a natural monopoly.
 
@@ -235,25 +235,25 @@ Q     Key   Rationale                                                           
          D Correct: Within the range between the monopsony wage and the
          competitive wage, imposing a minimum wage flattens the effective MCL
          (it becomes horizontal at the minimum wage), so the monopsonist will
-         employ more workers at the higher wage — both wages and employment
+         employ more workers at the higher wage · both wages and employment
          rise.
 
-14   C   A Incorrect — this would only apply if velocity were stable (%ΔV = 0) and AO2
+14   C   A Incorrect · this would only apply if velocity were stable (%ΔV = 0) and AO2
          real GDP growth were 1%.
-         B Incorrect — this would apply if velocity growth were 0% rather than
+         B Incorrect · this would apply if velocity growth were 0% rather than
          −1%.
          C Correct: MV = PY in growth rates: %ΔM + %ΔV = %ΔP + %ΔY. For
          price stability (%ΔP = 0): %ΔM = %ΔY − %ΔV = 2% − (−1%) = 3%.
          Money supply must grow by 3% to offset the fall in velocity and
          accommodate real GDP growth.
-         D Incorrect — this would apply if inflation were allowed to be 2% rather
+         D Incorrect · this would apply if inflation were allowed to be 2% rather
          than targeted at 0%.
 
 15   B   A Immediate improvement ignores the J-curve.                                   AO1
          B Correct: J-curve: current account worsens initially (contracts signed at
-         old prices, inelastic demand) then improves as quantities adjust —
+         old prices, inelastic demand) then improves as quantities adjust ·
          provided Marshall-Lerner holds (PEDx + PEDm > 1).
-         C Current account does not necessarily worsen permanently — depends
+         C Current account does not necessarily worsen permanently · depends
          on elasticities over different time horizons.
          D Capital flows affect the exchange rate but not directly the Marshall-
          Lerner analysis of the current account.
@@ -261,22 +261,22 @@ Q     Key   Rationale                                                           
 16   B   A Windfall taxes on supernormal profits are hard to pass through to        AO3
          consumers because they are levied on profits, not output.
          B Correct: A windfall tax falls on the supernormal profit that was already
-         earned — shareholders (who are typically higher-income) bear the
+         earned · shareholders (who are typically higher-income) bear the
          incidence. It cannot be passed on in the short run because it is a tax on
          profit, not a per-unit cost.
          C Long-run investment may fall, but short-run impact on supply is limited.
          D The tax raises revenue, it does not reduce it.
 
-17   C   A A fall in the Gini coefficient indicates less inequality — shift INWARD.     AO3
+17   C   A A fall in the Gini coefficient indicates less inequality · shift INWARD.     AO3
          B Constant Gini means no shift.
          C Correct: A rise in the Gini coefficient (e.g. 0.25 to 0.45) indicates more
-         inequality — consistent with an outward shift of the Lorenz curve.
+         inequality · consistent with an outward shift of the Lorenz curve.
          D A fall in Gini (0.45 to 0.40) would be an inward shift.
 
 18   D   A Incidence depends on relative elasticities, not always equal.                AO3
          B Consumers gain more when demand is inelastic relative to supply.
          C With inelastic demand, consumers gain most because they are less
-         price-sensitive — the market price falls almost by the full subsidy.
+         price-sensitive · the market price falls almost by the full subsidy.
          D Correct: The relatively inelastic side of the market bears more of the
          incidence (benefit) of a subsidy. Inelastic demand means consumers
          capture most of the subsidy through lower prices.
@@ -289,7 +289,7 @@ Q     Key   Rationale                                                           
          D Structural unemployment does not typically fall in recessions.
 
 20   A   A Correct: Telematics reveal driver quality (hidden type) to the insurer,      AO3
-         addressing adverse selection — otherwise safe drivers subsidise
+         addressing adverse selection · otherwise safe drivers subsidise
          dangerous ones, and pull out of the market.
          B Diminishing returns do not apply here.
          C Telematics do not directly address monopoly power.
@@ -337,7 +337,7 @@ Q     Key   Rationale                                                           
          D This is quantity theory, not time inconsistency.
 
 26   B   A Recoverable costs do not deter entry (contestable markets).                 AO1
-         B Correct: A sunk cost cannot be recovered on exit — this raises the
+         B Correct: A sunk cost cannot be recovered on exit · this raises the
          cost of entry and creates a barrier to entry (central to contestable market
          theory).
          C Sunk costs are narrower than fixed costs: all sunk are fixed, but not all
@@ -348,7 +348,7 @@ Q     Key   Rationale                                                           
          labour shortages) combined with modest AD growth can produce both a
          negative output gap (actual < new potential) and inflationary pressure as
          AD pushes up against the lower LRAS.
-         B This would produce a positive output gap and inflation — not a
+         B This would produce a positive output gap and inflation · not a
          negative output gap.
          C Both shifting out would reduce, not raise, inflation.
          D Equal shifts leave output gap unchanged.
@@ -359,11 +359,11 @@ Q     Key   Rationale                                                           
          children under 5.
          D Correct: HDI uses a geometric mean of three equally-weighted
          components (health, education, income), which is a contested
-         simplification — the components may deserve different weights based on
+         simplification · the components may deserve different weights based on
          context.
 
 29   A   A Correct: Resource curse: countries rich in natural resources often          AO1
-         experience slower growth and weaker institutions — explanations include
+         experience slower growth and weaker institutions · explanations include
          Dutch disease, rent-seeking, and commodity price volatility.
          B Resource exhaustion is a separate issue.
          C This is about consumption, not the resource curse paradox.
@@ -413,7 +413,7 @@ on
        their failure would cause systemic damage, so the
        government is likely to bail them out (1). This creates an
        incentive for banks to take on excessive risk, knowing the
-       taxpayer bears the downside — for example, the £137bn
+       taxpayer bears the downside · for example, the £137bn
        bailout during the 2008 crisis (1).
 
 
@@ -515,10 +515,10 @@ Evaluation
     •   Bail-in tools (rather than bail-outs) align creditors' incentives and remove the need for excessive
         regulation.
 Judgements might include:
-    •   Depends on the source of market failure — moral hazard and systemic risk call for different
+    •   Depends on the source of market failure · moral hazard and systemic risk call for different
         responses.
     •   Depends on coordination across international regulators (Basel, FSB) to prevent regulatory arbitrage.
-    •   Depends on the interaction with competition policy — breaking up big banks may achieve similar
+    •   Depends on the interaction with competition policy · breaking up big banks may achieve similar
         goals.
     •   Depends on the credibility of 'no bailout' commitments.
     •   A blended approach (regulation + competition + structural reform) may be more effective than any
@@ -628,24 +628,24 @@ Application
    •   Application: Treasury indemnity cost of QE unwinding estimated up to £150bn.
    •   Application: House of Lords report described QE as creating 'fragility'.
 Analysis
-   •   Benefits: QE countered the zero lower bound — when bank rate reached 0.1%, QE provided further
+   •   Benefits: QE countered the zero lower bound · when bank rate reached 0.1%, QE provided further
        monetary stimulus, preventing deflation and supporting output.
    •   Transmission mechanism evidence: lower long-term rates, higher asset prices, wealth effects, bank
-       liquidity — BoE research suggests each channel contributed to the 2.5% GDP boost.
+       liquidity · BoE research suggests each channel contributed to the 2.5% GDP boost.
    •   Avoided a 1930s-style depression during COVID: QE expanded by £150bn in 2020 alone.
    •   Supported fiscal policy (e.g. furlough) by keeping government borrowing costs low.
    •   Signalling effect: commitment to loose policy anchored expectations and supported confidence.
 Evaluation
    •   Distributional costs: QE boosted asset prices, disproportionately benefiting the wealthiest 10% (who
-       captured 40% of the £1.2tn gain) — may have worsened wealth inequality.
+       captured 40% of the £1.2tn gain) · may have worsened wealth inequality.
    •   Moral hazard: QE reduced the discipline on governments to undertake structural reform, as it
        artificially lowered borrowing costs.
    •   Fiscal cost: Treasury indemnity may cost up to £150bn over the decade as the Bank sells at a loss.
    •   Central bank independence and accountability: QE blurs monetary and fiscal policy; there is no
        democratic vote on the scale of intervention.
-   •   Created financial fragility — the sudden rise in rates from 0.1% to 5.25% has been more damaging
+   •   Created financial fragility · the sudden rise in rates from 0.1% to 5.25% has been more damaging
        than it would have been with lower starting debts.
-   •   QE benefits may have diminished over time — the 2020 round may have generated more inflation
+   •   QE benefits may have diminished over time · the 2020 round may have generated more inflation
        than growth.
    •   Alternative policies (helicopter money, targeted lending schemes) might have been more effective at
        stimulating consumption of low-income households.
@@ -655,7 +655,7 @@ Judgements might include:
    •   Depends on how easily QE can be unwound (QT process).
    •   Depends on interaction with fiscal policy and structural reforms.
    •   Short-run benefits may be clear; long-run costs (inequality, fiscal dominance) only now becoming
-       evident — verdict highly time-horizon dependent.
+       evident · verdict highly time-horizon dependent.
 Question 37
 
 Questi Answer                                                            Marks    Guidance
@@ -676,7 +676,7 @@ on
          indicators than advanced economies across all three
          measures (1).
          - GDP per capita gap: $4,210 in SSA vs $56,360 in
-         advanced economies — SSA earns about 7% of the
+         advanced economies · SSA earns about 7% of the
          advanced-economy level (1).
          - HDI: 0.547 (low human development) vs 0.896 (very
          high).
@@ -731,7 +731,7 @@ Application
    •   Application: Remittances $669bn (> FDI) but fees at 6.3%.
    •   Application: Mean years of schooling rose 4.4→6.0 years in SSA.
 Analysis
-   •   Strategies that could work: Investment in education (already showing progress — schooling years up
+   •   Strategies that could work: Investment in education (already showing progress · schooling years up
        36% since 2000) raises productivity and labour market participation.
    •   Health investment reduces child mortality and raises life expectancy, boosting the working-age
        population.
@@ -742,9 +742,9 @@ Analysis
    •   FDI and trade access create jobs and technology transfer.
    •   Institutional reform (governance, rule of law) is critical for long-term growth.
 Evaluation
-   •   Aid dependency risks — unconditional aid may distort incentives and undermine institutions.
+   •   Aid dependency risks · unconditional aid may distort incentives and undermine institutions.
    •   Debt relief without conditions may lead to repeat borrowing cycles.
-   •   Brain drain offsets gains from education — skilled workers emigrate.
+   •   Brain drain offsets gains from education · skilled workers emigrate.
    •   External shocks (commodity prices, US rate rises, climate) are outside developing country control.
    •   Resource curse in oil/mineral-rich SSA countries limits the effectiveness of export-led strategies.
    •   Rising global inequality (billionaire wealth +34%) means top-down redistribution may matter more

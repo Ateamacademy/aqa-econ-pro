@@ -128,7 +128,7 @@ export default function AITutor() {
 
   return (
     <div className="flex min-h-[calc(100vh-64px)] bg-background">
-      {/* ═══ LEFT PANEL — Topic Navigator ═══ */}
+      {/* ═══ LEFT PANEL · Topic Navigator ═══ */}
       <aside className="hidden lg:flex flex-col w-[320px] border-r border-border bg-card/50 shrink-0 sticky top-16 h-[calc(100vh-64px)] overflow-hidden">
         {/* Header */}
         <div className="p-4 border-b border-border/60">
@@ -202,7 +202,7 @@ export default function AITutor() {
         )}
       </aside>
 
-      {/* ═══ RIGHT PANEL — Chat Interface ═══ */}
+      {/* ═══ RIGHT PANEL · Chat Interface ═══ */}
       <div className="flex-1 flex flex-col min-w-0 h-[calc(100vh-64px)]">
         {/* Chat header (mobile) */}
         <div className="lg:hidden px-5 py-3 border-b border-border bg-background/80 backdrop-blur-xl">

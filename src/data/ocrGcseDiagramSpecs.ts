@@ -308,7 +308,7 @@ export const OCR_GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   ocr_gcse_fiscal_expansion: {
-    title: "Fiscal Policy — Increase in AD (OCR GCSE)",
+    title: "Fiscal Policy · Increase in AD (OCR GCSE)",
     axisLabels: { x: "Real GDP (Y)", y: "Price Level (PL)" },
     curves: [
       { id: "AD1", label: "AD₁", params: { type: "linear", slope: -0.7, intercept: 9 }, color: C.demand },
@@ -367,7 +367,7 @@ export const OCR_GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   ocr_gcse_indirect_tax: {
-    title: "Indirect Tax — Correcting Externalities (OCR GCSE)",
+    title: "Indirect Tax · Correcting Externalities (OCR GCSE)",
     axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
     curves: [
       { id: "D1", label: "D", params: { type: "linear", slope: -0.8, intercept: 9 }, color: C.demand },
@@ -437,7 +437,7 @@ export const OCR_GCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   ocr_gcse_lorenz: {
-    title: "Income Distribution — Lorenz Curve (OCR GCSE)",
+    title: "Income Distribution · Lorenz Curve (OCR GCSE)",
     axisLabels: { x: "Cumulative % of Population", y: "Cumulative % of Income" },
     curves: [
       { id: "equality", label: "Line of Equality", params: { type: "linear", slope: 1, intercept: 0 }, color: C.lras, dash: true },

@@ -22,7 +22,7 @@ export interface LevelMarkSpec {
     primary: string;
     alternatives?: string[];
     requiredLabels: string[];
-    /** Filename in /public/figures (no leading slash) — rendered as the canonical reference figure. */
+    /** Filename in /public/figures (no leading slash) · rendered as the canonical reference figure. */
     figureKey?: string;
     /** Caption shown under the figure. Defaults to "Reference diagram". */
     figureCaption?: string;
@@ -44,8 +44,8 @@ const NINE_MARK_BANDS: Array<[number, number]> = [
   [7, 9],
 ];
 
-// 15-mark — AQA 3-level structure (reviewer-confirmed canonical template).
-// AO3 (Analysis) is the TOP-BAND discriminator — NOT AO4. 15-mark questions
+// 15-mark · AQA 3-level structure (reviewer-confirmed canonical template).
+// AO3 (Analysis) is the TOP-BAND discriminator · NOT AO4. 15-mark questions
 // do not require evaluation.
 const FIFTEEN_MARK_BANDS: Array<[number, number]> = [
   [1, 5],
@@ -53,8 +53,8 @@ const FIFTEEN_MARK_BANDS: Array<[number, number]> = [
   [11, 15],
 ];
 
-// 25-mark — AQA 5-level structure (reviewer-confirmed canonical template).
-// AO4 (Evaluation) is the TOP-BAND discriminator — supported judgement required.
+// 25-mark · AQA 5-level structure (reviewer-confirmed canonical template).
+// AO4 (Evaluation) is the TOP-BAND discriminator · supported judgement required.
 const TWENTYFIVE_MARK_BANDS: Array<[number, number]> = [
   [1, 5],
   [6, 10],
@@ -70,14 +70,14 @@ const NINE_MARK_DESCRIPTORS = [
   "Good knowledge and understanding. Good application to the issue. Good analysis with developed chains of reasoning supported by an accurate, fully-labelled diagram.",
 ];
 
-// 15-mark — 3 levels, AO3 (Analysis) as the top-band discriminator.
+// 15-mark · 3 levels, AO3 (Analysis) as the top-band discriminator.
 const FIFTEEN_MARK_DESCRIPTORS = [
   "**Level 1 (1–5 marks) – Basic.** Vague or incorrect definitions. Very basic statements. No real analytical chains. No clear link to the question's economic concept.",
   "**Level 2 (6–10 marks) – Mid-Level.** Definitions partially correct. Some explanation, often unbalanced (one concept covered well, the other weak). Chains of reasoning incomplete. Examples generic or missing. Weak use of economic terminology.",
   "**Level 3 (11–15 marks) – Top Band.** AO1: accurate definitions of relevant concepts. AO2: clear use of relevant examples. **AO3 (top-band discriminator):** fully developed chains of reasoning with explicit logical chains (e.g. \"firms ignore external costs → price too low → over-consumption → welfare loss\"). Note: AO4 (evaluation) is NOT required at 15 marks.",
 ];
 
-// 25-mark — 5 levels, AO4 (Evaluation) as the top-band discriminator.
+// 25-mark · 5 levels, AO4 (Evaluation) as the top-band discriminator.
 const TWENTYFIVE_MARK_DESCRIPTORS = [
   "**Level 1 (1–5 marks) – Minimal.** Very basic points. No real structure. No evaluation.",
   "**Level 2 (6–10 marks) – Basic.** Limited knowledge. Weak or unclear analysis. Very little evaluation. No real use of extract.",
@@ -97,14 +97,14 @@ function levelTable(bands: Array<[number, number]>, descriptors: string[]): stri
 
 export function renderPointMark(spec: PointMarkSpec): string {
   const lines = spec.markPoints
-    .map((p) => `- ${p.description} — **${p.marks} mark${p.marks === 1 ? "" : "s"}**`)
+    .map((p) => `- ${p.description} · **${p.marks} mark${p.marks === 1 ? "" : "s"}**`)
     .join("\n");
   return `**Question ${spec.questionLabel} (${spec.totalMarks} marks)**
 
 Expected answer: ${spec.expectedAnswer}
 
 ${lines}
-- No creditable content — **0 marks**`;
+- No creditable content · **0 marks**`;
 }
 
 export function renderLevelMark(spec: LevelMarkSpec): string {

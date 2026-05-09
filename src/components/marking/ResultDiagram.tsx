@@ -157,8 +157,8 @@ export function ResultDiagram({ result, rubric, warning, onRemark, isReMarking, 
                                 </TooltipTrigger>
                                 <TooltipContent>
                                   {verifyIcon === "present" ? "Verified present in diagram" :
-                                   verifyIcon === "absent" ? "No marks awarded — this feature was not detected in your diagram." :
-                                   "Could not verify — marked based on available evidence"}
+                                   verifyIcon === "absent" ? "No marks awarded · this feature was not detected in your diagram." :
+                                   "Could not verify · marked based on available evidence"}
                                 </TooltipContent>
                               </Tooltip>
                             )}
@@ -260,7 +260,7 @@ export function ResultDiagram({ result, rubric, warning, onRemark, isReMarking, 
           <div className="p-4 rounded-lg bg-card border border-border">
             <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">Previous Mark (for comparison)</h4>
             <p className="text-sm text-muted-foreground">
-              Score: {previousResult.totalAwarded}/{previousResult.totalPossible} — Level {previousResult.level}
+              Score: {previousResult.totalAwarded}/{previousResult.totalPossible} · Level {previousResult.level}
             </p>
           </div>
         )}

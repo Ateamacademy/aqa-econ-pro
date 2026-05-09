@@ -1,5 +1,5 @@
 <!-- Auto-generated from /public/ocr-gcse-mocks/mark-scheme-paper-3-hard.pdf -->
-H460/03 Mark Scheme — Predicted Paper (Hard)
+H460/03 Mark Scheme · Predicted Paper (Hard)
 
 
 Oxford Cambridge and RSA Examinations
@@ -10,16 +10,16 @@ Economics
 H460/03: Themes in economics
 A Level
 
-Predicted Paper — HARD
+Predicted Paper · HARD
 
 Mark Scheme
 
 
                                    Page 1
-                                    H460/03 Mark Scheme — Predicted Paper (Hard)
+                                    H460/03 Mark Scheme · Predicted Paper (Hard)
 
 
-           SECTION A — Multiple Choice Answers
+           SECTION A · Multiple Choice Answers
 
 Question   Answer     Question            Answer
 
@@ -55,13 +55,13 @@ Question   Answer     Question            Answer
 
 
                            Page 2
-                                                        H460/03 Mark Scheme — Predicted Paper (Hard)
+                                                        H460/03 Mark Scheme · Predicted Paper (Hard)
 
 
-Section A — Full Rationales
+Section A · Full Rationales
 
 Q      Key    Rationale                                                                       AO
-1      B      A state pension is a transfer payment — it is not a payment for current         AO1
+1      B      A state pension is a transfer payment · it is not a payment for current         AO1
               services rendered. Dividends (capital), wages (labour), rent (land) are all
               factor payments.
 
@@ -75,7 +75,7 @@ Q      Key    Rationale                                                         
 3      C      M0 is notes, coins, and central bank reserves. Long-term savings                AO1
               accounts are part of broad money (M4), not M0.
 
-4      B      Higher interest rates reduce consumption including spending on imports —        AO3
+4      B      Higher interest rates reduce consumption including spending on imports ·        AO3
               improves current account. A contradicts the initial premise (higher rates
               attract inflows, causing appreciation). C is a possible channel but the
               question asks most likely. Hot money flows in, not out.
@@ -94,17 +94,17 @@ Q      Key    Rationale                                                         
               firms can 'hit and run' without loss. High sunk costs make markets non-
               contestable.
 
-9      C      MU_A/P_A > MU_B/P_B — she gains more utility per £ from A, so she               AO2
+9      C      MU_A/P_A > MU_B/P_B · she gains more utility per £ from A, so she               AO2
               should reallocate toward A (and away from B) until MU per £ equalises.
 
 10     B      Before: €30,000 / 1.20 = £25,000 revenue → £5,000 profit. After: €30,000 /      AO2
-              1.10 = £27,273 revenue → £7,273 profit. Wait — appreciation reduces £
+              1.10 = £27,273 revenue → £7,273 profit. Wait · appreciation reduces £
               value of € revenue. €30,000/1.20 = £25,000 BEFORE; €30,000/1.10 =
               £27,272 AFTER appreciation of £ to £1=€1.10 means £ has
               DEPRECIATED (need fewer € per £). Actually: £1 = €1.20 → £1 = €1.10
               means £ depreciated (£ buys less €). So £ revenue from €30,000
-              INCREASES to £27,273 — profit margin rises. But the correct MCQ
-              answer as designed has this as decrease — we need to re-examine.
+              INCREASES to £27,273 · profit margin rises. But the correct MCQ
+              answer as designed has this as decrease · we need to re-examine.
               Going from £1=€1.20 to £1=€1.10 is a depreciation of sterling. £ revenue =
               €30,000 / 1.10 = £27,273. New profit = £27,273 − £20,000 = £7,273 (up
               from £5,000). So margin INCREASES by ~£2,273. Answer should be A.
@@ -128,7 +128,7 @@ Q      Key    Rationale                                                         
 
 
                                              Page 3
-                                                   H460/03 Mark Scheme — Predicted Paper (Hard)
+                                                   H460/03 Mark Scheme · Predicted Paper (Hard)
 
 
          PED_X| + |PED_M| > 1. B states a product, which is incorrect.
@@ -193,10 +193,10 @@ Q      Key    Rationale                                                         
 
 
                                         Page 4
-                                                           H460/03 Mark Scheme — Predicted Paper (Hard)
+                                                           H460/03 Mark Scheme · Predicted Paper (Hard)
 
 
-                                 SECTION B — Guidance
+                                 SECTION B · Guidance
 
 Question 31 (3 marks)
 Using the data in Fig. 1.1, calculate the four-firm concentration ratio (CR4) for the UK
@@ -208,7 +208,7 @@ Award 1 mark for calculation of CR4 in 2024:
 Award 1 mark for comparison:
    • CR4 (2014) = 28.7 + 16.6 + 17.1 + 11.0 = 73.4%
    • CR4 has fallen by 8.3 percentage points. The market has become less concentrated
-   (still highly concentrated — above 60% remains classed as oligopoly).
+   (still highly concentrated · above 60% remains classed as oligopoly).
 
 Question 32 (3 marks)
 Explain, using examples from Extract 1, two characteristics of an oligopolistic market.
@@ -245,7 +245,7 @@ UK supermarket sector requires further regulation to protect consumer welfare.
 
 
                                                  Page 5
-                                                            H460/03 Mark Scheme — Predicted Paper (Hard)
+                                                            H460/03 Mark Scheme · Predicted Paper (Hard)
 
 
                          Limited analysis with unclear structure; simple cause/consequence statements;
@@ -267,7 +267,7 @@ Analysis (for regulation):
 loss. Diagram: oligopoly price P above MC, with shaded area of welfare loss compared to
 competitive equilibrium.
 • Loyalty pricing is third-degree price discrimination. Consumers without digital access or
-unwilling to share data pay higher prices — regressive effect.
+unwilling to share data pay higher prices · regressive effect.
 • Monopsony buyer power over suppliers can harm upstream producers (e.g. farmers) and
 eventually lead to reduced variety and quality.
 • Evidence of tacit collusion/price stickiness warrants regulatory intervention per the CMA's
@@ -275,7 +275,7 @@ mandate.
 Evaluation (against further regulation):
 • Market is increasingly contestable: Aldi/Lidl grew from 7% to 18% market share in a
 decade, plus online entrants. Hit-and-run threat constrains incumbent pricing.
-• Economies of scale deliver lower prices to consumers — breaking up firms could RAISE
+• Economies of scale deliver lower prices to consumers · breaking up firms could RAISE
 prices (productive efficiency gains from concentration).
 • Supernormal profits fund dynamic efficiency (investment in own-brand ranges, online
 delivery, sustainability).
@@ -283,15 +283,15 @@ delivery, sustainability).
 customer retention.
 • Regulatory failure / cost: compliance costs raise prices; regulatory capture possible.
 Judgements might include:
-• Depends on the degree of contestability — evidence of Aldi/Lidl growth is strong.
+• Depends on the degree of contestability · evidence of Aldi/Lidl growth is strong.
 • Depends on which regulation is proposed: targeted (e.g. price transparency) vs blunt (price
 caps).
 • Depends on comparison between costs of regulatory failure vs market failure.
-• Depends on distributional effects — vulnerable consumers most affected.
+• Depends on distributional effects · vulnerable consumers most affected.
 
 
                                                 Page 6
-                                                            H460/03 Mark Scheme — Predicted Paper (Hard)
+                                                            H460/03 Mark Scheme · Predicted Paper (Hard)
 
 
 Question 34 (3 marks)
@@ -345,7 +345,7 @@ an effective policy to reduce the UK's current account deficit.
 
 
                                                  Page 7
-                                                      H460/03 Mark Scheme — Predicted Paper (Hard)
+                                                      H460/03 Mark Scheme · Predicted Paper (Hard)
 
 
 Indicative Content
@@ -366,7 +366,7 @@ exports rises.
 Evaluation (depreciation limited/harmful):
 • UK imports are largely price inelastic (energy, food, essential manufactured goods).
 Marshall-Lerner may fail.
-• Evidence: 18% depreciation since 2016 has coincided with WORSENING of CA balance —
+• Evidence: 18% depreciation since 2016 has coincided with WORSENING of CA balance ·
 suggests M-L not satisfied in practice.
 • Cost-push inflation: more expensive imports raise domestic prices, undermining
 competitiveness regained from depreciation.
@@ -382,7 +382,7 @@ Judgements might include:
 
 
                                              Page 8
-                                                           H460/03 Mark Scheme — Predicted Paper (Hard)
+                                                           H460/03 Mark Scheme · Predicted Paper (Hard)
 
 
 Question 37 (2 marks)
@@ -435,17 +435,17 @@ Evaluation (unlikely / partial):
 
 
                                                 Page 9
-                                                    H460/03 Mark Scheme — Predicted Paper (Hard)
+                                                    H460/03 Mark Scheme · Predicted Paper (Hard)
 
 
 • Public finance constraint: £2bn annual cost; political pressure on fiscal targets.
-• Precedent effect — nurses, teachers, police may demand similar; multiplied cost across
+• Precedent effect · nurses, teachers, police may demand similar; multiplied cost across
 public sector.
 • Supply of doctors increases over time through higher medical school places → long-run
 elastic supply reduces wage-setting power.
-• 2024 settlement (22% over 2 years) still leaves real pay below 2008 — full restoration
+• 2024 settlement (22% over 2 years) still leaves real pay below 2008 · full restoration
 implies further large rises.
-• Public support for industrial action may wane if patient care suffers — weakens BMA
+• Public support for industrial action may wane if patient care suffers · weakens BMA
 bargaining power.
 Judgements might include:
 • Depends on political willingness and public finance position.
@@ -455,27 +455,27 @@ Judgements might include:
 
 
                                           Page 10
-                                            H460/03 Mark Scheme — Predicted Paper (Hard)
+                                            H460/03 Mark Scheme · Predicted Paper (Hard)
 
 
                         Assessment Objectives Grid
 
   Question        AO1       AO2    AO3        AO4          Total             QS
-Section A Total   14         7      9           —            30              (14)
+Section A Total   14         7      9           ·            30              (14)
 
-      31          —          2      1           —            3               (3)
+      31          ·          2      1           ·            3               (3)
 
-      32           1         2      —           —            3
+      32           1         2      ·           ·            3
 
      33*           2         3      4           6            15
 
-      34           2         1      —           —            3               (3)
+      34           2         1      ·           ·            3               (3)
 
-      35           1         1      —           —            2               (2)
+      35           1         1      ·           ·            2               (2)
 
      36*           2         3      4           6            15
 
-      37          —          2      —           —            2               (2)
+      37          ·          2      ·           ·            2               (2)
 
       38           1         1      2           4            8
 

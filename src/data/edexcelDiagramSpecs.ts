@@ -46,7 +46,7 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      ══════════════════════════════════════════ */
 
   ppf_balanced_growth: {
-    title: "PPF — Balanced Economic Growth",
+    title: "PPF · Balanced Economic Growth",
     axisLabels: { x: "Consumer Goods", y: "Capital Goods" },
     curves: [
       { id: "PPF1", label: "PPF₁", params: { type: "linear", slope: -1, intercept: 8 }, color: C.supply },
@@ -66,7 +66,7 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   ppf_biased_capital: {
-    title: "PPF — Biased Growth (Capital Goods)",
+    title: "PPF · Biased Growth (Capital Goods)",
     axisLabels: { x: "Consumer Goods", y: "Capital Goods" },
     curves: [
       { id: "PPF1", label: "PPF₁", params: { type: "linear", slope: -1, intercept: 8 }, color: C.supply },
@@ -79,14 +79,14 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     legend: [{ label: "PPF₁", color: C.supply }, { label: "PPF₂ (biased)", color: C.eq }],
     notes: "Biased growth toward capital goods. PPF pivots outward more on the capital goods axis due to sector-specific productivity improvements.",
     examTips: [
-      "PPF pivots — NOT parallel shift",
+      "PPF pivots · NOT parallel shift",
       "Y-intercept increases MORE than X-intercept",
       "Example: technological innovation in manufacturing",
     ],
   },
 
   ppf_biased_consumer: {
-    title: "PPF — Biased Growth (Consumer Goods)",
+    title: "PPF · Biased Growth (Consumer Goods)",
     axisLabels: { x: "Consumer Goods", y: "Capital Goods" },
     curves: [
       { id: "PPF1", label: "PPF₁", params: { type: "linear", slope: -1, intercept: 8 }, color: C.supply },
@@ -106,7 +106,7 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   ppf_unemployment: {
-    title: "PPF — Unemployment / Productive Inefficiency",
+    title: "PPF · Unemployment / Productive Inefficiency",
     axisLabels: { x: "Consumer Goods", y: "Capital Goods" },
     curves: [
       { id: "PPF1", label: "PPF", params: { type: "linear", slope: -1, intercept: 8 }, color: C.supply },
@@ -117,7 +117,7 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       { text: "Points ON curve = productive efficiency", position: { x: 5, y: 7.5 }, color: C.eq, size: 9 },
     ],
     legend: [{ label: "PPF", color: C.supply }, { label: "Inefficient point", color: C.demand }],
-    notes: "A point inside the PPF represents unemployed or underused resources — productively inefficient. A point on the curve is productively efficient.",
+    notes: "A point inside the PPF represents unemployed or underused resources · productively inefficient. A point on the curve is productively efficient.",
     examTips: [
       "Inside PPF = unemployed resources / productive inefficiency",
       "ON the PPF = productively efficient",
@@ -127,7 +127,7 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   ppf_inward_shift: {
-    title: "PPF — Inward Shift (Factor Destruction)",
+    title: "PPF · Inward Shift (Factor Destruction)",
     axisLabels: { x: "Consumer Goods", y: "Capital Goods" },
     curves: [
       { id: "PPF1", label: "PPF₁", params: { type: "linear", slope: -1, intercept: 8 }, color: C.supply },
@@ -135,7 +135,7 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     ],
     equilibria: [],
     annotations: [
-      { text: "Inward shift — destruction of factors", position: { x: 3, y: 4 }, color: C.demand, size: 10 },
+      { text: "Inward shift · destruction of factors", position: { x: 3, y: 4 }, color: C.demand, size: 10 },
     ],
     legend: [{ label: "PPF₁", color: C.supply }, { label: "PPF₂ (inward)", color: C.demand }],
     notes: "Inward shift caused by natural disaster, war, or loss of factors of production. Productive capacity falls.",
@@ -333,9 +333,9 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     legend: [{ label: "LRAC", color: C.supply }],
     notes: "U-shaped LRAC shows economies of scale (falling AC), constant returns, then diseconomies (rising AC). MES = Minimum Efficient Scale.",
     examTips: [
-      "Economies of scale: LRAC falling — internal EoS",
+      "Economies of scale: LRAC falling · internal EoS",
       "Constant returns: LRAC flat at minimum",
-      "Diseconomies of scale: LRAC rising — coordination/control problems",
+      "Diseconomies of scale: LRAC rising · coordination/control problems",
       "MES = output at which LRAC first reaches minimum",
       "Distinguish between internal and external economies of scale",
     ],
@@ -346,7 +346,7 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      ══════════════════════════════════════════ */
 
   monopoly: {
-    title: "Monopoly — Profit Maximisation",
+    title: "Monopoly · Profit Maximisation",
     axisLabels: { x: "Output (Q)", y: "Price / Cost (£)" },
     curves: [
       { id: "AR", label: "AR = D", params: { type: "linear", slope: -0.6, intercept: 9 }, color: C.supply },
@@ -370,7 +370,7 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     notes: "Monopolist sets output where MC = MR, then charges price on the AR (demand) curve above. Supernormal profit = (AR − ATC) × Q.",
     examTips: [
       "MC = MR → find Qm (profit-maximising output)",
-      "Read PRICE from AR curve at Qm — NOT from MC=MR intersection",
+      "Read PRICE from AR curve at Qm · NOT from MC=MR intersection",
       "Shade supernormal profit: rectangle (Pm − ATC) × Qm",
       "MR is twice as steep as AR (linear demand)",
       "Monopoly = allocatively inefficient (P > MC)",
@@ -379,7 +379,7 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   monopolistic_competition_sr: {
-    title: "Monopolistic Competition — Short Run",
+    title: "Monopolistic Competition · Short Run",
     axisLabels: { x: "Output (Q)", y: "Price / Cost (£)" },
     curves: [
       { id: "AR", label: "AR = D", params: { type: "linear", slope: -0.5, intercept: 8 }, color: C.supply },
@@ -408,7 +408,7 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   monopolistic_competition_lr: {
-    title: "Monopolistic Competition — Long Run",
+    title: "Monopolistic Competition · Long Run",
     axisLabels: { x: "Output (Q)", y: "Price / Cost (£)" },
     curves: [
       { id: "AR", label: "AR = D", params: { type: "linear", slope: -0.5, intercept: 7 }, color: C.supply },
@@ -442,7 +442,7 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      ══════════════════════════════════════════ */
 
   labour_market: {
-    title: "Labour Market — Wage Determination",
+    title: "Labour Market · Wage Determination",
     axisLabels: { x: "Quantity of Labour (L)", y: "Wage Rate (W)" },
     curves: [
       { id: "DL", label: "D = MRP", params: { type: "linear", slope: -0.7, intercept: 8.5 }, color: C.demand },
@@ -462,7 +462,7 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   labour_market_minimum_wage: {
-    title: "Labour Market — Minimum Wage",
+    title: "Labour Market · Minimum Wage",
     axisLabels: { x: "Quantity of Labour (L)", y: "Wage Rate (W)" },
     curves: [
       { id: "DL", label: "D = MRP", params: { type: "linear", slope: -0.7, intercept: 8.5 }, color: C.demand },
@@ -509,7 +509,7 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     notes: "SRPC shows inflation-unemployment trade-off. LRPC is vertical at NRU (natural rate). Expectations shifts SRPC.",
     examTips: [
       "SRPC: inverse relationship between inflation and unemployment",
-      "LRPC is vertical at the NRU — no long-run trade-off",
+      "LRPC is vertical at the NRU · no long-run trade-off",
       "Movement along SRPC: AD changes",
       "Shift of SRPC: change in expectations or supply shock",
       "Monetarist view: monetary expansion only raises inflation in LR",
@@ -550,9 +550,9 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     legend: [{ label: "AS (Keynesian)", color: C.supply }, { label: "AD shifts", color: C.demand }],
     notes: "Keynesian AS has 3 ranges: horizontal (spare capacity → no inflation), upward sloping (bottlenecks → some inflation), vertical (full employment → only inflation).",
     examTips: [
-      "Horizontal: spare capacity — AD↑ increases output, NOT price level",
-      "Upward: approaching capacity — AD↑ raises both output and PL",
-      "Vertical: full employment — AD↑ is purely inflationary",
+      "Horizontal: spare capacity · AD↑ increases output, NOT price level",
+      "Upward: approaching capacity · AD↑ raises both output and PL",
+      "Vertical: full employment · AD↑ is purely inflationary",
       "Key distinction from classical model: output CAN be below Yfe for extended periods",
     ],
   },
@@ -624,7 +624,7 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     examTips: [
       "Quota physically limits imports to a fixed volume",
       "Price rises from Pw to P(quota)",
-      "No government revenue (unlike tariff) — quota rent goes to license holders",
+      "No government revenue (unlike tariff) · quota rent goes to license holders",
       "DWL similar to tariff but no revenue rectangle for government",
     ],
   },
@@ -648,7 +648,7 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     legend: [{ label: "D", color: C.demand }, { label: "S", color: C.supply }, { label: "S + subsidy", color: C.eq }, { label: "Pw", color: C.lras }],
     notes: "Government subsidises domestic producers → supply shifts right → imports fall. Price stays at Pw but domestic share increases.",
     examTips: [
-      "Price remains at Pw — no change for consumers",
+      "Price remains at Pw · no change for consumers",
       "Domestic production rises Q₁ → Q₂",
       "Imports fall",
       "Government cost = subsidy per unit × Q₂",
@@ -656,7 +656,7 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     OLIGOPOLY — KINKED DEMAND
+     OLIGOPOLY · KINKED DEMAND
      ══════════════════════════════════════════ */
 
   kinked_demand: {
@@ -695,8 +695,8 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     legend: [{ label: "D (kinked)", color: C.demand }, { label: "MR", color: C.supply }],
     notes: "Oligopoly: rivals match price cuts but not price rises → kinked demand. Discontinuity in MR → price rigidity even when MC changes.",
     examTips: [
-      "Above kink: elastic — rivals don't match price rises → lose customers",
-      "Below kink: inelastic — rivals match price cuts → no gain",
+      "Above kink: elastic · rivals don't match price rises → lose customers",
+      "Below kink: inelastic · rivals match price cuts → no gain",
       "Discontinuity in MR explains price rigidity",
       "MC can shift within the MR gap without changing price",
     ],
@@ -744,7 +744,7 @@ export const EDEXCEL_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      ══════════════════════════════════════════ */
 
   lorenz_curve: {
-    title: "Lorenz Curve — Income Distribution",
+    title: "Lorenz Curve · Income Distribution",
     axisLabels: { x: "Cumulative % of Population", y: "Cumulative % of Income" },
     curves: [
       { id: "equality", label: "Line of Equality", params: { type: "linear", slope: 1, intercept: 0 }, color: C.lras, dash: true },

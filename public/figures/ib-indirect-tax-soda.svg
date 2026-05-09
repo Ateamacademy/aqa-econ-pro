@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" font-family="Inter, Arial, sans-serif">
   <rect width="640" height="480" fill="#ffffff"/>
-  <text x="320" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Specific Indirect Tax — French Sugar-Sweetened Beverages</text>
+  <text x="320" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Specific Indirect Tax · French Sugar-Sweetened Beverages</text>
 
   <!-- Axes -->
   <line x1="90" y1="410" x2="610" y2="410" stroke="#0f172a" stroke-width="2"/>
@@ -55,7 +55,7 @@
        So:
        W = (Q1, P1) on S1 AND D
        Y = (Q1, PE)
-       Z = (Q1, A) on original S at Q1 — equals A position horizontally at x=Q1 -->
+       Z = (Q1, A) on original S at Q1 · equals A position horizontally at x=Q1 -->
   
   <!-- Y point at (Q1, PE) = (288, 245) -->
   <circle cx="288" cy="245" r="5" fill="#0f172a"/>
@@ -98,7 +98,7 @@
   <text x="403" y="251" font-size="11" font-weight="700" fill="#15803d">Tax</text>
   <text x="403" y="264" font-size="10" fill="#15803d">per unit</text>
 
-  <!-- Government revenue total = consumer + producer rectangle combined (90 to 288, 213 to 283) — no additional shading but labelled via conclusion -->
+  <!-- Government revenue total = consumer + producer rectangle combined (90 to 288, 213 to 283) · no additional shading but labelled via conclusion -->
 
   <text x="320" y="455" text-anchor="middle" font-size="11" fill="#334155">Tax shifts S → S1. Eq moves to (P1, Q1). Consumer burden = (P1−PE)×Q1; Producer burden = (PE−A)×Q1. Gov revenue = tax × Q1. PED &lt; PES → consumers bear more.</text>
 </svg>

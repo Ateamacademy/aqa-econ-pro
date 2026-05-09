@@ -10,10 +10,10 @@ AQA
   7136
   Predicted Paper
 
-  Version/Stage: v1.0     [Set B — Hard]
+  Version/Stage: v1.0     [Set B · Hard]
 
 
-7136/3 [Mark Scheme — Set B — Hard]
+7136/3 [Mark Scheme · Set B · Hard]
   Mark schemes are prepared by the Lead Assessment Writer and considered, together with the relevant
   questions, by a panel of subject teachers. This mark scheme includes any amendments made at the
   standardisation events which all associates participate in and is the scheme which was used by them in
@@ -37,7 +37,7 @@ AQA
   mark scheme follows the style and structure of AQA published materials to support realistic practice.
 
 
-7136/3 [Mark Scheme — Set B — Hard]
+7136/3 [Mark Scheme · Set B · Hard]
   Annotations
    Annotation              Description
    ?                       Unclear
@@ -55,7 +55,7 @@ AQA
    Cross                   Incorrect point
 
 
-7136/3 [Mark Scheme — Set B — Hard]
+7136/3 [Mark Scheme · Set B · Hard]
   Level of response marking instructions
   Level of response mark schemes are broken down into levels, each of which has a descriptor. The
   descriptor for the level shows the average performance for the level. There are marks in each level.
@@ -63,7 +63,7 @@ AQA
   instructed) to show the qualities that are being looked for. You can then apply the mark scheme.
 
 
-  Step 1 — Determine a level
+  Step 1 · Determine a level
   Start at the lowest level of the mark scheme and use it as a ladder to see whether the answer meets the
   descriptor for that level. The descriptor for the level indicates the different qualities that might be seen in
   the student's answer for that level. If it meets the lowest level then go to the next one and decide if it meets
@@ -75,7 +75,7 @@ AQA
   answer covers different aspects of different levels of the mark scheme you should use a best-fit approach
   for defining the level and then use the variability of the response to help decide the mark within the level.
 
-  Step 2 — Determine a mark
+  Step 2 · Determine a mark
   Once you have assigned a level you need to decide on the mark. The descriptors on how to allocate marks
   can help with this. You may well need to read back through the answer as you apply the mark scheme to
   clarify points and assure yourself that the level and the mark are appropriate.
@@ -85,8 +85,8 @@ AQA
   An answer which contains nothing of relevance to the question must be awarded no marks.
 
 
-7136/3 [Mark Scheme — Set B — Hard]
-                            Section A — Multiple Choice Answers
+7136/3 [Mark Scheme · Set B · Hard]
+                            Section A · Multiple Choice Answers
   Each question is worth 1 mark. The correct answers and brief justifications are shown in the grid below.
 
     Question     Answer                                        Brief explanation
@@ -97,7 +97,7 @@ AQA
        03          C       Higher labour productivity raises the productive capacity of the economy → LRAS
                            shifts right.
        04          C       In a contestable market, the THREAT of entry (not the number of incumbents)
-                           disciplines incumbent behaviour — the key Baumol insight.
+                           disciplines incumbent behaviour · the key Baumol insight.
        05          C       Monopsonists face upward-sloping labour supply → MCL > ACL. Profit-max at MCL =
                            MRPL means wage (on ACL) is below MRPL.
        06          A       Appreciation makes imports cheaper in domestic currency, reducing the cost of
@@ -112,10 +112,10 @@ AQA
        10          B       Regulatory capture = regulators come to serve the industry they regulate rather than
                            the public interest.
        11          C       Marginal products: 12, 16, 12, 8, 4. MP peaks at the 3rd worker then DECLINES from
-                           the 4th onward — diminishing returns begin with the 4th worker.
+                           the 4th onward · diminishing returns begin with the 4th worker.
        12          B       Profit = TR − TC. At Q = 40, TR = £400, TC = £280, profit = £120. MC from Q = 30 to
                            40 is (280 − 180)/10 = £10 = P. Profit max at Q = 40.
-       13          B       Q3 2023 (−0.1%) and Q4 2023 (−0.3%) are two consecutive negative quarters — the
+       13          B       Q3 2023 (−0.1%) and Q4 2023 (−0.3%) are two consecutive negative quarters · the
                            standard definition of a technical recession.
        14          A       Higher inflation (4.1%) than the anchor economy (Q: 1.8%) at a fixed rate means P's
                            real exchange rate appreciates → loss of competitiveness → trade balance pressure →
@@ -128,7 +128,7 @@ AQA
        18          D       Country D: Gini fell from 0.32 to 0.28 = −0.04 reduction. Country B: 0.38 to 0.36 =
                            −0.02. D has the largest reduction.
        19          C       North: 41 → 44 (+£3k). South: 52 → 68 (+£16k). South grew faster → gap widened
-                           from 11 to 24 (£000) — absolute gap widened.
+                           from 11 to 24 (£000) · absolute gap widened.
        20          B       Supernormal profit = (P* − AC*) × Q* = the shaded rectangle in the diagram.
        21          B       Inelastic demand → consumers cannot easily substitute → most of tax passes through
                            as higher prices.
@@ -138,9 +138,9 @@ AQA
                            prices remain rigid.
 
 
-7136/3 [Mark Scheme — Set B — Hard]
+7136/3 [Mark Scheme · Set B · Hard]
     Question    Answer                                       Brief explanation
-       24          B      Long-run Phillips curve is vertical at the natural rate — no long-run
+       24          B      Long-run Phillips curve is vertical at the natural rate · no long-run
                           unemployment-inflation trade-off.
        25          B      In long-run monopolistic competition: P = AC (normal profit only); P > MC (allocative
                           inefficiency); AC is NOT at its minimum → productive inefficiency too.
@@ -156,7 +156,7 @@ AQA
                           moves from Qp to Qs, eliminating the welfare loss triangle.
 
 
-7136/3 [Mark Scheme — Set B — Hard]
+7136/3 [Mark Scheme · Set B · Hard]
                                                      Section B
   Case study: UK trade, Brexit and the services economy
   Generic marking grid for the 10-mark data-response question
@@ -184,28 +184,28 @@ AQA
 
   Relevant issues include:
        • Clear evidence of a structural shift in Extract A:
-       • • services exports nearly doubled from £229bn (2015) to £452bn (2024) — +97%
-       • • goods exports rose only 35% (£286bn → £386bn) — growing much more slowly
+       • • services exports nearly doubled from £229bn (2015) to £452bn (2024) · +97%
+       • • goods exports rose only 35% (£286bn → £386bn) · growing much more slowly
        • • services trade surplus doubled: +£91bn (2015) to +£183bn (2024)
        • • goods deficit widened: −£122bn (2015) to −£198bn (2024)
        • Brexit context (Extract B): UK goods exports to EU ~15% below counterfactual (CER 2024); customs
        frictions particularly affect goods, not services
        • Services resilience (Extract C): digital delivery bypasses Brexit frictions; non-EU markets (US, India,
        China, Gulf) growing fastest
-       • EU trade share fell from 51% (2015) to 41% (2024) — market diversification alongside structural shift
-       • Sterling ERI fell 16% (2015–2024) — should have boosted goods exports, but goods trade balance
+       • EU trade share fell from 51% (2015) to 41% (2024) · market diversification alongside structural shift
+       • Sterling ERI fell 16% (2015–2024) · should have boosted goods exports, but goods trade balance
        still worsened → structural weakness in goods competitiveness confirmed
-       • Evaluation: the shift IS structural — not simply a cyclical effect. But 'extent' depends on interpretation:
-       • • on trade balances — the shift is dramatic
-       • • on share of GDP — services are now >70% of UK economy, consistent with trade pattern
-       • • on resilience — Extract C flags that EU regulatory responses could erode services advantage over
+       • Evaluation: the shift IS structural · not simply a cyclical effect. But 'extent' depends on interpretation:
+       • • on trade balances · the shift is dramatic
+       • • on share of GDP · services are now >70% of UK economy, consistent with trade pattern
+       • • on resilience · Extract C flags that EU regulatory responses could erode services advantage over
        time
        • Concluding judgement: clear evidence of sustained structural shift, reinforced but not caused by
-       Brexit — rooted in UK's long-run comparative advantage in services
+       Brexit · rooted in UK's long-run comparative advantage in services
 
 
-7136/3 [Mark Scheme — Set B — Hard]
-  Levels of response marking grid — 15-mark questions
+7136/3 [Mark Scheme · Set B · Hard]
+  Levels of response marking grid · 15-mark questions
   The following generic grid should be used when marking all 15-mark questions in Section B (questions 0 9,
   1 1 and 1 3).
 
@@ -242,37 +242,37 @@ AQA
               UK's comparative advantage may lie in services rather than in goods.
 
   Relevant issues include:
-       • Definition of comparative advantage — lower opportunity cost in production
+       • Definition of comparative advantage · lower opportunity cost in production
        • Revealed comparative advantage: Extract A shows persistent services surplus (+£183bn) and
-       persistent goods deficit (−£198bn) — empirical signature of services advantage
+       persistent goods deficit (−£198bn) · empirical signature of services advantage
        • UK factor endowments that favour services:
-       • • strong human capital base — high rate of tertiary education, world-class universities
+       • • strong human capital base · high rate of tertiary education, world-class universities
        • • English language as a global business language
        • • deep capital markets and financial infrastructure (City of London)
        • • mature legal/regulatory system (English law widely chosen for international contracts)
        • • established professional services ecosystem (accountancy, consultancy, law)
-       • • creative industries — film, music, advertising, design
+       • • creative industries · film, music, advertising, design
        • Agglomeration effects: services cluster in London, raising productivity of all services firms in the
        cluster (Extract C)
        • Structural decline of UK manufacturing: loss of scale economies; energy costs relatively high; skills
        shortages in engineering; cost competition from lower-wage economies
        • Brexit asymmetry (Extract B): goods trade faces new customs frictions while services trade is less
-       affected — this may be coincidence, not comparative advantage, but it reinforces the shift
-       • Ricardian theory: comparative advantage need not be absolute — UK can still have it in services
+       affected · this may be coincidence, not comparative advantage, but it reinforces the shift
+       • Ricardian theory: comparative advantage need not be absolute · UK can still have it in services
        even where other countries are also strong
        • Demand-side factors: rising global income raises demand for tradable services more than
        manufactured goods (YED > 1 for many services)
-       • Trade-in-services is growing faster than goods globally — UK is well-positioned
+       • Trade-in-services is growing faster than goods globally · UK is well-positioned
 
 
-7136/3 [Mark Scheme — Set B — Hard]
+7136/3 [Mark Scheme · Set B · Hard]
      • Caveats: comparative advantage can be lost (services regulation, competition from US tech firms);
      services trade is less deeply negotiated internationally than goods
   Use the levels mark scheme for 15-mark questions to award candidates marks for this question.
 
 
-7136/3 [Mark Scheme — Set B — Hard]
-  Generic marking grid — 25-mark recommendation question
+7136/3 [Mark Scheme · Set B · Hard]
+  Generic marking grid · 25-mark recommendation question
       Level of                                        Response                                          Max 25 marks
      response
 
@@ -318,7 +318,7 @@ AQA
                  • includes attempted analysis which is weak and unsupported.
 
 
-7136/3 [Mark Scheme — Set B — Hard]
+7136/3 [Mark Scheme · Set B · Hard]
   33        Considering the information in Extract D and the original evidence in Extracts       [25 marks]
             A, B and C, do you recommend that the UK government should adopt a
             services-led industrial strategy as the main approach to improving the UK's
@@ -327,39 +327,39 @@ AQA
   Areas for discussion include:
        • Case FOR a services-led strategy:
        • • Revealed comparative advantage: services surplus £183bn vs goods deficit £198bn (Extract A)
-       • • Services exports growing at 6.8% CAGR vs 2.7% for goods — market dynamics favour services
+       • • Services exports growing at 6.8% CAGR vs 2.7% for goods · market dynamics favour services
        • • Lower exposure to Brexit frictions (Extract B, C)
-       • • Growth in non-EU services markets — geographic diversification benefit
+       • • Growth in non-EU services markets · geographic diversification benefit
        • • Specific policy levers: trade agreements targeting services (US, India, CPTPP); regulatory
        harmonisation; skills investment
        • • Alignment with UK's service-dominated economy (70% of employment)
        • Case AGAINST relying on services-led strategy:
-       • • Regional inequality: services concentrated in London/SE — exacerbates north-south divide
+       • • Regional inequality: services concentrated in London/SE · exacerbates north-south divide
        • • Volatility: financial/business services hit hard in 2008; sector-concentration risk
-       • • Strategic concerns: neglect of semiconductors, clean energy, pharma — industries with positive
+       • • Strategic concerns: neglect of semiconductors, clean energy, pharma · industries with positive
        externalities, security significance
-       • • Services trade is less deeply protected in international agreements — policy vulnerability
-       • • EU regulatory moves could erode advantage (Extract C — financial services subsidiarisation
+       • • Services trade is less deeply protected in international agreements · policy vulnerability
+       • • EU regulatory moves could erode advantage (Extract C · financial services subsidiarisation
        requirement)
-       • • Services employment often bimodal: high-paid knowledge work vs low-paid hospitality/retail —
+       • • Services employment often bimodal: high-paid knowledge work vs low-paid hospitality/retail ·
        reinforces inequality
        • Alternative / complementary approaches:
        • • Balanced strategy: support services AND rebuild goods manufacturing in strategic sectors
        • • Regional rebalancing: locate high-value services functions outside London
        • • Skills investment broadly (services, advanced manufacturing, green technology)
        • • Targeted industrial policy for critical sectors (semiconductors, clean energy, pharma, defence)
-       • • Horizontal policies: R&D; tax credits, infrastructure, planning reform — benefit both services and
+       • • Horizontal policies: R&D; tax credits, infrastructure, planning reform · benefit both services and
        goods
        • Evaluation:
        • • Effectiveness depends on policy design, not just direction of strategy
-       • • Comparative advantage is dynamic — can be built in new areas (e.g. offshore wind, fintech, life
+       • • Comparative advantage is dynamic · can be built in new areas (e.g. offshore wind, fintech, life
        sciences)
        • • The binding constraint is often execution, not strategy
        • • International precedents: Singapore balances services with strategic manufacturing; Germany
        maintains strong goods trade despite services being 70% of GDP
   Indicative judgement:
-     • A reasoned recommendation — YES, NO or HYBRID — can reach Level 5 if well-supported
-     • Strongest responses will recognise that a pure services-led strategy is unlikely to be optimal — a
+     • A reasoned recommendation · YES, NO or HYBRID · can reach Level 5 if well-supported
+     • Strongest responses will recognise that a pure services-led strategy is unlikely to be optimal · a
      balanced approach with strong services support + targeted strategic-sector interventions is more
      defensible
      • Candidates who identify the regional-inequality risks of a pure services strategy should be rewarded
@@ -372,4 +372,4 @@ AQA
                                            END OF MARK SCHEME
 
 
-7136/3 [Mark Scheme — Set B — Hard]
+7136/3 [Mark Scheme · Set B · Hard]

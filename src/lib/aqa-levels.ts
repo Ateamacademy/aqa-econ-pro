@@ -1,9 +1,9 @@
 /**
- * AQA A-Level Economics (7136) — VERBATIM level-of-response descriptors
+ * AQA A-Level Economics (7136) · VERBATIM level-of-response descriptors
  * and KAA+E framework enums. Used by the marking UI for self-assessment.
  *
  * Source: AQA published mark schemes (June 2022, 2023, 2024).
- * Do NOT paraphrase — descriptors must match the published phrasing.
+ * Do NOT paraphrase · descriptors must match the published phrasing.
  */
 
 export type AqaLevel = 1 | 2 | 3 | 4 | 5;
@@ -33,7 +33,7 @@ export const NINE_MARK_LEVELS: AqaLevelBand[] = [
     level: 3,
     markBand: [5, 6],
     descriptor:
-      "Reasonable knowledge and understanding. Reasonable application. Reasonable analysis — conclusion may be unsupported.",
+      "Reasonable knowledge and understanding. Reasonable application. Reasonable analysis · conclusion may be unsupported.",
   },
   {
     level: 4,
@@ -61,7 +61,7 @@ export const FIFTEEN_MARK_LEVELS: AqaLevelBand[] = [
     level: 3,
     markBand: [7, 9],
     descriptor:
-      "Reasonable knowledge and understanding. Reasonable application. Reasonable analysis. Some evaluation — conclusion may be unsupported.",
+      "Reasonable knowledge and understanding. Reasonable application. Reasonable analysis. Some evaluation · conclusion may be unsupported.",
   },
   {
     level: 4,
@@ -95,7 +95,7 @@ export const TWENTYFIVE_MARK_LEVELS: AqaLevelBand[] = [
     level: 3,
     markBand: [11, 15],
     descriptor:
-      "Reasonable knowledge and understanding. Reasonable application. Reasonable analysis. Some evaluation — conclusion may be unsupported.",
+      "Reasonable knowledge and understanding. Reasonable application. Reasonable analysis. Some evaluation · conclusion may be unsupported.",
   },
   {
     level: 4,
@@ -156,7 +156,7 @@ export const AQA_ANNOTATIONS: AqaAnnotation[] = [
   { code: "✓", label: "✓", description: "Analysis (extended) or correct (Q01/02/05/06)", tone: "positive" },
   { code: "EVAL", label: "EVAL", description: "Evaluation present", tone: "positive" },
   { code: "BD", label: "BD", description: "Benefit of the doubt awarded", tone: "positive" },
-  { code: "SEEN", label: "SEEN", description: "Place marker — seen by examiner", tone: "neutral" },
+  { code: "SEEN", label: "SEEN", description: "Place marker · seen by examiner", tone: "neutral" },
   { code: "NR", label: "NR", description: "Not relevant", tone: "negative" },
   { code: "NAQ", label: "NAQ", description: "Not answering question", tone: "negative" },
   { code: "REP", label: "REP", description: "Repetition", tone: "negative" },

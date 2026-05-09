@@ -18,7 +18,7 @@ type Feedback = {
 
 const FEEDBACK: Feedback[] = [
   { ao: "AO1", label: "Knowledge", score: "4/4", pct: 100, tone: "good", note: "Sharp NMW definition + price-floor mechanism.", tip: "Quote a real UK NMW figure (£11.44/hr) for credit." },
-  { ao: "AO2", label: "Application", score: "5/6", pct: 83, tone: "good", note: "Strong UK context — retail & hospitality.", tip: "Add an industry stat (e.g. 1.6m affected workers)." },
+  { ao: "AO2", label: "Application", score: "5/6", pct: 83, tone: "good", note: "Strong UK context · retail & hospitality.", tip: "Add an industry stat (e.g. 1.6m affected workers)." },
   { ao: "AO3", label: "Analysis", score: "7/9", pct: 78, tone: "ok",   note: "Logical chain, but needs a labour-market diagram.", tip: "Draw W/Q axes with W₁ above W₀ → excess supply gap." },
   { ao: "AO4", label: "Evaluation", score: "5/6", pct: 83, tone: "good", note: "Excellent counterpoint via Card & Krueger.", tip: "Finish with a judgement on magnitude vs elasticity." },
 ];

@@ -14,7 +14,7 @@
     .pt    { fill:#111; }
   </style>
 
-  <text x="350" y="28" text-anchor="middle" class="ttl">Positive Externality of Consumption — Smoking Cessation Services</text>
+  <text x="350" y="28" text-anchor="middle" class="ttl">Positive Externality of Consumption · Smoking Cessation Services</text>
   <text x="350" y="48" text-anchor="middle" class="sub">External benefits (lower NHS costs, reduced second-hand smoke) make MSB &gt; MPB → market underconsumes</text>
 
   <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
@@ -60,5 +60,5 @@
 
   <text x="90"  y="495" class="sub">Free market sets MPB = MSC at Q1; the social optimum is at MSB = MSC at Q* &gt; Q1 → underconsumption.</text>
   <text x="90"  y="512" class="sub">Between Q1 and Q*, MSB &gt; MSC: each extra unit benefits society more than it costs society.</text>
-  <text x="90"  y="529" class="sub">The shaded triangle is the deadweight welfare loss — the case for intervention (subsidy, public provision, info).</text>
+  <text x="90"  y="529" class="sub">The shaded triangle is the deadweight welfare loss · the case for intervention (subsidy, public provision, info).</text>
 </svg>

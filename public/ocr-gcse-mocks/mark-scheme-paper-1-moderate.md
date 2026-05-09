@@ -12,14 +12,14 @@ Oxford Cambridge and RSA
                        (evaluation). Six-mark questions are marked using three levels.
 
 How to use levels of response
-a. To determine the level — start at the highest level and work down until you reach the level that
+a. To determine the level · start at the highest level and work down until you reach the level that
 matches the answer.
 b. To determine the mark within the level:
-   • On the borderline of this level and the one below — at the bottom of the level
-   • Just enough achievement for this level — above the bottom of the level
-   • Meets the criteria with slight inconsistency — middle/above middle of the level
-   • Consistently meets the criteria for this level — at the top of the level
-                               SECTION A — Multiple Choice
+   • On the borderline of this level and the one below · at the bottom of the level
+   • Just enough achievement for this level · above the bottom of the level
+   • Meets the criteria with slight inconsistency · middle/above middle of the level
+   • Consistently meets the criteria for this level · at the top of the level
+                               SECTION A · Multiple Choice
            1 mark per question. No mark is awarded for contradictory or multiple answers.
 
 Question          Key             AO           Quantitative skills
@@ -63,8 +63,8 @@ Question          Key             AO           Quantitative skills
   19               B             AO1b
 
   20               A              AO2
-SECTION B — Extended Response
-Question 21 — The coffee market
+SECTION B · Extended Response
+Question 21 · The coffee market
 
 Questio   Answer                                            Mar   Guidance
 n                                                           k
@@ -215,7 +215,7 @@ n                                                         k
                                                                 unsupported statements.
                                                                 0 marks
                                                                 No work worthy of credit.
-Question 22 — A local bakery
+Question 22 · A local bakery
 
 Questio   Answer                                          Mar   Guidance
 n                                                         k
@@ -297,8 +297,8 @@ n                                                             k
              The product market is where firms sell           b     market linked to Jamie's
              goods and services to consumers and other              bakery.
              buyers. Jamie's bakery sells finished loaves           Award 1 mark for a correct
-             of bread to a café chain — a final good                general definition without
-             supplied by a firm — so it is operating in the         link.
+             of bread to a café chain · a final good                general definition without
+             supplied by a firm · so it is operating in the         link.
              product market.
 
 22 (d)(ii)   Draw and label a diagram showing the             2     Award 2 marks for two
@@ -373,7 +373,7 @@ n                                                         k
                                                                 unsupported statements.
                                                                 0 marks
                                                                 No work worthy of credit.
-Question 23 — A clothing retailer
+Question 23 · A clothing retailer
 
  Questio   Answer                                             Mar   Guidance
  n                                                            k
@@ -494,7 +494,7 @@ n                                                          k
                                                                  Level 2 (3–4 marks)
           sportswear and few specialist competitors,
           but risky if the market is narrow or unstable          Reasonable knowledge and
-          — so Ravi should research demand before                understanding. Limited to
+          · so Ravi should research demand before                understanding. Limited to
           fully committing.                                      reasonable application with
                                                                  some context. Reasonable
                                                                  analysis, largely in the form

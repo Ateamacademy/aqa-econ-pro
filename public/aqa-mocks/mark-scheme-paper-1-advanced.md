@@ -1,12 +1,12 @@
 <!-- Auto-generated from /public/aqa-mocks/mark-scheme-paper-1-advanced.pdf -->
-MARK SCHEME — 7136/1 [Set C — Advanced]
+MARK SCHEME · 7136/1 [Set C · Advanced]
 
 
                                         A-level
 
                                 ECONOMICS
                       Paper 1 Markets and market failure
-                        Predicted Paper Set C — Advanced
+                        Predicted Paper Set C · Advanced
                                  Diagram and graph focus
 
 
@@ -25,7 +25,7 @@ General marking guidance
    description of the diagram may earn partial credit.
  • Indicative content is not exhaustive. Alternative relevant arguments and examples should
    be credited on merit.
- • For evaluation questions, credit the quality of judgement — a clear, reasoned conclusion
+ • For evaluation questions, credit the quality of judgement · a clear, reasoned conclusion
    supported by analysis is essential for the top level.
 
 
@@ -39,10 +39,10 @@ support informed judgements.
 
 
                                         Page 1 of 11
-                                                  MARK SCHEME — 7136/1 [Set C — Advanced]
+                                                  MARK SCHEME · 7136/1 [Set C · Advanced]
 
 
-                         Section A — Data Response
+                         Section A · Data Response
              The UK Energy Price Cap and the Household Energy Market
 
 
@@ -53,15 +53,15 @@ support informed judgements.
 
 Indicative content
 The question asks for the change in the proportion itself. Accept EITHER interpretation:
-Preferred interpretation — percentage-point change: 14.5% − 10.3% = +4.2 percentage
+Preferred interpretation · percentage-point change: 14.5% − 10.3% = +4.2 percentage
 points (an increase).
-Alternative — percentage change in the proportion: ((14.5 − 10.3) / 10.3) × 100 = (4.2 /
+Alternative · percentage change in the proportion: ((14.5 − 10.3) / 10.3) × 100 = (4.2 /
 10.3) × 100 = 40.78% ≈ +40.8% (an increase).
 
 Mark allocation
- • 1 mark — correct numerical answer (4.2 percentage points or 40.8%; accept 40.7%–
+ • 1 mark · correct numerical answer (4.2 percentage points or 40.8%; accept 40.7%–
    40.8%).
- • 1 mark — correctly identifying the change as an increase.
+ • 1 mark · correctly identifying the change as an increase.
 Award 2 marks for either a fully correct percentage-point change (+4.2 pp, increase) or a
 fully correct percentage change (+40.8%, increase). Do not penalise candidates who use
 either convention provided the interpretation is clear and the arithmetic is correct. Award 1
@@ -90,22 +90,22 @@ capped price (moving along the supply curve), while consumers will wish to buy Q
 
 
                                           Page 2 of 11
-                                                MARK SCHEME — 7136/1 [Set C — Advanced]
+                                                MARK SCHEME · 7136/1 [Set C · Advanced]
 
 
 along the demand curve). Because Q́ > Q̀ , the market cannot clear at Pₘₐₓ: there is excess
-demand equal to Q́ − Q̀ . Non-price rationing methods — queues, waiting lists, or in the
-energy case taxpayer-funded subsidies to suppliers — must emerge to manage the
+demand equal to Q́ − Q̀ . Non-price rationing methods · queues, waiting lists, or in the
+energy case taxpayer-funded subsidies to suppliers · must emerge to manage the
 shortage. Extract C confirms this effect in the UK: at the capped price, quantity demanded
 exceeded what suppliers were willing to supply at unsubsidised cost, requiring £40bn of
 taxpayer support.
 
 Mark allocation (4 marks)
- • 1 mark — correctly labelled axes (Price and Quantity) with S and D curves and free-
+ • 1 mark · correctly labelled axes (Price and Quantity) with S and D curves and free-
    market equilibrium (P₁, Q₁).
- • 1 mark — maximum-price line Pₘₐₓ correctly drawn below P₁.
- • 1 mark — excess demand (Q́ − Q̀ ) clearly identified on the diagram.
- • 1 mark — written explanation of the mechanism (cap below equilibrium → Qd > Qs →
+ • 1 mark · maximum-price line Pₘₐₓ correctly drawn below P₁.
+ • 1 mark · excess demand (Q́ − Q̀ ) clearly identified on the diagram.
+ • 1 mark · written explanation of the mechanism (cap below equilibrium → Qd > Qs →
    shortage).
 A clear verbal description of the diagram may earn up to 3 marks where a visual diagram is
 absent but the mechanism is fully explained.
@@ -116,20 +116,20 @@ absent but the mechanism is fully explained.
                                                                                     9 marks
 
 
-Reason 1: The cap may CORRECT market failure — equity and protection of
+Reason 1: The cap may CORRECT market failure · equity and protection of
 vulnerable households
 Essential goods such as domestic energy have low price elasticity of demand in the short
-run — households cannot easily substitute away from heating. Without intervention, a price
+run · households cannot easily substitute away from heating. Without intervention, a price
 shock such as the 2022 wholesale gas spike (Extract B: 40 p/therm in 2019 rising to 200
 p/therm in 2022) passes almost entirely through to bills, creating a welfare failure in which
 poorer households face disproportionate hardship. Extract C shows that the lowest decile
-spent 11% of disposable income on energy in 2022 versus 4% for the top decile — a highly
+spent 11% of disposable income on energy in 2022 versus 4% for the top decile · a highly
 regressive outcome. A price cap redistributes the cost of the shock from households to the
 government and therefore to the general taxpayer, protecting vulnerable consumers. Fuel
 poverty rose from 10.3% to 19.8% at the crisis peak but would have been materially higher
 without the Energy Price Guarantee.
 
-Reason 2: The cap may WORSEN market failure — distorted signals and excess
+Reason 2: The cap may WORSEN market failure · distorted signals and excess
 demand
 Prices in a competitive market perform a signalling function: a wholesale price spike signals
 scarcity and incentivises both reduced consumption and investment in energy efficiency and
@@ -137,7 +137,7 @@ alternative supply. A cap mutes this signal. Extract A notes critics' concern th
 'dampens price signals to invest in efficiency'. Extract C confirms the classic textbook
 consequence: at the capped price, quantity demanded exceeded quantity supplied at
 unsubsidised cost, generating an effective shortage. The £40bn of taxpayer support required
-to clear the market represents a large opportunity cost — funds that cannot be spent on
+to clear the market represents a large opportunity cost · funds that cannot be spent on
 healthcare, education or public investment in renewables. By smoothing the short-run pain,
 the cap may actually delay the long-run structural adjustment the economy needs to make.
 
@@ -145,7 +145,7 @@ Chains of reasoning expected
 
 
                                          Page 3 of 11
-                                                MARK SCHEME — 7136/1 [Set C — Advanced]
+                                                MARK SCHEME · 7136/1 [Set C · Advanced]
 
 
 (Correcting) Cap → lower household bills → higher real disposable income for low-income
@@ -155,17 +155,17 @@ demand response → persistence of energy-intensive behaviour → higher long-ru
 emissions and fiscal cost.
 
 Application using the extracts
- • Extract A: identifies both sides explicitly — the cap ‘dampens price signals’ yet ‘shielded
+ • Extract A: identifies both sides explicitly · the cap ‘dampens price signals’ yet ‘shielded
    vulnerable households at a critical moment.’
  • Extract B: wholesale gas rose from 40 to 200 p/therm in 2022 while capped bills
    stabilised; fuel poverty peaked at 19.8% in 2022.
- • Extract C: quantifies the mechanism — £40bn taxpayer support, regressive incidence
+ • Extract C: quantifies the mechanism · £40bn taxpayer support, regressive incidence
    (11% vs 4% of disposable income).
 
-Mark scheme — levels
+Mark scheme · levels
     Level         Marks                                 Descriptor
-   Level 3         7–9        Two distinct, fully-developed chains of reasoning — one on
-                              each side OR two on the same side — with accurate
+   Level 3         7–9        Two distinct, fully-developed chains of reasoning · one on
+                              each side OR two on the same side · with accurate
                               application to at least two extracts and explicit reference to
                               market failure (equity, information, allocative efficiency,
                               externalities). Sustained economic analysis throughout.
@@ -176,13 +176,13 @@ Mark scheme — levels
                               application of the extracts. Market-failure framework weak or
                               absent.
 Maximum 6 marks if only one reason is explored in depth. Credit any economically valid
-second reason — e.g. the cap reducing asymmetric information costs by simplifying
+second reason · e.g. the cap reducing asymmetric information costs by simplifying
 consumer choice, or worsening allocative inefficiency by sustaining demand for gas during
 the transition to renewables.
 
 
                                          Page 4 of 11
-                                                MARK SCHEME — 7136/1 [Set C — Advanced]
+                                                MARK SCHEME · 7136/1 [Set C · Advanced]
 
 
            Evaluate the view that maximum prices are the most effective way to         25
@@ -200,17 +200,17 @@ Arguments supporting maximum prices (FOR)
  • Macroeconomic stabilisation: reduces headline inflation, supporting real wages,
    maintaining aggregate demand and reducing the need for rapid monetary tightening.
  • Political and administrative feasibility: a cap is transparent, easily understood by
-   voters, and quick to implement — unlike means-tested transfers which have high
+   voters, and quick to implement · unlike means-tested transfers which have high
    administrative costs and take-up gaps.
  • Inelastic short-run demand: households cannot quickly switch heating source or
    insulate homes. Without intervention they would bear the full burden of a supply shock
    they cannot avoid.
 
 Arguments against / evaluation (AGAINST)
- • Fiscal cost: Extract C reports £40bn of taxpayer support was required — a large
+ • Fiscal cost: Extract C reports £40bn of taxpayer support was required · a large
    opportunity cost borne by all taxpayers, including those who do not need subsidy.
  • Distorted price signals: as noted in Extracts A and C, the cap reduces incentives to
-   reduce consumption, invest in efficiency or switch to renewables — slowing the
+   reduce consumption, invest in efficiency or switch to renewables · slowing the
    decarbonisation response.
  • Excess demand and rationing: a cap below free-market equilibrium creates a shortage
    requiring non-price rationing. In energy, this was handled through taxpayer subsidy to
@@ -223,18 +223,18 @@ Arguments against / evaluation (AGAINST)
    Supplier of Last Resort process.
 
 Alternative or complementary policies (comparative evaluation)
- • Means-tested income transfers (Cost of Living Payments, Warm Home Discount) —
+ • Means-tested income transfers (Cost of Living Payments, Warm Home Discount) ·
    better targeting but high administrative costs and imperfect take-up.
- • Per-unit subsidies to producers — similar effect without the excess demand, but even
+ • Per-unit subsidies to producers · similar effect without the excess demand, but even
    larger fiscal cost.
  • Investment in insulation and efficiency (ECO scheme, Great British Insulation Scheme)
-   — addresses the structural problem but slow.
- • VAT reductions on energy — broad but regressive.
+   · addresses the structural problem but slow.
+ • VAT reductions on energy · broad but regressive.
  • Regulation: Ofgem standing charge and price cap methodology reforms.
 
 
                                          Page 5 of 11
-                                                 MARK SCHEME — 7136/1 [Set C — Advanced]
+                                                 MARK SCHEME · 7136/1 [Set C · Advanced]
 
 
  • Long-run supply-side: accelerated renewables, nuclear and storage to reduce gas
@@ -247,12 +247,12 @@ but they are fiscally expensive, poorly targeted and distort price signals. The 
 consumer-protection strategy in essential markets is therefore a layered package: short-run
 caps to prevent immediate hardship, combined with means-tested transfers for targeted
 support, and longer-run supply-side policy (efficiency retrofits, renewables) to address the
-structural cause. The UK experience of 2022–24 is consistent with this layered view — the
+structural cause. The UK experience of 2022–24 is consistent with this layered view · the
 cap was effective as an emergency tool but is being withdrawn once wholesale gas prices
 normalise (Extract B: 200 p/therm in 2022 falling to 68 in 2024), suggesting policymakers
 themselves treat caps as a short-term rather than permanent instrument.
 
-Mark scheme — levels
+Mark scheme · levels
     Level         Marks                                 Descriptor
    Level 5         21–25      Sophisticated analysis and evaluation. Sustained chains of
                               reasoning; accurate diagram(s); substantial use of all three
@@ -274,10 +274,10 @@ Mark scheme — levels
 
 
                                          Page 6 of 11
-                                                 MARK SCHEME — 7136/1 [Set C — Advanced]
+                                                 MARK SCHEME · 7136/1 [Set C · Advanced]
 
 
-                                Section B — Essay
+                                Section B · Essay
                     Subsidies, price controls and government failure
 
 
@@ -308,7 +308,7 @@ Required written explanation
 A subsidy reduces producers’ effective marginal cost so the supply curve shifts vertically
 downwards by the subsidy. At any given price producers are now willing to supply a larger
 quantity. Demand is unchanged, so the market clears at a lower consumer price P₂ and a
-higher quantity Q₂ — more renewable electricity is produced and it is cheaper to buy.
+higher quantity Q₂ · more renewable electricity is produced and it is cheaper to buy.
 Producers receive P₂ from consumers plus the subsidy from government, so the effective
 producer price Pₚ exceeds P₁. The distribution of the subsidy between consumers (P₁ − P₂)
 and producers (Pₚ − P₁) depends on elasticities: an inelastic demand curve transfers most of
@@ -321,11 +321,11 @@ Because fossil generation has a negative externality (CO₂ emissions), the unsu
 market underproduces renewables relative to the socially optimal level. The subsidy
 addresses this externality from the positive side: it reduces the relative cost of the cleaner
 technology, moving production towards the social optimum. A welfare-analysis extension
-can show the triangle of welfare gain against the rectangle of subsidy cost — net welfare is
+can show the triangle of welfare gain against the rectangle of subsidy cost · net welfare is
 
 
                                          Page 7 of 11
-                                                MARK SCHEME — 7136/1 [Set C — Advanced]
+                                                MARK SCHEME · 7136/1 [Set C · Advanced]
 
 
 improved if and only if the external-cost correction exceeds the deadweight loss of the tax
@@ -339,7 +339,7 @@ Expected content for top-band responses
  • Concrete UK example (Contracts for Difference, Feed-in Tariffs, Renewables Obligation,
    Boiler Upgrade Scheme for heat pumps).
 
-Mark scheme — levels
+Mark scheme · levels
     Level         Marks                                 Descriptor
    Level 4        13–15       Fully developed explanation with accurate, well-labelled
                               diagram (including producer price, consumer price and
@@ -355,7 +355,7 @@ Mark scheme — levels
 
 
                                          Page 8 of 11
-                                                 MARK SCHEME — 7136/1 [Set C — Advanced]
+                                                 MARK SCHEME · 7136/1 [Set C · Advanced]
 
 
            Evaluate: “Government failure is often worse than the market failure         25
@@ -363,24 +363,24 @@ Mark scheme — levels
 
 
 Key definitions
- • Market failure: the free market fails to allocate resources efficiently — e.g. externalities,
+ • Market failure: the free market fails to allocate resources efficiently · e.g. externalities,
    public goods, merit/demerit goods, asymmetric information, monopoly power, inequity.
  • Government failure: an intervention produces a net welfare loss by creating new
-   distortions larger than the market failure being corrected — e.g. unintended
+   distortions larger than the market failure being corrected · e.g. unintended
    consequences, administrative cost, regulatory capture, information deficits, political
    short-termism.
 
-Arguments in favour of the statement (FOR — government failure often worse)
+Arguments in favour of the statement (FOR · government failure often worse)
  • Unintended consequences of price controls: the 2022–24 energy price cap cost
    £40bn of taxpayer money (Extract C) and blunted incentives to conserve or invest in
    efficiency. It also produced supplier failures in 2021–22, destabilising the market.
  • Subsidy inefficiency and fiscal cost: early Feed-in Tariffs for solar PV (2010–11)
-   overpaid generators — an administered price well above the falling cost of solar panels
+   overpaid generators · an administered price well above the falling cost of solar panels
    locked consumer bills into high payments for 20 years. The scheme was closed in 2019
    but the liabilities continue.
  • Information deficits: regulators cannot easily know the true marginal abatement or
    production costs that the market would have revealed through prices.
- • Regulatory capture: producers lobby for subsidies and against their removal — e.g. the
+ • Regulatory capture: producers lobby for subsidies and against their removal · e.g. the
    persistence of fuel duty freezes since 2011 despite climate objectives.
  • Administrative burden and compliance costs: Making Tax Digital, the UK ETS
    auction system, and the complexity of the Warm Home Discount eligibility have all been
@@ -388,25 +388,25 @@ Arguments in favour of the statement (FOR — government failure often worse)
  • Moral hazard: bank bailouts after 2008 arguably encouraged further risk-taking; the
    energy cap may defer essential household energy transitions.
 
-Arguments against the statement (AGAINST — government failure usually less
+Arguments against the statement (AGAINST · government failure usually less
 severe)
  • Clear successes of intervention: the UK plastic bag charge cut single-use bag
    consumption by over 95%; the Soft Drinks Industry Levy drove significant reformulation;
    Contracts for Difference auctions have lowered offshore wind strike prices to below
-   wholesale — these are interventions that correct rather than worsen market failure.
+   wholesale · these are interventions that correct rather than worsen market failure.
  • Scale of market failure can be catastrophic: climate change is arguably the largest
    market failure in history (Stern, 2007). Even an imperfect intervention is vastly preferable
    to inaction.
  • Equity dimension: free markets are silent on fairness. Extract C shows bottom-decile
-   households spent 11% of disposable income on energy in 2022 — no non-intervention
+   households spent 11% of disposable income on energy in 2022 · no non-intervention
    strategy addresses this.
  • Public goods and externalities: national defence, flood defences, basic scientific
-   research — all under-provided without state finance. Any administrative cost is likely to
+   research · all under-provided without state finance. Any administrative cost is likely to
    be dwarfed by the gain from actually providing these goods.
 
 
                                           Page 9 of 11
-                                                 MARK SCHEME — 7136/1 [Set C — Advanced]
+                                                 MARK SCHEME · 7136/1 [Set C · Advanced]
 
 
  • Regulatory successes: ULEZ expansion (2023) reduced nitrogen dioxide
@@ -424,16 +424,16 @@ larger than the problem it addresses.
 
 Expected judgement and conclusion
 The best answers reject the word ‘often’ as too strong. Sometimes government failure is
-worse — badly designed subsidies or price controls sustained beyond their justified window
-are genuine examples. But in many of the most important UK policy areas — environmental
-regulation, public health, public goods — the evidence points the other way: intervention has
+worse · badly designed subsidies or price controls sustained beyond their justified window
+are genuine examples. But in many of the most important UK policy areas · environmental
+regulation, public health, public goods · the evidence points the other way: intervention has
 corrected significant market failures at lower welfare cost than inaction. The preferred
 conclusion is therefore conditional: government failure is possible, sometimes serious, but it
-is not generally more severe than market failure. Good policy design — sunset clauses,
-regular review, market-based instruments where appropriate, independent regulators —
+is not generally more severe than market failure. Good policy design · sunset clauses,
+regular review, market-based instruments where appropriate, independent regulators ·
 substantially reduces the risk.
 
-Mark scheme — levels
+Mark scheme · levels
     Level          Marks                                 Descriptor
    Level 5         21–25       Sophisticated, balanced analysis and evaluation. Uses
                                multiple UK examples of both successful and unsuccessful
@@ -452,28 +452,28 @@ Mark scheme — levels
 
 
                                          Page 10 of 11
-                                             MARK SCHEME — 7136/1 [Set C — Advanced]
+                                             MARK SCHEME · 7136/1 [Set C · Advanced]
 
 
                           Summary of Marks
 
 Question                    Topic                         AO focus        Marks
 
-  01       Quantitative skill — proportion change           AO2              2
-           Maximum price — supply and demand
+  01       Quantitative skill · proportion change           AO2              2
+           Maximum price · supply and demand
   02                                                      AO1, AO2           4
            diagram
-           Energy price cap — correcting /
+           Energy price cap · correcting /
   03                                                   AO1, AO2, AO3         9
            worsening market failure
            Maximum prices as consumer protection
   04                                                      AO1–AO4           25
-           — evaluation
+           · evaluation
   05       Per-unit subsidy to renewable producers        AO1, AO3          15
-           Government failure vs market failure —
+           Government failure vs market failure ·
   06                                                      AO1–AO4           25
            evaluation
-TOTAL      Paper 1: Markets and Market Failure               —              80
+TOTAL      Paper 1: Markets and Market Failure               ·              80
 
 
                            END OF MARK SCHEME

@@ -82,7 +82,7 @@ Number
             (new Chinese entrants BYD, MG, Ora added to UK supply).
 
 
-            Analysis: 1 mark for showing new equilibrium P₂ lower and Q₂ higher —
+            Analysis: 1 mark for showing new equilibrium P₂ lower and Q₂ higher ·
             consistent with the price falls in Extract D.
 
 
@@ -99,7 +99,7 @@ Number
 
 1 (d)                Knowledge/Understanding 2, Application 2, Analysis 2
            Knowledge/Understanding: up to 2 marks for
-               •   Identification of market structure — Oligopoly (1)
+               •   Identification of market structure · Oligopoly (1)
                •   Identification of a valid pricing strategy (1), e.g. price leadership,
                    premium pricing, penetration pricing
 
@@ -111,11 +111,11 @@ Number
 
 
            Analysis: up to 2 marks for
-               •   Oligopolistic interdependence leads to price matching — Tesla's
+               •   Oligopolistic interdependence leads to price matching · Tesla's
                    repeated price cuts in 2023 were followed by discounts from BMW
                    and VW (1)
                •   Premium pricing strategies are being eroded by Chinese low-cost
-                   entrants — incumbents must either cut prices or differentiate through
+                   entrants · incumbents must either cut prices or differentiate through
                    brand and technology (1)                                                        (6)
 
 
@@ -125,21 +125,21 @@ Number
 1 (e)        Knowledge/Understanding 2, Application 2, Analysis 2, Evaluation 2                    (8)
            Indicative content
            Candidates do not need to include all of these:
-               •   Profit maximisation funds reinvestment in R&D — essential for
+               •   Profit maximisation funds reinvestment in R&D · essential for
                    capital-intensive EV manufacturing. Arrival's failure reflects inability to
                    reach break-even.
                •   For a start-up with cumulative losses of £1.4bn, profit (or at least
                    break-even) is a survival imperative, not a strategic choice.
                •   However, EV start-ups typically pursue market share maximisation
-                   first — building scale before seeking profit (Tesla followed this model
+                   first · building scale before seeking profit (Tesla followed this model
                    before reaching profitability in 2020).
                •   Growth maximisation may be necessary to achieve economies of
-                   scale — the industry exhibits large minimum efficient scale.
+                   scale · the industry exhibits large minimum efficient scale.
                •   Revenue maximisation may be preferred to signal market traction to
-                   investors — important when external capital is the main source of
+                   investors · important when external capital is the main source of
                    funding.
-               •   Mission-driven objectives — decarbonisation and reimagining
-                   commercial vehicles — may support broader stakeholder goals and
+               •   Mission-driven objectives · decarbonisation and reimagining
+                   commercial vehicles · may support broader stakeholder goals and
                    attract ESG-focused capital.
 
 
@@ -147,13 +147,13 @@ Number
  Question                                                                                         Mark
  Number
 
-                    •   Satisficing may be more realistic — balancing acceptable profit with
+                    •   Satisficing may be more realistic · balancing acceptable profit with
                         growth, sustainability and employee retention.
-                    •   Survival dominates the short run — Arrival's administration illustrates
+                    •   Survival dominates the short run · Arrival's administration illustrates
                         that without profit or access to capital, firms cannot continue.
                     •   Long-run profit maximisation (via brand building and economies of
                         scale) may be more appropriate than short-run profit maximisation.
-                    •   Shareholder pressure — publicly listed start-ups face conflicting
+                    •   Shareholder pressure · publicly listed start-ups face conflicting
                         pressures between growth metrics (revenue, deliveries) and profit
                         margins.
 
@@ -182,17 +182,17 @@ directly connected to the context/issues set out in the stimulus.
               Indicative content
                     •   Average new BEV prices fell 9.28% from Q1 2020 to Q4 2023;
                         steeper falls since Q3 2023 suggest recent aggressive discounting.
-                    •   Falling prices benefit consumers — more affordable EVs accelerate
+                    •   Falling prices benefit consumers · more affordable EVs accelerate
                         mass-market adoption. Consumer surplus rises.
-                    •   Lower prices make EVs competitive with ICE alternatives — essential
+                    •   Lower prices make EVs competitive with ICE alternatives · essential
                         for meeting the 22% ZEV quota without major subsidies.
-                    •   However, manufacturer margins are squeezed — Ford and Vauxhall
+                    •   However, manufacturer margins are squeezed · Ford and Vauxhall
                         already report declining BEV margins. This could threaten long-run
                         investment in new models.
-                    •   Price cuts are partly strategic — Tesla's 2023 cuts aim to protect
+                    •   Price cuts are partly strategic · Tesla's 2023 cuts aim to protect
                         market share against Chinese entrants. Other manufacturers face a
-                        'prisoners' dilemma' — either match the cuts or lose volume.
-                    •   Impact on the used market — steep new-car price cuts depreciate
+                        'prisoners' dilemma' · either match the cuts or lose volume.
+                    •   Impact on the used market · steep new-car price cuts depreciate
                         existing BEVs, hurting 2021–22 buyers and affecting leasing residual
                         values.
                     •   Firms with lower cost bases (Chinese manufacturers, Tesla's vertical
@@ -204,15 +204,15 @@ directly connected to the context/issues set out in the stimulus.
  Question                                                                                         Mark
  Number
 
-                    •   Falling prices may reduce innovation incentives — firms with tight
+                    •   Falling prices may reduce innovation incentives · firms with tight
                         margins have less capital for R&D into next-generation batteries.
-                    •   Evaluation — impact depends on whether price cuts are absorbed by
+                    •   Evaluation · impact depends on whether price cuts are absorbed by
                         efficiency gains (learning curve, battery cost declines) or by margin
                         compression.
-                    •   Evaluation — consumer benefit is offset where price cuts are fiscally
+                    •   Evaluation · consumer benefit is offset where price cuts are fiscally
                         driven (ZEV mandate forcing discounts) rather than productivity
                         driven.
-                    •   Evaluation — the time horizon matters. In the short run, consumers
+                    •   Evaluation · the time horizon matters. In the short run, consumers
                         benefit; in the long run, if sustained margin compression causes exits,
                         variety reduces and prices may recover.
 
@@ -245,16 +245,16 @@ directly connected to the context/issues set out in the stimulus.
 
  1 (g)           Knowledge/Understanding 2, Application 2, Analysis 4, Evaluation 4                (12)
               Indicative content
-                    •   Non-price competition is significant in the UK BEV market — driving
+                    •   Non-price competition is significant in the UK BEV market · driving
                         range, charging speed, software features (FSD / OTA updates),
                         safety ratings and warranty terms differentiate products.
-                    •   Brand and status — BMW, Audi and Tesla command premium prices
+                    •   Brand and status · BMW, Audi and Tesla command premium prices
                         through brand positioning, even where technical specifications are
                         similar.
-                    •   Charging networks — Tesla's Supercharger network is a powerful
+                    •   Charging networks · Tesla's Supercharger network is a powerful
                         non-price differentiator; opening it to non-Teslas improves the broader
                         market but reduces Tesla's edge.
-                    •   Software and user experience — Tesla's integrated software is a form
+                    •   Software and user experience · Tesla's integrated software is a form
                         of non-price competition; legacy OEMs struggle to match this.
 
 
@@ -262,22 +262,22 @@ directly connected to the context/issues set out in the stimulus.
  Question                                                                                        Mark
  Number
 
-                    •   Warranty and service — Hyundai/Kia's 7-year warranty is a significant
+                    •   Warranty and service · Hyundai/Kia's 7-year warranty is a significant
                         non-price advantage.
-                    •   Styling, interior quality and driving dynamics — traditional auto
+                    •   Styling, interior quality and driving dynamics · traditional auto
                         differentiators continue to matter for premium buyers.
-                    •   Safety ratings (Euro NCAP) and reliability data — important especially
+                    •   Safety ratings (Euro NCAP) and reliability data · important especially
                         for new Chinese entrants building brand credibility.
-                    •   Evaluation — the rise of Chinese competition at the budget end is
-                        shifting competition back toward price — where non-price factors are
+                    •   Evaluation · the rise of Chinese competition at the budget end is
+                        shifting competition back toward price · where non-price factors are
                         relatively weak, the market becomes more contestable on price.
-                    •   Regulatory considerations — ZEV mandate and environmental
+                    •   Regulatory considerations · ZEV mandate and environmental
                         regulations create non-price factors (compliance, sustainability
                         credentials) that matter in B2B sales.
-                    •   Evaluation — the relative importance of non-price competition varies
+                    •   Evaluation · the relative importance of non-price competition varies
                         by segment: premium (BMW, Audi) is dominated by non-price factors;
                         budget (MG, BYD) is more price-led.
-                    •   Dealer networks and aftersales — barriers that Tesla and Chinese
+                    •   Dealer networks and aftersales · barriers that Tesla and Chinese
                         direct-to-consumer brands bypass but legacy OEMs rely on.
                     •   Overall: non-price competition is highly important but cannot fully
                         offset price pressures in a maturing market with strong low-cost
@@ -320,33 +320,33 @@ directly connected to the context/issues set out in the stimulus.
  Question                                                                                         Mark
  Number
 
-                    •   Evidence of contestability — successful entry by Tesla (16% share),
+                    •   Evidence of contestability · successful entry by Tesla (16% share),
                         Polestar, MG and BYD. Chinese entrants have rapidly gained share.
-                    •   Evidence against contestability — Arrival's £1.4bn cumulative losses
+                    •   Evidence against contestability · Arrival's £1.4bn cumulative losses
                         and 2024 administration show high sunk costs (factories, R&D) and
                         near-impossible break-even for new entrants without scale.
-                    •   Capital intensity — BEV manufacturing requires multi-billion-pound
+                    •   Capital intensity · BEV manufacturing requires multi-billion-pound
                         investment in battery factories (gigafactories) and R&D, creating
                         significant barriers to entry.
-                    •   Scale economies — minimum efficient scale is high; producers under
+                    •   Scale economies · minimum efficient scale is high; producers under
                         ~300,000 units/year struggle to compete.
-                    •   Regulatory barriers — type approval, safety testing, ZEV compliance
+                    •   Regulatory barriers · type approval, safety testing, ZEV compliance
                         obligations create costs that favour incumbents.
-                    •   Brand barriers — established automakers have 50+ years of
+                    •   Brand barriers · established automakers have 50+ years of
                         reputation; start-ups must invest heavily in marketing.
-                    •   Distribution barriers — franchise dealer networks are costly to
+                    •   Distribution barriers · franchise dealer networks are costly to
                         replicate; Tesla's direct-sales model was a major disruptor.
                     •   However, e-commerce and direct-to-consumer sales reduce
                         distribution entry costs.
                     •   Battery technology is standardising (LFP, NMC), lowering
                         technological barriers; Chinese OEMs leverage their EV supply chain
                         expertise.
-                    •   Evaluation — the market is contestable at the product/model level
+                    •   Evaluation · the market is contestable at the product/model level
                         (manufacturers can enter with new models) but not at the OEM level
                         (new standalone manufacturers face enormous sunk costs).
                     •   Regulatory push (ZEV mandate) accelerates demand, making entry
-                        more attractive — somewhat improving contestability.
-                    •   Overall: the UK BEV market is only partially contestable — entry by
+                        more attractive · somewhat improving contestability.
+                    •   Overall: the UK BEV market is only partially contestable · entry by
                         established multinationals is viable, but new standalone start-ups face
                         barriers that have proved fatal, as Arrival demonstrates.
 
@@ -384,43 +384,43 @@ Number
 2             Knowledge/Understanding 4, Application 4, Analysis 6, Evaluation 6
             Indicative content
                  •   Abolishing the Plug-in Car Grant saved £300m/year in public
-                     spending — fiscal benefit (reduced government expenditure).
+                     spending · fiscal benefit (reduced government expenditure).
                  •   The ZEV mandate shifts cost from taxpayers to manufacturers (and
-                     implicitly consumers via higher prices) — a form of indirect subsidy
+                     implicitly consumers via higher prices) · a form of indirect subsidy
                      without fiscal cost.
-                 •   Mandate accelerates EV adoption — positive externalities from
+                 •   Mandate accelerates EV adoption · positive externalities from
                      reduced emissions (lower health costs, meeting climate targets).
-                 •   Domestic investment impact — Nissan Sunderland and Mini Oxford
+                 •   Domestic investment impact · Nissan Sunderland and Mini Oxford
                      plants may benefit from guaranteed demand; supports UK
                      manufacturing jobs.
-                 •   Short-run consumer impact — ZEV mandate may force
+                 •   Short-run consumer impact · ZEV mandate may force
                      manufacturers to heavily discount EVs to meet 22% quota (as Extract
                      D suggests), benefiting EV buyers.
-                 •   However, ICE buyers may pay higher prices — manufacturers cross-
+                 •   However, ICE buyers may pay higher prices · manufacturers cross-
                      subsidise by raising prices on petrol/diesel models.
-                 •   Infrastructure gap — charging network remains uneven; weighted to
+                 •   Infrastructure gap · charging network remains uneven; weighted to
                      London/SE; limits the effectiveness of the mandate and creates
                      regional inequality.
-                 •   Regressive impact — subsidies (BIK tax, Workplace Charging
+                 •   Regressive impact · subsidies (BIK tax, Workplace Charging
                      Scheme) benefit higher-income and company-car users
                      disproportionately; second-hand EV buyers (lower income) gain only
                      indirectly.
-                 •   Manufacturer reaction — Ford and Stellantis warn of reduced UK
+                 •   Manufacturer reaction · Ford and Stellantis warn of reduced UK
                      investment if margins are compressed; risk of plant closures.
-                 •   Supply-side effects — transition to EV manufacturing changes the
+                 •   Supply-side effects · transition to EV manufacturing changes the
                      skills mix in the UK auto sector; risk of structural unemployment in
                      traditional engine-making.
-                 •   Macro impact — higher EV penetration reduces oil imports, improving
+                 •   Macro impact · higher EV penetration reduces oil imports, improving
                      the current account and energy security.
-                 •   Monetary policy effects — cheaper EVs help disinflation (car prices
+                 •   Monetary policy effects · cheaper EVs help disinflation (car prices
                      are a significant CPI component); but higher ICE prices may offset.
-                 •   Environmental benefits — air quality improvement in urban areas
+                 •   Environmental benefits · air quality improvement in urban areas
                      (London ULEZ, Birmingham CAZ) provides positive externalities not
                      captured by market prices.
-                 •   Evaluation — impact depends on charging infrastructure rollout
+                 •   Evaluation · impact depends on charging infrastructure rollout
                      speed; without adequate infrastructure, mandate may not translate
                      into real-world emission reductions.
-                 •   Evaluation — global EV competition (Chinese manufacturers) could
+                 •   Evaluation · global EV competition (Chinese manufacturers) could
                      undermine UK automotive competitiveness if the industry cannot
                      adapt fast enough.
                  •   Overall, the combined policy (removing subsidies + imposing quotas)
@@ -472,48 +472,48 @@ Number
 
 3             Knowledge/Understanding 4, Application 4, Analysis 6, Evaluation 6
             Indicative content
-               •   Regulation addresses market failures — information asymmetry
+               •   Regulation addresses market failures · information asymmetry
                    (range claims, battery health), external costs (battery disposal, supply
                    chain emissions), and consumer-protection issues (charging
                    reliability).
                •   Reliability standards for rapid chargers (99%) address real consumer
-                   friction — raising EV adoption by reducing 'range anxiety'.
-               •   Price caps on public charging could reduce consumer exploitation —
+                   friction · raising EV adoption by reducing 'range anxiety'.
+               •   Price caps on public charging could reduce consumer exploitation ·
                    some motorway chargers cost over 8× home rates.
                •   Battery regulation (carbon footprint, recyclability) addresses end-of-
                    life externalities and long-run resource pressures.
                •   ASA rulings against exaggerated range claims correct information
-                   failures — improving consumer confidence in EV purchases.
+                   failures · improving consumer confidence in EV purchases.
                •   Standardised efficiency labelling (like fuel economy figures) improves
                    transparency and supports informed choice.
-               •   However, price caps risk reducing infrastructure investment —
+               •   However, price caps risk reducing infrastructure investment ·
                    operators face high fixed costs and long payback periods. If caps are
                    too tight, rollout may slow.
-               •   Compliance costs raise consumer prices — battery regulation adds to
+               •   Compliance costs raise consumer prices · battery regulation adds to
                    manufacturing costs, potentially offsetting the affordability gains from
                    Extract D.
-               •   Regulatory arbitrage — if UK rules diverge from EU, UK may become
+               •   Regulatory arbitrage · if UK rules diverge from EU, UK may become
                    a 'dumping ground' for non-compliant vehicles or may lose access to
                    EU market for UK-made vehicles.
-               •   Government failure risks — rules may be poorly designed (wrong
+               •   Government failure risks · rules may be poorly designed (wrong
                    caps, wrong definitions), and enforcement may lag rapid technological
                    change.
-               •   International considerations — aligned standards (e.g. CCS charging,
+               •   International considerations · aligned standards (e.g. CCS charging,
                    battery passport) enable scale and lower costs; fragmented standards
                    raise consumer prices.
-               •   Barriers to entry — regulatory complexity (battery passport, testing,
+               •   Barriers to entry · regulatory complexity (battery passport, testing,
                    recyclability) favours large incumbents over smaller UK start-ups,
                    potentially reducing competition.
-               •   Distributional impact — stronger regulation benefits risk-averse
+               •   Distributional impact · stronger regulation benefits risk-averse
                    consumers (who gain confidence) but may raise prices for all
                    consumers.
-               •   Environmental effectiveness — the net environmental gain depends
+               •   Environmental effectiveness · the net environmental gain depends
                    on whether regulation genuinely reduces life-cycle emissions (battery
                    production and disposal are significant).
-               •   Evaluation — proportionate, well-targeted regulation (reliability,
+               •   Evaluation · proportionate, well-targeted regulation (reliability,
                    advertising accuracy) likely produces welfare gains; blunt instruments
                    (strict price caps, bans) risk deterring investment.
-               •   Evaluation — effective regulation requires coordinated action on
+               •   Evaluation · effective regulation requires coordinated action on
                    infrastructure, vehicle standards and consumer protection; partial
                    regulation may fail to unlock the market's potential.
                •   Overall: increased regulation is likely to produce a net welfare gain

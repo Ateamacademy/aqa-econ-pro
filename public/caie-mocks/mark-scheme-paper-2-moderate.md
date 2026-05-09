@@ -14,14 +14,14 @@ Maximum Mark: 60
 Difficulty: Moderate
 
 
-★ PREDICTED PAPER — FOR REVISION USE ★
+★ PREDICTED PAPER · FOR REVISION USE ★
 
 This mark scheme is a predicted paper mark scheme produced for student revision purposes. It
 mirrors the structure and generic marking principles of the Cambridge International AS & A Level
 9708 Economics Paper 2 mark scheme. It is not an official Cambridge International document.
 
 
-                                 © Predicted Paper 2026 — 9708/02M/MS
+                                 © Predicted Paper 2026 · 9708/02M/MS
                                                               9708/02M Mark Scheme Practice Series 2026
 
 Generic Marking Principles
@@ -73,7 +73,7 @@ AO2 Analysis
 AO3 Evaluation
  • Recognise assumptions and limitations of economic information and models.
 
-                               © Predicted Paper 2026 — 9708/02M/MS
+                               © Predicted Paper 2026 · 9708/02M/MS
                                                           9708/02M Mark Scheme Practice Series 2026
 
 • Assess economic information and the strengths and weaknesses of arguments.
@@ -81,7 +81,7 @@ AO3 Evaluation
   arguments.
 
 
-                           © Predicted Paper 2026 — 9708/02M/MS
+                           © Predicted Paper 2026 · 9708/02M/MS
                                                                9708/02M Mark Scheme Practice Series 2026
 
 Table A: AO1 Knowledge and understanding and AO2 Analysis
@@ -138,7 +138,7 @@ Use this table for the (b) parts of Questions 2, 3, 4 and 5.
     0      No creditable response.                                                                  0
 
 
-                                © Predicted Paper 2026 — 9708/02M/MS
+                                © Predicted Paper 2026 · 9708/02M/MS
                                                              9708/02M Mark Scheme Practice Series 2026
 
 Section A
@@ -195,7 +195,7 @@ Follow the point-based marking guidance at the top of this mark scheme.
                marks for analysis without evaluation.
 
 
-                              © Predicted Paper 2026 — 9708/02M/MS
+                              © Predicted Paper 2026 · 9708/02M/MS
                                                          9708/02M Mark Scheme Practice Series 2026
 
 
@@ -250,7 +250,7 @@ Question                                 Answer                                 
            mark for a justified conclusion.
 
 
-                          © Predicted Paper 2026 — 9708/02M/MS
+                          © Predicted Paper 2026 · 9708/02M/MS
                                                              9708/02M Mark Scheme Practice Series 2026
 
 Section B
@@ -275,15 +275,15 @@ mark scheme for (a) parts.
                 • Values: |PED|>1 elastic, |PED|<1 inelastic, |PED|=1 unit
                   elastic; sign is usually negative (1).
                AO2 (max 3): Analysis of determinants of PED, e.g.:
-                • Availability of close substitutes — more substitutes = more
+                • Availability of close substitutes · more substitutes = more
                   elastic (1).
-                • Proportion of income spent on the good — larger share =
+                • Proportion of income spent on the good · larger share =
                   more elastic (1).
-                • Time period — demand is more elastic over the long run as
+                • Time period · demand is more elastic over the long run as
                   consumers adjust (1).
-                • Whether a good is a necessity or a luxury — necessities tend
+                • Whether a good is a necessity or a luxury · necessities tend
                   to be inelastic (1).
-                • Whether the good is addictive / habit-forming — typically
+                • Whether the good is addictive / habit-forming · typically
                   inelastic (1).
                AO3 (max 2):
                 • PED varies because the relative strength of these
@@ -305,7 +305,7 @@ mark scheme for (a) parts.
                    revenue.
                 • For inelastic demand: a price rise increases total revenue;
 
-                              © Predicted Paper 2026 — 9708/02M/MS
+                              © Predicted Paper 2026 · 9708/02M/MS
                                                          9708/02M Mark Scheme Practice Series 2026
 
 
@@ -362,7 +362,7 @@ Question                                 Answer                                 
             • The existence of a welfare loss (deadweight loss)
               demonstrates allocative inefficiency (1); the extent of market
 
-                          © Predicted Paper 2026 — 9708/02M/MS
+                          © Predicted Paper 2026 · 9708/02M/MS
                                                          9708/02M Mark Scheme Practice Series 2026
 
 
@@ -400,7 +400,7 @@ Question                                 Answer                                 
            A one-sided response cannot gain any marks for evaluation.
 
 
-                          © Predicted Paper 2026 — 9708/02M/MS
+                          © Predicted Paper 2026 · 9708/02M/MS
                                                              9708/02M Mark Scheme Practice Series 2026
 
 Section C
@@ -456,7 +456,7 @@ Use Tables A and B for (b) parts. Follow the point-based marking guidance for (a
                 • Monetary limitations: zero-lower-bound issues, inequality of
 
 
-                              © Predicted Paper 2026 — 9708/02M/MS
+                              © Predicted Paper 2026 · 9708/02M/MS
                                                          9708/02M Mark Scheme Practice Series 2026
 
 
@@ -513,7 +513,7 @@ Question                                 Answer                                 
                means the value of exports + primary/secondary income >
                value of imports.
 
-                          © Predicted Paper 2026 — 9708/02M/MS
+                          © Predicted Paper 2026 · 9708/02M/MS
                                                          9708/02M Mark Scheme Practice Series 2026
 
 
@@ -541,4 +541,4 @@ Question                                 Answer                                 
            A one-sided response cannot gain any marks for evaluation.
 
 
-                          © Predicted Paper 2026 — 9708/02M/MS
+                          © Predicted Paper 2026 · 9708/02M/MS

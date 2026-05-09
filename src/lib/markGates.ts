@@ -3,10 +3,10 @@
  *
  * For any question with `requiresDiagram: true`, the Tier 1 marker requires
  * BOTH:
- *   1. Diagram evidence — a drawn canvas data URL OR a textual description
+ *   1. Diagram evidence · a drawn canvas data URL OR a textual description
  *      containing axis labels, named curves, shift indication, and a new
  *      equilibrium point.
- *   2. Written explanation — at least 30 words of coherent prose.
+ *   2. Written explanation · at least 30 words of coherent prose.
  *
  * If either is missing, `evaluateDiagramGate` returns `{ ok: false }` so the
  * UI can show a soft warning + confirm dialog. If the student bypasses, the

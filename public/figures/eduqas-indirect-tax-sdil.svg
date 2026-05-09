@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" font-family="Inter, Arial, sans-serif">
   <rect width="640" height="480" fill="#ffffff"/>
-  <text x="320" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Specific Indirect Tax — UK Soft Drinks Industry Levy (SDIL, 2018)</text>
+  <text x="320" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Specific Indirect Tax · UK Soft Drinks Industry Levy (SDIL, 2018)</text>
 
   <!-- Axes -->
   <line x1="90" y1="410" x2="610" y2="410" stroke="#0f172a" stroke-width="2"/>
@@ -34,7 +34,7 @@
   <circle cx="288" cy="213" r="5" fill="#be123c"/>
   <text x="293" y="208" font-size="12" font-weight="700" fill="#0f172a">A</text>
 
-  <!-- B = (Q2, P1) — middle reference -->
+  <!-- B = (Q2, P1) · middle reference -->
   <circle cx="288" cy="245" r="5" fill="#0f172a"/>
   <text x="293" y="240" font-size="12" font-weight="700" fill="#0f172a">B</text>
 

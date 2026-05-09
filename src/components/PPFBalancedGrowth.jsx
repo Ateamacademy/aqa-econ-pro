@@ -1,6 +1,6 @@
 export default function PPFBalancedGrowth() {
   /**
-   * PPF — Balanced Growth. Dark-navy Lovable style.
+   * PPF · Balanced Growth. Dark-navy Lovable style.
    * Curve: perfect parametric quarter-ellipse (concave to origin).
    *   X(t) = cL + (cR-cL)*sin(t)
    *   Y(t) = cT + (cB-cT)*(1 - cos(t))
@@ -21,12 +21,12 @@ export default function PPFBalancedGrowth() {
   });
   const polyPoints = pts.join(" ");
 
-  // Point A on curve — t ≈ 0.62 rad
+  // Point A on curve · t ≈ 0.62 rad
   const tA = 0.62;
   const Ax = cL + (cR - cL) * Math.sin(tA);
   const Ay = cT + (cB - cT) * (1 - Math.cos(tA));
 
-  // Point B — inside the curve
+  // Point B · inside the curve
   const Bx = 248, By = 228;
 
   const NAVY   = "#0d1b2e";
@@ -58,7 +58,7 @@ export default function PPFBalancedGrowth() {
 
         <rect width={W} height={H} fill={NAVY}/>
 
-        {/* ══ PPF — parametric quarter-ellipse polyline ══ */}
+        {/* ══ PPF · parametric quarter-ellipse polyline ══ */}
         <polyline
           points={polyPoints}
           fill="none"
@@ -68,16 +68,16 @@ export default function PPFBalancedGrowth() {
           strokeLinejoin="round"
         />
 
-        {/* PPF label — top right of curve */}
+        {/* PPF label · top right of curve */}
         <text x={430} y={cT + 20} fontSize="16" fontWeight="bold" fill={BLUE}>PPF</text>
 
-        {/* ══ POINT A — on curve (efficient) ══ */}
+        {/* ══ POINT A · on curve (efficient) ══ */}
         <circle cx={Ax} cy={Ay} r="11" fill="none" stroke={GREEN} strokeWidth="2.4"/>
         <circle cx={Ax} cy={Ay} r="5"  fill={GREEN}/>
         <text x={Ax + 15} y={Ay + 6}
           fontSize="15" fontWeight="bold" fill={GREEN}>A (efficient)</text>
 
-        {/* ══ POINT B — inside curve (inefficient) ══ */}
+        {/* ══ POINT B · inside curve (inefficient) ══ */}
         <circle cx={Bx} cy={By} r="8" fill={ORANGE}/>
         <text x={Bx + 12} y={By + 16}
           fontSize="15" fontWeight="bold" fill={ORANGE}>B (inefficient)</text>

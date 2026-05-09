@@ -1,5 +1,5 @@
 /**
- * markDiagram.ts — SINGLE ENTRY POINT for all diagram marking.
+ * markDiagram.ts · SINGLE ENTRY POINT for all diagram marking.
  * No other code path may call the marker API directly for diagrams.
  *
  * Pipeline:
@@ -64,7 +64,7 @@ export function isEssentiallyEmpty(
 
 /**
  * Build a zero-result when the diagram is empty/invalid.
- * NO API CALL IS MADE — this is a pure client-side result.
+ * NO API CALL IS MADE · this is a pure client-side result.
  */
 function zeroResult(totalMarks: number, reason: string): DiagramMarkingResult {
   return {
@@ -123,7 +123,7 @@ async function runImageGates(
     console.warn("Image gate failed, blocking submission for safety:", e);
     return {
       pass: false,
-      reason: "Image validation failed — please redraw and resubmit.",
+      reason: "Image validation failed · please redraw and resubmit.",
       inkRatio: 0,
       componentCount: 0,
     };
@@ -203,7 +203,7 @@ function postMarkValidate(
         marks_awarded: 1,
         mark_percentage: Math.round((1 / raw.total_marks) * 100),
         _capApplied: "sparse" as any,
-        _capReason: "Diagram verified as sparse — maximum 1 mark" as any,
+        _capReason: "Diagram verified as sparse · maximum 1 mark" as any,
       };
     }
   }
@@ -217,7 +217,7 @@ function postMarkValidate(
         marks_awarded: cap,
         mark_percentage: Math.round((cap / raw.total_marks) * 100),
         _capApplied: "partial" as any,
-        _capReason: `Diagram verified as partial — capped at ${cap} marks` as any,
+        _capReason: `Diagram verified as partial · capped at ${cap} marks` as any,
       };
     }
   }
@@ -226,7 +226,7 @@ function postMarkValidate(
 }
 
 /**
- * MAIN ENTRY POINT — all diagram marking goes through here.
+ * MAIN ENTRY POINT · all diagram marking goes through here.
  */
 export async function markDiagram(
   input: DiagramMarkingInput

@@ -38,11 +38,11 @@ export default function EconPPFUKCapacity() {
         {/* PPF2 (blue) */}
         <polyline points="100.0,30.0 106.4,30.0 112.9,30.2 119.3,30.4 125.7,30.8 132.2,31.2 138.6,31.7 145.0,32.4 151.4,33.1 157.8,33.9 164.1,34.8 170.5,35.8 176.8,36.9 183.1,38.1 189.4,39.4 195.7,40.8 202.0,42.3 208.2,43.8 214.4,45.5 220.6,47.2 226.7,49.1 232.8,51.0 238.9,53.1 244.9,55.2 250.9,57.4 256.9,59.7 262.8,62.1 268.7,64.6 274.6,67.1 280.4,69.8 286.1,72.5 291.9,75.3 297.5,78.2 303.1,81.2 308.7,84.3 314.2,87.5 319.7,90.7 325.1,94.0 330.5,97.4 335.8,100.9 341.0,104.5 346.2,108.1 351.3,111.8 356.3,115.6 361.3,119.5 366.3,123.4 371.1,127.5 375.9,131.5 380.7,135.7 385.3,139.9 389.9,144.2 394.4,148.6 398.9,153.0 403.2,157.5 407.5,162.1 411.8,166.7 415.9,171.4 420.0,176.2 424.0,181.0 427.9,185.8 431.7,190.8 435.4,195.7 439.1,200.8 442.7,205.9 446.2,211.0 449.6,216.2 452.9,221.5 456.1,226.8 459.3,232.1 462.3,237.5 465.3,242.9 468.2,248.4 471.0,253.9 473.7,259.5 476.3,265.1 478.8,270.8 481.2,276.4 483.5,282.1 485.8,287.9 487.9,293.7 489.9,299.5 491.9,305.3 493.7,311.2 495.5,317.1 497.1,323.0 498.7,329.0 500.1,334.9 501.5,340.9 502.7,346.9 503.9,352.9 505.0,359.0 505.9,365.0 506.8,371.1 507.5,377.2 508.2,383.3 508.7,389.4 509.2,395.5 509.5,401.6 509.8,407.7 509.9,413.9 510.0,420.0" fill="none" stroke="#1a5fb4" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
 
-        {/* PPF1 label — below x-axis at curve end, clearly spaced */}
+        {/* PPF1 label · below x-axis at curve end, clearly spaced */}
         <text x="438.0" y="438.0" textAnchor="start" fontSize="14" fontWeight="bold" fill="#111">PPF</text>
         <text x="472.0" y="442.0" fontSize="11" fill="#111">1</text>
 
-        {/* PPF2 label — further right, same row */}
+        {/* PPF2 label · further right, same row */}
         <text x="518.0" y="438.0" textAnchor="start" fontSize="14" fontWeight="bold" fill="#1a5fb4">PPF</text>
         <text x="552.0" y="442.0" fontSize="11" fill="#1a5fb4">2</text>
 
@@ -51,7 +51,7 @@ export default function EconPPFUKCapacity() {
         <line x1="286.3" y1="164.1" x2="333.5" y2="96.1" stroke="#1a5fb4" strokeWidth="2.2" markerEnd="url(#ukBlue)"/>
         <line x1="409.9" y1="313.5" x2="487.0" y2="284.0" stroke="#1a5fb4" strokeWidth="2.2" markerEnd="url(#ukBlue)"/>
 
-        {/* "Outward shift" annotation — placed in open space centre-right */}
+        {/* "Outward shift" annotation · placed in open space centre-right */}
         <text x="360.0" y="107.0" fontSize="12" fontWeight="bold" fill="#1a5fb4">Economic Growth</text>
         <text x="360.0" y="123.0" fontSize="12" fill="#1a5fb4">(Outward Shift)</text>
         <line x1="400.0" y1="127.0" x2="191.5" y2="37.4" stroke="#1a5fb4" strokeWidth="1.2" strokeDasharray="5,4"/>
@@ -68,7 +68,7 @@ export default function EconPPFUKCapacity() {
         <circle cx="333.3" cy="200.8" r="5" fill="#fff" stroke="#111" strokeWidth="2"/>
         <circle cx="389.9" cy="144.2" r="5" fill="#fff" stroke="#1a5fb4" strokeWidth="2"/>
 
-        {/* Reasoning box — well below chart, with generous padding */}
+        {/* Reasoning box · well below chart, with generous padding */}
         <rect x="100" y="472" width="438" height="80" rx="6" fill="#f0f4fb" stroke="#c8d4e8" strokeWidth="1.2"/>
         <text x="112" y="492" fontSize="11" fontWeight="bold" fill="#111">Microeconomic Reasoning:</text>
         <text x="112" y="509" fontSize="11" fill="#333">Vocational training improves labour productivity (human capital).</text>

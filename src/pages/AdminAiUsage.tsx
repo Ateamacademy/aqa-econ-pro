@@ -35,7 +35,7 @@ interface DailyBucket {
 }
 
 const FREE_TIER_DAILY = {
-  lovable: 5000, // illustrative — Lovable AI workspace limit varies
+  lovable: 5000, // illustrative · Lovable AI workspace limit varies
   gemini: 1500,
   anthropic: 1000,
   openai: 1000,
@@ -95,7 +95,7 @@ export default function AdminAiUsage() {
   const dailyCeiling = FREE_TIER_DAILY[providerNow as keyof typeof FREE_TIER_DAILY] ?? 1500;
   const headroomPct = Math.max(0, Math.round(((dailyCeiling - today.misses) / dailyCeiling) * 100));
 
-  // Estimated cost (very rough — for budget awareness only)
+  // Estimated cost (very rough · for budget awareness only)
   const totalInput = rows.reduce((s, r) => s + (r.input_tokens ?? 0), 0);
   const totalOutput = rows.reduce((s, r) => s + (r.output_tokens ?? 0), 0);
   const estUsd = ((totalInput / 1_000_000) * 0.075 + (totalOutput / 1_000_000) * 0.3).toFixed(2);

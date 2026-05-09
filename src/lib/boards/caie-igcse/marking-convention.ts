@@ -1,9 +1,9 @@
 /**
- * CAIE IGCSE Economics (0455) — marking convention.
+ * CAIE IGCSE Economics (0455) · marking convention.
  *
  * Two papers:
- *   • Paper 1 (MCQ, 30 questions, 30 marks)         — point-marking
- *   • Paper 2 (structured + extended, 90 marks)     — point-marking on short
+ *   • Paper 1 (MCQ, 30 questions, 30 marks)         · point-marking
+ *   • Paper 2 (structured + extended, 90 marks)     · point-marking on short
  *                                                     parts; CAIE level
  *                                                     descriptors on the
  *                                                     8-mark extended part.

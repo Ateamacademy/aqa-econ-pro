@@ -1,6 +1,6 @@
 export default function TradablePollutionPermits() {
   /**
-   * MATHEMATICAL SETUP — viewBox 0 0 290 245 per panel
+   * MATHEMATICAL SETUP · viewBox 0 0 290 245 per panel
    * Axes: Y at x=48, X at y=210
    *
    * ── LEFT PANEL: CORRECTIVE TAX ──
@@ -34,7 +34,7 @@ export default function TradablePollutionPermits() {
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
 
         {/* ══════════════════════════════
-            LEFT PANEL — CORRECTIVE TAX
+            LEFT PANEL · CORRECTIVE TAX
         ══════════════════════════════ */}
         <div style={{
           position: "relative",
@@ -102,7 +102,7 @@ export default function TradablePollutionPermits() {
         </div>
 
         {/* ══════════════════════════════
-            RIGHT PANEL — POLLUTION PERMITS
+            RIGHT PANEL · POLLUTION PERMITS
         ══════════════════════════════ */}
         <div style={{
           position: "relative",

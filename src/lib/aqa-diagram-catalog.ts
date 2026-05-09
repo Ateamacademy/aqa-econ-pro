@@ -1,5 +1,5 @@
 /**
- * AQA A-Level Economics — diagram reference catalog.
+ * AQA A-Level Economics · diagram reference catalog.
  *
  * Single source of truth for which pre-labelled reference figures are
  * available to embed inside predicted-paper questions. Each entry maps a
@@ -42,19 +42,19 @@ export interface AqaDiagramCatalogEntry {
   id: string;
   /** Default title baked into the SVG (used when no scenario override). */
   title: string;
-  /** Path under /public — fetched & inlined at render time. */
+  /** Path under /public · fetched & inlined at render time. */
   svgPath: string;
-  /** Optional React component override — when present, used instead of fetching `svgPath`. */
+  /** Optional React component override · when present, used instead of fetching `svgPath`. */
   Component?: ComponentType;
   /** Optional React component name for high-fidelity upgrade. */
   componentName?: string;
-  /** Macro vs micro — determines axis-label convention. */
+  /** Macro vs micro · determines axis-label convention. */
   markingTier: DiagramMarkingTier;
   /** Diagram families this template can satisfy. */
   diagramTypes: DiagramType[];
   /** AQA spec area codes covered (e.g. "4.1.5.7"). */
   suitableFor: string[];
-  /** Labels visible on the diagram — used for accessibility + structural checks. */
+  /** Labels visible on the diagram · used for accessibility + structural checks. */
   labels: string[];
   /** Short description used as alt text + screen-reader announcement. */
   description: string;
@@ -70,7 +70,7 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
   // ── Supply & demand ──────────────────────────────────────────────────
   {
     id: "supply-demand-cost-shock",
-    title: "UK Coffee Market — Cost Shock (2024)",
+    title: "UK Coffee Market · Cost Shock (2024)",
     svgPath: "/figures/sd-coffee.svg",
     markingTier: "micro",
     diagramTypes: ["supplyDemand"],
@@ -79,18 +79,18 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
     description:
       "Supply and demand diagram showing a leftward shift in supply due to a cost shock, raising equilibrium price and lowering equilibrium quantity. Axes: Price (vertical), Quantity (horizontal).",
     scenarios: [
-      "UK Coffee Market — Cost Shock (2024)",
-      "UK Wheat Market — Poor Harvest",
-      "UK Construction Materials — Steel Shortage",
-      "UK Petrol Market — Refinery Outage",
-      "UK Bread Market — Energy Cost Surge",
-      "UK Cocoa Market — West Africa Crop Failure",
-      "UK Dairy Market — Feed-Cost Pass-Through",
+      "UK Coffee Market · Cost Shock (2024)",
+      "UK Wheat Market · Poor Harvest",
+      "UK Construction Materials · Steel Shortage",
+      "UK Petrol Market · Refinery Outage",
+      "UK Bread Market · Energy Cost Surge",
+      "UK Cocoa Market · West Africa Crop Failure",
+      "UK Dairy Market · Feed-Cost Pass-Through",
     ],
   },
   {
     id: "supply-demand-housing",
-    title: "UK Housing Market — Demand Shift",
+    title: "UK Housing Market · Demand Shift",
     svgPath: "/figures/sd-housing.svg",
     markingTier: "micro",
     diagramTypes: ["supplyDemand"],
@@ -99,19 +99,19 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
     description:
       "Demand-shift diagram for the UK housing market, with rightward demand shift raising price and quantity. Axes: Price (vertical), Quantity (horizontal).",
     scenarios: [
-      "UK Housing Market — Mortgage Rate Cut",
-      "UK Used Car Market — Income Effect",
-      "UK Streaming Subscriptions — Pandemic Surge",
-      "UK Gym Membership — January Effect",
-      "UK Holiday Lettings — Staycation Boom",
-      "UK Childcare Demand — Working-from-Home Wind-Down",
-      "UK Air Travel — Post-Pandemic Recovery",
+      "UK Housing Market · Mortgage Rate Cut",
+      "UK Used Car Market · Income Effect",
+      "UK Streaming Subscriptions · Pandemic Surge",
+      "UK Gym Membership · January Effect",
+      "UK Holiday Lettings · Staycation Boom",
+      "UK Childcare Demand · Working-from-Home Wind-Down",
+      "UK Air Travel · Post-Pandemic Recovery",
     ],
   },
   // ── Indirect tax / subsidy / price control ──────────────────────────
   {
     id: "indirect-tax",
-    title: "Indirect Tax — Welfare Effects",
+    title: "Indirect Tax · Welfare Effects",
     svgPath: "/figures/indirect-tax.svg",
     markingTier: "micro",
     diagramTypes: ["indirectTax", "supplyDemand"],
@@ -120,18 +120,18 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
     description:
       "Indirect-tax diagram showing leftward (upward) shift of supply by the size of the tax, the new equilibrium with higher consumer price, lower producer price and reduced quantity, and the deadweight loss triangle.",
     scenarios: [
-      "UK Sugar-Sweetened Drinks — Soft Drinks Industry Levy",
+      "UK Sugar-Sweetened Drinks · Soft Drinks Industry Levy",
       "UK Tobacco Excise Duty",
-      "UK Alcohol Duty — Wine",
+      "UK Alcohol Duty · Wine",
       "UK Plastic Packaging Tax",
       "UK Fuel Duty",
       "UK Gambling Duty Increase",
-      "UK High-Salt Snacks — Hypothetical Levy",
+      "UK High-Salt Snacks · Hypothetical Levy",
     ],
   },
   {
     id: "negative-externality",
-    title: "Negative Externality — Welfare Loss",
+    title: "Negative Externality · Welfare Loss",
     svgPath: "/figures/externality.svg",
     Component: EconNegExtUKEnergy,
     markingTier: "micro",
@@ -144,7 +144,7 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
       "UK Coal-Fired Power Generation",
       "UK Heavy Goods Vehicle Diesel Emissions",
       "UK Single-Use Plastic Packaging",
-      "UK Aviation — Domestic Flights",
+      "UK Aviation · Domestic Flights",
       "UK Industrial River Pollution",
       "UK Construction Site Particulates",
       "UK Cement Production",
@@ -152,7 +152,7 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
   },
   {
     id: "negative-externality-welfare",
-    title: "Negative Externality — Detailed Welfare Loss",
+    title: "Negative Externality · Detailed Welfare Loss",
     svgPath: "/figures/neg-externality-welfare.svg",
     markingTier: "micro",
     diagramTypes: ["externality"],
@@ -161,14 +161,14 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
     description:
       "Detailed negative externality diagram with explicit MSC/MPC divergence and a labelled deadweight welfare loss area.",
     scenarios: [
-      "UK Petrol Consumption — Carbon Externality",
-      "UK Steel Production — Air Pollution",
+      "UK Petrol Consumption · Carbon Externality",
+      "UK Steel Production · Air Pollution",
       "UK Fast Fashion Manufacturing",
     ],
   },
   {
     id: "positive-externality-welfare",
-    title: "Positive Externality — Welfare Gain",
+    title: "Positive Externality · Welfare Gain",
     svgPath: "/figures/pos-externality-welfare.svg",
     markingTier: "micro",
     diagramTypes: ["externality"],
@@ -177,8 +177,8 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
     description:
       "Positive externality of consumption diagram with MSB above MPB, free-market output below the social optimum, welfare gain area shaded.",
     scenarios: [
-      "UK Childhood Vaccinations — MMR",
-      "UK Higher Education — University Funding",
+      "UK Childhood Vaccinations · MMR",
+      "UK Higher Education · University Funding",
       "UK Adult Numeracy Programmes",
       "UK Free School Meals",
       "UK Cycling Infrastructure",
@@ -189,7 +189,7 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
   // ── Labour markets ──────────────────────────────────────────────────
   {
     id: "labour-market-union",
-    title: "Trade Union Wage Floor — UK Rail Industry (ASLEF)",
+    title: "Trade Union Wage Floor · UK Rail Industry (ASLEF)",
     svgPath: "/figures/labour-union.svg",
     markingTier: "micro",
     diagramTypes: ["labour"],
@@ -198,18 +198,18 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
     description:
       "Labour market diagram with downward-sloping demand for labour DL, upward-sloping supply SL, competitive equilibrium at We/Qe and a union-imposed wage Wu above We creating excess labour supply (Qs > Qd).",
     scenarios: [
-      "UK Rail Industry — ASLEF",
-      "UK NHS Nursing — RCN",
-      "UK State Schools — NEU",
-      "UK Steel Industry — Unite",
-      "UK Royal Mail — CWU",
-      "UK Bus Drivers — Unite",
-      "UK University Lecturers — UCU",
+      "UK Rail Industry · ASLEF",
+      "UK NHS Nursing · RCN",
+      "UK State Schools · NEU",
+      "UK Steel Industry · Unite",
+      "UK Royal Mail · CWU",
+      "UK Bus Drivers · Unite",
+      "UK University Lecturers · UCU",
     ],
   },
   {
     id: "labour-monopsony",
-    title: "Monopsony — Adult Social Care Sector",
+    title: "Monopsony · Adult Social Care Sector",
     svgPath: "/figures/monopsony-care.svg",
     markingTier: "micro",
     diagramTypes: ["monopsony", "labour"],
@@ -219,7 +219,7 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
       "Monopsony labour-market diagram with MRPL = D, ACL = supply of labour and MCL above ACL. Monopsony equilibrium where MCL = MRPL gives wage Wm < Wc and employment Qm < Qc.",
     scenarios: [
       "UK Adult Social Care",
-      "UK NHS Nursing — Single-Buyer Effect",
+      "UK NHS Nursing · Single-Buyer Effect",
       "UK Local Authority Refuse Collection",
       "UK Defence Manufacturing",
       "UK Probation Service",
@@ -227,20 +227,20 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
       "UK Single-Employer Towns",
     ],
   },
-  // ── AD/AS — Macro ───────────────────────────────────────────────────
+  // ── AD/AS · Macro ───────────────────────────────────────────────────
   {
     id: "ad-as-demand-pull",
-    title: "Demand-Pull Inflation — UK Macro Shock",
+    title: "Demand-Pull Inflation · UK Macro Shock",
     svgPath: "/figures/demand-pull.svg",
     markingTier: "macro",
     diagramTypes: ["adAs"],
     suitableFor: ["4.2.4.1", "4.2.1.4"],
     labels: ["Price level", "Real GDP", "AD1", "AD2", "AS", "PL1", "PL2", "Y1", "Y2"],
     description:
-      "AD/AS diagram showing a rightward shift of AD raising the price level and real output — demand-pull inflation. Vertical axis: Price level. Horizontal axis: Real GDP.",
+      "AD/AS diagram showing a rightward shift of AD raising the price level and real output · demand-pull inflation. Vertical axis: Price level. Horizontal axis: Real GDP.",
     scenarios: [
       "UK Confidence-Driven Investment Boom",
-      "UK Fiscal Stimulus — 2020 Furlough",
+      "UK Fiscal Stimulus · 2020 Furlough",
       "UK Sterling Depreciation Boosting Net Exports",
       "UK Bank of England Rate Cut",
       "UK Tax-Cut Package",
@@ -250,14 +250,14 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
   },
   {
     id: "ad-as-cost-push",
-    title: "Cost-Push Inflation — UK Energy Shock",
+    title: "Cost-Push Inflation · UK Energy Shock",
     svgPath: "/figures/cost-push.svg",
     markingTier: "macro",
     diagramTypes: ["adAs"],
     suitableFor: ["4.2.4.1", "4.2.1.4"],
     labels: ["Price level", "Real GDP", "AD", "SRAS1", "SRAS2", "PL1", "PL2", "Y1", "Y2"],
     description:
-      "AD/AS diagram showing leftward shift of SRAS due to a cost shock, raising the price level and lowering real output — cost-push inflation. Vertical axis: Price level.",
+      "AD/AS diagram showing leftward shift of SRAS due to a cost shock, raising the price level and lowering real output · cost-push inflation. Vertical axis: Price level.",
     scenarios: [
       "UK Energy Price Shock 2022",
       "UK Wage-Price Spiral",
@@ -270,7 +270,7 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
   },
   {
     id: "ad-as-fiscal",
-    title: "Fiscal Expansion — AD/AS",
+    title: "Fiscal Expansion · AD/AS",
     svgPath: "/figures/adas-fiscal.svg",
     markingTier: "macro",
     diagramTypes: ["adAs"],
@@ -296,7 +296,7 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
     description:
       "AD/AS macroeconomic equilibrium diagram with AD, SRAS and LRAS curves intersecting at the long-run equilibrium price level and real output.",
     scenarios: [
-      "UK Long-Run Equilibrium — Pre-Shock Reference",
+      "UK Long-Run Equilibrium · Pre-Shock Reference",
       "UK Post-Pandemic Equilibrium",
       "UK Equilibrium After Productivity Reforms",
     ],
@@ -320,7 +320,7 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
   // ── Phillips curves ─────────────────────────────────────────────────
   {
     id: "phillips-srlr",
-    title: "Phillips Curve — Short Run vs Long Run",
+    title: "Phillips Curve · Short Run vs Long Run",
     svgPath: "/figures/phillips-srlr.svg",
     markingTier: "macro",
     diagramTypes: ["phillips"],
@@ -336,23 +336,23 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
   },
   {
     id: "phillips-movement",
-    title: "Phillips Curve — Short-Run Movement",
+    title: "Phillips Curve · Short-Run Movement",
     svgPath: "/figures/phillips-movement.svg",
     markingTier: "macro",
     diagramTypes: ["phillips"],
     suitableFor: ["4.2.4.4"],
     labels: ["Inflation", "Unemployment", "SRPC", "Point A", "Point B"],
     description:
-      "Short-run Phillips curve with a movement along the curve as AD changes — illustrates the trade-off between inflation and unemployment.",
+      "Short-run Phillips curve with a movement along the curve as AD changes · illustrates the trade-off between inflation and unemployment.",
     scenarios: [
-      "UK AD Boost — Movement Along SRPC",
-      "UK AD Contraction — Movement Along SRPC",
+      "UK AD Boost · Movement Along SRPC",
+      "UK AD Contraction · Movement Along SRPC",
     ],
   },
   // ── Monopoly / market structures ────────────────────────────────────
   {
     id: "monopoly-supernormal-profit",
-    title: "Monopoly — Supernormal Profit",
+    title: "Monopoly · Supernormal Profit",
     svgPath: "/figures/monopoly-profit.svg",
     markingTier: "micro",
     diagramTypes: ["monopoly"],
@@ -370,7 +370,7 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
   },
   {
     id: "monopoly-abnormal",
-    title: "Monopoly — Abnormal Profit (Welfare)",
+    title: "Monopoly · Abnormal Profit (Welfare)",
     svgPath: "/figures/monopoly-abnormal.svg",
     markingTier: "micro",
     diagramTypes: ["monopoly"],
@@ -379,8 +379,8 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
     description:
       "Monopoly diagram contrasting Pm/Qm with the perfectly-competitive Pc/Qc, with deadweight welfare loss triangle shown.",
     scenarios: [
-      "UK Energy Retail — Regional Monopoly",
-      "UK Water Supply — Regional Monopoly",
+      "UK Energy Retail · Regional Monopoly",
+      "UK Water Supply · Regional Monopoly",
       "UK Premium Sports-Rights Holder",
     ],
   },
@@ -403,14 +403,14 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
   },
   {
     id: "kinked-demand",
-    title: "Kinked Demand Curve — Oligopoly",
+    title: "Kinked Demand Curve · Oligopoly",
     svgPath: "/figures/caie-kinked-demand.svg",
     markingTier: "micro",
     diagramTypes: ["monopoly"],
     suitableFor: ["4.1.6.7"],
     labels: ["P", "Q", "AR", "MR", "MC1", "MC2", "P*", "Q*"],
     description:
-      "Kinked demand curve showing price rigidity in oligopoly — elastic demand above current price and inelastic below, with a vertical gap in MR.",
+      "Kinked demand curve showing price rigidity in oligopoly · elastic demand above current price and inelastic below, with a vertical gap in MR.",
     scenarios: [
       "UK Big Four Supermarkets",
       "UK Mobile Network Operators",
@@ -431,7 +431,7 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
     scenarios: [
       "UK Low-Cost Airline Routes",
       "UK Online Food Delivery",
-      "UK Coach Travel — Express Routes",
+      "UK Coach Travel · Express Routes",
     ],
   },
   // ── Inequality / income distribution ───────────────────────────────
@@ -456,7 +456,7 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
   // ── Monopolistic competition ───────────────────────────────────────
   {
     id: "monopolistic-competition",
-    title: "Monopolistic Competition — Short Run vs Long Run",
+    title: "Monopolistic Competition · Short Run vs Long Run",
     svgPath: "/figures/aqa-monopolistic-short-run.png",
     Component: MonopolisticCompDiagram,
     markingTier: "micro",
@@ -468,14 +468,14 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
     scenarios: [
       "UK Independent Coffee Shops",
       "UK Hairdressing Salons",
-      "UK Restaurant Chains — Casual Dining",
+      "UK Restaurant Chains · Casual Dining",
       "UK Boutique Fashion Retail",
     ],
   },
   // ── J-Curve effect ─────────────────────────────────────────────────
   {
     id: "j-curve-effect",
-    title: "J-Curve — Current Account after Depreciation",
+    title: "J-Curve · Current Account after Depreciation",
     svgPath: "/figures/caie-j-curve.svg",
     Component: EconJCurveEffect,
     markingTier: "macro",
@@ -503,8 +503,8 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
     description:
       "Side-by-side comparison of specific (parallel) vs ad valorem (pivoted) shifts of the supply curve following the imposition of an indirect tax.",
     scenarios: [
-      "UK Tobacco Excise — Specific vs Ad Valorem",
-      "UK Alcohol Duty — Wine vs Beer",
+      "UK Tobacco Excise · Specific vs Ad Valorem",
+      "UK Alcohol Duty · Wine vs Beer",
       "UK Sugar-Sweetened Drinks Levy",
       "UK Fuel Duty vs VAT",
     ],
@@ -528,10 +528,10 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
       "UK Luxury Cars",
     ],
   },
-  // ── Negative externality — palm oil ────────────────────────────────
+  // ── Negative externality · palm oil ────────────────────────────────
   {
     id: "neg-externality-palm-oil",
-    title: "Negative Externality of Production — Palm Oil",
+    title: "Negative Externality of Production · Palm Oil",
     svgPath: "/figures/externality.svg",
     Component: NegativeExternalityPalmOil,
     markingTier: "micro",
@@ -539,17 +539,17 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
     suitableFor: ["4.1.7.1", "4.1.7.2"],
     labels: ["P", "Q", "MPC", "MSC", "MPB=MSB", "Qp", "Qs", "Welfare loss"],
     description:
-      "Negative production externality applied to palm oil — MSC above MPC, market output Qp above social optimum Qs, with welfare-loss triangle between MSC and MPB from Qs to Qp.",
+      "Negative production externality applied to palm oil · MSC above MPC, market output Qp above social optimum Qs, with welfare-loss triangle between MSC and MPB from Qs to Qp.",
     scenarios: [
       "Indonesian Palm Oil Deforestation",
       "Malaysian Palm Oil Plantations",
-      "UK Palm Oil Imports — Supply Chain Externality",
+      "UK Palm Oil Imports · Supply Chain Externality",
     ],
   },
   // ── Trade & quotas ─────────────────────────────────────────────────
   {
     id: "import-quota",
-    title: "Import Quota — Welfare Effects",
+    title: "Import Quota · Welfare Effects",
     svgPath: "/figures/quota.svg",
     markingTier: "micro",
     diagramTypes: ["supplyDemand"],
@@ -558,8 +558,8 @@ export const AQA_DIAGRAM_CATALOG: AqaDiagramCatalogEntry[] = [
     description:
       "Import quota diagram showing world price Pw, the kinked supply curve under a quota, and the welfare effects of restricting imports.",
     scenarios: [
-      "UK Steel Imports — Safeguard Quota",
-      "UK Textile Imports — Quota Reference",
+      "UK Steel Imports · Safeguard Quota",
+      "UK Textile Imports · Quota Reference",
       "UK Agricultural Imports",
     ],
   },
@@ -615,7 +615,7 @@ export function pickReferenceFigure(input: {
 }
 
 /**
- * Paper 3 MCQ figure rotation — 30 UNIQUE diagrams across Q1–30.
+ * Paper 3 MCQ figure rotation · 30 UNIQUE diagrams across Q1–30.
  *
  * The 6 flagship high-fidelity React diagrams lead (Q1–6), followed by the
  * remaining 24 catalog SVGs so every MCQ in the paper shows a different
@@ -660,7 +660,7 @@ export function pickPaper3McqFigure(input: {
 }
 
 /**
- * Coverage report — used by the admin dashboard to surface gaps. Returns
+ * Coverage report · used by the admin dashboard to surface gaps. Returns
  * the list of (spec area code, covered?) tuples.
  */
 export function buildCoverageReport(): { code: string; covered: boolean; entries: string[] }[] {

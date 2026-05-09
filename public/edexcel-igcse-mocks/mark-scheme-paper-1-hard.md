@@ -1,5 +1,5 @@
 <!-- Auto-generated from /public/edexcel-igcse-mocks/mark-scheme-paper-1-hard.pdf -->
-Mark Scheme — Predicted Paper 1 (Hard) | 4EC1/01
+Mark Scheme · Predicted Paper 1 (Hard) | 4EC1/01
 
 
                                 Mark Scheme (Predicted)
@@ -20,7 +20,7 @@ mark scheme; award zero if the response is not worthy of credit.
 
 
                                                     Page 1
-                                                             Mark Scheme — Predicted Paper 1 (Hard) | 4EC1/01
+                                                             Mark Scheme · Predicted Paper 1 (Hard) | 4EC1/01
 
 
 Question   Which one of the following values shows price elastic supply?                 Mark
@@ -69,7 +69,7 @@ number     Answer
 1(e)       AO1 1 mark                                                                         (1)
 
                                                 Page 2
-                                                            Mark Scheme — Predicted Paper 1 (Hard) | 4EC1/01
+                                                            Mark Scheme · Predicted Paper 1 (Hard) | 4EC1/01
 
 
            The part of the economy that is owned/controlled by the
@@ -107,7 +107,7 @@ number     Answer
 
 
                                               Page 3
-                                                                Mark Scheme — Predicted Paper 1 (Hard) | 4EC1/01
+                                                                Mark Scheme · Predicted Paper 1 (Hard) | 4EC1/01
 
                Award 1 mark for identifying a relevant opportunity cost
                Award 1 mark for developing the opportunity cost
@@ -127,12 +127,12 @@ number         production.
                 • Factors influencing the growth of firms include desire to spread risk, access to
                   finance, economies of scale, demand for the product, and availability of factors of
                   production.
-                • Rising European demand means more orders for Nguyen Coffee — expansion
+                • Rising European demand means more orders for Nguyen Coffee · expansion
                   would allow the firm to meet this demand and increase sales revenue.
                 • Record orders in 2024 suggest that the firm now has access to finance (either
                   from retained profits or loans) with which to lease a new processing plant.
                 • Expanding capacity would allow Nguyen Coffee to benefit from economies of
-                  scale — e.g. bulk-buying of beans — lowering average costs per kilo exported.
+                  scale · e.g. bulk-buying of beans · lowering average costs per kilo exported.
                 • However, the availability of skilled coffee-processing workers in Vietnam will
                   affect whether hiring more workers is realistic.
                 • The firm may also wish to spread risk by not relying on a single plant, so that if
@@ -159,7 +159,7 @@ Level 3    5–6           • Demonstrates clear knowledge and understanding by
                            points. Appropriate application of economic terms, concepts, theories
 
                                                    Page 4
-                                                     Mark Scheme — Predicted Paper 1 (Hard) | 4EC1/01
+                                                     Mark Scheme · Predicted Paper 1 (Hard) | 4EC1/01
 
 Level   Mark   Descriptor
                   and calculations (AO2).
@@ -169,7 +169,7 @@ Level   Mark   Descriptor
 
 
                                         Page 5
-                                                            Mark Scheme — Predicted Paper 1 (Hard) | 4EC1/01
+                                                            Mark Scheme · Predicted Paper 1 (Hard) | 4EC1/01
 
 
 Question   Which one of the following diagrams shows the effect of a specific           Mark
@@ -218,7 +218,7 @@ number     Answer
 
 
                                               Page 6
-                                                            Mark Scheme — Predicted Paper 1 (Hard) | 4EC1/01
+                                                            Mark Scheme · Predicted Paper 1 (Hard) | 4EC1/01
 
 
 Question   Describe one feature of perfect competition.                                 Mark
@@ -268,7 +268,7 @@ number     drinks.
 
 
                                                Page 7
-                                                            Mark Scheme — Predicted Paper 1 (Hard) | 4EC1/01
+                                                            Mark Scheme · Predicted Paper 1 (Hard) | 4EC1/01
 
                  reducing the underlying cause of the externality.
               • Therefore, indirect taxation has been reasonably effective in reducing
@@ -278,7 +278,7 @@ number     drinks.
                 or habitual consumers, so the tax has a limited effect on quantity demanded.
               • Consumption is reported to have rebounded, suggesting the tax alone is not a
                 long-run solution.
-              • The tax is regressive — it takes a larger share of income from poorer households,
+              • The tax is regressive · it takes a larger share of income from poorer households,
                 worsening inequality.
               • Firms may pass only part of the tax on to consumers, weakening the price signal.
               • Complementary policies such as education, advertising restrictions and subsidies
@@ -319,7 +319,7 @@ Level 3   7–9          • Demonstrates clear knowledge and understanding by d
 
 
                                                 Page 8
-                                                            Mark Scheme — Predicted Paper 1 (Hard) | 4EC1/01
+                                                            Mark Scheme · Predicted Paper 1 (Hard) | 4EC1/01
 
 
 Question   Which most likely causes an increase in demand for labour?                   Mark
@@ -356,7 +356,7 @@ number     Answer
 
 
                                                Page 9
-                                                              Mark Scheme — Predicted Paper 1 (Hard) | 4EC1/01
+                                                              Mark Scheme · Predicted Paper 1 (Hard) | 4EC1/01
 
                Award 1 mark for showing a larger change in quantity on the quantity
                axis
@@ -371,7 +371,7 @@ number         Regensburg factory.
                 • Robots at Regensburg allow BMW to produce 300,000 vehicles per year with high
                   consistency and minimal human error, reducing defects.
                 • Machines can run 24 hours a day, raising output and allowing fixed costs (e.g. the
-                  factory building) to be spread over more vehicles — lowering average cost.
+                  factory building) to be spread over more vehicles · lowering average cost.
                 • Capital-intensive methods reduce reliance on labour for repetitive tasks; workers
                   instead specialise in high-skill roles such as maintenance, raising productivity.
                 • Lower average costs per vehicle may allow BMW to compete effectively with
@@ -405,7 +405,7 @@ Level 3    5–6          • Demonstrates clear knowledge and understanding by 
 
 
                                                  Page 10
-                                                               Mark Scheme — Predicted Paper 1 (Hard) | 4EC1/01
+                                                               Mark Scheme · Predicted Paper 1 (Hard) | 4EC1/01
 
 
 Question       Assess whether demand is likely to be more price elastic for luxury cars than for
@@ -415,7 +415,7 @@ number         petrol.
                 • Price elasticity of demand (PED) measures the responsiveness of demand to a
                   change in price.
                 • Luxury cars, such as Porsche and Ferrari, take up a large share of consumer
-                  income — a change in price represents a significant sum, making demand more
+                  income · a change in price represents a significant sum, making demand more
                   responsive.
                 • Luxury cars are not necessities; consumers can delay or switch to cheaper
                   alternatives, making demand more price elastic.
@@ -429,7 +429,7 @@ number         petrol.
                 • AO4
                 • However, wealthy consumers of luxury cars may be less price-sensitive because
                   the purchase represents a smaller share of their income and because of the status
-                  attached — this could make demand more price inelastic.
+                  attached · this could make demand more price inelastic.
                 • Brand loyalty to marques like Ferrari can make demand quite price inelastic for
                   committed customers.
                 • In the long run, demand for petrol becomes more price elastic as drivers switch to
@@ -455,7 +455,7 @@ Level 1    1–3           • Demonstrates basic knowledge and understanding by
 
 
                                                   Page 11
-                                                       Mark Scheme — Predicted Paper 1 (Hard) | 4EC1/01
+                                                       Mark Scheme · Predicted Paper 1 (Hard) | 4EC1/01
 
 Level     Mark   Descriptor
 Level 2   4–6     • Demonstrates partial knowledge and understanding by developing
@@ -480,7 +480,7 @@ Level 3   7–9     • Demonstrates clear knowledge and understanding by develo
 
 
                                           Page 12
-                                                                Mark Scheme — Predicted Paper 1 (Hard) | 4EC1/01
+                                                                Mark Scheme · Predicted Paper 1 (Hard) | 4EC1/01
 
 
 Question       Calculate the weekly profit of the furniture workshop.                       Mark
@@ -501,7 +501,7 @@ number         Indicative content
 4(b)                                       AO2 (3 marks) / AO3 (3 marks)
                 • External economies of scale are cost advantages that arise outside the firm, from
                   the expansion of the industry or region in which the firm operates.
-                • The Jamshedpur region has a well-trained workforce — Tata Steel can recruit
+                • The Jamshedpur region has a well-trained workforce · Tata Steel can recruit
                   skilled workers without paying high training costs, lowering its labour costs.
                 • Specialist component suppliers are located locally, which reduces transport costs
                   and allows faster, more reliable delivery of inputs.
@@ -529,7 +529,7 @@ Level 2    3–4           • Demonstrates partial knowledge and understanding 
                            organisation. Interpretation of economic information will be good, with
 
                                                    Page 13
-                                                       Mark Scheme — Predicted Paper 1 (Hard) | 4EC1/01
+                                                       Mark Scheme · Predicted Paper 1 (Hard) | 4EC1/01
 
 Level     Mark   Descriptor
                     some analysis of issues (AO3).
@@ -543,7 +543,7 @@ Level 3   5–6     • Demonstrates clear knowledge and understanding by develo
 
 
                                           Page 14
-                                                              Mark Scheme — Predicted Paper 1 (Hard) | 4EC1/01
+                                                              Mark Scheme · Predicted Paper 1 (Hard) | 4EC1/01
 
 
 Question       Evaluate whether workers in South Africa are likely to benefit from the increase in the
@@ -570,7 +570,7 @@ number         national minimum wage.
                   value of the wage rise for workers as consumers.
                 • Firms may also accelerate investment in automation, replacing low-paid workers
                   with machines and reducing overall employment in the long run.
-                • Workers who lose their jobs clearly do not benefit — the gains are concentrated
+                • Workers who lose their jobs clearly do not benefit · the gains are concentrated
                   among those who remain employed.
                 • The outcome depends on the level of the wage rise relative to the market wage,
                   the price elasticity of demand for labour, and the enforcement of the rule.
@@ -592,7 +592,7 @@ Level 1    1–4           • Demonstrates isolated elements of relevant knowle
                            incomplete evaluation, showing limited understanding and awareness. A
 
                                                   Page 15
-                                                      Mark Scheme — Predicted Paper 1 (Hard) | 4EC1/01
+                                                      Mark Scheme · Predicted Paper 1 (Hard) | 4EC1/01
 
 Level     Mark   Descriptor
                     judgement or conclusion is unlikely to be attempted (AO4).

@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { parseQuestions } from "@/components/predicted-papers/parseQuestions";
 
-const ocrSample = `# OCR A-Level Economics (H460/01) — Component 01: Microeconomics — Set A
+const ocrSample = `# OCR A-Level Economics (H460/01) · Component 01: Microeconomics · Set A
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -52,7 +52,7 @@ describe("parseQuestions", () => {
   });
 
   it("should parse CAIE MCQ paper format", () => {
-    const caie = `# Cambridge IGCSE Economics — Paper 1
+    const caie = `# Cambridge IGCSE Economics · Paper 1
 
 Question 1 [1 marks]
 What is the basic economic problem?

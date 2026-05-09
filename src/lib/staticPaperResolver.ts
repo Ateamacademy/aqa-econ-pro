@@ -2,7 +2,7 @@
  * Resolves a predicted-paper library id to a curated static PDF URL
  * (question paper + mark scheme) when one exists in /public/*-mocks/.
  *
- * Returning null means no static PDF — caller should fall back to dynamic
+ * Returning null means no static PDF · caller should fall back to dynamic
  * generation.
  */
 
@@ -51,7 +51,7 @@ const BOARDS: BoardConfig[] = [
     displayName: "Edexcel-B-A-Level-Economics",
     tierMap: { a: "moderate", b: "hard", c: "advanced" },
   },
-  // CAIE A-Level (Cambridge 9708) — id pattern: caie-p{1-4}-set-{a-e}
+  // CAIE A-Level (Cambridge 9708) · id pattern: caie-p{1-4}-set-{a-e}
   // Only Paper 3 is wired to static PDFs (uploaded by user).
   {
     pattern: /^caie-p([1234])-set-([abcde])$/i,
@@ -59,21 +59,21 @@ const BOARDS: BoardConfig[] = [
     displayName: "CAIE-A-Level-Economics",
     tierMap: { a: "moderate", b: "hard", c: "advanced" },
   },
-  // IB Diploma Economics — id pattern: ib-p{1-3}-{a|b|c}
+  // IB Diploma Economics · id pattern: ib-p{1-3}-{a|b|c}
   {
     pattern: /^ib-p([123])-([abc])$/i,
     folder: "/ib-mocks",
     displayName: "IB-Economics",
     tierMap: { a: "moderate", b: "hard", c: "advanced" },
   },
-  // CAIE IGCSE Economics — id pattern: igcse-p{1-2}-{a|b|c} (sometimes p3)
+  // CAIE IGCSE Economics · id pattern: igcse-p{1-2}-{a|b|c} (sometimes p3)
   {
     pattern: /^igcse-p([123])-([abc])$/i,
     folder: "/caie-igcse-mocks",
     displayName: "CAIE-IGCSE-Economics",
     tierMap: { a: "moderate", b: "hard", c: "advanced" },
   },
-  // Edexcel IGCSE — id pattern: edxigcse-p{1-2}-{a|b|c} (no p3 PDFs available)
+  // Edexcel IGCSE · id pattern: edxigcse-p{1-2}-{a|b|c} (no p3 PDFs available)
   {
     pattern: /^edxigcse-p([12])-([abc])$/i,
     folder: "/edexcel-igcse-mocks",
@@ -81,7 +81,7 @@ const BOARDS: BoardConfig[] = [
     tierMap: { a: "moderate", b: "hard", c: "advanced" },
     allowedPapers: ["1", "2"],
   },
-  // OCR A-Level — id pattern: ocr-c0{N}-set-{a-f}
+  // OCR A-Level · id pattern: ocr-c0{N}-set-{a-f}
   {
     pattern: /^ocr-c0([123])-set-([abcdef])$/i,
     folder: "/ocr-mocks",

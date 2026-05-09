@@ -7,7 +7,7 @@ Paper 1 How Markets Work
 
 Mark scheme
 
-Predicted Paper — Moderate
+Predicted Paper · Moderate
 Version: 1.0 Final
 
 
@@ -599,7 +599,7 @@ IB/H/Pred/8136/1                                                                
 
                     • depends on the size of the tax and whether revenue is earmarked for independent
                       shops
-                    • depends on government priorities — tackling market power vs. keeping taxes
+                    • depends on government priorities · tackling market power vs. keeping taxes
                       simple
                     • short-run (higher prices) vs. long-run (more competitive high streets) trade-off
                    Note: This indicative content is not exhaustive, other creditworthy responses should be awarded

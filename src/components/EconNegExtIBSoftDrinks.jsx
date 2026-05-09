@@ -1,7 +1,7 @@
 import React from "react";
 
 /**
- * IB HL/SL — Negative externality of consumption (soft drinks).
+ * IB HL/SL · Negative externality of consumption (soft drinks).
  * Single canonical externality diagram used across all IB Predicted Papers
  * negative-externality questions (production OR consumption framing).
  *
@@ -44,7 +44,7 @@ export default function EconNegExtIBSoftDrinks() {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 720 540"
       role="img"
-      aria-label="IB Economics HL/SL — negative externality of consumption (soft drinks): MPC = MSC, MPB above MSB, welfare loss triangle between Qopt and Qm"
+      aria-label="IB Economics HL/SL · negative externality of consumption (soft drinks): MPC = MSC, MPB above MSB, welfare loss triangle between Qopt and Qm"
       style={{ width: "100%", height: "auto", background: "#ffffff" }}
     >
       <defs>
@@ -82,15 +82,15 @@ export default function EconNegExtIBSoftDrinks() {
         strokeWidth="1.1"
       />
 
-      {/* MPC = MSC = S — red upward */}
+      {/* MPC = MSC = S · red upward */}
       <line x1="110" y1="420" x2="610" y2="90" stroke="#c0392b" strokeWidth="2.2" />
       <text x="615" y="92" fontSize="13" fill="#c0392b" fontFamily="Arial, sans-serif" fontWeight="600">MPC = MSC = S</text>
 
-      {/* MPB = D — solid blue downward */}
+      {/* MPB = D · solid blue downward */}
       <line x1="110" y1="120" x2="610" y2="400" stroke="#2563eb" strokeWidth="2.2" />
       <text x="615" y="404" fontSize="13" fill="#2563eb" fontFamily="Arial, sans-serif" fontWeight="600">MPB = D</text>
 
-      {/* MSB — dashed blue downward, parallel below MPB */}
+      {/* MSB · dashed blue downward, parallel below MPB */}
       <line x1="110" y1="190" x2="610" y2="470" stroke="#2563eb" strokeWidth="2" strokeDasharray="7,5" />
       <text x="500" y="438" fontSize="13" fill="#2563eb" fontFamily="Arial, sans-serif" fontWeight="600">MSB</text>
 
@@ -142,7 +142,7 @@ export default function EconNegExtIBSoftDrinks() {
 
       {/* Caption */}
       <text x="360" y="522" textAnchor="middle" fontSize="11" fill="#6b7280" fontFamily="Arial, sans-serif">
-        IB Economics HL/SL — market failure from negative externality of consumption
+        IB Economics HL/SL · market failure from negative externality of consumption
       </text>
     </svg>
   );

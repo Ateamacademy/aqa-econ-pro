@@ -1,5 +1,5 @@
 <!-- Auto-generated from /public/ocr-gcse-mocks/mark-scheme-paper-2-hard.pdf -->
-J205/02 Mark Scheme | Predicted Paper — Hard
+J205/02 Mark Scheme | Predicted Paper · Hard
 
 
 OCR
@@ -11,12 +11,12 @@ Economics
 J205/02: National and international economics
 General Certificate of Secondary Education
 
-Mark Scheme — Predicted Paper (Hard)
+Mark Scheme · Predicted Paper (Hard)
 Total marks: 80
 
 
-                                Mark Scheme — Hard | Page 1 of 14
-                                                                J205/02 Mark Scheme | Predicted Paper — Hard
+                                Mark Scheme · Hard | Page 1 of 14
+                                                                J205/02 Mark Scheme | Predicted Paper · Hard
 
                                      MARKING INSTRUCTIONS
 Preparation for marking
@@ -38,8 +38,8 @@ Levels of response (Section B extended items)
 • For questions marked with an asterisk (*) Quality of Extended Response is assessed: credit is given for
   coherent, well-structured and logically sequenced reasoning.
 Annotations
-✓     Tick — point worthy of credit
-✗     Cross — incorrect / not creditworthy
+✓     Tick · point worthy of credit
+✗     Cross · incorrect / not creditworthy
 BOD Benefit of the doubt
 IR    Irrelevant
 L1 / L2 / L3     Level one / two / three
@@ -50,8 +50,8 @@ OFR Own figure rule applied
 BP Blank page
 
 
-                                     Mark Scheme — Hard | Page 2 of 14
-                                                                       J205/02 Mark Scheme | Predicted Paper — Hard
+                                     Mark Scheme · Hard | Page 2 of 14
+                                                                       J205/02 Mark Scheme | Predicted Paper · Hard
 
 Subject-specific level descriptors
 The following descriptors are applied to all level-marked questions in Section B in the Question | Answer |
@@ -86,8 +86,8 @@ Mark | Guidance tables that follow.
                                                                                                 statements.
 
 
-                                         Mark Scheme — Hard | Page 3 of 14
-                                         J205/02 Mark Scheme | Predicted Paper — Hard
+                                         Mark Scheme · Hard | Page 3 of 14
+                                         J205/02 Mark Scheme | Predicted Paper · Hard
 
                          SECTION A
 Question   Key    AO                            Quantitative skills
@@ -113,8 +113,8 @@ Question   Key    AO                            Quantitative skills
   20       A     AO1a
 
 
-                 Mark Scheme — Hard | Page 4 of 14
-                                                              J205/02 Mark Scheme | Predicted Paper — Hard
+                 Mark Scheme · Hard | Page 4 of 14
+                                                              J205/02 Mark Scheme | Predicted Paper · Hard
 
                                              SECTION B
 Question                          Answer                               Mark           Guidance
@@ -182,8 +182,8 @@ Question                          Answer                               Mark     
                                                                              context. Reasonable
                                                                              analysis, largely in the
 
-                                   Mark Scheme — Hard | Page 5 of 14
-                                                                J205/02 Mark Scheme | Predicted Paper — Hard
+                                   Mark Scheme · Hard | Page 5 of 14
+                                                                J205/02 Mark Scheme | Predicted Paper · Hard
 
 Question                            Answer                             Mark            Guidance
                                                                                 form of single effects
@@ -202,7 +202,7 @@ Question                            Answer                             Mark     
                                                                                 at a single effect that
                                                                                 has some link to the
                                                                                 question.
-                                                                                0 marks — no work
+                                                                                0 marks · no work
                                                                                 worthy of credit.
                                                                                 N.B. To reach Level 3
                                                                                 there must be reference
@@ -250,15 +250,15 @@ Question                            Answer                             Mark     
               • UK productivity growth has been very weak since              the form of single effects
 
 
-                                     Mark Scheme — Hard | Page 6 of 14
-                                                            J205/02 Mark Scheme | Predicted Paper — Hard
+                                     Mark Scheme · Hard | Page 6 of 14
+                                                            J205/02 Mark Scheme | Predicted Paper · Hard
 
 Question                          Answer                            Mark           Guidance
               2008                                                          that address the
            Reasons low-income households are harmed                         question. Good
            more:                                                            evaluation with a fully
            • larger share of budget on essentials (food, energy,            supported judgement
-              rent) — exactly the items with biggest price rises            developed from
+              rent) · exactly the items with biggest price rises            developed from
                                                                             weighing up arguments /
            • less savings / financial buffer to absorb price
                                                                             both sides / alternatives.
@@ -301,12 +301,12 @@ Question                          Answer                            Mark        
                                                                             statements. Information
                                                                             may be ambiguous or
                                                                             unstructured.
-                                                                            0 marks — no work
+                                                                            0 marks · no work
                                                                             worthy of credit.
 
 
-                                  Mark Scheme — Hard | Page 7 of 14
-                                                             J205/02 Mark Scheme | Predicted Paper — Hard
+                                  Mark Scheme · Hard | Page 7 of 14
+                                                             J205/02 Mark Scheme | Predicted Paper · Hard
 
 Question                          Answer                             Mark           Guidance
  22 (a)    Using Extract 2, explain what the data show about          2      1 mark for identifying a
@@ -373,8 +373,8 @@ Question                          Answer                             Mark       
                                                                            chain of reasoning.
                                                                            Level 1 (1–2 marks).
 
-                                  Mark Scheme — Hard | Page 8 of 14
-                                                               J205/02 Mark Scheme | Predicted Paper — Hard
+                                  Mark Scheme · Hard | Page 8 of 14
+                                                               J205/02 Mark Scheme | Predicted Paper · Hard
 
 Question                            Answer                              Mark           Guidance
                                                                                 Reasonable knowledge
@@ -387,7 +387,7 @@ Question                            Answer                              Mark    
                                                                                 at a single effect that
                                                                                 has some link to the
                                                                                 question.
-                                                                                0 marks — no work
+                                                                                0 marks · no work
                                                                                 worthy of credit.
 
 
@@ -439,14 +439,14 @@ Question                            Answer                              Mark    
              Case against cutting spending:                                   both sides / alternatives.
                                                                               A well-developed and
 
-                                    Mark Scheme — Hard | Page 9 of 14
-                                                             J205/02 Mark Scheme | Predicted Paper — Hard
+                                    Mark Scheme · Hard | Page 9 of 14
+                                                             J205/02 Mark Scheme | Predicted Paper · Hard
 
 Question                          Answer                             Mark           Guidance
            • reduces AD → lower growth, higher unemployment,                 logically structured line
               possibly self-defeating (debt/GDP rises)                       of reasoning;
            • damages public services and long-run productivity               information is entirely
-           • distributional effects — welfare cuts hit the poorest           relevant and
+           • distributional effects · welfare cuts hit the poorest           relevant and
               hardest                                                        substantiated. To reach
            • alternative: raise taxes (especially on high earners            Level 3 there must be
               or wealth) without cutting services                            application, analysis and
@@ -479,19 +479,19 @@ Question                          Answer                             Mark       
                                                                              statements. Information
                                                                              may be ambiguous or
                                                                              unstructured.
-                                                                             0 marks — no work
+                                                                             0 marks · no work
                                                                              worthy of credit.
 
 
-                                  Mark Scheme — Hard | Page 10 of 14
-                                                                J205/02 Mark Scheme | Predicted Paper — Hard
+                                  Mark Scheme · Hard | Page 10 of 14
+                                                                J205/02 Mark Scheme | Predicted Paper · Hard
 
 Question                           Answer                               Mark           Guidance
  23 (a)    Using Extract 3, explain the change in UK Bank                2      1 mark for identifying the
            Rate between 2021 and 2023.                                  AO2     rise.
            Answers may include:                                                 1 mark for supporting
            Bank Rate rose sharply between 2021 and 2023 [1]                     with the data (figures or
-           from 0.25% at end-2021 to 5.25% at end-2023 — a                      difference).
+           from 0.25% at end-2021 to 5.25% at end-2023 · a                      difference).
            rise of 5 percentage points [1].
 
 
@@ -551,8 +551,8 @@ Question                           Answer                               Mark    
                                                                               question but are not
                                                                               developed into a clear
 
-                                   Mark Scheme — Hard | Page 11 of 14
-                                                                J205/02 Mark Scheme | Predicted Paper — Hard
+                                   Mark Scheme · Hard | Page 11 of 14
+                                                                J205/02 Mark Scheme | Predicted Paper · Hard
 
 Question                             Answer                             Mark           Guidance
                                                                                 chain of reasoning.
@@ -567,7 +567,7 @@ Question                             Answer                             Mark    
                                                                                 at a single effect that
                                                                                 has some link to the
                                                                                 question.
-                                                                                0 marks — no work
+                                                                                0 marks · no work
                                                                                 worthy of credit.
 
 
@@ -618,8 +618,8 @@ Question                             Answer                             Mark    
               • current account deficit could widen in the long run           developed from
               • UK-based producers may relocate production                    weighing up arguments /
 
-                                    Mark Scheme — Hard | Page 12 of 14
-                                                            J205/02 Mark Scheme | Predicted Paper — Hard
+                                    Mark Scheme · Hard | Page 12 of 14
+                                                            J205/02 Mark Scheme | Predicted Paper · Hard
 
 Question                          Answer                            Mark           Guidance
               overseas                                                      both sides / alternatives.
@@ -662,12 +662,12 @@ Question                          Answer                            Mark        
                                                                             statements. Information
                                                                             may be ambiguous or
                                                                             unstructured.
-                                                                            0 marks — no work
+                                                                            0 marks · no work
                                                                             worthy of credit.
 
 
-                                 Mark Scheme — Hard | Page 13 of 14
-                                                     J205/02 Mark Scheme | Predicted Paper — Hard
+                                 Mark Scheme · Hard | Page 13 of 14
+                                                     J205/02 Mark Scheme | Predicted Paper · Hard
 
                      ASSESSMENT OBJECTIVE GRID (AO)
               AO1a   AO1b       AO2       AO3a      AO3b         Total    Quantitative skills
@@ -692,4 +692,4 @@ Paper total    12     17         27        15         9           80            
                               END OF MARK SCHEME
 
 
-                            Mark Scheme — Hard | Page 14 of 14
+                            Mark Scheme · Hard | Page 14 of 14

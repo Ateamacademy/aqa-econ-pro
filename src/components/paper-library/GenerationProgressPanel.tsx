@@ -24,7 +24,7 @@ export default function GenerationProgressPanel({ events, busy }: Props) {
             <>
               <RotateCcw className="h-3 w-3 text-amber-400 mt-0.5 shrink-0 animate-spin" />
               <span className="text-amber-200">
-                Question {e.questionNumber} — {e.reason}, retrying… (attempt {e.attempt} of 3)
+                Question {e.questionNumber} · {e.reason}, retrying… (attempt {e.attempt} of 3)
               </span>
             </>
           )}

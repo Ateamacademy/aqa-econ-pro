@@ -1,7 +1,7 @@
 /**
  * Pre-flight image validation gates.
  * Runs client-side BEFORE any marking API call.
- * STRICT thresholds — zero tolerance for empty/near-empty submissions.
+ * STRICT thresholds · zero tolerance for empty/near-empty submissions.
  */
 
 export interface ValidationResult {
@@ -110,7 +110,7 @@ function isInk(
 }
 
 /**
- * GATE A: Pixel content check — compute ink ratio (grid-subtracted).
+ * GATE A: Pixel content check · compute ink ratio (grid-subtracted).
  */
 function gateA(
   data: Uint8ClampedArray, width: number, height: number,
@@ -268,7 +268,7 @@ export async function validateDiagramImage(imageSrc: string, totalMarks: number 
       };
     }
 
-    // GATE B: Bounding box — BOTH width AND height must be ≥ 20%
+    // GATE B: Bounding box · BOTH width AND height must be ≥ 20%
     const { bbWidthRatio, bbHeightRatio } = gateB(inkPixels, width, height);
 
     if (bbWidthRatio < 0.20 || bbHeightRatio < 0.20) {
@@ -309,6 +309,6 @@ export async function validateDiagramImage(imageSrc: string, totalMarks: number 
   } catch (e) {
     // If validation itself fails, BLOCK submission for safety (was: allow)
     console.warn("Image validation failed, blocking submission:", e);
-    return { passed: false, gate: "A", message: "Image validation failed — please redraw and resubmit.", inkRatio: 0 };
+    return { passed: false, gate: "A", message: "Image validation failed · please redraw and resubmit.", inkRatio: 0 };
   }
 }

@@ -1,8 +1,8 @@
 /**
- * Paper-sets infrastructure — enforces "Sets A, B, C minimum per paper" across
+ * Paper-sets infrastructure · enforces "Sets A, B, C minimum per paper" across
  * every refined exam board, while respecting each board's actual paper count.
  *
- * AQA A-Level is intentionally exempt from the 3-set MAXIMUM — it ships with
+ * AQA A-Level is intentionally exempt from the 3-set MAXIMUM · it ships with
  * 7 sets (A–G) per paper and that library must NOT be reduced. The rule
  * defined here is a minimum (≥3), not a cap.
  */
@@ -34,7 +34,7 @@ export const PAPER_SETS_REQUIREMENT: Record<BoardId, PaperSetsRequirement> = {
   "ocr-gcse":            { minimumSets: 3, maximumSets: "unlimited", requiredSetLabels: REQUIRED_SET_LABELS },
 };
 
-/** IB HL/SL tier handling — IB is one board with two paper structures. */
+/** IB HL/SL tier handling · IB is one board with two paper structures. */
 export type IbVariant = "HL" | "SL";
 
 export const IB_PAPER_CODES: Record<IbVariant, string[]> = {
@@ -82,7 +82,7 @@ export function validateGenerationRequest(req: GenerationRequest): void {
 
   if (board.refinementStatus !== "refined") {
     throw new Error(
-      `${board.displayName} is not refined yet — cannot generate papers.`,
+      `${board.displayName} is not refined yet · cannot generate papers.`,
     );
   }
 
@@ -158,7 +158,7 @@ export function computeBoardCoverage(
 /**
  * Generate Sets A, B, C in greedy order (all As → all Bs → all Cs) so that each
  * subsequent set has more cross-set fingerprints to avoid. The actual paper
- * generator is injected by the caller — this orchestrator only sequences the
+ * generator is injected by the caller · this orchestrator only sequences the
  * calls and surfaces failures.
  */
 export type SetGenerator = (req: GenerationRequest) => Promise<void>;

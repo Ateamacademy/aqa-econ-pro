@@ -436,7 +436,7 @@ export default function Index() {
         <div className="absolute bottom-0 left-0 w-[30vw] h-[30vw] max-w-[500px] max-h-[500px] rounded-full pointer-events-none" style={{ background: "hsl(var(--cyan-pop) / 0.06)", filter: "blur(100px)" }} />
 
         <div className="max-w-[1280px] mx-auto px-5 lg:px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center relative">
-          {/* Left — copy */}
+          {/* Left · copy */}
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }}>
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6 glow-indigo-sm">
               <span className="text-xs">✦</span> Live progress dashboard
@@ -490,7 +490,7 @@ export default function Index() {
             </div>
           </motion.div>
 
-          {/* Right — live dashboard demo */}
+          {/* Right · live dashboard demo */}
           <DashboardDemo />
         </div>
       </section>

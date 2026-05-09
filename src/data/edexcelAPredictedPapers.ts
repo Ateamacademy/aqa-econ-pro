@@ -2,7 +2,7 @@ import type { PredictedPaper } from "./predictedPapersLibrary";
 import { buildEdexcelAPaperMarkdown } from "./edexcelAPredictedPapersBuilder";
 
 /**
- * Edexcel A A-Level Economics (9EC0) — predicted papers library.
+ * Edexcel A A-Level Economics (9EC0) · predicted papers library.
  *
  * The 9 entries below (Paper 1/2/3 × Moderate/Hard/Advanced) are sourced
  * from `edexcelAPredictedPapersData.json`, a structured extraction of the
@@ -64,12 +64,12 @@ export const edexcelAPredictedPapers: PredictedPaper[] = PAPERS.flatMap((p) =>
   TIERS.map<PredictedPaper>((t) => {
     const dataId = `paper-${p.num}-${t.slug}`;
     const content = buildEdexcelAPaperMarkdown(dataId)
-      ?? `# Edexcel A-Level Economics A (${p.code}) — Paper ${p.num} — ${t.label}\n\n_Booklet content unavailable._`;
+      ?? `# Edexcel A-Level Economics A (${p.code}) · Paper ${p.num} · ${t.label}\n\n_Booklet content unavailable._`;
     return {
       id: `edxa-p${p.num}-${t.letter.toLowerCase()}`,
       subject: "edexcel-a",
       paper: p.num,
-      title: `Paper ${p.num} — Set ${t.letter}`, // displayed via SET_LABEL_DISPLAY_MAP
+      title: `Paper ${p.num} · Set ${t.letter}`, // displayed via SET_LABEL_DISPLAY_MAP
       description: p.descriptions[t.label],
       totalMarks: 100,
       bookletUrl: `/edexcel-a-mocks/paper-${p.num}-${t.slug}.html`,

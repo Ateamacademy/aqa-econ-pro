@@ -86,7 +86,7 @@ H460/01                                                                       Ma
               2024 (1).
               Differences (any one):                                                     2
 
-              • coffee-bean prices rose faster/more sharply — +61% (100→161)
+              • coffee-bean prices rose faster/more sharply · +61% (100→161)
                 vs coffee-shop prices +32% (100→132) (1)
               • coffee-bean prices peaked in Dec 2023 (172) then fell by Apr
                 2024, whereas coffee-shop prices continued to rise (1)
@@ -144,13 +144,13 @@ H460/01                                                                         
   • it may narrow the income gap between the lowest paid and median earners
   • higher wages can reduce in-work poverty and raise living standards for affected workers
  Evaluation
-  • real incomes depend on inflation, which has been high — CPI peaked above 11% in Oct 2022
+  • real incomes depend on inflation, which has been high · CPI peaked above 11% in Oct 2022
   • coffee shops have passed costs on in higher drink prices (+32%), eroding real purchasing power
   • firms may respond by cutting hours, so total earnings could fall even though hourly pay rises
   • employers may substitute capital for labour (self-order screens), risking unemployment for some workers
   • small independents may struggle to absorb the rise, leading to closures and job losses
  Possible judgements
-  • depends on the size of the rise relative to inflation — real wage gains are much smaller than nominal
+  • depends on the size of the rise relative to inflation · real wage gains are much smaller than nominal
   • depends on the elasticity of labour demand in hospitality
   • depends on the extent to which firms can substitute capital for labour
   • depends on complementary policies such as tax thresholds, Universal Credit and energy bill support
@@ -177,13 +177,13 @@ competition.
                              good use of data where appropriate.
                              Reasonable analysis characterised by developing chains of reasoning that explain most of the links; diagram(s) may be predominantly correct
                              but not fully integrated into the response.
-                             Reasonable evaluation — counter argument(s) are considered but not fully developed; some attempt to conclude but without fully weighing
+                             Reasonable evaluation · counter argument(s) are considered but not fully developed; some attempt to conclude but without fully weighing
                              up both sides. QER: the candidate expresses ideas with reasonable clarity and accuracy.
 
  Level 1                     Reasonable knowledge and understanding of relevant economic ideas, principles or models.
  (1–4 marks)                 Reasonable application of economic concepts to some elements of the given context; may be inconsistent or not always relevant.
                              Limited analysis in the form of single links; diagram(s) may contain errors or be loosely integrated into the response.
-                             Limited evaluation — simple statements of counter argument(s); stated or absent judgement. QER: the candidate expresses simple ideas
+                             Limited evaluation · simple statements of counter argument(s); stated or absent judgement. QER: the candidate expresses simple ideas
                              clearly but is likely to be imprecise.
 
  0 marks                     Response is not worthy of credit.
@@ -200,25 +200,25 @@ H460/01                                                                         
  Knowledge and understanding
   • monopolistic competition: many sellers, low barriers to entry/exit, differentiated products, normal profit in the long run
   • oligopoly: few dominant firms, interdependence, high barriers to entry, potential for collusion or price rigidity
- Application — arguments the coffee market IS monopolistic competition
-  • large number of sellers — Fig. 2 shows over 9,500 outlets with independents accounting for ~50% of the market
-  • low barriers to entry — start-up costs for an independent cafe can be under £30,000 (stimulus)
-  • clear product differentiation — branding, décor, speciality drinks, loyalty schemes (stimulus)
+ Application · arguments the coffee market IS monopolistic competition
+  • large number of sellers · Fig. 2 shows over 9,500 outlets with independents accounting for ~50% of the market
+  • low barriers to entry · start-up costs for an independent cafe can be under £30,000 (stimulus)
+  • clear product differentiation · branding, décor, speciality drinks, loyalty schemes (stimulus)
   • easy consumer switching between outlets (stimulus line 22)
-  • combined share of Big Three fell from 53% (2015) to 28% (2023) — evidence of many competing firms
- Application — arguments AGAINST pure monopolistic competition
-  • concentration still exists — Costa (12%), Starbucks (9%), Caffè Nero (7%), Greggs (5%), Pret (4%) together hold 37%
+  • combined share of Big Three fell from 53% (2015) to 28% (2023) · evidence of many competing firms
+ Application · arguments AGAINST pure monopolistic competition
+  • concentration still exists · Costa (12%), Starbucks (9%), Caffè Nero (7%), Greggs (5%), Pret (4%) together hold 37%
   • large chains have buying power over bean suppliers and long-term leases on prime locations (stimulus)
   • some features resemble oligopoly: branded chains with strategic interdependence on pricing, promotions and locations
   • Pret's subscription scheme (1.25m members) and Tesco-style loyalty features suggest attempts to lock in customers
  Analysis
   • apply the theoretical model: differentiation gives each firm a downward-sloping demand curve; free entry erodes supernormal profit in the long run
-  • rising costs (beans, wages, energy) erode profit margins — consistent with long-run normal-profit prediction
-  • non-price competition on quality and branding — consistent with monopolistic competition
+  • rising costs (beans, wages, energy) erode profit margins · consistent with long-run normal-profit prediction
+  • non-price competition on quality and branding · consistent with monopolistic competition
  Evaluation and judgement
   • market features match monopolistic competition more closely than perfect competition or pure monopoly
-  • segment-level analysis — branded chain segment may be closer to oligopoly; independent segment closer to monopolistic competition
-  • the model is an approximation — few real-world markets fit one structure exactly
+  • segment-level analysis · branded chain segment may be closer to oligopoly; independent segment closer to monopolistic competition
+  • the model is an approximation · few real-world markets fit one structure exactly
   • supported judgement on 'extent' is required: market is largely consistent with monopolistic competition but with oligopolistic features in the branded chain segment
  QER
   • candidate must use appropriate economic terminology (e.g. differentiation, barriers to entry, normal profit, concentration ratio)
@@ -236,7 +236,7 @@ H460/01                                                                  Mark Sc
                             (AO2).
                             Strong analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                             whose accuracy reflects this level (AO3).
-                            Strong evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                            Strong evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
                             to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 4                    Good knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -244,7 +244,7 @@ H460/01                                                                  Mark Sc
                             (AO2).
                             Good analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                             accuracy reflects this level (AO3).
-                            Good evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                            Good evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                             a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 3                    Reasonable knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -252,7 +252,7 @@ H460/01                                                                  Mark Sc
                             appropriate (AO2).
                             Reasonable analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                             whose accuracy reflects this level (AO3).
-                            Reasonable evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations —
+                            Reasonable evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations ·
                             leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 2                    Limited knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -260,7 +260,7 @@ H460/01                                                                  Mark Sc
                             appropriate (AO2).
                             Limited analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                             whose accuracy reflects this level (AO3).
-                            Limited evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                            Limited evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
 
                                                                                     9
 H460/01                                                                           Mark Scheme                                                                    June 2026
@@ -273,7 +273,7 @@ H460/01                                                                         
                               (AO2).
                               Weak analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                               accuracy reflects this level (AO3).
-                              Weak evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                              Weak evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                               a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  0 marks                      Response is not worthy of credit.
@@ -284,7 +284,7 @@ H460/01                                                                         
 
  Knowledge and understanding
   • productive efficiency: production at minimum point of AC (MC = AC); lowest cost per unit
-  • allocative efficiency: P = MC — resources allocated to maximise social welfare
+  • allocative efficiency: P = MC · resources allocated to maximise social welfare
   • monopolistic competition: many differentiated sellers, low barriers, normal profit in the long run
  Analysis (with diagram)
   • short-run diagram: firm maximises profit at MC = MR, producing supernormal profit where P > AC
@@ -294,9 +294,9 @@ H460/01                                                                         
   • deadweight welfare loss relative to perfect competition
  Evaluation
   • firms retain some pricing power to fund product development and innovation → dynamic efficiency
-  • differentiation gives consumers greater choice and variety — welfare benefit not captured by static efficiency measures
-  • inefficiency is limited — entry threats keep profits close to normal and discipline prices
-  • real-world markets rarely match the theoretical model exactly — may be more or less efficient than model predicts
+  • differentiation gives consumers greater choice and variety · welfare benefit not captured by static efficiency measures
+  • inefficiency is limited · entry threats keep profits close to normal and discipline prices
+  • real-world markets rarely match the theoretical model exactly · may be more or less efficient than model predicts
   • comparison with alternatives: still more allocatively efficient than pure monopoly or oligopoly with collusion
 
 
@@ -320,7 +320,7 @@ H460/01                                                                   Mark S
                            (AO2).
                            Strong analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Strong evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                           Strong evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
                            to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 4                   Good knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -328,7 +328,7 @@ H460/01                                                                   Mark S
                            (AO2).
                            Good analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                            accuracy reflects this level (AO3).
-                           Good evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                           Good evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                            a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 3                   Reasonable knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -336,7 +336,7 @@ H460/01                                                                   Mark S
                            appropriate (AO2).
                            Reasonable analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Reasonable evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations —
+                           Reasonable evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations ·
                            leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 2                   Limited knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -344,7 +344,7 @@ H460/01                                                                   Mark S
                            appropriate (AO2).
                            Limited analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Limited evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                           Limited evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
 
                                                                                   12
 H460/01                                                                         Mark Scheme                                                                     June 2026
@@ -357,7 +357,7 @@ H460/01                                                                         
                              (AO2).
                              Weak analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                              accuracy reflects this level (AO3).
-                             Weak evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                             Weak evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                              a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  0 marks                     Response is not worthy of credit.
@@ -374,14 +374,14 @@ H460/01                                                                         
   • free-market outcome at MPB = MPC overconsumes relative to social optimum; welfare loss triangle
   • a per-unit tax equal to the marginal external cost shifts MPC upward, reducing Q to the social optimum
   • equilibrium price rises, quantity falls, government revenue is generated
-  • Soft Drinks Industry Levy (UK, 2018) — reformulation incentives and lower sugar content
+  • Soft Drinks Industry Levy (UK, 2018) · reformulation incentives and lower sugar content
  Evaluation
-  • PED for sugary drinks is relatively inelastic — tax may have limited effect on quantity
-  • regressive impact — lower-income households spend a larger share of income on sugary drinks
-  • firms may absorb the tax or reformulate products (reducing tax base) — SDIL saw significant reformulation
-  • consumers may substitute to untaxed sugary products (cakes, sweets) — limited welfare gain
+  • PED for sugary drinks is relatively inelastic · tax may have limited effect on quantity
+  • regressive impact · lower-income households spend a larger share of income on sugary drinks
+  • firms may absorb the tax or reformulate products (reducing tax base) · SDIL saw significant reformulation
+  • consumers may substitute to untaxed sugary products (cakes, sweets) · limited welfare gain
   • black-market / cross-border purchasing risks
-  • setting the correct tax rate requires accurate valuation of external costs — information problem
+  • setting the correct tax rate requires accurate valuation of external costs · information problem
 
 
                                                                                       13
@@ -404,7 +404,7 @@ H460/01                                                                Mark Sche
                            (AO2).
                            Strong analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Strong evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                           Strong evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
                            to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 4                   Good knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -412,7 +412,7 @@ H460/01                                                                Mark Sche
                            (AO2).
                            Good analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                            accuracy reflects this level (AO3).
-                           Good evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                           Good evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                            a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 3                   Reasonable knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -420,7 +420,7 @@ H460/01                                                                Mark Sche
                            appropriate (AO2).
                            Reasonable analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Reasonable evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations —
+                           Reasonable evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations ·
                            leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 2                   Limited knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -428,7 +428,7 @@ H460/01                                                                Mark Sche
                            appropriate (AO2).
                            Limited analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Limited evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                           Limited evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
 
                                                                                   15
 H460/01                                                                          Mark Scheme                                                                    June 2026
@@ -441,7 +441,7 @@ H460/01                                                                         
                              (AO2).
                              Weak analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                              accuracy reflects this level (AO3).
-                             Weak evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                             Weak evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                              a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  0 marks                     Response is not worthy of credit.
@@ -458,10 +458,10 @@ H460/01                                                                         
   • market diagram: MPB below MSB; free market under-consumes
   • subsidy to operators shifts MPC downward, reducing fares, increasing Q toward the social optimum
   • welfare gain triangle as external benefits are internalised
-  • substitution away from private car use — reduces congestion and emissions
+  • substitution away from private car use · reduces congestion and emissions
  Evaluation
-  • opportunity cost of subsidy — funding must come from taxes or other cuts
-  • government failure — risk of subsidising inefficient operators and dampening cost discipline
+  • opportunity cost of subsidy · funding must come from taxes or other cuts
+  • government failure · risk of subsidising inefficient operators and dampening cost discipline
   • may benefit wealthier commuters disproportionately (regressive in some cases)
   • effectiveness depends on PED of public transport and XED with private car use
   • alternative policies: investment in infrastructure, road pricing, fuel duty, emission zones
@@ -473,7 +473,7 @@ H460/01                                                                       Ma
 
  Possible judgements
   • subsidies justified where positive externalities are large (urban areas with high congestion)
-  • subsidies should be targeted — e.g. off-peak fares, lower-income passengers, bus services in deprived areas
+  • subsidies should be targeted · e.g. off-peak fares, lower-income passengers, bus services in deprived areas
   • combination of subsidy and investment is more likely to be effective than subsidy alone
 
 
@@ -488,7 +488,7 @@ H460/01                                                                     Mark
                            (AO2).
                            Strong analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Strong evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                           Strong evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
                            to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 4                   Good knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -496,7 +496,7 @@ H460/01                                                                     Mark
                            (AO2).
                            Good analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                            accuracy reflects this level (AO3).
-                           Good evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                           Good evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                            a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 3                   Reasonable knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -504,7 +504,7 @@ H460/01                                                                     Mark
                            appropriate (AO2).
                            Reasonable analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Reasonable evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations —
+                           Reasonable evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations ·
                            leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  Level 2                   Limited knowledge and understanding of relevant economic idea(s), principle(s) or model(s) (AO1).
@@ -512,7 +512,7 @@ H460/01                                                                     Mark
                            appropriate (AO2).
                            Limited analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and
                            whose accuracy reflects this level (AO3).
-                           Limited evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading
+                           Limited evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading
 
                                                                                   18
 H460/01                                                                       Mark Scheme                                                                      June 2026
@@ -525,7 +525,7 @@ H460/01                                                                       Ma
                             (AO2).
                             Weak analysis characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose
                             accuracy reflects this level (AO3).
-                            Weak evaluation of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to
+                            Weak evaluation of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to
                             a judgement of the appropriate support (AO4). QER: expression reflects this level.
 
  0 marks                    Response is not worthy of credit.
@@ -537,7 +537,7 @@ H460/01                                                                       Ma
  Knowledge and understanding
   • minimum wage: a statutory wage floor set above the market-clearing wage
   • labour demand, labour supply and market equilibrium
-  • NLW rose from £8.72 (2020) to £11.44 (2024) — a rise of over 31%
+  • NLW rose from £8.72 (2020) to £11.44 (2024) · a rise of over 31%
  Analysis (with diagram)
   • competitive labour market: minimum wage above equilibrium causes excess supply of labour → unemployment
   • firms facing higher costs may reduce hours, substitute capital for labour, raise prices
@@ -547,9 +547,9 @@ H460/01                                                                       Ma
   • elasticity of labour demand: low-skilled/hospitality demand may be inelastic in short run
   • regional variation: NLW may bind more tightly in lower-wage regions (North East vs London)
   • empirical evidence (Dube, LPC reports): small employment effects, meaningful income gains
-  • employers may cut non-wage benefits, training, or hours — offsetting gains
+  • employers may cut non-wage benefits, training, or hours · offsetting gains
   • rising automation (self-order screens, etc.) may be accelerated
-  • effects on productivity — firms may invest and innovate to justify higher wages
+  • effects on productivity · firms may invest and innovate to justify higher wages
 
 
                                                                                     19

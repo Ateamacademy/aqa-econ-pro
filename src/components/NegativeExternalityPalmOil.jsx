@@ -1,6 +1,6 @@
 export default function NegativeExternalityPalmOil() {
   /**
-   * Negative Externality (Palm Oil) — textbook black-and-white style.
+   * Negative Externality (Palm Oil) · textbook black-and-white style.
    *
    * DATA
    *   MPB = MSB (demand): P = 10 − Q  (downward)

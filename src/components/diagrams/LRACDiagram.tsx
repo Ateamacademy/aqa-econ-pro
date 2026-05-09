@@ -1,5 +1,5 @@
 /**
- * LRACDiagram — Long-Run Average Cost (Envelope) Curve
+ * LRACDiagram · Long-Run Average Cost (Envelope) Curve
  * 
  * Shows: U-shaped LRAC curve, MES point, Economies/Constant Returns/Diseconomies zones
  * Matches the reference style from Figure 5.
@@ -138,7 +138,7 @@ export default function LRACDiagram({ className }: LRACDiagramProps) {
       <div className="mt-3 rounded-lg border border-border/60 bg-card/50 p-3 text-sm space-y-1">
         <p className="font-semibold text-foreground">Key Points:</p>
         <ul className="list-disc pl-4 text-muted-foreground space-y-0.5 text-xs">
-          <li>The <strong>LRAC</strong> curve is U-shaped — falling due to economies of scale, then rising due to diseconomies</li>
+          <li>The <strong>LRAC</strong> curve is U-shaped · falling due to economies of scale, then rising due to diseconomies</li>
           <li><strong>MES</strong> (Minimum Efficient Scale) = the lowest output at which LRAC is minimised</li>
           <li><strong>Economies of scale</strong>: technical, managerial, purchasing, financial, marketing, risk-bearing</li>
           <li><strong>Diseconomies of scale</strong>: communication breakdown, co-ordination problems, loss of motivation</li>

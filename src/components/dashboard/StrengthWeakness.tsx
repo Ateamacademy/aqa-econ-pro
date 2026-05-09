@@ -91,7 +91,7 @@ export default function StrengthWeakness({ sessions, subject }: Props) {
           </p>
           <div className="space-y-2">
             {analysis.weaknesses.length === 0 ? (
-              <p className="text-xs text-muted-foreground">No weak areas yet — great work!</p>
+              <p className="text-xs text-muted-foreground">No weak areas yet · great work!</p>
             ) : (
               analysis.weaknesses.map((t, i) => (
                 <motion.div

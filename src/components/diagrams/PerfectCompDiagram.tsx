@@ -1,9 +1,9 @@
 /**
- * PerfectCompDiagram — Textbook-style Perfect Competition diagrams.
+ * PerfectCompDiagram · Textbook-style Perfect Competition diagrams.
  *
  * Two bordered panels stacked vertically:
- *   Panel 1: Short Run — single firm diagram + theory text
- *   Panel 2: Long Run  — firm diagram (left) + industry diagram (right) + theory text
+ *   Panel 1: Short Run · single firm diagram + theory text
+ *   Panel 2: Long Run  · firm diagram (left) + industry diagram (right) + theory text
  *
  * All equilibria computed mathematically. Matches standard A-level textbook style.
  */

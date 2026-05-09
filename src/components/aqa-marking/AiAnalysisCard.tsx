@@ -30,8 +30,8 @@ export function AiAnalysisCard({
 }: Props) {
   const heading =
     variant === "diagram"
-      ? `AI analysis — your diagram (Q${questionNumber})`
-      : `AI analysis — Q${questionNumber} (${totalMarks} marks)`;
+      ? `AI analysis · your diagram (Q${questionNumber})`
+      : `AI analysis · Q${questionNumber} (${totalMarks} marks)`;
 
   return (
     <div
@@ -83,7 +83,7 @@ export function AiAnalysisCard({
                   Your self-assessment
                 </div>
                 <div className="text-xl font-mono font-bold text-amber-100">
-                  {selfAssessedLevel ?? "—"}
+                  {selfAssessedLevel ?? "·"}
                 </div>
                 <p className="text-xs text-muted-foreground mt-1.5 leading-snug">
                   Source of truth for the marks shown in this report.
@@ -111,7 +111,7 @@ export function AiAnalysisCard({
                           {KAAE_LABEL[k]}
                         </span>
                         {v.evidence && (
-                          <span className="text-muted-foreground"> — {v.evidence}</span>
+                          <span className="text-muted-foreground"> · {v.evidence}</span>
                         )}
                       </span>
                     </li>
@@ -156,13 +156,13 @@ export function AiAnalysisCard({
 
             {state.cached && (
               <div className="text-[10px] text-muted-foreground italic">
-                Cached from a previous identical answer — no new AI call made.
+                Cached from a previous identical answer · no new AI call made.
               </div>
             )}
           </>
         )}
 
-        {/* Disclaimer — load-bearing, always visible per spec */}
+        {/* Disclaimer · load-bearing, always visible per spec */}
         <div className="flex items-start gap-1.5 rounded-lg border border-purple-500/20 bg-purple-500/5 p-2.5 text-[11px] text-purple-200/90">
           <Info className="h-3.5 w-3.5 shrink-0 mt-0.5" />
           <span>
@@ -185,14 +185,14 @@ function ErrorState({
   retryAfterSec?: number;
   onRetry?: () => void;
 }) {
-  let message = "AI analysis couldn't run just now — try again, or proceed with your self-assessment.";
+  let message = "AI analysis couldn't run just now · try again, or proceed with your self-assessment.";
   let allowRetry = true;
   if (error === "rate_limited") {
     const hrs = retryAfterSec ? Math.max(1, Math.ceil(retryAfterSec / 3600)) : 1;
-    message = `You've used today's AI analysis quota. Your self-assessment marks are still saved — AI analysis will be available in about ${hrs} ${hrs === 1 ? "hour" : "hours"}.`;
+    message = `You've used today's AI analysis quota. Your self-assessment marks are still saved · AI analysis will be available in about ${hrs} ${hrs === 1 ? "hour" : "hours"}.`;
     allowRetry = false;
   } else if (error === "malformed_response") {
-    message = "AI response was incomplete for this question — your self-assessment stays as your primary feedback.";
+    message = "AI response was incomplete for this question · your self-assessment stays as your primary feedback.";
   } else if (error === "not_configured") {
     message = "AI analysis isn't configured for this project yet.";
     allowRetry = false;

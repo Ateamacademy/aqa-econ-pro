@@ -24,7 +24,7 @@
     </marker>
   </defs>
 
-  <text x="350" y="28" text-anchor="middle" class="ttl">UK Nursing Labour Market 2021–24 — Dual Shift</text>
+  <text x="350" y="28" text-anchor="middle" class="ttl">UK Nursing Labour Market 2021–24 · Dual Shift</text>
   <text x="350" y="48" text-anchor="middle" class="sub">Demand for nurses rises (D1 → D2) while supply falls (S1 → S2): wage rises sharply</text>
 
   <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
@@ -77,5 +77,5 @@
 
   <text x="90"  y="495" class="sub">Ageing population raises healthcare demand → derived demand for nurses rises (D shifts right).</text>
   <text x="90"  y="512" class="sub">Shortage of qualified nurses reduces labour supply at every wage (S shifts left).</text>
-  <text x="90"  y="529" class="sub">Both effects unambiguously raise the equilibrium wage (W2 well above W1). The effect on employment is ambiguous — depends on relative shift sizes.</text>
+  <text x="90"  y="529" class="sub">Both effects unambiguously raise the equilibrium wage (W2 well above W1). The effect on employment is ambiguous · depends on relative shift sizes.</text>
 </svg>

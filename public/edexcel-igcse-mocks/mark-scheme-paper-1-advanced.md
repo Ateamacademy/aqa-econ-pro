@@ -1,5 +1,5 @@
 <!-- Auto-generated from /public/edexcel-igcse-mocks/mark-scheme-paper-1-advanced.pdf -->
-Mark Scheme — Predicted Paper 1 (Advanced) | 4EC1/01
+Mark Scheme · Predicted Paper 1 (Advanced) | 4EC1/01
 
 
                                 Mark Scheme (Predicted)
@@ -20,7 +20,7 @@ mark scheme; award zero if the response is not worthy of credit.
 
 
                                                     Page 1
-                                                       Mark Scheme — Predicted Paper 1 (Advanced) | 4EC1/01
+                                                       Mark Scheme · Predicted Paper 1 (Advanced) | 4EC1/01
 
 
 Question   Which one of the following values shows unitary price elasticity of         Mark
@@ -70,10 +70,10 @@ number     Answer
 
 
                                               Page 2
-                                                       Mark Scheme — Predicted Paper 1 (Advanced) | 4EC1/01
+                                                       Mark Scheme · Predicted Paper 1 (Advanced) | 4EC1/01
 
 1(e)       AO1 1 mark                                                                       (1)
-           A resource used to produce goods and services — land, labour, capital
+           A resource used to produce goods and services · land, labour, capital
            or enterprise
            Accept any other appropriate response
 
@@ -108,7 +108,7 @@ number     invest in R&D rather than paying dividends.
 1(h)       AO2 3 marks                                                                      (3)
 
                                               Page 3
-                                                           Mark Scheme — Predicted Paper 1 (Advanced) | 4EC1/01
+                                                           Mark Scheme · Predicted Paper 1 (Advanced) | 4EC1/01
 
 
                Award 1 mark for identifying a relevant opportunity cost
@@ -134,7 +134,7 @@ number         assembly to Vietnam.
                 • The growing South-East Asian consumer market means producing close to
                   customers reduces transport costs and delivery times, improving responsiveness.
                 • However, Sony faces set-up costs, worker training and quality-control risks, which
-                  may offset some of the savings — the firm must weigh these against the long-
+                  may offset some of the savings · the firm must weigh these against the long-
                   term cost reductions.
                 • Sony's decision will also depend on whether Vietnamese workers can quickly
                   reach the productivity levels of Japanese workers; if not, quality could suffer and
@@ -159,7 +159,7 @@ Level 2    3–4           • Demonstrates partial knowledge and understanding 
                            organisation. Interpretation of economic information will be good, with
 
                                                   Page 4
-                                                     Mark Scheme — Predicted Paper 1 (Advanced) | 4EC1/01
+                                                     Mark Scheme · Predicted Paper 1 (Advanced) | 4EC1/01
 
 Level     Mark   Descriptor
                     some analysis of issues (AO3).
@@ -173,7 +173,7 @@ Level 3   5–6     • Demonstrates clear knowledge and understanding by develo
 
 
                                           Page 5
-                                                        Mark Scheme — Predicted Paper 1 (Advanced) | 4EC1/01
+                                                        Mark Scheme · Predicted Paper 1 (Advanced) | 4EC1/01
 
 
 Question   Which diagram shows the effect of an increase in the cost of raw             Mark
@@ -222,7 +222,7 @@ number     Answer
 
 
                                                Page 6
-                                                           Mark Scheme — Predicted Paper 1 (Advanced) | 4EC1/01
+                                                           Mark Scheme · Predicted Paper 1 (Advanced) | 4EC1/01
 
            generates positive externalities (1)
            Accept any other appropriate response (e.g. examples such as
@@ -267,17 +267,17 @@ number     externalities such as carbon emissions.
            Indicative content
 2(g)                           AO2 (3 marks) / AO3 (3 marks) / AO4 (3 marks)
             • Negative externalities are costs imposed on third parties as a result of
-              production/consumption — carbon emissions are an example because they
+              production/consumption · carbon emissions are an example because they
               contribute to climate change affecting society at large.
             • Tradable permits place a cap on total emissions and allow firms to buy or sell
 
 
                                                   Page 7
-                                                         Mark Scheme — Predicted Paper 1 (Advanced) | 4EC1/01
+                                                         Mark Scheme · Predicted Paper 1 (Advanced) | 4EC1/01
 
                  permits, meaning the market decides how emission cuts are made.
               • Firms that can cut emissions cheaply have an incentive to do so and sell their
-                spare permits, so reductions are made at the lowest cost — this is economically
+                spare permits, so reductions are made at the lowest cost · this is economically
                 efficient.
               • The cap guarantees an overall fall in emissions, which directly addresses the
                 externality.
@@ -290,7 +290,7 @@ number     externalities such as carbon emissions.
                 to plan long-term investment in low-carbon technology.
               • Free allocation of permits to some industries (e.g. heavy manufacturing) weakens
                 the price signal and undermines the policy.
-              • Monitoring and enforcing the cap requires administrative resources — there is an
+              • Monitoring and enforcing the cap requires administrative resources · there is an
                 opportunity cost and the risk of fraud.
               • Regulation (e.g. strict emission limits) gives more certainty on outcomes and may
                 be easier to enforce, even if less cost-efficient.
@@ -325,7 +325,7 @@ Level 3   7–9          • Demonstrates clear knowledge and understanding by d
 
 
                                                 Page 8
-                                                 Mark Scheme — Predicted Paper 1 (Advanced) | 4EC1/01
+                                                 Mark Scheme · Predicted Paper 1 (Advanced) | 4EC1/01
 
 Level   Mark   Descriptor
                   points. Appropriate application of economic terms, concepts, theories
@@ -339,7 +339,7 @@ Level   Mark   Descriptor
 
 
                                         Page 9
-                                                        Mark Scheme — Predicted Paper 1 (Advanced) | 4EC1/01
+                                                        Mark Scheme · Predicted Paper 1 (Advanced) | 4EC1/01
 
 
 Question   Which is most likely to cause a decrease in demand for labour?               Mark
@@ -376,7 +376,7 @@ number     Answer
 
 
                                               Page 10
-                                                            Mark Scheme — Predicted Paper 1 (Advanced) | 4EC1/01
+                                                            Mark Scheme · Predicted Paper 1 (Advanced) | 4EC1/01
 
                Award 1 mark for showing a change in price on the price axis
                Award 1 mark for showing no change in quantity on the quantity axis
@@ -389,7 +389,7 @@ number         process.
                 • Specialisation (division of labour) involves breaking the production process into
                   smaller tasks, with each worker focused on one specific task.
                 • At Rolex, individual craftsmen specialise in elements such as movement assembly,
-                  engraving or dial fitting — they develop very high skill in their narrow task.
+                  engraving or dial fitting · they develop very high skill in their narrow task.
                 • This high skill level translates into higher quality output, which is essential for
                   Rolex's reputation as a premium brand.
                 • Specialisation also raises productivity because skilled workers complete their
@@ -425,7 +425,7 @@ Level 3    5–6           • Demonstrates clear knowledge and understanding by
 
 
                                                   Page 11
-                                                            Mark Scheme — Predicted Paper 1 (Advanced) | 4EC1/01
+                                                            Mark Scheme · Predicted Paper 1 (Advanced) | 4EC1/01
 
 
 Question       Assess whether demand is likely to be more price elastic for designer branded
@@ -435,13 +435,13 @@ number         clothing than for bread.
                 • Price elasticity of demand (PED) measures the responsiveness of quantity
                   demanded to a change in price.
                 • Designer clothing, such as Gucci or Balenciaga, is a luxury and takes up a large
-                  share of consumer income, making demand responsive to price changes —
+                  share of consumer income, making demand responsive to price changes ·
                   therefore more price elastic.
                 • Designer clothing has close substitutes: consumers can switch to cheaper branded
                   or non-branded clothing if the price of Gucci rises, reinforcing elasticity.
                 • Bread, by contrast, is a necessity and a staple food. Consumers must continue
                   buying it to meet basic dietary needs, making demand price inelastic.
-                • Bread is inexpensive — a small percentage rise in price means only a small
+                • Bread is inexpensive · a small percentage rise in price means only a small
                   absolute increase in spending, so quantity demanded changes little.
                 • Demand for designer branded clothing is therefore likely to be more price elastic
                   than demand for bread.
@@ -454,7 +454,7 @@ number         clothing than for bread.
                 • Own-brand supermarket bread may have price elastic demand even though bread
                   overall is a necessity, because customers can easily switch between supermarket
                   brands.
-                • In the long run, fashions change — consumers may become less attached to
+                • In the long run, fashions change · consumers may become less attached to
                   specific designer labels, raising elasticity over time.
                 • On balance, designer branded clothing is typically more price elastic than bread,
                   but within each market the elasticity depends on the brand, the consumer group
@@ -475,7 +475,7 @@ Level 1    1–3           • Demonstrates basic knowledge and understanding by
 
 
                                                   Page 12
-                                                    Mark Scheme — Predicted Paper 1 (Advanced) | 4EC1/01
+                                                    Mark Scheme · Predicted Paper 1 (Advanced) | 4EC1/01
 
 Level     Mark   Descriptor
 Level 2   4–6     • Demonstrates partial knowledge and understanding by developing
@@ -500,7 +500,7 @@ Level 3   7–9     • Demonstrates clear knowledge and understanding by develo
 
 
                                           Page 13
-                                                            Mark Scheme — Predicted Paper 1 (Advanced) | 4EC1/01
+                                                            Mark Scheme · Predicted Paper 1 (Advanced) | 4EC1/01
 
 
 Question       Calculate the daily total revenue earned by the airline.                     Mark
@@ -520,18 +520,18 @@ Question       Analyse how internal economies of scale may lead to benefits for 
 number         Indicative content
 4(b)                                       AO2 (3 marks) / AO3 (3 marks)
                 • Internal economies of scale occur when average costs fall as a firm expands its
-                  output — examples include purchasing, marketing, technical, managerial,
+                  output · examples include purchasing, marketing, technical, managerial,
                   financial and risk-bearing economies.
                 • Samsung's global scale means it buys components (e.g. glass, semiconductors) in
-                  very large quantities, earning substantial bulk discounts — purchasing economies.
+                  very large quantities, earning substantial bulk discounts · purchasing economies.
                 • The firm invests $30 billion per year in R&D, which is spread over millions of units
                   sold worldwide, lowering the average R&D cost per device.
-                • The highly automated Pyeongtaek semiconductor plant is a technical economy —
+                • The highly automated Pyeongtaek semiconductor plant is a technical economy ·
                   such advanced plants only become cost-effective at high volumes.
                 • Marketing costs for global campaigns are spread over a vast output, lowering the
                   average marketing cost per unit.
                 • Risk-bearing economies arise because Samsung's product portfolio spans
-                  smartphones, TVs, chips and appliances — weakness in one segment can be offset
+                  smartphones, TVs, chips and appliances · weakness in one segment can be offset
                   by another.
                 • All these economies reduce Samsung's average costs, allowing lower prices,
                   higher margins or greater investment in future products.
@@ -549,7 +549,7 @@ Level 1    1–2           • Demonstrates basic knowledge and understanding by
 Level 2    3–4           • Demonstrates partial knowledge and understanding by developing
 
                                                   Page 14
-                                                    Mark Scheme — Predicted Paper 1 (Advanced) | 4EC1/01
+                                                    Mark Scheme · Predicted Paper 1 (Advanced) | 4EC1/01
 
 Level     Mark   Descriptor
                     relevant points. Partial application of economic terms, concepts, theories
@@ -567,7 +567,7 @@ Level 3   5–6     • Demonstrates clear knowledge and understanding by develo
 
 
                                           Page 15
-                                                            Mark Scheme — Predicted Paper 1 (Advanced) | 4EC1/01
+                                                            Mark Scheme · Predicted Paper 1 (Advanced) | 4EC1/01
 
 
 Question       Evaluate whether consumers in Kenya are likely to have benefited from the
@@ -582,7 +582,7 @@ number         deregulation of the telecommunications industry.
                   to cut prices to win customers, directly benefiting consumers.
                 • Mobile phone ownership has risen from a very low base to over 95% of adults,
                   giving consumers access to services they could not previously afford.
-                • Competition has driven innovation — M-PESA transformed financial access,
+                • Competition has driven innovation · M-PESA transformed financial access,
                   allowing millions of previously unbanked Kenyans to send money, receive wages
                   and save digitally.
                 • Greater product choice (more networks, more tariffs, new services) gives
@@ -590,21 +590,21 @@ number         deregulation of the telecommunications industry.
                 • Therefore, consumers appear to have benefited significantly from deregulation.
                 • AO4
                 • However, critics argue that market power has concentrated in a small number of
-                  firms — Safaricom in particular has a dominant share, creating oligopolistic
+                  firms · Safaricom in particular has a dominant share, creating oligopolistic
                   conditions where prices are no longer pushed as aggressively.
                 • Rural users still face limited coverage and higher prices because providers focus
-                  investment on more profitable urban areas — so benefits are uneven.
+                  investment on more profitable urban areas · so benefits are uneven.
                 • Without effective regulation, a dominant firm can exploit its position, reducing
                   consumer welfare compared with a competitive market.
                 • Deregulation can also reduce quality standards if firms compete only on price and
                   cut investment in network reliability.
                 • Some former state employees may have lost jobs during the restructuring of the
-                  industry — an important distributional cost, though outside the direct scope of
+                  industry · an important distributional cost, though outside the direct scope of
                   consumer welfare.
                 • The overall outcome depends on the strength of the Kenyan communications
                   regulator and whether it prevents dominant firms abusing their position. On
-                  balance, most consumers in Kenya have clearly benefited — prices are lower and
-                  services are broader — but the gains are less evenly spread in rural areas, and
+                  balance, most consumers in Kenya have clearly benefited · prices are lower and
+                  services are broader · but the gains are less evenly spread in rural areas, and
                   continued regulatory vigilance is needed to preserve competition.
 
 
@@ -616,7 +616,7 @@ Level 1    1–4           • Demonstrates isolated elements of relevant knowle
                          • Information presented will lack selectivity and organisation. Chain of
 
                                                   Page 16
-                                                   Mark Scheme — Predicted Paper 1 (Advanced) | 4EC1/01
+                                                   Mark Scheme · Predicted Paper 1 (Advanced) | 4EC1/01
 
 Level     Mark   Descriptor
                     reasoning may be attempted. Interpretation of economic information will

@@ -10,16 +10,16 @@ import type { PredictedPaper } from "./predictedPapersLibrary";
  */
 export const cambridgePredictedPapers: PredictedPaper[] = [
   // ─────────────────────────────────────────────────────────────────
-  // PAPER 1 — AS Multiple Choice (9708/P1) — 30 × 1 mark = 30 marks
+  // PAPER 1 · AS Multiple Choice (9708/P1) · 30 × 1 mark = 30 marks
   // ─────────────────────────────────────────────────────────────────
   {
     id: "caie-p1-set-a",
     subject: "cambridge" as any,
     paper: "1",
-    title: "Paper 1 MCQ (AS) — Set A (Moderate)",
+    title: "Paper 1 MCQ (AS) · Set A (Moderate)",
     description: "30 multiple-choice questions covering AS microeconomics and macroeconomics.",
     totalMarks: 30,
-    content: `# Cambridge International AS Economics (9708) — Paper 1 Multiple Choice — Set A
+    content: `# Cambridge International AS Economics (9708) · Paper 1 Multiple Choice · Set A
 
 **Time: 1 hour | Total: 30 marks**
 
@@ -241,10 +241,10 @@ Which is an argument against the use of import tariffs?
     id: "caie-p1-set-b",
     subject: "cambridge" as any,
     paper: "1",
-    title: "Paper 1 MCQ (AS) — Set B (Hard)",
+    title: "Paper 1 MCQ (AS) · Set B (Hard)",
     description: "30 MCQs with sharper data, calculation and discrimination across all AS topics.",
     totalMarks: 30,
-    content: `# Cambridge International AS Economics (9708) — Paper 1 Multiple Choice — Set B
+    content: `# Cambridge International AS Economics (9708) · Paper 1 Multiple Choice · Set B
 
 **Time: 1 hour | Total: 30 marks**
 
@@ -466,10 +466,10 @@ Which is most likely to be a consequence of an export subsidy?
     id: "caie-p1-set-c",
     subject: "cambridge" as any,
     paper: "1",
-    title: "Paper 1 MCQ (AS) — Set C (Advanced)",
+    title: "Paper 1 MCQ (AS) · Set C (Advanced)",
     description: "30 MCQs at the highest difficulty: synoptic, evaluative, and calculation-led.",
     totalMarks: 30,
-    content: `# Cambridge International AS Economics (9708) — Paper 1 Multiple Choice — Set C
+    content: `# Cambridge International AS Economics (9708) · Paper 1 Multiple Choice · Set C
 
 **Time: 1 hour | Total: 30 marks**
 
@@ -688,23 +688,23 @@ A small open economy with a fixed exchange rate is experiencing both a current a
   },
 
   // ─────────────────────────────────────────────────────────────────
-  // PAPER 2 — AS Data Response & Essays (9708/P2) — 60 marks
+  // PAPER 2 · AS Data Response & Essays (9708/P2) · 60 marks
   // Section A: Q1 (a–e) = 20 marks  |  Section B: Q2 OR Q3 = 20  |  Section C: Q4 OR Q5 = 20
   // ─────────────────────────────────────────────────────────────────
   {
     id: "caie-p2-set-a",
     subject: "cambridge" as any,
     paper: "2",
-    title: "Paper 2 Data Response & Essays — Set A (Moderate)",
+    title: "Paper 2 Data Response & Essays · Set A (Moderate)",
     description: "AS data-response on the UK cost-of-living crisis, plus structured essays.",
     totalMarks: 60,
-    content: `# Cambridge International AS & A Level Economics (9708/02M) — Paper 2 AS Data Response and Essays — Predicted Paper 2026
+    content: `# Cambridge International AS & A Level Economics (9708/02M) · Paper 2 AS Data Response and Essays · Predicted Paper 2026
 
 **Time: 2 hours | Total: 60 marks**
 
-Answer **three** questions in total: Section A — Question 1; Section B — one question; Section C — one question.
+Answer **three** questions in total: Section A · Question 1; Section B · one question; Section C · one question.
 
-## Section A — Answer all parts of question 1
+## Section A · Answer all parts of question 1
 
 ### The United Kingdom and the cost-of-living crisis
 
@@ -712,7 +712,7 @@ Between 2021 and 2023, the United Kingdom experienced one of the sharpest rises 
 
 In response, the Bank of England raised its official Bank Rate from 0.1% in December 2021 to 5.25% by August 2023, the highest level since the 2008 financial crisis. The UK government also introduced an 'Energy Price Guarantee' to limit the average annual household energy bill, at a cost estimated at over £30 billion. Some commentators argued that further rises in the minimum wage, which increased by 9.7% in April 2023, would feed through into a wage–price spiral. Others suggested that supply-side measures would be more effective in reducing inflation over the medium term.
 
-**Table 1.1 — UK CPI annual inflation rate (%), selected months**
+**Table 1.1 · UK CPI annual inflation rate (%), selected months**
 
 | Month / Year | CPI inflation rate (%) |
 |---|---|
@@ -743,7 +743,7 @@ Assess the extent to which supply-side shocks, such as rising global energy pric
 Question 1f [6 marks]
 Assess the extent to which raising the Bank Rate is likely to be effective in reducing the UK's rate of inflation.
 
-## Section B — Answer one question
+## Section B · Answer one question
 
 Question 2a [8 marks]
 **EITHER** Explain what is meant by price elasticity of demand (PED) and consider why PED varies between different goods.
@@ -757,7 +757,7 @@ Question 3a [8 marks]
 Question 3b [12 marks]
 Assess whether indirect taxation is the most effective way for a government to reduce negative externalities of production.
 
-## Section C — Answer one question
+## Section C · Answer one question
 
 Question 4a [8 marks]
 **EITHER** Using an AD/AS diagram, explain how an increase in business confidence in the UK might affect the level of economic activity, and consider one factor that could limit this effect.
@@ -777,16 +777,16 @@ Assess the extent to which a persistent current account surplus is always benefi
     id: "caie-p2-set-b",
     subject: "cambridge" as any,
     paper: "2",
-    title: "Paper 2 Data Response & Essays — Set B (Hard)",
+    title: "Paper 2 Data Response & Essays · Set B (Hard)",
     description: "AS data-response on Germany's energy crisis, plus harder essay options.",
     totalMarks: 60,
-    content: `# Cambridge International AS & A Level Economics (9708/02H) — Paper 2 AS Data Response and Essays — Predicted Paper 2026
+    content: `# Cambridge International AS & A Level Economics (9708/02H) · Paper 2 AS Data Response and Essays · Predicted Paper 2026
 
 **Time: 2 hours | Total: 60 marks**
 
-Answer **three** questions in total: Section A — Question 1; Section B — one question; Section C — one question.
+Answer **three** questions in total: Section A · Question 1; Section B · one question; Section C · one question.
 
-## Section A — Answer all parts of question 1
+## Section A · Answer all parts of question 1
 
 ### Germany's energy crisis and the green transition
 
@@ -794,7 +794,7 @@ Germany, Europe's largest economy, has faced a severe energy crisis since 2022. 
 
 In response, the German government introduced a €200 billion 'economic defence shield' including a gas price cap for households and industry, subsidies for energy-saving investment, and accelerated permits for renewable energy projects. The government also pursued a policy of diversifying gas supplies via new liquefied natural gas (LNG) terminals. At the same time, the European Central Bank (ECB) raised its main refinancing rate from 0.00% in July 2022 to 4.50% by September 2023, to combat inflation across the Eurozone, which had reached a peak of 10.6% in October 2022. Some commentators warned that high energy costs, combined with tighter monetary policy, risked tipping Germany into a prolonged recession and damaging its industrial base.
 
-**Table 1.1 — Germany: selected macroeconomic indicators**
+**Table 1.1 · Germany: selected macroeconomic indicators**
 
 | Indicator | 2021 | 2022 | 2023 |
 |---|---|---|---|
@@ -824,7 +824,7 @@ Assess the extent to which a simultaneous rise in ECB interest rates and a fall 
 Question 1f [6 marks]
 Assess whether subsidies for renewable energy are a more effective long-term response to energy insecurity than building new LNG import terminals.
 
-## Section B — Answer one question
+## Section B · Answer one question
 
 Question 2a [8 marks]
 **EITHER** Explain, with examples, how negative externalities of consumption and negative externalities of production differ, and consider why they can both lead to market failure in a free market economy.
@@ -838,7 +838,7 @@ Question 3a [8 marks]
 Question 3b [12 marks]
 Assess the extent to which a rise in the statutory minimum wage will always lead to a fall in employment in a developed economy such as the UK.
 
-## Section C — Answer one question
+## Section C · Answer one question
 
 Question 4a [8 marks]
 **EITHER** Using an AD/AS diagram, explain how a simultaneous rise in oil prices and a fall in consumer confidence in the EU might affect real GDP and the price level, and consider which effect is likely to be greater.
@@ -858,24 +858,24 @@ In 2018 the United States imposed tariffs on imports from China to reduce its cu
     id: "caie-p2-set-c",
     subject: "cambridge" as any,
     paper: "2",
-    title: "Paper 2 Data Response & Essays — Set C (Advanced)",
+    title: "Paper 2 Data Response & Essays · Set C (Advanced)",
     description: "AS data-response on the US 2023–24 policy dilemma, plus advanced essays.",
     totalMarks: 60,
-    content: `# Cambridge International AS & A Level Economics (9708/02A) — Paper 2 AS Data Response and Essays — Predicted Paper 2026
+    content: `# Cambridge International AS & A Level Economics (9708/02A) · Paper 2 AS Data Response and Essays · Predicted Paper 2026
 
 **Time: 2 hours | Total: 60 marks**
 
-Answer **three** questions in total: Section A — Question 1; Section B — one question; Section C — one question.
+Answer **three** questions in total: Section A · Question 1; Section B · one question; Section C · one question.
 
-## Section A — Answer all parts of question 1
+## Section A · Answer all parts of question 1
 
 ### The United States economy: a policy dilemma in 2023–2024
 
-The United States economy has faced an unusual combination of conditions since 2022. Headline CPI inflation peaked at 9.1% in June 2022 — a 40-year high — before declining to 3.2% by October 2023. Nevertheless, 'core' inflation (excluding food and energy) remained persistently above 4%, and the Federal Reserve raised its federal funds target range from 0.00–0.25% in March 2022 to 5.25–5.50% by July 2023. Unemployment remained near historic lows at 3.7%, whilst the labour force participation rate rose back to its pre-pandemic level. Wage growth averaged 4.5% annually, which some economists argued was sustaining inflationary pressure through a 'wage-driven' channel rather than a traditional wage–price spiral.
+The United States economy has faced an unusual combination of conditions since 2022. Headline CPI inflation peaked at 9.1% in June 2022 · a 40-year high · before declining to 3.2% by October 2023. Nevertheless, 'core' inflation (excluding food and energy) remained persistently above 4%, and the Federal Reserve raised its federal funds target range from 0.00–0.25% in March 2022 to 5.25–5.50% by July 2023. Unemployment remained near historic lows at 3.7%, whilst the labour force participation rate rose back to its pre-pandemic level. Wage growth averaged 4.5% annually, which some economists argued was sustaining inflationary pressure through a 'wage-driven' channel rather than a traditional wage–price spiral.
 
-At the same time, the US dollar appreciated by over 15% against a basket of currencies between January 2022 and October 2023, raising concerns in emerging markets about capital outflows and higher dollar-denominated debt burdens. The Biden administration enacted the Inflation Reduction Act (2022), a $369 billion package of climate and clean-energy subsidies, and the CHIPS Act, which provided $52 billion in semiconductor manufacturing subsidies. Critics argued these fiscal measures worked against the Federal Reserve's tightening. Commentators disagreed on whether the US could achieve a 'soft landing' — bringing inflation to target without a recession — or whether a 'hard landing' with higher unemployment was unavoidable.
+At the same time, the US dollar appreciated by over 15% against a basket of currencies between January 2022 and October 2023, raising concerns in emerging markets about capital outflows and higher dollar-denominated debt burdens. The Biden administration enacted the Inflation Reduction Act (2022), a $369 billion package of climate and clean-energy subsidies, and the CHIPS Act, which provided $52 billion in semiconductor manufacturing subsidies. Critics argued these fiscal measures worked against the Federal Reserve's tightening. Commentators disagreed on whether the US could achieve a 'soft landing' · bringing inflation to target without a recession · or whether a 'hard landing' with higher unemployment was unavoidable.
 
-**Table 1.1 — United States: key macroeconomic and labour-market data**
+**Table 1.1 · United States: key macroeconomic and labour-market data**
 
 | Indicator | 2021 | 2022 | 2023 |
 |---|---|---|---|
@@ -907,7 +907,7 @@ Assess the extent to which the appreciation of the US dollar between 2022 and 20
 Question 1f [6 marks]
 Assess the extent to which simultaneous expansionary fiscal policy (through the Inflation Reduction Act and CHIPS Act) and contractionary monetary policy would make it more difficult for the US to achieve a 'soft landing'.
 
-## Section B — Answer one question
+## Section B · Answer one question
 
 Question 2a [8 marks]
 **EITHER** With the help of diagrams, explain the concepts of consumer surplus and producer surplus, and consider the effect of a maximum price set below the market equilibrium on the distribution of economic welfare.
@@ -921,7 +921,7 @@ Question 3a [8 marks]
 Question 3b [12 marks]
 Assess whether direct provision by the government is always the most efficient way to correct market failures associated with merit goods such as healthcare and education in a developed economy.
 
-## Section C — Answer one question
+## Section C · Answer one question
 
 Question 4a [8 marks]
 **EITHER** Using an AD/AS diagram, explain the difference between demand-side and supply-side causes of economic growth, and consider which is likely to be a more sustainable source of rising living standards.
@@ -938,16 +938,16 @@ The Eurozone uses a single currency whilst the UK maintains a floating pound ste
   },
 
   // ─────────────────────────────────────────────────────────────────
-  // PAPER 3 — A2 Multiple Choice (9708/P3) — 30 × 1 mark = 30 marks
+  // PAPER 3 · A2 Multiple Choice (9708/P3) · 30 × 1 mark = 30 marks
   // ─────────────────────────────────────────────────────────────────
   {
     id: "caie-p3-set-a",
     subject: "cambridge" as any,
     paper: "3",
-    title: "Paper 3 MCQ (A2) — Set A (Moderate)",
+    title: "Paper 3 MCQ (A2) · Set A (Moderate)",
     description: "30 A2 multiple-choice questions covering microeconomics, macroeconomics, trade and development.",
     totalMarks: 30,
-    content: `# Cambridge International A Level Economics (9708/03M) — Paper 3 A Level Multiple Choice — Predicted Paper Set A (Moderate)
+    content: `# Cambridge International A Level Economics (9708/03M) · Paper 3 A Level Multiple Choice · Predicted Paper Set A (Moderate)
 
 **Time: 1 hour 15 minutes | Total: 30 marks**
 
@@ -1169,10 +1169,10 @@ A depreciation of the UK pound against the euro is likely to:
     id: "caie-p3-set-b",
     subject: "cambridge" as any,
     paper: "3",
-    title: "Paper 3 MCQ (A2) — Set B (Hard)",
+    title: "Paper 3 MCQ (A2) · Set B (Hard)",
     description: "30 A2 MCQs with calculation and synoptic reasoning across all A Level topics.",
     totalMarks: 30,
-    content: `# Cambridge International A Level Economics (9708/03H) — Paper 3 A Level Multiple Choice — Predicted Paper Set B (Hard)
+    content: `# Cambridge International A Level Economics (9708/03H) · Paper 3 A Level Multiple Choice · Predicted Paper Set B (Hard)
 
 **Time: 1 hour 15 minutes | Total: 30 marks**
 
@@ -1394,10 +1394,10 @@ Which of the following would most effectively reduce absolute poverty in a devel
     id: "caie-p3-set-c",
     subject: "cambridge" as any,
     paper: "3",
-    title: "Paper 3 MCQ (A2) — Set C (Advanced)",
+    title: "Paper 3 MCQ (A2) · Set C (Advanced)",
     description: "30 A2 MCQs at the highest difficulty: synoptic, evaluative, and theory-led.",
     totalMarks: 30,
-    content: `# Cambridge International A Level Economics (9708/03A) — Paper 3 A Level Multiple Choice — Predicted Paper Set C (Advanced)
+    content: `# Cambridge International A Level Economics (9708/03A) · Paper 3 A Level Multiple Choice · Predicted Paper Set C (Advanced)
 
 **Time: 1 hour 15 minutes | Total: 30 marks**
 

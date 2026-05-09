@@ -10,7 +10,7 @@ export default function EconExchangeRateINR() {
           <marker id="erRedD" markerWidth="7" markerHeight="9" refX="3.5" refY="8" orient="auto-start-reverse"><polygon points="0 9,3.5 0,7 9" fill="#cc2222"/></marker>
         </defs>
         <rect width="680" height="560" fill="#fff"/>
-        <text x="340" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Exchange Rate Determination — Indian Rupee</text>
+        <text x="340" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Exchange Rate Determination · Indian Rupee</text>
         <text x="340" y="48" textAnchor="middle" fontSize="12" fill="#555">FDI inflows + rising service exports → demand for INR rises → rupee appreciates</text>
         <line x1="90" y1="460" x2="90" y2="48" stroke="#111" strokeWidth="2.2" markerEnd="url(#erU)"/>
         <line x1="90" y1="460" x2="602" y2="460" stroke="#111" strokeWidth="2.2" markerEnd="url(#erR)"/>

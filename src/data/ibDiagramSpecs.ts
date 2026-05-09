@@ -34,11 +34,11 @@ const C = {
 export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
 
   /* ══════════════════════════════════════════
-     A. INTRODUCTORY — PPC / PPF
+     A. INTRODUCTORY · PPC / PPF
      ══════════════════════════════════════════ */
 
   ib_ppc_basic: {
-    title: "PPC — Scarcity, Choice & Opportunity Cost",
+    title: "PPC · Scarcity, Choice & Opportunity Cost",
     axisLabels: { x: "Good X", y: "Good Y" },
     curves: [
       { id: "PPC", label: "PPC", params: { type: "quadratic", a: -0.12, b: -0.1, c: 9 }, color: C.supply },
@@ -61,7 +61,7 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   ib_ppc_growth: {
-    title: "PPC — Economic Growth (Outward Shift)",
+    title: "PPC · Economic Growth (Outward Shift)",
     axisLabels: { x: "Consumer Goods", y: "Capital Goods" },
     curves: [
       { id: "PPC1", label: "PPC₁", params: { type: "quadratic", a: -0.12, b: -0.1, c: 8 }, color: C.supply },
@@ -81,7 +81,7 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     B. MICROECONOMICS — DEMAND & SUPPLY
+     B. MICROECONOMICS · DEMAND & SUPPLY
      ══════════════════════════════════════════ */
 
   ib_demand_shift: {
@@ -236,7 +236,7 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     examTips: [
       "Must be below equilibrium to be effective",
       "Creates excess demand (shortage)",
-      "IB: discuss welfare effects — some consumers gain, others lose",
+      "IB: discuss welfare effects · some consumers gain, others lose",
     ],
   },
 
@@ -314,7 +314,7 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       },
     ],
     sanityChecks: [{ description: "Qopt < Qm (overconsumption)", check: { eq1: "Qopt", eq2: "Qm", axis: "x", relation: "<" } }],
-    notes: "MSB < MPB — consumers ignore external costs to third parties (e.g. passive smoking). Overconsumption at free market.",
+    notes: "MSB < MPB · consumers ignore external costs to third parties (e.g. passive smoking). Overconsumption at free market.",
   },
 
   ib_positive_prod_ext: {
@@ -339,7 +339,7 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       },
     ],
     sanityChecks: [{ description: "Qm < Qopt (underproduction)", check: { eq1: "Qm", eq2: "Qopt", axis: "x", relation: "<" } }],
-    notes: "MSC < MPC — production generates external benefits (e.g. R&D spillovers). Free market underproduces.",
+    notes: "MSC < MPC · production generates external benefits (e.g. R&D spillovers). Free market underproduces.",
   },
 
   ib_positive_cons_ext: {
@@ -364,7 +364,7 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       },
     ],
     sanityChecks: [{ description: "Qm < Qopt (underconsumption)", check: { eq1: "Qm", eq2: "Qopt", axis: "x", relation: "<" } }],
-    notes: "MSB > MPB — consumption generates external benefits (e.g. education, vaccination). Free market underconsumes.",
+    notes: "MSB > MPB · consumption generates external benefits (e.g. education, vaccination). Free market underconsumes.",
     examTips: [
       "MSB above MPB = external benefits to third parties",
       "Free market: MPB = MPC → underconsumption",
@@ -378,7 +378,7 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      ══════════════════════════════════════════ */
 
   ib_monopoly: {
-    title: "Monopoly — Profit Maximisation (HL)",
+    title: "Monopoly · Profit Maximisation (HL)",
     axisLabels: { x: "Quantity (Q)", y: "Cost / Revenue" },
     curves: [
       { id: "AR", label: "AR = D", params: { type: "linear", slope: -0.6, intercept: 9 }, color: C.demand },
@@ -404,7 +404,7 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   ib_perfect_comp: {
-    title: "Perfect Competition — Long Run (HL)",
+    title: "Perfect Competition · Long Run (HL)",
     axisLabels: { x: "Quantity (Q)", y: "Cost / Revenue" },
     curves: [
       { id: "MC", label: "MC", params: { type: "quadratic", a: 0.15, b: -1.2, c: 5 }, color: C.supply },
@@ -416,14 +416,14 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     ],
     notes: "LR equilibrium: P = MC = min ATC. Normal profit only. Allocatively and productively efficient.",
     examTips: [
-      "HL: firms are price takers — horizontal AR = MR",
+      "HL: firms are price takers · horizontal AR = MR",
       "LR: entry/exit drives profit to zero",
       "Both allocative (P = MC) and productive (min ATC) efficiency",
     ],
   },
 
   ib_monopolistic_comp: {
-    title: "Monopolistic Competition — LR (HL)",
+    title: "Monopolistic Competition · LR (HL)",
     axisLabels: { x: "Quantity (Q)", y: "Cost / Revenue" },
     curves: [
       { id: "AR", label: "AR = D", params: { type: "linear", slope: -0.5, intercept: 8 }, color: C.demand },
@@ -434,7 +434,7 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     equilibria: [
       { id: "E", label: "E", curve1: "MC", curve2: "MR", color: C.eq, pLabel: "P", qLabel: "Q" },
     ],
-    notes: "LR: AR tangent to ATC — normal profit only. Neither allocatively nor productively efficient. Excess capacity.",
+    notes: "LR: AR tangent to ATC · normal profit only. Neither allocatively nor productively efficient. Excess capacity.",
     examTips: [
       "HL: AR is tangent to ATC in LR (not intersecting)",
       "Normal profit: no incentive for entry or exit",
@@ -443,11 +443,11 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     C. MACROECONOMICS — AD/AS
+     C. MACROECONOMICS · AD/AS
      ══════════════════════════════════════════ */
 
   ib_ad_increase: {
-    title: "AD Increase — Demand-Pull Pressure",
+    title: "AD Increase · Demand-Pull Pressure",
     axisLabels: { x: "Real GDP (Y)", y: "Price Level (PL)" },
     curves: [
       { id: "AD1", label: "AD₁", params: { type: "linear", slope: -0.7, intercept: 9 }, color: C.demand },
@@ -468,7 +468,7 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   ib_sras_decrease: {
-    title: "SRAS Decrease — Cost-Push Inflation",
+    title: "SRAS Decrease · Cost-Push Inflation",
     axisLabels: { x: "Real GDP (Y)", y: "Price Level (PL)" },
     curves: [
       { id: "AD", label: "AD", params: { type: "linear", slope: -0.7, intercept: 9 }, color: C.demand },
@@ -484,7 +484,7 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   ib_lras_increase: {
-    title: "LRAS Increase — Long-Run Growth",
+    title: "LRAS Increase · Long-Run Growth",
     axisLabels: { x: "Real GDP (Y)", y: "Price Level (PL)" },
     curves: [
       { id: "AD", label: "AD", params: { type: "linear", slope: -0.7, intercept: 9 }, color: C.demand },
@@ -549,7 +549,7 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     INEQUALITY — LORENZ CURVE
+     INEQUALITY · LORENZ CURVE
      ══════════════════════════════════════════ */
 
   ib_lorenz_curve: {
@@ -575,7 +575,7 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     D. GLOBAL ECONOMY — TRADE
+     D. GLOBAL ECONOMY · TRADE
      ══════════════════════════════════════════ */
 
   ib_tariff: {
@@ -602,7 +602,7 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     examTips: [
       "HL: calculate tariff revenue, changes in CS, PS, and DWL",
       "Stakeholders: domestic producers gain, consumers lose, government gains revenue",
-      "IB: evaluate effectiveness — depends on PED, retaliation risk",
+      "IB: evaluate effectiveness · depends on PED, retaliation risk",
     ],
   },
 
@@ -649,7 +649,7 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      ══════════════════════════════════════════ */
 
   ib_exchange_rate: {
-    title: "Exchange Rate — Floating",
+    title: "Exchange Rate · Floating",
     axisLabels: { x: "Quantity of Currency", y: "Exchange Rate (ER)" },
     curves: [
       { id: "D1", label: "D₁", params: { type: "linear", slope: -0.7, intercept: 9 }, color: C.demand },
@@ -669,7 +669,7 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   ib_exchange_depreciation: {
-    title: "Exchange Rate — Depreciation",
+    title: "Exchange Rate · Depreciation",
     axisLabels: { x: "Quantity of Currency", y: "Exchange Rate (ER)" },
     curves: [
       { id: "D1", label: "D₁", params: { type: "linear", slope: -0.7, intercept: 9 }, color: C.demand },
@@ -787,7 +787,7 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      ══════════════════════════════════════════ */
 
   ib_comparative_advantage: {
-    title: "Comparative Advantage — Gains from Trade",
+    title: "Comparative Advantage · Gains from Trade",
     axisLabels: { x: "Good X", y: "Good Y" },
     curves: [
       { id: "A", label: "Country A", params: { type: "linear", slope: -0.5, intercept: 8 }, color: C.demand },
@@ -802,7 +802,7 @@ export const IB_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     examTips: [
       "Calculate opportunity costs from production data",
       "Specialise where OC is lower",
-      "IB: evaluate assumptions — transport costs, terms of trade, factor mobility",
+      "IB: evaluate assumptions · transport costs, terms of trade, factor mobility",
     ],
   },
 };

@@ -19,7 +19,7 @@
     </marker>
   </defs>
 
-  <text x="350" y="30" text-anchor="middle" class="ttl">Global Coffee Market — Decrease in Supply</text>
+  <text x="350" y="30" text-anchor="middle" class="ttl">Global Coffee Market · Decrease in Supply</text>
   <text x="350" y="50" text-anchor="middle" class="sub">Brazilian crop failure + 15% rise in fertiliser costs shift Supply left (S1 → S2)</text>
 
   <!-- Axes -->

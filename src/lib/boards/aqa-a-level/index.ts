@@ -1,5 +1,5 @@
 /**
- * AQA A-Level Economics (7136) — board definition.
+ * AQA A-Level Economics (7136) · board definition.
  *
  * IMPORTANT: This file is a thin wrapper over the existing AQA implementation
  * which lives in `src/lib/aqa-*` and `src/data/aqa*`. Those files are the
@@ -42,7 +42,7 @@ export const AQA_A_LEVEL_DEFINITION: BoardDefinition = {
   papers,
   markSchemeConvention: {
     skillFramework: "KAA+E",
-    levelBands: {}, // owned by `src/lib/aqa-levels.ts` — not duplicated here
+    levelBands: {}, // owned by `src/lib/aqa-levels.ts` · not duplicated here
     examinerAnnotations: ["KAA", "Eval", "L1", "L2", "L3", "L4", "L5"],
     descriptorStyle: "verbatim",
   },

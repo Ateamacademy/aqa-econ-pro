@@ -37,7 +37,7 @@ export default function Pricing() {
       await refreshSubscription(true);
       toast.success("Subscription refreshed", { id: t });
     } catch {
-      toast.error("Could not refresh — please try again in a moment", { id: t });
+      toast.error("Could not refresh · please try again in a moment", { id: t });
     }
   };
 
@@ -82,7 +82,7 @@ export default function Pricing() {
           <Card className="max-w-md mx-auto border-accent">
             <CardContent className="p-8">
               <Crown className="h-12 w-12 mx-auto mb-4 text-accent" />
-              <h2 className="text-2xl font-bold mb-2">Econ Rev Pro — Active</h2>
+              <h2 className="text-2xl font-bold mb-2">Econ Rev Pro · Active</h2>
               <p className="text-muted-foreground mb-6">Full access until 29 June 2026.</p>
               <Button onClick={handleManage} variant="outline">Manage Payment</Button>
             </CardContent>

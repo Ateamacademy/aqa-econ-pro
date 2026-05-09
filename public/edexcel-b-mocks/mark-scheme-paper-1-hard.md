@@ -79,11 +79,11 @@ Number
 
 
             Application: 1 mark for correctly interpreting the shift in supply to the RIGHT
-            (more providers entering the SVOD market — Disney+, Apple TV+,
+            (more providers entering the SVOD market · Disney+, Apple TV+,
             Paramount+ etc.)
 
 
-            Analysis: 1 mark for showing new equilibrium P₂ lower and Q₂ higher —
+            Analysis: 1 mark for showing new equilibrium P₂ lower and Q₂ higher ·
             more services, lower average price.
 
 
@@ -101,7 +101,7 @@ Number
 
 1 (d)                Knowledge/Understanding 2, Application 2, Analysis 2
            Knowledge/Understanding: up to 2 marks for
-               •   Identification of market structure — Oligopoly (1)
+               •   Identification of market structure · Oligopoly (1)
                •   Identification of a valid pricing strategy (1), e.g. price leadership, limit
                    pricing, penetration pricing
 
@@ -114,11 +114,11 @@ Number
 
 
            Analysis: up to 2 marks for
-               •   Oligopolies tend toward price rigidity due to interdependence — if one
+               •   Oligopolies tend toward price rigidity due to interdependence · if one
                    firm raises prices rivals may not follow, so the firm loses subscribers
                    (1)
                •   Non-price competition (original content, user experience) replaces
-                   aggressive price competition — Netflix's 2023 price rise was matched
+                   aggressive price competition · Netflix's 2023 price rise was matched
                    over time by Disney+ and Amazon, supporting a tacit parallel pricing
                    pattern (1)                                                                      (6)
 
@@ -130,17 +130,17 @@ Number
            Indicative content
            Candidates do not need to include all of these:
                •   Profit maximisation (MC=MR) provides maximum short-run return to
-                   owners and funds reinvestment in content — important for MUBI's 4%
+                   owners and funds reinvestment in content · important for MUBI's 4%
                    margin.
                •   For a small firm competing against Netflix/Disney+, profit may be
                    essential to survival, funding marketing and content acquisition.
-               •   However, MUBI's explicit strategy emphasises curation over scale —
+               •   However, MUBI's explicit strategy emphasises curation over scale ·
                    it is a differentiated product in monopolistic competition, so quality
                    signals may matter more than short-run profit.
-               •   Revenue maximisation or subscriber growth may be preferred —
+               •   Revenue maximisation or subscriber growth may be preferred ·
                    growing the base enables content bargaining power and future
                    monetisation.
-               •   Social/ethical objectives — supporting independent cinema is a
+               •   Social/ethical objectives · supporting independent cinema is a
                    cultural mission, implying a stakeholder rather than shareholder
 
 
@@ -149,12 +149,12 @@ Number
  Number
 
                         focus.
-                    •   Satisficing may be more realistic — achieving acceptable profit while
+                    •   Satisficing may be more realistic · achieving acceptable profit while
                         pursuing artistic and curatorial goals.
-                    •   Brand building/differentiation is the primary objective — MUBI's niche
+                    •   Brand building/differentiation is the primary objective · MUBI's niche
                         position depends on distinctive curation.
                     •   Long-term profit through reputation may be more important than
-                        short-run profit maximisation — the brand must remain credible to
+                        short-run profit maximisation · the brand must remain credible to
                         cinephiles.
                     •   Survival may dominate in the short term given competition from
                         services with orders-of-magnitude larger content budgets.
@@ -182,35 +182,35 @@ directly connected to the context/issues set out in the stimulus.
 
  1 (f)           Knowledge/Understanding 2, Application 2, Analysis 3, Evaluation 3                 (10)
               Indicative content
-                    •   Netflix's standard plan rose from £8.99 in 2019 to £11.99 in 2024 — a
-                        33.37% increase — shifting consumer budget constraint.
+                    •   Netflix's standard plan rose from £8.99 in 2019 to £11.99 in 2024 · a
+                        33.37% increase · shifting consumer budget constraint.
                     •   In a rising cost-of-living environment, consumers are more price
-                        sensitive — demand may become more elastic, leading to
+                        sensitive · demand may become more elastic, leading to
                         cancellations ('churn').
                     •   Brand loyalty and switching costs (watchlists, family profiles) create
-                        stickiness — Netflix can raise prices without proportional loss of
+                        stickiness · Netflix can raise prices without proportional loss of
                         subscribers.
                     •   Netflix introduced an ad-supported tier to retain price-sensitive
-                        consumers while monetising through advertising — a form of price
+                        consumers while monetising through advertising · a form of price
                         discrimination.
-                    •   Competitor actions matter — if Disney+ and Prime Video also raise
+                    •   Competitor actions matter · if Disney+ and Prime Video also raise
                         prices, consumers have fewer cheap alternatives, blunting switching.
-                    •   'Subscription stacking' is fragile — a 33% rise may push some
+                    •   'Subscription stacking' is fragile · a 33% rise may push some
                         households to churn (cancel temporarily) or drop to ad-supported
                         tiers.
                     •   Revenue impact depends on PED. If demand is inelastic, revenue
-                        rises; if elastic, revenue falls — Netflix's own data suggests demand
+                        rises; if elastic, revenue falls · Netflix's own data suggests demand
 
                                                         5
  Question                                                                                          Mark
  Number
 
                         has been relatively inelastic.
-                    •   In the long run, elasticity increases as consumers adjust — repeated
+                    •   In the long run, elasticity increases as consumers adjust · repeated
                         price rises risk eroding perceived value.
-                    •   Evaluation — effect varies by segment: students and low-income
+                    •   Evaluation · effect varies by segment: students and low-income
                         households are more elastic; heavy users are less elastic.
-                    •   Pricing power also depends on the content slate — strong releases in
+                    •   Pricing power also depends on the content slate · strong releases in
                         the year of a price rise mitigate churn.
 
  Level          Mark           Descriptor
@@ -242,19 +242,19 @@ directly connected to the context/issues set out in the stimulus.
 
  1 (g)           Knowledge/Understanding 2, Application 2, Analysis 4, Evaluation 4                 (12)
               Indicative content
-                    •   Non-price competition is central to the SVOD market — content, UI,
+                    •   Non-price competition is central to the SVOD market · content, UI,
                         recommendation algorithms, and exclusive franchises differentiate
                         services.
-                    •   Original content is the most visible form — Netflix's 'Stranger Things',
+                    •   Original content is the most visible form · Netflix's 'Stranger Things',
                         Disney's Marvel/Star Wars, Amazon's 'The Boys' drive subscriber
                         acquisition.
-                    •   Brand positioning — Disney+ markets to families; Netflix emphasises
+                    •   Brand positioning · Disney+ markets to families; Netflix emphasises
                         volume; MUBI emphasises curation.
                     •   User experience (app design, profiles, offline downloads, 4K quality)
                         is a non-price differentiator.
-                    •   Distribution deals — Amazon Prime Video is bundled with Prime
+                    •   Distribution deals · Amazon Prime Video is bundled with Prime
                         shipping, raising effective subscriber numbers.
-                    •   Advertising — Netflix spent over £1bn on marketing globally in 2023.
+                    •   Advertising · Netflix spent over £1bn on marketing globally in 2023.
                     •   Evaluation: non-price competition is very important but requires vast
 
 
@@ -262,15 +262,15 @@ directly connected to the context/issues set out in the stimulus.
  Question                                                                                        Mark
  Number
 
-                        budgets — this creates a barrier to entry for smaller rivals.
-                    •   Content exclusivity has costs — the 'streaming wars' have eroded
+                        budgets · this creates a barrier to entry for smaller rivals.
+                    •   Content exclusivity has costs · the 'streaming wars' have eroded
                         profit margins industry-wide as every major player overspends on
                         production.
                     •   For smaller operators (MUBI, BritBox) non-price differentiation
                         through curation and niche focus is essential to survival.
-                    •   Price still matters — the ad-supported tier launched by Netflix was a
+                    •   Price still matters · the ad-supported tier launched by Netflix was a
                         clear competitive response to price-sensitive consumers.
-                    •   Evaluation — segments vary: premium scripted drama is dominated
+                    •   Evaluation · segments vary: premium scripted drama is dominated
                         by non-price factors; sports streaming is more price-sensitive.
                     •   Overall, non-price competition dominates SVOD strategy, but price
                         will re-emerge as consumer budgets tighten.
@@ -304,7 +304,7 @@ directly connected to the context/issues set out in the stimulus.
 
  1 (h)           Knowledge/Understanding 2, Application 2, Analysis 4, Evaluation 4               (12)
               Indicative content
-                    •   Oligopoly features: few large firms (Netflix, Amazon, Disney+ —
+                    •   Oligopoly features: few large firms (Netflix, Amazon, Disney+ ·
                         80.5% of UK subscribers); high barriers to entry (content investment,
                         scale economies, platform effects); interdependent pricing (Extract D
                         shows matched-pattern Netflix rises); significant non-price
@@ -320,18 +320,18 @@ directly connected to the context/issues set out in the stimulus.
  Question                                                                                          Mark
  Number
 
-                    •   Concentration ratios support oligopoly — the three-firm concentration
+                    •   Concentration ratios support oligopoly · the three-firm concentration
                         ratio (CR3) is 80.5%.
                     •   However, a long tail of smaller specialist services suggests
                         fragmentation consistent with monopolistic competition.
                     •   Barriers to entry are high for generalist services (content catalogue,
                         brand) but lower for niche services (MUBI grew 18% YoY),
                         suggesting different structures at different market tiers.
-                    •   Evidence of oligopolistic behaviour — parallel pricing in Extract D
+                    •   Evidence of oligopolistic behaviour · parallel pricing in Extract D
                         (Netflix, Disney+ and Amazon all raised prices in 2023).
-                    •   Evidence of monopolistic competition — significant entry and growth
+                    •   Evidence of monopolistic competition · significant entry and growth
                         of niche services; differentiation is pervasive rather than zero.
-                    •   Evaluation — the UK SVOD market is best viewed as a segmented
+                    •   Evaluation · the UK SVOD market is best viewed as a segmented
                         market: generalist tier is oligopolistic; niche tier is monopolistically
                         competitive.
                     •   Regulatory threats (DMA, CMA action) could reduce entrenched
@@ -340,8 +340,8 @@ directly connected to the context/issues set out in the stimulus.
                     •   Technology-enabled entry (low-cost streaming infrastructure) reduces
                         fixed costs, supporting a monopolistically-competitive
                         characterisation.
-                    •   Overall: the UK SVOD market exhibits elements of both — oligopoly
-                        at the generalist level, monopolistic competition at the niche level —
+                    •   Overall: the UK SVOD market exhibits elements of both · oligopoly
+                        at the generalist level, monopolistic competition at the niche level ·
                         reflecting a market with significant but not insurmountable barriers.
 
  Level          Mark           Descriptor
@@ -377,18 +377,18 @@ Number
 2             Knowledge/Understanding 4, Application 4, Analysis 6, Evaluation 6
             Indicative content
                  •   Higher interest rates are the primary transmission mechanism of
-                     monetary policy — raising the cost of borrowing reduces AD through
+                     monetary policy · raising the cost of borrowing reduces AD through
                      consumption (C) and investment (I).
                  •   Mortgage holders refinancing at 6% face sharp increases (£200–
-                     £400/month), reducing discretionary spending — a direct negative
+                     £400/month), reducing discretionary spending · a direct negative
                      effect on aggregate demand.
-                 •   Higher rates cool the housing market — house prices fell 1.2% in
-                     2023; housebuilding starts fell — reducing the wealth effect and
+                 •   Higher rates cool the housing market · house prices fell 1.2% in
+                     2023; housebuilding starts fell · reducing the wealth effect and
                      construction employment.
-                 •   Consumer spending on non-essentials falls — retailers reporting
+                 •   Consumer spending on non-essentials falls · retailers reporting
                      trading down; streaming services reporting higher churn; hospitality
                      volumes falling. This slows GDP growth.
-                 •   Sterling may appreciate — higher rates attract foreign capital inflows,
+                 •   Sterling may appreciate · higher rates attract foreign capital inflows,
                      reducing import prices and inflation but damaging exporter
                      competitiveness.
                  •   Impact on inflation: the goal of the tightening cycle; inflation peaked at
@@ -398,19 +398,19 @@ Number
                      net interest margins).
                  •   Losers: mortgage holders; first-time buyers (unaffordability);
                      leveraged firms; the construction sector.
-                 •   Distributional effects — young households (more likely to be
+                 •   Distributional effects · young households (more likely to be
                      mortgaged) lose; older asset-rich households gain. This may worsen
                      intergenerational inequality.
-                 •   Business investment falls — higher hurdle rates reduce capital
+                 •   Business investment falls · higher hurdle rates reduce capital
                      expenditure. This harms long-run productive potential.
-                 •   Government debt servicing costs rise — the UK's interest burden has
+                 •   Government debt servicing costs rise · the UK's interest burden has
                      increased significantly, constraining fiscal space.
-                 •   Evaluation — monetary policy operates with long and variable lags;
+                 •   Evaluation · monetary policy operates with long and variable lags;
                      the full effect of 2022–23 tightening may not yet be visible.
-                 •   Evaluation — external factors (energy prices, global supply chains)
+                 •   Evaluation · external factors (energy prices, global supply chains)
                      contributed to UK inflation; monetary policy cannot address supply
                      shocks directly and may over-tighten.
-                 •   Evaluation — impact depends on how quickly inflation falls to target; if
+                 •   Evaluation · impact depends on how quickly inflation falls to target; if
                      successful, real incomes recover and activity rebounds.
                  •   Overall, the rapid rise in interest rates has been effective in cooling
                      demand-led inflation but has imposed real short-run costs on
@@ -460,40 +460,40 @@ Number
 3             Knowledge/Understanding 4, Application 4, Analysis 6, Evaluation 6
             Indicative content
                  •   DMA and UK DMCC Act aim to address market failures from
-                     gatekeeper platforms — self-preferencing, bundling, and exclusionary
+                     gatekeeper platforms · self-preferencing, bundling, and exclusionary
                      conduct reduce allocative efficiency.
-                 •   Smaller streamers (MUBI, BritBox) may benefit — reduced app-store
+                 •   Smaller streamers (MUBI, BritBox) may benefit · reduced app-store
                      fees (typically 30%) improve their margins and increase consumer
                      price choice.
                  •   Price-transparency and easier cancellation rules reduce consumer
-                     'inertia pricing' — correcting information asymmetry and improving
+                     'inertia pricing' · correcting information asymmetry and improving
                      consumer welfare.
                  •   Content minimums (if imposed) support UK production, preserving
-                     cultural capital and regional jobs — a positive externality.
-                 •   Competition effects — interoperability and non-discrimination could
+                     cultural capital and regional jobs · a positive externality.
+                 •   Competition effects · interoperability and non-discrimination could
                      lead to lower prices and greater choice in the long run.
-                 •   However, regulation imposes compliance costs — smaller firms may
+                 •   However, regulation imposes compliance costs · smaller firms may
                      find regulatory burdens disproportionately expensive, offsetting some
                      benefits.
-                 •   Content minimums could deter investment — global streamers may
+                 •   Content minimums could deter investment · global streamers may
                      reduce UK-specific content if quotas bind, harming the industry the
                      rule is meant to protect.
                  •   Price-transparency rules could reduce revenue for streamers by
-                     eliminating passive subscribers — a redistribution from firms to
+                     eliminating passive subscribers · a redistribution from firms to
                      consumers.
                  •   Regulatory uncertainty may deter new entrants or delay UK
-                     investment decisions — a negative effect on innovation.
-                 •   Government failure risks — rules may be poorly designed,
+                     investment decisions · a negative effect on innovation.
+                 •   Government failure risks · rules may be poorly designed,
                      enforcement may lag market innovation, and lobbying may skew
                      outcomes.
-                 •   International considerations — divergence from EU rules creates
+                 •   International considerations · divergence from EU rules creates
                      compliance complexity; alignment reduces this but limits UK flexibility.
-                 •   Distributional impact — consumers benefit from transparency;
+                 •   Distributional impact · consumers benefit from transparency;
                      platforms lose; UK producers may benefit from content minimums.
-                 •   Evaluation — effectiveness depends on enforcement capacity of the
+                 •   Evaluation · effectiveness depends on enforcement capacity of the
                      CMA and Ofcom; new regulators may struggle to keep pace with
                      rapidly-innovating platforms.
-                 •   Evaluation — market is still evolving; premature or heavy regulation
+                 •   Evaluation · market is still evolving; premature or heavy regulation
                      could entrench incumbents if compliance costs favour established
                      players.
                  •   Overall, targeted regulation of specific market failures (gatekeeping,

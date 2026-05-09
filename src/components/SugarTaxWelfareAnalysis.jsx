@@ -7,7 +7,7 @@ export default function SugarTaxWelfareAnalysis() {
           <marker id="stU" markerWidth="10" markerHeight="12" refX="5" refY="1" orient="auto"><polygon points="0 12,5 0,10 12" fill="#111"/></marker>
         </defs>
         <rect width="863" height="712" fill="#fff"/>
-        <text x="431.5" y="28" textAnchor="middle" fontSize="22" fontWeight="700" fill="#111">Sugar Tax — Welfare Analysis (UK SDIL 2018)</text>
+        <text x="431.5" y="28" textAnchor="middle" fontSize="22" fontWeight="700" fill="#111">Sugar Tax · Welfare Analysis (UK SDIL 2018)</text>
         <line x1="106" y1="603" x2="106" y2="72" stroke="#222" strokeWidth="3.5" markerEnd="url(#stU)"/>
         <line x1="106" y1="603" x2="740" y2="603" stroke="#222" strokeWidth="3.5" markerEnd="url(#stR)"/>
         <text x="100" y="61" fontSize="18" fontWeight="700" fill="#111">Costs/Benefits</text>

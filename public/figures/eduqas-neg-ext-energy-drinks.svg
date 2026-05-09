@@ -14,7 +14,7 @@
     .pt    { fill:#111; }
   </style>
 
-  <text x="350" y="28" text-anchor="middle" class="ttl">Negative Externality of Consumption — High-Sugar Energy Drinks</text>
+  <text x="350" y="28" text-anchor="middle" class="ttl">Negative Externality of Consumption · High-Sugar Energy Drinks</text>
   <text x="350" y="48" text-anchor="middle" class="sub">External costs (NHS burden, lost productivity) make MSB &lt; MPB → market overconsumes</text>
 
   <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
@@ -61,5 +61,5 @@
 
   <text x="90"  y="495" class="sub">Free market sets MPB = MSC at Q1; the social optimum is at MSB = MSC at Q* &lt; Q1 → overconsumption.</text>
   <text x="90"  y="512" class="sub">Between Q* and Q1, MSC &gt; MSB: each extra unit costs society more than it benefits society.</text>
-  <text x="90"  y="529" class="sub">The shaded triangle is the deadweight welfare loss — the case for intervention (tax, regulation, info campaigns).</text>
+  <text x="90"  y="529" class="sub">The shaded triangle is the deadweight welfare loss · the case for intervention (tax, regulation, info campaigns).</text>
 </svg>

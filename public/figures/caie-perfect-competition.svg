@@ -13,7 +13,7 @@
     .pt    { fill:#111; }
   </style>
 
-  <text x="350" y="28" text-anchor="middle" class="ttl">Perfect Competition — Wheat Farmer Earning Short-Run Abnormal Profit</text>
+  <text x="350" y="28" text-anchor="middle" class="ttl">Perfect Competition · Wheat Farmer Earning Short-Run Abnormal Profit</text>
   <text x="350" y="48" text-anchor="middle" class="sub">Price taker chooses output where MC = AR = MR; abnormal profit when AR &gt; ATC</text>
 
   <line class="axis" x1="100" y1="80"  x2="100" y2="450"/>
@@ -51,7 +51,7 @@
   <rect class="profit" x="100" y="215" width="360" height="36"/>
   <text x="180" y="240" class="lblB" fill="#b71c1c">Abnormal profit (SR)</text>
 
-  <text x="100" y="495" class="sub">Wheat is a homogeneous product in a perfectly competitive market — the farmer is a price taker (AR=MR is horizontal).</text>
+  <text x="100" y="495" class="sub">Wheat is a homogeneous product in a perfectly competitive market · the farmer is a price taker (AR=MR is horizontal).</text>
   <text x="100" y="512" class="sub">Profit-max condition MC = MR gives output q*. At q*, AR &gt; ATC, so the farmer earns abnormal profit (red rectangle).</text>
   <text x="100" y="529" class="sub">Long run: no barriers to entry → new farmers enter, market supply shifts right, price falls until P = min ATC. Profit returns to normal.</text>
 </svg>

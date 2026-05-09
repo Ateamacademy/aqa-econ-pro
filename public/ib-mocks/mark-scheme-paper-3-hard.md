@@ -1,15 +1,15 @@
 <!-- Auto-generated from /public/ib-mocks/mark-scheme-paper-3-hard.pdf -->
-SME Mark Scheme Paper 3 — Hard
+SME Mark Scheme Paper 3 · Hard
 
 
-SavePredictedExams — SME
+SavePredictedExams · SME
 
 Economics
 Higher level
 Paper 3
 
 
-SME Mark Scheme — Paper 3 Hard
+SME Mark Scheme · Paper 3 Hard
 
 
 1. Use the question-specific mark scheme together with the mark bands. Award up to the maximum
@@ -20,7 +20,7 @@ rewarded.
 3. Candidates may be penalised once for rounding errors, missing units or failure to give answers to 2
 d.p.
 
-Question 1 — Vietnamese coffee farming (perfect competition)
+Question 1 · Vietnamese coffee farming (perfect competition)
 1. (a) (i) Outline two assumptions underlying perfect competition. [2]
 Any two of (award [1] each):
 • There is a large number of firms producing identical (homogeneous) products.
@@ -38,7 +38,7 @@ Profit = (P − AC) × Q = ($4.00 − $2.90) × 50,000
 Valid working [1]. Correct answer with units [1]. OFR applies.
 
 (iv) Identify the long-run equilibrium price and output for Firm X. [2]
-In LR equilibrium, firms make only normal profit — P = minimum AC.
+In LR equilibrium, firms make only normal profit · P = minimum AC.
 From the data, minimum AC = $2.90 at Q = 50,000 kg.
 LR equilibrium: P = $2.90/kg, Q = 50,000 kg/month.
 [1] for the price; [1] for the output.
@@ -51,7 +51,7 @@ LR equilibrium: P = $2.90/kg, Q = 50,000 kg/month.
 
 
                                                      1                                 SME Predicted Paper
-                                                                           SME Mark Scheme Paper 3 — Hard
+                                                                           SME Mark Scheme Paper 3 · Hard
 
 
   1        There is a correct diagram OR an accurate written response.                      1-2
@@ -110,7 +110,7 @@ Possible policies include:
 
 
                                                        2                                SME Predicted Paper
-                                                                               SME Mark Scheme Paper 3 — Hard
+                                                                               SME Mark Scheme Paper 3 · Hard
 
 
       • Pigouvian tax on coffee production (set equal to external cost)
@@ -146,10 +146,10 @@ steering the industry toward sustainability.
 
 
                                                        3                                   SME Predicted Paper
-                                                                             SME Mark Scheme Paper 3 — Hard
+                                                                             SME Mark Scheme Paper 3 · Hard
 
 
-Question 2 — Turkey balance of payments
+Question 2 · Turkey balance of payments
 2. (a) (i) Define current account deficit. [2]
 
   Level                                                                                       Marks
@@ -204,7 +204,7 @@ Valid working [1]. Correct answer to 2 d.p. [1].
 
 
                                                     4                                      SME Predicted Paper
-                                                                                SME Mark Scheme Paper 3 — Hard
+                                                                                SME Mark Scheme Paper 3 · Hard
 
 
 (vii) Outline the meaning of depreciation. [2]
@@ -254,7 +254,7 @@ Possible policies include:
       • Contractionary monetary policy (raise interest rates)
       • Depreciation / managed devaluation (expenditure-switching)
       • Supply-side policies to improve competitiveness (R&D;, training, infrastructure)
-      • Trade protection (tariffs / quotas) — with caveats on retaliation
+      • Trade protection (tariffs / quotas) · with caveats on retaliation
       • Export promotion / trade agreements
 
 Assessment Criteria
@@ -263,7 +263,7 @@ Assessment Criteria
 
 
                                                       5                                     SME Predicted Paper
-                                                                          SME Mark Scheme Paper 3 — Hard
+                                                                          SME Mark Scheme Paper 3 · Hard
 
 
   0            Does not meet standard.
@@ -278,14 +278,14 @@ Assessment Criteria
   9–10         Fully-developed, balanced, reasoned policy recommendation using theory, diagram
                and text/data.
 
-Sample response (abridged): Supply-side policies — investment in human capital and infrastructure
-— are the most sustainable way to reduce Turkey's CAD of $56 bn. By raising productivity, unit
+Sample response (abridged): Supply-side policies · investment in human capital and infrastructure
+· are the most sustainable way to reduce Turkey's CAD of $56 bn. By raising productivity, unit
 labour costs fall, improving price and non-price competitiveness of Turkish exports. Since the
 Marshall-Lerner condition holds (|PEDx| + |PEDm| = 1.3), a modest further depreciation could be
 complementary. However, Turkey's existing 36% depreciation has already raised import inflation
 sharply, and supply-side gains take time to materialise. Short-term contractionary fiscal policy may
 therefore be needed to contain AD and imports while structural reforms take effect. Overall a
-combined approach — supply-side reforms with complementary macroeconomic tightening — is
+combined approach · supply-side reforms with complementary macroeconomic tightening · is
 recommended.
 
 

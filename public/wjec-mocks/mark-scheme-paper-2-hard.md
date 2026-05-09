@@ -98,7 +98,7 @@ PREDICTED PAPER 2 (HARD)
  AO2
  • Figure 1 shows the price-to-earnings ratio has risen from around 3.2 to around 8.3, well above the
  long-run average of around 4.
- • Figure 2: completions consistently below the 300,000 target — persistent supply shortfall.
+ • Figure 2: completions consistently below the 300,000 target · persistent supply shortfall.
  • Text: Bank Rate averaged below 1% for most of 2009-2021, making mortgages cheaper.
  • Help to Buy raised prices by around £16,000 on eligible homes (NAO estimate).
  AO3
@@ -154,7 +154,7 @@ PREDICTED PAPER 2 (HARD)
  threshold).
  AO3
  • Higher interest rates raise the monthly mortgage payment on any given loan, so the maximum loan a
- given household can afford — and hence the maximum price they can bid — falls.
+ given household can afford · and hence the maximum price they can bid · falls.
  • Because lender stress tests require affordability at higher rates, the effective loan-to-income ratio
  available to first-time buyers contracts, locking more households out of the owner-occupied market.
  • Higher rates also raise the cost of saving a deposit in real terms, because house prices often fall more
@@ -200,8 +200,8 @@ PREDICTED PAPER 2 (HARD)
  Indicative content
  AO2
  • Figure 1: affordability has deteriorated over 40 years despite multiple policy interventions.
- • Help to Buy raised prices by around £16,000 on eligible homes — counter-productive for affordability.
- • Completions have averaged 220k/year against a 300k target — supply-side policies have
+ • Help to Buy raised prices by around £16,000 on eligible homes · counter-productive for affordability.
+ • Completions have averaged 220k/year against a 300k target · supply-side policies have
  under-delivered.
  • Rising interest rates have wiped out much of the affordability gains from past interventions.
  AO3
@@ -214,11 +214,11 @@ PREDICTED PAPER 2 (HARD)
  • Macro-prudential policy (loan-to-income caps) prevents over-extension of credit and therefore
  bubble-type price rises.
  AO4
- • Demand-side schemes risk increasing prices because they do not increase supply — Help to Buy is a
+ • Demand-side schemes risk increasing prices because they do not increase supply · Help to Buy is a
  clear example.
  • Supply-side reform faces political opposition from existing homeowners who benefit from rising prices
  (the 'homeowner electorate').
- • Planning reform has been reversed or watered down after local opposition — the effectiveness of any
+ • Planning reform has been reversed or watered down after local opposition · the effectiveness of any
  given announcement is therefore uncertain.
  • Macro-prudential restrictions reduce prices but also reduce access for first-time buyers without large
  deposits.
@@ -228,11 +228,11 @@ PREDICTED PAPER 2 (HARD)
                                                                                                               PMT
 
 
- • Many affordability drivers are outside government control in the short run — interest rates, inward
+ • Many affordability drivers are outside government control in the short run · interest rates, inward
  migration, demographic change.
- • Housing affordability depends jointly on wages, prices and interest rates — a policy focused on just one
+ • Housing affordability depends jointly on wages, prices and interest rates · a policy focused on just one
  lever is unlikely to be sufficient.
- • Overall judgement at the top of the band: policies have had mixed success — demand-side schemes
+ • Overall judgement at the top of the band: policies have had mixed success · demand-side schemes
  have often been counter-productive, supply-side ambitions have not been delivered. Without sustained
  supply-side reform, affordability is likely to continue deteriorating.
  Allow any other valid points.
@@ -273,17 +273,17 @@ PREDICTED PAPER 2 (HARD)
  Indicative content
  AO2
  • Figure 3: rent growth has outpaced wage growth dramatically since 2022 (9%+ vs 5-6%).
- • 4.2 million households in housing stress — low-income tenants disproportionately affected.
+ • 4.2 million households in housing stress · low-income tenants disproportionately affected.
  • Text: 'second-generation' rent controls (caps on increases) may be less damaging than first-generation
  absolute-price controls.
- • Contested evidence base — some studies show reduced supply, others show protection for existing
+ • Contested evidence base · some studies show reduced supply, others show protection for existing
  tenants.
  AO3
  • Rent controls directly cap the maximum rent landlords can charge, reducing the proportion of income that
  low-income tenants must spend on housing.
  • Security of tenure provisions typically accompany rent controls, reducing the risk of eviction or arbitrary
  rent hikes, improving wellbeing.
- • Search and moving costs are significant for tenants — rent controls reduce landlord bargaining power in
+ • Search and moving costs are significant for tenants · rent controls reduce landlord bargaining power in
  existing tenancies where switching is costly.
  • Well-designed controls (indexed to inflation, not absolute caps) preserve landlord returns and prevent
  supply contraction.
@@ -291,8 +291,8 @@ PREDICTED PAPER 2 (HARD)
  • Standard supply-and-demand analysis: a binding price ceiling below market equilibrium creates excess
  demand and a shortage of rental housing.
  • Landlords respond by reducing investment in maintenance, quality deteriorates, and some exit the
- market — supply falls.
- • In the long run new housing is built more slowly because expected returns are lower — total housing
+ market · supply falls.
+ • In the long run new housing is built more slowly because expected returns are lower · total housing
  supply falls, pushing up uncontrolled rents and harming new tenants trying to enter.
 
 
@@ -302,7 +302,7 @@ PREDICTED PAPER 2 (HARD)
 
  • Evidence from Berlin (2020-21 rent cap, subsequently struck down), San Francisco (Diamond et al.
  studies) and New York shows supply contractions of 15-25% in some estimates.
- • Tenants in controlled homes benefit; those outside are harmed — distributional effects can run counter to
+ • Tenants in controlled homes benefit; those outside are harmed · distributional effects can run counter to
  the intent.
  • Alternatives (housing benefit, social housebuilding) may achieve similar distributional effects without the
  supply-side damage.
@@ -346,10 +346,10 @@ PREDICTED PAPER 2 (HARD)
 
  Indicative content
  AO2
- • Figure 2: completions have averaged 220k/year against a 300k target — a clear supply shortfall.
- • Figure 1: the price-to-earnings ratio has risen from 3.2 to 8.3 over four decades — only partly reversible
+ • Figure 2: completions have averaged 220k/year against a 300k target · a clear supply shortfall.
+ • Figure 1: the price-to-earnings ratio has risen from 3.2 to 8.3 over four decades · only partly reversible
  without more housing.
- • Text: ratio is over 12× earnings in London/SE — regional imbalance concentrated where supply is most
+ • Text: ratio is over 12× earnings in London/SE · regional imbalance concentrated where supply is most
  constrained.
  • Text: supply-side reform faces significant political opposition from existing homeowners.
  AO3
@@ -361,12 +361,12 @@ PREDICTED PAPER 2 (HARD)
  • Planning reform reduces land-hoarding and unlocks urban brownfield sites, lowering the marginal cost of
  development.
  AO4
- • Supply-side reform has been repeatedly attempted and politically reversed — so even if the right policy, it
+ • Supply-side reform has been repeatedly attempted and politically reversed · so even if the right policy, it
  may not be a feasible one.
  • Even a rapid increase in completions takes years to affect prices because the stock of housing is huge
  relative to annual flow; short-run relief is limited.
  • Other policies also affect affordability: macro-prudential regulation of mortgage lending, stamp duty
- reform, rent controls, housing benefit, devolution of planning — none alone is sufficient.
+ reform, rent controls, housing benefit, devolution of planning · none alone is sufficient.
  • Demand-side drivers (migration, household size, interest rates) are not addressed by supply-side reform.
 
 
@@ -379,7 +379,7 @@ PREDICTED PAPER 2 (HARD)
  • In regions of low demand (parts of the North East), building more homes would not address local
  affordability because the binding constraint there is income, not housing supply.
  • Overall judgement at the top of the band: increasing supply is likely the most important single lever but is
- not sufficient on its own — it needs to be combined with demand-side and regional policy to tackle the full
+ not sufficient on its own · it needs to be combined with demand-side and regional policy to tackle the full
  scope of the housing crisis.
  Allow any other valid points.
 
@@ -423,13 +423,13 @@ PREDICTED PAPER 2 (HARD)
  attract extra workers.
  AO2
  • Text: 'platforms typically set the price of each ride or delivery unilaterally, and individual workers have no
- realistic ability to negotiate' — price-setting power.
- • Text: switching between platforms is costly (vehicle checks, training, reputation scores) — frictions which
+ realistic ability to negotiate' · price-setting power.
+ • Text: switching between platforms is costly (vehicle checks, training, reputation scores) · frictions which
  limit outside options and strengthen buyer power.
- • Text: workers effectively face a small number of dominant buyers for their labour — classic monopsony.
- • Figure 2: real wages have grown slower than labour productivity — consistent with employer
+ • Text: workers effectively face a small number of dominant buyers for their labour · classic monopsony.
+ • Figure 2: real wages have grown slower than labour productivity · consistent with employer
  wage-setting power.
- • Supreme Court's 2021 ruling on Uber implies workers had been earning below the statutory minimum —
+ • Supreme Court's 2021 ruling on Uber implies workers had been earning below the statutory minimum ·
  a feature of monopsony power.
  Allow any other valid points.
 
@@ -475,9 +475,9 @@ PREDICTED PAPER 2 (HARD)
  wage from the supply curve at that level of employment.
  AO2
  • Total wage bill (£/hr): 0, 90, 200, 330, 480, 650, 840, 1050.
- • MCL per block of 10 workers (£/hr): —, 90, 110, 130, 150, 170, 190, 210.
- • MCL per extra worker (£/hr): —, 9, 11, 13, 15, 17, 19, 21.
- • MRP from the table (£/hr per extra worker): —, 18, 16, 14, 12, 10, 8, 6.
+ • MCL per block of 10 workers (£/hr): ·, 90, 110, 130, 150, 170, 190, 210.
+ • MCL per extra worker (£/hr): ·, 9, 11, 13, 15, 17, 19, 21.
+ • MRP from the table (£/hr per extra worker): ·, 18, 16, 14, 12, 10, 8, 6.
  • For correctly calculating MCL in units of 10: AO2: 2
  • For one correctly calculated: AO2: 1
  AO3
@@ -487,7 +487,7 @@ PREDICTED PAPER 2 (HARD)
  • Therefore the monopsonist hires Q=30 workers.
  • Wage paid is £11/hr (the wage at which 30 workers are willing to supply labour, from the supply
  schedule).
- • Note that under perfect competition the market would clear at Q≈40 and a wage equal to MRP — the
+ • Note that under perfect competition the market would clear at Q≈40 and a wage equal to MRP · the
  monopsonist hires fewer workers and pays a lower wage than the competitive benchmark, creating
  monopsonistic exploitation of the gap between w and MRP.
  Allow any other valid points.
@@ -539,10 +539,10 @@ PREDICTED PAPER 2 (HARD)
  AO2
  • The National Living Wage rose to £11.44/hr in April 2024 with the Low Pay Commission targeting
  two-thirds of median hourly earnings.
- • 2021 Supreme Court Uber ruling entitles gig workers to minimum wage — making the analysis directly
+ • 2021 Supreme Court Uber ruling entitles gig workers to minimum wage · making the analysis directly
  applicable.
  • Text: 'minimum wage has raised incomes of the lowest-paid workers without causing significant
- unemployment — exactly what standard theory predicts under monopsony'.
+ unemployment · exactly what standard theory predicts under monopsony'.
  AO3
  • In a monopsonistic market, imposing a minimum wage W* between Wm and the perfectly-competitive
  wage Wc raises both wages AND employment: wages rise because firms must now pay at least W*;
@@ -550,7 +550,7 @@ PREDICTED PAPER 2 (HARD)
  • This contrasts with a competitive labour market, where a binding minimum wage reduces employment.
  • Monopsonistic exploitation (the gap between MRP and wage) is reduced or eliminated.
  AO4
- • If W* is set too high (above Wc), employment falls because MRP < W* for some workers — the standard
+ • If W* is set too high (above Wc), employment falls because MRP < W* for some workers · the standard
  competitive analysis applies beyond that point.
 
 
@@ -559,15 +559,15 @@ PREDICTED PAPER 2 (HARD)
 
 
  • Firms can respond over time by automating tasks previously done by low-paid workers, raising long-run
- unemployment — effectiveness depends on the pace of technical substitution.
+ unemployment · effectiveness depends on the pace of technical substitution.
  • Gig platforms may restructure: reclassify workers, change payment structures, use algorithmic
  management to extract equivalent rents in other ways.
- • Minimum wage only bites for monopsonists where workers are below statutory protection — high-wage
+ • Minimum wage only bites for monopsonists where workers are below statutory protection · high-wage
  gig workers or platform 'stars' unaffected.
  • Regional variation: a single national minimum wage may bind more strongly in low-wage regions, raising
  unemployment risk there.
  • Empirical evidence from UK minimum wage studies (Manning, Dickens, CEP) generally supports the
- monopsony prediction — modest employment effects, meaningful wage effects — for the values imposed
+ monopsony prediction · modest employment effects, meaningful wage effects · for the values imposed
  so far.
  • Overall judgement at the top of the band: in a genuinely monopsonistic labour market a well-calibrated
  minimum wage raises both wages and employment, but effectiveness depends on setting the rate below
@@ -612,21 +612,21 @@ PREDICTED PAPER 2 (HARD)
  AO3
  • In a perfectly competitive labour market, a union wage above the market-clearing level reduces the
  quantity of labour demanded, creating union-induced unemployment.
- • The higher wage also attracts more workers wanting jobs at that rate — excess supply of labour, queuing
+ • The higher wage also attracts more workers wanting jobs at that rate · excess supply of labour, queuing
  for unionised jobs.
  • Product-market substitution: firms facing higher labour costs may substitute capital for labour, reducing
  long-run employment.
  AO4
  • In a monopsonistic market, unions acting as a counter-monopoly can raise wages AND employment
- simultaneously — the outcome depends on starting market structure.
+ simultaneously · the outcome depends on starting market structure.
  • Trade unions can raise productivity by providing training, improving morale and reducing labour turnover
- (Freeman & Medoff 'two faces' literature) — offsetting or exceeding the wage rise.
+ (Freeman & Medoff 'two faces' literature) · offsetting or exceeding the wage rise.
  • Unions bring worker information and grievances to management, reducing inefficiencies and conflict
  costs.
  • Unions give workers voice and political representation, promoting long-run acceptance of economic
  change and reducing insider-outsider problems.
  • Empirically, UK union membership has fallen from over 13 million in 1979 to under 6.5 million today, and
- unemployment has been historically low for most of this period — casting doubt on a simple causal link.
+ unemployment has been historically low for most of this period · casting doubt on a simple causal link.
  • In Nordic countries with very high union density, unemployment has not been systematically higher than
  in the low-density UK or US.
  • Overall judgement: the claim that unions 'always' cause unemployment is too strong. The effect depends
@@ -682,14 +682,14 @@ PREDICTED PAPER 2 (HARD)
  • Economic welfare: net of social benefit and social cost. In a labour-market context, refers to producer and
  worker surplus, employment and living standards.
  AO2
- • Text: 4.4 million people in gig work, up from <400,000 in 2016 — huge expansion of the sector.
+ • Text: 4.4 million people in gig work, up from <400,000 in 2016 · huge expansion of the sector.
  • Workers value flexibility; firms save employment costs and access on-demand labour.
  • Supreme Court 2021 Uber ruling highlights that platforms were capturing rents that belonged to workers
  under UK law.
- • Figure 2: real wage growth < labour productivity growth — consistent with employer rent extraction.
+ • Figure 2: real wage growth < labour productivity growth · consistent with employer rent extraction.
  • Figure 1 labour schedule shows monopsonistic exploitation in platform-like labour markets.
  AO3
- • Gig work increases labour market flexibility — workers can fit earnings around caring, studying, or other
+ • Gig work increases labour market flexibility · workers can fit earnings around caring, studying, or other
  work. This raises utility for many workers.
  • Consumers benefit from lower-cost, faster delivery and on-demand transport.
  • Firms benefit from avoiding fixed employment costs and accessing a larger on-demand workforce.
@@ -710,7 +710,7 @@ PREDICTED PAPER 2 (HARD)
  insurance, so headline pay overstates welfare gains.
  • Classification disputes impose legal costs and uncertainty on both sides.
  • Benefits to consumers (faster/cheaper delivery) may come at the expense of traditional workers in
- restaurants, minicabs and couriers — the welfare effect is distributional as well as aggregate.
+ restaurants, minicabs and couriers · the welfare effect is distributional as well as aggregate.
  • Environmental externalities: gig food delivery has been associated with rising single-use packaging and
  urban traffic congestion.
  • Net welfare effect depends crucially on whether platforms pass value on to workers and consumers or

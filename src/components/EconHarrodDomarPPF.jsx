@@ -33,7 +33,7 @@ export default function EconHarrodDomarPPF() {
         <text x={cR+4} y={cB-30} fontSize="13" fontWeight="bold" fill="#cc2222">PPF</text>
         <text x={cR+4} y={cB-14} fontSize="11" fill="#cc2222">(after)</text>
         <line x1={cR-50} y1={cB-80} x2={cR-12} y2={cB-55} stroke="#cc2222" strokeWidth="1.8" markerEnd="url(#hdOArr)"/>
-        <text x="290" y={cB+68} textAnchor="middle" fontSize="12" fill="#555">Ethiopian investment shifts PPF outward — more of both goods producible</text>
+        <text x="290" y={cB+68} textAnchor="middle" fontSize="12" fill="#555">Ethiopian investment shifts PPF outward · more of both goods producible</text>
         <text x={cL+30} y={cT+60} fontSize="12" fill="#555" fontStyle="italic">Investment in</text>
         <text x={cL+30} y={cT+75} fontSize="12" fill="#555" fontStyle="italic">industrial parks</text>
         <text x={cL+30} y={cT+90} fontSize="12" fill="#555" fontStyle="italic">+ infrastructure</text>

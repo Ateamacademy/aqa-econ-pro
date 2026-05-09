@@ -1,12 +1,12 @@
 /**
- * Non-AQA blueprint validator — parallel to `src/lib/boards/blueprint-validator.ts`.
+ * Non-AQA blueprint validator · parallel to `src/lib/boards/blueprint-validator.ts`.
  *
  * The shared validator already covers totals + Edexcel-A section structure,
  * but the per-board sectional rules differ widely (CAIE has 4 papers, IB has
  * different paper sets, GCSE has 2 papers, etc.). Rather than overloading the
  * shared validator with branch logic for every board, this file owns the
  * non-AQA structural checks. AQA continues to use whatever validation runs
- * via the shared validator — that path is untouched.
+ * via the shared validator · that path is untouched.
  */
 import type { BoardDefinition, PaperBlueprint } from "@/lib/boards/board-definition";
 import type { NonAqaBoardId } from "./marking-convention.types";

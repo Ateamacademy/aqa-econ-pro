@@ -49,7 +49,7 @@ export const ECON_FLOWCHARTS: Record<string, FlowchartTemplate> = {
       "Multiplier = 1 / (1 - MPC) or 1 / MPW",
       "Larger MPC → larger multiplier → bigger final GDP change",
       "Withdrawals (S, T, M) reduce the multiplier value",
-      "Works in reverse too — negative multiplier from withdrawal of spending",
+      "Works in reverse too · negative multiplier from withdrawal of spending",
     ],
   },
   monetary_transmission: {
@@ -118,8 +118,8 @@ export const ECON_FLOWCHARTS: Record<string, FlowchartTemplate> = {
     style H fill:#f59e0b,stroke:#d97706,color:#fff
     style J fill:#16a34a,stroke:#15803d,color:#fff`,
     examTips: [
-      "Supply-side policies shift LRAS right — show on AD/AS diagram",
-      "Long time lags and uncertain outcomes — key evaluation point",
+      "Supply-side policies shift LRAS right · show on AD/AS diagram",
+      "Long time lags and uncertain outcomes · key evaluation point",
       "Market-based vs interventionist approaches",
     ],
   },
@@ -169,7 +169,7 @@ export const ECON_FLOWCHARTS: Record<string, FlowchartTemplate> = {
     ],
   },
   balance_of_payments: {
-    title: "Balance of Payments — Current Account Deficit Chain",
+    title: "Balance of Payments · Current Account Deficit Chain",
     category: "International Economics",
     definition: `graph TD
     A["Strong domestic<br/>currency"] --> B["Exports become<br/>more expensive"]
@@ -191,7 +191,7 @@ export const ECON_FLOWCHARTS: Record<string, FlowchartTemplate> = {
     ],
   },
   inflation_causes: {
-    title: "Causes of Inflation — Demand-Pull vs Cost-Push",
+    title: "Causes of Inflation · Demand-Pull vs Cost-Push",
     category: "Macroeconomics",
     definition: `graph TD
     subgraph Demand-Pull

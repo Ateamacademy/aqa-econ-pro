@@ -1,9 +1,9 @@
 <!-- Auto-generated from /public/edexcel-a-mocks/mark-scheme-paper-2-hard.pdf -->
 Pearson Edexcel
                                            Mark Scheme
-                               Predicted Paper — For revision purposes only
+                               Predicted Paper · For revision purposes only
                               Level 3 GCE Economics A (9EC0)
-           Paper 1: Markets and Business Behaviour — 9EC0/01 — Paper 2 — Hard
+           Paper 1: Markets and Business Behaviour · 9EC0/01 · Paper 2 · Hard
                                        Total: 100 marks
 
 General Marking Guidance
@@ -47,7 +47,7 @@ Level Descriptors
   L1          1–2        Limited knowledge; weak or missing diagram.
   L2          3–5        Sound knowledge; reasonable diagram; some application.
 
-9EC0/02 — Hard — Mark Scheme                                                            Page 1 of 10
+9EC0/02 · Hard · Mark Scheme                                                            Page 1 of 10
  Leve    KAA marks                                     Descriptor
    l
   L3          6–8        Accurate knowledge; correctly labelled diagram; developed chains.
@@ -79,30 +79,30 @@ Level Descriptors
   L4         9–10        Sophisticated evaluation with prioritised judgement.
 
 
-9EC0/02 — Hard — Mark Scheme                                                          Page 2 of 10
-                               Section A — Questions 1 to 5
-Question 1 (5 marks) — Turkey's inflation and lira depreciation
+9EC0/02 · Hard · Mark Scheme                                                          Page 2 of 10
+                               Section A · Questions 1 to 5
+Question 1 (5 marks) · Turkey's inflation and lira depreciation
    Q                                    Indicative content                                     Mark
                                                                                                 s
- 1(a)    Answer: B — Cost-push inflation only. In 2022 the depreciation of the lira (from       1
+ 1(a)    Answer: B · Cost-push inflation only. In 2022 the depreciation of the lira (from       1
          around 13 to 18 per US$ during the year) fed directly into import prices,
          especially for energy and other dollar-priced inputs that Turkey imports; this
          external pass-through was the dominant proximate driver of the 72.3%
          headline reading, compounded by the 2022 global energy-price shock. The
          question stem emphasises the lira depreciation context, pointing to a supply-
          side / imported-inflation framing.
-         Distractors: A Demand-pull inflation only — 72.3% is far too high to be
+         Distractors: A Demand-pull inflation only · 72.3% is far too high to be
          explained by excess demand alone in an economy that was not obviously
          running at full capacity; although Turkey's heterodox policy (keeping rates low
          despite rising inflation) contained demand-pull elements, labelling it 'only'
-         demand-pull is inaccurate; C Stagflation — requires stagnant or negative real
+         demand-pull is inaccurate; C Stagflation · requires stagnant or negative real
          GDP growth, but Turkey's real GDP grew by around 5.6% in 2022 (high
-         inflation alongside positive growth is not stagflation); D Disinflation — requires
+         inflation alongside positive growth is not stagflation); D Disinflation · requires
          a falling rate of inflation, but Turkey's CPI was rising sharply from around 36%
          in 2021 to 72.3% in 2022.
          Examiner note: candidates who select C (Stagflation) with a valid argument
          referencing falling real incomes and real-wage losses may be awarded credit
-         — accept if rationale is internally consistent.
+         · accept if rationale is internally consistent.
 
  1(b)    Marker note: the paper does not provide a Turkey-specific data table;                  4
          candidates are expected to apply economic theory to the general depreciation
@@ -117,7 +117,7 @@ Question 1 (5 marks) — Turkey's inflation and lira depreciation
          cheaper in foreign-currency terms → boosts export-oriented sectors (tourism,
          textiles, automotive) and raises export earnings. However, the import bill rises
          faster than export earnings for an economy dependent on imported energy and
-         capital goods — adverse terms-of-trade effect (2).
+         capital goods · adverse terms-of-trade effect (2).
          Accept alternative linked points: effect on foreign-currency-denominated
          corporate debt (debt-service burden rises sharply in lira terms, raising
          bankruptcy risk); loss of confidence and capital flight; sharp fall in real
@@ -125,7 +125,7 @@ Question 1 (5 marks) — Turkey's inflation and lira depreciation
          dollar-priced goods; pressure on the central bank's foreign-exchange reserves.
 
 
-Question 2 (5 marks) — Negative output gap and AD/AS
+Question 2 (5 marks) · Negative output gap and AD/AS
    Q                                    Indicative content                                     Mark
                                                                                                 s
  2(a)    AD/AS: a negative output gap persists when sticky wages and prices prevent             2
@@ -133,7 +133,7 @@ Question 2 (5 marks) — Negative output gap and AD/AS
          falling wages the economy cannot return to potential via an automatic leftward
 
 
-9EC0/02 — Hard — Mark Scheme                                                             Page 3 of 10
+9EC0/02 · Hard · Mark Scheme                                                             Page 3 of 10
    Q                                      Indicative content                                       Mark
                                                                                                     s
          movement of SRAS; AD must be raised by policy to close the gap (1).
@@ -144,18 +144,18 @@ Question 2 (5 marks) — Negative output gap and AD/AS
  2(b)    Potential output is unobserved and estimated using statistical filters (HP,                2
          production function); estimates are revised substantially as more data arrives
          (1). Supply-shock episodes (2022 energy shock) make it particularly hard to
-         separate a fall in actual output from a fall in potential — statistical filters tend to
+         separate a fall in actual output from a fall in potential · statistical filters tend to
          smooth through shocks, biasing real-time estimates (1).
 
- 2(c)    Answer: A — raise equilibrium output and lower the price level. A rightward                1
+ 2(c)    Answer: A · raise equilibrium output and lower the price level. A rightward                1
          shift in LRAS increases potential output at any given AD, lowering the price
          level where AD intersects LRAS (static analysis).
 
 
-Question 3 (5 marks) — Keynesian fiscal multipliers by income group
+Question 3 (5 marks) · Keynesian fiscal multipliers by income group
    Q                                      Indicative content                                       Mark
                                                                                                     s
- 3(a)    Answer: B — the importance of marginal propensity to consume in determining                1
+ 3(a)    Answer: B · the importance of marginal propensity to consume in determining                1
          fiscal impact. Lower MPC (high earners) produces a smaller multiplier than
          higher MPC (low-income households), even with equally-sized packages.
          Distractors: A Lucas critique concerns expectations and policy-invariance of
@@ -174,7 +174,7 @@ Question 3 (5 marks) — Keynesian fiscal multipliers by income group
          run GDP impact per pound than the high-earner tax cut.
 
 
-Question 4 (5 marks) — Sterling depreciation and CPI pass-through
+Question 4 (5 marks) · Sterling depreciation and CPI pass-through
    Q                                      Indicative content                                       Mark
                                                                                                     s
  4(a)    Method: first-year CPI impact = pass-through × import share × magnitude of                 4
@@ -187,10 +187,10 @@ Question 4 (5 marks) — Sterling depreciation and CPI pass-through
          price rise of 4.4%' then applying 28% CPI share.
 
 
-9EC0/02 — Hard — Mark Scheme                                                                 Page 4 of 10
+9EC0/02 · Hard · Mark Scheme                                                                 Page 4 of 10
    Q                                   Indicative content                                    Mark
                                                                                               s
- 4(b)    Answer: D — a market with low substitutability between imported and                   1
+ 4(b)    Answer: D · a market with low substitutability between imported and                   1
          domestically produced goods. When importers have no local substitutes, they
          pass the FX change through; where substitutes exist, importers price-to-market
          to avoid losing share.
@@ -200,11 +200,11 @@ Question 4 (5 marks) — Sterling depreciation and CPI pass-through
          importers, lowering pass-through.
 
 
-Question 5 (5 marks) — Secular stagnation
+Question 5 (5 marks) · Secular stagnation
    Q                                   Indicative content                                    Mark
                                                                                               s
- 5(a)    Answer: B — a sustained rise in public investment funded by borrowing.                1
-         Secular stagnation reflects chronic demand deficiency — sustained fiscal
+ 5(a)    Answer: B · a sustained rise in public investment funded by borrowing.                1
+         Secular stagnation reflects chronic demand deficiency · sustained fiscal
          expansion raises AD and potentially LRAS via productive public investment.
          Distractors: A tightening reduces AD further; C consolidation reduces AD; D
          lower inflation target worsens the real-interest-rate constraint at the ZLB.
@@ -223,49 +223,49 @@ Question 5 (5 marks) — Secular stagnation
          growth).
 
 
-9EC0/02 — Hard — Mark Scheme                                                            Page 5 of 10
- Section B — Question 6: Japan's lost decades and the policy response
-6(a) — Cause of Japan's zero-growth, zero-inflation period (5 marks)
+9EC0/02 · Hard · Mark Scheme                                                            Page 5 of 10
+ Section B · Question 6: Japan's lost decades and the policy response
+6(a) · Cause of Japan's zero-growth, zero-inflation period (5 marks)
 Indicative content (KAA 4 / Eval 1):
 Acceptable causes: (i) post-bubble balance-sheet recession (asset-price collapse forced firms into
 prolonged debt-deleveraging, suppressing investment); (ii) unresolved banking-sector NPLs that
-constrained credit supply through the 1990s; (iii) demographic reversal — shrinking, ageing
+constrained credit supply through the 1990s; (iii) demographic reversal · shrinking, ageing
 workforce reduced potential output and saving-investment balance; (iv) entrenched deflationary
 expectations that made real interest rates persistently positive at the ZLB.
-Evaluation: causes compound — weak demand caused by balance-sheet effects entrenched
+Evaluation: causes compound · weak demand caused by balance-sheet effects entrenched
 deflation, which in turn prolonged weak demand.
 
-6(b) — Why monetary policy may be ineffective in a liquidity trap (8 marks)
+6(b) · Why monetary policy may be ineffective in a liquidity trap (8 marks)
 Indicative content (KAA 5 / Eval 3).
 At the zero lower bound, the central bank cannot cut nominal policy rates further to stimulate AD.
 Key channels:
-1. Savings — further rate cuts have no traction on deposit rates that are already at zero.
-2. Real interest rate — with deflation, real rates stay positive or even rise; investment remains
+1. Savings · further rate cuts have no traction on deposit rates that are already at zero.
+2. Real interest rate · with deflation, real rates stay positive or even rise; investment remains
 depressed.
-3. Bank-lending channel — lenders reluctant to lend at low nominal rates; net-interest margin
+3. Bank-lending channel · lenders reluctant to lend at low nominal rates; net-interest margin
 squeezed; pull-back on risk-taking.
-4. Expectations — if agents expect further deflation, consumption and investment are deferred,
+4. Expectations · if agents expect further deflation, consumption and investment are deferred,
 weakening AD further (expectations trap).
 Evaluation: unconventional tools (QE, YCC, forward guidance) can partly substitute but work
 primarily through asset-price and expectations channels, which are less powerful than the standard
 interest-rate channel. Japan's experience shows extended QE programmes did little for inflation
 until combined with structural reform and exogenous shocks (energy-price rise, yen weakness).
 
-6(c) — Demand-side vs supply-side factors in Japanese stagnation (10 marks)
+6(c) · Demand-side vs supply-side factors in Japanese stagnation (10 marks)
             KAA (AO1 + AO2 + AO3)                                Evaluation (AO4)
 
  • Demand-side factors: post-bubble balance-       • Demand and supply are not separable in a
-   sheet recession; household precautionary          long stagnation — hysteresis effects mean
+   sheet recession; household precautionary          long stagnation · hysteresis effects mean
    saving; weak business investment.                 demand weakness eroded potential output.
  • Evidence from Figure 1: policy rate at zero     • Empirical estimates suggest supply-side
-   from 1995 onwards — monetary authorities          factors account for 60–70% of the growth
+   from 1995 onwards · monetary authorities          factors account for 60–70% of the growth
    signalled sustained demand weakness.              slowdown.
  • Koo's 'balance-sheet recession' framework       • Demand-side stimulus (QE, fiscal
-   — firms prioritise debt repayment over            packages) had limited effect absent
+   · firms prioritise debt repayment over            packages) had limited effect absent
    investment even at zero rates.                    structural reform.
  • Supply-side factors: demographic reversal       • International comparisons: similar
    (working-age population peaked 1995);              demographic profile in Germany without
-   productivity growth slowed.                        comparable stagnation — suggests
+   productivity growth slowed.                        comparable stagnation · suggests
  • Labour-market inflexibility: dual labour           policy/institutional choices matter.
    market with strong protections for regular      • Judgement: demand-side factors
    workers, inflexible allocation.                   dominated the 1990s–2000s; supply-side
@@ -274,7 +274,7 @@ until combined with structural reform and exogenous shocks (energy-price rise, y
    return on capital.                                onwards. The policy failure was delayed
 
 
-9EC0/02 — Hard — Mark Scheme                                                            Page 6 of 10
+9EC0/02 · Hard · Mark Scheme                                                            Page 6 of 10
             KAA (AO1 + AO2 + AO3)                               Evaluation (AO4)
 
                                                    recognition and insufficient early demand
@@ -282,7 +282,7 @@ until combined with structural reform and exogenous shocks (energy-price rise, y
                                                    to entrench into structural stagnation.
 
 
-6(d) — QE and YCC effects on Japanese macroeconomy (12 marks)
+6(d) · QE and YCC effects on Japanese macroeconomy (12 marks)
 Diagram required: asset-market equilibrium showing yield curve flattening, or AD/AS showing QE-
 induced expansion.
 
@@ -290,7 +290,7 @@ induced expansion.
 
  • Scale of intervention: BoJ balance sheet       • QE/YCC prevented a deflationary spiral but
    from ~29% of GDP (2012) to 127% (2021)           fell short of reflating demand to target for
-   — largest among G7 (Figure 2).                   most of the decade.
+   · largest among G7 (Figure 2).                   most of the decade.
  • YCC 2016–2024 held 10-year JGB yield ≈         • Distorting effects: impaired bond-market
    0%.                                              price discovery; reduced fiscal discipline;
  • Transmission channels: portfolio-balance         created exit-strategy challenges.
@@ -299,43 +299,43 @@ induced expansion.
    channel (weakening yen, boosting               • International spillovers: yen carry-trade
    exporters).                                       affected global FX markets.
  • Effects: yen depreciated ~40% (2012–           • YCC abandonment in 2024 led to partial
-   2024) boosting export earnings; equity-          reversal — yields rose to ~1% without
+   2024) boosting export earnings; equity-          reversal · yields rose to ~1% without
    market rally; limited direct effect on CPI       financial-market disruption.
    until energy-shock + wage response.
                                                   • Judgement: QE and YCC were necessary
  • 2% inflation target consistently met from        but insufficient tools. They prevented
-   2023 — but driven partly by imported             worse outcomes but were unable to
+   2023 · but driven partly by imported             worse outcomes but were unable to
    inflation rather than domestic demand.           generate self-sustaining reflation absent
  • Fiscal dominance risk: BoJ holds over 50%        complementary fiscal and structural action.
    of JGBs.                                         Exit remains ongoing.
 
 
-6(e) — Abenomics-style structural reforms in an advanced economy (15
+6(e) · Abenomics-style structural reforms in an advanced economy (15
 marks)
             KAA (AO1 + AO2 + AO3)                               Evaluation (AO4)
 
  • Accept any named advanced economy              • Abenomics success in Japan is contested
-   (UK, eurozone, Italy, France, Germany,           — inflation target met but productivity
+   (UK, eurozone, Italy, France, Germany,           · inflation target met but productivity
    South Korea).                                    growth remains weak.
  • Abenomics 'three arrows': (1) aggressive       • 'Third arrow' was the most effective at
    monetary easing; (2) flexible fiscal policy;      shifting LRAS but also the slowest to
    (3) structural reform.                            implement politically.
  • Third arrow: labour-market reform (more        • Structural reform works best when
-   flexible contracts), corporate-governance        combined with demand support — won't
+   flexible contracts), corporate-governance        combined with demand support · won't
    reform (higher ROE targets, cross-               work in isolation.
-   shareholding unwind), women's labour-          • Political economy matters — reform
+   shareholding unwind), women's labour-          • Political economy matters · reform
    force participation, TPP/CPTPP trade             requires sustained political capital (Abe's
    deals.                                           unique longevity as PM in Japan).
- • Example application — UK: productivity         • Context-dependence: reforms that work in
+ • Example application · UK: productivity         • Context-dependence: reforms that work in
    agenda, planning-system reform, R&D tax-         one economy may not translate (e.g. UK's
    credit expansion, immigration policy for         flexible labour market already has most of
 
 
-9EC0/02 — Hard — Mark Scheme                                                           Page 7 of 10
+9EC0/02 · Hard · Mark Scheme                                                           Page 7 of 10
             KAA (AO1 + AO2 + AO3)                                Evaluation (AO4)
 
    high-skill workers.                              what Abenomics added to Japan).
- • Example application — Italy: labour-market      • Judgement: Abenomics-style structural
+ • Example application · Italy: labour-market      • Judgement: Abenomics-style structural
    reform, judicial reform, civil-service reform     reform is useful conceptually as a
    to unblock EU Recovery Fund spending.             template, particularly the three-arrow
  • Diagrams: LRAS shift from structural              integration. However, applicability depends
@@ -349,14 +349,14 @@ marks)
                                                      best path to restoring long-run growth.
 
 
-9EC0/02 — Hard — Mark Scheme                                                            Page 8 of 10
-                Section C — Question 7 OR Question 8 (25 marks)
-Question 7 — Modern Monetary Theory and UK policy (25 marks)
+9EC0/02 · Hard · Mark Scheme                                                            Page 8 of 10
+                Section C · Question 7 OR Question 8 (25 marks)
+Question 7 · Modern Monetary Theory and UK policy (25 marks)
             KAA (AO1 + AO2 + AO3)                                  Evaluation (AO4)
 
  • MMT core: governments that issue debt in          • Partial validity: MMT is correct that a
    their own currency face no hard financing           sovereign issuer cannot 'run out' of its own
-   constraint — they can always create                 currency; operational framework in MMT
+   constraint · they can always create                 currency; operational framework in MMT
    money to pay obligations in that currency.          matches modern monetary operations.
  • Inflation is the only real constraint on public   • But 2022 UK experience shows that the
     spending.                                          'inflation constraint' binds through financial-
@@ -365,12 +365,12 @@ Question 7 — Modern Monetary Theory and UK policy (25 marks)
  • Mainstream critique: inflation constraint is      • Low-inflation environments (2010–2020)
    not as lax as MMT implies; hyperinflation           made MMT-style prescriptions look cheap;
    risks; loss of central-bank credibility.            2022 revealed the limits.
- • UK relevance: sterling is own currency, so        • Implementation risks: time-inconsistency —
+ • UK relevance: sterling is own currency, so        • Implementation risks: time-inconsistency ·
    UK is technically able to monetise debt; but         elected politicians face short-term
    UK runs a persistent current-account deficit         incentives to inflate.
    and depends on foreign capital inflows.           • Credibility of the inflation-targeting
  • Recent stress test: 2022 mini-budget                framework is a real asset MMT would
-   showed limits — unfunded tax cuts                   discard.
+   showed limits · unfunded tax cuts                   discard.
    prompted sharp gilt-market sell-off and           • Judgement: MMT's technical claim (no
    sterling fall, forcing policy reversal.             nominal financing constraint) is correct but
                                                        largely trivial; the substantive claim that
@@ -379,34 +379,34 @@ Question 7 — Modern Monetary Theory and UK policy (25 marks)
                                                        market discipline, and institutional trust. In
                                                        the UK context, MMT-style policies would
                                                        face rapid sterling, gilt-yield and inflation-
-                                                       expectation responses — i.e. the inflation
+                                                       expectation responses · i.e. the inflation
                                                        constraint bites earlier than MMT allows.
                                                        Existing UK framework (BoE independence
                                                        + fiscal rules) delivers broadly the same
                                                        ends with lower risk.
 
 
-Question 8 — Central bank independence vs monetary-fiscal coordination (25
+Question 8 · Central bank independence vs monetary-fiscal coordination (25
 marks)
             KAA (AO1 + AO2 + AO3)                                  Evaluation (AO4)
 
  • Theoretical foundation of independence:           • Counter: independence remains valuable
-   Kydland-Prescott time-inconsistency —               as an anchor for expectations even in high-
+   Kydland-Prescott time-inconsistency ·               as an anchor for expectations even in high-
    discretionary policy biased toward inflation;       deficit era.
    independent CB with clear mandate solves          • Coordination can be informal and through
-   commitment problem.                                 accountability channels — formal
+   commitment problem.                                 accountability channels · formal
  • Empirical support: countries with                   coordination risks dominance of fiscal over
    independent CBs had lower average                   monetary objectives.
    inflation in 1990s–2010s.                         • Fiscal policy is more flexibly discretionary
- • 2021–2023 inflation episode: supply-side            than monetary — better suited to short-
+ • 2021–2023 inflation episode: supply-side            than monetary · better suited to short-
    shocks and fiscal expansion combined;               horizon supply-shock response.
    independent CBs responded with delay              • Concerns about 'fiscal dominance' in high-
    (transitory debate), then sharp tightening.
 
-9EC0/02 — Hard — Mark Scheme                                                               Page 9 of 10
+9EC0/02 · Hard · Mark Scheme                                                               Page 9 of 10
             KAA (AO1 + AO2 + AO3)                               Evaluation (AO4)
 
- • 2022 UK experience: fiscal expansion             debt economies — but evidence that this
+ • 2022 UK experience: fiscal expansion             debt economies · but evidence that this
    clashed with monetary tightening; gilt crisis    has materialised is limited.
    demonstrated limits of uncoordinated            • Strong case for better public
    policy.                                           communication and parliamentary scrutiny
@@ -423,12 +423,12 @@ marks)
                                                      fiscal stance by government) can improve
                                                      outcomes without compromising credibility.
                                                      A reformed, transparent, independent CB
-                                                     — with responsibility for co-ordinating with
+                                                     · with responsibility for co-ordinating with
                                                      Treasury on crisis-management protocols
-                                                     — represents the best current framework.
+                                                     · represents the best current framework.
 
 
                                TOTAL FOR PAPER = 100 MARKS
 
 
-9EC0/02 — Hard — Mark Scheme                                                          Page 10 of 10
+9EC0/02 · Hard · Mark Scheme                                                          Page 10 of 10

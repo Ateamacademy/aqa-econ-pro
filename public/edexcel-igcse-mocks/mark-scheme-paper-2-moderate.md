@@ -1,7 +1,7 @@
 <!-- Auto-generated from /public/edexcel-igcse-mocks/mark-scheme-paper-2-moderate.pdf -->
 Pearson Edexcel International GCSE
 Mark Scheme
-Summer 2026 — Predicted Paper (Moderate)
+Summer 2026 · Predicted Paper (Moderate)
 In Economics (4EC1)
 Paper 2: Macroeconomics and the Global Economy
 
@@ -23,7 +23,7 @@ General Marking Guidance
        response, the team leader must be consulted.
    •   Crossed out work should be marked UNLESS the candidate has replaced it with an
        alternative response.
-Mark Scheme: Paper 2 — Macroeconomics and the Global Economy (4EC1/02) — Predicted
+Mark Scheme: Paper 2 · Macroeconomics and the Global Economy (4EC1/02) · Predicted
 (Moderate)
 
  1(a)      Question                                                                (1)
@@ -141,13 +141,13 @@ Mark Scheme: Paper 2 — Macroeconomics and the Global Economy (4EC1/02) — Pre
           With reference to the data and your knowledge of economics,
           analyse the benefits to consumers in Vietnam of being a member of
           ASEAN.
-          Indicative Content — AO2 (3 marks) / AO3 (3 marks)
+          Indicative Content · AO2 (3 marks) / AO3 (3 marks)
 
           AO2 and AO3
             • A trading bloc is a group of countries that reduces trade
                 barriers such as tariffs and quotas between members.
               •   Vietnamese consumers have access to a wider variety of
-                  goods from 10 ASEAN countries — products that may not be
+                  goods from 10 ASEAN countries · products that may not be
                   produced at home, such as specialist Thai, Indonesian or
                   Singaporean goods.
               •   Reduced tariffs mean that imports from other ASEAN
@@ -200,7 +200,7 @@ Level 3   5–6       •   Demonstrates clear knowledge and understanding by
        B is not correct because a fixed excise duty is an indirect tax, not
        progressive.
        D is not correct because a fixed amount per household is regressive
-       — it forms a larger share of low incomes.
+       · it forms a larger share of low incomes.
 
 
 2(b)   Question                                                                  (1)
@@ -278,10 +278,10 @@ Level 3   5–6       •   Demonstrates clear knowledge and understanding by
 
 2(g)   Question                                                                  (9)
        Assess the possible benefits for Brazil of reducing income tax rates.
-       Indicative Content — AO2 (3 marks) / AO3 (3 marks) / AO4 (3
+       Indicative Content · AO2 (3 marks) / AO3 (3 marks) / AO4 (3
        marks)
 
-       AO2 and AO3 — benefits
+       AO2 and AO3 · benefits
          • Income tax is a direct tax on individuals' earnings;
              progressive rates apply higher percentages to higher
              incomes.
@@ -292,14 +292,14 @@ Level 3   5–6       •   Demonstrates clear knowledge and understanding by
               •   Lower income tax may act as an incentive to work longer
                   hours or enter the labour force, increasing productivity.
               •   Reducing tax rates can encourage skilled workers and
-                  entrepreneurs to remain in Brazil rather than emigrate —
+                  entrepreneurs to remain in Brazil rather than emigrate ·
                   reducing 'brain drain'.
               •   Lower taxes may reduce tax avoidance and the
                   informal/black economy, ultimately raising overall tax revenue
                   in the long run.
 
 
-          AO4 — drawbacks / evaluation
+          AO4 · drawbacks / evaluation
             • A tax cut reduces government revenue in the short term,
                potentially increasing Brazil's fiscal deficit.
               •   Reduced revenue may force cuts in public services such as
@@ -311,7 +311,7 @@ Level 3   5–6       •   Demonstrates clear knowledge and understanding by
               •   Higher spending could cause demand-pull inflation if the
                   economy is near full capacity.
               •   The effectiveness depends on whether consumers spend or
-                  save the extra income — wealthy households tend to save
+                  save the extra income · wealthy households tend to save
                   more.
               •   Overall judgement: the benefits depend on the size of the cut,
                   the state of the economy, and who benefits most from the
@@ -398,14 +398,14 @@ Level 3   7–9       •   Demonstrates clear knowledge and understanding by
 3(d)   Question                                                                (6)
        Analyse the possible benefits of globalisation for consumers in a
        country such as India.
-       Indicative Content — AO2 (3 marks) / AO3 (3 marks)
+       Indicative Content · AO2 (3 marks) / AO3 (3 marks)
 
        AO2 and AO3
          • Globalisation is the increasing interconnectedness of world
              economies through trade, investment and technology.
-              •   Indian consumers can access a wider variety of goods —
+              •   Indian consumers can access a wider variety of goods ·
                   from imported electronics and cars to foreign food and
-                  fashion — that may not be produced domestically.
+                  fashion · that may not be produced domestically.
               •   Competition from foreign producers and economies of scale
                   have driven down prices on many goods, such as
                   smartphones, clothing and household items.
@@ -446,10 +446,10 @@ Level 3   5–6             •   Demonstrates clear knowledge and understanding
 3(e)      Question                                                                      (9)
           Assess how an increase in import tariffs may affect consumers in a
           country such as Kenya.
-          Indicative Content — AO2 (3 marks) / AO3 (3 marks) / AO4 (3
+          Indicative Content · AO2 (3 marks) / AO3 (3 marks) / AO4 (3
           marks)
 
-          AO2 and AO3 — negative effects on consumers
+          AO2 and AO3 · negative effects on consumers
             • A tariff is a tax on imported goods, raising their domestic
                 price.
               •   With sugar tariffs rising from 35% to 50%, imported sugar
@@ -465,9 +465,9 @@ Level 3   5–6             •   Demonstrates clear knowledge and understanding
                   income on food.
 
 
-          AO4 — counter-points / evaluation
+          AO4 · counter-points / evaluation
             • Tariffs may protect Kenyan domestic sugar producers,
-               keeping jobs in sugar farming — indirectly benefitting some
+               keeping jobs in sugar farming · indirectly benefitting some
                consumers who are workers.
               •   Government earns tariff revenue which could fund services
                   that benefit consumers (e.g. schools, hospitals).
@@ -534,13 +534,13 @@ Level   Mark   Descriptor
 4(b)      Question                                                                      (6)
           Analyse the possible effects on Japanese households of raising
           interest rates.
-          Indicative Content — AO2 (3 marks) / AO3 (3 marks)
+          Indicative Content · AO2 (3 marks) / AO3 (3 marks)
 
           AO2 and AO3
             • Interest rates are the cost of borrowing and the reward for
                 saving.
               •   Raising rates from −0.1% to 0.1% makes borrowing more
-                  expensive for Japanese households — mortgage repayments
+                  expensive for Japanese households · mortgage repayments
                   and loan costs rise.
               •   This reduces disposable income for households with
                   variable-rate debts, leaving them less to spend on other
@@ -588,10 +588,10 @@ Level 3   5–6            •   Demonstrates clear knowledge and understanding 
 4(c)      Question                                                                  (12)
           Evaluate the use of government subsidies to support the renewable
           energy industry in a country such as Japan.
-          Indicative Content — AO2 (4 marks) / AO3 (4 marks) / AO4 (4
+          Indicative Content · AO2 (4 marks) / AO3 (4 marks) / AO4 (4
           marks)
 
-          AO2 and AO3 — advantages of subsidies
+          AO2 and AO3 · advantages of subsidies
             • A subsidy is a government payment to suppliers to reduce
                 their costs of production.
              •   Subsidies of ¥20 trillion lower production costs for solar
@@ -604,21 +604,21 @@ Level 3   5–6            •   Demonstrates clear knowledge and understanding 
                  by 2050 by reducing emissions and combating climate
                  change.
              •   Supporting a new industry creates jobs in manufacturing,
-                 installation and research — reducing unemployment and
+                 installation and research · reducing unemployment and
                  boosting economic growth.
              •   Investment in green technology builds comparative
                  advantage for Japan, potentially creating future exports and
                  reducing dependence on imported fossil fuels.
-             •   Positive externalities of production are generated — less air
+             •   Positive externalities of production are generated · less air
                  pollution, better public health, and a more sustainable
                  economy.
 
 
-          AO4 — disadvantages / evaluation
+          AO4 · disadvantages / evaluation
             • ¥20 trillion is an opportunity cost: the money could have been
                spent on healthcare, education or pensions, which may be
                needed more in an ageing society.
-             •   Subsidies may lead to inefficiency — firms may rely on
+             •   Subsidies may lead to inefficiency · firms may rely on
                   government support rather than innovating, and the most
                   efficient firms may not receive subsidies.
               •   Taxpayers ultimately fund the subsidies, so they raise the tax

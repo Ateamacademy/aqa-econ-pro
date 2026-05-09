@@ -69,7 +69,7 @@ export function InlineDiagramCanvas({
       setSavedAt(Date.now());
       onChange?.(dataUrl);
     } catch {
-      // quota exceeded — silent
+      // quota exceeded · silent
     }
   };
 
@@ -82,7 +82,7 @@ export function InlineDiagramCanvas({
       >
         <Pencil className="h-3.5 w-3.5" />
         <span className="font-semibold">Add a diagram</span>
-        <span className="text-muted-foreground">— optional, but recommended for top-band answers.</span>
+        <span className="text-muted-foreground">· optional, but recommended for top-band answers.</span>
         <ChevronDown className="h-3.5 w-3.5 ml-auto" />
       </button>
     );

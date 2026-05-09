@@ -167,7 +167,7 @@ export const ocrPastPapers: OcrPastPaper[] = [
 ];
 
 export const ocrComponentTitles: Record<number, string> = {
-  1: "Component 01 — Microeconomics (H460/01)",
-  2: "Component 02 — Macroeconomics (H460/02)",
-  3: "Component 03 — Themes in Economics (H460/03)",
+  1: "Component 01 · Microeconomics (H460/01)",
+  2: "Component 02 · Macroeconomics (H460/02)",
+  3: "Component 03 · Themes in Economics (H460/03)",
 };

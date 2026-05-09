@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Printer, ExternalLink } from "lucide-react";
 
 /**
- * EdexcelMockPaperViewer — renders one of the nine static Pearson-style HTML
+ * EdexcelMockPaperViewer · renders one of the nine static Pearson-style HTML
  * mock papers (Paper 1/2/3 × Moderate/Hard/Advanced) inside a sandboxed
  * iframe with a thin React toolbar.
  *
@@ -50,8 +50,8 @@ export default function EdexcelMockPaperViewer() {
 
   useEffect(() => {
     if (validPaper && validDifficulty) {
-      const suffix = isMarkScheme ? " — Mark Scheme" : " Mock";
-      document.title = `Edexcel A Paper ${n} (9EC0/0${n}) — ${DIFFICULTY_LABEL[d]}${suffix}`;
+      const suffix = isMarkScheme ? " · Mark Scheme" : " Mock";
+      document.title = `Edexcel A Paper ${n} (9EC0/0${n}) · ${DIFFICULTY_LABEL[d]}${suffix}`;
     }
   }, [n, d, validPaper, validDifficulty, isMarkScheme]);
 
@@ -91,7 +91,7 @@ export default function EdexcelMockPaperViewer() {
               Paper {n}: {PAPER_TITLE[n!]}{" "}
               <span className="text-muted-foreground font-normal">(9EC0/0{n})</span>
               {isMarkScheme && (
-                <span className="ml-2 text-primary">— Mark Scheme</span>
+                <span className="ml-2 text-primary">· Mark Scheme</span>
               )}
             </span>
             <Badge variant="outline" className={`${DIFFICULTY_TONE[d]} font-semibold`}>

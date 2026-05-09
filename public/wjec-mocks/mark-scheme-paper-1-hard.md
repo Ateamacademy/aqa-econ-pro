@@ -10,7 +10,7 @@ GENERAL MARKING GUIDANCE
 Positive marking should be applied: credit what the learner writes, rather than penalising omissions.
 The indicative content is not exhaustive; learners do not need to cover all points to reach the top
 band.
-                 SECTION A — ANSWERS
+                 SECTION A · ANSWERS
 
 Q    Ans                               Notes / Working
 

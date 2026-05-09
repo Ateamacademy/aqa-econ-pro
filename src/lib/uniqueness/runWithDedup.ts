@@ -108,7 +108,7 @@ export async function generateWithDedup(
       continue;
     }
 
-    // ✅ Passed all checks — persist
+    // ✅ Passed all checks · persist
     for (const fp of fps) emit({ type: "question-ok", questionNumber: fp.questionNumber });
     emit({ type: "saving" });
     const saved = await saveFingerprints(fps, paper.id);

@@ -32,7 +32,7 @@
     </marker>
   </defs>
 
-  <text x="350" y="28" text-anchor="middle" class="ttl">UK Soft Drinks Industry Levy — Ad Valorem Indirect Tax</text>
+  <text x="350" y="28" text-anchor="middle" class="ttl">UK Soft Drinks Industry Levy · Ad Valorem Indirect Tax</text>
   <text x="350" y="48" text-anchor="middle" class="sub">A 20% ad valorem tax pivots Supply from the origin: S → S + tax (steeper)</text>
 
   <!-- Axes -->
@@ -106,5 +106,5 @@
 
   <text x="90"  y="495" class="sub">Tax raises firms' costs → S pivots up to S + tax. Equilibrium moves from (P1, Q1) to (P2, Q2): higher price, lower quantity.</text>
   <text x="90"  y="512" class="sub">Tax wedge at Q2 = (price consumer pays P2) − (price producer keeps P_prod). Yellow box = tax revenue = wedge × Q2.</text>
-  <text x="90"  y="529" class="sub">Burden split depends on relative elasticities. Note: a specific (per-unit) tax would shift S parallel — same wedge at every Q.</text>
+  <text x="90"  y="529" class="sub">Burden split depends on relative elasticities. Note: a specific (per-unit) tax would shift S parallel · same wedge at every Q.</text>
 </svg>

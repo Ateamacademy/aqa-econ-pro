@@ -1,11 +1,11 @@
 /**
- * IB Diploma Economics (HL & SL) — marking convention.
+ * IB Diploma Economics (HL & SL) · marking convention.
  *
  * IB uses mark-band descriptors aligned to the IB Economics syllabus
  * (first assessment 2022). HL has three papers, SL has two:
- *   • Paper 1 (extended response, 25 marks)         — both HL and SL
- *   • Paper 2 (data response, 40 marks)             — both HL and SL
- *   • Paper 3 (policy paper, 60 marks)              — HL only
+ *   • Paper 1 (extended response, 25 marks)         · both HL and SL
+ *   • Paper 2 (data response, 40 marks)             · both HL and SL
+ *   • Paper 3 (policy paper, 60 marks)              · HL only
  *
  * Verified against IB published markschemes (May 2022–Nov 2024).
  */
@@ -14,7 +14,7 @@ import type {
   MarkBand,
 } from "@/lib/non-aqa/marking-convention.types";
 
-// Paper 1 — 25-mark extended response (10-mark + 15-mark parts)
+// Paper 1 · 25-mark extended response (10-mark + 15-mark parts)
 const tenMarkBands: MarkBand[] = [
   { level: 1, range: [1, 2], descriptor: "Little understanding of the question. Few relevant economic terms used; no diagrams or diagrams that are not relevant." },
   { level: 2, range: [3, 4], descriptor: "Some understanding of the question. Some relevant economic terms; diagrams included but with errors or omissions." },
@@ -34,7 +34,7 @@ const fifteenMarkBands: MarkBand[] = [
 const bands: Record<number, MarkBand[]> = {
   10: tenMarkBands,
   15: fifteenMarkBands,
-  // Paper 3 (HL) policy 60-mark — sub-parts are point-marked; banding is per sub-part.
+  // Paper 3 (HL) policy 60-mark · sub-parts are point-marked; banding is per sub-part.
 };
 
 export const IB_HLSL_MARKING_CONVENTION: NonAqaMarkingConvention = {

@@ -99,7 +99,7 @@ export function AqaDiagramRubricCheck({ rubric, elements }: Props) {
           This diagram supports a <span className="font-bold">Level {levelReached}</span> answer.
         </p>
         <p className="text-xs text-muted-foreground mt-1">
-          AQA marks the whole answer at one level — your written explanation must match the
+          AQA marks the whole answer at one level · your written explanation must match the
           diagram's level for the mark to be awarded.
         </p>
       </div>

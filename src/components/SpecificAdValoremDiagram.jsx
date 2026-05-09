@@ -26,7 +26,7 @@ export default function SpecificAdValoremDiagram() {
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
 
         {/* ─────────────────────────────────────────
-            LEFT PANEL — SPECIFIC TAX
+            LEFT PANEL · SPECIFIC TAX
             Key intersections (mathematically exact):
             Q1,P1 = Demand∩PreTax     → (146, 115)
             Q2,P2 = Demand∩WithTax    → (120, 96)
@@ -109,12 +109,12 @@ export default function SpecificAdValoremDiagram() {
         </div>
 
         {/* ─────────────────────────────────────────
-            RIGHT PANEL — AD VALOREM TAX
+            RIGHT PANEL · AD VALOREM TAX
             Key intersections (mathematically exact):
             Q1,P1 = Demand∩PreTax    → (146, 115)
             Q2,P2 = Demand∩AdVal     → (104, 84)
             P3    = PreTax at Q2=104 → (104, 148)
-            T gap = 64px (wider than left — proportional to price)
+            T gap = 64px (wider than left · proportional to price)
             Green area = 64px tall vs 39px on left (1.64× bigger)
         ───────────────────────────────────────── */}
         <div style={{ position: "relative", padding: "10px 8px 6px 8px" }}>
@@ -146,7 +146,7 @@ export default function SpecificAdValoremDiagram() {
             <text x="10" y="15" fill="#333" fontSize="10">Price</text>
             <text x="252" y="230" fill="#333" fontSize="10">Output</text>
 
-            {/* Green tax trapezoid: P2(y=84) → P3(y=148) over Q2(x=104) — 64px tall */}
+            {/* Green tax trapezoid: P2(y=84) → P3(y=148) over Q2(x=104) · 64px tall */}
             <polygon points="42,84 104,84 104,148 42,148" fill="#a5d6a7" fillOpacity="0.6" />
 
             {/* Demand: (55,48)→(268,210) */}

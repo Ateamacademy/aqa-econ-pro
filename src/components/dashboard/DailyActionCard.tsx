@@ -41,7 +41,7 @@ export default function DailyActionCard({ action, alternativeAction, today }: Pr
                 onClick={() => setDismissed(true)}
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 aria-label="Show another action"
-                title="Not now — show me another"
+                title="Not now · show me another"
               >
                 <X className="h-3.5 w-3.5" />
               </button>

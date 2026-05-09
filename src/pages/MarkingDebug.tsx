@@ -43,7 +43,7 @@ export default function MarkingDebug() {
           {rate > 15 && (
             <div className="mt-4 p-3 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs flex items-center gap-2">
               <AlertTriangle className="h-4 w-4" />
-              Marking model may be drifting — review prompts. Cap rate exceeds 15%.
+              Marking model may be drifting · review prompts. Cap rate exceeds 15%.
             </div>
           )}
         </CardContent>

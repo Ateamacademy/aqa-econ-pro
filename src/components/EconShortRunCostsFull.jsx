@@ -8,7 +8,7 @@ export default function EconShortRunCostsFull() {
         </defs>
         <rect width="960" height="620" fill="#fff"/>
 
-        {/* ══ BOX 1: P > ATC — y=52 to y=230 (HARDCODED) ══ */}
+        {/* ══ BOX 1: P > ATC · y=52 to y=230 (HARDCODED) ══ */}
         <rect x="8" y="52" width="354" height="178" rx="8" fill="rgba(34,197,94,0.13)" stroke="#86efac" strokeWidth="1.5"/>
         <text x="22" y="76" fontSize="12" fontWeight="bold" fill="#15803d">P &gt; ATC</text>
         <text x="22" y="96" fontSize="11" fill="#444">Firm makes economic (supernormal) profit</text>
@@ -17,15 +17,15 @@ export default function EconShortRunCostsFull() {
         <text x="22" y="148" fontSize="10" fontStyle="italic" fill="#444">Firm makes normal profit</text>
         <text x="22" y="164" fontSize="10" fontStyle="italic" fill="#444">(zero economic profit)</text>
 
-        {/* ══ BOX 2: ATC > P > AVC — y=240 to y=418 (HARDCODED) ══ */}
+        {/* ══ BOX 2: ATC > P > AVC · y=240 to y=418 (HARDCODED) ══ */}
         <rect x="8" y="240" width="354" height="178" rx="8" fill="rgba(251,191,36,0.15)" stroke="#fcd34d" strokeWidth="1.5"/>
         <text x="22" y="264" fontSize="12" fontWeight="bold" fill="#b45309">ATC &gt; P &gt; AVC</text>
         <text x="22" y="284" fontSize="11" fill="#444">Firm makes a loss but continues to produce</text>
         <line x1="22" y1="300" x2="348" y2="300" stroke="#fcd34d" strokeWidth="1"/>
-        <text x="22" y="318" fontSize="10" fontStyle="italic" fill="#b45309">P covers variable costs — loss less than</text>
+        <text x="22" y="318" fontSize="10" fontStyle="italic" fill="#b45309">P covers variable costs · loss less than</text>
         <text x="22" y="336" fontSize="10" fontStyle="italic" fill="#444">fixed costs, so output continues</text>
 
-        {/* ══ BOX 3: P < AVC — y=428 to y=606 (HARDCODED) ══ */}
+        {/* ══ BOX 3: P < AVC · y=428 to y=606 (HARDCODED) ══ */}
         <rect x="8" y="428" width="354" height="178" rx="8" fill="rgba(220,38,38,0.11)" stroke="#fca5a5" strokeWidth="1.5"/>
         <text x="22" y="452" fontSize="12" fontWeight="bold" fill="#dc2626">P &lt; AVC</text>
         <text x="22" y="472" fontSize="11" fill="#444">Firm makes a loss and shuts down</text>

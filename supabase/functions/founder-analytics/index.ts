@@ -571,7 +571,7 @@ Deno.serve(async (req) => {
     }
     const dauRatio = totalUsers && mauUsers.size > 0 ? Math.round((todayUsers.size / mauUsers.size) * 100) : 0;
     if (dauRatio > 0) {
-      insights.push(`DAU/MAU ratio: ${dauRatio}% — ${dauRatio > 20 ? "strong engagement" : "room for growth"}.`);
+      insights.push(`DAU/MAU ratio: ${dauRatio}% · ${dauRatio > 20 ? "strong engagement" : "room for growth"}.`);
     }
     if (avgImprovement > 0) {
       insights.push(`Students improve by ${avgImprovement}% on average from first to latest session.`);

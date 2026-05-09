@@ -1,5 +1,5 @@
 /**
- * EconomicsDiagramLibrary — Standalone interactive showcase
+ * EconomicsDiagramLibrary · Standalone interactive showcase
  * 5 canonical A-Level / IB Economics diagrams with mathematical precision.
  * Converted from uploaded JSX to TypeScript for the Lovable platform.
  */
@@ -368,9 +368,9 @@ function DiagramPPC({ growthShift }: { growthShift: boolean }) {
       )}
       <polyline points={ppc1Pts} fill="none" stroke={C.supply} strokeWidth="2.5" strokeLinecap="round" />
       <text x={ppc1LabelSx + 8} y={ppc1LabelSy} fill={C.supply} fontSize="13" fontWeight="700" fontFamily={MONO} dominantBaseline="middle">PPC₁</text>
-      <KeyPoint dx={ptA[0]} dy={ptA[1]} color={C.eq1} lx={10} ly={-14}>A — efficient</KeyPoint>
-      <KeyPoint dx={ptB[0]} dy={ptB[1]} color={C.eq2} lx={10} ly={14}>B — inefficient</KeyPoint>
-      <KeyPoint dx={ptC[0]} dy={ptC[1]} color={growthShift ? C.eq1 : C.muted} lx={10} ly={-14}>{growthShift ? "C — now attainable" : "C — unattainable"}</KeyPoint>
+      <KeyPoint dx={ptA[0]} dy={ptA[1]} color={C.eq1} lx={10} ly={-14}>A · efficient</KeyPoint>
+      <KeyPoint dx={ptB[0]} dy={ptB[1]} color={C.eq2} lx={10} ly={14}>B · inefficient</KeyPoint>
+      <KeyPoint dx={ptC[0]} dy={ptC[1]} color={growthShift ? C.eq1 : C.muted} lx={10} ly={-14}>{growthShift ? "C · now attainable" : "C · unattainable"}</KeyPoint>
     </svg>
   );
 }
@@ -384,8 +384,8 @@ const DIAGRAMS = [
     legend: (shift: boolean): LegendEntry[] => [
       { color: C.demand, label: "Demand (D₁)", line: true },
       { color: C.supply, label: "Supply (S₁)", line: true },
-      { color: C.eq1, label: "E₁ — original", dot: true },
-      ...(shift ? [{ color: C.eq2, label: "E₂ — after shift", dot: true }] : []),
+      { color: C.eq1, label: "E₁ · original", dot: true },
+      ...(shift ? [{ color: C.eq2, label: "E₂ · after shift", dot: true }] : []),
     ],
   },
   { id: "tax", label: "Indirect Tax", sub: "Specific tax, wedge & welfare loss",
@@ -419,9 +419,9 @@ const DIAGRAMS = [
     legend: (shift: boolean): LegendEntry[] => [
       { color: C.supply, label: "PPC₁", line: true },
       ...(shift ? [{ color: C.supply2, label: "PPC₂ (growth)", dash: true }] : []),
-      { color: C.eq1, label: "A — efficient", dot: true },
-      { color: C.eq2, label: "B — inefficient", dot: true },
-      { color: shift ? C.eq1 : C.muted, label: shift ? "C — attainable" : "C — unattainable", dot: true },
+      { color: C.eq1, label: "A · efficient", dot: true },
+      { color: C.eq2, label: "B · inefficient", dot: true },
+      { color: shift ? C.eq1 : C.muted, label: shift ? "C · attainable" : "C · unattainable", dot: true },
     ],
   },
 ];
@@ -531,7 +531,7 @@ export default function EconomicsDiagramShowcase() {
             {active === "tax" && <SliderControl label="Tax size" value={taxAmt} min={0.5} max={4} step={0.5} color={C.supply2} onChange={setTaxAmt} format={v => v.toFixed(1)} />}
             {active === "adas" && <Toggle label="AD shift right" value={adShift} onChange={setAdShift} />}
             {active === "ppc" && <Toggle label="Economic growth (PPC₂)" value={growthShift} onChange={setGrowthShift} />}
-            {active === "monopoly" && <div className="text-[10px] text-muted-foreground px-1 leading-relaxed" style={{ fontFamily: MONO }}>Static — profit max at MR = MC</div>}
+            {active === "monopoly" && <div className="text-[10px] text-muted-foreground px-1 leading-relaxed" style={{ fontFamily: MONO }}>Static · profit max at MR = MC</div>}
           </SidebarSection>
         </div>
 

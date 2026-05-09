@@ -4,7 +4,7 @@
  * for predicted-paper questions against the official answer key.
  *
  * Keyed by predicted paper id (matches src/data/ocrPredictedPapers.ts).
- * DO NOT edit by hand — regenerate from the PDFs.
+ * DO NOT edit by hand · regenerate from the PDFs.
  */
 export const ocrPredictedMarkSchemes: Record<string, string> = {
   "ocr-c01-set-a": `## Page 1
@@ -111,7 +111,7 @@ H460/01 Mark Scheme June 2026
     </tr>
     <tr>
         <td>**1 (c)(ii)**</td>
-        <td>**Compare the trend in coffee-shop prices with the trend in coffee-bean prices over the period shown in Fig. 1.**<br>1 mark for similarity; 1 mark for difference. Accept any two valid points.<br>**Similarity:** both indices rose overall between Jan 2020 and Apr 2024 (1).<br>**Differences (any one):**<br>• coffee-bean prices rose faster/more sharply — +61% (100 → 161) vs coffee-shop prices +32% (100 → 132) (1)<br>• coffee-bean prices peaked in Dec 2023 (172) then fell by Apr 2024, whereas coffee-shop prices continued to rise (1)<br>• coffee-bean prices were more volatile / changed more rapidly than coffee-shop prices (1)</td>
+        <td>**Compare the trend in coffee-shop prices with the trend in coffee-bean prices over the period shown in Fig. 1.**<br>1 mark for similarity; 1 mark for difference. Accept any two valid points.<br>**Similarity:** both indices rose overall between Jan 2020 and Apr 2024 (1).<br>**Differences (any one):**<br>• coffee-bean prices rose faster/more sharply · +61% (100 → 161) vs coffee-shop prices +32% (100 → 132) (1)<br>• coffee-bean prices peaked in Dec 2023 (172) then fell by Apr 2024, whereas coffee-shop prices continued to rise (1)<br>• coffee-bean prices were more volatile / changed more rapidly than coffee-shop prices (1)</td>
         <td>2</td>
         <td>Award 1 mark max if candidate gives only similarities or only differences. Require quantitative reference (figure/period) for full marks.</td>
     </tr>
@@ -180,7 +180,7 @@ Relevant context:
 
 **Evaluation**
 
-• real incomes depend on inflation, which has been high — CPI peaked above 11% in Oct 2022
+• real incomes depend on inflation, which has been high · CPI peaked above 11% in Oct 2022
 
 • coffee shops have passed costs on in higher drink prices (+32%), eroding real purchasing power
 
@@ -192,7 +192,7 @@ Relevant context:
 
 **Possible judgements**
 
-• depends on the size of the rise relative to inflation — real wage gains are much smaller than nominal
+• depends on the size of the rise relative to inflation · real wage gains are much smaller than nominal
 
 • depends on the elasticity of labour demand in hospitality
 
@@ -220,11 +220,11 @@ H460/01 Mark Scheme June 2026
     </tr>
 <tr>
       <td><b>Level 2</b><br>(5–8 marks)</td>
-      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s).<br><b>Good application</b> of economic concepts to the context and scope of the question, using some relevant and focussed examples and some good use of data where appropriate.<br><b>Reasonable analysis</b> characterised by developing chains of reasoning that explain most of the links; diagram(s) may be predominantly correct but not fully integrated into the response.<br><b>Reasonable evaluation</b> — counter argument(s) are considered but not fully developed; some attempt to conclude but without fully weighing up both sides. QER: the candidate expresses ideas with reasonable clarity and accuracy.</td>
+      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s).<br><b>Good application</b> of economic concepts to the context and scope of the question, using some relevant and focussed examples and some good use of data where appropriate.<br><b>Reasonable analysis</b> characterised by developing chains of reasoning that explain most of the links; diagram(s) may be predominantly correct but not fully integrated into the response.<br><b>Reasonable evaluation</b> · counter argument(s) are considered but not fully developed; some attempt to conclude but without fully weighing up both sides. QER: the candidate expresses ideas with reasonable clarity and accuracy.</td>
     </tr>
 <tr>
       <td><b>Level 1</b><br>(1–4 marks)</td>
-      <td><b>Reasonable knowledge and understanding</b> of relevant economic ideas, principles or models.<br><b>Reasonable application</b> of economic concepts to some elements of the given context; may be inconsistent or not always relevant.<br><b>Limited analysis</b> in the form of single links; diagram(s) may contain errors or be loosely integrated into the response.<br><b>Limited evaluation</b> — simple statements of counter argument(s); stated or absent judgement. QER: the candidate expresses simple ideas clearly but is likely to be imprecise.</td>
+      <td><b>Reasonable knowledge and understanding</b> of relevant economic ideas, principles or models.<br><b>Reasonable application</b> of economic concepts to some elements of the given context; may be inconsistent or not always relevant.<br><b>Limited analysis</b> in the form of single links; diagram(s) may contain errors or be loosely integrated into the response.<br><b>Limited evaluation</b> · simple statements of counter argument(s); stated or absent judgement. QER: the candidate expresses simple ideas clearly but is likely to be imprecise.</td>
     </tr>
 <tr>
       <td><b>0 marks</b></td>
@@ -246,17 +246,17 @@ H460/01 Mark Scheme June 2026
 * monopolistic competition: many sellers, low barriers to entry/exit, differentiated products, normal profit in the long run
 * oligopoly: few dominant firms, interdependence, high barriers to entry, potential for collusion or price rigidity
 
-**Application — arguments the coffee market IS monopolistic competition**
+**Application · arguments the coffee market IS monopolistic competition**
 
-* large number of sellers — Fig. 2 shows over 9,500 outlets with independents accounting for ~50% of the market
-* low barriers to entry — start-up costs for an independent cafe can be under £30,000 (stimulus)
-* clear product differentiation — branding, décor, speciality drinks, loyalty schemes (stimulus)
+* large number of sellers · Fig. 2 shows over 9,500 outlets with independents accounting for ~50% of the market
+* low barriers to entry · start-up costs for an independent cafe can be under £30,000 (stimulus)
+* clear product differentiation · branding, décor, speciality drinks, loyalty schemes (stimulus)
 * easy consumer switching between outlets (stimulus line 22)
-* combined share of Big Three fell from 53% (2015) to 28% (2023) — evidence of many competing firms
+* combined share of Big Three fell from 53% (2015) to 28% (2023) · evidence of many competing firms
 
-**Application — arguments AGAINST pure monopolistic competition**
+**Application · arguments AGAINST pure monopolistic competition**
 
-* concentration still exists — Costa (12%), Starbucks (9%), Caffè Nero (7%), Greggs (5%), Pret (4%) together hold 37%
+* concentration still exists · Costa (12%), Starbucks (9%), Caffè Nero (7%), Greggs (5%), Pret (4%) together hold 37%
 * large chains have buying power over bean suppliers and long-term leases on prime locations (stimulus)
 * some features resemble oligopoly: branded chains with strategic interdependence on pricing, promotions and locations
 * Pret's subscription scheme (1.25m members) and Tesco-style loyalty features suggest attempts to lock in customers
@@ -264,14 +264,14 @@ H460/01 Mark Scheme June 2026
 **Analysis**
 
 * apply the theoretical model: differentiation gives each firm a downward-sloping demand curve; free entry erodes supernormal profit in the long run
-* rising costs (beans, wages, energy) erode profit margins — consistent with long-run normal-profit prediction
-* non-price competition on quality and branding — consistent with monopolistic competition
+* rising costs (beans, wages, energy) erode profit margins · consistent with long-run normal-profit prediction
+* non-price competition on quality and branding · consistent with monopolistic competition
 
 **Evaluation and judgement**
 
 * market features match monopolistic competition more closely than perfect competition or pure monopoly
-* segment-level analysis — branded chain segment may be closer to oligopoly; independent segment closer to monopolistic competition
-* the model is an approximation — few real-world markets fit one structure exactly
+* segment-level analysis · branded chain segment may be closer to oligopoly; independent segment closer to monopolistic competition
+* the model is an approximation · few real-world markets fit one structure exactly
 * supported judgement on 'extent' is required: market is largely consistent with monopolistic competition but with oligopolistic features in the branded chain segment
 
 **QER**
@@ -295,19 +295,19 @@ H460/01 Mark Scheme June 2026
   <tbody>
     <tr>
       <td><b>Level 5</b><br>(21–25 marks)</td>
-      <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Strong evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Strong evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 4</b><br>(16–20 marks)</td>
-      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Good evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Good evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 3</b><br>(11–15 marks)</td>
-      <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Reasonable evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Reasonable evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 2</b><br>(6–10 marks)</td>
-      <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Limited evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading</td>
+      <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Limited evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading</td>
     </tr>
   </tbody>
 </table>
@@ -327,7 +327,7 @@ H460/01 Mark Scheme June 2026
   </tr>
 <tr>
     <td><b>Level 1</b><br>(<b>1–5 marks</b>)</td>
-    <td><b>Weak knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Weak application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Weak analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Weak evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+    <td><b>Weak knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Weak application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Weak analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Weak evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
   </tr>
 <tr>
     <td><b>0 marks</b></td>
@@ -340,7 +340,7 @@ H460/01 Mark Scheme June 2026
 ### Knowledge and understanding
 
 * productive efficiency: production at minimum point of AC ($MC = AC$); lowest cost per unit
-* allocative efficiency: $P = MC$ — resources allocated to maximise social welfare
+* allocative efficiency: $P = MC$ · resources allocated to maximise social welfare
 * monopolistic competition: many differentiated sellers, low barriers, normal profit in the long run
 
 ### Analysis (with diagram)
@@ -354,9 +354,9 @@ H460/01 Mark Scheme June 2026
 ### Evaluation
 
 * firms retain some pricing power to fund product development and innovation $\\rightarrow$ dynamic efficiency
-* differentiation gives consumers greater choice and variety — welfare benefit not captured by static efficiency measures
-* inefficiency is limited — entry threats keep profits close to normal and discipline prices
-* real-world markets rarely match the theoretical model exactly — may be more or less efficient than model predicts
+* differentiation gives consumers greater choice and variety · welfare benefit not captured by static efficiency measures
+* inefficiency is limited · entry threats keep profits close to normal and discipline prices
+* real-world markets rarely match the theoretical model exactly · may be more or less efficient than model predicts
 * comparison with alternatives: still more allocatively efficient than pure monopoly or oligopoly with collusion
 
 ## Page 11
@@ -384,19 +384,19 @@ H460/01 Mark Scheme June 2026
   <tbody>
     <tr>
       <td><b>Level 5</b><br>(21–25 marks)</td>
-      <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Strong evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Strong evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 4</b><br>(16–20 marks)</td>
-      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Good evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Good evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 3</b><br>(11–15 marks)</td>
-      <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Reasonable evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Reasonable evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 2</b><br>(6–10 marks)</td>
-      <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Limited evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading</td>
+      <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Limited evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading</td>
     </tr>
   </tbody>
 </table>
@@ -416,7 +416,7 @@ H460/01 Mark Scheme June 2026
     </tr>
     <tr>
         <td>**Level 1**<br>**(1–5 marks)**</td>
-        <td>**Weak knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Weak application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Weak analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Weak evaluation** of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+        <td>**Weak knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Weak application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Weak analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Weak evaluation** of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
     <tr>
         <td>**0 marks**</td>
@@ -433,15 +433,15 @@ H460/01 Mark Scheme June 2026
 * free-market outcome at MPB = MPC overconsumes relative to social optimum; welfare loss triangle
 * a per-unit tax equal to the marginal external cost shifts MPC upward, reducing Q to the social optimum
 * equilibrium price rises, quantity falls, government revenue is generated
-* Soft Drinks Industry Levy (UK, 2018) — reformulation incentives and lower sugar content
+* Soft Drinks Industry Levy (UK, 2018) · reformulation incentives and lower sugar content
 
 ### Evaluation
-* PED for sugary drinks is relatively inelastic — tax may have limited effect on quantity
-* regressive impact — lower-income households spend a larger share of income on sugary drinks
-* firms may absorb the tax or reformulate products (reducing tax base) — SDIL saw significant reformulation
-* consumers may substitute to untaxed sugary products (cakes, sweets) — limited welfare gain
+* PED for sugary drinks is relatively inelastic · tax may have limited effect on quantity
+* regressive impact · lower-income households spend a larger share of income on sugary drinks
+* firms may absorb the tax or reformulate products (reducing tax base) · SDIL saw significant reformulation
+* consumers may substitute to untaxed sugary products (cakes, sweets) · limited welfare gain
 * black-market / cross-border purchasing risks
-* setting the correct tax rate requires accurate valuation of external costs — information problem
+* setting the correct tax rate requires accurate valuation of external costs · information problem
 
 ## Page 14
 
@@ -471,19 +471,19 @@ H460/01 Mark Scheme June 2026
   <tbody>
     <tr>
       <td><b>Level 5</b><br>(21–25 marks)</td>
-      <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Strong evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Strong evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 4</b><br>(16–20 marks)</td>
-      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Good evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Good evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 3</b><br>(11–15 marks)</td>
-      <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Reasonable evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Reasonable evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 2</b><br>(6–10 marks)</td>
-      <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Limited evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading</td>
+      <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Limited evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading</td>
     </tr>
   </tbody>
 </table>
@@ -503,7 +503,7 @@ H460/01 Mark Scheme June 2026
     </tr>
     <tr>
         <td>**Level 1**<br>**(1–5 marks)**</td>
-        <td>**Weak knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Weak application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Weak analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Weak evaluation** of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+        <td>**Weak knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Weak application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Weak analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Weak evaluation** of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
     <tr>
         <td>**0 marks**</td>
@@ -520,11 +520,11 @@ H460/01 Mark Scheme June 2026
 * market diagram: MPB below MSB; free market under-consumes
 * subsidy to operators shifts MPC downward, reducing fares, increasing Q toward the social optimum
 * welfare gain triangle as external benefits are internalised
-* substitution away from private car use — reduces congestion and emissions
+* substitution away from private car use · reduces congestion and emissions
 
 ### Evaluation
-* opportunity cost of subsidy — funding must come from taxes or other cuts
-* government failure — risk of subsidising inefficient operators and dampening cost discipline
+* opportunity cost of subsidy · funding must come from taxes or other cuts
+* government failure · risk of subsidising inefficient operators and dampening cost discipline
 * may benefit wealthier commuters disproportionately (regressive in some cases)
 * effectiveness depends on PED of public transport and XED with private car use
 * alternative policies: investment in infrastructure, road pricing, fuel duty, emission zones
@@ -537,7 +537,7 @@ H460/01 Mark Scheme June 2026
 ## Possible judgements
 
 * subsidies justified where positive externalities are large (urban areas with high congestion)
-* subsidies should be targeted — e.g. off-peak fares, lower-income passengers, bus services in deprived areas
+* subsidies should be targeted · e.g. off-peak fares, lower-income passengers, bus services in deprived areas
 * combination of subsidy and investment is more likely to be effective than subsidy alone
 
 ## Page 18
@@ -555,19 +555,19 @@ H460/01 Mark Scheme June 2026
   <tbody>
     <tr>
       <td><b>Level 5<br>(21–25 marks)</b></td>
-      <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Strong evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Strong evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 4<br>(16–20 marks)</b></td>
-      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Good evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Good evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 3<br>(11–15 marks)</b></td>
-      <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Reasonable evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Reasonable evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 2<br>(6–10 marks)</b></td>
-      <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Limited evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading</td>
+      <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Limited evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading</td>
     </tr>
   </tbody>
 </table>
@@ -587,7 +587,7 @@ H460/01 Mark Scheme June 2026
     </tr>
     <tr>
         <td>**Level 1**<br>**(1–5 marks)**</td>
-        <td>**Weak knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Weak application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Weak analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Weak evaluation** of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+        <td>**Weak knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Weak application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Weak analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Weak evaluation** of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
     <tr>
         <td>**0 marks**</td>
@@ -598,7 +598,7 @@ H460/01 Mark Scheme June 2026
 ### Knowledge and understanding
 * minimum wage: a statutory wage floor set above the market-clearing wage
 * labour demand, labour supply and market equilibrium
-* NLW rose from £8.72 (2020) to £11.44 (2024) — a rise of over 31%
+* NLW rose from £8.72 (2020) to £11.44 (2024) · a rise of over 31%
 
 ### Analysis (with diagram)
 * competitive labour market: minimum wage above equilibrium causes excess supply of labour → unemployment
@@ -610,9 +610,9 @@ H460/01 Mark Scheme June 2026
 * elasticity of labour demand: low-skilled/hospitality demand may be inelastic in short run
 * regional variation: NLW may bind more tightly in lower-wage regions (North East vs London)
 * empirical evidence (Dube, LPC reports): small employment effects, meaningful income gains
-* employers may cut non-wage benefits, training, or hours — offsetting gains
+* employers may cut non-wage benefits, training, or hours · offsetting gains
 * rising automation (self-order screens, etc.) may be accelerated
-* effects on productivity — firms may invest and innovate to justify higher wages
+* effects on productivity · firms may invest and innovate to justify higher wages
 
 ## Page 20
 
@@ -867,7 +867,7 @@ H460/01 Mark Scheme June 2026
     </tr>
     <tr>
         <td>**1 (a)**</td>
-        <td>**Explain what is meant by a 'negative externality of consumption'.**<br><br>A cost imposed on a third party / to society (1) arising from the consumption of a good by individuals where social costs exceed private costs (1) so the good is overconsumed in a free market (1 — max 2).</td>
+        <td>**Explain what is meant by a 'negative externality of consumption'.**<br><br>A cost imposed on a third party / to society (1) arising from the consumption of a good by individuals where social costs exceed private costs (1) so the good is overconsumed in a free market (1 · max 2).</td>
         <td>**2**</td>
         <td>Annotate with tick. Reward reference to MPC vs MSC divergence.</td>
     </tr>
@@ -967,7 +967,7 @@ H460/01 Mark Scheme June 2026
 
 **Application**
 
-* UK net-zero target by 2050 — context for renewable support
+* UK net-zero target by 2050 · context for renewable support
 * Climate Change Levy taxes business energy use (complementary policy)
 * Fig. 2 shows market still dominated by firms selling both gas and renewable-generated electricity
 
@@ -984,10 +984,10 @@ H460/01 Mark Scheme June 2026
 
 **Evaluation**
 
-*   opportunity cost of subsidies — funded via consumer bills or taxation
+*   opportunity cost of subsidies · funded via consumer bills or taxation
 *   government failure: strike prices may be set too high or too low; political pressure affects auction design
-*   intermittency — renewables require gas backup, reducing the externality gain
-*   doesn't address emissions from existing gas plants directly — carbon tax may be more targeted
+*   intermittency · renewables require gas backup, reducing the externality gain
+*   doesn't address emissions from existing gas plants directly · carbon tax may be more targeted
 *   effectiveness depends on the elasticity of investment supply; regulatory uncertainty has limited rounds
 *   crowding out other policies (e.g. nuclear, hydrogen, demand-side measures)
 
@@ -1016,11 +1016,11 @@ H460/01 Mark Scheme June 2026
     </tr>
 <tr>
       <td><b>Level 2</b><br>(5–8 marks)</td>
-      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s).<br><b>Good application</b> of economic concepts to the context and scope of the question, using some relevant and focussed examples and some good use of data where appropriate.<br><b>Reasonable analysis</b> characterised by developing chains of reasoning that explain most of the links; diagram(s) may be predominantly correct but not fully integrated into the response.<br><b>Reasonable evaluation</b> — counter argument(s) are considered but not fully developed; some attempt to conclude but without fully weighing up both sides. QER: the candidate expresses ideas with reasonable clarity and accuracy.</td>
+      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s).<br><b>Good application</b> of economic concepts to the context and scope of the question, using some relevant and focussed examples and some good use of data where appropriate.<br><b>Reasonable analysis</b> characterised by developing chains of reasoning that explain most of the links; diagram(s) may be predominantly correct but not fully integrated into the response.<br><b>Reasonable evaluation</b> · counter argument(s) are considered but not fully developed; some attempt to conclude but without fully weighing up both sides. QER: the candidate expresses ideas with reasonable clarity and accuracy.</td>
     </tr>
 <tr>
       <td><b>Level 1</b><br>(1–4 marks)</td>
-      <td><b>Reasonable knowledge and understanding</b> of relevant economic ideas, principles or models.<br><b>Reasonable application</b> of economic concepts to some elements of the given context; may be inconsistent or not always relevant.<br><b>Limited analysis</b> in the form of single links; diagram(s) may contain errors or be loosely integrated into the response.<br><b>Limited evaluation</b> — simple statements of counter argument(s); stated or absent judgement. QER: the candidate expresses simple ideas clearly but is likely to be imprecise.</td>
+      <td><b>Reasonable knowledge and understanding</b> of relevant economic ideas, principles or models.<br><b>Reasonable application</b> of economic concepts to some elements of the given context; may be inconsistent or not always relevant.<br><b>Limited analysis</b> in the form of single links; diagram(s) may contain errors or be loosely integrated into the response.<br><b>Limited evaluation</b> · simple statements of counter argument(s); stated or absent judgement. QER: the candidate expresses simple ideas clearly but is likely to be imprecise.</td>
     </tr>
 <tr>
       <td><b>0 marks</b></td>
@@ -1040,31 +1040,31 @@ H460/01 Mark Scheme June 2026
 
 • concentration ratio: share of market held by the largest N firms
 
-**Application — evidence that the market IS an oligopoly**
+**Application · evidence that the market IS an oligopoly**
 
 • Fig. 2: top five firms hold 85% of the market (CR5 = 85%); British Gas, Octopus, E.ON Next, EDF and OVO dominate
 
-• high barriers to entry — tightened Ofgem financial resilience rules, large capital requirements, network access
+• high barriers to entry · tightened Ofgem financial resilience rules, large capital requirements, network access
 
 • consolidation from Big Six to Big Five through M&A (SSE → OVO, npower → E.ON Next)
 
-• 29 supplier failures during 2021–22 crisis — evidence that small entrants cannot survive shocks
+• 29 supplier failures during 2021–22 crisis · evidence that small entrants cannot survive shocks
 
-• switching has collapsed (18% in 2018 → 5% in 2024) — consumers largely inert
+• switching has collapsed (18% in 2018 → 5% in 2024) · consumers largely inert
 
-**Application — evidence AGAINST pure oligopoly**
+**Application · evidence AGAINST pure oligopoly**
 
-• Octopus Energy grew rapidly — suggests the market is not entirely closed to new challengers
+• Octopus Energy grew rapidly · suggests the market is not entirely closed to new challengers
 
 • Default Tariff Cap limits the extent to which firms can coordinate on high prices
 
-• suppliers differentiate on service ratings, smart-meter rollout, green tariffs — consistent with non-collusive competition
+• suppliers differentiate on service ratings, smart-meter rollout, green tariffs · consistent with non-collusive competition
 
-• Ofgem actively monitors the market — limits anti-competitive behaviour
+• Ofgem actively monitors the market · limits anti-competitive behaviour
 
 **Analysis**
 
-• apply kinked demand curve / game theory to explain pricing behaviour — firms reluctant to undercut; sticky prices under cap
+• apply kinked demand curve / game theory to explain pricing behaviour · firms reluctant to undercut; sticky prices under cap
 
 • interdependence: firms respond to each other's marketing, smart-meter rollouts, tariff structures
 
@@ -1074,9 +1074,9 @@ H460/01 Mark Scheme June 2026
 
 • market has clear oligopolistic features but falls short of tight collusion due to regulation
 
-• distinction between structure (CR5 = 85% — oligopolistic) and conduct (somewhat competitive due to cap and entrants)
+• distinction between structure (CR5 = 85% · oligopolistic) and conduct (somewhat competitive due to cap and entrants)
 
-• market structure evolving — renewable generators increasingly vertically integrated into supply
+• market structure evolving · renewable generators increasingly vertically integrated into supply
 
 **Judgement**
 
@@ -1106,19 +1106,19 @@ H460/01 Mark Scheme June 2026
   <tbody>
     <tr>
       <td><b>Level 5</b><br>(21–25 marks)</td>
-      <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Strong evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Strong evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 4</b><br>(16–20 marks)</td>
-      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Good evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Good evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 3</b><br>(11–15 marks)</td>
-      <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Reasonable evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Reasonable evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 2</b><br>(6–10 marks)</td>
-      <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Limited evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading</td>
+      <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Limited evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading</td>
     </tr>
   </tbody>
 </table>
@@ -1138,7 +1138,7 @@ H460/01 Mark Scheme June 2026
     </tr>
     <tr>
         <td>**Level 1**<br>**(1–5 marks)**</td>
-        <td>**Weak knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Weak application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Weak analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Weak evaluation** of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+        <td>**Weak knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Weak application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Weak analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Weak evaluation** of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
     <tr>
         <td>**0 marks**</td>
@@ -1147,7 +1147,7 @@ H460/01 Mark Scheme June 2026
 </table>### Question 2 Guidance
 
 #### Knowledge and understanding
-* maximum (ceiling) price: legally set price that suppliers cannot exceed — binding if below equilibrium
+* maximum (ceiling) price: legally set price that suppliers cannot exceed · binding if below equilibrium
 
 #### Analysis (with diagram)
 * S/D diagram: Pmax below equilibrium → QD > QS → excess demand / shortage
@@ -1156,15 +1156,15 @@ H460/01 Mark Scheme June 2026
 * firms may exit / reduce supply long-run → supply shifts left → worsened shortage
 
 #### Applied examples
-* Ofgem Default Tariff Cap in UK energy — contributed to 29 supplier failures in 2021–22
-* rent controls (Berlin, parts of US) — create shortages of rental housing
+* Ofgem Default Tariff Cap in UK energy · contributed to 29 supplier failures in 2021–22
+* rent controls (Berlin, parts of US) · create shortages of rental housing
 * pharmaceutical price ceilings in EU markets
 
 #### Evaluation
-* depends on price elasticity of supply and demand — inelastic markets show smaller shortages
+* depends on price elasticity of supply and demand · inelastic markets show smaller shortages
 * equity argument: protects vulnerable consumers from monopoly pricing
 * black markets / informal markets may emerge to bypass cap
-* reduced investment — long-run supply falls, shortages worsen
+* reduced investment · long-run supply falls, shortages worsen
 
 ## Page 11
 
@@ -1192,19 +1192,19 @@ H460/01 Mark Scheme June 2026
     </tr>
     <tr>
         <td>**Level 5**<br>**(21–25 marks)**</td>
-        <td>**Strong knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Strong application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Strong analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Strong evaluation** of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+        <td>**Strong knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Strong application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Strong analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Strong evaluation** of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
     <tr>
         <td>**Level 4**<br>**(16–20 marks)**</td>
-        <td>**Good knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Good application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Good analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Good evaluation** of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+        <td>**Good knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Good application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Good analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Good evaluation** of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
     <tr>
         <td>**Level 3**<br>**(11–15 marks)**</td>
-        <td>**Reasonable knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Reasonable application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Reasonable analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Reasonable evaluation** of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+        <td>**Reasonable knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Reasonable application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Reasonable analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Reasonable evaluation** of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
     <tr>
         <td>**Level 2**<br>**(6–10 marks)**</td>
-        <td>**Limited knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Limited application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Limited analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Limited evaluation** of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading</td>
+        <td>**Limited knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Limited application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Limited analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Limited evaluation** of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading</td>
     </tr>
 </table>12
 
@@ -1223,7 +1223,7 @@ H460/01 Mark Scheme June 2026
     </tr>
     <tr>
         <td>**Level 1**<br>**(1–5 marks)**</td>
-        <td>**Weak knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Weak application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Weak analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Weak evaluation** of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+        <td>**Weak knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Weak application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Weak analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Weak evaluation** of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
     <tr>
         <td>**0 marks**</td>
@@ -1238,14 +1238,14 @@ H460/01 Mark Scheme June 2026
 ### Analysis (with diagram)
 * show MPC, MSC and divergence creating welfare loss in free market
 * a tax equal to the marginal external cost shifts MPC up to MSC, restoring social optimum
-* raises revenue — can be hypothecated to fund mitigation or compensate victims
+* raises revenue · can be hypothecated to fund mitigation or compensate victims
 
-### Evaluation — advantages of indirect taxes
-* flexible and market-based — allows consumers and firms to choose how to respond
+### Evaluation · advantages of indirect taxes
+* flexible and market-based · allows consumers and firms to choose how to respond
 * raises revenue that can fund public goods
 * targets externality at source
 
-### Evaluation — limitations
+### Evaluation · limitations
 * information problem: MEC often hard to quantify; wrong tax rate leads to misallocation
 * regressive impact (e.g. sugar tax, fuel duty)
 * PED may be inelastic → small reduction in quantity, large burden on consumers
@@ -1257,13 +1257,13 @@ H460/01 Mark Scheme June 2026
 
 **Comparison with alternatives**
 
-• tradable permits — efficient price discovery, target certainty, but political difficulty in setting caps
+• tradable permits · efficient price discovery, target certainty, but political difficulty in setting caps
 
-• regulation / bans — simple and certain but inflexible and costly
+• regulation / bans · simple and certain but inflexible and costly
 
-• subsidies for substitutes (e.g. EV subsidies) — addresses externality indirectly
+• subsidies for substitutes (e.g. EV subsidies) · addresses externality indirectly
 
-• information campaigns / nudges — cheap, but limited impact
+• information campaigns / nudges · cheap, but limited impact
 
 **Possible judgements**
 
@@ -1271,7 +1271,7 @@ H460/01 Mark Scheme June 2026
 
 • most effective when combined with regulation and information
 
-• no single instrument is always most effective — depends on context, elasticity, equity concerns
+• no single instrument is always most effective · depends on context, elasticity, equity concerns
 
 ## Page 15
 
@@ -1289,19 +1289,19 @@ H460/01 Mark Scheme June 2026
   <tbody>
     <tr>
       <td><b>Level 5</b><br>(21–25 marks)</td>
-      <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Strong evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Strong evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 4</b><br>(16–20 marks)</td>
-      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Good evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Good evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 3</b><br>(11–15 marks)</td>
-      <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Reasonable evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Reasonable evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 2</b><br>(6–10 marks)</td>
-      <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Limited evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading</td>
+      <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Limited evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading</td>
     </tr>
   </tbody>
 </table>
@@ -1321,7 +1321,7 @@ H460/01 Mark Scheme June 2026
     </tr>
     <tr>
         <td>**Level 1**<br>**(1–5 marks)**</td>
-        <td>**Weak knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Weak application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Weak analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Weak evaluation** of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+        <td>**Weak knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Weak application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Weak analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Weak evaluation** of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
     <tr>
         <td>**0 marks**</td>
@@ -1340,13 +1340,13 @@ H460/01 Mark Scheme June 2026
 * may spur innovation as firms compete for share
 
 ### Applied examples
-* British Gas, British Telecom, electricity boards — UK privatisation and breakup of public monopolies
+* British Gas, British Telecom, electricity boards · UK privatisation and breakup of public monopolies
 * AT&T US breakup (1984)
 * ongoing debate around tech (Google, Amazon, Meta) and supermarket mergers
 
 ### Evaluation
-* large firms benefit from economies of scale — breakup may raise average costs
-* loss of dynamic efficiency — reduced R&D / innovation investment
+* large firms benefit from economies of scale · breakup may raise average costs
+* loss of dynamic efficiency · reduced R&D / innovation investment
 * costly to implement and enforce; legal uncertainty
 
 ## Page 17
@@ -1378,19 +1378,19 @@ H460/01 Mark Scheme June 2026
   <tbody>
     <tr>
       <td><b>Level 5</b><br>(21–25 marks)</td>
-      <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Strong evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Strong evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 4</b><br>(16–20 marks)</td>
-      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Good evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Good evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 3</b><br>(11–15 marks)</td>
-      <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Reasonable evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Reasonable evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 2</b><br>(6–10 marks)</td>
-      <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Limited evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading</td>
+      <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Limited evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading</td>
     </tr>
   </tbody>
 </table>
@@ -1410,7 +1410,7 @@ H460/01 Mark Scheme June 2026
   </tr>
 <tr>
     <td><b>Level 1</b><br>(<b>1–5 marks</b>)</td>
-    <td><b>Weak knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Weak application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Weak analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Weak evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+    <td><b>Weak knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Weak application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Weak analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Weak evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
   </tr>
 <tr>
     <td><b>0 marks</b></td>
@@ -1442,7 +1442,7 @@ H460/01 Mark Scheme June 2026
 
 * empirical evidence: union wage premium around 5–10% in UK (Bryson et al.)
 * better non-wage conditions: health and safety, training, hours
-* can raise productivity via voice mechanism — better worker engagement
+* can raise productivity via voice mechanism · better worker engagement
 
 ## Page 20
 
@@ -1722,7 +1722,7 @@ H460/01 Mark Scheme June 2026
         <td>**1 (b)**</td>
         <td>**Explain, using an appropriate diagram, the likely effect of the expansion of Aldi and Lidl on the pricing behaviour of the Big Four supermarkets.**<br><br>Up to 2 marks for diagram showing:<br>• kinked demand curve for a Big Four firm (1)<br>• OR market diagram with demand shifting left / supply shifting right (1)<br><br>Up to 2 marks for explaining:<br>• Aldi and Lidl's low-cost model puts competitive pressure on the Big Four (1)<br>• Big Four respond with price cuts, price-matching schemes, and loyalty-scheme pricing to retain customers (1)<br>• reduced market power → lower supernormal profits in the long run (1)</td>
         <td>**4**</td>
-        <td>Reward alternative diagrams — kinked demand, AR/MR, or market S/D.<br>Diagram must be accurately labelled and linked to analysis.</td>
+        <td>Reward alternative diagrams · kinked demand, AR/MR, or market S/D.<br>Diagram must be accurately labelled and linked to analysis.</td>
     </tr>
 </table>
 <table>
@@ -1736,7 +1736,7 @@ H460/01 Mark Scheme June 2026
         <td>**1 (c)(i)**</td>
         <td>**Calculate the combined percentage-point change in the market share of Aldi and Lidl between 2015 and 2024.**<br>Correct answer: +8.6 percentage points</td>
         <td>**2**</td>
-        <td>Accept +8.6pp, 8.6 percentage points.<br>Do not accept '8.6%' without 'percentage points' — this is a common error.</td>
+        <td>Accept +8.6pp, 8.6 percentage points.<br>Do not accept '8.6%' without 'percentage points' · this is a common error.</td>
     </tr>
 </table>3
 
@@ -1804,7 +1804,7 @@ H460/01 Mark Scheme June 2026
 
 ### Application
 * 2023 CMA update: competition 'broadly working' but flagged branded-goods pricing and loyalty-scheme complexity
-* Big Four operating margins fell during the 2022–23 cost-of-living crisis (Fig. 2) — 3.4% (2020) to 2.6% (2022)
+* Big Four operating margins fell during the 2022–23 cost-of-living crisis (Fig. 2) · 3.4% (2020) to 2.6% (2022)
 * grocery inflation peaked at 17.5% (March 2023); margins remained compressed
 * historical examples: CMA banned Sainsbury's–Asda merger (2019), fined Pfizer / Flynn for epilepsy drug pricing
 
@@ -1819,11 +1819,11 @@ H460/01 Mark Scheme June 2026
 - preserves consumer welfare by maintaining competitive pricing and choice
 
 **Evaluation**
-- investigations are slow — CMA grocery update took over 18 months; market dynamics may shift by conclusion
-- information asymmetry — CMA relies on firm-supplied data
-- resource constraints — CMA has limited budget relative to market scale
+- investigations are slow · CMA grocery update took over 18 months; market dynamics may shift by conclusion
+- information asymmetry · CMA relies on firm-supplied data
+- resource constraints · CMA has limited budget relative to market scale
 - global firms may circumvent UK decisions; EU/US competition authorities matter too
-- regulatory capture risk — long-term concerns about industry influence on policy
+- regulatory capture risk · long-term concerns about industry influence on policy
 - fines may simply be passed on to consumers in higher prices
 
 **Possible judgements**
@@ -1853,11 +1853,11 @@ June 2026
     </tr>
 <tr>
       <td><b>Level 2<br>(5–8 marks)</b></td>
-      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s).<br><br><b>Good application</b> of economic concepts to the context and scope of the question, using some relevant and focussed examples and some good use of data where appropriate.<br><br><b>Reasonable analysis</b> characterised by developing chains of reasoning that explain most of the links; diagram(s) may be predominantly correct but not fully integrated into the response.<br><br><b>Reasonable evaluation</b> — counter argument(s) are considered but not fully developed; some attempt to conclude but without fully weighing up both sides. QER: the candidate expresses ideas with reasonable clarity and accuracy.</td>
+      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s).<br><br><b>Good application</b> of economic concepts to the context and scope of the question, using some relevant and focussed examples and some good use of data where appropriate.<br><br><b>Reasonable analysis</b> characterised by developing chains of reasoning that explain most of the links; diagram(s) may be predominantly correct but not fully integrated into the response.<br><br><b>Reasonable evaluation</b> · counter argument(s) are considered but not fully developed; some attempt to conclude but without fully weighing up both sides. QER: the candidate expresses ideas with reasonable clarity and accuracy.</td>
     </tr>
 <tr>
       <td><b>Level 1<br>(1–4 marks)</b></td>
-      <td><b>Reasonable knowledge and understanding</b> of relevant economic ideas, principles or models.<br><br><b>Reasonable application</b> of economic concepts to some elements of the given context; may be inconsistent or not always relevant.<br><br><b>Limited analysis</b> in the form of single links; diagram(s) may contain errors or be loosely integrated into the response.<br><br><b>Limited evaluation</b> — simple statements of counter argument(s); stated or absent judgement. QER: the candidate expresses simple ideas clearly but is likely to be imprecise.</td>
+      <td><b>Reasonable knowledge and understanding</b> of relevant economic ideas, principles or models.<br><br><b>Reasonable application</b> of economic concepts to some elements of the given context; may be inconsistent or not always relevant.<br><br><b>Limited analysis</b> in the form of single links; diagram(s) may contain errors or be loosely integrated into the response.<br><br><b>Limited evaluation</b> · simple statements of counter argument(s); stated or absent judgement. QER: the candidate expresses simple ideas clearly but is likely to be imprecise.</td>
     </tr>
 <tr>
       <td><b>0 marks</b></td>
@@ -1877,25 +1877,25 @@ H460/01 Mark Scheme June 2026
 
 • sunk costs as a key barrier to entry and exit
 
-**Application — evidence market IS contestable**
+**Application · evidence market IS contestable**
 
-• Aldi and Lidl's market share rose from 9.7% (2015) to 18.3% (2024) — successful entry and expansion
+• Aldi and Lidl's market share rose from 9.7% (2015) to 18.3% (2024) · successful entry and expansion
 
-• their growth coincided with falling Big Four margins (3.4% to 2.6–3.1%) — evidence competitive discipline
+• their growth coincided with falling Big Four margins (3.4% to 2.6–3.1%) · evidence competitive discipline
 
-• Big Four matched Aldi prices and launched loyalty-scheme pricing — defensive response to entry threat
+• Big Four matched Aldi prices and launched loyalty-scheme pricing · defensive response to entry threat
 
 • online grocers (Ocado, Amazon Fresh, Gorillas) entered the market, showing technological contestability
 
-**Application — evidence market is NOT fully contestable**
+**Application · evidence market is NOT fully contestable**
 
 • access to prime real estate, economies of scale and sophisticated supply chains are significant sunk costs
 
-• Ocado lost over £500m cumulatively 2020–23 — new entrants struggle to reach profitability
+• Ocado lost over £500m cumulatively 2020–23 · new entrants struggle to reach profitability
 
-• Morrisons was taken private for £7bn (2021) — exit costly; few firms able to 'hit and run'
+• Morrisons was taken private for £7bn (2021) · exit costly; few firms able to 'hit and run'
 
-• stable concentration — Tesco and Sainsbury's together held 42.8% in 2024 (vs 43.4% in 2015)
+• stable concentration · Tesco and Sainsbury's together held 42.8% in 2024 (vs 43.4% in 2015)
 
 • complex loyalty-scheme pricing reduces price transparency
 
@@ -1913,11 +1913,11 @@ H460/01 Mark Scheme June 2026
 
 • contestability has increased over past 10 years but remains constrained by capital requirements
 
-• CMA's view (2023): competition 'broadly working' — consistent with a somewhat contestable market
+• CMA's view (2023): competition 'broadly working' · consistent with a somewhat contestable market
 
 **Judgement**
 
-• the UK grocery market is moderately contestable — not perfectly contestable but more contestable than a tight oligopoly
+• the UK grocery market is moderately contestable · not perfectly contestable but more contestable than a tight oligopoly
 
 • Aldi/Lidl expansion provides the strongest evidence of contestability; full-line national grocery remains less contestable
 
@@ -1943,19 +1943,19 @@ H460/01 Mark Scheme June 2026
  <tbody>
   <tr>
    <td><b>Level 5</b><br/><b>(21–25 marks)</b></td>
-   <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Strong evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+   <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Strong evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
   </tr>
 <tr>
    <td><b>Level 4</b><br/><b>(16–20 marks)</b></td>
-   <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Good evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+   <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Good evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
   </tr>
 <tr>
    <td><b>Level 3</b><br/><b>(11–15 marks)</b></td>
-   <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Reasonable evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+   <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Reasonable evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
   </tr>
 <tr>
    <td><b>Level 2</b><br/><b>(6–10 marks)</b></td>
-   <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Limited evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading</td>
+   <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Limited evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading</td>
   </tr>
  </tbody>
 </table>
@@ -1975,7 +1975,7 @@ H460/01 Mark Scheme June 2026
     </tr>
     <tr>
         <td>**Level 1**<br>**(1–5 marks)**</td>
-        <td>**Weak knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Weak application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Weak analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Weak evaluation** of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+        <td>**Weak knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Weak application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Weak analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Weak evaluation** of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
     <tr>
         <td>**0 marks**</td>
@@ -1994,14 +1994,14 @@ H460/01 Mark Scheme June 2026
 * may expand output overall, bringing supply to consumers previously priced out
 
 ### Application
-* Tesco Clubcard Prices, Sainsbury's Nectar Prices — loyalty-based discrimination
+* Tesco Clubcard Prices, Sainsbury's Nectar Prices · loyalty-based discrimination
 * rail peak/off-peak, airline yield management, cinema concessions
 * utilities, student discounts, off-peak gym memberships
 
-### Evaluation — benefits
+### Evaluation · benefits
 * low-income/occasional consumers benefit from lower prices in some segments
 * higher revenue may fund investment → dynamic efficiency
-* output may expand — previously marginal consumers served
+* output may expand · previously marginal consumers served
 
 ## Page 11
 
@@ -2009,19 +2009,19 @@ H460/01 Mark Scheme June 2026
 
 • enables firms to stay open / cover fixed costs (airlines, railways)
 
-**Evaluation — costs**
+**Evaluation · costs**
 
 • inelastic-demand consumers pay more; loss of consumer surplus
 
 • potentially exploitative (predatory pricing)
 
-• creates barriers to entry — undermines contestability
+• creates barriers to entry · undermines contestability
 
-• equity concerns — may reinforce inequality
+• equity concerns · may reinforce inequality
 
 **Possible judgements**
 
-• net welfare effect ambiguous — depends on type of discrimination, elasticity, and market structure
+• net welfare effect ambiguous · depends on type of discrimination, elasticity, and market structure
 
 • benefits to consumers most visible where output expands and cross-subsidy is transparent
 
@@ -2045,19 +2045,19 @@ June 2026
   <tbody>
     <tr>
       <td><b>Level 5</b><br>(21–25 marks)</td>
-      <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Strong evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Strong evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 4</b><br>(16–20 marks)</td>
-      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Good evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Good evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 3</b><br>(11–15 marks)</td>
-      <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Reasonable evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+      <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Reasonable evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
 <tr>
       <td><b>Level 2</b><br>(6–10 marks)</td>
-      <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Limited evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading</td>
+      <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Limited evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading</td>
     </tr>
   </tbody>
 </table>
@@ -2077,7 +2077,7 @@ H460/01 Mark Scheme June 2026
   </tr>
 <tr>
     <td><b>Level 1<br>(1–5 marks)</b></td>
-    <td><b>Weak knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Weak application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Weak analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Weak evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+    <td><b>Weak knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br><b>Weak application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br><b>Weak analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br><b>Weak evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
   </tr>
 <tr>
     <td><b>0 marks</b></td>
@@ -2096,33 +2096,33 @@ H460/01 Mark Scheme June 2026
 
 * contestable market diagram: firms priced near normal profit ($P = AC$), output at allocative optimum
 * oligopoly diagram: kinked demand → price rigidity; supernormal profit; $P > MC$ → allocative inefficiency
-* contestable firms cannot sustain supernormal profits — attract entry
+* contestable firms cannot sustain supernormal profits · attract entry
 
-### Evaluation — contestable advantages
+### Evaluation · contestable advantages
 
 * lower prices, higher output, more consumer surplus
 * dynamic efficiency through entry-driven innovation
 * fewer regulatory requirements if competition is self-sustaining
 
-### Evaluation — oligopoly concerns
+### Evaluation · oligopoly concerns
 
 * risk of tacit or explicit collusion → higher prices, restricted output
 * non-price competition may still benefit consumers (quality, branding, choice)
-* economies of scale — oligopolies may achieve lower unit costs than contestable small firms
-* oligopolies fund significant R&D (pharma, tech, aerospace) — dynamic efficiency
+* economies of scale · oligopolies may achieve lower unit costs than contestable small firms
+* oligopolies fund significant R&D (pharma, tech, aerospace) · dynamic efficiency
 
 ## Page 14
 
 H460/01 Mark Scheme June 2026
 
 **Applied examples**
-* UK grocery — Aldi/Lidl entry has made the market more contestable, lowering prices
+* UK grocery · Aldi/Lidl entry has made the market more contestable, lowering prices
 * contestability in airlines (low-cost entrants) vs oligopoly in telecoms
-* tech platforms — high barriers, but digital innovation can enable 'hit-and-run' threats
+* tech platforms · high barriers, but digital innovation can enable 'hit-and-run' threats
 
 **Possible judgements**
 * contestability generally leads to better consumer outcomes but may sacrifice scale economies and R&D
-* optimal structure depends on industry — fixed costs, scale, innovation
+* optimal structure depends on industry · fixed costs, scale, innovation
 * well-regulated oligopolies can deliver similar consumer outcomes to contestable markets
 
 ## Page 15
@@ -2141,19 +2141,19 @@ H460/01 Mark Scheme June 2026
  <tbody>
   <tr>
    <td><b>Level 5</b><br/><b>(21–25 marks)</b></td>
-   <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Strong evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+   <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Strong evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
   </tr>
 <tr>
    <td><b>Level 4</b><br/><b>(16–20 marks)</b></td>
-   <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Good evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+   <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Good evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
   </tr>
 <tr>
    <td><b>Level 3</b><br/><b>(11–15 marks)</b></td>
-   <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Reasonable evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+   <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Reasonable evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
   </tr>
 <tr>
    <td><b>Level 2</b><br/><b>(6–10 marks)</b></td>
-   <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Limited evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading</td>
+   <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Limited evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading</td>
   </tr>
  </tbody>
 </table>
@@ -2173,7 +2173,7 @@ H460/01 Mark Scheme June 2026
     </tr>
     <tr>
         <td>**Level 1**<br>**(1–5 marks)**</td>
-        <td>**Weak knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Weak application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Weak analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Weak evaluation** of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+        <td>**Weak knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Weak application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Weak analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Weak evaluation** of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
     <tr>
         <td>**0 marks**</td>
@@ -2193,20 +2193,20 @@ H460/01 Mark Scheme June 2026
 
 ### Applied examples
 * UK privatisations since 1980s: British Gas, British Telecom, British Rail, Royal Mail, water authorities
-* Morrisons taken private by CD&R (2021) — private equity ownership and efficiency pressure
+* Morrisons taken private by CD&R (2021) · private equity ownership and efficiency pressure
 * BT and mobile telecoms have shown strong productivity gains post-privatisation
 
 ### Evaluation
-* natural monopolies (water, rail infrastructure) — privatisation does not create competition without regulation
+* natural monopolies (water, rail infrastructure) · privatisation does not create competition without regulation
 * underinvestment where short-term profit motives dominate (water company leaks, sewage scandals)
-* distributional effects — privatisation may raise prices for vulnerable consumers
+* distributional effects · privatisation may raise prices for vulnerable consumers
 
 ## Page 17
 
 H460/01 Mark Scheme June 2026
 
-- regulatory capture — Ofwat, Ofgem, Ofcom oversight may be insufficient
-- quality concerns — privatised rail fragmentation, NHS contracting-out controversies
+- regulatory capture · Ofwat, Ofgem, Ofcom oversight may be insufficient
+- quality concerns · privatised rail fragmentation, NHS contracting-out controversies
 - windfall gains to early investors
 
 **Possible judgements**
@@ -2230,19 +2230,19 @@ H460/01 Mark Scheme June 2026
  <tbody>
   <tr>
    <td><b>Level 5</b><br/><b>(21–25 marks)</b></td>
-   <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Strong evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+   <td><b>Strong knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Strong application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Strong analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Strong evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
   </tr>
 <tr>
    <td><b>Level 4</b><br/><b>(16–20 marks)</b></td>
-   <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Good evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+   <td><b>Good knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Good application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Good analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Good evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
   </tr>
 <tr>
    <td><b>Level 3</b><br/><b>(11–15 marks)</b></td>
-   <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Reasonable evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+   <td><b>Reasonable knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Reasonable application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Reasonable analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Reasonable evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
   </tr>
 <tr>
    <td><b>Level 2</b><br/><b>(6–10 marks)</b></td>
-   <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Limited evaluation</b> of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading</td>
+   <td><b>Limited knowledge and understanding</b> of relevant economic idea(s), principle(s) or model(s) (AO1).<br/><b>Limited application</b> of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br/><b>Limited analysis</b> characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br/><b>Limited evaluation</b> of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading</td>
   </tr>
  </tbody>
 </table>
@@ -2262,7 +2262,7 @@ H460/01 Mark Scheme June 2026
     </tr>
     <tr>
         <td>**Level 1**<br>**(1–5 marks)**</td>
-        <td>**Weak knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Weak application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Weak analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Weak evaluation** of different perspectives on the question — considering counter arguments, extent, assumptions and limitations — leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
+        <td>**Weak knowledge and understanding** of relevant economic idea(s), principle(s) or model(s) (AO1).<br>**Weak application** of economic concepts to the context and scope of the question, with relevant examples and use of data where appropriate (AO2).<br>**Weak analysis** characterised by chains of reasoning of the appropriate depth; relevant diagram(s) that are integral to the response and whose accuracy reflects this level (AO3).<br>**Weak evaluation** of different perspectives on the question · considering counter arguments, extent, assumptions and limitations · leading to a judgement of the appropriate support (AO4). QER: expression reflects this level.</td>
     </tr>
     <tr>
         <td>**0 marks**</td>
@@ -2296,15 +2296,15 @@ H460/01 Mark Scheme June 2026
 
 - productivity improvements via automation may offset labour shortages
 - immigration policy is a potential but politically constrained solution
-- skills mismatch — older workers leaving may not match skills demanded
-- pension costs — government spending pressure requires tax rises or benefit cuts
-- regional variation — coastal and rural areas ageing faster than London/SE
+- skills mismatch · older workers leaving may not match skills demanded
+- pension costs · government spending pressure requires tax rises or benefit cuts
+- regional variation · coastal and rural areas ageing faster than London/SE
 - dynamic efficiency gains possible through capital deepening
 
 **Possible judgements**
 
 - ageing will tighten labour markets and raise wages, particularly in care and service sectors
-- policy response matters — retirement age, migration, training, automation investment
+- policy response matters · retirement age, migration, training, automation investment
 - impact depends on pace of productivity growth and labour force participation trends
 
 ## Page 21
@@ -2502,7 +2502,7 @@ June 2026
 </table>`,
   "ocr-c02-set-a": `## Page 1
 
-*H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme*
+*H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme*
 
 Oxford Cambridge and RSA Examinations
 
@@ -2513,13 +2513,13 @@ Oxford Cambridge and RSA Examinations
 
 A Level
 
-**Mark Scheme — Predicted Paper 2 (Moderate)**
+**Mark Scheme · Predicted Paper 2 (Moderate)**
 
 Page 1
 
 ## Page 2
 
-H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
 ## MARKING INSTRUCTIONS
 
@@ -2529,7 +2529,7 @@ Alternative correct answers and unexpected approaches in candidates' scripts mus
 
 **For answers marked by levels of response:**
 
-* To determine the level — start at the highest level and work down until you reach the level that matches the answer.
+* To determine the level · start at the highest level and work down until you reach the level that matches the answer.
 
 * To determine the mark within the level, consider whether the answer is at the borderline (bottom), just enough (above bottom/middle), meets criteria with slight inconsistency (above middle), or consistently meets the criteria (top).
 
@@ -2537,7 +2537,7 @@ Page 2
 
 ## Page 3
 
-H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
 ## Question 1 (a)
 
@@ -2576,7 +2576,7 @@ H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
     <tr>
         <td>**Explain whether the relationship in Fig. 1 between FDI inflows and the real GDP growth rate is the expected one.**<br><br>• Yes, broadly the expected relationship / partial positive relationship (1)<br>• FDI is expected to raise real GDP growth because it adds to the capital stock, boosts AD and raises productive capacity (1)<br>• Supporting evidence e.g. Vietnam (US$17.9bn FDI, 8.0% growth) and Malaysia (US$16.9bn, 8.7% growth) both have high FDI and high growth; Cambodia has the lowest FDI and relatively low growth (1)<br>• Exception: Indonesia has the highest FDI (US$22.0bn) but only 5.3% growth / Thailand has higher FDI than the Philippines but much lower growth (1)<br>• The relationship may be weakened by the fact that large economies receive more FDI in absolute terms but this represents a smaller share of their economy (1)</td>
         <td>3</td>
-        <td>Annotate with ✔<br><br>Relationship — 1 mark<br>Why it is expected — 1 mark<br>Supporting evidence — 1 mark<br>Exception — 1 mark<br><br>Evidence must explain why the data shows (or does not show) the expected relationship, not simply restate a value.</td>
+        <td>Annotate with ✔<br><br>Relationship · 1 mark<br>Why it is expected · 1 mark<br>Supporting evidence · 1 mark<br>Exception · 1 mark<br><br>Evidence must explain why the data shows (or does not show) the expected relationship, not simply restate a value.</td>
     </tr>
 </table>## Question 1 (d)
 
@@ -2589,32 +2589,32 @@ H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
     <tr>
         <td>**Using Table 1, explain the relationship between the unemployment rate and the labour productivity index.**<br><br>• There is no clear/strong relationship between unemployment and labour productivity (1)</td>
         <td>4</td>
-        <td>Annotate with ✔<br><br>Relationship (type/strength) — 1 mark<br>Evidence — 1 mark</td>
+        <td>Annotate with ✔<br><br>Relationship (type/strength) · 1 mark<br>Evidence · 1 mark</td>
     </tr>
 </table>Page 3
 
 ## Page 4
 
-H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
 <table>
     <tr>
         <th>• Evidence e.g. Vietnam has a low unemployment rate of 2.3% and the highest productivity index of 139.2, while Cambodia also has low unemployment (0.6%) but the lowest productivity index of 108.9 / Indonesia has the highest unemployment rate (5.3%) and a productivity index in the middle of the range (1)</th>
-        <th>Explanation — 1 mark<br>Exception / limitation — 1 mark</th>
+        <th>Explanation · 1 mark<br>Exception / limitation · 1 mark</th>
     </tr>
     <tr>
         <td>• A possible explanation is that higher productivity raises real wages and the returns to work, which encourages participation; alternatively, countries with high productivity may use capital-intensive production, which reduces the demand for labour (1)</td>
         <td></td>
     </tr>
     <tr>
-        <td>• Exception / limitation: Thailand has very low unemployment (1.0%) but below-average productivity (112.4), suggesting that other factors — such as labour market flexibility, informal employment or demographic structure — also influence the relationship (1)</td>
+        <td>• Exception / limitation: Thailand has very low unemployment (1.0%) but below-average productivity (112.4), suggesting that other factors · such as labour market flexibility, informal employment or demographic structure · also influence the relationship (1)</td>
         <td></td>
     </tr>
 </table>Page 4
 
 ## Page 5
 
-H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
 **Question 1 (e)*** Using information from the stimulus material, **evaluate whether the rise in inflation is likely to harm Vietnam's economic growth.** [8]
 
@@ -2635,7 +2635,7 @@ H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
         <td>**0 marks**</td>
         <td>Response is not worthy of credit</td>
     </tr>
-</table>**Indicative content — Question 1(e)***
+</table>**Indicative content · Question 1(e)***
 
 *The side of the argument presented first should be credited as Analysis; the other side as Evaluation.*
 
@@ -2644,7 +2644,7 @@ H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
 - Inflation is a sustained rise in the general price level.
 - Economic growth is a rise in real GDP / productive capacity.
 
-**Application — context**
+**Application · context**
 
 - Vietnam's inflation rose from 3.2% to 4.6% between 2022 and 2023.
 - The rise was driven by higher global commodity prices and depreciation of the dong.
@@ -2660,7 +2660,7 @@ H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
 
 **Evaluation (inflation may not harm growth)**
 
-- At 4.6%, inflation is still moderate — much lower than in some emerging economies — and may simply reflect rapid growth.
+- At 4.6%, inflation is still moderate · much lower than in some emerging economies · and may simply reflect rapid growth.
 - A mild amount of inflation can encourage spending now rather than later, supporting AD.
 - If inflation is driven by imported commodity prices rather than demand-pull pressure, growth may not slow significantly.
 - Vietnam's real GDP growth of 8.0% in 2022 is among the highest in the region despite rising inflation, suggesting the two can co-exist.
@@ -2668,13 +2668,13 @@ H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
 
 **Judgement may include**
 
-- The impact depends on how persistent inflation is — short-lived imported inflation is less harmful than sustained demand-pull inflation.
+- The impact depends on how persistent inflation is · short-lived imported inflation is less harmful than sustained demand-pull inflation.
 
 Page 5
 
 ## Page 6
 
-*H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme*
+*H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme*
 
 - The impact depends on the policy response: aggressive interest-rate rises could harm growth more than the inflation itself.
 
@@ -2684,7 +2684,7 @@ Page 6
 
 ## Page 7
 
-H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
 **Question 1 (f)\\*** Using information from the stimulus material, evaluate whether Vietnamese workers are likely to benefit from the increase in foreign direct investment in the country.
 [12]
@@ -2696,7 +2696,7 @@ H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
     </tr>
     <tr>
         <td>**Level 3 (9–12 marks)**</td>
-        <td>Good knowledge and understanding of relevant economic idea(s).<br>Good application of concepts; some good use of data.<br>Strong analysis — consistently well-developed chains of reasoning.<br>Strong evaluation — well-developed counter-arguments, extent, a logical and well supported judgement.</td>
+        <td>Good knowledge and understanding of relevant economic idea(s).<br>Good application of concepts; some good use of data.<br>Strong analysis · consistently well-developed chains of reasoning.<br>Strong evaluation · well-developed counter-arguments, extent, a logical and well supported judgement.</td>
     </tr>
     <tr>
         <td>**Level 2 (5–8 marks)**</td>
@@ -2704,13 +2704,13 @@ H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
     </tr>
     <tr>
         <td>**Level 1 (1–4 marks)**</td>
-        <td>Reasonable knowledge and understanding.<br>Reasonable application, possibly inconsistent.<br>Limited analysis — simple statements of cause and consequence.<br>Limited evaluation — stated or absent judgement.</td>
+        <td>Reasonable knowledge and understanding.<br>Reasonable application, possibly inconsistent.<br>Limited analysis · simple statements of cause and consequence.<br>Limited evaluation · stated or absent judgement.</td>
     </tr>
     <tr>
         <td>**0 marks**</td>
         <td>Response is not worthy of credit</td>
     </tr>
-</table>**Indicative content — Question 1(f)\\***
+</table>**Indicative content · Question 1(f)\\***
 
 **Knowledge and understanding**
 
@@ -2718,7 +2718,7 @@ H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
 
 * Workers' benefits can include wages, employment, training, working conditions and job security.
 
-**Application — context**
+**Application · context**
 
 * Vietnam has received substantial FDI, particularly in manufacturing (US$17.9bn in 2022).
 
@@ -2726,7 +2726,7 @@ H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
 
 * The gap between wages in foreign MNCs and domestic firms has widened; environmental and rural-urban inequality concerns exist.
 
-**Analysis — workers benefit**
+**Analysis · workers benefit**
 
 * FDI creates jobs, reducing unemployment. Vietnam's unemployment rate of 2.3% is among the lowest in the region.
 
@@ -2738,7 +2738,7 @@ H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
 
 * Higher tax revenue from rising employment and FDI-related profits can be used for public services benefiting workers.
 
-**Evaluation — workers may not fully benefit**
+**Evaluation · workers may not fully benefit**
 
 * Benefits are unevenly distributed: the stimulus notes the widening wage gap between MNC and domestic firm workers, meaning some groups lose relative to others.
 
@@ -2752,9 +2752,9 @@ Page 7
 
 ## Page 8
 
-H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
-* FDI can be footloose — firms may relocate if wages rise or incentives are offered elsewhere, creating job insecurity.
+* FDI can be footloose · firms may relocate if wages rise or incentives are offered elsewhere, creating job insecurity.
 
 * Skill transfer is limited if MNCs use imported managerial and technical staff rather than training Vietnamese workers for senior roles.
 
@@ -2772,9 +2772,9 @@ Page 8
 
 ## Page 9
 
-H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
-## Section B — Question 2*
+## Section B · Question 2*
 
 Evaluate, with the use of an appropriate diagram(s), whether a cut in income tax will help a government to achieve its macroeconomic policy objectives. [25]
 
@@ -2807,7 +2807,7 @@ Evaluate, with the use of an appropriate diagram(s), whether a cut in income tax
         <td>**0 marks**</td>
         <td>Response is not worthy of credit.</td>
     </tr>
-</table>### Indicative content — Question 2*
+</table>### Indicative content · Question 2*
 
 #### Knowledge and understanding
 
@@ -2817,21 +2817,21 @@ Evaluate, with the use of an appropriate diagram(s), whether a cut in income tax
 
 - A cut in income tax is expansionary fiscal policy.
 
-#### Analysis — cut in income tax helps achieve objectives
+#### Analysis · cut in income tax helps achieve objectives
 
 - Higher disposable incomes raise consumer expenditure, shifting AD rightward and raising real GDP (growth) and lowering unemployment (shown in AD/AS diagram with SRAS).
 
 - Higher incomes may raise consumer spending on normal goods, increasing demand for labour and reducing cyclical unemployment.
 
-- Lower marginal tax rates may improve incentives to work, raising labour supply (rightward shift in LRAS) — helping both growth and price stability.
+- Lower marginal tax rates may improve incentives to work, raising labour supply (rightward shift in LRAS) · helping both growth and price stability.
 
 - Lower income taxes may attract skilled workers from abroad, raising labour quality and productive capacity.
 
 - A multiplier effect may amplify the effects on AD and growth.
 
-#### Evaluation — a cut may NOT help achieve objectives
+#### Evaluation · a cut may NOT help achieve objectives
 
-- If AD rises faster than LRAS, the price level rises — demand-pull inflation may exceed the target.
+- If AD rises faster than LRAS, the price level rises · demand-pull inflation may exceed the target.
 
 - Higher consumption may include imports, worsening the current account deficit.
 
@@ -2841,13 +2841,13 @@ Evaluate, with the use of an appropriate diagram(s), whether a cut in income tax
 
 - In an economy near full employment, extra AD mainly raises prices, not output.
 
-- The size of the multiplier depends on leakages — high import or savings ratios dampen the effect.
+- The size of the multiplier depends on leakages · high import or savings ratios dampen the effect.
 
 #### Possible judgement
 
-- Effectiveness depends on the initial state of the economy — a tax cut is more useful in a recession with spare capacity than when at full employment.
+- Effectiveness depends on the initial state of the economy · a tax cut is more useful in a recession with spare capacity than when at full employment.
 
-- There may be trade-offs between objectives — growth and employment rise but inflation and the current account deficit worsen.
+- There may be trade-offs between objectives · growth and employment rise but inflation and the current account deficit worsen.
 
 - The long-run supply-side effects depend on whether households increase labour supply significantly.
 
@@ -2857,28 +2857,28 @@ Page 9
 
 ## Page 10
 
-H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
-##  Section B — Question 3*
+##  Section B · Question 3*
 
  Evaluate, with the use of an appropriate diagram(s), whether an increase in labour productivity will benefit an economy. [25]
 
  *Level descriptors as for Q2*.*
 
-##  Indicative content — Question 3* Knowledge and understanding
+##  Indicative content · Question 3* Knowledge and understanding
 
 -  Labour productivity is output per worker (or per hour worked).
 -  An increase in productivity shifts LRAS rightward.
 
-##  Analysis — productivity benefits an economy
+##  Analysis · productivity benefits an economy
 
--  A rightward shift in LRAS raises potential output (economic growth) without causing demand-pull inflation — shown on AD/AS diagram.
+-  A rightward shift in LRAS raises potential output (economic growth) without causing demand-pull inflation · shown on AD/AS diagram.
 -  Lower unit costs make firms more price-competitive internationally, improving net exports and the current account.
 -  Higher productivity justifies higher real wages without raising inflation, improving living standards.
 -  Higher profit margins may encourage investment, further raising productive capacity.
 -  Lower production costs reduce cost-push inflationary pressure.
 
-##  Evaluation — productivity may not fully benefit the economy
+##  Evaluation · productivity may not fully benefit the economy
 
 -  Higher productivity achieved through automation may create structural/technological unemployment.
 -  Gains from productivity may accrue disproportionately to capital owners, worsening income inequality.
@@ -2889,7 +2889,7 @@ H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
 ##  Possible judgement
 
 -  In the long run, productivity growth is the most important source of sustainable prosperity.
--  Distribution of gains matters — without policy intervention, some groups may lose in the short run.
+-  Distribution of gains matters · without policy intervention, some groups may lose in the short run.
 -  The effect depends on the speed and cause of the productivity gain.
 -  Trade-offs between growth and employment are possible in the short run.
 
@@ -2897,15 +2897,15 @@ H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
 
 ## Page 11
 
-H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
-## Section C — Question 4*
+## Section C · Question 4*
 
 Evaluate whether supply-side policies are the most effective way to reduce unemployment. [25]
 
 Level descriptors as for Q2*.
 
-## Indicative content — Question 4*
+## Indicative content · Question 4*
 
 ### Knowledge and understanding
 
@@ -2913,7 +2913,7 @@ Level descriptors as for Q2*.
 - Examples include education, training, tax reform, privatisation, deregulation and reducing benefit generosity.
 - Unemployment types: cyclical, structural, frictional, seasonal, classical.
 
-### Analysis — supply-side policies can reduce unemployment
+### Analysis · supply-side policies can reduce unemployment
 
 - Education and training raise the skills of the labour force, reducing structural unemployment.
 - Improved job-search information reduces frictional unemployment.
@@ -2921,9 +2921,9 @@ Level descriptors as for Q2*.
 - Welfare reform reduces the replacement ratio, encouraging job search.
 - Deregulation of product and labour markets encourages new firm entry and hiring.
 
-### Evaluation — supply-side policies may not be most effective
+### Evaluation · supply-side policies may not be most effective
 
-- Supply-side policies operate over the long run — slow to reduce cyclical unemployment.
+- Supply-side policies operate over the long run · slow to reduce cyclical unemployment.
 - For cyclical unemployment, expansionary fiscal/monetary policy (increasing AD) is more effective.
 - Education and training are costly and their benefits are uncertain.
 - Reducing benefits may push people into poverty without guaranteeing jobs exist.
@@ -2935,21 +2935,21 @@ Level descriptors as for Q2*.
 - The most effective policy depends on the type of unemployment present.
 - Cyclical unemployment → demand-side policies; structural unemployment → supply-side.
 - A combination of policies is likely to be most effective.
-- Time horizons matter — supply-side in long run, demand-side in short run.
+- Time horizons matter · supply-side in long run, demand-side in short run.
 
 Page 11
 
 ## Page 12
 
-H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme
+H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme
 
-## Section C — Question 5*
+## Section C · Question 5*
 
 Evaluate whether low interest rates are an effective way to stimulate economic growth. [25]
 
 Level descriptors as for Q2*.
 
-### Indicative content — Question 5*
+### Indicative content · Question 5*
 
 #### Knowledge and understanding
 
@@ -2959,7 +2959,7 @@ Level descriptors as for Q2*.
 
 - Economic growth is an increase in real GDP.
 
-#### Analysis — low interest rates stimulate growth
+#### Analysis · low interest rates stimulate growth
 
 - Cheaper borrowing encourages consumer spending on durable goods and housing.
 
@@ -2971,9 +2971,9 @@ Level descriptors as for Q2*.
 
 - Lower interest rates cause the exchange rate to depreciate, boosting net exports.
 
-#### Evaluation — may not be effective
+#### Evaluation · may not be effective
 
-- If confidence is low (e.g. after a financial crisis), consumers and firms may not borrow more despite low rates — liquidity trap.
+- If confidence is low (e.g. after a financial crisis), consumers and firms may not borrow more despite low rates · liquidity trap.
 
 - At already very low interest rates, further cuts have little effect (zero lower bound).
 
@@ -2989,7 +2989,7 @@ Level descriptors as for Q2*.
 
 - Effectiveness depends on the starting rate, inflation expectations, and confidence.
 
-- Low rates alone may be insufficient — combined with fiscal policy may be more effective.
+- Low rates alone may be insufficient · combined with fiscal policy may be more effective.
 
 - If the economy is supply-constrained, low rates cause inflation rather than growth.
 
@@ -2999,7 +2999,7 @@ Page 12
 
 ## Page 13
 
-*H460/02 — Predicted Paper 2 (Moderate) — Mark Scheme*
+*H460/02 · Predicted Paper 2 (Moderate) · Mark Scheme*
 
 ## ASSESSMENT OBJECTIVES GRID
 
@@ -3105,7 +3105,7 @@ Page 12
 Page 13`,
   "ocr-c02-set-b": `## Page 1
 
-H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
+H460/02 · Predicted Paper 2 (Hard) · Mark Scheme
 
 Oxford Cambridge and RSA Examinations
 
@@ -3116,13 +3116,13 @@ H460/02: Macroeconomics
 
 A Level
 
-Mark Scheme — Predicted Paper 2 (Hard)
+Mark Scheme · Predicted Paper 2 (Hard)
 
 Page 1
 
 ## Page 2
 
-H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
+H460/02 · Predicted Paper 2 (Hard) · Mark Scheme
 
 ## MARKING INSTRUCTIONS
 
@@ -3130,7 +3130,7 @@ Marks awarded must relate directly to the marking criteria. Alternative correct 
 
 **For answers marked by levels of response:**
 
-* To determine the level — start at the highest level and work down until you reach the level that matches the answer.
+* To determine the level · start at the highest level and work down until you reach the level that matches the answer.
 
 * To determine the mark within the level, consider whether the answer is at the borderline (bottom), just enough (above bottom/middle), meets criteria with slight inconsistency (above middle), or consistently meets the criteria (top).
 
@@ -3138,7 +3138,7 @@ Page 2
 
 ## Page 3
 
-H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
+H460/02 · Predicted Paper 2 (Hard) · Mark Scheme
 
 ##  Question 1 (a)
 
@@ -3175,9 +3175,9 @@ H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
         <th>Guidance</th>
     </tr>
     <tr>
-        <td>**Explain whether the relationship in Fig. 1 between labour productivity growth and real wage growth is the expected one.**<br><br>• Yes — broadly the expected positive relationship (1)<br>• Theory expects higher productivity growth to lead to higher real wage growth because wages tend to reflect the marginal product of labour (1)<br>• Supporting evidence e.g. South Korea has the highest productivity growth (2.1%) and the highest real wage growth (1.8%); the UK and Germany have the lowest productivity growth (0.4% and 0.2%) and negative real wage growth (−0.8% and −0.5%) (1)<br>• Exception: Japan has higher productivity growth (0.9%) than France (0.6%) but lower real wage growth (0.1% vs 0.2%), suggesting that other factors such as labour market institutions, union bargaining power and inflation expectations also affect real wages (1)</td>
+        <td>**Explain whether the relationship in Fig. 1 between labour productivity growth and real wage growth is the expected one.**<br><br>• Yes · broadly the expected positive relationship (1)<br>• Theory expects higher productivity growth to lead to higher real wage growth because wages tend to reflect the marginal product of labour (1)<br>• Supporting evidence e.g. South Korea has the highest productivity growth (2.1%) and the highest real wage growth (1.8%); the UK and Germany have the lowest productivity growth (0.4% and 0.2%) and negative real wage growth (−0.8% and −0.5%) (1)<br>• Exception: Japan has higher productivity growth (0.9%) than France (0.6%) but lower real wage growth (0.1% vs 0.2%), suggesting that other factors such as labour market institutions, union bargaining power and inflation expectations also affect real wages (1)</td>
         <td>3</td>
-        <td>Annotate with ✔<br><br>Relationship — 1<br>Why expected — 1<br>Supporting evidence — 1<br>Exception — 1</td>
+        <td>Annotate with ✔<br><br>Relationship · 1<br>Why expected · 1<br>Supporting evidence · 1<br>Exception · 1</td>
     </tr>
 </table>##  Question 1 (d)
 
@@ -3190,13 +3190,13 @@ H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
     <tr>
         <td>**Using Table 1, explain the relationship between government debt and 10-year bond yields.**<br><br>• There is no strong / consistent relationship between government debt and bond yields (1)<br>• Evidence e.g. Japan has by far the highest government debt (252% of GDP) but the lowest bond yield (1.1%); Italy has lower debt (137%) than Japan but a higher yield of 3.8%; Germany has the lowest debt (64%) and one of the</td>
         <td>4</td>
-        <td>Annotate with ✔<br><br>Relationship — 1<br>Evidence — 1<br>Explanation — 1<br>Exception / limitation — 1</td>
+        <td>Annotate with ✔<br><br>Relationship · 1<br>Evidence · 1<br>Explanation · 1<br>Exception / limitation · 1</td>
     </tr>
 </table>Page 3
 
 ## Page 4
 
-H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
+H460/02 · Predicted Paper 2 (Hard) · Mark Scheme
 
 lowest yields (2.3%) (1)
 • Possible explanation: yields reflect the risk of default, expectations of future inflation, monetary policy and the currency of the debt. Japan's debt is largely held domestically and denominated in yen, and the Bank of Japan actively buys bonds, keeping yields low. Italy's higher yield reflects perceived default/redenomination risk within the eurozone (1)
@@ -3206,7 +3206,7 @@ Page 4
 
 ## Page 5
 
-H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
+H460/02 · Predicted Paper 2 (Hard) · Mark Scheme
 
 **Question 1 (e)\\*** **Evaluate whether the Bank of England's rise in interest rates is likely to reduce UK inflation without damaging economic growth. [8]**
 
@@ -3229,7 +3229,7 @@ H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
   </tr>
 </table>
 
-**Indicative content — Question 1(e)\\***
+**Indicative content · Question 1(e)\\***
 
 **Knowledge and understanding**
 
@@ -3239,7 +3239,7 @@ H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
 
 * There may be a short-run trade-off between inflation and output (Phillips curve).
 
-**Application — context**
+**Application · context**
 
 * Bank Rate rose from 0.1% in December 2021 to 5.25% in August 2023.
 
@@ -3247,7 +3247,7 @@ H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
 
 * Real GDP growth was only 0.9% in 2024.
 
-**Analysis — rate rises reduce inflation without much growth damage**
+**Analysis · rate rises reduce inflation without much growth damage**
 
 * Higher rates raise the cost of borrowing for households and firms, reducing consumption and investment (components of AD).
 
@@ -3259,23 +3259,23 @@ H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
 
 * Since inflation peaked in 2022 and fell to around 4.0% in 2024, the policy has had some apparent success.
 
-**Evaluation — rate rises may damage growth**
+**Evaluation · rate rises may damage growth**
 
 * Higher borrowing costs reduce investment, which lowers long-run productive capacity.
 
 * Real GDP growth of only 0.9% in 2024 is very weak and may reflect the contractionary effect of rate rises.
 
-* Much of the inflation was driven by supply-side shocks (energy prices, supply chains) — monetary policy is less effective against cost-push inflation.
+* Much of the inflation was driven by supply-side shocks (energy prices, supply chains) · monetary policy is less effective against cost-push inflation.
 
 * Higher mortgage costs reduce disposable income of homeowners, further depressing consumption.
 
 * Transmission lags of 12–18 months mean the full effect on growth may not yet be visible.
 
-* The UK's weak productivity growth (0.4%) limits the economy's capacity to absorb demand — so smaller cuts in AD may have bigger output costs.
+* The UK's weak productivity growth (0.4%) limits the economy's capacity to absorb demand · so smaller cuts in AD may have bigger output costs.
 
 **Judgement may include**
 
-* The policy has succeeded in reducing headline inflation but at the cost of weak growth — a trade-off is evident.
+* The policy has succeeded in reducing headline inflation but at the cost of weak growth · a trade-off is evident.
 
 * Effectiveness depends on whether inflation is primarily cost-push (monetary policy less effective) or demand-pull.
 
@@ -3287,7 +3287,7 @@ Page 5
 
 ## Page 6
 
-H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
+H460/02 · Predicted Paper 2 (Hard) · Mark Scheme
 
 **Question 1 (f)\\*** **Evaluate whether the UK government should prioritise reducing its budget deficit.** [12]
 
@@ -3314,7 +3314,7 @@ H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
   </tr>
 </table>
 
-**Indicative content — Question 1(f)\\***
+**Indicative content · Question 1(f)\\***
 
 **Knowledge and understanding**
 
@@ -3324,7 +3324,7 @@ H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
 
 * Reducing a deficit requires some combination of higher taxes and/or lower government spending (contractionary fiscal policy).
 
-**Application — context**
+**Application · context**
 
 * UK public sector net debt has reached 98% of GDP.
 
@@ -3332,7 +3332,7 @@ H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
 
 * About a quarter of UK government debt is index-linked, raising servicing costs as inflation rose.
 
-**Analysis — UK should prioritise reducing the deficit**
+**Analysis · UK should prioritise reducing the deficit**
 
 * Rising debt-servicing costs divert resources from productive government spending.
 
@@ -3344,7 +3344,7 @@ H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
 
 * With inflation still above target, fiscal tightening complements the BoE's contractionary monetary policy, making it more effective.
 
-**Evaluation — UK should not prioritise deficit reduction**
+**Evaluation · UK should not prioritise deficit reduction**
 
 * Contractionary fiscal policy risks pushing the economy into recession, given weak growth of only 0.9% in 2024.
 
@@ -3354,23 +3354,23 @@ H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
 
 * If fiscal tightening coincides with monetary tightening, the combined effect on AD can be excessive.
 
-* In a recession, the deficit typically falls as the economy recovers — "austerity" may be self-defeating if it causes nominal GDP to fall too.
+* In a recession, the deficit typically falls as the economy recovers · "austerity" may be self-defeating if it causes nominal GDP to fall too.
 
 * Higher taxes reduce disposable income, worsening the cost-of-living squeeze on households.
 
 **Judgement may include**
 
-* The answer depends on the composition — cutting current spending is less harmful than cutting capital spending.
+* The answer depends on the composition · cutting current spending is less harmful than cutting capital spending.
 
-* The state of the economy matters — weak growth argues against rapid deficit reduction; overheating would argue for it.
+* The state of the economy matters · weak growth argues against rapid deficit reduction; overheating would argue for it.
 
-* Market conditions matter — if bond yields remain manageable, there is less urgency.
+* Market conditions matter · if bond yields remain manageable, there is less urgency.
 
 Page 6
 
 ## Page 7
 
-H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
+H460/02 · Predicted Paper 2 (Hard) · Mark Scheme
 
 * A credible medium-term plan may be more valuable than rapid short-term cuts.
 
@@ -3380,9 +3380,9 @@ Page 7
 
 ## Page 8
 
-H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
+H460/02 · Predicted Paper 2 (Hard) · Mark Scheme
 
-## Section B — Question 2*
+## Section B · Question 2*
 
 Evaluate, with the use of an appropriate diagram(s), whether an appreciation of a country's currency will benefit the economy. [25]
 
@@ -3417,17 +3417,17 @@ Evaluate, with the use of an appropriate diagram(s), whether an appreciation of 
   </tr>
 </table>
 
-### Indicative content — Question 2*
+### Indicative content · Question 2*
 
 #### Knowledge and understanding
 
 - Currency appreciation is a rise in the value of one currency relative to others under a floating exchange rate system.
 
-- SPICED: Strong Pound / currency — Imports Cheaper, Exports Dearer.
+- SPICED: Strong Pound / currency · Imports Cheaper, Exports Dearer.
 
 - Macroeconomic objectives: low stable inflation, growth, employment, current account stability.
 
-#### Analysis — appreciation benefits the economy
+#### Analysis · appreciation benefits the economy
 
 - Cheaper imports reduce cost-push inflation, particularly for energy and commodities.
 
@@ -3439,7 +3439,7 @@ Evaluate, with the use of an appropriate diagram(s), whether an appreciation of 
 
 - Diagram: AS shifts rightward as import costs fall; price level falls, real GDP rises.
 
-#### Evaluation — appreciation may not benefit the economy
+#### Evaluation · appreciation may not benefit the economy
 
 - Exports become more expensive, reducing export volumes and worsening net exports (AD falls).
 
@@ -3459,21 +3459,21 @@ Evaluate, with the use of an appropriate diagram(s), whether an appreciation of 
 
 - An appreciation may be beneficial when inflation is the main concern but damaging when growth is weak.
 
-- Effect differs between economies — import-dependent economies benefit more from cheaper imports.
+- Effect differs between economies · import-dependent economies benefit more from cheaper imports.
 
 Page 8
 
 ## Page 9
 
-H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
+H460/02 · Predicted Paper 2 (Hard) · Mark Scheme
 
-## Section B — Question 3*
+## Section B · Question 3*
 
 Evaluate, with the use of an appropriate diagram(s), whether cost-push inflation is more harmful than demand-pull inflation. [25]
 
 Level descriptors as for Q2*.
 
-### Indicative content — Question 3*
+### Indicative content · Question 3*
 #### Knowledge and understanding
 
 - Cost-push inflation: rise in price level caused by rise in costs of production (LRAS/SRAS shifts left).
@@ -3482,9 +3482,9 @@ Level descriptors as for Q2*.
 
 - Both reduce real incomes, though through different mechanisms.
 
-### Analysis — cost-push is more harmful
+### Analysis · cost-push is more harmful
 
-- Cost-push inflation is accompanied by falling real GDP — stagflation — raising unemployment as well as inflation.
+- Cost-push inflation is accompanied by falling real GDP · stagflation · raising unemployment as well as inflation.
 
 - Monetary policy is less effective against cost-push inflation: raising rates to reduce demand worsens unemployment without addressing the cost shock.
 
@@ -3492,9 +3492,9 @@ Level descriptors as for Q2*.
 
 - Cost-push inflation triggers wage–price spirals if workers demand higher wages to protect real incomes.
 
-- Diagram: SRAS shifts left — price level rises and output falls.
+- Diagram: SRAS shifts left · price level rises and output falls.
 
-### Evaluation — demand-pull may be equally/more harmful
+### Evaluation · demand-pull may be equally/more harmful
 
 - Demand-pull inflation caused by excessive expansionary policy can spiral out of control if not addressed.
 
@@ -3520,15 +3520,15 @@ Page 9
 
 ## Page 10
 
-H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
+H460/02 · Predicted Paper 2 (Hard) · Mark Scheme
 
-## Section C — Question 4*
+## Section C · Question 4*
 
 Evaluate whether progressive taxation is the most effective way to reduce income inequality. [25]
 
 Level descriptors as for Q2*.
 
-### Indicative content — Question 4*
+### Indicative content · Question 4*
 
 #### Knowledge and understanding
 
@@ -3538,7 +3538,7 @@ Level descriptors as for Q2*.
 
 - Income inequality is typically measured by the Gini coefficient.
 
-#### Analysis — progressive taxation reduces inequality
+#### Analysis · progressive taxation reduces inequality
 
 - Higher rates on higher incomes directly redistribute post-tax income.
 
@@ -3550,9 +3550,9 @@ Level descriptors as for Q2*.
 
 - Can fund targeted benefits (tax credits, universal credit) that raise low incomes.
 
-#### Evaluation — may not be most effective
+#### Evaluation · may not be most effective
 
-- High marginal tax rates may reduce work incentives (Laffer curve) — reducing the revenue available for redistribution.
+- High marginal tax rates may reduce work incentives (Laffer curve) · reducing the revenue available for redistribution.
 
 - High earners can avoid tax through legal avoidance, emigration, or shifting income into untaxed forms.
 
@@ -3578,22 +3578,22 @@ Page 10
 
 ## Page 11
 
-H460/02 — Predicted Paper 2 (Hard) — Mark Scheme
+H460/02 · Predicted Paper 2 (Hard) · Mark Scheme
 
-## Section C — Question 5*
+## Section C · Question 5*
 
 Evaluate whether a country is likely to benefit from joining a monetary union such as the eurozone. [25]
 
 Level descriptors as for Q2*.
 
-Indicative content — Question 5*
+Indicative content · Question 5*
 
 ### Knowledge and understanding
 
 - A monetary union involves members adopting a common currency and ceding control of monetary policy to a shared central bank.
 - The eurozone has a single currency (euro), a single central bank (ECB) and a single monetary policy.
 
-### Analysis — joining may benefit a country
+### Analysis · joining may benefit a country
 
 - Elimination of exchange rate uncertainty within the union encourages trade and FDI.
 - Reduction in transaction costs on intra-union trade.
@@ -3601,27 +3601,27 @@ Indicative content — Question 5*
 - Access to deeper, more liquid financial markets lowers borrowing costs.
 - Credibility of low inflation from a strong central bank (e.g. ECB's inflation target).
 
-### Evaluation — joining may not benefit a country
+### Evaluation · joining may not benefit a country
 
-- Loss of independent monetary policy — "one size fits all" may be inappropriate for individual economies.
+- Loss of independent monetary policy · "one size fits all" may be inappropriate for individual economies.
 - Loss of exchange rate as an adjustment mechanism for asymmetric shocks.
 - Fiscal constraints (Stability and Growth Pact) limit expansionary fiscal response.
 - Examples: Greece and other periphery economies struggled during 2010–2012 sovereign debt crisis.
 - Reduced ability to respond to idiosyncratic shocks (Italy's structural weaknesses, Ireland's banking crisis).
-- Political costs — loss of monetary sovereignty.
+- Political costs · loss of monetary sovereignty.
 
 ### Possible judgement
 
 - Benefits depend on whether the country is an Optimum Currency Area member with the union (labour mobility, similar business cycles, fiscal transfers).
 - Small open economies with close trade links gain more than large diverse economies.
-- The design of the monetary union matters — eurozone lacks fiscal union, amplifying costs.
+- The design of the monetary union matters · eurozone lacks fiscal union, amplifying costs.
 - Long-run benefits of low inflation may outweigh short-run adjustment costs.
 
 Page 11
 
 ## Page 12
 
-*H460/02 — Predicted Paper 2 (Hard) — Mark Scheme*
+*H460/02 · Predicted Paper 2 (Hard) · Mark Scheme*
 
 ## ASSESSMENT OBJECTIVES GRID
 
@@ -3721,7 +3721,7 @@ Page 11
 Page 12`,
   "ocr-c02-set-c": `## Page 1
 
-*H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme*
+*H460/02 · Predicted Paper 2 (Advanced) · Mark Scheme*
 
 Oxford Cambridge and RSA Examinations
 
@@ -3732,13 +3732,13 @@ Oxford Cambridge and RSA Examinations
 
 A Level
 
-**Mark Scheme — Predicted Paper 2 (Advanced)**
+**Mark Scheme · Predicted Paper 2 (Advanced)**
 
 Page 1
 
 ## Page 2
 
-H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
+H460/02 · Predicted Paper 2 (Advanced) · Mark Scheme
 
 ## MARKING INSTRUCTIONS
 
@@ -3746,7 +3746,7 @@ Marks awarded must relate directly to the marking criteria. Alternative correct 
 
 **For answers marked by levels of response:**
 
-* To determine the level — start at the highest level and work down until you reach the level that matches the answer.
+* To determine the level · start at the highest level and work down until you reach the level that matches the answer.
 
 * To determine the mark within the level, consider whether the answer is at the borderline (bottom), just enough (above bottom/middle), meets criteria with slight inconsistency (above middle), or consistently meets the criteria (top).
 
@@ -3756,7 +3756,7 @@ Page 2
 
 ## Page 3
 
-H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
+H460/02 · Predicted Paper 2 (Advanced) · Mark Scheme
 
 ## Question 1 (a)
 
@@ -3793,9 +3793,9 @@ H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
         <th>Guidance</th>
     </tr>
     <tr>
-        <td>**Explain whether the relationship shown in Fig. 1 between currency depreciation and inflation is the expected one.**<br><br>• Yes — there is a strong positive relationship between currency depreciation and inflation (1)<br>• This is expected because depreciation raises the domestic price of imports (imported inflation); purchasing power parity (PPP) theory predicts that high-inflation countries experience offsetting currency depreciation (1)<br>• Supporting evidence e.g. Argentina (74.2% depreciation / 94.7% inflation) and Turkey (42.8% / 41.6%) show both high depreciation and high inflation; Mexico (2.1% / 5.4%), Indonesia (3.4% / 3.6%) and India (3.0% / 5.6%) all show both low depreciation and low inflation (1)<br>• Exception / limitation: in Argentina, inflation (94.7%) is substantially higher than depreciation (74.2%), suggesting domestic inflationary pressures (monetary financing of deficits) beyond what imported inflation alone can explain; or Mexico has higher inflation (5.4%) than depreciation (2.1%), indicating inflation is driven by domestic factors (1)</td>
+        <td>**Explain whether the relationship shown in Fig. 1 between currency depreciation and inflation is the expected one.**<br><br>• Yes · there is a strong positive relationship between currency depreciation and inflation (1)<br>• This is expected because depreciation raises the domestic price of imports (imported inflation); purchasing power parity (PPP) theory predicts that high-inflation countries experience offsetting currency depreciation (1)<br>• Supporting evidence e.g. Argentina (74.2% depreciation / 94.7% inflation) and Turkey (42.8% / 41.6%) show both high depreciation and high inflation; Mexico (2.1% / 5.4%), Indonesia (3.4% / 3.6%) and India (3.0% / 5.6%) all show both low depreciation and low inflation (1)<br>• Exception / limitation: in Argentina, inflation (94.7%) is substantially higher than depreciation (74.2%), suggesting domestic inflationary pressures (monetary financing of deficits) beyond what imported inflation alone can explain; or Mexico has higher inflation (5.4%) than depreciation (2.1%), indicating inflation is driven by domestic factors (1)</td>
         <td>3</td>
-        <td>Annotate with ✔<br><br>Relationship — 1<br>Why expected — 1<br>Supporting evidence — 1<br>Exception — 1<br><br>Evidence must explain why it shows a relationship or exception rather than just listing a country.</td>
+        <td>Annotate with ✔<br><br>Relationship · 1<br>Why expected · 1<br>Supporting evidence · 1<br>Exception · 1<br><br>Evidence must explain why it shows a relationship or exception rather than just listing a country.</td>
     </tr>
 </table>## Question 1 (d)
 
@@ -3803,7 +3803,7 @@ Page 3
 
 ## Page 4
 
-H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
+H460/02 · Predicted Paper 2 (Advanced) · Mark Scheme
 
 <table>
     <tr>
@@ -3812,15 +3812,15 @@ H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
         <th>Guidance</th>
     </tr>
     <tr>
-        <td>**Using Table 1, explain the relationship between real GDP growth and unemployment in IMF programme countries.**<br><br>• There is no clear / consistent relationship between real GDP growth and unemployment (1)<br>• Evidence e.g. Kenya has the highest real GDP growth (5.6%) and a relatively low unemployment rate (5.7%), and Ghana has positive growth (2.9%) with the lowest unemployment (3.9%), suggesting a negative relationship; but Sri Lanka has the worst growth (−2.3%) yet the lowest unemployment of the contracting economies (4.7%); and Pakistan has slight contraction (−0.2%) with the highest unemployment (8.5%) (1)<br>• Economic theory (Okun's Law) predicts an inverse relationship because higher growth raises derived demand for labour. This is partly observed but the data is mixed — the relationship is weak (1)<br>• Exception / limitation: unemployment statistics differ between countries in how they are measured — large informal sectors in emerging economies can mask underemployment; labour market flexibility and population growth also affect the unemployment rate independently of real GDP growth (1)</td>
+        <td>**Using Table 1, explain the relationship between real GDP growth and unemployment in IMF programme countries.**<br><br>• There is no clear / consistent relationship between real GDP growth and unemployment (1)<br>• Evidence e.g. Kenya has the highest real GDP growth (5.6%) and a relatively low unemployment rate (5.7%), and Ghana has positive growth (2.9%) with the lowest unemployment (3.9%), suggesting a negative relationship; but Sri Lanka has the worst growth (−2.3%) yet the lowest unemployment of the contracting economies (4.7%); and Pakistan has slight contraction (−0.2%) with the highest unemployment (8.5%) (1)<br>• Economic theory (Okun's Law) predicts an inverse relationship because higher growth raises derived demand for labour. This is partly observed but the data is mixed · the relationship is weak (1)<br>• Exception / limitation: unemployment statistics differ between countries in how they are measured · large informal sectors in emerging economies can mask underemployment; labour market flexibility and population growth also affect the unemployment rate independently of real GDP growth (1)</td>
         <td>4</td>
-        <td>Annotate with ✔<br>Relationship — 1<br>Evidence — 1<br>Explanation — 1<br>Exception / limitation — 1</td>
+        <td>Annotate with ✔<br>Relationship · 1<br>Evidence · 1<br>Explanation · 1<br>Exception / limitation · 1</td>
     </tr>
 </table>Page 4
 
 ## Page 5
 
-H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
+H460/02 · Predicted Paper 2 (Advanced) · Mark Scheme
 
 **Question 1 (e)\\*** **Evaluate whether a depreciation of the Argentine peso is likely to improve the country's current account on the balance of payments. [8]**
 
@@ -3843,7 +3843,7 @@ H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
   </tr>
 </table>
 
-## Indicative content — Question 1(e)*
+## Indicative content · Question 1(e)*
 
 ### Knowledge and understanding
 
@@ -3855,7 +3855,7 @@ H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
 
 * The J-curve: in the short run the current account may worsen before improving.
 
-### Application — context
+### Application · context
 
 * The Argentine peso depreciated from about 30 pesos/USD in 2018 to over 800 pesos/USD by December 2023.
 
@@ -3865,7 +3865,7 @@ H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
 
 * Argentina has capital controls creating a black-market exchange rate at a premium to the official rate.
 
-### Analysis — depreciation likely to improve the current account
+### Analysis · depreciation likely to improve the current account
 
 * A weaker peso makes Argentine exports (in USD terms) cheaper for foreign buyers, raising export demand and volumes.
 
@@ -3875,19 +3875,19 @@ H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
 
 * Argentina's export sectors (soybeans, beef, maize) may gain international price competitiveness, supporting foreign currency inflows.
 
-* An improving trade balance can help Argentina rebuild foreign currency reserves — a key IMF condition.
+* An improving trade balance can help Argentina rebuild foreign currency reserves · a key IMF condition.
 
-### Evaluation — depreciation may not improve the current account
+### Evaluation · depreciation may not improve the current account
 
-* Argentina's exports are concentrated in primary commodities whose prices are set on world markets in USD — depreciation does not change the world price, only the peso value received by exporters.
+* Argentina's exports are concentrated in primary commodities whose prices are set on world markets in USD · depreciation does not change the world price, only the peso value received by exporters.
 
-* Demand for commodities is relatively price-inelastic, so the volume response may be small — Marshall–Lerner may not hold.
+* Demand for commodities is relatively price-inelastic, so the volume response may be small · Marshall–Lerner may not hold.
 
 * Argentina relies on imported capital goods, fuel and intermediate inputs; more expensive imports raise production costs, eroding export competitiveness (imported cost-push inflation).
 
 * The J-curve effect means the current account can worsen in the short run before any improvement.
 
-* Capital controls distort the effective exchange rate — the black-market rate gap means official depreciation does not fully translate into competitiveness gains.
+* Capital controls distort the effective exchange rate · the black-market rate gap means official depreciation does not fully translate into competitiveness gains.
 
 * Very high inflation (211%) can rapidly erase the competitiveness gained from nominal depreciation (real effective exchange rate may barely change).
 
@@ -3901,19 +3901,19 @@ Page 5
 
 ## Page 6
 
-*H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme*
+*H460/02 · Predicted Paper 2 (Advanced) · Mark Scheme*
 
-- Depreciation must not be eroded by domestic inflation — without monetary and fiscal reform, real gains will evaporate.
+- Depreciation must not be eroded by domestic inflation · without monetary and fiscal reform, real gains will evaporate.
 
 - Commodity concentration limits the expenditure-switching effect of depreciation.
 
-- Depreciation alone cannot fix structural problems — complementary supply-side reform is required.
+- Depreciation alone cannot fix structural problems · complementary supply-side reform is required.
 
 Page 6
 
 ## Page 7
 
-H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
+H460/02 · Predicted Paper 2 (Advanced) · Mark Scheme
 
 **Question 1 (f)\\*** **Evaluate whether IMF loans are likely to benefit developing economies such as Argentina.** [12]
 
@@ -3938,17 +3938,17 @@ H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
         <td>**0 marks**</td>
         <td>Response is not worthy of credit</td>
     </tr>
-</table>**Indicative content — Question 1(f)\\***
+</table>**Indicative content · Question 1(f)\\***
 
 **Knowledge and understanding**
 
 * The International Monetary Fund (IMF) provides financial assistance to member countries facing balance of payments or currency crises.
 
-* IMF loans typically come with conditions — fiscal consolidation, structural reform and rebuilding of foreign currency reserves.
+* IMF loans typically come with conditions · fiscal consolidation, structural reform and rebuilding of foreign currency reserves.
 
 * The conditions associated with IMF lending are often described as "austerity" measures.
 
-**Application — context**
+**Application · context**
 
 * Argentina received the largest single IMF loan in the Fund's history (US$57 billion) in 2018.
 
@@ -3956,9 +3956,9 @@ H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
 
 * Over 40% of Argentina's population were living below the national poverty line by 2023.
 
-* Other IMF programme countries include Pakistan (growth −0.2%, unemployment 8.5%), Sri Lanka (growth −2.3%), Ghana (growth 2.9%), Egypt (growth 3.8%) and Kenya (growth 5.6%) — outcomes vary widely.
+* Other IMF programme countries include Pakistan (growth −0.2%, unemployment 8.5%), Sri Lanka (growth −2.3%), Ghana (growth 2.9%), Egypt (growth 3.8%) and Kenya (growth 5.6%) · outcomes vary widely.
 
-**Analysis — IMF loans benefit developing economies**
+**Analysis · IMF loans benefit developing economies**
 
 * IMF loans provide a financial lifeline that may prevent uncontrolled default and total economic collapse.
 
@@ -3972,19 +3972,19 @@ H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
 
 * Compared to uncontrolled default, the path through an IMF programme is typically less disruptive.
 
-**Evaluation — IMF loans may not benefit developing economies**
+**Evaluation · IMF loans may not benefit developing economies**
 
-* The austerity conditions (cuts to public spending, tax rises) deepen recession in the short term — Sri Lanka (−2.3%) and Pakistan (−0.2%) show contractions during IMF programmes.
+* The austerity conditions (cuts to public spending, tax rises) deepen recession in the short term · Sri Lanka (−2.3%) and Pakistan (−0.2%) show contractions during IMF programmes.
 
 * Cuts to food, fuel and transport subsidies disproportionately harm low-income households and worsen relative and absolute poverty.
 
-* Loss of economic sovereignty — policy decisions are effectively made outside the country.
+* Loss of economic sovereignty · policy decisions are effectively made outside the country.
 
 * Austerity-linked social unrest (as seen in Argentina, Greece) can destabilise political institutions.
 
 * High-interest repayments commit future governments to long-run debt-servicing, potentially creating a cycle of dependency (Argentina has received repeated IMF packages).
 
-* Conditionality may ignore country-specific context — "one-size-fits-all" reforms may not suit every economy.
+* Conditionality may ignore country-specific context · "one-size-fits-all" reforms may not suit every economy.
 
 * Kenya and Egypt have seen positive growth, suggesting success is not guaranteed by the programme alone but also depends on the recipient economy's structure.
 
@@ -3992,13 +3992,13 @@ Page 7
 
 ## Page 8
 
-H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
+H460/02 · Predicted Paper 2 (Advanced) · Mark Scheme
 
 **Judgement may include**
 
 - The benefit depends heavily on the design of the programme and the starting position of the economy.
 
-- In a severe balance of payments crisis, the alternative — uncontrolled default — is usually worse than an IMF programme.
+- In a severe balance of payments crisis, the alternative · uncontrolled default · is usually worse than an IMF programme.
 
 - Outcomes differ widely: Kenya and Ghana show growth during IMF programmes, while Sri Lanka and Pakistan contracted.
 
@@ -4012,9 +4012,9 @@ Page 8
 
 ## Page 9
 
-H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
+H460/02 · Predicted Paper 2 (Advanced) · Mark Scheme
 
-## Section B — Question 2*
+## Section B · Question 2*
 
 Evaluate, with the use of an appropriate diagram(s), whether quantitative tightening is an effective policy to reduce inflation. [25]
 
@@ -4049,7 +4049,7 @@ Evaluate, with the use of an appropriate diagram(s), whether quantitative tighte
   </tr>
 </table>
 
-### Indicative content — Question 2*
+### Indicative content · Question 2*
 
 #### Knowledge and understanding
 
@@ -4057,33 +4057,33 @@ Evaluate, with the use of an appropriate diagram(s), whether quantitative tighte
 - QT reduces the money supply and raises long-term interest rates.
 - QT is a contractionary monetary policy instrument intended to reduce inflation.
 
-#### Application — context
+#### Application · context
 
 - The Bank of England, Federal Reserve and ECB have all conducted QT programmes since 2022 following the post-pandemic inflation surge.
 - The Bank of England's balance sheet expanded from about £400bn to nearly £900bn through QE; QT is unwinding this.
 - QT has coincided with policy-rate rises to complete the contractionary monetary stance.
 
-#### Analysis — QT is effective in reducing inflation (with diagram)
+#### Analysis · QT is effective in reducing inflation (with diagram)
 
 - Diagram: AD shifts left as higher long-term interest rates reduce consumption and investment; the price level falls from PL1 to PL2 at a lower real GDP.
 - Reducing the central bank's bond holdings withdraws liquidity from the banking system, raising the price of credit.
 - Higher long-term yields reduce investment and interest-sensitive consumption (housing, durable goods), reducing AD and demand-pull inflation.
 - QT signals a credible commitment to fighting inflation, anchoring inflation expectations and limiting second-round wage-price effects.
-- QT reverses the wealth effects of QE — lower asset prices reduce consumption of wealth-holders.
+- QT reverses the wealth effects of QE · lower asset prices reduce consumption of wealth-holders.
 - QT complements policy-rate rises by tightening financial conditions across the yield curve.
 
-#### Evaluation — QT may not be effective
+#### Evaluation · QT may not be effective
 
-- QT works through long-term yields with lags of 12–24 months — the inflationary surge may have passed before QT has its full effect.
-- Much of recent inflation was driven by supply-side shocks (energy, supply chains) — QT does not address cost-push inflation directly.
+- QT works through long-term yields with lags of 12–24 months · the inflationary surge may have passed before QT has its full effect.
+- Much of recent inflation was driven by supply-side shocks (energy, supply chains) · QT does not address cost-push inflation directly.
 - QT can destabilise bond markets (e.g. UK gilt market turmoil in late 2022 required emergency BoE bond buying), undermining its credibility.
-- Rapid QT can trigger financial instability — banks holding depreciated bonds may face capital pressure (cf. US regional bank failures in 2023).
+- Rapid QT can trigger financial instability · banks holding depreciated bonds may face capital pressure (cf. US regional bank failures in 2023).
 
 Page 9
 
 ## Page 10
 
-H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
+H460/02 · Predicted Paper 2 (Advanced) · Mark Scheme
 
 - The effectiveness depends on the behaviour of commercial banks: they may reduce lending independent of central bank signals, making QT less predictable.
 
@@ -4093,27 +4093,27 @@ H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
 
 - QT is most effective against demand-pull inflation, less effective against cost-push inflation.
 
-- The pace of QT matters — gradual unwinding avoids bond market disruption but may be too slow for urgent inflation control.
+- The pace of QT matters · gradual unwinding avoids bond market disruption but may be too slow for urgent inflation control.
 
-- QT is one part of a policy package — policy-rate rises, exchange-rate effects and fiscal policy all matter.
+- QT is one part of a policy package · policy-rate rises, exchange-rate effects and fiscal policy all matter.
 
 - In the current cycle, QT has probably contributed to falling inflation but the supply-side normalisation (energy prices falling) has also played a major role.
 
-- Policy effectiveness depends on credibility — central banks with strong independence (Fed, BoE, ECB) have greater effect than those facing fiscal dominance (e.g. Argentina's BCRA).
+- Policy effectiveness depends on credibility · central banks with strong independence (Fed, BoE, ECB) have greater effect than those facing fiscal dominance (e.g. Argentina's BCRA).
 
 Page 10
 
 ## Page 11
 
-H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
+H460/02 · Predicted Paper 2 (Advanced) · Mark Scheme
 
-##  Section B — Question 3*
+##  Section B · Question 3*
 
  Evaluate, with the use of an appropriate diagram(s), whether high levels of government debt necessarily harm an economy's long-run economic growth. [25]
 
  *Level descriptors as for Q2*.*
 
-##  Indicative content — Question 3*
+##  Indicative content · Question 3*
 
 ###  Knowledge and understanding
 
@@ -4121,13 +4121,13 @@ H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
 -  Long-run economic growth depends on increases in productive capacity (LRAS).
 -  Crowding-out: government borrowing can raise interest rates and displace private investment.
 
-###  Application — context
+###  Application · context
 
 -  Japan's government debt is around 252% of GDP, the highest among major economies, yet bond yields remain low and growth modest.
 -  UK, US and eurozone debt-to-GDP ratios have risen substantially since 2008 and 2020.
 -  Developing economies such as Argentina, Sri Lanka and Ghana have all experienced debt crises recently.
 
-###  Analysis — high debt harms long-run growth
+###  Analysis · high debt harms long-run growth
 
 -  Diagram: LRAS may fail to shift right if investment is crowded out by government borrowing; growth stagnates.
 -  Higher debt-servicing costs crowd out productive government spending (infrastructure, education, healthcare).
@@ -4136,38 +4136,38 @@ H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
 -  Debt sustainability concerns can trigger capital flight and currency depreciation (Argentina, Sri Lanka), worsening macroeconomic conditions.
 -  High debt limits the fiscal space available to respond to future shocks, making downturns deeper and slower to recover from.
 
-###  Evaluation — high debt does not necessarily harm growth
+###  Evaluation · high debt does not necessarily harm growth
 
--  Japan's 252% debt ratio has not caused high yields, high inflation or a debt crisis — context matters (domestic ownership, currency denomination, central bank bond purchases).
+-  Japan's 252% debt ratio has not caused high yields, high inflation or a debt crisis · context matters (domestic ownership, currency denomination, central bank bond purchases).
 -  If debt finances productive public investment (infrastructure, R&D, education), it can raise LRAS and therefore long-run growth.
 -  Keynesian view: deficit spending in a recession can prevent output from falling and preserve the productive capacity of the economy.
--  Low real interest rates mean the cost of servicing debt is low — Japan's debt service is manageable despite the high ratio.
+-  Low real interest rates mean the cost of servicing debt is low · Japan's debt service is manageable despite the high ratio.
 -  The composition of debt matters: long-dated, domestically-held, domestic-currency debt (Japan, UK) is much less risky than short-term foreign-currency debt (Argentina).
 -  Advanced economies with reserve currencies (USD, GBP, EUR, JPY) have greater tolerance for high debt.
 
 ###  Possible judgement
 
 -  The relationship between debt and growth depends critically on what the debt financed and who holds it.
--  There is no magic threshold — the debt-to-GDP ratio alone does not determine harm.
+-  There is no magic threshold · the debt-to-GDP ratio alone does not determine harm.
 -  Debt is less harmful when the economy is below potential (multipliers are high) and when interest rates are low.
 -  Debt becomes more harmful when debt-service costs rise sharply, when yields rise, or when the debt is in foreign currency.
--  The institutional and political context — central bank independence, reserve-currency status, creditor composition — matters more than the debt ratio.
+-  The institutional and political context · central bank independence, reserve-currency status, creditor composition · matters more than the debt ratio.
 
  Page 11
 
 ## Page 12
 
-*H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme*
+*H460/02 · Predicted Paper 2 (Advanced) · Mark Scheme*
 
-- Long-run growth depends on productivity-enhancing public investment — deficits financing current consumption are more likely to harm long-run growth than those financing capital investment.
+- Long-run growth depends on productivity-enhancing public investment · deficits financing current consumption are more likely to harm long-run growth than those financing capital investment.
 
 Page 12
 
 ## Page 13
 
-H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
+H460/02 · Predicted Paper 2 (Advanced) · Mark Scheme
 
-##  Section C — Question 4*
+##  Section C · Question 4*
 
  Evaluate whether free trade benefits all countries that participate in it. [25]
 
@@ -4179,14 +4179,14 @@ H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
 -  Comparative advantage: a country gains by specialising in the good for which its opportunity cost is lowest, then trading.
 -  Trade creation vs trade diversion; static vs dynamic gains from trade.
 
- Application — context
+ Application · context
 
 -  The World Trade Organization promotes free trade among its 164 member countries.
 -  Trade liberalisation has been a driver of growth in emerging economies (China, Vietnam, India).
 -  Some economies remain reliant on primary commodity exports (e.g. Argentina on soybeans, beef, maize).
 -  Developed and developing countries have rejected trade agreements where benefits are perceived as unequal.
 
- Analysis — free trade benefits all participants
+ Analysis · free trade benefits all participants
 
 -  Comparative advantage: when countries specialise according to opportunity cost, total world output rises and all participants can gain through trade.
 -  Consumers gain through lower prices and a greater variety of goods, raising real incomes.
@@ -4195,9 +4195,9 @@ H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
 -  Knowledge and technology transfers through trade accelerate development in lower-income countries.
 -  Trade enables developing economies with concentrated resource endowments (oil, agricultural commodities) to earn foreign currency.
 
- Evaluation — free trade may not benefit all participants
+ Evaluation · free trade may not benefit all participants
 
--  Gains from trade are distributed unevenly — some workers, firms and regions lose even as the country as a whole gains (Stolper–Samuelson).
+-  Gains from trade are distributed unevenly · some workers, firms and regions lose even as the country as a whole gains (Stolper–Samuelson).
 -  Infant industry argument: developing countries may need temporary protection before they can compete globally.
 -  Primary-commodity-dependent economies (e.g. Argentina) face volatile export earnings and the Prebisch–Singer hypothesis of declining terms of trade over time.
 -  Without safety nets, structural adjustment causes persistent unemployment in declining industries.
@@ -4218,21 +4218,21 @@ H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
 
 ## Page 14
 
-H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
+H460/02 · Predicted Paper 2 (Advanced) · Mark Scheme
 
 Page 14
 
 ## Page 15
 
-H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme
+H460/02 · Predicted Paper 2 (Advanced) · Mark Scheme
 
-##  Section C — Question 5*
+##  Section C · Question 5*
 
 Evaluate whether central banks should always prioritise the control of inflation over the pursuit of low unemployment. [25]
 
 Level descriptors as for Q2*.
 
-##  Indicative content — Question 5*
+##  Indicative content · Question 5*
 
 ###  Knowledge and understanding
 
@@ -4244,7 +4244,7 @@ Level descriptors as for Q2*.
 
 - An inflation-only mandate: a central bank's sole objective is inflation (e.g. ECB, Bank of England's primary target).
 
-###  Application — context
+###  Application · context
 
 - The Federal Reserve has a dual mandate of price stability and maximum employment.
 
@@ -4254,13 +4254,13 @@ Level descriptors as for Q2*.
 
 - Post-pandemic inflation rose above 10% in the UK and eurozone; unemployment has remained relatively low.
 
-###  Analysis — central banks should always prioritise inflation
+###  Analysis · central banks should always prioritise inflation
 
-- In the long run there is no Phillips curve trade-off — monetary policy can only affect nominal variables (inflation), not real ones (output, unemployment).
+- In the long run there is no Phillips curve trade-off · monetary policy can only affect nominal variables (inflation), not real ones (output, unemployment).
 
 - High and volatile inflation erodes real wages, reduces investment through uncertainty and damages the financial system.
 
-- Credibility requires a clear, narrow inflation objective — mandate creep undermines the central bank's anchoring role.
+- Credibility requires a clear, narrow inflation objective · mandate creep undermines the central bank's anchoring role.
 
 - Unanchored inflation expectations make future policy more costly: the sacrifice ratio rises.
 
@@ -4268,17 +4268,17 @@ Level descriptors as for Q2*.
 
 - Low inflation supports long-run growth by reducing menu costs, shoe-leather costs and inflationary tax effects.
 
-###  Evaluation — central banks should not always prioritise inflation
+###  Evaluation · central banks should not always prioritise inflation
 
 - When inflation is caused by supply shocks (oil, war, pandemic), tightening policy damages employment without addressing the root cause.
 
-- The welfare cost of high unemployment is severe — job losses cause scarring, skills atrophy and long-term social damage.
+- The welfare cost of high unemployment is severe · job losses cause scarring, skills atrophy and long-term social damage.
 
 - Hysteresis effects mean temporary unemployment can become permanent, reducing LRAS if policy tightens too aggressively.
 
 - A dual-mandate Fed has arguably delivered better average macroeconomic outcomes than a single-mandate ECB (lower average unemployment with comparable inflation).
 
-- In a deep recession, deflation can be as dangerous as inflation — focusing exclusively on an inflation target misses the risk.
+- In a deep recession, deflation can be as dangerous as inflation · focusing exclusively on an inflation target misses the risk.
 
 - The Phillips curve, while flattened, still implies a short-run trade-off policymakers can exploit during transitions.
 
@@ -4290,7 +4290,7 @@ Page 15
 
 ## Page 16
 
-*H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme*
+*H460/02 · Predicted Paper 2 (Advanced) · Mark Scheme*
 
 - In normal conditions, inflation-targeting delivers good outcomes; in abnormal conditions (pandemic, war, supply shock) a more flexible approach may be warranted.
 
@@ -4298,7 +4298,7 @@ Page 15
 
 - Dual-mandate central banks have flexibility but require exceptionally credible commitment to low inflation to avoid being accused of political bias.
 
-- Ultimately, persistent high inflation is unsustainable and self-defeating — some priority for inflation is non-negotiable, but absolute priority is rarely optimal.
+- Ultimately, persistent high inflation is unsustainable and self-defeating · some priority for inflation is non-negotiable, but absolute priority is rarely optimal.
 
 - The central bank's institutional context (independence, mandate, tools) matters as much as its priorities.
 
@@ -4306,7 +4306,7 @@ Page 16
 
 ## Page 17
 
-*H460/02 — Predicted Paper 2 (Advanced) — Mark Scheme*
+*H460/02 · Predicted Paper 2 (Advanced) · Mark Scheme*
 
 ## ASSESSMENT OBJECTIVES GRID
 
@@ -4414,7 +4414,7 @@ Oxford Cambridge and RSA Examinations
 **H460/03: Themes in economics**
 A Level
 
-**Mark Scheme — Predicted Paper (Moderate)**
+**Mark Scheme · Predicted Paper (Moderate)**
 
 ## Page 2
 
@@ -4706,7 +4706,7 @@ A Level
 
 ## Page 6
 
-## Section A — Rationale
+## Section A · Rationale
 
 <table>
     <tr>
@@ -4730,19 +4730,19 @@ A Level
     <tr>
         <td>3</td>
         <td>B</td>
-        <td>A Cigarettes are a demerit good due to overconsumption and negative externalities.<br>**B Correct:** Education generates positive externalities and consumers tend to under-value its long-term benefits — the definition of a merit good.<br>C National defence is a public good (non-excludable and non-rival), not a merit good.<br>D Street lighting is a public good (non-excludable and non-rival), not a merit good.</td>
+        <td>A Cigarettes are a demerit good due to overconsumption and negative externalities.<br>**B Correct:** Education generates positive externalities and consumers tend to under-value its long-term benefits · the definition of a merit good.<br>C National defence is a public good (non-excludable and non-rival), not a merit good.<br>D Street lighting is a public good (non-excludable and non-rival), not a merit good.</td>
         <td>AO1</td>
     </tr>
     <tr>
         <td>4</td>
         <td>C</td>
-        <td>A Raising income tax is contractionary fiscal policy.<br>B Raising interest rates is contractionary monetary policy, not fiscal policy.<br>**C Correct:** Reducing corporation tax boosts firms' post-tax profits and incentive to invest, shifting AD to the right — expansionary fiscal policy.<br>D Reducing the money supply is contractionary monetary policy.</td>
+        <td>A Raising income tax is contractionary fiscal policy.<br>B Raising interest rates is contractionary monetary policy, not fiscal policy.<br>**C Correct:** Reducing corporation tax boosts firms' post-tax profits and incentive to invest, shifting AD to the right · expansionary fiscal policy.<br>D Reducing the money supply is contractionary monetary policy.</td>
         <td>AO1</td>
     </tr>
     <tr>
         <td>5</td>
         <td>B</td>
-        <td>A Sign is correct but the magnitude is wrong — this would imply a 25% fall in QD.<br>**B Correct:** PED = %ΔQD / %ΔP = −4% / +10% = −0.4. Demand is price inelastic.<br>C PED is negative for normal downward-sloping demand, not positive.<br>D Sign and magnitude both incorrect.</td>
+        <td>A Sign is correct but the magnitude is wrong · this would imply a 25% fall in QD.<br>**B Correct:** PED = %ΔQD / %ΔP = −4% / +10% = −0.4. Demand is price inelastic.<br>C PED is negative for normal downward-sloping demand, not positive.<br>D Sign and magnitude both incorrect.</td>
         <td>AO2</td>
     </tr>
     <tr>
@@ -4754,7 +4754,7 @@ A Level
     <tr>
         <td>7</td>
         <td>B</td>
-        <td>A This describes economies of scale, not economies of scope.<br>**B Correct:** Economies of scope arise when the average cost of producing multiple related products together is lower than producing them separately, e.g. a supermarket selling both food and household goods.<br>C Diseconomies relate to rising costs, not joint production.<br>D The MES is a related but distinct concept — the lowest output at which LRAC is minimised.</td>
+        <td>A This describes economies of scale, not economies of scope.<br>**B Correct:** Economies of scope arise when the average cost of producing multiple related products together is lower than producing them separately, e.g. a supermarket selling both food and household goods.<br>C Diseconomies relate to rising costs, not joint production.<br>D The MES is a related but distinct concept · the lowest output at which LRAC is minimised.</td>
         <td>AO1</td>
     </tr>
     <tr>
@@ -4796,7 +4796,7 @@ A Level
     <tr>
         <td>**12**</td>
         <td>**A**</td>
-        <td>**A Correct:** Unit labour cost = wage / productivity = £15 / 40 = £0.375.<br>B This is the original unit labour cost (£15 / 30).<br>C Incorrect calculation.<br>D Incorrect — higher productivity lowers unit labour cost.</td>
+        <td>**A Correct:** Unit labour cost = wage / productivity = £15 / 40 = £0.375.<br>B This is the original unit labour cost (£15 / 30).<br>C Incorrect calculation.<br>D Incorrect · higher productivity lowers unit labour cost.</td>
         <td>AO2</td>
     <td></td></tr>
     <tr>
@@ -4820,7 +4820,7 @@ A Level
     <tr>
         <td>**16**</td>
         <td>**B**</td>
-        <td>A A proportional tax takes the same percentage from all incomes.<br>**B Correct:** A progressive tax takes a higher percentage of income as income rises — the marginal tax rate rises with income here.<br>C A regressive tax takes a higher percentage of low incomes.<br>D This is a direct income tax, not an indirect tax.</td>
+        <td>A A proportional tax takes the same percentage from all incomes.<br>**B Correct:** A progressive tax takes a higher percentage of income as income rises · the marginal tax rate rises with income here.<br>C A regressive tax takes a higher percentage of low incomes.<br>D This is a direct income tax, not an indirect tax.</td>
         <td>AO1</td>
     <td></td></tr>
     <tr>
@@ -4882,7 +4882,7 @@ worsening inequality.
     <tr>
         <td>**25**</td>
         <td>**A**</td>
-        <td>**A Correct:** A minimum price above equilibrium leads quantity supplied to exceed quantity demanded — an excess supply.<br>**B** Producer surplus on units actually sold rises, though some firms may produce more than they can sell.<br>**C** Shortages arise from price ceilings, not floors.</td>
+        <td>**A Correct:** A minimum price above equilibrium leads quantity supplied to exceed quantity demanded · an excess supply.<br>**B** Producer surplus on units actually sold rises, though some firms may produce more than they can sell.<br>**C** Shortages arise from price ceilings, not floors.</td>
         <td>AO3</td>
     </tr>
 </table>
@@ -4917,7 +4917,7 @@ worsening inequality.
     <tr>
         <td>29</td>
         <td>A</td>
-        <td>A **Correct**: The closer the Lorenz curve is to the $45^{\\circ}$ line of perfect equality, the more equal the distribution of income.<br>B A curve closer to the line of equality indicates less inequality, not more.<br>C The Lorenz curve shows income distribution, not total GDP.<br>D Same as C — no direct implication for GDP level.</td>
+        <td>A **Correct**: The closer the Lorenz curve is to the $45^{\\circ}$ line of perfect equality, the more equal the distribution of income.<br>B A curve closer to the line of equality indicates less inequality, not more.<br>C The Lorenz curve shows income distribution, not total GDP.<br>D Same as C · no direct implication for GDP level.</td>
         <td>AO3</td>
     </tr>
     <tr>
@@ -5034,7 +5034,7 @@ A natural monopoly cost diagram showing LRAC continuously falling over the relev
 **Analysis**
 
 * Analysis for public ownership: Public sector can produce at the allocatively efficient level (P = MC) with government covering any losses, raising consumer surplus.
-* Analysis for public ownership: Removes duplication and incentivises full exploitation of economies of scale — potentially producing at lower average cost than multiple franchises.
+* Analysis for public ownership: Removes duplication and incentivises full exploitation of economies of scale · potentially producing at lower average cost than multiple franchises.
 * Analysis for public ownership: Avoids profit extraction as dividends (as seen in other utilities); revenues can be reinvested.
 * Analysis for private ownership: Profit motive incentivises x-efficiency, cost cutting and dynamic efficiency (innovation, new rolling stock).
 * Analysis for private ownership: Competition for the market (franchise bidding) can drive innovation, even if within-market competition is limited.
@@ -5043,9 +5043,9 @@ A natural monopoly cost diagram showing LRAC continuously falling over the relev
 **Evaluation**
 
 * Private firms may still under-produce and over-price (MC = MR) compared with the socially optimal level (MC = AR).
-* Supernormal profits may be paid as dividends to shareholders rather than reinvested — a problem highlighted in extracts on other utilities.
+* Supernormal profits may be paid as dividends to shareholders rather than reinvested · a problem highlighted in extracts on other utilities.
 * Public sector production risks x-inefficiency due to lack of profit motive and weaker incentives to innovate.
-* Public sector firms may be subject to political interference — short-term pricing decisions may dominate long-term investment planning.
+* Public sector firms may be subject to political interference · short-term pricing decisions may dominate long-term investment planning.
 * Effective regulation (e.g. by the ORR and GCA) may allow a privately-run natural monopoly to achieve outcomes close to those of public ownership at lower risk of government failure.
 * Contestability of the market (franchise bidding) limits the exercise of monopoly power even with private ownership.
 
@@ -5074,7 +5074,7 @@ A natural monopoly cost diagram showing LRAC continuously falling over the relev
       <td>34</td>
       <td>Using the data in Fig. 2.1, calculate the percentage point change in the Bank of England base rate between December 2021 and December 2023.<br><br>Award 1 mark for identifying correct figures: December 2021 = 0.25%, December 2023 = 5.25%<br><br>Award 1 mark for correct calculation: 5.25 − 0.25 = 5.00 percentage points<br><br>Award 1 mark for correctly identifying as a rise/increase of 5.00 percentage points.</td>
       <td>3</td>
-      <td>Accept 5 percentage points as full marks if clearly expressed as a change.<br><br>Do NOT accept percentage change (2000%) — the question specifies percentage points.<br><br>Maximum of 2 marks if direction of change is omitted.</td>
+      <td>Accept 5 percentage points as full marks if clearly expressed as a change.<br><br>Do NOT accept percentage change (2000%) · the question specifies percentage points.<br><br>Maximum of 2 marks if direction of change is omitted.</td>
     </tr>
   </tbody>
 </table>
@@ -5162,22 +5162,22 @@ The side of the argument presented first should be credited as Analysis with the
 *   Higher interest rates raise the reward for saving, reducing consumption as households save more.
 *   Higher rates raise mortgage repayments, reducing discretionary income and consumption.
 *   Higher rates increase the cost of borrowing for firms, reducing investment.
-*   Higher rates attract hot money inflows, appreciating sterling, lowering import prices and reducing AD — particularly important for imported-cost inflation.
+*   Higher rates attract hot money inflows, appreciating sterling, lowering import prices and reducing AD · particularly important for imported-cost inflation.
 *   Evidence suggests transmission is working: inflation fell from 11.1% to 4.0%, mortgage approvals down 33%, house prices down 4.8%.
 
 ### Evaluation
 
-*   Much of the inflation was cost-push (energy, supply-chain shocks) — raising interest rates does not directly address supply-side inflation and risks damaging output and employment (stagflation risk).
-*   With ~75% of mortgages on fixed rates, the monetary transmission mechanism has long lags — the full effect takes years to feed through.
+*   Much of the inflation was cost-push (energy, supply-chain shocks) · raising interest rates does not directly address supply-side inflation and risks damaging output and employment (stagflation risk).
+*   With ~75% of mortgages on fixed rates, the monetary transmission mechanism has long lags · the full effect takes years to feed through.
 *   Blunt instrument: hurts borrowers and the 1.6 million households remortgaging disproportionately while asset-owning wealthy households benefit less.
 *   Could have used alternative instruments: targeted fiscal measures, supply-side policies (e.g. housing supply), or a more gradual tightening path.
 *   Risk of over-tightening tipping the economy into recession (housebuilding starts fell 44%).
-*   Delayed action: the MPC was slow to raise rates — had it acted earlier, smaller rises might have been sufficient.
+*   Delayed action: the MPC was slow to raise rates · had it acted earlier, smaller rises might have been sufficient.
 
 ### Judgements might include:
 
 *   Depends on the cause of inflation (demand-pull vs cost-push).
-*   Depends on expectations management — a credible commitment to the 2% target matters.
+*   Depends on expectations management · a credible commitment to the 2% target matters.
 *   Depends on what fiscal and supply-side policies are used alongside.
 *   Depends on whether gradual or sharp adjustment leads to better outcomes.
 *   Depends on what other central banks are doing globally (exchange rate effects).
@@ -5195,7 +5195,7 @@ The side of the argument presented first should be credited as Analysis with the
     </tr>
     <tr>
         <td>**37**</td>
-        <td>**Using Fig. 3.1, compare the change in teacher recruitment and real-terms pay between 2010 and 2023.**<br><br>Award 1 mark for similarity in trends.<br>Award 1 mark for difference in trends.<br><br>Examples:<br>- Both recruitment (% of target) and real-terms pay fell between 2010 and 2023 (1).<br>- Recruitment fell much more sharply (108% to 50% — a fall of 58 percentage points) than pay (index 100 to 87 — a fall of 13 points) (1).<br>- The fall in both is consistent with reduced supply of teachers.</td>
+        <td>**Using Fig. 3.1, compare the change in teacher recruitment and real-terms pay between 2010 and 2023.**<br><br>Award 1 mark for similarity in trends.<br>Award 1 mark for difference in trends.<br><br>Examples:<br>- Both recruitment (% of target) and real-terms pay fell between 2010 and 2023 (1).<br>- Recruitment fell much more sharply (108% to 50% · a fall of 58 percentage points) than pay (index 100 to 87 · a fall of 13 points) (1).<br>- The fall in both is consistent with reduced supply of teachers.</td>
         <td>2</td>
         <td>1 mark for similarity; 1 mark for difference.<br><br>Full marks require reference to the whole period 2010–2023.<br><br>No need to quote exact figures if description of pattern is clear.</td>
     </tr>
@@ -5251,14 +5251,14 @@ Evaluate, using the information in Extract 3, whether teachers' pay is likely to
 #### Analysis
 * Falling supply of qualified teachers (recruitment at 50% of target; 32% exit rate) at a time of rising demand suggests upward pressure on wages.
 * Trade union activity (NEU strikes, large membership) may push wages up through collective bargaining.
-* The graduate pay gap with private sector (£41,500 vs £47,200) creates pressure on government to raise wages to retain staff — MRP argument.
+* The graduate pay gap with private sector (£41,500 vs £47,200) creates pressure on government to raise wages to retain staff · MRP argument.
 * Teacher training is long (undergraduate degree + 1-year PGCE + induction) creating a barrier to entry → supply is inelastic and real wages need to rise to attract entrants.
 
 #### Evaluation
-* Government is a monopsony employer — it can resist wage pressure and set wages below the competitive equilibrium.
+* Government is a monopsony employer · it can resist wage pressure and set wages below the competitive equilibrium.
 * Fiscal constraints: the 2023 6.5% pay rise had to come from existing school budgets, suggesting limited government willingness to fund further rises.
 * No formal qualification barrier to become a teacher (beyond degree) means supply could recover in the future.
-* Other public sector pay deals create precedent — if other groups accept lower deals, teachers may too.
+* Other public sector pay deals create precedent · if other groups accept lower deals, teachers may too.
 * Inflation falling could reduce nominal pay pressure.
 * Success of union activity depends on political and public response to strikes.
 
@@ -5397,7 +5397,7 @@ Economics
 H460/03: Themes in economics
 A Level
 
-Mark Scheme — Predicted Paper (Hard)
+Mark Scheme · Predicted Paper (Hard)
 
 ## Page 2
 
@@ -5683,7 +5683,7 @@ Mark Scheme — Predicted Paper (Hard)
 
 ## Page 6
 
-## Section A — Rationale
+## Section A · Rationale
 
 <table>
     <tr>
@@ -5695,7 +5695,7 @@ Mark Scheme — Predicted Paper (Hard)
     <tr>
         <td>1</td>
         <td>A</td>
-        <td>**A Correct:** Marginal utility is the extra satisfaction gained from consuming one more unit — the change in total utility per unit.<br>**B** This is total utility, not marginal utility.<br>**C** This is marginal cost, not marginal utility.<br>**D** This is price, which reflects willingness to pay.</td>
+        <td>**A Correct:** Marginal utility is the extra satisfaction gained from consuming one more unit · the change in total utility per unit.<br>**B** This is total utility, not marginal utility.<br>**C** This is marginal cost, not marginal utility.<br>**D** This is price, which reflects willingness to pay.</td>
         <td>AO1</td>
     </tr>
     <tr>
@@ -5707,31 +5707,31 @@ Mark Scheme — Predicted Paper (Hard)
     <tr>
         <td>3</td>
         <td>C</td>
-        <td>**A** Expansionary fiscal policy can still work; it's monetary policy that is ineffective in a liquidity trap.<br>**B** In a liquidity trap rates are very low, not high.<br>**C Correct:** In a liquidity trap, nominal interest rates are near zero and households/firms prefer to hold money rather than spend or invest — making monetary policy ineffective.<br>**D** Velocity typically falls in a liquidity trap, not rises.</td>
+        <td>**A** Expansionary fiscal policy can still work; it's monetary policy that is ineffective in a liquidity trap.<br>**B** In a liquidity trap rates are very low, not high.<br>**C Correct:** In a liquidity trap, nominal interest rates are near zero and households/firms prefer to hold money rather than spend or invest · making monetary policy ineffective.<br>**D** Velocity typically falls in a liquidity trap, not rises.</td>
         <td>AO1</td>
     </tr>
     <tr>
         <td>4</td>
         <td>D</td>
-        <td>**A** Higher benefits reduce the incentive to work, raising the natural rate of unemployment.<br>**B** Structural unemployment is part of the natural rate, not a reduction in it.<br>**C** Stronger union bargaining may raise real wages above equilibrium and increase the natural rate.<br>**D Correct:** Retraining programmes address skills mismatches, reducing structural unemployment — a component of the natural rate.</td>
+        <td>**A** Higher benefits reduce the incentive to work, raising the natural rate of unemployment.<br>**B** Structural unemployment is part of the natural rate, not a reduction in it.<br>**C** Stronger union bargaining may raise real wages above equilibrium and increase the natural rate.<br>**D Correct:** Retraining programmes address skills mismatches, reducing structural unemployment · a component of the natural rate.</td>
         <td>AO3</td>
     </tr>
     <tr>
         <td>5</td>
         <td>A</td>
-        <td>**A Correct:** YED = %ΔQD / %ΔY. Since YED = +2.3 and income falls by 5%, %ΔQD = +2.3 × (−5%) = −11.5%. The good is a luxury (normal income-elastic) and demand falls sharply in a recession.<br>**B** This would only apply with YED = +0.46.<br>**C** Incorrect sign — income falls, so demand for a normal luxury falls.<br>**D** Incorrect sign.</td>
+        <td>**A Correct:** YED = %ΔQD / %ΔY. Since YED = +2.3 and income falls by 5%, %ΔQD = +2.3 × (−5%) = −11.5%. The good is a luxury (normal income-elastic) and demand falls sharply in a recession.<br>**B** This would only apply with YED = +0.46.<br>**C** Incorrect sign · income falls, so demand for a normal luxury falls.<br>**D** Incorrect sign.</td>
         <td>AO2</td>
     </tr>
     <tr>
         <td>6</td>
         <td>D</td>
-        <td>**A** Price and output remain unchanged — the defining feature of the kinked demand curve.<br>**B** Same — no change.<br>**C** The kinked demand curve predicts stable prices despite cost shifts within the discontinuity.<br>**D Correct:** When the new MC curve still passes through the vertical (discontinuous) section of MR, profit-maximising price and output remain at the original kink — predicting price rigidity in oligopoly.</td>
+        <td>**A** Price and output remain unchanged · the defining feature of the kinked demand curve.<br>**B** Same · no change.<br>**C** The kinked demand curve predicts stable prices despite cost shifts within the discontinuity.<br>**D Correct:** When the new MC curve still passes through the vertical (discontinuous) section of MR, profit-maximising price and output remain at the original kink · predicting price rigidity in oligopoly.</td>
         <td>AO3</td>
     </tr>
     <tr>
         <td>7</td>
         <td>D</td>
-        <td>**A** Economies of scale are a cost-based barrier to entry — incumbents enjoy lower AC.<br>**B** Patents give legal protection and are a barrier to entry.<br>**C** Brand loyalty deters entry by making it costly for new firms to attract customers.<br>**D Correct:** The existence of many substitute goods increases competition and reduces barriers to entry — it is not itself a barrier.</td>
+        <td>**A** Economies of scale are a cost-based barrier to entry · incumbents enjoy lower AC.<br>**B** Patents give legal protection and are a barrier to entry.<br>**C** Brand loyalty deters entry by making it costly for new firms to attract customers.<br>**D Correct:** The existence of many substitute goods increases competition and reduces barriers to entry · it is not itself a barrier.</td>
         <td>AO1</td>
     </tr>
     <tr>
@@ -5754,7 +5754,7 @@ Mark Scheme — Predicted Paper (Hard)
     <tr>
         <td>9</td>
         <td>C</td>
-        <td>A Marginal utility is the change in total utility, which is $-2$ here — negative.<br>B Zero marginal utility would occur when total utility reaches its maximum; here it has already fallen.<br>C **Correct**: MU of the 5th unit = $78 - 80 = -2$. This is negative marginal utility; total utility is now declining.<br>D Rising MU contradicts diminishing marginal utility.</td>
+        <td>A Marginal utility is the change in total utility, which is $-2$ here · negative.<br>B Zero marginal utility would occur when total utility reaches its maximum; here it has already fallen.<br>C **Correct**: MU of the 5th unit = $78 - 80 = -2$. This is negative marginal utility; total utility is now declining.<br>D Rising MU contradicts diminishing marginal utility.</td>
         <td>AO2</td>
     </tr>
     <tr>
@@ -5778,13 +5778,13 @@ Mark Scheme — Predicted Paper (Hard)
     <tr>
         <td>13</td>
         <td>C</td>
-        <td>A A monopsonist pays a lower wage and employs fewer workers compared with competitive equilibrium.<br>B Monopsony wages are below MRP, so wages are lower.<br>C **Correct**: A monopsonist maximises profit where MCL = MRP, then pays the wage along the labour supply curve at that quantity — this is below both competitive wage and MRP, and employs fewer workers.<br>D Incorrect — employment is lower under monopsony.</td>
+        <td>A A monopsonist pays a lower wage and employs fewer workers compared with competitive equilibrium.<br>B Monopsony wages are below MRP, so wages are lower.<br>C **Correct**: A monopsonist maximises profit where MCL = MRP, then pays the wage along the labour supply curve at that quantity · this is below both competitive wage and MRP, and employs fewer workers.<br>D Incorrect · employment is lower under monopsony.</td>
         <td>AO3</td>
     </tr>
     <tr>
         <td>14</td>
         <td>A</td>
-        <td>A **Correct**: MV = PY (growth form): $\\%\\DeltaM + \\%\\DeltaV = \\%\\DeltaP + \\%\\DeltaY$. $8 + (-2) = \\%\\DeltaP + 3$. $\\%\\DeltaP = 6 - 3 = 3\\%$.<br>B Incorrect arithmetic.<br>C Incorrect — this would be the calculation ignoring real growth.<br>D Incorrect — this would be the calculation assuming velocity growth of 0%.</td>
+        <td>A **Correct**: MV = PY (growth form): $\\%\\DeltaM + \\%\\DeltaV = \\%\\DeltaP + \\%\\DeltaY$. $8 + (-2) = \\%\\DeltaP + 3$. $\\%\\DeltaP = 6 - 3 = 3\\%$.<br>B Incorrect arithmetic.<br>C Incorrect · this would be the calculation ignoring real growth.<br>D Incorrect · this would be the calculation assuming velocity growth of 0%.</td>
         <td>AO2</td>
     </tr>
     <tr>
@@ -5796,7 +5796,7 @@ Mark Scheme — Predicted Paper (Hard)
     <tr>
         <td>16</td>
         <td>D</td>
-        <td>A Ad valorem refers to tax rate structure (e.g. VAT), not progressivity.<br>B Progressive: average rate rises as income rises.<br>C Proportional: average rate constant.<br>D **Correct**: Regressive: average rate falls as income rises — the poor</td>
+        <td>A Ad valorem refers to tax rate structure (e.g. VAT), not progressivity.<br>B Progressive: average rate rises as income rises.<br>C Proportional: average rate constant.<br>D **Correct**: Regressive: average rate falls as income rises · the poor</td>
         <td>AO1</td>
     </tr>
 </table>
@@ -5819,13 +5819,13 @@ Mark Scheme — Predicted Paper (Hard)
     <tr>
         <td>18</td>
         <td>A</td>
-        <td>A **Correct**: With perfectly inelastic demand, consumers absorb the entire per-unit tax as price rises by the full amount of the tax. Quantity demanded is unchanged, so there is no deadweight loss either.<br>B Producers pass the full burden of the tax on to consumers because demand is perfectly inelastic — consumers bear all of the tax.<br>C Incorrect — tax burden is split according to relative elasticities; equal sharing requires equal elasticities.<br>D With perfectly inelastic demand there is no change in quantity, so no deadweight loss is generated.</td>
+        <td>A **Correct**: With perfectly inelastic demand, consumers absorb the entire per-unit tax as price rises by the full amount of the tax. Quantity demanded is unchanged, so there is no deadweight loss either.<br>B Producers pass the full burden of the tax on to consumers because demand is perfectly inelastic · consumers bear all of the tax.<br>C Incorrect · tax burden is split according to relative elasticities; equal sharing requires equal elasticities.<br>D With perfectly inelastic demand there is no change in quantity, so no deadweight loss is generated.</td>
         <td>AO3</td>
     </tr>
     <tr>
         <td>19</td>
         <td>A</td>
-        <td>A **Correct**: The paradox of thrift: individually rational saving, when undertaken by all households simultaneously, reduces consumption and AD, lowering national income and ultimately reducing total saving.<br>B This describes the standard interest rate effect on saving.<br>C This is the classical view — the opposite of the paradox.<br>D An accounting identity that does not describe the paradox.</td>
+        <td>A **Correct**: The paradox of thrift: individually rational saving, when undertaken by all households simultaneously, reduces consumption and AD, lowering national income and ultimately reducing total saving.<br>B This describes the standard interest rate effect on saving.<br>C This is the classical view · the opposite of the paradox.<br>D An accounting identity that does not describe the paradox.</td>
         <td>AO1</td>
     </tr>
     <tr>
@@ -5837,19 +5837,19 @@ Mark Scheme — Predicted Paper (Hard)
     <tr>
         <td>21</td>
         <td>B</td>
-        <td>A Minimum AC is productive efficiency; under perfect competition, P = MC = AC, so the firm is also allocatively efficient.<br>B **Correct**: In perfect competition long-run equilibrium, MC = AR (allocative) and MC = AC at minimum (productive) — both are achieved simultaneously.<br>C Long-run perfect competition has normal, not supernormal, profit.<br>D Both types of efficiency are achieved, not just one.</td>
+        <td>A Minimum AC is productive efficiency; under perfect competition, P = MC = AC, so the firm is also allocatively efficient.<br>B **Correct**: In perfect competition long-run equilibrium, MC = AR (allocative) and MC = AC at minimum (productive) · both are achieved simultaneously.<br>C Long-run perfect competition has normal, not supernormal, profit.<br>D Both types of efficiency are achieved, not just one.</td>
         <td>AO1</td>
     </tr>
     <tr>
         <td>22</td>
         <td>A</td>
-        <td>A **Correct**: Firms charge a higher price in the market with more inelastic demand (lower PED) because consumers are less responsive to price — maximising profit requires higher markup. Output in this market is typically a smaller share because total output is allocated until MR is equal across both.<br>B Output in the inelastic market is usually smaller, not larger.<br>C Higher price, not lower, in the inelastic market.<br>D Incorrect — lower price applies to the more elastic market.</td>
+        <td>A **Correct**: Firms charge a higher price in the market with more inelastic demand (lower PED) because consumers are less responsive to price · maximising profit requires higher markup. Output in this market is typically a smaller share because total output is allocated until MR is equal across both.<br>B Output in the inelastic market is usually smaller, not larger.<br>C Higher price, not lower, in the inelastic market.<br>D Incorrect · lower price applies to the more elastic market.</td>
         <td>AO3</td>
     </tr>
     <tr>
         <td>23</td>
         <td>D</td>
-        <td>A Absolute advantage is a concept of productivity, not a type of trade effect.<br>B Comparative advantage explains patterns of trade, not the specific welfare effect here.<br>C Trade creation would be country X buying from a more efficient producer after joining a customs union.<br>D **Correct**: Trade diversion: imports are diverted from a lower-cost source (Z) to a higher-cost source (Y) simply because Y's tariff is now zero. The switch is caused by preferential tariffs, not efficiency — a welfare loss.</td>
+        <td>A Absolute advantage is a concept of productivity, not a type of trade effect.<br>B Comparative advantage explains patterns of trade, not the specific welfare effect here.<br>C Trade creation would be country X buying from a more efficient producer after joining a customs union.<br>D **Correct**: Trade diversion: imports are diverted from a lower-cost source (Z) to a higher-cost source (Y) simply because Y's tariff is now zero. The switch is caused by preferential tariffs, not efficiency · a welfare loss.</td>
         <td>AO3</td>
     </tr>
 </table>
@@ -5908,7 +5908,7 @@ Mark Scheme — Predicted Paper (Hard)
     <tr>
         <td>26</td>
         <td>A</td>
-        <td>**A Correct:** Contestable markets are characterised by low sunk costs and freedom of entry/exit, enabling firms to enter to capture supernormal profit and exit quickly when profit normalises — 'hit and run'.</td>
+        <td>**A Correct:** Contestable markets are characterised by low sunk costs and freedom of entry/exit, enabling firms to enter to capture supernormal profit and exit quickly when profit normalises · 'hit and run'.</td>
         <td>AO1</td>
     </tr>
     <tr>
@@ -5956,13 +5956,13 @@ Mark Scheme — Predicted Paper (Hard)
     <tr>
         <td>28</td>
         <td>C</td>
-        <td>A This is not a limitation — GNI per capita does account for average income.</td>
+        <td>A This is not a limitation · GNI per capita does account for average income.</td>
         <td>AO3</td>
     </tr>
     <tr>
         <td></td>
         <td></td>
-        <td>B GNI per capita is incomplete but not specifically because it accounts for informal activity — it doesn't fully capture it.</td>
+        <td>B GNI per capita is incomplete but not specifically because it accounts for informal activity · it doesn't fully capture it.</td>
         <td></td>
     </tr>
     <tr>
@@ -6057,7 +6057,7 @@ Mark Scheme — Predicted Paper (Hard)
     </tr>
     <tr>
         <td>**32**</td>
-        <td>**Explain, using the information in Extract 1, one reason why the four largest UK supermarkets may engage in non-price competition rather than price competition.**<br><br>Award 1 mark for identification of a reason.<br><br>Award up to 2 marks for developed explanation referring to Extract 1.<br><br>Example: Firms may fear a price war (1). If one firm cuts prices, rivals can quickly match — as with price-matching guarantees against Aldi and Lidl (1) — so all firms lose profit but none gains market share. Therefore, firms prefer non-price competition (loyalty schemes, advertising) that builds brand loyalty without triggering retaliation (1).<br><br>Other valid reasons:<br>- Interdependence in oligopoly (kinked demand curve) makes price changes risky.<br>- Non-price competition (e.g. £78m advertising spend by Tesco) creates lasting brand differentiation.<br>- Allegations of predatory pricing are scrutinised by CMA, making price wars legally risky.<br>- Non-price competition enables dynamic efficiency / innovation that price competition alone cannot.</td>
+        <td>**Explain, using the information in Extract 1, one reason why the four largest UK supermarkets may engage in non-price competition rather than price competition.**<br><br>Award 1 mark for identification of a reason.<br><br>Award up to 2 marks for developed explanation referring to Extract 1.<br><br>Example: Firms may fear a price war (1). If one firm cuts prices, rivals can quickly match · as with price-matching guarantees against Aldi and Lidl (1) · so all firms lose profit but none gains market share. Therefore, firms prefer non-price competition (loyalty schemes, advertising) that builds brand loyalty without triggering retaliation (1).<br><br>Other valid reasons:<br>- Interdependence in oligopoly (kinked demand curve) makes price changes risky.<br>- Non-price competition (e.g. £78m advertising spend by Tesco) creates lasting brand differentiation.<br>- Allegations of predatory pricing are scrutinised by CMA, making price wars legally risky.<br>- Non-price competition enables dynamic efficiency / innovation that price competition alone cannot.</td>
         <td>3</td>
         <td>AO1 1 mark; AO2 2 marks.<br><br>Must link to specific data/extract for full marks.</td>
     </tr>
@@ -6127,20 +6127,20 @@ A kinked demand curve with price P1, quantity Q1, showing the discontinuity in M
 
 **Analysis**
 
-* Adverse effects for consumers: High concentration gives the largest firms pricing power — prices may exceed marginal cost, leading to allocative inefficiency and higher prices (consumer surplus loss).
+* Adverse effects for consumers: High concentration gives the largest firms pricing power · prices may exceed marginal cost, leading to allocative inefficiency and higher prices (consumer surplus loss).
 * Adverse effects: CMA evidence of weak price competition on essentials implies higher food prices for consumers, especially during the cost-of-living crisis when food inflation hit 19.2%.
 * Adverse effects: Non-price competition (advertising, loyalty schemes) absorbs resources that could instead go into lower prices, and may lead to wasteful duplication.
-* Adverse effects: Tacit collusion risk when a few firms dominate — leading to sustained high prices via price leadership.
-* Positive effects: Economies of scale allow the 'big four' to offer lower prices than smaller shops — consumers benefit from lower LRAC.
+* Adverse effects: Tacit collusion risk when a few firms dominate · leading to sustained high prices via price leadership.
+* Positive effects: Economies of scale allow the 'big four' to offer lower prices than smaller shops · consumers benefit from lower LRAC.
 * Positive effects: Entry of Aldi and Lidl (up from 7.6% to 17.8% of market) increased contestability, driving price competition and price-matching promises.
-* Positive effects: Supernormal profits fund dynamic efficiency — online delivery, self-checkouts, and private-label innovation benefit consumers.
+* Positive effects: Supernormal profits fund dynamic efficiency · online delivery, self-checkouts, and private-label innovation benefit consumers.
 
 **Evaluation**
 
-* CMA investigation found no clear evidence of profiteering — suggesting consumer harm is limited.
+* CMA investigation found no clear evidence of profiteering · suggesting consumer harm is limited.
 * Aldi and Lidl absorbed costs rather than raised prices (Aldi made a loss), showing competitive discipline.
 * The market is more contestable than it appears: online grocers and discounters have eroded big-four share from 76% to 65%.
-* Tesco's 3.8% margin is modest compared with tech oligopolies — suggesting competitive pressure.
+* Tesco's 3.8% margin is modest compared with tech oligopolies · suggesting competitive pressure.
 * Consumer loyalty schemes provide genuine value for regular shoppers, not just a non-price distraction.
 * Regulation (GCA, CMA) mitigates abuse of market power.
 
@@ -6148,9 +6148,9 @@ A kinked demand curve with price P1, quantity Q1, showing the discontinuity in M
 
 * Depends on the degree of contestability (entry of Aldi, Lidl, online retail).
 * Depends on effectiveness of CMA and GCA regulation.
-* Depends on the product segment — essentials may have weaker price competition than premium ranges.
+* Depends on the product segment · essentials may have weaker price competition than premium ranges.
 * Depends on whether economies of scale are genuinely passed to consumers.
-* Overall: consumers may benefit from scale and innovation but suffer from higher prices on some essentials — net effect is ambiguous and context-dependent.
+* Overall: consumers may benefit from scale and innovation but suffer from higher prices on some essentials · net effect is ambiguous and context-dependent.
 
 ## Page 13
 
@@ -6180,7 +6180,7 @@ A kinked demand curve with price P1, quantity Q1, showing the discontinuity in M
     </tr>
     <tr>
         <td>35</td>
-        <td>Using the information in Extract 2, identify two potential economic consequences of rising UK government bond yields.<br><br>Award up to 1 mark for each valid consequence (max 2 marks).<br><br>Examples:<br>- Higher cost of servicing the national debt — £20bn extra per 1 percentage point rise (1).<br>- Emergency Bank of England intervention to stabilise pension funds (1).<br>- Downward pressure on bond prices, potentially threatening financial stability (1).<br>- Higher borrowing costs for firms and households linked to long-term gilt yields (e.g. mortgage rates) (1).<br>- Reduced room for fiscal expansion / higher taxes or spending cuts required to meet fiscal rules (1).<br>- Loss of market and political confidence (resignation of Chancellor and PM) (1).</td>
+        <td>Using the information in Extract 2, identify two potential economic consequences of rising UK government bond yields.<br><br>Award up to 1 mark for each valid consequence (max 2 marks).<br><br>Examples:<br>- Higher cost of servicing the national debt · £20bn extra per 1 percentage point rise (1).<br>- Emergency Bank of England intervention to stabilise pension funds (1).<br>- Downward pressure on bond prices, potentially threatening financial stability (1).<br>- Higher borrowing costs for firms and households linked to long-term gilt yields (e.g. mortgage rates) (1).<br>- Reduced room for fiscal expansion / higher taxes or spending cuts required to meet fiscal rules (1).<br>- Loss of market and political confidence (resignation of Chancellor and PM) (1).</td>
         <td>2</td>
         <td>One mark per distinct consequence.<br><br>Must come from Extract 2.</td>
     </tr>
@@ -6246,27 +6246,27 @@ Evaluate, using the information in Extract 2, the view that the UK government sh
 ## Analysis
 
 * For tax rises/spending cuts: Reduces the deficit and slows debt accumulation, improving debt sustainability.
-* Reduces crowding out — lower government borrowing eases pressure on bond yields and frees capital for private investment.
-* Lower bond yields reduce debt servicing costs, creating a virtuous circle — freeing up resources for public services long-term.
+* Reduces crowding out · lower government borrowing eases pressure on bond yields and frees capital for private investment.
+* Lower bond yields reduce debt servicing costs, creating a virtuous circle · freeing up resources for public services long-term.
 * Restores market confidence (recall the 2022 mini-budget crisis when unfunded tax cuts spiked yields).
-* Helps meet OBR fiscal rules — debt falling in five years — supporting the UK's credit rating and lower long-run borrowing costs.
+* Helps meet OBR fiscal rules · debt falling in five years · supporting the UK's credit rating and lower long-run borrowing costs.
 
 ## Evaluation
 
 * Tax rises and spending cuts reduce AD, slowing growth and possibly tipping the economy into recession via the multiplier effect. With AD falling, tax revenue falls automatically, partially offsetting deficit reduction (paradox of austerity).
-* Higher taxes/spending cuts are regressive if they fall on essential services or raise VAT — worsening inequality.
+* Higher taxes/spending cuts are regressive if they fall on essential services or raise VAT · worsening inequality.
 * Alternative: raise growth through investment in productivity-enhancing infrastructure. Higher growth raises tax revenue without austerity.
-* Debt sustainability depends on the gap between interest rate ($r$) and growth rate ($g$) — if $g > r$, debt/GDP can fall even without fiscal tightening.
+* Debt sustainability depends on the gap between interest rate ($r$) and growth rate ($g$) · if $g > r$, debt/GDP can fall even without fiscal tightening.
 * Crowding-in may be more relevant: public investment attracts private investment, raising potential GDP.
 * Short-run pain may be politically unsustainable, leading to U-turns and more market volatility.
 
 ## Judgements might include:
 
-* Depends on the cyclical position of the economy — austerity during a downturn is more damaging.
+* Depends on the cyclical position of the economy · austerity during a downturn is more damaging.
 * Depends on the composition: tax rises on wealth/income more progressive than VAT; capital spending cuts more damaging than current spending cuts.
-* Depends on whether tightening is credible — gradual and signalled in advance vs sudden and unfunded.
+* Depends on whether tightening is credible · gradual and signalled in advance vs sudden and unfunded.
 * Depends on the interest-rate/growth-rate differential.
-* Depends on monetary policy coordination — if tightening allows the Bank to loosen, overall impact is smaller.
+* Depends on monetary policy coordination · if tightening allows the Bank to loosen, overall impact is smaller.
 
 ## Page 16
 
@@ -6281,7 +6281,7 @@ Evaluate, using the information in Extract 2, the view that the UK government sh
     </tr>
     <tr>
         <td>37</td>
-        <td>Using Fig. 3.1, compare the median hourly earnings of **gig workers** and **full-time employees** in the UK in 2023.<br><br>Award 1 mark for identifying direction of difference: full-time employees earn more than gig workers.<br><br>Award 1 mark for data: full-time £15.80 vs gig (after costs) £8.20 — a gap of £7.60/hr, or gig workers earn roughly half (52%) of full-time hourly pay.</td>
+        <td>Using Fig. 3.1, compare the median hourly earnings of **gig workers** and **full-time employees** in the UK in 2023.<br><br>Award 1 mark for identifying direction of difference: full-time employees earn more than gig workers.<br><br>Award 1 mark for data: full-time £15.80 vs gig (after costs) £8.20 · a gap of £7.60/hr, or gig workers earn roughly half (52%) of full-time hourly pay.</td>
         <td>2</td>
         <td>1 mark for direction; 1 mark for figures.<br><br>Accept either absolute gap or relative comparison.</td>
     </tr>
@@ -6319,26 +6319,26 @@ Evaluate, using the information in Extract 3, whether government intervention is
 * Gig economy classification of workers
 ## Application
 * Application to Extract 3: 4.4 million UK gig workers (13% of working-age population).
-* Application to Extract 3: Median hourly earnings £8.20 (after costs) — below National Living Wage of £10.42.
+* Application to Extract 3: Median hourly earnings £8.20 (after costs) · below National Living Wage of £10.42.
 * Application to Extract 3: 40% of gig workers earn below NLW when waiting time is included.
 * Application to Extract 3: Supreme Court Uber ruling classified drivers as 'workers'.
 * Application to Extract 3: Only 5% trade union density among gig workers.
 * Application to Extract 3: Low entry barriers (smartphone, vehicle, right to work).
 ## Analysis
-* Intervention is needed: Gig workers earn below the National Living Wage — a clear labour market failure.
-* Platforms have monopsony-like power — workers are geographically dispersed and dependent on platforms for access to customers.
+* Intervention is needed: Gig workers earn below the National Living Wage · a clear labour market failure.
+* Platforms have monopsony-like power · workers are geographically dispersed and dependent on platforms for access to customers.
 * Weak trade union density (5% vs 22% nationally) means collective bargaining cannot correct market failure.
 * Regulation (classification as 'workers' as in Uber ruling) ensures minimum wage, paid holiday, and pension contributions.
 ## Evaluation
-* Low barriers to entry mean supply is high — wages reflect the marginal revenue product of labour in a competitive-like market.
-* Flexibility is a real benefit — workers choose gig work because it suits them; regulation may reduce flexibility and employment.
+* Low barriers to entry mean supply is high · wages reflect the marginal revenue product of labour in a competitive-like market.
+* Flexibility is a real benefit · workers choose gig work because it suits them; regulation may reduce flexibility and employment.
 * Government intervention risks unintended consequences: platforms may exit the market or reduce employment (as happened in California).
 * Classifying gig workers as employees could raise consumer prices, reducing demand.
 * Consumers benefit from lower prices enabled by the gig business model.
 * Better-designed alternatives: portable benefits, skills training, and digital platform regulation may achieve social aims without the costs of employee classification.
 ## Judgements might include:
 * Depends on whether the primary failure is a monopsony or just low skills.
-* Depends on elasticity of labour supply — low elasticity strengthens the case for intervention.
+* Depends on elasticity of labour supply · low elasticity strengthens the case for intervention.
 * Depends on effectiveness of worker classification/rulings.
 * Depends on size of informal sector response.
 
@@ -6470,7 +6470,7 @@ Oxford Cambridge and RSA Examinations
 **H460/03: Themes in economics**
 A Level
 
-**Mark Scheme — Predicted Paper (Advanced)**
+**Mark Scheme · Predicted Paper (Advanced)**
 
 ## Page 2
 
@@ -6762,7 +6762,7 @@ A Level
 
 ## Page 6
 
-## Section A — Rationale
+## Section A · Rationale
 
 <table>
   <thead>
@@ -6777,13 +6777,13 @@ A Level
     <tr>
       <td>1</td>
       <td>A</td>
-      <td><b>A Correct:</b> Under rational expectations with flexible prices, agents anticipate the policy's inflationary effect, so the Phillips curve is vertical — only the price level rises while output is unchanged (policy ineffectiveness proposition).<br><b>B</b> The natural rate hypothesis implies monetary policy cannot permanently lower unemployment below the natural rate.<br><b>C</b> In the long run, only prices rise; output returns to the natural level.<br><b>D</b> Monetary policy does not affect the natural rate of unemployment in the rational expectations framework.</td>
+      <td><b>A Correct:</b> Under rational expectations with flexible prices, agents anticipate the policy's inflationary effect, so the Phillips curve is vertical · only the price level rises while output is unchanged (policy ineffectiveness proposition).<br><b>B</b> The natural rate hypothesis implies monetary policy cannot permanently lower unemployment below the natural rate.<br><b>C</b> In the long run, only prices rise; output returns to the natural level.<br><b>D</b> Monetary policy does not affect the natural rate of unemployment in the rational expectations framework.</td>
       <td>AO1</td>
     </tr>
 <tr>
       <td>2</td>
       <td>C</td>
-      <td><b>A</b> AD = AS determines output but the Keynesian closed-economy identity is S = I.<br><b>B</b> Consumption and investment are separate components of AD.<br><b>C Correct:</b> In a closed economy with no government, leakages (savings) must equal injections (investment) at equilibrium — S = I.<br><b>D</b> MPC = 1 is a limiting assumption, not the equilibrium condition.</td>
+      <td><b>A</b> AD = AS determines output but the Keynesian closed-economy identity is S = I.<br><b>B</b> Consumption and investment are separate components of AD.<br><b>C Correct:</b> In a closed economy with no government, leakages (savings) must equal injections (investment) at equilibrium · S = I.<br><b>D</b> MPC = 1 is a limiting assumption, not the equilibrium condition.</td>
       <td>AO1</td>
     </tr>
 <tr>
@@ -6795,13 +6795,13 @@ A Level
 <tr>
       <td>4</td>
       <td>B</td>
-      <td><b>A</b> £4 is the difference between MPB and MPC — not the optimal tax.<br><b>B Correct:</b> Optimal Pigouvian tax = marginal external cost at the socially optimal output = £6 per unit. This internalises the externality.<br><b>C</b> £10 is MPC, not the externality.<br><b>D</b> £14 is the price, not the externality.</td>
+      <td><b>A</b> £4 is the difference between MPB and MPC · not the optimal tax.<br><b>B Correct:</b> Optimal Pigouvian tax = marginal external cost at the socially optimal output = £6 per unit. This internalises the externality.<br><b>C</b> £10 is MPC, not the externality.<br><b>D</b> £14 is the price, not the externality.</td>
       <td>AO2</td>
     </tr>
 <tr>
       <td>5</td>
       <td>A</td>
-      <td><b>A Correct:</b> XED = −1.8 is a large magnitude negative value, indicating the two goods are strong complements — a rise in the price of one sharply reduces demand for the other. Consumers typically buy them together (e.g. cars and fuel).<br><b>B</b> Close substitutes have a large POSITIVE cross-elasticity of demand, not negative.<br><b>C</b> Independent goods have XED near zero; a value of |1.8| is far from zero.<br><b>D</b> Weak complements would have a small magnitude (e.g. −0.3), not −1.8.</td>
+      <td><b>A Correct:</b> XED = −1.8 is a large magnitude negative value, indicating the two goods are strong complements · a rise in the price of one sharply reduces demand for the other. Consumers typically buy them together (e.g. cars and fuel).<br><b>B</b> Close substitutes have a large POSITIVE cross-elasticity of demand, not negative.<br><b>C</b> Independent goods have XED near zero; a value of |1.8| is far from zero.<br><b>D</b> Weak complements would have a small magnitude (e.g. −0.3), not −1.8.</td>
       <td>AO2</td>
     </tr>
 <tr>
@@ -6813,7 +6813,7 @@ A Level
 <tr>
       <td>7</td>
       <td>D</td>
-      <td><b>A</b> Constant returns to scale give a horizontal LRAC.<br><b>B</b> Diminishing marginal returns is a short-run concept (variable factor), not long-run scale.<br><b>C</b> Diseconomies give a rising LRAC.<br><b>D Correct:</b> A falling LRAC curve indicates falling long-run average costs as output rises — economies of scale.</td>
+      <td><b>A</b> Constant returns to scale give a horizontal LRAC.<br><b>B</b> Diminishing marginal returns is a short-run concept (variable factor), not long-run scale.<br><b>C</b> Diseconomies give a rising LRAC.<br><b>D Correct:</b> A falling LRAC curve indicates falling long-run average costs as output rises · economies of scale.</td>
       <td>AO1</td>
     </tr>
   </tbody>
@@ -6881,7 +6881,7 @@ A Level
     <tr>
       <td></td>
       <td></td>
-      <td><b>B</b> If domestic inflation were lower, the real appreciation would exceed the nominal — the opposite pattern to what is observed.</td>
+      <td><b>B</b> If domestic inflation were lower, the real appreciation would exceed the nominal · the opposite pattern to what is observed.</td>
     <td></td><td></td></tr>
     <tr>
       <td></td>
@@ -6890,7 +6890,7 @@ A Level
     <tr>
       <td></td>
       <td></td>
-      <td><b>C</b> Magnitude is too large — the gap is 2pp, not 10pp.</td>
+      <td><b>C</b> Magnitude is too large · the gap is 2pp, not 10pp.</td>
     <td></td><td></td></tr>
     <tr>
       <td>.</td>
@@ -6922,7 +6922,7 @@ A Level
     <tr>
       <td></td>
       <td></td>
-      <td><b>C Correct</b>: Natural monopolies have P = MC &lt; AC at the socially optimal level — so firms make a loss and require a subsidy to remain in business.</td>
+      <td><b>C Correct</b>: Natural monopolies have P = MC &lt; AC at the socially optimal level · so firms make a loss and require a subsidy to remain in business.</td>
     <td></td><td></td></tr>
     <tr>
       <td>.</td>
@@ -6983,13 +6983,13 @@ A Level
     <tr>
       <td></td>
       <td></td>
-      <td><b>D Correct</b>: Within the range between the monopsony wage and the competitive wage, imposing a minimum wage flattens the effective MCL (it becomes horizontal at the minimum wage), so the monopsonist will employ more workers at the higher wage — both wages and employment rise.</td>
+      <td><b>D Correct</b>: Within the range between the monopsony wage and the competitive wage, imposing a minimum wage flattens the effective MCL (it becomes horizontal at the minimum wage), so the monopsonist will employ more workers at the higher wage · both wages and employment rise.</td>
       <td>AO3</td>
     <td></td></tr>
     <tr>
       <td>14</td>
       <td>C</td>
-      <td><b>A Incorrect</b> — this would only apply if velocity were stable ($%\\Delta V = 0$) and real GDP growth were 1%.</td>
+      <td><b>A Incorrect</b> · this would only apply if velocity were stable ($%\\Delta V = 0$) and real GDP growth were 1%.</td>
     <td></td><td></td></tr>
     <tr>
       <td>%.</td>
@@ -6997,7 +6997,7 @@ A Level
     <tr>
       <td></td>
       <td></td>
-      <td><b>B Incorrect</b> — this would apply if velocity growth were 0% rather than -1%.</td>
+      <td><b>B Incorrect</b> · this would apply if velocity growth were 0% rather than -1%.</td>
     <td></td><td></td></tr>
     <tr>
       <td></td>
@@ -7015,31 +7015,31 @@ A Level
     <tr>
         <th></th>
         <th></th>
-        <th>D Incorrect — this would apply if inflation were allowed to be 2% rather than targeted at 0%.</th>
+        <th>D Incorrect · this would apply if inflation were allowed to be 2% rather than targeted at 0%.</th>
         <th></th>
     </tr>
     <tr>
         <td>**15**</td>
         <td>**B**</td>
-        <td>A Immediate improvement ignores the J-curve. <br> **B Correct:** J-curve: current account worsens initially (contracts signed at old prices, inelastic demand) then improves as quantities adjust — provided Marshall-Lerner holds ($PED_x + PED_m &gt; 1$). <br> C Current account does not necessarily worsen permanently — depends on elasticities over different time horizons. <br> D Capital flows affect the exchange rate but not directly the Marshall-Lerner analysis of the current account.</td>
+        <td>A Immediate improvement ignores the J-curve. <br> **B Correct:** J-curve: current account worsens initially (contracts signed at old prices, inelastic demand) then improves as quantities adjust · provided Marshall-Lerner holds ($PED_x + PED_m &gt; 1$). <br> C Current account does not necessarily worsen permanently · depends on elasticities over different time horizons. <br> D Capital flows affect the exchange rate but not directly the Marshall-Lerner analysis of the current account.</td>
         <td>AO1</td>
     </tr>
     <tr>
         <td>**16**</td>
         <td>**B**</td>
-        <td>A Windfall taxes on supernormal profits are hard to pass through to consumers because they are levied on profits, not output. <br> **B Correct:** A windfall tax falls on the supernormal profit that was already earned — shareholders (who are typically higher-income) bear the incidence. It cannot be passed on in the short run because it is a tax on profit, not a per-unit cost. <br> C Long-run investment may fall, but short-run impact on supply is limited. <br> D The tax raises revenue, it does not reduce it.</td>
+        <td>A Windfall taxes on supernormal profits are hard to pass through to consumers because they are levied on profits, not output. <br> **B Correct:** A windfall tax falls on the supernormal profit that was already earned · shareholders (who are typically higher-income) bear the incidence. It cannot be passed on in the short run because it is a tax on profit, not a per-unit cost. <br> C Long-run investment may fall, but short-run impact on supply is limited. <br> D The tax raises revenue, it does not reduce it.</td>
         <td>AO3</td>
     </tr>
     <tr>
         <td>**17**</td>
         <td>**C**</td>
-        <td>A A fall in the Gini coefficient indicates less inequality — shift INWARD. <br> B Constant Gini means no shift. <br> **C Correct:** A rise in the Gini coefficient (e.g. 0.25 to 0.45) indicates more inequality — consistent with an outward shift of the Lorenz curve. <br> D A fall in Gini (0.45 to 0.40) would be an inward shift.</td>
+        <td>A A fall in the Gini coefficient indicates less inequality · shift INWARD. <br> B Constant Gini means no shift. <br> **C Correct:** A rise in the Gini coefficient (e.g. 0.25 to 0.45) indicates more inequality · consistent with an outward shift of the Lorenz curve. <br> D A fall in Gini (0.45 to 0.40) would be an inward shift.</td>
         <td>AO3</td>
     </tr>
     <tr>
         <td>**18**</td>
         <td>**D**</td>
-        <td>A Incidence depends on relative elasticities, not always equal. <br> B Consumers gain more when demand is inelastic relative to supply. <br> C With inelastic demand, consumers gain most because they are less price-sensitive — the market price falls almost by the full subsidy. <br> **D Correct:** The relatively inelastic side of the market bears more of the incidence (benefit) of a subsidy. Inelastic demand means consumers capture most of the subsidy through lower prices.</td>
+        <td>A Incidence depends on relative elasticities, not always equal. <br> B Consumers gain more when demand is inelastic relative to supply. <br> C With inelastic demand, consumers gain most because they are less price-sensitive · the market price falls almost by the full subsidy. <br> **D Correct:** The relatively inelastic side of the market bears more of the incidence (benefit) of a subsidy. Inelastic demand means consumers capture most of the subsidy through lower prices.</td>
         <td>AO3</td>
     </tr>
     <tr>
@@ -7051,7 +7051,7 @@ A Level
     <tr>
         <td>**20**</td>
         <td>**A**</td>
-        <td>**A Correct:** Telematics reveal driver quality (hidden type) to the insurer, addressing adverse selection — otherwise safe drivers subsidise dangerous ones, and pull out of the market. <br> B Diminishing returns do not apply here. <br> C Telematics do not directly address monopoly power. <br> D Insurance is not a public good (it is excludable and rival).</td>
+        <td>**A Correct:** Telematics reveal driver quality (hidden type) to the insurer, addressing adverse selection · otherwise safe drivers subsidise dangerous ones, and pull out of the market. <br> B Diminishing returns do not apply here. <br> C Telematics do not directly address monopoly power. <br> D Insurance is not a public good (it is excludable and rival).</td>
         <td>AO3</td>
     </tr>
     <tr>
@@ -7104,25 +7104,25 @@ A Level
     <tr>
         <td>**26**</td>
         <td>**B**</td>
-        <td>A Recoverable costs do not deter entry (contestable markets).<br>**B Correct:** A sunk cost cannot be recovered on exit — this raises the cost of entry and creates a barrier to entry (central to contestable market theory).<br>C Sunk costs are narrower than fixed costs: all sunk are fixed, but not all fixed are sunk.<br>D Sunk costs exist in many market structures, not just monopolies.</td>
+        <td>A Recoverable costs do not deter entry (contestable markets).<br>**B Correct:** A sunk cost cannot be recovered on exit · this raises the cost of entry and creates a barrier to entry (central to contestable market theory).<br>C Sunk costs are narrower than fixed costs: all sunk are fixed, but not all fixed are sunk.<br>D Sunk costs exist in many market structures, not just monopolies.</td>
         <td>AO1</td>
     </tr>
     <tr>
         <td>**27**</td>
         <td>**A**</td>
-        <td>**A Correct:** An inward shift of LRAS (e.g. lower productive potential or labour shortages) combined with modest AD growth can produce both a negative output gap (actual &lt; new potential) and inflationary pressure as AD pushes up against the lower LRAS.<br>B This would produce a positive output gap and inflation — not a negative output gap.<br>C Both shifting out would reduce, not raise, inflation.<br>D Equal shifts leave output gap unchanged.</td>
+        <td>**A Correct:** An inward shift of LRAS (e.g. lower productive potential or labour shortages) combined with modest AD growth can produce both a negative output gap (actual &lt; new potential) and inflationary pressure as AD pushes up against the lower LRAS.<br>B This would produce a positive output gap and inflation · not a negative output gap.<br>C Both shifting out would reduce, not raise, inflation.<br>D Equal shifts leave output gap unchanged.</td>
         <td>AO3</td>
     </tr>
     <tr>
         <td>**28**</td>
         <td>**D**</td>
-        <td>A HDI does include income (GNI per capita), so this is incorrect.<br>B HDI uses mean and expected years of schooling, not literacy.<br>C HDI uses life expectancy at birth for the whole population, not just children under 5.<br>**D Correct:** HDI uses a geometric mean of three equally-weighted components (health, education, income), which is a contested simplification — the components may deserve different weights based on context.</td>
+        <td>A HDI does include income (GNI per capita), so this is incorrect.<br>B HDI uses mean and expected years of schooling, not literacy.<br>C HDI uses life expectancy at birth for the whole population, not just children under 5.<br>**D Correct:** HDI uses a geometric mean of three equally-weighted components (health, education, income), which is a contested simplification · the components may deserve different weights based on context.</td>
         <td>AO3</td>
     </tr>
     <tr>
         <td>**29**</td>
         <td>**A**</td>
-        <td>**A Correct:** Resource curse: countries rich in natural resources often experience slower growth and weaker institutions — explanations include Dutch disease, rent-seeking, and commodity price volatility.<br>B Resource exhaustion is a separate issue.<br>C This is about consumption, not the resource curse paradox.<br>D Tragedy of the commons is about common-pool overuse, distinct from</td>
+        <td>**A Correct:** Resource curse: countries rich in natural resources often experience slower growth and weaker institutions · explanations include Dutch disease, rent-seeking, and commodity price volatility.<br>B Resource exhaustion is a separate issue.<br>C This is about consumption, not the resource curse paradox.<br>D Tragedy of the commons is about common-pool overuse, distinct from</td>
         <td>AO1</td>
     </tr>
 </table>
@@ -7174,7 +7174,7 @@ A Level
     </tr>
     <tr>
         <td>32</td>
-        <td>Explain, using the information in Extract 1, how the doctrine of 'too big to fail' may generate moral hazard in the UK banking sector.<br><br>Award 1 mark for knowledge of moral hazard.<br><br>Award up to 2 marks for developed application to the banking context.<br><br>Example: Moral hazard exists where an agent takes excessive risk because they are protected against the negative consequences (1). Because the 'big four' banks hold 75% of current accounts and 85% of SME lending, their failure would cause systemic damage, so the government is likely to bail them out (1). This creates an incentive for banks to take on excessive risk, knowing the taxpayer bears the downside — for example, the £137bn bailout during the 2008 crisis (1).<br><br>Other valid applications:<br>- Implicit public subsidy of £30bn/year gives banks an artificially lower cost of capital, encouraging leverage and risk.<br>- FSCS guarantees (up to £85,000) reduce depositor discipline on risky banks.</td>
+        <td>Explain, using the information in Extract 1, how the doctrine of 'too big to fail' may generate moral hazard in the UK banking sector.<br><br>Award 1 mark for knowledge of moral hazard.<br><br>Award up to 2 marks for developed application to the banking context.<br><br>Example: Moral hazard exists where an agent takes excessive risk because they are protected against the negative consequences (1). Because the 'big four' banks hold 75% of current accounts and 85% of SME lending, their failure would cause systemic damage, so the government is likely to bail them out (1). This creates an incentive for banks to take on excessive risk, knowing the taxpayer bears the downside · for example, the £137bn bailout during the 2008 crisis (1).<br><br>Other valid applications:<br>- Implicit public subsidy of £30bn/year gives banks an artificially lower cost of capital, encouraging leverage and risk.<br>- FSCS guarantees (up to £85,000) reduce depositor discipline on risky banks.</td>
         <td>3</td>
         <td>AO1 1 mark; AO2 2 marks.<br><br>Must connect moral hazard to specific banking features (size, systemic importance).</td>
     </tr>
@@ -7260,9 +7260,9 @@ An externality diagram showing the marginal external cost of financial risk-taki
 * Bail-in tools (rather than bail-outs) align creditors' incentives and remove the need for excessive regulation.
 
 ### Judgements might include:
-* Depends on the source of market failure — moral hazard and systemic risk call for different responses.
+* Depends on the source of market failure · moral hazard and systemic risk call for different responses.
 * Depends on coordination across international regulators (Basel, FSB) to prevent regulatory arbitrage.
-* Depends on the interaction with competition policy — breaking up big banks may achieve similar goals.
+* Depends on the interaction with competition policy · breaking up big banks may achieve similar goals.
 * Depends on the credibility of 'no bailout' commitments.
 * A blended approach (regulation + competition + structural reform) may be more effective than any one tool.
 
@@ -7357,20 +7357,20 @@ Evaluate, using the information in Extract 2, whether the benefits of quantitati
 
 ## Analysis
 
-* Benefits: QE countered the zero lower bound — when bank rate reached 0.1%, QE provided further monetary stimulus, preventing deflation and supporting output.
-* Transmission mechanism evidence: lower long-term rates, higher asset prices, wealth effects, bank liquidity — BoE research suggests each channel contributed to the 2.5% GDP boost.
+* Benefits: QE countered the zero lower bound · when bank rate reached 0.1%, QE provided further monetary stimulus, preventing deflation and supporting output.
+* Transmission mechanism evidence: lower long-term rates, higher asset prices, wealth effects, bank liquidity · BoE research suggests each channel contributed to the 2.5% GDP boost.
 * Avoided a 1930s-style depression during COVID: QE expanded by £150bn in 2020 alone.
 * Supported fiscal policy (e.g. furlough) by keeping government borrowing costs low.
 * Signalling effect: commitment to loose policy anchored expectations and supported confidence.
 
 ## Evaluation
 
-* Distributional costs: QE boosted asset prices, disproportionately benefiting the wealthiest 10% (who captured 40% of the £1.2tn gain) — may have worsened wealth inequality.
+* Distributional costs: QE boosted asset prices, disproportionately benefiting the wealthiest 10% (who captured 40% of the £1.2tn gain) · may have worsened wealth inequality.
 * Moral hazard: QE reduced the discipline on governments to undertake structural reform, as it artificially lowered borrowing costs.
 * Fiscal cost: Treasury indemnity may cost up to £150bn over the decade as the Bank sells at a loss.
 * Central bank independence and accountability: QE blurs monetary and fiscal policy; there is no democratic vote on the scale of intervention.
-* Created financial fragility — the sudden rise in rates from 0.1% to 5.25% has been more damaging than it would have been with lower starting debts.
-* QE benefits may have diminished over time — the 2020 round may have generated more inflation than growth.
+* Created financial fragility · the sudden rise in rates from 0.1% to 5.25% has been more damaging than it would have been with lower starting debts.
+* QE benefits may have diminished over time · the 2020 round may have generated more inflation than growth.
 * Alternative policies (helicopter money, targeted lending schemes) might have been more effective at stimulating consumption of low-income households.
 
 ## Judgements might include:
@@ -7379,7 +7379,7 @@ Evaluate, using the information in Extract 2, whether the benefits of quantitati
 * Depends on the distributional weights placed on inequality versus aggregate output.
 * Depends on how easily QE can be unwound (QT process).
 * Depends on interaction with fiscal policy and structural reforms.
-* Short-run benefits may be clear; long-run costs (inequality, fiscal dominance) only now becoming evident — verdict highly time-horizon dependent.
+* Short-run benefits may be clear; long-run costs (inequality, fiscal dominance) only now becoming evident · verdict highly time-horizon dependent.
 
 ## Page 17
 
@@ -7394,7 +7394,7 @@ Evaluate, using the information in Extract 2, whether the benefits of quantitati
     </tr>
     <tr>
         <td>**37**</td>
-        <td>**Using Fig. 3.1, compare development in Sub-Saharan Africa with that of advanced economies in 2023.**<br><br>Award 1 mark for identifying a similarity or measure/direction.<br><br>Award 1 mark for second comparison with data.<br><br>Examples:<br>- Sub-Saharan Africa has much lower development indicators than advanced economies across all three measures (1).<br>- GDP per capita gap: $4,210 in SSA vs $56,360 in advanced economies — SSA earns about 7% of the advanced-economy level (1).<br>- HDI: 0.547 (low human development) vs 0.896 (very high).<br>- Extreme poverty: 35.0% in SSA vs &lt;0.5% in advanced economies.</td>
+        <td>**Using Fig. 3.1, compare development in Sub-Saharan Africa with that of advanced economies in 2023.**<br><br>Award 1 mark for identifying a similarity or measure/direction.<br><br>Award 1 mark for second comparison with data.<br><br>Examples:<br>- Sub-Saharan Africa has much lower development indicators than advanced economies across all three measures (1).<br>- GDP per capita gap: $4,210 in SSA vs $56,360 in advanced economies · SSA earns about 7% of the advanced-economy level (1).<br>- HDI: 0.547 (low human development) vs 0.896 (very high).<br>- Extreme poverty: 35.0% in SSA vs &lt;0.5% in advanced economies.</td>
         <td>2</td>
         <td>1 mark for direction; 1 mark for supporting data.<br><br>Accept either similarity-focused or difference-focused comparison if supported by data.</td>
     </tr>
@@ -7447,7 +7447,7 @@ Evaluate, using the information in Extract 3, the most effective strategies for 
 * Application: Mean years of schooling rose 4.4 → 6.0 years in SSA.
 
 ### Analysis
-* Strategies that could work: Investment in education (already showing progress — schooling years up 36% since 2000) raises productivity and labour market participation.
+* Strategies that could work: Investment in education (already showing progress · schooling years up 36% since 2000) raises productivity and labour market participation.
 * Health investment reduces child mortality and raises life expectancy, boosting the working-age population.
 * Debt relief can free up fiscal resources: 25 developing countries spend more on debt than health + education combined.
 * Reducing remittance costs (6.3% → 3% target) could raise effective transfers by around £20bn annually.
@@ -7455,9 +7455,9 @@ Evaluate, using the information in Extract 3, the most effective strategies for 
 * Institutional reform (governance, rule of law) is critical for long-term growth.
 
 ### Evaluation
-* Aid dependency risks — unconditional aid may distort incentives and undermine institutions.
+* Aid dependency risks · unconditional aid may distort incentives and undermine institutions.
 * Debt relief without conditions may lead to repeat borrowing cycles.
-* Brain drain offsets gains from education — skilled workers emigrate.
+* Brain drain offsets gains from education · skilled workers emigrate.
 * External shocks (commodity prices, US rate rises, climate) are outside developing country control.
 * Resource curse in oil/mineral-rich SSA countries limits the effectiveness of export-led strategies.
 * Rising global inequality (billionaire wealth +34%) means top-down redistribution may matter more than any single in-country strategy.

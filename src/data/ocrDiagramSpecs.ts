@@ -66,7 +66,7 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      ══════════════════════════════════════════ */
 
   ocr_ppc_basic: {
-    title: "Production Possibility Curve — Basic",
+    title: "Production Possibility Curve · Basic",
     axisLabels: { x: "Consumer Goods", y: "Capital Goods" },
     curves: [
       { id: "PPC", label: "PPC", params: { type: "quadratic", a: 0.15, b: -2, c: 9 }, color: C.supply },
@@ -79,7 +79,7 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       { text: "E (unattainable)", position: { x: 7, y: 6 }, color: C.pink, size: 10 },
     ],
     legend: [{ label: "PPC", color: C.supply }],
-    notes: "Points on the PPC (A, B, C) are efficient — maximum output using all resources. D inside is inefficient. E outside is unattainable with current resources. OCR emphasises increasing opportunity cost with curved PPC.",
+    notes: "Points on the PPC (A, B, C) are efficient · maximum output using all resources. D inside is inefficient. E outside is unattainable with current resources. OCR emphasises increasing opportunity cost with curved PPC.",
     examTips: [
       "On the PPC = efficient (all resources utilised)",
       "Inside = inefficient (not all resources utilised)",
@@ -89,7 +89,7 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   ocr_ppc_shift_out: {
-    title: "PPC — Outward Shift (Economic Growth)",
+    title: "PPC · Outward Shift (Economic Growth)",
     axisLabels: { x: "Consumer Goods", y: "Capital Goods" },
     curves: [
       { id: "PPC1", label: "PPC₁", params: { type: "linear", slope: -1, intercept: 8 }, color: C.supply },
@@ -109,7 +109,7 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   ocr_ppc_biased: {
-    title: "PPC — Biased Shift (One Sector Only)",
+    title: "PPC · Biased Shift (One Sector Only)",
     axisLabels: { x: "Consumer Goods", y: "Capital Goods" },
     curves: [
       { id: "PPC1", label: "PPC₁", params: { type: "linear", slope: -1, intercept: 8 }, color: C.supply },
@@ -132,7 +132,7 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      ══════════════════════════════════════════ */
 
   ocr_demand_basic: {
-    title: "Demand Curve — Basic",
+    title: "Demand Curve · Basic",
     axisLabels: { x: "Quantity", y: "Price" },
     curves: [
       { id: "D", label: "D", params: { type: "linear", slope: -0.8, intercept: 9 }, color: C.demand },
@@ -154,7 +154,7 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   ocr_demand_shift: {
-    title: "Demand — Shift (Increase/Decrease)",
+    title: "Demand · Shift (Increase/Decrease)",
     axisLabels: { x: "Quantity", y: "Price" },
     curves: [
       { id: "D", label: "D", params: { type: "linear", slope: -0.8, intercept: 8 }, color: C.demand },
@@ -209,7 +209,7 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
      ══════════════════════════════════════════ */
 
   ocr_supply_basic: {
-    title: "Supply Curve — Basic",
+    title: "Supply Curve · Basic",
     axisLabels: { x: "Quantity", y: "Price" },
     curves: [
       { id: "S", label: "S", params: { type: "linear", slope: 0.8, intercept: 1 }, color: C.supply },
@@ -224,7 +224,7 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   ocr_supply_shift: {
-    title: "Supply — Shift",
+    title: "Supply · Shift",
     axisLabels: { x: "Quantity", y: "Price" },
     curves: [
       { id: "S", label: "S", params: { type: "linear", slope: 0.8, intercept: 2 }, color: C.supply },
@@ -490,7 +490,7 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   /* ══════════════════════════════════════════
-     8. INFORMATION FAILURE — MERIT & DEMERIT
+     8. INFORMATION FAILURE · MERIT & DEMERIT
      OCR uses D(perceived)/D₁(actual), NOT MSB/MPB
      ══════════════════════════════════════════ */
 
@@ -527,7 +527,7 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     notes: "OCR CRITICAL: Merit goods are NOT the same as externalities. They are a separate form of market failure caused by information failure. The individual underestimates the benefit. Use D/D₁ labelling, NOT MSB/MPB.",
     examTips: [
       "Merit good = information failure, NOT externality",
-      "Use D (perceived) and D₁ (actual) — NOT MSB/MPB",
+      "Use D (perceived) and D₁ (actual) · NOT MSB/MPB",
       "Underconsumption due to lack of information",
       "Education is a common example",
       "Size of shift = extent of information failure",
@@ -567,10 +567,10 @@ export const OCR_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
       { label: "D (perceived)", color: C.demand },
       { label: "D₁ (actual)", color: C.teal },
     ],
-    notes: "OCR CRITICAL: Demerit goods are NOT negative externalities. They are information failure — the individual overestimates the benefit. Use D (perceived) / D₁ (actual), NOT MSB/MPB.",
+    notes: "OCR CRITICAL: Demerit goods are NOT negative externalities. They are information failure · the individual overestimates the benefit. Use D (perceived) / D₁ (actual), NOT MSB/MPB.",
     examTips: [
       "Demerit good = information failure, NOT externality",
-      "Use D (perceived) and D₁ (actual) — NOT MSB/MPB",
+      "Use D (perceived) and D₁ (actual) · NOT MSB/MPB",
       "Overconsumption due to perceived benefit > actual benefit",
       "Smoking and alcohol are common examples",
     ],

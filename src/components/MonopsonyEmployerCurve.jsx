@@ -1,6 +1,6 @@
 export default function MonopsonyEmployerCurve() {
   /**
-   * MATHEMATICAL SETUP — viewBox 0 0 500 380
+   * MATHEMATICAL SETUP · viewBox 0 0 500 380
    * Axes: Y at x=65, X at y=320
    *
    * COMMON START POINT for both MCL and ACL: (65, 279)
@@ -84,11 +84,11 @@ export default function MonopsonyEmployerCurve() {
         <line x1="65" y1="57" x2="405" y2="262"
           stroke="#1a56db" strokeWidth="2.5"/>
 
-        {/* MCL: steep upward — SAME start (65,279) → (260,115) */}
+        {/* MCL: steep upward · SAME start (65,279) → (260,115) */}
         <line x1="65" y1="279" x2="260" y2="115"
           stroke="#1a56db" strokeWidth="2.5"/>
 
-        {/* ACL: moderate upward — SAME start (65,279) → (430,131) */}
+        {/* ACL: moderate upward · SAME start (65,279) → (430,131) */}
         <line x1="65" y1="279" x2="430" y2="131"
           stroke="#1a56db" strokeWidth="2.5"/>
 

@@ -1,16 +1,16 @@
 import type { PredictedPaper } from "./predictedPapersLibrary";
 
 export const mathsPredictedPapersExtra: PredictedPaper[] = [
-  // ── MATHS PAPER 1: Higher — Set D ──
+  // ── MATHS PAPER 1: Higher · Set D ──
   {
     id: "maths-p1-higher-d",
     subject: "maths",
     paper: "1",
     tier: "Higher",
-    title: "Paper 1 Higher — Set D",
+    title: "Paper 1 Higher · Set D",
     description: "Non-Calculator. Proof, surds, quadratics, and circle geometry.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 1 Higher (Non-Calculator) — Predicted Paper Set D
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 1 Higher (Non-Calculator) · Predicted Paper Set D
 
 **Time: 1 hour 30 minutes | Total: 80 marks**
 
@@ -77,16 +77,16 @@ Question 20 [3 marks]
 A geometric sequence has first term $4$ and common ratio $\\dfrac{1}{2}$. Find the sum to infinity.`,
   },
 
-  // ── MATHS PAPER 2: Higher — Set C ──
+  // ── MATHS PAPER 2: Higher · Set C ──
   {
     id: "maths-p2-higher-c",
     subject: "maths",
     paper: "2",
     tier: "Higher",
-    title: "Paper 2 Higher — Set C",
+    title: "Paper 2 Higher · Set C",
     description: "Calculator allowed. Bounds, histograms, sine rule, and algebraic proof.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 2 Higher (Calculator) — Predicted Paper Set C
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 2 Higher (Calculator) · Predicted Paper Set C
 
 **Time: 1 hour 30 minutes | Total: 80 marks | Calculator ALLOWED**
 
@@ -151,16 +151,16 @@ Question 18 [3 marks]
 Express $\\dfrac{2}{x-1} - \\dfrac{3}{x+2}$ as a single fraction in its simplest form.`,
   },
 
-  // ── MATHS PAPER 3: Higher — Set C ──
+  // ── MATHS PAPER 3: Higher · Set C ──
   {
     id: "maths-p3-higher-c",
     subject: "maths",
     paper: "3",
     tier: "Higher",
-    title: "Paper 3 Higher — Set C",
+    title: "Paper 3 Higher · Set C",
     description: "Calculator allowed. Vectors, transformations, and applied problem-solving.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 3 Higher (Calculator) — Predicted Paper Set C
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 3 Higher (Calculator) · Predicted Paper Set C
 
 **Time: 1 hour 30 minutes | Total: 80 marks | Calculator ALLOWED**
 
@@ -225,16 +225,16 @@ Question 18 [3 marks]
 A car depreciates by $15\\%$ per year. It is currently worth £18,000. Find its value after 3 years.`,
   },
 
-  // ── MATHS PAPER 1: Foundation — Set C ──
+  // ── MATHS PAPER 1: Foundation · Set C ──
   {
     id: "maths-p1-foundation-c",
     subject: "maths",
     paper: "1",
     tier: "Foundation",
-    title: "Paper 1 Foundation — Set C",
+    title: "Paper 1 Foundation · Set C",
     description: "Non-Calculator. Core number, basic geometry, ratio, and probability.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 1 Foundation (Non-Calculator) — Predicted Paper Set C
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 1 Foundation (Non-Calculator) · Predicted Paper Set C
 
 **Time: 1 hour 30 minutes | Total: 80 marks**
 
@@ -313,16 +313,16 @@ Question 24 [4 marks]
 A regular pentagon has interior angles. Calculate the size of one interior angle.`,
   },
 
-  // ── MATHS PAPER 3: Foundation — Set B ──
+  // ── MATHS PAPER 3: Foundation · Set B ──
   {
     id: "maths-p3-foundation-b",
     subject: "maths",
     paper: "3",
     tier: "Foundation",
-    title: "Paper 3 Foundation — Set B",
+    title: "Paper 3 Foundation · Set B",
     description: "Calculator allowed. Proportion, compound measures, and data handling.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 3 Foundation (Calculator) — Predicted Paper Set B
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 3 Foundation (Calculator) · Predicted Paper Set B
 
 **Time: 1 hour 30 minutes | Total: 80 marks | Calculator ALLOWED**
 
@@ -398,16 +398,16 @@ Question 23 [4 marks]
 The probability that it rains on any day is $0.4$. Find the probability that it rains on exactly one out of two consecutive days.`,
   },
 
-  // ── MATHS PAPER 2: Foundation — Set C ──
+  // ── MATHS PAPER 2: Foundation · Set C ──
   {
     id: "maths-p2-foundation-c",
     subject: "maths",
     paper: "2",
     tier: "Foundation",
-    title: "Paper 2 Foundation — Set C",
+    title: "Paper 2 Foundation · Set C",
     description: "Calculator allowed. Money, measures, percentages, and basic geometry.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 2 Foundation (Calculator) — Predicted Paper Set C
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 2 Foundation (Calculator) · Predicted Paper Set C
 
 **Time: 1 hour 30 minutes | Total: 80 marks | Calculator ALLOWED**
 
@@ -488,16 +488,16 @@ Question 23 [3 marks]
 What is the bearing of B from A if B is due South-East of A?`,
   },
 
-  // ── MATHS PAPER 1: Higher — Set E ──
+  // ── MATHS PAPER 1: Higher · Set E ──
   {
     id: "maths-p1-higher-e",
     subject: "maths",
     paper: "1",
     tier: "Higher",
-    title: "Paper 1 Higher — Set E",
+    title: "Paper 1 Higher · Set E",
     description: "Non-Calculator. Functions, proof, and advanced algebra.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 1 Higher (Non-Calculator) — Predicted Paper Set E
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 1 Higher (Non-Calculator) · Predicted Paper Set E
 
 **Time: 1 hour 30 minutes | Total: 80 marks**
 
@@ -564,16 +564,16 @@ Question 20 [2 marks]
 State the number of lines of symmetry and the order of rotational symmetry of a regular octagon.`,
   },
 
-  // ── MATHS PAPER 3: Higher — Set D ──
+  // ── MATHS PAPER 3: Higher · Set D ──
   {
     id: "maths-p3-higher-d",
     subject: "maths",
     paper: "3",
     tier: "Higher",
-    title: "Paper 3 Higher — Set D",
+    title: "Paper 3 Higher · Set D",
     description: "Calculator allowed. Statistics, trigonometry 3D, and algebraic fractions.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 3 Higher (Calculator) — Predicted Paper Set D
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 3 Higher (Calculator) · Predicted Paper Set D
 
 **Time: 1 hour 30 minutes | Total: 80 marks | Calculator ALLOWED**
 
@@ -638,16 +638,16 @@ Question 18 [2 marks]
 State the gradient of the line $4x + 3y = 12$.`,
   },
 
-  // ── MATHS PAPER 2: Higher — Set D ──
+  // ── MATHS PAPER 2: Higher · Set D ──
   {
     id: "maths-p2-higher-d",
     subject: "maths",
     paper: "2",
     tier: "Higher",
-    title: "Paper 2 Higher — Set D",
+    title: "Paper 2 Higher · Set D",
     description: "Calculator allowed. Growth/decay, constructions, and probability.",
     totalMarks: 80,
-    content: `# Edexcel GCSE Mathematics (1MA1) — Paper 2 Higher (Calculator) — Predicted Paper Set D
+    content: `# Edexcel GCSE Mathematics (1MA1) · Paper 2 Higher (Calculator) · Predicted Paper Set D
 
 **Time: 1 hour 30 minutes | Total: 80 marks | Calculator ALLOWED**
 

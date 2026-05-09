@@ -56,7 +56,7 @@ export function PredictedPaperDiagramBlock({
 
   const r = rubric as AqaDiagramRubric | undefined;
 
-  // Restore an indicator only — the canvas itself starts blank because the
+  // Restore an indicator only · the canvas itself starts blank because the
   // drawing tool stores ImageData internally; restoring pixels onto a fresh
   // canvas requires a code--add to the drawing tool that we can do later.
   useEffect(() => {
@@ -71,7 +71,7 @@ export function PredictedPaperDiagramBlock({
       setSavedAt(Date.now());
       onChange?.(dataUrl);
     } catch {
-      // quota exceeded — silent
+      // quota exceeded · silent
     }
   };
 
@@ -90,7 +90,7 @@ export function PredictedPaperDiagramBlock({
         <Pencil className="h-3.5 w-3.5 text-primary" />
         <span className="font-semibold">Add a diagram</span>
         <span className="text-muted-foreground">
-          — optional, but strengthens top-band answers.
+          · optional, but strengthens top-band answers.
         </span>
         <ChevronDown className="h-3.5 w-3.5 ml-auto text-muted-foreground" />
       </button>

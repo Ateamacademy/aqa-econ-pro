@@ -7,7 +7,7 @@ export default function Privacy() {
         <h2 className="text-xl font-bold text-foreground pt-2">1. Information We Collect</h2>
         <p>We collect information you provide directly: email address, display name, and exam board preferences. We also collect usage data such as practice scores and session history to power your dashboard.</p>
         <h2 className="text-xl font-bold text-foreground pt-2">2. How We Use Your Data</h2>
-        <p>Your data is used solely to provide and improve the Econ Rev platform — including personalised revision recommendations, progress tracking, and parent monitoring (if enabled).</p>
+        <p>Your data is used solely to provide and improve the Econ Rev platform · including personalised revision recommendations, progress tracking, and parent monitoring (if enabled).</p>
         <h2 className="text-xl font-bold text-foreground pt-2">3. Data Sharing</h2>
         <p>We do not sell your personal data. We share data only with essential service providers (payment processing, hosting) under strict data processing agreements.</p>
         <h2 className="text-xl font-bold text-foreground pt-2">4. Data Retention</h2>

@@ -1,6 +1,6 @@
 export default function PPFNaturalDisaster() {
   /**
-   * PPF — Natural Disaster (Earthquake)
+   * PPF · Natural Disaster (Earthquake)
    * An earthquake destroys a proportion of ALL factors of production,
    * so the PPF shifts INWARD on BOTH axes.
    *
@@ -30,7 +30,7 @@ export default function PPFNaturalDisaster() {
     y: T + (B - T) * (1 - Math.cos(t)),
   });
 
-  /* New PPF₁ bounds — earthquake contracts both axes by ~38% */
+  /* New PPF₁ bounds · earthquake contracts both axes by ~38% */
   const SCALE   = 0.62;
   const origW   = cR - cL;
   const origH   = cB - cT;
@@ -69,7 +69,7 @@ export default function PPFNaturalDisaster() {
           <marker id="axArU" markerWidth="7" markerHeight="9" refX="3.5" refY="1" orient="auto">
             <polygon points="0 9,3.5 0,7 9" fill={AX}/>
           </marker>
-          {/* Inward arrow — red */}
+          {/* Inward arrow · red */}
           <marker id="redArr" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto">
             <polygon points="0 0,8 3.5,0 7" fill={RED}/>
           </marker>
@@ -130,7 +130,7 @@ export default function PPFNaturalDisaster() {
         <line x1={cR - 6} y1={cB + 22} x2={n1R + 6} y2={cB + 22}
           stroke={RED} strokeWidth="1.8" markerEnd="url(#redArrL)" markerStart="url(#redArr)"/>
 
-        {/* ── POINT A — on original PPF (green) ── */}
+        {/* ── POINT A · on original PPF (green) ── */}
         <circle cx={A.x} cy={A.y} r="10" fill="none" stroke={GREEN} strokeWidth="2.2"/>
         <circle cx={A.x} cy={A.y} r="4"  fill={GREEN}/>
         {/* Dashed guide lines */}
@@ -143,7 +143,7 @@ export default function PPFNaturalDisaster() {
         <text x={A.x + 14} y={A.y + 14}
           fontSize="11" fill={GREEN}>(before)</text>
 
-        {/* ── POINT B — on new PPF₁ (orange) ── */}
+        {/* ── POINT B · on new PPF₁ (orange) ── */}
         <circle cx={B.x} cy={B.y} r="10" fill="none" stroke={ORANGE} strokeWidth="2.2"/>
         <circle cx={B.x} cy={B.y} r="4"  fill={ORANGE}/>
         <line x1={cL} y1={B.y} x2={B.x} y2={B.y}
@@ -156,10 +156,10 @@ export default function PPFNaturalDisaster() {
           fontSize="11" fill={ORANGE}>(after)</text>
 
         {/* ── CURVE LABELS ── */}
-        {/* PPF label (blue) — bottom right of original */}
+        {/* PPF label (blue) · bottom right of original */}
         <text x={cR + 8} y={cB - 10}
           fontSize="14" fontWeight="bold" fill={BLUE} fontStyle="italic">PPF</text>
-        {/* PPF₁ label (red) — bottom right of new curve */}
+        {/* PPF₁ label (red) · bottom right of new curve */}
         <text x={n1R + 8} y={cB - 8}
           fontSize="14" fontWeight="bold" fill={RED} fontStyle="italic">
           PPF<tspan fontSize="11" dy="4">1</tspan>

@@ -23,7 +23,7 @@ export default function Contact() {
         <h1 className="text-4xl font-extrabold tracking-tight">Get in Touch</h1>
       </div>
       <p className="text-muted-foreground mb-8">
-        Questions, school licences, or feedback — fill out the form below and we'll get back to you within 24 hours.
+        Questions, school licences, or feedback · fill out the form below and we'll get back to you within 24 hours.
       </p>
       <form onSubmit={handleSubmit} className="space-y-4">
         <Input placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} required />

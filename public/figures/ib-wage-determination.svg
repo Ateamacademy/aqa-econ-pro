@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 470" font-family="Inter, Arial, sans-serif">
   <rect width="620" height="470" fill="#ffffff"/>
-  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">UK Hospitality Labour Market — Worker Shortage Shifts S_L Left</text>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">UK Hospitality Labour Market · Worker Shortage Shifts S_L Left</text>
 
   <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
   <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
@@ -15,7 +15,7 @@
   <line x1="130" y1="380" x2="490" y2="110" stroke="#0284c7" stroke-width="2.4"/>
   <text x="490" y="100" font-size="11" font-weight="600" fill="#0284c7">S_L1</text>
 
-  <!-- S_L2 (shifted LEFT — parallel shift up): same slope, shifted so at given L the wage is higher.
+  <!-- S_L2 (shifted LEFT · parallel shift up): same slope, shifted so at given L the wage is higher.
        Endpoints: (130, 300) → (410, 90), then visually this sits ABOVE and to the LEFT of S_L1 -->
   <line x1="130" y1="300" x2="410" y2="90" stroke="#be123c" stroke-width="2.4" stroke-dasharray="5,3"/>
   <text x="410" y="85" font-size="11" font-weight="600" fill="#be123c">S_L2</text>

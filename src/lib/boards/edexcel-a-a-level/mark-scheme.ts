@@ -1,5 +1,5 @@
 /**
- * Edexcel A A-Level Economics (9EC0) — per-skill (K/Ap/An/Ev) mark scheme.
+ * Edexcel A A-Level Economics (9EC0) · per-skill (K/Ap/An/Ev) mark scheme.
  *
  * Unlike AQA (level-of-response grids), Edexcel awards marks per skill.
  * The marking UI for Edexcel must show this per-skill breakdown.
@@ -21,7 +21,7 @@ const splits: Record<number, SkillSplit> = {
   12: { K: 2, Ap: 3, An: 4, Ev: 3 },
   // Section B (e) 15-mark evaluate
   15: { K: 3, Ap: 3, An: 5, Ev: 4 },
-  // Section C and Paper 3 (d) — 25-mark essay
+  // Section C and Paper 3 (d) · 25-mark essay
   25: { K: 4, Ap: 5, An: 8, Ev: 8 },
 };
 

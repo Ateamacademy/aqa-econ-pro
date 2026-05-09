@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 480" font-family="Inter, Arial, sans-serif">
   <rect width="620" height="480" fill="#ffffff"/>
-  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Minimum Wage (National Living Wage £11.44) — UK Low-Skilled Labour Market</text>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Minimum Wage (National Living Wage £11.44) · UK Low-Skilled Labour Market</text>
 
   <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
   <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>

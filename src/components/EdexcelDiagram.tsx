@@ -7,7 +7,7 @@ interface EdexcelDiagramProps {
 }
 
 /**
- * EdexcelDiagram — renders the inline SVG fallback component directly.
+ * EdexcelDiagram · renders the inline SVG fallback component directly.
  * No database lookup needed since all Edexcel A figures are registered
  * as inline React SVG components via CustomDiagramResolver.
  */

@@ -1,6 +1,6 @@
 /**
  * Allocative Inefficiency from a Negative Production Externality
- * IB HL/SL — Paper 3 Moderate Q1(a)(iv)
+ * IB HL/SL · Paper 3 Moderate Q1(a)(iv)
  *
  * MC/MB framing:
  *  - S = MC slopes upward
@@ -31,10 +31,10 @@ export default function EconAllocativeInefficiencyMCMB() {
     >
       <div style={{ padding: '10px 14px 4px' }}>
         <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', color: '#818cf8' }}>
-          ALLOCATIVE INEFFICIENCY — MC / MB DIAGRAM
+          ALLOCATIVE INEFFICIENCY · MC / MB DIAGRAM
         </div>
         <div style={{ fontSize: '12px', color: '#c8d6e8', marginTop: 2 }}>
-          IB HL/SL — At Q₁ MU = MC (efficient). At Q₂ &lt; Q₁ MU &gt; MC, so society values an extra unit more than it costs to produce.
+          IB HL/SL · At Q₁ MU = MC (efficient). At Q₂ &lt; Q₁ MU &gt; MC, so society values an extra unit more than it costs to produce.
         </div>
       </div>
       <svg viewBox="0 0 760 600" width="100%" role="img" style={{ display: 'block', background: 'transparent' }}>
@@ -71,7 +71,7 @@ export default function EconAllocativeInefficiencyMCMB() {
         <text x="118" y="78" fill="#e2e8f0" fontSize="14" fontWeight="600">Price</text>
         <text x="690" y="525" fill="#e2e8f0" fontSize="14" fontWeight="600">Q</text>
 
-        {/* Supply S = MC (upward) — extend slightly beyond plotted points for arrowheads/labels */}
+        {/* Supply S = MC (upward) · extend slightly beyond plotted points for arrowheads/labels */}
         <line x1="170" y1="437.5" x2="560" y2="275" stroke="#60a5fa" strokeWidth="2.6" />
         <text x="568" y="272" fill="#60a5fa" fontSize="14" fontWeight="700">S = MC</text>
 

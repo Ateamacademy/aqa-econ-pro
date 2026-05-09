@@ -1,5 +1,5 @@
 /**
- * WJEC A-Level Economics (1EC0) — marking convention.
+ * WJEC A-Level Economics (1EC0) · marking convention.
  *
  * WJEC uses AO1–AO4 with weightings of approximately 25% per AO across the
  * full qualification. Mark bands and descriptors below are taken from the

@@ -32,7 +32,7 @@
     </marker>
   </defs>
 
-  <text x="350" y="28" text-anchor="middle" class="ttl">Specific Tax on Cigarettes — Developing Country</text>
+  <text x="350" y="28" text-anchor="middle" class="ttl">Specific Tax on Cigarettes · Developing Country</text>
   <text x="350" y="48" text-anchor="middle" class="sub">A per-unit (specific) tax shifts Supply parallel up by the tax amount: S1 → S2</text>
 
   <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>

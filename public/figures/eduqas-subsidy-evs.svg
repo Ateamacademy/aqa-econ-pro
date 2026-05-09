@@ -20,7 +20,7 @@
     </marker>
   </defs>
 
-  <text x="350" y="28" text-anchor="middle" class="ttl">UK Electric Vehicle Market — Producer Subsidy</text>
+  <text x="350" y="28" text-anchor="middle" class="ttl">UK Electric Vehicle Market · Producer Subsidy</text>
   <text x="350" y="48" text-anchor="middle" class="sub">Per-unit subsidy to manufacturers shifts Supply right (S → S1)</text>
 
   <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>

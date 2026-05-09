@@ -93,28 +93,28 @@ const DIAGRAM_TYPES = [
           <rect x="130" y="130" width="40" height="90" fill="hsl(210 100% 60% / 0.12)" stroke="hsl(210 100% 60%)" strokeWidth="1" strokeDasharray="3" />
         )}
 
-        {/* S₁ — original supply (steeper, starts higher-left) */}
+        {/* S₁ · original supply (steeper, starts higher-left) */}
         <line x1="90" y1="30" x2="250" y2="200" stroke="hsl(210 100% 50%)" strokeWidth="2" strokeDasharray="5" />
         <text x="252" y="195" fontSize="10" fill="hsl(210 100% 50%)">{labels.curve3 || "S₁"}</text>
 
-        {/* S₂ — shifted supply RIGHT (parallel, further right) */}
+        {/* S₂ · shifted supply RIGHT (parallel, further right) */}
         <line x1="120" y1="30" x2="275" y2="190" stroke="hsl(210 100% 50%)" strokeWidth="2.5" />
         <text x="272" y="182" fontSize="11" fill="hsl(210 100% 50%)" fontWeight="bold">{labels.curve4 || "S₂"}</text>
 
-        {/* D₁ — original demand */}
+        {/* D₁ · original demand */}
         <line x1="60" y1="40" x2="240" y2="200" stroke="hsl(0 80% 50%)" strokeWidth="2" strokeDasharray="5" transform="rotate(0)" />
         <line x1="60" y1="200" x2="240" y2="40" stroke="hsl(0 80% 50%)" strokeWidth="2" strokeDasharray="5" />
         <text x="242" y="45" fontSize="10" fill="hsl(0 80% 50%)">{labels.curve1 || "D₁"}</text>
 
-        {/* D₂ — shifted demand RIGHT */}
+        {/* D₂ · shifted demand RIGHT */}
         <line x1="90" y1="200" x2="270" y2="40" stroke="hsl(0 80% 50%)" strokeWidth="2.5" />
         <text x="268" y="35" fontSize="11" fill="hsl(0 80% 50%)" fontWeight="bold">{labels.curve2 || "D₂"}</text>
 
-        {/* E₁ — original equilibrium (intersection of D₁ and S₁) */}
+        {/* E₁ · original equilibrium (intersection of D₁ and S₁) */}
         <circle cx="155" cy="118" r="4" fill="currentColor" />
         <text x="160" y="112" fontSize="10" fill="currentColor" fontWeight="bold">{labels.eq1 || "E₁"}</text>
 
-        {/* E₂ — new equilibrium (intersection of D₂ and S₂) — lower price, higher quantity */}
+        {/* E₂ · new equilibrium (intersection of D₂ and S₂) · lower price, higher quantity */}
         <circle cx="195" cy="108" r="5" fill="hsl(130 60% 40%)" />
         <text x="200" y="102" fontSize="10" fill="hsl(130 60% 40%)" fontWeight="bold">{labels.eq2 || "E₂"}</text>
 

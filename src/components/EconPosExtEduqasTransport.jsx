@@ -1,8 +1,8 @@
 import React from "react";
 
 /**
- * Eduqas A-Level — Positive externality of consumption (public transport).
- * Used by Paper 1 — Moderate (eduqas-p1-a) Q22 and any other Eduqas
+ * Eduqas A-Level · Positive externality of consumption (public transport).
+ * Used by Paper 1 · Moderate (eduqas-p1-a) Q22 and any other Eduqas
  * positive-consumption-externality predicted-paper questions.
  *
  * Geometry:
@@ -19,14 +19,14 @@ export default function EconPosExtEduqasTransport() {
   //   slope = (90-420)/(610-110) = -0.66 ; y = 420 - 0.66*(x-110)
   // MPB = D (red, downward, private):  from (110,180) to (610,460).
   //   slope = (460-180)/(610-110) = 0.56 ; y = 180 + 0.56*(x-110)
-  // MSB (red, parallel, shifted UP — at any x, MSB sits ABOVE MPB):
+  // MSB (red, parallel, shifted UP · at any x, MSB sits ABOVE MPB):
   //                                    from (110,110) to (610,390). y = 110 + 0.56*(x-110)
   //
   // Market eq (MSC ∩ MPB): 420 - 0.66(x-110) = 180 + 0.56(x-110)
   //   240 = 1.22(x-110) → x-110 = 196.7 → x ≈ 306.7 ; y = 180 + 0.56*196.7 ≈ 290.2
   // Social opt (MSC ∩ MSB): 420 - 0.66(x-110) = 110 + 0.56(x-110)
   //   310 = 1.22(x-110) → x-110 = 254.1 → x ≈ 364.1 ; y = 110 + 0.56*254.1 ≈ 252.3
-  // MSB at Q1 (x=306.7): y = 110 + 0.56*196.7 ≈ 220.2  (this is point A — above F)
+  // MSB at Q1 (x=306.7): y = 110 + 0.56*196.7 ≈ 220.2  (this is point A · above F)
   const Q1 = 306.7, P1 = 290.2;        // F: market equilibrium
   const Q2 = 364.1, P2 = 252.3;        // B: social optimum
   const MSBatQ1 = 220.2;               // A: MSB value at Q1 (above F)
@@ -36,7 +36,7 @@ export default function EconPosExtEduqasTransport() {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 720 540"
       role="img"
-      aria-label="Eduqas A-Level Economics — positive externality of consumption (public transport): MSC = MPC blue upward, MPB and MSB red downward with MSB above MPB, welfare loss triangle ABF between Q1 and Q2"
+      aria-label="Eduqas A-Level Economics · positive externality of consumption (public transport): MSC = MPC blue upward, MPB and MSB red downward with MSB above MPB, welfare loss triangle ABF between Q1 and Q2"
       style={{ width: "100%", height: "auto", background: "#ffffff" }}
     >
       <defs>
@@ -65,15 +65,15 @@ export default function EconPosExtEduqasTransport() {
         stroke="#7f1d1d" strokeWidth="1.1"
       />
 
-      {/* MSC = MPC = S — blue upward */}
+      {/* MSC = MPC = S · blue upward */}
       <line x1="110" y1="420" x2="610" y2="90" stroke="#2563eb" strokeWidth="2.4" />
       <text x="615" y="92" fontSize="13" fill="#2563eb" fontFamily="Arial, sans-serif" fontWeight="700">MSC = MPC</text>
 
-      {/* MPB = D — red downward (private) */}
+      {/* MPB = D · red downward (private) */}
       <line x1="110" y1="180" x2="610" y2="460" stroke="#dc2626" strokeWidth="2.4" />
       <text x="430" y="408" fontSize="13" fill="#dc2626" fontFamily="Arial, sans-serif" fontWeight="700">MPB</text>
 
-      {/* MSB — red downward, parallel, above MPB */}
+      {/* MSB · red downward, parallel, above MPB */}
       <line x1="110" y1="110" x2="610" y2="390" stroke="#dc2626" strokeWidth="2.4" />
       <text x="540" y="395" fontSize="13" fill="#dc2626" fontFamily="Arial, sans-serif" fontWeight="700">MSB</text>
 
@@ -85,7 +85,7 @@ export default function EconPosExtEduqasTransport() {
       <circle cx={Q2} cy={P2} r="5" fill="#f59e0b" stroke="#92400e" strokeWidth="1.4" />
       <text x={Q2 + 8} y={P2 - 4} fontSize="13" fill="#16a34a" fontFamily="Arial, sans-serif" fontWeight="700">B</text>
 
-      {/* A — top vertex of welfare-loss triangle (MSB at Q1) */}
+      {/* A · top vertex of welfare-loss triangle (MSB at Q1) */}
       <text x={Q1 - 4} y={MSBatQ1 - 6} fontSize="13" fill="#dc2626" fontFamily="Arial, sans-serif" fontWeight="700">A</text>
 
       {/* Dashed guides for P1, Q1 (F) */}
@@ -107,7 +107,7 @@ export default function EconPosExtEduqasTransport() {
 
       {/* Caption */}
       <text x="360" y="522" textAnchor="middle" fontSize="11" fill="#6b7280" fontFamily="Arial, sans-serif">
-        Eduqas A-Level — positive externality of consumption (public transport). MSB &gt; MPB by MEB.
+        Eduqas A-Level · positive externality of consumption (public transport). MSB &gt; MPB by MEB.
       </text>
     </svg>
   );

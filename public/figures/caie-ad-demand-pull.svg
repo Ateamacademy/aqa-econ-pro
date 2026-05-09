@@ -20,7 +20,7 @@
     </marker>
   </defs>
 
-  <text x="350" y="30" text-anchor="middle" class="ttl">UK Demand-Pull Inflation — Rising Consumer Spending</text>
+  <text x="350" y="30" text-anchor="middle" class="ttl">UK Demand-Pull Inflation · Rising Consumer Spending</text>
   <text x="350" y="50" text-anchor="middle" class="sub">Higher confidence and disposable income raise consumption (C) → AD shifts right (AD1 → AD2)</text>
 
   <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
@@ -64,5 +64,5 @@
   <text x="290" y="378" class="lbl" fill="#0d47a1">AD shifts right</text>
 
   <text x="90"  y="495" class="sub">Rising consumer spending is the largest component of AD; AD shifts right from AD1 to AD2.</text>
-  <text x="90"  y="512" class="sub">New equilibrium has higher Real GDP (Y2 &gt; Y1) AND higher price level (P2 &gt; P1) — demand-pull inflation.</text>
+  <text x="90"  y="512" class="sub">New equilibrium has higher Real GDP (Y2 &gt; Y1) AND higher price level (P2 &gt; P1) · demand-pull inflation.</text>
 </svg>

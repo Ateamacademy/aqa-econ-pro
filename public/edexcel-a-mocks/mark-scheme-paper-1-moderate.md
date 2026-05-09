@@ -1,9 +1,9 @@
 <!-- Auto-generated from /public/edexcel-a-mocks/mark-scheme-paper-1-moderate.pdf -->
 Pearson Edexcel
                                            Mark Scheme
-                               Predicted Paper — For revision purposes only
+                               Predicted Paper · For revision purposes only
                                Level 3 GCE Economics A (9EC0)
-               Paper 1: Markets and Business Behaviour — 9EC0/01 — Moderate
+               Paper 1: Markets and Business Behaviour · 9EC0/01 · Moderate
                                         Total: 100 marks
 
 General Marking Guidance
@@ -47,7 +47,7 @@ Level Descriptors
   L1          1–2         Limited knowledge; weak or missing diagram.
   L2          3–5         Sound knowledge; reasonable diagram; some application.
 
-9EC0/01 — Moderate — Mark Scheme                                                         Page 1 of 9
+9EC0/01 · Moderate · Mark Scheme                                                         Page 1 of 9
  Leve    KAA marks                                      Descriptor
    l
   L3          6–8         Accurate knowledge; correctly labelled diagram; developed chains.
@@ -79,12 +79,12 @@ Level Descriptors
   L4         9–10         Sophisticated evaluation with prioritised judgement.
 
 
-9EC0/01 — Moderate — Mark Scheme                                                       Page 2 of 9
-                                   Section A — Questions 1 to 5
-Question 1 (5 marks) — UK coffee-chain market
+9EC0/01 · Moderate · Mark Scheme                                                       Page 2 of 9
+                                   Section A · Questions 1 to 5
+Question 1 (5 marks) · UK coffee-chain market
    Q                                     Indicative content                                     Mark
                                                                                                  s
- 1(a)    Calculation — shift supply right by 5 at every price: new Qs becomes 35, 30,            4
+ 1(a)    Calculation · shift supply right by 5 at every price: new Qs becomes 35, 30,            4
          25, 20, 15 at prices £4.00, £3.50, £3.00, £2.50, £2.00 respectively (1 mark for
          correct shift).
          New equilibrium: at £2.50 new Qd = 25 = new Qs = 20; at £2.00 new Qd = 30 =
@@ -93,16 +93,16 @@ Question 1 (5 marks) — UK coffee-chain market
          Award 1 mark for method (applying the +5 shift); 1 mark for constructing a
          balanced comparison; 2 marks for valid equilibrium P and Q with working.
 
- 1(b)    Answer: C — relatively elastic (1).                                                     1
+ 1(b)    Answer: C · relatively elastic (1).                                                     1
          Justification (for examiner reference): using the £3.00 equilibrium, a fall in price
          to £2.50 (−16.7%) raises Qd from 20 to 25 cups (+25%). PED ≈ 25 / −16.7 =
          −1.5 (magnitude > 1, so relatively elastic). Equivalent calculations between any
-         adjacent rows give |PED| between about 1.2 and 2.3 — all comfortably > 1.
+         adjacent rows give |PED| between about 1.2 and 2.3 · all comfortably > 1.
          Award the mark for C. Accept B (relatively inelastic) only if the candidate
          presents a valid alternative calculation supporting it.
 
 
-Question 2 (5 marks) — YED for takeaway food and drink
+Question 2 (5 marks) · YED for takeaway food and drink
    Q                                     Indicative content                                     Mark
                                                                                                  s
  2(a)    Method: YED = % change in Q demanded ÷ % change in income (1).                          2
@@ -115,12 +115,12 @@ Question 2 (5 marks) — YED for takeaway food and drink
          × 100 = 22.2% (accept 22% or 22.22%).
          1 mark for correct method; 1 mark for correct numerical answer with unit (%).
 
- 2(c)    Answer: B — a luxury normal good. With YED > +1 and positive, takeaway                  1
+ 2(c)    Answer: B · a luxury normal good. With YED > +1 and positive, takeaway                  1
          food and drink is a normal good that is also income-elastic, consistent with the
          characterisation of a luxury.
 
 
-Question 3 (5 marks) — Sugary soft drinks tax
+Question 3 (5 marks) · Sugary soft drinks tax
    Q                                     Indicative content                                     Mark
                                                                                                  s
  3(a)    Read from Figure: post-tax quantity = 3.6 bn litres; tax = £0.18 per litre.             2
@@ -132,22 +132,22 @@ Question 3 (5 marks) — Sugary soft drinks tax
   (i)    0.18 × 100 = 66.7% (accept 66–67%).
 
 
-9EC0/01 — Moderate — Mark Scheme                                                           Page 3 of 9
+9EC0/01 · Moderate · Mark Scheme                                                           Page 3 of 9
    Q                                    Indicative content                                      Mark
                                                                                                  s
  3(b)    Producer share = 100 − 66.7 = 33.3% (accept 33–34%). Equivalent: producer                1
   (ii)   receives £1.14 per litre, so burden per litre = £1.20 − £1.14 = £0.06; 0.06 / 0.18
          × 100 = 33.3%.
 
- 3(c)    Answer: B — internalise a negative externality. The tax raises private marginal          1
+ 3(c)    Answer: B · internalise a negative externality. The tax raises private marginal          1
          cost toward social marginal cost, reducing the over-consumption of sugar
          associated with the external health costs.
-         Distractors: A — tax reduces, not raises, producer surplus; C — tax reduces
-         consumer surplus by raising price; D — sugary soft drinks generate a negative,
+         Distractors: A · tax reduces, not raises, producer surplus; C · tax reduces
+         consumer surplus by raising price; D · sugary soft drinks generate a negative,
          not positive, externality.
 
 
-Question 4 (5 marks) — Tesco own-brand bread price cut
+Question 4 (5 marks) · Tesco own-brand bread price cut
    Q                                    Indicative content                                      Mark
                                                                                                  s
  4(a)    Diagram: downward-sloping AR and MR; U-shaped AC and MC. Label axes                      4
@@ -159,7 +159,7 @@ Question 4 (5 marks) — Tesco own-brand bread price cut
          perfectly competitive representative firms provided the diagram is consistent
          and fully labelled.
 
- 4(b)    Answer: B — large capital start-up costs. Building a national chain of large-            1
+ 4(b)    Answer: B · large capital start-up costs. Building a national chain of large-            1
          format stores, distribution centres and supply-chain infrastructure requires very
          substantial capital, deterring entry.
          Distractors: A copyright and C patent protection are more relevant to creative
@@ -167,10 +167,10 @@ Question 4 (5 marks) — Tesco own-brand bread price cut
          all firms equally and is therefore not a barrier to entry specific to supermarkets.
 
 
-Question 5 (5 marks) — Streaming content subsidy
+Question 5 (5 marks) · Streaming content subsidy
    Q                                    Indicative content                                      Mark
                                                                                                  s
- 5(a)    Answer: C — Annual studio rental. Rent on studio premises is contractually               1
+ 5(a)    Answer: C · Annual studio rental. Rent on studio premises is contractually               1
          fixed for the period and does not vary with hours of content produced or
          number of subscribers.
          Distractors: A royalty payments per stream rise with streams consumed
@@ -187,13 +187,13 @@ Question 5 (5 marks) — Streaming content subsidy
          1 mark for method (× 2% then ÷ 250), 1 mark for correct numerical answer.
 
 
-9EC0/01 — Moderate — Mark Scheme                                                            Page 4 of 9
-9EC0/01 — Moderate — Mark Scheme   Page 5 of 9
-                   Section B — Question 6: UK coffee-shop sector
-6(a) — Explain one likely feature of market structure (5 marks)
+9EC0/01 · Moderate · Mark Scheme                                                            Page 4 of 9
+9EC0/01 · Moderate · Mark Scheme   Page 5 of 9
+                   Section B · Question 6: UK coffee-shop sector
+6(a) · Explain one likely feature of market structure (5 marks)
 Indicative content (KAA 4 / Eval 1):
 From Figure 1, top 3 chains (Costa 36.0 + Starbucks 22.5 + Caffè Nero 14.1) have a three-firm
-concentration ratio of 72.6% — clearly an oligopolistic market (2). Large number of smaller
+concentration ratio of 72.6% · clearly an oligopolistic market (2). Large number of smaller
 independents (Extract B) and substantial product differentiation (brand, loyalty apps, premium
 ranges in Extract A) support the characterisation as differentiated oligopoly/monopolistic
 competition at the edges (2).
@@ -201,7 +201,7 @@ Evaluation (1): judgement that branded segment is oligopolistic but the wider UK
 including 6,200 independents, is better described as differentiated oligopoly with a competitive
 fringe.
 
-6(b) — Reasons for the rise in coffee-shop prices, 2020–2025 (12 marks)
+6(b) · Reasons for the rise in coffee-shop prices, 2020–2025 (12 marks)
 Diagram required: cost and revenue diagram showing AC and MC shifting upwards, price rising
 from P₁ to P₂ and output falling from Q₁ to Q₂.
 
@@ -211,13 +211,13 @@ from P₁ to P₂ and output falling from Q₁ to Q₂.
    A); dairy +19%; these raise MC and AC.            competitive sub-markets; discounters like
  • Wage-push: NLW +9.8% (Apr 2024) +6.7%             Greggs may undercut.
    (Apr 2025); labour is a major share of          • Branded chains enjoy loyalty and brand
-   coffee-shop operating costs (~30%).               power — can pass through more of the
+   coffee-shop operating costs (~30%).               power · can pass through more of the
  • Cappuccino price rose from £2.70 → £3.55,         cost rise than independents.
-   a 31% rise (Figure 2) — broadly consistent      • PED for coffee in chains is likely relatively
+   a 31% rise (Figure 2) · broadly consistent      • PED for coffee in chains is likely relatively
    with input-cost pass-through.                     inelastic in the short run (habit,
  • Diagram: AC and MC shift up, new profit-          convenience), enabling price rises.
    max price P₂ higher, Q₂ lower.                  • Part of the price rise may reflect higher
-   Supernormal profit rectangle compressed.          mark-ups, not costs alone — 2024 industry
+   Supernormal profit rectangle compressed.          mark-ups, not costs alone · 2024 industry
  • Demand-side: recovery in city-centre              revenue up 6%.
    footfall after 2022; consumer willingness to    • Judgement: the rise is primarily cost-driven,
    pay for premium ranges and ethical                but sustained pass-through is only possible
@@ -225,23 +225,23 @@ from P₁ to P₂ and output falling from Q₁ to Q₂.
                                                      demand let chains protect margins.
 
 
-6(c) — How independents can compete against national chains (8 marks)
+6(c) · How independents can compete against national chains (8 marks)
 Indicative content (KAA 5 / Eval 3).
 Accept one fully developed factor, e.g.:
-1. Product differentiation — speciality beans, single-origin, latte art, local atmosphere (Extract B).
+1. Product differentiation · speciality beans, single-origin, latte art, local atmosphere (Extract B).
 Chain: creates monopolistic-competition-style price-making power based on differentiation; allows
 a local price premium (2–3).
-2. Niche/segmented pricing and community focus — 38% of 18–34s prefer independents (Extract
+2. Niche/segmented pricing and community focus · 38% of 18–34s prefer independents (Extract
 B). Chain: reduces direct price competition with Costa; builds loyal repeat footfall (2–3).
-3. Lower fixed overheads than chains (small sites, no national marketing) — relevant when cost
+3. Lower fixed overheads than chains (small sites, no national marketing) · relevant when cost
 curves shift up industry-wide (2).
 Evaluation (3): can't match bulk-purchasing or marketing scale; vulnerable when input costs rise
 sharply (Extract A); dependent on local demographic mix; works better in some city-centre
 postcodes than others. Judgement that independents survive in niches rather than compete head-
 on.
 
-9EC0/01 — Moderate — Mark Scheme                                                          Page 6 of 9
-6(d) — Assess effect on consumers of Caffè Nero / Pret merger (10 marks)
+9EC0/01 · Moderate · Mark Scheme                                                          Page 6 of 9
+6(d) · Assess effect on consumers of Caffè Nero / Pret merger (10 marks)
             KAA (AO1 + AO2 + AO3)                               Evaluation (AO4)
 
  • Merger raises combined share to 24% →          • Possible dynamic efficiency gains: merged
@@ -249,20 +249,20 @@ on.
    branded market (up from current ~37% +           sourcing, app improvements.
    14.1% + 10.3% = fragmented top 4).             • Productive efficiency: economies of scale in
  • Horizontal integration removes a direct          procurement, logistics, marketing.
-   competitor in high-street locations.           • Costa remains the clear market leader —
+   competitor in high-street locations.           • Costa remains the clear market leader ·
  • Risk of higher prices and reduced product        merged firm is still the #2, so market not
    variety, especially where outlets previously     monopolised.
    overlapped.                                    • 6,000+ independents and Greggs provide
- • Potentially reduced consumer surplus —           credible competitive fringe.
+ • Potentially reduced consumer surplus ·           credible competitive fringe.
    fewer credible alternatives in some            • Judgement: effect on consumers likely
-   postcodes.                                       mixed — local detriment in overlapping
+   postcodes.                                       mixed · local detriment in overlapping
  • CMA identified local-market effects as the       high streets; national benefits depend on
    primary concern (Extract C).                     whether efficiency gains are passed
                                                     through; outcome turns on CMA remedies
                                                     (e.g. divestment of overlapping outlets).
 
 
-6(e) — Discuss consequences of a price cap on coffee at chains (15 marks)
+6(e) · Discuss consequences of a price cap on coffee at chains (15 marks)
             KAA (AO1 + AO2 + AO3)                               Evaluation (AO4)
 
  • Diagram: in a monopolistically                 • Allocative efficiency gains vs. dynamic
@@ -271,7 +271,7 @@ on.
    and raises Q towards allocative efficiency     • Government failure risk: regulatory capture,
    (where P = MC), raising consumer surplus.        cap set at wrong level, enforcement costs.
  • If cap is set below AC, firms make losses,     • Alternatives likely more effective:
-    close outlets, reduce range — static            competition policy, reducing entry barriers,
+    close outlets, reduce range · static            competition policy, reducing entry barriers,
     losses.                                         tax/subsidy instruments.
  • Potential shortages and queuing if cap         • Likely unintended consequences:
    below market-clearing level.                     shrinkflation (smaller cup sizes), rising
@@ -287,24 +287,24 @@ on.
                                                     sugar/fat rather than price control).
 
 
-9EC0/01 — Moderate — Mark Scheme                                                        Page 7 of 9
-                 Section C — Question 7 OR Question 8 (25 marks)
-Question 7 — £5 per pack sin tax on disposable vapes (25 marks)
+9EC0/01 · Moderate · Mark Scheme                                                        Page 7 of 9
+                 Section C · Question 7 OR Question 8 (25 marks)
+Question 7 · £5 per pack sin tax on disposable vapes (25 marks)
 Indicative content (KAA 15, Evaluation 10).
 
             KAA (AO1 + AO2 + AO3)                               Evaluation (AO4)
 
- • Concept of indirect/Pigouvian tax —            • Effectiveness depends on PED — literature
+ • Concept of indirect/Pigouvian tax ·            • Effectiveness depends on PED · literature
    internalises negative externality of under-      suggests teen nicotine demand is relatively
    age vaping (health costs, NHS burden).           elastic (−0.8 to −1.2).
  • Diagram: S shifts left by £5 per pack; new     • £5 per pack is large relative to typical £6–
-   equilibrium has higher P, lower Q;               £12 retail prices — highly likely to reduce
+   equilibrium has higher P, lower Q;               £12 retail prices · highly likely to reduce
    incidence depends on PED.                        demand.
  • Tax revenue = £5 × quantity sold (show         • Information failures remain: warning labels
    triangle for deadweight loss).                    and advertising bans may be more
- • Targets young people specifically — PED           effective long-run.
+ • Targets young people specifically · PED           effective long-run.
    likely relatively elastic for teens (income-   • Regressive impact on adult ex-smokers
-   constrained, price-sensitive).                   who use vapes as cessation aid —
+   constrained, price-sensitive).                   who use vapes as cessation aid ·
  • Substitution effects: may shift users to         distributional concern.
    refillable vapes (intended) or tobacco         • Risk of smuggling/illicit market with high tax
    cigarettes (unintended).                         rate (see Sweden snus example, UK
@@ -318,7 +318,7 @@ Indicative content (KAA 15, Evaluation 10).
                                                     quality.
 
 
-Question 8 — 'Small firms can never compete effectively' (25 marks)
+Question 8 · 'Small firms can never compete effectively' (25 marks)
 Indicative content (KAA 15, Evaluation 10). Accept any named industry.
 
             KAA (AO1 + AO2 + AO3)                               Evaluation (AO4)
@@ -331,18 +331,18 @@ Indicative content (KAA 15, Evaluation 10). Accept any named industry.
    succeeded as a very large discounter, not        (Shopify, Etsy, Amazon FBA, social-media
    a small entrant); big-tech network effects.      marketing).
  • Minimum efficient scale may lie above          • Monopolistic competition in many
-   small-firm output — unit costs stuck higher      consumer markets allows niche,
+   small-firm output · unit costs stuck higher      consumer markets allows niche,
    than incumbents.                                 differentiated small firms to earn normal
  • Access to finance, distribution, and             profit.
    advertising channels often favour              • Government policy (small-business tax
    incumbents.                                      reliefs, R&D credits) supports entry.
  • Diagram: L-shaped long-run AC; small           • Product differentiation is sometimes more
-   firms sit to the left of MES, paying higher      valuable than scale — consumer
+   firms sit to the left of MES, paying higher      valuable than scale · consumer
    unit costs.                                      willingness to pay for authenticity.
                                                   • Judgement: statement overgeneralises. In
 
 
-9EC0/01 — Moderate — Mark Scheme                                                         Page 8 of 9
+9EC0/01 · Moderate · Mark Scheme                                                         Page 8 of 9
             KAA (AO1 + AO2 + AO3)                            Evaluation (AO4)
 
                                                  scale-intensive industries (supermarkets,
@@ -358,4 +358,4 @@ Indicative content (KAA 15, Evaluation 10). Accept any named industry.
                                    TOTAL FOR PAPER = 100 MARKS
 
 
-9EC0/01 — Moderate — Mark Scheme                                                     Page 9 of 9
+9EC0/01 · Moderate · Mark Scheme                                                     Page 9 of 9

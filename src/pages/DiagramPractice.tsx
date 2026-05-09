@@ -97,57 +97,57 @@ const DiagramAnalyticsDashboard = lazy(() =>
 
 const DIAGRAM_TOPICS: Record<string, string[]> = {
   economics: [
-    "Supply & Demand — Shift in Demand",
-    "Supply & Demand — Shift in Supply",
+    "Supply & Demand · Shift in Demand",
+    "Supply & Demand · Shift in Supply",
     "Indirect Tax (Ad Valorem / Specific)",
     "Subsidy on a Good",
     "Negative Externality (Overconsumption / Overproduction)",
     "Positive Externality (Underconsumption / Underproduction)",
     "Maximum Price (Price Ceiling)",
     "Minimum Price (Price Floor)",
-    "AD/AS — Demand-Side Shock",
-    "AD/AS — Supply-Side Shock",
-    "AD/AS — Economic Growth (LRAS Shift)",
-    "Keynesian AS — Spare Capacity vs Full Employment",
-    "Labour Market — Wage Determination",
-    "Monopoly — Profit Maximisation (MC=MR)",
-    "Perfect Competition — Short Run & Long Run",
+    "AD/AS · Demand-Side Shock",
+    "AD/AS · Supply-Side Shock",
+    "AD/AS · Economic Growth (LRAS Shift)",
+    "Keynesian AS · Spare Capacity vs Full Employment",
+    "Labour Market · Wage Determination",
+    "Monopoly · Profit Maximisation (MC=MR)",
+    "Perfect Competition · Short Run & Long Run",
   ],
   "edexcel-a": [
     // Section 1: PPFs, Markets and Allocation
-    "PPF — Balanced Growth / Biased Growth / Unemployed Resources",
-    "PPF — Natural Disaster",
-    "Supply & Demand — Market Equilibrium Change",
-    "Supply & Demand — Multiple Shifts",
+    "PPF · Balanced Growth / Biased Growth / Unemployed Resources",
+    "PPF · Natural Disaster",
+    "Supply & Demand · Market Equilibrium Change",
+    "Supply & Demand · Multiple Shifts",
     // Section 1.5: Elasticity & Revenue
-    "PED — Revenue Impact",
+    "PED · Revenue Impact",
     "Indirect Tax & Subsidy",
     // Section 2: Market Failure
     "Negative / Positive Externality (Welfare Loss)",
     "Negative Production Externality (MSC > MPC)",
-    "Sugar Tax — Welfare Analysis",
+    "Sugar Tax · Welfare Analysis",
     // Section 3: Costs & Economies of Scale
     "Short-Run Cost Curves (MC, ATC, AVC)",
     "Long-Run Average Cost (Economies & Diseconomies of Scale)",
     "Short-Run Shutdown Point (P = min AVC)",
     // Section 4: Revenues, Profits & Other Objectives
-    "Monopoly — Supernormal Profit (MC = MR)",
-    "Competition vs Monopoly — Consumer Surplus",
-    "Perfect Competition — Short Run & Long Run Equilibrium",
-    "Monopolistic Competition — Normal Profit / Excess Capacity",
+    "Monopoly · Supernormal Profit (MC = MR)",
+    "Competition vs Monopoly · Consumer Surplus",
+    "Perfect Competition · Short Run & Long Run Equilibrium",
+    "Monopolistic Competition · Normal Profit / Excess Capacity",
     // Section 5: Market Structures
-    "Oligopoly — Kinked Demand Curve",
-    "Oligopoly — Game Theory / Payoff Matrix",
+    "Oligopoly · Kinked Demand Curve",
+    "Oligopoly · Game Theory / Payoff Matrix",
     // Section 6: Labour Market
-    "Labour Market — Minimum Wage",
-    "Labour Market — Monopsony",
+    "Labour Market · Minimum Wage",
+    "Labour Market · Monopsony",
     // Macro Section 1: National Income
-    "AD/AS — Demand-Pull Inflation",
-    "AD/AS — Cost-Push Inflation",
-    "AD/AS — Supply-Side Policy Effect",
-    "Keynesian AS — Spare Capacity vs Full Employment",
+    "AD/AS · Demand-Pull Inflation",
+    "AD/AS · Cost-Push Inflation",
+    "AD/AS · Supply-Side Policy Effect",
+    "Keynesian AS · Spare Capacity vs Full Employment",
     // Macro Section 2: Macro Objectives
-    "Phillips Curve — Short Run vs Long Run",
+    "Phillips Curve · Short Run vs Long Run",
     "Lorenz Curve & Gini Coefficient",
     // Macro Section 3: Financial Markets
     "Monetary Policy Transmission Mechanism (Flowchart)",
@@ -156,138 +156,138 @@ const DIAGRAM_TOPICS: Record<string, string[]> = {
     "Fiscal Policy Transmission Mechanism (Flowchart)",
     "Multiplier Effect (Flowchart)",
     // Macro Section 5: International Economy
-    "Trade Diagram — Effect of Import Quota / Tariff",
+    "Trade Diagram · Effect of Import Quota / Tariff",
     "Terms of Trade",
     "J-Curve Effect (Balance of Payments)",
     // Macro Section 6: Inequality & Development
     "Harrod-Domar Growth Model (Flowchart)",
-    "Primary Product Dependency — Volatile Prices",
+    "Primary Product Dependency · Volatile Prices",
   ],
   "edexcel-b": [
-    "Supply & Demand — Price Mechanism",
-    "Market Failure — Externalities",
-    "AD/AS — Macroeconomic Equilibrium",
-    "AD/AS — Fiscal Policy Effect",
-    "Cost & Revenue Curves — Profit Maximisation",
-    "Market Structures — Monopoly vs Perfect Competition",
-    "Labour Market — Trade Union Effect",
+    "Supply & Demand · Price Mechanism",
+    "Market Failure · Externalities",
+    "AD/AS · Macroeconomic Equilibrium",
+    "AD/AS · Fiscal Policy Effect",
+    "Cost & Revenue Curves · Profit Maximisation",
+    "Market Structures · Monopoly vs Perfect Competition",
+    "Labour Market · Trade Union Effect",
     "Phillips Curve",
     "Lorenz Curve & Gini Coefficient",
   ],
   ocr: [
-    "Supply & Demand — Market Equilibrium",
-    "Indirect Tax — Incidence on Consumers & Producers",
-    "Negative Externality — Welfare Loss Triangle",
-    "Positive Externality — Welfare Gain",
-    "AD/AS — Demand-Pull Inflation",
-    "AD/AS — Cost-Push Inflation",
-    "AD/AS — Supply-Side Policy",
-    "Monopoly — Abnormal Profit",
-    "Contestable Markets — Hit-and-Run Entry",
-    "Labour Market — Monopsony",
-    "Phillips Curve — Short Run vs Long Run",
+    "Supply & Demand · Market Equilibrium",
+    "Indirect Tax · Incidence on Consumers & Producers",
+    "Negative Externality · Welfare Loss Triangle",
+    "Positive Externality · Welfare Gain",
+    "AD/AS · Demand-Pull Inflation",
+    "AD/AS · Cost-Push Inflation",
+    "AD/AS · Supply-Side Policy",
+    "Monopoly · Abnormal Profit",
+    "Contestable Markets · Hit-and-Run Entry",
+    "Labour Market · Monopsony",
+    "Phillips Curve · Short Run vs Long Run",
     "Comparative Advantage & Terms of Trade",
   ],
   cambridge: [
-    "Supply & Demand — Market Equilibrium",
-    "Price Elasticity of Demand — Effect on Revenue",
-    "Indirect Tax — Consumer vs Producer Burden",
-    "Negative Externality — MSC vs MPC",
-    "Positive Externality — MSB vs MPB",
-    "AD/AS — Inflationary / Deflationary Gap",
-    "Keynesian AS — Horizontal, Upward Sloping, Vertical Sections",
-    "Monopoly — Price Discrimination",
-    "Oligopoly — Kinked Demand Curve",
-    "Perfect Competition — Long Run Equilibrium",
-    "Labour Market — Bilateral Monopoly",
-    "Comparative Advantage — PPC Approach",
-    "The Multiplier — AD Shift",
-    "Marshall-Lerner Condition — J-Curve",
+    "Supply & Demand · Market Equilibrium",
+    "Price Elasticity of Demand · Effect on Revenue",
+    "Indirect Tax · Consumer vs Producer Burden",
+    "Negative Externality · MSC vs MPC",
+    "Positive Externality · MSB vs MPB",
+    "AD/AS · Inflationary / Deflationary Gap",
+    "Keynesian AS · Horizontal, Upward Sloping, Vertical Sections",
+    "Monopoly · Price Discrimination",
+    "Oligopoly · Kinked Demand Curve",
+    "Perfect Competition · Long Run Equilibrium",
+    "Labour Market · Bilateral Monopoly",
+    "Comparative Advantage · PPC Approach",
+    "The Multiplier · AD Shift",
+    "Marshall-Lerner Condition · J-Curve",
   ],
   eduqas: [
     // Foundation (4 marks)
-    "Supply & Demand — Shift in Demand",
-    "Supply & Demand — Shift in Supply",
-    "AD/AS — Demand Shock",
-    "AD/AS — Supply Shock",
-    "AD/AS — Long-Run Growth",
-    "Labour Market — Wage Determination",
+    "Supply & Demand · Shift in Demand",
+    "Supply & Demand · Shift in Supply",
+    "AD/AS · Demand Shock",
+    "AD/AS · Supply Shock",
+    "AD/AS · Long-Run Growth",
+    "Labour Market · Wage Determination",
     // Intermediate (6 marks)
     "Subsidy on a Good",
-    "Negative Externality — Overconsumption",
-    "Positive Externality — Underconsumption",
+    "Negative Externality · Overconsumption",
+    "Positive Externality · Underconsumption",
     "Maximum Price (Price Ceiling)",
     "Minimum Price (Price Floor)",
-    "Keynesian AS — Spare Capacity vs Full Employment",
-    "Monopoly — Profit Maximisation (MC=MR)",
-    "Perfect Competition — Short Run & Long Run",
+    "Keynesian AS · Spare Capacity vs Full Employment",
+    "Monopoly · Profit Maximisation (MC=MR)",
+    "Perfect Competition · Short Run & Long Run",
     // Advanced (8 marks)
     "Indirect Tax (Ad Valorem / Specific)",
   ],
   "aqa-gcse": [
-    // Foundation (4 marks) — generic topics inferred by difficulty engine
-    "Supply & Demand — Shift in Demand",
-    "Supply & Demand — Shift in Supply",
-    "AD/AS — Demand-Side Shock",
-    "AD/AS — Supply-Side Shock",
-    "AD/AS — Economic Growth (LRAS Shift)",
-    "Labour Market — Wage Determination",
+    // Foundation (4 marks) · generic topics inferred by difficulty engine
+    "Supply & Demand · Shift in Demand",
+    "Supply & Demand · Shift in Supply",
+    "AD/AS · Demand-Side Shock",
+    "AD/AS · Supply-Side Shock",
+    "AD/AS · Economic Growth (LRAS Shift)",
+    "Labour Market · Wage Determination",
     // Higher (9 marks)
     "Indirect Tax (Ad Valorem / Specific)",
   ],
   "cambridge-igcse": [
     // Foundation (4 marks)
-    "Supply & Demand — Shift in Demand",
-    "Supply & Demand — Shift in Supply",
-    "AD/AS — Demand-Side Shock",
-    "AD/AS — Supply-Side Shock",
-    "AD/AS — Economic Growth (LRAS Shift)",
-    "Labour Market — Wage Determination",
+    "Supply & Demand · Shift in Demand",
+    "Supply & Demand · Shift in Supply",
+    "AD/AS · Demand-Side Shock",
+    "AD/AS · Supply-Side Shock",
+    "AD/AS · Economic Growth (LRAS Shift)",
+    "Labour Market · Wage Determination",
     // Higher (6 marks)
-    "Government Intervention — Indirect Tax",
-    "Market Failure — Negative Externality",
-    "Market Failure — Positive Externality",
-    "Market Structure — Perfect Competition",
-    "Market Structure — Price Discrimination",
-    "Elasticity — PED and Revenue",
+    "Government Intervention · Indirect Tax",
+    "Market Failure · Negative Externality",
+    "Market Failure · Positive Externality",
+    "Market Structure · Perfect Competition",
+    "Market Structure · Price Discrimination",
+    "Elasticity · PED and Revenue",
   ],
   "edexcel-igcse": [
     // Foundation (4 marks)
-    "Supply & Demand — Shift in Demand",
-    "Supply & Demand — Shift in Supply",
-    "AD/AS — Demand-Side Shock",
-    "AD/AS — Supply-Side Shock",
-    "AD/AS — Economic Growth (LRAS Shift)",
-    "Labour Market — Wage Determination",
+    "Supply & Demand · Shift in Demand",
+    "Supply & Demand · Shift in Supply",
+    "AD/AS · Demand-Side Shock",
+    "AD/AS · Supply-Side Shock",
+    "AD/AS · Economic Growth (LRAS Shift)",
+    "Labour Market · Wage Determination",
     // Higher only (6 marks)
-    "Government Intervention — Maximum Price",
-    "Government Intervention — Subsidy",
-    "Government Intervention — Indirect Tax",
-    "Market Failure — Positive Externality",
-    "Market Failure — Negative Externality",
-    "AD/AS — Keynesian vs Classical",
-    "Supply & Demand — Price Volatility",
-    "Labour Market — Monopsony Power",
-    "Elasticity — PED and Revenue",
+    "Government Intervention · Maximum Price",
+    "Government Intervention · Subsidy",
+    "Government Intervention · Indirect Tax",
+    "Market Failure · Positive Externality",
+    "Market Failure · Negative Externality",
+    "AD/AS · Keynesian vs Classical",
+    "Supply & Demand · Price Volatility",
+    "Labour Market · Monopsony Power",
+    "Elasticity · PED and Revenue",
   ],
   "ocr-gcse": [
     // Foundation (4 marks)
-    "Supply & Demand — Shift in Demand",
-    "Supply & Demand — Shift in Supply",
-    "AD/AS — Demand-Side Shock",
-    "AD/AS — Supply-Side Shock",
-    "AD/AS — Economic Growth (LRAS Shift)",
-    "Labour Market — Wage Determination",
+    "Supply & Demand · Shift in Demand",
+    "Supply & Demand · Shift in Supply",
+    "AD/AS · Demand-Side Shock",
+    "AD/AS · Supply-Side Shock",
+    "AD/AS · Economic Growth (LRAS Shift)",
+    "Labour Market · Wage Determination",
     // Higher (6 marks)
-    "Government Intervention — Indirect Tax",
-    "Market Failure — Negative Externality",
-    "Government Intervention — Maximum Price",
-    "Market Failure — Positive Externality",
-    "AD/AS — Keynesian AS Curve",
-    "Elasticity — PED and Revenue",
-    "Government Intervention — Subsidy",
-    "Supply & Demand — Price Volatility",
-    "Labour Market — Monopsony Power",
+    "Government Intervention · Indirect Tax",
+    "Market Failure · Negative Externality",
+    "Government Intervention · Maximum Price",
+    "Market Failure · Positive Externality",
+    "AD/AS · Keynesian AS Curve",
+    "Elasticity · PED and Revenue",
+    "Government Intervention · Subsidy",
+    "Supply & Demand · Price Volatility",
+    "Labour Market · Monopsony Power",
   ],
 };
 
@@ -940,10 +940,10 @@ export default function DiagramPractice() {
 
     if (isLorenzTopic) {
       FIGURE_CONTENT_GUIDANCE = `
-FIGURE CONTENT GUIDANCE (CRITICAL — Lorenz Curve topic detected):
+FIGURE CONTENT GUIDANCE (CRITICAL · Lorenz Curve topic detected):
 You MUST include exactly ONE Figure 1 block describing a LORENZ CURVE diagram. Do NOT describe supply/demand or any other diagram type.
 
-**Figure 1: Lorenz Curve — Income Distribution**
+**Figure 1: Lorenz Curve · Income Distribution**
 - Vertical axis: Cumulative % of Income
 - Horizontal axis: Cumulative % of Population (Poorest to Richest)
 - Line of Perfect Equality: 45-degree straight line from origin to (100,100)
@@ -957,14 +957,14 @@ If the question involves comparing two countries, describe TWO Lorenz curves: Co
 Do NOT mention supply, demand, tax, welfare loss, MC, MR, AC, or any micro/macro diagram.`;
     } else if (isYEDTopic) {
       FIGURE_CONTENT_GUIDANCE = `
-FIGURE CONTENT GUIDANCE (CRITICAL — YED topic detected):
+FIGURE CONTENT GUIDANCE (CRITICAL · YED topic detected):
 You MUST include exactly ONE Figure 1 block describing a YED (Income Elasticity of Demand) diagram.
 
 **Figure 1: YED for a Normal Good and a Luxury Good**
 - Vertical axis: Average Income (£) Week
 - Horizontal axis: Quantity
-- Curve 1: "Demand for Normal Good YED>0" — upward-sloping, STEEP (quantity rises less than proportionally with income)
-- Curve 2: "Demand for Luxury Good YED>1" — upward-sloping, FLATTER (quantity rises more than proportionally with income)
+- Curve 1: "Demand for Normal Good YED>0" · upward-sloping, STEEP (quantity rises less than proportionally with income)
+- Curve 2: "Demand for Luxury Good YED>1" · upward-sloping, FLATTER (quantity rises more than proportionally with income)
 - Mark two income levels (e.g. 550, 800) and two quantity levels (e.g. 850, 950) with dashed projections
 - Both curves intersect or cross near the lower income level
 - At the higher income level, the luxury good curve shows a larger quantity increase
@@ -973,14 +973,14 @@ Source: Hypothetical scenario for exam practice
 Do NOT draw supply and demand curves. This is an Engel curve / income-quantity diagram.`;
     } else if (isXEDTopic) {
       FIGURE_CONTENT_GUIDANCE = `
-FIGURE CONTENT GUIDANCE (CRITICAL — XED / Cross Elasticity topic detected):
+FIGURE CONTENT GUIDANCE (CRITICAL · XED / Cross Elasticity topic detected):
 You MUST include exactly ONE Figure 1 block describing a Cross-Price Elasticity of Demand diagram.
 
 **Figure 1: Cross-Price Elasticity of Demand**
 - Vertical axis: Price of Good Y
 - Horizontal axis: Quantity of Good X
-- Curve 1: "Positive Cross Price Elasticity (substitutes)" — upward-sloping from bottom-left to top-right (red)
-- Curve 2: "Negative Cross Price Elasticity (complements)" — downward-sloping from top-left to bottom-right (blue)
+- Curve 1: "Positive Cross Price Elasticity (substitutes)" · upward-sloping from bottom-left to top-right (red)
+- Curve 2: "Negative Cross Price Elasticity (complements)" · downward-sloping from top-left to bottom-right (blue)
 - Mark two price levels: Py1 (lower) and Py2 (higher)
 - Mark two quantity levels: Qx1 and Qx2
 - Dashed projections from (Qx1, Py1) and (Qx2, Py2)
@@ -992,12 +992,12 @@ Source: Hypothetical scenario for exam practice
 Do NOT draw standard supply and demand curves.`;
     } else if (isPhillipsTopic) {
       FIGURE_CONTENT_GUIDANCE = `
-FIGURE CONTENT GUIDANCE (CRITICAL — Phillips Curve topic detected):
+FIGURE CONTENT GUIDANCE (CRITICAL · Phillips Curve topic detected):
 You MUST include exactly ONE Figure 1 block describing a DUAL-PANEL Phillips Curve diagram.
 
 **Figure 1: Phillips Curve Short/Long Run**
 
-Diagram A — AD/AS:
+Diagram A · AD/AS:
 - Vertical axis: PL (Price Level)
 - Horizontal axis: Real GDP
 - LRAS₁: vertical line at YFe (full employment output)
@@ -1007,29 +1007,29 @@ Diagram A — AD/AS:
 - AD₂: shifted right (expansionary policy)
 - Equilibria: Pe at (YFe, Pe), then P2 at (Y2, P2), then P3 at (YFe, P3)
 
-Diagram B — Phillips Curve:
+Diagram B · Phillips Curve:
 - Vertical axis: Inflation (%)
 - Horizontal axis: Unemployment (%)
 - LRPC₁: vertical at natural rate (e.g. 5%)
 - SRPC₁: downward-sloping short-run Phillips Curve
 - SRPC₂: shifted upward (higher inflation expectations)
-- Point A: (5%, 3%) — initial equilibrium on SRPC₁
-- Point B: (3%, 4%) — movement along SRPC₁ (lower unemployment, higher inflation)
-- Point C: (5%, 5%) — long-run adjustment on SRPC₂ (unemployment returns to natural rate)
+- Point A: (5%, 3%) · initial equilibrium on SRPC₁
+- Point B: (3%, 4%) · movement along SRPC₁ (lower unemployment, higher inflation)
+- Point C: (5%, 5%) · long-run adjustment on SRPC₂ (unemployment returns to natural rate)
 Source: Hypothetical scenario for exam practice
 
 Show BOTH diagrams side by side. The AD/AS diagram explains WHY the Phillips Curve shifts.`;
     } else if (isNegExtProd || isSugarTax) {
       FIGURE_CONTENT_GUIDANCE = `
-FIGURE CONTENT GUIDANCE (CRITICAL — Negative Externality of Production topic detected):
+FIGURE CONTENT GUIDANCE (CRITICAL · Negative Externality of Production topic detected):
 You MUST include exactly ONE Figure 1 block describing a negative production externality diagram.
 
 **Figure 1: Negative Externality of Production**
 - Vertical axis: MC/MB ($) or P
 - Horizontal axis: Quantity
-- Curve 1: MSC (Social Marginal Cost) — upward-sloping, ABOVE the supply curve (steeper)
-- Curve 2: S = MPC (Private Marginal Cost) — upward-sloping supply curve
-- Curve 3: D = MPB = MSB — downward-sloping demand curve
+- Curve 1: MSC (Social Marginal Cost) · upward-sloping, ABOVE the supply curve (steeper)
+- Curve 2: S = MPC (Private Marginal Cost) · upward-sloping supply curve
+- Curve 3: D = MPB = MSB · downward-sloping demand curve
 - The vertical gap between MSC and MPC = "Negative externality per unit"
 - Private equilibrium at Qp, Pp (where MPC = MPB)
 - Social optimum at Qs, Ps (where MSC = MSB), with Qs < Qp and Ps > Pp
@@ -1039,7 +1039,7 @@ Source: Hypothetical scenario for exam practice
 Do NOT draw an indirect tax wedge diagram. This is an externality diagram with MSC above MPC.`;
     } else {
       FIGURE_CONTENT_GUIDANCE = `
-FIGURE CONTENT GUIDANCE (CRITICAL — the app renders these as interactive charts/diagrams):
+FIGURE CONTENT GUIDANCE (CRITICAL · the app renders these as interactive charts/diagrams):
 You MUST include exactly ONE Figure 1 block in the question using this format:
 
 **Figure 1: [Descriptive title for the diagram]**
@@ -1053,7 +1053,7 @@ You MUST include exactly ONE Figure 1 block in the question using this format:
 - [If shaded area relevant]: Shaded area represents [welfare loss/gain/tax revenue/deadweight loss]
 Source: Hypothetical scenario for exam practice
 
-The figure must be scenario-specific — include the exact curves, labels, and shifts that match the economic context described in the question.`;
+The figure must be scenario-specific · include the exact curves, labels, and shifts that match the economic context described in the question.`;
     }
 
     await streamChat({
@@ -1210,28 +1210,28 @@ You MUST ONLY evaluate against the Lorenz Curve rubric below. Do NOT mention or 
 - monopoly, oligopoly, perfect competition
 - PED, YED, XED
 - any micro/macro diagram that is NOT a Lorenz Curve
-If any of these terms appear in your feedback, you have made an error — remove them.
+If any of these terms appear in your feedback, you have made an error · remove them.
 
-Detected topic: Income inequality — Lorenz Curve / Gini coefficient
+Detected topic: Income inequality · Lorenz Curve / Gini coefficient
 Expected diagram: Lorenz Curve with 45-degree line of equality
 
 You MUST evaluate using ALL 6 Lorenz Curve marking criteria:
 
-1. **AXES** — X-axis = "Cumulative % of Population" (poorest to richest), Y-axis = "Cumulative % of Income"
-2. **LINE OF EQUALITY** — 45-degree straight line from origin to (100,100) present and labelled "Line of Perfect Equality"
-3. **CURVE SHAPE** — Lorenz curve is convex to the origin (bowed BELOW the equality line). A hump-shaped or concave curve is WRONG.
-4. **COMPARISON** (if question requires two countries) — Two curves drawn: Country A (more equal) closer to equality line, Country B (less equal) further away. Both clearly labelled.
-5. **GINI EXPLANATION** — Larger gap between curve and equality line = higher Gini = more inequality. Smaller gap = lower Gini = more equality. Gini = Area A / (Area A + Area B).
-6. **EXPLANATION ↔ DIAGRAM CONSISTENCY** — Written explanation matches the diagram drawn. If student says "Country A is more equal" then Country A's curve must be closer to the line.`;
+1. **AXES** · X-axis = "Cumulative % of Population" (poorest to richest), Y-axis = "Cumulative % of Income"
+2. **LINE OF EQUALITY** · 45-degree straight line from origin to (100,100) present and labelled "Line of Perfect Equality"
+3. **CURVE SHAPE** · Lorenz curve is convex to the origin (bowed BELOW the equality line). A hump-shaped or concave curve is WRONG.
+4. **COMPARISON** (if question requires two countries) · Two curves drawn: Country A (more equal) closer to equality line, Country B (less equal) further away. Both clearly labelled.
+5. **GINI EXPLANATION** · Larger gap between curve and equality line = higher Gini = more inequality. Smaller gap = lower Gini = more equality. Gini = Area A / (Area A + Area B).
+6. **EXPLANATION ↔ DIAGRAM CONSISTENCY** · Written explanation matches the diagram drawn. If student says "Country A is more equal" then Country A's curve must be closer to the line.`;
 
     const standardRubric = `
 You MUST evaluate using ALL 5 diagram marking criteria:
 
-1. **AXES** — Are axes labelled correctly? (e.g., Price/P on Y-axis, Quantity/Q on X-axis; for macro: Price Level & Real GDP)
-2. **CURVE DIRECTION** — Are curves sloping the correct way? (Demand downward, Supply upward, LRAS vertical, etc.)
-3. **SHIFT DIRECTION** — Does the described shift match the scenario? (Right = increase, Left = decrease)
-4. **EQUILIBRIUM** — Is original equilibrium (P1,Q1) marked? Is new equilibrium (P2,Q2) identified with dotted lines to axes?
-5. **EXPLANATION ↔ DIAGRAM CONSISTENCY** — Does the written explanation logically match the diagram? Are the direction of changes consistent?`;
+1. **AXES** · Are axes labelled correctly? (e.g., Price/P on Y-axis, Quantity/Q on X-axis; for macro: Price Level & Real GDP)
+2. **CURVE DIRECTION** · Are curves sloping the correct way? (Demand downward, Supply upward, LRAS vertical, etc.)
+3. **SHIFT DIRECTION** · Does the described shift match the scenario? (Right = increase, Left = decrease)
+4. **EQUILIBRIUM** · Is original equilibrium (P1,Q1) marked? Is new equilibrium (P2,Q2) identified with dotted lines to axes?
+5. **EXPLANATION ↔ DIAGRAM CONSISTENCY** · Does the written explanation logically match the diagram? Are the direction of changes consistent?`;
 
     const rubric = isLorenzTopic ? lorenzRubric : standardRubric;
 
@@ -1309,7 +1309,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             topic,
           });
 
-          // Fire structured marking in background — routes through markDiagram.ts entry point
+          // Fire structured marking in background · routes through markDiagram.ts entry point
           const studentAnswer = inputMode === "draw"
             ? `[Drawn diagram submitted]\n\nWritten explanation: ${explanation}`
             : `Diagram description: ${diagramDesc}\n\nWritten explanation: ${explanation}`;
@@ -1568,7 +1568,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
             </CardContent>
           </Card>
 
-          {/* Reference diagram intentionally removed — students must draw their own without solution hints. */}
+          {/* Reference diagram intentionally removed · students must draw their own without solution hints. */}
 
           <Card>
             <CardContent className="p-6 space-y-4">
@@ -1606,7 +1606,7 @@ Speak directly to the student using "you" and "your". Be encouraging but honest.
                     onSave={(dataUrl) => setDiagramImage(dataUrl)}
                   />
                   {diagramImage && (
-                    <p className="text-xs text-accent mt-1">✓ Diagram captured — ready to submit</p>
+                    <p className="text-xs text-accent mt-1">✓ Diagram captured · ready to submit</p>
                   )}
                 </div>
               ) : (
@@ -1939,7 +1939,7 @@ function DiagramFeedbackView({
   const renderContent = (text: string) => {
     if (hasReferenceDiagram) {
       // For topics with dedicated reference diagrams, skip ALL diagram extraction
-      // and render pure text only — this prevents cross-topic contamination
+      // and render pure text only · this prevents cross-topic contamination
       // (e.g. Ad Valorem tax diagram appearing in Lorenz Curve feedback)
       return (
         <div className="prose prose-sm max-w-none dark:prose-invert">
@@ -2024,7 +2024,7 @@ function DiagramFeedbackView({
         </CardContent>
       </Card>
 
-      {/* Explain my feedback — collapsible */}
+      {/* Explain my feedback · collapsible */}
       {sections.explain && (
         <Card className="overflow-hidden">
           <button
@@ -2052,7 +2052,7 @@ function DiagramFeedbackView({
         </Card>
       )}
 
-      {/* Improve my answer — collapsible */}
+      {/* Improve my answer · collapsible */}
       {sections.improve && (
         <Card className="overflow-hidden">
           <button
@@ -2077,11 +2077,11 @@ function DiagramFeedbackView({
                     <div className="grid grid-cols-2 gap-3 mt-4">
                       <div className="rounded-lg border border-border/50 p-3">
                         <p className="text-sm font-semibold" style={{ color: "#4ade80" }}>Country A</p>
-                        <p className="text-xs text-muted-foreground mt-1">Gini ≈ 0.29 — curve stays close to the diagonal line of equality, indicating relatively low income inequality.</p>
+                        <p className="text-xs text-muted-foreground mt-1">Gini ≈ 0.29 · curve stays close to the diagonal line of equality, indicating relatively low income inequality.</p>
                       </div>
                       <div className="rounded-lg border border-border/50 p-3">
                         <p className="text-sm font-semibold" style={{ color: "#fb923c" }}>Country B</p>
-                        <p className="text-xs text-muted-foreground mt-1">Gini ≈ 0.56 — curve bows sharply toward the bottom-right, indicating significantly higher income inequality.</p>
+                        <p className="text-xs text-muted-foreground mt-1">Gini ≈ 0.56 · curve bows sharply toward the bottom-right, indicating significantly higher income inequality.</p>
                       </div>
                     </div>
                   )}

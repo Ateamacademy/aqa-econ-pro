@@ -41,7 +41,7 @@ export function AIMarkingPanel({
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        {/* LEFT — Student's answer */}
+        {/* LEFT · Student's answer */}
         <div className="space-y-4">
           <Card>
             <CardHeader className="pb-3">
@@ -68,7 +68,7 @@ export function AIMarkingPanel({
           </Card>
         </div>
 
-        {/* RIGHT — AI Marking */}
+        {/* RIGHT · AI Marking */}
         <div className="space-y-4">
           {/* Score card */}
           <Card className={cn("border", scoreBg)}>
@@ -79,7 +79,7 @@ export function AIMarkingPanel({
                   <p className={cn("text-3xl font-bold mt-1", scoreColor)}>
                     {result.marks_awarded}/{result.total_marks}
                   </p>
-                  <p className="text-xs text-muted-foreground mt-0.5">{pct}% — {result.examiner_summary.estimated_grade_band}</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">{pct}% · {result.examiner_summary.estimated_grade_band}</p>
                 </div>
                 <div className="flex flex-col gap-1">
                   <Badge variant="outline" className="text-[10px]">{difficulty}</Badge>

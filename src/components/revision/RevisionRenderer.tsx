@@ -1,5 +1,5 @@
 /**
- * RevisionRenderer — Parses AI markdown responses and extracts
+ * RevisionRenderer · Parses AI markdown responses and extracts
  * structured blocks (definitions, examples, exam tips, diagrams, formulas)
  * then renders them using color-coded RevisionCard components.
  * 

@@ -1,7 +1,7 @@
 import type { Topic } from "./edexcelANotes";
 
 /* ═══════════════════════════════════════════════════════════════
- *  EDEXCEL IGCSE ECONOMICS (4EC1) — STUDY NOTES
+ *  EDEXCEL IGCSE ECONOMICS (4EC1) · STUDY NOTES
  *  Paper 1: Microeconomics & Business Economics
  *  Paper 2: Macroeconomics & the Global Economy
  * ═══════════════════════════════════════════════════════════════ */
@@ -16,10 +16,10 @@ export const edexcelIgcsePaper1Topics: Topic[] = [
         keyTerms: [
           { term: "Scarcity", definition: "Resources are limited relative to unlimited wants" },
           { term: "Opportunity Cost", definition: "The next best alternative given up when making a choice" },
-          { term: "Factors of Production", definition: "Land, labour, capital, enterprise — the inputs to production" },
+          { term: "Factors of Production", definition: "Land, labour, capital, enterprise · the inputs to production" },
         ],
         explanation: "Economic systems solve three questions: What to produce? How to produce? For whom to produce?\n\nMarket economy: decisions made by price mechanism. Command economy: government decides. Mixed economy: combination of both.\n\nThe PPC shows opportunity cost and helps illustrate economic growth (outward shift).",
-        examTip: "Edexcel IGCSE Paper 1 has structured questions — define key terms precisely and use examples from the data.",
+        examTip: "Edexcel IGCSE Paper 1 has structured questions · define key terms precisely and use examples from the data.",
         diagram: "ppf",
       },
       {
@@ -28,7 +28,7 @@ export const edexcelIgcsePaper1Topics: Topic[] = [
         keyTerms: [
           { term: "Law of Demand", definition: "As price rises, quantity demanded falls (ceteris paribus)" },
           { term: "Law of Supply", definition: "As price rises, quantity supplied rises (ceteris paribus)" },
-          { term: "Equilibrium", definition: "Where demand equals supply — the market-clearing price" },
+          { term: "Equilibrium", definition: "Where demand equals supply · the market-clearing price" },
         ],
         explanation: "Demand shifts: income, tastes, population, prices of substitutes/complements, expectations.\nSupply shifts: costs, technology, taxes/subsidies, number of firms, weather.\n\nPrice mechanism functions: signalling (information), rationing (allocation), incentive (motivation).",
         examTip: "Always draw fully labelled diagrams: axes (Price, Quantity), curves (D, S), equilibrium (E), and shifts (D₁→D₂).",
@@ -38,8 +38,8 @@ export const edexcelIgcsePaper1Topics: Topic[] = [
         title: "Elasticity",
         definition: "Elasticity measures the responsiveness of demand or supply to a change in a variable.",
         keyTerms: [
-          { term: "PED", definition: "Price Elasticity of Demand — responsiveness of Qd to price change" },
-          { term: "PES", definition: "Price Elasticity of Supply — responsiveness of Qs to price change" },
+          { term: "PED", definition: "Price Elasticity of Demand · responsiveness of Qd to price change" },
+          { term: "PES", definition: "Price Elasticity of Supply · responsiveness of Qs to price change" },
         ],
         explanation: "PED > 1 = elastic (luxury goods, many substitutes). PED < 1 = inelastic (necessities, few substitutes).\n\nPES depends on: spare capacity, stock availability, time period, factor mobility.\n\nBusiness relevance: elastic demand → price cuts increase revenue; inelastic → price rises increase revenue.",
         examTip: "Show your calculation clearly. State the formula, substitute values, and interpret the result (elastic/inelastic/unit elastic).",
@@ -69,7 +69,7 @@ export const edexcelIgcsePaper1Topics: Topic[] = [
           { term: "Monopoly", definition: "Single or dominant firm with barriers to entry" },
         ],
         explanation: "Competitive markets: firms are price takers, earn normal profit in long run, allocatively efficient.\n\nMonopoly: price maker, can earn supernormal profit, may be productively inefficient. But may have economies of scale and invest in R&D.\n\nGovernment may regulate monopolies through competition policy, price controls, or breaking them up.",
-        examTip: "The IGCSE exam tests advantages and disadvantages of monopoly vs competition — always give both sides.",
+        examTip: "The IGCSE exam tests advantages and disadvantages of monopoly vs competition · always give both sides.",
       },
       {
         title: "The Labour Market",
@@ -100,7 +100,7 @@ export const edexcelIgcsePaper2Topics: Topic[] = [
           { term: "Balance of Payments", definition: "Record of all international transactions" },
         ],
         explanation: "GDP measures total output. Real GDP adjusts for inflation. GDP per capita = GDP / population.\n\nInflation measured by CPI. Causes: demand-pull (excess AD) and cost-push (rising input costs).\n\nUnemployment types: frictional (job search), structural (mismatch), cyclical (recession), seasonal.",
-        examTip: "Edexcel IGCSE Paper 2 tests application — use data from the extract to support your analysis of economic indicators.",
+        examTip: "Edexcel IGCSE Paper 2 tests application · use data from the extract to support your analysis of economic indicators.",
       },
       {
         title: "Fiscal & Monetary Policy",
@@ -115,14 +115,14 @@ export const edexcelIgcsePaper2Topics: Topic[] = [
       },
       {
         title: "Supply-Side Policies",
-        definition: "Policies that aim to increase the productive capacity of the economy — shifting LRAS to the right.",
+        definition: "Policies that aim to increase the productive capacity of the economy · shifting LRAS to the right.",
         keyTerms: [
           { term: "Privatisation", definition: "Selling state-owned enterprises to the private sector" },
           { term: "Deregulation", definition: "Removing government restrictions on businesses" },
           { term: "Education & Training", definition: "Investing in human capital to increase labour productivity" },
         ],
         explanation: "Market-based: privatisation, deregulation, tax cuts, trade union reform.\nInterventionist: education spending, infrastructure, R&D subsidies, regional policy.\n\nAdvantages: long-term growth without inflation. Disadvantages: slow to take effect, costly, may increase inequality.",
-        examTip: "Link supply-side policies to specific objectives — e.g. education improves productivity AND reduces structural unemployment.",
+        examTip: "Link supply-side policies to specific objectives · e.g. education improves productivity AND reduces structural unemployment.",
       },
     ],
   },
@@ -131,7 +131,7 @@ export const edexcelIgcsePaper2Topics: Topic[] = [
     subtopics: [
       {
         title: "International Trade",
-        definition: "Countries trade because of **comparative advantage** — producing goods at a lower opportunity cost.",
+        definition: "Countries trade because of **comparative advantage** · producing goods at a lower opportunity cost.",
         keyTerms: [
           { term: "Exports", definition: "Goods and services sold to other countries" },
           { term: "Imports", definition: "Goods and services bought from other countries" },
@@ -146,12 +146,12 @@ export const edexcelIgcsePaper2Topics: Topic[] = [
         definition: "An **exchange rate** is the price of one currency in terms of another. **Globalisation** is the increasing integration of world economies.",
         keyTerms: [
           { term: "Floating Exchange Rate", definition: "Determined by supply and demand in the forex market" },
-          { term: "Appreciation", definition: "Currency increases in value — imports cheaper, exports dearer" },
-          { term: "Depreciation", definition: "Currency decreases in value — exports cheaper, imports dearer" },
+          { term: "Appreciation", definition: "Currency increases in value · imports cheaper, exports dearer" },
+          { term: "Depreciation", definition: "Currency decreases in value · exports cheaper, imports dearer" },
           { term: "Globalisation", definition: "Growing interdependence of world economies" },
         ],
         explanation: "Causes of exchange rate changes: interest rates, inflation, trade balance, speculation, foreign investment.\n\nGlobalisation drivers: technology, reduced trade barriers, capital mobility, MNCs.\n\nBenefits: growth, jobs, lower prices, technology transfer. Costs: inequality, job losses in some sectors, environmental damage, cultural homogenisation.",
-        examTip: "For globalisation questions, always discuss winners AND losers — developed vs developing countries, workers vs consumers.",
+        examTip: "For globalisation questions, always discuss winners AND losers · developed vs developing countries, workers vs consumers.",
       },
     ],
   },

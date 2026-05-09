@@ -7,7 +7,7 @@ Paper 1 How Markets Work
 
 Mark scheme
 
-Predicted Paper — Hard
+Predicted Paper · Hard
 Version: 1.0 Final
 
 
@@ -201,7 +201,7 @@ IB/H/Pred/8136/1                                                                
                       lower shop prices
                     • Wider economy: lower transport costs may reduce inflation; may reduce incentives
                       to switch to electric vehicles
-                    • use of data: oil fell from $120 to $75, a fall of about 37.5% — a very significant cost
+                    • use of data: oil fell from $120 to $75, a fall of about 37.5% · a very significant cost
                       reduction
                    Note: This indicative content is not exhaustive, other creditworthy responses should be awarded
                    marks as appropriate.
@@ -277,7 +277,7 @@ IB/H/Pred/8136/1                                                                
 
                    Possible answers:
                     • petrol is a necessity for drivers commuting to work / doing the school run
-                    • few close substitutes in the short run — drivers cannot switch cars overnight
+                    • few close substitutes in the short run · drivers cannot switch cars overnight
                     • addictive / habitual nature of car use
                     • public transport alternatives may not be practical for many drivers in the short run
                     • a clear definition of 'price inelastic' without context = 1 mark
@@ -382,9 +382,9 @@ IB/H/Pred/8136/1                                                                
 
                    Indicative content:
                     • Benefits (economies of scale): reduced long-run average cost per car serviced
-                    • purchasing economies — bulk discounts from parts suppliers (mentioned in Figure
+                    • purchasing economies · bulk discounts from parts suppliers (mentioned in Figure
                       2)
-                    • technical economies — specialist diagnostic equipment only affordable at larger
+                    • technical economies · specialist diagnostic equipment only affordable at larger
                       scale
                     • managerial and financial economies as the business grows
                     • Data: AC at 200 = £150; AC at 400 = £130; AC at 600 = £110 per car → clear fall
@@ -424,7 +424,7 @@ IB/H/Pred/8136/1                                                                
                     • a situation where the free market fails to allocate resources efficiently, leading to
                       loss of welfare (2 marks)
                     • when the market, on its own, produces an outcome that is not in society's best
-                      interest — for example, too much of a harmful good or too little of a beneficial one (2
+                      interest · for example, too much of a harmful good or too little of a beneficial one (2
                       marks)
                     • when markets do not work well (1 mark)
                    Note: This indicative content is not exhaustive, other creditworthy responses should be awarded
@@ -481,13 +481,13 @@ IB/H/Pred/8136/1                                                                
                                 0      Nothing written worthy of credit.
 
                    Possible answers:
-                    • reduced local air pollution — better health outcomes, reduced NHS costs
-                    • lower carbon emissions — slows climate change, benefits future generations
-                    • quieter roads — reduced noise pollution in urban areas
-                    • reduced dependence on imported oil — greater energy security
+                    • reduced local air pollution · better health outcomes, reduced NHS costs
+                    • lower carbon emissions · slows climate change, benefits future generations
+                    • quieter roads · reduced noise pollution in urban areas
+                    • reduced dependence on imported oil · greater energy security
                     • growth in UK battery manufacturing and associated high-skilled jobs
                     • development of a charging-point network benefits all EV drivers, not just the buyer
-                    • demonstration effect — more EVs on the road encourages others to buy
+                    • demonstration effect · more EVs on the road encourages others to buy
                    Note: This indicative content is not exhaustive, other creditworthy responses should be awarded
                    marks as appropriate.
 
@@ -602,7 +602,7 @@ IB/H/Pred/8136/1                                                                
 
                    No (against subsidy):
 
-                    • opportunity cost — money could be spent on the NHS, schools, or public transport
+                    • opportunity cost · money could be spent on the NHS, schools, or public transport
                       (Item B)
                     • subsidies mostly benefit wealthier households who buy new cars (Item B)
                     • environmental problems with battery raw materials (lithium, cobalt) in producing

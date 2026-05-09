@@ -1,5 +1,5 @@
 /**
- * Edexcel B A-Level Economics (9EB0) — marking convention.
+ * Edexcel B A-Level Economics (9EB0) · marking convention.
  *
  * Edexcel B uses the same K/Ap/An/Ev per-skill framework as Edexcel A but with
  * a business-economics emphasis. Mark splits below are derived from published

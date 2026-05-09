@@ -14,7 +14,7 @@
     .pt    { fill:#111; }
   </style>
 
-  <text x="350" y="28" text-anchor="middle" class="ttl">Maximum Price (Rent Control) — UK Private Rental Market</text>
+  <text x="350" y="28" text-anchor="middle" class="ttl">Maximum Price (Rent Control) · UK Private Rental Market</text>
   <text x="350" y="48" text-anchor="middle" class="sub">A price ceiling Pmax set below equilibrium creates excess demand (a housing shortage)</text>
 
   <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>

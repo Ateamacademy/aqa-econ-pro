@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 480" font-family="Inter, Arial, sans-serif">
   <rect width="620" height="480" fill="#ffffff"/>
-  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Bilateral Monopoly — Platinum Mining (South Africa)</text>
+  <text x="310" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Bilateral Monopoly · Platinum Mining (South Africa)</text>
 
   <line x1="90" y1="400" x2="600" y2="400" stroke="#0f172a" stroke-width="2"/>
   <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" stroke-width="2"/>
@@ -35,7 +35,7 @@
        MR_L: (130,150)→(400,390) slope 240/270=0.889, y=150+0.889(x-130)
        S_L: y=350-0.349(x-130)
        Set: 150+0.889(x-130) = 350-0.349(x-130) -> 1.238(x-130)=200 -> x-130=161.6 -> x=291.6, y≈294
-       Wu on D_L at L_u: MRP at x=292: y = 120+0.628*162 = 221.7 → Wu pixel y 222 — nearly same as Wm L1 point? That means bargaining range collapses. Let me instead simplify:
+       Wu on D_L at L_u: MRP at x=292: y = 120+0.628*162 = 221.7 → Wu pixel y 222 · nearly same as Wm L1 point? That means bargaining range collapses. Let me instead simplify:
        Just place Wm (low) around y=300 and Wu (high) around y=180 for visual clarity.
   -->
 

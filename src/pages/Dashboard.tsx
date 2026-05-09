@@ -173,12 +173,12 @@ export default function Dashboard() {
           animate="show"
           variants={{ show: { transition: { staggerChildren: 0.06 } } }}
         >
-          {/* Daily Action Card — for everyone */}
+          {/* Daily Action Card · for everyone */}
           <motion.div variants={fadeUp}>
             <DailyActionCard action={dash.dailyAction} today={dash.today} />
           </motion.div>
 
-          {/* Readiness Score Hero — Pro only */}
+          {/* Readiness Score Hero · Pro only */}
           {subscribed && (
             <motion.div variants={fadeUp} className="flex justify-center py-6 relative">
               <ScoreDelta points={dash.readinessScore.weeklyChange} />
@@ -190,14 +190,14 @@ export default function Dashboard() {
             </motion.div>
           )}
 
-          {/* Interactive Journey — Pro only */}
+          {/* Interactive Journey · Pro only */}
           {subscribed && (
             <motion.div variants={fadeUp}>
               <InteractiveJourney state={dash} />
             </motion.div>
           )}
 
-          {/* Stat tiles — clickable */}
+          {/* Stat tiles · clickable */}
           <motion.div variants={fadeUp}>
             <StatTiles state={dash} />
           </motion.div>

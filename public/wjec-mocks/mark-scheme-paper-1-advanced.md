@@ -12,7 +12,7 @@ The indicative content is not exhaustive; learners do not need to cover all poin
 band. Level-based mark schemes sub-divide the total mark across assessment objectives (AO1
 Knowledge & Understanding, AO2 Application, AO3 Analysis, AO4 Evaluation). Learners may
 achieve different bands within a single question.
-                 SECTION A — ANSWERS
+                 SECTION A · ANSWERS
 
 Q    Ans                               Notes / Working
 
@@ -22,7 +22,7 @@ Q    Ans                               Notes / Working
 
 2    B     A Pigouvian tax set at marginal external cost shifts MPC up to MSC;
            output falls to the socially optimal level where MSB = MSC. The
-           externality is 'internalised' — pollution is not eliminated but reduced to
+           externality is 'internalised' · pollution is not eliminated but reduced to
            the socially optimal quantity.
 
 3    C     Under a natural monopoly LRAC is falling, so MC < AC over the
@@ -80,12 +80,12 @@ Q    Ans                               Notes / Working
 
 15   D   QE works via asset-price, portfolio-rebalancing, exchange-rate and
          signalling channels. It does NOT guarantee increased bank lending to
-         SMEs — banks may hold excess reserves rather than lend (a key
+         SMEs · banks may hold excess reserves rather than lend (a key
          critique of QE post-2008).
 
 16   B   Behavioural economics (Thaler & Sunstein) shows consumers are not
          fully rational; small changes to defaults, framing, or choice architecture
-         can produce large behavioural changes without restricting choice —
+         can produce large behavioural changes without restricting choice ·
          the 'libertarian paternalist' approach.
 
 17   D   Commons are rival (one person's use reduces availability for others)
@@ -99,7 +99,7 @@ Q    Ans                               Notes / Working
 19   C   Kuznets (1955): inequality first rises as industrialisation draws labour
          from low-productivity agriculture into higher-productivity industry
          (raising dispersion), then falls as wages converge and redistributive
-         policies emerge — an inverted-U shape.
+         policies emerge · an inverted-U shape.
 
 20   C   Pre-tax eq: 500 − 10P = 20P − 100 → P = £20, Q = 300. With £6 tax
          on producers, effective supply: Qs = 20(P − 6) − 100 = 20P − 220. New
@@ -158,7 +158,7 @@ Indicative content:
 • £50bn of government spending shifts AD to the right. Under the Keynesian multiplier k = 1/(1 −
 MPC), if MPC = 0.6, total AD shift ≈ £125bn.
 • On the flat portion of Keynesian AS (deep recession, high unemployment, idle capacity), the shift
-raises real GDP from Y₁ to Y₂ with no increase in the price level — the Keynesian 'free lunch'.
+raises real GDP from Y₁ to Y₂ with no increase in the price level · the Keynesian 'free lunch'.
 • Diagram: AD₁ → AD₂; along flat AS, ΔY is large, ΔP is zero. Only as Y approaches full employment
 does the price level start rising (as AS becomes upward-sloping/vertical).
 For the view that fiscal stimulus is effective:
@@ -172,12 +172,12 @@ BUT (evaluation):
 • Crowding out: even in recession, bond issuance may raise long-term interest rates and crowd out
 private investment (Ricardian equivalence in the extreme).
 • Time lags: recognition, decision, implementation and effect lags mean stimulus may arrive as the
-economy is already recovering — pro-cyclical.
+economy is already recovering · pro-cyclical.
 • Deficit financing worsens national debt; if debt-to-GDP becomes unsustainable, bond markets may
 punish the government (UK mini-budget 2022 as recent example).
 • Empirical multiplier estimates vary widely (0.5 to 2.5); the true size is uncertain.
 • Import leakages in open economies reduce domestic impact.
-• Quality of spending matters — malinvestment (politically-driven projects) may not deliver multiplier
+• Quality of spending matters · malinvestment (politically-driven projects) may not deliver multiplier
 effects.
 • Allow any other sensible evaluation.
 23.   With the aid of a diagram, comment on the likely consequences for            Total
@@ -199,7 +199,7 @@ effects.
 
       Indicative content:
       • PES is very low in the short run because mine expansion takes 7–
-      10 years — the time period is shorter than the adjustment window,
+      10 years · the time period is shorter than the adjustment window,
       and existing capacity is nearly exhausted.
       • Diagram: near-vertical short-run supply curve. D₁ → D₂ (demand
       quadruples): price rises sharply from P₁ to a much higher P₂, with a
@@ -209,7 +209,7 @@ effects.
       solid-state batteries); strategic stockpiling; possible export
       restrictions by producing nations.
       • In the long run, PES becomes more elastic as new mines come
-      online and recycling scales up, so prices may ease — cobweb-type
+      online and recycling scales up, so prices may ease · cobweb-type
       dynamics possible.
 24.   Explain the shape of this firm's short-run total cost curve and the       Total
       economic significance of the discontinuity.
@@ -232,17 +232,17 @@ effects.
       curve. At Q=99, TC = £5,000.
       • Jump at Q=100 from £5,000 to £25,000 (£20,000 step): reflects
       the indivisible capital investment required to shift to factory
-      production — machinery, premises, tooling. Classic 'lumpy' fixed
+      production · machinery, premises, tooling. Classic 'lumpy' fixed
       cost.
       • 100–500+ units (factory stage): TC rises gradually again, initially
       at a shallower gradient than the artisan stage (economies of scale
-      — machinery spreads fixed cost over higher output), but eventually
+      · machinery spreads fixed cost over higher output), but eventually
       rising as diminishing returns set in.
       • Economic significance: (i) the firm should only invest in the factory
       stage if the expected output justifies the £20,000 extra fixed cost;
       (ii) there is a break-even output above which factory production is
       cheaper per unit than artisan; (iii) the discontinuity explains why
-      some firms hover at Q=99 despite unmet demand — the jump in
+      some firms hover at Q=99 despite unmet demand · the jump in
       TC makes the next unit uneconomic at low output.
 25. With reference to the matrix and economic theory, discuss whether the optimal trade
 policy is unilateral free trade. (8 marks)
@@ -279,14 +279,14 @@ AO2 (matrix interpretation):
 is maximised here.
 • The (Trade war, Trade war) outcome is the worst jointly: (−3.5, −4.0). Mutual destruction.
 • Note the asymmetry: Economy X (large developed) loses 3.5% in a trade war; Economy Y
-(emerging) loses 4.0% — Y is more exposed because a larger share of its GDP is trade-dependent.
+(emerging) loses 4.0% · Y is more exposed because a larger share of its GDP is trade-dependent.
 • If country X engages unilaterally in free trade while Y protects: X gets some welfare gains from
 lower import prices and consumer surplus, but loses on export market access. Depending on the pay-
 offs in the off-diagonal cells (not shown), unilateral free trade may still be better than a trade war.
 • Free trade is the Pareto-optimal outcome; trade war is the Nash equilibrium if one-shot (each fears
 defection). Repeated play enables free trade through reputation.
 AO3 (if in favour of unilateral free trade):
-• Consumer welfare: unilateral tariff removal lowers prices, widens choice, raises CS — the classic
+• Consumer welfare: unilateral tariff removal lowers prices, widens choice, raises CS · the classic
 argument (Smith, Ricardo).
 • Comparative advantage: resource reallocation to most-efficient sectors raises productivity and real
 GDP.
@@ -344,14 +344,14 @@ reversible.
 
 Indicative content:
 AO2:
-• UK emissions down 48% since 1990 — significant decoupling of emissions from growth; renewables
+• UK emissions down 48% since 1990 · significant decoupling of emissions from growth; renewables
 share up from 7% to 43% (a sixfold rise), consistent with carbon pricing working.
 • BUT the ETS price of £40/tonne is far below the Climate Change Committee's recommended
-shadow price of £240/tonne by 2030 — suggesting the externality is only partially priced.
-• Fuel duty frozen since 2011 — in real terms, the carbon price on road transport has fallen,
+shadow price of £240/tonne by 2030 · suggesting the externality is only partially priced.
+• Fuel duty frozen since 2011 · in real terms, the carbon price on road transport has fallen,
 weakening the behavioural signal. Combined with short-run petrol PED of only −0.3, fuel-duty
 effectiveness is limited.
-• ETS revenue fell from £5.5bn (2023) to £3.2bn (2024) — carbon price volatility reduces policy
+• ETS revenue fell from £5.5bn (2023) to £3.2bn (2024) · carbon price volatility reduces policy
 predictability and firm-level investment confidence.
 • UK is only ~1% of global emissions; domestic effectiveness limited if major emitters (China, India,
 US) do not follow.
@@ -368,15 +368,15 @@ innovation).
 as consumers adjust vehicles, housing, behaviour.
 AO4 (reasons carbon pricing may NOT effectively correct the failure):
 • Government failure: the price (£40) is set too low versus the shadow cost (£240), leaving most of
-the externality unpriced — MSC still exceeds MPC for most CO₂ emissions.
+the externality unpriced · MSC still exceeds MPC for most CO₂ emissions.
 • Only ~30% of emissions are covered by the UK ETS; large sectors (transport, buildings, agriculture)
 face weaker or no carbon signal.
 • Carbon leakage: if UK firms face high carbon prices, production relocates to low-carbon-price
-jurisdictions — emissions not reduced, only outsourced. UK emissions on a consumption basis have
+jurisdictions · emissions not reduced, only outsourced. UK emissions on a consumption basis have
 fallen much less than on a production basis.
 • Regressive distributional impact: carbon prices affect low-income households proportionately more
 (home heating, petrol are necessities) → political opposition (cf. French 'gilets jaunes', 2018).
-• Frozen fuel duty shows political economy constraints — governments reluctant to raise visible costs.
+• Frozen fuel duty shows political economy constraints · governments reluctant to raise visible costs.
 • Climate change is a global public good / collective-action problem: UK's 1% share means unilateral
 pricing has limited direct impact on global temperatures. Free-riding is the dominant strategy.
 • Regulatory/command approaches (boiler bans, EV mandates) may deliver more certain reductions
@@ -391,7 +391,7 @@ institutional quality is the most fundamental determinant of long-run economic d
 
     3       3 – Excellent application                              3 – Excellent evaluation
             All columns used. Clear                                Strong counter-argument:
-            comparisons — e.g.,                                    geography (Diamond, Sachs),
+            comparisons · e.g.,                                    geography (Diamond, Sachs),
             South vs North Korea                                   culture (Weber), human capital
             (same                                                  (Lucas), luck/initial conditions.
             ethnicity/geography,                                   Engages with
@@ -419,11 +419,11 @@ Indicative content:
 AO2 (data interpretation):
 • The Korean natural experiment is decisive: South Korea (HDI ≈ 0.93, inclusive institutions, high rule-
 of-law index) vs North Korea (HDI ≈ 0.5, extractive institutions). Same ethnicity, geography, initial
-conditions — divergent institutions produced radically different development outcomes.
+conditions · divergent institutions produced radically different development outcomes.
 • Chile (HDI ≈ 0.86, stronger rule of law) vs Argentina (HDI ≈ 0.84, weaker, prone to populist cycles):
 similar geography, different policy/institutional trajectories produced a growing gap from the 1970s.
 • Botswana (HDI ≈ 0.73, strong institutions post-1966) vs Zimbabwe (HDI ≈ 0.55, catastrophic
-institutional collapse under Mugabe): both landlocked, similar natural resource bases — divergent
+institutional collapse under Mugabe): both landlocked, similar natural resource bases · divergent
 institutions explain the gap.
 • Singapore (HDI ≈ 0.94, world-leading rule of law despite being soft-authoritarian) vs Nigeria (HDI ≈
 0.54, oil-rich but institutionally fragile): oil is not a substitute for governance.
@@ -442,7 +442,7 @@ protects institutions from capture.
 • Empirical: Acemoglu-Johnson-Robinson (2001) use settler-mortality as an instrumental variable,
 finding a causal effect of institutions on current GDP per capita.
 • The 'resource curse' is institutionally conditioned: Norway and Botswana handle resource wealth
-well; Venezuela and Nigeria do not — difference is institutional.
+well; Venezuela and Nigeria do not · difference is institutional.
 AO4 (reasons institutions may NOT be the most fundamental determinant):
 • Geography hypothesis (Diamond, Sachs): tropical disease burden, landlocked status, and soil
 quality strongly predict development. Africa's challenges partly reflect malaria, tsetse fly, and
@@ -451,9 +451,9 @@ remoteness from trade routes.
 values of thrift, trust, and cooperation may be deep drivers of which institutions emerge.
 • Human capital (Lucas, 1988; Glaeser et al., 2004): some argue causality runs from education →
 institutions rather than the reverse. Educated populations demand better institutions.
-• Reverse causality: rich countries can AFFORD better institutions — so the correlation may not be
+• Reverse causality: rich countries can AFFORD better institutions · so the correlation may not be
 causal in the direction institutionalists claim.
-• Initial conditions and path dependence matter — lucky accidents of history (the Industrial Revolution
+• Initial conditions and path dependence matter · lucky accidents of history (the Industrial Revolution
 in Britain) shape trajectories.
 • Dependency theory (Prebisch-Singer, Frank): historical exploitation of the 'periphery' by the 'core'
 constrains institutional development. The colonial inheritance of extractive institutions (as A&R
@@ -462,9 +462,9 @@ themselves note) is a geographic/historical imposition, not just an institutiona
 Russia privatisation without rule of law); institutions must be home-grown, which qualifies policy
 implications.
 • China's 1978–present growth under formally extractive (one-party) institutions challenges the strict
-inclusive-institution thesis — suggests high-quality 'growth-promoting' institutions can take many
+inclusive-institution thesis · suggests high-quality 'growth-promoting' institutions can take many
 forms.
-• In practice, institutions, geography, human capital, culture and luck all interact — isolating 'the most
+• In practice, institutions, geography, human capital, culture and luck all interact · isolating 'the most
 fundamental' is methodologically contested.
 • Allow any other sensible evaluation.
                    ASSESSMENT OBJECTIVE BREAKDOWN

@@ -10,7 +10,7 @@ export default function EconZambiaCopperVolatility() {
           <marker id="zcRedD" markerWidth="7" markerHeight="9" refX="3.5" refY="8" orient="auto-start-reverse"><polygon points="0 9,3.5 0,7 9" fill="#cc2222"/></marker>
         </defs>
         <rect width="680" height="570" fill="#fff"/>
-        <text x="340" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Zambia — Copper Market: Primary Product Price Volatility</text>
+        <text x="340" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Zambia · Copper Market: Primary Product Price Volatility</text>
         <text x="340" y="48" textAnchor="middle" fontSize="12" fill="#555">Inelastic S and D: fall in Chinese manufacturing demand causes large price drop</text>
         <line x1="100" y1="462" x2="100" y2="64" stroke="#111" strokeWidth="2.5" markerEnd="url(#zcU)"/>
         <line x1="100" y1="462" x2="582" y2="462" stroke="#111" strokeWidth="2.5" markerEnd="url(#zcR)"/>
@@ -48,7 +48,7 @@ export default function EconZambiaCopperVolatility() {
         <text x="112" y="516" fontSize="11" fontWeight="bold" fill="#111">Why inelastic S and D cause large price swings:</text>
         <text x="112" y="532" fontSize="11" fill="#333">When both supply and demand are inelastic, a shift in demand causes a disproportionately</text>
         <text x="112" y="548" fontSize="11" fill="#333">large price change (P1→P2) but only a small quantity change (Q1→Q2).</text>
-        <text x="112" y="560" fontSize="11" fill="#555">Zambia's copper export revenue is highly volatile — major risk for a mono-commodity economy.</text>
+        <text x="112" y="560" fontSize="11" fill="#555">Zambia's copper export revenue is highly volatile · major risk for a mono-commodity economy.</text>
       </svg>
     </div>
   );

@@ -60,7 +60,7 @@ function crossCheckRequirements(
     }
 
     if (!featurePresent) {
-      corrections.push(`${req.id}: "${req.requirement}" — feature not detected in verification, marks forced to 0`);
+      corrections.push(`${req.id}: "${req.requirement}" · feature not detected in verification, marks forced to 0`);
       return { ...req, marksAwarded: 0, status: "missing" as const, examinerNote: `${req.examinerNote} [CORRECTED: feature not verified in diagram]` };
     }
 
@@ -80,27 +80,27 @@ function applyHardCaps(
   inkRatio: number
 ): { cappedTotal: number; capReason: string | null } {
   if (verification.completeness === "empty" || verification.isBlank) {
-    return { cappedTotal: 0, capReason: "Diagram verified as empty — score set to 0." };
+    return { cappedTotal: 0, capReason: "Diagram verified as empty · score set to 0." };
   }
 
   if (verification.completeness === "sparse") {
     const cap = Math.min(totalAwarded, 1);
     if (cap < totalAwarded) {
-      return { cappedTotal: cap, capReason: "Diagram verified as sparse — maximum 1 mark." };
+      return { cappedTotal: cap, capReason: "Diagram verified as sparse · maximum 1 mark." };
     }
   }
 
   if (verification.completeness === "partial") {
     const cap = Math.min(totalAwarded, Math.floor(totalMarks * 0.5));
     if (cap < totalAwarded) {
-      return { cappedTotal: cap, capReason: `Diagram verified as partial — capped at ${Math.floor(totalMarks * 0.5)} marks.` };
+      return { cappedTotal: cap, capReason: `Diagram verified as partial · capped at ${Math.floor(totalMarks * 0.5)} marks.` };
     }
   }
 
   if (inkRatio < 0.05) {
     const cap = Math.min(totalAwarded, 1);
     if (cap < totalAwarded) {
-      return { cappedTotal: cap, capReason: "Very low ink content — maximum 1 mark." };
+      return { cappedTotal: cap, capReason: "Very low ink content · maximum 1 mark." };
     }
   }
 
@@ -148,11 +148,11 @@ export function validateAndCorrectMarks(
         examinerNote: `${r.examinerNote} [CORRECTED: diagram verified as empty/near-empty]`,
       }));
       correctedResult.writtenExplanation = {
-        ao1: { score: 0, outOf: correctedResult.writtenExplanation.ao1.outOf, comment: "No diagram detected — written marks withheld." },
-        ao2: { score: 0, outOf: correctedResult.writtenExplanation.ao2.outOf, comment: "No diagram detected — written marks withheld." },
-        ao3: { score: 0, outOf: correctedResult.writtenExplanation.ao3.outOf, comment: "No diagram detected — written marks withheld." },
+        ao1: { score: 0, outOf: correctedResult.writtenExplanation.ao1.outOf, comment: "No diagram detected · written marks withheld." },
+        ao2: { score: 0, outOf: correctedResult.writtenExplanation.ao2.outOf, comment: "No diagram detected · written marks withheld." },
+        ao3: { score: 0, outOf: correctedResult.writtenExplanation.ao3.outOf, comment: "No diagram detected · written marks withheld." },
         ao4: correctedResult.writtenExplanation.ao4
-          ? { score: 0, outOf: correctedResult.writtenExplanation.ao4.outOf, comment: "No diagram detected — written marks withheld." }
+          ? { score: 0, outOf: correctedResult.writtenExplanation.ao4.outOf, comment: "No diagram detected · written marks withheld." }
           : null,
       };
       return { result: correctedResult, flags };

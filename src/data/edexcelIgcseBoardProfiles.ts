@@ -242,7 +242,7 @@ export const EDEXCEL_IGCSE_PROFILE: BoardProfile = {
   terminology: {
     "equilibrium": "E, Pe, Qe",
     "externality": "External cost / External benefit, MPC, MSC, MPB, MSB",
-    "merit good": "Merit good — D₁ (perceived) vs D₂ (actual)",
+    "merit good": "Merit good · D₁ (perceived) vs D₂ (actual)",
     "price mechanism": "Signalling, Rationing, Incentive",
     "elasticity": "PED, PES with formula and calculation",
   },
@@ -449,7 +449,7 @@ export const OCR_GCSE_PROFILE: BoardProfile = {
     "externality": "Positive/negative externality",
     "competition": "Monopoly, oligopoly, competitive markets",
     "command words": "State, Explain, Calculate, Draw, Analyse, Evaluate",
-    "quantitative": "Min 10% of marks — calculate, interpret data",
+    "quantitative": "Min 10% of marks · calculate, interpret data",
   },
   paperFormatting: {
     extractLabel: "Case Study",

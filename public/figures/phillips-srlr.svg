@@ -3,8 +3,8 @@
   <text x="450" y="26" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Phillips Curve Short Run vs Long Run (UK, 2024)</text>
 
   <!-- Panel labels -->
-  <text x="220" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#334155">Diagram A — AD/AS</text>
-  <text x="680" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#334155">Diagram B — Phillips Curve</text>
+  <text x="220" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#334155">Diagram A · AD/AS</text>
+  <text x="680" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#334155">Diagram B · Phillips Curve</text>
 
   <!-- ================= PANEL A: AD/AS ================= -->
   <line x1="70" y1="410" x2="410" y2="410" stroke="#0f172a" stroke-width="2"/>
@@ -82,7 +82,7 @@
   <path d="M 560 80 Q 640 170 720 230 Q 790 275 860 315" fill="none" stroke="#0369a1" stroke-width="2.3" stroke-dasharray="4,3"/>
   <text x="780" y="305" font-size="11" font-weight="600" fill="#0369a1">SRPC2</text>
 
-  <!-- Point A: (NRU=680, π1≈290) — on SRPC1 at NRU -->
+  <!-- Point A: (NRU=680, π1≈290) · on SRPC1 at NRU -->
   <circle cx="680" cy="290" r="5" fill="#0f172a"/>
   <text x="688" y="294" font-size="13" font-weight="700" fill="#0f172a">A</text>
   <line x1="520" y1="290" x2="680" y2="290" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1"/>

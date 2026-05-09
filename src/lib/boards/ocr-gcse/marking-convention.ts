@@ -1,5 +1,5 @@
 /**
- * OCR GCSE Economics (J205) — marking convention.
+ * OCR GCSE Economics (J205) · marking convention.
  *
  * AO1–AO4 framework but with simpler 3-level banding compared to OCR A-Level.
  * Verified against OCR J205 mark schemes (June 2019–June 2024).

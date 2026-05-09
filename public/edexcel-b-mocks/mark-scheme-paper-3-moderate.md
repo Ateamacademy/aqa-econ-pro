@@ -8,12 +8,12 @@ Mark Scheme (Results)
  In Economics B (9EB0)
  Paper 03: The Economic Environment and Business
 
- PREDICTED PRACTICE PAPER — MODERATE
+ PREDICTED PRACTICE PAPER · MODERATE
 
 
-9EB0/03 — Predicted MS (Moderate)                                                                                       Page 1
+9EB0/03 · Predicted MS (Moderate)                                                                                       Page 1
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
  Edexcel and BTEC Qualifications
  Edexcel and BTEC qualifications are awarded by Pearson, the UK's largest awarding body. We
  provide a wide range of qualifications including academic, vocational, occupational and specific
@@ -32,14 +32,14 @@ Mark Scheme (Results)
 
 
  Summer 2026 (Predicted)
- Predicted Paper Practice — Publications Code: PRED_9EB0_03_MS
+ Predicted Paper Practice · Publications Code: PRED_9EB0_03_MS
  All the material in this publication is an original derivative work.
- © Predicted Practice Paper 2026 — styled on Pearson Edexcel format.
+ © Predicted Practice Paper 2026 · styled on Pearson Edexcel format.
 
 
-9EB0/03 — Predicted MS (Moderate)                                                                                       Page 2
+9EB0/03 · Predicted MS (Moderate)                                                                                       Page 2
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
  General Marking Guidance
     • All candidates must receive the same treatment. Examiners must mark the first candidate in
     exactly the same way as they mark the last.
@@ -60,10 +60,10 @@ Mark Scheme (Results)
     response.
 
 
-9EB0/03 — Predicted MS (Moderate)                                                                                       Page 3
+9EB0/03 · Predicted MS (Moderate)                                                                                       Page 3
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
- Section A — Question 1
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
+ Section A · Question 1
  Case-study context: the UK coffee shop market.
 
       Question       Using Extract B and Figure 1 and an appropriate calculation, discuss the                           Mark
@@ -74,7 +74,7 @@ Mark Scheme (Results)
       1(a)              Knowledge/understanding 2, Application 2, Analysis 2, Evaluation 2                              (8)
 
                           • Figure 1 shows arabica prices rose from $1.68/lb (Jan-23) to $3.12/lb
-                          (Nov-24) — a percentage change of approximately 85.7% ((3.12−1.68)/1.68
+                          (Nov-24) · a percentage change of approximately 85.7% ((3.12−1.68)/1.68
                           × 100).
                           • Extract B states that the wholesale price of arabica roughly doubled in the
                           12 months to November 2024.
@@ -82,14 +82,14 @@ Mark Scheme (Results)
                           output to shift to the left, raising the equilibrium price and reducing the
                           equilibrium quantity.
                           • Branded coffee is relatively price-inelastic in the short run, so chains can
-                          pass some of the cost rise through to consumers — Figure 2 shows the
+                          pass some of the cost rise through to consumers · Figure 2 shows the
                           average latte price rising from £2.95 (2020) to £3.95 (2024).
                           • Independent cafés and small chains cannot hedge via futures markets and
                           therefore face the full impact of spot price rises on margins.
-                          • However, the extent of pass-through depends on competitive pressure —
+                          • However, the extent of pass-through depends on competitive pressure ·
                           the long tail of independents described in Extract A may constrain pricing
                           power.
-                          • Substitution to at-home coffee (Extract C — 14% rise in home coffee
+                          • Substitution to at-home coffee (Extract C · 14% rise in home coffee
                           machine sales) represents a credible substitute and limits how far prices
                           can rise without demand falling.
                           • In evaluation, much depends on whether the bean-price shock is
@@ -122,9 +122,9 @@ Mark Scheme (Results)
     • may directly reference, interpret or analyse the information provided in any relevant stimulus.
 
 
-9EB0/03 — Predicted MS (Moderate)                                                                                              Page 4
+9EB0/03 · Predicted MS (Moderate)                                                                                              Page 4
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
       Question       Assess the likely effect of the changes in UK consumer incomes and                                 Mark
       Number         confidence described in Extract C on the revenue of UK coffee shop chains.
 
@@ -135,22 +135,22 @@ Mark Scheme (Results)
                           • Extract C reports UK CPI of 2.3% (April 2024) rising to 2.6% (Nov 2024),
                           with a modest recovery in real disposable income.
                           • 38% of UK adults are buying coffee out less often, and home coffee
-                          machine sales grew 14% — a structural substitution away from out-of-home
+                          machine sales grew 14% · a structural substitution away from out-of-home
                           coffee.
                           • A rise in real incomes is expected to increase quantity demanded for
                           normal goods; coffee shop visits have positive income elasticity of demand.
                           • Figure 2 shows sector revenue grew from £5.2bn (2023) to £5.6bn (2024),
                           consistent with modest recovery.
-                          • However, the 38% reduction in frequency is a meaningful volume signal —
+                          • However, the 38% reduction in frequency is a meaningful volume signal ·
                           rising prices (Figure 2) may offset volume losses, but the structural shift to
                           at-home consumption may persist.
                           • Cautious consumer confidence dampens the transmission from higher
                           incomes to higher café spend.
                           • Evaluation should consider that income elasticity varies across customer
-                          segments — premium customers are less sensitive, occasional customers
+                          segments · premium customers are less sensitive, occasional customers
                           more so.
                           • A rise in revenue does not necessarily mean a rise in profit if cost inflation
-                          (beans, wages) outpaces price increases — Figure 2 and Extract B support
+                          (beans, wages) outpaces price increases · Figure 2 and Extract B support
                           this.
                           • Judgement: revenue likely to grow modestly, driven more by pricing than
                           volume.
@@ -187,15 +187,15 @@ Mark Scheme (Results)
     the context/issues set out in the question, and
 
 
-9EB0/03 — Predicted MS (Moderate)                                                                                              Page 5
+9EB0/03 · Predicted MS (Moderate)                                                                                              Page 5
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
     • may directly reference, interpret or analyse the information provided in any relevant stimulus.
 
 
-9EB0/03 — Predicted MS (Moderate)                                                                                       Page 6
+9EB0/03 · Predicted MS (Moderate)                                                                                       Page 6
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
       Question       Assess the extent to which the UK coffee shop market can be described as                           Mark
       Number         an oligopoly, using evidence from the extracts to support your answer.
 
@@ -206,16 +206,16 @@ Mark Scheme (Results)
                           • An oligopoly is a market dominated by a small number of interdependent
                           firms, typically with high barriers to entry and non-price competition.
                           • Extract A supports the oligopoly view: Costa, Starbucks and Pret together
-                          account for more than half of branded outlets — a high three-firm
+                          account for more than half of branded outlets · a high three-firm
                           concentration ratio.
                           • Barriers to entry are substantial: £250,000 fit-out cost, 10–15 year lease
                           commitments.
-                          • Non-price competition is evident — loyalty apps, plant-based milks, speed
+                          • Non-price competition is evident · loyalty apps, plant-based milks, speed
                           of service, ambience, mobile ordering.
                           • However, Extract A also describes a 'long tail of independent and regional
-                          coffee shops' growing steadily — suggesting a more fragmented market
+                          coffee shops' growing steadily · suggesting a more fragmented market
                           closer to monopolistic competition.
-                          • Substitutes exist: home coffee (Extract C), supermarket cafés, Greggs —
+                          • Substitutes exist: home coffee (Extract C), supermarket cafés, Greggs ·
                           reducing market power of the leading chains.
                           • Geographic market definition matters: in a town centre the market may
                           look much more oligopolistic than on a national scale.
@@ -224,7 +224,7 @@ Mark Scheme (Results)
                           • Evaluation: the branded chain market is oligopolistic; the total coffee-shop
                           market (including independents and substitutes) is closer to monopolistic
                           competition.
-                          • Judgement depends on market definition — a nuanced answer will
+                          • Judgement depends on market definition · a nuanced answer will
                           recognise both.
 
      Level        Mark         Descriptor
@@ -258,15 +258,15 @@ Mark Scheme (Results)
     • must select relevant examples from their own knowledge, these must be directly connected to
     the context/issues set out in the question, and
 
-9EB0/03 — Predicted MS (Moderate)                                                                                              Page 7
+9EB0/03 · Predicted MS (Moderate)                                                                                              Page 7
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
     • may directly reference, interpret or analyse the information provided in any relevant stimulus.
 
 
-9EB0/03 — Predicted MS (Moderate)                                                                                       Page 8
+9EB0/03 · Predicted MS (Moderate)                                                                                       Page 8
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
       Question       With reference to Extract D and your own knowledge, evaluate the case for                          Mark
       Number         UK government intervention to reduce the external costs associated with
                      disposable coffee cups.
@@ -278,18 +278,18 @@ Mark Scheme (Results)
                           • Disposable cups generate a negative externality of
                           consumption/production: private cost to consumer is below social cost
                           (landfill, litter, plastic waste).
-                          • Extract D: 2.5bn cups per year, recycling rate below 1 in 400 — large
+                          • Extract D: 2.5bn cups per year, recycling rate below 1 in 400 · large
                           volume, limited private incentive to reduce.
                           • Candidates may draw a negative externality diagram showing MPC, MSC,
                           MSB, with welfare loss triangle, and a Pigouvian tax (latte levy) correcting
                           the mispricing.
                           • Case FOR intervention: (i) the externality is systematically under-priced;
-                          (ii) the 5p plastic-bag levy reduced bag use by over 85% — a strong
+                          (ii) the 5p plastic-bag levy reduced bag use by over 85% · a strong
                           behavioural analogue; (iii) voluntary discounts have <5% uptake (Extract
                           D), demonstrating market/behavioural failure; (iv) revenue from a levy could
                           be hypothecated to recycling infrastructure.
-                          • Case AGAINST intervention: (i) regressive — a flat levy is a larger share
-                          of low-income consumers' budgets; (ii) government failure risk — revenue
+                          • Case AGAINST intervention: (i) regressive · a flat levy is a larger share
+                          of low-income consumers' budgets; (ii) government failure risk · revenue
                           not hypothecated; (iii) firms may absorb the levy rather than pass it on,
                           blunting the behavioural nudge; (iv) displacement to non-levied substitutes
                           (cold drinks, bottled water); (v) disproportionate compliance cost for
@@ -297,9 +297,9 @@ Mark Scheme (Results)
                           • Alternative policies: producer regulation (mandatory compostable cups,
                           extended producer responsibility), information campaigns, higher voluntary
                           BYO discounts, deposit-return schemes.
-                          • Effectiveness depends on: (i) the level of the levy — 25p may be too low to
+                          • Effectiveness depends on: (i) the level of the levy · 25p may be too low to
                           change entrenched habits; (ii) availability and price of reusable alternatives;
-                          (iii) administrative cost and enforcement; (iv) time horizon — short-run
+                          (iii) administrative cost and enforcement; (iv) time horizon · short-run
                           revenue vs long-run habit change.
                           • Micro effects: welfare gains from internalising externality; distributional
                           effects depending on design.
@@ -324,9 +324,9 @@ Mark Scheme (Results)
                                generic.
 
 
-9EB0/03 — Predicted MS (Moderate)                                                                                              Page 9
+9EB0/03 · Predicted MS (Moderate)                                                                                              Page 9
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
      Level 3      10–15        Accurate knowledge and understanding, supported by use of relevant evidence to
                                support the argument, developed chains of reasoning, showing understanding of
                                connections between causes and consequences. Arguments are well developed and
@@ -352,10 +352,10 @@ Mark Scheme (Results)
     • may directly reference, interpret or analyse the information provided in any relevant stimulus.
 
 
-9EB0/03 — Predicted MS (Moderate)                                                                                       Page 10
+9EB0/03 · Predicted MS (Moderate)                                                                                       Page 10
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
- Section B — Question 2
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
+ Section B · Question 2
  Case-study context: Tesco plc.
 
       Question       Using the data in Figure 3, calculate the percentage change in Tesco's group                       Mark
@@ -370,16 +370,16 @@ Mark Scheme (Results)
                           12.25% (accept 12.2% or 12.3%).
                           • Operating profit margin = operating profit ÷ sales × 100.
                           • Margin moved from 4.83% (2021/22) to 4.56% (2022/23) to 4.60%
-                          (2023/24) — overall a slight compression of about 0.23 percentage points.
-                          • Sales grew strongly (+12.25%) yet margin fell — costs have risen faster
+                          (2023/24) · overall a slight compression of about 0.23 percentage points.
+                          • Sales grew strongly (+12.25%) yet margin fell · costs have risen faster
                           than revenue.
-                          • This is consistent with wage-cost pressure (Extract G — NLW +9.8%) and
+                          • This is consistent with wage-cost pressure (Extract G · NLW +9.8%) and
                           with competitive pricing via Aldi Price Match and Clubcard Prices (Extract F)
                           capping revenue per item.
                           • Implications for shareholders: absolute profit rose (£2,645m → £2,830m);
-                          dividend per share rose from 10.90p to 12.10p (2023/24) — shareholder
+                          dividend per share rose from 10.90p to 12.10p (2023/24) · shareholder
                           returns increased.
-                          • However, margin compression may indicate long-term pricing pressure —
+                          • However, margin compression may indicate long-term pricing pressure ·
                           earnings growth could stall if volumes do not continue to grow.
                           • Judgement: short-term shareholder returns are positive; long-term
                           sustainability depends on whether margin stabilises or continues to decline.
@@ -410,9 +410,9 @@ Mark Scheme (Results)
     • may directly reference, interpret or analyse the information provided in any relevant stimulus.
 
 
-9EB0/03 — Predicted MS (Moderate)                                                                                              Page 11
+9EB0/03 · Predicted MS (Moderate)                                                                                              Page 11
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
       Question       With reference to Extract F, assess the strategies Tesco has used to                               Mark
       Number         compete with Aldi and Lidl.
 
@@ -420,16 +420,16 @@ Mark Scheme (Results)
 
       2(b)              Knowledge/understanding 2, Application 2, Analysis 3, Evaluation 3                              (10)
 
-                          • Price competition: Aldi Price Match covers 700+ everyday lines —
+                          • Price competition: Aldi Price Match covers 700+ everyday lines ·
                           neutralises the headline-price argument for switching.
                           • Loyalty-led price discrimination: Clubcard Prices covers ~8,000 lines at up
-                          to a third off for 20m+ households — a form of third-degree price
+                          to a third off for 20m+ households · a form of third-degree price
                           discrimination.
                           • Non-price competition: range, convenience, online grocery (1.5m
                           households/week), store format diversity.
-                          • Effectiveness: Tesco's UK grocery share rose to 27.9% (10-year high) —
+                          • Effectiveness: Tesco's UK grocery share rose to 27.9% (10-year high) ·
                           tangible evidence that strategies have worked.
-                          • Limitations: matches only a subset of lines — a full Aldi basket may still be
+                          • Limitations: matches only a subset of lines · a full Aldi basket may still be
                           cheaper; Clubcard creates two-tier pricing perceptions; margin compression
                           (Figure 3).
                           • Evaluation: effectiveness depends on whether loyalty members
@@ -473,9 +473,9 @@ Mark Scheme (Results)
     • may directly reference, interpret or analyse the information provided in any relevant stimulus.
 
 
-9EB0/03 — Predicted MS (Moderate)                                                                                              Page 12
+9EB0/03 · Predicted MS (Moderate)                                                                                              Page 12
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
       Question       Assess the likely impact on Tesco of the rise in the UK National Living Wage                       Mark
       Number         described in Extract G.
 
@@ -489,17 +489,17 @@ Mark Scheme (Results)
                           compressed from 4.83% to 4.60% (Figure 3); price pass-through limited by
                           Aldi Price Match (Extract F); may accelerate substitution of capital for labour
                           (self-service checkouts).
-                          • Positive effects: efficiency-wage argument — higher pay improves
+                          • Positive effects: efficiency-wage argument · higher pay improves
                           recruitment, retention, productivity, lowering training costs; higher incomes
                           for low-paid workers generate additional consumer demand, some of which
                           returns to Tesco (multiplier effect); ESG credentials benefit.
-                          • Impact depends on: (i) Tesco's ability to pass cost to consumers — limited
+                          • Impact depends on: (i) Tesco's ability to pass cost to consumers · limited
                           by discounter competition; (ii) productivity offset via automation; (iii) whether
-                          competitors face the same NLW uplift (they do — levelling effect); (iv) the
+                          competitors face the same NLW uplift (they do · levelling effect); (iv) the
                           size of wages relative to total costs (wages are ~10–12% of Tesco's cost
-                          base, so a 9.8% rise ≈ a 1% absolute cost uplift — meaningful but
+                          base, so a 9.8% rise ≈ a 1% absolute cost uplift · meaningful but
                           manageable).
-                          • Labour market context: UK unemployment 4.3%, vacancies elevated —
+                          • Labour market context: UK unemployment 4.3%, vacancies elevated ·
                           labour market tight, so attracting staff may already have required voluntary
                           pay rises.
                           • Evaluation: net impact likely modestly negative for margin in the short run,
@@ -539,9 +539,9 @@ Mark Scheme (Results)
     • may directly reference, interpret or analyse the information provided in any relevant stimulus.
 
 
-9EB0/03 — Predicted MS (Moderate)                                                                                              Page 13
+9EB0/03 · Predicted MS (Moderate)                                                                                              Page 13
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
       Question       Evaluate the extent to which Tesco's future financial performance depends                          Mark
       Number         on macroeconomic conditions in the UK rather than on decisions taken by
                      the firm's own management.
@@ -555,12 +555,12 @@ Mark Scheme (Results)
                           • Managerial drivers: pricing strategy, product range, store portfolio, supply
                           chain, labour policy, capital investment, portfolio decisions (e.g. sale of
                           Tesco Bank).
-                          • Synoptic application — macro side: CPI near 2% target (Extract C); real
+                          • Synoptic application · macro side: CPI near 2% target (Extract C); real
                           incomes recovering; NLW +9.8% (Extract G); unemployment 4.3%. These
                           drive volumes and costs.
-                          • Synoptic application — management side: Aldi Price Match, Clubcard
+                          • Synoptic application · management side: Aldi Price Match, Clubcard
                           Prices (Extract F); sales +12.25%; UK market share up from 27.1% to
-                          27.6% (Figure 3) — market-share movement isolates the effect of
+                          27.6% (Figure 3) · market-share movement isolates the effect of
                           management decisions from macro conditions that affect all competitors
                           alike.
                           • Case for macro dominance: grocery demand is relatively inelastic but real
@@ -569,7 +569,7 @@ Mark Scheme (Results)
                           financing cost; exchange rates drive the cost of imported food and
                           non-food.
                           • Case for management dominance: market share is a within-industry metric
-                          that strips out macro — Tesco's 0.8pp gain represents roughly £1.8bn of
+                          that strips out macro · Tesco's 0.8pp gain represents roughly £1.8bn of
                           additional annual revenue attributable to competitive execution; strategic
                           choices (Aldi Price Match, Clubcard, Booker, Tesco Bank sale) are
                           management decisions; automation and supply-chain investment drive
@@ -583,7 +583,7 @@ Mark Scheme (Results)
                           • Evaluation: short-run performance more macro-sensitive (cost-of-living
                           squeeze in 2022/23 visible in margin compression); long-run performance
                           more management-driven (capability, innovation, capital allocation);
-                          severity of macro shock matters — a deep recession would dominate
+                          severity of macro shock matters · a deep recession would dominate
                           excellent management; mild cycles let management effects show.
                           • A supported judgement (e.g. 'in a normal macro environment,
                           management decisions dominate relative performance; in a severe shock,
@@ -604,9 +604,9 @@ Mark Scheme (Results)
                                generic.
 
 
-9EB0/03 — Predicted MS (Moderate)                                                                                              Page 14
+9EB0/03 · Predicted MS (Moderate)                                                                                              Page 14
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
      Level 3      10–15        Accurate knowledge and understanding, supported by use of relevant evidence to
                                support the argument, developed chains of reasoning, showing understanding of
                                connections between causes and consequences. Arguments are well developed and
@@ -632,14 +632,14 @@ Mark Scheme (Results)
     • may directly reference, interpret or analyse the information provided in any relevant stimulus.
 
 
-9EB0/03 — Predicted MS (Moderate)                                                                                       Page 15
+9EB0/03 · Predicted MS (Moderate)                                                                                       Page 15
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.
                                Pearson Education Limited. Registered company number 872828
                          with its registered office at 80 Strand, London, WC2R 0RL, United Kingdom.
-                   Predicted Practice Paper styled on the Edexcel format — not an official Pearson document.
+                   Predicted Practice Paper styled on the Edexcel format · not an official Pearson document.
 
 
-9EB0/03 — Predicted MS (Moderate)                                                                                       Page 16
+9EB0/03 · Predicted MS (Moderate)                                                                                       Page 16
 
-                   Predicted practice paper — produced for revision only; not an official Pearson / Edexcel document.
+                   Predicted practice paper · produced for revision only; not an official Pearson / Edexcel document.

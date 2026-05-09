@@ -231,43 +231,43 @@ serve(async (req) => {
       }
     } else if (subjectKey === "wjec") {
       if ((paper || "") === "1") {
-        contextPrompt += "- Unit 1: Introduction to Economics (AS) — 1h30m, 60 marks.\n";
-        contextPrompt += "- Section A: Compulsory data response (30 marks) — 2m, 2m, 4m, 6m, 8m, 8m.\n";
-        contextPrompt += "- Section B: Essay choice (30 marks) — 12m explain + 18m evaluate.\n";
+        contextPrompt += "- Unit 1: Introduction to Economics (AS) · 1h30m, 60 marks.\n";
+        contextPrompt += "- Section A: Compulsory data response (30 marks) · 2m, 2m, 4m, 6m, 8m, 8m.\n";
+        contextPrompt += "- Section B: Essay choice (30 marks) · 12m explain + 18m evaluate.\n";
         contextPrompt += "- Topics: market mechanisms, demand & supply, elasticity, market failure, government intervention.\n";
       } else if ((paper || "") === "2") {
-        contextPrompt += "- Unit 2: Economics in Action (AS) — 1h30m, 60 marks.\n";
+        contextPrompt += "- Unit 2: Economics in Action (AS) · 1h30m, 60 marks.\n";
         contextPrompt += "- Same structure as Unit 1 but macroeconomic topics.\n";
         contextPrompt += "- Topics: economic indicators, AD/AS, growth, unemployment, inflation, fiscal/monetary policy.\n";
       } else {
-        contextPrompt += "- Units 3 & 4: A2 Applied Economics — 2 hours, 80 marks.\n";
+        contextPrompt += "- Units 3 & 4: A2 Applied Economics · 2 hours, 80 marks.\n";
         contextPrompt += "- Section A: Extended data response (40 marks) with synoptic content.\n";
-        contextPrompt += "- Section B: Essay choice from three (40 marks) — Part (a) 16m + Part (b) 24m.\n";
+        contextPrompt += "- Section B: Essay choice from three (40 marks) · Part (a) 16m + Part (b) 24m.\n";
       }
     } else if (subjectKey === "eduqas") {
       if ((paper || "") === "1") {
-        contextPrompt += "- Component 1: Markets and Market Failure — 2 hours, 80 marks.\n";
-        contextPrompt += "- Section A: Data response (40 marks) — 2m, 4m, 6m, 8m, 20m.\n";
-        contextPrompt += "- Section B: Essay choice from three (40 marks) — Part (a) 16m + Part (b) 24m.\n";
+        contextPrompt += "- Component 1: Markets and Market Failure · 2 hours, 80 marks.\n";
+        contextPrompt += "- Section A: Data response (40 marks) · 2m, 4m, 6m, 8m, 20m.\n";
+        contextPrompt += "- Section B: Essay choice from three (40 marks) · Part (a) 16m + Part (b) 24m.\n";
       } else if ((paper || "") === "2") {
-        contextPrompt += "- Component 2: National and International Economy — 2 hours, 80 marks.\n";
+        contextPrompt += "- Component 2: National and International Economy · 2 hours, 80 marks.\n";
         contextPrompt += "- Same structure as Component 1 but macroeconomic topics.\n";
       } else {
-        contextPrompt += "- Component 3: Synoptic Data Response — 2h15m, 80 marks.\n";
+        contextPrompt += "- Component 3: Synoptic Data Response · 2h15m, 80 marks.\n";
         contextPrompt += "- Section A: Data response (40 marks) with synoptic micro+macro content.\n";
-        contextPrompt += "- Section B: Synoptic essay (40 marks) — Part (a) 16m + Part (b) 24m.\n";
+        contextPrompt += "- Section B: Synoptic essay (40 marks) · Part (a) 16m + Part (b) 24m.\n";
       }
     } else if (subjectKey === "ocr_gcse") {
       if ((paper || "") === "1") {
-        contextPrompt += "- Component 1 (J205/01): Introduction to Economics — 1h15m, 60 marks.\n";
+        contextPrompt += "- Component 1 (J205/01): Introduction to Economics · 1h15m, 60 marks.\n";
         contextPrompt += "- Section A: 15 MCQs (15 marks).\n";
-        contextPrompt += "- Section B: Short answer and data response (25 marks) — 1m, 2m, 4m, 6m questions.\n";
-        contextPrompt += "- Section C: Extended response choice (20 marks) — Part (a) 8m + Part (b) 12m.\n";
+        contextPrompt += "- Section B: Short answer and data response (25 marks) · 1m, 2m, 4m, 6m questions.\n";
+        contextPrompt += "- Section C: Extended response choice (20 marks) · Part (a) 8m + Part (b) 12m.\n";
       } else if ((paper || "") === "2") {
-        contextPrompt += "- Component 2 (J205/02): National and International Economics — 1h15m, 60 marks.\n";
+        contextPrompt += "- Component 2 (J205/02): National and International Economics · 1h15m, 60 marks.\n";
         contextPrompt += "- Same structure as Component 1 but macroeconomic topics.\n";
       } else {
-        contextPrompt += "- Full paper covering both components — 60 marks.\n";
+        contextPrompt += "- Full paper covering both components · 60 marks.\n";
       }
     } else if ((paper || "") === "1" || (paper || "") === "2") {
       contextPrompt += "- Section A must include BOTH Context 1 and Context 2 (EITHER/OR layout).\n";
@@ -284,7 +284,7 @@ serve(async (req) => {
     contextPrompt += "- Questions MUST ONLY reference extracts/contexts that are actually provided in the paper.\n";
     contextPrompt += "- Do NOT reference 'Extract D' if only Extracts A, B, C exist. Cross-check all references before finalising.\n";
 
-    contextPrompt += "\n### Knowledge Graph — Synoptic Links:\n";
+    contextPrompt += "\n### Knowledge Graph · Synoptic Links:\n";
     const uniqueLinks = [...new Set(synopticLinks)].slice(0, 20);
     for (const link of uniqueLinks) {
       contextPrompt += `- ${link}\n`;

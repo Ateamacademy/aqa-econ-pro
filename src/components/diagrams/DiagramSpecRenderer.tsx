@@ -1,14 +1,14 @@
 /**
- * DiagramSpecRenderer — The single renderDiagram() engine.
+ * DiagramSpecRenderer · The single renderDiagram() engine.
  *
  * Takes a DiagramSpec and renders a complete SVG economics diagram:
  *   1. Resolves all curve equations mathematically
- *   2. Computes ALL equilibria via intersect() — never hardcoded
+ *   2. Computes ALL equilibria via intersect() · never hardcoded
  *   3. Draws shading, then curves, then equilibrium points
  *   4. Places every label relative to its computed SVG coordinate
  *   5. Runs sanity checks and logs console.error if violated
  *
- * All positioning goes through toSx/toSy — no diagram-specific code
+ * All positioning goes through toSx/toSy · no diagram-specific code
  * touches SVG coordinates directly.
  */
 
@@ -29,7 +29,7 @@ import type {
 } from "./diagramSpecs";
 
 /* ══════════════════════════════════════════════
-   SVG Layout Constants — single source of truth
+   SVG Layout Constants · single source of truth
    ══════════════════════════════════════════════ */
 
 const SVG_W = 700;
@@ -213,7 +213,7 @@ function intersectCurves(a: CurveParams, b: CurveParams): DataPoint | null {
     return { x: b.x, y };
   }
 
-  // Linear ∩ Quadratic — solve a*x² + (b-m)*x + (c-k) = 0
+  // Linear ∩ Quadratic · solve a*x² + (b-m)*x + (c-k) = 0
   if (a.type === "quadratic" && b.type === "linear") {
     const A = a.a;
     const B = a.b - b.slope;
@@ -426,7 +426,7 @@ export default function DiagramSpecRenderer({ spec, className }: DiagramSpecRend
       else if (check.check.relation === ">") ok = va > vb;
       else ok = Math.abs(va - vb) < 0.01;
       if (!ok) {
-        console.error(`[DiagramSpec] SANITY CHECK FAILED: ${check.description} — got ${va.toFixed(2)} vs ${vb.toFixed(2)}`);
+        console.error(`[DiagramSpec] SANITY CHECK FAILED: ${check.description} · got ${va.toFixed(2)} vs ${vb.toFixed(2)}`);
       }
     }
   }, [eqMap, spec.sanityChecks]);

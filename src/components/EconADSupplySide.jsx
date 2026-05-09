@@ -8,7 +8,7 @@ export default function EconADSupplySide() {
           <marker id="ssGrn" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#1a944a"/></marker>
         </defs>
         <rect width="660" height="540" fill="#fff"/>
-        <text x="330" y="30" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">AD/AS — Supply-Side Policy Effect</text>
+        <text x="330" y="30" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">AD/AS · Supply-Side Policy Effect</text>
         <text x="330" y="50" textAnchor="middle" fontSize="12" fill="#555">Rightward shift of LRAS/SRAS → lower price level, higher real GDP</text>
         <line x1="88" y1="440" x2="88" y2="52" stroke="#111" strokeWidth="2.5" markerEnd="url(#ssU)"/>
         <line x1="88" y1="440" x2="562" y2="440" stroke="#111" strokeWidth="2.5" markerEnd="url(#ssR)"/>

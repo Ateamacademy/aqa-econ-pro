@@ -10,10 +10,10 @@ export const ocrPredictedPapers: PredictedPaper[] = [
     id: "ocr-c01-set-a",
     subject: "ocr",
     paper: "1",
-    title: "Component 01 Micro — Set A (Moderate)",
-    description: "H460/01 Microeconomics — Moderate predicted paper: UK coffee shop market, monopolistic competition, sugar tax, public transport subsidies, minimum wage.",
+    title: "Component 01 Micro · Set A (Moderate)",
+    description: "H460/01 Microeconomics · Moderate predicted paper: UK coffee shop market, monopolistic competition, sugar tax, public transport subsidies, minimum wage.",
     totalMarks: 80,
-    content: `# OCR A-Level Economics (H460/01) — Component 01: Microeconomics — Predicted Paper (Moderate)
+    content: `# OCR A-Level Economics (H460/01) · Component 01: Microeconomics · Predicted Paper (Moderate)
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -29,7 +29,7 @@ The UK branded coffee shop market has grown rapidly over the past two decades. B
 
 Independent coffee shops have grown rapidly since 2020. Research suggests independents now account for roughly half of UK coffee shop outlets. High-street bakery Greggs has also expanded aggressively into coffee, selling over 150 million cups in 2023, while Pret A Manger's subscription scheme signed up over 1.25 million members.
 
-**Fig. 1 — Selected UK coffee-market cost and wage indices (Jan 2020 = 100)**
+**Fig. 1 · Selected UK coffee-market cost and wage indices (Jan 2020 = 100)**
 
 | Date | National Living Wage (£/hr) | Coffee-shop prices (index) | Coffee-bean price (index) |
 |---|---|---|---|
@@ -45,7 +45,7 @@ Despite rising costs, entry to the coffee shop market remains relatively easy co
 
 Some economists argue the UK coffee market now closely resembles monopolistic competition. Others point to the continued strength of the largest chains, long-term lease agreements on prime locations, and the buying power of large chains over suppliers as evidence that the market is not fully competitive.
 
-**Fig. 2 — Estimated UK coffee shop market shares by number of outlets (2023)**
+**Fig. 2 · Estimated UK coffee shop market shares by number of outlets (2023)**
 
 | Operator | Market share (%) |
 |---|---|
@@ -102,10 +102,10 @@ Between April 2020 and April 2024 the UK National Living Wage rose from £8.72 t
     id: "ocr-c01-set-b",
     subject: "ocr",
     paper: "1",
-    title: "Component 01 Micro — Set B (Hard)",
-    description: "H460/01 Microeconomics — Hard predicted paper: UK domestic energy supply market, Default Tariff Cap, oligopoly, externalities, trade unions.",
+    title: "Component 01 Micro · Set B (Hard)",
+    description: "H460/01 Microeconomics · Hard predicted paper: UK domestic energy supply market, Default Tariff Cap, oligopoly, externalities, trade unions.",
     totalMarks: 80,
-    content: `# OCR A-Level Economics (H460/01) — Component 01: Microeconomics — Predicted Paper (Hard)
+    content: `# OCR A-Level Economics (H460/01) · Component 01: Microeconomics · Predicted Paper (Hard)
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -121,7 +121,7 @@ For many years the UK domestic energy supply market was dominated by the 'Big Si
 
 In January 2019, following an investigation by the Competition and Markets Authority (CMA), Ofgem introduced the Default Tariff Cap. The cap limits the maximum price that suppliers can charge households on standard variable tariffs. Ofgem updates the cap every three months to reflect changes in wholesale gas and electricity costs.
 
-**Fig. 1 — UK wholesale gas price index and average annual household dual-fuel bill (Jan 2020 = 100 / £ per year)**
+**Fig. 1 · UK wholesale gas price index and average annual household dual-fuel bill (Jan 2020 = 100 / £ per year)**
 
 | Date | Wholesale gas index (Jan 2020 = 100) | Average annual bill (£) |
 |---|---|---|
@@ -138,7 +138,7 @@ Burning natural gas and other fossil fuels to generate electricity produces carb
 
 Switching rates between suppliers have fallen sharply since the 2021 crisis. In the year to April 2024 only 5% of households switched supplier, compared with over 18% in 2018. Commentators suggest that consumer inertia, concerns about supplier financial stability, and the effect of the Default Tariff Cap have all reduced the incentive to switch.
 
-**Fig. 2 — Estimated UK domestic energy supplier market shares (2024)**
+**Fig. 2 · Estimated UK domestic energy supplier market shares (2024)**
 
 | Supplier | Market share (%) |
 |---|---|
@@ -194,10 +194,10 @@ In 2023 around 22% of UK employees were members of a trade union, a figure that 
     id: "ocr-c01-set-c",
     subject: "ocr",
     paper: "1",
-    title: "Component 01 Micro — Set C (Advanced)",
-    description: "H460/01 Microeconomics — Advanced predicted paper: UK grocery sector, contestability, CMA investigations, price discrimination, privatisation, ageing population.",
+    title: "Component 01 Micro · Set C (Advanced)",
+    description: "H460/01 Microeconomics · Advanced predicted paper: UK grocery sector, contestability, CMA investigations, price discrimination, privatisation, ageing population.",
     totalMarks: 80,
-    content: `# OCR A-Level Economics (H460/01) — Component 01: Microeconomics — Predicted Paper (Advanced)
+    content: `# OCR A-Level Economics (H460/01) · Component 01: Microeconomics · Predicted Paper (Advanced)
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -213,7 +213,7 @@ The UK grocery sector is one of the most significant retail markets in the count
 
 Between 2021 and 2023, UK grocery price inflation rose sharply, peaking at 17.5% in March 2023 – the highest level since the 1970s. In May 2023 the Competition and Markets Authority (CMA) launched an investigation into alleged 'greedflation', examining whether grocery retailers used rising input costs as cover for increasing their profit margins beyond what was needed.
 
-**Fig. 1 — UK grocery retailer market shares, 2015 – 2024 (% of 12-week grocery sales)**
+**Fig. 1 · UK grocery retailer market shares, 2015 – 2024 (% of 12-week grocery sales)**
 
 | Retailer | 2015 | 2019 | 2024 |
 |---|---|---|---|
@@ -229,7 +229,7 @@ The CMA's 2023 update into the grocery sector concluded that competition was 'br
 
 Barriers to entry into UK grocery include access to prime real estate, economies of scale, sophisticated supply-chain technology and national distribution networks. Exit, however, is also costly – Morrisons was acquired by private equity firm CD&R for £7bn in 2021, and online grocer Ocado reported cumulative losses of over £500m between 2020 and 2023.
 
-**Fig. 2 — UK grocery price inflation and Big Four operating margins, 2020 – 2024**
+**Fig. 2 · UK grocery price inflation and Big Four operating margins, 2020 – 2024**
 
 | Year | Annual grocery price inflation (%) | Average Big Four operating margin (%) |
 |---|---|---|
@@ -284,10 +284,10 @@ The UK population is ageing. The Office for National Statistics projects that by
     id: "ocr-c02-set-a",
     subject: "ocr",
     paper: "2",
-    title: "Component 02 Macro — Set A (Moderate)",
-    description: "H460/02 Macroeconomics — Moderate predicted paper: Vietnam's economic transformation, FDI, inflation, productivity, supply-side policy.",
+    title: "Component 02 Macro · Set A (Moderate)",
+    description: "H460/02 Macroeconomics · Moderate predicted paper: Vietnam's economic transformation, FDI, inflation, productivity, supply-side policy.",
     totalMarks: 80,
-    content: `# OCR A-Level Economics (H460/02) — Component 02: Macroeconomics — Predicted Paper (Moderate)
+    content: `# OCR A-Level Economics (H460/02) · Component 02: Macroeconomics · Predicted Paper (Moderate)
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -305,7 +305,7 @@ In 2022, Vietnam's inflation rate was 3.2%, but it rose to 4.6% in 2023 as globa
 
 Vietnam has actively sought FDI as a means of promoting economic growth and creating employment.
 
-**Fig. 1 — Annual FDI inflows (US$bn) and real GDP growth rate (%) for selected Asian economies, 2022**
+**Fig. 1 · Annual FDI inflows (US$bn) and real GDP growth rate (%) for selected Asian economies, 2022**
 
 | Country | FDI inflows (US$ billions) | Real GDP growth rate (%) |
 |---|---|---|
@@ -318,7 +318,7 @@ Vietnam has actively sought FDI as a means of promoting economic growth and crea
 
 Vietnam's government has increased its spending on education, vocational training and infrastructure with the aim of raising the country's labour productivity.
 
-**Table 1 — Unemployment rate and labour productivity index, selected countries, 2023**
+**Table 1 · Unemployment rate and labour productivity index, selected countries, 2023**
 
 | Country | Unemployment rate (%) | Labour productivity index (2015 = 100) |
 |---|---|---|
@@ -374,10 +374,10 @@ Central banks use interest rates as a key monetary policy tool to influence econ
     id: "ocr-c02-set-b",
     subject: "ocr",
     paper: "2",
-    title: "Component 02 Macro — Set B (Hard)",
-    description: "H460/02 Macroeconomics — Hard predicted paper: UK post-pandemic challenges, productivity puzzle, government debt, monetary policy, exchange rates.",
+    title: "Component 02 Macro · Set B (Hard)",
+    description: "H460/02 Macroeconomics · Hard predicted paper: UK post-pandemic challenges, productivity puzzle, government debt, monetary policy, exchange rates.",
     totalMarks: 80,
-    content: `# OCR A-Level Economics (H460/02) — Component 02: Macroeconomics — Predicted Paper (Hard)
+    content: `# OCR A-Level Economics (H460/02) · Component 02: Macroeconomics · Predicted Paper (Hard)
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -389,13 +389,13 @@ Read the stimulus material and answer all the parts of Question 1.
 
 **The UK's post-pandemic economic challenges**
 
-The United Kingdom's economy has faced a series of supply-side and demand-side shocks since the Covid-19 pandemic. In 2022, the UK's inflation rate reached 11.1% — a 41-year high — driven by rising energy prices, disrupted supply chains and tight labour markets. Although inflation fell back to around 4.0% during 2024, real wages had fallen for much of this period as nominal wage growth failed to keep pace with rising prices.
+The United Kingdom's economy has faced a series of supply-side and demand-side shocks since the Covid-19 pandemic. In 2022, the UK's inflation rate reached 11.1% · a 41-year high · driven by rising energy prices, disrupted supply chains and tight labour markets. Although inflation fell back to around 4.0% during 2024, real wages had fallen for much of this period as nominal wage growth failed to keep pace with rising prices.
 
-The Bank of England responded by raising the Bank Rate from 0.1% in December 2021 to 5.25% in August 2023 — its highest level in over 15 years. This contractionary monetary stance has sharpened the trade-off between the objectives of controlling inflation and supporting output growth. In 2024, UK real GDP grew by just 0.9% and the current account deficit remained around 3.3% of GDP.
+The Bank of England responded by raising the Bank Rate from 0.1% in December 2021 to 5.25% in August 2023 · its highest level in over 15 years. This contractionary monetary stance has sharpened the trade-off between the objectives of controlling inflation and supporting output growth. In 2024, UK real GDP grew by just 0.9% and the current account deficit remained around 3.3% of GDP.
 
-A continuing concern is the UK's weak productivity growth — often described as the 'productivity puzzle'.
+A continuing concern is the UK's weak productivity growth · often described as the 'productivity puzzle'.
 
-**Fig. 1 — Average annual labour productivity growth and real wage growth, 2019–2023 (% per year)**
+**Fig. 1 · Average annual labour productivity growth and real wage growth, 2019–2023 (% per year)**
 
 | Country | Labour productivity growth (%) | Real wage growth (%) |
 |---|---|---|
@@ -408,7 +408,7 @@ A continuing concern is the UK's weak productivity growth — often described as
 
 The UK's fiscal position has also deteriorated. Government borrowing rose sharply during the pandemic, and public sector net debt reached 98% of GDP by 2024. The government's headline interest payments on debt more than doubled between 2021 and 2023, partly reflecting higher interest rates and the fact that about a quarter of UK government debt is index-linked.
 
-**Table 1 — Government debt (% of GDP) and ten-year government bond yields (%), 2024**
+**Table 1 · Government debt (% of GDP) and ten-year government bond yields (%), 2024**
 
 | Country | Government debt (% of GDP) | 10-year bond yield (%) |
 |---|---|---|
@@ -419,7 +419,7 @@ The UK's fiscal position has also deteriorated. Government borrowing rose sharpl
 | Italy | 137 | 3.8 |
 | France | 112 | 3.2 |
 
-The UK's main trading partners include the European Union, the United States and China. Following Brexit, UK exporters to the EU have faced additional regulatory and customs costs. In 2024, the UK's export price index was 118.5 while its import price index was 125.0. Some economists argue that persistent supply-side weaknesses — low investment, skill shortages and regulatory friction — have reduced the UK's potential growth rate. Others highlight the role of demand management: reducing the budget deficit through tax rises and spending cuts may help control inflation but could tip the economy into recession.
+The UK's main trading partners include the European Union, the United States and China. Following Brexit, UK exporters to the EU have faced additional regulatory and customs costs. In 2024, the UK's export price index was 118.5 while its import price index was 125.0. Some economists argue that persistent supply-side weaknesses · low investment, skill shortages and regulatory friction · have reduced the UK's potential growth rate. Others highlight the role of demand management: reducing the budget deficit through tax rises and spending cuts may help control inflation but could tip the economy into recession.
 
 Question 1a [2 marks]
 Using information from the stimulus material, identify two factors that may have caused the rise in the UK's inflation rate in 2022.
@@ -464,10 +464,10 @@ A number of European countries have chosen to adopt the euro as their national c
     id: "ocr-c02-set-c",
     subject: "ocr",
     paper: "2",
-    title: "Component 02 Macro — Set C (Advanced)",
-    description: "H460/02 Macroeconomics — Advanced predicted paper: Argentina's macroeconomic instability, hyperinflation, IMF, dollarisation, quantitative tightening.",
+    title: "Component 02 Macro · Set C (Advanced)",
+    description: "H460/02 Macroeconomics · Advanced predicted paper: Argentina's macroeconomic instability, hyperinflation, IMF, dollarisation, quantitative tightening.",
     totalMarks: 80,
-    content: `# OCR A-Level Economics (H460/02) — Component 02: Macroeconomics — Predicted Paper (Advanced)
+    content: `# OCR A-Level Economics (H460/02) · Component 02: Macroeconomics · Predicted Paper (Advanced)
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -479,13 +479,13 @@ Read the stimulus material and answer all the parts of Question 1.
 
 **Argentina's macroeconomic instability**
 
-Argentina has a long history of macroeconomic instability. Between 2018 and 2023, the country experienced multiple currency crises, sovereign debt defaults and periods of extremely high inflation. Annual inflation exceeded 50% in 2021, rose above 100% in 2022 and reached 211% by the end of 2023 — one of the highest rates in the world. Over the same period, the Argentine peso depreciated from around 30 pesos per US dollar in early 2018 to over 800 pesos per US dollar by December 2023 (official rate).
+Argentina has a long history of macroeconomic instability. Between 2018 and 2023, the country experienced multiple currency crises, sovereign debt defaults and periods of extremely high inflation. Annual inflation exceeded 50% in 2021, rose above 100% in 2022 and reached 211% by the end of 2023 · one of the highest rates in the world. Over the same period, the Argentine peso depreciated from around 30 pesos per US dollar in early 2018 to over 800 pesos per US dollar by December 2023 (official rate).
 
-High inflation and currency depreciation have significantly eroded household purchasing power. It is estimated that over 40% of Argentina's population were living below the national poverty line by 2023. The country's central bank raised its policy interest rate to 133% in October 2023 to combat inflation. Real interest rates — the policy rate adjusted for inflation — were, however, still deeply negative for most of the period.
+High inflation and currency depreciation have significantly eroded household purchasing power. It is estimated that over 40% of Argentina's population were living below the national poverty line by 2023. The country's central bank raised its policy interest rate to 133% in October 2023 to combat inflation. Real interest rates · the policy rate adjusted for inflation · were, however, still deeply negative for most of the period.
 
 Argentina has received multiple loan packages from the International Monetary Fund (IMF). In 2018, it received the largest single IMF loan in the Fund's history (US$57 billion). In 2022, the country agreed a refinancing programme with the IMF. Loans from the IMF typically come with conditions requiring fiscal consolidation, structural reform and the building up of foreign currency reserves.
 
-**Fig. 1 — Average annual currency depreciation against the US dollar and average annual CPI inflation rate, 2019–2023 (%)**
+**Fig. 1 · Average annual currency depreciation against the US dollar and average annual CPI inflation rate, 2019–2023 (%)**
 
 | Country | Avg. currency depreciation (%/yr) | Avg. CPI inflation (%/yr) |
 |---|---|---|
@@ -496,9 +496,9 @@ Argentina has received multiple loan packages from the International Monetary Fu
 | Indonesia | 3.4 | 3.6 |
 | India | 3.0 | 5.6 |
 
-Argentina's export performance has been a source of foreign currency but is highly concentrated in primary commodities — principally soybeans, beef and maize — making the country vulnerable to global commodity price fluctuations and drought. In 2023, Argentina's export price index was 152.4 and its import price index was 168.0. Argentina has also imposed strict capital controls restricting access to foreign currency, creating a black-market exchange rate that trades at a substantial premium to the official rate.
+Argentina's export performance has been a source of foreign currency but is highly concentrated in primary commodities · principally soybeans, beef and maize · making the country vulnerable to global commodity price fluctuations and drought. In 2023, Argentina's export price index was 152.4 and its import price index was 168.0. Argentina has also imposed strict capital controls restricting access to foreign currency, creating a black-market exchange rate that trades at a substantial premium to the official rate.
 
-**Table 1 — Real GDP growth rate and unemployment rate in six IMF programme countries, 2023**
+**Table 1 · Real GDP growth rate and unemployment rate in six IMF programme countries, 2023**
 
 | Country | Real GDP growth (%) | Unemployment rate (%) |
 |---|---|---|
@@ -509,7 +509,7 @@ Argentina's export performance has been a source of foreign currency but is high
 | Egypt | 3.8 | 7.1 |
 | Kenya | 5.6 | 5.7 |
 
-Debate continues within Argentina about the appropriate policy response. Some economists have argued for "dollarisation" — formally adopting the US dollar as legal tender — to impose external discipline on monetary policy. Others advocate structural reform of public expenditure, privatisation of loss-making state firms and removal of subsidies on energy and transport. Critics point out that fiscal austerity can further depress output, widen poverty and provoke political instability.
+Debate continues within Argentina about the appropriate policy response. Some economists have argued for "dollarisation" · formally adopting the US dollar as legal tender · to impose external discipline on monetary policy. Others advocate structural reform of public expenditure, privatisation of loss-making state firms and removal of subsidies on energy and transport. Critics point out that fiscal austerity can further depress output, widen poverty and provoke political instability.
 
 Question 1a [2 marks]
 Using information from the stimulus material, identify two causes of Argentina's currency depreciation.
@@ -554,10 +554,10 @@ In pursuit of their macroeconomic objectives, central banks frequently face shor
     id: "ocr-c03-set-a",
     subject: "ocr",
     paper: "3",
-    title: "Component 03 Themes — Set A (Moderate)",
-    description: "H460/03 Themes — Moderate: 30 MCQs + UK rail industry, UK housing market & interest rates, teachers' pay extracts.",
+    title: "Component 03 Themes · Set A (Moderate)",
+    description: "H460/03 Themes · Moderate: 30 MCQs + UK rail industry, UK housing market & interest rates, teachers' pay extracts.",
     totalMarks: 80,
-    content: `# OCR A-Level Economics (H460/03) — Component 03: Themes in Economics — Predicted Paper (Moderate)
+    content: `# OCR A-Level Economics (H460/03) · Component 03: Themes in Economics · Predicted Paper (Moderate)
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -777,7 +777,7 @@ Where on the current account of the balance of payments would interest received 
 
 ## Section B: Data Response
 
-### Extract 1 — The UK Rail Industry
+### Extract 1 · The UK Rail Industry
 
 The UK rail network is one of the oldest in the world. In 1994 the industry was privatised; passenger services were split into regional franchises operated by private sector firms, while the infrastructure (tracks, signals and stations) has been managed by Network Rail, a public sector body, since 2002. Each passenger franchise operates as a regional monopoly, with consumers on most routes having no choice of operator.
 
@@ -787,7 +787,7 @@ In 2022/23, UK government spending on the rail network totalled £24.3 billion, 
 
 Critics argue that splitting the industry into many operating firms has led to a loss of economies of scale and inefficient duplication, while supporters of privatisation point to the rise in passenger numbers, investment in new rolling stock, and improvements in punctuality compared with the pre-1994 era. Customer satisfaction scores, however, have declined from 83% in 2013 to 76% in 2023.
 
-**Fig. 1.1 — Selected indicators for the UK rail industry, 2013–2023**
+**Fig. 1.1 · Selected indicators for the UK rail industry, 2013–2023**
 
 | Year | Passenger journeys (millions) | Average fare index (2013=100) | Customer satisfaction (%) |
 |---|---|---|---|
@@ -806,9 +806,9 @@ Explain, using the information in Extract 1, one reason why customer satisfactio
 Question 33 [15 marks]
 Evaluate, using an appropriate diagram and the information in Extract 1, whether a natural monopoly such as the rail network should be owned and operated by the public sector.
 
-### Extract 2 — UK Housing Market and Interest Rates
+### Extract 2 · UK Housing Market and Interest Rates
 
-The UK housing market has long been a key driver of household wealth and consumer spending. Between 2020 and 2022, house prices rose by 22%, fuelled by historically low interest rates, a temporary cut in Stamp Duty, and a post-pandemic 'race for space' as more people worked from home. Housing demand was strong, but supply remained constrained — the UK built only 210,000 new homes in 2022/23, well below the government target of 300,000.
+The UK housing market has long been a key driver of household wealth and consumer spending. Between 2020 and 2022, house prices rose by 22%, fuelled by historically low interest rates, a temporary cut in Stamp Duty, and a post-pandemic 'race for space' as more people worked from home. Housing demand was strong, but supply remained constrained · the UK built only 210,000 new homes in 2022/23, well below the government target of 300,000.
 
 In response to rising inflation, which peaked at 11.1% in October 2022, the Bank of England's Monetary Policy Committee (MPC) raised the official bank rate from 0.1% in December 2021 to 5.25% by August 2023. For the roughly 1.6 million households due to remortgage in 2024, this has meant sharp increases in monthly repayments. Around 2.4 million mortgages are due to come off fixed rates before the end of 2026.
 
@@ -816,7 +816,7 @@ The housing market has cooled significantly. The Halifax House Price Index fell 
 
 Some economists argue that higher interest rates are a blunt tool that punishes borrowers while doing little to address supply-side inflation pressures. Others argue that the tightening of monetary policy was essential to re-anchor inflation expectations and that the lagged effects of higher interest rates are necessary to return inflation to the 2% target.
 
-**Fig. 2.1 — UK CPI annual inflation rate and Bank of England base rate (%)**
+**Fig. 2.1 · UK CPI annual inflation rate and Bank of England base rate (%)**
 
 | Date | CPI inflation (%) | Bank rate (%) |
 |---|---|---|
@@ -835,15 +835,15 @@ Using Fig. 2.1 and information in Extract 2, identify evidence that suggests hig
 Question 36 [15 marks]
 Evaluate, using the information in Extract 2, whether the Bank of England's decision to raise the bank rate sharply between 2021 and 2023 was the best policy response to rising inflation.
 
-### Extract 3 — Teachers' Pay and the Supply of Teachers
+### Extract 3 · Teachers' Pay and the Supply of Teachers
 
 The teaching profession in England has faced a sustained recruitment and retention crisis. In 2022/23, the Department for Education missed its target for secondary school teacher recruitment by 50%, and the number of teachers leaving the profession within five years of qualifying rose to 32%. To qualify as a teacher in the UK, individuals must complete an undergraduate degree followed by a one-year teacher training course, after which they undertake a statutory induction period of one year.
 
 The National Education Union (NEU) represents over 450,000 members and is the largest education trade union in Europe. In 2023 the NEU organised eight days of strike action in response to what it called a 'decade of real-terms pay cuts'. According to the Institute for Fiscal Studies (IFS), teacher pay in England fell by around 13% in real terms between 2010 and 2023. Most teachers' salaries are determined by the School Teachers' Review Body (STRB) and funded by government, making the government effectively a monopsony employer of teachers in state schools.
 
-In 2023, the government accepted an STRB recommendation for a 6.5% pay rise, although headteachers warned that without additional funding, this would need to be funded from existing school budgets. The average salary for a classroom teacher in England was £41,500 in 2023 — below the average salary of £47,200 for graduates working in the private sector with 5–10 years of experience.
+In 2023, the government accepted an STRB recommendation for a 6.5% pay rise, although headteachers warned that without additional funding, this would need to be funded from existing school budgets. The average salary for a classroom teacher in England was £41,500 in 2023 · below the average salary of £47,200 for graduates working in the private sector with 5–10 years of experience.
 
-**Fig. 3.1 — Teacher recruitment (% of target met) and real-terms average teacher pay index (2010 = 100), England**
+**Fig. 3.1 · Teacher recruitment (% of target met) and real-terms average teacher pay index (2010 = 100), England**
 
 | Year | Recruitment target met (%) | Real-terms pay index (2010=100) |
 |---|---|---|
@@ -864,10 +864,10 @@ Evaluate, using the information in Extract 3, whether teachers' pay is likely to
     id: "ocr-c03-set-b",
     subject: "ocr",
     paper: "3",
-    title: "Component 03 Themes — Set B (Hard)",
-    description: "H460/03 Themes — Hard: 30 MCQs + UK supermarket sector, UK fiscal policy & government debt, gig economy & labour markets extracts.",
+    title: "Component 03 Themes · Set B (Hard)",
+    description: "H460/03 Themes · Hard: 30 MCQs + UK supermarket sector, UK fiscal policy & government debt, gig economy & labour markets extracts.",
     totalMarks: 80,
-    content: `# OCR A-Level Economics (H460/03) — Component 03: Themes in Economics — Predicted Paper (Hard)
+    content: `# OCR A-Level Economics (H460/03) · Component 03: Themes in Economics · Predicted Paper (Hard)
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -1087,17 +1087,17 @@ A rise in the UK's current account deficit, with all other components of the bal
 
 ## Section B: Data Response
 
-### Extract 1 — The UK Supermarket Sector
+### Extract 1 · The UK Supermarket Sector
 
-The UK grocery market was worth approximately £225 billion in 2023. The four largest chains — Tesco, Sainsbury's, Asda and Morrisons — together hold around 65% of the market, down from 76% a decade ago. The entry of German discounters Aldi and Lidl, which together now hold over 18% of the market, has significantly increased competition in the sector. Tesco alone accounts for a 27.3% share, making it the largest supermarket chain in the UK.
+The UK grocery market was worth approximately £225 billion in 2023. The four largest chains · Tesco, Sainsbury's, Asda and Morrisons · together hold around 65% of the market, down from 76% a decade ago. The entry of German discounters Aldi and Lidl, which together now hold over 18% of the market, has significantly increased competition in the sector. Tesco alone accounts for a 27.3% share, making it the largest supermarket chain in the UK.
 
-In 2022 and 2023, food price inflation in the UK exceeded general CPI inflation, peaking at 19.2% in March 2023 — the highest level since 1977. The Competition and Markets Authority (CMA) launched an investigation in 2023 to examine whether the big supermarkets were using their market power to widen profit margins during the cost-of-living crisis. The investigation concluded in July 2023 that there was no clear evidence of profiteering, but did identify weak price competition for some essential products.
+In 2022 and 2023, food price inflation in the UK exceeded general CPI inflation, peaking at 19.2% in March 2023 · the highest level since 1977. The Competition and Markets Authority (CMA) launched an investigation in 2023 to examine whether the big supermarkets were using their market power to widen profit margins during the cost-of-living crisis. The investigation concluded in July 2023 that there was no clear evidence of profiteering, but did identify weak price competition for some essential products.
 
-The largest supermarkets engage heavily in non-price competition through loyalty schemes (such as Tesco Clubcard and Sainsbury's Nectar), price-matching guarantees against Aldi and Lidl, and significant advertising expenditure — Tesco alone spent £78 million on advertising in 2022. Price wars have, at times, led to allegations of predatory pricing on branded goods. The Groceries Supply Code of Practice (GSCOP), overseen by the Groceries Code Adjudicator (GCA), regulates the relationship between supermarkets and their suppliers.
+The largest supermarkets engage heavily in non-price competition through loyalty schemes (such as Tesco Clubcard and Sainsbury's Nectar), price-matching guarantees against Aldi and Lidl, and significant advertising expenditure · Tesco alone spent £78 million on advertising in 2022. Price wars have, at times, led to allegations of predatory pricing on branded goods. The Groceries Supply Code of Practice (GSCOP), overseen by the Groceries Code Adjudicator (GCA), regulates the relationship between supermarkets and their suppliers.
 
 Tesco's operating profit was £2.63 billion in 2022/23, a margin of 3.8%. By comparison, Aldi UK reported an operating loss of £75.9 million in 2022, despite strong sales growth of 16%, as the firm absorbed higher input costs rather than passing them on to consumers.
 
-**Fig. 1.1 — UK grocery market shares (%)**
+**Fig. 1.1 · UK grocery market shares (%)**
 
 | Firm | Market share 2013 (%) | Market share 2023 (%) |
 |---|---|---|
@@ -1118,17 +1118,17 @@ Explain, using the information in Extract 1, one reason why the four largest UK 
 Question 33 [15 marks]
 Evaluate, using an appropriate diagram and the information in Extract 1, the likely consequences for consumers of the oligopolistic structure of the UK supermarket sector.
 
-### Extract 2 — UK Fiscal Policy and Government Debt
+### Extract 2 · UK Fiscal Policy and Government Debt
 
-The UK national debt reached £2,650 billion by the end of 2023 — equivalent to approximately 98% of GDP, the highest ratio since the early 1960s. The budget deficit averaged 5.2% of GDP between 2020 and 2023, reflecting the fiscal cost of COVID-19 support schemes (such as furlough, which cost £70 billion), the Energy Price Guarantee (which cost around £40 billion) and subsequent tax cuts announced in the autumn 2022 'mini-budget'.
+The UK national debt reached £2,650 billion by the end of 2023 · equivalent to approximately 98% of GDP, the highest ratio since the early 1960s. The budget deficit averaged 5.2% of GDP between 2020 and 2023, reflecting the fiscal cost of COVID-19 support schemes (such as furlough, which cost £70 billion), the Energy Price Guarantee (which cost around £40 billion) and subsequent tax cuts announced in the autumn 2022 'mini-budget'.
 
 The 'mini-budget' of September 2022, which included £45 billion of unfunded tax cuts, triggered a sharp rise in UK government bond yields. The yield on the 30-year gilt rose from 3.6% to over 5% in a matter of days. This forced the Bank of England to intervene with emergency bond purchases to protect pension funds and stabilise the market, and ultimately led to the resignation of the Chancellor and Prime Minister.
 
-In 2023, debt interest payments cost the UK government £89 billion — more than the entire annual budget for education (£84 billion) and more than twice the defence budget (£52 billion). The rise in interest rates has made servicing the debt significantly more expensive: a 1 percentage point rise in gilt yields adds approximately £20 billion to annual debt servicing costs over time.
+In 2023, debt interest payments cost the UK government £89 billion · more than the entire annual budget for education (£84 billion) and more than twice the defence budget (£52 billion). The rise in interest rates has made servicing the debt significantly more expensive: a 1 percentage point rise in gilt yields adds approximately £20 billion to annual debt servicing costs over time.
 
-The Office for Budget Responsibility (OBR) warned in its 2023 Fiscal Risks Report that the UK's fiscal position is 'increasingly vulnerable'. The Chancellor's self-imposed fiscal rules require debt as a share of GDP to be falling in five years' time. Some economists argue that higher taxes or spending cuts are needed to stabilise the public finances, while others argue that higher growth — driven by investment in productivity-enhancing infrastructure — is the only sustainable route.
+The Office for Budget Responsibility (OBR) warned in its 2023 Fiscal Risks Report that the UK's fiscal position is 'increasingly vulnerable'. The Chancellor's self-imposed fiscal rules require debt as a share of GDP to be falling in five years' time. Some economists argue that higher taxes or spending cuts are needed to stabilise the public finances, while others argue that higher growth · driven by investment in productivity-enhancing infrastructure · is the only sustainable route.
 
-**Fig. 2.1 — UK budget deficit, national debt and debt interest payments, 2019–2023**
+**Fig. 2.1 · UK budget deficit, national debt and debt interest payments, 2019–2023**
 
 | Year | Budget deficit (% of GDP) | National debt (% of GDP) | Debt interest (£ billion) |
 |---|---|---|---|
@@ -1147,17 +1147,17 @@ Using the information in Extract 2, identify two potential economic consequences
 Question 36 [15 marks]
 Evaluate, using the information in Extract 2, the view that the UK government should raise taxes or cut spending to reduce the national debt.
 
-### Extract 3 — The Gig Economy and Labour Markets
+### Extract 3 · The Gig Economy and Labour Markets
 
-The UK gig economy has grown rapidly in the past decade. By 2023, an estimated 4.4 million workers — around 13% of the working-age population — had earned money through gig platforms in the preceding year, up from 3.6 million in 2019. Platforms such as Deliveroo, Uber and Amazon Flex classify most of their workers as 'independent contractors' rather than employees, meaning they do not receive sick pay, paid holiday, or employer pension contributions.
+The UK gig economy has grown rapidly in the past decade. By 2023, an estimated 4.4 million workers · around 13% of the working-age population · had earned money through gig platforms in the preceding year, up from 3.6 million in 2019. Platforms such as Deliveroo, Uber and Amazon Flex classify most of their workers as 'independent contractors' rather than employees, meaning they do not receive sick pay, paid holiday, or employer pension contributions.
 
-Supporters argue that the gig economy provides flexibility for workers and lower prices for consumers. Critics argue that it shifts risk from firms onto workers and contributes to in-work poverty. Research by the University of Oxford in 2023 found that the median hourly earnings of UK gig workers were £11.80 per hour before costs, but only £8.20 per hour after costs such as vehicle maintenance and fuel — below the National Living Wage of £10.42 at the time.
+Supporters argue that the gig economy provides flexibility for workers and lower prices for consumers. Critics argue that it shifts risk from firms onto workers and contributes to in-work poverty. Research by the University of Oxford in 2023 found that the median hourly earnings of UK gig workers were £11.80 per hour before costs, but only £8.20 per hour after costs such as vehicle maintenance and fuel · below the National Living Wage of £10.42 at the time.
 
 In 2021, the Supreme Court ruled in Uber BV v Aslam that Uber drivers should be classified as 'workers' (an intermediate category) and therefore entitled to minimum wage and paid holiday. However, subsequent rulings have left the classification of workers on many other platforms unclear. The Low Pay Commission estimates that around 40% of gig workers earn below the National Living Wage when all hours waiting for jobs are included.
 
-Trade union membership among gig workers remains low at around 5%, compared with 22% of UK workers overall. The Independent Workers' Union of Great Britain (IWGB) has attempted to organise gig workers but faces challenges because workers are geographically dispersed and often work for multiple platforms simultaneously. Meanwhile, the supply of labour to gig platforms remains high, partly because entry requires few qualifications — typically a smartphone, a vehicle, and a right to work in the UK.
+Trade union membership among gig workers remains low at around 5%, compared with 22% of UK workers overall. The Independent Workers' Union of Great Britain (IWGB) has attempted to organise gig workers but faces challenges because workers are geographically dispersed and often work for multiple platforms simultaneously. Meanwhile, the supply of labour to gig platforms remains high, partly because entry requires few qualifications · typically a smartphone, a vehicle, and a right to work in the UK.
 
-**Fig. 3.1 — Share of workers by type and median hourly earnings (£), UK 2023**
+**Fig. 3.1 · Share of workers by type and median hourly earnings (£), UK 2023**
 
 | Worker type | Share of workers (%) | Median hourly earnings (£) |
 |---|---|---|
@@ -1177,10 +1177,10 @@ Evaluate, using the information in Extract 3, whether government intervention is
     id: "ocr-c03-set-c",
     subject: "ocr",
     paper: "3",
-    title: "Component 03 Themes — Set C (Advanced)",
-    description: "H460/03 Themes — Advanced: 30 high-difficulty MCQs + UK banking 'too big to fail', QE & central bank independence, global inequality extracts.",
+    title: "Component 03 Themes · Set C (Advanced)",
+    description: "H460/03 Themes · Advanced: 30 high-difficulty MCQs + UK banking 'too big to fail', QE & central bank independence, global inequality extracts.",
     totalMarks: 80,
-    content: `# OCR A-Level Economics (H460/03) — Component 03: Themes in Economics — Predicted Paper (Advanced)
+    content: `# OCR A-Level Economics (H460/03) · Component 03: Themes in Economics · Predicted Paper (Advanced)
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -1400,17 +1400,17 @@ The 'trilemma' (or 'impossible trinity') in international finance states that a 
 
 ## Section B: Data Response
 
-### Extract 1 — The UK Banking Sector and 'Too Big to Fail'
+### Extract 1 · The UK Banking Sector and 'Too Big to Fail'
 
-The UK banking sector is highly concentrated. The 'big four' clearing banks — HSBC, Barclays, Lloyds Banking Group and NatWest — hold around 75% of personal current accounts and over 85% of business lending to small and medium-sized enterprises. During the 2008 global financial crisis, the UK government was forced to nationalise or provide emergency support to several major banks. The total cost of the bailout was £137 billion in cash support, although the National Audit Office has estimated the ultimate long-term cost to the taxpayer at between £27 and £33 billion.
+The UK banking sector is highly concentrated. The 'big four' clearing banks · HSBC, Barclays, Lloyds Banking Group and NatWest · hold around 75% of personal current accounts and over 85% of business lending to small and medium-sized enterprises. During the 2008 global financial crisis, the UK government was forced to nationalise or provide emergency support to several major banks. The total cost of the bailout was £137 billion in cash support, although the National Audit Office has estimated the ultimate long-term cost to the taxpayer at between £27 and £33 billion.
 
-The doctrine of 'too big to fail' — that the failure of a large bank would cause systemic damage to the wider economy — creates a moral hazard problem. Banks that believe they will be bailed out in a crisis have an incentive to take on excessive risk. The implicit public subsidy from the government guarantee was estimated by the Bank of England at £30 billion per year during the peak of the crisis, although it has fallen since.
+The doctrine of 'too big to fail' · that the failure of a large bank would cause systemic damage to the wider economy · creates a moral hazard problem. Banks that believe they will be bailed out in a crisis have an incentive to take on excessive risk. The implicit public subsidy from the government guarantee was estimated by the Bank of England at £30 billion per year during the peak of the crisis, although it has fallen since.
 
 Following the crisis, the Vickers Commission (2011) recommended the ring-fencing of retail banking from investment banking, which was implemented by 2019. The capital adequacy requirements set by the Basel III framework require banks to hold Common Equity Tier 1 (CET1) capital equal to at least 4.5% of risk-weighted assets, with additional buffers for systemically important institutions. UK banks now hold CET1 ratios averaging around 14%, compared with 3–4% before the crisis.
 
 Despite these reforms, concerns remain. The collapse of Silicon Valley Bank in March 2023 and the forced sale of Credit Suisse to UBS the same month showed that banking crises can still propagate rapidly. In response to the collapse of SVB UK (bought by HSBC for £1), the Bank of England has proposed easing certain rules for smaller banks, which critics argue could recreate the conditions for future crises. The UK's Financial Services Compensation Scheme (FSCS) guarantees deposits up to £85,000 per person per institution.
 
-**Fig. 1.1 — Market share of UK personal current accounts and profits before tax (£ billion), 2023**
+**Fig. 1.1 · Market share of UK personal current accounts and profits before tax (£ billion), 2023**
 
 | Bank | PCA market share (%) | Profit before tax 2023 (£ billion) |
 |---|---|---|
@@ -1430,9 +1430,9 @@ Explain, using the information in Extract 1, how the doctrine of 'too big to fai
 Question 33 [15 marks]
 Evaluate, using an appropriate diagram and the information in Extract 1, whether tighter regulation is the most effective way to address market failures in the UK banking sector.
 
-### Extract 2 — Quantitative Easing and Central Bank Independence
+### Extract 2 · Quantitative Easing and Central Bank Independence
 
-Since its introduction in March 2009, the Bank of England has conducted extensive quantitative easing (QE) programmes, expanding its stock of asset purchases from zero to a peak of £895 billion by the end of 2021 — approximately 40% of UK GDP. In late 2022, the Bank began quantitative tightening (QT), allowing maturing bonds to run off its balance sheet and actively selling others back into the market.
+Since its introduction in March 2009, the Bank of England has conducted extensive quantitative easing (QE) programmes, expanding its stock of asset purchases from zero to a peak of £895 billion by the end of 2021 · approximately 40% of UK GDP. In late 2022, the Bank began quantitative tightening (QT), allowing maturing bonds to run off its balance sheet and actively selling others back into the market.
 
 The transmission mechanisms of QE include lowering long-term interest rates, raising asset prices (stimulating a wealth effect on consumption), increasing bank liquidity, and signalling a commitment to future loose monetary policy. Research by the Bank of England suggests that the £450 billion of QE carried out between 2009 and 2012 raised UK GDP by approximately 2.5% and added 1.5 percentage points to CPI inflation.
 
@@ -1440,7 +1440,7 @@ However, QE has been criticised for its distributional consequences. By raising 
 
 The Bank of England has had operational independence from the Treasury since 1997. Supporters argue that independence has helped anchor inflation expectations and given monetary policy greater credibility. Critics, however, argue that QE has blurred the line between monetary and fiscal policy, and that the scale of central bank intervention raises questions about democratic accountability. In 2022, the House of Lords Economic Affairs Committee described QE as 'a pre-existing condition' of financial market fragility, making future rises in interest rates more politically and economically costly.
 
-**Fig. 2.1 — Bank of England asset purchases (£ billion), bank rate (%) and CPI inflation (%), 2009–2023**
+**Fig. 2.1 · Bank of England asset purchases (£ billion), bank rate (%) and CPI inflation (%), 2009–2023**
 
 | Year | Asset purchases (£ billion) | Bank rate (%) | CPI inflation (%) |
 |---|---|---|---|
@@ -1460,17 +1460,17 @@ Using Extract 2 and Fig. 2.1, identify evidence which suggests that quantitative
 Question 36 [15 marks]
 Evaluate, using the information in Extract 2, whether the benefits of quantitative easing (QE) have outweighed its costs for the UK economy.
 
-### Extract 3 — Global Inequality and the Challenge of Development
+### Extract 3 · Global Inequality and the Challenge of Development
 
-In 2023, the World Bank reported that global extreme poverty — living on less than $2.15 per day at purchasing power parity — stood at 8.4%, up from 8.0% in 2019. This was the first rise in decades, driven by the pandemic and global food and energy price shocks. At the same time, the wealth of the world's billionaires increased by 34% in real terms between 2020 and 2023, according to Forbes.
+In 2023, the World Bank reported that global extreme poverty · living on less than $2.15 per day at purchasing power parity · stood at 8.4%, up from 8.0% in 2019. This was the first rise in decades, driven by the pandemic and global food and energy price shocks. At the same time, the wealth of the world's billionaires increased by 34% in real terms between 2020 and 2023, according to Forbes.
 
 Sub-Saharan Africa remains home to around 60% of the world's extreme poor. The region's GDP per capita was $1,720 in 2023, compared with a world average of $13,920. Child mortality in the region stood at 72 deaths per 1,000 live births in 2022, compared with a developed-country average of 4 per 1,000. However, Sub-Saharan Africa has made substantial gains in recent years: mean years of schooling have risen from 4.4 years in 2000 to 6.0 years in 2022.
 
 The International Monetary Fund (IMF) warns that developing countries now face a 'debt-distress decade'. Around 60% of low-income countries are in or at high risk of debt distress. Debt servicing now consumes more government revenue than health and education combined in 25 developing countries. Rising US interest rates and a strong US dollar have compounded the problem, as much of this debt is denominated in dollars.
 
-Remittances from migrant workers to low- and middle-income countries reached $669 billion in 2023 — larger than total foreign direct investment (FDI) to these countries. However, some economists argue that the true cost of remittances is high: the global average transaction fee is 6.3% of the amount sent, well above the UN Sustainable Development Goal target of 3%. Others point to 'brain drain' — the emigration of skilled workers — as a major obstacle to development.
+Remittances from migrant workers to low- and middle-income countries reached $669 billion in 2023 · larger than total foreign direct investment (FDI) to these countries. However, some economists argue that the true cost of remittances is high: the global average transaction fee is 6.3% of the amount sent, well above the UN Sustainable Development Goal target of 3%. Others point to 'brain drain' · the emigration of skilled workers · as a major obstacle to development.
 
-**Fig. 3.1 — Selected development indicators by region, 2023**
+**Fig. 3.1 · Selected development indicators by region, 2023**
 
 | Region | GDP per capita (USD PPP) | HDI | Extreme poverty rate (%) |
 |---|---|---|---|

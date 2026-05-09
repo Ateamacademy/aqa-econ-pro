@@ -34,8 +34,8 @@ function ensureSpace(doc: jsPDF, y: number, needed: number, pageH: number): numb
  * separated by spaces or exotic whitespace (e.g. "t h a t ,  w i t h o u t the ETS").
  *
  * Strategy: detect any run of 3+ "tokens" where each token is 1–2 chars long
- * and separated by spaces — that is the unmistakable signature of letter-
- * spaced text — and rejoin those tokens into a single word. Tokens of 3+
+ * and separated by spaces · that is the unmistakable signature of letter-
+ * spaced text · and rejoin those tokens into a single word. Tokens of 3+
  * chars (real words like "the", "ETS", "9-14") are preserved as word
  * boundaries. We then collapse any residual double-spacing.
  */
@@ -271,7 +271,7 @@ function drawEdexcelCoverPage(doc: jsPDF, meta: PaperMeta) {
   doc.setFontSize(8);
   doc.setFont("helvetica", "bold");
   doc.setTextColor(80, 80, 80);
-  doc.text("Predicted Paper — For revision purposes only", marginL, stripY);
+  doc.text("Predicted Paper · For revision purposes only", marginL, stripY);
   doc.text(ref, pageW - marginR, stripY, { align: "right" });
   doc.setFontSize(8);
   doc.setFont("helvetica", "italic");
@@ -429,7 +429,7 @@ function drawCoverPage(doc: jsPDF, meta: PaperMeta) {
   y += 8;
   doc.setFontSize(8);
   doc.setTextColor(100, 100, 100);
-  doc.text("Predicted Paper — For revision purposes only", marginL, y);
+  doc.text("Predicted Paper · For revision purposes only", marginL, y);
   doc.text(meta.paperRef || `7136/${pNum}`, pageW - marginR, y, { align: "right" });
 }
 
@@ -997,10 +997,10 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
         doc.setFont("helvetica", "bold");
         doc.setTextColor(0, 0, 0);
         if (!sub) {
-          // Parent question line — show "1" in the gutter
+          // Parent question line · show "1" in the gutter
           doc.text(parent, gutterX, y);
         } else {
-          // Sub-part — indent "(a)"
+          // Sub-part · indent "(a)"
           doc.setFontSize(10);
           doc.text(`(${sub})`, bodyX - 2, y);
         }
@@ -1069,7 +1069,7 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
     }
 
     // ── MCQ options (A/B/C/D) ──
-    // Must be a SHORT option (≤ 140 chars) — otherwise it's prose, not an option.
+    // Must be a SHORT option (≤ 140 chars) · otherwise it's prose, not an option.
     // Also requires either a leading bullet (-, •) or for the body to start
     // with a non-digit (so paragraph leads like "A 2024 CBI survey…" don't
     // get mis-detected as option A).
@@ -1245,7 +1245,7 @@ function renderContent(doc: jsPDF, content: string, meta: PaperMeta, startY?: nu
       doc.setFontSize(10);
     }
 
-    // Exam papers use left-aligned body text — never justify (no letter-
+    // Exam papers use left-aligned body text · never justify (no letter-
     // spaced "t h a t" artefacts, and final lines never get force-justified).
     const wrapped = doc.splitTextToSize(bodyText, bodyW);
     const extractLineH = lineH + 0.6; // slightly looser leading for readability

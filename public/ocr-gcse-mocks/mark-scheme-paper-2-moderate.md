@@ -1,5 +1,5 @@
 <!-- Auto-generated from /public/ocr-gcse-mocks/mark-scheme-paper-2-moderate.pdf -->
-J205/02 Mark Scheme | Predicted Paper — Moderate
+J205/02 Mark Scheme | Predicted Paper · Moderate
 
 
 OCR
@@ -11,12 +11,12 @@ Economics
 J205/02: National and international economics
 General Certificate of Secondary Education
 
-Mark Scheme — Predicted Paper (Moderate)
+Mark Scheme · Predicted Paper (Moderate)
 Total marks: 80
 
 
-                              Mark Scheme — Moderate | Page 1 of 15
-                                                            J205/02 Mark Scheme | Predicted Paper — Moderate
+                              Mark Scheme · Moderate | Page 1 of 15
+                                                            J205/02 Mark Scheme | Predicted Paper · Moderate
 
                                      MARKING INSTRUCTIONS
 Preparation for marking
@@ -38,8 +38,8 @@ Levels of response (Section B extended items)
 • For questions marked with an asterisk (*) Quality of Extended Response is assessed: credit is given for
   coherent, well-structured and logically sequenced reasoning.
 Annotations
-✓     Tick — point worthy of credit
-✗     Cross — incorrect / not creditworthy
+✓     Tick · point worthy of credit
+✗     Cross · incorrect / not creditworthy
 BOD Benefit of the doubt
 IR    Irrelevant
 L1 / L2 / L3     Level one / two / three
@@ -50,8 +50,8 @@ OFR Own figure rule applied
 BP Blank page
 
 
-                                   Mark Scheme — Moderate | Page 2 of 15
-                                                                     J205/02 Mark Scheme | Predicted Paper — Moderate
+                                   Mark Scheme · Moderate | Page 2 of 15
+                                                                     J205/02 Mark Scheme | Predicted Paper · Moderate
 
 Subject-specific level descriptors
 The following descriptors are applied to all level-marked questions in Section B in the Question | Answer |
@@ -86,8 +86,8 @@ Mark | Guidance tables that follow.
                                                                                                  statements.
 
 
-                                       Mark Scheme — Moderate | Page 3 of 15
-                                        J205/02 Mark Scheme | Predicted Paper — Moderate
+                                       Mark Scheme · Moderate | Page 3 of 15
+                                        J205/02 Mark Scheme | Predicted Paper · Moderate
 
                            SECTION A
 Question   Key      AO                            Quantitative skills
@@ -113,8 +113,8 @@ Question   Key      AO                            Quantitative skills
   20       C        AO2
 
 
-                 Mark Scheme — Moderate | Page 4 of 15
-                                                          J205/02 Mark Scheme | Predicted Paper — Moderate
+                 Mark Scheme · Moderate | Page 4 of 15
+                                                          J205/02 Mark Scheme | Predicted Paper · Moderate
 
                                              SECTION B
 Question                          Answer                               Mark           Guidance
@@ -153,7 +153,7 @@ Question                          Answer                               Mark     
 Question                          Answer                               Mark           Guidance
  21 (c)    Using the information in Extract 1, analyse how              6    All level descriptors
            rising interest rates between 2021 and 2023 might          AO1a 1 describe the TOP of the
-           have affected UK consumer spending.                        AO2 2 level — use the best-fit
+           have affected UK consumer spending.                        AO2 2 level · use the best-fit
            Knowledge and understanding:                               AO3a 3 approach.
             • interest rates are a tool of monetary policy set by            Level 3 (5–6 marks).
               the Bank of England                                            Reasonable knowledge
@@ -178,8 +178,8 @@ Question                          Answer                               Mark     
             • confidence effects: anticipation of further rises              context in the extract.
 
 
-                                 Mark Scheme — Moderate | Page 5 of 15
-                                                          J205/02 Mark Scheme | Predicted Paper — Moderate
+                                 Mark Scheme · Moderate | Page 5 of 15
+                                                          J205/02 Mark Scheme | Predicted Paper · Moderate
 
 Question                            Answer                           Mark            Guidance
                  discourages large purchases (cars, housing)                  Level 2 (3–4 marks).
@@ -208,7 +208,7 @@ Question                            Answer                           Mark       
                                                                               at a single effect that
                                                                               has some link to the
                                                                               question.
-                                                                              0 marks — no work
+                                                                              0 marks · no work
                                                                               worthy of credit.
                                                                               N.B. To reach Level 3
                                                                               there must be reference
@@ -244,8 +244,8 @@ Question                            Answer                           Mark       
             5. Protection of the environment / sustainable
 
 
-                                  Mark Scheme — Moderate | Page 6 of 15
-                                                          J205/02 Mark Scheme | Predicted Paper — Moderate
+                                  Mark Scheme · Moderate | Page 6 of 15
+                                                          J205/02 Mark Scheme | Predicted Paper · Moderate
 
 Question                           Answer                              Mark           Guidance
            development
@@ -254,7 +254,7 @@ Question                           Answer                              Mark     
 Question                           Answer                              Mark           Guidance
  21 (d)    Evaluate the consequences for low-income                     6    All level descriptors
   (iii)*   households of a period of high inflation. Use the          AO2 1 describe the TOP of the
-           information given in Extract 1 and your own                AO3a 2 level — use the best-fit
+           information given in Extract 1 and your own                AO3a 2 level · use the best-fit
            knowledge.
                                                                       AO3b 3 approach. Quality of
            Reference to Extract 1 or context (AO2):                          extended response is
@@ -291,7 +291,7 @@ Question                           Answer                              Mark     
               Living Wage), real wages recover                               relevant and
             • fixed-rate debt is eroded in real terms                        substantiated. To reach
            Final judgement may consider:                                     Level 3 there must be
-            • the severity and duration of inflation — short                 application, analysis and
+            • the severity and duration of inflation · short                 application, analysis and
               episode vs prolonged high inflation                            evaluation.
             • the distributional design of support                           Level 2 (3–4 marks).
             • whether inflation is demand-pull or cost-push                  Good application of
@@ -317,8 +317,8 @@ Question                           Answer                              Mark     
                                                                              consideration of
 
 
-                                 Mark Scheme — Moderate | Page 7 of 15
-                                  J205/02 Mark Scheme | Predicted Paper — Moderate
+                                 Mark Scheme · Moderate | Page 7 of 15
+                                  J205/02 Mark Scheme | Predicted Paper · Moderate
 
 Question    Answer                           Mark            Guidance
                                                       arguments / alternatives
@@ -326,7 +326,7 @@ Question    Answer                           Mark            Guidance
                                                       statements. Information
                                                       may be ambiguous or
                                                       unstructured.
-                                                      0 marks — no work
+                                                      0 marks · no work
                                                       worthy of credit.
                                                       N.B. To reach Level 3
                                                       there must be
@@ -335,8 +335,8 @@ Question    Answer                           Mark            Guidance
                                                       evaluation (AO3b).
 
 
-           Mark Scheme — Moderate | Page 8 of 15
-                                                         J205/02 Mark Scheme | Predicted Paper — Moderate
+           Mark Scheme · Moderate | Page 8 of 15
+                                                         J205/02 Mark Scheme | Predicted Paper · Moderate
 
 Question                          Answer                              Mark           Guidance
  22 (a)    Using Extract 2, explain how the UK                         2      1 mark for stating the
@@ -365,7 +365,7 @@ Question                          Answer                              Mark      
 Question                          Answer                              Mark           Guidance
  22 (c)    Using the information in Extract 2, analyse how a           6    All level descriptors
            fall in the UK unemployment rate might affect the         AO1a 1 describe the TOP of the
-           UK government’s budget.                                   AO2 2 level — use the best-fit
+           UK government’s budget.                                   AO2 2 level · use the best-fit
            Knowledge and understanding:                              AO3a 3 approach.
             • the government budget is the difference between               Level 3 (5–6 marks).
               government spending and tax revenue                           Reasonable knowledge
@@ -403,8 +403,8 @@ Question                          Answer                              Mark      
                                                                             analysis, largely in the
                                                                             form of single effects
 
-                                Mark Scheme — Moderate | Page 9 of 15
-                                                             J205/02 Mark Scheme | Predicted Paper — Moderate
+                                Mark Scheme · Moderate | Page 9 of 15
+                                                             J205/02 Mark Scheme | Predicted Paper · Moderate
 
 Question                             Answer                                Mark           Guidance
                                                                                    that address the
@@ -422,7 +422,7 @@ Question                             Answer                                Mark 
                                                                                    at a single effect that
                                                                                    has some link to the
                                                                                    question.
-                                                                                   0 marks — no work
+                                                                                   0 marks · no work
                                                                                    worthy of credit.
 
 
@@ -473,8 +473,8 @@ Question                             Answer                                Mark 
                 supply                                                           question. Good
               • skills atrophy during long-term unemployment →
 
-                                   Mark Scheme — Moderate | Page 10 of 15
-                                                          J205/02 Mark Scheme | Predicted Paper — Moderate
+                                   Mark Scheme · Moderate | Page 10 of 15
+                                                          J205/02 Mark Scheme | Predicted Paper · Moderate
 
 Question                           Answer                             Mark           Guidance
               harder to return to work                                        evaluation with a fully
@@ -519,12 +519,12 @@ Question                           Answer                             Mark      
                                                                               statements. Information
                                                                               may be ambiguous or
                                                                               unstructured.
-                                                                              0 marks — no work
+                                                                              0 marks · no work
                                                                               worthy of credit.
 
 
-                                Mark Scheme — Moderate | Page 11 of 15
-                                                         J205/02 Mark Scheme | Predicted Paper — Moderate
+                                Mark Scheme · Moderate | Page 11 of 15
+                                                         J205/02 Mark Scheme | Predicted Paper · Moderate
 
 Question                          Answer                              Mark           Guidance
  23 (a)    Using Extract 3, explain the change in the UK's             2      1 mark for identifying the
@@ -588,8 +588,8 @@ Question                          Answer                              Mark      
                                                                             to use/adapt
            and the import content of exports.
 
-                                Mark Scheme — Moderate | Page 12 of 15
-                                                            J205/02 Mark Scheme | Predicted Paper — Moderate
+                                Mark Scheme · Moderate | Page 12 of 15
+                                                            J205/02 Mark Scheme | Predicted Paper · Moderate
 
 Question                            Answer                               Mark          Guidance
                                                                                 terms/concepts in the
@@ -611,7 +611,7 @@ Question                            Answer                               Mark   
                                                                                 at a single effect that
                                                                                 has some link to the
                                                                                 question.
-                                                                                0 marks — no work
+                                                                                0 marks · no work
                                                                                 worthy of credit.
 
 
@@ -654,8 +654,8 @@ Question                            Answer                               Mark   
               • the UK runs a persistent current-account deficit               knowledge to the
                                                                                scenario, with good
 
-                                  Mark Scheme — Moderate | Page 13 of 15
-                                                      J205/02 Mark Scheme | Predicted Paper — Moderate
+                                  Mark Scheme · Moderate | Page 13 of 15
+                                                      J205/02 Mark Scheme | Predicted Paper · Moderate
 
 Question                         Answer                          Mark            Guidance
            • UK services surplus is larger than goods deficit             understanding of all the
@@ -711,12 +711,12 @@ Question                         Answer                          Mark           
                                                                           statements. Information
                                                                           may be ambiguous or
                                                                           unstructured.
-                                                                          0 marks — no work
+                                                                          0 marks · no work
                                                                           worthy of credit.
 
 
-                              Mark Scheme — Moderate | Page 14 of 15
-                                                  J205/02 Mark Scheme | Predicted Paper — Moderate
+                              Mark Scheme · Moderate | Page 14 of 15
+                                                  J205/02 Mark Scheme | Predicted Paper · Moderate
 
                      ASSESSMENT OBJECTIVE GRID (AO)
               AO1a   AO1b        AO2       AO3a      AO3b           Total   Quantitative skills
@@ -741,4 +741,4 @@ Paper total    14     16          26        15          9            80         
                                END OF MARK SCHEME
 
 
-                           Mark Scheme — Moderate | Page 15 of 15
+                           Mark Scheme · Moderate | Page 15 of 15

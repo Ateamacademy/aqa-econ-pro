@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { FileText, ArrowRight, ExternalLink } from "lucide-react";
 
 /**
- * EdexcelMockPapersIndex — landing page for the 9 Edexcel A A-Level mock
+ * EdexcelMockPapersIndex · landing page for the 9 Edexcel A A-Level mock
  * papers (3 papers × 3 difficulty tiers: Moderate / Hard / Advanced).
  *
  * Each paper is a static, print-ready Pearson-style HTML booklet hosted in
@@ -43,7 +43,7 @@ export default function EdexcelMockPapersIndex() {
     <div className="container mx-auto px-4 py-10 max-w-6xl">
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">
-          Edexcel A A-Level Economics — Mock Papers
+          Edexcel A A-Level Economics · Mock Papers
         </h1>
         <p className="mt-2 text-muted-foreground max-w-3xl">
           Nine full-length practice papers (Paper 1, 2 and 3 × Moderate, Hard and Advanced
@@ -115,7 +115,7 @@ export default function EdexcelMockPapersIndex() {
       </div>
 
       <p className="mt-8 text-xs text-muted-foreground">
-        Tip: clicking the external-link icon opens the paper directly in a new tab — useful
+        Tip: clicking the external-link icon opens the paper directly in a new tab · useful
         for printing without the in-app toolbar.
       </p>
     </div>

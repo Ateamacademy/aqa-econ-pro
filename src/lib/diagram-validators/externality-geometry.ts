@@ -71,7 +71,7 @@ export function validateNegativeProductionExternality(svg: string): ExternalityV
   if (mpc && msc) {
     // SVG y-axis grows downward → "above" means smaller y.
     if (msc.y1 >= mpc.y1 || msc.y2 >= mpc.y2) {
-      errors.push("MSC must sit ABOVE MPC at both endpoints — curves intersect or MSC is below MPC");
+      errors.push("MSC must sit ABOVE MPC at both endpoints · curves intersect or MSC is below MPC");
     }
     const dSlope = Math.abs(slope(mpc) - slope(msc));
     if (dSlope > 0.05) {
@@ -81,7 +81,7 @@ export function validateNegativeProductionExternality(svg: string): ExternalityV
 
   // Check MSB = MPB single line presence.
   if (!findLineByLabel(svg, "MPB = MSB", "#10b981")) {
-    errors.push("MSB = MPB line (green, #10b981) not found — production externality requires a single demand curve");
+    errors.push("MSB = MPB line (green, #10b981) not found · production externality requires a single demand curve");
   }
 
   return { valid: errors.length === 0, errors };

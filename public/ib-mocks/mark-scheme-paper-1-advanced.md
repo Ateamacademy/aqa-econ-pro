@@ -1,15 +1,15 @@
 <!-- Auto-generated from /public/ib-mocks/mark-scheme-paper-1-advanced.pdf -->
-SME Mark Scheme P1 — Advanced
+SME Mark Scheme P1 · Advanced
 
 
-SavePredictedExams — SME
+SavePredictedExams · SME
 
 Economics
 Higher level / Standard level
 Paper 1
 
 
-SME Mark Scheme — Paper 1 Advanced
+SME Mark Scheme · Paper 1 Advanced
 
 
 Use the question-specific mark scheme together with the mark bands. Award up to the maximum
@@ -28,7 +28,7 @@ Answers may include:
       charges a higher price in the less elastic market and a lower price in the more elastic market so
       that MR is equalised across markets, raising total revenue and profit.
 
-Assessment Criteria — Part (a) 10 marks
+Assessment Criteria · Part (a) 10 marks
 
   Marks           Level descriptor
 
@@ -56,7 +56,7 @@ Assessment Criteria — Part (a) 10 marks
 
 
                                                      1                                    SME Predicted Paper
-                                                               SME Mark Scheme P1 — Advanced
+                                                               SME Mark Scheme P1 · Advanced
 
 
 9–10   The specific demands of the question are understood and addressed.
@@ -66,7 +66,7 @@ Assessment Criteria — Part (a) 10 marks
 
 
                                         2                                  SME Predicted Paper
-                                                                             SME Mark Scheme P1 — Advanced
+                                                                             SME Mark Scheme P1 · Advanced
 
 
 1. (b) Using real-world examples, evaluate the view that regulation rather than nationalisation is the
@@ -88,7 +88,7 @@ Answers may include:
       • Example(s): UK water and energy regulators (Ofwat, Ofgem), EU competition authority fines on
       Big Tech, renationalised rail franchises in the UK, Mexico’s CFE electricity reforms.
 
-Assessment Criteria — Part (b) 15 marks
+Assessment Criteria · Part (b) 15 marks
   Marks          Level descriptor
 
   0              The work does not reach a standard described by the descriptors below.
@@ -118,7 +118,7 @@ Assessment Criteria — Part (b) 15 marks
 
 
                                                     3                                     SME Predicted Paper
-                                                                   SME Mark Scheme P1 — Advanced
+                                                                   SME Mark Scheme P1 · Advanced
 
 
 10–12   The specific demands of the question are understood and addressed.
@@ -140,7 +140,7 @@ Assessment Criteria — Part (b) 15 marks
 
 
                                            4                                    SME Predicted Paper
-                                                                             SME Mark Scheme P1 — Advanced
+                                                                             SME Mark Scheme P1 · Advanced
 
 
 2. (a) Explain, using an AD/AS diagram, how a combination of demand-side and supply-side shocks
@@ -150,13 +150,13 @@ Answers may include:
       • Terminology: Stagflation, cost-push inflation, recession, supply-side shock, aggregate demand,
       SRAS, LRAS.
       • Diagram: AD/AS diagram with SRAS shifting left (raising the price level and cutting real output)
-      combined with a possible leftward shift in AD — producing higher prices and lower output
+      combined with a possible leftward shift in AD · producing higher prices and lower output
       (stagflation).
       • Theory: Cost-push shocks (oil prices, supply-chain disruption, war) raise costs and reduce
       SRAS. Simultaneous AD weakness (loss of consumer/business confidence, tight monetary
       policy) deepens the recession while inflation remains high.
 
-Assessment Criteria — Part (a) 10 marks
+Assessment Criteria · Part (a) 10 marks
 
   Marks          Level descriptor
 
@@ -189,7 +189,7 @@ Assessment Criteria — Part (a) 10 marks
 
 
                                                     5                                     SME Predicted Paper
-                                                                             SME Mark Scheme P1 — Advanced
+                                                                             SME Mark Scheme P1 · Advanced
 
 
 2. (b) Using real-world examples, discuss the view that economic growth is incompatible with
@@ -210,7 +210,7 @@ Answers may include:
       • Example(s): China’s dual goals of growth and carbon neutrality, Costa Rica’s green growth, EU
       Green Deal, Norway’s sovereign wealth model.
 
-Assessment Criteria — Part (b) 15 marks
+Assessment Criteria · Part (b) 15 marks
 
   Marks          Level descriptor
 
@@ -241,7 +241,7 @@ Assessment Criteria — Part (b) 15 marks
 
 
                                                     6                                     SME Predicted Paper
-                                                                   SME Mark Scheme P1 — Advanced
+                                                                   SME Mark Scheme P1 · Advanced
 
 
 10–12   The specific demands of the question are understood and addressed.
@@ -263,7 +263,7 @@ Assessment Criteria — Part (b) 15 marks
 
 
                                            7                                    SME Predicted Paper
-                                                                              SME Mark Scheme P1 — Advanced
+                                                                              SME Mark Scheme P1 · Advanced
 
 
 3. (a) Explain two barriers to economic development commonly faced by low-income countries. [10]
@@ -276,7 +276,7 @@ Answers may include:
       institutions (corruption, weak property rights), infrastructure gaps, indebtedness, primary product
       dependency, and conflict.
 
-Assessment Criteria — Part (a) 10 marks
+Assessment Criteria · Part (a) 10 marks
 
   Marks           Level descriptor
 
@@ -309,7 +309,7 @@ Assessment Criteria — Part (a) 10 marks
 
 
                                                      8                                     SME Predicted Paper
-                                                                               SME Mark Scheme P1 — Advanced
+                                                                               SME Mark Scheme P1 · Advanced
 
 
 3. (b) Using real-world examples, evaluate the view that foreign direct investment (FDI) is a more
@@ -329,7 +329,7 @@ Answers may include:
       • Example(s): FDI into Vietnam’s manufacturing, Mauritius as an FDI success story, Marshall
       Plan aid, African debt-relief initiatives (HIPC), criticism of tied aid in Ghana.
 
-Assessment Criteria — Part (b) 15 marks
+Assessment Criteria · Part (b) 15 marks
 
   Marks           Level descriptor
 
@@ -360,7 +360,7 @@ Assessment Criteria — Part (b) 15 marks
 
 
                                                       9                                     SME Predicted Paper
-                                                                   SME Mark Scheme P1 — Advanced
+                                                                   SME Mark Scheme P1 · Advanced
 
 
 10–12   The specific demands of the question are understood and addressed.

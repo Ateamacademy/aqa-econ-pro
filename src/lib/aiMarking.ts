@@ -1,5 +1,5 @@
 /**
- * Tier 3 AI marking — client wrapper around the `mark-with-ai` Edge Function.
+ * Tier 3 AI marking · client wrapper around the `mark-with-ai` Edge Function.
  *
  * Tier 3 is advisory: the AI never assigns marks. Tier 1 (auto) and Tier 2
  * (self-assessment) remain the source of truth for the report's totals.
@@ -56,7 +56,7 @@ export async function callAiMarking(payload: AiMarkingPayload): Promise<AiMarkin
     });
 
     if (error) {
-      // Edge function returned a non-2xx — supabase-js puts the body in error.context
+      // Edge function returned a non-2xx · supabase-js puts the body in error.context
       const ctx = (error as unknown as { context?: { error?: string; retryAfterSec?: number } })
         .context;
       const code = ctx?.error;

@@ -1,6 +1,6 @@
 export default function PhillipsCurveSRvsLR() {
   /**
-   * Exact textbook replica — Phillips Curve SR vs LR
+   * Exact textbook replica · Phillips Curve SR vs LR
    *
    * COORDINATE SYSTEM  viewBox="0 0 580 430"
    *   x_svg = 90 + U  * 26   (y-axis at U=0, x=90)
@@ -179,10 +179,10 @@ export default function PhillipsCurveSRvsLR() {
           stroke="#555" strokeWidth="1.1" strokeDasharray="4,3"/>
 
         {/* ══ SRPC CURVES ══ */}
-        {/* 1st SRPC — lower */}
+        {/* 1st SRPC · lower */}
         <path d={smoothPath(srpc1)}
           fill="none" stroke="#222" strokeWidth="1.7" strokeLinecap="round"/>
-        {/* 2nd SRPC — upper */}
+        {/* 2nd SRPC · upper */}
         <path d={smoothPath(srpc2)}
           fill="none" stroke="#222" strokeWidth="1.7" strokeLinecap="round"/>
 
@@ -213,7 +213,7 @@ export default function PhillipsCurveSRvsLR() {
           fontFamily="'Times New Roman', serif">A</text>
 
         {/* ══ CURVE LABELS (right side) ══ */}
-        {/* 2nd SRPC — sits ~π=2.4 at U=12 → y≈298 */}
+        {/* 2nd SRPC · sits ~π=2.4 at U=12 → y≈298 */}
         <text x={424} y={294}
           fontSize="11.5" fill="#222"
           fontFamily="'Times New Roman', serif">
@@ -224,7 +224,7 @@ export default function PhillipsCurveSRvsLR() {
           fontFamily="'Times New Roman', serif">
           Phillips curve
         </text>
-        {/* 1st SRPC — sits ~π≈0 at U=12 → y≈370 */}
+        {/* 1st SRPC · sits ~π≈0 at U=12 → y≈370 */}
         <text x={424} y={350}
           fontSize="11.5" fill="#222"
           fontFamily="'Times New Roman', serif">

@@ -1,5 +1,5 @@
 /**
- * EconomicsDiagram — A fully declarative, reusable Economics SVG diagram component.
+ * EconomicsDiagram · A fully declarative, reusable Economics SVG diagram component.
  *
  * Props-driven: pass curves, equilibria, shifted curves, shaded regions, and annotations.
  * All equilibrium points are mathematically computed from actual line intersections.
@@ -57,7 +57,7 @@ export interface EquilibriumDef {
 }
 
 export interface ShadedRegionDef {
-  /** Vertices in economic [0,1] space — the polygon is drawn in order */
+  /** Vertices in economic [0,1] space · the polygon is drawn in order */
   vertices: Array<{ x: number; y: number }>;
   /** Fill color */
   color: string;
@@ -92,7 +92,7 @@ export interface EconomicsDiagramProps {
   title?: string;
   /** Curve definitions */
   curves: CurveDef[];
-  /** Equilibrium point definitions — intersections computed mathematically */
+  /** Equilibrium point definitions · intersections computed mathematically */
   equilibria?: EquilibriumDef[];
   /** Shifted curves rendered as dashed overlays with shift arrows from original */
   shiftedCurves?: Array<CurveDef & {
@@ -110,7 +110,7 @@ export interface EconomicsDiagramProps {
 }
 
 /* ═══════════════════════════════════════════
-   Constants — single source of truth
+   Constants · single source of truth
    ═══════════════════════════════════════════ */
 
 const SVG_W = 700;

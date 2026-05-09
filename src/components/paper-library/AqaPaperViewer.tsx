@@ -88,7 +88,7 @@ export default function AqaPaperViewer({ paperId, initialView = "qp" }: Props) {
             </button>
             <div className="min-w-0">
               <div className="text-[10px] font-mono text-muted-foreground">{paper.paperCode}</div>
-              <div className="text-sm font-semibold text-foreground truncate">AQA A-Level Economics — Paper {paper.paperNumber}: {paper.title}</div>
+              <div className="text-sm font-semibold text-foreground truncate">AQA A-Level Economics · Paper {paper.paperNumber}: {paper.title}</div>
             </div>
           </div>
           <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
@@ -125,7 +125,7 @@ export default function AqaPaperViewer({ paperId, initialView = "qp" }: Props) {
               {/* Section A */}
               <section>
                 <h2 className="text-lg font-bold text-foreground border-b-2 border-indigo-500/40 pb-1 mb-4">
-                  Section A {paper.paperNumber === 3 ? "— Multiple choice (30 marks)" : "— Data response (40 marks)"}
+                  Section A {paper.paperNumber === 3 ? "· Multiple choice (30 marks)" : "· Data response (40 marks)"}
                 </h2>
                 {paper.paperNumber !== 3 && (paper.extracts ?? []).map((e) => <ExtractPanel key={e.id} extract={e} />)}
 
@@ -149,7 +149,7 @@ export default function AqaPaperViewer({ paperId, initialView = "qp" }: Props) {
               {/* Section B */}
               <section>
                 <h2 className="text-lg font-bold text-foreground border-b-2 border-indigo-500/40 pb-1 mb-4">
-                  Section B {paper.paperNumber === 3 ? "— Case study (50 marks)" : "— Essay (40 marks) — choose ONE"}
+                  Section B {paper.paperNumber === 3 ? "· Case study (50 marks)" : "· Essay (40 marks) · choose ONE"}
                 </h2>
                 {paper.paperNumber === 3 && (paper.extracts ?? []).map((e) => <ExtractPanel key={e.id} extract={e} />)}
 
@@ -318,7 +318,7 @@ function QuestionBlock({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         onFocus={onFocus}
-        placeholder={showCanvas ? "Write your explanation here — refer to your diagram." : "Type your answer here…"}
+        placeholder={showCanvas ? "Write your explanation here · refer to your diagram." : "Type your answer here…"}
         className="min-h-[140px]"
       />
     </div>

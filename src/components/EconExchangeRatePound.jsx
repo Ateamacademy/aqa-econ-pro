@@ -1,5 +1,5 @@
 // High-fidelity Currency Market diagram for the British Pound (GBP).
-// Used for Eduqas A-Level Paper 3 Hard (eduqas-p3-b) — Q3.1 "Using a diagram,
+// Used for Eduqas A-Level Paper 3 Hard (eduqas-p3-b) · Q3.1 "Using a diagram,
 // explain the factors that determine the exchange rate of the pound in a
 // floating exchange rate system." Shows S£, D£, and a rightward shift in the
 // supply of pounds (S£ → SE₁) leading to a depreciation (E → E₁).
@@ -13,7 +13,7 @@ export default function EconExchangeRatePound() {
           <marker id="gbpArrow" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#cc6600"/></marker>
         </defs>
         <rect width="680" height="560" fill="#fff"/>
-        <text x="340" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Currency Market — Exchange Rate (£)</text>
+        <text x="340" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Currency Market · Exchange Rate (£)</text>
         <text x="340" y="48" textAnchor="middle" fontSize="12" fill="#555">Floating system: ER set by demand &amp; supply of pounds. Supply rises (S£ → SE₁) → £ depreciates</text>
 
         {/* Axes */}
@@ -32,20 +32,20 @@ export default function EconExchangeRatePound() {
         <polyline points="90.0,411.0 121.0,388.5 152.0,366.0 183.0,343.5 214.0,321.0 245.0,298.5 276.0,276.0 307.0,253.5 338.0,231.0 369.0,208.5 400.0,186.0 431.0,163.5 462.0,141.0 493.0,118.5 524.0,96.0 555.5,73.5" fill="none" stroke="#cc2222" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
         <text x="561.5" y="68.5" fontSize="13" fontWeight="bold" fill="#cc2222">S£</text>
 
-        {/* New Supply SE₁ — shifted right (more pounds supplied at every rate) */}
+        {/* New Supply SE₁ · shifted right (more pounds supplied at every rate) */}
         <polyline points="180.0,411.0 211.0,388.5 242.0,366.0 273.0,343.5 304.0,321.0 335.0,298.5 366.0,276.0 397.0,253.5 428.0,231.0 459.0,208.5 490.0,186.0 521.0,163.5 552.0,141.0 583.0,118.5" fill="none" stroke="#cc6600" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="9,5"/>
         <text x="589.0" y="113.5" fontSize="13" fontWeight="bold" fill="#cc6600">SE₁</text>
 
         {/* Shift arrow */}
         <line x1="276.0" y1="276.0" x2="335.0" y2="298.5" stroke="#cc6600" strokeWidth="2.2" markerEnd="url(#gbpArrow)"/>
 
-        {/* E — original equilibrium: S£ ∩ D£ at (325.6, 240.0) */}
+        {/* E · original equilibrium: S£ ∩ D£ at (325.6, 240.0) */}
         <line x1="90" y1="240.0" x2="325.6" y2="240.0" stroke="#888" strokeWidth="1.4" strokeDasharray="7,5"/>
         <line x1="325.6" y1="240.0" x2="325.6" y2="460" stroke="#888" strokeWidth="1.4" strokeDasharray="7,5"/>
         <circle cx="325.6" cy="240.0" r="7" fill="#fff" stroke="#2a8a3a" strokeWidth="2.2"/>
         <text x="335.6" y="244.0" fontSize="13" fontWeight="bold" fill="#2a8a3a">E</text>
 
-        {/* E₁ — new equilibrium: SE₁ ∩ D£ at (372.3, 271.4) */}
+        {/* E₁ · new equilibrium: SE₁ ∩ D£ at (372.3, 271.4) */}
         <line x1="90" y1="271.4" x2="372.3" y2="271.4" stroke="#cc6600" strokeWidth="1.4" strokeDasharray="7,5"/>
         <line x1="372.3" y1="271.4" x2="372.3" y2="460" stroke="#cc6600" strokeWidth="1.4" strokeDasharray="7,5"/>
         <circle cx="372.3" cy="271.4" r="7" fill="#fff" stroke="#cc6600" strokeWidth="2.2"/>

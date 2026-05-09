@@ -148,7 +148,7 @@ export default function Auth() {
         toast.error(error.message);
         return;
       }
-      toast.success("Password reset link sent — check your inbox.");
+      toast.success("Password reset link sent · check your inbox.");
     } catch {
       toast.error("Network error. Please try again.");
     }
@@ -204,7 +204,7 @@ export default function Auth() {
                 </span>
               </h1>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Predicted papers, instant marking, and a 24/7 tutor — built for AQA, Edexcel, OCR, CAIE & IB.
+                Predicted papers, instant marking, and a 24/7 tutor · built for AQA, Edexcel, OCR, CAIE & IB.
               </p>
             </div>
 
@@ -274,7 +274,7 @@ export default function Auth() {
                 <CardDescription className="text-muted-foreground mt-2">
                   {activeTab === "login"
                     ? "Sign in to continue your revision"
-                    : "Start your free trial — no card required"}
+                    : "Start your free trial · no card required"}
                 </CardDescription>
               </CardHeader>
 

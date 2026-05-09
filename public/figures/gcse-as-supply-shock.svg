@@ -20,8 +20,8 @@
     </marker>
   </defs>
 
-  <text x="350" y="30" text-anchor="middle" class="ttl">UK 2022 — Natural Gas Price Spike (Supply-Side Shock)</text>
-  <text x="350" y="50" text-anchor="middle" class="sub">Higher input costs for manufacturers and transport reduce SRAS (SRAS1 → SRAS2) — cost-push inflation</text>
+  <text x="350" y="30" text-anchor="middle" class="ttl">UK 2022 · Natural Gas Price Spike (Supply-Side Shock)</text>
+  <text x="350" y="50" text-anchor="middle" class="sub">Higher input costs for manufacturers and transport reduce SRAS (SRAS1 → SRAS2) · cost-push inflation</text>
 
   <line class="axis" x1="90"  y1="80"  x2="90"  y2="450"/>
   <line class="axis" x1="90"  y1="450" x2="640" y2="450"/>
@@ -57,6 +57,6 @@
   <path class="arrow" d="M 360 350 q -50 -8 -90 -3"/>
   <text x="280" y="340" class="lbl" fill="#7f0000">SRAS shifts left</text>
 
-  <text x="90"  y="495" class="sub">Higher gas prices raise firms' production costs (manufacturing, transport) — capacity at every price falls.</text>
+  <text x="90"  y="495" class="sub">Higher gas prices raise firms' production costs (manufacturing, transport) · capacity at every price falls.</text>
   <text x="90"  y="512" class="sub">Result: cost-push inflation (P↑) combined with falling Real GDP (Y↓). Stagflationary pressures emerge.</text>
 </svg>

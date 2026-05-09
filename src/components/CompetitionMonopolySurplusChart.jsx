@@ -8,7 +8,7 @@ export default function CompetitionMonopolySurplusChart() {
           <marker id="cmBlkD" markerWidth="7" markerHeight="9" refX="3.5" refY="8" orient="auto"><polygon points="0 0,7 0,3.5 8" fill="#111"/></marker>
         </defs>
         <rect width="700" height="540" fill="#fff"/>
-        <text x="350" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Competition vs Monopoly — Consumer Surplus</text>
+        <text x="350" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Competition vs Monopoly · Consumer Surplus</text>
         <line x1="80" y1="470" x2="80" y2="40" stroke="#111" strokeWidth="2.2" markerEnd="url(#cmU)"/>
         <line x1="80" y1="470" x2="642" y2="470" stroke="#111" strokeWidth="2.2" markerEnd="url(#cmR)"/>
         <text x="76" y="34" fontSize="12" fontWeight="bold" fill="#111">Price/costs</text>

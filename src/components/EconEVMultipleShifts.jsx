@@ -9,7 +9,7 @@ export default function EconEVMultipleShifts() {
           <marker id="ms1B" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#2255cc"/></marker>
         </defs>
         <rect width="680" height="560" fill="#fff"/>
-        <text x="340" y="26" textAnchor="middle" fontSize="15" fontWeight="bold" fill="#111">UK Electric Vehicle Market — Multiple Shifts</text>
+        <text x="340" y="26" textAnchor="middle" fontSize="15" fontWeight="bold" fill="#111">UK Electric Vehicle Market · Multiple Shifts</text>
         <text x="340" y="46" textAnchor="middle" fontSize="11" fill="#555">S shifts right (lower costs) + D shifts right (higher MPB) → Q rises, P change ambiguous</text>
         <line x1="88" y1="460" x2="88" y2="50" stroke="#111" strokeWidth="2.2" markerEnd="url(#ms1U)"/>
         <line x1="88" y1="460" x2="582" y2="460" stroke="#111" strokeWidth="2.2" markerEnd="url(#ms1R)"/>
@@ -41,7 +41,7 @@ export default function EconEVMultipleShifts() {
         <text x="465.6" y="478" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#cc4400">Q2</text>
         <rect x="88" y="496" width="494" height="50" rx="5" fill="#f0f4fb" stroke="#c8d4e8" strokeWidth="1.2"/>
         <text x="100" y="514" fontSize="11" fontWeight="bold" fill="#111">Net effect:</text>
-        <text x="100" y="530" fontSize="11" fill="#555">Both S↑ and D↑ cause Q to rise unambiguously (Q1→Q2). Price effect is ambiguous — here</text>
+        <text x="100" y="530" fontSize="11" fill="#555">Both S↑ and D↑ cause Q to rise unambiguously (Q1→Q2). Price effect is ambiguous · here</text>
         <text x="100" y="543" fontSize="11" fill="#555">supply shift dominates slightly so P falls marginally (P2 &lt; P1) as costs fall faster than demand rises.</text>
       </svg>
     </div>

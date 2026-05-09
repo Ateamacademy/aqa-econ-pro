@@ -7,7 +7,7 @@ export default function EconMonopolySupernormalProfit() {
           <marker id="mnU" markerWidth="7" markerHeight="9" refX="3.5" refY="1" orient="auto"><polygon points="0 9,3.5 0,7 9" fill="#111"/></marker>
         </defs>
         <rect width="700" height="540" fill="#fff"/>
-        <text x="350" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Monopoly — Supernormal Profit</text>
+        <text x="350" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Monopoly · Supernormal Profit</text>
         <line x1="80" y1="470" x2="80" y2="40" stroke="#111" strokeWidth="2.2" markerEnd="url(#mnU)"/>
         <line x1="80" y1="470" x2="642" y2="470" stroke="#111" strokeWidth="2.2" markerEnd="url(#mnR)"/>
         <text x="76" y="34" fontSize="12" fontWeight="bold" fill="#111">Price/costs</text>

@@ -1,7 +1,7 @@
 <!-- Auto-generated from /public/edexcel-igcse-mocks/mark-scheme-paper-2-advanced.pdf -->
 Pearson Edexcel International GCSE
 Mark Scheme
-Summer 2026 — Predicted Paper (Advanced)
+Summer 2026 · Predicted Paper (Advanced)
 In Economics (4EC1)
 Paper 2: Macroeconomics and the Global Economy
 
@@ -23,7 +23,7 @@ General Marking Guidance
        response, the team leader must be consulted.
    •   Crossed out work should be marked UNLESS the candidate has replaced it with an
        alternative response.
-Mark Scheme: Paper 2 — Macroeconomics and the Global Economy (4EC1/02) — Predicted
+Mark Scheme: Paper 2 · Macroeconomics and the Global Economy (4EC1/02) · Predicted
 (Advanced)
 
  1(a)      Question                                                                  (1)
@@ -138,15 +138,15 @@ Mark Scheme: Paper 2 — Macroeconomics and the Global Economy (4EC1/02) — Pre
 1(h)      Question                                                                       (6)
           Analyse the possible disadvantages of introducing a carbon tax in
           Indonesia.
-          Indicative Content — AO2 (3 marks) / AO3 (3 marks)
+          Indicative Content · AO2 (3 marks) / AO3 (3 marks)
 
           AO2 and AO3
             • A carbon tax raises the cost of producing coal-fired electricity,
                 which is passed on to consumers in the form of higher
                 electricity prices.
               •   Because 61% of Indonesian electricity comes from coal, the
-                  tax will affect most households — particularly those on low
-                  incomes — making it a potentially regressive measure.
+                  tax will affect most households · particularly those on low
+                  incomes · making it a potentially regressive measure.
               •   Higher energy costs raise firms' production costs, fuelling
                   cost-push inflation across the Indonesian economy.
               •   Coal-dependent regions risk job losses as demand for coal-
@@ -283,10 +283,10 @@ Level 3   5–6       •   Demonstrates clear knowledge and understanding by
 2(g)   Question                                                                   (9)
        Assess the possible effects of using contractionary monetary policy
        to reduce inflation in a country such as Argentina.
-       Indicative Content — AO2 (3 marks) / AO3 (3 marks) / AO4 (3
+       Indicative Content · AO2 (3 marks) / AO3 (3 marks) / AO4 (3
        marks)
 
-       AO2 and AO3 — effects
+       AO2 and AO3 · effects
          • Contractionary monetary policy involves raising interest rates
              (to over 100% in 2023) and/or reducing the money supply.
             •   Higher interest rates raise the cost of borrowing, discouraging
@@ -301,10 +301,10 @@ Level 3   5–6       •   Demonstrates clear knowledge and understanding by
                   price spirals.
 
 
-          AO4 — evaluation / drawbacks
+          AO4 · evaluation / drawbacks
             • Very high interest rates sharply reduce investment and real
                consumer spending, which contributed to Argentina's −1.6%
-               GDP in 2023 — the risk of deepening the recession.
+               GDP in 2023 · the risk of deepening the recession.
               •   Monetary policy has time lags of 18–24 months, so inflation
                   may not fall quickly enough to prevent severe hardship.
               •   Argentina's inflation is partly cost-push (peso devaluation,
@@ -399,7 +399,7 @@ Level 3   7–9       •   Demonstrates clear knowledge and understanding by
 3(d)   Question                                                               (6)
        Analyse the possible benefits to Saudi Arabia of diversifying away
        from oil.
-       Indicative Content — AO2 (3 marks) / AO3 (3 marks)
+       Indicative Content · AO2 (3 marks) / AO3 (3 marks)
 
        AO2 and AO3
          • Diversification reduces Saudi Arabia's dependence on oil
@@ -411,8 +411,8 @@ Level 3   7–9       •   Demonstrates clear knowledge and understanding by
               •   New industries generate domestic jobs, reducing Saudi
                   unemployment and providing opportunities for young Saudis
                   entering the workforce.
-              •   A broader economic base makes GDP less volatile — growth
-                  is less tied to the global oil-price cycle — giving more stable
+              •   A broader economic base makes GDP less volatile · growth
+                  is less tied to the global oil-price cycle · giving more stable
                   tax revenues for the government.
               •   Diversification accelerates technology transfer and skills
                   development, raising labour productivity and long-term
@@ -454,10 +454,10 @@ Level 3   5–6             •   Demonstrates clear knowledge and understanding
 3(e)      Question                                                                      (9)
           Assess the possible effects of a currency devaluation on an
           economy such as Egypt.
-          Indicative Content — AO2 (3 marks) / AO3 (3 marks) / AO4 (3
+          Indicative Content · AO2 (3 marks) / AO3 (3 marks) / AO4 (3
           marks)
 
-          AO2 and AO3 — effects
+          AO2 and AO3 · effects
             • Devaluation makes Egyptian exports (textiles, cotton, Suez
                   Canal fees) cheaper in foreign markets, increasing export
                   revenue.
@@ -471,12 +471,12 @@ Level 3   5–6             •   Demonstrates clear knowledge and understanding
                   employment.
               •   Devaluation can attract more foreign direct investment as
                   Egyptian assets and labour become cheaper in foreign-
-                  currency terms — part of the IMF rationale.
+                  currency terms · part of the IMF rationale.
               •   A more competitive exchange rate supports tourism, another
                   key source of foreign-currency earnings.
 
 
-          AO4 — evaluation / drawbacks
+          AO4 · evaluation / drawbacks
             • A 40% devaluation raises the price of essential imports such
                as wheat, fuel and medicines, causing imported inflation that
                hits poorer households hardest.
@@ -550,14 +550,14 @@ Level 3   7–9       •   Demonstrates clear knowledge and understanding by
 4(b)      Question                                                                     (6)
           Analyse the possible ways in which economic growth can raise living
           standards in a country such as India.
-          Indicative Content — AO2 (3 marks) / AO3 (3 marks)
+          Indicative Content · AO2 (3 marks) / AO3 (3 marks)
 
           AO2 and AO3
             • Economic growth in India (7.6% in 2023) raises real incomes
                 as more goods and services are produced per person.
               •   Higher incomes allow Indian households to consume more
-                  goods and services — food, housing, healthcare, education
-                  — improving material living standards.
+                  goods and services · food, housing, healthcare, education
+                  · improving material living standards.
               •   Growth driven by IT and business-process outsourcing
                   creates well-paid service-sector jobs in cities such as
                   Bengaluru, Hyderabad and Pune.
@@ -566,7 +566,7 @@ Level 3   7–9       •   Demonstrates clear knowledge and understanding by
                   2023.
               •   Higher GDP leads to higher tax revenues, which the Indian
                   Government can spend on infrastructure, schools and public
-                  health — improving non-income aspects of living standards.
+                  health · improving non-income aspects of living standards.
               •   Investment in roads, ports and digital infrastructure (as in
                   India) reduces transport costs and connects rural populations
                   to markets, reducing inequality.
@@ -605,10 +605,10 @@ Level 3   5–6             •   Demonstrates clear knowledge and understanding
 4(c)      Question                                                                     (12)
           Evaluate the view that trade is more effective than foreign aid in
           promoting economic development in a country such as Ethiopia.
-          Indicative Content — AO2 (4 marks) / AO3 (4 marks) / AO4 (4
+          Indicative Content · AO2 (4 marks) / AO3 (4 marks) / AO4 (4
           marks)
 
-          AO2 and AO3 — arguments in favour of trade
+          AO2 and AO3 · arguments in favour of trade
             • Trade allows Ethiopia to specialise according to comparative
                 advantage in coffee, leather goods and textiles, raising
                 efficiency and export earnings.
@@ -626,12 +626,12 @@ Level 3   5–6             •   Demonstrates clear knowledge and understanding
                  long-term aid reliance.
 
 
-          AO4 — arguments for aid / against trade
+          AO4 · arguments for aid / against trade
             • Targeted aid (>$4bn in 2023) can fund schools, hospitals and
                vaccination programmes, directly improving HDI components
                that trade alone may not address.
-             •   Aid is crucial during humanitarian emergencies — drought,
-                 famine, conflict — where trade cannot provide a fast enough
+             •   Aid is crucial during humanitarian emergencies · drought,
+                 famine, conflict · where trade cannot provide a fast enough
                  response.
              •   Ethiopia lacks the infrastructure and capital to compete
                  internationally; aid can build roads, power networks and ports
@@ -642,7 +642,7 @@ Level 3   5–6             •   Demonstrates clear knowledge and understanding
               •   Rich-country protectionism (tariffs on textiles, agricultural
                   quotas) can limit Ethiopia's ability to benefit from trade.
               •   Much aid is tied to projects or purchases from donor
-                  countries, which limits its effectiveness — so aid is not a
+                  countries, which limits its effectiveness · so aid is not a
                   perfect alternative either.
 
 

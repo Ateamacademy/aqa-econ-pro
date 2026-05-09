@@ -39,7 +39,7 @@ export function tokenise(normalised: string): string[] {
 }
 
 export function semanticCore(normalised: string): string {
-  // Keep only tokens >3 chars, dedup, sorted — emphasises content nouns/verbs.
+  // Keep only tokens >3 chars, dedup, sorted · emphasises content nouns/verbs.
   const tokens = normalised
     .split(" ")
     .filter((w) => w.length > 3 && !STOP_WORDS.has(w));

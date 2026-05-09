@@ -65,16 +65,16 @@ For each figure found between extract sections, determine:
 7. What student action the question expects
 
 DIAGRAM FAMILIES to classify into:
-- ppf (Production Possibility Frontier — balanced growth, biased, unemployment, shifts)
-- supply_demand (Supply & Demand — equilibrium, shifts, simultaneous)
-- externalities (Positive/negative, consumption/production — MSC, MPC, MSB, MPB)
+- ppf (Production Possibility Frontier · balanced growth, biased, unemployment, shifts)
+- supply_demand (Supply & Demand · equilibrium, shifts, simultaneous)
+- externalities (Positive/negative, consumption/production · MSC, MPC, MSB, MPB)
 - consumer_producer_surplus (CS/PS shading)
 - tax_subsidy (Indirect tax, subsidy effects)
 - price_controls (Price floor, price ceiling)
 - cost_curves (MC, ATC, AVC, AFC, LRAC, economies of scale)
 - market_structures (Monopoly, perfect competition, monopolistic competition, oligopoly, kinked demand)
 - labour_market (DL=MRP, SL, minimum wage, monopsony)
-- ad_as (AD/AS — demand/supply shocks, LRAS shifts, Keynesian AS)
+- ad_as (AD/AS · demand/supply shocks, LRAS shifts, Keynesian AS)
 - phillips_curve (SRPC, LRPC, NRU)
 - monetary_policy (Transmission mechanism, interest rates, QE)
 - exchange_rate (Currency market, depreciation/appreciation)
@@ -86,8 +86,8 @@ IB-SPECIFIC RULES:
 - IB diagrams must be linked to the surrounding question command term (explain, discuss, evaluate, examine, suggest, calculate, recommend)
 - Mark each diagram as HL-only, SL-only, or common HL/SL
 - IB HL-only families include: market power (monopoly, perfect comp, monopolistic comp), J-curve, Marshall-Lerner, trade diversion, asymmetric information
-- For IB Paper 3 (HL), figures may require calculations — flag expectedStudentAction as "calculate"
-- IB requires real-world application context — note if the diagram links to a named country, industry, or current event
+- For IB Paper 3 (HL), figures may require calculations · flag expectedStudentAction as "calculate"
+- IB requires real-world application context · note if the diagram links to a named country, industry, or current event
 - Distinguish IB command terms: "explain" (knowledge+understanding), "discuss" (two sides), "evaluate" (judgement), "examine" (consider)
 
 WJEC / EDUQAS-SPECIFIC RULES:
@@ -108,16 +108,16 @@ WJEC / EDUQAS-SPECIFIC RULES:
 AQA GCSE / CAMBRIDGE IGCSE-SPECIFIC RULES:
 - AQA GCSE (8136): Paper 1 covers How Markets Work (S&D, equilibrium, elasticity, market failure, externalities, merit/demerit goods, government intervention). Paper 2 covers National & International Economy (AD/AS, labour market, exchange rates, trade)
 - Cambridge IGCSE (0455): Paper 1 is MCQ; Paper 2 is structured questions across Basic Economic Problem, Allocation of Resources, Microeconomic Decision Makers, Government & Macroeconomy, Economic Development, International Trade & Globalisation
-- GCSE/IGCSE diagrams are SIMPLIFIED versions — do not expect full MPC/MSC/MPB/MSB notation; may use "private cost" / "social cost" labels instead
+- GCSE/IGCSE diagrams are SIMPLIFIED versions · do not expect full MPC/MSC/MPB/MSB notation; may use "private cost" / "social cost" labels instead
 - For merit/demerit goods at GCSE/IGCSE level, expect D(perceived) / D(actual) notation showing information failure
-- Excess demand/supply diagrams are central to IGCSE — identify shortages and surpluses with horizontal price lines
+- Excess demand/supply diagrams are central to IGCSE · identify shortages and surpluses with horizontal price lines
 - PPC/PPF diagrams at GCSE level should identify efficient, inefficient, and unattainable points
 - Labour market diagrams may include NMW (National Minimum Wage) as a horizontal line creating unemployment
 - Tariff diagrams at GCSE/IGCSE are simplified: world price (Pw) and Pw + tariff horizontal lines
 - Exchange rate diagrams use D/S for currency with appreciation/depreciation shifts
 - Lorenz curve and Gini coefficient may appear in development/inequality questions
 - Economies of scale shown as U-shaped LRAC with MES marked
-- GCSE questions are max 20 marks — diagrams support shorter answers than A-Level
+- GCSE questions are max 20 marks · diagrams support shorter answers than A-Level
 - Do not treat Dropbox page furniture, logos, or navigation elements as economics diagrams
 
 EDEXCEL INTERNATIONAL GCSE (4EC1)-SPECIFIC RULES:
@@ -143,7 +143,7 @@ OCR GCSE (J205)-SPECIFIC RULES:
 - OCR requires drawing demand and supply curves using data from tables
 - OCR requires calculating: unemployment rate, currency conversions, inflation effects, TC/AC/TR/AR/profit
 - Externality correction: OCR lists five specific methods (taxation, subsidies, state provision, legislation/regulation, information provision)
-- Exchange rate diagrams must be DRAWN by students — OCR explicitly requires this
+- Exchange rate diagrams must be DRAWN by students · OCR explicitly requires this
 - Competition diagrams compare competitive vs monopoly outcomes for consumers and producers
 - Questions max 80 marks per paper, synoptic in 6-mark extended response questions
 - Do not treat PMT page furniture, logos, or navigation elements as economics diagrams

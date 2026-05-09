@@ -112,7 +112,7 @@ function RenderedTable({ markdown }: { markdown: string }) {
 function parseFigureAsDiagram(title: string, desc: string): import("./EconDiagramSVG").DiagramProps | null {
   const lower = desc.toLowerCase();
   
-  // Check for "Diagram family:" field — this is the primary indicator from structured AI output
+  // Check for "Diagram family:" field · this is the primary indicator from structured AI output
   const familyMatch = desc.match(/Diagram\s+family:\s*(\S+)/i);
   const familyId = familyMatch?.[1]?.trim() || "";
   
@@ -154,7 +154,7 @@ function parseFigureAsDiagram(title: string, desc: string): import("./EconDiagra
     shift = "Supply shifts left";
   }
   
-  // Allow diagrams WITHOUT shifts — show initial equilibrium only
+  // Allow diagrams WITHOUT shifts · show initial equilibrium only
   
   // Extract conclusion from description
   const leadingTo = desc.match(/leading\s+to\s+(.+?)(?:\.|$)/i);
@@ -391,7 +391,7 @@ const markdownComponents: Components = {
     return <p className="mb-3 leading-relaxed" {...props}>{children}</p>;
   },
   code: ({ children, ...props }) => {
-    // Prevent monospace font — render inline code as normal styled text
+    // Prevent monospace font · render inline code as normal styled text
     return <span className="font-sans font-semibold text-foreground" {...props}>{children}</span>;
   },
   strong: ({ children, ...props }) => {
@@ -413,7 +413,7 @@ const markdownComponents: Components = {
   ),
   img: ({ src, alt, ...props }) => {
     // Render reference figure SVGs from /public on a WHITE card.
-    // The source SVGs are print-style black-ink artwork — they MUST sit on a
+    // The source SVGs are print-style black-ink artwork · they MUST sit on a
     // white background or labels become invisible against the dark page.
     // Inline styles back up the Tailwind classes so they survive any override.
     const caption = typeof alt === "string" ? alt : "";
@@ -512,16 +512,16 @@ function renderSegment(text: string, keyPrefix: string = "", suppressDiagrams: b
 function stripLineReferences(text: string): string {
   return text
     // "(lines 5-8)", "(lines 5–8)", "(line 5)"
-    .replace(/\s*\(lines?\s+\d+[\s–\-—]+\d+\)\s*/gi, " ")
+    .replace(/\s*\(lines?\s+\d+[\s–\-·]+\d+\)\s*/gi, " ")
     .replace(/\s*\(line\s+\d+\)\s*/gi, " ")
     // "lines 5-8" or "lines 5–8" standalone
-    .replace(/\blines?\s+\d+[\s–\-—]+\d+/gi, "")
+    .replace(/\blines?\s+\d+[\s–\-·]+\d+/gi, "")
     .replace(/\bline\s+\d+\b/gi, "")
-    // Remove em-dashes and en-dashes used as separators (" — ", " – ", " - " between words)
-    .replace(/\s+[—–]\s+/g, " ")
+    // Remove em-dashes and en-dashes used as separators (" · ", " – ", " - " between words)
+    .replace(/\s+[·–]\s+/g, " ")
     .replace(/\s+-\s+-?\s*/g, " ")
     // Remove leading dashes on lines
-    .replace(/^[\s]*[-—–]+\s*/gm, "")
+    .replace(/^[\s]*[-·–]+\s*/gm, "")
     // Remove horizontal rules (--- or more)
     .replace(/^-{3,}\s*$/gm, "")
     // Clean up double spaces

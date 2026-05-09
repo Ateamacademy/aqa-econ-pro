@@ -1,9 +1,9 @@
 /**
- * EdexcelBooklet — authentic Pearson Edexcel A-Level booklet renderer.
+ * EdexcelBooklet · authentic Pearson Edexcel A-Level booklet renderer.
  *
  * Renders a Paper as a stack of A4-sized "pages" with rounded border boxes,
  * vertical "DO NOT WRITE IN THIS AREA" captions, dotted answer lines, and a
- * barcode strip — designed to look indistinguishable from a real Pearson
+ * barcode strip · designed to look indistinguishable from a real Pearson
  * booklet when printed via window.print().
  */
 import { useMemo } from "react";
@@ -53,11 +53,11 @@ function PageFrame({
       {/* Outer rounded border (writing area) */}
       <div className="absolute inset-[14mm] rounded-[6mm] border border-black/70 pointer-events-none" />
 
-      {/* Vertical "DO NOT WRITE IN THIS AREA" — outer right margin */}
+      {/* Vertical "DO NOT WRITE IN THIS AREA" · outer right margin */}
       <div className="absolute right-[3mm] top-1/2 -translate-y-1/2 text-[8px] tracking-[0.3em] text-neutral-500 font-semibold edx-vertical">
         DO NOT WRITE IN THIS AREA
       </div>
-      {/* Vertical caption — outer left margin too */}
+      {/* Vertical caption · outer left margin too */}
       <div className="absolute left-[3mm] top-1/2 -translate-y-1/2 text-[8px] tracking-[0.3em] text-neutral-500 font-semibold edx-vertical">
         DO NOT WRITE IN THIS AREA
       </div>
@@ -479,7 +479,7 @@ function QuestionBlock({ q }: { q: Question }) {
 
 // ─── Main booklet ────────────────────────────────────────────────────
 export default function EdexcelBooklet({ paper }: { paper: Paper }) {
-  // Build a flat list of "page contents" — each section starts a new page,
+  // Build a flat list of "page contents" · each section starts a new page,
   // each question starts on a new page (canonical Edexcel layout).
   const pages = useMemo(() => {
     const arr: React.ReactNode[] = [];

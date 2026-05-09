@@ -1,5 +1,5 @@
 <!-- Auto-generated from /public/ocr-gcse-mocks/mark-scheme-paper-3-moderate.pdf -->
-H460/03 Mark Scheme — Predicted Paper (Moderate)
+H460/03 Mark Scheme · Predicted Paper (Moderate)
 
 
 Oxford Cambridge and RSA Examinations
@@ -10,16 +10,16 @@ Economics
 H460/03: Themes in economics
 A Level
 
-Predicted Paper — MODERATE
+Predicted Paper · MODERATE
 
 Mark Scheme
 
 
                                    Page 1
-                                 H460/03 Mark Scheme — Predicted Paper (Moderate)
+                                 H460/03 Mark Scheme · Predicted Paper (Moderate)
 
 
-           SECTION A — Multiple Choice Answers
+           SECTION A · Multiple Choice Answers
 
 Question   Answer     Question             Answer
 
@@ -55,10 +55,10 @@ Question   Answer     Question             Answer
 
 
                            Page 2
-                                                   H460/03 Mark Scheme — Predicted Paper (Moderate)
+                                                   H460/03 Mark Scheme · Predicted Paper (Moderate)
 
 
-Section A — Full Rationales
+Section A · Full Rationales
 
 Q      Key    Rationale                                                                       AO
 1      C      Rent is the reward to the factor of production 'land'. Interest is the reward   AO1
@@ -129,7 +129,7 @@ Q      Key    Rationale                                                         
 
 
                                              Page 3
-                                               H460/03 Mark Scheme — Predicted Paper (Moderate)
+                                               H460/03 Mark Scheme · Predicted Paper (Moderate)
 
 
          impossible since firms are price takers.
@@ -138,11 +138,11 @@ Q      Key    Rationale                                                         
          expanding domestic production. Consumer surplus falls; government tax
          revenue rises.
 
-24   D   Cash in sight accounts is immediately accessible — the most liquid.            AO1
+24   D   Cash in sight accounts is immediately accessible · the most liquid.            AO1
          Bonds, shares and time deposits all require conversion or delays.
 
 25   B   A minimum price above equilibrium causes quantity supplied to exceed           AO3
-         quantity demanded — an excess supply (surplus).
+         quantity demanded · an excess supply (surplus).
 
 26   D   Both face downward-sloping demand curves (they are price makers).              AO1
          Monopoly has high barriers; monopolistic competition does not and has
@@ -163,10 +163,10 @@ Q      Key    Rationale                                                         
 
 
                                          Page 4
-                                                      H460/03 Mark Scheme — Predicted Paper (Moderate)
+                                                      H460/03 Mark Scheme · Predicted Paper (Moderate)
 
 
-                                 SECTION B — Guidance
+                                 SECTION B · Guidance
 
 Question 31
 Using the data in Fig. 1.2 and information in Extract 1, calculate the percentage shortfall
@@ -214,7 +214,7 @@ improve affordability for renters.
 
 
                                                  Page 5
-                                                      H460/03 Mark Scheme — Predicted Paper (Moderate)
+                                                      H460/03 Mark Scheme · Predicted Paper (Moderate)
 
 
  Level 2 (6–10 marks)   Good knowledge and understanding of relevant economic ideas, principles and
@@ -251,28 +251,28 @@ Application (Extract 1):
 • Supply of housing is price inelastic in the short run.
 • Concern that landlords might exit the market.
 • Price/earnings ratio of 8+ suggests severe affordability problems.
-Analysis — arguments in favour of rent controls:
+Analysis · arguments in favour of rent controls:
 • A maximum rent below the equilibrium lowers rents for those who can obtain housing,
 raising their real incomes and discretionary spending.
 • Correctly drawn maximum price diagram: ceiling price below equilibrium; Qd > Qs creating
 excess demand; consumer surplus for those who obtain housing increases.
-• Addresses inequality — housing costs take up a large share of income for low earners.
+• Addresses inequality · housing costs take up a large share of income for low earners.
 • May correct perceived monopsony/market power of landlords in some local markets.
-Evaluation — arguments against rent controls:
+Evaluation · arguments against rent controls:
 • Excess demand → shortage of rental housing; some tenants cannot find a home at all.
 • Landlords may exit the market, reducing the quantity supplied further in the long run.
 • Incentive to maintain or improve properties is reduced; housing quality may fall.
 • Black markets may develop (key deposits, under-the-table payments).
-• Alternative policies — increasing housing supply (building more homes) — would tackle the
+• Alternative policies · increasing housing supply (building more homes) · would tackle the
 root cause.
 Judgements might include:
 
 
                                                 Page 6
-                                                H460/03 Mark Scheme — Predicted Paper (Moderate)
+                                                H460/03 Mark Scheme · Predicted Paper (Moderate)
 
 
-• Depends on the elasticity of supply — the more inelastic supply is, the smaller the negative
+• Depends on the elasticity of supply · the more inelastic supply is, the smaller the negative
 effect on quantity supplied.
 • Depends on the extent of monopsony power in local housing markets.
 • Depends on whether rent controls are combined with supply-side policies such as planning
@@ -281,7 +281,7 @@ reform.
 
 
                                             Page 7
-                                                      H460/03 Mark Scheme — Predicted Paper (Moderate)
+                                                      H460/03 Mark Scheme · Predicted Paper (Moderate)
 
 
 Question 34
@@ -334,7 +334,7 @@ effective way of raising UK living standards than demand-side policies.
 
 
                                                  Page 8
-                                                      H460/03 Mark Scheme — Predicted Paper (Moderate)
+                                                      H460/03 Mark Scheme · Predicted Paper (Moderate)
 
 
                         Reasonable analysis of the question characterised by undeveloped chains of
@@ -366,35 +366,35 @@ Application (Extract 2):
 • Output per hour 16% below France/Germany/USA.
 • Business investment/GDP below OECD average.
 • MPC raised rates from 0.1% to 5.25%.
-Analysis — supply-side arguments:
+Analysis · supply-side arguments:
 • Investment in infrastructure, education and R&D can raise productivity and shift LRAS right
-— raising real output without raising the price level sustainably.
+· raising real output without raising the price level sustainably.
 • Deregulation, labour market flexibility, competition policy all raise productive potential.
-• Living standards depend on real GDP per capita — only supply-side policies sustainably
+• Living standards depend on real GDP per capita · only supply-side policies sustainably
 raise productive capacity in the long run.
-Evaluation — demand-side and limits of supply-side:
+Evaluation · demand-side and limits of supply-side:
 • In the short run, demand-side policies (fiscal/monetary) can close output gaps and reduce
-cyclical unemployment — directly raising incomes.
-• Supply-side policies have long time lags — education and infrastructure take years to bear
+cyclical unemployment · directly raising incomes.
+• Supply-side policies have long time lags · education and infrastructure take years to bear
 fruit.
 • Interventionist supply-side policies are costly; market-based approaches risk widening
 inequality.
-• Some policies work through both sides — infrastructure investment raises both AD (short
+• Some policies work through both sides · infrastructure investment raises both AD (short
 run) and LRAS (long run).
 Judgements might include:
-• Depends on the time horizon — short run vs long run.
-• Depends on the cause of weak growth — structural (supply-side) vs cyclical (demand-
+• Depends on the time horizon · short run vs long run.
+• Depends on the cause of weak growth · structural (supply-side) vs cyclical (demand-
 side).
 • Depends on the state of public finances and scope for fiscal expansion.
 • A policy mix is often most effective.
 
 
                                                 Page 9
-     H460/03 Mark Scheme — Predicted Paper (Moderate)
+     H460/03 Mark Scheme · Predicted Paper (Moderate)
 
 
 Page 10
-                                                     H460/03 Mark Scheme — Predicted Paper (Moderate)
+                                                     H460/03 Mark Scheme · Predicted Paper (Moderate)
 
 
 Question 37
@@ -443,21 +443,21 @@ Application (Extract 3):
 • 2.7 million workers benefited directly.
 • Low Pay Commission aims to avoid adverse employment consequences.
 • Affects hospitality, social care, retail most.
-Analysis — why NLW may reduce inequality:
-• Compresses the wage distribution — raising the floor without raising the ceiling.
+Analysis · why NLW may reduce inequality:
+• Compresses the wage distribution · raising the floor without raising the ceiling.
 
 
                                                Page 11
-                                                H460/03 Mark Scheme — Predicted Paper (Moderate)
+                                                H460/03 Mark Scheme · Predicted Paper (Moderate)
 
 
 • Direct pay rise for 2.7m low earners → Lorenz curve shifts closer to line of equality.
 • In monopsonistic labour markets, a higher NLW may raise both wages and employment.
-Evaluation — why NLW may not reduce inequality:
-• Households with no workers (pensioners, unemployed) do not benefit directly — inequality
+Evaluation · why NLW may not reduce inequality:
+• Households with no workers (pensioners, unemployed) do not benefit directly · inequality
 between working and non-working households unchanged.
 • Possible job losses/reduced hours in low-margin sectors may offset gains.
-• Firms may pass costs on via higher prices — low earners spend a higher share on basics
+• Firms may pass costs on via higher prices · low earners spend a higher share on basics
 so inflation hurts them more (regressive effect).
 • Tax and benefit system plays a bigger role than the NLW in determining post-tax inequality.
 Judgements might include:
@@ -468,27 +468,27 @@ Judgements might include:
 
 
                                           Page 12
-                                         H460/03 Mark Scheme — Predicted Paper (Moderate)
+                                         H460/03 Mark Scheme · Predicted Paper (Moderate)
 
 
                         Assessment Objectives Grid
 
   Question        AO1       AO2    AO3         AO4          Total             QS
-Section A Total   15         7      8            —            30              (13)
+Section A Total   15         7      8            ·            30              (13)
 
-      31          —          2      —            —            2               (2)
+      31          ·          2      ·            ·            2               (2)
 
-      32           1         2      —            —            3
+      32           1         2      ·            ·            3
 
      33*           2         3      4            6            15
 
-      34           2         1      —            —            3               (3)
+      34           2         1      ·            ·            3               (3)
 
-      35           1         1      —            —            2               (2)
+      35           1         1      ·            ·            2               (2)
 
      36*           2         3      4            6            15
 
-      37          —          2      —            —            2               (2)
+      37          ·          2      ·            ·            2               (2)
 
       38           1         1      2            4            8
 

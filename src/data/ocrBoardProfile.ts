@@ -25,7 +25,7 @@ const OCR_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "trade_off",
     name: "Straight-Line Trade-Off",
-    theme: "Component 1 — Section 1",
+    theme: "Component 1 · Section 1",
     axes: { x: "Consumer Goods", y: "Capital Goods" },
     curveNames: ["PPC (straight line)"],
     requiredLabels: ["Points x, y", "a, b (quantities)", "Axes in context"],
@@ -40,7 +40,7 @@ const OCR_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "ppf",
     name: "Production Possibility Curve",
-    theme: "Component 1 — Topic 1.3",
+    theme: "Component 1 · Topic 1.3",
     axes: { x: "Consumer Goods", y: "Capital Goods" },
     curveNames: ["PPC", "PPC₁", "PPC₂"],
     requiredLabels: ["Efficient points (on PPC)", "Inefficient (inside)", "Unattainable (outside)", "Shift arrows"],
@@ -59,7 +59,7 @@ const OCR_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "demand",
     name: "Demand",
-    theme: "Component 1 — Topic 2.2",
+    theme: "Component 1 · Topic 2.2",
     axes: { x: "Quantity", y: "Price" },
     curveNames: ["D", "D₁", "D₂"],
     requiredLabels: ["P", "P₁", "Q", "Q₁", "D"],
@@ -76,7 +76,7 @@ const OCR_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "supply",
     name: "Supply",
-    theme: "Component 1 — Topic 2.3",
+    theme: "Component 1 · Topic 2.3",
     axes: { x: "Quantity", y: "Price" },
     curveNames: ["S", "S₁", "S₂"],
     requiredLabels: ["P", "P₁", "Q", "Q₁", "S"],
@@ -92,7 +92,7 @@ const OCR_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "consumer_producer_surplus",
     name: "Consumer & Producer Surplus",
-    theme: "Component 1 — Topic 2.4",
+    theme: "Component 1 · Topic 2.4",
     axes: { x: "Quantity", y: "Price" },
     curveNames: ["D", "S"],
     requiredLabels: ["CS (shaded)", "PS (shaded)", "P", "Market price", "Change labels"],
@@ -107,7 +107,7 @@ const OCR_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "marginal_utility",
     name: "Marginal Utility / Diminishing Marginal Utility",
-    theme: "Component 1 — Topic 2.7",
+    theme: "Component 1 · Topic 2.7",
     axes: { x: "Quantity", y: "Price / Utility" },
     curveNames: ["D = MU"],
     requiredLabels: ["D = MU", "P", "P₁", "Q", "Q₁"],
@@ -122,7 +122,7 @@ const OCR_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "supply_demand",
     name: "Interaction of Demand & Supply",
-    theme: "Component 1 — Topic 2.5",
+    theme: "Component 1 · Topic 2.5",
     axes: { x: "Quantity", y: "Price" },
     curveNames: ["D", "D₁", "S", "S₁"],
     requiredLabels: ["P", "Q", "Equilibrium", "Excess demand / supply"],
@@ -141,7 +141,7 @@ const OCR_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "elasticity",
     name: "Elasticity (PED, PES, YED, XED)",
-    theme: "Component 1 — Topic 2.6",
+    theme: "Component 1 · Topic 2.6",
     axes: { x: "Quantity", y: "Price" },
     curveNames: ["D (elastic)", "D (inelastic)", "D (unit elastic)", "D (perfectly elastic)", "D (perfectly inelastic)"],
     requiredLabels: ["PED values", "Revenue implications", "Slope indications"],
@@ -158,7 +158,7 @@ const OCR_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "externalities",
     name: "Externalities (Production & Consumption)",
-    theme: "Component 1 — Topics 2.7/2.8",
+    theme: "Component 1 · Topics 2.7/2.8",
     axes: { x: "Quantity", y: "Costs / Benefits / Price" },
     curveNames: ["MPC", "MSC", "MPB", "MSB", "MB", "MC"],
     requiredLabels: ["MPC", "MSC", "MPB", "MSB", "Welfare loss/gain triangle", "Social optimum", "Free market eq"],
@@ -181,7 +181,7 @@ const OCR_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "information_failure",
     name: "Information Failure (Merit & Demerit Goods)",
-    theme: "Component 1 — Topic 2.9",
+    theme: "Component 1 · Topic 2.9",
     axes: { x: "Quantity", y: "Price" },
     curveNames: ["D (perceived)", "D₁ (actual)", "S"],
     requiredLabels: ["D (perceived)", "D₁ (actual)", "Market failure point", "Optimum allocation", "Welfare triangle"],
@@ -198,7 +198,7 @@ const OCR_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "government_intervention",
     name: "Government Intervention",
-    theme: "Component 1 — Topics 2.8/2.11",
+    theme: "Component 1 · Topics 2.8/2.11",
     axes: { x: "Quantity", y: "Price" },
     curveNames: ["D", "S", "S + tax", "S - subsidy", "P Max", "P Min"],
     requiredLabels: ["Tax/subsidy amount", "New equilibrium", "Welfare change", "Excess demand/supply"],
@@ -221,7 +221,7 @@ const OCR_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "cost_curves",
     name: "Cost Curves & Economies of Scale",
-    theme: "Component 2 — Costs & Revenue",
+    theme: "Component 2 · Costs & Revenue",
     axes: { x: "Output (Q)", y: "Costs (£)" },
     curveNames: ["MC", "ATC", "AVC", "AFC", "LRAC"],
     requiredLabels: ["MC", "ATC", "AVC", "Min ATC", "MES"],
@@ -237,7 +237,7 @@ const OCR_MICRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "market_structures",
     name: "Market Structures",
-    theme: "Component 2 — Market Structures",
+    theme: "Component 2 · Market Structures",
     axes: { x: "Output (Q)", y: "Price / Cost / Revenue (£)" },
     curveNames: ["AR", "MR", "MC", "ATC"],
     requiredLabels: ["AR", "MR", "MC", "ATC", "Profit max", "Supernormal profit"],
@@ -264,7 +264,7 @@ const OCR_MACRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "ad_as",
     name: "Aggregate Demand / Aggregate Supply",
-    theme: "Component 2 — Macro Equilibrium",
+    theme: "Component 2 · Macro Equilibrium",
     axes: { x: "Real GDP (Y)", y: "Price Level (PL)" },
     curveNames: ["AD", "AD₁", "SRAS", "SRAS₁", "LRAS"],
     requiredLabels: ["PL", "Y", "AD", "SRAS", "LRAS", "Equilibrium"],
@@ -284,7 +284,7 @@ const OCR_MACRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "phillips_curve",
     name: "Phillips Curve",
-    theme: "Component 2 — Inflation & Unemployment",
+    theme: "Component 2 · Inflation & Unemployment",
     axes: { x: "Unemployment Rate (%)", y: "Inflation Rate (%)" },
     curveNames: ["SRPC", "LRPC"],
     requiredLabels: ["SRPC", "LRPC", "NRU"],
@@ -299,7 +299,7 @@ const OCR_MACRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "exchange_rate",
     name: "Exchange Rate",
-    theme: "Component 2 — International",
+    theme: "Component 2 · International",
     axes: { x: "Quantity of £", y: "Exchange Rate ($/£)" },
     curveNames: ["D£", "S£"],
     requiredLabels: ["e₁", "e₂", "Q₁", "Q₂"],
@@ -314,7 +314,7 @@ const OCR_MACRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "international_trade",
     name: "International Trade",
-    theme: "Component 2 — Trade",
+    theme: "Component 2 · Trade",
     axes: { x: "Quantity (Q)", y: "Price (P)" },
     curveNames: ["D", "S (domestic)", "S (world)"],
     requiredLabels: ["Pw", "Import volume", "DWL"],
@@ -329,7 +329,7 @@ const OCR_MACRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "circular_flow",
     name: "Circular Flow / Injections & Withdrawals",
-    theme: "Component 2 — National Income",
+    theme: "Component 2 · National Income",
     axes: { x: "National Income (Y)", y: "Injections / Withdrawals (£)" },
     curveNames: ["J (injections)", "W (withdrawals)"],
     requiredLabels: ["J", "W", "Equilibrium Y", "Multiplier"],
@@ -345,7 +345,7 @@ const OCR_MACRO_FAMILIES: DiagramFamilyProfile[] = [
   {
     id: "development",
     name: "Development & Inequality",
-    theme: "Component 2 — Development",
+    theme: "Component 2 · Development",
     axes: { x: "Various", y: "Various" },
     curveNames: ["Lorenz"],
     requiredLabels: ["Line of equality", "Gini coefficient"],
@@ -395,9 +395,9 @@ export const OCR_ALEVEL_PROFILE: BoardProfile = {
     "equilibrium": "E, E₁, E₂",
     "welfare loss": "Deadweight welfare loss / Welfare that could have been gained",
     "profit": "Supernormal profit / Normal profit",
-    "merit good": "D (perceived benefit) / D₁ (actual benefit) — NOT externality labels",
-    "demerit good": "D (perceived benefit) / D₁ (actual benefit) — NOT externality labels",
-    "externality labels": "MPC, MSC, MPB, MSB — only for true externalities",
+    "merit good": "D (perceived benefit) / D₁ (actual benefit) · NOT externality labels",
+    "demerit good": "D (perceived benefit) / D₁ (actual benefit) · NOT externality labels",
+    "externality labels": "MPC, MSC, MPB, MSB · only for true externalities",
     "chain of reasoning": "OCR expects linked causal analysis, not isolated bullet points",
     "context labelling": "Rename axes to match question-specific goods/services",
   },

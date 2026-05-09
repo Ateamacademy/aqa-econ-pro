@@ -1,5 +1,5 @@
 /**
- * EconDiagramSVG — renders structured diagram descriptions as polished,
+ * EconDiagramSVG · renders structured diagram descriptions as polished,
  * 3D-styled interactive SVG diagrams with depth, gradients, glow effects,
  * animations, tooltips and a premium look.
  *
@@ -283,7 +283,7 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
     );
   }
 
-  // If we have a predefined template, use it — it has proper welfare loss/gain
+  // If we have a predefined template, use it · it has proper welfare loss/gain
   // triangles, colored boundaries, correct curve labels (MSC, MPC, MSB, MPB), etc.
     if (resolvedType) {
     return (
@@ -354,7 +354,7 @@ function EconDiagramCanvas({ diagram }: { diagram: DiagramProps }) {
       <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white/[0.04] rounded-2xl" />
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20 rounded-b-2xl" />
 
-      {/* Header — no logo, with functional page dots */}
+      {/* Header · no logo, with functional page dots */}
       <div className="relative flex items-center gap-3 px-5 py-3.5 border-b border-border/30 bg-gradient-to-r from-muted/40 via-muted/20 to-transparent backdrop-blur-sm">
         <div>
           <p className="text-xs font-bold tracking-widest text-primary/80 uppercase">Model Diagram</p>

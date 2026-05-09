@@ -103,7 +103,7 @@ function fmtDate(d: string) {
   return `${x.getDate()}/${x.getMonth() + 1}`;
 }
 function fmtDateTime(d: string | null) {
-  if (!d) return "—";
+  if (!d) return "·";
   return new Date(d).toLocaleString();
 }
 function fmtMoney(n: number, ccy = "USD") {
@@ -498,13 +498,13 @@ export default function DirectorDashboard() {
               tooltip="Lifetime registered accounts. Delta compares new signups in current vs previous period." />
             <Metric label="MAU" value={fmtNum(platform.users.mau)} icon={Activity} color={C[1]}
               delta={platform.users.deltas.mau}
-              tooltip='Monthly Active Users — distinct accounts that performed at least one tracked action in the last 30 days.' />
+              tooltip='Monthly Active Users · distinct accounts that performed at least one tracked action in the last 30 days.' />
             <Metric label="Pro Subscribers" value={revenue.activeSubs} icon={CreditCard} color={C[4]}
               sub={`${conversionRate}% conversion`}
               tooltip="Active Stripe subscriptions. Conversion = active subs ÷ total registered users." />
             <Metric label="MRR" value={fmtMoney(revenue.mrr, ccy)} icon={DollarSign} color={C[1]}
               sub={`${fmtMoney(revenue.arr, ccy)} ARR`}
-              tooltip="Monthly Recurring Revenue — normalised across yearly/weekly subscriptions." />
+              tooltip="Monthly Recurring Revenue · normalised across yearly/weekly subscriptions." />
             <Metric label="Avg Session" value={fmtDuration(platform.sessions.avgSeconds)}
               icon={Clock}
               sub={`Median ${fmtDuration(platform.sessions.medianSeconds)}`}
@@ -756,14 +756,14 @@ export default function DirectorDashboard() {
                           </Badge>
                         </td>
                         <td className="p-2 font-mono text-muted-foreground">
-                          {r.signup_date ? new Date(r.signup_date).toLocaleDateString() : "—"}
+                          {r.signup_date ? new Date(r.signup_date).toLocaleDateString() : "·"}
                         </td>
                         <td className="p-2 font-mono text-muted-foreground">
-                          {r.last_active ? new Date(r.last_active).toLocaleDateString() : "—"}
+                          {r.last_active ? new Date(r.last_active).toLocaleDateString() : "·"}
                         </td>
                         <td className="p-2 text-right font-mono">{r.sessions}</td>
                         <td className="p-2 text-right font-mono">{fmtDuration(r.lifetime_seconds)}</td>
-                        <td className="p-2 text-muted-foreground">{r.exam_board ?? "—"}</td>
+                        <td className="p-2 text-muted-foreground">{r.exam_board ?? "·"}</td>
                       </tr>
                     ))}
                     {dirRows.length === 0 && !dirLoading && (
@@ -809,8 +809,8 @@ export default function DirectorDashboard() {
                     <div><span className="text-muted-foreground">Last active:</span> {fmtDateTime(selectedUser.last_active)}</div>
                     <div><span className="text-muted-foreground">Sessions:</span> {selectedUser.sessions}</div>
                     <div><span className="text-muted-foreground">Lifetime:</span> {fmtDuration(selectedUser.lifetime_seconds)}</div>
-                    <div><span className="text-muted-foreground">Board:</span> {selectedUser.exam_board ?? "—"}</div>
-                    <div><span className="text-muted-foreground">Target:</span> {selectedUser.target_grade ?? "—"}</div>
+                    <div><span className="text-muted-foreground">Board:</span> {selectedUser.exam_board ?? "·"}</div>
+                    <div><span className="text-muted-foreground">Target:</span> {selectedUser.target_grade ?? "·"}</div>
                   </div>
                   <div className="border-t border-border/40 pt-2 mt-2">
                     <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Free-tier counters</p>

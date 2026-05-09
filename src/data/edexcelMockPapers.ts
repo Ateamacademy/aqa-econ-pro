@@ -1,8 +1,8 @@
 /**
- * Edexcel A A-Level Economics A (9EC0) — Mock Exam Papers
+ * Edexcel A A-Level Economics A (9EC0) · Mock Exam Papers
  *
  * Three full mock papers (Paper 1, 2, 3) with Sections A, B, C.
- * All content is original mock content in the Edexcel house style — not real past papers.
+ * All content is original mock content in the Edexcel house style · not real past papers.
  * Used by /paper-1, /paper-2, /paper-3 routes to render authentic Pearson booklets.
  */
 
@@ -22,7 +22,7 @@ export type Extract = {
 };
 
 export type QuestionPart = {
-  label: string; // "(a)", "(b)(i)" etc — empty for parent
+  label: string; // "(a)", "(b)(i)" etc · empty for parent
   prompt: string;
   marks: number;
   mcq?: MCQOption[];
@@ -163,7 +163,7 @@ const PAPER_1: Paper = {
             "The UK government has introduced an indirect tax of £0.18 per litre on sugary soft drinks. The diagram shows the effect on the market.",
           diagram: {
             id: "fig-q3-tax",
-            caption: "Figure 1 — Effect of an indirect tax on sugary soft drinks",
+            caption: "Figure 1 · Effect of an indirect tax on sugary soft drinks",
             kind: "svg-supply-demand",
             data: { tax: true, P0: 1.2, P1: 1.32, Q0: 4, Q1: 3.6 },
           },
@@ -257,7 +257,7 @@ const PAPER_1: Paper = {
       figures: [
         {
           id: "fig1-p1",
-          caption: "Figure 1 — UK EV market share by manufacturer, 2024 (%)",
+          caption: "Figure 1 · UK EV market share by manufacturer, 2024 (%)",
           kind: "pie",
           data: [
             { name: "Tesla", value: 18 },
@@ -272,7 +272,7 @@ const PAPER_1: Paper = {
         },
         {
           id: "fig2-p1",
-          caption: "Figure 2 — Public EV chargers per 100,000 people, UK regions, 2024",
+          caption: "Figure 2 · Public EV chargers per 100,000 people, UK regions, 2024",
           kind: "hbar",
           data: [
             { name: "London", value: 148 },
@@ -289,17 +289,17 @@ const PAPER_1: Paper = {
       extracts: [
         {
           id: "extA-p1",
-          title: "Extract A — Price competition intensifies in the UK EV market",
-          body: `The UK electric vehicle market has seen intense price competition since 2023, with Chinese manufacturer BYD and American firm Tesla both cutting list prices by over 15% in a twelve-month period. Analysts suggest the price war reflects rapidly falling battery costs — down roughly 35% since 2022 — combined with over-capacity in global production. Smaller European manufacturers have warned that the pricing pressure threatens their ability to invest in next-generation platforms. The ending of the UK's Plug-in Car Grant in 2022 initially slowed sales, but aggressive discounting has since revived consumer demand.\n(Source: adapted)`,
+          title: "Extract A · Price competition intensifies in the UK EV market",
+          body: `The UK electric vehicle market has seen intense price competition since 2023, with Chinese manufacturer BYD and American firm Tesla both cutting list prices by over 15% in a twelve-month period. Analysts suggest the price war reflects rapidly falling battery costs · down roughly 35% since 2022 · combined with over-capacity in global production. Smaller European manufacturers have warned that the pricing pressure threatens their ability to invest in next-generation platforms. The ending of the UK's Plug-in Car Grant in 2022 initially slowed sales, but aggressive discounting has since revived consumer demand.\n(Source: adapted)`,
         },
         {
           id: "extB-p1",
-          title: "Extract B — Charging infrastructure: a classic public-good problem?",
+          title: "Extract B · Charging infrastructure: a classic public-good problem?",
           body: `Despite rapid growth in EV sales, the public charging network remains uneven. Rural areas and the north of England have fewer than a quarter of the chargers per capita found in London. Private operators argue that returns on investment are too thin in low-density areas without government support. Meanwhile, consumer research shows "range anxiety" is still the single largest reason cited by households for not switching to electric. Some economists describe the situation as a coordination failure, where under-provision of chargers reduces demand, which in turn reduces the incentive to install chargers.\n(Source: adapted)`,
         },
         {
           id: "extC-p1",
-          title: "Extract C — Proposed merger of two charging-network operators",
+          title: "Extract C · Proposed merger of two charging-network operators",
           body: `Pod Point and InstaVolt, two of the UK's largest public charging-network operators, have announced plans for a £600 million merger. Combined, the new group would control around 28% of rapid-charging points in the UK. Supporters argue that the merger will unlock economies of scale, enabling faster roll-out of rural chargers and better interoperability. Critics fear it will reduce competitive pressure on pricing, which has risen by over 20% at public chargers in the past two years. The CMA is expected to launch a Phase 1 investigation.\n(Source: adapted)`,
         },
       ],
@@ -355,7 +355,7 @@ const PAPER_1: Paper = {
             {
               label: "",
               prompt:
-                "In 2025 the UK Competition and Markets Authority announced a review of \"drip pricing\" — the practice of advertising a headline price that does not include all mandatory fees. Evaluate the likely microeconomic effects of banning drip pricing in the UK.",
+                "In 2025 the UK Competition and Markets Authority announced a review of \"drip pricing\" · the practice of advertising a headline price that does not include all mandatory fees. Evaluate the likely microeconomic effects of banning drip pricing in the UK.",
               marks: 25,
             },
           ],
@@ -538,7 +538,7 @@ const PAPER_2: Paper = {
       figures: [
         {
           id: "fig1-p2",
-          caption: "Figure 1 — CPI inflation, selected economies, 2021–2025 (%)",
+          caption: "Figure 1 · CPI inflation, selected economies, 2021–2025 (%)",
           kind: "line-vs-line",
           data: {
             years: ["2021", "2022", "2023", "2024", "2025"],
@@ -553,7 +553,7 @@ const PAPER_2: Paper = {
         },
         {
           id: "fig2-p2",
-          caption: "Figure 2 — External debt as % of GNI, selected emerging economies, 2024",
+          caption: "Figure 2 · External debt as % of GNI, selected emerging economies, 2024",
           kind: "bar",
           data: [
             { name: "Argentina", value: 75 },
@@ -569,18 +569,18 @@ const PAPER_2: Paper = {
       extracts: [
         {
           id: "extA-p2",
-          title: "Extract A — The post-pandemic inflation shock",
+          title: "Extract A · The post-pandemic inflation shock",
           body: `Global inflation surged in 2022 as energy prices spiked following Russia's invasion of Ukraine and supply chains strained after the pandemic. Central banks in advanced economies raised policy rates sharply: the US Federal Reserve lifted rates by 525 basis points in under two years, while the Bank of England moved from 0.1% to 5.25%. Disinflation has since taken hold, but core inflation has proved stickier than headline measures. Wage growth in services remains elevated in several economies, and unit labour costs continue to rise faster than pre-pandemic trends.\n(Source: adapted)`,
         },
         {
           id: "extB-p2",
-          title: "Extract B — The squeeze on emerging-market borrowers",
+          title: "Extract B · The squeeze on emerging-market borrowers",
           body: `Rising US interest rates have tightened global financial conditions. Many emerging-market governments borrowed heavily in US dollars during the 2010s low-rate era, and the resulting dollar strength has sharply increased their debt-servicing burden. Argentina defaulted on sovereign bonds for the third time this decade. Egypt agreed an IMF programme worth US$8 billion conditional on exchange-rate liberalisation and subsidy reform. Several African borrowers have been frozen out of bond markets entirely. Critics argue the international financial system transmits shocks disproportionately to the world's poorest nations.\n(Source: adapted)`,
         },
         {
           id: "extC-p2",
-          title: "Extract C — A coordinated response?",
-          body: `The IMF and World Bank have called for debt restructuring for 25 low-income countries and proposed that multilateral development banks expand concessional lending. Some economists propose SDR (Special Drawing Rights) reallocation from rich to poor countries. Others argue domestic supply-side reforms — in education, tax administration and energy pricing — matter more than external aid in restoring growth. China, now the largest bilateral creditor to many African states, has been slow to agree to coordinated restructuring.\n(Source: adapted)`,
+          title: "Extract C · A coordinated response?",
+          body: `The IMF and World Bank have called for debt restructuring for 25 low-income countries and proposed that multilateral development banks expand concessional lending. Some economists propose SDR (Special Drawing Rights) reallocation from rich to poor countries. Others argue domestic supply-side reforms · in education, tax administration and energy pricing · matter more than external aid in restoring growth. China, now the largest bilateral creditor to many African states, has been slow to agree to coordinated restructuring.\n(Source: adapted)`,
         },
       ],
       questions: [
@@ -678,7 +678,7 @@ const PAPER_3: Paper = {
       figures: [
         {
           id: "fig1-p3",
-          caption: "Figure 1 — UK house price index (2005=100) and Bank of England base rate, 2005–2025",
+          caption: "Figure 1 · UK house price index (2005=100) and Bank of England base rate, 2005–2025",
           kind: "line-vs-line",
           data: {
             years: ["2005", "2010", "2015", "2020", "2025"],
@@ -692,8 +692,8 @@ const PAPER_3: Paper = {
       extracts: [
         {
           id: "extA-p3",
-          title: "Extract A — Housing affordability in 2025",
-          body: `Average UK house prices stood at 8.4 times median earnings in 2025, close to a record high. First-time buyers increasingly depend on parental support ("the Bank of Mum and Dad") or government schemes. Mortgage approvals fell by 18% year-on-year as the Bank Rate stayed above 4%. House-building completions in 2024 were 215,000 — well below the government's 300,000 annual target.\n(Source: adapted)`,
+          title: "Extract A · Housing affordability in 2025",
+          body: `Average UK house prices stood at 8.4 times median earnings in 2025, close to a record high. First-time buyers increasingly depend on parental support ("the Bank of Mum and Dad") or government schemes. Mortgage approvals fell by 18% year-on-year as the Bank Rate stayed above 4%. House-building completions in 2024 were 215,000 · well below the government's 300,000 annual target.\n(Source: adapted)`,
         },
       ],
       questions: [
@@ -754,7 +754,7 @@ const PAPER_3: Paper = {
       figures: [
         {
           id: "fig2-p3",
-          caption: "Figure 2 — Global renewable energy investment, US$ billion, 2015–2024",
+          caption: "Figure 2 · Global renewable energy investment, US$ billion, 2015–2024",
           kind: "bar",
           data: [
             { name: "2015", value: 290 },
@@ -767,7 +767,7 @@ const PAPER_3: Paper = {
         },
         {
           id: "fig3-p3",
-          caption: "Figure 3 — Carbon intensity (tonnes CO₂ per US$ million GDP), selected countries, 2024",
+          caption: "Figure 3 · Carbon intensity (tonnes CO₂ per US$ million GDP), selected countries, 2024",
           kind: "hbar",
           data: [
             { name: "South Africa", value: 580 },
@@ -784,7 +784,7 @@ const PAPER_3: Paper = {
       extracts: [
         {
           id: "extB-p3",
-          title: "Extract B — Green subsidies and international competition",
+          title: "Extract B · Green subsidies and international competition",
           body: `The US Inflation Reduction Act (2022) and the EU's Green Deal Industrial Plan have committed over US$1 trillion combined to clean-energy subsidies. China leads the world in solar panel production, controlling over 80% of global supply. Developing countries have argued that the green transition is occurring on unequal terms, with rich economies able to subsidise their way into new industries while poorer countries face carbon tariffs on their exports.\n(Source: adapted)`,
         },
       ],
@@ -806,7 +806,7 @@ const PAPER_3: Paper = {
             {
               label: "(c)",
               prompt:
-                "Evaluate the extent to which government intervention — rather than the market mechanism — is the most effective route to achieving the global green transition. Refer to Extract B and your own knowledge.",
+                "Evaluate the extent to which government intervention · rather than the market mechanism · is the most effective route to achieving the global green transition. Refer to Extract B and your own knowledge.",
               marks: 30,
             },
           ],

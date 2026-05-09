@@ -6,10 +6,10 @@ export const economicsPredictedPapersExtra: PredictedPaper[] = [
     id: "econ-p1-e",
     subject: "economics",
     paper: "1",
-    title: "Paper 1 — Set E",
+    title: "Paper 1 · Set E",
     description: "Markets and Market Failure. Focus on externalities and government intervention.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/1) — Paper 1: Markets and Market Failure — Predicted Paper Set E
+    content: `# AQA A-Level Economics (7136/1) · Paper 1: Markets and Market Failure · Predicted Paper Set E
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -19,11 +19,11 @@ Answer ALL questions in both Section A and Section B.
 
 ## Section A: Data Response (40 marks)
 
-**Extract A — UK supermarket concentration and grocery prices**
+**Extract A · UK supermarket concentration and grocery prices**
 
-The UK grocery market is dominated by four supermarkets — Tesco, Sainsbury's, Asda and Morrisons — with a combined market share of around 65% in 2024. Discounters Aldi and Lidl have grown rapidly, reaching 18% combined share, up from 7% a decade earlier. Food CPI inflation peaked at 19.2% in March 2023 before falling to 4.5% in mid-2024. The CMA opened a market study into pricing practices and "shrinkflation" in 2023, finding "weak evidence of excess profitability but real concerns about transparency".
+The UK grocery market is dominated by four supermarkets · Tesco, Sainsbury's, Asda and Morrisons · with a combined market share of around 65% in 2024. Discounters Aldi and Lidl have grown rapidly, reaching 18% combined share, up from 7% a decade earlier. Food CPI inflation peaked at 19.2% in March 2023 before falling to 4.5% in mid-2024. The CMA opened a market study into pricing practices and "shrinkflation" in 2023, finding "weak evidence of excess profitability but real concerns about transparency".
 
-**Extract B — UK grocery sector data, 2019–2024**
+**Extract B · UK grocery sector data, 2019–2024**
 
 | Indicator                              | 2019 | 2021 | 2023 | 2024 |
 |----------------------------------------|------|------|------|------|
@@ -33,9 +33,9 @@ The UK grocery market is dominated by four supermarkets — Tesco, Sainsbury's, 
 | Average supermarket operating margin (%)| 3.2 | 2.9  | 3.4  | 3.6  |
 | Loyalty-card members (millions)        | 28   | 33   | 39   | 44   |
 
-**Extract C — Further commentary**
+**Extract C · Further commentary**
 
-Consumer groups argue that loyalty-card pricing — where non-members pay headline prices substantially above member prices — is a form of price discrimination that exploits less digitally engaged shoppers. Industry argues that scale economies and tight margins mean concentration delivers low prices in aggregate.
+Consumer groups argue that loyalty-card pricing · where non-members pay headline prices substantially above member prices · is a form of price discrimination that exploits less digitally engaged shoppers. Industry argues that scale economies and tight margins mean concentration delivers low prices in aggregate.
 
 Question 1 [2 marks]
 Using Extract B, calculate the percentage point change in the combined Aldi and Lidl market share between 2019 and 2024.
@@ -55,7 +55,7 @@ Using the extracts and your own knowledge, evaluate the view that high market co
 
 
 **Short extract:**
-Price discrimination — charging different prices to different consumers for essentially the same product — is widespread in modern retail, transport and digital markets. Whether it raises or lowers welfare is contested.
+Price discrimination · charging different prices to different consumers for essentially the same product · is widespread in modern retail, transport and digital markets. Whether it raises or lowers welfare is contested.
 
 Question 5 [15 marks]
 Explain, using a diagram, the conditions required for successful third-degree price discrimination.
@@ -69,10 +69,10 @@ Question 6 [25 marks]
     id: "econ-p2-e",
     subject: "economics",
     paper: "2",
-    title: "Paper 2 — Set E",
+    title: "Paper 2 · Set E",
     description: "National & International Economy. Focus on monetary policy and trade.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/2) — Paper 2: National and International Economy — Predicted Paper Set E
+    content: `# AQA A-Level Economics (7136/2) · Paper 2: National and International Economy · Predicted Paper Set E
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -82,11 +82,11 @@ Answer ALL questions in both Section A and Section B.
 
 ## Section A: Data Response (40 marks)
 
-**Extract A — UK productivity puzzle and supply-side policy**
+**Extract A · UK productivity puzzle and supply-side policy**
 
-UK labour productivity growth has averaged just 0.4% per year since 2008, compared with 2.2% in the previous decade — a gap dubbed the "productivity puzzle". The 2024 Autumn Statement raised public investment to 2.5% of GDP and announced full expensing of capital allowances. The OBR estimates these measures will raise potential output by 0.4% over a decade. Critics argue the UK still spends below the OECD average on R&D (1.7% vs 2.5% of GDP).
+UK labour productivity growth has averaged just 0.4% per year since 2008, compared with 2.2% in the previous decade · a gap dubbed the "productivity puzzle". The 2024 Autumn Statement raised public investment to 2.5% of GDP and announced full expensing of capital allowances. The OBR estimates these measures will raise potential output by 0.4% over a decade. Critics argue the UK still spends below the OECD average on R&D (1.7% vs 2.5% of GDP).
 
-**Extract B — UK productivity and investment indicators**
+**Extract B · UK productivity and investment indicators**
 
 | Indicator                                | 2010 | 2015 | 2020 | 2024 |
 |------------------------------------------|------|------|------|------|
@@ -96,9 +96,9 @@ UK labour productivity growth has averaged just 0.4% per year since 2008, compar
 | Public infrastructure spending (% GDP)   | 1.9  | 2.0  | 2.2  | 2.5  |
 | Real GDP per capita (£, 2019 prices)     | 28,500| 30,200| 30,900| 31,400|
 
-**Extract C — Further commentary**
+**Extract C · Further commentary**
 
-Bank of England research argues that weak diffusion of best-practice technology, low managerial quality and skill shortages — rather than a single dominant cause — explain the puzzle. Supply-side reforms therefore need to be broad-based.
+Bank of England research argues that weak diffusion of best-practice technology, low managerial quality and skill shortages · rather than a single dominant cause · explain the puzzle. Supply-side reforms therefore need to be broad-based.
 
 Question 1 [2 marks]
 Using Extract B, calculate the percentage change in UK real GDP per capita between 2010 and 2024.
@@ -132,10 +132,10 @@ Question 6 [25 marks]
     id: "econ-p3-d",
     subject: "economics",
     paper: "3",
-    title: "Paper 3 — Set D",
+    title: "Paper 3 · Set D",
     description: "Economic Principles & Issues. 30 MCQs + case study.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/3) — Paper 3: Economic Principles and Issues — Predicted Paper Set D
+    content: `# AQA A-Level Economics (7136/3) · Paper 3: Economic Principles and Issues · Predicted Paper Set D
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -359,9 +359,9 @@ D. Equal to mortgage rates
 
 ## Section B: Case Study (50 marks)
 
-**Case Study — UK housing affordability**
+**Case Study · UK housing affordability**
 
-Average UK house prices rose from £195,000 in 2014 to £290,000 in 2024 — a 49% increase. First-time buyers now require an average deposit of £62,000, equivalent to 2.5 years of average pre-tax earnings. Help-to-Buy equity loans (up to 20%, or 40% in London) supported demand. Housebuilding completions have averaged 180,000 per year, well below the 340,000 government target. Planning restrictions, land-banking and skills shortages are cited as supply-side barriers.
+Average UK house prices rose from £195,000 in 2014 to £290,000 in 2024 · a 49% increase. First-time buyers now require an average deposit of £62,000, equivalent to 2.5 years of average pre-tax earnings. Help-to-Buy equity loans (up to 20%, or 40% in London) supported demand. Housebuilding completions have averaged 180,000 per year, well below the 340,000 government target. Planning restrictions, land-banking and skills shortages are cited as supply-side barriers.
 
 | Indicator                              | 2014 | 2018 | 2022 | 2024 |
 |----------------------------------------|------|------|------|------|
@@ -385,10 +385,10 @@ Question 33 [25 marks]
     id: "econ-p1-f",
     subject: "economics",
     paper: "1",
-    title: "Paper 1 — Set F",
+    title: "Paper 1 · Set F",
     description: "Markets and Market Failure. Labour market and wage inequality focus.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/1) — Paper 1: Markets and Market Failure — Predicted Paper Set F
+    content: `# AQA A-Level Economics (7136/1) · Paper 1: Markets and Market Failure · Predicted Paper Set F
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -398,11 +398,11 @@ Answer ALL questions in both Section A and Section B.
 
 ## Section A: Data Response (40 marks)
 
-**Extract A — Labour market shortages and the National Living Wage**
+**Extract A · Labour market shortages and the National Living Wage**
 
-The UK National Living Wage rose from £9.50 in 2022 to £11.44 in April 2024 — a 20% increase. Hospitality, social care and retail report persistent vacancies, with the Low Pay Commission noting that hospitality wages now sit 8% above the statutory minimum on average. Critics warn higher minimum wages reduce employment for young workers, while supporters cite monopsony evidence showing limited disemployment effects in low-pay sectors.
+The UK National Living Wage rose from £9.50 in 2022 to £11.44 in April 2024 · a 20% increase. Hospitality, social care and retail report persistent vacancies, with the Low Pay Commission noting that hospitality wages now sit 8% above the statutory minimum on average. Critics warn higher minimum wages reduce employment for young workers, while supporters cite monopsony evidence showing limited disemployment effects in low-pay sectors.
 
-**Extract B — UK labour market indicators, 2019–2024**
+**Extract B · UK labour market indicators, 2019–2024**
 
 | Indicator                              | 2019 | 2021 | 2023 | 2024 |
 |----------------------------------------|------|------|------|------|
@@ -411,9 +411,9 @@ The UK National Living Wage rose from £9.50 in 2022 to £11.44 in April 2024 �
 | 18–24 unemployment rate (%)            | 11.7 | 12.4 | 11.9 | 12.2 |
 | Real wage growth, all workers (%)      | 1.8  | 2.2  | -0.1 | 2.6  |
 
-**Extract C — Further commentary**
+**Extract C · Further commentary**
 
-Trade unions describe many UK low-pay sectors as monopsonistic, with a single dominant local employer — for example a regional care provider — able to set wages below the competitive level. Employer associations counter that statutory wage rises in monopsonistic sectors still risk reducing hours offered.
+Trade unions describe many UK low-pay sectors as monopsonistic, with a single dominant local employer · for example a regional care provider · able to set wages below the competitive level. Employer associations counter that statutory wage rises in monopsonistic sectors still risk reducing hours offered.
 
 Question 1 [2 marks]
 Using Extract B, calculate the percentage change in the National Living Wage between 2019 and 2024.
@@ -439,7 +439,7 @@ Question 5 [15 marks]
 Explain, using a diagram, how a profit-maximising monopsonist sets wages and employment below the competitive level.
 
 Question 6 [25 marks]
-"Government intervention in labour markets — through minimum wages and trade-union legislation — improves both equity and efficiency." Evaluate this view.`,
+"Government intervention in labour markets · through minimum wages and trade-union legislation · improves both equity and efficiency." Evaluate this view.`,
   },
 
   // ── ECONOMICS PAPER 2: Set F ──
@@ -447,10 +447,10 @@ Question 6 [25 marks]
     id: "econ-p2-f",
     subject: "economics",
     paper: "2",
-    title: "Paper 2 — Set F",
+    title: "Paper 2 · Set F",
     description: "National & International Economy. Development and globalisation focus.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/2) — Paper 2: National and International Economy — Predicted Paper Set F
+    content: `# AQA A-Level Economics (7136/2) · Paper 2: National and International Economy · Predicted Paper Set F
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -460,11 +460,11 @@ Answer ALL questions in both Section A and Section B.
 
 ## Section A: Data Response (40 marks)
 
-**Extract A — UK unemployment, the Phillips curve and wage growth**
+**Extract A · UK unemployment, the Phillips curve and wage growth**
 
-UK unemployment fell to 3.5% in early 2022 — the lowest in nearly 50 years — yet wage growth was outpaced by inflation, leaving real wages falling. The Bank of England argues that the UK NAIRU has risen since the pandemic owing to higher long-term sickness inactivity. Critics question whether the Phillips curve still operates: services inflation has remained sticky despite slack appearing in goods markets.
+UK unemployment fell to 3.5% in early 2022 · the lowest in nearly 50 years · yet wage growth was outpaced by inflation, leaving real wages falling. The Bank of England argues that the UK NAIRU has risen since the pandemic owing to higher long-term sickness inactivity. Critics question whether the Phillips curve still operates: services inflation has remained sticky despite slack appearing in goods markets.
 
-**Extract B — UK labour market and inflation, 2020–2024**
+**Extract B · UK labour market and inflation, 2020–2024**
 
 | Indicator                              | 2020 | 2022 | 2023 | 2024 |
 |----------------------------------------|------|------|------|------|
@@ -474,7 +474,7 @@ UK unemployment fell to 3.5% in early 2022 — the lowest in nearly 50 years —
 | CPI inflation (%)                      | 0.9  | 9.1  | 7.3  | 3.2  |
 | Real wage growth (%)                   | 1.5  | -3.1 | -0.1 | 2.6  |
 
-**Extract C — Further commentary**
+**Extract C · Further commentary**
 
 MPC research suggests that the natural rate of unemployment may now be 4.5–5.0%, well above the 3.5% trough. If accurate, recent wage and price pressure is consistent with the labour market still being tight even at apparently moderate unemployment.
 
@@ -510,10 +510,10 @@ Question 6 [25 marks]
     id: "econ-p3-e",
     subject: "economics",
     paper: "3",
-    title: "Paper 3 — Set E",
+    title: "Paper 3 · Set E",
     description: "Economic Principles & Issues. 30 MCQs + case study on productivity.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/3) — Paper 3: Economic Principles and Issues — Predicted Paper Set E
+    content: `# AQA A-Level Economics (7136/3) · Paper 3: Economic Principles and Issues · Predicted Paper Set E
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -737,7 +737,7 @@ D. Variable supply
 
 ## Section B: Case Study (50 marks)
 
-**Case Study — Climate change and UK environmental policy**
+**Case Study · Climate change and UK environmental policy**
 
 The UK is committed by law to net-zero greenhouse gas emissions by 2050. The Climate Change Committee (CCC) reports the UK has cut emissions 48% since 1990, more than any G7 economy, but warns the next decade will be much harder as transport and heating remain hard to decarbonise. Carbon pricing through the UK ETS now covers around 28% of UK emissions; the rest are addressed through regulation, subsidies for renewables and EV grants.
 
@@ -763,10 +763,10 @@ Question 33 [25 marks]
     id: "econ-p1-g",
     subject: "economics",
     paper: "1",
-    title: "Paper 1 — Set G",
+    title: "Paper 1 · Set G",
     description: "Markets and Market Failure. Technology markets and digital regulation.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/1) — Paper 1: Markets and Market Failure — Predicted Paper Set G
+    content: `# AQA A-Level Economics (7136/1) · Paper 1: Markets and Market Failure · Predicted Paper Set G
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -776,11 +776,11 @@ Answer ALL questions in both Section A and Section B.
 
 ## Section A: Data Response (40 marks)
 
-**Extract A — Demerit goods and the UK alcohol market**
+**Extract A · Demerit goods and the UK alcohol market**
 
 Alcohol-related harm cost the UK NHS an estimated £4.9bn in 2023. Scotland introduced minimum unit pricing (MUP) at 50p per unit in 2018, raising it to 65p in September 2024. Public Health Scotland reports a 13.4% fall in alcohol-related deaths and 4.1% lower per-capita consumption since MUP introduction. Industry argues MUP is a regressive tax that fails to target problem drinkers.
 
-**Extract B — Alcohol market and harm indicators**
+**Extract B · Alcohol market and harm indicators**
 
 | Indicator                              | 2018 | 2020 | 2022 | 2024 |
 |----------------------------------------|------|------|------|------|
@@ -789,7 +789,7 @@ Alcohol-related harm cost the UK NHS an estimated £4.9bn in 2023. Scotland intr
 | Real alcohol duty receipts (£bn)       | 12.1 | 11.8 | 12.4 | 12.6 |
 | Off-trade share of sales (%)           | 60   | 71   | 65   | 63   |
 
-**Extract C — Further commentary**
+**Extract C · Further commentary**
 
 An IFS study found that, while MUP raises the cost of the cheapest, strongest products most, the lowest-income decile spends a higher share of disposable income on these products. Health economists therefore stress the need to evaluate distributional effects alongside health gains.
 
@@ -825,10 +825,10 @@ Question 6 [25 marks]
     id: "econ-p2-g",
     subject: "economics",
     paper: "2",
-    title: "Paper 2 — Set G",
+    title: "Paper 2 · Set G",
     description: "National & International Economy. Green transition and inequality.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/2) — Paper 2: National and International Economy — Predicted Paper Set G
+    content: `# AQA A-Level Economics (7136/2) · Paper 2: National and International Economy · Predicted Paper Set G
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -838,11 +838,11 @@ Answer ALL questions in both Section A and Section B.
 
 ## Section A: Data Response (40 marks)
 
-**Extract A — Global development: Sub-Saharan Africa and growth strategy**
+**Extract A · Global development: Sub-Saharan Africa and growth strategy**
 
 Sub-Saharan Africa's economies are forecast to grow by 4.0% in 2025, compared with 1.9% in advanced economies, but per-capita GDP remains a fraction of OECD levels. External debt servicing now consumes 17% of government revenue across Sub-Saharan Africa, crowding out spending on health and education. China is the largest bilateral creditor, accounting for around 12% of total external debt.
 
-**Extract B — Selected Sub-Saharan economies, 2024**
+**Extract B · Selected Sub-Saharan economies, 2024**
 
 | Country     | Real GDP growth (%) | Gross capital formation (% GDP) | External debt (% GDP) | Adult literacy (%) |
 |-------------|---------------------|---------------------------------|-----------------------|--------------------|
@@ -851,7 +851,7 @@ Sub-Saharan Africa's economies are forecast to grow by 4.0% in 2025, compared wi
 | Ethiopia    | 6.2                 | 30                              | 26                    | 52                 |
 | South Africa| 0.9                 | 14                              | 75                    | 95                 |
 
-**Extract C — Further commentary**
+**Extract C · Further commentary**
 
 Critics of debt-financed development argue that high debt-service ratios constrain investment in human capital, locking countries in a low-productivity trap. Others stress that prudent borrowing for productive infrastructure can pay back in higher long-run growth.
 
@@ -887,10 +887,10 @@ Question 6 [25 marks]
     id: "econ-p3-f",
     subject: "economics",
     paper: "3",
-    title: "Paper 3 — Set F",
+    title: "Paper 3 · Set F",
     description: "Economic Principles & Issues. 30 MCQs + case study on healthcare.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/3) — Paper 3: Economic Principles and Issues — Predicted Paper Set F
+    content: `# AQA A-Level Economics (7136/3) · Paper 3: Economic Principles and Issues · Predicted Paper Set F
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -1114,9 +1114,9 @@ D. No policy
 
 ## Section B: Case Study (50 marks)
 
-**Case Study — Financial markets and macroprudential policy**
+**Case Study · Financial markets and macroprudential policy**
 
-The 2008 financial crisis exposed gaps in regulation. Since then the UK has created the Financial Policy Committee (FPC), which can use macroprudential tools to limit risky lending — for example LTV/LTI mortgage caps and counter-cyclical capital buffers. Bank of England research suggests these tools have lowered the probability of a crisis without materially reducing GDP growth. Critics warn excessive regulation can reduce credit availability for productive investment.
+The 2008 financial crisis exposed gaps in regulation. Since then the UK has created the Financial Policy Committee (FPC), which can use macroprudential tools to limit risky lending · for example LTV/LTI mortgage caps and counter-cyclical capital buffers. Bank of England research suggests these tools have lowered the probability of a crisis without materially reducing GDP growth. Critics warn excessive regulation can reduce credit availability for productive investment.
 
 | Indicator                              | 2007 | 2012 | 2018 | 2024 |
 |----------------------------------------|------|------|------|------|
@@ -1140,10 +1140,10 @@ Question 33 [25 marks]
     id: "econ-p3-g",
     subject: "economics",
     paper: "3",
-    title: "Paper 3 — Set G",
+    title: "Paper 3 · Set G",
     description: "Economic Principles & Issues. 30 MCQs + case study on climate economics and net zero.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/3) — Paper 3: Economic Principles and Issues — Predicted Paper Set G
+    content: `# AQA A-Level Economics (7136/3) · Paper 3: Economic Principles and Issues · Predicted Paper Set G
 
 **Time: 2 hours | Total: 80 marks**
 
@@ -1367,7 +1367,7 @@ D. Replace fiscal policy
 
 ## Section B: Case Study (50 marks)
 
-**Case Study — Behavioural economics and policy**
+**Case Study · Behavioural economics and policy**
 
 Behavioural economics rejects the assumption of fully rational agents. Bounded rationality, present bias, loss aversion and heuristics produce systematic deviations from neoclassical predictions. The UK Behavioural Insights Team ("Nudge Unit") has applied these ideas to public policy, including auto-enrolment in pensions, default green-energy tariffs, simplified tax letters and reminders to pay fines.
 

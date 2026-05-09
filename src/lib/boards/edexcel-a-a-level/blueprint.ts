@@ -1,5 +1,5 @@
 /**
- * Edexcel A A-Level Economics (9EC0) — paper blueprint.
+ * Edexcel A A-Level Economics (9EC0) · paper blueprint.
  *
  * Verified against the published Pearson Edexcel A specification and June
  * 2024 past papers. Every paper is 100 marks / 2 hours / 3 sections.
@@ -11,7 +11,7 @@
  *   • Section B = one structured stem with parts (a/b/c/d/e) = 50 marks
  *   • Section C = student CHOOSES one of two essays = 25 marks
  *   • Paper 3 = two synoptic case-study sections, 50 marks each
- *   • Numbering uses 1(a), 6(b) — not AQA's "0 1" two-digit scheme
+ *   • Numbering uses 1(a), 6(b) · not AQA's "0 1" two-digit scheme
  */
 import type { PaperBlueprint } from "../board-definition";
 
@@ -24,7 +24,7 @@ const PAPER_1: PaperBlueprint = {
   sections: [
     {
       id: "A",
-      name: "Section A — Multiple-choice and short data response",
+      name: "Section A · Multiple-choice and short data response",
       marks: 25,
       requires: ["Figure 1", "Figure 2 (optional)"],
       questions: [
@@ -42,7 +42,7 @@ const PAPER_1: PaperBlueprint = {
     },
     {
       id: "B",
-      name: "Section B — Data response (structured)",
+      name: "Section B · Data response (structured)",
       marks: 50,
       requires: ["Extract 1", "Extract 2", "Figure 1"],
       questions: [
@@ -55,7 +55,7 @@ const PAPER_1: PaperBlueprint = {
     },
     {
       id: "C",
-      name: "Section C — Essay (choice of one)",
+      name: "Section C · Essay (choice of one)",
       marks: 25,
       chooseN: { answer: 1, from: 2 },
       questions: [
@@ -83,7 +83,7 @@ const PAPER_3: PaperBlueprint = {
   sections: [
     {
       id: "A",
-      name: "Section A — Synoptic case study 1",
+      name: "Section A · Synoptic case study 1",
       marks: 50,
       requires: ["Extract 1", "Extract 2", "Extract 3", "Figure 1"],
       questions: [
@@ -95,7 +95,7 @@ const PAPER_3: PaperBlueprint = {
     },
     {
       id: "B",
-      name: "Section B — Synoptic case study 2",
+      name: "Section B · Synoptic case study 2",
       marks: 50,
       requires: ["Extract 4", "Extract 5", "Figure 2"],
       questions: [

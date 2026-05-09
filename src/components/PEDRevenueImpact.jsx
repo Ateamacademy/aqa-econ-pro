@@ -14,7 +14,7 @@ export default function PEDRevenueImpact() {
         </defs>
         <rect width="720" height="1160" fill={NAVY}/>
         <rect x="0" y="0" width="720" height="36" rx="6" fill="rgba(74,144,232,0.18)"/>
-        <text x="360" y="24" textAnchor="middle" fontSize="14" fontWeight="bold" fill={BLUE}>Diagram 1 — Profit-Maximising Monopolist &amp; PED Regions</text>
+        <text x="360" y="24" textAnchor="middle" fontSize="14" fontWeight="bold" fill={BLUE}>Diagram 1 · Profit-Maximising Monopolist &amp; PED Regions</text>
         <text x="360" y="54" textAnchor="middle" fontSize="13" fill={AX}>The profit maximising monopolist produces in the elastic range of the demand (AR) curve</text>
         <polygon points="76,253.51428571428568 298.3111111111111,253.51428571428568 298.3111111111111,396.5333797909408 76,396.5333797909408" fill="rgba(232,124,24,0.60)"/>
         <line x1="76" y1="253.5" x2="298.3" y2="253.5" stroke="rgba(200,220,200,0.38)" strokeWidth="1.4" strokeDasharray={DASH}/>
@@ -50,9 +50,9 @@ export default function PEDRevenueImpact() {
         <text x="428.4" y="526" textAnchor="middle" fontSize="13" fontWeight="bold" fill={AX}>Qd</text>
         <line x1="24" y1="764" x2="696" y2="764" stroke="rgba(74,144,232,0.30)" strokeWidth="1.5"/>
         <rect x="0" y="548" width="720" height="36" rx="6" fill="rgba(46,204,113,0.15)"/>
-        <text x="360" y="572" textAnchor="middle" fontSize="14" fontWeight="bold" fill={GREEN}>Diagram 2 — Petrol: Price Inelastic Demand &amp; Revenue Impact</text>
-        <text x="360" y="602" textAnchor="middle" fontSize="13" fill={AX}>Petrol PED &lt; 1 — Few substitutes for most drivers</text>
-        <text x="360" y="618" textAnchor="middle" fontSize="13" fill={AX}>A 10% price rise causes a small fall in quantity — net revenue gain</text>
+        <text x="360" y="572" textAnchor="middle" fontSize="14" fontWeight="bold" fill={GREEN}>Diagram 2 · Petrol: Price Inelastic Demand &amp; Revenue Impact</text>
+        <text x="360" y="602" textAnchor="middle" fontSize="13" fill={AX}>Petrol PED &lt; 1 · Few substitutes for most drivers</text>
+        <text x="360" y="618" textAnchor="middle" fontSize="13" fill={AX}>A 10% price rise causes a small fall in quantity · net revenue gain</text>
         <polygon points="316.4,788.2 401.3,788.2 401.3,1038 316.4,1038" fill="rgba(232,64,64,0.55)"/>
         <polygon points="76,763.3 316.4,763.3 316.4,788.2 76,788.2" fill="rgba(46,204,113,0.58)"/>
         <line x1="76.0" y1="692.6" x2="536.9" y2="828.1" stroke={DARKRED} strokeWidth="3" strokeLinecap="round"/>

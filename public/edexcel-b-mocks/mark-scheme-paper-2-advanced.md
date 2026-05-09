@@ -48,10 +48,10 @@ Knowledge/understanding 1, Application 2, Analysis 1
 Knowledge/understanding: 1 mark for recognising that higher unit labour costs raise average costs of
 production, reducing cost competitiveness (1).
 
-Application: up to 2 marks — e.g. German unit labour costs are ~40% above Spain and double those of
+Application: up to 2 marks · e.g. German unit labour costs are ~40% above Spain and double those of
 Central European EU countries (1); high energy prices since 2022 add further cost pressure (1).
 
-Analysis: 1 mark for developing the consequence — e.g. VW cannot undercut rivals such as BYD on price in
+Analysis: 1 mark for developing the consequence · e.g. VW cannot undercut rivals such as BYD on price in
 China and is forced to cut margins or lose market share (1).
 
 (4 marks)
@@ -61,14 +61,14 @@ China and is forced to cut margins or lose market share (1).
 
 Knowledge/understanding 1, Application 2, Analysis 1
 
-Knowledge/understanding: 1 mark for identifying a feature of an export-led economy — e.g. large trade
+Knowledge/understanding: 1 mark for identifying a feature of an export-led economy · e.g. large trade
 surplus or high exports-to-GDP ratio (1).
 
-Application: up to 2 marks using Extract A — e.g. exports of €1.93tn against GDP of €4.12tn implies an
+Application: up to 2 marks using Extract A · e.g. exports of €1.93tn against GDP of €4.12tn implies an
 export-to-GDP ratio of ~47% (1); current-account surplus of +5.9% of GDP indicates persistent external
 demand surplus (1).
 
-Analysis: 1 mark — e.g. such a high exports-to-GDP ratio means growth and employment are closely tied to
+Analysis: 1 mark · e.g. such a high exports-to-GDP ratio means growth and employment are closely tied to
 global trade conditions (1).
 
 (4 marks)
@@ -78,15 +78,15 @@ global trade conditions (1).
 
 Knowledge/understanding 2, Application 2, Analysis 2
 
-Knowledge/understanding: up to 2 marks — e.g. the automotive sector is a significant share of German
+Knowledge/understanding: up to 2 marks · e.g. the automotive sector is a significant share of German
 manufacturing and export earnings (1); loss of export revenues reduces aggregate demand via X falling (1).
 
-Application: up to 2 marks — e.g. VW closing three German factories with up to 35,000 job losses (1);
+Application: up to 2 marks · e.g. VW closing three German factories with up to 35,000 job losses (1);
 European brands' share of the Chinese EV market has fallen to 15% (1).
 
 
                                                             3                                                Turn over ▶
-Analysis: up to 2 marks — e.g. negative multiplier effect through the supply chain: German component
+Analysis: up to 2 marks · e.g. negative multiplier effect through the supply chain: German component
 suppliers, engineers, and service firms lose demand (1); risk of hysteresis if high-skilled automotive workers
 cannot find comparable work (1).
 
@@ -100,7 +100,7 @@ Knowledge/understanding 2, Application 2, Analysis 2, Evaluation 2
 Candidates are expected to draw a long-run AS (LRAS) or PPF diagram, with a leftward shift/failure to shift
 right, compared with a counterfactual higher-investment path.
 
- • Infrastructure (transport, energy, digital) is a key determinant of LRAS — raises productivity and reduces firms'
+ • Infrastructure (transport, energy, digital) is a key determinant of LRAS · raises productivity and reduces firms'
    costs.
  • Persistent underinvestment leaves LRAS lower than it would otherwise be; potential output growth is slower.
  • On a PPF, the frontier shifts outward more slowly relative to rival economies making stronger investment.
@@ -109,11 +109,11 @@ right, compared with a counterfactual higher-investment path.
  • Lower productivity raises unit labour costs relative to rivals, worsening competitiveness (consistent with VW's
    position in Extract B).
  • Erosion of the export base over time shrinks the current-account surplus (currently +5.9% of GDP).
- • Evaluation — private investment and FDI can partly offset weak public investment.
- • Evaluation — modern economies can sustain output with existing infrastructure for a long time before effects
+ • Evaluation · private investment and FDI can partly offset weak public investment.
+ • Evaluation · modern economies can sustain output with existing infrastructure for a long time before effects
    become acute (lags matter).
- • Evaluation — the effect depends on the initial stock of infrastructure; Germany's starting base is relatively strong.
- • Evaluation — counterfactual matters: if rivals also underinvest, relative competitiveness may be less affected.
+ • Evaluation · the effect depends on the initial stock of infrastructure; Germany's starting base is relatively strong.
+ • Evaluation · counterfactual matters: if rivals also underinvest, relative competitiveness may be less affected.
 
   Level       Mark                                                      Descriptor
 
@@ -150,15 +150,15 @@ Knowledge/understanding 2, Application 2, Analysis 3, Evaluation 3
  • Joint production may allow VW to benefit from Chinese economies of scale in battery production.
  • Helps maintain access to the Chinese market at a moment when European brands hold only 15% of Chinese EV
    share.
- • Evaluation — risks technology transfer: Chinese partners may become direct competitors in third markets.
- • Evaluation — loss of strategic autonomy: VW becomes dependent on Chinese partners for critical components.
- • Evaluation — geopolitical risk: future EU-China tensions could force VW to unwind partnerships at cost.
- • Evaluation — profit-sharing dilutes VW's returns; the Chinese market has historically been VW's most profitable.
- • Evaluation — reputational and workforce risks in Germany if partnerships are seen to hollow out domestic
+ • Evaluation · risks technology transfer: Chinese partners may become direct competitors in third markets.
+ • Evaluation · loss of strategic autonomy: VW becomes dependent on Chinese partners for critical components.
+ • Evaluation · geopolitical risk: future EU-China tensions could force VW to unwind partnerships at cost.
+ • Evaluation · profit-sharing dilutes VW's returns; the Chinese market has historically been VW's most profitable.
+ • Evaluation · reputational and workforce risks in Germany if partnerships are seen to hollow out domestic
    engineering capability.
- • Evaluation — effectiveness depends on contract design, IP protections, and VW's ability to integrate Chinese
+ • Evaluation · effectiveness depends on contract design, IP protections, and VW's ability to integrate Chinese
    technology into global product lines.
- • Evaluation — overall: likely beneficial in the short run to protect Chinese revenues, but significant long-run
+ • Evaluation · overall: likely beneficial in the short run to protect Chinese revenues, but significant long-run
    strategic risks.
 
  Level        Mark                                                      Descriptor
@@ -195,7 +195,7 @@ Knowledge/understanding 2, Application 2, Analysis 3, Evaluation 3
 
 Knowledge/understanding 2, Application 2, Analysis 4, Evaluation 4
  • €100bn over ten years = €10bn per year in additional public investment.
- • Fiscal multiplier for infrastructure cited as 1.4–2.1 (Extract C) — each €1bn could add €1.4bn–€2.1bn to GDP in
+ • Fiscal multiplier for infrastructure cited as 1.4–2.1 (Extract C) · each €1bn could add €1.4bn–€2.1bn to GDP in
    the medium term.
 
 
@@ -206,18 +206,18 @@ Knowledge/understanding 2, Application 2, Analysis 4, Evaluation 4
  • Higher productivity reduces unit labour costs, improving international competitiveness.
  • Crowds in private investment: better transport and 5G networks raise the return on private capital.
  • Green hydrogen and rail electrification support decarbonisation, aligning with EU climate obligations.
- • Evaluation — financed by additional borrowing (requiring a change to the constitutional debt brake); raises the
+ • Evaluation · financed by additional borrowing (requiring a change to the constitutional debt brake); raises the
    public debt trajectory.
- • Evaluation — eurozone-wide interest-rate effects: higher German borrowing may raise Bund yields and transmit
+ • Evaluation · eurozone-wide interest-rate effects: higher German borrowing may raise Bund yields and transmit
    to other eurozone economies.
- • Evaluation — crowding out: higher government demand for resources may bid up wages and materials prices.
- • Evaluation — inflation risk given already-elevated HICP (5.9%); multipliers could be smaller if the economy is
+ • Evaluation · crowding out: higher government demand for resources may bid up wages and materials prices.
+ • Evaluation · inflation risk given already-elevated HICP (5.9%); multipliers could be smaller if the economy is
    capacity-constrained.
- • Evaluation — risk of poor project selection: multiplier depends critically on project quality (Extract C).
- • Evaluation — political-economy risk: funds may be captured by politically connected regions or firms.
- • Evaluation — ten-year horizon reduces short-run stimulus but improves sustainability; effectiveness depends on
+ • Evaluation · risk of poor project selection: multiplier depends critically on project quality (Extract C).
+ • Evaluation · political-economy risk: funds may be captured by politically connected regions or firms.
+ • Evaluation · ten-year horizon reduces short-run stimulus but improves sustainability; effectiveness depends on
    whether spending genuinely replaces private shortfalls or duplicates them.
- • Evaluation — in the context of VW's restructuring and −0.3% growth in 2023, a countercyclical element is
+ • Evaluation · in the context of VW's restructuring and −0.3% growth in 2023, a countercyclical element is
    valuable.
 
  Level        Mark                                                      Descriptor
@@ -257,7 +257,7 @@ Knowledge/understanding 2, Application 2, Analysis 4, Evaluation 4
    innovation support.
 
                                                                  6                                                     Turn over ▶
-• High unit labour costs (40% above Spain, per Extract B) reflect structural rigidities — reforms can improve
+• High unit labour costs (40% above Spain, per Extract B) reflect structural rigidities · reforms can improve
   competitiveness over time.
 • Energy-price reductions (through supply diversification or renewables investment) directly address the 2022
   energy-shock impact on VW.
@@ -265,20 +265,20 @@ Knowledge/understanding 2, Application 2, Analysis 4, Evaluation 4
 • Deregulation of product markets may speed adoption of new technology.
 • Trade-policy reform (e.g. negotiating improved access to growing Asian markets) is partly a supply-side/structural
   issue.
-• Evaluation — demand-side policy also plays a key role: infrastructure investment (see Extract C) is typically
+• Evaluation · demand-side policy also plays a key role: infrastructure investment (see Extract C) is typically
   classified as fiscal/demand-side but has major supply-side effects.
-• Evaluation — monetary policy can affect the euro's exchange rate, providing cyclical support to exporters (though
+• Evaluation · monetary policy can affect the euro's exchange rate, providing cyclical support to exporters (though
   the ECB targets eurozone inflation, not German competitiveness).
-• Evaluation — supply-side reforms have long time lags; in the short run, demand-side measures provide essential
+• Evaluation · supply-side reforms have long time lags; in the short run, demand-side measures provide essential
   cyclical support, especially given −0.3% growth.
-• Evaluation — many of the symptoms of declining competitiveness (weak exports, job losses) have demand-side
+• Evaluation · many of the symptoms of declining competitiveness (weak exports, job losses) have demand-side
   elements best addressed by countercyclical policy.
-• Evaluation — political-economy constraints: structural reforms (job-protection rules, wage-bargaining) are highly
+• Evaluation · political-economy constraints: structural reforms (job-protection rules, wage-bargaining) are highly
   contentious and slow to implement.
-• Evaluation — supply-side and demand-side policies are complements rather than substitutes: the €100bn fund in
+• Evaluation · supply-side and demand-side policies are complements rather than substitutes: the €100bn fund in
   Extract C operates on both dimensions.
-• Evaluation — external factors (exchange rates, global demand, rivals' behaviour) may dominate policy choices.
-• Evaluation — overall judgement: structural supply-side reform is necessary but not sufficient; a coherent policy
+• Evaluation · external factors (exchange rates, global demand, rivals' behaviour) may dominate policy choices.
+• Evaluation · overall judgement: structural supply-side reform is necessary but not sufficient; a coherent policy
   mix is required.
 
 Level       Mark                                                      Descriptor
@@ -331,19 +331,19 @@ Knowledge/understanding 4, Application 4, Analysis 6, Evaluation 6
  • Growth can be exclusionary: capital-intensive export industries may enrich elites while leaving rural or informal-
    sector workers behind.
  • Environmental costs: pollution, deforestation, biodiversity loss harm long-run welfare and resource sustainability.
- • Evaluation — incompatibility claim is too strong: Germany's trajectory demonstrates growth can coexist with high
+ • Evaluation · incompatibility claim is too strong: Germany's trajectory demonstrates growth can coexist with high
    HDI (0.950) and moderate inequality-adjusted HDI (0.891).
- • Evaluation — Germany's ecological footprint (4.7 gha) shows the environmental cost of development: replicating
+ • Evaluation · Germany's ecological footprint (4.7 gha) shows the environmental cost of development: replicating
    this path globally is not sustainable.
- • Evaluation — the issue is less whether growth and development are compatible and more the type of growth:
+ • Evaluation · the issue is less whether growth and development are compatible and more the type of growth:
    inclusive, green, institution-building growth supports development; extractive, unequal, pollutive growth
    undermines it.
- • Evaluation — Kuznets curve: inequality may rise then fall with development; China/South Korea examples show
+ • Evaluation · Kuznets curve: inequality may rise then fall with development; China/South Korea examples show
    rapid catch-up without permanent incompatibility.
- • Evaluation — environmental Kuznets curve: emissions per capita may rise then fall, but climate scientists warn
+ • Evaluation · environmental Kuznets curve: emissions per capita may rise then fall, but climate scientists warn
    developing economies cannot afford the same trajectory.
- • Evaluation — data quality in developing economies is often weaker; cross-country comparisons require caution.
- • Evaluation — balanced conclusion: rapid growth is not inherently incompatible with development, but without
+ • Evaluation · data quality in developing economies is often weaker; cross-country comparisons require caution.
+ • Evaluation · balanced conclusion: rapid growth is not inherently incompatible with development, but without
    deliberate policy on distribution, environment and institutions, growth can undermine broader welfare
    improvements.
 
@@ -392,10 +392,10 @@ the question.
 Knowledge/understanding 4, Application 4, Analysis 6, Evaluation 6
  • Industrial policy typically involves subsidies, tax credits, guaranteed procurement and other sector-specific
    support.
- • TSMC receives substantial direct transfers: $6.6bn in Arizona; €5bn in Dresden; ¥900bn in Kumamoto —
+ • TSMC receives substantial direct transfers: $6.6bn in Arizona; €5bn in Dresden; ¥900bn in Kumamoto ·
    reducing its effective cost of capital.
  • Subsidies offset TSMC's admission that overseas fabs cost 50% more to operate than its Taiwanese facilities.
- • TSMC's leading-edge process development remains in Taiwan — the firm retains strategic know-how and
+ • TSMC's leading-edge process development remains in Taiwan · the firm retains strategic know-how and
    captures future upside.
  • Long-term contracts with customers (Apple, NVIDIA, AMD) mean TSMC's revenue stream is largely guaranteed;
    subsidies effectively de-risk expansion.
@@ -403,27 +403,27 @@ Knowledge/understanding 4, Application 4, Analysis 6, Evaluation 6
    TSMC's balance sheet.
  • Economies of scale: TSMC's expanded capacity reduces average costs globally, benefiting the firm even before
    subsidies.
- • Evaluation — host-economy benefits include jobs (Arizona, Dresden, Kumamoto create thousands of high-skilled
+ • Evaluation · host-economy benefits include jobs (Arizona, Dresden, Kumamoto create thousands of high-skilled
    jobs directly).
- • Evaluation — supply-chain security: reliable domestic chip supply reduces the economic cost of any future
+ • Evaluation · supply-chain security: reliable domestic chip supply reduces the economic cost of any future
    Taiwan-related disruption.
- • Evaluation — knowledge spillovers: local R&D capacity and supplier ecosystems can develop around TSMC
+ • Evaluation · knowledge spillovers: local R&D capacity and supplier ecosystems can develop around TSMC
    fabs.
- • Evaluation — TSMC states subsidies are 'necessary, not sufficient'; implies host governments are capturing
+ • Evaluation · TSMC states subsidies are 'necessary, not sufficient'; implies host governments are capturing
    genuine externalities that justify support.
- • Evaluation — however, multiple governments subsidising overlapping capacity risks over-investment and a future
+ • Evaluation · however, multiple governments subsidising overlapping capacity risks over-investment and a future
    glut.
- • Evaluation — WTO records of >3,000 trade-distorting measures per year raise systemic risk of retaliation and
+ • Evaluation · WTO records of >3,000 trade-distorting measures per year raise systemic risk of retaliation and
    fragmentation.
- • Evaluation — opportunity cost: $6.6bn in US CHIPS funding could have been used for education, healthcare, or
+ • Evaluation · opportunity cost: $6.6bn in US CHIPS funding could have been used for education, healthcare, or
    basic research.
- • Evaluation — 'picking winners' historically has mixed results; governments may back incumbents rather than
+ • Evaluation · 'picking winners' historically has mixed results; governments may back incumbents rather than
    innovators.
- • Evaluation — who benefits depends on counterfactual: if TSMC would not have expanded without subsidies,
+ • Evaluation · who benefits depends on counterfactual: if TSMC would not have expanded without subsidies,
    governments may still have net benefit; if it would have invested anyway, subsidies are pure transfer.
- • Evaluation — political economy: TSMC's bargaining power (supplying 90% of advanced chips) is so strong that
+ • Evaluation · political economy: TSMC's bargaining power (supplying 90% of advanced chips) is so strong that
    subsidies are unlikely to fully capture the firm's willingness to invest.
- • Evaluation — balanced conclusion: in the short run, TSMC is likely the clearer beneficiary; host economies gain
+ • Evaluation · balanced conclusion: in the short run, TSMC is likely the clearer beneficiary; host economies gain
    strategic resilience and jobs but also bear significant fiscal costs and risk over-investment. The long-run verdict
    depends on whether chip demand grows fast enough to justify duplicated capacity and whether knowledge
    spillovers materialise.

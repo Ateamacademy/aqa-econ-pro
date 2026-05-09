@@ -9,7 +9,7 @@ export default function EconTermsOfTradeUK() {
           <marker id="totRedL" markerWidth="7" markerHeight="9" refX="3.5" refY="8" orient="auto-start-reverse"><polygon points="0 9,3.5 0,7 9" fill="#cc2222"/></marker>
         </defs>
         <rect width="660" height="580" fill="#fff"/>
-        <text x="330" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Terms of Trade — UK Energy Price Shock</text>
+        <text x="330" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Terms of Trade · UK Energy Price Shock</text>
         <text x="330" y="48" textAnchor="middle" fontSize="12" fill="#555">Rising global energy prices increase UK import prices → ToT deteriorates</text>
         <line x1="90" y1="460" x2="90" y2="72" stroke="#111" strokeWidth="2.5" markerEnd="url(#totU)"/>
         <line x1="90" y1="460" x2="600" y2="460" stroke="#111" strokeWidth="2.5" markerEnd="url(#totR)"/>

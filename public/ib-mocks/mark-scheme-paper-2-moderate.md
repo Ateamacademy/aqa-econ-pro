@@ -1,15 +1,15 @@
 <!-- Auto-generated from /public/ib-mocks/mark-scheme-paper-2-moderate.pdf -->
-SME Mark Scheme P2 — Moderate
+SME Mark Scheme P2 · Moderate
 
 
-SavePredictedExams — SME
+SavePredictedExams · SME
 
 Economics
 Higher level / Standard level
 Paper 2
 
 
-SME Mark Scheme — Paper 2 Moderate
+SME Mark Scheme · Paper 2 Moderate
 
 
 1. Use the question-specific mark scheme together with the mark bands. Award up to the maximum
@@ -18,7 +18,7 @@ marks as indicated.
 3. A candidate may be penalised once for rounding errors, missing units, or not giving answers to 2
 d.p., across all subparts of (b) questions.
 
-Question 1 — Vietnam
+Question 1 · Vietnam
 1. (a) (i) Define the term foreign direct investment (FDI) (Text B, Paragraph 1). [2]
  Level                                                                                       Marks
 
@@ -49,7 +49,7 @@ Question 1 — Vietnam
 
 
                                                    1                                      SME Predicted Paper
-                                                                           SME Mark Scheme P2 — Moderate
+                                                                           SME Mark Scheme P2 · Moderate
 
 
 1. (b) (i) Calculate the percentage change in Vietnam’s real GDP between 2010 and 2022. [2]
@@ -63,7 +63,7 @@ Average = (19.1 + 20.3 + 19.0 + 19.7 + 22.4) / 5 [1]
 = 100.5 / 5 [1]
 Answer = $20.10 billion (correct units required for full marks). [1]
 
-1. (c) AD/AS diagram — FDI benefits economic growth. [4]
+1. (c) AD/AS diagram · FDI benefits economic growth. [4]
 
   Level                                                                                      Marks
 
@@ -83,10 +83,10 @@ Candidates who incorrectly label diagrams can be awarded a maximum of [3].
 
 
                                                   2                                       SME Predicted Paper
-                                                                              SME Mark Scheme P2 — Moderate
+                                                                              SME Mark Scheme P2 · Moderate
 
 
-1. (d) Negative externality diagram — pollution from foreign firms. [4]
+1. (d) Negative externality diagram · pollution from foreign firms. [4]
 
  Level                                                                                        Marks
 
@@ -103,7 +103,7 @@ Candidates who incorrectly label diagrams can be awarded a maximum of [3].
            loss shaded) AND an explanation that private producers ignore the external
            cost of pollution [1], leading to over-production and a welfare loss [1].
 
-1. (e) Demand and supply diagram — subsidised fertiliser in rice market. [4]
+1. (e) Demand and supply diagram · subsidised fertiliser in rice market. [4]
 
  Level                                                                                        Marks
 
@@ -121,10 +121,10 @@ Candidates who incorrectly label diagrams can be awarded a maximum of [3].
 
 
                                                     3                                      SME Predicted Paper
-                                                                                 SME Mark Scheme P2 — Moderate
+                                                                                 SME Mark Scheme P2 · Moderate
 
 
-1. (f) Tariff/import diagram — EVFTA tariff reduction. [4]
+1. (f) Tariff/import diagram · EVFTA tariff reduction. [4]
 
  Level                                                                                            Marks
 
@@ -176,7 +176,7 @@ Answers may include:
 
 
                                                        4                                      SME Predicted Paper
-                                                                    SME Mark Scheme P2 — Moderate
+                                                                    SME Mark Scheme P2 · Moderate
 
 
 4–6     The response indicates some understanding of the specific demands of the
@@ -214,10 +214,10 @@ Answers may include:
 
 
                                            5                                    SME Predicted Paper
-                                                                           SME Mark Scheme P2 — Moderate
+                                                                           SME Mark Scheme P2 · Moderate
 
 
-Question 2 — Kenya
+Question 2 · Kenya
 2. (a) (i) Define the term inflation. [2]
 
   Level                                                                                  Marks
@@ -248,7 +248,7 @@ Question 2 — Kenya
 
 
                                                      6                                SME Predicted Paper
-                                                                                SME Mark Scheme P2 — Moderate
+                                                                                SME Mark Scheme P2 · Moderate
 
 
 2. (b) (i) Calculate the percentage depreciation of the Kenyan shilling against the US dollar between
@@ -260,12 +260,12 @@ Award [1] for correct answer with working; [1] for correct units (%); [1] for id
 depreciation.
 Answer = 16.83% depreciation
 
-2. (b) (ii) Foreign exchange diagram — current account deficit effect on shilling. [2]
+2. (b) (ii) Foreign exchange diagram · current account deficit effect on shilling. [2]
 For a correctly labelled foreign-exchange diagram (price of currency vs. quantity), with supply of KES
 shifting right and/or demand for KES shifting left, showing the value of the KES falling. Award [2] for a
 correct diagram; [1] for a partial diagram.
 
-2. (c) AD/AS diagram — higher global fuel prices / cost-push inflation. [4]
+2. (c) AD/AS diagram · higher global fuel prices / cost-push inflation. [4]
 
   Level                                                                                         Marks
 
@@ -283,7 +283,7 @@ correct diagram; [1] for a partial diagram.
 
 
                                                      7                                       SME Predicted Paper
-                                                                            SME Mark Scheme P2 — Moderate
+                                                                            SME Mark Scheme P2 · Moderate
 
 
 2. (d) Effect of higher interest rates on AD. [4]
@@ -301,7 +301,7 @@ correct diagram; [1] for a partial diagram.
            higher interest rates discourage borrowing [1], reducing consumption and
            investment so AD falls [1].
 
-2. (e) Tariff diagram — EAC common external tariff. [4]
+2. (e) Tariff diagram · EAC common external tariff. [4]
 
   Level                                                                                        Marks
 
@@ -319,7 +319,7 @@ correct diagram; [1] for a partial diagram.
 
 
                                                     8                                       SME Predicted Paper
-                                                                              SME Mark Scheme P2 — Moderate
+                                                                              SME Mark Scheme P2 · Moderate
 
 
 2. (f) Progressive income tax and inequality. [4]
@@ -348,7 +348,7 @@ Answers may include:
       • Limitations: increased competition from cheaper Tanzanian/Ugandan producers (Text B, 2);
       the CET may raise prices for Kenyan consumers (Text B, 3); trade diversion risks (Text B, 4);
       regulatory challenges; macro vulnerability given large current account deficits (Table 2).
-      • Synthesis / conclusion: a reasoned judgement — typically that EAC membership is
+      • Synthesis / conclusion: a reasoned judgement · typically that EAC membership is
       net-positive for Kenya but depends on competitiveness, complementary supply-side reforms, and
       whether trade creation outweighs trade diversion.
 
@@ -371,7 +371,7 @@ Answers may include:
 
 
                                                      9                                     SME Predicted Paper
-                                                                    SME Mark Scheme P2 — Moderate
+                                                                    SME Mark Scheme P2 · Moderate
 
 
 7–9     The response indicates understanding of the specific demands of the question, but

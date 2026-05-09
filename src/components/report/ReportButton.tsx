@@ -144,7 +144,7 @@ function ReportDialog({ open, onOpenChange, context }: ReportDialogProps) {
       "Description:",
       description,
     ].filter(Boolean).join("\n");
-    const subject = `[Econ Rev Report] ${category || "issue"} — ${context.page}`;
+    const subject = `[Econ Rev Report] ${category || "issue"} · ${context.page}`;
     return `mailto:${ADMIN_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines)}`;
   };
 
@@ -220,7 +220,7 @@ function ReportDialog({ open, onOpenChange, context }: ReportDialogProps) {
             <CheckCircle2 className="h-10 w-10 mx-auto text-primary" />
             <div className="font-semibold">Report sent</div>
             <p className="text-sm text-muted-foreground">
-              Thank you — an administrator will look into it.
+              Thank you · an administrator will look into it.
             </p>
           </div>
         ) : (
@@ -280,7 +280,7 @@ function ReportDialog({ open, onOpenChange, context }: ReportDialogProps) {
                 value={description}
                 onChange={(e) => setDescription(e.target.value.slice(0, 500))}
                 disabled={submitting}
-                placeholder="What's wrong? Include specifics — question number, what you expected vs what you saw."
+                placeholder="What's wrong? Include specifics · question number, what you expected vs what you saw."
                 className="min-h-[120px]"
               />
               <div className="flex justify-between text-xs">
@@ -301,7 +301,7 @@ function ReportDialog({ open, onOpenChange, context }: ReportDialogProps) {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={submitting}
-                placeholder="Optional — if you want a reply"
+                placeholder="Optional · if you want a reply"
                 autoComplete="email"
               />
               {errors.email && <p className="text-xs text-destructive">{errors.email}</p>}

@@ -30,7 +30,7 @@ export function EdexcelASkillBreakdown({ marks, awarded }: Props) {
   return (
     <div className="space-y-2">
       <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-        Edexcel mark scheme — per-skill split
+        Edexcel mark scheme · per-skill split
       </p>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
         {LABELS.map(({ key, name, tone }) => {

@@ -9,7 +9,7 @@ export default function EconShortRunShutdown() {
         </defs>
         <rect width="640" height="520" fill="#fff"/>
         <text x="320" y="26" textAnchor="middle" fontSize="15" fontWeight="bold" fill="#111">Short-Run Shutdown Point (P = min AVC)</text>
-        <text x="320" y="44" textAnchor="middle" fontSize="11" fill="#555">Firm shuts down when P falls below minimum AVC — loss exceeds fixed costs</text>
+        <text x="320" y="44" textAnchor="middle" fontSize="11" fill="#555">Firm shuts down when P falls below minimum AVC · loss exceeds fixed costs</text>
         <line x1="80" y1="440" x2="80" y2="42" stroke="#111" strokeWidth="2.2" markerEnd="url(#sdU)"/>
         <line x1="80" y1="440" x2="562" y2="440" stroke="#111" strokeWidth="2.2" markerEnd="url(#sdR)"/>
         <text x="74" y="36" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">Costs (£)</text>

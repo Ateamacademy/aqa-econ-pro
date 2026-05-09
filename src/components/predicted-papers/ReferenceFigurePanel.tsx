@@ -7,9 +7,9 @@ import { getCatalogEntry } from "@/lib/aqa-diagram-catalog";
 interface Props {
   /** Catalog id resolved at parse time. When missing, the fallback notice renders. */
   referenceFigureId?: string;
-  /** Per-question scenario override (e.g. "UK NHS Nursing — RCN"). */
+  /** Per-question scenario override (e.g. "UK NHS Nursing · RCN"). */
   scenario?: string;
-  /** Caption text shown below the figure (e.g. "Figure 1 — …"). */
+  /** Caption text shown below the figure (e.g. "Figure 1 · …"). */
   caption?: string;
   /** Question label for the missing-figure report payload. */
   questionLabel?: string;
@@ -19,7 +19,7 @@ interface Props {
 
 /**
  * Read-only reference figure rendered inline beneath an AQA predicted-paper
- * question. Uses the existing /public/figures SVG library — fetched once and
+ * question. Uses the existing /public/figures SVG library · fetched once and
  * inlined so the in-SVG <text> title can be replaced with the question's
  * scenario override without forking the asset.
  *
@@ -79,7 +79,7 @@ export function ReferenceFigurePanel({
             </p>
             <p className="text-xs text-foreground/80 mt-1 leading-relaxed">
               This question would benefit from a reference diagram. A template hasn't
-              been catalogued yet — draw your own in the canvas below.
+              been catalogued yet · draw your own in the canvas below.
             </p>
             <div className="flex flex-wrap gap-2 mt-2.5">
               <ReportButton
@@ -145,7 +145,7 @@ export function ReferenceFigurePanel({
       </div>
 
       <figcaption className="px-3 py-2 border-t border-border text-[11px] text-muted-foreground">
-        {caption ?? `Figure — ${scenario ?? entry.title}`}
+        {caption ?? `Figure · ${scenario ?? entry.title}`}
       </figcaption>
     </figure>
   );

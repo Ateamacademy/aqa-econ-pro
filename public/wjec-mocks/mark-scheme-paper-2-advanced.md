@@ -92,25 +92,25 @@ PREDICTED PAPER 2 (ADVANCED)
 
  Indicative content
  AO1
- • Labour productivity: output per hour worked. Total factor productivity (TFP) is the Solow residual —
+ • Labour productivity: output per hour worked. Total factor productivity (TFP) is the Solow residual ·
  output growth unexplained by changes in labour and capital.
  AO2
  • Figure 1 shows the gap between actual productivity and the pre-2008 trend widening every year since
  the financial crisis.
- • Figure 2: UK business investment has been the lowest in the G7 — consistent with weak capital
+ • Figure 2: UK business investment has been the lowest in the G7 · consistent with weak capital
  deepening.
- • Text: productivity growth in finance and ICT — the drivers of pre-crisis acceleration — has since slowed.
+ • Text: productivity growth in finance and ICT · the drivers of pre-crisis acceleration · has since slowed.
  • Text: growing sectors like hospitality and social care have inherently lower productivity than
  manufacturing.
  AO3
- • Weak business investment reduces the capital-labour ratio, which — from Y = f(K, L, A) — reduces
+ • Weak business investment reduces the capital-labour ratio, which · from Y = f(K, L, A) · reduces
  output per worker for given technology and labour.
  • Structural shift of employment from manufacturing and financial services (high productivity) to hospitality
  and social care (low productivity) mechanically reduces aggregate productivity growth.
  • Slower innovation diffusion: the pre-crisis boom may have absorbed much of the one-off gains from ICT
  adoption; subsequent innovation has been slower to spread.
  • Labour market flexibility and abundant low-wage labour may have reduced the incentive to invest in
- labour-saving technology — the 'high-employment, low-productivity' UK equilibrium.
+ labour-saving technology · the 'high-employment, low-productivity' UK equilibrium.
  • Balance-sheet recession following 2008: weak lending, zombie firms and debt overhang depressed
  investment and R&D for an extended period.
  • Allow any other valid chain of reasoning.
@@ -200,7 +200,7 @@ PREDICTED PAPER 2 (ADVANCED)
  Indicative content
  AO2
  • Full expensing of business investment, R&D tax credits, planning reform and apprenticeship levy
- changes — all mentioned in the text.
+ changes · all mentioned in the text.
  • Figure 2 shows UK investment has historically been weaker than G7 peers despite successive
  supply-side initiatives.
  • Post-pandemic rise in long-term sickness has pushed several hundred thousand people out of the labour
@@ -215,7 +215,7 @@ PREDICTED PAPER 2 (ADVANCED)
  • Deregulation can reduce frictions in labour and product markets, allowing resources to flow to their most
  productive uses.
  AO4
- • UK investment has remained below G7 peers despite decades of supply-side reform — evidence of
+ • UK investment has remained below G7 peers despite decades of supply-side reform · evidence of
  limited effectiveness.
  • Supply-side policies face long time lags between announcement and effect, making them hard to
  evaluate and unpopular with politicians on short cycles.
@@ -229,13 +229,13 @@ PREDICTED PAPER 2 (ADVANCED)
                                                                                                                    PMT
 
 
- • Policy reversals and uncertainty reduce the effectiveness of supply-side measures — businesses delay
+ • Policy reversals and uncertainty reduce the effectiveness of supply-side measures · businesses delay
  investment when the rules are in flux.
- • Education and skills interventions take a generation to affect the workforce — unlikely to shift productivity
+ • Education and skills interventions take a generation to affect the workforce · unlikely to shift productivity
  in the short run.
  • Macro context matters: supply-side policies work best when demand is strong. Weak aggregate demand
  leads to under-utilised capacity and reduced incentive to invest.
- • Overall judgement at the top of the band: supply-side policies are necessary but insufficient — they need
+ • Overall judgement at the top of the band: supply-side policies are necessary but insufficient · they need
  to be consistently applied over long periods and complemented by macro stability to deliver measurable
  gains.
  Allow any other valid points.
@@ -276,27 +276,27 @@ PREDICTED PAPER 2 (ADVANCED)
  Indicative content
  AO2
  • Public sector net debt has risen from around 35% of GDP in 2007 to nearly 100% today.
- • Debt interest now absorbs 8% of total government spending — more than defence or transport.
- • Text: economists disagree about significance — some say fiscal space is genuinely constrained, others
+ • Debt interest now absorbs 8% of total government spending · more than defence or transport.
+ • Text: economists disagree about significance · some say fiscal space is genuinely constrained, others
  argue well-targeted investment is self-financing.
  • Figure 3 projects debt interest rising to over 6% of GDP by 2070 given ageing pressures.
  AO3
  • High debt levels raise debt-service costs, crowding out other productive spending.
  • Markets may require higher risk premia as debt rises, raising long-run borrowing costs.
- • Concerns about debt sustainability can reduce policy flexibility in future crises — less 'fiscal space' to
+ • Concerns about debt sustainability can reduce policy flexibility in future crises · less 'fiscal space' to
  respond to downturns.
  • High debt may constrain the government's ability to respond to adverse shocks (further pandemics,
  climate, geopolitical), raising long-run volatility.
  AO4
  • Well-targeted public investment (R&D, infrastructure, skills) can pay for itself over time by raising the
- growth rate — 'growth-friendly' fiscal expansion.
+ growth rate · 'growth-friendly' fiscal expansion.
  • As long as the growth rate exceeds the interest rate (g > r), the debt-to-GDP ratio can fall even with
- ongoing deficits — the condition has held for much of the post-war period.
- • UK government debt is nearly all sterling-denominated and held by domestic institutions — currency
+ ongoing deficits · the condition has held for much of the post-war period.
+ • UK government debt is nearly all sterling-denominated and held by domestic institutions · currency
  crisis risk is low compared with emerging markets.
  • The Bank of England's QE programme purchased large quantities of gilts, reducing the net private-sector
  debt burden.
- • UK debt is still moderate by G7 standards — Japan's debt exceeds 250% of GDP without a crisis.
+ • UK debt is still moderate by G7 standards · Japan's debt exceeds 250% of GDP without a crisis.
 
 
 © WJEC CBAC Ltd.                                             7
@@ -307,7 +307,7 @@ PREDICTED PAPER 2 (ADVANCED)
  government borrowing, reducing macroeconomic effect.
  • Policy choice matters: higher debt used to fund consumption is more constraining than higher debt used
  to fund investment with positive net returns.
- • Overall judgement at the top of the band: rising debt places a real but contingent constraint on policy — it
+ • Overall judgement at the top of the band: rising debt places a real but contingent constraint on policy · it
  limits the sustainable scale of further stimulus but does not prevent well-designed, investment-focused
  growth policy.
  Allow any other valid points.
@@ -347,26 +347,26 @@ PREDICTED PAPER 2 (ADVANCED)
 
  Indicative content
  AO2
- • Figure 1 shows a 15+ year gap between actual and pre-crisis trend — much too long to be purely
+ • Figure 1 shows a 15+ year gap between actual and pre-crisis trend · much too long to be purely
  cyclical.
  • Figure 2: UK investment has been structurally below G7 peers for decades.
- • Text: slowdown affects fast-growing sectors (finance, ICT) — a sectoral / structural story.
+ • Text: slowdown affects fast-growing sectors (finance, ICT) · a sectoral / structural story.
  • Text: mismeasurement of digital goods suggests some of the 'slowdown' may be statistical.
  AO3
  • The persistence of the slowdown over 15+ years (Figure 1) is strong evidence that the underlying causes
  are structural rather than purely cyclical.
  • Sectoral re-composition (finance/ICT slowing, social care/hospitality growing) is mechanically structural.
- • Persistently low investment (Figure 2) reduces the steady-state capital stock — a supply-side / structural
+ • Persistently low investment (Figure 2) reduces the steady-state capital stock · a supply-side / structural
  channel.
- • Demographic ageing reduces the participation rate and potential growth — structural.
+ • Demographic ageing reduces the participation rate and potential growth · structural.
  AO4
  • Cyclical factors also matter: the 2008 recession followed by austerity, Brexit uncertainty, Covid and the
  energy shock have each damaged the capacity of the economy in ways that may partially reverse.
  • Hysteresis: cyclical shocks leave permanent scars via unemployment persistence, skill atrophy, and
- investment cancellation — making the cyclical/structural distinction porous.
+ investment cancellation · making the cyclical/structural distinction porous.
  • The post-pandemic rise in long-term sickness could be interpreted either as cyclical (health shock) or
  structural (chronic condition increase).
- • Mismeasurement suggests productivity numbers themselves may overstate the slowdown — digital
+ • Mismeasurement suggests productivity numbers themselves may overstate the slowdown · digital
  goods, free services and quality improvements are poorly captured.
  • The UK has underperformed other G7 economies on productivity even where they faced the same
  cyclical shocks, pointing to country-specific structural factors (planning, training, infrastructure).
@@ -378,8 +378,8 @@ PREDICTED PAPER 2 (ADVANCED)
 
  • Policy implications differ sharply: cyclical problems call for aggregate demand management; structural
  problems call for supply-side reform.
- • Overall judgement at the top of the band: the evidence points primarily to structural factors —
- persistence, sector composition, weak investment — with cyclical shocks aggravating them. A durable
+ • Overall judgement at the top of the band: the evidence points primarily to structural factors ·
+ persistence, sector composition, weak investment · with cyclical shocks aggravating them. A durable
  recovery therefore needs supply-side reform alongside macro stability.
  Allow any other valid points.
 
@@ -424,7 +424,7 @@ PREDICTED PAPER 2 (ADVANCED)
  AO2
  • Text: Big Tech firms account for well over half of global digital advertising and more than 80% of mobile
  OSs.
- • Figure 1: operating margins of 26-42% compared with S&P 500 average of 11% — abnormal profits on a
+ • Figure 1: operating margins of 26-42% compared with S&P 500 average of 11% · abnormal profits on a
  very large scale.
  • Barriers: network effects, data advantage, economies of scale (MC near zero).
  • Text: CMA investigations and SMS designation powers demonstrate regulatory recognition of monopoly
@@ -544,18 +544,18 @@ PREDICTED PAPER 2 (ADVANCED)
  • Deadweight welfare loss identified as the triangle between AR and MC from Qm to Qc.
  • Break-up lowers price towards Pc, expands output towards Qc, and reduces DWL.
  AO2
- • Text: Big Tech firms earn 26-42% margins vs 11% S&P average — large potential consumer surplus is
+ • Text: Big Tech firms earn 26-42% margins vs 11% S&P average · large potential consumer surplus is
  captured as abnormal profit.
  • Text: network effects and economies of scale make natural monopoly a possibility.
  • Text: CMA's SMS regime is ex-ante and can partially achieve the same outcome without break-up.
  AO3
  • Break-up lowers the price and raises the quantity consumed, shifting producer surplus back to
  consumers and eliminating the deadweight loss.
- • Multiple competing firms will engage in greater non-price competition — faster product iteration, more
+ • Multiple competing firms will engage in greater non-price competition · faster product iteration, more
  choice, more privacy options.
  • Reduces the risk of leveraging dominance in adjacent markets (app store self-preferencing, search bias
  toward own products).
- • Restores dynamic competitive incentives — firms must innovate or lose share, rather than rely on
+ • Restores dynamic competitive incentives · firms must innovate or lose share, rather than rely on
  monopoly rent.
  AO4
 
@@ -565,10 +565,10 @@ PREDICTED PAPER 2 (ADVANCED)
 
 
  • Where digital platforms exhibit strong network effects, a single platform is more valuable to users than
- several competing ones — break-up can destroy positive consumption externalities.
+ several competing ones · break-up can destroy positive consumption externalities.
  • Economies of scale: if MC is near zero and fixed costs are high, smaller firms will have higher average
  costs and may not be able to offer free services.
- • R&D spending is concentrated in large firms (Figure 1 — Meta 29%, Alphabet 14%) and break-up could
+ • R&D spending is concentrated in large firms (Figure 1 · Meta 29%, Alphabet 14%) and break-up could
  reduce aggregate R&D investment.
  • Enforcement complexity: defining the product boundaries of a digital platform is hard (the 'market' for
  search, social, operating systems is contested).
@@ -616,11 +616,11 @@ PREDICTED PAPER 2 (ADVANCED)
  AO1
  • Schumpeterian view: firms innovate in pursuit of monopoly rents; high expected post-innovation profits
  fund and justify R&D spending.
- • Alternative view: innovation is driven by competitive pressure — firms innovate to avoid being displaced.
+ • Alternative view: innovation is driven by competitive pressure · firms innovate to avoid being displaced.
  AO3
  • Monopoly profits fund the large fixed R&D costs associated with modern innovation (e.g. semiconductor
  foundries, AI training runs).
- • Patent protection grants temporary monopoly so that innovators can recoup sunk investment — without
+ • Patent protection grants temporary monopoly so that innovators can recoup sunk investment · without
  it, the free-rider problem reduces innovation below the social optimum.
  • Long-horizon investment requires stable and predictable returns; monopoly firms face lower risk premia
  on R&D.
@@ -630,14 +630,14 @@ PREDICTED PAPER 2 (ADVANCED)
  • The Arrow replacement effect suggests monopolists innovate less than competitive firms because new
  products cannibalise existing profits.
  • Empirical evidence (Aghion et al.) finds an 'inverted-U' relationship between competition and innovation
- — very high and very low competition both reduce R&D; moderate competition maximises it.
+ · very high and very low competition both reduce R&D; moderate competition maximises it.
  • Historic periods of strong innovation (US antitrust era, 1940s-70s) saw large firms but also strong
  competitive constraints.
  • Start-ups and academic R&D deliver a disproportionate share of fundamental innovation, often without
  market power of their own.
- • Monopoly profits are often used for share buybacks and dividends rather than R&D — even Big Tech's
+ • Monopoly profits are often used for share buybacks and dividends rather than R&D · even Big Tech's
  14-29% R&D share shows most revenue goes elsewhere.
- • Technology diffusion slows when dominant firms can buy up potential disruptors ('killer acquisitions') —
+ • Technology diffusion slows when dominant firms can buy up potential disruptors ('killer acquisitions') ·
  monopoly power may therefore reduce long-run innovation.
 
 
@@ -646,7 +646,7 @@ PREDICTED PAPER 2 (ADVANCED)
 
 
  • Overall judgement: some market power is necessary to reward innovation (hence IP rights), but
- unrestricted monopoly power is not — in fact, moderate competitive pressure seems to maximise R&D.
+ unrestricted monopoly power is not · in fact, moderate competitive pressure seems to maximise R&D.
  Allow any other valid points.
 
 
@@ -698,15 +698,15 @@ PREDICTED PAPER 2 (ADVANCED)
  • Text: 'each framework faces difficult trade-offs between deterring harmful conduct, preserving incentives
  to innovate, and keeping up with fast-moving technological change'.
  • Figure 1: very large operating margins and R&D intensity suggest significant abnormal profit available to
- fund compliance — but also significant stakes of disruption.
+ fund compliance · but also significant stakes of disruption.
  AO3
- • Ex-ante regulation is faster than ex-post enforcement, which can take 5-10 years per case — digital
+ • Ex-ante regulation is faster than ex-post enforcement, which can take 5-10 years per case · digital
  markets move far faster than the courts.
  • Bespoke conduct requirements can address specific harms (e.g. app store self-preferencing,
  interoperability gaps) without the complexity of structural remedies.
  • Certainty for market participants: new entrants know what behaviours are prohibited and can plan
  accordingly, lowering entry barriers.
- • Continuous engagement between regulator and firm allows adjustments as markets evolve — more
+ • Continuous engagement between regulator and firm allows adjustments as markets evolve · more
  flexible than litigation.
 
 
@@ -717,17 +717,17 @@ PREDICTED PAPER 2 (ADVANCED)
  AO4
  • Regulatory capture: dominant firms have far more resources to engage with regulators than new
  entrants, leading to outcomes that protect incumbents.
- • Technology moves faster than regulation — by the time a conduct rule is in force, the relevant market
+ • Technology moves faster than regulation · by the time a conduct rule is in force, the relevant market
  may have shifted (search to AI, messaging to video).
  • Unilateral UK action affects only a small market (~4% of global digital ad spend); firms can restructure
  products or corporate arrangements to avoid UK-specific rules.
  • Compliance costs raise entry barriers for smaller rivals who must now anticipate regulatory scrutiny if
- they succeed — perversely reinforcing dominance.
+ they succeed · perversely reinforcing dominance.
  • Chilling effect on innovation: firms fear that successful products will trigger regulatory intervention,
  reducing incentive to invest.
  • International coordination matters: the UK, EU and US moving in broadly the same direction increases
  effectiveness; divergence creates jurisdictional arbitrage.
- • Enforcement requires significant technical capacity within the CMA — budget and skills may be a binding
+ • Enforcement requires significant technical capacity within the CMA · budget and skills may be a binding
  constraint.
  • Alternative remedies (structural break-up, mandatory data portability, tax on digital services) have their
  own trade-offs and are not always available.

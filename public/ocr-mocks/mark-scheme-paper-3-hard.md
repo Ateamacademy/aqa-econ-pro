@@ -7,7 +7,7 @@ Economics
 H460/03: Themes in economics
 A Level
 
-Mark Scheme — Predicted Paper (Hard)
+Mark Scheme · Predicted Paper (Hard)
 MARKING INSTRUCTIONS
 These are the marking instructions for the predicted paper. Use them in conjunction with the question paper.
 Alternative correct answers and unexpected approaches should be given marks that fairly reflect the relevant
@@ -125,12 +125,12 @@ Question            Answer     Question   Answer
 14                  A          29         A
 
 15                  A          30         C
-Section A — Rationale
+Section A · Rationale
 
 Q     Key   Rationale                                                                   AO
 
 1     A     A Correct: Marginal utility is the extra satisfaction gained from           AO1
-            consuming one more unit — the change in total utility per unit.
+            consuming one more unit · the change in total utility per unit.
             B This is total utility, not marginal utility.
             C This is marginal cost, not marginal utility.
             D This is price, which reflects willingness to pay.
@@ -146,7 +146,7 @@ Q     Key   Rationale                                                           
             ineffective in a liquidity trap.
             B In a liquidity trap rates are very low, not high.
             C Correct: In a liquidity trap, nominal interest rates are near zero and
-            households/firms prefer to hold money rather than spend or invest —
+            households/firms prefer to hold money rather than spend or invest ·
             making monetary policy ineffective.
             D Velocity typically falls in a liquidity trap, not rises.
 
@@ -157,31 +157,31 @@ Q     Key   Rationale                                                           
             C Stronger union bargaining may raise real wages above equilibrium and
             increase the natural rate.
             D Correct: Retraining programmes address skills mismatches, reducing
-            structural unemployment — a component of the natural rate.
+            structural unemployment · a component of the natural rate.
 
 5     A     A Correct: YED = %ΔQD / %ΔY. Since YED = +2.3 and income falls by           AO2
             5%, %ΔQD = +2.3 × (−5%) = −11.5%. The good is a luxury (normal
             income-elastic) and demand falls sharply in a recession.
             B This would only apply with YED = +0.46.
-            C Incorrect sign — income falls, so demand for a normal luxury falls.
+            C Incorrect sign · income falls, so demand for a normal luxury falls.
             D Incorrect sign.
 
-6     D     A Price and output remain unchanged — the defining feature of the           AO3
+6     D     A Price and output remain unchanged · the defining feature of the           AO3
             kinked demand curve.
-            B Same — no change.
+            B Same · no change.
             C The kinked demand curve predicts stable prices despite cost shifts
             within the discontinuity.
             D Correct: When the new MC curve still passes through the vertical
             (discontinuous) section of MR, profit-maximising price and output remain
-            at the original kink — predicting price rigidity in oligopoly.
+            at the original kink · predicting price rigidity in oligopoly.
 
-7     D     A Economies of scale are a cost-based barrier to entry — incumbents         AO1
+7     D     A Economies of scale are a cost-based barrier to entry · incumbents         AO1
             enjoy lower AC.
             B Patents give legal protection and are a barrier to entry.
             C Brand loyalty deters entry by making it costly for new firms to attract
             customers.
             D Correct: The existence of many substitute goods increases
-            competition and reduces barriers to entry — it is not itself a barrier.
+            competition and reduces barriers to entry · it is not itself a barrier.
 
 8     B     A Cournot models do not use advertising as the strategic variable.          AO1
             B Correct: In the Cournot model, firms simultaneously choose their
@@ -190,7 +190,7 @@ Q     Key   Rationale                                                           
          D Collusion is a separate consideration, not part of Cournot's core
          model.
 
-9    C   A Marginal utility is the change in total utility, which is −2 here —      AO2
+9    C   A Marginal utility is the change in total utility, which is −2 here ·      AO2
          negative.
          B Zero marginal utility would occur when total utility reaches its
          maximum; here it has already fallen.
@@ -224,15 +224,15 @@ Q     Key   Rationale                                                           
          compared with competitive equilibrium.
          B Monopsony wages are below MRP, so wages are lower.
          C Correct: A monopsonist maximises profit where MCL = MRP, then
-         pays the wage along the labour supply curve at that quantity — this is
+         pays the wage along the labour supply curve at that quantity · this is
          below both competitive wage and MRP, and employs fewer workers.
-         D Incorrect — employment is lower under monopsony.
+         D Incorrect · employment is lower under monopsony.
 
 14   A   A Correct: MV = PY (growth form): %ΔM + %ΔV = %ΔP + %ΔY. 8 +               AO2
          (−2) = %ΔP + 3. %ΔP = 6 − 3 = 3%.
          B Incorrect arithmetic.
-         C Incorrect — this would be the calculation ignoring real growth.
-         D Incorrect — this would be the calculation assuming velocity growth of
+         C Incorrect · this would be the calculation ignoring real growth.
+         D Incorrect · this would be the calculation assuming velocity growth of
          0%.
 
 15   A   A Correct: The Marshall-Lerner condition: a depreciation improves the      AO1
@@ -245,7 +245,7 @@ Q     Key   Rationale                                                           
 16   D   A Ad valorem refers to tax rate structure (e.g. VAT), not progressivity.   AO1
          B Progressive: average rate rises as income rises.
          C Proportional: average rate constant.
-         D Correct: Regressive: average rate falls as income rises — the poor
+         D Correct: Regressive: average rate falls as income rises · the poor
          pay a higher proportion of their income.
 
 17   C   A Gini measures relative inequality, not absolute poverty.                     AO3
@@ -259,8 +259,8 @@ Q     Key   Rationale                                                           
          per-unit tax as price rises by the full amount of the tax. Quantity
          demanded is unchanged, so there is no deadweight loss either.
          B Producers pass the full burden of the tax on to consumers because
-         demand is perfectly inelastic — consumers bear all of the tax.
-         C Incorrect — tax burden is split according to relative elasticities; equal
+         demand is perfectly inelastic · consumers bear all of the tax.
+         C Incorrect · tax burden is split according to relative elasticities; equal
          sharing requires equal elasticities.
          D With perfectly inelastic demand there is no change in quantity, so no
          deadweight loss is generated.
@@ -269,7 +269,7 @@ Q     Key   Rationale                                                           
          undertaken by all households simultaneously, reduces consumption and
          AD, lowering national income and ultimately reducing total saving.
          B This describes the standard interest rate effect on saving.
-         C This is the classical view — the opposite of the paradox.
+         C This is the classical view · the opposite of the paradox.
          D An accounting identity that does not describe the paradox.
 
 20   C   A Buyers typically know less, not more, than sellers in used car markets.      AO1
@@ -282,19 +282,19 @@ Q     Key   Rationale                                                           
 21   B   A Minimum AC is productive efficiency; under perfect competition, P =          AO1
          MC = AC, so the firm is also allocatively efficient.
          B Correct: In perfect competition long-run equilibrium, MC = AR
-         (allocative) and MC = AC at minimum (productive) — both are achieved
+         (allocative) and MC = AC at minimum (productive) · both are achieved
          simultaneously.
          C Long-run perfect competition has normal, not supernormal, profit.
          D Both types of efficiency are achieved, not just one.
 
 22   A   A Correct: Firms charge a higher price in the market with more inelastic AO3
-         demand (lower PED) because consumers are less responsive to price —
+         demand (lower PED) because consumers are less responsive to price ·
          maximising profit requires higher markup. Output in this market is typically
          a smaller share because total output is allocated until MR is equal across
          both.
          B Output in the inelastic market is usually smaller, not larger.
          C Higher price, not lower, in the inelastic market.
-         D Incorrect — lower price applies to the more elastic market.
+         D Incorrect · lower price applies to the more elastic market.
 
 23   D   A Absolute advantage is a concept of productivity, not a type of trade         AO3
          effect.
@@ -304,7 +304,7 @@ Q     Key   Rationale                                                           
          producer after joining a customs union.
          D Correct: Trade diversion: imports are diverted from a lower-cost
          source (Z) to a higher-cost source (Y) simply because Y's tariff is now
-         zero. The switch is caused by preferential tariffs, not efficiency — a
+         zero. The switch is caused by preferential tariffs, not efficiency · a
          welfare loss.
 24   D   A Higher reserve ratios reduce the multiplier.                                AO2
          B Higher cash demand reduces the banking system's lending capacity.
@@ -323,7 +323,7 @@ Q     Key   Rationale                                                           
 
 26   A   A Correct: Contestable markets are characterised by low sunk costs and AO1
          freedom of entry/exit, enabling firms to enter to capture supernormal profit
-         and exit quickly when profit normalises — 'hit and run'.
+         and exit quickly when profit normalises · 'hit and run'.
          B Monopolies face high barriers preventing entry.
          C Natural monopoly barriers (economies of scale) prevent hit and run.
          D Perfect competition has freedom of entry/exit but already operates at
@@ -337,10 +337,10 @@ Q     Key   Rationale                                                           
          C Outward SRAS lowers inflation, contradicting stagflation.
          D Outward LRAS boosts output, contradicting stagnation.
 
-28   C   A This is not a limitation — GNI per capita does account for average          AO3
+28   C   A This is not a limitation · GNI per capita does account for average          AO3
          income.
          B GNI per capita is incomplete but not specifically because it accounts
-         for informal activity — it doesn't fully capture it.
+         for informal activity · it doesn't fully capture it.
          C Correct: GNI per capita converted at market exchange rates does not
          reflect the real purchasing power of income. PPP adjustments are
          therefore needed for meaningful international comparisons.
@@ -396,8 +396,8 @@ on
 
 
        Example: Firms may fear a price war (1). If one firm cuts
-       prices, rivals can quickly match — as with price-matching
-       guarantees against Aldi and Lidl (1) — so all firms lose
+       prices, rivals can quickly match · as with price-matching
+       guarantees against Aldi and Lidl (1) · so all firms lose
        profit but none gains market share. Therefore, firms prefer
        non-price competition (loyalty schemes, advertising) that
        builds brand loyalty without triggering retaliation (1).
@@ -484,38 +484,38 @@ Application
         profiteering.
     •   Application to Extract 1: Groceries Code Adjudicator regulates supplier relationships.
 Analysis
-    •   Adverse effects for consumers: High concentration gives the largest firms pricing power — prices may
+    •   Adverse effects for consumers: High concentration gives the largest firms pricing power · prices may
         exceed marginal cost, leading to allocative inefficiency and higher prices (consumer surplus loss).
     •   Adverse effects: CMA evidence of weak price competition on essentials implies higher food prices for
         consumers, especially during the cost-of-living crisis when food inflation hit 19.2%.
     •   Adverse effects: Non-price competition (advertising, loyalty schemes) absorbs resources that could
         instead go into lower prices, and may lead to wasteful duplication.
-    •   Adverse effects: Tacit collusion risk when a few firms dominate — leading to sustained high prices via
+    •   Adverse effects: Tacit collusion risk when a few firms dominate · leading to sustained high prices via
         price leadership.
-    •   Positive effects: Economies of scale allow the 'big four' to offer lower prices than smaller shops —
+    •   Positive effects: Economies of scale allow the 'big four' to offer lower prices than smaller shops ·
         consumers benefit from lower LRAC.
     •   Positive effects: Entry of Aldi and Lidl (up from 7.6% to 17.8% of market) increased contestability,
         driving price competition and price-matching promises.
-    •   Positive effects: Supernormal profits fund dynamic efficiency — online delivery, self-checkouts, and
+    •   Positive effects: Supernormal profits fund dynamic efficiency · online delivery, self-checkouts, and
         private-label innovation benefit consumers.
 Evaluation
-    •   CMA investigation found no clear evidence of profiteering — suggesting consumer harm is limited.
+    •   CMA investigation found no clear evidence of profiteering · suggesting consumer harm is limited.
     •   Aldi and Lidl absorbed costs rather than raised prices (Aldi made a loss), showing competitive
         discipline.
     •   The market is more contestable than it appears: online grocers and discounters have eroded big-four
         share from 76% to 65%.
-    •   Tesco's 3.8% margin is modest compared with tech oligopolies — suggesting competitive pressure.
+    •   Tesco's 3.8% margin is modest compared with tech oligopolies · suggesting competitive pressure.
     •   Consumer loyalty schemes provide genuine value for regular shoppers, not just a non-price
         distraction.
     •   Regulation (GCA, CMA) mitigates abuse of market power.
 Judgements might include:
     •   Depends on the degree of contestability (entry of Aldi, Lidl, online retail).
     •   Depends on effectiveness of CMA and GCA regulation.
-    •   Depends on the product segment — essentials may have weaker price competition than premium
+    •   Depends on the product segment · essentials may have weaker price competition than premium
         ranges.
     •   Depends on whether economies of scale are genuinely passed to consumers.
     •   Overall: consumers may benefit from scale and innovation but suffer from higher prices on some
-        essentials — net effect is ambiguous and context-dependent.
+        essentials · net effect is ambiguous and context-dependent.
 Question 34
 
 Questi Answer                                                        Marks   Guidance
@@ -555,7 +555,7 @@ on
 
 
        Examples:
-       - Higher cost of servicing the national debt — £20bn extra
+       - Higher cost of servicing the national debt · £20bn extra
        per 1 percentage point rise (1).
        - Emergency Bank of England intervention to stabilise
        pension funds (1).
@@ -636,35 +636,35 @@ Application
 Analysis
    •   For tax rises/spending cuts: Reduces the deficit and slows debt accumulation, improving debt
        sustainability.
-   •   Reduces crowding out — lower government borrowing eases pressure on bond yields and frees
+   •   Reduces crowding out · lower government borrowing eases pressure on bond yields and frees
        capital for private investment.
-   •   Lower bond yields reduce debt servicing costs, creating a virtuous circle — freeing up resources for
+   •   Lower bond yields reduce debt servicing costs, creating a virtuous circle · freeing up resources for
        public services long-term.
    •   Restores market confidence (recall the 2022 mini-budget crisis when unfunded tax cuts spiked
        yields).
-   •   Helps meet OBR fiscal rules — debt falling in five years — supporting the UK's credit rating and lower
+   •   Helps meet OBR fiscal rules · debt falling in five years · supporting the UK's credit rating and lower
        long-run borrowing costs.
 Evaluation
    •   Tax rises and spending cuts reduce AD, slowing growth and possibly tipping the economy into
        recession via the multiplier effect. With AD falling, tax revenue falls automatically, partially offsetting
        deficit reduction (paradox of austerity).
-   •   Higher taxes/spending cuts are regressive if they fall on essential services or raise VAT — worsening
+   •   Higher taxes/spending cuts are regressive if they fall on essential services or raise VAT · worsening
        inequality.
    •   Alternative: raise growth through investment in productivity-enhancing infrastructure. Higher growth
        raises tax revenue without austerity.
-   •   Debt sustainability depends on the gap between interest rate (r) and growth rate (g) — if g > r,
+   •   Debt sustainability depends on the gap between interest rate (r) and growth rate (g) · if g > r,
        debt/GDP can fall even without fiscal tightening.
    •   Crowding-in may be more relevant: public investment attracts private investment, raising potential
        GDP.
    •   Short-run pain may be politically unsustainable, leading to U-turns and more market volatility.
 Judgements might include:
-   •   Depends on the cyclical position of the economy — austerity during a downturn is more damaging.
+   •   Depends on the cyclical position of the economy · austerity during a downturn is more damaging.
    •   Depends on the composition: tax rises on wealth/income more progressive than VAT; capital
        spending cuts more damaging than current spending cuts.
-   •   Depends on whether tightening is credible — gradual and signalled in advance vs sudden and
+   •   Depends on whether tightening is credible · gradual and signalled in advance vs sudden and
        unfunded.
    •   Depends on the interest-rate/growth-rate differential.
-   •   Depends on monetary policy coordination — if tightening allows the Bank to loosen, overall impact is
+   •   Depends on monetary policy coordination · if tightening allows the Bank to loosen, overall impact is
        smaller.
 Question 37
 
@@ -677,7 +677,7 @@ on
           time employees earn more than gig workers.                               gap or relative
                                                                                    comparison.
           Award 1 mark for data: full-time £15.80 vs gig (after costs)
-          £8.20 — a gap of £7.60/hr, or gig workers earn roughly half
+          £8.20 · a gap of £7.60/hr, or gig workers earn roughly half
           (52%) of full-time hourly pay.
 
 
@@ -721,25 +721,25 @@ Knowledge
    •   Gig economy classification of workers
 Application
    •   Application to Extract 3: 4.4 million UK gig workers (13% of working-age population).
-   •   Application to Extract 3: Median hourly earnings £8.20 (after costs) — below National Living Wage of
+   •   Application to Extract 3: Median hourly earnings £8.20 (after costs) · below National Living Wage of
        £10.42.
    •   Application to Extract 3: 40% of gig workers earn below NLW when waiting time is included.
    •   Application to Extract 3: Supreme Court Uber ruling classified drivers as 'workers'.
    •   Application to Extract 3: Only 5% trade union density among gig workers.
    •   Application to Extract 3: Low entry barriers (smartphone, vehicle, right to work).
 Analysis
-   •   Intervention is needed: Gig workers earn below the National Living Wage — a clear labour market
+   •   Intervention is needed: Gig workers earn below the National Living Wage · a clear labour market
        failure.
-   •   Platforms have monopsony-like power — workers are geographically dispersed and dependent on
+   •   Platforms have monopsony-like power · workers are geographically dispersed and dependent on
        platforms for access to customers.
    •   Weak trade union density (5% vs 22% nationally) means collective bargaining cannot correct market
        failure.
    •   Regulation (classification as 'workers' as in Uber ruling) ensures minimum wage, paid holiday, and
        pension contributions.
 Evaluation
-   •   Low barriers to entry mean supply is high — wages reflect the marginal revenue product of labour in a
+   •   Low barriers to entry mean supply is high · wages reflect the marginal revenue product of labour in a
        competitive-like market.
-   •   Flexibility is a real benefit — workers choose gig work because it suits them; regulation may reduce
+   •   Flexibility is a real benefit · workers choose gig work because it suits them; regulation may reduce
        flexibility and employment.
    •   Government intervention risks unintended consequences: platforms may exit the market or reduce
        employment (as happened in California).
@@ -749,7 +749,7 @@ Evaluation
        achieve social aims without the costs of employee classification.
 Judgements might include:
    •   Depends on whether the primary failure is a monopsony or just low skills.
-   •   Depends on elasticity of labour supply — low elasticity strengthens the case for intervention.
+   •   Depends on elasticity of labour supply · low elasticity strengthens the case for intervention.
    •   Depends on effectiveness of worker classification/rulings.
    •   Depends on size of informal sector response.
                      ASSESSMENT OBJECTIVES GRID

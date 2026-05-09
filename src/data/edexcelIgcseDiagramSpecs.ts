@@ -50,7 +50,7 @@ export const EDEXCEL_IGCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   edxig_ppf_growth: {
-    title: "PPF Outward Shift — Economic Growth (Edexcel IGCSE)",
+    title: "PPF Outward Shift · Economic Growth (Edexcel IGCSE)",
     axisLabels: { x: "Consumer Goods", y: "Capital Goods" },
     curves: [
       { id: "PPF1", label: "PPF₁", params: { type: "quadratic", a: -0.12, b: -0.1, c: 8.5 }, color: C.supply },
@@ -271,7 +271,7 @@ export const EDEXCEL_IGCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   edxig_merit_good: {
-    title: "Merit Good — Information Failure (Edexcel IGCSE)",
+    title: "Merit Good · Information Failure (Edexcel IGCSE)",
     axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
     curves: [
       { id: "S", label: "S", params: { type: "linear", slope: 0.7, intercept: 1 }, color: C.supply },
@@ -286,7 +286,7 @@ export const EDEXCEL_IGCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   edxig_demerit_good: {
-    title: "Demerit Good — Information Failure (Edexcel IGCSE)",
+    title: "Demerit Good · Information Failure (Edexcel IGCSE)",
     axisLabels: { x: "Quantity (Q)", y: "Price (P)" },
     curves: [
       { id: "S", label: "S", params: { type: "linear", slope: 0.7, intercept: 1 }, color: C.supply },
@@ -314,7 +314,7 @@ export const EDEXCEL_IGCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     annotations: [
       { text: "Shortage (excess demand)", position: { x: 5, y: 2.8 }, color: C.demand, size: 11 },
     ],
-    notes: "Maximum price set below equilibrium to make goods affordable. Creates a shortage — Qd > Qs. May lead to black markets or rationing.",
+    notes: "Maximum price set below equilibrium to make goods affordable. Creates a shortage · Qd > Qs. May lead to black markets or rationing.",
   },
 
   edxig_price_floor: {
@@ -411,7 +411,7 @@ export const EDEXCEL_IGCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   edxig_ad_shift: {
-    title: "Increase in AD — Demand-Pull Inflation (Edexcel IGCSE)",
+    title: "Increase in AD · Demand-Pull Inflation (Edexcel IGCSE)",
     axisLabels: { x: "Real GDP (Y)", y: "Price Level (PL)" },
     curves: [
       { id: "AD1", label: "AD₁", params: { type: "linear", slope: -0.7, intercept: 9 }, color: C.demand },
@@ -426,7 +426,7 @@ export const EDEXCEL_IGCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   edxig_as_decrease: {
-    title: "Decrease in AS — Cost-Push Inflation (Edexcel IGCSE)",
+    title: "Decrease in AS · Cost-Push Inflation (Edexcel IGCSE)",
     axisLabels: { x: "Real GDP (Y)", y: "Price Level (PL)" },
     curves: [
       { id: "AD", label: "AD", params: { type: "linear", slope: -0.7, intercept: 9 }, color: C.demand },
@@ -441,7 +441,7 @@ export const EDEXCEL_IGCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
   },
 
   edxig_supply_side: {
-    title: "Supply-Side Policy — LRAS Shift (Edexcel IGCSE)",
+    title: "Supply-Side Policy · LRAS Shift (Edexcel IGCSE)",
     axisLabels: { x: "Real GDP (Y)", y: "Price Level (PL)" },
     curves: [
       { id: "AD", label: "AD", params: { type: "linear", slope: -0.7, intercept: 9 }, color: C.demand },
@@ -454,8 +454,8 @@ export const EDEXCEL_IGCSE_DIAGRAM_SPECS: Record<string, DiagramSpec> = {
     ],
     notes: "Supply-side policies shift AS right → lower price level and higher output. Non-inflationary growth. E.g. education, deregulation, privatisation, infrastructure.",
     examTips: [
-      "AS shifts right — growth without inflation",
-      "Slow to take effect — evaluate this limitation",
+      "AS shifts right · growth without inflation",
+      "Slow to take effect · evaluate this limitation",
       "Link to specific policy from the question",
     ],
   },

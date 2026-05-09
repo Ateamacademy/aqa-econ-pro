@@ -34,7 +34,7 @@ function extractMark(feedback: QuestionFeedback, totalMarks: number): number | n
     const numMatch = feedback.mark.match(/(\d+)/);
     if (numMatch) return parseInt(numMatch[1]);
   }
-  // Standard format — look for "X/Y" in markScheme
+  // Standard format · look for "X/Y" in markScheme
   const markScheme = feedback.markScheme || "";
   const patterns = [
     /(\d+)\s*\/\s*(\d+)\s*marks?/i,
@@ -127,7 +127,7 @@ export function ExamResultsSummary({
         <div className="p-8 md:p-10 text-center">
           {timeExpired && (
             <div className="inline-flex items-center gap-2 bg-destructive/10 border border-destructive/20 text-destructive rounded-full px-4 py-1.5 text-xs font-semibold mb-6">
-              <Target className="h-3.5 w-3.5" /> Time expired — paper auto-submitted
+              <Target className="h-3.5 w-3.5" /> Time expired · paper auto-submitted
             </div>
           )}
 
@@ -229,7 +229,7 @@ export function ExamResultsSummary({
                   ? "bg-destructive/15 text-destructive"
                   : "bg-muted text-muted-foreground"
               )}>
-                {scored !== null ? `${scored}` : !hasAnswer ? "—" : "?"}
+                {scored !== null ? `${scored}` : !hasAnswer ? "·" : "?"}
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-medium text-foreground truncate">
@@ -238,7 +238,7 @@ export function ExamResultsSummary({
               </div>
               <div className="text-right shrink-0">
                 <span className="text-sm font-mono font-semibold text-foreground">
-                  {scored !== null ? `${scored}/${question.marks}` : `—/${question.marks}`}
+                  {scored !== null ? `${scored}/${question.marks}` : `·/${question.marks}`}
                 </span>
               </div>
             </div>

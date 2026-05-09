@@ -1,5 +1,5 @@
 /**
- * Economics Knowledge Graph — Maps topic relationships, Bloom's taxonomy levels,
+ * Economics Knowledge Graph · Maps topic relationships, Bloom's taxonomy levels,
  * and cross-topic synoptic links for generating Higher Order Thinking Skills (HOTS) questions.
  *
  * Based on AQA A-Level Economics specification, textbooks, workbooks, exam technique guides,
@@ -479,7 +479,7 @@ export const ECONOMICS_KNOWLEDGE_NODES: KnowledgeNode[] = [
 // ─── OCR A-Level Economics H460 Knowledge Nodes ─────────────────────
 
 export const OCR_KNOWLEDGE_NODES: KnowledgeNode[] = [
-  // Component 01 — Microeconomics
+  // Component 01 · Microeconomics
   {
     id: "ocr-micro-scarcity",
     topic: "Scarcity & Choice",
@@ -574,7 +574,7 @@ export const OCR_KNOWLEDGE_NODES: KnowledgeNode[] = [
     hotsCategory: "analysis",
   },
 
-  // Component 02 — Macroeconomics
+  // Component 02 · Macroeconomics
   {
     id: "ocr-macro-ad",
     topic: "Aggregate Demand",
@@ -722,7 +722,7 @@ export const OCR_KNOWLEDGE_NODES: KnowledgeNode[] = [
 // ─── Cambridge International (CAIE 9708) Knowledge Nodes ─────────────
 
 export const CAMBRIDGE_KNOWLEDGE_NODES: KnowledgeNode[] = [
-  // Paper 1 — MCQ (AS)
+  // Paper 1 · MCQ (AS)
   {
     id: "caie-as-scarcity",
     topic: "Basic Economic Problem",
@@ -779,7 +779,7 @@ export const CAMBRIDGE_KNOWLEDGE_NODES: KnowledgeNode[] = [
     markAllocation: 1,
   },
 
-  // Paper 2 — Data Response & Essay (AS)
+  // Paper 2 · Data Response & Essay (AS)
   {
     id: "caie-as-data-response",
     topic: "Data Response",
@@ -804,7 +804,7 @@ export const CAMBRIDGE_KNOWLEDGE_NODES: KnowledgeNode[] = [
     hotsCategory: "evaluation",
   },
 
-  // Paper 3 — MCQ (A2)
+  // Paper 3 · MCQ (A2)
   {
     id: "caie-a2-ad",
     topic: "Aggregate Demand",
@@ -850,7 +850,7 @@ export const CAMBRIDGE_KNOWLEDGE_NODES: KnowledgeNode[] = [
     markAllocation: 1,
   },
 
-  // Paper 4 — Data Response & Essay (A2)
+  // Paper 4 · Data Response & Essay (A2)
   {
     id: "caie-a2-exchange-rate",
     topic: "Exchange Rates",
@@ -1236,11 +1236,11 @@ export function generateKnowledgeGraphPrompt(paperNumber: string, subject?: stri
   // Build diagram marking criteria section
   const diagramSection = DIAGRAM_MARKING_CRITERIA
     .slice(0, 6)
-    .map((d) => `- **${d.diagramType}**: K${d.kaaBreakdown.knowledge} A${d.kaaBreakdown.application} An${d.kaaBreakdown.analysis} — Elements: ${d.requiredElements.slice(0, 4).join(", ")}`)
+    .map((d) => `- **${d.diagramType}**: K${d.kaaBreakdown.knowledge} A${d.kaaBreakdown.application} An${d.kaaBreakdown.analysis} · Elements: ${d.requiredElements.slice(0, 4).join(", ")}`)
     .join("\n");
 
   return `
-## KNOWLEDGE GRAPH — HIGHER ORDER THINKING SKILLS (HOTS) REQUIREMENTS
+## KNOWLEDGE GRAPH · HIGHER ORDER THINKING SKILLS (HOTS) REQUIREMENTS
 
 Your questions MUST span Bloom's taxonomy levels. Do NOT generate only "remember" or "understand" questions.
 
@@ -1259,13 +1259,13 @@ ${synopticExamples}
 ### MANDATORY REAL-WORLD DATA CONTEXTS (use current 2024–2025 data):
 ${contexts}
 
-### DIAGRAM QUESTION PATTERNS (from AQA mark schemes — generate questions in these EXACT patterns):
+### DIAGRAM QUESTION PATTERNS (from AQA mark schemes · generate questions in these EXACT patterns):
 
 Each diagram question MUST follow the KAA (Knowledge, Application, Analysis) marking structure:
 
 ${diagramSection}
 
-**Example pattern (from June 2024 Paper 1, Question 6a — 5 marks):**
+**Example pattern (from June 2024 Paper 1, Question 6a · 5 marks):**
 "Use a demand and supply diagram to explain the impact on price and quantity, of the changes in demand and supply of online sales in the retail grocery market. (Figure 1 and Extract B)."
 Mark scheme: Knowledge 1, Application 1, Analysis 3
 - K: accurate S&D diagram with labels and original equilibrium (E₁) (1)

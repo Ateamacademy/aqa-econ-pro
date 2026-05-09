@@ -7,7 +7,7 @@ export default function EconOligopolyKinkedDemand() {
           <marker id="kdU" markerWidth="12" markerHeight="12" refX="6" refY="2" orient="auto"><polygon points="0 12,6 0,12 12" fill="#111"/></marker>
         </defs>
         <rect width="860" height="760" fill="#fff"/>
-        <text x="430" y="38" textAnchor="middle" fontSize="20" fontWeight="bold" fill="#111">Oligopoly — Kinked Demand Curve</text>
+        <text x="430" y="38" textAnchor="middle" fontSize="20" fontWeight="bold" fill="#111">Oligopoly · Kinked Demand Curve</text>
         <text x="98" y="50" fontSize="14" fontWeight="bold" fill="#111">Price/costs</text>
         <line x1="105" y1="635" x2="105" y2="84" stroke="#111" strokeWidth="3.2" markerEnd="url(#kdU)"/>
         <line x1="105" y1="635" x2="742" y2="635" stroke="#111" strokeWidth="3.2" markerEnd="url(#kdR)"/>

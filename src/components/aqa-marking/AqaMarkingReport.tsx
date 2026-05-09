@@ -78,7 +78,7 @@ export function AqaMarkingReport({
 
   const verified = latestVerifiedSeries();
   const paperBounds = verified ? proRataPaper(verified.boundaries, 80) : null;
-  const grade = paperBounds ? gradeFromMark(totalAwarded, paperBounds) : "—";
+  const grade = paperBounds ? gradeFromMark(totalAwarded, paperBounds) : "·";
 
   const kaae = useMemo(() => aggregateKaae(kaaeScores), [kaaeScores]);
   const radarData = (Object.keys(SKILL_LABEL) as Array<keyof typeof SKILL_LABEL>).map((k) => ({
@@ -87,7 +87,7 @@ export function AqaMarkingReport({
   }));
 
   const fmtDuration = (s?: number) => {
-    if (!s) return "—";
+    if (!s) return "·";
     const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60);
     return h > 0 ? `${h}h ${m}m` : `${m}m`;
   };
@@ -163,7 +163,7 @@ export function AqaMarkingReport({
       </div>
 
       <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-3 text-[11px] text-amber-200">
-        <strong>Indicative only</strong> — real grade boundaries apply across the full
+        <strong>Indicative only</strong> · real grade boundaries apply across the full
         qualification (all three papers combined), not a single paper.
       </div>
 
@@ -204,9 +204,9 @@ export function AqaMarkingReport({
                   </Badge>
                 </TableCell>
                 <TableCell className="text-xs">
-                  {q.levelReached ? `L${q.levelReached}` : "—"}
+                  {q.levelReached ? `L${q.levelReached}` : "·"}
                 </TableCell>
-                <TableCell className="text-xs text-muted-foreground">{q.notes || "—"}</TableCell>
+                <TableCell className="text-xs text-muted-foreground">{q.notes || "·"}</TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -246,7 +246,7 @@ export function AqaMarkingReport({
           </div>
           {weakTopics.length === 0 ? (
             <p className="text-xs text-muted-foreground">
-              No specific weak topics identified — keep practising mixed papers.
+              No specific weak topics identified · keep practising mixed papers.
             </p>
           ) : (
             <ul className="space-y-2">
