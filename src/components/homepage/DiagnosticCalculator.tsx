@@ -130,6 +130,8 @@ export default function DiagnosticCalculator() {
   const [a4Text, setA4Text] = useState("");
   const [a5Text, setA5Text] = useState("");
   const [a5HasDiagram, setA5HasDiagram] = useState<boolean | null>(null);
+  const [a5DiagramImage, setA5DiagramImage] = useState<string | null>(null); // base64 data URL
+  const [a5DiagramFileName, setA5DiagramFileName] = useState<string | null>(null);
 
   const [marking, setMarking] = useState(false);
   const [aiResults, setAiResults] = useState<AiItemResult[] | null>(null);
