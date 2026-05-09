@@ -92,48 +92,32 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <span className="text-2xl font-bold text-foreground tracking-tight">The GDP of Grades</span>
           </Link>
 
-          {/* Centre nav */}
-          <nav className="hidden md:flex items-center gap-4 lg:gap-6 mx-auto">
-            {isHomepage
-              ? navLinks.map((item, i) => (
-                  <motion.div
+          {/* Centre nav (non-homepage) */}
+          {!isHomepage && (
+            <nav className="hidden md:flex items-center gap-4 lg:gap-6 mx-auto">
+              {navLinks.map((item) => {
+                const isActive = location.pathname === item.to;
+                return (
+                  <Link
                     key={item.to}
-                    initial={{ opacity: 0, y: -4 }}
-                    animate={{ opacity: 0.55, y: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.6 + i * 0.05, ease: [0.25, 0.4, 0.25, 1] }}
+                    to={item.to}
+                    className={cn(
+                      "text-sm font-medium transition-colors relative",
+                      isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                    )}
                   >
-                    <Link
-                      to={item.to}
-                      className="text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
-                    >
-                      {item.label}
-                      <span className="absolute -bottom-1 left-0 w-full h-px bg-primary/70 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-                    </Link>
-                  </motion.div>
-                ))
-              : navLinks.map((item) => {
-                  const isActive = location.pathname === item.to;
-                  return (
-                    <Link
-                      key={item.to}
-                      to={item.to}
-                      className={cn(
-                        "text-sm font-medium transition-colors relative",
-                        isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                      )}
-                    >
-                      {item.label}
-                      {isActive && (
-                        <motion.span
-                          layoutId="nav-underline"
-                          className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full"
-                        />
-                      )}
-                    </Link>
-                  );
-                })}
-          </nav>
+                    {item.label}
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-underline"
+                        className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full"
+                      />
+                    )}
+                  </Link>
+                );
+              })}
+            </nav>
+          )}
 
           {/* Right side */}
           <div className="hidden lg:flex items-center gap-3">
