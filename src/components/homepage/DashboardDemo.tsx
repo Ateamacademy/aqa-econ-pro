@@ -86,27 +86,16 @@ function HeatCell({ value, label, delay, seed }: { value: number; label: string;
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-30px" });
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const params = useMemo(() => {
+  const shimmer = useMemo(() => {
     const rand = (n: number) => {
       const x = Math.sin(seed * 9301 + n * 49297) * 233280;
       return x - Math.floor(x);
     };
     return {
-      amp: 14 + rand(1) * 22,
-      phase: rand(2) * Math.PI * 2,
-      freq: 2 + rand(3) * 3,
-      scaleAmp: 0.04 + rand(4) * 0.06,
+      duration: 2.6 + rand(1) * 2.4,
+      delay: rand(2) * 3,
     };
   }, [seed]);
-
-  const yRaw = useTransform(scrollYProgress, (p) => Math.sin(p * Math.PI * params.freq + params.phase) * params.amp);
-  const scaleRaw = useTransform(scrollYProgress, (p) => 1 + Math.cos(p * Math.PI * params.freq + params.phase) * params.scaleAmp);
-  const y = useSpring(yRaw, { stiffness: 120, damping: 20, mass: 0.4 });
-  const scale = useSpring(scaleRaw, { stiffness: 120, damping: 20, mass: 0.4 });
 
   return (
     <motion.div
@@ -117,11 +106,28 @@ function HeatCell({ value, label, delay, seed }: { value: number; label: string;
       style={{
         background: `linear-gradient(135deg, hsl(var(--violet-pop) / ${value / 100 * 0.5 + 0.08}), hsl(var(--magenta-pop) / ${value / 100 * 0.4 + 0.05}))`,
         border: "1px solid hsl(var(--border))",
-        y,
-        scale,
       }}
-      className="relative h-12 rounded-lg flex flex-col items-center justify-center text-[9px] font-mono font-bold overflow-hidden group cursor-default will-change-transform"
+      className="relative h-12 rounded-lg flex flex-col items-center justify-center text-[9px] font-mono font-bold overflow-hidden group cursor-default will-change-[filter]"
     >
+      <motion.div
+        aria-hidden
+        className="absolute inset-0 rounded-lg pointer-events-none"
+        animate={inView ? {
+          opacity: [0, 0.9, 0],
+          boxShadow: [
+            "0 0 0px hsl(var(--magenta-pop) / 0)",
+            "0 0 18px hsl(var(--magenta-pop) / 0.7), inset 0 0 14px hsl(var(--violet-pop) / 0.45)",
+            "0 0 0px hsl(var(--magenta-pop) / 0)",
+          ],
+        } : {}}
+        transition={{
+          duration: shimmer.duration,
+          delay: shimmer.delay,
+          repeat: Infinity,
+          repeatDelay: 1.5 + shimmer.delay,
+          ease: "easeInOut",
+        }}
+      />
       <span className="text-foreground/90 font-bold">{value}%</span>
       <span className="text-[8px] text-muted-foreground/80 truncate max-w-full px-1">{label}</span>
     </motion.div>
