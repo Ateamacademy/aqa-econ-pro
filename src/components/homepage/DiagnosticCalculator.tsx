@@ -360,10 +360,10 @@ export default function DiagnosticCalculator() {
 
               <div className="mt-4 rounded-xl border border-border bg-popover/40 p-4">
                 <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">
-                  Diagram — upload your labour-market diagram
+                  Diagram — labour-market diagram for your essay
                 </p>
-                <div className="flex gap-2">
-                  {[{ label: "Yes — I'll upload it", val: true }, { label: "No diagram drawn", val: false }].map((opt) => (
+                <div className="flex gap-2 mb-3">
+                  {[{ label: "Yes — I'll add one", val: true }, { label: "No diagram", val: false }].map((opt) => (
                     <button
                       key={opt.label}
                       onClick={() => {
@@ -379,44 +379,21 @@ export default function DiagnosticCalculator() {
                 </div>
 
                 {a5HasDiagram === true && (
-                  <div className="mt-3">
-                    <label
-                      htmlFor="diagnostic-diagram-upload"
-                      className={cn(
-                        "flex flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed px-4 py-5 cursor-pointer transition-all",
-                        a5DiagramImage ? "border-primary/50 bg-primary/5" : "border-border hover:border-primary/40 bg-popover/40",
-                      )}
-                    >
-                      {a5DiagramImage ? (
-                        <>
-                          <img src={a5DiagramImage} alt="Your diagram" className="max-h-40 rounded-md border border-border object-contain" />
-                          <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
-                            <ImageIcon className="h-3.5 w-3.5" />
-                            <span className="truncate max-w-[200px]">{a5DiagramFileName}</span>
-                            <span className="text-primary underline">Replace</span>
-                          </div>
-                        </>
-                      ) : (
-                        <>
-                          <Upload className="h-5 w-5 text-muted-foreground" />
-                          <p className="text-xs font-semibold text-foreground">Upload diagram (PNG / JPG)</p>
-                          <p className="text-[10px] text-muted-foreground">Hand-drawn or digital — the examiner will verify it</p>
-                        </>
-                      )}
-                      <input
-                        id="diagnostic-diagram-upload"
-                        type="file"
-                        accept="image/*"
-                        className="hidden"
-                        onChange={(e) => handleDiagramFile(e.target.files?.[0] ?? null)}
-                      />
-                    </label>
-                  </div>
+                  <DiagramInput
+                    mode={a5DiagramMode}
+                    onModeChange={setA5DiagramMode}
+                    image={a5DiagramImage}
+                    fileName={a5DiagramFileName}
+                    onCanvasChange={(d) => { setA5DiagramImage(d); if (!d) setA5DiagramFileName(null); else setA5DiagramFileName("Drawn in browser"); }}
+                    onFile={handleQ5File}
+                    onClearImage={() => { setA5DiagramImage(null); setA5DiagramFileName(null); }}
+                    inputId="diagnostic-q5-diagram-upload"
+                  />
                 )}
 
                 {a5HasDiagram === true && !a5DiagramImage && (
                   <p className="text-[11px] text-warning mt-2 leading-relaxed">
-                    Upload an image of your diagram to unlock the full 15 marks.
+                    Add a diagram (draw or upload) to unlock the full 15 marks.
                   </p>
                 )}
                 {a5HasDiagram === false && (
@@ -435,7 +412,41 @@ export default function DiagnosticCalculator() {
             </motion.div>
           )}
 
-          {step === 5 && aiResults && (
+          {step === 5 && (
+            <motion.div key="q6" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
+              <QHeader num={6} marks={6} type="Diagram only" />
+              <p className="text-base text-foreground leading-relaxed mb-4">{Q6.prompt}</p>
+              <div className="rounded-xl border border-border bg-popover/40 p-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">
+                  Draw or upload — examiner marks the diagram itself
+                </p>
+                <DiagramInput
+                  mode={a6DiagramMode}
+                  onModeChange={setA6DiagramMode}
+                  image={a6DiagramImage}
+                  fileName={a6DiagramFileName}
+                  onCanvasChange={(d) => { setA6DiagramImage(d); if (!d) setA6DiagramFileName(null); else setA6DiagramFileName("Drawn in browser"); }}
+                  onFile={handleQ6File}
+                  onClearImage={() => { setA6DiagramImage(null); setA6DiagramFileName(null); }}
+                  inputId="diagnostic-q6-diagram-upload"
+                />
+                {!a6DiagramImage && (
+                  <p className="text-[11px] text-warning mt-2 leading-relaxed">
+                    No diagram submitted → 0 / 6 marks for this question.
+                  </p>
+                )}
+              </div>
+
+              {error && (
+                <div className="mt-4 rounded-lg border border-destructive/40 bg-destructive/10 p-3 text-xs text-destructive flex items-start gap-2">
+                  <X className="h-3.5 w-3.5 shrink-0 mt-0.5" />
+                  <span>{error}</span>
+                </div>
+              )}
+            </motion.div>
+          )}
+
+          {step === 6 && aiResults && (
             <motion.div key="results" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
               <Results
                 total={total}
@@ -446,6 +457,7 @@ export default function DiagnosticCalculator() {
                   { label: "Q3 · MCQ",            got: m3, of: 1 },
                   { label: "Q4 · 4-mark explain", got: m4, of: 4 },
                   { label: "Q5 · 15-mark essay",  got: m5, of: 15 },
+                  { label: "Q6 · Diagram only",   got: m6, of: 6 },
                 ]}
                 aiResults={aiResults}
               />
