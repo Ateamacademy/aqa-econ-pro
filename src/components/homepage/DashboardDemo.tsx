@@ -1,5 +1,5 @@
-import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { motion, useInView, useMotionValue, useTransform, animate, useScroll, useSpring } from "framer-motion";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { Flame, Trophy, TrendingUp, Target, Sparkles, Zap, CheckCircle2 } from "lucide-react";
 
 const ease = [0.25, 0.4, 0.25, 1] as [number, number, number, number];
@@ -82,20 +82,45 @@ function ReadinessRing({ value }: { value: number }) {
 }
 
 /* ── Animated bar (heatmap cell) ── */
-function HeatCell({ value, label, delay }: { value: number; label: string; delay: number }) {
+function HeatCell({ value, label, delay, seed }: { value: number; label: string; delay: number; seed: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-30px" });
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const params = useMemo(() => {
+    const rand = (n: number) => {
+      const x = Math.sin(seed * 9301 + n * 49297) * 233280;
+      return x - Math.floor(x);
+    };
+    return {
+      amp: 14 + rand(1) * 22,
+      phase: rand(2) * Math.PI * 2,
+      freq: 2 + rand(3) * 3,
+      scaleAmp: 0.04 + rand(4) * 0.06,
+    };
+  }, [seed]);
+
+  const yRaw = useTransform(scrollYProgress, (p) => Math.sin(p * Math.PI * params.freq + params.phase) * params.amp);
+  const scaleRaw = useTransform(scrollYProgress, (p) => 1 + Math.cos(p * Math.PI * params.freq + params.phase) * params.scaleAmp);
+  const y = useSpring(yRaw, { stiffness: 120, damping: 20, mass: 0.4 });
+  const scale = useSpring(scaleRaw, { stiffness: 120, damping: 20, mass: 0.4 });
+
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={inView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.4, delay, ease }}
-      className="relative h-12 rounded-lg flex flex-col items-center justify-center text-[9px] font-mono font-bold overflow-hidden group cursor-default"
       style={{
         background: `linear-gradient(135deg, hsl(var(--violet-pop) / ${value / 100 * 0.5 + 0.08}), hsl(var(--magenta-pop) / ${value / 100 * 0.4 + 0.05}))`,
         border: "1px solid hsl(var(--border))",
+        y,
+        scale,
       }}
+      className="relative h-12 rounded-lg flex flex-col items-center justify-center text-[9px] font-mono font-bold overflow-hidden group cursor-default will-change-transform"
     >
       <span className="text-foreground/90 font-bold">{value}%</span>
       <span className="text-[8px] text-muted-foreground/80 truncate max-w-full px-1">{label}</span>
@@ -315,7 +340,7 @@ export default function DashboardDemo() {
           </p>
           <div className="grid grid-cols-4 gap-1.5">
             {topics.map((t, i) => (
-              <HeatCell key={i} value={t.v} label={t.l} delay={0.05 * i} />
+              <HeatCell key={i} value={t.v} label={t.l} delay={0.05 * i} seed={i + 1} />
             ))}
           </div>
         </div>
