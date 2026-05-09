@@ -66,7 +66,6 @@ const testimonials = [
   { quote: "Finally a revision tool that actually feels like the real exam. The diagram practice is unreal.", name: "Sophie", detail: "A-Level Economics, OCR", rating: 4.5, avatar: studentSophie },
   { quote: "Got my predicted A* confirmed by mocks. The topic heatmap told me exactly what to revise.", name: "Omar", detail: "A-Level Economics, Edexcel", rating: 5, avatar: studentOmar },
 ];
-];
 
 const freeFeatures = [
   "3 Predicted Papers / month",
