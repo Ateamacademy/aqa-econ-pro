@@ -49,6 +49,23 @@ export default function Auth() {
     }
   }, []);
 
+  const handleAppleLogin = useCallback(async () => {
+    setAppleLoading(true);
+    try {
+      const { error } = await lovable.auth.signInWithOAuth("apple", {
+        redirect_uri: window.location.origin,
+      });
+      if (error) {
+        toast.error("Apple sign-in failed. Please try again.");
+        console.error("Apple OAuth error:", error);
+      }
+    } catch (e) {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setAppleLoading(false);
+    }
+  }, []);
+
   const handleResendConfirmation = useCallback(async (targetEmail?: string) => {
     const trimmedEmail = (targetEmail ?? email).trim();
     if (!trimmedEmail) {
