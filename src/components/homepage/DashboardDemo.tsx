@@ -146,8 +146,21 @@ function GrowthChart() {
     { v: 74, g: "A" },
     { v: 86, g: "A*" },
   ];
+
+  const pts = data.map((d, i) => ({
+    x: (i + 0.5) * (100 / data.length),
+    y: 100 - d.v,
+  }));
+  const path = pts.reduce((acc, p, i) => {
+    if (i === 0) return `M ${p.x} ${p.y}`;
+    const prev = pts[i - 1];
+    const cx = prev.x + (p.x - prev.x) * 0.5;
+    return `${acc} C ${cx} ${prev.y}, ${cx} ${p.y}, ${p.x} ${p.y}`;
+  }, "");
+  const last = pts[pts.length - 1];
+
   return (
-    <div ref={ref} className="h-20 flex items-end gap-1.5">
+    <div ref={ref} className="h-20 flex items-end gap-1.5 relative">
       {data.map((d, i) => (
         <motion.div
           key={i}
@@ -162,7 +175,7 @@ function GrowthChart() {
               background:
                 i === data.length - 1
                   ? "linear-gradient(180deg, hsl(var(--magenta-pop)), hsl(var(--violet-pop)))"
-                  : "linear-gradient(180deg, hsl(var(--violet-pop) / 0.7), hsl(var(--primary) / 0.4))",
+                  : "linear-gradient(180deg, hsl(var(--violet-pop) / 0.4), hsl(var(--primary) / 0.2))",
               boxShadow: i === data.length - 1 ? "0 0 14px hsl(var(--magenta-pop) / 0.6)" : "none",
             }}
             initial={{ height: 0 }}
@@ -172,6 +185,55 @@ function GrowthChart() {
           <span className="text-[9px] font-mono font-bold text-muted-foreground">{d.g}</span>
         </motion.div>
       ))}
+
+      {/* Trajectory curve overlay */}
+      <svg
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        className="absolute inset-x-0 top-0 h-[calc(100%-1.25rem)] w-full pointer-events-none overflow-visible"
+      >
+        <defs>
+          <linearGradient id="trajGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="hsl(var(--cyan-pop))" stopOpacity="0.6" />
+            <stop offset="60%" stopColor="hsl(var(--violet-pop))" />
+            <stop offset="100%" stopColor="hsl(var(--magenta-pop))" />
+          </linearGradient>
+          <linearGradient id="trajFill" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="hsl(var(--magenta-pop) / 0.22)" />
+            <stop offset="100%" stopColor="hsl(var(--magenta-pop) / 0)" />
+          </linearGradient>
+        </defs>
+        <motion.path
+          d={`${path} L ${last.x} 100 L ${pts[0].x} 100 Z`}
+          fill="url(#trajFill)"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.9, ease }}
+        />
+        <motion.path
+          d={path}
+          fill="none"
+          stroke="url(#trajGrad)"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          vectorEffect="non-scaling-stroke"
+          style={{ filter: "drop-shadow(0 0 6px hsl(var(--magenta-pop) / 0.6))" }}
+          initial={{ pathLength: 0 }}
+          animate={inView ? { pathLength: 1 } : {}}
+          transition={{ duration: 1.6, delay: 0.4, ease }}
+        />
+        <motion.circle
+          cx={last.x}
+          cy={last.y}
+          r="2.4"
+          fill="hsl(var(--magenta-pop))"
+          style={{ filter: "drop-shadow(0 0 6px hsl(var(--magenta-pop)))" }}
+          initial={{ scale: 0, opacity: 0 }}
+          animate={inView ? { scale: [0, 1.5, 1], opacity: 1 } : {}}
+          transition={{ duration: 0.7, delay: 1.9, ease }}
+        />
+      </svg>
     </div>
   );
 }
