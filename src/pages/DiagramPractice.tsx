@@ -903,7 +903,7 @@ export default function DiagramPractice() {
     return (
       <div className="container py-16 max-w-3xl text-center">
         <Lock className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-        <h1 className="font-serif text-3xl mb-3">Sign in to practice diagrams</h1>
+        <h1 className="text-2xl font-bold text-foreground tracking-tight mb-3">Sign in to practice diagrams</h1>
         <Button onClick={() => navigate("/auth")}>Sign In</Button>
       </div>
     );
