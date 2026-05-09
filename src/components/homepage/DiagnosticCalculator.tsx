@@ -163,8 +163,29 @@ export default function DiagnosticCalculator() {
   const reset = () => {
     setStep(0); setA1(""); setA2(null); setA3(null);
     setA4Text(""); setA5Text(""); setA5HasDiagram(null);
+    setA5DiagramImage(null); setA5DiagramFileName(null);
     setAiResults(null); setError(null);
   };
+
+  async function handleDiagramFile(file: File | null) {
+    if (!file) return;
+    if (!file.type.startsWith("image/")) {
+      toast.error("Please upload an image file (PNG / JPG).");
+      return;
+    }
+    if (file.size > 6 * 1024 * 1024) {
+      toast.error("Image too large — please keep it under 6 MB.");
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = () => {
+      setA5DiagramImage(typeof reader.result === "string" ? reader.result : null);
+      setA5DiagramFileName(file.name);
+      setA5HasDiagram(true);
+    };
+    reader.onerror = () => toast.error("Couldn't read that image — try another file.");
+    reader.readAsDataURL(file);
+  }
 
   async function submitForMarking() {
     setMarking(true); setError(null);
