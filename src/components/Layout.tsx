@@ -215,18 +215,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {isHomepage && (
           <div
             className={cn(
-              "hidden md:block overflow-hidden transition-all duration-700 ease-out",
+              "overflow-hidden transition-all duration-700 ease-out",
               menuRevealed
-                ? "max-h-16 opacity-100 pointer-events-auto"
+                ? "max-h-20 opacity-100 pointer-events-auto"
                 : "max-h-0 opacity-0 pointer-events-none"
             )}
           >
-            <nav className="max-w-[1280px] mx-auto flex items-center justify-center gap-8 lg:gap-10 px-5 lg:px-6 pb-3">
+            <nav className="max-w-[1280px] mx-auto flex items-center md:justify-center gap-5 md:gap-8 lg:gap-10 px-4 md:px-5 lg:px-6 pb-3 overflow-x-auto whitespace-nowrap scrollbar-hide">
               {navLinks.map((item) => (
                 <Link
                   key={item.to}
                   to={item.to}
-                  className="text-[11px] uppercase tracking-[0.18em] font-medium text-muted-foreground/50 hover:text-foreground transition-colors relative group/link"
+                  className="text-[10px] md:text-[11px] uppercase tracking-[0.16em] md:tracking-[0.18em] font-medium text-muted-foreground/60 md:text-muted-foreground/50 hover:text-foreground transition-colors relative group/link shrink-0"
                 >
                   {item.label}
                   <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-px bg-primary/70 group-hover/link:w-full transition-all duration-300" />
