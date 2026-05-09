@@ -59,9 +59,13 @@ const steps = [
 ];
 
 const testimonials = [
-  { quote: "I went from a C to an A* in 6 weeks. The predicted papers were almost identical to the real thing.", name: "Maya", detail: "A-Level Economics, Edexcel" },
-  { quote: "The tutor explained diagrams better than my actual teacher. Worth every penny.", name: "James", detail: "GCSE Economics, AQA" },
-  { quote: "I used Econ Rev every day for 3 months. My predicted grade went from a 5 to an 8.", name: "Priya", detail: "GCSE Economics, OCR" },
+  { quote: "I went from a C to an A* in 6 weeks. The predicted papers were almost identical to the real thing.", name: "Maya", detail: "A-Level Economics, Edexcel", rating: 5, avatar: studentMaya },
+  { quote: "The tutor explained diagrams better than my actual teacher. Worth every penny.", name: "James", detail: "GCSE Economics, AQA", rating: 5, avatar: studentJames },
+  { quote: "I used Econ Rev every day for 3 months. My predicted grade went from a 5 to an 8.", name: "Priya", detail: "GCSE Economics, OCR", rating: 4.5, avatar: studentPriya },
+  { quote: "The instant marking caught mistakes I never would have noticed. My evaluation skills doubled overnight.", name: "Daniel", detail: "A-Level Economics, AQA", rating: 5, avatar: studentDaniel },
+  { quote: "Finally a revision tool that actually feels like the real exam. The diagram practice is unreal.", name: "Sophie", detail: "A-Level Economics, OCR", rating: 4.5, avatar: studentSophie },
+  { quote: "Got my predicted A* confirmed by mocks. The topic heatmap told me exactly what to revise.", name: "Omar", detail: "A-Level Economics, Edexcel", rating: 5, avatar: studentOmar },
+];
 ];
 
 const freeFeatures = [
