@@ -297,7 +297,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         )}
       </header>
 
-      <main className="flex-1 pt-16">{children}</main>
+      <main className="flex-1 pt-16 md:pt-24">{children}</main>
 
       {/* Footer */}
       <footer className="bg-background border-t border-border">
