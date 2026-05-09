@@ -90,41 +90,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="max-w-[1280px] mx-auto flex h-24 items-center justify-between px-5 lg:px-6">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 shrink-0 mr-8">
-            <div className="relative h-20 w-20 rounded-full bg-white p-0.5 ring-2 ring-primary/60 shadow-[0_0_32px_rgba(99,102,241,0.6)]">
+            <div className="h-20 w-20 rounded-full bg-white p-0.5 ring-2 ring-primary/60 shadow-[0_0_32px_rgba(99,102,241,0.6)]">
               <img
                 src={econRevLogo}
                 alt="Econ Rev logo"
                 className="h-full w-full rounded-full object-cover"
-              />
-              {/* Electric neon glow on the arrow tip */}
-              <span
-                aria-hidden
-                className="pointer-events-none absolute rounded-full animate-neon-flicker"
-                style={{
-                  top: "38%",
-                  left: "70%",
-                  width: "14px",
-                  height: "14px",
-                  transform: "translate(-50%, -50%)",
-                  background:
-                    "radial-gradient(circle, rgba(125,211,252,0.95) 0%, rgba(56,189,248,0.55) 40%, rgba(56,189,248,0) 70%)",
-                  filter: "blur(0.5px)",
-                  mixBlendMode: "screen",
-                }}
-              />
-              <span
-                aria-hidden
-                className="pointer-events-none absolute rounded-full animate-neon-flicker"
-                style={{
-                  top: "38%",
-                  left: "70%",
-                  width: "4px",
-                  height: "4px",
-                  transform: "translate(-50%, -50%)",
-                  background: "#ffffff",
-                  boxShadow:
-                    "0 0 6px #ffffff, 0 0 12px #38bdf8, 0 0 22px #38bdf8, 0 0 36px #0ea5e9",
-                }}
               />
             </div>
             <span className="text-2xl font-bold text-foreground tracking-tight">The GDP of Grades</span>
