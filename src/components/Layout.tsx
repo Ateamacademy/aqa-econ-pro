@@ -46,6 +46,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [boardOpen, setBoardOpen] = useState(false);
+  const [menuRevealed, setMenuRevealed] = useState(false);
   const boardRef = useRef<HTMLDivElement>(null);
   const { user, subscribed, signOut } = useAuth();
   const { subject, setSubject } = useSubject();
