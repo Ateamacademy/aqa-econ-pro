@@ -203,7 +203,25 @@ export default function DiagnosticCalculator() {
   const stepLabels = ["Calculation", "MCQ 1", "MCQ 2", "Short answer", "Essay + diagram"];
 
   return (
-    <div className="rounded-2xl border border-border bg-card overflow-hidden">
+    <>
+      {/* Exam board picker — sits above the calculator card */}
+      <div className="mb-5 flex flex-col items-center text-center">
+        <label className="text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground block mb-2">
+          Pick your exam board
+        </label>
+        <select
+          value={board}
+          onChange={(e) => setBoard(e.target.value as Board)}
+          disabled={step > 0 && step < 5}
+          className="h-11 rounded-md border border-border bg-background px-4 text-sm font-medium text-foreground disabled:opacity-60 min-w-[260px]"
+        >
+          {BOARD_OPTIONS.map((o) => (
+            <option key={o.value} value={o.value}>{o.label}</option>
+          ))}
+        </select>
+      </div>
+
+      <div className="rounded-2xl border border-border bg-card overflow-hidden">
       {/* Header */}
       <div className="p-6 lg:p-8 border-b border-border bg-gradient-to-br from-primary/10 via-card to-card">
         <div className="flex items-start gap-4">
@@ -217,25 +235,9 @@ export default function DiagnosticCalculator() {
             <h3 className="text-xl lg:text-2xl font-extrabold tracking-tight text-foreground">
               Diagnostic Grade Calculator
             </h3>
-            <div className="mt-3">
-              <label className="text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground block mb-1.5">
-                Pick your exam board
-              </label>
-              <select
-                value={board}
-                onChange={(e) => setBoard(e.target.value as Board)}
-                disabled={step > 0 && step < 5}
-                className="w-full sm:w-auto h-10 rounded-md border border-border bg-background px-3 text-sm font-medium text-foreground disabled:opacity-60"
-              >
-                {BOARD_OPTIONS.map((o) => (
-                  <option key={o.value} value={o.value}>{o.label}</option>
-                ))}
-              </select>
-            </div>
             <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
               Five questions across the full skill range. Your written answers are marked using your exam board's official mark scheme. We'll predict your current grade based on your total marks (out of {TOTAL}).
             </p>
-
           </div>
         </div>
 
@@ -370,7 +372,8 @@ export default function DiagnosticCalculator() {
           </>
         )}
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 
