@@ -255,13 +255,14 @@ export default function Index() {
                 Right Now?
               </span>
             </h1>
-            <div className="flex items-center justify-center gap-2 mt-2">
+            <div className="flex items-center justify-center gap-2 mt-4">
               <span
-                className="inline-block text-3xl md:text-4xl text-amber-300 animate-pulse"
+                className="inline-block text-5xl md:text-6xl lg:text-7xl text-amber-300 animate-pulse"
                 style={{
-                  fontFamily: "'Caveat','Comic Sans MS',cursive",
-                  transform: "rotate(-6deg)",
-                  textShadow: "0 2px 12px rgba(251,191,36,0.45)",
+                  fontFamily: "'Permanent Marker','Patrick Hand','Marker Felt','Bradley Hand',cursive",
+                  transform: "rotate(-7deg)",
+                  textShadow: "0 3px 18px rgba(251,191,36,0.55)",
+                  letterSpacing: "0.02em",
                 }}
               >
                 Try it ↓
