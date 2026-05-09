@@ -143,6 +143,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     </motion.div>
                   )}
                 </AnimatePresence>
+                </div>
               </div>
             )}
             {isHomepage ? (
