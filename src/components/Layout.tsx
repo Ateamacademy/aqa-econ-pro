@@ -16,7 +16,7 @@ const navLinks = [
   { to: "/diagram-practice", label: "Diagrams" },
   { to: "/predicted", label: "Predicted Papers" },
   { to: "/papers", label: "Papers" },
-  { to: "/history", label: "History" },
+  { to: "/dashboard", label: "Dashboard" },
   { to: "/dashboard", label: "Dashboard" },
 ];
 
