@@ -18,6 +18,7 @@ interface DiagnosticItem {
   totalMarks: number;
   answer: string;
   hasDiagram?: boolean; // q5 only
+  diagramImage?: string; // q5 only — base64 data URL
   rubric: string;
 }
 
