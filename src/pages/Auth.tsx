@@ -259,10 +259,10 @@ export default function Auth() {
           >
             {/* Mobile logo */}
             <div className="lg:hidden flex items-center justify-center gap-2.5 mb-8">
-              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-indigo-bright to-primary flex items-center justify-center shadow-lg shadow-primary/30">
-                <BarChart3 className="h-5 w-5 text-white" />
+              <div className="h-12 w-12 rounded-full bg-white p-0.5 ring-2 ring-primary/60 shadow-[0_0_24px_rgba(99,102,241,0.55)]">
+                <img src={econRevLogo} alt="Econ Rev logo" className="h-full w-full rounded-full object-cover" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-indigo-bright to-primary bg-clip-text text-transparent">
+              <span className="text-xl font-bold text-foreground tracking-tight">
                 Econ Rev
               </span>
             </div>
