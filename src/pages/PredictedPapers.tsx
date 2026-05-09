@@ -2295,8 +2295,16 @@ Do NOT include any other headings, preamble, or commentary outside these three s
             <span className="inline-flex items-center gap-1.5 text-xs font-medium bg-card/80 backdrop-blur-sm text-muted-foreground rounded-full px-4 py-1.5 mb-6 border border-border/60">
               <FileText className="h-3.5 w-3.5 text-primary" /> {examBoard} {level} {subjectLabel}
             </span>
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-5 bg-gradient-to-b from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent">
-              Predicted Papers
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-[-0.03em] leading-[1.05] mb-5">
+              <span
+                className="inline-block bg-clip-text text-transparent animate-shimmer pb-2 leading-[1.15]"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(90deg, hsl(var(--magenta-pop)), hsl(var(--violet-pop)), hsl(var(--cyan-pop)), hsl(var(--amber-pop)), hsl(var(--magenta-pop)))",
+                }}
+              >
+                Predicted Papers
+              </span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
               {libraryPapers.length} expertly crafted papers ready to practice.
