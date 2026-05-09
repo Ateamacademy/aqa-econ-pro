@@ -187,30 +187,39 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </button>
         </div>
 
-        {/* Homepage hover-revealed app menu (sub-row) */}
-        {isHomepage && (
-          <div
-            className={cn(
-              "overflow-hidden transition-all duration-700 ease-out",
-              menuRevealed
-                ? "max-h-20 opacity-100 pointer-events-auto"
-                : "max-h-0 opacity-0 pointer-events-none"
-            )}
-          >
-            <nav className="max-w-[1280px] mx-auto flex items-center md:justify-center gap-5 md:gap-8 lg:gap-10 px-4 md:px-5 lg:px-6 pb-3 overflow-x-auto whitespace-nowrap scrollbar-hide">
-              {navLinks.map((item) => (
+        {/* Unified app menu sub-row (all pages) */}
+        <div
+          className={cn(
+            "overflow-hidden transition-all duration-700 ease-out",
+            menuRevealed
+              ? "max-h-20 opacity-100 pointer-events-auto"
+              : "max-h-0 opacity-0 pointer-events-none"
+          )}
+        >
+          <nav className="max-w-[1280px] mx-auto flex items-center md:justify-center gap-5 md:gap-8 lg:gap-10 px-4 md:px-5 lg:px-6 pb-3 overflow-x-auto whitespace-nowrap scrollbar-hide">
+            {navLinks.map((item) => {
+              const isActive = location.pathname === item.to;
+              return (
                 <Link
                   key={item.to}
                   to={item.to}
-                  className="text-[10px] md:text-[11px] uppercase tracking-[0.16em] md:tracking-[0.18em] font-medium text-muted-foreground/60 md:text-muted-foreground/50 hover:text-foreground transition-colors relative group/link shrink-0"
+                  className={cn(
+                    "text-[10px] md:text-[11px] uppercase tracking-[0.16em] md:tracking-[0.18em] font-medium transition-colors relative group/link shrink-0",
+                    isActive
+                      ? "text-foreground"
+                      : "text-muted-foreground/60 md:text-muted-foreground/50 hover:text-foreground"
+                  )}
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-px bg-primary/70 group-hover/link:w-full transition-all duration-300" />
+                  <span className={cn(
+                    "absolute -bottom-1 left-1/2 -translate-x-1/2 h-px bg-primary/70 transition-all duration-300",
+                    isActive ? "w-full" : "w-0 group-hover/link:w-full"
+                  )} />
                 </Link>
-              ))}
-            </nav>
-          </div>
-        )}
+              );
+            })}
+          </nav>
+        </div>
 
 
         {/* Mobile menu */}
