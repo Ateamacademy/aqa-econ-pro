@@ -8,10 +8,7 @@ import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import DrawingCanvas from "./DrawingCanvas";
-
-type Board =
-  | "aqa" | "edexcel-a" | "edexcel-b" | "ocr" | "cambridge" | "ib"
-  | "wjec" | "eduqas" | "aqa-gcse" | "cambridge-igcse" | "edexcel-igcse" | "ocr-gcse";
+import { getDiagnosticSet, type Board } from "./diagnosticQuestions";
 
 const BOARD_OPTIONS: { value: Board; label: string }[] = [
   { value: "aqa", label: "AQA A-Level (7136)" },
