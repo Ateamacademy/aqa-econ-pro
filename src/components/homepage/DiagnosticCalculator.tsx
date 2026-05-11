@@ -87,6 +87,9 @@ export default function DiagnosticCalculator() {
   const [aiResults, setAiResults] = useState<AiItemResult[] | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  /* Board-specific question set */
+  const { q1: Q1, q2: Q2, q3: Q3, q4: Q4, q5: Q5, q6: Q6 } = useMemo(() => getDiagnosticSet(board), [board]);
+
   /* Auto marks */
   const m1 = useMemo(() => {
     const trimmed = a1.trim();
