@@ -4,8 +4,9 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PLAN, FREE_LIMITS } from "@/lib/plans";
-import { Check, Crown, Sparkles } from "lucide-react";
+import { Check, Crown, Sparkles, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { useEffect, useState } from "react";
 
 const freeFeatures = [
   `${FREE_LIMITS.predictedPapers} Predicted Papers / month`,
