@@ -110,7 +110,11 @@ export default function Pricing() {
         body: { priceId: PLAN.priceId },
       });
       if (error) throw error;
-      if (data?.url) window.open(data.url, "_blank");
+      if (!data?.url) throw new Error("Stripe did not return a checkout URL");
+      // Same-tab redirect so the post-checkout activation flow on /pricing runs reliably.
+      // Opening in a new tab causes popup blockers + tab confusion that prevented payments
+      // from being recorded against the user's account.
+      window.location.href = data.url;
     } catch (e: any) {
       toast.error(e.message || "Failed to start checkout");
     }
@@ -120,7 +124,8 @@ export default function Pricing() {
     try {
       const { data, error } = await supabase.functions.invoke("customer-portal");
       if (error) throw error;
-      if (data?.url) window.open(data.url, "_blank");
+      if (!data?.url) throw new Error("Stripe did not return a portal URL");
+      window.location.href = data.url;
     } catch (e: any) {
       toast.error(e.message || "Failed to open subscription management");
     }
