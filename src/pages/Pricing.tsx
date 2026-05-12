@@ -113,6 +113,35 @@ export default function Pricing() {
 
   return (
     <div className="container py-16 max-w-4xl">
+      {(activating || activationFailed) && !subscribed && (
+        <Card className="mb-8 border-accent">
+          <CardContent className="p-6 flex items-start gap-4">
+            {activating ? (
+              <Loader2 className="h-6 w-6 animate-spin text-accent shrink-0 mt-1" />
+            ) : (
+              <Sparkles className="h-6 w-6 text-accent shrink-0 mt-1" />
+            )}
+            <div className="flex-1">
+              <h2 className="text-lg font-bold mb-1">
+                {activating ? "Activating your Pro access…" : "Payment received · activation pending"}
+              </h2>
+              <p className="text-sm text-muted-foreground mb-3">
+                {activating
+                  ? "Stripe is confirming your payment. This usually takes 10–30 seconds."
+                  : "Your payment may still be processing. Click below to re-check, or contact support if it persists."}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <Button size="sm" onClick={handleRefresh}>Refresh access now</Button>
+                <Button size="sm" variant="outline" asChild>
+                  <a href="mailto:info@ateamacademy.co.uk?subject=Payment%20activation%20issue">
+                    Contact support
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      )}
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-3">
           Simple Pricing.<br />No Surprises.
