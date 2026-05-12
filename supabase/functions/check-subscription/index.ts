@@ -109,21 +109,50 @@ serve(async (req) => {
       apiVersion: "2025-08-27.basil",
     });
 
-    const customers = await stripe.customers.list({ email: user.email, limit: 1 });
+    // Try multiple email variants to defeat case/whitespace mismatches between
+    // Supabase auth and the email the user typed at Stripe checkout.
+    const rawEmail = user.email!;
+    const variants = Array.from(new Set([rawEmail, rawEmail.toLowerCase(), rawEmail.trim()]));
 
-    if (customers.data.length === 0) {
+    const customerLists = await Promise.all(
+      variants.map((e) => stripe.customers.list({ email: e, limit: 5 }).catch(() => ({ data: [] as any[] })))
+    );
+    const customers = Array.from(
+      new Map(customerLists.flatMap((c) => c.data).map((c: any) => [c.id, c])).values()
+    );
+
+    let hasPurchased = false;
+
+    // 1) Check checkout sessions per known customer.
+    for (const c of customers) {
+      const sessions = await stripe.checkout.sessions.list({
+        customer: (c as any).id,
+        status: "complete",
+        limit: 20,
+      });
+      if (sessions.data.some((s: { payment_status: string }) => s.payment_status === "paid")) {
+        hasPurchased = true;
+        break;
+      }
+    }
+
+    // 2) Fallback: search recent paid sessions by customer_details.email
+    //    (covers guest checkouts where no customer record was reused).
+    if (!hasPurchased) {
+      try {
+        const paid = await stripe.checkout.sessions.list({ limit: 100, status: "complete" });
+        hasPurchased = paid.data.some((s: any) => {
+          const detailsEmail = (s.customer_details?.email || s.customer_email || "").toLowerCase();
+          return s.payment_status === "paid" && detailsEmail === email;
+        });
+      } catch (_) { /* ignore */ }
+    }
+
+    if (!hasPurchased && customers.length === 0) {
       const result = { subscribed: false, subscription_end: null };
       cache.set(email, { result, ts: Date.now() });
       return respond(result);
     }
-
-    const sessions = await stripe.checkout.sessions.list({
-      customer: customers.data[0].id,
-      status: "complete",
-      limit: 10,
-    });
-
-    const hasPurchased = sessions.data.some((s: { payment_status: string }) => s.payment_status === "paid");
 
     const result = {
       subscribed: hasPurchased,
