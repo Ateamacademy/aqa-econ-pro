@@ -31,6 +31,8 @@ const proFeatures = [
 export default function Pricing() {
   const { user, subscribed, refreshSubscription } = useAuth();
   const navigate = useNavigate();
+  const [activating, setActivating] = useState(false);
+  const [activationFailed, setActivationFailed] = useState(false);
 
   const handleRefresh = async () => {
     const t = toast.loading("Checking your payment…");
@@ -41,6 +43,50 @@ export default function Pricing() {
       toast.error("Could not refresh · please try again in a moment", { id: t });
     }
   };
+
+  // Post-checkout activation: poll subscription status until it flips to subscribed.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("checkout") !== "success") return;
+
+    // Clean URL so refreshes don't re-trigger.
+    const url = new URL(window.location.href);
+    url.searchParams.delete("checkout");
+    url.searchParams.delete("session_id");
+    window.history.replaceState({}, "", url.toString());
+
+    if (subscribed) return;
+    setActivating(true);
+    setActivationFailed(false);
+
+    let cancelled = false;
+    let attempts = 0;
+    const maxAttempts = 12; // ~36s total
+    const tick = async () => {
+      if (cancelled) return;
+      attempts += 1;
+      try { await refreshSubscription(true); } catch (_) {}
+      if (cancelled) return;
+      if (attempts >= maxAttempts) {
+        setActivating(false);
+        setActivationFailed(true);
+        return;
+      }
+      setTimeout(tick, 3000);
+    };
+    tick();
+    return () => { cancelled = true; };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Stop polling state once subscription becomes active.
+  useEffect(() => {
+    if (subscribed && activating) {
+      setActivating(false);
+      setActivationFailed(false);
+      toast.success("Pro access activated!");
+    }
+  }, [subscribed, activating]);
 
   const handleCheckout = async () => {
     if (!user) { navigate("/auth"); return; }
