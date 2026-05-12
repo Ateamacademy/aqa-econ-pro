@@ -87,6 +87,26 @@ serve(async (req) => {
       return respond({ subscribed: false, expired: true });
     }
 
+    // Persistent paid_users table — set by verify-checkout right after Stripe redirect.
+    // This is the most reliable path: no Stripe API call, no email-match guesswork.
+    try {
+      const { data: paidRow } = await supabaseClient
+        .from("paid_users")
+        .select("expires_at")
+        .ilike("email", email)
+        .gt("expires_at", new Date().toISOString())
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      if (paidRow) {
+        const result = { subscribed: true, subscription_end: paidRow.expires_at, source: "db" };
+        cache.set(email, { result, ts: Date.now() });
+        return respond(result);
+      }
+    } catch (e) {
+      console.error("paid_users lookup failed:", e);
+    }
+
     if (!force) {
       const cached = cache.get(email);
       if (cached && Date.now() - cached.ts < CACHE_TTL_MS) {
