@@ -4,8 +4,9 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PLAN, FREE_LIMITS } from "@/lib/plans";
-import { Check, Crown, Sparkles } from "lucide-react";
+import { Check, Crown, Sparkles, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { useEffect, useState } from "react";
 
 const freeFeatures = [
   `${FREE_LIMITS.predictedPapers} Predicted Papers / month`,
@@ -30,6 +31,8 @@ const proFeatures = [
 export default function Pricing() {
   const { user, subscribed, refreshSubscription } = useAuth();
   const navigate = useNavigate();
+  const [activating, setActivating] = useState(false);
+  const [activationFailed, setActivationFailed] = useState(false);
 
   const handleRefresh = async () => {
     const t = toast.loading("Checking your payment…");
@@ -40,6 +43,50 @@ export default function Pricing() {
       toast.error("Could not refresh · please try again in a moment", { id: t });
     }
   };
+
+  // Post-checkout activation: poll subscription status until it flips to subscribed.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("checkout") !== "success") return;
+
+    // Clean URL so refreshes don't re-trigger.
+    const url = new URL(window.location.href);
+    url.searchParams.delete("checkout");
+    url.searchParams.delete("session_id");
+    window.history.replaceState({}, "", url.toString());
+
+    if (subscribed) return;
+    setActivating(true);
+    setActivationFailed(false);
+
+    let cancelled = false;
+    let attempts = 0;
+    const maxAttempts = 12; // ~36s total
+    const tick = async () => {
+      if (cancelled) return;
+      attempts += 1;
+      try { await refreshSubscription(true); } catch (_) {}
+      if (cancelled) return;
+      if (attempts >= maxAttempts) {
+        setActivating(false);
+        setActivationFailed(true);
+        return;
+      }
+      setTimeout(tick, 3000);
+    };
+    tick();
+    return () => { cancelled = true; };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Stop polling state once subscription becomes active.
+  useEffect(() => {
+    if (subscribed && activating) {
+      setActivating(false);
+      setActivationFailed(false);
+      toast.success("Pro access activated!");
+    }
+  }, [subscribed, activating]);
 
   const handleCheckout = async () => {
     if (!user) { navigate("/auth"); return; }
@@ -66,6 +113,35 @@ export default function Pricing() {
 
   return (
     <div className="container py-16 max-w-4xl">
+      {(activating || activationFailed) && !subscribed && (
+        <Card className="mb-8 border-accent">
+          <CardContent className="p-6 flex items-start gap-4">
+            {activating ? (
+              <Loader2 className="h-6 w-6 animate-spin text-accent shrink-0 mt-1" />
+            ) : (
+              <Sparkles className="h-6 w-6 text-accent shrink-0 mt-1" />
+            )}
+            <div className="flex-1">
+              <h2 className="text-lg font-bold mb-1">
+                {activating ? "Activating your Pro access…" : "Payment received · activation pending"}
+              </h2>
+              <p className="text-sm text-muted-foreground mb-3">
+                {activating
+                  ? "Stripe is confirming your payment. This usually takes 10–30 seconds."
+                  : "Your payment may still be processing. Click below to re-check, or contact support if it persists."}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <Button size="sm" onClick={handleRefresh}>Refresh access now</Button>
+                <Button size="sm" variant="outline" asChild>
+                  <a href="mailto:info@ateamacademy.co.uk?subject=Payment%20activation%20issue">
+                    Contact support
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      )}
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-3">
           Simple Pricing.<br />No Surprises.

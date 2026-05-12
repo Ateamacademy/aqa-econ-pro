@@ -22,20 +22,21 @@ serve(async (req) => {
     const user = data.user;
     if (!user?.email) throw new Error("User not authenticated");
 
+    const email = user.email.toLowerCase().trim();
     const { priceId } = await req.json();
     const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", { apiVersion: "2025-08-27.basil" });
 
-    const customers = await stripe.customers.list({ email: user.email, limit: 1 });
+    const customers = await stripe.customers.list({ email, limit: 1 });
     let customerId;
     if (customers.data.length > 0) customerId = customers.data[0].id;
 
     const origin = req.headers.get("origin") || "http://localhost:3000";
     const session = await stripe.checkout.sessions.create({
       customer: customerId,
-      customer_email: customerId ? undefined : user.email,
+      customer_email: customerId ? undefined : email,
       line_items: [{ price: priceId, quantity: 1 }],
       mode: "payment",
-      success_url: `${origin}/?checkout=success`,
+      success_url: `${origin}/pricing?checkout=success&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/pricing`,
     });
 
