@@ -455,6 +455,39 @@ export type Database = {
         }
         Relationships: []
       }
+      paid_users: {
+        Row: {
+          amount_paid: number | null
+          created_at: string
+          currency: string | null
+          email: string
+          expires_at: string
+          id: string
+          stripe_customer_id: string | null
+          stripe_session_id: string | null
+        }
+        Insert: {
+          amount_paid?: number | null
+          created_at?: string
+          currency?: string | null
+          email: string
+          expires_at: string
+          id?: string
+          stripe_customer_id?: string | null
+          stripe_session_id?: string | null
+        }
+        Update: {
+          amount_paid?: number | null
+          created_at?: string
+          currency?: string | null
+          email?: string
+          expires_at?: string
+          id?: string
+          stripe_customer_id?: string | null
+          stripe_session_id?: string | null
+        }
+        Relationships: []
+      }
       parent_links: {
         Row: {
           accepted_at: string | null
