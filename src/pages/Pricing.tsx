@@ -44,10 +44,11 @@ export default function Pricing() {
     }
   };
 
-  // Post-checkout activation: poll subscription status until it flips to subscribed.
+  // Post-checkout activation: verify the session immediately, then poll until subscribed.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.get("checkout") !== "success") return;
+    const sessionId = params.get("session_id");
 
     // Clean URL so refreshes don't re-trigger.
     const url = new URL(window.location.href);
@@ -60,21 +61,35 @@ export default function Pricing() {
     setActivationFailed(false);
 
     let cancelled = false;
-    let attempts = 0;
-    const maxAttempts = 12; // ~36s total
-    const tick = async () => {
-      if (cancelled) return;
-      attempts += 1;
-      try { await refreshSubscription(true); } catch (_) {}
-      if (cancelled) return;
-      if (attempts >= maxAttempts) {
-        setActivating(false);
-        setActivationFailed(true);
-        return;
+
+    (async () => {
+      // 1) Authoritative verification via Stripe session_id (no email guessing).
+      if (sessionId) {
+        try {
+          await supabase.functions.invoke("verify-checkout", { body: { sessionId } });
+        } catch (e) {
+          console.error("verify-checkout failed", e);
+        }
       }
-      setTimeout(tick, 3000);
-    };
-    tick();
+
+      // 2) Poll subscription status until it flips.
+      let attempts = 0;
+      const maxAttempts = 12; // ~36s total
+      const tick = async () => {
+        if (cancelled) return;
+        attempts += 1;
+        try { await refreshSubscription(true); } catch (_) {}
+        if (cancelled) return;
+        if (attempts >= maxAttempts) {
+          setActivating(false);
+          setActivationFailed(true);
+          return;
+        }
+        setTimeout(tick, 3000);
+      };
+      tick();
+    })();
+
     return () => { cancelled = true; };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
