@@ -6,7 +6,7 @@ import { toast } from "@/hooks/use-toast";
 import { MessageSquare, Loader2, Mail } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
-const SUPPORT_EMAIL = "support@econrev.co";
+const SUPPORT_EMAIL = "aminul.miah@ateamacademy.co.uk";
 
 export default function Contact() {
   const [name, setName] = useState("");

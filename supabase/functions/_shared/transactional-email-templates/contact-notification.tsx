@@ -32,7 +32,7 @@ export const template = {
   component: ContactNotification,
   subject: (d: Record<string, any>) =>
     `[Econ Rev] New contact from ${d?.name || d?.email || 'visitor'}`,
-  to: 'support@econrev.co',
+  to: 'aminul.miah@ateamacademy.co.uk',
   displayName: 'Contact form notification (admin)',
   previewData: { name: 'Jane', email: 'jane@example.com', message: 'Hi!' },
 } satisfies TemplateEntry
