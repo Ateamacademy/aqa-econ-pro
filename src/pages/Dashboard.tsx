@@ -30,6 +30,7 @@ import { cn } from "@/lib/utils";
 import { InviteParentModal } from "@/components/dashboard/InviteParentModal";
 import JoinClassCard from "@/components/dashboard/JoinClassCard";
 import PendingHomeworkCard from "@/components/dashboard/PendingHomeworkCard";
+import TeacherWorkspaceBanner from "@/components/dashboard/TeacherWorkspaceBanner";
 
 const sidebarNav = [
   { icon: LayoutDashboard, label: "Dashboard", to: "/dashboard", active: true },
@@ -175,6 +176,11 @@ export default function Dashboard() {
           animate="show"
           variants={{ show: { transition: { staggerChildren: 0.06 } } }}
         >
+          {/* Teacher workspace bridge (staff only) */}
+          <motion.div variants={fadeUp}>
+            <TeacherWorkspaceBanner />
+          </motion.div>
+
           {/* Join a class (teacher bridging) */}
           <motion.div variants={fadeUp}>
             <PendingHomeworkCard />
