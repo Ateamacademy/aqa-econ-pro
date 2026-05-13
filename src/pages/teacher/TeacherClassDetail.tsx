@@ -139,15 +139,23 @@ export default function TeacherClassDetail() {
           <h1 className="text-2xl font-bold tracking-tight text-foreground">{cls.name}</h1>
           <p className="text-sm text-muted-foreground mt-1">{cls.year_group} · {cls.subject} · {cls.exam_board} · {cls.ability_set}</p>
         </div>
-        <Card className="px-4 py-3">
-          <p className="text-[10px] uppercase tracking-wider text-muted-foreground">Join code</p>
-          <button
-            onClick={() => { navigator.clipboard.writeText(cls.join_code); toast({ title: "Copied" }); }}
-            className="font-mono text-lg font-bold text-foreground flex items-center gap-2"
-          >
-            {cls.join_code} <Copy className="h-3.5 w-3.5 text-muted-foreground" />
-          </button>
-        </Card>
+        <div className="flex items-center gap-2">
+          <Link to={`/teacher/classes/${classId}/homework`}>
+            <Button variant="outline" size="sm" className="gap-1.5"><FileText className="h-3.5 w-3.5" /> Homework</Button>
+          </Link>
+          <Link to={`/teacher/classes/${classId}/insights`}>
+            <Button variant="outline" size="sm" className="gap-1.5"><TrendingUp className="h-3.5 w-3.5" /> Insights</Button>
+          </Link>
+          <Card className="px-4 py-3">
+            <p className="text-[10px] uppercase tracking-wider text-muted-foreground">Join code</p>
+            <button
+              onClick={() => { navigator.clipboard.writeText(cls.join_code); toast({ title: "Copied" }); }}
+              className="font-mono text-lg font-bold text-foreground flex items-center gap-2"
+            >
+              {cls.join_code} <Copy className="h-3.5 w-3.5 text-muted-foreground" />
+            </button>
+          </Card>
+        </div>
       </div>
 
       {/* Add students */}
