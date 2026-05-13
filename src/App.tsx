@@ -77,6 +77,10 @@ const TeacherSubmissions = lazy(() => import("./pages/teacher/TeacherSubmissions
 const TeacherReports = lazy(() => import("./pages/teacher/TeacherReports"));
 const TeacherDepartment = lazy(() => import("./pages/teacher/TeacherDepartment"));
 const TeacherInterventions = lazy(() => import("./pages/teacher/TeacherInterventions"));
+const TeacherHomeworkAll = lazy(() => import("./pages/teacher/TeacherHomeworkAll"));
+const TeacherMarkingAll = lazy(() => import("./pages/teacher/TeacherMarkingAll"));
+const TeacherInsightsAll = lazy(() => import("./pages/teacher/TeacherInsightsAll"));
+const TeacherSettings = lazy(() => import("./pages/teacher/TeacherSettings"));
 const StudentHomeworkAttempt = lazy(() => import("./pages/StudentHomeworkAttempt"));
 const StudentHomeworkResult = lazy(() => import("./pages/StudentHomeworkResult"));
 
