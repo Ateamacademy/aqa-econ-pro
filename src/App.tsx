@@ -63,6 +63,7 @@ const AdminMarkingConventionVerification = lazy(() => import("./pages/AdminMarki
 const AdminQaTracker = lazy(() => import("./pages/AdminQaTracker"));
 const EdexcelMockPapersIndex = lazy(() => import("./pages/EdexcelMockPapersIndex"));
 const EdexcelMockPaperViewer = lazy(() => import("./pages/EdexcelMockPaperViewer"));
+const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -107,6 +108,7 @@ const App = () => (
               <Route path="/parent-dashboard" element={<ParentDashboard />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/unsubscribe" element={<Unsubscribe />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/blog" element={<Blog />} />
