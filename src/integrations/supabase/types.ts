@@ -1514,6 +1514,7 @@ export type Database = {
           student_id: string
         }[]
       }
+      get_department_overview: { Args: { _school_id: string }; Returns: Json }
       get_friend_scores: {
         Args: { requesting_user_id: string }
         Returns: {
@@ -1537,6 +1538,10 @@ export type Database = {
       }
       is_own_profile: { Args: { profile_user_id: string }; Returns: boolean }
       is_platform_admin: { Args: never; Returns: boolean }
+      is_school_hod: {
+        Args: { _school_id: string; _user_id: string }
+        Returns: boolean
+      }
       is_school_staff: { Args: { _user_id: string }; Returns: boolean }
       join_class_by_code: { Args: { _code: string }; Returns: string }
       move_to_dlq: {

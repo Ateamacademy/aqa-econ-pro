@@ -75,6 +75,7 @@ const TeacherHomework = lazy(() => import("./pages/teacher/TeacherHomework"));
 const TeacherInsights = lazy(() => import("./pages/teacher/TeacherInsights"));
 const TeacherSubmissions = lazy(() => import("./pages/teacher/TeacherSubmissions"));
 const TeacherReports = lazy(() => import("./pages/teacher/TeacherReports"));
+const TeacherDepartment = lazy(() => import("./pages/teacher/TeacherDepartment"));
 const StudentHomeworkAttempt = lazy(() => import("./pages/StudentHomeworkAttempt"));
 const StudentHomeworkResult = lazy(() => import("./pages/StudentHomeworkResult"));
 
@@ -169,6 +170,7 @@ const App = () => (
               <Route path="/teacher/homework" element={<TeacherGuard><TeacherStub title="Homework" description="Open a class to generate homework for it." /></TeacherGuard>} />
               <Route path="/teacher/marking" element={<TeacherGuard><TeacherStub title="Marking" description="Review submissions and approve grades." /></TeacherGuard>} />
               <Route path="/teacher/reports" element={<TeacherGuard><TeacherReports /></TeacherGuard>} />
+              <Route path="/teacher/department" element={<TeacherGuard><TeacherDepartment /></TeacherGuard>} />
               <Route path="/teacher/interventions" element={<TeacherGuard><TeacherStub title="Interventions" description="At-risk students and recommended actions." /></TeacherGuard>} />
               <Route path="/teacher/insights" element={<TeacherGuard><TeacherStub title="Insights" description="Cohort-level patterns and next best actions." /></TeacherGuard>} />
               <Route path="/teacher/settings" element={<TeacherGuard><TeacherStub title="Settings" description="School, invites, and billing." /></TeacherGuard>} />

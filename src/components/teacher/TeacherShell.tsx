@@ -2,14 +2,14 @@ import { ReactNode } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import {
   LayoutDashboard, Users, ClipboardList, CheckSquare, FileBarChart,
-  AlertTriangle, Sparkles, Settings, LogOut, GraduationCap,
+  AlertTriangle, Sparkles, Settings, LogOut, GraduationCap, Building2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/contexts/AuthContext";
 import { useUserRoles } from "@/hooks/useUserRoles";
 import { Button } from "@/components/ui/button";
 
-const nav = [
+const baseNav = [
   { to: "/teacher", label: "Dashboard", icon: LayoutDashboard, end: true },
   { to: "/teacher/classes", label: "Classes", icon: Users },
   { to: "/teacher/homework", label: "Homework", icon: ClipboardList },
@@ -17,14 +17,16 @@ const nav = [
   { to: "/teacher/reports", label: "Reports", icon: FileBarChart },
   { to: "/teacher/interventions", label: "Interventions", icon: AlertTriangle },
   { to: "/teacher/insights", label: "Insights", icon: Sparkles },
-  { to: "/teacher/settings", label: "Settings", icon: Settings },
 ];
+const hodNavItem = { to: "/teacher/department", label: "Department", icon: Building2 };
+const settingsNav = { to: "/teacher/settings", label: "Settings", icon: Settings };
 
 export default function TeacherShell({ children, schoolName }: { children: ReactNode; schoolName?: string | null }) {
   const { user, signOut } = useAuth();
-  const { roles } = useUserRoles();
+  const { roles, isHod } = useUserRoles();
   const navigate = useNavigate();
   const primaryRole = roles.find((r) => r !== "student") ?? "teacher";
+  const nav = [...baseNav, ...(isHod ? [hodNavItem] : []), settingsNav];
 
   return (
     <div className="min-h-screen flex bg-background dot-grid-bg">
@@ -46,7 +48,7 @@ export default function TeacherShell({ children, schoolName }: { children: React
             <NavLink
               key={item.to}
               to={item.to}
-              end={item.end}
+              end={(item as any).end}
               className={({ isActive }) =>
                 cn(
                   "flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
