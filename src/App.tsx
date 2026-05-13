@@ -77,6 +77,10 @@ const TeacherSubmissions = lazy(() => import("./pages/teacher/TeacherSubmissions
 const TeacherReports = lazy(() => import("./pages/teacher/TeacherReports"));
 const TeacherDepartment = lazy(() => import("./pages/teacher/TeacherDepartment"));
 const TeacherInterventions = lazy(() => import("./pages/teacher/TeacherInterventions"));
+const TeacherHomeworkAll = lazy(() => import("./pages/teacher/TeacherHomeworkAll"));
+const TeacherMarkingAll = lazy(() => import("./pages/teacher/TeacherMarkingAll"));
+const TeacherInsightsAll = lazy(() => import("./pages/teacher/TeacherInsightsAll"));
+const TeacherSettings = lazy(() => import("./pages/teacher/TeacherSettings"));
 const StudentHomeworkAttempt = lazy(() => import("./pages/StudentHomeworkAttempt"));
 const StudentHomeworkResult = lazy(() => import("./pages/StudentHomeworkResult"));
 
@@ -168,13 +172,14 @@ const App = () => (
               <Route path="/teacher/classes/:classId/insights" element={<TeacherGuard><TeacherInsights /></TeacherGuard>} />
               <Route path="/homework/:assignmentId" element={<StudentHomeworkAttempt />} />
               <Route path="/homework/:assignmentId/result" element={<StudentHomeworkResult />} />
-              <Route path="/teacher/homework" element={<TeacherGuard><TeacherStub title="Homework" description="Open a class to generate homework for it." /></TeacherGuard>} />
-              <Route path="/teacher/marking" element={<TeacherGuard><TeacherStub title="Marking" description="Review submissions and approve grades." /></TeacherGuard>} />
+              <Route path="/teacher/homework" element={<TeacherGuard><TeacherHomeworkAll /></TeacherGuard>} />
+              <Route path="/teacher/marking" element={<TeacherGuard><TeacherMarkingAll /></TeacherGuard>} />
               <Route path="/teacher/reports" element={<TeacherGuard><TeacherReports /></TeacherGuard>} />
               <Route path="/teacher/department" element={<TeacherGuard><TeacherDepartment /></TeacherGuard>} />
               <Route path="/teacher/interventions" element={<TeacherGuard><TeacherInterventions /></TeacherGuard>} />
-              <Route path="/teacher/insights" element={<TeacherGuard><TeacherStub title="Insights" description="Cohort-level patterns and next best actions." /></TeacherGuard>} />
-              <Route path="/teacher/settings" element={<TeacherGuard><TeacherStub title="Settings" description="School, invites, and billing." /></TeacherGuard>} />
+              <Route path="/teacher/insights" element={<TeacherGuard><TeacherInsightsAll /></TeacherGuard>} />
+              <Route path="/teacher/settings" element={<TeacherGuard><TeacherSettings /></TeacherGuard>} />
+
               <Route path="*" element={<NotFound />} />
             </Routes>
             </Suspense>
