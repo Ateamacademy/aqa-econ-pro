@@ -72,6 +72,7 @@ const TeacherClasses = lazy(() => import("./pages/teacher/TeacherClasses"));
 const TeacherClassDetail = lazy(() => import("./pages/teacher/TeacherClassDetail"));
 const TeacherStub = lazy(() => import("./pages/teacher/TeacherStub"));
 const TeacherHomework = lazy(() => import("./pages/teacher/TeacherHomework"));
+const TeacherInsights = lazy(() => import("./pages/teacher/TeacherInsights"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
