@@ -158,6 +158,7 @@ const App = () => (
               <Route path="/teacher/classes" element={<TeacherGuard><TeacherClasses /></TeacherGuard>} />
               <Route path="/teacher/classes/:classId" element={<TeacherGuard><TeacherClassDetail /></TeacherGuard>} />
               <Route path="/teacher/classes/:classId/homework" element={<TeacherGuard><TeacherHomework /></TeacherGuard>} />
+              <Route path="/teacher/classes/:classId/insights" element={<TeacherGuard><TeacherInsights /></TeacherGuard>} />
               <Route path="/teacher/homework" element={<TeacherGuard><TeacherStub title="Homework" description="Open a class to generate homework for it." /></TeacherGuard>} />
               <Route path="/teacher/marking" element={<TeacherGuard><TeacherStub title="Marking" description="Review submissions and approve grades." /></TeacherGuard>} />
               <Route path="/teacher/reports" element={<TeacherGuard><TeacherStub title="Reports" description="Generate parent and SLT reports." /></TeacherGuard>} />
