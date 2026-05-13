@@ -37,68 +37,83 @@ export default function TeacherDashboard() {
   });
   const [students, setStudents] = useState<StudentRow[]>([]);
   const [loading, setLoading] = useState(true);
+  const [classes, setClasses] = useState<{ id: string; name: string }[]>([]);
+  const [studentIds, setStudentIds] = useState<string[]>([]);
+  const [assignmentIds, setAssignmentIds] = useState<string[]>([]);
+  const [nameMap, setNameMap] = useState<Map<string, string | null>>(new Map());
+  const [decliningCount, setDecliningCount] = useState(0);
 
   useEffect(() => {
     if (!user) return;
     (async () => {
       setLoading(true);
-      // Classes I teach
-      const { data: classes } = await supabase
+      const { data: classData } = await supabase
         .from("classes").select("id, name").eq("teacher_id", user.id);
-      const classIds = (classes ?? []).map((c: any) => c.id);
+      const cls = (classData ?? []) as { id: string; name: string }[];
+      setClasses(cls);
+      const classIds = cls.map((c) => c.id);
 
-      // Roster
-      let studentIds: string[] = [];
+      let sids: string[] = [];
       if (classIds.length) {
         const { data: roster } = await supabase
           .from("class_students").select("student_id").in("class_id", classIds);
-        studentIds = Array.from(new Set((roster ?? []).map((r: any) => r.student_id)));
+        sids = Array.from(new Set((roster ?? []).map((r: any) => r.student_id)));
       }
+      setStudentIds(sids);
 
-      // Homework metrics
       let awaitingReview = 0;
       let homeworkCompletion = 0;
+      let aIds: string[] = [];
       if (classIds.length) {
         const { data: assignments } = await supabase
           .from("homework_assignments").select("id").in("class_id", classIds);
-        const assignmentIds = (assignments ?? []).map((a: any) => a.id);
-        if (assignmentIds.length) {
+        aIds = (assignments ?? []).map((a: any) => a.id);
+        if (aIds.length) {
           const { data: subs } = await supabase
-            .from("homework_submissions").select("id, status").in("assignment_id", assignmentIds);
+            .from("homework_submissions").select("id, status, submitted_at").in("assignment_id", aIds);
           const submitted = (subs ?? []).filter((s: any) => s.submitted_at !== null || s.status !== "pending").length;
           awaitingReview = (subs ?? []).filter((s: any) => s.status === "ai_marked").length;
-          const expected = assignmentIds.length * Math.max(1, studentIds.length);
+          const expected = aIds.length * Math.max(1, sids.length);
           homeworkCompletion = expected ? Math.round((submitted / expected) * 100) : 0;
         }
       }
+      setAssignmentIds(aIds);
 
-      // Practice sessions for analytics
       const studentRows: StudentRow[] = [];
-      let avgGradeAcc = 0; let avgGradeN = 0; let atRisk = 0;
+      let avgGradeAcc = 0; let avgGradeN = 0; let atRisk = 0; let declining = 0;
+      const localNameMap = new Map<string, string | null>();
 
-      if (studentIds.length) {
+      if (sids.length) {
         const { data: sessions } = await supabase
           .from("practice_sessions")
           .select("user_id, score_percent, created_at")
-          .in("user_id", studentIds)
+          .in("user_id", sids)
           .order("created_at", { ascending: false })
           .limit(2000);
 
-        // Profile names
         const { data: profiles } = await supabase
-          .from("profiles").select("user_id, display_name").in("user_id", studentIds);
-        const nameMap = new Map<string, string | null>();
-        (profiles ?? []).forEach((p: any) => nameMap.set(p.user_id, p.display_name));
+          .from("profiles").select("user_id, display_name").in("user_id", sids);
+        (profiles ?? []).forEach((p: any) => localNameMap.set(p.user_id, p.display_name));
 
-        for (const sid of studentIds) {
+        const fortnightAgo = Date.now() - 14 * 86400 * 1000;
+        for (const sid of sids) {
           const userSessions = (sessions ?? []).filter((s: any) => s.user_id === sid && s.score_percent != null);
           const recent = userSessions.slice(0, 8).map((s: any) => Number(s.score_percent));
           const avg = recent.length ? Math.round(recent.reduce((a, b) => a + b, 0) / recent.length) : null;
           if (avg !== null) { avgGradeAcc += avg; avgGradeN++; }
           if (avg !== null && avg < 50) atRisk++;
+
+          const recentScores = userSessions.filter((s: any) => new Date(s.created_at).getTime() > fortnightAgo).map((s: any) => Number(s.score_percent));
+          const olderScores = userSessions.filter((s: any) => new Date(s.created_at).getTime() <= fortnightAgo).map((s: any) => Number(s.score_percent));
+          if (recentScores.length >= 2 && olderScores.length >= 2) {
+            const r = recentScores.reduce((a, b) => a + b, 0) / recentScores.length;
+            const o = olderScores.reduce((a, b) => a + b, 0) / olderScores.length;
+            if (o - r >= 8) declining++;
+          }
+
           studentRows.push({
             user_id: sid,
-            display_name: nameMap.get(sid) ?? null,
+            display_name: localNameMap.get(sid) ?? null,
             email: null,
             avg_score: avg,
             attempts: userSessions.length,
@@ -107,8 +122,10 @@ export default function TeacherDashboard() {
         }
       }
 
+      setNameMap(localNameMap);
+      setDecliningCount(declining);
       setMetrics({
-        totalStudents: studentIds.length,
+        totalStudents: sids.length,
         activeClasses: classIds.length,
         homeworkCompletion,
         avgGrade: avgGradeN ? Math.round(avgGradeAcc / avgGradeN) : null,
@@ -128,6 +145,8 @@ export default function TeacherDashboard() {
     { icon: Activity, label: "Awaiting review", value: metrics.awaitingReview },
     { icon: AlertTriangle, label: "Students at risk", value: metrics.atRisk },
   ];
+
+  const topPerformer = students.find((s) => s.avg_score != null && s.avg_score >= 80);
 
   return (
     <div className="p-6 lg:p-8 max-w-[1280px] mx-auto space-y-8">
@@ -154,6 +173,27 @@ export default function TeacherDashboard() {
           </Card>
         ))}
       </div>
+
+      {/* Insights feed (full width) */}
+      <InsightsFeed
+        input={{
+          classes,
+          studentIds,
+          awaitingReview: metrics.awaitingReview,
+          atRiskCount: metrics.atRisk,
+          homeworkCompletion: metrics.homeworkCompletion,
+          topPerformerName: topPerformer?.display_name ?? null,
+          decliningCount,
+        }}
+      />
+
+      {/* Two-column widgets */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <AOBreakdownWidget assignmentIds={assignmentIds} />
+        <TopicHeatmapWidget studentIds={studentIds} />
+      </div>
+
+      <RecentActivityWidget studentIds={studentIds} nameMap={nameMap} />
 
       {/* Performance table */}
       <Card className="p-0 overflow-hidden">
@@ -211,21 +251,6 @@ export default function TeacherDashboard() {
               })}
             </tbody>
           </table>
-        </div>
-      </Card>
-
-      {/* Insights placeholder */}
-      <Card className="p-5">
-        <div className="flex items-start gap-3">
-          <Sparkles className="h-5 w-5 text-primary mt-0.5" />
-          <div>
-            <h3 className="text-sm font-semibold text-foreground">Next best action</h3>
-            <p className="text-xs text-muted-foreground mt-1">
-              {metrics.atRisk > 0
-                ? `${metrics.atRisk} student${metrics.atRisk === 1 ? "" : "s"} scoring below 50%. Consider assigning targeted practice.`
-                : "Cohort looks healthy. Set a stretch homework to push your top performers."}
-            </p>
-          </div>
         </div>
       </Card>
     </div>
