@@ -5,8 +5,11 @@ import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
 import {
-  Users, ClipboardCheck, AlertTriangle, TrendingUp, Activity, GraduationCap, Sparkles,
+  Users, ClipboardCheck, AlertTriangle, TrendingUp, Activity, GraduationCap,
 } from "lucide-react";
+import {
+  AOBreakdownWidget, TopicHeatmapWidget, InsightsFeed, RecentActivityWidget,
+} from "@/components/teacher/DashboardWidgets";
 
 type Metrics = {
   totalStudents: number;
