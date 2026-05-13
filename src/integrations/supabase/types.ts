@@ -1492,6 +1492,19 @@ export type Database = {
           user_id: string
         }[]
       }
+      get_class_predictions: {
+        Args: { _class_id: string }
+        Returns: {
+          display_name: string
+          email: string
+          predicted_grade: string
+          recent_avg: number
+          sample_size: number
+          student_id: string
+          target_grade: string
+          trend: string
+        }[]
+      }
       get_class_roster: {
         Args: { _class_id: string }
         Returns: {
@@ -1542,6 +1555,14 @@ export type Database = {
           msg_id: number
           read_ct: number
         }[]
+      }
+      refresh_class_predictions: {
+        Args: { _class_id: string }
+        Returns: number
+      }
+      score_to_grade: {
+        Args: { _board: string; _score: number }
+        Returns: string
       }
       search_similar_questions: {
         Args: {
