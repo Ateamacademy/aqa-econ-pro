@@ -28,6 +28,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { InviteParentModal } from "@/components/dashboard/InviteParentModal";
+import JoinClassCard from "@/components/dashboard/JoinClassCard";
 
 const sidebarNav = [
   { icon: LayoutDashboard, label: "Dashboard", to: "/dashboard", active: true },
@@ -173,6 +174,11 @@ export default function Dashboard() {
           animate="show"
           variants={{ show: { transition: { staggerChildren: 0.06 } } }}
         >
+          {/* Join a class (teacher bridging) */}
+          <motion.div variants={fadeUp}>
+            <JoinClassCard />
+          </motion.div>
+
           {/* Daily Action Card · for everyone */}
           <motion.div variants={fadeUp}>
             <DailyActionCard action={dash.dailyAction} today={dash.today} />

@@ -64,6 +64,13 @@ const AdminQaTracker = lazy(() => import("./pages/AdminQaTracker"));
 const EdexcelMockPapersIndex = lazy(() => import("./pages/EdexcelMockPapersIndex"));
 const EdexcelMockPaperViewer = lazy(() => import("./pages/EdexcelMockPaperViewer"));
 const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
+const BecomeATeacher = lazy(() => import("./pages/BecomeATeacher"));
+const TeacherGuard = lazy(() => import("./components/teacher/TeacherGuard"));
+const TeacherDashboard = lazy(() => import("./pages/teacher/TeacherDashboard"));
+const TeacherOnboarding = lazy(() => import("./pages/teacher/TeacherOnboarding"));
+const TeacherClasses = lazy(() => import("./pages/teacher/TeacherClasses"));
+const TeacherClassDetail = lazy(() => import("./pages/teacher/TeacherClassDetail"));
+const TeacherStub = lazy(() => import("./pages/teacher/TeacherStub"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -142,6 +149,18 @@ const App = () => (
               <Route path="/paper-3" element={<EdexcelMockPaperViewer />} />
               <Route path="/debug/marking-tests" element={<MarkingDebug />} />
               <Route path="/debug/integrity" element={<MarkingDebug />} />
+              {/* Teacher workspace */}
+              <Route path="/become-a-teacher" element={<BecomeATeacher />} />
+              <Route path="/teacher/onboarding" element={<TeacherGuard allowOnboarding><TeacherOnboarding /></TeacherGuard>} />
+              <Route path="/teacher" element={<TeacherGuard><TeacherDashboard /></TeacherGuard>} />
+              <Route path="/teacher/classes" element={<TeacherGuard><TeacherClasses /></TeacherGuard>} />
+              <Route path="/teacher/classes/:classId" element={<TeacherGuard><TeacherClassDetail /></TeacherGuard>} />
+              <Route path="/teacher/homework" element={<TeacherGuard><TeacherStub title="Homework" description="AI-assisted homework generation and assignment." /></TeacherGuard>} />
+              <Route path="/teacher/marking" element={<TeacherGuard><TeacherStub title="Marking" description="Review AI-marked submissions and approve grades." /></TeacherGuard>} />
+              <Route path="/teacher/reports" element={<TeacherGuard><TeacherStub title="Reports" description="Generate parent and SLT reports." /></TeacherGuard>} />
+              <Route path="/teacher/interventions" element={<TeacherGuard><TeacherStub title="Interventions" description="At-risk students and recommended actions." /></TeacherGuard>} />
+              <Route path="/teacher/insights" element={<TeacherGuard><TeacherStub title="Insights" description="Cohort-level patterns and next best actions." /></TeacherGuard>} />
+              <Route path="/teacher/settings" element={<TeacherGuard><TeacherStub title="Settings" description="School, invites, and billing." /></TeacherGuard>} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             </Suspense>

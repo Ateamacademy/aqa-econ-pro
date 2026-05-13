@@ -51,7 +51,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const { user, subscribed, signOut } = useAuth();
   const { subject, setSubject } = useSubject();
   const isHomepage = location.pathname === "/";
+  const isTeacherArea = location.pathname.startsWith("/teacher");
   const currentBoard = SUBJECTS.find((s) => s.value === subject);
+
+  // Teacher area renders its own shell
+  if (isTeacherArea) return <>{children}</>;
 
   // Close dropdown on outside click
   useEffect(() => {
