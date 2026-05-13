@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowLeft, Mail, Copy, UserPlus, Upload, Trash2, Loader2 } from "lucide-react";
+import { ArrowLeft, Mail, Copy, UserPlus, Upload, Trash2, Loader2, FileText, TrendingUp } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 
 interface PendingInvite {
