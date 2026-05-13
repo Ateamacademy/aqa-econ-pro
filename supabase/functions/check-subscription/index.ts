@@ -29,6 +29,7 @@ const TESTER_EMAILS = [
   "zakariyahassan185@gmail.com",
   "samirmiskin@icloud.com",
   "adie.gascoigne@gmail.com",
+  "josh000000r@gmail.com",
 ];
 
 const cache = new Map<string, { result: Record<string, unknown>; ts: number }>();
