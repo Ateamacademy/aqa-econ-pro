@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,6 +9,15 @@ import { toast } from "@/hooks/use-toast";
 export default function JoinClassCard() {
   const [code, setCode] = useState("");
   const [busy, setBusy] = useState(false);
+
+  // Auto-claim any pending invites addressed to this user's email
+  useEffect(() => {
+    supabase.rpc("claim_pending_class_invites").then(({ data }) => {
+      if ((data as number) > 0) {
+        toast({ title: "Joined class", description: `You were added to ${data} class${(data as number) > 1 ? "es" : ""} from a teacher invite.` });
+      }
+    });
+  }, []);
 
   const join = async () => {
     if (!code.trim()) return;

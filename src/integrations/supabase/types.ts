@@ -83,6 +83,53 @@ export type Database = {
         }
         Relationships: []
       }
+      class_invites: {
+        Row: {
+          accepted_at: string | null
+          class_id: string
+          created_at: string
+          display_name: string | null
+          email: string
+          expires_at: string
+          id: string
+          invited_by: string
+          target_grade: string | null
+          token: string
+        }
+        Insert: {
+          accepted_at?: string | null
+          class_id: string
+          created_at?: string
+          display_name?: string | null
+          email: string
+          expires_at?: string
+          id?: string
+          invited_by: string
+          target_grade?: string | null
+          token?: string
+        }
+        Update: {
+          accepted_at?: string | null
+          class_id?: string
+          created_at?: string
+          display_name?: string | null
+          email?: string
+          expires_at?: string
+          id?: string
+          invited_by?: string
+          target_grade?: string | null
+          token?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "class_invites_class_id_fkey"
+            columns: ["class_id"]
+            isOneToOne: false
+            referencedRelation: "classes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       class_students: {
         Row: {
           class_id: string
@@ -1414,6 +1461,7 @@ export type Database = {
     }
     Functions: {
       accept_parent_invite: { Args: { token: string }; Returns: boolean }
+      claim_pending_class_invites: { Args: never; Returns: number }
       delete_email: {
         Args: { message_id: number; queue_name: string }
         Returns: boolean
@@ -1442,6 +1490,19 @@ export type Database = {
           subject: string
           topic: string
           user_id: string
+        }[]
+      }
+      get_class_predictions: {
+        Args: { _class_id: string }
+        Returns: {
+          display_name: string
+          email: string
+          predicted_grade: string
+          recent_avg: number
+          sample_size: number
+          student_id: string
+          target_grade: string
+          trend: string
         }[]
       }
       get_class_roster: {
@@ -1494,6 +1555,14 @@ export type Database = {
           msg_id: number
           read_ct: number
         }[]
+      }
+      refresh_class_predictions: {
+        Args: { _class_id: string }
+        Returns: number
+      }
+      score_to_grade: {
+        Args: { _board: string; _score: number }
+        Returns: string
       }
       search_similar_questions: {
         Args: {
