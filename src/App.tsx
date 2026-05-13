@@ -73,6 +73,9 @@ const TeacherClassDetail = lazy(() => import("./pages/teacher/TeacherClassDetail
 const TeacherStub = lazy(() => import("./pages/teacher/TeacherStub"));
 const TeacherHomework = lazy(() => import("./pages/teacher/TeacherHomework"));
 const TeacherInsights = lazy(() => import("./pages/teacher/TeacherInsights"));
+const TeacherSubmissions = lazy(() => import("./pages/teacher/TeacherSubmissions"));
+const StudentHomeworkAttempt = lazy(() => import("./pages/StudentHomeworkAttempt"));
+const StudentHomeworkResult = lazy(() => import("./pages/StudentHomeworkResult"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -158,7 +161,10 @@ const App = () => (
               <Route path="/teacher/classes" element={<TeacherGuard><TeacherClasses /></TeacherGuard>} />
               <Route path="/teacher/classes/:classId" element={<TeacherGuard><TeacherClassDetail /></TeacherGuard>} />
               <Route path="/teacher/classes/:classId/homework" element={<TeacherGuard><TeacherHomework /></TeacherGuard>} />
+              <Route path="/teacher/classes/:classId/homework/:assignmentId/submissions" element={<TeacherGuard><TeacherSubmissions /></TeacherGuard>} />
               <Route path="/teacher/classes/:classId/insights" element={<TeacherGuard><TeacherInsights /></TeacherGuard>} />
+              <Route path="/homework/:assignmentId" element={<StudentHomeworkAttempt />} />
+              <Route path="/homework/:assignmentId/result" element={<StudentHomeworkResult />} />
               <Route path="/teacher/homework" element={<TeacherGuard><TeacherStub title="Homework" description="Open a class to generate homework for it." /></TeacherGuard>} />
               <Route path="/teacher/marking" element={<TeacherGuard><TeacherStub title="Marking" description="Review submissions and approve grades." /></TeacherGuard>} />
               <Route path="/teacher/reports" element={<TeacherGuard><TeacherStub title="Reports" description="Generate parent and SLT reports." /></TeacherGuard>} />

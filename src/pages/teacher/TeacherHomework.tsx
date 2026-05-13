@@ -194,6 +194,11 @@ export default function TeacherHomework() {
               </div>
               <div className="flex items-center gap-1 shrink-0">
                 <Button variant="ghost" size="sm" onClick={() => setPreview(a)} className="h-8 gap-1.5"><Eye className="h-3.5 w-3.5" /> Preview</Button>
+                {a.status === "published" && (
+                  <Link to={`/teacher/classes/${classId}/homework/${a.id}/submissions`}>
+                    <Button variant="outline" size="sm" className="h-8 gap-1.5"><FileText className="h-3.5 w-3.5" /> Submissions</Button>
+                  </Link>
+                )}
                 {a.status === "draft" ? (
                   <Button size="sm" onClick={() => updateStatus(a.id, "published")} className="h-8 gap-1.5"><Send className="h-3.5 w-3.5" /> Publish</Button>
                 ) : (
