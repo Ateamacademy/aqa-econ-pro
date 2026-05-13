@@ -76,6 +76,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return () => clearTimeout(t);
   }, [isHomepage]);
 
+  // Teacher area renders its own shell (placed after hooks to preserve hook order)
+  if (isTeacherArea) return <>{children}</>;
+
   const currentNavLinks = isHomepage ? homepageNavLinks : navLinks;
 
   return (
