@@ -6,7 +6,7 @@ import {
 import type { TemplateEntry } from './registry.ts'
 
 const SITE_NAME = 'Econ Rev'
-const SUPPORT_EMAIL = 'aminul.miah@ateamacademy.co.uk'
+const SUPPORT_EMAIL = 'elevate@econrev.co'
 
 interface Props {
   name?: string

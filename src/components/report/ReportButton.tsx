@@ -23,7 +23,7 @@ import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 
 const ADMIN_EMAIL =
-  (import.meta.env.VITE_ADMIN_EMAIL as string | undefined) ?? "aminul.miah@ateamacademy.co.uk";
+  (import.meta.env.VITE_ADMIN_EMAIL as string | undefined) ?? "elevate@econrev.co";
 
 const CATEGORIES = [
   { value: "content_error", label: "Content error (wrong mark scheme, factual mistake, typo)" },

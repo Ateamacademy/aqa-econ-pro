@@ -97,7 +97,7 @@ export default function Unsubscribe() {
             <AlertCircle className="h-10 w-10 mx-auto text-destructive" />
             <p className="font-semibold">Invalid or expired link</p>
             <p className="text-sm text-muted-foreground">
-              Contact aminul.miah@ateamacademy.co.uk if you need help.
+              Contact elevate@econrev.co if you need help.
             </p>
           </div>
         )}
