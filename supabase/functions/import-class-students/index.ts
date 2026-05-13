@@ -135,11 +135,6 @@ Deno.serve(async (req) => {
       return new Response(JSON.stringify({ error: insErr.message }), { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } })
     }
 
-    // Auto-link any invitees who already have accounts
-    const emails = rows.map(r => r.email)
-    const { data: matches } = await admin.rpc('get_users_by_emails' as any, { _emails: emails }).select?.() ?? { data: null }
-    // Fallback: query auth.users via admin.listUsers — too costly. Skip auto-link for existing users in this pass.
-
     // Send emails
     const emailResults: any[] = []
     if (body.send_email !== false) {
