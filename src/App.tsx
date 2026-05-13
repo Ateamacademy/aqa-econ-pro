@@ -172,7 +172,7 @@ const App = () => (
               <Route path="/teacher/marking" element={<TeacherGuard><TeacherStub title="Marking" description="Review submissions and approve grades." /></TeacherGuard>} />
               <Route path="/teacher/reports" element={<TeacherGuard><TeacherReports /></TeacherGuard>} />
               <Route path="/teacher/department" element={<TeacherGuard><TeacherDepartment /></TeacherGuard>} />
-              <Route path="/teacher/interventions" element={<TeacherGuard><TeacherStub title="Interventions" description="At-risk students and recommended actions." /></TeacherGuard>} />
+              <Route path="/teacher/interventions" element={<TeacherGuard><TeacherInterventions /></TeacherGuard>} />
               <Route path="/teacher/insights" element={<TeacherGuard><TeacherStub title="Insights" description="Cohort-level patterns and next best actions." /></TeacherGuard>} />
               <Route path="/teacher/settings" element={<TeacherGuard><TeacherStub title="Settings" description="School, invites, and billing." /></TeacherGuard>} />
               <Route path="*" element={<NotFound />} />
