@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { supabase } from "@/integrations/supabase/client";
+import { startCheckout } from "@/lib/startCheckout";
 import { useReadinessScore, type SessionRow } from "@/hooks/useReadinessScore";
 import { useDashboardState } from "@/hooks/useDashboardState";
 import ReadinessRadial from "@/components/dashboard/ReadinessRadial";
