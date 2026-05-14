@@ -1,7 +1,7 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Crown, Check, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { startCheckout } from "@/lib/startCheckout";
 
 const benefits = [
   "Unlimited Predicted Papers",
