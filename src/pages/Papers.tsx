@@ -221,7 +221,8 @@ const AQA_AS_PAPERS: { number: 1 | 2; code: string; title: string; focus: string
   { number: 2, code: "7135/2", title: "The National Economy",                         focus: "AS Macroeconomics", available: true },
 ];
 
-const EDEXCEL_A_AS_PAPERS: { number: 2; code: string; title: string; focus: string; available: boolean }[] = [
+const EDEXCEL_A_AS_PAPERS: { number: 1 | 2; code: string; title: string; focus: string; available: boolean }[] = [
+  { number: 1, code: "8EC0/01", title: "Markets and Business Behaviour",  focus: "AS Microeconomics", available: true },
   { number: 2, code: "8EC0/02", title: "The Wider Economic Environment", focus: "AS Macroeconomics", available: true },
 ];
 

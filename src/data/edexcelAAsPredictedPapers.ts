@@ -17,13 +17,23 @@ const TIERS: Tier[] = [
 ];
 
 type AsPaperSpec = {
-  num: 2;
+  num: 1 | 2;
   code: string;
   title: string;
   descriptions: Record<Tier["label"], string>;
 };
 
 const PAPERS: AsPaperSpec[] = [
+  {
+    num: 1,
+    code: "8EC0/01",
+    title: "Markets and Business Behaviour",
+    descriptions: {
+      Moderate: "Edexcel A AS Microeconomics. Demand & supply, elasticities, market failure and government intervention.",
+      Hard:     "Edexcel A AS Microeconomics. Demanding analysis of market structures, costs, revenues and labour markets.",
+      Advanced: "Edexcel A AS Microeconomics. Top-band synoptic micro evaluation under exam conditions.",
+    },
+  },
   {
     num: 2,
     code: "8EC0/02",
