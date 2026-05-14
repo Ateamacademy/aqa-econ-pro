@@ -1330,12 +1330,13 @@ export default function PredictedPapers() {
         return allowedSets.has(setLabel(p.title));
       });
       return [...filtered].sort((a, b) => {
-        // AQA AS papers (paper id "as-1") sort AFTER A-Level Papers 1/2/3.
+        // AQA AS papers (paper id "as-1", "as-2") sort AFTER A-Level Papers 1/2/3.
         const asWeight = (p: PredictedPaper) => (p.paper.startsWith("as-") ? 1000 : 0);
         const wa = asWeight(a), wb = asWeight(b);
         if (wa !== wb) return wa - wb;
-        const pa = parseInt(a.paper, 10) || 0;
-        const pb = parseInt(b.paper, 10) || 0;
+        const numOf = (p: PredictedPaper) =>
+          p.paper.startsWith("as-") ? (parseInt(p.paper.slice(3), 10) || 0) : (parseInt(p.paper, 10) || 0);
+        const pa = numOf(a), pb = numOf(b);
         if (pa !== pb) return pa - pb;
         return setLabel(a.title).localeCompare(setLabel(b.title));
       });
