@@ -3496,7 +3496,8 @@ import { multiBoardPredictedPapers } from "./multiBoardPredictedPapers";
 import { aqaAsPredictedPapers } from "./aqaAsPredictedPapers";
 import { edexcelAAsPredictedPapers } from "./edexcelAAsPredictedPapers";
 import { edexcelBAsPredictedPapers } from "./edexcelBAsPredictedPapers";
+import { ocrAsPredictedPapers } from "./ocrAsPredictedPapers";
 // economicsPredictedPapersExtra intentionally not spread · AQA A-Level Economics
 // predicted-paper library is locked to 9 papers (Paper 1/2/3 × Sets A/B/C).
 // AQA AS Paper 1 is a separate product line (paper id "as-1") and IS appended.
-predictedPapersLibrary.push(...chemistryPredictedPapers, ...mathsPredictedPapersExtra, ...chemistryPredictedPapersExtra, ...edexcelAPredictedPapers, ...edexcelBPredictedPapers, ...cambridgePredictedPapers, ...ocrPredictedPapers, ...gcsePredictedPapers, ...igcsePredictedPapers, ...multiBoardPredictedPapers, ...aqaAsPredictedPapers, ...edexcelAAsPredictedPapers, ...edexcelBAsPredictedPapers);
+predictedPapersLibrary.push(...chemistryPredictedPapers, ...mathsPredictedPapersExtra, ...chemistryPredictedPapersExtra, ...edexcelAPredictedPapers, ...edexcelBPredictedPapers, ...cambridgePredictedPapers, ...ocrPredictedPapers, ...gcsePredictedPapers, ...igcsePredictedPapers, ...multiBoardPredictedPapers, ...aqaAsPredictedPapers, ...edexcelAAsPredictedPapers, ...edexcelBAsPredictedPapers, ...ocrAsPredictedPapers);

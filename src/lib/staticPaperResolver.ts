@@ -75,6 +75,14 @@ const BOARDS: BoardConfig[] = [
     tierMap: { a: "moderate", b: "hard", c: "advanced" },
     allowedPapers: ["1"],
   },
+  // OCR AS · Paper 1 (H060/01)
+  {
+    pattern: /^ocr-as([1])-([abc])$/i,
+    folder: "/ocr-as-mocks",
+    displayName: "OCR-AS-Economics",
+    tierMap: { a: "moderate", b: "hard", c: "advanced" },
+    allowedPapers: ["1"],
+  },
   // CAIE A-Level (Cambridge 9708) · id pattern: caie-p{1-4}-set-{a-e}
   // Only Paper 3 is wired to static PDFs (uploaded by user).
   {
