@@ -216,6 +216,10 @@ const AQA_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: strin
   { number: 3, code: "7136/3", title: "Economic Principles and Issues",      focus: "Synoptic",       available: true },
 ];
 
+const AQA_AS_PAPERS: { number: 1; code: string; title: string; focus: string; available: boolean }[] = [
+  { number: 1, code: "7135/1", title: "The Operation of Markets and Market Failure", focus: "AS Microeconomics", available: true },
+];
+
 const EDUQAS_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; available: boolean }[] = [
   { number: 1, code: "A510QS-1", title: "Introduction to Economics",   focus: "Micro",       available: true },
   { number: 2, code: "A510QS-2", title: "Exploring Economic Issues",   focus: "Macro",       available: true },
