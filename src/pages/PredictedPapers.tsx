@@ -1326,7 +1326,7 @@ export default function PredictedPapers() {
         if (p.subject !== subject) return false;
         if (isAqa) return true;
         // Every non-AQA board: exactly Papers 1/2/3 × Sets A/B/C = 9 cards.
-        if (!allowedPapers.has(p.paper)) return false;
+        if (!allowedPapers.has(p.paper) && !p.paper.startsWith("as-")) return false;
         return allowedSets.has(setLabel(p.title));
       });
       return [...filtered].sort((a, b) => {
