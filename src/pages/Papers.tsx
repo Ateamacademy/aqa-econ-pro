@@ -387,16 +387,30 @@ function EdexcelAPapersList() {
   );
 }
 
+const EDEXCEL_B_AS_PAPERS: { number: 1; code: string; title: string; focus: string; available: boolean }[] = [
+  { number: 1, code: "8EB0/01", title: "Markets, Consumers and Firms", focus: "AS Microeconomics", available: true },
+];
+
 function EdexcelBPapersList() {
   return (
-    <BoardList
-      title="Edexcel B A-Level · Papers"
-      description="Paper 3 is now available in the Papers section in the same card format, paired with its full mark scheme across Moderate, Hard, and Advanced."
-      papers={EDEXCEL_B_PAPERS}
-      meta={(p) => `${p.code} · ${p.focus} · 2h · 100 marks`}
-      paperHref={(p, d) => `/edexcel-b-mocks/paper-${p.number}-${d}.pdf`}
-      msHref={(p, d) => `/edexcel-b-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
-    />
+    <>
+      <BoardList
+        title="Edexcel B A-Level · Papers"
+        description="Paper 3 is now available in the Papers section in the same card format, paired with its full mark scheme across Moderate, Hard, and Advanced."
+        papers={EDEXCEL_B_PAPERS}
+        meta={(p) => `${p.code} · ${p.focus} · 2h · 100 marks`}
+        paperHref={(p, d) => `/edexcel-b-mocks/paper-${p.number}-${d}.pdf`}
+        msHref={(p, d) => `/edexcel-b-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
+      />
+      <BoardList
+        title="Edexcel B AS · Papers"
+        description="Full AS-Level mock papers (Moderate, Hard, Advanced) in the authentic Pearson Edexcel B AS format (8EB0), each paired with its full mark scheme."
+        papers={EDEXCEL_B_AS_PAPERS}
+        meta={(p) => `${p.code} · ${p.focus} · 1h 30m · 80 marks`}
+        paperHref={(p, d) => `/edexcel-b-as-mocks/paper-${p.number}-${d}.pdf`}
+        msHref={(p, d) => `/edexcel-b-as-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
+      />
+    </>
   );
 }
 
