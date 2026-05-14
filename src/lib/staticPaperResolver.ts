@@ -67,6 +67,14 @@ const BOARDS: BoardConfig[] = [
     displayName: "Edexcel-B-A-Level-Economics",
     tierMap: { a: "moderate", b: "hard", c: "advanced" },
   },
+  // Edexcel B AS · Paper 1 (8EB0/01)
+  {
+    pattern: /^edxb-as([1])-([abc])$/i,
+    folder: "/edexcel-b-as-mocks",
+    displayName: "Edexcel-B-AS-Economics",
+    tierMap: { a: "moderate", b: "hard", c: "advanced" },
+    allowedPapers: ["1"],
+  },
   // CAIE A-Level (Cambridge 9708) · id pattern: caie-p{1-4}-set-{a-e}
   // Only Paper 3 is wired to static PDFs (uploaded by user).
   {
