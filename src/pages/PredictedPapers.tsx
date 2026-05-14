@@ -2378,7 +2378,9 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                   const groupLabel = (key: string) => {
                     if (key.startsWith("as-")) {
                       const n = key.replace("as-", "");
-                      return { title: `AS Paper ${n}`, subtitle: "AS-Level · Microeconomics" };
+                      // Paper 2 across AS boards is Macro; Paper 1 is Micro.
+                      const focus = n === "2" ? "Macroeconomics" : "Microeconomics";
+                      return { title: `AS Paper ${n}`, subtitle: `AS-Level · ${focus}` };
                     }
                     return { title: `Paper ${key}`, subtitle: "A-Level" };
                   };
