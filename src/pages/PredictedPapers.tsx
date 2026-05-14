@@ -2357,7 +2357,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
             {/* Generate New mode removed · Paper Library only */}
 
             {mode === "library" ? (
-              <div className="space-y-4">
+              <div className="space-y-10">
                 {libraryPapers.length === 0 ? (
                   <div className="flex flex-col items-center py-20">
                     <div className="h-14 w-14 rounded-2xl bg-muted flex items-center justify-center mb-4">
@@ -2365,60 +2365,100 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                     </div>
                     <p className="text-muted-foreground">No pre-generated papers for this subject yet.</p>
                   </div>
-                ) : (
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {libraryPapers.map((lp, i) => {
-                      const difficulty = getPredictedPaperDifficulty(lp);
-                      const isLocked = isPremiumPredictedPaper(lp) && !isPremium;
+                ) : (() => {
+                  // Group library papers by paper number so each paper gets its
+                  // own labelled section (Paper 1 / Paper 2 / Paper 3 / AS Paper 1).
+                  const groups = new Map<string, typeof libraryPapers>();
+                  libraryPapers.forEach((lp) => {
+                    const key = lp.paper;
+                    if (!groups.has(key)) groups.set(key, [] as typeof libraryPapers);
+                    groups.get(key)!.push(lp);
+                  });
+                  const groupLabel = (key: string) => {
+                    if (key.startsWith("as-")) {
+                      const n = key.replace("as-", "");
+                      return { title: `AS Paper ${n}`, subtitle: "AS-Level · Microeconomics" };
+                    }
+                    return { title: `Paper ${key}`, subtitle: "A-Level" };
+                  };
+                  const groupAccent = (key: string) =>
+                    key.startsWith("as-")
+                      ? "from-violet-500/20 to-fuchsia-500/10 border-violet-500/20 text-violet-300"
+                      : "from-primary/20 to-accent/10 border-primary/20 text-primary";
 
-                      return (
-                      <motion.div
-                        key={lp.id}
-                        initial={{ opacity: 0, y: 16 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4, delay: i * 0.04, ease: [0.25, 0.4, 0.25, 1] }}
-                      >
-                        <button
-                          onClick={() => openLibraryPaper(lp)}
-                          className="w-full text-left group rounded-2xl border border-border/60 bg-card p-6 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 hover:border-primary/30"
-                        >
-                          <div className="flex items-start justify-between mb-4">
-                            <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center border border-primary/10">
-                              <FileText className="h-5 w-5 text-primary" />
+                  let cardIndex = 0;
+                  return (
+                    <div className="space-y-10">
+                      {Array.from(groups.entries()).map(([groupKey, papers]) => {
+                        const label = groupLabel(groupKey);
+                        const accent = groupAccent(groupKey);
+                        return (
+                          <section key={groupKey} className="space-y-4">
+                            <div className="flex items-center gap-3">
+                              <div className={`px-3 py-1.5 rounded-lg bg-gradient-to-br ${accent} border text-xs font-bold uppercase tracking-wider`}>
+                                {label.title}
+                              </div>
+                              <div className="text-xs text-muted-foreground">{label.subtitle} · {papers.length} {papers.length === 1 ? "set" : "sets"}</div>
+                              <div className="flex-1 h-px bg-border/40" />
                             </div>
-                            <ArrowRight className="h-4 w-4 text-muted-foreground/0 group-hover:text-primary transition-all duration-300 group-hover:translate-x-0.5" />
-                          </div>
-                          <h3 className="font-bold text-sm text-foreground mb-1.5 group-hover:text-primary transition-colors">{displayPaperTitle(lp.title)}</h3>
-                          <p className="text-xs text-muted-foreground leading-relaxed mb-4 line-clamp-2">{lp.description}</p>
-                          <div className="flex items-center gap-2">
-                            <span className="text-[11px] bg-primary/10 text-primary px-2.5 py-1 rounded-full font-semibold">
-                              {lp.totalMarks} marks
-                            </span>
-                            {difficulty && (() => {
-                              const diffStyles: Record<string, string> = {
-                                Moderate: "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30",
-                                Hard: "bg-amber-500/15 text-amber-400 border border-amber-500/30",
-                                Advanced: "bg-rose-500/15 text-rose-400 border border-rose-500/30",
-                              };
-                              const cls = diffStyles[difficulty] ?? "bg-muted text-muted-foreground";
-                              return (
-                                <span className={`text-[11px] ${cls} px-2.5 py-1 rounded-full font-semibold`}>
-                                  {difficulty}
-                                </span>
-                              );
-                            })()}
-                            {isLocked && (
-                              <span className="text-[11px] bg-amber-500/15 text-amber-400 border border-amber-500/30 px-2.5 py-1 rounded-full font-semibold inline-flex items-center gap-1">
-                                <Lock className="h-3 w-3" /> Pro
-                              </span>
-                            )}
-                          </div>
-                        </button>
-                      </motion.div>
-                    );
-                    })}
-                  </div>
-                )}
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                              {papers.map((lp) => {
+                                const difficulty = getPredictedPaperDifficulty(lp);
+                                const isLocked = isPremiumPredictedPaper(lp) && !isPremium;
+                                const i = cardIndex++;
+                                return (
+                                  <motion.div
+                                    key={lp.id}
+                                    initial={{ opacity: 0, y: 16 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.4, delay: i * 0.03, ease: [0.25, 0.4, 0.25, 1] }}
+                                  >
+                                    <button
+                                      onClick={() => openLibraryPaper(lp)}
+                                      className="w-full h-full text-left group rounded-2xl border border-border/60 bg-card p-6 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 hover:border-primary/30"
+                                    >
+                                      <div className="flex items-start justify-between mb-4">
+                                        <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center border border-primary/10">
+                                          <FileText className="h-5 w-5 text-primary" />
+                                        </div>
+                                        <ArrowRight className="h-4 w-4 text-muted-foreground/0 group-hover:text-primary transition-all duration-300 group-hover:translate-x-0.5" />
+                                      </div>
+                                      <h3 className="font-bold text-sm text-foreground mb-1.5 group-hover:text-primary transition-colors">{displayPaperTitle(lp.title)}</h3>
+                                      <p className="text-xs text-muted-foreground leading-relaxed mb-4 line-clamp-2">{lp.description}</p>
+                                      <div className="flex items-center gap-2 flex-wrap">
+                                        <span className="text-[11px] bg-primary/10 text-primary px-2.5 py-1 rounded-full font-semibold">
+                                          {lp.totalMarks} marks
+                                        </span>
+                                        {difficulty && (() => {
+                                          const diffStyles: Record<string, string> = {
+                                            Moderate: "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30",
+                                            Hard: "bg-amber-500/15 text-amber-400 border border-amber-500/30",
+                                            Advanced: "bg-rose-500/15 text-rose-400 border border-rose-500/30",
+                                          };
+                                          const cls = diffStyles[difficulty] ?? "bg-muted text-muted-foreground";
+                                          return (
+                                            <span className={`text-[11px] ${cls} px-2.5 py-1 rounded-full font-semibold`}>
+                                              {difficulty}
+                                            </span>
+                                          );
+                                        })()}
+                                        {isLocked && (
+                                          <span className="text-[11px] bg-amber-500/15 text-amber-400 border border-amber-500/30 px-2.5 py-1 rounded-full font-semibold inline-flex items-center gap-1">
+                                            <Lock className="h-3 w-3" /> Pro
+                                          </span>
+                                        )}
+                                      </div>
+                                    </button>
+                                  </motion.div>
+                                );
+                              })}
+                            </div>
+                          </section>
+                        );
+                      })}
+                    </div>
+                  );
+                })()}
               </div>
             ) : (
               <div className="max-w-3xl mx-auto space-y-10">
