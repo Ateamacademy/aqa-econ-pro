@@ -387,8 +387,9 @@ function EdexcelAPapersList() {
   );
 }
 
-const EDEXCEL_B_AS_PAPERS: { number: 1; code: string; title: string; focus: string; available: boolean }[] = [
-  { number: 1, code: "8EB0/01", title: "Markets, Consumers and Firms", focus: "AS Microeconomics", available: true },
+const EDEXCEL_B_AS_PAPERS: { number: 1 | 2; code: string; title: string; focus: string; available: boolean }[] = [
+  { number: 1, code: "8EB0/01", title: "Markets, Consumers and Firms",  focus: "AS Microeconomics", available: true },
+  { number: 2, code: "8EB0/02", title: "The Wider Economic Environment", focus: "AS Macroeconomics", available: true },
 ];
 
 function EdexcelBPapersList() {

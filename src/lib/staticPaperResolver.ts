@@ -67,13 +67,13 @@ const BOARDS: BoardConfig[] = [
     displayName: "Edexcel-B-A-Level-Economics",
     tierMap: { a: "moderate", b: "hard", c: "advanced" },
   },
-  // Edexcel B AS · Paper 1 (8EB0/01)
+  // Edexcel B AS · Papers 1 & 2 (8EB0/01, 8EB0/02)
   {
-    pattern: /^edxb-as([1])-([abc])$/i,
+    pattern: /^edxb-as([12])-([abc])$/i,
     folder: "/edexcel-b-as-mocks",
     displayName: "Edexcel-B-AS-Economics",
     tierMap: { a: "moderate", b: "hard", c: "advanced" },
-    allowedPapers: ["1"],
+    allowedPapers: ["1", "2"],
   },
   // OCR AS · Paper 1 (H060/01)
   {
