@@ -1474,14 +1474,17 @@ export default function PredictedPapers() {
       return;
     }
     // AQA AS Paper 1: ship as static PDF booklets — open the QP in a new tab
-    // and surface a toast telling the user the mark scheme is one click away.
+    // and trigger a download for the mark scheme so the student has both.
     if (lp.paper.startsWith("as-")) {
       const qp = resolveStaticPaperPdf(lp.id, "paper");
       const ms = resolveStaticPaperPdf(lp.id, "mark-scheme");
       if (qp) {
         window.open(qp.url, "_blank", "noopener,noreferrer");
         if (ms) {
-          toast.success("Question paper opened. Click 'Download Mark Scheme' on the paper card to grab the MS.", { duration: 6000 });
+          triggerStaticPdfDownload(ms);
+          toast.success("Question paper opened. Mark scheme downloaded.", { duration: 5000 });
+        } else {
+          toast.success("Question paper opened in a new tab.");
         }
       } else {
         toast.error("PDF not available for this paper yet.");
