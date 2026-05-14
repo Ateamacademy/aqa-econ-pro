@@ -6,6 +6,7 @@ import { Clock, FileText, ArrowRight, ExternalLink, ClipboardList, Lock, Sparkle
 import { useSubject } from "@/contexts/SubjectContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { hasPremiumAccess } from "@/lib/premiumAccess";
+import { startCheckout } from "@/lib/startCheckout";
 
 type Difficulty = "moderate" | "hard" | "advanced";
 
