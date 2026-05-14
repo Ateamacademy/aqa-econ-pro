@@ -1473,6 +1473,21 @@ export default function PredictedPapers() {
       setShowUpgrade(true);
       return;
     }
+    // AQA AS Paper 1: ship as static PDF booklets — open the QP in a new tab
+    // and surface a toast telling the user the mark scheme is one click away.
+    if (lp.paper.startsWith("as-")) {
+      const qp = resolveStaticPaperPdf(lp.id, "paper");
+      const ms = resolveStaticPaperPdf(lp.id, "mark-scheme");
+      if (qp) {
+        window.open(qp.url, "_blank", "noopener,noreferrer");
+        if (ms) {
+          toast.success("Question paper opened. Click 'Download Mark Scheme' on the paper card to grab the MS.", { duration: 6000 });
+        }
+      } else {
+        toast.error("PDF not available for this paper yet.");
+      }
+      return;
+    }
     const setLabel = (lp.id.match(/-([a-g])$/i)?.[1] ?? "A").toUpperCase();
     // For AQA A-Level Paper 3, prefer the curated override that wires every
     // diagram MCQ to a real /figures asset (Monopolistic Competition, J-Curve,
