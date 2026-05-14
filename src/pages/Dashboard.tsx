@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { supabase } from "@/integrations/supabase/client";
+import { startCheckout } from "@/lib/startCheckout";
 import { useReadinessScore, type SessionRow } from "@/hooks/useReadinessScore";
 import { useDashboardState } from "@/hooks/useDashboardState";
 import ReadinessRadial from "@/components/dashboard/ReadinessRadial";
@@ -142,7 +143,7 @@ export default function Dashboard() {
               <Crown className="h-5 w-5 text-primary mb-2" />
               <p className="text-xs font-semibold text-foreground mb-1">Upgrade to Pro</p>
               <p className="text-[10px] text-muted-foreground mb-3">Unlock unlimited papers, marking, and 24/7 tutor.</p>
-              <Button size="sm" onClick={() => navigate("/pricing")} className="w-full text-xs h-8">
+              <Button size="sm" onClick={() => startCheckout()} className="w-full text-xs h-8">
                 Upgrade
               </Button>
             </div>

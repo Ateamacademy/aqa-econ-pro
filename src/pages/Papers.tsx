@@ -6,6 +6,7 @@ import { Clock, FileText, ArrowRight, ExternalLink, ClipboardList, Lock, Sparkle
 import { useSubject } from "@/contexts/SubjectContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { hasPremiumAccess } from "@/lib/premiumAccess";
+import { startCheckout } from "@/lib/startCheckout";
 
 type Difficulty = "moderate" | "hard" | "advanced";
 
@@ -57,10 +58,8 @@ function ActionRow({ icon, label, href, internal, disabled, locked, primary = tr
       {disabled ? (
         <span className="text-[11px] text-muted-foreground italic">Coming soon</span>
       ) : locked ? (
-        <Button asChild size="sm" variant="outline" className="h-7 gap-1 text-xs">
-          <Link to="/pricing" title="Upgrade to unlock">
-            <Lock className="h-3 w-3" /> Unlock
-          </Link>
+        <Button size="sm" variant="outline" className="h-7 gap-1 text-xs" onClick={() => startCheckout()} title="Upgrade to unlock">
+          <Lock className="h-3 w-3" /> Unlock
         </Button>
       ) : (
         <div className="flex gap-1">
@@ -176,10 +175,8 @@ function FreeTierBanner({ premium }: { premium: boolean }) {
           Upgrade to unlock Hard, Advanced, and Papers 2 & 3 across all boards.
         </p>
       </div>
-      <Button asChild size="sm" className="gap-1 shrink-0">
-        <Link to="/pricing">
-          <Sparkles className="h-3.5 w-3.5" /> Upgrade
-        </Link>
+      <Button size="sm" className="gap-1 shrink-0" onClick={() => startCheckout()}>
+        <Sparkles className="h-3.5 w-3.5" /> Upgrade
       </Button>
     </div>
   );

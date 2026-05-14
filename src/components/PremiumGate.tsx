@@ -3,6 +3,7 @@ import { Lock, Sparkles, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 import { hasPremiumAccess } from "@/lib/premiumAccess";
+import { startCheckout } from "@/lib/startCheckout";
 import type { ReactNode } from "react";
 
 interface PremiumGateProps {
@@ -46,11 +47,9 @@ export function PremiumGate({ feature, description, children }: PremiumGateProps
             "Upgrade to unlock the full library of mock papers, mark schemes and AI marking."}
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Button asChild size="lg" className="gap-2">
-            <Link to="/pricing">
-              <Sparkles className="h-4 w-4" /> Upgrade to Pro
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+          <Button size="lg" className="gap-2" onClick={() => startCheckout()}>
+            <Sparkles className="h-4 w-4" /> Upgrade to Pro
+            <ArrowRight className="h-4 w-4" />
           </Button>
           {!user && (
             <Button asChild size="lg" variant="outline">
