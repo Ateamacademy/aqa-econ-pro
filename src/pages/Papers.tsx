@@ -221,6 +221,10 @@ const AQA_AS_PAPERS: { number: 1 | 2; code: string; title: string; focus: string
   { number: 2, code: "7135/2", title: "The National Economy",                         focus: "AS Macroeconomics", available: true },
 ];
 
+const EDEXCEL_A_AS_PAPERS: { number: 2; code: string; title: string; focus: string; available: boolean }[] = [
+  { number: 2, code: "8EC0/02", title: "The Wider Economic Environment", focus: "AS Macroeconomics", available: true },
+];
+
 const EDUQAS_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; available: boolean }[] = [
   { number: 1, code: "A510QS-1", title: "Introduction to Economics",   focus: "Micro",       available: true },
   { number: 2, code: "A510QS-2", title: "Exploring Economic Issues",   focus: "Macro",       available: true },
@@ -361,14 +365,24 @@ function BoardList({
 
 function EdexcelAPapersList() {
   return (
-    <BoardList
-      title="Edexcel A A-Level · Papers"
-      description="Nine full mock papers (Paper 1, 2 & 3 × Moderate, Hard, Advanced) in the authentic Pearson Edexcel format, each paired with its full mark scheme."
-      papers={EDEXCEL_A_PAPERS.map((p) => ({ ...p, available: true }))}
-      meta={(p) => `${p.code} · ${p.focus} · 2h · 100 marks`}
-      paperHref={(p, d) => `/edexcel-a-mocks/paper-${p.number}-${d}.pdf`}
-      msHref={(p, d) => `/edexcel-a-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
-    />
+    <>
+      <BoardList
+        title="Edexcel A A-Level · Papers"
+        description="Nine full mock papers (Paper 1, 2 & 3 × Moderate, Hard, Advanced) in the authentic Pearson Edexcel format, each paired with its full mark scheme."
+        papers={EDEXCEL_A_PAPERS.map((p) => ({ ...p, available: true }))}
+        meta={(p) => `${p.code} · ${p.focus} · 2h · 100 marks`}
+        paperHref={(p, d) => `/edexcel-a-mocks/paper-${p.number}-${d}.pdf`}
+        msHref={(p, d) => `/edexcel-a-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
+      />
+      <BoardList
+        title="Edexcel A AS · Papers"
+        description="Full AS-Level mock papers (Moderate, Hard, Advanced) in the authentic Pearson Edexcel AS format (8EC0), each paired with its full mark scheme."
+        papers={EDEXCEL_A_AS_PAPERS}
+        meta={(p) => `${p.code} · ${p.focus} · 1h 30m · 80 marks`}
+        paperHref={(p, d) => `/edexcel-a-as-mocks/paper-${p.number}-${d}.pdf`}
+        msHref={(p, d) => `/edexcel-a-as-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
+      />
+    </>
   );
 }
 
