@@ -37,6 +37,14 @@ const BOARDS: BoardConfig[] = [
     displayName: "AQA-A-Level-Economics",
     tierMap: { a: "moderate", b: "hard", c: "advanced" },
   },
+  // AQA AS Economics · Paper 1 only (7135/1)
+  {
+    pattern: /^econ-as(1)-([abc])$/i,
+    folder: "/aqa-as-mocks",
+    displayName: "AQA-AS-Economics",
+    tierMap: { a: "moderate", b: "hard", c: "advanced" },
+    allowedPapers: ["1"],
+  },
   // Edexcel A A-Level
   {
     pattern: /^edxa-p([123])-([abc])$/i,

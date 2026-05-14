@@ -1330,6 +1330,10 @@ export default function PredictedPapers() {
         return allowedSets.has(setLabel(p.title));
       });
       return [...filtered].sort((a, b) => {
+        // AQA AS papers (paper id "as-1") sort AFTER A-Level Papers 1/2/3.
+        const asWeight = (p: PredictedPaper) => (p.paper.startsWith("as-") ? 1000 : 0);
+        const wa = asWeight(a), wb = asWeight(b);
+        if (wa !== wb) return wa - wb;
         const pa = parseInt(a.paper, 10) || 0;
         const pb = parseInt(b.paper, 10) || 0;
         if (pa !== pb) return pa - pb;
@@ -1467,6 +1471,24 @@ export default function PredictedPapers() {
   function openLibraryPaper(lp: PredictedPaper) {
     if (isPremiumPredictedPaper(lp) && !isPremium) {
       setShowUpgrade(true);
+      return;
+    }
+    // AQA AS Paper 1: ship as static PDF booklets — open the QP in a new tab
+    // and trigger a download for the mark scheme so the student has both.
+    if (lp.paper.startsWith("as-")) {
+      const qp = resolveStaticPaperPdf(lp.id, "paper");
+      const ms = resolveStaticPaperPdf(lp.id, "mark-scheme");
+      if (qp) {
+        window.open(qp.url, "_blank", "noopener,noreferrer");
+        if (ms) {
+          triggerStaticPdfDownload(ms);
+          toast.success("Question paper opened. Mark scheme downloaded.", { duration: 5000 });
+        } else {
+          toast.success("Question paper opened in a new tab.");
+        }
+      } else {
+        toast.error("PDF not available for this paper yet.");
+      }
       return;
     }
     const setLabel = (lp.id.match(/-([a-g])$/i)?.[1] ?? "A").toUpperCase();
