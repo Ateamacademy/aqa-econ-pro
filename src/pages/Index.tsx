@@ -613,10 +613,8 @@ export default function Index() {
                   </div>
                 ))}
               </div>
-              <Button asChild className="w-full rounded-lg h-11 gap-2 animate-glow-pulse">
-                <Link to="/pricing">
-                  Get Unlimited Access <ArrowRight className="h-4 w-4" />
-                </Link>
+              <Button className="w-full rounded-lg h-11 gap-2 animate-glow-pulse" onClick={() => startCheckout()}>
+                Get Unlimited Access <ArrowRight className="h-4 w-4" />
               </Button>
             </motion.div>
           </div>
