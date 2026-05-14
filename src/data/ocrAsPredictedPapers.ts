@@ -3,6 +3,7 @@ import type { PredictedPaper } from "./predictedPapersLibrary";
 /**
  * OCR AS Economics (H060) · predicted papers library.
  *  · Paper 1 (H060/01) — Microeconomics.
+ *  · Paper 2 (H060/02) — Macroeconomics.
  *
  * Each paper: 1h 30m · 70 marks. Three difficulty tiers (Moderate / Hard /
  * Advanced) ship as PDF booklets in /public/ocr-as-mocks/.
@@ -17,7 +18,7 @@ const TIERS: Tier[] = [
 ];
 
 type AsPaperSpec = {
-  num: 1;
+  num: 1 | 2;
   code: string;
   title: string;
   descriptions: Record<Tier["label"], string>;
@@ -32,6 +33,16 @@ const PAPERS: AsPaperSpec[] = [
       Moderate: "OCR AS Microeconomics. Markets, market failure & government intervention. Standard data response and essay.",
       Hard:     "OCR AS Microeconomics. Demanding analysis of price mechanism, externalities and intervention.",
       Advanced: "OCR AS Microeconomics. Top-band synoptic micro evaluation under exam conditions.",
+    },
+  },
+  {
+    num: 2,
+    code: "H060/02",
+    title: "Macroeconomics",
+    descriptions: {
+      Moderate: "OCR AS Macroeconomics. AD/AS, macro objectives, fiscal & monetary policy. Standard data response and essay.",
+      Hard:     "OCR AS Macroeconomics. Demanding analysis of macro performance and policy trade-offs.",
+      Advanced: "OCR AS Macroeconomics. Top-band synoptic macro evaluation under exam conditions.",
     },
   },
 ];

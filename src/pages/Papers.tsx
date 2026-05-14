@@ -438,8 +438,9 @@ function AqaPapersList() {
   );
 }
 
-const OCR_AS_PAPERS: { number: 1; code: string; title: string; focus: string; available: boolean }[] = [
+const OCR_AS_PAPERS: { number: 1 | 2; code: string; title: string; focus: string; available: boolean }[] = [
   { number: 1, code: "H060/01", title: "Microeconomics", focus: "AS Microeconomics", available: true },
+  { number: 2, code: "H060/02", title: "Macroeconomics", focus: "AS Macroeconomics", available: true },
 ];
 
 function OcrPapersList() {
