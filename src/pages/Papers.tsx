@@ -174,10 +174,8 @@ function FreeTierBanner({ premium }: { premium: boolean }) {
           Upgrade to unlock Hard, Advanced, and Papers 2 & 3 across all boards.
         </p>
       </div>
-      <Button asChild size="sm" className="gap-1 shrink-0">
-        <Link to="/pricing">
-          <Sparkles className="h-3.5 w-3.5" /> Upgrade
-        </Link>
+      <Button size="sm" className="gap-1 shrink-0" onClick={() => startCheckout()}>
+        <Sparkles className="h-3.5 w-3.5" /> Upgrade
       </Button>
     </div>
   );
