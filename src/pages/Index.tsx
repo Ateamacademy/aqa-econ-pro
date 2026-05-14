@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { startCheckout } from "@/lib/startCheckout";
 import GradeStepLadder from "@/components/homepage/GradeStepLadder";
 import DiagnosticCalculator from "@/components/homepage/DiagnosticCalculator";
 import DashboardDemo from "@/components/homepage/DashboardDemo";
