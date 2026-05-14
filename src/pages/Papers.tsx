@@ -221,6 +221,10 @@ const AQA_AS_PAPERS: { number: 1 | 2; code: string; title: string; focus: string
   { number: 2, code: "7135/2", title: "The National Economy",                         focus: "AS Macroeconomics", available: true },
 ];
 
+const EDEXCEL_A_AS_PAPERS: { number: 2; code: string; title: string; focus: string; available: boolean }[] = [
+  { number: 2, code: "8EC0/02", title: "The Wider Economic Environment", focus: "AS Macroeconomics", available: true },
+];
+
 const EDUQAS_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; available: boolean }[] = [
   { number: 1, code: "A510QS-1", title: "Introduction to Economics",   focus: "Micro",       available: true },
   { number: 2, code: "A510QS-2", title: "Exploring Economic Issues",   focus: "Macro",       available: true },
