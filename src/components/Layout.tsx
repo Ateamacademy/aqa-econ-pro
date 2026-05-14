@@ -27,10 +27,10 @@ const homepageNavLinks = [
 ];
 
 const SUBJECTS: { value: Subject; label: string }[] = [
-  { value: "economics", label: "AQA A-Level" },
-  { value: "edexcel-a", label: "Edexcel A A-Level" },
-  { value: "edexcel-b", label: "Edexcel B A-Level" },
-  { value: "ocr", label: "OCR A-Level" },
+  { value: "economics", label: "AQA A-Level & AS" },
+  { value: "edexcel-a", label: "Edexcel A A-Level & AS" },
+  { value: "edexcel-b", label: "Edexcel B A-Level & AS" },
+  { value: "ocr", label: "OCR A-Level & AS" },
   { value: "cambridge", label: "CAIE A-Level" },
   { value: "ib", label: "IB HL/SL" },
   { value: "wjec", label: "WJEC A-Level" },
