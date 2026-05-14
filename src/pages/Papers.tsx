@@ -386,14 +386,24 @@ function EdexcelBPapersList() {
 
 function AqaPapersList() {
   return (
-    <BoardList
-      title="AQA A-Level · Papers"
-      description="Full mock papers (Paper 1, 2 & 3 × Moderate, Hard, Advanced) in the authentic AQA format, each paired with its full mark scheme."
-      papers={AQA_PAPERS}
-      meta={(p) => `${p.code} · ${p.focus} · 2h · 80 marks`}
-      paperHref={(p, d) => `/aqa-mocks/paper-${p.number}-${d}.pdf`}
-      msHref={(p, d) => `/aqa-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
-    />
+    <>
+      <BoardList
+        title="AQA A-Level · Papers"
+        description="Full mock papers (Paper 1, 2 & 3 × Moderate, Hard, Advanced) in the authentic AQA format, each paired with its full mark scheme."
+        papers={AQA_PAPERS}
+        meta={(p) => `${p.code} · ${p.focus} · 2h · 80 marks`}
+        paperHref={(p, d) => `/aqa-mocks/paper-${p.number}-${d}.pdf`}
+        msHref={(p, d) => `/aqa-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
+      />
+      <BoardList
+        title="AQA AS · Papers"
+        description="Full AS-Level mock papers (Moderate, Hard, Advanced) in the authentic AQA AS format (7135/1), each paired with its full mark scheme."
+        papers={AQA_AS_PAPERS}
+        meta={(p) => `${p.code} · ${p.focus} · 1h 30m · 60 marks`}
+        paperHref={(p, d) => `/aqa-as-mocks/paper-${p.number}-${d}.pdf`}
+        msHref={(p, d) => `/aqa-as-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
+      />
+    </>
   );
 }
 
