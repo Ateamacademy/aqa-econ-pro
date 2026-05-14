@@ -20,6 +20,17 @@ export default function Auth() {
   // Redirect logged-in users
   useEffect(() => {
     if (user && profile) {
+      let pendingCheckout = false;
+      try {
+        if (sessionStorage.getItem("postAuthAction") === "checkout") {
+          sessionStorage.removeItem("postAuthAction");
+          pendingCheckout = true;
+        }
+      } catch {}
+      if (pendingCheckout) {
+        import("@/lib/startCheckout").then(({ startCheckout }) => startCheckout());
+        return;
+      }
       navigate(profile.onboarding_completed ? "/dashboard" : "/onboarding", { replace: true });
     }
   }, [user, profile, navigate]);
