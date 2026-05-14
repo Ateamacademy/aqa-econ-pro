@@ -437,16 +437,30 @@ function AqaPapersList() {
   );
 }
 
+const OCR_AS_PAPERS: { number: 1; code: string; title: string; focus: string; available: boolean }[] = [
+  { number: 1, code: "H060/01", title: "Microeconomics", focus: "AS Microeconomics", available: true },
+];
+
 function OcrPapersList() {
   return (
-    <BoardList
-      title="OCR A-Level · Papers"
-      description="Paper 1 is now available in the Papers section in the same card format, paired with its full mark scheme across Moderate, Hard, and Advanced."
-      papers={OCR_PAPERS}
-      meta={(p) => `${p.code} · ${p.focus} · 2h · 80 marks`}
-      paperHref={(p, d) => `/ocr-mocks/paper-${p.number}-${d}.pdf`}
-      msHref={(p, d) => `/ocr-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
-    />
+    <>
+      <BoardList
+        title="OCR A-Level · Papers"
+        description="Paper 1 is now available in the Papers section in the same card format, paired with its full mark scheme across Moderate, Hard, and Advanced."
+        papers={OCR_PAPERS}
+        meta={(p) => `${p.code} · ${p.focus} · 2h · 80 marks`}
+        paperHref={(p, d) => `/ocr-mocks/paper-${p.number}-${d}.pdf`}
+        msHref={(p, d) => `/ocr-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
+      />
+      <BoardList
+        title="OCR AS · Papers"
+        description="Full AS-Level mock papers (Moderate, Hard, Advanced) in the authentic OCR AS format (H060), each paired with its full mark scheme."
+        papers={OCR_AS_PAPERS}
+        meta={(p) => `${p.code} · ${p.focus} · 1h 30m · 70 marks`}
+        paperHref={(p, d) => `/ocr-as-mocks/paper-${p.number}-${d}.pdf`}
+        msHref={(p, d) => `/ocr-as-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
+      />
+    </>
   );
 }
 
