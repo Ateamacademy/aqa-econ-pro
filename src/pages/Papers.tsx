@@ -57,10 +57,8 @@ function ActionRow({ icon, label, href, internal, disabled, locked, primary = tr
       {disabled ? (
         <span className="text-[11px] text-muted-foreground italic">Coming soon</span>
       ) : locked ? (
-        <Button asChild size="sm" variant="outline" className="h-7 gap-1 text-xs">
-          <Link to="/pricing" title="Upgrade to unlock">
-            <Lock className="h-3 w-3" /> Unlock
-          </Link>
+        <Button size="sm" variant="outline" className="h-7 gap-1 text-xs" onClick={() => startCheckout()} title="Upgrade to unlock">
+          <Lock className="h-3 w-3" /> Unlock
         </Button>
       ) : (
         <div className="flex gap-1">
