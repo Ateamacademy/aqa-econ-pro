@@ -45,10 +45,12 @@ export function UpgradeModal({ open, onOpenChange, feature }: UpgradeModalProps)
         </div>
 
         <div className="flex flex-col gap-2">
-          <Button asChild size="lg" className="w-full gap-2">
-            <Link to="/pricing" onClick={() => onOpenChange(false)}>
-              Upgrade for £29 <ArrowRight className="h-4 w-4" />
-            </Link>
+          <Button
+            size="lg"
+            className="w-full gap-2"
+            onClick={() => { onOpenChange(false); startCheckout(); }}
+          >
+            Upgrade for £29 <ArrowRight className="h-4 w-4" />
           </Button>
           <p className="text-center text-xs text-muted-foreground">
             One payment · Access until 29 June 2026
