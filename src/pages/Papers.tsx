@@ -479,8 +479,9 @@ function EduqasPapersList() {
   );
 }
 
-const WJEC_AS_PAPERS: { number: 1; code: string; title: string; focus: string; available: boolean }[] = [
+const WJEC_AS_PAPERS: { number: 1 | 2; code: string; title: string; focus: string; available: boolean }[] = [
   { number: 1, code: "1090U10-1", title: "Introduction to Economics", focus: "AS Microeconomics", available: true },
+  { number: 2, code: "1090U20-1", title: "Exploring Economic Issues", focus: "AS Macroeconomics", available: true },
 ];
 
 function WjecPapersList() {
