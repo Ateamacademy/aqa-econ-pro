@@ -17,7 +17,7 @@ const TIERS: Tier[] = [
 ];
 
 type AsPaperSpec = {
-  num: 1;
+  num: 1 | 2;
   code: string;
   title: string;
   descriptions: Record<Tier["label"], string>;
@@ -32,6 +32,16 @@ const PAPERS: AsPaperSpec[] = [
       Moderate: "WJEC AS Component 1. Markets, demand & supply, market failure and intervention. Standard data response and structured questions.",
       Hard:     "WJEC AS Component 1. Demanding analysis of price mechanism, externalities and government intervention.",
       Advanced: "WJEC AS Component 1. Top-band synoptic micro evaluation under exam conditions.",
+    },
+  },
+  {
+    num: 2,
+    code: "1090U20-1",
+    title: "Exploring Economic Issues",
+    descriptions: {
+      Moderate: "WJEC AS Component 2. Macroeconomic indicators, AD/AS, fiscal, monetary and supply-side policy with applied data response.",
+      Hard:     "WJEC AS Component 2. Demanding analysis of macro objectives, policy trade-offs and the global context.",
+      Advanced: "WJEC AS Component 2. Top-band synoptic macro evaluation under exam conditions.",
     },
   },
 ];

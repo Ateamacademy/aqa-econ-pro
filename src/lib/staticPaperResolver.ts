@@ -143,11 +143,11 @@ const BOARDS: BoardConfig[] = [
   },
   // WJEC AS · Component 1 (1090U10-1)
   {
-    pattern: /^wjec-as([1])-([abc])$/i,
+    pattern: /^wjec-as([12])-([abc])$/i,
     folder: "/wjec-as-mocks",
     displayName: "WJEC-AS-Economics",
     tierMap: { a: "moderate", b: "hard", c: "advanced" },
-    allowedPapers: ["1"],
+    allowedPapers: ["1", "2"],
   },
   // Eduqas A-Level
   {
