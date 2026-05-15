@@ -33,7 +33,7 @@ const SUBJECTS: { value: Subject; label: string }[] = [
   { value: "ocr", label: "OCR A-Level & AS" },
   { value: "cambridge", label: "CAIE A-Level" },
   { value: "ib", label: "IB HL/SL" },
-  { value: "wjec", label: "WJEC A-Level" },
+  { value: "wjec", label: "WJEC A-Level & AS" },
   { value: "eduqas", label: "Eduqas A-Level" },
   { value: "aqa-gcse", label: "AQA GCSE" },
   { value: "cambridge-igcse", label: "CAIE IGCSE" },
