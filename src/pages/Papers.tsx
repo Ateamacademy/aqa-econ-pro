@@ -479,16 +479,30 @@ function EduqasPapersList() {
   );
 }
 
+const WJEC_AS_PAPERS: { number: 1; code: string; title: string; focus: string; available: boolean }[] = [
+  { number: 1, code: "1090U10-1", title: "Introduction to Economics", focus: "AS Microeconomics", available: true },
+];
+
 function WjecPapersList() {
   return (
-    <BoardList
-      title="WJEC A-Level · Papers"
-      description="Paper 1 is now available in the Papers section in the same card format, paired with its full mark scheme across Moderate, Hard, and Advanced."
-      papers={WJEC_PAPERS}
-      meta={(p) => `${p.code} · ${p.focus} · 2h · 80 marks`}
-      paperHref={(p, d) => `/wjec-mocks/paper-${p.number}-${d}.pdf`}
-      msHref={(p, d) => `/wjec-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
-    />
+    <>
+      <BoardList
+        title="WJEC A-Level · Papers"
+        description="Paper 1 is now available in the Papers section in the same card format, paired with its full mark scheme across Moderate, Hard, and Advanced."
+        papers={WJEC_PAPERS}
+        meta={(p) => `${p.code} · ${p.focus} · 2h · 80 marks`}
+        paperHref={(p, d) => `/wjec-mocks/paper-${p.number}-${d}.pdf`}
+        msHref={(p, d) => `/wjec-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
+      />
+      <BoardList
+        title="WJEC AS · Papers"
+        description="Full AS-Level mock papers (Moderate, Hard, Advanced) in the authentic WJEC AS format (Component 1 · 1090U10-1), each paired with its full mark scheme."
+        papers={WJEC_AS_PAPERS}
+        meta={(p) => `${p.code} · ${p.focus} · 1h 30m · 80 marks`}
+        paperHref={(p, d) => `/wjec-as-mocks/paper-${p.number}-${d}.pdf`}
+        msHref={(p, d) => `/wjec-as-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
+      />
+    </>
   );
 }
 
