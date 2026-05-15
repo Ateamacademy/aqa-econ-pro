@@ -31,7 +31,7 @@ const SUBJECTS: { value: Subject; label: string }[] = [
   { value: "edexcel-a", label: "Edexcel A A-Level & AS" },
   { value: "edexcel-b", label: "Edexcel B A-Level & AS" },
   { value: "ocr", label: "OCR A-Level & AS" },
-  { value: "cambridge", label: "CAIE A-Level" },
+  { value: "cambridge", label: "CAIE A-Level & AS" },
   { value: "ib", label: "IB HL/SL" },
   { value: "wjec", label: "WJEC A-Level & AS" },
   { value: "eduqas", label: "Eduqas A-Level" },
