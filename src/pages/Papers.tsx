@@ -507,19 +507,33 @@ function WjecPapersList() {
   );
 }
 
+const CAIE_AS_PAPERS: { number: 1; code: string; title: string; focus: string; available: boolean }[] = [
+  { number: 1, code: "9708/01", title: "Multiple Choice", focus: "AS Micro & Macro", available: true },
+];
+
 function CaiePapersList() {
   return (
-    <BoardList
-      title="CAIE A-Level · Papers"
-      description="Paper 1 is now available in the Papers section in the same card format, paired with its full mark scheme across Moderate, Hard, and Advanced."
-      papers={CAIE_PAPERS}
-      meta={(p) => {
-        const ext = p as typeof CAIE_PAPERS[number];
-        return `${ext.code} · ${ext.focus} · ${ext.duration} · ${ext.marks} marks`;
-      }}
-      paperHref={(p, d) => `/caie-mocks/paper-${p.number}-${d}.pdf`}
-      msHref={(p, d) => `/caie-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
-    />
+    <>
+      <BoardList
+        title="CAIE A-Level · Papers"
+        description="Paper 1 is now available in the Papers section in the same card format, paired with its full mark scheme across Moderate, Hard, and Advanced."
+        papers={CAIE_PAPERS}
+        meta={(p) => {
+          const ext = p as typeof CAIE_PAPERS[number];
+          return `${ext.code} · ${ext.focus} · ${ext.duration} · ${ext.marks} marks`;
+        }}
+        paperHref={(p, d) => `/caie-mocks/paper-${p.number}-${d}.pdf`}
+        msHref={(p, d) => `/caie-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
+      />
+      <BoardList
+        title="CAIE AS · Papers"
+        description="Full AS-Level mock papers (Moderate, Hard, Advanced) in the authentic CAIE AS format (Paper 1 · 9708/01 Multiple Choice), each paired with its full mark scheme."
+        papers={CAIE_AS_PAPERS}
+        meta={(p) => `${p.code} · ${p.focus} · 1h · 30 marks`}
+        paperHref={(p, d) => `/caie-as-mocks/paper-${p.number}-${d}.pdf`}
+        msHref={(p, d) => `/caie-as-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
+      />
+    </>
   );
 }
 
