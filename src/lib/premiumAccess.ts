@@ -32,6 +32,7 @@ const ADMIN_EMAILS: ReadonlyArray<string> = [
   "anjali.doal08@gmail.com",
   "zaki089@outlook.com",
   "anviparmar88@hotmail.com",
+  "anvi08parmar@hotmail.com",
   "anvith.sujay@gmail.com",
   "zakariyahassan185@gmail.com",
   "adie.gascoigne@gmail.com",

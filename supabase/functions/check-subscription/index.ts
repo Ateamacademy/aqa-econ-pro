@@ -11,6 +11,7 @@ const PERMANENT_ACCESS_EXPIRES = "2099-12-31T23:59:59Z";
 
 const PERMANENT_ACCESS_EMAILS = [
   "anviparmar88@hotmail.com",
+  "anvi08parmar@hotmail.com",
   "anvith.sujay@gmail.com",
 ];
 
@@ -32,6 +33,7 @@ const TESTER_EMAILS = [
   "anjali.doal08@gmail.com",
   "zaki089@outlook.com",
   "anviparmar88@hotmail.com",
+  "anvi08parmar@hotmail.com",
   "anvith.sujay@gmail.com",
   "zakariyahassan185@gmail.com",
   "samirmiskin@icloud.com",
