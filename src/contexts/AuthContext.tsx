@@ -67,8 +67,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           // Fail-open: keep prior values; do not block the UI.
           return;
         }
-        setSubscribed(data?.subscribed ?? false);
-        setSubscriptionEnd(data?.subscription_end ?? null);
+        const degraded = Boolean(data?.degraded || data?.fallback);
+        setSubscribed((previous) => Boolean(data?.subscribed) || (degraded ? previous : false));
+        setSubscriptionEnd((previous) => data?.subscription_end ?? (degraded ? previous : null));
         succeeded = true;
       } catch (e) {
         console.warn("Sub check failed (degraded):", e);

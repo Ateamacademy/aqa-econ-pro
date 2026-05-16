@@ -26,6 +26,7 @@ const TESTER_EMAILS = [
   "anjali.doal08@gmail.com",
   "zaki089@outlook.com",
   "anviparmar88@hotmail.com",
+  "anvith.sujay@gmail.com",
   "zakariyahassan185@gmail.com",
   "samirmiskin@icloud.com",
   "adie.gascoigne@gmail.com",
