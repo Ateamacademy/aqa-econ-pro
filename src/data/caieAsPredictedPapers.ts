@@ -54,7 +54,7 @@ const PAPERS: AsPaperSpec[] = [
 
 const placeholderContent = (p: AsPaperSpec) => `# CAIE AS Economics (${p.code}) · Paper ${p.num} — ${p.title}
 
-**Time: 1 hour | Total: 30 marks**
+**Time: ${p.duration} | Total: ${p.totalMarks} marks**
 
 Open the booklet PDF for the full question paper.`;
 
@@ -65,7 +65,7 @@ export const caieAsPredictedPapers: PredictedPaper[] = PAPERS.flatMap((p) =>
     paper: `as-${p.num}`,
     title: `AS Paper ${p.num} · Set ${t.letter.toUpperCase()}`,
     description: p.descriptions[t.label],
-    totalMarks: 30,
+    totalMarks: p.totalMarks,
     content: placeholderContent(p),
   }))
 );
