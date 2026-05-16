@@ -85,11 +85,11 @@ const BOARDS: BoardConfig[] = [
   },
   // CAIE AS · Paper 1 (9708/01), Paper 2 (9708/02) and Paper 3 (9708/03)
   {
-    pattern: /^caie-as([123])-([abc])$/i,
+    pattern: /^caie-as([1234])-([abc])$/i,
     folder: "/caie-as-mocks",
     displayName: "CAIE-AS-Economics",
     tierMap: { a: "moderate", b: "hard", c: "advanced" },
-    allowedPapers: ["1", "2", "3"],
+    allowedPapers: ["1", "2", "3", "4"],
   },
   // CAIE A-Level (Cambridge 9708) · id pattern: caie-p{1-4}-set-{a-e}
   // Only Paper 3 is wired to static PDFs (uploaded by user).
