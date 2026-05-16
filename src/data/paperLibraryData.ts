@@ -59,7 +59,7 @@ const BOARDS: BoardMeta[] = [
     ],
   },
   {
-    subject: "cambridge", boardLabel: "CAIE", level: "A-Level",
+    subject: "cambridge", boardLabel: "CAIE", level: "A-Level & AS",
     papers: [
       { value: "1", label: "Paper 1", title: "Multiple Choice (AS)", marks: 30, duration: 75 },
       { value: "2", label: "Paper 2", title: "Data Response & Essay (AS)", marks: 40, duration: 135 },
