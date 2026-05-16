@@ -203,6 +203,45 @@ export type Database = {
           },
         ]
       }
+      client_errors: {
+        Row: {
+          area: string | null
+          component: string | null
+          created_at: string
+          id: string
+          message: string
+          meta: Json | null
+          route: string | null
+          stack: string | null
+          user_agent: string | null
+          user_id: string | null
+        }
+        Insert: {
+          area?: string | null
+          component?: string | null
+          created_at?: string
+          id?: string
+          message: string
+          meta?: Json | null
+          route?: string | null
+          stack?: string | null
+          user_agent?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          area?: string | null
+          component?: string | null
+          created_at?: string
+          id?: string
+          message?: string
+          meta?: Json | null
+          route?: string | null
+          stack?: string | null
+          user_agent?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       diagram_exemplars: {
         Row: {
           board: string | null
