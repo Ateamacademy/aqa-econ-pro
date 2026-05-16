@@ -90,7 +90,13 @@ const queryClient = new QueryClient({
       staleTime: 5 * 60 * 1000, // 5 min cache for 50K user scale
       gcTime: 10 * 60 * 1000,
       retry: 2,
+      // Exponential backoff so transient AI/marking failures self-heal
+      retryDelay: (attempt) => Math.min(1000 * 2 ** attempt, 8000),
       refetchOnWindowFocus: false,
+    },
+    mutations: {
+      retry: 1,
+      retryDelay: (attempt) => Math.min(1000 * 2 ** attempt, 4000),
     },
   },
 });
