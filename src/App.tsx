@@ -8,6 +8,7 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import { SubjectProvider } from "@/contexts/SubjectContext";
 import Layout from "@/components/Layout";
 import { PremiumGate } from "@/components/PremiumGate";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 
@@ -90,7 +91,13 @@ const queryClient = new QueryClient({
       staleTime: 5 * 60 * 1000, // 5 min cache for 50K user scale
       gcTime: 10 * 60 * 1000,
       retry: 2,
+      // Exponential backoff so transient AI/marking failures self-heal
+      retryDelay: (attempt) => Math.min(1000 * 2 ** attempt, 8000),
       refetchOnWindowFocus: false,
+    },
+    mutations: {
+      retry: 1,
+      retryDelay: (attempt) => Math.min(1000 * 2 ** attempt, 4000),
     },
   },
 });
@@ -104,6 +111,7 @@ const App = () => (
         <AuthProvider>
           <SubjectProvider>
           <Layout>
+            <ErrorBoundary boundary="Routes">
             <Suspense fallback={<div className="flex items-center justify-center min-h-[60vh]"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" /><p className="ml-3 text-sm text-muted-foreground">Loading…</p></div>}>
             <Routes>
               <Route path="/" element={<Index />} />
@@ -183,6 +191,7 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
             </Suspense>
+            </ErrorBoundary>
           </Layout>
           </SubjectProvider>
         </AuthProvider>
