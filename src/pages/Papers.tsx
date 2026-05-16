@@ -528,7 +528,7 @@ function CaiePapersList() {
       />
       <BoardList
         title="CAIE AS · Papers"
-        description="Full AS-Level mock papers (Moderate, Hard, Advanced) in the authentic CAIE AS format (Paper 1 · 9708/01 Multiple Choice), each paired with its full mark scheme."
+        description="Full AS-Level mock papers (Moderate, Hard, Advanced) in the authentic CAIE AS format (Paper 1 · 9708/01 Multiple Choice and Paper 3 · 9708/03 Data Response and Essays), each paired with its full mark scheme."
         papers={CAIE_AS_PAPERS}
         meta={(p) => `${p.code} · ${p.focus} · 1h · 30 marks`}
         paperHref={(p, d) => `/caie-as-mocks/paper-${p.number}-${d}.pdf`}
