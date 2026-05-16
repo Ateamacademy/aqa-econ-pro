@@ -507,8 +507,9 @@ function WjecPapersList() {
   );
 }
 
-const CAIE_AS_PAPERS: { number: 1 | 3; code: string; title: string; focus: string; available: boolean }[] = [
+const CAIE_AS_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; available: boolean }[] = [
   { number: 1, code: "9708/01", title: "Multiple Choice",            focus: "AS Micro & Macro", available: true },
+  { number: 2, code: "9708/02", title: "Data Response & Essay",      focus: "AS Micro & Macro", available: true },
   { number: 3, code: "9708/03", title: "Data Response and Essays",   focus: "AS Core",           available: true },
 ];
 
@@ -528,7 +529,7 @@ function CaiePapersList() {
       />
       <BoardList
         title="CAIE AS · Papers"
-        description="Full AS-Level mock papers (Moderate, Hard, Advanced) in the authentic CAIE AS format (Paper 1 · 9708/01 Multiple Choice and Paper 3 · 9708/03 Data Response and Essays), each paired with its full mark scheme."
+        description="Full AS-Level mock papers (Moderate, Hard, Advanced) in the authentic CAIE AS format — Paper 1 (9708/01) Multiple Choice, Paper 2 (9708/02) Data Response & Essay, and Paper 3 (9708/03) Data Response and Essays — each paired with its full mark scheme."
         papers={CAIE_AS_PAPERS}
         meta={(p) => `${p.code} · ${p.focus} · 1h · 30 marks`}
         paperHref={(p, d) => `/caie-as-mocks/paper-${p.number}-${d}.pdf`}
