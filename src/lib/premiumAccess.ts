@@ -9,10 +9,32 @@
  */
 
 const ADMIN_EMAILS: ReadonlyArray<string> = [
+  // Admins
   "swapnil.kumar22@alumni.imperial.ac.uk",
   "aminul.miah@ateamacademy.co.uk",
   "info@ateamacademy.co.uk",
   "samirmiskin@icloud.com",
+  // Testers / comp accounts (mirrors check-subscription tester allowlist so
+  // gating still works client-side if the subscription check is degraded).
+  "student1@email.com",
+  "student2@email.com",
+  "tester@email.com",
+  "trial1@econrev.com",
+  "trial2@econrev.com",
+  "trial3@econrev.com",
+  "trial4@econrev.com",
+  "trial5@econrev.com",
+  "aminul_miah@yahoo.co.uk",
+  "adeniyisarah05@gmail.com",
+  "swapnilkumar.2016@vitalum.ac.in",
+  "ivan.radic1992@gmail.com",
+  "ufareed12@gmail.com",
+  "anjali.doal08@gmail.com",
+  "zaki089@outlook.com",
+  "anviparmar88@hotmail.com",
+  "zakariyahassan185@gmail.com",
+  "adie.gascoigne@gmail.com",
+  "josh000000r@gmail.com",
 ];
 
 export function isAdminEmail(email?: string | null): boolean {
