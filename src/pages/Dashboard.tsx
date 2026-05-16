@@ -257,17 +257,17 @@ export default function Dashboard() {
 
             {/* Right */}
             <div className="space-y-4">
-              {subscribed && (
+              {isPremium && (
                 <motion.div variants={fadeUp}>
                   <StudyStreak streak={r.streak} weeklyDays={r.weeklyDays} />
                 </motion.div>
               )}
-              {subscribed && (
+              {isPremium && (
                 <motion.div variants={fadeUp}>
                   <PerformanceOverTime sessions={sessions} subject={subject} />
                 </motion.div>
               )}
-              {subscribed && (
+              {isPremium && (
                 <motion.div variants={fadeUp}>
                   <Leaderboard userScore={r.score} />
                 </motion.div>
