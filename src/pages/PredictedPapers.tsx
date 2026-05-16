@@ -1274,7 +1274,7 @@ export default function PredictedPapers() {
   const [solutionProgress, setSolutionProgress] = useState<{ done: number; total: number }>({ done: 0, total: 0 });
 
   const used = (profile as any)?.free_predicted_papers_used ?? 0;
-  const canUse = subscribed || used < FREE_LIMITS.predictedPapers;
+  const canUse = isPremium || used < FREE_LIMITS.predictedPapers;
   const remaining = FREE_LIMITS.predictedPapers - used;
 
   const paperOptions = paperOptionsBySubject[subject];
