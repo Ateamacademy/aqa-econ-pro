@@ -96,14 +96,31 @@ export default function AdminQaTracker() {
     if (!file) return;
     try {
       const buf = await file.arrayBuffer();
-      const wb = XLSX.read(buf);
+      const wb = new ExcelJS.Workbook();
+      await wb.xlsx.load(buf);
       const rows: any[] = [];
-      for (const name of wb.SheetNames) {
-        const sheet = XLSX.utils.sheet_to_json(wb.Sheets[name], { defval: "" });
-        for (const r of sheet as any[]) {
-          rows.push({ sheet: name, ...r });
+      wb.eachSheet((sheet) => {
+        if (sheet.rowCount < 2) return;
+        const headerRow = sheet.getRow(1);
+        const headers: string[] = [];
+        headerRow.eachCell((cell, col) => {
+          headers[col] = String(cell.value ?? "").trim();
+        });
+        for (let r = 2; r <= sheet.rowCount; r++) {
+          const row = sheet.getRow(r);
+          const obj: Record<string, unknown> = { sheet: sheet.name };
+          row.eachCell({ includeEmpty: true }, (cell, col) => {
+            const key = headers[col];
+            if (!key) return;
+            const v = cell.value;
+            // Normalize ExcelJS rich-text / hyperlink / formula objects to strings
+            if (v && typeof v === "object" && "text" in v) obj[key] = (v as { text: unknown }).text ?? "";
+            else if (v && typeof v === "object" && "result" in v) obj[key] = (v as { result: unknown }).result ?? "";
+            else obj[key] = v ?? "";
+          });
+          rows.push(obj);
         }
-      }
+      });
       const inserts = rows
         .filter((r) => r.title || r.Title || r.description || r.Description)
         .map((r) => ({
