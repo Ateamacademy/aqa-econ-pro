@@ -8,6 +8,7 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import { SubjectProvider } from "@/contexts/SubjectContext";
 import Layout from "@/components/Layout";
 import { PremiumGate } from "@/components/PremiumGate";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 
