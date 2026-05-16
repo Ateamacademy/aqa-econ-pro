@@ -6,6 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { startCheckout } from "@/lib/startCheckout";
 import { useReadinessScore, type SessionRow } from "@/hooks/useReadinessScore";
 import { useDashboardState } from "@/hooks/useDashboardState";
+import { hasPremiumAccess } from "@/lib/premiumAccess";
 import ReadinessRadial from "@/components/dashboard/ReadinessRadial";
 import InteractiveJourney from "@/components/dashboard/InteractiveJourney";
 import StatTiles from "@/components/dashboard/StatTiles";
@@ -50,6 +51,7 @@ const fadeUp = {
 
 export default function Dashboard() {
   const { user, subscribed } = useAuth();
+  const isPremium = hasPremiumAccess({ subscribed, email: user?.email });
   const { subject, subjectLabel, examBoard } = useSubject();
   const navigate = useNavigate();
   const [sessions, setSessions] = useState<SessionRow[]>([]);
@@ -137,7 +139,7 @@ export default function Dashboard() {
         </nav>
 
         {/* Upgrade card */}
-        {!subscribed && (
+        {!isPremium && (
           <div className="p-3">
             <div className="rounded-xl bg-primary/10 border border-primary/20 p-4">
               <Crown className="h-5 w-5 text-primary mb-2" />
@@ -194,7 +196,7 @@ export default function Dashboard() {
           </motion.div>
 
           {/* Readiness Score Hero · Pro only */}
-          {subscribed && (
+          {isPremium && (
             <motion.div variants={fadeUp} className="flex justify-center py-6 relative">
               <ScoreDelta points={dash.readinessScore.weeklyChange} />
               <ReadinessRadial
@@ -206,7 +208,7 @@ export default function Dashboard() {
           )}
 
           {/* Interactive Journey · Pro only */}
-          {subscribed && (
+          {isPremium && (
             <motion.div variants={fadeUp}>
               <InteractiveJourney state={dash} />
             </motion.div>
@@ -228,7 +230,7 @@ export default function Dashboard() {
           </div>
 
           {/* Action Cards */}
-          {subscribed && (
+          {isPremium && (
             <motion.div variants={fadeUp} className="mb-6">
               <h3 className="text-foreground font-semibold text-sm mb-3">Recommended Actions</h3>
               <ActionCards actions={r.recommendations} />
@@ -255,17 +257,17 @@ export default function Dashboard() {
 
             {/* Right */}
             <div className="space-y-4">
-              {subscribed && (
+              {isPremium && (
                 <motion.div variants={fadeUp}>
                   <StudyStreak streak={r.streak} weeklyDays={r.weeklyDays} />
                 </motion.div>
               )}
-              {subscribed && (
+              {isPremium && (
                 <motion.div variants={fadeUp}>
                   <PerformanceOverTime sessions={sessions} subject={subject} />
                 </motion.div>
               )}
-              {subscribed && (
+              {isPremium && (
                 <motion.div variants={fadeUp}>
                   <Leaderboard userScore={r.score} />
                 </motion.div>

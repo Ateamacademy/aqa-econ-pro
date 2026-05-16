@@ -2081,7 +2081,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
           }));
           setMarkingId(null);
 
-          if (!subscribed && Object.keys(feedbacks).length === 0) {
+          if (!isPremium && Object.keys(feedbacks).length === 0) {
             await supabase
               .from("profiles")
               .update({ free_predicted_papers_used: used + 1 } as any)
@@ -2092,7 +2092,7 @@ Address me directly. Be encouraging but honest about where I lost marks.`;
         onError: (err) => { toast.error(err); setMarkingId(null); },
       });
     },
-    [answers, paperContext, feedbacks, subscribed, used, user?.id, refreshProfile, subject, tier, isMaths, isPremium]
+    [answers, paperContext, feedbacks, used, user?.id, refreshProfile, subject, tier, isMaths, isPremium]
   );
 
   const handleDownloadSolutions = useCallback(async () => {
@@ -2605,7 +2605,7 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                   transition={{ delay: 0.2 }}
                   className="text-center space-y-4 pt-6"
                 >
-                  {!subscribed && (
+                  {!isPremium && (
                     <p className="text-sm text-muted-foreground">
                       <span className="font-bold text-foreground">{Math.max(0, remaining)}</span> of{" "}
                       {FREE_LIMITS.predictedPapers} free papers remaining
