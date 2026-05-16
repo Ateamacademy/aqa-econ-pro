@@ -1,4 +1,17 @@
+## Status — Phases 1, 2, 3 shipped ✅
+
+- Phase 1 (Stability): Error boundaries, query retry/backoff, `xlsx` → `exceljs`, Password HIBP, auth resilience.
+- Phase 2 (Backend security): client_errors telemetry table, RLS tightened, `SET search_path` + `REVOKE EXECUTE FROM anon` on definer functions.
+- Phase 3 (Performance + observability):
+  - Route-level code-split already in place via `React.lazy()` for all 60+ pages in `App.tsx`.
+  - LCP image preload + Supabase preconnect added to `index.html`.
+  - `supabase/functions/_shared/validate.ts` shared Zod validator created (apply per-function incrementally without touching marking logic).
+  - `src/lib/logClientError.ts` wired through `ErrorBoundary` for real telemetry.
+
+---
+
 ## Why retention is dropping (what the audit actually found)
+
 
 I ran the security scanner, Supabase linter, dependency scan, and codebase sweep. The "unstable + unsecure" complaint is backed by real signals — these are the concrete causes:
 
