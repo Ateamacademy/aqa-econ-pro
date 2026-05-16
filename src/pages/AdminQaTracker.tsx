@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { CheckCircle2, AlertTriangle, Upload, RefreshCw, ArrowLeft } from "lucide-react";
-import * as XLSX from "xlsx";
+import ExcelJS from "exceljs";
 import {
   runRegressionValidators,
   type QaIssue,
