@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useRef, useState, ReactNode } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import type { User, Session } from "@supabase/supabase-js";
+import { isAdminEmail } from "@/lib/premiumAccess";
 
 interface AuthContextType {
   user: User | null;
@@ -61,14 +62,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const request = (async () => {
       let succeeded = false;
       try {
+        const { data: { session } } = await supabase.auth.getSession();
+        const locallyAllowed = isAdminEmail(session?.user?.email);
         const { data, error } = await invokeWithRetry();
         if (error) {
           console.warn("Sub check unavailable (degraded):", error);
+          if (locallyAllowed) setSubscribed(true);
           // Fail-open: keep prior values; do not block the UI.
           return;
         }
         const degraded = Boolean(data?.degraded || data?.fallback);
-        setSubscribed((previous) => Boolean(data?.subscribed) || (degraded ? previous : false));
+        setSubscribed((previous) => Boolean(data?.subscribed) || locallyAllowed || (degraded ? previous : false));
         setSubscriptionEnd((previous) => data?.subscription_end ?? (degraded ? previous : null));
         succeeded = true;
       } catch (e) {
@@ -91,6 +95,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(session?.user ?? null);
         setLoading(false);
         if (session?.user) {
+          setSubscribed((previous) => previous || isAdminEmail(session.user.email));
           setTimeout(() => {
             refreshSubscription().catch((e) => console.warn("refreshSubscription failed:", e));
             refreshProfile().catch((e) => console.warn("refreshProfile failed:", e));
@@ -110,7 +115,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setSession(session);
       setUser(session?.user ?? null);
       setLoading(false);
-      if (session?.user) { refreshSubscription(); refreshProfile(); }
+      if (session?.user) {
+        setSubscribed((previous) => previous || isAdminEmail(session.user.email));
+        refreshSubscription();
+        refreshProfile();
+      }
     }).catch(async (err) => {
       console.error("Auth session error — clearing local session:", err);
       // Corrupt persisted session is a known cause of app-wide deadlock on load.
