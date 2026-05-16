@@ -25,7 +25,7 @@ const SUBJECT_META: Record<Subject, { label: string; board: string; level: strin
   "edexcel-a": { label: "Economics A", board: "Edexcel", level: "A-Level" },
   "edexcel-b": { label: "Economics B", board: "Edexcel", level: "A-Level" },
   "ocr": { label: "Economics", board: "OCR", level: "A-Level" },
-  "cambridge": { label: "Economics", board: "CAIE", level: "A-Level" },
+  "cambridge": { label: "Economics", board: "CAIE", level: "A-Level & AS" },
   "ib": { label: "Economics", board: "IB", level: "HL/SL" },
   "wjec": { label: "Economics", board: "WJEC", level: "A-Level" },
   "eduqas": { label: "Economics", board: "Eduqas", level: "A-Level" },

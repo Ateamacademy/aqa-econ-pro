@@ -17,7 +17,7 @@ const TIERS: Tier[] = [
 ];
 
 type AsPaperSpec = {
-  num: 1 | 3;
+  num: 1 | 2 | 3;
   code: string;
   title: string;
   totalMarks: number;
@@ -36,6 +36,18 @@ const PAPERS: AsPaperSpec[] = [
       Moderate: "CAIE AS Paper 1. 30 multiple-choice questions across the basic economic problem, price system, government microeconomic intervention and the macroeconomy.",
       Hard:     "CAIE AS Paper 1. Demanding multiple-choice on elasticity, market failure, AD/AS and balance of payments with tighter distractors.",
       Advanced: "CAIE AS Paper 1. Top-band multiple-choice with full AS Micro & Macro coverage under exam conditions.",
+    },
+  },
+  {
+    num: 2,
+    code: "9708/02",
+    title: "Data Response & Essay (AS)",
+    totalMarks: 40,
+    duration: "1 hour 30 minutes",
+    descriptions: {
+      Moderate: "CAIE AS Paper 2. Data response plus structured essay covering AS Micro & Macro core content.",
+      Hard:     "CAIE AS Paper 2. Demanding data-response and essay tasks with sharper command words and tighter mark schemes.",
+      Advanced: "CAIE AS Paper 2. Top-band data response and essays across full AS Micro & Macro under exam conditions.",
     },
   },
   {
