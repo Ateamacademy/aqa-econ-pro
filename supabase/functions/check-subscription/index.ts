@@ -7,6 +7,12 @@ const corsHeaders = {
 };
 
 const ACCESS_EXPIRES = "2026-06-29T23:59:59Z";
+const PERMANENT_ACCESS_EXPIRES = "2099-12-31T23:59:59Z";
+
+const PERMANENT_ACCESS_EMAILS = [
+  "anviparmar88@hotmail.com",
+  "anvith.sujay@gmail.com",
+];
 
 const TESTER_EMAILS = [
   "student1@email.com",
@@ -80,6 +86,10 @@ serve(async (req) => {
         if (body && body.force) force = true;
       }
     } catch (_) { /* ignore */ }
+
+    if (PERMANENT_ACCESS_EMAILS.includes(email)) {
+      return respond({ subscribed: true, subscription_end: PERMANENT_ACCESS_EXPIRES, comp: true });
+    }
 
     if (TESTER_EMAILS.includes(email)) {
       return respond({ subscribed: true, subscription_end: ACCESS_EXPIRES, tester: true });
