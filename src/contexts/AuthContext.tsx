@@ -85,15 +85,23 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
-      setSession(session);
-      setUser(session?.user ?? null);
-      setLoading(false);
-      if (session?.user) {
-        setTimeout(() => { refreshSubscription(); refreshProfile(); }, 0);
-      } else {
-        setSubscribed(false);
-        setSubscriptionEnd(null);
-        setProfile(null);
+      try {
+        setSession(session);
+        setUser(session?.user ?? null);
+        setLoading(false);
+        if (session?.user) {
+          setTimeout(() => {
+            refreshSubscription().catch((e) => console.warn("refreshSubscription failed:", e));
+            refreshProfile().catch((e) => console.warn("refreshProfile failed:", e));
+          }, 0);
+        } else {
+          setSubscribed(false);
+          setSubscriptionEnd(null);
+          setProfile(null);
+        }
+      } catch (err) {
+        console.error("onAuthStateChange handler failed:", err);
+        setLoading(false);
       }
     });
 
@@ -102,8 +110,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setUser(session?.user ?? null);
       setLoading(false);
       if (session?.user) { refreshSubscription(); refreshProfile(); }
-    }).catch((err) => {
-      console.error("Auth session error:", err);
+    }).catch(async (err) => {
+      console.error("Auth session error — clearing local session:", err);
+      // Corrupt persisted session is a known cause of app-wide deadlock on load.
+      try { await supabase.auth.signOut({ scope: "local" } as never); } catch { /* ignore */ }
+      setSession(null);
+      setUser(null);
       setLoading(false);
     });
 
