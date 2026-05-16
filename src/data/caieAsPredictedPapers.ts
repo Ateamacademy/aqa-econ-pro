@@ -17,7 +17,7 @@ const TIERS: Tier[] = [
 ];
 
 type AsPaperSpec = {
-  num: 1 | 2 | 3;
+  num: 1 | 2 | 3 | 4;
   code: string;
   title: string;
   totalMarks: number;
@@ -60,6 +60,18 @@ const PAPERS: AsPaperSpec[] = [
       Moderate: "CAIE AS Paper 3. Data response plus structured essay questions covering AS Micro & Macro core content.",
       Hard:     "CAIE AS Paper 3. Demanding data-response and essay tasks with sharper command words and tighter mark schemes.",
       Advanced: "CAIE AS Paper 3. Top-band data response and essays across full AS Micro & Macro under exam conditions.",
+    },
+  },
+  {
+    num: 4,
+    code: "9708/04",
+    title: "Data Response and Essays (A2)",
+    totalMarks: 70,
+    duration: "2 hours 15 minutes",
+    descriptions: {
+      Moderate: "CAIE A2 Paper 4. Data response plus structured essay covering full A2 Micro & Macro content.",
+      Hard:     "CAIE A2 Paper 4. Demanding data-response and essay tasks with sharper command words and tighter mark schemes.",
+      Advanced: "CAIE A2 Paper 4. Top-band data response and essays across full A2 Micro & Macro under exam conditions.",
     },
   },
 ];
