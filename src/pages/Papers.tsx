@@ -507,8 +507,9 @@ function WjecPapersList() {
   );
 }
 
-const CAIE_AS_PAPERS: { number: 1; code: string; title: string; focus: string; available: boolean }[] = [
-  { number: 1, code: "9708/01", title: "Multiple Choice", focus: "AS Micro & Macro", available: true },
+const CAIE_AS_PAPERS: { number: 1 | 3; code: string; title: string; focus: string; available: boolean }[] = [
+  { number: 1, code: "9708/01", title: "Multiple Choice",            focus: "AS Micro & Macro", available: true },
+  { number: 3, code: "9708/03", title: "Data Response and Essays",   focus: "AS Core",           available: true },
 ];
 
 function CaiePapersList() {
