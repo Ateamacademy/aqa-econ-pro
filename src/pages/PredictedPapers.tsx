@@ -1393,10 +1393,16 @@ export default function PredictedPapers() {
   const isValidAqaPaperStructure = (questions: ParsedQuestion[], paperNumber?: string) => {
     if (subject !== "economics") return true;
     if (paperNumber === "1" || paperNumber === "2") {
-      // AQA A-Level Paper 1 & 2 (7136/1, 7136/2) · exact official shape:
-      // Section A: 2 + 4 + 9 + 25 (40 marks). Section B: choose ONE of two essays (15 + 25 = 40 marks).
-      const required = [2, 4, 9, 25, 15, 25];
-      return questions.length === required.length && questions.every((q, i) => q.marks === required[i]);
+      // AQA A-Level Paper 1 & 2 (7136/1, 7136/2). Two accepted shapes:
+      //  • Legacy 6Q: Section A (2+4+9+25) + Section B (15+25) = 80 marks.
+      //  • Full 14Q: Section A EITHER/OR contexts (2+4+9+25)×2 + Section B
+      //    choose ONE of three essays (15+25)×3 = 14 questions, 160 nominal
+      //    marks (student answers half · 80 marks scored).
+      const legacy = [2, 4, 9, 25, 15, 25];
+      const full = [2, 4, 9, 25, 2, 4, 9, 25, 15, 25, 15, 25, 15, 25];
+      const matches = (req: number[]) =>
+        questions.length === req.length && questions.every((q, i) => q.marks === req[i]);
+      return matches(legacy) || matches(full);
     }
     if (paperNumber === "3") {
       // AQA A-Level Paper 3 (7136/3): 30 × 1-mark MCQs + 10/15/25 case study = 80 marks, 33 questions.
