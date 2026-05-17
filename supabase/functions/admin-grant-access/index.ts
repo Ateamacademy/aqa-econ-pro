@@ -10,6 +10,10 @@ const corsHeaders = {
 // Hard-coded allowlist of emails this endpoint can provision.
 // Keeps the endpoint safe from being abused to take over arbitrary accounts.
 const ALLOWED = new Set<string>([
+  "avni08parmar@hotmail.com",
+  "avniparmar88@hotmail.com",
+  "avi08parmar@hotmail.com",
+  "aviparmar88@hotmail.com",
   "anvi08parmar@hotmail.com",
   "anviparmar88@hotmail.com",
 ]);
