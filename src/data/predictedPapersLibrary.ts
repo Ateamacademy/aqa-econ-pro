@@ -1781,60 +1781,141 @@ The line graph shows the cost of electricity over 5 years:
     title: "Paper 2 · Set C",
     description: "Macroeconomic analysis focus: AD/AS diagrams, Phillips curve, multiplier, fiscal/monetary policy evaluation.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/2) · Paper 2: National and International Economy · Predicted Paper Set C
+    content: `# AQA A-Level Economics (7136/2) · Paper 2: National and International Economy · Predicted Paper Set C — Advanced
 
 **Time: 2 hours | Total: 80 marks**
 
-Answer ALL questions in both Section A and Section B.
+In Section A, answer **EITHER** Context 1 **OR** Context 2. In Section B, answer **ONE** essay. Section A = 40 marks, Section B = 40 marks.
 
 ---
 
-## Section A: Data Response (40 marks)
+## Section A · Data Response (40 marks)
 
-**Extract A · UK fiscal stance and the inflation cycle**
+### EITHER · Context 1 — Global supply chains and the rise of protectionism
 
-In 2024 UK national debt exceeded 100% of GDP for the first time since the 1960s, at £2.7 trillion. Despite this, real public spending rose 3.5%. The OBR forecast GDP growth of 0.6% in 2024 rising to 1.4% in 2025. The Bank of England began cutting Bank Rate from 5.25% in late 2024 as headline CPI fell to 2.3%, although core inflation remained sticky at 3.6%. The pound depreciated 5% against the dollar.
+**Extract A · Selected average applied tariff rates, all products (%)**
 
-**Extract B · UK macroeconomic indicators, 2022–2025**
+| Economy | 2015 | 2019 | 2023 | 2024 |
+|---|---|---|---|---|
+| United States | 1.6 | 3.0 | 3.8 | 5.1 |
+| European Union | 1.8 | 1.8 | 1.9 | 1.9 |
+| United Kingdom | — | — | 2.6 | 2.6 |
+| China | 3.5 | 7.6 | 7.4 | 7.4 |
+| India | 6.4 | 6.3 | 18.1 | 17.2 |
 
-| Indicator                  | 2022 | 2023 | 2024 | 2025 (f) |
-|----------------------------|------|------|------|----------|
-| Real GDP growth (%)        | 4.3  | 0.1  | 0.6  | 1.4      |
-| CPI inflation (%)          | 9.1  | 7.3  | 3.2  | 2.3      |
-| Unemployment (%)           | 3.7  | 4.2  | 4.3  | 4.1      |
-| Budget deficit (% GDP)     | 5.1  | 4.3  | 4.8  | 3.9      |
-| National debt (% GDP)      | 85   | 93   | 101  | 103      |
-| Bank Rate (%)              | 3.5  | 5.25 | 4.75 | 4.0      |
+**Figure 2 · World trade and FDI, annual growth (%)**
 
-**Extract C · Further commentary**
+| Year | World goods trade volume growth | Cross-border FDI flows, growth | Global GDP growth |
+|---|---|---|---|
+| 2000–2007 avg. | 7.2 | 15.4 | 4.5 |
+| 2010–2019 avg. | 3.2 | 0.1 | 3.8 |
+| 2023 | 0.8 | -9.5 | 3.3 |
+| 2024 | 2.4 | 2.1 | 3.2 |
 
-Economists disagree on whether 2022–24 inflation was demand-pull (excess household savings of c. £200bn after the pandemic) or cost-push (gas prices, supply-chain disruption). By 2024 the supply-side pressures had eased, but demand remained weak owing to the lagged effect of monetary tightening.
+*Source: WTO / UNCTAD / IMF, 2024*
 
-Question 1 [2 marks]
-Using Extract B, calculate the change in the UK budget deficit as a share of GDP between 2023 and 2024.
+**Extract B · The retreat from hyper-globalisation**
 
-Question 2 [4 marks]
-Using an AD/AS diagram, explain the likely effect on UK real output and the price level of a cut in Bank Rate.
+World trade rose more than three times as fast as world GDP during the 1990s and 2000s — a period often described as "hyper-globalisation". Since the 2008 financial crisis, world trade growth has slowed markedly. Contributing factors include the collapse of global capital flows, the 2018 US–China trade war, the Covid-19 pandemic's disruption to supply chains, Russia's invasion of Ukraine, and a wave of industrial policy interventions (including the US Inflation Reduction Act and the EU's Green Deal Industrial Plan). The 2024 US election campaigns saw proposals for a universal 10% tariff on imports and 60% tariffs on Chinese goods. The IMF has warned that a full trade-war scenario could reduce global output by up to 7% over the medium term. Many economists regard some degree of "friend-shoring" or "near-shoring" as a rational response to geopolitical risks.
 
-Question 3 [9 marks]
-Using the extracts and your knowledge of economics, analyse two reasons why UK inflation between 2022 and 2024 may have been driven primarily by cost-push factors.
+**Extract C · Welfare effects of protectionism**
 
-Question 4 [25 marks]
-Using the extracts and your own knowledge, evaluate the view that reducing the budget deficit should be the UK government's top macroeconomic priority.
+Standard trade theory identifies costs of tariffs: loss of consumer surplus exceeding the gain in producer surplus; deadweight loss triangles in both production and consumption; loss of gains from specialisation; and reduced dynamic efficiency. Empirical studies of the 2018 US tariffs found that the incidence fell almost entirely on US consumers and businesses, with welfare costs of around $800 per household per year by 2020. Supporters of strategic protectionism argue that in industries with large positive externalities (such as semiconductor manufacturing or green technology), infant-industry protection may be justified. Concentration of critical supply chains creates national-security risks the market does not price. Recent industrial policies (such as the $280bn US CHIPS Act) attempt to combine tariffs, subsidies and regulation; critics warn these risk significant government failure.
+
+Question 01 [2 marks]
+Using the data in Extract A (Figure 1), calculate the percentage-point change in the US average applied tariff rate between 2015 and 2024.
+
+Question 02 [4 marks]
+Explain how the data in Extract A (Figure 2) suggest that the world economy has entered a period of slower globalisation since the 2008 financial crisis.
+
+Question 03 [9 marks]
+Extract C states that standard trade theory identifies 'loss of consumer surplus exceeding the gain in producer surplus; deadweight loss triangles in both production and consumption; loss of gains from specialisation'. With the help of a supply-and-demand diagram, analyse how the imposition of a tariff on imported goods reduces overall economic welfare.
+
+Question 04 [25 marks]
+Extract C states that 'in industries with large positive externalities (such as semiconductor manufacturing or green technology), infant-industry protection may be justified.' Use the extracts and your knowledge of economics to evaluate the view that protectionist policies can ever be justified on economic grounds in advanced economies such as the UK and the United States.
 
 ---
 
-## Section B: Essay (40 marks)
+### OR · Context 2 — Economic development and global inequality
 
+*Do NOT answer Context 2 if you have answered Context 1.*
 
-**Short extract:**
-Monetary and fiscal policy face long and variable lags and may conflict in their objectives. Central bank independence is widely regarded as critical for credible inflation targeting.
+**Extract D · Selected development indicators, 2023**
 
-Question 5 [15 marks]
-Explain how the transmission mechanism of monetary policy affects aggregate demand.
+| Country | GNI per capita (US$, PPP) | HDI | % below $2.15/day | Life expectancy (years) |
+|---|---|---|---|---|
+| Norway | 78,200 | 0.961 | 0.0 | 83.2 |
+| United Kingdom | 51,400 | 0.940 | 0.2 | 81.4 |
+| China | 20,800 | 0.788 | 0.1 | 78.2 |
+| India | 8,800 | 0.644 | 10.0 | 70.1 |
+| Bangladesh | 6,500 | 0.670 | 13.5 | 73.6 |
+| Ethiopia | 2,800 | 0.498 | 27.0 | 65.6 |
+| Niger | 1,300 | 0.400 | 50.5 | 62.3 |
 
-Question 6 [25 marks]
-"Fiscal policy is more effective than monetary policy in stabilising the macroeconomy after a deep recession." Evaluate this statement.`,
+**Figure 4 · Average annual real GDP growth, selected regions (%)**
+
+| Region | 2000–2010 | 2010–2019 | 2020–2024 |
+|---|---|---|---|
+| Advanced economies | 1.9 | 2.1 | 1.8 |
+| Emerging & developing Asia | 8.4 | 6.8 | 4.8 |
+| Sub-Saharan Africa | 5.9 | 3.4 | 3.1 |
+| Latin America & Caribbean | 3.4 | 1.8 | 1.7 |
+
+*Source: World Bank / UNDP / IMF, 2024*
+
+**Extract E · Paths to development**
+
+Economic development involves improvements in living standards, health, education and opportunity. Extreme poverty has fallen dramatically over the past forty years, led by industrialisation and export-led growth in East Asia. China alone has lifted more than 800 million people out of extreme poverty since 1980. Progress in sub-Saharan Africa has been slower. The Harrod–Domar model emphasises saving and investment; the Solow model emphasises technological progress and human capital; the Lewis model emphasises the reallocation of labour from low-productivity traditional sectors to higher-productivity modern sectors. Successful developing economies have combined high saving and investment, strong export orientation, investment in education and infrastructure, and effective institutions. The role of natural-resource endowments is ambiguous, with some economies suffering from the "resource curse".
+
+**Extract F · Barriers and policy responses**
+
+Low-income countries face multiple barriers to development: limited domestic savings, commodity-export dependence, poor infrastructure, weak institutions, and vulnerability to climate change. The 2022 floods in Pakistan displaced 33 million people and caused losses equivalent to 4% of GDP. Debt burdens have risen sharply since the pandemic, with 60% of low-income countries now in or at high risk of debt distress. The "Washington Consensus" of the 1990s emphasised trade liberalisation, fiscal discipline and market-friendly reforms. Recent thinking places more weight on institutions, state capacity, and the "developmental state" model. Debt relief initiatives such as HIPC have helped the poorest countries but require coordinated action from creditors. Climate finance commitments — pledged at $100bn per year at COP15 — have been partially met. A 2024 UNCTAD report argued that without a substantial increase in development finance, capital investment, and debt relief, the Sustainable Development Goals for 2030 will be missed by a wide margin.
+
+Question 05 [2 marks]
+Using the data in Extract D (Figure 3), calculate the ratio of the GNI per capita of the United Kingdom to that of Niger in 2023. Give your answer to one decimal place.
+
+Question 06 [4 marks]
+Explain how the data in Extract D (Figure 4) suggest that economic growth rates have diverged between emerging Asia and sub-Saharan Africa since 2000.
+
+Question 07 [9 marks]
+Extract E refers to the 'Lewis model [which] emphasises the reallocation of labour from low-productivity traditional sectors to higher-productivity modern sectors.' With the help of a diagram, analyse how investment in education and physical capital in a developing economy can increase long-run output and real GDP per capita.
+
+Question 08 [25 marks]
+Extract F states that 'without a substantial increase in development finance, capital investment, and debt relief, the Sustainable Development Goals for 2030 will be missed by a wide margin.' Use the extracts and your knowledge of economics to evaluate the most effective policies for accelerating economic development in low-income countries such as those in sub-Saharan Africa.
+
+---
+
+## Section B · Essay (40 marks) — Answer ONE essay
+
+### EITHER · Essay 1 — Fiscal and monetary policy coordination
+
+Since 2022, both fiscal and monetary authorities in the UK and other advanced economies have faced difficult trade-offs. Tight monetary policy has been used to bring inflation down, while governments have sought to protect households from the cost-of-living shock through fiscal support.
+
+Question 09 [15 marks]
+Explain, with the aid of an AD/AS diagram, how a combination of expansionary fiscal policy and contractionary monetary policy can affect the price level and real GDP in an economy.
+
+Question 10 [25 marks]
+Evaluate the view that the coordination of fiscal and monetary policy is essential for maintaining macroeconomic stability in the UK.
+
+### OR · Essay 2 — Climate change and economic growth
+
+Almost every country has now committed to achieving net-zero greenhouse gas emissions by 2050 or shortly thereafter. Meeting this target will require substantial investment and structural economic change.
+
+Question 11 [15 marks]
+Explain, with the aid of diagrams, how climate change represents both a market failure and a threat to long-run economic growth.
+
+Question 12 [25 marks]
+Evaluate the view that policies to reduce greenhouse gas emissions will inevitably reduce the UK's rate of economic growth in the short run.
+
+### OR · Essay 3 — Global inequality and development
+
+Global income inequality has narrowed substantially since the late 1990s, largely due to the rapid growth of China and India. However, within-country inequality has risen in many advanced economies, and poverty reduction has stagnated in sub-Saharan Africa.
+
+Question 13 [15 marks]
+Explain the main economic indicators used to measure the level of economic development in a country.
+
+Question 14 [25 marks]
+Evaluate the view that international trade is the most powerful force for reducing poverty in developing economies.`,
   },
 
   // ── ECONOMICS PAPER 1: Set C (Diagram & Graph Focus) ──
