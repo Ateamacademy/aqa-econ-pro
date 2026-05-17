@@ -510,58 +510,121 @@ Question 6 [25 marks]
     title: "Paper 2 · Set A",
     description: "National and International Economy. Macro data response and essays.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/2) · Paper 2: National and International Economy · Predicted Paper Set A
+    content: `# AQA A-Level Economics (7136/2) · Paper 2: National and International Economy · Predicted Paper Set A — Moderate
 
 **Time: 2 hours | Total: 80 marks**
 
-Answer ALL questions in both Section A and Section B.
+In Section A, answer **EITHER** Context 1 **OR** Context 2. In Section B, answer **ONE** essay. Section A = 40 marks, Section B = 40 marks.
 
 ---
 
-## Section A: Data Response (40 marks)
+## Section A · Data Response (40 marks)
 
-**Extract A · UK monetary tightening, 2021–2024**
+### EITHER · Context 1 — UK monetary tightening and the disinflation cycle
 
-The Bank of England raised Bank Rate from 0.1% in December 2021 to 5.25% by August 2023 in response to surging inflation. CPI peaked at 11.1% in October 2022 before falling back to 4.0% by December 2023. GDP growth slowed sharply, the UK narrowly avoided a technical recession in late 2023, and real wages fell for the longest sustained period since records began. Unemployment remained low at 4.2%, suggesting a degree of labour-market resilience despite the tightening cycle.
+**Extract A · UK macroeconomic indicators, 2021–2024**
 
-**Extract B · Key UK macroeconomic indicators**
+| Indicator | 2021 | 2022 | 2023 | 2024 |
+|---|---|---|---|---|
+| Real GDP growth (%, annual) | 7.6 | 4.3 | 0.1 | 0.6 |
+| CPI inflation (%, annual avg.) | 2.6 | 9.1 | 7.3 | 3.2 |
+| Unemployment rate (%) | 4.5 | 3.7 | 4.2 | 4.4 |
+| Bank Rate (%, year-end) | 0.25 | 3.50 | 5.25 | 4.75 |
+| Real wages growth (%) | -0.4 | -3.1 | -1.0 | +1.8 |
 
-| Indicator | 2021 | 2022 | 2023 | 2024 (est.) |
-|-----------|------|------|------|-------------|
-| Real GDP growth (%) | 7.6 | 4.3 | 0.1 | 0.6 |
-| CPI inflation (%) | 2.6 | 9.1 | 7.3 | 3.2 |
-| Unemployment (%) | 4.5 | 3.7 | 4.2 | 4.4 |
-| Bank Rate (%) | 0.1 | 3.5 | 5.25 | 5.0 |
+*Source: Office for National Statistics / Bank of England, 2024*
+
+**Extract B · The Bank of England's tightening cycle**
+
+The Bank of England raised Bank Rate from 0.1% in December 2021 to a peak of 5.25% by August 2023 in response to surging inflation. CPI inflation peaked at 11.1% in October 2022 before falling back to 4.0% by December 2023 and 2.3% by mid-2024. GDP growth slowed sharply, the UK narrowly avoided a technical recession in late 2023, and real wages fell for the longest sustained period since records began. Unemployment remained low at 4.2%, suggesting a degree of labour-market resilience despite the tightening cycle. The MPC identified multiple drivers of the inflation shock: a global energy price surge following Russia's invasion of Ukraine, post-pandemic supply-chain bottlenecks, and second-round wage–price effects. Critics argued the Bank had acted too slowly at the start of the cycle and risked over-tightening at its peak.
 
 **Extract C · Transmission lags and household debt**
 
-The MPC has repeatedly noted that monetary policy operates with "long and variable lags." UK household debt-to-income remains above 130%, meaning small changes in interest rates have a disproportionately large effect on disposable incomes. Approximately 1.6 million fixed-rate mortgages were due to refinance during 2024, creating a delayed cost-push shock to consumer spending.
+The MPC has repeatedly noted that monetary policy operates with "long and variable lags", often 12–18 months from rate change to peak effect on output and inflation. UK household debt-to-income remains above 130%, meaning small changes in interest rates can have a disproportionately large effect on disposable incomes. Approximately 1.6 million fixed-rate mortgages were due to refinance during 2024, creating a delayed effective tightening on household spending. Beyond mortgage payments, higher rates raise the cost of business borrowing, discourage investment, and may strengthen the exchange rate. Supply-side inflation drivers — such as the 2022 energy shock — are arguably less responsive to demand-management tools, raising questions about whether monetary policy alone is the appropriate response to cost-push inflation.
 
-Question 1 [2 marks]
-Define the term 'real wages'.
+Question 01 [2 marks]
+Using the data in Extract A, calculate the percentage-point change in the UK Bank Rate between the end of 2021 and the end of 2023.
 
-Question 2 [4 marks]
-With the help of a fully labelled AD/AS diagram, explain the likely impact of higher interest rates on aggregate demand in the UK. Your answer must include both a labelled diagram (or a clear description of one) AND a written explanation of the economic mechanism.
+Question 02 [4 marks]
+Explain how the data in Extract A show that UK households experienced a fall in their real incomes during the period 2021–2023.
 
-Question 3 [9 marks]
-With the help of a diagram and using the extracts, analyse the trade-off faced by the Bank of England between controlling inflation and maintaining economic growth.
+Question 03 [9 marks]
+Extract B states that 'The Bank of England raised Bank Rate from 0.1% in December 2021 to a peak of 5.25% by August 2023 in response to surging inflation.' With the help of an AD/AS diagram, explain how an increase in the Bank Rate is likely to reduce the rate of inflation in the UK.
 
-Question 4 [25 marks]
-Using the extracts and your own knowledge, evaluate the effectiveness of monetary policy as a tool for managing the UK macroeconomy.
+Question 04 [25 marks]
+Extract C states that 'Supply-side inflation drivers... are arguably less responsive to demand-management tools, raising questions about whether monetary policy alone is the appropriate response to cost-push inflation.' Use the extracts and your knowledge of economics to evaluate the effectiveness of monetary policy as a tool for controlling inflation in the UK.
 
 ---
 
-## Section B: Essay (40 marks)
+### OR · Context 2 — UK fiscal policy and government debt
 
+*Do NOT answer Context 2 if you have answered Context 1.*
 
-**Short extract:**
-The UK ran a current account deficit of around 3% of GDP in 2024, financed largely by capital inflows. Some economists view persistent deficits as a symptom of structural weakness; others argue they simply reflect the UK's role as a global financial centre and pose no immediate threat to macroeconomic stability.
+**Extract D · UK public finances, 2018–2024**
 
-Question 5 [15 marks]
-Explain the main causes of a current account deficit on the UK's balance of payments.
+| Year | Public sector net borrowing (£bn) | Net debt (% of GDP) | Debt interest spending (£bn) | Tax revenue (% of GDP) |
+|---|---|---|---|---|
+| 2018/19 | 43 | 80.7 | 48 | 32.8 |
+| 2019/20 | 57 | 84.0 | 48 | 33.0 |
+| 2020/21 | 323 | 103.2 | 39 | 32.9 |
+| 2022/23 | 131 | 96.5 | 111 | 35.3 |
+| 2024/25 | 87 | 97.1 | 104 | 36.4 |
 
-Question 6 [25 marks]
-"Supply-side policies are more effective than demand-side policies in achieving long-run economic growth." Evaluate this statement.`,
+*Source: HM Treasury / Office for Budget Responsibility, 2024*
+
+**Extract E · Fiscal pressures and government choices**
+
+UK government debt rose sharply during the Covid-19 pandemic, funded by unprecedented peacetime borrowing. Net debt exceeded 100% of GDP for the first time since 1961. Since the pandemic, higher interest rates have pushed debt-interest spending above £100 billion per year — now a larger share of government spending than the defence budget. The OBR projects that without further fiscal consolidation, debt will continue to rise through the 2030s. The UK's fiscal rules currently require debt to be falling as a share of GDP in the fifth year of the forecast, and that public sector net borrowing does not exceed 3% of GDP. Critics argue rigid rules constrain the government's ability to respond to shocks; others argue credible rules are necessary to anchor investor expectations.
+
+**Extract F · The debate over fiscal sustainability**
+
+Classical economists argue that persistent borrowing "crowds out" private investment, raises long-term interest rates, and burdens future generations. Keynesian economists argue that with global demand weak and private investment depressed, government borrowing to fund productive public investment can raise long-run growth and improve the debt-to-GDP ratio over time. An ageing population will raise health and pension spending; net-zero commitments require large infrastructure investment; defence spending is under pressure to rise. A 2024 IFS report concluded that the UK faces a "triple choice" between accepting lower service quality, paying higher taxes, or allowing debt to rise further.
+
+Question 05 [2 marks]
+Using the data in Extract D, calculate the percentage change in UK government debt-interest spending between 2018/19 and 2024/25. Give your answer to one decimal place.
+
+Question 06 [4 marks]
+Explain how the data in Extract D suggest that the UK government's fiscal position has become more constrained since 2018/19.
+
+Question 07 [9 marks]
+Extract E states that 'without further fiscal consolidation, debt will continue to rise through the 2030s.' With the help of an AD/AS diagram, explain how an increase in government spending, financed by borrowing, may affect UK real GDP and the price level in the short run.
+
+Question 08 [25 marks]
+Extract F states that 'Keynesian economists argue that... government borrowing to fund productive public investment can raise long-run growth and improve the debt-to-GDP ratio over time.' Use the extracts and your knowledge of economics to evaluate the view that the UK government should prioritise reducing its debt-to-GDP ratio over stimulating economic growth.
+
+---
+
+## Section B · Essay (40 marks) — Answer ONE essay
+
+### EITHER · Essay 1 — Productivity and long-run growth
+
+UK productivity growth has averaged only around 0.5% per year since 2008, compared with roughly 2% per year in the decades before the financial crisis. Successive governments have announced plans to boost growth through infrastructure investment, tax reform, skills development and regulatory change.
+
+Question 09 [15 marks]
+Explain, with the aid of a diagram, how supply-side policies can increase the long-run potential output of the UK economy.
+
+Question 10 [25 marks]
+Evaluate the view that supply-side policies are always more effective than demand-side policies in raising the UK's long-run rate of economic growth.
+
+### OR · Essay 2 — Unemployment and labour markets
+
+Although the UK unemployment rate has remained low at around 4% for much of the 2020s, concerns about quality of employment, economic inactivity, and regional variations remain. Economic inactivity among working-age adults rose from around 8.5 million before the pandemic to over 9.3 million by 2024, driven in large part by long-term sickness.
+
+Question 11 [15 marks]
+Explain the main causes of unemployment in the UK economy.
+
+Question 12 [25 marks]
+Evaluate the view that government intervention to reduce unemployment in the UK should focus on increasing the demand for labour rather than on improving its supply.
+
+### OR · Essay 3 — Current account deficit
+
+In 2023 the UK ran a current account deficit of approximately 3.7% of GDP, a persistent feature of the UK balance of payments over the last three decades.
+
+Question 13 [15 marks]
+Explain the main causes of a current account deficit on the UK balance of payments.
+
+Question 14 [25 marks]
+Evaluate the view that a persistent current account deficit is a serious economic problem that requires urgent government action to correct.`,
   },
 
   // ── ECONOMICS PAPER 3 ──
