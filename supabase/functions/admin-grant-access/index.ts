@@ -18,6 +18,7 @@ const ALLOWED = new Set<string>([
   "anviparmar88@hotmail.com",
   "zainabintrayhan@gmail.com",
   "fatima4r@hotmail.com",
+  "isabella270708@icloud.com",
 ]);
 
 serve(async (req) => {
