@@ -510,58 +510,121 @@ Question 6 [25 marks]
     title: "Paper 2 · Set A",
     description: "National and International Economy. Macro data response and essays.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/2) · Paper 2: National and International Economy · Predicted Paper Set A
+    content: `# AQA A-Level Economics (7136/2) · Paper 2: National and International Economy · Predicted Paper Set A — Moderate
 
 **Time: 2 hours | Total: 80 marks**
 
-Answer ALL questions in both Section A and Section B.
+In Section A, answer **EITHER** Context 1 **OR** Context 2. In Section B, answer **ONE** essay. Section A = 40 marks, Section B = 40 marks.
 
 ---
 
-## Section A: Data Response (40 marks)
+## Section A · Data Response (40 marks)
 
-**Extract A · UK monetary tightening, 2021–2024**
+### EITHER · Context 1 — UK monetary tightening and the disinflation cycle
 
-The Bank of England raised Bank Rate from 0.1% in December 2021 to 5.25% by August 2023 in response to surging inflation. CPI peaked at 11.1% in October 2022 before falling back to 4.0% by December 2023. GDP growth slowed sharply, the UK narrowly avoided a technical recession in late 2023, and real wages fell for the longest sustained period since records began. Unemployment remained low at 4.2%, suggesting a degree of labour-market resilience despite the tightening cycle.
+**Extract A · UK macroeconomic indicators, 2021–2024**
 
-**Extract B · Key UK macroeconomic indicators**
+| Indicator | 2021 | 2022 | 2023 | 2024 |
+|---|---|---|---|---|
+| Real GDP growth (%, annual) | 7.6 | 4.3 | 0.1 | 0.6 |
+| CPI inflation (%, annual avg.) | 2.6 | 9.1 | 7.3 | 3.2 |
+| Unemployment rate (%) | 4.5 | 3.7 | 4.2 | 4.4 |
+| Bank Rate (%, year-end) | 0.25 | 3.50 | 5.25 | 4.75 |
+| Real wages growth (%) | -0.4 | -3.1 | -1.0 | +1.8 |
 
-| Indicator | 2021 | 2022 | 2023 | 2024 (est.) |
-|-----------|------|------|------|-------------|
-| Real GDP growth (%) | 7.6 | 4.3 | 0.1 | 0.6 |
-| CPI inflation (%) | 2.6 | 9.1 | 7.3 | 3.2 |
-| Unemployment (%) | 4.5 | 3.7 | 4.2 | 4.4 |
-| Bank Rate (%) | 0.1 | 3.5 | 5.25 | 5.0 |
+*Source: Office for National Statistics / Bank of England, 2024*
+
+**Extract B · The Bank of England's tightening cycle**
+
+The Bank of England raised Bank Rate from 0.1% in December 2021 to a peak of 5.25% by August 2023 in response to surging inflation. CPI inflation peaked at 11.1% in October 2022 before falling back to 4.0% by December 2023 and 2.3% by mid-2024. GDP growth slowed sharply, the UK narrowly avoided a technical recession in late 2023, and real wages fell for the longest sustained period since records began. Unemployment remained low at 4.2%, suggesting a degree of labour-market resilience despite the tightening cycle. The MPC identified multiple drivers of the inflation shock: a global energy price surge following Russia's invasion of Ukraine, post-pandemic supply-chain bottlenecks, and second-round wage–price effects. Critics argued the Bank had acted too slowly at the start of the cycle and risked over-tightening at its peak.
 
 **Extract C · Transmission lags and household debt**
 
-The MPC has repeatedly noted that monetary policy operates with "long and variable lags." UK household debt-to-income remains above 130%, meaning small changes in interest rates have a disproportionately large effect on disposable incomes. Approximately 1.6 million fixed-rate mortgages were due to refinance during 2024, creating a delayed cost-push shock to consumer spending.
+The MPC has repeatedly noted that monetary policy operates with "long and variable lags", often 12–18 months from rate change to peak effect on output and inflation. UK household debt-to-income remains above 130%, meaning small changes in interest rates can have a disproportionately large effect on disposable incomes. Approximately 1.6 million fixed-rate mortgages were due to refinance during 2024, creating a delayed effective tightening on household spending. Beyond mortgage payments, higher rates raise the cost of business borrowing, discourage investment, and may strengthen the exchange rate. Supply-side inflation drivers — such as the 2022 energy shock — are arguably less responsive to demand-management tools, raising questions about whether monetary policy alone is the appropriate response to cost-push inflation.
 
-Question 1 [2 marks]
-Define the term 'real wages'.
+Question 01 [2 marks]
+Using the data in Extract A, calculate the percentage-point change in the UK Bank Rate between the end of 2021 and the end of 2023.
 
-Question 2 [4 marks]
-With the help of a fully labelled AD/AS diagram, explain the likely impact of higher interest rates on aggregate demand in the UK. Your answer must include both a labelled diagram (or a clear description of one) AND a written explanation of the economic mechanism.
+Question 02 [4 marks]
+Explain how the data in Extract A show that UK households experienced a fall in their real incomes during the period 2021–2023.
 
-Question 3 [9 marks]
-With the help of a diagram and using the extracts, analyse the trade-off faced by the Bank of England between controlling inflation and maintaining economic growth.
+Question 03 [9 marks]
+Extract B states that 'The Bank of England raised Bank Rate from 0.1% in December 2021 to a peak of 5.25% by August 2023 in response to surging inflation.' With the help of an AD/AS diagram, explain how an increase in the Bank Rate is likely to reduce the rate of inflation in the UK.
 
-Question 4 [25 marks]
-Using the extracts and your own knowledge, evaluate the effectiveness of monetary policy as a tool for managing the UK macroeconomy.
+Question 04 [25 marks]
+Extract C states that 'Supply-side inflation drivers... are arguably less responsive to demand-management tools, raising questions about whether monetary policy alone is the appropriate response to cost-push inflation.' Use the extracts and your knowledge of economics to evaluate the effectiveness of monetary policy as a tool for controlling inflation in the UK.
 
 ---
 
-## Section B: Essay (40 marks)
+### OR · Context 2 — UK fiscal policy and government debt
 
+*Do NOT answer Context 2 if you have answered Context 1.*
 
-**Short extract:**
-The UK ran a current account deficit of around 3% of GDP in 2024, financed largely by capital inflows. Some economists view persistent deficits as a symptom of structural weakness; others argue they simply reflect the UK's role as a global financial centre and pose no immediate threat to macroeconomic stability.
+**Extract D · UK public finances, 2018–2024**
 
-Question 5 [15 marks]
-Explain the main causes of a current account deficit on the UK's balance of payments.
+| Year | Public sector net borrowing (£bn) | Net debt (% of GDP) | Debt interest spending (£bn) | Tax revenue (% of GDP) |
+|---|---|---|---|---|
+| 2018/19 | 43 | 80.7 | 48 | 32.8 |
+| 2019/20 | 57 | 84.0 | 48 | 33.0 |
+| 2020/21 | 323 | 103.2 | 39 | 32.9 |
+| 2022/23 | 131 | 96.5 | 111 | 35.3 |
+| 2024/25 | 87 | 97.1 | 104 | 36.4 |
 
-Question 6 [25 marks]
-"Supply-side policies are more effective than demand-side policies in achieving long-run economic growth." Evaluate this statement.`,
+*Source: HM Treasury / Office for Budget Responsibility, 2024*
+
+**Extract E · Fiscal pressures and government choices**
+
+UK government debt rose sharply during the Covid-19 pandemic, funded by unprecedented peacetime borrowing. Net debt exceeded 100% of GDP for the first time since 1961. Since the pandemic, higher interest rates have pushed debt-interest spending above £100 billion per year — now a larger share of government spending than the defence budget. The OBR projects that without further fiscal consolidation, debt will continue to rise through the 2030s. The UK's fiscal rules currently require debt to be falling as a share of GDP in the fifth year of the forecast, and that public sector net borrowing does not exceed 3% of GDP. Critics argue rigid rules constrain the government's ability to respond to shocks; others argue credible rules are necessary to anchor investor expectations.
+
+**Extract F · The debate over fiscal sustainability**
+
+Classical economists argue that persistent borrowing "crowds out" private investment, raises long-term interest rates, and burdens future generations. Keynesian economists argue that with global demand weak and private investment depressed, government borrowing to fund productive public investment can raise long-run growth and improve the debt-to-GDP ratio over time. An ageing population will raise health and pension spending; net-zero commitments require large infrastructure investment; defence spending is under pressure to rise. A 2024 IFS report concluded that the UK faces a "triple choice" between accepting lower service quality, paying higher taxes, or allowing debt to rise further.
+
+Question 05 [2 marks]
+Using the data in Extract D, calculate the percentage change in UK government debt-interest spending between 2018/19 and 2024/25. Give your answer to one decimal place.
+
+Question 06 [4 marks]
+Explain how the data in Extract D suggest that the UK government's fiscal position has become more constrained since 2018/19.
+
+Question 07 [9 marks]
+Extract E states that 'without further fiscal consolidation, debt will continue to rise through the 2030s.' With the help of an AD/AS diagram, explain how an increase in government spending, financed by borrowing, may affect UK real GDP and the price level in the short run.
+
+Question 08 [25 marks]
+Extract F states that 'Keynesian economists argue that... government borrowing to fund productive public investment can raise long-run growth and improve the debt-to-GDP ratio over time.' Use the extracts and your knowledge of economics to evaluate the view that the UK government should prioritise reducing its debt-to-GDP ratio over stimulating economic growth.
+
+---
+
+## Section B · Essay (40 marks) — Answer ONE essay
+
+### EITHER · Essay 1 — Productivity and long-run growth
+
+UK productivity growth has averaged only around 0.5% per year since 2008, compared with roughly 2% per year in the decades before the financial crisis. Successive governments have announced plans to boost growth through infrastructure investment, tax reform, skills development and regulatory change.
+
+Question 09 [15 marks]
+Explain, with the aid of a diagram, how supply-side policies can increase the long-run potential output of the UK economy.
+
+Question 10 [25 marks]
+Evaluate the view that supply-side policies are always more effective than demand-side policies in raising the UK's long-run rate of economic growth.
+
+### OR · Essay 2 — Unemployment and labour markets
+
+Although the UK unemployment rate has remained low at around 4% for much of the 2020s, concerns about quality of employment, economic inactivity, and regional variations remain. Economic inactivity among working-age adults rose from around 8.5 million before the pandemic to over 9.3 million by 2024, driven in large part by long-term sickness.
+
+Question 11 [15 marks]
+Explain the main causes of unemployment in the UK economy.
+
+Question 12 [25 marks]
+Evaluate the view that government intervention to reduce unemployment in the UK should focus on increasing the demand for labour rather than on improving its supply.
+
+### OR · Essay 3 — Current account deficit
+
+In 2023 the UK ran a current account deficit of approximately 3.7% of GDP, a persistent feature of the UK balance of payments over the last three decades.
+
+Question 13 [15 marks]
+Explain the main causes of a current account deficit on the UK balance of payments.
+
+Question 14 [25 marks]
+Evaluate the view that a persistent current account deficit is a serious economic problem that requires urgent government action to correct.`,
   },
 
   // ── ECONOMICS PAPER 3 ──
@@ -882,59 +945,139 @@ Question 6 [25 marks]
     title: "Paper 2 · Set B",
     description: "National and International Economy. Trade and globalisation focus.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/2) · Paper 2: National and International Economy · Predicted Paper Set B
+    content: `# AQA A-Level Economics (7136/2) · Paper 2: National and International Economy · Predicted Paper Set B — Hard
 
 **Time: 2 hours | Total: 80 marks**
 
-Answer ALL questions in both Section A and Section B.
+In Section A, answer **EITHER** Context 1 **OR** Context 2. In Section B, answer **ONE** essay. Section A = 40 marks, Section B = 40 marks.
 
 ---
 
-## Section A: Data Response (40 marks)
+## Section A · Data Response (40 marks)
 
-**Extract A · UK trade and CPTPP membership**
+### EITHER · Context 1 — The UK exchange rate and trade performance
 
-Since Brexit, the UK has signed independent trade deals with Australia, New Zealand and Japan and joined the CPTPP in 2023. UK goods exports to the EU fell 15% between 2019 and 2023; small businesses cite paperwork and rules-of-origin as the main barriers. The current account deficit widened to 3.1% of GDP in 2023. Inward FDI remained one of the highest in Europe at £29.5bn.
+**Extract A · Sterling exchange rate and UK trade indicators**
 
-**Extract B · UK trade and FDI, 2019–2023**
+| Year | Sterling effective exchange rate (2015 = 100) | £ / $ rate | £ / € rate | UK current account balance (% of GDP) |
+|---|---|---|---|---|
+| 2015 | 100.0 | 1.53 | 1.38 | -4.8 |
+| 2019 | 80.4 | 1.28 | 1.14 | -2.5 |
+| 2022 | 79.1 | 1.24 | 1.17 | -2.1 |
+| 2024 | 83.6 | 1.27 | 1.18 | -3.5 |
 
-| Indicator                          | 2019 | 2021 | 2023 |
-|------------------------------------|------|------|------|
-| UK goods exports to EU (£bn)       | 170  | 138  | 145  |
-| UK goods imports from EU (£bn)     | 228  | 195  | 215  |
-| Current account balance (% GDP)    | -2.7 | -1.5 | -3.1 |
-| Inward FDI (£bn)                   | 36.2 | 24.1 | 29.5 |
-| £/€ exchange rate                  | 1.14 | 1.16 | 1.15 |
+**Figure 2 · UK trade in goods and services, 2024 Q2 (£bn)**
 
-**Extract C · Further commentary**
+| Category | Exports | Imports | Net balance |
+|---|---|---|---|
+| Goods — EU | 44.2 | 58.1 | -13.9 |
+| Goods — non-EU | 42.6 | 57.9 | -15.3 |
+| Services — EU | 38.3 | 31.7 | +6.6 |
+| Services — non-EU | 63.4 | 36.8 | +26.6 |
 
-OBR analysis estimates that CPTPP membership will raise UK GDP by 0.08% over 15 years · small relative to the 4% long-run hit estimated from leaving the EU single market. Supporters argue the deal hedges against rising protectionism and unlocks future Asian growth.
+*Source: Office for National Statistics / Bank of England, 2024*
 
-Question 1 [2 marks]
-Using Extract B, calculate the UK's trade deficit in goods with the EU in 2023.
+**Extract B · Sterling, Brexit and export competitiveness**
 
-Question 2 [4 marks]
-Using an AD/AS diagram, explain how a fall in net exports affects UK real output and the price level.
+Following the June 2016 Brexit referendum, sterling fell by around 15% on a trade-weighted basis within six months. This depreciation was expected to raise the price of imports, boost UK export competitiveness and help reduce the current account deficit. In practice, UK trade performance since 2016 has been weaker than most forecasters predicted. Goods exports to the EU fell by around 8% in 2021 alone following the full implementation of Brexit trading arrangements. Services exports have performed better, particularly to non-EU markets, reflecting the UK's comparative advantage in financial, legal and creative services. The Marshall-Lerner condition is widely accepted, but empirical estimates suggest it holds only in the long run — producing the "J-curve" effect in the short run. Persistent non-price competitiveness issues — particularly in goods manufacturing — have weakened the response of export volumes to the currency depreciation.
 
-Question 3 [9 marks]
-Using the extracts and your knowledge of economics, analyse two potential macroeconomic benefits to the UK of joining the CPTPP.
+**Extract C · Policy responses and structural competitiveness**
 
-Question 4 [25 marks]
-Using the extracts and your own knowledge, evaluate the view that free trade agreements such as CPTPP are beneficial for UK long-run economic growth.
+The UK's persistent current account deficit has been financed by capital inflows. Sterling's status as a reserve currency has given the UK flexibility in managing its deficit, but the UK's net international investment position worsened by around 10 percentage points of GDP between 2016 and 2023. Successive governments have announced strategies including export credit guarantees, trade missions, and post-Brexit trade deals with Australia, New Zealand, Japan and the CPTPP group. Critics argue these have been offset by the loss of frictionless trade with the EU — the UK's largest trading partner, accounting for around 42% of goods trade by value in 2024. Some economists argue that sustained competitiveness gains must come from structural improvements in productivity, skills and infrastructure, rather than from relying on exchange rate movements.
+
+Question 01 [2 marks]
+Using the data in Extract A, calculate the percentage change in the sterling effective exchange rate between 2015 and 2022. Give your answer to one decimal place.
+
+Question 02 [4 marks]
+Explain how the data in Extract A (Figure 2) suggest that the UK has a comparative advantage in the production of services rather than goods.
+
+Question 03 [9 marks]
+Extract B states that the depreciation 'was expected to raise the price of imports, boost UK export competitiveness and help reduce the current account deficit.' With the help of an AD/AS diagram, analyse how a depreciation of sterling is likely to affect UK aggregate demand and the price level in the short run.
+
+Question 04 [25 marks]
+Extract C states that 'sustained competitiveness gains must come from structural improvements in productivity, skills and infrastructure, rather than from relying on exchange rate movements.' Use the extracts and your knowledge of economics to evaluate the view that changes in the exchange rate are more important than supply-side reforms for improving the UK's balance of payments position.
 
 ---
 
-## Section B: Essay (40 marks)
+### OR · Context 2 — UK productivity and economic growth
 
+*Do NOT answer Context 2 if you have answered Context 1.*
 
-**Short extract:**
-Globalisation has integrated product, capital and labour markets, creating winners and losers within and between countries. The role of trade agreements in shaping these outcomes is contested.
+**Extract D · Output per hour worked, selected G7 economies, 2023 (US = 100)**
 
-Question 5 [15 marks]
-Explain how comparative advantage can lead to mutual gains from trade between two countries.
+| Country | Output per hour worked (US = 100) | Annual productivity growth 2008–2023 (%) |
+|---|---|---|
+| United States | 100.0 | 1.4 |
+| Germany | 94.6 | 0.8 |
+| France | 92.1 | 0.6 |
+| UK | 79.3 | 0.4 |
+| Italy | 84.7 | 0.2 |
+| Japan | 72.5 | 0.9 |
 
-Question 6 [25 marks]
-"Globalisation has done more to reduce poverty than any government policy." Evaluate this statement.`,
+**Figure 4 · UK real GDP per capita, real wages and investment, 2008–2024 (2008 = 100)**
+
+| Year | Real GDP per capita | Real median weekly earnings | Business investment (% of GDP) |
+|---|---|---|---|
+| 2008 | 100.0 | 100.0 | 10.8 |
+| 2014 | 97.3 | 94.0 | 10.4 |
+| 2019 | 104.4 | 96.5 | 10.0 |
+| 2024 | 104.1 | 100.4 | 9.6 |
+
+*Source: OECD / Office for National Statistics, 2024*
+
+**Extract E · The UK productivity puzzle**
+
+UK labour productivity growth has averaged just 0.4% per year since the 2008 financial crisis, compared with around 2% per year in the preceding two decades. Proposed explanations include: the decline in North Sea oil and financial services; weak business investment, which has fallen from 10.8% of GDP in 2008 to 9.6% in 2024; persistent skills shortages; and the mismeasurement of digital services. Real wages have stagnated alongside productivity. Real GDP per capita has barely risen — at around 4% above 2008 levels after 16 years. The distribution of productivity within the UK is also highly uneven: London and the South East enjoy output per hour comparable to Germany, while productivity in parts of northern England and Wales is significantly below the UK average.
+
+**Extract F · Policy responses to the productivity puzzle**
+
+Successive UK governments have launched productivity strategies, including the Industrial Strategy of 2017, the Plan for Growth of 2021, and the 2024 Growth Plan. These have emphasised public investment in infrastructure, R&D tax credits, technical education reforms (such as T-levels), regional policy ("levelling up"), and measures to encourage business investment. Some argue policy uncertainty has itself discouraged long-term investment. An alternative view emphasises deeper structural causes: underinvestment in training, fragmented labour markets, and regional disparities. Some economists argue that monetary policy has allowed "zombie firms" to survive, crowding out more productive entrants. A 2024 IFS paper argued that without a substantial increase in both public and private investment, the UK's productivity performance is likely to remain weak.
+
+Question 05 [2 marks]
+Using the data in Extract D (Figure 3), calculate the percentage difference in output per hour between the UK and Germany in 2023. Give your answer to one decimal place.
+
+Question 06 [4 marks]
+Explain how the data in Extract D (Figure 4) suggest a connection between weak business investment and stagnant real wages in the UK since 2008.
+
+Question 07 [9 marks]
+Extract E states that 'UK labour productivity growth has averaged just 0.4% per year since the 2008 financial crisis, compared with around 2% per year in the preceding two decades.' With the help of a diagram showing long-run aggregate supply (LRAS), explain how an increase in labour productivity affects the UK's potential output and price level.
+
+Question 08 [25 marks]
+Extract F states that 'without a substantial increase in both public and private investment, the UK's productivity performance is likely to remain weak, limiting long-run living-standards growth.' Use the extracts and your knowledge of economics to evaluate the view that a sustained increase in government investment is the most effective way for the UK to address its productivity puzzle.
+
+---
+
+## Section B · Essay (40 marks) — Answer ONE essay
+
+### EITHER · Essay 1 — Globalisation and comparative advantage
+
+Globalisation has transformed the world economy over the past four decades. Proponents argue it has lifted hundreds of millions out of poverty and reduced consumer prices. Critics point to job losses in traditional industries, rising within-country inequality, and exposure to global shocks.
+
+Question 09 [15 marks]
+Explain, with the aid of a diagram, how the theory of comparative advantage provides an economic justification for international trade.
+
+Question 10 [25 marks]
+Evaluate the view that, for the UK economy, the benefits of globalisation outweigh its costs.
+
+### OR · Essay 2 — Monetary policy and the Bank of England's mandate
+
+The Bank of England was given operational independence in 1997, with a remit to meet an inflation target — currently 2% on the CPI measure. Since 2021 the UK has experienced its highest and most persistent inflation in over forty years.
+
+Question 11 [15 marks]
+Explain how the Bank of England uses monetary policy to meet the UK inflation target.
+
+Question 12 [25 marks]
+Evaluate the view that the Bank of England's mandate should be broadened to include objectives beyond controlling inflation, such as supporting employment or tackling climate change.
+
+### OR · Essay 3 — Financial stability and regulation
+
+The 2008 global financial crisis revealed serious weaknesses in financial regulation. The failure of Silicon Valley Bank in 2023 and market turbulence following the 2022 UK "mini-budget" have raised new concerns about financial stability.
+
+Question 13 [15 marks]
+Explain the main causes of financial market instability in modern economies.
+
+Question 14 [25 marks]
+Evaluate the view that tighter regulation of the financial sector is the most effective way to reduce the risk of financial crises in the UK.`,
   },
 
   // ── CHEMISTRY PAPER 1: Higher ──
@@ -1638,60 +1781,141 @@ The line graph shows the cost of electricity over 5 years:
     title: "Paper 2 · Set C",
     description: "Macroeconomic analysis focus: AD/AS diagrams, Phillips curve, multiplier, fiscal/monetary policy evaluation.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/2) · Paper 2: National and International Economy · Predicted Paper Set C
+    content: `# AQA A-Level Economics (7136/2) · Paper 2: National and International Economy · Predicted Paper Set C — Advanced
 
 **Time: 2 hours | Total: 80 marks**
 
-Answer ALL questions in both Section A and Section B.
+In Section A, answer **EITHER** Context 1 **OR** Context 2. In Section B, answer **ONE** essay. Section A = 40 marks, Section B = 40 marks.
 
 ---
 
-## Section A: Data Response (40 marks)
+## Section A · Data Response (40 marks)
 
-**Extract A · UK fiscal stance and the inflation cycle**
+### EITHER · Context 1 — Global supply chains and the rise of protectionism
 
-In 2024 UK national debt exceeded 100% of GDP for the first time since the 1960s, at £2.7 trillion. Despite this, real public spending rose 3.5%. The OBR forecast GDP growth of 0.6% in 2024 rising to 1.4% in 2025. The Bank of England began cutting Bank Rate from 5.25% in late 2024 as headline CPI fell to 2.3%, although core inflation remained sticky at 3.6%. The pound depreciated 5% against the dollar.
+**Extract A · Selected average applied tariff rates, all products (%)**
 
-**Extract B · UK macroeconomic indicators, 2022–2025**
+| Economy | 2015 | 2019 | 2023 | 2024 |
+|---|---|---|---|---|
+| United States | 1.6 | 3.0 | 3.8 | 5.1 |
+| European Union | 1.8 | 1.8 | 1.9 | 1.9 |
+| United Kingdom | — | — | 2.6 | 2.6 |
+| China | 3.5 | 7.6 | 7.4 | 7.4 |
+| India | 6.4 | 6.3 | 18.1 | 17.2 |
 
-| Indicator                  | 2022 | 2023 | 2024 | 2025 (f) |
-|----------------------------|------|------|------|----------|
-| Real GDP growth (%)        | 4.3  | 0.1  | 0.6  | 1.4      |
-| CPI inflation (%)          | 9.1  | 7.3  | 3.2  | 2.3      |
-| Unemployment (%)           | 3.7  | 4.2  | 4.3  | 4.1      |
-| Budget deficit (% GDP)     | 5.1  | 4.3  | 4.8  | 3.9      |
-| National debt (% GDP)      | 85   | 93   | 101  | 103      |
-| Bank Rate (%)              | 3.5  | 5.25 | 4.75 | 4.0      |
+**Figure 2 · World trade and FDI, annual growth (%)**
 
-**Extract C · Further commentary**
+| Year | World goods trade volume growth | Cross-border FDI flows, growth | Global GDP growth |
+|---|---|---|---|
+| 2000–2007 avg. | 7.2 | 15.4 | 4.5 |
+| 2010–2019 avg. | 3.2 | 0.1 | 3.8 |
+| 2023 | 0.8 | -9.5 | 3.3 |
+| 2024 | 2.4 | 2.1 | 3.2 |
 
-Economists disagree on whether 2022–24 inflation was demand-pull (excess household savings of c. £200bn after the pandemic) or cost-push (gas prices, supply-chain disruption). By 2024 the supply-side pressures had eased, but demand remained weak owing to the lagged effect of monetary tightening.
+*Source: WTO / UNCTAD / IMF, 2024*
 
-Question 1 [2 marks]
-Using Extract B, calculate the change in the UK budget deficit as a share of GDP between 2023 and 2024.
+**Extract B · The retreat from hyper-globalisation**
 
-Question 2 [4 marks]
-Using an AD/AS diagram, explain the likely effect on UK real output and the price level of a cut in Bank Rate.
+World trade rose more than three times as fast as world GDP during the 1990s and 2000s — a period often described as "hyper-globalisation". Since the 2008 financial crisis, world trade growth has slowed markedly. Contributing factors include the collapse of global capital flows, the 2018 US–China trade war, the Covid-19 pandemic's disruption to supply chains, Russia's invasion of Ukraine, and a wave of industrial policy interventions (including the US Inflation Reduction Act and the EU's Green Deal Industrial Plan). The 2024 US election campaigns saw proposals for a universal 10% tariff on imports and 60% tariffs on Chinese goods. The IMF has warned that a full trade-war scenario could reduce global output by up to 7% over the medium term. Many economists regard some degree of "friend-shoring" or "near-shoring" as a rational response to geopolitical risks.
 
-Question 3 [9 marks]
-Using the extracts and your knowledge of economics, analyse two reasons why UK inflation between 2022 and 2024 may have been driven primarily by cost-push factors.
+**Extract C · Welfare effects of protectionism**
 
-Question 4 [25 marks]
-Using the extracts and your own knowledge, evaluate the view that reducing the budget deficit should be the UK government's top macroeconomic priority.
+Standard trade theory identifies costs of tariffs: loss of consumer surplus exceeding the gain in producer surplus; deadweight loss triangles in both production and consumption; loss of gains from specialisation; and reduced dynamic efficiency. Empirical studies of the 2018 US tariffs found that the incidence fell almost entirely on US consumers and businesses, with welfare costs of around $800 per household per year by 2020. Supporters of strategic protectionism argue that in industries with large positive externalities (such as semiconductor manufacturing or green technology), infant-industry protection may be justified. Concentration of critical supply chains creates national-security risks the market does not price. Recent industrial policies (such as the $280bn US CHIPS Act) attempt to combine tariffs, subsidies and regulation; critics warn these risk significant government failure.
+
+Question 01 [2 marks]
+Using the data in Extract A (Figure 1), calculate the percentage-point change in the US average applied tariff rate between 2015 and 2024.
+
+Question 02 [4 marks]
+Explain how the data in Extract A (Figure 2) suggest that the world economy has entered a period of slower globalisation since the 2008 financial crisis.
+
+Question 03 [9 marks]
+Extract C states that standard trade theory identifies 'loss of consumer surplus exceeding the gain in producer surplus; deadweight loss triangles in both production and consumption; loss of gains from specialisation'. With the help of a supply-and-demand diagram, analyse how the imposition of a tariff on imported goods reduces overall economic welfare.
+
+Question 04 [25 marks]
+Extract C states that 'in industries with large positive externalities (such as semiconductor manufacturing or green technology), infant-industry protection may be justified.' Use the extracts and your knowledge of economics to evaluate the view that protectionist policies can ever be justified on economic grounds in advanced economies such as the UK and the United States.
 
 ---
 
-## Section B: Essay (40 marks)
+### OR · Context 2 — Economic development and global inequality
 
+*Do NOT answer Context 2 if you have answered Context 1.*
 
-**Short extract:**
-Monetary and fiscal policy face long and variable lags and may conflict in their objectives. Central bank independence is widely regarded as critical for credible inflation targeting.
+**Extract D · Selected development indicators, 2023**
 
-Question 5 [15 marks]
-Explain how the transmission mechanism of monetary policy affects aggregate demand.
+| Country | GNI per capita (US$, PPP) | HDI | % below $2.15/day | Life expectancy (years) |
+|---|---|---|---|---|
+| Norway | 78,200 | 0.961 | 0.0 | 83.2 |
+| United Kingdom | 51,400 | 0.940 | 0.2 | 81.4 |
+| China | 20,800 | 0.788 | 0.1 | 78.2 |
+| India | 8,800 | 0.644 | 10.0 | 70.1 |
+| Bangladesh | 6,500 | 0.670 | 13.5 | 73.6 |
+| Ethiopia | 2,800 | 0.498 | 27.0 | 65.6 |
+| Niger | 1,300 | 0.400 | 50.5 | 62.3 |
 
-Question 6 [25 marks]
-"Fiscal policy is more effective than monetary policy in stabilising the macroeconomy after a deep recession." Evaluate this statement.`,
+**Figure 4 · Average annual real GDP growth, selected regions (%)**
+
+| Region | 2000–2010 | 2010–2019 | 2020–2024 |
+|---|---|---|---|
+| Advanced economies | 1.9 | 2.1 | 1.8 |
+| Emerging & developing Asia | 8.4 | 6.8 | 4.8 |
+| Sub-Saharan Africa | 5.9 | 3.4 | 3.1 |
+| Latin America & Caribbean | 3.4 | 1.8 | 1.7 |
+
+*Source: World Bank / UNDP / IMF, 2024*
+
+**Extract E · Paths to development**
+
+Economic development involves improvements in living standards, health, education and opportunity. Extreme poverty has fallen dramatically over the past forty years, led by industrialisation and export-led growth in East Asia. China alone has lifted more than 800 million people out of extreme poverty since 1980. Progress in sub-Saharan Africa has been slower. The Harrod–Domar model emphasises saving and investment; the Solow model emphasises technological progress and human capital; the Lewis model emphasises the reallocation of labour from low-productivity traditional sectors to higher-productivity modern sectors. Successful developing economies have combined high saving and investment, strong export orientation, investment in education and infrastructure, and effective institutions. The role of natural-resource endowments is ambiguous, with some economies suffering from the "resource curse".
+
+**Extract F · Barriers and policy responses**
+
+Low-income countries face multiple barriers to development: limited domestic savings, commodity-export dependence, poor infrastructure, weak institutions, and vulnerability to climate change. The 2022 floods in Pakistan displaced 33 million people and caused losses equivalent to 4% of GDP. Debt burdens have risen sharply since the pandemic, with 60% of low-income countries now in or at high risk of debt distress. The "Washington Consensus" of the 1990s emphasised trade liberalisation, fiscal discipline and market-friendly reforms. Recent thinking places more weight on institutions, state capacity, and the "developmental state" model. Debt relief initiatives such as HIPC have helped the poorest countries but require coordinated action from creditors. Climate finance commitments — pledged at $100bn per year at COP15 — have been partially met. A 2024 UNCTAD report argued that without a substantial increase in development finance, capital investment, and debt relief, the Sustainable Development Goals for 2030 will be missed by a wide margin.
+
+Question 05 [2 marks]
+Using the data in Extract D (Figure 3), calculate the ratio of the GNI per capita of the United Kingdom to that of Niger in 2023. Give your answer to one decimal place.
+
+Question 06 [4 marks]
+Explain how the data in Extract D (Figure 4) suggest that economic growth rates have diverged between emerging Asia and sub-Saharan Africa since 2000.
+
+Question 07 [9 marks]
+Extract E refers to the 'Lewis model [which] emphasises the reallocation of labour from low-productivity traditional sectors to higher-productivity modern sectors.' With the help of a diagram, analyse how investment in education and physical capital in a developing economy can increase long-run output and real GDP per capita.
+
+Question 08 [25 marks]
+Extract F states that 'without a substantial increase in development finance, capital investment, and debt relief, the Sustainable Development Goals for 2030 will be missed by a wide margin.' Use the extracts and your knowledge of economics to evaluate the most effective policies for accelerating economic development in low-income countries such as those in sub-Saharan Africa.
+
+---
+
+## Section B · Essay (40 marks) — Answer ONE essay
+
+### EITHER · Essay 1 — Fiscal and monetary policy coordination
+
+Since 2022, both fiscal and monetary authorities in the UK and other advanced economies have faced difficult trade-offs. Tight monetary policy has been used to bring inflation down, while governments have sought to protect households from the cost-of-living shock through fiscal support.
+
+Question 09 [15 marks]
+Explain, with the aid of an AD/AS diagram, how a combination of expansionary fiscal policy and contractionary monetary policy can affect the price level and real GDP in an economy.
+
+Question 10 [25 marks]
+Evaluate the view that the coordination of fiscal and monetary policy is essential for maintaining macroeconomic stability in the UK.
+
+### OR · Essay 2 — Climate change and economic growth
+
+Almost every country has now committed to achieving net-zero greenhouse gas emissions by 2050 or shortly thereafter. Meeting this target will require substantial investment and structural economic change.
+
+Question 11 [15 marks]
+Explain, with the aid of diagrams, how climate change represents both a market failure and a threat to long-run economic growth.
+
+Question 12 [25 marks]
+Evaluate the view that policies to reduce greenhouse gas emissions will inevitably reduce the UK's rate of economic growth in the short run.
+
+### OR · Essay 3 — Global inequality and development
+
+Global income inequality has narrowed substantially since the late 1990s, largely due to the rapid growth of China and India. However, within-country inequality has risen in many advanced economies, and poverty reduction has stagnated in sub-Saharan Africa.
+
+Question 13 [15 marks]
+Explain the main economic indicators used to measure the level of economic development in a country.
+
+Question 14 [25 marks]
+Evaluate the view that international trade is the most powerful force for reducing poverty in developing economies.`,
   },
 
   // ── ECONOMICS PAPER 1: Set C (Diagram & Graph Focus) ──
