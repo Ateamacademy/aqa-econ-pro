@@ -945,59 +945,139 @@ Question 6 [25 marks]
     title: "Paper 2 · Set B",
     description: "National and International Economy. Trade and globalisation focus.",
     totalMarks: 80,
-    content: `# AQA A-Level Economics (7136/2) · Paper 2: National and International Economy · Predicted Paper Set B
+    content: `# AQA A-Level Economics (7136/2) · Paper 2: National and International Economy · Predicted Paper Set B — Hard
 
 **Time: 2 hours | Total: 80 marks**
 
-Answer ALL questions in both Section A and Section B.
+In Section A, answer **EITHER** Context 1 **OR** Context 2. In Section B, answer **ONE** essay. Section A = 40 marks, Section B = 40 marks.
 
 ---
 
-## Section A: Data Response (40 marks)
+## Section A · Data Response (40 marks)
 
-**Extract A · UK trade and CPTPP membership**
+### EITHER · Context 1 — The UK exchange rate and trade performance
 
-Since Brexit, the UK has signed independent trade deals with Australia, New Zealand and Japan and joined the CPTPP in 2023. UK goods exports to the EU fell 15% between 2019 and 2023; small businesses cite paperwork and rules-of-origin as the main barriers. The current account deficit widened to 3.1% of GDP in 2023. Inward FDI remained one of the highest in Europe at £29.5bn.
+**Extract A · Sterling exchange rate and UK trade indicators**
 
-**Extract B · UK trade and FDI, 2019–2023**
+| Year | Sterling effective exchange rate (2015 = 100) | £ / $ rate | £ / € rate | UK current account balance (% of GDP) |
+|---|---|---|---|---|
+| 2015 | 100.0 | 1.53 | 1.38 | -4.8 |
+| 2019 | 80.4 | 1.28 | 1.14 | -2.5 |
+| 2022 | 79.1 | 1.24 | 1.17 | -2.1 |
+| 2024 | 83.6 | 1.27 | 1.18 | -3.5 |
 
-| Indicator                          | 2019 | 2021 | 2023 |
-|------------------------------------|------|------|------|
-| UK goods exports to EU (£bn)       | 170  | 138  | 145  |
-| UK goods imports from EU (£bn)     | 228  | 195  | 215  |
-| Current account balance (% GDP)    | -2.7 | -1.5 | -3.1 |
-| Inward FDI (£bn)                   | 36.2 | 24.1 | 29.5 |
-| £/€ exchange rate                  | 1.14 | 1.16 | 1.15 |
+**Figure 2 · UK trade in goods and services, 2024 Q2 (£bn)**
 
-**Extract C · Further commentary**
+| Category | Exports | Imports | Net balance |
+|---|---|---|---|
+| Goods — EU | 44.2 | 58.1 | -13.9 |
+| Goods — non-EU | 42.6 | 57.9 | -15.3 |
+| Services — EU | 38.3 | 31.7 | +6.6 |
+| Services — non-EU | 63.4 | 36.8 | +26.6 |
 
-OBR analysis estimates that CPTPP membership will raise UK GDP by 0.08% over 15 years · small relative to the 4% long-run hit estimated from leaving the EU single market. Supporters argue the deal hedges against rising protectionism and unlocks future Asian growth.
+*Source: Office for National Statistics / Bank of England, 2024*
 
-Question 1 [2 marks]
-Using Extract B, calculate the UK's trade deficit in goods with the EU in 2023.
+**Extract B · Sterling, Brexit and export competitiveness**
 
-Question 2 [4 marks]
-Using an AD/AS diagram, explain how a fall in net exports affects UK real output and the price level.
+Following the June 2016 Brexit referendum, sterling fell by around 15% on a trade-weighted basis within six months. This depreciation was expected to raise the price of imports, boost UK export competitiveness and help reduce the current account deficit. In practice, UK trade performance since 2016 has been weaker than most forecasters predicted. Goods exports to the EU fell by around 8% in 2021 alone following the full implementation of Brexit trading arrangements. Services exports have performed better, particularly to non-EU markets, reflecting the UK's comparative advantage in financial, legal and creative services. The Marshall-Lerner condition is widely accepted, but empirical estimates suggest it holds only in the long run — producing the "J-curve" effect in the short run. Persistent non-price competitiveness issues — particularly in goods manufacturing — have weakened the response of export volumes to the currency depreciation.
 
-Question 3 [9 marks]
-Using the extracts and your knowledge of economics, analyse two potential macroeconomic benefits to the UK of joining the CPTPP.
+**Extract C · Policy responses and structural competitiveness**
 
-Question 4 [25 marks]
-Using the extracts and your own knowledge, evaluate the view that free trade agreements such as CPTPP are beneficial for UK long-run economic growth.
+The UK's persistent current account deficit has been financed by capital inflows. Sterling's status as a reserve currency has given the UK flexibility in managing its deficit, but the UK's net international investment position worsened by around 10 percentage points of GDP between 2016 and 2023. Successive governments have announced strategies including export credit guarantees, trade missions, and post-Brexit trade deals with Australia, New Zealand, Japan and the CPTPP group. Critics argue these have been offset by the loss of frictionless trade with the EU — the UK's largest trading partner, accounting for around 42% of goods trade by value in 2024. Some economists argue that sustained competitiveness gains must come from structural improvements in productivity, skills and infrastructure, rather than from relying on exchange rate movements.
+
+Question 01 [2 marks]
+Using the data in Extract A, calculate the percentage change in the sterling effective exchange rate between 2015 and 2022. Give your answer to one decimal place.
+
+Question 02 [4 marks]
+Explain how the data in Extract A (Figure 2) suggest that the UK has a comparative advantage in the production of services rather than goods.
+
+Question 03 [9 marks]
+Extract B states that the depreciation 'was expected to raise the price of imports, boost UK export competitiveness and help reduce the current account deficit.' With the help of an AD/AS diagram, analyse how a depreciation of sterling is likely to affect UK aggregate demand and the price level in the short run.
+
+Question 04 [25 marks]
+Extract C states that 'sustained competitiveness gains must come from structural improvements in productivity, skills and infrastructure, rather than from relying on exchange rate movements.' Use the extracts and your knowledge of economics to evaluate the view that changes in the exchange rate are more important than supply-side reforms for improving the UK's balance of payments position.
 
 ---
 
-## Section B: Essay (40 marks)
+### OR · Context 2 — UK productivity and economic growth
 
+*Do NOT answer Context 2 if you have answered Context 1.*
 
-**Short extract:**
-Globalisation has integrated product, capital and labour markets, creating winners and losers within and between countries. The role of trade agreements in shaping these outcomes is contested.
+**Extract D · Output per hour worked, selected G7 economies, 2023 (US = 100)**
 
-Question 5 [15 marks]
-Explain how comparative advantage can lead to mutual gains from trade between two countries.
+| Country | Output per hour worked (US = 100) | Annual productivity growth 2008–2023 (%) |
+|---|---|---|
+| United States | 100.0 | 1.4 |
+| Germany | 94.6 | 0.8 |
+| France | 92.1 | 0.6 |
+| UK | 79.3 | 0.4 |
+| Italy | 84.7 | 0.2 |
+| Japan | 72.5 | 0.9 |
 
-Question 6 [25 marks]
-"Globalisation has done more to reduce poverty than any government policy." Evaluate this statement.`,
+**Figure 4 · UK real GDP per capita, real wages and investment, 2008–2024 (2008 = 100)**
+
+| Year | Real GDP per capita | Real median weekly earnings | Business investment (% of GDP) |
+|---|---|---|---|
+| 2008 | 100.0 | 100.0 | 10.8 |
+| 2014 | 97.3 | 94.0 | 10.4 |
+| 2019 | 104.4 | 96.5 | 10.0 |
+| 2024 | 104.1 | 100.4 | 9.6 |
+
+*Source: OECD / Office for National Statistics, 2024*
+
+**Extract E · The UK productivity puzzle**
+
+UK labour productivity growth has averaged just 0.4% per year since the 2008 financial crisis, compared with around 2% per year in the preceding two decades. Proposed explanations include: the decline in North Sea oil and financial services; weak business investment, which has fallen from 10.8% of GDP in 2008 to 9.6% in 2024; persistent skills shortages; and the mismeasurement of digital services. Real wages have stagnated alongside productivity. Real GDP per capita has barely risen — at around 4% above 2008 levels after 16 years. The distribution of productivity within the UK is also highly uneven: London and the South East enjoy output per hour comparable to Germany, while productivity in parts of northern England and Wales is significantly below the UK average.
+
+**Extract F · Policy responses to the productivity puzzle**
+
+Successive UK governments have launched productivity strategies, including the Industrial Strategy of 2017, the Plan for Growth of 2021, and the 2024 Growth Plan. These have emphasised public investment in infrastructure, R&D tax credits, technical education reforms (such as T-levels), regional policy ("levelling up"), and measures to encourage business investment. Some argue policy uncertainty has itself discouraged long-term investment. An alternative view emphasises deeper structural causes: underinvestment in training, fragmented labour markets, and regional disparities. Some economists argue that monetary policy has allowed "zombie firms" to survive, crowding out more productive entrants. A 2024 IFS paper argued that without a substantial increase in both public and private investment, the UK's productivity performance is likely to remain weak.
+
+Question 05 [2 marks]
+Using the data in Extract D (Figure 3), calculate the percentage difference in output per hour between the UK and Germany in 2023. Give your answer to one decimal place.
+
+Question 06 [4 marks]
+Explain how the data in Extract D (Figure 4) suggest a connection between weak business investment and stagnant real wages in the UK since 2008.
+
+Question 07 [9 marks]
+Extract E states that 'UK labour productivity growth has averaged just 0.4% per year since the 2008 financial crisis, compared with around 2% per year in the preceding two decades.' With the help of a diagram showing long-run aggregate supply (LRAS), explain how an increase in labour productivity affects the UK's potential output and price level.
+
+Question 08 [25 marks]
+Extract F states that 'without a substantial increase in both public and private investment, the UK's productivity performance is likely to remain weak, limiting long-run living-standards growth.' Use the extracts and your knowledge of economics to evaluate the view that a sustained increase in government investment is the most effective way for the UK to address its productivity puzzle.
+
+---
+
+## Section B · Essay (40 marks) — Answer ONE essay
+
+### EITHER · Essay 1 — Globalisation and comparative advantage
+
+Globalisation has transformed the world economy over the past four decades. Proponents argue it has lifted hundreds of millions out of poverty and reduced consumer prices. Critics point to job losses in traditional industries, rising within-country inequality, and exposure to global shocks.
+
+Question 09 [15 marks]
+Explain, with the aid of a diagram, how the theory of comparative advantage provides an economic justification for international trade.
+
+Question 10 [25 marks]
+Evaluate the view that, for the UK economy, the benefits of globalisation outweigh its costs.
+
+### OR · Essay 2 — Monetary policy and the Bank of England's mandate
+
+The Bank of England was given operational independence in 1997, with a remit to meet an inflation target — currently 2% on the CPI measure. Since 2021 the UK has experienced its highest and most persistent inflation in over forty years.
+
+Question 11 [15 marks]
+Explain how the Bank of England uses monetary policy to meet the UK inflation target.
+
+Question 12 [25 marks]
+Evaluate the view that the Bank of England's mandate should be broadened to include objectives beyond controlling inflation, such as supporting employment or tackling climate change.
+
+### OR · Essay 3 — Financial stability and regulation
+
+The 2008 global financial crisis revealed serious weaknesses in financial regulation. The failure of Silicon Valley Bank in 2023 and market turbulence following the 2022 UK "mini-budget" have raised new concerns about financial stability.
+
+Question 13 [15 marks]
+Explain the main causes of financial market instability in modern economies.
+
+Question 14 [25 marks]
+Evaluate the view that tighter regulation of the financial sector is the most effective way to reduce the risk of financial crises in the UK.`,
   },
 
   // ── CHEMISTRY PAPER 1: Higher ──
