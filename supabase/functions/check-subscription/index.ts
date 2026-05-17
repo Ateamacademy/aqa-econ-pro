@@ -18,6 +18,8 @@ const PERMANENT_ACCESS_EMAILS = [
   "anvi08parmar@hotmail.com",
   "anvith.sujay@gmail.com",
   "tayyibahsajjad@live.co.uk",
+  "zainabintrayhan@gmail.com",
+  "fatima4r@hotmail.com",
 ];
 
 const TESTER_EMAILS = [
