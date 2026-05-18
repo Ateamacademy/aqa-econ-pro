@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { startCheckout } from "@/lib/startCheckout";
 import GradeStepLadder from "@/components/homepage/GradeStepLadder";
 import DiagnosticCalculator from "@/components/homepage/DiagnosticCalculator";
+import GradeCalculator from "@/pages/GradeCalculator";
 import DashboardDemo from "@/components/homepage/DashboardDemo";
 import studentMaya from "@/assets/student-maya.jpg";
 import studentJames from "@/assets/student-james.jpg";
