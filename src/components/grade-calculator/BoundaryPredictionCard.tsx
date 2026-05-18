@@ -70,6 +70,9 @@ function datasetFor(qualification: Qualification, board: ExamBoard, variant: "A"
   if (board === "AQA") {
     return { label: "AQA GCSE Economics (8136)", grades: GCSE_GRADES_DESC, history: AQA_GCSE_HISTORY, prediction: AQA_GCSE_PREDICTION };
   }
+  if (board === "OCR") {
+    return { label: "OCR GCSE Economics (J205)", grades: GCSE_GRADES_DESC, history: OCR_GCSE_HISTORY, prediction: OCR_GCSE_PREDICTION };
+  }
   return null;
 }
 
