@@ -40,7 +40,7 @@ const sidebarNav = [
   { icon: BookOpen, label: "Study Notes", to: "/notes" },
   { icon: Compass, label: "Diagram Builder", to: "/diagram-practice" },
   { icon: MessageCircle, label: "24/7 Tutor", to: "/tutor" },
-  { icon: Calculator, label: "Grade Calculator", to: "/grade-calculator" },
+  { icon: Calculator, label: "Grade Calculator", to: "/grade-calculator", isNew: true },
   { icon: BarChart3, label: "Progress", to: "/dashboard" },
   { icon: Settings, label: "Settings", to: "/dashboard" },
 ];
@@ -133,7 +133,12 @@ export default function Dashboard() {
                 )}
               >
                 <Icon className="h-4 w-4" />
-                {item.label}
+                <span className="flex-1">{item.label}</span>
+                {(item as any).isNew && (
+                  <span className="text-[9px] font-bold uppercase tracking-wider text-primary bg-primary/15 px-1.5 py-0.5 rounded">
+                    New
+                  </span>
+                )}
               </Link>
             );
           })}

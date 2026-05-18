@@ -17,17 +17,20 @@ import { Paper3RequirementCard } from "@/components/grade-calculator/Paper3Requi
 import { WhatIfSlider } from "@/components/grade-calculator/WhatIfSlider";
 import { AIInsightFeed } from "@/components/grade-calculator/AIInsightFeed";
 import { GradeRescuePanel } from "@/components/grade-calculator/GradeRescuePanel";
+import { ProbabilityBands } from "@/components/grade-calculator/ProbabilityBands";
+import { CrossLinkStrip } from "@/components/grade-calculator/CrossLinkStrip";
+import { ShareResultButton } from "@/components/grade-calculator/ShareResultButton";
 import { useGradeInsights } from "@/hooks/useGradeInsights";
 import { supabase } from "@/integrations/supabase/client";
-import { Calculator, ShieldAlert } from "lucide-react";
+import { Calculator, ShieldAlert, Sparkles } from "lucide-react";
 
 const QUALIFICATIONS: Qualification[] = ["A-Level", "GCSE"];
-const BOARDS: ExamBoard[] = ["AQA", "Edexcel", "OCR", "IB"];
-const CONFIDENCE_OPTIONS: { key: Confidence; label: string }[] = [
-  { key: "very", label: "Very confident" },
-  { key: "somewhat", label: "Somewhat" },
-  { key: "unsure", label: "Unsure" },
-  { key: "worst", label: "Worst case" },
+const BOARDS: ExamBoard[] = ["AQA", "Edexcel", "OCR", "CAIE", "WJEC", "IB"];
+const CONFIDENCE_OPTIONS: { key: Confidence; label: string; emoji: string }[] = [
+  { key: "very", label: "Very Confident", emoji: "🔥" },
+  { key: "somewhat", label: "Somewhat", emoji: "🙂" },
+  { key: "unsure", label: "Unsure", emoji: "😬" },
+  { key: "worst", label: "Worst Case", emoji: "😭" },
 ];
 
 function Pill({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
@@ -201,13 +204,14 @@ export default function GradeCalculator() {
                     key={c.key}
                     onClick={() => setConfidence(c.key)}
                     className={cn(
-                      "px-3 py-2.5 rounded-xl text-xs font-medium border transition-all",
+                      "px-3 py-3 rounded-xl text-xs font-medium border transition-all min-h-[56px] flex flex-col items-center justify-center gap-1",
                       confidence === c.key
                         ? "bg-primary/10 border-primary text-primary"
                         : "bg-card border-border text-muted-foreground hover:border-primary/40",
                     )}
                   >
-                    {c.label}
+                    <span className="text-lg leading-none">{c.emoji}</span>
+                    <span>{c.label}</span>
                   </button>
                 ))}
               </div>
@@ -229,6 +233,8 @@ export default function GradeCalculator() {
                   <Paper3RequirementCard prediction={prediction} config={config} targetGrade={targetGrade} />
                 </div>
 
+                <ProbabilityBands prediction={prediction} config={config} />
+
                 <WhatIfSlider
                   p3Score={simulatedP3}
                   p3Max={config.paperMax[2]}
@@ -245,11 +251,32 @@ export default function GradeCalculator() {
 
                 <AIInsightFeed insights={insightsQ.data} loading={insightsQ.isLoading} />
 
+                <div className="rounded-2xl border border-border bg-card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Sparkles className="h-4 w-4 text-primary" />
+                    <h3 className="text-sm font-semibold text-foreground">Keep the momentum</h3>
+                  </div>
+                  <CrossLinkStrip weakestTopic={insightsQ.data?.priorities?.[0]} />
+                </div>
+
+                <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
+                  <ShareResultButton
+                    prediction={prediction}
+                    targetGrade={targetGrade}
+                    qualification={qualification}
+                    board={board}
+                    p3Max={config.paperMax[2]}
+                  />
+                  <span className="text-[11px] text-muted-foreground">
+                    Generates an image for socials — projected grade, target, Paper 3 needed.
+                  </span>
+                </div>
+
                 <div className="flex items-start gap-2 text-[11px] text-muted-foreground italic border-t border-border pt-4">
                   <ShieldAlert className="h-3.5 w-3.5 mt-0.5 flex-shrink-0" />
                   <span>
                     Predictions are estimates based on historical grade boundaries and the marks you've entered. Real
-                    boundaries shift year to year — use these projections as guidance, not a guarantee.
+                    boundaries shift year to year — not a guarantee.
                   </span>
                 </div>
               </>
