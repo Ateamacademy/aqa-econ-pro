@@ -28,7 +28,8 @@ const aLevelBoards: Record<ExamBoard, Omit<BoardConfig, "qualification" | "grade
   Edexcel: {
     board: "Edexcel",
     paperMax: [100, 100, 100],
-    boundaries: { "A*": 217, A: 185, B: 154, C: 123, D: 93, E: 63 },
+    // PREDICTED 2026 boundaries from 4 published series (2022–2025), pro-rata /335 → /300.
+    boundaries: proRataToPapers(EDEXCEL_A_LEVEL_PREDICTION.predicted, 300, EDEXCEL_A_LEVEL_PREDICTION.max),
   },
   OCR: {
     board: "OCR",
