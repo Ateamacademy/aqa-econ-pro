@@ -85,6 +85,7 @@ const TeacherSettings = lazy(() => import("./pages/teacher/TeacherSettings"));
 const StudentHomeworkAttempt = lazy(() => import("./pages/StudentHomeworkAttempt"));
 const StudentHomeworkResult = lazy(() => import("./pages/StudentHomeworkResult"));
 const GradeCalculator = lazy(() => import("./pages/GradeCalculator"));
+const AdminPaperFeedback = lazy(() => import("./pages/AdminPaperFeedback"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
