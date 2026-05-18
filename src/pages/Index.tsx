@@ -353,6 +353,20 @@ export default function Index() {
                 size="lg"
                 className="rounded-lg px-7 h-12 text-sm font-semibold gap-2 bg-transparent border-2"
                 style={{
+                  borderColor: "hsl(var(--violet-pop) / 0.6)",
+                  color: "hsl(var(--violet-pop))",
+                }}
+              >
+                <Link to="/grade-calculator">
+                  <Calculator className="h-4 w-4" /> Grade Calculator
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="rounded-lg px-7 h-12 text-sm font-semibold gap-2 bg-transparent border-2"
+                style={{
                   borderColor: "hsl(var(--cyan-pop) / 0.6)",
                   color: "hsl(var(--cyan-pop))",
                 }}
