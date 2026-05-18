@@ -1,9 +1,11 @@
 import type { BoardConfig, ExamBoard, Qualification } from "./types";
 import {
   AQA_A_LEVEL_PREDICTION,
+  AQA_GCSE_PREDICTION,
   EDEXCEL_A_LEVEL_PREDICTION,
   EDEXCEL_B_A_LEVEL_PREDICTION,
   OCR_A_LEVEL_PREDICTION,
+  proRataGcseToPapers,
   proRataToPapers,
 } from "./historicalBoundaries";
 
@@ -64,7 +66,9 @@ const gcseBoards: Record<ExamBoard, Omit<BoardConfig, "qualification" | "grades"
   AQA: {
     board: "AQA",
     paperMax: [80, 80, 80],
-    boundaries: { "9": 130, "8": 115, "7": 100, "6": 85, "5": 70, "4": 55, "3": 42, "2": 30, "1": 18 },
+    // PREDICTED 2026 boundaries built from AQA GCSE Economics 8136 archive
+    // (2019, 2022–2025), pro-rata /160 → /240 to fit the 3-paper UI.
+    boundaries: proRataGcseToPapers(AQA_GCSE_PREDICTION.predicted, 240, AQA_GCSE_PREDICTION.max),
   },
   Edexcel: {
     board: "Edexcel",
