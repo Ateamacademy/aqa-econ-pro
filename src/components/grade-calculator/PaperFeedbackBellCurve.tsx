@@ -43,6 +43,7 @@ export default function PaperFeedbackBellCurve({
   paperLabel = "overall",
   predictedGrade,
 }: Props) {
+  const navigate = useNavigate();
   const [difficulty, setDifficulty] = useState<Difficulty | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
