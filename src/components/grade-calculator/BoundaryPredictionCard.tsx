@@ -73,19 +73,21 @@ function datasetFor(qualification: Qualification, board: ExamBoard, variant: "A"
 
 function PredictionPanel({ ds }: { ds: Dataset }) {
   const pred = ds.prediction;
-  const chartData = ds.history
-    .map((r) => ({ year: r.year, ...r.boundaries }))
-    .concat([
-      {
-        year: 2026 as number,
-        "A*": pred.predicted["A*"],
-        A: pred.predicted.A,
-        B: pred.predicted.B,
-        C: pred.predicted.C,
-        D: pred.predicted.D,
-        E: pred.predicted.E,
-      },
-    ]);
+  const grades = ds.grades;
+  const chartData: Record<string, number>[] = [
+    ...ds.history.map((r) => {
+      const row: Record<string, number> = { year: r.year };
+      for (const g of grades) row[g] = r.boundaries[g];
+      return row;
+    }),
+    (() => {
+      const row: Record<string, number> = { year: 2026 };
+      for (const g of grades) row[g] = pred.predicted[g];
+      return row;
+    })(),
+  ];
+
+  const gridCols = grades.length > 6 ? "grid-cols-9" : "grid-cols-6";
 
   return (
     <motion.div
@@ -104,9 +106,9 @@ function PredictionPanel({ ds }: { ds: Dataset }) {
         </p>
       </div>
 
-      <div className="grid grid-cols-6 gap-2">
-        {(["A*", "A", "B", "C", "D", "E"] as const).map((g) => (
-          <div key={g} className="rounded-lg border border-border bg-background/60 p-2.5 text-center">
+      <div className={`grid ${gridCols} gap-2`}>
+        {grades.map((g) => (
+          <div key={g} className="rounded-lg border border-border bg-background/60 p-2 text-center">
             <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{g}</div>
             <div className="text-base font-mono font-semibold text-foreground">{pred.predicted[g]}</div>
             <div className="text-[10px] text-muted-foreground font-mono">±{pred.stdDev[g].toFixed(1)}</div>
@@ -125,7 +127,7 @@ function PredictionPanel({ ds }: { ds: Dataset }) {
             <YAxis tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 10 }} stroke="hsl(var(--border))" domain={["auto", "auto"]} />
             <Tooltip contentStyle={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: 8, fontSize: 11 }} />
             <Legend wrapperStyle={{ fontSize: 10 }} />
-            {(["A*", "A", "B", "C", "D", "E"] as const).map((g) => (
+            {grades.map((g) => (
               <Line key={g} type="monotone" dataKey={g} stroke={GRADE_COLORS[g]} strokeWidth={2} dot={{ r: 2 }} activeDot={{ r: 4 }} />
             ))}
           </LineChart>
