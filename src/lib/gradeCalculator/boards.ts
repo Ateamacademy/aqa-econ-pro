@@ -1,5 +1,9 @@
 import type { BoardConfig, ExamBoard, Qualification } from "./types";
-import { AQA_A_LEVEL_PREDICTION } from "./historicalBoundaries";
+import {
+  AQA_A_LEVEL_PREDICTION,
+  EDEXCEL_A_LEVEL_PREDICTION,
+  proRataToPapers,
+} from "./historicalBoundaries";
 
 /**
  * NOTE: Boundary figures are seed placeholders aligned to recent published
