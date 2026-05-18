@@ -75,6 +75,9 @@ function datasetFor(qualification: Qualification, board: ExamBoard, variant: "A"
   if (board === "OCR") {
     return { label: "OCR GCSE Economics (J205)", grades: GCSE_GRADES_DESC, history: OCR_GCSE_HISTORY, prediction: OCR_GCSE_PREDICTION };
   }
+  if (board === "Edexcel") {
+    return { label: "Edexcel IGCSE Economics (4EC1)", grades: GCSE_GRADES_DESC, history: EDEXCEL_IGCSE_HISTORY, prediction: EDEXCEL_IGCSE_PREDICTION };
+  }
   return null;
 }
 
