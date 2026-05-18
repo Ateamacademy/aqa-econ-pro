@@ -16,6 +16,7 @@ const navLinks = [
   { to: "/diagram-practice", label: "Diagrams" },
   { to: "/predicted", label: "Predicted Papers" },
   { to: "/papers", label: "Papers" },
+  { to: "/grade-calculator", label: "Grade Calculator" },
   { to: "/dashboard", label: "Dashboard" },
 ];
 
