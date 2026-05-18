@@ -8,6 +8,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowLeft, RefreshCw, Download } from "lucide-react";
 import { toast } from "sonner";
+import {
+  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell,
+  Line, ComposedChart, CartesianGrid,
+} from "recharts";
 
 const ADMIN_EMAIL = "swapnil.kumar22@alumni.imperial.ac.uk";
 
