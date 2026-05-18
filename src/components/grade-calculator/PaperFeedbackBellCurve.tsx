@@ -117,16 +117,33 @@ export default function PaperFeedbackBellCurve({
     };
   }, [rows, gradeOrder]);
 
-  // Build a smoothed bell curve overlay from grade counts
+  // Build a true Gaussian bell curve overlay fitted to the grade distribution.
+  // We treat each grade position as a numeric x (0..n-1), compute the weighted
+  // mean & standard deviation of student predictions, then render a normal
+  // PDF scaled so its peak matches the tallest bar (so the curve is always
+  // visible — even with a single response, we use a sensible default sigma).
   const bellData = useMemo(() => {
+    const n = gradeDist.length;
     if (total === 0) return gradeDist.map((g) => ({ ...g, curve: 0 }));
+
     const counts = gradeDist.map((g) => g.count);
-    const smoothed = counts.map((_, i) => {
-      const prev = counts[i - 1] ?? counts[i];
-      const next = counts[i + 1] ?? counts[i];
-      return (prev + counts[i] * 2 + next) / 4;
-    });
-    return gradeDist.map((g, i) => ({ ...g, curve: smoothed[i] }));
+    const xs = counts.map((_, i) => i);
+    const mean = xs.reduce((s, x, i) => s + x * counts[i], 0) / total;
+    const variance =
+      xs.reduce((s, x, i) => s + counts[i] * (x - mean) ** 2, 0) / total;
+    // Floor sigma so the curve has a visible spread even with low-N or
+    // single-bucket data (otherwise it collapses to a spike / flat line).
+    const sigma = Math.max(Math.sqrt(variance), 0.9);
+
+    const peakBar = Math.max(...counts, 1);
+    const pdf = (x: number) =>
+      Math.exp(-((x - mean) ** 2) / (2 * sigma * sigma));
+    const pdfPeak = pdf(mean) || 1;
+
+    return gradeDist.map((g, i) => ({
+      ...g,
+      curve: (pdf(i) / pdfPeak) * peakBar,
+    }));
   }, [gradeDist, total]);
 
   return (
