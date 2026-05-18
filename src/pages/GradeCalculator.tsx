@@ -222,11 +222,18 @@ export default function GradeCalculator() {
           {/* RIGHT — output */}
           <div className="space-y-5 lg:col-span-2">
             {!hasMarks ? (
-              <div className="rounded-2xl border border-dashed border-border bg-card p-10 text-center">
-                <Calculator className="h-10 w-10 text-muted-foreground mx-auto mb-3" />
-                <h3 className="text-sm font-semibold text-foreground mb-1">Enter your Paper 1 &amp; 2 marks</h3>
-                <p className="text-xs text-muted-foreground">Your grade projection and personalised plan will appear here.</p>
-              </div>
+              <>
+                <div className="rounded-2xl border border-dashed border-border bg-card p-10 text-center">
+                  <Calculator className="h-10 w-10 text-muted-foreground mx-auto mb-3" />
+                  <h3 className="text-sm font-semibold text-foreground mb-1">Enter your Paper 1 &amp; 2 marks</h3>
+                  <p className="text-xs text-muted-foreground">Your grade projection and personalised plan will appear here.</p>
+                </div>
+                <PaperFeedbackBellCurve
+                  examBoard={board}
+                  qualification={qualification}
+                  predictedGrade={null}
+                />
+              </>
             ) : (
               <>
                 <div className="grid md:grid-cols-2 gap-5">
