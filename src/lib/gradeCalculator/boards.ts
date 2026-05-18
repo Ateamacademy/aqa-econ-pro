@@ -2,8 +2,11 @@ import type { BoardConfig, ExamBoard, Qualification } from "./types";
 import {
   AQA_A_LEVEL_PREDICTION,
   EDEXCEL_A_LEVEL_PREDICTION,
+  EDEXCEL_B_A_LEVEL_PREDICTION,
   proRataToPapers,
 } from "./historicalBoundaries";
+
+export type EdexcelVariant = "A" | "B";
 
 /**
  * NOTE: Boundary figures are seed placeholders aligned to recent published
@@ -89,9 +92,26 @@ const gcseBoards: Record<ExamBoard, Omit<BoardConfig, "qualification" | "grades"
   },
 };
 
-export function getBoardConfig(qualification: Qualification, board: ExamBoard): BoardConfig {
+export function getBoardConfig(
+  qualification: Qualification,
+  board: ExamBoard,
+  edexcelVariant: EdexcelVariant = "A",
+): BoardConfig {
   if (qualification === "A-Level") {
-    return { ...aLevelBoards[board], qualification, grades: [...A_LEVEL_GRADES] };
+    const base = aLevelBoards[board];
+    if (board === "Edexcel" && edexcelVariant === "B") {
+      return {
+        ...base,
+        qualification,
+        grades: [...A_LEVEL_GRADES],
+        boundaries: proRataToPapers(
+          EDEXCEL_B_A_LEVEL_PREDICTION.predicted,
+          300,
+          EDEXCEL_B_A_LEVEL_PREDICTION.max,
+        ),
+      };
+    }
+    return { ...base, qualification, grades: [...A_LEVEL_GRADES] };
   }
   return { ...gcseBoards[board], qualification, grades: [...GCSE_GRADES] };
 }

@@ -55,7 +55,11 @@ function Pill({ active, onClick, children }: { active: boolean; onClick: () => v
 export default function GradeCalculator() {
   const [qualification, setQualification] = useState<Qualification>("A-Level");
   const [board, setBoard] = useState<ExamBoard>("AQA");
-  const config = useMemo(() => getBoardConfig(qualification, board), [qualification, board]);
+  const [edexcelVariant, setEdexcelVariant] = useState<"A" | "B">("A");
+  const config = useMemo(
+    () => getBoardConfig(qualification, board, edexcelVariant),
+    [qualification, board, edexcelVariant],
+  );
   const targetOptions = TARGET_GRADES[qualification] as Grade[];
   const [targetGrade, setTargetGrade] = useState<Grade>(qualification === "A-Level" ? "A" : ("7" as Grade));
   const [confidence, setConfidence] = useState<Confidence>("somewhat");
@@ -162,6 +166,21 @@ export default function GradeCalculator() {
                   ))}
                 </div>
               </div>
+              {qualification === "A-Level" && board === "Edexcel" && (
+                <div>
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-2">
+                    Edexcel specification
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Pill active={edexcelVariant === "A"} onClick={() => setEdexcelVariant("A")}>
+                      Economics A (9EC0)
+                    </Pill>
+                    <Pill active={edexcelVariant === "B"} onClick={() => setEdexcelVariant("B")}>
+                      Economics B (9EB0)
+                    </Pill>
+                  </div>
+                </div>
+              )}
               <div>
                 <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-2">Target grade</div>
                 <div className="flex flex-wrap gap-1.5">
@@ -222,7 +241,7 @@ export default function GradeCalculator() {
 
           {/* RIGHT — output */}
           <div className="space-y-5 lg:col-span-2">
-            <BoundaryPredictionCard qualification={qualification} board={board} />
+            <BoundaryPredictionCard qualification={qualification} board={board} edexcelVariant={edexcelVariant} />
 
             {!hasMarks ? (
               <>
