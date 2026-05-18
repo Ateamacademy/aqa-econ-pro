@@ -71,7 +71,8 @@ export default function GradeCalculator() {
     [config, paper1, paper2, confidence, targetGrade],
   );
 
-  const simulatedP3 = p3Sim ?? prediction.p3RequiredForTarget >= 0 ? p3Sim ?? prediction.p3RequiredForTarget : Math.round(config.paperMax[2] / 2);
+  const defaultP3 = prediction.p3RequiredForTarget >= 0 ? prediction.p3RequiredForTarget : Math.round(config.paperMax[2] / 2);
+  const simulatedP3 = p3Sim ?? defaultP3;
   const simulated = useMemo(
     () => predictGrade({ config, paper1, paper2, confidence, targetGrade, paper3Override: simulatedP3 }),
     [config, paper1, paper2, confidence, targetGrade, simulatedP3],
