@@ -117,8 +117,8 @@ function PredictionPanel({ ds }: { ds: Dataset }) {
   );
 }
 
-export default function BoundaryPredictionCard({ qualification, board }: Props) {
-  const ds = datasetFor(qualification, board);
+export default function BoundaryPredictionCard({ qualification, board, edexcelVariant = "A" }: Props) {
+  const ds = datasetFor(qualification, board, edexcelVariant);
 
   if (!ds) {
     return (
