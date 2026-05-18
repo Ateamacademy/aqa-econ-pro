@@ -164,6 +164,7 @@ const App = () => (
              <Route path="/admin/board-coverage" element={<AdminBoardCoverage />} />
              <Route path="/admin/marking-convention-verification" element={<AdminMarkingConventionVerification />} />
              <Route path="/admin/qa-tracker" element={<AdminQaTracker />} />
+             <Route path="/admin/paper-feedback" element={<AdminPaperFeedback />} />
               <Route path="/mock-papers" element={<EdexcelMockPapersIndex />} />
               <Route path="/mock-papers/edexcel-a/:paperNum/:difficulty/:view" element={<EdexcelMockPaperViewer />} />
               <Route path="/mock-papers/edexcel-a/:paperNum/:difficulty" element={<EdexcelMockPaperViewer />} />
