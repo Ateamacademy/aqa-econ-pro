@@ -89,9 +89,11 @@ const gcseBoards: Record<ExamBoard, Omit<BoardConfig, "qualification" | "grades"
   },
   CAIE: {
     board: "CAIE",
-    // IGCSE 0455: 2 components (P1 30, P2 90); P3 treated as improvement target
+    // IGCSE 0455: 2 components (P1 30, P2 90); P3 treated as improvement target.
     paperMax: [30, 90, 60],
-    boundaries: { "9": 145, "8": 130, "7": 115, "6": 100, "5": 85, "4": 70, "3": 55, "2": 40, "1": 25 },
+    // PREDICTED 2026 boundaries built from CAIE IGCSE Economics 0455 archive
+    // (2023–2025 June, X+Y zones averaged), pro-rata /150 → /180 for the 3-slot UI.
+    boundaries: proRataGcseToPapers(CAIE_IGCSE_PREDICTION.predicted, 180, CAIE_IGCSE_PREDICTION.max),
   },
   WJEC: {
     board: "WJEC",
