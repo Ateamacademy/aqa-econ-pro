@@ -99,6 +99,20 @@ export function predictFromHistory(
 
 export const AQA_A_LEVEL_PREDICTION = predictFromHistory(AQA_A_LEVEL_HISTORY);
 
+/* ─────────────────────────── OCR A-Level (H460) ─────────────────────────── */
+/**
+ * Source: savemyexams.com (originally OCR boundary archive).
+ * Full qualification, /240 (papers 1+2+3).
+ */
+export const OCR_A_LEVEL_HISTORY: HistoricalRow[] = [
+  { year: 2022, max: 240, boundaries: { "A*": 185, A: 157, B: 129, C: 101, D: 73, E: 46 } },
+  { year: 2023, max: 240, boundaries: { "A*": 193, A: 164, B: 135, C: 106, D: 78, E: 50 } },
+  { year: 2024, max: 240, boundaries: { "A*": 193, A: 166, B: 139, C: 112, D: 85, E: 58 } },
+  { year: 2025, max: 240, boundaries: { "A*": 197, A: 171, B: 142, C: 114, D: 86, E: 58 } },
+];
+
+export const OCR_A_LEVEL_PREDICTION = predictFromHistory(OCR_A_LEVEL_HISTORY);
+
 /* ─────────────────────────── Edexcel A A-Level (9EC0) ─────────────────────────── */
 /**
  * Source: savemyexams.com (originally Pearson Edexcel boundary archive).

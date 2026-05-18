@@ -3,6 +3,7 @@ import {
   AQA_A_LEVEL_PREDICTION,
   EDEXCEL_A_LEVEL_PREDICTION,
   EDEXCEL_B_A_LEVEL_PREDICTION,
+  OCR_A_LEVEL_PREDICTION,
   proRataToPapers,
 } from "./historicalBoundaries";
 
@@ -37,7 +38,8 @@ const aLevelBoards: Record<ExamBoard, Omit<BoardConfig, "qualification" | "grade
   OCR: {
     board: "OCR",
     paperMax: [80, 80, 80],
-    boundaries: { "A*": 184, A: 158, B: 132, C: 106, D: 81, E: 56 },
+    // PREDICTED 2026 boundaries from 4 published series (2022–2025).
+    boundaries: { ...OCR_A_LEVEL_PREDICTION.predicted },
   },
   CAIE: {
     board: "CAIE",
