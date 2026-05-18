@@ -6,6 +6,8 @@ import {
   AQA_A_LEVEL_PREDICTION,
   AQA_GCSE_HISTORY,
   AQA_GCSE_PREDICTION,
+  CAIE_IGCSE_HISTORY,
+  CAIE_IGCSE_PREDICTION,
   EDEXCEL_A_LEVEL_HISTORY,
   EDEXCEL_A_LEVEL_PREDICTION,
   EDEXCEL_B_A_LEVEL_HISTORY,
@@ -77,6 +79,9 @@ function datasetFor(qualification: Qualification, board: ExamBoard, variant: "A"
   }
   if (board === "Edexcel") {
     return { label: "Edexcel IGCSE Economics (4EC1)", grades: GCSE_GRADES_DESC, history: EDEXCEL_IGCSE_HISTORY, prediction: EDEXCEL_IGCSE_PREDICTION };
+  }
+  if (board === "CAIE") {
+    return { label: "CAIE IGCSE Economics (0455)", grades: GCSE_GRADES_DESC, history: CAIE_IGCSE_HISTORY, prediction: CAIE_IGCSE_PREDICTION };
   }
   return null;
 }

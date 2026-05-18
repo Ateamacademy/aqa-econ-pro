@@ -255,3 +255,15 @@ export const EDEXCEL_IGCSE_HISTORY: GcseHistoricalRow[] = [
 ];
 
 export const EDEXCEL_IGCSE_PREDICTION = predictGcseFromHistory(EDEXCEL_IGCSE_HISTORY);
+
+/* CAIE (Cambridge) IGCSE Economics (0455) — /150 total.
+ * Source: savemyexams.com / Cambridge boundary archive (2023–2025 June).
+ * Zones X (papers 11/21) and Y (12/22) averaged per year for stability.
+ */
+export const CAIE_IGCSE_HISTORY: GcseHistoricalRow[] = [
+  { year: 2023, max: 150, boundaries: { "9": 118, "8": 109, "7": 101, "6": 90, "5": 79, "4": 68, "3": 54, "2": 41, "1": 28 } },
+  { year: 2024, max: 150, boundaries: { "9": 116, "8": 108, "7": 100, "6": 89, "5": 78, "4": 67, "3": 53, "2": 40, "1": 27 } },
+  { year: 2025, max: 150, boundaries: { "9": 119, "8": 110, "7": 102, "6": 89, "5": 77, "4": 66, "3": 53, "2": 40, "1": 28 } },
+];
+
+export const CAIE_IGCSE_PREDICTION = predictGcseFromHistory(CAIE_IGCSE_HISTORY);
