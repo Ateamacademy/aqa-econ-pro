@@ -1,85 +1,86 @@
-## Status — Phases 1, 2, 3 shipped ✅
+## EconRev AI Grade Calculator & Paper 3 Strategy Engine
 
-- Phase 1 (Stability): Error boundaries, query retry/backoff, `xlsx` → `exceljs`, Password HIBP, auth resilience.
-- Phase 2 (Backend security): client_errors telemetry table, RLS tightened, `SET search_path` + `REVOKE EXECUTE FROM anon` on definer functions.
-- Phase 3 (Performance + observability):
-  - Route-level code-split already in place via `React.lazy()` for all 60+ pages in `App.tsx`.
-  - LCP image preload + Supabase preconnect added to `index.html`.
-  - `supabase/functions/_shared/validate.ts` shared Zod validator created (apply per-function incrementally without touching marking logic).
-  - `src/lib/logClientError.ts` wired through `ErrorBoundary` for real telemetry.
+A new feature that helps Economics students estimate their overall grade after Papers 1 & 2, work out exactly what they need in Paper 3, and get AI-driven feedback and a rescue plan if they're below target.
 
----
+### Scope (Phase 1 + 2 + 3 in one build)
 
-## Why retention is dropping (what the audit actually found)
+Phases 1–3 of your spec, shipped together as a single polished route. Phase 4 (teacher integration, cohort benchmarking) deferred — already partially exists in the Teacher area and can be wired later.
 
+### User flow
 
-I ran the security scanner, Supabase linter, dependency scan, and codebase sweep. The "unstable + unsecure" complaint is backed by real signals — these are the concrete causes:
+1. **Setup** — Qualification (GCSE / A-Level), Exam Board (AQA, Edexcel, OCR, IB), Target Grade.
+2. **Marks input** — Paper 1 + Paper 2 scores (with max-mark hints per board).
+3. **Confidence** — Very confident / Somewhat / Unsure / Worst case.
+4. **Live dashboard** — current estimated grade, probability band, Paper 3 required marks, risk level, "What If?" Paper 3 slider, AI insight feed, Grade Rescue panel when below target.
 
-**Stability**
-- **Zero React error boundaries** anywhere in the app. A single render error in any of the 60+ lazy-loaded pages white-screens the whole site for the user. This alone is enough to crater retention.
-- **30+ Edge Functions with no Zod input validation** → bad client payloads return 500s instead of friendly 400s, which surface as "marking is broken" to students.
-- **No global query/mutation retry strategy** on TanStack Query → transient network blips look like permanent failures.
-- Several pages are 2,000–3,600 lines (`PredictedPapers.tsx`, `DiagramPractice.tsx`) — high crash blast-radius.
+### Pages / components
 
-**Security (57 backend findings + 1 high-sev dep)**
-- `xlsx` package has a **High** advisory (Prototype Pollution + ReDoS) with no upstream fix on npm.
-- ~20 DB functions missing `SET search_path` (CVE class: search-path hijack).
-- Several `SECURITY DEFINER` functions callable by anon role.
-- RLS policies using `USING (true)` / `WITH CHECK (true)` on write operations.
-- `pgvector` extension installed in `public` schema.
-- Password HIBP check almost certainly disabled on auth.
+- **Route**: `/grade-calculator` (lazy-loaded in `App.tsx`, linked from Dashboard + top nav)
+- **Page**: `src/pages/GradeCalculator.tsx` — orchestrates state, calls AI edge function
+- **Components** in `src/components/grade-calculator/`:
+  - `SetupCard.tsx` — qualification / board / target
+  - `MarksInputCard.tsx` — animated number inputs + sliders for P1, P2
+  - `ConfidenceSelector.tsx` — 4-option segmented control
+  - `GradeThermometer.tsx` — animated SVG showing current → target → stretch
+  - `Paper3RequirementCard.tsx` — marks needed for each grade band
+  - `ProbabilityBands.tsx` — Risk / Likely / Stretch grade visuals
+  - `WhatIfSlider.tsx` — drag P3 slider, live grade updates (Framer Motion)
+  - `AIInsightFeed.tsx` — scrolling cards: summary, reassurance, strategy, priorities
+  - `GradeRescuePanel.tsx` — shows when projected < target
+  - `Disclaimer.tsx` — "Predictions are estimates…" footer
 
-**Performance**
-- No code-splitting on the two heaviest pages.
-- No image preloading or LCP optimization on `/`.
-- Heavy `predictedPapersLibrary` array (~3,500 lines) imported eagerly.
+### Grade calculation engine
 
----
+- **Pure TS module**: `src/lib/gradeCalculator/`
+  - `boundaries.ts` — static seed data per board × qualification × grade (uses existing `src/lib/aqa-grade-boundaries.ts` and `src/lib/boards/edexcel-a-a-level/grade-boundaries.ts`; adds stubs for OCR, IB, GCSE boards using publicly-known recent series)
+  - `papers.ts` — paper weightings + max marks per board
+  - `predict.ts` — `predictGrade({ board, qual, p1, p2, confidence, target })` → `{ likely, optimistic, worstCase, p3Required: Record<Grade, number>, confidenceScore, risk }`
+  - Confidence widens the band (±2/±5/±8/±12 marks on P1+P2 baseline).
 
-## The plan — 3 phases, shippable independently
+### AI feedback engine
 
-### Phase 1 — Stop the bleeding (highest retention impact)
+- **Edge function**: `supabase/functions/grade-calculator-insights/index.ts`
+  - Input: prediction result + student inputs
+  - Calls Lovable AI Gateway (`google/gemini-3-flash-preview`) with structured-output schema returning `{ summary, reassurance, strategy, priorities[], rescuePlan? }`
+  - Tone modulated by confidence + gap-to-target
+- Client: `useGradeInsights` hook with React Query, debounced 800ms after inputs settle
 
-1. **Global ErrorBoundary** wrapping `<App />` + per-route boundaries on the 6 heaviest pages (Predicted Papers, Diagram Practice, Paper Attempt, Marking, Dashboard, Study Notes). Friendly fallback UI with "Reload" + "Report" buttons, auto-logs to a new `client_errors` table.
-2. **TanStack Query defaults**: `retry: 2, retryDelay: exponential, staleTime: 30s, refetchOnWindowFocus: false` set globally so transient AI/marking failures self-heal.
-3. **Replace `xlsx`** with `exceljs` (actively maintained, no known high-sev). Touch only the 1–2 import/export call sites.
-4. **Enable Password HIBP** on auth + leaked-password protection.
-5. **Auth resilience**: wrap `AuthContext` session restore in try/catch so a corrupt local session can't deadlock the app on load.
+### Database (Supabase migration)
 
-### Phase 2 — Backend security hardening (close the 57 findings)
+Track sessions for the analytics requirement (Section 16) — light and additive.
 
-One migration that:
-- Adds `SET search_path = public` to every `SECURITY DEFINER` function missing it.
-- `REVOKE EXECUTE ... FROM anon` on definer functions not meant for unauth users; keeps `authenticated`.
-- Tightens the 3 `USING (true)` write policies to owner-scoped checks.
-- Moves `pgvector` out of `public` schema (or documents it as accepted risk if data depends on it).
-- Adds a new `client_errors` table (RLS: users insert their own, admins read all) used by Phase 1.
+- `grade_calculator_sessions`
+  - `user_id`, `qualification`, `exam_board`, `target_grade`
+  - `paper1_score`, `paper2_score`, `confidence`
+  - `predicted_grade`, `p3_required_target`
+  - RLS: users insert/read own rows; service role full access
+- No changes to existing tables.
 
-Plus an **edge-function shared validator** (`supabase/functions/_shared/validate.ts`) and a Zod schema for the top 8 high-traffic functions: `mark-with-ai`, `mark-aqa-examiner`, `mark-diagram`, `mark-exam`, `mark-homework-submission`, `ai-tutor`, `create-checkout`, `verify-checkout`. The other 20 keep working unchanged and get validators incrementally.
+### Visual design
 
-### Phase 3 — Performance + observability
+- Reuse the dark-navy premium aesthetic (`bg-card`, `border-border`, `text-primary`, gradient `from-primary to-cyan-pop` as already used in `GradeLikelihoodPanel`).
+- Framer Motion for slider/thermometer/number-tick animations.
+- Mobile-first single-column → two-column at md+. Grid follows existing dashboard panel style.
 
-- **Route-level code-split** `PredictedPapers.tsx` and `DiagramPractice.tsx` into 3 chunks each (setup / write / feedback) — the three-step workflow naturally maps to this.
-- **Lazy-load the predicted papers library** (dynamic `import()` only when `/predicted` mounts) — saves ~150 KB on initial bundle.
-- **Preload LCP image** on `/` + add `fetchpriority="high"`.
-- Add a tiny **`logClientError(err, context)`** helper wired to the new `client_errors` table so we get real telemetry instead of guessing.
+### Branding rules respected
 
----
+- No "AI" student-facing label — call it the "Grade Calculator" / "Instant Feedback" panel (per project memory).
+- Disclaimer always visible.
+- No grade guarantees in AI prompts (prompt explicitly forbids absolute language).
 
-## What I will explicitly NOT touch (locked by project memory)
+### Out of scope (this build)
 
-- High-fidelity SVG diagram coordinates / `lineIntersect` math.
-- The marking rigor gates, ghost-mark prevention, image verification strictness, board-specific scoring caps.
-- Edexcel A-Level locked diagram files.
-- Visual identity / typography / dot-grid styling.
-- The 360-paper predicted library content.
+- Teacher cohort dashboards (Phase 4)
+- Community benchmarking
+- Auto-generated full revision plans (links to existing Study Notes / Predicted Papers instead)
+- Post-exam reaction social mode
 
-Refactors stay in shells/wrappers — marking logic stays byte-identical.
+### Deliverables
 
----
+1. New `/grade-calculator` route + nav link
+2. ~10 new components under `grade-calculator/`
+3. Pure calculation library with unit tests in `src/test/`
+4. One edge function for AI insights
+5. One migration for the sessions table
 
-## Order of execution if you approve
-
-I'll ship Phase 1 first as a single update (highest retention ROI, lowest risk), then Phase 2 as a DB migration you'll be asked to confirm, then Phase 3.
-
-Reply "go" to start with Phase 1, or tell me to reshuffle priorities (e.g. "do security first").
+Ready to build on approval.

@@ -84,6 +84,7 @@ const TeacherInsightsAll = lazy(() => import("./pages/teacher/TeacherInsightsAll
 const TeacherSettings = lazy(() => import("./pages/teacher/TeacherSettings"));
 const StudentHomeworkAttempt = lazy(() => import("./pages/StudentHomeworkAttempt"));
 const StudentHomeworkResult = lazy(() => import("./pages/StudentHomeworkResult"));
+const GradeCalculator = lazy(() => import("./pages/GradeCalculator"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -129,6 +130,7 @@ const App = () => (
               <Route path="/diagram-practice" element={<DiagramPractice />} />
               <Route path="/notes" element={<StudyNotes />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/grade-calculator" element={<GradeCalculator />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/reset-password" element={<ResetPassword />} />
               <Route path="/pricing" element={<Pricing />} />

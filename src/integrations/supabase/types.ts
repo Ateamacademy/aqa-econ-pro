@@ -614,6 +614,57 @@ export type Database = {
         }
         Relationships: []
       }
+      grade_calculator_sessions: {
+        Row: {
+          confidence: string | null
+          created_at: string
+          exam_board: string
+          id: string
+          p3_max: number | null
+          p3_required_target: number | null
+          paper1_max: number | null
+          paper1_score: number | null
+          paper2_max: number | null
+          paper2_score: number | null
+          predicted_grade: string | null
+          qualification: string
+          target_grade: string
+          user_id: string | null
+        }
+        Insert: {
+          confidence?: string | null
+          created_at?: string
+          exam_board: string
+          id?: string
+          p3_max?: number | null
+          p3_required_target?: number | null
+          paper1_max?: number | null
+          paper1_score?: number | null
+          paper2_max?: number | null
+          paper2_score?: number | null
+          predicted_grade?: string | null
+          qualification: string
+          target_grade: string
+          user_id?: string | null
+        }
+        Update: {
+          confidence?: string | null
+          created_at?: string
+          exam_board?: string
+          id?: string
+          p3_max?: number | null
+          p3_required_target?: number | null
+          paper1_max?: number | null
+          paper1_score?: number | null
+          paper2_max?: number | null
+          paper2_score?: number | null
+          predicted_grade?: string | null
+          qualification?: string
+          target_grade?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       homework_assignments: {
         Row: {
           class_id: string
