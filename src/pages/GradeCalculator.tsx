@@ -204,13 +204,14 @@ export default function GradeCalculator() {
                     key={c.key}
                     onClick={() => setConfidence(c.key)}
                     className={cn(
-                      "px-3 py-2.5 rounded-xl text-xs font-medium border transition-all",
+                      "px-3 py-3 rounded-xl text-xs font-medium border transition-all min-h-[56px] flex flex-col items-center justify-center gap-1",
                       confidence === c.key
                         ? "bg-primary/10 border-primary text-primary"
                         : "bg-card border-border text-muted-foreground hover:border-primary/40",
                     )}
                   >
-                    {c.label}
+                    <span className="text-lg leading-none">{c.emoji}</span>
+                    <span>{c.label}</span>
                   </button>
                 ))}
               </div>
