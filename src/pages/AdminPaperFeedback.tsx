@@ -61,6 +61,48 @@ export default function AdminPaperFeedback() {
     );
   }, [rows, q]);
 
+  // Difficulty distribution + smoothed bell curve
+  const DIFF_ORDER: { key: string; label: string; color: string }[] = [
+    { key: "easy", label: "Easy", color: "#22c55e" },
+    { key: "medium", label: "Medium", color: "#3b82f6" },
+    { key: "hard", label: "Hard", color: "#f59e0b" },
+    { key: "very_hard", label: "Very Hard", color: "#ef4444" },
+  ];
+  const { bellData, totalFiltered, consensus, mean, stddev } = useMemo(() => {
+    const counts: Record<string, number> = { easy: 0, medium: 0, hard: 0, very_hard: 0 };
+    filtered.forEach((r) => {
+      if (counts[r.difficulty] !== undefined) counts[r.difficulty] += 1;
+    });
+    const ordered = DIFF_ORDER.map((d) => ({ key: d.key, label: d.label, color: d.color, count: counts[d.key] || 0 }));
+    const total = ordered.reduce((s, d) => s + d.count, 0);
+    // Smoothed (rolling) curve for visual bell shape
+    const cs = ordered.map((d) => d.count);
+    const smoothed = cs.map((_, i) => {
+      const prev = cs[i - 1] ?? cs[i];
+      const next = cs[i + 1] ?? cs[i];
+      return (prev + cs[i] * 2 + next) / 4;
+    });
+    // Numeric stats (Easy=1 … Very Hard=4)
+    let m = 0;
+    if (total > 0) {
+      const sum = ordered.reduce((s, d, i) => s + (i + 1) * d.count, 0);
+      m = sum / total;
+    }
+    let sd = 0;
+    if (total > 0) {
+      const variance = ordered.reduce((s, d, i) => s + d.count * Math.pow(i + 1 - m, 2), 0) / total;
+      sd = Math.sqrt(variance);
+    }
+    const top = ordered.reduce((a, b) => (b.count > a.count ? b : a), ordered[0]);
+    return {
+      bellData: ordered.map((d, i) => ({ ...d, curve: smoothed[i] })),
+      totalFiltered: total,
+      consensus: total > 0 ? top.label : "—",
+      mean: m,
+      stddev: sd,
+    };
+  }, [filtered]);
+
   function exportCsv() {
     const header = ["created_at", "exam_board", "qualification", "paper_label", "difficulty", "predicted_grade", "user_id", "comment"];
     const lines = [header.join(",")];
