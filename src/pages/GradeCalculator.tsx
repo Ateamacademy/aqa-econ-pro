@@ -241,7 +241,7 @@ export default function GradeCalculator() {
 
           {/* RIGHT — output */}
           <div className="space-y-5 lg:col-span-2">
-            <BoundaryPredictionCard qualification={qualification} board={board} />
+            <BoundaryPredictionCard qualification={qualification} board={board} edexcelVariant={edexcelVariant} />
 
             {!hasMarks ? (
               <>
