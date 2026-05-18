@@ -78,8 +78,29 @@ export default function PaperFeedbackBellCurve({
     if (!difficulty) return;
     setSubmitting(true);
     const { data: { user } } = await supabase.auth.getUser();
+
+    // Require account: stash the pending feedback and bounce to /auth
+    if (!user) {
+      try {
+        sessionStorage.setItem(
+          "pendingPaperFeedback",
+          JSON.stringify({
+            exam_board: examBoard,
+            qualification,
+            paper_label: paperLabel,
+            difficulty,
+            predicted_grade: predictedGrade ?? null,
+          })
+        );
+      } catch {}
+      setSubmitting(false);
+      toast.info("Create a free account to submit your feedback");
+      navigate(`/auth?returnTo=${encodeURIComponent(window.location.pathname + window.location.search)}`);
+      return;
+    }
+
     const { error } = await supabase.from("paper_feedback").insert({
-      user_id: user?.id ?? null,
+      user_id: user.id,
       exam_board: examBoard,
       qualification,
       paper_label: paperLabel,
@@ -95,6 +116,37 @@ export default function PaperFeedbackBellCurve({
     toast.success("Thanks — your feedback is included in the curve");
     fetchData();
   };
+
+  // After auth returns the user to this page, flush any pending feedback.
+  useEffect(() => {
+    const flush = async () => {
+      const raw = sessionStorage.getItem("pendingPaperFeedback");
+      if (!raw) return;
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+      try {
+        const pending = JSON.parse(raw);
+        if (
+          pending.exam_board === examBoard &&
+          pending.qualification === qualification &&
+          pending.paper_label === paperLabel
+        ) {
+          const { error } = await supabase.from("paper_feedback").insert({
+            user_id: user.id,
+            ...pending,
+          });
+          sessionStorage.removeItem("pendingPaperFeedback");
+          if (!error) {
+            setSubmitted(true);
+            toast.success("Thanks — your feedback is included in the curve");
+            fetchData();
+          }
+        }
+      } catch {}
+    };
+    flush();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [examBoard, qualification, paperLabel]);
 
   const { difficultyDist, gradeDist, total } = useMemo(() => {
     const dCounts: Record<string, number> = { easy: 0, medium: 0, hard: 0, very_hard: 0 };
