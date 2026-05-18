@@ -8,6 +8,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowLeft, RefreshCw, Download } from "lucide-react";
 import { toast } from "sonner";
+import {
+  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell,
+  Line, ComposedChart, CartesianGrid,
+} from "recharts";
 
 const ADMIN_EMAIL = "swapnil.kumar22@alumni.imperial.ac.uk";
 
@@ -56,6 +60,48 @@ export default function AdminPaperFeedback() {
         .some((v) => String(v).toLowerCase().includes(t)),
     );
   }, [rows, q]);
+
+  // Difficulty distribution + smoothed bell curve
+  const DIFF_ORDER: { key: string; label: string; color: string }[] = [
+    { key: "easy", label: "Easy", color: "#22c55e" },
+    { key: "medium", label: "Medium", color: "#3b82f6" },
+    { key: "hard", label: "Hard", color: "#f59e0b" },
+    { key: "very_hard", label: "Very Hard", color: "#ef4444" },
+  ];
+  const { bellData, totalFiltered, consensus, mean, stddev } = useMemo(() => {
+    const counts: Record<string, number> = { easy: 0, medium: 0, hard: 0, very_hard: 0 };
+    filtered.forEach((r) => {
+      if (counts[r.difficulty] !== undefined) counts[r.difficulty] += 1;
+    });
+    const ordered = DIFF_ORDER.map((d) => ({ key: d.key, label: d.label, color: d.color, count: counts[d.key] || 0 }));
+    const total = ordered.reduce((s, d) => s + d.count, 0);
+    // Smoothed (rolling) curve for visual bell shape
+    const cs = ordered.map((d) => d.count);
+    const smoothed = cs.map((_, i) => {
+      const prev = cs[i - 1] ?? cs[i];
+      const next = cs[i + 1] ?? cs[i];
+      return (prev + cs[i] * 2 + next) / 4;
+    });
+    // Numeric stats (Easy=1 … Very Hard=4)
+    let m = 0;
+    if (total > 0) {
+      const sum = ordered.reduce((s, d, i) => s + (i + 1) * d.count, 0);
+      m = sum / total;
+    }
+    let sd = 0;
+    if (total > 0) {
+      const variance = ordered.reduce((s, d, i) => s + d.count * Math.pow(i + 1 - m, 2), 0) / total;
+      sd = Math.sqrt(variance);
+    }
+    const top = ordered.reduce((a, b) => (b.count > a.count ? b : a), ordered[0]);
+    return {
+      bellData: ordered.map((d, i) => ({ ...d, curve: smoothed[i] })),
+      totalFiltered: total,
+      consensus: total > 0 ? top.label : "—",
+      mean: m,
+      stddev: sd,
+    };
+  }, [filtered]);
 
   function exportCsv() {
     const header = ["created_at", "exam_board", "qualification", "paper_label", "difficulty", "predicted_grade", "user_id", "comment"];
@@ -123,6 +169,58 @@ export default function AdminPaperFeedback() {
         onChange={(e) => setQ(e.target.value)}
         className="mb-4 max-w-md"
       />
+
+      {/* Difficulty bell curve */}
+      <Card className="mb-6">
+        <CardHeader className="pb-2">
+          <CardTitle className="text-base">Difficulty distribution</CardTitle>
+          <p className="text-xs text-muted-foreground">
+            {totalFiltered} response{totalFiltered === 1 ? "" : "s"} · consensus: <span className="text-foreground font-medium">{consensus}</span>
+            {totalFiltered > 0 && (
+              <> · mean = <span className="font-mono">{mean.toFixed(2)}</span> / 4 · σ = <span className="font-mono">{stddev.toFixed(2)}</span></>
+            )}
+          </p>
+        </CardHeader>
+        <CardContent>
+          <div className="h-64">
+            {totalFiltered === 0 ? (
+              <div className="h-full flex items-center justify-center text-sm text-muted-foreground border border-dashed border-border rounded-lg">
+                No feedback yet.
+              </div>
+            ) : (
+              <ResponsiveContainer width="100%" height="100%">
+                <ComposedChart data={bellData} margin={{ top: 10, right: 20, left: 0, bottom: 10 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" vertical={false} />
+                  <XAxis dataKey="label" tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 12 }} axisLine={false} tickLine={false} />
+                  <YAxis allowDecimals={false} tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} axisLine={false} tickLine={false} />
+                  <Tooltip
+                    contentStyle={{ background: "hsl(var(--popover))", border: "1px solid hsl(var(--border))", borderRadius: 8, fontSize: 12 }}
+                    formatter={(v: any, name: string) => [v, name === "curve" ? "Trend" : "Responses"]}
+                  />
+                  <Bar dataKey="count" radius={[6, 6, 0, 0]}>
+                    {bellData.map((d, i) => (
+                      <Cell key={i} fill={d.color} />
+                    ))}
+                  </Bar>
+                  <Line type="monotone" dataKey="curve" stroke="hsl(var(--primary))" strokeWidth={2.5} dot={{ r: 4 }} />
+                </ComposedChart>
+              </ResponsiveContainer>
+            )}
+          </div>
+          <div className="grid grid-cols-4 gap-2 mt-4">
+            {bellData.map((d) => {
+              const pct = totalFiltered > 0 ? Math.round((d.count / totalFiltered) * 100) : 0;
+              return (
+                <div key={d.key} className="rounded-lg border border-border p-3 text-center">
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{d.label}</div>
+                  <div className="text-xl font-bold text-foreground mt-1">{d.count}</div>
+                  <div className="text-[11px] text-muted-foreground">{pct}%</div>
+                </div>
+              );
+            })}
+          </div>
+        </CardContent>
+      </Card>
 
       <Card>
         <CardContent className="p-0 overflow-x-auto">
