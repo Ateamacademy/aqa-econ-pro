@@ -19,6 +19,7 @@ import { AIInsightFeed } from "@/components/grade-calculator/AIInsightFeed";
 import { GradeRescuePanel } from "@/components/grade-calculator/GradeRescuePanel";
 import { ProbabilityBands } from "@/components/grade-calculator/ProbabilityBands";
 import { CrossLinkStrip } from "@/components/grade-calculator/CrossLinkStrip";
+import PaperFeedbackBellCurve from "@/components/grade-calculator/PaperFeedbackBellCurve";
 import { ShareResultButton } from "@/components/grade-calculator/ShareResultButton";
 import { useGradeInsights } from "@/hooks/useGradeInsights";
 import { supabase } from "@/integrations/supabase/client";
