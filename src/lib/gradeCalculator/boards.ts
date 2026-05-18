@@ -2,6 +2,7 @@ import type { BoardConfig, ExamBoard, Qualification } from "./types";
 import {
   AQA_A_LEVEL_PREDICTION,
   AQA_GCSE_PREDICTION,
+  CAIE_IGCSE_PREDICTION,
   EDEXCEL_A_LEVEL_PREDICTION,
   EDEXCEL_B_A_LEVEL_PREDICTION,
   EDEXCEL_IGCSE_PREDICTION,
