@@ -95,7 +95,7 @@ export default function PaperFeedbackBellCurve({
       } catch {}
       setSubmitting(false);
       toast.info("Create a free account to submit your feedback");
-      navigate(`/auth?returnTo=${encodeURIComponent(window.location.pathname + window.location.search)}`);
+      navigate(`/auth?tab=signup&returnTo=${encodeURIComponent(window.location.pathname + window.location.search)}`);
       return;
     }
 
