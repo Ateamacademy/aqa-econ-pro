@@ -845,6 +845,42 @@ export type Database = {
         }
         Relationships: []
       }
+      paper_feedback: {
+        Row: {
+          comment: string | null
+          created_at: string
+          difficulty: string
+          exam_board: string
+          id: string
+          paper_label: string
+          predicted_grade: string | null
+          qualification: string
+          user_id: string | null
+        }
+        Insert: {
+          comment?: string | null
+          created_at?: string
+          difficulty: string
+          exam_board: string
+          id?: string
+          paper_label?: string
+          predicted_grade?: string | null
+          qualification: string
+          user_id?: string | null
+        }
+        Update: {
+          comment?: string | null
+          created_at?: string
+          difficulty?: string
+          exam_board?: string
+          id?: string
+          paper_label?: string
+          predicted_grade?: string | null
+          qualification?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       parent_emails: {
         Row: {
           body: string | null
