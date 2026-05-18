@@ -55,7 +55,11 @@ function Pill({ active, onClick, children }: { active: boolean; onClick: () => v
 export default function GradeCalculator() {
   const [qualification, setQualification] = useState<Qualification>("A-Level");
   const [board, setBoard] = useState<ExamBoard>("AQA");
-  const config = useMemo(() => getBoardConfig(qualification, board), [qualification, board]);
+  const [edexcelVariant, setEdexcelVariant] = useState<"A" | "B">("A");
+  const config = useMemo(
+    () => getBoardConfig(qualification, board, edexcelVariant),
+    [qualification, board, edexcelVariant],
+  );
   const targetOptions = TARGET_GRADES[qualification] as Grade[];
   const [targetGrade, setTargetGrade] = useState<Grade>(qualification === "A-Level" ? "A" : ("7" as Grade));
   const [confidence, setConfidence] = useState<Confidence>("somewhat");
