@@ -1,9 +1,11 @@
 import type { BoardConfig, ExamBoard, Qualification } from "./types";
 import {
   AQA_A_LEVEL_PREDICTION,
+  AQA_GCSE_PREDICTION,
   EDEXCEL_A_LEVEL_PREDICTION,
   EDEXCEL_B_A_LEVEL_PREDICTION,
   OCR_A_LEVEL_PREDICTION,
+  proRataGcseToPapers,
   proRataToPapers,
 } from "./historicalBoundaries";
 
