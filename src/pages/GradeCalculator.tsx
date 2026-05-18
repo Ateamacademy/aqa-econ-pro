@@ -17,17 +17,20 @@ import { Paper3RequirementCard } from "@/components/grade-calculator/Paper3Requi
 import { WhatIfSlider } from "@/components/grade-calculator/WhatIfSlider";
 import { AIInsightFeed } from "@/components/grade-calculator/AIInsightFeed";
 import { GradeRescuePanel } from "@/components/grade-calculator/GradeRescuePanel";
+import { ProbabilityBands } from "@/components/grade-calculator/ProbabilityBands";
+import { CrossLinkStrip } from "@/components/grade-calculator/CrossLinkStrip";
+import { ShareResultButton } from "@/components/grade-calculator/ShareResultButton";
 import { useGradeInsights } from "@/hooks/useGradeInsights";
 import { supabase } from "@/integrations/supabase/client";
-import { Calculator, ShieldAlert } from "lucide-react";
+import { Calculator, ShieldAlert, Sparkles } from "lucide-react";
 
 const QUALIFICATIONS: Qualification[] = ["A-Level", "GCSE"];
-const BOARDS: ExamBoard[] = ["AQA", "Edexcel", "OCR", "IB"];
-const CONFIDENCE_OPTIONS: { key: Confidence; label: string }[] = [
-  { key: "very", label: "Very confident" },
-  { key: "somewhat", label: "Somewhat" },
-  { key: "unsure", label: "Unsure" },
-  { key: "worst", label: "Worst case" },
+const BOARDS: ExamBoard[] = ["AQA", "Edexcel", "OCR", "CAIE", "WJEC", "IB"];
+const CONFIDENCE_OPTIONS: { key: Confidence; label: string; emoji: string }[] = [
+  { key: "very", label: "Very Confident", emoji: "🔥" },
+  { key: "somewhat", label: "Somewhat", emoji: "🙂" },
+  { key: "unsure", label: "Unsure", emoji: "😬" },
+  { key: "worst", label: "Worst Case", emoji: "😭" },
 ];
 
 function Pill({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
