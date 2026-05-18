@@ -21,6 +21,7 @@ import { ProbabilityBands } from "@/components/grade-calculator/ProbabilityBands
 import { CrossLinkStrip } from "@/components/grade-calculator/CrossLinkStrip";
 import PaperFeedbackBellCurve from "@/components/grade-calculator/PaperFeedbackBellCurve";
 import { ShareResultButton } from "@/components/grade-calculator/ShareResultButton";
+import BoundaryPredictionCard from "@/components/grade-calculator/BoundaryPredictionCard";
 import { useGradeInsights } from "@/hooks/useGradeInsights";
 import { supabase } from "@/integrations/supabase/client";
 import { Calculator, ShieldAlert, Sparkles } from "lucide-react";
