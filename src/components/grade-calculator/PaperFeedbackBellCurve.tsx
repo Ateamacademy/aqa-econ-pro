@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -42,6 +43,7 @@ export default function PaperFeedbackBellCurve({
   paperLabel = "overall",
   predictedGrade,
 }: Props) {
+  const navigate = useNavigate();
   const [difficulty, setDifficulty] = useState<Difficulty | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -76,8 +78,20 @@ export default function PaperFeedbackBellCurve({
     if (!difficulty) return;
     setSubmitting(true);
     const { data: { user } } = await supabase.auth.getUser();
+    if (!user) {
+      setSubmitting(false);
+      toast.info("Create a free account to submit your feedback");
+      try {
+        sessionStorage.setItem(
+          "pendingPaperFeedback",
+          JSON.stringify({ examBoard, qualification, paperLabel, difficulty, predictedGrade: predictedGrade ?? null }),
+        );
+      } catch {}
+      navigate(`/auth?returnTo=${encodeURIComponent(window.location.pathname + window.location.hash)}`);
+      return;
+    }
     const { error } = await supabase.from("paper_feedback").insert({
-      user_id: user?.id ?? null,
+      user_id: user.id,
       exam_board: examBoard,
       qualification,
       paper_label: paperLabel,

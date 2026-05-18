@@ -85,6 +85,7 @@ const TeacherSettings = lazy(() => import("./pages/teacher/TeacherSettings"));
 const StudentHomeworkAttempt = lazy(() => import("./pages/StudentHomeworkAttempt"));
 const StudentHomeworkResult = lazy(() => import("./pages/StudentHomeworkResult"));
 const GradeCalculator = lazy(() => import("./pages/GradeCalculator"));
+const AdminPaperFeedback = lazy(() => import("./pages/AdminPaperFeedback"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -163,6 +164,7 @@ const App = () => (
              <Route path="/admin/board-coverage" element={<AdminBoardCoverage />} />
              <Route path="/admin/marking-convention-verification" element={<AdminMarkingConventionVerification />} />
              <Route path="/admin/qa-tracker" element={<AdminQaTracker />} />
+             <Route path="/admin/paper-feedback" element={<AdminPaperFeedback />} />
               <Route path="/mock-papers" element={<EdexcelMockPapersIndex />} />
               <Route path="/mock-papers/edexcel-a/:paperNum/:difficulty/:view" element={<EdexcelMockPaperViewer />} />
               <Route path="/mock-papers/edexcel-a/:paperNum/:difficulty" element={<EdexcelMockPaperViewer />} />
