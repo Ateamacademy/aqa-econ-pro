@@ -1,4 +1,4 @@
-export type Qualification = "A-Level" | "GCSE";
+export type Qualification = "A-Level" | "AS-Level" | "GCSE";
 export type ExamBoard = "AQA" | "Edexcel" | "OCR" | "CAIE" | "WJEC" | "IB";
 export type Confidence = "very" | "somewhat" | "unsure" | "worst";
 

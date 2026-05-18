@@ -4,18 +4,24 @@ import { TrendingDown, Database } from "lucide-react";
 import {
   AQA_A_LEVEL_HISTORY,
   AQA_A_LEVEL_PREDICTION,
+  AQA_AS_HISTORY,
+  AQA_AS_PREDICTION,
   AQA_GCSE_HISTORY,
   AQA_GCSE_PREDICTION,
   CAIE_IGCSE_HISTORY,
   CAIE_IGCSE_PREDICTION,
   EDEXCEL_A_LEVEL_HISTORY,
   EDEXCEL_A_LEVEL_PREDICTION,
+  EDEXCEL_AS_HISTORY,
+  EDEXCEL_AS_PREDICTION,
   EDEXCEL_B_A_LEVEL_HISTORY,
   EDEXCEL_B_A_LEVEL_PREDICTION,
   EDEXCEL_IGCSE_HISTORY,
   EDEXCEL_IGCSE_PREDICTION,
   OCR_A_LEVEL_HISTORY,
   OCR_A_LEVEL_PREDICTION,
+  OCR_AS_HISTORY,
+  OCR_AS_PREDICTION,
   OCR_GCSE_HISTORY,
   OCR_GCSE_PREDICTION,
 } from "@/lib/gradeCalculator/historicalBoundaries";
@@ -53,9 +59,16 @@ interface Dataset {
 }
 
 const A_LEVEL_GRADES = ["A*", "A", "B", "C", "D", "E"];
+const AS_GRADES = ["A", "B", "C", "D", "E"];
 const GCSE_GRADES_DESC = ["9", "8", "7", "6", "5", "4", "3", "2", "1"];
 
 function datasetFor(qualification: Qualification, board: ExamBoard, variant: "A" | "B"): Dataset | Dataset[] | null {
+  if (qualification === "AS-Level") {
+    if (board === "AQA") return { label: "AQA AS Economics (7135)", grades: AS_GRADES, history: AQA_AS_HISTORY as any, prediction: AQA_AS_PREDICTION as any };
+    if (board === "Edexcel") return { label: "Edexcel A AS Economics (8EC0)", grades: AS_GRADES, history: EDEXCEL_AS_HISTORY as any, prediction: EDEXCEL_AS_PREDICTION as any };
+    if (board === "OCR") return { label: "OCR AS GCE Economics (H060)", grades: AS_GRADES, history: OCR_AS_HISTORY as any, prediction: OCR_AS_PREDICTION as any };
+    return null;
+  }
   if (qualification === "A-Level") {
     if (board === "AQA") {
       return { label: "AQA A-Level Economics (7136)", grades: A_LEVEL_GRADES, history: AQA_A_LEVEL_HISTORY, prediction: AQA_A_LEVEL_PREDICTION };

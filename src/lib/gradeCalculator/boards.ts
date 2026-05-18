@@ -1,12 +1,15 @@
 import type { BoardConfig, ExamBoard, Qualification } from "./types";
 import {
   AQA_A_LEVEL_PREDICTION,
+  AQA_AS_PREDICTION,
   AQA_GCSE_PREDICTION,
   CAIE_IGCSE_PREDICTION,
   EDEXCEL_A_LEVEL_PREDICTION,
+  EDEXCEL_AS_PREDICTION,
   EDEXCEL_B_A_LEVEL_PREDICTION,
   EDEXCEL_IGCSE_PREDICTION,
   OCR_A_LEVEL_PREDICTION,
+  OCR_AS_PREDICTION,
   OCR_GCSE_PREDICTION,
   proRataGcseToPapers,
   proRataToPapers,
@@ -107,6 +110,45 @@ const gcseBoards: Record<ExamBoard, Omit<BoardConfig, "qualification" | "grades"
   },
 };
 
+/**
+ * AS-Level boards. AS has 2 papers and NO A* grade.
+ * We map to paperMax = [P1_max, 0, P2_max] so the existing 3-slot engine
+ * treats slot index 2 as the "what do I need" paper (= AS Paper 2).
+ * The UI hides the middle Paper 2 input for AS and relabels Paper 3 → Paper 2.
+ *
+ * Boundaries are PREDICTED 2026 figures from the savemyexams.com archive
+ * (AQA 7135, Edexcel A 8EC0, OCR H060) via the same exponentially-weighted
+ * algorithm used for A-Level.
+ */
+const AS_GRADES = ["A", "B", "C", "D", "E"] as const;
+
+function asBoundariesFromPrediction(predicted: Record<string, number>): Record<string, number> {
+  // Engine reads "A*" as the top grade, but AS has no A*. We omit it; predict
+  // will simply never award A* because A* isn't in the grades list.
+  return { A: predicted.A, B: predicted.B, C: predicted.C, D: predicted.D, E: predicted.E };
+}
+
+const asLevelBoards: Partial<Record<ExamBoard, Omit<BoardConfig, "qualification" | "grades">>> = {
+  AQA: {
+    board: "AQA",
+    // AQA AS 7135: 2 papers × 70 = 140
+    paperMax: [70, 0, 70],
+    boundaries: asBoundariesFromPrediction(AQA_AS_PREDICTION.predicted),
+  },
+  Edexcel: {
+    board: "Edexcel",
+    // Edexcel A AS 8EC0: 2 papers × 80 = 160
+    paperMax: [80, 0, 80],
+    boundaries: asBoundariesFromPrediction(EDEXCEL_AS_PREDICTION.predicted),
+  },
+  OCR: {
+    board: "OCR",
+    // OCR AS H060: 2 papers × 60 = 120
+    paperMax: [60, 0, 60],
+    boundaries: asBoundariesFromPrediction(OCR_AS_PREDICTION.predicted),
+  },
+};
+
 export function getBoardConfig(
   qualification: Qualification,
   board: ExamBoard,
@@ -128,10 +170,16 @@ export function getBoardConfig(
     }
     return { ...base, qualification, grades: [...A_LEVEL_GRADES] };
   }
+  if (qualification === "AS-Level") {
+    // Fall back to AQA if board has no AS spec (e.g. CAIE/WJEC/IB).
+    const base = asLevelBoards[board] ?? asLevelBoards.AQA!;
+    return { ...base, qualification, grades: [...AS_GRADES] };
+  }
   return { ...gcseBoards[board], qualification, grades: [...GCSE_GRADES] };
 }
 
 export const TARGET_GRADES: Record<Qualification, string[]> = {
   "A-Level": [...A_LEVEL_GRADES],
+  "AS-Level": [...AS_GRADES],
   GCSE: [...GCSE_GRADES],
 };

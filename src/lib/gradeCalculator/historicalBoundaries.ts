@@ -267,3 +267,96 @@ export const CAIE_IGCSE_HISTORY: GcseHistoricalRow[] = [
 ];
 
 export const CAIE_IGCSE_PREDICTION = predictGcseFromHistory(CAIE_IGCSE_HISTORY);
+
+/* ─────────────────────────── AS-Level (no A*) ─────────────────────────── */
+/**
+ * AS Economics historical boundaries from savemyexams.com archive.
+ * AS qualifications have NO A* grade — only A → E.
+ * AS qualifications have 2 papers (no Paper 3).
+ */
+export type AsHistoricalGrade = "A" | "B" | "C" | "D" | "E";
+
+export interface AsHistoricalRow {
+  year: number;
+  max: number;
+  boundaries: Record<AsHistoricalGrade, number>;
+}
+
+export interface AsPredictedBoundaries {
+  max: number;
+  predicted: Record<AsHistoricalGrade, number>;
+  stdDev: Record<AsHistoricalGrade, number>;
+  history: AsHistoricalRow[];
+  yearsUsed: number[];
+  method: string;
+}
+
+const AS_GRADES_ORDER: AsHistoricalGrade[] = ["A", "B", "C", "D", "E"];
+
+export function predictAsFromHistory(
+  history: AsHistoricalRow[],
+  opts: { lambda?: number; lookback?: number } = {},
+): AsPredictedBoundaries {
+  const lambda = opts.lambda ?? 0.7;
+  const lookback = opts.lookback ?? 6;
+  const recent = [...history].sort((a, b) => a.year - b.year).slice(-lookback);
+  const max = recent[recent.length - 1].max;
+  const weights = recent.map((_, i) => Math.pow(lambda, recent.length - 1 - i));
+  const wSum = weights.reduce((a, b) => a + b, 0);
+  const predicted = {} as Record<AsHistoricalGrade, number>;
+  const stdDev = {} as Record<AsHistoricalGrade, number>;
+  for (const g of AS_GRADES_ORDER) {
+    const vals = recent.map((r) => r.boundaries[g]);
+    const mean = vals.reduce((acc, v, i) => acc + v * weights[i], 0) / wSum;
+    const variance = vals.reduce((acc, v, i) => acc + weights[i] * (v - mean) ** 2, 0) / wSum;
+    predicted[g] = Math.round(mean);
+    stdDev[g] = Math.round(Math.sqrt(variance) * 10) / 10;
+  }
+  return {
+    max,
+    predicted,
+    stdDev,
+    history: recent,
+    yearsUsed: recent.map((r) => r.year),
+    method:
+      `Exponentially-weighted average of the last ${recent.length} published AS series ` +
+      `(λ=${lambda}). Recent years are weighted more heavily because boundaries ` +
+      `have trended slightly more lenient post-2022.`,
+  };
+}
+
+/* AQA AS Economics (7135) — 2 papers, /140 total.
+ * Source: savemyexams.com (AQA archive). 2020 row on source is mislabelled
+ * (it's the A-Level series at /240) so it is excluded.
+ */
+export const AQA_AS_HISTORY: AsHistoricalRow[] = [
+  { year: 2022, max: 140, boundaries: { A: 96, B: 84, C: 72, D: 60, E: 49 } },
+  { year: 2023, max: 140, boundaries: { A: 99, B: 89, C: 79, D: 69, E: 60 } },
+  { year: 2024, max: 140, boundaries: { A: 97, B: 87, C: 77, D: 67, E: 57 } },
+  { year: 2025, max: 140, boundaries: { A: 102, B: 91, C: 80, D: 69, E: 59 } },
+];
+export const AQA_AS_PREDICTION = predictAsFromHistory(AQA_AS_HISTORY);
+
+/* Edexcel A AS Economics (8EC0) — 2 papers (01/02), /160 total.
+ * Source: savemyexams.com (Pearson archive).
+ */
+export const EDEXCEL_AS_HISTORY: AsHistoricalRow[] = [
+  { year: 2020, max: 160, boundaries: { A: 108, B: 95, C: 82, D: 69, E: 56 } },
+  { year: 2022, max: 160, boundaries: { A: 113, B: 100, C: 87, D: 74, E: 61 } },
+  { year: 2023, max: 160, boundaries: { A: 111, B: 98, C: 86, D: 74, E: 62 } },
+  { year: 2024, max: 160, boundaries: { A: 119, B: 108, C: 97, D: 86, E: 75 } },
+  { year: 2025, max: 160, boundaries: { A: 115, B: 104, C: 93, D: 82, E: 72 } },
+];
+export const EDEXCEL_AS_PREDICTION = predictAsFromHistory(EDEXCEL_AS_HISTORY);
+
+/* OCR AS GCE Economics (H060) — 2 papers (01/02), /120 total.
+ * Source: savemyexams.com (OCR archive).
+ */
+export const OCR_AS_HISTORY: AsHistoricalRow[] = [
+  { year: 2020, max: 120, boundaries: { A: 84, B: 71, C: 58, D: 45, E: 32 } },
+  { year: 2022, max: 120, boundaries: { A: 87, B: 76, C: 65, D: 54, E: 44 } },
+  { year: 2023, max: 120, boundaries: { A: 87, B: 76, C: 65, D: 54, E: 44 } },
+  { year: 2024, max: 120, boundaries: { A: 87, B: 76, C: 65, D: 54, E: 44 } },
+  { year: 2025, max: 120, boundaries: { A: 79, B: 68, C: 57, D: 46, E: 36 } },
+];
+export const OCR_AS_PREDICTION = predictAsFromHistory(OCR_AS_HISTORY);

@@ -26,7 +26,8 @@ import { useGradeInsights } from "@/hooks/useGradeInsights";
 import { supabase } from "@/integrations/supabase/client";
 import { Calculator, ShieldAlert, Sparkles } from "lucide-react";
 
-const QUALIFICATIONS: Qualification[] = ["A-Level", "GCSE"];
+const QUALIFICATIONS: Qualification[] = ["A-Level", "AS-Level", "GCSE"];
+const AS_BOARDS: ExamBoard[] = ["AQA", "Edexcel", "OCR"];
 const BOARDS: ExamBoard[] = ["AQA", "Edexcel", "OCR", "CAIE", "WJEC", "IB"];
 const CONFIDENCE_OPTIONS: { key: Confidence; label: string; emoji: string }[] = [
   { key: "very", label: "Very Confident", emoji: "🔥" },
@@ -61,18 +62,24 @@ export default function GradeCalculator() {
     [qualification, board, edexcelVariant],
   );
   const targetOptions = TARGET_GRADES[qualification] as Grade[];
-  const [targetGrade, setTargetGrade] = useState<Grade>(qualification === "A-Level" ? "A" : ("7" as Grade));
+  const [targetGrade, setTargetGrade] = useState<Grade>(qualification === "A-Level" ? "A" : qualification === "AS-Level" ? "B" : ("7" as Grade));
   const [confidence, setConfidence] = useState<Confidence>("somewhat");
   const [paper1, setPaper1] = useState(0);
   const [paper2, setPaper2] = useState(0);
   const [p3Sim, setP3Sim] = useState<number | null>(null);
+  const isAs = qualification === "AS-Level";
+  const finalPaperLabel = isAs ? "Paper 2" : "Paper 3";
 
   // Reset target grade if qualification changes
   useEffect(() => {
-    setTargetGrade(qualification === "A-Level" ? "A" : ("7" as Grade));
+    setTargetGrade(qualification === "A-Level" ? "A" : qualification === "AS-Level" ? "B" : ("7" as Grade));
     setPaper1(0);
     setPaper2(0);
     setP3Sim(null);
+    // AS has no boards beyond AQA/Edexcel/OCR
+    if (qualification === "AS-Level" && !AS_BOARDS.includes(board)) {
+      setBoard("AQA");
+    }
   }, [qualification]);
 
   const prediction = useMemo(
@@ -161,7 +168,7 @@ export default function GradeCalculator() {
               <div>
                 <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-2">Exam board</div>
                 <div className="flex flex-wrap gap-2">
-                  {BOARDS.map((b) => (
+                  {(isAs ? AS_BOARDS : BOARDS).map((b) => (
                     <Pill key={b} active={board === b} onClick={() => setBoard(b)}>{b}</Pill>
                   ))}
                 </div>
@@ -193,10 +200,18 @@ export default function GradeCalculator() {
 
             <div className="rounded-2xl border border-border bg-card p-5 space-y-5">
               <h3 className="text-sm font-semibold text-foreground">Your marks</h3>
-              {[
-                { label: "Paper 1", value: paper1, set: setPaper1, max: config.paperMax[0] },
-                { label: "Paper 2", value: paper2, set: setPaper2, max: config.paperMax[1] },
-              ].map((p) => (
+              {isAs && (
+                <p className="text-[11px] text-muted-foreground -mt-2">
+                  AS Economics has 2 papers. Enter your Paper 1 mark — the calculator predicts what Paper 2 needs to look like.
+                </p>
+              )}
+              {(isAs
+                ? [{ label: "Paper 1", value: paper1, set: setPaper1, max: config.paperMax[0] }]
+                : [
+                    { label: "Paper 1", value: paper1, set: setPaper1, max: config.paperMax[0] },
+                    { label: "Paper 2", value: paper2, set: setPaper2, max: config.paperMax[1] },
+                  ]
+              ).map((p) => (
                 <div key={p.label}>
                   <div className="flex items-baseline justify-between mb-2">
                     <span className="text-xs font-medium text-foreground">{p.label}</span>
