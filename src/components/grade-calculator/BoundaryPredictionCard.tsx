@@ -10,6 +10,8 @@ import {
   EDEXCEL_A_LEVEL_PREDICTION,
   EDEXCEL_B_A_LEVEL_HISTORY,
   EDEXCEL_B_A_LEVEL_PREDICTION,
+  EDEXCEL_IGCSE_HISTORY,
+  EDEXCEL_IGCSE_PREDICTION,
   OCR_A_LEVEL_HISTORY,
   OCR_A_LEVEL_PREDICTION,
   OCR_GCSE_HISTORY,
@@ -72,6 +74,9 @@ function datasetFor(qualification: Qualification, board: ExamBoard, variant: "A"
   }
   if (board === "OCR") {
     return { label: "OCR GCSE Economics (J205)", grades: GCSE_GRADES_DESC, history: OCR_GCSE_HISTORY, prediction: OCR_GCSE_PREDICTION };
+  }
+  if (board === "Edexcel") {
+    return { label: "Edexcel IGCSE Economics (4EC1)", grades: GCSE_GRADES_DESC, history: EDEXCEL_IGCSE_HISTORY, prediction: EDEXCEL_IGCSE_PREDICTION };
   }
   return null;
 }

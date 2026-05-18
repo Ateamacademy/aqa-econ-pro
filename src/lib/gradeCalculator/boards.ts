@@ -4,6 +4,7 @@ import {
   AQA_GCSE_PREDICTION,
   EDEXCEL_A_LEVEL_PREDICTION,
   EDEXCEL_B_A_LEVEL_PREDICTION,
+  EDEXCEL_IGCSE_PREDICTION,
   OCR_A_LEVEL_PREDICTION,
   OCR_GCSE_PREDICTION,
   proRataGcseToPapers,
@@ -74,7 +75,9 @@ const gcseBoards: Record<ExamBoard, Omit<BoardConfig, "qualification" | "grades"
   Edexcel: {
     board: "Edexcel",
     paperMax: [80, 80, 80],
-    boundaries: { "9": 132, "8": 117, "7": 102, "6": 87, "5": 72, "4": 57, "3": 43, "2": 30, "1": 17 },
+    // PREDICTED 2026 boundaries built from Edexcel IGCSE Economics 4EC1 archive
+    // (2020, 2022–2025 main June series), pro-rata /160 → /240 for the 3-paper UI.
+    boundaries: proRataGcseToPapers(EDEXCEL_IGCSE_PREDICTION.predicted, 240, EDEXCEL_IGCSE_PREDICTION.max),
   },
   OCR: {
     board: "OCR",

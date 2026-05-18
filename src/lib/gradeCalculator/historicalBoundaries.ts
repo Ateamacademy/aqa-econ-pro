@@ -241,3 +241,17 @@ export const OCR_GCSE_HISTORY: GcseHistoricalRow[] = [
 ];
 
 export const OCR_GCSE_PREDICTION = predictGcseFromHistory(OCR_GCSE_HISTORY);
+
+/* Edexcel (Pearson) IGCSE Economics (4EC1) — 2 papers 01/02, /160 total.
+ * Source: savemyexams.com / Pearson boundary archive. Main June series only
+ * (Nov/Jan resits + R variants excluded for series-to-series stability).
+ */
+export const EDEXCEL_IGCSE_HISTORY: GcseHistoricalRow[] = [
+  { year: 2020, max: 160, boundaries: { "9": 111, "8": 99, "7": 88, "6": 80, "5": 73, "4": 66, "3": 55, "2": 45, "1": 35 } },
+  { year: 2022, max: 160, boundaries: { "9": 107, "8": 95, "7": 84, "6": 74, "5": 64, "4": 55, "3": 46, "2": 37, "1": 28 } },
+  { year: 2023, max: 160, boundaries: { "9": 121, "8": 110, "7": 100, "6": 92, "5": 84, "4": 77, "3": 66, "2": 55, "1": 45 } },
+  { year: 2024, max: 160, boundaries: { "9": 113, "8": 102, "7": 92, "6": 84, "5": 76, "4": 69, "3": 58, "2": 47, "1": 36 } },
+  { year: 2025, max: 160, boundaries: { "9": 116, "8": 106, "7": 97, "6": 89, "5": 82, "4": 75, "3": 62, "2": 50, "1": 38 } },
+];
+
+export const EDEXCEL_IGCSE_PREDICTION = predictGcseFromHistory(EDEXCEL_IGCSE_HISTORY);
