@@ -24,11 +24,13 @@ import { ShareResultButton } from "@/components/grade-calculator/ShareResultButt
 import BoundaryPredictionCard from "@/components/grade-calculator/BoundaryPredictionCard";
 import { useGradeInsights } from "@/hooks/useGradeInsights";
 import { supabase } from "@/integrations/supabase/client";
-import { Calculator, ShieldAlert, Sparkles } from "lucide-react";
+import { Calculator, Info, ShieldAlert, Sparkles } from "lucide-react";
 
 const QUALIFICATIONS: Qualification[] = ["A-Level", "AS-Level", "GCSE"];
 const AS_BOARDS: ExamBoard[] = ["AQA", "Edexcel", "OCR"];
 const BOARDS: ExamBoard[] = ["AQA", "Edexcel", "OCR", "CAIE", "WJEC", "IB"];
+/** Boards that do NOT actually offer a GCSE Economics specification. */
+const GCSE_UNAVAILABLE_BOARDS: ExamBoard[] = ["WJEC", "IB"];
 const CONFIDENCE_OPTIONS: { key: Confidence; label: string; emoji: string }[] = [
   { key: "very", label: "Very Confident", emoji: "🔥" },
   { key: "somewhat", label: "Somewhat", emoji: "🙂" },
@@ -256,9 +258,51 @@ export default function GradeCalculator() {
 
           {/* RIGHT — output */}
           <div className="space-y-5 lg:col-span-2">
-            <BoundaryPredictionCard qualification={qualification} board={board} edexcelVariant={edexcelVariant} />
+            {qualification === "GCSE" && GCSE_UNAVAILABLE_BOARDS.includes(board) ? (
+              <div className="rounded-2xl border border-amber-500/40 bg-amber-500/5 p-5 space-y-3">
+                <div className="flex items-center gap-2">
+                  <Info className="h-4 w-4 text-amber-500" />
+                  <h3 className="text-sm font-semibold text-foreground">
+                    {board} doesn't offer a GCSE Economics specification
+                  </h3>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {board === "WJEC"
+                    ? "WJEC (and its English-board brand Eduqas) only publishes Economics at A-Level. There is no GCSE Economics syllabus from this board, so per-paper grade boundaries don't exist to predict from."
+                    : "The International Baccalaureate doesn't have a GCSE-equivalent Economics exam. MYP Individuals & Societies is criterion-graded (not exam-graded with raw boundaries), and DP Economics begins at the post-16 level."}
+                </p>
+                <p className="text-[11px] text-muted-foreground">
+                  Closest alternative:{" "}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setQualification("A-Level");
+                      setBoard(board);
+                    }}
+                    className="underline text-primary hover:text-primary/80"
+                  >
+                    Switch to A-Level {board}
+                  </button>
+                  {qualification === "GCSE" && board === "WJEC" && (
+                    <>
+                      {" "}or{" "}
+                      <button
+                        type="button"
+                        onClick={() => setBoard("AQA")}
+                        className="underline text-primary hover:text-primary/80"
+                      >
+                        use AQA GCSE Economics
+                      </button>
+                    </>
+                  )}
+                  .
+                </p>
+              </div>
+            ) : (
+              <BoundaryPredictionCard qualification={qualification} board={board} edexcelVariant={edexcelVariant} />
+            )}
 
-            {!hasMarks ? (
+            {qualification === "GCSE" && GCSE_UNAVAILABLE_BOARDS.includes(board) ? null : !hasMarks ? (
               <>
                 <div className="rounded-2xl border border-dashed border-border bg-card p-10 text-center">
                   <Calculator className="h-10 w-10 text-muted-foreground mx-auto mb-3" />

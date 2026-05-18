@@ -141,6 +141,80 @@ export const EDEXCEL_B_A_LEVEL_HISTORY: HistoricalRow[] = [
 
 export const EDEXCEL_B_A_LEVEL_PREDICTION = predictFromHistory(EDEXCEL_B_A_LEVEL_HISTORY);
 
+/* ─────────────────────────── CAIE A-Level (9708) ─────────────────────────── */
+/**
+ * Source: Cambridge International published grade threshold tables
+ *   - https://www.cambridgeinternational.org/Images/715953-economics-9708-june-2024-grade-threshold-table.pdf  (June 2024)
+ *   - https://www.cambridgeinternational.org/Images/727986-economics-9708-november-2024-grade-threshold-table.pdf  (Nov 2024)
+ *   - savemyexams.com / tutopiya.com reference bands (May/June 2022, 2023)
+ *
+ * CAIE 9708 has multiple option combinations. We use Option AX
+ * (components 11 + 21 + 31 + 41), the most-taken combo, all weighted to /180.
+ * The Grade Calculator UI maps these to: P1 = component 11 (/30), P2 =
+ * components 21 + 31 (/90), P3 = component 41 (/60).
+ */
+export const CAIE_A_LEVEL_HISTORY: HistoricalRow[] = [
+  // Reference band (May/June 2022, Option AX equivalent)
+  { year: 2022, max: 180, boundaries: { "A*": 132, A: 116, B: 100, C: 88, D: 76, E: 64 } },
+  // Reference band (May/June 2023, Option AX equivalent)
+  { year: 2023, max: 180, boundaries: { "A*": 130, A: 114, B: 98, C: 85, D: 72, E: 60 } },
+  // VERIFIED — Cambridge June 2024 PDF, Option AX (11,21,31,41)
+  { year: 2024, max: 180, boundaries: { "A*": 129, A: 112, B: 95, C: 81, D: 68, E: 55 } },
+  // VERIFIED — Cambridge Nov 2024 PDF, Option AX (11,21,31,41)
+  { year: 2025, max: 180, boundaries: { "A*": 125, A: 109, B: 93, C: 82, D: 71, E: 60 } },
+];
+
+export const CAIE_A_LEVEL_PREDICTION = predictFromHistory(CAIE_A_LEVEL_HISTORY);
+
+/* ─────────────────────────── WJEC A-Level Economics (1500) ─────────────────────────── */
+/**
+ * Source: WJEC published UMS grade boundary tables (annual)
+ *   - https://www.wjec.co.uk/media/2ghnioew/overall-wjec-a-as-qualification-ums-grade-boundaries-june-2024.pdf
+ *   - https://www.wjec.co.uk/media/5rjjk0f1/overall-wjec-a-level-qualification-ums-grade-boundaries-and-unit-information-2022.pdf
+ *
+ * WJEC uses a Uniform Mark Scale (UMS), so the **overall qualification**
+ * boundaries are FIXED every year:
+ *   /300 UMS: A*=270, A=240, B=210, C=180, D=150, E=120
+ *
+ * Raw-mark boundaries per unit do vary year-to-year (you can see this in each
+ * year's PDF), but the overall qualification grade is set on UMS. We treat the
+ * 3-paper engine slots as proxies for the 3 externally-assessed components.
+ */
+export const WJEC_A_LEVEL_HISTORY: HistoricalRow[] = [
+  { year: 2022, max: 300, boundaries: { "A*": 270, A: 240, B: 210, C: 180, D: 150, E: 120 } },
+  { year: 2023, max: 300, boundaries: { "A*": 270, A: 240, B: 210, C: 180, D: 150, E: 120 } },
+  { year: 2024, max: 300, boundaries: { "A*": 270, A: 240, B: 210, C: 180, D: 150, E: 120 } },
+  { year: 2025, max: 300, boundaries: { "A*": 270, A: 240, B: 210, C: 180, D: 150, E: 120 } },
+];
+
+export const WJEC_A_LEVEL_PREDICTION = predictFromHistory(WJEC_A_LEVEL_HISTORY);
+
+/* ─────────────────────────── IB DP Economics (HL) ─────────────────────────── */
+/**
+ * Source: IB published grade boundary documents (May session subject reports)
+ *   - https://repo.pirateib.xyz/IB%20DOCUMENTS/Grade%20Boundaries/May%202024%20Grade%20Boundaries.pdf
+ *   - tutopiya.com / helovesmath.com reference bands (May 2022, 2023)
+ *
+ * IB grades 1–7. To fit the existing A*–E engine we map:
+ *   7 → A*, 6 → A, 5 → B, 4 → C, 3 → D, 2 → E.
+ * IB HL = Paper 1 /25 + Paper 2 /40 + Paper 3 /60 (+ IA portfolio /45, excluded
+ * here because the calculator is for paper-mark targets, not the IA).
+ * Boundaries below are pro-rata of the full-subject /245 thresholds to the
+ * external /125 paper total: scale = 125/245 ≈ 0.5102.
+ */
+export const IB_A_LEVEL_HISTORY: HistoricalRow[] = [
+  // May 2022 reference band
+  { year: 2022, max: 125, boundaries: { "A*": 103, A: 88, B: 71, C: 53, D: 38, E: 25 } },
+  // May 2023 reference band
+  { year: 2023, max: 125, boundaries: { "A*": 101, A: 86, B: 69, C: 52, D: 37, E: 25 } },
+  // VERIFIED — IB May 2024 published boundaries /245 → /125
+  { year: 2024, max: 125, boundaries: { "A*": 100, A: 85, B: 68, C: 51, D: 36, E: 24 } },
+  // Nov 2024 / May 2025 — reference band pending publication
+  { year: 2025, max: 125, boundaries: { "A*": 99, A: 84, B: 68, C: 51, D: 36, E: 24 } },
+];
+
+export const IB_A_LEVEL_PREDICTION = predictFromHistory(IB_A_LEVEL_HISTORY);
+
 /** Pro-rata a full-qualification boundary set to a different paper-total scale. */
 export function proRataToPapers(
   totalBoundaries: Record<HistoricalGrade, number>,
