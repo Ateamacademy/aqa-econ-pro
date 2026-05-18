@@ -15,7 +15,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import {
   FileText, Bot, BarChart3, Compass, MessageCircle, BookOpen,
-  ArrowRight, ChevronDown, Check, Star, ArrowUpRight,
+  ArrowRight, ChevronDown, Check, Star, ArrowUpRight, Calculator,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
@@ -345,6 +345,20 @@ export default function Index() {
               >
                 <Link to="/predicted">
                   Generate My First Paper <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="rounded-lg px-7 h-12 text-sm font-semibold gap-2 bg-transparent border-2"
+                style={{
+                  borderColor: "hsl(var(--violet-pop) / 0.6)",
+                  color: "hsl(var(--violet-pop))",
+                }}
+              >
+                <Link to="/grade-calculator">
+                  <Calculator className="h-4 w-4" /> Grade Calculator
                 </Link>
               </Button>
               <Button
