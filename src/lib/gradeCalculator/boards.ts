@@ -3,14 +3,17 @@ import {
   AQA_A_LEVEL_PREDICTION,
   AQA_AS_PREDICTION,
   AQA_GCSE_PREDICTION,
+  CAIE_A_LEVEL_PREDICTION,
   CAIE_IGCSE_PREDICTION,
   EDEXCEL_A_LEVEL_PREDICTION,
   EDEXCEL_AS_PREDICTION,
   EDEXCEL_B_A_LEVEL_PREDICTION,
   EDEXCEL_IGCSE_PREDICTION,
+  IB_A_LEVEL_PREDICTION,
   OCR_A_LEVEL_PREDICTION,
   OCR_AS_PREDICTION,
   OCR_GCSE_PREDICTION,
+  WJEC_A_LEVEL_PREDICTION,
   proRataGcseToPapers,
   proRataToPapers,
 } from "./historicalBoundaries";
@@ -51,20 +54,27 @@ const aLevelBoards: Record<ExamBoard, Omit<BoardConfig, "qualification" | "grade
   },
   CAIE: {
     board: "CAIE",
-    // CAIE 9708: 4 components, but for Grade Calculator we treat as P1+P2+P3 weighted to 100% scale.
-    paperMax: [30, 70, 75],
-    // Approx % bands on /175 total
-    boundaries: { "A*": 137, A: 123, B: 109, C: 95, D: 81, E: 67 },
+    // CAIE 9708 — Option AX (components 11 + 21 + 31 + 41), boundaries /180.
+    // Engine maps: P1 = component 11 (/30), P2 = 21 + 31 (/90), P3 = component 41 (/60).
+    // PREDICTED 2026 boundaries from 4 published series (June 2022, June 2023,
+    // June 2024 [verified], Nov 2024 [verified]).
+    paperMax: [30, 90, 60],
+    boundaries: { ...CAIE_A_LEVEL_PREDICTION.predicted },
   },
   WJEC: {
     board: "WJEC",
-    paperMax: [80, 80, 80],
-    boundaries: { "A*": 186, A: 160, B: 134, C: 109, D: 84, E: 60 },
+    // WJEC A-Level Economics (1500) — UMS /300 (FIXED every year: A*=270, A=240,
+    // B=210, C=180, D=150, E=120). 3 externally-assessed components mapped /80 each.
+    paperMax: [100, 100, 100],
+    boundaries: proRataToPapers(WJEC_A_LEVEL_PREDICTION.predicted, 300, WJEC_A_LEVEL_PREDICTION.max),
   },
   IB: {
     board: "IB",
-    paperMax: [25, 50, 25],
-    boundaries: { "A*": 80, A: 70, B: 60, C: 50, D: 40, E: 30 },
+    // IB DP HL Economics — P1 /25, P2 /40, P3 /60 (IA /45 excluded — the
+    // calculator targets paper marks). Grades 7→A*, 6→A, 5→B, 4→C, 3→D, 2→E.
+    // PREDICTED 2026 boundaries from May 2022/2023 reference + May 2024 verified.
+    paperMax: [25, 40, 60],
+    boundaries: { ...IB_A_LEVEL_PREDICTION.predicted },
   },
 };
 

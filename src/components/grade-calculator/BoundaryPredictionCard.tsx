@@ -8,6 +8,8 @@ import {
   AQA_AS_PREDICTION,
   AQA_GCSE_HISTORY,
   AQA_GCSE_PREDICTION,
+  CAIE_A_LEVEL_HISTORY,
+  CAIE_A_LEVEL_PREDICTION,
   CAIE_IGCSE_HISTORY,
   CAIE_IGCSE_PREDICTION,
   EDEXCEL_A_LEVEL_HISTORY,
@@ -18,12 +20,16 @@ import {
   EDEXCEL_B_A_LEVEL_PREDICTION,
   EDEXCEL_IGCSE_HISTORY,
   EDEXCEL_IGCSE_PREDICTION,
+  IB_A_LEVEL_HISTORY,
+  IB_A_LEVEL_PREDICTION,
   OCR_A_LEVEL_HISTORY,
   OCR_A_LEVEL_PREDICTION,
   OCR_AS_HISTORY,
   OCR_AS_PREDICTION,
   OCR_GCSE_HISTORY,
   OCR_GCSE_PREDICTION,
+  WJEC_A_LEVEL_HISTORY,
+  WJEC_A_LEVEL_PREDICTION,
 } from "@/lib/gradeCalculator/historicalBoundaries";
 import type { ExamBoard, Qualification } from "@/lib/gradeCalculator/types";
 
@@ -80,6 +86,15 @@ function datasetFor(qualification: Qualification, board: ExamBoard, variant: "A"
     }
     if (board === "OCR") {
       return { label: "OCR A-Level Economics (H460)", grades: A_LEVEL_GRADES, history: OCR_A_LEVEL_HISTORY, prediction: OCR_A_LEVEL_PREDICTION };
+    }
+    if (board === "CAIE") {
+      return { label: "CAIE A-Level Economics (9708) — Option AX", grades: A_LEVEL_GRADES, history: CAIE_A_LEVEL_HISTORY, prediction: CAIE_A_LEVEL_PREDICTION };
+    }
+    if (board === "WJEC") {
+      return { label: "WJEC A-Level Economics (1500) — UMS /300", grades: A_LEVEL_GRADES, history: WJEC_A_LEVEL_HISTORY, prediction: WJEC_A_LEVEL_PREDICTION };
+    }
+    if (board === "IB") {
+      return { label: "IB DP HL Economics (mapped 7→A* … 2→E)", grades: A_LEVEL_GRADES, history: IB_A_LEVEL_HISTORY, prediction: IB_A_LEVEL_PREDICTION };
     }
     return null;
   }
