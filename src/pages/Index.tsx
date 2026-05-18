@@ -210,6 +210,55 @@ export default function Index() {
         </div>
       </section>
 
+      {/* ═══════ DIAGNOSTIC GRADE CALCULATOR ═══════ */}
+      <section id="diagnostic" className="relative pt-16 pb-16 lg:pt-20 lg:pb-20">
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(60% 50% at 50% 0%, rgba(79,86,255,0.10), transparent 70%)" }} />
+        <div className="max-w-[920px] mx-auto px-5 lg:px-6 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
+            className="text-center mb-8"
+          >
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1 text-xs font-semibold text-primary mb-5">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-ping" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+              </span>
+              10 mins to predict your current grade
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.03em] leading-[1.05] mb-4">
+              What Grade Are You{" "}
+              <span
+                className="inline-block bg-clip-text text-transparent animate-shimmer pb-2 leading-[1.15]"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(90deg, hsl(var(--magenta-pop)), hsl(var(--violet-pop)), hsl(var(--cyan-pop)), hsl(var(--amber-pop)), hsl(var(--magenta-pop)))",
+                }}
+              >
+                Right Now?
+              </span>
+            </h2>
+            <div className="flex items-center justify-center gap-2 mt-4">
+              <span
+                className="inline-block text-5xl md:text-6xl lg:text-7xl text-amber-300 animate-pulse"
+                style={{
+                  fontFamily: "'Caveat','Patrick Hand','Bradley Hand',cursive",
+                  transform: "rotate(-7deg)",
+                  textShadow: "0 3px 18px rgba(251,191,36,0.55)",
+                  letterSpacing: "0.02em",
+                }}
+              >
+                Try it ↓
+              </span>
+            </div>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.4, 0.25, 1] }}>
+            <DiagnosticCalculator />
+          </motion.div>
+        </div>
+      </section>
+
       {/* ═══════ HERO FEATURE: INSTANT MARKING DEMO ═══════ */}
       <section className="relative pt-16 lg:pt-20">
         <div className="mx-auto max-w-6xl px-4 py-12">
