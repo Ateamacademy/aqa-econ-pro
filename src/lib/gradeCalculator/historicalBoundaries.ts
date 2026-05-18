@@ -152,3 +152,80 @@ export function proRataToPapers(
   for (const g of GRADES) out[g] = Math.round(totalBoundaries[g] * ratio);
   return out;
 }
+
+/* ─────────────────────────── GCSE (9-1) generic prediction ─────────────────────────── */
+
+export type GcseHistoricalGrade = "9" | "8" | "7" | "6" | "5" | "4" | "3" | "2" | "1";
+
+export interface GcseHistoricalRow {
+  year: number;
+  max: number;
+  boundaries: Record<GcseHistoricalGrade, number>;
+}
+
+export interface GcsePredictedBoundaries {
+  max: number;
+  predicted: Record<GcseHistoricalGrade, number>;
+  stdDev: Record<GcseHistoricalGrade, number>;
+  history: GcseHistoricalRow[];
+  yearsUsed: number[];
+  method: string;
+}
+
+const GCSE_GRADES_ORDER: GcseHistoricalGrade[] = ["9", "8", "7", "6", "5", "4", "3", "2", "1"];
+
+export function predictGcseFromHistory(
+  history: GcseHistoricalRow[],
+  opts: { lambda?: number; lookback?: number } = {},
+): GcsePredictedBoundaries {
+  const lambda = opts.lambda ?? 0.7;
+  const lookback = opts.lookback ?? 6;
+  const recent = [...history].sort((a, b) => a.year - b.year).slice(-lookback);
+  const max = recent[recent.length - 1].max;
+  const weights = recent.map((_, i) => Math.pow(lambda, recent.length - 1 - i));
+  const wSum = weights.reduce((a, b) => a + b, 0);
+  const predicted = {} as Record<GcseHistoricalGrade, number>;
+  const stdDev = {} as Record<GcseHistoricalGrade, number>;
+  for (const g of GCSE_GRADES_ORDER) {
+    const vals = recent.map((r) => r.boundaries[g]);
+    const mean = vals.reduce((acc, v, i) => acc + v * weights[i], 0) / wSum;
+    const variance = vals.reduce((acc, v, i) => acc + weights[i] * (v - mean) ** 2, 0) / wSum;
+    predicted[g] = Math.round(mean);
+    stdDev[g] = Math.round(Math.sqrt(variance) * 10) / 10;
+  }
+  return {
+    max,
+    predicted,
+    stdDev,
+    history: recent,
+    yearsUsed: recent.map((r) => r.year),
+    method:
+      `Exponentially-weighted average of the last ${recent.length} published series ` +
+      `(λ=${lambda}). Recent years are weighted more heavily.`,
+  };
+}
+
+export function proRataGcseToPapers(
+  totalBoundaries: Record<GcseHistoricalGrade, number>,
+  paperMaxSum: number,
+  fullMax: number,
+): Record<GcseHistoricalGrade, number> {
+  const ratio = paperMaxSum / fullMax;
+  const out = {} as Record<GcseHistoricalGrade, number>;
+  for (const g of GCSE_GRADES_ORDER) out[g] = Math.round(totalBoundaries[g] * ratio);
+  return out;
+}
+
+/* AQA GCSE Economics (8136) — 2 papers, /160 total.
+ * Source: savemyexams.com / AQA boundary archive. 2020/2021 excluded
+ * (Nov autumn series + TAGs aren't comparable to standard summer series).
+ */
+export const AQA_GCSE_HISTORY: GcseHistoricalRow[] = [
+  { year: 2019, max: 160, boundaries: { "9": 129, "8": 121, "7": 114, "6": 102, "5": 90, "4": 79, "3": 61, "2": 43, "1": 26 } },
+  { year: 2022, max: 160, boundaries: { "9": 133, "8": 124, "7": 115, "6": 101, "5": 88, "4": 75, "3": 55, "2": 36, "1": 17 } },
+  { year: 2023, max: 160, boundaries: { "9": 133, "8": 125, "7": 118, "6": 105, "5": 93, "4": 81, "3": 60, "2": 40, "1": 20 } },
+  { year: 2024, max: 160, boundaries: { "9": 130, "8": 122, "7": 115, "6": 102, "5": 89, "4": 77, "3": 58, "2": 39, "1": 20 } },
+  { year: 2025, max: 160, boundaries: { "9": 133, "8": 125, "7": 118, "6": 106, "5": 94, "4": 82, "3": 60, "2": 38, "1": 16 } },
+];
+
+export const AQA_GCSE_PREDICTION = predictGcseFromHistory(AQA_GCSE_HISTORY);
