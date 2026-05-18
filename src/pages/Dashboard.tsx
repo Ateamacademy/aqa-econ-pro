@@ -25,7 +25,7 @@ import StrengthWeakness from "@/components/dashboard/StrengthWeakness";
 import { motion } from "framer-motion";
 import {
   Lock, LayoutDashboard, FileText, BookOpen, Compass, MessageCircle,
-  BarChart3, Settings, Crown, Bell, GraduationCap, ChevronRight, Users,
+  BarChart3, Settings, Crown, Bell, GraduationCap, ChevronRight, Users, Calculator,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -40,6 +40,7 @@ const sidebarNav = [
   { icon: BookOpen, label: "Study Notes", to: "/notes" },
   { icon: Compass, label: "Diagram Builder", to: "/diagram-practice" },
   { icon: MessageCircle, label: "24/7 Tutor", to: "/tutor" },
+  { icon: Calculator, label: "Grade Calculator", to: "/grade-calculator" },
   { icon: BarChart3, label: "Progress", to: "/dashboard" },
   { icon: Settings, label: "Settings", to: "/dashboard" },
 ];
