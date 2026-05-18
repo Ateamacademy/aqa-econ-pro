@@ -252,6 +252,12 @@ export default function GradeCalculator() {
 
                 <AIInsightFeed insights={insightsQ.data} loading={insightsQ.isLoading} />
 
+                <PaperFeedbackBellCurve
+                  examBoard={board}
+                  qualification={qualification}
+                  predictedGrade={prediction.likelyGrade}
+                />
+
                 <div className="rounded-2xl border border-border bg-card p-5">
                   <div className="flex items-center gap-2 mb-3">
                     <Sparkles className="h-4 w-4 text-primary" />
