@@ -233,6 +233,8 @@ export default function GradeCalculator() {
                   <Paper3RequirementCard prediction={prediction} config={config} targetGrade={targetGrade} />
                 </div>
 
+                <ProbabilityBands prediction={prediction} config={config} />
+
                 <WhatIfSlider
                   p3Score={simulatedP3}
                   p3Max={config.paperMax[2]}
@@ -249,11 +251,32 @@ export default function GradeCalculator() {
 
                 <AIInsightFeed insights={insightsQ.data} loading={insightsQ.isLoading} />
 
+                <div className="rounded-2xl border border-border bg-card p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Sparkles className="h-4 w-4 text-primary" />
+                    <h3 className="text-sm font-semibold text-foreground">Keep the momentum</h3>
+                  </div>
+                  <CrossLinkStrip weakestTopic={insightsQ.data?.priorities?.[0]} />
+                </div>
+
+                <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
+                  <ShareResultButton
+                    prediction={prediction}
+                    targetGrade={targetGrade}
+                    qualification={qualification}
+                    board={board}
+                    p3Max={config.paperMax[2]}
+                  />
+                  <span className="text-[11px] text-muted-foreground">
+                    Generates an image for socials — projected grade, target, Paper 3 needed.
+                  </span>
+                </div>
+
                 <div className="flex items-start gap-2 text-[11px] text-muted-foreground italic border-t border-border pt-4">
                   <ShieldAlert className="h-3.5 w-3.5 mt-0.5 flex-shrink-0" />
                   <span>
                     Predictions are estimates based on historical grade boundaries and the marks you've entered. Real
-                    boundaries shift year to year — use these projections as guidance, not a guarantee.
+                    boundaries shift year to year — not a guarantee.
                   </span>
                 </div>
               </>
