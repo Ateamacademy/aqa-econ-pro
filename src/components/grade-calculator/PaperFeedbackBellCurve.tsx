@@ -78,20 +78,8 @@ export default function PaperFeedbackBellCurve({
     if (!difficulty) return;
     setSubmitting(true);
     const { data: { user } } = await supabase.auth.getUser();
-    if (!user) {
-      setSubmitting(false);
-      toast.info("Create a free account to submit your feedback");
-      try {
-        sessionStorage.setItem(
-          "pendingPaperFeedback",
-          JSON.stringify({ examBoard, qualification, paperLabel, difficulty, predictedGrade: predictedGrade ?? null }),
-        );
-      } catch {}
-      navigate(`/auth?returnTo=${encodeURIComponent(window.location.pathname + window.location.hash)}`);
-      return;
-    }
     const { error } = await supabase.from("paper_feedback").insert({
-      user_id: user.id,
+      user_id: user?.id ?? null,
       exam_board: examBoard,
       qualification,
       paper_label: paperLabel,
