@@ -46,6 +46,9 @@ function datasetFor(qualification: Qualification, board: ExamBoard, variant: "A"
       ? { label: "Edexcel B A-Level Economics (9EB0)", history: EDEXCEL_B_A_LEVEL_HISTORY, prediction: EDEXCEL_B_A_LEVEL_PREDICTION }
       : { label: "Edexcel A A-Level Economics (9EC0)", history: EDEXCEL_A_LEVEL_HISTORY, prediction: EDEXCEL_A_LEVEL_PREDICTION };
   }
+  if (board === "OCR") {
+    return { label: "OCR A-Level Economics (H460)", history: OCR_A_LEVEL_HISTORY, prediction: OCR_A_LEVEL_PREDICTION };
+  }
   return null;
 }
 
