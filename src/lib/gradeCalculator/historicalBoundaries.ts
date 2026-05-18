@@ -229,3 +229,15 @@ export const AQA_GCSE_HISTORY: GcseHistoricalRow[] = [
 ];
 
 export const AQA_GCSE_PREDICTION = predictGcseFromHistory(AQA_GCSE_HISTORY);
+
+/* OCR GCSE Economics (J205) — 2 papers, /160 total.
+ * Source: savemyexams.com / OCR boundary archive (2022–2025).
+ */
+export const OCR_GCSE_HISTORY: GcseHistoricalRow[] = [
+  { year: 2022, max: 160, boundaries: { "9": 116, "8": 103, "7": 91, "6": 77, "5": 64, "4": 51, "3": 39, "2": 28, "1": 17 } },
+  { year: 2023, max: 160, boundaries: { "9": 124, "8": 112, "7": 101, "6": 87, "5": 74, "4": 61, "3": 46, "2": 31, "1": 17 } },
+  { year: 2024, max: 160, boundaries: { "9": 118, "8": 107, "7": 97, "6": 84, "5": 71, "4": 58, "3": 44, "2": 31, "1": 18 } },
+  { year: 2025, max: 160, boundaries: { "9": 121, "8": 110, "7": 99, "6": 86, "5": 74, "4": 62, "3": 48, "2": 34, "1": 21 } },
+];
+
+export const OCR_GCSE_PREDICTION = predictGcseFromHistory(OCR_GCSE_HISTORY);
