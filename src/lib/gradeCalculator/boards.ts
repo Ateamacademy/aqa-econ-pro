@@ -1,9 +1,14 @@
 import type { BoardConfig, ExamBoard, Qualification } from "./types";
+import { AQA_A_LEVEL_PREDICTION } from "./historicalBoundaries";
 
 /**
  * NOTE: Boundary figures are seed placeholders aligned to recent published
  * series (2024 where verified). They must be replaced with Ofqual / board-
  * published data per series before production launch.
+ *
+ * AQA A-Level boundaries are PREDICTED from 8 years of historical data
+ * (2017–2025) via an exponentially-weighted average — see
+ * `historicalBoundaries.ts`.
  */
 
 const A_LEVEL_GRADES = ["A*", "A", "B", "C", "D", "E"] as const;
@@ -13,8 +18,9 @@ const aLevelBoards: Record<ExamBoard, Omit<BoardConfig, "qualification" | "grade
   AQA: {
     board: "AQA",
     paperMax: [80, 80, 80],
-    boundaries: { "A*": 189, A: 161, B: 134, C: 107, D: 81, E: 55 },
+    boundaries: { ...AQA_A_LEVEL_PREDICTION.predicted },
   },
+
   Edexcel: {
     board: "Edexcel",
     paperMax: [100, 100, 100],

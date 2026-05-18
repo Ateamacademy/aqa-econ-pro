@@ -21,6 +21,7 @@ import { ProbabilityBands } from "@/components/grade-calculator/ProbabilityBands
 import { CrossLinkStrip } from "@/components/grade-calculator/CrossLinkStrip";
 import PaperFeedbackBellCurve from "@/components/grade-calculator/PaperFeedbackBellCurve";
 import { ShareResultButton } from "@/components/grade-calculator/ShareResultButton";
+import BoundaryPredictionCard from "@/components/grade-calculator/BoundaryPredictionCard";
 import { useGradeInsights } from "@/hooks/useGradeInsights";
 import { supabase } from "@/integrations/supabase/client";
 import { Calculator, ShieldAlert, Sparkles } from "lucide-react";
@@ -221,6 +222,8 @@ export default function GradeCalculator() {
 
           {/* RIGHT — output */}
           <div className="space-y-5 lg:col-span-2">
+            <BoundaryPredictionCard qualification={qualification} board={board} />
+
             {!hasMarks ? (
               <>
                 <div className="rounded-2xl border border-dashed border-border bg-card p-10 text-center">
