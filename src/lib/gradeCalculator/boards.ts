@@ -79,7 +79,9 @@ const gcseBoards: Record<ExamBoard, Omit<BoardConfig, "qualification" | "grades"
   OCR: {
     board: "OCR",
     paperMax: [80, 80, 80],
-    boundaries: { "9": 128, "8": 113, "7": 98, "6": 84, "5": 70, "4": 56, "3": 42, "2": 28, "1": 14 },
+    // PREDICTED 2026 boundaries built from OCR GCSE Economics J205 archive
+    // (2022–2025), pro-rata /160 → /240 to fit the 3-paper UI.
+    boundaries: proRataGcseToPapers(OCR_GCSE_PREDICTION.predicted, 240, OCR_GCSE_PREDICTION.max),
   },
   CAIE: {
     board: "CAIE",
