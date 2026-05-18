@@ -40,7 +40,11 @@ export default function Auth() {
   const [appleLoading, setAppleLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [activeTab, setActiveTab] = useState("login");
+  const [activeTab, setActiveTab] = useState(() => {
+    if (typeof window === "undefined") return "login";
+    const tab = new URLSearchParams(window.location.search).get("tab");
+    return tab === "signup" ? "signup" : "login";
+  });
 
   const handleGoogleLogin = useCallback(async () => {
     setGoogleLoading(true);
