@@ -131,6 +131,7 @@ const App = () => (
               <Route path="/notes" element={<StudyNotes />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/grade-calculator" element={<GradeCalculator />} />
+              <Route path="/post-exam" element={<GradeCalculator />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/reset-password" element={<ResetPassword />} />
               <Route path="/pricing" element={<Pricing />} />
