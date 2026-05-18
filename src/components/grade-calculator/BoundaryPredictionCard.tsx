@@ -4,14 +4,14 @@ import { TrendingDown, Database } from "lucide-react";
 import {
   AQA_A_LEVEL_HISTORY,
   AQA_A_LEVEL_PREDICTION,
+  AQA_GCSE_HISTORY,
+  AQA_GCSE_PREDICTION,
   EDEXCEL_A_LEVEL_HISTORY,
   EDEXCEL_A_LEVEL_PREDICTION,
   EDEXCEL_B_A_LEVEL_HISTORY,
   EDEXCEL_B_A_LEVEL_PREDICTION,
   OCR_A_LEVEL_HISTORY,
   OCR_A_LEVEL_PREDICTION,
-  type HistoricalRow,
-  type PredictedBoundaries,
 } from "@/lib/gradeCalculator/historicalBoundaries";
 import type { ExamBoard, Qualification } from "@/lib/gradeCalculator/types";
 
@@ -28,26 +28,45 @@ const GRADE_COLORS: Record<string, string> = {
   C: "#fbbf24",
   D: "#fb923c",
   E: "#f87171",
+  "9": "hsl(var(--primary))",
+  "8": "#60a5fa",
+  "7": "#34d399",
+  "6": "#a3e635",
+  "5": "#fbbf24",
+  "4": "#fb923c",
+  "3": "#f87171",
+  "2": "#ef4444",
+  "1": "#dc2626",
 };
 
 interface Dataset {
   label: string;
-  history: HistoricalRow[];
-  prediction: PredictedBoundaries;
+  grades: string[];
+  history: { year: number; max: number; boundaries: Record<string, number> }[];
+  prediction: { max: number; predicted: Record<string, number>; stdDev: Record<string, number>; yearsUsed: number[]; method: string };
 }
 
+const A_LEVEL_GRADES = ["A*", "A", "B", "C", "D", "E"];
+const GCSE_GRADES_DESC = ["9", "8", "7", "6", "5", "4", "3", "2", "1"];
+
 function datasetFor(qualification: Qualification, board: ExamBoard, variant: "A" | "B"): Dataset | Dataset[] | null {
-  if (qualification !== "A-Level") return null;
+  if (qualification === "A-Level") {
+    if (board === "AQA") {
+      return { label: "AQA A-Level Economics (7136)", grades: A_LEVEL_GRADES, history: AQA_A_LEVEL_HISTORY, prediction: AQA_A_LEVEL_PREDICTION };
+    }
+    if (board === "Edexcel") {
+      return variant === "B"
+        ? { label: "Edexcel B A-Level Economics (9EB0)", grades: A_LEVEL_GRADES, history: EDEXCEL_B_A_LEVEL_HISTORY, prediction: EDEXCEL_B_A_LEVEL_PREDICTION }
+        : { label: "Edexcel A A-Level Economics (9EC0)", grades: A_LEVEL_GRADES, history: EDEXCEL_A_LEVEL_HISTORY, prediction: EDEXCEL_A_LEVEL_PREDICTION };
+    }
+    if (board === "OCR") {
+      return { label: "OCR A-Level Economics (H460)", grades: A_LEVEL_GRADES, history: OCR_A_LEVEL_HISTORY, prediction: OCR_A_LEVEL_PREDICTION };
+    }
+    return null;
+  }
+  // GCSE
   if (board === "AQA") {
-    return { label: "AQA A-Level Economics (7136)", history: AQA_A_LEVEL_HISTORY, prediction: AQA_A_LEVEL_PREDICTION };
-  }
-  if (board === "Edexcel") {
-    return variant === "B"
-      ? { label: "Edexcel B A-Level Economics (9EB0)", history: EDEXCEL_B_A_LEVEL_HISTORY, prediction: EDEXCEL_B_A_LEVEL_PREDICTION }
-      : { label: "Edexcel A A-Level Economics (9EC0)", history: EDEXCEL_A_LEVEL_HISTORY, prediction: EDEXCEL_A_LEVEL_PREDICTION };
-  }
-  if (board === "OCR") {
-    return { label: "OCR A-Level Economics (H460)", history: OCR_A_LEVEL_HISTORY, prediction: OCR_A_LEVEL_PREDICTION };
+    return { label: "AQA GCSE Economics (8136)", grades: GCSE_GRADES_DESC, history: AQA_GCSE_HISTORY, prediction: AQA_GCSE_PREDICTION };
   }
   return null;
 }
