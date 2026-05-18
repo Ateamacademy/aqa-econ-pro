@@ -12,6 +12,8 @@ import {
   EDEXCEL_B_A_LEVEL_PREDICTION,
   OCR_A_LEVEL_HISTORY,
   OCR_A_LEVEL_PREDICTION,
+  OCR_GCSE_HISTORY,
+  OCR_GCSE_PREDICTION,
 } from "@/lib/gradeCalculator/historicalBoundaries";
 import type { ExamBoard, Qualification } from "@/lib/gradeCalculator/types";
 
