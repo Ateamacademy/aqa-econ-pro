@@ -15,7 +15,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import {
   FileText, Bot, BarChart3, Compass, MessageCircle, BookOpen,
-  ArrowRight, ChevronDown, Check, Star, ArrowUpRight,
+  ArrowRight, ChevronDown, Check, Star, ArrowUpRight, Calculator,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
