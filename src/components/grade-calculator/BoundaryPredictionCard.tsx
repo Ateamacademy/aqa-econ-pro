@@ -16,6 +16,7 @@ import type { ExamBoard, Qualification } from "@/lib/gradeCalculator/types";
 interface Props {
   qualification: Qualification;
   board: ExamBoard;
+  edexcelVariant?: "A" | "B";
 }
 
 const GRADE_COLORS: Record<string, string> = {
@@ -33,17 +34,15 @@ interface Dataset {
   prediction: PredictedBoundaries;
 }
 
-function datasetFor(qualification: Qualification, board: ExamBoard): Dataset | Dataset[] | null {
+function datasetFor(qualification: Qualification, board: ExamBoard, variant: "A" | "B"): Dataset | Dataset[] | null {
   if (qualification !== "A-Level") return null;
   if (board === "AQA") {
     return { label: "AQA A-Level Economics (7136)", history: AQA_A_LEVEL_HISTORY, prediction: AQA_A_LEVEL_PREDICTION };
   }
   if (board === "Edexcel") {
-    // Edexcel offers both Economics A (9EC0) and Economics B (9EB0); show both.
-    return [
-      { label: "Edexcel A A-Level Economics (9EC0)", history: EDEXCEL_A_LEVEL_HISTORY, prediction: EDEXCEL_A_LEVEL_PREDICTION },
-      { label: "Edexcel B A-Level Economics (9EB0)", history: EDEXCEL_B_A_LEVEL_HISTORY, prediction: EDEXCEL_B_A_LEVEL_PREDICTION },
-    ];
+    return variant === "B"
+      ? { label: "Edexcel B A-Level Economics (9EB0)", history: EDEXCEL_B_A_LEVEL_HISTORY, prediction: EDEXCEL_B_A_LEVEL_PREDICTION }
+      : { label: "Edexcel A A-Level Economics (9EC0)", history: EDEXCEL_A_LEVEL_HISTORY, prediction: EDEXCEL_A_LEVEL_PREDICTION };
   }
   return null;
 }
