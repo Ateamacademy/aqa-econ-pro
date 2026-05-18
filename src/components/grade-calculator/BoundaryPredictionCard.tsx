@@ -8,6 +8,8 @@ import {
   EDEXCEL_A_LEVEL_PREDICTION,
   EDEXCEL_B_A_LEVEL_HISTORY,
   EDEXCEL_B_A_LEVEL_PREDICTION,
+  OCR_A_LEVEL_HISTORY,
+  OCR_A_LEVEL_PREDICTION,
   type HistoricalRow,
   type PredictedBoundaries,
 } from "@/lib/gradeCalculator/historicalBoundaries";
