@@ -18,7 +18,10 @@ export default function DrawingCanvas({ onChange, height = 280, className }: Pro
   const wrapRef = useRef<HTMLDivElement>(null);
   const drawing = useRef(false);
   const last = useRef<{ x: number; y: number } | null>(null);
+  const strokePoints = useRef<{ x: number; y: number }[]>([]);
+  const preStrokeSnapshot = useRef<ImageData | null>(null);
   const [tool, setTool] = useState<"pen" | "eraser">("pen");
+  const [autoStraighten, setAutoStraighten] = useState(true);
   const [hasInk, setHasInk] = useState(false);
 
   /* Resize canvas to container width × given height (HiDPI). */
