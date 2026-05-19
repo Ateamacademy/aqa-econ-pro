@@ -106,26 +106,14 @@ export function DrawingCanvas({ width = 600, height = 400, onSave, onDrawEnd, la
   const maybeStraighten = () => {
     if (!autoStraighten || tool !== "pen") return;
     const pts = strokePoints.current;
-    if (pts.length < 5) return;
+    if (pts.length < 2) return;
     const a = pts[0];
     const b = pts[pts.length - 1];
-    const dx = b.x - a.x;
-    const dy = b.y - a.y;
-    const len = Math.hypot(dx, dy);
-    if (len < 25) return;
-    // Max perpendicular distance from chord
-    let maxDev = 0;
-    for (const p of pts) {
-      const dev = Math.abs(dy * p.x - dx * p.y + b.x * a.y - b.y * a.x) / len;
-      if (dev > maxDev) maxDev = dev;
-    }
-    // Threshold: tolerate ~4% of length or 6px, whichever larger
-    const tol = Math.max(6, len * 0.04);
-    if (maxDev > tol) return;
+    const len = Math.hypot(b.x - a.x, b.y - a.y);
+    if (len < 8) return; // ignore taps/dots
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
     if (!canvas || !ctx || !preStrokeSnapshot.current) return;
-    // Restore pre-stroke and draw a clean straight line
     ctx.putImageData(preStrokeSnapshot.current, 0, 0);
     ctx.strokeStyle = color;
     ctx.lineWidth = brushSize;
