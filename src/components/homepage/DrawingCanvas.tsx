@@ -87,20 +87,11 @@ export default function DrawingCanvas({ onChange, height = 280, className }: Pro
   const maybeStraighten = () => {
     if (!autoStraighten || tool !== "pen") return;
     const pts = strokePoints.current;
-    if (pts.length < 5) return;
+    if (pts.length < 2) return;
     const a = pts[0];
     const b = pts[pts.length - 1];
-    const dx = b.x - a.x;
-    const dy = b.y - a.y;
-    const len = Math.hypot(dx, dy);
-    if (len < 25) return;
-    let maxDev = 0;
-    for (const p of pts) {
-      const dev = Math.abs(dy * p.x - dx * p.y + b.x * a.y - b.y * a.x) / len;
-      if (dev > maxDev) maxDev = dev;
-    }
-    const tol = Math.max(6, len * 0.04);
-    if (maxDev > tol) return;
+    const len = Math.hypot(b.x - a.x, b.y - a.y);
+    if (len < 8) return;
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
     if (!canvas || !ctx || !preStrokeSnapshot.current) return;
