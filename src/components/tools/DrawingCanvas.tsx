@@ -30,7 +30,10 @@ export function DrawingCanvas({ width = 600, height = 400, onSave, onDrawEnd, la
   const [color, setColor] = useState("#000000");
   const [brushSize, setBrushSize] = useState(4);
   const [showColors, setShowColors] = useState(false);
+  const [autoStraighten, setAutoStraighten] = useState(true);
   const [history, setHistory] = useState<ImageData[]>([]);
+  const strokePoints = useRef<{ x: number; y: number }[]>([]);
+  const preStrokeSnapshot = useRef<ImageData | null>(null);
 
   const saveState = useCallback(() => {
     const canvas = canvasRef.current;
