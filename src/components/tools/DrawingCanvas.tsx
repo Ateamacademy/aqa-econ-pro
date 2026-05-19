@@ -233,7 +233,18 @@ export function DrawingCanvas({ width = 600, height = 400, onSave, onDrawEnd, la
         </div>
         
         <div className="flex-1" />
-        
+
+        <Button
+          type="button"
+          variant={autoStraighten ? "default" : "ghost"}
+          size="sm"
+          className="h-7 text-xs"
+          onClick={() => setAutoStraighten((v) => !v)}
+          title="Auto-straighten near-straight strokes"
+        >
+          Straighten: {autoStraighten ? "On" : "Off"}
+        </Button>
+
         <Button type="button" variant="ghost" size="sm" className="h-7 text-xs" onClick={undo}>
           <Undo2 className="h-3 w-3" />
         </Button>
