@@ -78,10 +78,13 @@ export function DrawingCanvas({ width = 600, height = 400, onSave, onDrawEnd, la
   };
 
   const startDraw = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    const ctx = canvasRef.current?.getContext("2d");
-    if (!ctx) return;
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext("2d");
+    if (!ctx || !canvas) return;
     setIsDrawing(true);
     const { x, y } = getPos(e);
+    strokePoints.current = [{ x, y }];
+    preStrokeSnapshot.current = ctx.getImageData(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
     ctx.moveTo(x, y);
   };
@@ -91,6 +94,7 @@ export function DrawingCanvas({ width = 600, height = 400, onSave, onDrawEnd, la
     const ctx = canvasRef.current?.getContext("2d");
     if (!ctx) return;
     const { x, y } = getPos(e);
+    strokePoints.current.push({ x, y });
     ctx.strokeStyle = tool === "eraser" ? "#ffffff" : color;
     ctx.lineWidth = tool === "eraser" ? brushSize * 4 : brushSize;
     ctx.lineCap = "round";
@@ -99,9 +103,46 @@ export function DrawingCanvas({ width = 600, height = 400, onSave, onDrawEnd, la
     ctx.stroke();
   };
 
+  const maybeStraighten = () => {
+    if (!autoStraighten || tool !== "pen") return;
+    const pts = strokePoints.current;
+    if (pts.length < 5) return;
+    const a = pts[0];
+    const b = pts[pts.length - 1];
+    const dx = b.x - a.x;
+    const dy = b.y - a.y;
+    const len = Math.hypot(dx, dy);
+    if (len < 25) return;
+    // Max perpendicular distance from chord
+    let maxDev = 0;
+    for (const p of pts) {
+      const dev = Math.abs(dy * p.x - dx * p.y + b.x * a.y - b.y * a.x) / len;
+      if (dev > maxDev) maxDev = dev;
+    }
+    // Threshold: tolerate ~4% of length or 6px, whichever larger
+    const tol = Math.max(6, len * 0.04);
+    if (maxDev > tol) return;
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext("2d");
+    if (!canvas || !ctx || !preStrokeSnapshot.current) return;
+    // Restore pre-stroke and draw a clean straight line
+    ctx.putImageData(preStrokeSnapshot.current, 0, 0);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = brushSize;
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    ctx.beginPath();
+    ctx.moveTo(a.x, a.y);
+    ctx.lineTo(b.x, b.y);
+    ctx.stroke();
+  };
+
   const endDraw = () => {
     if (isDrawing) {
       setIsDrawing(false);
+      maybeStraighten();
+      strokePoints.current = [];
+      preStrokeSnapshot.current = null;
       saveState();
       if (onDrawEnd && canvasRef.current) {
         onDrawEnd(canvasRef.current.toDataURL("image/png"));
