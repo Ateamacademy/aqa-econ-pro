@@ -18,7 +18,10 @@ export default function DrawingCanvas({ onChange, height = 280, className }: Pro
   const wrapRef = useRef<HTMLDivElement>(null);
   const drawing = useRef(false);
   const last = useRef<{ x: number; y: number } | null>(null);
+  const strokePoints = useRef<{ x: number; y: number }[]>([]);
+  const preStrokeSnapshot = useRef<ImageData | null>(null);
   const [tool, setTool] = useState<"pen" | "eraser">("pen");
+  const [autoStraighten, setAutoStraighten] = useState(true);
   const [hasInk, setHasInk] = useState(false);
 
   /* Resize canvas to container width × given height (HiDPI). */
@@ -58,13 +61,21 @@ export default function DrawingCanvas({ onChange, height = 280, className }: Pro
     e.preventDefault();
     (e.target as Element).setPointerCapture?.(e.pointerId);
     drawing.current = true;
-    last.current = pos(e);
+    const p = pos(e);
+    last.current = p;
+    strokePoints.current = [p];
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext("2d");
+    if (canvas && ctx) {
+      preStrokeSnapshot.current = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    }
   };
   const move = (e: React.PointerEvent) => {
     if (!drawing.current) return;
     const ctx = canvasRef.current?.getContext("2d");
     if (!ctx || !last.current) return;
     const p = pos(e);
+    strokePoints.current.push(p);
     ctx.strokeStyle = tool === "eraser" ? "#ffffff" : "#0f172a";
     ctx.lineWidth = tool === "eraser" ? 18 : 2.5;
     ctx.beginPath();
@@ -73,10 +84,46 @@ export default function DrawingCanvas({ onChange, height = 280, className }: Pro
     ctx.stroke();
     last.current = p;
   };
+  const maybeStraighten = () => {
+    if (!autoStraighten || tool !== "pen") return;
+    const pts = strokePoints.current;
+    if (pts.length < 5) return;
+    const a = pts[0];
+    const b = pts[pts.length - 1];
+    const dx = b.x - a.x;
+    const dy = b.y - a.y;
+    const len = Math.hypot(dx, dy);
+    if (len < 25) return;
+    let maxDev = 0;
+    for (const p of pts) {
+      const dev = Math.abs(dy * p.x - dx * p.y + b.x * a.y - b.y * a.x) / len;
+      if (dev > maxDev) maxDev = dev;
+    }
+    const tol = Math.max(6, len * 0.04);
+    if (maxDev > tol) return;
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext("2d");
+    if (!canvas || !ctx || !preStrokeSnapshot.current) return;
+    ctx.save();
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.putImageData(preStrokeSnapshot.current, 0, 0);
+    ctx.restore();
+    ctx.strokeStyle = "#0f172a";
+    ctx.lineWidth = 2.5;
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    ctx.beginPath();
+    ctx.moveTo(a.x, a.y);
+    ctx.lineTo(b.x, b.y);
+    ctx.stroke();
+  };
   const end = () => {
     if (!drawing.current) return;
     drawing.current = false;
     last.current = null;
+    maybeStraighten();
+    strokePoints.current = [];
+    preStrokeSnapshot.current = null;
     const canvas = canvasRef.current;
     if (!canvas) return;
     setHasInk(true);
@@ -121,9 +168,20 @@ export default function DrawingCanvas({ onChange, height = 280, className }: Pro
         </button>
         <button
           type="button"
+          onClick={() => setAutoStraighten((v) => !v)}
+          className={cn(
+            "ml-auto inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1.5 text-[11px] font-semibold transition-all",
+            autoStraighten ? "border-primary bg-primary/10 text-foreground" : "border-border text-muted-foreground hover:border-primary/40",
+          )}
+          title="Auto-straighten near-straight strokes"
+        >
+          Straighten: {autoStraighten ? "On" : "Off"}
+        </button>
+        <button
+          type="button"
           onClick={clear}
           disabled={!hasInk}
-          className="ml-auto inline-flex items-center gap-1.5 rounded-md border border-border px-2.5 py-1.5 text-[11px] font-semibold text-muted-foreground hover:border-destructive/50 hover:text-destructive disabled:opacity-40"
+          className="inline-flex items-center gap-1.5 rounded-md border border-border px-2.5 py-1.5 text-[11px] font-semibold text-muted-foreground hover:border-destructive/50 hover:text-destructive disabled:opacity-40"
         >
           <Trash2 className="h-3.5 w-3.5" /> Clear
         </button>
