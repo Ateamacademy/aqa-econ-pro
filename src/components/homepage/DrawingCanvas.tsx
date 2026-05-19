@@ -168,9 +168,20 @@ export default function DrawingCanvas({ onChange, height = 280, className }: Pro
         </button>
         <button
           type="button"
+          onClick={() => setAutoStraighten((v) => !v)}
+          className={cn(
+            "ml-auto inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1.5 text-[11px] font-semibold transition-all",
+            autoStraighten ? "border-primary bg-primary/10 text-foreground" : "border-border text-muted-foreground hover:border-primary/40",
+          )}
+          title="Auto-straighten near-straight strokes"
+        >
+          Straighten: {autoStraighten ? "On" : "Off"}
+        </button>
+        <button
+          type="button"
           onClick={clear}
           disabled={!hasInk}
-          className="ml-auto inline-flex items-center gap-1.5 rounded-md border border-border px-2.5 py-1.5 text-[11px] font-semibold text-muted-foreground hover:border-destructive/50 hover:text-destructive disabled:opacity-40"
+          className="inline-flex items-center gap-1.5 rounded-md border border-border px-2.5 py-1.5 text-[11px] font-semibold text-muted-foreground hover:border-destructive/50 hover:text-destructive disabled:opacity-40"
         >
           <Trash2 className="h-3.5 w-3.5" /> Clear
         </button>
