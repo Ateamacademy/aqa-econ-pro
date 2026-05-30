@@ -774,7 +774,7 @@ export type Database = {
       interventions: {
         Row: {
           created_at: string
-          detected_by_class_id: string | null
+          detected_by_class_id: string
           id: string
           message: string | null
           resolved_at: string | null
@@ -784,7 +784,7 @@ export type Database = {
         }
         Insert: {
           created_at?: string
-          detected_by_class_id?: string | null
+          detected_by_class_id: string
           id?: string
           message?: string | null
           resolved_at?: string | null
@@ -794,7 +794,7 @@ export type Database = {
         }
         Update: {
           created_at?: string
-          detected_by_class_id?: string | null
+          detected_by_class_id?: string
           id?: string
           message?: string | null
           resolved_at?: string | null
