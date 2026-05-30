@@ -46,6 +46,8 @@ const ADMIN_EMAILS: ReadonlyArray<string> = [
   "fatima4r@hotmail.com",
   "isabella270708@icloud.com",
   "mahamedmo220@gmail.com",
+  "chitra.shahani@yahoo.com",
+  "greensam1@sky.com",
 ];
 
 export function isAdminEmail(email?: string | null): boolean {

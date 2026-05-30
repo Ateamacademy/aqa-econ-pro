@@ -22,6 +22,8 @@ const PERMANENT_ACCESS_EMAILS = [
   "fatima4r@hotmail.com",
   "isabella270708@icloud.com",
   "mahamedmo220@gmail.com",
+  "chitra.shahani@yahoo.com",
+  "greensam1@sky.com",
 ];
 
 const TESTER_EMAILS = [
@@ -57,6 +59,8 @@ const TESTER_EMAILS = [
   "fatima4r@hotmail.com",
   "isabella270708@icloud.com",
   "mahamedmo220@gmail.com",
+  "chitra.shahani@yahoo.com",
+  "greensam1@sky.com",
 ];
 
 const cache = new Map<string, { result: Record<string, unknown>; ts: number }>();
