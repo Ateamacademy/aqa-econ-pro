@@ -297,7 +297,7 @@ serve(async (req) => {
     }
 
     // Persist result to database if userId provided
-    if (userId) {
+    {
       const { error: insertErr } = await supabase.from("diagram_marking_results").insert({
         user_id: userId,
         diagram_type: diagramType || "unknown",
