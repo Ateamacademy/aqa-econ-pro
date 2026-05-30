@@ -6,12 +6,14 @@
 // structured AQA-examiner JSON output documented in AQA_EXAMINER_PROMPT.md.
 
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { requireUser, corsHeaders } from "../_shared/auth.ts";
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers":
-    "authorization, x-client-info, apikey, content-type",
-};
+const ALLOWED_MODELS = new Set([
+  "google/gemini-2.5-pro",
+  "google/gemini-2.5-flash",
+  "google/gemini-3-flash-preview",
+  "openai/gpt-5-mini",
+]);
 
 const SYSTEM_PROMPT = `You are an experienced AQA A-Level examiner with 10+ years of marking experience across AQA specifications. You have deep knowledge of AQA mark schemes, Assessment Objectives (AOs), level-based marking descriptors, and the standardisation process.
 
