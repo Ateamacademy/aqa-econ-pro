@@ -1,10 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers":
-    "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
-};
+import { requireUser, corsHeaders } from "../_shared/auth.ts";
 
 interface FigureAnalysis {
   figureId: string;
@@ -39,6 +34,8 @@ serve(async (req) => {
   }
 
   try {
+    const auth = await requireUser(req);
+    if (!auth.ok) return auth.response;
     const { paperContent, examBoard, paperTitle } = await req.json();
 
     if (!paperContent || typeof paperContent !== "string") {
