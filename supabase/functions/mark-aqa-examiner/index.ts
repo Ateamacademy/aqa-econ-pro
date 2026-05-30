@@ -174,6 +174,8 @@ serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
   try {
+    const auth = await requireUser(req);
+    if (!auth.ok) return auth.response;
     const payload = await req.json();
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) {
@@ -183,7 +185,8 @@ serve(async (req) => {
       });
     }
 
-    const model = (payload.model as string) || "google/gemini-2.5-pro";
+    const requestedModel = (payload.model as string) || "google/gemini-2.5-pro";
+    const model = ALLOWED_MODELS.has(requestedModel) ? requestedModel : "google/gemini-2.5-pro";
     const userPrompt = buildUserPrompt(payload);
 
     const aiRes = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
