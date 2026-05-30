@@ -1,11 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.1";
-
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers":
-    "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
-};
+import { requireUser, corsHeaders } from "../_shared/auth.ts";
 
 /* ── Difficulty-aware tone instructions ── */
 const TONE_MAP: Record<string, string> = {
@@ -147,6 +142,10 @@ serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
   try {
+    const auth = await requireUser(req);
+    if (!auth.ok) return auth.response;
+    const userId = auth.userId;
+
     const body = await req.json();
     const {
       question,
@@ -157,7 +156,6 @@ serve(async (req) => {
       board = "AQA",
       answerType = "text",
       scenarioId,
-      userId,
       scenarioRubric, // optional: per-scenario rubric components (preferred when provided)
       scenarioRubricPrompt, // optional: pre-rendered prompt block from client
     } = body;
@@ -299,7 +297,7 @@ serve(async (req) => {
     }
 
     // Persist result to database if userId provided
-    if (userId) {
+    {
       const { error: insertErr } = await supabase.from("diagram_marking_results").insert({
         user_id: userId,
         diagram_type: diagramType || "unknown",

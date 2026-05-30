@@ -25,6 +25,27 @@ serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
 
   try {
+    // Require an authenticated caller who is the platform admin.
+    const authHeader = req.headers.get("Authorization") || req.headers.get("authorization");
+    if (!authHeader?.toLowerCase().startsWith("bearer ")) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    const token = authHeader.slice(7).trim();
+    const authClient = createClient(
+      Deno.env.get("SUPABASE_URL") ?? "",
+      Deno.env.get("SUPABASE_ANON_KEY") ?? "",
+      { auth: { persistSession: false } },
+    );
+    const { data: userData, error: userErr } = await authClient.auth.getUser(token);
+    const callerEmail = (userData?.user?.email || "").toLowerCase();
+    if (userErr || !userData?.user?.id || callerEmail !== "swapnil.kumar22@alumni.imperial.ac.uk") {
+      return new Response(JSON.stringify({ error: "Forbidden" }), {
+        status: 403, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     const { email, password } = await req.json();
     const normalized = String(email || "").trim().toLowerCase();
     if (!normalized || !password || String(password).length < 6) {

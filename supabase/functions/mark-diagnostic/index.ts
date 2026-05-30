@@ -1,12 +1,6 @@
 // Diagnostic Calculator · strict marking via Lovable AI Gateway.
 // Board-aware: applies the correct mark scheme convention for the chosen exam board.
-
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers":
-    "authorization, x-client-info, apikey, content-type",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
-};
+import { requireUser, corsHeaders } from "../_shared/auth.ts";
 
 type Board =
   | "aqa" | "edexcel-a" | "edexcel-b" | "ocr" | "cambridge" | "ib"
@@ -315,6 +309,8 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
   try {
+    const auth = await requireUser(req);
+    if (!auth.ok) return auth.response;
     const apiKey = Deno.env.get("LOVABLE_API_KEY");
     if (!apiKey) throw new Error("LOVABLE_API_KEY not configured");
 
