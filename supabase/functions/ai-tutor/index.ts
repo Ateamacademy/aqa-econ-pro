@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { requireUser, corsHeaders } from "../_shared/auth.ts";
+import { requireSubscription } from "../_shared/subscription.ts";
 
 
 const FORMATTING_RULES = `
