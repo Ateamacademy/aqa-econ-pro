@@ -145,6 +145,8 @@ serve(async (req) => {
   try {
     const auth = await requireUser(req);
     if (!auth.ok) return auth.response;
+    const sub = await requireSubscription(auth.email);
+    if (!sub.ok) return sub.response;
     const userId = auth.userId;
 
     const body = await req.json();
