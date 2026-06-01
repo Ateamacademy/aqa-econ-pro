@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { requireUser, corsHeaders } from "../_shared/auth.ts";
+import { requireSubscription } from "../_shared/subscription.ts";
 
 
 const FORMATTING_RULES = `
@@ -511,6 +512,8 @@ serve(async (req) => {
   try {
     const auth = await requireUser(req);
     if (!auth.ok) return auth.response;
+    const sub = await requireSubscription(auth.email);
+    if (!sub.ok) return sub.response;
     const { messages, mode, subject } = await req.json();
     
     // Process messages - convert base64 data URLs to proper format for the model

@@ -7,6 +7,7 @@
 
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { requireUser, corsHeaders } from "../_shared/auth.ts";
+import { requireSubscription } from "../_shared/subscription.ts";
 
 const ALLOWED_MODELS = new Set([
   "google/gemini-2.5-pro",
@@ -176,6 +177,8 @@ serve(async (req) => {
   try {
     const auth = await requireUser(req);
     if (!auth.ok) return auth.response;
+    const sub = await requireSubscription(auth.email);
+    if (!sub.ok) return sub.response;
     const payload = await req.json();
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) {

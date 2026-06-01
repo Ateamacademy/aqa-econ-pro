@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { requireUser, corsHeaders } from "../_shared/auth.ts";
+import { requireSubscription } from "../_shared/subscription.ts";
 
 interface FigureAnalysis {
   figureId: string;
@@ -36,6 +37,8 @@ serve(async (req) => {
   try {
     const auth = await requireUser(req);
     if (!auth.ok) return auth.response;
+    const sub = await requireSubscription(auth.email);
+    if (!sub.ok) return sub.response;
     const { paperContent, examBoard, paperTitle } = await req.json();
 
     if (!paperContent || typeof paperContent !== "string") {

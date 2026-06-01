@@ -1,5 +1,7 @@
 // @ts-nocheck
-import { corsHeaders } from "npm:@supabase/supabase-js@2/cors";
+import { corsHeaders, requireUser } from "../_shared/auth.ts";
+
+
 
 const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
 
@@ -25,6 +27,8 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
 
   try {
+    const auth = await requireUser(req);
+    if (!auth.ok) return auth.response;
     const input: InsightInput = await req.json();
 
     const sys = `You are an encouraging Economics study coach. NEVER guarantee grades. Use phrases like "on track for", "achievable", "within reach". Keep tone emotionally supportive but honest. Output STRICT JSON only — no markdown, no preamble.`;

@@ -4,6 +4,7 @@
 // AI_API_KEY in Supabase secrets · no code change needed.
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
+import { requireSubscription } from "../_shared/subscription.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -425,9 +426,11 @@ Deno.serve(async (req) => {
   const authHeader = req.headers.get("Authorization") ?? "";
   const token = authHeader.replace(/^Bearer\s+/i, "");
   let userId: string | null = null;
+  let userEmail: string | null = null;
   if (token) {
     const { data } = await supabase.auth.getUser(token);
     userId = data.user?.id ?? null;
+    userEmail = data.user?.email ?? null;
   }
   if (!userId) {
     return new Response(JSON.stringify({ error: "auth_required" }), {
@@ -435,6 +438,8 @@ Deno.serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   }
+  const sub = await requireSubscription(userEmail);
+  if (!sub.ok) return sub.response;
 
   // Provider config
   const provider = (Deno.env.get("AI_PROVIDER") ?? "lovable").toLowerCase();
