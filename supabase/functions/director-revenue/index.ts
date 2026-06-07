@@ -51,22 +51,29 @@ serve(async (req) => {
     const since = Math.floor(Date.now() / 1000) - days * 86400;
 
     const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });
+    const warnings: string[] = [];
+    const safe = async <T>(label: string, fn: () => Promise<T>, fallback: T): Promise<T> => {
+      try { return await fn(); } catch (e) {
+        const msg = e instanceof Error ? e.message : String(e);
+        console.error(`[director-revenue] ${label} failed`, msg);
+        warnings.push(`${label}: ${msg}`);
+        return fallback;
+      }
+    };
 
     // Active subs (paginate up to 300)
-    const activeSubs: Stripe.Subscription[] = [];
-    let starting_after: string | undefined;
-    for (let i = 0; i < 3; i++) {
-      const page = await stripe.subscriptions.list({
-        status: "active",
-        limit: 100,
-        starting_after,
-      });
-      activeSubs.push(...page.data);
-      if (!page.has_more) break;
-      starting_after = page.data[page.data.length - 1]?.id;
-    }
+    const activeSubs: Stripe.Subscription[] = await safe("subscriptions.list(active)", async () => {
+      const out: Stripe.Subscription[] = [];
+      let starting_after: string | undefined;
+      for (let i = 0; i < 3; i++) {
+        const page = await stripe.subscriptions.list({ status: "active", limit: 100, starting_after });
+        out.push(...page.data);
+        if (!page.has_more) break;
+        starting_after = page.data[page.data.length - 1]?.id;
+      }
+      return out;
+    }, []);
 
-    // MRR (in major currency units, mixed-currency aggregated naively as base)
     let mrr = 0;
     const productCounts: Record<string, number> = {};
     for (const s of activeSubs) {
@@ -86,31 +93,23 @@ serve(async (req) => {
       }
     }
 
-    // New subscriptions in range
-    const newSubs: Stripe.Subscription[] = [];
-    starting_after = undefined;
-    for (let i = 0; i < 3; i++) {
-      const page = await stripe.subscriptions.list({
-        created: { gte: since },
-        limit: 100,
-        starting_after,
-        status: "all",
-      });
-      newSubs.push(...page.data);
-      if (!page.has_more) break;
-      starting_after = page.data[page.data.length - 1]?.id;
-    }
+    const newSubs: Stripe.Subscription[] = await safe("subscriptions.list(new)", async () => {
+      const out: Stripe.Subscription[] = [];
+      let starting_after: string | undefined;
+      for (let i = 0; i < 3; i++) {
+        const page = await stripe.subscriptions.list({ created: { gte: since }, limit: 100, starting_after, status: "all" });
+        out.push(...page.data);
+        if (!page.has_more) break;
+        starting_after = page.data[page.data.length - 1]?.id;
+      }
+      return out;
+    }, []);
     const newCount = newSubs.length;
-    const cancelledInRange = newSubs.filter(
-      (s) => s.canceled_at && s.canceled_at >= since,
-    ).length;
 
-    // Also check cancellations among any sub
-    const cancelledList = await stripe.subscriptions.list({
-      status: "canceled",
-      limit: 100,
-    });
-    const cancelledRange = cancelledList.data.filter(
+    const cancelledList = await safe("subscriptions.list(canceled)",
+      () => stripe.subscriptions.list({ status: "canceled", limit: 100 }),
+      { data: [] as Stripe.Subscription[] } as any);
+    const cancelledRange = (cancelledList.data as Stripe.Subscription[]).filter(
       (s) => (s.canceled_at ?? 0) >= since,
     ).length;
 
@@ -118,22 +117,19 @@ serve(async (req) => {
       ? Math.round((cancelledRange / (activeSubs.length + cancelledRange)) * 1000) / 10
       : 0;
 
-    // Recent payments / gross revenue in range
-    const charges = await stripe.charges.list({
-      created: { gte: since },
-      limit: 100,
-    });
-    const grossRevenue = charges.data
+    const charges = await safe("charges.list",
+      () => stripe.charges.list({ created: { gte: since }, limit: 100 }),
+      { data: [] as Stripe.Charge[] } as any);
+    const grossRevenue = (charges.data as Stripe.Charge[])
       .filter((c) => c.paid && !c.refunded)
       .reduce((sum, c) => sum + (c.amount ?? 0) / 100, 0);
-    const refunded = charges.data.reduce(
+    const refunded = (charges.data as Stripe.Charge[]).reduce(
       (sum, c) => sum + (c.amount_refunded ?? 0) / 100,
       0,
     );
 
-    // Revenue by day
     const byDay: Record<string, number> = {};
-    for (const c of charges.data) {
+    for (const c of charges.data as Stripe.Charge[]) {
       if (!c.paid || c.refunded) continue;
       const d = new Date(c.created * 1000).toISOString().slice(0, 10);
       byDay[d] = (byDay[d] ?? 0) + (c.amount ?? 0) / 100;
@@ -155,16 +151,23 @@ serve(async (req) => {
         netRevenue: Math.round((grossRevenue - refunded) * 100) / 100,
         productMix: productCounts,
         revenueTrend,
-        currency: charges.data[0]?.currency?.toUpperCase() ?? "USD",
+        currency: (charges.data as Stripe.Charge[])[0]?.currency?.toUpperCase() ?? "GBP",
         timeRangeDays: days,
+        degraded: warnings.length > 0,
+        warnings,
       }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" }, status: 200 },
     );
   } catch (e) {
     const msg = e instanceof Error ? e.message : String(e);
     console.error("[director-revenue] error", msg);
-    return new Response(JSON.stringify({ error: msg }), {
-      status: 500,
+    // Fail-open so the dashboard still loads.
+    return new Response(JSON.stringify({
+      mrr: 0, arr: 0, activeSubs: 0, newSubs: 0, cancelled: 0, churnRate: 0,
+      grossRevenue: 0, refunded: 0, netRevenue: 0, productMix: {}, revenueTrend: [],
+      currency: "GBP", timeRangeDays: 30, degraded: true, warnings: [msg],
+    }), {
+      status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   }
