@@ -49,6 +49,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const HelpCentre = lazy(() => import("./pages/HelpCentre"));
 const FounderDashboard = lazy(() => import("./pages/FounderDashboard"));
 const DirectorDashboard = lazy(() => import("./pages/DirectorDashboard"));
+const DirectorGuard = lazy(() => import("./components/DirectorGuard"));
 const Onboarding = lazy(() => import("./pages/Onboarding"));
 const DiagramTesting = lazy(() => import("./pages/DiagramTesting"));
 const PaperLibrary = lazy(() => import("./pages/PaperLibrary"));
@@ -144,9 +145,9 @@ const App = () => (
               <Route path="/terms" element={<Terms />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/help" element={<HelpCentre />} />
-              <Route path="/founder" element={<FounderDashboard />} />
-              <Route path="/director" element={<DirectorDashboard />} />
-              <Route path="/directorsdashboard" element={<DirectorDashboard />} />
+              <Route path="/founder" element={<DirectorGuard><FounderDashboard /></DirectorGuard>} />
+              <Route path="/director" element={<DirectorGuard><DirectorDashboard /></DirectorGuard>} />
+              <Route path="/directorsdashboard" element={<DirectorGuard><DirectorDashboard /></DirectorGuard>} />
               <Route path="/onboarding" element={<Onboarding />} />
               <Route path="/diagram-testing" element={<DiagramTesting />} />
               <Route path="/paper-library" element={<PaperLibrary />} />

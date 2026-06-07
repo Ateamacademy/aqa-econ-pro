@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
 
-export type AppRole = "student" | "teacher" | "tutor" | "hod" | "admin";
+export type AppRole = "student" | "teacher" | "tutor" | "hod" | "admin" | "director" | "member";
 
 export function useUserRoles() {
   const { user } = useAuth();
@@ -35,6 +35,8 @@ export function useUserRoles() {
   const isStaff = roles.some((r) => ["teacher", "tutor", "hod", "admin"].includes(r));
   const isAdmin = roles.includes("admin");
   const isHod = roles.includes("hod") || isAdmin;
+  const isDirector = roles.includes("director");
+  const isMember = roles.includes("member") || isDirector;
 
-  return { roles, schoolId, loading, isStaff, isAdmin, isHod, refresh };
+  return { roles, schoolId, loading, isStaff, isAdmin, isHod, isDirector, isMember, refresh };
 }
