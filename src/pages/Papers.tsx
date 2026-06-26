@@ -204,10 +204,10 @@ const OCR_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: strin
   { number: 3, code: "H460/03", title: "Themes in Economics",  focus: "Synoptic",       available: true },
 ];
 
-const CAIE_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; duration: string; marks: number; available: boolean }[] = [
-  { number: 1, code: "9708/01", title: "Multiple Choice (AS)",          focus: "Micro & Macro", duration: "1h",    marks: 30, available: true },
-  { number: 2, code: "9708/02", title: "Data Response and Essays (AS)", focus: "AS Core",        duration: "1h 30", marks: 40, available: true },
-  { number: 3, code: "9708/03", title: "Multiple Choice (A2)",          focus: "Advanced",       duration: "1h 15", marks: 30, available: true },
+// CAIE AS-Level = Papers 1 & 2 only. Distinct AS mock set ships in /caie-mocks/.
+const CAIE_AS_LEVEL_PAPERS: { number: 1 | 2; code: string; title: string; focus: string; duration: string; marks: number; available: boolean }[] = [
+  { number: 1, code: "9708/01", title: "Multiple Choice",       focus: "AS Micro & Macro", duration: "1h",    marks: 30, available: true },
+  { number: 2, code: "9708/02", title: "Data Response & Essay", focus: "AS Micro & Macro", duration: "1h 30", marks: 40, available: true },
 ];
 
 const AQA_PAPERS: { number: 1 | 2 | 3; code: string; title: string; focus: string; available: boolean }[] = [
@@ -507,7 +507,8 @@ function WjecPapersList() {
   );
 }
 
-const CAIE_AS_PAPERS: { number: 1 | 2 | 3 | 4; code: string; title: string; focus: string; duration: string; marks: number; available: boolean }[] = [
+// CAIE A-Level = complete 4-paper set (P1/P2 AS + P3/P4 A2). Ships in /caie-as-mocks/.
+const CAIE_A_LEVEL_PAPERS: { number: 1 | 2 | 3 | 4; code: string; title: string; focus: string; duration: string; marks: number; available: boolean }[] = [
   { number: 1, code: "9708/01", title: "Multiple Choice",            focus: "AS Micro & Macro", duration: "1h",      marks: 30, available: true },
   { number: 2, code: "9708/02", title: "Data Response & Essay",      focus: "AS Micro & Macro", duration: "1h 30m",  marks: 40, available: true },
   { number: 3, code: "9708/03", title: "Multiple Choice (A2)",       focus: "A2 Micro & Macro", duration: "1h 15m",  marks: 30, available: true },
@@ -519,25 +520,25 @@ function CaiePapersList() {
     <>
       <BoardList
         title="CAIE A-Level · Papers"
-        description="Paper 1 is now available in the Papers section in the same card format, paired with its full mark scheme across Moderate, Hard, and Advanced."
-        papers={CAIE_PAPERS}
+        description="Full A-Level mock papers (Moderate, Hard, Advanced) in the authentic CAIE format — Paper 1 (9708/01) Multiple Choice, Paper 2 (9708/02) Data Response & Essay, Paper 3 (9708/03) Multiple Choice (A2), and Paper 4 (9708/04) A2 Data Response and Essays — each paired with its full mark scheme."
+        papers={CAIE_A_LEVEL_PAPERS}
         meta={(p) => {
-          const ext = p as typeof CAIE_PAPERS[number];
-          return `${ext.code} · ${ext.focus} · ${ext.duration} · ${ext.marks} marks`;
-        }}
-        paperHref={(p, d) => `/caie-mocks/paper-${p.number}-${d}.pdf`}
-        msHref={(p, d) => `/caie-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
-      />
-      <BoardList
-        title="CAIE A-Level & AS · Papers"
-        description="Full mock papers (Moderate, Hard, Advanced) in the authentic CAIE format — Paper 1 (9708/01) Multiple Choice, Paper 2 (9708/02) Data Response & Essay, Paper 3 (9708/03) Multiple Choice (A2), and Paper 4 (9708/04) A2 Data Response and Essays — each paired with its full mark scheme."
-        papers={CAIE_AS_PAPERS}
-        meta={(p) => {
-          const ext = p as typeof CAIE_AS_PAPERS[number];
+          const ext = p as typeof CAIE_A_LEVEL_PAPERS[number];
           return `${ext.code} · ${ext.focus} · ${ext.duration} · ${ext.marks} marks`;
         }}
         paperHref={(p, d) => `/caie-as-mocks/paper-${p.number}-${d}.pdf`}
         msHref={(p, d) => `/caie-as-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
+      />
+      <BoardList
+        title="CAIE AS-Level · Papers"
+        description="AS-Level mock papers (Moderate, Hard, Advanced) in the authentic CAIE format — Paper 1 (9708/01) Multiple Choice and Paper 2 (9708/02) Data Response & Essay — each paired with its full mark scheme."
+        papers={CAIE_AS_LEVEL_PAPERS}
+        meta={(p) => {
+          const ext = p as typeof CAIE_AS_LEVEL_PAPERS[number];
+          return `${ext.code} · ${ext.focus} · ${ext.duration} · ${ext.marks} marks`;
+        }}
+        paperHref={(p, d) => `/caie-mocks/paper-${p.number}-${d}.pdf`}
+        msHref={(p, d) => `/caie-mocks/mark-scheme-paper-${p.number}-${d}.pdf`}
       />
     </>
   );
