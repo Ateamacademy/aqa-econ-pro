@@ -239,6 +239,17 @@ export const ocrComponent1Topics: Topic[] = [
         examTip: "OCR loves comparison questions: always present both sides. A monopoly may be more dynamically efficient despite being allocatively inefficient.",
       },
       {
+        title: "Natural Monopoly",
+        definition: "A natural monopoly exists where economies of scale are so large that one firm can supply the whole market at a lower average cost than several firms could.",
+        keyTerms: [
+          { term: "Natural Monopoly", definition: "Continuously falling LRAC over the range of market demand · one firm is most efficient" },
+          { term: "Regulation", definition: "Price caps (RPI-X) used because breaking up the firm would sacrifice economies of scale" },
+        ],
+        diagram: "natural_monopoly",
+        explanation: "**Why it arises:** Very high fixed/infrastructure costs (water, rail, energy grids) mean LRAC falls across the whole market, so a single producer minimises average cost.\n\n**Unregulated:** Produces where MR = MC → high price and restricted output (allocatively inefficient).\n**Regulation:** Force P = MC (allocatively efficient, but the firm may make a loss as MC < AC) or P = AC (a fair return, normal profit).\n\n**Evaluation:** Splitting a natural monopoly sacrifices economies of scale, so regulation is usually preferred to introducing competition.",
+        examTip: "Draw continuously falling LRAC with LRMC below it; mark the profit-max (MR=MC), allocatively-efficient (P=MC) and fair-return (P=AC) outputs.",
+      },
+      {
         title: "Oligopoly & Contestable Markets",
         definition: "**Oligopoly**: few dominant firms, interdependent, high barriers. **Contestable markets**: low barriers to entry/exit · even a monopoly behaves competitively.",
         keyTerms: [
@@ -270,6 +281,39 @@ export const ocrComponent1Topics: Topic[] = [
           { term: "Trade Union", definition: "Bargains collectively for higher wages and better conditions" },
         ],
         explanation: "**Competitive labour market:** Wage = MRP. Market clears.\n**Monopsony:** Single buyer pushes wages below MRP → lower employment\n**Trade union:** Pushes wages above equilibrium → may cause unemployment OR counter monopsony power\n\n**NMW:** Classical view = unemployment. Monopsony view = raises wages AND employment. Depends on the market.",
+        diagram: "labour_market",
+      },
+      {
+        title: "Economic Rent & Transfer Earnings",
+        definition: "A factor's pay splits into transfer earnings (the minimum needed to keep it in its present use) and economic rent (any surplus above that).",
+        keyTerms: [
+          { term: "Transfer Earnings", definition: "Minimum payment to keep a factor in its current use · the area under the supply curve" },
+          { term: "Economic Rent", definition: "Earnings above transfer earnings · the area above supply and below the wage" },
+        ],
+        diagram: "economic_rent_transfer_earnings",
+        explanation: "At wage We and employment Qe, total earnings (We × Qe) divide into transfer earnings (under the labour supply curve) and economic rent (between We and the supply curve). The more inelastic the supply of labour, the larger the share that is economic rent (e.g. elite footballers); the more elastic, the more is transfer earnings.",
+        examTip: "Shade both areas and link the size of economic rent to the elasticity of labour supply.",
+      },
+      {
+        title: "Monopsony Employer",
+        definition: "A monopsony is a single (dominant) buyer of labour. It restricts hiring and pays a wage below the competitive level.",
+        keyTerms: [
+          { term: "MCL", definition: "Marginal cost of labour · lies above the supply (ACL) curve for a monopsony" },
+          { term: "Minimum Wage in Monopsony", definition: "Can raise BOTH the wage and employment by countering monopsony power" },
+        ],
+        diagram: "monopsony",
+        explanation: "The monopsony hires where MCL = MRP (at Q₁), below the competitive quantity, and pays the wage read off the ACL curve at Q₁ — below MRP. Because the monopsony already restricts both wages and jobs, a minimum wage or trade union can raise wages AND employment.",
+        examTip: "Draw MCL above ACL; mark the monopsony wage (on ACL at Q₁) below the competitive wage where ACL = MRP.",
+      },
+      {
+        title: "Bilateral Monopoly",
+        definition: "A bilateral monopoly is a labour market with a single buyer (monopsony employer) facing a single seller (monopoly trade union), so the wage is indeterminate.",
+        keyTerms: [
+          { term: "Bargaining Range", definition: "Between the monopsony wage (Wm) and the union's target wage (Wu)" },
+        ],
+        diagram: "bilateral_monopoly",
+        explanation: "Employment is set where MCL = MRP. A monopsony acting alone would force the wage down to ACL at that quantity (Wm); a monopoly union would push it up toward the MRP at that quantity (Wu). The actual wage settles within the Wm–Wu bargaining range, depending on the relative bargaining strength of each side.",
+        examTip: "Draw ACL, MCL, MRP and MRL; mark Qm at MCL = MRP and show the Wm–Wu bargaining range.",
       },
     ],
   },
