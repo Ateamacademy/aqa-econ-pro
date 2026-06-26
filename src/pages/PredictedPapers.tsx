@@ -1657,7 +1657,11 @@ CRITICAL: Do NOT place economics diagram Figure blocks (supply & demand, AD/AS, 
       if (!answer?.trim()) { toast.error("Please write your answer first."); return; }
       setMarkingId(question.id);
 
-      const expectedDiagramType = resolveDiagramType(`${question.text}\n${paperContext}\n${answer}`) ?? "supply_demand";
+      // Resolve the EXPECTED diagram from the question (and its context) only — NOT the
+      // student's answer. A correct answer's incidental wording (e.g. mentioning "tax"
+      // many times in a minimum-wage essay) was hijacking the diagram type, producing an
+      // indirect-tax diagram instead of the price-floor/minimum-wage one the question needs.
+      const expectedDiagramType = resolveDiagramType(`${question.label}\n${question.text}\n${paperContext}`) ?? "supply_demand";
 
       // Predicted papers · load the verbatim board mark scheme parsed from
       // the official Download Solution PDF so the AI grades against the

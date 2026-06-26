@@ -381,6 +381,24 @@ DIAGRAMS · for CAIE essay/"assess" questions a diagram is DESIRED but NOT manda
 MARK TOTAL · mark strictly out of the total stated in the question. CAIE essay/assess questions are out of 8, 12 or 20 — NEVER assume 25.
 `;
 
+const GRADING_ECON_OCR = `
+OCR (H460) MARKING OVERRIDES · these refine the generic guidance above for OCR:
+
+EVALUATION · do NOT under-reward valid evaluation. OCR credits a WIDE range of
+evaluative approaches, so reward any genuine evaluation however it is expressed:
+weighing magnitude/significance, likelihood, short vs long run, the type of
+market/firm, prevailing economic conditions, alternative policies, prioritisation,
+contextual/real-world judgement, or a reasoned "it depends on …".
+- Do NOT require a single rigid template, structure or specific phrasing. An answer
+  that evaluates effectively in its own way must be able to reach the top band even
+  if it does not match a model-answer structure.
+- Reserve middling evaluation marks for answers that merely assert or list without
+  supporting judgement — NOT for answers that evaluate in an unexpected but valid way.
+
+Mark to OCR's levels-of-response descriptors and the question's command word; never
+deduct simply because the answer differs from one prescribed model answer.
+`;
+
 const GRADING_MATHS = `
 You are now in MARKING mode. Mark this maths answer as a REAL Edexcel examiner would.
 
@@ -564,6 +582,7 @@ serve(async (req) => {
       } else {
         systemPrompt += `\n\n${GRADING_ECON}`;
         if (subject === "cambridge") systemPrompt += `\n\n${GRADING_ECON_CAIE}`;
+        if (subject === "ocr") systemPrompt += `\n\n${GRADING_ECON_OCR}`;
       }
     }
 
