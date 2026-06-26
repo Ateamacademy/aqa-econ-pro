@@ -405,6 +405,17 @@ export const caiePaper2Topics: Topic[] = [
         explanation: "**Perfect competition:** P = MC, min AC, normal profit LR. Maximum static efficiency but minimal dynamic efficiency.\n**Monopolistic competition:** P > MC, not min AC, normal profit LR. Product variety but excess capacity.\n**Oligopoly:** Interdependence, non-price competition, possible collusion. May be dynamically efficient.\n**Monopoly:** P > MC, supernormal profit LR. May achieve dynamic efficiency through R&D investment.\n\n**Key evaluation points:**\n- Is the market contestable? Contestability matters more than structure.\n- Is the monopoly a natural monopoly? If so, regulation is preferable to breaking it up.\n- Does supernormal profit actually fund R&D? (Schumpeter vs Hayek debate)",
       },
       {
+        title: "Natural Monopoly",
+        definition: "A natural monopoly exists where economies of scale are so large that a single firm can supply the entire market at a lower average cost than two or more firms could.",
+        keyTerms: [
+          { term: "Natural Monopoly", definition: "LRAC falls across the whole range of market demand · one firm is most efficient" },
+          { term: "Economies of Scale", definition: "Falling LRAC as output rises · the source of the natural monopoly" },
+        ],
+        diagram: "natural_monopoly",
+        explanation: "**Why it arises:** Very high fixed/infrastructure costs and large economies of scale (e.g. water, rail, electricity grids) mean LRAC falls continuously over the relevant range, so average cost is minimised by a single producer.\n\n**Profit-max vs regulation:** Left unregulated, the firm produces where MR = MC, charging a high price and restricting output (allocatively inefficient, P > MC). Regulators may force P = MC (allocatively efficient, but the firm may make a loss as MC < AC) or P = AC (a fair return, normal profit).\n\n**Evaluation:** Breaking up a natural monopoly raises costs (lost economies of scale), so regulation (price caps, RPI-X) is usually preferred to introducing competition.",
+        examTip: "Draw a natural monopoly with continuously falling LRAC and LRMC below it; mark the profit-max (MR=MC), allocatively-efficient (P=MC) and fair-return (P=AC) outputs.",
+      },
+      {
         title: "Labour Market Imperfections",
         definition: "Real labour markets deviate from the competitive model due to monopsony power, trade unions, discrimination, and immobility.",
         keyTerms: [
@@ -416,6 +427,29 @@ export const caiePaper2Topics: Topic[] = [
         formula: "MRP = MPP × MR",
         explanation: "**Competitive labour market:** Wage = MRP, employment at market-clearing level\n**Monopsony:** Wage < MRP, employment below competitive level\n**Trade union effect:** Pushes wage above equilibrium · may cause unemployment OR counter monopsony\n**Bilateral monopoly:** Both sides have market power · outcome depends on bargaining strength\n\n**Minimum wage in monopsony:** Can raise BOTH wages and employment · important for CAIE evaluation",
         examTip: "CAIE Paper 3 often asks about labour market diagrams. Always draw competitive vs monopsony comparison.",
+      },
+      {
+        title: "Economic Rent & Transfer Earnings",
+        definition: "A factor's earnings can be split into transfer earnings (the minimum payment needed to keep it in its current use) and economic rent (any surplus above that).",
+        keyTerms: [
+          { term: "Transfer Earnings", definition: "The minimum needed to keep a factor in its present use · the area UNDER the supply curve" },
+          { term: "Economic Rent", definition: "Earnings above transfer earnings · the area ABOVE supply and below the wage" },
+        ],
+        diagram: "economic_rent_transfer_earnings",
+        explanation: "**Splitting the wage bill:** At wage We and employment Qe, total earnings (We × Qe) divide into transfer earnings (under the labour supply curve) and economic rent (between We and the supply curve).\n\n**Elasticity matters:** The more inelastic the supply of labour, the larger the proportion that is economic rent (e.g. top footballers); the more elastic the supply, the more is transfer earnings.",
+        examTip: "Label both areas explicitly and link the size of economic rent to the elasticity of labour supply.",
+      },
+      {
+        title: "Bilateral Monopoly",
+        definition: "A bilateral monopoly is a labour market with a single buyer of labour (monopsony employer) facing a single seller (monopoly trade union), so the wage is indeterminate.",
+        keyTerms: [
+          { term: "Monopsony", definition: "A single buyer of labour · would set the wage on ACL at Qm (Wm)" },
+          { term: "Monopoly Union", definition: "A single seller of labour · pushes the wage up toward MRP at Qm (Wu)" },
+          { term: "Bargaining Range", definition: "Wm to Wu · the wage is settled by relative bargaining power" },
+        ],
+        diagram: "bilateral_monopoly",
+        explanation: "**Employment:** The level of employment is Qm, where MCL = MRP.\n**The wage is indeterminate:** A monopsony acting alone would force the wage down to ACL at Qm (Wm); a monopoly union would push it up toward the MRP at Qm (Wu). The actual wage lies somewhere in the Wm–Wu bargaining range, depending on the bargaining strength of each side.\n\n**Evaluation:** Unlike pure monopsony, a strong union can raise wages without reducing employment, because the monopsony was already restricting both wages and jobs.",
+        examTip: "Draw ACL, MCL, MRP and MRL, mark Qm at MCL=MRP, then show Wm on ACL and Wu on MRP with the bargaining range between them.",
       },
       {
         title: "Government Microeconomic Intervention (A2)",

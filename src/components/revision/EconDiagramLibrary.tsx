@@ -67,6 +67,8 @@ export type DiagramType =
   | "kinked_demand"
   | "natural_monopoly"
   | "monopsony"
+  | "economic_rent_transfer_earnings"
+  | "bilateral_monopoly"
   | "pollution_permits"
   | "tax_externality"
   | "subsidy_externality"
@@ -2946,6 +2948,59 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     render: (p) => { const { mx, my, pw, ph } = p; const axBot = my + ph; const qX = mx + pw * 0.38; const priceY = my + ph * 0.32; const costY = my + ph * 0.52; return (<><CurvePath d={`M ${mx + 20} ${my + 15} Q ${mx + pw * 0.3} ${my + ph * 0.45} ${mx + pw * 0.55} ${my + ph * 0.6} Q ${mx + pw * 0.75} ${my + ph * 0.7} ${mx + pw - 10} ${my + ph * 0.72}`} color={COLORS.supply} width={2.5} /><Label x={mx + pw - 8} y={my + ph * 0.69} text="LRATC" color={COLORS.supply} size={9} /><CurvePath d={`M ${mx + 20} ${my + 30} Q ${mx + pw * 0.3} ${my + ph * 0.55} ${mx + pw * 0.55} ${my + ph * 0.7} Q ${mx + pw * 0.75} ${my + ph * 0.78} ${mx + pw - 10} ${my + ph * 0.8}`} color={COLORS.shifted} width={2} /><Label x={mx + pw - 8} y={my + ph * 0.78} text="LRMC" color={COLORS.shifted} size={9} /><GLine x1={mx + 10} y1={my + 15} x2={mx + pw - 10} y2={axBot - 15} color={COLORS.demand} width={2.5} /><Label x={mx + pw - 8} y={axBot - 12} text="AR" color={COLORS.demand} size={10} /><GLine x1={mx + 10} y1={my + 15} x2={mx + pw * 0.55} y2={axBot - 15} color={COLORS.area} width={2} /><Label x={mx + pw * 0.57} y={axBot - 12} text="MR" color={COLORS.area} size={10} /><WelfareRegion points={[{ x: mx, y: priceY }, { x: qX, y: priceY }, { x: qX, y: costY }, { x: mx, y: costY }]} fill={COLORS.eq} fillOpacity={0.2} strokeWidth={1.5} label="SNP" /><DashedToAxes x={qX} y={priceY} mx={mx} ph={ph} my={my} color={COLORS.demand} pLabel="p" qLabel="q" /><line x1={mx} y1={costY} x2={qX} y2={costY} stroke={COLORS.supply} strokeWidth={0.8} strokeDasharray="2,2" opacity={0.5} /><text x={mx - 3} y={costY + 3} textAnchor="end" fontSize={8} fontWeight={600} fill={COLORS.supply} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>c</text><PremiumDot x={qX} y={priceY} color={COLORS.demand} label="A" labelPos="tr" /></>); },
   },
 
+  /* ── Economic Rent & Transfer Earnings ── */
+  economic_rent_transfer_earnings: {
+    title: "Economic Rent & Transfer Earnings", xAxis: "Quantity of Labour", yAxis: "Wage Rate",
+    legend: [{ label: "S (supply of labour)", color: COLORS.supply }, { label: "D = MRP", color: COLORS.demand }, { label: "Economic rent", color: COLORS.eq }, { label: "Transfer earnings", color: COLORS.area }],
+    examTips: ["Equilibrium wage We where S = D (MRP)", "Transfer earnings = area UNDER S up to Qe (minimum to keep labour in this use)", "Economic rent = area ABOVE S and BELOW We", "The more inelastic the supply of labour, the larger the economic rent"],
+    render: (p) => {
+      const { mx, my, pw, ph } = p; const pad = 10;
+      const axL = mx + pad + 8, axBot = my + ph - pad, axTop = my + pad, axR = mx + pw - pad;
+      const sL = { x1: axL, y1: axBot, x2: axR, y2: axTop + ph * 0.1 };
+      const dL = { x1: axL, y1: axTop + ph * 0.1, x2: axR, y2: axBot };
+      const e = lineIntersect(sL.x1, sL.y1, sL.x2, sL.y2, dL.x1, dL.y1, dL.x2, dL.y2);
+      return (<>
+        <WelfareRegion points={[{ x: axL, y: e.y }, { x: e.x, y: e.y }, { x: axL, y: axBot }]} fill={COLORS.eq} fillOpacity={0.22} strokeWidth={0} label="Economic rent" labelSize={8} />
+        <WelfareRegion points={[{ x: axL, y: axBot }, { x: e.x, y: e.y }, { x: e.x, y: axBot }]} fill={COLORS.area} fillOpacity={0.22} strokeWidth={0} label="Transfer earnings" labelSize={8} />
+        <GLine {...sL} color={COLORS.supply} width={2.5} /><Label x={sL.x2 - 4} y={sL.y2 - 6} text="S" color={COLORS.supply} anchor="end" />
+        <GLine {...dL} color={COLORS.demand} width={2.5} /><Label x={dL.x2 - 4} y={dL.y2 - 8} text="D = MRP" color={COLORS.demand} anchor="end" />
+        <DashedToAxes x={e.x} y={e.y} mx={mx} ph={ph} my={my} color={COLORS.eq} pLabel="We" qLabel="Qe" />
+        <PremiumDot x={e.x} y={e.y} color={COLORS.eq} label="E" />
+      </>);
+    },
+  },
+
+  /* ── Bilateral Monopoly (monopsony employer vs monopoly union) ── */
+  bilateral_monopoly: {
+    title: "Bilateral Monopoly · Indeterminate Wage", xAxis: "Quantity of Labour", yAxis: "Wage",
+    legend: [{ label: "ACL = S", color: COLORS.supply }, { label: "MCL (MFC)", color: COLORS.shifted }, { label: "MRP = D", color: COLORS.demand }, { label: "MRL", color: COLORS.area }],
+    examTips: ["Employment Qm where MCL = MRP", "Monopsony pushes the wage down to ACL at Qm (Wm)", "A monopoly union pushes the wage up toward MRP at Qm (Wu)", "The wage is indeterminate within the Wm–Wu bargaining range"],
+    render: (p) => {
+      const { mx, my, pw, ph } = p; const pad = 10;
+      const axL = mx + pad + 8, axBot = my + ph - pad, axTop = my + pad, axR = mx + pw - pad;
+      const aclL = { x1: axL, y1: axBot - 5, x2: axR, y2: axTop + ph * 0.35 };
+      const mfcL = { x1: axL, y1: axBot - 5, x2: axL + (axR - axL) * 0.62, y2: axTop };
+      const mrpL = { x1: axL, y1: axTop + ph * 0.1, x2: axR, y2: axBot - ph * 0.05 };
+      const mrlL = { x1: axL, y1: axTop + ph * 0.1, x2: axL + (axR - axL) * 0.6, y2: axBot - ph * 0.05 };
+      const qm = lineIntersect(mfcL.x1, mfcL.y1, mfcL.x2, mfcL.y2, mrpL.x1, mrpL.y1, mrpL.x2, mrpL.y2);
+      const aclSlope = (aclL.y2 - aclL.y1) / (aclL.x2 - aclL.x1);
+      const wmY = aclL.y1 + aclSlope * (qm.x - aclL.x1);
+      const wuY = qm.y;
+      return (<>
+        <GLine {...aclL} color={COLORS.supply} width={2.5} /><Label x={aclL.x2 - 4} y={aclL.y2 - 4} text="ACL = S" color={COLORS.supply} anchor="end" />
+        <GLine {...mfcL} color={COLORS.shifted} width={2.5} /><Label x={mfcL.x2 + 2} y={mfcL.y2 + 8} text="MCL" color={COLORS.shifted} />
+        <GLine {...mrpL} color={COLORS.demand} width={2.5} /><Label x={mrpL.x2 - 4} y={mrpL.y2 - 6} text="MRP = D" color={COLORS.demand} anchor="end" />
+        <GLine {...mrlL} color={COLORS.area} width={2} dashed /><Label x={mrlL.x2 + 2} y={mrlL.y2 + 8} text="MRL" color={COLORS.area} />
+        <line x1={qm.x} y1={axBot} x2={qm.x} y2={wuY} stroke="currentColor" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
+        <text x={qm.x} y={axBot + 12} textAnchor="middle" fontSize={9} fontWeight={700} fill="currentColor" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Qm</text>
+        <rect x={qm.x - 5} y={wuY} width={10} height={wmY - wuY} fill={COLORS.eq} fillOpacity={0.25} />
+        <PremiumDot x={qm.x} y={wuY} color={COLORS.demand} label="Wu" labelPos="tr" />
+        <PremiumDot x={qm.x} y={wmY} color={COLORS.supply} label="Wm" labelPos="br" />
+        <Label x={qm.x + 10} y={(wuY + wmY) / 2} text="Bargaining range" color={COLORS.eq} size={8} />
+      </>);
+    },
+  },
+
   /* ── Monopsony ── */
   monopsony: {
     title: "Monopsony · Dominant Employer", xAxis: "Quantity of Labour", yAxis: "Wage / Costs",
@@ -3081,6 +3136,9 @@ const FAMILY_ALIASES: Record<string, string> = {
   "cost-curves": "cost_curves",
   "labour-market": "labour_market",
   "labor-market": "labour_market",
+  "economic-rent": "economic_rent_transfer_earnings",
+  "transfer-earnings": "economic_rent_transfer_earnings",
+  "bilateral-monopoly": "bilateral_monopoly",
   "ppf-growth": "ppf_growth",
   "comparative-advantage": "comparative_advantage",
   "pollution-permits": "pollution_permits",
@@ -3273,6 +3331,10 @@ const ALIASES: Record<string, string> = {
   "falling_lratc": "natural_monopoly",
   // Monopsony
   "monopsony_labour": "monopsony",
+  "economic_rent": "economic_rent_transfer_earnings",
+  "transfer_earnings": "economic_rent_transfer_earnings",
+  "economic_rent_and_transfer_earnings": "economic_rent_transfer_earnings",
+  "bilateral_monopoly_labour": "bilateral_monopoly",
   "monopsony_diagram": "monopsony",
   "dominant_employer": "monopsony",
   "mcl_acl": "monopsony",
