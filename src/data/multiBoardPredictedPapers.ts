@@ -1410,11 +1410,11 @@ Answer all questions. The marks for each question are shown in brackets [ ]. Qua
 ## Section A · Multiple Choice
 
 Question 1 [1 marks]
-Which of these is most likely to be classed as a free good?
-- A Fresh water from a mountain stream
-- B Bottled water from a shop
-- C Tap water supplied to a home
-- D Rainwater collected in a tank for later sale
+The basic economic problem is that
+- A all resources are owned by the government
+- B wants are unlimited but resources are scarce
+- C prices always rise faster than incomes
+- D firms cannot make a profit
 
 Question 2 [1 marks]
 A bakery uses flour, an oven, a baker and an owner taking risks. Which list correctly identifies the factors of production in the order land, labour, capital, enterprise?
@@ -1913,11 +1913,11 @@ The UK government funds the NHS from taxation. The opportunity cost of a £1 mil
 - D the wages paid to NHS staff employed with the £1 million
 
 Question 10 [1 marks]
-The Human Development Index (HDI) measures development using three indicators. Which of the following is not one of the three indicators?
-- A GDP per capita (gross national income per person)
-- B Life expectancy at birth
-- C Mean and expected years of schooling
-- D The rate of unemployment
+A country's real GDP rises from £1,200bn to £1,260bn over one year. The rate of economic growth over the year is
+- A 0.5%
+- B 5%
+- C 6%
+- D 60%
 
 Question 11 [1 marks]
 Which of the following is most likely to cause long-run economic growth in the UK?
@@ -2091,11 +2091,11 @@ Private MC £45/MWh; External cost £30/MWh; Social MC £75/MWh. To internalise 
 - D £75
 
 Question 4 [1 marks]
-A country specialises in the production of wheat according to the theory of comparative advantage. This means the country
-- A can produce more wheat in total than any other country
-- B has the lowest absolute cost of producing wheat
-- C has the lowest opportunity cost of producing wheat
-- D imports more wheat than it exports
+A government places a tariff on imported steel. A tariff is best described as
+- A a limit on the quantity of steel that can be imported
+- B a tax on imported steel
+- C a subsidy paid to domestic steel producers
+- D a ban on the import of steel
 
 Question 5 [1 marks]
 UK CPI weights / annual price change in 2023: Housing & utilities 29% / +12.6%; Food & drink 12% / +16.5%; Transport 14% / +1.1%; All other categories 45% / +3.2%. The weighted contribution of 'Food & drink' to the headline inflation rate was approximately
@@ -2133,11 +2133,11 @@ Education is under-provided by the free market because it
 - D is a luxury good with low income elasticity of demand
 
 Question 10 [1 marks]
-The Human Development Index (HDI) is often preferred to GDP per capita as a measure of development because
-- A HDI is updated more frequently than GDP
-- B HDI captures health and education as well as income
-- C HDI ignores the distribution of income
-- D HDI is denominated in a single currency
+A country experiences a rise in real GDP but its population grows even faster over the same period. The most likely result is that
+- A real GDP per capita falls
+- B the rate of inflation falls
+- C the country's exports rise
+- D living standards definitely improve for everyone
 
 Question 11 [1 marks]
 Which of the following supply-side policies would most directly raise the long-run productive potential of the UK economy?
@@ -2182,11 +2182,11 @@ Information provision may fail to correct a market failure because
 - D the market failure disappears as soon as information is available
 
 Question 17 [1 marks]
-The law of comparative advantage states that
-- A countries should produce only the goods they can produce with the lowest absolute cost
-- B countries should produce the goods in which they have the lowest opportunity cost and trade for the rest
-- C countries should produce all the goods they consume to protect domestic producers
-- D countries should always run a balance of trade surplus
+When countries specialise and trade with one another, a likely benefit for consumers is
+- A a wider choice of goods and services at lower prices
+- B higher tariffs on imported goods
+- C a fall in the total output of the world economy
+- D a reduction in competition between producers
 
 Question 18 [1 marks]
 £1 in euros: 2015 €1.38; 2017 €1.14; 2020 €1.13; 2023 €1.15. The sharp depreciation of sterling against the euro between 2015 and 2017 is most likely to be associated with
@@ -2290,11 +2290,11 @@ Answer all questions. The marks for each question are shown in brackets [ ]. Qua
 ## Section A · Multiple Choice
 
 Question 1 [1 marks]
-A country experiences negative real GDP growth for two consecutive quarters, a rising unemployment rate and an inflation rate above target. The country is most accurately described as experiencing
-- A an inflationary boom
-- B a demand-side expansion
-- C a supply-side boom
-- D stagflation
+Which of the following is a macroeconomic objective of the UK government?
+- A Maximising the profits of private firms
+- B Keeping price stability with low and stable inflation
+- C Increasing the market share of the largest companies
+- D Reducing the number of firms that pay corporation tax
 
 Question 2 [1 marks]
 Which of the following statements about CPI and the real burden of inflation on low-income households is correct?
@@ -2304,18 +2304,18 @@ Which of the following statements about CPI and the real burden of inflation on 
 - D CPI is calculated only from the spending patterns of the top 10% of the income distribution
 
 Question 3 [1 marks]
-Marginal private cost £20; marginal external cost £8. Free-market quantity Q1; socially optimal quantity Q2. Which statement is correct?
-- A Q1 > Q2, and the free market over-produces the good
-- B Q1 < Q2, and the free market under-produces the good
-- C Q1 = Q2, because external costs do not affect output
-- D Q1 > Q2, only if demand is perfectly elastic
+A government aims to achieve both low unemployment and low inflation. These two objectives can sometimes conflict because
+- A lower unemployment can increase spending and push up the price level
+- B lower unemployment always reduces the price level
+- C inflation has no effect on employment
+- D the two objectives are exactly the same thing
 
 Question 4 [1 marks]
-A country with a comparative advantage in capital-intensive goods chooses to impose a tariff on imported consumer electronics. The most likely long-run consequence is
-- A a permanent increase in the country's real GDP
-- B a reallocation of resources away from the country's most efficient industries
-- C an improvement in the country's terms of trade
-- D an increase in total world output
+A government imposes a tariff on imported consumer electronics to protect domestic producers. A likely consequence of this tariff is
+- A lower prices of consumer electronics for domestic households
+- B a wider choice of electronics for domestic consumers
+- C higher prices and reduced choice for domestic consumers
+- D an automatic increase in total world trade
 
 Question 5 [1 marks]
 Quarterly real GDP / CPI inflation: Q1 +0.6 / +3.1; Q2 +0.1 / +6.5; Q3 −0.2 / +9.4; Q4 −0.4 / +8.7. The data are most consistent with the country experiencing
@@ -2374,11 +2374,11 @@ A UK resident receives £25,000 in dividends from shares in a US company and a U
 - D the dividend in the capital account; the factory in the current account
 
 Question 13 [1 marks]
-The Marshall–Lerner condition states that a depreciation of a country's currency will improve the current account only if
-- A the sum of the price elasticities of demand for exports and imports is greater than one
-- B the price elasticity of demand for imports is less than one
-- C domestic inflation exceeds foreign inflation
-- D the country has a floating exchange rate
+A country's currency depreciates against other currencies. The most likely effect on the country's trade is that
+- A its exports become cheaper abroad and its imports become more expensive
+- B its exports become more expensive abroad and its imports become cheaper
+- C both its exports and its imports become cheaper
+- D there is no effect on the prices of its exports or imports
 
 Question 14 [1 marks]
 Which of the following best describes a criticism of globalisation from the perspective of workers in a developed economy?
@@ -2402,11 +2402,11 @@ Behavioural economics suggests that information provision alone may fail to corr
 - D the marginal cost of information provision is always greater than the marginal benefit
 
 Question 17 [1 marks]
-The 'terms of trade' of a country refers to
-- A the ratio of export prices to import prices
-- B the balance of payments on current account
-- C the balance of trade in goods only
-- D the exchange rate of the country's currency
+A country is said to have a deficit on its balance of trade in goods when
+- A the value of its goods exports is greater than the value of its goods imports
+- B the value of its goods imports is greater than the value of its goods exports
+- C its exchange rate is fixed against other currencies
+- D its government spends more than it raises in tax
 
 Question 18 [1 marks]
 Sterling effective exchange rate index (Jan 2005 = 100): 2007 105; 2009 80; 2015 95; 2017 77; 2024 80. The two largest falls in the index between 2007 and 2017 are most plausibly explained by
@@ -2443,7 +2443,7 @@ Question 21c [6 marks]
 Using the information in Extract 1, analyse how a wage-price spiral could prolong high inflation in the UK.
 
 Question 21di [2 marks]
-Explain what is meant by 'stagflation'.
+Using Extract 1, explain what is meant by stagflation.
 
 Question 21dii [2 marks]
 State two limitations of real GDP as a measure of living standards.
