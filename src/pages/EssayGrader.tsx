@@ -7,9 +7,10 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { PenTool, Lock, Send, Sparkles, RotateCcw, CheckCircle2, FileText, MessageSquare } from "lucide-react";
+import { PenTool, Lock, Send, Sparkles, RotateCcw, CheckCircle2, FileText, MessageSquare, BarChart3 } from "lucide-react";
 import { toast } from "sonner";
 import { RevisionRenderer } from "@/components/revision/RevisionRenderer";
+import { EconDiagramBuilder, type DiagramData } from "@/components/tools/EconDiagramBuilder";
 import { FREE_LIMITS } from "@/lib/plans";
 import { questionTypesBySubject, topicsBySubject } from "@/lib/subjectConfig";
 import { UpgradeModal } from "@/components/UpgradeModal";
@@ -37,6 +38,7 @@ export default function EssayGrader() {
   const [isLoading, setIsLoading] = useState(false);
   const [isGeneratingQ, setIsGeneratingQ] = useState(false);
   const [showUpgrade, setShowUpgrade] = useState(false);
+  const [showDiagram, setShowDiagram] = useState(false);
   const [step, setStep] = useState<1 | 2 | 3>(1);
 
   if (!user) {
@@ -208,6 +210,16 @@ RULES:
                     rows={10}
                     className="resize-none"
                   />
+                  <div className="mt-4">
+                    <Button type="button" variant={showDiagram ? "default" : "outline"} size="sm" className="h-8 text-xs gap-1.5" onClick={() => setShowDiagram(v => !v)}>
+                      <BarChart3 className="h-3.5 w-3.5" /> Insert diagram
+                    </Button>
+                    {showDiagram && (
+                      <div className="mt-3">
+                        <EconDiagramBuilder onSave={(data: DiagramData) => { setEssay(e => e + `\n\n[DIAGRAM: ${data.description}]`); setShowDiagram(false); setStep(2); toast.success("Diagram added to your answer"); }} />
+                      </div>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
 

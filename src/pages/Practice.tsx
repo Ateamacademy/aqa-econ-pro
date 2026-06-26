@@ -7,10 +7,11 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { Brain, Lock, Send, RotateCcw, Settings2, FileQuestion, MessageSquare, CheckCircle2 } from "lucide-react";
+import { Brain, Lock, Send, RotateCcw, Settings2, FileQuestion, MessageSquare, CheckCircle2, BarChart3 } from "lucide-react";
 import { toast } from "sonner";
 import { RevisionRenderer } from "@/components/revision/RevisionRenderer";
 import { MathsMarkdown } from "@/components/predicted-papers/MathsMarkdown";
+import { EconDiagramBuilder, type DiagramData } from "@/components/tools/EconDiagramBuilder";
 import { FREE_LIMITS } from "@/lib/plans";
 import { topicsBySubject, stylesBySubject } from "@/lib/subjectConfig";
 import { UpgradeModal } from "@/components/UpgradeModal";
@@ -40,8 +41,9 @@ export default function Practice() {
   const [isMarking, setIsMarking] = useState(false);
   const [step, setStep] = useState<"generate" | "answer" | "feedback">("generate");
   const [showUpgrade, setShowUpgrade] = useState(false);
+  const [showDiagram, setShowDiagram] = useState(false);
 
-  const reset = () => { setStep("generate"); setGeneratedQ(""); setAnswer(""); setFeedback(""); };
+  const reset = () => { setStep("generate"); setGeneratedQ(""); setAnswer(""); setFeedback(""); setShowDiagram(false); };
 
   useEffect(() => {
     setTopic(topicsBySubject[subject][0]);
@@ -199,6 +201,16 @@ Output ONLY the question text and mark allocation. Nothing else.` }],
                 <CardContent className="p-5 space-y-4">
                   <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground block">Your Answer</label>
                   <Textarea value={answer} onChange={e => setAnswer(e.target.value)} rows={8} placeholder="Type your answer here..." className="resize-none" />
+                  <div>
+                    <Button type="button" variant={showDiagram ? "default" : "outline"} size="sm" className="h-8 text-xs gap-1.5" onClick={() => setShowDiagram(v => !v)}>
+                      <BarChart3 className="h-3.5 w-3.5" /> Insert diagram
+                    </Button>
+                    {showDiagram && (
+                      <div className="mt-3">
+                        <EconDiagramBuilder onSave={(data: DiagramData) => { setAnswer(a => a + `\n\n[DIAGRAM: ${data.description}]`); setShowDiagram(false); toast.success("Diagram added to your answer"); }} />
+                      </div>
+                    )}
+                  </div>
                   <div className="flex gap-2">
                     <Button onClick={markAnswer} disabled={isMarking || !answer.trim()} size="lg" className="flex-1 gap-2 rounded-xl h-12 shadow-lg shadow-primary/20">
                       <Send className="h-4 w-4" /> {isMarking ? "Marking..." : "Submit for Marking"}
