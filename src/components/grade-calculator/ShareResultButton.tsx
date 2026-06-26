@@ -11,9 +11,10 @@ interface Props {
   qualification: string;
   board: string;
   p3Max: number;
+  finalPaperLabel?: string;
 }
 
-export function ShareResultButton({ prediction, targetGrade, qualification, board, p3Max }: Props) {
+export function ShareResultButton({ prediction, targetGrade, qualification, board, p3Max, finalPaperLabel = "Paper 3" }: Props) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [busy, setBusy] = useState(false);
 
@@ -88,7 +89,7 @@ export function ShareResultButton({ prediction, targetGrade, qualification, boar
                 <div className="text-white text-7xl font-mono font-bold">{targetGrade}</div>
               </div>
               <div className="border-l-4 border-white/30 pl-6">
-                <div className="text-white/50 text-2xl uppercase tracking-widest mb-2">Paper 3 needed</div>
+                <div className="text-white/50 text-2xl uppercase tracking-widest mb-2">{finalPaperLabel} needed</div>
                 <div className="text-white text-7xl font-mono font-bold">{needLabel}</div>
               </div>
             </div>

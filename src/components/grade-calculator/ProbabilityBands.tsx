@@ -6,6 +6,7 @@ import type { BoardConfig, Grade, PredictionResult } from "@/lib/gradeCalculator
 interface Props {
   prediction: PredictionResult;
   config: BoardConfig;
+  finalPaperLabel?: string;
 }
 
 function probabilityFor(risk: PredictionResult["risk"], kind: "likely" | "stretch" | "risk") {
@@ -32,7 +33,7 @@ function p3RangeFor(needed: number, p3Max: number, kind: "likely" | "stretch" | 
   return `${lo}–${hi}/${p3Max}`;
 }
 
-export function ProbabilityBands({ prediction, config }: Props) {
+export function ProbabilityBands({ prediction, config, finalPaperLabel = "Paper 3" }: Props) {
   const p3Max = config.paperMax[2];
   const grades = config.grades;
   const likelyIdx = grades.indexOf(prediction.likelyGrade);
@@ -95,7 +96,7 @@ export function ProbabilityBands({ prediction, config }: Props) {
               <span className="font-mono text-xs text-muted-foreground">~{b.prob}%</span>
             </div>
             <div className="mt-2 text-[11px] text-muted-foreground">
-              Paper 3: <span className="font-mono text-foreground">{b.range}</span>
+              {finalPaperLabel}: <span className="font-mono text-foreground">{b.range}</span>
             </div>
           </motion.div>
         );

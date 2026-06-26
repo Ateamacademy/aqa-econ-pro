@@ -70,7 +70,10 @@ export default function GradeCalculator() {
   const [paper2, setPaper2] = useState(0);
   const [p3Sim, setP3Sim] = useState<number | null>(null);
   const isAs = qualification === "AS-Level";
-  const finalPaperLabel = isAs ? "Paper 2" : "Paper 3";
+  // CAIE A-Level packs 4 components into 3 slots: the solved slot is components 31 + 41,
+  // i.e. "Papers 3 & 4" (/90), not a single "Paper 3".
+  const isCaieALevel = qualification === "A-Level" && board === "CAIE";
+  const finalPaperLabel = isAs ? "Paper 2" : isCaieALevel ? "Papers 3 & 4" : "Paper 3";
 
   // Reset target grade if qualification changes
   useEffect(() => {
@@ -149,7 +152,7 @@ export default function GradeCalculator() {
             Your post-exam command centre
           </h1>
           <p className="text-muted-foreground max-w-2xl text-sm md:text-base">
-            Estimate your overall grade from Papers 1 &amp; 2, see exactly what Paper 3 needs to look like, and get a
+            Estimate your overall grade from Papers 1 &amp; 2, see exactly what {finalPaperLabel} needs to look like, and get a
             personalised improvement plan.
           </p>
         </motion.div>
@@ -319,16 +322,17 @@ export default function GradeCalculator() {
               <>
                 <div className="grid md:grid-cols-2 gap-5">
                   <GradeThermometer prediction={prediction} targetGrade={targetGrade} grades={config.grades} />
-                  <Paper3RequirementCard prediction={prediction} config={config} targetGrade={targetGrade} />
+                  <Paper3RequirementCard prediction={prediction} config={config} targetGrade={targetGrade} finalPaperLabel={finalPaperLabel} />
                 </div>
 
-                <ProbabilityBands prediction={prediction} config={config} />
+                <ProbabilityBands prediction={prediction} config={config} finalPaperLabel={finalPaperLabel} />
 
                 <WhatIfSlider
                   p3Score={simulatedP3}
                   p3Max={config.paperMax[2]}
                   onChange={setP3Sim}
                   simulated={simulated}
+                  finalPaperLabel={finalPaperLabel}
                 />
 
                 <GradeRescuePanel
@@ -336,6 +340,7 @@ export default function GradeCalculator() {
                   targetGrade={targetGrade}
                   p3Max={config.paperMax[2]}
                   rescueText={insightsQ.data?.rescuePlan}
+                  finalPaperLabel={finalPaperLabel}
                 />
 
                 <AIInsightFeed insights={insightsQ.data} loading={insightsQ.isLoading} />
@@ -361,9 +366,10 @@ export default function GradeCalculator() {
                     qualification={qualification}
                     board={board}
                     p3Max={config.paperMax[2]}
+                    finalPaperLabel={finalPaperLabel}
                   />
                   <span className="text-[11px] text-muted-foreground">
-                    Generates an image for socials — projected grade, target, Paper 3 needed.
+                    Generates an image for socials — projected grade, target, {finalPaperLabel} needed.
                   </span>
                 </div>
 

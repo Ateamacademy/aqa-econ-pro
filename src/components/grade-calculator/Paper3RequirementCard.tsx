@@ -5,13 +5,14 @@ interface Props {
   prediction: PredictionResult;
   config: BoardConfig;
   targetGrade: Grade;
+  finalPaperLabel?: string;
 }
 
-export function Paper3RequirementCard({ prediction, config, targetGrade }: Props) {
+export function Paper3RequirementCard({ prediction, config, targetGrade, finalPaperLabel = "Paper 3" }: Props) {
   const p3Max = config.paperMax[2];
   return (
     <div className="rounded-2xl border border-border bg-card p-5">
-      <h3 className="text-sm font-semibold text-foreground mb-4">Paper 3 marks needed</h3>
+      <h3 className="text-sm font-semibold text-foreground mb-4">{finalPaperLabel} marks needed</h3>
       <div className="space-y-2">
         {config.grades.map((g) => {
           const needed = prediction.p3RequiredByGrade[g];

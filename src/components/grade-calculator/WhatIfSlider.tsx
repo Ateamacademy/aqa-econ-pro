@@ -7,13 +7,14 @@ interface Props {
   p3Max: number;
   onChange: (v: number) => void;
   simulated: PredictionResult;
+  finalPaperLabel?: string;
 }
 
-export function WhatIfSlider({ p3Score, p3Max, onChange, simulated }: Props) {
+export function WhatIfSlider({ p3Score, p3Max, onChange, simulated, finalPaperLabel = "Paper 3" }: Props) {
   return (
     <div className="rounded-2xl border border-border bg-card p-5">
       <div className="flex items-baseline justify-between mb-1">
-        <h3 className="text-sm font-semibold text-foreground">What if Paper 3 = </h3>
+        <h3 className="text-sm font-semibold text-foreground">What if {finalPaperLabel} = </h3>
         <motion.span
           key={p3Score}
           initial={{ scale: 0.9, opacity: 0.6 }}
@@ -23,7 +24,7 @@ export function WhatIfSlider({ p3Score, p3Max, onChange, simulated }: Props) {
           {p3Score}/{p3Max}
         </motion.span>
       </div>
-      <p className="text-xs text-muted-foreground mb-4">Drag to simulate different Paper 3 outcomes.</p>
+      <p className="text-xs text-muted-foreground mb-4">Drag to simulate different {finalPaperLabel} outcomes.</p>
       <Slider value={[p3Score]} min={0} max={p3Max} step={1} onValueChange={(v) => onChange(v[0])} />
       <div className="mt-4 flex items-center justify-between">
         <span className="text-xs text-muted-foreground">Resulting grade</span>

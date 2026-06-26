@@ -55,10 +55,12 @@ const aLevelBoards: Record<ExamBoard, Omit<BoardConfig, "qualification" | "grade
   CAIE: {
     board: "CAIE",
     // CAIE 9708 — Option AX (components 11 + 21 + 31 + 41), boundaries /180.
-    // Engine maps: P1 = component 11 (/30), P2 = 21 + 31 (/90), P3 = component 41 (/60).
+    // Engine maps: P1 = component 11 (/30), P2 = component 21 (/60), solved slot =
+    // components 31 + 41, i.e. "Papers 3 & 4" (/90). Total /180 is unchanged, so the
+    // /180 boundaries below stay correct; only the per-slot maxima are reordered.
     // PREDICTED 2026 boundaries from 4 published series (June 2022, June 2023,
     // June 2024 [verified], Nov 2024 [verified]).
-    paperMax: [30, 90, 60],
+    paperMax: [30, 60, 90],
     boundaries: { ...CAIE_A_LEVEL_PREDICTION.predicted },
   },
   WJEC: {

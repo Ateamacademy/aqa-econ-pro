@@ -7,9 +7,10 @@ interface Props {
   targetGrade: Grade;
   p3Max: number;
   rescueText?: string;
+  finalPaperLabel?: string;
 }
 
-export function GradeRescuePanel({ prediction, targetGrade, p3Max, rescueText }: Props) {
+export function GradeRescuePanel({ prediction, targetGrade, p3Max, rescueText, finalPaperLabel = "Paper 3" }: Props) {
   if (prediction.onTrack) return null;
   const need = prediction.p3RequiredForTarget;
   const impossible = need === -1;
@@ -30,13 +31,13 @@ export function GradeRescuePanel({ prediction, targetGrade, p3Max, rescueText }:
       </p>
       {impossible ? (
         <p className="text-sm text-muted-foreground">
-          A {targetGrade} is not mathematically reachable from Paper 3 alone. Focus on maximising your Paper 3 score —
+          A {targetGrade} is not mathematically reachable from {finalPaperLabel} alone. Focus on maximising your {finalPaperLabel} score —
           aim for the next achievable boundary up.
         </p>
       ) : (
         <p className="text-sm text-foreground">
           A <span className="font-mono font-bold text-primary">{targetGrade}</span> remains achievable with
-          approximately <span className="font-mono font-bold">{need}/{p3Max}</span> on Paper 3.
+          approximately <span className="font-mono font-bold">{need}/{p3Max}</span> on {finalPaperLabel}.
         </p>
       )}
       {rescueText && (
