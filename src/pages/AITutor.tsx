@@ -22,7 +22,12 @@ type Msg = { role: "user" | "assistant"; content: string };
 
 /* ─── Topic tree grouped into Micro / Macro ─── */
 function buildTopicTree(topics: string[]) {
+  // Topics that must always be Macro even though they contain micro keywords like
+  // "demand"/"supply" (e.g. "Aggregate Demand & Aggregate Supply", "Fiscal, Monetary
+  // & Supply-Side Policies"). Checked first so the micro filter below can't grab them.
+  const macroOverride = /aggregate (demand|supply)|fiscal|monetary|supply-side/i;
   const micro = topics.filter((t) =>
+    !macroOverride.test(t) &&
     /demand|supply|elast|market|fail|extern|public good|merit|interven|compet|labour|wage|cost|revenue|surplus|contest|business|structure|mono/i.test(t)
   );
   const macro = topics.filter((t) => !micro.includes(t));

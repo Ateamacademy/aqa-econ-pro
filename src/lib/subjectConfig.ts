@@ -221,8 +221,7 @@ export const questionTypesBySubject: Record<Subject, string[]> = {
   ],
   "cambridge": [
     "1-mark MCQ", "2-mark calculate/define", "4-mark explain",
-    "6-mark analyse with diagram", "8-mark evaluate", "20-mark data response evaluate",
-    "25-mark essay",
+    "6-mark analyse", "8-mark evaluate", "12-mark assess", "20-mark assess",
   ],
   "aqa-gcse": [
     "1-mark define", "2-mark explain", "4-mark analyse",
