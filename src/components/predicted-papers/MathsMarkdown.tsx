@@ -517,9 +517,10 @@ function stripLineReferences(text: string): string {
     // "lines 5-8" or "lines 5–8" standalone
     .replace(/\blines?\s+\d+[\s–\-·]+\d+/gi, "")
     .replace(/\bline\s+\d+\b/gi, "")
-    // Remove em-dashes and en-dashes used as separators (" · ", " – ", " - " between words)
+    // Remove en-dashes / middots used as separators (" · ", " – " between words).
+    // NOTE: do NOT strip a space-surrounded hyphen " - " here — it is almost always an
+    // arithmetic minus sign (e.g. "Profit = TR - TC", "(X - M)") and must be preserved.
     .replace(/\s+[·–]\s+/g, " ")
-    .replace(/\s+-\s+-?\s*/g, " ")
     // Remove leading dashes on lines
     .replace(/^[\s]*[-·–]+\s*/gm, "")
     // Remove horizontal rules (--- or more)
@@ -529,8 +530,18 @@ function stripLineReferences(text: string): string {
     .trim();
 }
 
+/**
+ * Escape currency dollar signs (e.g. "$5", "$10") so remark-math does not treat a pair
+ * of them as inline LaTeX delimiters — which would italicise and merge the text between
+ * them. Genuine math ($$...$$ blocks and inline $x=y$ with no adjacent digit) is left
+ * untouched, since only a "$" immediately followed by a digit is escaped.
+ */
+function escapeCurrencyDollars(text: string): string {
+  return text.replace(/\$(?=\d)/g, () => "\\$");
+}
+
 export function MathsMarkdown({ children, className, suppressDiagrams = false }: MathsMarkdownProps) {
-  const cleaned = stripLineReferences(children);
+  const cleaned = escapeCurrencyDollars(stripLineReferences(children));
   // First extract figure charts
   const figSegments = extractFigureBlocks(cleaned);
 
