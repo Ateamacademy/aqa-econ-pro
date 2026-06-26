@@ -510,7 +510,7 @@ function WjecPapersList() {
 const CAIE_AS_PAPERS: { number: 1 | 2 | 3 | 4; code: string; title: string; focus: string; duration: string; marks: number; available: boolean }[] = [
   { number: 1, code: "9708/01", title: "Multiple Choice",            focus: "AS Micro & Macro", duration: "1h",      marks: 30, available: true },
   { number: 2, code: "9708/02", title: "Data Response & Essay",      focus: "AS Micro & Macro", duration: "1h 30m",  marks: 40, available: true },
-  { number: 3, code: "9708/03", title: "Data Response and Essays",   focus: "AS Core",          duration: "1h 30m",  marks: 40, available: true },
+  { number: 3, code: "9708/03", title: "Multiple Choice (A2)",       focus: "A2 Micro & Macro", duration: "1h 15m",  marks: 30, available: true },
   { number: 4, code: "9708/04", title: "Data Response and Essays",   focus: "A2 Micro & Macro", duration: "2h 15m",  marks: 70, available: true },
 ];
 
@@ -530,7 +530,7 @@ function CaiePapersList() {
       />
       <BoardList
         title="CAIE A-Level & AS · Papers"
-        description="Full mock papers (Moderate, Hard, Advanced) in the authentic CAIE format — Paper 1 (9708/01) Multiple Choice, Paper 2 (9708/02) Data Response & Essay, Paper 3 (9708/03) Data Response and Essays, and Paper 4 (9708/04) A2 Data Response and Essays — each paired with its full mark scheme."
+        description="Full mock papers (Moderate, Hard, Advanced) in the authentic CAIE format — Paper 1 (9708/01) Multiple Choice, Paper 2 (9708/02) Data Response & Essay, Paper 3 (9708/03) Multiple Choice (A2), and Paper 4 (9708/04) A2 Data Response and Essays — each paired with its full mark scheme."
         papers={CAIE_AS_PAPERS}
         meta={(p) => {
           const ext = p as typeof CAIE_AS_PAPERS[number];

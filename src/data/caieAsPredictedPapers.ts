@@ -53,13 +53,13 @@ const PAPERS: AsPaperSpec[] = [
   {
     num: 3,
     code: "9708/03",
-    title: "Data Response and Essays",
-    totalMarks: 40,
-    duration: "1 hour 30 minutes",
+    title: "Multiple Choice (A2)",
+    totalMarks: 30,
+    duration: "1 hour 15 minutes",
     descriptions: {
-      Moderate: "CAIE AS Paper 3. Data response plus structured essay questions covering AS Micro & Macro core content.",
-      Hard:     "CAIE AS Paper 3. Demanding data-response and essay tasks with sharper command words and tighter mark schemes.",
-      Advanced: "CAIE AS Paper 3. Top-band data response and essays across full AS Micro & Macro under exam conditions.",
+      Moderate: "CAIE A2 Paper 3. 30 multiple-choice questions on A2 Micro & Macro content — more analytical than Paper 1.",
+      Hard:     "CAIE A2 Paper 3. Demanding A2 multiple-choice with tighter distractors across market structures, costs/revenue, labour and trade.",
+      Advanced: "CAIE A2 Paper 3. Top-band A2 multiple-choice with full A2 Micro & Macro coverage under exam conditions.",
     },
   },
   {
@@ -87,7 +87,7 @@ export const caieAsPredictedPapers: PredictedPaper[] = PAPERS.flatMap((p) =>
     id: `caie-as${p.num}-${t.letter}`,
     subject: "cambridge",
     paper: `as-${p.num}`,
-    title: `AS Paper ${p.num} · Set ${t.letter.toUpperCase()}`,
+    title: `${p.num <= 2 ? "AS" : "A2"} Paper ${p.num} · Set ${t.letter.toUpperCase()}`,
     description: p.descriptions[t.label],
     totalMarks: p.totalMarks,
     content: placeholderContent(p),

@@ -2384,9 +2384,14 @@ Do NOT include any other headings, preamble, or commentary outside these three s
                   const groupLabel = (key: string) => {
                     if (key.startsWith("as-")) {
                       const n = key.replace("as-", "");
+                      // CAIE Papers 3 & 4 are A2 (only CAIE produces as-3/as-4; AQA AS
+                      // has only as-1/as-2). Papers 1 & 2 are AS.
+                      const isA2 = n === "3" || n === "4";
                       // Paper 2 across AS boards is Macro; Paper 1 is Micro.
                       const focus = n === "2" ? "Macroeconomics" : "Microeconomics";
-                      return { title: `AS Paper ${n}`, subtitle: `AS-Level · ${focus}` };
+                      return isA2
+                        ? { title: `A2 Paper ${n}`, subtitle: "A2 · A-Level" }
+                        : { title: `AS Paper ${n}`, subtitle: `AS-Level · ${focus}` };
                     }
                     return { title: `Paper ${key}`, subtitle: "A-Level" };
                   };
