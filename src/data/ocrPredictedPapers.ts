@@ -155,7 +155,7 @@ Question 1a [2 marks]
 Explain what is meant by a 'negative externality of consumption'.
 
 Question 1b [4 marks]
-Explain, using an appropriate diagram, the likely effect of the Default Tariff Cap on the UK domestic energy supply market.
+Explain, using an appropriate diagram, the likely effect of an increase in wholesale gas prices on the UK domestic energy supply market.
 
 Question 1c(i) [2 marks]
 Refer to Fig. 1. Calculate, to one decimal place, the percentage change in the average annual household dual-fuel bill between January 2020 and October 2022.
@@ -406,7 +406,7 @@ A continuing concern is the UK's weak productivity growth · often described as 
 | Japan | 0.9 | 0.1 |
 | South Korea | 2.1 | 1.8 |
 
-The UK's fiscal position has also deteriorated. Government borrowing rose sharply during the pandemic, and public sector net debt reached 98% of GDP by 2024. The government's headline interest payments on debt more than doubled between 2021 and 2023, partly reflecting higher interest rates and the fact that about a quarter of UK government debt is index-linked.
+The UK's fiscal position has also deteriorated. Government borrowing rose sharply during the pandemic, and public sector net debt reached 98% of GDP by 2024. Governments borrow by selling bonds; the bond yield is the rate of interest the government must pay to lenders who buy its bonds, and it tends to rise when lenders see greater risk in holding a country's debt. The government's headline interest payments on debt more than doubled between 2021 and 2023, partly reflecting higher interest rates and the fact that about a quarter of UK government debt is index-linked.
 
 **Table 1 · Government debt (% of GDP) and ten-year government bond yields (%), 2024**
 
@@ -925,11 +925,11 @@ Which of the following is NOT a barrier to entry in a market?
 - D. The existence of many substitute goods
 
 Question 8 [1 marks]
-Under the Cournot model of oligopoly, firms compete by choosing:
-- A. Advertising budgets
-- B. Output quantities simultaneously
-- C. Prices simultaneously
-- D. Whether to collude
+Which of the following is an example of tacit (informal) collusion rather than formal collusion?
+- A. Firms forming a cartel with a written agreement to fix output quotas
+- B. Firms holding secret meetings to agree a common selling price
+- C. Firms independently following the price changes of a market leader without any agreement
+- D. Firms signing a contract to share the market into exclusive regions
 
 Question 9 [1 marks]
 A consumer's total utility from consuming 4 units of a good is 80 utils. Consuming a 5th unit reduces total utility to 78 utils. This suggests:
@@ -1203,11 +1203,11 @@ In a closed economy with no government, the equilibrium level of national income
 - D. The marginal propensity to consume equals 1
 
 Question 3 [1 marks]
-Which theory of the firm assumes that managers maximise their own utility, subject to a minimum profit constraint imposed by shareholders?
-- A. Baumol's revenue maximisation model
-- B. Cyert and March's behavioural theory
-- C. Williamson's managerial discretion model
-- D. Neoclassical profit maximisation
+The principal-agent problem in a large company arises because:
+- A. Consumers have less information about a product than the firm that sells it
+- B. Managers (agents) may pursue their own objectives rather than maximising profit for the shareholders (principals) who own the firm
+- C. Shareholders have perfect information about the day-to-day decisions made by managers
+- D. The government regulates the prices that firms are allowed to charge
 
 Question 4 [1 marks]
 A negative production externality generates a marginal external cost (MEC) of £6 per unit. The marginal private cost (MPC) is £10 and marginal private benefit (MPB) equals price. If the market price is £14, the socially optimal Pigouvian tax per unit is:
@@ -1266,11 +1266,11 @@ A natural monopoly operating at socially optimal output with price set at margin
 - D. Produce at minimum average cost
 
 Question 12 [1 marks]
-Okun's law describes the empirical relationship between:
-- A. Changes in inflation and changes in the output gap
-- B. Changes in real wages and unemployment
-- C. Changes in unemployment and changes in real GDP
-- D. Nominal and real interest rates
+Other things being equal, a sustained increase in an economy's rate of real economic growth is most likely to:
+- A. Increase cyclical unemployment as firms reduce output
+- B. Have no effect on the level of unemployment in the economy
+- C. Reduce unemployment as firms expand output and hire more workers
+- D. Reduce unemployment only if the labour force is shrinking
 
 Question 13 [1 marks]
 A monopsonist in a labour market pays a wage equal to W1 and employs Q1 workers, where the marginal cost of labour (MCL) equals the marginal revenue product (MRP). Imposition of a legal minimum wage set between W1 and the competitive equilibrium wage will:

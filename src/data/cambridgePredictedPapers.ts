@@ -588,11 +588,11 @@ Which measure provides the most accurate international comparison of living stan
 - D GNI at current market exchange rates
 
 Question 17 [1 marks]
-The concept of hysteresis in unemployment refers to:
-- A short-term frictional unemployment
-- B seasonal fluctuations in employment
-- C how temporary unemployment can become persistent
-- D unemployment arising from technological change only
+Workers in a declining industry lose their jobs and find that their existing skills are no longer demanded by expanding industries. Which type of unemployment does this best illustrate?
+- A cyclical unemployment
+- B frictional unemployment
+- C seasonal unemployment
+- D structural unemployment
 
 Question 18 [1 marks]
 An economy is operating beyond its full-employment level of output. What is most likely to be true of its short-run aggregate supply curve at this point?
@@ -609,7 +609,7 @@ Which factor is most likely to shift the short-run aggregate supply curve to the
 - D an increase in taxes on firms
 
 Question 20 [1 marks]
-The primary aim of quantitative easing (QE) is to:
+The primary aim of expansionary monetary policy is to:
 - A raise tax revenue
 - B lower long-term interest rates and stimulate aggregate demand
 - C directly reduce the money supply
@@ -658,18 +658,18 @@ Two countries with different production possibility curves engage in free trade 
 - D It is a horizontal line.
 
 Question 27 [1 marks]
-A country's terms of trade deteriorate following a depreciation of its currency. Under which condition will its current account nevertheless improve?
-- A demand for exports and imports is highly inelastic
-- B the Marshall–Lerner condition is satisfied
-- C imports exceed exports significantly
-- D the currency is pegged after depreciation
+A government imposes a tariff on imported steel. What is the most likely effect on the domestic market for steel?
+- A domestic price falls and domestic output rises
+- B domestic price rises and domestic output rises
+- C domestic price rises and domestic output falls
+- D domestic price falls and domestic output falls
 
 Question 28 [1 marks]
-When the sum of the price elasticities of demand for exports and imports is greater than one, a currency depreciation will improve the current account. This is:
-- A the Laffer curve
-- B the theory of purchasing power parity
-- C the Marshall–Lerner condition
-- D interest rate parity
+Which is most likely to be an advantage of free trade between countries?
+- A greater protection for domestic infant industries
+- B increased consumer choice and lower prices
+- C a guaranteed improvement in the current account
+- D an increase in government tariff revenue
 
 Question 29 [1 marks]
 A country has a large deficit on its current account of the balance of payments. The errors and omissions balance is zero. Which entry in the financial account would balance this deficit?
@@ -752,10 +752,10 @@ Question 2b [12 marks]
 Assess whether firms selling goods with a relatively price-inelastic demand always benefit more than firms selling goods with a relatively price-elastic demand.
 
 Question 3a [8 marks]
-**OR** Explain, with examples, how negative externalities of production can cause market failure in a free market economy such as the United States.
+**OR** Explain, with examples, how an indirect tax and a subsidy can each be used by a government to change the allocation of resources in a free market economy such as the United States.
 
 Question 3b [12 marks]
-Assess whether indirect taxation is the most effective way for a government to reduce negative externalities of production.
+Assess whether imposing a maximum price is the most effective way for a government to make a good more affordable for consumers.
 
 ## Section C · Answer one question
 
@@ -827,10 +827,10 @@ Assess whether subsidies for renewable energy are a more effective long-term res
 ## Section B · Answer one question
 
 Question 2a [8 marks]
-**EITHER** Explain, with examples, how negative externalities of consumption and negative externalities of production differ, and consider why they can both lead to market failure in a free market economy.
+**EITHER** Explain, with examples, how an indirect tax and government regulation can each be used to reduce the consumption of a demerit good in a free market economy.
 
 Question 2b [12 marks]
-The European Union's Emissions Trading System (EU ETS) allows firms to buy and sell permits to emit carbon dioxide. Assess whether a tradable permits scheme is a more effective policy than a carbon tax in reducing negative externalities.
+The German government has used both subsidies and direct provision to support its energy sector. Assess whether subsidies are a more effective form of government intervention than direct provision.
 
 Question 3a [8 marks]
 **OR** With the help of a diagram, explain the difference between a shift in the supply curve for labour and a movement along the supply curve for labour, and consider the factors that may cause a shift in the supply of labour for a particular occupation.
@@ -844,10 +844,10 @@ Question 4a [8 marks]
 **EITHER** Using an AD/AS diagram, explain how a simultaneous rise in oil prices and a fall in consumer confidence in the EU might affect real GDP and the price level, and consider which effect is likely to be greater.
 
 Question 4b [12 marks]
-Assess the extent to which a central bank faces a trade-off between reducing inflation and avoiding a rise in unemployment.
+Assess the extent to which a rise in unemployment in an economy impacts inflation.
 
 Question 5a [8 marks]
-**OR** Explain the difference between the current account and the financial account of the balance of payments, and consider how a persistent current account deficit might be financed.
+**OR** Explain the components of the current account of the balance of payments, and consider how a current account deficit might arise.
 
 Question 5b [12 marks]
 In 2018 the United States imposed tariffs on imports from China to reduce its current account deficit. Assess the extent to which protectionist policies are an effective way to correct a persistent current account deficit.
@@ -899,7 +899,7 @@ Question 1c [2 marks]
 Explain, using examples from the data, two reasons why real GDP growth may not be a reliable measure of changes in living standards in the US.
 
 Question 1d [4 marks]
-Consider whether persistent core inflation of 4.8% alongside unemployment of 3.6% indicates that the US economy is operating above its potential output.
+Consider whether persistent core inflation of 4.8% alongside unemployment of 3.6% indicates that the US economy is experiencing high levels of aggregate demand.
 
 Question 1e [6 marks]
 Assess the extent to which the appreciation of the US dollar between 2022 and 2023 would have helped the Federal Reserve reduce US inflation.
@@ -930,10 +930,10 @@ Question 4b [12 marks]
 Assess the extent to which supply-side policies aimed at raising productivity are the most effective way for a developed economy such as the UK to achieve stable, non-inflationary growth.
 
 Question 5a [8 marks]
-**OR** Explain the difference between a fixed exchange rate, a managed floating exchange rate and a freely floating exchange rate, and consider one advantage of each system for a developed economy.
+**OR** Explain the determination of a floating exchange rate, and consider how the floating exchange rate may be changed.
 
 Question 5b [12 marks]
-The Eurozone uses a single currency whilst the UK maintains a floating pound sterling. Assess whether joining a single currency area is always beneficial for a developed economy's macroeconomic stability.
+Assess whether a depreciation of its floating exchange rate is always beneficial for a developed economy.
 `,
   },
 

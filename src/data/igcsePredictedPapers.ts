@@ -50,11 +50,11 @@ Which market structure has many buyers, many sellers and identical products?
 - D Monopolistic competition
 
 Question 6 [1 marks]
-A rise in consumers' incomes causes an increase in demand for cars. What type of good is a car?
-- A Free good
-- B Giffen good
-- C Inferior good
-- D Normal good
+A rise in consumer incomes is most likely to cause:
+- A An increase in supply of cars
+- B A decrease in demand for cars
+- C A decrease in supply of cars
+- D An increase in demand for cars
 
 Question 7 [1 marks]
 What will cause the supply curve of wheat to shift to the right?
@@ -708,7 +708,7 @@ Question 5b [4 marks]
 Explain two reasons why a country may introduce trade barriers.
 
 Question 5c [6 marks]
-Analyse how a customs union differs from a free-trade area.
+Analyse how an increase in trade barriers between two countries may affect their economies.
 
 Question 5d [8 marks]
 Discuss whether or not leaving a trading bloc benefits a country.`,
