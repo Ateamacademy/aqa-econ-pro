@@ -363,11 +363,11 @@ Which item is included in GNI but not in GDP?
 - D exports of manufactured goods
 
 Question 17 [1 marks]
-An economy has a natural rate of unemployment of 5%. The actual unemployment rate is currently 4%. What does this most likely indicate?
-- A demand-deficient unemployment exists
-- B the output gap is negative
-- C there is inflationary pressure in the economy
-- D real wages are falling
+An economy experiences a significantly low level of unemployment, below what is desired. What is the most likely consequence of this?
+- A an increase in demand-deficient unemployment
+- B a fall in economic growth
+- C a rise in inflationary pressure
+- D a fall in real incomes
 
 Question 18 [1 marks]
 Why is the long-run aggregate supply (LRAS) curve vertical in the classical model?
@@ -384,7 +384,7 @@ Which of the following would most likely shift the long-run aggregate supply cur
 - D a rise in corporation tax
 
 Question 20 [1 marks]
-A country's money supply grows persistently faster than its real output. According to the quantity theory of money, the most likely consequence is:
+A country's money supply grows persistently faster than its real output. The most likely consequence is:
 - A deflation
 - B disinflation
 - C inflation
@@ -398,18 +398,18 @@ What is the relationship between a government's annual fiscal deficit and its na
 - D The national debt is annual; the fiscal deficit is long term.
 
 Question 22 [1 marks]
-In a simple closed economy with no government, the marginal propensity to consume is 0.8. What is the value of the expenditure multiplier?
-- A 1.25
-- B 2
-- C 4
-- D 5
+In the circular flow of income, which of the following is a withdrawal (leakage) from the economy?
+- A household consumption of domestically produced goods
+- B household saving
+- C government spending on public services
+- D investment by firms
 
 Question 23 [1 marks]
-Which relationship does the short-run Phillips curve illustrate?
-- A a negative relationship between inflation and unemployment
-- B a positive relationship between inflation and unemployment
-- C an inverse relationship between wages and employment
-- D a positive relationship between interest rates and inflation
+A government uses expansionary fiscal policy to reduce cyclical unemployment. What may be a consequence?
+- A higher inflation
+- B higher structural unemployment
+- C lower wages
+- D lower interest rates
 
 Question 24 [1 marks]
 A country's currency appreciates significantly on the foreign exchange markets. What is the most likely immediate effect?
@@ -440,11 +440,11 @@ A country's import price index rises from 100 to 115 while its export price inde
 - D worsen by 4.3%
 
 Question 28 [1 marks]
-Which of the following best describes the J-curve effect?
-- A the immediate improvement of the current account following a depreciation
-- B the initial worsening of the current account before subsequent improvement following a depreciation
-- C the effect of tariffs on the exchange rate
-- D the relationship between inflation and the exchange rate
+A country's currency depreciates. How does this affect the country's exports?
+- A export prices fall, and export demand falls
+- B export prices fall, and export demand rises
+- C exports remain unchanged
+- D export prices rise, and export demand falls
 
 Question 29 [1 marks]
 Which of the following would be recorded as a credit item in the current account of a country's balance of payments?
