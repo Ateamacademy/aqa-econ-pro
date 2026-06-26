@@ -1956,6 +1956,12 @@ question.marks === 15 ? `**For this 15-mark question:**
   - Apply to context with data references (2-3 marks)
   - At least 2 developed chains of analysis (3-4 marks)
 - **Evaluation:** Up to 7 marks (if applicable)` :
+question.marks === 12 ? `**For this 12-mark "assess" question (mark out of 12):**
+- **Analysis (knowledge, application, reasoning):** Up to 8 marks — accurate definitions, application to context, and developed chains of reasoning. NOTE: advantages AND disadvantages both count as ANALYSIS here, not as evaluation.
+- **Evaluation:** Up to 4 marks — awarded ONLY for weighing the arguments and reaching a prioritised, justified judgement (see the CAIE evaluation rule below).` :
+question.marks === 20 ? `**For this 20-mark "assess" question (mark out of 20):**
+- **Analysis (knowledge, application, reasoning):** Up to 12 marks — at least two developed, two-sided chains of reasoning applied to the context.
+- **Evaluation:** Up to 8 marks — weighing, prioritisation and a justified judgement (see the CAIE evaluation rule below).` :
 `**For this 25-mark question:**
 - **KAA (Knowledge, Application, Analysis):** Up to 12 marks
   - Define key terms (1-2 marks)
@@ -1969,6 +1975,15 @@ question.marks === 15 ? `**For this 15-mark question:**
   - Final judgement with justification (3-4 marks)
 
 **DIAGRAM in 25-mark essays:** If a diagram is used, award up to 4 KAA marks for it: correct axes (1), correct curves (1), correct shift (1), correct analysis of diagram (1).`}
+${isCambridge ? `
+APPLY CAIE 9708 METHODOLOGY (not AQA). Mark strictly out of ${question.marks} — the maximum is ${question.marks}; never mark out of any other total (CAIE essay/assess questions are out of 8, 12 or 20, never 25).
+
+CAIE EVALUATION RULE: stating a disadvantage or "the other side" is ANALYSIS, not evaluation. Evaluation marks require weighing the arguments against each other AND considering at least one of magnitude/likelihood/time frame/economic conditions/alternative policies, then a prioritised, justified judgement. Do NOT inflate the evaluation band for a mere pros-and-cons list.
+
+CONCLUSION CHECK (apply all four, report each): (1) the conclusion follows from the analysis without contradiction or fallacy; (2) it prioritises rather than restates the arguments; (3) it is not mere repetition; (4) a reasoned, qualified "it depends on X" conclusion is FULLY creditable and must NOT be penalised for lacking a single definitive verdict.
+
+DIAGRAMS: for CAIE essay/assess questions a diagram is DESIRED but NOT mandatory — do NOT cap or deduct marks for a missing diagram when the written analysis is sufficient.
+` : ""}
 
 === DIAGRAM MARKING CHECKLIST (apply ALL 5 criteria if a diagram is present) ===
 1. **AXES** (1 mark): Both axes labelled correctly? (Price/Quantity, Price Level/Real GDP, etc.)

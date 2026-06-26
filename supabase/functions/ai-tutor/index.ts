@@ -362,6 +362,25 @@ QUALITY CALIBRATION:
 - Be HONEST with marks. A vague 2-sentence answer to a 25-marker should score 3-5/25, not 10/25.
 `;
 
+const GRADING_ECON_CAIE = `
+CAMBRIDGE (CAIE 9708) MARKING OVERRIDES · these REPLACE the generic guidance above wherever they conflict:
+
+EVALUATION (AO4) · the most common over-marking error:
+- Stating a disadvantage, drawback, or "the other side" is ANALYSIS, not evaluation. Presenting advantages and then disadvantages does NOT by itself earn evaluation marks.
+- Evaluation requires going BEYOND both sides: weighing them against each other AND considering at least one of — magnitude/significance, likelihood, time frame (short vs long run), prevailing economic conditions, or alternative policies — then reaching a PRIORITISED, justified judgement.
+- Do NOT award the top evaluation band to an answer that merely lists pros and cons.
+
+CONCLUSION CHECK · apply ALL four every time, in order, and report each:
+1. Does the conclusion follow from the analysis (no contradiction or fallacy)?
+2. Does it prioritise/weigh the arguments rather than restate them?
+3. Is it more than repetition of earlier points?
+4. A reasoned, qualified "it depends on X" conclusion is FULLY creditable — never penalise it for lacking a single definitive verdict.
+
+DIAGRAMS · for CAIE essay/"assess" questions a diagram is DESIRED but NOT mandatory. Do NOT cap the mark or deduct for a missing diagram when the written analysis is sufficient. Credit a diagram as a route to analysis marks, never as a prerequisite. This OVERRIDES any diagram requirement in the calibration ladder above.
+
+MARK TOTAL · mark strictly out of the total stated in the question. CAIE essay/assess questions are out of 8, 12 or 20 — NEVER assume 25.
+`;
+
 const GRADING_MATHS = `
 You are now in MARKING mode. Mark this maths answer as a REAL Edexcel examiner would.
 
@@ -544,6 +563,7 @@ serve(async (req) => {
         systemPrompt += `\n\n${GRADING_CHEMISTRY}`;
       } else {
         systemPrompt += `\n\n${GRADING_ECON}`;
+        if (subject === "cambridge") systemPrompt += `\n\n${GRADING_ECON_CAIE}`;
       }
     }
 
