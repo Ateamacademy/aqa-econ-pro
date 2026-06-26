@@ -2108,67 +2108,54 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     render: (p) => {
       const { mx, my, pw, ph } = p;
       const pad = 10;
-      const axBot = my + ph;
+      // Local data→pixel mapping (q ∈ [0,QMAX], value ∈ [0,VMAX]).
+      const QMAX = 10, VMAX = 10;
+      const plotL = mx + pad + 12, plotR = mx + pw - pad;
+      const plotB = my + ph - 4, plotT = my + pad;
+      const toX = (q: number) => plotL + (q / QMAX) * (plotR - plotL);
+      const toY = (v: number) => plotB - (v / VMAX) * (plotB - plotT);
 
-      // AR (Demand): red, downward sloping
-      const arL = { x1: mx + pad, y1: my + pad + 15, x2: mx + pw - pad, y2: axBot - pad - 10 };
-      // MR: red, steeper (same intercept, hits x-axis at ~55% width)
-      const mrL = { x1: mx + pad, y1: my + pad + 15, x2: mx + pw * 0.55, y2: axBot - pad - 10 };
+      // Parametric cost family: AC(q) = α(q-q*)² + β, and MC = d(TC)/dq (with TC = q·AC)
+      // passes through AC exactly at its minimum q*. This GUARANTEES MC cuts ATC at the
+      // ATC minimum and the profit area sits between AR and AC.
+      const alpha = 0.12, qStar = 5, beta = 2.5;
+      const acFn = (q: number) => alpha * (q - qStar) * (q - qStar) + beta;
+      const mcFn = (q: number) => 0.36 * q * q - 2.4 * q + 5.5; // = α(q-q*)(3q-q*)+β expanded
+      // AR linear; MR has twice the slope and the same intercept.
+      const arB = 9, arM = -0.7;
+      const arFn = (q: number) => arB + arM * q;
+      const mrFn = (q: number) => arB + 2 * arM * q;
 
-      // MC: blue, U-shaped curve rising steeply
-      const mcX0 = mx + pw * 0.18, mcY0 = my + ph * 0.58;
-      const mcX1 = mx + pw * 0.32, mcY1 = my + ph * 0.72;
-      const mcX2 = mx + pw * 0.42, mcY2 = my + ph * 0.52;
-      const mcX3 = mx + pw * 0.58, mcY3 = my + pad + 5;
-      const mcPath = `M ${mcX0} ${mcY0} Q ${mcX1 - 5} ${mcY1} ${mcX1 + 10} ${mcY1 - 5} Q ${mcX2 - 5} ${mcY2 + 20} ${mcX2} ${mcY2} Q ${mcX2 + 15} ${mcY2 - 25} ${mcX3} ${mcY3}`;
+      // Profit max MR=MC → 0.36q² - q - 3.5 = 0 (positive root)
+      const qm = (1 + Math.sqrt(1 + 4 * 0.36 * 3.5)) / (2 * 0.36);
+      const pm = arFn(qm), acm = acFn(qm), mcm = mcFn(qm);
+      // Revenue max: MR = 0
+      const qRev = arB / (-2 * arM);
+      const pRev = arFn(qRev);
+      // Sales max: AR = AC (larger root, on the rising AC limb) → normal profit
+      const qSales = (0.5 + Math.sqrt(0.25 + 4 * alpha * 3.5)) / (2 * alpha);
+      const pSales = arFn(qSales);
 
-      // ATC: blue, U-shaped, wider & shallower than MC
-      const atcX0 = mx + pad + 5, atcY0 = my + pad + 10;
-      const atcMidX = mx + pw * 0.48, atcMidY = my + ph * 0.58;
-      const atcEndX = mx + pw * 0.78, atcEndY = my + ph * 0.32;
-      const atcPath = `M ${atcX0} ${atcY0} Q ${mx + pw * 0.2} ${my + ph * 0.48} ${atcMidX} ${atcMidY} Q ${mx + pw * 0.62} ${atcMidY + 5} ${atcEndX} ${atcEndY}`;
+      const samplePts = (fn: (q: number) => number) =>
+        Array.from({ length: 61 }, (_, i) => {
+          const q = 0.4 + (i / 60) * (QMAX - 0.8);
+          const v = fn(q);
+          if (v < 0 || v > VMAX) return null;
+          return `${toX(q).toFixed(1)},${toY(v).toFixed(1)}`;
+        }).filter(Boolean).join(" ");
+      const mcPts = samplePts(mcFn), acPts = samplePts(acFn);
 
-      // === Key points ===
-      // Profit max: MC = MR intersection
-      const mcMrInt = lineIntersect(
-        mcX1 + 10, mcY1 - 5, mcX3, mcY3,
-        mrL.x1, mrL.y1, mrL.x2, mrL.y2
-      );
-      // Price at profit max: read up to AR
-      const arSlope = (arL.y2 - arL.y1) / (arL.x2 - arL.x1);
-      const profitPriceY = arL.y1 + arSlope * (mcMrInt.x - arL.x1);
-
-      // Revenue max: MR = 0 (MR hits x-axis)
-      const revMaxX = mrL.x2;
-      const revMaxPriceY = arL.y1 + arSlope * (revMaxX - arL.x1);
-
-      // Sales max: AR = ATC intersection (approximate · use right portion of ATC)
-      const salesMaxInt = lineIntersect(
-        atcMidX, atcMidY, atcEndX, atcEndY,
-        arL.x1, arL.y1, arL.x2, arL.y2
-      );
-
-      // ATC cost at profit-max quantity (for supernormal profit region)
-      const atcAtQ = (() => {
-        // Approximate ATC y at mcMrInt.x using the ATC curve's two segments
-        const t = (mcMrInt.x - atcX0) / (atcEndX - atcX0);
-        if (t <= 0.5) {
-          const tt = t / 0.5;
-          return atcY0 + 2 * tt * (1 - tt) * (my + ph * 0.48) + tt * tt * atcMidY - (1 - tt) * (1 - tt) * atcY0 + (1 - tt) * (1 - tt) * atcY0;
-        }
-        // Simple linear interp on second segment
-        const tt = (mcMrInt.x - atcMidX) / (atcEndX - atcMidX);
-        return atcMidY + tt * (atcEndY - atcMidY);
-      })();
+      const arL = { x1: toX(0), y1: toY(arFn(0)), x2: toX(QMAX), y2: toY(arFn(QMAX)) };
+      const mrL = { x1: toX(0), y1: toY(mrFn(0)), x2: toX(qRev), y2: toY(0) };
 
       return (
         <>
-          {/* Supernormal Profit bounded region */}
+          {/* Supernormal profit · between AR (pm) and AC (acm) from 0 to qm */}
           <rect
-            x={mx + 10}
-            y={profitPriceY}
-            width={mcMrInt.x - mx - 10}
-            height={atcAtQ - profitPriceY}
+            x={plotL}
+            y={toY(pm)}
+            width={toX(qm) - plotL}
+            height={toY(acm) - toY(pm)}
             fill="#22c55e"
             fillOpacity={0.15}
             stroke="#22c55e"
@@ -2177,8 +2164,8 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             strokeDasharray="4 2"
           />
           <text
-            x={(mx + 10 + mcMrInt.x) / 2}
-            y={(profitPriceY + atcAtQ) / 2 + 3}
+            x={(plotL + toX(qm)) / 2}
+            y={(toY(pm) + toY(acm)) / 2 + 3}
             fill="#22c55e"
             fontSize={8}
             fontWeight={700}
@@ -2190,32 +2177,32 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
 
           {/* AR (Demand) · red */}
           <GLine {...arL} color={COLORS.supply} width={2.5} />
-          <Label x={arL.x2 + 2} y={arL.y2 - 6} text="A" color={COLORS.supply} size={10} />
+          <Label x={arL.x2 - 2} y={arL.y2 - 6} text="AR=D" color={COLORS.supply} size={10} anchor="end" />
 
           {/* MR · red */}
           <GLine {...mrL} color={COLORS.supply} width={2.5} />
           <Label x={mrL.x2 - 4} y={mrL.y2 + 14} text="MR" color={COLORS.supply} size={10} />
 
-          {/* MC · blue curve */}
-          <CurvePath d={mcPath} color={COLORS.demand} width={2.5} />
-          <Label x={mcX3 - 8} y={mcY3 - 6} text="MC" color={COLORS.demand} size={10} />
+          {/* MC · blue (parametric · cuts ATC at its minimum) */}
+          <polyline points={mcPts} fill="none" stroke={COLORS.demand} strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" />
+          <Label x={toX(QMAX) - 2} y={toY(mcFn(QMAX)) + 2} text="MC" color={COLORS.demand} size={10} anchor="end" />
 
-          {/* ATC · blue curve */}
-          <CurvePath d={atcPath} color={COLORS.demand} width={2.5} />
-          <Label x={atcEndX + 4} y={atcEndY + 4} text="ATC" color={COLORS.demand} size={10} />
+          {/* ATC · blue (parametric) */}
+          <polyline points={acPts} fill="none" stroke={COLORS.demand} strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" opacity={0.85} />
+          <Label x={toX(QMAX) + 2} y={toY(acFn(QMAX)) + 4} text="ATC" color={COLORS.demand} size={10} />
 
           {/* Profit max: MC=MR → (q, p) */}
-          <DashedToAxes x={mcMrInt.x} y={profitPriceY} mx={mx} ph={ph} my={my} color="currentColor" pLabel="p" qLabel="q" />
-          <PremiumDot x={mcMrInt.x} y={profitPriceY} label="Profit Max" tooltipText="Price read from AR at MC=MR quantity" color={COLORS.supply} />
-          <PremiumDot x={mcMrInt.x} y={mcMrInt.y} label="MC=MR" tooltipText="Profit maximisation: MC = MR" color={COLORS.demand} />
+          <DashedToAxes x={toX(qm)} y={toY(pm)} mx={mx} ph={ph} my={my} color="currentColor" pLabel="p" qLabel="q" />
+          <PremiumDot x={toX(qm)} y={toY(pm)} label="Profit Max" tooltipText="Price read from AR at MC=MR quantity" color={COLORS.supply} />
+          <PremiumDot x={toX(qm)} y={toY(mcm)} label="MC=MR" tooltipText="Profit maximisation: MC = MR" color={COLORS.demand} />
 
           {/* Revenue max: MR=0 → (q₁, p₁) */}
-          <DashedToAxes x={revMaxX} y={revMaxPriceY} mx={mx} ph={ph} my={my} color="currentColor" pLabel="p₁" qLabel="q₁" />
-          <PremiumDot x={revMaxX} y={revMaxPriceY} label="Rev Max" tooltipText="Revenue maximisation: MR = 0" color={COLORS.supply} />
+          <DashedToAxes x={toX(qRev)} y={toY(pRev)} mx={mx} ph={ph} my={my} color="currentColor" pLabel="p₁" qLabel="q₁" />
+          <PremiumDot x={toX(qRev)} y={toY(pRev)} label="Rev Max" tooltipText="Revenue maximisation: MR = 0" color={COLORS.supply} />
 
           {/* Sales max: AR=ATC → (q₂, p₂) */}
-          <DashedToAxes x={salesMaxInt.x} y={salesMaxInt.y} mx={mx} ph={ph} my={my} color="currentColor" pLabel="p₂" qLabel="q₂" />
-          <PremiumDot x={salesMaxInt.x} y={salesMaxInt.y} label="Sales Max" tooltipText="Sales maximisation: AR = ATC (normal profit)" color={COLORS.demand} />
+          <DashedToAxes x={toX(qSales)} y={toY(pSales)} mx={mx} ph={ph} my={my} color="currentColor" pLabel="p₂" qLabel="q₂" />
+          <PremiumDot x={toX(qSales)} y={toY(pSales)} label="Sales Max" tooltipText="Sales maximisation: AR = ATC (normal profit)" color={COLORS.demand} />
         </>
       );
     },
@@ -2361,25 +2348,50 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     render: (p) => {
       const { mx, my, pw, ph } = p;
       const pad = 10;
-      const cx = mx + pw * 0.45;
-      // U-shaped ATC
-      const atcPath = `M ${mx + pad + 20} ${my + pad + 20} Q ${cx - 15} ${my + ph * 0.72} ${mx + pw - pad - 10} ${my + pad + 30}`;
-      // U-shaped AVC (below ATC, converging at high output)
-      const avcPath = `M ${mx + pad + 25} ${my + pad + 60} Q ${cx - 5} ${my + ph * 0.78} ${mx + pw - pad - 10} ${my + pad + 50}`;
-      // MC (steep U-shape, crossing both at their minima)
-      const mcPath = `M ${mx + pad + 35} ${my + ph - pad - 30} Q ${cx - 30} ${my + ph * 0.82} ${cx - 10} ${my + ph * 0.65} Q ${cx + 20} ${my + ph * 0.38} ${mx + pw - pad - 15} ${my + pad}`;
+      const QMAX = 10, VMAX = 10;
+      const plotL = mx + pad + 12, plotR = mx + pw - pad;
+      const plotB = my + ph - 4, plotT = my + pad;
+      const toX = (q: number) => plotL + (q / QMAX) * (plotR - plotL);
+      const toY = (v: number) => plotB - (v / VMAX) * (plotB - plotT);
+
+      // Parametric cost family. AVC(q)=a(q-qa)²+b (U-shaped); MC=d(TVC)/dq with TVC=q·AVC
+      // passes through AVC at its minimum qa. ATC=AVC+AFC (AFC=FC/q); MC also passes
+      // through ATC at its minimum (general MC-vs-ATC property). So MC is a single convex
+      // U that cuts BOTH AVC and ATC at their minima by construction.
+      const a = 0.13, qa = 3.5, b = 2, FC = 5;
+      const avcFn = (q: number) => a * (q - qa) * (q - qa) + b;
+      const mcFn = (q: number) => 0.39 * q * q - 1.82 * q + 3.5925; // = a(q-qa)(3q-qa)+b
+      const atcFn = (q: number) => avcFn(q) + FC / q;
+
+      const samplePts = (fn: (q: number) => number, q0 = 0.5) =>
+        Array.from({ length: 81 }, (_, i) => {
+          const q = q0 + (i / 80) * (QMAX - q0 - 0.3);
+          const v = fn(q);
+          if (v < 0.2 || v > VMAX) return null;
+          return `${toX(q).toFixed(1)},${toY(v).toFixed(1)}`;
+        }).filter(Boolean).join(" ");
+      const mcPts = samplePts(mcFn), avcPts = samplePts(avcFn), atcPts = samplePts(atcFn, 0.7);
+
+      // ATC minimum (numeric) for the crossing marker; AVC minimum is exactly (qa, b).
+      let qAtcMin = qa, atcMinV = Infinity;
+      for (let q = qa; q <= QMAX; q += 0.02) { const v = atcFn(q); if (v < atcMinV) { atcMinV = v; qAtcMin = q; } }
+
+      const qGap = 6; // where the AFC gap (ATC − AVC) is shown
 
       return (
         <>
-          <CurvePath d={mcPath} color={COLORS.supply} gradientId="grad-supply" width={3} glow="glow-red" />
-          <Label x={mx + pw - pad - 5} y={my + pad + 8} text="MC" color={COLORS.supply} />
-          <CurvePath d={atcPath} color={COLORS.demand} gradientId="grad-demand" width={2.5} glow="glow-blue" />
-          <Label x={mx + pw - pad} y={my + pad + 40} text="ATC" color={COLORS.demand} />
-          <CurvePath d={avcPath} color={COLORS.shifted} gradientId="grad-shifted" width={2} />
-          <Label x={mx + pw - pad} y={my + pad + 58} text="AVC" color={COLORS.shifted} />
-          {/* AFC indication */}
-          <GLine x1={mx + pad + 30} y1={my + pad + 25} x2={mx + pad + 30} y2={my + pad + 64} color={COLORS.lras} dashed width={1} />
-          <Label x={mx + pad + 34} y={my + pad + 48} text="AFC" color={COLORS.lras} size={8} />
+          <polyline points={mcPts} fill="none" stroke={COLORS.supply} strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" />
+          <Label x={toX(6.4)} y={toY(mcFn(6.4)) - 6} text="MC" color={COLORS.supply} />
+          <polyline points={atcPts} fill="none" stroke={COLORS.demand} strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" />
+          <Label x={toX(QMAX) + 2} y={toY(atcFn(QMAX)) - 3} text="ATC" color={COLORS.demand} />
+          <polyline points={avcPts} fill="none" stroke={COLORS.shifted} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+          <Label x={toX(QMAX) + 2} y={toY(avcFn(QMAX)) + 12} text="AVC" color={COLORS.shifted} />
+          {/* AFC gap (ATC − AVC) */}
+          <line x1={toX(qGap)} y1={toY(atcFn(qGap))} x2={toX(qGap)} y2={toY(avcFn(qGap))} stroke={COLORS.lras} strokeWidth={1} strokeDasharray="3 2" />
+          <Label x={toX(qGap) + 4} y={(toY(atcFn(qGap)) + toY(avcFn(qGap))) / 2} text="AFC" color={COLORS.lras} size={8} />
+          {/* MC cuts AVC and ATC at their minimum points */}
+          <circle cx={toX(qa)} cy={toY(b)} r={3} fill={COLORS.shifted} />
+          <circle cx={toX(qAtcMin)} cy={toY(atcMinV)} r={3} fill={COLORS.demand} />
         </>
       );
     },
