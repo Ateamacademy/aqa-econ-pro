@@ -962,7 +962,7 @@ H460/01 Mark Scheme June 2026
 **Knowledge and understanding**
 
 * subsidy: payment to producers that lowers marginal cost and encourages greater output
-* CfD: government guarantees a 'strike price' per MWh; pays the difference if wholesale price is lower; receives the difference if higher
+* CfD: a type of government subsidy supporting low-carbon electricity generation (a basic understanding as a subsidy is sufficient; the precise strike-price mechanism is not required)
 * negative externalities of production: social costs (CO₂, air pollution) > private costs
 
 **Application**
@@ -4197,7 +4197,7 @@ H460/02 · Predicted Paper 2 (Advanced) · Mark Scheme
 
  Evaluation · free trade may not benefit all participants
 
--  Gains from trade are distributed unevenly · some workers, firms and regions lose even as the country as a whole gains (Stolper–Samuelson).
+-  Gains from trade are distributed unevenly · some workers, firms and regions lose even as the country as a whole gains.
 -  Infant industry argument: developing countries may need temporary protection before they can compete globally.
 -  Primary-commodity-dependent economies (e.g. Argentina) face volatile export earnings and the Prebisch–Singer hypothesis of declining terms of trade over time.
 -  Without safety nets, structural adjustment causes persistent unemployment in declining industries.

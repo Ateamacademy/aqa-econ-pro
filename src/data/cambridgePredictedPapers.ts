@@ -161,7 +161,7 @@ When the general price level falls, aggregate demand rises partly because the re
 Question 20 [1 marks]
 Which action would be considered contractionary monetary policy?
 - A reducing the base interest rate
-- B quantitative easing
+- B the central bank buying government bonds
 - C the central bank selling government bonds
 - D lowering commercial bank reserve requirements
 

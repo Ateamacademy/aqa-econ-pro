@@ -491,12 +491,12 @@ Question                                 Answer                                 
            AO2 (max 3):
             • Depreciation makes exports cheaper in foreign currency (1);
               imports dearer in domestic currency (1).
-            • If Marshall–Lerner condition holds (|PEDx| + |PEDm| > 1),
-              current account improves (1).
+            • If the demand for exports and the demand for imports are elastic,
+              the current account improves (1).
             • Quantity of exports rises, quantity of imports falls; net exports
               (X–M) rises (1).
            AO3 (max 2):
-            • J-curve effect: in the short run, the current account may
+            • In the short run, the current account may
               worsen before improving (1) because contracts and demand
               take time to adjust to new prices (1). Alternatively: if demand
               for imports is highly inelastic (e.g. essential raw materials),

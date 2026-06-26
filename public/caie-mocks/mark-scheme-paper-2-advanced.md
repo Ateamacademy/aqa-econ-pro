@@ -359,8 +359,8 @@ Question                                 Answer                                 
             • Public goods suffer the free-rider problem: consumers don't
               reveal true preferences (1).
            AO2 (max 3):
-            • Merit goods: market fails because MSB > MPB; private
-              demand reflects only private benefit (1).
+            • Merit goods: market fails because of underconsumption due to
+              information failure, low incomes, etc (1).
             • Public goods: market fails because private firms cannot
               profitably supply · non-excludability means no way to
               charge (1).
