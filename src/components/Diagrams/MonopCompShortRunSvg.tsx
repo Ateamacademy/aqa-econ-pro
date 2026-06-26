@@ -9,7 +9,9 @@ const SHORT_RUN_PATHS = {
 function MonopCompShortRunSvgInner() {
   const q1x = 395;
   const p1y = 292;
-  const ac1y = 510;
+  // AC curve value at Q1 (on the shared AC Bezier at x=395). Was 510, which sat on the
+  // MC curve, making the profit box AR-to-MC; 543 puts the box bottom on AC (AR-to-AC).
+  const ac1y = 543;
   const profitY = 408;
 
   return (
