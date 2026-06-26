@@ -24,7 +24,9 @@ function lracY(t: number): number {
   // Shifted quadratic: cost = a*(t - tMin)^2 + cMin
   const tMin = 0.35;
   const cMin = 0.25; // minimum cost (normalised)
-  const a = 2.8;
+  // a kept low enough that cost stays below the clamp across the plotted range,
+  // otherwise the right end flattens into an (atypical) plateau at cost = 1.
+  const a = 1.8;
   const cost = a * (t - tMin) * (t - tMin) + cMin;
   // Clamp to 0-1
   return Math.min(Math.max(cost, 0), 1);

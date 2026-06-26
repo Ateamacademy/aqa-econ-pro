@@ -773,9 +773,11 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       const axTop = my + pad;
 
       // MPC: upward sloping (RED) · private cost, lower
-      const mpcL = { x1: axL + pw * 0.05, y1: axBot, x2: mx + pw * 0.7, y2: axTop + ph * 0.1 };
-      // MSC: upward sloping, above MPC (BLUE) · social cost higher, steeper
-      const mscL = { x1: axL + pw * 0.2, y1: axBot, x2: mx + pw * 0.55, y2: axTop };
+      const mpcL = { x1: axL + pw * 0.05, y1: axBot, x2: mx + pw * 0.7, y2: axTop + ph * 0.18 };
+      // MSC: PARALLEL upward shift of MPC by the marginal external cost (BLUE).
+      // Same slope and x-span as MPC so the two never intersect (CAIE convention).
+      const mecGap = ph * 0.16;
+      const mscL = { x1: mpcL.x1, y1: mpcL.y1 - mecGap, x2: mpcL.x2, y2: mpcL.y2 - mecGap };
       // MPB = MSB: downward sloping (RED)
       const dL = { x1: axL, y1: axTop + 5, x2: mx + pw - pad, y2: axBot };
 
@@ -1784,9 +1786,9 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
     },
   },
   phillips_curve: {
-    title: "Short-Run Phillips Curve",
+    title: "Phillips Curve (Short & Long Run)",
     xAxis: "Unemployment Rate (%)", yAxis: "Inflation Rate (%)",
-    legend: [{ label: "SRPC", color: COLORS.demand }],
+    legend: [{ label: "SRPC", color: COLORS.demand }, { label: "LRPC", color: COLORS.shifted }],
     examTips: [
       "Inverse relationship between inflation and unemployment",
       "Trade-off only holds in the short run",
@@ -1801,6 +1803,10 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
             color={COLORS.demand} gradientId="grad-demand" width={3} glow="glow-blue"
           />
           <Label x={mx + pw - 35} y={my + ph - 8} text="SRPC" color={COLORS.demand} />
+          {/* Long-run Phillips Curve · vertical at the natural rate of unemployment (NRU) */}
+          <line x1={mx + pw * 0.5} y1={my + ph * 0.05} x2={mx + pw * 0.5} y2={my + ph - 12} stroke={COLORS.shifted} strokeWidth={3} />
+          <Label x={mx + pw * 0.5 + 6} y={my + ph * 0.1} text="LRPC" color={COLORS.shifted} />
+          <Label x={mx + pw * 0.5} y={my + ph - 2} text="NRU" color={COLORS.shifted} size={9} anchor="middle" />
           <PremiumDot x={mx + pw * 0.28} y={my + ph * 0.28} color={COLORS.eq} label="Low U, High π" gradientId="dot-green"
             tooltipText="✓ Boom: low unemployment, high inflation" />
           <PremiumDot x={mx + pw * 0.62} y={my + ph * 0.62} color={COLORS.shifted} label="High U, Low π" labelPos="tl" gradientId="dot-amber"
@@ -1904,16 +1910,15 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       // Point on S at eq.x (the top of the welfare triangle)
       const sAtEqX = sL.y1 + sSlope * (eq.x - sL.x1);
 
-      // Welfare loss triangle: vertices at (q1X, pmaxY), (eq.x, eq.y), (q2X, pmaxY)
-      // But per diagram: triangle between S and D from q1X to q2X through equilibrium
-      // Actually from the image: green triangle with vertices at:
-      // - where S meets Pmax (q1X, pmaxY)
-      // - equilibrium (eq.x, eq.y)  
-      // - where D meets Pmax (q2X, pmaxY)
+      // Deadweight (welfare) loss = the triangle between D and S over the LOST output
+      // (from the supply-constrained traded quantity q1X up to the free-market eq), NOT
+      // the excess-demand width. Vertices: equilibrium E, the point on S at q1X (= pmaxY),
+      // and the point on D at that same quantity q1X.
+      const dAtQ1 = dL.y1 + dSlope * (q1X - dL.x1);
       const welfarePoints = [
-        { x: q1X, y: pmaxY },
         { x: eq.x, y: eq.y },
-        { x: q2X, y: pmaxY },
+        { x: q1X, y: pmaxY },
+        { x: q1X, y: dAtQ1 },
       ];
 
       return (
@@ -2016,11 +2021,15 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       const q1X = sL.x1 + (pminY - sL.y1) / sSlope; // supply at Pmin (right · q₁)
       const q2X = dL.x1 + (pminY - dL.y1) / dSlope; // demand at Pmin (left · q₂)
 
-      // Welfare loss triangle: vertices at D∩Pmin, equilibrium, S∩Pmin
+      // Deadweight (welfare) loss = the triangle between D and S over the LOST output
+      // (from the demand-constrained traded quantity q2X up to the free-market eq), NOT
+      // the excess-supply width. Vertices: equilibrium E, the point on D at q2X (= pminY),
+      // and the point on S at that same quantity q2X.
+      const sAtQ2 = sL.y1 + sSlope * (q2X - sL.x1);
       const welfarePoints = [
-        { x: q2X, y: pminY },
         { x: eq.x, y: eq.y },
-        { x: q1X, y: pminY },
+        { x: q2X, y: pminY },
+        { x: q2X, y: sAtQ2 },
       ];
 
       return (
@@ -2391,10 +2400,12 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
       const { mx, my, pw, ph } = p;
       const pad = 10;
       // U-shaped LRAC · wide bottom for constant returns section
-      const lracPath = `M ${mx + pad + 10} ${my + pad + 10} Q ${mx + pw * 0.22} ${my + ph * 0.75} ${mx + pw * 0.38} ${my + ph * 0.68} L ${mx + pw * 0.58} ${my + ph * 0.68} Q ${mx + pw * 0.78} ${my + ph * 0.68} ${mx + pw - pad - 10} ${my + pad + 20}`;
+      // Smooth U-shape with a single minimum efficient scale (MES) · no flat plateau.
+      const lracPath = `M ${mx + pad + 10} ${my + pad + 10} Q ${mx + pw * 0.3} ${my + ph * 0.82} ${mx + pw * 0.5} ${my + ph * 0.74} Q ${mx + pw * 0.7} ${my + ph * 0.82} ${mx + pw - pad - 10} ${my + pad + 20}`;
 
-      // Section labels with brackets
-      const secAx = mx + pw * 0.22, secBx = mx + pw * 0.48, secCx = mx + pw * 0.75;
+      // Two regions either side of the single MES point · no "constant returns" plateau.
+      const mesX = mx + pw * 0.5;
+      const secAx = mx + pw * 0.26, secCx = mx + pw * 0.74;
       const botY = my + ph - pad - 8;
 
       return (
@@ -2402,18 +2413,15 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <CurvePath d={lracPath} color={COLORS.demand} gradientId="grad-demand" width={3} glow="glow-blue" />
           <Label x={mx + pw - pad} y={my + pad + 28} text="LRAC" color={COLORS.demand} />
           {/* Section markers */}
-          <rect x={mx + pad + 5} y={botY - 2} width={mx + pw * 0.36 - mx - pad - 5} height={16} rx={4} fill={COLORS.eq} fillOpacity={0.08} />
+          <rect x={mx + pad + 5} y={botY - 2} width={mesX - mx - pad - 5} height={16} rx={4} fill={COLORS.eq} fillOpacity={0.08} />
           <text x={secAx} y={botY + 10} textAnchor="middle" fontSize={8} fontWeight={600} fill={COLORS.eq}
             style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Economies of Scale</text>
-          <rect x={mx + pw * 0.36} y={botY - 2} width={pw * 0.24} height={16} rx={4} fill={COLORS.lras} fillOpacity={0.08} />
-          <text x={secBx} y={botY + 10} textAnchor="middle" fontSize={8} fontWeight={600} fill={COLORS.lras}
-            style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Constant Returns</text>
-          <rect x={mx + pw * 0.60} y={botY - 2} width={pw * 0.36} height={16} rx={4} fill={COLORS.supply} fillOpacity={0.08} />
+          <rect x={mesX} y={botY - 2} width={mx + pw - pad - 5 - mesX} height={16} rx={4} fill={COLORS.supply} fillOpacity={0.08} />
           <text x={secCx} y={botY + 10} textAnchor="middle" fontSize={8} fontWeight={600} fill={COLORS.supply}
             style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Diseconomies of Scale</text>
-          {/* MES dotted line */}
-          <line x1={mx + pw * 0.38} y1={my + ph * 0.68} x2={mx + pw * 0.38} y2={my + ph - pad} stroke={COLORS.eq} strokeWidth={1} strokeDasharray="3,3" opacity={0.5} />
-          <text x={mx + pw * 0.38} y={my + ph - 2} textAnchor="middle" fontSize={8} fontWeight={700} fill={COLORS.eq}
+          {/* MES dotted line at the single minimum */}
+          <line x1={mesX} y1={my + ph * 0.74} x2={mesX} y2={my + ph - pad} stroke={COLORS.eq} strokeWidth={1} strokeDasharray="3,3" opacity={0.5} />
+          <text x={mesX} y={my + ph - 2} textAnchor="middle" fontSize={8} fontWeight={700} fill={COLORS.eq}
             style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>MES</text>
         </>
       );
