@@ -2321,7 +2321,7 @@ Question 5 [1 marks]
 Quarterly real GDP / CPI inflation: Q1 +0.6 / +3.1; Q2 +0.1 / +6.5; Q3 −0.2 / +9.4; Q4 −0.4 / +8.7. The data are most consistent with the country experiencing
 - A a demand-pull boom caused by rising consumer confidence
 - B deflation caused by a fall in aggregate demand
-- C stagflation caused by a negative supply-side shock
+- C falling real output at the same time as a high rate of inflation
 - D strong export-led growth
 
 Question 6 [1 marks]
@@ -2343,12 +2343,12 @@ UK effective exchange rate index (2010=100) / current-account deficit (% of GDP)
 - A a sustained depreciation of sterling accompanying a gradual narrowing of the current-account deficit
 - B a sustained appreciation of sterling causing the current-account deficit to widen
 - C a fixed exchange rate regime throughout the period
-- D a J-curve effect that has not yet reversed
+- D a depreciation of sterling accompanied by a widening of the current-account deficit
 
 Question 9 [1 marks]
 A negative externality arises from the consumption of a demerit good. A government that wants to internalise this externality should
-- A impose an indirect tax equal to the marginal external cost at the socially optimal quantity
-- B provide a subsidy equal to the marginal external benefit at the socially optimal quantity
+- A impose an indirect tax on the good to discourage its consumption
+- B provide a subsidy to encourage consumption of the good
 - C ban consumption of the good entirely regardless of the size of the external cost
 - D allow the free market to set the price, because the market always corrects external costs
 
