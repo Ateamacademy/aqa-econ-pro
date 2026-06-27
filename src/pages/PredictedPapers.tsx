@@ -1980,13 +1980,39 @@ question.marks === 20 ? `**For this 20-mark "assess" question (mark out of 20):*
 
 **DIAGRAM in 25-mark essays:** If a diagram is used, award up to 4 KAA marks for it: correct axes (1), correct curves (1), correct shift (1), correct analysis of diagram (1).`}
 ${isCambridge ? `
-APPLY CAIE 9708 METHODOLOGY (not AQA). Mark strictly out of ${question.marks} — the maximum is ${question.marks}; never mark out of any other total (CAIE essay/assess questions are out of 8, 12 or 20, never 25).
+═══ APPLY CAIE 9708 METHODOLOGY (NOT AQA). Ignore the AQA KAA ladder above and mark as a Cambridge examiner. ═══
+Mark strictly out of ${question.marks} — never out of any other total (CAIE questions are 2/4/6/8/12/20, never 25).
 
-CAIE EVALUATION RULE: stating a disadvantage or "the other side" is ANALYSIS, not evaluation. Evaluation marks require weighing the arguments against each other AND considering at least one of magnitude/likelihood/time frame/economic conditions/alternative policies, then a prioritised, justified judgement. Do NOT inflate the evaluation band for a mere pros-and-cons list.
+THE THREE ASSESSMENT OBJECTIVES (there is NO "AO4" in 9708):
+- AO1 Knowledge & understanding — definitions/formulae/concepts AND application to the question's context/data.
+- AO2 Analysis — explained cause-and-effect chains. An ASSERTION is not analysis; only an explained mechanism earns AO2.
+- AO3 Evaluation — weighing both sides, then a supported, question-focused judgement/conclusion.
 
-CONCLUSION CHECK (apply all four, report each): (1) the conclusion follows from the analysis without contradiction or fallacy; (2) it prioritises rather than restates the arguments; (3) it is not mere repetition; (4) a reasoned, qualified "it depends on X" conclusion is FULLY creditable and must NOT be penalised for lacking a single definitive verdict.
+DETECT THE TYPE FROM THE ${question.marks}-mark tariff and apply the matching scheme:
+${question.marks === 8 ? `• 8-mark essay part (a) — POINT-MARKED with hard sub-caps: AO1 up to 3, AO2 up to 3, AO3 up to 2. 1 mark per accurate definition/formula (AO1), 1 per developed explained factor (AO2, needs ≥3 for full 3), 1 for a judgement of relative importance + 1 for a supported conclusion (AO3). Never exceed a sub-cap.`
+: question.marks === 12 ? `• 12-mark essay part (b) — LEVELS-MARKED: Table A (AO1+AO2) out of 8 + Table B (AO3) out of 4. Table A: Level 3 = 6–8, Level 2 = 3–5, Level 1 = 1–2, Level 0 = 0. Table B: Level 2 = 3–4, Level 1 = 1–2, Level 0 = 0.`
+: question.marks === 20 ? `• 20-mark essay (A-Level Paper 4) — LEVELS-MARKED: Table A (AO1+AO2) out of 14 + Table B (AO3) out of 6. Table A: Level 3 = 11–14, Level 2 = 6–10, Level 1 = 1–5, Level 0 = 0. Table B: Level 2 = 4–6, Level 1 = 1–3, Level 0 = 0.`
+: `• ${question.marks}-mark data-response part — POINT-MARKED; the answer MUST use the stimulus data. Up to (tariff − 2) marks for explained analysis + up to 2 for evaluation; on "assess/discuss/consider" parts ONE mark is RESERVED for a supported conclusion (no conclusion ⇒ that mark cannot be awarded). Evaluation = 0 if one-sided or not in the data's context.`}
 
-DIAGRAMS: for CAIE essay/assess questions a diagram is DESIRED but NOT mandatory — do NOT cap or deduct marks for a missing diagram when the written analysis is sufficient.
+TABLE A standard (AO1+AO2): TOP band = detailed accurate knowledge, fully developed explanations, developed & detailed analysis using concepts/theory (and a fully-explained diagram where needed). MIDDLE band = some knowledge, limited development, analysis generally accurate but thin. BOTTOM band = few points, significant errors, little relevance, analysis largely DESCRIPTIVE.
+TABLE B standard (AO3): TOP band = a JUSTIFIED conclusion addressing the SPECIFIC question + developed, reasoned, well-supported evaluative comments. BOTTOM band = vague/general conclusion with simple undeveloped comments. No conclusion or no genuine weighing ⇒ 0 for AO3.
+BEST-FIT: choose the single best-fit level, then top/middle/bottom of that band by how convincingly it is met.
+
+STRINGENCY RULES (enforce — this is where examiners dock marks):
+1. ONE-SIDED answers are CAPPED at mid-Table-A and earn ZERO evaluation. Require genuine two-sided weighing before any AO3 credit.
+2. Evaluation must WEIGH, not list. "Adding a however", an unexplained "it depends", summarising, or listing pros/cons in isolation is NOT evaluation. Top AO3 needs the comment to be analytical and to engage the question's exact qualifier ("always"/"only"/"alone"/"best") ending in a supported conclusion.
+3. APPLICATION/CONTEXT required — generic, pre-learned answers lose marks; data-response answers ignoring the supplied figures forfeit application AND evaluation marks.
+4. RELEVANCE gates the level — off-question / wrong-scenario material earns nothing however accurate; cover all named elements.
+5. DIAGRAMS: for the 20-mark Paper 4 essay, if a diagram is REQUIRED, a missing/incorrect/unlabelled diagram CAPS Table A at the MIDDLE band (max 10/14); a correct, labelled, referenced diagram is needed for the top band. For AS Paper 2, a diagram is required only where the question explicitly asks; otherwise credit it where it genuinely aids analysis but do NOT make it a prerequisite.
+6. PRECISION — define each key term exactly (elasticity = % change in quantity ÷ % change in price; opportunity cost = next best alternative forgone). Positive marking: never deduct for errors/omissions — penalise by placing the work in a lower band. Whole marks only.
+
+CONCLUSION CHECK (report each): (1) follows from the analysis without contradiction; (2) prioritises/weighs rather than restates; (3) is not mere repetition; (4) a reasoned, qualified "it depends on X" conclusion is FULLY creditable.
+
+REQUIRED OUTPUT — in "## Mark Scheme" you MUST give a PER-AO breakdown using the correct maxima for this ${question.marks}-mark tariff, and for levels-marked parts NAME the table and level:
+  - AO1 Knowledge & understanding: X/[max] — what earned / what was missing
+  - AO2 Analysis: X/[max] — which explained chains were credited / where it lapsed into assertion (for 12/20-mark parts state "Table A: Level N (X/8 or X/14)")
+  - AO3 Evaluation: X/[max] — (for 12/20-mark parts "Table B: Level N (X/4 or X/6)") whether it weighed both sides, engaged the qualifier, and concluded; if 0, say why.
+Then sum to the final mark and state explicitly any cap applied (one-sided, or missing required diagram).
 ` : ""}
 
 === DIAGRAM MARKING CHECKLIST (apply ALL 5 criteria if a diagram is present) ===

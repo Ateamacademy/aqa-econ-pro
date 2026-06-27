@@ -363,22 +363,123 @@ QUALITY CALIBRATION:
 `;
 
 const GRADING_ECON_CAIE = `
-CAMBRIDGE (CAIE 9708) MARKING OVERRIDES · these REPLACE the generic guidance above wherever they conflict:
+═══════════════════════════════════════════════════════════════
+CAMBRIDGE (CAIE 9708) MARKING ENGINE · this REPLACES the generic ladder above wherever they conflict.
+Mark EXACTLY as a CAIE 9708 examiner does, using the official Assessment Objectives, the Table A / Table B
+levels-of-response descriptors, and the Generic Marking Principles below. Be STRINGENT: CAIE marking is
+positive but demanding — most real scripts sit in the middle bands, NOT the top.
+═══════════════════════════════════════════════════════════════
 
-EVALUATION (AO4) · the most common over-marking error:
-- Stating a disadvantage, drawback, or "the other side" is ANALYSIS, not evaluation. Presenting advantages and then disadvantages does NOT by itself earn evaluation marks.
-- Evaluation requires going BEYOND both sides: weighing them against each other AND considering at least one of — magnitude/significance, likelihood, time frame (short vs long run), prevailing economic conditions, or alternative policies — then reaching a PRIORITISED, justified judgement.
-- Do NOT award the top evaluation band to an answer that merely lists pros and cons.
+THE THREE ASSESSMENT OBJECTIVES (there is NO "AO4" in 9708 — never reference one):
+- AO1 Knowledge and understanding — recall of facts/formulae/definitions; understanding shown through
+  explanations and examples; AND application of knowledge to the question's context/data (numerical, written,
+  diagrammatic). Application lives INSIDE AO1, it is not a separate objective.
+- AO2 Analysis — examining issues/relationships with relevant concepts and theory; selecting/interpreting/
+  organising information; recognising patterns, causes and effects; explaining impacts and consequences via
+  developed cause-and-effect chains. An ASSERTION is not analysis — only an explained mechanism earns AO2.
+- AO3 Evaluation — recognising assumptions/limitations; weighing strengths and weaknesses of arguments;
+  considering priorities/value judgements; communicating a reasoned, supported judgement/conclusion.
+Whole-paper weighting: AO1 ≈ 33%, AO2 ≈ 37%, AO3 ≈ 30%.
 
-CONCLUSION CHECK · apply ALL four every time, in order, and report each:
-1. Does the conclusion follow from the analysis (no contradiction or fallacy)?
-2. Does it prioritise/weigh the arguments rather than restate them?
-3. Is it more than repetition of earlier points?
-4. A reasoned, qualified "it depends on X" conclusion is FULLY creditable — never penalise it for lacking a single definitive verdict.
+GENERIC MARKING PRINCIPLES (apply every time):
+- POSITIVE marking: award marks for correct/valid economics; do NOT deduct for errors or omissions.
+  Penalties operate by LEVEL PLACEMENT (inaccurate/irrelevant work sits in a lower band), never by subtraction.
+- WHOLE marks only — no halves. Use the FULL range of the band.
+- Credit valid responses that go beyond the indicative content — indicative content is "responses may
+  include…", NOT a checklist. The level descriptors are the actual standard.
+- Mark against the mark scheme ONLY, never with grade boundaries in mind.
+- Do NOT credit a key term merely for being named — require evidence it is understood and correctly used.
+  Do NOT credit repetition of an already-credited point, self-contradiction, or scattergun "cover everything".
 
-DIAGRAMS · for CAIE essay/"assess" questions a diagram is DESIRED but NOT mandatory. Do NOT cap the mark or deduct for a missing diagram when the written analysis is sufficient. Credit a diagram as a route to analysis marks, never as a prerequisite. This OVERRIDES any diagram requirement in the calibration ladder above.
+══ DETECT THE QUESTION TYPE FROM THE TARIFF, then apply the matching scheme ══
 
-MARK TOTAL · mark strictly out of the total stated in the question. CAIE essay/assess questions are out of 8, 12 or 20 — NEVER assume 25.
+▸ 8-mark ESSAY part (a) [AS Paper 2] — POINT-MARKED with hard AO sub-caps:
+  AO1 up to 3 · AO2 up to 3 · AO3 up to 2. Award 1 mark per accurate definition/formula/distinction (AO1),
+  1 mark per developed explained factor (AO2, needs ≥3 explained factors for full 3), 1 mark for a valid
+  judgement of relative importance + 1 mark for a supported conclusion (AO3). NEVER exceed any sub-cap.
+
+▸ 12-mark ESSAY part (b) [AS Paper 2] — LEVELS-MARKED: Table A (AO1+AO2) out of 8 + Table B (AO3) out of 4.
+  Use AS TABLE A (max 8):  L3 = 6–8 · L2 = 3–5 · L1 = 1–2 · L0 = 0.
+  Use AS TABLE B (max 4):  L2 = 3–4 · L1 = 1–2 · L0 = 0.
+
+▸ 20-mark ESSAY [A-Level Paper 4] — LEVELS-MARKED: Table A (AO1+AO2) out of 14 + Table B (AO3) out of 6.
+  Use A-LEVEL TABLE A (max 14): L3 = 11–14 · L2 = 6–10 · L1 = 1–5 · L0 = 0.
+  Use A-LEVEL TABLE B (max 6):  L2 = 4–6 · L1 = 1–3 · L0 = 0.
+
+▸ 2/4/6/(8) -mark DATA-RESPONSE part (Section A, Q1) — POINT-MARKED, must USE the stimulus data:
+  2-mark = two distinct valid points / a comparison (1 each) interpreted with the economics toolkit.
+  4-mark = up to 3 analysis + 1 evaluation/judgement. 6-mark = up to 4 explained analysis + up to 2 evaluation.
+  Where the part is "assess/discuss/consider", ONE mark is RESERVED for a supported conclusion — if there is
+  no conclusion, that mark CANNOT be awarded. Evaluation marks are ZERO if the answer is one-sided OR not in
+  the context of the data/named economy.
+
+TABLE A descriptor standard (AO1+AO2):
+  TOP band — detailed, accurate knowledge with relevant explanations and examples; clearly addresses the
+  question's requirements and FULLY develops explanations; analysis developed and detailed with accurate
+  relevant use of concepts/theory and (where needed) fully-explained diagrams/formulae; well-organised.
+  MIDDLE band — some relevant knowledge but limited/over-generalised/with inaccuracies; addresses only the
+  general theme with limited development; analysis generally accurate but little detail; tools partially
+  accurate or not fully explained. BOTTOM band — few relevant points, significant errors/omissions; little
+  relevance to the question; analysis largely DESCRIPTIVE; tools wrong or omitted.
+TABLE B descriptor standard (AO3):
+  TOP band — a JUSTIFIED conclusion/judgement addressing the SPECIFIC question, with developed, reasoned,
+  well-supported evaluative comments. BOTTOM band — a vague/general conclusion with simple, undeveloped,
+  unsupported comments. NO conclusion at all OR no genuine weighing = 0 for AO3.
+BEST-FIT: pick the single best-fit level, then top of band if convincingly met, middle if adequately met,
+bottom if it just meets the band.
+
+══ STRINGENCY RULES (these are where examiners dock marks — enforce them) ══
+1. ASSERTION ≠ ANALYSIS. "X causes growth" with no mechanism stays Table A bottom band / earns no AO2.
+   Reward only explained cause-and-effect chains (e.g. subsidy → lower costs → supply shifts right → lower
+   price / higher quantity → higher exports → higher AD → growth).
+2. ONE-SIDED answers are CAPPED and earn NO evaluation. A part (b)/essay examining only one side cannot pass
+   mid-Table-A and scores 0 on Table B. Require genuine two-sided weighing before ANY AO3 credit.
+3. EVALUATION MUST WEIGH, not list. "Adding a however", an "it depends" with no explanation, summarising, or
+   listing strengths/weaknesses in isolation is NOT evaluation. Top AO3 needs the comment itself to be
+   analytical AND to do some of: judgement (which is better & why), conditions, magnitude, time frame,
+   stakeholders, prioritising — ending in a supported conclusion that engages the question's exact wording
+   (e.g. "always", "only", "alone", "best", "more serious than").
+4. APPLICATION / CONTEXT is required. Generic, pre-learned, "all I know about X" answers lose marks. Reward
+   AO1 application only when tied to the specific question context/data/named economy; data-response answers
+   ignoring the supplied figures forfeit application AND evaluation marks.
+5. RELEVANCE gates the level. Off-question or wrong-scenario material earns nothing however accurate
+   (e.g. micro content in a macro question, assessing "low" inflation when the question says "high").
+   Cover ALL named elements / required breadth, or analysis is capped.
+6. DIAGRAMS:
+   - A-Level Paper 4 (20-mark) essay that REQUIRES a diagram: a missing OR incorrect OR unlabelled diagram
+     CAPS Table A (AO1+AO2) at the MIDDLE band (max 10/14). A correct, labelled, referenced diagram is
+     essential to reach the top band. A diagram drawn but never referred to in the prose earns little.
+   - AS Paper 2: a diagram is required only where the question explicitly asks ("with the help of a diagram");
+     otherwise it is credited where it genuinely aids analysis but is not a prerequisite.
+   - Mark a diagram down for: wrong shift direction, axes mislabelled (use Price/Quantity for micro, Price
+     level/Real output for macro), D/S vs AD/AS confusion, PPC not touching both axes, MC not cutting AC at
+     its minimum, profit area not drawn as AR–AC at the profit-maximising output, wrong diagram type for the
+     question (micro for macro, perfect competition when monopsony/monopoly was specified, etc.).
+7. PRECISION of definitions/formulae. Require exact wording: elasticity = % (proportionate) change in quantity
+   ÷ % change in price; opportunity cost = value of the NEXT BEST alternative forgone; real GDP = nominal
+   adjusted for inflation; deflation = fall in the general price level. Define EACH key term; for paired
+   concepts (e.g. public good non-rivalry AND non-excludability) explain each separately or risk 0 for AO1.
+8. CALCULATIONS — own-figure rule: a correct final answer earns full credit even with no working (unless
+   working is required); a candidate who carries forward their own earlier wrong figure with a correct method
+   still gets the method marks.
+9. Watch recurring confusions and cap accordingly: terms of trade vs balance of trade; public goods vs
+   government-provided merit/private goods; budget deficit vs current-account deficit; output vs productivity;
+   disinflation vs deflation; free-trade area vs customs union (common external tariff).
+10. DEPTH OVER BREADTH: two or three points fully explained beat many asserted. Long unfocused answers are not
+    rewarded; concise well-directed ones are fully rewarded.
+
+══ REQUIRED OUTPUT · you MUST identify which AOs earned which marks ══
+In the "### Mark Breakdown" section, give a PER-AO breakdown using the correct maxima for the detected tariff,
+and for levels-marked parts NAME the table and level. Use this shape:
+  - AO1 Knowledge & understanding: X/[max] — what earned the marks / what was missing
+  - AO2 Analysis: X/[max] — which explained chains were credited / where it lapsed into assertion
+    (for 12/20-mark parts, combine AO1+AO2 and state "Table A: Level N (X/8 or X/14) — <reason vs descriptor>")
+  - AO3 Evaluation: X/[max] — (for 12/20-mark parts: "Table B: Level N (X/4 or X/6)") whether it weighed both
+    sides, engaged the question's qualifier, and reached a supported conclusion; if 0, say exactly why.
+Then sum to the final mark. Apply any cap (one-sided, missing-required-diagram) explicitly and state it.
+
+MARK TOTAL · mark strictly out of the total stated in the question (8, 12, 20, or the data-response part's
+tariff) — NEVER assume 25, and never out of any total other than the one in the question.
 `;
 
 const GRADING_ECON_OCR = `
