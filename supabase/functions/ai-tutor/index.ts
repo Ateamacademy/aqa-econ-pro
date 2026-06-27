@@ -483,21 +483,144 @@ tariff) — NEVER assume 25, and never out of any total other than the one in th
 `;
 
 const GRADING_ECON_OCR = `
-OCR (H460) MARKING OVERRIDES · these refine the generic guidance above for OCR:
+═══════════════════════════════════════════════════════════════
+OCR ECONOMICS (H460 A-Level / H060 AS) MARKING ENGINE · this REPLACES the generic ladder above wherever they conflict.
+Mark EXACTLY as an OCR examiner does, using OCR's FOUR assessment objectives, the Strong/Good/Reasonable/Limited
+descriptor ladder, the Levels-of-Response grids, and the generic marking principles below. Be STRINGENT but POSITIVE:
+credit valid economics generously, but the top band must be EARNED — context, an integrated diagram and a supported
+judgement are the gates most scripts fail.
+═══════════════════════════════════════════════════════════════
 
-EVALUATION · do NOT under-reward valid evaluation. OCR credits a WIDE range of
-evaluative approaches, so reward any genuine evaluation however it is expressed:
-weighing magnitude/significance, likelihood, short vs long run, the type of
-market/firm, prevailing economic conditions, alternative policies, prioritisation,
-contextual/real-world judgement, or a reasoned "it depends on …".
-- Do NOT require a single rigid template, structure or specific phrasing. An answer
-  that evaluates effectively in its own way must be able to reach the top band even
-  if it does not match a model-answer structure.
-- Reserve middling evaluation marks for answers that merely assert or list without
-  supporting judgement — NOT for answers that evaluate in an unexpected but valid way.
+THE FOUR ASSESSMENT OBJECTIVES (OCR uses FOUR — there is no merged "analysis+evaluation"):
+- AO1 Knowledge & understanding — terms, concepts, theories, models.
+- AO2 Application — genuine USE of the stimulus data / extract / named context. Paraphrasing or copying figures is
+  NOT application; the data must be interpreted/used.
+- AO3 Analysis — developed chains of cause and consequence ("developed links in the chain of argument"), supported
+  by an integrated diagram where relevant. A single statement of cause->effect is NOT developed analysis.
+- AO4 Evaluation — a balanced TWO-SIDED discussion PLUS a supported, justified judgement (what the outcome depends
+  on / which side wins and why). A summary or restatement is NOT a judgement.
+From 2024 OCR assesses AO1+AO2 jointly as one strand ("Knowledge, Understanding and Application"). So judge THREE
+strands: (1) K&U + Application [AO1+AO2], (2) Analysis [AO3], (3) Evaluation [AO4].
 
-Mark to OCR's levels-of-response descriptors and the question's command word; never
-deduct simply because the answer differs from one prescribed model answer.
+THE DESCRIPTOR LADDER (verbatim — the engine of every grid). Rate each strand Strong / Good / Reasonable / Limited:
+- K&U + Application — STRONG/GOOD: "Precision in the use of the terms in the question and applied in a focused way
+  to the context of the question." REASONABLE: "Awareness of the meaning of the terms in the question and applied to
+  the context." LIMITED: "Awareness of the meaning of the terms in the question" (no application).
+- Analysis — STRONG: "An explanation of causes and consequences, fully developing the links in the chain of
+  argument." GOOD: "developing most of the links." REASONABLE: "omit some key links in the chain." LIMITED: "Simple
+  statement(s) of cause and consequence."
+- Evaluation — STRONG: "A conclusion is drawn weighing up both sides, and reaches a supported judgement." GOOD:
+  "weighing up both sides, but without reaching a supported judgement." REASONABLE: "Some attempt to come to a
+  conclusion, which shows some recognition of the influencing factors." LIMITED: "An unsupported assertion."
+
+PAPER STRUCTURE:
+- H460 A-LEVEL: three 80-mark papers. P1 Microeconomics & P2 Macroeconomics — Section A stimulus Q1 (short answer/
+  calculation/data + an 8-mark and a 12-mark evaluative part) + Section B 25-mark essay (choose 1 of 2, DIAGRAM
+  REQUIRED) + Section C 25-mark essay (choose 1 of 2, diagram NOT required but credited if it strengthens analysis).
+  P3 Themes (synoptic) — Section A = 30 MCQ + Section B = data/extract response with evaluative essays incl. a
+  15-mark synoptic data-essay. (Paper 3 has NO Section C.)
+- H060 AS: two 80-section papers, Section A MCQ (no AO4) + Section B data response (starred final part carries AO4)
+  + Section C essay (all four AOs, diagram required). AS uses the SAME four AOs, the SAME descriptor ladder and the
+  SAME gates as A-level at lower tariffs/depth — treat AS as a lower-depth A-level marker, not a different rulebook.
+Per-paper AO totals (stable): P1 & P2 = AO1 18 / AO2 20 / AO3 20 / AO4 22 = 80. P3 = AO1 24 / AO2 20 / AO3 20 /
+AO4 16 = 80. (Quantitative sub-counts vary by year — do not pin them.)
+
+DETECT THE QUESTION TYPE FROM THE TARIFF + COMMAND WORD, then apply the matching scheme:
+
+▸ 1–2 mark SHORT ANSWER / DEFINE / CALCULATE — POINT-marked. AO1/AO2 (calc = AO2). 1 mark per discrete creditable
+  point; a 2-mark definition needs meaning + a developed/second element. Calculations: correct method + answer +
+  units/sign (%, $, "deficit"/minus where required); OWN-FIGURE RULE applies and METHOD MARKS survive a wrong final
+  answer; a missing sign/unit, wrong rounding, value outside tolerance, or giving more than one answer loses the mark.
+  An answer that does not address the EXACT thing asked = 0.
+
+▸ 3–6 mark DATA / DIAGRAM parts — POINT-marked with QUESTION-SPECIFIC AO splits (read them off the question; e.g. a
+  4-mark data part is typically AO1x1 AO2x3; a 6-mark diagram part is "up to 4 marks diagram + up to 2 explanation").
+  Application requires GENUINE use of the named data — copying figures without commentary is not application. Diagram
+  marks are itemised per feature (axes / correct curve / equilibria); the WRONG diagram type earns 0 diagram marks.
+
+▸ 8-mark EVALUATIVE (Section A) — LEVELS, AO1x1 AO2x1 AO3x3 AO4x3. Level 2 = 5–8, Level 1 = 1–4, 0 = 0.
+
+▸ 12-mark EVALUATIVE (Section A) — LEVELS, AO1x1 AO2x1 AO3x5 AO4x5. Level 3 = 9–12, Level 2 = 5–8, Level 1 = 1–4.
+  Top of level needs BOTH stimulus use AND own knowledge; failing to link to the stimulus caps analysis at Limited.
+
+▸ 15-mark SYNOPTIC DATA-ESSAY (P3 Section B) — LEVELS, AO1x2 AO2x3 AO3x4 AO4x6. Level 3 = 11–15, Level 2 = 6–10,
+  Level 1 = 1–5. DIAGRAM HARD GATE: where the question says "using an appropriate diagram(s)", no diagram is unlikely
+  to exceed Level 1.
+
+▸ 25-mark EVALUATIVE ESSAY (P1/P2 Section B & C) — LEVELS, AO1x6 AO2x6 AO3x6 AO4x7. FIVE levels:
+  Level 5 = 21–25: Strong K&U; Strong analysis (consistently well-developed links in a coherent chain addressing the
+    question); any diagram predominantly correct and integral to the analysis; Strong evaluation considering extent
+    and alternatives and reaching a SUPPORTED JUDGEMENT; sustained, logically structured reasoning.
+  Level 4 = 16–20: Good K&U; Strong analysis; Good evaluation weighing both sides BUT WITHOUT a supported judgement.
+  Level 3 = 11–15: Good K&U; Good analysis (developed links); Reasonable evaluation considering extent/alternatives.
+  Level 2 = 6–10: Reasonable analysis (single links, not a developed chain); diagram may be imperfectly labelled or
+    not linked; Reasonable evaluation (some recognition of influencing factors); unstructured.
+  Level 1 = 1–5: Limited/Reasonable K&U; little or no analysis; diagram absent/incorrect; Limited evaluation
+    (unsupported assertion) or none.
+  Section B essays REQUIRE a diagram (gate to the higher analysis/evaluation bands); Section C essays do not require
+  one but a relevant diagram is credited where it lifts analysis.
+
+WITHIN-LEVEL PLACEMENT (OCR method): start at the HIGHEST level and work down to the best fit; then place the mark —
+top of level if it CONSISTENTLY meets the criteria, middle if it meets most/ is secure in the band, bottom if it is
+on the borderline with the level below. Where a response sits squarely in a level, award the DEFAULT MID-MARK. Best-fit
+across the three strands: a response whose strands sit in different levels is placed by best-fit (e.g. analysis Good
+but evaluation only Reasonable + no judgement -> mid not top of the band).
+
+══ THE GATES (this is where OCR marks are won and lost — check each explicitly) ══
+1. CONTEXT GATE: analysis cannot be STRONG (and a 25-marker cannot be full) without applying terms/concepts to the
+   SPECIFIC context (stimulus data or the question's named scenario). "Analysis is Good and needed some context to
+   raise it to Strong" is the single most common reason scripts cap at 24/25.
+2. SUPPORTED-JUDGEMENT GATE: the top band/full marks require a JUSTIFIED judgement stating what the outcome DEPENDS
+   ON / which side wins and why — NOT a summary or restatement of earlier points. A final paragraph that merely
+   repeats the arguments is Good evaluation (one band down), not Strong.
+3. NO-SKIP / SEQUENCING: evaluation must FIRST reach Good (developed two-sided weighing) and THEN add a supported
+   judgement to be Strong. A bare "it depends on..." bolted onto merely Reasonable evaluation does NOT make it Strong.
+4. DIAGRAM GATE (Section B essays; any "using an appropriate diagram(s)" part; AS starred part & Section C essay): the
+   diagram must be (a) the CORRECT type for the topic, (b) accurately labelled with equilibria, and (c) INTEGRATED —
+   referred to in the prose. "See diagram" / numbering it / letting it speak for itself is NOT integration and caps
+   analysis at Reasonable. A missing required diagram caps low (Level 1 on the 15-mark "using a diagram" part).
+5. FOCUS GATE: address the EXACT object/agent/qualifier named in the stem (a specified year/period, policy type,
+   economic agent — "the people of Kenya" not "the Kenyan economy" — "sustainable", "the consumer not the firm").
+   Off-question material earns NOTHING however economically accurate; digressions are not penalised but score nothing.
+6. ONE-SIDED: "evaluate/discuss/assess/to what extent" REQUIRE a balanced two-sided discussion; a wholly one-sided
+   answer cannot reach the evaluation top bands. "Most effective / most significant" forms require comparing MORE
+   THAN ONE option/factor to push analysis beyond Reasonable.
+7. COMPREHENSION CAP: answers that merely paraphrase or lift the stimulus earn K&U only and cap at Limited analysis —
+   they must ADD economic reasoning/chains to earn AO3/AO4.
+
+CONCEPTUAL / PRECISION STRINGENCY (cap analysis below Strong / can zero a section): conflating demerit goods with
+negative externalities; omitting a defining characteristic (zero marginal cost for public goods; absence of sunk
+costs for contestable markets); confusing QE with government borrowing, SRAS with LRAS, consumer vs producer surplus,
+interest rate vs exchange rate, direct vs indirect tax, trade deficit vs budget deficit. DIAGRAM specifics: micro
+axes must be "Price" and "Quantity" (not "quantity demanded"); macro diagrams need macro labels (Real GDP/output,
+Price level) and should be DYNAMIC (show the shift + new equilibrium); use the right diagram for the concept (LRAS
+for supply-side; currency demand/supply for exchange rate); bar charts are NOT economic diagrams.
+
+GENERIC MARKING PRINCIPLES: POSITIVE marking — credit valid, unexpected approaches not in the indicative content
+(the mark scheme is not exhaustive and gives no single "correct" answer); never deduct for digressions (they earn
+nothing but are not penalised); never negatively-mark a later slip; own-figure rule throughout. Whole marks; use the
+full range.
+
+══ REQUIRED OUTPUT · per-AO / per-strand — never a holistic gestalt mark ══
+In "### Mark Breakdown":
+1. State the paper (H460/01,02,03 or H060/01,02 if known), command word, tariff, marking mode (POINT or LEVELS) and
+   the AO split (e.g. "25-mark essay: AO1x6 AO2x6 AO3x6 AO4x7").
+2. POINT-marked parts: list each creditable point, label its AO (AO1/AO2/AO3), tick/cross it, apply OFR/method marks,
+   and give "X/Y" with a one-line reason for every mark NOT awarded (wrong unit/sign, vague, off-question,
+   comparison-not-calculation, paraphrase-not-application).
+3. LEVELS-marked parts: give a THREE-STRAND verdict, each rated Strong/Good/Reasonable/Limited with a one-line
+   justification — K&U+Application [AO1+AO2], Analysis [AO3] (single link vs developed links vs coherent chain;
+   diagram type/labels/integration status and any resulting cap), Evaluation [AO4] (one-sided vs Reasonable vs Good
+   two-sided weighing vs Strong + supported judgement; say explicitly whether a justified "depends on/which side wins"
+   judgement is present or whether it is just a summary). Then state the NAMED LEVEL with its mark range, the
+   within-level position (top/middle/bottom, or default mid-mark), and the final mark "X/Y".
+4. GATES CHECK: state PASS/FAIL for each gate that applies (CONTEXT, SUPPORTED-JUDGEMENT, NO-SKIP, DIAGRAM, FOCUS,
+   ONE-SIDED, COMPREHENSION).
+5. WHY-NOT-HIGHER: one or two sentences naming the precise reason it did not score the next mark up (e.g. "analysis
+   Good not Strong — lacked context"; "judgement is a summary, not justified"; "diagram drawn but not integrated ->
+   analysis capped at Reasonable").
+Then sum to the question/section total. Mark against the OCR descriptors and command word, never against grade
+thresholds; never deduct simply because the answer differs from one model answer.
 `;
 
 const GRADING_ECON_IGCSE = `

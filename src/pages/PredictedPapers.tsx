@@ -2038,6 +2038,31 @@ GENERIC PRINCIPLES: POSITIVE marking — never deduct for errors/omissions (plac
 
 REQUIRED OUTPUT — per-part, per-AO (never a holistic mark): in "## Mark Scheme" list each creditable point labelled AO1/AO2/AO3 with 1 mark each up to the tariff, name every REFUSED point with the reason, and for the 8-mark (d) assign the LEVEL by best-fit, place the mark within the band, and state any cap (one-sided -> max Level 2 = 5; off-question -> 0). Then sum to the final mark out of ${question.marks}.
 ` : ""}
+${isOCR ? `
+═══ APPLY OCR ECONOMICS METHODOLOGY (NOT AQA). Mark as an OCR examiner using OCR's FOUR AOs. ═══
+Mark strictly out of ${question.marks}. AO1 Knowledge & understanding; AO2 Application (genuine USE of the stimulus/named
+context — paraphrase or copied figures is NOT application); AO3 Analysis (developed cause->consequence CHAINS, not single
+statements); AO4 Evaluation (balanced TWO sides + a SUPPORTED judgement, not a summary). Rate each strand Strong / Good /
+Reasonable / Limited: Analysis — Strong = "fully developing the links in the chain", Good = "most of the links", Reasonable
+= "omit some key links", Limited = "simple statement(s) of cause and consequence". Evaluation — Strong = "weighs up both
+sides AND reaches a supported judgement", Good = "weighs up both sides but no supported judgement", Reasonable = "some
+attempt at a conclusion", Limited = "unsupported assertion".
+
+DETECT THE PART FROM THE ${question.marks}-mark tariff + command word:
+${question.marks <= 3 ? `• Short answer/define/calculate — POINT-marked (AO1/AO2; calc = AO2). 1 mark per discrete point; a 2-mark definition needs meaning + a developed element. Calculations need correct method + answer + units/sign (%, $, "deficit"); own-figure rule applies and method marks survive a wrong final answer. An answer not addressing the exact thing asked = 0.`
+: question.marks <= 6 ? `• Data/diagram part — POINT-marked with a question-specific AO split (e.g. 4-mark data ≈ AO1x1 AO2x3; a 6-mark diagram part ≈ up to 4 diagram + up to 2 explanation). Application needs GENUINE use of the named data; the WRONG diagram type earns 0 diagram marks; diagram marks are itemised per feature (axes/curve/equilibria).`
+: question.marks === 8 ? `• 8-mark evaluative — LEVELS: AO1x1 AO2x1 AO3x3 AO4x3. Level 2 = 5-8, Level 1 = 1-4. Level 2 needs developed analysis + two-sided evaluation; reaching a supported judgement pushes to the top of L2.`
+: question.marks === 12 ? `• 12-mark evaluative — LEVELS: AO1x1 AO2x1 AO3x5 AO4x5. Level 3 = 9-12, Level 2 = 5-8, Level 1 = 1-4. Top of level needs BOTH stimulus use AND own knowledge; failing to link to the stimulus caps analysis at Limited (comprehension).`
+: question.marks === 15 ? `• 15-mark synoptic data essay — LEVELS: AO1x2 AO2x3 AO3x4 AO4x6. Level 3 = 11-15, Level 2 = 6-10, Level 1 = 1-5. DIAGRAM HARD GATE where "using an appropriate diagram(s)" is stated: no diagram is unlikely to exceed Level 1.`
+: question.marks === 25 ? `• 25-mark essay — LEVELS: AO1x6 AO2x6 AO3x6 AO4x7. FIVE levels: L5 21-25 (Strong on all strands + supported judgement; integrated correct diagram), L4 16-20 (Strong analysis + two-sided evaluation but NO supported judgement), L3 11-15 (Good analysis + Reasonable evaluation), L2 6-10 (single-link analysis), L1 1-5 (little/no analysis). Section B essays REQUIRE a diagram; Section C do not but credit one that lifts analysis.`
+: `• ${question.marks}-mark — if extended/"evaluate", mark by OCR levels (Strong/Good/Reasonable/Limited on the three strands); otherwise point-mark 1 per valid point by AO. State the level and within-level position.`}
+
+THE GATES (where OCR marks are won/lost — check each): CONTEXT (analysis cannot be Strong / a 25-marker cannot be full without applying to the specific context — the #1 reason for 24/25); SUPPORTED-JUDGEMENT (top band needs a justified "depends on / which side wins and why", NOT a summary); NO-SKIP (evaluation must reach Good two-sided weighing BEFORE a judgement makes it Strong); DIAGRAM (required diagram must be correct type + labelled with equilibria + INTEGRATED/referred-to; "see diagram"/numbering it caps analysis at Reasonable); FOCUS (address the exact object/agent/qualifier — off-question earns nothing however accurate); ONE-SIDED (cannot reach evaluation top bands); COMPREHENSION (paraphrasing the stimulus = K&U only, capped Limited analysis).
+
+GENERIC: POSITIVE marking — credit valid unexpected approaches; never deduct for digressions (they earn nothing) or negatively-mark a later slip; own-figure rule; whole marks; within a level award top if it consistently meets the criteria, the default mid-mark if squarely in the band, bottom if borderline.
+
+REQUIRED OUTPUT — per-AO/per-strand (never a holistic mark): in "## Mark Scheme", for POINT-marked parts list each point with its AO and tick/cross + reasons for refused marks; for LEVELS-marked parts give a THREE-STRAND verdict (K&U+Application [AO1+AO2], Analysis [AO3], Evaluation [AO4]) each rated Strong/Good/Reasonable/Limited with a one-line reason, then the NAMED LEVEL with its mark range, the within-level position, and the mark. State PASS/FAIL for each applicable gate, then one "why not higher" sentence. Sum to the final mark out of ${question.marks}.
+` : ""}
 
 === DIAGRAM MARKING CHECKLIST (apply ALL 5 criteria if a diagram is present) ===
 1. **AXES** (1 mark): Both axes labelled correctly? (Price/Quantity, Price Level/Real GDP, etc.)
