@@ -2014,6 +2014,30 @@ REQUIRED OUTPUT — in "## Mark Scheme" you MUST give a PER-AO breakdown using t
   - AO3 Evaluation: X/[max] — (for 12/20-mark parts "Table B: Level N (X/4 or X/6)") whether it weighed both sides, engaged the qualifier, and concluded; if 0, say why.
 Then sum to the final mark and state explicitly any cap applied (one-sided, or missing required diagram).
 ` : ""}
+${isIGCSE ? `
+═══ APPLY CAIE IGCSE 0455 METHODOLOGY (NOT AQA). This is IGCSE, not A-level — mark as a 0455 examiner. ═══
+Mark strictly out of ${question.marks}. THREE assessment objectives (NO "AO4"): AO1 Knowledge & understanding
+(identify/define terms + use data), AO2 Analysis (developed cause->effect chains; description is NOT analysis),
+AO3 Evaluation (genuinely two-sided discussion + a supported judgement). Do not assert AO percentage weightings.
+
+DETECT THE PART FROM THE ${question.marks}-mark tariff + command word:
+${question.marks === 1 ? `• 1-mark Calculate — AO2: correct value/magnitude from the data; the currency symbol and exact format are NOT required (accept 0.7bn / 700m / 700,000,000 and reasonable rounding) but a percentage must not be a money amount. Own-figure rule applies.`
+: question.marks === 2 ? `• 2-mark Identify/State/Define — AO1, POINT-marked: 1 mark per correct point, NO development rewarded. Partial/incomplete definition = 1/2 (e.g. trade deficit must be financial; supply = willing AND able). Same-category pair scores once. "Consider the first n" — mark only the first two listed. Nothing for a diagram.`
+: question.marks === 4 ? `• 4-mark Explain — AO1+AO2, POINT-marked "identify (1) + develop (1)" x2: TWO distinct points, each with an explicit causal link. Identification-only caps at the identification marks (typically 2/4); one developed point when two are required = 2/4; a repeated second point earns nothing. Answer the exact thing asked.`
+: question.marks === 5 ? `• 5-mark data Analyse (Q1) — AO2, POINT-marked: state the relationship EXACTLY + supporting data + cause + any exception/anomaly. Transcribing figures without interpretation earns nothing; "proportional"/"indirectly proportional" loses precision where the relationship is merely direct/negative.`
+: question.marks === 6 ? `• 6-mark — detect: "Analyse" (AO2) is POINT-marked ~1 mark per developed cause->effect link (one-sided is CORRECT; adding the other side is wasted); "only identifying the reasons" caps at 3/6; with a required diagram split up to 4 diagram + up to 2 analysis. "Discuss whether or not" (AO2+AO3) is POINT-marked up to 4 each side, total 6, EACH SIDE capped at 4 (one-sided = max 4/6); reverse/mirror of a credited point = 0, a different mechanism = 1.`
+: question.marks === 8 ? `• 8-mark Discuss/"Do you think" — AO1+AO2+AO3, LEVELS-marked on the verbatim 0455 grid:
+   Level 3 (6-8): accurately examines BOTH sides with clear logical analysis AND thoughtful evaluation (one side may be deeper, but both considered and developed; may note uncertainties).
+   Level 2 (3-5): reasoned discussion with clear analysis but lacking depth, OR development may be one-sided.
+   Level 1 (1-2): a simple attempt at definitions/terminology; points asserted without development.
+   Level 0 (0): no creditable content, OR off-question/misread focus.
+   Place by best-fit: AO1 only -> L1; clear AO2 analysis -> L2; TWO developed sides + genuine evaluation/judgement -> L3. ONE-SIDED CANNOT EXCEED Level 2 (max 5). Two sides merely asserted = Level 1.`
+: `• ${question.marks}-mark part — point-marked: award 1 mark per valid distinct point (identification AO1 / developed analysis AO2 / evaluation AO3); withhold for repetition, no development, off-target, or description-not-analysis.`}
+
+GENERIC PRINCIPLES: POSITIVE marking — never deduct for errors/omissions (place weak work LOW by best-fit); whole marks only; do not credit a key term merely for being named, nor repetition/mirror statements; a conclusion is credited only if it adds a NEW supported judgement. DIAGRAMS are point-marked on additive components (D&S: axes price/quantity + labelled curves + correct shift + both equilibria; PPC: axes = two outputs not price/quantity + curve meeting both axes + new curve + shift); two diagrams = max 3 (lose equilibrium); on a "Draw" command written commentary earns nothing.
+
+REQUIRED OUTPUT — per-part, per-AO (never a holistic mark): in "## Mark Scheme" list each creditable point labelled AO1/AO2/AO3 with 1 mark each up to the tariff, name every REFUSED point with the reason, and for the 8-mark (d) assign the LEVEL by best-fit, place the mark within the band, and state any cap (one-sided -> max Level 2 = 5; off-question -> 0). Then sum to the final mark out of ${question.marks}.
+` : ""}
 
 === DIAGRAM MARKING CHECKLIST (apply ALL 5 criteria if a diagram is present) ===
 1. **AXES** (1 mark): Both axes labelled correctly? (Price/Quantity, Price Level/Real GDP, etc.)

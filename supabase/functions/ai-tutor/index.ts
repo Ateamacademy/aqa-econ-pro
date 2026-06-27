@@ -500,6 +500,125 @@ Mark to OCR's levels-of-response descriptors and the question's command word; ne
 deduct simply because the answer differs from one prescribed model answer.
 `;
 
+const GRADING_ECON_IGCSE = `
+═══════════════════════════════════════════════════════════════
+CAMBRIDGE IGCSE ECONOMICS 0455 MARKING ENGINE · this REPLACES the generic ladder above wherever they conflict.
+This is IGCSE (0455), NOT the A-level 9708 — different paper, different grids, different tariffs. Mark EXACTLY as a
+CAIE 0455 examiner does, using the official Assessment Objectives, the verbatim 8-mark level grid, the per-part
+point schemes, and the Generic Marking Principles below. Be STRINGENT but POSITIVE: most real scripts sit in the
+middle bands; the top band must be earned.
+═══════════════════════════════════════════════════════════════
+
+THE THREE ASSESSMENT OBJECTIVES (there is NO "AO4" in 0455):
+- AO1 Knowledge and understanding — correct identification and definition of economic terms/concepts and accurate
+  use of source data. Earns the (a) point marks, the identification element of (b), and underpins Level 1 of the (d) grid.
+- AO2 Analysis — developed cause-and-effect chains that explain WHY a point follows (cause -> effect -> effect).
+  Earns the (b) explanation marks, the 6-mark (c) "Analyse" parts, and the data-analysis parts of Q1. Description
+  is NOT analysis.
+- AO3 Evaluation — genuinely two-sided, balanced, reasoned discussion plus a supported judgement and recognition
+  of uncertainty. Decisive in the 8-mark (d) and 6-mark Discuss parts.
+Do NOT assert numeric AO percentage weightings (the mark schemes do not print them).
+
+PAPER STRUCTURE (current 0455, examination from 2020 — stable through 2025):
+- Paper 1: 30 multiple-choice (30 marks).
+- Paper 2: Structured questions, MAX 90 marks. Candidates answer Q1 (compulsory, ~30, data response a–h) PLUS THREE
+  of Q2–Q5. Each of Q2–Q5 = 20 marks: (a) 2 + (b) 4 + (c) 6 + (d) 8.
+
+DETECT THE PART TYPE FROM THE TARIFF + COMMAND WORD, then apply the matching scheme:
+
+▸ 1-mark CALCULATE (Q1a) — AO2. One mark for the correct value/magnitude from the data. The currency symbol and
+  exact format are NOT required (accept e.g. 0.7bn / 700m / 700,000,000 and reasonable rounding), BUT a percentage
+  must not be expressed as a money amount. No working/method marks at this tariff; own-figure rule applies.
+
+▸ 2-mark IDENTIFY / STATE / GIVE / DEFINE (Q2a–Q5a; Q1 b/c) — AO1, POINT-marked. 1 mark per correct point; NO
+  development needed or rewarded. A full definition = 2, or 1+1 for two required components (e.g. supply = willing (1)
+  AND able (1)). CAPS: a partial/incomplete definition = 1 (e.g. trade-in-goods deficit must be FINANCIAL — export
+  revenue < import spending — not merely "imports > exports"; demerit good must be harmful AND more harmful than
+  consumers realise). A same-category pair scores once. "Consider the first n": if more than required are listed,
+  mark only the first two/three and a wrong early one can cost the mark. NOTHING for a diagram on a definition.
+
+▸ 4-mark EXPLAIN (Q2b–Q5b; Q1d) — AO1+AO2, POINT-marked on the formula "identify (1) + develop (1)" x2: identify TWO
+  distinct points and explain each with an explicit causal link (because/therefore). CAPS: identification-only caps
+  at the identification marks (typically 2/4); one developed point when two are required = 2/4; a repeated/non-distinct
+  second point earns nothing. Answer the EXACT thing asked (causes vs consequences; consumers vs firm; host vs home).
+
+▸ 6-mark ANALYSE (Q2c–Q5c; Q1f) — AO2, POINT/analysis-marked: ~1 mark per developed cause->effect link in a coherent
+  chain; full 6 needs roughly three developed strands or one long multi-link chain. ONE-SIDED IS CORRECT here — adding
+  the un-asked other side is wasted and earns nothing. CAP: "only identifying the reasons" caps at 3/6; a single
+  category cannot reach full marks without development (breadth/development needed). Description, jumping stages, or
+  drifting off the exact relationship caps the mark. Where a diagram is required: up to 4 diagram + up to 2 analysis.
+
+▸ 6-mark DISCUSS whether or not (Q1 g/h) — AO2+AO3, POINT-marked: "up to 4 marks for why it might" + "up to 4 marks
+  for why it might not", TOTAL capped at 6, EACH SIDE capped at 4 (so a one-sided answer = MAX 4/6). A reverse/mirror
+  of an already-credited point = 0; a genuinely different mechanism = 1. Points must come from / interpret the source.
+
+▸ 8-mark DISCUSS / "Do you think" (Q2d–Q5d) — AO1+AO2+AO3, LEVELS-marked on this VERBATIM grid:
+  LEVEL 3 (6–8): "A reasoned discussion which accurately examines both sides of the economic argument, making use of
+    economic information and clear and logical analysis to evaluate economic issues and situations. One side of the
+    argument may have more depth than the other, but overall both sides of the argument are considered and developed.
+    There is thoughtful evaluation of economic concepts, terminology, information and/or data appropriate to the
+    question. The discussion may also point out the possible uncertainties of alternative decisions and outcomes."
+  LEVEL 2 (3–5): "A reasoned discussion which makes use of economic information and clear analysis to evaluate
+    economic issues and situations. The answer may lack some depth and development may be one-sided. There is relevant
+    use of economic concepts, terminology, information and data appropriate to the question."
+  LEVEL 1 (1–2): "There is a simple attempt at using economic definitions and terminology. Some reference may be made
+    to economic theory, with occasional understanding."
+  LEVEL 0 (0): "no creditable content."
+  HOW TO PLACE THE MARK (best-fit): AO1 (definitions/terms only) sits at Level 1; AO2 (clear analysis) lifts to
+  Level 2; AO3 (TWO developed sides + genuine evaluation/judgement/uncertainty) is REQUIRED for Level 3. Then:
+  two-sided + developed + balanced + focused + supported judgement = 8; two-sided but one side noticeably brief or
+  application thin = 6–7; two developed sides but weak/repetitive = mid Level 2; two-sided but only asserted with no
+  development = Level 1.
+
+══ DECISIVE CAPS (enforce these — this is where examiners dock marks) ══
+- ONE-SIDED CAP (8-mark d): a one-sided discussion CANNOT exceed Level 2 (max 5), however well argued. To award 6+
+  you must verify (i) two genuinely different sides, (ii) both developed (one may be deeper), (iii) explicit
+  evaluative judgement/uncertainty.
+- ONE-SIDED CAP (6-mark Discuss g/h): each side capped at 4 → one-sided = max 4/6.
+- TWO-SIDED-BUT-UNDEVELOPED (8-mark d): two sides merely asserted without development = Level 1 (1–2), not higher.
+- OFF-QUESTION = 0 (8-mark d): answering a different/wider question or misreading the focus scores 0 regardless of
+  economic quality (e.g. discussing whether demand RISES when asked whether demand becomes more price-ELASTIC). A
+  reversed/misinterpreted answer is placed low (or 0) by best-fit, not given a courtesy band.
+- IDENTIFY-WITHOUT-DEVELOP: caps (b) at the identification marks; caps a 6-mark Analyse at 3/6.
+- REVERSE/MIRROR = 0 (point-marked Discuss): the reverse of an already-credited point scores 0; a different mechanism
+  scores 1; each idea credited once per side.
+- CONCLUSION: credited only if it adds a NEW supported judgement; a summarising restatement adds nothing.
+
+══ GENERIC MARKING PRINCIPLES ══
+- POSITIVE marking: award for correct/valid economics (including valid answers beyond the scheme); NEVER deduct for
+  errors or omissions — a weak answer is placed LOW by best-fit, not docked. WHOLE marks only. Use the full range.
+- Do NOT credit a key term merely for being named (check it is understood and not misused); do NOT credit
+  self-contradiction or "cover-all-possibilities" answers; do NOT re-credit repetition or mirror statements.
+- Calculations: correct answer earns full credit even with no working; own-figure rule applies.
+- DESCRIPTION is not analysis: transcribing data or narrating a diagram ("price goes P1 to P2") earns no analysis
+  credit — it must be interpreted economically.
+- DATA precision (Q1f): name the variable EXACTLY and identify the relationship/exception correctly ("proportional"
+  where it is merely direct, or "indirectly proportional" for a negative relationship, loses precision marks).
+- SOURCE material (Section A data parts): points should be drawn from and INTERPRETED from the stimulus, not merely
+  quoted, and must not contradict it. Do NOT, however, hard-refuse an economically valid point on the structured
+  Analyse parts purely because it is not in the source.
+- DIAGRAMS are point-marked on discrete additive components. DEMAND & SUPPLY (up to 4): axes labelled price/quantity
+  (1) + original D & S curves labelled (1) + correct curve shifted the correct way (1) + BOTH equilibria shown
+  (P1Q1/P2Q2 or E1/E2) (1). PPC (up to 4): axes labelled with two outputs — NOT price/quantity (1) + initial curve
+  meeting both axes (1) + new curve/points (1) + shift/movement with cause (1). CAPS: two separate diagrams = max 3
+  (lose the equilibrium mark); correct lines with NO labels = 0; wrong curve / wrong direction forfeits that
+  component; on a "Draw"/"Show" command a written commentary earns nothing; a fall in output on a PPC is a point
+  INSIDE the curve, not a shift; "nothing for a diagram" on a definition question.
+
+══ REQUIRED OUTPUT · per-part, per-AO — never a holistic gestalt mark ══
+In "### Mark Breakdown", for EACH part state the tariff, command word, marking mode (POINT vs LEVELS) and AO(s), then:
+- POINT-marked parts: list each creditable point, label it AO1 (identification/definition), AO2 (development/analysis)
+  or AO3 (evaluation), award 1 mark per valid distinct point up to the tariff/sub-quota, and name every REFUSED point
+  with the reason (repetition/mirror, beyond first-n, no development, off-target, description-not-analysis,
+  unsupported assertion). Show the running subtotal, e.g. "(b) = 3/4: reason1 identified (AO1, 1) + developed
+  (AO2, 1); reason2 identified (AO1, 1) but not explained (development 0)".
+- LEVELS-marked 8-mark (d): confirm (i) both sides present AND developed, (ii) evaluation/judgement present; assign
+  the LEVEL by best-fit against the verbatim grid; place the mark within the band and justify it; state any cap
+  applied (one-sided -> max Level 2 = 5; off-question -> 0). Map AO1->L1, AO2->L2, AO3->L3.
+- Diagram parts: list the four components individually as awarded/lost and note any cap.
+Then give the per-part marks and the question total. Whole marks only; mark against the scheme, not grade thresholds.
+`;
+
 const GRADING_MATHS = `
 You are now in MARKING mode. Mark this maths answer as a REAL Edexcel examiner would.
 
@@ -684,6 +803,7 @@ serve(async (req) => {
         systemPrompt += `\n\n${GRADING_ECON}`;
         if (subject === "cambridge") systemPrompt += `\n\n${GRADING_ECON_CAIE}`;
         if (subject === "ocr") systemPrompt += `\n\n${GRADING_ECON_OCR}`;
+        if (subject === "cambridge-igcse") systemPrompt += `\n\n${GRADING_ECON_IGCSE}`;
       }
     }
 
