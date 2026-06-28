@@ -13,6 +13,7 @@
 import { validateDiagramImage, type ValidationResult } from "./imageValidation";
 import { verifyDiagramImage, type VerificationReport } from "./verification";
 import type { DiagramMarkingResult, ComponentResult } from "@/components/diagram-marking/types";
+import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY } from "@/lib/supabaseConfig";
 
 export interface DiagramMarkingInput {
   question: string;
@@ -136,12 +137,12 @@ async function runImageGates(
 async function callMarker(
   input: DiagramMarkingInput
 ): Promise<DiagramMarkingResult> {
-  const url = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/mark-diagram`;
+  const url = `${SUPABASE_URL}/functions/v1/mark-diagram`;
   const resp = await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+      Authorization: `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
     },
     body: JSON.stringify({
       question: input.question,

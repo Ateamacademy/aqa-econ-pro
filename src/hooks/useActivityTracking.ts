@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
+import { SUPABASE_URL } from "@/lib/supabaseConfig";
 
 export function useActivityTracking() {
   const { user } = useAuth();
@@ -21,7 +22,7 @@ export function useActivityTracking() {
     const handleUnload = () => {
       const duration = Math.round((Date.now() - sessionStart.current) / 1000);
       navigator.sendBeacon?.(
-        `${import.meta.env.VITE_SUPABASE_URL}/rest/v1/user_activity_log`,
+        `${SUPABASE_URL}/rest/v1/user_activity_log`,
         JSON.stringify({
           user_id: user.id,
           event_type: "session_end",

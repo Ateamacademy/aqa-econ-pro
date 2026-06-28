@@ -3,8 +3,10 @@
  * Runs BEFORE the marking call. Has no rubric or question context.
  */
 
-const EDGE_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/mark-exam`;
-const AUTH_HEADER = `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`;
+import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY } from "@/lib/supabaseConfig";
+
+const EDGE_URL = `${SUPABASE_URL}/functions/v1/mark-exam`;
+const AUTH_HEADER = `Bearer ${SUPABASE_PUBLISHABLE_KEY}`;
 
 export interface VerificationReport {
   isBlank: boolean;

@@ -1,3 +1,5 @@
+import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY } from "@/lib/supabaseConfig";
+
 type MessageContent = string | Array<{ type: "text"; text: string } | { type: "image_url"; image_url: { url: string } }>;
 type Msg = { role: "user" | "assistant"; content: MessageContent };
 
@@ -57,7 +59,7 @@ export async function streamChat({
   onDone: () => void;
   onError?: (error: string) => void;
 }) {
-  const url = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/ai-tutor`;
+  const url = `${SUPABASE_URL}/functions/v1/ai-tutor`;
   let completed = false;
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), DEFAULT_TIMEOUT_MS);
@@ -74,7 +76,7 @@ export async function streamChat({
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+        Authorization: `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
       },
       body: JSON.stringify({ messages, mode, subject: subject || "economics" }),
       signal: controller.signal,

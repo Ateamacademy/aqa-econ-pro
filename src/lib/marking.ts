@@ -4,9 +4,10 @@ import { parseMarkingJSON, parseSynthesisJSON, validateMarks, enforceAxesCap } f
 import { verifyDiagramImage, type VerificationReport } from "./verification";
 import { validateAndCorrectMarks, checkWordCountGate, checkKeyTermGate, checkContextGate, checkPlagiarismGate } from "./markValidator";
 import { logMarkingEvent } from "./markingTelemetry";
+import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY } from "@/lib/supabaseConfig";
 
-const EDGE_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/mark-exam`;
-const AUTH_HEADER = `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`;
+const EDGE_URL = `${SUPABASE_URL}/functions/v1/mark-exam`;
+const AUTH_HEADER = `Bearer ${SUPABASE_PUBLISHABLE_KEY}`;
 
 async function callMarkingEdge(body: Record<string, unknown>): Promise<string> {
   const resp = await fetch(EDGE_URL, {
