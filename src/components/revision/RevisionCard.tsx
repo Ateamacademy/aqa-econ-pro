@@ -1,24 +1,25 @@
 /**
- * Revision Card System · Notebook-style handwritten aesthetic
- * with dynamic writing animations for a live-lesson experience.
+ * Revision Card System · editorial notes aesthetic.
+ * Colour-coded callouts driven by the --n-* design tokens, so they render
+ * dark-native by default and adapt inside a light reading surface. Shared by
+ * Study Notes, the 24/7 tutor and predicted-paper feedback.
  */
 
-import { ReactNode, useEffect, useRef, useState } from "react";
-import { BookOpen, Lightbulb, AlertTriangle, Calculator, Tag, TrendingUp, Pen } from "lucide-react";
+import { ReactNode, useRef } from "react";
+import { BookOpen, Lightbulb, AlertTriangle, Calculator, Tag, TrendingUp, GitBranch } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, useInView } from "framer-motion";
 
-/* ── Animated writing wrapper · reveals children as if being written ── */
-function WritingReveal({ children, delay = 0, className }: { children: ReactNode; delay?: number; className?: string }) {
+/* ── Subtle reveal-on-scroll wrapper ── */
+function Reveal({ children, delay = 0, className }: { children: ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-40px" });
-
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 8, filter: "blur(3px)" }}
-      animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-      transition={{ duration: 0.6, delay, ease: [0.25, 0.4, 0.25, 1] }}
+      initial={{ opacity: 0, y: 8 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.45, delay, ease: [0.25, 0.4, 0.25, 1] }}
       className={className}
     >
       {children}
@@ -26,205 +27,132 @@ function WritingReveal({ children, delay = 0, className }: { children: ReactNode
   );
 }
 
-/* ── Handwritten section header with highlighter ── */
-function HandwrittenHeader({
-  icon: Icon,
-  label,
-  color,
-  highlightColor,
-}: {
-  icon: any;
-  label: string;
-  color: string;
-  highlightColor?: string;
-}) {
+/* ── Editorial callout label (icon chip + uppercase label) ── */
+function CalloutLabel({ icon: Icon, label }: { icon: any; label: string }) {
   return (
-    <div className="flex items-center gap-2 px-4 py-3">
-      <div className={cn("flex h-7 w-7 items-center justify-center rounded-lg", color)}>
-        <Icon className="h-3.5 w-3.5" />
-      </div>
-      <span className={cn(
-        "font-handwriting text-lg font-bold tracking-wide",
-        highlightColor || ""
-      )}>
-        {label}
-      </span>
-      <motion.div
-        className="flex-1 h-[2px] rounded-full opacity-30"
-        style={{ background: `hsl(var(--primary))` }}
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
-        layoutId={undefined}
-      />
+    <div className="note-callout-label">
+      <span className="ni"><Icon className="h-4 w-4" /></span>
+      {label}
     </div>
   );
 }
 
-/* ── Definition Box (Blue) · notebook style ── */
+/* ── Definition (indigo) ── */
 export function DefinitionBox({ term, children }: { term?: string; children: ReactNode }) {
   return (
-    <WritingReveal>
-      <div className="revision-box revision-definition">
-        <HandwrittenHeader
-          icon={BookOpen}
-          label={term ? `Definition: ${term}` : "Definition"}
-          color="bg-[hsl(var(--revision-blue)/0.15)] text-[hsl(var(--revision-blue))]"
-        />
-        <div className="revision-box-content notebook-paper notebook-margin pl-6">
-          <div className="animate-write-fade">{children}</div>
-        </div>
+    <Reveal>
+      <div className="note-callout nc-def">
+        <CalloutLabel icon={BookOpen} label={term ? `Definition · ${term}` : "Definition"} />
+        <div className="note-callout-body">{children}</div>
       </div>
-    </WritingReveal>
+    </Reveal>
   );
 }
 
-/* ── Example Box (Amber) · sticky note style ── */
+/* ── Real-world example (green) ── */
 export function ExampleBox({ children }: { children: ReactNode }) {
   return (
-    <WritingReveal delay={0.05}>
-      <div className="revision-box revision-example relative">
-        <HandwrittenHeader
-          icon={Lightbulb}
-          label="Real-World Example"
-          color="bg-[hsl(var(--revision-amber)/0.15)] text-[hsl(var(--revision-amber))]"
-        />
-        <div className="revision-box-content">
-          <div className="sticky-note font-handwriting-alt text-base leading-relaxed">
-            {children}
-          </div>
-        </div>
+    <Reveal delay={0.05}>
+      <div className="note-callout nc-ex">
+        <CalloutLabel icon={Lightbulb} label="Real-world case" />
+        <div className="note-callout-body">{children}</div>
       </div>
-    </WritingReveal>
+    </Reveal>
   );
 }
 
-/* ── Exam Tip Box (Red) · urgent callout style ── */
+/* ── Exam tip (amber) ── */
 export function ExamTipBox({ children }: { children: ReactNode }) {
   return (
-    <WritingReveal delay={0.1}>
-      <div className="revision-box revision-exam-tip">
-        <HandwrittenHeader
-          icon={AlertTriangle}
-          label="⚠ Exam Tip"
-          color="bg-[hsl(var(--revision-red)/0.15)] text-[hsl(var(--revision-red))]"
-          highlightColor="highlighter-pink"
-        />
-        <div className="revision-box-content notebook-paper pl-5">
-          <div className="border-l-4 border-[hsl(var(--revision-red)/0.3)] pl-3 animate-write-fade">
-            {children}
-          </div>
-        </div>
+    <Reveal delay={0.1}>
+      <div className="note-callout nc-tip">
+        <CalloutLabel icon={AlertTriangle} label="Examiner tip" />
+        <div className="note-callout-body">{children}</div>
       </div>
-    </WritingReveal>
+    </Reveal>
   );
 }
 
-/* ── Formula Box (Purple) · chalkboard style ── */
+/* ── Formula (violet) ── */
 export function FormulaBox({ children }: { children: ReactNode }) {
   return (
-    <WritingReveal delay={0.08}>
-      <div className="revision-box revision-formula">
-        <HandwrittenHeader
-          icon={Calculator}
-          label="Formula"
-          color="bg-[hsl(var(--revision-purple)/0.15)] text-[hsl(var(--revision-purple))]"
-        />
-        <div className="revision-box-content bg-[hsl(var(--foreground)/0.03)]">
-          <div className="font-handwriting text-xl text-center py-2 animate-write-in">
-            {children}
-          </div>
-        </div>
+    <Reveal delay={0.08}>
+      <div className="note-callout nc-formula">
+        <CalloutLabel icon={Calculator} label="Formula" />
+        <div className="note-callout-body note-formula-body">{children}</div>
       </div>
-    </WritingReveal>
+    </Reveal>
   );
 }
 
-/* ── Key Terms List (Teal) · index card style ── */
+/* ── Key terms (grid) ── */
 export function KeyTermsList({ terms }: { terms: { term: string; definition: string }[] }) {
   if (!terms.length) return null;
   return (
-    <WritingReveal delay={0.04}>
-      <div className="revision-box revision-key-terms">
-        <HandwrittenHeader
-          icon={Tag}
-          label="Key Terms"
-          color="bg-[hsl(var(--revision-teal)/0.15)] text-[hsl(var(--revision-teal))]"
-        />
-        <div className="revision-box-content">
-          <dl className="space-y-3">
-            {terms.map((t, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -12 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.08, ease: [0.25, 0.4, 0.25, 1] }}
-                className="flex gap-3 items-start"
-              >
-                <dt className="font-handwriting font-bold text-lg min-w-[100px] shrink-0 highlighter-yellow">
-                  {t.term}
-                </dt>
-                <dd className="text-sm opacity-90 pt-1 font-handwriting-alt text-base leading-relaxed">
-                  {t.definition}
-                </dd>
-              </motion.div>
-            ))}
-          </dl>
+    <Reveal delay={0.04}>
+      <div className="space-y-3">
+        <div className="note-callout-label" style={{ color: "hsl(var(--n-fg-strong))" }}>
+          <span className="ni" style={{ background: "hsl(var(--accent) / 0.16)", color: "hsl(var(--accent))" }}>
+            <Tag className="h-4 w-4" />
+          </span>
+          Key terms
+        </div>
+        <div className="grid gap-2.5">
+          {terms.map((t, i) => (
+            <div key={i} className="note-keyterm">
+              <span className="kt-term">{t.term}</span>
+              <span className="kt-def">{t.definition}</span>
+            </div>
+          ))}
         </div>
       </div>
-    </WritingReveal>
+    </Reveal>
   );
 }
 
-/* ── Diagram Box (Green) · wraps any diagram component ── */
+/* ── Diagram (always-dark "screen" card) ── */
 export function DiagramBox({ title, children }: { title?: string; children: ReactNode }) {
   return (
-    <WritingReveal delay={0.1}>
-      <div className="revision-box revision-diagram">
-        <HandwrittenHeader
-          icon={TrendingUp}
-          label={title || "Key Diagram"}
-          color="bg-[hsl(var(--revision-green)/0.15)] text-[hsl(var(--revision-green))]"
-        />
-        <div className="revision-box-content">{children}</div>
+    <Reveal delay={0.1}>
+      <div className="note-diagram-card p-5">
+        <div className="flex items-center gap-2.5 mb-4">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg" style={{ background: "hsl(var(--success) / 0.18)", color: "hsl(var(--success))" }}>
+            <TrendingUp className="h-4 w-4" />
+          </span>
+          <h4 className="ndc-title font-display text-base font-semibold">{title || "Key diagram"}</h4>
+        </div>
+        <div className="text-sm" style={{ color: "#C8CCE0" }}>{children}</div>
       </div>
-    </WritingReveal>
+    </Reveal>
   );
 }
 
-/* ── Analysis Chain (numbered reasoning steps) ── */
+/* ── Analysis chain (numbered reasoning) ── */
 export function AnalysisChain({ steps }: { steps: string[] }) {
   if (!steps.length) return null;
   return (
-    <WritingReveal>
-      <div className="revision-box revision-analysis">
-        <HandwrittenHeader
-          icon={Pen}
-          label="Chain of Reasoning"
-          color="bg-[hsl(var(--primary)/0.15)] text-primary"
-        />
-        <div className="revision-box-content notebook-paper notebook-margin pl-6">
-          <ol className="space-y-3">
-            {steps.map((step, i) => (
-              <motion.li
-                key={i}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.12, ease: [0.25, 0.4, 0.25, 1] }}
-                className="flex gap-3 items-start"
+    <Reveal>
+      <div className="note-callout nc-def">
+        <CalloutLabel icon={GitBranch} label="Chain of reasoning" />
+        <ol className="space-y-2.5 mt-1">
+          {steps.map((step, i) => (
+            <li key={i} className="flex gap-3 items-start note-callout-body">
+              <span
+                className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold mt-0.5"
+                style={{ background: "hsl(var(--primary) / 0.16)", color: "hsl(var(--primary))" }}
               >
-                <span className="revision-step-number font-handwriting text-base">{i + 1}</span>
-                <span className="font-handwriting-alt text-base leading-relaxed">{step}</span>
-              </motion.li>
-            ))}
-          </ol>
-        </div>
+                {i + 1}
+              </span>
+              <span>{step}</span>
+            </li>
+          ))}
+        </ol>
       </div>
-    </WritingReveal>
+    </Reveal>
   );
 }
 
-/* ── Full Revision Topic Card · notebook page ── */
+/* ── Full subtopic card ── */
 export function RevisionTopicCard({
   title,
   children,
@@ -236,24 +164,16 @@ export function RevisionTopicCard({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-30px" });
-
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 16 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-      className={cn("revision-topic-card", className)}
+      transition={{ duration: 0.45, ease: [0.25, 0.4, 0.25, 1] }}
+      className={cn("note-card p-5 md:p-6", className)}
     >
-      {/* Notebook hole decorations */}
-      <div className="absolute left-3 top-4 flex flex-col gap-6">
-        <div className="w-3 h-3 rounded-full border-2 border-border opacity-30" />
-        <div className="w-3 h-3 rounded-full border-2 border-border opacity-30" />
-      </div>
-      <div className="pl-5">
-        <h2 className="revision-topic-title handwritten-underline">{title}</h2>
-        <div className="space-y-4">{children}</div>
-      </div>
+      <h2 className="note-card-title font-display text-2xl font-semibold tracking-tight mb-4">{title}</h2>
+      <div className="space-y-4">{children}</div>
     </motion.div>
   );
 }

@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo, useCallback } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubject } from "@/contexts/SubjectContext";
 import { Input } from "@/components/ui/input";
-import { BookOpen, ChevronRight, Search, Layers, GraduationCap, Sparkles, TrendingUp, Pen, Eye } from "lucide-react";
+import { BookOpen, ChevronRight, Search, Layers, GraduationCap, Sparkles, TrendingUp, Pen, Eye, Sun, Moon } from "lucide-react";
 import {
   RevisionTopicCard,
   DefinitionBox,
@@ -108,14 +108,14 @@ function StatCard({ icon: Icon, label, value, delay }: { icon: any; label: strin
       initial={{ opacity: 0, y: 20, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.5, delay, ease: [0.25, 0.4, 0.25, 1] }}
-      className="flex items-center gap-3 rounded-2xl border border-border bg-card px-5 py-4 shadow-sm"
+      className="note-card flex items-center gap-3 px-5 py-4"
     >
-      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
-        <Icon className="h-5 w-5 text-primary" />
+      <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "hsl(var(--primary) / 0.12)", color: "hsl(var(--primary))" }}>
+        <Icon className="h-5 w-5" />
       </div>
       <div>
-        <p className="text-2xl font-bold tracking-tight font-handwriting">{value}</p>
-        <p className="text-xs text-muted-foreground font-handwriting-alt">{label}</p>
+        <p className="text-2xl font-semibold tracking-tight font-display" style={{ color: "hsl(var(--n-fg-strong))" }}>{value}</p>
+        <p className="text-xs" style={{ color: "hsl(var(--n-muted))" }}>{label}</p>
       </div>
     </motion.div>
   );
@@ -135,41 +135,18 @@ function SectionHeader({ section, index }: { section: PaperSection; index: numbe
       transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.4, 0.25, 1] }}
       className={`${index > 0 ? "mt-14" : ""} mb-6`}
     >
-      {/* Notebook tab */}
-      <div className="flex items-end gap-0 mb-0">
-        <div className="notebook-tab">
-          <span className="text-2xl mr-2">{section.icon}</span>
-          {section.heading.split("·")[0]?.trim()}
+      <div className="note-card p-5 flex items-center gap-3.5">
+        <span className="flex h-10 w-10 items-center justify-center rounded-xl shrink-0" style={{ background: "hsl(var(--primary) / 0.12)", color: "hsl(var(--primary))" }}>
+          {index === 0 ? <BookOpen className="h-5 w-5" /> : <Layers className="h-5 w-5" />}
+        </span>
+        <div>
+          <h2 className="font-display text-xl font-semibold tracking-tight" style={{ color: "hsl(var(--n-fg-strong))" }}>
+            {section.heading}
+          </h2>
+          <p className="text-sm mt-0.5" style={{ color: "hsl(var(--n-muted))" }}>
+            {section.topics.length} modules · {topicCount} subtopics
+          </p>
         </div>
-      </div>
-      {/* Section body */}
-      <div className="border-2 border-border rounded-b-xl rounded-tr-xl p-5 bg-card">
-        <h2 className="font-handwriting text-2xl font-bold tracking-tight text-foreground">
-          {section.heading}
-        </h2>
-        <div className="flex items-center gap-3 mt-2">
-          <span className="text-sm text-muted-foreground font-handwriting-alt highlighter-blue">
-            {section.topics.length} modules
-          </span>
-          <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/40" />
-          <span className="text-sm text-muted-foreground font-handwriting-alt highlighter-yellow">
-            {topicCount} subtopics
-          </span>
-        </div>
-        {/* Hand-drawn underline */}
-        <svg className="w-full h-3 mt-3 overflow-visible" viewBox="0 0 400 8" preserveAspectRatio="none">
-          <motion.path
-            d="M0,4 C50,2 100,6 150,3 C200,1 250,7 300,4 C350,2 380,5 400,4"
-            fill="none"
-            stroke="hsl(var(--primary))"
-            strokeWidth="2"
-            strokeLinecap="round"
-            opacity="0.3"
-            initial={{ pathLength: 0 }}
-            animate={isInView ? { pathLength: 1 } : {}}
-            transition={{ duration: 1.2, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
-          />
-        </svg>
       </div>
     </motion.div>
   );
@@ -208,6 +185,18 @@ export default function StudyNotes() {
   const [search, setSearch] = useState("");
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const [viewedSubtopics, setViewedSubtopics] = useState<Set<string>>(new Set());
+  // Reading surface: dark-native by default, with a light "paper" mode the student can switch to.
+  const [reading, setReading] = useState<"dark" | "light">(() => {
+    if (typeof window === "undefined") return "dark";
+    return window.localStorage.getItem("notesReading") === "light" ? "light" : "dark";
+  });
+  const toggleReading = useCallback(() => {
+    setReading((r) => {
+      const next = r === "dark" ? "light" : "dark";
+      try { window.localStorage.setItem("notesReading", next); } catch { /* ignore */ }
+      return next;
+    });
+  }, []);
 
   useEffect(() => { setExpanded({}); setSearch(""); }, [subject]);
 
@@ -268,7 +257,7 @@ export default function StudyNotes() {
             <KeyTermsList terms={sub.keyTerms} />
           )}
           {sub.explanation && (
-            <div className="ai-response text-sm px-1 font-handwriting-alt text-base leading-relaxed">
+            <div className="ai-response text-base leading-relaxed px-1">
               <MathsMarkdown>{sub.explanation}</MathsMarkdown>
             </div>
           )}
@@ -323,7 +312,7 @@ export default function StudyNotes() {
       );
     }
     return (
-      <div className="prose prose-sm max-w-none dark:prose-invert font-handwriting-alt text-base">
+      <div className="ai-response text-base leading-relaxed px-1">
         <MathsMarkdown>{sub.content || ""}</MathsMarkdown>
       </div>
     );
@@ -358,21 +347,21 @@ export default function StudyNotes() {
         >
           <button
             onClick={() => toggle(key)}
-            className="group w-full text-left px-5 py-4 flex items-center gap-3 hover:bg-muted/50 transition-all duration-300 rounded-xl border border-border bg-card hover:shadow-md"
+            className="note-card group w-full text-left px-5 py-4 flex items-center gap-3 transition-all duration-300 hover:border-[hsl(var(--primary)/0.4)]"
           >
             <motion.div animate={{ rotate: isOpen ? 90 : 0 }} transition={{ duration: 0.2 }}>
-              <ChevronRight className="h-4 w-4 text-primary" />
+              <ChevronRight className="h-4 w-4" style={{ color: "hsl(var(--primary))" }} />
             </motion.div>
             <div className="flex-1 min-w-0">
-              <h3 className="font-handwriting font-bold text-xl tracking-tight">{topic.name}</h3>
+              <h3 className="font-display font-semibold text-lg tracking-tight" style={{ color: "hsl(var(--n-fg-strong))" }}>{topic.name}</h3>
             </div>
             <div className="flex items-center gap-2">
               {topic.subtopics.some(s => s.diagram) && (
-                <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary/10 text-primary font-handwriting-alt">
-                  📐 Diagrams
+                <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full" style={{ background: "hsl(var(--primary) / 0.12)", color: "hsl(var(--primary))" }}>
+                  <TrendingUp className="h-3 w-3" /> Diagrams
                 </span>
               )}
-              <span className="text-sm font-handwriting font-bold px-2.5 py-1 rounded-full bg-muted text-muted-foreground">
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-full" style={{ background: "hsl(var(--n-card))", border: "1px solid hsl(var(--n-border))", color: "hsl(var(--n-muted))" }}>
                 {topic.subtopics.length}
               </span>
             </div>
@@ -413,27 +402,39 @@ export default function StudyNotes() {
   };
 
   return (
-    <div className="container py-10 max-w-4xl">
-      {/* ── Hero header · notebook cover ── */}
+    <div className="container py-10 max-w-4xl notes-surface" data-reading={reading}>
+      {/* ── Hero header ── */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
         className="mb-10"
       >
-        <div className="flex items-center gap-4 mb-3">
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 border-2 border-primary/20">
-            <Pen className="h-7 w-7 text-primary" />
+        <div className="flex items-start justify-between gap-4 mb-3">
+          <div className="flex items-center gap-4">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl" style={{ background: "hsl(var(--primary) / 0.12)", color: "hsl(var(--primary))" }}>
+              <BookOpen className="h-7 w-7" />
+            </div>
+            <div>
+              <h1 className="text-4xl font-display font-semibold tracking-tight" style={{ color: "hsl(var(--n-fg-strong))" }}>Study notes</h1>
+              <p className="text-base" style={{ color: "hsl(var(--n-muted))" }}>
+                {examBoard} {level} {subjectLabel}
+              </p>
+            </div>
           </div>
-          <div>
-            <h1 className="text-4xl font-handwriting font-bold tracking-tight">Study Notes</h1>
-            <p className="text-base text-muted-foreground font-handwriting-alt">
-              {examBoard} {level} {subjectLabel}
-            </p>
-          </div>
+          <button
+            onClick={toggleReading}
+            className="shrink-0 flex items-center gap-2 px-3 py-2 rounded-full text-xs font-medium transition-colors"
+            style={{ background: "hsl(var(--n-card))", border: "1px solid hsl(var(--n-border))", color: "hsl(var(--n-muted))" }}
+            aria-label={`Switch to ${reading === "dark" ? "light" : "dark"} reading mode`}
+            title={`Switch to ${reading === "dark" ? "light" : "dark"} reading mode`}
+          >
+            {reading === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            <span className="hidden sm:inline">{reading === "dark" ? "Light" : "Dark"}</span>
+          </button>
         </div>
-        <p className="text-base text-muted-foreground font-handwriting-alt mt-3 max-w-xl leading-relaxed">
-          ✨ Handcrafted revision notes with interactive diagrams, key terms & exam tips · presented like a live lesson for efficient A* revision.
+        <p className="text-base mt-3 max-w-xl leading-relaxed" style={{ color: "hsl(var(--n-muted))" }}>
+          Curriculum-aligned revision notes with interactive diagrams, key terms and examiner tips — structured for efficient A* revision.
         </p>
       </motion.div>
 
@@ -452,12 +453,13 @@ export default function StudyNotes() {
         transition={{ duration: 0.4, delay: 0.3 }}
         className="relative mb-8"
       >
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 z-10" style={{ color: "hsl(var(--n-muted))" }} />
         <Input
           placeholder="Search topics, terms, definitions..."
           value={search}
           onChange={e => setSearch(e.target.value)}
-          className="pl-11 rounded-2xl h-12 text-sm border-border bg-card shadow-sm focus-visible:shadow-md transition-shadow font-handwriting-alt"
+          className="pl-11 rounded-2xl h-12 text-sm transition-shadow"
+          style={{ background: "hsl(var(--n-card))", border: "1px solid hsl(var(--n-border))", color: "hsl(var(--n-fg))" }}
         />
       </motion.div>
 

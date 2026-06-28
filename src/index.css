@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -475,3 +475,77 @@
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+
+/* ════════════════════════════════════════════════════════════════════════
+   Editorial notes design system · dark-native default + light reading mode.
+   The --n-* tokens default to dark (so the shared callouts also look native
+   in the dark tutor/feedback), and are overridden inside a notes-surface
+   that the student has switched to light reading mode.
+   ════════════════════════════════════════════════════════════════════════ */
+:root {
+  --n-card: 240 26% 17%;       /* callout / card surface (dark) */
+  --n-elev: 240 32% 9%;        /* diagram / elevated surface (always dark — reads as a screen) */
+  --n-fg: 220 22% 86%;         /* body text */
+  --n-fg-strong: 210 40% 98%;  /* headings / emphasis */
+  --n-muted: 220 14% 64%;      /* secondary text */
+  --n-border: 240 20% 26%;     /* hairlines */
+}
+.notes-surface[data-reading="light"] {
+  --n-card: 0 0% 100%;
+  --n-elev: 240 32% 9%;        /* diagram card stays dark in light mode — deliberate, matches the design */
+  --n-fg: 215 25% 32%;
+  --n-fg-strong: 222 47% 11%;
+  --n-muted: 215 16% 47%;
+  --n-border: 214 32% 91%;
+  background: #FAFAF8;
+  border: 1px solid hsl(var(--n-border));
+  border-radius: 20px;
+  padding: 10px 8px;
+}
+
+.font-display { font-family: 'Fraunces', Georgia, serif; }
+
+/* Colour-coded callouts (left accent + tint, right-rounded so the accent edge stays crisp) */
+.note-callout { padding: 16px 18px 16px 20px; border-radius: 0 14px 14px 0; }
+.note-callout-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 9px; margin-bottom: 9px; }
+.note-callout-label .ni { width: 28px; height: 28px; border-radius: 8px; display: inline-flex;
+  align-items: center; justify-content: center; flex-shrink: 0; }
+.note-callout-body { color: hsl(var(--n-fg)); font-size: 15px; line-height: 1.7; }
+.note-callout-body strong { color: hsl(var(--n-fg-strong)); font-weight: 600; }
+.nc-def     { border-left: 4px solid hsl(var(--primary)); background: hsl(var(--primary) / 0.09); }
+.nc-def     .note-callout-label { color: hsl(var(--primary)); }
+.nc-def     .ni { background: hsl(var(--primary) / 0.16); color: hsl(var(--primary)); }
+.nc-ex      { border-left: 4px solid hsl(var(--success)); background: hsl(var(--success) / 0.09); }
+.nc-ex      .note-callout-label { color: hsl(var(--success)); }
+.nc-ex      .ni { background: hsl(var(--success) / 0.16); color: hsl(var(--success)); }
+.nc-tip     { border-left: 4px solid hsl(var(--warning)); background: hsl(var(--warning) / 0.10); }
+.nc-tip     .note-callout-label { color: hsl(var(--warning)); }
+.nc-tip     .ni { background: hsl(var(--warning) / 0.18); color: hsl(var(--warning)); }
+.nc-formula { border-left: 4px solid hsl(var(--accent)); background: hsl(var(--accent) / 0.10); }
+.nc-formula .note-callout-label { color: hsl(var(--accent)); }
+.nc-formula .ni { background: hsl(var(--accent) / 0.16); color: hsl(var(--accent)); }
+.note-formula-body { font-family: 'JetBrains Mono', monospace; text-align: center; padding: 4px 0;
+  color: hsl(var(--n-fg-strong)); }
+
+/* Key-terms grid */
+.note-keyterm { display: flex; align-items: baseline; gap: 14px; padding: 12px 15px;
+  background: hsl(var(--n-card)); border: 1px solid hsl(var(--n-border)); border-radius: 12px; }
+.note-keyterm .kt-term { font-weight: 600; color: hsl(var(--n-fg-strong)); width: 160px; flex-shrink: 0; font-size: 14px; }
+.note-keyterm .kt-def { color: hsl(var(--n-muted)); font-size: 13px; line-height: 1.6; }
+
+/* Surfaces */
+.note-card { background: hsl(var(--n-card)); border: 1px solid hsl(var(--n-border)); border-radius: 16px; }
+.note-card .note-card-title { color: hsl(var(--n-fg-strong)); }
+.note-diagram-card { background: hsl(var(--n-elev)); border: 1px solid hsl(var(--n-border)); border-radius: 16px; color: #C8CCE0; }
+.note-diagram-card .ndc-title { color: #F4F7FB; }
+
+/* Make all rendered markdown inside the notes surface follow the reading theme
+   (so body + headings stay readable when switched to the light paper mode). */
+.notes-surface .ai-response { color: hsl(var(--n-fg)); }
+.notes-surface .ai-response h1,
+.notes-surface .ai-response h2,
+.notes-surface .ai-response h3,
+.notes-surface .ai-response h4 { color: hsl(var(--n-fg-strong)); }
+.notes-surface .ai-response strong { color: hsl(var(--n-fg-strong)); }
+.notes-surface .ai-response a { color: hsl(var(--primary)); }
