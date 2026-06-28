@@ -2,7 +2,6 @@ import { useState, useCallback, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
-import { lovable } from "@/integrations/lovable/index";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -41,6 +40,7 @@ export default function Auth() {
   const [loading, setLoading] = useState(false);
   const [appleLoading, setAppleLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
+  const [msLoading, setMsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [activeTab, setActiveTab] = useState(() => {
     if (typeof window === "undefined") return "login";
@@ -48,40 +48,54 @@ export default function Auth() {
     return tab === "signup" ? "signup" : "login";
   });
 
-  const handleGoogleLogin = useCallback(async () => {
-    setGoogleLoading(true);
-    try {
-      const { error } = await lovable.auth.signInWithOAuth("google", {
-        redirect_uri: window.location.origin,
-      });
-      if (error) {
-        toast.error("Google sign-in failed. Please try again.");
-        console.error("Google OAuth error:", error);
+  // Native Supabase OAuth. supabase-js performs the browser redirect to the provider
+  // and, on return to redirectTo (/auth), consumes the session via detectSessionInUrl —
+  // no Lovable broker and no custom /callback route needed. The provider must be
+  // configured (client id/secret) in the Supabase dashboard and the redirect URL
+  // allow-listed, or the provider will return an error here.
+  const oauthSignIn = useCallback(
+    async (
+      provider: "google" | "apple" | "azure",
+      label: string,
+      setLoad: (v: boolean) => void,
+    ) => {
+      setLoad(true);
+      try {
+        const { error } = await supabase.auth.signInWithOAuth({
+          provider,
+          options: {
+            redirectTo: `${window.location.origin}/auth`,
+            ...(provider === "google" ? { queryParams: { prompt: "select_account" } } : {}),
+            ...(provider === "azure" ? { scopes: "email openid profile" } : {}),
+          },
+        });
+        if (error) {
+          toast.error(`${label} sign-in isn't available right now. Please use email, or try another option.`);
+          console.error(`${label} OAuth error:`, error);
+          setLoad(false);
+        }
+        // On success the browser redirects to the provider — leave the spinner on.
+      } catch (e) {
+        toast.error("Something went wrong. Please try again.");
+        console.error(`${label} OAuth exception:`, e);
+        setLoad(false);
       }
-    } catch (e) {
-      toast.error("Something went wrong. Please try again.");
-      console.error("Google OAuth exception:", e);
-    } finally {
-      setGoogleLoading(false);
-    }
-  }, []);
+    },
+    [],
+  );
 
-  const handleAppleLogin = useCallback(async () => {
-    setAppleLoading(true);
-    try {
-      const { error } = await lovable.auth.signInWithOAuth("apple", {
-        redirect_uri: window.location.origin,
-      });
-      if (error) {
-        toast.error("Apple sign-in failed. Please try again.");
-        console.error("Apple OAuth error:", error);
-      }
-    } catch (e) {
-      toast.error("Something went wrong. Please try again.");
-    } finally {
-      setAppleLoading(false);
-    }
-  }, []);
+  const handleGoogleLogin = useCallback(
+    () => oauthSignIn("google", "Google", setGoogleLoading),
+    [oauthSignIn],
+  );
+  const handleAppleLogin = useCallback(
+    () => oauthSignIn("apple", "Apple", setAppleLoading),
+    [oauthSignIn],
+  );
+  const handleMicrosoftLogin = useCallback(
+    () => oauthSignIn("azure", "Microsoft", setMsLoading),
+    [oauthSignIn],
+  );
 
   const handleResendConfirmation = useCallback(async (targetEmail?: string) => {
     const trimmedEmail = (targetEmail ?? email).trim();
@@ -142,8 +156,8 @@ export default function Auth() {
     if (loading) return;
 
     const trimmedEmail = email.trim();
-    if (password.length < 6) {
-      toast.error("Password must be at least 6 characters.");
+    if (password.length < 8) {
+      toast.error("Password must be at least 8 characters.");
       return;
     }
 
@@ -322,7 +336,7 @@ export default function Auth() {
                   variant="outline"
                   className="w-full h-12 text-sm font-medium border-border/70 hover:bg-secondary/80 hover:border-primary/40 transition-all group"
                   onClick={handleGoogleLogin}
-                  disabled={googleLoading || appleLoading || loading}
+                  disabled={googleLoading || appleLoading || msLoading || loading}
                 >
                   {googleLoading ? (
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -343,7 +357,7 @@ export default function Auth() {
                   variant="outline"
                   className="w-full h-12 text-sm font-medium border-border/70 hover:bg-secondary/80 hover:border-primary/40 transition-all group"
                   onClick={handleAppleLogin}
-                  disabled={appleLoading || googleLoading || loading}
+                  disabled={appleLoading || googleLoading || msLoading || loading}
                 >
                   {appleLoading ? (
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -353,6 +367,27 @@ export default function Auth() {
                     </svg>
                   )}
                   Continue with Apple
+                </Button>
+
+                {/* Microsoft OAuth · the deliverability-free path for Hotmail / Outlook / Live accounts */}
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="w-full h-12 text-sm font-medium border-border/70 hover:bg-secondary/80 hover:border-primary/40 transition-all group"
+                  onClick={handleMicrosoftLogin}
+                  disabled={msLoading || googleLoading || appleLoading || loading}
+                >
+                  {msLoading ? (
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  ) : (
+                    <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24">
+                      <path d="M11.4 11.4H2V2h9.4v9.4z" fill="#F25022" />
+                      <path d="M22 11.4h-9.4V2H22v9.4z" fill="#7FBA00" />
+                      <path d="M11.4 22H2v-9.4h9.4V22z" fill="#00A4EF" />
+                      <path d="M22 22h-9.4v-9.4H22V22z" fill="#FFB900" />
+                    </svg>
+                  )}
+                  Continue with Microsoft
                 </Button>
 
                 {/* Divider */}
@@ -450,11 +485,11 @@ export default function Auth() {
                         <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground group-focus-within:text-primary transition-colors" />
                         <Input
                           type={showPassword ? "text" : "password"}
-                          placeholder="Password (min 6 characters)"
+                          placeholder="Password (min 8 characters)"
                           value={password}
                           onChange={e => setPassword(e.target.value)}
                           required
-                          minLength={6}
+                          minLength={8}
                           autoComplete="new-password"
                           className="pl-11 pr-11 h-12 bg-background/60 border-border/60 focus-visible:border-primary/60 focus-visible:ring-primary/20 transition-all"
                         />

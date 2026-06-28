@@ -14,5 +14,9 @@ export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABL
     storage: localStorage,
     persistSession: true,
     autoRefreshToken: true,
+    // PKCE is the more secure OAuth/redirect flow; detectSessionInUrl consumes the
+    // session when the provider (or email/reset link) returns to the app.
+    flowType: "pkce",
+    detectSessionInUrl: true,
   }
 });

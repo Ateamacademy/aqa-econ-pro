@@ -39,7 +39,11 @@ const EMAIL_TEMPLATES: Record<string, React.ComponentType<any>> = {
 const SITE_NAME = "aqa-econ-pro"
 const SENDER_DOMAIN = "notify.econrev.co"
 const ROOT_DOMAIN = "econrev.co"
-const FROM_DOMAIN = "econrev.co" // Domain shown in From address (may be root or sender subdomain)
+// Send from the Mailgun-authenticated sender subdomain so SPF + DKIM align. The root
+// econrev.co is GoDaddy/M365 with no Mailgun auth, so Outlook/Hotmail junk or drop mail
+// sent From the root. (Requires the Mailgun DKIM record to be published in DNS for
+// notify.econrev.co — code change alone fixes SPF alignment, not DKIM.)
+const FROM_DOMAIN = SENDER_DOMAIN
 
 // Sample data for preview mode ONLY (not used in actual email sending).
 // URLs are baked in at scaffold time from the project's real data.
