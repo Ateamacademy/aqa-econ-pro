@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   MessageCircle, Send, Lock, Bot, User, Mic, ChevronRight, ChevronDown,
-  BookOpen, Lightbulb, HelpCircle, GraduationCap, Trash2,
+  BookOpen, Lightbulb, HelpCircle, GraduationCap, Trash2, Plus,
 } from "lucide-react";
 import { toast } from "sonner";
 import { RevisionRenderer } from "@/components/revision/RevisionRenderer";
@@ -17,6 +17,7 @@ import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { FREE_LIMITS } from "@/lib/plans";
 import { UpgradeModal } from "@/components/UpgradeModal";
+import { useTutorConversations } from "@/hooks/useTutorConversations";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -55,6 +56,9 @@ export default function AITutor() {
   const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({ Microeconomics: true, Macroeconomics: false });
   const bottomRef = useRef<HTMLDivElement>(null);
   const [showUpgrade, setShowUpgrade] = useState(false);
+  const [currentConversationId, setCurrentConversationId] = useState<string | null>(null);
+  const { conversations, loadMessages, createConversation, saveConversation, deleteConversation } =
+    useTutorConversations(subject);
 
   const tutorUsed = profile?.free_tutor_used ?? 0;
   const canUse = subscribed || tutorUsed < FREE_LIMITS.tutorQuestions;
@@ -63,7 +67,7 @@ export default function AITutor() {
   const tree = buildTopicTree(topics);
 
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages]);
-  useEffect(() => { setMessages([]); setActiveTopic(null); }, [subject]);
+  useEffect(() => { setMessages([]); setActiveTopic(null); setCurrentConversationId(null); }, [subject]);
 
   const selectTopic = (topic: string) => {
     setActiveTopic(topic);
@@ -112,6 +116,16 @@ export default function AITutor() {
         onDelta: upsert,
         onDone: async () => {
           setIsLoading(false);
+          // Persist the completed exchange so the student can refer back to it later.
+          const fullMessages: Msg[] = [...messages, userMsg, { role: "assistant", content: assistantSoFar }];
+          if (assistantSoFar.trim()) {
+            if (currentConversationId) {
+              saveConversation(currentConversationId, fullMessages);
+            } else {
+              const newId = await createConversation(fullMessages);
+              if (newId) setCurrentConversationId(newId);
+            }
+          }
           if (!subscribed && profile) {
             await supabase.from("profiles").update({ free_tutor_used: (profile.free_tutor_used ?? 0) + 1 } as any).eq("user_id", user!.id);
             refreshProfile();
@@ -126,9 +140,29 @@ export default function AITutor() {
     setExpandedGroups(prev => ({ ...prev, [label]: !prev[label] }));
   };
 
-  const clearChat = () => {
+  const startNewChat = () => {
     setMessages([]);
     setActiveTopic(null);
+    setCurrentConversationId(null);
+    setInput("");
+  };
+
+  const openConversation = async (id: string) => {
+    if (id === currentConversationId) return;
+    const msgs = await loadMessages(id);
+    if (msgs) {
+      setMessages(msgs);
+      setCurrentConversationId(id);
+      setActiveTopic(null);
+    } else {
+      toast.error("Couldn't load that conversation.");
+    }
+  };
+
+  const removeConversation = async (id: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    await deleteConversation(id);
+    if (id === currentConversationId) startNewChat();
   };
 
   return (
@@ -146,6 +180,40 @@ export default function AITutor() {
               <p className="text-[10px] text-muted-foreground">{examBoard} {level}</p>
             </div>
           </div>
+        </div>
+
+        {/* New chat + saved conversation history */}
+        <div className="p-3 border-b border-border/60 space-y-2">
+          <Button onClick={startNewChat} size="sm" className="w-full gap-2 rounded-lg">
+            <Plus className="h-3.5 w-3.5" /> New Chat
+          </Button>
+          {conversations.length > 0 && (
+            <div className="space-y-0.5 max-h-52 overflow-y-auto pt-1">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground px-1 mb-1">Recent chats</p>
+              {conversations.map((c) => (
+                <div
+                  key={c.id}
+                  onClick={() => openConversation(c.id)}
+                  className={cn(
+                    "group flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs cursor-pointer transition-colors",
+                    currentConversationId === c.id
+                      ? "bg-primary/10 text-primary font-medium"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                  )}
+                >
+                  <MessageCircle className="h-3 w-3 shrink-0 opacity-60" />
+                  <span className="flex-1 truncate" title={c.title}>{c.title}</span>
+                  <button
+                    onClick={(e) => removeConversation(c.id, e)}
+                    className="opacity-0 group-hover:opacity-100 text-muted-foreground hover:text-destructive transition-opacity shrink-0"
+                    title="Delete conversation"
+                  >
+                    <Trash2 className="h-3 w-3" />
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Topic Tree */}
@@ -197,14 +265,6 @@ export default function AITutor() {
           ))}
         </div>
 
-        {/* Clear chat button */}
-        {messages.length > 0 && (
-          <div className="p-3 border-t border-border/60">
-            <Button variant="ghost" size="sm" onClick={clearChat} className="w-full gap-2 text-xs text-muted-foreground hover:text-destructive">
-              <Trash2 className="h-3.5 w-3.5" /> Clear Conversation
-            </Button>
-          </div>
-        )}
       </aside>
 
       {/* ═══ RIGHT PANEL · Chat Interface ═══ */}
