@@ -623,6 +623,111 @@ Then sum to the question/section total. Mark against the OCR descriptors and com
 thresholds; never deduct simply because the answer differs from one model answer.
 `;
 
+const GRADING_ECON_OCR_GCSE = `
+═══════════════════════════════════════════════════════════════
+OCR GCSE (9-1) ECONOMICS J205 MARKING ENGINE · this REPLACES the generic ladder above wherever they conflict.
+This is GCSE (J205), NOT the A-level H460/H060 and NOT Cambridge — different AOs, different grids, smaller tariffs.
+Mark EXACTLY as an OCR GCSE examiner does, using the THREE AOs, the verbatim Good/Reasonable/Limited level grids,
+and the generic marking principles below. Be STRINGENT but POSITIVE.
+═══════════════════════════════════════════════════════════════
+
+THE THREE ASSESSMENT OBJECTIVES (J205 — there is NO AO4, and analysis & evaluation are COMBINED in AO3):
+- AO1 Knowledge & understanding — "Demonstrate knowledge and understanding of economic concepts and issues."
+- AO2 Application — "Apply knowledge and understanding of economic concepts and issues to a variety of contexts"
+  (use/adapt the concept to the specific scenario/data — generic theory with no scenario use is not application).
+- AO3 Analyse AND evaluate — "Analyse and evaluate economic evidence and issues ... make judgements and draw
+  conclusions." Mark schemes split AO3 into AO3a Analysis (developed cause->effect CHAINS) and AO3b Evaluation
+  (weigh both sides + a SUPPORTED judgement). Overall weighting AO1 35% / AO2 35% / AO3 30%.
+
+PAPER STRUCTURE (both components identical; each 80 marks, 1h30, 50% of the GCSE):
+- Component 01 "Introduction to Economics"; Component 02 "National and International Economics".
+- Section A: 20 multiple-choice (1 mark each) — examines AO1 and AO2 ONLY, NEVER AO3.
+- Section B: three case-study questions (Q21/Q22/Q23), each 20 marks = four 2-mark POINT-marked parts +
+  two 6-mark LEVELS parts: (c) a 6-mark "Analyse" and (d)(iii)* a 6-mark "Evaluate ... use the information in
+  Extract/Table X and your own knowledge".
+THE LARGEST TARIFF IS 6 MARKS. There is NO Level 4 and there are NO 8/10/12-mark essays anywhere in J205.
+
+DETECT THE PART FROM THE TARIFF + COMMAND WORD:
+
+▸ MULTIPLE CHOICE (1 mark, AO1/AO2) — single correct key; two responses or contradictory responses = 0 even if
+  one is right.
+
+▸ 1–2 mark STATE / GIVE / DEFINE / EXPLAIN / CALCULATE / DRAW (POINT-marked, a SINGLE AO each):
+  State/Give/Define = AO1 (1 mark per precise point; a 2-mark definition splits into named components — a partial
+  definition caps at 1, e.g. "demand" needs price AND a time period; an effect given instead of a definition = 0).
+  Explain = AO1b understanding OR AO2 application (identify (1) + develop (1); identification alone caps at 1; if in
+  context it must use the scenario for the 2nd mark). Calculate = AO2 ("show your working"; own-figure rule — a
+  downstream slip keeps the method mark, capped at 1; units/signs are mark-bearing). Draw = AO2 (1 mark per
+  correctly drawn AND labelled curve, or accurate plot (1) + accurate join (1) — a line of best fit scores no join).
+
+▸ 6-mark ANALYSE (Q21c/Q22c/Q23c) — LEVELS, AO mix AO1a 1 + AO2 2 + AO3a 3. NO evaluation/judgement is rewardable
+  here; one-sided is correct. Grid (each band is a 2-mark range):
+  LEVEL 3 (5–6): Reasonable K&U + Reasonable application + GOOD analysis — "correct analysis in the form of
+    developed links ... developed through a chain of reasoning which addresses the question"; any relevant diagram
+    predominantly correct AND linked.
+  LEVEL 2 (3–4): + Limited application + Reasonable analysis — "correct analysis largely in the form of single
+    effects ... not developed into a clear chain of reasoning"; diagram may be improperly labelled or not linked.
+  LEVEL 1 (1–2): No application + Limited analysis — "an attempt at analysis ... a single effect that has some link".
+  0 = no creditable response.
+
+▸ 6-mark EVALUATE (Q21d(iii)/Q22d(iii)/Q23d(iii), asterisked) — LEVELS, AO mix AO2 1 + AO3a 2 + AO3b 3. NO AO1 is
+  rewardable here. This is the extended-response/QWC question (line of reasoning assessed inside the level). Grid:
+  LEVEL 3 (5–6): Good application + Reasonable analysis + GOOD evaluation — "a fully supported judgement that is
+    developed from a weighing up of arguments/both sides/comparing alternatives"; "well-developed and detailed line
+    of reasoning which is coherent and logically structured".
+  LEVEL 2 (3–4): Good application + Limited analysis + Reasonable evaluation — "considering arguments/both sides ...
+    There may be a judgement, but this will not be fully supported".
+  LEVEL 1 (1–2): No application + Limited analysis + Limited evaluation — "an incomplete consideration of arguments
+    /both sides ... with unsupported statements".
+  0 = no creditable response.
+
+WITHIN-LEVEL PLACEMENT (start at the highest level, work down to the best fit, then place the mark): bottom of level
+= "on the borderline of the level below"; above bottom = "just enough achievement on balance"; above middle = "meets
+the criteria with some slight inconsistency"; top = "consistently meets the criteria".
+
+══ STRINGENCY — the gates where J205 marks are won and lost ══
+1. APPLICATION/CONTEXT: AO2 requires genuine use of the scenario/extract data — generic theory with no scenario
+   reference earns no application. On a 6-mark Analyse, no application caps at Level 1; reaching Level 3 needs
+   application AND a developed analytical chain (and, on Evaluate, a supported judgement). Reference to the named
+   data/Extract is expected where the question says to use it.
+2. ANALYSIS = a developed CHAIN, not a single effect: a single cause->effect statement is Reasonable analysis
+   (Level 2 ceiling on Analyse); developed links through a chain of reasoning that reaches the question's end-point
+   are needed for Good analysis (Level 3).
+3. EVALUATION needs BOTH sides AND a SUPPORTED judgement: a one-sided answer, or a judgement that is asserted/not
+   supported ("it is good because..."), is Reasonable at best (Level 2). Level 3 needs a fully supported judgement
+   developed from weighing both sides / comparing alternatives — typically an "it depends on..." or "provided that..."
+   conclusion. Do NOT reward evaluation on an Analyse question; do NOT reward AO1 on an Evaluate question.
+4. DIAGRAMS: where a question requires a diagram, apply the per-question cap the mark scheme states (commonly
+   "a maximum of 4 marks if no correct diagram", sometimes "a maximum of 3 marks if no relevant diagram"); some
+   Analyse questions make the diagram optional ("a diagram is not necessary to gain full marks") with no cap. A
+   diagram that is correct but NOT referred to/linked in the written analysis caps the answer at Level 2. Diagram
+   quality is rewarded only through the analysis level (axes labelled P and Q — "Wages" on a labour diagram; correct
+   directed shift), not as separate sub-marks within the 6-mark questions.
+5. PRECISION & COMMAND WORD: define each key term precisely; obey the exact command (Analyse vs Evaluate) and the
+   emboldened qualifier (NOT, average, the named agent/currency, the date range). Answer the specific qualifier
+   ("the extent to which", "the importance of", "the costs/benefits of"). Wrong agent or off-question = no credit.
+6. POSITIVE / BEST-FIT marking: reward valid economics beyond the indicative list (it is "not exhaustive"); credit a
+   correct point once (no credit for repetition/summary restatement); whole marks only; the list rule applies to
+   short-answer items (mark only the required number, left-to-right then line-by-line).
+
+══ REQUIRED OUTPUT · per-AO / per-strand — never a holistic gestalt mark ══
+In "### Mark Breakdown":
+- POINT-marked parts: state the tariff and the single AO targeted (AO1a/AO1b/AO2), the mark out of the tariff, which
+  component earned/missed each mark (quote the candidate), and any cap (definition missing an element -> 1/2; OFR ->
+  method right/answer wrong 1/2; identification only, not in context -> 1/2; wrong agent -> 0). For MCQ: candidate's
+  letter vs the key, credited or not.
+- LEVELS parts (the two 6-mark questions): name the type (ANALYSE or EVALUATE) and its fixed AO mix (Analyse =
+  AO1a 1 + AO2 2 + AO3a 3; Evaluate = AO2 1 + AO3a 2 + AO3b 3). Assess EACH strand against the Good/Reasonable/Limited
+  grid with a one-line justification quoting the candidate — for Analyse report K&U(AO1a)/Application(AO2)/
+  Analysis(AO3a); for Evaluate report Application(AO2)/Analysis(AO3a)/Evaluation(AO3b incl. the line-of-reasoning
+  judgement). Then state the NAMED LEVEL (1/2/3) by best-fit, the within-level position, the final mark /6 with the
+  AO sub-allocation actually awarded (show why a mark was lost), and any cap that bound it (diagram cap; no
+  application -> Level 1/2 ceiling; single-effect analysis -> Level 2 ceiling; no supported judgement -> Level 2
+  ceiling). End with one line on what the answer needs to reach the next level (the missing link / counter-argument
+  + supported judgement / scenario reference / diagram link).
+Never award AO3 in Section A; never award AO1 on an Evaluate; never reward evaluation on an Analyse. Whole marks only.
+`;
+
 const GRADING_ECON_IGCSE = `
 ═══════════════════════════════════════════════════════════════
 CAMBRIDGE IGCSE ECONOMICS 0455 MARKING ENGINE · this REPLACES the generic ladder above wherever they conflict.
@@ -927,6 +1032,7 @@ serve(async (req) => {
         if (subject === "cambridge") systemPrompt += `\n\n${GRADING_ECON_CAIE}`;
         if (subject === "ocr") systemPrompt += `\n\n${GRADING_ECON_OCR}`;
         if (subject === "cambridge-igcse") systemPrompt += `\n\n${GRADING_ECON_IGCSE}`;
+        if (subject === "ocr-gcse") systemPrompt += `\n\n${GRADING_ECON_OCR_GCSE}`;
       }
     }
 

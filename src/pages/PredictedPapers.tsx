@@ -2063,6 +2063,26 @@ GENERIC: POSITIVE marking — credit valid unexpected approaches; never deduct f
 
 REQUIRED OUTPUT — per-AO/per-strand (never a holistic mark): in "## Mark Scheme", for POINT-marked parts list each point with its AO and tick/cross + reasons for refused marks; for LEVELS-marked parts give a THREE-STRAND verdict (K&U+Application [AO1+AO2], Analysis [AO3], Evaluation [AO4]) each rated Strong/Good/Reasonable/Limited with a one-line reason, then the NAMED LEVEL with its mark range, the within-level position, and the mark. State PASS/FAIL for each applicable gate, then one "why not higher" sentence. Sum to the final mark out of ${question.marks}.
 ` : ""}
+${isOcrGcse ? `
+═══ APPLY OCR GCSE (9-1) ECONOMICS J205 METHODOLOGY (NOT AQA, NOT A-level). Mark as an OCR GCSE examiner. ═══
+Mark strictly out of ${question.marks}. THREE AOs (NO AO4; analysis & evaluation are COMBINED in AO3): AO1 Knowledge &
+understanding; AO2 Application (genuine USE of the scenario/extract data — generic theory with no scenario use is not
+application); AO3 = AO3a Analysis (developed cause->effect CHAINS, not single effects) + AO3b Evaluation (weigh BOTH
+sides + a SUPPORTED judgement). The largest tariff in J205 is 6 marks — there is NO Level 4 and no essay.
+
+DETECT THE PART FROM THE ${question.marks}-mark tariff + command word:
+${question.marks <= 2 ? `• 1-2 mark State/Give/Define/Explain/Calculate/Draw — POINT-marked, a SINGLE AO. State/Give/Define = AO1 (a 2-mark definition splits into named components; partial = 1/2; an effect given instead of a definition = 0). Explain = AO1b or AO2 (identify (1) + develop (1); identification alone or out-of-context = 1). Calculate = AO2 (show working; own-figure rule keeps the method mark, capped at 1; units/signs are mark-bearing). Draw = AO2 (1 per correctly drawn AND labelled curve, or accurate plot (1) + join (1)).`
+: question.marks === 6 ? `• 6-mark question — detect ANALYSE vs EVALUATE from the command word:
+   ANALYSE (AO1a 1 + AO2 2 + AO3a 3; NO evaluation rewarded, one-sided is correct): Level 3 (5-6) = GOOD analysis (developed links / chain of reasoning addressing the question) + application in context; Level 2 (3-4) = Reasonable analysis (single effects, not developed into a chain); Level 1 (1-2) = Limited (an attempt, single effect with some link).
+   EVALUATE (AO2 1 + AO3a 2 + AO3b 3; NO AO1 rewarded; this is the extended-response/QWC question): Level 3 (5-6) = GOOD evaluation (a FULLY SUPPORTED judgement developed from weighing both sides / comparing alternatives — typically "it depends on"/"provided that") + well-developed line of reasoning; Level 2 (3-4) = Reasonable evaluation (both sides considered, judgement present but not fully supported); Level 1 (1-2) = Limited (incomplete consideration, unsupported).`
+: `• ${question.marks}-mark part — if it is a 6-mark Analyse/Evaluate mark by the J205 level grid above; otherwise point-mark 1 per valid point by AO (AO1/AO2), capping partial definitions at 1 and applying the own-figure rule to calculations.`}
+
+GATES (where J205 marks are won/lost): APPLICATION (no use of the scenario/data caps a 6-marker at Level 1; reaching Level 3 needs application AND a developed chain, and on Evaluate a supported judgement); ANALYSIS = a developed CHAIN not a single effect (single effect = Level 2 ceiling); EVALUATION needs BOTH sides AND a supported judgement (one-sided or asserted judgement = Level 2 ceiling); DIAGRAM — where a diagram is required apply the question's stated cap (commonly "max 4 if no correct diagram", sometimes "max 3"; some Analyse questions make it optional with no cap), and a correct but UNLINKED diagram caps at Level 2; COMMAND WORD — do not reward evaluation on an Analyse, nor AO1 on an Evaluate; answer the exact qualifier and any emboldened stem word.
+
+GENERIC: POSITIVE/best-fit marking (start at the highest level, work down); credit valid points beyond the indicative list but only once; whole marks; within a level award top if it consistently meets the criteria, bottom if borderline.
+
+REQUIRED OUTPUT — per-AO/per-strand (never a holistic mark): in "## Mark Scheme", for POINT-marked parts list each point with its AO (AO1a/AO1b/AO2) and tick/cross + the reason for any refused mark; for the 6-mark questions name the type (ANALYSE or EVALUATE) and its AO mix, rate EACH strand Good/Reasonable/Limited with a one-line reason (Analyse: K&U/Application/Analysis; Evaluate: Application/Analysis/Evaluation), then the NAMED LEVEL (1/2/3) by best-fit, the within-level position, the mark /${question.marks} with the AO sub-allocation, any cap applied, and one line on what is needed to reach the next level. Never award AO3 in Section A; never AO1 on an Evaluate; never evaluation on an Analyse.
+` : ""}
 
 === DIAGRAM MARKING CHECKLIST (apply ALL 5 criteria if a diagram is present) ===
 1. **AXES** (1 mark): Both axes labelled correctly? (Price/Quantity, Price Level/Real GDP, etc.)
