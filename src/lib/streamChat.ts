@@ -3,6 +3,8 @@ type Msg = { role: "user" | "assistant"; content: MessageContent };
 
 const RETRY_DELAYS_MS = [700, 1400, 2500];
 const TRANSIENT_STATUSES = new Set([502, 503, 504]);
+// Hard ceiling so a stalled edge function can NEVER leave marking spinning forever.
+const DEFAULT_TIMEOUT_MS = 120_000;
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -15,6 +17,8 @@ async function fetchWithRetry(url: string, init: RequestInit, attempt = 0): Prom
     }
     return response;
   } catch (error) {
+    // A deliberate timeout/abort must surface immediately — never retry it.
+    if ((init.signal as AbortSignal | undefined)?.aborted) throw error;
     if (attempt < RETRY_DELAYS_MS.length) {
       await wait(RETRY_DELAYS_MS[attempt]);
       return fetchWithRetry(url, init, attempt + 1);
@@ -55,9 +59,12 @@ export async function streamChat({
 }) {
   const url = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/ai-tutor`;
   let completed = false;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), DEFAULT_TIMEOUT_MS);
   const finish = () => {
     if (!completed) {
       completed = true;
+      clearTimeout(timeout);
       onDone();
     }
   };
@@ -70,6 +77,7 @@ export async function streamChat({
         Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
       },
       body: JSON.stringify({ messages, mode, subject: subject || "economics" }),
+      signal: controller.signal,
     });
 
     if (!resp.ok) {
@@ -119,8 +127,14 @@ export async function streamChat({
     }
     finish();
   } catch (error) {
+    clearTimeout(timeout);
+    const aborted = controller.signal.aborted;
     console.warn("Tutor request unavailable (degraded):", error);
-    onError?.("Tutor service is temporarily unavailable. Please try again in a moment.");
+    onError?.(
+      aborted
+        ? "Marking is taking longer than expected and timed out. Your answer is saved — please try marking again."
+        : "Tutor service is temporarily unavailable. Please try again in a moment.",
+    );
     finish();
   }
 }

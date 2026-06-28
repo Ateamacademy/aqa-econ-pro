@@ -41,6 +41,7 @@ import { ComingSoonBoard } from "@/components/predicted-papers/ComingSoonBoard";
 import { subjectToBoardId, getBoardDefinition } from "@/lib/boards/registry";
 import { ExamTimer } from "@/components/predicted-papers/ExamTimer";
 import { ExamResultsSummary } from "@/components/predicted-papers/ExamResultsSummary";
+import { parseMcqAnswerKey, buildMcqFeedback, questionNumberKey } from "@/components/predicted-papers/mcqMarking";
 import { resolveDiagramType } from "@/components/revision/EconDiagramLibrary";
 import { tagAqaQuestion, inferPaperFromContext } from "@/lib/aqaPredictedDiagramTagging";
 import { getAqaPaper3OverrideContent } from "@/data/aqaPaper3Overrides";
@@ -1654,7 +1655,37 @@ CRITICAL: Do NOT place economics diagram Figure blocks (supply & demand, AD/AS, 
         return;
       }
       const answer = answers[question.id];
-      if (!answer?.trim()) { toast.error("Please write your answer first."); return; }
+      const isMcqQuestion = !!question.mcqOptions && question.mcqOptions.length >= 2;
+      if (!answer?.trim()) {
+        toast.error(isMcqQuestion ? "Please select an answer first." : "Please write your answer first.");
+        return;
+      }
+
+      // MCQ: mark INSTANTLY against the official answer key — no AI call, so it can
+      // never hang or sit on "pending marking". Falls back to a clear toast if the
+      // key can't be loaded.
+      if (isMcqQuestion) {
+        setMarkingId(question.id);
+        try {
+          const ms = (isOCR ? getOcrPredictedMarkScheme(selectedLibraryPaper?.id) : null)
+            ?? (await loadPredictedMarkScheme(selectedLibraryPaper?.id));
+          const key = parseMcqAnswerKey(ms);
+          const num = questionNumberKey(question);
+          const correct = num ? key[num] : undefined;
+          if (correct) {
+            setFeedbacks((prev) => ({ ...prev, [question.id]: buildMcqFeedback(answer, correct) }));
+          } else {
+            toast.error("Couldn't load the answer key for this question. Please try again.");
+          }
+        } catch (e) {
+          console.warn("MCQ mark failed", e);
+          toast.error("Couldn't mark this question. Please try again.");
+        } finally {
+          setMarkingId(null);
+        }
+        return;
+      }
+
       setMarkingId(question.id);
 
       // Resolve the EXPECTED diagram from the question (and its context) only — NOT the
@@ -2402,10 +2433,39 @@ Do NOT include any other headings, preamble, or commentary outside these three s
     setShowUpgrade(true);
   }, [selectedLibraryPaper, isPremium]);
 
-  const handleSubmitExam = useCallback(() => {
+  const handleSubmitExam = useCallback(async () => {
+    // Instantly auto-mark every answered MCQ against the official answer key, so the
+    // results screen shows real marks. Previously submitting triggered NO marking, so
+    // an MCQ paper sat on "pending marking" forever. No AI call here — it cannot hang.
+    try {
+      const unmarkedMcqs = parsedQuestions.filter(
+        (q) => q.mcqOptions && q.mcqOptions.length >= 2 && !feedbacks[q.id] && answers[q.id]?.trim(),
+      );
+      if (unmarkedMcqs.length > 0) {
+        const ms = (isOCR ? getOcrPredictedMarkScheme(selectedLibraryPaper?.id) : null)
+          ?? (await loadPredictedMarkScheme(selectedLibraryPaper?.id));
+        const key = parseMcqAnswerKey(ms);
+        if (Object.keys(key).length > 0) {
+          setFeedbacks((prev) => {
+            const next = { ...prev };
+            for (const q of unmarkedMcqs) {
+              if (next[q.id]) continue;
+              const num = questionNumberKey(q);
+              const correct = num ? key[num] : undefined;
+              if (correct) next[q.id] = buildMcqFeedback(answers[q.id], correct);
+            }
+            return next;
+          });
+        } else {
+          toast.error("Couldn't load the answer key to auto-mark the MCQs. Your answers are saved — try again in a moment.");
+        }
+      }
+    } catch (e) {
+      console.warn("MCQ auto-mark on submit failed", e);
+    }
     setExamActive(false);
     setExamFinished(true);
-  }, []);
+  }, [parsedQuestions, feedbacks, answers, isOCR, selectedLibraryPaper]);
 
   if (!user) {
     return (
