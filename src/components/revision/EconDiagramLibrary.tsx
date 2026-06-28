@@ -11,6 +11,7 @@
 
 import { cn } from "@/lib/utils";
 import { useState, useId } from "react";
+import { AnimatedDiagram } from "./AnimatedDiagram";
 import { WelfareRegion } from "@/components/diagrams/WelfareRegion";
 import EconomicsDiagram, { type EconomicsDiagramProps } from "@/components/diagrams/EconomicsDiagram";
 import PerfectCompetitionDiagram from "@/components/PerfectCompetitionDiagram";
@@ -3644,13 +3645,15 @@ export function EconDiagramTemplate({ type, className }: { type: DiagramType; cl
         <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-primary/10 text-[10px]">📊</span>
         {config.title}
       </p>
-      <svg viewBox={`0 0 ${W} ${H}`} className="w-full max-w-[700px] h-auto text-foreground relative z-10">
-        <PremiumDefs mx={mx} my={my} pw={pw} ph={ph} uid={uid} />
-        <Axes mx={mx} my={my} pw={pw} ph={ph} xLabel={config.xAxis} yLabel={config.yAxis} />
-        <g clipPath={`url(#plot-clip-${uid})`}>
-          {config.render({ W, H, mx, my, pw, ph, uid })}
-        </g>
-      </svg>
+      <AnimatedDiagram className="relative z-10">
+        <svg viewBox={`0 0 ${W} ${H}`} className="w-full max-w-[700px] h-auto text-foreground">
+          <PremiumDefs mx={mx} my={my} pw={pw} ph={ph} uid={uid} />
+          <Axes mx={mx} my={my} pw={pw} ph={ph} xLabel={config.xAxis} yLabel={config.yAxis} />
+          <g clipPath={`url(#plot-clip-${uid})`}>
+            {config.render({ W, H, mx, my, pw, ph, uid })}
+          </g>
+        </svg>
+      </AnimatedDiagram>
       {config.legend && config.legend.length > 0 && (
         <div className="flex flex-wrap gap-2 mt-3 relative z-10">
           {config.legend.map((item, i) => (

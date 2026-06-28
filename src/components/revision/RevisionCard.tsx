@@ -9,6 +9,7 @@ import { ReactNode, useRef } from "react";
 import { BookOpen, Lightbulb, AlertTriangle, Calculator, Tag, TrendingUp, GitBranch } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, useInView } from "framer-motion";
+import { AnimatedDiagram } from "./AnimatedDiagram";
 
 /* ── Subtle reveal-on-scroll wrapper ── */
 function Reveal({ children, delay = 0, className }: { children: ReactNode; delay?: number; className?: string }) {
@@ -121,7 +122,9 @@ export function DiagramBox({ title, children }: { title?: string; children: Reac
           </span>
           <h4 className="ndc-title font-display text-base font-semibold">{title || "Key diagram"}</h4>
         </div>
-        <div className="text-sm" style={{ color: "#C8CCE0" }}>{children}</div>
+        <div className="text-sm" style={{ color: "#C8CCE0" }}>
+          <AnimatedDiagram>{children}</AnimatedDiagram>
+        </div>
       </div>
     </Reveal>
   );
