@@ -1,4 +1,5 @@
-import { useState, useRef, lazy, Suspense } from "react";
+import { useState, useRef, Suspense } from "react";
+import { lazyWithReload as lazy } from "@/lib/lazyWithReload";
 import { Send, Clock, FileText, Lightbulb, ChevronDown, ChevronUp, PenLine, BarChart3, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";

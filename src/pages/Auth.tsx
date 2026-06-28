@@ -28,7 +28,9 @@ export default function Auth() {
         }
       } catch {}
       if (pendingCheckout) {
-        import("@/lib/startCheckout").then(({ startCheckout }) => startCheckout());
+        import("@/lib/startCheckout")
+          .then(({ startCheckout }) => startCheckout())
+          .catch(() => toast.error("Couldn't start checkout — please refresh and try again."));
         return;
       }
       navigate(profile.onboarding_completed ? "/dashboard" : "/onboarding", { replace: true });

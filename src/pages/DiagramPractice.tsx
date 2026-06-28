@@ -1,4 +1,5 @@
-import { useState, useEffect, useMemo, lazy, Suspense } from "react";
+import { useState, useEffect, useMemo, Suspense } from "react";
+import { lazyWithReload as lazy } from "@/lib/lazyWithReload";
 import { edexcelBTopics, type EdexcelBTopic } from "@/data/topicsEdexcelB";
 import { ocrTopics, type OcrTopic } from "@/data/topicsOcr";
 import { caieTopics, type CaieTopic } from "@/data/topicsCaie";
