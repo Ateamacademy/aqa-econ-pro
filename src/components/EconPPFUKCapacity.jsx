@@ -1,79 +1,129 @@
+import { useState, useEffect } from "react";
+
+/**
+ * UK productive-capacity PPF · animated outward shift (potential growth).
+ * Geometry is computed (quarter-ellipse, concave to the origin) so the curves are
+ * clean, and the layout keeps the title clear of the axis labels. PPF2 draws in on
+ * mount and can be replayed.
+ */
 export default function EconPPFUKCapacity() {
+  const [shifted, setShifted] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setShifted(true), 450);
+    return () => clearTimeout(t);
+  }, []);
+  const replay = () => { setShifted(false); setTimeout(() => setShifted(true), 60); };
+
+  // Plot frame
+  const ox = 110, oy = 430, top = 80, right = 560;
+  // PPF extents (x, y)
+  const a1 = 320, b1 = 300; // PPF1
+  const a2 = 400, b2 = 350; // PPF2 (outward shift)
+  const N = 64;
+  const curve = (a, b) => {
+    const pts = [];
+    for (let i = 0; i <= N; i++) {
+      const th = (i / N) * (Math.PI / 2);
+      pts.push(`${(ox + a * Math.sin(th)).toFixed(1)},${(oy - b * Math.cos(th)).toFixed(1)}`);
+    }
+    return pts.join(" ");
+  };
+  const ptOn = (a, b, deg) => {
+    const th = (deg * Math.PI) / 180;
+    return { x: ox + a * Math.sin(th), y: oy - b * Math.cos(th) };
+  };
+  const arrows = [26, 50, 72].map((deg) => {
+    const p1 = ptOn(a1, b1, deg), p2 = ptOn(a2, b2, deg);
+    const dx = p2.x - p1.x, dy = p2.y - p1.y, len = Math.hypot(dx, dy) || 1;
+    const ux = dx / len, uy = dy / len;
+    return {
+      x1: (p1.x + ux * 7).toFixed(1), y1: (p1.y + uy * 7).toFixed(1),
+      x2: (p2.x - ux * 11).toFixed(1), y2: (p2.y - uy * 11).toFixed(1),
+    };
+  });
+  const sp1 = ptOn(a1, b1, 45);
+  const sp2 = ptOn(a2, b2, 45);
+
+  const C1 = "#0f172a";   // PPF1 · slate
+  const C2 = "#2563eb";   // PPF2 · blue (growth)
+  const DASH = 920;       // > curve length, for the draw-in animation
+  const yMid = (top + oy) / 2;
+
+  const btn = {
+    fontSize: 12, fontWeight: 600, padding: "6px 12px", borderRadius: 8, cursor: "pointer",
+    border: "1px solid #d4dbe8", background: "#fff", color: "#334155",
+  };
+  const btnPrimary = { ...btn, background: "#2563eb", borderColor: "#2563eb", color: "#fff" };
+
   return (
-    <div style={{background:'#fff',borderRadius:'8px',padding:'8px',maxWidth:'640px',margin:'0 auto',fontFamily:"'Arial',sans-serif",border:'1px solid #ccc'}}>
-      <svg viewBox="0 0 640 620" width="100%" style={{display:'block'}}>
+    <div style={{ background: "#fff", borderRadius: 14, padding: "12px 12px 8px", maxWidth: 640, margin: "0 auto", fontFamily: "'Inter', system-ui, sans-serif", border: "1px solid #e2e8f0" }}>
+      <div style={{ display: "flex", gap: 8, justifyContent: "flex-end", marginBottom: 6 }}>
+        <button style={shifted ? btn : btnPrimary} onClick={() => setShifted(true)}>Show economic growth</button>
+        <button style={btn} onClick={replay} aria-label="Replay animation">Replay</button>
+      </div>
+
+      <svg viewBox="0 0 660 600" width="100%" style={{ display: "block" }}>
         <defs>
-          <marker id="ukR" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#111"/></marker>
-          <marker id="ukU" markerWidth="7" markerHeight="10" refX="3.5" refY="1" orient="auto"><polygon points="0 10,3.5 0,7 10" fill="#111"/></marker>
-          <marker id="ukBlue" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#1a5fb4"/></marker>
+          <marker id="ukR" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#0f172a" /></marker>
+          <marker id="ukU" markerWidth="7" markerHeight="10" refX="3.5" refY="1" orient="auto"><polygon points="0 10,3.5 0,7 10" fill="#0f172a" /></marker>
+          <marker id="ukBlue" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill={C2} /></marker>
         </defs>
-        <rect width="640" height="620" fill="#fff"/>
 
-        {/* Title */}
-        <text x="320" y="30" textAnchor="middle" fontSize="15" fontWeight="bold" fill="#111">UK Productive Capacity: Effect of Vocational Training</text>
-        <text x="320" y="50" textAnchor="middle" fontSize="12" fill="#555">and Capital Investment on the PPF</text>
+        {/* Title band (kept clear of the plot + axis labels) */}
+        <text x="330" y="30" textAnchor="middle" fontSize="16" fontWeight="700" fill="#0f172a">UK productive capacity</text>
+        <text x="330" y="50" textAnchor="middle" fontSize="12.5" fill="#64748b">Vocational training and capital investment shift the PPF outward</text>
 
-        {/* Y-axis */}
-        <line x1="100" y1="420" x2="100" y2="53" stroke="#111" strokeWidth="2.5" markerEnd="url(#ukU)"/>
-        {/* X-axis */}
-        <line x1="100" y1="420" x2="538" y2="420" stroke="#111" strokeWidth="2.5" markerEnd="url(#ukR)"/>
+        {/* Axes */}
+        <line x1={ox} y1={oy} x2={ox} y2={top - 8} stroke="#0f172a" strokeWidth="2.5" markerEnd="url(#ukU)" />
+        <line x1={ox} y1={oy} x2={right} y2={oy} stroke="#0f172a" strokeWidth="2.5" markerEnd="url(#ukR)" />
 
-        {/* Axis labels */}
-        <text x="96" y="45" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Capital</text>
-        <text x="96" y="59" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Goods</text>
-        <text x="319" y="456" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Consumer Goods</text>
-        <text x="86" y="436" textAnchor="middle" fontSize="13" fill="#111">O</text>
+        {/* Axis labels — y rotated alongside the axis so it never collides with the title */}
+        <text x="34" y={yMid} textAnchor="middle" fontSize="13" fontWeight="600" fill="#0f172a" transform={`rotate(-90, 34, ${yMid})`}>Capital goods</text>
+        <text x={(ox + right) / 2} y={oy + 34} textAnchor="middle" fontSize="13" fontWeight="600" fill="#0f172a">Consumer goods</text>
+        <text x={ox - 16} y={oy + 16} textAnchor="middle" fontSize="12" fill="#64748b">O</text>
 
-        {/* Y-axis capacity ticks */}
-        <line x1="94" y1="110.0" x2="106" y2="110.0" stroke="#888" strokeWidth="1.2"/>
-        <line x1="94" y1="30.0" x2="106" y2="30.0" stroke="#1a5fb4" strokeWidth="1.2"/>
+        {/* PPF1 (always shown) */}
+        <polyline points={curve(a1, b1)} fill="none" stroke={C1} strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+        <text x={ox + a1 + 6} y={oy + 18} fontSize="13" fontWeight="700" fill={C1}>PPF₁</text>
 
-        {/* X-axis capacity ticks */}
-        <line x1="432.0" y1="414" x2="432.0" y2="426" stroke="#888" strokeWidth="1.2"/>
-        <line x1="512.0" y1="414" x2="512.0" y2="426" stroke="#1a5fb4" strokeWidth="1.2"/>
+        {/* PPF1 sample point + guides */}
+        <line x1={ox} y1={sp1.y.toFixed(1)} x2={sp1.x.toFixed(1)} y2={sp1.y.toFixed(1)} stroke="rgba(15,23,42,0.28)" strokeWidth="1.3" strokeDasharray="7,5" />
+        <line x1={sp1.x.toFixed(1)} y1={sp1.y.toFixed(1)} x2={sp1.x.toFixed(1)} y2={oy} stroke="rgba(15,23,42,0.28)" strokeWidth="1.3" strokeDasharray="7,5" />
+        <circle cx={sp1.x.toFixed(1)} cy={sp1.y.toFixed(1)} r="5" fill="#fff" stroke={C1} strokeWidth="2" />
 
-        {/* PPF1 (black) */}
-        <polyline points="100.0,110.0 105.2,110.0 110.4,110.2 115.5,110.3 120.7,110.6 125.9,111.0 131.1,111.4 136.2,111.9 141.4,112.4 146.5,113.1 151.6,113.8 156.7,114.6 161.8,115.5 166.9,116.4 172.0,117.5 177.0,118.6 182.1,119.7 187.1,121.0 192.1,122.3 197.0,123.7 202.0,125.2 206.9,126.7 211.8,128.3 216.6,130.0 221.5,131.8 226.3,133.6 231.1,135.5 235.8,137.5 240.5,139.5 245.2,141.6 249.8,143.8 254.4,146.0 259.0,148.3 263.5,150.7 268.0,153.2 272.4,155.7 276.8,158.3 281.2,160.9 285.5,163.6 289.8,166.4 294.0,169.2 298.1,172.1 302.3,175.1 306.3,178.1 310.3,181.1 314.3,184.3 318.2,187.5 322.1,190.7 325.9,194.0 329.7,197.4 333.3,200.8 337.0,204.3 340.6,207.8 344.1,211.4 347.5,215.0 350.9,218.7 354.3,222.4 357.5,226.2 360.8,230.0 363.9,233.9 367.0,237.8 370.0,241.7 372.9,245.8 375.8,249.8 378.6,253.9 381.4,258.0 384.0,262.2 386.6,266.4 389.2,270.7 391.6,274.9 394.0,279.3 396.3,283.6 398.6,288.0 400.8,292.4 402.9,296.9 404.9,301.4 406.8,305.9 408.7,310.4 410.5,315.0 412.2,319.6 413.8,324.2 415.4,328.8 416.9,333.5 418.3,338.2 419.6,342.9 420.9,347.6 422.1,352.4 423.1,357.1 424.2,361.9 425.1,366.7 425.9,371.5 426.7,376.3 427.4,381.1 428.0,386.0 428.5,390.8 429.0,395.7 429.3,400.5 429.6,405.4 429.8,410.3 430.0,415.1 430.0,420.0" fill="none" stroke="#111" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
+        {/* PPF2 (draws in on shift) */}
+        <polyline
+          points={curve(a2, b2)} fill="none" stroke={C2} strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"
+          style={{ strokeDasharray: DASH, strokeDashoffset: shifted ? 0 : DASH, opacity: shifted ? 1 : 0, transition: "stroke-dashoffset 1.15s ease-out, opacity 0.3s ease-out" }}
+        />
+        <text x={ox + a2 + 6} y={oy + 18} fontSize="13" fontWeight="700" fill={C2}
+          style={{ opacity: shifted ? 1 : 0, transition: "opacity 0.5s ease-out 0.9s" }}>PPF₂</text>
 
-        {/* PPF2 (blue) */}
-        <polyline points="100.0,30.0 106.4,30.0 112.9,30.2 119.3,30.4 125.7,30.8 132.2,31.2 138.6,31.7 145.0,32.4 151.4,33.1 157.8,33.9 164.1,34.8 170.5,35.8 176.8,36.9 183.1,38.1 189.4,39.4 195.7,40.8 202.0,42.3 208.2,43.8 214.4,45.5 220.6,47.2 226.7,49.1 232.8,51.0 238.9,53.1 244.9,55.2 250.9,57.4 256.9,59.7 262.8,62.1 268.7,64.6 274.6,67.1 280.4,69.8 286.1,72.5 291.9,75.3 297.5,78.2 303.1,81.2 308.7,84.3 314.2,87.5 319.7,90.7 325.1,94.0 330.5,97.4 335.8,100.9 341.0,104.5 346.2,108.1 351.3,111.8 356.3,115.6 361.3,119.5 366.3,123.4 371.1,127.5 375.9,131.5 380.7,135.7 385.3,139.9 389.9,144.2 394.4,148.6 398.9,153.0 403.2,157.5 407.5,162.1 411.8,166.7 415.9,171.4 420.0,176.2 424.0,181.0 427.9,185.8 431.7,190.8 435.4,195.7 439.1,200.8 442.7,205.9 446.2,211.0 449.6,216.2 452.9,221.5 456.1,226.8 459.3,232.1 462.3,237.5 465.3,242.9 468.2,248.4 471.0,253.9 473.7,259.5 476.3,265.1 478.8,270.8 481.2,276.4 483.5,282.1 485.8,287.9 487.9,293.7 489.9,299.5 491.9,305.3 493.7,311.2 495.5,317.1 497.1,323.0 498.7,329.0 500.1,334.9 501.5,340.9 502.7,346.9 503.9,352.9 505.0,359.0 505.9,365.0 506.8,371.1 507.5,377.2 508.2,383.3 508.7,389.4 509.2,395.5 509.5,401.6 509.8,407.7 509.9,413.9 510.0,420.0" fill="none" stroke="#1a5fb4" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
+        {/* Outward-shift arrows (fade in after the curve draws) */}
+        {arrows.map((a, i) => (
+          <line key={i} x1={a.x1} y1={a.y1} x2={a.x2} y2={a.y2} stroke={C2} strokeWidth="2.2" markerEnd="url(#ukBlue)"
+            style={{ opacity: shifted ? 1 : 0, transition: `opacity 0.45s ease-out ${0.75 + i * 0.18}s` }} />
+        ))}
 
-        {/* PPF1 label · below x-axis at curve end, clearly spaced */}
-        <text x="438.0" y="438.0" textAnchor="start" fontSize="14" fontWeight="bold" fill="#111">PPF</text>
-        <text x="472.0" y="442.0" fontSize="11" fill="#111">1</text>
+        {/* PPF2 sample point + guides */}
+        <g style={{ opacity: shifted ? 1 : 0, transition: "opacity 0.5s ease-out 1.1s" }}>
+          <line x1={ox} y1={sp2.y.toFixed(1)} x2={sp2.x.toFixed(1)} y2={sp2.y.toFixed(1)} stroke="rgba(37,99,235,0.32)" strokeWidth="1.3" strokeDasharray="7,5" />
+          <line x1={sp2.x.toFixed(1)} y1={sp2.y.toFixed(1)} x2={sp2.x.toFixed(1)} y2={oy} stroke="rgba(37,99,235,0.32)" strokeWidth="1.3" strokeDasharray="7,5" />
+          <circle cx={sp2.x.toFixed(1)} cy={sp2.y.toFixed(1)} r="5" fill="#fff" stroke={C2} strokeWidth="2" />
+        </g>
 
-        {/* PPF2 label · further right, same row */}
-        <text x="518.0" y="438.0" textAnchor="start" fontSize="14" fontWeight="bold" fill="#1a5fb4">PPF</text>
-        <text x="552.0" y="442.0" fontSize="11" fill="#1a5fb4">2</text>
+        {/* Growth annotation */}
+        <g style={{ opacity: shifted ? 1 : 0, transition: "opacity 0.5s ease-out 1.0s" }}>
+          <text x="372" y="150" fontSize="12.5" fontWeight="700" fill={C2}>Economic growth</text>
+          <text x="372" y="167" fontSize="12.5" fill={C2}>(outward shift)</text>
+        </g>
 
-        {/* Three outward shift arrows */}
-        <line x1="172.0" y1="117.5" x2="191.5" y2="37.4" stroke="#1a5fb4" strokeWidth="2.2" markerEnd="url(#ukBlue)"/>
-        <line x1="286.3" y1="164.1" x2="333.5" y2="96.1" stroke="#1a5fb4" strokeWidth="2.2" markerEnd="url(#ukBlue)"/>
-        <line x1="409.9" y1="313.5" x2="487.0" y2="284.0" stroke="#1a5fb4" strokeWidth="2.2" markerEnd="url(#ukBlue)"/>
-
-        {/* "Outward shift" annotation · placed in open space centre-right */}
-        <text x="360.0" y="107.0" fontSize="12" fontWeight="bold" fill="#1a5fb4">Economic Growth</text>
-        <text x="360.0" y="123.0" fontSize="12" fill="#1a5fb4">(Outward Shift)</text>
-        <line x1="400.0" y1="127.0" x2="191.5" y2="37.4" stroke="#1a5fb4" strokeWidth="1.2" strokeDasharray="5,4"/>
-
-        {/* Dashed guides from PPF1 sample point */}
-        <line x1="100" y1="200.8" x2="333.3" y2="200.8" stroke="rgba(0,0,0,0.28)" strokeWidth="1.3" strokeDasharray="7,5"/>
-        <line x1="333.3" y1="200.8" x2="333.3" y2="420" stroke="rgba(0,0,0,0.28)" strokeWidth="1.3" strokeDasharray="7,5"/>
-
-        {/* Dashed guides from PPF2 sample point */}
-        <line x1="100" y1="144.2" x2="389.9" y2="144.2" stroke="rgba(26,95,180,0.32)" strokeWidth="1.3" strokeDasharray="7,5"/>
-        <line x1="389.9" y1="144.2" x2="389.9" y2="420" stroke="rgba(26,95,180,0.32)" strokeWidth="1.3" strokeDasharray="7,5"/>
-
-        {/* Dots at sample points */}
-        <circle cx="333.3" cy="200.8" r="5" fill="#fff" stroke="#111" strokeWidth="2"/>
-        <circle cx="389.9" cy="144.2" r="5" fill="#fff" stroke="#1a5fb4" strokeWidth="2"/>
-
-        {/* Reasoning box · well below chart, with generous padding */}
-        <rect x="100" y="472" width="438" height="80" rx="6" fill="#f0f4fb" stroke="#c8d4e8" strokeWidth="1.2"/>
-        <text x="112" y="492" fontSize="11" fontWeight="bold" fill="#111">Microeconomic Reasoning:</text>
-        <text x="112" y="509" fontSize="11" fill="#333">Vocational training improves labour productivity (human capital).</text>
-        <text x="112" y="525" fontSize="11" fill="#333">Capital investment expands the capital stock. Both increase the quantity</text>
-        <text x="112" y="541" fontSize="11" fill="#333">and quality of factors of production, shifting the PPF outward (PPF1 to PPF2).</text>
+        {/* Reasoning box */}
+        <rect x={ox} y="486" width="440" height="92" rx="10" fill="#f1f5fd" stroke="#d7e1f3" strokeWidth="1.2" />
+        <text x={ox + 14} y="508" fontSize="11.5" fontWeight="700" fill="#0f172a">Microeconomic reasoning</text>
+        <text x={ox + 14} y="527" fontSize="11.5" fill="#475569">Vocational training raises labour productivity (human capital);</text>
+        <text x={ox + 14} y="544" fontSize="11.5" fill="#475569">capital investment expands the capital stock. Both increase the</text>
+        <text x={ox + 14} y="561" fontSize="11.5" fill="#475569">quantity and quality of factors, shifting the PPF outward (PPF₁ → PPF₂).</text>
       </svg>
     </div>
   );
