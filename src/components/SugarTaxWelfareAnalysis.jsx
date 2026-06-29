@@ -1,12 +1,12 @@
 export default function SugarTaxWelfareAnalysis() {
   return (
     <div style={{background:'#fff',maxWidth:'863px',margin:'0 auto',fontFamily:"'Arial',sans-serif"}}>
-      <svg viewBox="0 0 863 712" width="100%" style={{display:'block'}}>
+      <svg viewBox="0 0 863 728" width="100%" style={{display:'block'}}>
         <defs>
           <marker id="stR" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto"><polygon points="0 0,12 5,0 10" fill="#111"/></marker>
           <marker id="stU" markerWidth="10" markerHeight="12" refX="5" refY="1" orient="auto"><polygon points="0 12,5 0,10 12" fill="#111"/></marker>
         </defs>
-        <rect width="863" height="712" fill="#fff"/>
+        <rect width="863" height="728" fill="#fff"/>
         <text x="431.5" y="28" textAnchor="middle" fontSize="22" fontWeight="700" fill="#111">Sugar Tax · Welfare Analysis (UK SDIL 2018)</text>
         <line x1="106" y1="603" x2="106" y2="72" stroke="#222" strokeWidth="3.5" markerEnd="url(#stU)"/>
         <line x1="106" y1="603" x2="740" y2="603" stroke="#222" strokeWidth="3.5" markerEnd="url(#stR)"/>

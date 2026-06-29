@@ -104,7 +104,7 @@ function ShortRunPanel() {
 
       {/* AR = MR = p line (red, horizontal) */}
       <line x1={ox} y1={py(p)} x2={W - 20} y2={py(p)} stroke="#ef4444" strokeWidth={2.5} />
-      <text x={W - 18} y={py(p) + 4} fontSize={9} fontWeight={700} fill="#ef4444" fontFamily="serif">AR=MR=p</text>
+      <text x={W - 22} y={py(p) + 12} fontSize={9} fontWeight={700} fill="#ef4444" fontFamily="serif" textAnchor="end">AR=MR=p</text>
 
       {/* MC curve (blue) */}
       <path d={mc} fill="none" stroke="#3b82f6" strokeWidth={2.2} />
@@ -113,12 +113,14 @@ function ShortRunPanel() {
 
       {/* Curve labels */}
       {(() => {
-        const mcEndY = evalQuad(MC.a, MC.b, MC.c, 4.2);
-        return <text x={px(4.2) + 4} y={py(mcEndY) - 6} fontSize={10} fontWeight={700} fill="#3b82f6" fontFamily="serif">MC</text>;
+        const mcLabelX = 4.0;
+        const mcLabelY = evalQuad(MC.a, MC.b, MC.c, mcLabelX);
+        return <text x={px(mcLabelX) + 5} y={py(mcLabelY) - 4} fontSize={10} fontWeight={700} fill="#3b82f6" fontFamily="serif">MC</text>;
       })()}
       {(() => {
-        const atcEndY = evalQuad(ATC.a, ATC.b, ATC.c, maxX);
-        return <text x={px(maxX) + 4} y={py(atcEndY) + 4} fontSize={10} fontWeight={700} fill="#3b82f6" fontFamily="serif">ATC</text>;
+        const atcLabelX = 4.3;
+        const atcLabelY = evalQuad(ATC.a, ATC.b, ATC.c, atcLabelX);
+        return <text x={px(atcLabelX) + 6} y={py(atcLabelY)} fontSize={10} fontWeight={700} fill="#3b82f6" fontFamily="serif">ATC</text>;
       })()}
 
       {/* Dotted projection: vertical from q */}

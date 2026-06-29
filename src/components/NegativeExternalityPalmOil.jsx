@@ -127,8 +127,8 @@ export default function NegativeExternalityPalmOil() {
         {/* angled leader line from label to gap arrow */}
         <line x1={xQp + 60} y1={Y(9.5)} x2={xQp + 18} y2={(yPp + yMscQp) / 2}
           stroke="#111" strokeWidth="1.3"/>
-        <text x={xQp + 64} y={Y(9.5) - 4}
-          fontSize="13.5" fill="#111" fontWeight="bold">Negative externality per unit</text>
+        <text x={xQp + 58} y={Y(9.5) - 4}
+          fontSize="12" fill="#111" fontWeight="bold">Negative externality per unit</text>
 
         {/* ══ AXIS LABELS ══ */}
         {/* Y-axis title (rotated) */}
@@ -157,7 +157,9 @@ export default function NegativeExternalityPalmOil() {
           textAnchor="middle" fontSize="14" fill="#111">Qp</text>
 
         {/* ══ CURVE LABELS (right side) ══ */}
-        <text x={X(qMax) + 6} y={Y(msc(qMax)) + 5}
+        {/* MSC exits the plot top near q=5.5, so anchor its label beside the
+            visible segment (q≈5) instead of at qMax where it maps off-canvas */}
+        <text x={X(5) + 8} y={Y(msc(5)) - 2}
           fontSize="14" fontWeight="bold" fill="#111">MSC</text>
         <text x={X(qMax) + 6} y={Y(mpc(qMax)) + 5}
           fontSize="14" fontWeight="bold" fill="#111">MPC</text>

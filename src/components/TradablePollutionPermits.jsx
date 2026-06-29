@@ -72,10 +72,10 @@ export default function TradablePollutionPermits() {
             {/* Demand for pollution (MPC): (58,42)→(268,188) */}
             <line x1="58" y1="42" x2="268" y2="188"
               stroke="#1a56db" strokeWidth="2.0" />
-            <text x="165" y="200" fill="#1a56db" fontSize="8.5" fontFamily="Arial"
-              fontWeight="bold" textAnchor="middle">Demand for</text>
-            <text x="165" y="210" fill="#1a56db" fontSize="8.5" fontFamily="Arial"
-              fontWeight="bold" textAnchor="middle">pollution rights (MPC)</text>
+            <text x="190" y="190" fill="#1a56db" fontSize="8.5" fontFamily="Arial"
+              fontWeight="bold">Demand for</text>
+            <text x="190" y="200" fill="#1a56db" fontSize="8.5" fontFamily="Arial"
+              fontWeight="bold">pollution rights (MPC)</text>
 
             {/* Corrective Tax: horizontal line at y=130, x=48→x=268 */}
             <line x1="48" y1="130" x2="268" y2="130"

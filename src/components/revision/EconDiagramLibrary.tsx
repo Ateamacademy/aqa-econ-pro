@@ -1528,7 +1528,7 @@ const DIAGRAMS: Record<string, DiagramConfig> = {
           <GLine {...sras1L} color={COLORS.supply} gradientId="grad-supply" glow="glow-red" />
           <Label x={sras1L.x2 + 4} y={sras1L.y2 + 4} text="SRAS₁" color={COLORS.supply} />
           <GLine {...sras2L} color={COLORS.supply} gradientId="grad-supply" dashed />
-          <Label x={sras2L.x2 + 4} y={sras2L.y2 + 4} text="SRAS₂" color={COLORS.supply} />
+          <Label x={sras2L.x1 + (sras2L.x2 - sras2L.x1) * 0.7 + 5} y={sras2L.y1 + (sras2L.y2 - sras2L.y1) * 0.7 - 4} text="SRAS₂" color={COLORS.supply} />
           <ShiftArrow
             x1={(sras1L.x1 + sras1L.x2) / 2 - 5}
             y1={(sras1L.y1 + sras1L.y2) / 2}

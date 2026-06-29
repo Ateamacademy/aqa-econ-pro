@@ -46,7 +46,7 @@ function MonopCompLongRunSvgInner() {
         {/* Curve labels */}
         <text x={toX(10) - 6} y={toY(arFn(10)) - 10} textAnchor="end" fontSize="22" fontWeight="700" fill={C.shortRun}>AR₂ = D₂</text>
         <text x={toX(mrEndQ) + 6} y={toY(0) - 10} fontSize="22" fontWeight="700" fill={C.shortRun}>MR₂</text>
-        <text x={toX(9.4)} y={toY(mcFn(9.4))} fontSize="22" fontWeight="700" fill={C.marginalCost}>MC</text>
+        <text x={toX(8.6) + 10} y={toY(mcFn(8.6)) - 6} fontSize="22" fontWeight="700" fill={C.marginalCost}>MC</text>
         <text x={toX(9.6) + 4} y={toY(acFn(9.6)) + 8} fontSize="22" fontWeight="700" fill={C.averageCost}>AC</text>
 
         {/* Guides + tangency point (P = AC at Q2) */}

@@ -399,8 +399,8 @@ function FirmPanel({ showLR }) {
       {/* AR = MR horizontal line */}
       <line x1={R.x0} y1={mrSy} x2={R.x1} y2={mrSy}
         stroke={mrColor} strokeWidth="2.8" />
-      <text x={R.x1 + 8} y={mrSy} fill={mrColor} fontSize="11"
-        fontWeight="700" fontFamily={MONO} dominantBaseline="middle">
+      <text x={R.x1 - 2} y={mrSy - 8} fill={mrColor} fontSize="11"
+        fontWeight="700" fontFamily={MONO} textAnchor="end">
         {mrLabel}
       </text>
 

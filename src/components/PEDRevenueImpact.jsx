@@ -48,7 +48,7 @@ export default function PEDRevenueImpact() {
         <text x="60" y="510" fontSize="13" fill={AX}>O</text>
         <text x="298.3" y="510" textAnchor="middle" fontSize="13.5" fontWeight="bold" fill={AX}>Q</text>
         <text x="428.4" y="526" textAnchor="middle" fontSize="13" fontWeight="bold" fill={AX}>Qd</text>
-        <line x1="24" y1="764" x2="696" y2="764" stroke="rgba(74,144,232,0.30)" strokeWidth="1.5"/>
+        <line x1="24" y1="538" x2="696" y2="538" stroke="rgba(74,144,232,0.30)" strokeWidth="1.5"/>
         <rect x="0" y="548" width="720" height="36" rx="6" fill="rgba(46,204,113,0.15)"/>
         <text x="360" y="572" textAnchor="middle" fontSize="14" fontWeight="bold" fill={GREEN}>Diagram 2 · Petrol: Price Inelastic Demand &amp; Revenue Impact</text>
         <text x="360" y="602" textAnchor="middle" fontSize="13" fill={AX}>Petrol PED &lt; 1 · Few substitutes for most drivers</text>

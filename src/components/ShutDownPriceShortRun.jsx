@@ -80,8 +80,8 @@ export default function ShutDownPriceShortRun() {
         <rect x="260" y="210" width="30" height="19" rx="3" fill="#f5c0c0" stroke="#c0392b" strokeWidth="1" />
         <text x="275" y="223" fill="#7a0000" fontSize="11" fontFamily="Arial" fontWeight="bold" textAnchor="middle">MR</text>
 
-        <rect x="352" y="238" width="30" height="19" rx="3" fill="#f5c0c0" stroke="#c0392b" strokeWidth="1" />
-        <text x="367" y="251" fill="#7a0000" fontSize="11" fontFamily="Arial" fontWeight="bold" textAnchor="middle">AR</text>
+        <rect x="352" y="243" width="30" height="19" rx="3" fill="#f5c0c0" stroke="#c0392b" strokeWidth="1" />
+        <text x="367" y="256" fill="#7a0000" fontSize="11" fontFamily="Arial" fontWeight="bold" textAnchor="middle">AR</text>
 
         {/* Axis value labels */}
         <rect x="38" y="91" width="28" height="19" rx="3" fill="#d8efc0" stroke="#8aba40" strokeWidth="1" />

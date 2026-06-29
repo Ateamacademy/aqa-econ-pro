@@ -99,10 +99,10 @@ export default function InformationFailureDemeritGood() {
         {/* (68,52) → (305,178) */}
         <line x1="68" y1="52" x2="305" y2="178"
           stroke="#1a56db" strokeWidth="2.2" />
-        <text x="285" y="143" fill="#1a56db" fontSize="9" fontFamily="Arial" fontWeight="bold">
+        <text x="272" y="143" fill="#1a56db" fontSize="9" fontFamily="Arial" fontWeight="bold">
           D= MPB: consumers'
         </text>
-        <text x="285" y="154" fill="#1a56db" fontSize="9" fontFamily="Arial" fontWeight="bold">
+        <text x="272" y="154" fill="#1a56db" fontSize="9" fontFamily="Arial" fontWeight="bold">
           over valuation
         </text>
 
@@ -110,7 +110,7 @@ export default function InformationFailureDemeritGood() {
         {/* (68,98) → (315,200) */}
         <line x1="68" y1="98" x2="315" y2="200"
           stroke="#1a56db" strokeWidth="2.2" />
-        <text x="260" y="198" fill="#1a56db" fontSize="9" fontFamily="Arial" fontWeight="bold">
+        <text x="200" y="188" fill="#1a56db" fontSize="9" fontFamily="Arial" fontWeight="bold">
           MSB = 'correct' valuation
         </text>
 
