@@ -24,7 +24,7 @@ export default function EconEdexcelLorenzCurve() {
           <text x="92" y="64" textAnchor="end">100</text>
         </g>
         <line x1="100" y1="420" x2="500" y2="60" stroke="#15803d" strokeWidth="2" strokeDasharray="6,4"/>
-        <text x="460" y="80" fontSize="11" fontWeight="600" fill="#15803d">Line of perfect equality (45°)</text>
+        <text x="430" y="80" fontSize="10" fontWeight="600" fill="#15803d">Line of perfect equality (45°)</text>
         <path d="M 100 420 Q 250 390 350 310 Q 430 240 500 60" fill="none" stroke="#0284c7" strokeWidth="2.5"/>
         <text x="345" y="295" fontSize="11" fontWeight="600" fill="#0284c7">Lorenz 2020 (G ≈ 0.33)</text>
         <path d="M 100 420 Q 290 410 380 340 Q 445 275 500 60" fill="none" stroke="#be123c" strokeWidth="3"/>

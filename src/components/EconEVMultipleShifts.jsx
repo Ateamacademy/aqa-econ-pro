@@ -35,14 +35,15 @@ export default function EconEVMultipleShifts() {
         <text x="348.7" y="234.0" fontSize="13" fontWeight="bold" fill="#555">E1</text>
         <circle cx="465.6" cy="244.4" r="7" fill="#fff" stroke="#cc4400" strokeWidth="2.2"/>
         <text x="474.6" y="238.4" fontSize="13" fontWeight="bold" fill="#cc4400">E2</text>
-        <text x="78" y="244.0" textAnchor="end" fontSize="13" fontWeight="bold" fill="#555">P1</text>
-        <text x="78" y="248.4" textAnchor="end" fontSize="13" fontWeight="bold" fill="#cc4400">P2</text>
+        <text x="78" y="236.0" textAnchor="end" fontSize="13" fontWeight="bold" fill="#555">P1</text>
+        <text x="78" y="256.0" textAnchor="end" fontSize="13" fontWeight="bold" fill="#cc4400">P2</text>
         <text x="339.7" y="478" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#555">Q1</text>
         <text x="465.6" y="478" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#cc4400">Q2</text>
-        <rect x="88" y="496" width="494" height="50" rx="5" fill="#f0f4fb" stroke="#c8d4e8" strokeWidth="1.2"/>
-        <text x="100" y="514" fontSize="11" fontWeight="bold" fill="#111">Net effect:</text>
-        <text x="100" y="530" fontSize="11" fill="#555">Both S↑ and D↑ cause Q to rise unambiguously (Q1→Q2). Price effect is ambiguous · here</text>
-        <text x="100" y="543" fontSize="11" fill="#555">supply shift dominates slightly so P falls marginally (P2 &lt; P1) as costs fall faster than demand rises.</text>
+        <rect x="88" y="494" width="494" height="58" rx="5" fill="#f0f4fb" stroke="#c8d4e8" strokeWidth="1.2"/>
+        <text x="100" y="510" fontSize="11" fontWeight="bold" fill="#111">Net effect:</text>
+        <text x="100" y="525" fontSize="10" fill="#555">Both S↑ and D↑ cause Q to rise unambiguously (Q1→Q2). Price effect is ambiguous.</text>
+        <text x="100" y="538" fontSize="10" fill="#555">Here the supply shift dominates slightly so P falls marginally (P2 &lt; P1) as costs</text>
+        <text x="100" y="548" fontSize="10" fill="#555">fall faster than demand rises.</text>
       </svg>
     </div>
   );

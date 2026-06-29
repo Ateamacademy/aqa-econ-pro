@@ -81,7 +81,7 @@ export default function EconMonopolyBusinessObjectivesEduqas() {
       <line x1="110" y1="250" x2="270" y2="250" stroke="#94a3b8" strokeWidth="1" strokeDasharray="4,3" />
       <line x1="110" y1="310" x2="270" y2="310" stroke="#94a3b8" strokeWidth="1" strokeDasharray="4,3" />
       <circle cx="270" cy="250" r="5" fill="#22c55e" stroke="#0b1020" strokeWidth="1.5" />
-      <text x="278" y="246" fill="#ef4444" fontSize="11" fontWeight="700">Profit Max</text>
+      <text x="278" y="242" fill="#ef4444" fontSize="11" fontWeight="700">Profit Max</text>
       <circle cx="270" cy="339" r="5" fill="#22c55e" stroke="#0b1020" strokeWidth="1.5" />
       <text x="278" y="343" fill="#60a5fa" fontSize="11" fontWeight="700">MC=MR</text>
 
@@ -100,8 +100,8 @@ export default function EconMonopolyBusinessObjectivesEduqas() {
       })()}
 
       {/* Sales Max: AR ≈ ATC (right side); approx (470, 360) on AR */}
-      <circle cx="470" cy="358" r="5" fill="#22c55e" stroke="#0b1020" strokeWidth="1.5" />
-      <text x="478" y="354" fill="#60a5fa" fontSize="11" fontWeight="700">Sales Max</text>
+      <circle cx="470" cy="372" r="5" fill="#22c55e" stroke="#0b1020" strokeWidth="1.5" />
+      <text x="478" y="368" fill="#60a5fa" fontSize="11" fontWeight="700">Sales Max</text>
 
       {/* Legend */}
       <g transform="translate(40, 535)">

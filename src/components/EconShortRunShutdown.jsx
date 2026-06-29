@@ -12,7 +12,7 @@ export default function EconShortRunShutdown() {
         <text x="320" y="44" textAnchor="middle" fontSize="11" fill="#555">Firm shuts down when P falls below minimum AVC · loss exceeds fixed costs</text>
         <line x1="80" y1="440" x2="80" y2="42" stroke="#111" strokeWidth="2.2" markerEnd="url(#sdU)"/>
         <line x1="80" y1="440" x2="562" y2="440" stroke="#111" strokeWidth="2.2" markerEnd="url(#sdR)"/>
-        <text x="74" y="36" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">Costs (£)</text>
+        <text x="78" y="36" textAnchor="end" fontSize="12" fontWeight="bold" fill="#111">Costs (£)</text>
         <text x="310" y="470" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">Output (Q)</text>
         <polyline points="105.3,139.9 110.3,184.4 115.2,216.1 120.2,239.7 125.2,257.9 130.2,272.3 135.1,284.0 140.1,293.5 145.1,301.5 150.1,308.2 155.0,313.9 160.0,318.7 165.0,322.9 170.0,326.6 174.9,329.7 179.9,332.4 184.9,334.8 189.9,336.9 194.8,338.8 199.8,340.4 204.8,341.8 209.7,343.0 214.7,344.1 219.7,345.0 224.7,345.8 229.6,346.5 234.6,347.0 239.6,347.5 244.6,347.9 249.5,348.2 254.5,348.5 259.5,348.7 264.5,348.8 269.4,348.9 274.4,348.9 279.4,348.9 284.4,348.8 289.3,348.7 294.3,348.5 299.3,348.4 304.3,348.1 309.2,347.9 314.2,347.6 319.2,347.3 324.1,347.0 329.1,346.6 334.1,346.3 339.1,345.9 344.0,345.4 349.0,345.0 354.0,344.6 359.0,344.1 363.9,343.6 368.9,343.1 373.9,342.6 378.9,342.1 383.8,341.5 388.8,341.0 393.8,340.4 398.8,339.8 403.7,339.2 408.7,338.6 413.7,338.0 418.6,337.4 423.6,336.8 428.6,336.1 433.6,335.5 438.5,334.9 443.5,334.2 448.5,333.5 453.5,332.9 458.4,332.2 463.4,331.5 468.4,330.8 473.4,330.1 478.3,329.4 483.3,328.7 488.3,328.0 493.3,327.3 498.2,326.5 503.2,325.8" fill="none" stroke="#2255cc" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
         <text x="509.2" y="333.8" fontSize="13" fontWeight="bold" fill="#2255cc">AVC</text>
@@ -26,11 +26,11 @@ export default function EconShortRunShutdown() {
         <text x="70" y="352.9" textAnchor="end" fontSize="12" fontWeight="bold" fill="#cc2222">P = min AVC</text>
         <text x="274.0" y="458" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#cc2222">Qsd</text>
         <line x1="329.0" y1="348.9" x2="288.0" y2="348.9" stroke="#cc2222" strokeWidth="1.5" markerEnd="url(#sdRedArr)"/>
-        <text x="334.0" y="338.9" fontSize="12" fontWeight="bold" fill="#cc2222">SHUT-DOWN POINT</text>
-        <text x="334.0" y="352.9" fontSize="10" fill="#555">MC = AVC at its minimum</text>
+        <text x="334.0" y="332.0" fontSize="12" fontWeight="bold" fill="#cc2222">SHUT-DOWN POINT</text>
+        <text x="334.0" y="346.0" fontSize="10" fill="#555">MC = AVC at its minimum</text>
         <line x1="80" y1="325.1" x2="407.1" y2="325.1" stroke="#1a944a" strokeWidth="1.5" strokeDasharray="6,4"/>
         <text x="70" y="329.1" textAnchor="end" fontSize="11" fontWeight="bold" fill="#1a944a">P = min ATC</text>
-        <text x="388.1" y="317.1" fontSize="10" fontStyle="italic" fill="#1a944a">Break-even price</text>
+        <text x="388.1" y="314.0" fontSize="10" fontStyle="italic" fill="#1a944a">Break-even price</text>
         <rect x="80" y="478" width="482" height="42" rx="5" fill="#fff0f0" stroke="#fca5a5" strokeWidth="1.2"/>
         <text x="92" y="496" fontSize="11" fontWeight="bold" fill="#cc2222">If P &lt; min AVC:</text>
         <text x="92" y="512" fontSize="11" fill="#555">Every unit sold increases losses beyond fixed costs → rational firm shuts down in the short run.</text>

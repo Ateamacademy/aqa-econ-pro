@@ -9,6 +9,7 @@ export default function EconYEDLuxury() {
           <marker id="ya4" markerWidth="6" markerHeight="8" refX="3" refY="1" orient="auto"><polygon points="0 8,3 0,6 8" fill="#cc2222"/></marker>
         </defs>
         <rect width="580" height="480" fill="#fff"/>
+        <text x="290" y="22" textAnchor="middle" fontSize="15" fontWeight="bold" fill="#111">YED · Normal vs Luxury Goods</text>
         <line x1="95" y1="440" x2="95" y2="32" stroke="#111" strokeWidth="2.5" markerEnd="url(#ya2)"/>
         <line x1="95" y1="440" x2="530" y2="440" stroke="#111" strokeWidth="2.5" markerEnd="url(#ya1)"/>
         <text x="44" y="108" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Average</text>
@@ -16,8 +17,8 @@ export default function EconYEDLuxury() {
         <text x="44" y="140" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">£ week</text>
         <text x="488" y="465" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#111">Quantity</text>
         <line x1="108" y1="422" x2="490" y2="72" stroke="#111" strokeWidth="3" strokeLinecap="round"/>
-        <text x="464" y="62" fontSize="12" fontWeight="bold" fill="#111">Demand for normal good</text>
-        <text x="464" y="78" fontSize="12" fill="#111">YED &gt; 0</text>
+        <text x="430" y="62" fontSize="12" fontWeight="bold" fill="#111">Demand for normal good</text>
+        <text x="430" y="78" fontSize="12" fill="#111">YED &gt; 0</text>
         <line x1="62" y1="432" x2="508" y2="192" stroke="#111" strokeWidth="3" strokeLinecap="round"/>
         <text x="418" y="238" fontSize="12" fontWeight="bold" fill="#111">Demand for luxury</text>
         <text x="418" y="254" fontSize="12" fill="#111">YED &gt; 1</text>
@@ -40,7 +41,7 @@ export default function EconYEDLuxury() {
         <circle cx="346" cy="336" r="7" fill="#cc2222"/>
         <text x="352" y="332" fontSize="12" fontWeight="bold" fill="#111">C</text>
         <line x1="56" y1="330" x2="56" y2="190" stroke="#cc2222" strokeWidth="3" markerEnd="url(#ya4)"/>
-        <line x1="172" y1="458" x2="282" y2="458" stroke="#cc2222" strokeWidth="3" markerEnd="url(#ya3)"/>
+        <line x1="172" y1="470" x2="268" y2="470" stroke="#cc2222" strokeWidth="3" markerEnd="url(#ya3)"/>
       </svg>
     </div>
   );

@@ -91,9 +91,9 @@ export default function KinkedDemandCurve() {
         </text>
 
         {/* Annotation: inelastic segment */}
-        <text x="240" y="250" fontSize="9" fill="#475569" fontStyle="italic">
-          <tspan x="240" dy="0">Relatively inelastic demand</tspan>
-          <tspan x="240" dy="12">curve · P↓ TR↓</tspan>
+        <text x="255" y="250" fontSize="9" fill="#475569" fontStyle="italic">
+          <tspan x="255" dy="0">Relatively inelastic demand</tspan>
+          <tspan x="255" dy="12">curve · P↓ TR↓</tspan>
         </text>
 
         {/* Annotation: MR discontinuity */}
@@ -112,10 +112,10 @@ export default function KinkedDemandCurve() {
           stroke="#94a3b8" strokeWidth="1" strokeDasharray="2,2" />
 
         {/* Annotation: MR starts at 0 */}
-        <text x="270" y="350" fontSize="9" fill="#475569" fontStyle="italic">
-          <tspan x="270" dy="0">The MR curve starts at 0</tspan>
-          <tspan x="270" dy="12">as Q1 is where TR is</tspan>
-          <tspan x="270" dy="12">maximised</tspan>
+        <text x="215" y="384" fontSize="9" fill="#475569" fontStyle="italic">
+          <tspan x="215" dy="0">The MR curve starts at 0</tspan>
+          <tspan x="215" dy="12">as Q1 is where TR is</tspan>
+          <tspan x="215" dy="12">maximised</tspan>
         </text>
       </svg>
     </div>

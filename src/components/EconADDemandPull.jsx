@@ -12,8 +12,8 @@ export default function EconADDemandPull() {
         <text x="330" y="50" textAnchor="middle" fontSize="12" fill="#555">Rightward shift of AD causes higher price level and higher real GDP</text>
         <line x1="88" y1="440" x2="88" y2="52" stroke="#111" strokeWidth="2.5" markerEnd="url(#dpU)"/>
         <line x1="88" y1="440" x2="562" y2="440" stroke="#111" strokeWidth="2.5" markerEnd="url(#dpR)"/>
-        <text x="82" y="46" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Price</text>
-        <text x="82" y="60" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Level</text>
+        <text x="80" y="46" textAnchor="end" fontSize="13" fontWeight="bold" fill="#111">Price</text>
+        <text x="80" y="60" textAnchor="end" fontSize="13" fontWeight="bold" fill="#111">Level</text>
         <text x="314" y="476" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Real GDP</text>
         <line x1="404.4" y1="440" x2="404.4" y2="60" stroke="#111" strokeWidth="2.8"/>
         <text x="410.4" y="66" fontSize="12" fontWeight="bold" fill="#111">LRAS</text>

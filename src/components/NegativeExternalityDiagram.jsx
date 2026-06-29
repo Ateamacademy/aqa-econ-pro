@@ -154,17 +154,18 @@ export default function NegativeExternalityDiagram() {
 
         {/* ══ CURVE LABELS ══ */}
 
-        {/* S · private supply, at top of blue supply curve */}
+        {/* S (MPC) · private supply, at top of blue supply curve */}
         <text
-          x={X(7.6) + 4} y={Y(15.2) + 4}
-          fill={BLUE} fontSize="20" fontWeight="bold"
-          fontFamily="Arial, sans-serif">S</text>
+          x={X(7.6) - 2} y={Y(15.2) - 8}
+          textAnchor="end"
+          fill={BLUE} fontSize="16" fontWeight="bold"
+          fontFamily="Arial, sans-serif">S (MPC)</text>
 
-        {/* S · social cost curve label (top of red curve) */}
+        {/* MSC · social cost curve label (top of red curve) */}
         <text
           x={X(6.5) + 4} y={Y(19.5) + 4}
-          fill={RED} fontSize="20" fontWeight="bold"
-          fontFamily="Arial, sans-serif">S</text>
+          fill={RED} fontSize="16" fontWeight="bold"
+          fontFamily="Arial, sans-serif">MSC</text>
 
         {/* Social Cost label · red italic near MSC curve */}
         <text
@@ -172,14 +173,14 @@ export default function NegativeExternalityDiagram() {
           fill={RED} fontSize="11" fontStyle="italic"
           fontFamily="Arial, sans-serif">Social Cost</text>
 
-        {/* Social Benefit label · red italic at bottom right */}
+        {/* Social Benefit label · blue italic beside the blue demand curve */}
         <text
-          x={X(6.4)} y={Y(5.5)}
-          fill={RED} fontSize="11" fontStyle="italic"
+          x={X(6.6)} y={Y(7.5)}
+          fill={BLUE} fontSize="11" fontStyle="italic"
           fontFamily="Arial, sans-serif">Social</text>
         <text
-          x={X(6.4)} y={Y(5.5) + 15}
-          fill={RED} fontSize="11" fontStyle="italic"
+          x={X(6.6)} y={Y(7.5) + 14}
+          fill={BLUE} fontSize="11" fontStyle="italic"
           fontFamily="Arial, sans-serif">Benefit</text>
 
         {/* ══ AXIS / QUANTITY LABELS ══ */}
@@ -213,11 +214,11 @@ export default function NegativeExternalityDiagram() {
 
         {/* Socially Efficient label */}
         <text
-          x={pB.x} y={yO + 36}
+          x={pB.x} y={yO + 32}
           textAnchor="middle" fill="#fbbf24" fontSize="11" fontStyle="italic"
           fontFamily="Arial, sans-serif">Socially</text>
         <text
-          x={pB.x} y={yO + 50}
+          x={pB.x} y={yO + 46}
           textAnchor="middle" fill="#fbbf24" fontSize="11" fontStyle="italic"
           fontFamily="Arial, sans-serif">Efficient</text>
 

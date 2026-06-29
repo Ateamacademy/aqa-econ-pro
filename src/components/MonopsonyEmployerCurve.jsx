@@ -113,8 +113,8 @@ export default function MonopsonyEmployerCurve() {
         <text x="265" y="109" fill="#1a56db" fontSize="11.5" fontFamily="Arial" fontWeight="bold">Marginal cost of</text>
         <text x="265" y="123" fill="#1a56db" fontSize="11.5" fontFamily="Arial" fontWeight="bold">labour (MCL)</text>
 
-        <text x="432" y="137" fill="#1a56db" fontSize="11" fontFamily="Arial" fontWeight="bold">Labour Supply (=</text>
-        <text x="432" y="150" fill="#1a56db" fontSize="11" fontFamily="Arial" fontWeight="bold">ACL)</text>
+        <text x="420" y="137" fill="#1a56db" fontSize="11" fontFamily="Arial" fontWeight="bold">Labour Supply</text>
+        <text x="420" y="150" fill="#1a56db" fontSize="11" fontFamily="Arial" fontWeight="bold">(= ACL)</text>
 
         <text x="338" y="260" fill="#1a56db" fontSize="11" fontFamily="Arial" fontWeight="bold">Labour Demand =</text>
         <text x="338" y="273" fill="#1a56db" fontSize="11" fontFamily="Arial" fontWeight="bold">MRPL</text>
@@ -140,13 +140,13 @@ export default function MonopsonyEmployerCurve() {
           fontWeight="bold" textAnchor="middle">wages</text>
 
         {/* ── "Lost wages" annotation box + arrow ── */}
-        <rect x="78" y="112" width="136" height="40" rx="4"
+        <rect x="300" y="272" width="136" height="40" rx="4"
           fill="#fff5a0" stroke="#e07b00" strokeWidth="1.4"/>
-        <text x="146" y="129" fill="#b35900" fontSize="11" fontFamily="Arial"
+        <text x="368" y="289" fill="#b35900" fontSize="11" fontFamily="Arial"
           fontWeight="bold" textAnchor="middle">Lost wages from</text>
-        <text x="146" y="143" fill="#b35900" fontSize="11" fontFamily="Arial"
+        <text x="368" y="303" fill="#b35900" fontSize="11" fontFamily="Arial"
           fontWeight="bold" textAnchor="middle">under-payment</text>
-        <line x1="175" y1="152" x2="185" y2="182"
+        <line x1="300" y1="285" x2="190" y2="195"
           stroke="#e07b00" strokeWidth="2.6" markerEnd="url(#arrOrg)"/>
       </svg>
     </div>

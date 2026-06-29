@@ -1,7 +1,7 @@
 export default function EconCoffeePriceVolatility() {
   return (
     <div style={{background:'#fff',borderRadius:'8px',padding:'6px',maxWidth:'600px',margin:'0 auto',fontFamily:"'Times New Roman',Georgia,serif",border:'1px solid #ccc'}}>
-      <svg viewBox="0 0 600 520" width="100%" style={{display:'block'}}>
+      <svg viewBox="-48 0 648 520" width="100%" style={{display:'block'}}>
         <defs>
           <marker id="cpR" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#111"/></marker>
           <marker id="cpU" markerWidth="7" markerHeight="9" refX="3.5" refY="1" orient="auto"><polygon points="0 9,3.5 0,7 9" fill="#111"/></marker>
@@ -9,7 +9,7 @@ export default function EconCoffeePriceVolatility() {
           <marker id="cpRedD" markerWidth="7" markerHeight="9" refX="3.5" refY="8" orient="auto-start-reverse"><polygon points="0 9,3.5 0,7 9" fill="#cc2222"/></marker>
           <marker id="cpRedU" markerWidth="7" markerHeight="9" refX="3.5" refY="1" orient="auto"><polygon points="0 9,3.5 0,7 9" fill="#cc2222"/></marker>
         </defs>
-        <rect width="600" height="520" fill="#fff"/>
+        <rect x="-48" width="648" height="520" fill="#fff"/>
         <text x="300" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Speculative Overreaction</text>
         <text x="300" y="48" textAnchor="middle" fontSize="14" fill="#111">to physical shortage (Coffee Market)</text>
         <line x1="82" y1="460" x2="82" y2="44" stroke="#111" strokeWidth="2.5" markerEnd="url(#cpU)"/>
@@ -26,7 +26,7 @@ export default function EconCoffeePriceVolatility() {
         <text x="198" y="135" fontSize="10" fill="#cc0000">(including speculative</text>
         <text x="198" y="147" fontSize="10" fill="#cc0000">futures trading volume)</text>
         <path d="M 158 445 Q 262 316 394 165" fill="none" stroke="#2244cc" strokeWidth="2.5"/>
-        <text x="400" y="160" fontSize="11" fontWeight="bold" fill="#2244cc">Supply 2</text>
+        <text x="400" y="160" fontSize="11" fontWeight="bold" fill="#2244cc">Supply 3</text>
         <text x="400" y="173" fontSize="10" fill="#2244cc">(based on physical</text>
         <text x="400" y="185" fontSize="10" fill="#2244cc">shortage)</text>
         <line x1="400" y1="190" x2="372" y2="208" stroke="#2244cc" strokeWidth="1.5" markerEnd="url(#cpR)"/>

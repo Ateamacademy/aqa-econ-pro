@@ -40,8 +40,8 @@ export default function EconPerfectCompetition() {
         <text x="676" y="254" fontSize="12" fontWeight="bold" fill="#111">MC</text>
         <path d="M 415 320 Q 490 430 570 370 Q 630 330 672 310" fill="none" stroke="#111" strokeWidth="2.2" strokeLinecap="round"/>
         <text x="676" y="314" fontSize="12" fontWeight="bold" fill="#111">ATC</text>
-        <line x1="400" y1="340" x2="680" y2="340" stroke="#1a944a" strokeWidth="2.2"/>
-        <text x="682" y="344" fontSize="12" fontWeight="bold" fill="#1a944a">P=AR=MR</text>
+        <line x1="400" y1="340" x2="655" y2="340" stroke="#1a944a" strokeWidth="2.2"/>
+        <text x="657" y="344" fontSize="12" fontWeight="bold" fill="#1a944a">P=AR=MR</text>
         <line x1="555" y1="340" x2="555" y2="480" stroke="#888" strokeWidth="1.3" strokeDasharray="5,4"/>
         <line x1="400" y1="340" x2="555" y2="340" stroke="#888" strokeWidth="1.3" strokeDasharray="5,4"/>
         <circle cx="555" cy="340" r="6" fill="#1a944a"/>
@@ -50,7 +50,7 @@ export default function EconPerfectCompetition() {
         <text x="555" y="496" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#888">Q*</text>
         <rect x="400" y="492" width="290" height="36" rx="5" fill="#f0f4fb" stroke="#c8d4e8" strokeWidth="1"/>
         <text x="410" y="508" fontSize="10" fontWeight="bold" fill="#111">Long run:</text>
-        <text x="410" y="522" fontSize="10" fill="#555">Supernormal profit → firms enter → P falls → P = min ATC (normal profit)</text>
+        <text x="410" y="522" fontSize="10" fill="#555" textLength="272" lengthAdjust="spacingAndGlyphs">Supernormal profit → entry → P falls → P = min ATC (normal profit)</text>
       </svg>
     </div>
   );

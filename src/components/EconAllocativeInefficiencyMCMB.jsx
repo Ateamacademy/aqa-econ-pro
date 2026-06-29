@@ -121,12 +121,13 @@ export default function EconAllocativeInefficiencyMCMB() {
 
         {/* Annotation: Q1 efficient (right of equilibrium) with pointer arrow */}
         <line x1="540" y1="305" x2="432" y2="302" stroke="#f87171" strokeWidth="1.6" markerEnd="url(#mcmbPointer)" />
-        <text x="548" y="295" fill="#e2e8f0" fontSize="13" fontWeight="700">Q₁, Allocatively efficient</text>
-        <text x="548" y="313" fill="#fbbf24" fontSize="13" fontWeight="700">MU = MC</text>
+        <text x="530" y="295" fill="#e2e8f0" fontSize="12" fontWeight="700">Q₁, Allocatively efficient</text>
+        <text x="530" y="313" fill="#fbbf24" fontSize="13" fontWeight="700">MU = MC</text>
 
         {/* Footer caption */}
-        <text x="380" y="575" textAnchor="middle" fill="#94a3b8" fontSize="11">
-          At Q₂ society would gain by producing more (MU &gt; MC). Free-market over-production with a negative externality pushes output past Q₁, so MC &gt; MU and welfare falls.
+        <text x="380" y="568" textAnchor="middle" fill="#94a3b8" fontSize="11">
+          <tspan x="380" dy="0">At Q₂ society would gain by producing more (MU &gt; MC). Free-market over-production</tspan>
+          <tspan x="380" dy="16">with a negative externality pushes output past Q₁, so MC &gt; MU and welfare falls.</tspan>
         </text>
       </svg>
     </div>

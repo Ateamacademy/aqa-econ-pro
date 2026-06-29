@@ -78,16 +78,16 @@ export default function EconShortRunCostsFull() {
 
         {/* ══ Y-AXIS LABELS ══ */}
         <text x="372.0" y="156.9" textAnchor="end" fontSize="12" fontWeight="bold" fill="#111">P1</text>
-        <text x="372.0" y="409.3" textAnchor="end" fontSize="12" fontWeight="bold" fill="#111">P2</text>
-        <text x="372.0" y="422.2" textAnchor="end" fontSize="12" fontWeight="bold" fill="#111">P3</text>
-        <text x="372.0" y="435.2" textAnchor="end" fontSize="12" fontWeight="bold" fill="#111">P4</text>
+        <text x="372.0" y="409.3" textAnchor="end" fontSize="11" fontWeight="bold" fill="#111">P2</text>
+        <text x="372.0" y="422.2" textAnchor="end" fontSize="11" fontWeight="bold" fill="#111">P3</text>
+        <text x="372.0" y="435.2" textAnchor="end" fontSize="11" fontWeight="bold" fill="#111">P4</text>
         <text x="372.0" y="456.4" textAnchor="end" fontSize="12" fontWeight="bold" fill="#111">P5</text>
 
         {/* ══ X-AXIS LABELS ══ */}
         <text x="563.8" y="543" textAnchor="middle" fontSize="11" fill="#111">Q5</text>
         <text x="605.4" y="543" textAnchor="middle" fontSize="11" fill="#111">Q4</text>
-        <text x="626.0" y="543" textAnchor="middle" fontSize="11" fill="#111">Q3</text>
-        <text x="641.3" y="543" textAnchor="middle" fontSize="11" fill="#111">Q2</text>
+        <text x="624.0" y="543" textAnchor="middle" fontSize="11" fill="#111">Q3</text>
+        <text x="648.0" y="543" textAnchor="middle" fontSize="11" fill="#111">Q2</text>
         <text x="782.2" y="543" textAnchor="middle" fontSize="11" fill="#111">Q1</text>
 
         {/* ══ BOTTOM NOTE ══ */}

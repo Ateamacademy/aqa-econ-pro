@@ -41,17 +41,17 @@ export default function EconImportQuotaTariff() {
         <line x1="80" y1="240.0" x2="224.4" y2="240.0" stroke="#111" strokeWidth="1.4" strokeDasharray="7,5"/>
         <line x1="224.4" y1="240.0" x2="224.4" y2="470" stroke="#888" strokeWidth="1.2" strokeDasharray="5,4"/>
         <line x1="424.5" y1="240.0" x2="424.5" y2="470" stroke="#888" strokeWidth="1.2" strokeDasharray="5,4"/>
-        <line x1="224.4" y1="240.0" x2="224.4" y2="470" stroke="#888" strokeWidth="1.2" strokeDasharray="5,4"/>
+        <line x1="351.5" y1="240.0" x2="351.5" y2="470" stroke="#888" strokeWidth="1.2" strokeDasharray="5,4"/>
         <line x1="567.5" y1="315.5" x2="567.5" y2="470" stroke="#888" strokeWidth="1.2" strokeDasharray="5,4"/>
         <text x="70" y="244.0" textAnchor="end" fontSize="12" fontWeight="bold" fill="#111">P quota</text>
         <text x="70" y="319.5" textAnchor="end" fontSize="12" fontWeight="bold" fill="#111">P world</text>
-        <text x="224.4" y="488" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">Q 1</text>
-        <text x="424.5" y="488" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">Q 2</text>
-        <text x="224.4" y="488" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">Q 3</text>
+        <text x="224.4" y="488" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">Q1</text>
+        <text x="351.5" y="488" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">Q2</text>
+        <text x="424.5" y="488" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">Q3</text>
         <text x="567.5" y="488" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">Q4</text>
         <text x="152.2" y="282.8" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#333">A</text>
-        <text x="324.4" y="282.8" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#333">B</text>
-        <text x="324.4" y="282.8" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#cc2222">C</text>
+        <text x="288.0" y="282.8" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#333">B</text>
+        <text x="388.0" y="282.8" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#cc2222">C</text>
         <line x1="424.5" y1="218.0" x2="224.4" y2="218.0" stroke="#111" strokeWidth="1.5" markerEnd="url(#iqR)" markerStart="url(#iqBi)"/>
         <text x="324.4" y="212.0" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#111">quota</text>
         <text x="274.4" y="230.0" fontSize="11" fontWeight="bold" fill="#cc2222">welfare loss</text>

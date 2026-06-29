@@ -1,14 +1,14 @@
 export default function EconPEDRevenueElastic() {
   return (
     <div style={{background:'#fff',borderRadius:'8px',padding:'8px',maxWidth:'680px',margin:'0 auto',fontFamily:"'Arial',sans-serif",border:'1px solid #ccc'}}>
-      <svg viewBox="0 0 680 580" width="100%" style={{display:'block'}}>
+      <svg viewBox="0 0 680 600" width="100%" style={{display:'block'}}>
         <defs>
           <marker id="peR" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#111"/></marker>
           <marker id="peU" markerWidth="7" markerHeight="10" refX="3.5" refY="1" orient="auto"><polygon points="0 10,3.5 0,7 10" fill="#111"/></marker>
           <marker id="peAmberU" markerWidth="7" markerHeight="9" refX="3.5" refY="1" orient="auto"><polygon points="0 9,3.5 0,7 9" fill="#d97706"/></marker>
           <marker id="peAmberD" markerWidth="7" markerHeight="9" refX="3.5" refY="8" orient="auto-start-reverse"><polygon points="0 9,3.5 0,7 9" fill="#d97706"/></marker>
         </defs>
-        <rect width="680" height="580" fill="#fff"/>
+        <rect width="680" height="600" fill="#fff"/>
 
         {/* Title */}
         <text x="340" y="30" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">PED Revenue Impact · Price Elastic Demand</text>

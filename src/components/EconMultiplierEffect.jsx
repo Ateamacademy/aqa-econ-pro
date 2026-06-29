@@ -10,8 +10,8 @@ export default function EconMultiplierEffect() {
         <rect width="600" height="500" fill="#fff"/>
         <line x1="70" y1="450" x2="70" y2="36" stroke="#111" strokeWidth="2.5" markerEnd="url(#meU)"/>
         <line x1="70" y1="450" x2="540" y2="450" stroke="#111" strokeWidth="2.5" markerEnd="url(#meR)"/>
-        <text x="64" y="32" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Price</text>
-        <text x="64" y="46" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">level</text>
+        <text x="63" y="30" textAnchor="end" fontSize="13" fontWeight="bold" fill="#111">Price</text>
+        <text x="63" y="44" textAnchor="end" fontSize="13" fontWeight="bold" fill="#111">level</text>
         <text x="510" y="472" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Real GDP</text>
         <line x1="385.0" y1="450" x2="385.0" y2="54" stroke="#111" strokeWidth="2.8"/>
         <text x="391" y="62" fontSize="12" fontWeight="bold" fill="#111">LRAS1</text>
@@ -31,8 +31,8 @@ export default function EconMultiplierEffect() {
         <text x="63" y="311" textAnchor="end" fontSize="12" fontWeight="bold" fill="#111">P2</text>
         <text x="63" y="243" textAnchor="end" fontSize="12" fontWeight="bold" fill="#111">P3</text>
         <text x="250" y="464" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">Y1</text>
-        <text x="363" y="464" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">Y2</text>
-        <text x="385" y="464" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">Y3 YFE</text>
+        <text x="358" y="464" textAnchor="end" fontSize="12" fontWeight="bold" fill="#111">Y2</text>
+        <text x="390" y="464" textAnchor="start" fontSize="12" fontWeight="bold" fill="#111">Y3 (YFE)</text>
         <path d="M 130 160 L 175 120" stroke="#cc2222" strokeWidth="2.5" markerEnd="url(#meRed)"/>
         <path d="M 130 160 L 85 200" stroke="#cc2222" strokeWidth="2.5" markerEnd="url(#meRed)"/>
         <text x="138" y="158" fontSize="12" fontWeight="bold" fill="#cc2222">Multiplier</text>

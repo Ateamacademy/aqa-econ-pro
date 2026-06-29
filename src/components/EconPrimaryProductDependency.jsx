@@ -1,13 +1,13 @@
 export default function EconPrimaryProductDependency() {
   return (
     <div style={{background:'#fff',borderRadius:'8px',padding:'6px',maxWidth:'600px',margin:'0 auto',fontFamily:"'Times New Roman',Georgia,serif",border:'1px solid #ccc'}}>
-      <svg viewBox="0 0 600 520" width="100%" style={{display:'block'}}>
+      <svg viewBox="-48 0 648 520" width="100%" style={{display:'block'}}>
         <defs>
           <marker id="ppR" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#111"/></marker>
           <marker id="ppU" markerWidth="7" markerHeight="9" refX="3.5" refY="1" orient="auto"><polygon points="0 9,3.5 0,7 9" fill="#111"/></marker>
           <marker id="ppRL" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto-start-reverse"><polygon points="0 0,8 3,0 6" fill="#111"/></marker>
         </defs>
-        <rect width="600" height="520" fill="#fff"/>
+        <rect x="-48" width="648" height="520" fill="#fff"/>
         <text x="300" y="30" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Speculative Overreaction</text>
         <text x="300" y="50" textAnchor="middle" fontSize="14" fill="#111">to physical shortage</text>
         <line x1="80" y1="460" x2="80" y2="46" stroke="#111" strokeWidth="2.5" markerEnd="url(#ppU)"/>
@@ -23,7 +23,7 @@ export default function EconPrimaryProductDependency() {
         <text x="188" y="131" fontSize="10" fill="#cc0000">(including speculative</text>
         <text x="188" y="143" fontSize="10" fill="#cc0000">futures trading volume)</text>
         <path d="M 155 440 Q 260 310 390 160" fill="none" stroke="#2244cc" strokeWidth="2.5"/>
-        <text x="396" y="155" fontSize="11" fontWeight="bold" fill="#2244cc">Supply 2</text>
+        <text x="396" y="155" fontSize="11" fontWeight="bold" fill="#2244cc">Supply 3</text>
         <text x="396" y="168" fontSize="10" fill="#2244cc">(based on physical</text>
         <text x="396" y="180" fontSize="10" fill="#2244cc">shortage)</text>
         <line x1="396" y1="185" x2="356" y2="205" stroke="#2244cc" strokeWidth="1.5" markerEnd="url(#ppR)"/>

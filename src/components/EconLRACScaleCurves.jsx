@@ -19,7 +19,7 @@ export default function EconLRACScaleCurves() {
         <line x1="360" y1="415" x2="360" y2="462" stroke="#cc0000" strokeWidth="1.8" strokeDasharray="6,4"/>
         <circle cx="332" cy="414" r="6" fill="#cc0000"/>
         <line x1="332" y1="414" x2="296" y2="445" stroke="#cc0000" strokeWidth="1.5" markerEnd="url(#lrRedArr)"/>
-        <text x="180" y="448" fontSize="12" fill="#cc0000">Minimum efficient scale</text>
+        <text x="150" y="440" fontSize="12" fill="#cc0000">Minimum efficient scale</text>
         <text x="160" y="260" textAnchor="middle" fontSize="14" fill="#555">Economies of scale</text>
         <text x="500" y="280" textAnchor="middle" fontSize="14" fill="#555">Diseconomies of scale</text>
       </svg>

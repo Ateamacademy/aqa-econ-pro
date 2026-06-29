@@ -76,8 +76,8 @@ export default function SpecificAdValoremDiagram() {
 
             {/* Supply With Tax: (55,148)→(228,8) [parallel shift 40px up] */}
             <line x1="55" y1="148" x2="228" y2="8" stroke="#1a56db" strokeWidth="2.3" />
-            <text x="180" y="12" fill="#1a56db" fontSize="8.5" fontWeight="bold">Supply</text>
-            <text x="175" y="22" fill="#1a56db" fontSize="8.5" fontWeight="bold">With Tax</text>
+            <text x="150" y="12" fill="#1a56db" fontSize="8.5" fontWeight="bold">Supply</text>
+            <text x="150" y="22" fill="#1a56db" fontSize="8.5" fontWeight="bold">With Tax</text>
 
             {/* T bracket: x=213, WithTax y≈20, PreTax y≈60, gap=40px */}
             <line x1="213" y1="22" x2="213" y2="58"

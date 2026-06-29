@@ -11,7 +11,7 @@ export default function CompetitionMonopolySurplusChart() {
         <text x="350" y="28" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#111">Competition vs Monopoly · Consumer Surplus</text>
         <line x1="80" y1="470" x2="80" y2="40" stroke="#111" strokeWidth="2.2" markerEnd="url(#cmU)"/>
         <line x1="80" y1="470" x2="642" y2="470" stroke="#111" strokeWidth="2.2" markerEnd="url(#cmR)"/>
-        <text x="76" y="34" fontSize="12" fontWeight="bold" fill="#111">Price/costs</text>
+        <text x="72" y="34" textAnchor="end" fontSize="12" fontWeight="bold" fill="#111">Price/costs</text>
         <text x="630" y="478" fontSize="13" fontWeight="bold" fill="#111">Output</text>
         <polygon points="297.2,216.6 297.2,271.2 392.6,271.2" fill="rgba(220,38,38,0.80)"/>
         <polyline points="119.2,27.7 125.2,80.9 131.3,121.3 137.4,153.0 143.4,178.4 149.5,199.3 155.6,216.6 161.7,231.3 167.8,243.8 173.8,254.6 179.9,263.9 186.0,272.1 192.1,279.4 198.1,285.7 204.2,291.4 210.3,296.5 216.3,301.0 222.4,305.1 228.5,308.8 234.6,312.1 240.7,315.1 246.7,317.8 252.8,320.3 258.9,322.5 265.0,324.6 271.0,326.4 277.1,328.1 283.2,329.7 289.3,331.1 295.3,332.4 301.4,333.5 307.5,334.6 313.5,335.5 319.6,336.4 325.7,337.2 331.8,337.9 337.8,338.5 343.9,339.0 350.0,339.5 356.1,340.0 362.2,340.3 368.2,340.7 374.3,341.0 380.4,341.2 386.4,341.4 392.5,341.5 398.6,341.6 404.7,341.7 410.8,341.8 416.8,341.8 422.9,341.7 429.0,341.7 435.1,341.6 441.1,341.5 447.2,341.4 453.3,341.2 459.3,341.1 465.4,340.9 471.5,340.7 477.6,340.4 483.7,340.2 489.7,339.9 495.8,339.6 501.9,339.3 507.9,339.0 514.0,338.6 520.1,338.3 526.2,337.9 532.3,337.6 538.3,337.2 544.4,336.8 550.5,336.4 556.5,335.9 562.6,335.5 568.7,335.1 574.8,334.6 580.9,334.1 586.9,333.7 593.0,333.2" fill="none" stroke="#111" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -29,8 +29,8 @@ export default function CompetitionMonopolySurplusChart() {
         <circle cx="392.6" cy="271.2" r="7" fill="#cc0000"/>
         <text x="70" y="220.6" textAnchor="end" fontSize="13" fontWeight="bold" fill="#cc0000">Pm</text>
         <text x="70" y="275.2" textAnchor="end" fontSize="13" fontWeight="bold" fill="#cc0000">Pc</text>
-        <text x="297.2" y="490" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#cc0000">Pm</text>
-        <text x="392.6" y="490" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#cc0000">Pc</text>
+        <text x="297.2" y="490" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#cc0000">Qm</text>
+        <text x="392.6" y="490" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#cc0000">Qc</text>
         <text x="237.2" y="186.6" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">Consumer</text>
         <text x="237.2" y="200.6" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">deadweight</text>
         <text x="237.2" y="214.6" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#111">loss</text>

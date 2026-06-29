@@ -3,7 +3,7 @@ export default function EconJCurveEffect() {
     <div style={{background:'#fff',borderRadius:'8px',padding:'8px',maxWidth:'640px',margin:'0 auto',fontFamily:"'Inter','Arial',sans-serif",border:'1px solid #ccc'}}>
       <svg viewBox="0 0 620 460" width="100%" style={{display:'block'}}>
         <rect width="620" height="460" fill="#ffffff"/>
-        <text x="310" y="28" textAnchor="middle" fontSize="17" fontWeight="700" fill="#0f172a">The J-Curve · Current Account after Sterling Depreciation (2022)</text>
+        <text x="310" y="28" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0f172a">The J-Curve · Current Account after Sterling Depreciation (2022)</text>
         <line x1="90" y1="240" x2="570" y2="240" stroke="#0f172a" strokeWidth="2"/>
         <line x1="90" y1="60" x2="90" y2="400" stroke="#0f172a" strokeWidth="2"/>
         <text x="560" y="258" fontSize="12" fill="#0f172a">Time</text>

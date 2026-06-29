@@ -49,7 +49,7 @@ export default function EconTermsOfTrade() {
         <text x="320" y="318" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#111">3</text>
         <line x1="96" y1="300" x2="96" y2="330" stroke="#cc2222" strokeWidth="1.8" markerEnd="url(#totRedD)" markerStart="url(#totRedU)"/>
         <text x="87" y="314" textAnchor="end" fontSize="9" fill="#cc2222">tariff</text>
-        <rect x="310" y="76" width="220" height="38" fill="#fff" stroke="#ddd" strokeWidth="1"/>
+        <rect x="308" y="76" width="236" height="38" fill="#fff" stroke="#ddd" strokeWidth="1"/>
         <rect x="316" y="84" width="14" height="10" rx="2" fill="rgba(240,140,80,0.7)"/>
         <text x="334" y="93" fontSize="9" fill="#111">net gain = increase in consumer surplus -</text>
         <text x="334" y="105" fontSize="9" fill="#111">decline in producer surplus - loss in tariff</text>

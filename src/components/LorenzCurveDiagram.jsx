@@ -261,7 +261,7 @@ function DiagramSVG({ showGini, showRef }) {
             opacity="0.7">B</text>
           {/* Gini formulas */}
           {(() => {
-            const [fx, fy] = toS(20, 88);
+            const [fx, fy] = toS(24, 84);
             return (
               <>
                 <text x={fx} y={fy} fill={C.countryA} fontSize="10"

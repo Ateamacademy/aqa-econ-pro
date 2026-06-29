@@ -18,7 +18,7 @@ export default function EconLabourMinWage() {
         <line x1="85" y1="80" x2="480" y2="410" stroke="#111" strokeWidth="2.5" strokeLinecap="round"/>
         <text x="484" y="424" fontSize="13" fontWeight="bold" fill="#111">D=MRP</text>
         <line x1="85" y1="170" x2="510" y2="170" stroke="#111" strokeWidth="1.8"/>
-        <text x="514" y="175" fontSize="12" fill="#111">Minimum wage</text>
+        <text x="508" y="175" fontSize="12" fill="#111">Minimum wage</text>
         <text x="77" y="175" textAnchor="end" fontSize="13" fontWeight="bold" fill="#111">WMIN</text>
         <line x1="85" y1="222.9" x2="256.0" y2="222.9" stroke="#cc0000" strokeWidth="1.5" strokeDasharray="6,4"/>
         <text x="77" y="227.9" textAnchor="end" fontSize="13" fontWeight="bold" fill="#111">W1</text>
@@ -29,7 +29,7 @@ export default function EconLabourMinWage() {
         <text x="192.7" y="460" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">QMIN</text>
         <text x="256.0" y="460" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Q1</text>
         <text x="301.9" y="460" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">QS</text>
-        <text x="179.3" y="162.0" fontSize="12" fontWeight="bold" fill="#111">Real wage unemployment</text>
+        <text x="179.3" y="158.0" fontSize="11" fontWeight="bold" fill="#111">Real wage unemployment</text>
         <line x1="256.0" y1="182.0" x2="256.0" y2="210.0" stroke="#cc0000" strokeWidth="2.2" markerEnd="url(#lmDn)"/>
       </svg>
     </div>

@@ -23,8 +23,8 @@ export default function EconHarrodDomarPPF() {
         <text x="290" y="48" textAnchor="middle" fontSize="12" fill="#555">Capital accumulation shifts productive potential outward</text>
         <line x1={cL} y1={cB} x2={cL} y2={cT-24} stroke="#111" strokeWidth="2.5" markerEnd="url(#hdU)"/>
         <line x1={cL} y1={cB} x2={cR+22} y2={cB} stroke="#111" strokeWidth="2.5" markerEnd="url(#hdR)"/>
-        <text x={cL-6} y={cT-30} textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Capital</text>
-        <text x={cL-6} y={cT-16} textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Goods</text>
+        <text x={cL-8} y={cT-30} textAnchor="end" fontSize="13" fontWeight="bold" fill="#111">Capital</text>
+        <text x={cL-8} y={cT-16} textAnchor="end" fontSize="13" fontWeight="bold" fill="#111">Goods</text>
         <text x={(cL+cR)/2} y={cB+36} textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Consumer Goods</text>
         <polyline points={pts1} fill="none" stroke="#111" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
         <text x={cR-82} y={cB-8} fontSize="13" fontWeight="bold" fill="#111">PPF</text>

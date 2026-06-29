@@ -9,15 +9,15 @@ export default function EconEdexcelPhillipsCurve() {
         <text x="310" y="28" textAnchor="middle" fontSize="17" fontWeight="700" fill="#0f172a">Short Run vs Long Run Phillips Curve</text>
         <line x1="90" y1="400" x2="580" y2="400" stroke="#0f172a" strokeWidth="2"/>
         <line x1="90" y1="50" x2="90" y2="400" stroke="#0f172a" strokeWidth="2"/>
-        <text x="560" y="420" fontSize="12" fill="#0f172a">Unemployment (%)</text>
-        <text x="60" y="45" fontSize="12" fill="#0f172a">Inflation (%)</text>
+        <text x="575" y="420" textAnchor="end" fontSize="12" fill="#0f172a">Unemployment (%)</text>
+        <text x="70" y="42" fontSize="12" fill="#0f172a">Inflation (%)</text>
         <line x1="380" y1="60" x2="380" y2="400" stroke="#7c3aed" strokeWidth="3"/>
         <text x="385" y="70" fontSize="12" fontWeight="700" fill="#7c3aed">LRPC</text>
         <text x="385" y="415" fontSize="11" fontWeight="700" fill="#7c3aed">NRU</text>
         <path d="M 140 200 Q 260 260 380 300 Q 480 330 560 360" fill="none" stroke="#0284c7" strokeWidth="2.5"/>
-        <text x="560" y="355" fontSize="12" fontWeight="600" fill="#0284c7">SRPC₁ (πᵉ = π₁)</text>
+        <text x="575" y="355" textAnchor="end" fontSize="12" fontWeight="600" fill="#0284c7">SRPC₁ (πᵉ = π₁)</text>
         <path d="M 140 120 Q 260 180 380 220 Q 480 250 560 280" fill="none" stroke="#be123c" strokeWidth="2.5"/>
-        <text x="560" y="275" fontSize="12" fontWeight="600" fill="#be123c">SRPC₂ (πᵉ = π₂)</text>
+        <text x="575" y="275" textAnchor="end" fontSize="12" fontWeight="600" fill="#be123c">SRPC₂ (πᵉ = π₂)</text>
         <circle cx="380" cy="300" r="5" fill="#0f172a"/>
         <text x="388" y="296" fontSize="12" fontWeight="700" fill="#0f172a">A</text>
         <line x1="90" y1="300" x2="380" y2="300" stroke="#64748b" strokeDasharray="3,3" strokeWidth="1"/>

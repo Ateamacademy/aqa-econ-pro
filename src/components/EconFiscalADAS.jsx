@@ -12,8 +12,8 @@ export default function EconFiscalADAS() {
         <text x="330" y="48" textAnchor="middle" fontSize="12" fill="#555">£20bn infrastructure spending shifts AD right → higher PL and Real GDP</text>
         <line x1="88" y1="440" x2="88" y2="54" stroke="#111" strokeWidth="2.5" markerEnd="url(#faU)"/>
         <line x1="88" y1="440" x2="562" y2="440" stroke="#111" strokeWidth="2.5" markerEnd="url(#faR)"/>
-        <text x="82" y="48" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Price</text>
-        <text x="82" y="62" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Level</text>
+        <text x="80" y="58" textAnchor="end" fontSize="13" fontWeight="bold" fill="#111">Price</text>
+        <text x="80" y="72" textAnchor="end" fontSize="13" fontWeight="bold" fill="#111">Level</text>
         <text x="314" y="476" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#111">Real National Output</text>
         <line x1="440.6" y1="440" x2="440.6" y2="62" stroke="#111" strokeWidth="2.8"/>
         <text x="446.6" y="68" fontSize="12" fontWeight="bold" fill="#111">LRAS</text>
@@ -34,7 +34,7 @@ export default function EconFiscalADAS() {
         <text x="78" y="270.2" textAnchor="end" fontSize="13" fontWeight="bold" fill="#cc4400">PL2</text>
         <text x="454.5" y="460" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#555">Y1</text>
         <text x="494.8" y="460" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#cc4400">Y2</text>
-        <rect x="88" y="474" width="474" height="50" rx="5" fill="#f0f4fb" stroke="#c8d4e8" strokeWidth="1.2"/>
+        <rect x="88" y="472" width="474" height="54" rx="5" fill="#f0f4fb" stroke="#c8d4e8" strokeWidth="1.2"/>
         <text x="100" y="492" fontSize="11" fontWeight="bold" fill="#111">Transmission mechanism:</text>
         <text x="100" y="508" fontSize="11" fill="#333">G↑ (£20bn) → AD shifts right (AD1→AD2) → Real GDP rises Y1→Y2 and Price Level rises PL1→PL2.</text>
         <text x="100" y="522" fontSize="11" fill="#555">Multiplier effect amplifies initial injection. Near LRAS, most impact is inflationary.</text>
