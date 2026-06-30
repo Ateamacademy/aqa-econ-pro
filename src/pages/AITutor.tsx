@@ -27,9 +27,14 @@ function buildTopicTree(topics: string[]) {
   // "demand"/"supply" (e.g. "Aggregate Demand & Aggregate Supply", "Fiscal, Monetary
   // & Supply-Side Policies"). Checked first so the micro filter below can't grab them.
   const macroOverride = /aggregate (demand|supply)|fiscal|monetary|supply-side/i;
+  // Foundational microeconomics topics that lack an obvious micro keyword and would
+  // otherwise fall through to Macro (checked first so they are always grouped as Micro).
+  const microOverride = /basic economic problem|allocation of resources|microeconomic|scarcity|factors of production/i;
   const micro = topics.filter((t) =>
-    !macroOverride.test(t) &&
-    /demand|supply|elast|market|fail|extern|public good|merit|interven|compet|labour|wage|cost|revenue|surplus|contest|business|structure|mono/i.test(t)
+    microOverride.test(t) || (
+      !macroOverride.test(t) &&
+      /demand|supply|elast|market|fail|extern|public good|merit|interven|compet|labour|wage|cost|revenue|surplus|contest|business|structure|mono/i.test(t)
+    )
   );
   const macro = topics.filter((t) => !micro.includes(t));
   return [

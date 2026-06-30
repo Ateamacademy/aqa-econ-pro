@@ -113,6 +113,20 @@ export const igcsePart1Topics: Topic[] = [
     name: "Microeconomic Decision Makers",
     subtopics: [
       {
+        title: "Money & Banking",
+        definition: "**Money** is anything widely accepted as payment for goods and services. It overcomes the inefficiency of **barter**, which needs a 'double coincidence of wants'.",
+        keyTerms: [
+          { term: "Medium of Exchange", definition: "Money is accepted in return for goods and services" },
+          { term: "Store of Value", definition: "Money holds its purchasing power over time, so it can be saved" },
+          { term: "Unit of Account", definition: "Money gives a common measure to compare the value of goods" },
+          { term: "Standard of Deferred Payment", definition: "Money allows buying now and paying later (credit)" },
+          { term: "Central Bank", definition: "A country's main monetary authority · issues currency and sets interest rates" },
+          { term: "Commercial Bank", definition: "A high-street bank that accepts deposits and lends to households and firms" },
+        ],
+        explanation: "**Forms of money:** cash (notes and coins) and bank deposits (money held in current/savings accounts, used via cards, transfers and cheques).\n\n**Characteristics of good money:** durable, portable, divisible, acceptable, limited in supply (scarce), recognisable and hard to forge.\n\n**Role of the central bank:**\n- Issues notes and coins (the currency)\n- Acts as banker to the government and to commercial banks\n- Sets interest rates and controls the money supply\n- Acts as lender of last resort to banks in difficulty\n- Helps maintain a stable financial system and exchange rate\n\n**Role of commercial banks:**\n- Accept deposits and keep customers' money safe\n- Lend to households and firms (loans, overdrafts, mortgages)\n- Enable payments (debit/credit cards, transfers, cheques)\n- Pay interest on savings and provide services such as foreign exchange",
+        examTip: "A common IGCSE question asks for the functions OR characteristics of money · learn the four functions and the key characteristics, and be able to distinguish the role of the central bank from commercial banks.",
+      },
+      {
         title: "The Role of Firms",
         definition: "Firms combine factors of production to produce goods and services for sale in markets.",
         keyTerms: [
@@ -225,14 +239,15 @@ export const igcsePart2Topics: Topic[] = [
     subtopics: [
       {
         title: "Macroeconomic Objectives",
-        definition: "Governments aim for: **economic growth**, **low unemployment**, **low inflation**, and a **healthy balance of payments**.",
+        definition: "Governments aim for: **economic growth**, **low unemployment**, **low inflation**, a **healthy balance of payments**, and an **equitable redistribution of income** (reducing the gap between rich and poor).",
         keyTerms: [
           { term: "Economic Growth", definition: "An increase in real GDP · the economy produces more" },
           { term: "Inflation", definition: "A sustained rise in the general price level" },
           { term: "Unemployment", definition: "People able and willing to work but cannot find a job" },
           { term: "Balance of Payments", definition: "Record of all trade and financial flows with other countries" },
+          { term: "Redistribution of Income", definition: "Government action (e.g. progressive taxes and welfare benefits) to reduce inequality and create a fairer distribution of income" },
         ],
-        explanation: "**These objectives can conflict:**\n- Reducing unemployment (boosting demand) may cause inflation\n- Controlling inflation (reducing demand) may cause unemployment\n- Growth may worsen the balance of payments (more imports)\n- Growth may damage the environment\n\n**The ideal:** Steady growth (2-3%), low inflation (2%), low unemployment, balanced trade. But achieving ALL at once is very difficult · there are always trade-offs.",
+        explanation: "**These objectives can conflict:**\n- Reducing unemployment (boosting demand) may cause inflation\n- Controlling inflation (reducing demand) may cause unemployment\n- Growth may worsen the balance of payments (more imports)\n- Growth may damage the environment\n- Pursuing growth/efficiency may worsen income inequality, conflicting with redistribution\n\n**The ideal:** Steady growth (2-3%), low inflation (2%), low unemployment, balanced trade, and a fairer (more equitable) distribution of income. But achieving ALL at once is very difficult · there are always trade-offs.",
         examTip: "IGCSE often asks about conflicts between objectives · e.g., reducing unemployment may cause inflation. Always explain the trade-off.",
       },
       {

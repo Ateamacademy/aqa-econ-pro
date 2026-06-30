@@ -459,7 +459,7 @@ Which situation is most likely to encourage household saving?
 - A A cut in interest rates
 - B A reduction in income tax
 - C A rise in expected inflation
-- D A fall in consumer confidence
+- D A rise in consumer confidence
 
 Question 14 [1 marks]
 A firm merges with a rival producing the same good at the same stage of production. What type of integration is this?

@@ -400,9 +400,9 @@ What is the relationship between a government's annual fiscal deficit and its na
 Question 22 [1 marks]
 In the circular flow of income, which of the following is a withdrawal (leakage) from the economy?
 - A household consumption of domestically produced goods
-- B household saving
+- B investment by firms
 - C government spending on public services
-- D investment by firms
+- D household saving
 
 Question 23 [1 marks]
 A government uses expansionary fiscal policy to reduce cyclical unemployment. What may be a consequence?
@@ -591,8 +591,8 @@ Question 17 [1 marks]
 Workers in a declining industry lose their jobs and find that their existing skills are no longer demanded by expanding industries. Which type of unemployment does this best illustrate?
 - A cyclical unemployment
 - B frictional unemployment
-- C seasonal unemployment
-- D structural unemployment
+- C structural unemployment
+- D seasonal unemployment
 
 Question 18 [1 marks]
 An economy is operating beyond its full-employment level of output. What is most likely to be true of its short-run aggregate supply curve at this point?
@@ -667,8 +667,8 @@ A government imposes a tariff on imported steel. What is the most likely effect 
 Question 28 [1 marks]
 Which is most likely to be an advantage of free trade between countries?
 - A greater protection for domestic infant industries
-- B increased consumer choice and lower prices
-- C a guaranteed improvement in the current account
+- B a guaranteed improvement in the current account
+- C increased consumer choice and lower prices
 - D an increase in government tariff revenue
 
 Question 29 [1 marks]
@@ -1031,11 +1031,11 @@ A negative externality of production exists when:
 - D marginal social benefit exceeds marginal private benefit.
 
 Question 12 [1 marks]
-The Coase theorem suggests that externalities can be internalised if:
-- A the government imposes a Pigouvian tax.
-- B the government issues tradable permits.
-- C property rights are clearly defined and transaction costs are low.
-- D firms are nationalised.
+A government wishes to reduce the over-consumption of a demerit good that generates negative externalities in consumption. Which policy is most likely to achieve this?
+- A a per-unit subsidy paid to producers
+- B the provision of the good free of charge
+- C an indirect tax equal to the external cost
+- D a maximum price set below the equilibrium price
 
 Question 13 [1 marks]
 Which of the following is most likely to be classified as a public good?
@@ -1488,11 +1488,11 @@ The efficient Pigouvian tax on a good with a negative production externality is 
 - D zero output.
 
 Question 13 [1 marks]
-If private bargaining according to the Coase theorem cannot resolve an externality, the most likely reason is:
-- A one party has a dominant strategy.
-- B transaction costs are prohibitively high.
-- C property rights are clearly defined.
-- D the externality is positive.
+To correct the under-consumption of a merit good such as healthcare, a government is most likely to:
+- A impose an indirect tax on the good
+- B provide the good free at the point of use
+- C set a minimum price above the equilibrium price
+- D remove all subsidies given to producers
 
 Question 14 [1 marks]
 Which is most likely to be a cause of government failure?
@@ -1509,11 +1509,11 @@ A closed economy has the following aggregate demand components: C = 0.7Y + 100, 
 - D 1,500 only if G = 100
 
 Question 16 [1 marks]
-Ricardian equivalence suggests that a tax-financed and a bond-financed increase in government spending have:
-- A the same effect on aggregate demand if consumers are forward-looking.
-- B a larger effect on AD if bond-financed because it crowds out investment.
-- C a larger effect on AD if tax-financed because households save less.
-- D no effect on aggregate demand in any case.
+Which of the following best describes an automatic stabiliser within fiscal policy?
+- A unemployment benefit payments that rise automatically as an economy enters a recession
+- B a discretionary increase in government spending on infrastructure announced in the budget
+- C a one-off tax rebate paid to households to boost spending
+- D an increase in the central bank's policy interest rate
 
 Question 17 [1 marks]
 If the short-run Phillips curve is vertical at the natural rate of unemployment:
@@ -1544,11 +1544,11 @@ A country's balance of payments is in long-run disequilibrium if:
 - D its financial account is near zero.
 
 Question 21 [1 marks]
-Interest rate parity predicts that, in equilibrium, a country with a higher nominal interest rate than another country will have a currency that is expected to:
-- A appreciate.
-- B depreciate.
-- C remain fixed.
-- D have no relationship to interest rate differentials.
+All else equal, if a country's central bank raises interest rates relative to those in other countries, the most likely short-run effect on its currency is:
+- A a depreciation, as imports become cheaper
+- B an appreciation, as higher returns attract inflows of financial capital
+- C no change, because exchange rates depend only on trade in goods
+- D a permanent fall in the nominal exchange rate
 
 Question 22 [1 marks]
 A Lorenz curve for Country X shows that the bottom 40% of households receive 10% of total income. A Gini coefficient calculated for Country X is likely to be:
@@ -1572,18 +1572,18 @@ Which best describes 'import substitution' as a development strategy?
 - D Specialising in primary commodity exports.
 
 Question 25 [1 marks]
-A country has a savings rate of 20% of GDP and a capital-output ratio of 4. Using the Harrod–Domar growth model (ignoring depreciation), the implied rate of economic growth is:
-- A 4%
-- B 5%
-- C 16%
-- D 80%
+Which of the following is most likely to increase a country's long-run potential economic growth?
+- A a temporary rise in household consumption
+- B sustained investment in education, training and infrastructure
+- C an increase in the general price level
+- D a short-term depreciation of the exchange rate
 
 Question 26 [1 marks]
-A key prediction of the Solow growth model is that, in the long run:
-- A all countries converge to the same level of income per capita.
-- B differences in income per capita are explained only by savings rates.
-- C long-run growth in per capita income is determined by exogenous technological progress.
-- D higher savings rates permanently raise the growth rate of per capita income.
+Which of the following best distinguishes actual economic growth from potential economic growth?
+- A actual growth shifts the PPF outward, whereas potential growth is a movement towards the PPF
+- B both refer only to an outward shift of the PPF
+- C actual growth is a rise in real output, whereas potential growth is a rise in productive capacity
+- D potential growth is always equal to actual growth in the long run
 
 Question 27 [1 marks]
 A country running a persistent current account deficit financed by short-term capital inflows is most vulnerable to:

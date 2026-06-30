@@ -40,18 +40,18 @@ A farmer can produce 80 tonnes of wheat OR 50 tonnes of barley on a fixed plot o
 - D 25 tonnes
 
 Question 3 [1 marks]
-The cross-price elasticity of demand between butter and margarine is +1.8. What does this indicate?
-- A Butter and margarine are complements
-- B Butter and margarine are close substitutes
-- C Butter and margarine are distant substitutes
-- D Butter and margarine are independent goods
+The price elasticity of demand of butter is 1.8. What does this indicate?
+- A butter demand is price inelastic
+- B butter demand is price elastic
+- C butter demand is unitary
+- D butter demand is perfectly price inelastic
 
 Question 4 [1 marks]
-A good has income elasticity of demand of –0.4. If consumers' real incomes rise by 10%, by how much does demand change?
-- A Falls by 0.04%
-- B Falls by 4%
-- C Rises by 4%
-- D Rises by 40%
+A good has price elasticity of supply of 0.4. If market prices rise by 10%, by how much does supply change?
+- A falls by 0.04%
+- B rises by 4%
+- C falls by 4%
+- D rises by 40%
 
 Question 5 [1 marks]
 A tax is imposed on a good with perfectly inelastic demand. Who bears the entire tax burden?
@@ -131,7 +131,7 @@ Suppose in a given year nominal GDP rises by 7% and inflation is 4%. By approxim
 - D About 11%
 
 Question 16 [1 marks]
-An economy experiences stagflation. Which policy combination is best suited to tackle it?
+An economy simultaneously experiences low economic growth, high unemployment and high inflation. Which policy combination is best suited to tackle this?
 - A Expansionary fiscal and expansionary monetary policy
 - B Expansionary fiscal and contractionary monetary policy
 - C Contractionary fiscal and contractionary monetary policy
@@ -159,7 +159,7 @@ A country's government deficit increases sharply during a recession. Which is th
 - D Rise in interest payments on new debt
 
 Question 20 [1 marks]
-A country has a high Gini coefficient. What does this indicate?
+A country has a regressive tax system. What is the likely effect?
 - A A highly equal income distribution
 - B A high level of environmental pollution
 - C A highly unequal income distribution
@@ -201,18 +201,18 @@ A developing country has primary product dependence. Which is the most likely lo
 - D Rapid growth of the secondary sector
 
 Question 26 [1 marks]
-A country deploys a J-curve effect after a currency depreciation. Which best describes the J-curve?
-- A An immediate improvement, then deterioration of trade balance
-- B An immediate deterioration, then improvement of trade balance
-- C A permanent improvement of trade balance
-- D No change in trade balance
+A country's currency depreciates. How does this affect the country's exports?
+- A Export prices fall, and export demand falls
+- B Export prices fall, and export demand rises
+- C Exports remain unchanged
+- D Export prices rise, and export demand falls
 
 Question 27 [1 marks]
-A Marshall–Lerner condition is satisfied when:
-- A The sum of PED for exports and imports exceeds 1
-- B Export and import prices are equal
-- C A country has a current account surplus
-- D The exchange rate is fixed
+Which of the following is an example of a trade protection measure?
+- A A tariff placed on imported goods
+- B An increase in the exchange rate
+- C A rise in domestic household incomes
+- D A fall in the rate of interest
 
 Question 28 [1 marks]
 In the short run, which is the least likely outcome of free trade for an economy moving from protection to free trade?
@@ -222,11 +222,11 @@ In the short run, which is the least likely outcome of free trade for an economy
 - D Immediate elimination of structural unemployment
 
 Question 29 [1 marks]
-A country joins a customs union. Which statement is correct?
-- A All member countries adopt a single currency
-- B Internal tariffs are removed and a common external tariff is applied
-- C Internal tariffs are retained but capital mobility is allowed
-- D Members must allow free movement of labour
+Which is most likely to be a benefit of international trade for a country?
+- A A permanent rise in unemployment across all industries
+- B Access to a wider variety of goods and services for consumers
+- C The elimination of all domestic competition
+- D A guaranteed government budget surplus
 
 Question 30 [1 marks]
 Which combination of aims of government is most likely to conflict in the short run?

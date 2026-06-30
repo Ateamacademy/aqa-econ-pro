@@ -21,12 +21,13 @@ You are generating content for a REVISION GUIDE, not a ChatGPT conversation. Str
    MACRO: ad_increase, ad_decrease, sras_decrease, sras_increase, keynesian_as
    ELASTICITY: ped_elastic, ped_inelastic
    PPF: ppf, ppf_growth
-   MARKET STRUCTURES: monopoly, perfect_competition, monopolistic_competition, oligopoly_payoff
+   MARKET STRUCTURES: monopoly, perfect_competition, monopolistic_competition, oligopoly_payoff, natural_monopoly
+   LABOUR MARKET: monopsony, bilateral_monopoly, economic_rent_transfer_earnings
    COST CURVES: cost_curves, lrac, short_run_shutdown
    DISTRIBUTION: lorenz_curve, phillips_curve
    TRADE: trade_quota
    Example: "### Diagram: positive_externality" or "### Diagram: monopoly"
-   CRITICAL: Pick the MOST SPECIFIC type. For pollution → negative_production_externality. For merit goods → positive_externality. For minimum wage → price_floor. For NHS/education → positive_externality. For sugar tax → tax_incidence. For cost-push inflation → sras_decrease. For demand-pull inflation → ad_increase.
+   CRITICAL: Pick the MOST SPECIFIC type. For pollution → negative_production_externality. For merit goods → positive_externality. For minimum wage → price_floor. For NHS/education → positive_externality. For sugar tax → tax_incidence. For cost-push inflation → sras_decrease. For demand-pull inflation → ad_increase. For a single dominant employer of labour → monopsony. For a monopoly with continuously falling average costs → natural_monopoly. For a union bargaining against a monopsony employer → bilateral_monopoly. For the split of factor income into economic rent and transfer earnings → economic_rent_transfer_earnings.
 8. Use "> 📝 **Key Point:** ..." callout for the single most important takeaway
 9. Use "> 💡 **Exam Tip:** ..." callout at the end with exam-specific advice
 10. **Keep paragraphs SHORT** · maximum 2-3 sentences. Use bullet points aggressively.
