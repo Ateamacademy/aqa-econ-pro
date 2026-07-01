@@ -1,4 +1,5 @@
 import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY } from "@/lib/supabaseConfig";
+import { supabase } from "@/integrations/supabase/client";
 
 type MessageContent = string | Array<{ type: "text"; text: string } | { type: "image_url"; image_url: { url: string } }>;
 type Msg = { role: "user" | "assistant"; content: MessageContent };
@@ -72,12 +73,14 @@ export async function streamChat({
   };
 
   try {
+    const { data: { session } } = await supabase.auth.getSession();
+    const accessToken = session?.access_token ?? SUPABASE_PUBLISHABLE_KEY;
     const resp = await fetchWithRetry(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         apikey: SUPABASE_PUBLISHABLE_KEY,
-        Authorization: `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+        Authorization: `Bearer ${accessToken}`,
       },
       body: JSON.stringify({ messages, mode, subject: subject || "economics" }),
       signal: controller.signal,
