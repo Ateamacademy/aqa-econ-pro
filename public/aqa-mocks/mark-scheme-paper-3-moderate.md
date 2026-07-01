@@ -97,12 +97,13 @@ Skills mismatches → structural unemployment → higher NRU. B and C affect cyc
 10. Answer: B
 A higher National Living Wage compresses the wage distribution. A, C and D tend to widen inequality.
 11. Answer: B
-From 1000 → 2000 units output doubles (×2.0) while inputs rise by ×1.75 each · output increases more than
-proportionately = increasing returns to scale. (The other intervals show factor inputs scaling unevenly, so no valid
-returns-to-scale test can be made.)
+All inputs scale by the same factor in each interval. From 1000 → 2000 units output doubles (×2.0) while capital,
+land and labour each rise by only ×1.6 · output increases more than proportionately = increasing returns to scale.
+(500→1000: inputs ×2.5 > output ×2, decreasing. 2000→3000: inputs and output both ×1.5, constant. 3000→4000:
+inputs ×1.5 > output ×1.33, decreasing.)
 12. Answer: C
-Profit = TR − TC. Maximum profit of £60 occurs at 30 units (equal at 40; by convention, the lower output is chosen).
-MR = MC between 30 and 40.
+Profit = TR − TC. Maximum profit of £60 occurs uniquely at 30 units. At 40 units profit is only £50 (400 − 350),
+because the marginal cost of units 31–40 (£110) exceeds their marginal revenue (£100).
 13. Answer: B
 (104 − 100) / 100 × 100 = +4%.
 14. Answer: C

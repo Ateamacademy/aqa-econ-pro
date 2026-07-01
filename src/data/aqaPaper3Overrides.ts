@@ -109,14 +109,14 @@ function bank(setSeed: string): McqSpec[] {
 | Units of output | Units of capital | Units of land | Labour (Number of workers) |
 |---|---|---|---|
 | 500 | 20 | 40 | 60 |
-| 1000 | 80 | 160 | 240 |
-| 2000 | 140 | 280 | 420 |
-| 3000 | 210 | 420 | 630 |
-| 4000 | 300 | 580 | 860 |`,
-      stem: "Based on Table 1, the firm experiences constant returns to scale when it increases its output from:",
+| 1000 | 50 | 100 | 150 |
+| 2000 | 80 | 160 | 240 |
+| 3000 | 120 | 240 | 360 |
+| 4000 | 180 | 360 | 540 |`,
+      stem: "Based on Table 1, the firm experiences increasing returns to scale when it increases its output from:",
       options: ["500 to 1000 units", "1000 to 2000 units", "2000 to 3000 units", "3000 to 4000 units"],
       answer: "B",
-      justification: "From 1000 to 2000, output doubles and all inputs less than double (capital 80→140 = ×1.75, land 160→280 = ×1.75, labour 240→420 = ×1.75); this is actually increasing returns. From 500 to 1000, inputs quadruple while output doubles = decreasing returns. The answer is B: output doubles while all factor inputs less than double.",
+      justification: "All three inputs scale by the same factor in each interval, so returns to scale are well defined. Increasing returns to scale mean output rises MORE than proportionally to inputs. From 1000 to 2000, output doubles (×2) while capital, land and labour each rise only ×1.6 → increasing returns (answer B). 500→1000: inputs ×2.5 > output ×2 (decreasing). 2000→3000: inputs and output both ×1.5 (constant). 3000→4000: inputs ×1.5 > output ×1.33 (decreasing).",
     },
     {
       figure: `**Table 2:** The table below shows the total cost and total revenue for a firm at different output levels.
@@ -127,12 +127,12 @@ function bank(setSeed: string): McqSpec[] {
 | 10 | 120 | 100 |
 | 20 | 170 | 200 |
 | 30 | 240 | 300 |
-| 40 | 340 | 400 |
+| 40 | 350 | 400 |
 | 50 | 470 | 500 |`,
       stem: "Based on Table 2, at which level of output does the firm maximise profit?",
       options: ["10 units", "20 units", "30 units", "40 units"],
       answer: "C",
-      justification: "Profit = TR − TC. At 30 units: 300 − 240 = £60. At 20: 200 − 170 = £30. At 40: 400 − 340 = £60. At 30 and 40 both give £60, but marginal cost at 40 (£100) > marginal revenue (£100), so 30 is optimal.",
+      justification: "Profit = TR − TC. At 20 units: £30; at 30 units: 300 − 240 = £60 (maximum); at 40 units: 400 − 350 = £50; at 50 units: £30. Profit is maximised at a single output — 30 units. Beyond 30, the marginal cost of units 31–40 (£110) exceeds their marginal revenue (£100), so profit falls.",
     },
     {
       figure: `**Table 3:** The table below shows the index of real GDP per head for a country.
@@ -508,17 +508,17 @@ function bankHard(): McqSpec[] {
 | 10 | 10 | 100 | 60 |
 | 20 | 10 | 200 | 110 |
 | 30 | 10 | 300 | 180 |
-| 40 | 10 | 400 | 280 |
+| 40 | 10 | 400 | 270 |
 | 50 | 10 | 500 | 420 |`,
       stem: "Based on Table 2, the firm's profit-maximising output and supernormal profit are:",
       options: [
         "30 units; £120 supernormal profit.",
-        "40 units; £120 supernormal profit.",
+        "40 units; £130 supernormal profit.",
         "40 units; £40 supernormal profit.",
         "50 units; £80 supernormal profit.",
       ],
       answer: "B",
-      justification: "Profit (TR − TC): 30u = £120, 40u = £120, 50u = £80. The last unit where MR (£10) ≥ MC is at 40u (MC of 31st–40th = £10). Standard interpretation: 40 units, £120 supernormal profit.",
+      justification: "Profit (TR − TC): 30u = £120, 40u = £130 (maximum), 50u = £80. Producing units 31–40 adds to profit because their marginal cost (£90, i.e. £9 per unit) is below marginal revenue (£10); units 41–50 have marginal cost £150 (£15 per unit) above MR, so output stops at 40 units. Profit-maximising output is 40 units with £130 supernormal profit.",
     },
     // Q13 · Table 3
     {

@@ -113,8 +113,9 @@ AQA
                            the public interest.
        11          C       Marginal products: 12, 16, 12, 8, 4. MP peaks at the 3rd worker then DECLINES from
                            the 4th onward · diminishing returns begin with the 4th worker.
-       12          B       Profit = TR − TC. At Q = 40, TR = £400, TC = £280, profit = £120. MC from Q = 30 to
-                           40 is (280 − 180)/10 = £10 = P. Profit max at Q = 40.
+       12          B       Profit = TR − TC. At Q = 40, TR = £400, TC = £270, profit = £130 — the unique maximum
+                           (Q = 30 gives £120, Q = 50 gives £80). MC of units 31–40 = (270 − 180)/10 = £9 < P (£10),
+                           so they add to profit; MC of units 41–50 = £15 > £10, so output stops at 40.
        13          B       Q3 2023 (−0.1%) and Q4 2023 (−0.3%) are two consecutive negative quarters · the
                            standard definition of a technical recession.
        14          A       Higher inflation (4.1%) than the anchor economy (Q: 1.8%) at a fixed rate means P's
