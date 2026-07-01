@@ -209,9 +209,10 @@ function postMarkValidate(
     }
   }
 
-  // Partial cap: max 50%
+  // Partial cap: allow up to ~70% (a partial-but-substantive diagram should keep most of
+  // its earned marks; the empty→0 and sparse→1 guards above still protect against gaming).
   if (verification?.completeness === "partial") {
-    const cap = Math.floor(raw.total_marks * 0.5);
+    const cap = Math.ceil(raw.total_marks * 0.7);
     if (raw.marks_awarded > cap) {
       return {
         ...raw,

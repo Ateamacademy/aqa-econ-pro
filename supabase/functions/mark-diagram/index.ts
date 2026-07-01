@@ -118,23 +118,27 @@ MARKING RULES:
 9. Explain exactly why marks were gained or lost
 10. Highlight what was correct FIRST, then explain improvements
 
-STRICT ZERO-MARK RULES (CRITICAL · apply these BEFORE any other marking):
-11. If a drawn diagram is missing ALL of the following: labelled axes, key curves with labels, and equilibrium/intersection points · award 0 marks total. An unlabelled sketch with no identifiable economic content scores 0.
-12. A diagram with no text labels at all (no axis labels, no curve labels, no point labels) CANNOT score any marks regardless of whether the shapes vaguely resemble correct curves.
-13. For drawn/image answers: the student MUST demonstrate they know what the diagram represents through labels or annotations. Raw lines and shapes without any economic labelling = 0 marks.
-14. Do NOT give "benefit of the doubt" marks for shapes that could be interpreted as correct curves but have no labels. Unlabelled lines are ambiguous and score 0.
-15. A component can only score marks if the student has explicitly shown that specific element · never infer knowledge from an ambiguous drawing.
+COMPONENT-BASED SCORING (mark each element independently, then sum · do NOT let one missing element collapse the whole score):
+11. Break the diagram into its components (axes, each curve, equilibrium/intersection points, shift direction, shaded/welfare areas, annotations) and award each component's marks on its OWN evidence, then total them.
+12. Assess and report SEPARATELY in component_results: (a) the ECONOMIC CONCEPT being tested (e.g. correct shift direction, growth vs contraction, output at MC=MR), (b) DIAGRAM ACCURACY (curve shapes, positions, correct intersections/zones), and (c) LABELLING/PRESENTATION (axis + curve labels). A weakness in one must not zero the others.
 
-FORBIDDEN MARK AWARDS (CRITICAL · violating these is a SEVERE ERROR):
-16. Do NOT award marks for 'attempting to set up axes' without labels.
-17. Do NOT award marks for 'a line that could be a curve' without a label.
-18. Do NOT award 'partial credit' unless the rubric explicitly lists a partial-marks tier for that requirement.
-19. Do NOT award 'understanding demonstrated' marks without diagram evidence of that understanding.
-20. Do NOT award 1 mark for 'axes present' unless BOTH axes are present AND BOTH are labelled with economic variables (e.g. Price, Quantity).
-21. If the submission has no identifiable curves or no axis labels, your total MUST be 0. Any non-zero total is a SEVERE ERROR.
+WHEN TO AWARD ZERO (only genuine cases · there is NO automatic-zero / "fatal error" rule beyond this):
+13. Award 0 ONLY if there is no identifiable economic content at all — no recognisable curves AND no economic labels/annotations (a blank canvas or meaningless scribble).
+14. If the diagram shows a recognisable, correctly-oriented economic structure (right curves, correct shift), it MUST score the marks for the elements present, even if axis labels or some curve labels are missing. Missing axis labels cost ONLY the axis-label mark(s) — NEVER the whole score. Do not collapse a substantive diagram to 0, and do not force a genuine 3/4 or 4/6 down to 0.
+15. Never award "benefit of the doubt" marks for an ambiguous unlabelled scribble; but equally never zero a substantive diagram over a single missing label.
 
-MIN-MARKS THRESHOLD CHECK:
-If your marks_awarded would be 1 or 2 out of ${totalMarks}: REVIEW WHETHER IT SHOULD BE 0. A near-zero score implies the diagram is near-empty. Verify that the components you awarded marks for have explicit evidence. If not, reduce to 0.
+ACCEPT VALID ALTERNATIVES (do not penalise correct alternatives):
+16. Accept economically valid alternative representations and mark the ECONOMICS, not one canonical drawing style. Examples: a straight-line OR bowed-out PPF where the question does not require a specific shape; alternative but correct foreign-exchange axis conventions; any correct way of showing the concept tested. If unsure whether an alternative is valid, treat it as valid and say so in feedback.
+
+VERIFY BEFORE DEDUCTING (do not hallucinate missing elements):
+17. Before marking any element "missing" or "incorrect", confirm it is genuinely absent from or wrong in the DIAGRAM ITSELF. Do NOT deduct for an element that is actually present. Do NOT treat "not restated in the written explanation" as "missing from the diagram" — assess the diagram and the explanation separately.
+
+CATCH REAL ERRORS (do not over-reward · full marks require correctness):
+18. Explicitly validate every economically-significant LABEL and the spatial POSITION/ZONE of each marked point against the correct diagram. A swapped/mislabelled curve (e.g. MSB/MPB or D/S reversed), a point in the wrong zone (e.g. on the PPF when unemployment requires a point INSIDE it, or output not drawn at MC=MR), or a wrongly-identified welfare area MUST lose the relevant mark(s) even if the overall shape looks correct. Do NOT award full marks when a required label or position is wrong.
+19. First identify the policy instrument / diagram sub-type actually drawn (e.g. minimum price vs subsidy, balanced vs biased growth) and mark against THAT; flag any mismatch with the intended diagram.
+
+FEEDBACK STANDARD (mandatory whenever marks_awarded < total_marks):
+20. For EVERY mark not awarded, the matching component_results entry MUST state which element was missing/incorrect and why. Never return a reduced total without a specific, element-level reason. Apply consistent penalties to equivalent errors across diagram types.
 
 Return ONLY the JSON object. No markdown code fences, no explanation text outside the JSON.`;
 }

@@ -32,6 +32,9 @@ export default function EconMonopolySupernormalProfit() {
         <text x="70" y="220.6" textAnchor="end" fontSize="13" fontWeight="bold" fill="#cc0000">P1</text>
         <text x="70" y="336.7" textAnchor="end" fontSize="13" fontWeight="bold" fill="#cc0000">C</text>
         <text x="297.2" y="490" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#cc0000">Q1</text>
+        {/* Profit-maximising output is set where MC = MR; price is then read UP to AR. */}
+        <circle cx="297.2" cy="341" r="5" fill="#0a8a5f"/>
+        <text x="304" y="358" fontSize="12" fontWeight="bold" fill="#0a8a5f">MC = MR</text>
       </svg>
     </div>
   );

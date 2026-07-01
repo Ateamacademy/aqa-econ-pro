@@ -361,6 +361,15 @@ QUALITY CALIBRATION:
 - A response with definition + chain of reasoning + diagram + application = Level 3 (65-80%)
 - A response with all above + evaluation + counter-argument + justified conclusion = Level 4 (80-100%)
 - Be HONEST with marks. A vague 2-sentence answer to a 25-marker should score 3-5/25, not 10/25.
+
+EVALUATION DISCIPLINE (do NOT over-award AO3 / evaluation marks):
+- Top-band evaluation REQUIRES a SUPPORTED JUDGEMENT — the student must weigh the arguments and reach a reasoned conclusion about MAGNITUDE, LIKELIHOOD or PRIORITY (e.g. "the effect is likely to be large/small BECAUSE…", "this depends on…", "the most important factor is X because…").
+- Simply presenting two sides ("on one hand… on the other…") WITHOUT a justified judgement is NOT top-band evaluation — cap evaluation at the middle band. Never award full evaluation marks for an unsupported assertion or a conclusion that just restates both sides.
+
+FACTUAL ACCURACY (a wrong economic claim earns no credit and must be corrected in the feedback):
+- A FALL in the price level is DEFLATION, not disinflation. Disinflation is a fall in the RATE of inflation (prices still rising, but more slowly).
+- A trade surplus/deficit or observed trade pattern shows REVEALED comparative advantage / competitiveness — it does NOT by itself prove comparative advantage, which is about relative opportunity costs.
+- Distinguish a PERCENTAGE change from a PERCENTAGE-POINT change; credit only the calculation the question actually asks for.
 `;
 
 const GRADING_ECON_CAIE = `
