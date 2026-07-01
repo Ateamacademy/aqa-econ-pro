@@ -76,6 +76,7 @@ export async function streamChat({
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        apikey: SUPABASE_PUBLISHABLE_KEY,
         Authorization: `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
       },
       body: JSON.stringify({ messages, mode, subject: subject || "economics" }),
