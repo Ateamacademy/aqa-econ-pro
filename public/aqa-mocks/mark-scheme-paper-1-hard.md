@@ -137,8 +137,9 @@ permit price will abate rather than buy permits; firms whose abatement cost is a
 price will buy permits and use them to cover continuing emissions. This trade equalises
 marginal abatement costs across the economy, delivering abatement at least cost. The
 rising renewable share of electricity generation shown in Extract B (37% in 2019 to 47% in
-2024) is consistent with this mechanism: the effective cost of fossil-based generation has
-been pushed up, making investment in renewables relatively more attractive.
+2024) is consistent with, but does not by itself prove, the dynamic efficiency effects of the
+ETS: the effective cost of fossil-based generation has been pushed up, making investment in
+renewables relatively more attractive.
 
 Application using the extracts
 
@@ -194,8 +195,9 @@ Arguments supporting tradable permits (FOR)
    C cites government modelling suggesting 9–14 MtCO₂ of additional emissions were
    avoided because of the scheme.
  • Dynamic efficiency: the prospect of selling surplus allowances gives firms a profit
-   motive to innovate beyond the required level of abatement · stronger than a simple tax
-   liability.
+   motive to innovate beyond the required level of abatement. Tradable permits may create
+   strong innovation incentives, although similar incentives can also arise under
+   appropriately designed carbon taxes.
  • Revenue with tightening capacity: government auctions of allowances generate
    hypothecatable revenue, and the cap can be tightened over time to deliver declining
    emissions.

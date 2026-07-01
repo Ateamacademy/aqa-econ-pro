@@ -74,7 +74,7 @@ A standard supply-and-demand diagram with:
  • Price on the vertical axis, Quantity on the horizontal axis.
  • Downward-sloping demand curve (D).
  • Upward-sloping supply curve (S).
- • Supply curve shifts vertically upwards (leftwards) by the amount of the tax to S + tax.
+ • The supply curve shifts vertically upwards by the amount of the tax (equivalently represented as a leftward shift in supply) to S + tax.
  • New equilibrium: price rises from P₁ to P₂; quantity falls from Q₁ to Q₂.
  • Tax revenue shaded as the rectangle between the two supply curves up to Q₂.
 
@@ -122,7 +122,7 @@ Required economic content
 Required diagram
 Negative-consumption-externality diagram showing:
  • MPC = MSC (no production externality assumed).
- • MPB above MSB, with vertical gap equal to the marginal external cost.
+ • MPB above MSB, with vertical gap equal to the marginal external cost of consumption.
  • Free-market equilibrium at Q₁ where MPB = MSC.
  • Socially optimal equilibrium at Q* where MSB = MSC.
  • Welfare loss triangle shaded between Q* and Q₁.

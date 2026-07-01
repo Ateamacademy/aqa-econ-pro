@@ -102,8 +102,10 @@ AQA
                            per worker comes from exogenous technological progress.
        06          C       Lump-sum tax = fixed amount regardless of behaviour → does not distort economic
                            decisions at the margin, hence minimal deadweight loss.
-       07          B       Balance of payments identity: CA + KA = 0 (in a pure floating system). Capital-importer
-                           has KA surplus matched by CA deficit.
+       07          B       Balance of payments identity: CA + KA = 0 (in a pure floating system). This is a
+                           simplified A-Level presentation of the broader balance-of-payments identity (which
+                           separates the capital and financial accounts). Capital-importer has KA surplus
+                           matched by CA deficit.
        08          B       Adverse selection: when insurers can't distinguish risks, the highest-risk customers buy
                            disproportionately, driving up premiums.
        09          C       Natural rate hypothesis: LRPC is vertical at the NRU; no long-run trade-off.
@@ -118,9 +120,9 @@ AQA
        13          A       Nominal wage rose 23.3% (18.50/15.00). CPI rose 23.6% (123.6/100). Real wage
                            change = +23.3% − 23.6% ≈ −0.3%. Narrow but real wage fell.
        14          C       Sterling depreciated 16% (ERI 100 → 83.6), which would normally boost
-                           competitiveness. But real unit labour costs rose by 1.8% · eroding the
-                           competitiveness gain. Net: improvement but less than the nominal depreciation
-                           suggests.
+                           competitiveness. The data suggest competitiveness may have improved, although
+                           rising labour costs (real unit labour costs +1.8%) partly offset the effect of
+                           depreciation.
        15          B       AI-assisted worker produces 2x output at the same hours. Firms will substitute toward
                            AI-assisted workers, reducing demand for non-AI-assisted labour.
        16          C       Gap = MEC − current carbon price. Power: £30; Heavy industry: £35; Aviation: £65;

@@ -67,11 +67,6 @@ MARK SCHEME · A-LEVEL ECONOMICS · 7136/3 · PREDICTED SET A
                                                                   30
 
 
-Note to paper setter: the answer distribution for Section A of this predicted paper is B-heavy compared with the
-~balanced distribution of authentic AQA papers (e.g. June 2017: A 8, B 5, C 8, D 9). When finalising the paper, option
-letters should be rotated so that the correct-answer distribution is approximately 7–8 per letter.
-
-
                                                             3 of 10
 MARK SCHEME · A-LEVEL ECONOMICS · 7136/3 · PREDICTED SET A
 

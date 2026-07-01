@@ -774,7 +774,7 @@ function bankHard(): McqSpec[] {
       figure: "**Figure 9:** Lorenz curves for two countries. Cumulative share of population (0–1) on the horizontal axis; cumulative share of income (0–1) on the vertical axis. 45° line of equality drawn. Country X lies closer to the 45° line; Country Y lies further below it.",
       figureKey: "lorenz-brazil.svg",
       figureCaption: "Figure 9 · Lorenz curves",
-      stem: "Based on Figure 9, the area between the line of equality and the Lorenz curve for Country Y relative to Country X indicates that:",
+      stem: "Compared with Country X, the larger area between the line of equality and Country Y's Lorenz curve indicates that:",
       options: [
         "Country Y has lower income inequality than Country X.",
         "Country Y has higher income inequality than Country X.",
@@ -997,7 +997,7 @@ function bankAdvanced(): McqSpec[] {
     },
     // Q14 · Table 4 (ERI + ULC)
     {
-      figure: `**Table 4:** Sterling effective exchange rate and UK real unit labour costs (index 2015 = 100).
+      figure: `**Table 4:** Sterling effective exchange rate and UK real unit labour costs (index 2015 = 100). International price competitiveness is influenced by both the exchange rate and relative labour costs.
 
 | Year | UK sterling ERI | UK real unit labour costs |
 |---|---|---|
@@ -1037,7 +1037,7 @@ function bankAdvanced(): McqSpec[] {
     {
       figure: `**Table 6:** Marginal external cost (MEC) of carbon emissions and current carbon price by industry (£ per tonne CO₂).
 
-| Industry | MEC | Carbon price |
+| Industry | MEC | Current carbon price (£ per tonne CO₂) |
 |---|---|---|
 | Power generation | 75 | 45 |
 | Heavy industry | 80 | 45 |

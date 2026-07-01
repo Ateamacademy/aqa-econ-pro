@@ -46,25 +46,20 @@ support informed judgements.
              The UK Energy Price Cap and the Household Energy Market
 
 
-           Calculate the change in the proportion of households in fuel poverty,
-   01      2019–2024.
+           Calculate the percentage-point change in the proportion of households in
+   01      fuel poverty, 2019–2024.
                                                                                        2 marks
 
 
 Indicative content
-The question asks for the change in the proportion itself. Accept EITHER interpretation:
-Preferred interpretation · percentage-point change: 14.5% − 10.3% = +4.2 percentage
+The question asks for the percentage-point change in the proportion.
+Intended interpretation · percentage-point change: 14.5% − 10.3% = +4.2 percentage
 points (an increase).
-Alternative · percentage change in the proportion: ((14.5 − 10.3) / 10.3) × 100 = (4.2 /
-10.3) × 100 = 40.78% ≈ +40.8% (an increase).
 
 Mark allocation
- • 1 mark · correct numerical answer (4.2 percentage points or 40.8%; accept 40.7%–
-   40.8%).
+ • 1 mark · correct numerical answer (4.2 percentage points).
  • 1 mark · correctly identifying the change as an increase.
-Award 2 marks for either a fully correct percentage-point change (+4.2 pp, increase) or a
-fully correct percentage change (+40.8%, increase). Do not penalise candidates who use
-either convention provided the interpretation is clear and the arithmetic is correct. Award 1
+Award 2 marks for a fully correct percentage-point change (+4.2 pp, increase). Award 1
 mark for a correct figure without the direction stated, or for correct working producing a
 minor arithmetic error.
 
@@ -177,8 +172,10 @@ Mark scheme · levels
                               absent.
 Maximum 6 marks if only one reason is explored in depth. Credit any economically valid
 second reason · e.g. the cap reducing asymmetric information costs by simplifying
-consumer choice, or worsening allocative inefficiency by sustaining demand for gas during
-the transition to renewables.
+consumer choice (a standard capped tariff lowers the search and comparison costs that
+consumers face in a market where complex, opaque tariffs make it hard to judge the best
+deal, mitigating the information failure), or worsening allocative inefficiency by sustaining
+demand for gas during the transition to renewables.
 
 
                                          Page 4 of 11
@@ -322,14 +319,13 @@ market underproduces renewables relative to the socially optimal level. The subs
 addresses this externality from the positive side: it reduces the relative cost of the cleaner
 technology, moving production towards the social optimum. A welfare-analysis extension
 can show the triangle of welfare gain against the rectangle of subsidy cost · net welfare is
+likely to improve where the correction of the externality outweighs the costs associated with
+funding the subsidy.
 
 
                                          Page 7 of 11
                                                 MARK SCHEME · 7136/1 [Set C · Advanced]
 
-
-improved if and only if the external-cost correction exceeds the deadweight loss of the tax
-needed to fund the subsidy.
 
 Expected content for top-band responses
  • Accurate diagram with both S₁ and S₂, P₁/Q₁ and P₂/Q₂, and the subsidy rectangle

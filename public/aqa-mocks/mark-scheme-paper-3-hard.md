@@ -244,7 +244,9 @@ AQA
   Relevant issues include:
        • Definition of comparative advantage · lower opportunity cost in production
        • Revealed comparative advantage: Extract A shows persistent services surplus (+£183bn) and
-       persistent goods deficit (−£198bn) · empirical signature of services advantage
+       persistent goods deficit (−£198bn). The data suggest a revealed comparative advantage in services · but
+       trade balances indicate revealed trade performance and do not by themselves establish comparative
+       advantage, which depends on relative opportunity costs
        • UK factor endowments that favour services:
        • • strong human capital base · high rate of tertiary education, world-class universities
        • • English language as a global business language
@@ -326,7 +328,7 @@ AQA
 
   Areas for discussion include:
        • Case FOR a services-led strategy:
-       • • Revealed comparative advantage: services surplus £183bn vs goods deficit £198bn (Extract A)
+       • • The data suggest a revealed comparative advantage in services: services surplus £183bn vs goods deficit £198bn (Extract A). Note that trade balances reveal trade performance and are only suggestive of comparative advantage, which depends on relative opportunity costs, not on observed surpluses and deficits alone.
        • • Services exports growing at 6.8% CAGR vs 2.7% for goods · market dynamics favour services
        • • Lower exposure to Brexit frictions (Extract B, C)
        • • Growth in non-EU services markets · geographic diversification benefit

@@ -546,7 +546,7 @@ Question 01 [2 marks]
 Using the data in Extract A, calculate the percentage-point change in the UK Bank Rate between the end of 2021 and the end of 2023.
 
 Question 02 [4 marks]
-Explain how the data in Extract A show that UK households experienced a fall in their real incomes during the period 2021–2023.
+Explain how the data in Extract A show that UK workers experienced a fall in their real wages during the period 2021–2023.
 
 Question 03 [9 marks]
 Extract B states that 'The Bank of England raised Bank Rate from 0.1% in December 2021 to a peak of 5.25% by August 2023 in response to surging inflation.' With the help of an AD/AS diagram, explain how an increase in the Bank Rate is likely to reduce the rate of inflation in the UK.
@@ -989,7 +989,7 @@ Question 01 [2 marks]
 Using the data in Extract A, calculate the percentage change in the sterling effective exchange rate between 2015 and 2022. Give your answer to one decimal place.
 
 Question 02 [4 marks]
-Explain how the data in Extract A (Figure 2) suggest that the UK has a comparative advantage in the production of services rather than goods.
+Explain how the data in Extract A (Figure 2) suggest that the UK may possess a comparative advantage in the production of services rather than goods.
 
 Question 03 [9 marks]
 Extract B states that the depreciation 'was expected to raise the price of imports, boost UK export competitiveness and help reduce the current account deficit.' With the help of an AD/AS diagram, analyse how a depreciation of sterling is likely to affect UK aggregate demand and the price level in the short run.
@@ -1003,7 +1003,7 @@ Extract C states that 'sustained competitiveness gains must come from structural
 
 *Do NOT answer Context 2 if you have answered Context 1.*
 
-**Extract D · Output per hour worked, selected G7 economies, 2023 (US = 100)**
+**Extract D · Output per hour worked, selected advanced economies, 2023 (US = 100)**
 
 | Country | Output per hour worked (US = 100) | Annual productivity growth 2008–2023 (%) |
 |---|---|---|
@@ -1820,13 +1820,13 @@ World trade rose more than three times as fast as world GDP during the 1990s and
 
 **Extract C · Welfare effects of protectionism**
 
-Standard trade theory identifies costs of tariffs: loss of consumer surplus exceeding the gain in producer surplus; deadweight loss triangles in both production and consumption; loss of gains from specialisation; and reduced dynamic efficiency. Empirical studies of the 2018 US tariffs found that the incidence fell almost entirely on US consumers and businesses, with welfare costs of around $800 per household per year by 2020. Supporters of strategic protectionism argue that in industries with large positive externalities (such as semiconductor manufacturing or green technology), infant-industry protection may be justified. Concentration of critical supply chains creates national-security risks the market does not price. Recent industrial policies (such as the $280bn US CHIPS Act) attempt to combine tariffs, subsidies and regulation; critics warn these risk significant government failure.
+Standard trade theory identifies costs of tariffs: loss of consumer surplus exceeding the gain in producer surplus; deadweight loss triangles in both production and consumption; loss of gains from specialisation; and reduced dynamic efficiency. Empirical studies of the 2018 US tariffs suggest that a substantial proportion of the tariff burden fell on US consumers and businesses, with welfare costs of around $800 per household per year by 2020. Supporters of strategic protectionism argue that in industries with large positive externalities (such as semiconductor manufacturing or green technology), infant-industry protection may be justified. Concentration of critical supply chains creates national-security risks the market does not price. Recent industrial policies (such as the $280bn US CHIPS Act) attempt to combine tariffs, subsidies and regulation; critics warn these risk significant government failure.
 
 Question 01 [2 marks]
 Using the data in Extract A (Figure 1), calculate the percentage-point change in the US average applied tariff rate between 2015 and 2024.
 
 Question 02 [4 marks]
-Explain how the data in Extract A (Figure 2) suggest that the world economy has entered a period of slower globalisation since the 2008 financial crisis.
+Explain how the data in Extract A (Figure 2) suggest that the pace of globalisation slowed after the financial crisis.
 
 Question 03 [9 marks]
 Extract C states that standard trade theory identifies 'loss of consumer surplus exceeding the gain in producer surplus; deadweight loss triangles in both production and consumption; loss of gains from specialisation'. With the help of a supply-and-demand diagram, analyse how the imposition of a tariff on imported goods reduces overall economic welfare.
@@ -1954,7 +1954,7 @@ Following the 2022 wholesale gas price spike, the UK government introduced the E
 Ofgem estimates that the price cap created an effective shortage at the peak of the crisis: at the capped price, quantity demanded exceeded the quantity suppliers were willing to supply at unsubsidised cost, requiring £40bn of taxpayer support to retailers. Income-based studies show the lowest decile spent 11% of disposable income on energy in 2022 versus 4% for the top decile.
 
 Question 1 [2 marks]
-Using Extract B, calculate the change in the proportion of households in fuel poverty between 2019 and 2024.
+Using Extract B, calculate the percentage-point change in the proportion of households in fuel poverty between 2019 and 2024.
 
 Question 2 [4 marks]
 Using a supply and demand diagram, explain how a maximum price (price ceiling) below equilibrium creates excess demand in the household energy market.
