@@ -27,6 +27,13 @@ interface BoardConfig {
   tierMap: Record<string, string>;
   /** Optional: restrict which paper numbers have static PDFs. Default = all. */
   allowedPapers?: string[];
+  /**
+   * Optional: paper numbers whose QUESTION paper should be generated live from the
+   * predicted-paper data instead of served as a static PDF (so the download always
+   * matches the on-site questions). The mark scheme still resolves to its static file,
+   * because its answer key is loaded for marking and is kept in sync.
+   */
+  regenerateQuestionPapers?: string[];
 }
 
 const BOARDS: BoardConfig[] = [
@@ -92,12 +99,14 @@ const BOARDS: BoardConfig[] = [
     allowedPapers: ["1", "2", "3", "4"],
   },
   // CAIE A-Level (Cambridge 9708) · id pattern: caie-p{1-4}-set-{a-e}
-  // Only Paper 3 is wired to static PDFs (uploaded by user).
   {
     pattern: /^caie-p([1234])-set-([abcde])$/i,
     folder: "/caie-mocks",
     displayName: "CAIE-A-Level-Economics",
     tierMap: { a: "moderate", b: "hard", c: "advanced" },
+    // Paper 3 questions are curated on-site; generate the downloadable question paper
+    // live from that data so it always matches (the static Paper 3 PDF was stale).
+    regenerateQuestionPapers: ["3"],
   },
   // IB Diploma Economics · id pattern: ib-p{1-3}-{a|b|c}
   {
@@ -185,6 +194,8 @@ export function resolveStaticPaperPdf(
     const tierSlug = board.tierMap[setLetter];
     if (!tierSlug) return null;
     if (board.allowedPapers && !board.allowedPapers.includes(paperNum)) return null;
+    // Question paper is regenerated live from data (mark scheme stays static).
+    if (kind === "paper" && board.regenerateQuestionPapers?.includes(paperNum)) return null;
 
     const fileBase = kind === "mark-scheme"
       ? `mark-scheme-paper-${paperNum}-${tierSlug}.pdf`
